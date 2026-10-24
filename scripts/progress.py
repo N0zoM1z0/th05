@@ -329,7 +329,7 @@ def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
 
 
 def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None,
-           artifact_name: str = "main") -> None:
+           artifact_name: str = "main", validate_only: bool = False) -> dict | None:
     """Recheck saved selected producers; no compilation or whole-cohort replay."""
     from lib.omf import describe_omf
     from lib.pc98 import parse_mz
@@ -341,6 +341,10 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     receipt_path = receipt_path.resolve()
     work = receipt_path.parent
     receipt = json.loads(receipt_path.read_text())
+    if receipt.get("kind") == "reviewed-complete-scopes-of-retained-producers":
+        from review_saved_scopes import validate_review
+        validate_review(receipt_path, root=root, artifact_name=artifact_name,
+                        validate_parent=lambda path: accept(path, root=root, artifact_name=artifact_name, validate_only=True))
     config = context.config()
     entries = {entry["id"]: entry for entry in config["units"]}
     # A whole-manifest hash remains provenance, not a reason to invalidate
@@ -359,6 +363,10 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     if not all(tool.get(key) is True for key in ("ready", "identity_pass", "execution_pass")):
         raise ValueError("frozen executable toolchain probes did not pass")
     tool_sha = tool["manifest_sha256"]
+    if validate_only:
+        from lib.replay_toolchain import static_toolchain, validate_full_toolchain
+        current_sha, surfaces = static_toolchain(root)
+        validate_full_toolchain(tool, current_sha, surfaces)
     if tool_sha != digest(root / "config/toolchain.toml"):
         raise ValueError("historical toolchain evidence cannot be relabelled as the active pin")
     if (work / "toolchain.toml").is_file() and digest(work / "toolchain.toml") != tool_sha:
@@ -382,7 +390,7 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     results = {result["id"]: result for result in receipt["results"]}
     if not results or len(results) != len(receipt["results"]):
         raise ValueError("empty or duplicate replay result set")
-    replay_entries = replay_entries_for_accept(entries, frozen_entries, results, units)
+    replay_entries = replay_entries_for_accept(entries, frozen_entries, results, [] if validate_only else units)
     if "selected_units" in receipt and (len(receipt["selected_units"]) != len(set(receipt["selected_units"])) or
                                        set(receipt["selected_units"]) != set(results)):
         raise ValueError("replay selected-unit set disagrees with its actual results")
@@ -411,8 +419,8 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
         negative = {"unit_id": control_entry["id"], "producer_path": "negative/source",
                     "mutation": mutations[0], "comparison": control,
                     "legacy_source_revalidated": True}
-    selected = select_accept_units(results, units, control_entry["id"])
-    imported = []
+    selected = set() if validate_only else select_accept_units(results, units, control_entry["id"])
+    imported, validated_inputs = [], {}
     frozen_inputs = {item["path"]: item["sha256"] for item in receipt["source_inputs"]}
     for name, result in results.items():
         entry = replay_entries[name]
@@ -422,6 +430,7 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             raise ValueError(f"replay result entry identity disagrees: {name}")
         validate_result(entry, result, require_exact=name in selected)
         snapshots = scoped_snapshot(root, entry, result, result.get("source_inputs", receipt["source_inputs"]))
+        validated_inputs[name] = snapshots
         validate_snapshot(root, snapshots)
         for item in snapshots:
             frozen_name = item["path"]
@@ -480,13 +489,15 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     if compiler_dependencies(control_entry, [negative_obj]) != compiler_dependencies(control_entry, results[control_entry["id"]]["omfs"]):
         raise ValueError("negative compiler dependency scope differs from its selected unit")
     mutation = negative["mutation"]
-    control_snapshots = next(item["source_inputs"] for item in imported if item["id"] == control_entry["id"])
+    control_snapshots = validated_inputs[control_entry["id"]]
     if mutation["source"] not in {item["path"] for item in control_snapshots}:
         raise ValueError("negative mutation is outside its selected compiler dependency scope")
     validate_producer_inputs(root, negative_source, control_entry, control_snapshots, mutation=mutation)
     if source_encoding(control_entry) == "cp932" and negative.get("producer_source_inputs") != producer_snapshot(negative_source, control_entry, control_snapshots):
         raise ValueError("negative CP932 compiler-byte identity disagrees with its receipt")
     aggregate_pass = validate_receipt_aggregate(receipt, results, observed_control)
+    if validate_only:
+        return receipt
     if units is None and not aggregate_pass:
         raise ValueError("default acceptance requires the complete replay aggregate to pass")
     for item in imported:
