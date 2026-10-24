@@ -13,7 +13,66 @@ from lib.replay_toolchain import (bindings_source, digest, entry_digest, relativ
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
+    """Classify a completely compared extent without exempting any raw bytes.
+
+    Only explicit compiler switch tables are CODE data. Asset arrays, unknown
+    ranges and padding never receive an implicit instruction-byte exemption.
+    This metadata does not independently prove a range's compiler ownership.
+    """
+    size = entry["size"]
+    if type(size) is not int or size <= 0:
+        raise ValueError("invalid complete unit extent size")
+    alignment = entry.get("alignment_offsets", [])
+    explicit_padding = entry.get("padding_bytes", [])
+    code_ranges = entry.get("code_data_ranges", [])
+    if any(not isinstance(value, list) for value in (alignment, explicit_padding, code_ranges)):
+        raise ValueError("extent classifications must be explicit lists")
+    padding = {}
+    for offset in alignment:
+        if type(offset) is not int or not 0 <= offset < size or offset in padding:
+            raise ValueError("invalid or duplicate NOP alignment padding")
+        padding[offset] = 0x90
+    for item in explicit_padding:
+        if not isinstance(item, dict) or set(item) != {"offset", "value"}:
+            raise ValueError("padding requires only explicit offset and byte value")
+        offset, value = item["offset"], item["value"]
+        if (type(offset) is not int or not 0 <= offset < size or
+                type(value) is not int or not 0 <= value <= 255 or offset in padding):
+            raise ValueError("invalid, duplicate or overlapping padding byte")
+        padding[offset] = value
+    ranges = []
+    code_data = 0
+    for item in code_ranges:
+        if not isinstance(item, dict) or set(item) != {"offset", "size", "kind"}:
+            raise ValueError("CODE data requires only explicit offset, size and compiler kind")
+        if item["kind"] != "compiler-switch-table":
+            raise ValueError("only compiler-switch-table CODE data is supported; assets are not CODE tables")
+        start, length = item["offset"], item["size"]
+        if (type(start) is not int or type(length) is not int or
+                start < 0 or length <= 0 or start + length > size):
+            raise ValueError("CODE data range is empty or outside the complete unit")
+        end = start + length
+        if any(start < other_end and end > other_start for other_start, other_end in ranges):
+            raise ValueError("CODE data ranges overlap")
+        if any(start <= offset < end for offset in padding):
+            raise ValueError("CODE data and padding overlap")
+        ranges.append((start, end))
+        code_data += length
+    authored = size - len(padding)
+    if authored - code_data <= 0:
+        raise ValueError("a C++ code contribution must retain instruction bytes")
+    if target_bytes is not None:
+        if len(target_bytes) != size:
+            raise ValueError("padding verification requires the complete original extent")
+        if any(target_bytes[offset] != value for offset, value in padding.items()):
+            raise ValueError("declared padding value disagrees with the original target")
+    return {"authored_code_bytes": authored, "code_data_bytes": code_data,
+            "instruction_bytes": authored - code_data, "padding_bytes": len(padding)}
+
+
 def validate_result(entry: dict, result: dict) -> None:
+    classify_extent(entry)
     if result["id"] != entry["id"] or not result["exact"] or not result["object_normalized_equal"]:
         raise ValueError("unit receipt does not accept the configured source")
     if len(result["rounds"]) != 2 or len(result["omfs"]) != 2:
@@ -68,39 +127,45 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
         if any(start < right and end > left for left, right in covered):
             raise ValueError("accepted unit extents overlap")
         covered.append((start, end))
-        alignment = entry["alignment_offsets"]
-        if len(alignment) != len(set(alignment)) or any(not 0 <= value < entry["size"] for value in alignment):
-            raise ValueError("invalid alignment exclusions")
         accepted.append({"id": entry["id"], "size": entry["size"],
-                         "instruction_bytes": entry["size"] - len(alignment),
+                         **classify_extent(entry),
                          "functions": entry["functions"]})
     return {"units": accepted, "unit_count": len(accepted),
             "functions": sum(unit["functions"] for unit in accepted),
             "complete_extent_bytes": sum(unit["size"] for unit in accepted),
+            "authored_code_bytes": sum(unit["authored_code_bytes"] for unit in accepted),
+            "code_data_bytes": sum(unit["code_data_bytes"] for unit in accepted),
+            "padding_bytes": sum(unit["padding_bytes"] for unit in accepted),
             "instruction_bytes": sum(unit["instruction_bytes"] for unit in accepted),
             "percentage": None, "authored_denominator": None}
 
 
 def render(summary: dict) -> tuple[str, str]:
-    count, functions, instructions, extent = (summary[k] for k in
+    count, functions, instructions, extent = (summary[key] for key in
         ("unit_count", "functions", "instruction_bytes", "complete_extent_bytes"))
-    alignment = extent - instructions
+    authored = summary.get("authored_code_bytes", instructions)
+    tables = summary.get("code_data_bytes", 0)
+    padding = summary.get("padding_bytes", extent - authored)
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
 complete authored ownership denominator remains under review.
 
-| Accepted scope | Functions | Instruction bytes | Complete extent bytes |
-| --- | ---: | ---: | ---: |
-| MAIN bounded C++ units | {functions} | {instructions} | {extent} |
-| OP | 0 | 0 | 0 |
-| MAINE | 0 | 0 | 0 |
-| ZUN | 0 | 0 | 0 |
+| Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| MAIN bounded C++ units | {functions} | {authored} | {instructions} | {tables} | {extent} |
+| OP | 0 | 0 | 0 | 0 | 0 |
+| MAINE | 0 | 0 | 0 | 0 | 0 |
+| ZUN | 0 | 0 | 0 | 0 | 0 |
 
 {count} complete C++ contributions pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
-Explicit codestring directives reproduce {alignment} observed NOP alignment bytes;
-these bytes are checked but excluded from authored instruction credit.
+Authored code includes {tables} bytes of explicitly classified compiler switch
+tables; these remain separate from instruction bytes. All {padding} observed
+padding bytes are checked against their declared target values and excluded
+from authored code. Every table and padding byte remains inside the complete
+raw-byte comparisons; classification supplies no byte-comparison exemption.
+Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage
 and packed-file exactness are separate and remain unaccepted.
 
@@ -114,14 +179,14 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
 '''
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="164" viewBox="0 0 720 164" role="img" aria-labelledby="title desc">
 <title id="title">TH05 source reconstruction progress</title>
-<desc id="desc">Goal 98 percent authored bytes exact. {functions} functions, {instructions} instruction bytes exact. Global denominator under review.</desc>
+<desc id="desc">Goal 98 percent authored bytes exact. {functions} functions, {authored} authored code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes. Global denominator under review.</desc>
 <rect width="720" height="164" rx="12" fill="#181b29"/>
 <g font-family="system-ui,sans-serif" fill="#f3f0fa">
 <text x="24" y="35" font-size="21" font-weight="600">TH05 · Mystic Square</text>
-<text x="24" y="62" font-size="14" fill="#c9bddc">Authored bytes exact · goal 98% · denominator under review</text>
+<text x="24" y="62" font-size="14" fill="#c9bddc">Authored code bytes exact · goal 98% · denominator under review</text>
 <rect x="24" y="80" width="672" height="14" rx="7" fill="#363148"/>
-<text x="24" y="120" font-size="16">{functions} functions · {instructions} instruction bytes · {count} cold-replayed C++ units</text>
-<text x="24" y="146" font-size="12" fill="#c9bddc">Bounded unit evidence · whole executables and global percentage unaccepted</text>
+<text x="24" y="120" font-size="16">{functions} functions · {authored} authored code bytes · {count} cold-replayed C++ units</text>
+<text x="24" y="146" font-size="12" fill="#c9bddc">{instructions} instruction · {tables} compiler switch-table · {padding} padding bytes · bounded extents</text>
 </g></svg>
 '''
     return markdown, svg
@@ -271,8 +336,8 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
                     saved = source / "bindings.asm"
                 if digest(saved) != item["sha256"]:
                     raise ValueError("saved cold source disagrees with its input snapshot")
-        if any(target.program_image[entry["target_start"] + offset] != 0x90 for offset in entry["alignment_offsets"]):
-            raise ValueError("reviewed alignment is not NOP in original target")
+        classify_extent(entry, target_bytes=target.program_image[
+            entry["target_start"]:entry["target_start"] + entry["size"]])
         imported.append({"id": name, "entry_sha256": entry_digest(entry), "result": result,
                          "source_inputs": snapshots, "toolchain_manifest_sha256": tool_sha,
                          "toolchain_receipt_sha256": receipt["toolchain_receipt_sha256"],

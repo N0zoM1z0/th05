@@ -133,3 +133,38 @@ unit = "main-reimu-shots"
 source = "src/main/player/reimu.cpp"
 find = "set_homing(shot, 2);"
 replace = "set_homing(shot, 3);"
+
+[[units]]
+id = "main-marisa-shots"
+source = "src/main/player/marisa.cpp"
+module = "th05/p_marisa.cpp"
+segment = "MAIN_01_TEXT"
+target_start = 0xeb92
+size = 2134
+alignment_offsets = []
+functions = 8
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/marisa_shots_bindings.asm"
+code_data_ranges = [
+  { offset = 0x135, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x22f, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x337, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x441, size = 16, kind = "compiler-switch-table" },
+  { offset = 0x57b, size = 20, kind = "compiler-switch-table" },
+  { offset = 0x6b9, size = 20, kind = "compiler-switch-table" },
+  { offset = 0x83a, size = 28, kind = "compiler-switch-table" },
+]
+padding_bytes = [
+  { offset = 0x336, value = 0 },
+  { offset = 0x440, value = 0 },
+  { offset = 0x57a, value = 0 },
+  { offset = 0x6b8, value = 0 },
+  { offset = 0x839, value = 0 },
+]
+
+[[controls]]
+unit = "main-marisa-shots"
+source = "src/main/player/marisa.cpp"
+find = "shot->damage = 8;"
+replace = "shot->damage = 9;"

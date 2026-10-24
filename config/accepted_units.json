@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a882c3ac794919cda806731cff61820eade0683034e6bb4809c419b2dd387076",
+  "replay_receipt_sha256": "c7b1c15a453a09fc6baac62758249f35b1d152b6cde034809b0a5b290ce3a831",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 59131,
-    "candidate_start": 59131,
-    "size": 1175,
-    "target_sha256": "3d30963c8771ea2c1f91b365a0fe6dff2c6bcb90aff20ae4f82fc994fd2f9ddd",
-    "candidate_sha256": "8389565d59326db4a6f796a98aca63db813275115ef35a39e48bff7cc01fd6d5",
+    "target_start": 60306,
+    "candidate_start": 60306,
+    "size": 2134,
+    "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+    "candidate_sha256": "98e75ad10c28758e04a39c746ed3b22aed84ddc1e5b19f5e22ffe5749be04267",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -1345,6 +1345,199 @@
             "src/main/player/reimu.cpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      }
+    },
+    {
+      "id": "main-marisa-shots",
+      "entry_sha256": "17a42ca5c312116da011bf0b99ca28fe228e1def81268cc64cd9d3ca02304a4e",
+      "result": {
+        "id": "main-marisa-shots",
+        "entry_sha256": "17a42ca5c312116da011bf0b99ca28fe228e1def81268cc64cd9d3ca02304a4e",
+        "rounds": [
+          {
+            "target_start": 60306,
+            "candidate_start": 60306,
+            "size": 2134,
+            "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+            "candidate_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 60306,
+            "candidate_start": 60306,
+            "size": 2134,
+            "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+            "candidate_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2ba0638cd28bb0f898a4c6f7ca43b8089e0d104474ac174ce5e5d95f72984472",
+            "dependency_timestamp_normalized_sha256": "5dea21149912e3ce318b08cc33034992e5c3a864821becfd439bf662c6df316d",
+            "module_name": "th05/p_marisa.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_marisa.cpp",
+              "src/main/player/marisa.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/marisa.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "0616480b4bc71c4a5838be2825dde4287a88196aea5738cc39176a7680774c8e",
+            "dependency_timestamp_normalized_sha256": "5dea21149912e3ce318b08cc33034992e5c3a864821becfd439bf662c6df316d",
+            "module_name": "th05/p_marisa.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_marisa.cpp",
+              "src/main/player/marisa.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/marisa.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/marisa_shots_bindings.asm",
+            "sha256": "3b88f014b47fa696b449ea2adc586350f75a959d55dea2301d38babef43d9f29"
+          },
+          {
+            "path": "src/main/player/marisa.cpp",
+            "sha256": "a8c5791749d8d27969ed9b28e690a5a3ad4bbf4f3c06d587232b04585be9f998"
+          },
+          {
+            "path": "src/main/player/marisa.hpp",
+            "sha256": "2d349789257cd42754a495f9093e67bfd24f95a56e0d322c821400d2a50707ac"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/marisa_shots_bindings.asm",
+          "sha256": "3b88f014b47fa696b449ea2adc586350f75a959d55dea2301d38babef43d9f29"
+        },
+        {
+          "path": "src/main/player/marisa.cpp",
+          "sha256": "a8c5791749d8d27969ed9b28e690a5a3ad4bbf4f3c06d587232b04585be9f998"
+        },
+        {
+          "path": "src/main/player/marisa.hpp",
+          "sha256": "2d349789257cd42754a495f9093e67bfd24f95a56e0d322c821400d2a50707ac"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c7b1c15a453a09fc6baac62758249f35b1d152b6cde034809b0a5b290ce3a831",
+      "compiled_negative_control": {
+        "target_start": 60306,
+        "candidate_start": 60306,
+        "size": 2134,
+        "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+        "candidate_sha256": "98e75ad10c28758e04a39c746ed3b22aed84ddc1e5b19f5e22ffe5749be04267",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-marisa-shots",
+        "entry_sha256": "17a42ca5c312116da011bf0b99ca28fe228e1def81268cc64cd9d3ca02304a4e",
+        "mutation": {
+          "unit": "main-marisa-shots",
+          "source": "src/main/player/marisa.cpp",
+          "find": "shot->damage = 8;",
+          "replace": "shot->damage = 9;"
+        },
+        "control_sha256": "9447a2c72fcbc2d02cef42cd96509fd0892737bc079dca5e85c11a4f3413ef5d",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 60306,
+          "candidate_start": 60306,
+          "size": 2134,
+          "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
+          "candidate_sha256": "98e75ad10c28758e04a39c746ed3b22aed84ddc1e5b19f5e22ffe5749be04267",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "e705ff40611901f1c6ff2e0585d448b8cedb734e018f2618643b0e1a3da4ec78",
+          "dependency_timestamp_normalized_sha256": "f548ced172c14871f536996115d5d025ac2a208966105002d66da4fce2e43ba7",
+          "module_name": "th05/p_marisa.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/p_marisa.cpp",
+            "src/main/player/marisa.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/marisa.hpp",
             "src/main/player/reimu.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",

@@ -9,7 +9,7 @@ MIKO.CFG using three real DOS interrupt intrinsics.
 
 Target `th05-main`, SHA-256 `c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0`:
 
-| Maintained unit | Load-module extent | Complete bytes | Instruction credit |
+| Maintained unit | Load-module extent | Complete bytes | Authored code credit |
 | --- | --- | ---: | ---: |
 | `src/main/player/angle.cpp` | `0x171CC..0x171EA` | 30 | 29 |
 | `src/main/bullet/tune.cpp` | `0x17676..0x176B8` | 66 | 62 |
@@ -18,6 +18,7 @@ Target `th05-main`, SHA-256 `c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a25
 | `src/main/boss/explosion.cpp` | `0x1060E..0x107D2` | 452 | 452 |
 | `src/main/hud/overlay.cpp` | `0x11D50..0x1245E` | 1806 | 1806 |
 | `src/main/player/reimu.cpp` | `0xE6FB..0xEB92` | 1175 | 1175 |
+| `src/main/player/marisa.cpp` | `0xEB92..0xF3E8` | 2134 | 2129 |
 
 Ranges are half-open and relative to the original MZ load module. Its header
 is 4032 bytes; do not confuse these with packed-file offsets or physical memory.
@@ -85,7 +86,14 @@ whole-program acceptance. Two subsequent focused replays add nine HUD overlay
 functions (1806 bytes, including 24 ordered far-call fixups and a near callback)
 and eight Reimu shot functions (1175 bytes, zero MZ fixups). These reuse previous
 accepted sources and unchanged tool probes. Current total: 28 functions,
-3965 complete bytes and 3959 code bytes. It does not prove
+3965 complete bytes and 3959 code bytes. The Marisa shot contribution adds
+8 functions and 2134 complete bytes: 2013 instructions, 116 bytes in seven
+compiler-generated switch tables and five checked zero alignment bytes. Source
+switches generate all 58 table entries; each points to an original instruction
+boundary in its own function. No target-derived table arrays are supplied.
+Current total: 36 functions, 6099 compared bytes, 6088 authored code bytes
+(5972 instructions and 116 compiler tables), with eleven padding bytes excluded.
+This does not prove
 whole-program placement, global layout, standalone linkage, data ownership,
 packed-file exactness, runtime gameplay or the global authored-byte percentage.
 The first whole-reference MAIN calibration differs from the original and is

@@ -3,17 +3,21 @@
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
 complete authored ownership denominator remains under review.
 
-| Accepted scope | Functions | Instruction bytes | Complete extent bytes |
-| --- | ---: | ---: | ---: |
-| MAIN bounded C++ units | 28 | 3959 | 3965 |
-| OP | 0 | 0 | 0 |
-| MAINE | 0 | 0 | 0 |
-| ZUN | 0 | 0 | 0 |
+| Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| MAIN bounded C++ units | 36 | 6088 | 5972 | 116 | 6099 |
+| OP | 0 | 0 | 0 | 0 | 0 |
+| MAINE | 0 | 0 | 0 | 0 | 0 |
+| ZUN | 0 | 0 | 0 | 0 | 0 |
 
-7 complete C++ contributions pass two cold builds, raw bytes and ordered
+8 complete C++ contributions pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
-Explicit codestring directives reproduce 6 observed NOP alignment bytes;
-these bytes are checked but excluded from authored instruction credit.
+Authored code includes 116 bytes of explicitly classified compiler switch
+tables; these remain separate from instruction bytes. All 11 observed
+padding bytes are checked against their declared target values and excluded
+from authored code. Every table and padding byte remains inside the complete
+raw-byte comparisons; classification supplies no byte-comparison exemption.
+Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage
 and packed-file exactness are separate and remain unaccepted.
 

@@ -30,3 +30,10 @@ in a symbol-only linker scaffold. Such an oracle compares unmodified output
 bytes and relative fixup sites at reviewed target extents. It does not accept
 whole-program placement or standalone linkage. All scaffold origin holes and
 explicitly reproduced alignment bytes receive zero authored instruction credit.
+
+Compiler-generated CODE switch tables count as authored code when generated
+by maintained semantic C++ switches and the complete contribution passes the
+same raw comparison. Report their bytes separately from instruction bytes.
+Explicitly reviewed padding receives no authored credit, regardless of its
+value. Classification never masks bytes or relaxes the full raw/fixup gate.
+Game assets and opaque target-derived arrays do not qualify as compiler tables.

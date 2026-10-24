@@ -20,8 +20,12 @@ class ProgressTests(unittest.TestCase):
         self.assertIsNone(result["percentage"])
         self.assertIsNone(result["authored_denominator"])
         entries = {u["id"]: u for u in tomllib.loads((ROOT / "config/exact_units.toml").read_text())["units"]}
-        excluded = sum(len(entries[u["id"]]["alignment_offsets"]) for u in self.receipt["units"])
-        self.assertEqual(result["complete_extent_bytes"] - result["instruction_bytes"], excluded)
+        excluded = sum(len(entries[u["id"]]["alignment_offsets"]) + len(entries[u["id"]].get("padding_bytes", []))
+                       for u in self.receipt["units"])
+        tables = sum(sum(r["size"] for r in entries[u["id"]].get("code_data_ranges", []))
+                     for u in self.receipt["units"])
+        self.assertEqual(result["complete_extent_bytes"] - result["authored_code_bytes"], excluded)
+        self.assertEqual(result["authored_code_bytes"] - result["instruction_bytes"], tables)
 
     def test_changed_raw_digest_rejected(self):
         self.receipt["units"][0]["result"]["rounds"][0]["candidate_sha256"] = "0" * 64

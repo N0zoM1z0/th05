@@ -1,8 +1,9 @@
 # TH05 current handoff
 
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
-Current acceptance: 7 C++ contributions, 28 functions, 3965 compared bytes and
-3959 authored code bytes after excluding 6 observed NOP alignment bytes.
+Current acceptance: 8 C++ contributions, 36 functions, 6099 compared bytes and
+6088 authored code bytes (5972 instructions, 116 semantic switch-table bytes),
+after excluding 11 observed padding bytes.
 Public acceptance lives in `config/accepted_units.json`; global percentage is
 unmeasured pending complete ownership/denominator review.
 Public repository: https://github.com/N0zoM1z0/th05 .
@@ -52,6 +53,12 @@ HUD keeps the original AE1:6F40 contribution, its own near callback at 711D,
 and all 24 ordered fixups. Reimu keeps AE1:38EB and real Shot/SPPoint ABI,
 with no MZ fixups. Both reuse unchanged installed tools and leave all preceding
 producers untouched. Owner notes record their complete external bindings.
+
+`.analysis/unit-replays/marisa-shots-a` adds eight shot functions as one focused
+2134-byte producer. Semantic switches generate seven CODE tables; all 58 targets
+land on original function instruction boundaries. Its five zero alignment bytes
+are checked in the full comparison and excluded from credit. Original AE1:3D82
+placement preserves table addresses. No old unit is recompiled.
 
 Next: extend bounded authored units and review the complete ownership partition.
 No whole-game or standalone C++ build claim is made. See the first-unit note for
