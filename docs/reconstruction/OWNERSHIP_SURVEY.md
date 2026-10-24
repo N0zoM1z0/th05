@@ -1,6 +1,6 @@
 # TH05 ownership survey
 
-This is a read-only survey of the pinned targets and existing calibration
+This survey records the pinned targets and existing calibration
 outputs, recorded on 2026-10-24. **The authored-byte denominator is still
 unreviewed.** None of the candidates below changes progress, acceptance or
 exclusion ledgers. Exact vendor-byte observations are not authored-source credit.
@@ -249,3 +249,27 @@ code/data boundaries remain open.
    initialized game-owned data are different quantities. Until the entire
    intended scope is reviewed, retain an unmeasured denominator or a clearly
    labelled conservative bound; never calculate 98% from accepted units alone.
+
+## Gapless observation inventory
+
+[`resources/ownership.json`](../../resources/ownership.json) now covers every
+byte of MAIN's load module, the retained OP/MAINE decoded load modules, and
+the entire outer ZUN COM: 319,268 bytes without gaps or overlaps. It is an
+observation universe, not a final authored denominator. Original MZ headers
+and the packed OP/MAINE streams have separate container coordinates and are
+not added to decoded payloads. Embedded ZUN children are not counted twice.
+
+The inventory projects only source-current accepted C++ intervals and their
+explicit switch-table/padding classifications. All remaining intervals stay
+`unknown`, including vendor candidates, assets, runtime data and ASM whose
+global ownership is still unreviewed. In particular, the separately accepted
+ZUN memory child retains its unreviewed global ownership status here. No
+vendor candidate is excluded merely because a reference name or shape matches.
+Both the authored denominator and percentage remain null.
+
+`python3 scripts/ownership.py --write` regenerates the inventory after progress
+changes. Public CI checks its coverage, exact agreement with the acceptance
+ledgers and source freshness without private targets. Add `--verify-targets`
+to rehash all cached comparison views against their pins; this performs no
+decoding, emulation or compilation. Unknown intervals remain available for
+later explicit library/ASM/initialized-data ownership reviews.

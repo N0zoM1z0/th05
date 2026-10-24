@@ -14,7 +14,8 @@
 6. Reject mismatches. Store compiler experiments privately and retain concise
    replayable observations. Separate source-present from exact acceptance.
 7. Run affected checks, public CI, and `git diff --check`. Update progress and
-   the handoff; commit with `gpt-6.1-sol: ...` and push.
+   the handoff and gapless ownership inventory (`scripts/ownership.py --write`);
+   commit with `gpt-6.1-sol: ...` and push.
 
 Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
 serial and Ghidra's heap bounded. Never modify the original HDI or executables.

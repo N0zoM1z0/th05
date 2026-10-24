@@ -8,6 +8,9 @@ Current acceptance: **78 bounded C++ units / 182 complete function occurrences**
 418 semantic compiler-table bytes. Eighteen checked padding bytes receive no
 credit. MAIN has 106 functions / 17,531 code bytes, decoded OP 53 / 9,158,
 decoded MAINE 23 / 2,833. Global denominator and percentage remain unreviewed.
+`resources/ownership.json` covers all 319,268 observed payload/COM bytes;
+all unclassified intervals remain unknown, including unreviewed vendor/ASM.
+Regenerate it with `scripts/ownership.py --write` after accepting new units.
 
 ## Retained evidence
 

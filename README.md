@@ -23,7 +23,9 @@ placement and standalone linkage remain open.
 
 No global authored-byte denominator has been accepted yet; the overall
 percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
-[first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md).
+[first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md). The
+[gapless ownership inventory](resources/ownership.json) retains every unknown
+interval across all four targets; it grants no inferred vendor exclusions.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.
