@@ -123,7 +123,7 @@ class ExtentMetadataTests(unittest.TestCase):
 
     def test_summary_exposes_all_counts_without_establishing_global_denominator(self):
         summary = summarize(ROOT)
-        self.assertEqual(summary['authored_code_bytes'] + summary['padding_bytes'],
+        self.assertEqual(summary['authored_bytes'] + summary['padding_bytes'],
                          summary['complete_extent_bytes'])
         self.assertEqual(summary['instruction_bytes'] + summary['code_data_bytes'],
                          summary['authored_code_bytes'])

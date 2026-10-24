@@ -231,6 +231,7 @@ class InitializedDataReplayTests(unittest.TestCase):
                 entry_sha256=entry_digest(data),
                 source_inputs=snapshots,
                 producer_paths=["a/source", "b/source"],
+                compiler_arguments=[r["compiler_arguments"]["data"] for r in rounds],
                 producer_source_inputs=[
                     producer_snapshot(r["source"], data, snapshots) for r in rounds
                 ],
@@ -243,6 +244,7 @@ class InitializedDataReplayTests(unittest.TestCase):
                 "producer_path": "negative/source",
                 "comparison": observed,
                 "omf": negative["omfs"]["data"],
+                "compiler_arguments": negative["compiler_arguments"]["data"],
                 "producer_source_inputs": producer_snapshot(
                     negative["source"], data, snapshots
                 ),

@@ -1116,3 +1116,23 @@ unit = "main-boss-backdrop"
 source = "src/main/boss/backdrop.cpp"
 find = "cdg_put_noalpha_8(left, top, CDG_BG_BOSS);"
 replace = "cdg_put_noalpha_8(left, top, CDG_BG_BOSS + 1);"
+
+[[units]]
+id = "main-stage-setup-data"
+source = "src/main/stage/setup.cpp"
+module = "th05/main014.cpp"
+segment = "_DATA"
+target_start = 0x22998
+size = 189
+functions = 0
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/stage_setup_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "state"]
+
+[[controls]]
+unit = "main-stage-setup-data"
+source = "src/main/stage/setup.cpp"
+find = "\"st00.bmt\""
+replace = "\"st00.bmu\""

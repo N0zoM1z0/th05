@@ -123,9 +123,8 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
                 omfs[member['id']]['initialized_data_scope'] = initialized_data_omf_scope(
                     object_bytes, member, require_size=mutation is None)
             arguments[member["id"]] = actual_arguments
-    if binary != "M" or any("binary" in unit for unit in units):
-        (source / "compiler-arguments.json").write_text(json.dumps(
-            {unit["module"]: arguments[unit["id"]] for unit in units}, indent=2) + "\n")
+    (source / "compiler-arguments.json").write_text(json.dumps(
+        {unit["module"]: arguments[unit["id"]] for unit in units}, indent=2) + "\n")
     (source / "link.rsp").write_bytes(("-c -s -E bindings.obj " + " ".join(objects) +
                                       ", units.exe, units.map,\r\n").encode("ascii"))
     builder.execute("link", [*dos, "tlink", "@link.rsp"])
@@ -230,8 +229,7 @@ def main() -> int:
                           "object_normalized_equal": len({obj["dependency_timestamp_normalized_sha256"] for obj in omfs}) == 1,
                           "omfs": omfs,
                           "producer_paths": [str(producer["source"].relative_to(work)) for producer in rounds]}
-                if context.name != "main" or "binary" in unit:
-                    result["compiler_arguments"] = [producer["compiler_arguments"][unit["id"]] for producer in rounds]
+                result["compiler_arguments"] = [producer["compiler_arguments"][unit["id"]] for producer in rounds]
                 actual = required_input_paths(inputs, unit, result)
                 result["source_inputs"] = snapshot_paths(inputs, actual)
                 if source_encoding(unit) == "cp932":
@@ -253,8 +251,7 @@ def main() -> int:
                            "mutation": mutation, "control_sha256": entry_digest(mutation),
                            "producer_path": "negative/source", "comparison": control,
                            "omf": negative["omfs"][control_unit["id"]]}
-        if context.name != "main" or "binary" in control_unit:
-            negative_record["compiler_arguments"] = negative["compiler_arguments"][control_unit["id"]]
+        negative_record["compiler_arguments"] = negative["compiler_arguments"][control_unit["id"]]
         if source_encoding(control_unit) == "cp932":
             negative_record["producer_source_inputs"] = producer_snapshot(negative["source"], control_unit, positive_control["source_inputs"])
         # Source scanning stages a safe superset for conditional includes. Only

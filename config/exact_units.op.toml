@@ -458,3 +458,104 @@ unit = "op-main-data"
 source = "src/op/main/strings.hpp"
 find = '#define MENU_MAIN_BG_FN "op1.pi"'
 replace = '#define MENU_MAIN_BG_FN "op2.pi"'
+
+[[units]]
+id = "op-music-data"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "_DATA"
+source_encoding = "cp932"
+wrapper_options = "-zPop_01"
+target_start = 0xffae
+size = 6217
+functions = 0
+extent_kind = "initialized-data"
+origin = "compiler-generated-cxx"
+data_semantics = ["state", "filenames", "ui-text", "string-pointers", "semantic-tables"]
+bindings_source = "probes/units/op_music_bindings.asm"
+
+[[controls]]
+unit = "op-music-data"
+source = "src/op/music/music.cpp"
+find = "\"music.pi\""
+replace = "\"music.pj\""
+
+[[units]]
+id = "op-title-data"
+source = "src/op/title/title.cpp"
+module = "th05/op_title.cpp"
+segment = "_DATA"
+wrapper_options = "-zPop_01"
+target_start = 0xff14
+size = 154
+functions = 0
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/op_title_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+
+[[controls]]
+unit = "op-title-data"
+source = "src/op/title/title.hpp"
+find = "\"sft1.cd2\""
+replace = "\"sft1.cd3\""
+
+[[units]]
+id = "op-character-menu-data"
+source = "src/op/charselect/menu.cpp"
+module = "th05/m_char.cpp"
+segment = "_DATA"
+target_start = 0x1182e
+size = 8
+functions = 0
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_charselect_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+
+[[controls]]
+unit = "op-character-menu-data"
+source = "src/op/charselect/menu.cpp"
+find = "\"slb1.pi\""
+replace = "\"slb2.pi\""
+
+[[units]]
+id = "op-hiscore-view-data"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "_DATA"
+target_start = 0x117f8
+size = 53
+functions = 0
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+
+[[controls]]
+unit = "op-hiscore-view-data"
+source = "src/op/hiscore/view.cpp"
+find = "\"scnum.bft\""
+replace = "\"scnum.bfu\""
+
+[[units]]
+id = "op-config-data"
+source = "src/op/config/config.cpp"
+module = "th05/cfg.cpp"
+segment = "_DATA"
+target_start = 0xff00
+size = 19
+functions = 0
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_config_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "state"]
+
+[[controls]]
+unit = "op-config-data"
+source = "src/op/config/config.hpp"
+find = "\"MIKO.CFG\""
+replace = "\"MIKO.CFH\""

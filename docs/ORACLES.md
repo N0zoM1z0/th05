@@ -93,3 +93,13 @@ padding excluded. The gapless inventory names these bytes
 `accepted-cxx-initialized-data`; vendor decisions and unknown spans are retained.
 These counters do not establish the complete authored denominator or a global
 percentage, and decoded OP/MAINE DATA grants no packed-file exactness.
+
+Whole DATA may also be reviewed from the two actual archived positive producers
+of an original bounded CODE replay, with one fresh compiled DATA negative.
+`review_saved_data.py` rejects review-of-review parents and requires matching
+source/module/flags/bindings/binary/encoding, saved actual compiler argv, complete
+source closures and deterministic compiler objects. It archives and revalidates
+the entire original parent, including excluded failures. Import mechanically
+re-derives the DATA boundaries, full raw bytes, ordered fixups, producer identity
+and negative outcome from saved artifacts. This lane explicitly reports two
+retained cold producers and one new compiler invocation.

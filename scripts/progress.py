@@ -389,6 +389,10 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
         from review_saved_scopes import validate_review
         validate_review(receipt_path, root=root, artifact_name=artifact_name,
                         validate_parent=lambda path: accept(path, root=root, artifact_name=artifact_name, validate_only=True))
+    if receipt.get("kind") == "reviewed-initialized-data-of-retained-cold-producers":
+        from review_saved_data import validate_review
+        validate_review(receipt_path, root=root, artifact_name=artifact_name,
+                        validate_parent=lambda path: accept(path, root=root, artifact_name=artifact_name, validate_only=True))
     config = context.config()
     entries = {entry["id"]: entry for entry in config["units"]}
     # A whole-manifest hash remains provenance, not a reason to invalidate
@@ -492,7 +496,8 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             raise ValueError("independent cold producer paths are required")
         for index, producer in enumerate(producers):
             source = _saved_source(work, producer)
-            if artifact_name != "main" or "binary" in entry:
+            if (artifact_name != "main" or "binary" in entry or "compiler_arguments" in result or
+                    (source / "compiler-arguments.json").exists()):
                 expected = compiler_arguments(entry, context.binary)
                 recorded = json.loads((source / "compiler-arguments.json").read_text())
                 if result.get("compiler_arguments") != [expected] * 2 or recorded.get(entry["module"]) != expected:
@@ -524,7 +529,8 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             if target_view is not None:
                 imported[-1]["target_view"] = target_view
     negative_source = _saved_source(work, negative["producer_path"])
-    if artifact_name != "main" or "binary" in control_entry:
+    if (artifact_name != "main" or "binary" in control_entry or "compiler_arguments" in negative or
+            (negative_source / "compiler-arguments.json").exists()):
         expected = compiler_arguments(control_entry, context.binary)
         recorded = json.loads((negative_source / "compiler-arguments.json").read_text())
         if negative.get("compiler_arguments") != expected or recorded.get(control_entry["module"]) != expected:

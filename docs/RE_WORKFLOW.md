@@ -39,3 +39,11 @@ negative-control owner, with unchanged identity, to prove the same strict oracle
 All original results are validated, including excluded failures. A scope must
 belong to exactly one original whole contribution; overlaps, changed controls
 and stale source/producer identities fail. No new compilation is claimed.
+
+Retained whole DATA review uses `review_saved_data.py --artifact ARTIFACT
+--from-receipt PATH --unit DATA_ID --output PATH`. It revalidates two archived
+original whole-CODE producers with identical actual compiler argv and complete
+source/binding/tool identities, then compiles exactly one fresh DATA mutation.
+It never claims fresh positive compilations. Original aggregate failures stay
+in the archived parent, and all parent results are rechecked. A parent lacking
+saved actual argv needs a focused normal replay instead.

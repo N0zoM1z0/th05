@@ -6,11 +6,11 @@
   "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-cxx-initialized-data": 2164,
+    "accepted-cxx-initialized-data": 8804,
     "accepted-cxx-instructions": 33515,
     "accepted-cxx-switch-table": 428,
     "checked-uncredited-padding": 19,
-    "unknown": 280241,
+    "unknown": 273601,
     "verified-vendor-code": 2901
   },
   "views": {
@@ -20,10 +20,11 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
+        "accepted-cxx-initialized-data": 189,
         "accepted-cxx-instructions": 21646,
         "accepted-cxx-switch-table": 306,
         "checked-uncredited-padding": 17,
-        "unknown": 121088,
+        "unknown": 120899,
         "verified-vendor-code": 2901
       },
       "intervals": [
@@ -1194,6 +1195,17 @@
         },
         {
           "start": 129969,
+          "end": 141720,
+          "kind": "unknown"
+        },
+        {
+          "start": 141720,
+          "end": 141909,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "main-stage-setup-data"
+        },
+        {
+          "start": 141909,
           "end": 145958,
           "kind": "unknown"
         }
@@ -1206,11 +1218,11 @@
       "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
       "original_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
       "byte_counts": {
-        "accepted-cxx-initialized-data": 2164,
+        "accepted-cxx-initialized-data": 8615,
         "accepted-cxx-instructions": 9052,
         "accepted-cxx-switch-table": 106,
         "checked-uncredited-padding": 2,
-        "unknown": 66474
+        "unknown": 60023
       },
       "intervals": [
         {
@@ -1517,6 +1529,56 @@
         },
         {
           "start": 65225,
+          "end": 65280,
+          "kind": "unknown"
+        },
+        {
+          "start": 65280,
+          "end": 65299,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-config-data"
+        },
+        {
+          "start": 65299,
+          "end": 65300,
+          "kind": "unknown"
+        },
+        {
+          "start": 65300,
+          "end": 65454,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-title-data"
+        },
+        {
+          "start": 65454,
+          "end": 71671,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-music-data"
+        },
+        {
+          "start": 71671,
+          "end": 71672,
+          "kind": "unknown"
+        },
+        {
+          "start": 71672,
+          "end": 71725,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-hiscore-view-data"
+        },
+        {
+          "start": 71725,
+          "end": 71726,
+          "kind": "unknown"
+        },
+        {
+          "start": 71726,
+          "end": 71734,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-character-menu-data"
+        },
+        {
+          "start": 71734,
           "end": 77798,
           "kind": "unknown"
         }

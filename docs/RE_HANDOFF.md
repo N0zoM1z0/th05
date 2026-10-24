@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **102 bounded C++ CODE/DATA units / 226 complete function occurrences**,
-**36,107 authored bytes exact**: 33,943 CODE and 2,164 initialized DATA.
+Current acceptance: **108 bounded C++ CODE/DATA units / 226 complete function occurrences**,
+**42,747 authored bytes exact**: 33,943 CODE and 8,804 initialized DATA.
 CODE is 33,515 instruction plus 428 semantic compiler-table bytes.
-Complete compared extents total 36,126; 19 checked padding bytes receive
-no credit. MAIN has 150 functions / 21,952 CODE / 0 DATA;
-OP 53 / 9,158 / 2,164; MAINE 23 / 2,833 / 0.
+Complete compared extents total 42,766; 19 checked padding bytes receive
+no credit. MAIN has 150 functions / 21,952 CODE / 189 DATA;
+OP 53 / 9,158 / 8,615; MAINE 23 / 2,833 / 0.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -47,6 +47,8 @@ All paths below are under private `.analysis/unit-replays/`.
 | Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
 | Eight small MAIN owners | `main-slowdown-a`, `main-hud-hp-a`, `main-player-position-a`, `main-bullet-pattern-a`, `main-scroll-convert-a`, `main-tile-render-a`, `main-midboss-invalidate-b`, `main-boss-backdrop-c` |
 | OP initialized UI/state DATA | `op-setup-data-a`, `op-main-data-a` |
+| OP music/title/character/score/config DATA | `op-music-data-retained-a`, `op-title-data-retained-a`, `op-character-menu-data-retained-a`, `op-hiscore-view-data-retained-a`, `op-config-data-retained-a` |
+| MAIN stage initialized DATA and refreshed CODE evidence | `main-stage-data-a` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -97,9 +99,15 @@ The actual OMF DATA SEGDEF must have complete nonoverlapping LEDATA coverage;
 BSS, assets, CODE tables and unproved transformations are rejected. Each DATA
 unit requires its own compiled DATA mutation; a CODE-only change cannot prove
 it. Focus one DATA unit per replay; positives sharing a TU still compile once.
-Current accepted DATA: OP setup 1,075 bytes / 18 fixups, main menu 1,089 / 26.
-Both real CP932 producers and actual filename mutations pass. Total DATA 2,164
-is reported separately from CODE; no original BSS is credited.
+Current accepted DATA: OP setup 1,075 bytes, main menu 1,089, music 6,217,
+title 154, character selection 8, score viewer 53 and configuration 19; MAIN
+stage setup 189. Total DATA 8,804 is reported separately from CODE. Five new
+OP DATA owners reuse their two archived, revalidated actual CODE producers and
+compile only one fresh DATA negative each. MAIN stage uses a fresh combined
+CODE/DATA replay because its older CODE evidence lacked saved actual argv.
+No original BSS is credited. `scripts/review_saved_data.py` preserves the full
+original parent, including any failed CODE results, and validates every saved
+MZ/MAP/OMF and the complete canonical/encoded dependency closure.
 
 New Japanese owners opt into `source_encoding = "cp932"`. Canonical maintained
 inputs and snapshots stay UTF8; real compiler bytes have separate identities.
