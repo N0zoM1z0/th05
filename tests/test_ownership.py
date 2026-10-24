@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from ownership import partition, validate_partition
+from ownership import partition, validate_partition, overlay_vendor
 
 
 class OwnershipTests(unittest.TestCase):
@@ -44,6 +44,28 @@ class OwnershipTests(unittest.TestCase):
                        [{"start": 0, "end": 5}, {"start": 4, "end": 10}]):
             with self.subTest(pieces=pieces), self.assertRaises(ValueError):
                 validate_partition(10, pieces)
+
+    def test_vendor_replaces_only_its_exact_unknown_range(self):
+        pieces = partition(20, [self.entry(10, 5)])
+        claims = [{"start": 2, "end": 7, "kind": "verified-vendor-code", "member": "strcmp"}]
+        rows = overlay_vendor(20, pieces, claims)
+        self.assertEqual([(r["start"], r["end"], r["kind"]) for r in rows], [
+            (0, 2, "unknown"), (2, 7, "verified-vendor-code"), (7, 10, "unknown"),
+            (10, 15, "accepted-cxx-instructions"), (15, 20, "unknown")])
+
+    def test_vendor_cannot_displace_source_tables_or_padding(self):
+        pieces = partition(20, [self.entry(5, 8, alignment_offsets=[7], code_data_ranges=[
+            {"offset": 4, "size": 2, "kind": "compiler-switch-table"}])])
+        for start in (5, 9, 12):
+            with self.subTest(start=start), self.assertRaises(ValueError):
+                overlay_vendor(20, pieces, [{"start": start, "end": start + 1,
+                    "kind": "verified-vendor-code", "member": "vendor"}])
+
+    def test_duplicate_and_out_of_bounds_vendor_claims_are_rejected(self):
+        row = {"start": 0, "end": 4, "kind": "verified-vendor-code", "member": "vendor"}
+        for claims in ([row, row], [{**row, "start": -1}], [{**row, "end": 21}]):
+            with self.subTest(claims=claims), self.assertRaises(ValueError):
+                overlay_vendor(20, partition(20, []), claims)
 
 
 if __name__ == "__main__":

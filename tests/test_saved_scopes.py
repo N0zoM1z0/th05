@@ -95,6 +95,44 @@ class SavedScopeTests(unittest.TestCase):
         self.assertEqual(receipt["negative_control"]["comparison"]["size"], 4)
         self.assertEqual((self.parent / "receipt.json").read_bytes(), original)
 
+    def test_multiple_contributions_can_retain_the_unchanged_real_control_owner(self):
+        first_parent = {**self.entry, "size": 8, "functions": 2}
+        control_parent = {**self.entry, "id": "control-whole", "segment": "B_TEXT",
+                          "target_start": 8, "size": 8, "functions": 2}
+        parent = json.loads((self.parent / "receipt.json").read_text())
+        second_result = copy.deepcopy(self.parent_result)
+        second_result["id"] = "control-whole"
+        for row in second_result["rounds"]:
+            row["candidate_start"] = 8
+        parent["results"].append(second_result)
+        parent["negative_control"]["unit_id"] = "control-whole"
+        parent["negative_control"]["mutation"]["unit"] = "control-whole"
+        (self.parent / "receipt.json").write_text(json.dumps(parent))
+        (self.parent / "exact-units.toml").write_text(manifest({
+            "artifact": "th05-main", "units": [first_parent, control_parent]}))
+        self.config["units"] = [self.first, control_parent]
+        self.config["controls"] = [{**self.mutation, "unit": "control-whole"}]
+        for label in ("a", "b", "negative"):
+            path = self.parent / label / "source/units.map"
+            path.write_text(path.read_text().replace("0010 C=CODE", "0008 C=CODE").replace(
+                " Address Publics by Value", " 0000:0008 0008 C=CODE S=B_TEXT G=GROUP M=th05/a.cpp\n Address Publics by Value"))
+        receipt = self.derive()
+        self.assertTrue(receipt["pass"])
+        self.assertEqual(receipt["compiler_invocations"], 0)
+        self.assertEqual([row["id"] for row in receipt["results"]], ["first", "control-whole"])
+        self.assertEqual(receipt["negative_control"]["unit_id"], "control-whole")
+        self.assertEqual(receipt["negative_control"]["entry_sha256"], review.entry_digest(control_parent))
+
+    def test_a_retained_whole_control_cannot_be_changed_or_overlap_a_new_scope(self):
+        context = UnitContext(self.root)
+        review.check_scope_entries(self.entry, [self.entry], context, retained_control="whole")
+        with self.assertRaises(ValueError):
+            review.check_scope_entries(self.entry, [{**self.entry, "functions": 3}], context,
+                                       retained_control="whole")
+        with self.assertRaisesRegex(ValueError, "overlap"):
+            review.check_scope_entries(self.entry, [self.entry, self.first], context,
+                                       retained_control="whole")
+
     def test_context_changes_bounds_overlap_and_classification_are_rejected(self):
         context = UnitContext(self.root)
         for replacement in ({"source": "src/other.cpp"}, {"module": "th05/other.cpp"}, {"binary": "O"},

@@ -13,11 +13,11 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **204 C++ functions / 32,000 authored code bytes** pass two cold
+The first **214 C++ functions / 33,486 authored code bytes** pass two cold
 builds, complete raw unit comparison, relocation checks and a compiled negative
-control. Their complete extents contain 32,019 bytes including eighteen excluded
+control. Their complete extents contain 33,505 bytes including 19 excluded
 padding bytes. Authored code includes 428 bytes of compiler-generated switch
-tables, reproduced from semantic C++ switches; instruction bytes total 31,572.
+tables, reproduced from semantic C++ switches; instruction bytes total 33,058.
 The oracle supplies explicit original external-symbol bindings; whole-program
 placement and standalone linkage remain open.
 
@@ -26,6 +26,8 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md). The
 [gapless ownership inventory](resources/ownership.json) retains every unknown
 interval across all four targets; it grants no inferred vendor exclusions.
+[Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md)
+classifies 2,901 third-party bytes separately, with no authored source credit.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

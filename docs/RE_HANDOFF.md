@@ -3,10 +3,10 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **83 bounded C++ units / 204 complete function occurrences**,
-32,019 compared bytes and 32,000 authored code bytes: 31,572 instructions plus
-428 semantic compiler-table bytes. Eighteen checked padding bytes receive no
-credit. MAIN has 128 functions / 20,009 code bytes, decoded OP 53 / 9,158,
+Current acceptance: **92 bounded C++ units / 214 complete function occurrences**,
+33,505 compared bytes and 33,486 authored code bytes: 33,058 instructions plus
+428 semantic compiler-table bytes. 19 checked padding bytes receive no
+credit. MAIN has 138 functions / 21,495 code bytes, decoded OP 53 / 9,158,
 decoded MAINE 23 / 2,833. Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -42,6 +42,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Sara complete stage-one behavior | `main-sara-a` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
+| Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -59,6 +60,18 @@ Standalone ZUN `-M` is separately accepted: 311 complete COM bytes (142 code,
 169 data), from semantic ASM with inferred original style. Evidence:
 `.analysis/zun-memory/first-b` and `config/zun_memory_acceptance.json`. It does
 not contribute C++ credit or establish complete outer ZUN equality.
+
+## Ownership inventory
+
+`resources/ownership.json` covers all 319,268 observed payload/COM bytes.
+Every unclassified interval remains unknown. Only 31 complete CL.LIB CODE
+contributions / 2,901 bytes are separately reviewed as third-party, with
+pinned native OMF/FIXUPP evidence and explicit member decisions in
+`config/reviewed_vendor_units.json`. Two members with unwritten CODE ranges
+remain unknown. No vendor byte contributes authored source credit.
+`scripts/review_vendor.py --check` replays private inputs without compiling;
+`--structural-check` verifies public metadata only. Regenerate the inventory
+with `scripts/ownership.py --write` after accepted source changes.
 
 ## Incremental work
 
@@ -109,6 +122,11 @@ Eight music suffix functions add 646 bytes after a new focused replay with
 an accepted comment-loader negative; the previous suffix negative belonged to
 an excluded menu function and could not support subset acceptance. Polygon
 update (502 bytes) and music menu (837) remain raw-exact but ordered-inexact.
+Shinki adds ten complete functions / 1,486 instruction bytes. The mixed parent
+retains raw-exact but ordered-inexact later code. Seven functions are reviewed
+from unchanged retained producers, carrying the real unchanged negative owner;
+no new compiler invocation is claimed. Static phase102, ball update220 and four
+ordered-inexact functions (386/169/802/959) remain unaccepted.
 Generic Boss adds six complete functions / 352 bytes. The original 414-byte
 defeat function is 408 under natural C++ because TC merges two common call
 tails; the original 43-byte collision function is 46 with ordinary signed

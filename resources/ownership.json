@@ -3,13 +3,14 @@
   "kind": "gapless-observed-coordinate-inventory",
   "authored_denominator": null,
   "percentage": null,
-  "unknown_policy": "retain every unknown interval; no inferred vendor, asset, runtime or ASM exclusion",
+  "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-cxx-instructions": 31572,
+    "accepted-cxx-instructions": 33058,
     "accepted-cxx-switch-table": 428,
     "checked-uncredited-padding": 19,
-    "unknown": 287249
+    "unknown": 282862,
+    "verified-vendor-code": 2901
   },
   "views": {
     "main": {
@@ -18,14 +19,297 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-cxx-instructions": 19703,
+        "accepted-cxx-instructions": 21189,
         "accepted-cxx-switch-table": 306,
         "checked-uncredited-padding": 17,
-        "unknown": 125932
+        "unknown": 121545,
+        "verified-vendor-code": 2901
       },
       "intervals": [
         {
           "start": 0,
+          "end": 17923,
+          "kind": "unknown"
+        },
+        {
+          "start": 17923,
+          "end": 17984,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "_stpcpy"
+        },
+        {
+          "start": 17984,
+          "end": 18004,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "abort"
+        },
+        {
+          "start": 18004,
+          "end": 18053,
+          "kind": "unknown"
+        },
+        {
+          "start": 18053,
+          "end": 18075,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "del"
+        },
+        {
+          "start": 18075,
+          "end": 18097,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "delarray"
+        },
+        {
+          "start": 18097,
+          "end": 18462,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "dosenv"
+        },
+        {
+          "start": 18462,
+          "end": 18510,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "dosgdriv"
+        },
+        {
+          "start": 18510,
+          "end": 18722,
+          "kind": "unknown"
+        },
+        {
+          "start": 18722,
+          "end": 18762,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "getvect"
+        },
+        {
+          "start": 18762,
+          "end": 18936,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "h_ldiv"
+        },
+        {
+          "start": 18936,
+          "end": 18969,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "h_llsh"
+        },
+        {
+          "start": 18969,
+          "end": 19065,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "h_padd"
+        },
+        {
+          "start": 19065,
+          "end": 19147,
+          "kind": "unknown"
+        },
+        {
+          "start": 19147,
+          "end": 19168,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "isatty"
+        },
+        {
+          "start": 19168,
+          "end": 19967,
+          "kind": "unknown"
+        },
+        {
+          "start": 19967,
+          "end": 19990,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "n_lxmul"
+        },
+        {
+          "start": 19990,
+          "end": 20023,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "n_pcmp"
+        },
+        {
+          "start": 20023,
+          "end": 23355,
+          "kind": "unknown"
+        },
+        {
+          "start": 23355,
+          "end": 23414,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "_access"
+        },
+        {
+          "start": 23414,
+          "end": 23622,
+          "kind": "unknown"
+        },
+        {
+          "start": 23622,
+          "end": 23655,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "chmoda"
+        },
+        {
+          "start": 23655,
+          "end": 23864,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "fflush"
+        },
+        {
+          "start": 23864,
+          "end": 25266,
+          "kind": "unknown"
+        },
+        {
+          "start": 25266,
+          "end": 25423,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "getdcwd"
+        },
+        {
+          "start": 25423,
+          "end": 25535,
+          "kind": "unknown"
+        },
+        {
+          "start": 25535,
+          "end": 25575,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "memcmp"
+        },
+        {
+          "start": 25575,
+          "end": 25611,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "memcpy"
+        },
+        {
+          "start": 25611,
+          "end": 25683,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "memset"
+        },
+        {
+          "start": 25683,
+          "end": 25802,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "movmem"
+        },
+        {
+          "start": 25802,
+          "end": 26484,
+          "kind": "unknown"
+        },
+        {
+          "start": 26484,
+          "end": 26547,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "strcat"
+        },
+        {
+          "start": 26547,
+          "end": 26595,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "strcmp"
+        },
+        {
+          "start": 26595,
+          "end": 26636,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "strcpy"
+        },
+        {
+          "start": 26636,
+          "end": 26701,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "stricmp"
+        },
+        {
+          "start": 26701,
+          "end": 26734,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "strlen"
+        },
+        {
+          "start": 26734,
+          "end": 26811,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "strrchr"
+        },
+        {
+          "start": 26811,
+          "end": 27323,
+          "kind": "unknown"
+        },
+        {
+          "start": 27323,
+          "end": 27836,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "xalloc"
+        },
+        {
+          "start": 27836,
+          "end": 41413,
+          "kind": "unknown"
+        },
+        {
+          "start": 41413,
+          "end": 41724,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "doscmd"
+        },
+        {
+          "start": 41724,
+          "end": 42657,
+          "kind": "unknown"
+        },
+        {
+          "start": 42657,
+          "end": 42692,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "execl"
+        },
+        {
+          "start": 42692,
+          "end": 42724,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "setblock"
+        },
+        {
+          "start": 42724,
           "end": 50553,
           "kind": "unknown"
         },
@@ -682,6 +966,85 @@
         },
         {
           "start": 109182,
+          "end": 109263,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-balls-add"
+        },
+        {
+          "start": 109263,
+          "end": 109483,
+          "kind": "unknown"
+        },
+        {
+          "start": 109483,
+          "end": 109754,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-pattern-a"
+        },
+        {
+          "start": 109754,
+          "end": 109856,
+          "kind": "unknown"
+        },
+        {
+          "start": 109856,
+          "end": 109950,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-random-kunai"
+        },
+        {
+          "start": 109950,
+          "end": 110046,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-blue-stacks"
+        },
+        {
+          "start": 110046,
+          "end": 110432,
+          "kind": "unknown"
+        },
+        {
+          "start": 110432,
+          "end": 110614,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-rain-spreads"
+        },
+        {
+          "start": 110614,
+          "end": 110783,
+          "kind": "unknown"
+        },
+        {
+          "start": 110783,
+          "end": 110963,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-wings-purple"
+        },
+        {
+          "start": 110963,
+          "end": 111172,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-aimed-symmetric"
+        },
+        {
+          "start": 111172,
+          "end": 111974,
+          "kind": "unknown"
+        },
+        {
+          "start": 111974,
+          "end": 112289,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-circles-spirals"
+        },
+        {
+          "start": 112289,
+          "end": 112347,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shinki-float"
+        },
+        {
+          "start": 112347,
           "end": 114254,
           "kind": "unknown"
         },
@@ -765,7 +1128,8 @@
           "end": 145958,
           "kind": "unknown"
         }
-      ]
+      ],
+      "vendor_review_sha256": "3d854c0b4f4c8690093a4fe3e63b7306dc81be3caa189c6b9d2bd000290d6125"
     },
     "op": {
       "kind": "retained-diet-decoded-load-module",

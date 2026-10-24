@@ -32,3 +32,10 @@ Default compiler binary contexts are M/O/E; a new unit may explicitly set
 contexts, so follow its real producer rather than forcing every shared TU to E.
 `build_reference.py op` or `maine` builds only that artifact's calibration
 closure. Calibration and shape surveys are routing evidence with zero credit.
+
+Retained-producer scope review can project complete functions from multiple real
+CODE contributions of the same saved replay. It may carry the identical complete
+negative-control owner, with unchanged identity, to prove the same strict oracle.
+All original results are validated, including excluded failures. A scope must
+belong to exactly one original whole contribution; overlaps, changed controls
+and stale source/producer identities fail. No new compilation is claimed.

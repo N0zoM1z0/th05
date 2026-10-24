@@ -810,3 +810,157 @@ unit = "main-midboss-score-bonus"
 source = "src/main/midboss/default.hpp"
 find = "MIDBOSS_BONUS_UNIT_VALUE = 1280;"
 replace = "MIDBOSS_BONUS_UNIT_VALUE = 1281;"
+
+[[units]]
+id = "main-shinki-balls-add"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_BALLS_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1aa7e
+size = 81
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "b6balls_add()"
+function_end_symbol = "b6balls_update()"
+
+[[units]]
+id = "main-shinki-pattern-a"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_PATTERN_A_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1abab
+size = 271
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+
+[[units]]
+id = "main-shinki-update"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1acba
+size = 3552
+alignment_offsets = []
+padding_bytes = [{ offset = 3525, value = 0 }]
+code_data_ranges = [{ offset = 3526, size = 26, kind = "compiler-switch-table" }]
+functions = 12
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+
+[[controls]]
+unit = "main-shinki-pattern-a"
+source = "src/main/boss/shinki/shinki.cpp"
+find = "PHASE_2_3_PATTERN_START_FRAME + 28"
+replace = "PHASE_2_3_PATTERN_START_FRAME + 32"
+
+[[units]]
+id = "main-shinki-random-kunai"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1ad20
+size = 94
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_random_directional_and_k()"
+function_end_symbol = "pattern_dense_blue_stacks()"
+
+[[units]]
+id = "main-shinki-blue-stacks"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1ad7e
+size = 96
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_dense_blue_stacks()"
+function_end_symbol = "pattern_wing_preparation()"
+
+[[units]]
+id = "main-shinki-rain-spreads"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1af60
+size = 182
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_random_rain_and_spreads_()"
+function_end_symbol = "pattern_cheetos_within_spread_wa()"
+
+[[units]]
+id = "main-shinki-wings-purple"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1b0bf
+size = 180
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_wings_to_purple()"
+function_end_symbol = "pattern_aimed_b6balls_and_symmet()"
+
+[[units]]
+id = "main-shinki-aimed-symmetric"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1b173
+size = 209
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_aimed_b6balls_and_symmet()"
+function_end_symbol = "pattern_devil()"
+
+[[units]]
+id = "main-shinki-circles-spirals"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1b566
+size = 315
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "pattern_circles_and_alternating_()"
+function_end_symbol = "shinki_move_float()"
+
+[[units]]
+id = "main-shinki-float"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1b6a1
+size = 58
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_bindings.asm"
+function_symbol = "shinki_move_float()"
+function_end_symbol = "shinki_update()"

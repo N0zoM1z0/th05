@@ -2,8 +2,9 @@
 
 This survey records the pinned targets and existing calibration
 outputs, recorded on 2026-10-24. **The authored-byte denominator is still
-unreviewed.** None of the candidates below changes progress, acceptance or
-exclusion ledgers. Exact vendor-byte observations are not authored-source credit.
+unreviewed.** The initial sections record candidates; the later reviewed CL.LIB inventory
+classifies 31 complete contributions with direct object evidence. Vendor-byte
+observations grant no authored-source credit.
 
 ## Coordinate systems and complete outer bounds
 
@@ -230,12 +231,12 @@ code/data boundaries remain open.
 
 ## Next ownership work
 
-1. Create a gapless artifact-local interval ledger whose initial state is
-   unknown; keep origin, boundary confidence, source presence and acceptance
-   separate. Split physical bytes only with retained complete-boundary evidence.
-2. Review the 33 vendor candidates against their actual pinned library members
-   and complete MAP contributions before accepting exclusions. Bind startup
-   externals rather than normalizing away its mismatches.
+1. Maintain the gapless artifact-local inventory, initially unknown. Keep origin,
+   boundary confidence, source presence and acceptance separate; split bytes only
+   with retained complete-boundary evidence.
+2. Finish the two deferred vendor CODE reservations. The other 31 candidates
+   now have verified complete-member evidence and explicit reviewed decisions.
+   Bind startup externals rather than normalizing away mismatches.
 3. Use bounded source/listing and target comparisons for the master.lib prefix,
    compiler tails and DGROUP. Keep interleaved game helpers and library data
    separate. Reuse the already accepted player/tuning boundaries without
@@ -261,10 +262,12 @@ not added to decoded payloads. Embedded ZUN children are not counted twice.
 
 The inventory projects only source-current accepted C++ intervals and their
 explicit switch-table/padding classifications. All remaining intervals stay
-`unknown`, including vendor candidates, assets, runtime data and ASM whose
+`unknown`, including unreviewed vendor candidates, assets, runtime data and ASM whose
 global ownership is still unreviewed. In particular, the separately accepted
-ZUN memory child retains its unreviewed global ownership status here. No
-vendor candidate is excluded merely because a reference name or shape matches.
+ZUN memory child retains its unreviewed global ownership status here. Only the 31 complete CL.LIB contributions (2,901 bytes) in the
+[reviewed library evidence](CL_VENDOR_OWNERSHIP.md) are explicitly classified
+third-party. Names or shape alone never justify an exclusion. Two members with
+unwritten CODE reservations remain unknown.
 Both the authored denominator and percentage remain null.
 
 `python3 scripts/ownership.py --write` regenerates the inventory after progress

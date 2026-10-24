@@ -66,6 +66,61 @@ def validate_partition(size: int, pieces: list[dict]) -> None:
         raise ValueError("ownership partition does not cover the entire observed view")
 
 
+def overlay_vendor(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Replace only unknown ranges with complete, independently reviewed vendor claims."""
+    validate_partition(size, pieces)
+    known = [row for row in pieces if row["kind"] != "unknown"]
+    for row in claims:
+        if (row.get("kind") != "verified-vendor-code" or
+                type(row.get("start")) is not int or type(row.get("end")) is not int or
+                not 0 <= row["start"] < row["end"] <= size or not row.get("member")):
+            raise ValueError("invalid complete vendor ownership claim")
+    output = []
+    cursor = 0
+    for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor:
+            raise ValueError("vendor claim overlaps accepted source or another ownership claim")
+        if cursor < row["start"]:
+            output.append({"start": cursor, "end": row["start"], "kind": "unknown"})
+        output.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        output.append({"start": cursor, "end": size, "kind": "unknown"})
+    validate_partition(size, output)
+    return output
+
+
+def reviewed_vendor(root: Path, *, view: dict, verify_targets: bool) -> tuple[list[dict], str | None]:
+    decision_path = root / "config/reviewed_vendor_units.json"
+    if not decision_path.exists():
+        return [], None
+    from review_vendor import validate_metadata, review_inputs
+
+    decision = json.loads(decision_path.read_text())
+    proof_bytes = (root / "config/vendor_ownership.json").read_bytes()
+    proof = json.loads(proof_bytes)
+    validate_metadata(proof, root=root)  # Public verifier/parser/toolchain identities, bounds and actions.
+    if (decision.get("schema_version") != 1 or decision.get("artifact") != "th05-main" or
+            decision.get("evidence_sha256") != digest_bytes(proof_bytes) or
+            proof["target_payload_sha256"] != view["sha256"] or
+            decision.get("classification") != "third-party-library-code"):
+        raise ValueError("reviewed vendor decision is stale or belongs to a different target")
+    selected = decision.get("members")
+    if (not isinstance(selected, list) or not selected or
+            any(not isinstance(name, str) or not name for name in selected) or
+            len(selected) != len(set(selected))):
+        raise ValueError("reviewed vendor decision requires unique explicit members")
+    proposed = {row["member"]: row for row in proof["contributions"]}
+    if any(name not in proposed for name in selected):
+        raise ValueError("deferred or unverified vendor member cannot be excluded")
+    if verify_targets and review_inputs(root) != proof:
+        raise ValueError("native private vendor replay disagrees with reviewed evidence")
+    claims = [{"start": proposed[name]["start"], "end": proposed[name]["end"],
+               "kind": "verified-vendor-code", "library": proof["library"], "member": name}
+              for name in selected]
+    return claims, digest_bytes(decision_path.read_bytes())
+
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -93,11 +148,17 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         elif (view["size"], view["sha256"]) != (target["size"], target["sha256"]):
             raise ValueError("ZUN coordinates must cover the original COM, without double counting children")
         pieces = partition(view["size"], entries)
+        review_sha = None
+        if name == "main":
+            claims, review_sha = reviewed_vendor(root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims)
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
         views[name] = {**view, "original_sha256": target["sha256"],
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
+        if review_sha:
+            views[name]["vendor_review_sha256"] = review_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])
@@ -107,7 +168,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
             "authored_denominator": None, "percentage": None,
-            "unknown_policy": "retain every unknown interval; no inferred vendor, asset, runtime or ASM exclusion",
+            "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}
 

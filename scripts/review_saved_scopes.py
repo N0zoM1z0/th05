@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Review complete function scopes of one retained whole-CODE replay, with no build.
+"""Review complete function scopes of retained whole-CODE producers, with no build.
 
 The original two cold producers and negative producer are archived unchanged.
 This is a review of those producers, never a claim of new cold compilation.
@@ -39,12 +39,16 @@ def producer_identity(entry: dict, context: UnitContext) -> tuple:
             bindings_source(entry), unit_binary(entry, context.binary), source_encoding(entry), entry["segment"])
 
 
-def check_scope_entries(parent_entry: dict, entries: list[dict], context: UnitContext) -> None:
-    if function_scoped(parent_entry) or not entries:
+def check_scope_entries(parent_entry: dict, entries: list[dict], context: UnitContext,
+                        *, retained_control: str | None = None) -> None:
+    if (function_scoped(parent_entry) or parent_entry.get("extent_kind", "code") != "code" or not entries):
         raise ValueError("review requires a whole-CODE parent and nonempty complete function scopes")
     covered = []
     for entry in entries:
-        if not function_scoped(entry) or producer_identity(entry, context) != producer_identity(parent_entry, context):
+        retained = (entry["id"] == retained_control and entry_digest(entry) == entry_digest(parent_entry))
+        if ((not function_scoped(entry) and not retained) or
+                entry.get("extent_kind", "code") != "code" or
+                producer_identity(entry, context) != producer_identity(parent_entry, context)):
             raise ValueError("reviewed scope changes actual source/module/flags/bindings/binary/encoding/segment")
         start, size = entry["target_start"], entry["size"]
         if (type(start) is not int or type(size) is not int or size <= 0 or start < parent_entry["target_start"] or
@@ -73,32 +77,53 @@ def derive_review(root: Path, work: Path, config: dict, selected: list[str]) -> 
     parent_work = work / "parent"
     parent_path = parent_work / "receipt.json"
     parent = json.loads(parent_path.read_text())
-    if parent.get("kind") != PARENT_KIND or len(parent.get("results", [])) != 1:
-        raise ValueError("only one original bounded whole-CODE producer group may be reviewed")
+    if parent.get("kind") != PARENT_KIND or not parent.get("results"):
+        raise ValueError("review requires original bounded whole-CODE producers")
     parent_config = tomllib.loads((parent_work / "exact-units.toml").read_text())
-    parent_result = parent["results"][0]
     parent_entries = {entry["id"]: entry for entry in parent_config["units"]}
-    parent_entry = parent_entries[parent_result["id"]]
-    if (not parent_result["object_normalized_equal"] or
-            not all(row["raw_exact"] for row in parent_result["rounds"]) or
-            parent["negative_control"]["unit_id"] != parent_entry["id"]):
-        raise ValueError("retained parent must have two deterministic raw-exact whole-CODE producers and its own negative")
+    parents = []
+    for result in parent["results"]:
+        entry = parent_entries[result["id"]]
+        # The original parent is still validated in full, including unselected
+        # results. Only whole CODE contributions can supply new function scopes.
+        if function_scoped(entry) or entry.get("extent_kind", "code") != "code":
+            continue
+        if (not result["object_normalized_equal"] or len(result["rounds"]) != 2 or
+                not all(row["raw_exact"] for row in result["rounds"])):
+            raise ValueError("retained parents must be deterministic raw-exact whole-CODE producers")
+        parents.append((entry, result))
     configured = {entry["id"]: entry for entry in config["units"]}
     if not selected or len(selected) != len(set(selected)) or set(selected) - configured.keys():
         raise ValueError("review contains empty, duplicate or unknown new scope IDs")
     entries = [configured[name] for name in selected]
-    check_scope_entries(parent_entry, entries, context)
+    if not any(function_scoped(entry) for entry in entries):
+        raise ValueError("review must derive at least one complete function scope")
+    owners = {}
+    control_id = parent["negative_control"]["unit_id"]
+    for entry in entries:
+        matches = [(whole, result) for whole, result in parents
+                   if producer_identity(entry, context) == producer_identity(whole, context) and
+                   whole["target_start"] <= entry["target_start"] and
+                   entry["target_start"] + entry["size"] <= whole["target_start"] + whole["size"]]
+        if len(matches) != 1:
+            raise ValueError("reviewed scope must belong to exactly one actual parent contribution")
+        owners[entry["id"]] = matches[0]
+    for whole, _ in parents:
+        children = [entry for entry in entries if owners[entry["id"]][0]["id"] == whole["id"]]
+        if children:
+            check_scope_entries(whole, children, context, retained_control=control_id)
     artifact, target, target_view = load_unit_target(context, config)
-    producers = [parent_work / path for path in parent_result["producer_paths"]]
-    candidates = [parse_mz((source / "units.exe").read_bytes()) for source in producers]
     results = []
     for entry in entries:
+        parent_entry, parent_result = owners[entry["id"]]
+        producers = [parent_work / path for path in parent_result["producer_paths"]]
+        candidates = [parse_mz((source / "units.exe").read_bytes()) for source in producers]
         comparisons = []
         for index, (source, candidate) in enumerate(zip(producers, candidates)):
             scope = map_unit_scope(source / "units.map", entry)
             parent_comparison = parent_result["rounds"][index]
-            if (scope["contribution_start"] != parent_comparison["candidate_start"] or
-                    scope["contribution_size"] != parent_entry["size"] or
+            if (scope.get("contribution_start", scope["start"]) != parent_comparison["candidate_start"] or
+                    scope.get("contribution_size", scope["size"]) != parent_entry["size"] or
                     scope["start"] - parent_comparison["candidate_start"] != entry["target_start"] - parent_entry["target_start"]):
                 raise ValueError("function MAP placement is not the same relative scope inside its actual parent contribution")
             comparison = compare_mapped_unit(target, candidate, source / "units.map", entry)
