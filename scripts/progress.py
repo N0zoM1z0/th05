@@ -72,19 +72,22 @@ def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
             "instruction_bytes": authored - code_data, "padding_bytes": len(padding)}
 
 
-def validate_result(entry: dict, result: dict) -> None:
+def validate_result(entry: dict, result: dict, *, require_exact: bool = True) -> None:
     classify_extent(entry)
     scoped = function_scoped(entry)
-    if result["id"] != entry["id"] or not result["exact"] or not result["object_normalized_equal"]:
+    if (result["id"] != entry["id"] or type(result["exact"]) is not bool or
+            (require_exact and not result["exact"]) or result["object_normalized_equal"] is not True):
         raise ValueError("unit receipt does not accept the configured source")
     if len(result["rounds"]) != 2 or len(result["omfs"]) != 2:
         raise ValueError("two independent cold rounds are required")
-    hashes = set()
+    hashes, candidates = set(), set()
     for comparison in result["rounds"]:
         if (comparison["size"] != entry["size"] or comparison["target_start"] != entry["target_start"]
-                or not all(comparison[k] for k in ("exact", "raw_exact", "fixups_exact"))
-                or comparison["target_sha256"] != comparison["candidate_sha256"]
-                or comparison["target_fixups"] != comparison["candidate_fixups"]):
+                or any(type(comparison[k]) is not bool for k in ("exact", "raw_exact", "fixups_exact"))
+                or comparison["raw_exact"] != (comparison["target_sha256"] == comparison["candidate_sha256"])
+                or comparison["fixups_exact"] != (comparison["target_fixups"] == comparison["candidate_fixups"])
+                or comparison["exact"] != (comparison["raw_exact"] and comparison["fixups_exact"])
+                or (require_exact and not comparison["exact"])):
             raise ValueError("raw bytes, boundaries or relocation evidence disagree")
         if scoped:
             scope = comparison.get("map_scope", {})
@@ -104,8 +107,13 @@ def validate_result(entry: dict, result: dict) -> None:
                     ("function_end_symbol" in entry and scope.get("next_function_symbol") != entry["function_end_symbol"])):
                 raise ValueError("complete function next-boundary evidence disagrees")
         hashes.add(comparison["target_sha256"])
+        candidates.add((comparison["candidate_sha256"], tuple(comparison["candidate_fixups"])))
     if len(hashes) != 1:
         raise ValueError("cold extent bytes are nondeterministic")
+    if len(candidates) != 1:
+        raise ValueError("cold candidate bytes or ordered fixups are nondeterministic")
+    if result["exact"] != all(row["exact"] for row in result["rounds"]):
+        raise ValueError("unit aggregate exact verdict disagrees with its cold evidence")
     if len({obj["dependency_timestamp_normalized_sha256"] for obj in result["omfs"]}) != 1:
         raise ValueError("cold OMF objects are nondeterministic")
     if any(obj["translator_comments"] != ["TC86 Borland C++ 4.02"] for obj in result["omfs"]):
@@ -115,6 +123,43 @@ def validate_result(entry: dict, result: dict) -> None:
 def validate_control(control: dict) -> None:
     if control["raw_exact"] or control["exact"] or control["target_sha256"] == control["candidate_sha256"]:
         raise ValueError("compiled negative control was not rejected")
+
+
+def select_accept_units(results: dict, requested: list[str] | None, control_id: str) -> set[str]:
+    if requested is None:
+        selected = set(results)
+    else:
+        if not requested or len(requested) != len(set(requested)) or set(requested) - results.keys():
+            raise ValueError("accept subset contains empty, duplicate or unknown unit IDs")
+        selected = set(requested)
+    if control_id not in selected:
+        raise ValueError("accept subset must include the compiled negative-control owner")
+    if any(results[name].get("exact") is not True for name in selected):
+        raise ValueError("every accepted unit must have an exact real replay result")
+    return selected
+
+
+def validate_receipt_aggregate(receipt: dict, results: dict, control: dict) -> bool:
+    """Call after saved producers have reproduced every result, selected or not."""
+    observed = all(result["exact"] for result in results.values()) and not control["exact"] and not control["raw_exact"]
+    if type(receipt.get("pass")) is not bool or receipt["pass"] != observed:
+        raise ValueError("receipt aggregate pass verdict disagrees with all saved results/control")
+    return observed
+
+
+def replay_entries_for_accept(live: dict, frozen: dict, results: dict,
+                              requested: list[str] | None) -> dict:
+    """Excluded failed entries may leave the live manifest after subset import."""
+    if requested is not None and set(requested) - live.keys():
+        raise ValueError("accepted subset units must still exist in the live manifest")
+    resolved = {}
+    for name in results:
+        if name not in frozen or (name in live and entry_digest(live[name]) != entry_digest(frozen[name])):
+            raise ValueError(f"replay entry changed or missing from frozen manifest: {name}")
+        if name not in live and (requested is None or name in requested):
+            raise ValueError("only explicitly excluded replay entries may use frozen configuration")
+        resolved[name] = live.get(name, frozen[name])
+    return resolved
 
 
 def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
@@ -248,7 +293,7 @@ def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
             "compiled_negative_control": control, "units": units}
 
 
-def accept(receipt_path: Path, *, root: Path | None = None) -> None:
+def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None) -> None:
     """Recheck saved selected producers; no compilation or whole-cohort replay."""
     from lib.omf import describe_omf
     from lib.pc98 import parse_mz
@@ -288,19 +333,23 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
                 proof["reused"] != receipt["toolchain_reused"]):
             raise ValueError("static context proof relabels a different executable probe report")
     artifact = find_artifact(load_target_manifest(root / "config/targets.toml"), config["artifact"])
-    if not receipt["pass"] or receipt["target_sha256"] != artifact["sha256"]:
-        raise ValueError("replay target or selected aggregate verdict disagrees")
+    if receipt["target_sha256"] != artifact["sha256"]:
+        raise ValueError("replay target identity disagrees")
     target = parse_mz(read_verified_artifact(root, artifact))
     results = {result["id"]: result for result in receipt["results"]}
     if not results or len(results) != len(receipt["results"]):
         raise ValueError("empty or duplicate replay result set")
+    replay_entries = replay_entries_for_accept(entries, frozen_entries, results, units)
+    if "selected_units" in receipt and (len(receipt["selected_units"]) != len(set(receipt["selected_units"])) or
+                                       set(receipt["selected_units"]) != set(results)):
+        raise ValueError("replay selected-unit set disagrees with its actual results")
     control = receipt["compiled_negative_control"]
     validate_control(control)
     if "negative_control" in receipt:
         negative = receipt["negative_control"]
         if negative["unit_id"] not in results:
             raise ValueError("negative control belongs to an unselected unit")
-        control_entry = entries[negative["unit_id"]]
+        control_entry = replay_entries[negative["unit_id"]]
         if negative["entry_sha256"] != entry_digest(control_entry):
             raise ValueError("negative-control unit configuration changed")
         if negative["control_sha256"] != entry_digest(negative["mutation"]):
@@ -308,8 +357,8 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
         if negative["comparison"] != control:
             raise ValueError("negative-control comparison records disagree")
     else:
-        matches = [entries[name] for name in results if entries[name]["target_start"] == control["target_start"]
-                   and entries[name]["size"] == control["size"]]
+        matches = [replay_entries[name] for name in results if replay_entries[name]["target_start"] == control["target_start"]
+                   and replay_entries[name]["size"] == control["size"]]
         if len(matches) != 1:
             raise ValueError("legacy negative-control owner is ambiguous")
         control_entry = matches[0]
@@ -319,15 +368,16 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
         negative = {"unit_id": control_entry["id"], "producer_path": "negative/source",
                     "mutation": mutations[0], "comparison": control,
                     "legacy_source_revalidated": True}
+    selected = select_accept_units(results, units, control_entry["id"])
     imported = []
     frozen_inputs = {item["path"]: item["sha256"] for item in receipt["source_inputs"]}
     for name, result in results.items():
-        entry = entries[name]
+        entry = replay_entries[name]
         if name not in frozen_entries or entry_digest(frozen_entries[name]) != entry_digest(entry):
             raise ValueError(f"replay entry changed: {name}")
         if result.get("entry_sha256", entry_digest(entry)) != entry_digest(entry):
             raise ValueError(f"replay result entry identity disagrees: {name}")
-        validate_result(entry, result)
+        validate_result(entry, result, require_exact=name in selected)
         snapshots = scoped_snapshot(root, entry, result, result.get("source_inputs", receipt["source_inputs"]))
         validate_snapshot(root, snapshots)
         for item in snapshots:
@@ -358,11 +408,12 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
                     raise ValueError("saved cold source disagrees with its input snapshot")
         classify_extent(entry, target_bytes=target.program_image[
             entry["target_start"]:entry["target_start"] + entry["size"]])
-        imported.append({"id": name, "entry_sha256": entry_digest(entry), "result": result,
-                         "source_inputs": snapshots, "toolchain_manifest_sha256": tool_sha,
-                         "toolchain_receipt_sha256": receipt["toolchain_receipt_sha256"],
-                         "replay_receipt_sha256": digest(receipt_path),
-                         "compiled_negative_control": control, "negative_control": negative})
+        if name in selected:
+            imported.append({"id": name, "entry_sha256": entry_digest(entry), "result": result,
+                             "source_inputs": snapshots, "toolchain_manifest_sha256": tool_sha,
+                             "toolchain_receipt_sha256": receipt["toolchain_receipt_sha256"],
+                             "replay_receipt_sha256": digest(receipt_path),
+                             "compiled_negative_control": control, "negative_control": negative})
     negative_source = _saved_source(work, negative["producer_path"])
     observed_control = mapped_control_comparison(target, parse_mz((negative_source / "units.exe").read_bytes()),
                                                  control_entry, negative_source / "units.map")
@@ -382,6 +433,13 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
     original = (root / mutation["source"]).read_text()
     if original.count(mutation["find"]) != 1 or (negative_source / mutation["source"]).read_text() != original.replace(mutation["find"], mutation["replace"]):
         raise ValueError("saved negative source does not reproduce its recorded natural mutation")
+    aggregate_pass = validate_receipt_aggregate(receipt, results, observed_control)
+    if units is None and not aggregate_pass:
+        raise ValueError("default acceptance requires the complete replay aggregate to pass")
+    for item in imported:
+        item["receipt_aggregate_pass"] = aggregate_pass
+        if units is not None:
+            item["receipt_selected_subset"] = sorted(selected)
     acceptance_path = root / "config/accepted_units.json"
     previous = json.loads(acceptance_path.read_text()) if acceptance_path.exists() else {"units": []}
     acceptance = merge_acceptance(root, previous, imported, target_sha=artifact["sha256"],
@@ -395,12 +453,15 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--accept", type=Path)
+    parser.add_argument("--units", nargs="+", metavar="ID", help="explicit exact subset of --accept receipt")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--write", action="store_true")
     group.add_argument("--check", action="store_true")
     args = parser.parse_args()
+    if args.units is not None and args.accept is None:
+        parser.error("--units requires --accept")
     if args.accept:
-        accept(args.accept)
+        accept(args.accept, units=args.units)
     summary = summarize()
     md, svg = render(summary)
     for name, content in (("docs/PROGRESS.md", md), ("resources/progress.svg", svg)):
