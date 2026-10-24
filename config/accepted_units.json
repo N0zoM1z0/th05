@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c7b1c15a453a09fc6baac62758249f35b1d152b6cde034809b0a5b290ce3a831",
+  "replay_receipt_sha256": "b7bc2e60a8d02607717a0198aea1961e7154a78b1666d3efdf5e692081822481",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 60306,
-    "candidate_start": 60306,
-    "size": 2134,
-    "target_sha256": "5980d6b425b32cfa4deb4e8d238534eac99ce8da0bb435f794537ab19c902074",
-    "candidate_sha256": "98e75ad10c28758e04a39c746ed3b22aed84ddc1e5b19f5e22ffe5749be04267",
+    "target_start": 62440,
+    "candidate_start": 62440,
+    "size": 1351,
+    "target_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+    "candidate_sha256": "9cfc53082ed0ee5a84b089ecc504ef0d5b4e4c35bdd616cd267d2544bbd64543",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -1538,6 +1538,392 @@
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "src/main/player/marisa.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      }
+    },
+    {
+      "id": "main-yuuka-shots",
+      "entry_sha256": "f1e245f3ae13e2060ff1c6c6ea325e56bd278ad648ccce9ccd508ca10c8ff108",
+      "result": {
+        "id": "main-yuuka-shots",
+        "entry_sha256": "f1e245f3ae13e2060ff1c6c6ea325e56bd278ad648ccce9ccd508ca10c8ff108",
+        "rounds": [
+          {
+            "target_start": 74846,
+            "candidate_start": 74846,
+            "size": 1638,
+            "target_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+            "candidate_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 74846,
+            "candidate_start": 74846,
+            "size": 1638,
+            "target_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+            "candidate_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0c26d0a2d86d6b09a528f40623c356dea08a03a2a45a58c5dd6e98799d345f45",
+            "dependency_timestamp_normalized_sha256": "4a311a8600ccc396f52540028624dada72f40215ae3934a6e978df7645593254",
+            "module_name": "th05/p_yuuka.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_yuuka.cpp",
+              "src/main/player/yuuka.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/yuuka.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "a18c18f40be526b02bdc9afff75a0437222bf6ed34343548395186d566594e10",
+            "dependency_timestamp_normalized_sha256": "4a311a8600ccc396f52540028624dada72f40215ae3934a6e978df7645593254",
+            "module_name": "th05/p_yuuka.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_yuuka.cpp",
+              "src/main/player/yuuka.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/yuuka.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/yuuka_shots_bindings.asm",
+            "sha256": "466f847d998fea21a39b69317fee0934bf649f0dbea37d00bb3819c081c4b359"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/main/player/yuuka.cpp",
+            "sha256": "ade7f2295b197d8e7ad5e964f71e7bd197c3106177e299b7add3547f38842516"
+          },
+          {
+            "path": "src/main/player/yuuka.hpp",
+            "sha256": "f74c5e3213b1fb6bcc3276af1c381d81b56121f6ea14d059ba74e6bfa114cf75"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/yuuka_shots_bindings.asm",
+          "sha256": "466f847d998fea21a39b69317fee0934bf649f0dbea37d00bb3819c081c4b359"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/main/player/yuuka.cpp",
+          "sha256": "ade7f2295b197d8e7ad5e964f71e7bd197c3106177e299b7add3547f38842516"
+        },
+        {
+          "path": "src/main/player/yuuka.hpp",
+          "sha256": "f74c5e3213b1fb6bcc3276af1c381d81b56121f6ea14d059ba74e6bfa114cf75"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f9894c077db7a46ae440d7e4753dcba98d45ca1812c7a964e8b22ec36e6bbc6e",
+      "compiled_negative_control": {
+        "target_start": 74846,
+        "candidate_start": 74846,
+        "size": 1638,
+        "target_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+        "candidate_sha256": "347f4d0fb41c1ade90233d9e712c850a8088fd099efd7e35113993fc33802387",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-yuuka-shots",
+        "entry_sha256": "f1e245f3ae13e2060ff1c6c6ea325e56bd278ad648ccce9ccd508ca10c8ff108",
+        "mutation": {
+          "unit": "main-yuuka-shots",
+          "source": "src/main/player/yuuka.cpp",
+          "find": "shot->damage = 9;",
+          "replace": "shot->damage = 8;"
+        },
+        "control_sha256": "8caf6404b856489e37e4e2d365cbe70f12a4fab89ed63b76a202e629b951cc4c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 74846,
+          "candidate_start": 74846,
+          "size": 1638,
+          "target_sha256": "1713e85501552609afe1f0dd6f32ce1ebd68e68bc11d44f92ea62c9275dc37bb",
+          "candidate_sha256": "347f4d0fb41c1ade90233d9e712c850a8088fd099efd7e35113993fc33802387",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "fd74f1a321d6f790a741d463d7428a907ae8f02a613972155b443648e78299a5",
+          "dependency_timestamp_normalized_sha256": "2f7396d5e3015ed1dde8a0d21a9f08bf34eb707ebef9f47d36393da59148a542",
+          "module_name": "th05/p_yuuka.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/p_yuuka.cpp",
+            "src/main/player/yuuka.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/yuuka.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      }
+    },
+    {
+      "id": "main-mima-shots",
+      "entry_sha256": "ced58dfc8b70fa2bf3a9521906c3b2f6d9eab15d3571d1c814bf4d441cfba1bf",
+      "result": {
+        "id": "main-mima-shots",
+        "entry_sha256": "ced58dfc8b70fa2bf3a9521906c3b2f6d9eab15d3571d1c814bf4d441cfba1bf",
+        "rounds": [
+          {
+            "target_start": 62440,
+            "candidate_start": 62440,
+            "size": 1351,
+            "target_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+            "candidate_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 62440,
+            "candidate_start": 62440,
+            "size": 1351,
+            "target_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+            "candidate_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6216a8f2ed84559e764c9eec8be6579533326cc3803009882f965b20e2222e5c",
+            "dependency_timestamp_normalized_sha256": "118b0d8f47048fedc4153b6ee5caa698b52350a56d5c9acbc7aa88447ca0f4b5",
+            "module_name": "th05/p_mima.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_mima.cpp",
+              "src/main/player/mima.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/mima.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "0164029a954c6b226c705ff301613528db8760a92d0fcac472ead1aeaa2b2549",
+            "dependency_timestamp_normalized_sha256": "118b0d8f47048fedc4153b6ee5caa698b52350a56d5c9acbc7aa88447ca0f4b5",
+            "module_name": "th05/p_mima.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_mima.cpp",
+              "src/main/player/mima.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/mima.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mima_shots_bindings.asm",
+            "sha256": "8691fa747b9d2641bfc72312569103324ad57a6b00d99e54f09ade48199571a9"
+          },
+          {
+            "path": "src/main/player/mima.cpp",
+            "sha256": "e30a3283c323c6cfdafd1b5947e7b47465caec8eb0db4585e577df3a079f7e1c"
+          },
+          {
+            "path": "src/main/player/mima.hpp",
+            "sha256": "2f3bbca0384fabe904cc985204c725db473fcb75e1e0745490048a944fc1e64b"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mima_shots_bindings.asm",
+          "sha256": "8691fa747b9d2641bfc72312569103324ad57a6b00d99e54f09ade48199571a9"
+        },
+        {
+          "path": "src/main/player/mima.cpp",
+          "sha256": "e30a3283c323c6cfdafd1b5947e7b47465caec8eb0db4585e577df3a079f7e1c"
+        },
+        {
+          "path": "src/main/player/mima.hpp",
+          "sha256": "2f3bbca0384fabe904cc985204c725db473fcb75e1e0745490048a944fc1e64b"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "b7bc2e60a8d02607717a0198aea1961e7154a78b1666d3efdf5e692081822481",
+      "compiled_negative_control": {
+        "target_start": 62440,
+        "candidate_start": 62440,
+        "size": 1351,
+        "target_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+        "candidate_sha256": "9cfc53082ed0ee5a84b089ecc504ef0d5b4e4c35bdd616cd267d2544bbd64543",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-mima-shots",
+        "entry_sha256": "ced58dfc8b70fa2bf3a9521906c3b2f6d9eab15d3571d1c814bf4d441cfba1bf",
+        "mutation": {
+          "unit": "main-mima-shots",
+          "source": "src/main/player/mima.cpp",
+          "find": "shot->damage = 8;",
+          "replace": "shot->damage = 7;"
+        },
+        "control_sha256": "7305bb63c49bf4092b8e89f279c2f69332b196d9a7a4b4aa35d5714c1beedb5b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 62440,
+          "candidate_start": 62440,
+          "size": 1351,
+          "target_sha256": "646f579c4310b18a2d2d18d25d6f50c0b1a83766879dd10fd2e1af30028662e6",
+          "candidate_sha256": "9cfc53082ed0ee5a84b089ecc504ef0d5b4e4c35bdd616cd267d2544bbd64543",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "87272ea43d30b5fa165397a5396bffd1264ade7abf397e6253ba1be4b904d5bf",
+          "dependency_timestamp_normalized_sha256": "63c5b6255b9a566d99c6de23d0fa936be8bbda1a3898b66eb9b0d258a3219757",
+          "module_name": "th05/p_mima.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/p_mima.cpp",
+            "src/main/player/mima.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/mima.hpp",
             "src/main/player/reimu.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",

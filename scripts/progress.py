@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import tomllib
+from lib.unit_oracle import function_scoped
 
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, relative_path,
     compiler_dependencies, scoped_snapshot, validate_snapshot)
@@ -73,6 +74,7 @@ def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
 
 def validate_result(entry: dict, result: dict) -> None:
     classify_extent(entry)
+    scoped = function_scoped(entry)
     if result["id"] != entry["id"] or not result["exact"] or not result["object_normalized_equal"]:
         raise ValueError("unit receipt does not accept the configured source")
     if len(result["rounds"]) != 2 or len(result["omfs"]) != 2:
@@ -84,6 +86,23 @@ def validate_result(entry: dict, result: dict) -> None:
                 or comparison["target_sha256"] != comparison["candidate_sha256"]
                 or comparison["target_fixups"] != comparison["candidate_fixups"]):
             raise ValueError("raw bytes, boundaries or relocation evidence disagree")
+        if scoped:
+            scope = comparison.get("map_scope", {})
+            integers = ("start", "size", "contribution_start", "contribution_size")
+            if (any(type(scope.get(key)) is not int for key in integers) or
+                    scope.get("kind") != "complete-function" or
+                    scope.get("function_symbol") != entry["function_symbol"] or
+                    scope["start"] != comparison["candidate_start"] or scope["size"] != entry["size"] or
+                    scope["contribution_start"] < 0 or scope["contribution_size"] <= 0 or
+                    scope["start"] < scope["contribution_start"] or
+                    scope["start"] + scope["size"] > scope["contribution_start"] + scope["contribution_size"]):
+                raise ValueError("complete function MAP containment evidence disagrees")
+            at_end = scope["start"] + scope["size"] == scope["contribution_start"] + scope["contribution_size"]
+            if (scope.get("boundary_kind") != ("contribution-end" if at_end else "next-function") or
+                    (at_end and scope.get("next_function_symbol") is not None) or
+                    (not at_end and not isinstance(scope.get("next_function_symbol"), str)) or
+                    ("function_end_symbol" in entry and scope.get("next_function_symbol") != entry["function_end_symbol"])):
+                raise ValueError("complete function next-boundary evidence disagrees")
         hashes.add(comparison["target_sha256"])
     if len(hashes) != 1:
         raise ValueError("cold extent bytes are nondeterministic")
@@ -158,8 +177,10 @@ complete authored ownership denominator remains under review.
 | MAINE | 0 | 0 | 0 | 0 | 0 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-{count} complete C++ contributions pass two cold builds, raw bytes and ordered
+{count} bounded C++ units pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
+A unit covers a complete compiler contribution or one reviewed complete
+function. Unaccepted functions in the same translation unit receive no credit.
 Authored code includes {tables} bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All {padding} observed
 padding bytes are checked against their declared target values and excluded
@@ -232,8 +253,8 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
     from lib.omf import describe_omf
     from lib.pc98 import parse_mz
     from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
-    from lib.unit_oracle import compare_unit, map_contribution
-    from replay_units import control_comparison
+    from lib.unit_oracle import compare_mapped_unit
+    from replay_units import mapped_control_comparison
     root = ROOT if root is None else root
     receipt_path = receipt_path.resolve()
     work = receipt_path.parent
@@ -321,8 +342,7 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
         for index, producer in enumerate(producers):
             source = _saved_source(work, producer)
             candidate = parse_mz((source / "units.exe").read_bytes())
-            start, size = map_contribution(source / "units.map", entry["module"], entry["segment"])
-            if size != entry["size"] or compare_unit(target, candidate, entry["target_start"], start, size) != result["rounds"][index]:
+            if compare_mapped_unit(target, candidate, source / "units.map", entry) != result["rounds"][index]:
                 raise ValueError("saved raw target/candidate artifacts disagree with replay receipt")
             obj = describe_omf((source / (Path(entry["module"]).stem + ".obj")).read_bytes())
             if not obj["valid"] or any(obj[key] != value for key, value in result["omfs"][index].items()):
@@ -344,8 +364,8 @@ def accept(receipt_path: Path, *, root: Path | None = None) -> None:
                          "replay_receipt_sha256": digest(receipt_path),
                          "compiled_negative_control": control, "negative_control": negative})
     negative_source = _saved_source(work, negative["producer_path"])
-    start, size = map_contribution(negative_source / "units.map", control_entry["module"], control_entry["segment"])
-    observed_control = control_comparison(target, parse_mz((negative_source / "units.exe").read_bytes()), control_entry, start, size)
+    observed_control = mapped_control_comparison(target, parse_mz((negative_source / "units.exe").read_bytes()),
+                                                 control_entry, negative_source / "units.map")
     if observed_control != control:
         raise ValueError("saved compiled negative artifact disagrees with receipt")
     negative_obj = describe_omf((negative_source / (Path(control_entry["module"]).stem + ".obj")).read_bytes())

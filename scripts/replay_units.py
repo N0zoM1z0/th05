@@ -19,7 +19,8 @@ from lib.omf import describe_omf
 from lib.pc98 import digest_file, parse_mz
 from lib.reference_build import Builder
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
-from lib.unit_oracle import compare_unit, map_contribution
+from lib.unit_oracle import (compare_unit, compare_mapped_unit, function_scoped,
+    map_unit_scope)
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, freeze_toolchain,
     required_input_paths, scoped_snapshot, snapshot_paths, staged_paths,
     static_toolchain, validate_snapshot)
@@ -63,8 +64,21 @@ def select_units(root: Path, manifest: dict, requested: list[str] | None,
     return selected, reasons
 
 
+def translation_units(units: list[dict]) -> list[list[dict]]:
+    """One real TU per compiler invocation, even when several functions qualify."""
+    grouped = {}
+    for entry in units:
+        key = entry["module"].replace("\\", "/").casefold()
+        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry))
+        if key in grouped and grouped[key][0] != identity:
+            raise ValueError("one module cannot have conflicting source, flags or binding contexts")
+        grouped.setdefault(key, (identity, []))[1].append(entry)
+    return [members for _, members in grouped.values()]
+
+
 def cold_round(work: Path, inputs: Path, units: list[dict], *,
                paths: set[str], mutation: dict | None = None) -> dict:
+    producers = translation_units(units)
     source = work / "source"
     source.mkdir(parents=True)
     for name in sorted(paths):
@@ -74,7 +88,8 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
     scaffolds = {bindings_source(unit) for unit in units}
     if len(scaffolds) != 1:
         raise ValueError("one cold group requires one binding scaffold")
-    for unit in units:
+    for members in producers:
+        unit = members[0]
         wrapper = source / unit["module"]
         wrapper.parent.mkdir(parents=True, exist_ok=True)
         prefix = ("#pragma option " + unit["wrapper_options"] + "\n") if unit.get("wrapper_options") else ""
@@ -91,7 +106,8 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
     dos = ["wine", str(builder.msdos), "-e", "-x"]
     builder.execute("bindings", ["wine", r"C:\TASM50\bin\TASM32.EXE", "/m", "/mx", "/t", "bindings.asm", "bindings.obj"])
     objects, omfs = [], {}
-    for unit in units:
+    for members in producers:
+        unit = members[0]
         obj = Path(unit["module"]).stem + ".obj"
         if obj in objects or obj.lower() == "bindings.obj":
             raise ValueError("duplicate generated object filename")
@@ -101,7 +117,8 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
         omf = describe_omf((source / obj).read_bytes())
         if not omf["valid"] or omf["translator_comments"] != ["TC86 Borland C++ 4.02"]:
             raise ValueError(f"invalid compiler object {obj}")
-        omfs[unit["id"]] = {key: omf[key] for key in OMF_FIELDS}
+        for member in members:
+            omfs[member["id"]] = {key: omf[key] for key in OMF_FIELDS}
     (source / "link.rsp").write_bytes(("-c -s -E bindings.obj " + " ".join(objects) +
                                       ", units.exe, units.map,\r\n").encode("ascii"))
     builder.execute("link", [*dos, "tlink", "@link.rsp"])
@@ -128,6 +145,14 @@ def control_comparison(target, candidate, entry: dict, start: int, size: int) ->
             "raw_exact": left == right, "target_fixups": left_fixups,
             "candidate_fixups": right_fixups, "fixups_exact": left_fixups == right_fixups,
             "exact": left == right and left_fixups == right_fixups}
+
+
+def mapped_control_comparison(target, candidate, entry: dict, path: Path) -> dict:
+    scope = map_unit_scope(path, entry)
+    comparison = control_comparison(target, candidate, entry, scope["start"], scope["size"])
+    if function_scoped(entry):
+        comparison["map_scope"] = scope
+    return comparison
 
 
 def main() -> int:
@@ -180,10 +205,8 @@ def main() -> int:
             for unit in members:
                 comparisons = []
                 for producer in rounds:
-                    start, size = map_contribution(producer["source"] / "units.map", unit["module"], unit["segment"])
-                    if size != unit["size"]:
-                        raise ValueError(f"{unit['id']}: complete contribution size mismatch: {size}")
-                    comparisons.append(compare_unit(target, producer["candidate"], unit["target_start"], start, size))
+                    comparisons.append(compare_mapped_unit(target, producer["candidate"],
+                                                          producer["source"] / "units.map", unit))
                 omfs = [producer["omfs"][unit["id"]] for producer in rounds]
                 result = {"id": unit["id"], "entry_sha256": entry_digest(unit), "rounds": comparisons,
                           "object_normalized_equal": len({obj["dependency_timestamp_normalized_sha256"] for obj in omfs}) == 1,
@@ -200,8 +223,8 @@ def main() -> int:
         positive_control = next(row for row in results if row["id"] == control_unit["id"])
         if negative_dependencies != {row["path"] for row in positive_control["source_inputs"]}:
             raise ValueError("negative-control dependency scope differs from its positive producer")
-        start, size = map_contribution(negative["source"] / "units.map", control_unit["module"], control_unit["segment"])
-        control = control_comparison(target, negative["candidate"], control_unit, start, size)
+        control = mapped_control_comparison(target, negative["candidate"], control_unit,
+                                            negative["source"] / "units.map")
         accepted = all(row["exact"] for row in results) and not control["exact"] and not control["raw_exact"]
         negative_record = {"unit_id": control_unit["id"], "entry_sha256": entry_digest(control_unit),
                            "mutation": mutation, "control_sha256": entry_digest(mutation),

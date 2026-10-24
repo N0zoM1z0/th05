@@ -168,3 +168,70 @@ unit = "main-marisa-shots"
 source = "src/main/player/marisa.cpp"
 find = "shot->damage = 8;"
 replace = "shot->damage = 9;"
+
+[[units]]
+id = "main-yuuka-shots"
+source = "src/main/player/yuuka.cpp"
+module = "th05/p_yuuka.cpp"
+segment = "MAIN_01_TEXT"
+target_start = 0x1245e
+size = 1638
+alignment_offsets = []
+functions = 8
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/yuuka_shots_bindings.asm"
+code_data_ranges = [
+  { offset = 0x258, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x339, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x341, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x437, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x443, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x536, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x542, size = 10, kind = "compiler-switch-table" },
+  { offset = 0x64c, size = 16, kind = "compiler-switch-table" },
+  { offset = 0x65c, size = 10, kind = "compiler-switch-table" },
+]
+padding_bytes = [
+  { offset = 0x257, value = 0 },
+  { offset = 0x338, value = 0 },
+  { offset = 0x535, value = 0 },
+]
+
+[[controls]]
+unit = "main-yuuka-shots"
+source = "src/main/player/yuuka.cpp"
+find = "shot->damage = 9;"
+replace = "shot->damage = 8;"
+
+[[units]]
+id = "main-mima-shots"
+source = "src/main/player/mima.cpp"
+module = "th05/p_mima.cpp"
+segment = "MAIN_01_TEXT"
+target_start = 0xf3e8
+size = 1351
+alignment_offsets = []
+functions = 8
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/mima_shots_bindings.asm"
+code_data_ranges = [
+  { offset = 0x174, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x20b, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x2b7, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x36b, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x432, size = 12, kind = "compiler-switch-table" },
+  { offset = 0x533, size = 8, kind = "compiler-switch-table" },
+  { offset = 0x53b, size = 12, kind = "compiler-switch-table" },
+]
+padding_bytes = [
+  { offset = 0x173, value = 0 },
+  { offset = 0x36a, value = 0 },
+]
+
+[[controls]]
+unit = "main-mima-shots"
+source = "src/main/player/mima.cpp"
+find = "shot->damage = 8;"
+replace = "shot->damage = 7;"
