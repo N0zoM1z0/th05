@@ -37,3 +37,15 @@ do not automatically cold-replay the entire accepted set. Reuse successful
 toolchain execution probes when all relevant installed surfaces and the pinned
 manifest remain unchanged. Shared ABI, flags, binding or layout changes require
 only their demonstrated affected closure, with broader replay when necessary.
+
+## Borland context checks before replay
+
+- Keep `#pragma option -zC/-zP` before all C/C++ tokens. Use `#pragma codeseg
+  SEG GROUP` for selectors after includes. Preserve the actual first declaration
+  context for every near callback.
+- `.model large` already declares word-aligned `_DATA` and `_BSS`; do not
+  redeclare them byte-aligned. Keep every individual ORG below 64 KiB.
+- Bind actual compiler EXTDEF names (including Borland's 31-character truncation).
+  Place even empty foreign compiler SEGDEFs at their real group context: a
+  differently named scaffold segment can leave an empty segment beyond the
+  group's 64 KiB window. Check actual OMF GRPDEF before changing source ABI.

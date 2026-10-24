@@ -247,26 +247,6 @@ find = "bgimage_put_rect_16(0, (CURSOR_TOP + top), 320, GLYPH_H);"
 replace = "bgimage_put_rect_16(0, (CURSOR_TOP + top), 304, GLYPH_H);"
 
 [[units]]
-id = "op-music-suffix"
-source = "src/op/music/music.cpp"
-module = "th05/op_music.cpp"
-segment = "OP_MUSIC_SUFFIX_TEXT"
-target_start = 0xc014
-size = 1985
-alignment_offsets = []
-functions = 10
-origin = "compiler-generated-cxx-dos-intrinsics"
-wrapper_options = "-zPop_01"
-source_encoding = "cp932"
-bindings_source = "probes/units/op_music_bindings.asm"
-
-[[controls]]
-unit = "op-music-suffix"
-source = "src/op/music/music.cpp"
-find = "if(frame_since_last_input >= 24)"
-replace = "if(frame_since_last_input >= 25)"
-
-[[units]]
 id = "op-music-polygon-build"
 source = "src/op/music/music.cpp"
 module = "th05/op_music.cpp"

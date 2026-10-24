@@ -3,14 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **78 bounded C++ units / 182 complete function occurrences**,
-29,540 compared bytes and 29,522 authored code bytes: 29,104 instructions plus
-418 semantic compiler-table bytes. Eighteen checked padding bytes receive no
-credit. MAIN has 106 functions / 17,531 code bytes, decoded OP 53 / 9,158,
+Current acceptance: **83 bounded C++ units / 204 complete function occurrences**,
+32,019 compared bytes and 32,000 authored code bytes: 31,572 instructions plus
+428 semantic compiler-table bytes. Eighteen checked padding bytes receive no
+credit. MAIN has 128 functions / 20,009 code bytes, decoded OP 53 / 9,158,
 decoded MAINE 23 / 2,833. Global denominator and percentage remain unreviewed.
-`resources/ownership.json` covers all 319,268 observed payload/COM bytes;
-all unclassified intervals remain unknown, including unreviewed vendor/ASM.
-Regenerate it with `scripts/ownership.py --write` after accepting new units.
 
 ## Retained evidence
 
@@ -42,6 +39,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | EX-Alice firewaves and Mai/Yuki flight | `main-firewaves-b`, `main-mai-yuki-flight-b` |
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
+| Sara complete stage-one behavior | `main-sara-a` |
+| Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
+| Six complete generic Boss functions | `main-boss-generic-b` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -109,6 +109,19 @@ Eight music suffix functions add 646 bytes after a new focused replay with
 an accepted comment-loader negative; the previous suffix negative belonged to
 an excluded menu function and could not support subset acceptance. Polygon
 update (502 bytes) and music menu (837) remain raw-exact but ordered-inexact.
+Generic Boss adds six complete functions / 352 bytes. The original 414-byte
+defeat function is 408 under natural C++ because TC merges two common call
+tails; the original 43-byte collision function is 46 with ordinary signed
+locals. Both entire functions stay unaccepted. A six-byte outside-contribution
+hole restores the real collision address for accepted caller bytes; no ASM,
+pseudoregister math or inert barrier is used. Private documented optimization
+variants failed strict comparisons and remain diagnostic only.
+Sara adds twelve complete functions / 1,823 authored code bytes, with ten
+semantic switch-table bytes and one excluded alignment byte. Midboss state
+adds 85 bytes / two functions; reward functions add 218 / two. The natural
+midboss defeat function remains 66 versus original 65 bytes and stays unaccepted.
+The failed whole midboss/music candidate entries are removed from normal replay
+selection; their retained failed artifacts and owner notes remain available.
 OP title adds 618 bytes / three functions. MAINE all-cast adds 611 / three,
 staff clip 104 / one, entry 336 / four, and high-score lifecycle 416 / three.
 MAIN adds circle effects 257 / four, firewaves 94 / two, Mai/Yuki flight 248 /

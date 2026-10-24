@@ -715,3 +715,98 @@ unit = "main-mai-yuki-flight"
 source = "src/main/boss/mai_yuki.cpp"
 find = "6.25f,"
 replace = "6.0f,"
+
+[[units]]
+id = "main-midboss-state"
+source = "src/main/midboss/state.cpp"
+module = "th05/midboss.cpp"
+segment = "MIDBOSS_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1c4a1
+size = 85
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/midboss_bindings.asm"
+
+[[controls]]
+unit = "main-midboss-state"
+source = "src/main/midboss/state.cpp"
+find = "midboss.hp = 0;"
+replace = "midboss.hp = 1;"
+
+[[units]]
+id = "main-boss-generic"
+source = "src/main/boss/generic.cpp"
+module = "th05/boss.cpp"
+segment = "BOSS_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1fa51
+size = 352
+alignment_offsets = []
+functions = 6
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/boss_generic_bindings.asm"
+
+[[controls]]
+unit = "main-boss-generic"
+source = "src/main/boss/generic.cpp"
+find = "boss.phase_state.patterns_seen = 0;"
+replace = "boss.phase_state.patterns_seen = 1;"
+
+[[units]]
+id = "main-sara"
+source = "src/main/boss/sara/sara.cpp"
+module = "th05/boss_1.cpp"
+segment = "B1_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1d19e
+size = 1824
+alignment_offsets = []
+padding_bytes = [{ offset = 1813, value = 0 }]
+code_data_ranges = [{ offset = 1814, size = 10, kind = "compiler-switch-table" }]
+functions = 12
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/sara_bindings.asm"
+
+[[controls]]
+unit = "main-sara"
+source = "src/main/boss/sara/sara.cpp"
+find = "sara_set_spread_stack(5, 0x10, 5, 0.4375f);"
+replace = "sara_set_spread_stack(5, 0x10, 4, 0.4375f);"
+
+[[units]]
+id = "main-midboss-score-bonus"
+source = "src/main/midboss/default.cpp"
+module = "th05/mb_dft.cpp"
+segment = "MB_DFT_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1c54e
+size = 106
+alignment_offsets = []
+functions = 1
+function_symbol = "midboss_score_bonus(unsigned int)"
+function_end_symbol = "boss_score_bonus(unsigned int)"
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/midboss_default_bindings.asm"
+
+[[units]]
+id = "main-boss-score-bonus"
+source = "src/main/midboss/default.cpp"
+module = "th05/mb_dft.cpp"
+segment = "MB_DFT_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1c5b8
+size = 112
+alignment_offsets = []
+functions = 1
+function_symbol = "boss_score_bonus(unsigned int)"
+function_end_symbol = "midboss_defeat_update()"
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/midboss_default_bindings.asm"
+
+[[controls]]
+unit = "main-midboss-score-bonus"
+source = "src/main/midboss/default.hpp"
+find = "MIDBOSS_BONUS_UNIT_VALUE = 1280;"
+replace = "MIDBOSS_BONUS_UNIT_VALUE = 1281;"

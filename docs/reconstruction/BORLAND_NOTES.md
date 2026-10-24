@@ -91,3 +91,25 @@ Japanese UI source remains readable UTF8. Opt-in CP932 staging preserves the
 actual compiler byte stream with separate digests and independent import checks.
 OP main menu verifies this with real Borland producers, including its complete
 semantic string/pointer DATA contribution as a separate uncredited observation.
+
+## Empty foreign segments can overflow a group
+
+The first midboss context put its foreign main_01 labels in a synthetic
+`MIDBOSS_MAIN01_BINDINGS` segment, while C++ correctly emitted a zero-byte
+`MAI_TEXT` in main_01 and owned `MIDBOSS_TEXT` in main_03. TLINK placed the
+otherwise unbound empty MAI_TEXT after the long code/DS context gap, extending
+main_01 beyond 64 KiB and reporting group overflow. Its failing MAP made the
+segments appear merged, but the actual OMF GRPDEFs proved source group capture
+was already correct. Naming the foreign scaffold segment MAI_TEXT lets the
+empty real compiler contribution merge at the actual main_01 location. Inspect
+OMF before attributing this failure to source function declarations or changing
+ABI. No function code, gap inside a function or fake implementation is needed.
+
+## Byte rotate APIs are not necessarily compiler intrinsics
+
+The pinned STDLIB.H declares `_crotr`, but a real optimized TC4J `-S` probe
+emits a far library call for `_crotr(value,3)`. Plain `(value >> 3) | (value << 5)`
+emits shifts and OR instead of byte ROR. The MAINE score codec consequently
+remains external until its genuine original implementation/context is recovered;
+API presence alone does not prove an exact natural C++ rotate. The retained
+probe is `.analysis/compiler-probes/byte-rotate-a`, with no source-byte credit.
