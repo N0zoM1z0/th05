@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **138 bounded C++ CODE/DATA units / 265 complete function occurrences**,
-**47,926 authored bytes exact**: 39,069 CODE and 8,857 initialized DATA.
-CODE is 38,587 instruction plus 482 semantic compiler-table bytes.
-Complete compared extents total 47,954; 28 checked padding bytes receive
-no credit. MAIN has 183 functions / 26,504 CODE / 199 DATA;
+Current acceptance: **140 bounded C++ CODE/DATA units / 267 complete function occurrences**,
+**48,241 authored bytes exact**: 39,384 CODE and 8,857 initialized DATA.
+CODE is 38,902 instruction plus 482 semantic compiler-table bytes.
+Complete compared extents total 48,269; 28 checked padding bytes receive
+no credit. MAIN has 185 functions / 26,819 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -57,7 +57,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Generic shot control | `main-player-shot-common-a` |
 | Three EMS cache functions | `main-ems-scopes-c` from raw-exact/ordered-inexact `main-ems-cache-b` |
 | Item extend and miss penalty | `main-item-extends-a`, `main-item-miss-penalty-d` |
-| Dialog wipe/fade box helpers and runner | `main-dialog-box-b`, `main-dialog-run-d` |
+| Dialog wipe/fade box helpers, runner and face/sprite tail | `main-dialog-box-b`, `main-dialog-run-d`, `main-dialog-tail-scopes-c` |
 | Item creation/death drops, splashes and tile invalidation | `main-item-spawn-b`, `main-item-splashes-a`, `main-items-invalidate-a` |
 | Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
 | Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
@@ -293,3 +293,13 @@ pass. The corrected unsigned filename pointer removes the command handler's
 sign extension, but the full runtime is831 versus832 because its original
 switch-table prefix zero is absent; that whole contribution remains unaccepted.
 Only the new runner was replayed; accepted box/file owners remain unchanged.
+
+
+### Dialog face and sprite tail
+
+`main-dialog-tail-scopes-c` accepts the complete248-byte face cache loader and
+67-byte Extra-Alice sprite cleanup from the unmodified four-function C++ TU.
+Both have two fresh raw/ordered positives and compiled semantic controls.
+Whole tail-b is619 versus620 and remains unaccepted; animation and exit do not
+receive credit. The original full620-byte result is preserved privately,
+including the failing far-call relocation and exit table-prefix difference.

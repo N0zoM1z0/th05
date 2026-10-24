@@ -1570,3 +1570,43 @@ unit = "main-dialog-run"
 source = "src/main/dialog/run.inl"
 find = "input_wait_for_change(0);"
 replace = "input_wait_for_change(1);"
+
+[[units]]
+id = "main-dialog-face"
+source = "src/main/dialog/tail.cpp"
+module = "th05/dialog_t.cpp"
+segment = "DIALOG_TAIL_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 81679
+size = 248
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+bindings_source = "probes/units/dialog_tail_bindings.asm"
+function_symbol = "dialog_face_load_unput_put_free_(int,int,int)"
+
+[[controls]]
+unit = "main-dialog-face"
+source = "src/main/dialog/tail.cpp"
+find = "frame_delay(1);"
+replace = "frame_delay(2);"
+
+[[units]]
+id = "main-dialog-exalice"
+source = "src/main/dialog/tail.cpp"
+module = "th05/dialog_t.cpp"
+segment = "DIALOG_TAIL_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 82049
+size = 67
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+bindings_source = "probes/units/dialog_tail_bindings.asm"
+function_symbol = "main_pat_exalice_override_and_su()"
+
+[[controls]]
+unit = "main-dialog-exalice"
+source = "src/main/dialog/tail.cpp"
+find = "super_clean(TINY_MIKO16_START, PAT_MAX);"
+replace = "super_clean(TINY_MIKO16_START, PAT_MAX - 1);"
