@@ -51,3 +51,217 @@ unit = "op-main-menu"
 source = "src/op/main/menu.cpp"
 find = "if(idle_frame >= 640)"
 replace = "if(idle_frame >= 639)"
+
+[[units]]
+id = "op-setup-menu"
+source = "src/op/setup/setup.cpp"
+module = "th05/op_setup.cpp"
+segment = "OP_SETUP_TEXT"
+target_start = 0xb077
+size = 1439
+alignment_offsets = []
+functions = 12
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_setup_bindings.asm"
+
+[[controls]]
+unit = "op-setup-menu"
+source = "src/op/setup/setup.cpp"
+find = "static const pixel_t DROP_SPEED = (MSWIN_H / 2);"
+replace = "static const pixel_t DROP_SPEED = (MSWIN_H / 4);"
+
+[[units]]
+id = "op-character-menu"
+source = "src/op/charselect/menu.cpp"
+module = "th05/m_char.cpp"
+segment = "M_CHAR_TEXT"
+target_start = 0xce65
+size = 1182
+alignment_offsets = []
+padding_bytes = [{offset = 0x227, value = 0}]
+code_data_ranges = [
+  {offset = 0x92, size = 8, kind = "compiler-switch-table"},
+  {offset = 0x228, size = 8, kind = "compiler-switch-table"},
+]
+functions = 4
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_charselect_bindings.asm"
+
+[[controls]]
+unit = "op-character-menu"
+source = "src/op/charselect/menu.cpp"
+find = "static const pixel_t RAISE_W = 8;"
+replace = "static const pixel_t RAISE_W = 7;"
+
+[[units]]
+id = "op-hiscore-scoredat-recreate"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xc8e2
+size = 220
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "scoredat_recreate()"
+function_end_symbol = "hiscore_scoredat_load_for(int)"
+
+[[units]]
+id = "op-hiscore-load"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xc9be
+size = 93
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "hiscore_scoredat_load_for(int)"
+function_end_symbol = "score_put(int,int,int)"
+
+[[units]]
+id = "op-hiscore-score-put"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xca1b
+size = 149
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "score_put(int,int,int)"
+function_end_symbol = "stage_put(int,int,int)"
+
+[[units]]
+id = "op-hiscore-stage-put"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xcab0
+size = 80
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "stage_put(int,int,int)"
+function_end_symbol = "place_put(int,int)"
+
+[[units]]
+id = "op-hiscore-place-put"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xcb00
+size = 220
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "place_put(int,int)"
+function_end_symbol = "rank_render()"
+code_data_ranges = [{offset = 204, size = 8, kind = "compiler-switch-table"}, {offset = 212, size = 8, kind = "compiler-switch-table"}]
+
+[[units]]
+id = "op-hiscore-rank-render"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xcbdc
+size = 128
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "rank_render()"
+function_end_symbol = "regist_view_menu()"
+
+[[units]]
+id = "op-hiscore-sprites-load"
+source = "src/op/hiscore/view.cpp"
+module = "th05/hi_view.cpp"
+segment = "SCORE_TEXT"
+target_start = 0xcd94
+size = 209
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_bindings.asm"
+function_symbol = "cleardata_and_regist_view_sprite()"
+
+[[controls]]
+unit = "op-hiscore-place-put"
+source = "src/op/hiscore/view.cpp"
+find = "static const pixel_t PLACE_1_PADDING_BOTTOM = 8;"
+replace = "static const pixel_t PLACE_1_PADDING_BOTTOM = 7;"
+
+[[units]]
+id = "op-config"
+source = "src/op/config/config.cpp"
+module = "th05/cfg.cpp"
+segment = "CFG_TEXT"
+target_start = 0xba94
+size = 379
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_config_bindings.asm"
+
+[[controls]]
+unit = "op-config"
+source = "src/op/config/config.cpp"
+find = "file_seek(offsetof(cfg_t, opts_sum), SEEK_SET);"
+replace = "file_seek(offsetof(cfg_t, opts_sum) - 1, SEEK_SET);"
+
+[[units]]
+id = "op-music-prefix"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_PREFIX_TEXT"
+target_start = 0xbe79
+size = 381
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+
+[[controls]]
+unit = "op-music-prefix"
+source = "src/op/music/music.cpp"
+find = "bgimage_put_rect_16(0, (CURSOR_TOP + top), 320, GLYPH_H);"
+replace = "bgimage_put_rect_16(0, (CURSOR_TOP + top), 304, GLYPH_H);"
+
+[[units]]
+id = "op-music-suffix"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc014
+size = 1985
+alignment_offsets = []
+functions = 10
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+
+[[controls]]
+unit = "op-music-suffix"
+source = "src/op/music/music.cpp"
+find = "if(frame_since_last_input >= 24)"
+replace = "if(frame_since_last_input >= 25)"

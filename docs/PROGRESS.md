@@ -6,16 +6,16 @@ complete authored ownership denominator remains under review.
 | Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | MAIN bounded C++ units | 89 | 16014 | 15718 | 296 | 16030 |
-| OP decoded C++ units | 10 | 3319 | 3245 | 74 | 3320 |
+| OP decoded C++ units | 40 | 7798 | 7692 | 106 | 7800 |
 | MAINE decoded C++ units | 1 | 29 | 29 | 0 | 29 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-36 bounded C++ units pass two cold builds, raw bytes and ordered
+47 bounded C++ units pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
 A unit covers a complete compiler contribution or one reviewed complete
 function. Unaccepted functions in the same translation unit receive no credit.
-Authored code includes 370 bytes of explicitly classified compiler switch
-tables; these remain separate from instruction bytes. All 17 observed
+Authored code includes 402 bytes of explicitly classified compiler switch
+tables; these remain separate from instruction bytes. All 18 observed
 padding bytes are checked against their declared target values and excluded
 from authored code. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.

@@ -3,10 +3,10 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **36 bounded C++ units / 100 complete function occurrences**,
-19,379 compared bytes and 19,362 authored code bytes: 18,992 instructions plus
-370 semantic compiler-table bytes. Seventeen checked padding bytes receive no
-credit. MAIN has 89 functions / 16,014 code bytes, decoded OP 10 / 3,319,
+Current acceptance: **47 bounded C++ units / 130 complete function occurrences**,
+23,859 compared bytes and 23,841 authored code bytes: 23,439 instructions plus
+402 semantic compiler-table bytes. Eighteen checked padding bytes receive no
+credit. MAIN has 89 functions / 16,014 code bytes, decoded OP 40 / 7,798,
 decoded MAINE 1 / 29. Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -27,6 +27,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | Enemy rendering from maintained TH04 C++ | `enemies-render-b` |
 | Sound interrupt in MAIN / OP / MAINE | `main-kaja-a`, `op-kaja-a`, `maine-kaja-a` |
 | OP startup and main menu | `op-main-menu-b` |
+| OP setup and character selection | `op-setup-menu-a`, `op-character-menu-a` |
+| Seven OP high-score viewer functions | `op-hiscore-scopes-a` (retained producer review) |
+| OP configuration and music prefix | `op-config-b`, `op-music-prefix-b` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -83,9 +86,16 @@ not treated as initialized file bytes. OP menu's first scaffold stack displaced
 BSS by 84h; omitting artificial stack allocation fixed layout without modifying
 the game algorithm. See `BORLAND_NOTES.md` and owner notes for type/ABI lessons.
 
-Next candidates being prepared independently: OP setup (1,439 code bytes,
-UTF8/CP932 strings) and MAINE cutscene (2,848 bytes). Both are unaccepted.
-The MAINE helper frames must come from original bytes: sound's real frame E80
+OP setup adds 1,439 code bytes / 12 functions, character selection 1,181 / 4,
+and seven high-score viewer functions add 1,099 bytes. The latter reuse two
+unchanged independently produced cold artifacts through the retained-scope
+reviewer, which validates the entire original parent and mechanical scope
+derivation without recompiling. The remaining 312-byte registration menu has
+identical raw code but differing ordered fixups and stays unaccepted.
+OP configuration adds 379 bytes / 3 functions and music prefix 381 / 4.
+Music suffix and MAINE cutscene scopes remain under review. The cutscene's
+52-byte EGC helper and 1,555-byte opcode dispatcher remain unaccepted.
+The MAINE helper frames come from original bytes: sound's real frame E80
 differs from calibration E7F. Maintain full enum domains and real structures;
 no opaque opcode arrays, fake symbols, compiler-body ASM or inert barriers.
 
