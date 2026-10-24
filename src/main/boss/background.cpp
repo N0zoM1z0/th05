@@ -185,6 +185,11 @@ void near shinki_bg_particles_render(void)
 	}
 }
 
+// This second compiler contribution keeps complete functions after the
+// independently inexact particle clip at their original main_01 addresses.
+// Its linker context owns the uncredited inter-contribution origin hole.
+#pragma codeseg BOSS_BG_AFTER_TEXT main_01
+
 void near shinki_bg_type_a_update_part1(void)
 {
 	boss_particle_t near *particle;

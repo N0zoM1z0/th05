@@ -113,12 +113,13 @@ uint16_t pascal near randring1_next16_mod(uint16_t divisor);
 inline uint8_t background_random8(uint8_t min, uint8_t max) {
     return min + randring1_next16_and((max - min) - 1);
 }
-inline subpixel_t background_random_sp(float min_pixels, float max_pixels) {
-    int min = to_sp(min_pixels);
-    int max = to_sp(max_pixels);
+inline subpixel_t background_random_signed(subpixel_t min, subpixel_t max) {
     return (min >= 0)
         ? (min + randring1_next16_and((max - min) - 1))
         : (randring1_next16_and(max + -min - 1) - (-min));
+}
+inline subpixel_t background_random_sp(float min, float max) {
+    return background_random_signed(to_sp(min), to_sp(max));
 }
 static inline pixel_t playfield_fraction_x(float fraction = 1.0f) {
     return static_cast<pixel_t>(PLAYFIELD_W * fraction + 0.0001f);
@@ -247,16 +248,6 @@ static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;
 		tiles_render_after_custom(boss.phase_frame); \
 	} \
 }
-
-#pragma codeseg BOSS_BG_TEXT
-void pascal near sara_bg_render(void);
-void pascal near louise_bg_render(void);
-void pascal near alice_bg_render(void);
-void pascal near mai_yuki_bg_render(void);
-void pascal near yumeko_bg_render(void);
-void pascal near shinki_bg_render(void);
-void pascal near exalice_bg_render(void);
-#pragma codeseg
 
 typedef char th05_background_particle_is_16[(sizeof(boss_particle_t) == 16) ? 1 : -1];
 typedef char th05_background_particle_pos_at_0[(offsetof(boss_particle_t, pos) == 0) ? 1 : -1];

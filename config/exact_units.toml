@@ -1,6 +1,6 @@
 schema_version = 1
 artifact = "th05-main"
-scope = "complete C++ code contributions with explicit target symbol bindings"
+scope = "complete C++ code contributions or functions with explicit target symbol bindings"
 denominator_reviewed = false
 
 # Load-module offsets, independently located in the pinned original MAIN.
@@ -253,3 +253,265 @@ unit = "main-bullet-clip"
 source = "src/main/bullet/clip.cpp"
 find = "bullet_clear_time < 17"
 replace = "bullet_clear_time < 18"
+
+[[units]]
+id = "main-boss-bg-sara-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_TEXT"
+target_start = 0x10a17
+size = 104
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "sara_bg_render()"
+function_end_symbol = "louise_bg_render()"
+
+[[units]]
+id = "main-boss-bg-louise-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_TEXT"
+target_start = 0x10a7f
+size = 140
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "louise_bg_render()"
+function_end_symbol = "alice_bg_render()"
+
+[[units]]
+id = "main-boss-bg-alice-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_TEXT"
+target_start = 0x10b0b
+size = 140
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "alice_bg_render()"
+function_end_symbol = "mai_yuki_bg_render()"
+
+[[units]]
+id = "main-boss-bg-mai-yuki-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_TEXT"
+target_start = 0x10b97
+size = 146
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "mai_yuki_bg_render()"
+function_end_symbol = "yumeko_bg_render()"
+
+[[units]]
+id = "main-boss-bg-yumeko-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_TEXT"
+target_start = 0x10c29
+size = 137
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "yumeko_bg_render()"
+function_end_symbol = "shinki_bg_particles_render()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-a-update-part1"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x10d51
+size = 306
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_a_update_part1()"
+function_end_symbol = "grcg_lineset_line_put(lineset_t near&,int)"
+
+[[units]]
+id = "main-boss-bg-grcg-lineset-line-put"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x10e83
+size = 160
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "grcg_lineset_line_put(lineset_t near&,int)"
+function_end_symbol = "shinki_lineset_forward_copy(lineset_t near&)"
+
+[[units]]
+id = "main-boss-bg-shinki-lineset-forward-copy"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x10f23
+size = 74
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_lineset_forward_copy(lineset_t near&)"
+function_end_symbol = "shinki_bg_type_a_update_and_rend()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-a-update-and-rend"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x10f6d
+size = 178
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_a_update_and_rend()"
+function_end_symbol = "shinki_bg_type_b_update_part1()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-b-update-part1"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x1101f
+size = 224
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_b_update_part1()"
+function_end_symbol = "shinki_bg_type_b_update_and_rend()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-b-update-and-rend"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x110ff
+size = 281
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_b_update_and_rend()"
+function_end_symbol = "shinki_bg_type_c_update_part1()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-c-update-part1"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x11218
+size = 76
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_c_update_part1()"
+function_end_symbol = "shinki_bg_type_c_update_and_rend()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-c-update-and-rend"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x11264
+size = 332
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_c_update_and_rend()"
+function_end_symbol = "shinki_bg_type_d_update()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-type-d-update"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x113b0
+size = 97
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_type_d_update()"
+function_end_symbol = "shinki_bg_render()"
+
+[[units]]
+id = "main-boss-bg-shinki-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x11411
+size = 173
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "shinki_bg_render()"
+function_end_symbol = "exalice_grcg_hexagram_put(int,int)"
+
+[[units]]
+id = "main-boss-bg-exalice-hexagrams-update-and-ren"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x1158a
+size = 220
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "exalice_hexagrams_update_and_ren()"
+function_end_symbol = "exalice_bg_render()"
+
+[[units]]
+id = "main-boss-bg-exalice-bg-render"
+source = "src/main/boss/background.cpp"
+module = "th05/boss_bg.cpp"
+segment = "BOSS_BG_AFTER_TEXT"
+target_start = 0x11666
+size = 103
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/boss_background_exact_bindings.asm"
+function_symbol = "exalice_bg_render()"
+
+[[controls]]
+unit = "main-boss-bg-sara-bg-render"
+source = "src/main/boss/background.hpp"
+find = "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;"
+replace = "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+
+[[units]]
+id = "main-stage-setup"
+source = "src/main/stage/setup.cpp"
+module = "th05/main014.cpp"
+segment = "MAIN_01_TEXT"
+target_start = 0x144c3
+size = 1510
+alignment_offsets = []
+functions = 10
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/stage_setup_bindings.asm"
+
+[[controls]]
+unit = "main-stage-setup"
+source = "src/main/stage/setup.cpp"
+find = "midboss.frames_until = 2500;"
+replace = "midboss.frames_until = 2501;"

@@ -1,4 +1,4 @@
-# Boss background owner candidate
+# Boss background reconstruction scopes
 
 `background.cpp` adapts natural C++ from nmlgc/ReC98
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`,
@@ -17,7 +17,7 @@ There are no emitted instructions, handwritten compiler bodies, fabricated
 external zero objects or optimization barriers. The one reference `keep_0(0)`
 is replaced by **`static_cast<int>(0)`**. This is a candidate with a known
 code-generation risk: original load offset `10D20` contains `CMP AX,0` for the
-signed top clip, while ordinary zero may optimize to TEST. The complete source
+signed top clip, while ordinary zero optimizes to OR AX,AX. The complete source
 is retained even if that function needs further legitimate investigation.
 
 ## Original extent
@@ -162,5 +162,44 @@ particle Y reset `particle->age = 0;` to 1 only within
 `shinki_bg_particles_render` (the same text also occurs in type-A initialization,
 so scope that mutation to the function).
 
-No source-current exact acceptance is claimed. Focused compiler/raw/fixup
-comparison remains required, especially the genuine signed-zero clip risk.
+## Accepted functions and exclusions
+
+Seventeen complete functions, totaling **2891 instruction bytes**, pass two
+fresh producers and the compiled entrance-timing mutation in
+`.analysis/unit-replays/boss-background-functions-a`. Acceptance explicitly
+selects the passing functions from the intact mixed-result receipt, retaining
+its original aggregate-failure verdict and digest. Every saved producer,
+function boundary, raw extent, ordered fixup list and source dependency is
+independently rechecked. Unchanged earlier units are not rebuilt.
+
+Two original complete functions remain unaccepted:
+
+- `shinki_bg_particles_render`: original 159 bytes, natural C++ output 158.
+  The signed-zero comparison emits OR AX,AX in place of CMP AX,0.
+- `exalice_grcg_hexagram_put`: all 204 raw bytes match, but splitting the compiler
+  contribution moves a LEDATA boundary through this function and changes the
+  order of its seven MZ relocation sites. The strict oracle rejects it.
+
+The owner uses two real compiler CODE contributions in the same `main_01`
+group. `BOSS_BG_TEXT` contains the first five callbacks and the unaccepted
+particle renderer: 825 actual compiler bytes at `[10A17,10D50)`.
+`BOSS_BG_AFTER_TEXT` contains the remaining functions: 2428 actual compiler bytes
+at `[10D51,116CD)`. A single ORG hole `[10D50,10D51)` belongs to symbol-only
+link context, outside every compiler function. It receives no credit and does
+not repair or accept the particle renderer. Every accepted function retains
+its complete original position and ordered raw/fixup proof.
+
+The earlier monolithic diagnostic `.analysis/compiler-probes/boss-bg-c` compiled
+3253 natural bytes and found ten raw/fixup matches before the split. It is a
+routing observation, not the current acceptance producer. The standalone
+`diagnose_boss_background.py` intentionally handles that monolithic candidate
+shape; the current split owner is replayed through `replay_units.py`.
+
+Natural random-range helpers preserve separate float-to-subpixel and signed
+range inline layers. Introducing local min/max temporaries prevented this
+compiler from folding branches and grew one function by 46 bytes; restoring
+the semantic helper layering removed that discrepancy. Redundant same-name
+header segment pragmas are omitted so declarations do not create duplicate
+compiler contributions. No accepted shared header is changed.
+
+Whole-background and whole-program equality remain open.

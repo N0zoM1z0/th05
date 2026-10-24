@@ -46,3 +46,11 @@ and boundaries outside the real contribution are rejected. Acceptance recomputes
 these boundaries from both saved MAP files rather than trusting receipt fields.
 Multiple accepted functions in one TU share one compilation per cold round;
 their complete extents and ordered fixups are still compared separately.
+
+A mixed-result replay is never relabelled successful. Explicit subset import
+can accept independently passing complete units from its unchanged receipt,
+retaining the aggregate verdict and selected subset as provenance. Every saved
+result is rechecked, including excluded mismatches; the compiled negative-control
+owner must be included. Default import remains all-or-nothing. Relocation-site
+ordering is compared as emitted, even when identical raw code bytes differ only
+in the ordering of loader metadata.

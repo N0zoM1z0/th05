@@ -2,20 +2,31 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "869df12ef23133ee93728a555f908dd8892eba866966c0f505a501f6f63d001f",
+  "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 95198,
-    "candidate_start": 95198,
-    "size": 94,
-    "target_sha256": "a8742468f00e45cf56fd0e1902feb0f758bc880540bd72e9af82904604b71e52",
-    "candidate_sha256": "4d65145ae7b89c2ed8a471a4261512c8d9dbaec7965e236ff6e08c7982f16b9a",
+    "target_start": 68119,
+    "candidate_start": 68119,
+    "size": 104,
+    "candidate_size": 105,
+    "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+    "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 68119,
+      "size": 105,
+      "function_symbol": "sara_bg_render()",
+      "contribution_start": 68119,
+      "contribution_size": 826,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "louise_bg_render()"
+    }
   },
   "units": [
     {
@@ -2136,6 +2147,4871 @@
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "main-boss-bg-sara-bg-render",
+      "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+      "result": {
+        "id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "rounds": [
+          {
+            "target_start": 68119,
+            "candidate_start": 68119,
+            "size": 104,
+            "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+            "candidate_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68119,
+              "size": 104,
+              "function_symbol": "sara_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "louise_bg_render()"
+            }
+          },
+          {
+            "target_start": 68119,
+            "candidate_start": 68119,
+            "size": 104,
+            "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+            "candidate_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68119,
+              "size": 104,
+              "function_symbol": "sara_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "louise_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-louise-bg-render",
+      "entry_sha256": "e9ab1e27478471ff8342845ba3f7ca590d10bdd34d509ff161107295ec40de33",
+      "result": {
+        "id": "main-boss-bg-louise-bg-render",
+        "entry_sha256": "e9ab1e27478471ff8342845ba3f7ca590d10bdd34d509ff161107295ec40de33",
+        "rounds": [
+          {
+            "target_start": 68223,
+            "candidate_start": 68223,
+            "size": 140,
+            "target_sha256": "0348508b459ef62106714dfaea351a0feb67bee2c1f231967565070c0e75524d",
+            "candidate_sha256": "0348508b459ef62106714dfaea351a0feb67bee2c1f231967565070c0e75524d",
+            "raw_exact": true,
+            "target_fixups": [
+              76
+            ],
+            "candidate_fixups": [
+              76
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68223,
+              "size": 140,
+              "function_symbol": "louise_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "alice_bg_render()"
+            }
+          },
+          {
+            "target_start": 68223,
+            "candidate_start": 68223,
+            "size": 140,
+            "target_sha256": "0348508b459ef62106714dfaea351a0feb67bee2c1f231967565070c0e75524d",
+            "candidate_sha256": "0348508b459ef62106714dfaea351a0feb67bee2c1f231967565070c0e75524d",
+            "raw_exact": true,
+            "target_fixups": [
+              76
+            ],
+            "candidate_fixups": [
+              76
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68223,
+              "size": 140,
+              "function_symbol": "louise_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "alice_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-alice-bg-render",
+      "entry_sha256": "323a52dca1065d2073831389d0b697298436a2b8791ec1f6496cad690f14b92f",
+      "result": {
+        "id": "main-boss-bg-alice-bg-render",
+        "entry_sha256": "323a52dca1065d2073831389d0b697298436a2b8791ec1f6496cad690f14b92f",
+        "rounds": [
+          {
+            "target_start": 68363,
+            "candidate_start": 68363,
+            "size": 140,
+            "target_sha256": "6eb02288c4612753a7079f8d239413f98a15a1427d2a56c94312ca35a9588214",
+            "candidate_sha256": "6eb02288c4612753a7079f8d239413f98a15a1427d2a56c94312ca35a9588214",
+            "raw_exact": true,
+            "target_fixups": [
+              76
+            ],
+            "candidate_fixups": [
+              76
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68363,
+              "size": 140,
+              "function_symbol": "alice_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "mai_yuki_bg_render()"
+            }
+          },
+          {
+            "target_start": 68363,
+            "candidate_start": 68363,
+            "size": 140,
+            "target_sha256": "6eb02288c4612753a7079f8d239413f98a15a1427d2a56c94312ca35a9588214",
+            "candidate_sha256": "6eb02288c4612753a7079f8d239413f98a15a1427d2a56c94312ca35a9588214",
+            "raw_exact": true,
+            "target_fixups": [
+              76
+            ],
+            "candidate_fixups": [
+              76
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68363,
+              "size": 140,
+              "function_symbol": "alice_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "mai_yuki_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-mai-yuki-bg-render",
+      "entry_sha256": "f71ae427555ad813a4294a787bc0b17d063ea9543faf5e190f57ea719bfa27d5",
+      "result": {
+        "id": "main-boss-bg-mai-yuki-bg-render",
+        "entry_sha256": "f71ae427555ad813a4294a787bc0b17d063ea9543faf5e190f57ea719bfa27d5",
+        "rounds": [
+          {
+            "target_start": 68503,
+            "candidate_start": 68503,
+            "size": 146,
+            "target_sha256": "9e78610dece55a6001111da0b0ad6a82fc96b78379332509a4646ec4e677ee8b",
+            "candidate_sha256": "9e78610dece55a6001111da0b0ad6a82fc96b78379332509a4646ec4e677ee8b",
+            "raw_exact": true,
+            "target_fixups": [
+              78
+            ],
+            "candidate_fixups": [
+              78
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68503,
+              "size": 146,
+              "function_symbol": "mai_yuki_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "yumeko_bg_render()"
+            }
+          },
+          {
+            "target_start": 68503,
+            "candidate_start": 68503,
+            "size": 146,
+            "target_sha256": "9e78610dece55a6001111da0b0ad6a82fc96b78379332509a4646ec4e677ee8b",
+            "candidate_sha256": "9e78610dece55a6001111da0b0ad6a82fc96b78379332509a4646ec4e677ee8b",
+            "raw_exact": true,
+            "target_fixups": [
+              78
+            ],
+            "candidate_fixups": [
+              78
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68503,
+              "size": 146,
+              "function_symbol": "mai_yuki_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "yumeko_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-yumeko-bg-render",
+      "entry_sha256": "3239656837e2e01dc585775063dfa11b39da5479a3c0be55e6b157e18ed6f83f",
+      "result": {
+        "id": "main-boss-bg-yumeko-bg-render",
+        "entry_sha256": "3239656837e2e01dc585775063dfa11b39da5479a3c0be55e6b157e18ed6f83f",
+        "rounds": [
+          {
+            "target_start": 68649,
+            "candidate_start": 68649,
+            "size": 137,
+            "target_sha256": "561b7865383443d2411e0092a81d714ac88cad8e9288366da1e9f36719a10097",
+            "candidate_sha256": "561b7865383443d2411e0092a81d714ac88cad8e9288366da1e9f36719a10097",
+            "raw_exact": true,
+            "target_fixups": [
+              69
+            ],
+            "candidate_fixups": [
+              69
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68649,
+              "size": 137,
+              "function_symbol": "yumeko_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_particles_render()"
+            }
+          },
+          {
+            "target_start": 68649,
+            "candidate_start": 68649,
+            "size": 137,
+            "target_sha256": "561b7865383443d2411e0092a81d714ac88cad8e9288366da1e9f36719a10097",
+            "candidate_sha256": "561b7865383443d2411e0092a81d714ac88cad8e9288366da1e9f36719a10097",
+            "raw_exact": true,
+            "target_fixups": [
+              69
+            ],
+            "candidate_fixups": [
+              69
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68649,
+              "size": 137,
+              "function_symbol": "yumeko_bg_render()",
+              "contribution_start": 68119,
+              "contribution_size": 825,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_particles_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-a-update-part1",
+      "entry_sha256": "2fbbb565cf736eea2a8ab683935f4b579e14a574e29daf1587619d7e5b3d0cf0",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-a-update-part1",
+        "entry_sha256": "2fbbb565cf736eea2a8ab683935f4b579e14a574e29daf1587619d7e5b3d0cf0",
+        "rounds": [
+          {
+            "target_start": 68945,
+            "candidate_start": 68945,
+            "size": 306,
+            "target_sha256": "09f48e949d8fb0738d1d759952c7bfbdf07018bc376b27bd6640e17ee961c2bf",
+            "candidate_sha256": "09f48e949d8fb0738d1d759952c7bfbdf07018bc376b27bd6640e17ee961c2bf",
+            "raw_exact": true,
+            "target_fixups": [
+              242
+            ],
+            "candidate_fixups": [
+              242
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68945,
+              "size": 306,
+              "function_symbol": "shinki_bg_type_a_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "grcg_lineset_line_put(lineset_t near&,int)"
+            }
+          },
+          {
+            "target_start": 68945,
+            "candidate_start": 68945,
+            "size": 306,
+            "target_sha256": "09f48e949d8fb0738d1d759952c7bfbdf07018bc376b27bd6640e17ee961c2bf",
+            "candidate_sha256": "09f48e949d8fb0738d1d759952c7bfbdf07018bc376b27bd6640e17ee961c2bf",
+            "raw_exact": true,
+            "target_fixups": [
+              242
+            ],
+            "candidate_fixups": [
+              242
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 68945,
+              "size": 306,
+              "function_symbol": "shinki_bg_type_a_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "grcg_lineset_line_put(lineset_t near&,int)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-grcg-lineset-line-put",
+      "entry_sha256": "86b279103ab323d420605f7d643585890b20b5217ddeaece33ccae4101dc749c",
+      "result": {
+        "id": "main-boss-bg-grcg-lineset-line-put",
+        "entry_sha256": "86b279103ab323d420605f7d643585890b20b5217ddeaece33ccae4101dc749c",
+        "rounds": [
+          {
+            "target_start": 69251,
+            "candidate_start": 69251,
+            "size": 160,
+            "target_sha256": "612ae57cd8db3fab17af1a0400e47e0c0e0fd61f55402e2d342adc27bd3e1047",
+            "candidate_sha256": "612ae57cd8db3fab17af1a0400e47e0c0e0fd61f55402e2d342adc27bd3e1047",
+            "raw_exact": true,
+            "target_fixups": [
+              152,
+              113,
+              48
+            ],
+            "candidate_fixups": [
+              152,
+              113,
+              48
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69251,
+              "size": 160,
+              "function_symbol": "grcg_lineset_line_put(lineset_t near&,int)",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_lineset_forward_copy(lineset_t near&)"
+            }
+          },
+          {
+            "target_start": 69251,
+            "candidate_start": 69251,
+            "size": 160,
+            "target_sha256": "612ae57cd8db3fab17af1a0400e47e0c0e0fd61f55402e2d342adc27bd3e1047",
+            "candidate_sha256": "612ae57cd8db3fab17af1a0400e47e0c0e0fd61f55402e2d342adc27bd3e1047",
+            "raw_exact": true,
+            "target_fixups": [
+              152,
+              113,
+              48
+            ],
+            "candidate_fixups": [
+              152,
+              113,
+              48
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69251,
+              "size": 160,
+              "function_symbol": "grcg_lineset_line_put(lineset_t near&,int)",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_lineset_forward_copy(lineset_t near&)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-lineset-forward-copy",
+      "entry_sha256": "b1f7e96e9720420e97bc7501c96af0e6a5c4096344a04b8389495a98982177ba",
+      "result": {
+        "id": "main-boss-bg-shinki-lineset-forward-copy",
+        "entry_sha256": "b1f7e96e9720420e97bc7501c96af0e6a5c4096344a04b8389495a98982177ba",
+        "rounds": [
+          {
+            "target_start": 69411,
+            "candidate_start": 69411,
+            "size": 74,
+            "target_sha256": "680418ccc50b11df645577abb4f533de32013056c8f9f4c4b51cd015a29dc79a",
+            "candidate_sha256": "680418ccc50b11df645577abb4f533de32013056c8f9f4c4b51cd015a29dc79a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69411,
+              "size": 74,
+              "function_symbol": "shinki_lineset_forward_copy(lineset_t near&)",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_a_update_and_rend()"
+            }
+          },
+          {
+            "target_start": 69411,
+            "candidate_start": 69411,
+            "size": 74,
+            "target_sha256": "680418ccc50b11df645577abb4f533de32013056c8f9f4c4b51cd015a29dc79a",
+            "candidate_sha256": "680418ccc50b11df645577abb4f533de32013056c8f9f4c4b51cd015a29dc79a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69411,
+              "size": 74,
+              "function_symbol": "shinki_lineset_forward_copy(lineset_t near&)",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_a_update_and_rend()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-a-update-and-rend",
+      "entry_sha256": "7a97530eb5f220f507a48986decf98fec8670a1ec4fb99c05ef77120510baf3f",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "entry_sha256": "7a97530eb5f220f507a48986decf98fec8670a1ec4fb99c05ef77120510baf3f",
+        "rounds": [
+          {
+            "target_start": 69485,
+            "candidate_start": 69485,
+            "size": 178,
+            "target_sha256": "3a1624eb15fe37215c2b583a7acc9634540afaa0fb5b49cc15ad127827e34315",
+            "candidate_sha256": "3a1624eb15fe37215c2b583a7acc9634540afaa0fb5b49cc15ad127827e34315",
+            "raw_exact": true,
+            "target_fixups": [
+              55
+            ],
+            "candidate_fixups": [
+              55
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69485,
+              "size": 178,
+              "function_symbol": "shinki_bg_type_a_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_b_update_part1()"
+            }
+          },
+          {
+            "target_start": 69485,
+            "candidate_start": 69485,
+            "size": 178,
+            "target_sha256": "3a1624eb15fe37215c2b583a7acc9634540afaa0fb5b49cc15ad127827e34315",
+            "candidate_sha256": "3a1624eb15fe37215c2b583a7acc9634540afaa0fb5b49cc15ad127827e34315",
+            "raw_exact": true,
+            "target_fixups": [
+              55
+            ],
+            "candidate_fixups": [
+              55
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69485,
+              "size": 178,
+              "function_symbol": "shinki_bg_type_a_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_b_update_part1()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-b-update-part1",
+      "entry_sha256": "0e6de0abf39002a5a41607e481a31610f39b93b49acbc53c78284eb0cdf7fc95",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-b-update-part1",
+        "entry_sha256": "0e6de0abf39002a5a41607e481a31610f39b93b49acbc53c78284eb0cdf7fc95",
+        "rounds": [
+          {
+            "target_start": 69663,
+            "candidate_start": 69663,
+            "size": 224,
+            "target_sha256": "df5d323fdec3f94639f64938cdebda465c2b2bae4b86ab5123b352b0f0999c25",
+            "candidate_sha256": "df5d323fdec3f94639f64938cdebda465c2b2bae4b86ab5123b352b0f0999c25",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69663,
+              "size": 224,
+              "function_symbol": "shinki_bg_type_b_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_b_update_and_rend()"
+            }
+          },
+          {
+            "target_start": 69663,
+            "candidate_start": 69663,
+            "size": 224,
+            "target_sha256": "df5d323fdec3f94639f64938cdebda465c2b2bae4b86ab5123b352b0f0999c25",
+            "candidate_sha256": "df5d323fdec3f94639f64938cdebda465c2b2bae4b86ab5123b352b0f0999c25",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69663,
+              "size": 224,
+              "function_symbol": "shinki_bg_type_b_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_b_update_and_rend()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-b-update-and-rend",
+      "entry_sha256": "e54574b53f2dcdf8aeae308d8fba8bc3873bd80db7c54740b1ce792f4e1fbbdd",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "entry_sha256": "e54574b53f2dcdf8aeae308d8fba8bc3873bd80db7c54740b1ce792f4e1fbbdd",
+        "rounds": [
+          {
+            "target_start": 69887,
+            "candidate_start": 69887,
+            "size": 281,
+            "target_sha256": "053d660d45c66a3b5e54ebfe4821fb34f723fdaab11b8fb9c27bd826bca3c2b2",
+            "candidate_sha256": "053d660d45c66a3b5e54ebfe4821fb34f723fdaab11b8fb9c27bd826bca3c2b2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69887,
+              "size": 281,
+              "function_symbol": "shinki_bg_type_b_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_c_update_part1()"
+            }
+          },
+          {
+            "target_start": 69887,
+            "candidate_start": 69887,
+            "size": 281,
+            "target_sha256": "053d660d45c66a3b5e54ebfe4821fb34f723fdaab11b8fb9c27bd826bca3c2b2",
+            "candidate_sha256": "053d660d45c66a3b5e54ebfe4821fb34f723fdaab11b8fb9c27bd826bca3c2b2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 69887,
+              "size": 281,
+              "function_symbol": "shinki_bg_type_b_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_c_update_part1()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-c-update-part1",
+      "entry_sha256": "a71fc4f11ef7df9f3ddabdb07e59239e6915a3ba0d0c0652bfc60e7df5aaa4bd",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-c-update-part1",
+        "entry_sha256": "a71fc4f11ef7df9f3ddabdb07e59239e6915a3ba0d0c0652bfc60e7df5aaa4bd",
+        "rounds": [
+          {
+            "target_start": 70168,
+            "candidate_start": 70168,
+            "size": 76,
+            "target_sha256": "f32cac54da31a3d1ff8b0d95e08589367950d9b75acaf972167b9ede61c2fd48",
+            "candidate_sha256": "f32cac54da31a3d1ff8b0d95e08589367950d9b75acaf972167b9ede61c2fd48",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70168,
+              "size": 76,
+              "function_symbol": "shinki_bg_type_c_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_c_update_and_rend()"
+            }
+          },
+          {
+            "target_start": 70168,
+            "candidate_start": 70168,
+            "size": 76,
+            "target_sha256": "f32cac54da31a3d1ff8b0d95e08589367950d9b75acaf972167b9ede61c2fd48",
+            "candidate_sha256": "f32cac54da31a3d1ff8b0d95e08589367950d9b75acaf972167b9ede61c2fd48",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70168,
+              "size": 76,
+              "function_symbol": "shinki_bg_type_c_update_part1()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_c_update_and_rend()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-c-update-and-rend",
+      "entry_sha256": "6384b7b1f179624501f80c6aa0757f860bb39feb802de04ee3a101b996bedcda",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "entry_sha256": "6384b7b1f179624501f80c6aa0757f860bb39feb802de04ee3a101b996bedcda",
+        "rounds": [
+          {
+            "target_start": 70244,
+            "candidate_start": 70244,
+            "size": 332,
+            "target_sha256": "9c0d994aa5e124fcbf1ae2df0cb95f97aac795805cc1a43738072b9ca842ec4b",
+            "candidate_sha256": "9c0d994aa5e124fcbf1ae2df0cb95f97aac795805cc1a43738072b9ca842ec4b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70244,
+              "size": 332,
+              "function_symbol": "shinki_bg_type_c_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_d_update()"
+            }
+          },
+          {
+            "target_start": 70244,
+            "candidate_start": 70244,
+            "size": 332,
+            "target_sha256": "9c0d994aa5e124fcbf1ae2df0cb95f97aac795805cc1a43738072b9ca842ec4b",
+            "candidate_sha256": "9c0d994aa5e124fcbf1ae2df0cb95f97aac795805cc1a43738072b9ca842ec4b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70244,
+              "size": 332,
+              "function_symbol": "shinki_bg_type_c_update_and_rend()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_type_d_update()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-type-d-update",
+      "entry_sha256": "7b8ee0061b3660c917183cd85a9e4012d1d1f78470f97a0f95bf697d4a282f46",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-type-d-update",
+        "entry_sha256": "7b8ee0061b3660c917183cd85a9e4012d1d1f78470f97a0f95bf697d4a282f46",
+        "rounds": [
+          {
+            "target_start": 70576,
+            "candidate_start": 70576,
+            "size": 97,
+            "target_sha256": "daf1c078abea441a559a190b349d3aaea9232dbc965f5e9c253770980a224924",
+            "candidate_sha256": "daf1c078abea441a559a190b349d3aaea9232dbc965f5e9c253770980a224924",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70576,
+              "size": 97,
+              "function_symbol": "shinki_bg_type_d_update()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_render()"
+            }
+          },
+          {
+            "target_start": 70576,
+            "candidate_start": 70576,
+            "size": 97,
+            "target_sha256": "daf1c078abea441a559a190b349d3aaea9232dbc965f5e9c253770980a224924",
+            "candidate_sha256": "daf1c078abea441a559a190b349d3aaea9232dbc965f5e9c253770980a224924",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70576,
+              "size": 97,
+              "function_symbol": "shinki_bg_type_d_update()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shinki_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-shinki-bg-render",
+      "entry_sha256": "1c60ed47d5885d53bbd2e8f3f54e3570ff2d1d79e3a2b3f9cec3602404e0370a",
+      "result": {
+        "id": "main-boss-bg-shinki-bg-render",
+        "entry_sha256": "1c60ed47d5885d53bbd2e8f3f54e3570ff2d1d79e3a2b3f9cec3602404e0370a",
+        "rounds": [
+          {
+            "target_start": 70673,
+            "candidate_start": 70673,
+            "size": 173,
+            "target_sha256": "ddff5dfc0432737520e71230da47476e2de44e88947225447b61980847c242a0",
+            "candidate_sha256": "ddff5dfc0432737520e71230da47476e2de44e88947225447b61980847c242a0",
+            "raw_exact": true,
+            "target_fixups": [
+              160,
+              143
+            ],
+            "candidate_fixups": [
+              160,
+              143
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70673,
+              "size": 173,
+              "function_symbol": "shinki_bg_render()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "exalice_grcg_hexagram_put(int,int)"
+            }
+          },
+          {
+            "target_start": 70673,
+            "candidate_start": 70673,
+            "size": 173,
+            "target_sha256": "ddff5dfc0432737520e71230da47476e2de44e88947225447b61980847c242a0",
+            "candidate_sha256": "ddff5dfc0432737520e71230da47476e2de44e88947225447b61980847c242a0",
+            "raw_exact": true,
+            "target_fixups": [
+              160,
+              143
+            ],
+            "candidate_fixups": [
+              160,
+              143
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 70673,
+              "size": 173,
+              "function_symbol": "shinki_bg_render()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "exalice_grcg_hexagram_put(int,int)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-exalice-hexagrams-update-and-ren",
+      "entry_sha256": "1e6fa08464bfda62dcfc00131c0eb7fb589fe39232ddd64ed79ec994975f8380",
+      "result": {
+        "id": "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "entry_sha256": "1e6fa08464bfda62dcfc00131c0eb7fb589fe39232ddd64ed79ec994975f8380",
+        "rounds": [
+          {
+            "target_start": 71050,
+            "candidate_start": 71050,
+            "size": 220,
+            "target_sha256": "0bf4d9cfa64531c2d4b06f50e9cbde9b03e9ca9c4ace89ab9dcd6b50e7adf03d",
+            "candidate_sha256": "0bf4d9cfa64531c2d4b06f50e9cbde9b03e9ca9c4ace89ab9dcd6b50e7adf03d",
+            "raw_exact": true,
+            "target_fixups": [
+              196,
+              158,
+              134
+            ],
+            "candidate_fixups": [
+              196,
+              158,
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 71050,
+              "size": 220,
+              "function_symbol": "exalice_hexagrams_update_and_ren()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "exalice_bg_render()"
+            }
+          },
+          {
+            "target_start": 71050,
+            "candidate_start": 71050,
+            "size": 220,
+            "target_sha256": "0bf4d9cfa64531c2d4b06f50e9cbde9b03e9ca9c4ace89ab9dcd6b50e7adf03d",
+            "candidate_sha256": "0bf4d9cfa64531c2d4b06f50e9cbde9b03e9ca9c4ace89ab9dcd6b50e7adf03d",
+            "raw_exact": true,
+            "target_fixups": [
+              196,
+              158,
+              134
+            ],
+            "candidate_fixups": [
+              196,
+              158,
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 71050,
+              "size": 220,
+              "function_symbol": "exalice_hexagrams_update_and_ren()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "exalice_bg_render()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-boss-bg-exalice-bg-render",
+      "entry_sha256": "703a0fde3574b7387955f7fef7cc03e02473f43160c1b9875c3f6129ff05a7a9",
+      "result": {
+        "id": "main-boss-bg-exalice-bg-render",
+        "entry_sha256": "703a0fde3574b7387955f7fef7cc03e02473f43160c1b9875c3f6129ff05a7a9",
+        "rounds": [
+          {
+            "target_start": 71270,
+            "candidate_start": 71270,
+            "size": 103,
+            "target_sha256": "3aae24f7d73463a26f6cd998b63420fed26f4f1949cd99d66e423efc1f72a086",
+            "candidate_sha256": "3aae24f7d73463a26f6cd998b63420fed26f4f1949cd99d66e423efc1f72a086",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 71270,
+              "size": 103,
+              "function_symbol": "exalice_bg_render()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 71270,
+            "candidate_start": 71270,
+            "size": 103,
+            "target_sha256": "3aae24f7d73463a26f6cd998b63420fed26f4f1949cd99d66e423efc1f72a086",
+            "candidate_sha256": "3aae24f7d73463a26f6cd998b63420fed26f4f1949cd99d66e423efc1f72a086",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 71270,
+              "size": 103,
+              "function_symbol": "exalice_bg_render()",
+              "contribution_start": 68945,
+              "contribution_size": 2428,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2397b7f5ab78cb12e32e93e1495a63b33406d34f91ae8dd83d43b852c6aa7d77",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2c7ccee6a83e72fa4ebf605142d0379a953786fe922f74dc5c510498c34989d6",
+            "dependency_timestamp_normalized_sha256": "431edff2146c5d94aa7257e2f6c756f4ff80735a1153bf6bc38554eaebee641d",
+            "module_name": "th05/boss_bg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_bg.cpp",
+              "src/main/boss/background.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_background_exact_bindings.asm",
+            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          },
+          {
+            "path": "src/main/boss/background.cpp",
+            "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_background_exact_bindings.asm",
+          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+        },
+        {
+          "path": "src/main/boss/background.cpp",
+          "sha256": "2742d2df78870ddb70b4ffc041a17d7e9e3a9ba74629e6b206c2e9bf7a39ce46"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+      "compiled_negative_control": {
+        "target_start": 68119,
+        "candidate_start": 68119,
+        "size": 104,
+        "candidate_size": 105,
+        "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+        "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 68119,
+          "size": 105,
+          "function_symbol": "sara_bg_render()",
+          "contribution_start": 68119,
+          "contribution_size": 826,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "louise_bg_render()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-boss-bg-sara-bg-render",
+        "entry_sha256": "2874c7445466842244330a8253143fe80415bb623485125ffa70ff951ff616f1",
+        "mutation": {
+          "unit": "main-boss-bg-sara-bg-render",
+          "source": "src/main/boss/background.hpp",
+          "find": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;",
+          "replace": "static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 3;"
+        },
+        "control_sha256": "61ad9f373603f42297cff017976e3916a84f58606d711513ea7e0cf742256ce4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68119,
+          "candidate_start": 68119,
+          "size": 104,
+          "candidate_size": 105,
+          "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+          "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 68119,
+            "size": 105,
+            "function_symbol": "sara_bg_render()",
+            "contribution_start": 68119,
+            "contribution_size": 826,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "louise_bg_render()"
+          }
+        },
+        "omf": {
+          "sha256": "ceb5a1fefb99248c8fbb472cea772a678be8c4a63cc1ab1f9738bbd218b9e160",
+          "dependency_timestamp_normalized_sha256": "0ae763249519d358dd7abfddd11b1a0d0e60cbecf3b391b79228e06843e1dfae",
+          "module_name": "th05/boss_bg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_bg.cpp",
+            "src/main/boss/background.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": false,
+      "receipt_selected_subset": [
+        "main-boss-bg-alice-bg-render",
+        "main-boss-bg-exalice-bg-render",
+        "main-boss-bg-exalice-hexagrams-update-and-ren",
+        "main-boss-bg-grcg-lineset-line-put",
+        "main-boss-bg-louise-bg-render",
+        "main-boss-bg-mai-yuki-bg-render",
+        "main-boss-bg-sara-bg-render",
+        "main-boss-bg-shinki-bg-render",
+        "main-boss-bg-shinki-bg-type-a-update-and-rend",
+        "main-boss-bg-shinki-bg-type-a-update-part1",
+        "main-boss-bg-shinki-bg-type-b-update-and-rend",
+        "main-boss-bg-shinki-bg-type-b-update-part1",
+        "main-boss-bg-shinki-bg-type-c-update-and-rend",
+        "main-boss-bg-shinki-bg-type-c-update-part1",
+        "main-boss-bg-shinki-bg-type-d-update",
+        "main-boss-bg-shinki-lineset-forward-copy",
+        "main-boss-bg-yumeko-bg-render"
+      ]
+    },
+    {
+      "id": "main-stage-setup",
+      "entry_sha256": "d77863611a7327247554308b1e5fd539983186afc4f591318184b0126397b3d9",
+      "result": {
+        "id": "main-stage-setup",
+        "entry_sha256": "d77863611a7327247554308b1e5fd539983186afc4f591318184b0126397b3d9",
+        "rounds": [
+          {
+            "target_start": 83139,
+            "candidate_start": 83139,
+            "size": 1510,
+            "target_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+            "candidate_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+            "raw_exact": true,
+            "target_fixups": [
+              949,
+              919,
+              908,
+              859,
+              731,
+              701,
+              690,
+              628,
+              524,
+              494,
+              483,
+              439,
+              335,
+              305,
+              294,
+              232,
+              128,
+              111,
+              68,
+              7,
+              1487,
+              1443,
+              1346,
+              1316,
+              1305,
+              1259,
+              1202,
+              1132,
+              1121,
+              1077
+            ],
+            "candidate_fixups": [
+              949,
+              919,
+              908,
+              859,
+              731,
+              701,
+              690,
+              628,
+              524,
+              494,
+              483,
+              439,
+              335,
+              305,
+              294,
+              232,
+              128,
+              111,
+              68,
+              7,
+              1487,
+              1443,
+              1346,
+              1316,
+              1305,
+              1259,
+              1202,
+              1132,
+              1121,
+              1077
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 83139,
+            "candidate_start": 83139,
+            "size": 1510,
+            "target_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+            "candidate_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+            "raw_exact": true,
+            "target_fixups": [
+              949,
+              919,
+              908,
+              859,
+              731,
+              701,
+              690,
+              628,
+              524,
+              494,
+              483,
+              439,
+              335,
+              305,
+              294,
+              232,
+              128,
+              111,
+              68,
+              7,
+              1487,
+              1443,
+              1346,
+              1316,
+              1305,
+              1259,
+              1202,
+              1132,
+              1121,
+              1077
+            ],
+            "candidate_fixups": [
+              949,
+              919,
+              908,
+              859,
+              731,
+              701,
+              690,
+              628,
+              524,
+              494,
+              483,
+              439,
+              335,
+              305,
+              294,
+              232,
+              128,
+              111,
+              68,
+              7,
+              1487,
+              1443,
+              1346,
+              1316,
+              1305,
+              1259,
+              1202,
+              1132,
+              1121,
+              1077
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "8a6765015c5874cca1a09c14c46521927a1de4c44f2f59a892e4187c7638ca15",
+            "dependency_timestamp_normalized_sha256": "4206f4a0bb1f20db9431300b528c6b3846f3c61c0cfb4c33bc2984e5574b8e36",
+            "module_name": "th05/main014.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/main014.cpp",
+              "src/main/stage/setup.cpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2a88824ecdd59be36c65324382ada8af136089e2efcf6a185615f95428d7daec",
+            "dependency_timestamp_normalized_sha256": "4206f4a0bb1f20db9431300b528c6b3846f3c61c0cfb4c33bc2984e5574b8e36",
+            "module_name": "th05/main014.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/main014.cpp",
+              "src/main/stage/setup.cpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/stage_setup_bindings.asm",
+            "sha256": "6008deed400c6f59b7fc8a7edc75ecaae4fb4a01a5a6e06c2a2f7605103c870f"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/stage/setup.cpp",
+            "sha256": "69686d0996222e6939b69676d19cb8f3b0d59c395dd7414312e4f5ab87cf7522"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/stage_setup_bindings.asm",
+          "sha256": "6008deed400c6f59b7fc8a7edc75ecaae4fb4a01a5a6e06c2a2f7605103c870f"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/stage/setup.cpp",
+          "sha256": "69686d0996222e6939b69676d19cb8f3b0d59c395dd7414312e4f5ab87cf7522"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c5b5b03ea82ae1a4abe24805cd0bc5b4d81552f20f1c244308a6d35b7bbff3b6",
+      "compiled_negative_control": {
+        "target_start": 83139,
+        "candidate_start": 83139,
+        "size": 1510,
+        "target_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+        "candidate_sha256": "e8b82b0706f0c348840cefe6b2251789aabc19487b0952aaeb344357d082761f",
+        "raw_exact": false,
+        "target_fixups": [
+          949,
+          919,
+          908,
+          859,
+          731,
+          701,
+          690,
+          628,
+          524,
+          494,
+          483,
+          439,
+          335,
+          305,
+          294,
+          232,
+          128,
+          111,
+          68,
+          7,
+          1487,
+          1443,
+          1346,
+          1316,
+          1305,
+          1259,
+          1202,
+          1132,
+          1121,
+          1077
+        ],
+        "candidate_fixups": [
+          949,
+          919,
+          908,
+          859,
+          731,
+          701,
+          690,
+          628,
+          524,
+          494,
+          483,
+          439,
+          335,
+          305,
+          294,
+          232,
+          128,
+          111,
+          68,
+          7,
+          1487,
+          1443,
+          1346,
+          1316,
+          1305,
+          1259,
+          1202,
+          1132,
+          1121,
+          1077
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-stage-setup",
+        "entry_sha256": "d77863611a7327247554308b1e5fd539983186afc4f591318184b0126397b3d9",
+        "mutation": {
+          "unit": "main-stage-setup",
+          "source": "src/main/stage/setup.cpp",
+          "find": "midboss.frames_until = 2500;",
+          "replace": "midboss.frames_until = 2501;"
+        },
+        "control_sha256": "969a6ba89bd4b0ed8f46a3f45fe61ba78c44c91535860bcad3f06e41d7d77035",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 83139,
+          "candidate_start": 83139,
+          "size": 1510,
+          "target_sha256": "d12425527e83261d732853ff35f14d80747fe638585d6ec60f20c527b378ba34",
+          "candidate_sha256": "e8b82b0706f0c348840cefe6b2251789aabc19487b0952aaeb344357d082761f",
+          "raw_exact": false,
+          "target_fixups": [
+            949,
+            919,
+            908,
+            859,
+            731,
+            701,
+            690,
+            628,
+            524,
+            494,
+            483,
+            439,
+            335,
+            305,
+            294,
+            232,
+            128,
+            111,
+            68,
+            7,
+            1487,
+            1443,
+            1346,
+            1316,
+            1305,
+            1259,
+            1202,
+            1132,
+            1121,
+            1077
+          ],
+          "candidate_fixups": [
+            949,
+            919,
+            908,
+            859,
+            731,
+            701,
+            690,
+            628,
+            524,
+            494,
+            483,
+            439,
+            335,
+            305,
+            294,
+            232,
+            128,
+            111,
+            68,
+            7,
+            1487,
+            1443,
+            1346,
+            1316,
+            1305,
+            1259,
+            1202,
+            1132,
+            1121,
+            1077
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "e4d936cf75f6fa4d90beafdfb243a429d35969a0168c527ad1cd6d9d476af41b",
+          "dependency_timestamp_normalized_sha256": "6bd8e5cc57d704aaa132ab59478f1072fce7d61a07ee767ece235ca3d5b31b10",
+          "module_name": "th05/main014.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/main014.cpp",
+            "src/main/stage/setup.cpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
           ]
         }
       }

@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 11 bounded C++ units, 53 complete functions, 9,182 compared
-bytes and 9,166 authored code bytes: 8,890 instructions plus 276 bytes of
+Current acceptance: 29 bounded C++ units, 80 complete functions, 13,583 compared
+bytes and 13,567 authored code bytes: 13,291 instructions plus 276 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -21,6 +21,8 @@ Global percentage remains unmeasured pending complete ownership review.
 | Yuuka shots | `yuuka-shots-a` |
 | Mima shots | `mima-shots-b` |
 | Bullet generation clipping | `bullet-clip-d` |
+| Stage initialization | `stage-setup-a` |
+| 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
 comparisons, pinned tools, actual OMF dependencies and a compiled mutation
@@ -48,14 +50,32 @@ round. Their MAP boundaries must be adjacent real function publics in the same
 CODE contribution. Unaccepted neighbors earn no credit. Existing complete-TU
 entries and evidence remain valid without recompilation.
 
-Next candidate: `src/main/boss/background.cpp`, 19 functions / 3,254 original
-instruction bytes. It is not accepted. Upstream fake-zero codegen helper was
-removed; a natural signed-zero comparison is expected to differ by one byte.
-Sixteen small compiler probes in `.analysis/compiler-probes/zero-compare-a`
-all emitted OR AX,AX rather than original CMP AX,0. Do not add fake zero
-symbols, opcode arrays, compiler-body ASM or inert barriers to force bytes.
-Diagnose a single natural TU, then recover independently matching complete
-functions. Preserve unknown ownership in the denominator.
+Boss background now has 17 accepted complete functions / 2,891 bytes. The
+particle renderer remains inexact (natural OR AX,AX versus original CMP AX,0).
+A separate CODE contribution follows it; one uncredited origin hole between
+actual compiler contributions preserves later function positions. The complete
+159-byte original particle scope remains unaccepted. Hexagram drawing's 204
+bytes match raw, but its ordered fixup list differs across a compiler LEDATA
+boundary, so that whole function also remains unaccepted. No ordering is sorted
+or normalized. Both exclusions remain unknown ownership in the global review.
+
+The original 18-function replay receipt honestly records aggregate failure.
+Explicit subset acceptance imported only its 17 fully passing functions after
+rechecking every saved producer and the compiled negative control. The original
+receipt is unchanged. A default acceptance still requires aggregate success.
+Use `progress.py --accept RECEIPT --units ID...` for a reviewed subset, including
+the negative-control owner; this does not run compilation.
+
+Stage initialization covers ten complete functions / 1,510 code bytes. Its real
+far Pascal rank-selector calls naturally link to the original NOP/PUSH CS/near
+CALL shape. Its 189 bytes of semantic initialized flag/filename DATA also match
+in both saved producers, recorded separately as a private observation with no
+additional progress credit. Source notes explain the corrected original end
+boundary; the survey's extra score function does not belong to this extent.
+
+Next natural candidate: cheeto spawning and homing update, prepared independently
+under the bullet owner. Continue focused compilation and complete-function
+acceptance. Do not restore fake-zero helpers or hand-emitted compiler bodies.
 
 ## Target and tool state
 
