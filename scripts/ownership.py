@@ -124,6 +124,59 @@ def reviewed_vendor(root: Path, *, view: dict, verify_targets: bool) -> tuple[li
     return claims, digest_bytes(decision_path.read_bytes())
 
 
+def reviewed_master(root: Path, *, view: dict, verify_targets: bool) -> tuple[list[dict], str | None]:
+    """Adopt only the twenty explicitly reviewed complete Master procedures."""
+    decision_path = root / "config/reviewed_master_procedures.json"
+    if not decision_path.exists():
+        return [], None
+    from review_master import validate_metadata, review_inputs
+
+    decision_bytes = decision_path.read_bytes()
+    decision = json.loads(decision_bytes)
+    proof_bytes = (root / "config/master_vendor_ownership.json").read_bytes()
+    proof = json.loads(proof_bytes)
+    validate_metadata(proof, root=root)
+    if (type(decision.get("schema_version")) is not int or decision.get("schema_version") != 1 or
+            decision.get("artifact") != "th05-main" or
+            decision.get("decision") != "ADOPT_ONLY_LISTED_PROCEDURES" or
+            decision.get("classification") != "third-party-library-code" or
+            decision.get("evidence_sha256") != digest_bytes(proof_bytes) or
+            decision.get("target_sha256") != proof["inputs"]["target"]["sha256"] or
+            decision.get("target_payload_sha256") != proof["target_payload_sha256"] or
+            proof["target_payload_sha256"] != view["sha256"]):
+        raise ValueError("reviewed Master decision is stale or belongs to a different target/classification")
+    if (type(decision.get("authored_credit")) is not int or decision["authored_credit"] != 0 or
+            decision.get("other_procedures_policy") != "unknown" or
+            decision.get("uncovered_gaps_policy") != "unknown" or
+            "authored_denominator" not in decision or decision["authored_denominator"] is not None):
+        raise ValueError("Master adoption cannot grant credit or classify other procedures/gaps")
+    selected = decision.get("procedures")
+    if (not isinstance(selected, list) or len(selected) != 20 or
+            any(not isinstance(name, str) or not name for name in selected) or
+            len(selected) != len(set(selected))):
+        raise ValueError("reviewed Master decision requires twenty unique explicit procedures")
+    proposed = {row["name"]: row for row in proof["procedures"]}
+    if set(selected) != set(proposed):
+        raise ValueError("unknown, deferred or unverified Master procedure cannot be classified")
+    totals = {"full_bytes": sum(proposed[name]["size"] for name in selected),
+              "instruction_bytes": sum(proposed[name]["instruction_bytes"] for name in selected),
+              "padding_bytes": sum(len(proposed[name]["padding"]) for name in selected)}
+    if any(decision.get(key) != value for key, value in totals.items()):
+        raise ValueError("Master decision full/instruction/library-padding extents disagree")
+    if verify_targets:
+        result = review_inputs(proof, root=root)  # Actual private bytes/context replay, never a saved PASS.
+        if not isinstance(result, dict) or not all(result.get(key) == value for key, value in {
+                "kind": "native-master-procedure-review", "decision": "PROPOSAL",
+                "byte_proof_replayed": True, "procedures": 20, "full_bytes": 376,
+                "instruction_bytes": 367, "padding_bytes": 9, "authored_credit": 0,
+                "denominator_changed": False}.items()):
+            raise ValueError("native private Master replay disagrees with reviewed evidence")
+    claims = [{"start": proposed[name]["start"], "end": proposed[name]["end"],
+               "kind": "verified-vendor-code", "library": "master.lib 0.23", "member": name}
+              for name in selected]
+    return claims, digest_bytes(decision_bytes)
+
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -151,10 +204,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         elif (view["size"], view["sha256"]) != (target["size"], target["sha256"]):
             raise ValueError("ZUN coordinates must cover the original COM, without double counting children")
         pieces = partition(view["size"], entries)
-        review_sha = None
+        review_sha = master_review_sha = None
         if name == "main":
             claims, review_sha = reviewed_vendor(root, view=view, verify_targets=verify_targets)
-            pieces = overlay_vendor(view["size"], pieces, claims)
+            master_claims, master_review_sha = reviewed_master(root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -162,6 +216,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
+        if master_review_sha:
+            views[name]["master_vendor_review_sha256"] = master_review_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])

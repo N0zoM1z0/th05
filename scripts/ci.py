@@ -17,6 +17,8 @@ def main() -> int:
     result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests"], cwd=ROOT)
     if result.returncode:
         return result.returncode
+    if (ROOT / "config/master_vendor_ownership.json").exists():
+        subprocess.run([sys.executable, "scripts/review_master.py", "--structural-check"], cwd=ROOT, check=True)
     if (ROOT / "config/accepted_units.json").exists():
         subprocess.run([sys.executable, "scripts/progress.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "config/zun_memory_acceptance.json").exists():

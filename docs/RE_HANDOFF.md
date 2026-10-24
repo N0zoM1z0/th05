@@ -89,14 +89,20 @@ not contribute C++ credit or establish complete outer ZUN equality.
 ## Ownership inventory
 
 `resources/ownership.json` covers all 319,268 observed payload/COM bytes.
-Every unclassified interval remains unknown. Only 31 complete CL.LIB CODE
-contributions / 2,901 bytes are separately reviewed as third-party, with
-pinned native OMF/FIXUPP evidence and explicit member decisions in
-`config/reviewed_vendor_units.json`. Two members with unwritten CODE ranges
-remain unknown. No vendor byte contributes authored source credit.
-`scripts/review_vendor.py --check` replays private inputs without compiling;
-`--structural-check` verifies public metadata only. Regenerate the inventory
-with `scripts/ownership.py --write` after accepted source changes.
+Every unclassified interval remains unknown. Reviewed third-party ownership
+covers31 complete CL.LIB CODE contributions/2,901 bytes and20 complete Master
+procedures/376 bytes, totaling3,277. CL uses pinned native OMF/FIXUPP evidence
+and explicit member decisions in `config/reviewed_vendor_units.json`. Master
+uses independently pinned original source, actual macro context, complete
+OMF/MAP/MZ and ordered-fixup equality, with the separate explicit decision in
+`config/reviewed_master_procedures.json`. Its376 bytes include9 library-owned
+padding bytes and grant no authored credit. Two CL members with unwritten CODE,
+all other Master procedures and every surrounding gap remain unknown.
+Both reviewers have `--structural-check` for public metadata and `--check` for
+actual retained private evidence, with zero compilation. Regenerate inventory
+using `scripts/ownership.py --write`; add `--verify-targets` to replay native
+vendor/target evidence without decoding or compiling. The global denominator
+and percentage remain unreviewed.
 
 ## Incremental work
 
@@ -428,3 +434,18 @@ candidate was outside the unchanged speed helper's valid domain and discarded.
 laser/stack/ring functions with all six original ordered fixups and its own
 laser-width8→9 control. Every owner has two fresh deterministic raw/ordered
 positives; source headers already accepted for beam/laser/charge are unchanged.
+
+
+### Independently reviewed Master procedure attribution
+
+The public `scripts/review_master.py` revalidates20 complete literal procedures
+from the author's pinned0.23 archive against the actual historical listing,
+OMF and original/linked MZ. Active FAR/data-model macro alternatives and all
+frozen source dependencies are checked, with no byte/source normalization
+beyond source encoding/newlines. Forty absent/ambiguous/different source blocks
+and196 uncovered gap bytes remain unknown; the mixed prefix is not excluded.
+The unchanged proposal metadata and a separate explicit20-name decision are
+recorded by independent hashes. MAIN combines CL and Master claims through the
+same overlap-rejecting overlay and retains separate decision digests. A native
+`ownership.py --write --verify-targets` run confirms all319,268 coordinates and
+3,277 vendor bytes, while authored bytes and the null denominator are unchanged.

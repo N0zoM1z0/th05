@@ -1,0 +1,4732 @@
+{
+  "schema_version": 1,
+  "kind": "master-vendor-ownership-proposal",
+  "artifact": "th05-main",
+  "decision": "PROPOSAL",
+  "ownership_decision": null,
+  "authored_credit": 0,
+  "denominator_changed": false,
+  "compiler_invocations": 0,
+  "module": {
+    "name": "th05_main.asm",
+    "segment": "_TEXT",
+    "start": 626,
+    "size": 17270,
+    "end": 17896
+  },
+  "target_provenance": "candidate-local-attested; independently pristine status unproved",
+  "target_payload_sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
+  "inputs": {
+    "target": {
+      "file": ".analysis/targets/th05/main.exe",
+      "size": 149990,
+      "sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0"
+    },
+    "calibration_exe": {
+      "file": ".analysis/builds/main-calibration-b/source/bin/th05/main.exe",
+      "size": 148492,
+      "sha256": "630b909739501bab6a9ef2c2b65e517332277c8ea66895af2ee4ba9d3e04d380"
+    },
+    "calibration_map": {
+      "file": ".analysis/builds/main-calibration-b/source/obj/th05/main.map",
+      "size": 137474,
+      "sha256": "e2092c37785d852420f84f9830cbcc82dcd5157696b348c329fb1e52a15bbed3"
+    },
+    "saved_object": {
+      "file": ".analysis/vendor-review/master-listing-a/saved-main.obj",
+      "size": 151957,
+      "sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf"
+    },
+    "listing_object": {
+      "file": ".analysis/vendor-review/master-listing-a/master-prefix.obj",
+      "size": 151957,
+      "sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf"
+    },
+    "calibration_object": {
+      "file": ".analysis/builds/main-calibration-b/source/obj/th05/main.obj",
+      "size": 151957,
+      "sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf"
+    },
+    "listing": {
+      "file": ".analysis/vendor-review/master-listing-a/master-prefix.lst",
+      "size": 2615650,
+      "sha256": "f2b8f2859f1bb0e13f7333bc55541bea0e7a3ac03d3541de88a8a7c309fc1afa"
+    },
+    "outer_archive": {
+      "file": "_reference/master-lib-upstream-023/MTSRC023.LZH",
+      "size": 457168,
+      "sha256": "9df4ba0ec1c3d81f2d77677c8c99f563281db4a4d9d87718a956d4c92156747f"
+    },
+    "inner_archive": {
+      "file": "_reference/master-lib-upstream-023/distribution/SRC.LZH",
+      "size": 1560252,
+      "sha256": "acc5369d3fb445d5cd6b92abbedb7b433819465be2f85bbbff53bd1f77bc40b6"
+    },
+    "listing_receipt": {
+      "file": ".analysis/vendor-review/master-listing-a/receipt.json",
+      "size": 221849,
+      "sha256": "79ed365a3cd27998383d198f81a2e2a0e14cbb9cb22bced87e25250bbda85375"
+    },
+    "historical_tasm": {
+      "file": ".analysis/toolchain/wineprefix/drive_c/TASM50/bin/TASM32.EXE",
+      "size": 184320,
+      "sha256": "ba50fe547863b96242d98cff54cdf95ab268a8682395afad172eedbfc46c5b26"
+    }
+  },
+  "candidate_source_root": ".analysis/vendor-review/master-listing-a/source",
+  "calibration_source_root": ".analysis/builds/main-calibration-b/source",
+  "upstream_source_root": "_reference/master-lib-upstream-023/src",
+  "upstream": {
+    "author": "Akihiko Koizuka and master.lib coauthors",
+    "version": "0.23 (1995)",
+    "primary_source": "https://www.koizuka.jp/~koizuka/master.lib/MTSRC023.LZH",
+    "primary_author_index": "https://www.koizuka.jp/~koizuka/master.lib/",
+    "author_repository": "https://github.com/koizuka/master.lib",
+    "companion_repository_head": "c4a5e54116656681fc9449a363528dcf5a60ef05",
+    "inner_member_count": 653,
+    "archive_validation": "Outer archive identity is rehashed; its compressed extraction is not rerun. Inner archive is independently pinned and every stored member header/checksum/CRC and extracted file is revalidated.",
+    "historic_terms": "Custom/shareware; no SPDX or OSI status inferred. Archive and source remain private; no redistribution decision."
+  },
+  "normalization": [
+    "strict original CP932 decoding",
+    "strict candidate UTF-8 decoding",
+    "CRLF/CR to LF only"
+  ],
+  "not_normalized": [
+    "whitespace",
+    "case",
+    "comments",
+    "identifiers",
+    "labels",
+    "instructions",
+    "object bytes",
+    "MZ fixups or order"
+  ],
+  "frozen_source_closure": [
+    {
+      "name": "th05_main.asm",
+      "size": 484751,
+      "sha256": "b82ebc93ee9d41137834b5ebac7aa31fc8c957d552997ae746b78963208e599e"
+    },
+    {
+      "name": "ReC98.inc",
+      "size": 1128,
+      "sha256": "62ecdf5ac2486f3e8f3134254f85caec436e8b207195781f8f72be9053058246"
+    },
+    {
+      "name": "libs/master.lib/func.inc",
+      "size": 3438,
+      "sha256": "6fc2b5ab1f5ce7e4b64675cb8c6b967227418eebff9cd81e82de3721cac4a67f"
+    },
+    {
+      "name": "libs/master.lib/super.inc",
+      "size": 962,
+      "sha256": "c7710b20c2f6bee86c55097dd2c26cf4be2fd6097439570a5b0c77fa5ffac4ae"
+    },
+    {
+      "name": "libs/master.lib/bgm.inc",
+      "size": 4254,
+      "sha256": "070c886cef0b9c70121e81a9c8c99c6b17386da4a8f9dff4c4f8e9348db3636f"
+    },
+    {
+      "name": "libs/master.lib/pf.inc",
+      "size": 3527,
+      "sha256": "6c7f47e4fc69994109ed6ca077a9cdc6f34adba05d5d0672186865e5262285ad"
+    },
+    {
+      "name": "libs/master.lib/clip.inc",
+      "size": 537,
+      "sha256": "334647dfba90c582f2607bb6f6d6565e9e15dce0220ab8acbd1b23e4331b2462"
+    },
+    {
+      "name": "libs/master.lib/macros.inc",
+      "size": 4065,
+      "sha256": "6e38bd2a6af911890250376d7e3d87343a6e726eced227958669d6f420427ae9"
+    },
+    {
+      "name": "libs/kaja/kaja.inc",
+      "size": 5101,
+      "sha256": "ae6bb3734914fcc651568f619126a242af3631556073a0bcb42f61bf13d95958"
+    },
+    {
+      "name": "twobyte.inc",
+      "size": 49,
+      "sha256": "ebe96bde9fee9c1517b9caa12b37b91f25f787414898f457c3551f84ed8796e7"
+    },
+    {
+      "name": "pc98.inc",
+      "size": 653,
+      "sha256": "498e31e6d35ace5c35ef50408ac7a29f2ba2ef76858a5b779d5cfa212bfb6660"
+    },
+    {
+      "name": "th01/hardware/egc.inc",
+      "size": 1064,
+      "sha256": "29e30717870bb69635bf082114ccb4a0e9795803c80adbd1283449f80e32a188"
+    },
+    {
+      "name": "th02/formats/pi_slots.inc",
+      "size": 291,
+      "sha256": "b3a234a3e292c1171f86ac24d9bb8ba8c47ffb938be8450168f7fc91148f8187"
+    },
+    {
+      "name": "th05/th05.inc",
+      "size": 1116,
+      "sha256": "fbcf477419152b6b6cd1a0ef9afdfdd346d7d8ddbd3cf6383919f97a90dcc488"
+    },
+    {
+      "name": "th05/chars.inc",
+      "size": 95,
+      "sha256": "a27ac9c4c6e761b0acba7a216b459a4be2cef43278b55ca57d3deb60a8f1f537"
+    },
+    {
+      "name": "th04/shared.inc",
+      "size": 827,
+      "sha256": "6a8092f644c4f9d70beda43c6fec325070e99eb42e8b2b5133ac48c26745740f"
+    },
+    {
+      "name": "th03/arg_bx.inc",
+      "size": 2073,
+      "sha256": "036c988bfbec000a152512035e3d8b42590d84165f1aa45d9689babf9ebe995e"
+    },
+    {
+      "name": "th02/score.inc",
+      "size": 17,
+      "sha256": "0c57fcf3fb6bda5842938d247cc6ab518750e67eaa8fd95e766bcc259a237434"
+    },
+    {
+      "name": "th04/formats/bb.inc",
+      "size": 75,
+      "sha256": "68176d509219327b2a0277e153edfa6f6a777235dcb298098bf1329be948da56"
+    },
+    {
+      "name": "th04/formats/cfg.inc",
+      "size": 373,
+      "sha256": "9fd02806cd36f7433589b982a57a2796b34d7ab0cfb7b61d80ebef648e9abb71"
+    },
+    {
+      "name": "th03/formats/cdg.inc",
+      "size": 1237,
+      "sha256": "1f0ff08d7d98f6e1038f09c12785f09349d65b1427f30ce569d2dbf49b7d7a48"
+    },
+    {
+      "name": "th04/formats/map.inc",
+      "size": 165,
+      "sha256": "942031f9bac0eda4b3e1d62aee5bebc68755fd2bd359f1206ccd7ab68159c35d"
+    },
+    {
+      "name": "th04/formats/scoredat/scoredat.inc",
+      "size": 736,
+      "sha256": "38cf4143b2ab59a89b82da2eff7e7c61e4456bcb18d1104e2ddee34bca40a0d1"
+    },
+    {
+      "name": "th04/main/player/player.inc",
+      "size": 1017,
+      "sha256": "7ba98278c14ceba59e320c257bc666aaf54d632fba87d6202c59f5b377ca2923"
+    },
+    {
+      "name": "th02/main/player/player.inc",
+      "size": 495,
+      "sha256": "c9919ae5a89ec45c3b0d532f87073d8728262e7b479df97c6214128480f16d2b"
+    },
+    {
+      "name": "th02/main/playfld.inc",
+      "size": 290,
+      "sha256": "cf409c3f999661709010df7ed6b4932a9ac545883d54ca4221b86b316de95683"
+    },
+    {
+      "name": "th02/main/hud/hud.inc",
+      "size": 44,
+      "sha256": "f06df3e9d7b1c9b099a6e536d56233db3e6a4b079c84485663f3263f54f0cb18"
+    },
+    {
+      "name": "th04/hardware/grcg.inc",
+      "size": 533,
+      "sha256": "58876ee09c7a378c448079c2a61082d635cc960d2240719626821fff64cf573c"
+    },
+    {
+      "name": "th04/hardware/input.inc",
+      "size": 713,
+      "sha256": "77873c2e934b36589bd54018011a3aae59a64f55d07996bdc1704540e279f9f4"
+    },
+    {
+      "name": "th04/math/randring.inc",
+      "size": 807,
+      "sha256": "6f36c64ef467bb30255becc4f888e3b6f9a292c67f804eb5e447cac7fc39b4f5"
+    },
+    {
+      "name": "th04/math/motion.inc",
+      "size": 652,
+      "sha256": "aeff27c0f0a895ae8e4ae5b9eb144205ccf177b4977293c280bb05e5e06387ee"
+    },
+    {
+      "name": "th04/main/hud/overlay.inc",
+      "size": 157,
+      "sha256": "c9509fe54fbbdca948bd8804b80e715e2ba54e7b7583f0d928e913e4b6255c11"
+    },
+    {
+      "name": "th04/end/end.inc",
+      "size": 75,
+      "sha256": "3fd4ad57290e5c6f4ca75d9e48c0be6c01e273a56301e7eb6d7dc636b0a40122"
+    },
+    {
+      "name": "th04/gaiji/gaiji.inc",
+      "size": 504,
+      "sha256": "78f2d977c40dfda94124891ad655d5ff25cc5af5bcaac74262abaa415cd784ed"
+    },
+    {
+      "name": "th03/gaiji/bar.inc",
+      "size": 305,
+      "sha256": "7f53ebc6d56aa7564f6f16470fd0d1bc539916ea6e1da6ee37c11ac9c4dd1839"
+    },
+    {
+      "name": "th02/gaiji/boldfont.inc",
+      "size": 494,
+      "sha256": "638cbdfde9f7cf7d96d33c1841b1081ec04e86c4cbd9b6b56c18503141bb9779"
+    },
+    {
+      "name": "th02/v_colors.inc",
+      "size": 13,
+      "sha256": "a758e8c3cfbf15812e93708e226ed7ff8ffba16e65be9c122bc8fdf97498169f"
+    },
+    {
+      "name": "th01/math/area.inc",
+      "size": 79,
+      "sha256": "7d29dd76ba7765ccf69bf79ab835eb7a5404a42d5d41b94d6a9a8615d610520d"
+    },
+    {
+      "name": "th01/math/subpixel.inc",
+      "size": 93,
+      "sha256": "fd2b18fbf962805cf146dcedc65745053326569a6ce8819150afe6df11f1e3b7"
+    },
+    {
+      "name": "th02/main/sparks.inc",
+      "size": 519,
+      "sha256": "e67b6aa98d30a5384bc21ea1e60fa658c54655402b18aa0d772eb141f7a463e3"
+    },
+    {
+      "name": "th05/sprites/main_pat.inc",
+      "size": 1322,
+      "sha256": "25cfd7d5c2e5a7a57940b4d5b9e39a1b5fe2572c1cbc3d74b0a1c4447b9d942b"
+    },
+    {
+      "name": "th04/sprites/cels.inc",
+      "size": 130,
+      "sha256": "9da1de86a4ae0cfdbf6cfee0a84636a151cd0b4e8af2e4a242c6b2fdd5b22d66"
+    },
+    {
+      "name": "th02/sprites/cels.inc",
+      "size": 20,
+      "sha256": "4e0d63df9c57a387513c1d06ee3bc273bc9c49b065abf73005cee58609482841"
+    },
+    {
+      "name": "th04/sprites/main_cdg.inc",
+      "size": 346,
+      "sha256": "1a4844bc05720dfeb6f4f8a69edfd87266c63c894a84775c0f2b62c3283ef84f"
+    },
+    {
+      "name": "th04/sprites/blit.inc",
+      "size": 1213,
+      "sha256": "c12685601cc5b052a0adfeba2a0c5f966dd6e944d44809e8d563df9adf8a2500"
+    },
+    {
+      "name": "th04/main/phase.inc",
+      "size": 174,
+      "sha256": "331bee45ac27fdc2876be08fe678aba20e81736540cf507c0ae4282d8eff6012"
+    },
+    {
+      "name": "th04/main/tile/tile.inc",
+      "size": 87,
+      "sha256": "2d21c23a1d936c610686e91c88b01fe628e85d5718946f108360e069abc83383"
+    },
+    {
+      "name": "th02/main/tile/tile.inc",
+      "size": 448,
+      "sha256": "65d98d79d34bba5b7db1de3ef8054aa61f9807ed467838dd0df88f06ea8625e2"
+    },
+    {
+      "name": "th05/main/bullet/types.inc",
+      "size": 919,
+      "sha256": "6f2e05786db6cc4be0c730a370fc81f1122a1ca4c9606ebbccda44ba7d8a076f"
+    },
+    {
+      "name": "th04/main/bullet/bullet.inc",
+      "size": 2457,
+      "sha256": "228f5ba858bbc441bf3b3e2435033a2b3da517ababff6524c845d97f0ecfcc85"
+    },
+    {
+      "name": "th02/main/entity.inc",
+      "size": 36,
+      "sha256": "38f7333146d34d695006a1bdd0a081ca77c81440e9a67711b6420bdc160652a7"
+    },
+    {
+      "name": "th04/main/gather.inc",
+      "size": 700,
+      "sha256": "793db44c112e540ac1c14c1ca466bb7f8456356ec43974f648cf45f6516eb3bb"
+    },
+    {
+      "name": "th05/main/player/shot_types.inc",
+      "size": 93,
+      "sha256": "abcc6ec9b1044688bebdd06856bc6768ba0f39aaf35300bb955bffd62bb175c8"
+    },
+    {
+      "name": "th05/main/enemy/enemy.inc",
+      "size": 617,
+      "sha256": "92feb54bef50469ab4452ea0d3c1ce860bec389050ac3b2880d1374817a147d3"
+    },
+    {
+      "name": "libs/master.lib/bfnt_entry_pat.asm",
+      "size": 4168,
+      "sha256": "c8f5d19c2fc6008b4a8043b888f399724b14359799718fab57bbd6baa99cd413"
+    },
+    {
+      "name": "libs/master.lib/bfnt_header_read.asm",
+      "size": 1531,
+      "sha256": "b9d78de5498b6adb53a86f8833e548d37113bf717db5db542d5ed40501961d65"
+    },
+    {
+      "name": "libs/master.lib/bfnt_header_analysis.asm",
+      "size": 1843,
+      "sha256": "9cf997fbf19c7c9628cb8a8c3108af0c05aeeefe243319057a595032aa1974a9"
+    },
+    {
+      "name": "libs/master.lib/atrtcmod.asm",
+      "size": 4508,
+      "sha256": "30b5097bc326701b3302263ba2400fbdf027d4d07e6eeb87dd521230060234e8"
+    },
+    {
+      "name": "libs/master.lib/bcloser.asm",
+      "size": 874,
+      "sha256": "5a345a8e7c1f6a74c97896f0a81e3f5a2ebb19e6250ce550f74682bd85f7244e"
+    },
+    {
+      "name": "libs/master.lib/bfill.asm",
+      "size": 1273,
+      "sha256": "a1280f7bcd803d1eea93fed903b2c7ec2cd1963b7ccced5cb6c755d003fdfda4"
+    },
+    {
+      "name": "libs/master.lib/bfnt_palette_set.asm",
+      "size": 1733,
+      "sha256": "e292593490dcfbb9a0f4f0988a5a08224f490a348c209adc2347e02f2ecbcef7"
+    },
+    {
+      "name": "libs/master.lib/bgetc.asm",
+      "size": 938,
+      "sha256": "46e386c45a46eace934bfb1fd37b543d02b58afc616f0dcc7545efa82307a240"
+    },
+    {
+      "name": "libs/master.lib/palette_black_in.asm",
+      "size": 1287,
+      "sha256": "c7407bfb9aabe9a5127a1dc3510779444a3d507eacd9bc2fdfe48ee9cfc2481e"
+    },
+    {
+      "name": "libs/master.lib/palette_black_out.asm",
+      "size": 1191,
+      "sha256": "522eafd6463b52c9893ed7f71d3322a6ca9a5dd7ff32a9265307ba095d0fd54f"
+    },
+    {
+      "name": "libs/master.lib/bopenr.asm",
+      "size": 1527,
+      "sha256": "f20b08ce2e0174e38e3d97621aabcb3a4d83812d714456485945af044e07674e"
+    },
+    {
+      "name": "libs/master.lib/bread.asm",
+      "size": 1263,
+      "sha256": "ebc390de3abd1308a4fdd8be64c7eeca20ffaa8271cc8c0ce3e5b8a8a539d56e"
+    },
+    {
+      "name": "libs/master.lib/bseek.asm",
+      "size": 1281,
+      "sha256": "d3d277008ccd2c6c9b1c0d3a43d7a7a9393f706f963affb7fdd596437c5c1b65"
+    },
+    {
+      "name": "libs/master.lib/bseek_.asm",
+      "size": 1239,
+      "sha256": "7af87d66044c92482b8374227dde8eb0e67f244109f9687204363a36659885b5"
+    },
+    {
+      "name": "libs/master.lib/cutline.asm",
+      "size": 2447,
+      "sha256": "2aa24b7e02859959246ae91e7cee65230bb97e77f7967bd6f662f67b4aba10b4"
+    },
+    {
+      "name": "libs/master.lib/dos_keyclear.asm",
+      "size": 531,
+      "sha256": "9990b11334e91ac14ee91c89a0fb0cfbabccf8512a144425116c3d2d9406d623"
+    },
+    {
+      "name": "libs/master.lib/dos_read.asm",
+      "size": 965,
+      "sha256": "0c494af1a97a13fd061998052386be0060e9b45c405a95b5cead2039c1e8a109"
+    },
+    {
+      "name": "libs/master.lib/dos_seek.asm",
+      "size": 1102,
+      "sha256": "5ff6cf85625ab5e157609aa1115acdc7c2212927d534c8c3d418873eaebaf2e3"
+    },
+    {
+      "name": "libs/master.lib/dos_setvect.asm",
+      "size": 1520,
+      "sha256": "72c7d13cb301fabdfc698581a34d883bb477515cf4713a14ef815a8e7d08537b"
+    },
+    {
+      "name": "libs/master.lib/egc.asm",
+      "size": 2271,
+      "sha256": "4f95898cc37b4ca0fa7879b4f36fdbf0663452ef3175703f225bde9a25f00643"
+    },
+    {
+      "name": "libs/master.lib/egc_shift_down.asm",
+      "size": 3018,
+      "sha256": "4b7eeb841c41972d1682d4fb44a4cffdefbfb8588972b4ea6aef5330cbfc14f8"
+    },
+    {
+      "name": "libs/master.lib/egc_shift_left.asm",
+      "size": 3042,
+      "sha256": "ff2f2fbfa47f93901eff12023dc16dcdf2dd5d516e6b041616d821ab46e6c790"
+    },
+    {
+      "name": "libs/master.lib/egc_shift_right.asm",
+      "size": 3163,
+      "sha256": "908c2e2a170785dff580d036eeeb8a4b535db32e81f9688b756c464227bba717"
+    },
+    {
+      "name": "libs/master.lib/egc_shift_up.asm",
+      "size": 2968,
+      "sha256": "4b3ac63d4acb4584abce733cbbf01588d2e2edb78bc6ecc9d129ff5610a69d22"
+    },
+    {
+      "name": "libs/master.lib/file_close.asm",
+      "size": 2060,
+      "sha256": "6683a73f10045ed8885962763c92675d73f690c277b3de45168a914c0ab690ed"
+    },
+    {
+      "name": "libs/master.lib/file_read.asm",
+      "size": 2516,
+      "sha256": "a1cade5ba6d3c49f876df11dd94386004508a6e63bc764c4966e88c08f127a31"
+    },
+    {
+      "name": "libs/master.lib/file_ropen.asm",
+      "size": 1367,
+      "sha256": "77259b5a6cb915d6376df836101a0655152cea0166bbc4570dfb0cdd792bf8dc"
+    },
+    {
+      "name": "libs/master.lib/file_seek.asm",
+      "size": 1503,
+      "sha256": "4f1d8a008f0fe6f8caa28024ef5efa08d2d8fd0b6d3c4ddd9f47747af9e3a5a3"
+    },
+    {
+      "name": "libs/master.lib/dos_close.asm",
+      "size": 927,
+      "sha256": "406b7438e25866c50fb3fa3e1897bdd9a8722f0d5d4562672c8a32cf3b72cd1c"
+    },
+    {
+      "name": "libs/master.lib/dos_ropen.asm",
+      "size": 1124,
+      "sha256": "b3f23ab1abae22e03aa31e45b1601db3bc276c684272261398a550181998b1a9"
+    },
+    {
+      "name": "libs/master.lib/grcg_boxfill.asm",
+      "size": 3701,
+      "sha256": "74db99990e4064c0d028674c97e2e07717ca21e0177037cedf0ea58cd88b7fa4"
+    },
+    {
+      "name": "libs/master.lib/grcg_byteboxfill_x.asm",
+      "size": 2047,
+      "sha256": "b549049f0379a0eab9e8f5d2de0c04946e6454c8edd4ecf87c9f407ca323503b"
+    },
+    {
+      "name": "libs/master.lib/grcg_circlefill.asm",
+      "size": 2195,
+      "sha256": "494a5e6ceb05b2c5cb97b584783a728c3509e657a82c1990c5324ae369fce2bf"
+    },
+    {
+      "name": "libs/master.lib/grcg_circle.asm",
+      "size": 4356,
+      "sha256": "d1409c1b1906b1b830ba5786524406c0e4a975537dada8fcd2ab971df068dcdc"
+    },
+    {
+      "name": "libs/master.lib/grcg_circle_x.asm",
+      "size": 2725,
+      "sha256": "1e5487851b0e263dbcc238eb411a00e5e3eade5d70398f02bdf87c6c04c9d4df"
+    },
+    {
+      "name": "libs/master.lib/grc_setclip.asm",
+      "size": 3140,
+      "sha256": "eddf855ca2d0433fc7aa4b0a7fd09b8ba190051bda270233634beb7a527f93cc"
+    },
+    {
+      "name": "libs/master.lib/grc_clip_polygon_n.asm",
+      "size": 8964,
+      "sha256": "824a0a5681ec98053a1e49509891c2915c33a23f105b793565e80c03de467e57"
+    },
+    {
+      "name": "libs/master.lib/grcg_hline.asm",
+      "size": 2363,
+      "sha256": "873c20083cbe4064b8dcd9e1a7c1d0f8c3f0dc756caacc303660639007a788a6"
+    },
+    {
+      "name": "libs/master.lib/grcg_line.asm",
+      "size": 6803,
+      "sha256": "e38b082344fb51f37591a5f77683b74e119f4072a39d985c9be5bf8427c408e4"
+    },
+    {
+      "name": "libs/master.lib/grcg_polygon_cx.asm",
+      "size": 5804,
+      "sha256": "b2bee9e3126c09406d026abacb64e9ad9a4f76e3c09795fa6e391ee9453dacc3"
+    },
+    {
+      "name": "libs/master.lib/grcg_pset.asm",
+      "size": 1298,
+      "sha256": "7e2f0c53c15b0183b3c21ef66ce85b3cf275cac9b301788a1c54021fd41eaede"
+    },
+    {
+      "name": "libs/master.lib/grcg_setcolor.asm",
+      "size": 1484,
+      "sha256": "cfc0e194c0b218b76572b57bc1368abfbc5cabf021a35512d4485323933ab09e"
+    },
+    {
+      "name": "libs/master.lib/grcg_vline.asm",
+      "size": 2431,
+      "sha256": "942b2e256b8fdec70254dedd5542c8795eb6651c02db76695768ec055daa90e3"
+    },
+    {
+      "name": "libs/master.lib/gdc_outpw.asm",
+      "size": 737,
+      "sha256": "095306f5c80257f967c462881e45d68becd5ec886a91a4641e0f622b97b80f4a"
+    },
+    {
+      "name": "libs/master.lib/get_machine_98.asm",
+      "size": 3469,
+      "sha256": "d3f85feec5f55075266e44913893feeeb39f548879b164bac66fc040fc039076"
+    },
+    {
+      "name": "libs/master.lib/get_machine_at.asm",
+      "size": 8340,
+      "sha256": "50d82edc4af774ea904e8b7fde4fbeeedc46321bff416914651e981eb74508d1"
+    },
+    {
+      "name": "libs/master.lib/get_machine_dosbox.asm",
+      "size": 1272,
+      "sha256": "1fac77fcc3f1f2db478aa0465a1c2d0506e3926de2759ffbe7189f04fcdc8098"
+    },
+    {
+      "name": "libs/master.lib/check_machine_fmr.asm",
+      "size": 547,
+      "sha256": "130db0bba50cd0adeee3b22a315621f7248fc743586b3da62a80f4812a6f6250"
+    },
+    {
+      "name": "libs/master.lib/get_machine.asm",
+      "size": 2484,
+      "sha256": "b57d8a94cbc1a6d69384e4f78dee58b31faa11a145d1f6f922820f28ecf7a2c5"
+    },
+    {
+      "name": "libs/master.lib/gaiji_putca.asm",
+      "size": 1350,
+      "sha256": "8e3705da425727b60e5cbe36c1d9b027d9adece313248fbbe5e81386a2e052e2"
+    },
+    {
+      "name": "libs/master.lib/gaiji_putsa.asm",
+      "size": 1596,
+      "sha256": "9d9c7d52c1581c98e5132df4529440f6f8929eb8476646f404361b5a3f6e4180"
+    },
+    {
+      "name": "libs/master.lib/graph_400line.asm",
+      "size": 1212,
+      "sha256": "a4cc370c6827cd5f91928d8f1f1dcb49dcb1d582e2dba3e7b6f33b18ea877494"
+    },
+    {
+      "name": "libs/master.lib/graph_clear.asm",
+      "size": 1088,
+      "sha256": "90be0ac27c63cf09b7bab977ab3787c5e64ede39d8c86c0393920c82991d7d12"
+    },
+    {
+      "name": "libs/master.lib/graph_extmode.asm",
+      "size": 2463,
+      "sha256": "3e1df894829c07cba4b59b6fe08c631e670312b42a60ae790faa5c4cd0f1d970"
+    },
+    {
+      "name": "libs/master.lib/graph_hide.asm",
+      "size": 530,
+      "sha256": "e1f59b707774a5991fc0851f9d0019b5bef5f83b7d45787593be1966fb424035"
+    },
+    {
+      "name": "libs/master.lib/graph_scrollup.asm",
+      "size": 1755,
+      "sha256": "fe4966d0d92dd20e8711f15410f4b6b34785abb92fbffb8a08ba8d07e3bd9e80"
+    },
+    {
+      "name": "libs/master.lib/iatan2.asm",
+      "size": 1218,
+      "sha256": "e56477c2b566000d18a808ef4882b4c14354178c945d9d03062fb98d9ea71e3d"
+    },
+    {
+      "name": "libs/master.lib/js_end.asm",
+      "size": 631,
+      "sha256": "6f0cefb45506e97123a6ce1530b76b832935e324c6c6d7373e9a315e7ea04d15"
+    },
+    {
+      "name": "libs/master.lib/draw_trapezoidx.asm",
+      "size": 4241,
+      "sha256": "4eee5facd9e6113874355d4678aa1dfdcc3cd1acfb9c874ccecfe4c63c876a1b"
+    },
+    {
+      "name": "libs/master.lib/large_byte.asm",
+      "size": 121,
+      "sha256": "5104ec615b8d1e61849efdafc4040cedf8d35222490ded3ec0371bc4951b7c50"
+    },
+    {
+      "name": "libs/master.lib/super_large_put.asm",
+      "size": 2741,
+      "sha256": "5a249a8bcd6170d88e883ee0a71fc5baea94804456e29e51dc8ed74d1f738150"
+    },
+    {
+      "name": "libs/master.lib/make_linework.asm",
+      "size": 2159,
+      "sha256": "1f708630b586f25309b6e11b3921f0373af495d9fb44b217d78cecdc7f815752"
+    },
+    {
+      "name": "libs/master.lib/palette_show.asm",
+      "size": 4098,
+      "sha256": "c40574ccfd1c224e9e4562bc4cc6bb35243cb9970a4c832dd7c3e982a7425c30"
+    },
+    {
+      "name": "libs/master.lib/pfclose.asm",
+      "size": 879,
+      "sha256": "c554e6d0649207a339cf523b144f59afc4ccf999f6a42cffedc9422b8c2f179f"
+    },
+    {
+      "name": "libs/master.lib/pfgetc.asm",
+      "size": 3063,
+      "sha256": "119b9827ce6886c77449fe77025fab149542d8916f9edde862562954a6f3c8bd"
+    },
+    {
+      "name": "libs/master.lib/pfread.asm",
+      "size": 1395,
+      "sha256": "20d594a2355a5380719cee2f2b19229ae072b02afe470e57115c0a34c3580894"
+    },
+    {
+      "name": "libs/master.lib/pfrewind.asm",
+      "size": 1151,
+      "sha256": "ff21821866cc51ce3fb48503458d75ce90b1480784312d43875543a1175c5f5a"
+    },
+    {
+      "name": "libs/master.lib/pfseek.asm",
+      "size": 1391,
+      "sha256": "30668e2fb6ac1c9ffe0258a6bd50cdbd4a2a527d9beaf634c99d7ce4cb89e6d4"
+    },
+    {
+      "name": "libs/master.lib/random.asm",
+      "size": 1445,
+      "sha256": "a2759dae92008b72845c67e6caa183d54c22f9b2c8199de2101b82daf35aab82"
+    },
+    {
+      "name": "libs/master.lib/palette_entry_rgb.asm",
+      "size": 1635,
+      "sha256": "db55520eafba7b5799fcb8fd236473891fb87eab47d5a3b02856cf7670625325"
+    },
+    {
+      "name": "libs/master.lib/smem_release.asm",
+      "size": 589,
+      "sha256": "e9e750705de05e3aa6114a92de30f73509479fb526d844ec8fd29eb6c13137f3"
+    },
+    {
+      "name": "libs/master.lib/smem_wget.asm",
+      "size": 1335,
+      "sha256": "427339049dedbbdafbeaa5092d8f620cdf94b915841b78321ebb6c68ad7701c0"
+    },
+    {
+      "name": "libs/master.lib/soundio.asm",
+      "size": 1284,
+      "sha256": "69a4d31369cf05261fb290cb2075c2e2f3f511151ee23ad1e9540bed33d5d69c"
+    },
+    {
+      "name": "libs/master.lib/text_boxfilla.asm",
+      "size": 1750,
+      "sha256": "1df3895faa86842475ff4ea2684362741099f682e4e1ec4e829df8b81221bf01"
+    },
+    {
+      "name": "libs/master.lib/text_clear.asm",
+      "size": 705,
+      "sha256": "9524152bd1e459e9282f6d45bd1c9f72ffc566aab35cb141baecf3db7268c9db"
+    },
+    {
+      "name": "libs/master.lib/text_fillca.asm",
+      "size": 1112,
+      "sha256": "fbc8a57941eb454ea29fac0ae5ceb3420a387e9e58d4e8f398dea264c464373a"
+    },
+    {
+      "name": "libs/master.lib/text_putca.asm",
+      "size": 1680,
+      "sha256": "9cb95d102d1fac7d9a69dafa8c8c36a646c84b7f0fd20520116a261edad309c4"
+    },
+    {
+      "name": "libs/master.lib/text_putsa.asm",
+      "size": 2190,
+      "sha256": "8c4a013c22595b94c5c94a68f6a395cdd8e5fb821a03c1dc0cb42e36b2dea323"
+    },
+    {
+      "name": "libs/master.lib/vsync.asm",
+      "size": 4505,
+      "sha256": "5d3c205d6d6ff7d9c0f8079200624ff1bfdf4f785e7a5b7c501c0b2269dafed7"
+    },
+    {
+      "name": "libs/master.lib/vsync_wait.asm",
+      "size": 1209,
+      "sha256": "2186df31026448095f165528d8cbc3c653dbbc5f4be90b27bdd3acee95d04b2b"
+    },
+    {
+      "name": "libs/master.lib/palette_white_in.asm",
+      "size": 1225,
+      "sha256": "d22a8491c095ed7d2d4b117cd74d549d43df68807a79dfc6e257401a2bddfb34"
+    },
+    {
+      "name": "libs/master.lib/palette_white_out.asm",
+      "size": 1187,
+      "sha256": "40904043b508e68d5ad31ed152ba770236597e6a2fcee0074cc5db2f066d46b4"
+    },
+    {
+      "name": "libs/master.lib/mem_assign_dos.asm",
+      "size": 760,
+      "sha256": "5d53f5d5ec38727649f743c8bd12a976c805a039c215d68aa493105371f66465"
+    },
+    {
+      "name": "libs/master.lib/mem_assign.asm",
+      "size": 1297,
+      "sha256": "1a82490706e60c785cf990c6bdad0d6a4fa2994d80d3446cd8592343e64b0e49"
+    },
+    {
+      "name": "libs/master.lib/memheap.asm",
+      "size": 8276,
+      "sha256": "f82f4a8f65caee760efa0cf3e4aae1a53b1dbdd9f42994da1a7a96b92a297773"
+    },
+    {
+      "name": "libs/master.lib/mem_unassign.asm",
+      "size": 1476,
+      "sha256": "79b849504ea1c66e774e5e28bb0c218e5dcbbd7517b61e1388ff4018e017a225"
+    },
+    {
+      "name": "libs/master.lib/super_free.asm",
+      "size": 1181,
+      "sha256": "a1e83689386210f935452bacb1a9f64c16bccfa31a84e6958f37ab28b644f092"
+    },
+    {
+      "name": "libs/master.lib/super_entry_pat.asm",
+      "size": 3623,
+      "sha256": "b648deee82e0579c66be92d4ff595465401b8d130408c64c9724af5bed69df7e"
+    },
+    {
+      "name": "libs/master.lib/super_put_1plane.asm",
+      "size": 4738,
+      "sha256": "604ed2b62f6349631c3f18866602036a58ebf275c7e1f1930ed8d43ec96f2a0b"
+    },
+    {
+      "name": "libs/master.lib/super_entry_at.asm",
+      "size": 2557,
+      "sha256": "a27d0851c372b66a63e1968550135ae5de4d3487ce7638f4d079b7711405df94"
+    },
+    {
+      "name": "libs/master.lib/super_entry_bfnt.asm",
+      "size": 2166,
+      "sha256": "8098efc312d0d217bee12402428a9624186725f4413bd5d8aef67f0c6fdd891d"
+    },
+    {
+      "name": "libs/master.lib/super_cancel_pat.asm",
+      "size": 1575,
+      "sha256": "59a3856deb289b9b52c724e6be1f5c2db338e59883894f30af21c1667d8fda97"
+    },
+    {
+      "name": "libs/master.lib/super_clean.asm",
+      "size": 1176,
+      "sha256": "58eeb5e6d36c447abdb07f74a68a924fa67560f70c631546d93566cef3c1aa3e"
+    },
+    {
+      "name": "libs/master.lib/super_roll_put_1plane.asm",
+      "size": 5228,
+      "sha256": "e641423b476d72a53cb465520e6edc134c67a3c74f354f0b5382c4c0acf412dd"
+    },
+    {
+      "name": "libs/master.lib/super_roll_put.asm",
+      "size": 5995,
+      "sha256": "e76a0b0037edc679dd9ab96bb0f5a2fbce7dafb2a611e325c4d0f56e5d6e711d"
+    },
+    {
+      "name": "libs/master.lib/super_put_rect.asm",
+      "size": 7064,
+      "sha256": "d4ae2f95bdce43a7075f97c204fc88eb8c70ea6a27ce34635aa3ad1c55a72200"
+    },
+    {
+      "name": "libs/master.lib/super_put.asm",
+      "size": 5680,
+      "sha256": "97c50aafee01cff2c59357f2a215b59a1bb50cea88f94e2ee370a49764311ffc"
+    },
+    {
+      "name": "libs/master.lib/super_convert_tiny.asm",
+      "size": 2992,
+      "sha256": "392af0e573e4ecfb86714da5d9d729c9cd3f56cc95dc8b0b0e761526b634929e"
+    },
+    {
+      "name": "libs/master.lib/js_start.asm",
+      "size": 1485,
+      "sha256": "9108253a1ce57bab97b64f9504196dc5a0d2d510a2d121f94a71f0698063aa03"
+    },
+    {
+      "name": "libs/master.lib/js_sense.asm",
+      "size": 2294,
+      "sha256": "6f9c91f30d50cfd75f9b6025737cf3f5edefe9a38fb4f90cc447b11f4e9e4456"
+    },
+    {
+      "name": "libs/master.lib/bgm_bell_org.asm",
+      "size": 1149,
+      "sha256": "3145d261f18831c0126b639afa38808834c7c9152fbef338e11c36c956a909ad"
+    },
+    {
+      "name": "libs/master.lib/bgm_mget.asm",
+      "size": 4151,
+      "sha256": "2c9a190477967e4fddc3dcdd169e9d11435ddf3ee160300ff3c0b76a2879f517"
+    },
+    {
+      "name": "libs/master.lib/bgm_read_sdata.asm",
+      "size": 4241,
+      "sha256": "ef4b9527ac2310c58139a8b1bcdaf322ab495b095e9b854bd9fefc752302d223"
+    },
+    {
+      "name": "libs/master.lib/bgm_timer.asm",
+      "size": 1954,
+      "sha256": "3957067e153629f5440e6f93dd84b870b8f99c6918e6f5697c55a65b7a469343"
+    },
+    {
+      "name": "libs/master.lib/bgm_pinit.asm",
+      "size": 1274,
+      "sha256": "d8691c3d46886a1f024f32703612f78e49e4ffa8a54901947af08788fa1aeff9"
+    },
+    {
+      "name": "libs/master.lib/bgm_timerhook.asm",
+      "size": 2494,
+      "sha256": "0a9a550fbbd608b255c03af7ac6991e9c6c3ba3412539327e2e1cfd26b6fdc7b"
+    },
+    {
+      "name": "libs/master.lib/bgm_play.asm",
+      "size": 5092,
+      "sha256": "91492e904472b2b2a8671f0a5407cd99bff173faf8e7e514e4de5d6090950138"
+    },
+    {
+      "name": "libs/master.lib/bgm_sound.asm",
+      "size": 1409,
+      "sha256": "c49a57881212e3aef8d02173ca1920b330ec213853324cb3bae5a157d9511da1"
+    },
+    {
+      "name": "libs/master.lib/bgm_effect_sound.asm",
+      "size": 2497,
+      "sha256": "00a95406c3d715e9a4f2de08351f3830852faebb1123a321d8d02c23ae7341f3"
+    },
+    {
+      "name": "libs/master.lib/bgm_stop_play.asm",
+      "size": 888,
+      "sha256": "c216798e0f812440613dfd35e7b1bd196cc07d4843240352e3a7b694549fbc79"
+    },
+    {
+      "name": "libs/master.lib/bgm_set_tempo.asm",
+      "size": 1100,
+      "sha256": "3530f2294b4fb80d970b8070b4be7a1c1cb19aec193ba28fcaf97ecef265627c"
+    },
+    {
+      "name": "libs/master.lib/bgm_init_finish.asm",
+      "size": 5870,
+      "sha256": "757fc0bcfe72b78cbca8fe9ee1fe99b2c4251805371ed0d097b09ca0fa76aff3"
+    },
+    {
+      "name": "libs/master.lib/bgm_stop_sound.asm",
+      "size": 897,
+      "sha256": "0500a903d67ef158f09813d6225fd354cec4bde6c9ad83d403f9cd8a5aa028ce"
+    },
+    {
+      "name": "libs/master.lib/ems_read.asm",
+      "size": 1797,
+      "sha256": "e378b2569119bf99f21c05edcfb60ddeda7478fd0242c8f8a7d17b30e802f4c1"
+    },
+    {
+      "name": "libs/master.lib/ems_allocate.asm",
+      "size": 915,
+      "sha256": "651288446d1cc9805107072ac6fb9790a2f2606d34693cc594c5b3bd401f8bf4"
+    },
+    {
+      "name": "libs/master.lib/ems_enablepageframe.asm",
+      "size": 700,
+      "sha256": "8a7f86bf3c48a3fe2aa2f01ff6fb3b23560f62613281ce330b6990ee09895036"
+    },
+    {
+      "name": "libs/master.lib/ems_exist.asm",
+      "size": 931,
+      "sha256": "5d555ef7871f2fc16e9cfcfe713d8144cfae456d011a9977babe7ea9ff9c2a96"
+    },
+    {
+      "name": "libs/master.lib/ems_free.asm",
+      "size": 777,
+      "sha256": "e1f1782c47734b3ba32d1ffa29d749f2dadd93875fbfc9f68ec918f552667494"
+    },
+    {
+      "name": "libs/master.lib/ems_movememoryregion.asm",
+      "size": 1109,
+      "sha256": "314a02d46e7c42a9a51dfd928610a4b2b99bf054ccc7488ad25bec3a0157d146"
+    },
+    {
+      "name": "libs/master.lib/ems_setname.asm",
+      "size": 1067,
+      "sha256": "9cb0ce1636b68de5f7f929ffc0c71281f50aa8c64e3850274607c517cca89678"
+    },
+    {
+      "name": "libs/master.lib/ems_write.asm",
+      "size": 1804,
+      "sha256": "5b52ceafcbbb3270502887728ab60a269d2f10e7adba1715e286f91b3ba1ea66"
+    },
+    {
+      "name": "libs/master.lib/ems_space.asm",
+      "size": 875,
+      "sha256": "23c0704427e890190ee01a644dd234da2ecd16c62df27bba998160ce55f7573b"
+    },
+    {
+      "name": "libs/master.lib/super_put_8.asm",
+      "size": 2472,
+      "sha256": "848768b85d4edac11f22e8e50a28212ff64c103545f962fbc9222f07ec39a77d"
+    },
+    {
+      "name": "libs/master.lib/pfint21.asm",
+      "size": 9708,
+      "sha256": "8890dfae0e43677fa52dc0c2892def28214eb5c7cf9748f6c201410b19b89c8e"
+    },
+    {
+      "name": "th03/formats/pfopen.asm",
+      "size": 5188,
+      "sha256": "913ba45575ed3578efc959a9d3383b2407edb1042d856651cda59b5e701f70ab"
+    },
+    {
+      "name": "libs/master.lib/pf_str_ieq.asm",
+      "size": 1194,
+      "sha256": "d25abb53eb1b9b689af519ae7526595d76c86b4362dd2e5ac146cd2165283ac8"
+    },
+    {
+      "name": "th04/main/pause.asm",
+      "size": 2594,
+      "sha256": "218c92ebb228d0e1e89ecf991083d0f115b75eae692b841826db494a8652f95b"
+    },
+    {
+      "name": "th04/main/tile/fill_ini.asm",
+      "size": 1533,
+      "sha256": "e13c7cb64fb353b5f519d7dbdc856f8fef35e68e83f3234e5f11e29c6c33a425"
+    },
+    {
+      "name": "th04/main/tile/render_a.asm",
+      "size": 944,
+      "sha256": "3d5d9f493b3e36373328c44d69da9f23f37be21a5ae4d5fef5e3b0c410a99f26"
+    },
+    {
+      "name": "th04/main/tile/redraw.asm",
+      "size": 1243,
+      "sha256": "ec343ae9c7fb3f974a3644efe713e52586ea526b984d5a467ea0f6ec255de350"
+    },
+    {
+      "name": "th04/main/scroll_y_1.asm",
+      "size": 393,
+      "sha256": "f5bbe066c76e7736023b76ca1847950a68efd9653209870d3bbac94dc570d69f"
+    },
+    {
+      "name": "th03/math/randring_fill.asm",
+      "size": 250,
+      "sha256": "47651ba3050ed8d72c89b08e42b325b0606e6027826f40a3b919bd79c637f85b"
+    },
+    {
+      "name": "th04/main/null.asm",
+      "size": 162,
+      "sha256": "1c30e0847d1f44501232bbcca7111e1bf09bac28426d36903df18e2f308e368a"
+    },
+    {
+      "name": "th04/main/bullet/pellet_r.asm",
+      "size": 3798,
+      "sha256": "565db318fe58d96576714f47d0c536312248332c5a9b6b0b8e953329c6b5bce8"
+    },
+    {
+      "name": "th04/main/spark_render.asm",
+      "size": 969,
+      "sha256": "988bf6d9cfdbaa1c7547c30aa6b0245405b39664373e24d16bc26eb152c5d381"
+    },
+    {
+      "name": "th04/main/sparks.asm",
+      "size": 2353,
+      "sha256": "cb22fb4fc3a191fa2d897532ac4cdb2c69520b7cd4547daf02caca202191a7f2"
+    },
+    {
+      "name": "th04/main/item/splash_dot_render.asm",
+      "size": 255,
+      "sha256": "54a27087b66082d95cb6b50a403d3fb978650260b283941bfb7a0dc32a3e8ad6"
+    },
+    {
+      "name": "th04/main/pointnum/inv_upd.asm",
+      "size": 2447,
+      "sha256": "977509e1be4d576bdf2cf96345da28ee9152672fceac7b819bc280b0090cada8"
+    },
+    {
+      "name": "th05/main/pointnum/render.asm",
+      "size": 1459,
+      "sha256": "e28b1529c30d6ebb9fc62369581a59c5d0322d1e4f16f7f5b25af1cd8d00ef0a"
+    },
+    {
+      "name": "th04/main/pointnum/num_put.asm",
+      "size": 496,
+      "sha256": "47f67fe715263d9427fefe5bb725d88778fe33641f6c69b187cd04efff991839"
+    },
+    {
+      "name": "th04/main/player/bb_playchar_put.asm",
+      "size": 431,
+      "sha256": "6d16f50e6a677545a60a442a2dee47e9549a03d24e612b9dd4f7ba8e57fad283"
+    },
+    {
+      "name": "th05/formats/bb_playchar.asm",
+      "size": 525,
+      "sha256": "6f814d48ae86e9ab704a1345ac2eeb51eb077b8292bd216caedc047cedd72b68"
+    },
+    {
+      "name": "th04/main/tile/bb_put.asm",
+      "size": 999,
+      "sha256": "30afbc8fa9fcd0632d9afb317c9dca7300bc03519f552b651191d792bb3df427"
+    },
+    {
+      "name": "th04/hardware/grcg_fill_rows.asm",
+      "size": 498,
+      "sha256": "578deeb0b6bde9fd49ea34feeca27e3d5612e881274fa552a104ae3e80ad2e16"
+    },
+    {
+      "name": "th04/main/player/shot_laser.asm",
+      "size": 1378,
+      "sha256": "ac1888f4fb9436ac19ad00fb2c84465c1a93e973c895021a733f491b589596cb"
+    },
+    {
+      "name": "th05/formats/bb_cheeto.asm",
+      "size": 3416,
+      "sha256": "656dd736bac85f6c7b815ea6bebf2b88cd02e24cfbdeb53b8bf9a178fbc62c01"
+    },
+    {
+      "name": "th04/hardware/fillm64-56_256-256.asm",
+      "size": 1049,
+      "sha256": "3497d7b6726160ab8ce48fbfe407b36f86cc33c06396ac34bb2f2f01b87536b0"
+    },
+    {
+      "name": "th05/formats/bb_load.asm",
+      "size": 702,
+      "sha256": "3e8687d375fb3e56639776048e0c7da776f9118c4b782396d2da52acb190e06b"
+    },
+    {
+      "name": "th04/main/tile/bb_put_a.asm",
+      "size": 2878,
+      "sha256": "36f72f81bb7e40d0b6bcb07620731f989a4953f62cc6e8dbe858a04f0219a31b"
+    },
+    {
+      "name": "th04/formats/z_super_roll_put_tiny.asm",
+      "size": 7774,
+      "sha256": "9feff618c367a6e2ed4993ce3ea0f8e0ea38721710f6fc63a61af8746c787c45"
+    },
+    {
+      "name": "th04/main/tile/inv.asm",
+      "size": 2246,
+      "sha256": "5ab9c69b5842319239e48ab54ded935c726aff22614fde80a4189fec1fc86058"
+    },
+    {
+      "name": "th05/formats/super_roll_put_16x16_m.asm",
+      "size": 3224,
+      "sha256": "fa4f8ea62d04580cb6435f08d5da6678194472c70b0c6c696c3cca3baae31e52"
+    },
+    {
+      "name": "th04/main/enemy/inv.asm",
+      "size": 515,
+      "sha256": "0ece7c55ff8a8a597f89eb3a0b3dbdb74539154753522749c703a125e0d408a1"
+    },
+    {
+      "name": "th05/main/player/shots_add.asm",
+      "size": 567,
+      "sha256": "f797eda1d12c8fe742ba77ebfac6d7469c359d91048cc360231d6bd8c8005ae5"
+    },
+    {
+      "name": "th04/main/player/shot_velocity.asm",
+      "size": 419,
+      "sha256": "6c7a7df49dfe07547e776389a905cef0f55665e3a6567a2f5ac9cad9f3ad39fd"
+    },
+    {
+      "name": "th05/formats/bb_txt_load.asm",
+      "size": 1404,
+      "sha256": "77cf3c70c9028d168a222e97958f7e1ec8f3447d1ab18a75d9a9e58b355d4cdd"
+    },
+    {
+      "name": "th04/formats/bb_txt_put.asm",
+      "size": 1254,
+      "sha256": "72577a6dee7b738c1e4188761de1433fd7eda66965037d3a14800584996df1ad"
+    },
+    {
+      "name": "th04/main/bullets_gather_inv.asm",
+      "size": 2403,
+      "sha256": "70131e1d4218d9a504236d2fa53a9e6ed79135b5b35ad7921400fa5b62c5be42"
+    },
+    {
+      "name": "th04/main/item/invalidate.asm",
+      "size": 1062,
+      "sha256": "0e878737c4db93f7131da4826a66c51abc612c9dd1298f558c0866c5fbe6382c"
+    },
+    {
+      "name": "th04/hardware/grcg_modecol.asm",
+      "size": 300,
+      "sha256": "9627e7e7a50692d1c365c8482ec61c25787c239490458c2c10c031142e559c90"
+    },
+    {
+      "name": "th04/main/playperf.asm",
+      "size": 487,
+      "sha256": "bf630305c6f4bd4f3b333aea44958abb00b3db4782aa392f6c942a0f9652f9dd"
+    },
+    {
+      "name": "th05/main/select_for_playchar.asm",
+      "size": 154,
+      "sha256": "d0026f167f378d0004beb8039812af132dfe061f165523e313fdfb6ba7280389"
+    },
+    {
+      "name": "th04/main/select_for_rank.asm",
+      "size": 572,
+      "sha256": "602cff0356a718486e971c697760560122e47da4bfd3f99864c61f53be26d50b"
+    },
+    {
+      "name": "th04/formats/scoredat_code_asm.asm",
+      "size": 1880,
+      "sha256": "8e47b24d19f538b146ca54593530f79508f1f96814b5da0b6f13cd84ec9e4524"
+    },
+    {
+      "name": "th04/main/enemy/render.asm",
+      "size": 2185,
+      "sha256": "2e26ee97addc5ca8fdde1bb0ab8fb815dde4ad9874f2d7f42050a63bcea504a5"
+    },
+    {
+      "name": "th04/main/item/render.asm",
+      "size": 781,
+      "sha256": "9b8a9b26aa556c624cb1efd63c072adb7c787854437cfc4063d340867a6c4d04"
+    },
+    {
+      "name": "th05/main/bullet/cheetos_render.asm",
+      "size": 3086,
+      "sha256": "d5bca2971021e8b95dae6539e2cc55070dbbc85aa82fdc425e8666de20853d07"
+    },
+    {
+      "name": "th04/main/item/splashes_render.asm",
+      "size": 1307,
+      "sha256": "657896dab07af100d47b316919d852c2ea1eac28c64945064c16b1b7cd3ecab7"
+    },
+    {
+      "name": "th04/main/hud/element_put.asm",
+      "size": 1650,
+      "sha256": "1744030fc2f0519ec795ef57c246177c2a730cb3c56cd40233682a9370eadc01"
+    },
+    {
+      "name": "th05/main/bullet/b4balls_render.asm",
+      "size": 1113,
+      "sha256": "98b56d1fd091bbbeb5b93ce3bf4b9fa00dd433b2161eca9ff815c02adf8b92cf"
+    },
+    {
+      "name": "th05/main/bullet/swords_render.asm",
+      "size": 799,
+      "sha256": "14e73f9f1f682a89bf823b4e64f23fb031ecafbc8dae9f7ea0fea3f1fc46ed76"
+    },
+    {
+      "name": "th05/main/bullet/b6_custombullets_render.asm",
+      "size": 1330,
+      "sha256": "e2104d73a3834c1f071dbd1b6a529950ede3ff5e8a35b1310e71777bd708ce02"
+    },
+    {
+      "name": "th05/main/stage/s2part.asm",
+      "size": 563,
+      "sha256": "d2aea0dc3ae89a541e308900186698e8d146fb2f4465d1de76cccc13af02a1e9"
+    },
+    {
+      "name": "th04/main/player/render.asm",
+      "size": 3136,
+      "sha256": "7a1d19cb62ff0684004932926d69b5ba0bbc8521c6d42adfbc291ea2efdf9860"
+    },
+    {
+      "name": "th05/main/player/hitshot_from.asm",
+      "size": 1337,
+      "sha256": "eb90a6eb6b45eb1534276f064b2cabdb36c36ac279f2d566c692407bcf76b7f3"
+    },
+    {
+      "name": "th02/snd/snd.inc",
+      "size": 91,
+      "sha256": "a3faab9a73895dfa2e0ded324b093ce89f66185e08be33006fada8229aa3c0f3"
+    },
+    {
+      "name": "th04/main/gather_point_render.asm",
+      "size": 1240,
+      "sha256": "8e7642a1fd6231abb9d5c5381cc808ad478f8fa329cf325eff4000266154ce2d"
+    },
+    {
+      "name": "th04/main/pointnum/add.asm",
+      "size": 1299,
+      "sha256": "9c6033b37b7325b3ab37f9680e77518eda8cc6524a4a0f2a80088e34ad0a6b99"
+    },
+    {
+      "name": "th04/main/boss/explosions_reset.asm",
+      "size": 274,
+      "sha256": "cdf58e82d34e718d0fa4c08b6d220132a0ae0ca8c33c7e0cef083e9ac0a6b1b5"
+    },
+    {
+      "name": "th04/main/boss/explode_small.asm",
+      "size": 1760,
+      "sha256": "7fb4871cbd0596929ac88b2e74df98c3ef0d9f662ac10c61c099f78c67c465b5"
+    },
+    {
+      "name": "th05/main/boss/2_explode_small.asm",
+      "size": 498,
+      "sha256": "887e27493d2e7277b5dd6f88b8899b07b5e8c854b740f331447e0d512ed71adb"
+    },
+    {
+      "name": "th05/main/boss/explode_big.asm",
+      "size": 683,
+      "sha256": "377ab698ef369a4397fd4609c07201480bfdac50a8b3e3d0282e5ad5512bc5bd"
+    },
+    {
+      "name": "th05/main/boss/2_explode_big.asm",
+      "size": 448,
+      "sha256": "2c2c2ea49e66d29a9561da9dfa3665c8ead4379981c549a835b8ff01a1b6fac9"
+    },
+    {
+      "name": "th04/main/item/miss_add.asm",
+      "size": 2482,
+      "sha256": "a828b386efdae7a7f96a71da9d40d35362feafe9d558d5a279a72f7029af065d"
+    },
+    {
+      "name": "th05/main/bullet/b4balls_add.asm",
+      "size": 1689,
+      "sha256": "ea8d3306e1c02caf36ec4cfe1d8918ce6a0c1e8afc10d8a6badd94e7c9c9dabe"
+    },
+    {
+      "name": "th05/main/bullet/swords_add_update.asm",
+      "size": 4856,
+      "sha256": "14c5cb018e9d0d24212a053f3f1572e7194d8db5e33808bc59e80708490444e4"
+    },
+    {
+      "name": "th05/main/boss/bx.asm",
+      "size": 715,
+      "sha256": "4785125d1a7843b03fc9a962f71c10aa3d34aee413868c1b4e3f4241fea539a0"
+    },
+    {
+      "name": "th05/main/pointnum/digits.asm",
+      "size": 795,
+      "sha256": "851c4cf4f4638d97819045158143089b0dd8231cb910cd84887d44af3318e704"
+    },
+    {
+      "name": "th04/gaiji/pause[data].asm",
+      "size": 84,
+      "sha256": "61c141aac203c48198cc96c16b7330a40f932a9304d8a6bfb7b9c7c038c95ecf"
+    },
+    {
+      "name": "th04/main/pause[data].asm",
+      "size": 181,
+      "sha256": "9afb7f17724093e6fe2743cfe403b55b2fe3ec4016eeb6c8f0bebeae9cd8ae98"
+    },
+    {
+      "name": "th04/main/demo[data].asm",
+      "size": 96,
+      "sha256": "4122bdf10d746dfce3191e928d25bf34277d4fd1e530c02a53f50d453998779f"
+    },
+    {
+      "name": "libs/master.lib/atan8[data].asm",
+      "size": 1108,
+      "sha256": "32fa99e4d17731cca123c8934a875c92866a5ed90aa4b1bbdccf6ee7e40cb724"
+    },
+    {
+      "name": "libs/master.lib/atrtcmod[data].asm",
+      "size": 76,
+      "sha256": "07a82376bf0afb34f933139908003d5dc2803c20516284b124bbdc934c486f4b"
+    },
+    {
+      "name": "libs/master.lib/bfnt_id[data].asm",
+      "size": 141,
+      "sha256": "c64cc4bf2c38cac7b80cfff5a3c1edccd0db14ca41534d416492d4e817b0f4bf"
+    },
+    {
+      "name": "libs/master.lib/clip[data].asm",
+      "size": 640,
+      "sha256": "63cfacbc52f9eee28f6733adc0eb029d6ee612245dd6f17a09f4ebef70e6e656"
+    },
+    {
+      "name": "libs/master.lib/edges[data].asm",
+      "size": 669,
+      "sha256": "3bdbd15acdedb8eb688c116a8a34d862762345d50acb0f99783ef5f38ab01cb6"
+    },
+    {
+      "name": "libs/master.lib/fil[data].asm",
+      "size": 173,
+      "sha256": "a74c17c2373a2a672c7b441029fe63db93ae6e37b3cad170ef1658506785eae7"
+    },
+    {
+      "name": "libs/master.lib/dos_ropen[data].asm",
+      "size": 96,
+      "sha256": "a49b4fc258fdd23c3003fb450915b58bbc73d3b81f5fdf439045289881f8baaa"
+    },
+    {
+      "name": "libs/master.lib/get_machine_98[data].asm",
+      "size": 288,
+      "sha256": "a4045e5de7828c2bbeecd5f81f51b887d5c0ddd1843ccb666f1fcc8e497c809c"
+    },
+    {
+      "name": "libs/master.lib/get_machine_at[data].asm",
+      "size": 150,
+      "sha256": "b3a3d88062b7cade4c7e801bdccc991644a988754c4e8c8c34176f91d08f489f"
+    },
+    {
+      "name": "libs/master.lib/grp[data].asm",
+      "size": 1646,
+      "sha256": "7e11161dc5fbe9ff4ce2f8ec79d63b3b73a4a46c6ba43cd6dac7db8f263c9ff8"
+    },
+    {
+      "name": "libs/master.lib/js[data].asm",
+      "size": 290,
+      "sha256": "c4039f5941b89b6fe80e22442607bef52b533d71fc97e79e8f9f73c84c3fca03"
+    },
+    {
+      "name": "libs/master.lib/machine[data].asm",
+      "size": 272,
+      "sha256": "472efe4716c282b8c17aa4532ea0b5d15a7c5d477a5bafd83f7eb7f73eedf81c"
+    },
+    {
+      "name": "libs/master.lib/pal[data].asm",
+      "size": 799,
+      "sha256": "fc37920a446ba76a9e281624a8fbbf5d78153e281e043645998f5747d162c770"
+    },
+    {
+      "name": "libs/master.lib/pf[data].asm",
+      "size": 520,
+      "sha256": "737440cb99b76eee9b140ad35a5752bed1638de880eee687ebffddf737f7840e"
+    },
+    {
+      "name": "libs/master.lib/rand[data].asm",
+      "size": 78,
+      "sha256": "474e83952040eb1b4bde984e694607ed5285820b4585980ca2fbed1fc88cc8b1"
+    },
+    {
+      "name": "libs/master.lib/sin8[data].asm",
+      "size": 2149,
+      "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+    },
+    {
+      "name": "libs/master.lib/tx[data].asm",
+      "size": 840,
+      "sha256": "c0d64eefc6a2af118d9f05774629304e75ff5d252daff8ec4a64caf889ccd8a9"
+    },
+    {
+      "name": "libs/master.lib/vs[data].asm",
+      "size": 247,
+      "sha256": "18bd5d9b8ffcd7353a2dea9f8ae4dc69fa34b06fa9fc32703fc1d0724c4e0357"
+    },
+    {
+      "name": "libs/master.lib/wordmask[data].asm",
+      "size": 107,
+      "sha256": "d7463ef1babcc68dcdb72f1126f08544d279f95484c31244c1ae645065639b6a"
+    },
+    {
+      "name": "libs/master.lib/mem[data].asm",
+      "size": 376,
+      "sha256": "9c13a4f793a8b7602d55be68d1a547d91251ab0d4a7f97f73aff2077bb9446ad"
+    },
+    {
+      "name": "libs/master.lib/super_entry_bfnt[data].asm",
+      "size": 24,
+      "sha256": "1784371444ebc64b36a866be947926e9f561a004d4735109dc874211b8ca135e"
+    },
+    {
+      "name": "libs/master.lib/superpa[data].asm",
+      "size": 255,
+      "sha256": "82334872155ef19c42919ce0964df062d5bb65587ebdc13dd1c069d3684f147f"
+    },
+    {
+      "name": "libs/master.lib/bgm_timerhook[data].asm",
+      "size": 28,
+      "sha256": "1517daea06302990d04e79121dafbd820e90d7583ab72929ce15dd1624091141"
+    },
+    {
+      "name": "libs/master.lib/bgm[data].asm",
+      "size": 583,
+      "sha256": "d57a5573b5a8673102eaab419268005c4337fae390357cc9302953e1dce6bafd"
+    },
+    {
+      "name": "th04/snd/se_priority[data].asm",
+      "size": 406,
+      "sha256": "78348fe0f708eaa9e6e59a02dc2944aa5f52aac144e7e8e51e814acc70a55804"
+    },
+    {
+      "name": "th03/snd/se_state[data].asm",
+      "size": 89,
+      "sha256": "1e98ed5e8dc00c82548b3a9d5c1e299afd3e8af4349a2f9f821217adc0e80dfa"
+    },
+    {
+      "name": "th05/mem[data].asm",
+      "size": 63,
+      "sha256": "7a6e02b4c925f2606a1928035cd413cba553a080549eae9b8d28bfdc2eb4243b"
+    },
+    {
+      "name": "th05/snd/load[data].asm",
+      "size": 139,
+      "sha256": "44d9abef8f614bd5f951dedb34dfd63fa8f13ba78d309c8ad9cd0057c1bd081d"
+    },
+    {
+      "name": "th04/snd/snd[data].asm",
+      "size": 181,
+      "sha256": "690ed731470695535a42a9a16c0a4119f95e38aa28d2d4518ff397c7c339962c"
+    },
+    {
+      "name": "th04/snd/snd.inc",
+      "size": 158,
+      "sha256": "dbca525a00ea6240607637c19fca4a243a044bf03a459b36e31c76874a0ab822"
+    },
+    {
+      "name": "th05/hardware/vram_planes[data].asm",
+      "size": 221,
+      "sha256": "c1f3dc9c3443a7fdd171860e929abb0c7370d42a0d03e80cf6d928e7a878ffd6"
+    },
+    {
+      "name": "th03/formats/cdg[data].asm",
+      "size": 50,
+      "sha256": "6994dd466855af86038b134d4dd5c6bbf50ddd1d758c10b625ec05d8f0f658c9"
+    },
+    {
+      "name": "th04/formats/cfg_lres[data].asm",
+      "size": 41,
+      "sha256": "9d8313cd836c267a27d19cba3339443f5ef37bdce3f54d5901fc4be2cba35b39"
+    },
+    {
+      "name": "th04/main/tile/section[data].asm",
+      "size": 190,
+      "sha256": "5871e7630b151745c759198b08253bbbfa563fea97734fb1296830d93924a8bd"
+    },
+    {
+      "name": "th04/formats/std[data].asm",
+      "size": 157,
+      "sha256": "bef66428cb753ec01b5d3cf632acc78c3790c1066a3fd1398276e06b0f9f736f"
+    },
+    {
+      "name": "th02/sprites/pellet.asp",
+      "size": 2412,
+      "sha256": "58304de6ef3f73ad08b23a07b0b28509a8e2d61a9bf831835ca63a44b9cf535b"
+    },
+    {
+      "name": "th04/sprites/pelletbt.asp",
+      "size": 1404,
+      "sha256": "ae73656f299b0497f2e6c9e16e8e6f0b9786205734f80f78b484a72480a2aec6"
+    },
+    {
+      "name": "th02/sprites/sparks.asp",
+      "size": 17980,
+      "sha256": "7bef7f07bada79d83fae4dcdf6d047b693eaded70cbd95b72f4509e962cc7610"
+    },
+    {
+      "name": "th04/main/pointnum/pointnum[data].asm",
+      "size": 61,
+      "sha256": "fa234a0c8644465bcc949b5a02f548901f418cf1c10a6cd4a484485ce98375f5"
+    },
+    {
+      "name": "th04/sprites/pointnum.asp",
+      "size": 26903,
+      "sha256": "40df69d19997037f23cdd2e6b5c0711ac3756b309e0e7f45c7882158751aa4e2"
+    },
+    {
+      "name": "th05/formats/bb_playchar[data].asm",
+      "size": 65,
+      "sha256": "873b9690d8407013ea544b112d88eab9f9d26c78c0205762cf1c6d48b73037aa"
+    },
+    {
+      "name": "th04/main/player/shot_laser[data].asm",
+      "size": 129,
+      "sha256": "47f6597b45398da4e31e34e9e0320b376639db656f291261a84a3266f0bafc55"
+    },
+    {
+      "name": "th05/formats/bb_cheeto[data].asm",
+      "size": 52,
+      "sha256": "295c85d67970d765fbfcfb353d34852786157b9b9b7816bbbda2fdbabb92c1b6"
+    },
+    {
+      "name": "th04/main/player/shot_levels[data].asm",
+      "size": 160,
+      "sha256": "0f3ecac39445b09021917a17c8577331a1b33963a6950f3275f6abb0e23bda43"
+    },
+    {
+      "name": "th05/formats/bb_txt_load[data].asm",
+      "size": 42,
+      "sha256": "df60a750716989f7ea957617f292120774b4e82c9ba27985959eba2167711547"
+    },
+    {
+      "name": "th04/main/player/shot_velocity[data].asm",
+      "size": 7116,
+      "sha256": "5cc21c70d6d58f3c913ce9c73c700bcee7642141a8c40642e8773a2a38595c12"
+    },
+    {
+      "name": "th04/main/frames[data].asm",
+      "size": 130,
+      "sha256": "f40bb5cda36f90394a30f5964967d24001a368b515848da7982f011cdd0bc882"
+    },
+    {
+      "name": "th04/main/dialog/dialog[data].asm",
+      "size": 819,
+      "sha256": "c475fc63001069e103be1127bbd1ef37b02ef0657ed4bce3fbe38556bb6138e2"
+    },
+    {
+      "name": "th04/main/boss/explosions_big[data].asm",
+      "size": 56,
+      "sha256": "6aa8641343bbebe634262b9006ebe59c70d241997be1720d4d4291115c693dd0"
+    },
+    {
+      "name": "th05/main/boss/move[data].asm",
+      "size": 186,
+      "sha256": "6803abb8098f1d71af89bdaef5895562443a8ae6d4703a0dc240c9e31e2d24fd"
+    },
+    {
+      "name": "th05/main/item/enemy_drops[data].asm",
+      "size": 699,
+      "sha256": "7e98963864adfc3b52429cf5b3627274f4afab99ae257648ab38e4e6987d0abc"
+    },
+    {
+      "name": "th04/main/item/items[data].asm",
+      "size": 1671,
+      "sha256": "34d809a6599edc2e3753c06d6bca6e2448d45117ced9d15dc4acf86580a9d7b5"
+    },
+    {
+      "name": "th02/main/power_overflow[data].asm",
+      "size": 612,
+      "sha256": "a6b0cbf3ba7dafb2d2f7a7bfbdc476aca5bfc08fed395f192c505cc1185f87d6"
+    },
+    {
+      "name": "th04/main/hud/hud[data].asm",
+      "size": 60,
+      "sha256": "7dbda4e2e64c7daa2ad0bc1c6518d7836c7c01df1db63fbae5458b4df5b1197f"
+    },
+    {
+      "name": "th04/gaiji/gameover[data].asm",
+      "size": 242,
+      "sha256": "27e95ade8404e323caf430e7fd761a7a8edf2aacf81709bd6df7fa3d80f0d4bb"
+    },
+    {
+      "name": "th04/main/playfld[data].asm",
+      "size": 83,
+      "sha256": "56566b4e73cbcd938a667d0c9894bdc8793b5bc1767b435aedc17737709f013c"
+    },
+    {
+      "name": "th04/score[data].asm",
+      "size": 95,
+      "sha256": "3caab0036d6c36a1502c3469b06679696ac42069028e7ee042d80d3fed9295fc"
+    },
+    {
+      "name": "th04/gaiji/hud[data].asm",
+      "size": 569,
+      "sha256": "c639ccedb616288d15b3ddde9de32c995cd98e84e3921ff78d3a3400fec4f7c2"
+    },
+    {
+      "name": "th05/main/hud/dream[data].asm",
+      "size": 260,
+      "sha256": "82d376aa0fd2d6c74f49bd85ee7491b275a7588ff73dc61b4653c67dbe466e5b"
+    },
+    {
+      "name": "th02/main/hud/power[data].asm",
+      "size": 273,
+      "sha256": "ce1f550195aea91ab3c2d4d5486e6b27770e551f0b49ec0b94ff3745627c858b"
+    },
+    {
+      "name": "th04/main/hud/hp[data].asm",
+      "size": 328,
+      "sha256": "123c962a2e170eb8d5c5fd0d71f35622ec2eba6f0cb9d51c8bc8fa10d4f2b507"
+    },
+    {
+      "name": "th04/main/hud/overlay[data].asm",
+      "size": 1832,
+      "sha256": "dbaec57c10b5cc48e3779b838e25bf1f097a4358196afd45dce3138d84f1620d"
+    },
+    {
+      "name": "th04/main/player/shots_hittest[data].asm",
+      "size": 81,
+      "sha256": "06dbcf535a22e2ad7f01b34347536697562125891b962854311c238f5aa5d474"
+    },
+    {
+      "name": "th02/main/hud/score_put[data].asm",
+      "size": 143,
+      "sha256": "c1ac7c7e507692319afb00f475cec32fa445d1a9fe6a299447cde6394b353d21"
+    },
+    {
+      "name": "th03/main/5_powers_of_10[data].asm",
+      "size": 86,
+      "sha256": "0d248e43ec9e8e1b43a80c08e5e2528093a414710f1296518e39fb469e5a1bed"
+    },
+    {
+      "name": "th04/main/hud/gaiji_row[data].asm",
+      "size": 242,
+      "sha256": "276740a1e2184ea549deee6218a033b626a5fbe77c96261ceece57c7dc6090f6"
+    },
+    {
+      "name": "libs/master.lib/clip[bss].asm",
+      "size": 162,
+      "sha256": "70a9d992a29548693deb0c623d325dfa83bb2980fb1ae3f6dbb115fe20546eef"
+    },
+    {
+      "name": "libs/master.lib/fil[bss].asm",
+      "size": 582,
+      "sha256": "34e33ee73a66b712bcdb376bbc27c369c59dfbff3ceab28c6ef30aa6dae8a545"
+    },
+    {
+      "name": "libs/master.lib/grcg_circle[bss].asm",
+      "size": 38,
+      "sha256": "218ac09a2742eba19818b4bafc264d310bd99389a70964d2c0f4367b8cc40d41"
+    },
+    {
+      "name": "libs/master.lib/js[bss].asm",
+      "size": 63,
+      "sha256": "4088af4fb69f18082eae94de0f8ce0777b854d1227be88f1f1fc787aa956ef07"
+    },
+    {
+      "name": "libs/master.lib/pal[bss].asm",
+      "size": 74,
+      "sha256": "fe7dd64e247b731ae10ae598ff3402c68cd7f820ce4383a113bc184b632c3f74"
+    },
+    {
+      "name": "libs/master.lib/vs[bss].asm",
+      "size": 270,
+      "sha256": "f324dc06b9c9476f1ce37ee8124d17182efa2f42fc72030e4f12caf60ccd2abb"
+    },
+    {
+      "name": "libs/master.lib/vsync[bss].asm",
+      "size": 50,
+      "sha256": "aa22c000d29d81016c0018b550b04eaeb4464e971db9bb15057615b1155a8076"
+    },
+    {
+      "name": "libs/master.lib/mem[bss].asm",
+      "size": 302,
+      "sha256": "b54b999b1e2dfe82cfd79e8d16b8748a861cabc2fde435d43e9fdd3f284b26f1"
+    },
+    {
+      "name": "libs/master.lib/superpa[bss].asm",
+      "size": 198,
+      "sha256": "0e879a7a1faf48fe4337d90fe825f198e14e1ab010e9ca26247d1a6f3a9b3bf8"
+    },
+    {
+      "name": "libs/master.lib/super_put_rect[bss].asm",
+      "size": 15,
+      "sha256": "794ceeef9a88b4f0f21047ed0ea8cf55aa3de3b034c4ba627085a1ca1050b9c3"
+    },
+    {
+      "name": "th03/formats/hfliplut[bss].asm",
+      "size": 46,
+      "sha256": "7ce20d5b7a6b5da8064c992c97396f8f6ca4de16b627d719a2f23d74aac1520f"
+    },
+    {
+      "name": "th04/snd/interrupt[bss].asm",
+      "size": 100,
+      "sha256": "25d1a31efc69a94b1144eee94a993f910b94c1f5b66b9292b313151381045c46"
+    },
+    {
+      "name": "libs/master.lib/bgm[bss].asm",
+      "size": 191,
+      "sha256": "ef07176bc35a2d7d0e6b91be8d011d40765e11b0609232b5fd5d735c5e120d1c"
+    },
+    {
+      "name": "th02/snd/load[bss].asm",
+      "size": 109,
+      "sha256": "22b6accc206c5e8f78afff0e75b93f4ba7ecd116250f71c24631ec8e9c988a8c"
+    },
+    {
+      "name": "th04/hardware/input[bss].asm",
+      "size": 146,
+      "sha256": "468b85101c7588c1adea9ffb8ff304343828c683a4bde7fbd31bf5b93f7a8235"
+    },
+    {
+      "name": "th04/formats/cdg[bss].asm",
+      "size": 98,
+      "sha256": "50603e350e7742ba816a46fb7b0e2e0eeb5f8959fb116d69aaa7165f0002cd37"
+    },
+    {
+      "name": "th03/formats/cdg[bss].asm",
+      "size": 93,
+      "sha256": "2c44eff8bce90d277f350f0a1bec5a1de30c4044c638fee12d95365971f10e12"
+    },
+    {
+      "name": "libs/master.lib/pfint21[bss].asm",
+      "size": 186,
+      "sha256": "72e679dc2f05eae6accb6cb9bfde62780cbe53225f4465bb0f1f6beb8515f27a"
+    },
+    {
+      "name": "th05/formats/cfg_lres[bss].asm",
+      "size": 29,
+      "sha256": "56182029ffd63fdb594a166beb1eca787b3d9428546d12b2396ce00e3f9c9a4f"
+    },
+    {
+      "name": "th04/formats/std[bss].asm",
+      "size": 179,
+      "sha256": "c25caa14d50b3dc57b0adee276af988523220141b167d7879e4d22e7a4cb6478"
+    },
+    {
+      "name": "th04/main/tile/inv[bss].asm",
+      "size": 353,
+      "sha256": "91f85058e498a358ff776a6925475a3c54b2c1ef9807485028b753281be39370"
+    },
+    {
+      "name": "th02/math/randring[bss].asm",
+      "size": 236,
+      "sha256": "502af8921b2c2274ad28a25827675a38ee820a94b249eb64d8dc2e012a49606e"
+    },
+    {
+      "name": "th04/main/pointnum/render[bss].asm",
+      "size": 237,
+      "sha256": "f0fe736cd4a3a6f989562eb20250e7da3147f7f4977a4d550a2b1d8e46ad3a01"
+    },
+    {
+      "name": "th04/main/player/bomb[bss].asm",
+      "size": 185,
+      "sha256": "b55ada46a967b6bd83975198db2ec6af5d1c12afec80505b8ac94066a529fd1c"
+    },
+    {
+      "name": "th04/formats/bb_playchar[bss].asm",
+      "size": 48,
+      "sha256": "e1423bd1625b93e65bef666700f323c05505ce3d3bc547c9a97ed799ee81d130"
+    },
+    {
+      "name": "th05/main/player/bombanim[bss].asm",
+      "size": 888,
+      "sha256": "c9dafcfdc9ce7f1f6b0669e8a314431192c81858ac8732c3e86b759e6956b250"
+    },
+    {
+      "name": "th04/main/boss/bg[bss].asm",
+      "size": 335,
+      "sha256": "86f2457baa96a0d152993acd9ccb3acb3bf852d11d37439aa907916d23c518b3"
+    },
+    {
+      "name": "th05/main/boss/render[bss].asm",
+      "size": 654,
+      "sha256": "7c7e1c4660435b8eea351b3c75dab3c7ada0528fe4f9eae6b96aa8eb23ec4a89"
+    },
+    {
+      "name": "th05/formats/bb_cheeto[bss].asm",
+      "size": 49,
+      "sha256": "2791517375258ff99835b92fe85de0b5007aa0ededd5ae35a4b437b0b2cf14e3"
+    },
+    {
+      "name": "th05/formats/bb_load[bss].asm",
+      "size": 40,
+      "sha256": "1c3a6b4ebe00eb7afbf3adfe611368be46a085ccc2518182fac8d9e7bb7430ac"
+    },
+    {
+      "name": "th04/main/sparks_add[bss].asm",
+      "size": 52,
+      "sha256": "63575e69b634f5a8c92cad309bc2ffc7ae00220755cfd3311226a4f88abaa4b5"
+    },
+    {
+      "name": "th04/main/drawpoint[bss].asm",
+      "size": 41,
+      "sha256": "c9abb0c3916d10f5ec47e8fde8a92fd1e57cdf7cdd61b26a5eeef3f5a24366a1"
+    },
+    {
+      "name": "th04/formats/scoredat[bss].asm",
+      "size": 40,
+      "sha256": "0391b785601745f5904a413e41a5eebeba3dc082c4368c4f5b853cc4cfd98ae5"
+    },
+    {
+      "name": "th04/main/bullet/tune[bss].asm",
+      "size": 58,
+      "sha256": "67c229e634c109d0b14b9b01dabb13259b9a2217cc47540d3234e6ebab721c6f"
+    },
+    {
+      "name": "th02/hardware/pages[bss].asm",
+      "size": 67,
+      "sha256": "4656cc4d234e4df018ba65df7b30fefd9ee04ba3d6af024ec8c8ae8949a37384"
+    },
+    {
+      "name": "th04/main/tile/tiles[bss].asm",
+      "size": 592,
+      "sha256": "1327a9ebc4e8277098facf2fad6d52c79ded5296dbcac2ae2b6ed7731811ecbc"
+    },
+    {
+      "name": "th04/main/frames[bss].asm",
+      "size": 313,
+      "sha256": "8b29f1e490f986c6285169a2221077960cbb236ec915c7df8359eb3413343bf6"
+    },
+    {
+      "name": "th04/main/quit[bss].asm",
+      "size": 84,
+      "sha256": "f4c9395bf902f9de43a2a53d7a646ab09a8c9ac5396ebd10424a038b08302500"
+    },
+    {
+      "name": "th03/hardware/palette_changed[bss].asm",
+      "size": 239,
+      "sha256": "f1dea82fe9eccae7c4eeb3057fa093b3d20c4bd094b81a2dcd25ff23650ee661"
+    },
+    {
+      "name": "th04/main/play[bss].asm",
+      "size": 222,
+      "sha256": "6dfdaa7464956d101e5650327adab08314baa00d3284577cf4c05ec9edf0b9d8"
+    },
+    {
+      "name": "th04/main/ems[bss].asm",
+      "size": 50,
+      "sha256": "743e07fc9a9f105de7b28ad850db335effd6fc53a6eb547ba12bae38d45a1730"
+    },
+    {
+      "name": "th04/main/slowdown[bss].asm",
+      "size": 49,
+      "sha256": "62dfc3207abb370bc98c7303adeaa22da2054a8512a882b57ef1d180e1112363"
+    },
+    {
+      "name": "th02/main/demo[bss].asm",
+      "size": 58,
+      "sha256": "d1162674293067d77411d0469aaf11d0b6e2d4b15f3ce9e217615c5dd6d99ed4"
+    },
+    {
+      "name": "th04/main/bullet/template[bss].asm",
+      "size": 65,
+      "sha256": "149f142bd90d99d97b5961f000ad5b95317c9747d3434815a390ba14d936a720"
+    },
+    {
+      "name": "th05/main/bullet/lasers[bss].asm",
+      "size": 719,
+      "sha256": "324ddb7a597c2a908b6cb4ce2aa8c15fcc07db697034e4e98c36db3dc4675f99"
+    },
+    {
+      "name": "th04/main/midboss/vars[bss].asm",
+      "size": 436,
+      "sha256": "72bf34f0301d89439034291ac5f938c59a9fcf1ebab066881247f7d8923bf25a"
+    },
+    {
+      "name": "th04/main/boss/vars[bss].asm",
+      "size": 425,
+      "sha256": "8caaa74cce2274cba7e3460495d663a6ca79743dc4d69ebf6e5d0e3dc8d88da6"
+    },
+    {
+      "name": "th05/main/boss/vars2[bss].asm",
+      "size": 1220,
+      "sha256": "bd0d481d10847d4efd8cc63a111be1a559f78f0ba312294893ea7b9c4f22fe0e"
+    },
+    {
+      "name": "th04/main/sparks[bss].asm",
+      "size": 120,
+      "sha256": "72a125978606aecea7f00179244da23c01bfcdf87a31292617082c34ab6d19a0"
+    },
+    {
+      "name": "th04/main/spark.inc",
+      "size": 365,
+      "sha256": "18fd53176dcbb299728797b36d7d91b48024e15b3a71d8d5caf1a5586db9ad5b"
+    },
+    {
+      "name": "th04/main/bullet/bullets[bss].asm",
+      "size": 388,
+      "sha256": "ed74fc7d2f0599aa8e209ffc1285388254f230699f3d88fcb2d2db3d699a21e3"
+    },
+    {
+      "name": "th04/main/enemy/enemies[bss].asm",
+      "size": 231,
+      "sha256": "51b93abbad473cb60906647ffc85d4a0edf6991efae8e62c96e7d446c9a06002"
+    },
+    {
+      "name": "th04/main/gather[bss].asm",
+      "size": 168,
+      "sha256": "87a766c6cd9f8275c5f1c871022899940344bb73b02665669e5ab00c06228263"
+    },
+    {
+      "name": "th04/main/circles[bss].asm",
+      "size": 258,
+      "sha256": "70235e956346d20522ae0f608b9a0f1a3b955f0fe261d42533e3ae7a55c8f8e7"
+    },
+    {
+      "name": "th04/main/pointnum/pointnum[bss].asm",
+      "size": 808,
+      "sha256": "b8f125ad58ec6facd6798e4d9802a781b5f9cd22bd67f4ebcf4a0341064fdff8"
+    },
+    {
+      "name": "th04/main/item/items[bss].asm",
+      "size": 555,
+      "sha256": "d3ba9a67dcf9a4f05bb34b8fb0fb4d6991085be0c328703487a5cd298ac9606a"
+    },
+    {
+      "name": "th04/main/custom[bss].asm",
+      "size": 183,
+      "sha256": "949daa72f445fdc96653236875b85d5f00fc9623022c158edd9e0aa61aad7c01"
+    },
+    {
+      "name": "th04/main/player/shots[bss].asm",
+      "size": 770,
+      "sha256": "c043e48f0522dd4d156ee2bd03c30448d75cb20470a0cde69c1c546122eac74c"
+    },
+    {
+      "name": "th05/main/player/hitshots[bss].asm",
+      "size": 399,
+      "sha256": "74f69433cd6bf848c7a77d8f6dfb61ba623292b8b04f33b5c2db77edf08c0f66"
+    },
+    {
+      "name": "th04/main/homing_target[bss].asm",
+      "size": 49,
+      "sha256": "742a31757dc730bc824fb6383ea6809a5192d9878db6264065184d6358753ed3"
+    },
+    {
+      "name": "th04/main/circles_color[bss].asm",
+      "size": 55,
+      "sha256": "20c573edd20c00b2e18b5238a7935a1fe321f4d4f6249faa6c93dbbd3c6230b6"
+    },
+    {
+      "name": "th04/main/dialog/dialog[bss].asm",
+      "size": 150,
+      "sha256": "d4b875ea70f298fe4603d62b519e46c60fd5740cbfca9ddcc5ce091e32cca3c0"
+    },
+    {
+      "name": "th04/main/boss/explosions[bss].asm",
+      "size": 480,
+      "sha256": "c93f86d0725233e67aedcf10e2ab87a2424979306742a1f38dc0782429fb859e"
+    },
+    {
+      "name": "th05/main/boss/sprites[bss].asm",
+      "size": 233,
+      "sha256": "b79d6a94ee8ad25a22987305709095f38cd3bc7828d5561a04b39e93caecb488"
+    },
+    {
+      "name": "th04/main/bullet/update[bss].asm",
+      "size": 444,
+      "sha256": "43e23cab883b93a530499d910014c172e39bbd7250e61d35ea57d9ad488034bf"
+    },
+    {
+      "name": "th04/main/bullet/pellet_r[bss].asm",
+      "size": 58,
+      "sha256": "f9ae3dfe2df714ed451d48ceb244804cb054f931158e8bab4c6245d3b0ea672a"
+    },
+    {
+      "name": "th04/main/midboss/funcs[bss].asm",
+      "size": 296,
+      "sha256": "a63d1e40422f2f2f7445c9c176ce9974780bbf188addd353d51c0607cf084303"
+    },
+    {
+      "name": "th05/main/bullet/cheeto[bss].asm",
+      "size": 335,
+      "sha256": "ec0c8e0124f8b9da2283db59661c8939e1c886b4301c69ab478c944c6a3a8761"
+    },
+    {
+      "name": "th04/main/item/splashes[bss].asm",
+      "size": 398,
+      "sha256": "5213abb95200b2e1252bb0673507b2b9de181403af7a4371eb6fba12e318a352"
+    },
+    {
+      "name": "th05/main/bullet/pellet_r[bss].asm",
+      "size": 184,
+      "sha256": "9c2d9609c6896e86f2fe97052b5551d81010ea5ff8892eda093481066ff7bb7c"
+    },
+    {
+      "name": "th04/main/playfld[bss].asm",
+      "size": 366,
+      "sha256": "866cf6818682f754d46f284e14698a333985f46d66d67168bbfe9ca7c78e9bee"
+    },
+    {
+      "name": "th04/main/score[bss].asm",
+      "size": 619,
+      "sha256": "49d73e2d179cfabfc82c635e3dfdaf41d04780d4fe13193b75a954388d065258"
+    },
+    {
+      "name": "th05/main/boss/b4_both[bss].asm",
+      "size": 164,
+      "sha256": "cd6fb6c84b9328f8a5c7db0231537b8d318130bae54983d3201371fda56f3054"
+    },
+    {
+      "name": "th04/main/stage/funcs[bss].asm",
+      "size": 89,
+      "sha256": "c4a9544fbe31283772cf9e410b57f8f6ca0737453e55725ccd90472776b49609"
+    },
+    {
+      "name": "th05/main/boss/bx[bss].asm",
+      "size": 192,
+      "sha256": "a08ff0b26b17a2b037b3519dffa0fc600a6e24c32b7d926b44767780031f6b25"
+    },
+    {
+      "name": "th04/main/hud/overlay[bss].asm",
+      "size": 988,
+      "sha256": "5d089f7bb1334b2d8448165385d9cac48477f675da870d8289e41b516c424906"
+    },
+    {
+      "name": "th04/main/player/pos[bss].asm",
+      "size": 46,
+      "sha256": "fe2c60031577d548412320a5783f2b3594a73afcd4d1209cf04849841df32730"
+    },
+    {
+      "name": "th05/main/player/speed[bss].asm",
+      "size": 229,
+      "sha256": "8a2bfa85761ee8b4c91c890aeab91c67fe50b3d0ee76102cfbaafacc6e9deb2a"
+    },
+    {
+      "name": "th04/main/player/option[bss].asm",
+      "size": 355,
+      "sha256": "fa662118ac0fa27649378c36469fee17b746e5c867a79aae36e60569b5a45f4e"
+    },
+    {
+      "name": "th01/main/player_is_hit[bss].asm",
+      "size": 155,
+      "sha256": "7be74d5009a009f49ca4817b7d6119db5bee4d052480357d0fb5b2b0f2363e21"
+    },
+    {
+      "name": "th04/main/player/shots_alive[bss].asm",
+      "size": 300,
+      "sha256": "836d9ec32147e1d1eb7a92e9bee3812466c7093ed287b67f776ba802ea6be142"
+    },
+    {
+      "name": "th05/main/player/hitshot_from[bss].asm",
+      "size": 100,
+      "sha256": "24119f3ec3031c7b0dea3c12bfdca4b9e80f827b9e30593b6ebfdbcaaa7353f0"
+    },
+    {
+      "name": "th04/main/player/shots_add[bss].asm",
+      "size": 166,
+      "sha256": "0ac6ae0f9895d2cb5d9a03b78d86962954b2f5e127ccfa80d8040b4abfefb101"
+    },
+    {
+      "name": "th04/main/boss/boss[bss].asm",
+      "size": 1798,
+      "sha256": "91ba2cf444c5a788b59d83059c01351f7b772e0138566a5a3ee9edc3627ad218"
+    }
+  ],
+  "macro_context": {
+    "active_model": {
+      "CALLMODEL": "FAR",
+      "RETSIZE": 2,
+      "DATASIZE": 2,
+      "listing_model": 5
+    },
+    "active_listing_lines": {
+      "RETSIZE": 78,
+      "DATASIZE": 79
+    },
+    "original_makefile_large_flag": "/DFARMODEL",
+    "literal_macros": [
+      {
+        "name": "_call",
+        "upstream_file": "FUNC.INC",
+        "candidate_file": "libs/master.lib/func.inc",
+        "sha256": "b977e9e8d0f42997f288447ff9944c54862590a7dc000fccafefd4d290575814",
+        "variant_sha256": [
+          "b977e9e8d0f42997f288447ff9944c54862590a7dc000fccafefd4d290575814",
+          "1709f3e62c2f30c9c2302c4483f268f5a69e77a854089b9cb93178570a115f50"
+        ]
+      },
+      {
+        "name": "_push",
+        "upstream_file": "FUNC.INC",
+        "candidate_file": "libs/master.lib/func.inc",
+        "sha256": "7753b350568ba0c25aacaca07381d67d2d16809c0b2fddc347ce036d76f19411",
+        "variant_sha256": [
+          "7753b350568ba0c25aacaca07381d67d2d16809c0b2fddc347ce036d76f19411",
+          "1613fa0b90044312d2fdf90987875983bd30dab28c83a4da4f3994c77ee24108"
+        ]
+      },
+      {
+        "name": "_pop",
+        "upstream_file": "FUNC.INC",
+        "candidate_file": "libs/master.lib/func.inc",
+        "sha256": "dbd199fc591a5b9c649c073853b9a4f8f76ad09da89c5a668f54c3b22e263700",
+        "variant_sha256": [
+          "dbd199fc591a5b9c649c073853b9a4f8f76ad09da89c5a668f54c3b22e263700",
+          "edd279fd2ad04a68f495e77eb93d7c47f5fd7268a34d64aadb7cf6c9b1eae592"
+        ]
+      },
+      {
+        "name": "_lds",
+        "upstream_file": "FUNC.INC",
+        "candidate_file": "libs/master.lib/func.inc",
+        "sha256": "a8cdd184950738d905490db642b643f53a3c712d23a548d459d42de198655fe7",
+        "variant_sha256": [
+          "a8cdd184950738d905490db642b643f53a3c712d23a548d459d42de198655fe7",
+          "5a67e0a5412039d9010b2b2a0d49d6006cd2a9b03f64491f224ef50a9428ffb5"
+        ]
+      },
+      {
+        "name": "WAITREADY",
+        "upstream_file": "SOUNDIO.ASM",
+        "candidate_file": "libs/master.lib/soundio.asm",
+        "sha256": "312eb1e5a9843b42308fcd3a6d41ad9d21cded3ce0ba9f458cd9cbe8763dcd58",
+        "variant_sha256": [
+          "312eb1e5a9843b42308fcd3a6d41ad9d21cded3ce0ba9f458cd9cbe8763dcd58"
+        ]
+      }
+    ],
+    "function_wrapper_rule": "Only remove CALLMODEL from name proc CALLMODEL inside complete func and retfunc macros; EVEN/ENDP and all other lines remain literal.",
+    "pf_inc_rule": "whole-file decoded literal equality",
+    "constants": [
+      {
+        "name": "RTC_INDEX",
+        "expression": "70h",
+        "upstream_file": "ATRTCMOD.ASM",
+        "candidate_file": "libs/master.lib/atrtcmod.asm"
+      },
+      {
+        "name": "RTC_DATA",
+        "expression": "71h",
+        "upstream_file": "ATRTCMOD.ASM",
+        "candidate_file": "libs/master.lib/atrtcmod.asm"
+      },
+      {
+        "name": "GDC_PARAM",
+        "expression": "0a0h",
+        "upstream_file": "GDCOUTPW.ASM",
+        "candidate_file": "libs/master.lib/gdc_outpw.asm"
+      },
+      {
+        "name": "EGC_ACTIVEPLANEREG",
+        "expression": "04a0h",
+        "upstream_file": "EGC.ASM",
+        "candidate_file": "libs/master.lib/egc.asm"
+      },
+      {
+        "name": "EGC_READPLANEREG",
+        "expression": "04a2h",
+        "upstream_file": "EGC.ASM",
+        "candidate_file": "libs/master.lib/egc.asm"
+      },
+      {
+        "name": "EGC_MASKREG",
+        "expression": "04a8h",
+        "upstream_file": "EGC.ASM",
+        "candidate_file": "libs/master.lib/egc.asm"
+      },
+      {
+        "name": "EGC_ADDRRESSREG",
+        "expression": "04ach",
+        "upstream_file": "EGC.ASM",
+        "candidate_file": "libs/master.lib/egc.asm"
+      },
+      {
+        "name": "EGC_BITLENGTHREG",
+        "expression": "04aeh",
+        "upstream_file": "EGC.ASM",
+        "candidate_file": "libs/master.lib/egc.asm"
+      }
+    ],
+    "limitation": "Original macro source is not separately assembled; native context equivalence is backed by preserved large-model listing, actual OMF/link reconstruction and complete original raw comparison."
+  },
+  "active_procedure_inventory": [
+    {
+      "name": "BFTENTRY_INVAL",
+      "source": "libs/master.lib/bfnt_entry_pat.asm",
+      "start": 626,
+      "end": 646,
+      "start_listing_line": 2622,
+      "end_listing_line": 2643
+    },
+    {
+      "name": "BFNT_ENTRY_PAT",
+      "source": "libs/master.lib/bfnt_entry_pat.asm",
+      "start": 646,
+      "end": 948,
+      "start_listing_line": 2648,
+      "end_listing_line": 2902
+    },
+    {
+      "name": "BFNT_HEADER_READ",
+      "source": "libs/master.lib/bfnt_header_read.asm",
+      "start": 948,
+      "end": 1008,
+      "start_listing_line": 2959,
+      "end_listing_line": 3019
+    },
+    {
+      "name": "BFNT_EXTEND_HEADER_ANALYSIS",
+      "source": "libs/master.lib/bfnt_header_analysis.asm",
+      "start": 1008,
+      "end": 1104,
+      "start_listing_line": 3077,
+      "end_listing_line": 3161
+    },
+    {
+      "name": "rtc_int_set",
+      "source": "libs/master.lib/atrtcmod.asm",
+      "start": 1108,
+      "end": 1253,
+      "start_listing_line": 3233,
+      "end_listing_line": 3346
+    },
+    {
+      "name": "rtc_mod",
+      "source": "libs/master.lib/atrtcmod.asm",
+      "start": 1253,
+      "end": 1272,
+      "start_listing_line": 3349,
+      "end_listing_line": 3360
+    },
+    {
+      "name": "RTC_INT",
+      "source": "libs/master.lib/atrtcmod.asm",
+      "start": 1272,
+      "end": 1340,
+      "start_listing_line": 3370,
+      "end_listing_line": 3420
+    },
+    {
+      "name": "BCLOSER",
+      "source": "libs/master.lib/bcloser.asm",
+      "start": 1340,
+      "end": 1364,
+      "start_listing_line": 3473,
+      "end_listing_line": 3509
+    },
+    {
+      "name": "BFILL",
+      "source": "libs/master.lib/bfill.asm",
+      "start": 1364,
+      "end": 1424,
+      "start_listing_line": 3569,
+      "end_listing_line": 3627
+    },
+    {
+      "name": "BFNT_PALETTE_SET",
+      "source": "libs/master.lib/bfnt_palette_set.asm",
+      "start": 1424,
+      "end": 1488,
+      "start_listing_line": 3681,
+      "end_listing_line": 3736
+    },
+    {
+      "name": "BGETC",
+      "source": "libs/master.lib/bgetc.asm",
+      "start": 1488,
+      "end": 1536,
+      "start_listing_line": 3789,
+      "end_listing_line": 3829
+    },
+    {
+      "name": "PALETTE_BLACK_IN",
+      "source": "libs/master.lib/palette_black_in.asm",
+      "start": 1536,
+      "end": 1604,
+      "start_listing_line": 3885,
+      "end_listing_line": 3937
+    },
+    {
+      "name": "PALETTE_BLACK_OUT",
+      "source": "libs/master.lib/palette_black_out.asm",
+      "start": 1604,
+      "end": 1666,
+      "start_listing_line": 3991,
+      "end_listing_line": 4048
+    },
+    {
+      "name": "BOPENR",
+      "source": "libs/master.lib/bopenr.asm",
+      "start": 1666,
+      "end": 1750,
+      "start_listing_line": 4106,
+      "end_listing_line": 4168
+    },
+    {
+      "name": "BREAD",
+      "source": "libs/master.lib/bread.asm",
+      "start": 1750,
+      "end": 1798,
+      "start_listing_line": 4224,
+      "end_listing_line": 4276
+    },
+    {
+      "name": "BSEEK",
+      "source": "libs/master.lib/bseek.asm",
+      "start": 1798,
+      "end": 1864,
+      "start_listing_line": 4331,
+      "end_listing_line": 4382
+    },
+    {
+      "name": "BSEEK_",
+      "source": "libs/master.lib/bseek_.asm",
+      "start": 1864,
+      "end": 1912,
+      "start_listing_line": 4439,
+      "end_listing_line": 4484
+    },
+    {
+      "name": "cutline",
+      "source": "libs/master.lib/cutline.asm",
+      "start": 1912,
+      "end": 2028,
+      "start_listing_line": 4540,
+      "end_listing_line": 4620
+    },
+    {
+      "name": "DOS_KEYCLEAR",
+      "source": "libs/master.lib/dos_keyclear.asm",
+      "start": 2028,
+      "end": 2034,
+      "start_listing_line": 4668,
+      "end_listing_line": 4678
+    },
+    {
+      "name": "DOS_READ",
+      "source": "libs/master.lib/dos_read.asm",
+      "start": 2034,
+      "end": 2060,
+      "start_listing_line": 4724,
+      "end_listing_line": 4755
+    },
+    {
+      "name": "DOS_SEEK",
+      "source": "libs/master.lib/dos_seek.asm",
+      "start": 2060,
+      "end": 2088,
+      "start_listing_line": 4808,
+      "end_listing_line": 4833
+    },
+    {
+      "name": "DOS_SETVECT",
+      "source": "libs/master.lib/dos_setvect.asm",
+      "start": 2088,
+      "end": 2120,
+      "start_listing_line": 4895,
+      "end_listing_line": 4932
+    },
+    {
+      "name": "EGC_ON",
+      "source": "libs/master.lib/egc.asm",
+      "start": 2120,
+      "end": 2142,
+      "start_listing_line": 5003,
+      "end_listing_line": 5021
+    },
+    {
+      "name": "EGC_OFF",
+      "source": "libs/master.lib/egc.asm",
+      "start": 2142,
+      "end": 2174,
+      "start_listing_line": 5029,
+      "end_listing_line": 5060
+    },
+    {
+      "name": "EGC_END",
+      "source": "libs/master.lib/egc.asm",
+      "start": 2174,
+      "end": 2174,
+      "start_listing_line": 5069,
+      "end_listing_line": 5076
+    },
+    {
+      "name": "EGC_START",
+      "source": "libs/master.lib/egc.asm",
+      "start": 2174,
+      "end": 2218,
+      "start_listing_line": 5080,
+      "end_listing_line": 5105
+    },
+    {
+      "name": "EGC_SHIFT_DOWN",
+      "source": "libs/master.lib/egc_shift_down.asm",
+      "start": 2218,
+      "end": 2480,
+      "start_listing_line": 5161,
+      "end_listing_line": 5313
+    },
+    {
+      "name": "EGC_SHIFT_LEFT",
+      "source": "libs/master.lib/egc_shift_left.asm",
+      "start": 2480,
+      "end": 2738,
+      "start_listing_line": 5367,
+      "end_listing_line": 5520
+    },
+    {
+      "name": "EGC_SHIFT_RIGHT",
+      "source": "libs/master.lib/egc_shift_right.asm",
+      "start": 2738,
+      "end": 3010,
+      "start_listing_line": 5576,
+      "end_listing_line": 5737
+    },
+    {
+      "name": "EGC_SHIFT_UP",
+      "source": "libs/master.lib/egc_shift_up.asm",
+      "start": 3010,
+      "end": 3266,
+      "start_listing_line": 5793,
+      "end_listing_line": 5947
+    },
+    {
+      "name": "FILE_FLUSH",
+      "source": "libs/master.lib/file_close.asm",
+      "start": 3266,
+      "end": 3374,
+      "start_listing_line": 5997,
+      "end_listing_line": 6056
+    },
+    {
+      "name": "FILE_CLOSE",
+      "source": "libs/master.lib/file_close.asm",
+      "start": 3374,
+      "end": 3390,
+      "start_listing_line": 6061,
+      "end_listing_line": 6077
+    },
+    {
+      "name": "FILE_READ",
+      "source": "libs/master.lib/file_read.asm",
+      "start": 3390,
+      "end": 3570,
+      "start_listing_line": 6130,
+      "end_listing_line": 6244
+    },
+    {
+      "name": "FILE_ROPEN",
+      "source": "libs/master.lib/file_ropen.asm",
+      "start": 3570,
+      "end": 3630,
+      "start_listing_line": 6291,
+      "end_listing_line": 6334
+    },
+    {
+      "name": "FILE_SEEK",
+      "source": "libs/master.lib/file_seek.asm",
+      "start": 3630,
+      "end": 3682,
+      "start_listing_line": 6393,
+      "end_listing_line": 6427
+    },
+    {
+      "name": "FILE_TELL",
+      "source": "libs/master.lib/file_seek.asm",
+      "start": 3682,
+      "end": 3696,
+      "start_listing_line": 6432,
+      "end_listing_line": 6450
+    },
+    {
+      "name": "DOS_CLOSE",
+      "source": "libs/master.lib/dos_close.asm",
+      "start": 3696,
+      "end": 3696,
+      "start_listing_line": 6498,
+      "end_listing_line": 6505
+    },
+    {
+      "name": "FONTFILE_CLOSE",
+      "source": "libs/master.lib/dos_close.asm",
+      "start": 3696,
+      "end": 3718,
+      "start_listing_line": 6509,
+      "end_listing_line": 6528
+    },
+    {
+      "name": "DOS_ROPEN",
+      "source": "libs/master.lib/dos_ropen.asm",
+      "start": 3718,
+      "end": 3718,
+      "start_listing_line": 6584,
+      "end_listing_line": 6591
+    },
+    {
+      "name": "FONTFILE_OPEN",
+      "source": "libs/master.lib/dos_ropen.asm",
+      "start": 3718,
+      "end": 3744,
+      "start_listing_line": 6595,
+      "end_listing_line": 6621
+    },
+    {
+      "name": "GRCG_BOXFILL_RETURN",
+      "source": "libs/master.lib/grcg_boxfill.asm",
+      "start": 3744,
+      "end": 3750,
+      "start_listing_line": 6688,
+      "end_listing_line": 6702
+    },
+    {
+      "name": "GRCG_BOXFILL",
+      "source": "libs/master.lib/grcg_boxfill.asm",
+      "start": 3750,
+      "end": 3958,
+      "start_listing_line": 6707,
+      "end_listing_line": 6865
+    },
+    {
+      "name": "GRCG_BYTEBOXFILL_X",
+      "source": "libs/master.lib/grcg_byteboxfill_x.asm",
+      "start": 3958,
+      "end": 4110,
+      "start_listing_line": 6920,
+      "end_listing_line": 7030
+    },
+    {
+      "name": "GRCG_CIRCLEFILL",
+      "source": "libs/master.lib/grcg_circlefill.asm",
+      "start": 4110,
+      "end": 4260,
+      "start_listing_line": 7094,
+      "end_listing_line": 7204
+    },
+    {
+      "name": "GC_CIRCL_ALLIN",
+      "source": "libs/master.lib/grcg_circle.asm",
+      "start": 4260,
+      "end": 4270,
+      "start_listing_line": 7266,
+      "end_listing_line": 7282
+    },
+    {
+      "name": "GRCG_CIRCLE",
+      "source": "libs/master.lib/grcg_circle.asm",
+      "start": 4270,
+      "end": 4422,
+      "start_listing_line": 7287,
+      "end_listing_line": 7388
+    },
+    {
+      "name": "GC_CIRCL_PSET4Q",
+      "source": "libs/master.lib/grcg_circle.asm",
+      "start": 4422,
+      "end": 4424,
+      "start_listing_line": 7397,
+      "end_listing_line": 7400
+    },
+    {
+      "name": "GC_CIRCL_PSET4",
+      "source": "libs/master.lib/grcg_circle.asm",
+      "start": 4424,
+      "end": 4635,
+      "start_listing_line": 7402,
+      "end_listing_line": 7526
+    },
+    {
+      "name": "GRCG_CIRCLE_X",
+      "source": "libs/master.lib/grcg_circle_x.asm",
+      "start": 4636,
+      "end": 4876,
+      "start_listing_line": 7581,
+      "end_listing_line": 7753
+    },
+    {
+      "name": "GRC_SETCLIP",
+      "source": "libs/master.lib/grc_setclip.asm",
+      "start": 4876,
+      "end": 5022,
+      "start_listing_line": 7822,
+      "end_listing_line": 7927
+    },
+    {
+      "name": "GRC_CLIP_POLYGON_N",
+      "source": "libs/master.lib/grc_clip_polygon_n.asm",
+      "start": 5022,
+      "end": 5776,
+      "start_listing_line": 8091,
+      "end_listing_line": 8570
+    },
+    {
+      "name": "GRCG_HLINE",
+      "source": "libs/master.lib/grcg_hline.asm",
+      "start": 5776,
+      "end": 5910,
+      "start_listing_line": 8632,
+      "end_listing_line": 8726
+    },
+    {
+      "name": "GRCG_LINE",
+      "source": "libs/master.lib/grcg_line.asm",
+      "start": 5910,
+      "end": 6324,
+      "start_listing_line": 8826,
+      "end_listing_line": 9164
+    },
+    {
+      "name": "GRCG_POLYGON_CX",
+      "source": "libs/master.lib/grcg_polygon_cx.asm",
+      "start": 6324,
+      "end": 6724,
+      "start_listing_line": 9286,
+      "end_listing_line": 9541
+    },
+    {
+      "name": "GRCG_PSET",
+      "source": "libs/master.lib/grcg_pset.asm",
+      "start": 6724,
+      "end": 6792,
+      "start_listing_line": 9597,
+      "end_listing_line": 9640
+    },
+    {
+      "name": "GRCG_SETCOLOR",
+      "source": "libs/master.lib/grcg_setcolor.asm",
+      "start": 6792,
+      "end": 6834,
+      "start_listing_line": 9694,
+      "end_listing_line": 9733
+    },
+    {
+      "name": "GRCG_OFF",
+      "source": "libs/master.lib/grcg_setcolor.asm",
+      "start": 6834,
+      "end": 6840,
+      "start_listing_line": 9739,
+      "end_listing_line": 9755
+    },
+    {
+      "name": "GRCG_VLINE",
+      "source": "libs/master.lib/grcg_vline.asm",
+      "start": 6840,
+      "end": 6974,
+      "start_listing_line": 9819,
+      "end_listing_line": 9918
+    },
+    {
+      "name": "gdc_outpw",
+      "source": "libs/master.lib/gdc_outpw.asm",
+      "start": 6974,
+      "end": 6985,
+      "start_listing_line": 9970,
+      "end_listing_line": 9977
+    },
+    {
+      "name": "GET_MACHINE_98",
+      "source": "libs/master.lib/get_machine_98.asm",
+      "start": 6986,
+      "end": 7112,
+      "start_listing_line": 10066,
+      "end_listing_line": 10146
+    },
+    {
+      "name": "GET_MACHINE_AT",
+      "source": "libs/master.lib/get_machine_at.asm",
+      "start": 7112,
+      "end": 7454,
+      "start_listing_line": 10268,
+      "end_listing_line": 10517
+    },
+    {
+      "name": "GET_MACHINE_DOSBOX",
+      "source": "libs/master.lib/get_machine_dosbox.asm",
+      "start": 7454,
+      "end": 7504,
+      "start_listing_line": 10572,
+      "end_listing_line": 10603
+    },
+    {
+      "name": "CHECK_MACHINE_FMR",
+      "source": "libs/master.lib/check_machine_fmr.asm",
+      "start": 7504,
+      "end": 7518,
+      "start_listing_line": 10648,
+      "end_listing_line": 10660
+    },
+    {
+      "name": "GET_MACHINE",
+      "source": "libs/master.lib/get_machine.asm",
+      "start": 7518,
+      "end": 7546,
+      "start_listing_line": 10756,
+      "end_listing_line": 10779
+    },
+    {
+      "name": "GAIJI_PUTCA",
+      "source": "libs/master.lib/gaiji_putca.asm",
+      "start": 7546,
+      "end": 7614,
+      "start_listing_line": 10827,
+      "end_listing_line": 10880
+    },
+    {
+      "name": "GAIJI_PUTSA",
+      "source": "libs/master.lib/gaiji_putsa.asm",
+      "start": 7614,
+      "end": 7700,
+      "start_listing_line": 10929,
+      "end_listing_line": 11006
+    },
+    {
+      "name": "GRAPH_400LINE",
+      "source": "libs/master.lib/graph_400line.asm",
+      "start": 7700,
+      "end": 7778,
+      "start_listing_line": 11058,
+      "end_listing_line": 11093
+    },
+    {
+      "name": "GRAPH_CLEAR",
+      "source": "libs/master.lib/graph_clear.asm",
+      "start": 7778,
+      "end": 7814,
+      "start_listing_line": 11146,
+      "end_listing_line": 11174
+    },
+    {
+      "name": "GRAPH_EXTMODE",
+      "source": "libs/master.lib/graph_extmode.asm",
+      "start": 7814,
+      "end": 7900,
+      "start_listing_line": 11251,
+      "end_listing_line": 11304
+    },
+    {
+      "name": "GRAPH_HIDE",
+      "source": "libs/master.lib/graph_hide.asm",
+      "start": 7900,
+      "end": 7906,
+      "start_listing_line": 11352,
+      "end_listing_line": 11362
+    },
+    {
+      "name": "GRAPH_SCROLLUP",
+      "source": "libs/master.lib/graph_scrollup.asm",
+      "start": 7906,
+      "end": 7994,
+      "start_listing_line": 11413,
+      "end_listing_line": 11483
+    },
+    {
+      "name": "IATAN2",
+      "source": "libs/master.lib/iatan2.asm",
+      "start": 7994,
+      "end": 8102,
+      "start_listing_line": 11510,
+      "end_listing_line": 11597
+    },
+    {
+      "name": "JS_END",
+      "source": "libs/master.lib/js_end.asm",
+      "start": 8102,
+      "end": 8108,
+      "start_listing_line": 11648,
+      "end_listing_line": 11661
+    },
+    {
+      "name": "draw_trapezoidx",
+      "source": "libs/master.lib/draw_trapezoidx.asm",
+      "start": 8108,
+      "end": 8248,
+      "start_listing_line": 11761,
+      "end_listing_line": 11850
+    },
+    {
+      "name": "SUPER_LARGE_PUT",
+      "source": "libs/master.lib/super_large_put.asm",
+      "start": 8264,
+      "end": 8412,
+      "start_listing_line": 11905,
+      "end_listing_line": 11994
+    },
+    {
+      "name": "LARGEPUT_DISP8",
+      "source": "libs/master.lib/super_large_put.asm",
+      "start": 8412,
+      "end": 8481,
+      "start_listing_line": 12000,
+      "end_listing_line": 12042
+    },
+    {
+      "name": "make_linework",
+      "source": "libs/master.lib/make_linework.asm",
+      "start": 8482,
+      "end": 8536,
+      "start_listing_line": 12118,
+      "end_listing_line": 12150
+    },
+    {
+      "name": "PALETTE_SHOW",
+      "source": "libs/master.lib/palette_show.asm",
+      "start": 8536,
+      "end": 8802,
+      "start_listing_line": 12224,
+      "end_listing_line": 12406
+    },
+    {
+      "name": "PFCLOSE",
+      "source": "libs/master.lib/pfclose.asm",
+      "start": 8802,
+      "end": 8828,
+      "start_listing_line": 12459,
+      "end_listing_line": 12485
+    },
+    {
+      "name": "PFGETC",
+      "source": "libs/master.lib/pfgetc.asm",
+      "start": 8828,
+      "end": 8844,
+      "start_listing_line": 12554,
+      "end_listing_line": 12572
+    },
+    {
+      "name": "PFGETC1",
+      "source": "libs/master.lib/pfgetc.asm",
+      "start": 8844,
+      "end": 8922,
+      "start_listing_line": 12581,
+      "end_listing_line": 12612
+    },
+    {
+      "name": "PFGETX0",
+      "source": "libs/master.lib/pfgetc.asm",
+      "start": 8922,
+      "end": 8990,
+      "start_listing_line": 12618,
+      "end_listing_line": 12653
+    },
+    {
+      "name": "PFGETX1",
+      "source": "libs/master.lib/pfgetc.asm",
+      "start": 8990,
+      "end": 9003,
+      "start_listing_line": 12659,
+      "end_listing_line": 12671
+    },
+    {
+      "name": "PFREAD",
+      "source": "libs/master.lib/pfread.asm",
+      "start": 9004,
+      "end": 9050,
+      "start_listing_line": 12725,
+      "end_listing_line": 12773
+    },
+    {
+      "name": "PFREWIND",
+      "source": "libs/master.lib/pfrewind.asm",
+      "start": 9050,
+      "end": 9110,
+      "start_listing_line": 12821,
+      "end_listing_line": 12861
+    },
+    {
+      "name": "PFSEEK",
+      "source": "libs/master.lib/pfseek.asm",
+      "start": 9110,
+      "end": 9158,
+      "start_listing_line": 12913,
+      "end_listing_line": 12956
+    },
+    {
+      "name": "IRAND",
+      "source": "libs/master.lib/random.asm",
+      "start": 9158,
+      "end": 9200,
+      "start_listing_line": 13019,
+      "end_listing_line": 13041
+    },
+    {
+      "name": "PALETTE_ENTRY_RGB",
+      "source": "libs/master.lib/palette_entry_rgb.asm",
+      "start": 9200,
+      "end": 9266,
+      "start_listing_line": 13100,
+      "end_listing_line": 13153
+    },
+    {
+      "name": "SMEM_RELEASE",
+      "source": "libs/master.lib/smem_release.asm",
+      "start": 9266,
+      "end": 9282,
+      "start_listing_line": 13183,
+      "end_listing_line": 13198
+    },
+    {
+      "name": "ASSIGNALL",
+      "source": "libs/master.lib/smem_wget.asm",
+      "start": 9282,
+      "end": 9288,
+      "start_listing_line": 13230,
+      "end_listing_line": 13241
+    },
+    {
+      "name": "SMEM_WGET",
+      "source": "libs/master.lib/smem_wget.asm",
+      "start": 9288,
+      "end": 9342,
+      "start_listing_line": 13252,
+      "end_listing_line": 13292
+    },
+    {
+      "name": "SOUND_O",
+      "source": "libs/master.lib/soundio.asm",
+      "start": 9342,
+      "end": 9364,
+      "start_listing_line": 13364,
+      "end_listing_line": 13385
+    },
+    {
+      "name": "SOUND_I",
+      "source": "libs/master.lib/soundio.asm",
+      "start": 9364,
+      "end": 9384,
+      "start_listing_line": 13387,
+      "end_listing_line": 13407
+    },
+    {
+      "name": "TEXT_BOXFILLA",
+      "source": "libs/master.lib/text_boxfilla.asm",
+      "start": 9384,
+      "end": 9462,
+      "start_listing_line": 13460,
+      "end_listing_line": 13524
+    },
+    {
+      "name": "TEXT_CLEAR",
+      "source": "libs/master.lib/text_clear.asm",
+      "start": 9462,
+      "end": 9480,
+      "start_listing_line": 13573,
+      "end_listing_line": 13589
+    },
+    {
+      "name": "TEXT_FILLCA",
+      "source": "libs/master.lib/text_fillca.asm",
+      "start": 9480,
+      "end": 9536,
+      "start_listing_line": 13635,
+      "end_listing_line": 13681
+    },
+    {
+      "name": "TEXT_PUTCA",
+      "source": "libs/master.lib/text_putca.asm",
+      "start": 9536,
+      "end": 9624,
+      "start_listing_line": 13731,
+      "end_listing_line": 13796
+    },
+    {
+      "name": "TEXT_PUTSA",
+      "source": "libs/master.lib/text_putsa.asm",
+      "start": 9624,
+      "end": 9738,
+      "start_listing_line": 13844,
+      "end_listing_line": 13940
+    },
+    {
+      "name": "VSYNC_START",
+      "source": "libs/master.lib/vsync.asm",
+      "start": 9742,
+      "end": 9848,
+      "start_listing_line": 14026,
+      "end_listing_line": 14099
+    },
+    {
+      "name": "CRTBIOS_COOK",
+      "source": "libs/master.lib/vsync.asm",
+      "start": 9848,
+      "end": 9858,
+      "start_listing_line": 14103,
+      "end_listing_line": 14109
+    },
+    {
+      "name": "VSYNC_COUNT",
+      "source": "libs/master.lib/vsync.asm",
+      "start": 9858,
+      "end": 9916,
+      "start_listing_line": 14113,
+      "end_listing_line": 14158
+    },
+    {
+      "name": "VSYNC_END",
+      "source": "libs/master.lib/vsync.asm",
+      "start": 9916,
+      "end": 9988,
+      "start_listing_line": 14169,
+      "end_listing_line": 14224
+    },
+    {
+      "name": "VSYNC_WAIT",
+      "source": "libs/master.lib/vsync_wait.asm",
+      "start": 9988,
+      "end": 10026,
+      "start_listing_line": 14280,
+      "end_listing_line": 14316
+    },
+    {
+      "name": "PALETTE_WHITE_IN",
+      "source": "libs/master.lib/palette_white_in.asm",
+      "start": 10026,
+      "end": 10090,
+      "start_listing_line": 14372,
+      "end_listing_line": 14408
+    },
+    {
+      "name": "PALETTE_WHITE_OUT",
+      "source": "libs/master.lib/palette_white_out.asm",
+      "start": 10090,
+      "end": 10154,
+      "start_listing_line": 14464,
+      "end_listing_line": 14500
+    },
+    {
+      "name": "MEM_ASSIGN_DOS",
+      "source": "libs/master.lib/mem_assign_dos.asm",
+      "start": 10154,
+      "end": 10188,
+      "start_listing_line": 14529,
+      "end_listing_line": 14560
+    },
+    {
+      "name": "MEM_ASSIGN",
+      "source": "libs/master.lib/mem_assign.asm",
+      "start": 10188,
+      "end": 10226,
+      "start_listing_line": 14588,
+      "end_listing_line": 14613
+    },
+    {
+      "name": "MEM_ASSIGN_ALL",
+      "source": "libs/master.lib/mem_assign.asm",
+      "start": 10226,
+      "end": 10266,
+      "start_listing_line": 14621,
+      "end_listing_line": 14649
+    },
+    {
+      "name": "HMEM_ALLOCBYTE",
+      "source": "libs/master.lib/memheap.asm",
+      "start": 10266,
+      "end": 10286,
+      "start_listing_line": 14746,
+      "end_listing_line": 14770
+    },
+    {
+      "name": "HMEM_ALLOC",
+      "source": "libs/master.lib/memheap.asm",
+      "start": 10286,
+      "end": 10526,
+      "start_listing_line": 14775,
+      "end_listing_line": 14923
+    },
+    {
+      "name": "HMEM_FREE",
+      "source": "libs/master.lib/memheap.asm",
+      "start": 10526,
+      "end": 10694,
+      "start_listing_line": 14929,
+      "end_listing_line": 15058
+    },
+    {
+      "name": "MEM_UNASSIGN",
+      "source": "libs/master.lib/mem_unassign.asm",
+      "start": 10694,
+      "end": 10730,
+      "start_listing_line": 15117,
+      "end_listing_line": 15154
+    },
+    {
+      "name": "SUPER_FREE",
+      "source": "libs/master.lib/super_free.asm",
+      "start": 10730,
+      "end": 10778,
+      "start_listing_line": 15209,
+      "end_listing_line": 15243
+    },
+    {
+      "name": "ENTRY_AT_ERROR",
+      "source": "libs/master.lib/super_entry_pat.asm",
+      "start": 10778,
+      "end": 10788,
+      "start_listing_line": 15316,
+      "end_listing_line": 15329
+    },
+    {
+      "name": "SUPERPAT_NO_MEMORY",
+      "source": "libs/master.lib/super_entry_pat.asm",
+      "start": 10788,
+      "end": 10798,
+      "start_listing_line": 15332,
+      "end_listing_line": 15350
+    },
+    {
+      "name": "SUPER_ENTRY_PAT",
+      "source": "libs/master.lib/super_entry_pat.asm",
+      "start": 10798,
+      "end": 10970,
+      "start_listing_line": 15355,
+      "end_listing_line": 15512
+    },
+    {
+      "name": "SUPER_PUT_1PLANE",
+      "source": "libs/master.lib/super_put_1plane.asm",
+      "start": 10970,
+      "end": 11426,
+      "start_listing_line": 15560,
+      "end_listing_line": 15845
+    },
+    {
+      "name": "SUPER_ENTRY_AT",
+      "source": "libs/master.lib/super_entry_at.asm",
+      "start": 11426,
+      "end": 11542,
+      "start_listing_line": 15917,
+      "end_listing_line": 16013
+    },
+    {
+      "name": "SUPER_ENTRY_BFNT",
+      "source": "libs/master.lib/super_entry_bfnt.asm",
+      "start": 11542,
+      "end": 11680,
+      "start_listing_line": 16075,
+      "end_listing_line": 16207
+    },
+    {
+      "name": "SUPER_CANCEL_PAT",
+      "source": "libs/master.lib/super_cancel_pat.asm",
+      "start": 11680,
+      "end": 11760,
+      "start_listing_line": 16255,
+      "end_listing_line": 16311
+    },
+    {
+      "name": "SUPER_CLEAN",
+      "source": "libs/master.lib/super_clean.asm",
+      "start": 11760,
+      "end": 11802,
+      "start_listing_line": 16357,
+      "end_listing_line": 16400
+    },
+    {
+      "name": "SUPER_ROLL_PUT_1PLANE",
+      "source": "libs/master.lib/super_roll_put_1plane.asm",
+      "start": 11802,
+      "end": 12256,
+      "start_listing_line": 16449,
+      "end_listing_line": 16740
+    },
+    {
+      "name": "SUPER_ROLL_PUT",
+      "source": "libs/master.lib/super_roll_put.asm",
+      "start": 12256,
+      "end": 12790,
+      "start_listing_line": 16796,
+      "end_listing_line": 17148
+    },
+    {
+      "name": "SUPERPTR_EXIT",
+      "source": "libs/master.lib/super_put_rect.asm",
+      "start": 12790,
+      "end": 12796,
+      "start_listing_line": 17225,
+      "end_listing_line": 17239
+    },
+    {
+      "name": "SUPER_PUT_RECT",
+      "source": "libs/master.lib/super_put_rect.asm",
+      "start": 12796,
+      "end": 13114,
+      "start_listing_line": 17244,
+      "end_listing_line": 17444
+    },
+    {
+      "name": "superptr_draw_shift",
+      "source": "libs/master.lib/super_put_rect.asm",
+      "start": 13114,
+      "end": 13184,
+      "start_listing_line": 17464,
+      "end_listing_line": 17534
+    },
+    {
+      "name": "superptr_draw_noshift",
+      "source": "libs/master.lib/super_put_rect.asm",
+      "start": 13184,
+      "end": 13232,
+      "start_listing_line": 17539,
+      "end_listing_line": 17580
+    },
+    {
+      "name": "superptr_draw",
+      "source": "libs/master.lib/super_put_rect.asm",
+      "start": 13232,
+      "end": 13295,
+      "start_listing_line": 17589,
+      "end_listing_line": 17642
+    },
+    {
+      "name": "SUPER_PUT",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13296,
+      "end": 13536,
+      "start_listing_line": 17700,
+      "end_listing_line": 17844
+    },
+    {
+      "name": "SUPERPUT_DISP1",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13536,
+      "end": 13571,
+      "start_listing_line": 17849,
+      "end_listing_line": 17878
+    },
+    {
+      "name": "SUPERPUT_DISP2",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13572,
+      "end": 13617,
+      "start_listing_line": 17884,
+      "end_listing_line": 17919
+    },
+    {
+      "name": "SUPERPUT_DISP3",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13618,
+      "end": 13672,
+      "start_listing_line": 17925,
+      "end_listing_line": 17971
+    },
+    {
+      "name": "SUPERPUT_DISP4",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13672,
+      "end": 13721,
+      "start_listing_line": 17977,
+      "end_listing_line": 18013
+    },
+    {
+      "name": "SUPERPUT_DISP",
+      "source": "libs/master.lib/super_put.asm",
+      "start": 13722,
+      "end": 13730,
+      "start_listing_line": 18020,
+      "end_listing_line": 18031
+    },
+    {
+      "name": "SUPER_CONVERT_TINY",
+      "source": "libs/master.lib/super_convert_tiny.asm",
+      "start": 13730,
+      "end": 13886,
+      "start_listing_line": 18095,
+      "end_listing_line": 18223
+    },
+    {
+      "name": "JS_START",
+      "source": "libs/master.lib/js_start.asm",
+      "start": 13886,
+      "end": 13928,
+      "start_listing_line": 18286,
+      "end_listing_line": 18322
+    },
+    {
+      "name": "SOUND_JOY",
+      "source": "libs/master.lib/js_sense.asm",
+      "start": 13928,
+      "end": 13945,
+      "start_listing_line": 18394,
+      "end_listing_line": 18407
+    },
+    {
+      "name": "JS_SENSE",
+      "source": "libs/master.lib/js_sense.asm",
+      "start": 13946,
+      "end": 13958,
+      "start_listing_line": 18412,
+      "end_listing_line": 18449
+    },
+    {
+      "name": "SAJOUT",
+      "source": "libs/master.lib/js_sense.asm",
+      "start": 13958,
+      "end": 13967,
+      "start_listing_line": 18452,
+      "end_listing_line": 18465
+    },
+    {
+      "name": "_BGM_BELL_ORG",
+      "source": "libs/master.lib/bgm_bell_org.asm",
+      "start": 13968,
+      "end": 14016,
+      "start_listing_line": 18513,
+      "end_listing_line": 18547
+    },
+    {
+      "name": "_BGM_MGET",
+      "source": "libs/master.lib/bgm_mget.asm",
+      "start": 14056,
+      "end": 14354,
+      "start_listing_line": 18624,
+      "end_listing_line": 18829
+    },
+    {
+      "name": "BGM_READ_SDATA",
+      "source": "libs/master.lib/bgm_read_sdata.asm",
+      "start": 14354,
+      "end": 14674,
+      "start_listing_line": 18892,
+      "end_listing_line": 19127
+    },
+    {
+      "name": "_BGM_TIMER_INIT",
+      "source": "libs/master.lib/bgm_timer.asm",
+      "start": 14674,
+      "end": 14742,
+      "start_listing_line": 19183,
+      "end_listing_line": 19231
+    },
+    {
+      "name": "_BGM_TIMER_FINISH",
+      "source": "libs/master.lib/bgm_timer.asm",
+      "start": 14742,
+      "end": 14784,
+      "start_listing_line": 19236,
+      "end_listing_line": 19276
+    },
+    {
+      "name": "_BGM_PINIT",
+      "source": "libs/master.lib/bgm_pinit.asm",
+      "start": 14784,
+      "end": 14846,
+      "start_listing_line": 19322,
+      "end_listing_line": 19362
+    },
+    {
+      "name": "_BGM_TIMERHOOK",
+      "source": "libs/master.lib/bgm_timerhook.asm",
+      "start": 14846,
+      "end": 15022,
+      "start_listing_line": 19414,
+      "end_listing_line": 19528
+    },
+    {
+      "name": "_BGM_PLAY",
+      "source": "libs/master.lib/bgm_play.asm",
+      "start": 15126,
+      "end": 15428,
+      "start_listing_line": 19650,
+      "end_listing_line": 19847
+    },
+    {
+      "name": "BGM_SOUND",
+      "source": "libs/master.lib/bgm_sound.asm",
+      "start": 15428,
+      "end": 15502,
+      "start_listing_line": 19900,
+      "end_listing_line": 19944
+    },
+    {
+      "name": "_BGM_EFFECT_SOUND",
+      "source": "libs/master.lib/bgm_effect_sound.asm",
+      "start": 15502,
+      "end": 15622,
+      "start_listing_line": 20001,
+      "end_listing_line": 20087
+    },
+    {
+      "name": "BGM_STOP_PLAY",
+      "source": "libs/master.lib/bgm_stop_play.asm",
+      "start": 15622,
+      "end": 15648,
+      "start_listing_line": 20134,
+      "end_listing_line": 20161
+    },
+    {
+      "name": "BGM_SET_TEMPO",
+      "source": "libs/master.lib/bgm_set_tempo.asm",
+      "start": 15648,
+      "end": 15694,
+      "start_listing_line": 20208,
+      "end_listing_line": 20238
+    },
+    {
+      "name": "BGM_INIT",
+      "source": "libs/master.lib/bgm_init_finish.asm",
+      "start": 15694,
+      "end": 16114,
+      "start_listing_line": 20306,
+      "end_listing_line": 20563
+    },
+    {
+      "name": "BGM_FINISH",
+      "source": "libs/master.lib/bgm_init_finish.asm",
+      "start": 16114,
+      "end": 16208,
+      "start_listing_line": 20568,
+      "end_listing_line": 20635
+    },
+    {
+      "name": "BGM_STOP_SOUND",
+      "source": "libs/master.lib/bgm_stop_sound.asm",
+      "start": 16208,
+      "end": 16234,
+      "start_listing_line": 20688,
+      "end_listing_line": 20709
+    },
+    {
+      "name": "EMS_READ",
+      "source": "libs/master.lib/ems_read.asm",
+      "start": 16234,
+      "end": 16332,
+      "start_listing_line": 20766,
+      "end_listing_line": 20835
+    },
+    {
+      "name": "EMS_ALLOCATE",
+      "source": "libs/master.lib/ems_allocate.asm",
+      "start": 16332,
+      "end": 16370,
+      "start_listing_line": 20887,
+      "end_listing_line": 20909
+    },
+    {
+      "name": "EMS_ENABLEPAGEFRAME",
+      "source": "libs/master.lib/ems_enablepageframe.asm",
+      "start": 16370,
+      "end": 16384,
+      "start_listing_line": 20958,
+      "end_listing_line": 20970
+    },
+    {
+      "name": "EMS_EXIST",
+      "source": "libs/master.lib/ems_exist.asm",
+      "start": 16384,
+      "end": 16418,
+      "start_listing_line": 21016,
+      "end_listing_line": 21043
+    },
+    {
+      "name": "EMS_FREE",
+      "source": "libs/master.lib/ems_free.asm",
+      "start": 16426,
+      "end": 16444,
+      "start_listing_line": 21096,
+      "end_listing_line": 21110
+    },
+    {
+      "name": "EMS_MOVEMEMORYREGION",
+      "source": "libs/master.lib/ems_movememoryregion.asm",
+      "start": 16444,
+      "end": 16466,
+      "start_listing_line": 21164,
+      "end_listing_line": 21187
+    },
+    {
+      "name": "EMS_SETNAME",
+      "source": "libs/master.lib/ems_setname.asm",
+      "start": 16466,
+      "end": 16492,
+      "start_listing_line": 21233,
+      "end_listing_line": 21268
+    },
+    {
+      "name": "EMS_WRITE",
+      "source": "libs/master.lib/ems_write.asm",
+      "start": 16492,
+      "end": 16590,
+      "start_listing_line": 21318,
+      "end_listing_line": 21391
+    },
+    {
+      "name": "EMS_SPACE",
+      "source": "libs/master.lib/ems_space.asm",
+      "start": 16590,
+      "end": 16614,
+      "start_listing_line": 21438,
+      "end_listing_line": 21464
+    },
+    {
+      "name": "SUPER_PUT_8",
+      "source": "libs/master.lib/super_put_8.asm",
+      "start": 16614,
+      "end": 16738,
+      "start_listing_line": 21514,
+      "end_listing_line": 21597
+    },
+    {
+      "name": "SUPERPT8_DISP",
+      "source": "libs/master.lib/super_put_8.asm",
+      "start": 16738,
+      "end": 16817,
+      "start_listing_line": 21602,
+      "end_listing_line": 21668
+    },
+    {
+      "name": "mpn_load_inner",
+      "source": "th05_main.asm",
+      "start": 16818,
+      "end": 16910,
+      "start_listing_line": 21675,
+      "end_listing_line": 21737
+    },
+    {
+      "name": "mpn_free",
+      "source": "th05_main.asm",
+      "start": 16910,
+      "end": 16933,
+      "start_listing_line": 21749,
+      "end_listing_line": 21762
+    },
+    {
+      "name": "sub_4226",
+      "source": "th05_main.asm",
+      "start": 16934,
+      "end": 17009,
+      "start_listing_line": 21770,
+      "end_listing_line": 21802
+    },
+    {
+      "name": "sub_4272",
+      "source": "th05_main.asm",
+      "start": 17010,
+      "end": 17026,
+      "start_listing_line": 21810,
+      "end_listing_line": 21821
+    },
+    {
+      "name": "PFSTART",
+      "source": "libs/master.lib/pfint21.asm",
+      "start": 17032,
+      "end": 17192,
+      "start_listing_line": 21890,
+      "end_listing_line": 22063
+    },
+    {
+      "name": "PFEND",
+      "source": "libs/master.lib/pfint21.asm",
+      "start": 17192,
+      "end": 17248,
+      "start_listing_line": 22069,
+      "end_listing_line": 22117
+    },
+    {
+      "name": "pfint21",
+      "source": "libs/master.lib/pfint21.asm",
+      "start": 17248,
+      "end": 17599,
+      "start_listing_line": 22120,
+      "end_listing_line": 22425
+    },
+    {
+      "name": "PFOPEN",
+      "source": "th03/formats/pfopen.asm",
+      "start": 17600,
+      "end": 17840,
+      "start_listing_line": 22508,
+      "end_listing_line": 22721
+    },
+    {
+      "name": "STR_IEQ",
+      "source": "libs/master.lib/pf_str_ieq.asm",
+      "start": 17840,
+      "end": 17896,
+      "start_listing_line": 22740,
+      "end_listing_line": 22788
+    }
+  ],
+  "procedures": [
+    {
+      "name": "rtc_mod",
+      "decision": "PROPOSAL",
+      "start": 1253,
+      "end": 1272,
+      "size": 19,
+      "instruction_bytes": 19,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 3349,
+      "end_listing_line": 3360,
+      "candidate_file": "libs/master.lib/atrtcmod.asm",
+      "candidate_lines": [
+        158,
+        169
+      ],
+      "upstream_file": "ATRTCMOD.ASM",
+      "upstream_lines": [
+        172,
+        183
+      ],
+      "source_block_sha256": "846eb0288ec7ae7944001b59ce834db468ece4bd9c87be56c6a5135a790f45cf",
+      "linked_sha256": "21bf8339465e3de7e246602668d9cbc1964b7a06229b92329d566d7fe580fa48",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "BCLOSER",
+      "decision": "PROPOSAL",
+      "start": 1340,
+      "end": 1364,
+      "size": 24,
+      "instruction_bytes": 24,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 3473,
+      "end_listing_line": 3509,
+      "candidate_file": "libs/master.lib/bcloser.asm",
+      "candidate_lines": [
+        42,
+        58
+      ],
+      "upstream_file": "BCLOSER.ASM",
+      "upstream_lines": [
+        49,
+        65
+      ],
+      "source_block_sha256": "3e62c6013165c35df032828106c928eea7977903361c700fa1cdd2fb3be69831",
+      "linked_sha256": "1e76a05cba9348647e72852e8001455dd6e6876f7ae72e3889c78b10686df103",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "DOS_KEYCLEAR",
+      "decision": "PROPOSAL",
+      "start": 2028,
+      "end": 2034,
+      "size": 6,
+      "instruction_bytes": 6,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 4668,
+      "end_listing_line": 4678,
+      "candidate_file": "libs/master.lib/dos_keyclear.asm",
+      "candidate_lines": [
+        37,
+        41
+      ],
+      "upstream_file": "DOSKEYCL.ASM",
+      "upstream_lines": [
+        42,
+        46
+      ],
+      "source_block_sha256": "0976368bbbb411f3ac7bc5e565fc814e2b668beea3aa0081c4e8651ec0d12f95",
+      "linked_sha256": "ab88683d965696ce508037119aa7a05d7839ce9e9e02322b5425198aef5306aa",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EGC_ON",
+      "decision": "PROPOSAL",
+      "start": 2120,
+      "end": 2142,
+      "size": 22,
+      "instruction_bytes": 21,
+      "padding": [
+        {
+          "start": 2141,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5020
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 5003,
+      "end_listing_line": 5021,
+      "candidate_file": "libs/master.lib/egc.asm",
+      "candidate_lines": [
+        56,
+        68
+      ],
+      "upstream_file": "EGC.ASM",
+      "upstream_lines": [
+        61,
+        73
+      ],
+      "source_block_sha256": "2a1e1a3ab721f24714dab5da8c49ec4949289c16a08cff45220820f6b30d151d",
+      "linked_sha256": "3795f60b0f31c3cd6d98e855e05e7d8ae53aa15eca3c51aa4deb8d7352980b8e",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EGC_OFF",
+      "decision": "PROPOSAL",
+      "start": 2142,
+      "end": 2174,
+      "size": 32,
+      "instruction_bytes": 31,
+      "padding": [
+        {
+          "start": 2173,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5059
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 5029,
+      "end_listing_line": 5060,
+      "candidate_file": "libs/master.lib/egc.asm",
+      "candidate_lines": [
+        73,
+        92
+      ],
+      "upstream_file": "EGC.ASM",
+      "upstream_lines": [
+        78,
+        97
+      ],
+      "source_block_sha256": "58aa20e1a32883c68e7350fc4b7d379ec880a5e29df049634463fa01c082d1c2",
+      "linked_sha256": "2650866cd54a94e14ce9d73b2e65a0f27f15b5658fbf9082a6f8ceca581533a9",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EGC_START",
+      "decision": "PROPOSAL",
+      "start": 2174,
+      "end": 2218,
+      "size": 44,
+      "instruction_bytes": 43,
+      "padding": [
+        {
+          "start": 2217,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5104
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 5080,
+      "end_listing_line": 5105,
+      "candidate_file": "libs/master.lib/egc.asm",
+      "candidate_lines": [
+        100,
+        119
+      ],
+      "upstream_file": "EGC.ASM",
+      "upstream_lines": [
+        105,
+        124
+      ],
+      "source_block_sha256": "fcd1a232cd43ef01d89b598c6885e532b1978936e4f2e1ddd55c6e64c0374785",
+      "linked_sha256": "7026e72a1ef1aad2a08fec58aeaa94c704ac9c5554718c2f78e349c2572afba6",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "GRCG_OFF",
+      "decision": "PROPOSAL",
+      "start": 6834,
+      "end": 6840,
+      "size": 6,
+      "instruction_bytes": 5,
+      "padding": [
+        {
+          "start": 6839,
+          "size": 1,
+          "value": 144,
+          "listing_line": 9754
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 9739,
+      "end_listing_line": 9755,
+      "candidate_file": "libs/master.lib/grcg_setcolor.asm",
+      "candidate_lines": [
+        76,
+        80
+      ],
+      "upstream_file": "GC_SETCO.ASM",
+      "upstream_lines": [
+        80,
+        84
+      ],
+      "source_block_sha256": "122221605d90e4efdfba50a6d96ad5746158bb2758ed8ac59c0baf57dfd3be13",
+      "linked_sha256": "7d6dee039b1ebda4b559a7907889079433c081da3d4f8d15ef06ca384b35ccac",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "gdc_outpw",
+      "decision": "PROPOSAL",
+      "start": 6974,
+      "end": 6985,
+      "size": 11,
+      "instruction_bytes": 11,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 9970,
+      "end_listing_line": 9977,
+      "candidate_file": "libs/master.lib/gdc_outpw.asm",
+      "candidate_lines": [
+        44,
+        51
+      ],
+      "upstream_file": "GDCOUTPW.ASM",
+      "upstream_lines": [
+        49,
+        56
+      ],
+      "source_block_sha256": "70a3fcdd50078e6abb5314fc7904130df4a03aaf4b1a7b7b48d4dc16e9b5d819",
+      "linked_sha256": "316f6c723d484a467c99b52bacae0209b8acdb08fd11178ae5f458a2923adfed",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "CHECK_MACHINE_FMR",
+      "decision": "PROPOSAL",
+      "start": 7504,
+      "end": 7518,
+      "size": 14,
+      "instruction_bytes": 14,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 10648,
+      "end_listing_line": 10660,
+      "candidate_file": "libs/master.lib/check_machine_fmr.asm",
+      "candidate_lines": [
+        34,
+        40
+      ],
+      "upstream_file": "GETMACFM.ASM",
+      "upstream_lines": [
+        40,
+        46
+      ],
+      "source_block_sha256": "c9455e1cdfdd4b267f82c2c0f3806325c3a02ff88270ee29d93d81523efac4af",
+      "linked_sha256": "19f6cdd8a569409ed64b68c8d5b4db6b6eb83b77bb9947b5a7c39ab3c067811c",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "GRAPH_HIDE",
+      "decision": "PROPOSAL",
+      "start": 7900,
+      "end": 7906,
+      "size": 6,
+      "instruction_bytes": 5,
+      "padding": [
+        {
+          "start": 7905,
+          "size": 1,
+          "value": 144,
+          "listing_line": 11361
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 11352,
+      "end_listing_line": 11362,
+      "candidate_file": "libs/master.lib/graph_hide.asm",
+      "candidate_lines": [
+        37,
+        41
+      ],
+      "upstream_file": "GRPHIDE.ASM",
+      "upstream_lines": [
+        42,
+        46
+      ],
+      "source_block_sha256": "8be6c027ad0e6cbd9902e3a1cd874fb279f10a29a57c912a9bc925744405b894",
+      "linked_sha256": "e020c6784e95e3b97c4446f7aa748d8498ee89fdefc5b4576a5a4ab400d36216",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "SOUND_O",
+      "decision": "PROPOSAL",
+      "start": 9342,
+      "end": 9364,
+      "size": 22,
+      "instruction_bytes": 22,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 13364,
+      "end_listing_line": 13385,
+      "candidate_file": "libs/master.lib/soundio.asm",
+      "candidate_lines": [
+        61,
+        74
+      ],
+      "upstream_file": "SOUNDIO.ASM",
+      "upstream_lines": [
+        70,
+        83
+      ],
+      "source_block_sha256": "6d1f48279e297dc47c19f4dd36c9c4962c3fd324faaa5d4b8601de8392e0df87",
+      "linked_sha256": "d5957b8648bd9048745b90f6692ca50065f717194643969b8757c3cf573a1041",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "SOUND_I",
+      "decision": "PROPOSAL",
+      "start": 9364,
+      "end": 9384,
+      "size": 20,
+      "instruction_bytes": 20,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 13387,
+      "end_listing_line": 13407,
+      "candidate_file": "libs/master.lib/soundio.asm",
+      "candidate_lines": [
+        76,
+        88
+      ],
+      "upstream_file": "SOUNDIO.ASM",
+      "upstream_lines": [
+        85,
+        97
+      ],
+      "source_block_sha256": "936a9affa976a4aa1aa222ca5a528118d89ee37dbbdaceff2bc839f42ef814e6",
+      "linked_sha256": "05bd75af8f0c370e9a55857ed430aac0ea5853c14dc3fc353c5e840c924db02e",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "TEXT_CLEAR",
+      "decision": "PROPOSAL",
+      "start": 9462,
+      "end": 9480,
+      "size": 18,
+      "instruction_bytes": 17,
+      "padding": [
+        {
+          "start": 9479,
+          "size": 1,
+          "value": 144,
+          "listing_line": 13588
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 13573,
+      "end_listing_line": 13589,
+      "candidate_file": "libs/master.lib/text_clear.asm",
+      "candidate_lines": [
+        38,
+        48
+      ],
+      "upstream_file": "TXCLEAR.ASM",
+      "upstream_lines": [
+        42,
+        52
+      ],
+      "source_block_sha256": "4865abce953a6c3925d1a2096ae1779b07d3e08b4661d32a3fa0e7725f9a7c78",
+      "linked_sha256": "40c496e2826de6be49af50e0e23a05ed329050f30d963806a5d7e504d59d9672",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "CRTBIOS_COOK",
+      "decision": "PROPOSAL",
+      "start": 9848,
+      "end": 9858,
+      "size": 10,
+      "instruction_bytes": 9,
+      "padding": [
+        {
+          "start": 9857,
+          "size": 1,
+          "value": 144,
+          "listing_line": 14108
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 14103,
+      "end_listing_line": 14109,
+      "candidate_file": "libs/master.lib/vsync.asm",
+      "candidate_lines": [
+        120,
+        126
+      ],
+      "upstream_file": "VSYNC.ASM",
+      "upstream_lines": [
+        141,
+        147
+      ],
+      "source_block_sha256": "48f9cb77ee77ca3030af81aaabc9a20254865b6ae633033707ab8a8209350d68",
+      "linked_sha256": "3b37cb395675ef49cfa3fc6749bf6b345f2d6274241d37e595c5964280fd93f3",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [
+        {
+          "offset": 4,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        }
+      ]
+    },
+    {
+      "name": "HMEM_ALLOCBYTE",
+      "decision": "PROPOSAL",
+      "start": 10266,
+      "end": 10286,
+      "size": 20,
+      "instruction_bytes": 20,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 14746,
+      "end_listing_line": 14770,
+      "candidate_file": "libs/master.lib/memheap.asm",
+      "candidate_lines": [
+        67,
+        79
+      ],
+      "upstream_file": "MEMHEAP.ASM",
+      "upstream_lines": [
+        82,
+        94
+      ],
+      "source_block_sha256": "e5248ac604f13b9de8ad9b5f135237e1f728a931bb59816f9a267d00957732f8",
+      "linked_sha256": "1156f2f76caceb07637779eb70de72be31181ac3a7644ed92f6c5717c64fc93b",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "ENTRY_AT_ERROR",
+      "decision": "PROPOSAL",
+      "start": 10778,
+      "end": 10788,
+      "size": 10,
+      "instruction_bytes": 9,
+      "padding": [
+        {
+          "start": 10787,
+          "size": 1,
+          "value": 144,
+          "listing_line": 15328
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 15316,
+      "end_listing_line": 15329,
+      "candidate_file": "libs/master.lib/super_entry_pat.asm",
+      "candidate_lines": [
+        58,
+        64
+      ],
+      "upstream_file": "SUPERPAT.ASM",
+      "upstream_lines": [
+        74,
+        80
+      ],
+      "source_block_sha256": "460502f9a12e2e37b21f3c809e1dafb8074383d37cb56121f0d3755e99df9e1e",
+      "linked_sha256": "db972c410623c2fc0a20674a6f3fb162cac2807976b181fc1797b7afcd2fb035",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EMS_ALLOCATE",
+      "decision": "PROPOSAL",
+      "start": 16332,
+      "end": 16370,
+      "size": 38,
+      "instruction_bytes": 38,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 20887,
+      "end_listing_line": 20909,
+      "candidate_file": "libs/master.lib/ems_allocate.asm",
+      "candidate_lines": [
+        41,
+        57
+      ],
+      "upstream_file": "EMSALLOC.ASM",
+      "upstream_lines": [
+        45,
+        61
+      ],
+      "source_block_sha256": "dcaeb2c3ca0b113ade4a15ca3f5438afe862c08ea9e7a77d25c31cd4cf54d237",
+      "linked_sha256": "bdc2a9eb34016826d06c130e05d99d59f64245a7082c71a032142138f40f98c6",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EMS_ENABLEPAGEFRAME",
+      "decision": "PROPOSAL",
+      "start": 16370,
+      "end": 16384,
+      "size": 14,
+      "instruction_bytes": 14,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 20958,
+      "end_listing_line": 20970,
+      "candidate_file": "libs/master.lib/ems_enablepageframe.asm",
+      "candidate_lines": [
+        38,
+        44
+      ],
+      "upstream_file": "EMSENABL.ASM",
+      "upstream_lines": [
+        43,
+        49
+      ],
+      "source_block_sha256": "94e9210ac46a58cf4fcc1af18f31f75c7ae0a4e2415d8679f51974b08dbf3090",
+      "linked_sha256": "684dcd4e3e7bd12bebdd6fee3a430cd7154b3dcdaae1fde5eb6d6cf5d160b812",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EMS_FREE",
+      "decision": "PROPOSAL",
+      "start": 16426,
+      "end": 16444,
+      "size": 18,
+      "instruction_bytes": 17,
+      "padding": [
+        {
+          "start": 16443,
+          "size": 1,
+          "value": 144,
+          "listing_line": 21109
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 21096,
+      "end_listing_line": 21110,
+      "candidate_file": "libs/master.lib/ems_free.asm",
+      "candidate_lines": [
+        39,
+        47
+      ],
+      "upstream_file": "EMSFREE.ASM",
+      "upstream_lines": [
+        43,
+        51
+      ],
+      "source_block_sha256": "3e25271c15d191f3f728675b921a41e57e8ade798a1e8e0bb09e07f067a8336a",
+      "linked_sha256": "a1426cf216077501179929e03d4dba8ba71629664262652989e16a36b984ff29",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "name": "EMS_MOVEMEMORYREGION",
+      "decision": "PROPOSAL",
+      "start": 16444,
+      "end": 16466,
+      "size": 22,
+      "instruction_bytes": 22,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 21164,
+      "end_listing_line": 21187,
+      "candidate_file": "libs/master.lib/ems_movememoryregion.asm",
+      "candidate_lines": [
+        41,
+        55
+      ],
+      "upstream_file": "EMSMOVE.ASM",
+      "upstream_lines": [
+        46,
+        60
+      ],
+      "source_block_sha256": "b1990d4f65a078b1e65a616f7128b7d2ce7a243104a1e595292afc5347d2399f",
+      "linked_sha256": "af3f1e1b11635cc42380c1336862a86e97769e75a5390a70e69382d15a651eaf",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    }
+  ],
+  "deferred_source_mismatches": [
+    {
+      "name": "BFTENTRY_INVAL",
+      "start": 626,
+      "end": 646,
+      "size": 20,
+      "candidate_file": "libs/master.lib/bfnt_entry_pat.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BFNT_EXTEND_HEADER_ANALYSIS",
+      "start": 1008,
+      "end": 1104,
+      "size": 96,
+      "candidate_file": "libs/master.lib/bfnt_header_analysis.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BFILL",
+      "start": 1364,
+      "end": 1424,
+      "size": 60,
+      "candidate_file": "libs/master.lib/bfill.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BGETC",
+      "start": 1488,
+      "end": 1536,
+      "size": 48,
+      "candidate_file": "libs/master.lib/bgetc.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BREAD",
+      "start": 1750,
+      "end": 1798,
+      "size": 48,
+      "candidate_file": "libs/master.lib/bread.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BSEEK",
+      "start": 1798,
+      "end": 1864,
+      "size": 66,
+      "candidate_file": "libs/master.lib/bseek.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "BSEEK_",
+      "start": 1864,
+      "end": 1912,
+      "size": 48,
+      "candidate_file": "libs/master.lib/bseek_.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "DOS_READ",
+      "start": 2034,
+      "end": 2060,
+      "size": 26,
+      "candidate_file": "libs/master.lib/dos_read.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "DOS_SEEK",
+      "start": 2060,
+      "end": 2088,
+      "size": 28,
+      "candidate_file": "libs/master.lib/dos_seek.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "DOS_SETVECT",
+      "start": 2088,
+      "end": 2120,
+      "size": 32,
+      "candidate_file": "libs/master.lib/dos_setvect.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EGC_SHIFT_DOWN",
+      "start": 2218,
+      "end": 2480,
+      "size": 262,
+      "candidate_file": "libs/master.lib/egc_shift_down.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EGC_SHIFT_LEFT",
+      "start": 2480,
+      "end": 2738,
+      "size": 258,
+      "candidate_file": "libs/master.lib/egc_shift_left.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EGC_SHIFT_RIGHT",
+      "start": 2738,
+      "end": 3010,
+      "size": 272,
+      "candidate_file": "libs/master.lib/egc_shift_right.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EGC_SHIFT_UP",
+      "start": 3010,
+      "end": 3266,
+      "size": 256,
+      "candidate_file": "libs/master.lib/egc_shift_up.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "FONTFILE_CLOSE",
+      "start": 3696,
+      "end": 3718,
+      "size": 22,
+      "candidate_file": "libs/master.lib/dos_close.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "GRCG_BOXFILL_RETURN",
+      "start": 3744,
+      "end": 3750,
+      "size": 6,
+      "candidate_file": "libs/master.lib/grcg_boxfill.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "GRCG_CIRCLEFILL",
+      "start": 4110,
+      "end": 4260,
+      "size": 150,
+      "candidate_file": "libs/master.lib/grcg_circlefill.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "GC_CIRCL_ALLIN",
+      "start": 4260,
+      "end": 4270,
+      "size": 10,
+      "candidate_file": "libs/master.lib/grcg_circle.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "GC_CIRCL_PSET4Q",
+      "start": 4422,
+      "end": 4424,
+      "size": 2,
+      "candidate_file": "libs/master.lib/grcg_circle.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "GRCG_SETCOLOR",
+      "start": 6792,
+      "end": 6834,
+      "size": 42,
+      "candidate_file": "libs/master.lib/grcg_setcolor.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "JS_END",
+      "start": 8102,
+      "end": 8108,
+      "size": 6,
+      "candidate_file": "libs/master.lib/js_end.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "LARGEPUT_DISP8",
+      "start": 8412,
+      "end": 8481,
+      "size": 69,
+      "candidate_file": "libs/master.lib/super_large_put.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "make_linework",
+      "start": 8482,
+      "end": 8536,
+      "size": 54,
+      "candidate_file": "libs/master.lib/make_linework.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "PFCLOSE",
+      "start": 8802,
+      "end": 8828,
+      "size": 26,
+      "candidate_file": "libs/master.lib/pfclose.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "PFREAD",
+      "start": 9004,
+      "end": 9050,
+      "size": 46,
+      "candidate_file": "libs/master.lib/pfread.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "PFREWIND",
+      "start": 9050,
+      "end": 9110,
+      "size": 60,
+      "candidate_file": "libs/master.lib/pfrewind.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "PFSEEK",
+      "start": 9110,
+      "end": 9158,
+      "size": 48,
+      "candidate_file": "libs/master.lib/pfseek.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPAT_NO_MEMORY",
+      "start": 10788,
+      "end": 10798,
+      "size": 10,
+      "candidate_file": "libs/master.lib/super_entry_pat.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPTR_EXIT",
+      "start": 12790,
+      "end": 12796,
+      "size": 6,
+      "candidate_file": "libs/master.lib/super_put_rect.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "superptr_draw_noshift",
+      "start": 13184,
+      "end": 13232,
+      "size": 48,
+      "candidate_file": "libs/master.lib/super_put_rect.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPUT_DISP1",
+      "start": 13536,
+      "end": 13571,
+      "size": 35,
+      "candidate_file": "libs/master.lib/super_put.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPUT_DISP2",
+      "start": 13572,
+      "end": 13617,
+      "size": 45,
+      "candidate_file": "libs/master.lib/super_put.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPUT_DISP3",
+      "start": 13618,
+      "end": 13672,
+      "size": 54,
+      "candidate_file": "libs/master.lib/super_put.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPUT_DISP4",
+      "start": 13672,
+      "end": 13721,
+      "size": 49,
+      "candidate_file": "libs/master.lib/super_put.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EMS_READ",
+      "start": 16234,
+      "end": 16332,
+      "size": 98,
+      "candidate_file": "libs/master.lib/ems_read.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EMS_EXIST",
+      "start": 16384,
+      "end": 16418,
+      "size": 34,
+      "candidate_file": "libs/master.lib/ems_exist.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EMS_SETNAME",
+      "start": 16466,
+      "end": 16492,
+      "size": 26,
+      "candidate_file": "libs/master.lib/ems_setname.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EMS_WRITE",
+      "start": 16492,
+      "end": 16590,
+      "size": 98,
+      "candidate_file": "libs/master.lib/ems_write.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "EMS_SPACE",
+      "start": 16590,
+      "end": 16614,
+      "size": 24,
+      "candidate_file": "libs/master.lib/ems_space.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    },
+    {
+      "name": "SUPERPT8_DISP",
+      "start": 16738,
+      "end": 16817,
+      "size": 79,
+      "candidate_file": "libs/master.lib/super_put_8.asm",
+      "decision": "DEFERRED",
+      "reason": "complete upstream source block absent, ambiguous or differs; no normalization"
+    }
+  ],
+  "uncovered_gaps": [
+    {
+      "start": 1104,
+      "end": 1108,
+      "size": 4,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 4635,
+      "end": 4636,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 6985,
+      "end": 6986,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 8248,
+      "end": 8264,
+      "size": 16,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 8481,
+      "end": 8482,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 9003,
+      "end": 9004,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 9738,
+      "end": 9742,
+      "size": 4,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13295,
+      "end": 13296,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13571,
+      "end": 13572,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13617,
+      "end": 13618,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13721,
+      "end": 13722,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13945,
+      "end": 13946,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 13967,
+      "end": 13968,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 14016,
+      "end": 14056,
+      "size": 40,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 15022,
+      "end": 15126,
+      "size": 104,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 16418,
+      "end": 16426,
+      "size": 8,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 16817,
+      "end": 16818,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 16933,
+      "end": 16934,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 17009,
+      "end": 17010,
+      "size": 1,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 17026,
+      "end": 17032,
+      "size": 6,
+      "decision": "UNKNOWN"
+    },
+    {
+      "start": 17599,
+      "end": 17600,
+      "size": 1,
+      "decision": "UNKNOWN"
+    }
+  ],
+  "limitations": [
+    "Only twenty complete procedures are proposed; never exclude the mixed standalone Master/game prefix wholesale.",
+    "Forty first-proposal source mismatches remain DEFERRED; every other procedure and all uncovered gaps remain unadopted.",
+    "One saved TASM listing producer is preserved; this native review does not claim two independent new DOS producers.",
+    "No authored bytes are granted and no ownership or denominator decision is made."
+  ],
+  "evidence_digest": "a2395fdfca147e7008f544e886486ee1fd682eae1a650db63aad7e9c95455a52",
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master.py",
+      "size": 28255,
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "size": 6862,
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "size": 22989,
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    }
+  ],
+  "historical_listing_producer": {
+    "assembler": "Turbo Assembler32 5.0",
+    "invocations": 1,
+    "arguments": [
+      "/m",
+      "/mx",
+      "/kh32768",
+      "/t",
+      "/dGAME=5",
+      "/la",
+      "th05_main.asm"
+    ],
+    "scope": "Retained single listing producer; native review executes no assembler and does not claim two fresh DOS producers."
+  }
+}

@@ -29,7 +29,9 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [gapless ownership inventory](resources/ownership.json) retains every unknown
 interval across all four targets; it grants no inferred vendor exclusions.
 [Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md)
-classifies 2,901 third-party bytes separately, with no authored source credit.
+classifies 2,901 third-party bytes; the independent
+[Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md)
+classifies another 376. These 3,277 bytes grant no authored source credit.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.
