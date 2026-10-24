@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 32 bounded C++ units, 88 complete functions, 16,001 compared
-bytes and 15,985 authored code bytes: 15,689 instructions plus 296 bytes of
+Current acceptance: 33 bounded C++ units, 89 complete functions, 16,030 compared
+bytes and 16,014 authored code bytes: 15,718 instructions plus 296 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -25,6 +25,7 @@ Global percentage remains unmeasured pending complete ownership review.
 | Cheeto allocation and homing update | `cheeto-update-b` |
 | Regular and special bullet update | `bullet-update-d` |
 | Enemy rendering (maintained TH04 donor) | `enemies-render-b` |
+| OP decoded sound-driver interrupt | `op-kaja-a` |
 | 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
@@ -117,8 +118,10 @@ Serialize heavy jobs with `.analysis/borland.lock` and `scripts/run_heavy.sh`
 work: never modify it. TH04 is a read-only reference.
 
 OP/MAINE unit contexts use separate configs/ledgers with pinned retained decoded
-views; MAIN defaults and old evidence stay unchanged. No decoded units are
-accepted yet. OP's first reference calibration completed 47 serial steps at
+views; MAIN defaults and old evidence stay unchanged. The first decoded unit, OP's complete 29-byte Kaja driver interrupt, now
+passes two fresh producers, a compiled MIDI-routing mutation and saved artifact
+revalidation. The original following NOP is outside the accepted function.
+MAIN's ledger is unchanged by this OP import. OP's first reference calibration completed 47 serial steps at
 `.analysis/builds/op-calibration-a`; whole-file equality fails, with zero credit.
 The decoded OP survey `.analysis/cpp-candidate-survey-op.json` routes 21 unique
 C++ contribution shapes / 12,288 candidate bytes. Investigate its natural main
@@ -131,3 +134,10 @@ MAINE's first isolated calibration also completes in
 credit). Its decoded survey routes 17 unique shapes / 5,678 candidate bytes,
 including a 2,848-byte cutscene candidate. Reuse both retained calibration maps;
 do not rebuild them or re-decode their unchanged original targets.
+
+New Japanese UI owners may opt into `source_encoding = "cp932"`. Canonical
+snapshots remain UTF8; the compiler consumes CP932 files with separately saved
+byte hashes. Import reconstructs and checks both positive and mutated producer
+inputs, including the assembled bindings.asm alias. Old MAIN entries remain raw
+and retain their existing evidence; a legacy saved producer was rechecked
+without compilation after this validator change.

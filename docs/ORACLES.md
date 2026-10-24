@@ -54,3 +54,10 @@ result is rechecked, including excluded mismatches; the compiled negative-contro
 owner must be included. Default import remains all-or-nothing. Relocation-site
 ordering is compared as emitted, even when identical raw code bytes differ only
 in the ordering of loader metadata.
+
+For an explicit CP932 owner, maintained inputs and frozen snapshots remain
+UTF8. Positive and mutated compiler inputs are independently transcoded and
+recorded with their actual byte identities. Acceptance reconstructs expected
+compiler bytes from the canonical snapshot and checks every consumed file,
+including the assembler input alias. Encoding never changes compared target
+bytes or transfers credit to source literals without a complete raw scope.

@@ -23,6 +23,7 @@ from lib.unit_oracle import (compare_unit, compare_mapped_unit, function_scoped,
     map_unit_scope)
 from lib.unit_context import (UnitContext, compiler_arguments, freeze_target_view,
     load_unit_target, unit_binary)
+from lib.unit_sources import producer_snapshot, source_encoding, stage_inputs
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, freeze_toolchain,
     required_input_paths, scoped_snapshot, snapshot_paths, staged_paths,
     static_toolchain, validate_snapshot)
@@ -71,7 +72,7 @@ def translation_units(units: list[dict], *, binary: str = "M") -> list[list[dict
     grouped = {}
     for entry in units:
         key = entry["module"].replace("\\", "/").casefold()
-        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary))
+        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry))
         if key in grouped and grouped[key][0] != identity:
             raise ValueError("one module cannot have conflicting source, flags or binding contexts")
         grouped.setdefault(key, (identity, []))[1].append(entry)
@@ -83,10 +84,7 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
     producers = translation_units(units, binary=binary)
     source = work / "source"
     source.mkdir(parents=True)
-    for name in sorted(paths):
-        destination = source / name
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(inputs / name, destination)
+    stage_inputs(inputs, source, units, paths, mutation=mutation)
     scaffolds = {bindings_source(unit) for unit in units}
     if len(scaffolds) != 1:
         raise ValueError("one cold group requires one binding scaffold")
@@ -96,12 +94,6 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
         wrapper.parent.mkdir(parents=True, exist_ok=True)
         prefix = ("#pragma option " + unit["wrapper_options"] + "\n") if unit.get("wrapper_options") else ""
         wrapper.write_text(prefix + f'#include "{unit["source"]}"\n')
-    if mutation:
-        path = source / mutation["source"]
-        data = path.read_text()
-        if not mutation["find"] or data.count(mutation["find"]) != 1 or mutation["find"] == mutation["replace"]:
-            raise ValueError("compiled negative-control mutation anchor drifted")
-        path.write_text(data.replace(mutation["find"], mutation["replace"]))
     shutil.copyfile(source / next(iter(scaffolds)), source / "bindings.asm")
     (source / "build_dumb.bat").touch()
     builder = Builder(source, ROOT / ".analysis/toolchain/wineprefix", ROOT / "_reference/ReC98/bin/msdos.exe")
@@ -228,6 +220,9 @@ def main() -> int:
                     result["compiler_arguments"] = [producer["compiler_arguments"][unit["id"]] for producer in rounds]
                 actual = required_input_paths(inputs, unit, result)
                 result["source_inputs"] = snapshot_paths(inputs, actual)
+                if source_encoding(unit) == "cp932":
+                    result["producer_source_inputs"] = [producer_snapshot(producer["source"], unit, result["source_inputs"])
+                                                        for producer in rounds]
                 result["exact"] = result["object_normalized_equal"] and all(row["exact"] for row in comparisons)
                 results.append(result)
         negative = cold_round(work / "negative", inputs, [control_unit],
@@ -246,6 +241,8 @@ def main() -> int:
                            "omf": negative["omfs"][control_unit["id"]]}
         if context.name != "main" or "binary" in control_unit:
             negative_record["compiler_arguments"] = negative["compiler_arguments"][control_unit["id"]]
+        if source_encoding(control_unit) == "cp932":
+            negative_record["producer_source_inputs"] = producer_snapshot(negative["source"], control_unit, positive_control["source_inputs"])
         # Source scanning stages a safe superset for conditional includes. Only
         # dependencies actually consumed by the cold producers remain frozen.
         used = {item["path"] for result in results for item in result["source_inputs"]}

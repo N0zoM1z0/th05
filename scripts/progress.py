@@ -8,6 +8,7 @@ from pathlib import Path
 import tomllib
 from lib.unit_oracle import function_scoped
 from lib.unit_context import UnitContext, compiler_arguments, load_unit_target, validate_public_target_view
+from lib.unit_sources import producer_snapshot, source_encoding, validate_producer_inputs
 
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, relative_path,
     compiler_dependencies, scoped_snapshot, validate_snapshot)
@@ -447,12 +448,10 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             prefix = ("#pragma option " + entry["wrapper_options"] + "\n") if entry.get("wrapper_options") else ""
             if (source / entry["module"]).read_text() != prefix + f'#include "{entry["source"]}"\n':
                 raise ValueError("saved compiler wrapper disagrees with unit configuration")
-            for item in snapshots:
-                saved = source / item["path"]
-                if not saved.is_file() and item["path"] == bindings_source(entry):
-                    saved = source / "bindings.asm"
-                if digest(saved) != item["sha256"]:
-                    raise ValueError("saved cold source disagrees with its input snapshot")
+            validate_producer_inputs(root, source, entry, snapshots)
+            if source_encoding(entry) == "cp932":
+                if result.get("producer_source_inputs", [])[index:index + 1] != [producer_snapshot(source, entry, snapshots)]:
+                    raise ValueError("saved CP932 compiler-byte identity disagrees with its receipt")
         classify_extent(entry, target_bytes=target.program_image[
             entry["target_start"]:entry["target_start"] + entry["size"]])
         if name in selected:
@@ -484,9 +483,9 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     control_snapshots = next(item["source_inputs"] for item in imported if item["id"] == control_entry["id"])
     if mutation["source"] not in {item["path"] for item in control_snapshots}:
         raise ValueError("negative mutation is outside its selected compiler dependency scope")
-    original = (root / mutation["source"]).read_text()
-    if original.count(mutation["find"]) != 1 or (negative_source / mutation["source"]).read_text() != original.replace(mutation["find"], mutation["replace"]):
-        raise ValueError("saved negative source does not reproduce its recorded natural mutation")
+    validate_producer_inputs(root, negative_source, control_entry, control_snapshots, mutation=mutation)
+    if source_encoding(control_entry) == "cp932" and negative.get("producer_source_inputs") != producer_snapshot(negative_source, control_entry, control_snapshots):
+        raise ValueError("negative CP932 compiler-byte identity disagrees with its receipt")
     aggregate_pass = validate_receipt_aggregate(receipt, results, observed_control)
     if units is None and not aggregate_pass:
         raise ValueError("default acceptance requires the complete replay aggregate to pass")
