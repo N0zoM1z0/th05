@@ -27,3 +27,13 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
   heap/memory; avoid duplicate tool downloads and unbounded process pools.
 - Run affected checks, `python3 scripts/ci.py`, and `git diff --check` before
   committing; update the handoff and generated progress. Commit and push often.
+
+## User-directed incremental work
+
+The user explicitly requested faster progress on 2026-10-24: replay only the
+necessary units. Reuse accepted unchanged evidence and objects after checking
+their actual dependency identities. Compile/replay new or affected units;
+do not automatically cold-replay the entire accepted set. Reuse successful
+toolchain execution probes when all relevant installed surfaces and the pinned
+manifest remain unchanged. Shared ABI, flags, binding or layout changes require
+only their demonstrated affected closure, with broader replay when necessary.

@@ -40,8 +40,23 @@ re-reads both saved MZ/MAP/OMF producers, the actual target extents/fixups, sour
 snapshots, tool manifest and the saved compiled negative producer.
 
 Next: extend bounded authored units and review the complete ownership partition.
-No whole-program or standalone build claim is made. See the first-unit note for
+No whole-game or standalone C++ build claim is made. See the first-unit note for
 numeric bindings, sizes, limitations and replay commands.
+
+The standalone ZUN `-M` child is a separate accepted 311-byte complete COM
+producer (142 code, 169 data), from maintained semantic ASM with inferred
+original style. Two cold builds and a compiled threshold mutation pass in
+`.analysis/zun-memory/first-b`. Public source-current acceptance is
+`config/zun_memory_acceptance.json`; this is not C++ credit or outer ZUN exactness.
+`inspect_launcher.py` validates all 18,116 container bytes as a physical partition.
+See the ownership survey for remaining exclusions and provenance.
+
+User steering: accelerate work and replay only necessary units. Retain accepted
+unchanged objects/evidence; rerun only new or affected sources and dependencies.
+Toolchain probes may be reused when all relevant installed identities are
+unchanged. An incremental C++ replay interface is being implemented. The next
+pure C++ candidate is Boss explosion (452 bytes at load `1060E`). Masked routing
+survey found 42 candidates/14,922 bytes; those are diagnostics, never credit.
 
 TH03 has unrelated uncommitted work; do not modify it. TH04 is a read-only
 reference. Use an independent Wine prefix and serialize heavy jobs.

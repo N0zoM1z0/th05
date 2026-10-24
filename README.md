@@ -23,6 +23,11 @@ No global authored-byte denominator has been accepted yet; the overall
 percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md).
 
+The standalone ZUN `-M` memory-check child also reproduces all **311 bytes**
+(142 code, 169 initialized data) from maintained semantic assembly. Its
+original assembly style remains inferred and is reported separately from C++
+instruction credit. See [child source and evidence](src/zun/memory/README.md).
+
 ## Setup
 
 Use your own Japanese game image. Game executables, assets, disk images and
@@ -52,6 +57,10 @@ observer used by the DIET decoder and its public negative controls.
 `bash scripts/run_heavy.sh python3 scripts/unpack_targets.py` exports private
 decoded payloads and ordered relocation streams. OP/MAINE execute their original
 decoders at two distinct load segments; MAIN is already unpacked and ZUN is COM.
+
+`python3 scripts/inspect_launcher.py` verifies the complete ZUN physical
+partition without executing it. Ownership review and reconstruction routing
+are documented in the [survey](docs/reconstruction/OWNERSHIP_SURVEY.md).
 
 The target manifest pins the supplied copy, with `candidate-local-attested`
 provenance. Independent pristine-dump confirmation remains open.
