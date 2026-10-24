@@ -26,7 +26,21 @@ proprietary compiler binaries are never included in this repository.
 ```sh
 python3 scripts/import_targets.py /path/to/jp.hdi
 python3 scripts/preflight.py
+mkdir -p _reference
+git clone https://github.com/nmlgc/ReC98.git _reference/ReC98
+git -C _reference/ReC98 checkout --detach b6ba5b0a529edbb31efdf8c0e939263804f8ee47
+bash scripts/bootstrap_toolchain.sh
+bash scripts/bootstrap_analysis_toolchain.sh
+bash scripts/run_heavy.sh python3 scripts/attest_toolchain.py
+bash scripts/run_heavy.sh python3 scripts/ghidra.py th05-main import
 ```
+
+An existing attested TH03/TH04 installation can be reused with
+`bash scripts/bootstrap_toolchain.sh --from /path/to/th04` and the equivalent
+analysis bootstrap option. This creates independent Wine state and reuses
+immutable analysis tools. Bootstrap refuses to overlay an existing installation.
+Ghidra defaults to one CPU and a 384 MiB Java heap. The heavy-job wrapper sets
+a 35% CPU quota, 768 MiB memory limit, no swap, and low scheduling priority.
 
 The target manifest pins the supplied copy, with `candidate-local-attested`
 provenance. Independent pristine-dump confirmation remains open.
