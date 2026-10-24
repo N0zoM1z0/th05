@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **148 bounded C++ CODE/DATA units / 288 complete function occurrences**,
-**51,890 authored bytes exact**: 43,033 CODE and 8,857 initialized DATA.
-CODE is 42,527 instruction plus 506 semantic compiler-table bytes.
-Complete compared extents total 51,921; 31 checked padding bytes receive
-no credit. MAIN has 206 functions / 30,468 CODE / 199 DATA;
+Current acceptance: **155 bounded C++ CODE/DATA units / 308 complete function occurrences**,
+**54,897 authored bytes exact**: 46,040 CODE and 8,857 initialized DATA.
+CODE is 45,534 instruction plus 506 semantic compiler-table bytes.
+Complete compared extents total 54,928; 31 checked padding bytes receive
+no credit. MAIN has 226 functions / 33,475 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -42,6 +42,10 @@ All paths below are under private `.analysis/unit-replays/`.
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
 | Sara complete stage-one behavior | `main-sara-a` |
+| Stage-two and three movement/pattern helpers | `main-midboss-stage2-patterns-a`, `main-midboss-stage3-patterns-a` |
+| Stage-four transition movement | `main-midboss-transition4-a` |
+| Louise later and Alice charge patterns | `main-louise-later-patterns-d`, `main-alice-charge-patterns-a` |
+| Louise charge/initial patterns and Alice puppet beam | `main-louise-initial-patterns-a`, `main-alice-puppet-beam-a` |
 | Stage-five and Extra movement/pattern helpers | `main-midboss5-extra-patterns-a` |
 | Stage-one, two, three, five and Extra midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a`, `main-midboss5-extra-b` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
@@ -384,3 +388,43 @@ restoring the donor's actual alignment option after all ABI declarations yields
 two exact deterministic producers, all seven original ordered fixups, and a
 rejected entrance-threshold192→193 control. No instruction or inside-function
 padding bytes were supplied by the binder or source.
+
+
+### Stage-two and three complete helper owners
+
+`main-midboss-stage2-patterns-a` accepts298 instruction bytes/three complete
+movement/pattern functions with the original single ordered fixup and its
+orbit-bound128→129 control. Its own prologue establishes the odd start15CC1;
+no alignment gap was inferred from the neighboring accepted owner.
+`main-midboss-stage3-patterns-a` accepts616 instruction bytes/five complete
+functions with original ordered fixups546/424/405/235/144 and a spread3→4
+control. Genuine rank-selector and gather packed parameters are preserved.
+Both owners have two fresh deterministic positives, no table/padding/DATA/BSS,
+and reuse unchanged accepted update headers.
+
+### New natural Boss and transition owners
+
+Louise's complete four-state charge helper and two initial patterns are
+accepted429 bytes/three functions in `main-louise-initial-patterns-a`; the blue
+spread5→6 mutation is rejected. Alice's puppet beam pattern is accepted354
+bytes/one function in `main-alice-puppet-beam-a`, with the width56→55 control.
+The full26-byte puppet type, real far shot-hit helper and complete point
+comparison preserve the original ABI, without compiler-body ASM.
+The previously foreign stage-four transition helper now passes208 bytes/one
+function in `main-midboss-transition4-a`, with sound13→14 control. Each receipt
+has its own negative and two fresh deterministic positives; no tables,
+padding, DATA or BSS receive credit for these new instruction-only owners.
+
+
+### Louise later patterns and Alice charge patterns
+
+`main-louise-later-patterns-d` accepts603 instruction bytes/four complete
+functions. Two typed byte-speed updates use a real integral wrapped negative
+delta, retaining defined modulo256 semantics without ASM or idle work. The
+fan-angle24→25 control is rejected. The earlier597-byte compound-assignment
+producer and603-byte raw-inexact alternatives remain failed; the negative-float
+candidate was outside the unchanged speed helper's valid domain and discarded.
+`main-alice-charge-patterns-a` accepts499 instruction bytes/three complete
+laser/stack/ring functions with all six original ordered fixups and its own
+laser-width8→9 control. Every owner has two fresh deterministic raw/ordered
+positives; source headers already accepted for beam/laser/charge are unchanged.

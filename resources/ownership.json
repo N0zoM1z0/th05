@@ -7,10 +7,10 @@
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-cxx-initialized-data": 8857,
-    "accepted-cxx-instructions": 42527,
+    "accepted-cxx-instructions": 45534,
     "accepted-cxx-switch-table": 506,
     "checked-uncredited-padding": 31,
-    "unknown": 264446,
+    "unknown": 261439,
     "verified-vendor-code": 2901
   },
   "views": {
@@ -21,10 +21,10 @@
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
         "accepted-cxx-initialized-data": 199,
-        "accepted-cxx-instructions": 30084,
+        "accepted-cxx-instructions": 33091,
         "accepted-cxx-switch-table": 384,
         "checked-uncredited-padding": 25,
-        "unknown": 112365,
+        "unknown": 109358,
         "verified-vendor-code": 2901
       },
       "intervals": [
@@ -1146,7 +1146,8 @@
         {
           "start": 89281,
           "end": 89579,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-stage2-patterns"
         },
         {
           "start": 89579,
@@ -1157,7 +1158,8 @@
         {
           "start": 89972,
           "end": 90180,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-transition4"
         },
         {
           "start": 90180,
@@ -1463,8 +1465,14 @@
         },
         {
           "start": 112347,
-          "end": 113922,
+          "end": 113306,
           "kind": "unknown"
+        },
+        {
+          "start": 113306,
+          "end": 113922,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-stage3-patterns"
         },
         {
           "start": 113922,
@@ -1579,6 +1587,40 @@
         },
         {
           "start": 121022,
+          "end": 121144,
+          "kind": "unknown"
+        },
+        {
+          "start": 121144,
+          "end": 121573,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-louise-initial-patterns"
+        },
+        {
+          "start": 121573,
+          "end": 122176,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-louise-later-patterns"
+        },
+        {
+          "start": 122176,
+          "end": 124418,
+          "kind": "unknown"
+        },
+        {
+          "start": 124418,
+          "end": 124772,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-alice-puppet-beam"
+        },
+        {
+          "start": 124772,
+          "end": 125271,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-alice-charge-patterns"
+        },
+        {
+          "start": 125271,
           "end": 129617,
           "kind": "unknown"
         },

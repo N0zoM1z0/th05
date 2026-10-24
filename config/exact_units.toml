@@ -1777,3 +1777,139 @@ unit = "main-midboss-stage4"
 source = "src/main/midboss/stage4.cpp"
 find = "if(midboss.phase_frame >= 192) {"
 replace = "if(midboss.phase_frame >= 193) {"
+
+[[units]]
+id = "main-midboss-stage2-patterns"
+source = "src/main/midboss/stage2_patterns.cpp"
+module = "th05/mid2pat.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage2_patterns_bindings.asm"
+target_start = 0x15cc1
+size = 298
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "midboss-stage2-orbit-left-bound"
+unit = "main-midboss-stage2-patterns"
+source = "src/main/midboss/stage2_patterns.cpp"
+find = "midboss2_orbit_center.x.v < to_sp(128)"
+replace = "midboss2_orbit_center.x.v < to_sp(129)"
+
+[[units]]
+id = "main-midboss-stage3-patterns"
+source = "src/main/midboss/stage3_patterns.cpp"
+module = "th05/mb3pat.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage3_patterns_bindings.asm"
+target_start = 113306
+size = 616
+alignment_offsets = []
+functions = 5
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-stage3-patterns"
+source = "src/main/midboss/stage3_patterns.cpp"
+find = "midboss3_set_spread_stack(3, 16, 4, 0.5f);"
+replace = "midboss3_set_spread_stack(4, 16, 4, 0.5f);"
+
+[[units]]
+id = "main-louise-initial-patterns"
+source = "src/main/boss/louise/patterns.cpp"
+module = "th05/louisep.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/louise_patterns_bindings.asm"
+target_start = 121144
+size = 429
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-louise-initial-patterns"
+source = "src/main/boss/louise/patterns.cpp"
+find = "louise_set_spread(5, 6);"
+replace = "louise_set_spread(6, 6);"
+
+[[units]]
+id = "main-midboss-transition4"
+source = "src/main/midboss/transition4.cpp"
+module = "th05/mb4trans.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_transition4_bindings.asm"
+target_start = 0x15f74
+size = 208
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-transition4"
+source = "src/main/midboss/transition4.cpp"
+find = "snd_se_play(13);"
+replace = "snd_se_play(14);"
+
+[[units]]
+id = "main-alice-puppet-beam"
+source = "src/main/boss/alice/beam.cpp"
+module = "th05/a_beam.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_beam_bindings.asm"
+target_start = 124418
+size = 354
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-alice-puppet-beam"
+source = "src/main/boss/alice/beam.cpp"
+find = "shot_hitbox_radius.x.v = to_sp(56);"
+replace = "shot_hitbox_radius.x.v = to_sp(55);"
+
+[[units]]
+id = "main-louise-later-patterns"
+source = "src/main/boss/louise/later.cpp"
+module = "th05/louisel.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/louise_later_bindings.asm"
+target_start = 121573
+size = 603
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-louise-later-patterns"
+source = "src/main/boss/louise/later.cpp"
+find = "bullet_template.angle = 0x24;"
+replace = "bullet_template.angle = 0x25;"
+
+[[units]]
+id = "main-alice-charge-patterns"
+source = "src/main/boss/alice/charge_patterns.cpp"
+module = "th05/a_chg.cpp"
+segment = "ALICE_CHG_TEXT"
+wrapper_options = "-zCALICE_CHG_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_charge_patterns_bindings.asm"
+target_start = 124772
+size = 499
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-alice-charge-patterns"
+source = "src/main/boss/alice/charge_patterns.cpp"
+find = "laser_template.coords.width.nonshrink = 8;"
+replace = "laser_template.coords.width.nonshrink = 9;"
