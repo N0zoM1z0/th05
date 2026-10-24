@@ -42,6 +42,12 @@ immutable analysis tools. Bootstrap refuses to overlay an existing installation.
 Ghidra defaults to one CPU and a 384 MiB Java heap. The heavy-job wrapper sets
 a 35% CPU quota, 768 MiB memory limit, no swap, and low scheduling priority.
 
+`python3 -m pip install -r requirements-ci.txt` installs the pinned instruction
+observer used by the DIET decoder and its public negative controls.
+`bash scripts/run_heavy.sh python3 scripts/unpack_targets.py` exports private
+decoded payloads and ordered relocation streams. OP/MAINE execute their original
+decoders at two distinct load segments; MAIN is already unpacked and ZUN is COM.
+
 The target manifest pins the supplied copy, with `candidate-local-attested`
 provenance. Independent pristine-dump confirmation remains open.
 
