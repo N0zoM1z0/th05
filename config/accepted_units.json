@@ -2,26 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e3d834a3f6454719d7ef3ce1f114e9dfa44376ca5c82facda7c9f5c5f5f02d62",
+  "replay_receipt_sha256": "e7856d9b9db72059ee981dc703eb6e240b53e87a93228cad19bdfc86443961a5",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 77926,
-    "candidate_start": 77926,
-    "size": 160,
-    "target_sha256": "789dad6ad1ae6b60c3e1b3f3672d4155f943c44f103dada1fa09bb96069b5dab",
-    "candidate_sha256": "98f1a444802fdf4ba07bb0a6d4276e8db1c6f52af89069cac9207c3693804cdd",
+    "target_start": 72877,
+    "candidate_start": 72877,
+    "size": 163,
+    "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+    "candidate_sha256": "9ee23683f1ffd279b57a6b740ca07e8e863cc24c4478bfd6d81fb07ed873ebf0",
     "raw_exact": false,
     "target_fixups": [
-      130,
-      94,
-      76,
+      151,
+      106,
+      88,
       44
     ],
     "candidate_fixups": [
-      130,
-      94,
-      76,
+      151,
+      106,
+      88,
       44
     ],
     "fixups_exact": true,
@@ -45300,6 +45300,621 @@
           "-ml",
           "-DBINARY='M'",
           "th05/shinkifg.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shot-function-table-data",
+      "entry_sha256": "e4592c3ee97d8d809b10912f1d423deb19d99f0acee1020540e0fc4d698749dd",
+      "result": {
+        "id": "main-shot-function-table-data",
+        "entry_sha256": "e4592c3ee97d8d809b10912f1d423deb19d99f0acee1020540e0fc4d698749dd",
+        "rounds": [
+          {
+            "target_start": 141120,
+            "candidate_start": 141120,
+            "size": 80,
+            "target_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+            "candidate_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141120,
+              "size": 80,
+              "module": "th05/s_tbl.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141120,
+            "candidate_start": 141120,
+            "size": 80,
+            "target_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+            "candidate_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141120,
+              "size": 80,
+              "module": "th05/s_tbl.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "af1876f77095d78ffc9e1724f7474f16d1dd788e429859c7910e95938a25a309",
+            "dependency_timestamp_normalized_sha256": "075b115f8c62513f55a1bf1b6c8cf9b7badcc04d6ff6ba094a379a8d536ef422",
+            "module_name": "th05/s_tbl.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/s_tbl.cpp",
+              "src/main/player/shot_tables.cpp",
+              "src/main/player/shot_tables.hpp",
+              "src/main/runtime/gameplay_session_init.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 80,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 80,
+                  "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "16185315fa12d92b50d29e0a5c1db571d3a573e7b08ea7080a37cedb193935b5",
+            "dependency_timestamp_normalized_sha256": "075b115f8c62513f55a1bf1b6c8cf9b7badcc04d6ff6ba094a379a8d536ef422",
+            "module_name": "th05/s_tbl.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/s_tbl.cpp",
+              "src/main/player/shot_tables.cpp",
+              "src/main/player/shot_tables.hpp",
+              "src/main/runtime/gameplay_session_init.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 80,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 80,
+                  "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/s_tbl.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/s_tbl.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_tables_bindings.asm",
+            "sha256": "300d4bb7dd1e64cb33300934bbb6328102e289a578635a4711d4cd7ef2e0e4e9"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/bullet/tune.hpp",
+            "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/shot_tables.cpp",
+            "sha256": "8fcc3e847c77f281459cad15fd3eea3d94b8a1340264d3ba21788619e14523a8"
+          },
+          {
+            "path": "src/main/player/shot_tables.hpp",
+            "sha256": "6685aacd5903fb7e025a36544f94218b075c66435d452d1908329203a3b14dcd"
+          },
+          {
+            "path": "src/main/runtime/gameplay_session_init.hpp",
+            "sha256": "88acedf85e8fa7ad2eadd8d8b5b74fcaf421423b51b502183c2f24ef8839ad7a"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_tables_bindings.asm",
+          "sha256": "300d4bb7dd1e64cb33300934bbb6328102e289a578635a4711d4cd7ef2e0e4e9"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/shot_tables.cpp",
+          "sha256": "8fcc3e847c77f281459cad15fd3eea3d94b8a1340264d3ba21788619e14523a8"
+        },
+        {
+          "path": "src/main/player/shot_tables.hpp",
+          "sha256": "6685aacd5903fb7e025a36544f94218b075c66435d452d1908329203a3b14dcd"
+        },
+        {
+          "path": "src/main/runtime/gameplay_session_init.hpp",
+          "sha256": "88acedf85e8fa7ad2eadd8d8b5b74fcaf421423b51b502183c2f24ef8839ad7a"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "324093cd3f6f2929c7fea84552dc5cc67832989a38fe67e9941141df8de282ab",
+      "compiled_negative_control": {
+        "target_start": 141120,
+        "candidate_start": 141120,
+        "size": 80,
+        "target_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+        "candidate_sha256": "bc7ff21a9ddf3158dc577fe129b24b142750a2193646d695bc6092175a2c13d3",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141120,
+          "size": 80,
+          "module": "th05/s_tbl.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shot-function-table-data",
+        "entry_sha256": "e4592c3ee97d8d809b10912f1d423deb19d99f0acee1020540e0fc4d698749dd",
+        "mutation": {
+          "id": "reimu-shot-level-order",
+          "unit": "main-shot-function-table-data",
+          "source": "src/main/player/shot_tables.cpp",
+          "find": "shot_reimu_l2, shot_reimu_l3, shot_reimu_l4, shot_reimu_l5,",
+          "replace": "shot_reimu_l3, shot_reimu_l2, shot_reimu_l4, shot_reimu_l5,"
+        },
+        "control_sha256": "969c45bcb4de2cc7ffd101e0adca19127ee01d9742100e3952706ac5b299a475",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141120,
+          "candidate_start": 141120,
+          "size": 80,
+          "target_sha256": "762e4f286e2538b762331e07920181509ea16a71b8cc7c2bda0e28ddf333f23e",
+          "candidate_sha256": "bc7ff21a9ddf3158dc577fe129b24b142750a2193646d695bc6092175a2c13d3",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141120,
+            "size": 80,
+            "module": "th05/s_tbl.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "6f55cafc8f229036887136b5dcc16b3c468531fcefb5522cd782eb2b6a5e80c4",
+          "dependency_timestamp_normalized_sha256": "90c246d8316d4f58de15da8155bb8a451226a3ee3211bf34e4e3e396e5f826b2",
+          "module_name": "th05/s_tbl.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/s_tbl.cpp",
+            "src/main/player/shot_tables.cpp",
+            "src/main/player/shot_tables.hpp",
+            "src/main/runtime/gameplay_session_init.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/tune.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 80,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 80,
+                "sha256": "5b6fb58e61fa475939767d68a446f97f1bff02c0e5935a3ea8bb51e6515783d8"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/s_tbl.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-foreground",
+      "entry_sha256": "b11781368404af65c1e6a87d27df9aae1c7fc168a2474b0a5f0e98bc4309aecb",
+      "result": {
+        "id": "main-exalice-foreground",
+        "entry_sha256": "b11781368404af65c1e6a87d27df9aae1c7fc168a2474b0a5f0e98bc4309aecb",
+        "rounds": [
+          {
+            "target_start": 72877,
+            "candidate_start": 72877,
+            "size": 163,
+            "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+            "candidate_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+            "raw_exact": true,
+            "target_fixups": [
+              151,
+              106,
+              88,
+              44
+            ],
+            "candidate_fixups": [
+              151,
+              106,
+              88,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 72877,
+            "candidate_start": 72877,
+            "size": 163,
+            "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+            "candidate_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+            "raw_exact": true,
+            "target_fixups": [
+              151,
+              106,
+              88,
+              44
+            ],
+            "candidate_fixups": [
+              151,
+              106,
+              88,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ad1cd4d1e49e516981fb1a56ca9fb97125d5d8390fd836fdadc47ba335daacab",
+            "dependency_timestamp_normalized_sha256": "5115396d77761311e0a20a5b54408433ca34667bbea05bda54eafcc5cd9e4e83",
+            "module_name": "th05/bx_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bx_fg.cpp",
+              "src/main/boss/exalice/foreground.cpp",
+              "src/main/boss/exalice/foreground.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "f2eeec12795c8cf026ce96d4a4ff7f7d6be03c582cd6ae15444a804317a172d1",
+            "dependency_timestamp_normalized_sha256": "5115396d77761311e0a20a5b54408433ca34667bbea05bda54eafcc5cd9e4e83",
+            "module_name": "th05/bx_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bx_fg.cpp",
+              "src/main/boss/exalice/foreground.cpp",
+              "src/main/boss/exalice/foreground.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bx_fg.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bx_fg.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/exalice_foreground_bindings.asm",
+            "sha256": "4463ba1b34d03af0c784505840e4d5fa86c29300913048b40563cb0c3d208542"
+          },
+          {
+            "path": "src/main/boss/exalice/foreground.cpp",
+            "sha256": "3e3eb57f8a2dade4875df53d2c54520dc4334d3133291fe87ba6fdad3ed91f5e"
+          },
+          {
+            "path": "src/main/boss/exalice/foreground.hpp",
+            "sha256": "ae0018959a2858163b683ab46a0788a5302d4884a5657da7058a87ba47fbff73"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/exalice_foreground_bindings.asm",
+          "sha256": "4463ba1b34d03af0c784505840e4d5fa86c29300913048b40563cb0c3d208542"
+        },
+        {
+          "path": "src/main/boss/exalice/foreground.cpp",
+          "sha256": "3e3eb57f8a2dade4875df53d2c54520dc4334d3133291fe87ba6fdad3ed91f5e"
+        },
+        {
+          "path": "src/main/boss/exalice/foreground.hpp",
+          "sha256": "ae0018959a2858163b683ab46a0788a5302d4884a5657da7058a87ba47fbff73"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e7856d9b9db72059ee981dc703eb6e240b53e87a93228cad19bdfc86443961a5",
+      "compiled_negative_control": {
+        "target_start": 72877,
+        "candidate_start": 72877,
+        "size": 163,
+        "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+        "candidate_sha256": "9ee23683f1ffd279b57a6b740ca07e8e863cc24c4478bfd6d81fb07ed873ebf0",
+        "raw_exact": false,
+        "target_fixups": [
+          151,
+          106,
+          88,
+          44
+        ],
+        "candidate_fixups": [
+          151,
+          106,
+          88,
+          44
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-foreground",
+        "entry_sha256": "b11781368404af65c1e6a87d27df9aae1c7fc168a2474b0a5f0e98bc4309aecb",
+        "mutation": {
+          "unit": "main-exalice-foreground",
+          "source": "src/main/boss/exalice/foreground.cpp",
+          "find": "patnum += 8;",
+          "replace": "patnum += 7;"
+        },
+        "control_sha256": "c4df37abae9132659890cfb572d9c8cbb8ea637a0af9a449039b13e54d81507a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 72877,
+          "candidate_start": 72877,
+          "size": 163,
+          "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
+          "candidate_sha256": "9ee23683f1ffd279b57a6b740ca07e8e863cc24c4478bfd6d81fb07ed873ebf0",
+          "raw_exact": false,
+          "target_fixups": [
+            151,
+            106,
+            88,
+            44
+          ],
+          "candidate_fixups": [
+            151,
+            106,
+            88,
+            44
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "221a91f54b83ff2a85fad5acedbb388cc7fa80b76bb93e1f40bf9db5020b8297",
+          "dependency_timestamp_normalized_sha256": "cc0974f9337a673ca54459a1fb5a720b67083371d267d4fb029981db1896f771",
+          "module_name": "th05/bx_fg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bx_fg.cpp",
+            "src/main/boss/exalice/foreground.cpp",
+            "src/main/boss/exalice/foreground.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bx_fg.cpp"
         ]
       },
       "receipt_aggregate_pass": true

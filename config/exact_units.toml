@@ -2881,3 +2881,46 @@ unit = "main-shinki-foreground"
 source = "src/main/boss/shinki/foreground.cpp"
 find = "patnum < SHINKI_FG_WING_FIRST"
 replace = "patnum < (SHINKI_FG_WING_FIRST + 1)"
+
+[[units]]
+id = "main-shot-function-table-data"
+source = "src/main/player/shot_tables.cpp"
+module = "th05/s_tbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCSHOT_TABLE_CONTEXT -zPmain_01"
+bindings_source = "probes/units/shot_tables_bindings.asm"
+target_start = 141120
+size = 80
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+alignment_offsets = []
+
+[[controls]]
+id = "reimu-shot-level-order"
+unit = "main-shot-function-table-data"
+source = "src/main/player/shot_tables.cpp"
+find = "shot_reimu_l2, shot_reimu_l3, shot_reimu_l4, shot_reimu_l5,"
+replace = "shot_reimu_l3, shot_reimu_l2, shot_reimu_l4, shot_reimu_l5,"
+
+[[units]]
+id = "main-exalice-foreground"
+source = "src/main/boss/exalice/foreground.cpp"
+module = "th05/bx_fg.cpp"
+segment = "EXALICE_FG_TEXT"
+wrapper_options = "-zCEXALICE_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/exalice_foreground_bindings.asm"
+target_start = 72877
+size = 163
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-exalice-foreground"
+source = "src/main/boss/exalice/foreground.cpp"
+find = "patnum += 8;"
+replace = "patnum += 7;"

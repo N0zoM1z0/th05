@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **205 bounded C++ CODE/DATA units / 403 complete function occurrences**,
-**71,706 authored bytes exact**: 62,813 CODE and 8,893 initialized DATA.
-CODE is 62,179 instruction plus 634 semantic compiler-table bytes.
-Complete compared extents total 71,739; 33 checked padding bytes receive
-no credit. MAIN has 321 functions / 50,248 CODE / 235 DATA;
+Current acceptance: **207 bounded C++ CODE/DATA units / 404 complete function occurrences**,
+**71,949 authored bytes exact**: 62,976 CODE and 8,973 initialized DATA.
+CODE is 62,342 instruction plus 634 semantic compiler-table bytes.
+Complete compared extents total 71,982; 33 checked padding bytes receive
+no credit. MAIN has 322 functions / 50,411 CODE / 315 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -768,3 +768,16 @@ matching all actual shot providers. Only the affected initialization468 was
 replayed (`main-gameplay-session-init-b`); counts are unchanged by this fix.
 Known failed runtime/shot/background2/full-foreground entries are absent from
 the default replay manifest, with natural candidate sources retained separately.
+
+## Shot dispatch DATA and EX-Alice foreground
+
+The complete four-character, ten-level `SHOT_FUNCS` table passes as semantic
+initialized DATA80 (`main-shot-function-table-data-a`), with forty genuine near
+Pascal function pointers, thirty-four unique reviewed providers, two fresh
+producers and its own compiled Reimu L2/L3 swap. EX-Alice's complete foreground
+callback163 also passes independently (`main-exalice-foreground-a`), including
+all four original ordered fixups and its own sprite-bank mutation.
+
+Natural failed candidates are retained with zero exact credit; see
+`docs/reconstruction/UNACCEPTED_COHORTS.md`. Their known failures are not in the
+default incremental replay manifest.
