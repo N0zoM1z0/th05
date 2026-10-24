@@ -2184,3 +2184,113 @@ unit = "main-exalice-laser-patterns"
 source = "src/main/boss/exalice/laser_patterns.cpp"
 find = "laser_template.active_at_age.grow = 47;"
 replace = "laser_template.active_at_age.grow = 48;"
+
+[[units]]
+id = "main-mai-yuki-initial-patterns"
+source = "src/main/boss/mai_yuki/initial_patterns.cpp"
+module = "th05/my_init.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_initial_patterns_bindings.asm"
+target_start = 96599
+size = 543
+alignment_offsets = []
+functions = 6
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-mai-yuki-initial-patterns"
+source = "src/main/boss/mai_yuki/initial_patterns.cpp"
+find = "mai_yuki_set_stack(2, 0.375f);"
+replace = "mai_yuki_set_stack(3, 0.375f);"
+
+[[units]]
+id = "main-exalice-phase"
+source = "src/main/boss/exalice/phase.cpp"
+module = "th05/x_phase.cpp"
+segment = "EXALICE_PHASE_TEXT"
+wrapper_options = "-zCEXALICE_PHASE_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_phase_bindings.asm"
+target_start = 106971
+size = 111
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-exalice-phase"
+source = "src/main/boss/exalice/phase.cpp"
+find = "exalice_bomb_invincibility = 39;"
+replace = "exalice_bomb_invincibility = 40;"
+
+[[units]]
+id = "main-exalice-pattern-cross-cheetos"
+source = "src/main/boss/exalice/final_patterns.cpp"
+module = "th05/x_final.cpp"
+segment = "EXALICE_FIN_TEXT"
+wrapper_options = "-zCEXALICE_FIN_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_final_patterns_bindings.asm"
+target_start = 106162
+size = 143
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "exalice_pattern_cross_cheetos()"
+function_end_symbol = "exalice_pattern_turning_cheetos()"
+
+[[units]]
+id = "main-exalice-pattern-turning-cheetos"
+source = "src/main/boss/exalice/final_patterns.cpp"
+module = "th05/x_final.cpp"
+segment = "EXALICE_FIN_TEXT"
+wrapper_options = "-zCEXALICE_FIN_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_final_patterns_bindings.asm"
+target_start = 106305
+size = 109
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "exalice_pattern_turning_cheetos()"
+function_end_symbol = "exalice_pattern_spiral_gather()"
+
+[[units]]
+id = "main-exalice-pattern-final-fan"
+source = "src/main/boss/exalice/final_patterns.cpp"
+module = "th05/x_final.cpp"
+segment = "EXALICE_FIN_TEXT"
+wrapper_options = "-zCEXALICE_FIN_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_final_patterns_bindings.asm"
+target_start = 106748
+size = 223
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "exalice_pattern_final_fan()"
+
+[[controls]]
+unit = "main-exalice-pattern-cross-cheetos"
+source = "src/main/boss/exalice/final_patterns.cpp"
+find = "cheeto_template.speed.v = to_sp(3);"
+replace = "cheeto_template.speed.v = to_sp(4);"
+
+[[units]]
+id = "main-yumeko-update"
+source = "src/main/boss/yumeko/update.cpp"
+module = "th05/yumeupd.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zCB5_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_update_bindings.asm"
+target_start = 0x1f6dd
+size = 884
+alignment_offsets = []
+padding_bytes = [{offset = 861, value = 0}]
+code_data_ranges = [{offset = 862, size = 22, kind = "compiler-switch-table"}]
+functions = 2
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yumeko-final-turn-count"
+unit = "main-yumeko-update"
+source = "src/main/boss/yumeko/update.cpp"
+find = "bullet_special.turns_max = 2;"
+replace = "bullet_special.turns_max = 3;"

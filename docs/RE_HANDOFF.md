@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **170 bounded C++ CODE/DATA units / 339 complete function occurrences**,
-**59,835 authored bytes exact**: 50,978 CODE and 8,857 initialized DATA.
-CODE is 50,456 instruction plus 522 semantic compiler-table bytes.
-Complete compared extents total 59,867; 32 checked padding bytes receive
-no credit. MAIN has 257 functions / 38,413 CODE / 199 DATA;
+Current acceptance: **176 bounded C++ CODE/DATA units / 352 complete function occurrences**,
+**61,847 authored bytes exact**: 52,990 CODE and 8,857 initialized DATA.
+CODE is 52,446 instruction plus 544 semantic compiler-table bytes.
+Complete compared extents total 61,880; 33 checked padding bytes receive
+no credit. MAIN has 270 functions / 40,425 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -545,3 +545,37 @@ grow age47→48 control in the second function. Full canonical Laser storage,
 real Pascal spawn API and genuine first16-slot loop are preserved. Both
 owners have two fresh deterministic full raw/ordered positives and no DATA,
 BSS, compiler-table or padding credit.
+
+
+### Mai/Yuki initial patterns and EX-Alice phase/final scopes
+
+`main-mai-yuki-initial-patterns-a` accepts543 instruction bytes/six complete
+functions with original ordered fixups[525,433,324,233,51] and the real attack
+stack2→3 negative. `main-exalice-phase-a` accepts111 instruction bytes/two
+complete functions (far hit gating33 plus Pascal phase transition78), with
+an empty original fixup stream and immunity39→40 negative. Both owners have
+two fresh deterministic full raw/ordered positives and no tables/padding/data.
+
+`main-exalice-final-scopes-b` accepts475 bytes/three complete functions from
+the real809-byte TU: cross143, turning109 and final fan223. Two fresh whole
+producers supply all selected actual boundaries/raw/ordered comparisons, with
+one shared cheeto speed3→4 negative in the first function. Branch-local real
+aim calls and gather assignments recover the original control/data flow; the
+earlier conditional-expression producer emitted787 bytes. No shared ABI,
+flags, fake calls or barriers were changed. The remaining spiral334 function
+is raw exact in both saved positives but has target ordered fixups[86,256]
+versus producer[256,86]; it remains outside live selection and uncredited.
+The complete809-byte ordered claim remains unaccepted.
+
+
+### Yumeko complete update and final ring
+
+`main-yumeko-update-a` accepts the complete884-byte owner:165-byte final
+ring helper plus719-byte far callback, including the real original zero and
+22-byte eleven-word switch table. Authored credit is883 bytes (861 instructions
+and22 semantic table bytes), two complete functions. Both fresh raw/ordered
+producers agree, including the original six relocation sites; the actual
+final-ring turns2→3 mutation is compiled and rejected for this whole owner.
+No independent helper/callback negative per sibling is claimed. Full canonical
+Sword/Boss/special state, actual main01 rendering pointers, near generic
+helpers and all table destinations retain their true ABI and storage.
