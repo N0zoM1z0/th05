@@ -1,0 +1,28 @@
+schema_version = 1
+artifact = "th05-main"
+scope = "complete C++ code contributions with explicit target symbol bindings"
+denominator_reviewed = false
+
+# Load-module offsets, independently located in the pinned original MAIN.
+# The reference MAP is a boundary hypothesis, never a target address oracle.
+[[units]]
+id = "main-player-angle"
+source = "src/main/player/angle.cpp"
+module = "th05/player_a.cpp"
+segment = "PLAYER_A_TEXT"
+target_start = 0x171cc
+size = 30
+alignment_offsets = [29]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "main-bullet-tune"
+source = "src/main/bullet/tune.cpp"
+module = "th05/bullet_t.cpp"
+segment = "BULLET_A_TEXT"
+target_start = 0x17676
+size = 66
+alignment_offsets = [37, 45, 57, 65]
+functions = 5
+origin = "compiler-generated-cxx"

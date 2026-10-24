@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "scope": "bounded C++ unit bytes and fixup sites",
+  "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+  "replay_receipt_sha256": "9bdad00dca1baba171fc6ec9cb962db1090d69ce3e37c1fb997e83e2cf802564",
+  "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "compiled_negative_rejected": true,
+  "compiled_negative_control": {
+    "target_start": 95862,
+    "candidate_start": 8256,
+    "size": 66,
+    "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+    "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+    "raw_exact": false,
+    "target_fixups": [],
+    "candidate_fixups": [],
+    "fixups_exact": true,
+    "exact": false
+  },
+  "units": [
+    {
+      "id": "main-player-angle",
+      "entry_sha256": "f463e7c745077845fab4e583c449183dfb287972bbb08a72fa1fc03dfd98f4f7",
+      "result": {
+        "id": "main-player-angle",
+        "rounds": [
+          {
+            "target_start": 94668,
+            "candidate_start": 7994,
+            "size": 30,
+            "target_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
+            "candidate_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
+            "raw_exact": true,
+            "target_fixups": [
+              20
+            ],
+            "candidate_fixups": [
+              20
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 94668,
+            "candidate_start": 7994,
+            "size": 30,
+            "target_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
+            "candidate_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
+            "raw_exact": true,
+            "target_fixups": [
+              20
+            ],
+            "candidate_fixups": [
+              20
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "1ee1ad8c9c3d18f9bf6cdb0824e2a80d97a78e480a4bd309c5b4d1ebbc0263b0",
+            "dependency_timestamp_normalized_sha256": "1dd5020040b5274e4236ed8245a14d3af9b4db9e2030e2ec5dcc75f9946a2377",
+            "module_name": "th05/player_a.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/player_a.cpp",
+              "src/main/player/angle.cpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "14a9842a2677a01bae4e2afdcbb237922871d85cbbce7ac9f22121dc2f26dddc",
+            "dependency_timestamp_normalized_sha256": "1dd5020040b5274e4236ed8245a14d3af9b4db9e2030e2ec5dcc75f9946a2377",
+            "module_name": "th05/player_a.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/player_a.cpp",
+              "src/main/player/angle.cpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "main_bindings.asm",
+          "sha256": "d183079eb9cf1695a687273e5244aac575bd789b5f12fe6c91348ffb273d33e0"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.cpp",
+          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/player/angle.cpp",
+          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ]
+    },
+    {
+      "id": "main-bullet-tune",
+      "entry_sha256": "3adc910058c961da3021a3a6955430b90ca0d668e9220bb30588989f4ac8fc89",
+      "result": {
+        "id": "main-bullet-tune",
+        "rounds": [
+          {
+            "target_start": 95862,
+            "candidate_start": 8256,
+            "size": 66,
+            "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+            "candidate_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 95862,
+            "candidate_start": 8256,
+            "size": 66,
+            "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+            "candidate_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "93122a5d573c64c9f3a1f93427f375f4f58578218b19278ceed08d54b8717629",
+            "dependency_timestamp_normalized_sha256": "104fced1eb27c0ae7331819c70009d65a7dbcb4a2ee6bdbdf2cdae95cd1977ac",
+            "module_name": "th05/bullet_t.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bullet_t.cpp",
+              "src/main/bullet/tune.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "fed7a1bc3e710a5fd6b746f57951340e26f213b86e7fdd690c98e3d6a0b7fa03",
+            "dependency_timestamp_normalized_sha256": "104fced1eb27c0ae7331819c70009d65a7dbcb4a2ee6bdbdf2cdae95cd1977ac",
+            "module_name": "th05/bullet_t.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bullet_t.cpp",
+              "src/main/bullet/tune.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "main_bindings.asm",
+          "sha256": "d183079eb9cf1695a687273e5244aac575bd789b5f12fe6c91348ffb273d33e0"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.cpp",
+          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/player/angle.cpp",
+          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ]
+    }
+  ]
+}

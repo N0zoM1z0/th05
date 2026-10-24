@@ -13,10 +13,15 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-Work has started with private target attestation, reproducible tooling and an
-independent exact oracle. No authored-byte denominator has been accepted yet;
-unreviewed ownership is not silently excluded. Packed-file equality and decoded
-function equality will be reported separately.
+The first **6 C++ functions / 91 authored instruction bytes** pass two cold
+builds, complete raw unit comparison, relocation checks and a compiled negative
+control. Their complete extents contain 96 bytes including five excluded NOPs.
+The oracle supplies explicit original external-symbol bindings; whole-program
+placement and standalone linkage remain open.
+
+No global authored-byte denominator has been accepted yet; the overall
+percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
+[first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md).
 
 ## Setup
 

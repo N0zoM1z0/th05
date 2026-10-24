@@ -24,3 +24,9 @@ Packed executable exactness is distinct from decoded-image exactness. A
 decoded match must name the unpacking method and target digest. It does not
 claim the original packed container was regenerated. Whole-program exactness
 requires complete layout, relocations, headers, overlays and packing equality.
+
+Bounded C++ units may use explicit, target-observed external-symbol bindings
+in a symbol-only linker scaffold. Such an oracle compares unmodified output
+bytes and relative fixup sites at reviewed target extents. It does not accept
+whole-program placement or standalone linkage. All scaffold origin holes and
+explicitly reproduced alignment bytes receive zero authored instruction credit.

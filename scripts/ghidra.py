@@ -17,7 +17,8 @@ from lib.analysis import (
     repository_path,
     validate_project_root,
 )
-from lib.pc98 import parse_mz
+from lib.pc98 import MZImage, parse_mz
+from lib.ghidra import parse_properties
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
 
 
@@ -44,7 +45,7 @@ def project_name(artifact_id: str) -> str:
 
 def environment(config: dict[str, object]) -> dict[str, str]:
     result = os.environ.copy()
-    result.update({"DISPLAY": "", "WAYLAND_DISPLAY": "", "JAVA_TOOL_OPTIONS": "-Djava.awt.headless=true"})
+    result.update({"DISPLAY": "", "WAYLAND_DISPLAY": ""})
     ghidra_home = repository_path(ROOT, config["ghidra"]["stable_path"])
     jdk_home = repository_path(ROOT, config["temurin_jdk"]["stable_path"])
     xdg_root = repository_path(ROOT, config["private_paths"]["xdg_root"])
@@ -60,8 +61,19 @@ def environment(config: dict[str, object]) -> dict[str, str]:
     result["JAVA_HOME"] = str(jdk_home)
     result["GHIDRA_MAXMEM"] = "384M"
     result["GHIDRA_HEADLESS_MAXMEM"] = "384M"
-    result["GHIDRA_HEADLESS_JAVA_OPTIONS"] = "-XX:+UseSerialGC -XX:ActiveProcessorCount=1"
-    result["JAVA_TOOL_OPTIONS"] = "-Djava.awt.headless=true -Xms64m -Xmx384m -XX:ActiveProcessorCount=1"
+    result["GHIDRA_HEADLESS_JAVA_OPTIONS"] = (
+        "-XX:+UseSerialGC -XX:CICompilerCount=2 "
+        "-XX:ReservedCodeCacheSize=64m -XX:ActiveProcessorCount=1"
+    )
+    # Also constrain the launch-support JVMs that run before the analyzer.
+    result["JDK_JAVA_OPTIONS"] = (
+        "-XX:+UseSerialGC -XX:CICompilerCount=2 "
+        "-XX:ReservedCodeCacheSize=64m -XX:ActiveProcessorCount=1"
+    )
+    result["JAVA_TOOL_OPTIONS"] = (
+        "-Djava.awt.headless=true -Xms64m -Xmx384m -XX:+UseSerialGC "
+        "-XX:CICompilerCount=2 -XX:ReservedCodeCacheSize=64m -XX:ActiveProcessorCount=1"
+    )
     result["DISPLAY"] = ""
     result["WAYLAND_DISPLAY"] = ""
     return result
@@ -83,12 +95,50 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--project-name", help="override the per-artifact project name")
     parser.add_argument("--export-dir", type=Path)
     subparsers = parser.add_subparsers(dest="command", required=True)
-    import_parser = subparsers.add_parser("import", help="clean import, analyze, export, and attest")
-    import_parser.add_argument("--no-analysis", action="store_true", help="loader-only calibration import")
+    import_parser = subparsers.add_parser("import", help="loader-only import, export, and attest")
+    mode = import_parser.add_mutually_exclusive_group()
+    mode.add_argument("--analyze", action="store_true",
+                      help="explicitly enable whole-program automatic analysis")
+    mode.add_argument("--no-analysis", action="store_true",
+                      help="compatibility flag: loader-only import (the default)")
     import_parser.add_argument("--analysis-timeout", type=int, default=1800)
     import_parser.add_argument("--max-cpu", type=int, default=1)
     subparsers.add_parser("check", help="read-only export and independent database attestation")
+    range_parser = subparsers.add_parser("range",
+        help="export a bounded load-module range without automatic analysis")
+    range_parser.add_argument("--load-offset", type=lambda value: int(value, 0), required=True,
+                              help="offset from the start of the unrelocated MZ load module")
+    range_parser.add_argument("--length", type=lambda value: int(value, 0), required=True,
+                              help="complete byte extent, from 1 through 4096")
+    range_parser.add_argument("--disassemble", action="store_true",
+                              help="decode only these bytes using non-mutating pseudo instructions")
     return parser.parse_args()
+
+
+def validate_range(load_offset: int, length: int, image_size: int) -> None:
+    if load_offset < 0 or not 1 <= length <= 4096:
+        raise AnalysisError("range requires a nonnegative load offset and 1..4096 bytes")
+    if load_offset + length > image_size:
+        raise AnalysisError("requested range exceeds the complete target load module")
+
+
+def validate_range_export(export_dir: Path, image: MZImage, load_offset: int,
+                          length: int, load_segment: int, expected_nonce: str) -> None:
+    """Bind the exported source and relocated bytes to the independently read target."""
+    validate_range(load_offset, length, len(image.program_image))
+    metadata = parse_properties(export_dir / "range.properties")
+    expected_metadata = {"export_nonce": expected_nonce, "load_module_offset": str(load_offset),
+                "length": str(length), "load_segment": str(load_segment)}
+    if any(metadata.get(key) != value for key, value in expected_metadata.items()):
+        raise AnalysisError("range metadata or fresh export nonce disagrees with the request")
+    raw = (export_dir / "range-filebytes.bin").read_bytes()
+    memory = (export_dir / "range-memory.bin").read_bytes()
+    if raw != image.program_image[load_offset:load_offset + length]:
+        raise AnalysisError("range FileBytes disagree with the pinned target")
+    expected_memory = image.relocated_program_image(load_segment)[load_offset:load_offset + length]
+    if memory != expected_memory:
+        raise AnalysisError("range memory disagrees with the independently relocated target")
+    print(f"PASS bounded range load={load_segment:04x} offset=0x{load_offset:x} bytes={length}")
 
 
 def main() -> int:
@@ -101,6 +151,8 @@ def main() -> int:
             raise AnalysisError("the current Ghidra workflow requires a DOS MZ target")
         target = read_verified_artifact(ROOT, artifact)
         image = parse_mz(target)
+        if args.command == "range":
+            validate_range(args.load_offset, args.length, len(image.program_image))
 
         configured_project_root = args.project_root
         if configured_project_root is None and os.environ.get("TH05_GHIDRA_PROJECT_ROOT"):
@@ -114,14 +166,15 @@ def main() -> int:
         name = args.project_name or project_name(args.artifact_id)
         if not name or any(character in "/\\" for character in name) or name.startswith("."):
             raise AnalysisError(f"unsafe Ghidra project name: {name!r}")
-        export_dir = private_export(
-            args.export_dir or ROOT / ".analysis" / "ghidra" / "exports" / args.artifact_id
-        )
+        default_export = ROOT / ".analysis" / "ghidra" / "exports" / args.artifact_id
+        if args.command == "range":
+            default_export /= f"range-{args.load_offset:06x}-{args.length:x}"
+        export_dir = private_export(args.export_dir or default_export)
         project_file = project_root / f"{name}.gpr"
         project_store = project_root / f"{name}.rep"
 
-        run_checked([sys.executable, "scripts/attest_analysis_toolchain.py"])
         env = environment(analysis_config)
+        run_checked([sys.executable, "scripts/attest_analysis_toolchain.py"], env=env)
         analyzer = repository_path(
             ROOT, analysis_config["ghidra"]["stable_path"]
         ) / "support" / "analyzeHeadless"
@@ -135,6 +188,14 @@ def main() -> int:
             str(image.header.declared_file_size),
             export_nonce,
         ]
+        if args.command == "range":
+            postscript.extend([
+                "-postScript", "ExportLoadRange.java", str(export_dir),
+                str(args.load_offset), str(args.length),
+                str(analysis_config["mz_loader"]["load_segment"]),
+                str(image.header.header_size),
+                "disassemble" if args.disassemble else "bytes", export_nonce,
+            ])
         common = [
             "-scriptPath",
             str(SCRIPT_DIR),
@@ -156,7 +217,7 @@ def main() -> int:
                 "-cspec",
                 str(analysis_config["mz_loader"]["compiler_spec_id"]),
             ]
-            if args.no_analysis:
+            if not args.analyze:
                 import_options.append("-noanalysis")
             else:
                 if args.analysis_timeout <= 0 or args.max_cpu <= 0:
@@ -201,6 +262,9 @@ def main() -> int:
                 export_nonce,
             ]
         )
+        if args.command == "range":
+            validate_range_export(export_dir, image, args.load_offset, args.length,
+                                  int(analysis_config["mz_loader"]["load_segment"]), export_nonce)
         return 0
     except (
         AnalysisError,
