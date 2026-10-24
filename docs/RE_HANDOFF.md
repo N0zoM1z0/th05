@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **155 bounded C++ CODE/DATA units / 308 complete function occurrences**,
-**54,897 authored bytes exact**: 46,040 CODE and 8,857 initialized DATA.
-CODE is 45,534 instruction plus 506 semantic compiler-table bytes.
-Complete compared extents total 54,928; 31 checked padding bytes receive
-no credit. MAIN has 226 functions / 33,475 CODE / 199 DATA;
+Current acceptance: **165 bounded C++ CODE/DATA units / 321 complete function occurrences**,
+**57,297 authored bytes exact**: 48,440 CODE and 8,857 initialized DATA.
+CODE is 47,918 instruction plus 522 semantic compiler-table bytes.
+Complete compared extents total 57,329; 32 checked padding bytes receive
+no credit. MAIN has 239 functions / 35,875 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -44,6 +44,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | Sara complete stage-one behavior | `main-sara-a` |
 | Stage-two and three movement/pattern helpers | `main-midboss-stage2-patterns-a`, `main-midboss-stage3-patterns-a` |
 | Stage-four transition movement | `main-midboss-transition4-a` |
+| Louise movement and Yumeko opening patterns | `main-louise-flystep-a`, `main-yumeko-patterns-b` |
+| Alice final spread and five complete puppet callbacks | `main-alice-final-spread-a`, `main-alice-puppet-scopes-a` |
+| Louise complete phase callback | `main-louise-update-a` |
 | Louise later and Alice charge patterns | `main-louise-later-patterns-d`, `main-alice-charge-patterns-a` |
 | Louise charge/initial patterns and Alice puppet beam | `main-louise-initial-patterns-a`, `main-alice-puppet-beam-a` |
 | Stage-five and Extra movement/pattern helpers | `main-midboss5-extra-patterns-a` |
@@ -449,3 +452,44 @@ recorded by independent hashes. MAIN combines CL and Master claims through the
 same overlap-rejecting overlay and retains separate decision digests. A native
 `ownership.py --write --verify-targets` run confirms all319,268 coordinates and
 3,277 vendor bytes, while authored bytes and the null denominator are unchanged.
+
+
+### Louise phase callback
+
+`main-louise-update-a` accepts the full582-byte far callback, including the
+original table-prefix zero and eight-word switch table. Authored credit is581
+bytes (565 instructions plus16 table bytes), one complete function. Both fresh
+raw/ordered producers agree, including the sole relocation at relative121;
+phase-end HP3000→3001 is rejected. The actual movement API remains a truthful
+near Pascal(speed,duration) helper; all four packed calls and background
+callback context are preserved. Existing charge, bullet and laser helpers and
+headers remain unchanged.
+
+
+### Louise movement, Yumeko and complete Alice helper scopes
+
+Louise's genuine Pascal movement passes122 bytes in `main-louise-flystep-a`.
+Yumeko's bounce/sword/ring group passes435 bytes/three functions in
+`main-yumeko-patterns-b`; the only initial semantic error was reversed gather
+colors, corrected from(frame,6,7) to(frame,7,6). Both independent receipts have
+their own336→335 boundary control and two fresh deterministic raw/ordered
+positives, with no table/padding/DATA/BSS credit.
+
+Alice's final spread passes as a standalone63-byte owner with true external
+frames and its own speed2→3 mutation. Five puppet callbacks pass individually
+in `main-alice-puppet-scopes-a` (556 bytes total). The two real TU producers
+are shared, but every complete function's raw bytes, immediate public
+boundary and original ordered fixup[22] are checked separately. The aiming
+control is compiled in the second spread scope; no whole556-byte global
+fixup-order claim or independent negative per sibling is made.
+
+The natural Alice update remains unaccepted: its939-byte callback lacks one
+original table-prefix zero, despite retaining the real63-byte predecessor.
+The complete entrance/dispatcher owner now passes 643 instruction bytes/two
+functions in `main-alice-puppet-motion-d`. Early FAR/NEAR helper-reference
+producers emitted 710/690 bytes. Direct field easing removed address
+temporaries but emitted 634; a shared ordinary integer temporary across the
+mutually exclusive delta and callback-result paths recovered the original
+register allocation. Both fresh full raw/ordered producers pass, and the
+entrance angle decrement2→3 control is rejected. The failed whole update
+owner remains outside default replay and receives no callback credit.

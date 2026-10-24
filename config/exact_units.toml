@@ -1913,3 +1913,179 @@ unit = "main-alice-charge-patterns"
 source = "src/main/boss/alice/charge_patterns.cpp"
 find = "laser_template.coords.width.nonshrink = 8;"
 replace = "laser_template.coords.width.nonshrink = 9;"
+
+[[units]]
+id = "main-louise-update"
+source = "src/main/boss/louise/update.cpp"
+module = "th05/louiseu.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/louise_update_bindings.asm"
+target_start = 122176
+size = 582
+alignment_offsets = []
+padding_bytes = [{offset = 565, value = 0}]
+code_data_ranges = [{offset = 566, size = 16, kind = "compiler-switch-table"}]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-louise-update"
+source = "src/main/boss/louise/update.cpp"
+find = "boss.phase_end_hp = 3000;"
+replace = "boss.phase_end_hp = 3001;"
+
+[[units]]
+id = "main-yumeko-patterns"
+source = "src/main/boss/yumeko/patterns.cpp"
+module = "th05/yumepat.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zCB5_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_patterns_bindings.asm"
+target_start = 0x1eed5
+size = 435
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yumeko-bounce-right-bound"
+unit = "main-yumeko-patterns"
+source = "src/main/boss/yumeko/patterns.cpp"
+find = "boss.pos.cur.x.v >= to_sp(336)"
+replace = "boss.pos.cur.x.v >= to_sp(335)"
+
+[[units]]
+id = "main-louise-flystep"
+source = "src/main/boss/louise/flystep.cpp"
+module = "th05/louisef.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/louise_flystep_bindings.asm"
+target_start = 121022
+size = 122
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-louise-flystep"
+source = "src/main/boss/louise/flystep.cpp"
+find = "boss.pos.cur.x.v >= to_sp(336)"
+replace = "boss.pos.cur.x.v >= to_sp(335)"
+
+[[units]]
+id = "main-alice-final-spread"
+source = "src/main/boss/alice/final_spread.cpp"
+module = "th05/a_fspr.cpp"
+segment = "ALICE_FS_TEXT"
+wrapper_options = "-zCALICE_FS_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_final_spread_bindings.asm"
+target_start = 125271
+size = 63
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-alice-final-spread"
+source = "src/main/boss/alice/final_spread.inl"
+find = "bullet_template.speed.v = to_sp(2);"
+replace = "bullet_template.speed.v = to_sp(3);"
+
+[[units]]
+id = "main-alice-puppet-initial"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+module = "th05/a_pup.cpp"
+segment = "ALICE_PUP_TEXT"
+wrapper_options = "-zCALICE_PUP_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_patterns_bindings.asm"
+target_start = 123401
+size = 113
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "alice_puppet_initial(alicepuppet near&)"
+
+[[units]]
+id = "main-alice-puppet-spread"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+module = "th05/a_pup.cpp"
+segment = "ALICE_PUP_TEXT"
+wrapper_options = "-zCALICE_PUP_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_patterns_bindings.asm"
+target_start = 123514
+size = 114
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "alice_puppet_spread(alicepuppet near&)"
+
+[[units]]
+id = "main-alice-puppet-aimed-bursts"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+module = "th05/a_pup.cpp"
+segment = "ALICE_PUP_TEXT"
+wrapper_options = "-zCALICE_PUP_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_patterns_bindings.asm"
+target_start = 123628
+size = 117
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "alice_puppet_aimed_bursts(alicepuppet near&)"
+
+[[units]]
+id = "main-alice-puppet-ring-bursts"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+module = "th05/a_pup.cpp"
+segment = "ALICE_PUP_TEXT"
+wrapper_options = "-zCALICE_PUP_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_patterns_bindings.asm"
+target_start = 123745
+size = 117
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "alice_puppet_ring_bursts(alicepuppet near&)"
+
+[[units]]
+id = "main-alice-puppet-rings"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+module = "th05/a_pup.cpp"
+segment = "ALICE_PUP_TEXT"
+wrapper_options = "-zCALICE_PUP_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_patterns_bindings.asm"
+target_start = 123862
+size = 95
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "alice_puppet_rings(alicepuppet near&)"
+
+[[controls]]
+unit = "main-alice-puppet-spread"
+source = "src/main/boss/alice/puppet_patterns.cpp"
+find = "bullet_template.group = BG_SPREAD_STACK_AIMED;"
+replace = "bullet_template.group = BG_SPREAD_STACK;"
+
+[[units]]
+source = "src/main/boss/alice/puppet_motion.cpp"
+module = "th05/a_pmov.cpp"
+segment = "ALICE_PMV_TEXT"
+wrapper_options = "-zCALICE_PMV_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_puppet_motion_bindings.asm"
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "main-alice-puppet-motion"
+target_start = 122758
+size = 643
+
+[[controls]]
+unit = "main-alice-puppet-motion"
+source = "src/main/boss/alice/puppet_motion.cpp"
+find = "alice_puppet0.angle -= 2;"
+replace = "alice_puppet0.angle -= 3;"
