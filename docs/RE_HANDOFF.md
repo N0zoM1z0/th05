@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 29 bounded C++ units, 80 complete functions, 13,583 compared
-bytes and 13,567 authored code bytes: 13,291 instructions plus 276 bytes of
+Current acceptance: 30 bounded C++ units, 82 complete functions, 14,175 compared
+bytes and 14,159 authored code bytes: 13,883 instructions plus 276 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -22,6 +22,7 @@ Global percentage remains unmeasured pending complete ownership review.
 | Mima shots | `mima-shots-b` |
 | Bullet generation clipping | `bullet-clip-d` |
 | Stage initialization | `stage-setup-a` |
+| Cheeto allocation and homing update | `cheeto-update-b` |
 | 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
@@ -73,7 +74,11 @@ in both saved producers, recorded separately as a private observation with no
 additional progress credit. Source notes explain the corrected original end
 boundary; the survey's extra score function does not belong to this extent.
 
-Next natural candidate: cheeto spawning and homing update, prepared independently
+Cheeto allocation/homing now passes its complete 592-byte contribution and
+compiled collision-width mutation. The template view is 25 bytes inside a true
+26-byte custom slot; compiler assertions verify all real field offsets.
+
+Next natural candidate: regular and special bullet updates, prepared independently
 under the bullet owner. Continue focused compilation and complete-function
 acceptance. Do not restore fake-zero helpers or hand-emitted compiler bodies.
 

@@ -13,11 +13,11 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **80 C++ functions / 13,567 authored code bytes** pass two cold
+The first **82 C++ functions / 14,159 authored code bytes** pass two cold
 builds, complete raw unit comparison, relocation checks and a compiled negative
-control. Their complete extents contain 13,583 bytes including sixteen excluded
+control. Their complete extents contain 14,175 bytes including sixteen excluded
 padding bytes. Authored code includes 276 bytes of compiler-generated switch
-tables, reproduced from semantic C++ switches; instruction bytes total 13,291.
+tables, reproduced from semantic C++ switches; instruction bytes total 13,883.
 The oracle supplies explicit original external-symbol bindings; whole-program
 placement and standalone linkage remain open.
 

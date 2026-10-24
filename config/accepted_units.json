@@ -2,31 +2,20 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "bd70cc2862523d6f8769128f9dc6e8e03cd3e087049ce41ed69d0dfcc8f79032",
+  "replay_receipt_sha256": "57987bb6577ec39e9aee38ee7314600dec74d98f18c0d9522720a6e277b7fa38",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 68119,
-    "candidate_start": 68119,
-    "size": 104,
-    "candidate_size": 105,
-    "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
-    "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+    "target_start": 108590,
+    "candidate_start": 108590,
+    "size": 592,
+    "target_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+    "candidate_sha256": "67340ac8f6c73d33df8500f2be099b7accebed5575b79ca0c471dabd65179995",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 68119,
-      "size": 105,
-      "function_symbol": "sara_bg_render()",
-      "contribution_start": 68119,
-      "contribution_size": 826,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "louise_bg_render()"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -7015,6 +7004,200 @@
           ]
         }
       }
+    },
+    {
+      "id": "main-cheeto-update",
+      "entry_sha256": "8182b204bdedec9c57b52dc4cd62a3ea855ca1c8a7a44d5692da66b3feca2044",
+      "result": {
+        "id": "main-cheeto-update",
+        "entry_sha256": "8182b204bdedec9c57b52dc4cd62a3ea855ca1c8a7a44d5692da66b3feca2044",
+        "rounds": [
+          {
+            "target_start": 108590,
+            "candidate_start": 108590,
+            "size": 592,
+            "target_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+            "candidate_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 108590,
+            "candidate_start": 108590,
+            "size": 592,
+            "target_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+            "candidate_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0b2092b4de41778a861f97a5f0b0278bd22787f3ec3d22aef210725a010b8ea1",
+            "dependency_timestamp_normalized_sha256": "f3cf7cf7c82e22239e0847cf71fb4f7b5e5f550e29ed1602120d7c1fc797e9bb",
+            "module_name": "th05/cheeto_u.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cheeto_u.cpp",
+              "src/main/bullet/cheeto.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "8fbe8736f7202442f221e76ab9baf91a4f82a81445799c10beae08fa362a8757",
+            "dependency_timestamp_normalized_sha256": "f3cf7cf7c82e22239e0847cf71fb4f7b5e5f550e29ed1602120d7c1fc797e9bb",
+            "module_name": "th05/cheeto_u.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cheeto_u.cpp",
+              "src/main/bullet/cheeto.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/cheeto_update_bindings.asm",
+            "sha256": "ffd7b685b9b020ff206c891fc1e969d9642361feb52b084404c8c4e7660f52ea"
+          },
+          {
+            "path": "src/main/bullet/cheeto.cpp",
+            "sha256": "549b002fcc941d0382a4dc8f6377f4547244c1d30f575a1931405e5973a29e1a"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/cheeto_update_bindings.asm",
+          "sha256": "ffd7b685b9b020ff206c891fc1e969d9642361feb52b084404c8c4e7660f52ea"
+        },
+        {
+          "path": "src/main/bullet/cheeto.cpp",
+          "sha256": "549b002fcc941d0382a4dc8f6377f4547244c1d30f575a1931405e5973a29e1a"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "57987bb6577ec39e9aee38ee7314600dec74d98f18c0d9522720a6e277b7fa38",
+      "compiled_negative_control": {
+        "target_start": 108590,
+        "candidate_start": 108590,
+        "size": 592,
+        "target_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+        "candidate_sha256": "67340ac8f6c73d33df8500f2be099b7accebed5575b79ca0c471dabd65179995",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-cheeto-update",
+        "entry_sha256": "8182b204bdedec9c57b52dc4cd62a3ea855ca1c8a7a44d5692da66b3feca2044",
+        "mutation": {
+          "unit": "main-cheeto-update",
+          "source": "src/main/bullet/cheeto.cpp",
+          "find": "static const subpixel_t HEAD_KILLBOX_W = TO_SP(16);",
+          "replace": "static const subpixel_t HEAD_KILLBOX_W = TO_SP(15);"
+        },
+        "control_sha256": "cdbf62fdc7d8a8aff02a8511a5ebeeddb2c6a967bbd4c331d1a8d1e3e46c4561",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 108590,
+          "candidate_start": 108590,
+          "size": 592,
+          "target_sha256": "fa5f7b4e3527a5a024b7c2953adbe32a302702ada73fa9d224ab2ff765198063",
+          "candidate_sha256": "67340ac8f6c73d33df8500f2be099b7accebed5575b79ca0c471dabd65179995",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "caad4c9d1606c43880c1cba2b23899d6a43c243457ecfcb564a4fcb622de08d9",
+          "dependency_timestamp_normalized_sha256": "f80aac00e695628f20e6a29a9bc1a33790b75eb2e01719b55ef20e083a1891ab",
+          "module_name": "th05/cheeto_u.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cheeto_u.cpp",
+            "src/main/bullet/cheeto.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": true
     }
   ]
 }

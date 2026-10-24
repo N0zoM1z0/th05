@@ -515,3 +515,22 @@ unit = "main-stage-setup"
 source = "src/main/stage/setup.cpp"
 find = "midboss.frames_until = 2500;"
 replace = "midboss.frames_until = 2501;"
+
+[[units]]
+id = "main-cheeto-update"
+source = "src/main/bullet/cheeto.cpp"
+module = "th05/cheeto_u.cpp"
+segment = "CHEETO_U_TEXT"
+target_start = 0x1a82e
+size = 592
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/cheeto_update_bindings.asm"
+
+[[controls]]
+unit = "main-cheeto-update"
+source = "src/main/bullet/cheeto.cpp"
+find = "static const subpixel_t HEAD_KILLBOX_W = TO_SP(16);"
+replace = "static const subpixel_t HEAD_KILLBOX_W = TO_SP(15);"
