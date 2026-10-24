@@ -1,0 +1,280 @@
+{
+  "schema_version": 2,
+  "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
+  "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+  "replay_receipt_sha256": "393b7bb597f0f986b6d3aa5ae91a4068a226ff00202a4c745747830434a5fff0",
+  "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "compiled_negative_rejected": true,
+  "compiled_negative_control": {
+    "target_start": 60958,
+    "candidate_start": 60958,
+    "size": 29,
+    "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+    "candidate_sha256": "f473ee16eb9010b8f406aa164f3de25cff99ab0b0d16cccb9ab91fd7a042ee8c",
+    "raw_exact": false,
+    "target_fixups": [],
+    "candidate_fixups": [],
+    "fixups_exact": true,
+    "exact": false
+  },
+  "units": [
+    {
+      "id": "maine-kaja-interrupt",
+      "entry_sha256": "9c0e4a68650b72cf2c45bff41d1ed2c92dab613b629a99466b97b1be7b7964bb",
+      "result": {
+        "id": "maine-kaja-interrupt",
+        "entry_sha256": "9c0e4a68650b72cf2c45bff41d1ed2c92dab613b629a99466b97b1be7b7964bb",
+        "rounds": [
+          {
+            "target_start": 60958,
+            "candidate_start": 60958,
+            "size": 29,
+            "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+            "candidate_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 60958,
+            "candidate_start": 60958,
+            "size": 29,
+            "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+            "candidate_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "98c3ffbf87727a560cda3e9279cfc8fe5653ff6c752c6d7dc772213adf5ae981",
+            "dependency_timestamp_normalized_sha256": "45d5fb2271c5a6695ead3900e53eee7e61f697773f099c67bcb08bfb4d256a43",
+            "module_name": "th05/snd_kaja.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_kaja.cpp",
+              "src/shared/sound/kaja.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          },
+          {
+            "sha256": "0273563bbfc155703a88e250754941ea53a3cfa588b1d46b16f931d340024407",
+            "dependency_timestamp_normalized_sha256": "45d5fb2271c5a6695ead3900e53eee7e61f697773f099c67bcb08bfb4d256a43",
+            "module_name": "th05/snd_kaja.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_kaja.cpp",
+              "src/shared/sound/kaja.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_kaja.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_kaja.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_kaja_bindings.asm",
+            "sha256": "847b252e2b75143317c6d9331e3d807226e53f7f27f5cd93f3461a1c63a20d6e"
+          },
+          {
+            "path": "src/shared/sound/kaja.cpp",
+            "sha256": "40d428dcc8d67d36e7418adeb98c090ede570cda5653f8e59cba4c7f6fe17005"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_kaja_bindings.asm",
+          "sha256": "847b252e2b75143317c6d9331e3d807226e53f7f27f5cd93f3461a1c63a20d6e"
+        },
+        {
+          "path": "src/shared/sound/kaja.cpp",
+          "sha256": "40d428dcc8d67d36e7418adeb98c090ede570cda5653f8e59cba4c7f6fe17005"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "393b7bb597f0f986b6d3aa5ae91a4068a226ff00202a4c745747830434a5fff0",
+      "compiled_negative_control": {
+        "target_start": 60958,
+        "candidate_start": 60958,
+        "size": 29,
+        "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+        "candidate_sha256": "f473ee16eb9010b8f406aa164f3de25cff99ab0b0d16cccb9ab91fd7a042ee8c",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-kaja-interrupt",
+        "entry_sha256": "9c0e4a68650b72cf2c45bff41d1ed2c92dab613b629a99466b97b1be7b7964bb",
+        "mutation": {
+          "unit": "maine-kaja-interrupt",
+          "source": "src/shared/sound/kaja.cpp",
+          "find": "snd_bgm_mode != 3",
+          "replace": "snd_bgm_mode != 2"
+        },
+        "control_sha256": "96781c512632185f29774ac1d0ef1eef4d3d2595f26be7ddcc1b3f93305029b2",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 60958,
+          "candidate_start": 60958,
+          "size": 29,
+          "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
+          "candidate_sha256": "f473ee16eb9010b8f406aa164f3de25cff99ab0b0d16cccb9ab91fd7a042ee8c",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "1b43e9b9d2b3943bdb1da968c1dad5fbcf4f878815e19848b9eda2f540633512",
+          "dependency_timestamp_normalized_sha256": "61efc4db47db7cd54f8c4df95d551903747ae1fe7bc997243c1dd57c59fdf878",
+          "module_name": "th05/snd_kaja.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_kaja.cpp",
+            "src/shared/sound/kaja.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/snd_kaja.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    }
+  ],
+  "artifact": "th05-maine",
+  "target_view": {
+    "artifact": "th05-maine",
+    "kind": "decoded-load-module-only",
+    "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+    "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+    "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+    "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+    "payload_size": 77396,
+    "relocation_count": 667,
+    "runs": [
+      {
+        "decoded_end": 77396,
+        "dos_version_calls": 0,
+        "final_cs": 4096,
+        "final_ip": 0,
+        "final_sp": 128,
+        "final_ss": 11368,
+        "instruction_count": 909823,
+        "load_segment": 4096,
+        "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+        "transfer_site": 79302
+      },
+      {
+        "decoded_end": 77396,
+        "dos_version_calls": 0,
+        "final_cs": 13107,
+        "final_ip": 0,
+        "final_sp": 128,
+        "final_ss": 20379,
+        "instruction_count": 909823,
+        "load_segment": 13107,
+        "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+        "transfer_site": 79302
+      }
+    ]
+  }
+}

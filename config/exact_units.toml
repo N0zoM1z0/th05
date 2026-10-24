@@ -573,3 +573,22 @@ unit = "main-enemies-render"
 source = "src/main/enemy/enemies_render.cpp"
 find = "static const int ENEMY_W = 32;"
 replace = "static const int ENEMY_W = 30;"
+
+[[units]]
+id = "main-kaja-interrupt"
+source = "src/shared/sound/kaja.cpp"
+module = "th05/snd_kaja.cpp"
+segment = "SHARED"
+target_start = 0x14f5c
+size = 29
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+binary = "O"
+bindings_source = "probes/units/main_kaja_bindings.asm"
+
+[[controls]]
+unit = "main-kaja-interrupt"
+source = "src/shared/sound/kaja.cpp"
+find = "snd_bgm_mode != 3"
+replace = "snd_bgm_mode != 2"

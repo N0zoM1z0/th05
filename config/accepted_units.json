@@ -2,24 +2,18 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "8d58cccb38bbeaf309541c1f1777738d07ad88005ff8d44f9c996a13455c528d",
+  "replay_receipt_sha256": "12c310921f6118a59a263da8357652c161f81c372754d865072f31b6aa347107",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 57168,
-    "candidate_start": 57168,
-    "size": 207,
-    "target_sha256": "527c9dc3b95b741ede2f3922851ce064e60de3224d5baf0f2cb650f3ae6c4017",
-    "candidate_sha256": "4c74c0f0a0366d151939c166bbc8c93a192cec115ed0b0b33c53ff07f2038bc5",
+    "target_start": 85852,
+    "candidate_start": 85852,
+    "size": 29,
+    "target_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+    "candidate_sha256": "6838e65898bb2932471c2733eb24c4d7b806014ddfd3e74e80fbd4d3dc891683",
     "raw_exact": false,
-    "target_fixups": [
-      183,
-      160
-    ],
-    "candidate_fixups": [
-      183,
-      160
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -7777,6 +7771,191 @@
             "src/shared/abi.hpp"
           ]
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-kaja-interrupt",
+      "entry_sha256": "e448717717480110f5d69e8d89ed09e643e3020ab6798fef280cc11a5b654139",
+      "result": {
+        "id": "main-kaja-interrupt",
+        "entry_sha256": "e448717717480110f5d69e8d89ed09e643e3020ab6798fef280cc11a5b654139",
+        "rounds": [
+          {
+            "target_start": 85852,
+            "candidate_start": 85852,
+            "size": 29,
+            "target_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+            "candidate_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 85852,
+            "candidate_start": 85852,
+            "size": 29,
+            "target_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+            "candidate_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "198eda150cd1a4be0b6365b1b3938ea27f3e1cd8cfec18682edca697b9a41ee7",
+            "dependency_timestamp_normalized_sha256": "45d5fb2271c5a6695ead3900e53eee7e61f697773f099c67bcb08bfb4d256a43",
+            "module_name": "th05/snd_kaja.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_kaja.cpp",
+              "src/shared/sound/kaja.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          },
+          {
+            "sha256": "cf5a52c92ff35c1afacdc98b904061828247b80a456020f020a6324f95852fa9",
+            "dependency_timestamp_normalized_sha256": "45d5fb2271c5a6695ead3900e53eee7e61f697773f099c67bcb08bfb4d256a43",
+            "module_name": "th05/snd_kaja.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_kaja.cpp",
+              "src/shared/sound/kaja.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_kaja.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_kaja.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_kaja_bindings.asm",
+            "sha256": "36a4a37760d12e09c46d7a679849559d58d66e6a68f54ec2054255b6c4621086"
+          },
+          {
+            "path": "src/shared/sound/kaja.cpp",
+            "sha256": "40d428dcc8d67d36e7418adeb98c090ede570cda5653f8e59cba4c7f6fe17005"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_kaja_bindings.asm",
+          "sha256": "36a4a37760d12e09c46d7a679849559d58d66e6a68f54ec2054255b6c4621086"
+        },
+        {
+          "path": "src/shared/sound/kaja.cpp",
+          "sha256": "40d428dcc8d67d36e7418adeb98c090ede570cda5653f8e59cba4c7f6fe17005"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "12c310921f6118a59a263da8357652c161f81c372754d865072f31b6aa347107",
+      "compiled_negative_control": {
+        "target_start": 85852,
+        "candidate_start": 85852,
+        "size": 29,
+        "target_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+        "candidate_sha256": "6838e65898bb2932471c2733eb24c4d7b806014ddfd3e74e80fbd4d3dc891683",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-kaja-interrupt",
+        "entry_sha256": "e448717717480110f5d69e8d89ed09e643e3020ab6798fef280cc11a5b654139",
+        "mutation": {
+          "unit": "main-kaja-interrupt",
+          "source": "src/shared/sound/kaja.cpp",
+          "find": "snd_bgm_mode != 3",
+          "replace": "snd_bgm_mode != 2"
+        },
+        "control_sha256": "2c54a97971d3012ee377d42d379d364bffa148a03760d814437eb7b5b00d1c06",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 85852,
+          "candidate_start": 85852,
+          "size": 29,
+          "target_sha256": "5a808fba47e9f6195fe7f6a1a321886d3d5f023106e75448b4080db86162ed4f",
+          "candidate_sha256": "6838e65898bb2932471c2733eb24c4d7b806014ddfd3e74e80fbd4d3dc891683",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "42dc806d79b74e61638a03904a7a1e38a0ebd81a1bdcfc1c046be0f95373c893",
+          "dependency_timestamp_normalized_sha256": "61efc4db47db7cd54f8c4df95d551903747ae1fe7bc997243c1dd57c59fdf878",
+          "module_name": "th05/snd_kaja.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_kaja.cpp",
+            "src/shared/sound/kaja.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/snd_kaja.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }

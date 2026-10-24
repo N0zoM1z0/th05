@@ -80,3 +80,14 @@ A mixed-result receipt retains its aggregate failure. Explicit subset import
 rechecks all saved producers and can accept only independently passing complete
 functions, including the compiled negative-control owner. It never edits the
 receipt or recompiles solely to discard an inexact neighbor.
+
+When an owner defines BSS state, scaffold stack allocation affects real symbol
+positions. In OP main menu, `.stack 80h` inserted alignment plus a stack member
+before BSS, shifting references by 84h. Omitting that artificial member restored
+all original addresses; no game algorithm needed changing. Inspect DGROUP's
+actual MAP members before adjusting declarations or adding any padding.
+
+Japanese UI source remains readable UTF8. Opt-in CP932 staging preserves the
+actual compiler byte stream with separate digests and independent import checks.
+OP main menu verifies this with real Borland producers, including its complete
+semantic string/pointer DATA contribution as a separate uncredited observation.

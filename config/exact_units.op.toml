@@ -22,3 +22,32 @@ unit = "op-kaja-interrupt"
 source = "src/shared/sound/kaja.cpp"
 find = "snd_bgm_mode != 3"
 replace = "snd_bgm_mode != 2"
+
+[[units]]
+id = "op-main-menu"
+source = "src/op/main/menu.cpp"
+module = "th05/op_main.cpp"
+segment = "OP_MAIN_TEXT"
+target_start = 0xa39c
+size = 3291
+padding_bytes = [{offset = 0x5bb, value = 0}]
+alignment_offsets = []
+code_data_ranges = [
+  {offset = 0x250, size = 10, kind = "compiler-switch-table"},
+  {offset = 0x36f, size = 12, kind = "compiler-switch-table"},
+  {offset = 0x5bc, size = 16, kind = "compiler-switch-table"},
+  {offset = 0x827, size = 12, kind = "compiler-switch-table"},
+  {offset = 0xb95, size = 12, kind = "compiler-switch-table"},
+  {offset = 0xba1, size = 12, kind = "compiler-switch-table"},
+]
+functions = 9
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_main_bindings.asm"
+
+[[controls]]
+unit = "op-main-menu"
+source = "src/op/main/menu.cpp"
+find = "if(idle_frame >= 640)"
+replace = "if(idle_frame >= 639)"

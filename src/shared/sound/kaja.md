@@ -25,5 +25,18 @@ and a compiled change of the MIDI discriminator from 3 to 2. Both complete raw
 comparisons pass; the changed producer is rejected. The importer independently
 rechecks frozen decoded bytes/proof, both MZ/MAP/OMF producers, actual O binary
 arguments, source inputs and negative control. Public source-current acceptance
-is in `config/accepted_units.op.json`. No MAIN or MAINE scope inherits this
-acceptance even though the maintained source can be reused there.
+is in `config/accepted_units.op.json`. MAIN and MAINE now have independent passing receipts in
+`.analysis/unit-replays/main-kaja-a` and `maine-kaja-a`. Both preserve the real O
+compiler context used by the reference for this shared producer, overriding the
+artifact default explicitly. Each has its own two fresh producers, compiled
+mutation and target checks; acceptance does not transfer between artifacts.
+
+| Artifact | Complete load extent | True far frame:offset | DGROUP flag |
+| --- | --- | --- | --- |
+| MAIN | `14F5C..14F79` | `14AB:04AC` | `209D:0836` |
+| OP decoded | `DC76..DC93` | `0D30:0976` | `0EFE:0A62` |
+| MAINE decoded | `EE1E..EE3B` | `0E80:061E` | `1011:06DC` |
+
+The MAINE frame is independently established by ten original far callers,
+rather than copying the calibration's E7F frame. MAIN has seven such callers.
+The following NOP in each target is excluded from the accepted function.
