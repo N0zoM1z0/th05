@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **143 bounded C++ CODE/DATA units / 272 complete function occurrences**,
-**49,507 authored bytes exact**: 40,650 CODE and 8,857 initialized DATA.
-CODE is 40,152 instruction plus 498 semantic compiler-table bytes.
-Complete compared extents total 49,537; 30 checked padding bytes receive
-no credit. MAIN has 190 functions / 28,085 CODE / 199 DATA;
+Current acceptance: **145 bounded C++ CODE/DATA units / 274 complete function occurrences**,
+**50,191 authored bytes exact**: 41,334 CODE and 8,857 initialized DATA.
+CODE is 40,836 instruction plus 498 semantic compiler-table bytes.
+Complete compared extents total 50,221; 30 checked padding bytes receive
+no credit. MAIN has 192 functions / 28,769 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -42,7 +42,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
 | Sara complete stage-one behavior | `main-sara-a` |
-| Stage-one, two and three midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a` |
+| Stage-one, two, three, five and Extra midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a`, `main-midboss5-extra-b` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
 | Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
@@ -334,3 +334,15 @@ cold raw producers agree; invincibility threshold192→193 is rejected. The
 original RETF ends the instruction stream, not the function contribution: the
 four-word table remains part of the complete comparison. All unrelated
 accepted evidence is reused unchanged.
+
+
+### Stage-five and Extra complete updates
+
+`main-midboss5-extra-b` accepts independent318-byte stage-five and366-byte
+Extra callbacks. Each has two fresh deterministic raw/ordered producers and
+its own compiled semantic control (bonus30→31, HP1000→1001). Neither owns a
+CODE table, padding, DATA or BSS. Real near pattern-pointer tables remain
+external. The initial stage-five wrapper stem had nine characters, so TCC
+emitted a short-name object; only its generated DOS alias was corrected before
+the successful replay. The replay command now rejects invalid DOS8.3 wrapper
+paths before accessing targets or running tools, with a CLI regression check.

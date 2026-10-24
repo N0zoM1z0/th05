@@ -1674,3 +1674,44 @@ unit = "main-midboss-stage3-update"
 source = "src/main/midboss/stage3.cpp"
 find = "if(midboss.phase_frame >= 192) {"
 replace = "if(midboss.phase_frame >= 193) {"
+
+[[units]]
+id = "main-midboss-stage5-update"
+source = "src/main/midboss/stage5.cpp"
+module = "th05/midbos5u.cpp"
+segment = "MAIN_036_TEXT"
+wrapper_options = "-zCMAIN_036_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage5_bindings.asm"
+target_start = 92402
+size = 318
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-stage5-update"
+source = "src/main/midboss/stage5.cpp"
+find = "midboss_score_bonus(30);"
+replace = "midboss_score_bonus(31);"
+
+[[units]]
+id = "main-midboss-extra-update"
+source = "src/main/midboss/extra.cpp"
+module = "th05/midbossx.cpp"
+segment = "MIDBOSSX_TEXT"
+wrapper_options = "-zCMIDBOSSX_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_extra_bindings.asm"
+target_start = 0x165b6
+size = 366
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "midboss-extra-health-threshold"
+unit = "main-midboss-extra-update"
+source = "src/main/midboss/extra.cpp"
+find = "midboss.hp < 1000"
+replace = "midboss.hp < 1001"

@@ -10,6 +10,7 @@ import argparse
 import fcntl
 import json
 from pathlib import Path
+import re
 import shutil
 import sys
 import tomllib
@@ -76,6 +77,11 @@ def translation_units(units: list[dict], *, binary: str = "M") -> list[list[dict
     """One real TU per compiler invocation, even when several functions qualify."""
     grouped = {}
     for entry in units:
+        module = entry["module"]
+        if (not isinstance(module, str) or not module or
+                any(re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_-]{0,7}(?:\.[A-Za-z0-9_]{1,3})?", part) is None
+                    for part in module.split("/"))):
+            raise ValueError(f"compiler wrapper module must use a relative DOS 8.3 path: {module}")
         key = entry["module"].replace("\\", "/").casefold()
         identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry))
         if key in grouped and grouped[key][0] != identity:
@@ -174,6 +180,7 @@ def main() -> int:
     manifest_bytes = manifest_path.read_bytes()
     manifest = tomllib.loads(manifest_bytes.decode()) if context.name == "main" else context.config()
     units, reasons = select_units(ROOT, manifest, args.units, ledger=context.ledger)
+    translation_units(units, binary=context.binary)
     if not units or args.plan:
         print(json.dumps({"selected": reasons, "work_required": bool(units), "tools_executed": False}, indent=2))
         return 0

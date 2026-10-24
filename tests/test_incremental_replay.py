@@ -120,6 +120,22 @@ class SourceScopeTests(unittest.TestCase):
         self.assertTrue((produced[0] / 'source/units.map').is_file())
         self.assertFalse((work / 'group-0/b').exists())
 
+    def test_long_dos_wrapper_fails_before_target_or_tool_access(self):
+        # TCC silently compiled this real nine-character stem to midb~tfh.obj.
+        # Reject the recipe before spending a compiler invocation on an alias.
+        entry = {**self.entries[0], 'module': 'th05/midboss5u.cpp'}
+        config = 'artifact="th05-main"\n[[units]]\n' + '\n'.join(
+            f'{key}={json.dumps(value)}' for key, value in entry.items())
+        (self.root / 'config/exact_units.toml').write_text(config)
+        with patch.object(replay_units, 'ROOT', self.root), \
+             patch('sys.argv', ['replay_units.py', '--units', 'a']), \
+             patch.object(replay_units, 'load_unit_target') as target, \
+             patch.object(replay_units, 'freeze_toolchain') as toolchain:
+            with self.assertRaisesRegex(ValueError, 'DOS 8.3 path'):
+                replay_units.main()
+        target.assert_not_called()
+        toolchain.assert_not_called()
+
     def test_custom_binding_drift_only_selects_its_owner(self):
         (self.root / 'probes/units/b_bindings.asm').write_text('changed scaffold\n')
         self.assertEqual([unit['id'] for unit in self.plan()[0]], ['b'])

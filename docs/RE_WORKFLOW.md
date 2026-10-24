@@ -54,3 +54,10 @@ retaining the first build artifacts and avoiding the unnecessary second build.
 Accepted scopes still require both independent cold producers and their real
 compiled negative. Raw/fixup mismatches with valid extents continue to retain
 both producer results for strict subset and retained-scope review.
+
+
+Compiler wrapper modules use explicit relative DOS8.3 paths, including directory
+components. Replay validates these before target access or tool execution.
+A nine-character stem can silently compile under a Wine short-name alias,
+leaving the intended object name absent. Maintained source paths remain their
+normal descriptive paths; only the small generated wrapper uses the DOS alias.
