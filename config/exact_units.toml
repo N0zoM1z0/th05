@@ -2357,3 +2357,61 @@ unit = "main-mai-yuki-remaining-patterns"
 source = "src/main/boss/mai_yuki/remaining_patterns.inl"
 find = "boss_statebyte[15] = 0x20;"
 replace = "boss_statebyte[15] = 0x21;"
+
+[[units]]
+id = "main-mai-solo-initial-patterns"
+source = "src/main/boss/mai_yuki/mai_solo_patterns.cpp"
+module = "th05/my_solo.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_solo_patterns_bindings.asm"
+target_start = 101695
+size = 456
+functions = 3
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-mai-solo-initial-patterns"
+source = "src/main/boss/mai_yuki/mai_solo_patterns.cpp"
+find = "bullet_template.spread = 2;"
+replace = "bullet_template.spread = 3;"
+
+[[units]]
+id = "main-mai-solo-later-patterns"
+source = "src/main/boss/mai_yuki/mai_solo_later.cpp"
+module = "th05/my_slat.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_solo_later_bindings.asm"
+target_start = 102151
+size = 496
+functions = 3
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-mai-solo-later-patterns"
+source = "src/main/boss/mai_yuki/mai_solo_later.cpp"
+find = "bullet_template.spread = 24;"
+replace = "bullet_template.spread = 25;"
+
+[[units]]
+id = "main-yuki-update"
+source = "src/main/boss/mai_yuki/yuki_update.cpp"
+module = "th05/yuki_upd.cpp"
+segment = "YUKI_UPDATE_TEXT"
+wrapper_options = "-zCYUKI_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yuki_update_bindings.asm"
+target_start = 100869
+size = 826
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 806, size = 20, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "main-yuki-update"
+source = "src/main/boss/mai_yuki/yuki_update.cpp"
+find = "boss.phase_end_hp = 4600;"
+replace = "boss.phase_end_hp = 4500;"

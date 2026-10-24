@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **179 bounded C++ CODE/DATA units / 364 complete function occurrences**,
-**63,228 authored bytes exact**: 54,371 CODE and 8,857 initialized DATA.
-CODE is 53,827 instruction plus 544 semantic compiler-table bytes.
-Complete compared extents total 63,261; 33 checked padding bytes receive
-no credit. MAIN has 282 functions / 41,806 CODE / 199 DATA;
+Current acceptance: **182 bounded C++ CODE/DATA units / 371 complete function occurrences**,
+**65,006 authored bytes exact**: 56,149 CODE and 8,857 initialized DATA.
+CODE is 55,585 instruction plus 564 semantic compiler-table bytes.
+Complete compared extents total 65,039; 33 checked padding bytes receive
+no credit. MAIN has 289 functions / 43,584 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -607,3 +607,34 @@ padding or binding probes are justified. All1008 semantic instruction bytes
 and52 switch-table bytes remain in the natural candidate, with no trimming
 or normalization. Actual source TU/callee-definition context remains open.
 The failed owner is removed from live replay selection.
+
+
+### Mai solo opening patterns
+
+`main-mai-solo-initial-patterns-a` accepts456 instruction bytes/three complete
+functions (164/198/94), with original ordered fixups[306,107] and a real
+first-fan spread2→3 negative. Both fresh deterministic full raw/ordered
+producers agree. The first two real bool callbacks retain completion/movement
+semantics, while the third signed-cycle pattern is truthfully void. Full
+canonical Boss/template/special state and byte-rank ABI are preserved without
+editing shared accepted headers. No DATA, BSS, tables or padding receive credit.
+
+
+### Mai solo snow patterns and complete Yuki update
+
+`main-mai-solo-later-patterns-b` accepts496 instruction bytes/three complete
+functions (89/141/266), with original ordered fixup[365] and ring count24→25
+control. Its first496-byte producer differed only in one outlined-blue sprite
+constant44; the actual outlined sprite is45. The unchanged new fullB4Ball26/
+template25/bool16 ABI is shared with Yuki and checked against custom slots.
+`main-yuki-update-a` accepts the complete826-byte far callback,806 instruction
+plus20 switch-table bytes, with original ordered fixups[256,140] and actual
+HP threshold4600→4500 control. Both owners have two fresh deterministic full
+raw/ordered positives. No padding, initialized DATA or BSS receive credit.
+
+The shared Mai/Yuki update remains unaccepted: the initial broadHUD include
+conflicted with movement's to_sp definition. The candidate now declares only
+the real canonical byte-text FAR title pointer and preserves existing function
+contexts; the next first positive emits1023 versus1018. Two word shake assignments each add3 instruction bytes, while the original
+zero disappears. A natural shared-store dataflow repair remains unverified.
+The failed owner receives no credit or default replay selection.
