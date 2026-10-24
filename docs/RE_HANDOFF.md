@@ -3,11 +3,13 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **92 bounded C++ units / 214 complete function occurrences**,
-33,505 compared bytes and 33,486 authored code bytes: 33,058 instructions plus
-428 semantic compiler-table bytes. 19 checked padding bytes receive no
-credit. MAIN has 138 functions / 21,495 code bytes, decoded OP 53 / 9,158,
-decoded MAINE 23 / 2,833. Global denominator and percentage remain unreviewed.
+Current acceptance: **102 bounded C++ CODE/DATA units / 226 complete function occurrences**,
+**36,107 authored bytes exact**: 33,943 CODE and 2,164 initialized DATA.
+CODE is 33,515 instruction plus 428 semantic compiler-table bytes.
+Complete compared extents total 36,126; 19 checked padding bytes receive
+no credit. MAIN has 150 functions / 21,952 CODE / 0 DATA;
+OP 53 / 9,158 / 2,164; MAINE 23 / 2,833 / 0.
+Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
 
@@ -43,6 +45,8 @@ All paths below are under private `.analysis/unit-replays/`.
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
 | Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
+| Eight small MAIN owners | `main-slowdown-a`, `main-hud-hp-a`, `main-player-position-a`, `main-bullet-pattern-a`, `main-scroll-convert-a`, `main-tile-render-a`, `main-midboss-invalidate-b`, `main-boss-backdrop-c` |
+| OP initialized UI/state DATA | `op-setup-data-a`, `op-main-data-a` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -86,6 +90,16 @@ Their MAP boundaries include unaccepted neighbors. `progress.py --accept
 RECEIPT --units ID...` imports an explicitly passing subset without recompiling;
 all saved results and the negative-control owner still undergo validation.
 The original mixed receipt and aggregate verdict are unchanged.
+
+Initialized semantic DATA opts into `extent_kind="initialized-data"`, zero
+functions, explicit source roles and one complete real MAP DATA contribution.
+The actual OMF DATA SEGDEF must have complete nonoverlapping LEDATA coverage;
+BSS, assets, CODE tables and unproved transformations are rejected. Each DATA
+unit requires its own compiled DATA mutation; a CODE-only change cannot prove
+it. Focus one DATA unit per replay; positives sharing a TU still compile once.
+Current accepted DATA: OP setup 1,075 bytes / 18 fixups, main menu 1,089 / 26.
+Both real CP932 producers and actual filename mutations pass. Total DATA 2,164
+is reported separately from CODE; no original BSS is credited.
 
 New Japanese owners opt into `source_encoding = "cp932"`. Canonical maintained
 inputs and snapshots stay UTF8; real compiler bytes have separate identities.

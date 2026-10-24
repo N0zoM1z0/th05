@@ -3,21 +3,36 @@
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
 complete authored ownership denominator remains under review.
 
-| Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
+| Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 138 | 21495 | 21189 | 306 | 21512 |
+| MAIN bounded C++ units | 150 | 21952 | 21646 | 306 | 21969 |
 | OP decoded C++ units | 53 | 9158 | 9052 | 106 | 9160 |
 | MAINE decoded C++ units | 23 | 2833 | 2817 | 16 | 2833 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-92 bounded C++ units pass two cold builds, raw bytes and ordered
-relative relocation sites with explicit original external-symbol bindings.
-A unit covers a complete compiler contribution or one reviewed complete
-function. Unaccepted functions in the same translation unit receive no credit.
+| Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
+| --- | ---: | ---: | ---: | ---: |
+| MAIN bounded C++ units | 0 | 0 | 21952 | 21969 |
+| OP decoded C++ units | 2 | 2164 | 11322 | 11324 |
+| MAINE decoded C++ units | 0 | 0 | 2833 | 2833 |
+| ZUN | 0 | 0 | 0 | 0 |
+
+102 bounded C++ units pass two cold producers, raw bytes and original
+ordered relative relocation sites with explicit external-symbol bindings.
+CODE covers a complete compiler contribution or one reviewed complete function.
+Initialized semantic DATA covers only a whole real MAP DATA contribution with
+zero functions and complete compiler LEDATA coverage. Its declared roles and
+natural initializer source need review; assets, BSS and CODE tables are excluded
+from this DATA lane. Every DATA acceptance requires its own compiled DATA
+mutation; a mutation that changes only CODE cannot pass that gate.
+Unaccepted functions in the same translation unit receive no credit.
+Unaccepted DATA likewise receives no credit.
+Total authored bytes are 36107: 33943 authored CODE plus 2164
+initialized DATA bytes. This does not change the global denominator.
 Authored code includes 428 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 19 observed
 padding bytes are checked against their declared target values and excluded
-from authored code. Every table and padding byte remains inside the complete
+from authored CODE and DATA. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.
 Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage

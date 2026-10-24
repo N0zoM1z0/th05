@@ -964,3 +964,155 @@ origin = "compiler-generated-cxx"
 bindings_source = "probes/units/shinki_bindings.asm"
 function_symbol = "shinki_move_float()"
 function_end_symbol = "shinki_update()"
+
+[[units]]
+id = "main-slowdown"
+source = "src/main/runtime/slowdown.cpp"
+module = "th04/slowdown.cpp"
+segment = "SLOWDOWN_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xae1e
+size = 26
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-slowdown.asm"
+
+[[controls]]
+unit = "main-slowdown"
+source = "src/main/runtime/slowdown.cpp"
+find = "slowdown_factor = 1;"
+replace = "slowdown_factor = 2;"
+
+[[units]]
+id = "main-hud-hp"
+source = "src/main/hud/hp.cpp"
+module = "th04/hud_hp.cpp"
+segment = "HUD_HP_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1c4f6
+size = 88
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-hud-hp.asm"
+
+[[controls]]
+unit = "main-hud-hp"
+source = "src/main/hud/hp.cpp"
+find = "value_prev++;"
+replace = "value_prev += 2;"
+
+[[units]]
+id = "main-player-position"
+source = "src/main/player/position.cpp"
+module = "th04/player_p.cpp"
+segment = "PLAYER_P_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xcad2
+size = 56
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-player-position.asm"
+
+[[controls]]
+unit = "main-player-position"
+source = "src/main/player/position.cpp"
+find = "MOVE_MARGIN_BOTTOM = 16;"
+replace = "MOVE_MARGIN_BOTTOM = 24;"
+
+[[units]]
+id = "main-bullet-pattern"
+source = "src/main/bullet/patnum.cpp"
+module = "th05/bullet_p.cpp"
+segment = "BULLET_P_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x16f52
+size = 29
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-bullet-pattern.asm"
+
+[[controls]]
+unit = "main-bullet-pattern"
+source = "src/main/bullet/patnum.cpp"
+find = "((ANGLE_PER_SPRITE / 2) - 1)"
+replace = "(ANGLE_PER_SPRITE / 2)"
+
+[[units]]
+id = "main-scroll-convert"
+source = "src/main/scroll/convert.cpp"
+module = "th04/scrolly3.cpp"
+segment = "SCROLLY3_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x16a30
+size = 73
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-scroll-convert.asm"
+
+[[controls]]
+unit = "main-scroll-convert"
+source = "src/main/scroll/convert.cpp"
+find = "ret += scroll_line;"
+replace = "ret -= scroll_line;"
+
+[[units]]
+id = "main-tile-render"
+source = "src/main/tile/render.cpp"
+module = "th04/tile.cpp"
+segment = "TILE_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xbd4e
+size = 95
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-tile-render.asm"
+
+[[controls]]
+unit = "main-tile-render"
+source = "src/main/tile/render.cpp"
+find = "tile_render_all_time--;"
+replace = "tile_render_all_time -= 2;"
+
+[[units]]
+id = "main-midboss-invalidate"
+source = "src/main/midboss/invalidate.cpp"
+module = "th04/mb_inv.cpp"
+segment = "MB_INV_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x109bd
+size = 51
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-midboss-invalidate.asm"
+
+[[controls]]
+unit = "main-midboss-invalidate"
+source = "src/main/midboss/invalidate.cpp"
+find = "tile_invalidate_box.x = MIDBOSS_W_MAX;"
+replace = "tile_invalidate_box.x = (MIDBOSS_W_MAX + 8);"
+
+[[units]]
+id = "main-boss-backdrop"
+source = "src/main/boss/backdrop.cpp"
+module = "th04/boss_bd.cpp"
+segment = "BOSS_BD_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x109f0
+size = 39
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main-boss-backdrop.asm"
+
+[[controls]]
+unit = "main-boss-backdrop"
+source = "src/main/boss/backdrop.cpp"
+find = "cdg_put_noalpha_8(left, top, CDG_BG_BOSS);"
+replace = "cdg_put_noalpha_8(left, top, CDG_BG_BOSS + 1);"

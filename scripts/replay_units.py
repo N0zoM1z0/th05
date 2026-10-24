@@ -24,6 +24,8 @@ from lib.unit_oracle import (compare_unit, compare_mapped_unit, function_scoped,
 from lib.unit_context import (UnitContext, compiler_arguments, freeze_target_view,
     load_unit_target, unit_binary)
 from lib.unit_sources import producer_snapshot, source_encoding, stage_inputs
+from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
+    unit_extent_kind)
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, freeze_toolchain,
     required_input_paths, scoped_snapshot, snapshot_paths, staged_paths,
     static_toolchain, validate_snapshot)
@@ -36,6 +38,9 @@ OMF_FIELDS = ("sha256", "dependency_timestamp_normalized_sha256", "module_name",
 def select_units(root: Path, manifest: dict, requested: list[str] | None,
                  acceptance: dict | None = None, *, ledger: Path | None = None) -> tuple[list[dict], dict[str, str]]:
     entries = {unit["id"]: unit for unit in manifest["units"]}
+    for entry in entries.values():
+        if unit_extent_kind(entry) == 'initialized-data':
+            classify_data_extent(entry)
     if len(entries) != len(manifest["units"]):
         raise ValueError("duplicate configured unit IDs")
     if requested:
@@ -108,11 +113,15 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
         actual_arguments = compiler_arguments(unit, binary)
         builder.execute(obj, [*dos, "tcc", *actual_arguments])
         objects.append(obj)
-        omf = describe_omf((source / obj).read_bytes())
+        object_bytes = (source / obj).read_bytes()
+        omf = describe_omf(object_bytes)
         if not omf["valid"] or omf["translator_comments"] != ["TC86 Borland C++ 4.02"]:
             raise ValueError(f"invalid compiler object {obj}")
         for member in members:
             omfs[member["id"]] = {key: omf[key] for key in OMF_FIELDS}
+            if unit_extent_kind(member) == 'initialized-data':
+                omfs[member['id']]['initialized_data_scope'] = initialized_data_omf_scope(
+                    object_bytes, member, require_size=mutation is None)
             arguments[member["id"]] = actual_arguments
     if binary != "M" or any("binary" in unit for unit in units):
         (source / "compiler-arguments.json").write_text(json.dumps(
@@ -149,7 +158,7 @@ def control_comparison(target, candidate, entry: dict, start: int, size: int) ->
 def mapped_control_comparison(target, candidate, entry: dict, path: Path) -> dict:
     scope = map_unit_scope(path, entry)
     comparison = control_comparison(target, candidate, entry, scope["start"], scope["size"])
-    if function_scoped(entry):
+    if function_scoped(entry) or unit_extent_kind(entry) == 'initialized-data':
         comparison["map_scope"] = scope
     return comparison
 
@@ -170,9 +179,14 @@ def main() -> int:
         print(json.dumps({"selected": reasons, "work_required": bool(units), "tools_executed": False}, indent=2))
         return 0
     controls = {row["unit"]: row for row in manifest.get("controls", [])}
-    control_unit = next((unit for unit in units if unit["id"] in controls), None)
+    data_units = [unit for unit in units if unit_extent_kind(unit) == 'initialized-data']
+    if len(data_units) > 1:
+        raise ValueError('select one initialized DATA contribution per focused replay; each needs its own DATA mutation')
+    control_unit = data_units[0] if data_units else next((unit for unit in units if unit["id"] in controls), None)
     if control_unit is None:
         raise ValueError("selected units need a configured natural source-mutation control")
+    if control_unit['id'] not in controls:
+        raise ValueError('selected initialized DATA needs its own configured natural DATA mutation')
     mutation = controls[control_unit["id"]]
     scopes = {unit["id"]: staged_paths(ROOT, unit) for unit in units}
     if mutation["source"] not in scopes[control_unit["id"]]:

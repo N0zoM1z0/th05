@@ -61,3 +61,35 @@ recorded with their actual byte identities. Acceptance reconstructs expected
 compiler bytes from the canonical snapshot and checks every consumed file,
 including the assembler input alias. Encoding never changes compared target
 bytes or transfers credit to source literals without a complete raw scope.
+
+Initialized semantic DATA is an explicit unit opt-in:
+`extent_kind = "initialized-data"`, `functions = 0`, a natural C++ producer
+origin, and reviewed `data_semantics` roles. Supported roles are `state`,
+`filenames`, `ui-text`, `function-pointers`, `string-pointers` and
+`semantic-tables`. These declarations require a source ownership review;
+labels alone do not prove that an asset array is authored semantic DATA.
+Asset payloads, BSS, CODE switch tables and function-scoped slices cannot use
+this lane. Historical units default to CODE without changing their identities.
+
+A DATA unit must cover one complete actual MAP `C=DATA` contribution, backed
+by one real compiler DATA SEGDEF with every byte supplied exactly once by
+LEDATA. The first implementation rejects LIDATA, COMDAT, patch and 32-bit data
+transformations. Both saved MZ/MAP/OMF producers are re-read on import. Every
+DATA byte, including pointer words and explicit uncredited padding, undergoes
+the same raw comparison and original ordered MZ-fixup comparison as CODE.
+No normalization or field masking is permitted. BSS reserves no initialized
+target bytes and receives no credit through DATA metadata.
+
+Each DATA acceptance needs its own compiled negative DATA mutation. A mutation
+that only changes CODE is insufficient. Select one DATA contribution per
+focused replay; CODE units from the same owner can share its one TU compilation
+per round. Canonical source snapshots, explicit CP932 staging, actual dependency
+closures, wrappers, binding aliases and tool identities retain the existing
+gates. No previous accepted CODE producer needs replay for this extension.
+
+`authored_data_bytes` is separate from `authored_code_bytes`, instruction bytes
+and CODE-table bytes. `authored_bytes` is their code-plus-data sum, with explicit
+padding excluded. The gapless inventory names these bytes
+`accepted-cxx-initialized-data`; vendor decisions and unknown spans are retained.
+These counters do not establish the complete authored denominator or a global
+percentage, and decoded OP/MAINE DATA grants no packed-file exactness.

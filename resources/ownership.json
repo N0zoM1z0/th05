@@ -6,10 +6,11 @@
   "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-cxx-instructions": 33058,
+    "accepted-cxx-initialized-data": 2164,
+    "accepted-cxx-instructions": 33515,
     "accepted-cxx-switch-table": 428,
     "checked-uncredited-padding": 19,
-    "unknown": 282862,
+    "unknown": 280241,
     "verified-vendor-code": 2901
   },
   "views": {
@@ -19,10 +20,10 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-cxx-instructions": 21189,
+        "accepted-cxx-instructions": 21646,
         "accepted-cxx-switch-table": 306,
         "checked-uncredited-padding": 17,
-        "unknown": 121545,
+        "unknown": 121088,
         "verified-vendor-code": 2901
       },
       "intervals": [
@@ -310,6 +311,28 @@
         },
         {
           "start": 42724,
+          "end": 44574,
+          "kind": "unknown"
+        },
+        {
+          "start": 44574,
+          "end": 44600,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-slowdown"
+        },
+        {
+          "start": 44600,
+          "end": 48462,
+          "kind": "unknown"
+        },
+        {
+          "start": 48462,
+          "end": 48557,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-tile-render"
+        },
+        {
+          "start": 48557,
           "end": 50553,
           "kind": "unknown"
         },
@@ -321,6 +344,17 @@
         },
         {
           "start": 50826,
+          "end": 51922,
+          "kind": "unknown"
+        },
+        {
+          "start": 51922,
+          "end": 51978,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-position"
+        },
+        {
+          "start": 51978,
           "end": 57168,
           "kind": "unknown"
         },
@@ -580,8 +614,20 @@
         },
         {
           "start": 67538,
-          "end": 68119,
+          "end": 68029,
           "kind": "unknown"
+        },
+        {
+          "start": 68029,
+          "end": 68080,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-invalidate"
+        },
+        {
+          "start": 68080,
+          "end": 68119,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-boss-backdrop"
         },
         {
           "start": 68119,
@@ -830,6 +876,28 @@
         },
         {
           "start": 88738,
+          "end": 92720,
+          "kind": "unknown"
+        },
+        {
+          "start": 92720,
+          "end": 92793,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-scroll-convert"
+        },
+        {
+          "start": 92793,
+          "end": 94034,
+          "kind": "unknown"
+        },
+        {
+          "start": 94034,
+          "end": 94063,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-bullet-pattern"
+        },
+        {
+          "start": 94063,
           "end": 94091,
           "kind": "unknown"
         },
@@ -1075,7 +1143,8 @@
         {
           "start": 115958,
           "end": 116046,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-hud-hp"
         },
         {
           "start": 116046,
@@ -1137,10 +1206,11 @@
       "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
       "original_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
       "byte_counts": {
+        "accepted-cxx-initialized-data": 2164,
         "accepted-cxx-instructions": 9052,
         "accepted-cxx-switch-table": 106,
         "checked-uncredited-padding": 2,
-        "unknown": 68638
+        "unknown": 66474
       },
       "intervals": [
         {
@@ -1425,6 +1495,28 @@
         },
         {
           "start": 56467,
+          "end": 61552,
+          "kind": "unknown"
+        },
+        {
+          "start": 61552,
+          "end": 62641,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-main-data"
+        },
+        {
+          "start": 62641,
+          "end": 64150,
+          "kind": "unknown"
+        },
+        {
+          "start": 64150,
+          "end": 65225,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "op-setup-data"
+        },
+        {
+          "start": 65225,
           "end": 77798,
           "kind": "unknown"
         }

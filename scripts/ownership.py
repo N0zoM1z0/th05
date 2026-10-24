@@ -9,6 +9,7 @@ import tomllib
 
 from lib.pc98 import digest_bytes
 from lib.unit_context import UnitContext, load_unit_target
+from lib.unit_extents import unit_extent_kind
 from progress import classify_extent, summarize_all
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,8 @@ def partition(size: int, units: list[dict]) -> list[dict]:
                 kind = "checked-uncredited-padding"
             elif any(low <= left < high for low, high in tables):
                 kind = "accepted-cxx-switch-table"
+            elif unit_extent_kind(entry) == 'initialized-data':
+                kind = 'accepted-cxx-initialized-data'
             else:
                 kind = "accepted-cxx-instructions"
             row = {"start": start + left, "end": start + right, "kind": kind, "unit": entry["id"]}
@@ -164,6 +167,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         counts.update(view["byte_counts"])
     if (counts["accepted-cxx-instructions"] != summary["instruction_bytes"] or
             counts["accepted-cxx-switch-table"] != summary["code_data_bytes"] or
+            counts['accepted-cxx-initialized-data'] != summary.get('authored_data_bytes', 0) or
             counts["checked-uncredited-padding"] != summary["padding_bytes"]):
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",

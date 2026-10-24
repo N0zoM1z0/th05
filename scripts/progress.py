@@ -9,6 +9,8 @@ import tomllib
 from lib.unit_oracle import function_scoped
 from lib.unit_context import UnitContext, compiler_arguments, load_unit_target, validate_public_target_view
 from lib.unit_sources import producer_snapshot, source_encoding, validate_producer_inputs
+from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
+    unit_extent_kind, validate_data_scope_evidence)
 
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, relative_path,
     compiler_dependencies, scoped_snapshot, validate_snapshot)
@@ -23,6 +25,8 @@ def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
     ranges and padding never receive an implicit instruction-byte exemption.
     This metadata does not independently prove a range's compiler ownership.
     """
+    if unit_extent_kind(entry) == 'initialized-data':
+        return classify_data_extent(entry, target_bytes=target_bytes)
     size = entry["size"]
     if type(size) is not int or size <= 0:
         raise ValueError("invalid complete unit extent size")
@@ -83,7 +87,7 @@ def validate_result(entry: dict, result: dict, *, require_exact: bool = True) ->
     if len(result["rounds"]) != 2 or len(result["omfs"]) != 2:
         raise ValueError("two independent cold rounds are required")
     hashes, candidates = set(), set()
-    for comparison in result["rounds"]:
+    for index, comparison in enumerate(result["rounds"]):
         if (comparison["size"] != entry["size"] or comparison["target_start"] != entry["target_start"]
                 or any(type(comparison[k]) is not bool for k in ("exact", "raw_exact", "fixups_exact"))
                 or comparison["raw_exact"] != (comparison["target_sha256"] == comparison["candidate_sha256"])
@@ -91,6 +95,9 @@ def validate_result(entry: dict, result: dict, *, require_exact: bool = True) ->
                 or comparison["exact"] != (comparison["raw_exact"] and comparison["fixups_exact"])
                 or (require_exact and not comparison["exact"])):
             raise ValueError("raw bytes, boundaries or relocation evidence disagree")
+        if unit_extent_kind(entry) == 'initialized-data':
+            validate_data_scope_evidence(entry, comparison,
+                result['omfs'][index].get('initialized_data_scope', {}))
         if scoped:
             scope = comparison.get("map_scope", {})
             integers = ("start", "size", "contribution_start", "contribution_size")
@@ -200,17 +207,28 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_nam
         validate_snapshot(root, snapshots)
         if "compiled_negative_control" in item:
             validate_control(item["compiled_negative_control"])
+        if unit_extent_kind(entry) == 'initialized-data':
+            negative = item.get('negative_control', {})
+            if negative.get('unit_id') != entry['id']:
+                raise ValueError('initialized DATA needs its own compiled DATA mutation')
+            validate_data_scope_evidence(entry, item['compiled_negative_control'],
+                negative.get('omf', {}).get('initialized_data_scope', {}))
         start, end = entry["target_start"], entry["target_start"] + entry["size"]
         if any(start < right and end > left for left, right in covered):
             raise ValueError("accepted unit extents overlap")
         covered.append((start, end))
+        classification = classify_extent(entry)
+        classification.setdefault('authored_data_bytes', 0)
+        classification.setdefault('authored_bytes', classification['authored_code_bytes'])
         accepted.append({"id": entry["id"], "size": entry["size"],
-                         **classify_extent(entry),
+                         **classification, 'extent_kind': unit_extent_kind(entry),
                          "functions": entry["functions"]})
     return {"units": accepted, "unit_count": len(accepted),
             "functions": sum(unit["functions"] for unit in accepted),
             "complete_extent_bytes": sum(unit["size"] for unit in accepted),
             "authored_code_bytes": sum(unit["authored_code_bytes"] for unit in accepted),
+            "authored_data_bytes": sum(unit['authored_data_bytes'] for unit in accepted),
+            "authored_bytes": sum(unit['authored_bytes'] for unit in accepted),
             "code_data_bytes": sum(unit["code_data_bytes"] for unit in accepted),
             "padding_bytes": sum(unit["padding_bytes"] for unit in accepted),
             "instruction_bytes": sum(unit["instruction_bytes"] for unit in accepted),
@@ -223,8 +241,9 @@ def summarize_all(root: Path = ROOT) -> dict:
         if UnitContext(root, name).manifest.exists():
             summaries[name] = summarize(root, artifact_name=name)
     combined = dict(summaries["main"])
-    for key in ("unit_count", "functions", "complete_extent_bytes", "authored_code_bytes", "code_data_bytes", "padding_bytes", "instruction_bytes"):
-        combined[key] = sum(summary[key] for summary in summaries.values())
+    for key in ("unit_count", "functions", "complete_extent_bytes", "authored_code_bytes", "authored_data_bytes", "authored_bytes", "code_data_bytes", "padding_bytes", "instruction_bytes"):
+        combined[key] = sum(summary.get(key, summary.get('authored_code_bytes', 0) if key == 'authored_bytes' else 0)
+                            for summary in summaries.values())
     combined["units"] = [{**unit, "artifact": name, "id": name + ":" + unit["id"]}
                          for name, summary in summaries.items() for unit in summary["units"]]
     combined["artifacts"] = summaries
@@ -235,33 +254,57 @@ def render(summary: dict) -> tuple[str, str]:
     count, functions, instructions, extent = (summary[key] for key in
         ("unit_count", "functions", "instruction_bytes", "complete_extent_bytes"))
     authored = summary.get("authored_code_bytes", instructions)
+    data = summary.get("authored_data_bytes", 0)
+    total = summary.get("authored_bytes", authored + data)
     tables = summary.get("code_data_bytes", 0)
     padding = summary.get("padding_bytes", extent - authored)
     scopes = summary.get("artifacts", {"main": summary})
-    rows = []
+    rows, data_rows = [], []
     for name, label in (("main", "MAIN bounded C++ units"), ("op", "OP decoded C++ units"), ("maine", "MAINE decoded C++ units")):
         scope = scopes.get(name, {})
-        rows.append("| " + label + " | " + " | ".join(str(scope.get(key, 0)) for key in
-                    ("functions", "authored_code_bytes", "instruction_bytes", "code_data_bytes", "complete_extent_bytes")) + " |")
+        data_units = [unit for unit in scope.get('units', []) if unit.get('extent_kind') == 'initialized-data']
+        code_extent = scope.get('complete_extent_bytes', 0) - sum(unit['size'] for unit in data_units)
+        code_bytes = scope.get('authored_code_bytes', scope.get('instruction_bytes', 0))
+        values = (scope.get('functions', 0), code_bytes, scope.get('instruction_bytes', 0),
+                  scope.get('code_data_bytes', 0), code_extent)
+        rows.append('| ' + label + ' | ' + ' | '.join(map(str, values)) + ' |')
+        data_bytes = scope.get('authored_data_bytes', 0)
+        data_rows.append('| ' + label + ' | ' + ' | '.join(map(str, (
+            len(data_units), data_bytes, scope.get('authored_bytes', code_bytes + data_bytes),
+            scope.get('complete_extent_bytes', 0)))) + ' |')
     scope_rows = "\n".join(rows)
+    data_scope_rows = '\n'.join(data_rows)
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
 complete authored ownership denominator remains under review.
 
-| Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
+| Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
 {scope_rows}
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-{count} bounded C++ units pass two cold builds, raw bytes and ordered
-relative relocation sites with explicit original external-symbol bindings.
-A unit covers a complete compiler contribution or one reviewed complete
-function. Unaccepted functions in the same translation unit receive no credit.
+| Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
+| --- | ---: | ---: | ---: | ---: |
+{data_scope_rows}
+| ZUN | 0 | 0 | 0 | 0 |
+
+{count} bounded C++ units pass two cold producers, raw bytes and original
+ordered relative relocation sites with explicit external-symbol bindings.
+CODE covers a complete compiler contribution or one reviewed complete function.
+Initialized semantic DATA covers only a whole real MAP DATA contribution with
+zero functions and complete compiler LEDATA coverage. Its declared roles and
+natural initializer source need review; assets, BSS and CODE tables are excluded
+from this DATA lane. Every DATA acceptance requires its own compiled DATA
+mutation; a mutation that changes only CODE cannot pass that gate.
+Unaccepted functions in the same translation unit receive no credit.
+Unaccepted DATA likewise receives no credit.
+Total authored bytes are {total}: {authored} authored CODE plus {data}
+initialized DATA bytes. This does not change the global denominator.
 Authored code includes {tables} bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All {padding} observed
 padding bytes are checked against their declared target values and excluded
-from authored code. Every table and padding byte remains inside the complete
+from authored CODE and DATA. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.
 Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage
@@ -277,16 +320,17 @@ Generated by `python3 scripts/progress.py --write`. Public CI checks ledger
 consistency and source freshness; actual exact replay requires private inputs.
 See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX_UNITS.md).
 '''
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="164" viewBox="0 0 720 164" role="img" aria-labelledby="title desc">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
 <title id="title">TH05 source reconstruction progress</title>
-<desc id="desc">Goal 98 percent authored bytes exact. {functions} functions, {authored} authored code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes. Global denominator under review.</desc>
-<rect width="720" height="164" rx="12" fill="#181b29"/>
+<desc id="desc">Goal 98 percent authored bytes exact. {functions} functions, {authored} authored code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes; {data} initialized DATA bytes, {total} total authored bytes. Global denominator under review.</desc>
+<rect width="720" height="190" rx="12" fill="#181b29"/>
 <g font-family="system-ui,sans-serif" fill="#f3f0fa">
 <text x="24" y="35" font-size="21" font-weight="600">TH05 · Mystic Square</text>
-<text x="24" y="62" font-size="14" fill="#c9bddc">Authored code bytes exact · goal 98% · denominator under review</text>
+<text x="24" y="62" font-size="14" fill="#c9bddc">Authored bytes exact · goal 98% · denominator under review</text>
 <rect x="24" y="80" width="672" height="14" rx="7" fill="#363148"/>
-<text x="24" y="120" font-size="16">{functions} functions · {authored} authored code bytes · {count} cold-replayed C++ units</text>
-<text x="24" y="146" font-size="12" fill="#c9bddc">{instructions} instruction · {tables} compiler switch-table · {padding} padding bytes · bounded extents</text>
+<text x="24" y="120" font-size="16">{functions} functions · {total} authored bytes · {count} accepted C++ extents</text>
+<text x="24" y="146" font-size="13" fill="#c9bddc">{authored} authored code bytes · {data} initialized DATA bytes</text>
+<text x="24" y="174" font-size="12" fill="#c9bddc">{instructions} instruction · {tables} compiler switch-table · {padding} padding bytes · bounded extents</text>
 </g></svg>
 '''
     return markdown, svg
@@ -420,10 +464,15 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
                     "mutation": mutations[0], "comparison": control,
                     "legacy_source_revalidated": True}
     selected = set() if validate_only else select_accept_units(results, units, control_entry["id"])
+    if any(unit_extent_kind(replay_entries[name]) == 'initialized-data' and name != control_entry['id']
+           for name in results if validate_only or name in selected):
+        raise ValueError('each initialized DATA contribution needs its own compiled DATA mutation')
     imported, validated_inputs = [], {}
     frozen_inputs = {item["path"]: item["sha256"] for item in receipt["source_inputs"]}
     for name, result in results.items():
         entry = replay_entries[name]
+        if unit_extent_kind(entry) == 'initialized-data' and receipt.get('schema_version', 1) < 2:
+            raise ValueError('initialized DATA needs explicit frozen toolcache/source evidence; legacy CODE receipts cannot be relabelled')
         if name not in frozen_entries or entry_digest(frozen_entries[name]) != entry_digest(entry):
             raise ValueError(f"replay entry changed: {name}")
         if result.get("entry_sha256", entry_digest(entry)) != entry_digest(entry):
@@ -451,7 +500,10 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             candidate = parse_mz((source / "units.exe").read_bytes())
             if compare_mapped_unit(target, candidate, source / "units.map", entry) != result["rounds"][index]:
                 raise ValueError("saved raw target/candidate artifacts disagree with replay receipt")
-            obj = describe_omf((source / (Path(entry["module"]).stem + ".obj")).read_bytes())
+            object_bytes = (source / (Path(entry["module"]).stem + ".obj")).read_bytes()
+            obj = describe_omf(object_bytes)
+            if unit_extent_kind(entry) == 'initialized-data':
+                obj['initialized_data_scope'] = initialized_data_omf_scope(object_bytes, entry)
             if not obj["valid"] or any(obj[key] != value for key, value in result["omfs"][index].items()):
                 raise ValueError("saved compiler object disagrees with replay receipt")
             prefix = ("#pragma option " + entry["wrapper_options"] + "\n") if entry.get("wrapper_options") else ""
@@ -481,7 +533,14 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
                                                  control_entry, negative_source / "units.map")
     if observed_control != control:
         raise ValueError("saved compiled negative artifact disagrees with receipt")
-    negative_obj = describe_omf((negative_source / (Path(control_entry["module"]).stem + ".obj")).read_bytes())
+    negative_object_bytes = (negative_source / (Path(control_entry["module"]).stem + ".obj")).read_bytes()
+    negative_obj = describe_omf(negative_object_bytes)
+    if unit_extent_kind(control_entry) == 'initialized-data':
+        negative_obj['initialized_data_scope'] = initialized_data_omf_scope(
+            negative_object_bytes, control_entry, require_size=False)
+        validate_data_scope_evidence(control_entry, observed_control, negative_obj['initialized_data_scope'])
+        if not isinstance(negative.get('omf'), dict) or 'initialized_data_scope' not in negative['omf']:
+            raise ValueError('negative initialized DATA is missing its actual compiler DATA evidence')
     if not negative_obj["valid"] or negative_obj["translator_comments"] != ["TC86 Borland C++ 4.02"]:
         raise ValueError("saved negative compiler object is invalid")
     if "omf" in negative and any(negative_obj[key] != value for key, value in negative["omf"].items()):

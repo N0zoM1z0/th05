@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 
 from .pc98 import MZImage, digest_bytes
+from .unit_extents import data_map_scope, unit_extent_kind
 
 
 def map_contribution(path: Path, module: str, segment: str) -> tuple[int, int]:
@@ -21,6 +22,8 @@ def map_contribution(path: Path, module: str, segment: str) -> tuple[int, int]:
 
 def function_scoped(entry: dict) -> bool:
     """Function scopes are opt-in; the historical whole-contribution default stays."""
+    if unit_extent_kind(entry) == 'initialized-data':
+        return False
     if "function_end_symbol" in entry and "function_symbol" not in entry:
         raise ValueError("function_end_symbol requires function_symbol")
     for key in ("function_symbol", "function_end_symbol"):
@@ -68,6 +71,8 @@ def map_unit_scope(path: Path, entry: dict) -> dict:
     that function is unregistered, idle, or known to differ from the original.
     The final function ends at the complete real compiler contribution end.
     """
+    if unit_extent_kind(entry) == 'initialized-data':
+        return data_map_scope(path, entry)
     start, size = map_contribution(path, entry["module"], entry["segment"])
     if not function_scoped(entry):
         return {"kind": "complete-contribution", "start": start, "size": size}
@@ -105,7 +110,7 @@ def compare_mapped_unit(target: MZImage, candidate: MZImage, path: Path, entry: 
     if scope["size"] != entry["size"]:
         raise ValueError(f"{entry['id']}: {scope['kind']} size mismatch: {scope['size']}")
     comparison = compare_unit(target, candidate, entry["target_start"], scope["start"], scope["size"])
-    if function_scoped(entry):
+    if function_scoped(entry) or unit_extent_kind(entry) == 'initialized-data':
         comparison["map_scope"] = scope
     return comparison
 

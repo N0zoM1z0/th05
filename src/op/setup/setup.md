@@ -116,3 +116,13 @@ No source-current exact acceptance or packed-container equality is claimed.
 12 complete functions, 45 ordered fixups, and the compiled animation mutation.
 The separately observed 1,075 initialized DATA bytes / 18 fixups also match
 both producers but add no progress credit. BSS remains layout evidence only.
+
+## Accepted initialized semantic DATA
+
+`op-setup-data-a` accepts the whole original `[FA96,FEC9)` DATA contribution:
+1,075 bytes, 18 ordered segment fixups, zero functions and no padding. The
+compiler's two LEDATA records cover the whole real `_DATA` SEGDEF. It contains
+readable UI/filename strings and real far string-pointer tables, with no asset
+payload. Both independent CP932-staged producers match, and the DATA-specific
+`mswin.bft` to `mswin.bfu` filename mutation changes actual compiled DATA and is
+rejected. BSS stays uncredited. This DATA credit is separate from CODE.

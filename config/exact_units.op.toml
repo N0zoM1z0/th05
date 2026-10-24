@@ -416,3 +416,45 @@ unit = "op-title"
 source = "src/op/title/title.cpp"
 find = "frame_delay(16);"
 replace = "frame_delay(15);"
+
+[[units]]
+id = "op-setup-data"
+source = "src/op/setup/setup.cpp"
+module = "th05/op_setup.cpp"
+segment = "_DATA"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+target_start = 0xfa96
+size = 1075
+functions = 0
+extent_kind = "initialized-data"
+data_semantics = ["ui-text", "string-pointers", "filenames"]
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/op_setup_bindings.asm"
+
+[[controls]]
+unit = "op-setup-data"
+source = "src/op/setup/setup.cpp"
+find = 'super_entry_bfnt("mswin.bft");'
+replace = 'super_entry_bfnt("mswin.bfu");'
+
+[[units]]
+id = "op-main-data"
+source = "src/op/main/menu.cpp"
+module = "th05/op_main.cpp"
+segment = "_DATA"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+target_start = 0xf070
+size = 1089
+functions = 0
+extent_kind = "initialized-data"
+data_semantics = ["state", "ui-text", "string-pointers", "filenames"]
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/op_main_bindings.asm"
+
+[[controls]]
+unit = "op-main-data"
+source = "src/op/main/strings.hpp"
+find = '#define MENU_MAIN_BG_FN "op1.pi"'
+replace = '#define MENU_MAIN_BG_FN "op2.pi"'
