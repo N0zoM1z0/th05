@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **132 bounded C++ CODE/DATA units / 258 complete function occurrences**,
-**47,331 authored bytes exact**: 38,474 CODE and 8,857 initialized DATA.
-CODE is 37,992 instruction plus 482 semantic compiler-table bytes.
-Complete compared extents total 47,359; 28 checked padding bytes receive
-no credit. MAIN has 178 functions / 25,979 CODE / 199 DATA;
+Current acceptance: **135 bounded C++ CODE/DATA units / 262 complete function occurrences**,
+**47,586 authored bytes exact**: 38,729 CODE and 8,857 initialized DATA.
+CODE is 38,247 instruction plus 482 semantic compiler-table bytes.
+Complete compared extents total 47,614; 28 checked padding bytes receive
+no credit. MAIN has 182 functions / 26,234 CODE / 199 DATA;
 OP 55 / 9,436 / 8,615; MAINE 25 / 3,059 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -55,6 +55,8 @@ All paths below are under private `.analysis/unit-replays/`.
 | Sound mode selection in all three artifacts | `main-sound-modes-b`, `op-sound-modes-b`, `maine-sound-modes-a` |
 | Generic shot control | `main-player-shot-common-a` |
 | Three EMS cache functions | `main-ems-scopes-c` from raw-exact/ordered-inexact `main-ems-cache-b` |
+| Item extend and miss penalty | `main-item-extends-a`, `main-item-miss-penalty-d` |
+| Dialog wipe/fade box helpers | `main-dialog-box-b` |
 | Item creation/death drops, splashes and tile invalidation | `main-item-spawn-b`, `main-item-splashes-a`, `main-items-invalidate-a` |
 | Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
 | Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
@@ -256,3 +258,19 @@ eight compiler switch-table bytes and one excluded checked zero. Its two
 boss-face preload ordering fail. Only the strict three scopes are reviewed
 from retained artifacts, using the same actual compiled negative and no new
 compiler run. The failed whole is removed from default selection.
+
+Item extend and miss penalty add79 and70 instruction bytes through independent
+complete scopes and actual compiled controls. Collection's natural689-byte
+producer is missing one original checked zero before its seven-word table;
+normal `-a2` did not fix it and was removed. Collection remains entirely
+unaccepted, including its known original ordering risk. Main item update is
+248 versus241 due to genuine typed coordinate spills; ABI and pre-clamp
+semantics are correct, and no register template or flag variants were added.
+
+Dialog box wipe/fade adds106 instruction bytes/two complete functions. Its
+835-byte full runtime candidate remains unaccepted; command handler459 differs
+from456 while the separate270-byte runner has a correct size. Box bodies are
+shared through `box.inl`, with a focused real106-byte producer and its own
+timing negative. The documented TH04 `-B` hypothesis did not restore Shinki's
+missing4 bytes; one unchanged-source compiler diagnostic and zero-size foreign
+segment integration evidence are retained in `shinki-bmode-a`, with zero credit.

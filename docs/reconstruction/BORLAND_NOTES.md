@@ -113,3 +113,24 @@ emits shifts and OR instead of byte ROR. The MAINE score codec consequently
 remains external until its genuine original implementation/context is recovered;
 API presence alone does not prove an exact natural C++ rotate. The retained
 probe is `.analysis/compiler-probes/byte-rotate-a`, with no source-byte credit.
+
+## Assembly-output backend is a hypothesis, not transferred acceptance
+
+TH04's `docs/reconstruction/zun/TH04_ZUN_MAIN_V241.md` records a genuine
+`-B`/TASM mechanism that preserved its resident error paths. One private TH05
+Shinki diagnostic tested that documented mechanism on the unchanged archived
+natural monolithic source. TCC ran once with `-B`, emitted ASM, and stopped at
+the expected unavailable DOS `tasm.exe` boundary. The generated ASM SHA was
+frozen and never edited. TASM needed an external declaration-only wrapper for
+four actual empty foreign CODE SEGDEFs already present in the direct object:
+LASER_SC_TEXT, BOSS_BG_TEXT, BULLET_A_TEXT and MAIN_0_TEXT. Those declarations
+supply no instructions, values, public aliases or alignment filler.
+
+The resulting complete contribution is still4120 versus original4124;
+ball update remains216 versus220. Its TASM fixups are ascending and do not
+match the original order. This falsifies that backend explanation for the
+missing Shinki branches; it grants no new code, no cold acceptance and no
+reason to change accepted producers or the core replay pipeline. Evidence is
+`.analysis/compiler-probes/shinki-bmode-a/diagnostic-context2.json`, with the
+original failed integration steps retained. No additional source or flag
+variants were tried.

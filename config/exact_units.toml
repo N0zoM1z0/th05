@@ -1491,3 +1491,61 @@ unit = "main-ems-allocate"
 source = "src/main/ems/ems.cpp"
 find = "(ems_space() < EMSSIZE)"
 replace = "(ems_space() <= EMSSIZE)"
+
+[[units]]
+id = "main-item-extends"
+source = "src/main/item/extend.cpp"
+module = "th05/it_extnd.cpp"
+segment = "ITEM_EXTEND_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/item_extend_bindings.asm"
+target_start = 118188
+size = 79
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-extends"
+source = "src/main/item/extend.cpp"
+find = "playperf_raise(4);"
+replace = "playperf_raise(5);"
+
+[[units]]
+id = "main-item-miss-penalty"
+source = "src/main/item/collect.cpp"
+module = "th05/it_rewrd.cpp"
+segment = "ITEM_REWARD_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/item_rewards_bindings.asm"
+function_symbol = "item_miss_penalty(item_t near*)"
+target_start = 118887
+size = 70
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-miss-penalty"
+source = "src/main/item/collect.cpp"
+find = "playperf_lower(4);"
+replace = "playperf_lower(5);"
+
+[[units]]
+id = "main-dialog-box"
+source = "src/main/dialog/box.cpp"
+module = "th05/dlg_box.cpp"
+segment = "DIALOG_RUN_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/dialog_box_bindings.asm"
+target_start = 0x13b18
+size = 106
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-dialog-box"
+source = "src/main/dialog/box.inl"
+find = "frame_delay(12);"
+replace = "frame_delay(11);"
