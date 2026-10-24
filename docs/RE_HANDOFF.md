@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **140 bounded C++ CODE/DATA units / 267 complete function occurrences**,
-**48,241 authored bytes exact**: 39,384 CODE and 8,857 initialized DATA.
-CODE is 38,902 instruction plus 482 semantic compiler-table bytes.
-Complete compared extents total 48,269; 28 checked padding bytes receive
-no credit. MAIN has 185 functions / 26,819 CODE / 199 DATA;
+Current acceptance: **141 bounded C++ CODE/DATA units / 268 complete function occurrences**,
+**48,634 authored bytes exact**: 39,777 CODE and 8,857 initialized DATA.
+CODE is 39,295 instruction plus 482 semantic compiler-table bytes.
+Complete compared extents total 48,662; 28 checked padding bytes receive
+no credit. MAIN has 186 functions / 27,212 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -42,6 +42,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
 | Sara complete stage-one behavior | `main-sara-a` |
+| Stage-two midboss update | `main-midboss-stage2-c` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
 | Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
@@ -303,3 +304,15 @@ Both have two fresh raw/ordered positives and compiled semantic controls.
 Whole tail-b is619 versus620 and remains unaccepted; animation and exit do not
 receive credit. The original full620-byte result is preserved privately,
 including the failing far-call relocation and exit table-prefix difference.
+
+
+### Stage-two midboss update
+
+`main-midboss-stage2-c` accepts the entire393-byte state machine with both
+returns, original ordered fixups350/241/210, two fresh deterministic builds and
+an HP-threshold negative400→401. The first natural395-byte candidate exposed
+an unnecessary inline-helper exit jump and a transposed vector destination;
+original instructions establish the ordinary direct clear update and actual
+(192,64) target. Both were corrected semantically before acceptance. Movement
+and pattern helpers remain genuine foreign functions; no bodies or target
+instruction templates are supplied by the binder.

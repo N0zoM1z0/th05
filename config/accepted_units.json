@@ -2,48 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "f4ef3cca5a694b3bcd10027cf3d9f6a2423fedf6c13513c1726f8f28bfda74b9",
+  "replay_receipt_sha256": "2d80b37e0d882a1b9dd828782bdc4de71a3113490c2e1f7de85722590ab9e63e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 81679,
-    "candidate_start": 81679,
-    "size": 248,
-    "target_sha256": "13cf62808b251d3b1dff4a5465feda99256ac8a4f7eb96d8f0003293e7b8ce96",
-    "candidate_sha256": "8e3a8c27b50dc5a7e3f7a309556704c4e72016e962a803a3c1143480be01953d",
+    "target_start": 89579,
+    "candidate_start": 89579,
+    "size": 393,
+    "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+    "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
     "raw_exact": false,
     "target_fixups": [
-      240,
-      233,
-      204,
-      197,
-      152,
-      127,
-      106,
-      81
+      350,
+      241,
+      210
     ],
     "candidate_fixups": [
-      240,
-      233,
-      204,
-      197,
-      152,
-      127,
-      106,
-      81
+      350,
+      241,
+      210
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 81679,
-      "size": 248,
-      "function_symbol": "dialog_face_load_unput_put_free_(int,int,int)",
-      "contribution_start": 81496,
-      "contribution_size": 619,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "dialog_exit()"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -23218,6 +23198,296 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dialog_t.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-midboss-stage2-update",
+      "entry_sha256": "15f23c285e6b1c60eacfd12e79958c8fa0ae3c7ba035b4374427205b66186839",
+      "result": {
+        "id": "main-midboss-stage2-update",
+        "entry_sha256": "15f23c285e6b1c60eacfd12e79958c8fa0ae3c7ba035b4374427205b66186839",
+        "rounds": [
+          {
+            "target_start": 89579,
+            "candidate_start": 89579,
+            "size": 393,
+            "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+            "candidate_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+            "raw_exact": true,
+            "target_fixups": [
+              350,
+              241,
+              210
+            ],
+            "candidate_fixups": [
+              350,
+              241,
+              210
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 89579,
+            "candidate_start": 89579,
+            "size": 393,
+            "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+            "candidate_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+            "raw_exact": true,
+            "target_fixups": [
+              350,
+              241,
+              210
+            ],
+            "candidate_fixups": [
+              350,
+              241,
+              210
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "118b44c885c59e4c7cbb75693f3d7bbe9f7bc338be92f791417c880b1bacef2c",
+            "dependency_timestamp_normalized_sha256": "680fea7c5176012c24dcbb82b7d652f763beacd0fb1791de8557022da64c99fb",
+            "module_name": "th05/midboss2.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/midboss2.cpp",
+              "src/main/midboss/stage2.cpp",
+              "src/main/midboss/stage2.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "2cacb5c8b769e46eb5afefa87e8444ca5c577ce9cc7ddd5e38284dc7ae7f11fe",
+            "dependency_timestamp_normalized_sha256": "680fea7c5176012c24dcbb82b7d652f763beacd0fb1791de8557022da64c99fb",
+            "module_name": "th05/midboss2.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/midboss2.cpp",
+              "src/main/midboss/stage2.cpp",
+              "src/main/midboss/stage2.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/midboss2.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/midboss2.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/midboss_stage2_bindings.asm",
+            "sha256": "9c2defb9307ae1a5c2d9eed149fbb42c830ed32feb5b6a6753e1fa2825abe551"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/midboss/stage2.cpp",
+            "sha256": "5979bdd68742b9452928edfcb2b2745f3b9e7a513f31aba6588000afe8375ad5"
+          },
+          {
+            "path": "src/main/midboss/stage2.hpp",
+            "sha256": "f6245dda83a850685d8303cf7ccce460ce44c30c1769fa07b4e6212c448690c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/midboss_stage2_bindings.asm",
+          "sha256": "9c2defb9307ae1a5c2d9eed149fbb42c830ed32feb5b6a6753e1fa2825abe551"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/midboss/stage2.cpp",
+          "sha256": "5979bdd68742b9452928edfcb2b2745f3b9e7a513f31aba6588000afe8375ad5"
+        },
+        {
+          "path": "src/main/midboss/stage2.hpp",
+          "sha256": "f6245dda83a850685d8303cf7ccce460ce44c30c1769fa07b4e6212c448690c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2d80b37e0d882a1b9dd828782bdc4de71a3113490c2e1f7de85722590ab9e63e",
+      "compiled_negative_control": {
+        "target_start": 89579,
+        "candidate_start": 89579,
+        "size": 393,
+        "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+        "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
+        "raw_exact": false,
+        "target_fixups": [
+          350,
+          241,
+          210
+        ],
+        "candidate_fixups": [
+          350,
+          241,
+          210
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-midboss-stage2-update",
+        "entry_sha256": "15f23c285e6b1c60eacfd12e79958c8fa0ae3c7ba035b4374427205b66186839",
+        "mutation": {
+          "id": "midboss-stage2-threshold",
+          "unit": "main-midboss-stage2-update",
+          "source": "src/main/midboss/stage2.cpp",
+          "find": "if(midboss.hp > 400) {",
+          "replace": "if(midboss.hp > 401) {"
+        },
+        "control_sha256": "999048a7509434944c2fa48f85bdbfd6f51025f43d2f075116f8b4fb6181fbc2",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 89579,
+          "candidate_start": 89579,
+          "size": 393,
+          "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+          "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
+          "raw_exact": false,
+          "target_fixups": [
+            350,
+            241,
+            210
+          ],
+          "candidate_fixups": [
+            350,
+            241,
+            210
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "fd2eb9ab7256e0bea6e38435f8c78beeedbefe6f588c378aab4d56fc3494859d",
+          "dependency_timestamp_normalized_sha256": "8d30daa0e227ba1409b30b6b9793b13485f2c624625e3fd4de42e3e5f14f56c9",
+          "module_name": "th05/midboss2.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/midboss2.cpp",
+            "src/main/midboss/stage2.cpp",
+            "src/main/midboss/stage2.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/midboss2.cpp"
         ]
       },
       "receipt_aggregate_pass": true

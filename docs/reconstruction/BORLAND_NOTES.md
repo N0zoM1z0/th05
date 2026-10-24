@@ -134,3 +134,31 @@ reason to change accepted producers or the core replay pipeline. Evidence is
 `.analysis/compiler-probes/shinki-bmode-a/diagnostic-context2.json`, with the
 original failed integration steps retained. No additional source or flag
 variants were tried.
+
+## Dialog graphics helpers do not establish original ASM provenance
+
+The three original MAIN helpers at 13A3E..13B18 are complete 88/56/74-byte
+hardware routines, each with one ordered loader fixup. REP STOSW and the
+alternating page-port OUT/ES-word operations establish their graphics semantics.
+They do not establish the language of the original author. ReC98 history labels
+box and face sources as reverse engineering (381db0a1/d48479ce), followed by C++
+decompilation (35d6fe30/a06996af); the copy conversion 36166192 removes an
+IDA-style sub_EEF2/loc_EF0A procedure. Its current box source explicitly forces
+TEST BX because ordinary pseudo-register C++ would emit TEST BL, and its EGC
+copy macro forces LOOP. These are reconstruction choices, so the existing
+source cannot by itself justify a new original-handwritten-ASM classification.
+No bodies were imported or credited. Private native boundaries, hashes and
+provenance commands are recorded in `.analysis/dialog-graphics-origin-review.json`.
+
+
+### Shinki control-flow diagnostics already exhausted
+
+Private `shinki-natural-cfg-a/observations.json` records two natural C++
+control-flow checks on the original frozen monolithic source. A positive
+playfield enclosure with nested decay handling still emits216 versus the
+original220 bytes; a real value-returning typed enclosure predicate emits240.
+Both use unchanged flags and preserve the actual collision macro side effects.
+Neither is exact and neither changes maintained source or credit. Together
+with the recorded B/TASM backend result, these are completed negative
+observations, not pending suggestions. Do not repeat those source forms or
+add idle work to retain the two original jump relay blocks.

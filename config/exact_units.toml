@@ -1610,3 +1610,23 @@ unit = "main-dialog-exalice"
 source = "src/main/dialog/tail.cpp"
 find = "super_clean(TINY_MIKO16_START, PAT_MAX);"
 replace = "super_clean(TINY_MIKO16_START, PAT_MAX - 1);"
+
+[[units]]
+id = "main-midboss-stage2-update"
+source = "src/main/midboss/stage2.cpp"
+module = "th05/midboss2.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage2_bindings.asm"
+target_start = 89579
+size = 393
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "midboss-stage2-threshold"
+unit = "main-midboss-stage2-update"
+source = "src/main/midboss/stage2.cpp"
+find = "if(midboss.hp > 400) {"
+replace = "if(midboss.hp > 401) {"
