@@ -2,18 +2,22 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "676400511e9095213f6e1776f1244ef3c47ebd884850434e6eca5ad6569e58fd",
+  "replay_receipt_sha256": "f97bfbf818a50798097df28eec3dd0c82c4c268e0b197224a1719c41830fb6ed",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 85572,
-    "candidate_start": 85572,
-    "size": 96,
-    "target_sha256": "798ba01f8a69171b73ff6042ed8bcfb5a85c77e5aa4ef25a36576f5335de14d4",
-    "candidate_sha256": "ecbfed7c63215c5783478644e01455f9b970fc87c46ffb957ddf5aeda7e5aa08",
+    "target_start": 57994,
+    "candidate_start": 57994,
+    "size": 257,
+    "target_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+    "candidate_sha256": "2248d714e4986d2939441a8208c9e827b8a4016923481fb67521f6c1590edfb7",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      242
+    ],
+    "candidate_fixups": [
+      242
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -8133,6 +8137,216 @@
             "src/shared/math/vector.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-circles",
+      "entry_sha256": "4cc16db6c40caeafbd43ecb9ea54312d994528e34d5a219bd23e744cd8fbd0cd",
+      "result": {
+        "id": "main-circles",
+        "entry_sha256": "4cc16db6c40caeafbd43ecb9ea54312d994528e34d5a219bd23e744cd8fbd0cd",
+        "rounds": [
+          {
+            "target_start": 57994,
+            "candidate_start": 57994,
+            "size": 257,
+            "target_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+            "candidate_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+            "raw_exact": true,
+            "target_fixups": [
+              242
+            ],
+            "candidate_fixups": [
+              242
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 57994,
+            "candidate_start": 57994,
+            "size": 257,
+            "target_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+            "candidate_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+            "raw_exact": true,
+            "target_fixups": [
+              242
+            ],
+            "candidate_fixups": [
+              242
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "aa6856157388b2f1361b7c05e6430f0774491e6e62f47f7d60b00f761e4164aa",
+            "dependency_timestamp_normalized_sha256": "ab047fcea75753b204bd5c6efc242c3363fb477fd64a4d865ceb0240ee68fba2",
+            "module_name": "th05/circle.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/circle.cpp",
+              "src/main/effects/circles.cpp",
+              "src/main/effects/circles.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "57ce639ea74974bb5f509b2e8adb932139f40f94b71b0b5978f75449517b49b6",
+            "dependency_timestamp_normalized_sha256": "ab047fcea75753b204bd5c6efc242c3363fb477fd64a4d865ceb0240ee68fba2",
+            "module_name": "th05/circle.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/circle.cpp",
+              "src/main/effects/circles.cpp",
+              "src/main/effects/circles.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/circles_bindings.asm",
+            "sha256": "efbb54451218a258fcc54288d83cf858c07d5bab613e85fb41c14ccb4ad0ab95"
+          },
+          {
+            "path": "src/main/effects/circles.cpp",
+            "sha256": "3925c48bffb55d14eb60c99443541242adad55a42cc862f7310ced1c91c1b7a7"
+          },
+          {
+            "path": "src/main/effects/circles.hpp",
+            "sha256": "bf4ba6859fc1b61af3342a8b4327fa65bb67192bb87438de12eeaf315dcfbe80"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/circles_bindings.asm",
+          "sha256": "efbb54451218a258fcc54288d83cf858c07d5bab613e85fb41c14ccb4ad0ab95"
+        },
+        {
+          "path": "src/main/effects/circles.cpp",
+          "sha256": "3925c48bffb55d14eb60c99443541242adad55a42cc862f7310ced1c91c1b7a7"
+        },
+        {
+          "path": "src/main/effects/circles.hpp",
+          "sha256": "bf4ba6859fc1b61af3342a8b4327fa65bb67192bb87438de12eeaf315dcfbe80"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f97bfbf818a50798097df28eec3dd0c82c4c268e0b197224a1719c41830fb6ed",
+      "compiled_negative_control": {
+        "target_start": 57994,
+        "candidate_start": 57994,
+        "size": 257,
+        "target_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+        "candidate_sha256": "2248d714e4986d2939441a8208c9e827b8a4016923481fb67521f6c1590edfb7",
+        "raw_exact": false,
+        "target_fixups": [
+          242
+        ],
+        "candidate_fixups": [
+          242
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-circles",
+        "entry_sha256": "4cc16db6c40caeafbd43ecb9ea54312d994528e34d5a219bd23e744cd8fbd0cd",
+        "mutation": {
+          "unit": "main-circles",
+          "source": "src/main/effects/circles.cpp",
+          "find": "static const int CIRCLE_FRAMES = 16;",
+          "replace": "static const int CIRCLE_FRAMES = 15;"
+        },
+        "control_sha256": "1c8b17564612ab3920462a5bee52bb825b3bfefb994de12a4b8f3249e9041161",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 57994,
+          "candidate_start": 57994,
+          "size": 257,
+          "target_sha256": "6f1df86a42b9198486bed33ab0c3f05092d877be3498cc60d6530634c5c8f132",
+          "candidate_sha256": "2248d714e4986d2939441a8208c9e827b8a4016923481fb67521f6c1590edfb7",
+          "raw_exact": false,
+          "target_fixups": [
+            242
+          ],
+          "candidate_fixups": [
+            242
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "53f55e2fecfae2169d0fa23e4452947661179154f612a6a4a77ba448703e4fd8",
+          "dependency_timestamp_normalized_sha256": "fe7329f9cc30017b7852472c1c049fa26a9214025216c314e7fd66df5cf187a5",
+          "module_name": "th05/circle.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/circle.cpp",
+            "src/main/effects/circles.cpp",
+            "src/main/effects/circles.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/reimu.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",

@@ -210,3 +210,42 @@ unit = "maine-allcast"
 source = "src/maine/allcast/allcast.cpp"
 find = "measure_target += 30;"
 replace = "measure_target += 29;"
+
+[[units]]
+id = "maine-staff-clip"
+source = "src/maine/staff/staff.cpp"
+module = "th05/staff.cpp"
+segment = "SCORE_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 0xd31f
+size = 104
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_staff_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-clip"
+source = "src/maine/staff/staff.cpp"
+find = "(space_window_center.x - (space_window_w / 2)) - 8"
+replace = "(space_window_center.x - (space_window_w / 2)) - 7"
+
+[[units]]
+id = "maine-entry"
+source = "src/maine/entry/entry.cpp"
+module = "th05/maine_e.cpp"
+segment = "MAINE_E_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+target_start = 0xa545
+size = 336
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_entry_bindings.asm"
+
+[[controls]]
+unit = "maine-entry"
+source = "src/maine/entry/entry.cpp"
+find = "frame_delay(100);"
+replace = "frame_delay(99);"

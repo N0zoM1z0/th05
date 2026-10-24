@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **67 bounded C++ units / 153 complete function occurrences**,
-26,034 compared bytes and 26,016 authored code bytes: 25,598 instructions plus
+Current acceptance: **72 bounded C++ units / 168 complete function occurrences**,
+27,960 compared bytes and 27,942 authored code bytes: 27,524 instructions plus
 418 semantic compiler-table bytes. Eighteen checked padding bytes receive no
-credit. MAIN has 91 functions / 16,110 code bytes, decoded OP 50 / 8,540,
-decoded MAINE 12 / 1,366. Global denominator and percentage remain unreviewed.
+credit. MAIN has 95 functions / 16,367 code bytes, decoded OP 53 / 9,158,
+decoded MAINE 20 / 2,417. Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
 
@@ -33,6 +33,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | Eight OP music suffix functions | `op-music-functions-a` |
 | Nine MAINE cutscene functions | `maine-cutscene-a` |
 | Shared polar/vector in all three games | `main-vector-a`, `op-vector-b`, `maine-vector-a` |
+| OP title animation | `op-title-b` |
+| MAINE all-cast, staff clip and entry | `maine-allcast-a`, `maine-staff-clip-a`, `maine-entry-a` |
+| MAIN growing/shrinking circle effects | `main-circles-b` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -100,6 +103,8 @@ Eight music suffix functions add 646 bytes after a new focused replay with
 an accepted comment-loader negative; the previous suffix negative belonged to
 an excluded menu function and could not support subset acceptance. Polygon
 update (502 bytes) and music menu (837) remain raw-exact but ordered-inexact.
+OP title adds 618 bytes / three functions. MAINE all-cast adds 611 / three,
+staff clip 104 / one, and entry 336 / four. MAIN circle effects add 257 / four.
 Nine MAINE cutscene functions add 1,241 bytes (1,225 instructions, 16 tables),
 with Return-key animation period as the compiled negative. The cutscene's
 52-byte EGC helper and 1,555-byte opcode dispatcher remain unaccepted.

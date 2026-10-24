@@ -1,4 +1,4 @@
-# TH05 MAINE all-cast animation candidate
+# MAINE all-cast
 
 Natural source is adapted from pinned nmlgc/ReC98
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`, `th05/end/allcast.cpp`.
@@ -55,3 +55,10 @@ to `measure_target += 29;`, changing the real between-screen musical delay.
 It must be applied only to a staged negative source, compiled and rejected by
 the full contribution or the complete screen-fade function. No acceptance,
 whole-executable layout or packed-file exactness is claimed here.
+
+## Accepted focused replay
+
+`maine-allcast-a` passes two independent producers, all 611 instruction bytes /
+three functions and 23 ordered segment fixups. The compiled between-screen
+measure-delay mutation from 30 to 29 is rejected. The BSS layout observation
+and external arrays remain uncredited.

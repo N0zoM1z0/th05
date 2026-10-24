@@ -1,4 +1,4 @@
-TH05 OP title candidate
+# OP title animation
 =======================
 
 Natural-source provenance: nmlgc/ReC98 at
@@ -61,3 +61,12 @@ Cached calibration locations are routing evidence; two fresh focused builds,
 full raw bytes, ordered fixups, OMF integrity, and compiled negative rejection
 are still required for exact acceptance. DATA observation remains separate
 from code credit and standalone executable reconstruction.
+
+## Accepted focused replay
+
+`op-title-b` passes both fresh producers, all 618 instruction bytes / three
+functions and 39 ordered segment fixups. The compiled 16-to-15 frame pause
+mutation changes output and is rejected. The first scaffold failed before C++
+compilation because `_DATA` had byte alignment incompatible with the model;
+only its DATA/BSS alignment declarations were corrected for the valid replay.
+No DATA, external context or packed-file credit is added.

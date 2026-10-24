@@ -610,3 +610,39 @@ unit = "main-vector"
 source = "src/shared/math/vector.cpp"
 find = "static_cast<long>(radius) * ratio) >> 8"
 replace = "static_cast<long>(radius) * ratio) >> 7"
+
+[[units]]
+id = "main-circles"
+source = "src/main/effects/circles.cpp"
+module = "th05/circle.cpp"
+segment = "CIRCLE_TEXT"
+target_start = 0xe28a
+size = 257
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/circles_bindings.asm"
+
+[[controls]]
+unit = "main-circles"
+source = "src/main/effects/circles.cpp"
+find = "static const int CIRCLE_FRAMES = 16;"
+replace = "static const int CIRCLE_FRAMES = 15;"
+
+[[units]]
+id = "main-firewaves"
+source = "src/main/boss/firewaves.cpp"
+module = "th05/boss_x.cpp"
+segment = "BX_UPDATE_TEXT"
+target_start = 0x1983d
+size = 94
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/firewaves_bindings.asm"
+
+[[controls]]
+unit = "main-firewaves"
+source = "src/main/boss/firewaves.cpp"
+find = "firewave->bottom += 4;"
+replace = "firewave->bottom += 3;"

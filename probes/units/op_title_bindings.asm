@@ -84,7 +84,7 @@ OP_TITLE_DGROUP_GAP segment byte public 'CODE' use16
 org (DGROUP_BASE - SHARED_END)
 OP_TITLE_DGROUP_GAP ends
 
-_DATA segment byte public 'DATA' use16
+_DATA segment word public 'DATA' use16
 public _PaletteTone
 org 054eh
 _PaletteTone label word
@@ -97,7 +97,7 @@ org (02dech - OWNED_DATA_END)
 _resident label dword
 OP_TITLE_DATA_TAIL ends
 
-_BSS segment byte public 'BSS' use16
+_BSS segment word public 'BSS' use16
 _BSS ends
 DGROUP group _DATA, OP_TITLE_DATA_TAIL, _BSS
 end
