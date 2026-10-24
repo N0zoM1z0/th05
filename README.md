@@ -13,9 +13,9 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **11 C++ functions / 978 authored instruction bytes** pass two cold
+The first **28 C++ functions / 3,959 authored code bytes** pass two cold
 builds, complete raw unit comparison, relocation checks and a compiled negative
-control. Their complete extents contain 984 bytes including six excluded NOPs.
+control. Their complete extents contain 3,965 bytes including six excluded NOPs.
 The oracle supplies explicit original external-symbol bindings; whole-program
 placement and standalone linkage remain open.
 

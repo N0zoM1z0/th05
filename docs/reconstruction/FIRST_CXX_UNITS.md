@@ -16,6 +16,8 @@ Target `th05-main`, SHA-256 `c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a25
 | `src/main/boss/movement.cpp` | `0x15914..0x15AA2` | 398 | 398 |
 | `src/main/formats/cfg_resident.cpp` | `0xE61E..0xE644` | 38 | 37 |
 | `src/main/boss/explosion.cpp` | `0x1060E..0x107D2` | 452 | 452 |
+| `src/main/hud/overlay.cpp` | `0x11D50..0x1245E` | 1806 | 1806 |
+| `src/main/player/reimu.cpp` | `0xE6FB..0xEB92` | 1175 | 1175 |
 
 Ranges are half-open and relative to the original MZ load module. Its header
 is 4032 bytes; do not confuse these with packed-file offsets or physical memory.
@@ -79,6 +81,11 @@ whole-program placement or standalone linkage. The next focused replay compiles
 only the 452-byte Boss explosion contribution, reusing unchanged tool probes and
 the four prior accepted contributions. This brings the current total to
 11 functions, 984 complete bytes and 978 instruction bytes. It does not prove
+whole-program acceptance. Two subsequent focused replays add nine HUD overlay
+functions (1806 bytes, including 24 ordered far-call fixups and a near callback)
+and eight Reimu shot functions (1175 bytes, zero MZ fixups). These reuse previous
+accepted sources and unchanged tool probes. Current total: 28 functions,
+3965 complete bytes and 3959 code bytes. It does not prove
 whole-program placement, global layout, standalone linkage, data ownership,
 packed-file exactness, runtime gameplay or the global authored-byte percentage.
 The first whole-reference MAIN calibration differs from the original and is

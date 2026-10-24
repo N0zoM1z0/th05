@@ -95,3 +95,41 @@ unit = "main-boss-explosion"
 source = "src/main/boss/explosion.cpp"
 find = "(p).age >= 32"
 replace = "(p).age >= 33"
+
+[[units]]
+id = "main-hud-overlay"
+source = "src/main/hud/overlay.cpp"
+module = "th05/hud_ovrl.cpp"
+segment = "HUD_OVRL_TEXT"
+target_start = 0x11d50
+size = 1806
+alignment_offsets = []
+functions = 9
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/hud_overlay_bindings.asm"
+
+[[controls]]
+unit = "main-hud-overlay"
+source = "src/main/hud/overlay.cpp"
+find = "const int POPUP_FRAMES_UNTIL_OUT_DISSOLVE = 192;"
+replace = "const int POPUP_FRAMES_UNTIL_OUT_DISSOLVE = 193;"
+
+[[units]]
+id = "main-reimu-shots"
+source = "src/main/player/reimu.cpp"
+module = "th05/p_reimu.cpp"
+segment = "MAIN_01_TEXT"
+target_start = 0xe6fb
+size = 1175
+alignment_offsets = []
+functions = 8
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/reimu_shots_bindings.asm"
+
+[[controls]]
+unit = "main-reimu-shots"
+source = "src/main/player/reimu.cpp"
+find = "set_homing(shot, 2);"
+replace = "set_homing(shot, 3);"

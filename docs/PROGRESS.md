@@ -5,12 +5,12 @@ complete authored ownership denominator remains under review.
 
 | Accepted scope | Functions | Instruction bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: |
-| MAIN bounded C++ units | 11 | 978 | 984 |
+| MAIN bounded C++ units | 28 | 3959 | 3965 |
 | OP | 0 | 0 | 0 |
 | MAINE | 0 | 0 | 0 |
 | ZUN | 0 | 0 | 0 |
 
-5 complete C++ contributions pass two cold builds, raw bytes and ordered
+7 complete C++ contributions pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
 Explicit codestring directives reproduce 6 observed NOP alignment bytes;
 these bytes are checked but excluded from authored instruction credit.
