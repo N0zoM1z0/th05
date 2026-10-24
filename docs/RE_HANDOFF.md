@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **176 bounded C++ CODE/DATA units / 352 complete function occurrences**,
-**61,847 authored bytes exact**: 52,990 CODE and 8,857 initialized DATA.
-CODE is 52,446 instruction plus 544 semantic compiler-table bytes.
-Complete compared extents total 61,880; 33 checked padding bytes receive
-no credit. MAIN has 270 functions / 40,425 CODE / 199 DATA;
+Current acceptance: **179 bounded C++ CODE/DATA units / 364 complete function occurrences**,
+**63,228 authored bytes exact**: 54,371 CODE and 8,857 initialized DATA.
+CODE is 53,827 instruction plus 544 semantic compiler-table bytes.
+Complete compared extents total 63,261; 33 checked padding bytes receive
+no credit. MAIN has 282 functions / 41,806 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -579,3 +579,31 @@ final-ring turns2→3 mutation is compiled and rejected for this whole owner.
 No independent helper/callback negative per sibling is claimed. Full canonical
 Sword/Boss/special state, actual main01 rendering pointers, near generic
 helpers and all table destinations retain their true ABI and storage.
+
+
+### Yumeko sword lifecycle helpers and standalone Mai/Yuki attacks
+
+`main-yumeko-sweep-a` accepts321 instruction bytes/one complete function,
+with its real speed-limit6→7 mutation. `main-yumeko-swords-add-a` accepts121
+bytes/one complete allocator, with circle color9→10 mutation. Actual full
+Sword/template/pool state and real Pascal/fastcall helpers are preserved;
+the283-byte updater stays unwritten due its genuine DX:AX struct-return
+lowering issue. Both owners have two fresh full raw/ordered positives.
+
+`main-mai-yuki-remaining-patterns-a` accepts939 bytes/ten complete attacks,
+with original ordered fixups[920,833,462,136] and the first selected angle
+0x20→0x21 control. The first tracking-laser candidate emits185 versus186,
+and the failed full1124-byte TU shifts later near-call displacements. Its
+unchanged real later bodies are shared in remaining_patterns.inl and have
+their own correct standalone source/binder context; no padding byte or
+acceptance transfer from the failed ten-scope receipt is used. The tracker
+remains uncredited, including its original fixup order[38,130].
+
+The complete EX-Alice update1060 remains unaccepted after two first-positive
+1064-byte gates. Four actual OMF far calls become TLINK's five-byte
+NOP/PUSH-CS/near-CALL sequences instead of original four-byte sequences.
+The true same-CS first declaration does not repair this; no further flag,
+padding or binding probes are justified. All1008 semantic instruction bytes
+and52 switch-table bytes remain in the natural candidate, with no trimming
+or normalization. Actual source TU/callee-definition context remains open.
+The failed owner is removed from live replay selection.

@@ -2294,3 +2294,66 @@ unit = "main-yumeko-update"
 source = "src/main/boss/yumeko/update.cpp"
 find = "bullet_special.turns_max = 2;"
 replace = "bullet_special.turns_max = 3;"
+
+[[units]]
+id = "main-yumeko-sweep"
+source = "src/main/boss/yumeko/sweep.cpp"
+module = "th05/yumeswp.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zCB5_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_sweep_bindings.asm"
+target_start = 0x1f59c
+size = 321
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yumeko-sweep-volley-speed-limit"
+unit = "main-yumeko-sweep"
+source = "src/main/boss/yumeko/sweep.cpp"
+find = "bullet_template.speed.v > 6 * 16"
+replace = "bullet_template.speed.v > 7 * 16"
+
+[[units]]
+id = "main-yumeko-swords-add"
+source = "src/main/boss/yumeko/swords_add.cpp"
+module = "th05/swrdadd.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zCB5_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_swords_add_bindings.asm"
+target_start = 0x1ed41
+size = 121
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yumeko-sword-spawn-circle-color"
+unit = "main-yumeko-swords-add"
+source = "src/main/boss/yumeko/swords_add.cpp"
+find = "circles_color = 9;"
+replace = "circles_color = 10;"
+
+[[units]]
+id = "main-mai-yuki-remaining-patterns"
+source = "src/main/boss/mai_yuki/remaining_patterns.cpp"
+module = "th05/my_rest.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_remaining_patterns_bindings.asm"
+target_start = 97328
+size = 939
+alignment_offsets = []
+functions = 10
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-mai-yuki-remaining-patterns"
+source = "src/main/boss/mai_yuki/remaining_patterns.inl"
+find = "boss_statebyte[15] = 0x20;"
+replace = "boss_statebyte[15] = 0x21;"
