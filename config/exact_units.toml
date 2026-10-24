@@ -2662,3 +2662,102 @@ unit = "main-gameplay-session-init"
 source = "src/main/runtime/gameplay_session_init.cpp"
 find = "dream = 1;"
 replace = "dream = 2;"
+
+[[units]]
+id = "main-marisa-bomb-control"
+source = "src/main/player/marisa_bomb_control.cpp"
+module = "th05/mb_ctrl.cpp"
+segment = "MARISA_BOMB_TEXT"
+wrapper_options = "-zCMARISA_BOMB_TEXT -zPmain_01"
+bindings_source = "probes/units/marisa_bomb_control_bindings.asm"
+target_start = 0xffb7
+size = 161
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-marisa-bomb-control"
+source = "src/main/player/marisa_bomb_control.cpp"
+find = "PaletteTone = 100;"
+replace = "PaletteTone = 101;"
+
+[[units]]
+id = "main-session-cleanup-pause"
+source = "src/main/runtime/session_end.cpp"
+module = "th05/s_end.cpp"
+segment = "SESSION_END_TEXT"
+wrapper_options = "-zCSESSION_END_TEXT -zPmain_01"
+bindings_source = "probes/units/session_end_bindings.asm"
+target_start = 46600
+size = 334
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+id = "pause-q-result"
+unit = "main-session-cleanup-pause"
+source = "src/main/runtime/session_end.cpp"
+find = "return 1;"
+replace = "return 0;"
+
+[[units]]
+id = "main-alice-puppets-render"
+source = "src/main/boss/alice/puppets_render.cpp"
+module = "th05/b3_pupr.cpp"
+segment = "ALICE_FG_TEXT"
+wrapper_options = "-zCALICE_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/alice_puppets_render_bindings.asm"
+target_start = 82391
+size = 381
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-alice-puppets-render"
+source = "src/main/boss/alice/puppets_render.cpp"
+find = "grcg_setcolor(ALICE_FG_RMW, 9);"
+replace = "grcg_setcolor(ALICE_FG_RMW, 10);"
+
+[[units]]
+id = "main-reimu-bomb-control"
+source = "src/main/player/reimu_bomb_control.cpp"
+module = "th05/rb_ctrl.cpp"
+segment = "REIMU_BOMB_TEXT"
+wrapper_options = "-zCREIMU_BOMB_TEXT -zPmain_01"
+bindings_source = "probes/units/reimu_bomb_control_bindings.asm"
+target_start = 64875
+size = 193
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-reimu-bomb-control"
+source = "src/main/player/long_bomb_control.inl"
+find = "PaletteTone = 100;"
+replace = "PaletteTone = 101;"
+
+[[units]]
+id = "main-yuuka-bomb-control"
+source = "src/main/player/yuuka_bomb_control.cpp"
+module = "th05/yb_ctrl.cpp"
+segment = "YUUKA_BOMB_TEXT"
+wrapper_options = "-zCYUUKA_BOMB_TEXT -zPmain_01"
+bindings_source = "probes/units/yuuka_bomb_control_bindings.asm"
+target_start = 66417
+size = 193
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-yuuka-bomb-control"
+source = "src/main/player/long_bomb_control.inl"
+find = "PaletteTone = 100;"
+replace = "PaletteTone = 101;"

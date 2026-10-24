@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **194 bounded C++ CODE/DATA units / 391 complete function occurrences**,
-**69,667 authored bytes exact**: 60,774 CODE and 8,893 initialized DATA.
-CODE is 60,140 instruction plus 634 semantic compiler-table bytes.
-Complete compared extents total 69,700; 33 checked padding bytes receive
-no credit. MAIN has 309 functions / 48,209 CODE / 235 DATA;
+Current acceptance: **199 bounded C++ CODE/DATA units / 397 complete function occurrences**,
+**70,929 authored bytes exact**: 62,036 CODE and 8,893 initialized DATA.
+CODE is 61,402 instruction plus 634 semantic compiler-table bytes.
+Complete compared extents total 70,962; 33 checked padding bytes receive
+no credit. MAIN has 315 functions / 49,471 CODE / 235 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -733,3 +733,19 @@ tables. Two fresh producers match all raw bytes with no relocations/padding;
 the independent dream-initialization mutation rejects. The actual four-by-ten
 shot dispatch table, resident object and near callback ABIs remain full size.
 Stage-session initialization is a separate unaccepted owner.
+
+## Additional foreground, pause and bomb control owners
+
+`main-alice-puppets-whole-a` proves the complete 381-byte C/Pascal puppet
+renderer as its own natural TU. Its body is literally unchanged from the
+archived full candidate; the neighboring 150-byte Alice callback remains
+unaccepted against original140. No C-public function-scope guard was relaxed.
+`main-session-cleanup-pause-a` proves both complete stage cleanup and pause,
+334 instruction bytes. Its Q-result mutation is an owner-level control;
+cleanup has no separate mutation claim. TH05's input-release behavior and
+resource ranges remain intact.
+
+The complete Marisa161, Reimu193 and Yuuka193 bomb-control callbacks also
+pass two fresh producers, full raw/ordered fixups and independent tone mutations.
+Mima161 remains raw-exact but ordered-inexact and receives zero credit; its
+original relocation order stays untouched. No unchanged owner was replayed.
