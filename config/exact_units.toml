@@ -2761,3 +2761,123 @@ unit = "main-yuuka-bomb-control"
 source = "src/main/player/long_bomb_control.inl"
 find = "PaletteTone = 100;"
 replace = "PaletteTone = 101;"
+
+[[units]]
+id = "main-louise-foreground"
+source = "src/main/boss/louise_foreground.cpp"
+module = "th05/louisefg.cpp"
+segment = "BOSS_FG_TEXT"
+wrapper_options = "-zCBOSS_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/louise_foreground_bindings.asm"
+target_start = 82275
+size = 116
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-louise-foreground"
+source = "src/main/boss/louise_foreground.inl"
+find = "stage_frame_mod16 / BOSS_FG_ANIMATION_FRAMES"
+replace = "stage_frame_mod16 / (BOSS_FG_ANIMATION_FRAMES + 1)"
+
+[[units]]
+id = "main-mima-bomb-draw"
+source = "src/main/player/mima_bomb.cpp"
+module = "th05/mi_full.cpp"
+segment = "MIMA_BOMB_TEXT"
+wrapper_options = "-zCMIMA_BOMB_TEXT -zPmain_01"
+bindings_source = "probes/units/mima_bomb_full_bindings.asm"
+target_start = 65805
+size = 205
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "mima_bomb_draw()"
+function_end_symbol = "bomb_mima()"
+
+[[controls]]
+id = "mima-outer-circle-radius"
+unit = "main-mima-bomb-draw"
+source = "src/main/player/mima_bomb.cpp"
+find = "radius = 224 - bomb_frame;"
+replace = "radius = 223 - bomb_frame;"
+
+[[units]]
+id = "main-marisa-bomb-draw"
+source = "src/main/player/marisa_bomb_draw.cpp"
+module = "th05/mb_draw.cpp"
+segment = "MARISA_DRAW_TEXT"
+wrapper_options = "-zCMARISA_DRAW_TEXT -zPmain_01"
+bindings_source = "probes/units/marisa_bomb_draw_bindings.asm"
+target_start = 0xff7b
+size = 60
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-marisa-bomb-draw"
+source = "src/main/player/marisa_bomb_draw.cpp"
+find = "PaletteTone = 196 - (bomb_frame * 6);"
+replace = "PaletteTone = 195 - (bomb_frame * 6);"
+
+[[units]]
+id = "main-mai-yuki-sprite-put"
+source = "src/main/boss/mai_yuki/sprite_put.cpp"
+module = "th05/b4_put.cpp"
+segment = "MY_FG_TEXT"
+wrapper_options = "-zCMY_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/mai_yuki_sprite_put_bindings.asm"
+target_start = 67538
+size = 75
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-mai-yuki-sprite-put"
+source = "src/main/boss/mai_yuki/sprite_put.cpp"
+find = "patnum += stage_frame_mod8 / 2;"
+replace = "patnum += stage_frame_mod8 / 3;"
+
+[[units]]
+id = "main-yumeko-foreground"
+source = "src/main/boss/yumeko/foreground.cpp"
+module = "th05/yumekofg.cpp"
+segment = "YUMEKO_FG_TEXT"
+wrapper_options = "-zCYUMEKO_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/yumeko_foreground_bindings.asm"
+target_start = 82978
+size = 161
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-yumeko-foreground"
+source = "src/main/boss/yumeko/foreground.cpp"
+find = "boss.sprite + stage_frame_mod16 / 4"
+replace = "boss.sprite + stage_frame_mod16 / 5"
+
+[[units]]
+id = "main-shinki-foreground"
+source = "src/main/boss/shinki/foreground.cpp"
+module = "th05/shinkifg.cpp"
+segment = "SHINKI_FG_TEXT"
+wrapper_options = "-zCSHINKI_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/shinki_foreground_bindings.asm"
+target_start = 77926
+size = 160
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-shinki-foreground"
+source = "src/main/boss/shinki/foreground.cpp"
+find = "patnum < SHINKI_FG_WING_FIRST"
+replace = "patnum < (SHINKI_FG_WING_FIRST + 1)"

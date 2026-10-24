@@ -9,7 +9,7 @@
 #endif
 
 typedef void (near pascal *near nearfunc_t_near)(void);
-typedef void (near *near SessionShotFunction)(void);
+typedef void (near pascal *near SessionShotFunction)(void);
 typedef void (near pascal *near SessionBulletTuning)(void);
 static const int SESSION_PLAYCHAR_COUNT = 4;
 static const int SESSION_SHOT_LEVELS = 10;

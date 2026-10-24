@@ -34,3 +34,9 @@ natural drawing/control context is a separate candidate requiring new evidence.
 Pinned ReC98's `th05_main.asm` corroborates the algorithms. Complete native
 original decodes and the actual fresh producers establish boundaries, bindings
 and equality independently. Whole-program placement and packing remain open.
+
+The complete Marisa drawing prelude `[FF7B,FFB7)` is separately accepted as
+`main-marisa-bomb-draw-b`: 60 instruction bytes, original ordered fixup `[14]`,
+two fresh producers and its own initial-tone mutation 196 to 195. Its beam
+dispatch writes the canonical unsigned `shot_time` byte to the real blocked
+sentinel `FFh`; the backdrop kernel stays a foreign near interface.

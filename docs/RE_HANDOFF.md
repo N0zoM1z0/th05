@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **199 bounded C++ CODE/DATA units / 397 complete function occurrences**,
-**70,929 authored bytes exact**: 62,036 CODE and 8,893 initialized DATA.
-CODE is 61,402 instruction plus 634 semantic compiler-table bytes.
-Complete compared extents total 70,962; 33 checked padding bytes receive
-no credit. MAIN has 315 functions / 49,471 CODE / 235 DATA;
+Current acceptance: **205 bounded C++ CODE/DATA units / 403 complete function occurrences**,
+**71,706 authored bytes exact**: 62,813 CODE and 8,893 initialized DATA.
+CODE is 62,179 instruction plus 634 semantic compiler-table bytes.
+Complete compared extents total 71,739; 33 checked padding bytes receive
+no credit. MAIN has 321 functions / 50,248 CODE / 235 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -749,3 +749,22 @@ The complete Marisa161, Reimu193 and Yuuka193 bomb-control callbacks also
 pass two fresh producers, full raw/ordered fixups and independent tone mutations.
 Mima161 remains raw-exact but ordered-inexact and receives zero credit; its
 original relocation order stays untouched. No unchanged owner was replayed.
+
+## Additional complete foreground scopes and retained Mima draw
+
+Standalone Louise116, Mai/Yuki sprite-helper75, Yumeko161 and Shinki160
+now pass their own focused double producers and semantic mutations. Source
+factors preserve literal complete bodies; their larger failed cohorts remain
+unaccepted. Marisa drawing60 also passes independently.
+
+The raw-exact but ordered-inexact Mima366 producer supplies its complete205-byte
+drawing function through `main-mima-bomb-draw-a`: two retained cold producers,
+no new compiler invocation, the original negative radius mutation, real next
+function MAP boundary, and all eleven scoped ordered fixups. The failed whole
+parent stays archived unchanged, and Mima control161 still receives no credit.
+
+The session shot-dispatch pointer typedef now uses its true near Pascal ABI,
+matching all actual shot providers. Only the affected initialization468 was
+replayed (`main-gameplay-session-init-b`); counts are unchanged by this fix.
+Known failed runtime/shot/background2/full-foreground entries are absent from
+the default replay manifest, with natural candidate sources retained separately.
