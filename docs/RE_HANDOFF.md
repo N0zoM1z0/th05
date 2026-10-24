@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **190 bounded C++ CODE/DATA units / 387 complete function occurrences**,
-**68,557 authored bytes exact**: 59,664 CODE and 8,893 initialized DATA.
-CODE is 59,048 instruction plus 616 semantic compiler-table bytes.
-Complete compared extents total 68,590; 33 checked padding bytes receive
-no credit. MAIN has 305 functions / 47,099 CODE / 235 DATA;
+Current acceptance: **194 bounded C++ CODE/DATA units / 391 complete function occurrences**,
+**69,667 authored bytes exact**: 60,774 CODE and 8,893 initialized DATA.
+CODE is 60,140 instruction plus 634 semantic compiler-table bytes.
+Complete compared extents total 69,700; 33 checked padding bytes receive
+no credit. MAIN has 309 functions / 48,209 CODE / 235 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -710,3 +710,26 @@ full raw/ordered-fixup equality and independent compiled mutations. The callback
 banks retain distinct bool/void callback types and all 18 genuine function
 pointers. Spark preserves the original 96-record traversal over a 64-record
 active pool and low-byte writes to word fields. No unchanged owner was rebuilt.
+
+## Mima and Yuuka bomb shapes
+
+`main-mima-circles-b` and `main-yuuka-heart-d` add two complete independent
+callbacks, 307 instruction bytes with no padding/tables. Their own compiled
+distance mutations reject, and two fresh producers match raw bytes and original
+ordered fixups. Full existing bomb/player storage and true polar/sprite/fill
+interfaces are preserved. Pixel-space polar centers are intentionally unscaled.
+See `src/main/player/bomb_shapes.md`; no unchanged owner was rebuilt.
+
+`main-marisa-bomb-lasers-b` adds the complete 335-byte eight-beam callback
+with seven original ordered fixups, two fresh producers and its own rejected
+radius mutation. Together the three bomb-shape callbacks add 642 CODE bytes.
+The original Spark callback boundary and player reload are preserved.
+
+## Complete new-game initialization
+
+`main-gameplay-session-init-a` adds one complete 468-byte new-game function:
+450 instruction bytes plus 18 bytes of compiler-generated rank/character switch
+tables. Two fresh producers match all raw bytes with no relocations/padding;
+the independent dream-initialization mutation rejects. The actual four-by-ten
+shot dispatch table, resident object and near callback ABIs remain full size.
+Stage-session initialization is a separate unaccepted owner.

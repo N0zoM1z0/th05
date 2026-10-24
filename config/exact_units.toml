@@ -2584,3 +2584,81 @@ unit = "main-spark-lifecycle"
 source = "src/main/effects/spark/lifecycle.hpp"
 find = "static const pixel_t SPARK_W = 8;"
 replace = "static const pixel_t SPARK_W = 9;"
+
+[[units]]
+id = "main-yuuka-heart"
+source = "src/main/player/yuuka_heart.cpp"
+module = "th05/y_heart.cpp"
+segment = "YUUKA_HEART_TEXT"
+wrapper_options = "-zCYUUKA_HEART_TEXT -zPmain_01"
+bindings_source = "probes/units/yuuka_heart_bindings.asm"
+target_start = 0x1027b
+size = 126
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-yuuka-heart"
+source = "src/main/player/yuuka_heart.cpp"
+find = "bomb_anim.yuuka.distance = 16;"
+replace = "bomb_anim.yuuka.distance = 17;"
+
+[[units]]
+id = "main-mima-circles"
+source = "src/main/player/mima_circles.cpp"
+module = "th05/m_circle.cpp"
+segment = "MIMA_CIRCLES_TEXT"
+wrapper_options = "-zCMIMA_CIRCLES_TEXT -zPmain_01"
+bindings_source = "probes/units/mima_circles_bindings.asm"
+target_start = 0x10058
+size = 181
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-mima-circles"
+source = "src/main/player/mima_circles.cpp"
+find = "circle->distance = 256;"
+replace = "circle->distance = 257;"
+
+[[units]]
+id = "main-marisa-bomb-lasers"
+source = "src/main/player/marisa_lasers.cpp"
+module = "th05/m_lasers.cpp"
+segment = "MARISA_LASERS_TEXT"
+wrapper_options = "-zCMARISA_LASERS_TEXT -zPmain_01"
+bindings_source = "probes/units/marisa_lasers_bindings.asm"
+target_start = 0xfe2c
+size = 335
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-marisa-bomb-lasers"
+source = "src/main/player/marisa_lasers.cpp"
+find = "laser->radius = 24;"
+replace = "laser->radius = 25;"
+
+[[units]]
+id = "main-gameplay-session-init"
+source = "src/main/runtime/gameplay_session_init.cpp"
+module = "th05/gsi.cpp"
+segment = "SESSION_INIT_TEXT"
+wrapper_options = "-zCSESSION_INIT_TEXT -zPmain_01"
+bindings_source = "probes/units/gameplay_session_init_bindings.asm"
+target_start = 45155
+size = 468
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 450, size = 10, kind = "compiler-switch-table"}, {offset = 460, size = 8, kind = "compiler-switch-table"}]
+
+[[controls]]
+id = "new-game-dream-initial"
+unit = "main-gameplay-session-init"
+source = "src/main/runtime/gameplay_session_init.cpp"
+find = "dream = 1;"
+replace = "dream = 2;"
