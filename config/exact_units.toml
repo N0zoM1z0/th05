@@ -1136,3 +1136,120 @@ unit = "main-stage-setup-data"
 source = "src/main/stage/setup.cpp"
 find = "\"st00.bmt\""
 replace = "\"st00.bmu\""
+
+[[units]]
+id = "main-enemies-invalidate"
+source = "src/main/enemy/invalidate.cpp"
+module = "th05/en_inv.cpp"
+segment = "ENEMY_INVALIDATE_TEXT"
+wrapper_options = "-zPmain_01 -k-"
+target_start = 0xc180
+size = 43
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/enemy_invalidate_bindings.asm"
+
+[[controls]]
+unit = "main-enemies-invalidate"
+source = "src/main/enemy/invalidate.cpp"
+find = "| ENEMY_W);"
+replace = "| (ENEMY_W + 8));"
+
+[[units]]
+id = "main-laser-control"
+source = "src/main/bullet/laser_control.cpp"
+module = "th05/laser_sc.cpp"
+segment = "LASER_SC_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x1a66e
+size = 448
+alignment_offsets = []
+functions = 5
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/laser_control_bindings.asm"
+
+[[controls]]
+unit = "main-laser-control"
+source = "src/main/bullet/laser_control.cpp"
+find = "laser->grow_to_width = 6;"
+replace = "laser->grow_to_width = 7;"
+
+[[units]]
+id = "main-boss-generic-data"
+source = "src/main/boss/generic.cpp"
+module = "th05/boss.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_03"
+target_start = 0x2298e
+size = 10
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/boss_generic_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+
+[[controls]]
+unit = "main-boss-generic-data"
+source = "src/main/boss/generic.cpp"
+find = "{ IT_POWER, IT_POWER, IT_BIGPOWER, IT_POWER, IT_POWER }"
+replace = "{ IT_POINT, IT_POWER, IT_BIGPOWER, IT_POWER, IT_POWER }"
+
+[[units]]
+id = "main-laser-update"
+source = "src/main/bullet/laser_update.cpp"
+module = "th05/laser_up.cpp"
+segment = "LASER_UPDATE_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x12bad
+size = 312
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/laser_update_bindings.asm"
+code_data_ranges = [{offset = 298, size = 14, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "main-laser-update"
+source = "src/main/bullet/laser_update.cpp"
+find = "laser->shootout_speed.v /= 2;"
+replace = "laser->shootout_speed.v /= 4;"
+
+[[units]]
+id = "main-laser-render"
+source = "src/main/bullet/laser_render.cpp"
+module = "th05/laser_r.cpp"
+segment = "LASER_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x12ce5
+size = 582
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/laser_render_bindings.asm"
+
+[[controls]]
+unit = "main-laser-render"
+source = "src/main/bullet/laser_render.cpp"
+find = "radius = 2;"
+replace = "radius = 3;"
+
+[[units]]
+id = "main-enemy-allocation"
+source = "src/main/enemy/spawn.cpp"
+module = "th05/en_add.cpp"
+segment = "ENEMY_SPAWN_TEXT"
+wrapper_options = "-zPmain_03 -k"
+target_start = 0x16a7a
+size = 252
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/enemy_spawn_bindings.asm"
+
+[[controls]]
+unit = "main-enemy-allocation"
+source = "src/main/enemy/spawn.inl"
+find = "enemy->autofire_interval = 128;"
+replace = "enemy->autofire_interval = 120;"

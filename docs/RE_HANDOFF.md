@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **108 bounded C++ CODE/DATA units / 226 complete function occurrences**,
-**42,747 authored bytes exact**: 33,943 CODE and 8,804 initialized DATA.
-CODE is 33,515 instruction plus 428 semantic compiler-table bytes.
-Complete compared extents total 42,766; 19 checked padding bytes receive
-no credit. MAIN has 150 functions / 21,952 CODE / 189 DATA;
-OP 53 / 9,158 / 8,615; MAINE 23 / 2,833 / 0.
+Current acceptance: **115 bounded C++ CODE/DATA units / 235 complete function occurrences**,
+**44,437 authored bytes exact**: 35,580 CODE and 8,857 initialized DATA.
+CODE is 35,138 instruction plus 442 semantic compiler-table bytes.
+Complete compared extents total 44,456; 19 checked padding bytes receive
+no credit. MAIN has 159 functions / 23,589 CODE / 199 DATA;
+OP 53 / 9,158 / 8,615; MAINE 23 / 2,833 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -49,6 +49,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | OP initialized UI/state DATA | `op-setup-data-a`, `op-main-data-a` |
 | OP music/title/character/score/config DATA | `op-music-data-retained-a`, `op-title-data-retained-a`, `op-character-menu-data-retained-a`, `op-hiscore-view-data-retained-a`, `op-config-data-retained-a` |
 | MAIN stage initialized DATA and refreshed CODE evidence | `main-stage-data-a` |
+| MAINE entry and MAIN Boss drop-table DATA | `maine-entry-data-retained-a`, `main-boss-generic-data-a` |
+| Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
+| Laser creation/control, state update and rendering | `main-laser-control-a`, `main-laser-update-b`, `main-laser-render-a` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -101,7 +104,8 @@ unit requires its own compiled DATA mutation; a CODE-only change cannot prove
 it. Focus one DATA unit per replay; positives sharing a TU still compile once.
 Current accepted DATA: OP setup 1,075 bytes, main menu 1,089, music 6,217,
 title 154, character selection 8, score viewer 53 and configuration 19; MAIN
-stage setup 189. Total DATA 8,804 is reported separately from CODE. Five new
+stage setup 189 and Boss drop types 10; MAINE entry filenames/pointer 43.
+Total DATA 8,857 is reported separately from CODE. Five new
 OP DATA owners reuse their two archived, revalidated actual CODE producers and
 compile only one fresh DATA negative each. MAIN stage uses a fresh combined
 CODE/DATA replay because its older CODE evidence lacked saved actual argv.
@@ -127,8 +131,8 @@ LEDATA boundary, so that whole function also stays unaccepted. Never sort or
 normalize those differences.
 
 Stage initialization's 189 initialized DATA bytes and OP menu's 1,089 DATA
-bytes / 26 ordered fixups separately match both producers. These are retained
-observations with no extra progress credit. Source BSS locations are checked,
+bytes / 26 ordered fixups now have separate accepted DATA evidence and their
+own compiled DATA mutations. Source BSS locations are checked,
 not treated as initialized file bytes. OP menu's first scaffold stack displaced
 BSS by 84h; omitting artificial stack allocation fixed layout without modifying
 the game algorithm. See `BORLAND_NOTES.md` and owner notes for type/ABI lessons.
@@ -196,3 +200,19 @@ use loader-only and bounded ranges. Failed old projects are not evidence.
 Serialize heavy tools with `.analysis/borland.lock` and `run_heavy.sh` (one CPU,
 35% quota, 768 MiB, no swap, low priority). TH03 has unrelated dirty work: never
 modify it. TH04 is a read-only reference.
+
+Enemy tile invalidation adds one complete 43-byte function. The observed
+near Pascal entry consumes four bytes and RET4; a documented Borland typed
+view of the existing symbol naturally emits PUSH dword. Shared ABI definitions
+are unchanged. The complete enemy allocator separately adds 252 bytes through its own
+whole natural C++ producer and compiled interval mutation. The STD runner and
+update remain unaccepted: five raw bytes
+and one loader relocation differ in each owner at real far-call shortening.
+A private ordered common-SEGDEF diagnostic did not resolve them. Failed scopes
+are removed from normal selection; source/notes and evidence stay retained.
+
+Laser creation/control adds five complete functions / 448 bytes; update adds
+one / 312, including a 14-byte compiler switch table. See
+`src/main/bullet/laser.md`. Each has its own two independent positive producers
+and compiled gameplay mutation; rendering adds one / 582 with its own minimum-radius mutation. State buffers
+and all foreign API bodies remain uncredited.

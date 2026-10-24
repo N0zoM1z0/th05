@@ -269,3 +269,25 @@ unit = "maine-score-end"
 source = "src/maine/score/end.cpp"
 find = "hi.score.g_stage[i] = (gb_6 - i);"
 replace = "hi.score.g_stage[i] = (gb_5 - i);"
+
+[[units]]
+id = "maine-entry-data"
+source = "src/maine/entry/entry.cpp"
+module = "th05/maine_e.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+target_start = 0x101a0
+size = 43
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_entry_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "string-pointers", "state"]
+
+[[controls]]
+unit = "maine-entry-data"
+source = "src/maine/entry/entry.cpp"
+find = "\"MIKO.CFG\""
+replace = "\"MIKO.CFH\""

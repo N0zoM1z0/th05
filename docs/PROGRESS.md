@@ -5,19 +5,19 @@ complete authored ownership denominator remains under review.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 150 | 21952 | 21646 | 306 | 21969 |
+| MAIN bounded C++ units | 159 | 23589 | 23269 | 320 | 23606 |
 | OP decoded C++ units | 53 | 9158 | 9052 | 106 | 9160 |
 | MAINE decoded C++ units | 23 | 2833 | 2817 | 16 | 2833 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 1 | 189 | 22141 | 22158 |
+| MAIN bounded C++ units | 2 | 199 | 23788 | 23805 |
 | OP decoded C++ units | 7 | 8615 | 17773 | 17775 |
-| MAINE decoded C++ units | 0 | 0 | 2833 | 2833 |
+| MAINE decoded C++ units | 1 | 43 | 2876 | 2876 |
 | ZUN | 0 | 0 | 0 | 0 |
 
-108 bounded C++ units pass two cold producers, raw bytes and original
+115 bounded C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,9 +27,9 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored bytes are 42747: 33943 authored CODE plus 8804
+Total authored bytes are 44437: 35580 authored CODE plus 8857
 initialized DATA bytes. This does not change the global denominator.
-Authored code includes 428 bytes of explicitly classified compiler switch
+Authored code includes 442 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 19 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete
