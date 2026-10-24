@@ -2,47 +2,51 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "b91904617099b7858c3be70806ed566fdfd4d5b0db228224f74cb65fcc8e8dba",
+  "replay_receipt_sha256": "bc6177840b35d611d6a956cde45e68df0c331fc5cb1d256ac3a287c74e993bb3",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 42309,
-    "candidate_start": 42309,
-    "size": 336,
-    "target_sha256": "cbee3dc53d29c2eb8d32da6fd8e6b56762bf46e8cc12f38b1f5623d9a6f31cd1",
-    "candidate_sha256": "8b9bd43e4efa109fcd9718906cdc9c7e203bd0f240580231398693405ae42087",
+    "target_start": 46480,
+    "candidate_start": 46480,
+    "size": 416,
+    "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+    "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
     "raw_exact": false,
     "target_fixups": [
-      325,
-      267,
-      247,
-      242,
-      230,
-      207,
-      86,
-      70,
-      65,
-      60,
-      55,
-      29,
-      24,
-      12
+      411,
+      400,
+      389,
+      365,
+      354,
+      332,
+      321,
+      289,
+      251,
+      246,
+      235,
+      205,
+      192,
+      177,
+      160,
+      139
     ],
     "candidate_fixups": [
-      325,
-      267,
-      247,
-      242,
-      230,
-      207,
-      86,
-      70,
-      65,
-      60,
-      55,
-      29,
-      24,
-      12
+      411,
+      400,
+      389,
+      365,
+      354,
+      332,
+      321,
+      289,
+      251,
+      246,
+      235,
+      205,
+      192,
+      177,
+      160,
+      139
     ],
     "fixups_exact": true,
     "exact": false
@@ -5585,6 +5589,536 @@
           {
             "path": "src/maine/entry/entry.hpp",
             "sha256": "3b34b58f331ba824aab17cfa25fa3fa74fb4a002c6e1430811a1f40d5a0aaf79"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-score-end",
+      "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
+      "result": {
+        "id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
+        "rounds": [
+          {
+            "target_start": 46480,
+            "candidate_start": 46480,
+            "size": 416,
+            "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+            "candidate_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+            "raw_exact": true,
+            "target_fixups": [
+              411,
+              400,
+              389,
+              365,
+              354,
+              332,
+              321,
+              289,
+              251,
+              246,
+              235,
+              205,
+              192,
+              177,
+              160,
+              139
+            ],
+            "candidate_fixups": [
+              411,
+              400,
+              389,
+              365,
+              354,
+              332,
+              321,
+              289,
+              251,
+              246,
+              235,
+              205,
+              192,
+              177,
+              160,
+              139
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 46480,
+            "candidate_start": 46480,
+            "size": 416,
+            "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+            "candidate_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+            "raw_exact": true,
+            "target_fixups": [
+              411,
+              400,
+              389,
+              365,
+              354,
+              332,
+              321,
+              289,
+              251,
+              246,
+              235,
+              205,
+              192,
+              177,
+              160,
+              139
+            ],
+            "candidate_fixups": [
+              411,
+              400,
+              389,
+              365,
+              354,
+              332,
+              321,
+              289,
+              251,
+              246,
+              235,
+              205,
+              192,
+              177,
+              160,
+              139
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "cc9eaf1be54cc4172b7183097d855ed34352e116a9d3a981ef63d64ae471c554",
+            "dependency_timestamp_normalized_sha256": "e66552fb904d38f81fb97b48fe6ca7caa649f1874d946d40a4e09d2adeb24ed1",
+            "module_name": "th05/hi_end.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hi_end.cpp",
+              "src/maine/score/end.cpp",
+              "src/maine/score/end.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp"
+            ]
+          },
+          {
+            "sha256": "92c6e08f838767b679768813e79cf8b96aa231f2ab5723ff44aecbadc02c3d3d",
+            "dependency_timestamp_normalized_sha256": "e66552fb904d38f81fb97b48fe6ca7caa649f1874d946d40a4e09d2adeb24ed1",
+            "module_name": "th05/hi_end.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hi_end.cpp",
+              "src/maine/score/end.cpp",
+              "src/maine/score/end.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/hi_end.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/hi_end.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_score_end_bindings.asm",
+              "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/score/end.cpp",
+              "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+            },
+            {
+              "path": "src/maine/score/end.hpp",
+              "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+            },
+            {
+              "path": "src/op/hiscore/view.hpp",
+              "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+            },
+            {
+              "path": "src/op/main/menu.hpp",
+              "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+            },
+            {
+              "path": "src/op/main/strings.hpp",
+              "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_score_end_bindings.asm",
+              "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/score/end.cpp",
+              "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+            },
+            {
+              "path": "src/maine/score/end.hpp",
+              "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+            },
+            {
+              "path": "src/op/hiscore/view.hpp",
+              "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+            },
+            {
+              "path": "src/op/main/menu.hpp",
+              "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+            },
+            {
+              "path": "src/op/main/strings.hpp",
+              "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_score_end_bindings.asm",
+          "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/score/end.cpp",
+          "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+        },
+        {
+          "path": "src/maine/score/end.hpp",
+          "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+        },
+        {
+          "path": "src/op/hiscore/view.hpp",
+          "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+        },
+        {
+          "path": "src/op/main/menu.hpp",
+          "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+        },
+        {
+          "path": "src/op/main/strings.hpp",
+          "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "bc6177840b35d611d6a956cde45e68df0c331fc5cb1d256ac3a287c74e993bb3",
+      "compiled_negative_control": {
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
+        "raw_exact": false,
+        "target_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
+        "candidate_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
+        "mutation": {
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end.cpp",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
+        },
+        "control_sha256": "1850ec1e1ec191e2e9d90dca3d6e3e6eadced7fad147a80d7440ea6ea021ab76",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
+          "raw_exact": false,
+          "target_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
+          "candidate_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "ba3ebc75137f53d96b3ff9fc9a56c9ade5a7f3aca4b76dbdbda841ec076310b3",
+          "dependency_timestamp_normalized_sha256": "7df3402ce011d61df70d9ff76ebf13cc24de982c0ea8f076aee6119832975104",
+          "module_name": "th05/hi_end.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "1e4d527945daa47ecf66468d370d111a78b95d2d5119519fc9737cc655a65247"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
           },
           {
             "path": "src/shared/abi.hpp",

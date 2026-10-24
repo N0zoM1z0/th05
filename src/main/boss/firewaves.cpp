@@ -6,6 +6,7 @@
 
 #include "src/main/boss/movement.hpp"
 #define PLAYFIELD_TOP 16
+typedef int vram_y_t;
 #define PLAYFIELD_BOTTOM 384
 
 // Structures
@@ -17,6 +18,7 @@ struct near firewave_t {
 	vram_y_t bottom;
 	pixel_t amp;
 };
+typedef char th05_firewave_size_6[(sizeof(firewave_t) == 6) ? 1 : -1];
 // ----------
 
 // State

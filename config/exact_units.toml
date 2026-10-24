@@ -646,3 +646,72 @@ unit = "main-firewaves"
 source = "src/main/boss/firewaves.cpp"
 find = "firewave->bottom += 4;"
 replace = "firewave->bottom += 3;"
+
+[[units]]
+id = "main-playfield-shake"
+source = "src/main/playfield/shake.cpp"
+module = "th05/playfld.cpp"
+segment = "PLAYFLD_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xc579
+size = 273
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/playfield_shake_bindings.asm"
+
+[[units]]
+id = "main-gather-add"
+source = "src/main/gather/gather.cpp"
+module = "th05/gather.cpp"
+segment = "GATHER_ADD_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x16f8b
+size = 252
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/gather_bindings.asm"
+
+[[units]]
+id = "main-gather-run"
+source = "src/main/gather/gather.cpp"
+module = "th05/gather.cpp"
+segment = "GATHER_RUN_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x170a2
+size = 297
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/gather_bindings.asm"
+
+[[controls]]
+unit = "main-playfield-shake"
+source = "src/main/playfield/shake.cpp"
+find = "stage_frame_mod4 <= 1"
+replace = "stage_frame_mod4 <= 0"
+
+[[controls]]
+unit = "main-gather-add"
+source = "src/main/gather/gather.cpp"
+find = "case 4:"
+replace = "case 6:"
+
+[[units]]
+id = "main-mai-yuki-flight"
+source = "src/main/boss/mai_yuki.cpp"
+module = "th05/boss_4.cpp"
+segment = "B4_UPDATE_TEXT"
+target_start = 0x1785f
+size = 248
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/mai_yuki_bindings.asm"
+
+[[controls]]
+unit = "main-mai-yuki-flight"
+source = "src/main/boss/mai_yuki.cpp"
+find = "6.25f,"
+replace = "6.0f,"

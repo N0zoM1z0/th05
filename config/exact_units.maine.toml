@@ -249,3 +249,23 @@ unit = "maine-entry"
 source = "src/maine/entry/entry.cpp"
 find = "frame_delay(100);"
 replace = "frame_delay(99);"
+
+[[units]]
+id = "maine-score-end"
+source = "src/maine/score/end.cpp"
+module = "th05/hi_end.cpp"
+segment = "SCORE_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 0xb590
+size = 416
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_score_end_bindings.asm"
+source_encoding = "cp932"
+
+[[controls]]
+unit = "maine-score-end"
+source = "src/maine/score/end.cpp"
+find = "hi.score.g_stage[i] = (gb_6 - i);"
+replace = "hi.score.g_stage[i] = (gb_5 - i);"
