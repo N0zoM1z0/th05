@@ -40,7 +40,7 @@ def private_export(path: Path) -> Path:
 def project_name(artifact_id: str) -> str:
     if not artifact_id or any(not (character.isalnum() or character in "-_") for character in artifact_id):
         raise AnalysisError(f"unsafe artifact ID for Ghidra project: {artifact_id!r}")
-    return f"TH05-{artifact_id}"
+    return f"TH05-{artifact_id.removeprefix('th05-')}-loader"
 
 
 def environment(config: dict[str, object]) -> dict[str, str]:

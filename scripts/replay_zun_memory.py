@@ -6,9 +6,6 @@ import fcntl
 import json
 from pathlib import Path
 import re
-import shutil
-import subprocess
-import sys
 import tomllib
 import uuid
 
@@ -16,6 +13,7 @@ from lib.launcher import parse_launcher
 from lib.omf import describe_omf
 from lib.pc98 import digest_bytes, digest_file
 from lib.reference_build import Builder
+from lib.replay_toolchain import freeze_toolchain
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,6 +98,15 @@ def accept(receipt_path: Path, config: dict) -> None:
             or tool["manifest_sha256"] != digest_file(ROOT / "config/toolchain.toml")
             or not all(tool[k] for k in ("ready", "identity_pass", "execution_pass"))):
         raise ValueError("frozen toolchain attestation failed")
+    if "toolchain_reuse_proof_sha256" in receipt:
+        proof_path = receipt_path.parent / "toolchain-reuse-proof.json"
+        if digest_file(proof_path) != receipt["toolchain_reuse_proof_sha256"]:
+            raise ValueError("frozen toolchain reuse proof digest disagrees")
+        proof = json.loads(proof_path.read_text())
+        if (proof["manifest_sha256"] != tool["manifest_sha256"]
+                or proof["original_full_receipt_sha256"] != receipt["toolchain_receipt_sha256"]
+                or proof["reused"] != receipt["toolchain_reused"]):
+            raise ValueError("reuse proof names a different executable toolchain report")
     frozen = receipt_path.parent / "input.asm"
     if digest_file(frozen) != receipt["source_sha256"] or digest_file(ROOT / config["source"]) != receipt["source_sha256"]:
         raise ValueError("maintained or frozen source changed")
@@ -131,6 +138,14 @@ def main() -> int:
         accept(args.accept, config)
         print("PASS: complete standalone -M payload accepted; global authored classification remains unreviewed")
         return 0
+    if args.output is None and PUBLIC.exists():
+        try:
+            check_public(json.loads(PUBLIC.read_text()), config)
+        except (OSError, ValueError, KeyError):
+            pass
+        else:
+            print("No source or configuration changes; retained -M acceptance reused without executing tools")
+            return 0
     target = target_child(config)
     source_bytes = (ROOT / config["source"]).read_bytes()
     text = source_bytes.decode(config["source_encoding"])
@@ -142,8 +157,7 @@ def main() -> int:
     (work / "unit.toml").write_bytes(raw_config)
     with (ROOT / ".analysis/borland.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        subprocess.run([sys.executable, str(ROOT / "scripts/attest_toolchain.py")], check=True)
-        shutil.copyfile(ROOT / ".analysis/toolchain/attestation.json", work / "toolchain-attestation.json")
+        tool = freeze_toolchain(ROOT, work / "toolchain-attestation.json")
         rounds = [cold_round(work / label, text, target, config) for label in ("a", "b")]
         negative = cold_round(work / "negative", text, target, config, negative=True)
     receipt = {"schema_version": 1, "kind": "standalone-zun-memory-com-replay",
@@ -151,6 +165,8 @@ def main() -> int:
                "source_sha256": digest_bytes(source_bytes),
                "toolchain_manifest_sha256": digest_file(ROOT / "config/toolchain.toml"),
                "toolchain_receipt_sha256": digest_file(work / "toolchain-attestation.json"),
+               "toolchain_reused": tool["reused"],
+               "toolchain_reuse_proof_sha256": tool["proof_sha256"],
                "origin": config["origin"], "global_authored_credit": config["global_authored_credit"],
                "rounds": rounds, "negative_control": negative}
     check_public(receipt, config)

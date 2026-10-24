@@ -1,19 +1,31 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+  "replay_receipt_sha256": "d59144dce0a4ab8ee9b93ad7763a28239e12c42617442d4659d8d1f8ad625289",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 95862,
-    "candidate_start": 10354,
-    "size": 66,
-    "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
-    "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+    "target_start": 67086,
+    "candidate_start": 67086,
+    "size": 452,
+    "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+    "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      329,
+      285,
+      251,
+      92,
+      62
+    ],
+    "candidate_fixups": [
+      329,
+      285,
+      251,
+      92,
+      62
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -100,36 +112,8 @@
       },
       "source_inputs": [
         {
-          "path": "main_bindings.asm",
+          "path": "probes/units/main_bindings.asm",
           "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
-        },
-        {
-          "path": "src/main/boss/movement.cpp",
-          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
-        },
-        {
-          "path": "src/main/boss/movement.hpp",
-          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
-        },
-        {
-          "path": "src/main/bullet/template.hpp",
-          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
-        },
-        {
-          "path": "src/main/bullet/tune.cpp",
-          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
-        },
-        {
-          "path": "src/main/bullet/tune.hpp",
-          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
-        },
-        {
-          "path": "src/main/formats/cfg_resident.cpp",
-          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
-        },
-        {
-          "path": "src/main/formats/cfg_resident.hpp",
-          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
         },
         {
           "path": "src/main/player/angle.cpp",
@@ -147,7 +131,45 @@
           "path": "src/shared/geometry.hpp",
           "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
         }
-      ]
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4a76df1deabe55a1b664400cf2e7341abc1fd9b40914ee43f700594a99acc1bf",
+      "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+      "compiled_negative_control": {
+        "target_start": 95862,
+        "candidate_start": 10354,
+        "size": 66,
+        "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+        "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-tune",
+        "producer_path": "negative/source",
+        "mutation": {
+          "unit": "main-bullet-tune",
+          "source": "src/main/bullet/tune.cpp",
+          "find": "_AL >= 38",
+          "replace": "_AL >= 39"
+        },
+        "comparison": {
+          "target_start": 95862,
+          "candidate_start": 10354,
+          "size": 66,
+          "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+          "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "legacy_source_revalidated": true
+      }
     },
     {
       "id": "main-bullet-tune",
@@ -227,16 +249,8 @@
       },
       "source_inputs": [
         {
-          "path": "main_bindings.asm",
+          "path": "probes/units/main_bindings.asm",
           "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
-        },
-        {
-          "path": "src/main/boss/movement.cpp",
-          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
-        },
-        {
-          "path": "src/main/boss/movement.hpp",
-          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
           "path": "src/main/bullet/template.hpp",
@@ -251,22 +265,6 @@
           "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
         },
         {
-          "path": "src/main/formats/cfg_resident.cpp",
-          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
-        },
-        {
-          "path": "src/main/formats/cfg_resident.hpp",
-          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
-        },
-        {
-          "path": "src/main/player/angle.cpp",
-          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
-        },
-        {
-          "path": "src/main/player/player.hpp",
-          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
-        },
-        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         },
@@ -274,7 +272,45 @@
           "path": "src/shared/geometry.hpp",
           "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
         }
-      ]
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4a76df1deabe55a1b664400cf2e7341abc1fd9b40914ee43f700594a99acc1bf",
+      "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+      "compiled_negative_control": {
+        "target_start": 95862,
+        "candidate_start": 10354,
+        "size": 66,
+        "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+        "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-tune",
+        "producer_path": "negative/source",
+        "mutation": {
+          "unit": "main-bullet-tune",
+          "source": "src/main/bullet/tune.cpp",
+          "find": "_AL >= 38",
+          "replace": "_AL >= 39"
+        },
+        "comparison": {
+          "target_start": 95862,
+          "candidate_start": 10354,
+          "size": 66,
+          "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+          "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "legacy_source_revalidated": true
+      }
     },
     {
       "id": "main-boss-movement",
@@ -350,7 +386,7 @@
       },
       "source_inputs": [
         {
-          "path": "main_bindings.asm",
+          "path": "probes/units/main_bindings.asm",
           "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
         },
         {
@@ -362,34 +398,6 @@
           "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
-          "path": "src/main/bullet/template.hpp",
-          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
-        },
-        {
-          "path": "src/main/bullet/tune.cpp",
-          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
-        },
-        {
-          "path": "src/main/bullet/tune.hpp",
-          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
-        },
-        {
-          "path": "src/main/formats/cfg_resident.cpp",
-          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
-        },
-        {
-          "path": "src/main/formats/cfg_resident.hpp",
-          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
-        },
-        {
-          "path": "src/main/player/angle.cpp",
-          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
-        },
-        {
-          "path": "src/main/player/player.hpp",
-          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
-        },
-        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         },
@@ -397,7 +405,45 @@
           "path": "src/shared/geometry.hpp",
           "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
         }
-      ]
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4a76df1deabe55a1b664400cf2e7341abc1fd9b40914ee43f700594a99acc1bf",
+      "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+      "compiled_negative_control": {
+        "target_start": 95862,
+        "candidate_start": 10354,
+        "size": 66,
+        "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+        "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-tune",
+        "producer_path": "negative/source",
+        "mutation": {
+          "unit": "main-bullet-tune",
+          "source": "src/main/bullet/tune.cpp",
+          "find": "_AL >= 38",
+          "replace": "_AL >= 39"
+        },
+        "comparison": {
+          "target_start": 95862,
+          "candidate_start": 10354,
+          "size": 66,
+          "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+          "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "legacy_source_revalidated": true
+      }
     },
     {
       "id": "main-cfg-resident",
@@ -473,28 +519,8 @@
       },
       "source_inputs": [
         {
-          "path": "main_bindings.asm",
+          "path": "probes/units/main_bindings.asm",
           "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
-        },
-        {
-          "path": "src/main/boss/movement.cpp",
-          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
-        },
-        {
-          "path": "src/main/boss/movement.hpp",
-          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
-        },
-        {
-          "path": "src/main/bullet/template.hpp",
-          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
-        },
-        {
-          "path": "src/main/bullet/tune.cpp",
-          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
-        },
-        {
-          "path": "src/main/bullet/tune.hpp",
-          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
         },
         {
           "path": "src/main/formats/cfg_resident.cpp",
@@ -505,12 +531,186 @@
           "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
         },
         {
-          "path": "src/main/player/angle.cpp",
-          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4a76df1deabe55a1b664400cf2e7341abc1fd9b40914ee43f700594a99acc1bf",
+      "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+      "compiled_negative_control": {
+        "target_start": 95862,
+        "candidate_start": 10354,
+        "size": 66,
+        "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+        "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-tune",
+        "producer_path": "negative/source",
+        "mutation": {
+          "unit": "main-bullet-tune",
+          "source": "src/main/bullet/tune.cpp",
+          "find": "_AL >= 38",
+          "replace": "_AL >= 39"
+        },
+        "comparison": {
+          "target_start": 95862,
+          "candidate_start": 10354,
+          "size": 66,
+          "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
+          "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "legacy_source_revalidated": true
+      }
+    },
+    {
+      "id": "main-boss-explosion",
+      "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
+      "result": {
+        "id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
+        "rounds": [
+          {
+            "target_start": 67086,
+            "candidate_start": 67086,
+            "size": 452,
+            "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+            "candidate_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+            "raw_exact": true,
+            "target_fixups": [
+              329,
+              285,
+              251,
+              92,
+              62
+            ],
+            "candidate_fixups": [
+              329,
+              285,
+              251,
+              92,
+              62
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 67086,
+            "candidate_start": 67086,
+            "size": 452,
+            "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+            "candidate_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+            "raw_exact": true,
+            "target_fixups": [
+              329,
+              285,
+              251,
+              92,
+              62
+            ],
+            "candidate_fixups": [
+              329,
+              285,
+              251,
+              92,
+              62
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "5a4f598f0a10de2892237ede44530048a5273f5a50f017f231b2b2a9347771b1",
+            "dependency_timestamp_normalized_sha256": "67f032006376f4c820b2c9782ea7ea2193dfff19399f5135a6acd6826ed7bbd1",
+            "module_name": "th05/boss_exp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_exp.cpp",
+              "src/main/boss/explosion.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "93229d4c47db1566583069201989f303f5b23904d54438253841fbe18309da1d",
+            "dependency_timestamp_normalized_sha256": "67f032006376f4c820b2c9782ea7ea2193dfff19399f5135a6acd6826ed7bbd1",
+            "module_name": "th05/boss_exp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_exp.cpp",
+              "src/main/boss/explosion.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_explosion_bindings.asm",
+            "sha256": "0b0c7e7102b6b394880bf0c39b02b6907ab72f31d4a8230517a79e448d1aa68d"
+          },
+          {
+            "path": "src/main/boss/explosion.cpp",
+            "sha256": "8891c2ee5d3b01df49fa1289a4095bf68199bbf710611b3d6d62bb29c8c9e3e4"
+          },
+          {
+            "path": "src/main/boss/explosion.hpp",
+            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_explosion_bindings.asm",
+          "sha256": "0b0c7e7102b6b394880bf0c39b02b6907ab72f31d4a8230517a79e448d1aa68d"
         },
         {
-          "path": "src/main/player/player.hpp",
-          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          "path": "src/main/boss/explosion.cpp",
+          "sha256": "8891c2ee5d3b01df49fa1289a4095bf68199bbf710611b3d6d62bb29c8c9e3e4"
+        },
+        {
+          "path": "src/main/boss/explosion.hpp",
+          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -520,7 +720,70 @@
           "path": "src/shared/geometry.hpp",
           "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
         }
-      ]
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d59144dce0a4ab8ee9b93ad7763a28239e12c42617442d4659d8d1f8ad625289",
+      "compiled_negative_control": {
+        "target_start": 67086,
+        "candidate_start": 67086,
+        "size": 452,
+        "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+        "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
+        "raw_exact": false,
+        "target_fixups": [
+          329,
+          285,
+          251,
+          92,
+          62
+        ],
+        "candidate_fixups": [
+          329,
+          285,
+          251,
+          92,
+          62
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
+        "mutation": {
+          "unit": "main-boss-explosion",
+          "source": "src/main/boss/explosion.cpp",
+          "find": "(p).age >= 32",
+          "replace": "(p).age >= 33"
+        },
+        "control_sha256": "4ed082731b4e5beba5b3da5291c2d7b829fffaef35aaf5b528ba9a002ac7a2ac",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 67086,
+          "candidate_start": 67086,
+          "size": 452,
+          "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+          "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
+          "raw_exact": false,
+          "target_fixups": [
+            329,
+            285,
+            251,
+            92,
+            62
+          ],
+          "candidate_fixups": [
+            329,
+            285,
+            251,
+            92,
+            62
+          ],
+          "fixups_exact": true,
+          "exact": false
+        }
+      }
     }
   ]
 }

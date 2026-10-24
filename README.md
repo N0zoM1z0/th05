@@ -13,15 +13,20 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **9 C++ functions / 526 authored instruction bytes** pass two cold
+The first **11 C++ functions / 978 authored instruction bytes** pass two cold
 builds, complete raw unit comparison, relocation checks and a compiled negative
-control. Their complete extents contain 532 bytes including six excluded NOPs.
+control. Their complete extents contain 984 bytes including six excluded NOPs.
 The oracle supplies explicit original external-symbol bindings; whole-program
 placement and standalone linkage remain open.
 
 No global authored-byte denominator has been accepted yet; the overall
 percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md).
+
+Replays are incremental: unchanged accepted units and tool execution probes are
+reused after input identity checks. Only new or affected units are compiled.
+`python3 scripts/replay_units.py --plan` shows the necessary work;
+`--units ID...` selects a bounded unit explicitly.
 
 The standalone ZUN `-M` memory-check child also reproduces all **311 bytes**
 (142 code, 169 initialized data) from maintained semantic assembly. Its

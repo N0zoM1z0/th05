@@ -51,3 +51,47 @@ alignment_offsets = [37]
 functions = 1
 origin = "compiler-generated-cxx-dos-intrinsics"
 wrapper_options = "-zPmain_01"
+
+# Compiled negative controls are independent metadata, not unit identity fields.
+[[controls]]
+unit = "main-player-angle"
+source = "src/main/player/angle.cpp"
+find = ") + plus_angle"
+replace = ") - plus_angle"
+
+[[controls]]
+unit = "main-bullet-tune"
+source = "src/main/bullet/tune.cpp"
+find = "_AL >= 38"
+replace = "_AL >= 39"
+
+[[controls]]
+unit = "main-boss-movement"
+source = "src/main/boss/movement.cpp"
+find = "static const int TOWARDS_FRACTION = 16;"
+replace = "static const int TOWARDS_FRACTION = 8;"
+
+[[controls]]
+unit = "main-cfg-resident"
+source = "src/main/formats/cfg_resident.cpp"
+find = "_CX = sizeof(cfg);"
+replace = "_CX = (sizeof(cfg) - 1);"
+
+[[units]]
+id = "main-boss-explosion"
+source = "src/main/boss/explosion.cpp"
+module = "th05/boss_exp.cpp"
+segment = "BOSS_EXP_TEXT"
+target_start = 0x1060e
+size = 452
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/boss_explosion_bindings.asm"
+
+[[controls]]
+unit = "main-boss-explosion"
+source = "src/main/boss/explosion.cpp"
+find = "(p).age >= 32"
+replace = "(p).age >= 33"

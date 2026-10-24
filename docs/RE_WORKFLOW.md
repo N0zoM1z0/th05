@@ -7,6 +7,10 @@
 4. Recover semantics and declarations as C/C++; preserve original Borland ABI.
 5. Compile in two fresh workspaces with the pinned toolchain. Inspect OMF records,
    segment layout and fixups; compare all bytes in the declared extent.
+   Compile only the selected new/affected units. Reuse unchanged accepted units
+   and successful tool execution probes after identity checks; use
+   `scripts/replay_units.py --plan` or `--units ID...`. Importing a new receipt
+   merges it into existing acceptance without rebuilding unrelated units.
 6. Reject mismatches. Store compiler experiments privately and retain concise
    replayable observations. Separate source-present from exact acceptance.
 7. Run affected checks, public CI, and `git diff --check`. Update progress and

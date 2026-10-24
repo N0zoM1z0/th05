@@ -1,8 +1,8 @@
 # TH05 current handoff
 
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
-Current acceptance: 4 C++ contributions, 9 functions, 532 compared bytes and
-526 authored instruction bytes after excluding 6 observed NOP alignment bytes.
+Current acceptance: 5 C++ contributions, 11 functions, 984 compared bytes and
+978 authored instruction bytes after excluding 6 observed NOP alignment bytes.
 Public acceptance lives in `config/accepted_units.json`; global percentage is
 unmeasured pending complete ownership/denominator review.
 Public repository: https://github.com/N0zoM1z0/th05 .
@@ -39,6 +39,13 @@ Current replays freeze tool attestation at build time. Public acceptance
 re-reads both saved MZ/MAP/OMF producers, the actual target extents/fixups, source
 snapshots, tool manifest and the saved compiled negative producer.
 
+Current focused replay `.analysis/unit-replays/boss-explosion-a` compiles only
+the new explosion contribution; it reuses the unchanged complete tool probe
+receipt after active file/header/library identity checks. Its two raw/fixup
+comparisons and compiled age-threshold mutation pass. Previous four contributions
+retain their original evidence; only their dependency snapshots were narrowed
+from the whole tree using saved actual OMF dependencies, without recompilation.
+
 Next: extend bounded authored units and review the complete ownership partition.
 No whole-game or standalone C++ build claim is made. See the first-unit note for
 numeric bindings, sizes, limitations and replay commands.
@@ -53,9 +60,12 @@ See the ownership survey for remaining exclusions and provenance.
 
 User steering: accelerate work and replay only necessary units. Retain accepted
 unchanged objects/evidence; rerun only new or affected sources and dependencies.
-Toolchain probes may be reused when all relevant installed identities are
-unchanged. An incremental C++ replay interface is being implemented. The next
-pure C++ candidate is Boss explosion (452 bytes at load `1060E`). Masked routing
+Toolchain probes are reused when all relevant installed identities are
+unchanged. `replay_units.py --plan` and `--units ID...` are implemented; acceptance
+merges only the selected unit results. The next natural C++ candidate is HUD
+overlay rendering (1806 bytes at load `11D50`, 9 functions). Boss background
+rendering needs a natural replacement for an upstream fake-zero codegen helper
+before it can be accepted. Masked routing
 survey found 42 candidates/14,922 bytes; those are diagnostics, never credit.
 
 TH03 has unrelated uncommitted work; do not modify it. TH04 is a read-only
