@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **135 bounded C++ CODE/DATA units / 262 complete function occurrences**,
-**47,586 authored bytes exact**: 38,729 CODE and 8,857 initialized DATA.
-CODE is 38,247 instruction plus 482 semantic compiler-table bytes.
-Complete compared extents total 47,614; 28 checked padding bytes receive
-no credit. MAIN has 182 functions / 26,234 CODE / 199 DATA;
-OP 55 / 9,436 / 8,615; MAINE 25 / 3,059 / 43.
+Current acceptance: **138 bounded C++ CODE/DATA units / 265 complete function occurrences**,
+**47,926 authored bytes exact**: 39,069 CODE and 8,857 initialized DATA.
+CODE is 38,587 instruction plus 482 semantic compiler-table bytes.
+Complete compared extents total 47,954; 28 checked padding bytes receive
+no credit. MAIN has 183 functions / 26,504 CODE / 199 DATA;
+OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -52,11 +52,12 @@ All paths below are under private `.analysis/unit-replays/`.
 | MAINE entry and MAIN Boss drop-table DATA | `maine-entry-data-retained-a`, `main-boss-generic-data-a` |
 | Dialog-file loading and demo loading | `main-dialog-file-a`, `main-demo-b` (passing load subset) |
 | MAIN/OP/MAINE core initialization | `main-core-init-a`, `op-core-init-a`, `maine-core-init-a` |
+| OP/MAINE BGM measure query | `op-bgm-measure-a`, `maine-bgm-measure-a` |
 | Sound mode selection in all three artifacts | `main-sound-modes-b`, `op-sound-modes-b`, `maine-sound-modes-a` |
 | Generic shot control | `main-player-shot-common-a` |
 | Three EMS cache functions | `main-ems-scopes-c` from raw-exact/ordered-inexact `main-ems-cache-b` |
 | Item extend and miss penalty | `main-item-extends-a`, `main-item-miss-penalty-d` |
-| Dialog wipe/fade box helpers | `main-dialog-box-b` |
+| Dialog wipe/fade box helpers and runner | `main-dialog-box-b`, `main-dialog-run-d` |
 | Item creation/death drops, splashes and tile invalidation | `main-item-spawn-b`, `main-item-splashes-a`, `main-items-invalidate-a` |
 | Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
 | Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
@@ -274,3 +275,21 @@ shared through `box.inl`, with a focused real106-byte producer and its own
 timing negative. The documented TH04 `-B` hypothesis did not restore Shinki's
 missing4 bytes; one unchanged-source compiler diagnostic and zero-size foreign
 segment integration evidence are retained in `shinki-bmode-a`, with zero credit.
+
+OP/MAINE each add the complete35-byte BGM measure query with independent
+producers and a MIDI-meter negative. The first-positive MAP boundary gate now
+stops a size-invalid replay before a needless second compile. Real player
+invalidation176/145 and movement174/134 diagnostics prove that early exit,
+while both new measure owners still produce two positives plus a negative.
+Those player candidates are parked with zero exact credit and no flag/register
+variants. Public CI includes a regression for the first-MAP failure behavior.
+
+
+### Dialog runner incremental acceptance
+
+`main-dialog-run-d` accepts the independent270-byte runner from the unchanged
+natural `run.inl` body. Two cold positives and a compiled wait-argument negative
+pass. The corrected unsigned filename pointer removes the command handler's
+sign extension, but the full runtime is831 versus832 because its original
+switch-table prefix zero is absent; that whole contribution remains unaccepted.
+Only the new runner was replayed; accepted box/file owners remain unchanged.

@@ -1549,3 +1549,24 @@ unit = "main-dialog-box"
 source = "src/main/dialog/box.inl"
 find = "frame_delay(12);"
 replace = "frame_delay(11);"
+
+# Private natural player candidates; no acceptance/config modification.
+
+[[units]]
+id = "main-dialog-run"
+source = "src/main/dialog/run.cpp"
+module = "th05/dialog_u.cpp"
+segment = "DIALOG_RUNNER_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 81226
+size = 270
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/dialog_run_bindings.asm"
+
+[[controls]]
+unit = "main-dialog-run"
+source = "src/main/dialog/run.inl"
+find = "input_wait_for_change(0);"
+replace = "input_wait_for_change(1);"

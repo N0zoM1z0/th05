@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "27d35170fdb355f6b2fbf4d6d5be8e7be683843a59363a77c682278704b09776",
+  "replay_receipt_sha256": "40e55870ba05225d3e7b9b0dcb90e887815935fa9f551a2b131ad626c6030350",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 59518,
-    "candidate_start": 59518,
-    "size": 156,
-    "target_sha256": "1bf121849567395fa96efecb181e282c0d3f6566d7d3e78714e9c61e9eb40fad",
-    "candidate_sha256": "a7b45d37eb9686a0fb65d43b4ac97f28bba5f3767973a3419ebf7d7791f990ba",
+    "target_start": 62018,
+    "candidate_start": 62018,
+    "size": 35,
+    "target_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+    "candidate_sha256": "d8e37299f64b5f2f7132ab6deba350fb0096bc360a6d118a37eaf38e7d9b98fa",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -7071,6 +7071,244 @@
           "-ml",
           "-DBINARY='O'",
           "th04/snd_mode.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-bgm-measure",
+      "entry_sha256": "abaedacdd2a779c4d555e1a29b61ae7377e7fffe4b7c4f61af300bb3c2354572",
+      "result": {
+        "id": "maine-bgm-measure",
+        "entry_sha256": "abaedacdd2a779c4d555e1a29b61ae7377e7fffe4b7c4f61af300bb3c2354572",
+        "rounds": [
+          {
+            "target_start": 62018,
+            "candidate_start": 62018,
+            "size": 35,
+            "target_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+            "candidate_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 62018,
+            "candidate_start": 62018,
+            "size": 35,
+            "target_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+            "candidate_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "79e73002840b4bd8835857260bb15f08915c479749f3a93e28a6d0fe2c62fde9",
+            "dependency_timestamp_normalized_sha256": "55057340852b29e361e7b600e1f159d8ddde74acc6448434c30e35d42eccbb9a",
+            "module_name": "th05/snd_meas.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_meas.cpp",
+              "src/shared/sound/measure.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "79e73002840b4bd8835857260bb15f08915c479749f3a93e28a6d0fe2c62fde9",
+            "dependency_timestamp_normalized_sha256": "55057340852b29e361e7b600e1f159d8ddde74acc6448434c30e35d42eccbb9a",
+            "module_name": "th05/snd_meas.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_meas.cpp",
+              "src/shared/sound/measure.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_meas.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_meas.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_measure_bindings.asm",
+            "sha256": "2596dfb3c4adca938ed88eed54a5ea39a7c82b433588c4c49e3041f01600dac0"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/measure.cpp",
+            "sha256": "f487b2019ca52e998e79a7d228ebd9e78a1f943ae6e011773dcecc43e0f4fc45"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_measure_bindings.asm",
+          "sha256": "2596dfb3c4adca938ed88eed54a5ea39a7c82b433588c4c49e3041f01600dac0"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/measure.cpp",
+          "sha256": "f487b2019ca52e998e79a7d228ebd9e78a1f943ae6e011773dcecc43e0f4fc45"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "40e55870ba05225d3e7b9b0dcb90e887815935fa9f551a2b131ad626c6030350",
+      "compiled_negative_control": {
+        "target_start": 62018,
+        "candidate_start": 62018,
+        "size": 35,
+        "target_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+        "candidate_sha256": "d8e37299f64b5f2f7132ab6deba350fb0096bc360a6d118a37eaf38e7d9b98fa",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-bgm-measure",
+        "entry_sha256": "abaedacdd2a779c4d555e1a29b61ae7377e7fffe4b7c4f61af300bb3c2354572",
+        "mutation": {
+          "unit": "maine-bgm-measure",
+          "source": "src/shared/sound/measure.cpp",
+          "find": "_DX = (48 * 4);",
+          "replace": "_DX = (48 * 3);"
+        },
+        "control_sha256": "f8470c0f8a36320f56cbc02216e66784bf7ee720ae444e8c71bf219a0240c3e1",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 62018,
+          "candidate_start": 62018,
+          "size": 35,
+          "target_sha256": "9e0a95486759d7b9d7455d6f29436355bca48b476495d6212e8c58ec20f29e39",
+          "candidate_sha256": "d8e37299f64b5f2f7132ab6deba350fb0096bc360a6d118a37eaf38e7d9b98fa",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "b5853056e949051ae0a126dad092f4ef34d79746808b443e8cf9dc5bf6620ed5",
+          "dependency_timestamp_normalized_sha256": "f341d51b1727ac0ed8eb3c58ac526c80caae5e143cf1f9c15a59297a0b06106b",
+          "module_name": "th05/snd_meas.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_meas.cpp",
+            "src/shared/sound/measure.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/snd_meas.cpp"
         ]
       },
       "target_view": {

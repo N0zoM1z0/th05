@@ -2,44 +2,18 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "276ac9135572efe2298155ff7de58d1a2fa63e4d5641ea7920495ba6be96d7fd",
+  "replay_receipt_sha256": "46649bf883b77ca8c87bf644c3e867a9232a041a18896a6f0e5e20a6c4c9c851",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 57106,
-    "candidate_start": 57106,
-    "size": 124,
-    "target_sha256": "f952cb01cd333d9943f81a0c51b15be8f1e38e10b3c3c313013afb906fae38d0",
-    "candidate_sha256": "b7f2381fa64b55c1af5fd69b996412287317469d88b6b5f0a4ea94fd9adcb054",
+    "target_start": 57550,
+    "candidate_start": 57550,
+    "size": 35,
+    "target_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+    "candidate_sha256": "3437562c6600d6970ae53b5e2881abb215a0be6bbc4d51438341bcb2716a7b27",
     "raw_exact": false,
-    "target_fixups": [
-      118,
-      110,
-      92,
-      87,
-      82,
-      77,
-      72,
-      67,
-      46,
-      35,
-      24,
-      10
-    ],
-    "candidate_fixups": [
-      118,
-      110,
-      92,
-      87,
-      82,
-      77,
-      72,
-      67,
-      46,
-      35,
-      24,
-      10
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -16657,6 +16631,244 @@
           "-ml",
           "-DBINARY='O'",
           "th05/initop.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "op-bgm-measure",
+      "entry_sha256": "20c68a5e077fa28c7e67dbd6f7cbc579a22c3e77e85a9693d59ed4d23efe32d4",
+      "result": {
+        "id": "op-bgm-measure",
+        "entry_sha256": "20c68a5e077fa28c7e67dbd6f7cbc579a22c3e77e85a9693d59ed4d23efe32d4",
+        "rounds": [
+          {
+            "target_start": 57550,
+            "candidate_start": 57550,
+            "size": 35,
+            "target_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+            "candidate_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 57550,
+            "candidate_start": 57550,
+            "size": 35,
+            "target_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+            "candidate_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "84157445184afb90925027c2f75cefc7078f822d0cb61e92e2a5002c4f7ad305",
+            "dependency_timestamp_normalized_sha256": "55057340852b29e361e7b600e1f159d8ddde74acc6448434c30e35d42eccbb9a",
+            "module_name": "th05/snd_meas.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_meas.cpp",
+              "src/shared/sound/measure.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "c3aff7a5e1696b82f3ee3d88773ee33a311463e71ba90cc8dc4b24dc0508359f",
+            "dependency_timestamp_normalized_sha256": "55057340852b29e361e7b600e1f159d8ddde74acc6448434c30e35d42eccbb9a",
+            "module_name": "th05/snd_meas.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_meas.cpp",
+              "src/shared/sound/measure.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_meas.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/snd_meas.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_measure_bindings.asm",
+            "sha256": "c9d4cbec78d606eb1a5c4585bb9bae7f99abbe1e82843e5463e43467ba852140"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/measure.cpp",
+            "sha256": "f487b2019ca52e998e79a7d228ebd9e78a1f943ae6e011773dcecc43e0f4fc45"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_measure_bindings.asm",
+          "sha256": "c9d4cbec78d606eb1a5c4585bb9bae7f99abbe1e82843e5463e43467ba852140"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/measure.cpp",
+          "sha256": "f487b2019ca52e998e79a7d228ebd9e78a1f943ae6e011773dcecc43e0f4fc45"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "46649bf883b77ca8c87bf644c3e867a9232a041a18896a6f0e5e20a6c4c9c851",
+      "compiled_negative_control": {
+        "target_start": 57550,
+        "candidate_start": 57550,
+        "size": 35,
+        "target_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+        "candidate_sha256": "3437562c6600d6970ae53b5e2881abb215a0be6bbc4d51438341bcb2716a7b27",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-bgm-measure",
+        "entry_sha256": "20c68a5e077fa28c7e67dbd6f7cbc579a22c3e77e85a9693d59ed4d23efe32d4",
+        "mutation": {
+          "unit": "op-bgm-measure",
+          "source": "src/shared/sound/measure.cpp",
+          "find": "_DX = (48 * 4);",
+          "replace": "_DX = (48 * 3);"
+        },
+        "control_sha256": "03d5b51cecf6693d055363ccb8b572aca619fd574f30dc0a1c44088f7620efec",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 57550,
+          "candidate_start": 57550,
+          "size": 35,
+          "target_sha256": "7a0cefe799945435c305ee752005993b8731a24163e5a27b925a0190eff7afc8",
+          "candidate_sha256": "3437562c6600d6970ae53b5e2881abb215a0be6bbc4d51438341bcb2716a7b27",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "92bc0f70a2fdc01f8cfce3e56d7294896127713079f86c549dae590ce2d004f9",
+          "dependency_timestamp_normalized_sha256": "f341d51b1727ac0ed8eb3c58ac526c80caae5e143cf1f9c15a59297a0b06106b",
+          "module_name": "th05/snd_meas.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_meas.cpp",
+            "src/shared/sound/measure.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/snd_meas.cpp"
         ]
       },
       "target_view": {

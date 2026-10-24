@@ -2,23 +2,33 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6976c372272a5c9be065e8987d650fbc67abba674b2a29a7512e7249bdbbbf0c",
+  "replay_receipt_sha256": "b7b394c1cc636802337a990c797fd9370efb452ef82cb11ab70e34afafe2e43d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 80664,
-    "candidate_start": 80664,
-    "size": 106,
-    "target_sha256": "32ff8b430a9795049c081ec08740805435eb209afc859fa949fcac157c497e9e",
-    "candidate_sha256": "a4c49d9d6c25d4a07bd94be3e2d851a46d490b53a6c5a1f5caba49a5d17a9eb7",
+    "target_start": 81226,
+    "candidate_start": 81226,
+    "size": 270,
+    "target_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+    "candidate_sha256": "9ea6cc5a86b407707524c3a77bb50f59115fcfb160c6244cd0bfd078a2e148ca",
     "raw_exact": false,
     "target_fixups": [
-      95,
-      26
+      251,
+      227,
+      217,
+      159,
+      132,
+      112,
+      93
     ],
     "candidate_fixups": [
-      95,
-      26
+      251,
+      227,
+      217,
+      159,
+      132,
+      112,
+      93
     ],
     "fixups_exact": true,
     "exact": false
@@ -22180,6 +22190,316 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlg_box.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-dialog-run",
+      "entry_sha256": "f738ef2461bd2aa6779c7eb60969a36a7ab68ce09778300b06468f4ba092adb1",
+      "result": {
+        "id": "main-dialog-run",
+        "entry_sha256": "f738ef2461bd2aa6779c7eb60969a36a7ab68ce09778300b06468f4ba092adb1",
+        "rounds": [
+          {
+            "target_start": 81226,
+            "candidate_start": 81226,
+            "size": 270,
+            "target_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+            "candidate_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+            "raw_exact": true,
+            "target_fixups": [
+              251,
+              227,
+              217,
+              159,
+              132,
+              112,
+              93
+            ],
+            "candidate_fixups": [
+              251,
+              227,
+              217,
+              159,
+              132,
+              112,
+              93
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 81226,
+            "candidate_start": 81226,
+            "size": 270,
+            "target_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+            "candidate_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+            "raw_exact": true,
+            "target_fixups": [
+              251,
+              227,
+              217,
+              159,
+              132,
+              112,
+              93
+            ],
+            "candidate_fixups": [
+              251,
+              227,
+              217,
+              159,
+              132,
+              112,
+              93
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0c5477f28c0ffa6ea816566e323ba58d9145dc5418606d8067ac4853b901469b",
+            "dependency_timestamp_normalized_sha256": "1d364162482d874d69f632b41c4c569030398b07a4ecd01ee144ce1bef78794a",
+            "module_name": "th05/dialog_u.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dialog_u.cpp",
+              "src/main/dialog/run.cpp",
+              "src/main/dialog/runtime.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp",
+              "src/main/dialog/run.inl"
+            ]
+          },
+          {
+            "sha256": "3961534f1f88c51c7818d06e50fb134914e5bc9f7697f71ab0fa9ba15d4d8755",
+            "dependency_timestamp_normalized_sha256": "1d364162482d874d69f632b41c4c569030398b07a4ecd01ee144ce1bef78794a",
+            "module_name": "th05/dialog_u.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dialog_u.cpp",
+              "src/main/dialog/run.cpp",
+              "src/main/dialog/runtime.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp",
+              "src/main/dialog/run.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dialog_u.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dialog_u.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/dialog_run_bindings.asm",
+            "sha256": "dfc047d18c0e215b017c412199746bc2b55f9cc13244c4c9e2454f11c6dcd3e3"
+          },
+          {
+            "path": "src/main/dialog/file.hpp",
+            "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+          },
+          {
+            "path": "src/main/dialog/run.cpp",
+            "sha256": "4b5bafcd40edd4f3bff6950cb2ac899929768820f0730a6125efbd27a7d5eecf"
+          },
+          {
+            "path": "src/main/dialog/run.inl",
+            "sha256": "5f7f89ba0fd6a39a97af210315b5d60f9341b9349058d147f8a2abd288bc6fde"
+          },
+          {
+            "path": "src/main/dialog/runtime.hpp",
+            "sha256": "3d031417aafcf07f185ba54f3ba063ec6f9d72bf18025501fd145019913b5ba1"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/dialog_run_bindings.asm",
+          "sha256": "dfc047d18c0e215b017c412199746bc2b55f9cc13244c4c9e2454f11c6dcd3e3"
+        },
+        {
+          "path": "src/main/dialog/file.hpp",
+          "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+        },
+        {
+          "path": "src/main/dialog/run.cpp",
+          "sha256": "4b5bafcd40edd4f3bff6950cb2ac899929768820f0730a6125efbd27a7d5eecf"
+        },
+        {
+          "path": "src/main/dialog/run.inl",
+          "sha256": "5f7f89ba0fd6a39a97af210315b5d60f9341b9349058d147f8a2abd288bc6fde"
+        },
+        {
+          "path": "src/main/dialog/runtime.hpp",
+          "sha256": "3d031417aafcf07f185ba54f3ba063ec6f9d72bf18025501fd145019913b5ba1"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "b7b394c1cc636802337a990c797fd9370efb452ef82cb11ab70e34afafe2e43d",
+      "compiled_negative_control": {
+        "target_start": 81226,
+        "candidate_start": 81226,
+        "size": 270,
+        "target_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+        "candidate_sha256": "9ea6cc5a86b407707524c3a77bb50f59115fcfb160c6244cd0bfd078a2e148ca",
+        "raw_exact": false,
+        "target_fixups": [
+          251,
+          227,
+          217,
+          159,
+          132,
+          112,
+          93
+        ],
+        "candidate_fixups": [
+          251,
+          227,
+          217,
+          159,
+          132,
+          112,
+          93
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-dialog-run",
+        "entry_sha256": "f738ef2461bd2aa6779c7eb60969a36a7ab68ce09778300b06468f4ba092adb1",
+        "mutation": {
+          "unit": "main-dialog-run",
+          "source": "src/main/dialog/run.inl",
+          "find": "input_wait_for_change(0);",
+          "replace": "input_wait_for_change(1);"
+        },
+        "control_sha256": "c5d58ad1ad14c5625dcc927dee2f937634beae0530c2aa343b88a7b52f1e0505",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 81226,
+          "candidate_start": 81226,
+          "size": 270,
+          "target_sha256": "b072e783c9a653dcd40984a6346e85a3696d707b93d5d5331253ceace1f32af6",
+          "candidate_sha256": "9ea6cc5a86b407707524c3a77bb50f59115fcfb160c6244cd0bfd078a2e148ca",
+          "raw_exact": false,
+          "target_fixups": [
+            251,
+            227,
+            217,
+            159,
+            132,
+            112,
+            93
+          ],
+          "candidate_fixups": [
+            251,
+            227,
+            217,
+            159,
+            132,
+            112,
+            93
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "6afd476abbc509c8a451189c72c4e445d8824fd48434187e8b30cb86383cf5c5",
+          "dependency_timestamp_normalized_sha256": "d446819f87ec3f94d71fa19ee548e4ee9bc56f66c71f50e4158d52aaaee01fee",
+          "module_name": "th05/dialog_u.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dialog_u.cpp",
+            "src/main/dialog/run.cpp",
+            "src/main/dialog/runtime.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/dialog/file.hpp",
+            "src/shared/abi.hpp",
+            "src/main/dialog/run.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dialog_u.cpp"
         ]
       },
       "receipt_aggregate_pass": true

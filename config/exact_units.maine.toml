@@ -330,3 +330,22 @@ unit = "maine-sound-modes"
 source = "src/shared/sound/modes.cpp"
 find = "if(_AL == 0xFF)"
 replace = "if(_AL == 0xFE)"
+
+[[units]]
+id = "maine-bgm-measure"
+source = "src/shared/sound/measure.cpp"
+module = "th05/snd_meas.cpp"
+segment = "SHARED"
+binary = "O"
+bindings_source = "probes/units/maine_measure_bindings.asm"
+target_start = 0xf242
+size = 35
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "maine-bgm-measure"
+source = "src/shared/sound/measure.cpp"
+find = "_DX = (48 * 4);"
+replace = "_DX = (48 * 3);"

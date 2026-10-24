@@ -47,3 +47,10 @@ source/binding/tool identities, then compiles exactly one fresh DATA mutation.
 It never claims fresh positive compilations. Original aggregate failures stay
 in the archived parent, and all parent results are rechecked. A parent lacking
 saved actual argv needs a focused normal replay instead.
+
+A focused replay checks the first producer's actual complete MAP extent before
+starting its second producer. An invalid boundary or size stops immediately,
+retaining the first build artifacts and avoiding the unnecessary second build.
+Accepted scopes still require both independent cold producers and their real
+compiled negative. Raw/fixup mismatches with valid extents continue to retain
+both producer results for strict subset and retained-scope review.

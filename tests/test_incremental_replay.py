@@ -89,6 +89,37 @@ class SourceScopeTests(unittest.TestCase):
              patch.object(replay_units, 'cold_round', side_effect=AssertionError('unexpected compilation')):
             self.assertEqual(replay_units.main(), 0)
 
+    def test_failed_first_map_extent_does_not_compile_a_second_positive(self):
+        entry = self.entries[0]
+        mutation = {'unit': 'a', 'source': 'src/a.cpp',
+                    'find': 'return 1', 'replace': 'return 2'}
+        config = 'artifact="th05-main"\n[[units]]\n' + '\n'.join(
+            f'{key}={json.dumps(value)}' for key, value in entry.items())
+        config += '\n[[controls]]\n' + '\n'.join(
+            f'{key}={json.dumps(value)}' for key, value in mutation.items())
+        (self.root / 'config/exact_units.toml').write_text(config)
+        work = self.root / '.analysis/failed-first-scope'
+        produced = []
+
+        def first_round(directory, *args, **kwargs):
+            produced.append(directory)
+            source = directory / 'source'
+            source.mkdir(parents=True)
+            (source / 'units.map').write_text(
+                ' 0000:0000 0003 C=CODE S=A_TEXT G=(none) M=th05/a.cpp ACBP=28\n')
+            return {'source': source, 'candidate': SimpleNamespace()}
+
+        with patch.object(replay_units, 'ROOT', self.root), \
+             patch('sys.argv', ['replay_units.py', '--units', 'a', '--output', str(work)]), \
+             patch.object(replay_units, 'load_unit_target', return_value=({}, SimpleNamespace(), None)), \
+             patch.object(replay_units, 'freeze_toolchain', return_value={}), \
+             patch.object(replay_units, 'cold_round', side_effect=first_round):
+            with self.assertRaisesRegex(ValueError, 'complete-contribution size mismatch: 3'):
+                replay_units.main()
+        self.assertEqual(produced, [work / 'group-0/a'])
+        self.assertTrue((produced[0] / 'source/units.map').is_file())
+        self.assertFalse((work / 'group-0/b').exists())
+
     def test_custom_binding_drift_only_selects_its_owner(self):
         (self.root / 'probes/units/b_bindings.asm').write_text('changed scaffold\n')
         self.assertEqual([unit['id'] for unit in self.plan()[0]], ['b'])

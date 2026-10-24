@@ -597,3 +597,22 @@ unit = "op-core-init"
 source = "src/shared/core/initop.cpp"
 find = "pfsetbufsiz(8192);"
 replace = "pfsetbufsiz(4096);"
+
+[[units]]
+id = "op-bgm-measure"
+source = "src/shared/sound/measure.cpp"
+module = "th05/snd_meas.cpp"
+segment = "SHARED"
+binary = "O"
+bindings_source = "probes/units/op_measure_bindings.asm"
+target_start = 0xe0ce
+size = 35
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "op-bgm-measure"
+source = "src/shared/sound/measure.cpp"
+find = "_DX = (48 * 4);"
+replace = "_DX = (48 * 3);"

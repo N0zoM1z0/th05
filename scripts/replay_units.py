@@ -218,12 +218,20 @@ def main() -> int:
         for index, members in enumerate(groups.values()):
             paths = set().union(*(scopes[unit["id"]] for unit in members))
             group = work / f"group-{index}"
-            rounds = [cold_round(group / label, inputs, members, paths=paths, binary=context.binary) for label in ("a", "b")]
+            first = cold_round(group / "a", inputs, members, paths=paths, binary=context.binary)
+            # A malformed/mis-sized first scope cannot pass the existing gate.
+            # Keep its actual artifacts, but avoid a needless second compile.
+            first_comparisons = {
+                unit["id"]: compare_mapped_unit(target, first["candidate"],
+                                                first["source"] / "units.map", unit)
+                for unit in members
+            }
+            second = cold_round(group / "b", inputs, members, paths=paths, binary=context.binary)
+            rounds = [first, second]
             for unit in members:
-                comparisons = []
-                for producer in rounds:
-                    comparisons.append(compare_mapped_unit(target, producer["candidate"],
-                                                          producer["source"] / "units.map", unit))
+                comparisons = [first_comparisons[unit["id"]],
+                               compare_mapped_unit(target, second["candidate"],
+                                                   second["source"] / "units.map", unit)]
                 omfs = [producer["omfs"][unit["id"]] for producer in rounds]
                 result = {"id": unit["id"], "entry_sha256": entry_digest(unit), "rounds": comparisons,
                           "object_normalized_equal": len({obj["dependency_timestamp_normalized_sha256"] for obj in omfs}) == 1,
