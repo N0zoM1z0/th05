@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 10 bounded C++ units, 52 complete functions, 9,088 compared
-bytes and 9,072 authored code bytes: 8,796 instructions plus 276 bytes of
+Current acceptance: 11 bounded C++ units, 53 complete functions, 9,182 compared
+bytes and 9,166 authored code bytes: 8,890 instructions plus 276 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -20,6 +20,7 @@ Global percentage remains unmeasured pending complete ownership review.
 | Marisa shots | `marisa-shots-a` |
 | Yuuka shots | `yuuka-shots-a` |
 | Mima shots | `mima-shots-b` |
+| Bullet generation clipping | `bullet-clip-d` |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
 comparisons, pinned tools, actual OMF dependencies and a compiled mutation

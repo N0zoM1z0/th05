@@ -5,12 +5,12 @@ complete authored ownership denominator remains under review.
 
 | Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 52 | 9072 | 8796 | 276 | 9088 |
+| MAIN bounded C++ units | 53 | 9166 | 8890 | 276 | 9182 |
 | OP | 0 | 0 | 0 | 0 | 0 |
 | MAINE | 0 | 0 | 0 | 0 | 0 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-10 bounded C++ units pass two cold builds, raw bytes and ordered
+11 bounded C++ units pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
 A unit covers a complete compiler contribution or one reviewed complete
 function. Unaccepted functions in the same translation unit receive no credit.

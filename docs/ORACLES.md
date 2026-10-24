@@ -37,3 +37,12 @@ same raw comparison. Report their bytes separately from instruction bytes.
 Explicitly reviewed padding receives no authored credit, regardless of its
 value. Classification never masks bytes or relaxes the full raw/fixup gate.
 Game assets and opaque target-derived arrays do not qualify as compiler tables.
+
+Function-scoped units use the actual compiler contribution and demangled TLINK
+function publics. The scope ends at the immediately next distinct function
+public in that contribution, including idle or unaccepted functions; the final
+function ends at the contribution end. Aliases, data labels, skipped neighbors
+and boundaries outside the real contribution are rejected. Acceptance recomputes
+these boundaries from both saved MAP files rather than trusting receipt fields.
+Multiple accepted functions in one TU share one compilation per cold round;
+their complete extents and ordered fixups are still compared separately.

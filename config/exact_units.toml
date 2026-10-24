@@ -235,3 +235,21 @@ unit = "main-mima-shots"
 source = "src/main/player/mima.cpp"
 find = "shot->damage = 8;"
 replace = "shot->damage = 7;"
+
+[[units]]
+id = "main-bullet-clip"
+source = "src/main/bullet/clip.cpp"
+module = "th05/bullet_c.cpp"
+segment = "BULLET_A_TEXT"
+target_start = 0x173de
+size = 94
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/bullet_clip_bindings.asm"
+
+[[controls]]
+unit = "main-bullet-clip"
+source = "src/main/bullet/clip.cpp"
+find = "bullet_clear_time < 17"
+replace = "bullet_clear_time < 18"
