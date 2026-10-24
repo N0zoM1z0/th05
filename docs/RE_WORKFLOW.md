@@ -71,4 +71,4 @@ saved parent result and actual source/OMF/MAP/MZ dependency, retains both existi
 positive producers, and compiles exactly one negative. It changes no acceptance
 or authored-byte counts. `--check PATH/receipt.json` rechecks the parent, source
 mutation, actual argv, OMF, linked output, pinned tool receipt and rejection
-without compiling. Failed/stale parents stop before tool or target work.
+without compiling. Failed/stale parents stop before new compilation or output creation.
