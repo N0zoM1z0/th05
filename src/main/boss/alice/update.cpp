@@ -1,8 +1,8 @@
 // Alice's final spread and complete boss state machine.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
-// Canonical object layouts are already parsed. Retain the real CODE-table
-// alignment using the genuine preceding63-byte spread function.
+// Canonical object layouts are already parsed. Keep ordinary word alignment
+// and the genuine preceding spread; the whole-owner table gap remains open.
 #pragma option -a2
 
 #include "src/main/boss/alice/final_spread.inl"

@@ -26,8 +26,8 @@ background callback belongs to main01/AE1. Its first declaration preserves
 that context before the common stage header. DS is209D. The binder places
 only foreign symbols and outside-contribution layout holes. It defines no
 instructions, initialized data, stack, or hole within the1002-byte candidate.
-The genuine odd-sized prefix and the real `-a2` option after canonical types
-preserve the callback's table alignment without changing accepted layouts.
+The genuine odd-sized prefix and real `-a2` option after canonical types
+retain the reviewed source context without changing accepted layouts.
 
 ReC98 `th05_main.asm` lines12019..12355 supplies the semantic reference.
 Cached calibration has identical complete instruction shapes at1A005 and
@@ -39,3 +39,14 @@ Private integration metadata is
 `.analysis/alice-update-boundary-review.json`, including the proposed whole
 unit and a unique staged mutation of the real initial HP threshold7400 to7300.
 No compiler, emulator or Ghidra was run during this preparation.
+
+The saved whole-owner oracle `main-alice-update-a` emitted 1001 bytes against
+the original 1002. The 63-byte prefix is exact, but the full callback lacks
+the original zero immediately before its 30-byte switch table. The table
+words and callback instructions otherwise agree up to shifted addresses.
+Both functions are in one real nonempty SEGDEF/LEDATA contribution; splitting
+same-named segments does not explain this failure. No artificial zero, table
+clipping, flag sweep or barrier is used to force agreement. The whole owner
+is outside the default replay manifest and receives no callback credit.
+The genuine spread now has its own independently accepted 63-byte owner in
+`final_spread.cpp`, sharing this unchanged real body through `final_spread.inl`.

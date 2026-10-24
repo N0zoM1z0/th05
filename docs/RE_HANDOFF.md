@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **165 bounded C++ CODE/DATA units / 321 complete function occurrences**,
-**57,297 authored bytes exact**: 48,440 CODE and 8,857 initialized DATA.
-CODE is 47,918 instruction plus 522 semantic compiler-table bytes.
-Complete compared extents total 57,329; 32 checked padding bytes receive
-no credit. MAIN has 239 functions / 35,875 CODE / 199 DATA;
+Current acceptance: **167 bounded C++ CODE/DATA units / 330 complete function occurrences**,
+**58,072 authored bytes exact**: 49,215 CODE and 8,857 initialized DATA.
+CODE is 48,693 instruction plus 522 semantic compiler-table bytes.
+Complete compared extents total 58,104; 32 checked padding bytes receive
+no credit. MAIN has 248 functions / 36,650 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -493,3 +493,24 @@ mutually exclusive delta and callback-result paths recovered the original
 register allocation. Both fresh full raw/ordered producers pass, and the
 entrance angle decrement2→3 control is rejected. The failed whole update
 owner remains outside default replay and receives no callback credit.
+
+
+### Alice recovery and opening patterns
+
+`main-alice-opening-patterns-a` accepts461 instruction bytes/six complete
+functions: real near Pascal puppet recovery/hold callbacks and four charged
+opening patterns. Both fresh producers agree on the entire raw contribution
+and original ordered fixups[437,313,182]; the ring count28→27 control is
+rejected. No DATA, BSS, padding or compiler tables receive credit.
+
+
+### EX-Alice initial patterns
+
+`main-exalice-initial-patterns-c` accepts314 instruction bytes/three complete
+functions with two fresh deterministic full raw/ordered positives. The real
+fan spread5→6 control is rejected. The initial broad bullet-update include
+conflicted with the independent HUD speed helper; the owner now uses unchanged
+canonical types plus the complete two-alternative special-state union. The
+first314-byte producer only reversed two gather color operands; correcting
+the real Pascal call to(frame-48,6,7) restores both bytes. No DATA, BSS,
+padding or compiler tables receive credit.

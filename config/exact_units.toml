@@ -2089,3 +2089,41 @@ unit = "main-alice-puppet-motion"
 source = "src/main/boss/alice/puppet_motion.cpp"
 find = "alice_puppet0.angle -= 2;"
 replace = "alice_puppet0.angle -= 3;"
+
+[[units]]
+id = "main-alice-opening-patterns"
+source = "src/main/boss/alice/opening_patterns.cpp"
+module = "th05/a_opn.cpp"
+segment = "ALICE_OPN_TEXT"
+wrapper_options = "-zCALICE_OPN_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_opening_patterns_bindings.asm"
+target_start = 123957
+size = 461
+functions = 6
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-alice-opening-patterns"
+source = "src/main/boss/alice/opening_patterns.cpp"
+find = "28UL | (8UL << 8) | (4UL << 16) | (8UL << 24);"
+replace = "27UL | (8UL << 8) | (4UL << 16) | (8UL << 24);"
+
+[[units]]
+id = "main-exalice-initial-patterns"
+source = "src/main/boss/exalice/patterns.cpp"
+module = "th05/x_pat.cpp"
+segment = "EXALICE_PAT_TEXT"
+wrapper_options = "-zCEXALICE_PAT_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_patterns_bindings.asm"
+target_start = 104603
+size = 314
+functions = 3
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-exalice-initial-patterns"
+source = "src/main/boss/exalice/patterns.cpp"
+find = "exalice_set_spread(5, 12);"
+replace = "exalice_set_spread(6, 12);"
