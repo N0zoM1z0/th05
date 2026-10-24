@@ -2,18 +2,22 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "2a1368dc28bfa8fdfa731712d92a957b7de19e6fa24fb40eb0e8d16d341bc5e6",
+  "replay_receipt_sha256": "8edd96f6d0f53262f64a7b9cc33834bf8bd934ce3c751ec270e2b214ed541840",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 99285,
-    "candidate_start": 99285,
-    "size": 132,
-    "target_sha256": "4b792e289907b193a8e9a73d4ed93b538297f3cff0b015b736bacbb12d993da4",
-    "candidate_sha256": "543359a8e66e77b7ec8e2e019d00a1431550fc083074eaea1324b4304fdef37a",
+    "target_start": 57614,
+    "candidate_start": 57614,
+    "size": 68,
+    "target_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+    "candidate_sha256": "d612051ec0a78068cd8ab35b3051cddf1ff2e3f115c48bf26e2752f800f30478",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      49
+    ],
+    "candidate_fixups": [
+      49
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -40221,6 +40225,566 @@
           "-ml",
           "-DBINARY='M'",
           "th05/b4spawn.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-yuki-solo-pattern-data",
+      "entry_sha256": "3d67552430a50fe17edb406db1103805353394a49c462da8a8171285b6accd10",
+      "result": {
+        "id": "main-mai-yuki-solo-pattern-data",
+        "entry_sha256": "3d67552430a50fe17edb406db1103805353394a49c462da8a8171285b6accd10",
+        "rounds": [
+          {
+            "target_start": 140084,
+            "candidate_start": 140084,
+            "size": 36,
+            "target_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+            "candidate_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140084,
+              "size": 36,
+              "module": "th05/b4_stbl.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140084,
+            "candidate_start": 140084,
+            "size": 36,
+            "target_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+            "candidate_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140084,
+              "size": 36,
+              "module": "th05/b4_stbl.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "db7b203d20c2d89d18881aaa50d09a6acb957783a2f76b31ff5b3d34ce9ba2be",
+            "dependency_timestamp_normalized_sha256": "bf10579dfef0ce89e013166787a245d04876aefa34a997699c3299c5ce05ceaf",
+            "module_name": "th05/b4_stbl.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b4_stbl.cpp",
+              "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+              "src/main/boss/mai_yuki/solo_pattern_tables.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 36,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 36,
+                  "sha256": "6db65fd59fd356f6729140571b5bcd6bb3b83492a16e1bf0a3884442fc3c8a0e"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "b91f9f1d73b725ad5b458b953b8fa04018e71fe9da249d2a05087d754f58f263",
+            "dependency_timestamp_normalized_sha256": "bf10579dfef0ce89e013166787a245d04876aefa34a997699c3299c5ce05ceaf",
+            "module_name": "th05/b4_stbl.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b4_stbl.cpp",
+              "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+              "src/main/boss/mai_yuki/solo_pattern_tables.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 36,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 36,
+                  "sha256": "6db65fd59fd356f6729140571b5bcd6bb3b83492a16e1bf0a3884442fc3c8a0e"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b4_stbl.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b4_stbl.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_solo_tables_bindings.asm",
+            "sha256": "941f0f6d8cb0043cfcae86f301b6a13dd24b49fcc32021480e37bf28f1fafdd9"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+            "sha256": "5eb721227d7f6f0bdddcbbc9da28528aecf53ab5a21c0f8d8876ec499d891e1e"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/solo_pattern_tables.hpp",
+            "sha256": "01ad649b0ce2962a11c1029892b383c32c28ea068b5de3721ae153515a81d76c"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_yuki_solo_tables_bindings.asm",
+          "sha256": "941f0f6d8cb0043cfcae86f301b6a13dd24b49fcc32021480e37bf28f1fafdd9"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+          "sha256": "5eb721227d7f6f0bdddcbbc9da28528aecf53ab5a21c0f8d8876ec499d891e1e"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/solo_pattern_tables.hpp",
+          "sha256": "01ad649b0ce2962a11c1029892b383c32c28ea068b5de3721ae153515a81d76c"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "7b29762c0a761f02e0643ee5bc1164058fbbc4605d5dca13242fba60da0271f5",
+      "compiled_negative_control": {
+        "target_start": 140084,
+        "candidate_start": 140084,
+        "size": 36,
+        "target_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+        "candidate_sha256": "52ff90850d3f6b02a510452a636092508a036505c26971953e108c7d9a89c735",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140084,
+          "size": 36,
+          "module": "th05/b4_stbl.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-mai-yuki-solo-pattern-data",
+        "entry_sha256": "3d67552430a50fe17edb406db1103805353394a49c462da8a8171285b6accd10",
+        "mutation": {
+          "unit": "main-mai-yuki-solo-pattern-data",
+          "source": "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+          "find": "    mai_solo_widening_fans,\n    mai_solo_turning_stacks\n",
+          "replace": "    mai_solo_turning_stacks,\n    mai_solo_widening_fans\n"
+        },
+        "control_sha256": "d89e9c11a996167b8cb1b05ca87a65762492b3346f6ede23f48c9186c2f9f4f5",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140084,
+          "candidate_start": 140084,
+          "size": 36,
+          "target_sha256": "41d72a220eb9e9b545e674e89567dec2a8b5217df4ee9e5d27df20ff022a045a",
+          "candidate_sha256": "52ff90850d3f6b02a510452a636092508a036505c26971953e108c7d9a89c735",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140084,
+            "size": 36,
+            "module": "th05/b4_stbl.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "feb61671e48530f7085dd01af40240a58f304c5847dc829b3709a62cceaa6589",
+          "dependency_timestamp_normalized_sha256": "2c1931a2a42d7533c85e32c0ac53f040e85f6ef79850741b7415931eab5a2607",
+          "module_name": "th05/b4_stbl.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/b4_stbl.cpp",
+            "src/main/boss/mai_yuki/solo_pattern_tables.cpp",
+            "src/main/boss/mai_yuki/solo_pattern_tables.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 36,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 36,
+                "sha256": "6db65fd59fd356f6729140571b5bcd6bb3b83492a16e1bf0a3884442fc3c8a0e"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/b4_stbl.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-spark-lifecycle",
+      "entry_sha256": "2592ae61d3013d72e3db66c3f84c5793b4cf6063cdadeaf9c83514421269a11f",
+      "result": {
+        "id": "main-spark-lifecycle",
+        "entry_sha256": "2592ae61d3013d72e3db66c3f84c5793b4cf6063cdadeaf9c83514421269a11f",
+        "rounds": [
+          {
+            "target_start": 57614,
+            "candidate_start": 57614,
+            "size": 68,
+            "target_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+            "candidate_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+            "raw_exact": true,
+            "target_fixups": [
+              49
+            ],
+            "candidate_fixups": [
+              49
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 57614,
+            "candidate_start": 57614,
+            "size": 68,
+            "target_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+            "candidate_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+            "raw_exact": true,
+            "target_fixups": [
+              49
+            ],
+            "candidate_fixups": [
+              49
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "363b29da2f352194350e0e9f2417c9509306b56e68f8ab78957856e170d2d6e3",
+            "dependency_timestamp_normalized_sha256": "89d43a837fdd8170c2ffa069c01215fd3bbb3679af02dda733c5e174570b7cc9",
+            "module_name": "th05/sp_life.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sp_life.cpp",
+              "src/main/effects/spark/lifecycle.cpp",
+              "src/main/effects/spark/lifecycle.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "985a46f7aa09f960ae9f95f99226e523f654b20979dbf844a1d5e48869d6a2ad",
+            "dependency_timestamp_normalized_sha256": "89d43a837fdd8170c2ffa069c01215fd3bbb3679af02dda733c5e174570b7cc9",
+            "module_name": "th05/sp_life.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sp_life.cpp",
+              "src/main/effects/spark/lifecycle.cpp",
+              "src/main/effects/spark/lifecycle.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sp_life.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sp_life.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/spark_lifecycle_bindings.asm",
+            "sha256": "5708a0baead22764f9702666d75e1f8c253932fe9b0545b903b42b297803e121"
+          },
+          {
+            "path": "src/main/effects/spark/lifecycle.cpp",
+            "sha256": "1702acdd98e49d8b81de29bd5fd6dd223135c3c3e72a0b4cd61763875b39b1c6"
+          },
+          {
+            "path": "src/main/effects/spark/lifecycle.hpp",
+            "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/spark_lifecycle_bindings.asm",
+          "sha256": "5708a0baead22764f9702666d75e1f8c253932fe9b0545b903b42b297803e121"
+        },
+        {
+          "path": "src/main/effects/spark/lifecycle.cpp",
+          "sha256": "1702acdd98e49d8b81de29bd5fd6dd223135c3c3e72a0b4cd61763875b39b1c6"
+        },
+        {
+          "path": "src/main/effects/spark/lifecycle.hpp",
+          "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8edd96f6d0f53262f64a7b9cc33834bf8bd934ce3c751ec270e2b214ed541840",
+      "compiled_negative_control": {
+        "target_start": 57614,
+        "candidate_start": 57614,
+        "size": 68,
+        "target_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+        "candidate_sha256": "d612051ec0a78068cd8ab35b3051cddf1ff2e3f115c48bf26e2752f800f30478",
+        "raw_exact": false,
+        "target_fixups": [
+          49
+        ],
+        "candidate_fixups": [
+          49
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-spark-lifecycle",
+        "entry_sha256": "2592ae61d3013d72e3db66c3f84c5793b4cf6063cdadeaf9c83514421269a11f",
+        "mutation": {
+          "unit": "main-spark-lifecycle",
+          "source": "src/main/effects/spark/lifecycle.hpp",
+          "find": "static const pixel_t SPARK_W = 8;",
+          "replace": "static const pixel_t SPARK_W = 9;"
+        },
+        "control_sha256": "a405e102067086e6011d6632961d90ddb36809e84aeb296a44d7cd3d6a3adeba",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 57614,
+          "candidate_start": 57614,
+          "size": 68,
+          "target_sha256": "18de5539220ee427b7fc0f7c04d71dcfbde77383a6f930281c0b23eed36067b0",
+          "candidate_sha256": "d612051ec0a78068cd8ab35b3051cddf1ff2e3f115c48bf26e2752f800f30478",
+          "raw_exact": false,
+          "target_fixups": [
+            49
+          ],
+          "candidate_fixups": [
+            49
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "8795eaaaf6e208aeda1f6dafad27a56a55652d83de70ecad9a53ddcfefc3e133",
+          "dependency_timestamp_normalized_sha256": "cbf27b0190f2257acbc9546883eb22fbff75197f0c8aef68cca44958732c68e1",
+          "module_name": "th05/sp_life.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sp_life.cpp",
+            "src/main/effects/spark/lifecycle.cpp",
+            "src/main/effects/spark/lifecycle.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sp_life.cpp"
         ]
       },
       "receipt_aggregate_pass": true

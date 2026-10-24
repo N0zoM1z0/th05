@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **188 bounded C++ CODE/DATA units / 385 complete function occurrences**,
-**68,453 authored bytes exact**: 59,596 CODE and 8,857 initialized DATA.
-CODE is 58,980 instruction plus 616 semantic compiler-table bytes.
-Complete compared extents total 68,486; 33 checked padding bytes receive
-no credit. MAIN has 303 functions / 47,031 CODE / 199 DATA;
+Current acceptance: **190 bounded C++ CODE/DATA units / 387 complete function occurrences**,
+**68,557 authored bytes exact**: 59,664 CODE and 8,893 initialized DATA.
+CODE is 59,048 instruction plus 616 semantic compiler-table bytes.
+Complete compared extents total 68,590; 33 checked padding bytes receive
+no credit. MAIN has 305 functions / 47,099 CODE / 235 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -700,3 +700,13 @@ The complete frozen B4Ball/template/custom-pool storage is unchanged. The273
 updater remains unimplemented because its return-register use needs separate
 source reconstruction. Both new owners have two fresh deterministic complete
 raw/ordered producers and no DATA, BSS or padding credit.
+
+## Spark lifecycle and survivor callback tables
+
+The focused `main-spark-lifecycle-a` and `main-mai-yuki-solo-pattern-data-a`
+receipts add two complete Spark functions (68 CODE bytes) and seven semantic
+near-callback banks (36 DATA bytes). Both have two fresh positive producers,
+full raw/ordered-fixup equality and independent compiled mutations. The callback
+banks retain distinct bool/void callback types and all 18 genuine function
+pointers. Spark preserves the original 96-record traversal over a 64-record
+active pool and low-byte writes to word fields. No unchanged owner was rebuilt.

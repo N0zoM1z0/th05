@@ -2544,3 +2544,43 @@ unit = "main-b4ball-spawn"
 source = "src/main/boss/mai_yuki/b4ball_spawn.cpp"
 find = "ball->damaged_this_frame = 0;"
 replace = "ball->damaged_this_frame = 1;"
+
+[[units]]
+id = "main-mai-yuki-solo-pattern-data"
+source = "src/main/boss/mai_yuki/solo_pattern_tables.cpp"
+module = "th05/b4_stbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_solo_tables_bindings.asm"
+target_start = 140084
+size = 36
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+
+[[controls]]
+unit = "main-mai-yuki-solo-pattern-data"
+source = "src/main/boss/mai_yuki/solo_pattern_tables.cpp"
+find = "    mai_solo_widening_fans,\n    mai_solo_turning_stacks\n"
+replace = "    mai_solo_turning_stacks,\n    mai_solo_widening_fans\n"
+
+[[units]]
+id = "main-spark-lifecycle"
+source = "src/main/effects/spark/lifecycle.cpp"
+module = "th05/sp_life.cpp"
+segment = "SPARK_LIFE_TEXT"
+wrapper_options = "-zCSPARK_LIFE_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/spark_lifecycle_bindings.asm"
+target_start = 57614
+size = 68
+functions = 2
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-spark-lifecycle"
+source = "src/main/effects/spark/lifecycle.hpp"
+find = "static const pixel_t SPARK_W = 8;"
+replace = "static const pixel_t SPARK_W = 9;"
