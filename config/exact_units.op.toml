@@ -559,3 +559,23 @@ unit = "op-config-data"
 source = "src/op/config/config.hpp"
 find = "\"MIKO.CFG\""
 replace = "\"MIKO.CFH\""
+
+[[units]]
+id = "op-sound-modes"
+source = "src/shared/sound/modes.cpp"
+module = "th04/snd_mode.cpp"
+segment = "SHARED"
+binary = "O"
+target_start = 0xd380
+size = 156
+alignment_offsets = []
+padding_bytes = [{offset = 11, value = 144}, {offset = 21, value = 144}]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/op_sound_modes_bindings.asm"
+
+[[controls]]
+unit = "op-sound-modes"
+source = "src/shared/sound/modes.cpp"
+find = "if(_AL == 0xFF)"
+replace = "if(_AL == 0xFE)"

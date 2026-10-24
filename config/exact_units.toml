@@ -1253,3 +1253,141 @@ unit = "main-enemy-allocation"
 source = "src/main/enemy/spawn.inl"
 find = "enemy->autofire_interval = 128;"
 replace = "enemy->autofire_interval = 120;"
+
+[[units]]
+id = "main-core-init"
+source = "src/shared/core/initmain.cpp"
+module = "th05/initmain.cpp"
+segment = "SHARED"
+target_start = 0x14f7a
+size = 72
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/initmain_bindings.asm"
+
+[[controls]]
+unit = "main-core-init"
+source = "src/shared/core/initmain.cpp"
+find = "pfsetbufsiz(4096);"
+replace = "pfsetbufsiz(2048);"
+
+[[units]]
+id = "main-demo-load"
+source = "src/main/demo/demo.cpp"
+module = "th05/demo.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xb756
+size = 94
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/demo_bindings.asm"
+function_symbol = "demo_load()"
+function_end_symbol = "demoplay()"
+
+[[units]]
+id = "main-dialog-file"
+source = "src/main/dialog/file.cpp"
+module = "th05/f_dialog.cpp"
+segment = "F_DIALOG_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x1392b
+size = 202
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/dialog_file_bindings.asm"
+
+[[controls]]
+unit = "main-demo-load"
+source = "src/main/demo/demo.cpp"
+find = "size_t size = ((resident->demo_num <= 4)"
+replace = "size_t size = ((resident->demo_num <= 3)"
+
+[[controls]]
+unit = "main-dialog-file"
+source = "src/main/dialog/file.cpp"
+find = "dialog_fn[4] = ('0' + stage_id);"
+replace = "dialog_fn[4] = ('1' + stage_id);"
+
+[[units]]
+id = "main-sound-modes"
+source = "src/shared/sound/modes.cpp"
+module = "th04/snd_mode.cpp"
+segment = "SHARED"
+target_start = 0x14bd4
+size = 156
+alignment_offsets = []
+padding_bytes = [{offset = 11, value = 144}, {offset = 21, value = 144}]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/sound_modes_bindings.asm"
+
+[[controls]]
+unit = "main-sound-modes"
+source = "src/shared/sound/modes.cpp"
+find = "if(_AL == 0xFF)"
+replace = "if(_AL == 0xFE)"
+
+[[units]]
+id = "main-player-shot-common"
+source = "src/main/player/common.cpp"
+module = "th05/p_common.cpp"
+segment = "MAIN_01_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xe644
+size = 183
+alignment_offsets = []
+padding_bytes = [{offset = 81, value = 0}]
+code_data_ranges = [{offset = 82, size = 32, kind = "compiler-switch-table"}]
+functions = 3
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/player_common_bindings.asm"
+
+[[controls]]
+unit = "main-player-shot-common"
+source = "src/main/player/common.cpp"
+find = "cycle = SC_6X | SC_3X | SC_2X | SC_1X;"
+replace = "cycle = SC_6X | SC_3X | SC_2X;"
+
+# Candidate-only proposals; not added to maintained config or accepted.
+[[units]]
+id = "main-reimu-bomb-stars"
+source = "src/main/player/bombanim.cpp"
+module = "th05/bombanim.cpp"
+segment = "BOMBANIM_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xfb44
+size = 467
+alignment_offsets = []
+padding_bytes = [{offset = 447, value = 144}]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/reimu_bomb_stars_bindings.asm"
+
+[[controls]]
+unit = "main-reimu-bomb-stars"
+source = "src/main/player/bombanim.cpp"
+find = "if((bomb_frame <= 112)"
+replace = "if((bomb_frame <= 111)"
+
+[[units]]
+id = "main-midboss5-render"
+source = "src/main/midboss/render5.cpp"
+module = "th05/mb5rend.cpp"
+segment = "M5_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0xdd8f
+size = 101
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/midboss5_render_bindings.asm"
+
+[[controls]]
+unit = "main-midboss5-render"
+source = "src/main/midboss/render5.cpp"
+find = "midboss.damage_this_frame = 0;"
+replace = "midboss.damage_this_frame = 1;"

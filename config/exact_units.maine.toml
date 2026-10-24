@@ -291,3 +291,42 @@ unit = "maine-entry-data"
 source = "src/maine/entry/entry.cpp"
 find = "\"MIKO.CFG\""
 replace = "\"MIKO.CFH\""
+
+[[units]]
+id = "maine-core-init"
+source = "src/shared/core/initmain.cpp"
+module = "th05/initmain.cpp"
+segment = "SHARED"
+binary = "M"
+target_start = 0xf0ba
+size = 72
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_initmain_bindings.asm"
+
+[[controls]]
+unit = "maine-core-init"
+source = "src/shared/core/initmain.cpp"
+find = "pfsetbufsiz(4096);"
+replace = "pfsetbufsiz(2048);"
+
+[[units]]
+id = "maine-sound-modes"
+source = "src/shared/sound/modes.cpp"
+module = "th04/snd_mode.cpp"
+segment = "SHARED"
+binary = "O"
+target_start = 0xe87e
+size = 156
+alignment_offsets = []
+padding_bytes = [{offset = 11, value = 144}, {offset = 21, value = 144}]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_sound_modes_bindings.asm"
+
+[[controls]]
+unit = "maine-sound-modes"
+source = "src/shared/sound/modes.cpp"
+find = "if(_AL == 0xFF)"
+replace = "if(_AL == 0xFE)"

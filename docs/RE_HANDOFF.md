@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **115 bounded C++ CODE/DATA units / 235 complete function occurrences**,
-**44,437 authored bytes exact**: 35,580 CODE and 8,857 initialized DATA.
-CODE is 35,138 instruction plus 442 semantic compiler-table bytes.
-Complete compared extents total 44,456; 19 checked padding bytes receive
-no credit. MAIN has 159 functions / 23,589 CODE / 199 DATA;
-OP 53 / 9,158 / 8,615; MAINE 23 / 2,833 / 43.
+Current acceptance: **125 bounded C++ CODE/DATA units / 249 complete function occurrences**,
+**46,088 authored bytes exact**: 37,231 CODE and 8,857 initialized DATA.
+CODE is 36,757 instruction plus 474 semantic compiler-table bytes.
+Complete compared extents total 46,115; 27 checked padding bytes receive
+no credit. MAIN has 170 functions / 24,860 CODE / 199 DATA;
+OP 54 / 9,312 / 8,615; MAINE 25 / 3,059 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -50,6 +50,11 @@ All paths below are under private `.analysis/unit-replays/`.
 | OP music/title/character/score/config DATA | `op-music-data-retained-a`, `op-title-data-retained-a`, `op-character-menu-data-retained-a`, `op-hiscore-view-data-retained-a`, `op-config-data-retained-a` |
 | MAIN stage initialized DATA and refreshed CODE evidence | `main-stage-data-a` |
 | MAINE entry and MAIN Boss drop-table DATA | `maine-entry-data-retained-a`, `main-boss-generic-data-a` |
+| Dialog-file loading and demo loading | `main-dialog-file-a`, `main-demo-b` (passing load subset) |
+| MAIN/MAINE core initialization | `main-core-init-a`, `maine-core-init-a` |
+| Sound mode selection in all three artifacts | `main-sound-modes-b`, `op-sound-modes-b`, `maine-sound-modes-a` |
+| Generic shot control | `main-player-shot-common-a` |
+| Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
 | Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
 | Laser creation/control, state update and rendering | `main-laser-control-a`, `main-laser-update-b`, `main-laser-render-a` |
 
@@ -216,3 +221,17 @@ one / 312, including a 14-byte compiler switch table. See
 `src/main/bullet/laser.md`. Each has its own two independent positive producers
 and compiled gameplay mutation; rendering adds one / 582 with its own minimum-radius mutation. State buffers
 and all foreign API bodies remain uncredited.
+
+Dialog file loading adds202 instruction bytes across three complete functions;
+demo loading adds94 across one. Demo playback114 retains its genuine far-call
+shortening mismatch and stays unaccepted, with its failed parent retained.
+Shared initialization adds72 in each of MAIN/MAINE. Sound-mode selection adds
+154 MAIN instruction bytes plus two compared, excluded shortening NOPs. Full
+original SE enum domain is essential for the exact ternary expression.
+
+Sound mode selection now also adds154 each in OP/MAINE, with separately
+reviewed real frames and own compiled controls. Generic shots add three
+functions /182 authored CODE bytes (150 instructions +32 compiler table),
+excluding one checked zero padding byte. Reimu bomb stars add466 instruction
+bytes, excluding one original linker NOP; stage-five midboss rendering adds101.
+The Extra-stage same-shaped renderer is independently identified and uncredited.
