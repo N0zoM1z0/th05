@@ -61,3 +61,14 @@ components. Replay validates these before target access or tool execution.
 A nine-character stem can silently compile under a Wine short-name alias,
 leaving the intended object name absent. Maintained source paths remain their
 normal descriptive paths; only the small generated wrapper uses the DOS alias.
+
+
+A normal multi-owner replay compiles one configured negative owner. Its shared
+oracle control does not imply a separate mutation was compiled for every owner.
+Use `scripts/supplement_negative.py --parent RECEIPT --unit ID --output PATH`
+when an additional owner needs its own mutation: it first revalidates every
+saved parent result and actual source/OMF/MAP/MZ dependency, retains both existing
+positive producers, and compiles exactly one negative. It changes no acceptance
+or authored-byte counts. `--check PATH/receipt.json` rechecks the parent, source
+mutation, actual argv, OMF, linked output, pinned tool receipt and rejection
+without compiling. Failed/stale parents stop before tool or target work.

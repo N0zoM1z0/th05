@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **145 bounded C++ CODE/DATA units / 274 complete function occurrences**,
-**50,191 authored bytes exact**: 41,334 CODE and 8,857 initialized DATA.
-CODE is 40,836 instruction plus 498 semantic compiler-table bytes.
-Complete compared extents total 50,221; 30 checked padding bytes receive
-no credit. MAIN has 192 functions / 28,769 CODE / 199 DATA;
+Current acceptance: **148 bounded C++ CODE/DATA units / 288 complete function occurrences**,
+**51,890 authored bytes exact**: 43,033 CODE and 8,857 initialized DATA.
+CODE is 42,527 instruction plus 506 semantic compiler-table bytes.
+Complete compared extents total 51,921; 31 checked padding bytes receive
+no credit. MAIN has 206 functions / 30,468 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -42,6 +42,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
 | Sara complete stage-one behavior | `main-sara-a` |
+| Stage-five and Extra movement/pattern helpers | `main-midboss5-extra-patterns-a` |
 | Stage-one, two, three, five and Extra midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a`, `main-midboss5-extra-b` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
@@ -339,10 +340,47 @@ accepted evidence is reused unchanged.
 ### Stage-five and Extra complete updates
 
 `main-midboss5-extra-b` accepts independent318-byte stage-five and366-byte
-Extra callbacks. Each has two fresh deterministic raw/ordered producers and
-its own compiled semantic control (bonus30→31, HP1000→1001). Neither owns a
+Extra callbacks. Each has two fresh deterministic raw/ordered producers. The batch control is
+bonus30→31; Extra has the supplementary HP1000→1001 control described below. Neither owns a
 CODE table, padding, DATA or BSS. Real near pattern-pointer tables remain
 external. The initial stage-five wrapper stem had nine characters, so TCC
 emitted a short-name object; only its generated DOS alias was corrected before
 the successful replay. The replay command now rejects invalid DOS8.3 wrapper
 paths before accessing targets or running tools, with a CLI regression check.
+
+
+### Stage-five and Extra helper algorithms
+
+`main-midboss5-extra-patterns-a` accepts five complete stage-five functions
+(462 bytes) and five Extra functions (440 bytes), each from its own frozen
+natural C++ producer group. Both groups have two fresh deterministic raw and original ordered-fixup
+positives. The batch control mutates stage five; Extra has a supplementary
+owner-specific speed control described below.
+These902 bytes are entirely instructions; no tables, padding, DATA or BSS
+receive credit. Full canonical bullet-special union declarations are preserved
+in the independent Extra ABI header; accepted update/bullet headers stay
+unchanged, with no opaque object-byte view used as a substitute.
+
+
+### Independent supplemental negative controls
+
+The normal batch driver compiles one named negative owner. Earlier notes that
+implied one negative per batched producer group were corrected. Extra update's
+HP1000→1001 mutation is actually compiled in `main-midboss-extra-negative-c`;
+Extra helper speed8→9 is actually compiled in
+`main-midboss-extra-pattern-negative-b`. Both reports retain/revalidate their
+parent's two immutable positive producers and compile one additional negative
+each, using the identical pinned tool receipt. They change no acceptance or
+byte totals. `scripts/supplement_negative.py --check PATH/receipt.json` checks
+the full saved parent and negative artifacts without running a compiler.
+
+### Stage-four complete natural prefix and update
+
+`main-midboss-stage4-b` accepts all798 raw bytes across three real pattern
+helpers and the complete callback, including its switch table. Credit is797
+bytes (789 instructions,8 table bytes), with the original zero excluded. The
+first producer's797-byte result isolated the missing word-alignment context;
+restoring the donor's actual alignment option after all ABI declarations yields
+two exact deterministic producers, all seven original ordered fixups, and a
+rejected entrance-threshold192→193 control. No instruction or inside-function
+padding bytes were supplied by the binder or source.

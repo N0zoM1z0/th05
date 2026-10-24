@@ -1715,3 +1715,65 @@ unit = "main-midboss-extra-update"
 source = "src/main/midboss/extra.cpp"
 find = "midboss.hp < 1000"
 replace = "midboss.hp < 1001"
+
+[[units]]
+id = "main-midboss-stage5-patterns"
+source = "src/main/midboss/stage5_patterns.cpp"
+module = "th05/mb5pat.cpp"
+segment = "MAIN_036_TEXT"
+wrapper_options = "-zCMAIN_036_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage5_patterns_bindings.asm"
+target_start = 91940
+size = 462
+alignment_offsets = []
+functions = 5
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-stage5-patterns"
+source = "src/main/midboss/stage5_patterns.cpp"
+find = "midboss5_set_spread(13, 7);"
+replace = "midboss5_set_spread(12, 7);"
+
+[[units]]
+id = "main-midboss-extra-patterns"
+source = "src/main/midboss/extra_patterns.cpp"
+module = "th05/midxpat.cpp"
+segment = "MIDBOSSX_TEXT"
+wrapper_options = "-zCMIDBOSSX_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_extra_patterns_bindings.asm"
+target_start = 0x163fe
+size = 440
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 5
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "midboss-extra-pattern-speed"
+unit = "main-midboss-extra-patterns"
+source = "src/main/midboss/extra_patterns.cpp"
+find = "bullet_template.speed.v = 8;"
+replace = "bullet_template.speed.v = 9;"
+
+[[units]]
+id = "main-midboss-stage4"
+source = "src/main/midboss/stage4.cpp"
+module = "th05/midboss4.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage4_bindings.asm"
+target_start = 90180
+size = 798
+alignment_offsets = []
+padding_bytes = [{offset = 789, value = 0}]
+code_data_ranges = [{offset = 790, size = 8, kind = "compiler-switch-table"}]
+functions = 4
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-stage4"
+source = "src/main/midboss/stage4.cpp"
+find = "if(midboss.phase_frame >= 192) {"
+replace = "if(midboss.phase_frame >= 193) {"

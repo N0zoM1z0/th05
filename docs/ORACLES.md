@@ -103,3 +103,13 @@ the entire original parent, including excluded failures. Import mechanically
 re-derives the DATA boundaries, full raw bytes, ordered fixups, producer identity
 and negative outcome from saved artifacts. This lane explicitly reports two
 retained cold producers and one new compiler invocation.
+
+
+A batched CODE receipt has one explicitly named compiled negative owner; other
+selected units share that oracle control. Do not describe the batch as compiling
+each owner's own mutation. A `supplementary-compiled-code-negative` report can
+supply a fresh owner-specific rejection while retaining the two already checked
+positive producers. This is additional evidence, with zero new positive
+compilations and zero authored credit; it neither rewrites the parent receipt
+nor changes its acceptance. The supplemental checker revalidates actual saved
+inputs, compiler arguments, OMF, MZ/MAP and the unchanged pinned tool receipt.

@@ -39,3 +39,10 @@ threshold1000→1001 mutation is rejected. Credit is one complete function and
 366 instruction/authored-code bytes, with no DATA, table or padding credit.
 The stage-five function in the same receipt has its own producer group and
 control; its acceptance is separate from this callback.
+
+
+The batch's compiled control belongs to stage five. This owner's independent
+HP1000→1001 rejection is additionally recorded in
+`main-midboss-extra-negative-c/receipt.json`: one fresh negative, with both
+parent positive producers revalidated and reused. `supplement_negative.py
+--check` rechecks these actual artifacts without compiling.
