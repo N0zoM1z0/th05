@@ -2127,3 +2127,60 @@ unit = "main-exalice-initial-patterns"
 source = "src/main/boss/exalice/patterns.cpp"
 find = "exalice_set_spread(5, 12);"
 replace = "exalice_set_spread(6, 12);"
+
+[[units]]
+id = "main-exalice-later-patterns"
+source = "src/main/boss/exalice/later.cpp"
+module = "th05/x_later.cpp"
+segment = "EXALICE_LAT_TEXT"
+wrapper_options = "-zCEXALICE_LAT_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_later_bindings.asm"
+target_start = 104917
+size = 600
+functions = 3
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-exalice-later-patterns"
+source = "src/main/boss/exalice/later.cpp"
+find = "bullet_template.speed.v = to_sp(5);"
+replace = "bullet_template.speed.v = to_sp(4);"
+
+[[units]]
+id = "main-yumeko-spreads"
+source = "src/main/boss/yumeko/spreads.cpp"
+module = "th05/yumespr.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zCB5_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_spreads_bindings.asm"
+target_start = 127466
+size = 518
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-yumeko-spreads"
+source = "src/main/boss/yumeko/spreads.inl"
+find = "boss.phase_frame == 256"
+replace = "boss.phase_frame == 257"
+
+[[units]]
+id = "main-exalice-laser-patterns"
+source = "src/main/boss/exalice/laser_patterns.cpp"
+module = "th05/x_lsr.cpp"
+segment = "EXALICE_LSR_TEXT"
+wrapper_options = "-zCEXALICE_LSR_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_laser_patterns_bindings.asm"
+target_start = 105517
+size = 645
+functions = 4
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-exalice-laser-patterns"
+source = "src/main/boss/exalice/laser_patterns.cpp"
+find = "laser_template.active_at_age.grow = 47;"
+replace = "laser_template.active_at_age.grow = 48;"

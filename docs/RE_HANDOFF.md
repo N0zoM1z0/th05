@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **167 bounded C++ CODE/DATA units / 330 complete function occurrences**,
-**58,072 authored bytes exact**: 49,215 CODE and 8,857 initialized DATA.
-CODE is 48,693 instruction plus 522 semantic compiler-table bytes.
-Complete compared extents total 58,104; 32 checked padding bytes receive
-no credit. MAIN has 248 functions / 36,650 CODE / 199 DATA;
+Current acceptance: **170 bounded C++ CODE/DATA units / 339 complete function occurrences**,
+**59,835 authored bytes exact**: 50,978 CODE and 8,857 initialized DATA.
+CODE is 50,456 instruction plus 522 semantic compiler-table bytes.
+Complete compared extents total 59,867; 32 checked padding bytes receive
+no credit. MAIN has 257 functions / 38,413 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -514,3 +514,34 @@ canonical types plus the complete two-alternative special-state union. The
 first314-byte producer only reversed two gather color operands; correcting
 the real Pascal call to(frame-48,6,7) restores both bytes. No DATA, BSS,
 padding or compiler tables receive credit.
+
+
+### EX-Alice later patterns
+
+`main-exalice-later-patterns-a` accepts600 instruction bytes/three complete
+functions with two fresh deterministic full raw/ordered producers. The
+first-fan speed5→4 control is rejected. The real firewave Pascal call, full
+player-angle Subpixel parameters, point state and word pellet color preserve
+actual storage and ABI. No DATA, BSS, compiler tables or padding receive credit.
+The separate Alice context review found no original TH05 source TU boundary
+evidence; its missing table-prefix zero does not justify speculative context
+compiles. The bounded review remains in ignored analysis evidence.
+
+
+### Yumeko standalone spreads and EX-Alice laser patterns
+
+`main-yumeko-spreads-a` accepts518 instruction bytes/two complete spread
+functions with a rejected reset-frame256→257 control. The three-function
+872-byte parent emitted875: first-function Subpixel coordinate construction
+adds one3-byte stack store, and the whole original relocation stream also
+has a genuine nonmonotone first entry. The aimed-sword354-byte function
+remains unaccepted. Unchanged real spread bodies are shared in spreads.inl,
+with independently correct standalone symbol/DS context; no source acceptance
+is transferred from the failed parent.
+
+`main-exalice-laser-patterns-a` accepts645 instruction bytes/four complete
+callbacks, with original ordered fixups[422,98] and a compiled fixed-laser
+grow age47→48 control in the second function. Full canonical Laser storage,
+real Pascal spawn API and genuine first16-slot loop are preserved. Both
+owners have two fresh deterministic full raw/ordered positives and no DATA,
+BSS, compiler-table or padding credit.
