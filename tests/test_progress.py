@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import sys
+import tomllib
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,8 +19,9 @@ class ProgressTests(unittest.TestCase):
         result = summarize(ROOT, self.receipt)
         self.assertIsNone(result["percentage"])
         self.assertIsNone(result["authored_denominator"])
-        self.assertEqual(result["instruction_bytes"], 91)
-        self.assertEqual(result["complete_extent_bytes"], 96)
+        entries = {u["id"]: u for u in tomllib.loads((ROOT / "config/exact_units.toml").read_text())["units"]}
+        excluded = sum(len(entries[u["id"]]["alignment_offsets"]) for u in self.receipt["units"])
+        self.assertEqual(result["complete_extent_bytes"] - result["instruction_bytes"], excluded)
 
     def test_changed_raw_digest_rejected(self):
         self.receipt["units"][0]["result"]["rounds"][0]["candidate_sha256"] = "0" * 64

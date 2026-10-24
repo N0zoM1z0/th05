@@ -32,12 +32,9 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *, negative: bool = 
     for unit in units:
         wrapper = source / unit["module"]
         wrapper.parent.mkdir(parents=True, exist_ok=True)
-        if unit["id"] == "main-player-angle":
-            # The original module wrapper sets the group/segment via shared
-            # declarations. State them explicitly in this isolated producer.
-            prefix = '#pragma option -zCPLAYER_A_TEXT -zPmain_03\n'
-        else:
-            prefix = ""
+        # Recover original segment/group ownership explicitly in the isolated
+        # compiler producer. These flags are part of the reviewed manifest.
+        prefix = ("#pragma option " + unit["wrapper_options"] + "\n") if unit.get("wrapper_options") else ""
         wrapper.write_text(prefix + f'#include "{unit["source"]}"\n')
     if negative:
         path = source / "src/main/bullet/tune.cpp"

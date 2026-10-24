@@ -15,6 +15,7 @@ size = 30
 alignment_offsets = [29]
 functions = 1
 origin = "compiler-generated-cxx"
+wrapper_options = "-zCPLAYER_A_TEXT -zPmain_03"
 
 [[units]]
 id = "main-bullet-tune"
@@ -26,3 +27,27 @@ size = 66
 alignment_offsets = [37, 45, 57, 65]
 functions = 5
 origin = "compiler-generated-cxx"
+
+[[units]]
+id = "main-boss-movement"
+source = "src/main/boss/movement.cpp"
+module = "th05/main032.cpp"
+segment = "MAIN_032_TEXT"
+target_start = 0x15914
+size = 398
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPmain_03"
+
+[[units]]
+id = "main-cfg-resident"
+source = "src/main/formats/cfg_resident.cpp"
+module = "th05/cfg_lres.cpp"
+segment = "CFG_LRES_TEXT"
+target_start = 0xe61e
+size = 38
+alignment_offsets = [37]
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPmain_01"

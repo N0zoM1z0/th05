@@ -1,8 +1,8 @@
 # TH05 current handoff
 
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
-First acceptance: 2 C++ contributions, 6 functions, 96 compared bytes and
-91 authored instruction bytes after excluding 5 observed NOP alignment bytes.
+Current acceptance: 4 C++ contributions, 9 functions, 532 compared bytes and
+526 authored instruction bytes after excluding 6 observed NOP alignment bytes.
 Public acceptance lives in `config/accepted_units.json`; global percentage is
 unmeasured pending complete ownership/denominator review.
 Public repository: https://github.com/N0zoM1z0/th05 .
@@ -29,11 +29,13 @@ Independent DIET observation passes at two load segments for OP/MAINE. See
 MAIN's first pinned-reference calibration build completes 83 serial steps but
 does not match original layout or bytes. It creates no authored credit.
 
-Player angle and bullet tuning have local C++ sources and owning declarations.
+Player angle, bullet tuning, Boss movement and the CFG resident reader have
+local C++ sources and owning declarations.
 Two cold rounds plus compiled threshold-mutation control pass under explicit
-target external-symbol bindings. Retained replay: `.analysis/unit-replays/first-cxx-b`.
-Its original tool attestation was copied beside the receipt only after verifying
-the exact recorded digest; no outputs were rebuilt or altered. Public acceptance
+target external-symbol bindings. Current replay: `.analysis/unit-replays/boss-cfg-a`.
+First replay remains `.analysis/unit-replays/first-cxx-b`; its original tool
+attestation was copied beside its receipt after verifying the recorded digest.
+Current replays freeze tool attestation at build time. Public acceptance
 re-reads both saved MZ/MAP/OMF producers, the actual target extents/fixups, source
 snapshots, tool manifest and the saved compiled negative producer.
 

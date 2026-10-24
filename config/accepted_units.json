@@ -2,12 +2,12 @@
   "schema_version": 1,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "9bdad00dca1baba171fc6ec9cb962db1090d69ce3e37c1fb997e83e2cf802564",
+  "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
     "target_start": 95862,
-    "candidate_start": 8256,
+    "candidate_start": 10354,
     "size": 66,
     "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
     "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
@@ -20,13 +20,13 @@
   "units": [
     {
       "id": "main-player-angle",
-      "entry_sha256": "f463e7c745077845fab4e583c449183dfb287972bbb08a72fa1fc03dfd98f4f7",
+      "entry_sha256": "ff7fdf0f0aa1a8f670e344c60e9ee19d428d919c02de3b9b999d8e4d1ce79451",
       "result": {
         "id": "main-player-angle",
         "rounds": [
           {
             "target_start": 94668,
-            "candidate_start": 7994,
+            "candidate_start": 10092,
             "size": 30,
             "target_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
             "candidate_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
@@ -42,7 +42,7 @@
           },
           {
             "target_start": 94668,
-            "candidate_start": 7994,
+            "candidate_start": 10092,
             "size": 30,
             "target_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
             "candidate_sha256": "ac82bf83a653a8215c87e3393b9da5227eb091dabbd7f6bc008a28aff1819d6d",
@@ -60,7 +60,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "1ee1ad8c9c3d18f9bf6cdb0824e2a80d97a78e480a4bd309c5b4d1ebbc0263b0",
+            "sha256": "72ad4ade5a8a1ef366a6c6569f95551b9c76ee53378f57bb18f780f9b066f612",
             "dependency_timestamp_normalized_sha256": "1dd5020040b5274e4236ed8245a14d3af9b4db9e2030e2ec5dcc75f9946a2377",
             "module_name": "th05/player_a.cpp",
             "translator_comments": [
@@ -78,7 +78,7 @@
             ]
           },
           {
-            "sha256": "14a9842a2677a01bae4e2afdcbb237922871d85cbbce7ac9f22121dc2f26dddc",
+            "sha256": "0c0288a11eff154aa76ab13891172d1248765a32af67f17c537ff8ebeeee2a11",
             "dependency_timestamp_normalized_sha256": "1dd5020040b5274e4236ed8245a14d3af9b4db9e2030e2ec5dcc75f9946a2377",
             "module_name": "th05/player_a.cpp",
             "translator_comments": [
@@ -101,7 +101,15 @@
       "source_inputs": [
         {
           "path": "main_bindings.asm",
-          "sha256": "d183079eb9cf1695a687273e5244aac575bd789b5f12fe6c91348ffb273d33e0"
+          "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
+        },
+        {
+          "path": "src/main/boss/movement.cpp",
+          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
           "path": "src/main/bullet/template.hpp",
@@ -114,6 +122,14 @@
         {
           "path": "src/main/bullet/tune.hpp",
           "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.cpp",
+          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
         },
         {
           "path": "src/main/player/angle.cpp",
@@ -141,7 +157,7 @@
         "rounds": [
           {
             "target_start": 95862,
-            "candidate_start": 8256,
+            "candidate_start": 10354,
             "size": 66,
             "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
             "candidate_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
@@ -153,7 +169,7 @@
           },
           {
             "target_start": 95862,
-            "candidate_start": 8256,
+            "candidate_start": 10354,
             "size": 66,
             "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
             "candidate_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
@@ -167,7 +183,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93122a5d573c64c9f3a1f93427f375f4f58578218b19278ceed08d54b8717629",
+            "sha256": "fb0527fcd01a1cda9d52a46809d3bdffbc072e6bfa85c0f2bf2f90468f1951e9",
             "dependency_timestamp_normalized_sha256": "104fced1eb27c0ae7331819c70009d65a7dbcb4a2ee6bdbdf2cdae95cd1977ac",
             "module_name": "th05/bullet_t.cpp",
             "translator_comments": [
@@ -187,7 +203,7 @@
             ]
           },
           {
-            "sha256": "fed7a1bc3e710a5fd6b746f57951340e26f213b86e7fdd690c98e3d6a0b7fa03",
+            "sha256": "6f026bdee1c533e3a2b0ca4ab88ee5b0e27970617061e61eeeff0013d981533e",
             "dependency_timestamp_normalized_sha256": "104fced1eb27c0ae7331819c70009d65a7dbcb4a2ee6bdbdf2cdae95cd1977ac",
             "module_name": "th05/bullet_t.cpp",
             "translator_comments": [
@@ -212,7 +228,15 @@
       "source_inputs": [
         {
           "path": "main_bindings.asm",
-          "sha256": "d183079eb9cf1695a687273e5244aac575bd789b5f12fe6c91348ffb273d33e0"
+          "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
+        },
+        {
+          "path": "src/main/boss/movement.cpp",
+          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
           "path": "src/main/bullet/template.hpp",
@@ -225,6 +249,260 @@
         {
           "path": "src/main/bullet/tune.hpp",
           "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.cpp",
+          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+        },
+        {
+          "path": "src/main/player/angle.cpp",
+          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ]
+    },
+    {
+      "id": "main-boss-movement",
+      "entry_sha256": "6e6222229f579813890a4e7b108bf62b10b06a48096a18b4fe07852adf47af39",
+      "result": {
+        "id": "main-boss-movement",
+        "rounds": [
+          {
+            "target_start": 88340,
+            "candidate_start": 9694,
+            "size": 398,
+            "target_sha256": "84959231dbfddc719aebc7a40d2ed94055e5a2a83c19df382099628b1f03c408",
+            "candidate_sha256": "84959231dbfddc719aebc7a40d2ed94055e5a2a83c19df382099628b1f03c408",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 88340,
+            "candidate_start": 9694,
+            "size": 398,
+            "target_sha256": "84959231dbfddc719aebc7a40d2ed94055e5a2a83c19df382099628b1f03c408",
+            "candidate_sha256": "84959231dbfddc719aebc7a40d2ed94055e5a2a83c19df382099628b1f03c408",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "fc236bfa29501ae2e5b288074de505ec6d75340ff4aa3751de17ed3456ebd2c8",
+            "dependency_timestamp_normalized_sha256": "841d29a1bbdad7b8e17afa1c2bf9a7b99668620aaa0fb1633f0afcaa2709bdf2",
+            "module_name": "th05/main032.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/main032.cpp",
+              "src/main/boss/movement.cpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "c1350f3f4ac0ea4f7098158614da6e2d33198b4762a2f3fa271b7cbf804316ec",
+            "dependency_timestamp_normalized_sha256": "841d29a1bbdad7b8e17afa1c2bf9a7b99668620aaa0fb1633f0afcaa2709bdf2",
+            "module_name": "th05/main032.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/main032.cpp",
+              "src/main/boss/movement.cpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "main_bindings.asm",
+          "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
+        },
+        {
+          "path": "src/main/boss/movement.cpp",
+          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.cpp",
+          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.cpp",
+          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+        },
+        {
+          "path": "src/main/player/angle.cpp",
+          "sha256": "fd75b1e4a8347d45269e569e0ad46984bc06d061d4ac7c0d85c238a6ec1ca7cc"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ]
+    },
+    {
+      "id": "main-cfg-resident",
+      "entry_sha256": "20b1142f37038d5dcee91e33caaf6443e82bc3e4f4a1aca88f65bb27895cdd8e",
+      "result": {
+        "id": "main-cfg-resident",
+        "rounds": [
+          {
+            "target_start": 58910,
+            "candidate_start": 10420,
+            "size": 38,
+            "target_sha256": "da56e3045aba250fda83e8d6537adf739103bfffee3d620b5d0c6db9d1204034",
+            "candidate_sha256": "da56e3045aba250fda83e8d6537adf739103bfffee3d620b5d0c6db9d1204034",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 58910,
+            "candidate_start": 10420,
+            "size": 38,
+            "target_sha256": "da56e3045aba250fda83e8d6537adf739103bfffee3d620b5d0c6db9d1204034",
+            "candidate_sha256": "da56e3045aba250fda83e8d6537adf739103bfffee3d620b5d0c6db9d1204034",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d9ecb7e4ba938af36366f4363ea62357fdc54cb1e085da7114e6172f3d4c50d1",
+            "dependency_timestamp_normalized_sha256": "9914fe77304802a96dac2d1abdd25527459afd83501d43a5ab7d8564571160a3",
+            "module_name": "th05/cfg_lres.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cfg_lres.cpp",
+              "src/main/formats/cfg_resident.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "c1879486612101e6d6fa7890929b2f34914c4bd5647bcdaf12fac043c8f13775",
+            "dependency_timestamp_normalized_sha256": "9914fe77304802a96dac2d1abdd25527459afd83501d43a5ab7d8564571160a3",
+            "module_name": "th05/cfg_lres.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cfg_lres.cpp",
+              "src/main/formats/cfg_resident.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "main_bindings.asm",
+          "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
+        },
+        {
+          "path": "src/main/boss/movement.cpp",
+          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.cpp",
+          "sha256": "6faee5eafbd3c43613446157ef4db8f83aa2d3598f6275e70cc564d9d80aeede"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.cpp",
+          "sha256": "efb4ddbcb4572777690ae0969a05d5276f5b7ffa3ef8cc575d28b79640e66414"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
         },
         {
           "path": "src/main/player/angle.cpp",

@@ -17,6 +17,8 @@ def main() -> int:
     result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests"], cwd=ROOT)
     if result.returncode:
         return result.returncode
+    if (ROOT / "config/accepted_units.json").exists():
+        subprocess.run([sys.executable, "scripts/progress.py", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     print("PASS: public source/configuration validation")
     return 0

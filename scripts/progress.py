@@ -96,6 +96,7 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
 def render(summary: dict) -> tuple[str, str]:
     count, functions, instructions, extent = (summary[k] for k in
         ("unit_count", "functions", "instruction_bytes", "complete_extent_bytes"))
+    alignment = extent - instructions
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
@@ -110,7 +111,7 @@ complete authored ownership denominator remains under review.
 
 {count} complete C++ contributions pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
-Explicit codestring directives reproduce five observed NOP alignment bytes;
+Explicit codestring directives reproduce {alignment} observed NOP alignment bytes;
 these bytes are checked but excluded from authored instruction credit.
 These are bounded unit results; whole executable placement, standalone linkage
 and packed-file exactness are separate and remain unaccepted.
