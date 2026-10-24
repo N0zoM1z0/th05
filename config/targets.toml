@@ -1,0 +1,58 @@
+schema_version = 1
+
+[source]
+kind = "anex86-hdi"
+hdi_sha256 = "71889174f7527a79074fc05a16b8d77861dc007ed171dfc9f0d22af0a15518c4"
+hdi_header_size = 4096
+fat_partition_offset = 38912
+fat_volume_label = "TOUHOU"
+canonicality = "candidate-local-attested"
+canonicality_note = "User-supplied Japanese image; executable hashes agree with the prior TH04 calibration corpus. Independent pristine provenance remains open."
+
+[[artifacts]]
+id = "th05-op"
+game = "th05"
+role = "reconstruction"
+dos_path = "KAIKI/OP.EXE"
+private_path = ".analysis/targets/th05/op.exe"
+format = "mz"
+size = 44450
+sha256 = "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb"
+md5 = "50eac6e4a1e1fecf0c2afe8872519a84"
+required = true
+
+[[artifacts]]
+id = "th05-main"
+game = "th05"
+role = "reconstruction"
+dos_path = "KAIKI/MAIN.EXE"
+private_path = ".analysis/targets/th05/main.exe"
+format = "mz"
+size = 149990
+sha256 = "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0"
+md5 = "952585e02435c3b3b111975a78b05983"
+required = true
+
+[[artifacts]]
+id = "th05-maine"
+game = "th05"
+role = "reconstruction"
+dos_path = "KAIKI/MAINE.EXE"
+private_path = ".analysis/targets/th05/maine.exe"
+format = "mz"
+size = 44321
+sha256 = "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997"
+md5 = "2c539d61f4dd8c864df0b7885181b8db"
+required = true
+
+[[artifacts]]
+id = "th05-zun"
+game = "th05"
+role = "reconstruction"
+dos_path = "KAIKI/ZUN.COM"
+private_path = ".analysis/targets/th05/zun.com"
+format = "com"
+size = 18116
+sha256 = "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e"
+md5 = "0005e6571252bed38d416799c0053c0b"
+required = true

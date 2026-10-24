@@ -1,0 +1,26 @@
+# Exact oracle contract
+
+The objective is at least 98% authored bytes exact. Before claiming a percentage,
+review the entire code/data ownership partition, retaining unknown extents.
+Separate game-authored code, third-party libraries, compiler runtime, data,
+packing stubs, metadata and genuine original handwritten assembly. Publish the
+denominator and exclusions with their evidence; do not reduce it to accepted units.
+
+An exact unit requires all of:
+
+1. Size, SHA-256, format and structural target checks.
+2. Reviewed complete boundaries and artifact/segment ownership.
+3. Tool identity, executable compiler/assembler/linker probes and valid OMF.
+4. Two independent clean builds with deterministic accepted bytes and fixups.
+5. Raw zero-difference comparison of the entire unit, including relocations.
+6. A negative control proving that changed output is rejected.
+
+Ghidra is an analysis view, not an independent truth source. ReC98 names,
+successful compilation, semantic equivalence and normalized matches cannot
+satisfy raw byte exactness. Target-derived bytes or instruction listings,
+padding and compiler-runtime/library bytes cannot inflate authored progress.
+
+Packed executable exactness is distinct from decoded-image exactness. A
+decoded match must name the unpacking method and target digest. It does not
+claim the original packed container was regenerated. Whole-program exactness
+requires complete layout, relocations, headers, overlays and packing equality.
