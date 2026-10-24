@@ -25,6 +25,10 @@ supplies no instructions, initialized values, stack or internal holes.
 ReC98 `th05_main.asm` lines15193..15395 supplies semantic evidence. Unique
 full instruction-shape matches route only; original bounds, constants, calls,
 branches and fixups were checked independently in the pinned MAIN image.
-`main-mai-solo-later-patterns-b` passes two fresh deterministic full496-byte
+`main-mai-solo-later-patterns-c` passes two fresh deterministic full496-byte
 raw/ordered producers. Its real ring count24→25 source mutation is compiled
 and rejected. All three functions and496 instruction bytes are accepted.
+
+The c receipt replays only this affected owner for the short distinct header
+guard, allowing the complete Mai-solo interfaces to coexist. Its code and
+real negative remain unchanged.

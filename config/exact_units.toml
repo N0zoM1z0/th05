@@ -2415,3 +2415,132 @@ unit = "main-yuki-update"
 source = "src/main/boss/mai_yuki/yuki_update.cpp"
 find = "boss.phase_end_hp = 4600;"
 replace = "boss.phase_end_hp = 4500;"
+
+# Two independent complete natural owners, retaining original collection groups.
+[[units]]
+id = "main-yuki-solo-initial-patterns"
+source = "src/main/boss/mai_yuki/yuki_patterns.cpp"
+module = "th05/yukipt.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/yuki_solo_initial_patterns_bindings.asm"
+target_start = 0x1856a
+size = 509
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yuki-solo-ring-speed"
+unit = "main-yuki-solo-initial-patterns"
+source = "src/main/boss/mai_yuki/yuki_patterns_initial.inl"
+find = "bullet_template.speed.v = 3 * 16 + 6;"
+replace = "bullet_template.speed.v = 3 * 16 + 7;"
+
+[[units]]
+id = "main-yuki-solo-later-patterns"
+source = "src/main/boss/mai_yuki/yuki_later_patterns.cpp"
+module = "th05/yukilt.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/yuki_solo_later_patterns_bindings.asm"
+target_start = 0x18767
+size = 670
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 4
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "yuki-solo-snow-speed"
+unit = "main-yuki-solo-later-patterns"
+source = "src/main/boss/mai_yuki/yuki_patterns_later.inl"
+find = "b4ball_template.speed.v = 4 * 16;"
+replace = "b4ball_template.speed.v = 5 * 16;"
+
+[[units]]
+id = "main-mai-solo-advanced"
+source = "src/main/boss/mai_yuki/mai_solo_advanced.cpp"
+module = "th05/mai_adv.cpp"
+segment = "MAI_ADV_TEXT"
+wrapper_options = "-zCMAI_ADV_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_solo_advanced_bindings.asm"
+target_start = 102647
+size = 615
+functions = 3
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-mai-solo-advanced"
+source = "src/main/boss/mai_yuki/mai_solo_advanced.cpp"
+find = "bullet_template.speed.v = to_sp(3);"
+replace = "bullet_template.speed.v = to_sp(4);"
+
+[[units]]
+id = "main-mai-solo-laser-cycle"
+source = "src/main/boss/mai_yuki/mai_solo_laser_cycle.cpp"
+module = "th05/maicyc.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_solo_laser_cycle_bindings.asm"
+target_start = 0x1935e
+size = 461
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "mai-solo-laser-ray-count"
+unit = "main-mai-solo-laser-cycle"
+source = "src/main/boss/mai_yuki/mai_solo_laser_cycle.cpp"
+find = "mai_solo_laser_count = rank + 5;"
+replace = "mai_solo_laser_count = rank + 6;"
+
+[[units]]
+id = "main-exalice-update-full-context"
+source = "src/main/boss/exalice/full_context.cpp"
+module = "th05/x_full.cpp"
+segment = "EXALICE_FULL_TEXT"
+wrapper_options = "-zCEXALICE_FULL_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_full_context_bindings.asm"
+target_start = 107082
+size = 1060
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 1008, size = 8, kind = "compiler-switch-table"}, {offset = 1016, size = 8, kind = "compiler-switch-table"}, {offset = 1024, size = 36, kind = "compiler-switch-table"}]
+function_symbol = "exalice_update()"
+
+[[controls]]
+unit = "main-exalice-update-full-context"
+source = "src/main/boss/exalice/full_context.cpp"
+find = "boss.phase_end_hp = 23800;"
+replace = "boss.phase_end_hp = 23700;"
+
+[[units]]
+id = "main-b4ball-spawn"
+source = "src/main/boss/mai_yuki/b4ball_spawn.cpp"
+module = "th05/b4spawn.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/b4ball_spawn_bindings.asm"
+target_start = 0x183d5
+size = 132
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 2
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "b4ball-new-damage-state"
+unit = "main-b4ball-spawn"
+source = "src/main/boss/mai_yuki/b4ball_spawn.cpp"
+find = "ball->damaged_this_frame = 0;"
+replace = "ball->damaged_this_frame = 1;"

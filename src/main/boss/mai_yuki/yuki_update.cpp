@@ -53,7 +53,7 @@ extern "C" void pascal far yuki_update(void)
             boss2.pos.cur.y.v = boss.pos.cur.y.v + to_sp(16);
             circles_add_growing(boss.pos.cur.x, boss.pos.cur.y);
             boss_explode_small(ET_VERTICAL);
-            yuki_pattern_current = yuki_solo_ring_sweep;
+            boss_solo_pattern_current = yuki_solo_ring_sweep;
             boss_sprite_left = 206;
             boss_sprite_right = 205;
             boss_sprite_stay = 204;
@@ -71,12 +71,12 @@ extern "C" void pascal far yuki_update(void)
                 if(boss.phase_state.patterns_seen >= 12) {
                     goto phase3_complete;
                 }
-                yuki_pattern_current = yuki_solo_pattern_pair1[
+                boss_solo_pattern_current = yuki_solo_pattern_pair1[
                     boss.phase_state.patterns_seen & 1];
             }
             break;
         case 1:
-            yuki_pattern_current();
+            boss_solo_pattern_current();
             break;
         }
         if(!boss_hittest_shots()) {
@@ -91,7 +91,7 @@ phase3_complete:
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
             boss.phase++;
             boss.phase_frame = 0;
-            yuki_pattern_current = yuki_solo_random_rings;
+            boss_solo_pattern_current = yuki_solo_random_rings;
             boss.mode = 1;
         }
         break;
@@ -105,12 +105,12 @@ phase3_complete:
                 if(boss.phase_state.patterns_seen >= 24) {
                     goto phase5_complete;
                 }
-                yuki_pattern_current = yuki_solo_pattern_pair2[
+                boss_solo_pattern_current = yuki_solo_pattern_pair2[
                     boss.phase_state.patterns_seen & 1];
             }
             break;
         case 1:
-            yuki_pattern_current();
+            boss_solo_pattern_current();
             break;
         }
         if(!boss_hittest_shots()) {
@@ -142,7 +142,7 @@ phase5_complete:
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
             boss.phase++;
             boss.phase_frame = 0;
-            yuki_pattern_current = yuki_solo_snow_cross;
+            boss_solo_pattern_current = yuki_solo_snow_cross;
             boss.mode = 1;
             boss_statebyte[14] = 8;
             boss_statebyte[15] = 0x10;
@@ -160,12 +160,12 @@ phase5_complete:
                     boss.phase_state.patterns_seen = 0;
                     goto defeat;
                 }
-                yuki_pattern_current = yuki_solo_pattern_final[
+                boss_solo_pattern_current = yuki_solo_pattern_final[
                     boss.phase_state.patterns_seen % 5];
             }
             break;
         case 1:
-            yuki_pattern_current();
+            boss_solo_pattern_current();
             break;
         }
         if(!boss_hittest_shots()) {

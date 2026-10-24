@@ -62,3 +62,12 @@ is falsified, and no further flag/binding/padding probes are performed. This
 complete natural callback remains outside live replay selection, unaccepted
 and uncredited. The accepted separate111-byte shot/transition owner is
 unchanged. Actual original TU/callee-definition context remains unresolved.
+
+The real adjacent helper-definition context has subsequently been restored
+in `full_context.cpp`, using verbatim natural bodies for the33-byte shot gate,
+78-byte phase transition and1060-byte updater. This produces the original
+short far calls and passes the updater's full raw/ordered oracle as
+`main-exalice-update-full-context-a`. The standalone producer above remains
+a retained failed alternative; the target callback itself is now accepted
+through that coherent source owner. No acceptance transfers from its failed
+receipt, and prefix111 is not counted twice.

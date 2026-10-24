@@ -18,6 +18,8 @@ enum explosion_type_t {
 };
 extern SPPoint homing_target;
 extern nearfunc_t_near bg_render_bombing_func;
+// Both surviving bosses use this one DS4438 slot; shared Yuki dispatch is DS4430.
+extern MaiYukiPattern boss_solo_pattern_current;
 extern MaiYukiPattern yuki_solo_pattern_pair1[2];
 extern MaiYukiPattern yuki_solo_pattern_pair2[2];
 extern MaiYukiPattern yuki_solo_pattern_final[5];

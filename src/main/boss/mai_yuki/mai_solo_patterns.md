@@ -24,7 +24,12 @@ or internal gaps.
 ReC98 `th05_main.asm` lines14982..15186 supplies semantic evidence. Unique
 masked calibration matches route the functions only; all actual boundaries,
 constants, branches, calls and fixups were checked in the pinned original.
-`main-mai-solo-initial-patterns-a` passes two fresh deterministic complete
+`main-mai-solo-initial-patterns-b` passes two fresh deterministic complete
 456-byte raw/ordered positives. The real first fan's spread count2→3 control
 is compiled and rejected. All three functions and456 instruction bytes are
 accepted; no foreign state, padding, tables, DATA or BSS receive credit.
+
+The b receipt replays only this affected owner after shortening the shared
+header guard. Long Mai-solo guards shared the old compiler's significant
+prefix and suppressed required declarations when included together. The
+short distinct guard changes neither storage nor instruction behavior.

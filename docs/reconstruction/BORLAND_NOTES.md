@@ -162,3 +162,19 @@ Neither is exact and neither changes maintained source or credit. Together
 with the recorded B/TASM backend result, these are completed negative
 observations, not pending suggestions. Do not repeat those source forms or
 add idle work to retain the two original jump relay blocks.
+
+
+## Real local definitions recover EX-Alice far calls
+
+The standalone1060-byte EX-Alice callback emitted1064 bytes: four external
+far calls became TLINK's length-preserving NOP/PUSH-CS/near-CALL sequences.
+Giving the declaration the caller's segment alone did not change that result.
+The coherent real33-byte shot gate,78-byte phase helper and1060-byte update
+now share one actual C++ TU/CODE contribution. Every function body is verbatim
+from the maintained natural sources, with unchanged real far/near ABI and
+compiler flags. That context emits the original four-byte far-call sequences.
+Two fresh producers match all1171 raw bytes and ordered fixups[309,272]; the
+updater's own1060-byte scope retains all52 switch-table bytes and its own
+compiled HP-threshold mutation. Prefix111 already has an owner and is not
+counted twice. This is evidence for this source-definition context; unrelated
+far calls and source cohorts still require their own actual producers.

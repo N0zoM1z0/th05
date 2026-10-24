@@ -1,6 +1,6 @@
 // Mai's independent phase patterns, retaining complete shared game types.
-#ifndef TH05_MAIN_BOSS_MAI_YUKI_MAI_SOLO_PATTERNS_HPP
-#define TH05_MAIN_BOSS_MAI_YUKI_MAI_SOLO_PATTERNS_HPP
+#ifndef TH05_MAI_SOLO_PATTERNS_HPP
+#define TH05_MAI_SOLO_PATTERNS_HPP
 #include "src/main/boss/mai_yuki/initial_patterns.hpp"
 
 // Full canonical ODR definitions from the accepted bullet updater.

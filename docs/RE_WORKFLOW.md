@@ -20,8 +20,8 @@
 Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
 serial and Ghidra's heap bounded. Never modify the original HDI or executables.
 
-When several accepted owners share changed dependencies, import all their
-replacement receipts atomically with repeated arguments:
+When several accepted owners in one artifact share changed dependencies,
+import all their replacement receipts atomically with repeated arguments:
 `python3 scripts/progress.py --accept PATH_A --accept PATH_B`.
 Each receipt undergoes full producer, source, tool and negative-control
 validation. All replacements merge in memory before the final source-freshness

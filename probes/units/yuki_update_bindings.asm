@@ -118,9 +118,9 @@ _boss_sprite_stay label word
 public _homing_target
 org 03f8ah
 _homing_target label byte
-public _yuki_pattern_current
+public _boss_solo_pattern_current
 org 04438h
-_yuki_pattern_current label word
+_boss_solo_pattern_current label word
 public _bullet_template
 org 0577eh
 _bullet_template label byte

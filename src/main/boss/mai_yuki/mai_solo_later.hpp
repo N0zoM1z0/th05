@@ -1,6 +1,6 @@
 // Real rotating and snowball patterns for Mai's independent fight.
-#ifndef TH05_MAIN_BOSS_MAI_YUKI_MAI_SOLO_LATER_HPP
-#define TH05_MAIN_BOSS_MAI_YUKI_MAI_SOLO_LATER_HPP
+#ifndef TH05_MAI_SOLO_LATER_HPP
+#define TH05_MAI_SOLO_LATER_HPP
 #include "src/main/boss/mai_yuki/b4ball.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 void near mai_solo_rotating_rings(void);

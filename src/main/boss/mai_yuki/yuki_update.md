@@ -47,9 +47,15 @@ end-HP4600 to4500. Two fresh focused producers, full826-byte comparison,
 original ordered fixups and compiled rejection remain required. This packet
 was prepared with native/static tools only and executes no compiler.
 
-`main-yuki-update-a` passes two fresh deterministic complete826-byte raw
+`main-yuki-update-c` passes two fresh deterministic complete826-byte raw
 comparisons and original ordered fixups[256,140]. The actual phase threshold
 4600→4500 control is compiled and rejected for this whole callback. Authored
 credit is826 bytes (806 instructions plus20 semantic switch-table bytes),
 one complete function, with no padding, DATA or BSS. All table bytes and
 both complete RETF paths remain in the verified extent.
+
+Source integration now uses `boss_solo_pattern_current` for the genuine
+DS4438 callback slot shared by both survivor states. This is distinct from
+the shared-fight Yuki callback at4430 and the internal Mai void callback
+at443A. Only this826-byte accepted owner required replay for that rename;
+its final c receipt preserves the complete original raw bytes and fixups.

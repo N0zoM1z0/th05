@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **182 bounded C++ CODE/DATA units / 371 complete function occurrences**,
-**65,006 authored bytes exact**: 56,149 CODE and 8,857 initialized DATA.
-CODE is 55,585 instruction plus 564 semantic compiler-table bytes.
-Complete compared extents total 65,039; 33 checked padding bytes receive
-no credit. MAIN has 289 functions / 43,584 CODE / 199 DATA;
+Current acceptance: **188 bounded C++ CODE/DATA units / 385 complete function occurrences**,
+**68,453 authored bytes exact**: 59,596 CODE and 8,857 initialized DATA.
+CODE is 58,980 instruction plus 616 semantic compiler-table bytes.
+Complete compared extents total 68,486; 33 checked padding bytes receive
+no credit. MAIN has 303 functions / 47,031 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -638,3 +638,65 @@ the real canonical byte-text FAR title pointer and preserves existing function
 contexts; the next first positive emits1023 versus1018. Two word shake assignments each add3 instruction bytes, while the original
 zero disappears. A natural shared-store dataflow repair remains unverified.
 The failed owner receives no credit or default replay selection.
+
+
+### Survivor callback identities, guards and atomic evidence import
+
+Actual shared Yuki dispatch usesDS4430; both survivor callbacks useDS4438,
+now truthfully named boss_solo_pattern_current, while Mai's inner void bank
+uses443A. Yuki826 was replayed asmain-yuki-update-c with unchanged complete
+raw bytes/fixups and its own negative. The native accepted-MAIN audit now
+checks131CODE units/3883 actual scoped DATA references/223 names with no
+remaining same-name/different-offset collision. It excludes2DATA owners and
+actualBINARY-O Kaja;60legacy owners lack saved argv and remain explicitly
+separate from71actualsaved-M owners. This is a bounded identity audit, not
+a whole-program or denominator proof.
+
+Long common Mai-solo header guards collided under the old compiler. Short
+distinct guards compose all required full interfaces; only the two affected
+accepted owners were replayed (initial456-b/later496-c). The importer now
+validates multiple complete receipt inputs before one merge, final global
+source-current check and atomic publish. Repeated --accept handles changed
+header closures without recompiling already-valid independent positives.
+Five real MAP/MZ/OMF/source/negative regression cases cover atomic failure
+and existing single-subset compatibility. Actual six-receipt import succeeds.
+
+Yuki solo owners509/670 pass independently (1179 instruction bytes/seven
+functions), with their own speed54→55/snow64→80 controls and original ordered
+streams. Mai advanced615-b passes three complete functions and real fan
+speed3→4 control. Mai laser-cycle461-a passes its complete bool function,
+empty fixups and rank-count+5→+6 control; its inner void bank is separate
+from the270-byte bounce attack. Every owner has two fresh deterministic
+complete raw/ordered positives, with no DATA/BSS/padding/table credit.
+
+Shared Mai/Yuki c now emits1017 vs1018 after the supported conditional-word
+store repair; its original table-prefix zero remains absent. Mai solo
+update a emits785 vs786, likewise lacking the original zero before its
+complete20-byte table. Both natural callbacks remain unaccepted and outside
+default replay. No padding insertion, clipping, normalization or speculative
+flag/context probes are used. The shared owner retains its full24-byte
+value/destination tables, and the solo owner retains all20 table bytes.
+
+
+### Coherent EX-Alice updater and real B4Ball allocation
+
+`main-exalice-update-full-context-a` accepts the complete1060-byte updater:
+1008 instructions plus52 switch-table bytes, one complete function. The
+real33-byte far shot gate and78-byte phase helper are now actual preceding
+definitions in the same TU/CODE contribution. All three natural bodies are
+verbatim to the maintained standalone sources, and ABI/flags are unchanged.
+This resolves the four extra far-call relaxation NOPs; declaration context
+alone had not done so. Both fresh producers pass the selected raw/ordered
+[198,161] scope and its own HP23800→23700 negative. Independent saved-output
+review also confirms the whole1171-byte context and original[309,272] order.
+Prefix111 remains credited once through its existing owner; only1060 is new.
+The previously failed standalone updater is retained as a failed alternative,
+while the target callback is now accepted through full_context.cpp.
+
+`main-b4ball-spawn-a` accepts132 instruction bytes/two complete reset27 and
+allocator105 functions, empty original fixups and new-ball damage0→1 control.
+Both actual caller ABIs are void near Pascal; no CF-return contract is invented.
+The complete frozen B4Ball/template/custom-pool storage is unchanged. The273
+updater remains unimplemented because its return-register use needs separate
+source reconstruction. Both new owners have two fresh deterministic complete
+raw/ordered producers and no DATA, BSS or padding credit.
