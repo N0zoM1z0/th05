@@ -554,3 +554,22 @@ unit = "main-bullet-update"
 source = "src/main/bullet/update.cpp"
 find = "bullet.angle = (0x80 - bullet.angle);"
 replace = "bullet.angle = (0x81 - bullet.angle);"
+
+[[units]]
+id = "main-enemies-render"
+source = "src/main/enemy/enemies_render.cpp"
+module = "th05/enemy_r.cpp"
+segment = "MAIN__TEXT"
+target_start = 0xdf50
+size = 207
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/enemies_render_bindings.asm"
+
+[[controls]]
+unit = "main-enemies-render"
+source = "src/main/enemy/enemies_render.cpp"
+find = "static const int ENEMY_W = 32;"
+replace = "static const int ENEMY_W = 30;"

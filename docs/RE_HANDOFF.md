@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 31 bounded C++ units, 87 complete functions, 15,794 compared
-bytes and 15,778 authored code bytes: 15,482 instructions plus 296 bytes of
+Current acceptance: 32 bounded C++ units, 88 complete functions, 16,001 compared
+bytes and 15,985 authored code bytes: 15,689 instructions plus 296 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -24,6 +24,7 @@ Global percentage remains unmeasured pending complete ownership review.
 | Stage initialization | `stage-setup-a` |
 | Cheeto allocation and homing update | `cheeto-update-b` |
 | Regular and special bullet update | `bullet-update-d` |
+| Enemy rendering (maintained TH04 donor) | `enemies-render-b` |
 | 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
@@ -85,7 +86,11 @@ compiled reflection mutation. The real sprite enum domain is word-sized; its
 partial byte enum was corrected. The cross-segment HUD callback retains main_01
 at its first declaration. Neither fix changes an accepted shared header.
 
-Next natural candidate: enemy rendering from maintained TH04 C++. Continue focused compilation and complete-function
+Enemy rendering now adds a full 207-byte natural C++ function reused from
+maintained TH04 source, with TH05's independently checked 64-byte enemy state,
+32-slot pool and two original zero-frame far fixups. Its width mutation fails.
+Next natural candidate: OP main menu, 3,291 original bytes. It requires explicit
+CP932 staging for maintained UTF8 Japanese UI literals; only that owner opts in. Continue focused compilation and complete-function
 acceptance. Do not restore fake-zero helpers or hand-emitted compiler bodies.
 
 ## Target and tool state
@@ -120,3 +125,9 @@ C++ contribution shapes / 12,288 candidate bytes. Investigate its natural main
 menu first. No new unpacking run was needed. `survey_th04_reuse.py` separately
 routes maintained TH04 function candidates; 63 unique shapes / 4,439 bytes are
 only diagnostics and include possible false complete boundaries.
+
+MAINE's first isolated calibration also completes in
+`.analysis/builds/maine-calibration-a` (36 steps, complete-file mismatch, zero
+credit). Its decoded survey routes 17 unique shapes / 5,678 candidate bytes,
+including a 2,848-byte cutscene candidate. Reuse both retained calibration maps;
+do not rebuild them or re-decode their unchanged original targets.
