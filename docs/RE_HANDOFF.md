@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **47 bounded C++ units / 130 complete function occurrences**,
-23,859 compared bytes and 23,841 authored code bytes: 23,439 instructions plus
-402 semantic compiler-table bytes. Eighteen checked padding bytes receive no
-credit. MAIN has 89 functions / 16,014 code bytes, decoded OP 40 / 7,798,
-decoded MAINE 1 / 29. Global denominator and percentage remain unreviewed.
+Current acceptance: **67 bounded C++ units / 153 complete function occurrences**,
+26,034 compared bytes and 26,016 authored code bytes: 25,598 instructions plus
+418 semantic compiler-table bytes. Eighteen checked padding bytes receive no
+credit. MAIN has 91 functions / 16,110 code bytes, decoded OP 50 / 8,540,
+decoded MAINE 12 / 1,366. Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
 
@@ -30,6 +30,9 @@ All paths below are under private `.analysis/unit-replays/`.
 | OP setup and character selection | `op-setup-menu-a`, `op-character-menu-a` |
 | Seven OP high-score viewer functions | `op-hiscore-scopes-a` (retained producer review) |
 | OP configuration and music prefix | `op-config-b`, `op-music-prefix-b` |
+| Eight OP music suffix functions | `op-music-functions-a` |
+| Nine MAINE cutscene functions | `maine-cutscene-a` |
+| Shared polar/vector in all three games | `main-vector-a`, `op-vector-b`, `maine-vector-a` |
 
 Each accepted scope has two independent deterministic producers, full raw and
 ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
@@ -93,7 +96,12 @@ reviewer, which validates the entire original parent and mechanical scope
 derivation without recompiling. The remaining 312-byte registration menu has
 identical raw code but differing ordered fixups and stays unaccepted.
 OP configuration adds 379 bytes / 3 functions and music prefix 381 / 4.
-Music suffix and MAINE cutscene scopes remain under review. The cutscene's
+Eight music suffix functions add 646 bytes after a new focused replay with
+an accepted comment-loader negative; the previous suffix negative belonged to
+an excluded menu function and could not support subset acceptance. Polygon
+update (502 bytes) and music menu (837) remain raw-exact but ordered-inexact.
+Nine MAINE cutscene functions add 1,241 bytes (1,225 instructions, 16 tables),
+with Return-key animation period as the compiled negative. The cutscene's
 52-byte EGC helper and 1,555-byte opcode dispatcher remain unaccepted.
 The MAINE helper frames come from original bytes: sound's real frame E80
 differs from calibration E7F. Maintain full enum domains and real structures;

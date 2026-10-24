@@ -23,3 +23,190 @@ unit = "maine-kaja-interrupt"
 source = "src/shared/sound/kaja.cpp"
 find = "snd_bgm_mode != 3"
 replace = "snd_bgm_mode != 2"
+
+[[units]]
+id = "maine-cutscene-script-load"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "cutscene_script_load(const char far*)"
+function_end_symbol = "egc_start_copy()"
+target_start = 0xa695
+size = 60
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-picture-put"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "pic_put_both_masked(int,int,int,int)"
+function_end_symbol = "script_param_read_number_first(int far&)"
+target_start = 0xa705
+size = 51
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-param-first"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "script_param_read_number_first(int far&)"
+function_end_symbol = "script_param_read_number_second(int far&)"
+target_start = 0xa738
+size = 198
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-param-second"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "script_param_read_number_second(int far&)"
+function_end_symbol = "cursor_advance_and_animate()"
+target_start = 0xa7fe
+size = 40
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-cursor-advance"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "cursor_advance_and_animate()"
+function_end_symbol = "box_1_to_0_masked(box_mask_t)"
+target_start = 0xa826
+size = 64
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-box-mask"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "box_1_to_0_masked(box_mask_t)"
+function_end_symbol = "box_1_to_0_animate()"
+target_start = 0xa866
+size = 134
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-box-animate"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "box_1_to_0_animate()"
+function_end_symbol = "box_wait_animate(int)"
+target_start = 0xa8ec
+size = 63
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-box-wait"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "box_wait_animate(int)"
+function_end_symbol = "script_op(unsigned char)"
+target_start = 0xa92b
+size = 152
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "maine-cutscene-animate"
+source = "src/maine/cutscene/cutscene.cpp"
+module = "th05/cutscene.cpp"
+segment = "CUTSCENE_AFTER_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_bindings.asm"
+function_symbol = "cutscene_animate()"
+target_start = 0xafd6
+size = 479
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+code_data_ranges = [{ offset = 463, size = 16, kind = "compiler-switch-table" }]
+
+[[controls]]
+unit = "maine-cutscene-box-wait"
+source = "src/maine/cutscene/cutscene.cpp"
+find = "((frame / 8) % RETURN_KEY_CELS)"
+replace = "((frame / 4) % RETURN_KEY_CELS)"
+
+[[units]]
+id = "maine-vector"
+source = "src/shared/math/vector.cpp"
+module = "th05/vector.cpp"
+segment = "SHARED"
+target_start = 0xec84
+size = 96
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_vector_bindings.asm"
+
+[[controls]]
+unit = "maine-vector"
+source = "src/shared/math/vector.cpp"
+find = "static_cast<long>(radius) * ratio) >> 8"
+replace = "static_cast<long>(radius) * ratio) >> 7"
+
+[[units]]
+id = "maine-allcast"
+source = "src/maine/allcast/allcast.cpp"
+module = "th05/allcast.cpp"
+segment = "MAINE_01_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 0xb273
+size = 611
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_allcast_bindings.asm"
+
+[[controls]]
+unit = "maine-allcast"
+source = "src/maine/allcast/allcast.cpp"
+find = "measure_target += 30;"
+replace = "measure_target += 29;"

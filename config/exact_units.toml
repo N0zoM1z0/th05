@@ -592,3 +592,21 @@ unit = "main-kaja-interrupt"
 source = "src/shared/sound/kaja.cpp"
 find = "snd_bgm_mode != 3"
 replace = "snd_bgm_mode != 2"
+
+[[units]]
+id = "main-vector"
+source = "src/shared/math/vector.cpp"
+module = "th05/vector.cpp"
+segment = "SHARED"
+target_start = 0x14e44
+size = 96
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/main_vector_bindings.asm"
+
+[[controls]]
+unit = "main-vector"
+source = "src/shared/math/vector.cpp"
+find = "static_cast<long>(radius) * ratio) >> 8"
+replace = "static_cast<long>(radius) * ratio) >> 7"

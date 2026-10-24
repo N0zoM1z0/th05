@@ -265,3 +265,174 @@ unit = "op-music-suffix"
 source = "src/op/music/music.cpp"
 find = "if(frame_since_last_input >= 24)"
 replace = "if(frame_since_last_input >= 25)"
+
+[[units]]
+id = "op-music-polygon-build"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc014
+size = 137
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "polygon_build(screen_point_t near*,int,space_changing_pixel_t,int,int,unsigned char)"
+function_end_symbol = "polygons_update_and_render()"
+
+[[units]]
+id = "op-music-update-render-flip"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc293
+size = 60
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "music_update_render_and_flip()"
+function_end_symbol = "cmt_load(int)"
+
+[[units]]
+id = "op-music-cmt-load"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc2cf
+size = 94
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "cmt_load(int)"
+function_end_symbol = "cmt_put()"
+
+[[units]]
+id = "op-music-cmt-put"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc32d
+size = 73
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "cmt_put()"
+function_end_symbol = "cmt_fadein_both_animate()"
+
+[[units]]
+id = "op-music-cmt-fadein"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc376
+size = 49
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "cmt_fadein_both_animate()"
+function_end_symbol = "cmt_unput_both_animate()"
+
+[[units]]
+id = "op-music-cmt-unput"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc3a7
+size = 82
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "cmt_unput_both_animate()"
+function_end_symbol = "cmt_load_unput_and_put_both_anim(int)"
+
+[[units]]
+id = "op-music-cmt-load-unput-put"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc3f9
+size = 72
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "cmt_load_unput_and_put_both_anim(int)"
+function_end_symbol = "tracklist_unput_and_put_both_ani(int)"
+
+[[units]]
+id = "op-music-tracklist-unput-put"
+source = "src/op/music/music.cpp"
+module = "th05/op_music.cpp"
+segment = "OP_MUSIC_SUFFIX_TEXT"
+target_start = 0xc441
+size = 79
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPop_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/op_music_bindings.asm"
+function_symbol = "tracklist_unput_and_put_both_ani(int)"
+function_end_symbol = "musicroom_menu()"
+
+[[controls]]
+unit = "op-music-cmt-load"
+source = "src/op/music/music.cpp"
+find = "file_read(cmt, sizeof(cmt));"
+replace = "file_read(cmt, sizeof(cmt) - 1);"
+
+[[units]]
+id = "op-vector"
+source = "src/shared/math/vector.cpp"
+module = "th05/vector.cpp"
+segment = "SHARED"
+target_start = 0xd834
+size = 96
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/op_vector_bindings.asm"
+
+[[controls]]
+unit = "op-vector"
+source = "src/shared/math/vector.cpp"
+find = "static_cast<long>(radius) * ratio) >> 8"
+replace = "static_cast<long>(radius) * ratio) >> 7"
+
+[[units]]
+id = "op-title"
+source = "src/op/title/title.cpp"
+module = "th05/op_title.cpp"
+segment = "OP_TITLE_TEXT"
+wrapper_options = "-zPop_01"
+target_start = 0xbc0f
+size = 618
+alignment_offsets = []
+functions = 3
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/op_title_bindings.asm"
+
+[[controls]]
+unit = "op-title"
+source = "src/op/title/title.cpp"
+find = "frame_delay(16);"
+replace = "frame_delay(15);"

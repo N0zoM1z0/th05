@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "393b7bb597f0f986b6d3aa5ae91a4068a226ff00202a4c745747830434a5fff0",
+  "replay_receipt_sha256": "86fdcfb8a43290c912078d162db24a33a6310e9b7879b1a49a8e5b088b4d1784",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 60958,
-    "candidate_start": 60958,
-    "size": 29,
-    "target_sha256": "ee0298510073aa0048ade1cf1f72c2eba8414f1c267e337e0e02d546966f5c61",
-    "candidate_sha256": "f473ee16eb9010b8f406aa164f3de25cff99ab0b0d16cccb9ab91fd7a042ee8c",
+    "target_start": 60548,
+    "candidate_start": 60548,
+    "size": 96,
+    "target_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+    "candidate_sha256": "10d9b66011153afdc810a2a568026d5c0ee24132bba5555fb50e04f2c5555b63",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -199,6 +199,4168 @@
           "-ml",
           "-DBINARY='O'",
           "th05/snd_kaja.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-script-load",
+      "entry_sha256": "d768385b9c52dfdeaeecc9c4175b05fcb0043a6bd04d2b8049cc4b1dc4d7575f",
+      "result": {
+        "id": "maine-cutscene-script-load",
+        "entry_sha256": "d768385b9c52dfdeaeecc9c4175b05fcb0043a6bd04d2b8049cc4b1dc4d7575f",
+        "rounds": [
+          {
+            "target_start": 42645,
+            "candidate_start": 42645,
+            "size": 60,
+            "target_sha256": "7f901e0afa5bde67ce5ed8660879545e1b66ce1fb86e13f7f24aa1ba25cc407f",
+            "candidate_sha256": "7f901e0afa5bde67ce5ed8660879545e1b66ce1fb86e13f7f24aa1ba25cc407f",
+            "raw_exact": true,
+            "target_fixups": [
+              52,
+              47,
+              27,
+              11
+            ],
+            "candidate_fixups": [
+              52,
+              47,
+              27,
+              11
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42645,
+              "size": 60,
+              "function_symbol": "cutscene_script_load(const char far*)",
+              "contribution_start": 42645,
+              "contribution_size": 111,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "egc_start_copy()"
+            }
+          },
+          {
+            "target_start": 42645,
+            "candidate_start": 42645,
+            "size": 60,
+            "target_sha256": "7f901e0afa5bde67ce5ed8660879545e1b66ce1fb86e13f7f24aa1ba25cc407f",
+            "candidate_sha256": "7f901e0afa5bde67ce5ed8660879545e1b66ce1fb86e13f7f24aa1ba25cc407f",
+            "raw_exact": true,
+            "target_fixups": [
+              52,
+              47,
+              27,
+              11
+            ],
+            "candidate_fixups": [
+              52,
+              47,
+              27,
+              11
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42645,
+              "size": 60,
+              "function_symbol": "cutscene_script_load(const char far*)",
+              "contribution_start": 42645,
+              "contribution_size": 111,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "egc_start_copy()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-picture-put",
+      "entry_sha256": "a7060d463f266a7cd43807605b269eed5af6a7487f0766fb18ce9473a15f8f4b",
+      "result": {
+        "id": "maine-cutscene-picture-put",
+        "entry_sha256": "a7060d463f266a7cd43807605b269eed5af6a7487f0766fb18ce9473a15f8f4b",
+        "rounds": [
+          {
+            "target_start": 42757,
+            "candidate_start": 42757,
+            "size": 51,
+            "target_sha256": "866580b8c7fbd4fa459036c6dc0cf54fe34fb9d7ff177e4ba7b6d1b07024eac1",
+            "candidate_sha256": "866580b8c7fbd4fa459036c6dc0cf54fe34fb9d7ff177e4ba7b6d1b07024eac1",
+            "raw_exact": true,
+            "target_fixups": [
+              43,
+              30
+            ],
+            "candidate_fixups": [
+              43,
+              30
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42757,
+              "size": 51,
+              "function_symbol": "pic_put_both_masked(int,int,int,int)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_param_read_number_first(int far&)"
+            }
+          },
+          {
+            "target_start": 42757,
+            "candidate_start": 42757,
+            "size": 51,
+            "target_sha256": "866580b8c7fbd4fa459036c6dc0cf54fe34fb9d7ff177e4ba7b6d1b07024eac1",
+            "candidate_sha256": "866580b8c7fbd4fa459036c6dc0cf54fe34fb9d7ff177e4ba7b6d1b07024eac1",
+            "raw_exact": true,
+            "target_fixups": [
+              43,
+              30
+            ],
+            "candidate_fixups": [
+              43,
+              30
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42757,
+              "size": 51,
+              "function_symbol": "pic_put_both_masked(int,int,int,int)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_param_read_number_first(int far&)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-param-first",
+      "entry_sha256": "e177c958dbb77d711555d15ba313033a7d28f326512ceb4cd45ef82f5f93aa4c",
+      "result": {
+        "id": "maine-cutscene-param-first",
+        "entry_sha256": "e177c958dbb77d711555d15ba313033a7d28f326512ceb4cd45ef82f5f93aa4c",
+        "rounds": [
+          {
+            "target_start": 42808,
+            "candidate_start": 42808,
+            "size": 198,
+            "target_sha256": "556a6e8d82a590915170c940ee4d244f7bd07a5d3058bc2baddb9fd5795963e9",
+            "candidate_sha256": "556a6e8d82a590915170c940ee4d244f7bd07a5d3058bc2baddb9fd5795963e9",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42808,
+              "size": 198,
+              "function_symbol": "script_param_read_number_first(int far&)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_param_read_number_second(int far&)"
+            }
+          },
+          {
+            "target_start": 42808,
+            "candidate_start": 42808,
+            "size": 198,
+            "target_sha256": "556a6e8d82a590915170c940ee4d244f7bd07a5d3058bc2baddb9fd5795963e9",
+            "candidate_sha256": "556a6e8d82a590915170c940ee4d244f7bd07a5d3058bc2baddb9fd5795963e9",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 42808,
+              "size": 198,
+              "function_symbol": "script_param_read_number_first(int far&)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_param_read_number_second(int far&)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-param-second",
+      "entry_sha256": "7a60fd18009559b8d62c00ded1327699c485b948cf7f86bdb85b67c55708188d",
+      "result": {
+        "id": "maine-cutscene-param-second",
+        "entry_sha256": "7a60fd18009559b8d62c00ded1327699c485b948cf7f86bdb85b67c55708188d",
+        "rounds": [
+          {
+            "target_start": 43006,
+            "candidate_start": 43006,
+            "size": 40,
+            "target_sha256": "1df6ad7baa1b9fc2c215d955a530a704dd25fdc11a88425a2ed39ef43791a213",
+            "candidate_sha256": "1df6ad7baa1b9fc2c215d955a530a704dd25fdc11a88425a2ed39ef43791a213",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43006,
+              "size": 40,
+              "function_symbol": "script_param_read_number_second(int far&)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "cursor_advance_and_animate()"
+            }
+          },
+          {
+            "target_start": 43006,
+            "candidate_start": 43006,
+            "size": 40,
+            "target_sha256": "1df6ad7baa1b9fc2c215d955a530a704dd25fdc11a88425a2ed39ef43791a213",
+            "candidate_sha256": "1df6ad7baa1b9fc2c215d955a530a704dd25fdc11a88425a2ed39ef43791a213",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43006,
+              "size": 40,
+              "function_symbol": "script_param_read_number_second(int far&)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "cursor_advance_and_animate()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-cursor-advance",
+      "entry_sha256": "1db85bfe34c65aa39ce4680499ac5b535b22ffc894d13d2bd79422744476aff0",
+      "result": {
+        "id": "maine-cutscene-cursor-advance",
+        "entry_sha256": "1db85bfe34c65aa39ce4680499ac5b535b22ffc894d13d2bd79422744476aff0",
+        "rounds": [
+          {
+            "target_start": 43046,
+            "candidate_start": 43046,
+            "size": 64,
+            "target_sha256": "4ae1ee05333d3684c46c1afe4e13d55a863e5e10861da6f37fa787a1a4a46a12",
+            "candidate_sha256": "4ae1ee05333d3684c46c1afe4e13d55a863e5e10861da6f37fa787a1a4a46a12",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43046,
+              "size": 64,
+              "function_symbol": "cursor_advance_and_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_1_to_0_masked(box_mask_t)"
+            }
+          },
+          {
+            "target_start": 43046,
+            "candidate_start": 43046,
+            "size": 64,
+            "target_sha256": "4ae1ee05333d3684c46c1afe4e13d55a863e5e10861da6f37fa787a1a4a46a12",
+            "candidate_sha256": "4ae1ee05333d3684c46c1afe4e13d55a863e5e10861da6f37fa787a1a4a46a12",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43046,
+              "size": 64,
+              "function_symbol": "cursor_advance_and_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_1_to_0_masked(box_mask_t)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-box-mask",
+      "entry_sha256": "e073c85ecbb7bc3714f97703b2a950b72d173ebc6930846d8f81d86c27837942",
+      "result": {
+        "id": "maine-cutscene-box-mask",
+        "entry_sha256": "e073c85ecbb7bc3714f97703b2a950b72d173ebc6930846d8f81d86c27837942",
+        "rounds": [
+          {
+            "target_start": 43110,
+            "candidate_start": 43110,
+            "size": 134,
+            "target_sha256": "203b8b24f32131fce85f75a2d0ee782302b5741158e766b0c66cae98c7de54a4",
+            "candidate_sha256": "203b8b24f32131fce85f75a2d0ee782302b5741158e766b0c66cae98c7de54a4",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43110,
+              "size": 134,
+              "function_symbol": "box_1_to_0_masked(box_mask_t)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_1_to_0_animate()"
+            }
+          },
+          {
+            "target_start": 43110,
+            "candidate_start": 43110,
+            "size": 134,
+            "target_sha256": "203b8b24f32131fce85f75a2d0ee782302b5741158e766b0c66cae98c7de54a4",
+            "candidate_sha256": "203b8b24f32131fce85f75a2d0ee782302b5741158e766b0c66cae98c7de54a4",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43110,
+              "size": 134,
+              "function_symbol": "box_1_to_0_masked(box_mask_t)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_1_to_0_animate()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-box-animate",
+      "entry_sha256": "0dd43496169f624259054a8cac1d0740efff187ad469d7768aadc66a9f957022",
+      "result": {
+        "id": "maine-cutscene-box-animate",
+        "entry_sha256": "0dd43496169f624259054a8cac1d0740efff187ad469d7768aadc66a9f957022",
+        "rounds": [
+          {
+            "target_start": 43244,
+            "candidate_start": 43244,
+            "size": 63,
+            "target_sha256": "183859fab70a0f88fdd4e64cc029c0899edc0a23c83c503752d62df834cf1f7d",
+            "candidate_sha256": "183859fab70a0f88fdd4e64cc029c0899edc0a23c83c503752d62df834cf1f7d",
+            "raw_exact": true,
+            "target_fixups": [
+              58,
+              51,
+              35
+            ],
+            "candidate_fixups": [
+              58,
+              51,
+              35
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43244,
+              "size": 63,
+              "function_symbol": "box_1_to_0_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_wait_animate(int)"
+            }
+          },
+          {
+            "target_start": 43244,
+            "candidate_start": 43244,
+            "size": 63,
+            "target_sha256": "183859fab70a0f88fdd4e64cc029c0899edc0a23c83c503752d62df834cf1f7d",
+            "candidate_sha256": "183859fab70a0f88fdd4e64cc029c0899edc0a23c83c503752d62df834cf1f7d",
+            "raw_exact": true,
+            "target_fixups": [
+              58,
+              51,
+              35
+            ],
+            "candidate_fixups": [
+              58,
+              51,
+              35
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43244,
+              "size": 63,
+              "function_symbol": "box_1_to_0_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "box_wait_animate(int)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-box-wait",
+      "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+      "result": {
+        "id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "rounds": [
+          {
+            "target_start": 43307,
+            "candidate_start": 43307,
+            "size": 152,
+            "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+            "candidate_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+            "raw_exact": true,
+            "target_fixups": [
+              142,
+              127,
+              76,
+              58,
+              33,
+              19
+            ],
+            "candidate_fixups": [
+              142,
+              127,
+              76,
+              58,
+              33,
+              19
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43307,
+              "size": 152,
+              "function_symbol": "box_wait_animate(int)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_op(unsigned char)"
+            }
+          },
+          {
+            "target_start": 43307,
+            "candidate_start": 43307,
+            "size": 152,
+            "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+            "candidate_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+            "raw_exact": true,
+            "target_fixups": [
+              142,
+              127,
+              76,
+              58,
+              33,
+              19
+            ],
+            "candidate_fixups": [
+              142,
+              127,
+              76,
+              58,
+              33,
+              19
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 43307,
+              "size": 152,
+              "function_symbol": "box_wait_animate(int)",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "script_op(unsigned char)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-cutscene-animate",
+      "entry_sha256": "753f3fdc03ae7f7e9140c9f0faa15988d6a5dc632ff87afdd88a7307cabbb9b2",
+      "result": {
+        "id": "maine-cutscene-animate",
+        "entry_sha256": "753f3fdc03ae7f7e9140c9f0faa15988d6a5dc632ff87afdd88a7307cabbb9b2",
+        "rounds": [
+          {
+            "target_start": 45014,
+            "candidate_start": 45014,
+            "size": 479,
+            "target_sha256": "7e1af5115276a401392d16739bab2c8ce11b432ff014095842310a20df302871",
+            "candidate_sha256": "7e1af5115276a401392d16739bab2c8ce11b432ff014095842310a20df302871",
+            "raw_exact": true,
+            "target_fixups": [
+              458,
+              451,
+              431,
+              318,
+              155,
+              50
+            ],
+            "candidate_fixups": [
+              458,
+              451,
+              431,
+              318,
+              155,
+              50
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 45014,
+              "size": 479,
+              "function_symbol": "cutscene_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 45014,
+            "candidate_start": 45014,
+            "size": 479,
+            "target_sha256": "7e1af5115276a401392d16739bab2c8ce11b432ff014095842310a20df302871",
+            "candidate_sha256": "7e1af5115276a401392d16739bab2c8ce11b432ff014095842310a20df302871",
+            "raw_exact": true,
+            "target_fixups": [
+              458,
+              451,
+              431,
+              318,
+              155,
+              50
+            ],
+            "candidate_fixups": [
+              458,
+              451,
+              431,
+              318,
+              155,
+              50
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 45014,
+              "size": 479,
+              "function_symbol": "cutscene_animate()",
+              "contribution_start": 42757,
+              "contribution_size": 2736,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "946ce8787e4a6cf6386d0a8ec4be4bb711fb1dfaaf5815f95502778e51697abc",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          },
+          {
+            "sha256": "4fb903e705ce7feeeea8d618183f445dd08ca3cd095028e68c00610287911a54",
+            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "module_name": "th05/cutscene.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cutscene.cpp",
+              "src/maine/cutscene/cutscene.cpp",
+              "src/maine/cutscene/cutscene.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\ctype.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/cutscene/script.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cutscene.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_cutscene_bindings.asm",
+              "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.cpp",
+              "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+            },
+            {
+              "path": "src/maine/cutscene/cutscene.hpp",
+              "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+            },
+            {
+              "path": "src/maine/cutscene/script.hpp",
+              "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_bindings.asm",
+          "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.cpp",
+          "sha256": "1b515b10b5f6bbc7a13ad646fba257ed95b8aa26af25b74016d0a4edccfe1dc4"
+        },
+        {
+          "path": "src/maine/cutscene/cutscene.hpp",
+          "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+        },
+        {
+          "path": "src/maine/cutscene/script.hpp",
+          "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a3fa542ebdbf6a974c67b186c4c024a65c2fe60cb8dc929d606a157f5cd805f6",
+      "compiled_negative_control": {
+        "target_start": 43307,
+        "candidate_start": 43307,
+        "size": 152,
+        "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+        "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+        "raw_exact": false,
+        "target_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "candidate_fixups": [
+          142,
+          127,
+          76,
+          58,
+          33,
+          19
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 43307,
+          "size": 152,
+          "function_symbol": "box_wait_animate(int)",
+          "contribution_start": 42757,
+          "contribution_size": 2736,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "script_op(unsigned char)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-box-wait",
+        "entry_sha256": "bc2f0c33fc64e62ccb8efbb36c60c9c85f328c3d25c5785fb14c7758b7e17293",
+        "mutation": {
+          "unit": "maine-cutscene-box-wait",
+          "source": "src/maine/cutscene/cutscene.cpp",
+          "find": "((frame / 8) % RETURN_KEY_CELS)",
+          "replace": "((frame / 4) % RETURN_KEY_CELS)"
+        },
+        "control_sha256": "cca3ad5768dfa366e53e894be61b2384fd6bee1b43cce1f44651f5acdbfbad72",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 43307,
+          "candidate_start": 43307,
+          "size": 152,
+          "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+          "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+          "raw_exact": false,
+          "target_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "candidate_fixups": [
+            142,
+            127,
+            76,
+            58,
+            33,
+            19
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 43307,
+            "size": 152,
+            "function_symbol": "box_wait_animate(int)",
+            "contribution_start": 42757,
+            "contribution_size": 2736,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "script_op(unsigned char)"
+          }
+        },
+        "omf": {
+          "sha256": "580ce35a4b6f1980baf22553dd88ec17428fddfb372ce97705166f6abf157a67",
+          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "module_name": "th05/cutscene.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cutscene.cpp",
+            "src/maine/cutscene/cutscene.cpp",
+            "src/maine/cutscene/cutscene.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\ctype.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/cutscene/script.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cutscene.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_bindings.asm",
+            "sha256": "dd2b859e3c1aea8e654243d0f4bb16f86a75ea55e98e6d8eec3efe70b680e28b"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.cpp",
+            "sha256": "4030ba19cd24c5c133de34e68d6c41595b70256306c935c18080df606e08c474"
+          },
+          {
+            "path": "src/maine/cutscene/cutscene.hpp",
+            "sha256": "04cb2ede3775d548c04db0e3697bcc722ba37c9effe44b1f6deaa311824490d9"
+          },
+          {
+            "path": "src/maine/cutscene/script.hpp",
+            "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-vector",
+      "entry_sha256": "b071e62ca6aab8b8cb4a1f26bb9cac0df9f82bc9538142daf510076c2d187f9e",
+      "result": {
+        "id": "maine-vector",
+        "entry_sha256": "b071e62ca6aab8b8cb4a1f26bb9cac0df9f82bc9538142daf510076c2d187f9e",
+        "rounds": [
+          {
+            "target_start": 60548,
+            "candidate_start": 60548,
+            "size": 96,
+            "target_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+            "candidate_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 60548,
+            "candidate_start": 60548,
+            "size": 96,
+            "target_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+            "candidate_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "395dae27f7f337a85fc62c1a3cbca2f45874856c608fd7510d82bbb317bd4964",
+            "dependency_timestamp_normalized_sha256": "81faef6197e96bf33851553f8279fbe56f077b0b2b2aea4e0504ca2f4ee99b8a",
+            "module_name": "th05/vector.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vector.cpp",
+              "src/shared/math/vector.cpp",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "6fff8f3ab99071f66d1c1a7834185a81da5d3169017bdaf791c695d4461d48b7",
+            "dependency_timestamp_normalized_sha256": "81faef6197e96bf33851553f8279fbe56f077b0b2b2aea4e0504ca2f4ee99b8a",
+            "module_name": "th05/vector.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vector.cpp",
+              "src/shared/math/vector.cpp",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vector.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vector.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_vector_bindings.asm",
+            "sha256": "1e22914faf290eb16985dc030d61d4ebe0655515c0d97bf655db65a372798d16"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.cpp",
+            "sha256": "b95da735f5b83e0d6293c61fe34b2063c8a73346b458f7ca2fe7ec9f7e9511d0"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_vector_bindings.asm",
+          "sha256": "1e22914faf290eb16985dc030d61d4ebe0655515c0d97bf655db65a372798d16"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.cpp",
+          "sha256": "b95da735f5b83e0d6293c61fe34b2063c8a73346b458f7ca2fe7ec9f7e9511d0"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "86fdcfb8a43290c912078d162db24a33a6310e9b7879b1a49a8e5b088b4d1784",
+      "compiled_negative_control": {
+        "target_start": 60548,
+        "candidate_start": 60548,
+        "size": 96,
+        "target_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+        "candidate_sha256": "10d9b66011153afdc810a2a568026d5c0ee24132bba5555fb50e04f2c5555b63",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-vector",
+        "entry_sha256": "b071e62ca6aab8b8cb4a1f26bb9cac0df9f82bc9538142daf510076c2d187f9e",
+        "mutation": {
+          "unit": "maine-vector",
+          "source": "src/shared/math/vector.cpp",
+          "find": "static_cast<long>(radius) * ratio) >> 8",
+          "replace": "static_cast<long>(radius) * ratio) >> 7"
+        },
+        "control_sha256": "dccf5521b1c2efc8add132985641cd7a33844468df630a936034e7aefa737876",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 60548,
+          "candidate_start": 60548,
+          "size": 96,
+          "target_sha256": "276151e09a447885a7ac973bd0fcfb006ef0d56263363c4cabbdb1ffd364c45a",
+          "candidate_sha256": "10d9b66011153afdc810a2a568026d5c0ee24132bba5555fb50e04f2c5555b63",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "a8667e61efed7950854551c8660bff4025d7e75c1d165dc5f5139523c5c99f99",
+          "dependency_timestamp_normalized_sha256": "bb93ab470a0b628d38f4a47349e198672c63492ab5dee6acf626f7629287c180",
+          "module_name": "th05/vector.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vector.cpp",
+            "src/shared/math/vector.cpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vector.cpp"
         ]
       },
       "target_view": {

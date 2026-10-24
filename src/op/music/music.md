@@ -113,3 +113,11 @@ including both cold producers, all 12 ordered fixups and the compiled rectangle
 mutation. `op-music-suffix-b` retains a failed aggregate and a passing compiled
 input-threshold negative; its complete function scopes need separate review.
 The foreign helper receives no source credit.
+
+`op-music-functions-a` subsequently accepts eight whole suffix functions /
+646 bytes with both fresh producers and a new compiled comment-loader control
+(`sizeof(cmt)` to `sizeof(cmt)-1`). The previous menu negative affected an
+unaccepted function, so it was not reused to claim these scopes. Both the
+502-byte polygon update and 837-byte music menu remain unaccepted: their raw
+code matches, but original ordered fixups differ. All MAP ends include the
+actual immediate neighbor, even when it is one of those excluded functions.
