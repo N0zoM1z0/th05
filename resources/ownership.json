@@ -7,10 +7,10 @@
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-cxx-initialized-data": 8857,
-    "accepted-cxx-instructions": 39295,
-    "accepted-cxx-switch-table": 482,
-    "checked-uncredited-padding": 28,
-    "unknown": 267705,
+    "accepted-cxx-instructions": 40152,
+    "accepted-cxx-switch-table": 498,
+    "checked-uncredited-padding": 30,
+    "unknown": 266830,
     "verified-vendor-code": 2901
   },
   "views": {
@@ -21,10 +21,10 @@
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
         "accepted-cxx-initialized-data": 199,
-        "accepted-cxx-instructions": 26852,
-        "accepted-cxx-switch-table": 360,
-        "checked-uncredited-padding": 22,
-        "unknown": 115624,
+        "accepted-cxx-instructions": 27709,
+        "accepted-cxx-switch-table": 376,
+        "checked-uncredited-padding": 24,
+        "unknown": 114749,
         "verified-vendor-code": 2901
       },
       "intervals": [
@@ -1127,6 +1127,24 @@
         },
         {
           "start": 88738,
+          "end": 89272,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-stage1"
+        },
+        {
+          "start": 89272,
+          "end": 89273,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-midboss-stage1"
+        },
+        {
+          "start": 89273,
+          "end": 89281,
+          "kind": "accepted-cxx-switch-table",
+          "unit": "main-midboss-stage1"
+        },
+        {
+          "start": 89281,
           "end": 89579,
           "kind": "unknown"
         },
@@ -1403,8 +1421,26 @@
         },
         {
           "start": 112347,
-          "end": 114254,
+          "end": 113922,
           "kind": "unknown"
+        },
+        {
+          "start": 113922,
+          "end": 114245,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-stage3-update"
+        },
+        {
+          "start": 114245,
+          "end": 114246,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-midboss-stage3-update"
+        },
+        {
+          "start": 114246,
+          "end": 114254,
+          "kind": "accepted-cxx-switch-table",
+          "unit": "main-midboss-stage3-update"
         },
         {
           "start": 114254,

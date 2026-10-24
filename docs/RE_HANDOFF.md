@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **141 bounded C++ CODE/DATA units / 268 complete function occurrences**,
-**48,634 authored bytes exact**: 39,777 CODE and 8,857 initialized DATA.
-CODE is 39,295 instruction plus 482 semantic compiler-table bytes.
-Complete compared extents total 48,662; 28 checked padding bytes receive
-no credit. MAIN has 186 functions / 27,212 CODE / 199 DATA;
+Current acceptance: **143 bounded C++ CODE/DATA units / 272 complete function occurrences**,
+**49,507 authored bytes exact**: 40,650 CODE and 8,857 initialized DATA.
+CODE is 40,152 instruction plus 498 semantic compiler-table bytes.
+Complete compared extents total 49,537; 30 checked padding bytes receive
+no credit. MAIN has 190 functions / 28,085 CODE / 199 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -42,7 +42,7 @@ All paths below are under private `.analysis/unit-replays/`.
 | Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
 | MAINE high-score lifecycle | `maine-score-end-b` |
 | Sara complete stage-one behavior | `main-sara-a` |
-| Stage-two midboss update | `main-midboss-stage2-c` |
+| Stage-one, two and three midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a` |
 | Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
 | Six complete generic Boss functions | `main-boss-generic-b` |
 | Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
@@ -316,3 +316,21 @@ original instructions establish the ordinary direct clear update and actual
 (192,64) target. Both were corrected semantically before acceptance. Movement
 and pattern helpers remain genuine foreign functions; no bodies or target
 instruction templates are supplied by the binder.
+
+
+### Stage-one and three midboss logic
+
+`main-midboss-stage1-a` accepts all three complete movement/pattern/update
+functions from the natural ReC98 C++ owner. All543 bytes, five original ordered
+fixups and the16→17 firing-interval negative are checked; credit is542 bytes
+(534 instructions,8 compiler-table bytes), excluding the single checked zero.
+The genuine packed-word spread setter and canonical ABI produce the original
+code without instruction templates.
+
+`main-midboss-stage3-a` accepts the complete332-byte callback including its
+trailing compiler table:323 instructions, one checked zero and8 table bytes,
+331 authored bytes. The sole original relocation at relative280 and both
+cold raw producers agree; invincibility threshold192→193 is rejected. The
+original RETF ends the instruction stream, not the function contribution: the
+four-word table remains part of the complete comparison. All unrelated
+accepted evidence is reused unchanged.

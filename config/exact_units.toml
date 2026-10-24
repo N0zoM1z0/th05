@@ -1630,3 +1630,47 @@ unit = "main-midboss-stage2-update"
 source = "src/main/midboss/stage2.cpp"
 find = "if(midboss.hp > 400) {"
 replace = "if(midboss.hp > 401) {"
+
+# Candidate only; root must independently replay before acceptance.
+[[units]]
+id = "main-midboss-stage1"
+source = "src/main/midboss/stage1.cpp"
+module = "th05/midboss1.cpp"
+segment = "MIDBOSS1_TEXT"
+wrapper_options = "-zCMIDBOSS1_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage1_bindings.asm"
+target_start = 0x15aa2
+size = 543
+alignment_offsets = []
+padding_bytes = [{offset = 534, value = 0}]
+code_data_ranges = [{offset = 535, size = 8, kind = "compiler-switch-table"}]
+functions = 3
+origin = "compiler-generated-cxx"
+
+[[controls]]
+id = "midboss-stage1-fire-interval"
+unit = "main-midboss-stage1"
+source = "src/main/midboss/stage1.cpp"
+find = "int interval = 16;"
+replace = "int interval = 17;"
+
+[[units]]
+id = "main-midboss-stage3-update"
+source = "src/main/midboss/stage3.cpp"
+module = "th05/midboss3.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/midboss_stage3_bindings.asm"
+target_start = 113922
+size = 332
+alignment_offsets = []
+padding_bytes = [{offset = 323, value = 0}]
+code_data_ranges = [{offset = 324, size = 8, kind = "compiler-switch-table"}]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-stage3-update"
+source = "src/main/midboss/stage3.cpp"
+find = "if(midboss.phase_frame >= 192) {"
+replace = "if(midboss.phase_frame >= 193) {"
