@@ -20,6 +20,16 @@
 Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
 serial and Ghidra's heap bounded. Never modify the original HDI or executables.
 
+When several accepted owners share changed dependencies, import all their
+replacement receipts atomically with repeated arguments:
+`python3 scripts/progress.py --accept PATH_A --accept PATH_B`.
+Each receipt undergoes full producer, source, tool and negative-control
+validation. All replacements merge in memory before the final source-freshness
+check; the ledger is replaced once, only if the whole batch passes. Per-unit
+original receipt provenance is retained. Duplicate receipts or imported unit
+IDs fail. `--units ID...` keeps its explicit subset semantics for exactly one
+`--accept` receipt; batch imports require each complete receipt to pass.
+
 OP and MAINE use `--artifact op` / `--artifact maine` on replay and acceptance,
 with separate `exact_units.*.toml` and `accepted_units.*.json` files. Their
 retained decoded view is pinned by receipt and canonical proof hashes. Replay

@@ -372,15 +372,14 @@ def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
             "compiled_negative_control": control, "units": units}
 
 
-def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None,
-           artifact_name: str = "main", validate_only: bool = False) -> dict | None:
-    """Recheck saved selected producers; no compilation or whole-cohort replay."""
+def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None = None,
+                     artifact_name: str = "main", validate_only: bool = False) -> dict:
+    """Fully validate one receipt without reading or writing the live ledger."""
     from lib.omf import describe_omf
     from lib.pc98 import parse_mz
     from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
     from lib.unit_oracle import compare_mapped_unit
     from replay_units import mapped_control_comparison
-    root = ROOT if root is None else root
     context = UnitContext(root, artifact_name)
     receipt_path = receipt_path.resolve()
     work = receipt_path.parent
@@ -569,13 +568,39 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
         item["receipt_aggregate_pass"] = aggregate_pass
         if units is not None:
             item["receipt_selected_subset"] = sorted(selected)
+    return {"imported": imported, "target_sha": artifact["sha256"],
+            "tool_sha": tool_sha, "replay_sha": digest(receipt_path),
+            "control": control, "target_view": target_view}
+
+
+def accept_many(receipt_paths: list[Path], *, root: Path | None = None,
+                units: list[str] | None = None, artifact_name: str = "main") -> None:
+    """Validate every receipt, then merge and publish the complete batch once.
+
+    Explicit subsets retain their historical single-receipt semantics. A batch
+    imports every result of each receipt, and rejects overlapping imported IDs.
+    """
+    root = ROOT if root is None else root
+    paths = [Path(path).resolve() for path in receipt_paths]
+    if not paths or len(paths) != len(set(paths)):
+        raise ValueError("accept batch requires distinct receipt paths")
+    if units is not None and len(paths) != 1:
+        raise ValueError("--units subset selection requires exactly one --accept receipt")
+    prepared = [_validate_import(path, root=root, units=units, artifact_name=artifact_name)
+                for path in paths]
+    last = prepared[-1]
+    if any(any(item[key] != last[key] for key in ("target_sha", "tool_sha", "target_view"))
+           for item in prepared):
+        raise ValueError("accept batch receipts belong to different target or tool contexts")
+    imported = [record for item in prepared for record in item["imported"]]
+    context = UnitContext(root, artifact_name)
     acceptance_path = context.ledger
     previous = json.loads(acceptance_path.read_text()) if acceptance_path.exists() else {"units": []}
-    acceptance = merge_acceptance(root, previous, imported, target_sha=artifact["sha256"],
-                                  tool_sha=tool_sha, replay_sha=digest(receipt_path), control=control,
-                                  artifact_name=artifact_name)
-    if target_view is not None:
-        acceptance.update(artifact=context.artifact, target_view=target_view,
+    acceptance = merge_acceptance(root, previous, imported, target_sha=last["target_sha"],
+                                  tool_sha=last["tool_sha"], replay_sha=last["replay_sha"],
+                                  control=last["control"], artifact_name=artifact_name)
+    if last["target_view"] is not None:
+        acceptance.update(artifact=context.artifact, target_view=last["target_view"],
                           scope="decoded load-module unit bytes and ordered fixups; packed file unaccepted")
     summarize(root, acceptance, artifact_name=artifact_name)
     temporary = acceptance_path.with_suffix(".json.tmp")
@@ -583,9 +608,19 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     temporary.replace(acceptance_path)
 
 
+def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None,
+           artifact_name: str = "main", validate_only: bool = False) -> dict | None:
+    """Recheck saved selected producers; no compilation or whole-cohort replay."""
+    if validate_only:
+        return _validate_import(receipt_path, root=ROOT if root is None else root,
+                                units=units, artifact_name=artifact_name, validate_only=True)
+    accept_many([receipt_path], root=root, units=units, artifact_name=artifact_name)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--accept", type=Path)
+    parser.add_argument("--accept", type=Path, action="append",
+                        help="receipt to import; repeat to validate and merge one atomic batch")
     parser.add_argument("--artifact", choices=("main", "op", "maine"), default="main")
     parser.add_argument("--units", nargs="+", metavar="ID", help="explicit exact subset of --accept receipt")
     group = parser.add_mutually_exclusive_group()
@@ -594,8 +629,10 @@ def main() -> int:
     args = parser.parse_args()
     if args.units is not None and args.accept is None:
         parser.error("--units requires --accept")
+    if args.units is not None and len(args.accept) != 1:
+        parser.error("--units subset selection requires exactly one --accept receipt")
     if args.accept:
-        accept(args.accept, units=args.units, artifact_name=args.artifact)
+        accept_many(args.accept, units=args.units, artifact_name=args.artifact)
     summary = summarize_all()
     md, svg = render(summary)
     for name, content in (("docs/PROGRESS.md", md), ("resources/progress.svg", svg)):
