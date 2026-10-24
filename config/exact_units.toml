@@ -839,21 +839,6 @@ functions = 2
 origin = "compiler-generated-cxx"
 bindings_source = "probes/units/shinki_bindings.asm"
 
-[[units]]
-id = "main-shinki-update"
-source = "src/main/boss/shinki/shinki.cpp"
-module = "th05/boss_6.cpp"
-segment = "B6_UPDATE_TEXT"
-wrapper_options = "-zPmain_03"
-target_start = 0x1acba
-size = 3552
-alignment_offsets = []
-padding_bytes = [{ offset = 3525, value = 0 }]
-code_data_ranges = [{ offset = 3526, size = 26, kind = "compiler-switch-table" }]
-functions = 12
-origin = "compiler-generated-cxx"
-bindings_source = "probes/units/shinki_bindings.asm"
-
 [[controls]]
 unit = "main-shinki-pattern-a"
 source = "src/main/boss/shinki/shinki.cpp"
@@ -1391,3 +1376,118 @@ unit = "main-midboss5-render"
 source = "src/main/midboss/render5.cpp"
 find = "midboss.damage_this_frame = 0;"
 replace = "midboss.damage_this_frame = 1;"
+
+# Private natural item proposals; zero acceptance.
+
+[[units]]
+id = "main-item-spawn"
+source = "src/main/item/spawn.cpp"
+module = "th05/it_spawn.cpp"
+segment = "ITEM_SPAWN_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/item_spawn_bindings.asm"
+target_start = 0x1cc2b
+size = 385
+functions = 2
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-spawn"
+source = "src/main/item/spawn.cpp"
+find = "item->pos.velocity.y.v = -TO_SP(3);"
+replace = "item->pos.velocity.y.v = -TO_SP(4);"
+
+[[units]]
+id = "main-item-splashes"
+source = "src/main/item/splash.cpp"
+module = "th05/it_spl_u.cpp"
+segment = "ITEM_SPLASH_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/item_splash_bindings.asm"
+target_start = 0x1637c
+size = 130
+functions = 2
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-splashes"
+source = "src/main/item/splash.cpp"
+find = "p->radius_cur.v += ITEM_SPLASH_RADIUS_DELTA * 16;"
+replace = "p->radius_cur.v += (ITEM_SPLASH_RADIUS_DELTA + 1) * 16;"
+
+[[units]]
+id = "main-items-invalidate"
+source = "src/main/item/invalidate.cpp"
+module = "th05/it_inval.cpp"
+segment = "ITEM_INVALIDATE_TEXT"
+wrapper_options = "-zPmain_01 -k-"
+bindings_source = "probes/units/item_invalidate_bindings.asm"
+target_start = 0xc1ac
+size = 75
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-items-invalidate"
+source = "src/main/item/invalidate.cpp"
+find = "items_left = ITEM_INVALIDATE_COUNT;"
+replace = "items_left = ITEM_INVALIDATE_COUNT - 1;"
+
+[[units]]
+id = "main-ems-allocate"
+source = "src/main/ems/ems.cpp"
+module = "th05/ems.cpp"
+segment = "EMS_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 47142
+size = 155
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/ems_bindings.asm"
+function_symbol = "ems_allocate_and_preload_eyecatc()"
+function_end_symbol = "bomb_bg_load__ems_preload_playch()"
+
+[[units]]
+id = "main-ems-player-preload"
+source = "src/main/ems/ems.cpp"
+module = "th05/ems.cpp"
+segment = "EMS_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 47297
+size = 267
+alignment_offsets = []
+padding_bytes = [{offset = 258, value = 0}]
+code_data_ranges = [{offset = 259, size = 8, kind = "compiler-switch-table"}]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/ems_bindings.asm"
+function_symbol = "bomb_bg_load__ems_preload_playch()"
+function_end_symbol = "ems_preload_boss_faceset(const char far*)"
+
+[[units]]
+id = "main-ems-eyecatch"
+source = "src/main/ems/ems.cpp"
+module = "th05/ems.cpp"
+segment = "EMS_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 47718
+size = 108
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/ems_bindings.asm"
+function_symbol = "eyecatch_animate()"
+
+[[controls]]
+unit = "main-ems-allocate"
+source = "src/main/ems/ems.cpp"
+find = "(ems_space() < EMSSIZE)"
+replace = "(ems_space() <= EMSSIZE)"

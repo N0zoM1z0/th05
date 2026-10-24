@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **125 bounded C++ CODE/DATA units / 249 complete function occurrences**,
-**46,088 authored bytes exact**: 37,231 CODE and 8,857 initialized DATA.
-CODE is 36,757 instruction plus 474 semantic compiler-table bytes.
-Complete compared extents total 46,115; 27 checked padding bytes receive
-no credit. MAIN has 170 functions / 24,860 CODE / 199 DATA;
-OP 54 / 9,312 / 8,615; MAINE 25 / 3,059 / 43.
+Current acceptance: **132 bounded C++ CODE/DATA units / 258 complete function occurrences**,
+**47,331 authored bytes exact**: 38,474 CODE and 8,857 initialized DATA.
+CODE is 37,992 instruction plus 482 semantic compiler-table bytes.
+Complete compared extents total 47,359; 28 checked padding bytes receive
+no credit. MAIN has 178 functions / 25,979 CODE / 199 DATA;
+OP 55 / 9,436 / 8,615; MAINE 25 / 3,059 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -51,9 +51,11 @@ All paths below are under private `.analysis/unit-replays/`.
 | MAIN stage initialized DATA and refreshed CODE evidence | `main-stage-data-a` |
 | MAINE entry and MAIN Boss drop-table DATA | `maine-entry-data-retained-a`, `main-boss-generic-data-a` |
 | Dialog-file loading and demo loading | `main-dialog-file-a`, `main-demo-b` (passing load subset) |
-| MAIN/MAINE core initialization | `main-core-init-a`, `maine-core-init-a` |
+| MAIN/OP/MAINE core initialization | `main-core-init-a`, `op-core-init-a`, `maine-core-init-a` |
 | Sound mode selection in all three artifacts | `main-sound-modes-b`, `op-sound-modes-b`, `maine-sound-modes-a` |
 | Generic shot control | `main-player-shot-common-a` |
+| Three EMS cache functions | `main-ems-scopes-c` from raw-exact/ordered-inexact `main-ems-cache-b` |
+| Item creation/death drops, splashes and tile invalidation | `main-item-spawn-b`, `main-item-splashes-a`, `main-items-invalidate-a` |
 | Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
 | Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
 | Laser creation/control, state update and rendering | `main-laser-control-a`, `main-laser-update-b`, `main-laser-render-a` |
@@ -235,3 +237,22 @@ functions /182 authored CODE bytes (150 instructions +32 compiler table),
 excluding one checked zero padding byte. Reimu bomb stars add466 instruction
 bytes, excluding one original linker NOP; stage-five midboss rendering adds101.
 The Extra-stage same-shaped renderer is independently identified and uncredited.
+
+OP core initialization adds one complete124-byte function, including genuine
+Borland port-I/O intrinsics. Item splashes and invalidation add130/2 functions
+and75/1; the real invalidation loop visits32 slots even though the full item
+pool has40, preserving the original behavior. Owned DATA/BSS remain zero.
+
+Item creation/death drops add385 instruction bytes across two functions. All
+three initial item owners now pass590 bytes /five functions. The parity check
+uses the real byte bit test; the following signed modulo64 operation remains
+as observed. No other item source/header changed. The already failed whole
+Shinki3552 candidate was removed from default selection; its archived failed
+producer and accepted retained function scopes are unchanged.
+
+EMS cache adds three complete functions /529 CODE bytes:521 instructions,
+eight compiler switch-table bytes and one excluded checked zero. Its two
+684-byte producers match all raw code, but whole ordering and the154-byte
+boss-face preload ordering fail. Only the strict three scopes are reviewed
+from retained artifacts, using the same actual compiled negative and no new
+compiler run. The failed whole is removed from default selection.

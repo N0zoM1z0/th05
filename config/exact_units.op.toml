@@ -579,3 +579,21 @@ unit = "op-sound-modes"
 source = "src/shared/sound/modes.cpp"
 find = "if(_AL == 0xFF)"
 replace = "if(_AL == 0xFE)"
+
+[[units]]
+id = "op-core-init"
+source = "src/shared/core/initop.cpp"
+module = "th05/initop.cpp"
+segment = "SHARED"
+target_start = 0xdf12
+size = 124
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/op_init_bindings.asm"
+
+[[controls]]
+unit = "op-core-init"
+source = "src/shared/core/initop.cpp"
+find = "pfsetbufsiz(8192);"
+replace = "pfsetbufsiz(4096);"
