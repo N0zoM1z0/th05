@@ -14,6 +14,7 @@ import uuid
 from lib.pc98 import digest_file, parse_mz
 from lib.reference_build import Builder
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
+from lib.replay_toolchain import freeze_toolchain
 
 ROOT = Path(__file__).resolve().parents[1]
 REVISION = "b6ba5b0a529edbb31efdf8c0e939263804f8ee47"
@@ -43,6 +44,8 @@ def main() -> int:
     work.mkdir(parents=True)
     with (ROOT / ".analysis/borland.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
+        tool = freeze_toolchain(ROOT, work / "toolchain-attestation.json", allow_probes=False)
+        shutil.copyfile(ROOT / "config/toolchain.toml", work / "toolchain.toml")
         source = work / "source"
         materialize(source)
         overlays = []
@@ -64,6 +67,9 @@ def main() -> int:
                    "artifact": args.artifact, "overlays": overlays,
                    "output": str(result.relative_to(work)), "sha256": digest_file(result),
                    "target_sha256": target["sha256"], "raw_file_equal": result.read_bytes() == target_data,
+                   "toolchain_receipt_sha256": tool["receipt_sha256"],
+                   "toolchain_manifest_sha256": tool["manifest_sha256"],
+                   "toolchain_reused": tool["reused"], "toolchain_reuse_proof_sha256": tool["proof_sha256"],
                    "steps": builder.records}
         (work / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(f"PASS: {len(builder.records)} serial steps; scaffold only: {work}")

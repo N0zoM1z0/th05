@@ -534,3 +534,23 @@ unit = "main-cheeto-update"
 source = "src/main/bullet/cheeto.cpp"
 find = "static const subpixel_t HEAD_KILLBOX_W = TO_SP(16);"
 replace = "static const subpixel_t HEAD_KILLBOX_W = TO_SP(15);"
+
+[[units]]
+id = "main-bullet-update"
+source = "src/main/bullet/update.cpp"
+module = "th05/bullet_u.cpp"
+segment = "BULLET_U_TEXT"
+target_start = 0x1be4e
+size = 1619
+alignment_offsets = []
+code_data_ranges = [{offset = 0x27d, size = 20, kind = "compiler-switch-table"}]
+functions = 5
+origin = "compiler-generated-cxx-dos-intrinsics"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/bullet_update_bindings.asm"
+
+[[controls]]
+unit = "main-bullet-update"
+source = "src/main/bullet/update.cpp"
+find = "bullet.angle = (0x80 - bullet.angle);"
+replace = "bullet.angle = (0x81 - bullet.angle);"

@@ -5,16 +5,16 @@ complete authored ownership denominator remains under review.
 
 | Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 82 | 14159 | 13883 | 276 | 14175 |
-| OP | 0 | 0 | 0 | 0 | 0 |
-| MAINE | 0 | 0 | 0 | 0 | 0 |
+| MAIN bounded C++ units | 87 | 15778 | 15482 | 296 | 15794 |
+| OP decoded C++ units | 0 | 0 | 0 | 0 | 0 |
+| MAINE decoded C++ units | 0 | 0 | 0 | 0 | 0 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
-30 bounded C++ units pass two cold builds, raw bytes and ordered
+31 bounded C++ units pass two cold builds, raw bytes and ordered
 relative relocation sites with explicit original external-symbol bindings.
 A unit covers a complete compiler contribution or one reviewed complete
 function. Unaccepted functions in the same translation unit receive no credit.
-Authored code includes 276 bytes of explicitly classified compiler switch
+Authored code includes 296 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 16 observed
 padding bytes are checked against their declared target values and excluded
 from authored code. Every table and padding byte remains inside the complete
@@ -22,6 +22,8 @@ raw-byte comparisons; classification supplies no byte-comparison exemption.
 Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage
 and packed-file exactness are separate and remain unaccepted.
+OP/MAINE comparisons use their retained decoded load modules and original
+observed relocation order; they grant no packed-file exactness.
 
 The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub

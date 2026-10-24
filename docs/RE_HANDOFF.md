@@ -3,8 +3,8 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Public repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: 30 bounded C++ units, 82 complete functions, 14,175 compared
-bytes and 14,159 authored code bytes: 13,883 instructions plus 276 bytes of
+Current acceptance: 31 bounded C++ units, 87 complete functions, 15,794 compared
+bytes and 15,778 authored code bytes: 15,482 instructions plus 296 bytes of
 semantic compiler switch tables. Sixteen checked padding bytes receive no
 credit. `config/accepted_units.json` records each source-current scope.
 Global percentage remains unmeasured pending complete ownership review.
@@ -23,6 +23,7 @@ Global percentage remains unmeasured pending complete ownership review.
 | Bullet generation clipping | `bullet-clip-d` |
 | Stage initialization | `stage-setup-a` |
 | Cheeto allocation and homing update | `cheeto-update-b` |
+| Regular and special bullet update | `bullet-update-d` |
 | 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
 
 Every accepted scope has two isolated deterministic producers, full raw/fixup
@@ -78,8 +79,13 @@ Cheeto allocation/homing now passes its complete 592-byte contribution and
 compiled collision-width mutation. The template view is 25 bytes inside a true
 26-byte custom slot; compiler assertions verify all real field offsets.
 
-Next natural candidate: regular and special bullet updates, prepared independently
-under the bullet owner. Continue focused compilation and complete-function
+Regular/special bullet update now passes all five functions / 1,619 code bytes
+(1,599 instructions plus 20 compiler table bytes), four ordered fixups and the
+compiled reflection mutation. The real sprite enum domain is word-sized; its
+partial byte enum was corrected. The cross-segment HUD callback retains main_01
+at its first declaration. Neither fix changes an accepted shared header.
+
+Next natural candidate: enemy rendering from maintained TH04 C++. Continue focused compilation and complete-function
 acceptance. Do not restore fake-zero helpers or hand-emitted compiler bodies.
 
 ## Target and tool state
@@ -104,3 +110,13 @@ loader-only defaults and bounded ranges. Failed old projects are not evidence.
 Serialize heavy jobs with `.analysis/borland.lock` and `scripts/run_heavy.sh`
 (one CPU, 35% quota, 768 MiB, no swap, low priority). TH03 has unrelated dirty
 work: never modify it. TH04 is a read-only reference.
+
+OP/MAINE unit contexts use separate configs/ledgers with pinned retained decoded
+views; MAIN defaults and old evidence stay unchanged. No decoded units are
+accepted yet. OP's first reference calibration completed 47 serial steps at
+`.analysis/builds/op-calibration-a`; whole-file equality fails, with zero credit.
+The decoded OP survey `.analysis/cpp-candidate-survey-op.json` routes 21 unique
+C++ contribution shapes / 12,288 candidate bytes. Investigate its natural main
+menu first. No new unpacking run was needed. `survey_th04_reuse.py` separately
+routes maintained TH04 function candidates; 63 unique shapes / 4,439 bytes are
+only diagnostics and include possible false complete boundaries.

@@ -21,6 +21,8 @@ from lib.reference_build import Builder
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
 from lib.unit_oracle import (compare_unit, compare_mapped_unit, function_scoped,
     map_unit_scope)
+from lib.unit_context import (UnitContext, compiler_arguments, freeze_target_view,
+    load_unit_target, unit_binary)
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, freeze_toolchain,
     required_input_paths, scoped_snapshot, snapshot_paths, staged_paths,
     static_toolchain, validate_snapshot)
@@ -31,7 +33,7 @@ OMF_FIELDS = ("sha256", "dependency_timestamp_normalized_sha256", "module_name",
 
 
 def select_units(root: Path, manifest: dict, requested: list[str] | None,
-                 acceptance: dict | None = None) -> tuple[list[dict], dict[str, str]]:
+                 acceptance: dict | None = None, *, ledger: Path | None = None) -> tuple[list[dict], dict[str, str]]:
     entries = {unit["id"]: unit for unit in manifest["units"]}
     if len(entries) != len(manifest["units"]):
         raise ValueError("duplicate configured unit IDs")
@@ -39,7 +41,7 @@ def select_units(root: Path, manifest: dict, requested: list[str] | None,
         if len(set(requested)) != len(requested) or set(requested) - entries.keys():
             raise ValueError("duplicate or unknown --units ID")
         return [entries[name] for name in requested], {name: "explicit" for name in requested}
-    path = root / "config/accepted_units.json"
+    path = ledger or root / "config/accepted_units.json"
     if acceptance is None:
         acceptance = json.loads(path.read_text()) if path.exists() else {"units": []}
     saved = {item["id"]: item for item in acceptance["units"]}
@@ -64,12 +66,12 @@ def select_units(root: Path, manifest: dict, requested: list[str] | None,
     return selected, reasons
 
 
-def translation_units(units: list[dict]) -> list[list[dict]]:
+def translation_units(units: list[dict], *, binary: str = "M") -> list[list[dict]]:
     """One real TU per compiler invocation, even when several functions qualify."""
     grouped = {}
     for entry in units:
         key = entry["module"].replace("\\", "/").casefold()
-        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry))
+        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary))
         if key in grouped and grouped[key][0] != identity:
             raise ValueError("one module cannot have conflicting source, flags or binding contexts")
         grouped.setdefault(key, (identity, []))[1].append(entry)
@@ -77,8 +79,8 @@ def translation_units(units: list[dict]) -> list[list[dict]]:
 
 
 def cold_round(work: Path, inputs: Path, units: list[dict], *,
-               paths: set[str], mutation: dict | None = None) -> dict:
-    producers = translation_units(units)
+               paths: set[str], mutation: dict | None = None, binary: str = "M") -> dict:
+    producers = translation_units(units, binary=binary)
     source = work / "source"
     source.mkdir(parents=True)
     for name in sorted(paths):
@@ -105,27 +107,32 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
     builder = Builder(source, ROOT / ".analysis/toolchain/wineprefix", ROOT / "_reference/ReC98/bin/msdos.exe")
     dos = ["wine", str(builder.msdos), "-e", "-x"]
     builder.execute("bindings", ["wine", r"C:\TASM50\bin\TASM32.EXE", "/m", "/mx", "/t", "bindings.asm", "bindings.obj"])
-    objects, omfs = [], {}
+    objects, omfs, arguments = [], {}, {}
     for members in producers:
         unit = members[0]
         obj = Path(unit["module"]).stem + ".obj"
         if obj in objects or obj.lower() == "bindings.obj":
             raise ValueError("duplicate generated object filename")
-        builder.execute(obj, [*dos, "tcc", "-c", "-I.", "-O", "-b-", "-3", "-Z", "-d",
-                              "-DGAME=5", "-ml", "-DBINARY='M'", unit["module"]])
+        actual_arguments = compiler_arguments(unit, binary)
+        builder.execute(obj, [*dos, "tcc", *actual_arguments])
         objects.append(obj)
         omf = describe_omf((source / obj).read_bytes())
         if not omf["valid"] or omf["translator_comments"] != ["TC86 Borland C++ 4.02"]:
             raise ValueError(f"invalid compiler object {obj}")
         for member in members:
             omfs[member["id"]] = {key: omf[key] for key in OMF_FIELDS}
+            arguments[member["id"]] = actual_arguments
+    if binary != "M" or any("binary" in unit for unit in units):
+        (source / "compiler-arguments.json").write_text(json.dumps(
+            {unit["module"]: arguments[unit["id"]] for unit in units}, indent=2) + "\n")
     (source / "link.rsp").write_bytes(("-c -s -E bindings.obj " + " ".join(objects) +
                                       ", units.exe, units.map,\r\n").encode("ascii"))
     builder.execute("link", [*dos, "tlink", "@link.rsp"])
     candidate = parse_mz((source / "units.exe").read_bytes())
     if not candidate.valid:
         raise ValueError(str(candidate.errors))
-    return {"source": source, "candidate": candidate, "omfs": omfs, "steps": builder.records}
+    return {"source": source, "candidate": candidate, "omfs": omfs, "steps": builder.records,
+            "compiler_arguments": arguments}
 
 
 def control_comparison(target, candidate, entry: dict, start: int, size: int) -> dict:
@@ -158,13 +165,15 @@ def mapped_control_comparison(target, candidate, entry: dict, path: Path) -> dic
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--artifact", choices=("main", "op", "maine"), default="main")
     parser.add_argument("--units", nargs="+", metavar="ID")
     parser.add_argument("--plan", action="store_true", help="report selected units without running tools")
     args = parser.parse_args()
-    manifest_path = ROOT / "config/exact_units.toml"
+    context = UnitContext(ROOT, args.artifact)
+    manifest_path = context.manifest
     manifest_bytes = manifest_path.read_bytes()
-    manifest = tomllib.loads(manifest_bytes.decode())
-    units, reasons = select_units(ROOT, manifest, args.units)
+    manifest = tomllib.loads(manifest_bytes.decode()) if context.name == "main" else context.config()
+    units, reasons = select_units(ROOT, manifest, args.units, ledger=context.ledger)
     if not units or args.plan:
         print(json.dumps({"selected": reasons, "work_required": bool(units), "tools_executed": False}, indent=2))
         return 0
@@ -176,14 +185,17 @@ def main() -> int:
     scopes = {unit["id"]: staged_paths(ROOT, unit) for unit in units}
     if mutation["source"] not in scopes[control_unit["id"]]:
         raise ValueError("negative-control source is outside its selected unit closure")
-    artifact = find_artifact(load_target_manifest(ROOT / "config/targets.toml"), manifest["artifact"])
-    target = parse_mz(read_verified_artifact(ROOT, artifact))
+    artifact, target, target_view = load_unit_target(context, manifest)
     work = (args.output or ROOT / ".analysis/unit-replays" / uuid.uuid4().hex).resolve()
     if work.exists():
         parser.error("cold replay requires a new output directory")
     work.relative_to((ROOT / ".analysis").resolve())
     work.mkdir(parents=True)
     (work / "exact-units.toml").write_bytes(manifest_bytes)
+    if target_view is not None:
+        freeze_target_view(context, work / "target-view")
+        if load_unit_target(context, manifest, cache=work / "target-view")[2] != target_view:
+            raise ValueError("decoded view changed while freezing it")
     with (ROOT / ".analysis/borland.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         tool = freeze_toolchain(ROOT, work / "toolchain-attestation.json")
@@ -201,7 +213,7 @@ def main() -> int:
         for index, members in enumerate(groups.values()):
             paths = set().union(*(scopes[unit["id"]] for unit in members))
             group = work / f"group-{index}"
-            rounds = [cold_round(group / label, inputs, members, paths=paths) for label in ("a", "b")]
+            rounds = [cold_round(group / label, inputs, members, paths=paths, binary=context.binary) for label in ("a", "b")]
             for unit in members:
                 comparisons = []
                 for producer in rounds:
@@ -212,12 +224,14 @@ def main() -> int:
                           "object_normalized_equal": len({obj["dependency_timestamp_normalized_sha256"] for obj in omfs}) == 1,
                           "omfs": omfs,
                           "producer_paths": [str(producer["source"].relative_to(work)) for producer in rounds]}
+                if context.name != "main" or "binary" in unit:
+                    result["compiler_arguments"] = [producer["compiler_arguments"][unit["id"]] for producer in rounds]
                 actual = required_input_paths(inputs, unit, result)
                 result["source_inputs"] = snapshot_paths(inputs, actual)
                 result["exact"] = result["object_normalized_equal"] and all(row["exact"] for row in comparisons)
                 results.append(result)
         negative = cold_round(work / "negative", inputs, [control_unit],
-                              paths=scopes[control_unit["id"]], mutation=mutation)
+                              paths=scopes[control_unit["id"]], mutation=mutation, binary=context.binary)
         negative_dependencies = required_input_paths(inputs, control_unit,
             {"omfs": [negative["omfs"][control_unit["id"]]]})
         positive_control = next(row for row in results if row["id"] == control_unit["id"])
@@ -230,6 +244,8 @@ def main() -> int:
                            "mutation": mutation, "control_sha256": entry_digest(mutation),
                            "producer_path": "negative/source", "comparison": control,
                            "omf": negative["omfs"][control_unit["id"]]}
+        if context.name != "main" or "binary" in control_unit:
+            negative_record["compiler_arguments"] = negative["compiler_arguments"][control_unit["id"]]
         # Source scanning stages a safe superset for conditional includes. Only
         # dependencies actually consumed by the cold producers remain frozen.
         used = {item["path"] for result in results for item in result["source_inputs"]}
@@ -246,6 +262,8 @@ def main() -> int:
                    "compiled_negative_control": control, "negative_control": negative_record,
                    "selected_units": [unit["id"] for unit in units],
                    "complete_executable_exact": False, "pass": accepted}
+        if target_view is not None:
+            receipt.update(artifact=context.artifact, target_view=target_view)
         live = tomllib.loads(manifest_path.read_text())
         current = {unit["id"]: unit for unit in live["units"]}
         for unit in units:
@@ -253,6 +271,9 @@ def main() -> int:
                 raise ValueError("selected unit configuration changed during replay")
         if mutation not in live.get("controls", []):
             raise ValueError("selected negative-control configuration changed during replay")
+        if context.name != "main" and (live.get("target_view") != manifest.get("target_view") or
+                                      load_unit_target(context, live)[2] != target_view):
+            raise ValueError("decoded target context changed during replay")
         validate_snapshot(ROOT, frozen)
         if static_toolchain(ROOT)[0] != tool["manifest_sha256"]:
             raise ValueError("toolchain configuration changed during replay")

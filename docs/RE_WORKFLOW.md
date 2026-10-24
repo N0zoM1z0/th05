@@ -18,3 +18,16 @@
 
 Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
 serial and Ghidra's heap bounded. Never modify the original HDI or executables.
+
+OP and MAINE use `--artifact op` / `--artifact maine` on replay and acceptance,
+with separate `exact_units.*.toml` and `accepted_units.*.json` files. Their
+retained decoded view is pinned by receipt and canonical proof hashes. Replay
+and acceptance verify original packed identity, decoded bytes, ordered fixups
+and historical two-load observations without running the decoder again. Public
+summaries verify the same pinned proof without requiring private game files.
+
+Default compiler binary contexts are M/O/E; a new unit may explicitly set
+`binary` for a genuine exception. MAINE's reference build mixes all three
+contexts, so follow its real producer rather than forcing every shared TU to E.
+`build_reference.py op` or `maine` builds only that artifact's calibration
+closure. Calibration and shape surveys are routing evidence with zero credit.

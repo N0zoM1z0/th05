@@ -13,11 +13,11 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **82 C++ functions / 14,159 authored code bytes** pass two cold
+The first **87 C++ functions / 15,778 authored code bytes** pass two cold
 builds, complete raw unit comparison, relocation checks and a compiled negative
-control. Their complete extents contain 14,175 bytes including sixteen excluded
-padding bytes. Authored code includes 276 bytes of compiler-generated switch
-tables, reproduced from semantic C++ switches; instruction bytes total 13,883.
+control. Their complete extents contain 15,794 bytes including sixteen excluded
+padding bytes. Authored code includes 296 bytes of compiler-generated switch
+tables, reproduced from semantic C++ switches; instruction bytes total 15,482.
 The oracle supplies explicit original external-symbol bindings; whole-program
 placement and standalone linkage remain open.
 
@@ -28,7 +28,10 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.
 `python3 scripts/replay_units.py --plan` shows the necessary work;
-`--units ID...` selects a bounded unit explicitly.
+`--units ID...` selects a bounded unit explicitly. Add `--artifact op` or
+`--artifact maine` for their independent configs and ledgers. These compare
+cached decoded load modules, preserving the observed relocation order;
+packed-file equality remains a separate claim.
 
 The standalone ZUN `-M` memory-check child also reproduces all **311 bytes**
 (142 code, 169 initialized data) from maintained semantic assembly. Its
@@ -84,6 +87,7 @@ provenance. Independent pristine-dump confirmation remains open.
 - [Current handoff](docs/RE_HANDOFF.md)
 - [Workflow](docs/RE_WORKFLOW.md)
 - [Exact oracle contract](docs/ORACLES.md)
+- [Borland reconstruction notes](docs/reconstruction/BORLAND_NOTES.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Progress](docs/PROGRESS.md)
 

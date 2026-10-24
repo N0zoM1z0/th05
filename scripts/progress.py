@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import tomllib
 from lib.unit_oracle import function_scoped
+from lib.unit_context import UnitContext, compiler_arguments, load_unit_target, validate_public_target_view
 
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, relative_path,
     compiler_dependencies, scoped_snapshot, validate_snapshot)
@@ -162,10 +163,11 @@ def replay_entries_for_accept(live: dict, frozen: dict, results: dict,
     return resolved
 
 
-def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
-    config = tomllib.loads((root / "config/exact_units.toml").read_text())
+def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_name: str = "main") -> dict:
+    context = UnitContext(root, artifact_name)
+    config = context.config()
     entries = {unit["id"]: unit for unit in config["units"]}
-    path = root / "config/accepted_units.json"
+    path = context.ledger
     acceptance = acceptance if acceptance is not None else json.loads(path.read_text()) if path.exists() else {"units": []}
     if acceptance["units"]:
         targets = tomllib.loads((root / "config/targets.toml").read_text())
@@ -175,12 +177,22 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
                 or acceptance["compiled_negative_rejected"] is not True):
             raise ValueError("target, toolchain or negative-control identity changed")
         validate_control(acceptance["compiled_negative_control"])
+    target_view = acceptance.get("target_view") if acceptance["units"] and artifact_name != "main" else None
+    if acceptance["units"] and artifact_name != "main":
+        validate_public_target_view(context, config, target_view, target["sha256"])
+        if acceptance.get("artifact") != context.artifact:
+            raise ValueError("decoded ledger comparison context changed")
     accepted, covered = [], []
     for item in acceptance["units"]:
         entry = entries[item["id"]]
         if item["entry_sha256"] != entry_digest(entry):
             raise ValueError(f"unit configuration changed: {entry['id']}")
         validate_result(entry, item["result"])
+        if target_view is not None and item.get("target_view") != target_view:
+            raise ValueError("accepted decoded unit belongs to a different comparison context")
+        if artifact_name != "main" or "binary" in entry:
+            if item["result"].get("compiler_arguments") != [compiler_arguments(entry, context.binary)] * 2:
+                raise ValueError("accepted producer binary arguments changed")
         # Legacy whole-tree captures are narrowed using their original OMF
         # dependencies. Unrelated maintained files are never freshness inputs.
         snapshots = scoped_snapshot(root, entry, item["result"], item["source_inputs"])
@@ -204,12 +216,33 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None) -> dict:
             "percentage": None, "authored_denominator": None}
 
 
+def summarize_all(root: Path = ROOT) -> dict:
+    summaries = {"main": summarize(root)}
+    for name in ("op", "maine"):
+        if UnitContext(root, name).manifest.exists():
+            summaries[name] = summarize(root, artifact_name=name)
+    combined = dict(summaries["main"])
+    for key in ("unit_count", "functions", "complete_extent_bytes", "authored_code_bytes", "code_data_bytes", "padding_bytes", "instruction_bytes"):
+        combined[key] = sum(summary[key] for summary in summaries.values())
+    combined["units"] = [{**unit, "artifact": name, "id": name + ":" + unit["id"]}
+                         for name, summary in summaries.items() for unit in summary["units"]]
+    combined["artifacts"] = summaries
+    return combined
+
+
 def render(summary: dict) -> tuple[str, str]:
     count, functions, instructions, extent = (summary[key] for key in
         ("unit_count", "functions", "instruction_bytes", "complete_extent_bytes"))
     authored = summary.get("authored_code_bytes", instructions)
     tables = summary.get("code_data_bytes", 0)
     padding = summary.get("padding_bytes", extent - authored)
+    scopes = summary.get("artifacts", {"main": summary})
+    rows = []
+    for name, label in (("main", "MAIN bounded C++ units"), ("op", "OP decoded C++ units"), ("maine", "MAINE decoded C++ units")):
+        scope = scopes.get(name, {})
+        rows.append("| " + label + " | " + " | ".join(str(scope.get(key, 0)) for key in
+                    ("functions", "authored_code_bytes", "instruction_bytes", "code_data_bytes", "complete_extent_bytes")) + " |")
+    scope_rows = "\n".join(rows)
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
@@ -217,9 +250,7 @@ complete authored ownership denominator remains under review.
 
 | Accepted scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | {functions} | {authored} | {instructions} | {tables} | {extent} |
-| OP | 0 | 0 | 0 | 0 | 0 |
-| MAINE | 0 | 0 | 0 | 0 | 0 |
+{scope_rows}
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
 {count} bounded C++ units pass two cold builds, raw bytes and ordered
@@ -234,6 +265,8 @@ raw-byte comparisons; classification supplies no byte-comparison exemption.
 Asset arrays are not compiler-switch-table metadata.
 These are bounded unit results; whole executable placement, standalone linkage
 and packed-file exactness are separate and remain unaccepted.
+OP/MAINE comparisons use their retained decoded load modules and original
+observed relocation order; they grant no packed-file exactness.
 
 The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub
@@ -266,7 +299,8 @@ def _saved_source(work: Path, relative: str) -> Path:
 
 
 def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
-                     target_sha: str, tool_sha: str, replay_sha: str, control: dict) -> dict:
+                     target_sha: str, tool_sha: str, replay_sha: str, control: dict,
+                     artifact_name: str = "main") -> dict:
     """Replace only imported IDs, preserving each earlier unit's original evidence."""
     replacements = {item["id"]: item for item in imported}
     if len(replacements) != len(imported):
@@ -274,7 +308,7 @@ def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
     if previous.get("units") and previous.get("target_sha256") != target_sha:
         raise ValueError("cannot merge prior unit evidence from a different target")
     units = []
-    entries = {entry["id"]: entry for entry in tomllib.loads((root / "config/exact_units.toml").read_text())["units"]}
+    entries = {entry["id"]: entry for entry in tomllib.loads(UnitContext(root, artifact_name).manifest.read_text())["units"]}
     for original in previous.get("units", []):
         if original["id"] in replacements:
             continue
@@ -293,7 +327,8 @@ def merge_acceptance(root: Path, previous: dict, imported: list[dict], *,
             "compiled_negative_control": control, "units": units}
 
 
-def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None) -> None:
+def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | None = None,
+           artifact_name: str = "main") -> None:
     """Recheck saved selected producers; no compilation or whole-cohort replay."""
     from lib.omf import describe_omf
     from lib.pc98 import parse_mz
@@ -301,17 +336,21 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
     from lib.unit_oracle import compare_mapped_unit
     from replay_units import mapped_control_comparison
     root = ROOT if root is None else root
+    context = UnitContext(root, artifact_name)
     receipt_path = receipt_path.resolve()
     work = receipt_path.parent
     receipt = json.loads(receipt_path.read_text())
-    config = tomllib.loads((root / "config/exact_units.toml").read_text())
+    config = context.config()
     entries = {entry["id"]: entry for entry in config["units"]}
     # A whole-manifest hash remains provenance, not a reason to invalidate
     # unrelated entries added after a completed replay.
     frozen_path = work / "exact-units.toml"
     if not frozen_path.is_file() or digest(frozen_path) != receipt["manifest_sha256"]:
         raise ValueError("frozen replay unit manifest disagrees with its receipt")
-    frozen_entries = {entry["id"]: entry for entry in tomllib.loads(frozen_path.read_text())["units"]}
+    frozen_config = tomllib.loads(frozen_path.read_text())
+    if frozen_config["artifact"] != context.artifact or frozen_config.get("target_view") != config.get("target_view"):
+        raise ValueError("frozen replay artifact or decoded-view pin changed")
+    frozen_entries = {entry["id"]: entry for entry in frozen_config["units"]}
     tool_path = work / "toolchain-attestation.json"
     if digest(tool_path) != receipt["toolchain_receipt_sha256"]:
         raise ValueError("frozen toolchain attestation digest disagrees")
@@ -332,10 +371,13 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
                 proof["original_full_receipt_sha256"] != receipt["toolchain_receipt_sha256"] or
                 proof["reused"] != receipt["toolchain_reused"]):
             raise ValueError("static context proof relabels a different executable probe report")
-    artifact = find_artifact(load_target_manifest(root / "config/targets.toml"), config["artifact"])
+    artifact, target, target_view = load_unit_target(context, config)
     if receipt["target_sha256"] != artifact["sha256"]:
         raise ValueError("replay target identity disagrees")
-    target = parse_mz(read_verified_artifact(root, artifact))
+    if target_view is not None:
+        if (receipt.get("artifact") != context.artifact or receipt.get("target_view") != target_view or
+                load_unit_target(context, config, cache=work / "target-view")[2] != target_view):
+            raise ValueError("saved decoded target comparison proof disagrees")
     results = {result["id"]: result for result in receipt["results"]}
     if not results or len(results) != len(receipt["results"]):
         raise ValueError("empty or duplicate replay result set")
@@ -391,6 +433,11 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
             raise ValueError("independent cold producer paths are required")
         for index, producer in enumerate(producers):
             source = _saved_source(work, producer)
+            if artifact_name != "main" or "binary" in entry:
+                expected = compiler_arguments(entry, context.binary)
+                recorded = json.loads((source / "compiler-arguments.json").read_text())
+                if result.get("compiler_arguments") != [expected] * 2 or recorded.get(entry["module"]) != expected:
+                    raise ValueError("saved actual compiler binary arguments disagree with the artifact context")
             candidate = parse_mz((source / "units.exe").read_bytes())
             if compare_mapped_unit(target, candidate, source / "units.map", entry) != result["rounds"][index]:
                 raise ValueError("saved raw target/candidate artifacts disagree with replay receipt")
@@ -414,7 +461,14 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
                              "toolchain_receipt_sha256": receipt["toolchain_receipt_sha256"],
                              "replay_receipt_sha256": digest(receipt_path),
                              "compiled_negative_control": control, "negative_control": negative})
+            if target_view is not None:
+                imported[-1]["target_view"] = target_view
     negative_source = _saved_source(work, negative["producer_path"])
+    if artifact_name != "main" or "binary" in control_entry:
+        expected = compiler_arguments(control_entry, context.binary)
+        recorded = json.loads((negative_source / "compiler-arguments.json").read_text())
+        if negative.get("compiler_arguments") != expected or recorded.get(control_entry["module"]) != expected:
+            raise ValueError("negative producer compiler binary arguments disagree")
     observed_control = mapped_control_comparison(target, parse_mz((negative_source / "units.exe").read_bytes()),
                                                  control_entry, negative_source / "units.map")
     if observed_control != control:
@@ -440,11 +494,15 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
         item["receipt_aggregate_pass"] = aggregate_pass
         if units is not None:
             item["receipt_selected_subset"] = sorted(selected)
-    acceptance_path = root / "config/accepted_units.json"
+    acceptance_path = context.ledger
     previous = json.loads(acceptance_path.read_text()) if acceptance_path.exists() else {"units": []}
     acceptance = merge_acceptance(root, previous, imported, target_sha=artifact["sha256"],
-                                  tool_sha=tool_sha, replay_sha=digest(receipt_path), control=control)
-    summarize(root, acceptance)
+                                  tool_sha=tool_sha, replay_sha=digest(receipt_path), control=control,
+                                  artifact_name=artifact_name)
+    if target_view is not None:
+        acceptance.update(artifact=context.artifact, target_view=target_view,
+                          scope="decoded load-module unit bytes and ordered fixups; packed file unaccepted")
+    summarize(root, acceptance, artifact_name=artifact_name)
     temporary = acceptance_path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(acceptance, indent=2) + "\n")
     temporary.replace(acceptance_path)
@@ -453,6 +511,7 @@ def accept(receipt_path: Path, *, root: Path | None = None, units: list[str] | N
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--accept", type=Path)
+    parser.add_argument("--artifact", choices=("main", "op", "maine"), default="main")
     parser.add_argument("--units", nargs="+", metavar="ID", help="explicit exact subset of --accept receipt")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--write", action="store_true")
@@ -461,8 +520,8 @@ def main() -> int:
     if args.units is not None and args.accept is None:
         parser.error("--units requires --accept")
     if args.accept:
-        accept(args.accept, units=args.units)
-    summary = summarize()
+        accept(args.accept, units=args.units, artifact_name=args.artifact)
+    summary = summarize_all()
     md, svg = render(summary)
     for name, content in (("docs/PROGRESS.md", md), ("resources/progress.svg", svg)):
         path = ROOT / name
