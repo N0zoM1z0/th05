@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "kind": "original-primary-source-master-circlefill-proposal",
+  "decision": "PROPOSAL",
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "base_proof_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
+  "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+  "start": 4110,
+  "size": 150,
+  "target_scope_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+  "primary_inputs": {
+    "GC_CIRCF.ASM": "e2147c9cd744ba51efbb82ac3ba119f0803462724f34a458f0ba06a3c8940e0b",
+    "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a"
+  },
+  "source_flags": [
+    "/mx",
+    "/t",
+    "/q",
+    "/w2",
+    "/jJUMPS",
+    "/DFARMODEL"
+  ],
+  "binding_inputs": {
+    "probes/units/circlefill_primary_before.asm": "d3b0dc2cdaefd46bbe35cf4126e1c7ead4fb351038fa42cdc073d7c531125096",
+    "probes/units/circlefill_primary_after.asm": "f17b86c309e38c8e01af091453c510253851b1c207a17e29664dc106951842b2"
+  },
+  "source_assembler_invocations": 3,
+  "binding_assembler_invocations": 6,
+  "linker_invocations": 3,
+  "source_transformations": [],
+  "first_positive_retained_after_its_successful_new_build": true,
+  "native_instruction_count": 77,
+  "instruction_nop_offsets": [],
+  "padding_bytes": 0,
+  "ordered_mz_fixups": [],
+  "negative_changed_offsets": [
+    19
+  ],
+  "rounds": [
+    {
+      "label": "a",
+      "path": ".analysis/vendor-review/circlefill-primary-first-a",
+      "observation": {
+        "comparison": {
+          "target_start": 4110,
+          "candidate_start": 4110,
+          "size": 150,
+          "target_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+          "candidate_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+          "raw_exact": true,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": true
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 150,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 150,
+              "sha256": "5b9d496e5813ffcc297cfe3157a2d5887a35bb605b902b422f7e056cdf064b93"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circf.obj": "71630edf59b338801168f60ee01c2c4137a19eb775ae086d49bb290544620140",
+          "before.obj": "7783bac6aa5fe0fa938b88a48c029943bcf1699c79afbc3f914c4e2140fa0149",
+          "after.obj": "5146b20b87a9da3e5f560d9a383d5199891ca9f0ee7696d940da85731d01ce81",
+          "units.map": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "units.exe": "c3d8e555f667f0c355ee5b94ffd1d5949d7a64a19bf42d751184db66c989248e"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "71630edf59b338801168f60ee01c2c4137a19eb775ae086d49bb290544620140",
+          "binding_metadata": {
+            "before": "31a96c200955613253e0f39aaaae7ace6db16eca5bf596e1cae626b1599ee2b7",
+            "after": "c451196dafaaa3d70545fb0b80d4411bff6ff1db636d5abad93c46a8c830326b"
+          },
+          "map_raw": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "mz_raw": "c3d8e555f667f0c355ee5b94ffd1d5949d7a64a19bf42d751184db66c989248e"
+        },
+        "input_hashes": {
+          "GC_CIRCF.ASM": "e2147c9cd744ba51efbb82ac3ba119f0803462724f34a458f0ba06a3c8940e0b",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "d3b0dc2cdaefd46bbe35cf4126e1c7ead4fb351038fa42cdc073d7c531125096",
+          "after.asm": "f17b86c309e38c8e01af091453c510253851b1c207a17e29664dc106951842b2",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "1911cacc35ef6e4a927dd257815b486b7a093e1347705c1c732cf1749473821f"
+        },
+        "commands_sha256": "b3a590684810fff51dd571442582d2d0f11caad25ed3de33cc3873ae96b87503"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    },
+    {
+      "label": "b",
+      "path": ".analysis/vendor-review/circlefill-primary-b",
+      "observation": {
+        "comparison": {
+          "target_start": 4110,
+          "candidate_start": 4110,
+          "size": 150,
+          "target_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+          "candidate_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+          "raw_exact": true,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": true
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 150,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 150,
+              "sha256": "5b9d496e5813ffcc297cfe3157a2d5887a35bb605b902b422f7e056cdf064b93"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circf.obj": "71630edf59b338801168f60ee01c2c4137a19eb775ae086d49bb290544620140",
+          "before.obj": "e4aa16594073647a031499498b8430c8565b362b1de2aabe30278e1bc7409b89",
+          "after.obj": "08afbf719e95a618a6ec96e7974beab78f7cd97a82f25b79426011874a29cd1c",
+          "units.map": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "units.exe": "c3d8e555f667f0c355ee5b94ffd1d5949d7a64a19bf42d751184db66c989248e"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "71630edf59b338801168f60ee01c2c4137a19eb775ae086d49bb290544620140",
+          "binding_metadata": {
+            "before": "31a96c200955613253e0f39aaaae7ace6db16eca5bf596e1cae626b1599ee2b7",
+            "after": "c451196dafaaa3d70545fb0b80d4411bff6ff1db636d5abad93c46a8c830326b"
+          },
+          "map_raw": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "mz_raw": "c3d8e555f667f0c355ee5b94ffd1d5949d7a64a19bf42d751184db66c989248e"
+        },
+        "input_hashes": {
+          "GC_CIRCF.ASM": "e2147c9cd744ba51efbb82ac3ba119f0803462724f34a458f0ba06a3c8940e0b",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "d3b0dc2cdaefd46bbe35cf4126e1c7ead4fb351038fa42cdc073d7c531125096",
+          "after.asm": "f17b86c309e38c8e01af091453c510253851b1c207a17e29664dc106951842b2",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "1911cacc35ef6e4a927dd257815b486b7a093e1347705c1c732cf1749473821f"
+        },
+        "commands_sha256": "b3a590684810fff51dd571442582d2d0f11caad25ed3de33cc3873ae96b87503"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    },
+    {
+      "label": "negative",
+      "path": ".analysis/vendor-review/circlefill-primary-negative",
+      "observation": {
+        "comparison": {
+          "target_start": 4110,
+          "candidate_start": 4110,
+          "size": 150,
+          "target_sha256": "b15c3ea64d3ecc0a30c173ccff95c138f0f9be7a816f1e4bdc020f1fc37583c5",
+          "candidate_sha256": "128764654de7cd59d0e4964222b8c1299cfca0cfc974f111f8ea4960300b4146",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 150,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 150,
+              "sha256": "9d4cc0a1c25a8cbcc34a03e303ed5420ad60606c87e8d056dfb1f35a1ffda5db"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circf.obj": "058a00503735dc3596cec4c5b5cadc53e7637746137f27dd99c10ef7f0762cbb",
+          "before.obj": "0b3421991ce970a2a0d9176e3ba13d23cc0bac4898afd4973c2ac340f1b263e9",
+          "after.obj": "3f35c10ea77612509460bc6a294df68e8e6b9d364d34e975217f6a7506c69ac8",
+          "units.map": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "units.exe": "0e984b28e4d6650c724496f9b63634d8f9537d64d7573035a211e9f0ee410def"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "058a00503735dc3596cec4c5b5cadc53e7637746137f27dd99c10ef7f0762cbb",
+          "binding_metadata": {
+            "before": "31a96c200955613253e0f39aaaae7ace6db16eca5bf596e1cae626b1599ee2b7",
+            "after": "c451196dafaaa3d70545fb0b80d4411bff6ff1db636d5abad93c46a8c830326b"
+          },
+          "map_raw": "94ded41b187f94ef8889dbbbac82391c9abbaa0bc1b767f1647ff306e3895ffb",
+          "mz_raw": "0e984b28e4d6650c724496f9b63634d8f9537d64d7573035a211e9f0ee410def"
+        },
+        "input_hashes": {
+          "GC_CIRCF.ASM": "376664fcdb470475468b5a30b66d22ffff512fd0a628dbcba245250653a94bf5",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "d3b0dc2cdaefd46bbe35cf4126e1c7ead4fb351038fa42cdc073d7c531125096",
+          "after.asm": "f17b86c309e38c8e01af091453c510253851b1c207a17e29664dc106951842b2",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "1911cacc35ef6e4a927dd257815b486b7a093e1347705c1c732cf1749473821f"
+        },
+        "commands_sha256": "b3a590684810fff51dd571442582d2d0f11caad25ed3de33cc3873ae96b87503"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    }
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_primary_circlefill.py",
+      "sha256": "e258f9e6c541339502abb809a94f47f9da506832a010a9bc55a1645a8faffe9d"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    },
+    {
+      "file": "scripts/lib/unit_oracle.py",
+      "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+    },
+    {
+      "file": "scripts/lib/replay_toolchain.py",
+      "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+    },
+    {
+      "file": "scripts/lib/toolchain.py",
+      "sha256": "7c668ef88059f313a2d0fc62d9601324480d210839610c7d02f17ef245dd95b9"
+    },
+    {
+      "file": "scripts/lib/reference_build.py",
+      "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+    }
+  ],
+  "limitations": "One original primary GC_CIRCF module only, .186 / MODEL SMALL / FAR macros unchanged. Not a reconstructed historical game project or distribution. Other circle procedures and their DS/BSS differences remain unknown. Raw original object/MAP/MZ deterministic; only dependency timestamps in empty binding-object metadata are normalized for identity, retaining raw hashes. No authored credit, linked-byte/fixup normalization or whole executable equality."
+}

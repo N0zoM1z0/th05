@@ -18,10 +18,83 @@ Separately reviewed ASM now contributes **6,169 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,531
 complete compared bytes include 64 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,854 bytes. The global denominator is still unreviewed;
+ownership is now 132,704 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted ASM: complete MPN tile wrapper and plane worker
+## Latest ownership: unchanged original Master circle fill
+
+Only GRCG_CIRCLEFILL at MAIN 100E..10A4 now classifies 150 unknown bytes as
+vendor CODE, with zero authored credit. The complete original GC_CIRCF.ASM
+and FUNC.INC are consumed byte-identically, including private names, unsized
+PUSHs, CP932 comments and line endings. Original .186/.MODEL SMALL/.CODE and
+author /DFARMODEL command flags produce the correct FAR code context.
+No candidate renames, word-pointer insertion or byte normalization is used.
+See [the original-source review](reconstruction/MASTER_PRIMARY_CIRCLEFILL_VENDOR_REVIEW.md).
+
+Both actual independent primary OMF objects contain 150 CODE bytes and are byte-identical;
+their MAP and whole MZ outputs also agree. Full linked bytes match native,
+with 77 instructions, no NOP/table/padding/DATA/BSS and empty ordered MZ fixups.
+Five real self-relative16 EXTDEF fields resolve the actual FAR helpers in
+common _TEXT/CS0000. The own staged initial Y-offset change from 0 to 1 affects
+only relative 19, retains 150 bytes and empty fixups, and is rejected.
+
+The first new producer is retained after source/tool/argv/log verification;
+only the second and negative are subsequently compiled. Total source
+assemblies 3, payload-free binder assemblies 6 and links 3. Reader-only quiet
+OMF-profile and binder dependency-timestamp checks were corrected without
+rebuilding or changing source/options. Raw own-object/MAP/MZ identity is exact;
+only empty binder metadata timestamps use the existing identity check, with
+raw hashes retained. Historical game project/distribution and original game
+assembler are unproved. Other five circle procedures and their DATA/BSS
+blockers remain unknown; older literal/EGC/EMS proofs stay byte-identical.
+
+Proof: `config/master_primary_circlefill_ownership.json`, SHA-256
+`cd2a9788b616e86dc56ecace36357f05538cbf2bbddef767e4017bd5569ffa78`.
+Separate explicit decision: `config/reviewed_master_primary_circlefill.json`.
+New source/gate/actual review:
+`.analysis/vendor-review/circlefill-primary-source-gate-independent-review.json`,
+SHA-256 `df1b36d73df04af4083a1f134326f7efed9040f251150e09e9013d2ef7b2cfff`.
+Its test-fixture issue is resolved in the tests-only addendum:
+`.analysis/vendor-review/circlefill-primary-final-tests-addendum.json`, SHA-256
+`ba973e87ff3a6ad52af70601e74081a756e6b37b498c0b036020f4dabed7d3be`.
+
+Vendor CODE grows 69380 to 69530; unknown decreases 132854 to 132704
+(MAIN 53144 to 52994). C/C++ stays 98451 and reviewed ASM 6169 instructions;
+all initialized DATA, resource/padding counts and the null denominator remain.
+
+Final independent adoption audit:
+`.analysis/vendor-review/circlefill-primary-final-adoption-independent-review.json`,
+SHA-256 `74bb2f17a7208bdcce46b32ff5860ff308123291ec6871e8a5ab6664afaaaeb6`.
+All 51 prior tracked configuration files and the other three artifact views
+are unchanged. Full CI passes 352 tests; all four C/C++ incremental plans
+and the ASM plan are empty. Ownership target verification, generated progress,
+public structural checks and diff checks pass. Root final review:
+`.analysis/vendor-review/circlefill-primary-root-final-review.json`, SHA-256
+`2ae1b23bdc03d06ce64e864701ad5385fa0223f6941fd35fafdf5ed7e69b3bdb`.
+
+## New bounded C++: MPN upload remains inexact
+
+One ordinary upload source now implements the real four-column/25-row cache
+on page 1 then page 0, with the canonical int near Pascal/far-filename API,
+true far _TEXT providers and ordinary C++ counters. First valid producer
+is 94 versus native 69, with different ordered fixups and loop allocation.
+The extent gate stops before a second/control. Initial binder setup lacked
+CS ASSUME and stopped before C++ compilation; only that genuine context was
+corrected. No source/flag/type/register variants or ASM promotion follow.
+Failed manifests are private and excluded from default plans; no accepted
+MPN renderer source/object identity changes. See [candidate notes](../src/main/formats/mpn_upload.md).
+
+A challenged inner-loader origin inference was withdrawn: raw DOS, BX stack
+access, DS swaps and SI/DI locals do not prove ASM under existing STD/MAP
+policy. The 92-byte inner loader, 23-byte release and 69-byte upload stay unknown.
+Corrective report: `.analysis/mpn-load-inner-origin-challenge-review.json`,
+SHA-256 `94dad4a514c5f193341b2eed459d99fa27f2efc268401fcb5e73f86eff0b88c7`.
+Actual first C++ review: `.analysis/mpn-upload-natural-first-independent-review.json`,
+SHA-256 `1eab9c38e39791578e9d3adef1f849696f9227d53c4d756a8a4504401fb3049e`.
+Root first review: `.analysis/mpn-upload-natural-first-root-review.json`, SHA-256
+`2e7967146c5933f5a99e895c464bd45a3c181cdd996336a65af116a7ec6f4908`.
+
+## Previous accepted ASM: complete MPN tile wrapper and plane worker
 
 MAIN 4226..4282 now adds 91 reviewed ASM instruction bytes from one complete
 92-byte family. It contains a real far Pascal wrapper (three words, RETF6),
