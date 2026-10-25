@@ -52,6 +52,11 @@ foreign storage addresses, compiler options and linker layout are preserved.
 `maine-verdict-full-family-c` contains two fresh deterministic actual producers
 and the compiled completion-clamp46000-to-46001 control. All3384 raw bytes and
 all50 original relocation sites in literal order match; the control is rejected.
+The actual c OMF LEDATA ends are1018,2040,3062,3384 (record sizes
+1018/1022/1022/322), identical in both positives and the negative. Animation's
+observed local record cut is44; earlier speculative cuts are not producer
+evidence. These actual records reproduce the original order without proving
+the original compiler's historical chunk boundaries.
 Failed a/b receipts remain unchanged. The whole-family trial is never imported
 as additional coverage. `maine-verdict-full-scopes-c` revalidates those intact
 MZ/MAP/OMF producers and projects ten complete function records with zero

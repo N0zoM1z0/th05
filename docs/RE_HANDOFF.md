@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **280 bounded C/C++ CODE/DATA units / 475 complete function occurrences**,
-**90,542 authored bytes exact**: 78,874 CODE and 11,668 initialized DATA.
-CODE is 78,182 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 90,618; 76 checked padding bytes receive
+Current acceptance: **281 bounded C/C++ CODE/DATA units / 479 complete function occurrences**,
+**91,025 authored bytes exact**: 79,357 CODE and 11,668 initialized DATA.
+CODE is 78,665 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 91,101; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 2,959 DATA;
-OP 61 / 11,218 / 8,615; MAINE 44 / 7,354 / 94.
+OP 61 / 11,218 / 8,615; MAINE 48 / 7,837 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1262,3 +1262,14 @@ guarded header selectors retain their standalone context. The new ten-body
 context is genuine coherent source, not a claim of historical originalTU.
 No core/projection contract, filler, byte patch or fixup normalization changed.
 See `src/maine/verdict/full.md`. The isolated worktree and a/b/c evidence remain.
+
+## MAINE orb particles and opening camera
+
+`maine-staff-orb-opening-a` adds483 instruction bytes/four complete functions
+atD853..DA36: orb spark99, trailshift63, spriteaging/orbgrowth60 and opening
+camera/window261. Two fresh producers, original orderedfixups[62,27] and
+spark-speed3-to-4 sharedCODEcontrol pass, with zeroNOP/table/padding. No
+independent per-function negatives are claimed. Existing lifecycle.hpp/staff.hpp
+and all accepted inputs remain unchanged. Complete20-byte particles/65-object
+pool, canonicalbackpagebyte, actual near-outputvector2_at and trueintAX return
+are retained. The preceding626-byte lifecycleupdater remains unaccepted.

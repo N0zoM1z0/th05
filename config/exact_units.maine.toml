@@ -637,3 +637,22 @@ unit = "maine-verdict-main"
 source = "src/maine/verdict/body/verdict_main.inl"
 find = "resident->std_frames = 46000;"
 replace = "resident->std_frames = 46001;"
+
+[[units]]
+id = "maine-staff-orb-opening"
+source = "src/maine/staff/orb_opening.cpp"
+module = "th05/stforb.cpp"
+segment = "STAFF_TRAIL_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 55379
+size = 483
+alignment_offsets = []
+functions = 4
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_staff_orb_opening_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-orb-opening"
+source = "src/maine/staff/orb_opening.cpp"
+find = "p->speed.v = 3 * 16;"
+replace = "p->speed.v = 4 * 16;"
