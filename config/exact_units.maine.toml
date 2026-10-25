@@ -807,3 +807,68 @@ unit = "maine-staff-image-b"
 source = "src/maine/staff/body/staff_image_update_b.inl"
 find = "(image->pixel_w / 16) + 7;"
 replace = "(image->pixel_w / 16) + 8;"
+
+[[units]]
+id = "maine-allcast-line"
+source = "src/maine/allcast/lines.cpp"
+module = "th05/al_line.cpp"
+segment = "ALLCAST_LINES_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 45493
+size = 190
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_allcast_lines_bindings.asm"
+
+[[controls]]
+unit = "maine-allcast-line"
+source = "src/maine/allcast/lines.cpp"
+find = "ALLCAST_LINE_LEFT = 64"
+replace = "ALLCAST_LINE_LEFT = 65"
+
+[[units]]
+id = "maine-allcast-credits-data"
+source = "src/maine/allcast/credits_data.cpp"
+module = "th05/ac_text.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+target_start = 68374
+size = 2787
+alignment_offsets = []
+padding_bytes = []
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+bindings_source = "probes/units/maine_allcast_credits_data_bindings.asm"
+
+[[controls]]
+unit = "maine-allcast-credits-data"
+source = "src/maine/allcast/credits_data.cpp"
+find = "Project of TOUHOU"
+replace = "Project of TOUHOX"
+
+[[units]]
+id = "maine-allcast-lines-data"
+source = "src/maine/allcast/line_table.cpp"
+module = "th05/ac_lines.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+target_start = 67888
+size = 202
+alignment_offsets = []
+padding_bytes = []
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers", "semantic-tables"]
+bindings_source = "probes/units/maine_allcast_line_table_bindings.asm"
+
+[[controls]]
+unit = "maine-allcast-lines-data"
+source = "src/maine/allcast/line_table.cpp"
+find = "    allcast_project,\n    allcast_th01_title,"
+replace = "    allcast_th01_title,\n    allcast_project,"

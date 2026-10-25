@@ -3985,3 +3985,41 @@ unit = "main-item-miss-velocity-data"
 source = "src/main/item/miss_velocity_data.cpp"
 find = "{ 3 * ITEM_DROP_SUBPIXELS_PER_PIXEL }"
 replace = "{ 4 * ITEM_DROP_SUBPIXELS_PER_PIXEL }"
+
+[[units]]
+id = "main-shots-invalidate"
+source = "src/main/player/shot_invalidate.cpp"
+module = "th05/shot_inv.cpp"
+segment = "SHOT_INVALIDATE_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/shot_invalidate_bindings.asm"
+target_start = 78717
+size = 94
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-shots-invalidate"
+source = "src/main/player/shot_invalidate.cpp"
+find = "tile_invalidate_box.x = 16;"
+replace = "tile_invalidate_box.x = 15;"
+
+[[units]]
+id = "main-ending-dispatch"
+source = "src/main/end/dispatch.cpp"
+module = "th05/end_disp.cpp"
+segment = "END_DISPATCH_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/ending_dispatch_bindings.asm"
+target_start = 55070
+size = 94
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = [49, 87]
+
+[[controls]]
+unit = "main-ending-dispatch"
+source = "src/main/end/dispatch.cpp"
+find = "if(continues_used != 0)"
+replace = "if(continues_used == 0)"

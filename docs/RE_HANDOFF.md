@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **291 bounded C/C++ CODE/DATA units / 485 complete function occurrences**,
-**92,638 authored bytes exact**: 80,910 CODE and 11,728 initialized DATA.
-CODE is 80,218 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 92,714; 76 checked padding bytes receive
-no credit. MAIN has 370 functions / 60,302 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 54 / 9,390 / 94.
+Current acceptance: **296 bounded C/C++ CODE/DATA units / 489 complete function occurrences**,
+**96,003 authored bytes exact**: 81,286 CODE and 14,717 initialized DATA.
+CODE is 80,594 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 96,081; 78 checked padding bytes receive
+no credit. MAIN has 373 functions / 60,488 CODE / 3,019 DATA;
+OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,083.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1391,3 +1391,51 @@ with nosecond/negative ordefaultentry. a1001 andb991 snapshotsstayimmutable.
 Currentcumulativeacceptance is92638 authoredbytes/485completefunctions/291
 boundedunits. Fullstaffdirect8+threeoldstandalonegroups wereatomicimported;
 no unrelatedunit wascoldreplayed. Globaldenominator remainsunreviewed.
+
+## Shot invalidation, ending dispatch and complete all-cast text
+
+The focused MAIN receipts `main-shots-invalidate-a` and
+`main-ending-dispatch-a` add94 and92 authored instruction bytes respectively.
+The first owns one complete94-byte function with no relocations or padding;
+the second owns two complete functions and compares94 bytes including two
+zero-credit linker relaxation NOPs at49/87. Both pass two fresh producers,
+complete OMF/MAP and raw/original ordered-fixup checks, and meaningful compiled
+controls. Canonical Shot18/hitshot14 pools, full Resident128 and true Pascal
+interfaces remain intact. No accepted shared header changed.
+
+`maine-allcast-line-b` adds the complete190-byte line animation. The initial
+a producer stopped at193 because an enum-cast assignment generated a load,
+decrement and store. The one correction is ordinary direct enum decrement,
+supported by pinned Turbo C++4.02 with its normal unsuppressed warning. The
+full canonical word enum and named7-to3 transitions remain. The genuine seven
+counts begin at08DC; indexing `loaded_screen_id - 1` naturally folds to the
+original operand without an invented overlapping dummy at08DA. Two fresh
+positives and the line64-to65 compiled negative pass.
+
+All-cast initialized DATA now owns47 separate readable text arrays at
+10B16..115F9 (2787 bytes), plus47 far pointers and seven true word counts at
+10930..109FA (202 bytes). Each DATA owner has two fresh complete producers
+and its own compiled mutation. CP932 source staging preserves every byte;
+there are no opaque assets, filler, padding or numeric pointer initializers.
+The pointer table retains all47 original descending MZ sites186..2 literally.
+
+Text-a failed at2263 bytes: the compiler merged nine repeated const arrays,
+removing524 bytes. Const definition qualification had only been inferred from
+consumer reads; original writable DATA has47 distinct physical objects. The
+new definitions/declarations are ordinary mutable byte arrays, while LINES
+and the drawing interface retain const pointees. No aggregate, pooling flag
+or output patch was introduced. `maine-allcast-credits-data-b` and the
+necessary202-byte header-closure refresh `maine-allcast-lines-data-b` pass
+and are imported atomically. The earlier pointer-a pass is preserved but
+superseded. Historical original declarations and TU identity remain unknown.
+
+New maintained bitmap capture/restore and B4-ball updater sources remain
+unaccepted. One actual bitmap producer emits211 versus126 bytes; static
+analysis verifies real far-pointer DS/ES transfers,352 rows and40/80 strides,
+without claiming runtime verification or exact original placement. The B4
+producer emits296 versus273: its true Point AX/DX return and RET2 ABI are
+correct;23 extra bytes are ordinary spill/comparison/branch lowering. Its new
+binder's independent BulletTemplate base error5780-to577E is corrected,
+with original failed artifacts frozen and no second compile. Both candidates
+stay outside the default manifest; no bytes are credited. Per-owner notes
+retain the full diagnostic limitations.
