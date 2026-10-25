@@ -13,15 +13,71 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,078 instruction bytes,
+Separately reviewed ASM now contributes **6,169 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 6,439
-complete compared bytes include 63 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 6,531
+complete compared bytes include 64 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,946 bytes. The global denominator is still unreviewed;
+ownership is now 132,854 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest ownership: complete Master EMS read/write wrappers
+## Latest accepted ASM: complete MPN tile wrapper and plane worker
+
+MAIN 4226..4282 now adds 91 reviewed ASM instruction bytes from one complete
+92-byte family. It contains a real far Pascal wrapper (three words, RETF6),
+one zero-credit EVEN NOP at relative 75 and a private near row worker at 76.
+Both fresh independent producers match all original raw bytes and empty
+ordered MZ fixups. The own negative changes the row count from 16 to 15,
+retains the complete scope and changes only relative 79/89/90; it is rejected.
+See [the full source/ABI/origin review](../src/main/formats/mpn_render.md).
+
+The original BX stack capture, selective DS/SI/DI saves and private AX-plane,
+DS:SI-cursor, DI-origin protocol across four plane calls support inferred
+original handwritten ASM. CS is 0000; DATA is 209D, with genuine external
+WORD segment/limit globals at 3068/306A. No count narrowing, clipping, wrap guard,
+graphics-mode setup, image/palette payload, loader/free/upload code or following
+Master PFINT21 bytes are supplied. The maintained TH04 donor is architectural
+evidence only. Bounded primary vendor review notes OVERPUT8 similarities,
+but finds no extensive matching derivative body; historical source/assembler
+and exhaustive vendor ancestry remain unproved. Tiny16 stays mixed/unknown.
+
+Only `.analysis/asm-replays/main-mpn-render-a/receipt.json`, SHA-256
+`1967ff58c3bb2510e1104373918dfb60e4f5eb0a01ba956216ea5b4bcc15eb8d`,
+is imported and explicitly adopted. Both actual complete _TEXT contributions
+have one ordinary 92-byte LEDATA and correct 0000:4226/public 0/76/92/DGROUP209D
+contexts. Actual source/argv/OMF/MAP/MZ and the two real external offset fixups
+are checked; no linked byte or original relocation order is normalized.
+The genuine near worker call is explicit before the first producer. No code
+variants or failed compiler attempts were needed. Installed execution probes
+and all older accepted units are reused after their identity checks.
+
+The independent native row-address model passes 60 generated-data cases,
+including four planes, zero copies, inclusive/full-WORD limits, unsigned
+rejection, 16-bit source-offset wrap and far/private ABI state. It proves those
+cases at valid coordinates, not broad argument safety. New ASM totals are
+6169 instructions/210 dispatch/24 semantic CODE/64 DATA; 6531 complete bytes
+compare with 64 uncredited. C/C++ stays 98451 authored bytes. Global unknown
+decreases 132946 to 132854 (MAIN 53236 to 53144); vendor/DATA/resource totals
+and the global null denominator remain unchanged.
+
+Independent actual review: `.analysis/mpn-render-actual-replay-independent-review.json`,
+SHA-256 `50c3994de4fc69e5e025b6a8fab7f8817368c62a51c653b4520609d2f271fdd6`.
+All 343 CI tests, native target ownership checks, generated progress and diff
+checks pass. Four C/C++ plans and the ASM plan are empty. The 24 older ASM
+records/descriptors/decisions and four C/C++ ledgers remain unchanged.
+Independent final adoption review:
+`.analysis/mpn-render-final-adoption-independent-review.json`, SHA-256
+`e1b26b51b61c00282a6f68656a74930eccbcfea485ae368aa3591cc6b989ff15`.
+Root final review: `.analysis/mpn-render-root-final-review.json`, SHA-256
+`11deb6f0fc519bcf4b97ab0cec00b5c4e9a0e6b7ec528a24456eb37cbe104c3f`.
+
+A current-ledger routing check confirms enemy STD89/update576 are already
+accepted by `main-enemy-samecodeseg-a`; older parked descriptions are history,
+not candidates to recompile. Bounded review:
+`.analysis/enemy-lifecycle-current-context-routing-review.json`, SHA-256
+`66c31048162b34cd2fc52dce6e6a9936d5dcfd2ef03bd4a2a8d42f24c37e4657`.
+
+## Previous ownership: complete Master EMS read/write wrappers
 
 Two complete native MAIN procedures now classify 196 previously unknown bytes
 as vendor CODE: EMS_READ 3F6A..3FCC and EMS_WRITE 406C..40CE, 98 bytes each.

@@ -855,3 +855,34 @@ kind = "alignment"
 offset = 259
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-mpn-render"
+artifact = "main"
+source = "src/main/formats/mpn_render.asm"
+types = "src/main/formats/mpn_render_types.inc"
+symbols = "probes/units/mpn_render_symbols.inc"
+bindings = "probes/units/mpn_render_bindings.asm"
+notes = "src/main/formats/mpn_render.md"
+target_start = 0x4226
+size = 92
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "5815ea4283e3fcc309d5075b6c1000534bbcb4d9b18d83eff9808bb77c678f71"
+target_scope_sha256 = "ffe7a3e58e7b2da61d74286021ec8ac6cf83c0c58c83702ad6e2fafc4a91b58c"
+semantic_inputs = []
+[units.publics]
+"MPN_PUT" = 0
+"mpn_copy_plane" = 76
+"mpn_render_end" = 92
+[units.negative]
+find = "MPN_ROWS equ MPN_TILE_H"
+replace = "MPN_ROWS equ (MPN_TILE_H - 1)"
+[[units.uncredited]]
+offset = 75
+size = 1
+kind = "alignment"
