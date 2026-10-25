@@ -18,10 +18,59 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 134,450 bytes. The global denominator is still unreviewed;
+ownership is now 133,402 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: OP and MAINE complete BGM waits
+## Latest ownership: four source-backed Master EGC shifts, zero authored credit
+
+Four complete native MAIN procedures08AA..0CC2 now classify1048 previously
+unknown bytes as vendor CODE. Whole original/linked/raw OMF bytes and empty
+ordered MZ fixup lists agree. All11 instruction NOPs are active-listing EVEN
+padding, with zero authored credit; the other1037 bytes are likewise vendor,
+not authored reconstruction. Each native procedure ends in RETF10.
+See [the review](reconstruction/MASTER_EGC_SHIFTS_VENDOR_REVIEW.md).
+
+Primary author archive bodies differ only in seven enumerated private label/
+self-patch-symbol names per procedure. The new separate additive verifier
+requires an exact bijection, private definitions/references, and literal body
+equality after ONLY those substitutions. Instructions/data/constants/comments/
+whitespace/case are untouched. Inherited source/macro/large-FAR model evidence,
+actual listing/OMF/MAP/link and every native byte are rechecked. Secondary
+NEAR-model library objects do not match and supply no binary-member claim.
+No compiler/assembler/Ghidra invocation, byte normalization, rewritten FIXUPP,
+new executable acceptance or authored-byte credit occurs.
+
+The original literal-source Master proof, its20 adopted procedures and all
+40 textual-mismatch records remain unchanged. A separate explicit decision adopts only
+these four source-backed procedures. Old C/C++/ASM/vendor sources and ledgers
+stay byte-identical. Vendor CODE grows68,136 to69,184; global unknown decreases
+134,450 to133,402 (MAIN54,740 to53,692). C/C++ remains98,451 authored bytes;
+all DATA/resource/padding counts and the null global denominator are unchanged.
+
+New8 focused guard tests,334-test CI, native source/OMF/raw checks and target
+ownership verification pass. All four incremental plans are empty; no accepted
+source unit or installed execution probe is rebuilt. Final adoption review:
+`.analysis/vendor-review/egc-shifts-final-adoption-review.json`, SHA-256
+`248622280bd54aaaeb187b66a4c51aa7cab9befee1dba63beefbfab4b8ef1252`.
+Root final review: `.analysis/master-egc-shifts-root-final-review.json`, SHA-256
+`c1392b6614b544e674142106b20049232b312f533a08029d4240b75cb7aff48b`.
+
+Independent source/native review:
+`.analysis/vendor-review/egc-shifts-source-native-independent-review.json`,
+SHA-256 `f0b649c17748b42276a2f0a3c171d873509d687b56eba4d5ac047a4492f58c04`.
+Independent new-gate review:
+`.analysis/vendor-review/egc-shifts-additive-gate-independent-review.json`,
+SHA-256 `7eea2ec4190f2a0aaca81e6e818b024730bbc70c7fbe9c0965aa862040a54034`.
+
+Two bounded new high-level item experiments fail their first whole-size gates:
+standard memset intrinsic initializer24 versus26, and natural fastcall ES dot
+writer42 versus28. Neither reaches a second producer or negative, and neither
+is accepted or promoted to ASM. Failed manifests remain private and out of
+incremental plans. See [candidate notes](../src/main/item/initialization_and_dot_candidates.md).
+No unchanged intrinsic/register/type/flag variants should be repeated without
+new evidence.
+
+## Previous accepted C++: OP and MAINE complete BGM waits
 
 Two complete far Pascal wait functions at decoded OP E0F1..E113 and MAINE
 F265..F287 now add33 authored instruction bytes each. Each full34-byte scope

@@ -90,3 +90,7 @@ in two complete functions. They reuse the canonical20-byte item and10-byte splas
 records and real graphics APIs. Old spawn/update/invalidation inputs remain
 unchanged. Splash initialization and the parked item collection/update functions
 receive no credit through this renderer acceptance.
+
+The later [initializer and dot experiments](initialization_and_dot_candidates.md)
+retain honest first-producer negatives. Their26/28 native bytes remain unknown;
+neither gives new exact credit or changes the accepted renderer's foreign ABI.

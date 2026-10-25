@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "kind": "source-backed-master-egc-shift-proposal",
+  "decision": "PROPOSAL",
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "compiler_invocations": 0,
+  "base_proof_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
+  "full_bytes": 1048,
+  "padding_bytes": 11,
+  "nonpadding_bytes": 1037,
+  "procedures": [
+    {
+      "name": "EGC_SHIFT_DOWN",
+      "start": 2218,
+      "end": 2480,
+      "size": 262,
+      "candidate_file": "libs/master.lib/egc_shift_down.asm",
+      "candidate_lines": [
+        45,
+        184
+      ],
+      "upstream_file": "EGCSFTD.ASM",
+      "upstream_lines": [
+        51,
+        190
+      ],
+      "upstream_block_sha256": "bd0304f817b102d1079c54795debc5264fe9019c11d69c6c485877a4f94f0ccf",
+      "candidate_block_sha256": "b58fc34695656dbe11eb52ac5343b9081dca52521c60d03c4b289c810c1f2677",
+      "renames": {
+        "none": "@@none",
+        "less": "@@less",
+        "plus": "@@plus",
+        "next_line": "@@next_line",
+        "diff": "egcsftd_diff",
+        "sub_si": "egcsftd_sub_si",
+        "sub_di": "egcsftd_sub_di"
+      },
+      "rename_occurrences": {
+        "none": 4,
+        "less": 2,
+        "plus": 2,
+        "next_line": 2,
+        "diff": 2,
+        "sub_si": 2,
+        "sub_di": 2
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 5161,
+      "end_listing_line": 5313,
+      "padding": [
+        {
+          "start": 2333,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5226
+        },
+        {
+          "start": 2339,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5231
+        },
+        {
+          "start": 2435,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5282
+        }
+      ],
+      "linked_sha256": "7d0a517689eb551b5c1a310db68ccdf77fda7aaae7d13fd7d0c8279e6b9b7123",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [
+        {
+          "offset": 30,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 140,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 144,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        }
+      ],
+      "instruction_count": 126,
+      "instruction_nop_offsets": [
+        115,
+        121,
+        217
+      ],
+      "return_kind": "retf",
+      "return_cleanup": 10,
+      "return_offset": 259
+    },
+    {
+      "name": "EGC_SHIFT_LEFT",
+      "start": 2480,
+      "end": 2738,
+      "size": 258,
+      "candidate_file": "libs/master.lib/egc_shift_left.asm",
+      "candidate_lines": [
+        43,
+        182
+      ],
+      "upstream_file": "EGCSFTL.ASM",
+      "upstream_lines": [
+        49,
+        188
+      ],
+      "upstream_block_sha256": "e81b5c5831951244945a9a2a174f8ce265305d25c028ac1e93f85e4bdcd80d0b",
+      "candidate_block_sha256": "1238f45e589260bfc37e066bf0ab14bd7af3d9fb7a7e38ecb6a6b5018d7d0b6d",
+      "renames": {
+        "none": "@@none",
+        "less": "@@less",
+        "plus": "@@plus",
+        "next_line": "@@next_line",
+        "start_di": "egcsftl_start_di",
+        "add_si": "egcsftl_add_si",
+        "add_di": "egcsftl_add_di"
+      },
+      "rename_occurrences": {
+        "none": 4,
+        "less": 2,
+        "plus": 2,
+        "next_line": 2,
+        "start_di": 2,
+        "add_si": 2,
+        "add_di": 2
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 5367,
+      "end_listing_line": 5520,
+      "padding": [
+        {
+          "start": 2599,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5438
+        },
+        {
+          "start": 2737,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5519
+        }
+      ],
+      "linked_sha256": "0765c5530bb8fc827d6e9e1e5f846bf007c2ae138eb9ce4453fcc1f77a8759da",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [
+        {
+          "offset": 31,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 140,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 144,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        }
+      ],
+      "instruction_count": 125,
+      "instruction_nop_offsets": [
+        119,
+        257
+      ],
+      "return_kind": "retf",
+      "return_cleanup": 10,
+      "return_offset": 254
+    },
+    {
+      "name": "EGC_SHIFT_RIGHT",
+      "start": 2738,
+      "end": 3010,
+      "size": 272,
+      "candidate_file": "libs/master.lib/egc_shift_right.asm",
+      "candidate_lines": [
+        45,
+        192
+      ],
+      "upstream_file": "EGCSFTR.ASM",
+      "upstream_lines": [
+        51,
+        198
+      ],
+      "upstream_block_sha256": "49c1067054dd8b53fc3bc7eaf64f08a229e6c0af34eba97a2e3f7dbc0818e4d7",
+      "candidate_block_sha256": "4074afc43a8df2245e3445950e5098c10a379338b5934fce5560be952ef0917a",
+      "renames": {
+        "none": "@@none",
+        "less": "@@less",
+        "plus": "@@plus",
+        "next_line": "@@next_line",
+        "start_di": "egcsftr_start_di",
+        "sub_si": "egcsftr_sub_si",
+        "sub_di": "egcsftr_sub_di"
+      },
+      "rename_occurrences": {
+        "none": 4,
+        "less": 2,
+        "plus": 2,
+        "next_line": 2,
+        "start_di": 2,
+        "sub_si": 2,
+        "sub_di": 2
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 5576,
+      "end_listing_line": 5737,
+      "padding": [
+        {
+          "start": 2863,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5654
+        },
+        {
+          "start": 2869,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5659
+        }
+      ],
+      "linked_sha256": "b3930a67bdb78902bd990ecd55c94df4359279b3336cb840c5a47b07ea458da6",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [
+        {
+          "offset": 28,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 150,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 154,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        }
+      ],
+      "instruction_count": 133,
+      "instruction_nop_offsets": [
+        125,
+        131
+      ],
+      "return_kind": "retf",
+      "return_cleanup": 10,
+      "return_offset": 269
+    },
+    {
+      "name": "EGC_SHIFT_UP",
+      "start": 3010,
+      "end": 3266,
+      "size": 256,
+      "candidate_file": "libs/master.lib/egc_shift_up.asm",
+      "candidate_lines": [
+        45,
+        180
+      ],
+      "upstream_file": "EGCSFTU.ASM",
+      "upstream_lines": [
+        51,
+        186
+      ],
+      "upstream_block_sha256": "32b35a0bd19387c08318c882e65e829c0386f73c2c2595dbc05bbebcf63ec244",
+      "candidate_block_sha256": "b4d3395d008244f7d2642a4571076bef7886afd4431184f9412e4b8032f42431",
+      "renames": {
+        "none": "@@none",
+        "less": "@@less",
+        "plus": "@@plus",
+        "next_line": "@@next_line",
+        "diff": "egcsftu_diff",
+        "add_si": "egcsftu_add_si",
+        "add_di": "egcsftu_add_di"
+      },
+      "rename_occurrences": {
+        "none": 4,
+        "less": 2,
+        "plus": 2,
+        "next_line": 2,
+        "diff": 2,
+        "add_si": 2,
+        "add_di": 2
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 5793,
+      "end_listing_line": 5947,
+      "padding": [
+        {
+          "start": 3121,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5862
+        },
+        {
+          "start": 3127,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5867
+        },
+        {
+          "start": 3221,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5911
+        },
+        {
+          "start": 3265,
+          "size": 1,
+          "value": 144,
+          "listing_line": 5946
+        }
+      ],
+      "linked_sha256": "c665d28a996189828777950924884069cf044a639914167298979b1888871a57",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [
+        {
+          "offset": 33,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 138,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        },
+        {
+          "offset": 142,
+          "operation": "actual MAP _TEXT offset addition",
+          "addend": 626
+        }
+      ],
+      "instruction_count": 123,
+      "instruction_nop_offsets": [
+        111,
+        117,
+        211,
+        255
+      ],
+      "return_kind": "retf",
+      "return_cleanup": 10,
+      "return_offset": 252
+    }
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_egc_shifts.py",
+      "sha256": "339af04c27ea732d27b039e5b6970bd6c9a9a755d3e0122034f2775cc754894b"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    }
+  ],
+  "limitations": "Four primary-source-derived large-model procedures only. Secondary near-model binary members do not match and supply no proof. No authored credit, new builds, byte edits or global denominator."
+}
