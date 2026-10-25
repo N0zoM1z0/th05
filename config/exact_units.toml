@@ -4082,3 +4082,24 @@ unit = "main-se-priority-data"
 source = "src/shared/sound/se_priority_data.cpp"
 find = "36, 16, 4, 16, 8, 48, 80"
 replace = "36, 16, 4, 16, 8, 47, 80"
+
+[[units]]
+id = "main-hud-decimal-tables-data"
+source = "src/main/hud/decimal_tables.cpp"
+module = "th05/hud_dec.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/hud_decimal_tables_bindings.asm"
+target_start = 138710
+size = 38
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+
+[[controls]]
+unit = "main-hud-decimal-tables-data"
+source = "src/main/hud/decimal_tables.cpp"
+find = "1000000UL"
+replace = "1000001UL"

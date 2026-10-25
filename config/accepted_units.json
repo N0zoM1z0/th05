@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "58da295cd9d8202ed991fa2e2df35612d45f38cb215b787f311e311d18e16d1e",
+  "replay_receipt_sha256": "eee2a158f19794e9654fcf01830f93c54a99bde39576bef30dc1746ba2919615",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 135632,
-    "candidate_start": 135632,
-    "size": 34,
-    "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
-    "candidate_sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6",
+    "target_start": 138710,
+    "candidate_start": 138710,
+    "size": 38,
+    "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+    "candidate_sha256": "ff6f60dfd43eb325ef095c65a1f6c6d5c5dd6e77a0bbd3fa465134f2019a8b53",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 135632,
-      "size": 34,
-      "module": "th05/se_prio.cpp",
+      "start": 138710,
+      "size": 38,
+      "module": "th05/hud_dec.cpp",
       "segment": "_DATA"
     }
   },
@@ -63741,6 +63741,290 @@
           "-ml",
           "-DBINARY='M'",
           "th05/se_prio.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-hud-decimal-tables-data",
+      "entry_sha256": "f20e772e8755e34d8bb75383b94aa5c66614e9108c33bf812da226eb8cb5b2b0",
+      "result": {
+        "id": "main-hud-decimal-tables-data",
+        "entry_sha256": "f20e772e8755e34d8bb75383b94aa5c66614e9108c33bf812da226eb8cb5b2b0",
+        "rounds": [
+          {
+            "target_start": 138710,
+            "candidate_start": 138710,
+            "size": 38,
+            "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+            "candidate_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138710,
+              "size": 38,
+              "module": "th05/hud_dec.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138710,
+            "candidate_start": 138710,
+            "size": 38,
+            "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+            "candidate_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138710,
+              "size": 38,
+              "module": "th05/hud_dec.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "925a960cdea4b029f23eb88126a4c2d39d159c5a9a53d109e905b133f60de1cc",
+            "dependency_timestamp_normalized_sha256": "509576b6f1272a00a505a23ad03dccbc18a9fd7997e4d856ff7a29275bf56b0c",
+            "module_name": "th05/hud_dec.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hud_dec.cpp",
+              "src/main/hud/decimal_tables.cpp",
+              "src/main/hud/decimal_tables.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 38,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 38,
+                  "sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "eb5a592a1c44cb52426775d9b805a48c67cec8e8b8f23d53a145fa840c472bc5",
+            "dependency_timestamp_normalized_sha256": "509576b6f1272a00a505a23ad03dccbc18a9fd7997e4d856ff7a29275bf56b0c",
+            "module_name": "th05/hud_dec.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hud_dec.cpp",
+              "src/main/hud/decimal_tables.cpp",
+              "src/main/hud/decimal_tables.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 38,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 38,
+                  "sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hud_dec.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hud_dec.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/hud_decimal_tables_bindings.asm",
+            "sha256": "764e4b2ec221f0aab6945b468d355049691f454b472868fe2bad4c80fd340dfe"
+          },
+          {
+            "path": "src/main/hud/decimal_tables.cpp",
+            "sha256": "1053b8e69691e827bcdfd02a527b5fb302ff8ebb75a647cfb2d882ea671b7009"
+          },
+          {
+            "path": "src/main/hud/decimal_tables.hpp",
+            "sha256": "c66f4fc4481749c53458d905e80aa8e048a2314bdae4f3178e5fdc4bb31d5353"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/hud_decimal_tables_bindings.asm",
+          "sha256": "764e4b2ec221f0aab6945b468d355049691f454b472868fe2bad4c80fd340dfe"
+        },
+        {
+          "path": "src/main/hud/decimal_tables.cpp",
+          "sha256": "1053b8e69691e827bcdfd02a527b5fb302ff8ebb75a647cfb2d882ea671b7009"
+        },
+        {
+          "path": "src/main/hud/decimal_tables.hpp",
+          "sha256": "c66f4fc4481749c53458d905e80aa8e048a2314bdae4f3178e5fdc4bb31d5353"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "eee2a158f19794e9654fcf01830f93c54a99bde39576bef30dc1746ba2919615",
+      "compiled_negative_control": {
+        "target_start": 138710,
+        "candidate_start": 138710,
+        "size": 38,
+        "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+        "candidate_sha256": "ff6f60dfd43eb325ef095c65a1f6c6d5c5dd6e77a0bbd3fa465134f2019a8b53",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138710,
+          "size": 38,
+          "module": "th05/hud_dec.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-decimal-tables-data",
+        "entry_sha256": "f20e772e8755e34d8bb75383b94aa5c66614e9108c33bf812da226eb8cb5b2b0",
+        "mutation": {
+          "unit": "main-hud-decimal-tables-data",
+          "source": "src/main/hud/decimal_tables.cpp",
+          "find": "1000000UL",
+          "replace": "1000001UL"
+        },
+        "control_sha256": "6533f7673ea6938e0632099e6d392bf8fda2665270588c57284110baf38fd79c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138710,
+          "candidate_start": 138710,
+          "size": 38,
+          "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
+          "candidate_sha256": "ff6f60dfd43eb325ef095c65a1f6c6d5c5dd6e77a0bbd3fa465134f2019a8b53",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138710,
+            "size": 38,
+            "module": "th05/hud_dec.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "f26a1620c5927181a49b02250a6f78c992226e10fc4ad836ba254c21a0c40b67",
+          "dependency_timestamp_normalized_sha256": "f568bd4bf4ea2bc69f49674562fc3fe04416a4c57f1f3e0a824d0e848302b7f0",
+          "module_name": "th05/hud_dec.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/hud_dec.cpp",
+            "src/main/hud/decimal_tables.cpp",
+            "src/main/hud/decimal_tables.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 38,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 38,
+                "sha256": "ff6f60dfd43eb325ef095c65a1f6c6d5c5dd6e77a0bbd3fa465134f2019a8b53"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/hud_dec.cpp"
         ]
       },
       "receipt_aggregate_pass": true

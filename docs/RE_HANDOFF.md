@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **304 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
-**96,700 authored bytes exact**: 81,469 CODE and 15,231 initialized DATA.
+Current acceptance: **305 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
+**96,738 authored bytes exact**: 81,469 CODE and 15,269 initialized DATA.
 CODE is 80,777 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,779; 79 checked padding bytes receive
-no credit. MAIN has 377 functions / 60,671 CODE / 3,053 DATA;
+Complete compared extents total 96,817; 79 checked padding bytes receive
+no credit. MAIN has 377 functions / 60,671 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
@@ -22,7 +22,7 @@ The private receipt inventory is
 `.analysis/cleanup-current-receipt-guards.json`: all 209 receipt hashes
 for the preceding 298 records were found. The two newer verdict receipts and
 MAIN transition and three sound DATA receipts below are also required; preserve
-their whole directories.
+their whole directories. The newer HUD decimal receipt is also required.
 See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
 
 Cleanup revalidated208 whole receipts using the existing private validator.
@@ -128,9 +128,13 @@ Earlier setup attempts `-a` and `-b` failed assembly/compilation before linking;
 no size/raw mismatch or failed producer was accepted. Existing accepted headers
 and consumers were not changed or replayed.
 
-The remaining native DATA lead is **not a ready source packet**:
-`.analysis/stopped-main-data-leads.json` (possible powers-of-ten table,
-consumer/boundary review incomplete). Do not assign credit from this lead.
+The decimal-table lead is now independently accepted: two complete adjacent
+DWORD/word factor arrays at21DD6..21DFC,38 DATA bytes. Actual HUD, point-popup
+and score-delta consumers establish widths, strides and decimal roles.
+`.analysis/unit-replays/main-hud-decimal-tables-data-a/receipt.json` has two fresh
+producers, full DATA/OMF/MAP/raw/empty ordered-fixup checks and its own compiled
+million-place divisor mutation. See[owner notes](../src/main/hud/decimal_tables.md).
+The previous stopped-lead file remains historical routing evidence only.
 
 ## Parked work: preserve findings before trying variants
 
