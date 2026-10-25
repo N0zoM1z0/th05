@@ -52,12 +52,13 @@ interval across all four targets; it grants no inferred vendor exclusions.
 [runtime review](docs/reconstruction/MAIN_RUNTIME_OWNERSHIP.md),
 [Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md),
 [source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md) and
-[EGC shifts](docs/reconstruction/MASTER_EGC_SHIFTS_VENDOR_REVIEW.md) classify
-69,184 third-party CODE bytes. The [SIN8](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
+[EGC shifts](docs/reconstruction/MASTER_EGC_SHIFTS_VENDOR_REVIEW.md) and
+[EMS transfers](docs/reconstruction/MASTER_EMS_TRANSFERS_VENDOR_REVIEW.md) classify
+69,380 third-party CODE bytes. The [SIN8](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
 and [CL DATA](docs/reconstruction/CL_DATA_OWNERSHIP.md) reviews classify 3,777
-initialized library DATA bytes. All 72,961 vendor bytes grant zero authored
+initialized library DATA bytes. All 73,157 vendor bytes grant zero authored
 credit. A separately reviewed [8,192-byte ZUN font resource](docs/reconstruction/ZUN_FONT_RESOURCE.md)
-also grants zero authored credit. Unknown ownership remains 133,142 bytes.
+also grants zero authored credit. Unknown ownership remains 132,946 bytes.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

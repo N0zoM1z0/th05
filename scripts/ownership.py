@@ -444,6 +444,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     runtime, runtime_sha = reviewed_runtime(root, config["views"], verify_targets=verify_targets)
     from review_master_egc_shifts import reviewed_claims as reviewed_egc_shifts
     egc_shifts, egc_shifts_sha = reviewed_egc_shifts(root, config["views"], verify_targets=verify_targets)
+    from review_master_ems_transfers import reviewed_claims as reviewed_ems_transfers
+    ems_transfers, ems_transfers_sha = reviewed_ems_transfers(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -471,6 +473,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
+            pieces = overlay_vendor(view["size"], pieces, ems_transfers)
         elif name in ("op", "maine"):
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
@@ -502,6 +505,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_vendor_review_sha256"] = master_review_sha
         if egc_shifts_sha and name == "main":
             views[name]["master_egc_shifts_review_sha256"] = egc_shifts_sha
+        if ems_transfers_sha and name == "main":
+            views[name]["master_ems_transfers_review_sha256"] = ems_transfers_sha
         if additions_sha and name in additions:
             views[name]["master_additions_review_sha256"] = additions_sha
         if sin8_sha and name in sin8:

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "kind": "source-backed-master-ems-transfer-proposal",
+  "decision": "PROPOSAL",
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "compiler_invocations": 0,
+  "base_proof_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
+  "full_bytes": 196,
+  "padding_bytes": 0,
+  "nonpadding_bytes": 196,
+  "procedures": [
+    {
+      "name": "EMS_READ",
+      "start": 16234,
+      "end": 16332,
+      "size": 98,
+      "candidate_file": "libs/master.lib/ems_read.asm",
+      "candidate_lines": [
+        43,
+        101
+      ],
+      "upstream_file": "EMSREAD.ASM",
+      "upstream_lines": [
+        50,
+        108
+      ],
+      "upstream_block_sha256": "4be1f4165ce7309531c83f6589e556d841d40d0c6e1101ad49abfdf88918cde5",
+      "candidate_block_sha256": "ca143c09412335deb3b9553692ee616fd48c79a8d797f28df64af2e416bd0c87",
+      "renames": {
+        "handle": "@@handle",
+        "offs": "@@offs",
+        "mem": "@@mem",
+        "len": "@@len",
+        "block": "@@block"
+      },
+      "frame_equates": {
+        "handle": "(RETSIZE+7)*2",
+        "offs": "(RETSIZE+5)*2",
+        "mem": "(RETSIZE+3)*2",
+        "len": "(RETSIZE+1)*2",
+        "block": "-18"
+      },
+      "rename_occurrences": {
+        "handle": 2,
+        "offs": 3,
+        "mem": 3,
+        "len": 3,
+        "block": 12
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 20766,
+      "end_listing_line": 20835,
+      "padding": [],
+      "linked_sha256": "0f155328a8fe3c1b92bc473c12909d44c8e45813dc2100dc764bda116b52fe59",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [],
+      "instruction_count": 40,
+      "instruction_nop_offsets": [],
+      "return_kind": "retf",
+      "return_cleanup": 14,
+      "return_offset": 95,
+      "calls": [
+        {
+          "offset": 80,
+          "target": 16444
+        },
+        {
+          "offset": 88,
+          "target": 16370
+        }
+      ]
+    },
+    {
+      "name": "EMS_WRITE",
+      "start": 16492,
+      "end": 16590,
+      "size": 98,
+      "candidate_file": "libs/master.lib/ems_write.asm",
+      "candidate_lines": [
+        43,
+        99
+      ],
+      "upstream_file": "EMSWRITE.ASM",
+      "upstream_lines": [
+        50,
+        106
+      ],
+      "upstream_block_sha256": "c4d53c10e5f316fec3729f0c94869a867eea05be3aec579a68d93945e4ab2e36",
+      "candidate_block_sha256": "6f8251b4083d704df57ec4d3d452e2eb4fb2d89ea2c4dce53f87ee9b4accc73b",
+      "renames": {
+        "handle": "@@handle",
+        "offs": "@@offs",
+        "mem": "@@mem",
+        "len": "@@len",
+        "block": "@@block"
+      },
+      "frame_equates": {
+        "handle": "(RETSIZE+7)*2",
+        "offs": "(RETSIZE+5)*2",
+        "mem": "(RETSIZE+3)*2",
+        "len": "(RETSIZE+1)*2",
+        "block": "-18"
+      },
+      "rename_occurrences": {
+        "handle": 2,
+        "offs": 3,
+        "mem": 3,
+        "len": 3,
+        "block": 12
+      },
+      "distance": "far-by-large-model",
+      "inline_data": false,
+      "start_listing_line": 21318,
+      "end_listing_line": 21391,
+      "padding": [],
+      "linked_sha256": "b7411735e8a9aa61ef5d9f9ce4ea29d01210e2f992a62724392745db9e96ffbe",
+      "ordered_mz_fixups": [],
+      "object_link_actions": [],
+      "instruction_count": 40,
+      "instruction_nop_offsets": [],
+      "return_kind": "retf",
+      "return_cleanup": 14,
+      "return_offset": 95,
+      "calls": [
+        {
+          "offset": 80,
+          "target": 16444
+        },
+        {
+          "offset": 88,
+          "target": 16370
+        }
+      ]
+    }
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_ems_transfers.py",
+      "sha256": "e0894a9ca2911fafde4a302dfcc63c8a07036deef4b3dd53a927554db2e9d6f1"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    }
+  ],
+  "limitations": "Two complete primary-source-derived large-FAR EMS wrappers only. Secondary NEAR-model library objects are not claimed. No source instructions, linked bytes or fixup order changed. Zero authored credit; no new builds or global denominator."
+}

@@ -18,10 +18,58 @@ Separately reviewed ASM now contributes **6,078 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,439
 complete compared bytes include 63 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 133,142 bytes. The global denominator is still unreviewed;
+ownership is now 132,946 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted ASM: complete monochrome 16x16 ring blit
+## Latest ownership: complete Master EMS read/write wrappers
+
+Two complete native MAIN procedures now classify 196 previously unknown bytes
+as vendor CODE: EMS_READ 3F6A..3FCC and EMS_WRITE 406C..40CE, 98 bytes each.
+Both primary archive procedure bodies match the candidate literally after only
+five fixed private `=` frame-equate names gain an `@@` prefix. No instruction,
+data, constant, macro token, case, whitespace or comment changes. The inherited
+CP932/UTF8 block reader represents line endings as LF; complete raw source
+identities are separately checked. No linked bytes or fixup order are normalized.
+See [the source-backed review](reconstruction/MASTER_EMS_TRANSFERS_VENDOR_REVIEW.md).
+
+The new separate fixed-form verifier checks unique definitions, exact frame
+expressions and reference counts, collisions, non-exported names and literal
+whole-body equality. The older Master literal proof, EGC rename gate, all prior
+adoption records, source/tool identities and C/C++/ASM ledgers remain unchanged.
+It inherits the frozen primary/source/large-FAR macro closure and re-reads
+actual listing/OMF/MAP/MZ/native evidence. Both 40-instruction procedures end in
+RETF14 and have no NOPs, tables, DATA/BSS, object link actions or MZ fixups.
+Actual four-byte PUSH CS/near CALL pairs target the two already reviewed far
+EMS helpers; no provider signature is changed. No new compiler/assembler,
+Ghidra, execution probe, executable acceptance or authored credit occurs.
+
+The separate explicit decision adopts only those two complete vendor scopes.
+Vendor CODE grows 69,184 to 69,380; unknown decreases 133,142 to 132,946
+(MAIN 53,432 to 53,236). C/C++ remains 98,451 authored bytes; ASM, all DATA,
+resource/padding counts and the null global denominator remain unchanged.
+Nine focused guard tests and the retained full native check pass.
+Independent new-gate/source/native review:
+`.analysis/vendor-review/ems-transfers-additive-gate-independent-review.json`,
+SHA-256 `61383b66fdfed6eaa88388e2da7a7b4f9e36184a74ecb2fbf24652fce364cc0e`.
+All 343 CI tests, native ownership verification, generated progress and diff
+checks pass. Four C/C++ plans and the ASM plan are empty; no accepted owner
+is rebuilt. All 49 earlier tracked config JSON/TOML files remain byte-identical.
+Independent final adoption/count audit:
+`.analysis/vendor-review/ems-transfers-final-adoption-independent-review.json`,
+SHA-256 `947583ea6c2e1c177f5c37312b46eac4f7ff72e7794eee4679fd5f696d973995`.
+Root final review: `.analysis/vendor-review/ems-transfers-root-final-review.json`,
+SHA-256 `238edb1eb69fefd11324c214b3f1f9327e15d4988a86ee7e3abfaca7c8ebb5a3`.
+
+Bounded next sprite investigation found positive mixed origin: the tiny16
+renderer at C07C..C180 (260 bytes) retains a substantial Master SUPERRPT body
+with real game-specific ABI/setup/blank-carry changes. Neither full game-authored
+ASM credit nor the unmodified-vendor gate is justified. Keep it unknown; no
+build or adoption was performed. A future mixed-origin partition needs complete
+source/native evidence and an explicit review rather than full-body credit.
+`.analysis/vendor-review/tiny16-mixed-origin-routing-review.json`, SHA-256
+`8844ed01a5e27adad77dfc1baa95b424a38d56ecd9a2bb7d662db822eec937e6`.
+
+## Previous accepted ASM: complete monochrome 16x16 ring blit
 
 MAIN C21E..C322 now adds 254 reviewed ASM instruction bytes from a complete
 260-byte semantic macro producer. The six instruction NOPs at relative
@@ -65,10 +113,8 @@ Independent final adoption review:
 Root final review: `.analysis/super-roll-16x16-root-final-review.json`, SHA-256
 `ddf2325b8f176aa0fc14418239006cafe441dec1692746e2de0d92aa4978e976`.
 
-Next bounded vendor route: complete EMS_READ/EMS_WRITE, 98 bytes each, remain
-unknown. Primary archive bodies differ only by five private `=` equate names;
-whole saved OMF/calibration/native bytes agree. This is preparation for a
-separate explicit review, with zero authored credit, not an adoption.
+The subsequent complete EMS_READ/EMS_WRITE vendor review above supersedes the
+earlier preparation-only route. Its original routing remains archived:
 `.analysis/vendor-review/ems-transfer-source-family-routing.json`, SHA-256
 `e318482aa429012caa5f35c9652252f73e896d581a8be61afa034656dafb7ead`.
 

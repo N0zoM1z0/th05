@@ -19,8 +19,8 @@
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 83,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 133142,
-    "verified-vendor-code": 69184,
+    "unknown": 132946,
+    "verified-vendor-code": 69380,
     "verified-vendor-initialized-data": 3777
   },
   "views": {
@@ -40,8 +40,8 @@
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 2,
         "checked-uncredited-padding": 74,
-        "unknown": 53432,
-        "verified-vendor-code": 22558,
+        "unknown": 53236,
+        "verified-vendor-code": 22754,
         "verified-vendor-initialized-data": 1259
       },
       "intervals": [
@@ -308,8 +308,15 @@
         },
         {
           "start": 13967,
-          "end": 16332,
+          "end": 16234,
           "kind": "unknown"
+        },
+        {
+          "start": 16234,
+          "end": 16332,
+          "kind": "verified-vendor-code",
+          "library": "master.lib 0.23 source",
+          "member": "EMS_READ"
         },
         {
           "start": 16332,
@@ -346,6 +353,18 @@
         },
         {
           "start": 16466,
+          "end": 16492,
+          "kind": "unknown"
+        },
+        {
+          "start": 16492,
+          "end": 16590,
+          "kind": "verified-vendor-code",
+          "library": "master.lib 0.23 source",
+          "member": "EMS_WRITE"
+        },
+        {
+          "start": 16590,
           "end": 17840,
           "kind": "unknown"
         },
@@ -4030,6 +4049,7 @@
       "runtime_vendor_review_sha256": "41aa97e3016cb4039139959deb6fe2f9a975725441eb2ad470b74c025cd07aff",
       "master_vendor_review_sha256": "858e3b1e7a03cac3fd5b2d27cd3fce1a9da6f6ffbc503d0881af54c758444ed4",
       "master_egc_shifts_review_sha256": "38bdd0c6c83e53d1d377ebd102d5c2ea3cdecdc2da313677c1a50be819a9525a",
+      "master_ems_transfers_review_sha256": "74bdebdd8b518d3286c9c28fff1c6a7991de8c42a53af1873b1c0dbdd9dda280",
       "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff",
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
