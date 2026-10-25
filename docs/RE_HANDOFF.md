@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **252 bounded C/C++ CODE/DATA units / 454 complete function occurrences**,
-**82,691 authored bytes exact**: 72,376 CODE and 10,315 initialized DATA.
+Current acceptance: **253 bounded C/C++ CODE/DATA units / 454 complete function occurrences**,
+**83,715 authored bytes exact**: 72,376 CODE and 11,339 initialized DATA.
 CODE is 71,718 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 82,764; 73 checked padding bytes receive
-no credit. MAIN has 368 functions / 59,331 CODE / 1,657 DATA;
+Complete compared extents total 83,788; 73 checked padding bytes receive
+no credit. MAIN has 368 functions / 59,331 CODE / 2,681 DATA;
 OP 59 / 9,879 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -1032,3 +1032,18 @@ schema review, explicit decisions adopt only63/55 complete library contributions
 ownership only: authored credit and the still-null global denominator do not
 increase. Public structural checks require no game or private cache; full native
 inventory verification rereads all actual library/link/target evidence.
+
+## Mathematical fixed-speed shot velocity DATA
+
+`main-shot-velocity-data-a` adds the complete1,024-byte game motion table at
+MAIN21942..21D42,256signedX/Ypoints. Its maintained generator computes general
+Q8 directions from Decimal sine without target/reference inputs; the C
+initializer applies the real192-subpixel speed and explicit negative floor.
+Primary Master SIN8 source independently corroborates all320Q8samples. This
+game-specific velocity table differs from vendor RotTbl pixel-bit spreading.
+Two fresh C producers pass full DATA/OMF/MAP/raw/ordered comparisons and the
+compiled192→193speed control is rejected. The generator and actual include
+join frozen source identities through opt-in `generated_sources`; five new
+regressions cover generator drift, stale output, missing snapshots, inactive
+include claims and mutating checks. No accepted CODE consumer was changed or
+replayed. See `src/main/player/shot_velocity_data.md`.

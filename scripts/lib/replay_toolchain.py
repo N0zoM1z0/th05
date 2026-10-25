@@ -96,8 +96,46 @@ def include_closure(root: Path, initial: str) -> set[str]:
     return found
 
 
+def semantic_generators(root: Path, entry: dict, compiler_paths: set[str]) -> set[str]:
+    """Pin and check explicitly declared generators of actual compiler inputs.
+
+    A generator is maintained evidence, not a compiler dependency invented by
+    an inactive include. Its output must already belong to the real input
+    closure. Both files are frozen, and --check must leave the output intact.
+    """
+    rows = entry.get("generated_sources", [])
+    if not isinstance(rows, list):
+        raise ValueError("generated_sources must be a list")
+    generators, outputs = set(), set()
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {"generator", "output"}:
+            raise ValueError("generated source needs exactly generator/output")
+        if not all(isinstance(value, str) and value for value in row.values()):
+            raise ValueError("generated source paths must be nonempty strings")
+        generator, output = (relative_path(row[key]) for key in ("generator", "output"))
+        script = root / generator
+        if (not generator.startswith("scripts/") or not generator.endswith(".py")
+                or script.is_symlink() or not script.is_file()
+                or not script.resolve().is_relative_to(root.resolve())):
+            raise ValueError("generator must be a maintained local Python script")
+        if output not in compiler_paths or output in outputs or generator in generators:
+            raise ValueError("generated output must be a unique actual compiler input")
+        prior, script_prior = digest(root / output), digest(script)
+        try:
+            checked = subprocess.run([sys.executable, str(script.resolve()), "--check"],
+                cwd=root, capture_output=True, timeout=10)
+        except subprocess.TimeoutExpired as error:
+            raise ValueError("semantic generator check timed out") from error
+        if checked.returncode or digest(root / output) != prior or digest(script) != script_prior:
+            raise ValueError("semantic generator output is stale or --check modified it")
+        generators.add(generator)
+        outputs.add(output)
+    return generators
+
+
 def staged_paths(root: Path, entry: dict) -> set[str]:
-    return include_closure(root, entry["source"]) | include_closure(root, bindings_source(entry))
+    source = include_closure(root, entry["source"])
+    return source | include_closure(root, bindings_source(entry)) | semantic_generators(root, entry, source)
 
 
 def compiler_dependencies(entry: dict, omfs: list[dict]) -> set[str]:
@@ -127,7 +165,8 @@ def required_input_paths(root: Path, entry: dict, result: dict) -> set[str]:
     scanned = include_closure(root, entry["source"])
     if not actual.issubset(scanned):
         raise ValueError("OMF contains maintained dependencies omitted by include scanning")
-    return actual | include_closure(root, bindings_source(entry))
+    return (actual | include_closure(root, bindings_source(entry))
+            | semantic_generators(root, entry, actual))
 
 
 def scoped_snapshot(root: Path, entry: dict, result: dict, snapshots: list[dict]) -> list[dict]:

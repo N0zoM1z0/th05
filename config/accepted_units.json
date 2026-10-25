@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "66a942e7f608b20a5e7628ba663eea3ae02933ba33bef031b4bc99f72aac32d6",
+  "replay_receipt_sha256": "e369d7a7bcf904ecd3b1acaeb1f12d8c2b56e7be9a71daf80fc430dd9238642d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 133762,
-    "candidate_start": 133762,
-    "size": 347,
-    "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
-    "candidate_sha256": "6f15a64517ba59fabe8a50a7df2440495153a88bb2b2bbd06d592239547be45e",
+    "target_start": 137538,
+    "candidate_start": 137538,
+    "size": 1024,
+    "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+    "candidate_sha256": "59873e2d7a062522852bdc625c5ecd26a15c7b0ecc8212c5ad128c8d46084981",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 133762,
-      "size": 347,
-      "module": "th05/res_bank.c",
+      "start": 137538,
+      "size": 1024,
+      "module": "th05/pveldata.c",
       "segment": "_DATA"
     }
   },
@@ -58580,6 +58580,298 @@
             "path": "src/main/resources/resource_bank_c.h",
             "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
           }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shot-velocity-data",
+      "entry_sha256": "4f7a53f429a20484be7cff1686ed06d31944fc80ddbddaf27c36cb80abf9fd03",
+      "result": {
+        "id": "main-shot-velocity-data",
+        "entry_sha256": "4f7a53f429a20484be7cff1686ed06d31944fc80ddbddaf27c36cb80abf9fd03",
+        "rounds": [
+          {
+            "target_start": 137538,
+            "candidate_start": 137538,
+            "size": 1024,
+            "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+            "candidate_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137538,
+              "size": 1024,
+              "module": "th05/pveldata.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137538,
+            "candidate_start": 137538,
+            "size": 1024,
+            "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+            "candidate_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137538,
+              "size": 1024,
+              "module": "th05/pveldata.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d4e48b5db700a4c0ed06579528138bf1dd61608513e0de9a86d58ef100245584",
+            "dependency_timestamp_normalized_sha256": "7afadfb374013c7eaadeaeea106fd2ee937a301104d5f2472b63f9e8cc54bd98",
+            "module_name": "th05/pveldata.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pveldata.c",
+              "src/main/player/shot_velocity_data.c",
+              "src/main/player/shot_velocity_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/shot_velocity_q8.inc"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1024,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1024,
+                  "sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "45adfda2d36eb3db4f4b48224fdb809e11217654e27c29994c9399930a43ce64",
+            "dependency_timestamp_normalized_sha256": "7afadfb374013c7eaadeaeea106fd2ee937a301104d5f2472b63f9e8cc54bd98",
+            "module_name": "th05/pveldata.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pveldata.c",
+              "src/main/player/shot_velocity_data.c",
+              "src/main/player/shot_velocity_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/shot_velocity_q8.inc"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1024,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1024,
+                  "sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pveldata.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pveldata.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_velocity_data_bindings.asm",
+            "sha256": "05a2b8adb0a7a35755933d459c79486079b5feca6ca8377f56baaf9eeeda7e4b"
+          },
+          {
+            "path": "scripts/generate_shot_velocity_table.py",
+            "sha256": "4bbd7cb145ce23772e192836edf5e376fe626d6a6e9431d286691f7324e96500"
+          },
+          {
+            "path": "src/main/player/shot_velocity_data.c",
+            "sha256": "25ea93e8f5049eaabb8f579b69371cad79a2b4ffdd190bc422b866faf6c4247c"
+          },
+          {
+            "path": "src/main/player/shot_velocity_data.h",
+            "sha256": "917800d4061234c1d43224c7dd0fdde6f82e66afdf69a2e45b761967c8350827"
+          },
+          {
+            "path": "src/main/player/shot_velocity_q8.inc",
+            "sha256": "836993359d9e334764cbb107c674b9ad6e1d3a78ea8837bc45e4fc537c18edd9"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_velocity_data_bindings.asm",
+          "sha256": "05a2b8adb0a7a35755933d459c79486079b5feca6ca8377f56baaf9eeeda7e4b"
+        },
+        {
+          "path": "scripts/generate_shot_velocity_table.py",
+          "sha256": "4bbd7cb145ce23772e192836edf5e376fe626d6a6e9431d286691f7324e96500"
+        },
+        {
+          "path": "src/main/player/shot_velocity_data.c",
+          "sha256": "25ea93e8f5049eaabb8f579b69371cad79a2b4ffdd190bc422b866faf6c4247c"
+        },
+        {
+          "path": "src/main/player/shot_velocity_data.h",
+          "sha256": "917800d4061234c1d43224c7dd0fdde6f82e66afdf69a2e45b761967c8350827"
+        },
+        {
+          "path": "src/main/player/shot_velocity_q8.inc",
+          "sha256": "836993359d9e334764cbb107c674b9ad6e1d3a78ea8837bc45e4fc537c18edd9"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e369d7a7bcf904ecd3b1acaeb1f12d8c2b56e7be9a71daf80fc430dd9238642d",
+      "compiled_negative_control": {
+        "target_start": 137538,
+        "candidate_start": 137538,
+        "size": 1024,
+        "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+        "candidate_sha256": "59873e2d7a062522852bdc625c5ecd26a15c7b0ecc8212c5ad128c8d46084981",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137538,
+          "size": 1024,
+          "module": "th05/pveldata.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shot-velocity-data",
+        "entry_sha256": "4f7a53f429a20484be7cff1686ed06d31944fc80ddbddaf27c36cb80abf9fd03",
+        "mutation": {
+          "unit": "main-shot-velocity-data",
+          "source": "src/main/player/shot_velocity_data.c",
+          "find": "#define SHOT_SPEED_SUBPIXELS 192L",
+          "replace": "#define SHOT_SPEED_SUBPIXELS 193L"
+        },
+        "control_sha256": "bf14021250e9298664ccddcd39b5b265d9937f8bf7595cd48848f527f8adbad9",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137538,
+          "candidate_start": 137538,
+          "size": 1024,
+          "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
+          "candidate_sha256": "59873e2d7a062522852bdc625c5ecd26a15c7b0ecc8212c5ad128c8d46084981",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137538,
+            "size": 1024,
+            "module": "th05/pveldata.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "102a1861082998c91a6870fbf7a60355eba4ea7230e4952540dd1df9d84dfa58",
+          "dependency_timestamp_normalized_sha256": "fd9b90dbc6c76b04e2114e46dced36691b170de934d6fab61a1a1c832ff47b43",
+          "module_name": "th05/pveldata.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/pveldata.c",
+            "src/main/player/shot_velocity_data.c",
+            "src/main/player/shot_velocity_data.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/shot_velocity_q8.inc"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1024,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1024,
+                "sha256": "59873e2d7a062522852bdc625c5ecd26a15c7b0ecc8212c5ad128c8d46084981"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/pveldata.c"
         ]
       },
       "receipt_aggregate_pass": true

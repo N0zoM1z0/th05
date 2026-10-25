@@ -3790,3 +3790,26 @@ unit = "main-resource-filename-bank-c"
 source = "src/main/resources/resource_bank.c"
 find = "\"st06.mpn\""
 replace = "\"st07.mpn\""
+
+[[units]]
+id = "main-shot-velocity-data"
+source = "src/main/player/shot_velocity_data.c"
+module = "th05/pveldata.c"
+segment = "_DATA"
+wrapper_options = "-zCSHOT_VEL_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_velocity_data_bindings.asm"
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+functions = 0
+target_start = 137538
+size = 1024
+alignment_offsets = []
+padding_bytes = []
+data_semantics = ["semantic-tables"]
+generated_sources = [{generator = "scripts/generate_shot_velocity_table.py", output = "src/main/player/shot_velocity_q8.inc"}]
+
+[[controls]]
+unit = "main-shot-velocity-data"
+source = "src/main/player/shot_velocity_data.c"
+find = "#define SHOT_SPEED_SUBPIXELS 192L"
+replace = "#define SHOT_SPEED_SUBPIXELS 193L"

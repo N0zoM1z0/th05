@@ -67,6 +67,53 @@ class SourceScopeTests(unittest.TestCase):
         self.assertEqual([unit['id'] for unit in units], ['b'])
         self.assertEqual(reasons, {'b': 'source-changed'})
 
+    def generated_owner(self):
+        script = self.root / 'scripts/generate.py'
+        script.parent.mkdir()
+        script.write_text('from pathlib import Path\nimport sys\n'
+            'root = Path(__file__).resolve().parents[1]\n'
+            'sys.exit((root / "src/a.hpp").read_text() != "#include <stddef.h>\\n")\n')
+        entry = self.entries[0]
+        entry['generated_sources'] = [{'generator': 'scripts/generate.py', 'output': 'src/a.hpp'}]
+        saved = self.acceptance['units'][0]
+        saved['entry_sha256'] = entry_digest(entry)
+        saved['source_inputs'] = snapshot_paths(self.root, staged_paths(self.root, entry))
+        return entry, saved, script
+
+    def test_generator_identity_is_frozen_and_drift_selects_only_its_owner(self):
+        entry, saved, script = self.generated_owner()
+        required = required_input_paths(self.root, entry, saved['result'])
+        self.assertIn('scripts/generate.py', required)
+        self.assertEqual(self.plan()[0], [])
+        script.write_text(script.read_text() + '# reviewed generation change\n')
+        self.assertEqual([unit['id'] for unit in self.plan()[0]], ['a'])
+
+    def test_generator_output_drift_is_rejected_before_compilation(self):
+        entry, saved, script = self.generated_owner()
+        (self.root / 'src/a.hpp').write_text('stale output\n')
+        with self.assertRaisesRegex(ValueError, 'output is stale'):
+            staged_paths(self.root, entry)
+
+    def test_missing_generator_snapshot_cannot_be_imported(self):
+        entry, saved, script = self.generated_owner()
+        snapshots = [row for row in saved['source_inputs'] if row['path'] != 'scripts/generate.py']
+        with self.assertRaisesRegex(ValueError, 'omits'):
+            scoped_snapshot(self.root, entry, saved['result'], snapshots)
+
+    def test_inactive_include_cannot_be_claimed_as_actual_generated_input(self):
+        entry, saved, script = self.generated_owner()
+        # Staging is a superset; the real OMF dependency list is authoritative.
+        saved['result']['omfs'] = [{'dependency_paths': [entry['module'], entry['source']]}] * 2
+        with self.assertRaisesRegex(ValueError, 'actual compiler input'):
+            required_input_paths(self.root, entry, saved['result'])
+
+    def test_generator_check_must_not_modify_its_output(self):
+        entry, saved, script = self.generated_owner()
+        script.write_text('from pathlib import Path\n'
+            '(Path(__file__).resolve().parents[1] / "src/a.hpp").write_text("changed")\n')
+        with self.assertRaisesRegex(ValueError, '--check modified'):
+            staged_paths(self.root, entry)
+
     def test_unrelated_new_unit_does_not_invalidate_old_entry_hashes(self):
         new = {**self.entries[0], 'id': 'new', 'source': 'src/new.cpp'}
         self.manifest['units'].append(new)

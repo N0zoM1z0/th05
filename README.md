@@ -15,11 +15,11 @@ its progress and exactness labels do not transfer to this repository.
 
 The first **454 complete C++ functions / 72,376 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
-fixups and compiled controls. Separately, **10,315 initialized semantic DATA
+fixups and compiled controls. Separately, **11,339 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored bytes exact are
-**82,691**: 71,718 instruction, 658 compiler switch-table
-and 10,315 initialized DATA bytes. Complete compared extents contain
-82,764 bytes, including 73 excluded padding bytes. The oracle
+**83,715**: 71,718 instruction, 658 compiler switch-table
+and 11,339 initialized DATA bytes. Complete compared extents contain
+83,788 bytes, including 73 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 

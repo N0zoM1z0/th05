@@ -95,10 +95,20 @@ per round. Canonical source snapshots, explicit CP932 staging, actual dependency
 closures, wrappers, binding aliases and tool identities retain the existing
 gates. No previous accepted CODE producer needs replay for this extension.
 
+Mathematically generated inputs explicitly declare `generated_sources` with
+`generator` and `output` paths. The output must be an actual compiler include,
+and the maintained Python generator joins the frozen source snapshot without
+pretending to be a compiler dependency. Replay and import run its bounded
+`--check`, reject stale or modified output, and verify both saved identities.
+Generator changes select only affected owners. The shot-velocity generator
+reads mathematics alone; the compiler specializes its Q8 directions to the
+game's speed with explicit signed fixed-point quantization.
+
 `authored_data_bytes` is separate from `authored_code_bytes`, instruction bytes
 and CODE-table bytes. `authored_bytes` is their code-plus-data sum, with explicit
 padding excluded. The gapless inventory names these bytes
-`accepted-cxx-initialized-data`; vendor decisions and unknown spans are retained.
+`accepted-cxx-initialized-data` or `accepted-c-initialized-data`; vendor decisions
+and unknown spans are retained.
 These counters do not establish the complete authored denominator or a global
 percentage, and decoded OP/MAINE DATA grants no packed-file exactness.
 
