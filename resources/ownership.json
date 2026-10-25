@@ -8,7 +8,7 @@
   "byte_counts": {
     "accepted-c-initialized-data": 1628,
     "accepted-cxx-initialized-data": 13709,
-    "accepted-cxx-instructions": 80938,
+    "accepted-cxx-instructions": 81260,
     "accepted-cxx-switch-table": 692,
     "accepted-reviewed-asm-dispatch-table": 210,
     "accepted-reviewed-asm-initialized-data": 64,
@@ -19,7 +19,7 @@
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 79,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 154067,
+    "unknown": 153745,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -6448,12 +6448,24 @@
       "sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "original_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "byte_counts": {
+        "accepted-cxx-instructions": 322,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 9924
+        "unknown": 9602
       },
       "intervals": [
         {
           "start": 0,
+          "end": 3403,
+          "kind": "unknown"
+        },
+        {
+          "start": 3403,
+          "end": 3725,
+          "kind": "accepted-cxx-instructions",
+          "unit": "zun-resident-config"
+        },
+        {
+          "start": 3725,
           "end": 9537,
           "kind": "unknown"
         },

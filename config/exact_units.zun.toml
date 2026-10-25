@@ -1,0 +1,28 @@
+schema_version = 1
+artifact = "th05-zun"
+
+[target_view]
+receipt_sha256 = "f7669da9963b45a94f092a0d8c70a48c8d3454c83f1e9dbdfb5a0b8c7729a615"
+member = "-S"
+member_start = 2788
+member_end = 9352
+member_sha256 = "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376"
+proof_sha256 = "ecca03e864879bb98a02953f46a7657025420db2a05582b487266bca4cda82c2"
+
+[[units]]
+id = "zun-resident-config"
+source = "src/zun/resident/config.cpp"
+module = "th05/zcfg.cpp"
+segment = "_TEXT"
+target_start = 0xd4b
+size = 322
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/zun_resident_config_bindings.asm"
+
+[[controls]]
+unit = "zun-resident-config"
+source = "src/zun/resident/config.cpp"
+find = "resident->cfg_lives > ZUN_CFG_LIVES_MAX"
+replace = "resident->cfg_lives > (ZUN_CFG_LIVES_MAX - 1)"

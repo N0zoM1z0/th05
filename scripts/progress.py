@@ -7,7 +7,8 @@ import json
 from pathlib import Path
 import tomllib
 from lib.unit_oracle import function_scoped
-from lib.unit_context import UnitContext, compiler_arguments, load_unit_target, validate_public_target_view
+from lib.tiny_com import (UnitContext, compiler_arguments, load_unit_target,
+    load_unit_candidate, validate_public_target_view)
 from lib.unit_sources import producer_snapshot, source_encoding, validate_producer_inputs
 from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
     unit_extent_kind, validate_data_scope_evidence)
@@ -98,13 +99,19 @@ def validate_result(entry: dict, result: dict, *, require_exact: bool = True) ->
         if unit_extent_kind(entry) == 'initialized-data':
             validate_data_scope_evidence(entry, comparison,
                 result['omfs'][index].get('initialized_data_scope', {}))
+        bias = comparison.get("candidate_address_bias", 0)
+        if bias:
+            scope = comparison.get("map_scope", {})
+            if (bias != 0x100 or scope.get("start") != comparison["candidate_start"] + bias or
+                    scope.get("size") != entry["size"]):
+                raise ValueError("COM MAP/file coordinate evidence disagrees")
         if scoped:
             scope = comparison.get("map_scope", {})
             integers = ("start", "size", "contribution_start", "contribution_size")
             if (any(type(scope.get(key)) is not int for key in integers) or
                     scope.get("kind") != "complete-function" or
                     scope.get("function_symbol") != entry["function_symbol"] or
-                    scope["start"] != comparison["candidate_start"] or scope["size"] != entry["size"] or
+                    scope["start"] != comparison["candidate_start"] + bias or scope["size"] != entry["size"] or
                     scope["contribution_start"] < 0 or scope["contribution_size"] <= 0 or
                     scope["start"] < scope["contribution_start"] or
                     scope["start"] + scope["size"] > scope["contribution_start"] + scope["contribution_size"]):
@@ -201,6 +208,9 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_nam
         if artifact_name != "main" or "binary" in entry:
             if item["result"].get("compiler_arguments") != [compiler_arguments(entry, context.binary)] * 2:
                 raise ValueError("accepted producer binary arguments changed")
+        if artifact_name == "zun" and any(row.get("candidate_address_bias") != 0x100
+                                          for row in item["result"]["rounds"]):
+            raise ValueError("accepted COM producer lost its explicit MAP/file coordinate bias")
         # Legacy whole-tree captures are narrowed using their original OMF
         # dependencies. Unrelated maintained files are never freshness inputs.
         snapshots = scoped_snapshot(root, entry, item["result"], item["source_inputs"])
@@ -237,7 +247,7 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_nam
 
 def summarize_all(root: Path = ROOT) -> dict:
     summaries = {"main": summarize(root)}
-    for name in ("op", "maine"):
+    for name in ("op", "maine", "zun"):
         if UnitContext(root, name).manifest.exists():
             summaries[name] = summarize(root, artifact_name=name)
     combined = dict(summaries["main"])
@@ -299,7 +309,7 @@ def render(summary: dict) -> tuple[str, str]:
     padding = summary.get("padding_bytes", extent - authored)
     scopes = summary.get("artifacts", {"main": summary})
     rows, data_rows = [], []
-    for name, label in (("main", "MAIN bounded C/C++ units"), ("op", "OP decoded C/C++ units"), ("maine", "MAINE decoded C/C++ units")):
+    for name, label in (("main", "MAIN bounded C/C++ units"), ("op", "OP decoded C/C++ units"), ("maine", "MAINE decoded C/C++ units"), ("zun", "ZUN embedded C/C++ units")):
         scope = scopes.get(name, {})
         data_units = [unit for unit in scope.get('units', []) if unit.get('extent_kind') == 'initialized-data']
         code_extent = scope.get('complete_extent_bytes', 0) - sum(unit['size'] for unit in data_units)
@@ -346,12 +356,10 @@ complete authored ownership denominator remains under review.
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
 {scope_rows}
-| ZUN | 0 | 0 | 0 | 0 | 0 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
 {data_scope_rows}
-| ZUN | 0 | 0 | 0 | 0 |
 
 {count} bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
@@ -441,9 +449,8 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
                      artifact_name: str = "main", validate_only: bool = False) -> dict:
     """Fully validate one receipt without reading or writing the live ledger."""
     from lib.omf import describe_omf
-    from lib.pc98 import parse_mz
     from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
-    from lib.unit_oracle import compare_mapped_unit
+    from lib.tiny_com import compare_mapped_unit
     from replay_units import mapped_control_comparison
     context = UnitContext(root, artifact_name)
     receipt_path = receipt_path.resolve()
@@ -566,7 +573,7 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
                 recorded = json.loads((source / "compiler-arguments.json").read_text())
                 if result.get("compiler_arguments") != [expected] * 2 or recorded.get(entry["module"]) != expected:
                     raise ValueError("saved actual compiler binary arguments disagree with the artifact context")
-            candidate = parse_mz((source / "units.exe").read_bytes())
+            candidate = load_unit_candidate(source, context.binary)
             if compare_mapped_unit(target, candidate, source / "units.map", entry) != result["rounds"][index]:
                 raise ValueError("saved raw target/candidate artifacts disagree with replay receipt")
             object_bytes = (source / (Path(entry["module"]).stem + ".obj")).read_bytes()
@@ -599,7 +606,7 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
         recorded = json.loads((negative_source / "compiler-arguments.json").read_text())
         if negative.get("compiler_arguments") != expected or recorded.get(control_entry["module"]) != expected:
             raise ValueError("negative producer compiler binary arguments disagree")
-    observed_control = mapped_control_comparison(target, parse_mz((negative_source / "units.exe").read_bytes()),
+    observed_control = mapped_control_comparison(target, load_unit_candidate(negative_source, context.binary),
                                                  control_entry, negative_source / "units.map")
     if observed_control != control:
         raise ValueError("saved compiled negative artifact disagrees with receipt")
@@ -666,7 +673,8 @@ def accept_many(receipt_paths: list[Path], *, root: Path | None = None,
                                   control=last["control"], artifact_name=artifact_name)
     if last["target_view"] is not None:
         acceptance.update(artifact=context.artifact, target_view=last["target_view"],
-                          scope="decoded load-module unit bytes and ordered fixups; packed file unaccepted")
+                          scope=("embedded COM unit raw bytes; whole child and outer COM unaccepted" if artifact_name == "zun" else
+                                 "decoded load-module unit bytes and ordered fixups; packed file unaccepted"))
     summarize(root, acceptance, artifact_name=artifact_name)
     temporary = acceptance_path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(acceptance, indent=2) + "\n")
@@ -686,7 +694,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--accept", type=Path, action="append",
                         help="receipt to import; repeat to validate and merge one atomic batch")
-    parser.add_argument("--artifact", choices=("main", "op", "maine"), default="main")
+    parser.add_argument("--artifact", choices=("main", "op", "maine", "zun"), default="main")
     parser.add_argument("--units", nargs="+", metavar="ID", help="explicit exact subset of --accept receipt")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--write", action="store_true")

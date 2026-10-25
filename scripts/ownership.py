@@ -8,7 +8,7 @@ from pathlib import Path
 import tomllib
 
 from lib.pc98 import digest_bytes
-from lib.unit_context import UnitContext, load_unit_target
+from lib.tiny_com import UnitContext, load_unit_target
 from lib.unit_extents import unit_extent_kind
 from progress import classify_extent, summarize_all
 
@@ -444,7 +444,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
         entries = []
-        if name != "zun":
+        if name == "zun" and (view["size"], view["sha256"]) != (target["size"], target["sha256"]):
+            raise ValueError("ZUN coordinates must cover the original COM, without double counting children")
+        if name != "zun" or UnitContext(root, name).ledger.exists():
             context = UnitContext(root, name)
             ledger = json.loads(context.ledger.read_text())
             live = {row["id"]: row for row in context.config()["units"]}
@@ -457,8 +459,6 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                 _, image, _ = load_unit_target(context, context.config())
                 if (len(image.program_image), digest_bytes(image.program_image)) != (view["size"], view["sha256"]):
                     raise ValueError("ownership view differs from actual target bytes")
-        elif (view["size"], view["sha256"]) != (target["size"], target["sha256"]):
-            raise ValueError("ZUN coordinates must cover the original COM, without double counting children")
         pieces = partition(view["size"], entries)
         review_sha = master_review_sha = None
         if name == "main":

@@ -1,0 +1,315 @@
+{
+  "schema_version": 2,
+  "scope": "embedded COM unit raw bytes; whole child and outer COM unaccepted",
+  "target_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+  "replay_receipt_sha256": "122aa9235d352cf0376476710d0274d697981c2221ef99b5e4e76fff1cb8f6bf",
+  "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "compiled_negative_rejected": true,
+  "compiled_negative_control": {
+    "target_start": 3403,
+    "candidate_start": 615,
+    "size": 322,
+    "target_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+    "candidate_sha256": "b47d3e8684117149f9ee54976034cd13fd867b08a4b726193c626618f8d2fe94",
+    "raw_exact": false,
+    "target_fixups": [],
+    "candidate_fixups": [],
+    "fixups_exact": true,
+    "exact": false,
+    "candidate_address_bias": 256,
+    "map_scope": {
+      "kind": "complete-contribution",
+      "start": 871,
+      "size": 322
+    }
+  },
+  "units": [
+    {
+      "id": "zun-resident-config",
+      "entry_sha256": "04d6b97c8569c57de594590edcb2591a6e1a0981c0a0ca25091a3f3ed339f0fc",
+      "result": {
+        "id": "zun-resident-config",
+        "entry_sha256": "04d6b97c8569c57de594590edcb2591a6e1a0981c0a0ca25091a3f3ed339f0fc",
+        "rounds": [
+          {
+            "target_start": 3403,
+            "candidate_start": 615,
+            "size": 322,
+            "target_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+            "candidate_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "candidate_address_bias": 256,
+            "map_scope": {
+              "kind": "complete-contribution",
+              "start": 871,
+              "size": 322
+            }
+          },
+          {
+            "target_start": 3403,
+            "candidate_start": 615,
+            "size": 322,
+            "target_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+            "candidate_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "candidate_address_bias": 256,
+            "map_scope": {
+              "kind": "complete-contribution",
+              "start": 871,
+              "size": 322
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "978431f72c4c65ff17f5498bf2a31494653e5ceaf23360afaf7cedc40814b0c3",
+            "dependency_timestamp_normalized_sha256": "bb16e332da745b143bc9a6dcb9023486eb0356fb9ed603913dd28b7ebd5905d3",
+            "module_name": "th05/zcfg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zcfg.cpp",
+              "src/zun/resident/config.cpp",
+              "src/zun/resident/config.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "31ea4ce244fefe7685c7c65f22b32409578a16eff0c35dd5cb9dd8e93ff10d2f",
+            "dependency_timestamp_normalized_sha256": "bb16e332da745b143bc9a6dcb9023486eb0356fb9ed603913dd28b7ebd5905d3",
+            "module_name": "th05/zcfg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zcfg.cpp",
+              "src/zun/resident/config.cpp",
+              "src/zun/resident/config.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-mt",
+            "th05/zcfg.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-mt",
+            "th05/zcfg.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/zun_resident_config_bindings.asm",
+            "sha256": "0ca1ca327ca10ab5fbf3924647246dae26b88c130e4f32c63022b65cf32f2188"
+          },
+          {
+            "path": "src/main/formats/cfg_resident.hpp",
+            "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/zun/resident/config.cpp",
+            "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+          },
+          {
+            "path": "src/zun/resident/config.hpp",
+            "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/zun_resident_config_bindings.asm",
+          "sha256": "0ca1ca327ca10ab5fbf3924647246dae26b88c130e4f32c63022b65cf32f2188"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/zun/resident/config.cpp",
+          "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+        },
+        {
+          "path": "src/zun/resident/config.hpp",
+          "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "122aa9235d352cf0376476710d0274d697981c2221ef99b5e4e76fff1cb8f6bf",
+      "compiled_negative_control": {
+        "target_start": 3403,
+        "candidate_start": 615,
+        "size": 322,
+        "target_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+        "candidate_sha256": "b47d3e8684117149f9ee54976034cd13fd867b08a4b726193c626618f8d2fe94",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "candidate_address_bias": 256,
+        "map_scope": {
+          "kind": "complete-contribution",
+          "start": 871,
+          "size": 322
+        }
+      },
+      "negative_control": {
+        "unit_id": "zun-resident-config",
+        "entry_sha256": "04d6b97c8569c57de594590edcb2591a6e1a0981c0a0ca25091a3f3ed339f0fc",
+        "mutation": {
+          "unit": "zun-resident-config",
+          "source": "src/zun/resident/config.cpp",
+          "find": "resident->cfg_lives > ZUN_CFG_LIVES_MAX",
+          "replace": "resident->cfg_lives > (ZUN_CFG_LIVES_MAX - 1)"
+        },
+        "control_sha256": "df8950290f0ce1d4f546494de3c80923e4e588cd3de61033500664c702f2690e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 3403,
+          "candidate_start": 615,
+          "size": 322,
+          "target_sha256": "4e0f4242fda6b3d76d1be1988637f7807f5e186c50f8797001f30cd31f09e444",
+          "candidate_sha256": "b47d3e8684117149f9ee54976034cd13fd867b08a4b726193c626618f8d2fe94",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "candidate_address_bias": 256,
+          "map_scope": {
+            "kind": "complete-contribution",
+            "start": 871,
+            "size": 322
+          }
+        },
+        "omf": {
+          "sha256": "ec148171b35f21bebe7b1002339fec82feff46e18d091151cea5298e673457b4",
+          "dependency_timestamp_normalized_sha256": "7bf36f609c01518748a424e4c05aec0815a288b85906547e40368425f1e63545",
+          "module_name": "th05/zcfg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/zcfg.cpp",
+            "src/zun/resident/config.cpp",
+            "src/zun/resident/config.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/formats/cfg_resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-mt",
+          "th05/zcfg.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-zun",
+        "kind": "embedded-plain-com-source-view",
+        "packed_target_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+        "receipt_sha256": "f7669da9963b45a94f092a0d8c70a48c8d3454c83f1e9dbdfb5a0b8c7729a615",
+        "payload_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+        "payload_size": 18116,
+        "relocations_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "relocation_count": 0,
+        "member": "-S",
+        "member_start": 2788,
+        "member_end": 9352,
+        "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+        "child_address_bias": 256
+      },
+      "receipt_aggregate_pass": true
+    }
+  ],
+  "artifact": "th05-zun",
+  "target_view": {
+    "artifact": "th05-zun",
+    "kind": "embedded-plain-com-source-view",
+    "packed_target_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+    "receipt_sha256": "f7669da9963b45a94f092a0d8c70a48c8d3454c83f1e9dbdfb5a0b8c7729a615",
+    "payload_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+    "payload_size": 18116,
+    "relocations_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "relocation_count": 0,
+    "member": "-S",
+    "member_start": 2788,
+    "member_end": 9352,
+    "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+    "child_address_bias": 256
+  }
+}

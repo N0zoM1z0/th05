@@ -20,10 +20,10 @@ from lib.omf import describe_omf
 from lib.pc98 import digest_file, parse_mz
 from lib.reference_build import Builder
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
-from lib.unit_oracle import (compare_unit, compare_mapped_unit, function_scoped,
+from lib.unit_oracle import (compare_unit, function_scoped,
     map_unit_scope)
-from lib.unit_context import (UnitContext, compiler_arguments, freeze_target_view,
-    load_unit_target, unit_binary)
+from lib.tiny_com import (UnitContext, compiler_arguments, freeze_target_view,
+    load_unit_target, load_unit_candidate, unit_binary, TINY_CRT_SHA256, compare_mapped_unit)
 from lib.unit_sources import producer_snapshot, source_encoding, stage_inputs
 from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
     unit_extent_kind)
@@ -73,7 +73,7 @@ def select_units(root: Path, manifest: dict, requested: list[str] | None,
     return selected, reasons
 
 
-def translation_units(units: list[dict], *, binary: str = "M") -> list[list[dict]]:
+def translation_units(units: list[dict], *, binary: str | None = "M") -> list[list[dict]]:
     """One real TU per compiler invocation, even when several functions qualify."""
     grouped = {}
     for entry in units:
@@ -91,7 +91,7 @@ def translation_units(units: list[dict], *, binary: str = "M") -> list[list[dict
 
 
 def cold_round(work: Path, inputs: Path, units: list[dict], *,
-               paths: set[str], mutation: dict | None = None, binary: str = "M") -> dict:
+               paths: set[str], mutation: dict | None = None, binary: str | None = "M") -> dict:
     producers = translation_units(units, binary=binary)
     source = work / "source"
     source.mkdir(parents=True)
@@ -131,10 +131,17 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
             arguments[member["id"]] = actual_arguments
     (source / "compiler-arguments.json").write_text(json.dumps(
         {unit["module"]: arguments[unit["id"]] for unit in units}, indent=2) + "\n")
-    (source / "link.rsp").write_bytes(("-c -s -E bindings.obj " + " ".join(objects) +
-                                      ", units.exe, units.map,\r\n").encode("ascii"))
+    if binary is None:
+        crt = ROOT / ".analysis/toolchain/installed/tc40j/LIB/C0T.OBJ"
+        if digest(crt) != TINY_CRT_SHA256:
+            raise ValueError("installed tiny CRT differs from its pinned library surface")
+        shutil.copyfile(crt, source / "c0t.obj")
+        response = "-c -s -t c0t.obj " + " ".join(objects) + " bindings.obj, units.com, units.map,\r\n"
+    else:
+        response = "-c -s -E bindings.obj " + " ".join(objects) + ", units.exe, units.map,\r\n"
+    (source / "link.rsp").write_bytes(response.encode("ascii"))
     builder.execute("link", [*dos, "tlink", "@link.rsp"])
-    candidate = parse_mz((source / "units.exe").read_bytes())
+    candidate = load_unit_candidate(source, binary) if binary is None else parse_mz((source / "units.exe").read_bytes())
     if not candidate.valid:
         raise ValueError(str(candidate.errors))
     return {"source": source, "candidate": candidate, "omfs": omfs, "steps": builder.records,
@@ -162,7 +169,11 @@ def control_comparison(target, candidate, entry: dict, start: int, size: int) ->
 
 def mapped_control_comparison(target, candidate, entry: dict, path: Path) -> dict:
     scope = map_unit_scope(path, entry)
-    comparison = control_comparison(target, candidate, entry, scope["start"], scope["size"])
+    bias = getattr(candidate, "address_bias", 0)
+    comparison = control_comparison(target, candidate, entry, scope["start"] - bias, scope["size"])
+    if bias:
+        comparison["candidate_address_bias"] = bias
+        comparison["map_scope"] = scope
     if function_scoped(entry) or unit_extent_kind(entry) == 'initialized-data':
         comparison["map_scope"] = scope
     return comparison
@@ -171,7 +182,7 @@ def mapped_control_comparison(target, candidate, entry: dict, path: Path) -> dic
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--artifact", choices=("main", "op", "maine"), default="main")
+    parser.add_argument("--artifact", choices=("main", "op", "maine", "zun"), default="main")
     parser.add_argument("--units", nargs="+", metavar="ID")
     parser.add_argument("--plan", action="store_true", help="report selected units without running tools")
     args = parser.parse_args()

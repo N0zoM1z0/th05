@@ -5,12 +5,12 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **309 bounded C/C++ CODE/DATA units / 494 complete function occurrences**,
-**96,967 authored bytes exact**: 81,630 CODE and 15,337 initialized DATA.
-CODE is 80,938 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,046; 79 checked padding bytes receive
+Current acceptance: **310 bounded C/C++ CODE/DATA units / 495 complete function occurrences**,
+**97,289 authored bytes exact**: 81,952 CODE and 15,337 initialized DATA.
+CODE is 81,260 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 97,368; 79 checked padding bytes receive
 no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
-OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597.
+OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
 Separately reviewed ASM now contributes **5,824 instruction bytes,
@@ -18,16 +18,56 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 154,067 bytes. The global denominator is still unreviewed,
-and the ZUN child inference remains unpromoted.
+ownership is now 153,745 bytes. The global denominator is still unreviewed;
+every other unreviewed ZUN child scope stays unknown.
 
-## Latest ownership review: embedded font, zero source credit
+## Latest accepted C++: ZUN resident configuration
+
+The complete `cfg_init` at original outer `0D4B..0E8D` now adds one function
+and 322 C++ instruction bytes, with zero DATA, ASM, CODE-table or padding
+credit. Native instruction NOP enumeration is empty. See
+[resident configuration notes](../src/zun/resident/config.md).
+
+`.analysis/unit-replays/zun-cfg-322-b/receipt.json` is the only imported receipt:
+two fresh isolated producers, deterministic normalized OMF and whole linked
+COM files, full raw-byte/empty ordered-relocation agreement, and an own
+compiled life-limit6-to5 negative rejected at relative byte205. Actual tiny
+flags and first-declaration ABI match native review. The canonical resident,
+configuration, options and shared ABI headers are reused without changes.
+
+Link the pinned real `C0T.OBJ` first, the C++ object second and symbol-only
+binder last using TLINK `-t`. Do not fabricate a COM entry, MZ header, stack
+reservation or file prefix. The original startup supplies CODE through0367
+and DATA1650..16BE; the binder supplies foreign symbol locations only. Actual
+compiler helper is `N_SCOPY@`; DATA base is1650, not sampled startup field16A0.
+Candidate MAP0367 corresponds to real COM file0267, while target coordinates
+remain the full outer file. The new `lib/tiny_com.py` dispatcher checks that
+conversion, immutable original/member identity, CRT and linker/segment context.
+The old `lib/unit_context.py` and `lib/unit_oracle.py` are byte-identical, so
+previous vendor/ASM reviewer pins and all unrelated accepted producers remain
+valid without cold replay. The installed execution proof was also reused.
+
+Private first-source/relink attempts and generic replay `-a` are retained but
+unaccepted. The latter stopped after one producer because TLINK `-t` does not
+emit an entry-point MAP row; validation now uses the real pinned C0T MODEND
+and actual link response. Original missing-file checksum uninitialization and
+other error-path quirks are preserved. No artificial optimization barrier or
+ASM transcription was introduced. Adjacent `main269` and all other unreviewed
+ZUN scopes remain unknown. The separately reviewed font remains8,192 bytes
+with zero authored credit. ZUN unknown is9,602; global unknown is153,745.
+
+Independent final gate report: `.analysis/zun-resident-review/gate-review.json`,
+SHA-256 `b95ec4edc9bed9c4acbfc6abfc0fc01f95ca35f30171cc784879ff9e5dd63c88`.
+Saved-producer import,303 public tests, full CI and native ownership readback
+pass. All four incremental plans are empty; no old compiler unit was replayed.
+
+## Previous ownership review: embedded font, zero source credit
 
 An explicit [font resource review](reconstruction/ZUN_FONT_RESOURCE.md) now
 classifies only ZUN.COM `2541..4541`, 8,192 bytes, as an embedded bitmap.
 C/C++ and ASM accepted units, authored byte counts and functions are unchanged.
 The observation universe remains319,268; unknown ownership drops from162,259
-to154,067. All9,924 other ZUN bytes remain unknown, including the75-byte font
+to154,067. At that review all9,924 other ZUN bytes remained unknown, including the75-byte font
 loader, its zero alignment candidate, two messages and all other children.
 Global denominator/percentage remain null. No image bytes are published.
 
@@ -60,8 +100,8 @@ New source lead: the separate `-S` resident/config child has positive compiler
 and natural-C++ history. Independent complete candidates are cfg_init322 at
 outer `0D4B..0E8D`, then main269 at `0E8D..0F9A`; child start is `0AE4`, with
 `child COM IP = outer - 0AE4 + 100`. References are pinned
-`th05/res_kso.cpp` and `th02/res_init.cpp`. Their complete ABI, tiny-model/CRT,
-DATA/provider context and native boundaries still need source/replay work.
+`th05/res_kso.cpp` and `th02/res_init.cpp`. The322-byte config function is now accepted above; the269-byte main still
+needs natural source/replay work.
 Do not promote the whole6,564-byte child as ASM or vendor from those names.
 The reference-matching KAJA `-O` utility also stays unknown until independently
 authenticated vendor provenance and an explicit complete-scope review exist.
