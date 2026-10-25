@@ -72,3 +72,7 @@ owner. All239 instruction bytes are imported as authored; the five real
 call-padding NOPs are compared and excluded from authored credit. There is no
 independent Dream-decay negative claim. CPP, header and maintained binder are
 now frozen accepted dependencies.
+
+Current canonical bodies and source-sensitive refresh evidence are documented
+in [bomb_family.md](bomb_family.md). Earlier individual controls remain
+historical; the eight-owner refresh uses one shared Reimu-star control.

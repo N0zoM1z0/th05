@@ -48,3 +48,7 @@ binders and suggested entries are in `.analysis/bombanim-midboss5-*`.
 raw-byte comparison, original ordered fixups, deterministic OMF and the
 reviewed compiled gameplay mutation. Source state and foreign API bodies
 remain uncredited.
+
+Current canonical bodies and source-sensitive refresh evidence are documented
+in [bomb_family.md](bomb_family.md). Earlier individual controls remain
+historical; the eight-owner refresh uses one shared Reimu-star control.

@@ -2,27 +2,37 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "eee2a158f19794e9654fcf01830f93c54a99bde39576bef30dc1746ba2919615",
+  "replay_receipt_sha256": "6c604498b62de011aa2f258097000a403559dfb6d2ab95420f50057ec5b8308d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138710,
-    "candidate_start": 138710,
-    "size": 38,
-    "target_sha256": "9f211bb55c4d8227876cc75e980b5ee1b21a10b296c1dcbe3c81489bcef9368f",
-    "candidate_sha256": "ff6f60dfd43eb325ef095c65a1f6c6d5c5dd6e77a0bbd3fa465134f2019a8b53",
+    "target_start": 66010,
+    "candidate_start": 66010,
+    "size": 161,
+    "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+    "candidate_sha256": "0f358c33b488f7850f18beb3a58f2eada8ff6208917df29805e7a71316974175",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      55,
+      27,
+      135
+    ],
+    "candidate_fixups": [
+      55,
+      27,
+      135
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 138710,
-      "size": 38,
-      "module": "th05/hud_dec.cpp",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 66010,
+      "size": 161,
+      "function_symbol": "bomb_mima()",
+      "contribution_start": 64080,
+      "contribution_size": 2091,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -19637,8 +19647,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "f1ebdb0fe8605e8995b298bddd1b992aa763691822a6d53eed3b7bf0b8a0a32d",
-            "dependency_timestamp_normalized_sha256": "710476a5b50094e279dd55a0fe247408435def9ca8cbe2c63e5b7199765542fc",
+            "sha256": "2e4c87ec3fdbbf136393af717ef8f8f4b28baf4de6dd08008094c04350232dbd",
+            "dependency_timestamp_normalized_sha256": "a82ba4f3b1c044163edd00602ca271cb915d699fc5cfb32dbb8533009823d4cd",
             "module_name": "th05/bombanim.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -19654,12 +19664,13 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/reimu_stars.inl"
             ]
           },
           {
-            "sha256": "8600fb612aacd981b8a65fe48c2ebe40ca58ad198bb8b24c8623d241ed8833a9",
-            "dependency_timestamp_normalized_sha256": "710476a5b50094e279dd55a0fe247408435def9ca8cbe2c63e5b7199765542fc",
+            "sha256": "f0cf78a234e3b17353c8f3edbaf7e505d654786951af534dc9ec1314c779a39f",
+            "dependency_timestamp_normalized_sha256": "a82ba4f3b1c044163edd00602ca271cb915d699fc5cfb32dbb8533009823d4cd",
             "module_name": "th05/bombanim.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -19675,7 +19686,8 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/reimu_stars.inl"
             ]
           }
         ],
@@ -19725,8 +19737,12 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/reimu_stars.inl",
+            "sha256": "19698baec8b1afe8f707428353948000632f7363b606ff2949b2bf00484b4504"
+          },
+          {
             "path": "src/main/player/bombanim.cpp",
-            "sha256": "36bbcb6ddaa706ec6ac1125dde0278d13d3d291cdbc0b20f27f5acb28ee5fcf6"
+            "sha256": "5531c41405326490ed5b65927ae5c8681ff32d5050741ca6726e9f0f7654e67e"
           },
           {
             "path": "src/main/player/bombanim.hpp",
@@ -19757,8 +19773,12 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/reimu_stars.inl",
+          "sha256": "19698baec8b1afe8f707428353948000632f7363b606ff2949b2bf00484b4504"
+        },
+        {
           "path": "src/main/player/bombanim.cpp",
-          "sha256": "36bbcb6ddaa706ec6ac1125dde0278d13d3d291cdbc0b20f27f5acb28ee5fcf6"
+          "sha256": "5531c41405326490ed5b65927ae5c8681ff32d5050741ca6726e9f0f7654e67e"
         },
         {
           "path": "src/main/player/bombanim.hpp",
@@ -19775,7 +19795,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "3e21320be0211b34a78f4f9c027d518fdf90950a9ad776dd487c55037189ee63",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
         "target_start": 64324,
         "candidate_start": 64324,
@@ -19805,11 +19825,11 @@
         "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
           "unit": "main-reimu-bomb-stars",
-          "source": "src/main/player/bombanim.cpp",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
           "find": "if((bomb_frame <= 112)",
           "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "cd76f51765e1f61122703bd38214de136f34a2d1ec4726db791608e49cca783a",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 64324,
@@ -19836,8 +19856,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "142ec1c51668fd4475519473be1adbcde0f2a1f795deeee1c876cf04abbaa048",
-          "dependency_timestamp_normalized_sha256": "32117d78ea5168f7539806ffd4d3e407b3c8fea25657087d3d6d1422ba947273",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
           "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -19853,7 +19873,8 @@
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/shared/abi.hpp",
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -42017,8 +42038,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "620cba484d0f938cb35be2851d7f36ad248af7d5be0e3204dbfe3b60249f2d63",
-            "dependency_timestamp_normalized_sha256": "2d1c4eb50fae670ddc61068f777eeb6c46a132607b38055363b65292d19c22f8",
+            "sha256": "7898cb12d4c59b1a197c0a64a142b0f6f08fa87244dcaaf2f05790333709ef88",
+            "dependency_timestamp_normalized_sha256": "2c0f04877b6946521fc1cd374464f41a0f85122e3cbf95ced28d83ffa523f252",
             "module_name": "th05/m_circle.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42037,12 +42058,13 @@
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/mima_circles.inl"
             ]
           },
           {
-            "sha256": "637f0a9f321635ea50dbccfb0f84f37b8929d4fe04f62216e4a5f71e7f1b041a",
-            "dependency_timestamp_normalized_sha256": "2d1c4eb50fae670ddc61068f777eeb6c46a132607b38055363b65292d19c22f8",
+            "sha256": "7da5c9860b016eff087a946b11ef276f7ae1deaef88838c571e0dd2e90c664e8",
+            "dependency_timestamp_normalized_sha256": "2c0f04877b6946521fc1cd374464f41a0f85122e3cbf95ced28d83ffa523f252",
             "module_name": "th05/m_circle.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42061,13 +42083,14 @@
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/mima_circles.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -42111,12 +42134,16 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/mima_circles.inl",
+            "sha256": "f55f21ed890bcec2415c4ea40f7aa33c043741978b12e82e7f047706570911ef"
+          },
+          {
             "path": "src/main/player/bombanim.hpp",
             "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
           },
           {
             "path": "src/main/player/mima_circles.cpp",
-            "sha256": "76e729c5f8ef6a9244b8598332654038fcc5f5336c23473a5c219290090d80eb"
+            "sha256": "9b92511ceaf39e228719547953761d36e5974fcbf909a977e2524268c2a660f8"
           },
           {
             "path": "src/main/player/mima_circles.hpp",
@@ -42151,12 +42178,16 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/mima_circles.inl",
+          "sha256": "f55f21ed890bcec2415c4ea40f7aa33c043741978b12e82e7f047706570911ef"
+        },
+        {
           "path": "src/main/player/bombanim.hpp",
           "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
         },
         {
           "path": "src/main/player/mima_circles.cpp",
-          "sha256": "76e729c5f8ef6a9244b8598332654038fcc5f5336c23473a5c219290090d80eb"
+          "sha256": "9b92511ceaf39e228719547953761d36e5974fcbf909a977e2524268c2a660f8"
         },
         {
           "path": "src/main/player/mima_circles.hpp",
@@ -42177,65 +42208,76 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "28ee9ab22c23018ff95672d5650125a6981d9c478b46f4856be68681572a3106",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 65624,
-        "candidate_start": 65624,
-        "size": 181,
-        "target_sha256": "c1c507b22450de4ed93d97f8131df79c29ad19a492fcd4b47f14236ce98b9f15",
-        "candidate_sha256": "9dfb249c7bf141548454a0b6ec7245de60e4f5c097be210d15dd509c32f9e383",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          152,
-          133
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          152,
-          133
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-mima-circles",
-        "entry_sha256": "6eabed37b0ddec6384ccc35f49b75e7bedd3e5c3213b4670335ef24a423b3077",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "unit": "main-mima-circles",
-          "source": "src/main/player/mima_circles.cpp",
-          "find": "circle->distance = 256;",
-          "replace": "circle->distance = 257;"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "79a2f9a23aee597736239d49957664b583850716ed1c45e757138e4cfb1c72d9",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 65624,
-          "candidate_start": 65624,
-          "size": 181,
-          "target_sha256": "c1c507b22450de4ed93d97f8131df79c29ad19a492fcd4b47f14236ce98b9f15",
-          "candidate_sha256": "9dfb249c7bf141548454a0b6ec7245de60e4f5c097be210d15dd509c32f9e383",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            152,
-            133
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            152,
-            133
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "5c23c7c2556de7166c8b663aeeb358c750379e23136640c7e82056b0ea1cac5e",
-          "dependency_timestamp_normalized_sha256": "7ff86c1f8683e2e32a83d4b107549bedc91e2cea0ee8761b88490f17ce92d82c",
-          "module_name": "th05/m_circle.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/m_circle.cpp",
-            "src/main/player/mima_circles.cpp",
-            "src/main/player/mima_circles.hpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
             "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
@@ -42245,8 +42287,7 @@
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -42260,7 +42301,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/m_circle.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -42332,8 +42373,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "633a8d55e9d6988a7bce36e42366076425dc7b083ec603f56f8330434fef8329",
-            "dependency_timestamp_normalized_sha256": "79ac08c0580d1f3d463441c030b6365f54e369861c561e349d753b182e9b5bc3",
+            "sha256": "5fc78bdbe4cd6067f301bcdb248250e7386364d6ff73258e577b9f74acada5d8",
+            "dependency_timestamp_normalized_sha256": "e7051add63fa10ce2d82f763fb4a990cb7ed3cc4751c0073b5ca238f5ad721dd",
             "module_name": "th05/m_lasers.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42352,12 +42393,13 @@
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/marisa_lasers.inl"
             ]
           },
           {
-            "sha256": "b8ffe7fc78eab4a1405632a4436d2d6abe5a1d1c217f2d0408acf23a0eade0e2",
-            "dependency_timestamp_normalized_sha256": "79ac08c0580d1f3d463441c030b6365f54e369861c561e349d753b182e9b5bc3",
+            "sha256": "8fde648ed791c0958388a9811c6b5a08a4ec72bb55a7dab647b30c177d771168",
+            "dependency_timestamp_normalized_sha256": "e7051add63fa10ce2d82f763fb4a990cb7ed3cc4751c0073b5ca238f5ad721dd",
             "module_name": "th05/m_lasers.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42376,13 +42418,14 @@
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/marisa_lasers.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -42426,12 +42469,16 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/marisa_lasers.inl",
+            "sha256": "a037adc4dd9abc3b46bd42420ecf4f92e54371dadcd8c1b6a3961f571461672f"
+          },
+          {
             "path": "src/main/player/bombanim.hpp",
             "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
           },
           {
             "path": "src/main/player/marisa_lasers.cpp",
-            "sha256": "e4234cc236da3f7ce218773a754c2e3487616562efe8f4bdbe21f05ec2d701f7"
+            "sha256": "971e7550c6cd9b8cb346affc3f0344b7fc2ba54ddea648f7cc945138d7040e69"
           },
           {
             "path": "src/main/player/player.hpp",
@@ -42462,12 +42509,16 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/marisa_lasers.inl",
+          "sha256": "a037adc4dd9abc3b46bd42420ecf4f92e54371dadcd8c1b6a3961f571461672f"
+        },
+        {
           "path": "src/main/player/bombanim.hpp",
           "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
         },
         {
           "path": "src/main/player/marisa_lasers.cpp",
-          "sha256": "e4234cc236da3f7ce218773a754c2e3487616562efe8f4bdbe21f05ec2d701f7"
+          "sha256": "971e7550c6cd9b8cb346affc3f0344b7fc2ba54ddea648f7cc945138d7040e69"
         },
         {
           "path": "src/main/player/player.hpp",
@@ -42484,96 +42535,86 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "e182bf77d3c48e4f25641c6f40dc5168767c7bb2765110184fd31d4d62479f70",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 65068,
-        "candidate_start": 65068,
-        "size": 335,
-        "target_sha256": "04d8942699acd1a44a0a8e6209158e19db6d77865bcf3e2e9df02312afcd7fab",
-        "candidate_sha256": "d92a87c5ea0d76372c92f17fa7eb39d9a6ebba47b4a0499d2d0f2302486ae600",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          299,
-          285,
-          253,
-          221,
-          136,
-          117,
-          94
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          299,
-          285,
-          253,
-          221,
-          136,
-          117,
-          94
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-marisa-bomb-lasers",
-        "entry_sha256": "cee7e5f36f2131d686e98fc119d307f00ece2d364a589973267746b5290dca77",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "unit": "main-marisa-bomb-lasers",
-          "source": "src/main/player/marisa_lasers.cpp",
-          "find": "laser->radius = 24;",
-          "replace": "laser->radius = 25;"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "557f3a70fd6416bd8974c8ac6b234b3f858d5debd26479242a758ab07f5a1f99",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 65068,
-          "candidate_start": 65068,
-          "size": 335,
-          "target_sha256": "04d8942699acd1a44a0a8e6209158e19db6d77865bcf3e2e9df02312afcd7fab",
-          "candidate_sha256": "d92a87c5ea0d76372c92f17fa7eb39d9a6ebba47b4a0499d2d0f2302486ae600",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            299,
-            285,
-            253,
-            221,
-            136,
-            117,
-            94
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            299,
-            285,
-            253,
-            221,
-            136,
-            117,
-            94
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "e28ed28470dc3da5b3733c61037c0419fadb71344f911294f33aed0ceb563b65",
-          "dependency_timestamp_normalized_sha256": "55285ee2dd2d240a8af8341fd5ecedd2488deafe0463c91a273badcc387868b9",
-          "module_name": "th05/m_lasers.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/m_lasers.cpp",
-            "src/main/player/marisa_lasers.cpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
             "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -42587,7 +42628,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/m_lasers.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -42901,8 +42942,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d0af8f21a6c2f8bf65fcfd109fab928764f90f2d268f226db7d29687af17d50f",
-            "dependency_timestamp_normalized_sha256": "a4b36b5b7add095891e0b454747cabe215a4d50c89cf8ead8566d971665fd1b2",
+            "sha256": "4641cb0c639bb6c3d59f03ebc62b460e8461ad13149a73b3d3e1eacd86e5fe4a",
+            "dependency_timestamp_normalized_sha256": "fbeb4fa1325118e673cf932cf213a83a4d999257e626381b5d46c32c0a979fa3",
             "module_name": "th05/mb_ctrl.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42917,12 +42958,13 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/marisa_control.inl"
             ]
           },
           {
-            "sha256": "d0af8f21a6c2f8bf65fcfd109fab928764f90f2d268f226db7d29687af17d50f",
-            "dependency_timestamp_normalized_sha256": "a4b36b5b7add095891e0b454747cabe215a4d50c89cf8ead8566d971665fd1b2",
+            "sha256": "4641cb0c639bb6c3d59f03ebc62b460e8461ad13149a73b3d3e1eacd86e5fe4a",
+            "dependency_timestamp_normalized_sha256": "fbeb4fa1325118e673cf932cf213a83a4d999257e626381b5d46c32c0a979fa3",
             "module_name": "th05/mb_ctrl.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42937,13 +42979,14 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/marisa_control.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-3/a/source",
+          "group-3/b/source"
         ],
         "compiler_arguments": [
           [
@@ -42987,8 +43030,12 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/marisa_control.inl",
+            "sha256": "964c4e0f95c5af4eac5f62e231fc89b4a59c45b19f04a65950a5ca853f08db2d"
+          },
+          {
             "path": "src/main/player/marisa_bomb_control.cpp",
-            "sha256": "320b755ea62a8a0a6edee9f6d89790fa73f940fe942fd95331810e68e86fbb48"
+            "sha256": "20faf6bdd51ca1fc8dcf03c2226a8ce9aa6aa6acb234657da824313fad3356ee"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -43015,8 +43062,12 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/marisa_control.inl",
+          "sha256": "964c4e0f95c5af4eac5f62e231fc89b4a59c45b19f04a65950a5ca853f08db2d"
+        },
+        {
           "path": "src/main/player/marisa_bomb_control.cpp",
-          "sha256": "320b755ea62a8a0a6edee9f6d89790fa73f940fe942fd95331810e68e86fbb48"
+          "sha256": "20faf6bdd51ca1fc8dcf03c2226a8ce9aa6aa6acb234657da824313fad3356ee"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -43029,68 +43080,77 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "227efa0aeb9351d1f1cda8b35ff5fb468af9864266f1a72edf82b908d0fa40a5",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 65463,
-        "candidate_start": 65463,
-        "size": 161,
-        "target_sha256": "dbec9777e3e24f4c8c921a1e108c43ed1978300b621b277ad769ad00dde762a1",
-        "candidate_sha256": "b70a3121463ccf35b5ae8c65d433f0bec254827acdca9d4eccd9cd434925af9d",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          135,
-          55,
-          27
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          135,
-          55,
-          27
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-marisa-bomb-control",
-        "entry_sha256": "f9d888d027af09db4917677bbd9768b0b1051d46d6c06a2cae45e165328aab5a",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "unit": "main-marisa-bomb-control",
-          "source": "src/main/player/marisa_bomb_control.cpp",
-          "find": "PaletteTone = 100;",
-          "replace": "PaletteTone = 101;"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "3b33c1df689b5faaa376ee40228a199d6ee83a3c68eecb08f690a7d043616f97",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 65463,
-          "candidate_start": 65463,
-          "size": 161,
-          "target_sha256": "dbec9777e3e24f4c8c921a1e108c43ed1978300b621b277ad769ad00dde762a1",
-          "candidate_sha256": "b70a3121463ccf35b5ae8c65d433f0bec254827acdca9d4eccd9cd434925af9d",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            135,
-            55,
-            27
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            135,
-            55,
-            27
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "20f6e99630e99d88960ada212a3188d5ead328c1e663ad4bdeb169bf0632c33e",
-          "dependency_timestamp_normalized_sha256": "9d3170c6d57c1ef8fefe05f4b259b7940c194216e3693860099c61acba713e8f",
-          "module_name": "th05/mb_ctrl.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/mb_ctrl.cpp",
-            "src/main/player/marisa_bomb_control.cpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
+            "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
@@ -43098,7 +43158,8 @@
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/shared/abi.hpp",
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -43112,7 +43173,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/mb_ctrl.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -44790,8 +44851,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4ca1c99dc6cbadfebcc11898a4814b7121fa0d89984e1b8b28c8b680f9d80c64",
-            "dependency_timestamp_normalized_sha256": "e96215dd7b9472bb3468e661e96ecb29bfa974ad7d812788365f6e4f93fb5f3c",
+            "sha256": "be0344da820bbada7252f58779d25a96d018d7bff34bd01a25e92774a1433880",
+            "dependency_timestamp_normalized_sha256": "1fc6ee7d55152962b536b3153bfcfb3c068d732df60d1d940be7b8f942b9408b",
             "module_name": "th05/mi_full.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -44813,13 +44874,15 @@
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/mima_draw.inl",
               "src/main/player/mima_bomb_control.cpp",
-              "src/main/hud/overlay.hpp"
+              "src/main/hud/overlay.hpp",
+              "src/main/player/bomb_body/mima_control.inl"
             ]
           },
           {
-            "sha256": "386ec91ee083ec0732a3228c96ea0084299bc0cd3381687b399495bdb677f1ee",
-            "dependency_timestamp_normalized_sha256": "e96215dd7b9472bb3468e661e96ecb29bfa974ad7d812788365f6e4f93fb5f3c",
+            "sha256": "be0344da820bbada7252f58779d25a96d018d7bff34bd01a25e92774a1433880",
+            "dependency_timestamp_normalized_sha256": "1fc6ee7d55152962b536b3153bfcfb3c068d732df60d1d940be7b8f942b9408b",
             "module_name": "th05/mi_full.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -44841,62 +44904,17 @@
               "src/shared/abi.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
+              "src/main/player/bomb_body/mima_draw.inl",
               "src/main/player/mima_bomb_control.cpp",
-              "src/main/hud/overlay.hpp"
+              "src/main/hud/overlay.hpp",
+              "src/main/player/bomb_body/mima_control.inl"
             ]
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
-        "source_inputs": [
-          {
-            "path": "probes/units/mima_bomb_full_bindings.asm",
-            "sha256": "f258e4b5c6636f84a577469a37fa84d18db1d3ec7121dbe5c162004fe830fc65"
-          },
-          {
-            "path": "src/main/hud/overlay.hpp",
-            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
-          },
-          {
-            "path": "src/main/hud/resident.hpp",
-            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
-          },
-          {
-            "path": "src/main/player/bombanim.hpp",
-            "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
-          },
-          {
-            "path": "src/main/player/mima_bomb.cpp",
-            "sha256": "36f721bbc7f52f6914023ed5c28e65fff5691f2d44671072eb3e5c7eb24fa29f"
-          },
-          {
-            "path": "src/main/player/mima_bomb.hpp",
-            "sha256": "f5673a8ecc28419fdd953501f7b3671c9cc4f2320f251a5f4f85ecd61244f8c0"
-          },
-          {
-            "path": "src/main/player/mima_bomb_control.cpp",
-            "sha256": "49ca1feb3e4ed738f1d664b53e38599bda6a20e5f3750217655b65b0cdedf7f2"
-          },
-          {
-            "path": "src/main/player/mima_circles.hpp",
-            "sha256": "9efebaa39626ac32ed90c2ffb612e696aa5dc2c2ae0c27b0e5371e1670fa966e"
-          },
-          {
-            "path": "src/main/player/player.hpp",
-            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
-          },
-          {
-            "path": "src/shared/abi.hpp",
-            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
-          },
-          {
-            "path": "src/shared/geometry.hpp",
-            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
-          }
-        ],
-        "exact": true,
         "compiler_arguments": [
           [
             "-c",
@@ -44924,7 +44942,62 @@
             "-DBINARY='M'",
             "th05/mi_full.cpp"
           ]
-        ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mima_bomb_full_bindings.asm",
+            "sha256": "f258e4b5c6636f84a577469a37fa84d18db1d3ec7121dbe5c162004fe830fc65"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/bomb_body/mima_control.inl",
+            "sha256": "ea57035517b8fe63cd82e68dc273be5aec4839c8c7d063592321cfd3923cb1b7"
+          },
+          {
+            "path": "src/main/player/bomb_body/mima_draw.inl",
+            "sha256": "d93d318d3ae88de2f7d0abd278a6d7fc977becfcbe14772d39382c31a00ca2a8"
+          },
+          {
+            "path": "src/main/player/bombanim.hpp",
+            "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+          },
+          {
+            "path": "src/main/player/mima_bomb.cpp",
+            "sha256": "ebf549ea1ff094c440de324694c9506d2249aad45109cd885237e933b015b198"
+          },
+          {
+            "path": "src/main/player/mima_bomb.hpp",
+            "sha256": "f5673a8ecc28419fdd953501f7b3671c9cc4f2320f251a5f4f85ecd61244f8c0"
+          },
+          {
+            "path": "src/main/player/mima_bomb_control.cpp",
+            "sha256": "a4e5cc0be68a49dd2452be58270936cc8ec51a9460877d8f91dd38a7e94fa6f4"
+          },
+          {
+            "path": "src/main/player/mima_circles.hpp",
+            "sha256": "9efebaa39626ac32ed90c2ffb612e696aa5dc2c2ae0c27b0e5371e1670fa966e"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
       },
       "source_inputs": [
         {
@@ -44940,12 +45013,20 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/mima_control.inl",
+          "sha256": "ea57035517b8fe63cd82e68dc273be5aec4839c8c7d063592321cfd3923cb1b7"
+        },
+        {
+          "path": "src/main/player/bomb_body/mima_draw.inl",
+          "sha256": "d93d318d3ae88de2f7d0abd278a6d7fc977becfcbe14772d39382c31a00ca2a8"
+        },
+        {
           "path": "src/main/player/bombanim.hpp",
           "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
         },
         {
           "path": "src/main/player/mima_bomb.cpp",
-          "sha256": "36f721bbc7f52f6914023ed5c28e65fff5691f2d44671072eb3e5c7eb24fa29f"
+          "sha256": "ebf549ea1ff094c440de324694c9506d2249aad45109cd885237e933b015b198"
         },
         {
           "path": "src/main/player/mima_bomb.hpp",
@@ -44953,7 +45034,7 @@
         },
         {
           "path": "src/main/player/mima_bomb_control.cpp",
-          "sha256": "49ca1feb3e4ed738f1d664b53e38599bda6a20e5f3750217655b65b0cdedf7f2"
+          "sha256": "a4e5cc0be68a49dd2452be58270936cc8ec51a9460877d8f91dd38a7e94fa6f4"
         },
         {
           "path": "src/main/player/mima_circles.hpp",
@@ -44974,137 +45055,86 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "56b91e47a204a68278d3e9da9db4e123c7fbb485c9480ec991c6c651222024c1",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 65805,
-        "candidate_start": 65805,
-        "size": 205,
-        "target_sha256": "75679b017c581619408ce139aebd34496319b87f26c059e0f01bc25a9593dbe0",
-        "candidate_sha256": "780dc8d0216b96b9e69997b7f48a8b9625f1be77597e25fd589f5bede5fb5ff5",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          178,
-          142,
-          128,
-          115,
-          101,
-          83,
-          69,
-          56,
-          42,
-          29,
-          15
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          178,
-          142,
-          128,
-          115,
-          101,
-          83,
-          69,
-          56,
-          42,
-          29,
-          15
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 65805,
-          "size": 205,
-          "function_symbol": "mima_bomb_draw()",
-          "contribution_start": 65805,
-          "contribution_size": 366,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "bomb_mima()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-mima-bomb-draw",
-        "entry_sha256": "7ce639c437e89d67754fefd07ef1cfbdbf95ca23aecd8917eb6b4b73a6a90999",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "id": "mima-outer-circle-radius",
-          "unit": "main-mima-bomb-draw",
-          "source": "src/main/player/mima_bomb.cpp",
-          "find": "radius = 224 - bomb_frame;",
-          "replace": "radius = 223 - bomb_frame;"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "d319a6b2cd16ad96256d9aac0e19a072d2dec7d21a5f10c6170fa044747aba8c",
-        "producer_path": "parent/negative/source",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
+        "producer_path": "negative/source",
         "comparison": {
-          "target_start": 65805,
-          "candidate_start": 65805,
-          "size": 205,
-          "target_sha256": "75679b017c581619408ce139aebd34496319b87f26c059e0f01bc25a9593dbe0",
-          "candidate_sha256": "780dc8d0216b96b9e69997b7f48a8b9625f1be77597e25fd589f5bede5fb5ff5",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            178,
-            142,
-            128,
-            115,
-            101,
-            83,
-            69,
-            56,
-            42,
-            29,
-            15
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            178,
-            142,
-            128,
-            115,
-            101,
-            83,
-            69,
-            56,
-            42,
-            29,
-            15
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 65805,
-            "size": 205,
-            "function_symbol": "mima_bomb_draw()",
-            "contribution_start": 65805,
-            "contribution_size": 366,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "bomb_mima()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "228e5cb7c50ba76606f0f49e7ee31ad0c1e3bbbe1b65b2072e1f2b1152cd6887",
-          "dependency_timestamp_normalized_sha256": "8653d4f3900ff88d63622d94e9da18b0b8a583172d84b0d9046d0f82d88e91a4",
-          "module_name": "th05/mi_full.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/mi_full.cpp",
-            "src/main/player/mima_bomb.cpp",
-            "src/main/player/mima_bomb.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "src/main/player/mima_circles.hpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
             "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/player/mima_bomb_control.cpp",
-            "src/main/hud/overlay.hpp"
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -45118,7 +45148,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/mi_full.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -45166,8 +45196,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "778ae97c4f3e39224b7f779a5f1bb67a07f70832452f632e94764efdedb772de",
-            "dependency_timestamp_normalized_sha256": "244372f9bd6b38578511fda9569918294cf22debe552bacac43f1b4a21341c99",
+            "sha256": "8d8fe14b1cc5c14656142872e97f7abce1d0be8600eaebdbf73a068196f90e5d",
+            "dependency_timestamp_normalized_sha256": "21861dba9f78ccb2175f75106abe5212215cfe1e4e465bc770835d2fe81457c2",
             "module_name": "th05/mb_draw.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -45183,12 +45213,13 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/marisa_draw.inl"
             ]
           },
           {
-            "sha256": "ecfc791e8150664e64fcb7a8f8ace904aa560f8b09e3ea3d082ab2628e086836",
-            "dependency_timestamp_normalized_sha256": "244372f9bd6b38578511fda9569918294cf22debe552bacac43f1b4a21341c99",
+            "sha256": "aec331c8ca123c5b710c4771aeaf19e30c1078b196e9c563f4c95a1b14d09a17",
+            "dependency_timestamp_normalized_sha256": "21861dba9f78ccb2175f75106abe5212215cfe1e4e465bc770835d2fe81457c2",
             "module_name": "th05/mb_draw.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -45204,13 +45235,14 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/marisa_draw.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-5/a/source",
+          "group-5/b/source"
         ],
         "compiler_arguments": [
           [
@@ -45254,12 +45286,16 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/marisa_draw.inl",
+            "sha256": "2de9b3a27562623ad5077fdc9049e54e8d0cd647c81ee6feec6e1129e606e677"
+          },
+          {
             "path": "src/main/player/bombanim.hpp",
             "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
           },
           {
             "path": "src/main/player/marisa_bomb_draw.cpp",
-            "sha256": "adf6cde01237128d2f7b21e8bbb711969a7205fbea87a2b1a21ebdab00fd4e6d"
+            "sha256": "bfdcd1c208d6c7878042698752d45b999481a7b8f3f79399ee01afb78a6c622d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -45286,12 +45322,16 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/marisa_draw.inl",
+          "sha256": "2de9b3a27562623ad5077fdc9049e54e8d0cd647c81ee6feec6e1129e606e677"
+        },
+        {
           "path": "src/main/player/bombanim.hpp",
           "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
         },
         {
           "path": "src/main/player/marisa_bomb_draw.cpp",
-          "sha256": "adf6cde01237128d2f7b21e8bbb711969a7205fbea87a2b1a21ebdab00fd4e6d"
+          "sha256": "bfdcd1c208d6c7878042698752d45b999481a7b8f3f79399ee01afb78a6c622d"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -45304,60 +45344,76 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "15a188a0166d943540e6823c413e5a4b3ff979964c87e5a27655634c57a2316e",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 65403,
-        "candidate_start": 65403,
-        "size": 60,
-        "target_sha256": "d24f184098c8476521970be991de258d6e7f3dda435b4e5424d31613ec7704c2",
-        "candidate_sha256": "c5e04815298fe980c4123d6eb9be4f7cf88accdade2537d07ad9ded66e3ce56e",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          14
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          14
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-marisa-bomb-draw",
-        "entry_sha256": "2dc981e33e3646e33890373bd52303c9b7307582950ed111c99e41a0c9e49a74",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "unit": "main-marisa-bomb-draw",
-          "source": "src/main/player/marisa_bomb_draw.cpp",
-          "find": "PaletteTone = 196 - (bomb_frame * 6);",
-          "replace": "PaletteTone = 195 - (bomb_frame * 6);"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "3aaea2031e2e816bf892bf46fba7dfd402d355b34d4ec7b9d24c9e6f4a5802d6",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 65403,
-          "candidate_start": 65403,
-          "size": 60,
-          "target_sha256": "d24f184098c8476521970be991de258d6e7f3dda435b4e5424d31613ec7704c2",
-          "candidate_sha256": "c5e04815298fe980c4123d6eb9be4f7cf88accdade2537d07ad9ded66e3ce56e",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            14
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            14
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "4b08e0b0bda8ec30a3b10ebfe9977283ee94f62648cba250786d94c80cbafb5d",
-          "dependency_timestamp_normalized_sha256": "fca4e965c260c17d0feba0bea24ed90dd973e1365cb02e00343931a64f350599",
-          "module_name": "th05/mb_draw.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/mb_draw.cpp",
-            "src/main/player/marisa_bomb_draw.cpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
             "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
@@ -45366,7 +45422,8 @@
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/shared/abi.hpp",
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -45380,7 +45437,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/mb_draw.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -46860,8 +46917,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "25c0d57ce6932de826c5a2a5102d22ea0a657750c69591a82fda0b99ea5e4319",
-            "dependency_timestamp_normalized_sha256": "93526bdf119203e7326a2b88f16d119b56aaec066764be4dc5e80cd4529fd9ed",
+            "sha256": "581f876423af1c39c9f92448305ececbd124f3bd730cc948088f74d5efd265a0",
+            "dependency_timestamp_normalized_sha256": "204cd959c82406f2500d9d338963bff3d8367f9e6a77462b14bb6957a421a89b",
             "module_name": "th05/r_bdraw.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -46878,12 +46935,13 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/reimu_draw.inl"
             ]
           },
           {
-            "sha256": "a33891ef0d11a69d472729b024785e21a3c063862998c09097b6ddec9da08484",
-            "dependency_timestamp_normalized_sha256": "93526bdf119203e7326a2b88f16d119b56aaec066764be4dc5e80cd4529fd9ed",
+            "sha256": "2a5a10c60fadc8fa97a22dbf497deb8d709764de0c3b68ecf3ab887f03f78afa",
+            "dependency_timestamp_normalized_sha256": "204cd959c82406f2500d9d338963bff3d8367f9e6a77462b14bb6957a421a89b",
             "module_name": "th05/r_bdraw.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -46900,13 +46958,14 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/reimu_draw.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-6/a/source",
+          "group-6/b/source"
         ],
         "compiler_arguments": [
           [
@@ -46950,6 +47009,10 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/reimu_draw.inl",
+            "sha256": "909cf5511a2c085b951c4d1d640dfd1ef62c6a480f0087a8e3fe1e78a67da717"
+          },
+          {
             "path": "src/main/player/bomb_draw.hpp",
             "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
           },
@@ -46959,7 +47022,7 @@
           },
           {
             "path": "src/main/player/reimu_bomb_draw.cpp",
-            "sha256": "b2821aabafc765d8106ba01c6e30a1ca65a43e4b0d136ada603c4437b4a7424d"
+            "sha256": "ed77d02d97183d427a0fdee44d3c5c5661daec210d74838281a1e741d8a371ef"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -46986,6 +47049,10 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/reimu_draw.inl",
+          "sha256": "909cf5511a2c085b951c4d1d640dfd1ef62c6a480f0087a8e3fe1e78a67da717"
+        },
+        {
           "path": "src/main/player/bomb_draw.hpp",
           "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
         },
@@ -46995,7 +47062,7 @@
         },
         {
           "path": "src/main/player/reimu_bomb_draw.cpp",
-          "sha256": "b2821aabafc765d8106ba01c6e30a1ca65a43e4b0d136ada603c4437b4a7424d"
+          "sha256": "ed77d02d97183d427a0fdee44d3c5c5661daec210d74838281a1e741d8a371ef"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -47008,65 +47075,76 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "c356539e9368657767b93f25f2548f3fdb5299d2cd80224c74b8df0ec6be0789",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 64791,
-        "candidate_start": 64791,
-        "size": 84,
-        "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
-        "candidate_sha256": "249aafa16188b967c901337c26ea2fca87cde23f1267291d695dc22af6b7ce2f",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          80,
-          14
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          80,
-          14
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-reimu-bomb-draw",
-        "entry_sha256": "455c6ba2d410da1a8f9cfed23dd5c7fa3f1e56923554d2589bce247ac8cf4c61",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "unit": "main-reimu-bomb-draw",
-          "source": "src/main/player/reimu_bomb_draw.cpp",
-          "find": "PaletteTone = 196 - ((bomb_frame - 32) * 3);",
-          "replace": "PaletteTone = 195 - ((bomb_frame - 32) * 3);"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "77e7be9767b3a0de9ec974e8a30eab296f2e65d8d10ff083f15747864b30d3dd",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 64791,
-          "candidate_start": 64791,
-          "size": 84,
-          "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
-          "candidate_sha256": "249aafa16188b967c901337c26ea2fca87cde23f1267291d695dc22af6b7ce2f",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            80,
-            14
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            80,
-            14
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "314c24db03e1cf2337b87b6e35f0e7a4600a919be33dab2cc2808167ca747ab7",
-          "dependency_timestamp_normalized_sha256": "4eceb9dd289ecb39d6e83384fce1909f4e57dbeba0251207cd23074b85b6b98e",
-          "module_name": "th05/r_bdraw.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/r_bdraw.cpp",
-            "src/main/player/reimu_bomb_draw.cpp",
-            "src/main/player/bomb_draw.hpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
             "src/main/player/bombanim.hpp",
             "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
@@ -47075,7 +47153,8 @@
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/shared/abi.hpp",
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -47089,7 +47168,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/r_bdraw.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -58491,8 +58570,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "b6138b0bccd55af669b54c2d46d14655d446c7e7097ae64264a037d0874fca6b",
-            "dependency_timestamp_normalized_sha256": "2f492d380fc8a1780d69fec6bd91dd2a569712e1d73abd64a39f3a84b54ae778",
+            "sha256": "53ab23346d1125e71f6360344e93daa6ea51f9c62ac872d233df9fbc5453c432",
+            "dependency_timestamp_normalized_sha256": "26737e77b46c6ba2338ed523d4fc3ae9e1be22eba4a3af192a2e114eb0aae57e",
             "module_name": "th05/bomb_rt.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -58508,12 +58587,13 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/runtime.inl"
             ]
           },
           {
-            "sha256": "5ae312b8dabb23cf73e0224ff0cf80b50e385c6c8c693a76b7b3a03fcea488fe",
-            "dependency_timestamp_normalized_sha256": "2f492d380fc8a1780d69fec6bd91dd2a569712e1d73abd64a39f3a84b54ae778",
+            "sha256": "ca7b39fa910547db6f573e0dc5ec99794e39b0ca419a324066af78068805fe76",
+            "dependency_timestamp_normalized_sha256": "26737e77b46c6ba2338ed523d4fc3ae9e1be22eba4a3af192a2e114eb0aae57e",
             "module_name": "th05/bomb_rt.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -58529,13 +58609,14 @@
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/hud/resident.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/main/player/bomb_body/runtime.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-7/a/source",
+          "group-7/b/source"
         ],
         "compiler_arguments": [
           [
@@ -58579,8 +58660,12 @@
             "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
           },
           {
+            "path": "src/main/player/bomb_body/runtime.inl",
+            "sha256": "ef6f84267bc68ff332e59cbd72135fffe8e4b7234e6973c3f9e46ab0b50d8465"
+          },
+          {
             "path": "src/main/player/bomb_runtime.cpp",
-            "sha256": "adad29c96675f5fdeb3e0c29ece051f07a2db69858b96229fd0af9a9e1167e26"
+            "sha256": "1619a7b2bffb349532a43ef8e5a58522f832d1c6386403d7681e3814a4ffc81e"
           },
           {
             "path": "src/main/player/bomb_runtime.hpp",
@@ -58611,8 +58696,12 @@
           "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
         },
         {
+          "path": "src/main/player/bomb_body/runtime.inl",
+          "sha256": "ef6f84267bc68ff332e59cbd72135fffe8e4b7234e6973c3f9e46ab0b50d8465"
+        },
+        {
           "path": "src/main/player/bomb_runtime.cpp",
-          "sha256": "adad29c96675f5fdeb3e0c29ece051f07a2db69858b96229fd0af9a9e1167e26"
+          "sha256": "1619a7b2bffb349532a43ef8e5a58522f832d1c6386403d7681e3814a4ffc81e"
         },
         {
           "path": "src/main/player/bomb_runtime.hpp",
@@ -58629,70 +58718,86 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "fcedb54834b84e71d3054082abaa9179e06da947f8c2a6889788937b75b41a84",
+      "replay_receipt_sha256": "89ae788ff5e61401b15d828b505a9f6ba4787c72539e542c5588576bfda64f0e",
       "compiled_negative_control": {
-        "target_start": 64080,
-        "candidate_start": 64080,
-        "size": 244,
-        "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
-        "candidate_sha256": "5737ee100c06617179da583353779577044db78694fb55f02887bcbe1b08b9cf",
+        "target_start": 64324,
+        "candidate_start": 64324,
+        "size": 467,
+        "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+        "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
         "raw_exact": false,
         "target_fixups": [
-          143
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "candidate_fixups": [
-          143
+          411,
+          381,
+          348,
+          315,
+          135
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-bomb-runtime",
-        "entry_sha256": "e29c1578dfc8651ab1ac3ed35842dff57a70422854d8323a6d82b8ccdb2b2261",
+        "unit_id": "main-reimu-bomb-stars",
+        "entry_sha256": "dce4b0c443ced1f2b6c180492eeb689684b63bffc8a0c85362c7320bc4f4d580",
         "mutation": {
-          "id": "bomb-reimu-invincibility192-to193",
-          "unit": "main-bomb-runtime",
-          "source": "src/main/player/bomb_runtime.cpp",
-          "find": "select_for_playchar(192, 160, 144, 224)",
-          "replace": "select_for_playchar(193, 160, 144, 224)"
+          "unit": "main-reimu-bomb-stars",
+          "source": "src/main/player/bomb_body/reimu_stars.inl",
+          "find": "if((bomb_frame <= 112)",
+          "replace": "if((bomb_frame <= 111)"
         },
-        "control_sha256": "241e1f3bc07da725558f96196b1d85c2e74c7f8a3cae68473f07882a63d5c9dd",
+        "control_sha256": "0aa1fefba9ec7dd0667f4e2ae3237abd1edea1495fa6965db8235b903281f5ae",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 64080,
-          "candidate_start": 64080,
-          "size": 244,
-          "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
-          "candidate_sha256": "5737ee100c06617179da583353779577044db78694fb55f02887bcbe1b08b9cf",
+          "target_start": 64324,
+          "candidate_start": 64324,
+          "size": 467,
+          "target_sha256": "41d69cdc537ad38e1a8899fe5222d5d426bba55113fb1ac3b8a5b0ae66c48b6f",
+          "candidate_sha256": "4caf1a334819ff63333a081c31936130faeda713a7ac806b3cb4f275fce9e66a",
           "raw_exact": false,
           "target_fixups": [
-            143
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "candidate_fixups": [
-            143
+            411,
+            381,
+            348,
+            315,
+            135
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "ccad0d158452d4453959718608d4b23b40e0c656ef52dd2435bce6499fd0a283",
-          "dependency_timestamp_normalized_sha256": "839cdc0b34c09bdf0173bda754a777e45364d543ff188c1d7214c4ef37c7edf3",
-          "module_name": "th05/bomb_rt.cpp",
+          "sha256": "6227fefc7d4855aae14cc8f2e2386c878e69cd5b8b0197b1bdcf3b8590df9bbc",
+          "dependency_timestamp_normalized_sha256": "2bb19178e2fd06011608a9980adceb15b3badbd8714a23c558c308df8b94268d",
+          "module_name": "th05/bombanim.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bomb_rt.cpp",
-            "src/main/player/bomb_runtime.cpp",
-            "src/main/player/bomb_runtime.hpp",
-            "src/main/boss/movement.hpp",
+            "th05/bombanim.cpp",
+            "src/main/player/bombanim.cpp",
+            "src/main/player/bombanim.hpp",
+            "src/main/hud/overlay.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/shared/abi.hpp",
+            "src/main/player/bomb_body/reimu_stars.inl"
           ]
         },
         "compiler_arguments": [
@@ -58706,7 +58811,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bomb_rt.cpp"
+          "th05/bombanim.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -64025,6 +64130,521 @@
           "-ml",
           "-DBINARY='M'",
           "th05/hud_dec.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mima-bomb-control",
+      "entry_sha256": "1360dad6e4386f9a34a94de6bc54e646d6e25f9c783fe7b7bc69d7fc40703d33",
+      "result": {
+        "id": "main-mima-bomb-control",
+        "entry_sha256": "1360dad6e4386f9a34a94de6bc54e646d6e25f9c783fe7b7bc69d7fc40703d33",
+        "rounds": [
+          {
+            "target_start": 66010,
+            "candidate_start": 66010,
+            "size": 161,
+            "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+            "candidate_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+            "raw_exact": true,
+            "target_fixups": [
+              55,
+              27,
+              135
+            ],
+            "candidate_fixups": [
+              55,
+              27,
+              135
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 66010,
+              "size": 161,
+              "function_symbol": "bomb_mima()",
+              "contribution_start": 64080,
+              "contribution_size": 2091,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 66010,
+            "candidate_start": 66010,
+            "size": 161,
+            "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+            "candidate_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+            "raw_exact": true,
+            "target_fixups": [
+              55,
+              27,
+              135
+            ],
+            "candidate_fixups": [
+              55,
+              27,
+              135
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 66010,
+              "size": 161,
+              "function_symbol": "bomb_mima()",
+              "contribution_start": 64080,
+              "contribution_size": 2091,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0d58ddf2923a206418bea63b5037d95ca0ecd0c8048d06389a517194613cf6f7",
+            "dependency_timestamp_normalized_sha256": "61baa01563e62d819e047080cba7fe75c098cd3ea30758341ddf2a877e05c61f",
+            "module_name": "th05/bm_full.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bm_full.cpp",
+              "src/main/player/bomb_family.cpp",
+              "src/main/player/bomb_family.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/player/long_bomb_control.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/main/player/mima_bomb.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/player/mima_circles.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/player/player.hpp",
+              "src/main/player/bomb_body/runtime.inl",
+              "src/main/player/bomb_body/reimu_stars.inl",
+              "src/main/player/bomb_body/reimu_draw.inl",
+              "src/main/player/long_bomb_control.inl",
+              "src/main/player/bomb_body/marisa_lasers.inl",
+              "src/main/player/bomb_body/marisa_draw.inl",
+              "src/main/player/bomb_body/marisa_control.inl",
+              "src/main/player/bomb_body/mima_circles.inl",
+              "src/main/player/bomb_body/mima_draw.inl",
+              "src/main/player/bomb_body/mima_control.inl"
+            ]
+          },
+          {
+            "sha256": "09751f2b53191935727ae7ebab04cf7a517805a34e5eb216b9b254609190e576",
+            "dependency_timestamp_normalized_sha256": "61baa01563e62d819e047080cba7fe75c098cd3ea30758341ddf2a877e05c61f",
+            "module_name": "th05/bm_full.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bm_full.cpp",
+              "src/main/player/bomb_family.cpp",
+              "src/main/player/bomb_family.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/player/long_bomb_control.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/main/player/mima_bomb.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/player/mima_circles.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/player/player.hpp",
+              "src/main/player/bomb_body/runtime.inl",
+              "src/main/player/bomb_body/reimu_stars.inl",
+              "src/main/player/bomb_body/reimu_draw.inl",
+              "src/main/player/long_bomb_control.inl",
+              "src/main/player/bomb_body/marisa_lasers.inl",
+              "src/main/player/bomb_body/marisa_draw.inl",
+              "src/main/player/bomb_body/marisa_control.inl",
+              "src/main/player/bomb_body/mima_circles.inl",
+              "src/main/player/bomb_body/mima_draw.inl",
+              "src/main/player/bomb_body/mima_control.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bm_full.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bm_full.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/bomb_family_bindings.asm",
+            "sha256": "85efde3e60030cb817eb0e183bfd1621fdf1b4a3c0d985f288da22bd0dbba9ee"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/bomb_body/marisa_control.inl",
+            "sha256": "964c4e0f95c5af4eac5f62e231fc89b4a59c45b19f04a65950a5ca853f08db2d"
+          },
+          {
+            "path": "src/main/player/bomb_body/marisa_draw.inl",
+            "sha256": "2de9b3a27562623ad5077fdc9049e54e8d0cd647c81ee6feec6e1129e606e677"
+          },
+          {
+            "path": "src/main/player/bomb_body/marisa_lasers.inl",
+            "sha256": "a037adc4dd9abc3b46bd42420ecf4f92e54371dadcd8c1b6a3961f571461672f"
+          },
+          {
+            "path": "src/main/player/bomb_body/mima_circles.inl",
+            "sha256": "f55f21ed890bcec2415c4ea40f7aa33c043741978b12e82e7f047706570911ef"
+          },
+          {
+            "path": "src/main/player/bomb_body/mima_control.inl",
+            "sha256": "ea57035517b8fe63cd82e68dc273be5aec4839c8c7d063592321cfd3923cb1b7"
+          },
+          {
+            "path": "src/main/player/bomb_body/mima_draw.inl",
+            "sha256": "d93d318d3ae88de2f7d0abd278a6d7fc977becfcbe14772d39382c31a00ca2a8"
+          },
+          {
+            "path": "src/main/player/bomb_body/reimu_draw.inl",
+            "sha256": "909cf5511a2c085b951c4d1d640dfd1ef62c6a480f0087a8e3fe1e78a67da717"
+          },
+          {
+            "path": "src/main/player/bomb_body/reimu_stars.inl",
+            "sha256": "19698baec8b1afe8f707428353948000632f7363b606ff2949b2bf00484b4504"
+          },
+          {
+            "path": "src/main/player/bomb_body/runtime.inl",
+            "sha256": "ef6f84267bc68ff332e59cbd72135fffe8e4b7234e6973c3f9e46ab0b50d8465"
+          },
+          {
+            "path": "src/main/player/bomb_draw.hpp",
+            "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+          },
+          {
+            "path": "src/main/player/bomb_family.cpp",
+            "sha256": "c6736284f50b90de41ed16462aeb4d648fef4e1f5345a7703abc6f538153d961"
+          },
+          {
+            "path": "src/main/player/bomb_family.hpp",
+            "sha256": "acd8eca07134c49cfc14673162631ab1fe3825db1ec1865437c59ec693bea469"
+          },
+          {
+            "path": "src/main/player/bombanim.hpp",
+            "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+          },
+          {
+            "path": "src/main/player/long_bomb_control.hpp",
+            "sha256": "3a516447b356916471840e7180253226a6b3ad03c125275e67e122d33d7839cf"
+          },
+          {
+            "path": "src/main/player/long_bomb_control.inl",
+            "sha256": "2e0f6f91b39dc956a4c6a66f9aaff8cbd1ea952f67ad35e7de09a37ca6c6d358"
+          },
+          {
+            "path": "src/main/player/mima_bomb.hpp",
+            "sha256": "f5673a8ecc28419fdd953501f7b3671c9cc4f2320f251a5f4f85ecd61244f8c0"
+          },
+          {
+            "path": "src/main/player/mima_circles.hpp",
+            "sha256": "9efebaa39626ac32ed90c2ffb612e696aa5dc2c2ae0c27b0e5371e1670fa966e"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/bomb_family_bindings.asm",
+          "sha256": "85efde3e60030cb817eb0e183bfd1621fdf1b4a3c0d985f288da22bd0dbba9ee"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/bomb_body/marisa_control.inl",
+          "sha256": "964c4e0f95c5af4eac5f62e231fc89b4a59c45b19f04a65950a5ca853f08db2d"
+        },
+        {
+          "path": "src/main/player/bomb_body/marisa_draw.inl",
+          "sha256": "2de9b3a27562623ad5077fdc9049e54e8d0cd647c81ee6feec6e1129e606e677"
+        },
+        {
+          "path": "src/main/player/bomb_body/marisa_lasers.inl",
+          "sha256": "a037adc4dd9abc3b46bd42420ecf4f92e54371dadcd8c1b6a3961f571461672f"
+        },
+        {
+          "path": "src/main/player/bomb_body/mima_circles.inl",
+          "sha256": "f55f21ed890bcec2415c4ea40f7aa33c043741978b12e82e7f047706570911ef"
+        },
+        {
+          "path": "src/main/player/bomb_body/mima_control.inl",
+          "sha256": "ea57035517b8fe63cd82e68dc273be5aec4839c8c7d063592321cfd3923cb1b7"
+        },
+        {
+          "path": "src/main/player/bomb_body/mima_draw.inl",
+          "sha256": "d93d318d3ae88de2f7d0abd278a6d7fc977becfcbe14772d39382c31a00ca2a8"
+        },
+        {
+          "path": "src/main/player/bomb_body/reimu_draw.inl",
+          "sha256": "909cf5511a2c085b951c4d1d640dfd1ef62c6a480f0087a8e3fe1e78a67da717"
+        },
+        {
+          "path": "src/main/player/bomb_body/reimu_stars.inl",
+          "sha256": "19698baec8b1afe8f707428353948000632f7363b606ff2949b2bf00484b4504"
+        },
+        {
+          "path": "src/main/player/bomb_body/runtime.inl",
+          "sha256": "ef6f84267bc68ff332e59cbd72135fffe8e4b7234e6973c3f9e46ab0b50d8465"
+        },
+        {
+          "path": "src/main/player/bomb_draw.hpp",
+          "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+        },
+        {
+          "path": "src/main/player/bomb_family.cpp",
+          "sha256": "c6736284f50b90de41ed16462aeb4d648fef4e1f5345a7703abc6f538153d961"
+        },
+        {
+          "path": "src/main/player/bomb_family.hpp",
+          "sha256": "acd8eca07134c49cfc14673162631ab1fe3825db1ec1865437c59ec693bea469"
+        },
+        {
+          "path": "src/main/player/bombanim.hpp",
+          "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+        },
+        {
+          "path": "src/main/player/long_bomb_control.hpp",
+          "sha256": "3a516447b356916471840e7180253226a6b3ad03c125275e67e122d33d7839cf"
+        },
+        {
+          "path": "src/main/player/long_bomb_control.inl",
+          "sha256": "2e0f6f91b39dc956a4c6a66f9aaff8cbd1ea952f67ad35e7de09a37ca6c6d358"
+        },
+        {
+          "path": "src/main/player/mima_bomb.hpp",
+          "sha256": "f5673a8ecc28419fdd953501f7b3671c9cc4f2320f251a5f4f85ecd61244f8c0"
+        },
+        {
+          "path": "src/main/player/mima_circles.hpp",
+          "sha256": "9efebaa39626ac32ed90c2ffb612e696aa5dc2c2ae0c27b0e5371e1670fa966e"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "6c604498b62de011aa2f258097000a403559dfb6d2ab95420f50057ec5b8308d",
+      "compiled_negative_control": {
+        "target_start": 66010,
+        "candidate_start": 66010,
+        "size": 161,
+        "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+        "candidate_sha256": "0f358c33b488f7850f18beb3a58f2eada8ff6208917df29805e7a71316974175",
+        "raw_exact": false,
+        "target_fixups": [
+          55,
+          27,
+          135
+        ],
+        "candidate_fixups": [
+          55,
+          27,
+          135
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 66010,
+          "size": 161,
+          "function_symbol": "bomb_mima()",
+          "contribution_start": 64080,
+          "contribution_size": 2091,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-mima-bomb-control",
+        "entry_sha256": "1360dad6e4386f9a34a94de6bc54e646d6e25f9c783fe7b7bc69d7fc40703d33",
+        "mutation": {
+          "unit": "main-mima-bomb-control",
+          "source": "src/main/player/bomb_body/mima_control.inl",
+          "find": "PaletteTone = 100;",
+          "replace": "PaletteTone = 101;"
+        },
+        "control_sha256": "b37f6af8c29192afb2c10c4f416475731ba001c6b58cd7f243759f4788f6bb00",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 66010,
+          "candidate_start": 66010,
+          "size": 161,
+          "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
+          "candidate_sha256": "0f358c33b488f7850f18beb3a58f2eada8ff6208917df29805e7a71316974175",
+          "raw_exact": false,
+          "target_fixups": [
+            55,
+            27,
+            135
+          ],
+          "candidate_fixups": [
+            55,
+            27,
+            135
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 66010,
+            "size": 161,
+            "function_symbol": "bomb_mima()",
+            "contribution_start": 64080,
+            "contribution_size": 2091,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "f2795f5f74fb4a168dc296f7988cd65bec632fc4418b737d82567732d51ddf3d",
+          "dependency_timestamp_normalized_sha256": "3ffce13ef9584126a69c8032cc74a94f2e3e167e78191cb8d7ddb5beb2c92619",
+          "module_name": "th05/bm_full.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bm_full.cpp",
+            "src/main/player/bomb_family.cpp",
+            "src/main/player/bomb_family.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/bombanim.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/player/bomb_draw.hpp",
+            "src/main/player/bombanim.hpp",
+            "src/main/player/long_bomb_control.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/main/player/mima_bomb.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/player/mima_circles.hpp",
+            "src/main/player/bombanim.hpp",
+            "src/main/player/player.hpp",
+            "src/main/player/bomb_body/runtime.inl",
+            "src/main/player/bomb_body/reimu_stars.inl",
+            "src/main/player/bomb_body/reimu_draw.inl",
+            "src/main/player/long_bomb_control.inl",
+            "src/main/player/bomb_body/marisa_lasers.inl",
+            "src/main/player/bomb_body/marisa_draw.inl",
+            "src/main/player/bomb_body/marisa_control.inl",
+            "src/main/player/bomb_body/mima_circles.inl",
+            "src/main/player/bomb_body/mima_draw.inl",
+            "src/main/player/bomb_body/mima_control.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bm_full.cpp"
         ]
       },
       "receipt_aggregate_pass": true

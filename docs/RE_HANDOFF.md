@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **305 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
-**96,738 authored bytes exact**: 81,469 CODE and 15,269 initialized DATA.
-CODE is 80,777 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,817; 79 checked padding bytes receive
-no credit. MAIN has 377 functions / 60,671 CODE / 3,091 DATA;
+Current acceptance: **306 bounded C/C++ CODE/DATA units / 494 complete function occurrences**,
+**96,899 authored bytes exact**: 81,630 CODE and 15,269 initialized DATA.
+CODE is 80,938 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 96,978; 79 checked padding bytes receive
+no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
@@ -22,7 +22,7 @@ The private receipt inventory is
 `.analysis/cleanup-current-receipt-guards.json`: all 209 receipt hashes
 for the preceding 298 records were found. The two newer verdict receipts and
 MAIN transition and three sound DATA receipts below are also required; preserve
-their whole directories. The newer HUD decimal receipt is also required.
+their whole directories. The newer HUD decimal and two bomb-family receipts below are also required.
 See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
 
 Cleanup revalidated208 whole receipts using the existing private validator.
@@ -136,6 +136,27 @@ producers, full DATA/OMF/MAP/raw/empty ordered-fixup checks and its own compiled
 million-place divisor mutation. See[owner notes](../src/main/hud/decimal_tables.md).
 The previous stopped-lead file remains historical routing evidence only.
 
+## Mima bomb control and canonical body refresh
+
+The new genuine bomb family atFA50..1027B compiles13 complete procedures in one
+2091-byte contribution. Both actual fresh producers match all raw context bytes
+and all38 ordered original fixups. Actual OMF CODE records are0..1023,
+1023..2041 and2041..2091; Mima control's real fixups1957/1985 and2065 straddle
+the second cut and naturally restore its original local order[55,27,135].
+`main-bomb-family-mima-b` accepts only its complete161-byte control function;
+no context bytes are double-credited. Its own final-tone100-to101 mutation fails.
+
+Nine CPPs reversibly factor their literal bodies into`player/bomb_body/`, while
+all existing headers stay unchanged. Exactly eight accepted MAIN owners needed
+source-current evidence: `main-bomb-body-canonical-refresh-b` has two fresh
+producers per owner and one shared Reimu-star112-to111 negative. Both receipts
+were imported atomically; unrelated MAIN, OP and MAINE evidence was reused.
+The first family producer kept the Reimu circle call far; measured OMF context
+and the real AE1/RETF4 provider justify explicit samecodeseg in the new header.
+The first refresh failed its moved negative anchor and produced no receipt.
+All attempts are preserved. See[bomb family notes](../src/main/player/bomb_family.md)
+and`.analysis/bomb-family-source-factor/native-full-review.json`.
+
 ## Parked work: preserve findings before trying variants
 
 - Staff: [full-family notes](../src/maine/staff/full.md) describe17 real bodies,
@@ -156,8 +177,7 @@ The previous stopped-lead file remains historical routing evidence only.
   The adjacent EGC helper has a one-byte MOV-zero/XOR-zero lowering difference.
   No independent FLAGS contract justifies hand-generating the missing byte.
 - Other previously diagnosed gaps include one-byte switch/table zeros in
-  stage/session, item collect and several Boss callbacks; Mima's raw-exact
-  helper with wrong ordered fixups; scroll115 versus123; bullet rendering334
+  stage/session, item collect and several Boss callbacks; scroll115 versus123; bullet rendering334
   versus330; item/shot render ABI kernels; OP piano/input/PI-load cases. Search
   the historical handoff and owner notes before repeating these probes.
 

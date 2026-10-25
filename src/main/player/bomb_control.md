@@ -27,9 +27,11 @@ supply addresses only, with all holes outside the complete compiled owners.
 
 The neighboring Mima control candidate has raw-exact 161 bytes in
 `main-mima-bomb-control-a`, but its original ordered fixups are `[55,27,135]`
-while the standalone producer emits `[135,55,27]`. It remains unaccepted with
-zero credit. Relocations are never sorted or normalized. Its full adjacent
-natural drawing/control context is a separate candidate requiring new evidence.
+while the standalone producer emits `[135,55,27]`. Those earlier producers
+remain unaccepted. The new [complete bomb family](bomb_family.md)
+now restores the original order through actual compiler record context and
+independently accepts the complete161-byte Mima control. Relocations are never
+sorted or normalized.
 
 Pinned ReC98's `th05_main.asm` corroborates the algorithms. Complete native
 original decodes and the actual fresh producers establish boundaries, bindings
@@ -40,3 +42,7 @@ The complete Marisa drawing prelude `[FF7B,FFB7)` is separately accepted as
 two fresh producers and its own initial-tone mutation 196 to 195. Its beam
 dispatch writes the canonical unsigned `shot_time` byte to the real blocked
 sentinel `FFh`; the backdrop kernel stays a foreign near interface.
+
+Canonical body factoring and the eight-owner source-sensitive refresh are
+documented in [bomb_family.md](bomb_family.md). Earlier individual controls
+remain historical; the refresh uses one shared Reimu-star control.

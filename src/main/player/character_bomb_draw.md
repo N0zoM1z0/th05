@@ -50,3 +50,7 @@ bytes, each original ordered fixup stream and their own palette negatives
 (196 to 195 for Reimu, 150 to 149 for Yuuka). The root imported the complete
 84-byte and 120-byte owners. Their sources, shared `bomb_draw.hpp` and separate
 binders are now frozen accepted inputs.
+
+Current canonical bodies and source-sensitive refresh evidence are documented
+in [bomb_family.md](bomb_family.md). Earlier individual controls remain
+historical; the eight-owner refresh uses one shared Reimu-star control.

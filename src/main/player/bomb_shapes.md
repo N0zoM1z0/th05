@@ -45,3 +45,7 @@ modulo-four spawn schedule. Its three colored rectangles and filled circle use
 true master.lib interfaces; AH is only the real GRCG color API input. The final
 port write uses the ordinary `outportb` hardware API. All 335 instruction bytes
 and all seven original relocation sites pass without normalization.
+
+Current canonical bodies and source-sensitive refresh evidence are documented
+in [bomb_family.md](bomb_family.md). Earlier individual controls remain
+historical; the eight-owner refresh uses one shared Reimu-star control.

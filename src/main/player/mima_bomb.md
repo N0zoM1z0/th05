@@ -79,3 +79,12 @@ The complete-function boundary is the real next function `bomb_mima()` at
 `0x101DA`; no interior successful fragment is substituted. The failed
 whole366 parent stays preserved and no acceptance transfers to control161.
 This packet owns no initialized DATA or BSS.
+
+## Superseding coherent-family acceptance
+
+The earlier whole366-byte producer remains ordered-inexact. The new
+[bomb family](bomb_family.md) restores the genuine preceding runtime and other
+character bodies in one compiler contribution and independently accepts the
+complete161-byte Mima control. Actual OMF cuts, not relocation sorting, restore
+its original order. Draw205 retains its existing ID after the source-sensitive
+canonical-body refresh; the old parent evidence is preserved.

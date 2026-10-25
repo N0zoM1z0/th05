@@ -1354,7 +1354,7 @@ bindings_source = "probes/units/reimu_bomb_stars_bindings.asm"
 
 [[controls]]
 unit = "main-reimu-bomb-stars"
-source = "src/main/player/bombanim.cpp"
+source = "src/main/player/bomb_body/reimu_stars.inl"
 find = "if((bomb_frame <= 112)"
 replace = "if((bomb_frame <= 111)"
 
@@ -2619,7 +2619,7 @@ origin = "compiler-generated-cxx"
 
 [[controls]]
 unit = "main-mima-circles"
-source = "src/main/player/mima_circles.cpp"
+source = "src/main/player/bomb_body/mima_circles.inl"
 find = "circle->distance = 256;"
 replace = "circle->distance = 257;"
 
@@ -2638,7 +2638,7 @@ origin = "compiler-generated-cxx"
 
 [[controls]]
 unit = "main-marisa-bomb-lasers"
-source = "src/main/player/marisa_lasers.cpp"
+source = "src/main/player/bomb_body/marisa_lasers.inl"
 find = "laser->radius = 24;"
 replace = "laser->radius = 25;"
 
@@ -2678,7 +2678,7 @@ origin = "compiler-generated-cxx"
 
 [[controls]]
 unit = "main-marisa-bomb-control"
-source = "src/main/player/marisa_bomb_control.cpp"
+source = "src/main/player/bomb_body/marisa_control.inl"
 find = "PaletteTone = 100;"
 replace = "PaletteTone = 101;"
 
@@ -2800,7 +2800,7 @@ function_end_symbol = "bomb_mima()"
 [[controls]]
 id = "mima-outer-circle-radius"
 unit = "main-mima-bomb-draw"
-source = "src/main/player/mima_bomb.cpp"
+source = "src/main/player/bomb_body/mima_draw.inl"
 find = "radius = 224 - bomb_frame;"
 replace = "radius = 223 - bomb_frame;"
 
@@ -2819,7 +2819,7 @@ origin = "compiler-generated-cxx"
 
 [[controls]]
 unit = "main-marisa-bomb-draw"
-source = "src/main/player/marisa_bomb_draw.cpp"
+source = "src/main/player/bomb_body/marisa_draw.inl"
 find = "PaletteTone = 196 - (bomb_frame * 6);"
 replace = "PaletteTone = 195 - (bomb_frame * 6);"
 
@@ -2942,7 +2942,7 @@ code_data_ranges = []
 
 [[controls]]
 unit = "main-reimu-bomb-draw"
-source = "src/main/player/reimu_bomb_draw.cpp"
+source = "src/main/player/bomb_body/reimu_draw.inl"
 find = "PaletteTone = 196 - ((bomb_frame - 32) * 3);"
 replace = "PaletteTone = 195 - ((bomb_frame - 32) * 3);"
 
@@ -3741,7 +3741,7 @@ alignment_offsets = [77, 104, 124, 160, 237]
 [[controls]]
 id = "bomb-reimu-invincibility192-to193"
 unit = "main-bomb-runtime"
-source = "src/main/player/bomb_runtime.cpp"
+source = "src/main/player/bomb_body/runtime.inl"
 find = "select_for_playchar(192, 160, 144, 224)"
 replace = "select_for_playchar(193, 160, 144, 224)"
 
@@ -4103,3 +4103,23 @@ unit = "main-hud-decimal-tables-data"
 source = "src/main/hud/decimal_tables.cpp"
 find = "1000000UL"
 replace = "1000001UL"
+
+[[units]]
+id = "main-mima-bomb-control"
+source = "src/main/player/bomb_family.cpp"
+module = "th05/bm_full.cpp"
+segment = "BOMB_FAMILY_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/bomb_family_bindings.asm"
+target_start = 66010
+size = 161
+functions = 1
+function_symbol = "bomb_mima()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-mima-bomb-control"
+source = "src/main/player/bomb_body/mima_control.inl"
+find = "PaletteTone = 100;"
+replace = "PaletteTone = 101;"
