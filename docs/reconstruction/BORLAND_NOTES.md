@@ -327,3 +327,27 @@ while-G is initial. This genuine context supplies the final function's odd
 start, one zero and emitted-record split; no arbitrary alignment prefix was
 added. Both full1198 and prefix861 are independently checked in both producers,
 with new credit limited to328 instructions and eight generated table bytes.
+
+## Shared scalar initialization and complete semantic filename owners
+
+The first stage-state initializer237 had the same frame and all eleven typed
+clear counts as original233. Its only size difference was two immediate zero
+stores versus the original shared zero value. The ordinary expression
+`hitshot_next_free_id = shots_alive_count = 0` preserves the actual shots-first
+store order and recovers233 in `main-stage-state-init-b`, with its own ring
+mutation. This does not introduce register aliases, lifetime barriers or flags.
+
+The OP score menu's original filename subset begins at odd DS2823. It cannot
+be modeled as a standalone word-aligned23-byte compiler DATA contribution.
+The complete existing53-byte readable pool begins at even DS2818; a semantic
+char-field owner preserves all seven genuine strings and their internal odd
+positions without filler. Both CODE contexts reference that real near object.
+`op-score-files-canonical-a` replaces the old53-byte evidence with two fresh
+whole-DATA producers and its own filename mutation; no new DATA is counted.
+
+The standalone312 menu then emits its required original26 descending fixups,
+while seven affected prior CODE scopes retain their complete raw/order matches
+in `op-score-code-canonical-a`. The new CODE and53 DATA sources need different
+controls, so each necessary TU group is replayed separately and all replacements
+are imported atomically. Source inclusion is CPP-local: shared headers used by
+MAINE remain unchanged, keeping that unrelated closure out of replay.

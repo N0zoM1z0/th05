@@ -2,37 +2,21 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "821c9251a09f30dccaa45366bffc82475839b05a7be81f9809ad303c2bbdc86f",
+  "replay_receipt_sha256": "9f9f6633b576ac47edc9ce2dcb9bda241d1c32f78a14e302d4ef19cf4713a8af",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 85500,
-    "candidate_start": 85500,
-    "size": 72,
-    "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
-    "candidate_sha256": "ff80018ccab76ce0a9d07220f6ce2f7a4dcdad472c9b6f06afa0e7dc8a794eaa",
+    "target_start": 76484,
+    "candidate_start": 76484,
+    "size": 233,
+    "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+    "candidate_sha256": "a7dba19556468e9f6e6c1723e7d8c618559e067fb3eb848f0861d3f38990827b",
     "raw_exact": false,
     "target_fixups": [
-      68,
-      63,
-      58,
-      53,
-      48,
-      43,
-      28,
-      17,
-      6
+      98
     ],
     "candidate_fixups": [
-      68,
-      63,
-      58,
-      53,
-      48,
-      43,
-      28,
-      17,
-      6
+      98
     ],
     "fixups_exact": true,
     "exact": false
@@ -57283,6 +57267,418 @@
           "-ml",
           "-DBINARY='M'",
           "th05/exitcore.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-stage-state-init",
+      "entry_sha256": "799ae9ed3e32b8b684ea2c10f3af314b1370bc2497cbe5598ef4fd1940a75d80",
+      "result": {
+        "id": "main-stage-state-init",
+        "entry_sha256": "799ae9ed3e32b8b684ea2c10f3af314b1370bc2497cbe5598ef4fd1940a75d80",
+        "rounds": [
+          {
+            "target_start": 76484,
+            "candidate_start": 76484,
+            "size": 233,
+            "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+            "candidate_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+            "raw_exact": true,
+            "target_fixups": [
+              98
+            ],
+            "candidate_fixups": [
+              98
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 76484,
+            "candidate_start": 76484,
+            "size": 233,
+            "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+            "candidate_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+            "raw_exact": true,
+            "target_fixups": [
+              98
+            ],
+            "candidate_fixups": [
+              98
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "1e96ec5796abca6af7377aaf852997df41d9348a7b5d581f5366ff7232dceba8",
+            "dependency_timestamp_normalized_sha256": "296622ea17faffd66d0d3593081580ab4ead15340d2b423f039ca7ff9c892539",
+            "module_name": "th05/st_state.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/st_state.cpp",
+              "src/main/runtime/stage_state_init.cpp",
+              "src/main/runtime/stage_state_init.hpp",
+              "src/main/enemy/enemy.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/main/player/player.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/bullet/template.hpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/effects/spark/lifecycle.hpp",
+              "src/main/player/reimu.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/main/effects/circles.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/player/reimu.hpp"
+            ]
+          },
+          {
+            "sha256": "3a9e711129083194d48fef66619e2a4c286e5db3916c124d750ce4e66af137fc",
+            "dependency_timestamp_normalized_sha256": "296622ea17faffd66d0d3593081580ab4ead15340d2b423f039ca7ff9c892539",
+            "module_name": "th05/st_state.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/st_state.cpp",
+              "src/main/runtime/stage_state_init.cpp",
+              "src/main/runtime/stage_state_init.hpp",
+              "src/main/enemy/enemy.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/main/player/player.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/bullet/template.hpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/effects/spark/lifecycle.hpp",
+              "src/main/player/reimu.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/main/effects/circles.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/player/reimu.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/st_state.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/st_state.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/stage_state_init_bindings.asm",
+            "sha256": "8b9c00ba13cab6e012ff5ca21bcc1e149ad2db11b27f473b47dc0d25acc4d4b9"
+          },
+          {
+            "path": "src/main/bullet/laser.hpp",
+            "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/bullet/update.hpp",
+            "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+          },
+          {
+            "path": "src/main/effects/circles.hpp",
+            "sha256": "bf4ba6859fc1b61af3342a8b4327fa65bb67192bb87438de12eeaf315dcfbe80"
+          },
+          {
+            "path": "src/main/effects/spark/lifecycle.hpp",
+            "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+          },
+          {
+            "path": "src/main/enemy/enemy.hpp",
+            "sha256": "23b1216dc7b21250c347fdcfe139bb62749c23e7a31ff8d035d14c7ab85f9067"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/item/item.hpp",
+            "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/main/player/shot_runtime.hpp",
+            "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+          },
+          {
+            "path": "src/main/runtime/stage_state_init.cpp",
+            "sha256": "6eed20880202340fee06f1b60fab6e131d9dbbbdea363683f907c62022fbfd42"
+          },
+          {
+            "path": "src/main/runtime/stage_state_init.hpp",
+            "sha256": "f4011d0ac65a974da702f98d56ff763bb165ad403260003de2f247fe6544107b"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/stage_state_init_bindings.asm",
+          "sha256": "8b9c00ba13cab6e012ff5ca21bcc1e149ad2db11b27f473b47dc0d25acc4d4b9"
+        },
+        {
+          "path": "src/main/bullet/laser.hpp",
+          "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/update.hpp",
+          "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+        },
+        {
+          "path": "src/main/effects/circles.hpp",
+          "sha256": "bf4ba6859fc1b61af3342a8b4327fa65bb67192bb87438de12eeaf315dcfbe80"
+        },
+        {
+          "path": "src/main/effects/spark/lifecycle.hpp",
+          "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+        },
+        {
+          "path": "src/main/enemy/enemy.hpp",
+          "sha256": "23b1216dc7b21250c347fdcfe139bb62749c23e7a31ff8d035d14c7ab85f9067"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/item/item.hpp",
+          "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/main/player/shot_runtime.hpp",
+          "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+        },
+        {
+          "path": "src/main/runtime/stage_state_init.cpp",
+          "sha256": "6eed20880202340fee06f1b60fab6e131d9dbbbdea363683f907c62022fbfd42"
+        },
+        {
+          "path": "src/main/runtime/stage_state_init.hpp",
+          "sha256": "f4011d0ac65a974da702f98d56ff763bb165ad403260003de2f247fe6544107b"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "9f9f6633b576ac47edc9ce2dcb9bda241d1c32f78a14e302d4ef19cf4713a8af",
+      "compiled_negative_control": {
+        "target_start": 76484,
+        "candidate_start": 76484,
+        "size": 233,
+        "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+        "candidate_sha256": "a7dba19556468e9f6e6c1723e7d8c618559e067fb3eb848f0861d3f38990827b",
+        "raw_exact": false,
+        "target_fixups": [
+          98
+        ],
+        "candidate_fixups": [
+          98
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-stage-state-init",
+        "entry_sha256": "799ae9ed3e32b8b684ea2c10f3af314b1370bc2497cbe5598ef4fd1940a75d80",
+        "mutation": {
+          "id": "gather-initial-ring-eight-to-seven",
+          "unit": "main-stage-state-init",
+          "source": "src/main/runtime/stage_state_init.cpp",
+          "find": "gather_template.ring_points = 8;",
+          "replace": "gather_template.ring_points = 7;"
+        },
+        "control_sha256": "dae6037534c007f47b9f841f90b4493ccf0596c7f8b3c80a55824cc3d4880c28",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 76484,
+          "candidate_start": 76484,
+          "size": 233,
+          "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
+          "candidate_sha256": "a7dba19556468e9f6e6c1723e7d8c618559e067fb3eb848f0861d3f38990827b",
+          "raw_exact": false,
+          "target_fixups": [
+            98
+          ],
+          "candidate_fixups": [
+            98
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "8263ccf8d215a7ca057726358529418c1f4b99fbb3a87cdaa40fa9d6aec7de37",
+          "dependency_timestamp_normalized_sha256": "f6fc7fbc3d720249b3b906009847b11a71972dd9d8d86d1a332bc6a973d84d2f",
+          "module_name": "th05/st_state.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/st_state.cpp",
+            "src/main/runtime/stage_state_init.cpp",
+            "src/main/runtime/stage_state_init.hpp",
+            "src/main/enemy/enemy.hpp",
+            "src/main/bullet/update.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/player/shot_runtime.hpp",
+            "src/main/player/reimu.hpp",
+            "src/main/player/player.hpp",
+            "src/main/hud/resident.hpp",
+            "src/main/bullet/template.hpp",
+            "src/main/item/item.hpp",
+            "src/main/bullet/update.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/effects/spark/lifecycle.hpp",
+            "src/main/player/reimu.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/main/effects/circles.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/player/reimu.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/st_state.cpp"
         ]
       },
       "receipt_aggregate_pass": true

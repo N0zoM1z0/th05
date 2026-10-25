@@ -3704,3 +3704,23 @@ unit = "main-game-exit"
 source = "src/shared/core/game_exit.cpp"
 find = "exit_graph_accesspage(1);"
 replace = "exit_graph_accesspage(0);"
+
+[[units]]
+id = "main-stage-state-init"
+source = "src/main/runtime/stage_state_init.cpp"
+module = "th05/st_state.cpp"
+segment = "STAGE_STATE_TEXT"
+wrapper_options = "-zCSTAGE_STATE_TEXT -zPmain_01"
+bindings_source = "probes/units/stage_state_init_bindings.asm"
+target_start = 76484
+size = 233
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+id = "gather-initial-ring-eight-to-seven"
+unit = "main-stage-state-init"
+source = "src/main/runtime/stage_state_init.cpp"
+find = "gather_template.ring_points = 8;"
+replace = "gather_template.ring_points = 7;"

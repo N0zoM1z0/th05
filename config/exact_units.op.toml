@@ -522,21 +522,21 @@ replace = "\"slb2.pi\""
 
 [[units]]
 id = "op-hiscore-view-data"
-source = "src/op/hiscore/view.cpp"
-module = "th05/hi_view.cpp"
+source = "src/op/hiscore/files.cpp"
+module = "th05/hi_files.cpp"
 segment = "_DATA"
 target_start = 0x117f8
 size = 53
 functions = 0
 origin = "compiler-generated-cxx"
 wrapper_options = "-zPop_01"
-bindings_source = "probes/units/op_hiscore_bindings.asm"
+bindings_source = "probes/units/op_hiscore_files_bindings.asm"
 extent_kind = "initialized-data"
 data_semantics = ["filenames"]
 
 [[controls]]
 unit = "op-hiscore-view-data"
-source = "src/op/hiscore/view.cpp"
+source = "src/op/hiscore/files.cpp"
 find = "\"scnum.bft\""
 replace = "\"scnum.bfu\""
 
@@ -658,3 +658,24 @@ unit = "op-game-exit"
 source = "src/shared/core/game_exit.cpp"
 find = "exit_graph_accesspage(1);"
 replace = "exit_graph_accesspage(0);"
+
+[[units]]
+id = "op-hiscore-menu"
+source = "src/op/hiscore/menu.cpp"
+module = "th05/hi_menu.cpp"
+segment = "SCORE_MENU_TEXT"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_hiscore_menu_bindings.asm"
+target_start = 0xcc5c
+size = 312
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "op-hiscore-menu"
+source = "src/op/hiscore/regist_view_menu.inl"
+find = "} while(key_det != INPUT_NONE);"
+replace = "} while(key_det == INPUT_NONE);"

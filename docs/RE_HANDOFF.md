@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **247 bounded C++ CODE/DATA units / 448 complete function occurrences**,
-**81,482 authored bytes exact**: 71,592 CODE and 9,890 initialized DATA.
-CODE is 70,934 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 81,550; 68 checked padding bytes receive
-no credit. MAIN has 363 functions / 58,859 CODE / 1,232 DATA;
-OP 58 / 9,567 / 8,615; MAINE 27 / 3,166 / 43.
+Current acceptance: **249 bounded C++ CODE/DATA units / 450 complete function occurrences**,
+**82,027 authored bytes exact**: 72,137 CODE and 9,890 initialized DATA.
+CODE is 71,479 instruction plus 658 semantic compiler-table bytes.
+Complete compared extents total 82,095; 68 checked padding bytes receive
+no credit. MAIN has 364 functions / 59,092 CODE / 1,232 DATA;
+OP 59 / 9,879 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -976,3 +976,26 @@ near-array view, implicitly converted to the real far graphics API, resolves
 that difference without scheduling register operations. Focused-b passes both
 fresh producers and its own point-caption row mutation. The documented donor
 HUD flags/type-definition order were fixed before the first experiment.
+
+## Full typed stage pools and canonical high-score menu
+
+`main-stage-state-init-b` adds233 complete instructions with its own gather
+ring mutation. All11 pools retain their full genuine types and native counts;
+the real foreign clear helper's near Pascal void interface is preserved.
+First237 differed only in two independent zero stores. The ordinary chained
+assignment preserves the original shared-value/store order; no flags, physical
+register hints or frame changes were used.
+
+`op-score-menu-canonical-a` adds the complete312-byte registration/view menu,
+including all26 original descending fixups and its own release-loop mutation.
+A single canonical body supplies both real contexts. Its53-byte semantic
+filename owner is explicit, avoiding the odd-position23-byte interior pool.
+Only the affected seven existing CODE records and existing53 DATA were
+replaced, atomically, after three required TU groups passed two fresh producers
+each. Seven CODE scopes share the place-padding control; DATA and the new menu
+each have their own mutation. The53 DATA bytes receive no new credit.
+
+The changes were prepared in an isolated worktree; shared headers used by
+MAINE remain byte-identical. No unrelated OP/MAIN/MAINE unit was cold-replayed.
+The original mixed1411-byte viewer receipt remains unchanged, with its old
+menu-order failure preserved; only the new standalone312 receipt resolves it.

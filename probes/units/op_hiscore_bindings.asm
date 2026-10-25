@@ -2,7 +2,7 @@
 ; No instructions, filenames, table values, score records or dummy functions.
 .386
 .model large
-; No .stack allocation: the compiler owns the complete BSS contribution.
+; No .stack: this CODE producer keeps its original complete BSS; filename DATA is foreign.
 OP01_BASE equ 0a390h
 UNIT_START equ 0c8e2h
 UNIT_SIZE equ 0583h
@@ -10,9 +10,10 @@ UNIT_END equ (UNIT_START + UNIT_SIZE)
 SHARED_BASE equ 0d300h
 SHARED_END equ 0e15eh
 DGROUP_BASE equ 0efe0h
-OWNED_DATA_START equ 02818h
-OWNED_DATA_SIZE equ 0035h
-OWNED_DATA_END equ (OWNED_DATA_START + OWNED_DATA_SIZE)
+FOREIGN_DATA_START equ 02818h
+FOREIGN_DATA_END equ 0284dh
+; One outside-resource gap byte leaves the empty compiler _DATA word-aligned.
+DATA_BINDINGS_END equ 0284eh
 OWNED_BSS_START equ 05060h
 OWNED_BSS_SIZE equ 00d7h
 OWNED_BSS_END equ (OWNED_BSS_START + OWNED_BSS_SIZE)
@@ -115,22 +116,26 @@ OP_HISCORE_DGROUP_GAP segment byte public 'CODE' use16
 org (DGROUP_BASE - SHARED_END)
 OP_HISCORE_DGROUP_GAP ends
 
-; The compiler supplies all seven natural filename/song strings.
+; The canonical files.cpp owns the true complete53-byte resource elsewhere.
+; Address-only declaration supplies no filename values in this CODE context.
 _DATA segment word public 'DATA' use16
 public _PaletteTone
 org 054eh
 _PaletteTone label word
-org OWNED_DATA_START
+public _hi_filenames
+org FOREIGN_DATA_START
+_hi_filenames label byte
+org DATA_BINDINGS_END
 _DATA ends
 
 OP_HISCORE_DATA_TAIL segment byte public 'DATA' use16
 public _resident
-org (02dech - OWNED_DATA_END)
+org (02dech - DATA_BINDINGS_END)
 _resident label dword
 public _key_det
-org (03a92h - OWNED_DATA_END)
+org (03a92h - DATA_BINDINGS_END)
 _key_det label word
-org (OWNED_BSS_START - OWNED_DATA_END)
+org (OWNED_BSS_START - DATA_BINDINGS_END)
 OP_HISCORE_DATA_TAIL ends
 
 ; Both full score sections, rank, cleared flags and extra_unlocked are owned
