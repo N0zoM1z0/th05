@@ -31,6 +31,17 @@ bytes and relative fixup sites at reviewed target extents. It does not accept
 whole-program placement or standalone linkage. All scaffold origin holes and
 explicitly reproduced alignment bytes receive zero authored instruction credit.
 
+An explicit `bindings_after_compiler = true` profile may split the same
+frozen symbol-only binding source before and after one real large-model
+compiler TU, preserving a genuine common public SEGDEF. It never changes
+the C++ declaration or compiler arguments to induce linker relaxation.
+Import rechecks exact response flags/order, actual OMF checksums, ordinary
+16-bit segments, no initialized bytes/fixups/entry, reviewed metadata-only
+comments, source closure and both deterministic symbol models. The own C++
+negative must retain the positive binding/linker models. Raw object hashes
+remain recorded separately even when dependency timestamps differ. Legacy
+producers retain their original single-binding-object layout.
+
 Compiler-generated CODE switch tables count as authored code when generated
 by maintained semantic C++ switches and the complete contribution passes the
 same raw comparison. Report their bytes separately from instruction bytes.

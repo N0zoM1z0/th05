@@ -17,6 +17,7 @@ import tomllib
 import uuid
 
 from lib.omf import describe_omf
+from lib import binding_layout
 from lib.pc98 import digest_file, parse_mz
 from lib.reference_build import Builder
 from lib.targets import find_artifact, load_target_manifest, read_verified_artifact
@@ -83,7 +84,7 @@ def translation_units(units: list[dict], *, binary: str | None = "M") -> list[li
                     for part in module.split("/"))):
             raise ValueError(f"compiler wrapper module must use a relative DOS 8.3 path: {module}")
         key = entry["module"].replace("\\", "/").casefold()
-        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry))
+        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry), binding_layout.after_compiler(entry))
         if key in grouped and grouped[key][0] != identity:
             raise ValueError("one module cannot have conflicting source, flags or binding contexts")
         grouped.setdefault(key, (identity, []))[1].append(entry)
@@ -93,6 +94,12 @@ def translation_units(units: list[dict], *, binary: str | None = "M") -> list[li
 def cold_round(work: Path, inputs: Path, units: list[dict], *,
                paths: set[str], mutation: dict | None = None, binary: str | None = "M") -> dict:
     producers = translation_units(units, binary=binary)
+    layouts = {binding_layout.after_compiler(unit) for unit in units}
+    if len(layouts) != 1:
+        raise ValueError("one cold group requires one actual binding layout")
+    with_after = next(iter(layouts))
+    if with_after and (binary is None or len(producers) != 1):
+        raise ValueError("before/after bindings require one large-model compiler TU")
     source = work / "source"
     source.mkdir(parents=True)
     stage_inputs(inputs, source, units, paths, mutation=mutation)
@@ -131,7 +138,11 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
             arguments[member["id"]] = actual_arguments
     (source / "compiler-arguments.json").write_text(json.dumps(
         {unit["module"]: arguments[unit["id"]] for unit in units}, indent=2) + "\n")
-    if binary is None:
+    if with_after:
+        builder.execute("bindings-after", ["wine", r"C:\TASM50\bin\TASM32.EXE",
+                        "/m", "/mx", "/t", "/dBINDINGS_AFTER=1", "bindings.asm", "bindings_after.obj"])
+        response = binding_layout.link_response(objects[0]).decode("ascii")
+    elif binary is None:
         crt = ROOT / ".analysis/toolchain/installed/tc40j/LIB/C0T.OBJ"
         if digest(crt) != TINY_CRT_SHA256:
             raise ValueError("installed tiny CRT differs from its pinned library surface")
@@ -145,7 +156,8 @@ def cold_round(work: Path, inputs: Path, units: list[dict], *,
     if not candidate.valid:
         raise ValueError(str(candidate.errors))
     return {"source": source, "candidate": candidate, "omfs": omfs, "steps": builder.records,
-            "compiler_arguments": arguments}
+            "compiler_arguments": arguments,
+            **({"binding_context": binding_layout.observe(source, units[0])} if with_after else {})}
 
 
 def control_comparison(target, candidate, entry: dict, start: int, size: int) -> dict:
@@ -256,6 +268,8 @@ def main() -> int:
                           "omfs": omfs,
                           "producer_paths": [str(producer["source"].relative_to(work)) for producer in rounds]}
                 result["compiler_arguments"] = [producer["compiler_arguments"][unit["id"]] for producer in rounds]
+                if binding_layout.after_compiler(unit):
+                    result["binding_context"] = [producer["binding_context"] for producer in rounds]
                 actual = required_input_paths(inputs, unit, result)
                 result["source_inputs"] = snapshot_paths(inputs, actual)
                 if source_encoding(unit) == "cp932":
@@ -278,6 +292,8 @@ def main() -> int:
                            "producer_path": "negative/source", "comparison": control,
                            "omf": negative["omfs"][control_unit["id"]]}
         negative_record["compiler_arguments"] = negative["compiler_arguments"][control_unit["id"]]
+        if binding_layout.after_compiler(control_unit):
+            negative_record["binding_context"] = negative["binding_context"]
         if source_encoding(control_unit) == "cp932":
             negative_record["producer_source_inputs"] = producer_snapshot(negative["source"], control_unit, positive_control["source_inputs"])
         # Source scanning stages a safe superset for conditional includes. Only

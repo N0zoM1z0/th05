@@ -4141,3 +4141,24 @@ unit = "main-exalice-hexagram-draw"
 source = "src/main/boss/exalice/hexagram.cpp"
 find = "angle += (0x100 / 6);"
 replace = "angle += (0x100 / 5);"
+
+[[units]]
+id = "main-demo-play"
+source = "src/main/demo/demo.cpp"
+module = "th05/demo.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/demo_play_bindings.asm"
+bindings_after_compiler = true
+function_symbol = "demoplay()"
+target_start = 0xb7b4
+size = 114
+alignment_offsets = [107]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-demo-play"
+source = "src/main/demo/demo.cpp"
+find = "stage_frame < (DEMO_N - 4)"
+replace = "stage_frame < (DEMO_N - 5)"

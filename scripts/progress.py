@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import tomllib
 from lib.unit_oracle import function_scoped
+from lib import binding_layout
 from lib.tiny_com import (UnitContext, compiler_arguments, load_unit_target,
     load_unit_candidate, validate_public_target_view)
 from lib.unit_sources import producer_snapshot, source_encoding, validate_producer_inputs
@@ -81,6 +82,7 @@ def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
 
 def validate_result(entry: dict, result: dict, *, require_exact: bool = True) -> None:
     classify_extent(entry)
+    binding_layout.validate_result(entry, result)
     scoped = function_scoped(entry)
     if (result["id"] != entry["id"] or type(result["exact"]) is not bool or
             (require_exact and not result["exact"]) or result["object_normalized_equal"] is not True):
@@ -573,6 +575,9 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
                 recorded = json.loads((source / "compiler-arguments.json").read_text())
                 if result.get("compiler_arguments") != [expected] * 2 or recorded.get(entry["module"]) != expected:
                     raise ValueError("saved actual compiler binary arguments disagree with the artifact context")
+            if binding_layout.after_compiler(entry):
+                if binding_layout.observe(source, entry) != result["binding_context"][index]:
+                    raise ValueError("saved before/after binding artifacts disagree")
             candidate = load_unit_candidate(source, context.binary)
             if compare_mapped_unit(target, candidate, source / "units.map", entry) != result["rounds"][index]:
                 raise ValueError("saved raw target/candidate artifacts disagree with replay receipt")
@@ -606,6 +611,11 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
         recorded = json.loads((negative_source / "compiler-arguments.json").read_text())
         if negative.get("compiler_arguments") != expected or recorded.get(control_entry["module"]) != expected:
             raise ValueError("negative producer compiler binary arguments disagree")
+    if binding_layout.after_compiler(control_entry):
+        binding_layout.validate_control(control_entry,
+            results[control_entry["id"]]["binding_context"][0], negative.get("binding_context"))
+        if binding_layout.observe(negative_source, control_entry) != negative["binding_context"]:
+            raise ValueError("saved negative before/after binding artifacts disagree")
     observed_control = mapped_control_comparison(target, load_unit_candidate(negative_source, context.binary),
                                                  control_entry, negative_source / "units.map")
     if observed_control != control:

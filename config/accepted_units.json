@@ -2,36 +2,36 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c7fb4b746245ee13f3cad798ae7a119dc6b998948a3620334cbc64382bc348aa",
+  "replay_receipt_sha256": "dbb97a3cc80d153b72d4258731d2c7b012de9fdfb51f6e6a7b0aca12b827fb1e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 70846,
-    "candidate_start": 70846,
-    "size": 204,
-    "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
-    "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
+    "target_start": 47028,
+    "candidate_start": 47028,
+    "size": 114,
+    "target_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+    "candidate_sha256": "37de65667bc2786f68c41c80b4cc3d92c3dcf97493b777e3ddf8e2de409540c3",
     "raw_exact": false,
     "target_fixups": [
-      182,
-      161,
-      140,
-      89,
-      70,
-      51,
-      27
+      101,
+      94
     ],
     "candidate_fixups": [
-      182,
-      161,
-      140,
-      89,
-      70,
-      51,
-      27
+      101,
+      94
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 47028,
+      "size": 114,
+      "function_symbol": "demoplay()",
+      "contribution_start": 46934,
+      "contribution_size": 208,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -64945,6 +64945,338 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-demo-play",
+      "entry_sha256": "374374af3c8d6c7ba2674504003aa00e4bf73bd9dc11819885a7db5cca558762",
+      "result": {
+        "id": "main-demo-play",
+        "entry_sha256": "374374af3c8d6c7ba2674504003aa00e4bf73bd9dc11819885a7db5cca558762",
+        "rounds": [
+          {
+            "target_start": 47028,
+            "candidate_start": 47028,
+            "size": 114,
+            "target_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+            "candidate_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+            "raw_exact": true,
+            "target_fixups": [
+              101,
+              94
+            ],
+            "candidate_fixups": [
+              101,
+              94
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 47028,
+              "size": 114,
+              "function_symbol": "demoplay()",
+              "contribution_start": 46934,
+              "contribution_size": 208,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 47028,
+            "candidate_start": 47028,
+            "size": 114,
+            "target_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+            "candidate_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+            "raw_exact": true,
+            "target_fixups": [
+              101,
+              94
+            ],
+            "candidate_fixups": [
+              101,
+              94
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 47028,
+              "size": 114,
+              "function_symbol": "demoplay()",
+              "contribution_start": 46934,
+              "contribution_size": 208,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "25854caf205763c971945e51357dd761b3bd0a6d2aef7677746a1d32715b1389",
+            "dependency_timestamp_normalized_sha256": "c317380777582c8101143213a2542bb389031e794a63a113d5345d52a5c13a60",
+            "module_name": "th05/demo.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/demo.cpp",
+              "src/main/demo/demo.cpp",
+              "src/main/demo/demo.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "59bbfbd1056c47b779ae24d3746128634ca43c56acfe9296e59a690ae759df4c",
+            "dependency_timestamp_normalized_sha256": "c317380777582c8101143213a2542bb389031e794a63a113d5345d52a5c13a60",
+            "module_name": "th05/demo.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/demo.cpp",
+              "src/main/demo/demo.cpp",
+              "src/main/demo/demo.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/demo.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/demo.cpp"
+          ]
+        ],
+        "binding_context": [
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "bb2070999f0f1516c2bdf684d747597b67216d2b67f8f904db2c5499d2a40b9e",
+            "compiler_object": "demo.obj",
+            "link_response_sha256": "9c9d21d0e628e14ed25df1b16d945fa925b213ee648472ddcfa0d34abe8cae5c",
+            "before": {
+              "sha256": "7102d4e6abe14cf86c902c6f3a4b39653eb9a9dd727386267d26c770d91e4116",
+              "symbol_model_sha256": "5670db00b7383318da769efccf4d17558e0889ef6ca7a2e0df6b2f56b1c523c8"
+            },
+            "after": {
+              "sha256": "82ff7b64a9c7a58b7789aa2c7c2dc90316cf1dbc57ae310ffe8a0604a94e88ea",
+              "symbol_model_sha256": "4e459fbb239a2ec333b9b47cb682eee8cbf8db0254102dacaad2e662d4aa875c"
+            }
+          },
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "bb2070999f0f1516c2bdf684d747597b67216d2b67f8f904db2c5499d2a40b9e",
+            "compiler_object": "demo.obj",
+            "link_response_sha256": "9c9d21d0e628e14ed25df1b16d945fa925b213ee648472ddcfa0d34abe8cae5c",
+            "before": {
+              "sha256": "32f2358e5cb3bc631539dfb4bc6e4e670e289e00b9d741d99c1b5ee02af40a56",
+              "symbol_model_sha256": "5670db00b7383318da769efccf4d17558e0889ef6ca7a2e0df6b2f56b1c523c8"
+            },
+            "after": {
+              "sha256": "5c939fef456bc7dcd34ad9e2c35ebe22de4a7d2f6b7687fa9987d3b1e3a8b1bd",
+              "symbol_model_sha256": "4e459fbb239a2ec333b9b47cb682eee8cbf8db0254102dacaad2e662d4aa875c"
+            }
+          }
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/demo_play_bindings.asm",
+            "sha256": "bb2070999f0f1516c2bdf684d747597b67216d2b67f8f904db2c5499d2a40b9e"
+          },
+          {
+            "path": "src/main/demo/demo.cpp",
+            "sha256": "86679e1ad289c2887dfe27380985cc14bcffe685634f963b655d2c5541032bf1"
+          },
+          {
+            "path": "src/main/demo/demo.hpp",
+            "sha256": "6ba082be1be783bba86db8b4d9abcbf66c25c8a0e6ea78aaf414621616f8a3c2"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/demo_play_bindings.asm",
+          "sha256": "bb2070999f0f1516c2bdf684d747597b67216d2b67f8f904db2c5499d2a40b9e"
+        },
+        {
+          "path": "src/main/demo/demo.cpp",
+          "sha256": "86679e1ad289c2887dfe27380985cc14bcffe685634f963b655d2c5541032bf1"
+        },
+        {
+          "path": "src/main/demo/demo.hpp",
+          "sha256": "6ba082be1be783bba86db8b4d9abcbf66c25c8a0e6ea78aaf414621616f8a3c2"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "dbb97a3cc80d153b72d4258731d2c7b012de9fdfb51f6e6a7b0aca12b827fb1e",
+      "compiled_negative_control": {
+        "target_start": 47028,
+        "candidate_start": 47028,
+        "size": 114,
+        "target_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+        "candidate_sha256": "37de65667bc2786f68c41c80b4cc3d92c3dcf97493b777e3ddf8e2de409540c3",
+        "raw_exact": false,
+        "target_fixups": [
+          101,
+          94
+        ],
+        "candidate_fixups": [
+          101,
+          94
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 47028,
+          "size": 114,
+          "function_symbol": "demoplay()",
+          "contribution_start": 46934,
+          "contribution_size": 208,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-demo-play",
+        "entry_sha256": "374374af3c8d6c7ba2674504003aa00e4bf73bd9dc11819885a7db5cca558762",
+        "mutation": {
+          "unit": "main-demo-play",
+          "source": "src/main/demo/demo.cpp",
+          "find": "stage_frame < (DEMO_N - 4)",
+          "replace": "stage_frame < (DEMO_N - 5)"
+        },
+        "control_sha256": "1ab630c87ced3f19a2fc5cdc85286e93e99b3f7743e8de6471f530903416d3c4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 47028,
+          "candidate_start": 47028,
+          "size": 114,
+          "target_sha256": "1f5f93790ef1f77b33922fb2277b7b165e93b46544f35bb03f5ab2450c5cc34c",
+          "candidate_sha256": "37de65667bc2786f68c41c80b4cc3d92c3dcf97493b777e3ddf8e2de409540c3",
+          "raw_exact": false,
+          "target_fixups": [
+            101,
+            94
+          ],
+          "candidate_fixups": [
+            101,
+            94
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 47028,
+            "size": 114,
+            "function_symbol": "demoplay()",
+            "contribution_start": 46934,
+            "contribution_size": 208,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "55849c168e23cf479d2178bce87e947ca913102e55989fbd575529495b38c95b",
+          "dependency_timestamp_normalized_sha256": "8ced3496fac3d3951079ab5a71f5b81a5e30e82dd7adf3fb6fb2e24763cdffd8",
+          "module_name": "th05/demo.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/demo.cpp",
+            "src/main/demo/demo.cpp",
+            "src/main/demo/demo.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/demo.cpp"
+        ],
+        "binding_context": {
+          "kind": "symbol-only-before-and-after-compiler",
+          "source_sha256": "bb2070999f0f1516c2bdf684d747597b67216d2b67f8f904db2c5499d2a40b9e",
+          "compiler_object": "demo.obj",
+          "link_response_sha256": "9c9d21d0e628e14ed25df1b16d945fa925b213ee648472ddcfa0d34abe8cae5c",
+          "before": {
+            "sha256": "32f2358e5cb3bc631539dfb4bc6e4e670e289e00b9d741d99c1b5ee02af40a56",
+            "symbol_model_sha256": "5670db00b7383318da769efccf4d17558e0889ef6ca7a2e0df6b2f56b1c523c8"
+          },
+          "after": {
+            "sha256": "5c939fef456bc7dcd34ad9e2c35ebe22de4a7d2f6b7687fa9987d3b1e3a8b1bd",
+            "symbol_model_sha256": "4e459fbb239a2ec333b9b47cb682eee8cbf8db0254102dacaad2e662d4aa875c"
+          }
+        }
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-demo-play"
+      ]
     }
   ]
 }

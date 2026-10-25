@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **311 bounded C/C++ CODE/DATA units / 496 complete function occurrences**,
-**97,493 authored bytes exact**: 82,156 CODE and 15,337 initialized DATA.
-CODE is 81,464 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,572; 79 checked padding bytes receive
-no credit. MAIN has 379 functions / 61,036 CODE / 3,091 DATA;
+Current acceptance: **312 bounded C/C++ CODE/DATA units / 497 complete function occurrences**,
+**97,606 authored bytes exact**: 82,269 CODE and 15,337 initialized DATA.
+CODE is 81,577 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 97,686; 80 checked padding bytes receive
+no credit. MAIN has 380 functions / 61,149 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,49 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 135,412 bytes. The global denominator is still unreviewed;
+ownership is now 135,298 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete Extra Alice hexagram
+## Latest accepted C++: complete DemoPlay
+
+The complete MAIN playback function `[0xB7B4,0xB826)` now adds113 authored
+instruction bytes and one function. All114 bytes match; the only NOP, at
+relative107, is genuine TLINK far-call relaxation padding and gets zero
+authored credit. Ordered loader fixups remain `[101,94]`; near RET is at
+`0xB825`. Owned DATA/BSS are empty. See [demo replay](../src/main/demo/demo.md).
+
+No C++ source, header, first declaration, far Pascal API or compiler argument
+changed. A retained old compiler object first proved that the callee needs
+the same public SEGDEF, beyond the true208-byte compiler contribution. The
+new explicit before/after binding profile assembles one immutable conditional
+symbol-only source on either side of the real compiler object. No initialized
+bytes, synthetic helper, stack, entry, inside-function gap or byte editing is
+used. Legacy producer layouts and all accepted source identities stay intact.
+
+Only `.analysis/unit-replays/main-demoplay-common-segment-a/receipt.json`
+is imported, SHA-256
+`dbb97a3cc80d153b72d4258731d2c7b012de9fdfb51f6e6a7b0aca12b827fb1e`.
+Two fresh deterministic full114-byte producers and an own threshold4-to5
+compiled negative pass the gates; the negative keeps identical binding models
+and relocation order while changing actual output and being rejected.
+Installed execution proofs and unrelated accepted artifacts are reused.
+The old mixed parent remains unchanged, including its unaccepted far-call
+result; its accepted94-byte `demo_load()` is not replayed or counted again.
+
+Global unknown decreases135,412 to135,298 (MAIN55,634 to55,520). The one
+new checked padding byte is explicit. C/C++ is now97,606 authored bytes;
+vendor/ASM/DATA/resource totals and the null global denominator are unchanged.
+
+Saved import,326-test public CI, native ownership verification and all four
+empty incremental plans pass. All earlier accepted ledger rows remain
+identical; only `main-demo-play` is appended.
+Independent saved native/source/producer/gate review:
+`.analysis/demoplay-common-segment-gate-review.json`, SHA-256
+`cb9389a22ec1bf576b1f2b8d8e13c24d709431397d1e2082d8db254ac9223ee3`.
+Root final review: `.analysis/demoplay-root-final-review.json`, SHA-256
+`701d8422eda7b57eb93624aa9ab0ef7b5f682ca6c5830d9b47e1e13b2bfe315f`.
+
+## Previous accepted C++: complete Extra Alice hexagram
 
 The complete near Pascal geometry helper at original MAIN114BE..1158A now
 adds204 instruction bytes and one function. It has58 native instructions,
