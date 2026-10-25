@@ -2,27 +2,23 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "920193be93f8899205ca9e76ba0f54de112ef93694f52453c1ba81e58de4eb6b",
+  "replay_receipt_sha256": "aa894cc4e0558f4c47bf9ebe44bc3613dd33c7f3e955b22a0fb1f4b7d56f5483",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 55070,
-    "candidate_start": 55070,
-    "size": 94,
-    "target_sha256": "e15b0c7fdfa29c3dc182235e0a7f596c9b917eced3690b1ae4bbcf82535ea3ef",
-    "candidate_sha256": "09c775209f207df542ac2d0cd0aad8221e07d8ad792bce0d9365251a49c098c1",
+    "target_start": 96240,
+    "candidate_start": 96240,
+    "size": 111,
+    "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+    "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
     "raw_exact": false,
     "target_fixups": [
-      81,
-      74,
-      43,
-      36
+      46,
+      32
     ],
     "candidate_fixups": [
-      81,
-      74,
-      43,
-      36
+      46,
+      32
     ],
     "fixups_exact": true,
     "exact": false
@@ -62955,6 +62951,273 @@
           "-ml",
           "-DBINARY='M'",
           "th05/end_disp.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-yuki-hittest",
+      "entry_sha256": "9a04125adbb4d39da0d4bc4acd98e3928120b2d1de246911213cef3d82128f38",
+      "result": {
+        "id": "main-mai-yuki-hittest",
+        "entry_sha256": "9a04125adbb4d39da0d4bc4acd98e3928120b2d1de246911213cef3d82128f38",
+        "rounds": [
+          {
+            "target_start": 96240,
+            "candidate_start": 96240,
+            "size": 111,
+            "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+            "candidate_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+            "raw_exact": true,
+            "target_fixups": [
+              46,
+              32
+            ],
+            "candidate_fixups": [
+              46,
+              32
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 96240,
+            "candidate_start": 96240,
+            "size": 111,
+            "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+            "candidate_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+            "raw_exact": true,
+            "target_fixups": [
+              46,
+              32
+            ],
+            "candidate_fixups": [
+              46,
+              32
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "10d91cd02b0cf9d8d5ec23f4f785176e773f3d4cb26c831a72ecdbcaf3de7b8c",
+            "dependency_timestamp_normalized_sha256": "58d88e04f37666997865b1aa3dbb7c711624064655f3f273c02ca53b11ca14db",
+            "module_name": "th05/my_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_hit.cpp",
+              "src/main/boss/mai_yuki/hittest.cpp",
+              "src/main/boss/mai_yuki/hittest.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "49479b3d63c72ad0c6994cec74541e1be91cab9d4d27f71a87c40e3f06584ee2",
+            "dependency_timestamp_normalized_sha256": "58d88e04f37666997865b1aa3dbb7c711624064655f3f273c02ca53b11ca14db",
+            "module_name": "th05/my_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_hit.cpp",
+              "src/main/boss/mai_yuki/hittest.cpp",
+              "src/main/boss/mai_yuki/hittest.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_hit.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_hit.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_hittest_bindings.asm",
+            "sha256": "07b09ab76f4cdefb9da180ed8919e62a5217f3e3b312bd435f801b000cae3242"
+          },
+          {
+            "path": "src/main/boss/mai_yuki.hpp",
+            "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/hittest.cpp",
+            "sha256": "52c29432d7e48d3065aecdae3b100bc1311f4a8894beb6b344f2478e9b821836"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/hittest.hpp",
+            "sha256": "a222eec677f7442e63896339df4acde783a7333a8609df7eb8b9145f84aa0a04"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_yuki_hittest_bindings.asm",
+          "sha256": "07b09ab76f4cdefb9da180ed8919e62a5217f3e3b312bd435f801b000cae3242"
+        },
+        {
+          "path": "src/main/boss/mai_yuki.hpp",
+          "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/hittest.cpp",
+          "sha256": "52c29432d7e48d3065aecdae3b100bc1311f4a8894beb6b344f2478e9b821836"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/hittest.hpp",
+          "sha256": "a222eec677f7442e63896339df4acde783a7333a8609df7eb8b9145f84aa0a04"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "aa894cc4e0558f4c47bf9ebe44bc3613dd33c7f3e955b22a0fb1f4b7d56f5483",
+      "compiled_negative_control": {
+        "target_start": 96240,
+        "candidate_start": 96240,
+        "size": 111,
+        "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+        "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
+        "raw_exact": false,
+        "target_fixups": [
+          46,
+          32
+        ],
+        "candidate_fixups": [
+          46,
+          32
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-mai-yuki-hittest",
+        "entry_sha256": "9a04125adbb4d39da0d4bc4acd98e3928120b2d1de246911213cef3d82128f38",
+        "mutation": {
+          "unit": "main-mai-yuki-hittest",
+          "source": "src/main/boss/mai_yuki/hittest.cpp",
+          "find": "shots_hittest_against_boss = true;",
+          "replace": "shots_hittest_against_boss = false;"
+        },
+        "control_sha256": "b64fa7399c4a3f5eab16254f6c4588843fc5eb94dc18a257b293b375ddfa4be3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 96240,
+          "candidate_start": 96240,
+          "size": 111,
+          "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+          "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
+          "raw_exact": false,
+          "target_fixups": [
+            46,
+            32
+          ],
+          "candidate_fixups": [
+            46,
+            32
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "8b0c8dc17940947c1e73668b08e9af6ca564e2ac40efa238b06b07d0d0656126",
+          "dependency_timestamp_normalized_sha256": "c1db94ee53aac8c4ae53525cb06dc413c7778f27072364967139e7ad62faadc1",
+          "module_name": "th05/my_hit.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/my_hit.cpp",
+            "src/main/boss/mai_yuki/hittest.cpp",
+            "src/main/boss/mai_yuki/hittest.hpp",
+            "src/main/boss/mai_yuki.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/my_hit.cpp"
         ]
       },
       "receipt_aggregate_pass": true

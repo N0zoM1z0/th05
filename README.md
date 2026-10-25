@@ -13,13 +13,13 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **489 complete C++ functions / 81,286 authored CODE bytes**
+The first **491 complete C++ functions / 81,397 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
-fixups and compiled controls. Separately, **14,717 initialized semantic DATA
+fixups and compiled controls. Separately, **14,853 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored bytes exact are
-**96,003**: 80,594 instruction, 692 compiler switch-table
-and 14,717 initialized DATA bytes. Complete compared extents contain
-96,081 bytes, including 78 excluded padding bytes. The oracle
+**96,250**: 80,705 instruction, 692 compiler switch-table
+and 14,853 initialized DATA bytes. Complete compared extents contain
+96,328 bytes, including 78 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
@@ -97,6 +97,7 @@ provenance. Independent pristine-dump confirmation remains open.
 ## Reconstruction
 
 - [Current handoff](docs/RE_HANDOFF.md)
+- [Local storage and evidence retention](docs/LOCAL_STORAGE.md)
 - [Workflow](docs/RE_WORKFLOW.md)
 - [Exact oracle contract](docs/ORACLES.md)
 - [Borland reconstruction notes](docs/reconstruction/BORLAND_NOTES.md)

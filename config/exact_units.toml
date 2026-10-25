@@ -4023,3 +4023,22 @@ unit = "main-ending-dispatch"
 source = "src/main/end/dispatch.cpp"
 find = "if(continues_used != 0)"
 replace = "if(continues_used == 0)"
+
+[[units]]
+id = "main-mai-yuki-hittest"
+source = "src/main/boss/mai_yuki/hittest.cpp"
+module = "th05/my_hit.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 96240
+size = 111
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/mai_yuki_hittest_bindings.asm"
+
+[[controls]]
+unit = "main-mai-yuki-hittest"
+source = "src/main/boss/mai_yuki/hittest.cpp"
+find = "shots_hittest_against_boss = true;"
+replace = "shots_hittest_against_boss = false;"

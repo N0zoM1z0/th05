@@ -872,3 +872,25 @@ unit = "maine-allcast-lines-data"
 source = "src/maine/allcast/line_table.cpp"
 find = "    allcast_project,\n    allcast_th01_title,"
 replace = "    allcast_th01_title,\n    allcast_project,"
+
+[[units]]
+id = "maine-staff-filenames-data"
+source = "src/maine/staff/filenames.cpp"
+module = "th05/st_files.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+target_start = 71778
+size = 136
+alignment_offsets = []
+padding_bytes = []
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+bindings_source = "probes/units/maine_staff_filenames_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-filenames-data"
+source = "src/maine/staff/filenames.cpp"
+find = "staff_bgm_filename[] = \"staff\""
+replace = "staff_bgm_filename[] = \"stafg\""

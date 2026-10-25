@@ -1,1441 +1,165 @@
-# TH05 current handoff
+# TH05 agent handoff
 
-Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
+Project objective: at least 98% authored bytes exact. The global denominator
+and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
+Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **296 bounded C/C++ CODE/DATA units / 489 complete function occurrences**,
-**96,003 authored bytes exact**: 81,286 CODE and 14,717 initialized DATA.
-CODE is 80,594 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,081; 78 checked padding bytes receive
-no credit. MAIN has 373 functions / 60,488 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,083.
+Current acceptance: **298 bounded C/C++ CODE/DATA units / 491 complete function occurrences**,
+**96,250 authored bytes exact**: 81,397 CODE and 14,853 initialized DATA.
+CODE is 80,705 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 96,328; 78 checked padding bytes receive
+no credit. MAIN has 375 functions / 60,599 CODE / 3,019 DATA;
+OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,219.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
 
-All paths below are under private `.analysis/unit-replays/`.
-
-| Scope | Receipt directory |
-| --- | --- |
-| Player angle, bullet tuning, Boss movement, resident CFG | `boss-cfg-a` |
-| Boss explosion | `boss-explosion-a` |
-| HUD overlay | `hud-overlay-a` |
-| Four character shot owners | `reimu-shots-a`, `marisa-shots-a`, `yuuka-shots-a`, `mima-shots-b` |
-| Bullet generation clipping | `bullet-clip-d` |
-| Stage initialization | `stage-setup-a` |
-| 17 complete Boss background functions | `boss-background-functions-a` (explicit subset) |
-| Cheeto allocation/homing | `cheeto-update-b` |
-| Regular/special bullet update | `bullet-update-d` |
-| Enemy rendering from maintained TH04 C++ | `enemies-render-b` |
-| Sound interrupt in MAIN / OP / MAINE | `main-kaja-a`, `op-kaja-a`, `maine-kaja-a` |
-| OP startup and main menu | `op-main-menu-b` |
-| OP setup and character selection | `op-setup-menu-a`, `op-character-menu-a` |
-| Seven OP high-score viewer functions | `op-hiscore-scopes-a` (retained producer review) |
-| OP configuration and music prefix | `op-config-b`, `op-music-prefix-b` |
-| Eight OP music suffix functions | `op-music-functions-a` |
-| Nine MAINE cutscene functions | `maine-cutscene-a` |
-| Shared polar/vector in all three games | `main-vector-a`, `op-vector-b`, `maine-vector-a` |
-| OP title animation | `op-title-b` |
-| MAINE all-cast, staff clip and entry | `maine-allcast-a`, `maine-staff-clip-a`, `maine-entry-a` |
-| MAIN growing/shrinking circle effects | `main-circles-b` |
-| EX-Alice firewaves and Mai/Yuki flight | `main-firewaves-b`, `main-mai-yuki-flight-b` |
-| Playfield shake and gather | `main-playfield-shake-a`, `main-gather-b` |
-| MAINE high-score lifecycle | `maine-score-end-b` |
-| Sara complete stage-one behavior | `main-sara-a` |
-| Stage-two and three movement/pattern helpers | `main-midboss-stage2-patterns-a`, `main-midboss-stage3-patterns-a` |
-| Stage-four transition movement | `main-midboss-transition4-a` |
-| Louise movement and Yumeko opening patterns | `main-louise-flystep-a`, `main-yumeko-patterns-b` |
-| Alice final spread and five complete puppet callbacks | `main-alice-final-spread-a`, `main-alice-puppet-scopes-a` |
-| Louise complete phase callback | `main-louise-update-a` |
-| Louise later and Alice charge patterns | `main-louise-later-patterns-d`, `main-alice-charge-patterns-a` |
-| Louise charge/initial patterns and Alice puppet beam | `main-louise-initial-patterns-a`, `main-alice-puppet-beam-a` |
-| Stage-five and Extra movement/pattern helpers | `main-midboss5-extra-patterns-a` |
-| Stage-one, two, three, five and Extra midboss logic | `main-midboss-stage1-a`, `main-midboss-stage2-c`, `main-midboss-stage3-a`, `main-midboss5-extra-b` |
-| Midboss state and two reward functions | `main-midboss-state-d`, `main-midboss-bonuses-b` |
-| Six complete generic Boss functions | `main-boss-generic-b` |
-| Ten strict Shinki functions | `main-shinki-functions-c` (passing subset), `main-shinki-scopes-d` (retained review) |
-| Eight small MAIN owners | `main-slowdown-a`, `main-hud-hp-a`, `main-player-position-a`, `main-bullet-pattern-a`, `main-scroll-convert-a`, `main-tile-render-a`, `main-midboss-invalidate-b`, `main-boss-backdrop-c` |
-| OP initialized UI/state DATA | `op-setup-data-a`, `op-main-data-a` |
-| OP music/title/character/score/config DATA | `op-music-data-retained-a`, `op-title-data-retained-a`, `op-character-menu-data-retained-a`, `op-hiscore-view-data-retained-a`, `op-config-data-retained-a` |
-| MAIN stage initialized DATA and refreshed CODE evidence | `main-stage-data-a` |
-| MAINE entry and MAIN Boss drop-table DATA | `maine-entry-data-retained-a`, `main-boss-generic-data-a` |
-| Dialog-file loading and demo loading | `main-dialog-file-a`, `main-demo-b` (passing load subset) |
-| MAIN/OP/MAINE core initialization | `main-core-init-a`, `op-core-init-a`, `maine-core-init-a` |
-| OP/MAINE BGM measure query | `op-bgm-measure-a`, `maine-bgm-measure-a` |
-| Sound mode selection in all three artifacts | `main-sound-modes-b`, `op-sound-modes-b`, `maine-sound-modes-a` |
-| Generic shot control | `main-player-shot-common-a` |
-| Three EMS cache functions | `main-ems-scopes-c` from raw-exact/ordered-inexact `main-ems-cache-b` |
-| Item extend and miss penalty | `main-item-extends-a`, `main-item-miss-penalty-d` |
-| Dialog wipe/fade box helpers, runner and face/sprite tail | `main-dialog-box-b`, `main-dialog-run-d`, `main-dialog-tail-scopes-c` |
-| Item creation/death drops, splashes and tile invalidation | `main-item-spawn-b`, `main-item-splashes-a`, `main-items-invalidate-a` |
-| Reimu bomb stars and stage-five midboss rendering | `main-reimu-bomb-stars-a`, `main-midboss5-render-a` |
-| Enemy tile invalidation and allocation | `main-enemies-invalidate-c`, `main-enemy-allocation-a` |
-| Laser creation/control, state update and rendering | `main-laser-control-a`, `main-laser-update-b`, `main-laser-render-a` |
-
-Each accepted scope has two independent deterministic producers, full raw and
-ordered-fixup comparisons, pinned tools, actual OMF dependencies and a compiled
-semantic mutation control. Import rechecks saved MZ/MAP/OMF, wrappers and actual
-compiler inputs. Symbol-only context is uncredited; whole-game linkage remains
-open. Per-owner notes hold complete boundaries, ABI and bindings.
-
-Three independent acceptance ledgers are `config/accepted_units.json`,
-`accepted_units.op.json` and `accepted_units.maine.json`. OP/MAINE use pinned
-retained decoded views, not fabricated MZ headers. Their proof includes packed
-identity, original relocation order and two decoder load observations. Public
-summaries need no private game/cache files. No packed-file equality is claimed.
-
-Standalone ZUN `-M` is separately accepted: 311 complete COM bytes (142 code,
-169 data), from semantic ASM with inferred original style. Evidence:
-`.analysis/zun-memory/first-b` and `config/zun_memory_acceptance.json`. It does
-not contribute C++ credit or establish complete outer ZUN equality.
-
-## Ownership inventory
-
-`resources/ownership.json` covers all 319,268 observed payload/COM bytes.
-Every unclassified interval remains unknown. Reviewed third-party ownership
-covers149 complete CL.LIB CODE contributions/47,479 bytes,25 complete Master
-procedures/480 bytes,2 Master CODE-data tables/2048 bytes and3 initialized
-Master SIN8 tables/1920 bytes, totaling51,927.
-CL uses pinned native OMF/FIXUPP evidence
-and explicit member decisions in `config/reviewed_vendor_units.json` plus its
-`.op.json` and `.maine.json` counterparts. OP63/23,708 and MAINE55/20,870 use
-their actual retained decoded targets and separate explicit decisions. Master
-uses independently pinned original source, actual macro context, complete
-OMF/MAP/MZ and ordered-fixup equality, with the separate explicit decision in
-`config/reviewed_master_procedures.json`. The additive source-backed seven-scope
-proof and explicit `config/reviewed_master_additions.json` decision add104 MAIN
-procedure bytes and1024 RotTbl bytes in each of OP/MAINE. Actual monolithic
-OMF/MAP contributions are retained; no member MAP is invented. All Master
-extents include10 library-owned padding bytes and grant no authored credit.
-CODE-data remains explicitly labeled, distinct from instructions. Every deferred CL member,
-all other Master procedures and every surrounding gap remain unknown.
-The reviewers have `--structural-check` for public metadata and `--check` for
-actual retained private evidence, with zero compilation. Regenerate inventory
-using `scripts/ownership.py --write`; add `--verify-targets` to replay native
-vendor/target evidence without decoding or compiling. The global denominator
-and percentage remain unreviewed.
-
-## Incremental work
-
-User steering: accelerate and replay only new or affected units. Use
-`replay_units.py --plan` and `--units ID...`; add `--artifact op` or `maine` for
-those contexts. No-work exits before tools/targets. Tool execution probes are
-reused after manifest and actual installed tool/header/library identity checks.
-Do not cold-replay old units, redo calibration or re-decode unchanged targets.
-
-Multiple complete-function scopes in one TU compile once per fresh round.
-Their MAP boundaries include unaccepted neighbors. `progress.py --accept
-RECEIPT --units ID...` imports an explicitly passing subset without recompiling;
-all saved results and the negative-control owner still undergo validation.
-The original mixed receipt and aggregate verdict are unchanged.
-
-Initialized semantic DATA opts into `extent_kind="initialized-data"`, zero
-functions, explicit source roles and one complete real MAP DATA contribution.
-The actual OMF DATA SEGDEF must have complete nonoverlapping LEDATA coverage;
-BSS, assets, CODE tables and unproved transformations are rejected. Each DATA
-unit requires its own compiled DATA mutation; a CODE-only change cannot prove
-it. Focus one DATA unit per replay; positives sharing a TU still compile once.
-The earlier8,857-byte DATA milestone included OP setup1,075, main menu1,089, music6,217,
-title 154, character selection 8, score viewer 53 and configuration 19; MAIN
-stage setup 189 and Boss drop types 10; MAINE entry filenames/pointer 43.
-Current DATA totals10,315: MAIN1,657, OP8,615 and MAINE43, including425 explicit
-C initializer bytes separately classified from9,890 C++ DATA. Five original
-OP DATA owners reuse their two archived, revalidated actual CODE producers and
-compile only one fresh DATA negative each. MAIN stage uses a fresh combined
-CODE/DATA replay because its older CODE evidence lacked saved actual argv.
-No original BSS is credited. `scripts/review_saved_data.py` preserves the full
-original parent, including any failed CODE results, and validates every saved
-MZ/MAP/OMF and the complete canonical/encoded dependency closure.
-
-New Japanese owners opt into `source_encoding = "cp932"`. Canonical maintained
-inputs and snapshots stay UTF8; real compiler bytes have separate identities.
-Import reconstructs positive/negative encoding and verifies the assembled alias.
-Old MAIN owners remain raw. OP menu exercises actual CP932 Borland producers.
-MAIN/MAINE shared sound units explicitly retain binary O; genuine MAINE source
-uses a mixture of M/O/E contexts, so inspect real reference producer arguments.
-
-## Open scopes and current next work
-
-Boss background has 17 accepted functions / 2,891 bytes. Its particle renderer
-remains 158 versus original 159 bytes (OR AX,AX versus CMP AX,0). The following
-compiler contribution uses one uncredited origin hole outside all functions.
-The entire 159-byte original particle function stays unaccepted. Hexagram
-rendering's 204 raw bytes match, but ordered MZ fixups differ across a compiler
-LEDATA boundary, so that whole function also stays unaccepted. Never sort or
-normalize those differences.
-
-Stage initialization's 189 initialized DATA bytes and OP menu's 1,089 DATA
-bytes / 26 ordered fixups now have separate accepted DATA evidence and their
-own compiled DATA mutations. Source BSS locations are checked,
-not treated as initialized file bytes. OP menu's first scaffold stack displaced
-BSS by 84h; omitting artificial stack allocation fixed layout without modifying
-the game algorithm. See `BORLAND_NOTES.md` and owner notes for type/ABI lessons.
-
-OP setup adds 1,439 code bytes / 12 functions, character selection 1,181 / 4,
-and seven high-score viewer functions add 1,099 bytes. The latter reuse two
-unchanged independently produced cold artifacts through the retained-scope
-reviewer, which validates the entire original parent and mechanical scope
-derivation without recompiling. The remaining 312-byte registration menu has
-identical raw code but differing ordered fixups and stays unaccepted.
-OP configuration adds 379 bytes / 3 functions and music prefix 381 / 4.
-Eight music suffix functions add 646 bytes after a new focused replay with
-an accepted comment-loader negative; the previous suffix negative belonged to
-an excluded menu function and could not support subset acceptance. Polygon
-update (502 bytes) and music menu (837) remain raw-exact but ordered-inexact.
-Shinki adds ten complete functions / 1,486 instruction bytes. The mixed parent
-retains raw-exact but ordered-inexact later code. Seven functions are reviewed
-from unchanged retained producers, carrying the real unchanged negative owner;
-no new compiler invocation is claimed. Static phase102, ball update220 and four
-ordered-inexact functions (386/169/802/959) remain unaccepted.
-Generic Boss adds six complete functions / 352 bytes. The original 414-byte
-defeat function is 408 under natural C++ because TC merges two common call
-tails; the original 43-byte collision function is 46 with ordinary signed
-locals. Both entire functions stay unaccepted. A six-byte outside-contribution
-hole restores the real collision address for accepted caller bytes; no ASM,
-pseudoregister math or inert barrier is used. Private documented optimization
-variants failed strict comparisons and remain diagnostic only.
-Sara adds twelve complete functions / 1,823 authored code bytes, with ten
-semantic switch-table bytes and one excluded alignment byte. Midboss state
-adds 85 bytes / two functions; reward functions add 218 / two. The natural
-midboss defeat function remains 66 versus original 65 bytes and stays unaccepted.
-The failed whole midboss/music candidate entries are removed from normal replay
-selection; their retained failed artifacts and owner notes remain available.
-OP title adds 618 bytes / three functions. MAINE all-cast adds 611 / three,
-staff clip 104 / one, entry 336 / four, and high-score lifecycle 416 / three.
-MAIN adds circle effects 257 / four, firewaves 94 / two, Mai/Yuki flight 248 /
-two, playfield shake 273 / one, and six gather functions 549 bytes. Gather's two
-original 27-byte ASM structure-copy helpers are external and uncredited; their
-holes are outside the two real compiler contributions.
-Nine MAINE cutscene functions add 1,241 bytes (1,225 instructions, 16 tables),
-with Return-key animation period as the compiled negative. The cutscene's
-52-byte EGC helper and 1,555-byte opcode dispatcher remain unaccepted.
-The MAINE helper frames come from original bytes: sound's real frame E80
-differs from calibration E7F. Maintain full enum domains and real structures;
-no opaque opcode arrays, fake symbols, compiler-body ASM or inert barriers.
-
-## Cached targets, routing and tools
-
-`config/targets.toml` pins the supplied copy; provenance remains
-candidate-local-attested. MAIN is ordinary MZ, OP/MAINE DIET-packed MZ, ZUN COM.
-Decoded payloads/receipts are in `.analysis/decoded`. Reference calibration
-builds complete but fail whole-file equality and create zero credit:
-`main-calibration-b` (83 steps), `op-calibration-a` (47),
-`maine-calibration-a` (36), under `.analysis/builds/`.
-
-Private surveys route 21 OP shapes / 12,288 candidate bytes, 17 MAINE shapes /
-5,678 bytes, and 63 maintained TH04 function shapes / 4,439 bytes. They are
-routing only, including possible false complete boundaries and overlaps with
-already accepted code. Reuse these maps; independently review original extents.
-
-Pinned Borland tools have independent Wine state. Ghidra 12.1.3 / Temurin 21
-are installed; `ghidra-project/TH05-main-loader` passes loader database byte /
-fixup attestation and bounded disassembly. Full autoanalysis exceeded 768 MiB;
-use loader-only and bounded ranges. Failed old projects are not evidence.
-Serialize heavy tools with `.analysis/borland.lock` and `run_heavy.sh` (one CPU,
-35% quota, 768 MiB, no swap, low priority). TH03 has unrelated dirty work: never
-modify it. TH04 is a read-only reference.
-
-Enemy tile invalidation adds one complete 43-byte function. The observed
-near Pascal entry consumes four bytes and RET4; a documented Borland typed
-view of the existing symbol naturally emits PUSH dword. Shared ABI definitions
-are unchanged. The complete enemy allocator separately adds 252 bytes through its own
-whole natural C++ producer and compiled interval mutation. The STD runner and
-update remain unaccepted: five raw bytes
-and one loader relocation differ in each owner at real far-call shortening.
-A private ordered common-SEGDEF diagnostic did not resolve them. Failed scopes
-are removed from normal selection; source/notes and evidence stay retained.
-
-Laser creation/control adds five complete functions / 448 bytes; update adds
-one / 312, including a 14-byte compiler switch table. See
-`src/main/bullet/laser.md`. Each has its own two independent positive producers
-and compiled gameplay mutation; rendering adds one / 582 with its own minimum-radius mutation. State buffers
-and all foreign API bodies remain uncredited.
-
-Dialog file loading adds202 instruction bytes across three complete functions;
-demo loading adds94 across one. Demo playback114 retains its genuine far-call
-shortening mismatch and stays unaccepted, with its failed parent retained.
-Shared initialization adds72 in each of MAIN/MAINE. Sound-mode selection adds
-154 MAIN instruction bytes plus two compared, excluded shortening NOPs. Full
-original SE enum domain is essential for the exact ternary expression.
-
-Sound mode selection now also adds154 each in OP/MAINE, with separately
-reviewed real frames and own compiled controls. Generic shots add three
-functions /182 authored CODE bytes (150 instructions +32 compiler table),
-excluding one checked zero padding byte. Reimu bomb stars add466 instruction
-bytes, excluding one original linker NOP; stage-five midboss rendering adds101.
-The Extra-stage same-shaped renderer is independently identified and uncredited.
-
-OP core initialization adds one complete124-byte function, including genuine
-Borland port-I/O intrinsics. Item splashes and invalidation add130/2 functions
-and75/1; the real invalidation loop visits32 slots even though the full item
-pool has40, preserving the original behavior. Owned DATA/BSS remain zero.
-
-Item creation/death drops add385 instruction bytes across two functions. All
-three initial item owners now pass590 bytes /five functions. The parity check
-uses the real byte bit test; the following signed modulo64 operation remains
-as observed. No other item source/header changed. The already failed whole
-Shinki3552 candidate was removed from default selection; its archived failed
-producer and accepted retained function scopes are unchanged.
-
-EMS cache adds three complete functions /529 CODE bytes:521 instructions,
-eight compiler switch-table bytes and one excluded checked zero. Its two
-684-byte producers match all raw code, but whole ordering and the154-byte
-boss-face preload ordering fail. Only the strict three scopes are reviewed
-from retained artifacts, using the same actual compiled negative and no new
-compiler run. The failed whole is removed from default selection.
-
-Item extend and miss penalty add79 and70 instruction bytes through independent
-complete scopes and actual compiled controls. Collection's natural689-byte
-producer is missing one original checked zero before its seven-word table;
-normal `-a2` did not fix it and was removed. Collection remains entirely
-unaccepted, including its known original ordering risk. Main item update is
-248 versus241 due to genuine typed coordinate spills; ABI and pre-clamp
-semantics are correct, and no register template or flag variants were added.
-
-Dialog box wipe/fade adds106 instruction bytes/two complete functions. Its
-835-byte full runtime candidate remains unaccepted; command handler459 differs
-from456 while the separate270-byte runner has a correct size. Box bodies are
-shared through `box.inl`, with a focused real106-byte producer and its own
-timing negative. The documented TH04 `-B` hypothesis did not restore Shinki's
-missing4 bytes; one unchanged-source compiler diagnostic and zero-size foreign
-segment integration evidence are retained in `shinki-bmode-a`, with zero credit.
-
-OP/MAINE each add the complete35-byte BGM measure query with independent
-producers and a MIDI-meter negative. The first-positive MAP boundary gate now
-stops a size-invalid replay before a needless second compile. Real player
-invalidation176/145 and movement174/134 diagnostics prove that early exit,
-while both new measure owners still produce two positives plus a negative.
-Those player candidates are parked with zero exact credit and no flag/register
-variants. Public CI includes a regression for the first-MAP failure behavior.
-
-
-### Dialog runner incremental acceptance
-
-`main-dialog-run-d` accepts the independent270-byte runner from the unchanged
-natural `run.inl` body. Two cold positives and a compiled wait-argument negative
-pass. The corrected unsigned filename pointer removes the command handler's
-sign extension, but the full runtime is831 versus832 because its original
-switch-table prefix zero is absent; that whole contribution remains unaccepted.
-Only the new runner was replayed; accepted box/file owners remain unchanged.
-
-
-### Dialog face and sprite tail
-
-`main-dialog-tail-scopes-c` accepts the complete248-byte face cache loader and
-67-byte Extra-Alice sprite cleanup from the unmodified four-function C++ TU.
-Both have two fresh raw/ordered positives and compiled semantic controls.
-Whole tail-b is619 versus620 and remains unaccepted; animation and exit do not
-receive credit. The original full620-byte result is preserved privately,
-including the failing far-call relocation and exit table-prefix difference.
-
-
-### Stage-two midboss update
-
-`main-midboss-stage2-c` accepts the entire393-byte state machine with both
-returns, original ordered fixups350/241/210, two fresh deterministic builds and
-an HP-threshold negative400→401. The first natural395-byte candidate exposed
-an unnecessary inline-helper exit jump and a transposed vector destination;
-original instructions establish the ordinary direct clear update and actual
-(192,64) target. Both were corrected semantically before acceptance. Movement
-and pattern helpers remain genuine foreign functions; no bodies or target
-instruction templates are supplied by the binder.
-
-
-### Stage-one and three midboss logic
-
-`main-midboss-stage1-a` accepts all three complete movement/pattern/update
-functions from the natural ReC98 C++ owner. All543 bytes, five original ordered
-fixups and the16→17 firing-interval negative are checked; credit is542 bytes
-(534 instructions,8 compiler-table bytes), excluding the single checked zero.
-The genuine packed-word spread setter and canonical ABI produce the original
-code without instruction templates.
-
-`main-midboss-stage3-a` accepts the complete332-byte callback including its
-trailing compiler table:323 instructions, one checked zero and8 table bytes,
-331 authored bytes. The sole original relocation at relative280 and both
-cold raw producers agree; invincibility threshold192→193 is rejected. The
-original RETF ends the instruction stream, not the function contribution: the
-four-word table remains part of the complete comparison. All unrelated
-accepted evidence is reused unchanged.
-
-
-### Stage-five and Extra complete updates
-
-`main-midboss5-extra-b` accepts independent318-byte stage-five and366-byte
-Extra callbacks. Each has two fresh deterministic raw/ordered producers. The batch control is
-bonus30→31; Extra has the supplementary HP1000→1001 control described below. Neither owns a
-CODE table, padding, DATA or BSS. Real near pattern-pointer tables remain
-external. The initial stage-five wrapper stem had nine characters, so TCC
-emitted a short-name object; only its generated DOS alias was corrected before
-the successful replay. The replay command now rejects invalid DOS8.3 wrapper
-paths before accessing targets or running tools, with a CLI regression check.
-
-
-### Stage-five and Extra helper algorithms
-
-`main-midboss5-extra-patterns-a` accepts five complete stage-five functions
-(462 bytes) and five Extra functions (440 bytes), each from its own frozen
-natural C++ producer group. Both groups have two fresh deterministic raw and original ordered-fixup
-positives. The batch control mutates stage five; Extra has a supplementary
-owner-specific speed control described below.
-These902 bytes are entirely instructions; no tables, padding, DATA or BSS
-receive credit. Full canonical bullet-special union declarations are preserved
-in the independent Extra ABI header; accepted update/bullet headers stay
-unchanged, with no opaque object-byte view used as a substitute.
-
-
-### Independent supplemental negative controls
-
-The normal batch driver compiles one named negative owner. Earlier notes that
-implied one negative per batched producer group were corrected. Extra update's
-HP1000→1001 mutation is actually compiled in `main-midboss-extra-negative-c`;
-Extra helper speed8→9 is actually compiled in
-`main-midboss-extra-pattern-negative-b`. Both reports retain/revalidate their
-parent's two immutable positive producers and compile one additional negative
-each, using the identical pinned tool receipt. They change no acceptance or
-byte totals. `scripts/supplement_negative.py --check PATH/receipt.json` checks
-the full saved parent and negative artifacts without running a compiler.
-
-### Stage-four complete natural prefix and update
-
-`main-midboss-stage4-b` accepts all798 raw bytes across three real pattern
-helpers and the complete callback, including its switch table. Credit is797
-bytes (789 instructions,8 table bytes), with the original zero excluded. The
-first producer's797-byte result isolated the missing word-alignment context;
-restoring the donor's actual alignment option after all ABI declarations yields
-two exact deterministic producers, all seven original ordered fixups, and a
-rejected entrance-threshold192→193 control. No instruction or inside-function
-padding bytes were supplied by the binder or source.
-
-
-### Stage-two and three complete helper owners
-
-`main-midboss-stage2-patterns-a` accepts298 instruction bytes/three complete
-movement/pattern functions with the original single ordered fixup and its
-orbit-bound128→129 control. Its own prologue establishes the odd start15CC1;
-no alignment gap was inferred from the neighboring accepted owner.
-`main-midboss-stage3-patterns-a` accepts616 instruction bytes/five complete
-functions with original ordered fixups546/424/405/235/144 and a spread3→4
-control. Genuine rank-selector and gather packed parameters are preserved.
-Both owners have two fresh deterministic positives, no table/padding/DATA/BSS,
-and reuse unchanged accepted update headers.
-
-### New natural Boss and transition owners
-
-Louise's complete four-state charge helper and two initial patterns are
-accepted429 bytes/three functions in `main-louise-initial-patterns-a`; the blue
-spread5→6 mutation is rejected. Alice's puppet beam pattern is accepted354
-bytes/one function in `main-alice-puppet-beam-a`, with the width56→55 control.
-The full26-byte puppet type, real far shot-hit helper and complete point
-comparison preserve the original ABI, without compiler-body ASM.
-The previously foreign stage-four transition helper now passes208 bytes/one
-function in `main-midboss-transition4-a`, with sound13→14 control. Each receipt
-has its own negative and two fresh deterministic positives; no tables,
-padding, DATA or BSS receive credit for these new instruction-only owners.
-
-
-### Louise later patterns and Alice charge patterns
-
-`main-louise-later-patterns-d` accepts603 instruction bytes/four complete
-functions. Two typed byte-speed updates use a real integral wrapped negative
-delta, retaining defined modulo256 semantics without ASM or idle work. The
-fan-angle24→25 control is rejected. The earlier597-byte compound-assignment
-producer and603-byte raw-inexact alternatives remain failed; the negative-float
-candidate was outside the unchanged speed helper's valid domain and discarded.
-`main-alice-charge-patterns-a` accepts499 instruction bytes/three complete
-laser/stack/ring functions with all six original ordered fixups and its own
-laser-width8→9 control. Every owner has two fresh deterministic raw/ordered
-positives; source headers already accepted for beam/laser/charge are unchanged.
-
-
-### Independently reviewed Master procedure attribution
-
-The public `scripts/review_master.py` revalidates20 complete literal procedures
-from the author's pinned0.23 archive against the actual historical listing,
-OMF and original/linked MZ. Active FAR/data-model macro alternatives and all
-frozen source dependencies are checked, with no byte/source normalization
-beyond source encoding/newlines. Forty absent/ambiguous/different source blocks
-and196 uncovered gap bytes remain unknown; the mixed prefix is not excluded.
-The unchanged proposal metadata and a separate explicit20-name decision are
-recorded by independent hashes. MAIN combines CL and Master claims through the
-same overlap-rejecting overlay and retains separate decision digests. A native
-`ownership.py --write --verify-targets` run confirms all319,268 coordinates and
-3,277 vendor bytes, while authored bytes and the null denominator are unchanged.
-
-
-### Louise phase callback
-
-`main-louise-update-a` accepts the full582-byte far callback, including the
-original table-prefix zero and eight-word switch table. Authored credit is581
-bytes (565 instructions plus16 table bytes), one complete function. Both fresh
-raw/ordered producers agree, including the sole relocation at relative121;
-phase-end HP3000→3001 is rejected. The actual movement API remains a truthful
-near Pascal(speed,duration) helper; all four packed calls and background
-callback context are preserved. Existing charge, bullet and laser helpers and
-headers remain unchanged.
-
-
-### Louise movement, Yumeko and complete Alice helper scopes
-
-Louise's genuine Pascal movement passes122 bytes in `main-louise-flystep-a`.
-Yumeko's bounce/sword/ring group passes435 bytes/three functions in
-`main-yumeko-patterns-b`; the only initial semantic error was reversed gather
-colors, corrected from(frame,6,7) to(frame,7,6). Both independent receipts have
-their own336→335 boundary control and two fresh deterministic raw/ordered
-positives, with no table/padding/DATA/BSS credit.
-
-Alice's final spread passes as a standalone63-byte owner with true external
-frames and its own speed2→3 mutation. Five puppet callbacks pass individually
-in `main-alice-puppet-scopes-a` (556 bytes total). The two real TU producers
-are shared, but every complete function's raw bytes, immediate public
-boundary and original ordered fixup[22] are checked separately. The aiming
-control is compiled in the second spread scope; no whole556-byte global
-fixup-order claim or independent negative per sibling is made.
-
-The natural Alice update remains unaccepted: its939-byte callback lacks one
-original table-prefix zero, despite retaining the real63-byte predecessor.
-The complete entrance/dispatcher owner now passes 643 instruction bytes/two
-functions in `main-alice-puppet-motion-d`. Early FAR/NEAR helper-reference
-producers emitted 710/690 bytes. Direct field easing removed address
-temporaries but emitted 634; a shared ordinary integer temporary across the
-mutually exclusive delta and callback-result paths recovered the original
-register allocation. Both fresh full raw/ordered producers pass, and the
-entrance angle decrement2→3 control is rejected. The failed whole update
-owner remains outside default replay and receives no callback credit.
-
-
-### Alice recovery and opening patterns
-
-`main-alice-opening-patterns-a` accepts461 instruction bytes/six complete
-functions: real near Pascal puppet recovery/hold callbacks and four charged
-opening patterns. Both fresh producers agree on the entire raw contribution
-and original ordered fixups[437,313,182]; the ring count28→27 control is
-rejected. No DATA, BSS, padding or compiler tables receive credit.
-
-
-### EX-Alice initial patterns
-
-`main-exalice-initial-patterns-c` accepts314 instruction bytes/three complete
-functions with two fresh deterministic full raw/ordered positives. The real
-fan spread5→6 control is rejected. The initial broad bullet-update include
-conflicted with the independent HUD speed helper; the owner now uses unchanged
-canonical types plus the complete two-alternative special-state union. The
-first314-byte producer only reversed two gather color operands; correcting
-the real Pascal call to(frame-48,6,7) restores both bytes. No DATA, BSS,
-padding or compiler tables receive credit.
-
-
-### EX-Alice later patterns
-
-`main-exalice-later-patterns-a` accepts600 instruction bytes/three complete
-functions with two fresh deterministic full raw/ordered producers. The
-first-fan speed5→4 control is rejected. The real firewave Pascal call, full
-player-angle Subpixel parameters, point state and word pellet color preserve
-actual storage and ABI. No DATA, BSS, compiler tables or padding receive credit.
-The separate Alice context review found no original TH05 source TU boundary
-evidence; its missing table-prefix zero does not justify speculative context
-compiles. The bounded review remains in ignored analysis evidence.
-
-
-### Yumeko standalone spreads and EX-Alice laser patterns
-
-`main-yumeko-spreads-a` accepts518 instruction bytes/two complete spread
-functions with a rejected reset-frame256→257 control. The three-function
-872-byte parent emitted875: first-function Subpixel coordinate construction
-adds one3-byte stack store, and the whole original relocation stream also
-has a genuine nonmonotone first entry. The aimed-sword354-byte function
-remains unaccepted. Unchanged real spread bodies are shared in spreads.inl,
-with independently correct standalone symbol/DS context; no source acceptance
-is transferred from the failed parent.
-
-`main-exalice-laser-patterns-a` accepts645 instruction bytes/four complete
-callbacks, with original ordered fixups[422,98] and a compiled fixed-laser
-grow age47→48 control in the second function. Full canonical Laser storage,
-real Pascal spawn API and genuine first16-slot loop are preserved. Both
-owners have two fresh deterministic full raw/ordered positives and no DATA,
-BSS, compiler-table or padding credit.
-
-
-### Mai/Yuki initial patterns and EX-Alice phase/final scopes
-
-`main-mai-yuki-initial-patterns-a` accepts543 instruction bytes/six complete
-functions with original ordered fixups[525,433,324,233,51] and the real attack
-stack2→3 negative. `main-exalice-phase-a` accepts111 instruction bytes/two
-complete functions (far hit gating33 plus Pascal phase transition78), with
-an empty original fixup stream and immunity39→40 negative. Both owners have
-two fresh deterministic full raw/ordered positives and no tables/padding/data.
-
-`main-exalice-final-scopes-b` accepts475 bytes/three complete functions from
-the real809-byte TU: cross143, turning109 and final fan223. Two fresh whole
-producers supply all selected actual boundaries/raw/ordered comparisons, with
-one shared cheeto speed3→4 negative in the first function. Branch-local real
-aim calls and gather assignments recover the original control/data flow; the
-earlier conditional-expression producer emitted787 bytes. No shared ABI,
-flags, fake calls or barriers were changed. The remaining spiral334 function
-is raw exact in both saved positives but has target ordered fixups[86,256]
-versus producer[256,86]; it remains outside live selection and uncredited.
-The complete809-byte ordered claim remains unaccepted.
-
-
-### Yumeko complete update and final ring
-
-`main-yumeko-update-a` accepts the complete884-byte owner:165-byte final
-ring helper plus719-byte far callback, including the real original zero and
-22-byte eleven-word switch table. Authored credit is883 bytes (861 instructions
-and22 semantic table bytes), two complete functions. Both fresh raw/ordered
-producers agree, including the original six relocation sites; the actual
-final-ring turns2→3 mutation is compiled and rejected for this whole owner.
-No independent helper/callback negative per sibling is claimed. Full canonical
-Sword/Boss/special state, actual main01 rendering pointers, near generic
-helpers and all table destinations retain their true ABI and storage.
-
-
-### Yumeko sword lifecycle helpers and standalone Mai/Yuki attacks
-
-`main-yumeko-sweep-a` accepts321 instruction bytes/one complete function,
-with its real speed-limit6→7 mutation. `main-yumeko-swords-add-a` accepts121
-bytes/one complete allocator, with circle color9→10 mutation. Actual full
-Sword/template/pool state and real Pascal/fastcall helpers are preserved;
-the283-byte updater stays unwritten due its genuine DX:AX struct-return
-lowering issue. Both owners have two fresh full raw/ordered positives.
-
-`main-mai-yuki-remaining-patterns-a` accepts939 bytes/ten complete attacks,
-with original ordered fixups[920,833,462,136] and the first selected angle
-0x20→0x21 control. The first tracking-laser candidate emits185 versus186,
-and the failed full1124-byte TU shifts later near-call displacements. Its
-unchanged real later bodies are shared in remaining_patterns.inl and have
-their own correct standalone source/binder context; no padding byte or
-acceptance transfer from the failed ten-scope receipt is used. The tracker
-remains uncredited, including its original fixup order[38,130].
-
-The complete EX-Alice update1060 remains unaccepted after two first-positive
-1064-byte gates. Four actual OMF far calls become TLINK's five-byte
-NOP/PUSH-CS/near-CALL sequences instead of original four-byte sequences.
-The true same-CS first declaration does not repair this; no further flag,
-padding or binding probes are justified. All1008 semantic instruction bytes
-and52 switch-table bytes remain in the natural candidate, with no trimming
-or normalization. Actual source TU/callee-definition context remains open.
-The failed owner is removed from live replay selection.
-
-
-### Mai solo opening patterns
-
-`main-mai-solo-initial-patterns-a` accepts456 instruction bytes/three complete
-functions (164/198/94), with original ordered fixups[306,107] and a real
-first-fan spread2→3 negative. Both fresh deterministic full raw/ordered
-producers agree. The first two real bool callbacks retain completion/movement
-semantics, while the third signed-cycle pattern is truthfully void. Full
-canonical Boss/template/special state and byte-rank ABI are preserved without
-editing shared accepted headers. No DATA, BSS, tables or padding receive credit.
-
-
-### Mai solo snow patterns and complete Yuki update
-
-`main-mai-solo-later-patterns-b` accepts496 instruction bytes/three complete
-functions (89/141/266), with original ordered fixup[365] and ring count24→25
-control. Its first496-byte producer differed only in one outlined-blue sprite
-constant44; the actual outlined sprite is45. The unchanged new fullB4Ball26/
-template25/bool16 ABI is shared with Yuki and checked against custom slots.
-`main-yuki-update-a` accepts the complete826-byte far callback,806 instruction
-plus20 switch-table bytes, with original ordered fixups[256,140] and actual
-HP threshold4600→4500 control. Both owners have two fresh deterministic full
-raw/ordered positives. No padding, initialized DATA or BSS receive credit.
-
-The shared Mai/Yuki update remains unaccepted: the initial broadHUD include
-conflicted with movement's to_sp definition. The candidate now declares only
-the real canonical byte-text FAR title pointer and preserves existing function
-contexts; the next first positive emits1023 versus1018. Two word shake assignments each add3 instruction bytes, while the original
-zero disappears. A natural shared-store dataflow repair remains unverified.
-The failed owner receives no credit or default replay selection.
-
-
-### Survivor callback identities, guards and atomic evidence import
-
-Actual shared Yuki dispatch usesDS4430; both survivor callbacks useDS4438,
-now truthfully named boss_solo_pattern_current, while Mai's inner void bank
-uses443A. Yuki826 was replayed asmain-yuki-update-c with unchanged complete
-raw bytes/fixups and its own negative. The native accepted-MAIN audit now
-checks131CODE units/3883 actual scoped DATA references/223 names with no
-remaining same-name/different-offset collision. It excludes2DATA owners and
-actualBINARY-O Kaja;60legacy owners lack saved argv and remain explicitly
-separate from71actualsaved-M owners. This is a bounded identity audit, not
-a whole-program or denominator proof.
-
-Long common Mai-solo header guards collided under the old compiler. Short
-distinct guards compose all required full interfaces; only the two affected
-accepted owners were replayed (initial456-b/later496-c). The importer now
-validates multiple complete receipt inputs before one merge, final global
-source-current check and atomic publish. Repeated --accept handles changed
-header closures without recompiling already-valid independent positives.
-Five real MAP/MZ/OMF/source/negative regression cases cover atomic failure
-and existing single-subset compatibility. Actual six-receipt import succeeds.
-
-Yuki solo owners509/670 pass independently (1179 instruction bytes/seven
-functions), with their own speed54→55/snow64→80 controls and original ordered
-streams. Mai advanced615-b passes three complete functions and real fan
-speed3→4 control. Mai laser-cycle461-a passes its complete bool function,
-empty fixups and rank-count+5→+6 control; its inner void bank is separate
-from the270-byte bounce attack. Every owner has two fresh deterministic
-complete raw/ordered positives, with no DATA/BSS/padding/table credit.
-
-Shared Mai/Yuki c now emits1017 vs1018 after the supported conditional-word
-store repair; its original table-prefix zero remains absent. Mai solo
-update a emits785 vs786, likewise lacking the original zero before its
-complete20-byte table. Both natural callbacks remain unaccepted and outside
-default replay. No padding insertion, clipping, normalization or speculative
-flag/context probes are used. The shared owner retains its full24-byte
-value/destination tables, and the solo owner retains all20 table bytes.
-
-
-### Coherent EX-Alice updater and real B4Ball allocation
-
-`main-exalice-update-full-context-a` accepts the complete1060-byte updater:
-1008 instructions plus52 switch-table bytes, one complete function. The
-real33-byte far shot gate and78-byte phase helper are now actual preceding
-definitions in the same TU/CODE contribution. All three natural bodies are
-verbatim to the maintained standalone sources, and ABI/flags are unchanged.
-This resolves the four extra far-call relaxation NOPs; declaration context
-alone had not done so. Both fresh producers pass the selected raw/ordered
-[198,161] scope and its own HP23800→23700 negative. Independent saved-output
-review also confirms the whole1171-byte context and original[309,272] order.
-Prefix111 remains credited once through its existing owner; only1060 is new.
-The previously failed standalone updater is retained as a failed alternative,
-while the target callback is now accepted through full_context.cpp.
-
-`main-b4ball-spawn-a` accepts132 instruction bytes/two complete reset27 and
-allocator105 functions, empty original fixups and new-ball damage0→1 control.
-Both actual caller ABIs are void near Pascal; no CF-return contract is invented.
-The complete frozen B4Ball/template/custom-pool storage is unchanged. The273
-updater remains unimplemented because its return-register use needs separate
-source reconstruction. Both new owners have two fresh deterministic complete
-raw/ordered producers and no DATA, BSS or padding credit.
-
-## Spark lifecycle and survivor callback tables
-
-The focused `main-spark-lifecycle-a` and `main-mai-yuki-solo-pattern-data-a`
-receipts add two complete Spark functions (68 CODE bytes) and seven semantic
-near-callback banks (36 DATA bytes). Both have two fresh positive producers,
-full raw/ordered-fixup equality and independent compiled mutations. The callback
-banks retain distinct bool/void callback types and all 18 genuine function
-pointers. Spark preserves the original 96-record traversal over a 64-record
-active pool and low-byte writes to word fields. No unchanged owner was rebuilt.
-
-## Mima and Yuuka bomb shapes
-
-`main-mima-circles-b` and `main-yuuka-heart-d` add two complete independent
-callbacks, 307 instruction bytes with no padding/tables. Their own compiled
-distance mutations reject, and two fresh producers match raw bytes and original
-ordered fixups. Full existing bomb/player storage and true polar/sprite/fill
-interfaces are preserved. Pixel-space polar centers are intentionally unscaled.
-See `src/main/player/bomb_shapes.md`; no unchanged owner was rebuilt.
-
-`main-marisa-bomb-lasers-b` adds the complete 335-byte eight-beam callback
-with seven original ordered fixups, two fresh producers and its own rejected
-radius mutation. Together the three bomb-shape callbacks add 642 CODE bytes.
-The original Spark callback boundary and player reload are preserved.
-
-## Complete new-game initialization
-
-`main-gameplay-session-init-a` adds one complete 468-byte new-game function:
-450 instruction bytes plus 18 bytes of compiler-generated rank/character switch
-tables. Two fresh producers match all raw bytes with no relocations/padding;
-the independent dream-initialization mutation rejects. The actual four-by-ten
-shot dispatch table, resident object and near callback ABIs remain full size.
-Stage-session initialization is a separate unaccepted owner.
-
-## Additional foreground, pause and bomb control owners
-
-`main-alice-puppets-whole-a` proves the complete 381-byte C/Pascal puppet
-renderer as its own natural TU. Its body is literally unchanged from the
-archived full candidate; the neighboring 150-byte Alice callback remains
-unaccepted against original140. No C-public function-scope guard was relaxed.
-`main-session-cleanup-pause-a` proves both complete stage cleanup and pause,
-334 instruction bytes. Its Q-result mutation is an owner-level control;
-cleanup has no separate mutation claim. TH05's input-release behavior and
-resource ranges remain intact.
-
-The complete Marisa161, Reimu193 and Yuuka193 bomb-control callbacks also
-pass two fresh producers, full raw/ordered fixups and independent tone mutations.
-Mima161 remains raw-exact but ordered-inexact and receives zero credit; its
-original relocation order stays untouched. No unchanged owner was replayed.
-
-## Additional complete foreground scopes and retained Mima draw
-
-Standalone Louise116, Mai/Yuki sprite-helper75, Yumeko161 and Shinki160
-now pass their own focused double producers and semantic mutations. Source
-factors preserve literal complete bodies; their larger failed cohorts remain
-unaccepted. Marisa drawing60 also passes independently.
-
-The raw-exact but ordered-inexact Mima366 producer supplies its complete205-byte
-drawing function through `main-mima-bomb-draw-a`: two retained cold producers,
-no new compiler invocation, the original negative radius mutation, real next
-function MAP boundary, and all eleven scoped ordered fixups. The failed whole
-parent stays archived unchanged, and Mima control161 still receives no credit.
-
-The session shot-dispatch pointer typedef now uses its true near Pascal ABI,
-matching all actual shot providers. Only the affected initialization468 was
-replayed (`main-gameplay-session-init-b`); counts are unchanged by this fix.
-Known failed runtime/shot/background2/full-foreground entries are absent from
-the default replay manifest, with natural candidate sources retained separately.
-
-## Shot dispatch DATA and EX-Alice foreground
-
-The complete four-character, ten-level `SHOT_FUNCS` table passes as semantic
-initialized DATA80 (`main-shot-function-table-data-a`), with forty genuine near
-Pascal function pointers, thirty-four unique reviewed providers, two fresh
-producers and its own compiled Reimu L2/L3 swap. EX-Alice's complete foreground
-callback163 also passes independently (`main-exalice-foreground-a`), including
-all four original ordered fixups and its own sprite-bank mutation.
-
-Natural failed candidates are retained with zero exact credit; see
-`docs/reconstruction/UNACCEPTED_COHORTS.md`. Their known failures are not in the
-default incremental replay manifest.
-
-## Character bomb preludes and EX-Alice custom bullets
-
-`main-reimu-bomb-draw-a` and `main-yuuka-bomb-draw-a` add the complete84/120
-instruction-byte callbacks, with two fresh producers and independent palette
-mutations. `main-exalice-custom-render-a` adds the complete308-byte firewave
-fill/sprite/collision renderer and cheeto-render dispatch, retaining all three
-original ordered fixups and its own phase-step mutation. All use full existing
-storage and genuine graphics interfaces. Together these add512 CODE bytes.
-
-Stage-session initialization803 stopped at first producer802: mandatory zero
-missing and three unchanged-length far-transfer mismatches. Shot rendering's
-safe word-local producer173 also remains unaccepted against164. The one genuine
-byte-domain experiment175 clobbered the raw renderer's AX left argument; it was
-abandoned and the safe original source restored exactly. These failures did not
-run second or negative builds. No flags, padding or physical-register algorithm
-variants followed. The default replay plan is empty for unchanged evidence.
-
-## Process handoff, midboss rendering and stage reset
-
-`main-process-handoff-a` proves the adjacent score-save34 and GameExecl159
-callbacks as one complete193-byte owner with seven original ordered fixups.
-The compiled gone/killed-counter mutation covers that coherent owner; there
-is no separate score-save mutation claim. Actual process.h far strings and
-four-byte variadic NULL preserve the real process handoff.
-
-`main-midboss-render-124-a` proves the complete stage1/2/4 callbacks192/135/127
-as three scopes of one real TU. Two fresh producers are shared, and one compiled
-phase-two-cel mutation belongs to the first scope; the other two share that
-oracle control. Original per-function relocation orders pass without a whole
-454-byte relocation-order claim or normalization.
-
-`main-stage-runtime-init-a` proves the complete174-byte per-stage state reset,
-with its own invincibility mutation. Real donor samecodeseg annotations preserve
-far signatures for the two verified AE1 services; linked NOP/PUSH-CS/call bytes
-and the one original relocation match. See `BORLAND_NOTES.md` for the observed
-context lesson. No 803-byte session-init acceptance is implied.
-
-## Padding correction and recovered enemy call contexts
-
-A native instruction-NOP scan across accepted MAIN/OP/MAINE identified five
-uncounted relaxation padding bytes: two in setup1510, one in bullet-update1619,
-and two in reset174. They now receive zero credit through three focused fresh
-replacement receipts, atomically imported. Complete raw bytes and original
-fixups remain unchanged; no OP/MAINE omissions were found. No other accepted
-unit was replayed. The five-byte credit correction is included in the counters.
-
-Truthful samecodeseg declarations then recovered the two old enemy blockers:
-`main-enemy-samecodeseg-a` passes std89 and update576 from one actual TU per
-cold round. The far interfaces and verified CS1527/RETF0/RETF8 contracts are
-unchanged; two NOP padding bytes are checked and excluded, adding663 authored
-instruction bytes. The compiled STD condition mutation controls the pair;
-there is no independent update-mutation claim. Allocation and invalidation
-accepted dependencies remain unchanged.
-
-## Complete game-over flow and additional motion/render owners
-
-`main-gameover-a` adds four complete callbacks in one869-byte owner, with four
-checked/uncredited NOP bytes:865 authored instructions. Both fresh producers,
-all27 original ordered fixups and the coherent owner's credit-limit mutation
-pass. `main-player-miss-a` adds the complete307-byte death handler with five
-checked NOPs:302 authored instructions and its own power-cap mutation.
-
-`main-midboss3-render-a` adds127 instructions. `main-midboss-defeat-render-b`
-adds170 instructions; its ordinary for-update clause now reflects the actual
-counter-before-angle order, without dummy work or register forcing. Both have
-their own compiled animation mutations and original ordered fixups.
-
-`main-stage2-update-abi-a` adds the complete653-byte updater through the genuine
-packed Motion return boundary. `main-shots-update-abi-b` adds the complete408
-bytes:400 instructions plus8 compiler switch-table bytes. Both keep the real
-full return type/records and have their own rejected mutations. Direct signed
-return-word reads end at the actual ABI boundary; ordinary algorithms are not
-mapped onto physical registers. See `BORLAND_NOTES.md` for proof and limits.
-The stage-two initializer remains unaccepted; no prefix credit transfers.
-
-## Complete stage-two background and remaining renderer state
-
-`main-stage2-particle-initializer-a` adds492 complete instruction bytes. The
-only correction from the retained476 body is four real scalar rvalue scaling
-assignments; both fresh producers, ordered fixups and the independent zoom
-mutation pass. Together with acceptedupdate653, both original stage-two
-background functions are covered. No combined-TU equality or prefix double
-credit is claimed. The shared ABI header and updater receipts are unchanged.
-
-`main-midboss-extra-render-a` and `main-mai-yuki-survivor-render-a` add101/126
-complete instruction bytes, each with two fresh producers, original ordered
-fixups and its own compiled animation mutation. Extra's distinct identity is
-proved by the actual stage-setup callback assignment, rather than inherited
-from its similar stage-five renderer.
-
-Item241 remains open: the single235 experiment failed at its first size gate
-and incorrectly clobbered the long-borrowed return X during pickup arithmetic.
-The original typed safe248 source was restored exactly; no second/negative or
-register-algorithm variants followed. Immediate return-ABI consumers653/408
-remain accepted and unchanged. Bullet rendering334 likewise remains open
-against330; no prologue or register-forcing workaround was added.
-
-## Initialized item reward tables
-
-`main-item-reward-tables-data-a` adds116 initialized semantic DATA bytes:
-seven word sprite selectors, forty-three word overflow rewards and the eight
-legacy Dream rewards. The complete three-array DATA contribution passes two
-fresh producers, empty original fixups and its own compiled150-to151 reward
-mutation. No BSS, padding, asset image or code bytes receive credit here.
-
-## Player update and stage-bonus modifiers
-
-`main-player-update-b` adds the complete281-byte player lifecycle callback,
-with its own deathbomb-window mutation and no padding. Its preceding286-byte
-candidate stored the byte movement return in a single-use temporary; consuming
-that result directly in the ordinary retry condition recovers the original
-flow. Real Motion, Point and near Pascal callback declarations remain intact.
-
-`main-stage-bonus-helpers-a` adds two complete helpers /305 bytes:297
-instructions plus eight generated rank-table bytes, no padding. Two fresh
-producers, the original ordered relocation and its own divisor mutation pass.
-The actual TH05 near description pointers replace the donor's far table type.
-The full later bonus flows remain separate work; no context receives duplicate
-credit. Existing accepted owners were reused without cold replay.
-
-`main-std-free-a` adds23 complete instructions with its own guard mutation.
-MAP release27 differs from original23 and stopped at the first boundary gate;
-the natural source and failure remain, without a default replay entry.
-`main-entry-c` adds109 instructions from the complete110-byte entry, excluding
-its checked relaxation NOP. The actual accepted GameExecl's same-CS/RETF4
-contract establishes the far-call context; the gameplay loop stays open.
-
-`main-stage-bonus-full-a` then passes the complete normal561/allclear579
-functions in their genuine1445-byte family context, preserving allclear's
-nonmonotone original fixup order. Only the two later scopes receive new credit:
-1124 instructions after16 checked NOPs, with no duplicate helper credit.
-Both share the compiled stage-clear factor mutation; the configured allclear
-mutation was not independently compiled. Source notes preserve these limits.
-
-## Additional HUD, shared schedules and private Shinki helper
-
-`main-hud-lives-bombs-a` adds365 complete instructions/two functions with
-one coherent lives-threshold mutation. `main-hud-indicators-b` adds233/four
-with its own Dream-bar row mutation. The latter supersedes first229: the
-canonical bar value is an int, not a narrowed byte formal. Both retain the
-documented HUD donor context, original ordered fixups and full UI records.
-
-`main-mai-shared-pattern-data-a` and `main-yuki-shared-pattern-data-a` add
-16/24 initialized semantic near-callback DATA bytes with separate compiled
-attack-order swaps. The intervening eight zeros remain unknown. No shared
-updater or survivor-table acceptance transfers.
-
-`main-shinki-phase23-a` adds the complete102-byte genuine private helper.
-Its unchanged static body emits one whole contribution, resolving the old
-missing-public boundary obstacle without exporting or adding a caller.
-Two fresh producers, original fixup72 and its sound mutation pass. Remaining
-Shinki order/ball blockers retain zero credit and their saved evidence.
-
-`main-hud-hp-draw-a` and `main-hud-score-reset-a` add152/111 complete
-instructions, each with its own compiled mutation. HP retains the real word
-bar API and complete local UI records. Reset keeps the original highest-score
-comparison and preserves digit0 while clearing the other seven digits.
-
-`main-stage-bonus-ui-text-a` adds719 initialized DATA bytes from21 readable
-Japanese UI strings, through pinned actual CP932 compilation and its own
-Easy-factor text mutation. `main-stage-bonus-ui-pointers-a` adds42 real near
-description/label pointers to those objects, with its own Easy/Normal selection
-mutation. Gaiji/font byte arrays remain foreign and uncredited. Both pass
-whole DATA ownership, two fresh producers and the empty original MZ stream.
-
-## OP shutdown protocol
-
-`op-game-exit-to-dos-b` and `op-game-exit-core-b` add24/72 instructions.
-Each is a genuine separate TU with two fresh producers and its own compiled
-control. The wrapper's one linker NOP is compared and excluded. The initial
-combined attempt put both functions in one97-byte contribution and stopped
-before second/negative; no acceptance transfers from that failed context.
-The unchanged algorithms now retain their real outside gap and far interfaces.
-
-The unchanged core source/header also passes independently for MAIN72 and
-MAINE72 (`main-game-exit-a`, `maine-game-exit-a`), through each original
-caller's actual anchor and artifact-specific Master bindings. Both have their
-own two fresh producers and page mutation. No OP acceptance transfers.
-
-## Complete HUD initializer in genuine source context
-
-`main-hud-put-context-b` adds the complete337-byte final initializer:328
-instructions, eight generated switch-table bytes and one checked/uncredited
-zero. Both actual full1198-byte producers and their861-byte/eight-function
-prefixes pass native raw comparison; complete original relocation streams
-also agree. Only the new337 scope receives credit. The prefix's previously
-accepted owners remain unchanged and were not reaccepted or cold-replayed.
-
-First-a already had correct full boundaries, prefix bytes and original fixups,
-but differed in rank-label address construction. Restoring the donor's genuine
-near-array view, implicitly converted to the real far graphics API, resolves
-that difference without scheduling register operations. Focused-b passes both
-fresh producers and its own point-caption row mutation. The documented donor
-HUD flags/type-definition order were fixed before the first experiment.
-
-## Full typed stage pools and canonical high-score menu
-
-`main-stage-state-init-b` adds233 complete instructions with its own gather
-ring mutation. All11 pools retain their full genuine types and native counts;
-the real foreign clear helper's near Pascal void interface is preserved.
-First237 differed only in two independent zero stores. The ordinary chained
-assignment preserves the original shared-value/store order; no flags, physical
-register hints or frame changes were used.
-
-`op-score-menu-canonical-a` adds the complete312-byte registration/view menu,
-including all26 original descending fixups and its own release-loop mutation.
-A single canonical body supplies both real contexts. Its53-byte semantic
-filename owner is explicit, avoiding the odd-position23-byte interior pool.
-Only the affected seven existing CODE records and existing53 DATA were
-replaced, atomically, after three required TU groups passed two fresh producers
-each. Seven CODE scopes share the place-padding control; DATA and the new menu
-each have their own mutation. The53 DATA bytes receive no new credit.
-
-The changes were prepared in an isolated worktree; shared headers used by
-MAINE remain byte-identical. No unrelated OP/MAIN/MAINE unit was cold-replayed.
-The original mixed1411-byte viewer receipt remains unchanged, with its old
-menu-order failure preserved; only the new standalone312 receipt resolves it.
-
-## Shared bomb runtime
-
-`main-bomb-runtime-a` adds four complete functions /244 compared bytes:
-reset16, player-bomb151, play-character tile wrapper19 and Dream decay58.
-Five checked far-call relaxation NOPs receive no credit, leaving239 authored
-instructions. Two fresh producers, original ordered fixup143 and the coherent
-owner's Reimu-invincibility192-to193 mutation pass. That one control covers the
-whole cohort; no independent Dream-decay mutation is claimed. All samecodeseg
-annotations name verified foreign callees, with their real far signatures.
-
-## C static resource models and reviewed runtime ownership
-
-`main-mai-yuki-title-bank-c-a` and `main-resource-filename-bank-c-a` add78/347
-initialized DATA bytes. Their explicit C field banks retain all const filenames,
-mutable titles and mutable ST00 state, with actual offsets and complete raw
-equality. Each has two fresh producers and its own mutation. They neither
-authenticate historical structs nor accept their still-open caller CODE.
-The preceding C++ arrays merged duplicate filenames or reordered const objects;
-the C++ aggregate draft failed before an object because this compiler requires
-constructors for const array members. Those artifacts remain private. The C
-producers preserve qualifiers and need no changed compiler flags or constructor.
-
-The additive CL context verifier preserves the frozen MAIN reviewer and uses
-real decoded-image identities for OP/MAINE. After native revalidation and peer
-schema review, explicit decisions adopt only63/55 complete library contributions
-(44,578 bytes). Unsupported members remain unknown. This changes third-party
-ownership only: authored credit and the still-null global denominator do not
-increase. Public structural checks require no game or private cache; full native
-inventory verification rereads all actual library/link/target evidence.
-
-## Mathematical fixed-speed shot velocity DATA
-
-`main-shot-velocity-data-a` adds the complete 1,024-byte game motion table
-at MAIN21942..21D42: 256 signed X/Y points. The maintained Decimal generator
-computes general Q8 directions without reading a target or reference; C
-specializes them to 192 subpixels/frame with explicit negative floor.
-Primary Master SIN8 independently corroborates all 320 Q8 samples. This is
-different from vendor RotTbl pixel constants. Two fresh producers and the
-192→193 speed mutation pass. `generated_sources` freezes the generator and
-requires its output to be an actual compiler include. Five regressions cover
-source drift, stale output, omitted snapshots, inactive includes and mutating
-checks. No accepted consumer was replayed. See `shot_velocity_data.md`.
-
-## Complete Music Room frontend
-
-`op-music-full-context-a` adds polygon502 and menu837, or 1,339 instruction
-bytes / two functions. One canonical implementation restores the genuine
-30-byte saved-plane helper using installed `__memcpy__` and DS preservation.
-Its two XOR opcode differences remain unchanged; the entire helper is
-uncredited. The real 2,396-byte frontend naturally restores original LEDATA
-fixup groups. Exactly ten old records (twelve functions plus 6,217 DATA)
-were replaced with fifteen records. One TU uses two fresh positives and its
-DATA filename negative; `op-music-full-context-code-negative-a` supplies one
-shared menu24→25 CODE mutation without recompiling positives. No independent
-per-function negative is claimed. All fifteen scopes pass; root native review
-confirms that only helper offsets16/18 differ across the entire contribution.
-The old failed split receipts retain their original verdicts. See
-`src/op/music/full_context.md`.
-
-## Power progression and EX-Alice schedules
-
-`main-shot-power-threshold-data-a` adds eighteen bytes / nine unsigned-word
-thresholds, with the native count-nine, stride-two consumer and a6→7 control.
-`main-exalice-pattern-pairs-data-a` adds sixteen bytes / four alternating
-pairs of real near bool callbacks. Eight providers, actual indexing, indirect
-near CALL and AL result are verified; its fan→rings mutation is rejected.
-Each has two fresh C++ producers, complete DATA/OMF/MAP and empty original
-ordered fixups. No accepted caller or header changed. See their source notes.
-
-## Additional source-backed Master ownership
-
-The explicit seven-scope additions decision contributes104 MAIN procedure
-bytes (103 instructions plus one library EVEN byte) and1,024 RotTbl CODE-data
-bytes in each of OP/MAINE. Primary literal source, real monolithic OMF/MAP,
-raw bytes and original ordered fixups are revalidated. A member MAP is never
-invented, and the binary archive is corroboration only.
-
-`review_master_sin8.py` plus `config/reviewed_master_sin8.json` separately
-classify three complete640-byte primary-source tables,1,920 total, as
-`verified-vendor-initialized-data`. Sin256/Cos256 share192 words: each physical
-block has320 words. MAIN/MAINE original and calibration positions differ;
-the proof preserves both, real startup DS/relocations, actual DATA aliases,
-LEDATA coverage and absence of intersecting FIXUPP. No instruction or authored
-credit is granted. All other gaps and the global denominator remain unknown.
-Root native inventory verification passes; public review/adoption tests do
-not need proprietary inputs.
-
-## Shinki canonical bodies and standalone complete patterns
-
-`main-shinki-cheeto-walls-a` adds169 instructions and
-`main-shinki-devil-a` adds802. Both complete natural functions fit one real
-LEDATA record and recover their original descending fixups. They have their
-own two fresh producers and6→7 spread /2500→2501 phase controls. The new
-`.inl` files retain one canonical body; the complete HP enum and existing
-wing-coordinate helpers are shared. Inverse include expansion preserves old
-source bytes. `main-shinki-canonical-refresh-b` revalidates exactly nine old
-records after both factors; the separate phase23 source/header is unchanged.
-The intermediate refresh-a is preserved but is not imported after the second
-factor. No unrelated unit was replayed.
-
-The family now has thirteen complete functions /2,559 instruction bytes.
-Ball220, wing386 and update959 remain unaccepted (1,565 complete bytes).
-The old mixed suffix and natural4120 diagnostic are not relabelled successful.
-See `src/main/boss/shinki/cheeto_walls.md` and `devil.md`.
-
-## Complete HUD selector/state DATA
-
-`main-hud-overlay-semantic-data-d` adds161 authored DATA bytes from the full
-164-byte, seventeen-field C bank at2237C..22420. Three natural alignment zeros
-at3/99/163 are compared and excluded. Actual gaiji text API consumption and
-named glyph selectors distinguish text from font bitmap bytes. The complete
-fade union, state, segment selector, six far pointers and constness remain.
-The C model defines its byte union first, then enables word alignment only
-for the bank. It makes no historical-struct or caller-linkage claim.
-
-Attempts a/b failed size and offsets before OBJ; the initial enum-width
-diagnosis was wrong and is retracted. Variant c proved the word bank but
-rounded the byte union. All exact failed inputs/logs remain archived. The d
-producer passes every type assertion, both fresh full DATA/OMF/MAP/raw/ordered
-comparisons and its own FINAL F→E negative. No padding fields or bitmap data
-were introduced. See `src/main/hud/overlay_data.md`.
-
-## MAINE staff lifecycle prefix
-
-`maine-staff-lifecycle-prefix-b` accepts the genuine602-byte prefix / four
-functions atD387..D5E1: init278, gather108, clear40 and scatter176. The complete
-20-byte particle type and real arrays are retained, with ordinary far Pascal
-vector output references. Two fresh positives, all fifteen ordered fixups
-and speed10→11 negative pass. No DATA/BSS or padding is credited.
-
-Both attempted full1,228-byte owners remain failed at1,225. The final updater
-is623 versus626, with one missing BX reload and a stack-slot permutation.
-Using the real Subpixel conversion did not resolve it; no barrier/volatile/
-register-forcing variants followed. Its body is retained verbatim in
-unaccepted `lifecycle_update.cpp`. The accepted prefix reserves the whole
-foreign updater outside its compiler contribution. A final trailing-empty-line
-cleanup is covered by prefix-b; no old source receipt was silently rewritten.
-See `src/maine/staff/lifecycle.md`.
-
-## MAINE verdict formatting
-
-`maine-verdict-format-b` adds711 instructions / four complete functions:
-152/170/268/121. It retains the full eight-byte score and true far reference,
-nine display digits, Pascal cleanup, TH05 dynamic color and quarter-skill
-capture. Original six fixups are descending; both fresh producers and the
-shared hundreds-divisor100→101 control pass. There are no CODE tables,
-padding, DATA or BSS in this owner.
-
-First a was717 because the percentage coordinates spilled differently.
-The independently pinned TH04 donor explicitly uses ordinary `register`
-coordinate locals; restoring exactly those two qualifiers recovers the native
-six-byte frame and711-byte whole extent. No physical register alias, new ABI
-or calculation was introduced. The old717 input/object and forensic evidence
-remain private. See `src/maine/verdict/format.md`.
-
-## MAINE registration, comments and stage scores
-
-`maine-registration-alphabet-a` adds49 instructions, with the real three-word
-near Pascal interface and row21→22 negative. `maine-registration-commit-b`
-adds113; its first a producer had correct size/order but five changed bytes
-from the second loop's initializer sequence. Reordering only that real
-initializer recovers all bytes; the speed96→80 control is rejected.
-`maine-registration-frame-a` adds40 through real Borland `outportb` and actual
-far/near callbacks, with wait1→2 control. All three get independent two-cold
-producer proofs. The complete28-byte glyph type, nine allocated/eight active
-slots, genuine six unused bytes and existing headers remain unchanged.
-
-`maine-verdict-comments-a` adds66 instructions and
-`maine-verdict-stage-scores-a` adds258, with independent Y296→297 and64→65
-negatives. Both use true far graphics and full Score8/resident fields.
-Animation108 remains inactive because its original MZ sequence splits into
-two record runs; no pointless standalone ordered-failure probe was run.
-
-`main-stage-bonus-glyph-text-data-a` adds19 semantic selector-text DATA bytes
-for CLEAR BONUS and CONGRATULATION at2245E..22471, with EMPTY→NUL negative.
-They provide the actual const near-char objects consumed by accepted bonus
-CODE. All19 bytes compare; no font bitmap, padding, BSS or CODE is credited.
-
-## MAINE bonus and comment selection
-
-`maine-verdict-bonus-comments-b` adds493 complete CODE bytes / two functions:
-481 instructions and a twelve-byte generated switch table, no padding.
-Both fresh positives, original fixup324 and life1 bonus2500→2501 negative
-pass. Its full Resident128/Score8 source preserves TH05 credit/bomb/graze
-rules, signed clamp and actual unsigned unknown-byte comparison. The first
-compiler attempt stopped before OBJ because int32_t was not defined; the
-local is now signed long, with shared ABI headers unchanged.
-
-Registration spawn304 remains unaccepted: its first producer is303 with a
-missing zero before the four-word table, plus initializer/register allocation
-differences across39 instruction bytes. All295 instruction boundaries and
-original ordered fixups match, but full raw equality does not. Its failed
-entry is removed from default replay selection; no source/flag matrix follows.
-Native retained EMS/Alice/Item/HUD comparisons falsify simple first-prototype
-and end-of-function table-flush alignment rules. All failures remain private.
-
-A private coherent3384-byte verdict family proposal preserves ten genuine
-functions and one canonical body per function. It does not prove the original
-TH05 TU. Any trial must use an isolated workspace, two actual fresh producers,
-full raw/ordered comparisons and a real main-clamp negative. Existing retained
-scope projection can reuse those producers and four old IDs atomically; no
-retirement API, byte prefix, OMF reordering or implicit ownership change is
-authorized by a merely prepared source proposal.
-
-## MAINE registration alphabet initialized DATA
-
-`maine-registration-alphabet-data-a` adds51 authored initialized bytes for the
-complete mutable 3x17 keyboard at original115FE..11631 (DS1011:14EE).
-All named glyph and navigation selectors match two fresh producers with empty
-ordered fixups; the own first-cell A-to-B mutation is rejected. The native
-17-column/3-row consumers and following independent page byte establish the
-complete extent. No font pixels or accepted caller/header inputs changed.
-
-The isolated3384-byte verdict trial a has correct function sizes and all ten
-original fixup orders. Nine functions are raw exact; main differs only in
-twelve bytes positioning pushDS around the same rank-string calculation.
-Trial b restores the maintained TH04 donor's explicit address-of-first-element
-expression. Trial a stays failed and unchanged; neither trial is imported yet.
-
-## MAIN automatic enemy drop schedule
-
-`main-item-enemy-drop-data-b` adds64 immutable gameplay selector bytes at
-original22792..227D2, DS209D:1DC2. The full unchanged item header, native
-modulo64/every-second-request consumer, semantic named schedule and complete
-array establish the extent. Two fresh producers, empty original orderedfixups
-and own first-drop power-to-point control pass. Attempt a stopped at linking
-because the header's empty HUD_OVRL_TEXT was outside MAIN_01's window; b
-places that foreign empty segment inside its genuine group. No caller/header
-changed and no table values come from the address-only binder.
-
-## Complete MAINE verdict family accepted
-
-`maine-verdict-full-family-c` proves the actual3384-byte ten-function CODE
-family: two fresh deterministic producers,3350 instructions plus34 generated
-table bytes, zeroNOP/padding, all50 original ordered fixups and a rejected
-completion46000-to-46001 main control. a/b remain failed: explicit&row[0] alone
-changed no code; restoring the actual donor mutable default-distancechar[5][8]
-from the unsupported draftconstnear declaration resolved12bytes ofDS argument
-construction. True FILE/graphics APIs and all flags/layout remained unchanged.
-
-`maine-verdict-full-scopes-c` projects all ten complete functions from those
-intact archived producers with zero new compiler invocations. Normal atomic
-import replaces four old IDs and adds six; all1528 priorbytes remain covered.
-Only main1748 and animation108 add1856 bytes/twofunctions. The shared compiled
-CODE control belongs to main; no independent animation mutation is claimed.
-The original whole trial is not a ledger owner. Unrelated records/controls,
-including newly accepted alphabet51 and drop64, were preserved mechanically.
-
-Canonical bodies are literal include factors of previous accepted sources;
-guarded header selectors retain their standalone context. The new ten-body
-context is genuine coherent source, not a claim of historical originalTU.
-No core/projection contract, filler, byte patch or fixup normalization changed.
-See `src/maine/verdict/full.md`. The isolated worktree and a/b/c evidence remain.
-
-## MAINE orb particles and opening camera
-
-`maine-staff-orb-opening-a` adds483 instruction bytes/four complete functions
-atD853..DA36: orb spark99, trailshift63, spriteaging/orbgrowth60 and opening
-camera/window261. Two fresh producers, original orderedfixups[62,27] and
-spark-speed3-to-4 sharedCODEcontrol pass, with zeroNOP/table/padding. No
-independent per-function negatives are claimed. Existing lifecycle.hpp/staff.hpp
-and all accepted inputs remain unchanged. Complete20-byte particles/65-object
-pool, canonicalbackpagebyte, actual near-outputvector2_at and trueintAX return
-are retained. The preceding626-byte lifecycleupdater remains unaccepted.
-
-## MAINE rain spawn and camera transition
-
-`maine-staff-rain-scopes-b` adds432 instructions/two complete functions at
-DA36..DBE6, noNOP/table/padding. a stopped after firstproducer431; consuming
-the incremented cursor in the ordinaryif condition restores161-byte spawn.
-b has two deterministic432-byte raw-exact producers and a rejected8-to-9
-speedbias control, but its cross-function aggregate relocation order remains
-failed. The saved receipt is unchanged and never accepted as a whole.
-
-Existing saved-scope review revalidates actualMZ/MAP/OMF and accepts complete
-spawn161/update271 whose literal local ordered streams[156,80,66,49,32] and
-[263,189] both match. Projection invokes zero compilers. The shared CODE
-negative belongs to spawn; no per-update mutation is claimed. Full canonical
-particle20, Palette8/RGB3, actualbytebluefield and trueintAX update remain.
-All prior accepted source/header inputs are unchanged; hardwaretextwipeDBE6
-and the parked lifecycleupdater stay outside the claim.
-
-## MAIN scrolling driver remains unaccepted
-
-The fresh ordinaryC++ `main-scroll-driver-a` firstproducer is123 bytes versus
-original115 atC506..C579. Native review finds the first65 bytes exact, genuine
-farGRAPH_SCROLLUP0000:1EE2/nearC43A calls and originalMZ[57]. Extra8 bytes are
-fractionreload3, quotientlocalAX-to-DX2, longerbytepublish1, DX-to-AX2. The
-SHARED14AC/DS209E shift is a consequence of the sizefailure, not another ABI
-error. No second/negative producer ran. No FLAGS, physicalregister, prologue
-or option variants follow; defaultentry/control removed, source/proof retained
-with zero acceptance. `src/main/scroll/driver.md` documents the bounded failure.
-
-## MAIN complete miss-drop velocity DATA
-
-`main-item-miss-velocity-data-a` adds60 compiler-generated initialized semantic
-DATA at22856..22892, DS209D:1E86. Its30 completecanonicalSubpixel objects form
-[3fields][Y/X][5slots], using ordinary constant physics expressions and proper
-aggregate braces. No constructor/type substitute, caller/header change, asset
-bytes or fakepadding is used. Original20/10/2byteconsumerstrides establish
-bounds/layout. Two fresh deterministic producers, fullgapless60DATA/emptyCODE
-and BSS, originalemptyfixups and ownleftfieldlastX+3-to-+4px mutation pass.
-ITEM_PATNUM14 was already accepted and is not credited again.
-
-## MAINE complete staff frame pump
-
-`maine-staff-frame-a` adds86 instructions/onecompletefunction atE34E..E3A4,
-zeroNOP/table/padding. Both fresh producers, originalMZ[60,46,14] and own
-wait1-to-2 mutation pass. It keeps actualvoidnear providers, realfarPascal
-frame-delay/text-clear APIs, genuinefarcdecl musicquery and standardoutportb.
-Canonicalstaff_frame50E2 is reused; sharedclear1746/measure50E0 names align
-with the new imagephase review. No acceptedheader/provider implementation
-changed. ReferenceoldE349 andrendereroldDFEC differlocallyby5 from actual
-E34E/DFF1, independentlynativeverified ratherthan globallyrebased.
-
-## MAINE image phase A and actual text wipe
-
-`maine-staff-image-phase-a-a` adds376 instructions/onecompletefunction
-DD01..DE79. Both fresh producers, originalorder[160,85] and ownextentmargin
-7-to-8 control pass. CompleteCDG16/64slotpool, signed4wordPascalRET8/AXint
-result, actualmutablecoverchar[3], realfarCDG/TEXT APIs and AL3statewipe remain.
-The oldreferenceDCFC label is not used as an actual loadaddress.
-
-`maine-staff-text-wipe-b` adds283 instructions/onecompletefunction DBE6..DD01.
-Both fresh producers, originalorder[261,86,53] and owncoveredcolor1-to-2
-control pass, zeroNOP/table/padding. Actualversion differsfromoldreference: ENTER46/twointlocals/fullrowfill and finaldraw80columncheck. Sourceuses41
-meaningfulgaijicells inclNUL plus compilerstackalignment, not fabricated
-padding. The historicaloriginaldeclsize41vs42 remainsunproved. Faileda
-raw283 differedonly9bytes in4iterationupdateinstructions; grouping thethree
-stateupdates intoforincrement restores theiroriginallefttorightorder.
-
-B376 andscene renderer861 remain unaccepted. Toavoid wasted known standalone
-order replays, each has ONEactualcold diagnostic only, no second/negative.
-Bhasa13byteinitializerorderdifference plusoriginalascending[85,160] vs
-actualdescending[160,85]. Itscurrentuncompiledsource restores acceptedA's
-naturalinitializationorder; fullsourcecontext stillneedsactualvalidation.
-Rendereris858/334ins vs861/335; missingonlyredundant3byteBXpointerreload
-after sentinel, plussame-sizeinitializerorder difference. No realABI/type
-defect wasfound; no volatile/reload/register/barrier workaround follows.
-Privatecoherent17fnstafffamily fromD31F..E3A4 is beingprepared inisolation,
-with allrealbodies includingfailedlife/render. It is not a numericalprefix,
-originalTUclaim or permission toimporta raw-falsewholeparent. Any future
-selection usescompletefunctionscopes and freshactualproducers, with explicit
-necessaryrefresh ofchangedoldacceptedsourceclosures.
-
-## Full staff context recovers B without normalization
-
-`maine-staff-full-scopes-a` proves eight complete functions/1741 instructions
-from two fresh actual4223-byte full-TU producers, plus own Bextent7-to-8
-negative. All17 genuine bodies remain, including the623-vs626 updater and
-858-vs861 renderer; no whole4229-byte exactness is claimed. ActualLEDATA
-ends1017/2034/3056/4078/4223; Bstart2903 hasfixups2988/3063 acrossrealcut3056,
-yieldingoriginal localorder[85,160]. A andwipe/clip/life4 also raw/orderpass.
-No raw-falsewholeparent projection, numericalprefix, bodyASM or sort occurred.
-
-The old602-byte lifecycleunit becomesinit278 (reusedID) plusgather108/clear40/
-scatter176 newIDs: same602/fourfunctions retained. Onlynew B376/onefunction
-is added. Sourcecanonicalization reverses10CPPs and8headerguards literally.
-Exactaffectedclosure waseightoldrecords, no MAIN/OPacceptedinputs changed.
-Three necessaryfreshstandalonegroups orb483/rain161+271/frame86 pass their
-own oldmeaningfulcontrols under the canonicalsource closures. Allfourpassing
-receipts importedatomically; unrelated entries/controls/records preserved.
-Current15acceptedfunctions/2742instructions inthis17functionfamily; thetwo
-large626/861 functions remain unaccepted. See `src/maine/staff/full.md`.
-
-New controller991 atE422..E801 is sourcepresentonly. ONEactualdiagnostic
-produced1001 and theknownstandalone29fixuporder fails; no2nd/negative/credit.
-Nativeforensic foundfour top-testinitialjumps(+8) andfadeinitialjump(+2);
-sourcepeerispreparing naturaldo-loop restoration and anactualinputgate
-correction. Two neighboringbitmapkernels43/83 stayrealexternalproviders.
-E800RET isinsidecontroller; E801zerooutside, nextSHAREDprocedureE802 while
-paragraphframe remainsE800. No blanket+5reference address conversion is used.
-
-Controllerupdate: the authorizedordinarydo-loop/idle-inputgate/lifetimefix
-producedall991rawbytes exactly inONEactualb diagnostic. ActualMAP proves
-SHAREDwordE802/frameE80 andDATA10110/DS1011 withoutrebase. Original29order
-remainsdifferent fromthe standalone descendingstream, so it isunaccepted,
-with nosecond/negative ordefaultentry. a1001 andb991 snapshotsstayimmutable.
-
-Currentcumulativeacceptance is92638 authoredbytes/485completefunctions/291
-boundedunits. Fullstaffdirect8+threeoldstandalonegroups wereatomicimported;
-no unrelatedunit wascoldreplayed. Globaldenominator remainsunreviewed.
-
-## Shot invalidation, ending dispatch and complete all-cast text
-
-The focused MAIN receipts `main-shots-invalidate-a` and
-`main-ending-dispatch-a` add94 and92 authored instruction bytes respectively.
-The first owns one complete94-byte function with no relocations or padding;
-the second owns two complete functions and compares94 bytes including two
-zero-credit linker relaxation NOPs at49/87. Both pass two fresh producers,
-complete OMF/MAP and raw/original ordered-fixup checks, and meaningful compiled
-controls. Canonical Shot18/hitshot14 pools, full Resident128 and true Pascal
-interfaces remain intact. No accepted shared header changed.
-
-`maine-allcast-line-b` adds the complete190-byte line animation. The initial
-a producer stopped at193 because an enum-cast assignment generated a load,
-decrement and store. The one correction is ordinary direct enum decrement,
-supported by pinned Turbo C++4.02 with its normal unsuppressed warning. The
-full canonical word enum and named7-to3 transitions remain. The genuine seven
-counts begin at08DC; indexing `loaded_screen_id - 1` naturally folds to the
-original operand without an invented overlapping dummy at08DA. Two fresh
-positives and the line64-to65 compiled negative pass.
-
-All-cast initialized DATA now owns47 separate readable text arrays at
-10B16..115F9 (2787 bytes), plus47 far pointers and seven true word counts at
-10930..109FA (202 bytes). Each DATA owner has two fresh complete producers
-and its own compiled mutation. CP932 source staging preserves every byte;
-there are no opaque assets, filler, padding or numeric pointer initializers.
-The pointer table retains all47 original descending MZ sites186..2 literally.
-
-Text-a failed at2263 bytes: the compiler merged nine repeated const arrays,
-removing524 bytes. Const definition qualification had only been inferred from
-consumer reads; original writable DATA has47 distinct physical objects. The
-new definitions/declarations are ordinary mutable byte arrays, while LINES
-and the drawing interface retain const pointees. No aggregate, pooling flag
-or output patch was introduced. `maine-allcast-credits-data-b` and the
-necessary202-byte header-closure refresh `maine-allcast-lines-data-b` pass
-and are imported atomically. The earlier pointer-a pass is preserved but
-superseded. Historical original declarations and TU identity remain unknown.
-
-New maintained bitmap capture/restore and B4-ball updater sources remain
-unaccepted. One actual bitmap producer emits211 versus126 bytes; static
-analysis verifies real far-pointer DS/ES transfers,352 rows and40/80 strides,
-without claiming runtime verification or exact original placement. The B4
-producer emits296 versus273: its true Point AX/DX return and RET2 ABI are
-correct;23 extra bytes are ordinary spill/comparison/branch lowering. Its new
-binder's independent BulletTemplate base error5780-to577E is corrected,
-with original failed artifacts frozen and no second compile. Both candidates
-stay outside the default manifest; no bytes are credited. Per-owner notes
-retain the full diagnostic limitations.
+Public acceptance lives in `config/accepted_units{,.op,.maine}.json`;
+`docs/PROGRESS.md`, `resources/progress.svg` and `resources/ownership.json`
+are generated from it. Per-owner source notes explain boundaries and ABIs.
+The private receipt inventory is
+`.analysis/cleanup-current-receipt-guards.json`: all 209 current receipt hashes
+for the 298 records were found. Preserve whole receipt/parent directories.
+See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
+
+Cleanup revalidated208 whole receipts using the existing private validator.
+The remaining historical `main-stage-data-a` receipt contains an unselected
+CODE descriptor whose padding classification later changed to offsets1153/1173;
+the generic whole-receipt validator rejects that metadata drift. Its current
+accepted DATA was separately rechecked against both actual MZ/MAP/OMF/source
+producers and its own compiled negative, with no mismatch. No evidence or
+metadata was rewritten to bypass the gate. Details are in
+`.analysis/cleanup-handoff/stage-data-selected-native-review.json`.
+
+The longer investigation log is archived in
+[historical handoff](history/RE_HANDOFF_2026-10-25.md). Its numerical checkpoints
+and pending statuses are historical, not the current acceptance state.
+
+## Start here
+
+Read `AGENTS.md`, [workflow](RE_WORKFLOW.md) and [oracle contract](ORACLES.md).
+This workspace already has the pinned targets, toolchain, decoded views and
+ReC98 checkout; no bootstrap, download or decoder rerun is necessary.
+
+```sh
+git status --short
+python3 scripts/preflight.py
+python3 scripts/replay_units.py --artifact main --plan
+python3 scripts/replay_units.py --artifact op --plan
+python3 scripts/replay_units.py --artifact maine --plan
+python3 scripts/ci.py
+```
+
+All three replay plans are empty at this handoff. Follow the user's explicit
+incremental preference: replay only new or demonstrated affected units. Reuse
+unchanged accepted evidence and successful installed-tool probes. Serialize
+Wine/Borland and Ghidra with `bash scripts/run_heavy.sh ...` (one CPU,35% quota,
+768 MiB memory, no swap, low priority). Do not alter TH03/TH04 sibling repos,
+shared processes, tool versions or compiler flags.
+
+## Latest accepted additions
+
+After `caa32aa` (96,003 bytes), two focused groups added247 bytes:
+
+| Receipt under `.analysis/unit-replays/` | Complete ownership | Credit |
+| --- | --- | ---: |
+| `main-mai-yuki-hittest-a` | Two MAIN collision/state wrappers at177F0..1785F | 111 CODE |
+| `maine-staff-filenames-data-a` | Fourteen MAINE filename objects at11862..118EA | 136 DATA |
+
+Each has two independent fresh producers, full raw/OMF/MAP and literal ordered
+relocation comparison, plus a meaningful compiled negative. Both are imported;
+source, docs, configs and generated progress are included in the handoff commit.
+The first group's real near-call offset wraps inside CS1527: its provider is
+load1FAD0, not the naive linear-disassembler resultFAD0. Full Boss24/Point4,
+AX damage return and byte damage storage are retained.
+
+`caa32aa` added shot/hit-sprite invalidation94, ending dispatch92 (94 compared,
+two excluded relaxation NOPs), MAINE line animation190 and all-cast DATA2989.
+All-cast text uses47 distinct mutable byte arrays with const-pointee consumers;
+the first const-array hypothesis pooled nine objects and failed at2263 versus
+2787 bytes. The corrected text and affected202-byte pointer-table header
+closure passed independently. Historical original declarations are unknown.
+Line animation retains its full enum; direct decrement is supported by pinned
+TC4.02 with its normal unsuppressed warning. See the per-owner notes.
+
+## Ready, explicitly uncompiled candidates
+
+Two readable verdict DATA owners are maintained but **not registered,
+compiled, accepted or credited**:
+
+| Source | Original complete load range | Bytes |
+| --- | --- | ---: |
+| `src/maine/verdict/metric_ui_data.cpp` | 11730..117CC | 156 |
+| `src/maine/verdict/score_ui_data.cpp` | 117D2..1184A | 120 |
+
+Read [candidate notes](../src/maine/verdict/ui_data.md). Proposals are private
+`.analysis/maine-verdict-{metric,score}-ui-data-proposal.toml`; native reviews
+share those prefixes. The combined identity freeze is
+`.analysis/maine-verdict-split-ui-data-freeze.json`. Both need explicit CP932
+staging and their own full two-positive/negative replay, separately. Normal
+DATA replay allows only one DATA owner per focused group. Their new shared
+header does not change any accepted verdict header or require old CODE replay.
+The remaining18 punctuation/counter bytes stay unknown. An earlier294-byte
+monolith was never compiled and is archived as a rejected source hypothesis.
+
+Two early native leads are **not ready source packets**:
+`.analysis/native-leads/main-std-boss-transition.json` (7/66-byte wrappers,
+real same-CS far dialog-provider context still needs review) and
+`.analysis/stopped-main-data-leads.json` (possible powers-of-ten table,
+consumer/boundary review incomplete). Do not assign credit from these leads.
+
+## Parked work: preserve findings before trying variants
+
+- Staff: [full-family notes](../src/maine/staff/full.md) describe17 real bodies,
+  15 accepted functions/2742 instruction bytes. Updater626 and renderer861
+  each compile three bytes shorter due to redundant-pointer reload lowering.
+  No ABI/type defect or permission for a volatile/register/barrier workaround
+  was found. `controller.cpp` reproduces991 raw bytes in one diagnostic but
+  fails the original29-entry relocation order. `bitmap.cpp` is a valid
+  source-present211-byte transfer model versus original126, not a prefix to
+  force controller fixup order. Actual sources and failures remain frozen.
+- B4-ball update: [notes](../src/main/boss/mai_yuki/b4ball_update.md) explain
+  296 versus273. Full Point AX/DX/RET2 ABI is correct; the extra23 bytes are
+  real spills/comparisons/branches. Only the new binder's BulletTemplate base
+  was corrected5780 to577E, without recompiling. It remains outside the default
+  manifest. Never retag the real aggregate return as int/void or force registers.
+- MAINE cutscene script: natural full context retains1555-byte function/table
+  boundaries; a split has exact raw bytes but wrong literal relocation order.
+  The adjacent EGC helper has a one-byte MOV-zero/XOR-zero lowering difference.
+  No independent FLAGS contract justifies hand-generating the missing byte.
+- Other previously diagnosed gaps include one-byte switch/table zeros in
+  stage/session, item collect and several Boss callbacks; Mima's raw-exact
+  helper with wrong ordered fixups; scroll115 versus123; bullet rendering334
+  versus330; item/shot render ABI kernels; OP piano/input/PI-load cases. Search
+  the historical handoff and owner notes before repeating these probes.
+
+Compiler-generated code must remain semantic C/C++; no opcode transcription,
+raw target array, synthetic prefix, filler NOP, fixup sorting, forced volatile
+reload or unsupported register/type/FLAGS trick receives authored credit.
+Classify real original assembly separately and keep padding at zero credit.
+
+## Target and reference context
+
+The supplied Japanese copy is `candidate-local-attested`, not independently
+proved pristine. MAIN uses its actual direct MZ load-module view; OP/MAINE use
+cached `DecodedUnitImage` views and literal observed relocation streams via
+`UnitContext/load_unit_target`. Do not wrap decoded payloads in fake MZ files.
+Pinned identities are in `config/targets.toml` and private decoder receipts.
+
+Main frames: MAIN01 AE10/CSAE1, SHARED14AB0/CS14AB, MAIN03 15270/CS1527,
+DATA209D0/DS209D. MAINE frames: CODEA540/CSA54, SHAREDframeE800,
+DATA10110/DS1011. Compiler/linker/assembler are pinned TC4.02/TLINK6.10/TASM5;
+MSDOSplayer P0281 is supplied by pinned ReC98.
+`_reference/ReC98` remains at `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`.
+ReC98 and TH03/TH04 are semantic references, never transferred acceptance.
+
+## Finishing a bounded change
+
+Import passing receipts with `scripts/progress.py --artifact ... --accept ...`
+(`--accept` may repeat atomically within one artifact), then regenerate progress
+and ownership, update owner notes, run public CI and `git diff --check`, commit
+and push. Stop after the first actual size/boundary failure; do not run two more
+producers for a known mismatch. A single diagnostic is not acceptance.
+No compiled-source or dependency edit is harmless to source-hash freshness:
+refresh only its actual affected closure before accepting new metadata.
