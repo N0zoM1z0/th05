@@ -691,3 +691,22 @@ unit = "maine-staff-rain-spawn"
 source = "src/maine/staff/rain.cpp"
 find = "p->speed.v = (irand() % 24) + 8;"
 replace = "p->speed.v = (irand() % 24) + 9;"
+
+[[units]]
+id = "maine-staff-frame"
+source = "src/maine/staff/frame.cpp"
+module = "th05/stfframe.cpp"
+segment = "STAFF_FRAME_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 58190
+size = 86
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_staff_frame_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-frame"
+source = "src/maine/staff/frame.cpp"
+find = "frame_delay(1);"
+replace = "frame_delay(2);"

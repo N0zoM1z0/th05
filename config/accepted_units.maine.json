@@ -2,42 +2,28 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "c726e8091cf01cc467ed09a33eb54e4f09a71d446b86aa1e6a95f1c066502d0c",
+  "replay_receipt_sha256": "8d78094287c441e58a8789fd1ac6c4c4f6a93a750c3a521a99d71ca3d24efdff",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 55862,
-    "candidate_start": 55862,
-    "size": 161,
-    "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
-    "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
+    "target_start": 58190,
+    "candidate_start": 58190,
+    "size": 86,
+    "target_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+    "candidate_sha256": "435fb918d93336f155b0accfd9dc2ddb234bbd6211bfc6c15dbd5318b0b52199",
     "raw_exact": false,
     "target_fixups": [
-      156,
-      80,
-      66,
-      49,
-      32
+      60,
+      46,
+      14
     ],
     "candidate_fixups": [
-      156,
-      80,
-      66,
-      49,
-      32
+      60,
+      46,
+      14
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 55862,
-      "size": 161,
-      "function_symbol": "staff_rain_spawn()",
-      "contribution_start": 55862,
-      "contribution_size": 432,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "staff_rain_update()"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -16456,6 +16442,337 @@
           "-ml",
           "-DBINARY='E'",
           "th05/stfrain.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-staff-frame",
+      "entry_sha256": "d3bb04209dba3937c5588a0cbd25cf05b21ba0170505094061aac669ad6389b1",
+      "result": {
+        "id": "maine-staff-frame",
+        "entry_sha256": "d3bb04209dba3937c5588a0cbd25cf05b21ba0170505094061aac669ad6389b1",
+        "rounds": [
+          {
+            "target_start": 58190,
+            "candidate_start": 58190,
+            "size": 86,
+            "target_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+            "candidate_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+            "raw_exact": true,
+            "target_fixups": [
+              60,
+              46,
+              14
+            ],
+            "candidate_fixups": [
+              60,
+              46,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 58190,
+            "candidate_start": 58190,
+            "size": 86,
+            "target_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+            "candidate_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+            "raw_exact": true,
+            "target_fixups": [
+              60,
+              46,
+              14
+            ],
+            "candidate_fixups": [
+              60,
+              46,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "e567167a81a6b5219364e048d644f5691470f221f6c12dfdefa8e67b06b01c9b",
+            "dependency_timestamp_normalized_sha256": "24d5ac3eeff710baedad013d51b4dc13e6eae192528628632594bf7373fef5b5",
+            "module_name": "th05/stfframe.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfframe.cpp",
+              "src/maine/staff/frame.cpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "5533a3231fb9a905b0a8ce79f9ac51a6a3e601eda30eed4cfa6236a7347b0da1",
+            "dependency_timestamp_normalized_sha256": "24d5ac3eeff710baedad013d51b4dc13e6eae192528628632594bf7373fef5b5",
+            "module_name": "th05/stfframe.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfframe.cpp",
+              "src/maine/staff/frame.cpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfframe.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfframe.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_staff_frame_bindings.asm",
+            "sha256": "4a1d0dadde94827d512553a96f599a415998573406dfde5c3147f4c8647a54ed"
+          },
+          {
+            "path": "src/maine/staff/frame.cpp",
+            "sha256": "efb02b68edc0d240570384ae28f3b90c81f5d05c9757016a1f74eacf452f3d72"
+          },
+          {
+            "path": "src/maine/staff/frame.hpp",
+            "sha256": "876305c3f0cc7558bdc7ab8cb2e6f11119d523c1d5a08788a8e2be526e35eb52"
+          },
+          {
+            "path": "src/maine/staff/lifecycle.hpp",
+            "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+          },
+          {
+            "path": "src/maine/staff/staff.hpp",
+            "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_staff_frame_bindings.asm",
+          "sha256": "4a1d0dadde94827d512553a96f599a415998573406dfde5c3147f4c8647a54ed"
+        },
+        {
+          "path": "src/maine/staff/frame.cpp",
+          "sha256": "efb02b68edc0d240570384ae28f3b90c81f5d05c9757016a1f74eacf452f3d72"
+        },
+        {
+          "path": "src/maine/staff/frame.hpp",
+          "sha256": "876305c3f0cc7558bdc7ab8cb2e6f11119d523c1d5a08788a8e2be526e35eb52"
+        },
+        {
+          "path": "src/maine/staff/lifecycle.hpp",
+          "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+        },
+        {
+          "path": "src/maine/staff/staff.hpp",
+          "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8d78094287c441e58a8789fd1ac6c4c4f6a93a750c3a521a99d71ca3d24efdff",
+      "compiled_negative_control": {
+        "target_start": 58190,
+        "candidate_start": 58190,
+        "size": 86,
+        "target_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+        "candidate_sha256": "435fb918d93336f155b0accfd9dc2ddb234bbd6211bfc6c15dbd5318b0b52199",
+        "raw_exact": false,
+        "target_fixups": [
+          60,
+          46,
+          14
+        ],
+        "candidate_fixups": [
+          60,
+          46,
+          14
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-staff-frame",
+        "entry_sha256": "d3bb04209dba3937c5588a0cbd25cf05b21ba0170505094061aac669ad6389b1",
+        "mutation": {
+          "unit": "maine-staff-frame",
+          "source": "src/maine/staff/frame.cpp",
+          "find": "frame_delay(1);",
+          "replace": "frame_delay(2);"
+        },
+        "control_sha256": "d8311e44199d2a74c4365fca131b55e9a420cca263957c813025d8c2d5d78aa3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 58190,
+          "candidate_start": 58190,
+          "size": 86,
+          "target_sha256": "e125aa224fcf0f379e21f0cf246347871233780367bcd564f165ede55e454682",
+          "candidate_sha256": "435fb918d93336f155b0accfd9dc2ddb234bbd6211bfc6c15dbd5318b0b52199",
+          "raw_exact": false,
+          "target_fixups": [
+            60,
+            46,
+            14
+          ],
+          "candidate_fixups": [
+            60,
+            46,
+            14
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "445d4af3ceae0fe05ebff0ec72114811b9ac40b0f82b12d28fd0e2c52c9e94dd",
+          "dependency_timestamp_normalized_sha256": "ea63017145543e38c053b66da563fa91d2a28705a3b5fe85fbd1b21b31ea2e97",
+          "module_name": "th05/stfframe.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stfframe.cpp",
+            "src/maine/staff/frame.cpp",
+            "src/maine/staff/frame.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/staff.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/stfframe.cpp"
         ]
       },
       "target_view": {

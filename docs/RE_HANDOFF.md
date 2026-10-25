@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **284 bounded C/C++ CODE/DATA units / 481 complete function occurrences**,
-**91,517 authored bytes exact**: 79,789 CODE and 11,728 initialized DATA.
-CODE is 79,097 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 91,593; 76 checked padding bytes receive
+Current acceptance: **285 bounded C/C++ CODE/DATA units / 482 complete function occurrences**,
+**91,603 authored bytes exact**: 79,875 CODE and 11,728 initialized DATA.
+CODE is 79,183 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 91,679; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 50 / 8,269 / 94.
+OP 61 / 11,218 / 8,615; MAINE 51 / 8,355 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1312,3 +1312,14 @@ bytes or fakepadding is used. Original20/10/2byteconsumerstrides establish
 bounds/layout. Two fresh deterministic producers, fullgapless60DATA/emptyCODE
 and BSS, originalemptyfixups and ownleftfieldlastX+3-to-+4px mutation pass.
 ITEM_PATNUM14 was already accepted and is not credited again.
+
+## MAINE complete staff frame pump
+
+`maine-staff-frame-a` adds86 instructions/onecompletefunction atE34E..E3A4,
+zeroNOP/table/padding. Both fresh producers, originalMZ[60,46,14] and own
+wait1-to-2 mutation pass. It keeps actualvoidnear providers, realfarPascal
+frame-delay/text-clear APIs, genuinefarcdecl musicquery and standardoutportb.
+Canonicalstaff_frame50E2 is reused; sharedclear1746/measure50E0 names align
+with the new imagephase review. No acceptedheader/provider implementation
+changed. ReferenceoldE349 andrendereroldDFEC differlocallyby5 from actual
+E34E/DFF1, independentlynativeverified ratherthan globallyrebased.
