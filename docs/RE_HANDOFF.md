@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **283 bounded C/C++ CODE/DATA units / 481 complete function occurrences**,
-**91,457 authored bytes exact**: 79,789 CODE and 11,668 initialized DATA.
+Current acceptance: **284 bounded C/C++ CODE/DATA units / 481 complete function occurrences**,
+**91,517 authored bytes exact**: 79,789 CODE and 11,728 initialized DATA.
 CODE is 79,097 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 91,533; 76 checked padding bytes receive
-no credit. MAIN has 370 functions / 60,302 CODE / 2,959 DATA;
+Complete compared extents total 91,593; 76 checked padding bytes receive
+no credit. MAIN has 370 functions / 60,302 CODE / 3,019 DATA;
 OP 61 / 11,218 / 8,615; MAINE 50 / 8,269 / 94.
 Global denominator and percentage remain unreviewed.
 
@@ -1290,3 +1290,25 @@ negative belongs to spawn; no per-update mutation is claimed. Full canonical
 particle20, Palette8/RGB3, actualbytebluefield and trueintAX update remain.
 All prior accepted source/header inputs are unchanged; hardwaretextwipeDBE6
 and the parked lifecycleupdater stay outside the claim.
+
+## MAIN scrolling driver remains unaccepted
+
+The fresh ordinaryC++ `main-scroll-driver-a` firstproducer is123 bytes versus
+original115 atC506..C579. Native review finds the first65 bytes exact, genuine
+farGRAPH_SCROLLUP0000:1EE2/nearC43A calls and originalMZ[57]. Extra8 bytes are
+fractionreload3, quotientlocalAX-to-DX2, longerbytepublish1, DX-to-AX2. The
+SHARED14AC/DS209E shift is a consequence of the sizefailure, not another ABI
+error. No second/negative producer ran. No FLAGS, physicalregister, prologue
+or option variants follow; defaultentry/control removed, source/proof retained
+with zero acceptance. `src/main/scroll/driver.md` documents the bounded failure.
+
+## MAIN complete miss-drop velocity DATA
+
+`main-item-miss-velocity-data-a` adds60 compiler-generated initialized semantic
+DATA at22856..22892, DS209D:1E86. Its30 completecanonicalSubpixel objects form
+[3fields][Y/X][5slots], using ordinary constant physics expressions and proper
+aggregate braces. No constructor/type substitute, caller/header change, asset
+bytes or fakepadding is used. Original20/10/2byteconsumerstrides establish
+bounds/layout. Two fresh deterministic producers, fullgapless60DATA/emptyCODE
+and BSS, originalemptyfixups and ownleftfieldlastX+3-to-+4px mutation pass.
+ITEM_PATNUM14 was already accepted and is not credited again.

@@ -3963,3 +3963,25 @@ unit = "main-item-enemy-drop-data"
 source = "src/main/item/enemy_drop_data.cpp"
 find = "    IT_POWER, IT_POINT, IT_POWER,"
 replace = "    IT_POINT, IT_POINT, IT_POWER,"
+
+[[units]]
+id = "main-item-miss-velocity-data"
+source = "src/main/item/miss_velocity_data.cpp"
+module = "th05/itmissv.cpp"
+segment = "_DATA"
+wrapper_options = "-zCITEM_MISS_DATA_CONTEXT -zPmain_01"
+bindings_source = "probes/units/item_miss_velocity_data_bindings.asm"
+target_start = 141398
+size = 60
+functions = 0
+extent_kind = "initialized-data"
+origin = "compiler-generated-cxx-semantic-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-item-miss-velocity-data"
+source = "src/main/item/miss_velocity_data.cpp"
+find = "{ 3 * ITEM_DROP_SUBPIXELS_PER_PIXEL }"
+replace = "{ 4 * ITEM_DROP_SUBPIXELS_PER_PIXEL }"

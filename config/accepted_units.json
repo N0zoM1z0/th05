@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "844fac0a5e7662c40f74bca709e8637dc2766e8638accd306a82e190513ee63e",
+  "replay_receipt_sha256": "c288943283967c0b7f425f8af04e6b821392d263041c2c8bd311d0985303cc67",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141202,
-    "candidate_start": 141202,
-    "size": 64,
-    "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
-    "candidate_sha256": "5946e6e1890a28d6615ce0c83561e53c6110802b9b815405fafe9e026f5207a8",
+    "target_start": 141398,
+    "candidate_start": 141398,
+    "size": 60,
+    "target_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+    "candidate_sha256": "b7705aad8981f97f1308067c8064fa0c2215dd041df19447b54f9c914a49288b",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 141202,
-      "size": 64,
-      "module": "th05/edrop.cpp",
+      "start": 141398,
+      "size": 60,
+      "module": "th05/itmissv.cpp",
       "segment": "_DATA"
     }
   },
@@ -62006,6 +62006,390 @@
           "-ml",
           "-DBINARY='M'",
           "th05/edrop.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-item-miss-velocity-data",
+      "entry_sha256": "0a83a9533d8b313141830476af0a9e40e011fb4b633a165c316ffb847fe7ca13",
+      "result": {
+        "id": "main-item-miss-velocity-data",
+        "entry_sha256": "0a83a9533d8b313141830476af0a9e40e011fb4b633a165c316ffb847fe7ca13",
+        "rounds": [
+          {
+            "target_start": 141398,
+            "candidate_start": 141398,
+            "size": 60,
+            "target_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+            "candidate_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141398,
+              "size": 60,
+              "module": "th05/itmissv.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141398,
+            "candidate_start": 141398,
+            "size": 60,
+            "target_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+            "candidate_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141398,
+              "size": 60,
+              "module": "th05/itmissv.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6379200f740d8290ecf0b4c16eb668403688c774c4d6889442e0004da3933500",
+            "dependency_timestamp_normalized_sha256": "e5886a3be76a5e7b26ad2c686898d32914f315457ce5558213ee38cbdd8d71d6",
+            "module_name": "th05/itmissv.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/itmissv.cpp",
+              "src/main/item/miss_velocity_data.cpp",
+              "src/main/item/miss_velocity_data.hpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 60,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 60,
+                  "sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "3ce73a9b7fb0fe724ecd9ceeac2c910befbfe5d54ed1b732ed4c270ab6284bb0",
+            "dependency_timestamp_normalized_sha256": "e5886a3be76a5e7b26ad2c686898d32914f315457ce5558213ee38cbdd8d71d6",
+            "module_name": "th05/itmissv.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/itmissv.cpp",
+              "src/main/item/miss_velocity_data.cpp",
+              "src/main/item/miss_velocity_data.hpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 60,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 60,
+                  "sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/itmissv.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/itmissv.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/item_miss_velocity_data_bindings.asm",
+            "sha256": "41d10df7462a268c45049cb64f3f8bf29f1bdc81012a6c1b59e214df31ada7a6"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/bullet/update.hpp",
+            "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/item/item.hpp",
+            "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+          },
+          {
+            "path": "src/main/item/miss_velocity_data.cpp",
+            "sha256": "3862208509c118951a280213f5c17c05633334023902723e82a0fa478db0f441"
+          },
+          {
+            "path": "src/main/item/miss_velocity_data.hpp",
+            "sha256": "ca00b76a2c0bc106d101431013e95d8505c5ccf2dfcbfc7c3b28463fb42b7bef"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/item_miss_velocity_data_bindings.asm",
+          "sha256": "41d10df7462a268c45049cb64f3f8bf29f1bdc81012a6c1b59e214df31ada7a6"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/update.hpp",
+          "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/item/item.hpp",
+          "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+        },
+        {
+          "path": "src/main/item/miss_velocity_data.cpp",
+          "sha256": "3862208509c118951a280213f5c17c05633334023902723e82a0fa478db0f441"
+        },
+        {
+          "path": "src/main/item/miss_velocity_data.hpp",
+          "sha256": "ca00b76a2c0bc106d101431013e95d8505c5ccf2dfcbfc7c3b28463fb42b7bef"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c288943283967c0b7f425f8af04e6b821392d263041c2c8bd311d0985303cc67",
+      "compiled_negative_control": {
+        "target_start": 141398,
+        "candidate_start": 141398,
+        "size": 60,
+        "target_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+        "candidate_sha256": "b7705aad8981f97f1308067c8064fa0c2215dd041df19447b54f9c914a49288b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141398,
+          "size": 60,
+          "module": "th05/itmissv.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-item-miss-velocity-data",
+        "entry_sha256": "0a83a9533d8b313141830476af0a9e40e011fb4b633a165c316ffb847fe7ca13",
+        "mutation": {
+          "unit": "main-item-miss-velocity-data",
+          "source": "src/main/item/miss_velocity_data.cpp",
+          "find": "{ 3 * ITEM_DROP_SUBPIXELS_PER_PIXEL }",
+          "replace": "{ 4 * ITEM_DROP_SUBPIXELS_PER_PIXEL }"
+        },
+        "control_sha256": "50c596e97ccb915b17befde1235621d23b732eb07d1627bebe888ff1f2669cc3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141398,
+          "candidate_start": 141398,
+          "size": 60,
+          "target_sha256": "ca4e7ae01259014fce471fb7e4b9a7cb60dad46e0ef3946153d0aac89b0a679b",
+          "candidate_sha256": "b7705aad8981f97f1308067c8064fa0c2215dd041df19447b54f9c914a49288b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141398,
+            "size": 60,
+            "module": "th05/itmissv.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "2ae28f55b601e704722cdc7b48d41617fa5f383ba769b5c6c9d145fc191a8379",
+          "dependency_timestamp_normalized_sha256": "23629609570a2e642ad260639bd97871482a78c468a03a1fa920a161f89f4f8a",
+          "module_name": "th05/itmissv.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/itmissv.cpp",
+            "src/main/item/miss_velocity_data.cpp",
+            "src/main/item/miss_velocity_data.hpp",
+            "src/main/item/item.hpp",
+            "src/main/bullet/update.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 60,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 60,
+                "sha256": "b7705aad8981f97f1308067c8064fa0c2215dd041df19447b54f9c914a49288b"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/itmissv.cpp"
         ]
       },
       "receipt_aggregate_pass": true
