@@ -76,10 +76,16 @@ def overlay_vendor(size: int, pieces: list[dict], claims: list[dict]) -> list[di
     validate_partition(size, pieces)
     known = [row for row in pieces if row["kind"] != "unknown"]
     for row in claims:
-        if (row.get("kind") != "verified-vendor-code" or
+        if (row.get("kind") not in ("verified-vendor-code", "verified-vendor-initialized-data") or
                 type(row.get("start")) is not int or type(row.get("end")) is not int or
                 not 0 <= row["start"] < row["end"] <= size or not row.get("member")):
             raise ValueError("invalid complete vendor ownership claim")
+        if row["kind"] == "verified-vendor-initialized-data":
+            if (row.get("content_kind") != "library-initialized-data" or
+                    type(row.get("instruction_bytes", 0)) is not int or row.get("instruction_bytes", 0) != 0):
+                raise ValueError("initialized vendor DATA requires its exact content kind and zero instructions")
+        elif row.get("content_kind") == "library-initialized-data":
+            raise ValueError("initialized vendor DATA cannot use the vendor CODE kind")
     output = []
     cursor = 0
     for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
@@ -296,6 +302,68 @@ def reviewed_master_additions(root: Path, *, views: dict, targets: dict,
     return claims, digest_bytes(decision_bytes)
 
 
+def reviewed_master_sin8(root: Path, *, views: dict, targets: dict,
+                         verify_targets: bool) -> tuple[dict[str, list[dict]], str | None]:
+    """Adopt exactly the three source-backed DATA scopes, with one native replay."""
+    path = root / "config/reviewed_master_sin8.json"
+    if not path.exists():
+        return {}, None
+    from review_master_sin8 import PROOF, validate_metadata, review_inputs
+
+    decision_bytes = path.read_bytes()
+    decision = json.loads(decision_bytes)
+    proof_bytes = (root / PROOF).read_bytes()
+    proof = json.loads(proof_bytes)
+    validate_metadata(proof, root=root)
+    if (type(decision.get("schema_version")) is not int or decision["schema_version"] != 1 or
+            decision.get("decision") != "ADOPT_ONLY_LISTED_INITIALIZED_DATA" or
+            decision.get("classification") != "third-party-library-initialized-data" or
+            decision.get("claim_kind") != "verified-vendor-initialized-data" or
+            decision.get("evidence_sha256") != digest_bytes(proof_bytes)):
+        raise ValueError("SIN8 initialized DATA decision is stale or has another kind/classification")
+    if (type(decision.get("authored_credit")) is not int or decision["authored_credit"] != 0 or
+            "authored_denominator" not in decision or decision["authored_denominator"] is not None or
+            decision.get("other_scopes_policy") != "unknown" or decision.get("uncovered_gaps_policy") != "unknown" or
+            type(decision.get("instruction_bytes")) is not int or decision["instruction_bytes"] != 0 or
+            type(decision.get("full_bytes")) is not int or decision["full_bytes"] != 1920):
+        raise ValueError("SIN8 DATA adoption cannot grant instruction/authored credit or classify other gaps")
+    proposed = {row["id"]: row for row in proof["scopes"]}
+    selected = decision.get("scopes")
+    if (not isinstance(selected, list) or len(selected) != 3 or
+            any(not isinstance(scope, str) or not scope for scope in selected) or
+            len(selected) != len(set(selected)) or set(selected) != set(proposed)):
+        raise ValueError("SIN8 requires exactly three unique reviewed initialized DATA scope IDs")
+    artifacts = decision.get("artifacts")
+    if not isinstance(artifacts, dict) or set(artifacts) != {"main", "op", "maine"}:
+        raise ValueError("SIN8 decision requires all three real artifact contexts")
+    for scope in proof["scopes"]:
+        name = scope["artifact"].removeprefix("th05-")
+        row = artifacts[name]
+        if (not isinstance(row, dict) or row.get("artifact") != scope["artifact"] or
+                row.get("target_sha256") != scope["original_packed_sha256"] or
+                targets.get(scope["artifact"], {}).get("sha256") != scope["original_packed_sha256"] or
+                row.get("target_payload_sha256") != scope["target_payload_sha256"] or
+                views.get(name, {}).get("sha256") != scope["target_payload_sha256"] or
+                type(row.get("target_payload_size")) is not int or row["target_payload_size"] <= 0 or
+                row["target_payload_size"] != views.get(name, {}).get("size") or
+                (scope["target_view"] is not None and row["target_payload_size"] != scope["target_view"]["payload_size"])):
+            raise ValueError("SIN8 decision has stale packed/payload identity or wrong artifact/context")
+    if verify_targets:
+        expected = dict(kind="native-SIN8-initialized-data-review", scopes=3, full_bytes=1920,
+                        instruction_bytes=0, byte_proof_replayed=True, decision="PROPOSAL",
+                        authored_credit=0, compiler_invocations=0, authored_denominator=None)
+        if review_inputs(proof, root=root) != expected:
+            raise ValueError("SIN8 actual initialized DATA input replay disagrees with reviewed proof")
+    claims = {name: [] for name in artifacts}
+    for scope_id in selected:
+        scope = proposed[scope_id]
+        claims[scope["artifact"].removeprefix("th05-")].append({
+            "start": scope["original_start"], "end": scope["original_end"],
+            "kind": "verified-vendor-initialized-data", "content_kind": "library-initialized-data",
+            "instruction_bytes": 0, "library": "master.lib 0.23", "member": "SIN8", "scope_id": scope_id})
+    return claims, digest_bytes(decision_bytes)
+
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -304,6 +372,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     targets = tomllib.loads((root / "config/targets.toml").read_text())
     target_by_id = {row["id"]: row for row in targets["artifacts"]}
     additions, additions_sha = reviewed_master_additions(
+        root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
+    sin8, sin8_sha = reviewed_master_sin8(
         root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
@@ -336,6 +406,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, claims)
         if name in additions:
             pieces = overlay_vendor(view["size"], pieces, additions[name])
+        if name in sin8:
+            pieces = overlay_vendor(view["size"], pieces, sin8[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -347,6 +419,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_vendor_review_sha256"] = master_review_sha
         if additions_sha and name in additions:
             views[name]["master_additions_review_sha256"] = additions_sha
+        if sin8_sha and name in sin8:
+            views[name]["master_sin8_review_sha256"] = sin8_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])

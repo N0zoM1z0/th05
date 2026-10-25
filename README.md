@@ -32,8 +32,10 @@ interval across all four targets; it grants no inferred vendor exclusions.
 and its artifact-specific reviews classify 47,479 third-party bytes; the independent
 [Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md)
 and [source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md)
-classify another 2,528. These 50,007 bytes grant no authored source credit;
-2,048 are library constants in CODE, separately identified from instructions.
+classify another 2,528 CODE bytes. The [SIN8 review](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
+also identifies 1,920 initialized library DATA bytes. All 51,927 vendor bytes
+grant no authored source credit; 2,048 CODE bytes are constants, separately
+identified from instructions.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

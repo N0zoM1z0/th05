@@ -94,7 +94,8 @@ not contribute C++ credit or establish complete outer ZUN equality.
 `resources/ownership.json` covers all 319,268 observed payload/COM bytes.
 Every unclassified interval remains unknown. Reviewed third-party ownership
 covers149 complete CL.LIB CODE contributions/47,479 bytes,25 complete Master
-procedures/480 bytes and2 Master CODE-data tables/2048 bytes, totaling50,007.
+procedures/480 bytes,2 Master CODE-data tables/2048 bytes and3 initialized
+Master SIN8 tables/1920 bytes, totaling51,927.
 CL uses pinned native OMF/FIXUPP evidence
 and explicit member decisions in `config/reviewed_vendor_units.json` plus its
 `.op.json` and `.maine.json` counterparts. OP63/23,708 and MAINE55/20,870 use
@@ -1084,3 +1085,17 @@ OMF/MAP, fullraw bytes and originalemptyorderedfixups. No padding/CODE/BSS
 credit or oldheader/callerchange; onlythese2DATAowners were replayed and
 atomically imported. See `src/main/player/power_thresholds.md` and
 `src/main/boss/exalice/pattern_pairs.md`.
+
+## Independent Master initialized DATA ownership
+
+`review_master_sin8.py` and the separate explicit
+`config/reviewed_master_sin8.json` adopt only3complete640-byte primary-source
+SIN8 blocks,1920total, with `verified-vendor-initialized-data` and zero
+instruction/authored credit. Sin256/Cos256 views share192words: eachphysical
+block is320words, nottwo256-wordallocations. Actualoriginalvsretainedcal
+locations differ inMAIN/MAINE; the proof preserves both positions, realstartup
+DS/relocation, actualDATA MAP/PUBDEF/LEDATA/nointersectingFIXUPP, primaryliteral
+source/archive andoriginalemptyorderedfixups. No per-memberMAP/binarymember
+claim, byte/frame normalization or wholemixedobject exclusion. Rootnative
+review passes and `ownership.py --write --verify-targets` replays actualinputs.
+The21newreview/adoption regressions retain unknownothergaps/null denominator.

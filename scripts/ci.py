@@ -22,6 +22,9 @@ def main() -> int:
     if (ROOT / "config/master_vendor_additions.json").exists():
         subprocess.run([sys.executable, "scripts/review_master_additions.py", "--structural-check"],
                        cwd=ROOT, check=True)
+    if (ROOT / "config/master_sin8_ownership.json").exists():
+        subprocess.run([sys.executable, "scripts/review_master_sin8.py", "--structural-check"],
+                       cwd=ROOT, check=True)
     for context in ("op", "maine"):
         if (ROOT / f"config/vendor_ownership.{context}.json").exists():
             subprocess.run([sys.executable, "scripts/review_vendor_context.py", "--context", context,

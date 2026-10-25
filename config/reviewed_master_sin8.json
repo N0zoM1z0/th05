@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "decision": "ADOPT_ONLY_LISTED_INITIALIZED_DATA",
+  "classification": "third-party-library-initialized-data",
+  "claim_kind": "verified-vendor-initialized-data",
+  "evidence_sha256": "8a35ba5c585e46c5273c4a8bc2212ed61b4ccccb94da503796bed76334031e62",
+  "artifacts": {
+    "main": {
+      "artifact": "th05-main",
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_payload_sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
+      "target_payload_size": 145958
+    },
+    "op": {
+      "artifact": "th05-op",
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+      "target_payload_size": 77798
+    },
+    "maine": {
+      "artifact": "th05-maine",
+      "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+      "target_payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+      "target_payload_size": 77396
+    }
+  },
+  "scopes": [
+    "main-sin8",
+    "op-sin8",
+    "maine-sin8"
+  ],
+  "full_bytes": 1920,
+  "instruction_bytes": 0,
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "other_scopes_policy": "unknown",
+  "uncovered_gaps_policy": "unknown",
+  "review_basis": "Root explicitly authorized exactly the three complete source-backed SIN8 initialized DATA scopes after independent reviewer/source/context review. Native inventory must replay actual primary source, OMF/MAP and original ordered/raw evidence before publication.",
+  "scope_limit": "Only these physical640-byte DATA scopes; shared Sin/Cos aliases do not create separate allocations. Original/calibration positions remain distinct; no CODE or instruction claim. Other data, procedures and gaps remain unknown."
+}

@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "kind": "source-backed-master-initialized-data-proposal",
+  "decision": "PROPOSAL",
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "ownership_decision": null,
+  "compiler_invocations": 0,
+  "denominator_changed": false,
+  "full_bytes": 1920,
+  "instruction_bytes": 0,
+  "inherited_context_proofs": [
+    {
+      "file": "config/master_vendor_additions.json",
+      "size": 123996,
+      "sha256": "67aef0634d32c582994685f66633c4529ddf2db12ccfce8afff562dac48f5ee9"
+    },
+    {
+      "file": "config/master_vendor_ownership.json",
+      "size": 139141,
+      "sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a"
+    }
+  ],
+  "primary_source": {
+    "file": "_reference/master-lib-upstream-023/src/SIN8.ASM",
+    "size": 2179,
+    "sha256": "7838cbbc9532cb3bf4c3cc86c474f9badbd07171fdd3ed8acb0050e617c60205"
+  },
+  "primary_lines": [
+    17,
+    62
+  ],
+  "primary_source_block_sha256": "935308cf7aca4a0d76812932a4e5eee211b0d788a723fe0d98b473f80e3ce3a1",
+  "primary_archives": {
+    "outer_archive": {
+      "file": "_reference/master-lib-upstream-023/MTSRC023.LZH",
+      "size": 457168,
+      "sha256": "9df4ba0ec1c3d81f2d77677c8c99f563281db4a4d9d87718a956d4c92156747f"
+    },
+    "inner_archive": {
+      "file": "_reference/master-lib-upstream-023/distribution/SRC.LZH",
+      "size": 1560252,
+      "sha256": "acc5369d3fb445d5cd6b92abbedb7b433819465be2f85bbbff53bd1f77bc40b6"
+    }
+  },
+  "literal_extracted_members": 653,
+  "normalization": [
+    "Strict CP932 versus UTF8 decoding",
+    "CRLF/CR toLF only"
+  ],
+  "scopes": [
+    {
+      "id": "main-sin8",
+      "artifact": "th05-main",
+      "claim_kind": "verified-vendor-initialized-data",
+      "content_kind": "library-initialized-data",
+      "size": 640,
+      "word_count": 320,
+      "original_start": 134636,
+      "original_end": 135276,
+      "calibration_start": 134670,
+      "calibration_end": 135310,
+      "original_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 133584,
+          "offset": 1052
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 133584,
+          "offset": 1180
+        }
+      ],
+      "original_alias_basis": "Complete primary table and unique original occurrence relative to actual startup DS; no original MAP claimed.",
+      "actual_MAP_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 133600,
+          "offset": 1070
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 133600,
+          "offset": 1198
+        }
+      ],
+      "original_startup_DS": {
+        "segment": 8349,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "c35c4aced2125c7c19f53f6df76bd65f83d3db471bc5e9aa69451eac218b3469"
+      },
+      "calibration_startup_DS": {
+        "segment": 8350,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "a1fed4a0d51e25497c21cb294786a1c774bbb2a88f90ae1c69d66f92284a4f43"
+      },
+      "actual_DATA_contribution": {
+        "frame": 133600,
+        "offset": 144,
+        "size": 8000
+      },
+      "actual_OMF_scope": {
+        "SEGDEF": {
+          "name": "_DATA",
+          "class_name": "DATA",
+          "size": 8000,
+          "acbp": 72
+        },
+        "PUBDEF": [
+          {
+            "name": "_SinTable8",
+            "segment": 2,
+            "offset": 926
+          },
+          {
+            "name": "_CosTable8",
+            "segment": 2,
+            "offset": 1054
+          }
+        ],
+        "LEDATA": [
+          {
+            "record_offset": 63872,
+            "segment_offset": 742,
+            "size": 856,
+            "sha256": "94eb96cc2a3babdf159d43d4916d156b3a55fc97225b50747afd45effe5fdf2c",
+            "scope_offset": 0,
+            "scope_size": 640
+          }
+        ],
+        "intersecting_FIXUPP_count": 0,
+        "intersecting_LIDATA_count": 0
+      },
+      "source": {
+        "file": ".analysis/builds/main-calibration-b/source/libs/master.lib/sin8[data].asm",
+        "size": 2149,
+        "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+      },
+      "source_lines": [
+        14,
+        59
+      ],
+      "original_packed_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_payload_sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
+      "target_view": null,
+      "actual_inputs": {
+        "calibration_exe": {
+          "file": ".analysis/builds/main-calibration-b/source/bin/th05/main.exe",
+          "size": 148492,
+          "sha256": "630b909739501bab6a9ef2c2b65e517332277c8ea66895af2ee4ba9d3e04d380"
+        },
+        "calibration_map": {
+          "file": ".analysis/builds/main-calibration-b/source/obj/th05/main.map",
+          "size": 137474,
+          "sha256": "e2092c37785d852420f84f9830cbcc82dcd5157696b348c329fb1e52a15bbed3"
+        },
+        "calibration_object": {
+          "file": ".analysis/builds/main-calibration-b/source/obj/th05/main.obj",
+          "size": 151957,
+          "sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf"
+        }
+      },
+      "complete_initializer_sha256": "a5f3fa9a77e87ffbf8be20205754ea2e32cbe636418fcdf9ea4047bb5248bd97",
+      "original_ordered_fixups": [],
+      "calibration_ordered_fixups": [],
+      "actual_retained_links": 1
+    },
+    {
+      "id": "op-sin8",
+      "artifact": "th05-op",
+      "claim_kind": "verified-vendor-initialized-data",
+      "content_kind": "library-initialized-data",
+      "size": 640,
+      "word_count": 320,
+      "original_start": 62832,
+      "original_end": 63472,
+      "calibration_start": 62832,
+      "calibration_end": 63472,
+      "original_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 61408,
+          "offset": 1424
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 61408,
+          "offset": 1552
+        }
+      ],
+      "original_alias_basis": "Complete primary table and unique original occurrence relative to actual startup DS; no original MAP claimed.",
+      "actual_MAP_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 61408,
+          "offset": 1424
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 61408,
+          "offset": 1552
+        }
+      ],
+      "original_startup_DS": {
+        "segment": 3838,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "843a66111c13012d8c7e09c28a20e17051cf41d170cbfd2d96f64a60b251fd92"
+      },
+      "calibration_startup_DS": {
+        "segment": 3838,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "843a66111c13012d8c7e09c28a20e17051cf41d170cbfd2d96f64a60b251fd92"
+      },
+      "actual_DATA_contribution": {
+        "frame": 61408,
+        "offset": 1234,
+        "size": 1232
+      },
+      "actual_OMF_scope": {
+        "SEGDEF": {
+          "name": "_DATA",
+          "class_name": "DATA",
+          "size": 1232,
+          "acbp": 72
+        },
+        "PUBDEF": [
+          {
+            "name": "_SinTable8",
+            "segment": 2,
+            "offset": 190
+          },
+          {
+            "name": "_CosTable8",
+            "segment": 2,
+            "offset": 318
+          }
+        ],
+        "LEDATA": [
+          {
+            "record_offset": 32573,
+            "segment_offset": 6,
+            "size": 856,
+            "sha256": "94eb96cc2a3babdf159d43d4916d156b3a55fc97225b50747afd45effe5fdf2c",
+            "scope_offset": 0,
+            "scope_size": 640
+          }
+        ],
+        "intersecting_FIXUPP_count": 0,
+        "intersecting_LIDATA_count": 0
+      },
+      "source": {
+        "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/sin8[data].asm",
+        "size": 2149,
+        "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+      },
+      "source_lines": [
+        14,
+        59
+      ],
+      "original_packed_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "actual_inputs": {
+        "calibration_exe": {
+          "file": ".analysis/builds/op-calibration-a/source/bin/th05/op.exe",
+          "size": 78284,
+          "sha256": "732f9659e987c1837a6def7b3d83b3b150b39c991928bba14eadec09272b4eb6"
+        },
+        "calibration_map": {
+          "file": ".analysis/builds/op-calibration-a/source/obj/th05/op.map",
+          "size": 74100,
+          "sha256": "da2598ec3f3c707fdc968d0d9dcca5cddf333beb9b8241d76d123ee0970af907"
+        },
+        "calibration_object": {
+          "file": ".analysis/builds/op-calibration-a/source/obj/th05/op.obj",
+          "size": 35197,
+          "sha256": "b32328d03d8eb942bcdb55dcd0d816051db46b117de0a7817f4bd558f08acc92"
+        }
+      },
+      "complete_initializer_sha256": "a5f3fa9a77e87ffbf8be20205754ea2e32cbe636418fcdf9ea4047bb5248bd97",
+      "original_ordered_fixups": [],
+      "calibration_ordered_fixups": [],
+      "actual_retained_links": 1
+    },
+    {
+      "id": "maine-sin8",
+      "artifact": "th05-maine",
+      "claim_kind": "verified-vendor-initialized-data",
+      "content_kind": "library-initialized-data",
+      "size": 640,
+      "word_count": 320,
+      "original_start": 66442,
+      "original_end": 67082,
+      "calibration_start": 66426,
+      "calibration_end": 67066,
+      "original_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 65808,
+          "offset": 634
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 65808,
+          "offset": 762
+        }
+      ],
+      "original_alias_basis": "Complete primary table and unique original occurrence relative to actual startup DS; no original MAP claimed.",
+      "actual_MAP_aliases": [
+        {
+          "name": "_SinTable8",
+          "frame": 65792,
+          "offset": 634
+        },
+        {
+          "name": "_CosTable8",
+          "frame": 65792,
+          "offset": 762
+        }
+      ],
+      "original_startup_DS": {
+        "segment": 4113,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "3f8c347db1c721bfe0a5b93ab8766dd7e23672445ec64377e0520d83c1fb60f9"
+      },
+      "calibration_startup_DS": {
+        "segment": 4112,
+        "immediate_offset": 1,
+        "load_DS_offset": 20,
+        "startup_prefix_sha256": "9695048927a90851f7d6432582735dde61066a477a44d7ab3df7f32f829f2602"
+      },
+      "actual_DATA_contribution": {
+        "frame": 65792,
+        "offset": 188,
+        "size": 1476
+      },
+      "actual_OMF_scope": {
+        "SEGDEF": {
+          "name": "_DATA",
+          "class_name": "DATA",
+          "size": 1476,
+          "acbp": 72
+        },
+        "PUBDEF": [
+          {
+            "name": "_SinTable8",
+            "segment": 2,
+            "offset": 446
+          },
+          {
+            "name": "_CosTable8",
+            "segment": 2,
+            "offset": 574
+          }
+        ],
+        "LEDATA": [
+          {
+            "record_offset": 31788,
+            "segment_offset": 262,
+            "size": 856,
+            "sha256": "94eb96cc2a3babdf159d43d4916d156b3a55fc97225b50747afd45effe5fdf2c",
+            "scope_offset": 0,
+            "scope_size": 640
+          }
+        ],
+        "intersecting_FIXUPP_count": 0,
+        "intersecting_LIDATA_count": 0
+      },
+      "source": {
+        "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/sin8[data].asm",
+        "size": 2149,
+        "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+      },
+      "source_lines": [
+        14,
+        59
+      ],
+      "original_packed_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+      "target_payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "actual_inputs": {
+        "calibration_exe": {
+          "file": ".analysis/builds/maine-calibration-a/source/bin/th05/maine.exe",
+          "size": 77422,
+          "sha256": "60352c7ebb454be48da8516d5647df6d757e0f2d5a6262dbb678167cb925f1a4"
+        },
+        "calibration_map": {
+          "file": ".analysis/builds/maine-calibration-a/source/obj/th05/maine.map",
+          "size": 69458,
+          "sha256": "27bece1e57bc7c11e7dc5a949baeacb10cd88391d581130c250616ecfaaa5277"
+        },
+        "calibration_object": {
+          "file": ".analysis/builds/maine-calibration-a/source/obj/th05/mainem.obj",
+          "size": 32888,
+          "sha256": "99de745399982cb12f50b11ba3f9570b6cbf96ca0f5805f1af71ab4932922f00"
+        }
+      },
+      "complete_initializer_sha256": "a5f3fa9a77e87ffbf8be20205754ea2e32cbe636418fcdf9ea4047bb5248bd97",
+      "original_ordered_fixups": [],
+      "calibration_ordered_fixups": [],
+      "actual_retained_links": 1
+    }
+  ],
+  "proposed_claim_kind": "verified-vendor-initialized-data",
+  "other_scopes_policy": "unknown",
+  "uncovered_gaps_policy": "unknown",
+  "limits": [
+    "One retained link per context, no new compiler or authored recovery claim.",
+    "All653 primary archive members and complete per-context source closures are reread through immutable parent context review.",
+    "Original and actual calibration positions/frames differ; no byte, relocation or frame normalization.",
+    "Sin/Cos share320words physically; not two256word allocations.",
+    "No binary archive/member ownership assertion or broad mixed-object claim. No ownership hook or active decision."
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_sin8.py",
+      "size": 17785,
+      "sha256": "2283957b1bdab22b14c63c65e930151a7ead64de9dfa190908e249a95b2ad711"
+    },
+    {
+      "file": "scripts/review_master_additions.py",
+      "size": 24206,
+      "sha256": "59300d63dd9cbe771627e52b43218498afe88b3446bc942d701d3ae6069e7dcf"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "size": 28255,
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/review_vendor_context.py",
+      "size": 17883,
+      "sha256": "7f3389731a613a10d3661f4cb0987a7fde53a39bf5962482551737dcba111eab"
+    },
+    {
+      "file": "scripts/review_vendor.py",
+      "size": 37965,
+      "sha256": "5acdc65903f7bfccd984d8bee9fde1d4d25d4f56b06c247bc573952dcd8b4e00"
+    },
+    {
+      "file": "scripts/lib/borland_library.py",
+      "size": 4606,
+      "sha256": "8d5a811afe28f53e9e8e132a17221702ce7885069c85bc53dff20bedb840e6ea"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "size": 6862,
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "size": 22989,
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    },
+    {
+      "file": "scripts/lib/unit_context.py",
+      "size": 7719,
+      "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+    },
+    {
+      "file": "scripts/lib/unit_oracle.py",
+      "size": 7606,
+      "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+    },
+    {
+      "file": "scripts/lib/unit_extents.py",
+      "size": 12870,
+      "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+    },
+    {
+      "file": "scripts/lib/targets.py",
+      "size": 1969,
+      "sha256": "4756db844953ba748077ff6e75e9df8a80692b8108e0eec3c3fa6dbeeb49ac93"
+    }
+  ],
+  "evidence_digest": "4ba80fb80108989a1f985495eb0ba3dca51ee5133976194b905f95a5cadee4aa"
+}
