@@ -5,12 +5,12 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **298 bounded C/C++ CODE/DATA units / 491 complete function occurrences**,
-**96,250 authored bytes exact**: 81,397 CODE and 14,853 initialized DATA.
+Current acceptance: **300 bounded C/C++ CODE/DATA units / 491 complete function occurrences**,
+**96,526 authored bytes exact**: 81,397 CODE and 15,129 initialized DATA.
 CODE is 80,705 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,328; 78 checked padding bytes receive
+Complete compared extents total 96,604; 78 checked padding bytes receive
 no credit. MAIN has 375 functions / 60,599 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,219.
+OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,495.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -19,8 +19,9 @@ Public acceptance lives in `config/accepted_units{,.op,.maine}.json`;
 `docs/PROGRESS.md`, `resources/progress.svg` and `resources/ownership.json`
 are generated from it. Per-owner source notes explain boundaries and ABIs.
 The private receipt inventory is
-`.analysis/cleanup-current-receipt-guards.json`: all 209 current receipt hashes
-for the 298 records were found. Preserve whole receipt/parent directories.
+`.analysis/cleanup-current-receipt-guards.json`: all 209 receipt hashes
+for the preceding 298 records were found. The two newer verdict receipts below
+are also required; preserve them with their whole parent directories.
 See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
 
 Cleanup revalidated208 whole receipts using the existing private validator.
@@ -83,25 +84,23 @@ closure passed independently. Historical original declarations are unknown.
 Line animation retains its full enum; direct decrement is supported by pinned
 TC4.02 with its normal unsuppressed warning. See the per-owner notes.
 
-## Ready, explicitly uncompiled candidates
+## Latest verdict DATA acceptance
 
-Two readable verdict DATA owners are maintained but **not registered,
-compiled, accepted or credited**:
+Two additional owners add 276 semantic DATA bytes, without changing accepted
+CODE or shared dependencies:
 
-| Source | Original complete load range | Bytes |
+| Receipt under `.analysis/unit-replays/` | Complete ownership | Credit |
 | --- | --- | ---: |
-| `src/maine/verdict/metric_ui_data.cpp` | 11730..117CC | 156 |
-| `src/maine/verdict/score_ui_data.cpp` | 117D2..1184A | 120 |
+| `maine-verdict-metric-ui-data-a` | 13 metric/heading objects at11730..117CC | 156 DATA |
+| `maine-verdict-score-ui-data-a` | 12 score/resource/stage objects at117D2..1184A | 120 DATA |
 
-Read [candidate notes](../src/maine/verdict/ui_data.md). Proposals are private
-`.analysis/maine-verdict-{metric,score}-ui-data-proposal.toml`; native reviews
-share those prefixes. The combined identity freeze is
-`.analysis/maine-verdict-split-ui-data-freeze.json`. Both need explicit CP932
-staging and their own full two-positive/negative replay, separately. Normal
-DATA replay allows only one DATA owner per focused group. Their new shared
-header does not change any accepted verdict header or require old CODE replay.
-The remaining18 punctuation/counter bytes stay unknown. An earlier294-byte
-monolith was never compiled and is archived as a rejected source hypothesis.
+Both have two fresh independent producers and their own compiled DATA mutation,
+with complete raw/OMF/MAP, CP932 staging and ordered relocation validation.
+The unchanged tool execution proof was reused. See
+[verdict UI notes](../src/maine/verdict/ui_data.md). The remaining18 punctuation/
+counter bytes stay unknown. The earlier294-byte monolith was never compiled.
+
+## Native leads
 
 Two early native leads are **not ready source packets**:
 `.analysis/native-leads/main-std-boss-transition.json` (7/66-byte wrappers,

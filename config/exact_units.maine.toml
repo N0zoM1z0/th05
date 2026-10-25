@@ -894,3 +894,47 @@ unit = "maine-staff-filenames-data"
 source = "src/maine/staff/filenames.cpp"
 find = "staff_bgm_filename[] = \"staff\""
 replace = "staff_bgm_filename[] = \"stafg\""
+
+[[units]]
+id = "maine-verdict-metric-ui-data"
+source = "src/maine/verdict/metric_ui_data.cpp"
+module = "th05/vmet_ui.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_metric_data_bindings.asm"
+target_start = 71472
+size = 156
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+source_encoding = "cp932"
+
+[[controls]]
+unit = "maine-verdict-metric-ui-data"
+source = "src/maine/verdict/metric_ui_data.cpp"
+find = "\"気合い\""
+replace = "\"気合え\""
+
+[[units]]
+id = "maine-verdict-score-ui-data"
+source = "src/maine/verdict/score_ui_data.cpp"
+module = "th05/vscoreui.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_score_data_bindings.asm"
+target_start = 71634
+size = 120
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text", "filenames"]
+alignment_offsets = []
+source_encoding = "cp932"
+
+[[controls]]
+unit = "maine-verdict-score-ui-data"
+source = "src/maine/verdict/score_ui_data.cpp"
+find = "\"_ude.txt\""
+replace = "\"_udf.txt\""

@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "e8775193929f9ece078525e1b6d9ecae7f159f6ac70b5de76cf28039cc8ab8aa",
+  "replay_receipt_sha256": "c29dc3a5386f7e1bc6324a6331559ed3afa042b6d0b3de31e83f5d7c266a831d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 71778,
-    "candidate_start": 71778,
-    "size": 136,
-    "target_sha256": "051d46742b6b8dc10e684faff433eb5bfab2ab0c28ddc785a92d816616717eb9",
-    "candidate_sha256": "639ac60d30c1a45c7e72ad6eba5b2d2ce6ccb9a839bc99e3742fdb3938c101fa",
+    "target_start": 71634,
+    "candidate_start": 71634,
+    "size": 120,
+    "target_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+    "candidate_sha256": "bae87f4ab4091fe6a8c1fa39821b9ab9c36f463db6a977d921dd1a323b43a7e2",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 71778,
-      "size": 136,
-      "module": "th05/st_files.cpp",
+      "start": 71634,
+      "size": 120,
+      "module": "th05/vscoreui.cpp",
       "segment": "_DATA"
     }
   },
@@ -23219,6 +23219,758 @@
           "-ml",
           "-DBINARY='E'",
           "th05/st_files.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-metric-ui-data",
+      "entry_sha256": "9eb2195dc700957996609b166ebdfedfb4a1b8b64cf24541a92cecd39f570ba2",
+      "result": {
+        "id": "maine-verdict-metric-ui-data",
+        "entry_sha256": "9eb2195dc700957996609b166ebdfedfb4a1b8b64cf24541a92cecd39f570ba2",
+        "rounds": [
+          {
+            "target_start": 71472,
+            "candidate_start": 71472,
+            "size": 156,
+            "target_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+            "candidate_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71472,
+              "size": 156,
+              "module": "th05/vmet_ui.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71472,
+            "candidate_start": 71472,
+            "size": 156,
+            "target_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+            "candidate_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71472,
+              "size": 156,
+              "module": "th05/vmet_ui.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "9413a88e561f25c9b15519cbc08924bca5d6a55b4b5321f06f4bc8add9026ab7",
+            "dependency_timestamp_normalized_sha256": "8a5a21122d301bbacc44f20b53f5816127565d1593aa3425a16bc00120076270",
+            "module_name": "th05/vmet_ui.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vmet_ui.cpp",
+              "src/maine/verdict/metric_ui_data.cpp",
+              "src/maine/verdict/ui_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 156,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 156,
+                  "sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "d4ec12f5803774afac4b3c65241025617cb21a34a1314c69197731caf06e816d",
+            "dependency_timestamp_normalized_sha256": "8a5a21122d301bbacc44f20b53f5816127565d1593aa3425a16bc00120076270",
+            "module_name": "th05/vmet_ui.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vmet_ui.cpp",
+              "src/maine/verdict/metric_ui_data.cpp",
+              "src/maine/verdict/ui_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 156,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 156,
+                  "sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vmet_ui.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vmet_ui.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_metric_data_bindings.asm",
+            "sha256": "66eaef47dffac19370bf68619fd411df4ba51dd937261c95d28bbeb74c6b1e8a"
+          },
+          {
+            "path": "src/maine/verdict/metric_ui_data.cpp",
+            "sha256": "9dc74eabebe2d92bcaa615634f2883134985df3106df581202886add03b023dc"
+          },
+          {
+            "path": "src/maine/verdict/ui_data.hpp",
+            "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_verdict_metric_data_bindings.asm",
+              "sha256": "66eaef47dffac19370bf68619fd411df4ba51dd937261c95d28bbeb74c6b1e8a"
+            },
+            {
+              "path": "src/maine/verdict/metric_ui_data.cpp",
+              "sha256": "85f7e8155c4f342ea459722d725a702a53a72419d97db74fcb5e6ed0d5f85a42"
+            },
+            {
+              "path": "src/maine/verdict/ui_data.hpp",
+              "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_verdict_metric_data_bindings.asm",
+              "sha256": "66eaef47dffac19370bf68619fd411df4ba51dd937261c95d28bbeb74c6b1e8a"
+            },
+            {
+              "path": "src/maine/verdict/metric_ui_data.cpp",
+              "sha256": "85f7e8155c4f342ea459722d725a702a53a72419d97db74fcb5e6ed0d5f85a42"
+            },
+            {
+              "path": "src/maine/verdict/ui_data.hpp",
+              "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_metric_data_bindings.asm",
+          "sha256": "66eaef47dffac19370bf68619fd411df4ba51dd937261c95d28bbeb74c6b1e8a"
+        },
+        {
+          "path": "src/maine/verdict/metric_ui_data.cpp",
+          "sha256": "9dc74eabebe2d92bcaa615634f2883134985df3106df581202886add03b023dc"
+        },
+        {
+          "path": "src/maine/verdict/ui_data.hpp",
+          "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "12d2fdf025d4979ace0b6edc3475a6ac8962c850fb6b3ef20ebc94f469644ff4",
+      "compiled_negative_control": {
+        "target_start": 71472,
+        "candidate_start": 71472,
+        "size": 156,
+        "target_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+        "candidate_sha256": "b4cf7ac64802a5c649a8862c0ee86338b5cc3daf2a9930e42edac33dc7823c7d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71472,
+          "size": 156,
+          "module": "th05/vmet_ui.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-metric-ui-data",
+        "entry_sha256": "9eb2195dc700957996609b166ebdfedfb4a1b8b64cf24541a92cecd39f570ba2",
+        "mutation": {
+          "unit": "maine-verdict-metric-ui-data",
+          "source": "src/maine/verdict/metric_ui_data.cpp",
+          "find": "\"\u6c17\u5408\u3044\"",
+          "replace": "\"\u6c17\u5408\u3048\""
+        },
+        "control_sha256": "e2047c48ba728570be339df427c99f7201a556b2aa779cee5d49554f2cffc383",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71472,
+          "candidate_start": 71472,
+          "size": 156,
+          "target_sha256": "45c21fc163e34b71486d8a5277528708b39c7177fe3356d195af6aace0c16569",
+          "candidate_sha256": "b4cf7ac64802a5c649a8862c0ee86338b5cc3daf2a9930e42edac33dc7823c7d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71472,
+            "size": 156,
+            "module": "th05/vmet_ui.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "de96ae0dc422634e0798d3dd842246507d13d98b2c14470a9241efd678ffcf2c",
+          "dependency_timestamp_normalized_sha256": "62b4b00936c76c2e915be39e4ba15ae7ed0e1aebf788bd9d5437e3ecac665a01",
+          "module_name": "th05/vmet_ui.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vmet_ui.cpp",
+            "src/maine/verdict/metric_ui_data.cpp",
+            "src/maine/verdict/ui_data.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 156,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 156,
+                "sha256": "b4cf7ac64802a5c649a8862c0ee86338b5cc3daf2a9930e42edac33dc7823c7d"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vmet_ui.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_metric_data_bindings.asm",
+            "sha256": "66eaef47dffac19370bf68619fd411df4ba51dd937261c95d28bbeb74c6b1e8a"
+          },
+          {
+            "path": "src/maine/verdict/metric_ui_data.cpp",
+            "sha256": "b231d11c57afa3697a9e395487a39c7fd2f7bbb0499f18208dd82f4b0e790f20"
+          },
+          {
+            "path": "src/maine/verdict/ui_data.hpp",
+            "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-score-ui-data",
+      "entry_sha256": "8f8346392966ceeb47d5297515279d28fc153a634df30b1c1ae458b38ec279bd",
+      "result": {
+        "id": "maine-verdict-score-ui-data",
+        "entry_sha256": "8f8346392966ceeb47d5297515279d28fc153a634df30b1c1ae458b38ec279bd",
+        "rounds": [
+          {
+            "target_start": 71634,
+            "candidate_start": 71634,
+            "size": 120,
+            "target_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+            "candidate_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71634,
+              "size": 120,
+              "module": "th05/vscoreui.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71634,
+            "candidate_start": 71634,
+            "size": 120,
+            "target_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+            "candidate_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71634,
+              "size": 120,
+              "module": "th05/vscoreui.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ba691ca32dfa4ea24cc026f50cc536cb3c51b39311313a6696d153599462cc2b",
+            "dependency_timestamp_normalized_sha256": "c7848507fa21347041f951aea641c437f3904f3b4090d4be25d24064666f88d1",
+            "module_name": "th05/vscoreui.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vscoreui.cpp",
+              "src/maine/verdict/score_ui_data.cpp",
+              "src/maine/verdict/ui_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 120,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 120,
+                  "sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "e97a96df89b187e63346df5eb23d226225afc0e7b0489643012461ff0ddfb7d4",
+            "dependency_timestamp_normalized_sha256": "c7848507fa21347041f951aea641c437f3904f3b4090d4be25d24064666f88d1",
+            "module_name": "th05/vscoreui.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vscoreui.cpp",
+              "src/maine/verdict/score_ui_data.cpp",
+              "src/maine/verdict/ui_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 120,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 120,
+                  "sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vscoreui.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vscoreui.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_score_data_bindings.asm",
+            "sha256": "f44add753be293054e69fa7eb32a4a0cfcf3a92ebffb3325fd3f0f17e0dae32d"
+          },
+          {
+            "path": "src/maine/verdict/score_ui_data.cpp",
+            "sha256": "0ab606f619287212bbb355eff4225c1083d7270078daf467d04a6ddf9ec7ed33"
+          },
+          {
+            "path": "src/maine/verdict/ui_data.hpp",
+            "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_verdict_score_data_bindings.asm",
+              "sha256": "f44add753be293054e69fa7eb32a4a0cfcf3a92ebffb3325fd3f0f17e0dae32d"
+            },
+            {
+              "path": "src/maine/verdict/score_ui_data.cpp",
+              "sha256": "6405fb4a1da450a34e83213da84da39618e01dd042050f35e5d85d0dc8e94e90"
+            },
+            {
+              "path": "src/maine/verdict/ui_data.hpp",
+              "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_verdict_score_data_bindings.asm",
+              "sha256": "f44add753be293054e69fa7eb32a4a0cfcf3a92ebffb3325fd3f0f17e0dae32d"
+            },
+            {
+              "path": "src/maine/verdict/score_ui_data.cpp",
+              "sha256": "6405fb4a1da450a34e83213da84da39618e01dd042050f35e5d85d0dc8e94e90"
+            },
+            {
+              "path": "src/maine/verdict/ui_data.hpp",
+              "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_score_data_bindings.asm",
+          "sha256": "f44add753be293054e69fa7eb32a4a0cfcf3a92ebffb3325fd3f0f17e0dae32d"
+        },
+        {
+          "path": "src/maine/verdict/score_ui_data.cpp",
+          "sha256": "0ab606f619287212bbb355eff4225c1083d7270078daf467d04a6ddf9ec7ed33"
+        },
+        {
+          "path": "src/maine/verdict/ui_data.hpp",
+          "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c29dc3a5386f7e1bc6324a6331559ed3afa042b6d0b3de31e83f5d7c266a831d",
+      "compiled_negative_control": {
+        "target_start": 71634,
+        "candidate_start": 71634,
+        "size": 120,
+        "target_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+        "candidate_sha256": "bae87f4ab4091fe6a8c1fa39821b9ab9c36f463db6a977d921dd1a323b43a7e2",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71634,
+          "size": 120,
+          "module": "th05/vscoreui.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-score-ui-data",
+        "entry_sha256": "8f8346392966ceeb47d5297515279d28fc153a634df30b1c1ae458b38ec279bd",
+        "mutation": {
+          "unit": "maine-verdict-score-ui-data",
+          "source": "src/maine/verdict/score_ui_data.cpp",
+          "find": "\"_ude.txt\"",
+          "replace": "\"_udf.txt\""
+        },
+        "control_sha256": "7de4b95f71c9a27a80a093100ed31b38a2389af9c808f931c7c753c056212499",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71634,
+          "candidate_start": 71634,
+          "size": 120,
+          "target_sha256": "63eec65d156bf2dcbd42c52ee6a2f3f4a3098caa19e717529449cedfd39999a3",
+          "candidate_sha256": "bae87f4ab4091fe6a8c1fa39821b9ab9c36f463db6a977d921dd1a323b43a7e2",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71634,
+            "size": 120,
+            "module": "th05/vscoreui.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "734635c541f7d881853f73ba2878049f3673845c225eac2bae0801da1fed3afb",
+          "dependency_timestamp_normalized_sha256": "8458453a8063cfbb56cd44346b2c3b9faddc49960c2b98d78d8471e96ebd869a",
+          "module_name": "th05/vscoreui.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vscoreui.cpp",
+            "src/maine/verdict/score_ui_data.cpp",
+            "src/maine/verdict/ui_data.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 120,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 120,
+                "sha256": "bae87f4ab4091fe6a8c1fa39821b9ab9c36f463db6a977d921dd1a323b43a7e2"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vscoreui.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_score_data_bindings.asm",
+            "sha256": "f44add753be293054e69fa7eb32a4a0cfcf3a92ebffb3325fd3f0f17e0dae32d"
+          },
+          {
+            "path": "src/maine/verdict/score_ui_data.cpp",
+            "sha256": "03f77b5b5a6bd116d25539fbbdef5bd796a8aa130c8e61fa8b85ed7740abbd37"
+          },
+          {
+            "path": "src/maine/verdict/ui_data.hpp",
+            "sha256": "bff6c204386e6357a8b861d018ae699a8af604723de723b76be801cfd6b6e020"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {

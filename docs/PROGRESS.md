@@ -14,10 +14,10 @@ complete authored ownership denominator remains under review.
 | --- | ---: | ---: | ---: | ---: |
 | MAIN bounded C++ units | 18 | 3019 | 63618 | 63689 |
 | OP decoded C++ units | 7 | 8615 | 19833 | 19838 |
-| MAINE decoded C++ units | 5 | 3219 | 12799 | 12801 |
+| MAINE decoded C++ units | 7 | 3495 | 13075 | 13077 |
 | ZUN | 0 | 0 | 0 | 0 |
 
-298 bounded C++ units pass two cold producers, raw bytes and original
+300 bounded C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,7 +27,7 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored bytes are 96250: 81397 authored CODE plus 14853
+Total authored bytes are 96526: 81397 authored CODE plus 15129
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 692 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 78 observed

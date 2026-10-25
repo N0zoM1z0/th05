@@ -1,4 +1,4 @@
-# MAINE semantic verdict UI DATA candidates
+# MAINE semantic verdict UI DATA
 
 Two new independent ordinary C++ DATA owners define readable Japanese labels,
 messages and filenames already referenced by the accepted verdict routines.
@@ -8,7 +8,7 @@ without modifying accepted headers or changing any element/pointer type. It
 contains no storage definitions. All source text is UTF-8 and both entries
 require the existing explicit CP932 staging pipeline.
 
-| Proposed owner | Original DS range | Original decoded load range | Objects | Bytes |
+| Accepted owner | Original DS range | Original decoded load range | Objects | Bytes |
 |---|---|---|---:|---:|
 | Metric/heading labels | 1620..16BC | 11730..117CC | 13 | 156 |
 | Score messages/resources/stage headings | 16C2..173A | 117D2..1184A | 12 | 120 |
@@ -50,14 +50,25 @@ objects then belong to the actual compiler's one complete DATA contribution.
 The binders supply no string values, relocations, helper instructions, inside
 padding or stack. No CODE or BSS ownership is requested.
 
-## Required first-producer checks
+## Exact acceptance
 
-These packets are uncompiled and unaccepted. Normal strict DATA replay must
-verify the actual complete MAP DATA contribution, one gapless compiler SEGDEF/
-LEDATA extent, zero CODE/BSS ownership, all raw bytes and the original empty
-ordered relocation stream. Two fresh producers and the actual compiled DATA
-mutation are required independently for each owner. Existing accepted verdict
-sources and all ten current verdict function records need no refresh.
+Both owners passed independent normal strict DATA replays. Each has two fresh
+positive producers, one complete MAP DATA contribution and one gapless compiler
+SEGDEF/LEDATA extent. Every byte matches the pinned decoded target, with an empty
+ordered relocation stream. Both compiler objects are deterministic after only
+dependency timestamp normalization. Neither source owns CODE, BSS or padding.
+
+Receipts under `.analysis/unit-replays/`:
+
+- `maine-verdict-metric-ui-data-a/receipt.json`: 156 bytes, 13 objects.
+- `maine-verdict-score-ui-data-a/receipt.json`: 120 bytes, 12 objects.
+
+Each replay reused the unchanged installed toolchain proof and compiled its own
+DATA negative. The strict imports re-read both actual MZ/MAP/OMF producers and
+canonical UTF-8/actual CP932 input identities. Existing accepted verdict sources
+and all ten current verdict function records were unchanged and not replayed.
+The 276 DATA bytes are accepted in `config/accepted_units.maine.json`; this does
+not establish packed-executable equality or the global authored denominator.
 
 The metric negative changes the readable label `気合い` to `気合え`; the score
 negative changes the real comment filename `_ude.txt` to `_udf.txt`. Each is a
@@ -68,5 +79,5 @@ byte; no escape workaround or compiler option was added.
 Private `.analysis/maine-verdict-metric-ui-data-boundary-review.json` and
 `.analysis/maine-verdict-score-ui-data-boundary-review.json` pin every complete
 object, actual native reference, accepted interface identity and source input.
-The corresponding `*-proposal.toml` files are suggestions only; no live manifest
-or ledger was edited.
+The corresponding `*-proposal.toml` files preserve the pre-build proposals; the
+live manifest and ledger now register the independently verified owners.
