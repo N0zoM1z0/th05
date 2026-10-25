@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **281 bounded C/C++ CODE/DATA units / 479 complete function occurrences**,
-**91,025 authored bytes exact**: 79,357 CODE and 11,668 initialized DATA.
-CODE is 78,665 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 91,101; 76 checked padding bytes receive
+Current acceptance: **283 bounded C/C++ CODE/DATA units / 481 complete function occurrences**,
+**91,457 authored bytes exact**: 79,789 CODE and 11,668 initialized DATA.
+CODE is 79,097 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 91,533; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 2,959 DATA;
-OP 61 / 11,218 / 8,615; MAINE 48 / 7,837 / 94.
+OP 61 / 11,218 / 8,615; MAINE 50 / 8,269 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1273,3 +1273,20 @@ independent per-function negatives are claimed. Existing lifecycle.hpp/staff.hpp
 and all accepted inputs remain unchanged. Complete20-byte particles/65-object
 pool, canonicalbackpagebyte, actual near-outputvector2_at and trueintAX return
 are retained. The preceding626-byte lifecycleupdater remains unaccepted.
+
+## MAINE rain spawn and camera transition
+
+`maine-staff-rain-scopes-b` adds432 instructions/two complete functions at
+DA36..DBE6, noNOP/table/padding. a stopped after firstproducer431; consuming
+the incremented cursor in the ordinaryif condition restores161-byte spawn.
+b has two deterministic432-byte raw-exact producers and a rejected8-to-9
+speedbias control, but its cross-function aggregate relocation order remains
+failed. The saved receipt is unchanged and never accepted as a whole.
+
+Existing saved-scope review revalidates actualMZ/MAP/OMF and accepts complete
+spawn161/update271 whose literal local ordered streams[156,80,66,49,32] and
+[263,189] both match. Projection invokes zero compilers. The shared CODE
+negative belongs to spawn; no per-update mutation is claimed. Full canonical
+particle20, Palette8/RGB3, actualbytebluefield and trueintAX update remain.
+All prior accepted source/header inputs are unchanged; hardwaretextwipeDBE6
+and the parked lifecycleupdater stay outside the claim.

@@ -2,26 +2,42 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "4cf81337efa3517fe8d1782fdd68f01087e98d946893828aee4b26f5e6ea105e",
+  "replay_receipt_sha256": "c726e8091cf01cc467ed09a33eb54e4f09a71d446b86aa1e6a95f1c066502d0c",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 55379,
-    "candidate_start": 55379,
-    "size": 483,
-    "target_sha256": "d14e8d0c93e43f38a42e90e3bc9ba1d194ec0976c550868bd11ad1ca6514566e",
-    "candidate_sha256": "1e83814d7ce38daad4f6d9eed27be6199d9b75513b3743034c75a1429fd14024",
+    "target_start": 55862,
+    "candidate_start": 55862,
+    "size": 161,
+    "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+    "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
     "raw_exact": false,
     "target_fixups": [
-      62,
-      27
+      156,
+      80,
+      66,
+      49,
+      32
     ],
     "candidate_fixups": [
-      62,
-      27
+      156,
+      80,
+      66,
+      49,
+      32
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 55862,
+      "size": 161,
+      "function_symbol": "staff_rain_spawn()",
+      "contribution_start": 55862,
+      "contribution_size": 432,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "staff_rain_update()"
+    }
   },
   "units": [
     {
@@ -15684,6 +15700,762 @@
           "-ml",
           "-DBINARY='E'",
           "th05/stforb.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-staff-rain-spawn",
+      "entry_sha256": "820018df9766b13048cd647e2bf93b508ca50e47a8c89bb5494711b720e53ad2",
+      "result": {
+        "id": "maine-staff-rain-spawn",
+        "entry_sha256": "820018df9766b13048cd647e2bf93b508ca50e47a8c89bb5494711b720e53ad2",
+        "rounds": [
+          {
+            "target_start": 55862,
+            "candidate_start": 55862,
+            "size": 161,
+            "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+            "candidate_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+            "raw_exact": true,
+            "target_fixups": [
+              156,
+              80,
+              66,
+              49,
+              32
+            ],
+            "candidate_fixups": [
+              156,
+              80,
+              66,
+              49,
+              32
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 55862,
+              "size": 161,
+              "function_symbol": "staff_rain_spawn()",
+              "contribution_start": 55862,
+              "contribution_size": 432,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_rain_update()"
+            }
+          },
+          {
+            "target_start": 55862,
+            "candidate_start": 55862,
+            "size": 161,
+            "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+            "candidate_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+            "raw_exact": true,
+            "target_fixups": [
+              156,
+              80,
+              66,
+              49,
+              32
+            ],
+            "candidate_fixups": [
+              156,
+              80,
+              66,
+              49,
+              32
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 55862,
+              "size": 161,
+              "function_symbol": "staff_rain_spawn()",
+              "contribution_start": 55862,
+              "contribution_size": 432,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_rain_update()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "c1541e68db29a6a896b7ecc04451eda7e3d1c6bd6ebb29f11c37d993e3abeade",
+            "dependency_timestamp_normalized_sha256": "cb42d3c480da5482bea15bc98efc3867036f5077401bf162c2c3abd02f20fbde",
+            "module_name": "th05/stfrain.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfrain.cpp",
+              "src/maine/staff/rain.cpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "782a6af8579ca880e63f6af551cd2965bc1b340a733adfe659e1225a88d9271d",
+            "dependency_timestamp_normalized_sha256": "cb42d3c480da5482bea15bc98efc3867036f5077401bf162c2c3abd02f20fbde",
+            "module_name": "th05/stfrain.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfrain.cpp",
+              "src/maine/staff/rain.cpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "parent/group-0/a/source",
+          "parent/group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_staff_rain_bindings.asm",
+            "sha256": "ba414ee6a955f7f615b6aa7e9a6e6b33515eb3a0a2156bcb0ae90fc93bcef083"
+          },
+          {
+            "path": "src/maine/staff/lifecycle.hpp",
+            "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+          },
+          {
+            "path": "src/maine/staff/rain.cpp",
+            "sha256": "16a63be325db7023b21af5048f57468b02b8ecba005e104a1b711513e9b2a6f9"
+          },
+          {
+            "path": "src/maine/staff/rain.hpp",
+            "sha256": "a8bbc2a57c8afe2b4642c7fe6e52aac0b4222323d76b24135cbb5acba3cb7752"
+          },
+          {
+            "path": "src/maine/staff/staff.hpp",
+            "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true,
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfrain.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfrain.cpp"
+          ]
+        ]
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_staff_rain_bindings.asm",
+          "sha256": "ba414ee6a955f7f615b6aa7e9a6e6b33515eb3a0a2156bcb0ae90fc93bcef083"
+        },
+        {
+          "path": "src/maine/staff/lifecycle.hpp",
+          "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+        },
+        {
+          "path": "src/maine/staff/rain.cpp",
+          "sha256": "16a63be325db7023b21af5048f57468b02b8ecba005e104a1b711513e9b2a6f9"
+        },
+        {
+          "path": "src/maine/staff/rain.hpp",
+          "sha256": "a8bbc2a57c8afe2b4642c7fe6e52aac0b4222323d76b24135cbb5acba3cb7752"
+        },
+        {
+          "path": "src/maine/staff/staff.hpp",
+          "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c726e8091cf01cc467ed09a33eb54e4f09a71d446b86aa1e6a95f1c066502d0c",
+      "compiled_negative_control": {
+        "target_start": 55862,
+        "candidate_start": 55862,
+        "size": 161,
+        "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+        "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
+        "raw_exact": false,
+        "target_fixups": [
+          156,
+          80,
+          66,
+          49,
+          32
+        ],
+        "candidate_fixups": [
+          156,
+          80,
+          66,
+          49,
+          32
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 55862,
+          "size": 161,
+          "function_symbol": "staff_rain_spawn()",
+          "contribution_start": 55862,
+          "contribution_size": 432,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "staff_rain_update()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-staff-rain-spawn",
+        "entry_sha256": "820018df9766b13048cd647e2bf93b508ca50e47a8c89bb5494711b720e53ad2",
+        "mutation": {
+          "unit": "maine-staff-rain-spawn",
+          "source": "src/maine/staff/rain.cpp",
+          "find": "p->speed.v = (irand() % 24) + 8;",
+          "replace": "p->speed.v = (irand() % 24) + 9;"
+        },
+        "control_sha256": "8645cb57c05ef4560afe28d0e29a01551f610a4f594cfc7da10c9e911040d1ef",
+        "producer_path": "parent/negative/source",
+        "comparison": {
+          "target_start": 55862,
+          "candidate_start": 55862,
+          "size": 161,
+          "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+          "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
+          "raw_exact": false,
+          "target_fixups": [
+            156,
+            80,
+            66,
+            49,
+            32
+          ],
+          "candidate_fixups": [
+            156,
+            80,
+            66,
+            49,
+            32
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 55862,
+            "size": 161,
+            "function_symbol": "staff_rain_spawn()",
+            "contribution_start": 55862,
+            "contribution_size": 432,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "staff_rain_update()"
+          }
+        },
+        "omf": {
+          "sha256": "c757e548fe0ffde0e846e4cec1c7040017d013ac61737d76bca4459d50815270",
+          "dependency_timestamp_normalized_sha256": "7fd6c2d5f0c896cef8a371463e8969a7b000c95b129a29b976b8cb998eba4ddd",
+          "module_name": "th05/stfrain.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stfrain.cpp",
+            "src/maine/staff/rain.cpp",
+            "src/maine/staff/rain.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/staff.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/stfrain.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-staff-rain-update",
+      "entry_sha256": "db7256f883e4d8aaf1be910dc9a04175e50dfe2bee53cc8c1c1c2644627285ed",
+      "result": {
+        "id": "maine-staff-rain-update",
+        "entry_sha256": "db7256f883e4d8aaf1be910dc9a04175e50dfe2bee53cc8c1c1c2644627285ed",
+        "rounds": [
+          {
+            "target_start": 56023,
+            "candidate_start": 56023,
+            "size": 271,
+            "target_sha256": "92f4eb5cc739832a05b1c9e92ef0f28355240ca35037ce3ef31c94e9f9a76213",
+            "candidate_sha256": "92f4eb5cc739832a05b1c9e92ef0f28355240ca35037ce3ef31c94e9f9a76213",
+            "raw_exact": true,
+            "target_fixups": [
+              263,
+              189
+            ],
+            "candidate_fixups": [
+              263,
+              189
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 56023,
+              "size": 271,
+              "function_symbol": "staff_rain_update()",
+              "contribution_start": 55862,
+              "contribution_size": 432,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 56023,
+            "candidate_start": 56023,
+            "size": 271,
+            "target_sha256": "92f4eb5cc739832a05b1c9e92ef0f28355240ca35037ce3ef31c94e9f9a76213",
+            "candidate_sha256": "92f4eb5cc739832a05b1c9e92ef0f28355240ca35037ce3ef31c94e9f9a76213",
+            "raw_exact": true,
+            "target_fixups": [
+              263,
+              189
+            ],
+            "candidate_fixups": [
+              263,
+              189
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 56023,
+              "size": 271,
+              "function_symbol": "staff_rain_update()",
+              "contribution_start": 55862,
+              "contribution_size": 432,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "c1541e68db29a6a896b7ecc04451eda7e3d1c6bd6ebb29f11c37d993e3abeade",
+            "dependency_timestamp_normalized_sha256": "cb42d3c480da5482bea15bc98efc3867036f5077401bf162c2c3abd02f20fbde",
+            "module_name": "th05/stfrain.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfrain.cpp",
+              "src/maine/staff/rain.cpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "782a6af8579ca880e63f6af551cd2965bc1b340a733adfe659e1225a88d9271d",
+            "dependency_timestamp_normalized_sha256": "cb42d3c480da5482bea15bc98efc3867036f5077401bf162c2c3abd02f20fbde",
+            "module_name": "th05/stfrain.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stfrain.cpp",
+              "src/maine/staff/rain.cpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "parent/group-0/a/source",
+          "parent/group-0/b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_staff_rain_bindings.asm",
+            "sha256": "ba414ee6a955f7f615b6aa7e9a6e6b33515eb3a0a2156bcb0ae90fc93bcef083"
+          },
+          {
+            "path": "src/maine/staff/lifecycle.hpp",
+            "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+          },
+          {
+            "path": "src/maine/staff/rain.cpp",
+            "sha256": "16a63be325db7023b21af5048f57468b02b8ecba005e104a1b711513e9b2a6f9"
+          },
+          {
+            "path": "src/maine/staff/rain.hpp",
+            "sha256": "a8bbc2a57c8afe2b4642c7fe6e52aac0b4222323d76b24135cbb5acba3cb7752"
+          },
+          {
+            "path": "src/maine/staff/staff.hpp",
+            "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true,
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfrain.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stfrain.cpp"
+          ]
+        ]
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_staff_rain_bindings.asm",
+          "sha256": "ba414ee6a955f7f615b6aa7e9a6e6b33515eb3a0a2156bcb0ae90fc93bcef083"
+        },
+        {
+          "path": "src/maine/staff/lifecycle.hpp",
+          "sha256": "46b6927406ee37476e7e89b95e367b384bd77af2cc76d2d6753a6fe6706cd126"
+        },
+        {
+          "path": "src/maine/staff/rain.cpp",
+          "sha256": "16a63be325db7023b21af5048f57468b02b8ecba005e104a1b711513e9b2a6f9"
+        },
+        {
+          "path": "src/maine/staff/rain.hpp",
+          "sha256": "a8bbc2a57c8afe2b4642c7fe6e52aac0b4222323d76b24135cbb5acba3cb7752"
+        },
+        {
+          "path": "src/maine/staff/staff.hpp",
+          "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c726e8091cf01cc467ed09a33eb54e4f09a71d446b86aa1e6a95f1c066502d0c",
+      "compiled_negative_control": {
+        "target_start": 55862,
+        "candidate_start": 55862,
+        "size": 161,
+        "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+        "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
+        "raw_exact": false,
+        "target_fixups": [
+          156,
+          80,
+          66,
+          49,
+          32
+        ],
+        "candidate_fixups": [
+          156,
+          80,
+          66,
+          49,
+          32
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 55862,
+          "size": 161,
+          "function_symbol": "staff_rain_spawn()",
+          "contribution_start": 55862,
+          "contribution_size": 432,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "staff_rain_update()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-staff-rain-spawn",
+        "entry_sha256": "820018df9766b13048cd647e2bf93b508ca50e47a8c89bb5494711b720e53ad2",
+        "mutation": {
+          "unit": "maine-staff-rain-spawn",
+          "source": "src/maine/staff/rain.cpp",
+          "find": "p->speed.v = (irand() % 24) + 8;",
+          "replace": "p->speed.v = (irand() % 24) + 9;"
+        },
+        "control_sha256": "8645cb57c05ef4560afe28d0e29a01551f610a4f594cfc7da10c9e911040d1ef",
+        "producer_path": "parent/negative/source",
+        "comparison": {
+          "target_start": 55862,
+          "candidate_start": 55862,
+          "size": 161,
+          "target_sha256": "d288be9b2d961826299ffa4111b5d02b8100c91161e75c9c4d0b7edee0df4408",
+          "candidate_sha256": "d5c8cad6b2e3035ea09d0d1a1e4a85b18f60d6174b3dc701e3d05c3af7b4991d",
+          "raw_exact": false,
+          "target_fixups": [
+            156,
+            80,
+            66,
+            49,
+            32
+          ],
+          "candidate_fixups": [
+            156,
+            80,
+            66,
+            49,
+            32
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 55862,
+            "size": 161,
+            "function_symbol": "staff_rain_spawn()",
+            "contribution_start": 55862,
+            "contribution_size": 432,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "staff_rain_update()"
+          }
+        },
+        "omf": {
+          "sha256": "c757e548fe0ffde0e846e4cec1c7040017d013ac61737d76bca4459d50815270",
+          "dependency_timestamp_normalized_sha256": "7fd6c2d5f0c896cef8a371463e8969a7b000c95b129a29b976b8cb998eba4ddd",
+          "module_name": "th05/stfrain.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stfrain.cpp",
+            "src/maine/staff/rain.cpp",
+            "src/maine/staff/rain.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/staff.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/stfrain.cpp"
         ]
       },
       "target_view": {

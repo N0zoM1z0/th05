@@ -656,3 +656,38 @@ unit = "maine-staff-orb-opening"
 source = "src/maine/staff/orb_opening.cpp"
 find = "p->speed.v = 3 * 16;"
 replace = "p->speed.v = 4 * 16;"
+
+[[units]]
+id = "maine-staff-rain-spawn"
+source = "src/maine/staff/rain.cpp"
+module = "th05/stfrain.cpp"
+segment = "STAFF_RAIN_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 55862
+size = 161
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_staff_rain_bindings.asm"
+function_symbol = "staff_rain_spawn()"
+function_end_symbol = "staff_rain_update()"
+
+[[units]]
+id = "maine-staff-rain-update"
+source = "src/maine/staff/rain.cpp"
+module = "th05/stfrain.cpp"
+segment = "STAFF_RAIN_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 56023
+size = 271
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_staff_rain_bindings.asm"
+function_symbol = "staff_rain_update()"
+
+[[controls]]
+unit = "maine-staff-rain-spawn"
+source = "src/maine/staff/rain.cpp"
+find = "p->speed.v = (irand() % 24) + 8;"
+replace = "p->speed.v = (irand() % 24) + 9;"
