@@ -2,24 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "9f9f6633b576ac47edc9ce2dcb9bda241d1c32f78a14e302d4ef19cf4713a8af",
+  "replay_receipt_sha256": "66a942e7f608b20a5e7628ba663eea3ae02933ba33bef031b4bc99f72aac32d6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 76484,
-    "candidate_start": 76484,
-    "size": 233,
-    "target_sha256": "7c4eb6d7c76a9d4bdb61dd70c4ea24ec7f92d19c9940e1264e6617078bfdbbb9",
-    "candidate_sha256": "a7dba19556468e9f6e6c1723e7d8c618559e067fb3eb848f0861d3f38990827b",
+    "target_start": 133762,
+    "candidate_start": 133762,
+    "size": 347,
+    "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+    "candidate_sha256": "6f15a64517ba59fabe8a50a7df2440495153a88bb2b2bbd06d592239547be45e",
     "raw_exact": false,
-    "target_fixups": [
-      98
-    ],
-    "candidate_fixups": [
-      98
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 133762,
+      "size": 347,
+      "module": "th05/res_bank.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -57679,6 +57683,903 @@
           "-ml",
           "-DBINARY='M'",
           "th05/st_state.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-bomb-runtime",
+      "entry_sha256": "e29c1578dfc8651ab1ac3ed35842dff57a70422854d8323a6d82b8ccdb2b2261",
+      "result": {
+        "id": "main-bomb-runtime",
+        "entry_sha256": "e29c1578dfc8651ab1ac3ed35842dff57a70422854d8323a6d82b8ccdb2b2261",
+        "rounds": [
+          {
+            "target_start": 64080,
+            "candidate_start": 64080,
+            "size": 244,
+            "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+            "candidate_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+            "raw_exact": true,
+            "target_fixups": [
+              143
+            ],
+            "candidate_fixups": [
+              143
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 64080,
+            "candidate_start": 64080,
+            "size": 244,
+            "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+            "candidate_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+            "raw_exact": true,
+            "target_fixups": [
+              143
+            ],
+            "candidate_fixups": [
+              143
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "b6138b0bccd55af669b54c2d46d14655d446c7e7097ae64264a037d0874fca6b",
+            "dependency_timestamp_normalized_sha256": "2f492d380fc8a1780d69fec6bd91dd2a569712e1d73abd64a39f3a84b54ae778",
+            "module_name": "th05/bomb_rt.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bomb_rt.cpp",
+              "src/main/player/bomb_runtime.cpp",
+              "src/main/player/bomb_runtime.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "5ae312b8dabb23cf73e0224ff0cf80b50e385c6c8c693a76b7b3a03fcea488fe",
+            "dependency_timestamp_normalized_sha256": "2f492d380fc8a1780d69fec6bd91dd2a569712e1d73abd64a39f3a84b54ae778",
+            "module_name": "th05/bomb_rt.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bomb_rt.cpp",
+              "src/main/player/bomb_runtime.cpp",
+              "src/main/player/bomb_runtime.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bomb_rt.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bomb_rt.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/bomb_runtime_bindings.asm",
+            "sha256": "9c36caba4231999c5c1fd3ff4a9b9a29b689ab16d5cc826fb7cc8e50c9a5db0a"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/bomb_runtime.cpp",
+            "sha256": "adad29c96675f5fdeb3e0c29ece051f07a2db69858b96229fd0af9a9e1167e26"
+          },
+          {
+            "path": "src/main/player/bomb_runtime.hpp",
+            "sha256": "c163d4ac050ebc95310d591b7971327761e82a19cd0e7fac40b6f711f279401f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/bomb_runtime_bindings.asm",
+          "sha256": "9c36caba4231999c5c1fd3ff4a9b9a29b689ab16d5cc826fb7cc8e50c9a5db0a"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/bomb_runtime.cpp",
+          "sha256": "adad29c96675f5fdeb3e0c29ece051f07a2db69858b96229fd0af9a9e1167e26"
+        },
+        {
+          "path": "src/main/player/bomb_runtime.hpp",
+          "sha256": "c163d4ac050ebc95310d591b7971327761e82a19cd0e7fac40b6f711f279401f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "fcedb54834b84e71d3054082abaa9179e06da947f8c2a6889788937b75b41a84",
+      "compiled_negative_control": {
+        "target_start": 64080,
+        "candidate_start": 64080,
+        "size": 244,
+        "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+        "candidate_sha256": "5737ee100c06617179da583353779577044db78694fb55f02887bcbe1b08b9cf",
+        "raw_exact": false,
+        "target_fixups": [
+          143
+        ],
+        "candidate_fixups": [
+          143
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bomb-runtime",
+        "entry_sha256": "e29c1578dfc8651ab1ac3ed35842dff57a70422854d8323a6d82b8ccdb2b2261",
+        "mutation": {
+          "id": "bomb-reimu-invincibility192-to193",
+          "unit": "main-bomb-runtime",
+          "source": "src/main/player/bomb_runtime.cpp",
+          "find": "select_for_playchar(192, 160, 144, 224)",
+          "replace": "select_for_playchar(193, 160, 144, 224)"
+        },
+        "control_sha256": "241e1f3bc07da725558f96196b1d85c2e74c7f8a3cae68473f07882a63d5c9dd",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 64080,
+          "candidate_start": 64080,
+          "size": 244,
+          "target_sha256": "02fed42d2f745d0914bbd8a160b3e915eb24a336c3e60f8a478296cca4981465",
+          "candidate_sha256": "5737ee100c06617179da583353779577044db78694fb55f02887bcbe1b08b9cf",
+          "raw_exact": false,
+          "target_fixups": [
+            143
+          ],
+          "candidate_fixups": [
+            143
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "ccad0d158452d4453959718608d4b23b40e0c656ef52dd2435bce6499fd0a283",
+          "dependency_timestamp_normalized_sha256": "839cdc0b34c09bdf0173bda754a777e45364d543ff188c1d7214c4ef37c7edf3",
+          "module_name": "th05/bomb_rt.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bomb_rt.cpp",
+            "src/main/player/bomb_runtime.cpp",
+            "src/main/player/bomb_runtime.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bomb_rt.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-yuki-title-bank-c",
+      "entry_sha256": "07deafce21c0cc89f3ba957fdb4594245555740d3a42b9d0385aa0c03c5bbc56",
+      "result": {
+        "id": "main-mai-yuki-title-bank-c",
+        "entry_sha256": "07deafce21c0cc89f3ba957fdb4594245555740d3a42b9d0385aa0c03c5bbc56",
+        "rounds": [
+          {
+            "target_start": 140006,
+            "candidate_start": 140006,
+            "size": 78,
+            "target_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+            "candidate_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140006,
+              "size": 78,
+              "module": "th05/my_tbank.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140006,
+            "candidate_start": 140006,
+            "size": 78,
+            "target_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+            "candidate_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140006,
+              "size": 78,
+              "module": "th05/my_tbank.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6c3f9dc6c0a725c44de23483a7f0cc1b00e737cd894a217c3bcda8a0a526a7dc",
+            "dependency_timestamp_normalized_sha256": "faf3b5a5c19bada3a4c27c5b6d5ab3115c28492deb6e85ef647edf1dd14f8e21",
+            "module_name": "th05/my_tbank.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_tbank.c",
+              "src/main/boss/mai_yuki/title_bank.c",
+              "src/main/boss/mai_yuki/title_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 78,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 78,
+                  "sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "558126e10cf824e6a9f6eefd77301e9815a69740e18424940067f27e6523b190",
+            "dependency_timestamp_normalized_sha256": "faf3b5a5c19bada3a4c27c5b6d5ab3115c28492deb6e85ef647edf1dd14f8e21",
+            "module_name": "th05/my_tbank.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_tbank.c",
+              "src/main/boss/mai_yuki/title_bank.c",
+              "src/main/boss/mai_yuki/title_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 78,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 78,
+                  "sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_tbank.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_tbank.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_title_bank_bindings.asm",
+            "sha256": "1d033d56aac4ff219c8d9335754fabc74159ed42cfddfab0b75a1b83da0f6d1b"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/title_bank.c",
+            "sha256": "2038d2f8d6ba4b18e87fe460e9fd59c4e5fcd4191a977e2dbdee2350fd412fb1"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/title_bank_c.h",
+            "sha256": "70cb1fb78cfb5027bbfd938356bbd6f67a85b51c050c51a50dc03464250e2ac0"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/mai_yuki_title_bank_bindings.asm",
+              "sha256": "1d033d56aac4ff219c8d9335754fabc74159ed42cfddfab0b75a1b83da0f6d1b"
+            },
+            {
+              "path": "src/main/boss/mai_yuki/title_bank.c",
+              "sha256": "e18364eab5c8e31e61bd2495f1ed264eb3a2ccfa89dcd0e6e2ceb51db6ee457c"
+            },
+            {
+              "path": "src/main/boss/mai_yuki/title_bank_c.h",
+              "sha256": "70cb1fb78cfb5027bbfd938356bbd6f67a85b51c050c51a50dc03464250e2ac0"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/mai_yuki_title_bank_bindings.asm",
+              "sha256": "1d033d56aac4ff219c8d9335754fabc74159ed42cfddfab0b75a1b83da0f6d1b"
+            },
+            {
+              "path": "src/main/boss/mai_yuki/title_bank.c",
+              "sha256": "e18364eab5c8e31e61bd2495f1ed264eb3a2ccfa89dcd0e6e2ceb51db6ee457c"
+            },
+            {
+              "path": "src/main/boss/mai_yuki/title_bank_c.h",
+              "sha256": "70cb1fb78cfb5027bbfd938356bbd6f67a85b51c050c51a50dc03464250e2ac0"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_yuki_title_bank_bindings.asm",
+          "sha256": "1d033d56aac4ff219c8d9335754fabc74159ed42cfddfab0b75a1b83da0f6d1b"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/title_bank.c",
+          "sha256": "2038d2f8d6ba4b18e87fe460e9fd59c4e5fcd4191a977e2dbdee2350fd412fb1"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/title_bank_c.h",
+          "sha256": "70cb1fb78cfb5027bbfd938356bbd6f67a85b51c050c51a50dc03464250e2ac0"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "550238fb2242fc7f5a1097d99813d081aa7cc4ebf9e5b34ca125688ad7aaab74",
+      "compiled_negative_control": {
+        "target_start": 140006,
+        "candidate_start": 140006,
+        "size": 78,
+        "target_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+        "candidate_sha256": "267eea74db9a5f406ee31187a9a4c67f91623e207b40a6a667a50e889d2d2728",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140006,
+          "size": 78,
+          "module": "th05/my_tbank.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-mai-yuki-title-bank-c",
+        "entry_sha256": "07deafce21c0cc89f3ba957fdb4594245555740d3a42b9d0385aa0c03c5bbc56",
+        "mutation": {
+          "unit": "main-mai-yuki-title-bank-c",
+          "source": "src/main/boss/mai_yuki/title_bank.c",
+          "find": "\u88cf\u5207\u308a\u306e\u5c11\u5973\u3000\uff5e Judas Kiss",
+          "replace": "\u88cf\u5207\u308a\u306e\u9b54\u5973\u3000\uff5e Judas Kiss"
+        },
+        "control_sha256": "618d781a54b35d7dd8a31bfc3fd7a81a064119c69739b03f484933c55f9dfa6d",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140006,
+          "candidate_start": 140006,
+          "size": 78,
+          "target_sha256": "3e940911912a84dff7864e26bc5b927776e2d8a4532c1af97bf904948b1ffe6b",
+          "candidate_sha256": "267eea74db9a5f406ee31187a9a4c67f91623e207b40a6a667a50e889d2d2728",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140006,
+            "size": 78,
+            "module": "th05/my_tbank.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "9dfd2304be66fa6d6051853001a560a3fd05b3f15de6e3f0d0fdfedfde60127c",
+          "dependency_timestamp_normalized_sha256": "b69b19968e3dbd6efb746b0a93a2e4af686c402553c6d5c8eb00e11a17ea6114",
+          "module_name": "th05/my_tbank.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/my_tbank.c",
+            "src/main/boss/mai_yuki/title_bank.c",
+            "src/main/boss/mai_yuki/title_bank_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 78,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 78,
+                "sha256": "267eea74db9a5f406ee31187a9a4c67f91623e207b40a6a667a50e889d2d2728"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/my_tbank.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_title_bank_bindings.asm",
+            "sha256": "1d033d56aac4ff219c8d9335754fabc74159ed42cfddfab0b75a1b83da0f6d1b"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/title_bank.c",
+            "sha256": "b4db326a5153141171c2b812dfe1b3a7b6a46a3bdb6cefe23ee3620645c4faa4"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/title_bank_c.h",
+            "sha256": "70cb1fb78cfb5027bbfd938356bbd6f67a85b51c050c51a50dc03464250e2ac0"
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-resource-filename-bank-c",
+      "entry_sha256": "d10d93cba82f3747ff021c79d5adc0d0f4df93bfef9f9fd08f1251e98255d4db",
+      "result": {
+        "id": "main-resource-filename-bank-c",
+        "entry_sha256": "d10d93cba82f3747ff021c79d5adc0d0f4df93bfef9f9fd08f1251e98255d4db",
+        "rounds": [
+          {
+            "target_start": 133762,
+            "candidate_start": 133762,
+            "size": 347,
+            "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+            "candidate_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133762,
+              "size": 347,
+              "module": "th05/res_bank.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133762,
+            "candidate_start": 133762,
+            "size": 347,
+            "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+            "candidate_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133762,
+              "size": 347,
+              "module": "th05/res_bank.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "89cdc01fae5a6c78a4388f4d2efc1efe7700f32db31225157d23f4b5aa611c35",
+            "dependency_timestamp_normalized_sha256": "82414b4a1cce74fd6e12f76ebf160edfc0027ed2dacd6a781d38da22a4b99ab6",
+            "module_name": "th05/res_bank.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/res_bank.c",
+              "src/main/resources/resource_bank.c",
+              "src/main/resources/resource_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 347,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 347,
+                  "sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "e1ddb9a1bf46dfc0d6c55ee6c02da4404cc9cc94f192701e9612fb310c91394c",
+            "dependency_timestamp_normalized_sha256": "82414b4a1cce74fd6e12f76ebf160edfc0027ed2dacd6a781d38da22a4b99ab6",
+            "module_name": "th05/res_bank.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/res_bank.c",
+              "src/main/resources/resource_bank.c",
+              "src/main/resources/resource_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 347,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 347,
+                  "sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/res_bank.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/res_bank.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_resource_bank_bindings.asm",
+            "sha256": "b231c8d1660554a75cfc435e60cd57a06b9dfae2f041030c2a3615e2f49ac359"
+          },
+          {
+            "path": "src/main/resources/resource_bank.c",
+            "sha256": "57ba6e5706319e999e16e8fe804bd2d8efb83ed8a94d51d5f4dfa0c37a98d7df"
+          },
+          {
+            "path": "src/main/resources/resource_bank_c.h",
+            "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/main_resource_bank_bindings.asm",
+              "sha256": "b231c8d1660554a75cfc435e60cd57a06b9dfae2f041030c2a3615e2f49ac359"
+            },
+            {
+              "path": "src/main/resources/resource_bank.c",
+              "sha256": "22cf03cda11bd6dc928db8c9343dc736ee3299d2bc4c61e456dd56fb3463f1f9"
+            },
+            {
+              "path": "src/main/resources/resource_bank_c.h",
+              "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/main_resource_bank_bindings.asm",
+              "sha256": "b231c8d1660554a75cfc435e60cd57a06b9dfae2f041030c2a3615e2f49ac359"
+            },
+            {
+              "path": "src/main/resources/resource_bank.c",
+              "sha256": "22cf03cda11bd6dc928db8c9343dc736ee3299d2bc4c61e456dd56fb3463f1f9"
+            },
+            {
+              "path": "src/main/resources/resource_bank_c.h",
+              "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_resource_bank_bindings.asm",
+          "sha256": "b231c8d1660554a75cfc435e60cd57a06b9dfae2f041030c2a3615e2f49ac359"
+        },
+        {
+          "path": "src/main/resources/resource_bank.c",
+          "sha256": "57ba6e5706319e999e16e8fe804bd2d8efb83ed8a94d51d5f4dfa0c37a98d7df"
+        },
+        {
+          "path": "src/main/resources/resource_bank_c.h",
+          "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "66a942e7f608b20a5e7628ba663eea3ae02933ba33bef031b4bc99f72aac32d6",
+      "compiled_negative_control": {
+        "target_start": 133762,
+        "candidate_start": 133762,
+        "size": 347,
+        "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+        "candidate_sha256": "6f15a64517ba59fabe8a50a7df2440495153a88bb2b2bbd06d592239547be45e",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133762,
+          "size": 347,
+          "module": "th05/res_bank.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-resource-filename-bank-c",
+        "entry_sha256": "d10d93cba82f3747ff021c79d5adc0d0f4df93bfef9f9fd08f1251e98255d4db",
+        "mutation": {
+          "unit": "main-resource-filename-bank-c",
+          "source": "src/main/resources/resource_bank.c",
+          "find": "\"st06.mpn\"",
+          "replace": "\"st07.mpn\""
+        },
+        "control_sha256": "abf8b8dbd3e72800cd9ab1031ab92dac8655dff24a5fd3ff849449ea85ecfda8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133762,
+          "candidate_start": 133762,
+          "size": 347,
+          "target_sha256": "fbe630e80fbdada968d60c6eaa94a266922e1bc3abb099611e9a16a8b40fd6ce",
+          "candidate_sha256": "6f15a64517ba59fabe8a50a7df2440495153a88bb2b2bbd06d592239547be45e",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133762,
+            "size": 347,
+            "module": "th05/res_bank.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "147861d8bab9669af148098e0d4175e308fc3109fbe491e278a98ee86eb3b135",
+          "dependency_timestamp_normalized_sha256": "f0f1a5a0dede1c8485d19cef885812eb4a6e7191f6988a5609d9eebcf865d473",
+          "module_name": "th05/res_bank.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/res_bank.c",
+            "src/main/resources/resource_bank.c",
+            "src/main/resources/resource_bank_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 347,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 347,
+                "sha256": "6f15a64517ba59fabe8a50a7df2440495153a88bb2b2bbd06d592239547be45e"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/res_bank.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/main_resource_bank_bindings.asm",
+            "sha256": "b231c8d1660554a75cfc435e60cd57a06b9dfae2f041030c2a3615e2f49ac359"
+          },
+          {
+            "path": "src/main/resources/resource_bank.c",
+            "sha256": "b9f68e4a655656c754e614d5da9aea27162a959a565149ba4964e60eada7fda5"
+          },
+          {
+            "path": "src/main/resources/resource_bank_c.h",
+            "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+          }
         ]
       },
       "receipt_aggregate_pass": true

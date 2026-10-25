@@ -13,13 +13,13 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **450 complete C++ functions / 72,137 authored CODE bytes**
+The first **454 complete C++ functions / 72,376 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
-fixups and compiled controls. Separately, **9,890 initialized semantic DATA
+fixups and compiled controls. Separately, **10,315 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored bytes exact are
-**82,027**: 71,479 instruction, 658 compiler switch-table
-and 9,890 initialized DATA bytes. Complete compared extents contain
-82,095 bytes, including 68 excluded padding bytes. The oracle
+**82,691**: 71,718 instruction, 658 compiler switch-table
+and 10,315 initialized DATA bytes. Complete compared extents contain
+82,764 bytes, including 73 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 

@@ -31,6 +31,8 @@ def unit_extent_kind(entry: dict) -> str:
     if kind not in ("code", "initialized-data"):
         raise ValueError("only CODE or initialized semantic DATA extents are supported")
     if kind == "code":
+        if entry.get("origin") == "compiler-generated-c-semantic-data":
+            raise ValueError("C semantic initializers require initialized DATA, not CODE")
         return kind
     if type(entry.get("size")) is not int or entry["size"] <= 0:
         raise ValueError("initialized DATA requires a positive complete extent size")
@@ -62,12 +64,20 @@ def unit_extent_kind(entry: dict) -> str:
     if entry.get("origin") not in (
         "compiler-generated-cxx",
         "compiler-generated-cxx-semantic-data",
+        "compiler-generated-c-semantic-data",
         "compiler-generated-cxx-dos-intrinsics",
         "compiler-generated-cxx-hardware-register-intrinsics",
     ):
         raise ValueError(
-            "DATA must come from a maintained natural C++ initializer producer"
+            "DATA must come from a maintained natural C/C++ initializer producer"
         )
+    if entry.get("origin") == "compiler-generated-c-semantic-data":
+        if any(
+            not isinstance(entry.get(key), str)
+            or Path(entry[key]).suffix.casefold() != ".c"
+            for key in ("source", "module")
+        ):
+            raise ValueError("C DATA requires an explicit .c source and .c compiler wrapper")
     return kind
 
 

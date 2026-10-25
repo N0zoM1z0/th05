@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **249 bounded C++ CODE/DATA units / 450 complete function occurrences**,
-**82,027 authored bytes exact**: 72,137 CODE and 9,890 initialized DATA.
-CODE is 71,479 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 82,095; 68 checked padding bytes receive
-no credit. MAIN has 364 functions / 59,092 CODE / 1,232 DATA;
+Current acceptance: **252 bounded C/C++ CODE/DATA units / 454 complete function occurrences**,
+**82,691 authored bytes exact**: 72,376 CODE and 10,315 initialized DATA.
+CODE is 71,718 instruction plus 658 semantic compiler-table bytes.
+Complete compared extents total 82,764; 73 checked padding bytes receive
+no credit. MAIN has 368 functions / 59,331 CODE / 1,657 DATA;
 OP 59 / 9,879 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -93,15 +93,17 @@ not contribute C++ credit or establish complete outer ZUN equality.
 
 `resources/ownership.json` covers all 319,268 observed payload/COM bytes.
 Every unclassified interval remains unknown. Reviewed third-party ownership
-covers31 complete CL.LIB CODE contributions/2,901 bytes and20 complete Master
-procedures/376 bytes, totaling3,277. CL uses pinned native OMF/FIXUPP evidence
-and explicit member decisions in `config/reviewed_vendor_units.json`. Master
+covers149 complete CL.LIB CODE contributions/47,479 bytes and20 complete Master
+procedures/376 bytes, totaling47,855. CL uses pinned native OMF/FIXUPP evidence
+and explicit member decisions in `config/reviewed_vendor_units.json` plus its
+`.op.json` and `.maine.json` counterparts. OP63/23,708 and MAINE55/20,870 use
+their actual retained decoded targets and separate explicit decisions. Master
 uses independently pinned original source, actual macro context, complete
 OMF/MAP/MZ and ordered-fixup equality, with the separate explicit decision in
 `config/reviewed_master_procedures.json`. Its376 bytes include9 library-owned
-padding bytes and grant no authored credit. Two CL members with unwritten CODE,
+padding bytes and grant no authored credit. Every deferred CL member,
 all other Master procedures and every surrounding gap remain unknown.
-Both reviewers have `--structural-check` for public metadata and `--check` for
+The reviewers have `--structural-check` for public metadata and `--check` for
 actual retained private evidence, with zero compilation. Regenerate inventory
 using `scripts/ownership.py --write`; add `--verify-targets` to replay native
 vendor/target evidence without decoding or compiling. The global denominator
@@ -127,10 +129,11 @@ The actual OMF DATA SEGDEF must have complete nonoverlapping LEDATA coverage;
 BSS, assets, CODE tables and unproved transformations are rejected. Each DATA
 unit requires its own compiled DATA mutation; a CODE-only change cannot prove
 it. Focus one DATA unit per replay; positives sharing a TU still compile once.
-Current accepted DATA: OP setup 1,075 bytes, main menu 1,089, music 6,217,
+The earlier8,857-byte DATA milestone included OP setup1,075, main menu1,089, music6,217,
 title 154, character selection 8, score viewer 53 and configuration 19; MAIN
 stage setup 189 and Boss drop types 10; MAINE entry filenames/pointer 43.
-Total DATA 8,857 is reported separately from CODE. Five new
+Current DATA totals10,315: MAIN1,657, OP8,615 and MAINE43, including425 explicit
+C initializer bytes separately classified from9,890 C++ DATA. Five original
 OP DATA owners reuse their two archived, revalidated actual CODE producers and
 compile only one fresh DATA negative each. MAIN stage uses a fresh combined
 CODE/DATA replay because its older CODE evidence lacked saved actual argv.
@@ -999,3 +1002,33 @@ The changes were prepared in an isolated worktree; shared headers used by
 MAINE remain byte-identical. No unrelated OP/MAIN/MAINE unit was cold-replayed.
 The original mixed1411-byte viewer receipt remains unchanged, with its old
 menu-order failure preserved; only the new standalone312 receipt resolves it.
+
+## Shared bomb runtime
+
+`main-bomb-runtime-a` adds four complete functions /244 compared bytes:
+reset16, player-bomb151, play-character tile wrapper19 and Dream decay58.
+Five checked far-call relaxation NOPs receive no credit, leaving239 authored
+instructions. Two fresh producers, original ordered fixup143 and the coherent
+owner's Reimu-invincibility192-to193 mutation pass. That one control covers the
+whole cohort; no independent Dream-decay mutation is claimed. All samecodeseg
+annotations name verified foreign callees, with their real far signatures.
+
+## C static resource models and reviewed runtime ownership
+
+`main-mai-yuki-title-bank-c-a` and `main-resource-filename-bank-c-a` add78/347
+initialized DATA bytes. Their explicit C field banks retain all const filenames,
+mutable titles and mutable ST00 state, with actual offsets and complete raw
+equality. Each has two fresh producers and its own mutation. They neither
+authenticate historical structs nor accept their still-open caller CODE.
+The preceding C++ arrays merged duplicate filenames or reordered const objects;
+the C++ aggregate draft failed before an object because this compiler requires
+constructors for const array members. Those artifacts remain private. The C
+producers preserve qualifiers and need no changed compiler flags or constructor.
+
+The additive CL context verifier preserves the frozen MAIN reviewer and uses
+real decoded-image identities for OP/MAINE. After native revalidation and peer
+schema review, explicit decisions adopt only63/55 complete library contributions
+(44,578 bytes). Unsupported members remain unknown. This changes third-party
+ownership only: authored credit and the still-null global denominator do not
+increase. Public structural checks require no game or private cache; full native
+inventory verification rereads all actual library/link/target evidence.

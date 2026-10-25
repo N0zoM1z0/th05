@@ -73,3 +73,12 @@ The separate background-free50 candidate has a strict ordered-fixup blocker;
 the new exit source does not import either implementation. Native details and
 current acceptance-overlap checks are in
 `.analysis/op-remaining-native-review.json`.
+
+The same immutable cleanup CPP/header subsequently passes independently in
+`main-game-exit-a` and `maine-game-exit-a`, and both complete 72-byte owners
+are imported. MAIN uses the real `14AB:034C` entry (`14DFC..14E44`);
+MAINE uses `0E80:043C` (`EC3C..EC84`). Each artifact has its own outside-only
+binder, two fresh raw/ordered-fixup producers and its own access-page 1-to-0
+compiled negative. Both retain the nine ordered offsets listed above and
+contain no NOP padding. Neither replay changes the accepted OP source or
+transfers OP evidence to another artifact.

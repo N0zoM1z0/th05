@@ -63,13 +63,21 @@ including the assembler input alias. Encoding never changes compared target
 bytes or transfers credit to source literals without a complete raw scope.
 
 Initialized semantic DATA is an explicit unit opt-in:
-`extent_kind = "initialized-data"`, `functions = 0`, a natural C++ producer
+`extent_kind = "initialized-data"`, `functions = 0`, a natural C/C++ producer
 origin, and reviewed `data_semantics` roles. Supported roles are `state`,
 `filenames`, `ui-text`, `function-pointers`, `string-pointers` and
 `semantic-tables`. These declarations require a source ownership review;
 labels alone do not prove that an asset array is authored semantic DATA.
 Asset payloads, BSS, CODE switch tables and function-scoped slices cannot use
 this lane. Historical units default to CODE without changing their identities.
+
+Explicit C static initializers use `origin = "compiler-generated-c-semantic-data"`
+with both a `.c` source and `.c` compiler wrapper. This origin cannot claim CODE
+or functions. The pinned driver selects C through the wrapper extension, with
+unchanged compiler flags; producer guards reject accidental C++ mode. C DATA
+receives a separate ownership kind and the same whole-contribution, two-producer,
+raw-byte, ordered-fixup and own compiled-mutation gates. A semantic field-bank
+model does not authenticate a historical struct or complete caller integration.
 
 A DATA unit must cover one complete actual MAP `C=DATA` contribution, backed
 by one real compiler DATA SEGDEF with every byte supplied exactly once by

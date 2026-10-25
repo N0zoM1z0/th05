@@ -3724,3 +3724,69 @@ unit = "main-stage-state-init"
 source = "src/main/runtime/stage_state_init.cpp"
 find = "gather_template.ring_points = 8;"
 replace = "gather_template.ring_points = 7;"
+
+[[units]]
+id = "main-bomb-runtime"
+source = "src/main/player/bomb_runtime.cpp"
+module = "th05/bomb_rt.cpp"
+segment = "BOMB_RUNTIME_TEXT"
+wrapper_options = "-zCBOMB_RUNTIME_TEXT -zPmain_01"
+bindings_source = "probes/units/bomb_runtime_bindings.asm"
+target_start = 64080
+size = 244
+functions = 4
+origin = "compiler-generated-cxx"
+alignment_offsets = [77, 104, 124, 160, 237]
+
+[[controls]]
+id = "bomb-reimu-invincibility192-to193"
+unit = "main-bomb-runtime"
+source = "src/main/player/bomb_runtime.cpp"
+find = "select_for_playchar(192, 160, 144, 224)"
+replace = "select_for_playchar(193, 160, 144, 224)"
+
+[[units]]
+id = "main-mai-yuki-title-bank-c"
+source = "src/main/boss/mai_yuki/title_bank.c"
+module = "th05/my_tbank.c"
+segment = "_DATA"
+wrapper_options = "-zCMY_TITLE_BANK_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_title_bank_bindings.asm"
+source_encoding = "cp932"
+target_start = 140006
+size = 78
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-mai-yuki-title-bank-c"
+source = "src/main/boss/mai_yuki/title_bank.c"
+find = "\u88cf\u5207\u308a\u306e\u5c11\u5973\u3000\uff5e Judas Kiss"
+replace = "\u88cf\u5207\u308a\u306e\u9b54\u5973\u3000\uff5e Judas Kiss"
+
+[[units]]
+id = "main-resource-filename-bank-c"
+source = "src/main/resources/resource_bank.c"
+module = "th05/res_bank.c"
+segment = "_DATA"
+wrapper_options = "-zCRESOURCE_BANK_TEXT -zPmain_01"
+bindings_source = "probes/units/main_resource_bank_bindings.asm"
+source_encoding = "cp932"
+target_start = 133762
+size = 347
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-resource-filename-bank-c"
+source = "src/main/resources/resource_bank.c"
+find = "\"st06.mpn\""
+replace = "\"st07.mpn\""

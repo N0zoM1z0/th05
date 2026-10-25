@@ -42,7 +42,9 @@ def partition(size: int, units: list[dict]) -> list[dict]:
             elif any(low <= left < high for low, high in tables):
                 kind = "accepted-cxx-switch-table"
             elif unit_extent_kind(entry) == 'initialized-data':
-                kind = 'accepted-cxx-initialized-data'
+                kind = ('accepted-c-initialized-data'
+                        if entry.get('origin') == 'compiler-generated-c-semantic-data'
+                        else 'accepted-cxx-initialized-data')
             else:
                 kind = "accepted-cxx-instructions"
             row = {"start": start + left, "end": start + right, "kind": kind, "unit": entry["id"]}
@@ -177,6 +179,52 @@ def reviewed_master(root: Path, *, view: dict, verify_targets: bool) -> tuple[li
     return claims, digest_bytes(decision_bytes)
 
 
+def reviewed_context_vendor(root: Path, *, context: str, view: dict,
+                            verify_targets: bool) -> tuple[list[dict], str | None]:
+    """Optional explicit OP/MAINE decisions; proposals alone classify nothing."""
+    if context not in ("op", "maine"):
+        raise ValueError("unsupported decoded vendor ownership context")
+    decision_path = root / f"config/reviewed_vendor_units.{context}.json"
+    if not decision_path.exists():
+        return [], None
+    from review_vendor_context import metadata_path, validate_metadata, review_inputs
+
+    decision_bytes = decision_path.read_bytes()
+    decision = json.loads(decision_bytes)
+    proof_bytes = metadata_path(root, context).read_bytes()
+    proof = json.loads(proof_bytes)
+    validate_metadata(proof, root=root, context=context)
+    if (type(decision.get("schema_version")) is not int or decision["schema_version"] != 1 or
+            decision.get("artifact") != "th05-" + context or
+            decision.get("decision") != "ADOPT_ONLY_LISTED_MEMBERS" or
+            decision.get("classification") != "third-party-library-code" or
+            decision.get("evidence_sha256") != digest_bytes(proof_bytes) or
+            decision.get("target_sha256") != proof["target_sha256"] or
+            decision.get("target_payload_sha256") != proof["target_payload_sha256"] or
+            (view.get("size"), view.get("sha256")) !=
+            (proof["target_payload_size"], proof["target_payload_sha256"])):
+        raise ValueError("decoded vendor decision belongs to another context or stale evidence")
+    if (type(decision.get("authored_credit")) is not int or decision["authored_credit"] != 0 or
+            decision.get("other_members_policy") != "unknown" or
+            decision.get("uncovered_gaps_policy") != "unknown" or
+            "authored_denominator" not in decision or decision["authored_denominator"] is not None):
+        raise ValueError("decoded vendor decision cannot grant credit or classify other bytes")
+    names = decision.get("members")
+    if (not isinstance(names, list) or not names or
+            any(not isinstance(name, str) or not name for name in names) or
+            len(names) != len(set(names))):
+        raise ValueError("decoded vendor decision requires unique explicit members")
+    proposed = {row["member"]: row for row in proof["contributions"]}
+    if any(name not in proposed for name in names):
+        raise ValueError("unknown/deferred vendor member cannot be classified")
+    if verify_targets and review_inputs(root, context=context) != proof:
+        raise ValueError("decoded vendor private replay disagrees with reviewed evidence")
+    claims = [{"start": proposed[name]["start"], "end": proposed[name]["end"],
+               "kind": "verified-vendor-code", "library": proof["library"], "member": name}
+              for name in names]
+    return claims, digest_bytes(decision_bytes)
+
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -209,6 +257,10 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             claims, review_sha = reviewed_vendor(root, view=view, verify_targets=verify_targets)
             master_claims, master_review_sha = reviewed_master(root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
+        elif name in ("op", "maine"):
+            claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
+                                                         verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims)
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -223,7 +275,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         counts.update(view["byte_counts"])
     if (counts["accepted-cxx-instructions"] != summary["instruction_bytes"] or
             counts["accepted-cxx-switch-table"] != summary["code_data_bytes"] or
-            counts['accepted-cxx-initialized-data'] != summary.get('authored_data_bytes', 0) or
+            counts['accepted-cxx-initialized-data'] + counts['accepted-c-initialized-data'] !=
+            summary.get('authored_data_bytes', 0) or
             counts["checked-uncredited-padding"] != summary["padding_bytes"]):
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",

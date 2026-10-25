@@ -126,6 +126,19 @@ class InitializedDataExtentTests(unittest.TestCase):
         self.assertEqual(unit_extent_kind({"size": 8}), "code")
         self.assertNotIn("extent_kind", {"size": 8})
 
+    def test_c_initializers_keep_complete_data_and_zero_function_gates(self):
+        value = {**entry(), "origin": "compiler-generated-c-semantic-data",
+                 "source": "src/owner.c", "module": "th05/owner.c"}
+        self.assertEqual(unit_extent_kind(value), "initialized-data")
+        self.assertEqual(initialized_data_omf_scope(omf(), value)["size"], 8)
+        for patch in ({"extent_kind": "code"}, {"functions": 1},
+                      {"source": "src/owner.cpp"}, {"module": "th05/owner.cpp"}):
+            with self.subTest(patch=patch), self.assertRaises(ValueError):
+                unit_extent_kind({**value, **patch})
+        # Changing producer language cannot bypass incomplete archive bytes.
+        with self.assertRaises(ValueError):
+            initialized_data_omf_scope(omf(chunks=[(0, b"name\0")]), value)
+
     def test_semantic_data_counts_do_not_inflate_code_or_functions(self):
         value = entry()
         result = classify_data_extent(value)

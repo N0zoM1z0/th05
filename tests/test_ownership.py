@@ -21,6 +21,22 @@ class OwnershipTests(unittest.TestCase):
             (7, 9, "accepted-cxx-switch-table"), (9, 10, "accepted-cxx-instructions"),
             (10, 11, "checked-uncredited-padding"), (11, 15, "unknown")])
 
+    def test_c_semantic_data_is_distinct_without_reclassifying_cpp_or_code(self):
+        def data(start, source, origin):
+            return self.entry(start, 4, extent_kind="initialized-data", functions=0,
+                              source=source, module=source, origin=origin,
+                              data_semantics=["state"])
+        c = data(2, "src/state.c", "compiler-generated-c-semantic-data")
+        cpp = data(6, "src/state.cpp", "compiler-generated-cxx-semantic-data")
+        rows = partition(12, [c, cpp])
+        self.assertEqual([(row["start"],row["end"],row["kind"]) for row in rows],
+            [(0,2,"unknown"),(2,6,"accepted-c-initialized-data"),
+             (6,10,"accepted-cxx-initialized-data"),(10,12,"unknown")])
+        for bad in ({**c,"extent_kind":"code"}, {**c,"source":"src/state.cpp"},
+                    {**c,"functions":1}):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                partition(12,[bad])
+
     def test_contiguous_padding_and_unordered_units(self):
         first = self.entry(0, 5, padding_bytes=[{"offset": 3, "value": 0}, {"offset": 4, "value": 0}])
         second = {**self.entry(5, 2), "id": "second-function"}
