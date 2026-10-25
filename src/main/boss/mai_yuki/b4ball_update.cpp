@@ -1,5 +1,6 @@
 // Natural TH05 custom-ball motion, collision, destruction and revenge shots.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
+#include <dos.h>
 #include "src/main/boss/mai_yuki/b4ball_update.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
@@ -8,7 +9,6 @@ extern "C" void pascal near b4balls_update(void)
     int damage;
     b4ball_t near *ball;
     int i;
-    PlayfieldPoint point;
 
     shot_hitbox_radius.x.v = B4_UPDATE_HIT_RADIUS;
     shot_hitbox_radius.y.v = B4_UPDATE_HIT_RADIUS;
@@ -17,28 +17,27 @@ extern "C" void pascal near b4balls_update(void)
             continue;
         }
         ball->age++;
-        // Keep the real four-byte return and complete Motion method contract.
-        // Natural compiler storage for this value is not suppressed.
-        point = ball->pos.update_seg3();
-        if(point.x.v <= -B4_UPDATE_CLIP_MARGIN ||
-           point.x.v >= (PLAYFIELD_W * 16) + B4_UPDATE_CLIP_MARGIN ||
-           point.y.v <= -B4_UPDATE_CLIP_MARGIN ||
-           point.y.v >= (PLAYFIELD_H * 16) + B4_UPDATE_CLIP_MARGIN) {
+        // Borrow the actual packed Point return through the DOS intrinsics.
+        // Both coordinates are consumed before the first collision helper.
+        ball->pos.update_seg3();
+        if(static_cast<subpixel_t>(_AX) <= -B4_UPDATE_CLIP_MARGIN ||
+           static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W * 16) + B4_UPDATE_CLIP_MARGIN ||
+           static_cast<subpixel_t>(_DX) <= -B4_UPDATE_CLIP_MARGIN ||
+           static_cast<subpixel_t>(_DX) >= (PLAYFIELD_H * 16) + B4_UPDATE_CLIP_MARGIN) {
             ball->flag = F_FREE;
             continue;
         }
         if(ball->flag != F_REMOVE) {
-            if(static_cast<unsigned int>(point.x.v - player_pos.cur.x.v +
+            if(static_cast<unsigned int>(static_cast<subpixel_t>(_AX) - player_pos.cur.x.v +
                     B4_UPDATE_HIT_RADIUS) <= (2 * B4_UPDATE_HIT_RADIUS) &&
-               static_cast<unsigned int>(point.y.v - player_pos.cur.y.v +
+               static_cast<unsigned int>(static_cast<subpixel_t>(_DX) - player_pos.cur.y.v +
                     B4_UPDATE_HIT_RADIUS) <= (2 * B4_UPDATE_HIT_RADIUS)) {
                 player_is_hit = 1;
             }
             // The original reloads the real current position at this boundary;
             // no returned coordinate is kept across the shot-collision call.
             shot_hitbox_center = ball->pos.cur;
-            damage = shots_hittest();
-            if(damage != 0) {
+            if((damage = shots_hittest()) != 0) {
                 if(ball->patnum_tiny_base != B4_UPDATE_SNOW) {
                     snd_se_play(10);
                 } else {

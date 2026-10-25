@@ -61,6 +61,36 @@ SHA-256 `b95ec4edc9bed9c4acbfc6abfc0fc01f95ca35f30171cc784879ff9e5dd63c88`.
 Saved-producer import,303 public tests, full CI and native ownership readback
 pass. All four incremental plans are empty; no old compiler unit was replayed.
 
+## Latest B4 return-ABI investigation: no acceptance
+
+The current B4 updater uses the same bounded readonly DOS `_AX`/`_DX` bridge
+as the accepted shot updater, while retaining the genuine full Point return,
+canonical method/class and Pascal cleanup. Its damage assignment now appears
+inside its condition. No accepted dependency/header changed.
+
+One new focused producer at
+`.analysis/unit-replays/main-b4ball-update-return-b/` reduces296 to278 bytes,
+but original273 remains the mandatory complete boundary. Both have88 real
+instructions and no NOPs/tables/padding. ENTER2, immediate signed clips, live
+x/y consumption before the collision helper, and the AX damage test are now
+verified from actual code. The remaining+5 is exactly30-versus25-byte clip
+branch lowering; the31-byte player-distance region also uses different
+registers. Ordered fixups `[240,161,123]` differ from `[235,156,118]`.
+The nominal foreign tail shifts DATA offsets by6 (DGROUP remains209D).
+The first size gate stopped before second/negative; no acceptance or authored
+count changes. The proposed unit was removed from live selection. See
+[B4 notes](../src/main/boss/mai_yuki/b4ball_update.md). No flag/source sweep,
+retagged return, manual branch/coordinate kernel or padding was introduced.
+
+Independent actual-producer review is
+`.analysis/b4ball-return-bridge-actual-review.json`, SHA-256
+`973105654a4da84435a633d1a3f7ba56b3ff2a623c7ab570fad408b72c47ebe1`.
+The earlier296-byte frozen producers, source and binder corrections remain
+private and intact. Do not replay either unchanged context. The two missing
+switch-table zero cases (Mai/Yuki1018 and Alice939) were also revisited only
+through existing build/source records; no evidence justified a new output mode
+or compiler invocation, so they remain parked unchanged.
+
 ## New unaccepted ZUN entry source
 
 The adjacent complete269-byte `main` now has natural maintained source in
