@@ -202,10 +202,10 @@ class AsmFamilyTests(unittest.TestCase):
         for rows in claims.values():
             for row in rows:
                 totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 4798,
+        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 5018,
                                  "accepted-reviewed-asm-dispatch-table": 92,
                                  "accepted-reviewed-asm-semantic-code-table": 24,
-                                 "checked-uncredited-asm-alignment": 32,
+                                 "checked-uncredited-asm-alignment": 34,
                                  "checked-uncredited-asm-inert-branch": 6,
                                  "checked-uncredited-asm-runtime-placeholder": 10})
         decision = json.loads(asm.DECISION.read_text())

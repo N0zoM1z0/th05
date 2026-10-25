@@ -23,7 +23,7 @@ and 15,337 initialized DATA bytes. Complete compared extents contain
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
-Separately reviewed assembly now contributes **6,606 instruction bytes,
+Separately reviewed assembly now contributes **6,826 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
 and 64 semantic DATA bytes**. The
 [text renderer](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md),
@@ -34,14 +34,15 @@ and 64 semantic DATA bytes**. The
 [MPN tile blit](src/main/formats/mpn_render.md),
 [HUD bars](src/main/hud/bar.md) and [numbers](src/main/hud/numbers.md),
 [score tally](src/main/hud/score.md),
+[point popups](src/main/pointnum/render.md),
 [opaque CDG](src/shared/graphics/cdg_opaque.md),
 [laser geometry/render/hit](src/main/bullet/laser_render_hit.md),
 [PI kernels](src/shared/graphics/pi_kernels.md),
 [piano drawing](src/op/piano/piano.md),
 [sound loading](src/shared/sound/load.md) and
 [EGC rectangles](src/shared/hardware/egc_rect_copy.md) cover
-6,970 complete compared bytes with
-two independent producers and own assembled negatives. 66 checked alignment,
+7,192 complete compared bytes with
+two independent producers and own assembled negatives. 68 checked alignment,
 inert-branch and runtime-placeholder bytes compare normally with zero credit.
 Explicit native ownership decisions leave C/C++ counters unchanged. Literal
 historical source and original assembler identity remain unknown.
@@ -63,7 +64,7 @@ interval across all four targets; it grants no inferred vendor exclusions.
 and [CL DATA](docs/reconstruction/CL_DATA_OWNERSHIP.md) reviews classify 3,777
 initialized library DATA bytes. All 73,547 vendor bytes grant zero authored
 credit. A separately reviewed [8,192-byte ZUN font resource](docs/reconstruction/ZUN_FONT_RESOURCE.md)
-also grants zero authored credit. Unknown ownership remains 132,025 bytes.
+also grants zero authored credit. Unknown ownership remains 131,803 bytes.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

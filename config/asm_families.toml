@@ -975,3 +975,63 @@ replace = "SCORE_DELTA_LIMIT equ 6110"
 offset = 147
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-pointnum-put"
+artifact = "main"
+source = "src/main/pointnum/put.asm"
+types = "src/main/pointnum/pointnum_types.inc"
+symbols = "probes/units/pointnum_put_symbols.inc"
+bindings = "probes/units/pointnum_put_bindings.asm"
+notes = "src/main/pointnum/render.md"
+target_start = 0xbe3a
+size = 106
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "dc295f0bf1b221206cd38cad91de7feee0e569b5c0cb43654fc2f44282fb884b"
+target_scope_sha256 = "9f1e9b9452e1002fd1fde3966cd5c0989a5b8b80eaafd787edc6b8a627642f59"
+semantic_inputs = []
+[units.publics]
+"@pointnum_put" = 0
+"pointnum_put_end" = 106
+[units.negative]
+find = "POINTNUM_DRAW_ROWS equ POINTNUM_H"
+replace = "POINTNUM_DRAW_ROWS equ (POINTNUM_H - 1)"
+[[units.uncredited]]
+offset = 63
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-pointnum-render"
+artifact = "main"
+source = "src/main/pointnum/render.asm"
+types = "src/main/pointnum/pointnum_types.inc"
+symbols = "probes/units/pointnum_render_symbols.inc"
+bindings = "probes/units/pointnum_render_bindings.asm"
+notes = "src/main/pointnum/render.md"
+target_start = 0xe216
+size = 116
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "c2c5d2f46136d2bda022787474552dc313d6aadd606a47ff3ffec8fd61f03e78"
+target_scope_sha256 = "9d6438efb2321041e7cd4c762ef5a26089917d9b87f242d2a36fb495c80bd404"
+semantic_inputs = []
+[units.publics]
+"POINTNUMS_RENDER" = 0
+"pointnums_render_end" = 116
+[units.negative]
+find = "POINTNUM_FIELD_LEFT equ PLAYFIELD_LEFT"
+replace = "POINTNUM_FIELD_LEFT equ (PLAYFIELD_LEFT - 1)"
+[[units.uncredited]]
+offset = 115
+size = 1
+kind = "alignment"

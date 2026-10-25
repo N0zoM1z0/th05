@@ -13,15 +13,87 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,606 instruction bytes,
+Separately reviewed ASM now contributes **6,826 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 6,970
-complete compared bytes include 66 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 7,192
+complete compared bytes include 68 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,025 bytes. The global denominator is still unreviewed;
+ownership is now 131,803 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted ASM: complete score HUD and tally
+## Latest accepted ASM: point popup driver and private mask writer
+
+Two complete separate MAIN procedures add 220 reviewed ASM instruction bytes:
+private @pointnum_put at BE3A..BEA4 (106 complete, 105 instructions) and
+POINTNUMS_RENDER at E216..E28A (116 complete, 115 instructions). Their sole
+NOPs at relative 63/115 are genuine source EVEN padding with zero credit.
+Both original ordered MZ fixup lists are empty. These scopes are not adjacent;
+the reference wrapper's order is not native placement. BEA4 foreign C++ and
+the accepted E28A circular-effects owner remain outside both contributions.
+See [full point popup source/ABI/origin review](../src/main/pointnum/render.md).
+
+Native live AX-top/DX-left/CX-glyph input, AX restore/DX+8 return, SI/DI/BP
+protocol and hardware color sequence support reviewed original ASM inference.
+No modern ASM filename or failed compiler result establishes that inference.
+The seven-nearest-primary sprite-library comparison found no positive borrowed
+body, without proving exhaustive ancestry. Historical source/assembler remain
+unproved. Full 16-byte TH05 records, 281 WORD list slots and the entire
+12-glyph/1536-byte raster geometry are maintained as foreign types. No pool,
+list, pixels or DATA receive credit. Scroll helper DF28..DF50 remains unknown
+and foreign, as do ordinary init/invalidate/update/digit-conversion owners.
+
+The first native-model driver case caught my draft PLAYFIELD_TOP=28 error
+before any assembler invocation. Canonical inherited th02 playfield definitions
+give 16, so the true offset is (16-4)*16=C0. Source and independent model are
+corrected; the old failed model and prepared review remain preserved, with an
+explicit correction addendum withdrawing that geometry assertion. The corrected
+model passes 530 generated-mask/list/ring/port/register cases. It compares mask
+write addresses, widths, values and tile-port sequences, not colored GRCG
+framebuffer effects. Only valid widths and screen/ring coordinates are modeled.
+The real foreign scroll helper is executed with no ownership transfer.
+
+Both unchanged normal replays pass two fresh independent complete producers
+and each scope's own assembled negative. Worker rows8 to7 changes only
+42/47/59 while retaining the eight-row asset format; driver horizontal origin
+32 to31 changes only62. Both keep full extents, publics, NOPs, frames and
+empty ordered fixups and are rejected. Actual source aliases/argv/logs,
+CRC-valid ordinary OMF/CODE/LEDATA, MAP and MZ are re-read. No failed assembler
+producer, continuation, first rebuild or source/flag matrix occurs. Installed
+tool execution proofs and old objects are reused after dependency checks.
+
+Receipts: `.analysis/asm-replays/main-pointnum-put-a/receipt.json`, SHA-256
+`e7867e7b524e7e07aae8a5caeac52cff9f1621ad2cbfac072606ccdd3223c2f6`;
+`.analysis/asm-replays/main-pointnum-render-a/receipt.json`, SHA-256
+`55e0f7d34c104a1bf215e5d6984e1a279ef7fb5d245f04b058ec2b2ff039675b`.
+Native/model report: `.analysis/pointnum-native-semantic-check.json`, SHA-256
+`dddeb25d28c37867a17592488237700d2fcdcb3ee51b939de9f7913600e72819`.
+Corrective source-review addendum:
+`.analysis/pointnum-prepared-source-geometry-correction-addendum.json`, SHA-256
+`178db3959fbc2acbece73422b0fb6d484cbfaf81b42f6eadaff3f60d500f8fb0`.
+Independent actual-producer review:
+`.analysis/pointnum-actual-replays-independent-review.json`, SHA-256
+`1e1a833fc06a2bdee139aa76faf62c208663937ed20d702c9dd5e242284f179e`.
+
+Explicit per-record adoption remains separate from exact replay. ASM totals
+are 6826 instructions/210 dispatch/24 semantic CODE/64 DATA, with 7192 complete
+bytes and 68 uncredited. Unknown decreases 132025 to131803 (MAIN52315 to52093).
+C/C++ stays 98451; vendor CODE69770/DATA3777, all initialized DATA/resources
+and the null global denominator remain unchanged.
+
+All 364 CI tests, native target ownership, generated progress and diff checks
+pass. All five incremental plans are empty. The 28 older ASM records,
+descriptors and adoption entries, four C/C++ ledgers and 52 other config files
+are unchanged. OP/MAINE targets, ownership intervals and counts remain unchanged;
+only their shared ASM-decision provenance digest updates. The ZUN view is
+byte-identical. Only two existing test aggregate constants add the new220
+instruction bytes and two alignment bytes; partition/tamper guards stay intact.
+Final independent adoption/count review:
+`.analysis/pointnum-final-adoption-independent-review.json`, SHA-256
+`e77effe63b83bcb0cc02086e305babcbe60b6c8abd2540eef4143e9a2ba63935`.
+Root final review: `.analysis/pointnum-root-final-review.json`, SHA-256
+`8df342c19646aa940f56628d8a38c71621fe744909f959073ea804349c8c4f43`.
+
+## Previous accepted ASM: complete score HUD and tally
 
 MAIN D4C0..D5C1 adds 256 reviewed ASM instruction bytes from one complete
 257-byte contribution, with two real near entries at relative 0/50. Its only
