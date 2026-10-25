@@ -944,3 +944,34 @@ replace = "HUD_SMALL_LEADING_DIGITS equ (HUD_SMALL_DIGITS - 2)"
 offset = 25
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-hud-score"
+artifact = "main"
+source = "src/main/hud/score.asm"
+types = "src/main/hud/score_types.inc"
+symbols = "probes/units/hud_score_symbols.inc"
+bindings = "probes/units/hud_score_bindings.asm"
+notes = "src/main/hud/score.md"
+target_start = 0xD4C0
+size = 257
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = [37]
+tables = []
+native_review_sha256 = "9809035e5eac5ee039de0a8070c7a7ceb2da805190f26233cf86c6f2200bb904"
+target_scope_sha256 = "1eb5f42e7658e9b9cbf5542d2bef7ddfa0dc851eb72b4fa12ef4910bfd7c1a7c"
+semantic_inputs = []
+[units.publics]
+"HUD_SCORE_PUT" = 0
+"score_update_and_render()" = 50
+"hud_score_end" = 257
+[units.negative]
+find = "SCORE_DELTA_LIMIT equ 6111"
+replace = "SCORE_DELTA_LIMIT equ 6110"
+[[units.uncredited]]
+offset = 147
+size = 1
+kind = "alignment"

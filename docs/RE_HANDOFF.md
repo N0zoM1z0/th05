@@ -13,15 +13,77 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,350 instruction bytes,
+Separately reviewed ASM now contributes **6,606 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 6,713
-complete compared bytes include 65 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 6,970
+complete compared bytes include 66 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,282 bytes. The global denominator is still unreviewed;
+ownership is now 132,025 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest ownership: unchanged original Master circle outline
+## Latest accepted ASM: complete score HUD and tally
+
+MAIN D4C0..D5C1 adds 256 reviewed ASM instruction bytes from one complete
+257-byte contribution, with two real near entries at relative 0/50. Its only
+NOP at 147 is original EVEN padding, compared with zero credit. The original
+ordered MZ fixup is `[37]`. The following zero at D5C1 remains unknown and
+outside this scope; the accepted laser family starts at D5C2.
+See [score source/ABI/origin review](../src/main/hud/score.md).
+
+Native reversed SI/DI restoration and the whole unframed AAA/DF/IF protocol
+support original handwritten ASM inference, independently corroborated by
+candidate history e6294c2c's explicit micro-optimized ASM-TU description.
+Neither ASM filename nor compiler failure is its basis. Complete eight-byte
+score/hiscore adjacency, full DWORD deltas with native low-WORD writes, near
+popup callback, ties with CX zero and already-shown record paths are retained.
+No high-digit clipping, register repair or IF restoration is added. The foreign
+buffer, divisor DATA, pixels and provider bodies receive no additional credit.
+
+Both fresh independent producers match all 257 raw bytes and ordered fixups,
+with complete ordinary OMF/LEDATA/MAP/public/CS/DGROUP evidence. The own limit
+mutation 6111 to 6110 changes only bytes 83/90, retains the complete scope
+and is rejected. Genuine MAIN_01 GROUP/ASSUME context and actual near-callback
+first declaration are set before the first producer. No failed producer,
+source/flag/instruction variant or first rebuild occurs; old objects and
+successful installed execution probes are reused after identity checks.
+
+Receipt: `.analysis/asm-replays/main-hud-score-a/receipt.json`, SHA-256
+`ccca871f11fa4cc1e5e334ee79a995e71ebb4b5f42f75aaff52954e599e87491`.
+Independent source/native/origin review:
+`.analysis/hud-score-independent-origin-source-review.json`, SHA-256
+`92190e9182375c1e03c07b4ae0754498577d72571a3a1cff83aea1f0df3e7f02`.
+Native-only independent integer/glyph/stack model passes 209 cases, including
+full pending-DWORD extremes, prior larger frame delta, ties, overflow and
+copy-time IF0/DF1. Frame input high WORD is zero in those tests; they do not
+claim every DWORD frame state. The external renderer is intercepted, not run.
+Model: `.analysis/hud-score-native-semantic-check.json`, SHA-256
+`e06d6862a21d683147b147bc94bebd22f6391c366f8115422b06d3ff63afa56b`.
+
+Explicit per-record adoption is separate from replay. ASM totals are
+6606 instructions/210 dispatch/24 semantic CODE/64 DATA; complete compared
+bytes are 6970, including 66 uncredited. Unknown decreases 132282 to 132025
+(MAIN 52572 to 52315). C/C++ stays 98451, vendor CODE 69770 and vendor DATA
+3777; all initialized DATA, resources and the null denominator remain unchanged.
+Historical source, original assembler and whole-executable acceptance remain
+unproved.
+
+Independent actual-producer review:
+`.analysis/hud-score-actual-replay-independent-review.json`, SHA-256
+`87e291b3669d60e5b15cbf7e93b23c0ec7d618d13f05c1945fac956730d01d0a`.
+All 364 CI tests, native target ownership, generated progress and diff checks
+pass. All five incremental plans are empty. The 27 older ASM records,
+descriptors and adoption entries, four C/C++ ledgers and 52 other config files
+are unchanged. OP/MAINE ownership intervals, counts and target identities are
+unchanged; only their shared ASM-decision provenance digest updates. The ZUN
+view is byte-identical. Existing aggregate test constants include the new
+256 instruction bytes and one alignment byte; all partition/tamper checks stay.
+Final independent adoption/count review:
+`.analysis/hud-score-final-adoption-independent-review.json`, SHA-256
+`3fd7919e7dea30b5de55d85e2c5188cc2340e930209ef8e3f364e578976abedd`.
+Root final review: `.analysis/hud-score-root-final-review.json`, SHA-256
+`9b8daabc38f5398540952aa656278ddd5445690ebc1711fbd2b571fbcaf45669`.
+
+## Previous ownership: unchanged original Master circle outline
 
 Only GRCG_CIRCLE_X at MAIN 121C..130C now classifies 240 unknown bytes as
 vendor CODE with zero authored credit. The complete original GC_CIRCX.ASM and
@@ -81,7 +143,7 @@ SHA-256 `5c95c1c700724514e09de4a1f56c5f6a69c88ba109776e5d5bdf80ecc54fcc51`.
 Root final review: `.analysis/vendor-review/circlex-primary-root-final-review.json`,
 SHA-256 `ee79a1a0f451a747039f92453f2c1643c0a9046d5c2d65fbd28b832d3950e9d0`.
 
-## Latest accepted ASM: HUD bar and shared decimal renderers
+## Previous accepted ASM: HUD bar and shared decimal renderers
 
 Two complete MAIN contributions add 181 reviewed ASM instruction bytes:
 near Pascal HUD_BAR_PUT at D474..D4C0 (76), and the two far Pascal number
