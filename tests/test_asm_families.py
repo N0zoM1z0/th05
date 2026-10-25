@@ -158,13 +158,14 @@ class AsmFamilyTests(unittest.TestCase):
             validate_partition(entry["size"], [{**r, "start": r["start"] - entry["target_start"],
                                                 "end": r["end"] - entry["target_start"]} for r in rows])
         totals = {}
-        for row in claims["main"]:
-            totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 994,
+        for rows in claims.values():
+            for row in rows:
+                totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
+        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 1781,
                                  "accepted-reviewed-asm-dispatch-table": 68,
-                                 "checked-uncredited-asm-alignment": 4,
-                                 "checked-uncredited-asm-inert-branch": 2,
-                                 "checked-uncredited-asm-runtime-placeholder": 2})
+                                 "checked-uncredited-asm-alignment": 13,
+                                 "checked-uncredited-asm-inert-branch": 6,
+                                 "checked-uncredited-asm-runtime-placeholder": 10})
         decision = json.loads(asm.DECISION.read_text())
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

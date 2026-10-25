@@ -1,0 +1,113 @@
+; Maintained semantic TH05 original-assembly reconstruction.
+; Candidate: pinned ReC98 b6ba5b0a; native boundaries and ABI independently reviewed.
+.386
+.model use16 large SHARED
+locals
+include types.inc
+include symbols.inc
+GRCG_RMW equ 0C0h
+.code SHARED
+public CDG_PUT_8
+cdg_put_8 proc far
+	; (PASCAL calling convention, parameter list needs to be reversed here)
+	arg @@slot:word, @@top:word, @@left:word
+	@@vram_dword_w	equ <bp>
+	@@vram_offset_at_bottom_left	equ <bx>
+	@@stride	equ <dx>
+
+	push	bp
+	mov	bp, sp
+	push	si
+	push	di
+	push	ds
+	cli
+
+	; grcg_setcolor(GC_RMW, 0);
+	mov	al, GRCG_RMW
+	out	7Ch, al
+	mov	dx, 7Eh
+	xor	al, al
+	out	dx, al
+	out	dx, al
+	out	dx, al
+	out	dx, al
+
+	sti
+
+	mov	si, @@slot
+	shl	si, 4
+	add	si, offset _cdg_slots
+
+	mov	ax, @@top
+	shl	ax, 2
+	add	ax, @@top
+	add	ax, SEG_PLANE_B
+	mov	es, ax
+	push	0	; (sentinel)
+	add	ax, (SEG_PLANE_E - SEG_PLANE_B)	; AX == SEG_PLANE_E
+	push	ax
+	sub	ax, SEG_PLANE_DIST_E	; AX == SEG_PLANE_G
+	push	ax
+	sub	ax, SEG_PLANE_DIST_BRG	; AX == SEG_PLANE_R
+	push	ax
+
+	; cdg_dst_offset() with SHR instead of SAR, for a change
+	mov	ax, @@left
+	shr	ax, 3
+	add	ax, [si+cdg_t.offset_at_bottom_left]
+
+	mov	di, ax
+	mov	@@vram_offset_at_bottom_left, ax
+	mov	ax, [si+cdg_t.vram_dword_w]
+	mov	@@vram_dword_w, ax
+	shl	ax, 2	; *= size dword
+	add	ax, ROW_SIZE
+	mov	@@stride, ax
+	mov	ax, [si+cdg_t.seg_colors]
+	mov	cx, [si+cdg_t.seg_alpha]
+	mov	ds, cx
+	xor	si, si
+	cld
+	even
+
+@@alpha:
+	mov	cx, @@vram_dword_w
+	rep movsd
+	sub	di, @@stride
+	jns	short @@alpha
+	mov	ds, ax
+	xor	al, al
+	out	7Ch, al
+
+	xor	si, si
+	even
+
+
+@@next_plane:
+	mov	di, @@vram_offset_at_bottom_left
+
+@@next_row:
+	mov	cx, @@vram_dword_w
+
+@@blit_dword:
+	lodsd
+	or	es:[di], eax
+	add	di, dword
+	loop	@@blit_dword
+	sub	di, @@stride
+	jns	short @@next_row
+	pop	ax
+	mov	es, ax
+	or	ax, ax
+	jnz	short @@next_plane
+	pop	ds
+	pop	di
+	pop	si
+	pop	bp
+	retf	6
+cdg_put_8 endp
+	even
+
+public cdg_alpha_end
+cdg_alpha_end label byte
+	end

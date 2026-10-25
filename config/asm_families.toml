@@ -109,3 +109,200 @@ kind = "alignment"
 offset = 555
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-pellet-render"
+artifact = "main"
+source = "src/main/bullet/pellet_render.asm"
+types = "src/main/bullet/pellet_render_types.inc"
+symbols = "probes/units/pellet_render_symbols.inc"
+bindings = "probes/units/main_pellet_render_bindings.asm"
+notes = "docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md"
+target_start = 49954
+size = 252
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "efe882900f811026ff032a2cc88b2fad42b3eed163d9f34dbbbc23bee9516ccd"
+target_scope_sha256 = "d92ee73ba39fd926f5599948c955887514e1ae05b9d4805f879fe3a20e153684"
+semantic_inputs = ["src/main/bullet/update.hpp"]
+[units.publics]
+"_pellets_render_top" = 0
+"_pellets_render_bottom" = 146
+"pellet_render_end" = 252
+[units.negative]
+find = "PELLET_TOP_H equ 6"
+replace = "PELLET_TOP_H equ 7"
+[[units.uncredited]]
+offset = 87
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 145
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 175
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-cdg-alpha"
+artifact = "main"
+source = "src/shared/graphics/cdg_alpha.asm"
+types = "src/shared/graphics/cdg_alpha_types.inc"
+symbols = "probes/units/cdg_alpha_symbols.inc"
+bindings = "probes/units/main_cdg_alpha_bindings.asm"
+notes = "docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md"
+target_start = 85352
+size = 148
+segment = "SHARED"
+group = "(none)"
+cs_base = 84656
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "7fc7d9c842c53f84a745910116d88b200bb555d56b18a3ccd6442edd06669b18"
+target_scope_sha256 = "8ef0a251139af64418522213a09a7a2bea04753483ea7c3ada8966038006ba9d"
+semantic_inputs = ["src/main/ems/ems.hpp", "src/maine/staff/image_phase.hpp"]
+[units.publics]
+"CDG_PUT_8" = 0
+"cdg_alpha_end" = 148
+[units.negative]
+find = "GRCG_RMW equ 0C0h"
+replace = "GRCG_RMW equ 0C1h"
+[[units.uncredited]]
+offset = 113
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 147
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "op-cdg-alpha"
+artifact = "op"
+source = "src/shared/graphics/cdg_alpha.asm"
+types = "src/shared/graphics/cdg_alpha_types.inc"
+symbols = "probes/units/cdg_alpha_symbols.inc"
+bindings = "probes/units/op_cdg_alpha_bindings.asm"
+notes = "docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md"
+target_start = 55128
+size = 148
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "19345b9a1f06c7e75097f3a37e7241a58fe12d6e145e3b93196c96954ab9a7d5"
+target_scope_sha256 = "4639e2e98572a3be7faf4b1e5800efde4b5d54b7d37cb9df46ea10fc7bb0bd58"
+semantic_inputs = ["src/main/ems/ems.hpp", "src/maine/staff/image_phase.hpp"]
+[units.publics]
+"CDG_PUT_8" = 0
+"cdg_alpha_end" = 148
+[units.negative]
+find = "GRCG_RMW equ 0C0h"
+replace = "GRCG_RMW equ 0C1h"
+[[units.uncredited]]
+offset = 113
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 147
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "op-bgimage-rect"
+artifact = "op"
+source = "src/shared/hardware/bgimage_rect.asm"
+types = "src/shared/hardware/bgimage_rect_types.inc"
+symbols = "probes/units/bgimage_rect_symbols.inc"
+bindings = "probes/units/op_bgimage_rect_bindings.asm"
+notes = "docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md"
+target_start = 56124
+size = 130
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "0adbde3b34c550ed22618640b67e9ece295102dd2896608d88f5aa52b318b90c"
+target_scope_sha256 = "d62cb6fc6ed6637fc46b6d0124c02c2df78a9bcdf918e6550ba27f4bb1acb90e"
+semantic_inputs = ["src/shared/hardware/bgimage_free.hpp"]
+[units.publics]
+"BGIMAGE_PUT_RECT_16" = 0
+"bgimage_prefetch_branch" = 55
+"bgimage_vram_patch" = 102
+"bgimage_width_patch" = 107
+"bgimage_rect_end" = 130
+[units.negative]
+find = "PLANE_COUNT equ 4"
+replace = "PLANE_COUNT equ 3"
+[[units.uncredited]]
+offset = 55
+size = 2
+kind = "inert-branch"
+[[units.uncredited]]
+offset = 102
+size = 2
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 107
+size = 2
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 129
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "maine-bgimage-rect"
+artifact = "maine"
+source = "src/shared/hardware/bgimage_rect.asm"
+types = "src/shared/hardware/bgimage_rect_types.inc"
+symbols = "probes/units/bgimage_rect_symbols.inc"
+bindings = "probes/units/maine_bgimage_rect_bindings.asm"
+notes = "docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md"
+target_start = 60644
+size = 130
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "7ab0233dedc5fa2ed6190e7b8d8ad4256a92d87d5a7a33d3a9e51c4772c33c88"
+target_scope_sha256 = "5ffa604d14eb7e1ed18a284fee725c1ed363394e77c39783d18ab9115e0dd20e"
+semantic_inputs = ["src/shared/hardware/bgimage_free.hpp"]
+[units.publics]
+"BGIMAGE_PUT_RECT_16" = 0
+"bgimage_prefetch_branch" = 55
+"bgimage_vram_patch" = 102
+"bgimage_width_patch" = 107
+"bgimage_rect_end" = 130
+[units.negative]
+find = "PLANE_COUNT equ 4"
+replace = "PLANE_COUNT equ 3"
+[[units.uncredited]]
+offset = 55
+size = 2
+kind = "inert-branch"
+[[units.uncredited]]
+offset = 102
+size = 2
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 107
+size = 2
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 129
+size = 1
+kind = "alignment"

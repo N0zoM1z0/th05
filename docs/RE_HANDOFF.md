@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **2,802 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 3,078
-complete compared bytes include 26 checked uncredited alignment, inert-branch
+Separately reviewed ASM now contributes **3,589 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 3,886
+complete compared bytes include 47 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 165,428 bytes. The global denominator is still unreviewed,
+ownership is now 164,620 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -355,3 +355,35 @@ and push. Stop after the first actual size/boundary failure; do not run two more
 producers for a known mismatch. A single diagnostic is not acceptance.
 No compiled-source or dependency edit is harmless to source-hash freshness:
 refresh only its actual affected closure before accepting new metadata.
+
+
+## Reviewed image kernels
+
+Five complete original-ASM contributions add 787 instruction bytes across 808
+compared bytes: MAIN pellet top/bottom 249/252, MAIN/OP CDG alpha 146/148 each,
+and OP/MAINE background rectangle 123/130 each. Nine alignment NOP bytes, four
+conservatively uncredited jump bytes and eight runtime-patched placeholder bytes
+compare normally with zero credit. No sprite/image assets, DATA or tables are
+owned. C/C++ counters remain unchanged; unknown ownership is 164,620 bytes.
+See [source/native review](reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md).
+
+Each owner has two fresh deterministic TASM producers and its own semantic
+negative, with complete OMF/MAP/raw and literal empty ordered fixup streams.
+Receipts under `.analysis/render-kernels-native/` are `main-pellet-render-b`,
+`main-cdg-alpha-a`, `op-cdg-alpha-a`, `op-bgimage-rect-a` and
+`maine-bgimage-rect-a`. The first pellet binder setup overflowed before source
+assembly; correct real segment divisions fixed it. No failed result was adopted.
+All five records and explicit ownership decisions are imported in the generic
+ASM ledgers. Existing ASM/C++ owners and successful tool execution probes were
+reused after dependency identity checks; no accepted owner was cold-replayed.
+
+Preserve CDG's unconditional CLI/STI, clear DF and sentinel ES=0; rectangle's
+self-modified fields and following jump may have a prefetch role, so do not
+remove it. Preserve the pellet bottom's first nonadvancing MOV AX,[SI] before
+later LODSW. Full 16-byte CDG, 8-byte cached-plane and 4-byte queue union layouts
+are retained. MAIN CDG's true entry offset is 02B8, MAINE rectangle 04E4; do not
+transfer calibration offsets. No MAINE CDG or MAIN rectangle copy is present.
+Private independent vendor/source-origin and pellet native reviews are
+`.analysis/image-kernels-origin-review.json` and
+`.analysis/pellet-render-native-review.json`; public notes pin their hashes.
+Historical original source and all historical vendor derivations remain unknown.
