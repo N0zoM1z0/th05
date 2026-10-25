@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **4,483 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,788
-complete compared bytes include 55 checked uncredited alignment, inert-branch
+Separately reviewed ASM now contributes **5,043 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 5,350
+complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 163,718 bytes. The global denominator is still unreviewed,
+ownership is now 163,156 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -503,3 +503,43 @@ returns ES=A800. Helper bodies and their terminal NOPs receive no credit or
 ownership exclusion in this change. Literal historical mixed-source possibilities
 remain unproved; no inspected public portion has positive compiler-generated
 provenance.
+
+
+## Complete PI assembly kernels
+
+Four complete contributions add 560 reviewed ASM instruction bytes across 562
+compared bytes: OP masked DD10..DD97 (135), plain/palette/free DE80..DF12 (146),
+and MAINE masked EEB8..EF3F / plain/palette/free F028..F0BA at the same sizes.
+The second family has complete procedures at relative 0/58/96 and its only NOP
+at 145, checked with zero credit. Masked has no NOP/padding. Ordered fixups are
+[54,106] and [17,89,140], respectively, independently in both artifacts.
+C/C++ stays 96,899 bytes / 306 units / 494 functions. Reviewed ASM now totals
+5,293 credit (5,043 instructions, 186 CODE tables, 64 DATA), 5,350 compared with
+57 uncredited; unknown is 163,156 bytes and the global denominator is unreviewed.
+
+Maintained sources are `src/shared/graphics/pi_masked_rows.asm` and
+`pi_rows_palette_free.asm`, plus full `pi_types.inc`: PiHeader 72, Palette 48,
+eight complete headers 576 and eight far buffers 32. Mask words/images are
+external, with no asset, DATA or provider-body credit. Native private BP=SP
+frameless rowloops and BX stack frames independently support original ASM;
+source algorithms come from pinned explicit ReC98 ASM, not opcode arrays or
+compiler-body conversion. Positive vendor type/provider facts remain separate
+from ownership of the game kernels. See [owner notes](../src/shared/graphics/pi_kernels.md).
+
+`.analysis/pi-kernels-native/{op-masked-a,op-plain-a,maine-masked-a,maine-plain-a}/receipt.json`
+each has two fresh deterministic complete TASM producers, full raw/ordered
+fixup/OMF/MAP/public/frame checks and its own assembled negative: scratch row
+400-to-399 or palette copy 16-to-15 with the full 16-color type unchanged. All four
+records and explicit per-note decisions are imported. No prior accepted source
+input changed, and old producers/tool execution probes were reused. Native and
+current-source reports are `.analysis/pi-kernels-native-review.json` and
+`.analysis/pi-kernels-maintained-source-review.json`, hashed in owner notes.
+
+Preserve hidden ES:SI buffer/DI height and AX mask ID, BP clobber and RETN 8,
+BX=SP followed by SS:[BX+4] far-argument access with RETF 2, exact `Palettes` (no underscore)
+and actual C++ aliases. Palette copy requires DF-clear entry before its provider
+CLD. Do not insert CLD or claim unconditional DF clearing on early-clipped pack
+paths. Keep scratch row 400, top/offset word wrapping, real far pointers and
+buffer-clear-before-free. Near mask helpers DD97/EF3F remain foreign and receive
+no source or ownership claim. Historical mixed-source possibilities remain
+unproved; no inspected kernel portion has positive compiler-generated provenance.

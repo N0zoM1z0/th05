@@ -502,3 +502,129 @@ replace = "VISIBLE_ROWS equ 399"
 offset = 123
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "op-pi-masked-rows"
+artifact = "op"
+source = "src/shared/graphics/pi_masked_rows.asm"
+types = "src/shared/graphics/pi_types.inc"
+symbols = "probes/units/pi_masked_rows_symbols.inc"
+bindings = "probes/units/op_pi_masked_rows_bindings.asm"
+notes = "src/shared/graphics/pi_kernels.md"
+target_start = 56592
+size = 135
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = [54, 106]
+tables = []
+uncredited = []
+native_review_sha256 = "ab03d07cc4339b552ac21bac9874b5818a9f28bcaa118b7533c9ce540985e4af"
+target_scope_sha256 = "9c930de16ae7e0ebb70ae60da503537a33117dcb722672dda9d45d4c4a66d501"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"pi_masked_rows" = 0
+"pi_put_masked_8_rowloop(int,int,int,unsigned int)" = 0
+"pi_masked_rows_end" = 135
+[units.negative]
+find = "TEMP_ROW equ RES_Y"
+replace = "TEMP_ROW equ (RES_Y-1)"
+
+[[units]]
+id = "op-pi-rows-palette-free"
+artifact = "op"
+source = "src/shared/graphics/pi_rows_palette_free.asm"
+types = "src/shared/graphics/pi_types.inc"
+symbols = "probes/units/pi_rows_palette_free_symbols.inc"
+bindings = "probes/units/op_pi_rows_palette_free_bindings.asm"
+notes = "src/shared/graphics/pi_kernels.md"
+target_start = 56960
+size = 146
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = [17, 89, 140]
+tables = []
+native_review_sha256 = "7dc028a87378bcb1d38b7a08f6db17a21fb57252bdb1dea2dedad48ec4639fee"
+target_scope_sha256 = "4b4da924e1f5204e9c5dfbbc18ce283e1b729c56b4eef4c7016ad45aa1b2acd3"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"pi_plain_rows" = 0
+"pi_put_8_rowloop(int,int,int,unsigned int)" = 0
+"pi_palette_apply" = 58
+"pi_palette_apply(int)" = 58
+"pi_free" = 96
+"pi_free(int)" = 96
+"pi_rows_palette_free_end" = 146
+[units.negative]
+find = "PALETTE_COPY_COLORS equ 16"
+replace = "PALETTE_COPY_COLORS equ 15"
+[[units.uncredited]]
+offset = 145
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "maine-pi-masked-rows"
+artifact = "maine"
+source = "src/shared/graphics/pi_masked_rows.asm"
+types = "src/shared/graphics/pi_types.inc"
+symbols = "probes/units/pi_masked_rows_symbols.inc"
+bindings = "probes/units/maine_pi_masked_rows_bindings.asm"
+notes = "src/shared/graphics/pi_kernels.md"
+target_start = 61112
+size = 135
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = [54, 106]
+tables = []
+uncredited = []
+native_review_sha256 = "1a6cfb91d3459012fa2181bd0592e13c1b0e9790c83a5babf265a3dba8bd6ccb"
+target_scope_sha256 = "144877cefe68fd31e50a2bb01e50be1777f44707a77e2eee3a1bbb868b0e084b"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"pi_masked_rows" = 0
+"pi_put_masked_8_rowloop(int,int,int,unsigned int)" = 0
+"pi_masked_rows_end" = 135
+[units.negative]
+find = "TEMP_ROW equ RES_Y"
+replace = "TEMP_ROW equ (RES_Y-1)"
+
+[[units]]
+id = "maine-pi-rows-palette-free"
+artifact = "maine"
+source = "src/shared/graphics/pi_rows_palette_free.asm"
+types = "src/shared/graphics/pi_types.inc"
+symbols = "probes/units/pi_rows_palette_free_symbols.inc"
+bindings = "probes/units/maine_pi_rows_palette_free_bindings.asm"
+notes = "src/shared/graphics/pi_kernels.md"
+target_start = 61480
+size = 146
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = [17, 89, 140]
+tables = []
+native_review_sha256 = "3f8f45c0ae318c7f34a96d78d425535fc80fe0327fbb890cb27e0ace17c8bb75"
+target_scope_sha256 = "a45bb5403518b5807803e8021d5f711e52aee431c7e42eb09eb77821fd5d73d2"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"pi_plain_rows" = 0
+"pi_put_8_rowloop(int,int,int,unsigned int)" = 0
+"pi_palette_apply" = 58
+"pi_palette_apply(int)" = 58
+"pi_free" = 96
+"pi_free(int)" = 96
+"pi_rows_palette_free_end" = 146
+[units.negative]
+find = "PALETTE_COPY_COLORS equ 16"
+replace = "PALETTE_COPY_COLORS equ 15"
+[[units.uncredited]]
+offset = 145
+size = 1
+kind = "alignment"

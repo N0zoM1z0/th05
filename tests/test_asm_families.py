@@ -161,9 +161,9 @@ class AsmFamilyTests(unittest.TestCase):
         for rows in claims.values():
             for row in rows:
                 totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 2675,
+        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 3235,
                                  "accepted-reviewed-asm-dispatch-table": 68,
-                                 "checked-uncredited-asm-alignment": 21,
+                                 "checked-uncredited-asm-alignment": 23,
                                  "checked-uncredited-asm-inert-branch": 6,
                                  "checked-uncredited-asm-runtime-placeholder": 10})
         decision = json.loads(asm.DECISION.read_text())
