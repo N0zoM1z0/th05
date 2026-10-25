@@ -375,6 +375,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
     sin8, sin8_sha = reviewed_master_sin8(
         root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
+    from review_vendor_data import reviewed_claims
+    cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -408,6 +410,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, additions[name])
         if name in sin8:
             pieces = overlay_vendor(view["size"], pieces, sin8[name])
+        if name in cl_data:
+            pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -421,6 +425,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_additions_review_sha256"] = additions_sha
         if sin8_sha and name in sin8:
             views[name]["master_sin8_review_sha256"] = sin8_sha
+        if cl_data_sha and name in cl_data:
+            views[name]["cl_data_review_sha256"] = cl_data_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])

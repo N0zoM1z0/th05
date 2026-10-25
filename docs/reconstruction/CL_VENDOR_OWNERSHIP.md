@@ -91,3 +91,11 @@ No implicit zero-fill exemption or reservation-ownership rule has been adopted.
 The exact reserved spans need explicit review of linker/object allocation
 semantics before either complete member can be excluded. This review does not cover startup, vendor DATA/BSS, master.lib, nearby gaps or any other
 artifact. Names and approximate instruction shape alone are never sufficient.
+
+## Independently reviewed initialized DATA
+
+[CL DATA ownership](CL_DATA_OWNERSHIP.md) separately reviews24 complete DATA
+contributions /1857 bytes across MAIN, OP and MAINE. These receive zero authored
+credit and do not transfer CODE acceptance or establish the global denominator.
+The ordinary relocation-free DATA lane preserves ambiguous, relocated,
+incomplete and all other unreviewed extents as unknown.

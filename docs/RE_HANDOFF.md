@@ -157,6 +157,29 @@ The first refresh failed its moved negative anchor and produced no receipt.
 All attempts are preserved. See[bomb family notes](../src/main/player/bomb_family.md)
 and`.analysis/bomb-family-source-factor/native-full-review.json`.
 
+## Reviewed CL.LIB DATA ownership
+
+No authored counter changes in this review. `review_vendor_data.py` verifies
+24 complete ordinary relocation-free CL.LIB DATA contributions:8 members/619
+bytes independently in each of MAIN, OP and MAINE,1857 bytes total. Complete
+library/member hashes, MAP/MZ contributions, LEDATA coverage, unique native
+whole-byte matches and empty original fixup streams pass. Public evidence is
+`config/vendor_data_ownership.json`, source pins are`config/cl_data_sources.json`,
+and the explicit adoption decision is`config/reviewed_vendor_data_units.json`.
+Only those unknown spans move to verified-vendor-initialized-data. Vendor DATA
+now totals3777 bytes; unknown remains168506. All authored counts, the observation
+universe and the unreviewed global denominator remain unchanged. See
+[CL DATA review](reconstruction/CL_DATA_OWNERSHIP.md). No compiler, Wine, Ghidra,
+decoder or game was run, and no accepted C/C++ source owner needed replay.
+
+Current-state audit also confirmed Music Room502/837 and hiscore menu312 are
+already accepted; old historical failures are not new work. A cutscene audit
+found no supported new context: old full2848 producers already restore all42
+script relocations but script1556 remains raw-inexact; the current split gives
+raw-exact1555 and different ordering. Do not repeat either unchanged build.
+Native/private observations remain in`.analysis/vendor-data-routing/` and the
+existing cutscene producer directories.
+
 ## Parked work: preserve findings before trying variants
 
 - Staff: [full-family notes](../src/maine/staff/full.md) describe17 real bodies,

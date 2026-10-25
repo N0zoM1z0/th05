@@ -29,6 +29,9 @@ def main() -> int:
         if (ROOT / f"config/vendor_ownership.{context}.json").exists():
             subprocess.run([sys.executable, "scripts/review_vendor_context.py", "--context", context,
                             "--structural-check"], cwd=ROOT, check=True)
+    if (ROOT / "config/vendor_data_ownership.json").exists():
+        subprocess.run([sys.executable, "scripts/review_vendor_data.py", "--structural-check"],
+                       cwd=ROOT, check=True)
     if (ROOT / "config/accepted_units.json").exists():
         subprocess.run([sys.executable, "scripts/progress.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "config/zun_memory_acceptance.json").exists():
