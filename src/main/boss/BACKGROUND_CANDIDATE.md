@@ -172,13 +172,18 @@ its original aggregate-failure verdict and digest. Every saved producer,
 function boundary, raw extent, ordered fixup list and source dependency is
 independently rechecked. Unchanged earlier units are not rebuilt.
 
-Two original complete functions remain unaccepted:
+The original split-context exceptions are:
 
 - `shinki_bg_particles_render`: original 159 bytes, natural C++ output 158.
   The signed-zero comparison emits OR AX,AX in place of CMP AX,0.
 - `exalice_grcg_hexagram_put`: all 204 raw bytes match, but splitting the compiler
   contribution moves a LEDATA boundary through this function and changes the
   order of its seven MZ relocation sites. The strict oracle rejects it.
+  This failed split scope remains unaccepted. A separate standalone natural
+  C++ owner now passes the complete204 bytes and original ordered fixups; see
+  [hexagram drawing](exalice/hexagram.md). It adds no duplicate credit to this
+  17-function legacy owner. The legacy source, header and accepted objects
+  remain unchanged.
 
 The owner uses two real compiler CODE contributions in the same `main_01`
 group. `BOSS_BG_TEXT` contains the first five callbacks and the unaccepted

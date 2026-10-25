@@ -4123,3 +4123,21 @@ unit = "main-mima-bomb-control"
 source = "src/main/player/bomb_body/mima_control.inl"
 find = "PaletteTone = 100;"
 replace = "PaletteTone = 101;"
+
+[[units]]
+id = "main-exalice-hexagram-draw"
+source = "src/main/boss/exalice/hexagram.cpp"
+module = "th05/ex_hex.cpp"
+segment = "EXALICE_HEX_TEXT"
+bindings_source = "probes/units/exalice_hexagram_bindings.asm"
+target_start = 0x114be
+size = 204
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-exalice-hexagram-draw"
+source = "src/main/boss/exalice/hexagram.cpp"
+find = "angle += (0x100 / 6);"
+replace = "angle += (0x100 / 5);"

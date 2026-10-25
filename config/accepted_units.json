@@ -2,38 +2,36 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6c604498b62de011aa2f258097000a403559dfb6d2ab95420f50057ec5b8308d",
+  "replay_receipt_sha256": "c7fb4b746245ee13f3cad798ae7a119dc6b998948a3620334cbc64382bc348aa",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 66010,
-    "candidate_start": 66010,
-    "size": 161,
-    "target_sha256": "76c417a48e50a47092718a906c5e4e90760c7c8836d0543dbe77ed2b8977524f",
-    "candidate_sha256": "0f358c33b488f7850f18beb3a58f2eada8ff6208917df29805e7a71316974175",
+    "target_start": 70846,
+    "candidate_start": 70846,
+    "size": 204,
+    "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+    "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
     "raw_exact": false,
     "target_fixups": [
-      55,
-      27,
-      135
+      182,
+      161,
+      140,
+      89,
+      70,
+      51,
+      27
     ],
     "candidate_fixups": [
-      55,
-      27,
-      135
+      182,
+      161,
+      140,
+      89,
+      70,
+      51,
+      27
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 66010,
-      "size": 161,
-      "function_symbol": "bomb_mima()",
-      "contribution_start": 64080,
-      "contribution_size": 2091,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -64645,6 +64643,305 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bm_full.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-hexagram-draw",
+      "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
+      "result": {
+        "id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
+        "rounds": [
+          {
+            "target_start": 70846,
+            "candidate_start": 70846,
+            "size": 204,
+            "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+            "candidate_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+            "raw_exact": true,
+            "target_fixups": [
+              182,
+              161,
+              140,
+              89,
+              70,
+              51,
+              27
+            ],
+            "candidate_fixups": [
+              182,
+              161,
+              140,
+              89,
+              70,
+              51,
+              27
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 70846,
+            "candidate_start": 70846,
+            "size": 204,
+            "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+            "candidate_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+            "raw_exact": true,
+            "target_fixups": [
+              182,
+              161,
+              140,
+              89,
+              70,
+              51,
+              27
+            ],
+            "candidate_fixups": [
+              182,
+              161,
+              140,
+              89,
+              70,
+              51,
+              27
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d3fd4f0896c37bb1ace09891df04f70f73bffefedafeeb19677fcc9d44cbd979",
+            "dependency_timestamp_normalized_sha256": "95283187a019e2a8099809f8acd3a505cab6ded4f6b365331e96a2bbc91ea303",
+            "module_name": "th05/ex_hex.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ex_hex.cpp",
+              "src/main/boss/exalice/hexagram.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "9887e0d9bb27b1d590d6cc9a16b467f829598e8d2ec12ec2aae907680c8ceb34",
+            "dependency_timestamp_normalized_sha256": "95283187a019e2a8099809f8acd3a505cab6ded4f6b365331e96a2bbc91ea303",
+            "module_name": "th05/ex_hex.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ex_hex.cpp",
+              "src/main/boss/exalice/hexagram.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/background.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ex_hex.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ex_hex.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/exalice_hexagram_bindings.asm",
+            "sha256": "95ebca4bb435693ff061305fb80eb4c7716786e4a3c0bc15fa5a75e3d5bb73f7"
+          },
+          {
+            "path": "src/main/boss/background.hpp",
+            "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram.cpp",
+            "sha256": "d81e0c9f6e7b3f59651bd9a79a143428d5ed17ea7d779ccbbd6a292ac14ac2d9"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/exalice_hexagram_bindings.asm",
+          "sha256": "95ebca4bb435693ff061305fb80eb4c7716786e4a3c0bc15fa5a75e3d5bb73f7"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram.cpp",
+          "sha256": "d81e0c9f6e7b3f59651bd9a79a143428d5ed17ea7d779ccbbd6a292ac14ac2d9"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c7fb4b746245ee13f3cad798ae7a119dc6b998948a3620334cbc64382bc348aa",
+      "compiled_negative_control": {
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
+        "raw_exact": false,
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
+        "mutation": {
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += (0x100 / 6);",
+          "replace": "angle += (0x100 / 5);"
+        },
+        "control_sha256": "a9368c5df0c001f82bfa7b6cad75eb8f0c0ebeabe6de8719fd34a68881a3c271",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
+          "raw_exact": false,
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "c621842bfe22a3650a8e2ef68fb650694eb84bafdd4ca8e3d62b2d73bb6a6cc6",
+          "dependency_timestamp_normalized_sha256": "9a22a5cbd984a24526ec6cc237462a7c8caa6f40d77a3b869015e57a4790f44b",
+          "module_name": "th05/ex_hex.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true

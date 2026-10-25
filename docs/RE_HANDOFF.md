@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **310 bounded C/C++ CODE/DATA units / 495 complete function occurrences**,
-**97,289 authored bytes exact**: 81,952 CODE and 15,337 initialized DATA.
-CODE is 81,260 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,368; 79 checked padding bytes receive
-no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
+Current acceptance: **311 bounded C/C++ CODE/DATA units / 496 complete function occurrences**,
+**97,493 authored bytes exact**: 82,156 CODE and 15,337 initialized DATA.
+CODE is 81,464 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 97,572; 79 checked padding bytes receive
+no credit. MAIN has 379 functions / 61,036 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,8 +18,47 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 135,616 bytes. The global denominator is still unreviewed;
+ownership is now 135,412 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest accepted C++: complete Extra Alice hexagram
+
+The complete near Pascal geometry helper at original MAIN114BE..1158A now
+adds204 instruction bytes and one function. It has58 native instructions,
+RET4 at11587, noNOPs/tables/padding and empty owned DATA/BSS. The standalone
+source preserves the current maintained background constants/macro/body
+literally; all17 accepted legacy background scopes and their consumed source
+identities remain unchanged. See[hexagram drawing](../src/main/boss/exalice/hexagram.md).
+
+Only `.analysis/unit-replays/main-exalice-hexagram-standalone-b/receipt.json`
+is imported: two fresh deterministic full204-byte producers, actual AE1/209D
+frames, valid OMF, original ordered fixups[182,161,140,89,70,51,27] and an own
+compiled triangle-angle42-to51 negative. The outside-only binder supplies no
+stack, helper body, state, inside-function gap or byte normalization. Attempt-a
+failed binding assembly before anyC++ invocation; no failed source producer
+is accepted. Installed execution proofs and all unrelated evidence are reused.
+The old monolithic one-positive diagnostic and split-context ordered-fixup
+failure remain unchanged and unaccepted; neither supplies transferred credit.
+
+Independent native/source/saved-producer review:
+`.analysis/exalice-hexagram-standalone-review.json`, SHA-256
+`ddab46db76366afd0f480543df7dfbf96c5e74e21816b3a577c75d485bea5d6a`.
+Only global unknown decreases135,616→135,412 (MAIN55,838→55,634). C/C++ now
+97,493 bytes; vendor/ASM/DATA/resource/padding counts and null denominator
+are unchanged.
+
+Saved import,317-test public CI, native ownership verification and all four
+empty incremental plans pass. Root final review:
+`.analysis/exalice-hexagram-root-final-review.json`, SHA-256
+`cc2db7566ffb19beacb456b7878e9949f43874c937ef443e7901f684ee7da243`.
+
+A separate bounded missing-switch-zero diagnostic is preserved at
+`.analysis/compiler-switch-alignment-a/`. It invokes unchanged Mai/Yuki C++
+source/optimizer context with output-only `-S` once. The actual compiler ASM
+contains noALIGN/EVEN directive and no extra table-prefix zero, so it doesnot
+support an alternate assembly-backend fix. No assembly, link, second producer,
+negative, source/flag sweep or acceptance was attempted. These larger missing
+zero owners remain parked. Do not repeat this unchanged diagnostic.
 
 ## Latest accepted C++: ZUN resident configuration
 
