@@ -21,7 +21,27 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 133,402 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest ownership: four source-backed Master EGC shifts, zero authored credit
+## Latest bounded C++ candidate: motion method, no acceptance
+
+The canonical `PlayfieldMotion::update_seg1()` now has a natural high-level
+implementation under `src/main/math/`, with no shared-header or accepted-caller
+changes. Its sole complete first producer is 42 versus native 32 bytes, so the
+extent gate stops before a second producer or negative. Seg3 was not compiled.
+The real near Pascal this/RET2 and AX/DX point-return interface is preserved.
+Native and candidate have no instruction NOPs, tables or ordered MZ fixups.
+See [motion notes](../src/main/math/motion.md). Modern ASM donor views do not
+prove original assembly authorship; both native 32-byte scopes stay unknown.
+Do not repeat register/type/expression/flag variants without new evidence.
+
+The failed manifest remains private and absent from incremental plans. Installed
+tool execution evidence was reused after identity checks; no accepted unit was
+rebuilt. Authored/ownership totals above are unchanged. Root first-producer
+review: `.analysis/motion-seg1-natural-first-review.json`, SHA-256
+`f23bfd8df9240bb493aa16e51772f54b889ff45138c04d0ae45ac17736635f09`.
+All 334 CI tests, target ownership verification and diff checks pass. Generated
+progress remains identical, and all four incremental plans are empty.
+
+## Previous ownership: four source-backed Master EGC shifts, zero authored credit
 
 Four complete native MAIN procedures08AA..0CC2 now classify1048 previously
 unknown bytes as vendor CODE. Whole original/linked/raw OMF bytes and empty
