@@ -2,12 +2,14 @@
 
 `text_fx_data.asm` supplies two complete bounded DATA contributions in each of
 OP and MAINE: a 28-byte symbolic dispatch bank and two mutable word-sized
-defaults (bold effect and signed pixel spacing 16). These 64 bytes are **separate
-ASM evidence**, with inferred handwritten origin. They receive zero C/C++ and
-zero global authored credit; they remain unknown in the ownership inventory.
+defaults (bold effect and signed pixel spacing 16). The original standalone
+receipt reports **64 separate ASM DATA bytes** with inferred origin and no
+global ownership credit. The subsequent [explicit native assembly review](../../../docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
+adopts these semantic DATA scopes together with independently replayed CODE;
+the receipt itself remains unchanged. C/C++ counters receive zero credit.
 No historical original source file has been recovered.
 
-| Artifact | DS frame | Dispatch extent | Excluded raster resources | State extent | Native consumer CODE, unaccepted |
+| Artifact | DS frame | Dispatch extent | Excluded raster resources | State extent | Native consumer CODE, separately reviewed |
 | --- | --- | --- | --- | --- | --- |
 | OP | 0EFE | F982..F99E | F99E..F9BE | F9BE..F9C2 | D436..D590 |
 | MAINE | 1011 | 10790..107AC | 107AC..107CC | 107CC..107D0 | E91A..EA74 |
@@ -54,7 +56,7 @@ address-difference tables support an assembly-origin inference. The pinned
 has 640 structurally valid members and no GRAPH_PUTSA_FX/GRPPSAFX/GLYPH_WEIGHT
 exports; its ordinary GRAPH_*_PUTS members have no DATA payload. This excludes
 that specific library as a direct provider, without proving every historical
-vendor origin impossible. Global ownership remains unreviewed.
+vendor origin impossible. The global ownership denominator remains unreviewed.
 
 ## Replay and retained evidence
 
@@ -95,6 +97,7 @@ python3 scripts/replay_text_fx_data.py --accept PATH/receipt.json
 python3 scripts/replay_text_fx_data.py --check
 ```
 
-The global denominator, 98% goal, whole renderer CODE, full executable layout
-and packed-file exactness remain unaccepted. No accepted C/C++ owner changed
-or needed replay for this work.
+The complete renderer CODE now has its own independent assembly acceptance and
+explicit ownership decision linked above. The global denominator, 98% goal,
+full executable layout and packed-file exactness remain unaccepted. No accepted
+C/C++ owner changed or needed replay for this work.

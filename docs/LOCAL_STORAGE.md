@@ -55,6 +55,11 @@ incremental replay.
 - `.analysis/builds/` and `.analysis/vendor-review/`: calibration binaries,
   listings, objects and source closures support library ownership and some
   retained DATA evidence. Keep their original paths and contents.
+- `.analysis/textfx-render-native/`: accepted `replay-a/` complete CODE producers,
+  own negatives, source/argv/tool/target snapshots and native ownership review.
+  Both initial diagnostic directories preserve the EQU-versus-word binding
+  finding. The explicit adopted ASM classification also depends on unchanged
+  DATA evidence under `.analysis/textfx-data-native/asm-c/`.
 - `.analysis/toolchain/`: installed tools, attestations and independent active
   TC4 headers/libraries inside the Wine prefix are all checked. The approximately
   1.3 GiB Wine environment is operational state, not a disposable build cache.

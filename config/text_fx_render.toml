@@ -1,0 +1,19 @@
+schema_version = 1
+source = "src/shared/graphics/text_fx_render.asm"
+origin = "inferred-original-handwritten-assembly"
+global_authored_credit = "unreviewed"
+size = 346
+alignment_offsets = [299]
+runtime_patch_placeholder_ranges = [[222, 224], [293, 295], [343, 345]]
+instruction_nops = [173, 261]
+negative_find = "cmp\t@@line, GLYPH_H"
+negative_replace = "cmp\t@@line, (GLYPH_H - 1)"
+negative_occurrences = 2
+
+[profiles.op]
+bindings = "probes/units/op_text_fx_render_bindings.asm"
+symbols = "probes/units/op_text_fx_render_symbols.inc"
+
+[profiles.maine]
+bindings = "probes/units/maine_text_fx_render_bindings.asm"
+symbols = "probes/units/maine_text_fx_render_symbols.inc"

@@ -99,6 +99,18 @@ these bytes receive zero C/C++ and zero global authored credit, remaining
 unknown in the global partition. CODE, raster resources and scaffold reserves
 receive no credit from this review.
 
+An explicit subsequent native assembly ownership review may adopt only its
+named complete scopes. `review_text_fx_asm.py` pins the semantic assembly
+sources, native origin evidence, complete CODE/DATA receipts, bounded vendor
+investigation, classifications and review notes. A separate versioned adoption
+decision is required; the original inferred replay records remain unchanged.
+The renderer's CODE lane requires two fresh complete TASM/OMF/MAP/MZ producers,
+symbol/operand readback and an own assembled semantic CODE negative. Its six
+dummy runtime-patched operand bytes and one EVEN byte per artifact are compared
+normally with zero credit. Two actual hardware-delay NOPs remain instructions.
+Reviewed ASM instructions and DATA stay separate from C/C++ counters; no rule
+here promotes compiler-generated code, raster resources or the ZUN inference.
+
 Each DATA acceptance needs its own compiled negative DATA mutation. A mutation
 that only changes CODE is insufficient. Select one DATA contribution per
 focused replay; CODE units from the same owner can share its one TU compilation

@@ -38,6 +38,10 @@ def main() -> int:
         subprocess.run([sys.executable, "scripts/replay_zun_memory.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "config/text_fx_data_acceptance.json").exists():
         subprocess.run([sys.executable, "scripts/replay_text_fx_data.py", "--check"], cwd=ROOT, check=True)
+    if (ROOT / "config/text_fx_render_acceptance.json").exists():
+        subprocess.run([sys.executable, "scripts/replay_text_fx_render.py", "--check"], cwd=ROOT, check=True)
+    if (ROOT / "config/reviewed_text_fx_asm_units.json").exists():
+        subprocess.run([sys.executable, "scripts/review_text_fx_asm.py", "--structural-check"], cwd=ROOT, check=True)
     if (ROOT / "resources/ownership.json").exists():
         subprocess.run([sys.executable, "scripts/ownership.py", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)

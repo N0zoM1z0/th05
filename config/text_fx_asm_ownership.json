@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "kind": "reviewed-game-specific-assembly-ownership",
+  "origin": "reviewed-native-handwritten-assembly-reconstruction",
+  "historical_source_recovered": false,
+  "global_percentage": null,
+  "limits": [
+    "candidate-local-attested targets; pristine provenance not independently proved",
+    "semantic reconstruction; literal historical source and original assembler not recovered",
+    "bounded vendor exclusion covers only the pinned masters.lib, not all historical derivations",
+    "no ownership transfer to ZUN, compiler-generated code, raster resources or unknown spans",
+    "global authored denominator and percentage remain unreviewed"
+  ],
+  "inputs": [
+    {
+      "path": "config/targets.toml",
+      "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+    },
+    {
+      "path": "config/text_fx_data.toml",
+      "sha256": "c6761aefa8f7e7c1bc67b80261cf9c301ad44215ef9b94d9abe9750d7202e7e8"
+    },
+    {
+      "path": "config/text_fx_data_acceptance.json",
+      "sha256": "42ec9833178acf350a4ae4b3bca933e551e353d65c34f3a81a9967c2c194a67a"
+    },
+    {
+      "path": "config/text_fx_render.toml",
+      "sha256": "73859d8eae875885d3042dfd561b1bd6d961a7ede209b0da57b1f00a674f3d6e"
+    },
+    {
+      "path": "config/text_fx_render_acceptance.json",
+      "sha256": "1c7bfe7b4cf10220ce31272d6a3b1bcd04ff79af7bf412a268c6230fbad48050"
+    },
+    {
+      "path": "config/toolchain.toml",
+      "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+    },
+    {
+      "path": "docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md",
+      "sha256": "c4668e5096f97a2bd042afcc415b14d55aa75ef0924c9a6c1b6e1804f6235ae3"
+    },
+    {
+      "path": "probes/units/maine_text_fx_data_bindings.asm",
+      "sha256": "52196d0306106a97cc621139bbf63d907503dbc9569b49e9a33dc69d4c91c87f"
+    },
+    {
+      "path": "probes/units/maine_text_fx_render_bindings.asm",
+      "sha256": "2ed6dbc13ce2702409aabe61a59c7e9b5469278a6ef6f3bcf225510f6548f896"
+    },
+    {
+      "path": "probes/units/maine_text_fx_render_symbols.inc",
+      "sha256": "f9c4250c963eb7b72259e2250c9a449bc69ac635a233e35fd12249583cfc90d6"
+    },
+    {
+      "path": "probes/units/maine_text_fx_symbols.inc",
+      "sha256": "a83a8d4e3ecfa7ce55a04074bd6ebe286239ed554da4ccfb3f21b228478c10ca"
+    },
+    {
+      "path": "probes/units/op_text_fx_data_bindings.asm",
+      "sha256": "d798d9cd03875cda505c63328d82f0c305e62d82547b0e88bb3dea6d9bc534b0"
+    },
+    {
+      "path": "probes/units/op_text_fx_render_bindings.asm",
+      "sha256": "fba38e9e267f07333d258f7358059a7840c110143ec41bb048b24870ae2e5c3d"
+    },
+    {
+      "path": "probes/units/op_text_fx_render_symbols.inc",
+      "sha256": "734b59db8f5b36646f5011909ad267d3cea1c97a3d0c19771562be3f7c17b304"
+    },
+    {
+      "path": "probes/units/op_text_fx_symbols.inc",
+      "sha256": "c494ad4a3f9dc4f5ebb806945e255285b9d1992cbb96a77b795c6843a235e78d"
+    },
+    {
+      "path": "scripts/lib/borland_library.py",
+      "sha256": "8d5a811afe28f53e9e8e132a17221702ce7885069c85bc53dff20bedb840e6ea"
+    },
+    {
+      "path": "scripts/lib/omf.py",
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "path": "scripts/lib/pc98.py",
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    },
+    {
+      "path": "scripts/lib/reference_build.py",
+      "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+    },
+    {
+      "path": "scripts/lib/replay_toolchain.py",
+      "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+    },
+    {
+      "path": "scripts/lib/unit_context.py",
+      "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+    },
+    {
+      "path": "scripts/lib/unit_extents.py",
+      "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+    },
+    {
+      "path": "scripts/lib/unit_oracle.py",
+      "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+    },
+    {
+      "path": "scripts/replay_text_fx_data.py",
+      "sha256": "0addbd827e346ca1d5c5a1832f0d1795b65f797f4287f04d61153c13bd2d300b"
+    },
+    {
+      "path": "scripts/replay_text_fx_render.py",
+      "sha256": "253fac7a5bc43f4f732fef5e8b035281751544170fda05bbfa286b0c5691b67d"
+    },
+    {
+      "path": "scripts/review_text_fx_asm.py",
+      "sha256": "0f6e88be6a6d7fcfb784df9cd7e37161cadcc1770804a2d419488739abe00fc7"
+    },
+    {
+      "path": "src/shared/graphics/text_fx_data.asm",
+      "sha256": "d01d3ee6958fc541a86a15979f86638937fa24b8909ad116cbe4412eac2929f5"
+    },
+    {
+      "path": "src/shared/graphics/text_fx_render.asm",
+      "sha256": "61e7d77cb56e1ff2ad6ff62393f8fc6e5a4dba0dabd8e7b42fc9280b543c4953"
+    }
+  ],
+  "units": [
+    {
+      "id": "op-text-fx-code",
+      "context": "op",
+      "scope": "code",
+      "start": 54326,
+      "end": 54672,
+      "sha256": "0ee941093f0817f4561fe6a416e0768abab7e5ca483275c6631a2a043c99e80c",
+      "authored_asm_bytes": 339
+    },
+    {
+      "id": "op-text-fx-dispatch",
+      "context": "op",
+      "scope": "dispatch",
+      "start": 63874,
+      "end": 63902,
+      "sha256": "6dc4b9fdabf7f2162f0dc3a64fb0342f4de57a361bc4d9d751db7560eacb9987",
+      "authored_asm_bytes": 28
+    },
+    {
+      "id": "op-text-fx-state",
+      "context": "op",
+      "scope": "state",
+      "start": 63934,
+      "end": 63938,
+      "sha256": "4b9bbb7d2a830c57f6c74ed8c2154424b028ec33043b453bee63016bb4ffdb0b",
+      "authored_asm_bytes": 4
+    },
+    {
+      "id": "maine-text-fx-code",
+      "context": "maine",
+      "scope": "code",
+      "start": 59674,
+      "end": 60020,
+      "sha256": "860d7193b414e3a75907d2d787f2bf585e732d9aa1019a726e9f83d16eaed4b0",
+      "authored_asm_bytes": 339
+    },
+    {
+      "id": "maine-text-fx-dispatch",
+      "context": "maine",
+      "scope": "dispatch",
+      "start": 67472,
+      "end": 67500,
+      "sha256": "48a2f4c0e7a83eea7e5c533ffa493aa83e6853a0284e34d521535e9feae6990d",
+      "authored_asm_bytes": 28
+    },
+    {
+      "id": "maine-text-fx-state",
+      "context": "maine",
+      "scope": "state",
+      "start": 67532,
+      "end": 67536,
+      "sha256": "4b9bbb7d2a830c57f6c74ed8c2154424b028ec33043b453bee63016bb4ffdb0b",
+      "authored_asm_bytes": 4
+    }
+  ],
+  "authored_asm_code_bytes": 678,
+  "authored_asm_data_bytes": 64,
+  "checked_alignment_bytes": 2,
+  "checked_runtime_patch_placeholder_bytes": 12,
+  "cxx_authored_credit": 0,
+  "native_review_sha256": "3cd4163f1699875d7f9024c84901513b4c70c064ce468ef4f4fa32cade740824",
+  "vendor_search": {
+    "path": "_reference/ReC98/bin/masters.lib",
+    "sha256": "6be41dbcfcf4504977165ccc44443525a29a01f85a1580e6ad0c620bf802faf6",
+    "size": 273721,
+    "members": 640,
+    "absent_identifiers": [
+      "GRAPH_PUTSA_FX",
+      "GRPPSAFX",
+      "GLYPH_WEIGHT"
+    ],
+    "native_callback_delta_bank_matches": 0
+  },
+  "targets": {
+    "op": {
+      "sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      }
+    },
+    "maine": {
+      "sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+      "view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      }
+    }
+  },
+  "replay_receipts": {
+    "code": "08ddae5f237a2003edc24a52edae7248154e86763b19e9d32440d21855ba37a2",
+    "data": "93a9dd8bfdca008152e769c09bdc0aade9343421ef2af8e61807f3fb54e7aa69"
+  }
+}

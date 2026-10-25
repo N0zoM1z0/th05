@@ -27,7 +27,7 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored bytes are 96899: 81630 authored CODE plus 15269
+Total authored C/C++ bytes are 96899: 81630 authored CODE plus 15269
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 692 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 79 observed
@@ -40,11 +40,14 @@ and packed-file exactness are separate and remain unaccepted.
 OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
-Separately, 64 symbolic text-renderer ASM DATA bytes
-pass two fresh producers and an own assembled negative per scope/artifact.
-Their handwritten origin is inferred; they add zero C/C++ or global authored
-credit and remain unknown in the global ownership partition. Raster resources
-and renderer CODE are excluded. See [ASM DATA review](../src/shared/graphics/text_fx_data.md).
+Separately reviewed handwritten ASM reconstruction contributes
+678 instruction bytes and 64 initialized DATA bytes.
+All complete scopes pass two fresh producers and their own assembled negatives;
+14 alignment/runtime-placeholder bytes compare normally with zero credit.
+These ASM scopes have an explicit native ownership decision and remain separate
+from all C/C++ counters. Raster resources and every other unknown interval stay
+in the observation universe. Historical source text and original assembler
+identity remain unknown. See [ASM ownership review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md).
 
 The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub

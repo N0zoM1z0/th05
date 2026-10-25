@@ -13,6 +13,12 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
+Separately reviewed text-renderer ASM now contributes **678 instruction bytes
+and 64 semantic DATA bytes**. Its 756 complete compared bytes include 14 checked
+uncredited alignment/runtime-placeholder bytes. C/C++ counters above are
+unchanged; unknown ownership is now 167,750 bytes. The global denominator is
+still unreviewed, and the ZUN child inference remains unpromoted.
+
 ## Retained evidence
 
 Public acceptance lives in `config/accepted_units{,.op,.maine}.json`;
@@ -167,7 +173,7 @@ whole-byte matches and empty original fixup streams pass. Public evidence is
 `config/vendor_data_ownership.json`, source pins are`config/cl_data_sources.json`,
 and the explicit adoption decision is`config/reviewed_vendor_data_units.json`.
 Only those unknown spans move to verified-vendor-initialized-data. Vendor DATA
-now totals3777 bytes; unknown remains168506. All authored counts, the observation
+now totals3777 bytes; unknown was168506 at that checkpoint. All authored counts, the observation
 universe and the unreviewed global denominator remain unchanged. See
 [CL DATA review](reconstruction/CL_DATA_OWNERSHIP.md). No compiler, Wine, Ghidra,
 decoder or game was run, and no accepted C/C++ source owner needed replay.
@@ -180,30 +186,49 @@ raw-exact1555 and different ordering. Do not repeat either unchanged build.
 Native/private observations remain in`.analysis/vendor-data-routing/` and the
 existing cutscene producer directories.
 
-## Separate text-renderer ASM DATA evidence
+## Reviewed text-renderer assembly
 
-`src/shared/graphics/text_fx_data.asm` reconstructs two symbolic DATA scopes in
-each of OP and MAINE: 28 dispatch bytes and 4 mutable state bytes. The separate
-`config/text_fx_data_acceptance.json` records 64 exact ASM DATA bytes, with
-inferred handwritten origin and zero C/C++ or global authored credit. They
-remain unknown in the ownership partition; all headline counts above stay
-unchanged. 32 raster bytes per artifact and all renderer CODE are excluded.
+The complete self-modifying renderer at OP D436..D590 and MAINE E91A..EA74
+now passes independent fresh TASM producers from
+`src/shared/graphics/text_fx_render.asm`. Each complete346-byte contribution
+matches all raw bytes and empty original ordered MZ fixups. Its real local CS
+and typed external word OMF fixups remain intact. Both artifacts have their own
+16-to15 glyph-loop negative, retained under
+`.analysis/textfx-render-native/replay-a/receipt.json`.
 
-`.analysis/textfx-data-native/asm-c/receipt.json` has two fresh producers per
-artifact and an own assembled negative for each scope. Import re-read actual
-saved OMF/MAP/MZ, source aliases, argv/logs, DGROUP frames, pinned decoded views
-and the full private native review. Unchanged tool execution probes were reused.
-See [owner notes](../src/shared/graphics/text_fx_data.md) for original boundary,
-symbol, provenance and NOP review. `asm-a` stopped on the actual TASM MAP module
-name; `asm-b` is a successful intermediate diagnostic. Neither is accepted.
+A separate explicit native-origin/source review supports genuine handwritten
+assembly reconstruction: five CS writes, assembler-level dispatch deltas,
+custom helper register contracts and deliberate fall-through. The maintained
+source has semantic loops, hardware macros and symbolic labels, with no opcode
+arrays, target-byte includes, numeric local CODE addresses or compiler-body
+conversion. Pinned masters.lib's640 members contain no candidate identifiers
+or native20-byte callback-delta bank. Literal historical source, original
+assembler version and exclusion of all historical vendor derivations remain
+unknown. See [review and limitations](reconstruction/TEXT_FX_ASM_OWNERSHIP.md).
 
-Earlier byte-exact C++ state producers were not imported: the assembly context
-does not justify increasing C/C++ origin counters. Their source/producer
-snapshots remain private. No accepted C/C++ dependency changed; no unrelated
-unit was rebuilt. Public CI and generated progress check this separate lane.
-The next lead is the real self-modifying renderer, not a compiler-generated
-function to transcribe; review any original-assembly claim separately. MAIN
-has no corresponding reviewed owner. The 98% objective remains open.
+`config/text_fx_asm_ownership.json` pins native evidence, complete receipts,
+source, tools/verifiers, review notes and classification. The explicit decision
+`config/reviewed_text_fx_asm_units.json` adopts exactly six scopes:346 CODE,
+28 symbolic dispatch DATA and4 state DATA in each of OP and MAINE. Per artifact,
+339 CODE bytes and32 DATA bytes receive separate authored ASM credit. The EVEN
+byte at relative299 and six dummy1234h fields at222/293/343 compare normally
+with zero credit. Actual hardware-delay NOPs at173/261 retain instruction credit.
+
+The unchanged DATA source/receipt remains
+`.analysis/textfx-data-native/asm-c/receipt.json`; its original inferred record
+is not rewritten. Actual dependency identities and archived DATA producers
+were revalidated without recompiling. Adoption also re-read the saved CODE
+OMF/MAP/MZ, source aliases, argv/logs, public/operand boundaries, pinned decoded
+views and tool proofs. Unknown ownership is167750 after classifying756 bytes;
+64 intervening raster bytes remain unknown. No C/C++ source or accepted
+C/C++ dependency changed, and no unrelated unit or unchanged tool probe ran.
+
+The first CODE diagnostic measured344 bytes: EQU state bindings produced
+immediate loads. Real word EXTDEFs plus symbol-only DATA definitions resolve
+the type error. `diagnostic-b` passes the complete346-byte OP extent; neither
+diagnostic is an accepted receipt. Earlier C++ state and ASM DATA diagnostics
+remain private as documented in the DATA notes. MAIN has no corresponding
+reviewed owner. Full program linkage/packing and the98% objective remain open.
 
 ## Parked work: preserve findings before trying variants
 

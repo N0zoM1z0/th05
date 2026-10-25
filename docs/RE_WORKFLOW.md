@@ -20,6 +20,13 @@
 Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
 serial and Ghidra's heap bounded. Never modify the original HDI or executables.
 
+For native evidence establishing a handwritten-assembly owner, keep semantic
+ASM reconstruction and its exact gates separate from C/C++ recovery. The text
+renderer uses `replay_text_fx_render.py`, retains its unchanged DATA producers,
+and requires a subsequent explicit reviewed ownership decision; see the
+[assembly review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md). An inferred replay
+alone grants no global ownership credit, and compiler code cannot use this lane.
+
 When several accepted owners in one artifact share changed dependencies,
 import all their replacement receipts atomically with repeated arguments:
 `python3 scripts/progress.py --accept PATH_A --accept PATH_B`.

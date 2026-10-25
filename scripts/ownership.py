@@ -101,6 +101,32 @@ def overlay_vendor(size: int, pieces: list[dict], claims: list[dict]) -> list[di
     return output
 
 
+def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Adopt reviewed ASM only where ownership was previously unknown."""
+    validate_partition(size, pieces)
+    allowed = {"accepted-reviewed-asm-instructions", "accepted-reviewed-asm-initialized-data",
+               "checked-uncredited-asm-alignment", "checked-uncredited-asm-runtime-placeholder"}
+    for row in claims:
+        if (row.get("kind") not in allowed or not row.get("unit")
+                or row.get("origin") != "reviewed-native-handwritten-assembly-reconstruction"
+                or type(row.get("start")) is not int or type(row.get("end")) is not int
+                or not 0 <= row["start"] < row["end"] <= size):
+            raise ValueError("invalid reviewed ASM ownership claim")
+    known = [row for row in pieces if row["kind"] != "unknown"]
+    output, cursor = [], 0
+    for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor:
+            raise ValueError("reviewed ASM claim overlaps previously known ownership")
+        if cursor < row["start"]:
+            output.append({"start": cursor, "end": row["start"], "kind": "unknown"})
+        output.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        output.append({"start": cursor, "end": size, "kind": "unknown"})
+    validate_partition(size, output)
+    return output
+
+
 def reviewed_vendor(root: Path, *, view: dict, verify_targets: bool) -> tuple[list[dict], str | None]:
     decision_path = root / "config/reviewed_vendor_units.json"
     if not decision_path.exists():
@@ -377,6 +403,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
+    from review_text_fx_asm import reviewed_claims as reviewed_asm_claims
+    asm, asm_sha = reviewed_asm_claims(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -412,6 +440,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, sin8[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
+        if name in asm:
+            pieces = overlay_asm(view["size"], pieces, asm[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -427,6 +457,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_sin8_review_sha256"] = sin8_sha
         if cl_data_sha and name in cl_data:
             views[name]["cl_data_review_sha256"] = cl_data_sha
+        if asm_sha and name in asm:
+            views[name]["text_fx_asm_review_sha256"] = asm_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])
@@ -434,11 +466,13 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             counts["accepted-cxx-switch-table"] != summary["code_data_bytes"] or
             counts['accepted-cxx-initialized-data'] + counts['accepted-c-initialized-data'] !=
             summary.get('authored_data_bytes', 0) or
-            counts["checked-uncredited-padding"] != summary["padding_bytes"]):
+            counts["checked-uncredited-padding"] != summary["padding_bytes"] or
+            counts["accepted-reviewed-asm-instructions"] != summary.get("reviewed_asm_code_bytes", 0) or
+            counts["accepted-reviewed-asm-initialized-data"] != summary.get("reviewed_asm_data_bytes", 0)):
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
             "authored_denominator": None, "percentage": None,
-            "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
+            "unknown_policy": "retain every unknown interval; source/vendor ownership changes require explicit complete-scope review; no inferred asset or runtime exclusion; reviewed ASM remains separate",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}
 

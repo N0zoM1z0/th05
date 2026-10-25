@@ -3,15 +3,19 @@
   "kind": "gapless-observed-coordinate-inventory",
   "authored_denominator": null,
   "percentage": null,
-  "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
+  "unknown_policy": "retain every unknown interval; source/vendor ownership changes require explicit complete-scope review; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-c-initialized-data": 1610,
     "accepted-cxx-initialized-data": 13659,
     "accepted-cxx-instructions": 80938,
     "accepted-cxx-switch-table": 692,
+    "accepted-reviewed-asm-initialized-data": 64,
+    "accepted-reviewed-asm-instructions": 678,
+    "checked-uncredited-asm-alignment": 2,
+    "checked-uncredited-asm-runtime-placeholder": 12,
     "checked-uncredited-padding": 79,
-    "unknown": 168506,
+    "unknown": 167750,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -3439,8 +3443,12 @@
         "accepted-cxx-initialized-data": 8649,
         "accepted-cxx-instructions": 11112,
         "accepted-cxx-switch-table": 106,
+        "accepted-reviewed-asm-initialized-data": 32,
+        "accepted-reviewed-asm-instructions": 339,
+        "checked-uncredited-asm-alignment": 1,
+        "checked-uncredited-asm-runtime-placeholder": 6,
         "checked-uncredited-padding": 5,
-        "unknown": 31935,
+        "unknown": 31557,
         "verified-vendor-code": 24732,
         "verified-vendor-initialized-data": 1259
       },
@@ -4264,6 +4272,74 @@
         },
         {
           "start": 54325,
+          "end": 54326,
+          "kind": "unknown"
+        },
+        {
+          "start": 54326,
+          "end": 54548,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54548,
+          "end": 54550,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54550,
+          "end": 54619,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54619,
+          "end": 54621,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54621,
+          "end": 54625,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54625,
+          "end": 54626,
+          "kind": "checked-uncredited-asm-alignment",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54626,
+          "end": 54669,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54669,
+          "end": 54671,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54671,
+          "end": 54672,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 54672,
           "end": 55276,
           "kind": "unknown"
         },
@@ -4351,6 +4427,25 @@
         },
         {
           "start": 63874,
+          "end": 63902,
+          "kind": "accepted-reviewed-asm-initialized-data",
+          "unit": "op-text-fx-dispatch",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 63902,
+          "end": 63934,
+          "kind": "unknown"
+        },
+        {
+          "start": 63934,
+          "end": 63938,
+          "kind": "accepted-reviewed-asm-initialized-data",
+          "unit": "op-text-fx-state",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 63938,
           "end": 64150,
           "kind": "unknown"
         },
@@ -4529,7 +4624,8 @@
       "vendor_review_sha256": "25fdbbd10355ed0f33d9daf507f37dacd308aa99f576fd4d79ca5f836267be75",
       "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff",
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
-      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14"
+      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
+      "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e"
     },
     "maine": {
       "kind": "retained-diet-decoded-load-module",
@@ -4540,8 +4636,12 @@
         "accepted-cxx-initialized-data": 3529,
         "accepted-cxx-instructions": 9530,
         "accepted-cxx-switch-table": 50,
+        "accepted-reviewed-asm-initialized-data": 32,
+        "accepted-reviewed-asm-instructions": 339,
+        "checked-uncredited-asm-alignment": 1,
+        "checked-uncredited-asm-runtime-placeholder": 6,
         "checked-uncredited-padding": 2,
-        "unknown": 41132,
+        "unknown": 40754,
         "verified-vendor-code": 21894,
         "verified-vendor-initialized-data": 1259
       },
@@ -5313,6 +5413,69 @@
         },
         {
           "start": 59674,
+          "end": 59896,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59896,
+          "end": 59898,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59898,
+          "end": 59967,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59967,
+          "end": 59969,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59969,
+          "end": 59973,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59973,
+          "end": 59974,
+          "kind": "checked-uncredited-asm-alignment",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 59974,
+          "end": 60017,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 60017,
+          "end": 60019,
+          "kind": "checked-uncredited-asm-runtime-placeholder",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 60019,
+          "end": 60020,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "maine-text-fx-code",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 60020,
           "end": 60476,
           "kind": "unknown"
         },
@@ -5400,6 +5563,25 @@
         },
         {
           "start": 67472,
+          "end": 67500,
+          "kind": "accepted-reviewed-asm-initialized-data",
+          "unit": "maine-text-fx-dispatch",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 67500,
+          "end": 67532,
+          "kind": "unknown"
+        },
+        {
+          "start": 67532,
+          "end": 67536,
+          "kind": "accepted-reviewed-asm-initialized-data",
+          "unit": "maine-text-fx-state",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 67536,
           "end": 67888,
           "kind": "unknown"
         },
@@ -5578,7 +5760,8 @@
       "vendor_review_sha256": "311c6662cbde4a4bbbbf6b5c39505e82a3306b5ff9fd33b4c45b8a906522661a",
       "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff",
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
-      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14"
+      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
+      "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e"
     },
     "zun": {
       "kind": "com-file",

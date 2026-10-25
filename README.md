@@ -13,15 +13,22 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **491 complete C++ functions / 81,397 authored CODE bytes**
+The first **494 complete C/C++ functions / 81,630 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
-fixups and compiled controls. Separately, **14,853 initialized semantic DATA
-bytes** pass their own compiled DATA mutations. Total authored bytes exact are
-**96,250**: 80,705 instruction, 692 compiler switch-table
-and 14,853 initialized DATA bytes. Complete compared extents contain
-96,328 bytes, including 78 excluded padding bytes. The oracle
+fixups and compiled controls. Separately, **15,269 initialized semantic DATA
+bytes** pass their own compiled DATA mutations. Total authored C/C++ bytes exact are
+**96,899**: 80,938 instruction, 692 compiler switch-table
+and 15,269 initialized DATA bytes. Complete compared extents contain
+96,978 bytes, including 79 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
+
+Separately, the [reviewed text-renderer assembly](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
+adds **678 ASM instruction bytes and 64 semantic DATA bytes**. Its complete
+756-byte scopes pass two fresh producers and own assembled negatives; 14
+alignment/runtime-placeholder bytes compare normally with zero authored credit.
+This explicit native ownership review leaves C/C++ counters unchanged. Literal
+historical source and original assembler identity remain unknown.
 
 No global authored-byte denominator has been accepted yet; the overall
 percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
@@ -29,11 +36,13 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [gapless ownership inventory](resources/ownership.json) retains every unknown
 interval across all four targets; it grants no inferred vendor exclusions.
 [Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md)
-and its artifact-specific reviews classify 47,479 third-party bytes; the independent
+and its artifact-specific reviews classify 47,479 third-party CODE bytes; the independent
 [Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md)
 and [source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md)
 classify another 2,528 CODE bytes. The [SIN8 review](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
-also identifies 1,920 initialized library DATA bytes. All 51,927 vendor bytes
+also identifies 1,920 initialized library DATA bytes; the
+[CL DATA review](docs/reconstruction/CL_DATA_OWNERSHIP.md) identifies another 1,857.
+All 53,784 vendor bytes
 grant no authored source credit; 2,048 CODE bytes are constants, separately
 identified from instructions.
 
