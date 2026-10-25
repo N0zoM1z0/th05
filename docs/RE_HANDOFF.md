@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **300 bounded C/C++ CODE/DATA units / 491 complete function occurrences**,
-**96,526 authored bytes exact**: 81,397 CODE and 15,129 initialized DATA.
-CODE is 80,705 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,604; 78 checked padding bytes receive
-no credit. MAIN has 375 functions / 60,599 CODE / 3,019 DATA;
+Current acceptance: **301 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
+**96,598 authored bytes exact**: 81,469 CODE and 15,129 initialized DATA.
+CODE is 80,777 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 96,677; 79 checked padding bytes receive
+no credit. MAIN has 377 functions / 60,671 CODE / 3,019 DATA;
 OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,495.
 Global denominator and percentage remain unreviewed.
 
@@ -20,8 +20,8 @@ Public acceptance lives in `config/accepted_units{,.op,.maine}.json`;
 are generated from it. Per-owner source notes explain boundaries and ABIs.
 The private receipt inventory is
 `.analysis/cleanup-current-receipt-guards.json`: all 209 receipt hashes
-for the preceding 298 records were found. The two newer verdict receipts below
-are also required; preserve them with their whole parent directories.
+for the preceding 298 records were found. The two newer verdict receipts and
+MAIN transition receipt below are also required; preserve their whole directories.
 See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
 
 Cleanup revalidated208 whole receipts using the existing private validator.
@@ -102,11 +102,19 @@ counter bytes stay unknown. The earlier294-byte monolith was never compiled.
 
 ## Native leads
 
-Two early native leads are **not ready source packets**:
-`.analysis/native-leads/main-std-boss-transition.json` (7/66-byte wrappers,
-real same-CS far dialog-provider context still needs review) and
+The MAIN dialog-to-boss callbacks are now accepted from
+`.analysis/unit-replays/main-dialog-boss-transition-c/receipt.json`: two complete
+functions at139F5..13A3E, 73 compared bytes / 72 authored CODE bytes. The original
+far cdecl animation call shares AE1 context and retains its relaxation NOP at13A0D
+(checked, zero credit). Real near cdecl STD and near/far Pascal boss callbacks
+are preserved. See [owner notes](../src/main/dialog/boss_transition.md).
+Earlier setup attempts `-a` and `-b` failed assembly/compilation before linking;
+no size/raw mismatch or failed producer was accepted. Existing accepted headers
+and consumers were not changed or replayed.
+
+The remaining native DATA lead is **not a ready source packet**:
 `.analysis/stopped-main-data-leads.json` (possible powers-of-ten table,
-consumer/boundary review incomplete). Do not assign credit from these leads.
+consumer/boundary review incomplete). Do not assign credit from this lead.
 
 ## Parked work: preserve findings before trying variants
 

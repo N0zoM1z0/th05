@@ -4042,3 +4042,22 @@ unit = "main-mai-yuki-hittest"
 source = "src/main/boss/mai_yuki/hittest.cpp"
 find = "shots_hittest_against_boss = true;"
 replace = "shots_hittest_against_boss = false;"
+
+[[units]]
+id = "main-dialog-boss-transition"
+source = "src/main/dialog/boss_transition.cpp"
+module = "th05/std_act.cpp"
+segment = "STD_ACTIVATE_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/dialog_boss_transition_bindings.asm"
+target_start = 80373
+size = 73
+alignment_offsets = [24]
+functions = 2
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-dialog-boss-transition"
+source = "src/main/dialog/boss_transition.cpp"
+find = "total_std_frames++;"
+replace = "total_std_frames += 2;"

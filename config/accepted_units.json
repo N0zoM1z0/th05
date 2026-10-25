@@ -2,24 +2,19 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "aa894cc4e0558f4c47bf9ebe44bc3613dd33c7f3e955b22a0fb1f4b7d56f5483",
+  "replay_receipt_sha256": "777c8fe3112d70e29e4b56c3036d4d1b12d8bef039970e749cd3cc454ad3ff50",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 96240,
-    "candidate_start": 96240,
-    "size": 111,
-    "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
-    "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
+    "target_start": 80373,
+    "candidate_start": 80373,
+    "size": 73,
+    "candidate_size": 74,
+    "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+    "candidate_sha256": "3e14eb9d8e18be39a654453771bd40a868d3693793e43aba474b411fdb00642f",
     "raw_exact": false,
-    "target_fixups": [
-      46,
-      32
-    ],
-    "candidate_fixups": [
-      46,
-      32
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -63218,6 +63213,243 @@
           "-ml",
           "-DBINARY='M'",
           "th05/my_hit.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-dialog-boss-transition",
+      "entry_sha256": "fedbca3a4758f4e2cb83ff710f114c7b413cddbfe3eeed38e93421482acea4e5",
+      "result": {
+        "id": "main-dialog-boss-transition",
+        "entry_sha256": "fedbca3a4758f4e2cb83ff710f114c7b413cddbfe3eeed38e93421482acea4e5",
+        "rounds": [
+          {
+            "target_start": 80373,
+            "candidate_start": 80373,
+            "size": 73,
+            "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+            "candidate_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 80373,
+            "candidate_start": 80373,
+            "size": 73,
+            "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+            "candidate_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "895ff3df6265b6dbcc50f0dde284de1d1bfbd46eba1ec90a077210928d761a75",
+            "dependency_timestamp_normalized_sha256": "284aa8d657ba907604b833dcf54c19bcdee89787a58fed7f5ce28d4c5417da47",
+            "module_name": "th05/std_act.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/std_act.cpp",
+              "src/main/dialog/boss_transition.cpp",
+              "src/main/dialog/boss_transition.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "35872653f321639b1a9133eccf21a821c85072ecc24c4c98fbb00cf47f8ad315",
+            "dependency_timestamp_normalized_sha256": "284aa8d657ba907604b833dcf54c19bcdee89787a58fed7f5ce28d4c5417da47",
+            "module_name": "th05/std_act.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/std_act.cpp",
+              "src/main/dialog/boss_transition.cpp",
+              "src/main/dialog/boss_transition.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/std_act.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/std_act.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/dialog_boss_transition_bindings.asm",
+            "sha256": "ff74571b8dfdaf1e9cc9cbc7c7debe61eb450cc0287951f2a9cbc7fbb73220f3"
+          },
+          {
+            "path": "src/main/dialog/boss_transition.cpp",
+            "sha256": "2e18fd55aa9adfae150a28599986256e6c71c5d6ffff838624140c08b45f01d9"
+          },
+          {
+            "path": "src/main/dialog/boss_transition.hpp",
+            "sha256": "36f9bfcdf3e1f19dcbb79620cfd54a17512d4da2d5a5fbd0ddeda61644369ba7"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/dialog_boss_transition_bindings.asm",
+          "sha256": "ff74571b8dfdaf1e9cc9cbc7c7debe61eb450cc0287951f2a9cbc7fbb73220f3"
+        },
+        {
+          "path": "src/main/dialog/boss_transition.cpp",
+          "sha256": "2e18fd55aa9adfae150a28599986256e6c71c5d6ffff838624140c08b45f01d9"
+        },
+        {
+          "path": "src/main/dialog/boss_transition.hpp",
+          "sha256": "36f9bfcdf3e1f19dcbb79620cfd54a17512d4da2d5a5fbd0ddeda61644369ba7"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "777c8fe3112d70e29e4b56c3036d4d1b12d8bef039970e749cd3cc454ad3ff50",
+      "compiled_negative_control": {
+        "target_start": 80373,
+        "candidate_start": 80373,
+        "size": 73,
+        "candidate_size": 74,
+        "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+        "candidate_sha256": "3e14eb9d8e18be39a654453771bd40a868d3693793e43aba474b411fdb00642f",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-dialog-boss-transition",
+        "entry_sha256": "fedbca3a4758f4e2cb83ff710f114c7b413cddbfe3eeed38e93421482acea4e5",
+        "mutation": {
+          "unit": "main-dialog-boss-transition",
+          "source": "src/main/dialog/boss_transition.cpp",
+          "find": "total_std_frames++;",
+          "replace": "total_std_frames += 2;"
+        },
+        "control_sha256": "ea97bfd0b5ef0dfd205352fd2ffd992c9f1370e52c872f543a422b28af9d472c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 80373,
+          "candidate_start": 80373,
+          "size": 73,
+          "candidate_size": 74,
+          "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
+          "candidate_sha256": "3e14eb9d8e18be39a654453771bd40a868d3693793e43aba474b411fdb00642f",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "f483da2bbbda979f5a011858721421ec112140e95e3e34e06baa37f377e3240d",
+          "dependency_timestamp_normalized_sha256": "f1c24c05ce028425aafb111bfe0788f6e4001fee91a48d4079ff5c19572cd905",
+          "module_name": "th05/std_act.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/std_act.cpp",
+            "src/main/dialog/boss_transition.cpp",
+            "src/main/dialog/boss_transition.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/std_act.cpp"
         ]
       },
       "receipt_aggregate_pass": true
