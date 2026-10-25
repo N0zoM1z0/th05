@@ -5,12 +5,12 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **301 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
-**96,598 authored bytes exact**: 81,469 CODE and 15,129 initialized DATA.
+Current acceptance: **304 bounded C/C++ CODE/DATA units / 493 complete function occurrences**,
+**96,700 authored bytes exact**: 81,469 CODE and 15,231 initialized DATA.
 CODE is 80,777 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,677; 79 checked padding bytes receive
-no credit. MAIN has 377 functions / 60,671 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 55 / 9,580 / 3,495.
+Complete compared extents total 96,779; 79 checked padding bytes receive
+no credit. MAIN has 377 functions / 60,671 CODE / 3,053 DATA;
+OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -21,7 +21,8 @@ are generated from it. Per-owner source notes explain boundaries and ABIs.
 The private receipt inventory is
 `.analysis/cleanup-current-receipt-guards.json`: all 209 receipt hashes
 for the preceding 298 records were found. The two newer verdict receipts and
-MAIN transition receipt below are also required; preserve their whole directories.
+MAIN transition and three sound DATA receipts below are also required; preserve
+their whole directories.
 See [local storage](LOCAL_STORAGE.md) before deleting any private artifacts.
 
 Cleanup revalidated208 whole receipts using the existing private validator.
@@ -99,6 +100,21 @@ with complete raw/OMF/MAP, CP932 staging and ordered relocation validation.
 The unchanged tool execution proof was reused. See
 [verdict UI notes](../src/maine/verdict/ui_data.md). The remaining18 punctuation/
 counter bytes stay unknown. The earlier294-byte monolith was never compiled.
+
+## Shared sound arbitration DATA
+
+Three independent DATA owners add102 bytes: two complete17-byte SE priority/
+lifetime tables in each artifact. They share one maintained semantic source
+without editing any accepted dependency. Receipts under`.analysis/unit-replays/`:
+`main-se-priority-data-a`, `op-se-priority-data-b`, `maine-se-priority-data-a`.
+Each has two fresh deterministic producers, full MAP/OMF/raw and empty ordered
+relocation checks, and its own compiled48-to47 lifetime mutation. Tool execution
+proofs were reused. The first OP attempt failed the MZ minimum-allocation check;
+its corrected binder reserves only the independently accepted foreign Music
+Room DATA end, supplying no values or artificial stack. See
+[sound DATA notes](../src/shared/sound/se_priority_data.md).
+Sound controller CODE remains entirely unaccepted; no register-template or
+codestring probe was repeated. The source does not own adjacent state or gaps.
 
 ## Native leads
 

@@ -938,3 +938,24 @@ unit = "maine-verdict-score-ui-data"
 source = "src/maine/verdict/score_ui_data.cpp"
 find = "\"_ude.txt\""
 replace = "\"_udf.txt\""
+
+[[units]]
+id = "maine-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+module = "th05/se_prio.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_se_priority_data_bindings.asm"
+target_start = 67438
+size = 34
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+
+[[controls]]
+unit = "maine-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+find = "36, 16, 4, 16, 8, 48, 80"
+replace = "36, 16, 4, 16, 8, 47, 80"

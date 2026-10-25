@@ -754,3 +754,24 @@ unit = "op-music-menu"
 source = "src/op/music/music_body.inl"
 find = "frame_since_last_input >= 24"
 replace = "frame_since_last_input >= 25"
+
+[[units]]
+id = "op-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+module = "th05/se_prio.cpp"
+segment = "_DATA"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_se_priority_data_bindings.asm"
+target_start = 63840
+size = 34
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+
+[[controls]]
+unit = "op-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+find = "36, 16, 4, 16, 8, 48, 80"
+replace = "36, 16, 4, 16, 8, 47, 80"

@@ -16,7 +16,7 @@ These frames are read from actual original relocated far callers. In particular 
 
 The original/reference source explicitly inserts its inter-function NOP through `codestring`. This owner injects no codestring, emits no opcodes and supplies no padding bytes. Natural ordinary C++ parameter/index code may also compile differently. The private proposal therefore offers two complete function scopes, play57 and update76, from one TU compiled once per round. They are candidates until actual MAP bounds and full raw/ordered comparisons pass; neither full134 nor either function is presently claimed exact. A fresh diagnostic may be useful before two-producer registration. No alternative source variants have been prepared.
 
-Both priority arrays were independently verified as seventeen bytes in each original against the readable semantic DB definitions in`th04/snd/se_priority[data].asm`. They remain foreign data, with no initialized-DATA credit. The64-byte gaps between the second table and current state in OP/MAINE do not enlarge either array:
+Both priority arrays were independently verified as seventeen bytes in each original against the readable semantic DB definitions in`th04/snd/se_priority[data].asm`. They remain foreign to this CODE TU; their separate maintained DATA owner is now [independently accepted](se_priority_data.md) in all three artifacts. The64-byte gaps between the second table and current state in OP/MAINE do not enlarge either array:
 
 | Artifact | Priorities | Priority frames | Playing | Elapsed frame | Mode |
 |---|---:|---:|---:|---:|---:|

@@ -2,21 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "777c8fe3112d70e29e4b56c3036d4d1b12d8bef039970e749cd3cc454ad3ff50",
+  "replay_receipt_sha256": "58da295cd9d8202ed991fa2e2df35612d45f38cb215b787f311e311d18e16d1e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 80373,
-    "candidate_start": 80373,
-    "size": 73,
-    "candidate_size": 74,
-    "target_sha256": "bdf82c68d981c74549a1961122e83d6b4ce986e7c6db3d80c9b4eb63a283c3ec",
-    "candidate_sha256": "3e14eb9d8e18be39a654453771bd40a868d3693793e43aba474b411fdb00642f",
+    "target_start": 135632,
+    "candidate_start": 135632,
+    "size": 34,
+    "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+    "candidate_sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 135632,
+      "size": 34,
+      "module": "th05/se_prio.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -63450,6 +63457,290 @@
           "-ml",
           "-DBINARY='M'",
           "th05/std_act.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-se-priority-data",
+      "entry_sha256": "5dff0d73d01103e4d069dfc3b6f5e43a3d84dfb9d59536b39cf604da51dcbcd1",
+      "result": {
+        "id": "main-se-priority-data",
+        "entry_sha256": "5dff0d73d01103e4d069dfc3b6f5e43a3d84dfb9d59536b39cf604da51dcbcd1",
+        "rounds": [
+          {
+            "target_start": 135632,
+            "candidate_start": 135632,
+            "size": 34,
+            "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+            "candidate_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 135632,
+              "size": 34,
+              "module": "th05/se_prio.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 135632,
+            "candidate_start": 135632,
+            "size": 34,
+            "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+            "candidate_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 135632,
+              "size": 34,
+              "module": "th05/se_prio.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2a6e3ad0ebbd617a31bfba7c649dcd666eb0cef0a3e2feb53e6109a0fd6b8fb1",
+            "dependency_timestamp_normalized_sha256": "701d656a8aee2d7daa3e510104cc7a24e4bed0fd36f67840ad9de90750a20f85",
+            "module_name": "th05/se_prio.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/se_prio.cpp",
+              "src/shared/sound/se_priority_data.cpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 34,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 34,
+                  "sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "ef1d8b284b0fdbafd1d1c2f882d249a3103c88e1815e50dc921114d833a5b67c",
+            "dependency_timestamp_normalized_sha256": "701d656a8aee2d7daa3e510104cc7a24e4bed0fd36f67840ad9de90750a20f85",
+            "module_name": "th05/se_prio.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/se_prio.cpp",
+              "src/shared/sound/se_priority_data.cpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 34,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 34,
+                  "sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/se_prio.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/se_prio.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_se_priority_data_bindings.asm",
+            "sha256": "592dd16dcf0f7ac7d9705ca57c1cd1c9e41e24d6914f30245ef72378a4831178"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          },
+          {
+            "path": "src/shared/sound/se_priority_data.cpp",
+            "sha256": "7ac3e5b16d07c698cc4671c1eb43d59f2b43f508d4c38b43cc3887a246968ca8"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_se_priority_data_bindings.asm",
+          "sha256": "592dd16dcf0f7ac7d9705ca57c1cd1c9e41e24d6914f30245ef72378a4831178"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        },
+        {
+          "path": "src/shared/sound/se_priority_data.cpp",
+          "sha256": "7ac3e5b16d07c698cc4671c1eb43d59f2b43f508d4c38b43cc3887a246968ca8"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "58da295cd9d8202ed991fa2e2df35612d45f38cb215b787f311e311d18e16d1e",
+      "compiled_negative_control": {
+        "target_start": 135632,
+        "candidate_start": 135632,
+        "size": 34,
+        "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+        "candidate_sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 135632,
+          "size": 34,
+          "module": "th05/se_prio.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-se-priority-data",
+        "entry_sha256": "5dff0d73d01103e4d069dfc3b6f5e43a3d84dfb9d59536b39cf604da51dcbcd1",
+        "mutation": {
+          "unit": "main-se-priority-data",
+          "source": "src/shared/sound/se_priority_data.cpp",
+          "find": "36, 16, 4, 16, 8, 48, 80",
+          "replace": "36, 16, 4, 16, 8, 47, 80"
+        },
+        "control_sha256": "141dcb0fcbdb46d382d445325aa42dc9b46009f84350cc85f0152d4b2774b086",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 135632,
+          "candidate_start": 135632,
+          "size": 34,
+          "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
+          "candidate_sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 135632,
+            "size": 34,
+            "module": "th05/se_prio.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "148747a2abb7ac9fd56995ad5cb932e43b18ca4f48eda133eeb1a45277867b1d",
+          "dependency_timestamp_normalized_sha256": "8cbc967ff81ad1978ec074545b5974b2d89f1533e0a98362082ef7707909c154",
+          "module_name": "th05/se_prio.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/se_prio.cpp",
+            "src/shared/sound/se_priority_data.cpp",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 34,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 34,
+                "sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/se_prio.cpp"
         ]
       },
       "receipt_aggregate_pass": true

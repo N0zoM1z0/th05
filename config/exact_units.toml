@@ -4061,3 +4061,24 @@ unit = "main-dialog-boss-transition"
 source = "src/main/dialog/boss_transition.cpp"
 find = "total_std_frames++;"
 replace = "total_std_frames += 2;"
+
+[[units]]
+id = "main-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+module = "th05/se_prio.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_se_priority_data_bindings.asm"
+target_start = 135632
+size = 34
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+
+[[controls]]
+unit = "main-se-priority-data"
+source = "src/shared/sound/se_priority_data.cpp"
+find = "36, 16, 4, 16, 8, 48, 80"
+replace = "36, 16, 4, 16, 8, 47, 80"
