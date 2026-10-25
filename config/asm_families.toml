@@ -886,3 +886,61 @@ replace = "MPN_ROWS equ (MPN_TILE_H - 1)"
 offset = 75
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-hud-bar"
+artifact = "main"
+source = "src/main/hud/bar.asm"
+types = "src/main/hud/bar_types.inc"
+symbols = "probes/units/hud_bar_symbols.inc"
+bindings = "probes/units/hud_bar_bindings.asm"
+notes = "src/main/hud/bar.md"
+target_start = 0xD474
+size = 76
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = [70]
+tables = []
+native_review_sha256 = "61ab60af2b35c35b23288d94707ad6cf8cc715915b3a89d5007dca5f8d0c4332"
+target_scope_sha256 = "052767de0dbc7f65499b60ab7cd9dcdee0bc7c16fa57d93bf497115ffd342fdc"
+semantic_inputs = []
+[units.publics]
+"HUD_BAR_PUT" = 0
+"hud_bar_end" = 76
+[units.negative]
+find = "HUD_BAR_CAPACITY equ (HUD_BAR_CELLS * HUD_BAR_CELL_UNITS)"
+replace = "HUD_BAR_CAPACITY equ ((HUD_BAR_CELLS * HUD_BAR_CELL_UNITS) - 1)"
+
+[[units]]
+id = "main-hud-numbers"
+artifact = "main"
+source = "src/main/hud/numbers.asm"
+types = "src/main/hud/numbers_types.inc"
+symbols = "probes/units/hud_numbers_symbols.inc"
+bindings = "probes/units/hud_numbers_bindings.asm"
+notes = "src/main/hud/numbers.md"
+target_start = 0x158AA
+size = 106
+segment = "MAIN_03_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = [99]
+tables = []
+native_review_sha256 = "9598764b41607b03a84bda552fc86e9ecd48da95792133f892fe1982ff5aa318"
+target_scope_sha256 = "d9a1876882d8063bc598f120113e0725010a4204214b9cccd6631706d60f65ff"
+semantic_inputs = []
+[units.publics]
+"hud_5_digit_put(unsigned int,unsigned int,unsigned int,unsigned int)" = 0
+"hud_points_put(unsigned int,unsigned int,unsigned long)" = 26
+"hud_number_digits" = 51
+"hud_numbers_end" = 106
+[units.negative]
+find = "HUD_SMALL_LEADING_DIGITS equ (HUD_SMALL_DIGITS - 1)"
+replace = "HUD_SMALL_LEADING_DIGITS equ (HUD_SMALL_DIGITS - 2)"
+[[units.uncredited]]
+offset = 25
+size = 1
+kind = "alignment"

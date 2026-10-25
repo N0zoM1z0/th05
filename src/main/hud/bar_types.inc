@@ -1,0 +1,12 @@
+; Character-cell geometry and the complete incoming near Pascal stack frame.
+HUD_COLUMN equ 56
+HUD_BAR_CELLS equ 8
+HUD_BAR_CELL_UNITS equ 16
+HUD_BAR_FULL_FIRST equ 030h
+HUD_BAR_PARTIAL_FIRST equ 020h
+HUD_EMPTY equ 2
+HUD_BAR_ROW_BYTES equ (HUD_BAR_CELLS + 1)
+HUD_BAR_ARG_ATTRIBUTE equ 2
+HUD_BAR_ARG_VALUE equ 4
+HUD_BAR_ARG_ROW equ 6
+HUD_BAR_ARGUMENT_BYTES equ 6

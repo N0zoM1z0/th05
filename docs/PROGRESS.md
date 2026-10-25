@@ -41,10 +41,10 @@ OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
 Separately reviewed handwritten ASM reconstruction contributes
-6169 instruction bytes, 210 symbolic CODE-dispatch table bytes,
+6350 instruction bytes, 210 symbolic CODE-dispatch table bytes,
 24 semantic CODE-table bytes and 64 initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
-64 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
+65 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
 These ASM scopes have explicit native ownership decisions and remain separate
 from all C/C++ counters. Raster resources and every other unknown interval stay
 in the observation universe. Historical source text and original assembler

@@ -13,13 +13,90 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,169 instruction bytes,
+Separately reviewed ASM now contributes **6,350 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 6,531
-complete compared bytes include 64 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 6,713
+complete compared bytes include 65 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,704 bytes. The global denominator is still unreviewed;
+ownership is now 132,522 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest accepted ASM: HUD bar and shared decimal renderers
+
+Two complete MAIN contributions add 181 reviewed ASM instruction bytes:
+near Pascal HUD_BAR_PUT at D474..D4C0 (76), and the two far Pascal number
+entries sharing a tail at 158AA..15914 (106 complete, 105 instructions).
+The sole NOP is the number family's EVEN at relative 25, compared normally
+with zero credit. Original ordered MZ fixups are `[70]` and `[99]`.
+See [bar source/ABI/origin review](../src/main/hud/bar.md) and
+[number source/ABI/origin review](../src/main/hud/numbers.md).
+
+Native early FAR-argument queueing, BX-base/BL reuse, ES:DI/CX bar protocol,
+and the cross-public CH/CL/EDX decimal tail support inferred original
+handwritten ASM. Independent candidate history corroborates both inferences;
+modern ASM syntax, standard BP frames or failed compiler output alone are
+not their basis. Historical source/assembler and exhaustive ancestry remain
+unproved. Existing int-valued near bar API, both real far number APIs, native
+zero-value bar quirk and clear-DF precondition are preserved. Foreign buffer,
+divisor table, gaiji pixels and FAR renderer supply no new credit.
+
+Both scopes have two independently assembled complete producers and an own
+compiled semantic negative: capacity 128 to 127 changes only bar byte 31;
+leading count 4 to 3 changes only number byte 21. Complete OMF/LEDATA/MAP/public/
+CS/DGROUP/raw/ordered-fixup gates pass, and both negatives are rejected.
+Bar uses the ordinary replay. The number first producer is already raw/order
+exact but stops on my wrong decorated MAP-check names. Only the two public
+spellings are corrected to actual demangled signatures. Its original workspace
+remains byte-identical; continuation revalidates and retains the first producer,
+then assembles only the independent second and own negative. No source, flags,
+ABI, instruction, bytes, relocation, or verifier changes; no first rebuild.
+
+Receipts: `.analysis/asm-replays/main-hud-bar-a/receipt.json`, SHA-256
+`2de65d3fcd49edc5130c0d21b9fe81a3d5b6523fdb5d3841076aa6ca41bb5ca6`;
+`.analysis/asm-replays/main-hud-numbers-b/receipt.json`, SHA-256
+`9e38b0689ff4ec075a7d6f3bf78c4f2af0ccd9bb9ac6a9cca3864d375d7f4c17`.
+Number continuation lineage SHA-256
+`cba544f1441310d5973d46929c23e584a486e1aa901edb7c789878fa718cfb48`.
+Native-only independent models pass 267 bar and 282 decimal cases, including
+glyph geometry, word truncation, string bounds, argument forwarding and cleanup.
+The real foreign renderer is intercepted, not executed in those models;
+point formatting tests cover 0..9999999, not all DWORD values.
+
+Explicit per-record adoption is separate from both replay receipts. ASM totals
+are 6350 instructions/210 dispatch/24 semantic CODE/64 DATA, with 6713 complete
+compared bytes and 65 uncredited. Unknown decreases 132704 to 132522
+(MAIN 52994 to 52812). C/C++ 98451 and all vendor/DATA/resource counts remain
+unchanged; the global denominator and percentage remain null.
+
+Independent actual bar review:
+`.analysis/hud-bar-actual-replay-independent-review.json`, SHA-256
+`b714db6f0014ab417443ae6d00f5f7e5dcc0418b53f3837e19911d3355368b6f`.
+Independent actual number and retained-first lineage review:
+`.analysis/hud-numbers-actual-continuation-independent-review.json`, SHA-256
+`b63fd83f635281c3c979cd3c8314ba3a32d5b14d1ebd1365651a006656530eb1`.
+The standard receipt validator checks all saved producers; the private
+continuation lineage is additionally checked by that independent review.
+
+All 352 final CI tests pass. The first CI run exposed only the old hardcoded
+ASM aggregate expectation; its two constants now include the new 181 instruction
+bytes and one alignment byte, with partition/tamper checks unchanged. Native
+target ownership verification, generated progress and diff checks pass. All
+four C/C++ plans and the ASM plan are empty. All 25 old ASM records, descriptors
+and adoption entries, and the four C/C++ ledgers remain unchanged. OP/MAINE
+ownership intervals, counts and target identities remain unchanged; only their
+shared ASM-decision provenance digest updates. The ZUN view is byte-identical.
+Final independent adoption/count review:
+`.analysis/hud-asm-final-adoption-independent-review.json`, SHA-256
+`7771206e472dc8d7ce0d7093fc44fca8e55595558f313482e7cbfb601893bb88`.
+Root final review: `.analysis/hud-asm-root-final-review.json`, SHA-256
+`1c6e352904599436affcfddc9fe98934b3222fc2b3f3edfb6f332262234cd056`.
+
+A separately reviewed next vendor lead is untouched 240-byte GC_CIRCX.ASM plus
+FUNC.INC. Its three foreign WORD globals have independent full DATA-record
+anchors, unlike the still-unanchored four-byte GC_CIRCL BSS owner. No first
+producer or new vendor adoption is claimed. Bounded routing report:
+`.analysis/vendor-review/remaining-circle-primary-routing-review.json`, SHA-256
+`7a7dfad3eaa90f1664c91217901c26cb69582d2fdbbcc98808512bb466c16356`.
 
 ## Latest ownership: unchanged original Master circle fill
 
