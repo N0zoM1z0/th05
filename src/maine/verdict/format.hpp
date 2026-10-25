@@ -50,7 +50,11 @@ extern "C" void pascal far graph_gaiji_puts(screen_x_t left, screen_y_t top,
 extern "C" void pascal far graph_putsa_fx(screen_x_t left, screen_y_t top,
     vc2 color, const shiftjis_t far *text);
 
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_FMT_TEXT group_01
+#endif
 void pascal near graph_3_digit_put(screen_x_t left, screen_y_t top, uint16_t num);
 void pascal near verdict_score_put(screen_x_t left, screen_y_t top,
     const score_lebcd_t far &score);

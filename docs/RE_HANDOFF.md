@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **274 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
-**88,686 authored bytes exact**: 77,018 CODE and 11,668 initialized DATA.
-CODE is 76,348 instruction plus 670 semantic compiler-table bytes.
-Complete compared extents total 88,762; 76 checked padding bytes receive
+Current acceptance: **280 bounded C/C++ CODE/DATA units / 475 complete function occurrences**,
+**90,542 authored bytes exact**: 78,874 CODE and 11,668 initialized DATA.
+CODE is 78,182 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 90,618; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 2,959 DATA;
-OP 61 / 11,218 / 8,615; MAINE 42 / 5,498 / 94.
+OP 61 / 11,218 / 8,615; MAINE 44 / 7,354 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1238,3 +1238,27 @@ and own first-drop power-to-point control pass. Attempt a stopped at linking
 because the header's empty HUD_OVRL_TEXT was outside MAIN_01's window; b
 places that foreign empty segment inside its genuine group. No caller/header
 changed and no table values come from the address-only binder.
+
+## Complete MAINE verdict family accepted
+
+`maine-verdict-full-family-c` proves the actual3384-byte ten-function CODE
+family: two fresh deterministic producers,3350 instructions plus34 generated
+table bytes, zeroNOP/padding, all50 original ordered fixups and a rejected
+completion46000-to-46001 main control. a/b remain failed: explicit&row[0] alone
+changed no code; restoring the actual donor mutable default-distancechar[5][8]
+from the unsupported draftconstnear declaration resolved12bytes ofDS argument
+construction. True FILE/graphics APIs and all flags/layout remained unchanged.
+
+`maine-verdict-full-scopes-c` projects all ten complete functions from those
+intact archived producers with zero new compiler invocations. Normal atomic
+import replaces four old IDs and adds six; all1528 priorbytes remain covered.
+Only main1748 and animation108 add1856 bytes/twofunctions. The shared compiled
+CODE control belongs to main; no independent animation mutation is claimed.
+The original whole trial is not a ledger owner. Unrelated records/controls,
+including newly accepted alphabet51 and drop64, were preserved mechanically.
+
+Canonical bodies are literal include factors of previous accepted sources;
+guarded header selectors retain their standalone context. The new ten-body
+context is genuine coherent source, not a claim of historical originalTU.
+No core/projection contract, filler, byte patch or fixup normalization changed.
+See `src/maine/verdict/full.md`. The isolated worktree and a/b/c evidence remain.

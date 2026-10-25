@@ -8,10 +8,10 @@
   "byte_counts": {
     "accepted-c-initialized-data": 1610,
     "accepted-cxx-initialized-data": 10058,
-    "accepted-cxx-instructions": 76348,
-    "accepted-cxx-switch-table": 670,
+    "accepted-cxx-instructions": 78182,
+    "accepted-cxx-switch-table": 692,
     "checked-uncredited-padding": 76,
-    "unknown": 178579,
+    "unknown": 176723,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 1920
   },
@@ -4216,10 +4216,10 @@
       "original_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
       "byte_counts": {
         "accepted-cxx-initialized-data": 94,
-        "accepted-cxx-instructions": 5470,
-        "accepted-cxx-switch-table": 28,
+        "accepted-cxx-instructions": 7304,
+        "accepted-cxx-switch-table": 50,
         "checked-uncredited-padding": 2,
-        "unknown": 49268,
+        "unknown": 47412,
         "verified-vendor-code": 21894,
         "verified-vendor-initialized-data": 640
       },
@@ -4801,9 +4801,27 @@
         },
         {
           "start": 50663,
-          "end": 51374,
+          "end": 50815,
           "kind": "accepted-cxx-instructions",
           "unit": "maine-verdict-format"
+        },
+        {
+          "start": 50815,
+          "end": 50985,
+          "kind": "accepted-cxx-instructions",
+          "unit": "maine-verdict-score-put"
+        },
+        {
+          "start": 50985,
+          "end": 51253,
+          "kind": "accepted-cxx-instructions",
+          "unit": "maine-verdict-percentage-put"
+        },
+        {
+          "start": 51253,
+          "end": 51374,
+          "kind": "accepted-cxx-instructions",
+          "unit": "maine-verdict-fraction-put"
         },
         {
           "start": 51374,
@@ -4821,12 +4839,19 @@
           "start": 51714,
           "end": 51867,
           "kind": "accepted-cxx-instructions",
-          "unit": "maine-verdict-bonus-comments"
+          "unit": "maine-verdict-comment-id"
         },
         {
           "start": 51867,
+          "end": 53593,
+          "kind": "accepted-cxx-instructions",
+          "unit": "maine-verdict-main"
+        },
+        {
+          "start": 53593,
           "end": 53615,
-          "kind": "unknown"
+          "kind": "accepted-cxx-switch-table",
+          "unit": "maine-verdict-main"
         },
         {
           "start": 53615,
@@ -4837,7 +4862,8 @@
         {
           "start": 53681,
           "end": 53789,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "maine-verdict-animate"
         },
         {
           "start": 53789,

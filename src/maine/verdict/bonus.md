@@ -1,5 +1,9 @@
 # Verdict bonus and commentary selection
 
+Current source uses the canonical bodies and accepted complete-family producer
+described in [full.md](full.md). The focused receipts below remain historical
+evidence; their covered bytes are retained without duplicate credit.
+
 `maine-verdict-bonus-comments-b` accepts the complete493-byte cohort / two
 functions: 481 instruction bytes and twelve compiler switch-table bytes,
 without padding. Both fresh producers and the life1 bonus2500→2501 negative

@@ -19,10 +19,18 @@ void pascal far pi_put_8(screen_x_t left, screen_y_t top, int slot);
 void pascal far pi_free(int slot);
 void pascal far frame_delay(int frames);
 int pascal far input_wait_for_change(int frames);
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_FOREIGN_TEXT group_01
+#endif
 void near verdict_main(void);
 void near verdict_comments_put(void);
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_ANIMATE_TEXT group_01
+#endif
 void near verdict_animate(void);
 #define verdict_graph_accesspage(page) outportb(0xA6, page)
 #define verdict_graph_showpage(page) outportb(0xA4, page)

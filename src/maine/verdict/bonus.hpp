@@ -17,7 +17,11 @@ extern screen_y_t verdict_text_top;
 // A distinct original percent object at DS:1620; no new initialized DATA.
 extern const shiftjis_t near verdict_bonus_percent_sign[];
 
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_LOGIC_TEXT group_01
+#endif
 void near verdict_apply_bonus(void);
 uint8_t near verdict_comment_id(void);
 #endif

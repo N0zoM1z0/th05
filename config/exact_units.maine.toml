@@ -392,25 +392,6 @@ find = "p->speed.v = 10;"
 replace = "p->speed.v = 11;"
 
 [[units]]
-id = "maine-verdict-format"
-source = "src/maine/verdict/format.cpp"
-module = "th05/vformat.cpp"
-segment = "VERDICT_FMT_TEXT"
-target_start = 50663
-size = 711
-functions = 4
-alignment_offsets = []
-origin = "compiler-generated-cxx"
-wrapper_options = "-zPgroup_01"
-bindings_source = "probes/units/maine_verdict_format_bindings.asm"
-
-[[controls]]
-unit = "maine-verdict-format"
-source = "src/maine/verdict/format.cpp"
-find = "digit = num / 100;"
-replace = "digit = num / 101;"
-
-[[units]]
 id = "maine-registration-alphabet"
 source = "src/maine/registration/alphabet.cpp"
 module = "th05/r_alpha.cpp"
@@ -468,66 +449,6 @@ find = "frame_delay(1);"
 replace = "frame_delay(2);"
 
 [[units]]
-id = "maine-verdict-bonus-comments"
-source = "src/maine/verdict/bonus.cpp"
-module = "th05/vbonus.cpp"
-segment = "VERDICT_LOGIC_TEXT"
-wrapper_options = "-zPgroup_01"
-bindings_source = "probes/units/maine_verdict_bonus_bindings.asm"
-target_start = 51374
-size = 493
-functions = 2
-origin = "compiler-generated-cxx"
-alignment_offsets = []
-code_data_ranges = [{offset = 328, size = 12, kind = "compiler-switch-table"}]
-
-[[controls]]
-unit = "maine-verdict-bonus-comments"
-source = "src/maine/verdict/bonus.cpp"
-find = "case 1: bonus = 2500; break;"
-replace = "case 1: bonus = 2501; break;"
-
-[[units]]
-id = "maine-verdict-comments"
-source = "src/maine/verdict/comments.cpp"
-module = "th05/vcomment.cpp"
-segment = "VERDICT_COMMENT_TEXT"
-wrapper_options = "-zPgroup_01"
-bindings_source = "probes/units/maine_verdict_comments_bindings.asm"
-target_start = 53615
-size = 66
-functions = 1
-origin = "compiler-generated-cxx"
-alignment_offsets = []
-code_data_ranges = []
-
-[[controls]]
-unit = "maine-verdict-comments"
-source = "src/maine/verdict/comments.cpp"
-find = "verdict_text_top + 296"
-replace = "verdict_text_top + 297"
-
-[[units]]
-id = "maine-verdict-stage-scores"
-source = "src/maine/verdict/stage_scores.cpp"
-module = "th05/vstscore.cpp"
-segment = "VERDICT_SCORES_TEXT"
-wrapper_options = "-zPgroup_01"
-bindings_source = "probes/units/maine_verdict_stage_scores_bindings.asm"
-target_start = 53789
-size = 258
-functions = 1
-origin = "compiler-generated-cxx"
-alignment_offsets = []
-code_data_ranges = []
-
-[[controls]]
-unit = "maine-verdict-stage-scores"
-source = "src/maine/verdict/stage_scores.cpp"
-find = "graph_putsa_fx(verdict_text_left, verdict_text_top + 64,"
-replace = "graph_putsa_fx(verdict_text_left, verdict_text_top + 65,"
-
-[[units]]
 id = "maine-registration-alphabet-data"
 source = "src/maine/registration/alphabet_data.cpp"
 module = "th05/regalpha.cpp"
@@ -549,3 +470,170 @@ unit = "maine-registration-alphabet-data"
 source = "src/maine/registration/alphabet_data.cpp"
 find = "    RA_A, RA_B, RA_C,"
 replace = "    RA_B, RA_B, RA_C,"
+
+# Complete functions projected from intact two-cold whole-family producers; zero new compiles.
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-format"
+target_start = 50663
+size = 152
+functions = 1
+function_symbol = "graph_3_digit_put(int,int,unsigned int)"
+function_end_symbol = "verdict_score_put(int,int,const score_lebcd_t far&)"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-score-put"
+target_start = 50815
+size = 170
+functions = 1
+function_symbol = "verdict_score_put(int,int,const score_lebcd_t far&)"
+function_end_symbol = "skill_apply_and_graph_percentage(int,int,unsigned int,unsigned int)"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-percentage-put"
+target_start = 50985
+size = 268
+functions = 1
+function_symbol = "skill_apply_and_graph_percentage(int,int,unsigned int,unsigned int)"
+function_end_symbol = "graph_fraction_of_million_put(int,int,unsigned long)"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-fraction-put"
+target_start = 51253
+size = 121
+functions = 1
+function_symbol = "graph_fraction_of_million_put(int,int,unsigned long)"
+function_end_symbol = "verdict_apply_bonus()"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-bonus-comments"
+target_start = 51374
+size = 340
+functions = 1
+function_symbol = "verdict_apply_bonus()"
+function_end_symbol = "verdict_comment_id()"
+code_data_ranges = [{offset = 328, size = 12, kind = "compiler-switch-table"}]
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-comment-id"
+target_start = 51714
+size = 153
+functions = 1
+function_symbol = "verdict_comment_id()"
+function_end_symbol = "verdict_main()"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-main"
+target_start = 51867
+size = 1748
+functions = 1
+function_symbol = "verdict_main()"
+function_end_symbol = "verdict_comments_put()"
+code_data_ranges = [{offset = 1726, size = 12, kind = "compiler-switch-table"}, {offset = 1738, size = 10, kind = "compiler-switch-table"}]
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-comments"
+target_start = 53615
+size = 66
+functions = 1
+function_symbol = "verdict_comments_put()"
+function_end_symbol = "verdict_animate()"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-animate"
+target_start = 53681
+size = 108
+functions = 1
+function_symbol = "verdict_animate()"
+function_end_symbol = "verdict_stage_scores_put()"
+code_data_ranges = []
+
+[[units]]
+source = "src/maine/verdict/full.cpp"
+module = "th05/vfull.cpp"
+segment = "VERDICT_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_full_bindings.asm"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+id = "maine-verdict-stage-scores"
+target_start = 53789
+size = 258
+functions = 1
+function_symbol = "verdict_stage_scores_put()"
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-verdict-main"
+source = "src/maine/verdict/body/verdict_main.inl"
+find = "resident->std_frames = 46000;"
+replace = "resident->std_frames = 46001;"

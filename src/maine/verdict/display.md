@@ -1,11 +1,11 @@
 # Remaining small verdict display functions
 
-`maine-verdict-comments-a` accepts66 bytes and
-`maine-verdict-stage-scores-a` accepts258 bytes. Each has two fresh exact
-producers, original ordered fixups and its own Y-coordinate mutation. Both
-reuse the unchanged full Resident/Score8 interfaces. Animation108 remains
-unaccepted and was not compiled: its known nonmonotonic relocation runs
-require an evidenced coherent compiler context.
+The current accepted producer is the complete ten-function family described in
+[full.md](full.md). It accepts all three functions below, including animation108
+with its original nonmonotonic fixup order. The earlier independent
+`maine-verdict-comments-a` and `maine-verdict-stage-scores-a` receipts remain
+historical evidence for66/258 bytes and their own Y-coordinate mutations.
+The following notes describe the original standalone boundary review.
 
 Native review of the complete interval after the main verdict calculation
 identifies three independent ordinary C++ candidates:
@@ -38,8 +38,7 @@ through the newly accepted near Pascal Score8 far-reference formatter at C67F.
 The complete128-byte resident and eight-byte score union are reused unchanged.
 The natural loop advances its vertical coordinate by32. No explicit register
 hint is added: this TH05-specific function has no independently demonstrated
-natural donor qualifier to restore. Actual compiler allocation remains to be
-verified rather than forced.
+natural donor qualifier to restore. Both the standalone and complete-family producers verify the actual allocation.
 
 The animation uses the maintained TH04 natural verdict-animation donor with
 the original TH05 page0/show0, main calculation,64-frame delay, commentary and
@@ -58,8 +57,9 @@ original ordered relocation stream. No artificial prefix, record rechunking,
 masking or sorting is proposed to avoid this gate.
 
 Each candidate has a separate symbol-only binder reserving only the genuine
-foreign extents outside its entire compiled function. Existing accepted
-formatter/resident headers and the frozen493-byte bonus packet remain unchanged.
+foreign extents outside its entire compiled function. The initial standalone packet preserved the formatter/resident headers and
+493-byte bonus packet; the complete-family factor now shares their literal
+bodies and guarded first-declaration contexts.
 The staged negatives change the first commentary row Y296 to297, the first
 stage-label Y64 to65, and the animation's wait64 to63, respectively. Module aliases
 `vcomment`, `vstscore` and `vanimate` each satisfy DOS8.3.
@@ -67,5 +67,6 @@ stage-label Y64 to65, and the animation's wait64 to63, respectively. Module alia
 Native evidence and the decoded-target proof are preserved in
 `.analysis/maine-verdict-display-boundary-review.json`. Functional files and
 unchanged accepted headers are pinned in
-`.analysis/maine-verdict-display-freeze.json`. The66/258-byte producers now pass their focused replays. The animation
-proposal remains private and inactive; no exactness transfers to it.
+`.analysis/maine-verdict-display-freeze.json`. The66/258-byte producers passed their focused replays. All three now have
+complete-family evidence in `maine-verdict-full-scopes-c`, including the actual
+animation record phase.

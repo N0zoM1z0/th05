@@ -1,5 +1,9 @@
 # MAINE verdict scalar formatting candidate
 
+Current source uses the canonical bodies and accepted complete-family producer
+described in [full.md](full.md). The focused receipts below remain historical
+evidence; their covered bytes are retained without duplicate credit.
+
 `maine-verdict-format-b` accepts all711 bytes and four complete functions.
 Two fresh producers pass full raw bytes, original ordered fixups and the
 shared compiled hundreds-divisor100→101 negative. No padding, CODE tables,

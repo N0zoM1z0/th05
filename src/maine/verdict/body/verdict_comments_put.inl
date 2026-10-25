@@ -1,0 +1,9 @@
+void near verdict_comments_put(void)
+{
+    if(verdict_comments[0][0]) {
+        graph_putsa_fx(verdict_text_left + 48, verdict_text_top + 296,
+            verdict_comment_color, verdict_comments[0]);
+        graph_putsa_fx(verdict_text_left + 48, verdict_text_top + 312,
+            verdict_comment_color, verdict_comments[1]);
+    }
+}

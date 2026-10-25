@@ -13,8 +13,16 @@ extern const shiftjis_t near verdict_stage_4_title[];
 extern const shiftjis_t near verdict_stage_5_title[];
 extern const shiftjis_t near verdict_stage_6_title[];
 extern const shiftjis_t near verdict_final_score_title[];
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_COMMENT_TEXT group_01
+#endif
 void near verdict_comments_put(void);
+#ifdef TH05_VERDICT_FULL_FAMILY
+#pragma codeseg VERDICT_FULL_TEXT group_01
+#else
 #pragma codeseg VERDICT_SCORES_TEXT group_01
+#endif
 void near verdict_stage_scores_put(void);
 #endif
