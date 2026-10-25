@@ -48,6 +48,8 @@ def main() -> int:
         subprocess.run([sys.executable, "scripts/replay_asm_family.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "resources/ownership.json").exists():
         subprocess.run([sys.executable, "scripts/ownership.py", "--check"], cwd=ROOT, check=True)
+    if (ROOT / "config/font_resource.json").exists():
+        subprocess.run([sys.executable, "scripts/review_font_resource.py"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     print("PASS: public source/configuration validation")
     return 0

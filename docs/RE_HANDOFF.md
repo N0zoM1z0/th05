@@ -18,8 +18,53 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 162,259 bytes. The global denominator is still unreviewed,
+ownership is now 154,067 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
+
+## Latest ownership review: embedded font, zero source credit
+
+An explicit [font resource review](reconstruction/ZUN_FONT_RESOURCE.md) now
+classifies only ZUN.COM `2541..4541`, 8,192 bytes, as an embedded bitmap.
+C/C++ and ASM accepted units, authored byte counts and functions are unchanged.
+The observation universe remains319,268; unknown ownership drops from162,259
+to154,067. All9,924 other ZUN bytes remain unknown, including the75-byte font
+loader, its zero alignment candidate, two messages and all other children.
+Global denominator/percentage remain null. No image bytes are published.
+
+`review_font_resource.py` binds the complete original COM/directory, native
+reader and exact data range, 256x16x16 one-bit geometry, private reference BMP,
+verifier/parser identities and independent review. It checks the native loop,
+glyph address mask, column/data ports and the dispatcher's CLD/no-STD path.
+The complete BMP tile serialization equals every original bitmap byte.
+`reviewed_font_resource.json` separately adopts only this zero-credit resource;
+overlap with accepted code/tables/padding or other known owners is forbidden.
+Public CI checks metadata without pretending to read private bytes. Native
+`--native-check` rechecks the actual immutable target/reference and all roles.
+No compiler, Wine, Ghidra, download, decoder rerun or target execution occurred.
+Previously accepted evidence and installed tool execution proofs were reused.
+
+Private independent scope report:
+`.analysis/zun-layout-review/review.json`, SHA-256
+`18d20c98d2bf207e63da90c50d3fab4a3d1c6f704ccbe770e9eb1ce56de8b2eb`.
+Final gate review:
+`.analysis/zun-layout-review/gate-review-b.json`, SHA-256
+`ad273d2d0ed9f7c5fac6ca5b387103ba948c21059bfbbc182d44b56f3e382fce`.
+Root native/seven-semantic-negative review:
+`.analysis/font-resource/native-and-negative-review-b.json`, SHA-256
+`dd138c3a46d7274925bed800eecbc80a6ad74cc87f8f2c06e984cc0646300617`.
+The preliminary report remains frozen; two initially mislocated controls are
+superseded by actual decoded immediate-field mutations. Nine new public tests
+cover BMP/geometry, metadata/adoption and overlap/credit rejection.
+
+New source lead: the separate `-S` resident/config child has positive compiler
+and natural-C++ history. Independent complete candidates are cfg_init322 at
+outer `0D4B..0E8D`, then main269 at `0E8D..0F9A`; child start is `0AE4`, with
+`child COM IP = outer - 0AE4 + 100`. References are pinned
+`th05/res_kso.cpp` and `th02/res_init.cpp`. Their complete ABI, tiny-model/CRT,
+DATA/provider context and native boundaries still need source/replay work.
+Do not promote the whole6,564-byte child as ASM or vendor from those names.
+The reference-matching KAJA `-O` utility also stays unknown until independently
+authenticated vendor provenance and an explicit complete-scope review exist.
 
 ## Latest accepted verdict DATA
 

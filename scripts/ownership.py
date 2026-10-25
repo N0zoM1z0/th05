@@ -129,6 +129,33 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     return output
 
 
+def overlay_resources(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Classify reviewed bitmap resources only within still-unknown bytes."""
+    validate_partition(size, pieces)
+    for row in claims:
+        if (row.get("kind") != "reviewed-embedded-font-bitmap" or not row.get("resource")
+                or row.get("model") != "th05-zun-cg-256-glyphs-16x16-1bpp"
+                or type(row.get("authored_credit")) is not int or row["authored_credit"] != 0
+                or type(row.get("instruction_bytes")) is not int or row["instruction_bytes"] != 0
+                or type(row.get("start")) is not int or type(row.get("end")) is not int
+                or not 0 <= row["start"] < row["end"] <= size
+                or row["end"] - row["start"] != 8192):
+            raise ValueError("invalid zero-credit resource claim")
+    rows = [row for row in pieces if row["kind"] != "unknown"] + claims
+    output, cursor = [], 0
+    for row in sorted(rows, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor:
+            raise ValueError("resource claim overlaps existing ownership")
+        if cursor < row["start"]:
+            output.append({"start": cursor, "end": row["start"], "kind": "unknown"})
+        output.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        output.append({"start": cursor, "end": size, "kind": "unknown"})
+    validate_partition(size, output)
+    return output
+
+
 def reviewed_vendor(root: Path, *, view: dict, verify_targets: bool) -> tuple[list[dict], str | None]:
     decision_path = root / "config/reviewed_vendor_units.json"
     if not decision_path.exists():
@@ -411,6 +438,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     enemy_vm, enemy_vm_sha = reviewed_enemy_vm_claims(root, config["views"], verify_targets=verify_targets)
     from replay_asm_family import reviewed_claims as reviewed_generic_asm
     generic_asm, generic_asm_sha = reviewed_generic_asm(root, config["views"], verify_targets=verify_targets)
+    from review_font_resource import reviewed_claims as reviewed_font_resources
+    fonts, fonts_sha = reviewed_font_resources(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -452,6 +481,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_asm(view["size"], pieces, enemy_vm[name])
         if name in generic_asm:
             pieces = overlay_asm(view["size"], pieces, generic_asm[name])
+        if name in fonts:
+            pieces = overlay_resources(view["size"], pieces, fonts[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -473,6 +504,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["enemy_vm_asm_review_sha256"] = enemy_vm_sha
         if generic_asm_sha and name in generic_asm:
             views[name]["asm_family_review_sha256"] = generic_asm_sha
+        if fonts_sha and name in fonts:
+            views[name]["font_resource_review_sha256"] = fonts_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])
@@ -490,7 +523,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
             "authored_denominator": None, "percentage": None,
-            "unknown_policy": "retain every unknown interval; source/vendor ownership changes require explicit complete-scope review; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+            "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}
 

@@ -3,7 +3,7 @@
   "kind": "gapless-observed-coordinate-inventory",
   "authored_denominator": null,
   "percentage": null,
-  "unknown_policy": "retain every unknown interval; source/vendor ownership changes require explicit complete-scope review; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+  "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-c-initialized-data": 1628,
@@ -18,7 +18,8 @@
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 79,
-    "unknown": 162259,
+    "reviewed-embedded-font-bitmap": 8192,
+    "unknown": 154067,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -6447,15 +6448,31 @@
       "sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "original_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "byte_counts": {
-        "unknown": 18116
+        "reviewed-embedded-font-bitmap": 8192,
+        "unknown": 9924
       },
       "intervals": [
         {
           "start": 0,
+          "end": 9537,
+          "kind": "unknown"
+        },
+        {
+          "start": 9537,
+          "end": 17729,
+          "kind": "reviewed-embedded-font-bitmap",
+          "resource": "zun-cg-font",
+          "model": "th05-zun-cg-256-glyphs-16x16-1bpp",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 17729,
           "end": 18116,
           "kind": "unknown"
         }
-      ]
+      ],
+      "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }
   }
 }

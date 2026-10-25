@@ -190,3 +190,14 @@ CODE-table bytes separately from instructions, symbolic near-dispatch words,
 C/C++ tables and initialized DATA; an embedded 90h data byte is not a NOP.
 Existing unchanged objects may be revalidated by the stronger verifier without
 recompiling or rewriting their archived verifier snapshots.
+
+Explicit resource classification is separate from exact-source acceptance.
+The registered `th05-zun-cg-256-glyphs-16x16-1bpp` model admits only the complete
+8,192-byte native-consumed font bitmap, with a separate hash-bound adoption.
+The native gate checks the immutable COM/directory, complete reader and DF path,
+geometry, full reference-tile bytes and scope digests. Public CI checks metadata
+without claiming native replay. Resources receive zero authored/instruction
+credit; code, messages, alignment candidates and other children remain unknown.
+No image payload is published. This does not establish the global denominator
+or waive any source unit's two-build/raw/OMF/relocation/negative requirements.
+See [font resource review](reconstruction/ZUN_FONT_RESOURCE.md).
