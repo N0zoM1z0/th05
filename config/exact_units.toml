@@ -504,7 +504,7 @@ module = "th05/main014.cpp"
 segment = "MAIN_01_TEXT"
 target_start = 0x144c3
 size = 1510
-alignment_offsets = []
+alignment_offsets = [1153, 1173]
 functions = 10
 origin = "compiler-generated-cxx"
 wrapper_options = "-zPmain_01"
@@ -542,7 +542,7 @@ module = "th05/bullet_u.cpp"
 segment = "BULLET_U_TEXT"
 target_start = 0x1be4e
 size = 1619
-alignment_offsets = []
+alignment_offsets = [1193]
 code_data_ranges = [{offset = 0x27d, size = 20, kind = "compiler-switch-table"}]
 functions = 5
 origin = "compiler-generated-cxx-dos-intrinsics"
@@ -2987,3 +2987,361 @@ unit = "main-exalice-custom-render"
 source = "src/main/boss/exalice/custom_render.cpp"
 find = "angle += 8)"
 replace = "angle += 9)"
+
+[[units]]
+id = "main-process-handoff"
+source = "src/main/runtime/handoff.cpp"
+module = "th05/hndoff.cpp"
+segment = "HANDOFF_TEXT"
+wrapper_options = "-zCHANDOFF_TEXT -zPmain_01"
+bindings_source = "probes/units/main_handoff_bindings.asm"
+target_start = 52896
+size = 193
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+id = "handoff-gone-counter"
+unit = "main-process-handoff"
+source = "src/main/runtime/handoff.cpp"
+find = "resident->enemies_gone = enemies_gone;"
+replace = "resident->enemies_gone = enemies_killed;"
+
+[[units]]
+id = "main-midboss1-render"
+source = "src/main/midboss/render_124.cpp"
+module = "th05/m124_r.cpp"
+segment = "MID_FG_TEXT"
+wrapper_options = "-zCMID_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_render_124_bindings.asm"
+target_start = 56033
+size = 192
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+function_symbol = "midboss1_render()"
+function_end_symbol = "midboss2_render()"
+
+[[units]]
+id = "main-midboss2-render"
+source = "src/main/midboss/render_124.cpp"
+module = "th05/m124_r.cpp"
+segment = "MID_FG_TEXT"
+wrapper_options = "-zCMID_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_render_124_bindings.asm"
+target_start = 56225
+size = 135
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+function_symbol = "midboss2_render()"
+function_end_symbol = "midboss4_render()"
+
+[[units]]
+id = "main-midboss4-render"
+source = "src/main/midboss/render_124.cpp"
+module = "th05/m124_r.cpp"
+segment = "MID_FG_TEXT"
+wrapper_options = "-zCMID_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_render_124_bindings.asm"
+target_start = 56360
+size = 127
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+function_symbol = "midboss4_render()"
+
+[[controls]]
+unit = "main-midboss1-render"
+source = "src/main/midboss/render_124.cpp"
+find = "patnum = MID1_PHASE2_PAT + stage_frame_mod8 / 2;"
+replace = "patnum = (MID1_PHASE2_PAT + 1) + stage_frame_mod8 / 2;"
+
+[[controls]]
+source = "src/main/midboss/render_124.cpp"
+find = "patnum = MID2_MOVING_PAT + stage_frame_mod8 / 2;"
+replace = "patnum = (MID2_MOVING_PAT + 1) + stage_frame_mod8 / 2;"
+unit = "main-midboss2-render"
+
+[[controls]]
+source = "src/main/midboss/render_124.cpp"
+find = "boss_statebyte[15] != 0"
+replace = "boss_statebyte[15] == 0"
+unit = "main-midboss4-render"
+
+[[units]]
+id = "main-stage-runtime-init"
+source = "src/main/runtime/stage_runtime_init.cpp"
+module = "th05/stg_rt.cpp"
+segment = "STAGE_RUNTIME_TEXT"
+wrapper_options = "-zCSTAGE_RUNTIME_TEXT -zPmain_01"
+bindings_source = "probes/units/stage_runtime_init_bindings.asm"
+target_start = 46426
+size = 174
+alignment_offsets = [133, 158]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-stage-runtime-init"
+source = "src/main/runtime/stage_runtime_init.cpp"
+find = "player_invincibility_time = 64;"
+replace = "player_invincibility_time = 65;"
+
+[[units]]
+id = "main-enemy-std-run"
+source = "src/main/enemy/lifecycle.cpp"
+module = "th05/en_life.cpp"
+segment = "ENEMY_SPAWN_TEXT"
+wrapper_options = "-zPmain_03 -k"
+bindings_source = "probes/units/enemy_lifecycle_bindings.asm"
+target_start = 93046
+size = 89
+alignment_offsets = []
+padding_bytes = [{offset = 4, value = 144}]
+functions = 1
+function_symbol = "std_run()"
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "main-enemies-update-context"
+source = "src/main/enemy/lifecycle.cpp"
+module = "th05/en_life.cpp"
+segment = "ENEMY_UPDATE_TEXT"
+wrapper_options = "-zPmain_03 -k"
+bindings_source = "probes/units/enemy_lifecycle_bindings.asm"
+target_start = 93159
+size = 576
+alignment_offsets = []
+padding_bytes = [{offset = 300, value = 144}]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-enemy-std-run"
+source = "src/main/enemy/lifecycle.cpp"
+find = "*reinterpret_cast<unsigned int far *>(std_ip) != stage_frame"
+replace = "*reinterpret_cast<unsigned int far *>(std_ip) == stage_frame"
+
+[[controls]]
+unit = "main-enemies-update-context"
+source = "src/main/enemy/lifecycle.cpp"
+find = "sparks_add_random(enemy->pos.cur.x, enemy->pos.cur.y, TO_SP(4), 7);"
+replace = "sparks_add_random(enemy->pos.cur.x, enemy->pos.cur.y, TO_SP(4), 6);"
+
+[[units]]
+id = "main-gameover"
+source = "src/main/runtime/gameover.cpp"
+module = "th05/gameover.cpp"
+segment = "GAMEOVER_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/gameover_bindings.asm"
+target_start = 55164
+size = 869
+functions = 4
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{offset = 515, value = 144}, {offset = 834, value = 144}, {offset = 839, value = 144}, {offset = 844, value = 144}]
+
+[[controls]]
+unit = "main-gameover"
+source = "src/main/runtime/gameover.cpp"
+find = "credits = (3 - continues_used);"
+replace = "credits = (2 - continues_used);"
+
+[[units]]
+id = "main-stage2-update-abi"
+source = "src/main/stage/stage2_update.cpp"
+module = "th05/s2_upd.cpp"
+segment = "STAGE2_TEXT"
+wrapper_options = "-zCSTAGE2_TEXT -zPmain_01"
+bindings_source = "probes/units/stage2_update_bindings.asm"
+target_start = 71916
+size = 653
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+id = "stage2-palette-pulse-peak"
+unit = "main-stage2-update-abi"
+source = "src/main/stage/stage2_update.cpp"
+find = "stage2_palette_level >= 0x3F"
+replace = "stage2_palette_level >= 0x3E"
+
+[[units]]
+id = "main-player-miss"
+source = "src/main/player/miss.cpp"
+module = "th05/p_miss.cpp"
+segment = "PLAYER_MISS_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/player_miss_bindings.asm"
+target_start = 51978
+size = 307
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{offset = 84, value = 144}, {offset = 110, value = 144}, {offset = 159, value = 144}, {offset = 271, value = 144}, {offset = 287, value = 144}]
+
+[[controls]]
+unit = "main-player-miss"
+source = "src/main/player/miss.cpp"
+find = "power_loss = 16;"
+replace = "power_loss = 15;"
+
+[[units]]
+id = "main-midboss3-render"
+source = "src/main/midboss/render3.cpp"
+module = "th05/m3_r.cpp"
+segment = "M3_RENDER_TEXT"
+wrapper_options = "-zCM3_RENDER_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_render3_bindings.asm"
+target_start = 78086
+size = 127
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-midboss3-render"
+source = "src/main/midboss/render3.cpp"
+find = "patnum = 208 + stage_frame_mod16 / 8;"
+replace = "patnum = 209 + stage_frame_mod16 / 8;"
+
+[[units]]
+id = "main-midboss-defeat-render"
+source = "src/main/midboss/defeat_render.cpp"
+module = "th05/m_defr.cpp"
+segment = "MID_DEFEAT_TEXT"
+wrapper_options = "-zCMID_DEFEAT_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_defeat_render_bindings.asm"
+target_start = 78547
+size = 170
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-midboss-defeat-render"
+source = "src/main/midboss/defeat_render.cpp"
+find = "midboss_defeat_angle += 0x10"
+replace = "midboss_defeat_angle += 0x11"
+
+[[units]]
+id = "main-shots-update-abi"
+source = "src/main/player/shot_update.cpp"
+module = "th05/shot_upd.cpp"
+segment = "SHOT_UPDATE_TEXT"
+wrapper_options = "-zCSHOT_UPDATE_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_update_bindings.asm"
+target_start = 78811
+size = 408
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = [{offset = 400, size = 8, kind = "compiler-switch-table"}]
+
+[[controls]]
+id = "shot-missile-acceleration"
+unit = "main-shots-update-abi"
+source = "src/main/player/shot_update.cpp"
+find = "shot->pos.velocity.y.v -= 4;"
+replace = "shot->pos.velocity.y.v -= 5;"
+
+[[units]]
+id = "main-midboss-extra-render"
+source = "src/main/midboss/render_extra.cpp"
+module = "th05/mx_r.cpp"
+segment = "MX_RENDER_TEXT"
+wrapper_options = "-zCMX_RENDER_TEXT -zPmain_01"
+bindings_source = "probes/units/midboss_render_extra_bindings.asm"
+target_start = 56618
+size = 101
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-midboss-extra-render"
+source = "src/main/midboss/render_extra.cpp"
+find = "midboss.damage_this_frame = 0;"
+replace = "midboss.damage_this_frame = 1;"
+
+[[units]]
+id = "main-mai-yuki-survivor-render"
+source = "src/main/boss/mai_yuki/survivor_render.cpp"
+module = "th05/my_surv.cpp"
+segment = "SURVIVOR_FG_TEXT"
+wrapper_options = "-zCSURVIVOR_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/mai_yuki_survivor_render_bindings.asm"
+target_start = 67903
+size = 126
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-mai-yuki-survivor-render"
+source = "src/main/boss/mai_yuki/survivor_render.cpp"
+find = "patnum += stage_frame_mod8 / 2;"
+replace = "patnum += stage_frame_mod8 / 3;"
+
+[[units]]
+id = "main-stage2-particle-initializer"
+source = "src/main/stage/particle_init.cpp"
+module = "th05/s2p_init.cpp"
+segment = "STAGE2_TEXT"
+wrapper_options = "-zCSTAGE2_TEXT -zPmain_01"
+bindings_source = "probes/units/stage2_particle_init_bindings.asm"
+target_start = 71424
+size = 492
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-stage2-particle-initializer"
+source = "src/main/stage/particle_init.cpp"
+find = "particle.zoom = 8;"
+replace = "particle.zoom = 9;"
+
+[[units]]
+id = "main-item-reward-tables-data"
+source = "src/main/item/reward_tables.cpp"
+module = "th05/i_rtbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCITEM_REWARD_TABLE_CONTEXT -zPmain_03"
+bindings_source = "probes/units/item_reward_tables_bindings.asm"
+target_start = 141268
+size = 116
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+
+[[controls]]
+id = "item-overflow-reward150-to151"
+unit = "main-item-reward-tables-data"
+source = "src/main/item/reward_tables.cpp"
+find = "    150, 200, 250, 300, 350, 400, 450, 500,"
+replace = "    151, 200, 250, 300, 350, 400, 450, 500,"

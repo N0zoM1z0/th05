@@ -1,8 +1,9 @@
 # Shot motion and collision runtime
 
-Three complete natural C++ candidates use MAIN frame `AE1` and DS `209D`.
-Initial focused producers exposed the lowering differences recorded below;
-no exact acceptance is claimed.
+The complete shot updater is accepted from `main-shots-update-abi-b`, using
+MAIN frame `AE1` and DS `209D`. The two collision functions remain parked
+candidates. Historical failed producer observations are retained below;
+their byte counts do not establish acceptance.
 
 | Function | Original load interval | Complete bytes | Original ordered MZ offsets |
 | --- | --- | ---: | --- |
@@ -35,11 +36,13 @@ Update is near cdecl `void(void)`. Both collision entries are far cdecl
 `int(void)`, returning AX with RETF. The full four-byte point result of
 `PlayfieldMotion::update_seg1()` is the real DX:AX ABI. `shot_velocity_set`
 also retains its canonical full point return and near Pascal parameters.
-The candidate receives point values as ordinary typed C++ objects and clips
-them with signed coordinate tests; no AX/DX pseudo-register implementation is
-used. Whether TCC keeps that point in registers or spills it is an explicit
-unproven lowering question. A mismatch must not be replaced by an instruction
-template.
+The accepted update retains the real full return type and consumes the
+actual packed result immediately through readonly signed AX/DX ABI reads.
+Both live-cache coordinates are written before pointer/count changes, and
+the second result is dead before age division. This proven DOS-intrinsic
+return bridge introduces no fake scalar declaration, record view, register
+arithmetic or instruction template. The earlier named-point receiver and
+its spills are historical failed evidence, not the accepted implementation.
 
 The collision helper interfaces are genuine: near Pascal `hitshot_from` at
 `13617` takes a near Shot pointer and RET2; sparks are far Pascal at
@@ -88,8 +91,9 @@ compiler-generated table bytes, and changes missile vertical acceleration from
 4 to 5 in a staged negative. Both symbol-only binders preserve real foreign
 frames and globals using origin holes exclusively outside owned contributions;
 they provide no instructions, owned DATA, target bytes or stack allocation.
-Two fresh focused producers and the normal complete raw/fixup/dependency gates
-remain required. Existing accepted source/header files are unchanged.
+The updater passes its complete raw/fixup/dependency gates as described
+below. The collision candidates still require their own successful gates.
+The frozen canonical record and method headers remain unchanged.
 
 ## Initial producer observations
 
@@ -133,6 +137,27 @@ The resulting foreign DS drift is a layout consequence, not a newly inferred
 global address. The parked source now explicitly interprets the switch type
 byte as unsigned, matching the original zero extension. The canonical accepted
 `Shot` definition remains unchanged: ReC98 also declares these fields as plain
-`char`, so an unsigned replacement structure is not justified. No additional
-update replay is proposed until a genuine natural typed-point lowering is
-established; AX/DX pseudo-register templates remain excluded.
+`char`, so an unsigned replacement structure is not justified. That initial parking decision was superseded by the independently proven
+real return-boundary bridge; it never authorized physical-register algorithm
+transcription or fake return types.
+
+
+## Accepted updater
+
+`main-shots-update-abi-b` passes two fresh deterministic producers for the
+complete408-byte updater:400 instruction bytes plus the complete8-byte
+semantic switch table, no padding, with original ordered fixups `[202,112]`.
+The compiled missile acceleration mutation4-to5 is rejected. The receipt is
+`.analysis/unit-replays/main-shots-update-abi-b/receipt.json`; this is one
+control for the complete owner, not independent controls for each branch.
+
+The first ABI parent generated the correct408-byte size and ordered fixups
+but both raw comparisons failed at homing ADD/SUB placement and the common
+AL store. It remains preserved and unaccepted; it was never raw exact.
+The accepted source keeps canonical `Shot.angle` as char and uses its real
+unsigned-character near-reference storage view at only the +=/-= mutations.
+That expresses the genuine modulo256 angle domain and restores direct byte
+memory operations without a changed record/prototype, compiler flag, idle
+branch, physical-register hint or barrier. Full Motion/Point declarations,
+the exact result lifetime and cache stores remain intact. No acceptance
+transfers to either collision function or the separately parked renderer.

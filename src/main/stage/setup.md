@@ -115,3 +115,9 @@ the compiled frame-2501 negative control. The importer rechecks saved producers
 and dependencies; unchanged accepted units were not rebuilt. A separate
 private observation also verifies all 189 compiler DATA bytes in both producers,
 without adding them to authored code credit. Full-game layout remains open.
+
+The focused `main-stage-setup-padding-a` replacement preserves the exact1510
+complete bytes and the original relocation order. Linker relaxation NOPs at
+relative1153 and1173 are checked padding with zero authored credit, leaving
+1508 authored CODE bytes. Two fresh producers and the owner mutation pass;
+no maintained compiler inputs changed. The prior receipt remains archived.

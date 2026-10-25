@@ -122,3 +122,9 @@ by this function. A narrowed byte enum changed the decay-pattern ternary to
 AL/AH operations; preserving the true two-byte type restores the original AX
 operations naturally. No instruction spelling or optimizer barrier is supplied.
 Whole-program linkage remains outside this scope.
+
+The focused `main-bullet-update-padding-a` replacement preserves all1619
+complete bytes and original ordered fixups. The linker relaxation NOP at
+relative1193 is checked padding, leaving1618 authored CODE bytes (1598
+instruction plus20 generated switch-table bytes). Two fresh producers and
+the owner mutation pass; no maintained compiler inputs changed.

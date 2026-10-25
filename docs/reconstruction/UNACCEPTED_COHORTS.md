@@ -10,10 +10,10 @@ Private producer paths below are under `.analysis/unit-replays/`.
 | MAIN entry/frame loop | Original555; failed link leaves a548-byte contribution, with frame lowering and real far-call differences. The active background callback name was corrected afterward without replay. | `main-runtime-prefix-a` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
 | Standalone laser collision | One immutable quotient removes repeated division, but first producer218 still differs from original210. The boundary gate stopped before second and negative builds. | `main-shots-laser-collision-a` |
-| Shot update | Original408 includes eight compiler switch-table bytes. First producer431 spills full returned points; a later unsigned type interpretation has not been replayed. | `main-shots-update-a` |
+| Item motion/collection | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
 | Shot rendering | Original164, safe word-local producer173; the one byte-local experiment175 was stopped at the first boundary check and abandoned. The safe original source is restored. | `main-shots-render-a`, `main-shots-render-b` |
 | Stage-session initialization | Original803 includes mandatory zero at772 and thirty table bytes. First producer802 stops at the complete-contribution boundary gate; no padding/flag variants follow. | `main-stage-session-init-a` |
-| Stage-two background | Original492+653. First complete producer498+664; the later branch-destination initializer476 still differs. No filler or ABI shortcut is supplied. | `main-stage2-background-b`, `main-stage2-particle-init-a` |
+| Bullet/pellet rendering | Original334, producer330: native manual BP prologue differs by2 bytes and ordinary local allocation by2. No padding/flags/register variants follow. | `main-bullets-render-a` |
 | Sara foreground | Original159, producer161 due to coordinate allocation. The separate complete Louise116 owner is accepted. | `main-sara-louise-foreground-a` |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
 | Mai/Yuki foreground callback | Original194, producer198 due to coordinate allocation. Its complete sprite helper75 is separately accepted. | `main-mai-yuki-foreground-a` |
@@ -26,3 +26,13 @@ No successful interior fragment, normalized relocation order, physical-register
 algorithm, copied instruction body, or inserted padding replaces a complete
 natural owner. New investigations should use these observations rather than
 repeat identical failed builds.
+
+The old shot-update blocker is superseded by the accepted complete408-byte
+`main-shots-update-abi-b` owner, including its eight generated table bytes.
+It keeps the full actual Motion return type and uses only its proven packed
+return boundary; no source fields or method ABI were shortened.
+
+Both complete stage-two background functions are now accepted independently:
+initializer492 (`main-stage2-particle-initializer-a`) and updater653
+(`main-stage2-update-abi-a`). Earlier498/476/664 observations stay archived,
+but are superseded as open blockers. No whole-combined-TU equality is implied.

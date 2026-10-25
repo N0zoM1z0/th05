@@ -83,3 +83,12 @@ recover the original body. Both functions remain unaccepted, with no claim that
 either failed candidate's outside-layout expectation matches its emitted size.
 The source and saved producers are retained for evidence; no further speculative
 context or optimizer probes are proposed.
+
+The independently built complete update653 and initializer492 are now
+accepted by `main-stage2-update-abi-a` and `main-stage2-particle-initializer-a`.
+The actual init476 comparison proved that the entire16-byte difference was
+four in-place shifts; ordinary rvalue multiplication assignments restore the
+original dataflow. No named-X spill, branch padding, physical register alias
+or shared-header change was needed. The combined source includes the same
+canonical bodies. Its legacy outside-only binder now reflects492+653 and the
+canonical scrolling C symbol, but no new whole-combined replay is claimed.

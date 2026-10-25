@@ -6,6 +6,7 @@
 
 #include "src/main/enemy/spawn.inl"
 
+#pragma samecodeseg midboss_activate_if_stage_frame_is_midboss_start_frame
 void pascal far std_run(void)
 {
     unsigned char spawn_count;
@@ -30,6 +31,7 @@ void pascal far std_run(void)
 
 // The original 24-byte REP MOVSW template-copy function remains foreign.
 #pragma codeseg ENEMY_UPDATE_TEXT main_03
+#pragma samecodeseg sparks_add_random
 extern "C" void pascal far enemies_update(void)
 {
     unsigned char value;

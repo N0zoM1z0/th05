@@ -43,9 +43,12 @@ it cannot truthfully become a conventional C++ boolean helper. No such helper
 body or compiler instruction transcription is introduced here.
 
 The update owner calls the genuine far Pascal sparks API. The stage runner
-calls genuine far midboss activation. Their same-group far-call shortening is
-left to the actual linker; no handwritten NOP, CALL body, `samecodeseg`, unused
-expression, or optimization barrier is present. Motion retains its real
+calls genuine far midboss activation. Current source declares their proven
+same-CS context with `samecodeseg`, retaining the real far signatures and
+RETF8/RETF0 cleanup. Both actual callees share frame1527 with these callers.
+No handwritten NOP, CALL body, unused expression, or optimization barrier is
+present. These declarations occur only in the lifecycle CPP; the accepted
+allocation/invalidation headers and providers are unchanged. Motion retains its real
 `PlayfieldPoint` return type. Invalidation uses an explicit legacy Borland function-pointer view of the
 existing Pascal entry, passing the complete four-byte SPPoint. The real entry
 reads x at SP+2 and returns RET4; both interfaces marshal that same frame. The
@@ -82,3 +85,12 @@ negative. This uses a complete actual contribution, not a fabricated demangled
 C symbol or an interior function slice. The remaining 89-byte STD runner and
 576-byte update stay unaccepted. `main-enemies-invalidate-c` separately proves
 all 43 original invalidation bytes and its compiled box-width mutation.
+
+`main-enemy-samecodeseg-a` accepts the complete89-byte `std_run()` scope and
+complete576-byte update contribution from one real TU per cold round. Both
+fresh producers match full raw bytes and original ordered fixups: `[79]` and
+`[570,327,276,194]`. Their original linker NOPs at relative4 and300 receive
+zero credit, leaving88 +575 =663 authored instruction bytes. The compiled
+STD stage-frame mutation belongs to the first scope; update shares that
+oracle control. Its configured spark-count mutation was not separately
+compiled. The prior failed producers remain archived unchanged.

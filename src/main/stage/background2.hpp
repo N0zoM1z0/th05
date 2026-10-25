@@ -63,7 +63,7 @@ extern "C" void pascal far vector2(subpixel_t far &x, subpixel_t far &y,
     unsigned char angle, subpixel_t length);
 #pragma codeseg STAGE2_TEXT main_01
 void near tiles_invalidate_all(void);
-vram_y_t pascal near scroll_subpixel_y_to_vram_seg1(subpixel_t y);
+extern "C" vram_y_t pascal near scroll_subpixel_y_to_vram_seg1(subpixel_t y);
 void pascal near stage2_particle_init(s2particle_t near &particle);
 void pascal near stage2_update(void);
 

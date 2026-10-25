@@ -111,3 +111,18 @@ resulting memory-based comparisons account for the net7 extra bytes; the
 pre-clamp coordinate semantics are correct. No fake return type, register
 math template or optimizer barrier replaces that code. Evidence is the private
 `main-items-update-spill-review.json`; the whole241 target remains unaccepted.
+
+
+## Subsequent bounded ABI trial
+
+The one genuine packed-return borrow trial emitted235 bytes and was stopped
+after the first producer. Native instructions show the actual X return was
+overwritten while evaluating the X pickup expression, which then became
+SUB AX,AX; DX remained correct. There was no second producer or compiled
+pull-speed negative. This long-borrow candidate is abandoned, not accepted.
+The safe248 typed-point source was restored exactly from
+`.analysis/item-update-before-abi.cpp`. Current status and native evidence
+are recorded in `update_abi.md` and
+`.analysis/item-update-abi-protocol-result.json`. No further ABI/register/
+flags variant or donor BX/inline-ASM implementation is proposed. Accepted
+immediate-return consumers retain their independent evidence.

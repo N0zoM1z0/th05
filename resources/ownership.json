@@ -6,11 +6,11 @@
   "unknown_policy": "retain every unknown interval; only explicitly reviewed complete vendor contributions are classified; no inferred asset, runtime or ASM exclusion",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-cxx-initialized-data": 8973,
-    "accepted-cxx-instructions": 62854,
-    "accepted-cxx-switch-table": 634,
-    "checked-uncredited-padding": 33,
-    "unknown": 243497,
+    "accepted-cxx-initialized-data": 9089,
+    "accepted-cxx-instructions": 67569,
+    "accepted-cxx-switch-table": 642,
+    "checked-uncredited-padding": 49,
+    "unknown": 238642,
     "verified-vendor-code": 3277
   },
   "views": {
@@ -20,11 +20,11 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-cxx-initialized-data": 315,
-        "accepted-cxx-instructions": 50411,
-        "accepted-cxx-switch-table": 512,
-        "checked-uncredited-padding": 27,
-        "unknown": 91416,
+        "accepted-cxx-initialized-data": 431,
+        "accepted-cxx-instructions": 55126,
+        "accepted-cxx-switch-table": 520,
+        "checked-uncredited-padding": 43,
+        "unknown": 86561,
         "verified-vendor-code": 3277
       },
       "intervals": [
@@ -555,8 +555,38 @@
         },
         {
           "start": 45623,
-          "end": 46600,
+          "end": 46426,
           "kind": "unknown"
+        },
+        {
+          "start": 46426,
+          "end": 46559,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage-runtime-init"
+        },
+        {
+          "start": 46559,
+          "end": 46560,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-stage-runtime-init"
+        },
+        {
+          "start": 46560,
+          "end": 46584,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage-runtime-init"
+        },
+        {
+          "start": 46584,
+          "end": 46585,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-stage-runtime-init"
+        },
+        {
+          "start": 46585,
+          "end": 46600,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage-runtime-init"
         },
         {
           "start": 46600,
@@ -667,8 +697,168 @@
         },
         {
           "start": 51978,
-          "end": 56719,
+          "end": 52062,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52062,
+          "end": 52063,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52063,
+          "end": 52088,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52088,
+          "end": 52089,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52089,
+          "end": 52137,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52137,
+          "end": 52138,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52138,
+          "end": 52249,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52249,
+          "end": 52250,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52250,
+          "end": 52265,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52265,
+          "end": 52266,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52266,
+          "end": 52285,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-player-miss"
+        },
+        {
+          "start": 52285,
+          "end": 52896,
           "kind": "unknown"
+        },
+        {
+          "start": 52896,
+          "end": 53089,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-process-handoff"
+        },
+        {
+          "start": 53089,
+          "end": 55164,
+          "kind": "unknown"
+        },
+        {
+          "start": 55164,
+          "end": 55679,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 55679,
+          "end": 55680,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 55680,
+          "end": 55998,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 55998,
+          "end": 55999,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 55999,
+          "end": 56003,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 56003,
+          "end": 56004,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 56004,
+          "end": 56008,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 56008,
+          "end": 56009,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 56009,
+          "end": 56033,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameover"
+        },
+        {
+          "start": 56033,
+          "end": 56225,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss1-render"
+        },
+        {
+          "start": 56225,
+          "end": 56360,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss2-render"
+        },
+        {
+          "start": 56360,
+          "end": 56487,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss4-render"
+        },
+        {
+          "start": 56487,
+          "end": 56618,
+          "kind": "unknown"
+        },
+        {
+          "start": 56618,
+          "end": 56719,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-extra-render"
         },
         {
           "start": 56719,
@@ -1061,8 +1251,14 @@
         },
         {
           "start": 67613,
-          "end": 68029,
+          "end": 67903,
           "kind": "unknown"
+        },
+        {
+          "start": 67903,
+          "end": 68029,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-mai-yuki-survivor-render"
         },
         {
           "start": 68029,
@@ -1190,8 +1386,20 @@
         },
         {
           "start": 71373,
-          "end": 72569,
+          "end": 71424,
           "kind": "unknown"
+        },
+        {
+          "start": 71424,
+          "end": 71916,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage2-particle-initializer"
+        },
+        {
+          "start": 71916,
+          "end": 72569,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage2-update-abi"
         },
         {
           "start": 72569,
@@ -1325,6 +1533,40 @@
         },
         {
           "start": 78086,
+          "end": 78213,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss3-render"
+        },
+        {
+          "start": 78213,
+          "end": 78547,
+          "kind": "unknown"
+        },
+        {
+          "start": 78547,
+          "end": 78717,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-midboss-defeat-render"
+        },
+        {
+          "start": 78717,
+          "end": 78811,
+          "kind": "unknown"
+        },
+        {
+          "start": 78811,
+          "end": 79211,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-shots-update-abi"
+        },
+        {
+          "start": 79211,
+          "end": 79219,
+          "kind": "accepted-cxx-switch-table",
+          "unit": "main-shots-update-abi"
+        },
+        {
+          "start": 79219,
           "end": 80171,
           "kind": "unknown"
         },
@@ -1408,6 +1650,30 @@
         },
         {
           "start": 83139,
+          "end": 84292,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage-setup"
+        },
+        {
+          "start": 84292,
+          "end": 84293,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-stage-setup"
+        },
+        {
+          "start": 84293,
+          "end": 84312,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-stage-setup"
+        },
+        {
+          "start": 84312,
+          "end": 84313,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-stage-setup"
+        },
+        {
+          "start": 84313,
           "end": 84649,
           "kind": "accepted-cxx-instructions",
           "unit": "main-stage-setup"
@@ -1599,6 +1865,47 @@
         },
         {
           "start": 93046,
+          "end": 93050,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-enemy-std-run"
+        },
+        {
+          "start": 93050,
+          "end": 93051,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-enemy-std-run"
+        },
+        {
+          "start": 93051,
+          "end": 93135,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-enemy-std-run"
+        },
+        {
+          "start": 93135,
+          "end": 93159,
+          "kind": "unknown"
+        },
+        {
+          "start": 93159,
+          "end": 93459,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-enemies-update-context"
+        },
+        {
+          "start": 93459,
+          "end": 93460,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-enemies-update-context"
+        },
+        {
+          "start": 93460,
+          "end": 93735,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-enemies-update-context"
+        },
+        {
+          "start": 93735,
           "end": 94034,
           "kind": "unknown"
         },
@@ -2007,6 +2314,18 @@
         },
         {
           "start": 114911,
+          "end": 115447,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-bullet-update"
+        },
+        {
+          "start": 115447,
+          "end": 115448,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-bullet-update"
+        },
+        {
+          "start": 115448,
           "end": 115873,
           "kind": "accepted-cxx-instructions",
           "unit": "main-bullet-update"
@@ -2274,6 +2593,17 @@
         },
         {
           "start": 141200,
+          "end": 141268,
+          "kind": "unknown"
+        },
+        {
+          "start": 141268,
+          "end": 141384,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "main-item-reward-tables-data"
+        },
+        {
+          "start": 141384,
           "end": 141710,
           "kind": "unknown"
         },

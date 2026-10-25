@@ -7,7 +7,7 @@
 .model large
 MAIN01_BASE equ 0ae10h
 UNIT_START equ 11700h
-UNIT_END equ (UNIT_START + 492 + 664)
+UNIT_END equ (UNIT_START + 492 + 653)
 SHARED_BASE equ 14ab0h
 DGROUP_BASE equ 209d0h
 
@@ -27,7 +27,7 @@ STAGE2_TEXT segment byte public 'CODE' use16
 assume cs:STAGE2_TEXT
 public @tiles_invalidate_all$qv, @PlayfieldMotion@update_seg1$qv
 public Z_SUPER_ROLL_PUT_16X16_MONO_RAW, @RANDRING1_NEXT16_MOD$QUI
-public @SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1$QI
+public SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1
 org (0bd38h - MAIN01_BASE)
 @tiles_invalidate_all$qv label near
 org (0be1ah - MAIN01_BASE)
@@ -37,7 +37,7 @@ Z_SUPER_ROLL_PUT_16X16_MONO_RAW label near
 org (0c724h - MAIN01_BASE)
 @RANDRING1_NEXT16_MOD$QUI label near
 org (0df28h - MAIN01_BASE)
-@SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1$QI label near
+SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1 label near
 org (UNIT_START - MAIN01_BASE)
 STAGE2_TEXT ends
 

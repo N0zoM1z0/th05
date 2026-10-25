@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **210 bounded C++ CODE/DATA units / 407 complete function occurrences**,
-**72,461 authored bytes exact**: 63,488 CODE and 8,973 initialized DATA.
-CODE is 62,854 instruction plus 634 semantic compiler-table bytes.
-Complete compared extents total 72,494; 33 checked padding bytes receive
-no credit. MAIN has 325 functions / 50,923 CODE / 315 DATA;
+Current acceptance: **227 bounded C++ CODE/DATA units / 427 complete function occurrences**,
+**77,300 authored bytes exact**: 68,211 CODE and 9,089 initialized DATA.
+CODE is 67,569 instruction plus 642 semantic compiler-table bytes.
+Complete compared extents total 77,349; 49 checked padding bytes receive
+no credit. MAIN has 345 functions / 55,646 CODE / 431 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -798,3 +798,91 @@ byte-domain experiment175 clobbered the raw renderer's AX left argument; it was
 abandoned and the safe original source restored exactly. These failures did not
 run second or negative builds. No flags, padding or physical-register algorithm
 variants followed. The default replay plan is empty for unchanged evidence.
+
+## Process handoff, midboss rendering and stage reset
+
+`main-process-handoff-a` proves the adjacent score-save34 and GameExecl159
+callbacks as one complete193-byte owner with seven original ordered fixups.
+The compiled gone/killed-counter mutation covers that coherent owner; there
+is no separate score-save mutation claim. Actual process.h far strings and
+four-byte variadic NULL preserve the real process handoff.
+
+`main-midboss-render-124-a` proves the complete stage1/2/4 callbacks192/135/127
+as three scopes of one real TU. Two fresh producers are shared, and one compiled
+phase-two-cel mutation belongs to the first scope; the other two share that
+oracle control. Original per-function relocation orders pass without a whole
+454-byte relocation-order claim or normalization.
+
+`main-stage-runtime-init-a` proves the complete174-byte per-stage state reset,
+with its own invincibility mutation. Real donor samecodeseg annotations preserve
+far signatures for the two verified AE1 services; linked NOP/PUSH-CS/call bytes
+and the one original relocation match. See `BORLAND_NOTES.md` for the observed
+context lesson. No 803-byte session-init acceptance is implied.
+
+## Padding correction and recovered enemy call contexts
+
+A native instruction-NOP scan across accepted MAIN/OP/MAINE identified five
+uncounted relaxation padding bytes: two in setup1510, one in bullet-update1619,
+and two in reset174. They now receive zero credit through three focused fresh
+replacement receipts, atomically imported. Complete raw bytes and original
+fixups remain unchanged; no OP/MAINE omissions were found. No other accepted
+unit was replayed. The five-byte credit correction is included in the counters.
+
+Truthful samecodeseg declarations then recovered the two old enemy blockers:
+`main-enemy-samecodeseg-a` passes std89 and update576 from one actual TU per
+cold round. The far interfaces and verified CS1527/RETF0/RETF8 contracts are
+unchanged; two NOP padding bytes are checked and excluded, adding663 authored
+instruction bytes. The compiled STD condition mutation controls the pair;
+there is no independent update-mutation claim. Allocation and invalidation
+accepted dependencies remain unchanged.
+
+## Complete game-over flow and additional motion/render owners
+
+`main-gameover-a` adds four complete callbacks in one869-byte owner, with four
+checked/uncredited NOP bytes:865 authored instructions. Both fresh producers,
+all27 original ordered fixups and the coherent owner's credit-limit mutation
+pass. `main-player-miss-a` adds the complete307-byte death handler with five
+checked NOPs:302 authored instructions and its own power-cap mutation.
+
+`main-midboss3-render-a` adds127 instructions. `main-midboss-defeat-render-b`
+adds170 instructions; its ordinary for-update clause now reflects the actual
+counter-before-angle order, without dummy work or register forcing. Both have
+their own compiled animation mutations and original ordered fixups.
+
+`main-stage2-update-abi-a` adds the complete653-byte updater through the genuine
+packed Motion return boundary. `main-shots-update-abi-b` adds the complete408
+bytes:400 instructions plus8 compiler switch-table bytes. Both keep the real
+full return type/records and have their own rejected mutations. Direct signed
+return-word reads end at the actual ABI boundary; ordinary algorithms are not
+mapped onto physical registers. See `BORLAND_NOTES.md` for proof and limits.
+The stage-two initializer remains unaccepted; no prefix credit transfers.
+
+## Complete stage-two background and remaining renderer state
+
+`main-stage2-particle-initializer-a` adds492 complete instruction bytes. The
+only correction from the retained476 body is four real scalar rvalue scaling
+assignments; both fresh producers, ordered fixups and the independent zoom
+mutation pass. Together with acceptedupdate653, both original stage-two
+background functions are covered. No combined-TU equality or prefix double
+credit is claimed. The shared ABI header and updater receipts are unchanged.
+
+`main-midboss-extra-render-a` and `main-mai-yuki-survivor-render-a` add101/126
+complete instruction bytes, each with two fresh producers, original ordered
+fixups and its own compiled animation mutation. Extra's distinct identity is
+proved by the actual stage-setup callback assignment, rather than inherited
+from its similar stage-five renderer.
+
+Item241 remains open: the single235 experiment failed at its first size gate
+and incorrectly clobbered the long-borrowed return X during pickup arithmetic.
+The original typed safe248 source was restored exactly; no second/negative or
+register-algorithm variants followed. Immediate return-ABI consumers653/408
+remain accepted and unchanged. Bullet rendering334 likewise remains open
+against330; no prologue or register-forcing workaround was added.
+
+## Initialized item reward tables
+
+`main-item-reward-tables-data-a` adds116 initialized semantic DATA bytes:
+seven word sprite selectors, forty-three word overflow rewards and the eight
+legacy Dream rewards. The complete three-array DATA contribution passes two
+fresh producers, empty original fixups and its own compiled150-to151 reward
+mutation. No BSS, padding, asset image or code bytes receive credit here.

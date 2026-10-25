@@ -18,6 +18,9 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
   code must be recovered as C/C++ before counting as authored C/C++ bytes.
 - Source presence, semantics, exact units, decoded bytes, packed bytes and whole
   executable acceptance are separate claims. Never combine their percentages.
+- Native boundary review must enumerate instruction NOPs. Classify linker
+  relaxation/alignment NOPs as checked padding with zero authored credit;
+  compare those bytes normally and preserve the original relocation order.
 - Unit acceptance requires pinned target/toolchain, reviewed complete boundaries,
   two fresh deterministic builds, OMF integrity, full raw-byte comparison and
   relocation agreement. Unknown ownership stays in the denominator until reviewed.

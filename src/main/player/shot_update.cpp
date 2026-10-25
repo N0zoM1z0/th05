@@ -1,5 +1,6 @@
 // Shot motion, homing, missile acceleration and post-hit sprite decay.
 #pragma option -zCSHOT_UPDATE_TEXT -zPmain_01
+#include <dos.h>
 #include "src/main/player/shot_runtime.hpp"
 
 void near shots_update(void)
@@ -7,7 +8,6 @@ void near shots_update(void)
     int i;
     shot_alive_t near *alive;
     unsigned char angle_delta;
-    PlayfieldPoint point;
     Shot near *shot;
     hitshot_t near *hitshot;
     shots_alive_count = 0;
@@ -36,7 +36,8 @@ void near shots_update(void)
                                 homing_target.y.v - shot->pos.cur.y.v,
                                 homing_target.x.v - shot->pos.cur.x.v);
                         } else {
-                            shot->angle += angle_delta;
+                            // Angle storage is a raw byte; mutate its unsigned modulo-256 view.
+                            reinterpret_cast<unsigned char near &>(shot->angle) += angle_delta;
                         }
                     } else {
                         angle_delta /= 4;
@@ -45,7 +46,7 @@ void near shots_update(void)
                                 homing_target.y.v - shot->pos.cur.y.v,
                                 homing_target.x.v - shot->pos.cur.x.v);
                         } else {
-                            shot->angle -= angle_delta;
+                            reinterpret_cast<unsigned char near &>(shot->angle) -= angle_delta;
                         }
                     }
                     shot_velocity_set(&shot->pos.velocity, shot->angle);
@@ -61,12 +62,18 @@ missile_accelerate:
                     break;
                 }
             }
-            point = shot->pos.update_seg1();
-            if(point.x.v <= -8 * 16 || point.x.v >= (384 + 8) * 16 ||
-               point.y.v <= -8 * 16 || point.y.v >= (368 + 8) * 16) {
+            // Borrow the actual packed return only until both cache coordinates
+            // are consumed; the full Motion method still returns PlayfieldPoint.
+            shot->pos.update_seg1();
+            if(static_cast<subpixel_t>(_AX) <= -8 * 16 ||
+               static_cast<subpixel_t>(_AX) >= (384 + 8) * 16 ||
+               static_cast<subpixel_t>(_DX) <= -8 * 16 ||
+               static_cast<subpixel_t>(_DX) >= (368 + 8) * 16) {
                 shot->flag = F_REMOVE;
             } else {
-                alive->pos = point;
+                // Finish unpacking before pointer/count updates can reuse registers.
+                alive->pos.x.v = static_cast<subpixel_t>(_AX);
+                alive->pos.y.v = static_cast<subpixel_t>(_DX);
                 alive->shot = shot;
                 alive++;
                 shots_alive_count++;
@@ -80,9 +87,12 @@ missile_accelerate:
             hitshot->age = 0;
         }
         if(hitshot->age != 0) {
-            point = hitshot->pos.update_seg1();
-            if(point.x.v <= -8 * 16 || point.x.v >= (384 + 8) * 16 ||
-               point.y.v <= -8 * 16 || point.y.v >= (368 + 8) * 16) {
+            // This returned point is needed only for the immediate signed bounds.
+            hitshot->pos.update_seg1();
+            if(static_cast<subpixel_t>(_AX) <= -8 * 16 ||
+               static_cast<subpixel_t>(_AX) >= (384 + 8) * 16 ||
+               static_cast<subpixel_t>(_DX) <= -8 * 16 ||
+               static_cast<subpixel_t>(_DX) >= (368 + 8) * 16) {
                 // Retain the original TH04-derived out-of-bounds sentinel.
                 hitshot->age = HITSHOT_FRAMES + HITSHOT_CELS + 2;
             } else {

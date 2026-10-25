@@ -178,3 +178,93 @@ updater's own1060-byte scope retains all52 switch-table bytes and its own
 compiled HP-threshold mutation. Prefix111 already has an owner and is not
 counted twice. This is evidence for this source-definition context; unrelated
 far calls and source cohorts still require their own actual producers.
+
+## Proven same-CS declarations retain real far interfaces
+
+`main-stage-runtime-init-a` independently verifies the natural 174-byte TH05
+stage reset from the maintained TH04 donor. That donor already annotates
+`shot_level_update` and `hud_put` with `#pragma samecodeseg`; both actual
+callees share frame AE1 with this caller and retain genuine far returns.
+The TH05 producer keeps their far signatures, normal flags and these source
+context declarations. Both complete fresh outputs match, including the
+original five-byte `NOP; PUSH CS; CALL rel16` sequences at load offsets
+`B5DF` and `B5F8`. The only original ordered MZ relocation is `[144]`, for the
+real different-CS item initializer; it stays unchanged. The independent
+invincibility-time mutation is rejected.
+
+This is evidence for a truthful compiler context declaration, not permission
+to retype a far service as near, supply instructions, or annotate a genuinely
+different-CS callee. Validate actual frames and return cleanup first, preserve
+the complete compared extent and original ordered fixups, and test only the
+affected source. The separate session803 candidate still lacks a mandatory
+zero and remains unaccepted; correcting far-call context alone cannot accept it.
+
+The two reset NOPs are uncredited padding (relative133/158); replacement
+`main-stage-runtime-init-b` preserves the174 complete compared bytes and
+credits172 instructions. A native scan of all accepted MAIN/OP/MAINE CODE
+instruction regions also found three older relaxation NOPs in two MAIN
+owners. Only those two owners and reset174 were recompiled for corrected
+classification; no OP/MAINE omissions were found. Original receipts stay
+archived. Padding is never removed from raw comparison.
+
+The same proven context declarations recover the old enemy blockers in
+`main-enemy-samecodeseg-a`: the real midboss far entry returns RETF0 and the
+real Spark entry RETF8, with both callee frames1527 matching their callers.
+Only lifecycle.cpp changes; its full typed ABI remains unchanged. Two fresh
+producers pass the original89/576 complete bytes and ordered fixups, with
+both linker NOPs explicitly uncredited. This replaces the earlier unsupported
+call-context assumption, not the genuine callee interfaces.
+
+## Consume the real packed point return at its ABI boundary
+
+The actual near `PlayfieldMotion::update_seg1` and `update_seg3` implementations
+are identical 32-byte routines at load offsets `BE1A` and `1527C`. They consume
+one real near-this word, return with RET2, and return the new signed X/Y words
+in AX/DX. There is no hidden output pointer or carry-flag result. The full
+12-byte Motion and four-byte PlayfieldPoint declarations remain mandatory.
+Pinned ReC98 `th04/main/playfld.hpp` explicitly documents direct AX/DX consumers;
+the accepted bullet updater already uses this genuine Borland return boundary.
+
+The stage-two updater keeps the full method return type, calls it normally,
+and immediately reads signed AX/DX for four bounds comparisons. Its remaining
+algorithm uses ordinary typed fields and locals. No register math, shortened
+record, scalar-return stand-in or instruction body is introduced. This removes
+the named-point spill from664 to the original653 bytes. Two fresh producers
+in `main-stage2-update-abi-a` match all raw bytes and fixups `[441,426,225]`;
+the independent palette-peak mutation rejects. The scrolling service also
+uses the canonical existing C/Pascal/near declaration and the same real address.
+
+`main-shots-update-abi-b` applies the same protocol at both actual method calls.
+Live returned coordinates are consumed into the real cache before pointer,
+count or age changes; the hit-animation return is consumed before subsequent
+work. The remaining homing angle uses an unsigned byte-storage view for modulo
+256 updates, preserving the canonical full Shot class. Two fresh producers
+match all408 bytes, including eight compiler table bytes and ordered fixups
+`[202,112]`; a real acceleration mutation rejects.
+
+These are compiler-extension ABI consumers, recorded as C++ DOS-intrinsic
+owners. Do not alias ordinary algorithm locals to physical registers, read a
+return after another call or clobber, change the real function prototype, or
+reuse the mechanism without checking that callee's actual ABI and lifetime.
+
+## Scalar rvalues can preserve the original transition scaling
+
+The stage-two initializer's476-byte form already had the original single
+common X store in DX. Its16-byte difference was exactly four in-place
+`frame <<= 3` operations, each four bytes shorter than the original ordinary
+scalar-result scaling. Replacing only those four real assignments with
+`frame = frame * 8` preserves the eight branches, genuine state writes and
+values (all normalized transition frames are0..127). No register variable,
+extra work, barrier, flag variation or padding is introduced.
+
+The independently factored initializer in `main-stage2-particle-initializer-a`
+now matches all492 bytes and ordered fixups `[484,441]` from two fresh
+producers, with its own zoom mutation rejected. The already accepted updater
+and ABI header were not changed or replayed. Prior claims that branch stores
+caused the shrink are superseded by the actual four-sequence native comparison.
+
+Keep register-return borrowing limited to a proved actual lifetime. The one
+item-update experiment235 failed before a second or negative build: ordinary
+pickup-X arithmetic overwrote AX before subtracting its supposed borrowed X,
+producing self-subtraction. Typed safe248 source was restored exactly. No BX
+algorithm alias, register forcing or alternate ABI was introduced to repair it.
