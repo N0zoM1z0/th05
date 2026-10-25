@@ -180,6 +180,31 @@ raw-exact1555 and different ordering. Do not repeat either unchanged build.
 Native/private observations remain in`.analysis/vendor-data-routing/` and the
 existing cutscene producer directories.
 
+## Separate text-renderer ASM DATA evidence
+
+`src/shared/graphics/text_fx_data.asm` reconstructs two symbolic DATA scopes in
+each of OP and MAINE: 28 dispatch bytes and 4 mutable state bytes. The separate
+`config/text_fx_data_acceptance.json` records 64 exact ASM DATA bytes, with
+inferred handwritten origin and zero C/C++ or global authored credit. They
+remain unknown in the ownership partition; all headline counts above stay
+unchanged. 32 raster bytes per artifact and all renderer CODE are excluded.
+
+`.analysis/textfx-data-native/asm-c/receipt.json` has two fresh producers per
+artifact and an own assembled negative for each scope. Import re-read actual
+saved OMF/MAP/MZ, source aliases, argv/logs, DGROUP frames, pinned decoded views
+and the full private native review. Unchanged tool execution probes were reused.
+See [owner notes](../src/shared/graphics/text_fx_data.md) for original boundary,
+symbol, provenance and NOP review. `asm-a` stopped on the actual TASM MAP module
+name; `asm-b` is a successful intermediate diagnostic. Neither is accepted.
+
+Earlier byte-exact C++ state producers were not imported: the assembly context
+does not justify increasing C/C++ origin counters. Their source/producer
+snapshots remain private. No accepted C/C++ dependency changed; no unrelated
+unit was rebuilt. Public CI and generated progress check this separate lane.
+The next lead is the real self-modifying renderer, not a compiler-generated
+function to transcribe; review any original-assembly claim separately. MAIN
+has no corresponding reviewed owner. The 98% objective remains open.
+
 ## Parked work: preserve findings before trying variants
 
 - Staff: [full-family notes](../src/maine/staff/full.md) describe17 real bodies,

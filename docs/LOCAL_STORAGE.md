@@ -48,6 +48,10 @@ incremental replay.
 - `.analysis/native-producers/`, native reviews and candidate freezes: retained
   limitations prevent repeated invalid source/ABI hypotheses. Failure names
   are not evidence that their contents are unused.
+- `.analysis/textfx-data-native/`: the complete native instruction/boundary
+  review and accepted `asm-c/` producers, source snapshots and both negative
+  controls per artifact. `asm-a`/`asm-b` and the unimported C++ state receipts
+  under `.analysis/unit-replays/` preserve earlier classification decisions.
 - `.analysis/builds/` and `.analysis/vendor-review/`: calibration binaries,
   listings, objects and source closures support library ownership and some
   retained DATA evidence. Keep their original paths and contents.

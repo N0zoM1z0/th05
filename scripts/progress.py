@@ -247,6 +247,13 @@ def summarize_all(root: Path = ROOT) -> dict:
     combined["units"] = [{**unit, "artifact": name, "id": name + ":" + unit["id"]}
                          for name, summary in summaries.items() for unit in summary["units"]]
     combined["artifacts"] = summaries
+    asm_path = root / "config/text_fx_data_acceptance.json"
+    if asm_path.exists():
+        from replay_text_fx_data import check_public
+        asm = json.loads(asm_path.read_text())
+        asm_config = tomllib.loads((root / "config/text_fx_data.toml").read_text())
+        check_public(asm, asm_config)
+        combined["separate_asm_data_bytes_exact"] = asm["asm_data_bytes_exact"]
     return combined
 
 
@@ -274,6 +281,15 @@ def render(summary: dict) -> tuple[str, str]:
             scope.get('complete_extent_bytes', 0)))) + ' |')
     scope_rows = "\n".join(rows)
     data_scope_rows = '\n'.join(data_rows)
+    asm_note = ""
+    if summary.get("separate_asm_data_bytes_exact"):
+        asm_note = f'''Separately, {summary['separate_asm_data_bytes_exact']} symbolic text-renderer ASM DATA bytes
+pass two fresh producers and an own assembled negative per scope/artifact.
+Their handwritten origin is inferred; they add zero C/C++ or global authored
+credit and remain unknown in the global ownership partition. Raster resources
+and renderer CODE are excluded. See [ASM DATA review](../src/shared/graphics/text_fx_data.md).
+
+'''
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
@@ -312,7 +328,7 @@ and packed-file exactness are separate and remain unaccepted.
 OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
-The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
+{asm_note}The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub
 ownership and unknown extents must be reviewed before publishing a percentage.
 

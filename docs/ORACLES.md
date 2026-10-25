@@ -88,6 +88,17 @@ the same raw comparison and original ordered MZ-fixup comparison as CODE.
 No normalization or field masking is permitted. BSS reserves no initialized
 target bytes and receives no credit through DATA metadata.
 
+The text-renderer assembly DATA review is a separate lane in
+`replay_text_fx_data.py`. It does not relabel assembler output as a natural
+C/C++ producer. Two complete symbolic DATA contributions per artifact require
+two fresh deterministic TASM producers, their actual complete OMF/MAP scopes,
+full raw bytes, original ordered relocations and an own assembled mutation per
+scope. Import revalidates saved aliases, argv/logs, target views, public
+boundaries and DGROUP frames. Inferred handwritten origin remains explicit:
+these bytes receive zero C/C++ and zero global authored credit, remaining
+unknown in the global partition. CODE, raster resources and scaffold reserves
+receive no credit from this review.
+
 Each DATA acceptance needs its own compiled negative DATA mutation. A mutation
 that only changes CODE is insufficient. Select one DATA contribution per
 focused replay; CODE units from the same owner can share its one TU compilation

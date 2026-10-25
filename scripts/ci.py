@@ -36,6 +36,8 @@ def main() -> int:
         subprocess.run([sys.executable, "scripts/progress.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "config/zun_memory_acceptance.json").exists():
         subprocess.run([sys.executable, "scripts/replay_zun_memory.py", "--check"], cwd=ROOT, check=True)
+    if (ROOT / "config/text_fx_data_acceptance.json").exists():
+        subprocess.run([sys.executable, "scripts/replay_text_fx_data.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "resources/ownership.json").exists():
         subprocess.run([sys.executable, "scripts/ownership.py", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)

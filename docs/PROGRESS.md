@@ -40,6 +40,12 @@ and packed-file exactness are separate and remain unaccepted.
 OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
+Separately, 64 symbolic text-renderer ASM DATA bytes
+pass two fresh producers and an own assembled negative per scope/artifact.
+Their handwritten origin is inferred; they add zero C/C++ or global authored
+credit and remain unknown in the global ownership partition. Raster resources
+and renderer CODE are excluded. See [ASM DATA review](../src/shared/graphics/text_fx_data.md).
+
 The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub
 ownership and unknown extents must be reviewed before publishing a percentage.

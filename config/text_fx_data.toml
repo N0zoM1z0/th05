@@ -1,0 +1,29 @@
+schema_version = 1
+source = "src/shared/graphics/text_fx_data.asm"
+origin = "inferred-original-handwritten-assembly"
+global_authored_credit = "unreviewed"
+native_review_sha256 = "3cd4163f1699875d7f9024c84901513b4c70c064ce468ef4f4fa32cade740824"
+
+[profiles.op]
+bindings = "probes/units/op_text_fx_data_bindings.asm"
+symbols = "probes/units/op_text_fx_symbols.inc"
+cs_base = 54016
+dispatch_start = 63874
+state_start = 63934
+mask_start = 63902
+code_start = 54326
+code_end = 54672
+ds_frame = 3838
+instruction_nops = [54499, 54587, 54625]
+
+[profiles.maine]
+bindings = "probes/units/maine_text_fx_data_bindings.asm"
+symbols = "probes/units/maine_text_fx_symbols.inc"
+cs_base = 59392
+dispatch_start = 67472
+state_start = 67532
+mask_start = 67500
+code_start = 59674
+code_end = 60020
+ds_frame = 4113
+instruction_nops = [59847, 59935, 59973]
