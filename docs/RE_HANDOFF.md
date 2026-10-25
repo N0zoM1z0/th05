@@ -13,12 +13,12 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **5,272 instruction bytes,
+Separately reviewed ASM now contributes **5,824 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 5,627
+and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 162,879 bytes. The global denominator is still unreviewed,
+ownership is now 162,327 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -582,3 +582,41 @@ verifier snapshots are preserved. Public tests include modeled/native negative
 cases without recompiling old units. Private independent reviews are
 `.analysis/piano-native-review.json` and
 `.analysis/piano-maintained-source-model-review.json`, hashed in the owner notes.
+
+
+## Complete original-ASM sound loaders
+
+Three complete 184-byte loaders add 552 reviewed ASM instruction bytes: MAIN
+14EA4..14F5C, OP DBBE..DC76, MAINE ED66..EE1E. Each has 71 instructions,
+no NOP/padding/tables/DATA and ordered far-call fixups [70,78,87]. RETF 6 is
+at relative 181. C/C++ remains 96,899 bytes. Reviewed ASM now totals 6,122
+credited bytes (5,824 instructions, 210 dispatch, 24 semantic CODE tables, 64 DATA),
+6,179 compared with 57 uncredited. Unknown ownership is 162,327; global denominator
+remains unreviewed.
+
+`src/shared/sound/load.asm` retains the real far Pascal filename16:16/function16
+API, BP function reuse, DS/ES switches, DOS error routing and same-CS PUSHCS +
+near-call entry to the real FAR SND_KAJA_INTERRUPT provider. It preserves actual
+byte modes and the packed 15-byte extension bank with a MIDI dword overlapping
+adjacent SE mode at+15. No false 4x4 padded DATA is introduced. The complete 13-byte
+filename copy, unbounded scan, dot/extension writes before disabled returns,
+infinite missing-file fallback and unchecked 65535-byte driver read remain.
+Entry DF clear is required; no IF/ES restoration guarantee is invented.
+
+Source/native origin is independently corroborated by reference history
+01c92da1's explicit ZUN-written ASM attribution and actual manual register/segment
+protocols. Vendor Beep/file bodies remain external; no substantial copied loader
+body was found in the bounded 653-member review. No inspected subspan has positive
+compiler-generated provenance. Literal historical source/assembler identity and
+mixed-source possibilities remain unproved. See [owner review](../src/shared/sound/load.md).
+
+`.analysis/sound-load-native/{main-a,op-a,maine-a}/receipt.json` each has two fresh
+deterministic complete TASM producers, full raw/ordered-fixup/OMF/MAP/public/frame
+checks and its own read-limit FFFF-to-FFFE negative. All three records and explicit
+per-note adoptions are imported. No old accepted input or tool surface changed;
+old objects and installed execution probes were reused. Private independent
+reports `.analysis/sound-loader-native-review.json` and
+`.analysis/sound-loader-maintained-source-review.json` are hashed in owner notes.
+Filename/extension DATA, mode state, driver buffers, library implementations,
+neighboring accepted Kaja functions and whole-program packing receive no new
+ownership or credit from these CODE units.

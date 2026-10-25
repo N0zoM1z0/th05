@@ -724,3 +724,84 @@ semantic_inputs = ["src/op/music/music.hpp"]
 [units.negative]
 find = "PIANO_LABEL_ROWS equ 8"
 replace = "PIANO_LABEL_ROWS equ 7"
+
+[[units]]
+id = "main-sound-load"
+artifact = "main"
+source = "src/shared/sound/load.asm"
+types = "src/shared/sound/load_types.inc"
+symbols = "probes/units/sound_load_symbols.inc"
+bindings = "probes/units/main_sound_load_bindings.asm"
+notes = "src/shared/sound/load.md"
+target_start = 85668
+size = 184
+segment = "SHARED"
+group = "(none)"
+cs_base = 84656
+instruction_nops = []
+fixups = [70, 78, 87]
+tables = []
+uncredited = []
+native_review_sha256 = "2ee50763ed539aa2041cb84b5024637c7c9db0b982991f0cd0f74ed3f787ecc1"
+target_scope_sha256 = "04d34d38c84945bbd0fd227d6030c755eafb130bd61f0241af31a0075abed8d2"
+semantic_inputs = ["src/shared/sound/se.hpp", "src/op/main/menu.hpp", "src/maine/entry/entry.hpp"]
+[units.publics]
+SND_LOAD = 0
+sound_load_end = 184
+[units.negative]
+find = "SOUND_READ_LIMIT equ 0FFFFh"
+replace = "SOUND_READ_LIMIT equ 0FFFEh"
+
+[[units]]
+id = "op-sound-load"
+artifact = "op"
+source = "src/shared/sound/load.asm"
+types = "src/shared/sound/load_types.inc"
+symbols = "probes/units/sound_load_symbols.inc"
+bindings = "probes/units/op_sound_load_bindings.asm"
+notes = "src/shared/sound/load.md"
+target_start = 56254
+size = 184
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = [70, 78, 87]
+tables = []
+uncredited = []
+native_review_sha256 = "d97ff4c5eb44db20d8e4e2d2992b469111f1aad84c12d7f77e012be265467336"
+target_scope_sha256 = "c2699b5291ae35bb21abac03356636bbdf9fcc69eae202427e55e64b91860c9f"
+semantic_inputs = ["src/shared/sound/se.hpp", "src/op/main/menu.hpp", "src/maine/entry/entry.hpp"]
+[units.publics]
+SND_LOAD = 0
+sound_load_end = 184
+[units.negative]
+find = "SOUND_READ_LIMIT equ 0FFFFh"
+replace = "SOUND_READ_LIMIT equ 0FFFEh"
+
+[[units]]
+id = "maine-sound-load"
+artifact = "maine"
+source = "src/shared/sound/load.asm"
+types = "src/shared/sound/load_types.inc"
+symbols = "probes/units/sound_load_symbols.inc"
+bindings = "probes/units/maine_sound_load_bindings.asm"
+notes = "src/shared/sound/load.md"
+target_start = 60774
+size = 184
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = [70, 78, 87]
+tables = []
+uncredited = []
+native_review_sha256 = "0eb0ee0fc857ce5354cfe8f9f8dc22024f5016520e2c1b19fec819e975e8d3a6"
+target_scope_sha256 = "37a08b8094b8be61cac8b82e1dea97eed1129a6a3ee835c9184f99df9f389155"
+semantic_inputs = ["src/shared/sound/se.hpp", "src/op/main/menu.hpp", "src/maine/entry/entry.hpp"]
+[units.publics]
+SND_LOAD = 0
+sound_load_end = 184
+[units.negative]
+find = "SOUND_READ_LIMIT equ 0FFFFh"
+replace = "SOUND_READ_LIMIT equ 0FFFEh"
