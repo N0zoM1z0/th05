@@ -13,15 +13,66 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **5,824 instruction bytes,
+Separately reviewed ASM now contributes **6,078 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 6,179
-complete compared bytes include 57 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 6,439
+complete compared bytes include 63 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 133,402 bytes. The global denominator is still unreviewed;
+ownership is now 133,142 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest bounded C++ candidate: motion method, no acceptance
+## Latest accepted ASM: complete monochrome 16x16 ring blit
+
+MAIN C21E..C322 now adds 254 reviewed ASM instruction bytes from a complete
+260-byte semantic macro producer. The six instruction NOPs at relative
+95/133/157/181/221/259 are checked alignment with zero credit. All native raw
+bytes and the empty ordered fixup stream agree in two independent producers;
+the own pixel-alignment-mask negative changes only byte 38 and is rejected.
+See [source, ABI and origin review](../src/shared/graphics/super_roll_16x16.md).
+
+The full hybrid AX-top/CX-left/Pascal-pattern interface, BX stack capture,
+packed CH/CL row/shift state and three string/VRAM drivers support original
+handwritten ASM inference. DS/SI/DI/BP/ES, DF and IF behavior are preserved;
+there is no added clipping or invalid-top normalization. No historical source,
+original assembler identity, total exclusion of vendor ancestry, foreign
+pattern pixels/handles, DATA/BSS or whole-executable equality is claimed.
+A native-only independent pixel model passes 256 valid-input/ring/blank/ABI
+cases. The language inference is separate from byte acceptance and explicit
+per-owner adoption; C/C++ counters remain unchanged.
+
+Only `.analysis/asm-replays/main-super-roll-16x16-b/receipt.json`, SHA-256
+`0e535f70fbf47975f6685b1cf998a8a2a96166338f8bb260b42180e6e05cedae`,
+is imported. The original invocation built its new first producer successfully
+but stopped on missing `ds_base` review metadata. Its archived output remains
+untouched. Continuation adds only that metadata, validates and retains the
+just-built first producer, then compiles the independent second and negative.
+The unchanged standard validator rechecks actual source/verifier/tool/argv,
+OMF, MAP, MZ and complete publics. Continuation and independent review separately
+verify the retained-first lineage. No first-producer rebuild is claimed.
+Successful installed execution evidence and all older units are reused.
+
+Independent actual review:
+`.analysis/super-roll-16x16-actual-continuation-independent-review.json`, SHA-256
+`efc3b5b9c25326fb87209ea01284260cbd6e395f15398732418cac630c0a8e15`.
+Global unknown decreases 133,402 to 133,142 (MAIN 53,692 to 53,432); other
+artifacts, vendor/DATA/resource counts and the null global denominator remain.
+All 334 CI tests, native target ownership checks, generated progress checks and
+diff checks pass. All four C/C++ incremental plans and the ASM plan are empty.
+The 23 older ASM records/descriptors and four C/C++ ledgers remain unchanged.
+Independent final adoption review:
+`.analysis/super-roll-16x16-final-adoption-independent-review.json`, SHA-256
+`f301bdc19b39410e4f249483da604523beab4dd13cea9006997a93566e62627f`.
+Root final review: `.analysis/super-roll-16x16-root-final-review.json`, SHA-256
+`ddf2325b8f176aa0fc14418239006cafe441dec1692746e2de0d92aa4978e976`.
+
+Next bounded vendor route: complete EMS_READ/EMS_WRITE, 98 bytes each, remain
+unknown. Primary archive bodies differ only by five private `=` equate names;
+whole saved OMF/calibration/native bytes agree. This is preparation for a
+separate explicit review, with zero authored credit, not an adoption.
+`.analysis/vendor-review/ems-transfer-source-family-routing.json`, SHA-256
+`e318482aa429012caa5f35c9652252f73e896d581a8be61afa034656dafb7ead`.
+
+## Previous bounded C++ candidate: motion method, no acceptance
 
 The canonical `PlayfieldMotion::update_seg1()` now has a natural high-level
 implementation under `src/main/math/`, with no shared-header or accepted-caller

@@ -805,3 +805,53 @@ sound_load_end = 184
 [units.negative]
 find = "SOUND_READ_LIMIT equ 0FFFFh"
 replace = "SOUND_READ_LIMIT equ 0FFFEh"
+
+[[units]]
+id = "main-super-roll-16x16"
+artifact = "main"
+source = "src/shared/graphics/super_roll_16x16.asm"
+types = "src/shared/graphics/super_roll_16x16_types.inc"
+symbols = "probes/units/super_roll_16x16_symbols.inc"
+bindings = "probes/units/super_roll_16x16_bindings.asm"
+notes = "src/shared/graphics/super_roll_16x16.md"
+target_start = 0xc21e
+size = 260
+segment = "SPRITE16_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "a844c912b567d9d30d520860f06065ba676afd6f5a2ab175a1613293344e2d14"
+target_scope_sha256 = "64ba08a10f7873d12414d5e98bcc4f8113056d57c6ff4a8b02d494ca4fe6ca8d"
+semantic_inputs = ["src/main/boss/background.hpp", "src/main/stage/background2.hpp", "src/shared/geometry.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"Z_SUPER_ROLL_PUT_16X16_MONO_RAW" = 0
+"super_roll_16x16_end" = 260
+[units.negative]
+find = "and cl, 7"
+replace = "and cl, 6"
+[[units.uncredited]]
+offset = 95
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 133
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 157
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 181
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 221
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 259
+size = 1
+kind = "alignment"

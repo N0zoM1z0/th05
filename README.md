@@ -13,31 +13,32 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **494 complete C/C++ functions / 81,630 authored CODE bytes**
+The first **504 complete C/C++ functions / 83,114 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
-fixups and compiled controls. Separately, **15,269 initialized semantic DATA
+fixups and compiled controls. Separately, **15,337 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored C/C++ bytes exact are
-**96,899**: 80,938 instruction, 692 compiler switch-table
-and 15,269 initialized DATA bytes. Complete compared extents contain
-96,978 bytes, including 79 excluded padding bytes. The oracle
+**98,451**: 82,422 instruction, 692 compiler switch-table
+and 15,337 initialized DATA bytes. Complete compared extents contain
+98,534 bytes, including 83 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
-Separately reviewed assembly now contributes **5,824 instruction bytes,
+Separately reviewed assembly now contributes **6,078 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
 and 64 semantic DATA bytes**. The
 [text renderer](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md),
 [enemy VM](src/main/enemy/script.md),
 [bullet generation](src/main/bullet/spawn.md),
 [image kernels](docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md),
+[monochrome ring blit](src/shared/graphics/super_roll_16x16.md),
 [opaque CDG](src/shared/graphics/cdg_opaque.md),
 [laser geometry/render/hit](src/main/bullet/laser_render_hit.md),
 [PI kernels](src/shared/graphics/pi_kernels.md),
 [piano drawing](src/op/piano/piano.md),
 [sound loading](src/shared/sound/load.md) and
 [EGC rectangles](src/shared/hardware/egc_rect_copy.md) cover
-6,179 complete compared bytes with
-two fresh producers and own assembled negatives. 57 checked alignment,
+6,439 complete compared bytes with
+two independent producers and own assembled negatives. 63 checked alignment,
 inert-branch and runtime-placeholder bytes compare normally with zero credit.
 Explicit native ownership decisions leave C/C++ counters unchanged. Literal
 historical source and original assembler identity remain unknown.
@@ -47,16 +48,16 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [first unit evidence](docs/reconstruction/FIRST_CXX_UNITS.md). The
 [gapless ownership inventory](resources/ownership.json) retains every unknown
 interval across all four targets; it grants no inferred vendor exclusions.
-[Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md)
-and its artifact-specific reviews classify 47,479 third-party CODE bytes; the independent
-[Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md)
-and [source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md)
-classify another 2,528 CODE bytes. The [SIN8 review](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
-also identifies 1,920 initialized library DATA bytes; the
-[CL DATA review](docs/reconstruction/CL_DATA_OWNERSHIP.md) identifies another 1,857.
-All 53,784 vendor bytes
-grant no authored source credit; 2,048 CODE bytes are constants, separately
-identified from instructions.
+[Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md),
+[runtime review](docs/reconstruction/MAIN_RUNTIME_OWNERSHIP.md),
+[Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md),
+[source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md) and
+[EGC shifts](docs/reconstruction/MASTER_EGC_SHIFTS_VENDOR_REVIEW.md) classify
+69,184 third-party CODE bytes. The [SIN8](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
+and [CL DATA](docs/reconstruction/CL_DATA_OWNERSHIP.md) reviews classify 3,777
+initialized library DATA bytes. All 72,961 vendor bytes grant zero authored
+credit. A separately reviewed [8,192-byte ZUN font resource](docs/reconstruction/ZUN_FONT_RESOURCE.md)
+also grants zero authored credit. Unknown ownership remains 133,142 bytes.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.
