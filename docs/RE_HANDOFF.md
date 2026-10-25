@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **3,937 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,234
-complete compared bytes include 47 checked uncredited alignment, inert-branch
+Separately reviewed ASM now contributes **4,237 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,540
+complete compared bytes include 53 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 164,272 bytes. The global denominator is still unreviewed,
+ownership is now 163,966 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -431,3 +431,37 @@ because the earlier ball updater is four bytes short. Current evidence supplies 
 prefix change that satisfies both claims; do not add arbitrary padding or
 misbind an owned definition to a foreign symbol. Evidence is `.analysis/shinki-wing-native/read-only-order-review.json`
 and the prior retained-order note; do not repeat those unchanged probes.
+
+
+## Complete opaque CDG assembly
+
+Three independently accepted copies of the same semantic original-ASM source
+add 300 instruction bytes across 306 compared bytes: MAIN 14C70..14CD6,
+OP D590..D5F6 and MAINE EA74..EADA, each 102 bytes. Two NOPs per copy at
+relative 75/101 compare normally with zero credit. Original ordered fixups
+are empty; RETF 6 is at relative 98. No image assets, slot DATA or tables are
+owned. C/C++ counters remain unchanged. Reviewed ASM is now 4,487 credited
+bytes (4,237 instructions, 186 symbolic CODE tables, 64 DATA), 4,540 compared;
+unknown ownership is 163,966 bytes. The global denominator remains unreviewed.
+
+Maintained source is `src/shared/graphics/cdg_opaque.asm`, reusing unchanged
+full CDG16/64-slot types and external declarations from the alpha owner.
+Current MAIN/OP/MAINE slot offsets are 306C/3A96/29FE in their actual DS frames
+209D/0EFE/1011; native CS frames are 14AB/0D30/0E80. Preserve opaque's signed
+SAR 3 (alpha uses SHR), BP width repurpose, stack E/G/R -> copy B/R/G/E,
+DF clear, unchanged IF and final ES at E plane plus 5*top. No DS=SS assumption
+or alpha sentinel behavior transfers. The internal NOP purpose is unknown;
+both NOPs conservatively receive zero credit. See [owner notes](../src/shared/graphics/cdg_opaque.md).
+
+`.analysis/cdg-opaque-native/{main-a,op-a,maine-a}/receipt.json` each has two
+fresh deterministic whole producers and its own plane-count 4-to-3 assembled
+negative, full raw/ordered-fixup and OMF/MAP/public/real-frame checks. All three
+records and their explicit per-note ownership decisions are imported. Every
+old accepted input identity remains unchanged; no old owner or installed
+execution probe was cold-replayed. Independent native/source reviews are
+`.analysis/cdg-noalpha-native-review.json` and
+`.analysis/cdg-opaque-maintained-source-review.json`, hashed in the owner notes.
+Native segment/string/BP protocols support reviewed original ASM; historical
+mixed C/ASM and renamed vendor adaptations remain unproved. No inspected
+portion has positive compiler-generated provenance, and synthetic reference
+C++ register templates receive no C/C++ credit.

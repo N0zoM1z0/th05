@@ -338,3 +338,105 @@ laser_render_hit_end = 348
 [units.negative]
 find = "HIT_STEP_PIXELS equ 16"
 replace = "HIT_STEP_PIXELS equ 15"
+
+[[units]]
+id = "main-cdg-opaque"
+artifact = "main"
+source = "src/shared/graphics/cdg_opaque.asm"
+types = "src/shared/graphics/cdg_alpha_types.inc"
+symbols = "probes/units/cdg_alpha_symbols.inc"
+bindings = "probes/units/main_cdg_opaque_bindings.asm"
+notes = "src/shared/graphics/cdg_opaque.md"
+target_start = 85104
+size = 102
+segment = "SHARED"
+group = "(none)"
+cs_base = 84656
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "8f7b4720ed1b96f8b2732a2d9ccae60870a9ca470396de2905b85f1210ee428a"
+target_scope_sha256 = "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce"
+semantic_inputs = ["src/main/ems/ems.hpp", "src/maine/staff/image_phase.hpp"]
+[units.publics]
+CDG_PUT_NOALPHA_8 = 0
+cdg_opaque_end = 102
+[units.negative]
+find = "PLANE_COUNT equ 4"
+replace = "PLANE_COUNT equ 3"
+[[units.uncredited]]
+offset = 75
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 101
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "op-cdg-opaque"
+artifact = "op"
+source = "src/shared/graphics/cdg_opaque.asm"
+types = "src/shared/graphics/cdg_alpha_types.inc"
+symbols = "probes/units/cdg_alpha_symbols.inc"
+bindings = "probes/units/op_cdg_opaque_bindings.asm"
+notes = "src/shared/graphics/cdg_opaque.md"
+target_start = 54672
+size = 102
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "57b20cf5df39b16283a33063d4fc9960988d8ef6814347703b1a398a30f6aa0f"
+target_scope_sha256 = "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0"
+semantic_inputs = ["src/main/ems/ems.hpp", "src/maine/staff/image_phase.hpp"]
+[units.publics]
+CDG_PUT_NOALPHA_8 = 0
+cdg_opaque_end = 102
+[units.negative]
+find = "PLANE_COUNT equ 4"
+replace = "PLANE_COUNT equ 3"
+[[units.uncredited]]
+offset = 75
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 101
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "maine-cdg-opaque"
+artifact = "maine"
+source = "src/shared/graphics/cdg_opaque.asm"
+types = "src/shared/graphics/cdg_alpha_types.inc"
+symbols = "probes/units/cdg_alpha_symbols.inc"
+bindings = "probes/units/maine_cdg_opaque_bindings.asm"
+notes = "src/shared/graphics/cdg_opaque.md"
+target_start = 60020
+size = 102
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "3ac172c102464212ac5e02c6eda7be291ba5ba18c349ba45a50e6bebc9602b25"
+target_scope_sha256 = "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1"
+semantic_inputs = ["src/main/ems/ems.hpp", "src/maine/staff/image_phase.hpp"]
+[units.publics]
+CDG_PUT_NOALPHA_8 = 0
+cdg_opaque_end = 102
+[units.negative]
+find = "PLANE_COUNT equ 4"
+replace = "PLANE_COUNT equ 3"
+[[units.uncredited]]
+offset = 75
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 101
+size = 1
+kind = "alignment"

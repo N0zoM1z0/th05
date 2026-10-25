@@ -2121,6 +2121,787 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "fcbbbc257bdf7a4ca0b8f4101e2890ebb1dd524eb4cdc025c5accd5838abd052"
+    },
+    "main-cdg-opaque": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-cdg-opaque",
+        "artifact": "main",
+        "source": "src/shared/graphics/cdg_opaque.asm",
+        "types": "src/shared/graphics/cdg_alpha_types.inc",
+        "symbols": "probes/units/cdg_alpha_symbols.inc",
+        "bindings": "probes/units/main_cdg_opaque_bindings.asm",
+        "notes": "src/shared/graphics/cdg_opaque.md",
+        "target_start": 85104,
+        "size": 102,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 84656,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "8f7b4720ed1b96f8b2732a2d9ccae60870a9ca470396de2905b85f1210ee428a",
+        "target_scope_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+        "semantic_inputs": [
+          "src/main/ems/ems.hpp",
+          "src/maine/staff/image_phase.hpp"
+        ],
+        "publics": {
+          "CDG_PUT_NOALPHA_8": 0,
+          "cdg_opaque_end": 102
+        },
+        "negative": {
+          "find": "PLANE_COUNT equ 4",
+          "replace": "PLANE_COUNT equ 3"
+        },
+        "uncredited": [
+          {
+            "offset": 75,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 101,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/cdg_alpha_symbols.inc",
+          "sha256": "94839ef6fc45c67a413c1f5185317ef89a6642179c46859c7ddd849de51d94aa"
+        },
+        {
+          "path": "probes/units/main_cdg_opaque_bindings.asm",
+          "sha256": "8f78b50bb3cdd722d79501786663e6512bd23cc8948c3a27f684dbd863654f93"
+        },
+        {
+          "path": "src/main/ems/ems.hpp",
+          "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+        },
+        {
+          "path": "src/maine/staff/image_phase.hpp",
+          "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+        },
+        {
+          "path": "src/shared/graphics/cdg_alpha_types.inc",
+          "sha256": "bdc7324d85b19992ee62d20d17c8a11524fb508831bf2fe311a47bf5659b8154"
+        },
+        {
+          "path": "src/shared/graphics/cdg_opaque.asm",
+          "sha256": "c464549488b5f34271fb8adf75aa40b73d0928ed1a3cf99143b3175a5712eeec"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "aff866b70c3fcf7ff9b73dce1d9fcefb8d3ca1da0aafae369035ecaff32d6e1d"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 100,
+        "dispatch-table": 0,
+        "alignment": 2,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 85104,
+            "candidate_start": 85104,
+            "size": 102,
+            "target_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+            "candidate_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "4da35ca242a11ed954ca41a0f201eca638071f61a6cea15f246121eb3a72d190",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "51a9183b2eca4a9c1d824f22eae5ac55ce17e1ab63599575f656a48740a3fcff",
+          "bindings_normalized_sha256": "292c4ceef6538fee2ccee3872c35ceee541ecad9cd1c39919bd792ec41112cb4",
+          "map_sha256": "150daee4ea50dbcd2c8cc91a70b18b2c8720c94cf84b304c453ccbd6e459d7c4",
+          "mz_sha256": "0fe2827d7bdd31b7f25a68351f8ac200bb7487d9f5f731fcfb88fb168e3c6016",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 85104,
+            "candidate_start": 85104,
+            "size": 102,
+            "target_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+            "candidate_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "23a3725c684111ea723530b7b9ac1c4e9c0d59ca6c5b531d9c825730dba78666",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "9c5cfbfb81652ff6df02b2565d53cd89c7712301a5792b9fdb08e7f03130726e",
+          "bindings_normalized_sha256": "292c4ceef6538fee2ccee3872c35ceee541ecad9cd1c39919bd792ec41112cb4",
+          "map_sha256": "150daee4ea50dbcd2c8cc91a70b18b2c8720c94cf84b304c453ccbd6e459d7c4",
+          "mz_sha256": "0fe2827d7bdd31b7f25a68351f8ac200bb7487d9f5f731fcfb88fb168e3c6016",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 85104,
+          "candidate_start": 85104,
+          "size": 102,
+          "target_sha256": "dc139addc13d2ad47091c26af7bffb008dc6c0d27cca4fadec89e478902d22ce",
+          "candidate_sha256": "2ced130c9efe98b9c9f520285f478591c8129d1d1e8190e9f9e94e8724cb48ef",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 102,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 102,
+              "sha256": "df2c84101d78900b1ac55e0d79eadd722bdbe1c33e7d6f38386cb9ef49668c48"
+            }
+          ]
+        },
+        "object_sha256": "b809530d518030367f5a6f5dd38da03d3642f8b221bdcaf62783deff68a655b8",
+        "object_normalized_sha256": "fc5ff95d55026d8834b21b7f01d467a3f0928ef126a92fe707fd9745cf2073eb",
+        "bindings_sha256": "6e5b1a28163b014f450d054796d0ec69dcf8a7af2c16b419b3cb97f9782d1d59",
+        "bindings_normalized_sha256": "292c4ceef6538fee2ccee3872c35ceee541ecad9cd1c39919bd792ec41112cb4",
+        "map_sha256": "150daee4ea50dbcd2c8cc91a70b18b2c8720c94cf84b304c453ccbd6e459d7c4",
+        "mz_sha256": "ae94e7f1fa3eeaf5626c84e105a12276501af8b12c0c56557bc6b558e2a119d4",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "e2eb5b053592d7f889ad742a8ab042a1e9055a3abc77a941de340a50abca3c78"
+    },
+    "op-cdg-opaque": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "op-cdg-opaque",
+        "artifact": "op",
+        "source": "src/shared/graphics/cdg_opaque.asm",
+        "types": "src/shared/graphics/cdg_alpha_types.inc",
+        "symbols": "probes/units/cdg_alpha_symbols.inc",
+        "bindings": "probes/units/op_cdg_opaque_bindings.asm",
+        "notes": "src/shared/graphics/cdg_opaque.md",
+        "target_start": 54672,
+        "size": 102,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 54016,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "57b20cf5df39b16283a33063d4fc9960988d8ef6814347703b1a398a30f6aa0f",
+        "target_scope_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+        "semantic_inputs": [
+          "src/main/ems/ems.hpp",
+          "src/maine/staff/image_phase.hpp"
+        ],
+        "publics": {
+          "CDG_PUT_NOALPHA_8": 0,
+          "cdg_opaque_end": 102
+        },
+        "negative": {
+          "find": "PLANE_COUNT equ 4",
+          "replace": "PLANE_COUNT equ 3"
+        },
+        "uncredited": [
+          {
+            "offset": 75,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 101,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/cdg_alpha_symbols.inc",
+          "sha256": "94839ef6fc45c67a413c1f5185317ef89a6642179c46859c7ddd849de51d94aa"
+        },
+        {
+          "path": "probes/units/op_cdg_opaque_bindings.asm",
+          "sha256": "95aa88618b744cd255d52962f90a1a8671c16685ff1ef790240d12ff742fa3c9"
+        },
+        {
+          "path": "src/main/ems/ems.hpp",
+          "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+        },
+        {
+          "path": "src/maine/staff/image_phase.hpp",
+          "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+        },
+        {
+          "path": "src/shared/graphics/cdg_alpha_types.inc",
+          "sha256": "bdc7324d85b19992ee62d20d17c8a11524fb508831bf2fe311a47bf5659b8154"
+        },
+        {
+          "path": "src/shared/graphics/cdg_opaque.asm",
+          "sha256": "c464549488b5f34271fb8adf75aa40b73d0928ed1a3cf99143b3175a5712eeec"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "aff866b70c3fcf7ff9b73dce1d9fcefb8d3ca1da0aafae369035ecaff32d6e1d"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 100,
+        "dispatch-table": 0,
+        "alignment": 2,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "target_image": {
+        "size": 77798,
+        "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 54672,
+            "candidate_start": 54672,
+            "size": 102,
+            "target_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+            "candidate_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "593e69df9020034fa427bb47d0a861fd3a36ba769cd584dde1675e73356e6c62",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "d7793b16be2a74bf6e0bc1ed7d7fd8a27c11b4569ac40bc7ee0da67784b93c98",
+          "bindings_normalized_sha256": "0ed4321a597a880b5053e1a4cb6bf80aca0253a262719ca81f9e50b4a2972a02",
+          "map_sha256": "3fd3a66a56badcdf03b3a14e18ede5cfd6f7d65f641d608173d0330692c90785",
+          "mz_sha256": "c9ada4c358b87c74506ce8f96011163ea0c7a727c5fbe5308af4c8a2ef5f856a",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 54672,
+            "candidate_start": 54672,
+            "size": 102,
+            "target_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+            "candidate_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "1f9b39e7d68db15e8c89546632fd81b5de172ff96b0f40590a7a60c0ad5a558f",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "e87939466c7a88995b8841b0457cbc3e435d4ae18f129900e32e171f7f25fbc0",
+          "bindings_normalized_sha256": "0ed4321a597a880b5053e1a4cb6bf80aca0253a262719ca81f9e50b4a2972a02",
+          "map_sha256": "3fd3a66a56badcdf03b3a14e18ede5cfd6f7d65f641d608173d0330692c90785",
+          "mz_sha256": "c9ada4c358b87c74506ce8f96011163ea0c7a727c5fbe5308af4c8a2ef5f856a",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 54672,
+          "candidate_start": 54672,
+          "size": 102,
+          "target_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
+          "candidate_sha256": "8acbbb98eb332c1a3aa29eedd6490844c86cb0b9ec08b0b39b99fb8486e65077",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 102,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 102,
+              "sha256": "df2c84101d78900b1ac55e0d79eadd722bdbe1c33e7d6f38386cb9ef49668c48"
+            }
+          ]
+        },
+        "object_sha256": "395e5ab2cdcb54a373b9116a5c6c308d7bc407bfac4414fc5bc48a043ed3ea17",
+        "object_normalized_sha256": "fc5ff95d55026d8834b21b7f01d467a3f0928ef126a92fe707fd9745cf2073eb",
+        "bindings_sha256": "e87939466c7a88995b8841b0457cbc3e435d4ae18f129900e32e171f7f25fbc0",
+        "bindings_normalized_sha256": "0ed4321a597a880b5053e1a4cb6bf80aca0253a262719ca81f9e50b4a2972a02",
+        "map_sha256": "3fd3a66a56badcdf03b3a14e18ede5cfd6f7d65f641d608173d0330692c90785",
+        "mz_sha256": "efd83b89722b8eddd789b6aa6614d32468f9d71492796db0d8f82f0beaa78740",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "2b6d11b899d735e553cfb4813ad7671f00ac1cf8a2c28c94b3d6dfa06383003c"
+    },
+    "maine-cdg-opaque": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "maine-cdg-opaque",
+        "artifact": "maine",
+        "source": "src/shared/graphics/cdg_opaque.asm",
+        "types": "src/shared/graphics/cdg_alpha_types.inc",
+        "symbols": "probes/units/cdg_alpha_symbols.inc",
+        "bindings": "probes/units/maine_cdg_opaque_bindings.asm",
+        "notes": "src/shared/graphics/cdg_opaque.md",
+        "target_start": 60020,
+        "size": 102,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 59392,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "3ac172c102464212ac5e02c6eda7be291ba5ba18c349ba45a50e6bebc9602b25",
+        "target_scope_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+        "semantic_inputs": [
+          "src/main/ems/ems.hpp",
+          "src/maine/staff/image_phase.hpp"
+        ],
+        "publics": {
+          "CDG_PUT_NOALPHA_8": 0,
+          "cdg_opaque_end": 102
+        },
+        "negative": {
+          "find": "PLANE_COUNT equ 4",
+          "replace": "PLANE_COUNT equ 3"
+        },
+        "uncredited": [
+          {
+            "offset": 75,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 101,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/cdg_alpha_symbols.inc",
+          "sha256": "94839ef6fc45c67a413c1f5185317ef89a6642179c46859c7ddd849de51d94aa"
+        },
+        {
+          "path": "probes/units/maine_cdg_opaque_bindings.asm",
+          "sha256": "52e5cd0062a472929b82ab9c12c2c068073f741a77e1e9aac7037987ce2e978e"
+        },
+        {
+          "path": "src/main/ems/ems.hpp",
+          "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+        },
+        {
+          "path": "src/maine/staff/image_phase.hpp",
+          "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+        },
+        {
+          "path": "src/shared/graphics/cdg_alpha_types.inc",
+          "sha256": "bdc7324d85b19992ee62d20d17c8a11524fb508831bf2fe311a47bf5659b8154"
+        },
+        {
+          "path": "src/shared/graphics/cdg_opaque.asm",
+          "sha256": "c464549488b5f34271fb8adf75aa40b73d0928ed1a3cf99143b3175a5712eeec"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "aff866b70c3fcf7ff9b73dce1d9fcefb8d3ca1da0aafae369035ecaff32d6e1d"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 100,
+        "dispatch-table": 0,
+        "alignment": 2,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "target_image": {
+        "size": 77396,
+        "sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 60020,
+            "candidate_start": 60020,
+            "size": 102,
+            "target_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+            "candidate_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "781977e5e64b0aad8e282e9fd66193a7d059c3618e17e9ca21260d7fcdae99b0",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "ae5c767c2ca33af26f313402cbe9741c490365b4d2b83740b8cfa8eb9fe343ca",
+          "bindings_normalized_sha256": "f172f8c2cd3957caec53123b2854850674be25f8377768d3a3d8091aab3b6436",
+          "map_sha256": "253586fd9c19f801a631632aa69ba12f91ba8409e2c253620d1bb95528b4d7ba",
+          "mz_sha256": "2a9babb51f049f05e1f2188bb146fb5ba80ddabf7bd17f6f6eaa653df863ad9d",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 60020,
+            "candidate_start": 60020,
+            "size": 102,
+            "target_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+            "candidate_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 102,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 102,
+                "sha256": "d6f788bbe22ce9dc30ec964541a36b9111be7c30fc2870459113621bb8b6aa8b"
+              }
+            ]
+          },
+          "object_sha256": "ac1af0fec1ac7ace73cbe9d3c3d86c8452b0987be0e0cd4fdbdd8d665659f93f",
+          "object_normalized_sha256": "0b6c21376e1a098d81b4cf0b9fbae05b9436daa48bb7547553b341e7be51cb2f",
+          "bindings_sha256": "ffe9195729484cb00e2e9288938e8099380a180586f5dc6dd7f33428bc691711",
+          "bindings_normalized_sha256": "f172f8c2cd3957caec53123b2854850674be25f8377768d3a3d8091aab3b6436",
+          "map_sha256": "253586fd9c19f801a631632aa69ba12f91ba8409e2c253620d1bb95528b4d7ba",
+          "mz_sha256": "2a9babb51f049f05e1f2188bb146fb5ba80ddabf7bd17f6f6eaa653df863ad9d",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 60020,
+          "candidate_start": 60020,
+          "size": 102,
+          "target_sha256": "f75c36121f0e5efa5a8c9cb5a7be6037513494478a46f657ff9a97b6dc621da1",
+          "candidate_sha256": "95cd652317278ed49653cededdde807c3973bee45315645c2e784205fe6bebfd",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 102,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 102,
+              "sha256": "df2c84101d78900b1ac55e0d79eadd722bdbe1c33e7d6f38386cb9ef49668c48"
+            }
+          ]
+        },
+        "object_sha256": "3f73f49f33039a80bb13764cef81bd3251a45cf373247a3f22faaf528728484a",
+        "object_normalized_sha256": "fc5ff95d55026d8834b21b7f01d467a3f0928ef126a92fe707fd9745cf2073eb",
+        "bindings_sha256": "ffe9195729484cb00e2e9288938e8099380a180586f5dc6dd7f33428bc691711",
+        "bindings_normalized_sha256": "f172f8c2cd3957caec53123b2854850674be25f8377768d3a3d8091aab3b6436",
+        "map_sha256": "253586fd9c19f801a631632aa69ba12f91ba8409e2c253620d1bb95528b4d7ba",
+        "mz_sha256": "880c2d74328e5c7b9d859739914d2b5dfe1f5c78a1b7de0ce5f901ade6ca4699",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "a8b73bfdfffd17142e45655146541d4b9de11d7f38c84ea05b8722e379c9fc75"
     }
   }
 }
