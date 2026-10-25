@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **315 bounded C/C++ CODE/DATA units / 500 complete function occurrences**,
-**98,183 authored bytes exact**: 82,846 CODE and 15,337 initialized DATA.
-CODE is 82,154 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 98,264; 81 checked padding bytes receive
-no credit. MAIN has 383 functions / 61,726 CODE / 3,091 DATA;
+Current acceptance: **317 bounded C/C++ CODE/DATA units / 502 complete function occurrences**,
+**98,385 authored bytes exact**: 83,048 CODE and 15,337 initialized DATA.
+CODE is 82,356 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 98,466; 81 checked padding bytes receive
+no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,52 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 134,720 bytes. The global denominator is still unreviewed;
+ownership is now 134,518 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete player renderer
+## Latest accepted C++: complete item and splash renderers
+
+Two complete native C Pascal near functions now add202 instruction bytes:
+items_render71 at138E4..1392B and item_splashes_render131 atDCA7..DD2A.
+Neither contains instruction NOPs, tables, padding or owned DATA/BSS. Their
+original ordered fixups are `[]` and `[50]`. See [rendering](../src/main/item/render.md).
+
+Both bodies preserve the maintained TH04 high-level donor literally, using
+canonical full item20/splash10 records and GAME5 pools40/8/dots32. The native
+fastcall dot ABI AX/DX/ES and raw tiny-sprite interface are actual graphics
+contracts. DOS intrinsics only transport their arguments and GRCG color.
+Incoming graphics/DF preconditions and the color helper's IF1 behavior remain;
+no safety clipping, mode change, helper body or asset is invented.
+
+Only `.analysis/unit-replays/main-item-render-c/receipt.json` (SHA-256
+`474f76b2926465c7a37e714ecc50b221bc0e00decdc0f253d8bafee9be345445`) and
+`.analysis/unit-replays/main-item-splash-render-c/receipt.json` (SHA-256
+`6f59779f016de2b0836ce3169faa5d08a69054efdb3dc20c747e0622eecef4d5`) are
+imported. Each supplies two fresh complete deterministic raw/order producers
+and its own compiled boundary/color negative. Symbol-only layouts preserve
+SHARED14AB and empty foreign main_03 at1527 in actual first-seen segment order.
+No initialized bytes, stack, entry or inside-owner gap is supplied.
+
+Attempt-a fails on duplicate canonical declarations before an object. New
+header-only corrections reuse the existing drawpoint/plane/color definitions.
+Attempt-b splash differs only in vector selector operands because the compiler's
+empty SHARED precedes the intended foreign gap. Final-c corrects genuine OMF
+ordering, including item71's otherwise unused foreign contexts; no C++ body or
+compiler flags change. Earlier verdicts remain private and unaccepted.
+
+Installed execution proofs and every older accepted source/object/ledger row
+are reused unchanged. Global unknown decreases134,720 to134,518 (MAIN54,942
+to54,740). C/C++ is98,385 authored bytes; ASM/vendor/DATA/resource/padding
+counts and the unreviewed global denominator remain unchanged.
+
+Saved imports,326-test CI, target ownership verification and all four empty
+incremental plans pass. Independent actual review:
+`.analysis/item-render-final-c-review.json`, SHA-256
+`305f6967baf14b38f3266fbd2437334fc1749622913207fba2ed1051cf9f81da`.
+Root final review: `.analysis/item-render-root-final-review.json`, SHA-256
+`aac01e2e1555750c52720deb6d63ebcf5a2c1082a2cac9b4287d38a4f4c41b30`.
+
+## Previous accepted C++: complete player renderer
 
 The complete near Pascal C `PLAYER_RENDER` at MAINCD56..CEA0 now adds330
 instruction bytes and one function. Its117 instructions end at RETCE9F;

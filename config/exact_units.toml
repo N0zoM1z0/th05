@@ -4221,3 +4221,41 @@ unit = "main-player-render"
 source = "src/main/player/render.cpp"
 find = "if(shot_level < 2)"
 replace = "if(shot_level < 3)"
+
+[[units]]
+id = "main-item-render"
+source = "src/main/item/render.cpp"
+module = "th05/it_rend.cpp"
+segment = "ITEM_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/item_render_bindings.asm"
+bindings_after_compiler = true
+target_start = 0x138e4
+size = 71
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-render"
+source = "src/main/item/render.cpp"
+find = "item->pos.cur.y.v <= TO_SP(-(ITEM_H / 2))"
+replace = "item->pos.cur.y.v < TO_SP(-(ITEM_H / 2))"
+
+[[units]]
+id = "main-item-splash-render"
+source = "src/main/item/splash_render.cpp"
+module = "th05/is_rend.cpp"
+segment = "ITEM_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/item_splash_render_bindings.asm"
+bindings_after_compiler = true
+target_start = 0xdca7
+size = 131
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-splash-render"
+source = "src/main/item/splash_render.cpp"
+find = "grcg_setcolor_direct(15);"
+replace = "grcg_setcolor_direct(14);"

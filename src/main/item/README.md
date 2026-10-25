@@ -82,3 +82,11 @@ producer was393 versus385: ordinary signed integer `%2` compiled to IDIV.
 The actual byte-counter parity check is expressed as `item_drop_cycle &1`,
 matching the independently observed TEST without changing gameplay. The
 remaining `%64` division and both meaningful RNG draws are preserved.
+
+## Complete rendering acceptance
+
+The separate [item and splash renderers](render.md) now add202 instruction bytes
+in two complete functions. They reuse the canonical20-byte item and10-byte splash
+records and real graphics APIs. Old spawn/update/invalidation inputs remain
+unchanged. Splash initialization and the parked item collection/update functions
+receive no credit through this renderer acceptance.
