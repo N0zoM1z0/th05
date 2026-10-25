@@ -775,3 +775,24 @@ unit = "op-se-priority-data"
 source = "src/shared/sound/se_priority_data.cpp"
 find = "36, 16, 4, 16, 8, 48, 80"
 replace = "36, 16, 4, 16, 8, 47, 80"
+
+[[units]]
+id = "op-sound-wait"
+source = "src/shared/sound/wait_common.cpp"
+module = "th05/snd_wc.cpp"
+segment = "SHARED"
+binary = "O"
+bindings_source = "probes/units/op_sound_wait_common_bindings.asm"
+bindings_after_compiler = true
+function_symbol = "snd_delay_until_measure(int,unsigned int)"
+target_start = 0xe0f1
+size = 34
+alignment_offsets = [17]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "op-sound-wait"
+source = "src/shared/sound/wait_common.cpp"
+find = "if(measure_cur < 0)"
+replace = "if(measure_cur <= 0)"

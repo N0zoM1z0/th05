@@ -5,12 +5,12 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **317 bounded C/C++ CODE/DATA units / 502 complete function occurrences**,
-**98,385 authored bytes exact**: 83,048 CODE and 15,337 initialized DATA.
-CODE is 82,356 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 98,466; 81 checked padding bytes receive
+Current acceptance: **319 bounded C/C++ CODE/DATA units / 504 complete function occurrences**,
+**98,451 authored bytes exact**: 83,114 CODE and 15,337 initialized DATA.
+CODE is 82,422 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 98,534; 83 checked padding bytes receive
 no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
-OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
+OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
 Separately reviewed ASM now contributes **5,824 instruction bytes,
@@ -18,10 +18,52 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 134,518 bytes. The global denominator is still unreviewed;
+ownership is now 134,450 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete item and splash renderers
+## Latest accepted C++: OP and MAINE complete BGM waits
+
+Two complete far Pascal wait functions at decoded OP E0F1..E113 and MAINE
+F265..F287 now add33 authored instruction bytes each. Each full34-byte scope
+matches; its only instruction NOP at relative17 is genuine linker relaxation
+padding, compared normally with zero credit. Both original ordered fixup lists
+are empty; there are no tables or owned DATA/BSS. See [wait review](../src/shared/sound/wait.md).
+
+The full69-byte compiler TU includes the unchanged real35-byte measure provider.
+Neither accepted query row nor its original source/object identity changes,
+and no query bytes are credited again. A zero-C++ retained OP object relink
+first proved the old callee needed the actual common SHARED SEGDEF, not merely
+the same group/frame. That diagnostic retains the old harness group and gives
+zero credit. New source preserves the literal body/true far declarations and
+removes only the unsupported harness-zP. Actual pinned OP/MAINE calibration OMF
+for both69-plus-outside-zero and frame_delay has no CODE group, only DGROUP.
+The new ordinary compiler/binding context follows that positive evidence;
+historical original-project identities remain unproved.
+
+Only `.analysis/unit-replays/op-sound-wait-common-a/receipt.json`, SHA-256
+`406366a994eca039020eaefb508d58a52917bfa75b0a3d4ad785343367104b3f`, and
+`.analysis/unit-replays/maine-sound-wait-common-a/receipt.json`, SHA-256
+`6409683a3364728a43384436c62a301cd31139e67ac2e5648fea755af776b30d`, are
+imported. Both have two fresh deterministic producers, full69-byte native
+context/raw/order agreement and an own compiled music-disabled condition
+negative. Both negatives change selected byte12 and are rejected while
+retaining34-byte extents, relocation order and binding models. BinaryO and
+installed execution proofs match the actual reference context for both artifacts.
+No template, byte normalization, synthetic helper, entry, stack or inside-owner
+gap is supplied. Older failed grouped/standalone receipts remain unchanged.
+
+Global unknown decreases134,518 to134,450 (OP30,311 to30,277; MAINE39,865 to
+39,831). C/C++ is98,451 authored bytes; checked CPP padding is83. Main, ASM,
+vendor, DATA and resource counts and null global denominator stay unchanged.
+
+Saved imports,326-test CI, target ownership verification and all four empty
+incremental plans pass; all older accepted ledger rows remain identical.
+Independent actual review: `.analysis/sound-wait-common-final-review.json`,
+SHA-256 `014103c50196c40fc7fad02e6db77718ae3d5cd029b0183ba644e7c0aa3ad078`.
+Root final review: `.analysis/sound-wait-root-final-review.json`,
+SHA-256 `3a5e5417976a14f9a3fb6284d0fe71285ca594bee9bbd54a74a395f711302cc1`.
+
+## Previous accepted C++: complete item and splash renderers
 
 Two complete native C Pascal near functions now add202 instruction bytes:
 items_render71 at138E4..1392B and item_splashes_render131 atDCA7..DD2A.

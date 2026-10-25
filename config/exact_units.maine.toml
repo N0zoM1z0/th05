@@ -1024,3 +1024,24 @@ unit = "maine-verdict-counter-units-data"
 source = "src/maine/verdict/counter_units_data.c"
 find = "    \"回\","
 replace = "    \"度\","
+
+[[units]]
+id = "maine-sound-wait"
+source = "src/shared/sound/wait_common.cpp"
+module = "th05/snd_wc.cpp"
+segment = "SHARED"
+binary = "O"
+bindings_source = "probes/units/maine_sound_wait_common_bindings.asm"
+bindings_after_compiler = true
+function_symbol = "snd_delay_until_measure(int,unsigned int)"
+target_start = 0xf265
+size = 34
+alignment_offsets = [17]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "maine-sound-wait"
+source = "src/shared/sound/wait_common.cpp"
+find = "if(measure_cur < 0)"
+replace = "if(measure_cur <= 0)"
