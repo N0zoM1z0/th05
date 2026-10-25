@@ -3813,3 +3813,47 @@ unit = "main-shot-velocity-data"
 source = "src/main/player/shot_velocity_data.c"
 find = "#define SHOT_SPEED_SUBPIXELS 192L"
 replace = "#define SHOT_SPEED_SUBPIXELS 193L"
+
+[[units]]
+id = "main-shot-power-threshold-data"
+source = "src/main/player/power_thresholds.cpp"
+module = "th05/pwrlevel.cpp"
+segment = "_DATA"
+wrapper_options = "-zCSHOT_LEVEL_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_power_thresholds_bindings.asm"
+target_start = 139900
+size = 18
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[units]]
+id = "main-exalice-pattern-pairs-data"
+source = "src/main/boss/exalice/pattern_pairs.cpp"
+module = "th05/xpatpair.cpp"
+segment = "_DATA"
+wrapper_options = "-zCEXALICE_PAIR_DATA_TEXT -zPmain_03"
+bindings_source = "probes/units/exalice_pattern_pairs_bindings.asm"
+target_start = 140140
+size = 16
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shot-power-threshold-data"
+source = "src/main/player/power_thresholds.cpp"
+find = "6, 12, 16, 24, 32, 48, 72, 96, 128"
+replace = "7, 12, 16, 24, 32, 48, 72, 96, 128"
+
+[[controls]]
+unit = "main-exalice-pattern-pairs-data"
+source = "src/main/boss/exalice/pattern_pairs.cpp"
+find = "{ exalice_pattern_random_fan, exalice_pattern_turning_rings }"
+replace = "{ exalice_pattern_turning_rings, exalice_pattern_turning_rings }"

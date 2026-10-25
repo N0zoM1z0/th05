@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e369d7a7bcf904ecd3b1acaeb1f12d8c2b56e7be9a71daf80fc430dd9238642d",
+  "replay_receipt_sha256": "2828d08b683f6e41c52d51f21bd2b05f74d7c475de6a2a5ae1d4146c5485b920",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 137538,
-    "candidate_start": 137538,
-    "size": 1024,
-    "target_sha256": "1b7119746d5f9385651dba538500c8a8d0d12a163c4e205c61d237b4bf010edd",
-    "candidate_sha256": "59873e2d7a062522852bdc625c5ecd26a15c7b0ecc8212c5ad128c8d46084981",
+    "target_start": 140140,
+    "candidate_start": 140140,
+    "size": 16,
+    "target_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+    "candidate_sha256": "8adc50f7899d223135ed261d3aa65036c171833f6525f6864842adbb872d6215",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 137538,
-      "size": 1024,
-      "module": "th05/pveldata.c",
+      "start": 140140,
+      "size": 16,
+      "module": "th05/xpatpair.cpp",
       "segment": "_DATA"
     }
   },
@@ -58872,6 +58872,632 @@
           "-ml",
           "-DBINARY='M'",
           "th05/pveldata.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shot-power-threshold-data",
+      "entry_sha256": "77c608be47cb3ed914d20dea91603cf3ad7db8e49aa97ef52900231fe2eeb206",
+      "result": {
+        "id": "main-shot-power-threshold-data",
+        "entry_sha256": "77c608be47cb3ed914d20dea91603cf3ad7db8e49aa97ef52900231fe2eeb206",
+        "rounds": [
+          {
+            "target_start": 139900,
+            "candidate_start": 139900,
+            "size": 18,
+            "target_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+            "candidate_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139900,
+              "size": 18,
+              "module": "th05/pwrlevel.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 139900,
+            "candidate_start": 139900,
+            "size": 18,
+            "target_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+            "candidate_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139900,
+              "size": 18,
+              "module": "th05/pwrlevel.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "828187603d58d2466b82a36408e66c860a46d71e6773722c38fbcef4c86b2b6c",
+            "dependency_timestamp_normalized_sha256": "3e03fae5119af9af057ee20757bee65457da3b748e0a688207f2727aae4adfd2",
+            "module_name": "th05/pwrlevel.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pwrlevel.cpp",
+              "src/main/player/power_thresholds.cpp",
+              "src/main/player/power_thresholds.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 18,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 18,
+                  "sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "35c475086b778c51fffde941e027bae16272c04134ce18e6ae6b9efca8e8ce9c",
+            "dependency_timestamp_normalized_sha256": "3e03fae5119af9af057ee20757bee65457da3b748e0a688207f2727aae4adfd2",
+            "module_name": "th05/pwrlevel.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pwrlevel.cpp",
+              "src/main/player/power_thresholds.cpp",
+              "src/main/player/power_thresholds.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 18,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 18,
+                  "sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pwrlevel.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pwrlevel.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_power_thresholds_bindings.asm",
+            "sha256": "51533114df9dd81f17b22a7e1c37cf1536079b450d05379aa15945ce6218f686"
+          },
+          {
+            "path": "src/main/player/power_thresholds.cpp",
+            "sha256": "7b566ab324b0873fd9bad874227fd5be9d76c7943f594cb54db03a9a789dd2b6"
+          },
+          {
+            "path": "src/main/player/power_thresholds.hpp",
+            "sha256": "0cf49ab9fb01bbe9f89ee959665ae2eb99a3966a2b302f54f843c11747252ad4"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_power_thresholds_bindings.asm",
+          "sha256": "51533114df9dd81f17b22a7e1c37cf1536079b450d05379aa15945ce6218f686"
+        },
+        {
+          "path": "src/main/player/power_thresholds.cpp",
+          "sha256": "7b566ab324b0873fd9bad874227fd5be9d76c7943f594cb54db03a9a789dd2b6"
+        },
+        {
+          "path": "src/main/player/power_thresholds.hpp",
+          "sha256": "0cf49ab9fb01bbe9f89ee959665ae2eb99a3966a2b302f54f843c11747252ad4"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "55e4c753a1a957ca3adf559bb01d7e0bf4e175451f114809fe795b504989556b",
+      "compiled_negative_control": {
+        "target_start": 139900,
+        "candidate_start": 139900,
+        "size": 18,
+        "target_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+        "candidate_sha256": "b3876776d5a53d909785926bc1feeecead10a86534b8075c299046eb9f07f344",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 139900,
+          "size": 18,
+          "module": "th05/pwrlevel.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shot-power-threshold-data",
+        "entry_sha256": "77c608be47cb3ed914d20dea91603cf3ad7db8e49aa97ef52900231fe2eeb206",
+        "mutation": {
+          "unit": "main-shot-power-threshold-data",
+          "source": "src/main/player/power_thresholds.cpp",
+          "find": "6, 12, 16, 24, 32, 48, 72, 96, 128",
+          "replace": "7, 12, 16, 24, 32, 48, 72, 96, 128"
+        },
+        "control_sha256": "34e234adb583410c6cb88fde6377d98daf34c14d6f6f9e77f627e653492f1f63",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 139900,
+          "candidate_start": 139900,
+          "size": 18,
+          "target_sha256": "17ae14ad8bb6387229f82084d0aab49e9c80d3793ff1c39307c0a6e3504bea0b",
+          "candidate_sha256": "b3876776d5a53d909785926bc1feeecead10a86534b8075c299046eb9f07f344",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 139900,
+            "size": 18,
+            "module": "th05/pwrlevel.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "53abf9b458d544951e5af9711e53e8b51e3c3622803b1ced4e7d9031a0c45941",
+          "dependency_timestamp_normalized_sha256": "c201d8692a7974abb78c9113ec9a2a21e501d05831f207f43ceb7ac87c6c9ba6",
+          "module_name": "th05/pwrlevel.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/pwrlevel.cpp",
+            "src/main/player/power_thresholds.cpp",
+            "src/main/player/power_thresholds.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 18,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 18,
+                "sha256": "b3876776d5a53d909785926bc1feeecead10a86534b8075c299046eb9f07f344"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/pwrlevel.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-pattern-pairs-data",
+      "entry_sha256": "9945896dbe2b1066154c3bdeb3746fc0602cf9fe0a7ca64559b3115843221fa4",
+      "result": {
+        "id": "main-exalice-pattern-pairs-data",
+        "entry_sha256": "9945896dbe2b1066154c3bdeb3746fc0602cf9fe0a7ca64559b3115843221fa4",
+        "rounds": [
+          {
+            "target_start": 140140,
+            "candidate_start": 140140,
+            "size": 16,
+            "target_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+            "candidate_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140140,
+              "size": 16,
+              "module": "th05/xpatpair.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140140,
+            "candidate_start": 140140,
+            "size": 16,
+            "target_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+            "candidate_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140140,
+              "size": 16,
+              "module": "th05/xpatpair.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "4708205a1d2994b1f61ab2a54fc28b95f18eb89acd646fcb8ea823a1dcde3a6c",
+            "dependency_timestamp_normalized_sha256": "a0f71f365a7ffce51eeaa629504713ccd80f2ff0cc37e158c462b0e2d0456667",
+            "module_name": "th05/xpatpair.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/xpatpair.cpp",
+              "src/main/boss/exalice/pattern_pairs.cpp",
+              "src/main/boss/exalice/pattern_pairs.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "3c756403f8defebff42fdb30149d4db61ec175897b267e4f1a73c6c673e10483",
+            "dependency_timestamp_normalized_sha256": "a0f71f365a7ffce51eeaa629504713ccd80f2ff0cc37e158c462b0e2d0456667",
+            "module_name": "th05/xpatpair.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/xpatpair.cpp",
+              "src/main/boss/exalice/pattern_pairs.cpp",
+              "src/main/boss/exalice/pattern_pairs.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/xpatpair.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/xpatpair.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/exalice_pattern_pairs_bindings.asm",
+            "sha256": "b5fc886373d99826a3685bef6dce654042610b784ad529e01357d8230b1a62dc"
+          },
+          {
+            "path": "src/main/boss/exalice/pattern_pairs.cpp",
+            "sha256": "0db19d5eaf3d1a29c393a55fce86e7051f65d957b63faea3f3479eed51f4c2dd"
+          },
+          {
+            "path": "src/main/boss/exalice/pattern_pairs.hpp",
+            "sha256": "859f4c78057b9229882ffbd7682483c9e7ef2162c4fcbb975935362ea8cdec87"
+          },
+          {
+            "path": "src/main/boss/exalice/patterns.hpp",
+            "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/exalice_pattern_pairs_bindings.asm",
+          "sha256": "b5fc886373d99826a3685bef6dce654042610b784ad529e01357d8230b1a62dc"
+        },
+        {
+          "path": "src/main/boss/exalice/pattern_pairs.cpp",
+          "sha256": "0db19d5eaf3d1a29c393a55fce86e7051f65d957b63faea3f3479eed51f4c2dd"
+        },
+        {
+          "path": "src/main/boss/exalice/pattern_pairs.hpp",
+          "sha256": "859f4c78057b9229882ffbd7682483c9e7ef2162c4fcbb975935362ea8cdec87"
+        },
+        {
+          "path": "src/main/boss/exalice/patterns.hpp",
+          "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2828d08b683f6e41c52d51f21bd2b05f74d7c475de6a2a5ae1d4146c5485b920",
+      "compiled_negative_control": {
+        "target_start": 140140,
+        "candidate_start": 140140,
+        "size": 16,
+        "target_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+        "candidate_sha256": "8adc50f7899d223135ed261d3aa65036c171833f6525f6864842adbb872d6215",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140140,
+          "size": 16,
+          "module": "th05/xpatpair.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-pattern-pairs-data",
+        "entry_sha256": "9945896dbe2b1066154c3bdeb3746fc0602cf9fe0a7ca64559b3115843221fa4",
+        "mutation": {
+          "unit": "main-exalice-pattern-pairs-data",
+          "source": "src/main/boss/exalice/pattern_pairs.cpp",
+          "find": "{ exalice_pattern_random_fan, exalice_pattern_turning_rings }",
+          "replace": "{ exalice_pattern_turning_rings, exalice_pattern_turning_rings }"
+        },
+        "control_sha256": "c7e7c14d0f6b423155d11a4d20f10cf56f12e4ca6612f86182749e67c6486e39",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140140,
+          "candidate_start": 140140,
+          "size": 16,
+          "target_sha256": "69e6d7a8d738ec28f074de77fcef9ce9846158ffbddcea9d4e0e81b57ed6fa94",
+          "candidate_sha256": "8adc50f7899d223135ed261d3aa65036c171833f6525f6864842adbb872d6215",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140140,
+            "size": 16,
+            "module": "th05/xpatpair.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "6db1d3141a09cb2bbbc8a2ce9f81a3063a7c8d54cc2be792bc5461346d611b6d",
+          "dependency_timestamp_normalized_sha256": "b406e283eb5abe17b8f89484fa351254f7ff46b58f1e8916f92392029d8d64e1",
+          "module_name": "th05/xpatpair.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/xpatpair.cpp",
+            "src/main/boss/exalice/pattern_pairs.cpp",
+            "src/main/boss/exalice/pattern_pairs.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 16,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 16,
+                "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/xpatpair.cpp"
         ]
       },
       "receipt_aggregate_pass": true

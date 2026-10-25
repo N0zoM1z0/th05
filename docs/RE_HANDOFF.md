@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **258 bounded C/C++ CODE/DATA units / 456 complete function occurrences**,
-**85,054 authored bytes exact**: 73,715 CODE and 11,339 initialized DATA.
+Current acceptance: **260 bounded C/C++ CODE/DATA units / 456 complete function occurrences**,
+**85,088 authored bytes exact**: 73,715 CODE and 11,373 initialized DATA.
 CODE is 73,057 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 85,127; 73 checked padding bytes receive
-no credit. MAIN has 368 functions / 59,331 CODE / 2,681 DATA;
+Complete compared extents total 85,161; 73 checked padding bytes receive
+no credit. MAIN has 368 functions / 59,331 CODE / 2,715 DATA;
 OP 61 / 11,218 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -1071,3 +1071,16 @@ negative is claimed. Root native comparison confirms onlyhelperoffsets16/18
 differ in full2396, with full orderedfixups equal; all15scopes areexact.
 Atomic import succeeds and the current OP replay plan is empty. See
 `src/op/music/full_context.md`.
+
+## Shot power progression and EX-Alice alternating schedules
+
+`main-shot-power-threshold-data-a` adds18 DATAbytes: nine complete canonical
+unsigned-word thresholds, with native count9/stride2/unsigned comparisons and
+its firstthreshold6→7negative. `main-exalice-pattern-pairs-data-a` adds16
+DATAbytes: real[4][2]near bool callbacks with eightaccepted providers, actual
+phase/alternation indexing, indirectnearcall andALtest. Its fan→ringsmutation
+is independently rejected. Each gets2freshC++producers, completegapless
+OMF/MAP, fullraw bytes and originalemptyorderedfixups. No padding/CODE/BSS
+credit or oldheader/callerchange; onlythese2DATAowners were replayed and
+atomically imported. See `src/main/player/power_thresholds.md` and
+`src/main/boss/exalice/pattern_pairs.md`.
