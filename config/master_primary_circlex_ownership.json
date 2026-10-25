@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "kind": "original-primary-source-master-circlex-proposal",
+  "decision": "PROPOSAL",
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "base_proof_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
+  "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+  "start": 4636,
+  "size": 240,
+  "target_scope_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+  "primary_inputs": {
+    "GC_CIRCX.ASM": "31fd01abd3b8a0e7ac130c8ee9e5f006786fd08475865c53847567daf41729ae",
+    "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a"
+  },
+  "context_inputs": {
+    "CLIP.ASM": "77df8e03605cb1272c9c282c235bdc4d84e9b391b5b5820b61b69965e4210ffb",
+    "GRP.ASM": "78e78c7df4bfdc75164d9857d5aa264303bc05f93ca3daae37eb69307010aeed"
+  },
+  "data_context": {
+    "anchors": [
+      {
+        "source": "CLIP.ASM",
+        "source_sha256": "77df8e03605cb1272c9c282c235bdc4d84e9b391b5b5820b61b69965e4210ffb",
+        "size": 16,
+        "sha256": "fbdba363a6875408228174f53215b81b7b5f11b8f449266d0e4949386dcd2c9f",
+        "native_DS": 8349,
+        "native_offset": 876,
+        "unique_matches": [
+          876
+        ],
+        "authored_credit": 0
+      },
+      {
+        "source": "GRP.ASM",
+        "source_sha256": "78e78c7df4bfdc75164d9857d5aa264303bc05f93ca3daae37eb69307010aeed",
+        "size": 11,
+        "sha256": "76f94dec73b8bddc3f93da96b0cddfe96880b05680b4d8f4899825f2f348e2ab",
+        "native_DS": 8349,
+        "native_offset": 964,
+        "unique_matches": [
+          964
+        ],
+        "authored_credit": 0
+      }
+    ],
+    "foreign_WORD_symbols": {
+      "ClipYT": 882,
+      "ClipYT_seg": 888,
+      "graph_VramZoom": 972
+    },
+    "available_loaded_DATA_range": [
+      133584,
+      145958
+    ],
+    "DATA_ownership_adopted": false
+  },
+  "source_flags": [
+    "/mx",
+    "/t",
+    "/q",
+    "/w2",
+    "/jJUMPS",
+    "/DFARMODEL"
+  ],
+  "binding_inputs": {
+    "probes/units/circlex_primary_before.asm": "49d43493c1149c106ec8a6b238da8a8e9c0c53278da17784656f2c2f45493dad",
+    "probes/units/circlex_primary_after.asm": "547fba5f73eb1b8120ed95439b058d434e734ac238f5c180539f2f156533478d"
+  },
+  "source_assembler_invocations": 3,
+  "binding_assembler_invocations": 6,
+  "linker_invocations": 3,
+  "source_transformations": [],
+  "first_positive_retained_after_its_successful_new_build": true,
+  "native_instruction_count": 107,
+  "instruction_nop_offsets": [
+    57,
+    65,
+    239
+  ],
+  "padding_bytes": 3,
+  "ordered_mz_fixups": [],
+  "negative_changed_offsets": [
+    78
+  ],
+  "rounds": [
+    {
+      "label": "a",
+      "path": ".analysis/vendor-review/circlex-primary-a",
+      "observation": {
+        "comparison": {
+          "target_start": 4636,
+          "candidate_start": 4636,
+          "size": 240,
+          "target_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+          "candidate_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+          "raw_exact": true,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": true
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 240,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 87,
+              "sha256": "3fad58747a4438d7794baa5814de49a507d3eb25ae5225bf72a423ffab416cd5"
+            },
+            {
+              "offset": 87,
+              "size": 5,
+              "sha256": "7eaef1085a06e930b0146a820b204ccb9e768bf42408f559ba1fb5798af2cf35"
+            },
+            {
+              "offset": 92,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 95,
+              "size": 71,
+              "sha256": "5bbf251799117092810eea55bf5d597b4527264d73c027122d71425b6ad3b041"
+            },
+            {
+              "offset": 166,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 169,
+              "size": 71,
+              "sha256": "36a0e8ca6eff7076ac2e8b878489e152861b3b08b9763f2609e1da0a2b252c5f"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circx.obj": "617ea91aa1805de5d0efbed4faf3826f4fd3b1d2957e9fc6bb9584c377e39154",
+          "before.obj": "c638072b7afd5969a15c109df5e838f22a289b5ae75b6fdabb38c4744edb69f6",
+          "after.obj": "e50fee062ee43bc2914f6a8db383deaa6b5e14f5dde3e08cd0b52998e404bc0f",
+          "units.map": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "units.exe": "3b6887320d567d3e7c98e003123f5f90d5bb9536895534a0b663fcea5df54f7f"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "617ea91aa1805de5d0efbed4faf3826f4fd3b1d2957e9fc6bb9584c377e39154",
+          "binding_metadata": {
+            "before": "544ead6d8f11ac0fc3e51f542e6e3e86217ca08e1eb2439bb13b6963bd57bcbf",
+            "after": "0678f7e8111b93e2b9c1c0493a53ea6f3adfec5cc8852aa84a98107f2c5a8145"
+          },
+          "map_raw": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "mz_raw": "3b6887320d567d3e7c98e003123f5f90d5bb9536895534a0b663fcea5df54f7f"
+        },
+        "input_hashes": {
+          "GC_CIRCX.ASM": "31fd01abd3b8a0e7ac130c8ee9e5f006786fd08475865c53847567daf41729ae",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "49d43493c1149c106ec8a6b238da8a8e9c0c53278da17784656f2c2f45493dad",
+          "after.asm": "547fba5f73eb1b8120ed95439b058d434e734ac238f5c180539f2f156533478d",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "d261180a6b3e7996e7d55e9c82c5b5c077f5fd6802f2585afe5fcb6503fb7bb4"
+        },
+        "commands_sha256": "2bc2d881fdc4fa2c9fd8ab0b653ae8f4c90e7c9831e7238041daf078a11c87e2"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    },
+    {
+      "label": "b",
+      "path": ".analysis/vendor-review/circlex-primary-b",
+      "observation": {
+        "comparison": {
+          "target_start": 4636,
+          "candidate_start": 4636,
+          "size": 240,
+          "target_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+          "candidate_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+          "raw_exact": true,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": true
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 240,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 87,
+              "sha256": "3fad58747a4438d7794baa5814de49a507d3eb25ae5225bf72a423ffab416cd5"
+            },
+            {
+              "offset": 87,
+              "size": 5,
+              "sha256": "7eaef1085a06e930b0146a820b204ccb9e768bf42408f559ba1fb5798af2cf35"
+            },
+            {
+              "offset": 92,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 95,
+              "size": 71,
+              "sha256": "5bbf251799117092810eea55bf5d597b4527264d73c027122d71425b6ad3b041"
+            },
+            {
+              "offset": 166,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 169,
+              "size": 71,
+              "sha256": "36a0e8ca6eff7076ac2e8b878489e152861b3b08b9763f2609e1da0a2b252c5f"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circx.obj": "617ea91aa1805de5d0efbed4faf3826f4fd3b1d2957e9fc6bb9584c377e39154",
+          "before.obj": "2eaeecf35474e76ed151edc4fddd5afdc15af898a659801d8d3124725baaac5d",
+          "after.obj": "b264ac49fc9d37a94fda56bfa210cb3e68d4ea93f70e7e98a75aa55b3e384411",
+          "units.map": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "units.exe": "3b6887320d567d3e7c98e003123f5f90d5bb9536895534a0b663fcea5df54f7f"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "617ea91aa1805de5d0efbed4faf3826f4fd3b1d2957e9fc6bb9584c377e39154",
+          "binding_metadata": {
+            "before": "544ead6d8f11ac0fc3e51f542e6e3e86217ca08e1eb2439bb13b6963bd57bcbf",
+            "after": "0678f7e8111b93e2b9c1c0493a53ea6f3adfec5cc8852aa84a98107f2c5a8145"
+          },
+          "map_raw": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "mz_raw": "3b6887320d567d3e7c98e003123f5f90d5bb9536895534a0b663fcea5df54f7f"
+        },
+        "input_hashes": {
+          "GC_CIRCX.ASM": "31fd01abd3b8a0e7ac130c8ee9e5f006786fd08475865c53847567daf41729ae",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "49d43493c1149c106ec8a6b238da8a8e9c0c53278da17784656f2c2f45493dad",
+          "after.asm": "547fba5f73eb1b8120ed95439b058d434e734ac238f5c180539f2f156533478d",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "d261180a6b3e7996e7d55e9c82c5b5c077f5fd6802f2585afe5fcb6503fb7bb4"
+        },
+        "commands_sha256": "2bc2d881fdc4fa2c9fd8ab0b653ae8f4c90e7c9831e7238041daf078a11c87e2"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    },
+    {
+      "label": "negative",
+      "path": ".analysis/vendor-review/circlex-primary-negative",
+      "observation": {
+        "comparison": {
+          "target_start": 4636,
+          "candidate_start": 4636,
+          "size": 240,
+          "target_sha256": "34d1c8991f308c411c6ab23054f464ba09f60f414183f9587614dad14a35b982",
+          "candidate_sha256": "3b0285fab4980347f425ed2901ca405b49136fe604a0af64cec5b9361ac924a2",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "object_scope": {
+          "kind": "complete-original-assembler-code",
+          "segment": "_TEXT",
+          "size": 240,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 87,
+              "sha256": "134812d881051585d1c4667a1267b96288e61b3e2aea4c900570888a5ff1c71e"
+            },
+            {
+              "offset": 87,
+              "size": 5,
+              "sha256": "7eaef1085a06e930b0146a820b204ccb9e768bf42408f559ba1fb5798af2cf35"
+            },
+            {
+              "offset": 92,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 95,
+              "size": 71,
+              "sha256": "5bbf251799117092810eea55bf5d597b4527264d73c027122d71425b6ad3b041"
+            },
+            {
+              "offset": 166,
+              "size": 3,
+              "sha256": "59dc7b776814b0bf7daad9fa2055244df6d0b7a0157b91807a4a1484c4f349ee"
+            },
+            {
+              "offset": 169,
+              "size": 71,
+              "sha256": "36a0e8ca6eff7076ac2e8b878489e152861b3b08b9763f2609e1da0a2b252c5f"
+            }
+          ]
+        },
+        "artifacts": {
+          "gc_circx.obj": "1f929b6ce6d920b61cab6c2fcc6225aedb7c282ede1edb47e12c5e27794154f1",
+          "before.obj": "88f5a86dccf2b676faf1a0e9de23386c9c4715c7908be7485aad921a3317a2d0",
+          "after.obj": "f9007c01e880bd1eee16de66b5adc5afaa6acd3c4676ac01d36d7b40131b3111",
+          "units.map": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "units.exe": "8619dd7eb958dfa8527bc506961fa49c20a2f63915da6ced70bf72b20b11fd94"
+        },
+        "deterministic_identity": {
+          "original_object_raw": "1f929b6ce6d920b61cab6c2fcc6225aedb7c282ede1edb47e12c5e27794154f1",
+          "binding_metadata": {
+            "before": "544ead6d8f11ac0fc3e51f542e6e3e86217ca08e1eb2439bb13b6963bd57bcbf",
+            "after": "0678f7e8111b93e2b9c1c0493a53ea6f3adfec5cc8852aa84a98107f2c5a8145"
+          },
+          "map_raw": "2c021345fc9828167c44879769f9a311a5d3cd6bd1308a2e12cdb9de45fa1482",
+          "mz_raw": "8619dd7eb958dfa8527bc506961fa49c20a2f63915da6ced70bf72b20b11fd94"
+        },
+        "input_hashes": {
+          "GC_CIRCX.ASM": "925a497452fed4e098985f03ae9035a8da87fec6a81b283168373252804897a6",
+          "FUNC.INC": "940e80cd776198272eac3d17a1efe0436500fbb4105ca1ed937518957526770a",
+          "before.asm": "49d43493c1149c106ec8a6b238da8a8e9c0c53278da17784656f2c2f45493dad",
+          "after.asm": "547fba5f73eb1b8120ed95439b058d434e734ac238f5c180539f2f156533478d",
+          "build_dumb.bat": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "link.rsp": "d261180a6b3e7996e7d55e9c82c5b5c077f5fd6802f2585afe5fcb6503fb7bb4"
+        },
+        "commands_sha256": "2bc2d881fdc4fa2c9fd8ab0b653ae8f4c90e7c9831e7238041daf078a11c87e2"
+      },
+      "toolchain_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "reuse_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2"
+    }
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_primary_circlex.py",
+      "sha256": "7c4db6e0afd0cf2ec568d9f453e479f6a31590a07ea2e7d3c0e91ca559c7be67"
+    },
+    {
+      "file": "scripts/review_master_primary_circlefill.py",
+      "sha256": "e258f9e6c541339502abb809a94f47f9da506832a010a9bc55a1645a8faffe9d"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    },
+    {
+      "file": "scripts/lib/unit_oracle.py",
+      "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+    },
+    {
+      "file": "scripts/lib/replay_toolchain.py",
+      "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+    },
+    {
+      "file": "scripts/lib/toolchain.py",
+      "sha256": "7c668ef88059f313a2d0fc62d9601324480d210839610c7d02f17ef245dd95b9"
+    },
+    {
+      "file": "scripts/lib/reference_build.py",
+      "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+    }
+  ],
+  "limitations": "One unchanged original GC_CIRCX module only; all 240 bytes, including three EVEN NOPs and five self-patched initial operands, compared literally. CLIP/GRP records anchor foreign symbols, granting no DATA credit. Not a historical game project, original assembler identity or whole executable match. Other circle/BSS owners remain unknown. Only empty binder dependency timestamps use existing metadata identity; no original CODE/object/MAP/MZ or relocation normalization. Zero authored credit."
+}

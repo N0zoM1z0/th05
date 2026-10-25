@@ -34,6 +34,9 @@ def main() -> int:
     if (ROOT / "config/master_primary_circlefill_ownership.json").exists():
         subprocess.run([sys.executable, "scripts/review_master_primary_circlefill.py", "--structural-check"],
                        cwd=ROOT, check=True)
+    if (ROOT / "config/master_primary_circlex_ownership.json").exists():
+        subprocess.run([sys.executable, "scripts/review_master_primary_circlex.py", "--structural-check"],
+                       cwd=ROOT, check=True)
     for context in ("op", "maine"):
         if (ROOT / f"config/vendor_ownership.{context}.json").exists():
             subprocess.run([sys.executable, "scripts/review_vendor_context.py", "--context", context,

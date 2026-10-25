@@ -448,6 +448,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     ems_transfers, ems_transfers_sha = reviewed_ems_transfers(root, config["views"], verify_targets=verify_targets)
     from review_master_primary_circlefill import reviewed_claims as reviewed_primary_circlefill
     primary_circlefill, primary_circlefill_sha = reviewed_primary_circlefill(root, config["views"], verify_targets=verify_targets)
+    from review_master_primary_circlex import reviewed_claims as reviewed_primary_circlex
+    primary_circlex, primary_circlex_sha = reviewed_primary_circlex(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -477,6 +479,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
             pieces = overlay_vendor(view["size"], pieces, ems_transfers)
             pieces = overlay_vendor(view["size"], pieces, primary_circlefill)
+            pieces = overlay_vendor(view["size"], pieces, primary_circlex)
         elif name in ("op", "maine"):
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
@@ -512,6 +515,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_ems_transfers_review_sha256"] = ems_transfers_sha
         if primary_circlefill_sha and name == "main":
             views[name]["master_primary_circlefill_review_sha256"] = primary_circlefill_sha
+        if primary_circlex_sha and name == "main":
+            views[name]["master_primary_circlex_review_sha256"] = primary_circlex_sha
         if additions_sha and name in additions:
             views[name]["master_additions_review_sha256"] = additions_sha
         if sin8_sha and name in sin8:

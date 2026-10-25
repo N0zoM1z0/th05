@@ -18,8 +18,68 @@ Separately reviewed ASM now contributes **6,350 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,713
 complete compared bytes include 65 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 132,522 bytes. The global denominator is still unreviewed;
+ownership is now 132,282 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest ownership: unchanged original Master circle outline
+
+Only GRCG_CIRCLE_X at MAIN 121C..130C now classifies 240 unknown bytes as
+vendor CODE with zero authored credit. The complete original GC_CIRCX.ASM and
+FUNC.INC retain all source bytes, .186/.MODEL SMALL/FARMODEL context, true
+DATA declarations, JMOV/ORG fields and EVEN directives. Three foreign WORD
+addresses derive independently from complete CLIP16/GRP11 initializer records,
+uniquely anchored in available loaded DATA 209D0..23A26. Virtual C4C8 reserve
+is not claimed initialized. No inverse operand solving or DATA adoption occurs.
+See [the complete original-source review](reconstruction/MASTER_PRIMARY_CIRCLEX_VENDOR_REVIEW.md).
+
+Both actual independent source producers yield 492-byte OMF files containing
+240 CODE bytes and empty DATA, with six gapless original LEDATAs. All raw
+native bytes and empty ordered MZ fixups agree. Three NOPs at 57/65/239 map
+to source EVEN and receive no authored credit. Three DATA FIXUPP fields and
+five CS-local fields retain their real group/segment context. All five initial
+self-patched operand values compare normally. Original raw OMF/MAP/whole MZ
+identity is exact; only empty binder dependency timestamps use existing
+metadata identity, with raw hashes retained. The own INC AX to DEC AX negative
+retains all contexts and changes only byte 78; it is rejected. The preceding
+121B byte, other circle bodies and unanchored GC_CIRCL BSS stay unknown.
+
+The first new producer is retained after full input/tool/argv/log/output
+checks. Total source assemblies are three, symbol-only binder assemblies six
+and links three; no first rebuild or source/instruction/flag variants occur.
+A reader-only initializer parser initially ignored anonymous layout directives;
+full source hashes already protected actual inputs, and the parser is now
+strict with anonymous/layout/eval/width negative tests. Reader hardening causes
+no new assembly. Existing circle-fill, generic ASM, base library and all
+earlier acceptance proofs remain unchanged.
+
+Proof: `config/master_primary_circlex_ownership.json`, SHA-256
+`304a57d179f5a271995a0a7d3ebdc7b5a408e440de5fb3f2a7c7eed83419810b`.
+Separate decision: `config/reviewed_master_primary_circlex.json`.
+Independent original-source/native/first-OMF review:
+`.analysis/vendor-review/circlex-primary-first-independent-review.json`, SHA-256
+`2b78cce81ae33131298a845a1bc769dfd1de0f92b88c19bde5f014cf3d3d022a`.
+Independent final source/gate/actual/test review:
+`.analysis/vendor-review/circlex-primary-source-gate-independent-review.json`,
+SHA-256 `43259e0b0794fa5e7cb306dbbe447c3d6981e3cb4bb21c3bf66c86dcd6139e33`.
+Twelve focused synthetic guard tests pass; native saved-output checks and public
+structural validation pass. Original-source payloads and outputs remain private.
+
+Vendor CODE grows 69530 to 69770; unknown decreases 132522 to 132282
+(MAIN 52812 to 52572). C/C++ stays 98451 and ASM stays 6350 instruction bytes.
+All initialized DATA, resources, checked padding and the null global denominator
+remain unchanged. No historical game project, original game assembler or whole
+executable/packed-file equality is claimed.
+
+All 364 CI tests pass. Native target ownership verification, generated progress
+and diff checks pass; all four C/C++ plans and the ASM plan are empty. All 53
+prior tracked configuration files, 27 ASM records, four C/C++ ledgers and old
+gates are unchanged. All three other artifact views remain byte-identical.
+Generated authored progress Markdown/SVG remain unchanged after refresh.
+Final independent adoption/count review:
+`.analysis/vendor-review/circlex-primary-final-adoption-independent-review.json`,
+SHA-256 `5c95c1c700724514e09de4a1f56c5f6a69c88ba109776e5d5bdf80ecc54fcc51`.
+Root final review: `.analysis/vendor-review/circlex-primary-root-final-review.json`,
+SHA-256 `ee79a1a0f451a747039f92453f2c1643c0a9046d5c2d65fbd28b832d3950e9d0`.
 
 ## Latest accepted ASM: HUD bar and shared decimal renderers
 
@@ -91,14 +151,14 @@ Final independent adoption/count review:
 Root final review: `.analysis/hud-asm-root-final-review.json`, SHA-256
 `1c6e352904599436affcfddc9fe98934b3222fc2b3f3edfb6f332262234cd056`.
 
-A separately reviewed next vendor lead is untouched 240-byte GC_CIRCX.ASM plus
-FUNC.INC. Its three foreign WORD globals have independent full DATA-record
-anchors, unlike the still-unanchored four-byte GC_CIRCL BSS owner. No first
-producer or new vendor adoption is claimed. Bounded routing report:
+The original routing below led to the separate CircleX adoption above; do not
+replay that completed owner. Its three foreign WORD globals have independent
+full DATA-record anchors, unlike the still-unanchored four-byte GC_CIRCL BSS
+owner. Historical preparation-only routing report:
 `.analysis/vendor-review/remaining-circle-primary-routing-review.json`, SHA-256
 `7a7dfad3eaa90f1664c91217901c26cb69582d2fdbbcc98808512bb466c16356`.
 
-## Latest ownership: unchanged original Master circle fill
+## Previous ownership: unchanged original Master circle fill
 
 Only GRCG_CIRCLEFILL at MAIN 100E..10A4 now classifies 150 unknown bytes as
 vendor CODE, with zero authored credit. The complete original GC_CIRCF.ASM
