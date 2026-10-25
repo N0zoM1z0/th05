@@ -628,3 +628,99 @@ replace = "PALETTE_COPY_COLORS equ 15"
 offset = 145
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "op-piano-fm"
+artifact = "op"
+source = "src/op/piano/fm.asm"
+types = "src/op/piano/types.inc"
+symbols = "probes/units/piano_fm_symbols.inc"
+bindings = "probes/units/piano_fm_bindings.asm"
+notes = "src/op/piano/piano.md"
+target_start = 55778
+size = 48
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+uncredited = []
+tables = []
+native_review_sha256 = "4b5ea237b1ccad3d0828b57842c6a69e1a165ce725cfc9bd8ab0cb47ae550cdf"
+target_scope_sha256 = "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999"
+semantic_inputs = ["src/op/music/music.hpp"]
+[units.publics]
+"@piano_fm_part_put_raw" = 0
+"piano_fm_end" = 48
+[units.negative]
+find = "mov\tah, 5"
+replace = "mov\tah, 6"
+
+[[units]]
+id = "op-piano-keys"
+artifact = "op"
+source = "src/op/piano/keys.asm"
+types = "src/op/piano/types.inc"
+symbols = "probes/units/piano_keys_symbols.inc"
+bindings = "probes/units/piano_keys_bindings.asm"
+notes = "src/op/piano/piano.md"
+target_start = 55856
+size = 209
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+uncredited = []
+native_review_sha256 = "2558cf99a0fea122c5f6b9607de0c28967cc6e1176862180e765f5957ea45938"
+target_scope_sha256 = "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd"
+semantic_inputs = ["src/op/music/music.hpp"]
+[units.publics]
+"_piano_part_keys_put_raw" = 0
+"@piano_pressed_key_put" = 59
+"BLACK_OR_WHITE" = 161
+"piano_dispatch_end" = 185
+"PIANO_NOTE_LEFT" = 185
+"piano_key_positions_end" = 209
+"piano_keys_end" = 209
+"piano_white_key" = 109
+"piano_black_key" = 143
+[units.negative]
+find = "PIANO_BLACK_H equ 9"
+replace = "PIANO_BLACK_H equ 10"
+[[units.tables]]
+offset = 161
+size = 24
+[[units.semantic_tables]]
+offset = 185
+size = 24
+role = "piano-key-horizontal-positions"
+left = 384
+key_width = 4
+
+[[units]]
+id = "op-piano-label"
+artifact = "op"
+source = "src/op/piano/label.asm"
+types = "src/op/piano/types.inc"
+symbols = "probes/units/piano_label_symbols.inc"
+bindings = "probes/units/piano_label_bindings.asm"
+notes = "src/op/piano/piano.md"
+target_start = 56077
+size = 20
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+uncredited = []
+tables = []
+native_review_sha256 = "2197e109c37a8847bf47e957f78bb17d5b88cdb29950679e73373e618cf5e3c9"
+target_scope_sha256 = "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a"
+semantic_inputs = ["src/op/music/music.hpp"]
+[units.publics]
+"@piano_label_put_raw" = 0
+"piano_label_end" = 20
+[units.negative]
+find = "PIANO_LABEL_ROWS equ 8"
+replace = "PIANO_LABEL_ROWS equ 7"

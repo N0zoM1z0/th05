@@ -178,3 +178,15 @@ positive producers. This is additional evidence, with zero new positive
 compilations and zero authored credit; it neither rewrites the parent receipt
 nor changes its acceptance. The supplemental checker revalidates actual saved
 inputs, compiler arguments, OMF, MZ/MAP and the unchanged pinned tool receipt.
+
+Reviewed ASM semantic CODE data is distinct from near-dispatch tables and DATA
+segments. The first narrow role is `piano-key-horizontal-positions`: 12 word
+coordinates derived from left/key width and diatonic white/half-key geometry.
+The native proof must cover the whole modeled table without overlap, agree
+with every derived word and maintain the complete raw/ordered-fixup gate.
+Arbitrary literal banks, raster resources and unregistered models are rejected.
+Source/model review and explicit adoption remain mandatory. Report semantic
+CODE-table bytes separately from instructions, symbolic near-dispatch words,
+C/C++ tables and initialized DATA; an embedded 90h data byte is not a NOP.
+Existing unchanged objects may be revalidated by the stronger verifier without
+recompiling or rewriting their archived verifier snapshots.

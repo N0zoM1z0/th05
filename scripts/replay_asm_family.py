@@ -61,6 +61,21 @@ def verifier_inputs() -> list[dict]:
     return [{"path": p, "sha256": digest_file(ROOT / p)} for p in paths]
 
 
+def semantic_table_values(table: dict) -> list[int]:
+    """Reviewed keyboard geometry, never an arbitrary target-derived word bank."""
+    if (set(table) != {"offset", "size", "role", "left", "key_width"}
+            or table["role"] != "piano-key-horizontal-positions" or table["size"] != 24
+            or type(table["left"]) is not int or type(table["key_width"]) is not int
+            or table["key_width"] <= 0 or table["key_width"] % 2):
+        raise ValueError("unreviewed ASM semantic CODE table model")
+    # White-key degrees C,D,E,F,G,A,B; sharps sit halfway between white keys.
+    half_keys = (0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12)
+    values = [table["left"] + h * (table["key_width"] // 2) for h in half_keys]
+    if any(not 0 <= value <= 0xFFFF for value in values):
+        raise ValueError("ASM keyboard coordinate escapes a word")
+    return values
+
+
 def layout(entry: dict) -> list[dict]:
     size = entry["size"]
     if type(size) is not int or size <= 0:
@@ -70,6 +85,9 @@ def layout(entry: dict) -> list[dict]:
         if table["size"] <= 0 or table["size"] % 2:
             raise ValueError("ASM near-handler table needs complete words")
         special.append({**table, "kind": "dispatch-table"})
+    for table in entry.get("semantic_tables", []):
+        semantic_table_values(table)
+        special.append({**table, "kind": "semantic-code-table"})
     for row in entry.get("uncredited", []):
         if row["kind"] not in KINDS:
             raise ValueError("unreviewed zero-credit ASM kind")
@@ -91,6 +109,8 @@ def layout(entry: dict) -> list[dict]:
 
 def counts(entry: dict) -> dict:
     result = {k: 0 for k in ("instructions", "dispatch-table", *sorted(KINDS))}
+    if entry.get("semantic_tables"):
+        result["semantic-code-table"] = 0
     for row in layout(entry):
         result[row["kind"]] += row["size"]
     return result
@@ -138,6 +158,19 @@ def native_review(path: Path, entry: dict, artifact: dict, target) -> None:
                   for i in range(start + left, start + right, 2)]
         if actual != table["targets"] or any(h not in starts for h in actual):
             raise ValueError("native ASM table escapes real handler boundaries")
+        covered[left:right] = b"\1" * (right - left)
+    semantic = proof.get("semantic_tables", [])
+    if [{k: v for k, v in row.items() if k != "values"} for row in semantic] != entry.get("semantic_tables", []):
+        raise ValueError("native semantic CODE table model changed")
+    for table in semantic:
+        model = {k: v for k, v in table.items() if k != "values"}
+        values = semantic_table_values(model)
+        left, right = table["offset"], table["offset"] + table["size"]
+        if left < 0 or right > size or any(covered[left:right]):
+            raise ValueError("native semantic CODE table overlaps instructions or tables")
+        expected = b"".join(value.to_bytes(2, "little") for value in values)
+        if table["values"] != values or target.program_image[start + left:start + right] != expected:
+            raise ValueError("native semantic CODE table differs from reviewed geometry")
         covered[left:right] = b"\1" * (right - left)
     if not all(covered):
         raise ValueError("native complete ASM review leaves unknown bytes")
@@ -390,6 +423,7 @@ def reviewed_claims(root: Path, views: dict, *, verify_targets: bool = False) ->
             if digest_bytes(target.program_image[start:start + entry["size"]]) != entry["target_scope_sha256"]:
                 raise ValueError("reviewed complete ASM native bytes differ")
         kinds = {"instructions": "accepted-reviewed-asm-instructions", "dispatch-table": "accepted-reviewed-asm-dispatch-table",
+                 "semantic-code-table": "accepted-reviewed-asm-semantic-code-table",
                  "alignment": "checked-uncredited-asm-alignment", "inert-branch": "checked-uncredited-asm-inert-branch",
                  "runtime-placeholder": "checked-uncredited-asm-runtime-placeholder"}
         for piece in layout(entry):

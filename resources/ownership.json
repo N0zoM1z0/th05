@@ -10,14 +10,15 @@
     "accepted-cxx-initialized-data": 13659,
     "accepted-cxx-instructions": 80938,
     "accepted-cxx-switch-table": 692,
-    "accepted-reviewed-asm-dispatch-table": 186,
+    "accepted-reviewed-asm-dispatch-table": 210,
     "accepted-reviewed-asm-initialized-data": 64,
-    "accepted-reviewed-asm-instructions": 5043,
+    "accepted-reviewed-asm-instructions": 5272,
+    "accepted-reviewed-asm-semantic-code-table": 24,
     "checked-uncredited-asm-alignment": 27,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 79,
-    "unknown": 163156,
+    "unknown": 162879,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -3742,7 +3743,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "enemy_vm_asm_review_sha256": "591748cbd8ca5346fde546e068bc77f1d1a14f2982457a18db5d6e365bffd835",
-      "asm_family_review_sha256": "e7d516fbcbec2731c8e2079ec7f2b9310c08ce7687e239dc096f03ccc21c664d"
+      "asm_family_review_sha256": "f4b9f8e11b09a1f295649a46216f1b2738567e99275d9ca3ee6f61a8a52912d0"
     },
     "op": {
       "kind": "retained-diet-decoded-load-module",
@@ -3753,13 +3754,15 @@
         "accepted-cxx-initialized-data": 8649,
         "accepted-cxx-instructions": 11112,
         "accepted-cxx-switch-table": 106,
+        "accepted-reviewed-asm-dispatch-table": 24,
         "accepted-reviewed-asm-initialized-data": 32,
-        "accepted-reviewed-asm-instructions": 1111,
+        "accepted-reviewed-asm-instructions": 1340,
+        "accepted-reviewed-asm-semantic-code-table": 24,
         "checked-uncredited-asm-alignment": 8,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 5,
-        "unknown": 30772,
+        "unknown": 30495,
         "verified-vendor-code": 24732,
         "verified-vendor-initialized-data": 1259
       },
@@ -4724,6 +4727,56 @@
         },
         {
           "start": 55444,
+          "end": 55778,
+          "kind": "unknown"
+        },
+        {
+          "start": 55778,
+          "end": 55826,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-piano-fm",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 55826,
+          "end": 55856,
+          "kind": "unknown"
+        },
+        {
+          "start": 55856,
+          "end": 56017,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-piano-keys",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 56017,
+          "end": 56041,
+          "kind": "accepted-reviewed-asm-dispatch-table",
+          "unit": "op-piano-keys",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 56041,
+          "end": 56065,
+          "kind": "accepted-reviewed-asm-semantic-code-table",
+          "unit": "op-piano-keys",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 56065,
+          "end": 56077,
+          "kind": "unknown"
+        },
+        {
+          "start": 56077,
+          "end": 56097,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "op-piano-label",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 56097,
           "end": 56124,
           "kind": "unknown"
         },
@@ -5099,7 +5152,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e",
-      "asm_family_review_sha256": "e7d516fbcbec2731c8e2079ec7f2b9310c08ce7687e239dc096f03ccc21c664d"
+      "asm_family_review_sha256": "f4b9f8e11b09a1f295649a46216f1b2738567e99275d9ca3ee6f61a8a52912d0"
     },
     "maine": {
       "kind": "retained-diet-decoded-load-module",
@@ -6366,7 +6419,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e",
-      "asm_family_review_sha256": "e7d516fbcbec2731c8e2079ec7f2b9310c08ce7687e239dc096f03ccc21c664d"
+      "asm_family_review_sha256": "f4b9f8e11b09a1f295649a46216f1b2738567e99275d9ca3ee6f61a8a52912d0"
     },
     "zun": {
       "kind": "com-file",

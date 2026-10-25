@@ -282,6 +282,7 @@ def summarize_all(root: Path = ROOT) -> dict:
                 kind = row["kind"]
                 key = ("reviewed_asm_code_bytes" if kind == "accepted-reviewed-asm-instructions" else
                        "reviewed_asm_table_bytes" if kind == "accepted-reviewed-asm-dispatch-table" else
+                       "reviewed_asm_semantic_table_bytes" if kind == "accepted-reviewed-asm-semantic-code-table" else
                        "reviewed_asm_data_bytes" if kind == "accepted-reviewed-asm-initialized-data" else
                        "reviewed_asm_uncredited_bytes")
                 combined[key] = combined.get(key, 0) + size
@@ -324,8 +325,8 @@ and renderer CODE are excluded. See [ASM DATA review](../src/shared/graphics/tex
     asm_svg = ""
     if summary.get("reviewed_asm_code_bytes"):
         asm_note = f'''Separately reviewed handwritten ASM reconstruction contributes
-{summary['reviewed_asm_code_bytes']} instruction bytes, {summary.get('reviewed_asm_table_bytes', 0)} symbolic CODE-dispatch table bytes
-and {summary.get('reviewed_asm_data_bytes', 0)} initialized DATA bytes.
+{summary['reviewed_asm_code_bytes']} instruction bytes, {summary.get('reviewed_asm_table_bytes', 0)} symbolic CODE-dispatch table bytes,
+{summary.get('reviewed_asm_semantic_table_bytes', 0)} semantic CODE-table bytes and {summary.get('reviewed_asm_data_bytes', 0)} initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
 {summary['reviewed_asm_uncredited_bytes']} alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
 These ASM scopes have explicit native ownership decisions and remain separate
@@ -336,7 +337,7 @@ and [enemy VM review](../src/main/enemy/script.md), plus
 [bullet generation review](../src/main/bullet/spawn.md).
 
 '''
-        asm_svg = f'<text x="24" y="198" font-size="12" fill="#c9bddc">Reviewed ASM: {summary["reviewed_asm_code_bytes"]} instruction + {summary.get("reviewed_asm_table_bytes", 0)} table + {summary.get("reviewed_asm_data_bytes", 0)} DATA · {summary["reviewed_asm_uncredited_bytes"]} uncredited bytes</text>\n'
+        asm_svg = f'<text x="24" y="198" font-size="12" fill="#c9bddc">Reviewed ASM: {summary["reviewed_asm_code_bytes"]} instr + {summary.get("reviewed_asm_table_bytes", 0)} dispatch + {summary.get("reviewed_asm_semantic_table_bytes", 0)} geometry + {summary.get("reviewed_asm_data_bytes", 0)} DATA · {summary["reviewed_asm_uncredited_bytes"]} uncredited</text>\n'
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
@@ -386,7 +387,7 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
     svg_height = 214 if asm_svg else 190
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{svg_height}" viewBox="0 0 720 {svg_height}" role="img" aria-labelledby="title desc">
 <title id="title">TH05 source reconstruction progress</title>
-<desc id="desc">Goal 98 percent authored bytes exact. {functions} C/C++ functions, {authored} authored C/C++ code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes; {data} initialized DATA bytes, {total} total C/C++ authored bytes. Separately reviewed ASM: {summary.get('reviewed_asm_code_bytes', 0)} instruction, {summary.get('reviewed_asm_table_bytes', 0)} CODE-table and {summary.get('reviewed_asm_data_bytes', 0)} DATA bytes. Global denominator under review.</desc>
+<desc id="desc">Goal 98 percent authored bytes exact. {functions} C/C++ functions, {authored} authored C/C++ code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes; {data} initialized DATA bytes, {total} total C/C++ authored bytes. Separately reviewed ASM: {summary.get('reviewed_asm_code_bytes', 0)} instruction, {summary.get('reviewed_asm_table_bytes', 0)} dispatch-table, {summary.get('reviewed_asm_semantic_table_bytes', 0)} semantic CODE-table and {summary.get('reviewed_asm_data_bytes', 0)} DATA bytes. Global denominator under review.</desc>
 <rect width="720" height="{svg_height}" rx="12" fill="#181b29"/>
 <g font-family="system-ui,sans-serif" fill="#f3f0fa">
 <text x="24" y="35" font-size="21" font-weight="600">TH05 · Mystic Square</text>

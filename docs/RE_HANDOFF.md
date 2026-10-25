@@ -13,11 +13,12 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **5,043 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 5,350
+Separately reviewed ASM now contributes **5,272 instruction bytes,
+210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
+and 64 semantic DATA bytes**. Its 5,627
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 163,156 bytes. The global denominator is still unreviewed,
+ownership is now 162,879 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -543,3 +544,41 @@ paths. Keep scratch row 400, top/offset word wrapping, real far pointers and
 buffer-clear-before-free. Near mask helpers DD97/EF3F remain foreign and receive
 no source or ownership claim. Historical mixed-source possibilities remain
 unproved; no inspected kernel portion has positive compiler-generated provenance.
+
+
+## Piano drawing and semantic CODE geometry
+
+Three complete OP owners add 277 reviewed ASM bytes: FM 48 at D9E2..DA12,
+keys/pressed/tables 209 at DA30..DB01 and label 20 at DB0D..DB21. They contain
+229 instructions, 24 symbolic near-dispatch bytes and 24 semantic CODE-coordinate
+bytes, with no NOPs/padding/fixups. C/C++ remains 96,899 bytes. Reviewed ASM now
+has 5,272 instruction + 210 dispatch + 24 semantic CODE-table + 64 DATA bytes,
+5,570 credited / 5,627 compared with 57 uncredited. Unknown ownership is 162,879;
+global denominator remains unreviewed.
+
+The current-note helper 30, sprite 12 and direct-color helper 26 (68 bytes total)
+remain entirely unknown; DB3B..DB3C is an outside non-NOP gap and also unknown.
+Native current-note protocol may admit natural C++; do not convert it or the
+334-byte C++ piano setup/render context to ASM. Direct color has a 20-byte core
+matching upstream GC_SETCO/native vendor code but a changed wrapper: neither
+blanket original credit nor vendor exclusion is justified. External black-key
+and font assets are addresses only. See [source/origin/contracts](../src/op/piano/piano.md).
+
+`.analysis/piano-native/{fm-a,keys-a,label-b}/receipt.json` each has two fresh
+complete TASM producers and its own color 5-to-6, black-height 9-to-10 or label-row
+8-to-7 negative. Raw/ordered-fixup/OMF/MAP/real-frame checks pass; records and
+explicit per-note adoption are imported. Label-a stopped at the first MAP gate:
+WORD alignment moved native odd DB0D to DB0E. Only the new standalone label
+contribution changed to BYTE, preserving the binder's real PARA SHARED frame.
+No failed producer, padding mask or target patch was adopted.
+
+The generic verifier adds only the narrowly modeled semantic CODE table role
+piano-key-horizontal-positions: 12 word positions computed from left 384 / key width 4,
+white degrees and half-key sharps. It rejects arbitrary/raw/pixel banks, invalid
+roles/widths, overflow, overlap and changed native values; table 90h bytes never
+become instruction NOPs. Counts distinguish semantic geometry from dispatch and
+DATA. Old source inputs/counts/objects are unchanged and reused; archived old
+verifier snapshots are preserved. Public tests include modeled/native negative
+cases without recompiling old units. Private independent reviews are
+`.analysis/piano-native-review.json` and
+`.analysis/piano-maintained-source-model-review.json`, hashed in the owner notes.

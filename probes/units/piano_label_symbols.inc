@@ -1,0 +1,1 @@
+extrn _sPIANO_LABEL_FONT:byte

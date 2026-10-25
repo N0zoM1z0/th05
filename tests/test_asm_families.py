@@ -150,6 +150,47 @@ class AsmFamilyTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 asm.check_record(bad, entry)
 
+    def test_semantic_keyboard_table_cannot_be_an_asset_or_arbitrary_words(self):
+        model = {"offset": 1, "size": 24, "role": "piano-key-horizontal-positions",
+                 "left": 400, "key_width": 4}
+        expected = [400, 402, 404, 406, 408, 412, 414, 416, 418, 420, 422, 424]
+        self.assertEqual(asm.semantic_table_values(model), expected)
+        # Coordinates contain 90h bytes, which must never be decoded as NOPs.
+        body = b"\xc3" + b"".join(v.to_bytes(2, "little") for v in expected)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "native.json"
+            proof = {"target_sha256": "a" * 64, "start": 0, "size": 25, "cs_base": 0,
+                     "sha256": digest_bytes(body), "ordered_fixups": [], "tables": [],
+                     "instructions": [{"address": 0, "bytes": "c3", "mnemonic": "ret"}],
+                     "semantic_tables": [{**model, "values": expected}]}
+            entry = {"target_start": 0, "size": 25, "cs_base": 0,
+                     "target_scope_sha256": digest_bytes(body), "fixups": [],
+                     "tables": [], "semantic_tables": [model], "instruction_nops": [], "uncredited": []}
+            def check(value, data=body):
+                path.write_text(json.dumps(value))
+                current = {**entry, "native_review_sha256": digest_bytes(path.read_bytes()),
+                           "target_scope_sha256": digest_bytes(data)}
+                asm.native_review(path, current, {"sha256": "a" * 64}, image(data))
+            check(proof)
+            self.assertEqual(asm.counts(entry)["instructions"], 1)
+            self.assertEqual(asm.counts(entry)["semantic-code-table"], 24)
+            bad = copy.deepcopy(proof)
+            bad["semantic_tables"][0]["values"][1] += 1
+            with self.assertRaises(ValueError):
+                check(bad)
+            changed = body[:3] + b"\x93" + body[4:]
+            bad = copy.deepcopy(proof)
+            bad["sha256"] = digest_bytes(changed)
+            with self.assertRaises(ValueError):
+                check(bad, changed)
+            bad = {**entry, "semantic_tables": [{**model, "offset": 0}]}
+            bad["uncredited"] = [{"offset": 0, "size": 1, "kind": "alignment"}]
+            with self.assertRaises(ValueError):
+                asm.layout(bad)
+        for mutation in ({"role": "sprite-pixels"}, {"key_width": 3}, {"left": 65530}, {"size": 22}, {"values": expected}):
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                asm.semantic_table_values({**model, **mutation})
+
     def test_explicit_adoption_cannot_broaden_or_mask_scopes(self):
         views = tomllib.loads((asm.ROOT / "config/ownership.toml").read_text())["views"]
         claims, _ = asm.reviewed_claims(asm.ROOT, views)
@@ -161,8 +202,9 @@ class AsmFamilyTests(unittest.TestCase):
         for rows in claims.values():
             for row in rows:
                 totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 3235,
-                                 "accepted-reviewed-asm-dispatch-table": 68,
+        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 3464,
+                                 "accepted-reviewed-asm-dispatch-table": 92,
+                                 "accepted-reviewed-asm-semantic-code-table": 24,
                                  "checked-uncredited-asm-alignment": 23,
                                  "checked-uncredited-asm-inert-branch": 6,
                                  "checked-uncredited-asm-runtime-placeholder": 10})

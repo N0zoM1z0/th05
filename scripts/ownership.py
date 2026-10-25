@@ -105,7 +105,8 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     """Adopt reviewed ASM only where ownership was previously unknown."""
     validate_partition(size, pieces)
     allowed = {"accepted-reviewed-asm-instructions", "accepted-reviewed-asm-initialized-data",
-               "accepted-reviewed-asm-dispatch-table", "checked-uncredited-asm-inert-branch",
+               "accepted-reviewed-asm-dispatch-table", "accepted-reviewed-asm-semantic-code-table",
+               "checked-uncredited-asm-inert-branch",
                "checked-uncredited-asm-alignment", "checked-uncredited-asm-runtime-placeholder"}
     for row in claims:
         if (row.get("kind") not in allowed or not row.get("unit")
@@ -482,6 +483,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             counts["checked-uncredited-padding"] != summary["padding_bytes"] or
             counts["accepted-reviewed-asm-instructions"] != summary.get("reviewed_asm_code_bytes", 0) or
             counts["accepted-reviewed-asm-dispatch-table"] != summary.get("reviewed_asm_table_bytes", 0) or
+            counts["accepted-reviewed-asm-semantic-code-table"] != summary.get("reviewed_asm_semantic_table_bytes", 0) or
             counts["accepted-reviewed-asm-initialized-data"] != summary.get("reviewed_asm_data_bytes", 0) or
             sum(counts[k] for k in ("checked-uncredited-asm-alignment", "checked-uncredited-asm-inert-branch",
                                    "checked-uncredited-asm-runtime-placeholder")) != summary.get("reviewed_asm_uncredited_bytes", 0)):

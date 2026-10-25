@@ -4662,6 +4662,796 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "1d74da5fd3f59f4a8d40c38b286d556b8efecda95eeaf19705c54c97ca2c1217"
+    },
+    "op-piano-fm": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "op-piano-fm",
+        "artifact": "op",
+        "source": "src/op/piano/fm.asm",
+        "types": "src/op/piano/types.inc",
+        "symbols": "probes/units/piano_fm_symbols.inc",
+        "bindings": "probes/units/piano_fm_bindings.asm",
+        "notes": "src/op/piano/piano.md",
+        "target_start": 55778,
+        "size": 48,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 54016,
+        "instruction_nops": [],
+        "fixups": [],
+        "uncredited": [],
+        "tables": [],
+        "native_review_sha256": "4b5ea237b1ccad3d0828b57842c6a69e1a165ce725cfc9bd8ab0cb47ae550cdf",
+        "target_scope_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+        "semantic_inputs": [
+          "src/op/music/music.hpp"
+        ],
+        "publics": {
+          "@piano_fm_part_put_raw": 0,
+          "piano_fm_end": 48
+        },
+        "negative": {
+          "find": "mov\tah, 5",
+          "replace": "mov\tah, 6"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/piano_fm_bindings.asm",
+          "sha256": "8f07b8401802df3d2a9acfe9ed2fcf0c63e054dc2683abc28844590ea5b0be3d"
+        },
+        {
+          "path": "probes/units/piano_fm_symbols.inc",
+          "sha256": "9f91ec2b679de5a6d2c0601d2e3a471214d4cc87290d47d5777a9c03c0327b72"
+        },
+        {
+          "path": "src/op/music/music.hpp",
+          "sha256": "40695c4de79ca7f0cf73e0fa83ae676517166d9b71008bca3cf2f83f1ee367d7"
+        },
+        {
+          "path": "src/op/piano/fm.asm",
+          "sha256": "88f7ba2d7d528aa442041e99eb5453f248c7a39789a81b6848a3c6a8cdbad3f6"
+        },
+        {
+          "path": "src/op/piano/types.inc",
+          "sha256": "d827e8c33c84ec73be3b16d8e6e00c8e6c8086269d60b62d2698c12a644d9afb"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 48,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "target_image": {
+        "size": 77798,
+        "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 55778,
+            "candidate_start": 55778,
+            "size": 48,
+            "target_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+            "candidate_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 48,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 48,
+                "sha256": "431517aeef0e7f60d14078e5359a116e0b3d9e6912c9b6b027aefa1a03d19079"
+              }
+            ]
+          },
+          "object_sha256": "4312645c6fdce468767d9db9a9aab3ec36e027051b0996eabe3c5280c34b949a",
+          "object_normalized_sha256": "032198d48f238208bb5d4554f16cfe72d57959465fdbffd85d47fceb8be9428d",
+          "bindings_sha256": "a158b167952e1f436aa054266276c952a016fbdff25b3bee5ebeabb492c3aec8",
+          "bindings_normalized_sha256": "7cc36dc3a36393ce10ed5a03c34abd6932b0409b0b2c104e738c2c386f708614",
+          "map_sha256": "5b6381560c109e81bd484643f8f2a08a341db895cb0f9954d33f3ecfb7e53b84",
+          "mz_sha256": "9ad58943c9d652430fd06103b383fc9c869033958aac2fd14b3ee5e36e9abefe",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 55778,
+            "candidate_start": 55778,
+            "size": 48,
+            "target_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+            "candidate_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 48,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 48,
+                "sha256": "431517aeef0e7f60d14078e5359a116e0b3d9e6912c9b6b027aefa1a03d19079"
+              }
+            ]
+          },
+          "object_sha256": "c49506d9232966e356568e658fe1bb0b1c5618dd127ea0d684ab23420b866353",
+          "object_normalized_sha256": "032198d48f238208bb5d4554f16cfe72d57959465fdbffd85d47fceb8be9428d",
+          "bindings_sha256": "c46c95e31a968c7da263f7a43907b345f8cbc44421b6388e43bca42b714b0d08",
+          "bindings_normalized_sha256": "7cc36dc3a36393ce10ed5a03c34abd6932b0409b0b2c104e738c2c386f708614",
+          "map_sha256": "5b6381560c109e81bd484643f8f2a08a341db895cb0f9954d33f3ecfb7e53b84",
+          "mz_sha256": "9ad58943c9d652430fd06103b383fc9c869033958aac2fd14b3ee5e36e9abefe",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 55778,
+          "candidate_start": 55778,
+          "size": 48,
+          "target_sha256": "c059e7876aa57437cd595d124c032401b2f92221c17d09862bfc909094f31999",
+          "candidate_sha256": "9375ca759432cecff208714b613bb5f79d4db2c97ddb0ce89e566dae4d659f38",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 48,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 48,
+              "sha256": "718d4ea5fa884c40d38dabf591eefd35ab051a2dca15be36f17d939decc80d5d"
+            }
+          ]
+        },
+        "object_sha256": "2a3fb58d69331894152fd863ae73b1452df4f59466e82927b4abc8ae200ff9b7",
+        "object_normalized_sha256": "ead1e323f067ccabee46250f0056026cf38fd8372c084003d47d0f8c05e69a3c",
+        "bindings_sha256": "c46c95e31a968c7da263f7a43907b345f8cbc44421b6388e43bca42b714b0d08",
+        "bindings_normalized_sha256": "7cc36dc3a36393ce10ed5a03c34abd6932b0409b0b2c104e738c2c386f708614",
+        "map_sha256": "5b6381560c109e81bd484643f8f2a08a341db895cb0f9954d33f3ecfb7e53b84",
+        "mz_sha256": "6cde43a4d04e179c81da8760e6b6a5c1d90d57c555bfbfdf8ae690db287cc09c",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "206095a85bb11dff553a1f0b085397ba87ed5462ac69b2223895ff0986002b4c"
+    },
+    "op-piano-keys": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "op-piano-keys",
+        "artifact": "op",
+        "source": "src/op/piano/keys.asm",
+        "types": "src/op/piano/types.inc",
+        "symbols": "probes/units/piano_keys_symbols.inc",
+        "bindings": "probes/units/piano_keys_bindings.asm",
+        "notes": "src/op/piano/piano.md",
+        "target_start": 55856,
+        "size": 209,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 54016,
+        "instruction_nops": [],
+        "fixups": [],
+        "uncredited": [],
+        "native_review_sha256": "2558cf99a0fea122c5f6b9607de0c28967cc6e1176862180e765f5957ea45938",
+        "target_scope_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+        "semantic_inputs": [
+          "src/op/music/music.hpp"
+        ],
+        "publics": {
+          "_piano_part_keys_put_raw": 0,
+          "@piano_pressed_key_put": 59,
+          "BLACK_OR_WHITE": 161,
+          "piano_dispatch_end": 185,
+          "PIANO_NOTE_LEFT": 185,
+          "piano_key_positions_end": 209,
+          "piano_keys_end": 209,
+          "piano_white_key": 109,
+          "piano_black_key": 143
+        },
+        "negative": {
+          "find": "PIANO_BLACK_H equ 9",
+          "replace": "PIANO_BLACK_H equ 10"
+        },
+        "tables": [
+          {
+            "offset": 161,
+            "size": 24
+          }
+        ],
+        "semantic_tables": [
+          {
+            "offset": 185,
+            "size": 24,
+            "role": "piano-key-horizontal-positions",
+            "left": 384,
+            "key_width": 4
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/piano_keys_bindings.asm",
+          "sha256": "e858321d083a2f648402ef19bb43ca6699e42b14688b8aabef8b0a53b3bca20f"
+        },
+        {
+          "path": "probes/units/piano_keys_symbols.inc",
+          "sha256": "4af5ab62e7aa77cdf5c7f4c2a1be4eeb274bf1d55fa98b40fea444393046919f"
+        },
+        {
+          "path": "src/op/music/music.hpp",
+          "sha256": "40695c4de79ca7f0cf73e0fa83ae676517166d9b71008bca3cf2f83f1ee367d7"
+        },
+        {
+          "path": "src/op/piano/keys.asm",
+          "sha256": "a5021c2dbbcba17e977a0a19bc97f6ec13f6b64c6cb5a5b4433355d6d9f11aea"
+        },
+        {
+          "path": "src/op/piano/types.inc",
+          "sha256": "d827e8c33c84ec73be3b16d8e6e00c8e6c8086269d60b62d2698c12a644d9afb"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 161,
+        "dispatch-table": 24,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0,
+        "semantic-code-table": 24
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "target_image": {
+        "size": 77798,
+        "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 55856,
+            "candidate_start": 55856,
+            "size": 209,
+            "target_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+            "candidate_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 209,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 209,
+                "sha256": "055402f6ebfe9ca946c9881b088af535fb4c640a60df12ff1abc76ce60121f3f"
+              }
+            ]
+          },
+          "object_sha256": "61e117ceaf9709cb4adb9f2c6328e4aefd86d8f411f8f596b14058a5d3c6fcf8",
+          "object_normalized_sha256": "8e12412c833017848c681369c0b1421e44c258a310dcd5417847fd908ed74662",
+          "bindings_sha256": "c22635fb1d9672294417b0137adfec3aa2ee4cb6b08647d0916ea67bf0ee8e38",
+          "bindings_normalized_sha256": "7c4a3d7f4eb88207e7053284fa8f296cf730bdfdbb8c159b371c2a257c669e80",
+          "map_sha256": "e2048de62e5c9937a7d2d9288436635c5c31fd413197053fa43f5857114a8c63",
+          "mz_sha256": "07bc2340095c643664d7d06ca4376282fea817b30ea762dfdcdf889c9f473c44",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 55856,
+            "candidate_start": 55856,
+            "size": 209,
+            "target_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+            "candidate_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 209,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 209,
+                "sha256": "055402f6ebfe9ca946c9881b088af535fb4c640a60df12ff1abc76ce60121f3f"
+              }
+            ]
+          },
+          "object_sha256": "b21a3b840c15ae82b6caafa77603088031135c7abbf070e0e4abc537b6eb7b92",
+          "object_normalized_sha256": "8e12412c833017848c681369c0b1421e44c258a310dcd5417847fd908ed74662",
+          "bindings_sha256": "3e7f0d569520395a1af989f8d89f2674aa7c8331ad2e392b0c754eda9e91f218",
+          "bindings_normalized_sha256": "7c4a3d7f4eb88207e7053284fa8f296cf730bdfdbb8c159b371c2a257c669e80",
+          "map_sha256": "e2048de62e5c9937a7d2d9288436635c5c31fd413197053fa43f5857114a8c63",
+          "mz_sha256": "07bc2340095c643664d7d06ca4376282fea817b30ea762dfdcdf889c9f473c44",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 55856,
+          "candidate_start": 55856,
+          "size": 209,
+          "target_sha256": "5cf73f4352a6b0c1ebb917318217942508b9f026f569af0f3382a223256bd2bd",
+          "candidate_sha256": "c127313229663e8521c29957a91680fd6f055cbe0e5981ffe341e4604f69fa3d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 209,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 209,
+              "sha256": "69ec8b4049d5a61cbd5152a16d8c91fde39eb985d18ce0b206457fd713868823"
+            }
+          ]
+        },
+        "object_sha256": "190091efd477ae82e9324de56c32e7ccaf96ef1076689d73311b871e05c5e8ad",
+        "object_normalized_sha256": "e7f59c2192d1325fcffa666faa35b2042d995a0ab60135f44add8fa4482340e8",
+        "bindings_sha256": "3e7f0d569520395a1af989f8d89f2674aa7c8331ad2e392b0c754eda9e91f218",
+        "bindings_normalized_sha256": "7c4a3d7f4eb88207e7053284fa8f296cf730bdfdbb8c159b371c2a257c669e80",
+        "map_sha256": "e2048de62e5c9937a7d2d9288436635c5c31fd413197053fa43f5857114a8c63",
+        "mz_sha256": "0a70617a098fd130aeb2039c977bb20e8a7fe4e6d2f2df04520afc4b3d560431",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "fa7a848fdc67439f8acf3e311fc512aacf981e7cf5d29c92853ea17ede9c8c06"
+    },
+    "op-piano-label": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "op-piano-label",
+        "artifact": "op",
+        "source": "src/op/piano/label.asm",
+        "types": "src/op/piano/types.inc",
+        "symbols": "probes/units/piano_label_symbols.inc",
+        "bindings": "probes/units/piano_label_bindings.asm",
+        "notes": "src/op/piano/piano.md",
+        "target_start": 56077,
+        "size": 20,
+        "segment": "SHARED",
+        "group": "(none)",
+        "cs_base": 54016,
+        "instruction_nops": [],
+        "fixups": [],
+        "uncredited": [],
+        "tables": [],
+        "native_review_sha256": "2197e109c37a8847bf47e957f78bb17d5b88cdb29950679e73373e618cf5e3c9",
+        "target_scope_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+        "semantic_inputs": [
+          "src/op/music/music.hpp"
+        ],
+        "publics": {
+          "@piano_label_put_raw": 0,
+          "piano_label_end": 20
+        },
+        "negative": {
+          "find": "PIANO_LABEL_ROWS equ 8",
+          "replace": "PIANO_LABEL_ROWS equ 7"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/piano_label_bindings.asm",
+          "sha256": "c1122812b8d02a5f4f4bc02749ca01042abe51c3d4cbc9f8b7de2f47df6f51bd"
+        },
+        {
+          "path": "probes/units/piano_label_symbols.inc",
+          "sha256": "d4bbb7f5fe1c569067b8af1c0b1e85f3c7c203f88e054f7a06254772d6ea04ed"
+        },
+        {
+          "path": "src/op/music/music.hpp",
+          "sha256": "40695c4de79ca7f0cf73e0fa83ae676517166d9b71008bca3cf2f83f1ee367d7"
+        },
+        {
+          "path": "src/op/piano/label.asm",
+          "sha256": "39ddd20c32b31e288145d58eeaefa15d8c671b64968e4fa342cb0b66bf1d3ccf"
+        },
+        {
+          "path": "src/op/piano/types.inc",
+          "sha256": "d827e8c33c84ec73be3b16d8e6e00c8e6c8086269d60b62d2698c12a644d9afb"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 20,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "target_image": {
+        "size": 77798,
+        "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 56077,
+            "candidate_start": 56077,
+            "size": 20,
+            "target_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+            "candidate_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 20,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 20,
+                "sha256": "5b2540211e4c6c86a81c14afc407f9f6029b60ad89566e261283ba8abc812fc3"
+              }
+            ]
+          },
+          "object_sha256": "3d6f426646d4a46045b7d76479d6c5a1e4693a44ba62316daa7c73874c01e892",
+          "object_normalized_sha256": "b99ee1a021a384fe3760fc57acb7c55ab54aa6bffd73073de1a9f7b19fc1932b",
+          "bindings_sha256": "3c310efa2a7a93edd3eb92357beb67cc80dfcab9f1e49ecd0e3ac64cc658d456",
+          "bindings_normalized_sha256": "eca1c4609f4a89caa130c07792babbde2db4700d97ddd236a1c0d5f48d41664a",
+          "map_sha256": "e9891451ececafc98855340e54a6d3f9405231a9cc92811a3df6ec3605362614",
+          "mz_sha256": "c8f62b3bb8306ebd8d1a15332ad33cbc5e58ce4e9480cbdbc91be0bb90e05ada",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 56077,
+            "candidate_start": 56077,
+            "size": 20,
+            "target_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+            "candidate_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHARED",
+            "size": 20,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 20,
+                "sha256": "5b2540211e4c6c86a81c14afc407f9f6029b60ad89566e261283ba8abc812fc3"
+              }
+            ]
+          },
+          "object_sha256": "42d69d6a9e7357eea4c945134a2e1783a1471e86207a4f1082481373c37f6847",
+          "object_normalized_sha256": "b99ee1a021a384fe3760fc57acb7c55ab54aa6bffd73073de1a9f7b19fc1932b",
+          "bindings_sha256": "598b97d3ade1a942f422e855ee5709231cd119d475627326bd31feb2edbb71d3",
+          "bindings_normalized_sha256": "eca1c4609f4a89caa130c07792babbde2db4700d97ddd236a1c0d5f48d41664a",
+          "map_sha256": "e9891451ececafc98855340e54a6d3f9405231a9cc92811a3df6ec3605362614",
+          "mz_sha256": "c8f62b3bb8306ebd8d1a15332ad33cbc5e58ce4e9480cbdbc91be0bb90e05ada",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 56077,
+          "candidate_start": 56077,
+          "size": 20,
+          "target_sha256": "d4836c829a999ef1c8f97bfd0a72bc2fc0539c62d66f51783eca3084ebdfc57a",
+          "candidate_sha256": "9f1b7ce6da73e4a28fea01a9d4b9fd3ff94c080d9c875b90ed9bc9102c443755",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHARED",
+          "size": 20,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 20,
+              "sha256": "e12a928e4f0cfa34b9c3d3306f0d1ac5c2d0b2fcd7d7c3b05dcf159204f3c6e8"
+            }
+          ]
+        },
+        "object_sha256": "aaaf902970f28bf4cabddd6fd69658b864dae891895fbabfdb231fd3f30608dc",
+        "object_normalized_sha256": "6237240375411ded07621af07796c0a86e984d343e219bb37b7b31d3192a8253",
+        "bindings_sha256": "598b97d3ade1a942f422e855ee5709231cd119d475627326bd31feb2edbb71d3",
+        "bindings_normalized_sha256": "eca1c4609f4a89caa130c07792babbde2db4700d97ddd236a1c0d5f48d41664a",
+        "map_sha256": "e9891451ececafc98855340e54a6d3f9405231a9cc92811a3df6ec3605362614",
+        "mz_sha256": "921d7cfe4795185246d908b29163f5fb08eca2558dc494c9f864b17de5e9095b",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "91b442a000b7ea7176d0c67ab3196b21e08fbea5785760e3a106e2bb772ba123"
     }
   }
 }
