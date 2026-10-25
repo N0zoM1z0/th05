@@ -4202,3 +4202,22 @@ unit = "main-midboss-defeat-update"
 source = "src/main/midboss/lifecycle.cpp"
 find = "if(midboss.phase_frame == 1)"
 replace = "if(midboss.phase_frame == 2)"
+
+[[units]]
+id = "main-player-render"
+source = "src/main/player/render.cpp"
+module = "th05/p_render.cpp"
+segment = "PLAYER_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/player_render_bindings.asm"
+bindings_after_compiler = true
+target_start = 0xcd56
+size = 330
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-player-render"
+source = "src/main/player/render.cpp"
+find = "if(shot_level < 2)"
+replace = "if(shot_level < 3)"

@@ -75,3 +75,10 @@ before starting a second producer; actual sources/argv/OMF/MZ/MAP/logs remain
 saved under `main-player-invalidate-a` and `main-player-move-a`, with no second
 compile or negative claim. These source candidates receive zero exact credit.
 No aliases, register-packing templates or compiler flag variants were added.
+
+## Independently recovered complete renderer
+
+The new [player renderer](render.md) owns the separate complete330-byte native
+function CD56..CEA0. It reuses canonical geometry and the maintained TH04
+high-level algorithm with TH05's fixed option sprite. This acceptance does
+not change the movement/invalidation failures above or transfer their credit.

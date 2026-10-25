@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **314 bounded C/C++ CODE/DATA units / 499 complete function occurrences**,
-**97,853 authored bytes exact**: 82,516 CODE and 15,337 initialized DATA.
-CODE is 81,824 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,934; 81 checked padding bytes receive
-no credit. MAIN has 382 functions / 61,396 CODE / 3,091 DATA;
+Current acceptance: **315 bounded C/C++ CODE/DATA units / 500 complete function occurrences**,
+**98,183 authored bytes exact**: 82,846 CODE and 15,337 initialized DATA.
+CODE is 82,154 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 98,264; 81 checked padding bytes receive
+no credit. MAIN has 383 functions / 61,726 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,51 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 135,050 bytes. The global denominator is still unreviewed;
+ownership is now 134,720 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete midboss defeat update
+## Latest accepted C++: complete player renderer
+
+The complete near Pascal C `PLAYER_RENDER` at MAINCD56..CEA0 now adds330
+instruction bytes and one function. Its117 instructions end at RETCE9F;
+there are no instruction NOPs, tables, padding or owned DATA/BSS. Full ordered
+fixups remain `[307,244,112,100]`. See [player renderer](../src/main/player/render.md).
+
+The maintained TH04 high-level body is literal except its two mutable option
+pattern arguments become the actual GAME5 constant26. Pinned ReC98 explicitly
+names that version distinction, independently explaining the334-to330 size.
+Canonical full player motion/point/radius types and real Pascal interfaces
+are retained. AX/DX intrinsics only transport the existing raw sprite helper's
+real hidden coordinate arguments; DX/AL also transport the actual graphics
+port operation. No arithmetic dataflow template, dead copy, new ES assignment,
+ASM body or asset is inserted. Native raw helper ES/DF preconditions remain.
+
+Only `.analysis/unit-replays/main-player-render-c/receipt.json` is imported,
+SHA-256 `48c4a8e2c32088f7ed09301dfc136a18371e543de298d9e7926c58c145240f59`.
+Two fresh deterministic full330-byte raw/order producers and an own shot-level
+threshold2-to3 compiled negative pass. Whole actual CODE contribution is the
+appropriate scope for the unmangled C public; no C++-public gate is relaxed.
+Symbol-only before/after views preserve actual endpoints/frames and contain
+no initialized bytes, entry, stack or inside-owner hole.
+
+Attempt-a stops at a missing factual CS ASSUME for the foreign VECTOR2_AT
+label after compilation. Attempt-b links exact330 but its C export is rejected
+by the demangled C++ function-public gate. Final-c uses the existing whole
+contribution gate, with identical C++ body/header/compiler arguments. Neither
+earlier attempt supplies acceptance or transferred fresh-build claims.
+Installed probes and all unrelated accepted objects/source identities are
+reused. Global unknown decreases135,050 to134,720 (MAIN55,272 to54,942).
+C/C++ is98,183 authored bytes; ASM/vendor/DATA/resource/padding totals and
+the unreviewed global denominator are unchanged.
+
+Saved import,326-test CI, target ownership verification and all four empty
+incremental plans pass; every older accepted ledger row remains identical.
+Independent final review: `.analysis/player-render-final-c-review.json`,
+SHA-256 `c16793190bf2c34ed768f3a82623e3cf849fc83b65ac4e1ccdceb749e6b32f0f`.
+Root final review: `.analysis/player-render-root-final-review.json`,
+SHA-256 `bc1fcd6e3ab208427db11c8257482f5fa8fb657c6a35eb27612643bb8d33a99e`.
+
+## Previous accepted C++: complete midboss defeat update
 
 The new natural six-function lifecycle/HP/rewards TU adds only the complete
 65-byte `midboss_defeat_update()` at MAIN1C628..1C669. It has no instruction

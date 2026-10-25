@@ -2,30 +2,30 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "965831477802a74492291d00df9f015b8475aba9e2fbd8744d7a5ccc8ef03d27",
+  "replay_receipt_sha256": "48c4a8e2c32088f7ed09301dfc136a18371e543de298d9e7926c58c145240f59",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 116264,
-    "candidate_start": 116264,
-    "size": 65,
-    "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
-    "candidate_sha256": "c3082ad1caf364af601ebcfc2a5abbb1242b7ece143ec4b0452cda43428c8d16",
+    "target_start": 52566,
+    "candidate_start": 52566,
+    "size": 330,
+    "target_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+    "candidate_sha256": "d9594aa6e07ba64fdcacc67b23c8a8feff955c5a8776a3542e7c5026d3c49f56",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      307,
+      244,
+      112,
+      100
+    ],
+    "candidate_fixups": [
+      307,
+      244,
+      112,
+      100
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 116264,
-      "size": 65,
-      "function_symbol": "midboss_defeat_update()",
-      "contribution_start": 115873,
-      "contribution_size": 456,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -65996,6 +65996,367 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-midboss-defeat-update"
+      ]
+    },
+    {
+      "id": "main-player-render",
+      "entry_sha256": "5bfe38ff32711eda33a429318a1afbbc054120ee275cf0f3aa2bda662088293c",
+      "result": {
+        "id": "main-player-render",
+        "entry_sha256": "5bfe38ff32711eda33a429318a1afbbc054120ee275cf0f3aa2bda662088293c",
+        "rounds": [
+          {
+            "target_start": 52566,
+            "candidate_start": 52566,
+            "size": 330,
+            "target_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+            "candidate_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+            "raw_exact": true,
+            "target_fixups": [
+              307,
+              244,
+              112,
+              100
+            ],
+            "candidate_fixups": [
+              307,
+              244,
+              112,
+              100
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 52566,
+            "candidate_start": 52566,
+            "size": 330,
+            "target_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+            "candidate_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+            "raw_exact": true,
+            "target_fixups": [
+              307,
+              244,
+              112,
+              100
+            ],
+            "candidate_fixups": [
+              307,
+              244,
+              112,
+              100
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "13c40cd8ce16fd2d523250278c3a7fbeada1161ee4509b2f94d156146501a95c",
+            "dependency_timestamp_normalized_sha256": "1ab211db9efcd436a8021264ffb8836bfb6cfee9fb45b60097e28cea7d7283a7",
+            "module_name": "th05/p_render.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_render.cpp",
+              "src/main/player/render.cpp",
+              "src/main/player/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/invalidate.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "283b59c7e3317e7c2d7dcde954e42b180027e111982af71e0abedb108c9c13db",
+            "dependency_timestamp_normalized_sha256": "1ab211db9efcd436a8021264ffb8836bfb6cfee9fb45b60097e28cea7d7283a7",
+            "module_name": "th05/p_render.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/p_render.cpp",
+              "src/main/player/render.cpp",
+              "src/main/player/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/invalidate.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/p_render.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/p_render.cpp"
+          ]
+        ],
+        "binding_context": [
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "6662e9bd3f529dc2bc7fa3d5f9fe0c9b70567ca75adc7c33302e2524a01c9abb",
+            "compiler_object": "p_render.obj",
+            "link_response_sha256": "f9c50c7b133f478f3e3764d315de736e93e38bef8b55f16650b8758258dc5f81",
+            "before": {
+              "sha256": "367494b92d4bbe12bc9391ae357bc6535c2a6e4a0cd92c839401be5054711721",
+              "symbol_model_sha256": "96f0e5cf5444c582b302843d642fcb06b1ceb8c2fcb1490f7a99b94ae1c6a6c6"
+            },
+            "after": {
+              "sha256": "b403fb884accbaab34b6c70a62d30180d5c81a1114b86ab7ea4262bac0df1201",
+              "symbol_model_sha256": "bea625b40ba64c0483bcf92823b108b7fb7671dc2ca73a05d4cbefc9135cda6c"
+            }
+          },
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "6662e9bd3f529dc2bc7fa3d5f9fe0c9b70567ca75adc7c33302e2524a01c9abb",
+            "compiler_object": "p_render.obj",
+            "link_response_sha256": "f9c50c7b133f478f3e3764d315de736e93e38bef8b55f16650b8758258dc5f81",
+            "before": {
+              "sha256": "a96247b657fc813a47f0bebb3de0cbe0dc83d2c6a73327a02da189b7727f43b4",
+              "symbol_model_sha256": "96f0e5cf5444c582b302843d642fcb06b1ceb8c2fcb1490f7a99b94ae1c6a6c6"
+            },
+            "after": {
+              "sha256": "b61f0c048538d09a67dd11df32609aa01c1dc64d21256a1eb532704396e91a8d",
+              "symbol_model_sha256": "bea625b40ba64c0483bcf92823b108b7fb7671dc2ca73a05d4cbefc9135cda6c"
+            }
+          }
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/player_render_bindings.asm",
+            "sha256": "6662e9bd3f529dc2bc7fa3d5f9fe0c9b70567ca75adc7c33302e2524a01c9abb"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/invalidate.hpp",
+            "sha256": "ded186a30f445d89652ce1a80eb6595775d1a03b2ea35c0cfe5ef2afc071ad17"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/render.cpp",
+            "sha256": "a9c0c66f98ead826bdefc599e0cafd2dd16c03686a6353fac3a8f895127c0a57"
+          },
+          {
+            "path": "src/main/player/render.hpp",
+            "sha256": "bf1a6567b576aa6aaeb082fd75ff8cb4e3ecfe29a692979e334ce10480f16ad1"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/player_render_bindings.asm",
+          "sha256": "6662e9bd3f529dc2bc7fa3d5f9fe0c9b70567ca75adc7c33302e2524a01c9abb"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/invalidate.hpp",
+          "sha256": "ded186a30f445d89652ce1a80eb6595775d1a03b2ea35c0cfe5ef2afc071ad17"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/render.cpp",
+          "sha256": "a9c0c66f98ead826bdefc599e0cafd2dd16c03686a6353fac3a8f895127c0a57"
+        },
+        {
+          "path": "src/main/player/render.hpp",
+          "sha256": "bf1a6567b576aa6aaeb082fd75ff8cb4e3ecfe29a692979e334ce10480f16ad1"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "48c4a8e2c32088f7ed09301dfc136a18371e543de298d9e7926c58c145240f59",
+      "compiled_negative_control": {
+        "target_start": 52566,
+        "candidate_start": 52566,
+        "size": 330,
+        "target_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+        "candidate_sha256": "d9594aa6e07ba64fdcacc67b23c8a8feff955c5a8776a3542e7c5026d3c49f56",
+        "raw_exact": false,
+        "target_fixups": [
+          307,
+          244,
+          112,
+          100
+        ],
+        "candidate_fixups": [
+          307,
+          244,
+          112,
+          100
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-player-render",
+        "entry_sha256": "5bfe38ff32711eda33a429318a1afbbc054120ee275cf0f3aa2bda662088293c",
+        "mutation": {
+          "unit": "main-player-render",
+          "source": "src/main/player/render.cpp",
+          "find": "if(shot_level < 2)",
+          "replace": "if(shot_level < 3)"
+        },
+        "control_sha256": "bf3ed405cd78b44eeeec2deb49ab96d380c81071bb1951fb26b34b5f2d0a648b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 52566,
+          "candidate_start": 52566,
+          "size": 330,
+          "target_sha256": "bd15b67cc05cc0b3c6c057818c2d2b6999d8de51db068f0bb6ffcbc4425c035c",
+          "candidate_sha256": "d9594aa6e07ba64fdcacc67b23c8a8feff955c5a8776a3542e7c5026d3c49f56",
+          "raw_exact": false,
+          "target_fixups": [
+            307,
+            244,
+            112,
+            100
+          ],
+          "candidate_fixups": [
+            307,
+            244,
+            112,
+            100
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "455158bf746e729a74f2fbdf88bb50cad8778e29f35fc56913ebd06e51f81cbe",
+          "dependency_timestamp_normalized_sha256": "12e0da5ccf78f734965f9b1352160ec8d8e129c6e301efeb4c6157f9df68ebee",
+          "module_name": "th05/p_render.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/p_render.cpp",
+            "src/main/player/render.cpp",
+            "src/main/player/render.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/invalidate.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/p_render.cpp"
+        ],
+        "binding_context": {
+          "kind": "symbol-only-before-and-after-compiler",
+          "source_sha256": "6662e9bd3f529dc2bc7fa3d5f9fe0c9b70567ca75adc7c33302e2524a01c9abb",
+          "compiler_object": "p_render.obj",
+          "link_response_sha256": "f9c50c7b133f478f3e3764d315de736e93e38bef8b55f16650b8758258dc5f81",
+          "before": {
+            "sha256": "f68a210d0f458aaa172f721d59df9fff3bd92f0cfc208697edfee93ac8a48309",
+            "symbol_model_sha256": "96f0e5cf5444c582b302843d642fcb06b1ceb8c2fcb1490f7a99b94ae1c6a6c6"
+          },
+          "after": {
+            "sha256": "269695a800929a62506e112cc1bc1b6fd2f4775b63177cacd63bc7b7527a6523",
+            "symbol_model_sha256": "bea625b40ba64c0483bcf92823b108b7fb7671dc2ca73a05d4cbefc9135cda6c"
+          }
+        }
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-player-render"
       ]
     }
   ]
