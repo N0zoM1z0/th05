@@ -370,3 +370,42 @@ unit = "maine-game-exit"
 source = "src/shared/core/game_exit.cpp"
 find = "exit_graph_accesspage(1);"
 replace = "exit_graph_accesspage(0);"
+
+
+[[units]]
+id = "maine-staff-lifecycle-prefix"
+source = "src/maine/staff/lifecycle.cpp"
+module = "th05/stflife.cpp"
+segment = "STAFF_LIFE_TEXT"
+target_start = 54151
+size = 602
+functions = 4
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_lifecycle_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-lifecycle-prefix"
+source = "src/maine/staff/lifecycle.cpp"
+find = "p->speed.v = 10;"
+replace = "p->speed.v = 11;"
+
+[[units]]
+id = "maine-verdict-format"
+source = "src/maine/verdict/format.cpp"
+module = "th05/vformat.cpp"
+segment = "VERDICT_FMT_TEXT"
+target_start = 50663
+size = 711
+functions = 4
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_format_bindings.asm"
+
+[[controls]]
+unit = "maine-verdict-format"
+source = "src/maine/verdict/format.cpp"
+find = "digit = num / 100;"
+replace = "digit = num / 101;"

@@ -188,3 +188,17 @@ exported alias. Two fresh producers, raw bytes, original fixup72 and its
 sound mutation pass. See `phase23.md`. This resolves only the former static
 MAP-public obstacle; ball220 and the four internally ordered-inexact functions
 remain unaccepted. Previously accepted scopes are unchanged and not replayed.
+
+## Independently accepted cheeto and devil owners
+
+The complete cheeto-wall169 and Devil802 functions now pass their own
+standalone two-producer raw/ordered replays and compiled semantic negatives.
+Their original descending fixup lists fit real single-LEDATA contexts.
+Each body has one canonical `.inl`; the HP enum and existing wing helpers
+are also shared without changing their tokens. Inverse expansion preserves
+the old complete source. Exactly nine accepted records were revalidated in
+`main-shinki-canonical-refresh-b`; the separate phase23 owner was unchanged.
+The family total is13 functions /2559 instruction bytes, with zero new
+padding or CODE tables. Remaining complete extents are ball220, wing386 and
+update959; they stay unaccepted. The old mixed suffix is not relabelled exact.
+See `cheeto_walls.md` and `devil.md`.

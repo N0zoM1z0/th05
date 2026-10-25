@@ -3857,3 +3857,64 @@ unit = "main-exalice-pattern-pairs-data"
 source = "src/main/boss/exalice/pattern_pairs.cpp"
 find = "{ exalice_pattern_random_fan, exalice_pattern_turning_rings }"
 replace = "{ exalice_pattern_turning_rings, exalice_pattern_turning_rings }"
+
+[[units]]
+id = "main-hud-overlay-semantic-data"
+source = "src/main/hud/overlay_data.c"
+module = "th05/hudodata.c"
+segment = "_DATA"
+wrapper_options = "-zCHUD_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/hud_overlay_data_bindings.asm"
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+functions = 0
+target_start = 140156
+size = 164
+alignment_offsets = []
+padding_bytes = [{offset = 3, value = 0}, {offset = 99, value = 0}, {offset = 163, value = 0}]
+data_semantics = ["state", "ui-text", "string-pointers"]
+
+[[controls]]
+unit = "main-hud-overlay-semantic-data"
+source = "src/main/hud/overlay_data.c"
+find = "{ HG_BOLD_F, HG_BOLD_I, HG_BOLD_N, HG_BOLD_A, HG_BOLD_L,"
+replace = "{ HG_BOLD_E, HG_BOLD_I, HG_BOLD_N, HG_BOLD_A, HG_BOLD_L,"
+
+[[units]]
+id = "main-shinki-cheeto-walls"
+source = "src/main/boss/shinki/cheeto_walls.cpp"
+module = "th05/b6wall.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 110614
+size = 169
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/shinki_cheeto_walls_bindings.asm"
+
+[[controls]]
+unit = "main-shinki-cheeto-walls"
+source = "src/main/boss/shinki/cheeto_walls.inl"
+find = "sara_set_spread(6, 0x08);"
+replace = "sara_set_spread(7, 0x08);"
+
+[[units]]
+id = "main-shinki-devil"
+source = "src/main/boss/shinki/devil.cpp"
+module = "th05/b6devil.cpp"
+segment = "B6_DEVIL_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 111172
+size = 802
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+bindings_source = "probes/units/shinki_devil_bindings.asm"
+
+[[controls]]
+unit = "main-shinki-devil"
+source = "src/main/boss/shinki/devil.inl"
+find = "boss.phase_frame >= 2500"
+replace = "boss.phase_frame >= 2501"

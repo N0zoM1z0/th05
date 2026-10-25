@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **260 bounded C/C++ CODE/DATA units / 456 complete function occurrences**,
-**85,088 authored bytes exact**: 73,715 CODE and 11,373 initialized DATA.
-CODE is 73,057 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 85,161; 73 checked padding bytes receive
-no credit. MAIN has 368 functions / 59,331 CODE / 2,715 DATA;
-OP 61 / 11,218 / 8,615; MAINE 27 / 3,166 / 43.
+Current acceptance: **265 bounded C/C++ CODE/DATA units / 466 complete function occurrences**,
+**87,533 authored bytes exact**: 75,999 CODE and 11,534 initialized DATA.
+CODE is 75,341 instruction plus 658 semantic compiler-table bytes.
+Complete compared extents total 87,609; 76 checked padding bytes receive
+no credit. MAIN has 370 functions / 60,302 CODE / 2,876 DATA;
+OP 61 / 11,218 / 8,615; MAINE 35 / 4,479 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1041,61 +1041,125 @@ inventory verification rereads all actual library/link/target evidence.
 
 ## Mathematical fixed-speed shot velocity DATA
 
-`main-shot-velocity-data-a` adds the complete1,024-byte game motion table at
-MAIN21942..21D42,256signedX/Ypoints. Its maintained generator computes general
-Q8 directions from Decimal sine without target/reference inputs; the C
-initializer applies the real192-subpixel speed and explicit negative floor.
-Primary Master SIN8 source independently corroborates all320Q8samples. This
-game-specific velocity table differs from vendor RotTbl pixel-bit spreading.
-Two fresh C producers pass full DATA/OMF/MAP/raw/ordered comparisons and the
-compiled192→193speed control is rejected. The generator and actual include
-join frozen source identities through opt-in `generated_sources`; five new
-regressions cover generator drift, stale output, missing snapshots, inactive
-include claims and mutating checks. No accepted CODE consumer was changed or
-replayed. See `src/main/player/shot_velocity_data.md`.
+`main-shot-velocity-data-a` adds the complete 1,024-byte game motion table
+at MAIN21942..21D42: 256 signed X/Y points. The maintained Decimal generator
+computes general Q8 directions without reading a target or reference; C
+specializes them to 192 subpixels/frame with explicit negative floor.
+Primary Master SIN8 independently corroborates all 320 Q8 samples. This is
+different from vendor RotTbl pixel constants. Two fresh producers and the
+192→193 speed mutation pass. `generated_sources` freezes the generator and
+requires its output to be an actual compiler include. Five regressions cover
+source drift, stale output, omitted snapshots, inactive includes and mutating
+checks. No accepted consumer was replayed. See `shot_velocity_data.md`.
 
-## Complete Music Room frontend and incremental replacement
+## Complete Music Room frontend
 
-`op-music-full-context-a` adds complete polygon502 and menu837,1339 authored
-instruction bytes/two functions. Canonical `music_body.inl` preserves every
-old implementation byte and restores the genuine30-byte saved-plane helper
-using installed `__memcpy__` plus actualDSpreservation/segment selection. Its
-intrinsic XOR encodings still differ at2bytes; the entire helper stays unknown
-and uncredited. Full2396 compiler context naturally restores original LEDATA
-fixup grouping; no instruction patch, filler or record rechunking is used.
-Exactly10oldrecords (12CODEfunctions+6217DATA) were replaced with15records,
-including4explicitprefixfunctions and2newfunctions. AllshareoneactualTU:
-2freshpositivecompiles+1DATAfilename mutation.
-`op-music-full-context-code-negative-a` adds1shared CODE menu24→25negative,
-without positive recompilation. Both controls pass; no per-function independent
-negative is claimed. Root native comparison confirms onlyhelperoffsets16/18
-differ in full2396, with full orderedfixups equal; all15scopes areexact.
-Atomic import succeeds and the current OP replay plan is empty. See
+`op-music-full-context-a` adds polygon502 and menu837, or 1,339 instruction
+bytes / two functions. One canonical implementation restores the genuine
+30-byte saved-plane helper using installed `__memcpy__` and DS preservation.
+Its two XOR opcode differences remain unchanged; the entire helper is
+uncredited. The real 2,396-byte frontend naturally restores original LEDATA
+fixup groups. Exactly ten old records (twelve functions plus 6,217 DATA)
+were replaced with fifteen records. One TU uses two fresh positives and its
+DATA filename negative; `op-music-full-context-code-negative-a` supplies one
+shared menu24→25 CODE mutation without recompiling positives. No independent
+per-function negative is claimed. All fifteen scopes pass; root native review
+confirms that only helper offsets16/18 differ across the entire contribution.
+The old failed split receipts retain their original verdicts. See
 `src/op/music/full_context.md`.
 
-## Shot power progression and EX-Alice alternating schedules
+## Power progression and EX-Alice schedules
 
-`main-shot-power-threshold-data-a` adds18 DATAbytes: nine complete canonical
-unsigned-word thresholds, with native count9/stride2/unsigned comparisons and
-its firstthreshold6→7negative. `main-exalice-pattern-pairs-data-a` adds16
-DATAbytes: real[4][2]near bool callbacks with eightaccepted providers, actual
-phase/alternation indexing, indirectnearcall andALtest. Its fan→ringsmutation
-is independently rejected. Each gets2freshC++producers, completegapless
-OMF/MAP, fullraw bytes and originalemptyorderedfixups. No padding/CODE/BSS
-credit or oldheader/callerchange; onlythese2DATAowners were replayed and
-atomically imported. See `src/main/player/power_thresholds.md` and
-`src/main/boss/exalice/pattern_pairs.md`.
+`main-shot-power-threshold-data-a` adds eighteen bytes / nine unsigned-word
+thresholds, with the native count-nine, stride-two consumer and a6→7 control.
+`main-exalice-pattern-pairs-data-a` adds sixteen bytes / four alternating
+pairs of real near bool callbacks. Eight providers, actual indexing, indirect
+near CALL and AL result are verified; its fan→rings mutation is rejected.
+Each has two fresh C++ producers, complete DATA/OMF/MAP and empty original
+ordered fixups. No accepted caller or header changed. See their source notes.
 
-## Independent Master initialized DATA ownership
+## Additional source-backed Master ownership
 
-`review_master_sin8.py` and the separate explicit
-`config/reviewed_master_sin8.json` adopt only3complete640-byte primary-source
-SIN8 blocks,1920total, with `verified-vendor-initialized-data` and zero
-instruction/authored credit. Sin256/Cos256 views share192words: eachphysical
-block is320words, nottwo256-wordallocations. Actualoriginalvsretainedcal
-locations differ inMAIN/MAINE; the proof preserves both positions, realstartup
-DS/relocation, actualDATA MAP/PUBDEF/LEDATA/nointersectingFIXUPP, primaryliteral
-source/archive andoriginalemptyorderedfixups. No per-memberMAP/binarymember
-claim, byte/frame normalization or wholemixedobject exclusion. Rootnative
-review passes and `ownership.py --write --verify-targets` replays actualinputs.
-The21newreview/adoption regressions retain unknownothergaps/null denominator.
+The explicit seven-scope additions decision contributes104 MAIN procedure
+bytes (103 instructions plus one library EVEN byte) and1,024 RotTbl CODE-data
+bytes in each of OP/MAINE. Primary literal source, real monolithic OMF/MAP,
+raw bytes and original ordered fixups are revalidated. A member MAP is never
+invented, and the binary archive is corroboration only.
+
+`review_master_sin8.py` plus `config/reviewed_master_sin8.json` separately
+classify three complete640-byte primary-source tables,1,920 total, as
+`verified-vendor-initialized-data`. Sin256/Cos256 share192 words: each physical
+block has320 words. MAIN/MAINE original and calibration positions differ;
+the proof preserves both, real startup DS/relocations, actual DATA aliases,
+LEDATA coverage and absence of intersecting FIXUPP. No instruction or authored
+credit is granted. All other gaps and the global denominator remain unknown.
+Root native inventory verification passes; public review/adoption tests do
+not need proprietary inputs.
+
+## Shinki canonical bodies and standalone complete patterns
+
+`main-shinki-cheeto-walls-a` adds169 instructions and
+`main-shinki-devil-a` adds802. Both complete natural functions fit one real
+LEDATA record and recover their original descending fixups. They have their
+own two fresh producers and6→7 spread /2500→2501 phase controls. The new
+`.inl` files retain one canonical body; the complete HP enum and existing
+wing-coordinate helpers are shared. Inverse include expansion preserves old
+source bytes. `main-shinki-canonical-refresh-b` revalidates exactly nine old
+records after both factors; the separate phase23 source/header is unchanged.
+The intermediate refresh-a is preserved but is not imported after the second
+factor. No unrelated unit was replayed.
+
+The family now has thirteen complete functions /2,559 instruction bytes.
+Ball220, wing386 and update959 remain unaccepted (1,565 complete bytes).
+The old mixed suffix and natural4120 diagnostic are not relabelled successful.
+See `src/main/boss/shinki/cheeto_walls.md` and `devil.md`.
+
+## Complete HUD selector/state DATA
+
+`main-hud-overlay-semantic-data-d` adds161 authored DATA bytes from the full
+164-byte, seventeen-field C bank at2237C..22420. Three natural alignment zeros
+at3/99/163 are compared and excluded. Actual gaiji text API consumption and
+named glyph selectors distinguish text from font bitmap bytes. The complete
+fade union, state, segment selector, six far pointers and constness remain.
+The C model defines its byte union first, then enables word alignment only
+for the bank. It makes no historical-struct or caller-linkage claim.
+
+Attempts a/b failed size and offsets before OBJ; the initial enum-width
+diagnosis was wrong and is retracted. Variant c proved the word bank but
+rounded the byte union. All exact failed inputs/logs remain archived. The d
+producer passes every type assertion, both fresh full DATA/OMF/MAP/raw/ordered
+comparisons and its own FINAL F→E negative. No padding fields or bitmap data
+were introduced. See `src/main/hud/overlay_data.md`.
+
+## MAINE staff lifecycle prefix
+
+`maine-staff-lifecycle-prefix-b` accepts the genuine602-byte prefix / four
+functions atD387..D5E1: init278, gather108, clear40 and scatter176. The complete
+20-byte particle type and real arrays are retained, with ordinary far Pascal
+vector output references. Two fresh positives, all fifteen ordered fixups
+and speed10→11 negative pass. No DATA/BSS or padding is credited.
+
+Both attempted full1,228-byte owners remain failed at1,225. The final updater
+is623 versus626, with one missing BX reload and a stack-slot permutation.
+Using the real Subpixel conversion did not resolve it; no barrier/volatile/
+register-forcing variants followed. Its body is retained verbatim in
+unaccepted `lifecycle_update.cpp`. The accepted prefix reserves the whole
+foreign updater outside its compiler contribution. A final trailing-empty-line
+cleanup is covered by prefix-b; no old source receipt was silently rewritten.
+See `src/maine/staff/lifecycle.md`.
+
+## MAINE verdict formatting
+
+`maine-verdict-format-b` adds711 instructions / four complete functions:
+152/170/268/121. It retains the full eight-byte score and true far reference,
+nine display digits, Pascal cleanup, TH05 dynamic color and quarter-skill
+capture. Original six fixups are descending; both fresh producers and the
+shared hundreds-divisor100→101 control pass. There are no CODE tables,
+padding, DATA or BSS in this owner.
+
+First a was717 because the percentage coordinates spilled differently.
+The independently pinned TH04 donor explicitly uses ordinary `register`
+coordinate locals; restoring exactly those two qualifiers recovers the native
+six-byte frame and711-byte whole extent. No physical register alias, new ABI
+or calculation was introduced. The old717 input/object and forensic evidence
+remain private. See `src/maine/verdict/format.md`.
