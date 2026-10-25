@@ -33,3 +33,13 @@ Private evidence: `.analysis/dialog-tail-boundary-review.json`. Entry/control/SH
 The first real producer `main-dialog-tail-b` emitted619 bytes. Native complete-function review found the face loader248 bytes and Ex-Alice override67 bytes both raw and original ordered-fixup exact. Two fresh scoped producers and their compiled controls subsequently passed and those315 bytes were accepted in `main-dialog-tail-scopes-c`; this does not accept the complete tail.
 
 `dialog_exit` is121 rather than122: its113 instruction bytes are identical except the genuine switch-table base operand at function-relative71, the eight table bytes are identical, and the original intervening zero is absent. The later Ex-Alice body therefore starts at actual`14080`, one byte before its original`14081`, while its complete relative bytes/fixups remain exact. `dialog_animate` stays183 bytes but fails raw and ordered fixups. Its only raw differences are tail-relative22 (its near call reaches the actual Ex-Alice address`14080`) and120..124 (actual `9A B2 20 E1 0A`, a genuine far call to`0AE1:20B2`, versus original relaxed `90 0E E8 ED 8F`). The far call also adds an MZ fixup at relative123. No other animation bytes differ. No source variant or padding/opcode template was introduced to fix either parked function.
+
+## Later complete animation acceptance
+
+The separate literal-body `animate.cpp` now accepts all183 animation bytes
+with182 authored instructions and one checked relaxation NOP. It preserves
+the real far Pascal GameExecl API and states its independently proven same-CS
+context, while binding later foreign helpers to their actual native addresses.
+See [complete dialog animation](animate.md). The original315 accepted bytes,
+source/header and old mixed results above remain unchanged; the122-byte exit
+switch owner is still unaccepted and receives no transferred credit.

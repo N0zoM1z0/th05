@@ -4162,3 +4162,24 @@ unit = "main-demo-play"
 source = "src/main/demo/demo.cpp"
 find = "stage_frame < (DEMO_N - 4)"
 replace = "stage_frame < (DEMO_N - 5)"
+
+[[units]]
+id = "main-dialog-animate"
+source = "src/main/dialog/animate.cpp"
+module = "th05/dlg_anim.cpp"
+segment = "DIALOG_TAIL_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/dialog_animate_bindings.asm"
+bindings_after_compiler = true
+function_symbol = "dialog_animate()"
+target_start = 0x13e58
+size = 183
+alignment_offsets = [120]
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-dialog-animate"
+source = "src/main/dialog/animate.cpp"
+find = "if(dialog_sequence_id == 0)"
+replace = "if(dialog_sequence_id == 1)"

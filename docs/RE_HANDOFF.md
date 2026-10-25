@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **312 bounded C/C++ CODE/DATA units / 497 complete function occurrences**,
-**97,606 authored bytes exact**: 82,269 CODE and 15,337 initialized DATA.
-CODE is 81,577 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,686; 80 checked padding bytes receive
-no credit. MAIN has 380 functions / 61,149 CODE / 3,091 DATA;
+Current acceptance: **313 bounded C/C++ CODE/DATA units / 498 complete function occurrences**,
+**97,788 authored bytes exact**: 82,451 CODE and 15,337 initialized DATA.
+CODE is 81,759 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 97,869; 81 checked padding bytes receive
+no credit. MAIN has 381 functions / 61,331 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,65 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 135,298 bytes. The global denominator is still unreviewed;
+ownership is now 135,115 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete DemoPlay
+## Latest accepted C++: complete dialog animation
+
+The complete MAIN far-cdecl `dialog_animate()` at13E58..13F0F adds182
+instruction bytes and one function. All183 bytes match; its sole NOP at
+relative120 is checked linker-relaxation padding with zero authored credit.
+The61 native instructions include three RETF exits and no tables/DATA/BSS.
+Original ordered fixups are `[179,146,132,114,107,86,81,68,59,52,40,31]`.
+See [complete dialog animation](../src/main/dialog/animate.md).
+
+The standalone source copies the maintained tail body literally and reuses
+its unchanged complete header. Provider-specific `samecodeseg GameExecl`
+communicates the independently verified physical CS AE1, preserving the
+int-returning far Pascal pointer argument and actual RETF4 provider. The
+same annotation has accepted entry/game-over/ending precedents. The real
+unlinked compiler output is9A in both contexts; TLINK supplies the native
+NOP/PUSH-CS/CALL shortening. No instruction/NOP macro is authored.
+
+The explicit before/after symbol-only source binds foreign dialog_exit14007
+and Ex-Alice14081 beyond the actual183-byte contribution. It retains actual
+empty foreign segment groups and the observed truncated EXTDEF. This avoids
+transferring the unaccepted exit's missing switch zero into animation; the
+exit itself remains unaccepted. Earlier315 accepted tail bytes and every
+older source/receipt identity remain unchanged and are not replayed.
+
+Only `.analysis/unit-replays/main-dialog-animate-standalone-a/receipt.json`
+is imported, SHA-256
+`6816fd34a2183480d5c8030ecc18a60a0a91be62500838bb1e55ef92ade35df8`.
+Two fresh complete deterministic raw/order producers and an own sequence0
+to1 compiled negative pass. The negative retains positive binding models,
+scope and ordered fixups, changes actual behavior/output and is rejected.
+Installed toolchain execution proofs and unrelated artifacts are reused.
+Global unknown decreases135,298 to135,115 (MAIN55,520 to55,337); CPP authored
+is97,788, checked CPP padding81. ASM/vendor/DATA/resource totals and the null
+global authored denominator are unchanged.
+
+Saved import,326-test CI, native ownership verification and all four empty
+incremental plans pass. All earlier accepted ledger rows are identical.
+Independent actual review: `.analysis/dialog-animate-standalone-actual-review.json`,
+SHA-256 `141f4dfdee64998f02c45d12db38077cbfc0d25164b6e57ad0dc63106e78a9ed`.
+Root final review: `.analysis/dialog-animate-root-final-review.json`,
+SHA-256 `96029729ba35061584d4a419f2f9824eeeca58481029eeba30d8e0afbfab69eb`.
+
+A zero-C++ retained-object diagnostic `.analysis/dialog-group-context-a/`
+removes only implicit model group declarations and preserves the old
+six byte mismatches and extra relocation123. Explicit GRPDEF order alone
+does not repair relaxation. No backward-TLINK limitation is inferred.
+
+The bounded EMS native/source-context audit finds no supported new historical
+TU: modern reference extraction and target relocation order do not identify
+one. Its154 raw-equal but ordered-fixup-mismatched bytes remain unknown.
+Do not try standalone/fitted-prefix/record-split variants without genuinely
+new owning-context evidence. Independent audit:
+`.analysis/ems-lifecycle-context-review.json`, SHA-256
+`3cf3c4f437febc27d3e87a2475ed950e6422b4c6bf446d99332673d9c0a4821f`.
+
+## Previous accepted C++: complete DemoPlay
 
 The complete MAIN playback function `[0xB7B4,0xB826)` now adds113 authored
 instruction bytes and one function. All114 bytes match; the only NOP, at
