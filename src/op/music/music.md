@@ -1,6 +1,12 @@
 TH05 Music Room candidate
 =========================
 
+Current preparation uses the single canonical frontend described in
+[full_context.md](full_context.md). The split-producer boundaries and results
+below record the previous accepted source context; the new source has not yet
+run its focused replacement replay. Its intrinsic DS-copy helper remains
+entirely unaccepted.
+
 Natural-source provenance is nmlgc/ReC98 at
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`: `th05/op_music.cpp`
 selects `th02/op/m_music.cpp`, with `GAME=5` and `BINARY='O'`.

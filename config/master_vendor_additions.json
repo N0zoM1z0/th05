@@ -1,0 +1,2885 @@
+{
+  "schema_version": 1,
+  "kind": "master-source-backed-additions-proposal",
+  "decision": "PROPOSAL",
+  "ownership_decision": null,
+  "authored_credit": 0,
+  "authored_denominator": null,
+  "denominator_changed": false,
+  "compiler_invocations": 0,
+  "scope_count": 7,
+  "full_bytes": 2152,
+  "instruction_bytes": 103,
+  "library_padding_bytes": 1,
+  "library_code_data_bytes": 2048,
+  "existing_MAIN_proof": {
+    "file": "config/master_vendor_ownership.json",
+    "size": 139141,
+    "sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a"
+  },
+  "existing_MAIN_native_context": {
+    "kind": "native-master-procedure-review",
+    "decision": "PROPOSAL",
+    "procedures": 20,
+    "full_bytes": 376,
+    "instruction_bytes": 367,
+    "padding_bytes": 9,
+    "deferred_source_mismatches": 40,
+    "uncovered_gap_bytes": 196,
+    "byte_proof_replayed": true,
+    "compiler_invocations": 0,
+    "authored_credit": 0,
+    "denominator_changed": false
+  },
+  "primary_source": {
+    "outer_archive": {
+      "file": "_reference/master-lib-upstream-023/MTSRC023.LZH",
+      "size": 457168,
+      "sha256": "9df4ba0ec1c3d81f2d77677c8c99f563281db4a4d9d87718a956d4c92156747f"
+    },
+    "inner_archive": {
+      "file": "_reference/master-lib-upstream-023/distribution/SRC.LZH",
+      "size": 1560252,
+      "sha256": "acc5369d3fb445d5cd6b92abbedb7b433819465be2f85bbbff53bd1f77bc40b6"
+    },
+    "extracted_source_root": "_reference/master-lib-upstream-023/src",
+    "literal_archive_members": 653,
+    "author": "Akihiko Koizuka and master.lib coauthors",
+    "version": "0.23",
+    "primary_url": "https://www.koizuka.jp/~koizuka/master.lib/MTSRC023.LZH",
+    "authority": "Independently pinned author archive; all653 literal extracted members reread by baseline context replay"
+  },
+  "binary_library_corroboration": {
+    "file": "_reference/ReC98/bin/masters.lib",
+    "size": 273721,
+    "sha256": "6be41dbcfcf4504977165ccc44443525a29a01f85a1580e6ad0c620bf802faf6"
+  },
+  "table_contexts": {
+    "op": {
+      "artifact": "th05-op",
+      "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+      "target_payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "inputs": {
+        "calibration_exe": {
+          "file": ".analysis/builds/op-calibration-a/source/bin/th05/op.exe",
+          "size": 78284,
+          "sha256": "732f9659e987c1837a6def7b3d83b3b150b39c991928bba14eadec09272b4eb6"
+        },
+        "calibration_map": {
+          "file": ".analysis/builds/op-calibration-a/source/obj/th05/op.map",
+          "size": 74100,
+          "sha256": "da2598ec3f3c707fdc968d0d9dcca5cddf333beb9b8241d76d123ee0970af907"
+        },
+        "calibration_object": {
+          "file": ".analysis/builds/op-calibration-a/source/obj/th05/op.obj",
+          "size": 35197,
+          "sha256": "b32328d03d8eb942bcdb55dcd0d816051db46b117de0a7817f4bd558f08acc92"
+        }
+      },
+      "source_root": ".analysis/builds/op-calibration-a/source",
+      "frozen_source_closure": [
+        {
+          "name": "th05_op.asm",
+          "file": ".analysis/builds/op-calibration-a/source/th05_op.asm",
+          "size": 8088,
+          "sha256": "38e0635a4d5cbbece37aa6de3ce4b8c14d2160d882305da95a78c1cf0526ca24"
+        },
+        {
+          "name": "ReC98.inc",
+          "file": ".analysis/builds/op-calibration-a/source/ReC98.inc",
+          "size": 1128,
+          "sha256": "62ecdf5ac2486f3e8f3134254f85caec436e8b207195781f8f72be9053058246"
+        },
+        {
+          "name": "libs/master.lib/func.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/func.inc",
+          "size": 3438,
+          "sha256": "6fc2b5ab1f5ce7e4b64675cb8c6b967227418eebff9cd81e82de3721cac4a67f"
+        },
+        {
+          "name": "libs/master.lib/super.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super.inc",
+          "size": 962,
+          "sha256": "c7710b20c2f6bee86c55097dd2c26cf4be2fd6097439570a5b0c77fa5ffac4ae"
+        },
+        {
+          "name": "libs/master.lib/bgm.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm.inc",
+          "size": 4254,
+          "sha256": "070c886cef0b9c70121e81a9c8c99c6b17386da4a8f9dff4c4f8e9348db3636f"
+        },
+        {
+          "name": "libs/master.lib/pf.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pf.inc",
+          "size": 3527,
+          "sha256": "6c7f47e4fc69994109ed6ca077a9cdc6f34adba05d5d0672186865e5262285ad"
+        },
+        {
+          "name": "libs/master.lib/clip.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/clip.inc",
+          "size": 537,
+          "sha256": "334647dfba90c582f2607bb6f6d6565e9e15dce0220ab8acbd1b23e4331b2462"
+        },
+        {
+          "name": "libs/master.lib/macros.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/macros.inc",
+          "size": 4065,
+          "sha256": "6e38bd2a6af911890250376d7e3d87343a6e726eced227958669d6f420427ae9"
+        },
+        {
+          "name": "libs/kaja/kaja.inc",
+          "file": ".analysis/builds/op-calibration-a/source/libs/kaja/kaja.inc",
+          "size": 5101,
+          "sha256": "ae6bb3734914fcc651568f619126a242af3631556073a0bcb42f61bf13d95958"
+        },
+        {
+          "name": "twobyte.inc",
+          "file": ".analysis/builds/op-calibration-a/source/twobyte.inc",
+          "size": 49,
+          "sha256": "ebe96bde9fee9c1517b9caa12b37b91f25f787414898f457c3551f84ed8796e7"
+        },
+        {
+          "name": "pc98.inc",
+          "file": ".analysis/builds/op-calibration-a/source/pc98.inc",
+          "size": 653,
+          "sha256": "498e31e6d35ace5c35ef50408ac7a29f2ba2ef76858a5b779d5cfa212bfb6660"
+        },
+        {
+          "name": "th01/hardware/egc.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th01/hardware/egc.inc",
+          "size": 1064,
+          "sha256": "29e30717870bb69635bf082114ccb4a0e9795803c80adbd1283449f80e32a188"
+        },
+        {
+          "name": "th02/formats/pi_slots.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/formats/pi_slots.inc",
+          "size": 291,
+          "sha256": "b3a234a3e292c1171f86ac24d9bb8ba8c47ffb938be8450168f7fc91148f8187"
+        },
+        {
+          "name": "th02/snd/snd.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/snd/snd.inc",
+          "size": 91,
+          "sha256": "a3faab9a73895dfa2e0ded324b093ce89f66185e08be33006fada8229aa3c0f3"
+        },
+        {
+          "name": "th05/th05.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th05/th05.inc",
+          "size": 1116,
+          "sha256": "fbcf477419152b6b6cd1a0ef9afdfdd346d7d8ddbd3cf6383919f97a90dcc488"
+        },
+        {
+          "name": "th05/chars.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th05/chars.inc",
+          "size": 95,
+          "sha256": "a27ac9c4c6e761b0acba7a216b459a4be2cef43278b55ca57d3deb60a8f1f537"
+        },
+        {
+          "name": "th04/shared.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/shared.inc",
+          "size": 827,
+          "sha256": "6a8092f644c4f9d70beda43c6fec325070e99eb42e8b2b5133ac48c26745740f"
+        },
+        {
+          "name": "th03/arg_bx.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th03/arg_bx.inc",
+          "size": 2073,
+          "sha256": "036c988bfbec000a152512035e3d8b42590d84165f1aa45d9689babf9ebe995e"
+        },
+        {
+          "name": "th02/score.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/score.inc",
+          "size": 17,
+          "sha256": "0c57fcf3fb6bda5842938d247cc6ab518750e67eaa8fd95e766bcc259a237434"
+        },
+        {
+          "name": "th04/formats/bb.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/formats/bb.inc",
+          "size": 75,
+          "sha256": "68176d509219327b2a0277e153edfa6f6a777235dcb298098bf1329be948da56"
+        },
+        {
+          "name": "th04/formats/cfg.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/formats/cfg.inc",
+          "size": 373,
+          "sha256": "9fd02806cd36f7433589b982a57a2796b34d7ab0cfb7b61d80ebef648e9abb71"
+        },
+        {
+          "name": "th03/formats/cdg.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th03/formats/cdg.inc",
+          "size": 1237,
+          "sha256": "1f0ff08d7d98f6e1038f09c12785f09349d65b1427f30ce569d2dbf49b7d7a48"
+        },
+        {
+          "name": "th04/formats/map.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/formats/map.inc",
+          "size": 165,
+          "sha256": "942031f9bac0eda4b3e1d62aee5bebc68755fd2bd359f1206ccd7ab68159c35d"
+        },
+        {
+          "name": "th04/formats/scoredat/scoredat.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/formats/scoredat/scoredat.inc",
+          "size": 736,
+          "sha256": "38cf4143b2ab59a89b82da2eff7e7c61e4456bcb18d1104e2ddee34bca40a0d1"
+        },
+        {
+          "name": "th04/main/player/player.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/main/player/player.inc",
+          "size": 1017,
+          "sha256": "7ba98278c14ceba59e320c257bc666aaf54d632fba87d6202c59f5b377ca2923"
+        },
+        {
+          "name": "th02/main/player/player.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/main/player/player.inc",
+          "size": 495,
+          "sha256": "c9919ae5a89ec45c3b0d532f87073d8728262e7b479df97c6214128480f16d2b"
+        },
+        {
+          "name": "th02/main/playfld.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/main/playfld.inc",
+          "size": 290,
+          "sha256": "cf409c3f999661709010df7ed6b4932a9ac545883d54ca4221b86b316de95683"
+        },
+        {
+          "name": "th02/main/hud/hud.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/main/hud/hud.inc",
+          "size": 44,
+          "sha256": "f06df3e9d7b1c9b099a6e536d56233db3e6a4b079c84485663f3263f54f0cb18"
+        },
+        {
+          "name": "th04/hardware/grcg.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/hardware/grcg.inc",
+          "size": 533,
+          "sha256": "58876ee09c7a378c448079c2a61082d635cc960d2240719626821fff64cf573c"
+        },
+        {
+          "name": "th04/hardware/input.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/hardware/input.inc",
+          "size": 713,
+          "sha256": "77873c2e934b36589bd54018011a3aae59a64f55d07996bdc1704540e279f9f4"
+        },
+        {
+          "name": "th04/math/randring.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/math/randring.inc",
+          "size": 807,
+          "sha256": "6f36c64ef467bb30255becc4f888e3b6f9a292c67f804eb5e447cac7fc39b4f5"
+        },
+        {
+          "name": "th04/math/motion.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/math/motion.inc",
+          "size": 652,
+          "sha256": "aeff27c0f0a895ae8e4ae5b9eb144205ccf177b4977293c280bb05e5e06387ee"
+        },
+        {
+          "name": "th04/main/hud/overlay.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/main/hud/overlay.inc",
+          "size": 157,
+          "sha256": "c9509fe54fbbdca948bd8804b80e715e2ba54e7b7583f0d928e913e4b6255c11"
+        },
+        {
+          "name": "th04/end/end.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/end/end.inc",
+          "size": 75,
+          "sha256": "3fd4ad57290e5c6f4ca75d9e48c0be6c01e273a56301e7eb6d7dc636b0a40122"
+        },
+        {
+          "name": "th04/gaiji/gaiji.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th04/gaiji/gaiji.inc",
+          "size": 504,
+          "sha256": "78f2d977c40dfda94124891ad655d5ff25cc5af5bcaac74262abaa415cd784ed"
+        },
+        {
+          "name": "th03/gaiji/bar.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th03/gaiji/bar.inc",
+          "size": 305,
+          "sha256": "7f53ebc6d56aa7564f6f16470fd0d1bc539916ea6e1da6ee37c11ac9c4dd1839"
+        },
+        {
+          "name": "th02/gaiji/boldfont.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/gaiji/boldfont.inc",
+          "size": 494,
+          "sha256": "638cbdfde9f7cf7d96d33c1841b1081ec04e86c4cbd9b6b56c18503141bb9779"
+        },
+        {
+          "name": "th02/v_colors.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th02/v_colors.inc",
+          "size": 13,
+          "sha256": "a758e8c3cfbf15812e93708e226ed7ff8ffba16e65be9c122bc8fdf97498169f"
+        },
+        {
+          "name": "libs/master.lib/bfnt_entry_pat.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfnt_entry_pat.asm",
+          "size": 4168,
+          "sha256": "c8f5d19c2fc6008b4a8043b888f399724b14359799718fab57bbd6baa99cd413"
+        },
+        {
+          "name": "libs/master.lib/bfnt_header_read.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfnt_header_read.asm",
+          "size": 1531,
+          "sha256": "b9d78de5498b6adb53a86f8833e548d37113bf717db5db542d5ed40501961d65"
+        },
+        {
+          "name": "libs/master.lib/bfnt_header_analysis.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfnt_header_analysis.asm",
+          "size": 1843,
+          "sha256": "9cf997fbf19c7c9628cb8a8c3108af0c05aeeefe243319057a595032aa1974a9"
+        },
+        {
+          "name": "libs/master.lib/atrtcmod.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/atrtcmod.asm",
+          "size": 4508,
+          "sha256": "30b5097bc326701b3302263ba2400fbdf027d4d07e6eeb87dd521230060234e8"
+        },
+        {
+          "name": "libs/master.lib/bcloser.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bcloser.asm",
+          "size": 874,
+          "sha256": "5a345a8e7c1f6a74c97896f0a81e3f5a2ebb19e6250ce550f74682bd85f7244e"
+        },
+        {
+          "name": "libs/master.lib/bfill.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfill.asm",
+          "size": 1273,
+          "sha256": "a1280f7bcd803d1eea93fed903b2c7ec2cd1963b7ccced5cb6c755d003fdfda4"
+        },
+        {
+          "name": "libs/master.lib/bfnt_palette_set.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfnt_palette_set.asm",
+          "size": 1733,
+          "sha256": "e292593490dcfbb9a0f4f0988a5a08224f490a348c209adc2347e02f2ecbcef7"
+        },
+        {
+          "name": "libs/master.lib/bgetc.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgetc.asm",
+          "size": 938,
+          "sha256": "46e386c45a46eace934bfb1fd37b543d02b58afc616f0dcc7545efa82307a240"
+        },
+        {
+          "name": "libs/master.lib/palette_black_in.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/palette_black_in.asm",
+          "size": 1287,
+          "sha256": "c7407bfb9aabe9a5127a1dc3510779444a3d507eacd9bc2fdfe48ee9cfc2481e"
+        },
+        {
+          "name": "libs/master.lib/palette_black_out.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/palette_black_out.asm",
+          "size": 1191,
+          "sha256": "522eafd6463b52c9893ed7f71d3322a6ca9a5dd7ff32a9265307ba095d0fd54f"
+        },
+        {
+          "name": "libs/master.lib/bopenr.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bopenr.asm",
+          "size": 1527,
+          "sha256": "f20b08ce2e0174e38e3d97621aabcb3a4d83812d714456485945af044e07674e"
+        },
+        {
+          "name": "libs/master.lib/bread.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bread.asm",
+          "size": 1263,
+          "sha256": "ebc390de3abd1308a4fdd8be64c7eeca20ffaa8271cc8c0ce3e5b8a8a539d56e"
+        },
+        {
+          "name": "libs/master.lib/bseek.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bseek.asm",
+          "size": 1281,
+          "sha256": "d3d277008ccd2c6c9b1c0d3a43d7a7a9393f706f963affb7fdd596437c5c1b65"
+        },
+        {
+          "name": "libs/master.lib/bseek_.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bseek_.asm",
+          "size": 1239,
+          "sha256": "7af87d66044c92482b8374227dde8eb0e67f244109f9687204363a36659885b5"
+        },
+        {
+          "name": "libs/master.lib/dos_axdx.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_axdx.asm",
+          "size": 1125,
+          "sha256": "aa359927f77212353bed030739d3b5f9b947a1eb3b3ec2ca91278774ef8046d3"
+        },
+        {
+          "name": "libs/master.lib/dos_keyclear.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_keyclear.asm",
+          "size": 531,
+          "sha256": "9990b11334e91ac14ee91c89a0fb0cfbabccf8512a144425116c3d2d9406d623"
+        },
+        {
+          "name": "libs/master.lib/dos_puts2.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_puts2.asm",
+          "size": 1024,
+          "sha256": "792c712abb39295a61573279e6edb30ae409ebd3ccc07295526b73f55a0bf226"
+        },
+        {
+          "name": "libs/master.lib/dos_read.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_read.asm",
+          "size": 965,
+          "sha256": "0c494af1a97a13fd061998052386be0060e9b45c405a95b5cead2039c1e8a109"
+        },
+        {
+          "name": "libs/master.lib/dos_seek.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_seek.asm",
+          "size": 1102,
+          "sha256": "5ff6cf85625ab5e157609aa1115acdc7c2212927d534c8c3d418873eaebaf2e3"
+        },
+        {
+          "name": "libs/master.lib/dos_setvect.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_setvect.asm",
+          "size": 1520,
+          "sha256": "72c7d13cb301fabdfc698581a34d883bb477515cf4713a14ef815a8e7d08537b"
+        },
+        {
+          "name": "libs/master.lib/egc.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/egc.asm",
+          "size": 2271,
+          "sha256": "4f95898cc37b4ca0fa7879b4f36fdbf0663452ef3175703f225bde9a25f00643"
+        },
+        {
+          "name": "libs/master.lib/file_append.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_append.asm",
+          "size": 1779,
+          "sha256": "0c68713fd2677e8098b5e52332858a4a3d13703500f72bd8a72d321250a90fd9"
+        },
+        {
+          "name": "libs/master.lib/file_close.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_close.asm",
+          "size": 2060,
+          "sha256": "6683a73f10045ed8885962763c92675d73f690c277b3de45168a914c0ab690ed"
+        },
+        {
+          "name": "libs/master.lib/file_create.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_create.asm",
+          "size": 1281,
+          "sha256": "be8bf713d07814d2e7443a118b1758a7f2a8683dbb8c992052c7aaf4a5961330"
+        },
+        {
+          "name": "libs/master.lib/file_exist.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_exist.asm",
+          "size": 1131,
+          "sha256": "82d8b541b6cb72ca1f52cf01369607f5b47375f302848258e0a9a975b92b5ec2"
+        },
+        {
+          "name": "libs/master.lib/file_read.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_read.asm",
+          "size": 2516,
+          "sha256": "a1cade5ba6d3c49f876df11dd94386004508a6e63bc764c4966e88c08f127a31"
+        },
+        {
+          "name": "libs/master.lib/file_ropen.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_ropen.asm",
+          "size": 1367,
+          "sha256": "77259b5a6cb915d6376df836101a0655152cea0166bbc4570dfb0cdd792bf8dc"
+        },
+        {
+          "name": "libs/master.lib/file_seek.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_seek.asm",
+          "size": 1503,
+          "sha256": "4f1d8a008f0fe6f8caa28024ef5efa08d2d8fd0b6d3c4ddd9f47747af9e3a5a3"
+        },
+        {
+          "name": "libs/master.lib/file_write.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/file_write.asm",
+          "size": 2776,
+          "sha256": "77dbd982aaec0e724a5b3e772d014aee6a838321842af67eca8d54d021074e3d"
+        },
+        {
+          "name": "libs/master.lib/dos_close.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_close.asm",
+          "size": 927,
+          "sha256": "406b7438e25866c50fb3fa3e1897bdd9a8722f0d5d4562672c8a32cf3b72cd1c"
+        },
+        {
+          "name": "libs/master.lib/dos_ropen.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_ropen.asm",
+          "size": 1124,
+          "sha256": "b3f23ab1abae22e03aa31e45b1601db3bc276c684272261398a550181998b1a9"
+        },
+        {
+          "name": "libs/master.lib/grcg_byteboxfill_x.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grcg_byteboxfill_x.asm",
+          "size": 2047,
+          "sha256": "b549049f0379a0eab9e8f5d2de0c04946e6454c8edd4ecf87c9f407ca323503b"
+        },
+        {
+          "name": "libs/master.lib/grcg_hline.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grcg_hline.asm",
+          "size": 2363,
+          "sha256": "873c20083cbe4064b8dcd9e1a7c1d0f8c3f0dc756caacc303660639007a788a6"
+        },
+        {
+          "name": "libs/master.lib/grcg_polygon_c.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grcg_polygon_c.asm",
+          "size": 8676,
+          "sha256": "d20153d10ce264eeb89b8124a86f238214aa1152d197e6253503dc35755748ce"
+        },
+        {
+          "name": "libs/master.lib/grcg_setcolor.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grcg_setcolor.asm",
+          "size": 1484,
+          "sha256": "cfc0e194c0b218b76572b57bc1368abfbc5cabf021a35512d4485323933ab09e"
+        },
+        {
+          "name": "libs/master.lib/grcg_vline.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grcg_vline.asm",
+          "size": 2431,
+          "sha256": "942b2e256b8fdec70254dedd5542c8795eb6651c02db76695768ec055daa90e3"
+        },
+        {
+          "name": "libs/master.lib/get_machine_98.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine_98.asm",
+          "size": 3469,
+          "sha256": "d3f85feec5f55075266e44913893feeeb39f548879b164bac66fc040fc039076"
+        },
+        {
+          "name": "libs/master.lib/get_machine_at.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine_at.asm",
+          "size": 8340,
+          "sha256": "50d82edc4af774ea904e8b7fde4fbeeedc46321bff416914651e981eb74508d1"
+        },
+        {
+          "name": "libs/master.lib/get_machine_dosbox.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine_dosbox.asm",
+          "size": 1272,
+          "sha256": "1fac77fcc3f1f2db478aa0465a1c2d0506e3926de2759ffbe7189f04fcdc8098"
+        },
+        {
+          "name": "libs/master.lib/check_machine_fmr.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/check_machine_fmr.asm",
+          "size": 547,
+          "sha256": "130db0bba50cd0adeee3b22a315621f7248fc743586b3da62a80f4812a6f6250"
+        },
+        {
+          "name": "libs/master.lib/get_machine.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine.asm",
+          "size": 2484,
+          "sha256": "b57d8a94cbc1a6d69384e4f78dee58b31faa11a145d1f6f922820f28ecf7a2c5"
+        },
+        {
+          "name": "libs/master.lib/graph_400line.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_400line.asm",
+          "size": 1212,
+          "sha256": "a4cc370c6827cd5f91928d8f1f1dcb49dcb1d582e2dba3e7b6f33b18ea877494"
+        },
+        {
+          "name": "libs/master.lib/graph_clear.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_clear.asm",
+          "size": 1088,
+          "sha256": "90be0ac27c63cf09b7bab977ab3787c5e64ede39d8c86c0393920c82991d7d12"
+        },
+        {
+          "name": "libs/master.lib/graph_copy_page.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_copy_page.asm",
+          "size": 1886,
+          "sha256": "6e99953780d53444267c34fa48331ccf3535f0d4e4b4b7dc9c32291806e271dc"
+        },
+        {
+          "name": "libs/master.lib/graph_extmode.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_extmode.asm",
+          "size": 2463,
+          "sha256": "3e1df894829c07cba4b59b6fe08c631e670312b42a60ae790faa5c4cd0f1d970"
+        },
+        {
+          "name": "libs/master.lib/graph_pi_free.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_pi_free.asm",
+          "size": 1627,
+          "sha256": "1fb1f9568866bfaae7f5c91e4ab986e147d87df5df639322582c0ea55eed0591"
+        },
+        {
+          "name": "libs/master.lib/graph_pi_load_pack.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_pi_load_pack.asm",
+          "size": 15614,
+          "sha256": "291fb72bb0d3af3cab081913f39d23b084f15958aa362f205128f73df3cfefc0"
+        },
+        {
+          "name": "libs/master.lib/graph_show.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_show.asm",
+          "size": 527,
+          "sha256": "6056411cf8d4c84cc236c9ae7de7f4776aeb908bea03d991258b4a7f79c5c5b3"
+        },
+        {
+          "name": "libs/master.lib/graph_start.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_start.asm",
+          "size": 1096,
+          "sha256": "8f5debbe9819255f8d496b4b413f40f12599dbb7e57665e35955329a3e41d6d2"
+        },
+        {
+          "name": "libs/master.lib/js_end.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/js_end.asm",
+          "size": 631,
+          "sha256": "6f0cefb45506e97123a6ce1530b76b832935e324c6c6d7373e9a315e7ea04d15"
+        },
+        {
+          "name": "libs/master.lib/keybeep.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/keybeep.asm",
+          "size": 263,
+          "sha256": "c4fc8f114b2f3f561066db4a0736bad101681df738b8a0492b76a3a854587e07"
+        },
+        {
+          "name": "libs/master.lib/make_linework.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/make_linework.asm",
+          "size": 2159,
+          "sha256": "1f708630b586f25309b6e11b3921f0373af495d9fb44b217d78cecdc7f815752"
+        },
+        {
+          "name": "libs/master.lib/palette_init.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/palette_init.asm",
+          "size": 1101,
+          "sha256": "ff8b1966e0a0c08535ba71fc04a82765d332fe59c7420f7ee8fe01d9040c3a41"
+        },
+        {
+          "name": "libs/master.lib/palette_show.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/palette_show.asm",
+          "size": 4098,
+          "sha256": "c40574ccfd1c224e9e4562bc4cc6bb35243cb9970a4c832dd7c3e982a7425c30"
+        },
+        {
+          "name": "libs/master.lib/pfclose.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfclose.asm",
+          "size": 879,
+          "sha256": "c554e6d0649207a339cf523b144f59afc4ccf999f6a42cffedc9422b8c2f179f"
+        },
+        {
+          "name": "libs/master.lib/pfgetc.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfgetc.asm",
+          "size": 3063,
+          "sha256": "119b9827ce6886c77449fe77025fab149542d8916f9edde862562954a6f3c8bd"
+        },
+        {
+          "name": "libs/master.lib/pfread.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfread.asm",
+          "size": 1395,
+          "sha256": "20d594a2355a5380719cee2f2b19229ae072b02afe470e57115c0a34c3580894"
+        },
+        {
+          "name": "libs/master.lib/pfrewind.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfrewind.asm",
+          "size": 1151,
+          "sha256": "ff21821866cc51ce3fb48503458d75ce90b1480784312d43875543a1175c5f5a"
+        },
+        {
+          "name": "libs/master.lib/pfseek.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfseek.asm",
+          "size": 1391,
+          "sha256": "30668e2fb6ac1c9ffe0258a6bd50cdbd4a2a527d9beaf634c99d7ce4cb89e6d4"
+        },
+        {
+          "name": "libs/master.lib/random.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/random.asm",
+          "size": 1445,
+          "sha256": "a2759dae92008b72845c67e6caa183d54c22f9b2c8199de2101b82daf35aab82"
+        },
+        {
+          "name": "libs/master.lib/rottbl.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/rottbl.asm",
+          "size": 3219,
+          "sha256": "56a671daeada6846e6ade5b6a68f4caa6dcc1565c284732a9a5c95616af81ba1"
+        },
+        {
+          "name": "libs/master.lib/smem_release.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/smem_release.asm",
+          "size": 589,
+          "sha256": "e9e750705de05e3aa6114a92de30f73509479fb526d844ec8fd29eb6c13137f3"
+        },
+        {
+          "name": "libs/master.lib/smem_wget.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/smem_wget.asm",
+          "size": 1335,
+          "sha256": "427339049dedbbdafbeaa5092d8f620cdf94b915841b78321ebb6c68ad7701c0"
+        },
+        {
+          "name": "libs/master.lib/soundio.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/soundio.asm",
+          "size": 1284,
+          "sha256": "69a4d31369cf05261fb290cb2075c2e2f3f511151ee23ad1e9540bed33d5d69c"
+        },
+        {
+          "name": "libs/master.lib/text_clear.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/text_clear.asm",
+          "size": 705,
+          "sha256": "9524152bd1e459e9282f6d45bd1c9f72ffc566aab35cb141baecf3db7268c9db"
+        },
+        {
+          "name": "libs/master.lib/txesc.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/txesc.asm",
+          "size": 1794,
+          "sha256": "dc9d8ddbc8a701e85860eb36d11b9ab00f036ebace28e626725a226fc126b13c"
+        },
+        {
+          "name": "libs/master.lib/vsync.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/vsync.asm",
+          "size": 4505,
+          "sha256": "5d3c205d6d6ff7d9c0f8079200624ff1bfdf4f785e7a5b7c501c0b2269dafed7"
+        },
+        {
+          "name": "libs/master.lib/vsync_wait.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/vsync_wait.asm",
+          "size": 1209,
+          "sha256": "2186df31026448095f165528d8cbc3c653dbbc5f4be90b27bdd3acee95d04b2b"
+        },
+        {
+          "name": "libs/master.lib/hmem_lallocate.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/hmem_lallocate.asm",
+          "size": 909,
+          "sha256": "bf8fc5e2b4aebe2a4d954dae4491ebb2d735caca94fa48cd728eaa99f6c0a680"
+        },
+        {
+          "name": "libs/master.lib/mem_assign_dos.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/mem_assign_dos.asm",
+          "size": 760,
+          "sha256": "5d53f5d5ec38727649f743c8bd12a976c805a039c215d68aa493105371f66465"
+        },
+        {
+          "name": "libs/master.lib/mem_assign.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/mem_assign.asm",
+          "size": 1297,
+          "sha256": "1a82490706e60c785cf990c6bdad0d6a4fa2994d80d3446cd8592343e64b0e49"
+        },
+        {
+          "name": "libs/master.lib/memheap.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/memheap.asm",
+          "size": 8276,
+          "sha256": "f82f4a8f65caee760efa0cf3e4aae1a53b1dbdd9f42994da1a7a96b92a297773"
+        },
+        {
+          "name": "libs/master.lib/mem_unassign.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/mem_unassign.asm",
+          "size": 1476,
+          "sha256": "79b849504ea1c66e774e5e28bb0c218e5dcbbd7517b61e1388ff4018e017a225"
+        },
+        {
+          "name": "libs/master.lib/super_free.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_free.asm",
+          "size": 1181,
+          "sha256": "a1e83689386210f935452bacb1a9f64c16bccfa31a84e6958f37ab28b644f092"
+        },
+        {
+          "name": "libs/master.lib/super_entry_pat.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_entry_pat.asm",
+          "size": 3623,
+          "sha256": "b648deee82e0579c66be92d4ff595465401b8d130408c64c9724af5bed69df7e"
+        },
+        {
+          "name": "libs/master.lib/super_entry_at.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_entry_at.asm",
+          "size": 2557,
+          "sha256": "a27d0851c372b66a63e1968550135ae5de4d3487ce7638f4d079b7711405df94"
+        },
+        {
+          "name": "libs/master.lib/super_entry_bfnt.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_entry_bfnt.asm",
+          "size": 2166,
+          "sha256": "8098efc312d0d217bee12402428a9624186725f4413bd5d8aef67f0c6fdd891d"
+        },
+        {
+          "name": "libs/master.lib/super_cancel_pat.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_cancel_pat.asm",
+          "size": 1575,
+          "sha256": "59a3856deb289b9b52c724e6be1f5c2db338e59883894f30af21c1667d8fda97"
+        },
+        {
+          "name": "libs/master.lib/super_put_rect.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_put_rect.asm",
+          "size": 7064,
+          "sha256": "d4ae2f95bdce43a7075f97c204fc88eb8c70ea6a27ce34635aa3ad1c55a72200"
+        },
+        {
+          "name": "libs/master.lib/super_put.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_put.asm",
+          "size": 5680,
+          "sha256": "97c50aafee01cff2c59357f2a215b59a1bb50cea88f94e2ee370a49764311ffc"
+        },
+        {
+          "name": "libs/master.lib/respal_exist.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/respal_exist.asm",
+          "size": 3035,
+          "sha256": "d1b9f19417ce514cf88edf2bf8260ccfc547a1ef29027607937f19e7579cbfed"
+        },
+        {
+          "name": "libs/master.lib/respal_free.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/respal_free.asm",
+          "size": 805,
+          "sha256": "a72c19e1e6d90c26e77d1db2986cffb7f3977ba701ff8e4d13dfd9b72bc7f430"
+        },
+        {
+          "name": "libs/master.lib/js_start.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/js_start.asm",
+          "size": 1485,
+          "sha256": "9108253a1ce57bab97b64f9504196dc5a0d2d510a2d121f94a71f0698063aa03"
+        },
+        {
+          "name": "libs/master.lib/draw_trapezoid.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/draw_trapezoid.asm",
+          "size": 5297,
+          "sha256": "63ddf9985b043935610c7c89c4defacc1605e900e055a1f43b2606421d44466e"
+        },
+        {
+          "name": "libs/master.lib/js_sense.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/js_sense.asm",
+          "size": 2294,
+          "sha256": "6f9c91f30d50cfd75f9b6025737cf3f5edefe9a38fb4f90cc447b11f4e9e4456"
+        },
+        {
+          "name": "libs/master.lib/bgm_bell_org.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_bell_org.asm",
+          "size": 1149,
+          "sha256": "3145d261f18831c0126b639afa38808834c7c9152fbef338e11c36c956a909ad"
+        },
+        {
+          "name": "libs/master.lib/bgm_mget.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_mget.asm",
+          "size": 4151,
+          "sha256": "2c9a190477967e4fddc3dcdd169e9d11435ddf3ee160300ff3c0b76a2879f517"
+        },
+        {
+          "name": "libs/master.lib/bgm_read_sdata.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_read_sdata.asm",
+          "size": 4241,
+          "sha256": "ef4b9527ac2310c58139a8b1bcdaf322ab495b095e9b854bd9fefc752302d223"
+        },
+        {
+          "name": "libs/master.lib/bgm_timer.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_timer.asm",
+          "size": 1954,
+          "sha256": "3957067e153629f5440e6f93dd84b870b8f99c6918e6f5697c55a65b7a469343"
+        },
+        {
+          "name": "libs/master.lib/bgm_pinit.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_pinit.asm",
+          "size": 1274,
+          "sha256": "d8691c3d46886a1f024f32703612f78e49e4ffa8a54901947af08788fa1aeff9"
+        },
+        {
+          "name": "libs/master.lib/bgm_timerhook.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_timerhook.asm",
+          "size": 2494,
+          "sha256": "0a9a550fbbd608b255c03af7ac6991e9c6c3ba3412539327e2e1cfd26b6fdc7b"
+        },
+        {
+          "name": "libs/master.lib/bgm_play.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_play.asm",
+          "size": 5092,
+          "sha256": "91492e904472b2b2a8671f0a5407cd99bff173faf8e7e514e4de5d6090950138"
+        },
+        {
+          "name": "libs/master.lib/bgm_sound.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_sound.asm",
+          "size": 1409,
+          "sha256": "c49a57881212e3aef8d02173ca1920b330ec213853324cb3bae5a157d9511da1"
+        },
+        {
+          "name": "libs/master.lib/bgm_effect_sound.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_effect_sound.asm",
+          "size": 2497,
+          "sha256": "00a95406c3d715e9a4f2de08351f3830852faebb1123a321d8d02c23ae7341f3"
+        },
+        {
+          "name": "libs/master.lib/bgm_stop_play.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_stop_play.asm",
+          "size": 888,
+          "sha256": "c216798e0f812440613dfd35e7b1bd196cc07d4843240352e3a7b694549fbc79"
+        },
+        {
+          "name": "libs/master.lib/bgm_set_tempo.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_set_tempo.asm",
+          "size": 1100,
+          "sha256": "3530f2294b4fb80d970b8070b4be7a1c1cb19aec193ba28fcaf97ecef265627c"
+        },
+        {
+          "name": "libs/master.lib/bgm_init_finish.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_init_finish.asm",
+          "size": 5870,
+          "sha256": "757fc0bcfe72b78cbca8fe9ee1fe99b2c4251805371ed0d097b09ca0fa76aff3"
+        },
+        {
+          "name": "libs/master.lib/bgm_stop_sound.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_stop_sound.asm",
+          "size": 897,
+          "sha256": "0500a903d67ef158f09813d6225fd354cec4bde6c9ad83d403f9cd8a5aa028ce"
+        },
+        {
+          "name": "libs/master.lib/graph_pack_put_8_noclip.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_pack_put_8_noclip.asm",
+          "size": 3344,
+          "sha256": "419eb81126c20a665bdd61241f1e2fdf0f99c6a9273a3abf615befde57b40948"
+        },
+        {
+          "name": "libs/master.lib/graph_gaiji_puts.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_gaiji_puts.asm",
+          "size": 2736,
+          "sha256": "43b76948a66fe8e0637bce04900e553f264ef41217764abe04457bfed8ba8122"
+        },
+        {
+          "name": "libs/master.lib/graph_gaiji_putc.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/graph_gaiji_putc.asm",
+          "size": 2338,
+          "sha256": "70c6a2a0bf6497ae04bc8729d7363bf1a1f7b47ec2eed6d46d59525e80ccfcb0"
+        },
+        {
+          "name": "libs/master.lib/pfint21.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfint21.asm",
+          "size": 9708,
+          "sha256": "8890dfae0e43677fa52dc0c2892def28214eb5c7cf9748f6c201410b19b89c8e"
+        },
+        {
+          "name": "th03/formats/pfopen.asm",
+          "file": ".analysis/builds/op-calibration-a/source/th03/formats/pfopen.asm",
+          "size": 5188,
+          "sha256": "913ba45575ed3578efc959a9d3383b2407edb1042d856651cda59b5e701f70ab"
+        },
+        {
+          "name": "libs/master.lib/pf_str_ieq.asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pf_str_ieq.asm",
+          "size": 1194,
+          "sha256": "d25abb53eb1b9b689af519ae7526595d76c86b4362dd2e5ac146cd2165283ac8"
+        },
+        {
+          "name": "th04/zunsoft.asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/zunsoft.asm",
+          "size": 10418,
+          "sha256": "f9dc8b94e98521d54bab6cde88e540c021a33bd887234a5ba66e71acd9dcfdec"
+        },
+        {
+          "name": "libs/master.lib/atrtcmod[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/atrtcmod[data].asm",
+          "size": 76,
+          "sha256": "07a82376bf0afb34f933139908003d5dc2803c20516284b124bbdc934c486f4b"
+        },
+        {
+          "name": "libs/master.lib/bfnt_id[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bfnt_id[data].asm",
+          "size": 141,
+          "sha256": "c64cc4bf2c38cac7b80cfff5a3c1edccd0db14ca41534d416492d4e817b0f4bf"
+        },
+        {
+          "name": "libs/master.lib/clip[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/clip[data].asm",
+          "size": 640,
+          "sha256": "63cfacbc52f9eee28f6733adc0eb029d6ee612245dd6f17a09f4ebef70e6e656"
+        },
+        {
+          "name": "libs/master.lib/edges[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/edges[data].asm",
+          "size": 669,
+          "sha256": "3bdbd15acdedb8eb688c116a8a34d862762345d50acb0f99783ef5f38ab01cb6"
+        },
+        {
+          "name": "libs/master.lib/fil[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/fil[data].asm",
+          "size": 173,
+          "sha256": "a74c17c2373a2a672c7b441029fe63db93ae6e37b3cad170ef1658506785eae7"
+        },
+        {
+          "name": "libs/master.lib/dos_ropen[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/dos_ropen[data].asm",
+          "size": 96,
+          "sha256": "a49b4fc258fdd23c3003fb450915b58bbc73d3b81f5fdf439045289881f8baaa"
+        },
+        {
+          "name": "libs/master.lib/get_machine_98[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine_98[data].asm",
+          "size": 288,
+          "sha256": "a4045e5de7828c2bbeecd5f81f51b887d5c0ddd1843ccb666f1fcc8e497c809c"
+        },
+        {
+          "name": "libs/master.lib/get_machine_at[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/get_machine_at[data].asm",
+          "size": 150,
+          "sha256": "b3a3d88062b7cade4c7e801bdccc991644a988754c4e8c8c34176f91d08f489f"
+        },
+        {
+          "name": "libs/master.lib/grp[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/grp[data].asm",
+          "size": 1646,
+          "sha256": "7e11161dc5fbe9ff4ce2f8ec79d63b3b73a4a46c6ba43cd6dac7db8f263c9ff8"
+        },
+        {
+          "name": "libs/master.lib/js[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/js[data].asm",
+          "size": 290,
+          "sha256": "c4039f5941b89b6fe80e22442607bef52b533d71fc97e79e8f9f73c84c3fca03"
+        },
+        {
+          "name": "libs/master.lib/machine[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/machine[data].asm",
+          "size": 272,
+          "sha256": "472efe4716c282b8c17aa4532ea0b5d15a7c5d477a5bafd83f7eb7f73eedf81c"
+        },
+        {
+          "name": "libs/master.lib/pal[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pal[data].asm",
+          "size": 799,
+          "sha256": "fc37920a446ba76a9e281624a8fbbf5d78153e281e043645998f5747d162c770"
+        },
+        {
+          "name": "libs/master.lib/pf[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pf[data].asm",
+          "size": 520,
+          "sha256": "737440cb99b76eee9b140ad35a5752bed1638de880eee687ebffddf737f7840e"
+        },
+        {
+          "name": "libs/master.lib/rand[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/rand[data].asm",
+          "size": 78,
+          "sha256": "474e83952040eb1b4bde984e694607ed5285820b4585980ca2fbed1fc88cc8b1"
+        },
+        {
+          "name": "libs/master.lib/sin8[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/sin8[data].asm",
+          "size": 2149,
+          "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+        },
+        {
+          "name": "libs/master.lib/tx[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/tx[data].asm",
+          "size": 840,
+          "sha256": "c0d64eefc6a2af118d9f05774629304e75ff5d252daff8ec4a64caf889ccd8a9"
+        },
+        {
+          "name": "libs/master.lib/vs[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/vs[data].asm",
+          "size": 247,
+          "sha256": "18bd5d9b8ffcd7353a2dea9f8ae4dc69fa34b06fa9fc32703fc1d0724c4e0357"
+        },
+        {
+          "name": "libs/master.lib/wordmask[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/wordmask[data].asm",
+          "size": 107,
+          "sha256": "d7463ef1babcc68dcdb72f1126f08544d279f95484c31244c1ae645065639b6a"
+        },
+        {
+          "name": "libs/master.lib/mem[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/mem[data].asm",
+          "size": 376,
+          "sha256": "9c13a4f793a8b7602d55be68d1a547d91251ab0d4a7f97f73aff2077bb9446ad"
+        },
+        {
+          "name": "libs/master.lib/super_entry_bfnt[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_entry_bfnt[data].asm",
+          "size": 24,
+          "sha256": "1784371444ebc64b36a866be947926e9f561a004d4735109dc874211b8ca135e"
+        },
+        {
+          "name": "libs/master.lib/superpa[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/superpa[data].asm",
+          "size": 255,
+          "sha256": "82334872155ef19c42919ce0964df062d5bb65587ebdc13dd1c069d3684f147f"
+        },
+        {
+          "name": "libs/master.lib/respal_exist[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/respal_exist[data].asm",
+          "size": 59,
+          "sha256": "b5dd1aed31bb957c366a5c4d7a18c200905e92c6f66162273ea3476cde64c8ea"
+        },
+        {
+          "name": "libs/master.lib/draw_trapezoid[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/draw_trapezoid[data].asm",
+          "size": 320,
+          "sha256": "b4648b6033100759d6fc61b1fe0164de0d4c387c76d7b5079ab0925681fc396d"
+        },
+        {
+          "name": "libs/master.lib/bgm_timerhook[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm_timerhook[data].asm",
+          "size": 28,
+          "sha256": "1517daea06302990d04e79121dafbd820e90d7583ab72929ce15dd1624091141"
+        },
+        {
+          "name": "libs/master.lib/bgm[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm[data].asm",
+          "size": 583,
+          "sha256": "d57a5573b5a8673102eaab419268005c4337fae390357cc9302953e1dce6bafd"
+        },
+        {
+          "name": "th04/snd/se_priority[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/snd/se_priority[data].asm",
+          "size": 406,
+          "sha256": "78348fe0f708eaa9e6e59a02dc2944aa5f52aac144e7e8e51e814acc70a55804"
+        },
+        {
+          "name": "th04/zunsoft[data].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/zunsoft[data].asm",
+          "size": 144,
+          "sha256": "5d9abaf432b423855ab8bf4ec803bef0e721feaf1e908fefcdfd0f506ffaa758"
+        },
+        {
+          "name": "libs/master.lib/clip[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/clip[bss].asm",
+          "size": 162,
+          "sha256": "70a9d992a29548693deb0c623d325dfa83bb2980fb1ae3f6dbb115fe20546eef"
+        },
+        {
+          "name": "libs/master.lib/fil[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/fil[bss].asm",
+          "size": 582,
+          "sha256": "34e33ee73a66b712bcdb376bbc27c369c59dfbff3ceab28c6ef30aa6dae8a545"
+        },
+        {
+          "name": "libs/master.lib/js[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/js[bss].asm",
+          "size": 63,
+          "sha256": "4088af4fb69f18082eae94de0f8ce0777b854d1227be88f1f1fc787aa956ef07"
+        },
+        {
+          "name": "libs/master.lib/pal[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pal[bss].asm",
+          "size": 74,
+          "sha256": "fe7dd64e247b731ae10ae598ff3402c68cd7f820ce4383a113bc184b632c3f74"
+        },
+        {
+          "name": "libs/master.lib/vs[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/vs[bss].asm",
+          "size": 270,
+          "sha256": "f324dc06b9c9476f1ce37ee8124d17182efa2f42fc72030e4f12caf60ccd2abb"
+        },
+        {
+          "name": "libs/master.lib/vsync[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/vsync[bss].asm",
+          "size": 50,
+          "sha256": "aa22c000d29d81016c0018b550b04eaeb4464e971db9bb15057615b1155a8076"
+        },
+        {
+          "name": "libs/master.lib/mem[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/mem[bss].asm",
+          "size": 302,
+          "sha256": "b54b999b1e2dfe82cfd79e8d16b8748a861cabc2fde435d43e9fdd3f284b26f1"
+        },
+        {
+          "name": "libs/master.lib/superpa[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/superpa[bss].asm",
+          "size": 198,
+          "sha256": "0e879a7a1faf48fe4337d90fe825f198e14e1ab010e9ca26247d1a6f3a9b3bf8"
+        },
+        {
+          "name": "libs/master.lib/super_put_rect[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/super_put_rect[bss].asm",
+          "size": 15,
+          "sha256": "794ceeef9a88b4f0f21047ed0ea8cf55aa3de3b034c4ba627085a1ca1050b9c3"
+        },
+        {
+          "name": "th03/formats/hfliplut[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th03/formats/hfliplut[bss].asm",
+          "size": 46,
+          "sha256": "7ce20d5b7a6b5da8064c992c97396f8f6ca4de16b627d719a2f23d74aac1520f"
+        },
+        {
+          "name": "th04/snd/interrupt[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/snd/interrupt[bss].asm",
+          "size": 100,
+          "sha256": "25d1a31efc69a94b1144eee94a993f910b94c1f5b66b9292b313151381045c46"
+        },
+        {
+          "name": "libs/master.lib/bgm[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/bgm[bss].asm",
+          "size": 191,
+          "sha256": "ef07176bc35a2d7d0e6b91be8d011d40765e11b0609232b5fd5d735c5e120d1c"
+        },
+        {
+          "name": "th05/op/piano[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th05/op/piano[bss].asm",
+          "size": 179,
+          "sha256": "9e8b672fadc4a4be174b149e5f54121d25cb99de650d70866e70e9b34695244a"
+        },
+        {
+          "name": "th05/op/piano.inc",
+          "file": ".analysis/builds/op-calibration-a/source/th05/op/piano.inc",
+          "size": 69,
+          "sha256": "bb74d0deafeba6476160867d001eed828c77c3ea8fc2ddce4e964527ebcdafa5"
+        },
+        {
+          "name": "th02/snd/load[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th02/snd/load[bss].asm",
+          "size": 109,
+          "sha256": "22b6accc206c5e8f78afff0e75b93f4ba7ecd116250f71c24631ec8e9c988a8c"
+        },
+        {
+          "name": "th05/formats/pi_put_masked[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th05/formats/pi_put_masked[bss].asm",
+          "size": 130,
+          "sha256": "e988486cc3a9da301cffae01fe2fe94ecbbd0806102c9e86c35fae42fb5dae6a"
+        },
+        {
+          "name": "th05/formats/pi_headers[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th05/formats/pi_headers[bss].asm",
+          "size": 53,
+          "sha256": "6a27e5144400ae6af2521ca14e5065ee4db692bc6a99edf39fee1ed1810cc626"
+        },
+        {
+          "name": "th04/hardware/input[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/hardware/input[bss].asm",
+          "size": 146,
+          "sha256": "468b85101c7588c1adea9ffb8ff304343828c683a4bde7fbd31bf5b93f7a8235"
+        },
+        {
+          "name": "th04/formats/cdg[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/formats/cdg[bss].asm",
+          "size": 98,
+          "sha256": "50603e350e7742ba816a46fb7b0e2e0eeb5f8959fb116d69aaa7165f0002cd37"
+        },
+        {
+          "name": "th03/formats/cdg[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th03/formats/cdg[bss].asm",
+          "size": 93,
+          "sha256": "2c44eff8bce90d277f350f0a1bec5a1de30c4044c638fee12d95365971f10e12"
+        },
+        {
+          "name": "libs/master.lib/pfint21[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/pfint21[bss].asm",
+          "size": 186,
+          "sha256": "72e679dc2f05eae6accb6cb9bfde62780cbe53225f4465bb0f1f6beb8515f27a"
+        },
+        {
+          "name": "th04/zunsoft[bss].asm",
+          "file": ".analysis/builds/op-calibration-a/source/th04/zunsoft[bss].asm",
+          "size": 460,
+          "sha256": "71b1f2d96bd6f208df07cc089a400185b8c1fb9571de9ebe55f09e686b105cef"
+        }
+      ],
+      "actual_retained_link_producers": 1,
+      "actual_OMF_module": "th05_op.asm"
+    },
+    "maine": {
+      "artifact": "th05-maine",
+      "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+      "target_payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "inputs": {
+        "calibration_exe": {
+          "file": ".analysis/builds/maine-calibration-a/source/bin/th05/maine.exe",
+          "size": 77422,
+          "sha256": "60352c7ebb454be48da8516d5647df6d757e0f2d5a6262dbb678167cb925f1a4"
+        },
+        "calibration_map": {
+          "file": ".analysis/builds/maine-calibration-a/source/obj/th05/maine.map",
+          "size": 69458,
+          "sha256": "27bece1e57bc7c11e7dc5a949baeacb10cd88391d581130c250616ecfaaa5277"
+        },
+        "calibration_object": {
+          "file": ".analysis/builds/maine-calibration-a/source/obj/th05/mainem.obj",
+          "size": 32888,
+          "sha256": "99de745399982cb12f50b11ba3f9570b6cbf96ca0f5805f1af71ab4932922f00"
+        }
+      },
+      "source_root": ".analysis/builds/maine-calibration-a/source",
+      "frozen_source_closure": [
+        {
+          "name": "th05_maine_master.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th05_maine_master.asm",
+          "size": 7002,
+          "sha256": "91e606689819cb51a8b505eda88bbb2656e71e5b38216fa8942c5e5237d66fb6"
+        },
+        {
+          "name": "ReC98.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/ReC98.inc",
+          "size": 1128,
+          "sha256": "62ecdf5ac2486f3e8f3134254f85caec436e8b207195781f8f72be9053058246"
+        },
+        {
+          "name": "libs/master.lib/func.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/func.inc",
+          "size": 3438,
+          "sha256": "6fc2b5ab1f5ce7e4b64675cb8c6b967227418eebff9cd81e82de3721cac4a67f"
+        },
+        {
+          "name": "libs/master.lib/super.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super.inc",
+          "size": 962,
+          "sha256": "c7710b20c2f6bee86c55097dd2c26cf4be2fd6097439570a5b0c77fa5ffac4ae"
+        },
+        {
+          "name": "libs/master.lib/bgm.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm.inc",
+          "size": 4254,
+          "sha256": "070c886cef0b9c70121e81a9c8c99c6b17386da4a8f9dff4c4f8e9348db3636f"
+        },
+        {
+          "name": "libs/master.lib/pf.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pf.inc",
+          "size": 3527,
+          "sha256": "6c7f47e4fc69994109ed6ca077a9cdc6f34adba05d5d0672186865e5262285ad"
+        },
+        {
+          "name": "libs/master.lib/clip.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/clip.inc",
+          "size": 537,
+          "sha256": "334647dfba90c582f2607bb6f6d6565e9e15dce0220ab8acbd1b23e4331b2462"
+        },
+        {
+          "name": "libs/master.lib/macros.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/macros.inc",
+          "size": 4065,
+          "sha256": "6e38bd2a6af911890250376d7e3d87343a6e726eced227958669d6f420427ae9"
+        },
+        {
+          "name": "libs/kaja/kaja.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/kaja/kaja.inc",
+          "size": 5101,
+          "sha256": "ae6bb3734914fcc651568f619126a242af3631556073a0bcb42f61bf13d95958"
+        },
+        {
+          "name": "twobyte.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/twobyte.inc",
+          "size": 49,
+          "sha256": "ebe96bde9fee9c1517b9caa12b37b91f25f787414898f457c3551f84ed8796e7"
+        },
+        {
+          "name": "pc98.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/pc98.inc",
+          "size": 653,
+          "sha256": "498e31e6d35ace5c35ef50408ac7a29f2ba2ef76858a5b779d5cfa212bfb6660"
+        },
+        {
+          "name": "th01/hardware/egc.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/th01/hardware/egc.inc",
+          "size": 1064,
+          "sha256": "29e30717870bb69635bf082114ccb4a0e9795803c80adbd1283449f80e32a188"
+        },
+        {
+          "name": "th02/formats/pi_slots.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/th02/formats/pi_slots.inc",
+          "size": 291,
+          "sha256": "b3a234a3e292c1171f86ac24d9bb8ba8c47ffb938be8450168f7fc91148f8187"
+        },
+        {
+          "name": "libs/master.lib/bfnt_entry_pat.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfnt_entry_pat.asm",
+          "size": 4168,
+          "sha256": "c8f5d19c2fc6008b4a8043b888f399724b14359799718fab57bbd6baa99cd413"
+        },
+        {
+          "name": "libs/master.lib/bfnt_header_read.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfnt_header_read.asm",
+          "size": 1531,
+          "sha256": "b9d78de5498b6adb53a86f8833e548d37113bf717db5db542d5ed40501961d65"
+        },
+        {
+          "name": "libs/master.lib/bfnt_header_analysis.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfnt_header_analysis.asm",
+          "size": 1843,
+          "sha256": "9cf997fbf19c7c9628cb8a8c3108af0c05aeeefe243319057a595032aa1974a9"
+        },
+        {
+          "name": "libs/master.lib/atrtcmod.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/atrtcmod.asm",
+          "size": 4508,
+          "sha256": "30b5097bc326701b3302263ba2400fbdf027d4d07e6eeb87dd521230060234e8"
+        },
+        {
+          "name": "libs/master.lib/bcloser.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bcloser.asm",
+          "size": 874,
+          "sha256": "5a345a8e7c1f6a74c97896f0a81e3f5a2ebb19e6250ce550f74682bd85f7244e"
+        },
+        {
+          "name": "libs/master.lib/bfill.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfill.asm",
+          "size": 1273,
+          "sha256": "a1280f7bcd803d1eea93fed903b2c7ec2cd1963b7ccced5cb6c755d003fdfda4"
+        },
+        {
+          "name": "libs/master.lib/bfnt_palette_set.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfnt_palette_set.asm",
+          "size": 1733,
+          "sha256": "e292593490dcfbb9a0f4f0988a5a08224f490a348c209adc2347e02f2ecbcef7"
+        },
+        {
+          "name": "libs/master.lib/bgetc.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgetc.asm",
+          "size": 938,
+          "sha256": "46e386c45a46eace934bfb1fd37b543d02b58afc616f0dcc7545efa82307a240"
+        },
+        {
+          "name": "libs/master.lib/palette_black_in.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/palette_black_in.asm",
+          "size": 1287,
+          "sha256": "c7407bfb9aabe9a5127a1dc3510779444a3d507eacd9bc2fdfe48ee9cfc2481e"
+        },
+        {
+          "name": "libs/master.lib/palette_black_out.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/palette_black_out.asm",
+          "size": 1191,
+          "sha256": "522eafd6463b52c9893ed7f71d3322a6ca9a5dd7ff32a9265307ba095d0fd54f"
+        },
+        {
+          "name": "libs/master.lib/bopenr.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bopenr.asm",
+          "size": 1527,
+          "sha256": "f20b08ce2e0174e38e3d97621aabcb3a4d83812d714456485945af044e07674e"
+        },
+        {
+          "name": "libs/master.lib/bread.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bread.asm",
+          "size": 1263,
+          "sha256": "ebc390de3abd1308a4fdd8be64c7eeca20ffaa8271cc8c0ce3e5b8a8a539d56e"
+        },
+        {
+          "name": "libs/master.lib/bseek.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bseek.asm",
+          "size": 1281,
+          "sha256": "d3d277008ccd2c6c9b1c0d3a43d7a7a9393f706f963affb7fdd596437c5c1b65"
+        },
+        {
+          "name": "libs/master.lib/bseek_.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bseek_.asm",
+          "size": 1239,
+          "sha256": "7af87d66044c92482b8374227dde8eb0e67f244109f9687204363a36659885b5"
+        },
+        {
+          "name": "libs/master.lib/dos_axdx.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_axdx.asm",
+          "size": 1125,
+          "sha256": "aa359927f77212353bed030739d3b5f9b947a1eb3b3ec2ca91278774ef8046d3"
+        },
+        {
+          "name": "libs/master.lib/dos_filesize.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_filesize.asm",
+          "size": 1297,
+          "sha256": "a83fbab8da462ab430c569d217d90f35ede41f7d0279fd8c65cb63ad55603cb7"
+        },
+        {
+          "name": "libs/master.lib/dos_keyclear.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_keyclear.asm",
+          "size": 531,
+          "sha256": "9990b11334e91ac14ee91c89a0fb0cfbabccf8512a144425116c3d2d9406d623"
+        },
+        {
+          "name": "libs/master.lib/dos_read.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_read.asm",
+          "size": 965,
+          "sha256": "0c494af1a97a13fd061998052386be0060e9b45c405a95b5cead2039c1e8a109"
+        },
+        {
+          "name": "libs/master.lib/dos_seek.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_seek.asm",
+          "size": 1102,
+          "sha256": "5ff6cf85625ab5e157609aa1115acdc7c2212927d534c8c3d418873eaebaf2e3"
+        },
+        {
+          "name": "libs/master.lib/dos_setvect.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_setvect.asm",
+          "size": 1520,
+          "sha256": "72c7d13cb301fabdfc698581a34d883bb477515cf4713a14ef815a8e7d08537b"
+        },
+        {
+          "name": "libs/master.lib/egc.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/egc.asm",
+          "size": 2271,
+          "sha256": "4f95898cc37b4ca0fa7879b4f36fdbf0663452ef3175703f225bde9a25f00643"
+        },
+        {
+          "name": "libs/master.lib/file_append.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_append.asm",
+          "size": 1779,
+          "sha256": "0c68713fd2677e8098b5e52332858a4a3d13703500f72bd8a72d321250a90fd9"
+        },
+        {
+          "name": "libs/master.lib/file_close.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_close.asm",
+          "size": 2060,
+          "sha256": "6683a73f10045ed8885962763c92675d73f690c277b3de45168a914c0ab690ed"
+        },
+        {
+          "name": "libs/master.lib/file_create.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_create.asm",
+          "size": 1281,
+          "sha256": "be8bf713d07814d2e7443a118b1758a7f2a8683dbb8c992052c7aaf4a5961330"
+        },
+        {
+          "name": "libs/master.lib/file_exist.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_exist.asm",
+          "size": 1131,
+          "sha256": "82d8b541b6cb72ca1f52cf01369607f5b47375f302848258e0a9a975b92b5ec2"
+        },
+        {
+          "name": "libs/master.lib/file_read.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_read.asm",
+          "size": 2516,
+          "sha256": "a1cade5ba6d3c49f876df11dd94386004508a6e63bc764c4966e88c08f127a31"
+        },
+        {
+          "name": "libs/master.lib/file_ropen.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_ropen.asm",
+          "size": 1367,
+          "sha256": "77259b5a6cb915d6376df836101a0655152cea0166bbc4570dfb0cdd792bf8dc"
+        },
+        {
+          "name": "libs/master.lib/file_seek.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_seek.asm",
+          "size": 1503,
+          "sha256": "4f1d8a008f0fe6f8caa28024ef5efa08d2d8fd0b6d3c4ddd9f47747af9e3a5a3"
+        },
+        {
+          "name": "libs/master.lib/file_size.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_size.asm",
+          "size": 785,
+          "sha256": "3f42aadaf3f7030b87e69cd0e9d437f63eff98a0ce41d7c360a5074439a53f6a"
+        },
+        {
+          "name": "libs/master.lib/file_write.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/file_write.asm",
+          "size": 2776,
+          "sha256": "77dbd982aaec0e724a5b3e772d014aee6a838321842af67eca8d54d021074e3d"
+        },
+        {
+          "name": "libs/master.lib/dos_close.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_close.asm",
+          "size": 927,
+          "sha256": "406b7438e25866c50fb3fa3e1897bdd9a8722f0d5d4562672c8a32cf3b72cd1c"
+        },
+        {
+          "name": "libs/master.lib/dos_ropen.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_ropen.asm",
+          "size": 1124,
+          "sha256": "b3f23ab1abae22e03aa31e45b1601db3bc276c684272261398a550181998b1a9"
+        },
+        {
+          "name": "libs/master.lib/grcg_boxfill.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_boxfill.asm",
+          "size": 3701,
+          "sha256": "74db99990e4064c0d028674c97e2e07717ca21e0177037cedf0ea58cd88b7fa4"
+        },
+        {
+          "name": "libs/master.lib/grcg_byteboxfill_x.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_byteboxfill_x.asm",
+          "size": 2047,
+          "sha256": "b549049f0379a0eab9e8f5d2de0c04946e6454c8edd4ecf87c9f407ca323503b"
+        },
+        {
+          "name": "libs/master.lib/grcg_circlefill.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_circlefill.asm",
+          "size": 2195,
+          "sha256": "494a5e6ceb05b2c5cb97b584783a728c3509e657a82c1990c5324ae369fce2bf"
+        },
+        {
+          "name": "libs/master.lib/grc_setclip.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grc_setclip.asm",
+          "size": 3140,
+          "sha256": "eddf855ca2d0433fc7aa4b0a7fd09b8ba190051bda270233634beb7a527f93cc"
+        },
+        {
+          "name": "libs/master.lib/grcg_hline.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_hline.asm",
+          "size": 2363,
+          "sha256": "873c20083cbe4064b8dcd9e1a7c1d0f8c3f0dc756caacc303660639007a788a6"
+        },
+        {
+          "name": "libs/master.lib/grcg_pset.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_pset.asm",
+          "size": 1298,
+          "sha256": "7e2f0c53c15b0183b3c21ef66ce85b3cf275cac9b301788a1c54021fd41eaede"
+        },
+        {
+          "name": "libs/master.lib/grcg_setcolor.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_setcolor.asm",
+          "size": 1484,
+          "sha256": "cfc0e194c0b218b76572b57bc1368abfbc5cabf021a35512d4485323933ab09e"
+        },
+        {
+          "name": "libs/master.lib/grcg_vline.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grcg_vline.asm",
+          "size": 2431,
+          "sha256": "942b2e256b8fdec70254dedd5542c8795eb6651c02db76695768ec055daa90e3"
+        },
+        {
+          "name": "libs/master.lib/gdc_outpw.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/gdc_outpw.asm",
+          "size": 737,
+          "sha256": "095306f5c80257f967c462881e45d68becd5ec886a91a4641e0f622b97b80f4a"
+        },
+        {
+          "name": "libs/master.lib/get_machine_98.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine_98.asm",
+          "size": 3469,
+          "sha256": "d3f85feec5f55075266e44913893feeeb39f548879b164bac66fc040fc039076"
+        },
+        {
+          "name": "libs/master.lib/get_machine_at.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine_at.asm",
+          "size": 8340,
+          "sha256": "50d82edc4af774ea904e8b7fde4fbeeedc46321bff416914651e981eb74508d1"
+        },
+        {
+          "name": "libs/master.lib/get_machine_dosbox.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine_dosbox.asm",
+          "size": 1272,
+          "sha256": "1fac77fcc3f1f2db478aa0465a1c2d0506e3926de2759ffbe7189f04fcdc8098"
+        },
+        {
+          "name": "libs/master.lib/check_machine_fmr.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/check_machine_fmr.asm",
+          "size": 547,
+          "sha256": "130db0bba50cd0adeee3b22a315621f7248fc743586b3da62a80f4812a6f6250"
+        },
+        {
+          "name": "libs/master.lib/get_machine.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine.asm",
+          "size": 2484,
+          "sha256": "b57d8a94cbc1a6d69384e4f78dee58b31faa11a145d1f6f922820f28ecf7a2c5"
+        },
+        {
+          "name": "libs/master.lib/gaiji_putca.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/gaiji_putca.asm",
+          "size": 1350,
+          "sha256": "8e3705da425727b60e5cbe36c1d9b027d9adece313248fbbe5e81386a2e052e2"
+        },
+        {
+          "name": "libs/master.lib/gaiji_putsa.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/gaiji_putsa.asm",
+          "size": 1596,
+          "sha256": "9d9c7d52c1581c98e5132df4529440f6f8929eb8476646f404361b5a3f6e4180"
+        },
+        {
+          "name": "libs/master.lib/graph_400line.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_400line.asm",
+          "size": 1212,
+          "sha256": "a4cc370c6827cd5f91928d8f1f1dcb49dcb1d582e2dba3e7b6f33b18ea877494"
+        },
+        {
+          "name": "libs/master.lib/graph_clear.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_clear.asm",
+          "size": 1088,
+          "sha256": "90be0ac27c63cf09b7bab977ab3787c5e64ede39d8c86c0393920c82991d7d12"
+        },
+        {
+          "name": "libs/master.lib/graph_copy_page.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_copy_page.asm",
+          "size": 1886,
+          "sha256": "6e99953780d53444267c34fa48331ccf3535f0d4e4b4b7dc9c32291806e271dc"
+        },
+        {
+          "name": "libs/master.lib/graph_extmode.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_extmode.asm",
+          "size": 2463,
+          "sha256": "3e1df894829c07cba4b59b6fe08c631e670312b42a60ae790faa5c4cd0f1d970"
+        },
+        {
+          "name": "libs/master.lib/graph_hide.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_hide.asm",
+          "size": 530,
+          "sha256": "e1f59b707774a5991fc0851f9d0019b5bef5f83b7d45787593be1966fb424035"
+        },
+        {
+          "name": "libs/master.lib/graph_pi_free.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_pi_free.asm",
+          "size": 1627,
+          "sha256": "1fb1f9568866bfaae7f5c91e4ab986e147d87df5df639322582c0ea55eed0591"
+        },
+        {
+          "name": "libs/master.lib/graph_pi_load_pack.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_pi_load_pack.asm",
+          "size": 15614,
+          "sha256": "291fb72bb0d3af3cab081913f39d23b084f15958aa362f205128f73df3cfefc0"
+        },
+        {
+          "name": "libs/master.lib/graph_scrollup.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_scrollup.asm",
+          "size": 1755,
+          "sha256": "fe4966d0d92dd20e8711f15410f4b6b34785abb92fbffb8a08ba8d07e3bd9e80"
+        },
+        {
+          "name": "libs/master.lib/graph_show.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_show.asm",
+          "size": 527,
+          "sha256": "6056411cf8d4c84cc236c9ae7de7f4776aeb908bea03d991258b4a7f79c5c5b3"
+        },
+        {
+          "name": "libs/master.lib/iatan2.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/iatan2.asm",
+          "size": 1218,
+          "sha256": "e56477c2b566000d18a808ef4882b4c14354178c945d9d03062fb98d9ea71e3d"
+        },
+        {
+          "name": "libs/master.lib/isqrt.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/isqrt.asm",
+          "size": 2358,
+          "sha256": "527a19e2d6d47f2509992f3d0cd034041077eab86062eac8cd1956fee4444f2b"
+        },
+        {
+          "name": "libs/master.lib/js_end.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/js_end.asm",
+          "size": 631,
+          "sha256": "6f0cefb45506e97123a6ce1530b76b832935e324c6c6d7373e9a315e7ea04d15"
+        },
+        {
+          "name": "libs/master.lib/palette_show.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/palette_show.asm",
+          "size": 4098,
+          "sha256": "c40574ccfd1c224e9e4562bc4cc6bb35243cb9970a4c832dd7c3e982a7425c30"
+        },
+        {
+          "name": "libs/master.lib/pfclose.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfclose.asm",
+          "size": 879,
+          "sha256": "c554e6d0649207a339cf523b144f59afc4ccf999f6a42cffedc9422b8c2f179f"
+        },
+        {
+          "name": "libs/master.lib/pfgetc.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfgetc.asm",
+          "size": 3063,
+          "sha256": "119b9827ce6886c77449fe77025fab149542d8916f9edde862562954a6f3c8bd"
+        },
+        {
+          "name": "libs/master.lib/pfread.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfread.asm",
+          "size": 1395,
+          "sha256": "20d594a2355a5380719cee2f2b19229ae072b02afe470e57115c0a34c3580894"
+        },
+        {
+          "name": "libs/master.lib/pfrewind.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfrewind.asm",
+          "size": 1151,
+          "sha256": "ff21821866cc51ce3fb48503458d75ce90b1480784312d43875543a1175c5f5a"
+        },
+        {
+          "name": "libs/master.lib/pfseek.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfseek.asm",
+          "size": 1391,
+          "sha256": "30668e2fb6ac1c9ffe0258a6bd50cdbd4a2a527d9beaf634c99d7ce4cb89e6d4"
+        },
+        {
+          "name": "libs/master.lib/random.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/random.asm",
+          "size": 1445,
+          "sha256": "a2759dae92008b72845c67e6caa183d54c22f9b2c8199de2101b82daf35aab82"
+        },
+        {
+          "name": "libs/master.lib/rottbl.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/rottbl.asm",
+          "size": 3219,
+          "sha256": "56a671daeada6846e6ade5b6a68f4caa6dcc1565c284732a9a5c95616af81ba1"
+        },
+        {
+          "name": "libs/master.lib/smem_release.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/smem_release.asm",
+          "size": 589,
+          "sha256": "e9e750705de05e3aa6114a92de30f73509479fb526d844ec8fd29eb6c13137f3"
+        },
+        {
+          "name": "libs/master.lib/smem_wget.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/smem_wget.asm",
+          "size": 1335,
+          "sha256": "427339049dedbbdafbeaa5092d8f620cdf94b915841b78321ebb6c68ad7701c0"
+        },
+        {
+          "name": "libs/master.lib/soundio.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/soundio.asm",
+          "size": 1284,
+          "sha256": "69a4d31369cf05261fb290cb2075c2e2f3f511151ee23ad1e9540bed33d5d69c"
+        },
+        {
+          "name": "libs/master.lib/text_clear.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/text_clear.asm",
+          "size": 705,
+          "sha256": "9524152bd1e459e9282f6d45bd1c9f72ffc566aab35cb141baecf3db7268c9db"
+        },
+        {
+          "name": "libs/master.lib/text_putsa.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/text_putsa.asm",
+          "size": 2190,
+          "sha256": "8c4a013c22595b94c5c94a68f6a395cdd8e5fb821a03c1dc0cb42e36b2dea323"
+        },
+        {
+          "name": "libs/master.lib/vsync.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/vsync.asm",
+          "size": 4505,
+          "sha256": "5d3c205d6d6ff7d9c0f8079200624ff1bfdf4f785e7a5b7c501c0b2269dafed7"
+        },
+        {
+          "name": "libs/master.lib/vsync_wait.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/vsync_wait.asm",
+          "size": 1209,
+          "sha256": "2186df31026448095f165528d8cbc3c653dbbc5f4be90b27bdd3acee95d04b2b"
+        },
+        {
+          "name": "libs/master.lib/palette_white_in.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/palette_white_in.asm",
+          "size": 1225,
+          "sha256": "d22a8491c095ed7d2d4b117cd74d549d43df68807a79dfc6e257401a2bddfb34"
+        },
+        {
+          "name": "libs/master.lib/palette_white_out.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/palette_white_out.asm",
+          "size": 1187,
+          "sha256": "40904043b508e68d5ad31ed152ba770236597e6a2fcee0074cc5db2f066d46b4"
+        },
+        {
+          "name": "libs/master.lib/hmem_lallocate.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/hmem_lallocate.asm",
+          "size": 909,
+          "sha256": "bf8fc5e2b4aebe2a4d954dae4491ebb2d735caca94fa48cd728eaa99f6c0a680"
+        },
+        {
+          "name": "libs/master.lib/mem_assign_dos.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/mem_assign_dos.asm",
+          "size": 760,
+          "sha256": "5d53f5d5ec38727649f743c8bd12a976c805a039c215d68aa493105371f66465"
+        },
+        {
+          "name": "libs/master.lib/mem_assign.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/mem_assign.asm",
+          "size": 1297,
+          "sha256": "1a82490706e60c785cf990c6bdad0d6a4fa2994d80d3446cd8592343e64b0e49"
+        },
+        {
+          "name": "libs/master.lib/memheap.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/memheap.asm",
+          "size": 8276,
+          "sha256": "f82f4a8f65caee760efa0cf3e4aae1a53b1dbdd9f42994da1a7a96b92a297773"
+        },
+        {
+          "name": "libs/master.lib/mem_unassign.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/mem_unassign.asm",
+          "size": 1476,
+          "sha256": "79b849504ea1c66e774e5e28bb0c218e5dcbbd7517b61e1388ff4018e017a225"
+        },
+        {
+          "name": "libs/master.lib/super_free.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_free.asm",
+          "size": 1181,
+          "sha256": "a1e83689386210f935452bacb1a9f64c16bccfa31a84e6958f37ab28b644f092"
+        },
+        {
+          "name": "libs/master.lib/super_entry_pat.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_entry_pat.asm",
+          "size": 3623,
+          "sha256": "b648deee82e0579c66be92d4ff595465401b8d130408c64c9724af5bed69df7e"
+        },
+        {
+          "name": "libs/master.lib/super_entry_at.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_entry_at.asm",
+          "size": 2557,
+          "sha256": "a27d0851c372b66a63e1968550135ae5de4d3487ce7638f4d079b7711405df94"
+        },
+        {
+          "name": "libs/master.lib/super_entry_bfnt.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_entry_bfnt.asm",
+          "size": 2166,
+          "sha256": "8098efc312d0d217bee12402428a9624186725f4413bd5d8aef67f0c6fdd891d"
+        },
+        {
+          "name": "libs/master.lib/super_cancel_pat.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_cancel_pat.asm",
+          "size": 1575,
+          "sha256": "59a3856deb289b9b52c724e6be1f5c2db338e59883894f30af21c1667d8fda97"
+        },
+        {
+          "name": "libs/master.lib/super_put_rect.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_put_rect.asm",
+          "size": 7064,
+          "sha256": "d4ae2f95bdce43a7075f97c204fc88eb8c70ea6a27ce34635aa3ad1c55a72200"
+        },
+        {
+          "name": "libs/master.lib/super_put.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_put.asm",
+          "size": 5680,
+          "sha256": "97c50aafee01cff2c59357f2a215b59a1bb50cea88f94e2ee370a49764311ffc"
+        },
+        {
+          "name": "libs/master.lib/super_convert_tiny.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_convert_tiny.asm",
+          "size": 2992,
+          "sha256": "392af0e573e4ecfb86714da5d9d729c9cd3f56cc95dc8b0b0e761526b634929e"
+        },
+        {
+          "name": "libs/master.lib/super_put_tiny_small.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_put_tiny_small.asm",
+          "size": 2897,
+          "sha256": "b3346fddcd5b3fdea95f849f3fc1013171f969f0394346767585e7bedf8dd380"
+        },
+        {
+          "name": "libs/master.lib/js_start.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/js_start.asm",
+          "size": 1485,
+          "sha256": "9108253a1ce57bab97b64f9504196dc5a0d2d510a2d121f94a71f0698063aa03"
+        },
+        {
+          "name": "libs/master.lib/js_sense.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/js_sense.asm",
+          "size": 2294,
+          "sha256": "6f9c91f30d50cfd75f9b6025737cf3f5edefe9a38fb4f90cc447b11f4e9e4456"
+        },
+        {
+          "name": "libs/master.lib/bgm_bell_org.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_bell_org.asm",
+          "size": 1149,
+          "sha256": "3145d261f18831c0126b639afa38808834c7c9152fbef338e11c36c956a909ad"
+        },
+        {
+          "name": "libs/master.lib/bgm_mget.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_mget.asm",
+          "size": 4151,
+          "sha256": "2c9a190477967e4fddc3dcdd169e9d11435ddf3ee160300ff3c0b76a2879f517"
+        },
+        {
+          "name": "libs/master.lib/bgm_read_sdata.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_read_sdata.asm",
+          "size": 4241,
+          "sha256": "ef4b9527ac2310c58139a8b1bcdaf322ab495b095e9b854bd9fefc752302d223"
+        },
+        {
+          "name": "libs/master.lib/bgm_timer.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_timer.asm",
+          "size": 1954,
+          "sha256": "3957067e153629f5440e6f93dd84b870b8f99c6918e6f5697c55a65b7a469343"
+        },
+        {
+          "name": "libs/master.lib/bgm_pinit.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_pinit.asm",
+          "size": 1274,
+          "sha256": "d8691c3d46886a1f024f32703612f78e49e4ffa8a54901947af08788fa1aeff9"
+        },
+        {
+          "name": "libs/master.lib/bgm_timerhook.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_timerhook.asm",
+          "size": 2494,
+          "sha256": "0a9a550fbbd608b255c03af7ac6991e9c6c3ba3412539327e2e1cfd26b6fdc7b"
+        },
+        {
+          "name": "libs/master.lib/bgm_play.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_play.asm",
+          "size": 5092,
+          "sha256": "91492e904472b2b2a8671f0a5407cd99bff173faf8e7e514e4de5d6090950138"
+        },
+        {
+          "name": "libs/master.lib/bgm_sound.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_sound.asm",
+          "size": 1409,
+          "sha256": "c49a57881212e3aef8d02173ca1920b330ec213853324cb3bae5a157d9511da1"
+        },
+        {
+          "name": "libs/master.lib/bgm_effect_sound.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_effect_sound.asm",
+          "size": 2497,
+          "sha256": "00a95406c3d715e9a4f2de08351f3830852faebb1123a321d8d02c23ae7341f3"
+        },
+        {
+          "name": "libs/master.lib/bgm_stop_play.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_stop_play.asm",
+          "size": 888,
+          "sha256": "c216798e0f812440613dfd35e7b1bd196cc07d4843240352e3a7b694549fbc79"
+        },
+        {
+          "name": "libs/master.lib/bgm_set_tempo.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_set_tempo.asm",
+          "size": 1100,
+          "sha256": "3530f2294b4fb80d970b8070b4be7a1c1cb19aec193ba28fcaf97ecef265627c"
+        },
+        {
+          "name": "libs/master.lib/bgm_init_finish.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_init_finish.asm",
+          "size": 5870,
+          "sha256": "757fc0bcfe72b78cbca8fe9ee1fe99b2c4251805371ed0d097b09ca0fa76aff3"
+        },
+        {
+          "name": "libs/master.lib/bgm_stop_sound.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_stop_sound.asm",
+          "size": 897,
+          "sha256": "0500a903d67ef158f09813d6225fd354cec4bde6c9ad83d403f9cd8a5aa028ce"
+        },
+        {
+          "name": "libs/master.lib/graph_pack_put_8_noclip.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_pack_put_8_noclip.asm",
+          "size": 3344,
+          "sha256": "419eb81126c20a665bdd61241f1e2fdf0f99c6a9273a3abf615befde57b40948"
+        },
+        {
+          "name": "libs/master.lib/graph_gaiji_puts.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_gaiji_puts.asm",
+          "size": 2736,
+          "sha256": "43b76948a66fe8e0637bce04900e553f264ef41217764abe04457bfed8ba8122"
+        },
+        {
+          "name": "libs/master.lib/graph_gaiji_putc.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/graph_gaiji_putc.asm",
+          "size": 2338,
+          "sha256": "70c6a2a0bf6497ae04bc8729d7363bf1a1f7b47ec2eed6d46d59525e80ccfcb0"
+        },
+        {
+          "name": "libs/master.lib/pfint21.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfint21.asm",
+          "size": 9708,
+          "sha256": "8890dfae0e43677fa52dc0c2892def28214eb5c7cf9748f6c201410b19b89c8e"
+        },
+        {
+          "name": "th03/formats/pfopen.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th03/formats/pfopen.asm",
+          "size": 5188,
+          "sha256": "913ba45575ed3578efc959a9d3383b2407edb1042d856651cda59b5e701f70ab"
+        },
+        {
+          "name": "libs/master.lib/pf_str_ieq.asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pf_str_ieq.asm",
+          "size": 1194,
+          "sha256": "d25abb53eb1b9b689af519ae7526595d76c86b4362dd2e5ac146cd2165283ac8"
+        },
+        {
+          "name": "libs/master.lib/atan8[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/atan8[data].asm",
+          "size": 1108,
+          "sha256": "32fa99e4d17731cca123c8934a875c92866a5ed90aa4b1bbdccf6ee7e40cb724"
+        },
+        {
+          "name": "libs/master.lib/atrtcmod[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/atrtcmod[data].asm",
+          "size": 76,
+          "sha256": "07a82376bf0afb34f933139908003d5dc2803c20516284b124bbdc934c486f4b"
+        },
+        {
+          "name": "libs/master.lib/bfnt_id[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bfnt_id[data].asm",
+          "size": 141,
+          "sha256": "c64cc4bf2c38cac7b80cfff5a3c1edccd0db14ca41534d416492d4e817b0f4bf"
+        },
+        {
+          "name": "libs/master.lib/clip[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/clip[data].asm",
+          "size": 640,
+          "sha256": "63cfacbc52f9eee28f6733adc0eb029d6ee612245dd6f17a09f4ebef70e6e656"
+        },
+        {
+          "name": "libs/master.lib/edges[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/edges[data].asm",
+          "size": 669,
+          "sha256": "3bdbd15acdedb8eb688c116a8a34d862762345d50acb0f99783ef5f38ab01cb6"
+        },
+        {
+          "name": "libs/master.lib/fil[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/fil[data].asm",
+          "size": 173,
+          "sha256": "a74c17c2373a2a672c7b441029fe63db93ae6e37b3cad170ef1658506785eae7"
+        },
+        {
+          "name": "libs/master.lib/dos_ropen[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/dos_ropen[data].asm",
+          "size": 96,
+          "sha256": "a49b4fc258fdd23c3003fb450915b58bbc73d3b81f5fdf439045289881f8baaa"
+        },
+        {
+          "name": "libs/master.lib/get_machine_98[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine_98[data].asm",
+          "size": 288,
+          "sha256": "a4045e5de7828c2bbeecd5f81f51b887d5c0ddd1843ccb666f1fcc8e497c809c"
+        },
+        {
+          "name": "libs/master.lib/get_machine_at[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/get_machine_at[data].asm",
+          "size": 150,
+          "sha256": "b3a3d88062b7cade4c7e801bdccc991644a988754c4e8c8c34176f91d08f489f"
+        },
+        {
+          "name": "libs/master.lib/grp[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/grp[data].asm",
+          "size": 1646,
+          "sha256": "7e11161dc5fbe9ff4ce2f8ec79d63b3b73a4a46c6ba43cd6dac7db8f263c9ff8"
+        },
+        {
+          "name": "libs/master.lib/js[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/js[data].asm",
+          "size": 290,
+          "sha256": "c4039f5941b89b6fe80e22442607bef52b533d71fc97e79e8f9f73c84c3fca03"
+        },
+        {
+          "name": "libs/master.lib/machine[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/machine[data].asm",
+          "size": 272,
+          "sha256": "472efe4716c282b8c17aa4532ea0b5d15a7c5d477a5bafd83f7eb7f73eedf81c"
+        },
+        {
+          "name": "libs/master.lib/pal[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pal[data].asm",
+          "size": 799,
+          "sha256": "fc37920a446ba76a9e281624a8fbbf5d78153e281e043645998f5747d162c770"
+        },
+        {
+          "name": "libs/master.lib/pf[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pf[data].asm",
+          "size": 520,
+          "sha256": "737440cb99b76eee9b140ad35a5752bed1638de880eee687ebffddf737f7840e"
+        },
+        {
+          "name": "libs/master.lib/rand[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/rand[data].asm",
+          "size": 78,
+          "sha256": "474e83952040eb1b4bde984e694607ed5285820b4585980ca2fbed1fc88cc8b1"
+        },
+        {
+          "name": "libs/master.lib/sin8[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/sin8[data].asm",
+          "size": 2149,
+          "sha256": "f0840bd0a674d0bea61cba242d957be4456ad33dd67bb3098a0ced08913ffc84"
+        },
+        {
+          "name": "libs/master.lib/tx[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/tx[data].asm",
+          "size": 840,
+          "sha256": "c0d64eefc6a2af118d9f05774629304e75ff5d252daff8ec4a64caf889ccd8a9"
+        },
+        {
+          "name": "libs/master.lib/vs[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/vs[data].asm",
+          "size": 247,
+          "sha256": "18bd5d9b8ffcd7353a2dea9f8ae4dc69fa34b06fa9fc32703fc1d0724c4e0357"
+        },
+        {
+          "name": "libs/master.lib/wordmask[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/wordmask[data].asm",
+          "size": 107,
+          "sha256": "d7463ef1babcc68dcdb72f1126f08544d279f95484c31244c1ae645065639b6a"
+        },
+        {
+          "name": "libs/master.lib/mem[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/mem[data].asm",
+          "size": 376,
+          "sha256": "9c13a4f793a8b7602d55be68d1a547d91251ab0d4a7f97f73aff2077bb9446ad"
+        },
+        {
+          "name": "libs/master.lib/super_entry_bfnt[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_entry_bfnt[data].asm",
+          "size": 24,
+          "sha256": "1784371444ebc64b36a866be947926e9f561a004d4735109dc874211b8ca135e"
+        },
+        {
+          "name": "libs/master.lib/superpa[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/superpa[data].asm",
+          "size": 255,
+          "sha256": "82334872155ef19c42919ce0964df062d5bb65587ebdc13dd1c069d3684f147f"
+        },
+        {
+          "name": "libs/master.lib/bgm_timerhook[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm_timerhook[data].asm",
+          "size": 28,
+          "sha256": "1517daea06302990d04e79121dafbd820e90d7583ab72929ce15dd1624091141"
+        },
+        {
+          "name": "libs/master.lib/bgm[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm[data].asm",
+          "size": 583,
+          "sha256": "d57a5573b5a8673102eaab419268005c4337fae390357cc9302953e1dce6bafd"
+        },
+        {
+          "name": "th04/snd/se_priority[data].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th04/snd/se_priority[data].asm",
+          "size": 406,
+          "sha256": "78348fe0f708eaa9e6e59a02dc2944aa5f52aac144e7e8e51e814acc70a55804"
+        },
+        {
+          "name": "libs/master.lib/clip[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/clip[bss].asm",
+          "size": 162,
+          "sha256": "70a9d992a29548693deb0c623d325dfa83bb2980fb1ae3f6dbb115fe20546eef"
+        },
+        {
+          "name": "libs/master.lib/fil[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/fil[bss].asm",
+          "size": 582,
+          "sha256": "34e33ee73a66b712bcdb376bbc27c369c59dfbff3ceab28c6ef30aa6dae8a545"
+        },
+        {
+          "name": "libs/master.lib/js[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/js[bss].asm",
+          "size": 63,
+          "sha256": "4088af4fb69f18082eae94de0f8ce0777b854d1227be88f1f1fc787aa956ef07"
+        },
+        {
+          "name": "libs/master.lib/pal[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pal[bss].asm",
+          "size": 74,
+          "sha256": "fe7dd64e247b731ae10ae598ff3402c68cd7f820ce4383a113bc184b632c3f74"
+        },
+        {
+          "name": "libs/master.lib/vs[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/vs[bss].asm",
+          "size": 270,
+          "sha256": "f324dc06b9c9476f1ce37ee8124d17182efa2f42fc72030e4f12caf60ccd2abb"
+        },
+        {
+          "name": "libs/master.lib/vsync[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/vsync[bss].asm",
+          "size": 50,
+          "sha256": "aa22c000d29d81016c0018b550b04eaeb4464e971db9bb15057615b1155a8076"
+        },
+        {
+          "name": "libs/master.lib/mem[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/mem[bss].asm",
+          "size": 302,
+          "sha256": "b54b999b1e2dfe82cfd79e8d16b8748a861cabc2fde435d43e9fdd3f284b26f1"
+        },
+        {
+          "name": "libs/master.lib/superpa[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/superpa[bss].asm",
+          "size": 198,
+          "sha256": "0e879a7a1faf48fe4337d90fe825f198e14e1ab010e9ca26247d1a6f3a9b3bf8"
+        },
+        {
+          "name": "libs/master.lib/super_put_rect[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/super_put_rect[bss].asm",
+          "size": 15,
+          "sha256": "794ceeef9a88b4f0f21047ed0ea8cf55aa3de3b034c4ba627085a1ca1050b9c3"
+        },
+        {
+          "name": "th03/formats/hfliplut[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th03/formats/hfliplut[bss].asm",
+          "size": 46,
+          "sha256": "7ce20d5b7a6b5da8064c992c97396f8f6ca4de16b627d719a2f23d74aac1520f"
+        },
+        {
+          "name": "th04/snd/interrupt[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th04/snd/interrupt[bss].asm",
+          "size": 100,
+          "sha256": "25d1a31efc69a94b1144eee94a993f910b94c1f5b66b9292b313151381045c46"
+        },
+        {
+          "name": "libs/master.lib/bgm[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/bgm[bss].asm",
+          "size": 191,
+          "sha256": "ef07176bc35a2d7d0e6b91be8d011d40765e11b0609232b5fd5d735c5e120d1c"
+        },
+        {
+          "name": "th02/snd/load[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th02/snd/load[bss].asm",
+          "size": 109,
+          "sha256": "22b6accc206c5e8f78afff0e75b93f4ba7ecd116250f71c24631ec8e9c988a8c"
+        },
+        {
+          "name": "th05/formats/pi_put_masked[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th05/formats/pi_put_masked[bss].asm",
+          "size": 130,
+          "sha256": "e988486cc3a9da301cffae01fe2fe94ecbbd0806102c9e86c35fae42fb5dae6a"
+        },
+        {
+          "name": "th05/formats/pi_headers[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th05/formats/pi_headers[bss].asm",
+          "size": 53,
+          "sha256": "6a27e5144400ae6af2521ca14e5065ee4db692bc6a99edf39fee1ed1810cc626"
+        },
+        {
+          "name": "th04/hardware/input[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th04/hardware/input[bss].asm",
+          "size": 146,
+          "sha256": "468b85101c7588c1adea9ffb8ff304343828c683a4bde7fbd31bf5b93f7a8235"
+        },
+        {
+          "name": "th04/formats/cdg[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th04/formats/cdg[bss].asm",
+          "size": 98,
+          "sha256": "50603e350e7742ba816a46fb7b0e2e0eeb5f8959fb116d69aaa7165f0002cd37"
+        },
+        {
+          "name": "th03/formats/cdg[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/th03/formats/cdg[bss].asm",
+          "size": 93,
+          "sha256": "2c44eff8bce90d277f350f0a1bec5a1de30c4044c638fee12d95365971f10e12"
+        },
+        {
+          "name": "th03/formats/cdg.inc",
+          "file": ".analysis/builds/maine-calibration-a/source/th03/formats/cdg.inc",
+          "size": 1237,
+          "sha256": "1f0ff08d7d98f6e1038f09c12785f09349d65b1427f30ce569d2dbf49b7d7a48"
+        },
+        {
+          "name": "libs/master.lib/pfint21[bss].asm",
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/pfint21[bss].asm",
+          "size": 186,
+          "sha256": "72e679dc2f05eae6accb6cb9bfde62780cbe53225f4465bb0f1f6beb8515f27a"
+        }
+      ],
+      "actual_retained_link_producers": 1,
+      "actual_OMF_module": "th05_maine_master.asm"
+    }
+  },
+  "scopes": [
+    {
+      "id": "main-pfgetc",
+      "artifact": "th05-main",
+      "content_kind": "library-instructions",
+      "name": "PFGETC",
+      "start": 8828,
+      "end": 8844,
+      "size": 16,
+      "instruction_bytes": 15,
+      "library_padding_bytes": 1,
+      "padding": [
+        {
+          "start": 8843,
+          "size": 1,
+          "value": 144,
+          "listing_line": 12571
+        }
+      ],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 12554,
+      "end_listing_line": 12572,
+      "candidate_file": "libs/master.lib/pfgetc.asm",
+      "candidate_source": {
+        "file": ".analysis/vendor-review/master-listing-a/source/libs/master.lib/pfgetc.asm",
+        "size": 3063,
+        "sha256": "119b9827ce6886c77449fe77025fab149542d8916f9edde862562954a6f3c8bd"
+      },
+      "candidate_lines": [
+        50,
+        62
+      ],
+      "upstream_file": "PFGETC.ASM",
+      "upstream_source": {
+        "file": "_reference/master-lib-upstream-023/src/PFGETC.ASM",
+        "size": 2845,
+        "sha256": "9ffa52794ece9669498026e275dfd1c328df9727b563d9d7aaa0510be3ec48de"
+      },
+      "upstream_lines": [
+        58,
+        70
+      ],
+      "source_block_sha256": "3d0a89a60a669edd93acdc948c2d2c838b9e9da9a2d5fbf7ab27e8185650230b",
+      "linked_sha256": "c48af35858c63f61634115c629413648a8163986bd04166c4315cabd8b2eceb5",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "id": "main-assignall",
+      "artifact": "th05-main",
+      "content_kind": "library-instructions",
+      "name": "ASSIGNALL",
+      "start": 9282,
+      "end": 9288,
+      "size": 6,
+      "instruction_bytes": 6,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "inline_data": false,
+      "distance": "far-by-large-model",
+      "start_listing_line": 13230,
+      "end_listing_line": 13241,
+      "candidate_file": "libs/master.lib/smem_wget.asm",
+      "candidate_source": {
+        "file": ".analysis/vendor-review/master-listing-a/source/libs/master.lib/smem_wget.asm",
+        "size": 1335,
+        "sha256": "427339049dedbbdafbeaa5092d8f620cdf94b915841b78321ebb6c68ad7701c0"
+      },
+      "candidate_lines": [
+        25,
+        29
+      ],
+      "upstream_file": "SMEMWGET.ASM",
+      "upstream_source": {
+        "file": "_reference/master-lib-upstream-023/src/SMEMWGET.ASM",
+        "size": 1410,
+        "sha256": "8b3199d387c5f685276e1303ca4118f2543e1015c8c60956f65e6d0a540b26ae"
+      },
+      "upstream_lines": [
+        37,
+        41
+      ],
+      "source_block_sha256": "a91016a8f3e5577b72913cde4e4faceeaf6c9437f89c9c6572aedb80de740252",
+      "linked_sha256": "440d82cc0f8adfc47ffc975bab87f1d60a06bb6f4ee85e1458b022d0e71df413",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "id": "main-sound-joy",
+      "artifact": "th05-main",
+      "content_kind": "library-instructions",
+      "name": "SOUND_JOY",
+      "start": 13928,
+      "end": 13945,
+      "size": 17,
+      "instruction_bytes": 17,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 18394,
+      "end_listing_line": 18407,
+      "candidate_file": "libs/master.lib/js_sense.asm",
+      "candidate_source": {
+        "file": ".analysis/vendor-review/master-listing-a/source/libs/master.lib/js_sense.asm",
+        "size": 2294,
+        "sha256": "6f9c91f30d50cfd75f9b6025737cf3f5edefe9a38fb4f90cc447b11f4e9e4456"
+      },
+      "candidate_lines": [
+        56,
+        69
+      ],
+      "upstream_file": "JSSENSE.ASM",
+      "upstream_source": {
+        "file": "_reference/master-lib-upstream-023/src/JSSENSE.ASM",
+        "size": 5266,
+        "sha256": "ff781083cde49c47fb76cee83e904489ba853273efdc730c7074d55593f067da"
+      },
+      "upstream_lines": [
+        212,
+        225
+      ],
+      "source_block_sha256": "c26943d087254d4d9e7828993f92c2fe30346c4d27612f32b6fa7c822676a30f",
+      "linked_sha256": "878d17618dc03806f442184723d8ad6fff1e5250fbc5dc2aeba262237c93ec08",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "id": "main-sajout",
+      "artifact": "th05-main",
+      "content_kind": "library-instructions",
+      "name": "SAJOUT",
+      "start": 13958,
+      "end": 13967,
+      "size": 9,
+      "instruction_bytes": 9,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 18452,
+      "end_listing_line": 18465,
+      "candidate_file": "libs/master.lib/js_sense.asm",
+      "candidate_source": {
+        "file": ".analysis/vendor-review/master-listing-a/source/libs/master.lib/js_sense.asm",
+        "size": 2294,
+        "sha256": "6f9c91f30d50cfd75f9b6025737cf3f5edefe9a38fb4f90cc447b11f4e9e4456"
+      },
+      "candidate_lines": [
+        105,
+        112
+      ],
+      "upstream_file": "JSSENSE.ASM",
+      "upstream_source": {
+        "file": "_reference/master-lib-upstream-023/src/JSSENSE.ASM",
+        "size": 5266,
+        "sha256": "ff781083cde49c47fb76cee83e904489ba853273efdc730c7074d55593f067da"
+      },
+      "upstream_lines": [
+        287,
+        294
+      ],
+      "source_block_sha256": "f056b0cf165af074b3a51d45a89ffcb21631bb0b37ec885b36ab518b8db4cf8e",
+      "linked_sha256": "39ed87de8d1a3244492347b4f1b642c085a665aa471caaeeab778849465d2c85",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "id": "main-str-ieq",
+      "artifact": "th05-main",
+      "content_kind": "library-instructions",
+      "name": "STR_IEQ",
+      "start": 17840,
+      "end": 17896,
+      "size": 56,
+      "instruction_bytes": 56,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "inline_data": false,
+      "distance": "near",
+      "start_listing_line": 22740,
+      "end_listing_line": 22788,
+      "candidate_file": "libs/master.lib/pf_str_ieq.asm",
+      "candidate_source": {
+        "file": ".analysis/vendor-review/master-listing-a/source/libs/master.lib/pf_str_ieq.asm",
+        "size": 1194,
+        "sha256": "d25abb53eb1b9b689af519ae7526595d76c86b4362dd2e5ac146cd2165283ac8"
+      },
+      "candidate_lines": [
+        10,
+        55
+      ],
+      "upstream_file": "PFOPEN.ASM",
+      "upstream_source": {
+        "file": "_reference/master-lib-upstream-023/src/PFOPEN.ASM",
+        "size": 8164,
+        "sha256": "dbea0505f5a41faa98fc1202e3cd0a14704ee89a183c6d0a389b7fc8b47b04d0"
+      },
+      "upstream_lines": [
+        386,
+        431
+      ],
+      "source_block_sha256": "a7cc91564a2e1f7cb782550ec778c95d18fc5874734005624429d58754be2712",
+      "linked_sha256": "13d0641dfd402831062611d0a1fb7df27c4aaf670a82dccf5bdd57b1b83f5b7f",
+      "ordered_mz_fixups": [],
+      "object_link_actions": []
+    },
+    {
+      "id": "op-rottbl",
+      "artifact": "th05-op",
+      "content_kind": "library-code-data",
+      "name": "RotTbl",
+      "start": 7304,
+      "end": 8328,
+      "size": 1024,
+      "instruction_bytes": 0,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "ordered_mz_fixups": [],
+      "symbolic_initializer": {
+        "dwords": 256,
+        "byte_order": "little",
+        "primary_lines": [
+          9,
+          73
+        ],
+        "candidate_lines": [
+          6,
+          70
+        ],
+        "source_block_sha256": "7028ddb9b4dec7c10ddc4ca6f4ba0e669411add35f6657912d7c5c0d1a0895a0",
+        "primary_source": {
+          "file": "_reference/master-lib-upstream-023/src/ROTTBL.ASM",
+          "size": 3249,
+          "sha256": "bc163d495f2ad46ed9b78edb775eb537998d4908e80d238e60b876d09cb92b5c"
+        },
+        "candidate_source": {
+          "file": ".analysis/builds/op-calibration-a/source/libs/master.lib/rottbl.asm",
+          "size": 3219,
+          "sha256": "56a671daeada6846e6ade5b6a68f4caa6dcc1565c284732a9a5c95616af81ba1"
+        }
+      },
+      "linked_sha256": "7d223e4e2704b1385e42c2c99cf2865e3946cfb003002c158bacea9f22a369fc",
+      "actual_MAP_public": {
+        "frame": 0,
+        "offset": 7304
+      },
+      "actual_monolithic_CODE_contribution": {
+        "frame": 0,
+        "offset": 626,
+        "start": 626,
+        "size": 14502,
+        "module": "th05_op.asm",
+        "segment": "_TEXT",
+        "class_name": "CODE",
+        "acbp": 72
+      },
+      "actual_OMF_scope": {
+        "SEGDEF": {
+          "name": "_TEXT",
+          "class_name": "CODE",
+          "size": 14502,
+          "acbp": 72
+        },
+        "PUBDEF": {
+          "name": "RotTbl",
+          "segment": 1,
+          "offset": 6678
+        },
+        "CODE_LEDATA": [
+          {
+            "record_offset": 22095,
+            "segment_offset": 6247,
+            "size": 1007,
+            "sha256": "595d0663d78de82907dc7193d3c872a2dde08de1c849fd3ab7071747f5098c62",
+            "scope_offset": 0,
+            "scope_size": 576
+          },
+          {
+            "record_offset": 23138,
+            "segment_offset": 7254,
+            "size": 662,
+            "sha256": "8f524998fcd5386d69934918c251ad0bffb66309b056198396533700e17befa3",
+            "scope_offset": 576,
+            "scope_size": 448
+          }
+        ],
+        "intersecting_FIXUPP_count": 0
+      },
+      "binary_member_corroboration": {
+        "member": "rottbl",
+        "program_sha256": "5a5ce0e44660e34d0cc190b9ef996b828de7fda7cac055c8c0e3a5ef341d2f85",
+        "SEGDEF": {
+          "name": "_TEXT",
+          "cl": "CODE",
+          "size": 1024,
+          "acbp": 72
+        },
+        "record_counts": {
+          "THEADR": 1,
+          "LNAMES": 1,
+          "SEGDEF": 2,
+          "GRPDEF": 1,
+          "UNKNOWN_0x8E": 1,
+          "LEDATA": 1,
+          "PUBDEF": 1,
+          "MODEND": 1
+        },
+        "authority": "corroboration only; UNKNOWN_0x8E not interpreted or discarded; primary source and actual linked OMF are authority"
+      }
+    },
+    {
+      "id": "maine-rottbl",
+      "artifact": "th05-maine",
+      "content_kind": "library-code-data",
+      "name": "RotTbl",
+      "start": 7714,
+      "end": 8738,
+      "size": 1024,
+      "instruction_bytes": 0,
+      "library_padding_bytes": 0,
+      "padding": [],
+      "ordered_mz_fixups": [],
+      "symbolic_initializer": {
+        "dwords": 256,
+        "byte_order": "little",
+        "primary_lines": [
+          9,
+          73
+        ],
+        "candidate_lines": [
+          6,
+          70
+        ],
+        "source_block_sha256": "7028ddb9b4dec7c10ddc4ca6f4ba0e669411add35f6657912d7c5c0d1a0895a0",
+        "primary_source": {
+          "file": "_reference/master-lib-upstream-023/src/ROTTBL.ASM",
+          "size": 3249,
+          "sha256": "bc163d495f2ad46ed9b78edb775eb537998d4908e80d238e60b876d09cb92b5c"
+        },
+        "candidate_source": {
+          "file": ".analysis/builds/maine-calibration-a/source/libs/master.lib/rottbl.asm",
+          "size": 3219,
+          "sha256": "56a671daeada6846e6ade5b6a68f4caa6dcc1565c284732a9a5c95616af81ba1"
+        }
+      },
+      "linked_sha256": "7d223e4e2704b1385e42c2c99cf2865e3946cfb003002c158bacea9f22a369fc",
+      "actual_MAP_public": {
+        "frame": 0,
+        "offset": 7714
+      },
+      "actual_monolithic_CODE_contribution": {
+        "frame": 0,
+        "offset": 626,
+        "start": 626,
+        "size": 14958,
+        "module": "th05_maine_master.asm",
+        "segment": "_TEXT",
+        "class_name": "CODE",
+        "acbp": 72
+      },
+      "actual_OMF_scope": {
+        "SEGDEF": {
+          "name": "_TEXT",
+          "class_name": "CODE",
+          "size": 14958,
+          "acbp": 72
+        },
+        "PUBDEF": {
+          "name": "RotTbl",
+          "segment": 1,
+          "offset": 7088
+        },
+        "CODE_LEDATA": [
+          {
+            "record_offset": 21233,
+            "segment_offset": 6657,
+            "size": 1007,
+            "sha256": "7da24ec1190e3217c826c1dd641ce174275521dddc401dfbe7db9f400cdf4b0f",
+            "scope_offset": 0,
+            "scope_size": 576
+          },
+          {
+            "record_offset": 22271,
+            "segment_offset": 7664,
+            "size": 698,
+            "sha256": "5670ff44dd77016a496f1c07e1f5809a9d92c90ec6d8890a6fffd070d94209b3",
+            "scope_offset": 576,
+            "scope_size": 448
+          }
+        ],
+        "intersecting_FIXUPP_count": 0
+      },
+      "binary_member_corroboration": {
+        "member": "rottbl",
+        "program_sha256": "5a5ce0e44660e34d0cc190b9ef996b828de7fda7cac055c8c0e3a5ef341d2f85",
+        "SEGDEF": {
+          "name": "_TEXT",
+          "cl": "CODE",
+          "size": 1024,
+          "acbp": 72
+        },
+        "record_counts": {
+          "THEADR": 1,
+          "LNAMES": 1,
+          "SEGDEF": 2,
+          "GRPDEF": 1,
+          "UNKNOWN_0x8E": 1,
+          "LEDATA": 1,
+          "PUBDEF": 1,
+          "MODEND": 1
+        },
+        "authority": "corroboration only; UNKNOWN_0x8E not interpreted or discarded; primary source and actual linked OMF are authority"
+      }
+    }
+  ],
+  "proposed_decisions": [
+    {
+      "artifact": "th05-main",
+      "decision": "PROPOSAL_ONLY_LISTED_SCOPES",
+      "classification": "third-party-library-code",
+      "scopes": [
+        "main-pfgetc",
+        "main-assignall",
+        "main-sound-joy",
+        "main-sajout",
+        "main-str-ieq"
+      ],
+      "authored_credit": 0,
+      "authored_denominator": null,
+      "other_procedures_policy": "unknown",
+      "uncovered_gaps_policy": "unknown"
+    },
+    {
+      "artifact": "th05-op",
+      "decision": "PROPOSAL_ONLY_LISTED_SCOPES",
+      "classification": "third-party-library-code",
+      "scopes": [
+        "op-rottbl"
+      ],
+      "authored_credit": 0,
+      "authored_denominator": null,
+      "other_procedures_policy": "unknown",
+      "uncovered_gaps_policy": "unknown"
+    },
+    {
+      "artifact": "th05-maine",
+      "decision": "PROPOSAL_ONLY_LISTED_SCOPES",
+      "classification": "third-party-library-code",
+      "scopes": [
+        "maine-rottbl"
+      ],
+      "authored_credit": 0,
+      "authored_denominator": null,
+      "other_procedures_policy": "unknown",
+      "uncovered_gaps_policy": "unknown"
+    }
+  ],
+  "normalization": [
+    "Strict CP932 versus UTF8 decoding",
+    "CRLF/CR toLF only"
+  ],
+  "provenance_limitations": [
+    "Original game candidate-local-attested, not independently pristine.",
+    "One retained link per context; zero fresh compiler producers, no authored source acceptance.",
+    "No per-member MAP contribution is claimed: actual linked objects are mixed monolithic game/library contributions.",
+    "Binary library original-distribution provenance is secondary ReC98 commitcc219ff2; independent original source archive supplies ownership authority.",
+    "Source-mismatch procedures, unreviewed members, DATA/BSS and uncovered gaps remain unknown; no adoption by this proof."
+  ],
+  "reviewer_sources": [
+    {
+      "file": "scripts/review_master_additions.py",
+      "size": 24206,
+      "sha256": "59300d63dd9cbe771627e52b43218498afe88b3446bc942d701d3ae6069e7dcf"
+    },
+    {
+      "file": "scripts/review_master.py",
+      "size": 28255,
+      "sha256": "7f7584e8c82b52460c521abd149e3e812a973c4cd925e04807d5a5c8cfcd3b62"
+    },
+    {
+      "file": "scripts/review_vendor_context.py",
+      "size": 17883,
+      "sha256": "7f3389731a613a10d3661f4cb0987a7fde53a39bf5962482551737dcba111eab"
+    },
+    {
+      "file": "scripts/review_vendor.py",
+      "size": 37965,
+      "sha256": "5acdc65903f7bfccd984d8bee9fde1d4d25d4f56b06c247bc573952dcd8b4e00"
+    },
+    {
+      "file": "scripts/lib/borland_library.py",
+      "size": 4606,
+      "sha256": "8d5a811afe28f53e9e8e132a17221702ce7885069c85bc53dff20bedb840e6ea"
+    },
+    {
+      "file": "scripts/lib/omf.py",
+      "size": 6862,
+      "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+    },
+    {
+      "file": "scripts/lib/pc98.py",
+      "size": 22989,
+      "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+    },
+    {
+      "file": "scripts/lib/unit_context.py",
+      "size": 7719,
+      "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+    },
+    {
+      "file": "scripts/lib/unit_oracle.py",
+      "size": 7606,
+      "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+    },
+    {
+      "file": "scripts/lib/unit_extents.py",
+      "size": 12870,
+      "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+    },
+    {
+      "file": "scripts/lib/targets.py",
+      "size": 1969,
+      "sha256": "4756db844953ba748077ff6e75e9df8a80692b8108e0eec3c3fa6dbeeb49ac93"
+    }
+  ],
+  "evidence_digest": "41dfd7758455bd7708b3e82c332c6099880429fb88a85ec6be4ad81363bfa6ae"
+}

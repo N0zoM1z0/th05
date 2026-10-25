@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **253 bounded C/C++ CODE/DATA units / 454 complete function occurrences**,
-**83,715 authored bytes exact**: 72,376 CODE and 11,339 initialized DATA.
-CODE is 71,718 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 83,788; 73 checked padding bytes receive
+Current acceptance: **258 bounded C/C++ CODE/DATA units / 456 complete function occurrences**,
+**85,054 authored bytes exact**: 73,715 CODE and 11,339 initialized DATA.
+CODE is 73,057 instruction plus 658 semantic compiler-table bytes.
+Complete compared extents total 85,127; 73 checked padding bytes receive
 no credit. MAIN has 368 functions / 59,331 CODE / 2,681 DATA;
-OP 59 / 9,879 / 8,615; MAINE 27 / 3,166 / 43.
+OP 61 / 11,218 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -93,15 +93,20 @@ not contribute C++ credit or establish complete outer ZUN equality.
 
 `resources/ownership.json` covers all 319,268 observed payload/COM bytes.
 Every unclassified interval remains unknown. Reviewed third-party ownership
-covers149 complete CL.LIB CODE contributions/47,479 bytes and20 complete Master
-procedures/376 bytes, totaling47,855. CL uses pinned native OMF/FIXUPP evidence
+covers149 complete CL.LIB CODE contributions/47,479 bytes,25 complete Master
+procedures/480 bytes and2 Master CODE-data tables/2048 bytes, totaling50,007.
+CL uses pinned native OMF/FIXUPP evidence
 and explicit member decisions in `config/reviewed_vendor_units.json` plus its
 `.op.json` and `.maine.json` counterparts. OP63/23,708 and MAINE55/20,870 use
 their actual retained decoded targets and separate explicit decisions. Master
 uses independently pinned original source, actual macro context, complete
 OMF/MAP/MZ and ordered-fixup equality, with the separate explicit decision in
-`config/reviewed_master_procedures.json`. Its376 bytes include9 library-owned
-padding bytes and grant no authored credit. Every deferred CL member,
+`config/reviewed_master_procedures.json`. The additive source-backed seven-scope
+proof and explicit `config/reviewed_master_additions.json` decision add104 MAIN
+procedure bytes and1024 RotTbl bytes in each of OP/MAINE. Actual monolithic
+OMF/MAP contributions are retained; no member MAP is invented. All Master
+extents include10 library-owned padding bytes and grant no authored credit.
+CODE-data remains explicitly labeled, distinct from instructions. Every deferred CL member,
 all other Master procedures and every surrounding gap remain unknown.
 The reviewers have `--structural-check` for public metadata and `--check` for
 actual retained private evidence, with zero compilation. Regenerate inventory
@@ -1047,3 +1052,22 @@ join frozen source identities through opt-in `generated_sources`; five new
 regressions cover generator drift, stale output, missing snapshots, inactive
 include claims and mutating checks. No accepted CODE consumer was changed or
 replayed. See `src/main/player/shot_velocity_data.md`.
+
+## Complete Music Room frontend and incremental replacement
+
+`op-music-full-context-a` adds complete polygon502 and menu837,1339 authored
+instruction bytes/two functions. Canonical `music_body.inl` preserves every
+old implementation byte and restores the genuine30-byte saved-plane helper
+using installed `__memcpy__` plus actualDSpreservation/segment selection. Its
+intrinsic XOR encodings still differ at2bytes; the entire helper stays unknown
+and uncredited. Full2396 compiler context naturally restores original LEDATA
+fixup grouping; no instruction patch, filler or record rechunking is used.
+Exactly10oldrecords (12CODEfunctions+6217DATA) were replaced with15records,
+including4explicitprefixfunctions and2newfunctions. AllshareoneactualTU:
+2freshpositivecompiles+1DATAfilename mutation.
+`op-music-full-context-code-negative-a` adds1shared CODE menu24→25negative,
+without positive recompilation. Both controls pass; no per-function independent
+negative is claimed. Root native comparison confirms onlyhelperoffsets16/18
+differ in full2396, with full orderedfixups equal; all15scopes areexact.
+Atomic import succeeds and the current OP replay plan is empty. See
+`src/op/music/full_context.md`.

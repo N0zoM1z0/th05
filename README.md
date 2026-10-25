@@ -13,13 +13,13 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **454 complete C++ functions / 72,376 authored CODE bytes**
+The first **456 complete C++ functions / 73,715 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
 fixups and compiled controls. Separately, **11,339 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored bytes exact are
-**83,715**: 71,718 instruction, 658 compiler switch-table
+**85,054**: 73,057 instruction, 658 compiler switch-table
 and 11,339 initialized DATA bytes. Complete compared extents contain
-83,788 bytes, including 73 excluded padding bytes. The oracle
+85,127 bytes, including 73 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
@@ -29,9 +29,11 @@ percentage remains **unmeasured**. See [progress](docs/PROGRESS.md) and the
 [gapless ownership inventory](resources/ownership.json) retains every unknown
 interval across all four targets; it grants no inferred vendor exclusions.
 [Reviewed Borland library evidence](docs/reconstruction/CL_VENDOR_OWNERSHIP.md)
-classifies 2,901 third-party bytes; the independent
+and its artifact-specific reviews classify 47,479 third-party bytes; the independent
 [Master procedure review](docs/reconstruction/MASTER_VENDOR_ADOPTION.md)
-classifies another 376. These 3,277 bytes grant no authored source credit.
+and [source-backed additions](docs/reconstruction/MASTER_VENDOR_ADDITIONS.md)
+classify another 2,528. These 50,007 bytes grant no authored source credit;
+2,048 are library constants in CODE, separately identified from instructions.
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

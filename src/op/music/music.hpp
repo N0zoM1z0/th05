@@ -5,10 +5,9 @@
 #ifndef TH05_OP_MUSIC_HPP
 #define TH05_OP_MUSIC_HPP
 
-// First declaration must capture the explicit suffix contribution before the
-// canonical header repeats it. A default segment with the same text name is
-// not a substitute for this explicit codeseg/group association.
-#pragma codeseg OP_MUSIC_SUFFIX_TEXT op_01
+// Capture the complete frontend contribution before the canonical menu header
+// repeats this declaration. Every real Music Room body shares this code frame.
+#pragma codeseg OP_MUSIC_TEXT op_01
 void near musicroom_menu(void);
 #include "src/op/main/menu.hpp"
 #include "src/shared/geometry.hpp"
@@ -117,16 +116,16 @@ static inline char ring_min() { return 0; }
     (value)++; \
     if((value) >= (ring_end)) { (value) = 0; }
 
-// Three contributions share one real near-code frame. The middle helper is
-// external and receives no candidate source body or authored credit.
-#pragma codeseg OP_MUSIC_PREFIX_TEXT op_01
+// Complete frontend first declarations share one real near-code frame. The
+// DS-copy helper has a genuine hardware/intrinsic body but receives no credit.
+#pragma codeseg OP_MUSIC_TEXT op_01
 void pascal near track_unput_or_put(uint8_t track_sel, bool16 put);
 void pascal near tracklist_put(uint8_t sel);
 void near nopoly_B_snap(void);
 void near nopoly_B_free(void);
-#pragma codeseg OP_MUSIC_FOREIGN_TEXT op_01
+#pragma codeseg OP_MUSIC_TEXT op_01
 void near nopoly_B_put(void);
-#pragma codeseg OP_MUSIC_SUFFIX_TEXT op_01
+#pragma codeseg OP_MUSIC_TEXT op_01
 void pascal near polygon_build(screen_point_t near *points,
     screen_x_t center_x, space_changing_pixel_t center_y, pixel_t radius,
     int point_count, unsigned char plus_angle);
@@ -159,7 +158,7 @@ typedef char th05_music_color_is_1[(sizeof(vc_t) == 1) ? 1 : -1];
 typedef char th05_music_page_is_1[(sizeof(page_t) == 1) ? 1 : -1];
 
 // Restore the includer's default code segment; the owner explicitly selects
-// each of its two function-body contributions after the includes.
+// the complete frontend contribution before including the canonical body.
 #pragma codeseg
 
 #endif

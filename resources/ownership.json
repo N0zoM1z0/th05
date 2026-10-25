@@ -8,11 +8,11 @@
   "byte_counts": {
     "accepted-c-initialized-data": 1449,
     "accepted-cxx-initialized-data": 9890,
-    "accepted-cxx-instructions": 71718,
+    "accepted-cxx-instructions": 73057,
     "accepted-cxx-switch-table": 658,
     "checked-uncredited-padding": 73,
-    "unknown": 187625,
-    "verified-vendor-code": 47855
+    "unknown": 184134,
+    "verified-vendor-code": 50007
   },
   "views": {
     "main": {
@@ -26,8 +26,8 @@
         "accepted-cxx-instructions": 58795,
         "accepted-cxx-switch-table": 536,
         "checked-uncredited-padding": 66,
-        "unknown": 80603,
-        "verified-vendor-code": 3277
+        "unknown": 80499,
+        "verified-vendor-code": 3381
       },
       "intervals": [
         {
@@ -142,6 +142,34 @@
         },
         {
           "start": 7906,
+          "end": 8828,
+          "kind": "unknown"
+        },
+        {
+          "start": 8828,
+          "end": 8844,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-instructions",
+          "library": "master.lib 0.23",
+          "member": "PFGETC",
+          "scope_id": "main-pfgetc"
+        },
+        {
+          "start": 8844,
+          "end": 9282,
+          "kind": "unknown"
+        },
+        {
+          "start": 9282,
+          "end": 9288,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-instructions",
+          "library": "master.lib 0.23",
+          "member": "ASSIGNALL",
+          "scope_id": "main-assignall"
+        },
+        {
+          "start": 9288,
           "end": 9342,
           "kind": "unknown"
         },
@@ -209,6 +237,34 @@
         },
         {
           "start": 10788,
+          "end": 13928,
+          "kind": "unknown"
+        },
+        {
+          "start": 13928,
+          "end": 13945,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-instructions",
+          "library": "master.lib 0.23",
+          "member": "SOUND_JOY",
+          "scope_id": "main-sound-joy"
+        },
+        {
+          "start": 13945,
+          "end": 13958,
+          "kind": "unknown"
+        },
+        {
+          "start": 13958,
+          "end": 13967,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-instructions",
+          "library": "master.lib 0.23",
+          "member": "SAJOUT",
+          "scope_id": "main-sajout"
+        },
+        {
+          "start": 13967,
           "end": 16332,
           "kind": "unknown"
         },
@@ -247,6 +303,20 @@
         },
         {
           "start": 16466,
+          "end": 17840,
+          "kind": "unknown"
+        },
+        {
+          "start": 17840,
+          "end": 17896,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-instructions",
+          "library": "master.lib 0.23",
+          "member": "STR_IEQ",
+          "scope_id": "main-str-ieq"
+        },
+        {
+          "start": 17896,
           "end": 17923,
           "kind": "unknown"
         },
@@ -3067,7 +3137,8 @@
         }
       ],
       "vendor_review_sha256": "3d854c0b4f4c8690093a4fe3e63b7306dc81be3caa189c6b9d2bd000290d6125",
-      "master_vendor_review_sha256": "858e3b1e7a03cac3fd5b2d27cd3fce1a9da6f6ffbc503d0881af54c758444ed4"
+      "master_vendor_review_sha256": "858e3b1e7a03cac3fd5b2d27cd3fce1a9da6f6ffbc503d0881af54c758444ed4",
+      "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff"
     },
     "op": {
       "kind": "retained-diet-decoded-load-module",
@@ -3076,15 +3147,29 @@
       "original_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
       "byte_counts": {
         "accepted-cxx-initialized-data": 8615,
-        "accepted-cxx-instructions": 9773,
+        "accepted-cxx-instructions": 11112,
         "accepted-cxx-switch-table": 106,
         "checked-uncredited-padding": 5,
-        "unknown": 35591,
-        "verified-vendor-code": 23708
+        "unknown": 33228,
+        "verified-vendor-code": 24732
       },
       "intervals": [
         {
           "start": 0,
+          "end": 7304,
+          "kind": "unknown"
+        },
+        {
+          "start": 7304,
+          "end": 8328,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-code-data",
+          "library": "master.lib 0.23",
+          "member": "RotTbl",
+          "scope_id": "op-rottbl"
+        },
+        {
+          "start": 8328,
           "end": 15128,
           "kind": "unknown"
         },
@@ -3651,9 +3736,27 @@
         },
         {
           "start": 48761,
-          "end": 49142,
+          "end": 48973,
           "kind": "accepted-cxx-instructions",
           "unit": "op-music-prefix"
+        },
+        {
+          "start": 48973,
+          "end": 49079,
+          "kind": "accepted-cxx-instructions",
+          "unit": "op-music-tracklist-put"
+        },
+        {
+          "start": 49079,
+          "end": 49128,
+          "kind": "accepted-cxx-instructions",
+          "unit": "op-music-nopoly-snap"
+        },
+        {
+          "start": 49128,
+          "end": 49142,
+          "kind": "accepted-cxx-instructions",
+          "unit": "op-music-nopoly-free"
         },
         {
           "start": 49142,
@@ -3669,7 +3772,8 @@
         {
           "start": 49309,
           "end": 49811,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "op-music-polygons-update-render"
         },
         {
           "start": 49811,
@@ -3715,6 +3819,12 @@
         },
         {
           "start": 50320,
+          "end": 51157,
+          "kind": "accepted-cxx-instructions",
+          "unit": "op-music-menu"
+        },
+        {
+          "start": 51157,
           "end": 51426,
           "kind": "unknown"
         },
@@ -3989,7 +4099,8 @@
           "kind": "unknown"
         }
       ],
-      "vendor_review_sha256": "25fdbbd10355ed0f33d9daf507f37dacd308aa99f576fd4d79ca5f836267be75"
+      "vendor_review_sha256": "25fdbbd10355ed0f33d9daf507f37dacd308aa99f576fd4d79ca5f836267be75",
+      "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff"
     },
     "maine": {
       "kind": "retained-diet-decoded-load-module",
@@ -4001,12 +4112,26 @@
         "accepted-cxx-instructions": 3150,
         "accepted-cxx-switch-table": 16,
         "checked-uncredited-padding": 2,
-        "unknown": 53315,
-        "verified-vendor-code": 20870
+        "unknown": 52291,
+        "verified-vendor-code": 21894
       },
       "intervals": [
         {
           "start": 0,
+          "end": 7714,
+          "kind": "unknown"
+        },
+        {
+          "start": 7714,
+          "end": 8738,
+          "kind": "verified-vendor-code",
+          "content_kind": "library-code-data",
+          "library": "master.lib 0.23",
+          "member": "RotTbl",
+          "scope_id": "maine-rottbl"
+        },
+        {
+          "start": 8738,
           "end": 15584,
           "kind": "unknown"
         },
@@ -4646,7 +4771,8 @@
           "kind": "unknown"
         }
       ],
-      "vendor_review_sha256": "311c6662cbde4a4bbbbf6b5c39505e82a3306b5ff9fd33b4c45b8a906522661a"
+      "vendor_review_sha256": "311c6662cbde4a4bbbbf6b5c39505e82a3306b5ff9fd33b4c45b8a906522661a",
+      "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff"
     },
     "zun": {
       "kind": "com-file",

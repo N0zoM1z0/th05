@@ -225,6 +225,77 @@ def reviewed_context_vendor(root: Path, *, context: str, view: dict,
     return claims, digest_bytes(decision_bytes)
 
 
+def reviewed_master_additions(root: Path, *, views: dict, targets: dict,
+                              verify_targets: bool) -> tuple[dict[str, list[dict]], str | None]:
+    """One explicit cross-artifact decision; replay its private evidence once."""
+    decision_path = root / "config/reviewed_master_additions.json"
+    if not decision_path.exists():
+        return {}, None
+    from review_master_additions import BASE_PROOF, PROOF, validate_metadata, review_inputs
+
+    decision_bytes = decision_path.read_bytes()
+    decision = json.loads(decision_bytes)
+    proof_bytes = (root / PROOF).read_bytes()
+    proof = json.loads(proof_bytes)
+    validate_metadata(proof, root=root)
+    baseline = json.loads((root / BASE_PROOF).read_bytes())
+    if (type(decision.get("schema_version")) is not int or decision["schema_version"] != 1 or
+            decision.get("decision") != "ADOPT_ONLY_LISTED_SCOPES" or
+            decision.get("classification") != "third-party-library-code" or
+            decision.get("evidence_sha256") != digest_bytes(proof_bytes)):
+        raise ValueError("Master additions decision is stale or has another classification")
+    if (type(decision.get("authored_credit")) is not int or decision["authored_credit"] != 0 or
+            "authored_denominator" not in decision or decision["authored_denominator"] is not None or
+            decision.get("other_scopes_policy") != "unknown" or
+            decision.get("uncovered_gaps_policy") != "unknown"):
+        raise ValueError("Master additions cannot grant authored credit or classify other scopes/gaps")
+    proposed = {row["id"]: row for row in proof["scopes"]}
+    selected = decision.get("scopes")
+    if (not isinstance(selected, list) or len(selected) != 7 or
+            any(not isinstance(scope, str) or not scope for scope in selected) or
+            len(selected) != len(set(selected)) or set(selected) != set(proposed)):
+        raise ValueError("Master additions require the exact seven unique reviewed scope IDs")
+    for key in ("full_bytes", "instruction_bytes", "library_padding_bytes", "library_code_data_bytes"):
+        if type(decision.get(key)) is not int or decision[key] != proof[key]:
+            raise ValueError("Master additions instruction/data/library-padding accounting differs")
+    artifacts = decision.get("artifacts")
+    if not isinstance(artifacts, dict) or set(artifacts) != {"main", "op", "maine"}:
+        raise ValueError("Master additions require all three actual artifact contexts")
+    for name in ("main", "op", "maine"):
+        packed = (baseline["inputs"]["target"]["sha256"] if name == "main"
+                  else proof["table_contexts"][name]["target_sha256"])
+        payload = (baseline["target_payload_sha256"] if name == "main"
+                   else proof["table_contexts"][name]["target_payload_sha256"])
+        row = artifacts[name]
+        if (not isinstance(row, dict) or row.get("artifact") != "th05-" + name or
+                row.get("target_sha256") != packed or
+                targets.get("th05-" + name, {}).get("sha256") != packed or
+                row.get("target_payload_sha256") != payload or
+                views.get(name, {}).get("sha256") != payload or
+                type(row.get("target_payload_size")) is not int or
+                row["target_payload_size"] != views.get(name, {}).get("size") or
+                row["target_payload_size"] <= 0):
+            raise ValueError("Master additions packed/payload identity belongs to another artifact/context")
+        if (name != "main" and row["target_payload_size"] !=
+                proof["table_contexts"][name]["target_view"]["payload_size"]):
+            raise ValueError("Master additions decoded context size differs")
+    if verify_targets:
+        expected = dict(kind="native-source-backed-master-additions-review", scopes=7,
+                        full_bytes=2152, instruction_bytes=103, library_padding_bytes=1,
+                        library_code_data_bytes=2048, byte_proof_replayed=True, decision="PROPOSAL",
+                        authored_credit=0, compiler_invocations=0, authored_denominator=None)
+        if review_inputs(proof, root=root) != expected:
+            raise ValueError("Master additions actual private replay disagrees with reviewed proof")
+    claims = {name: [] for name in artifacts}
+    for scope in selected:
+        row = proposed[scope]
+        name = row["artifact"].removeprefix("th05-")
+        claims[name].append({"start": row["start"], "end": row["end"],
+                            "kind": "verified-vendor-code", "content_kind": row["content_kind"],
+                            "library": "master.lib 0.23", "member": row["name"], "scope_id": scope})
+    return claims, digest_bytes(decision_bytes)
+
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -232,6 +303,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         raise ValueError("ownership inventory requires all four independent coordinate views")
     targets = tomllib.loads((root / "config/targets.toml").read_text())
     target_by_id = {row["id"]: row for row in targets["artifacts"]}
+    additions, additions_sha = reviewed_master_additions(
+        root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -261,6 +334,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, claims)
+        if name in additions:
+            pieces = overlay_vendor(view["size"], pieces, additions[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -270,6 +345,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["vendor_review_sha256"] = review_sha
         if master_review_sha:
             views[name]["master_vendor_review_sha256"] = master_review_sha
+        if additions_sha and name in additions:
+            views[name]["master_additions_review_sha256"] = additions_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])
