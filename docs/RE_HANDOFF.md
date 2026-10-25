@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **3,589 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 3,886
+Separately reviewed ASM now contributes **3,937 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,234
 complete compared bytes include 47 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 164,620 bytes. The global denominator is still unreviewed,
+ownership is now 164,272 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -387,3 +387,47 @@ Private independent vendor/source-origin and pellet native reviews are
 `.analysis/image-kernels-origin-review.json` and
 `.analysis/pellet-render-native-review.json`; public notes pin their hashes.
 Historical original source and all historical vendor derivations remain unknown.
+
+
+## Complete laser geometry/render/hit assembly
+
+The full MAIN family D5C2..D71E (348 bytes) is explicitly accepted as reviewed
+original-ASM reconstruction: private vector 56, point conversion 44, ray 160 and
+hit 88. No NOP, padding, table, placeholder or asset bytes occur. Ordered native
+MZ fixups are [228,245], real far clip/polygon providers at 0000:139E/18B4.
+C/C++ counters remain unchanged; total reviewed ASM is now 4,187 credited bytes
+(3,937 instructions, 186 symbolic CODE tables, 64 DATA), 4,234 compared bytes.
+Unknown ownership is 164,272 bytes; the global denominator remains unreviewed.
+
+`src/main/bullet/laser_render_hit.asm` uses semantic polar/point macros, complete
+Laser 24/coords 10 and stack overlays, with no candidate opcode emits, compiler
+body conversion or asset payload. Native BP choreography and private SS helper
+contracts support whole-family ASM review; literal historical source and
+assembly-heavy mixed-source possibilities remain unproved. No specific inspected
+subspan has positive compiler-generated provenance. Independent native/source
+reviews are `.analysis/laser-rh-native-review.json` and
+`.analysis/laser-rh-maintained-source-review.json`; hashes and limitations are in
+[owner notes](../src/main/bullet/laser_render_hit.md).
+
+`.analysis/laser-rh-native/replay-e/receipt.json` has two fresh deterministic
+complete TASM producers and its own hit-step 16-to-15 negative, with full raw,
+ordered fixups, OMF/MAP/public/real-frame checks. Its record and explicit adoption
+are imported in the generic ASM ledgers. Earlier attempts a..d stopped on
+binder CS, union width selection, real ENTER/LEAVE frames or TLINK alias
+presentation; none was adopted. Current source includes actual compiler EXTDEF
+aliases, verified in PUBDEF and their demangled MAP entries. No prior accepted
+source dependency changed; tool execution probes and accepted owners were reused.
+
+Keep SS overrides on both line destinations, far SS:DI arguments (clip 12-byte,
+polygon 6-byte cleanup), paired ENTER/LEAVE, and the hit helper's reversed DI/SI
+save order. No DS=SS shortcut applies. Ray BP moves F,F-4,F-12,F; vector uses
+signed 32-bit multiply/shift then word wrapping, and hit boxes remain 12 pixels wide
+at 16-pixel intervals. Polygon helpers may change ES.
+
+A read-only Shinki wing check retained the existing blocker without compilation:
+original 386-byte wing fixups [76,305] are internally ascending. The retained
+full natural enclosure has matching scoped order but raw call operands differ
+because the earlier ball updater is four bytes short. Current evidence supplies no supported short standalone context or
+prefix change that satisfies both claims; do not add arbitrary padding or
+misbind an owned definition to a foreign symbol. Evidence is `.analysis/shinki-wing-native/read-only-order-review.json`
+and the prior retained-order note; do not repeat those unchanged probes.

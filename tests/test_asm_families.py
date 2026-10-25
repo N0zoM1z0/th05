@@ -161,7 +161,7 @@ class AsmFamilyTests(unittest.TestCase):
         for rows in claims.values():
             for row in rows:
                 totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 1781,
+        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 2129,
                                  "accepted-reviewed-asm-dispatch-table": 68,
                                  "checked-uncredited-asm-alignment": 13,
                                  "checked-uncredited-asm-inert-branch": 6,

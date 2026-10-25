@@ -41,7 +41,7 @@ OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
 Separately reviewed handwritten ASM reconstruction contributes
-3589 instruction bytes, 186 symbolic CODE-dispatch table bytes
+3937 instruction bytes, 186 symbolic CODE-dispatch table bytes
 and 64 initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
 47 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.

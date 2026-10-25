@@ -306,3 +306,35 @@ kind = "runtime-placeholder"
 offset = 129
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-laser-render-hit"
+artifact = "main"
+source = "src/main/bullet/laser_render_hit.asm"
+types = "src/main/bullet/laser_render_hit_types.inc"
+symbols = "probes/units/laser_render_hit_symbols.inc"
+bindings = "probes/units/laser_render_hit_bindings.asm"
+notes = "src/main/bullet/laser_render_hit.md"
+target_start = 54722
+size = 348
+segment = "LASER_RH_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = [228, 245]
+tables = []
+uncredited = []
+native_review_sha256 = "2994796111c8d45c078b115e30855d6b0e24c0198f1dae52cb931ef4a8930ac0"
+target_scope_sha256 = "89fd085720f200679a887069a2059d1e87718a53e210163708dc40e540e4b534"
+semantic_inputs = ["src/main/bullet/laser.hpp", "src/shared/geometry.hpp", "src/shared/abi.hpp"]
+[units.publics]
+laser_vector_at = 0
+laser_line_to_pixels = 56
+laser_render_ray = 100
+laser_hittest = 260
+laser_render_hit_end = 348
+"laser_render_ray(const laser_coords_t near&)" = 100
+"laser_hittest(laser near&)" = 260
+[units.negative]
+find = "HIT_STEP_PIXELS equ 16"
+replace = "HIT_STEP_PIXELS equ 15"
