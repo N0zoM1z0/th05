@@ -32,7 +32,11 @@ The own negative makes the Easy modifier select the real Normal description
 instead. This is a meaningful near-pointer DATA change. Complete gapless
 compiler LEDATA, actual MAP extent, two fresh producers, full raw/original
 ordered relocation comparison, input/tool identities and that compiled
-mutation remain necessary. This packet is currently uncompiled and unaccepted.
+mutation were verified by `main-stage-bonus-ui-pointers-a`: both fresh
+42-byte producers passed raw bytes and the empty original relocation stream,
+with complete OMF/MAP/dependency/tool checks. The own compiled Easy-to-Normal
+description-pointer mutation was rejected. All 42 bytes were imported as
+semantic authored DATA and committed in `d07521f`.
 
 Private review and proposal files are
 `.analysis/stage-bonus-pointers-boundary-review.json` and

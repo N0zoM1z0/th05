@@ -2,28 +2,40 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6aaf726cc06e185bc82d9fce801734f7884448f8a82947787decb6e53bce2172",
+  "replay_receipt_sha256": "821c9251a09f30dccaa45366bffc82475839b05a7be81f9809ad303c2bbdc86f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140340,
-    "candidate_start": 140340,
-    "size": 42,
-    "target_sha256": "64cef4000f07b2df15bda50726c0d2905836a034a4520d16cae2ec294577d7e0",
-    "candidate_sha256": "37c0a9f5992ed80aa412a70e62502870cfc6fb9f75f3d8a828e3cb5fad173e8e",
+    "target_start": 85500,
+    "candidate_start": 85500,
+    "size": 72,
+    "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+    "candidate_sha256": "ff80018ccab76ce0a9d07220f6ce2f7a4dcdad472c9b6f06afa0e7dc8a794eaa",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      68,
+      63,
+      58,
+      53,
+      48,
+      43,
+      28,
+      17,
+      6
+    ],
+    "candidate_fixups": [
+      68,
+      63,
+      58,
+      53,
+      48,
+      43,
+      28,
+      17,
+      6
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 140340,
-      "size": 42,
-      "module": "th05/bonus_pt.cpp",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -56612,6 +56624,665 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bonus_pt.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-hud-put-context",
+      "entry_sha256": "9c0c6ee114560f12455a65c01403188d7765e2418e58f9496ec615226c44c7ab",
+      "result": {
+        "id": "main-hud-put-context",
+        "entry_sha256": "9c0c6ee114560f12455a65c01403188d7765e2418e58f9496ec615226c44c7ab",
+        "rounds": [
+          {
+            "target_start": 54051,
+            "candidate_start": 54051,
+            "size": 337,
+            "target_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+            "candidate_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+            "raw_exact": true,
+            "target_fixups": [
+              161,
+              143,
+              125,
+              95,
+              77,
+              37,
+              19,
+              318,
+              246,
+              225,
+              204,
+              186
+            ],
+            "candidate_fixups": [
+              161,
+              143,
+              125,
+              95,
+              77,
+              37,
+              19,
+              318,
+              246,
+              225,
+              204,
+              186
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 54051,
+              "size": 337,
+              "function_symbol": "hud_put()",
+              "contribution_start": 53190,
+              "contribution_size": 1198,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 54051,
+            "candidate_start": 54051,
+            "size": 337,
+            "target_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+            "candidate_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+            "raw_exact": true,
+            "target_fixups": [
+              161,
+              143,
+              125,
+              95,
+              77,
+              37,
+              19,
+              318,
+              246,
+              225,
+              204,
+              186
+            ],
+            "candidate_fixups": [
+              161,
+              143,
+              125,
+              95,
+              77,
+              37,
+              19,
+              318,
+              246,
+              225,
+              204,
+              186
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 54051,
+              "size": 337,
+              "function_symbol": "hud_put()",
+              "contribution_start": 53190,
+              "contribution_size": 1198,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "117c09856eba8cb0c6508ab38b0daea9599a9f5fff1f4a80736abc74acb542f0",
+            "dependency_timestamp_normalized_sha256": "742a539a73f3781a4036db40ff22d3c85bbcfeefc89c5e553057b556df1a6988",
+            "module_name": "th05/hud_full.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hud_full.cpp",
+              "src/main/hud/combined.cpp",
+              "src/main/hud/combined.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "ea656b0a294799843675c2bb6eb9aeac7a0b896e2d7d0130b5dff3a987a2734f",
+            "dependency_timestamp_normalized_sha256": "742a539a73f3781a4036db40ff22d3c85bbcfeefc89c5e553057b556df1a6988",
+            "module_name": "th05/hud_full.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hud_full.cpp",
+              "src/main/hud/combined.cpp",
+              "src/main/hud/combined.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hud_full.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hud_full.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/hud_combined_bindings.asm",
+            "sha256": "e52ac36b964d2d134c64e69d4630b8f1c75144859b6918d0a77cd907a0aa8a5e"
+          },
+          {
+            "path": "src/main/hud/combined.cpp",
+            "sha256": "f3989236989ea61fd0b91be0ef6db5b204e14b2aa17de58cc81f7ce2c800598f"
+          },
+          {
+            "path": "src/main/hud/combined.hpp",
+            "sha256": "bed1718c83d39265cb74233fbf35a252979bf2ce3c67d6cc526d8f1b2186ee1e"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/hud_combined_bindings.asm",
+          "sha256": "e52ac36b964d2d134c64e69d4630b8f1c75144859b6918d0a77cd907a0aa8a5e"
+        },
+        {
+          "path": "src/main/hud/combined.cpp",
+          "sha256": "f3989236989ea61fd0b91be0ef6db5b204e14b2aa17de58cc81f7ce2c800598f"
+        },
+        {
+          "path": "src/main/hud/combined.hpp",
+          "sha256": "bed1718c83d39265cb74233fbf35a252979bf2ce3c67d6cc526d8f1b2186ee1e"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "79c523ee0f8ce830c285fa64d95b18b4a91d4541a09bf972c07180caaed867da",
+      "compiled_negative_control": {
+        "target_start": 54051,
+        "candidate_start": 54051,
+        "size": 337,
+        "target_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+        "candidate_sha256": "52e3e6c4dfb09240c3b3b4817cc3d5b1a2d52933880084778e8f65b41a0b96f0",
+        "raw_exact": false,
+        "target_fixups": [
+          161,
+          143,
+          125,
+          95,
+          77,
+          37,
+          19,
+          318,
+          246,
+          225,
+          204,
+          186
+        ],
+        "candidate_fixups": [
+          161,
+          143,
+          125,
+          95,
+          77,
+          37,
+          19,
+          318,
+          246,
+          225,
+          204,
+          186
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 54051,
+          "size": 337,
+          "function_symbol": "hud_put()",
+          "contribution_start": 53190,
+          "contribution_size": 1198,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-put-context",
+        "entry_sha256": "9c0c6ee114560f12455a65c01403188d7765e2418e58f9496ec615226c44c7ab",
+        "mutation": {
+          "id": "hud-point-caption-row-sixteen-to-seventeen",
+          "unit": "main-hud-put-context",
+          "source": "src/main/hud/combined.cpp",
+          "find": "gaiji_putca(58, 16, HUD_FULL_POINT_GLYPH",
+          "replace": "gaiji_putca(58, 17, HUD_FULL_POINT_GLYPH"
+        },
+        "control_sha256": "bf1e942f5707310f28a7f85782d327d84e28482c4ef8c30acf05f0976207f910",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 54051,
+          "candidate_start": 54051,
+          "size": 337,
+          "target_sha256": "b33e05029d41fa277cf0e6483eafe381b75361b8e4d6bb77c72bd55615228dc7",
+          "candidate_sha256": "52e3e6c4dfb09240c3b3b4817cc3d5b1a2d52933880084778e8f65b41a0b96f0",
+          "raw_exact": false,
+          "target_fixups": [
+            161,
+            143,
+            125,
+            95,
+            77,
+            37,
+            19,
+            318,
+            246,
+            225,
+            204,
+            186
+          ],
+          "candidate_fixups": [
+            161,
+            143,
+            125,
+            95,
+            77,
+            37,
+            19,
+            318,
+            246,
+            225,
+            204,
+            186
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 54051,
+            "size": 337,
+            "function_symbol": "hud_put()",
+            "contribution_start": 53190,
+            "contribution_size": 1198,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "77d9a17bb987ca1f2de26dfa51c0f73a17504c284243188de86c1e0cf2fce2e9",
+          "dependency_timestamp_normalized_sha256": "316d0e056f2cefa25bdff77ca23493ecd45e629a5d45ef1c996e184b67400ad3",
+          "module_name": "th05/hud_full.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/hud_full.cpp",
+            "src/main/hud/combined.cpp",
+            "src/main/hud/combined.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/hud_full.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-game-exit",
+      "entry_sha256": "cc1c585e2fd73d24bb845b85ff4990f7a3f1f421be22a960230d172106da6db2",
+      "result": {
+        "id": "main-game-exit",
+        "entry_sha256": "cc1c585e2fd73d24bb845b85ff4990f7a3f1f421be22a960230d172106da6db2",
+        "rounds": [
+          {
+            "target_start": 85500,
+            "candidate_start": 85500,
+            "size": 72,
+            "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+            "candidate_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+            "raw_exact": true,
+            "target_fixups": [
+              68,
+              63,
+              58,
+              53,
+              48,
+              43,
+              28,
+              17,
+              6
+            ],
+            "candidate_fixups": [
+              68,
+              63,
+              58,
+              53,
+              48,
+              43,
+              28,
+              17,
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 85500,
+            "candidate_start": 85500,
+            "size": 72,
+            "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+            "candidate_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+            "raw_exact": true,
+            "target_fixups": [
+              68,
+              63,
+              58,
+              53,
+              48,
+              43,
+              28,
+              17,
+              6
+            ],
+            "candidate_fixups": [
+              68,
+              63,
+              58,
+              53,
+              48,
+              43,
+              28,
+              17,
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2a03bb079b602649a18495eefbe166e5953adea0808b86662d40067c215034e5",
+            "dependency_timestamp_normalized_sha256": "3a8fca65d74c0659bf9b66a6a1fc2e48dcf4b7e3dffd817ade0e5894f200902a",
+            "module_name": "th05/exitcore.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/exitcore.cpp",
+              "src/shared/core/game_exit.cpp",
+              "src/shared/core/game_exit.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "88d1a4cdc4ea5d81610f1d8ebf861dd5ba16ed75451c2e3b69fd665c846e08b3",
+            "dependency_timestamp_normalized_sha256": "3a8fca65d74c0659bf9b66a6a1fc2e48dcf4b7e3dffd817ade0e5894f200902a",
+            "module_name": "th05/exitcore.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/exitcore.cpp",
+              "src/shared/core/game_exit.cpp",
+              "src/shared/core/game_exit.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/exitcore.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/exitcore.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_game_exit_bindings.asm",
+            "sha256": "d24ab6d72d78a49b71c27348e8e9c21ecd0b831c4501b14ded70325e099f0415"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/core/game_exit.cpp",
+            "sha256": "2b10292534791a35cf606b20c3c00ca5cdb39d4572b0967bb122dccab87999ab"
+          },
+          {
+            "path": "src/shared/core/game_exit.hpp",
+            "sha256": "05c1ab38a709dbd2308f8df01e058d687cb309bda91a52bf32f2fabf7dd313a9"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_game_exit_bindings.asm",
+          "sha256": "d24ab6d72d78a49b71c27348e8e9c21ecd0b831c4501b14ded70325e099f0415"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/core/game_exit.cpp",
+          "sha256": "2b10292534791a35cf606b20c3c00ca5cdb39d4572b0967bb122dccab87999ab"
+        },
+        {
+          "path": "src/shared/core/game_exit.hpp",
+          "sha256": "05c1ab38a709dbd2308f8df01e058d687cb309bda91a52bf32f2fabf7dd313a9"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "821c9251a09f30dccaa45366bffc82475839b05a7be81f9809ad303c2bbdc86f",
+      "compiled_negative_control": {
+        "target_start": 85500,
+        "candidate_start": 85500,
+        "size": 72,
+        "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+        "candidate_sha256": "ff80018ccab76ce0a9d07220f6ce2f7a4dcdad472c9b6f06afa0e7dc8a794eaa",
+        "raw_exact": false,
+        "target_fixups": [
+          68,
+          63,
+          58,
+          53,
+          48,
+          43,
+          28,
+          17,
+          6
+        ],
+        "candidate_fixups": [
+          68,
+          63,
+          58,
+          53,
+          48,
+          43,
+          28,
+          17,
+          6
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-game-exit",
+        "entry_sha256": "cc1c585e2fd73d24bb845b85ff4990f7a3f1f421be22a960230d172106da6db2",
+        "mutation": {
+          "unit": "main-game-exit",
+          "source": "src/shared/core/game_exit.cpp",
+          "find": "exit_graph_accesspage(1);",
+          "replace": "exit_graph_accesspage(0);"
+        },
+        "control_sha256": "dc24f4d978f0bc3bede61e926916953ec6d2274a034c3f108a26db53d83f418f",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 85500,
+          "candidate_start": 85500,
+          "size": 72,
+          "target_sha256": "a3103995dc649d3f2248a0902977d67c8250dd806ffc88a959062bbf01cebaf4",
+          "candidate_sha256": "ff80018ccab76ce0a9d07220f6ce2f7a4dcdad472c9b6f06afa0e7dc8a794eaa",
+          "raw_exact": false,
+          "target_fixups": [
+            68,
+            63,
+            58,
+            53,
+            48,
+            43,
+            28,
+            17,
+            6
+          ],
+          "candidate_fixups": [
+            68,
+            63,
+            58,
+            53,
+            48,
+            43,
+            28,
+            17,
+            6
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "5195852601ee000784f1510ba86db7c9426ad574bd3f0807793151544539e649",
+          "dependency_timestamp_normalized_sha256": "c0168e0a8214308e713246443cb97087ef847a72ebd14a9e4eeccd2138467138",
+          "module_name": "th05/exitcore.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/exitcore.cpp",
+            "src/shared/core/game_exit.cpp",
+            "src/shared/core/game_exit.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/exitcore.cpp"
         ]
       },
       "receipt_aggregate_pass": true

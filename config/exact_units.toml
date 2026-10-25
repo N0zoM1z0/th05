@@ -3660,3 +3660,47 @@ unit = "main-stage-bonus-ui-pointers"
 source = "src/main/stage/bonus_pointers.cpp"
 find = "    bonus_easy_text,"
 replace = "    bonus_normal_text,"
+
+[[units]]
+id = "main-hud-put-context"
+source = "src/main/hud/combined.cpp"
+module = "th05/hud_full.cpp"
+segment = "HUD_COMBINED_TEXT"
+wrapper_options = "-zCHUD_COMBINED_TEXT -zPmain_01"
+bindings_source = "probes/units/hud_combined_bindings.asm"
+target_start = 54051
+size = 337
+functions = 1
+origin = "compiler-generated-cxx"
+function_symbol = "hud_put()"
+alignment_offsets = []
+padding_bytes = [{offset = 328, value = 0}]
+code_data_ranges = [{offset = 329, size = 8, kind = "compiler-switch-table"}]
+
+[[controls]]
+id = "hud-point-caption-row-sixteen-to-seventeen"
+unit = "main-hud-put-context"
+source = "src/main/hud/combined.cpp"
+find = "gaiji_putca(58, 16, HUD_FULL_POINT_GLYPH"
+replace = "gaiji_putca(58, 17, HUD_FULL_POINT_GLYPH"
+
+[[units]]
+id = "main-game-exit"
+source = "src/shared/core/game_exit.cpp"
+module = "th05/exitcore.cpp"
+segment = "EXIT_CORE_TEXT"
+wrapper_options = "-zPshared_exit"
+bindings_source = "probes/units/main_game_exit_bindings.asm"
+target_start = 85500
+size = 72
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-game-exit"
+source = "src/shared/core/game_exit.cpp"
+find = "exit_graph_accesspage(1);"
+replace = "exit_graph_accesspage(0);"

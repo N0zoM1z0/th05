@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **242 bounded C++ CODE/DATA units / 443 complete function occurrences**,
-**80,906 authored bytes exact**: 71,016 CODE and 9,890 initialized DATA.
-CODE is 70,366 instruction plus 650 semantic compiler-table bytes.
-Complete compared extents total 80,972; 66 checked padding bytes receive
-no credit. MAIN has 361 functions / 58,451 CODE / 1,232 DATA;
-OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
+Current acceptance: **247 bounded C++ CODE/DATA units / 448 complete function occurrences**,
+**81,482 authored bytes exact**: 71,592 CODE and 9,890 initialized DATA.
+CODE is 70,934 instruction plus 658 semantic compiler-table bytes.
+Complete compared extents total 81,550; 68 checked padding bytes receive
+no credit. MAIN has 363 functions / 58,859 CODE / 1,232 DATA;
+OP 58 / 9,567 / 8,615; MAINE 27 / 3,166 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -946,3 +946,33 @@ Easy-factor text mutation. `main-stage-bonus-ui-pointers-a` adds42 real near
 description/label pointers to those objects, with its own Easy/Normal selection
 mutation. Gaiji/font byte arrays remain foreign and uncredited. Both pass
 whole DATA ownership, two fresh producers and the empty original MZ stream.
+
+## OP shutdown protocol
+
+`op-game-exit-to-dos-b` and `op-game-exit-core-b` add24/72 instructions.
+Each is a genuine separate TU with two fresh producers and its own compiled
+control. The wrapper's one linker NOP is compared and excluded. The initial
+combined attempt put both functions in one97-byte contribution and stopped
+before second/negative; no acceptance transfers from that failed context.
+The unchanged algorithms now retain their real outside gap and far interfaces.
+
+The unchanged core source/header also passes independently for MAIN72 and
+MAINE72 (`main-game-exit-a`, `maine-game-exit-a`), through each original
+caller's actual anchor and artifact-specific Master bindings. Both have their
+own two fresh producers and page mutation. No OP acceptance transfers.
+
+## Complete HUD initializer in genuine source context
+
+`main-hud-put-context-b` adds the complete337-byte final initializer:328
+instructions, eight generated switch-table bytes and one checked/uncredited
+zero. Both actual full1198-byte producers and their861-byte/eight-function
+prefixes pass native raw comparison; complete original relocation streams
+also agree. Only the new337 scope receives credit. The prefix's previously
+accepted owners remain unchanged and were not reaccepted or cold-replayed.
+
+First-a already had correct full boundaries, prefix bytes and original fixups,
+but differed in rank-label address construction. Restoring the donor's genuine
+near-array view, implicitly converted to the real far graphics API, resolves
+that difference without scheduling register operations. Focused-b passes both
+fresh producers and its own point-caption row mutation. The documented donor
+HUD flags/type-definition order were fixed before the first experiment.

@@ -616,3 +616,45 @@ unit = "op-bgm-measure"
 source = "src/shared/sound/measure.cpp"
 find = "_DX = (48 * 4);"
 replace = "_DX = (48 * 3);"
+
+[[units]]
+id = "op-game-exit-to-dos"
+source = "src/shared/core/game_exit_to_dos.cpp"
+module = "th05/exitdos.cpp"
+segment = "EXIT_DOS_TEXT"
+wrapper_options = "-zPshared_exit"
+bindings_source = "probes/units/op_game_exit_dos_bindings.asm"
+target_start = 54300
+size = 25
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{offset = 3, value = 144}]
+code_data_ranges = []
+
+[[units]]
+id = "op-game-exit"
+source = "src/shared/core/game_exit.cpp"
+module = "th05/exitcore.cpp"
+segment = "EXIT_CORE_TEXT"
+wrapper_options = "-zPshared_exit"
+bindings_source = "probes/units/op_game_exit_bindings.asm"
+target_start = 55276
+size = 72
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "op-game-exit-to-dos"
+source = "src/shared/core/game_exit_to_dos.cpp"
+find = "key_beep_on();"
+replace = "text_cursor_show();"
+
+[[controls]]
+unit = "op-game-exit"
+source = "src/shared/core/game_exit.cpp"
+find = "exit_graph_accesspage(1);"
+replace = "exit_graph_accesspage(0);"

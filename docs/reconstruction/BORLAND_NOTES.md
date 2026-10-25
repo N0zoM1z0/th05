@@ -268,3 +268,62 @@ item-update experiment235 failed before a second or negative build: ordinary
 pickup-X arithmetic overwrote AX before subtracting its supposed borrowed X,
 producing self-subtraction. Typed safe248 source was restored exactly. No BX
 algorithm alias, register forcing or alternate ABI was introduced to repair it.
+
+## Complete private contributions and genuine source-family context
+
+A genuine static function need not be exported or given a synthetic caller to
+be reviewed. Turbo C++ emitted the unmodified private Shinki phase helper as
+one complete102-byte contribution even when isolated. `main-shinki-phase23-a`
+passes two fresh producers and its own mutation; this resolves the missing
+public boundary through whole-contribution ownership rather than a made-up
+MAP symbol. Function-scoped review still requires real publics.
+
+The complete1445-byte natural stage-bonus family retains allclear579's
+nonmonotone original relocation stream. The accepted two later scopes add no
+credit for the real305-byte helper prefix. Native inspection of both saved
+producers also confirms the full1445 raw bytes and unchanged prefix, with zero
+new compilation (`.analysis/stage-bonus-full-raw-context.json`). Genuine
+preceding functions supply context; an arbitrary byte or phase prefix cannot.
+
+## A callee's byte read does not establish a byte formal
+
+The HUD bar consumes BL, but the maintained donor and original callers establish
+a word `int` parameter in its real six-byte near Pascal frame. The first
+indicator producer229 used an overnarrow byte formal, letting the compiler push
+the memory word directly. Restoring the canonical int emits the original
+zero-extension for Dream and Power, recovering233. `main-hud-indicators-b`
+passes complete raw/order checks and its own mutation. Preserve the full API;
+a register read alone cannot justify narrowing a declaration.
+
+## samecodeseg with a locally defined callee
+
+In the first OP exit candidate, both real bodies25/72 landed in the wrapper's
+97-byte contribution: the samecodeseg annotation also associated the locally
+defined cleanup with that code segment. A later codeseg selector did not undo
+it. This was a failed complete boundary, and no second/negative was run.
+
+The actual donors use separate wrapper and cleanup TUs. Factoring their
+unchanged bodies accordingly, retaining the far interfaces and a wrapper-only
+samecodeseg annotation for the foreign cleanup, restores each real position.
+`op-game-exit-to-dos-b` and `op-game-exit-core-b` independently pass25/72, original
+ordered fixups and their own mutations. One checked wrapper NOP receives zero
+credit. Do not infer multiple emitted contributions from source pragmas alone;
+inspect actual OMF/MAP before expanding a replay.
+
+## A real near-array view at a far API boundary
+
+`main-hud-put-context-a` already reproduced the full1198 extent, accepted861
+prefix, alignment zero, table and original ordered fixups. The only new337 raw
+difference was the twelve-byte rank-label address sequence: an explicit far
+cast computed the offset before pushing DS. The actual DS-resident array uses
+the donor expression `(const char near *)&glEASY[rank * 8]`, implicitly converted
+to the unchanged real far graphics parameter. Restoring that expression gives
+`main-hud-put-context-b` complete raw equality and a rejected point-caption
+mutation, with no physical-register scheduling or ABI retype.
+
+The full source's861-byte prefix consists of the exact existing eight natural
+functions. Its original type definitions precede the donor's documented-a2,
+while-G is initial. This genuine context supplies the final function's odd
+start, one zero and emitted-record split; no arbitrary alignment prefix was
+added. Both full1198 and prefix861 are independently checked in both producers,
+with new credit limited to328 instructions and eight generated table bytes.
