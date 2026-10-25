@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **272 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
-**88,571 authored bytes exact**: 77,018 CODE and 11,553 initialized DATA.
+Current acceptance: **273 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
+**88,622 authored bytes exact**: 77,018 CODE and 11,604 initialized DATA.
 CODE is 76,348 instruction plus 670 semantic compiler-table bytes.
-Complete compared extents total 88,647; 76 checked padding bytes receive
+Complete compared extents total 88,698; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 2,895 DATA;
-OP 61 / 11,218 / 8,615; MAINE 42 / 5,498 / 43.
+OP 61 / 11,218 / 8,615; MAINE 42 / 5,498 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1212,3 +1212,18 @@ full raw/ordered comparisons and a real main-clamp negative. Existing retained
 scope projection can reuse those producers and four old IDs atomically; no
 retirement API, byte prefix, OMF reordering or implicit ownership change is
 authorized by a merely prepared source proposal.
+
+## MAINE registration alphabet initialized DATA
+
+`maine-registration-alphabet-data-a` adds51 authored initialized bytes for the
+complete mutable 3x17 keyboard at original115FE..11631 (DS1011:14EE).
+All named glyph and navigation selectors match two fresh producers with empty
+ordered fixups; the own first-cell A-to-B mutation is rejected. The native
+17-column/3-row consumers and following independent page byte establish the
+complete extent. No font pixels or accepted caller/header inputs changed.
+
+The isolated3384-byte verdict trial a has correct function sizes and all ten
+original fixup orders. Nine functions are raw exact; main differs only in
+twelve bytes positioning pushDS around the same rank-string calculation.
+Trial b restores the maintained TH04 donor's explicit address-of-first-element
+expression. Trial a stays failed and unchanged; neither trial is imported yet.

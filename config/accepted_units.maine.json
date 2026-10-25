@@ -2,24 +2,28 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "8aeaeed6a399459d086d650a59079cba1e2f056154c87f7b69160b78d8364fd7",
+  "replay_receipt_sha256": "9daa825dce7113f133e67cb827cbf2cbe3b331f892d779064ce9e53499e96a97",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 51374,
-    "candidate_start": 51374,
-    "size": 493,
-    "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
-    "candidate_sha256": "9ee93ab44b2d78efae8bc8c37913266aa3c50199be342ced9df50f9c08afe015",
+    "target_start": 71166,
+    "candidate_start": 71166,
+    "size": 51,
+    "target_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+    "candidate_sha256": "ea745caa4014d483ee98c6aaa84b9f320f98dbaa2d769a60c461e603a816441c",
     "raw_exact": false,
-    "target_fixups": [
-      324
-    ],
-    "candidate_fixups": [
-      324
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 71166,
+      "size": 51,
+      "module": "th05/regalpha.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -10177,6 +10181,348 @@
           "-ml",
           "-DBINARY='E'",
           "th05/vstscore.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-alphabet-data",
+      "entry_sha256": "03cee9a73259a8b0ca41b21e36f8175df5f1493391639b0d3ce0733af0f28c08",
+      "result": {
+        "id": "maine-registration-alphabet-data",
+        "entry_sha256": "03cee9a73259a8b0ca41b21e36f8175df5f1493391639b0d3ce0733af0f28c08",
+        "rounds": [
+          {
+            "target_start": 71166,
+            "candidate_start": 71166,
+            "size": 51,
+            "target_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+            "candidate_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71166,
+              "size": 51,
+              "module": "th05/regalpha.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71166,
+            "candidate_start": 71166,
+            "size": 51,
+            "target_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+            "candidate_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71166,
+              "size": 51,
+              "module": "th05/regalpha.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "4cda5485eb0e86452722fb0969f5593a42d1a95910b077368753ef8c895fe411",
+            "dependency_timestamp_normalized_sha256": "a936c9353e0dba73a6f5d0a3ceeb8d0f91e811ff46c6ec17ade59d678fec56c7",
+            "module_name": "th05/regalpha.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/regalpha.cpp",
+              "src/maine/registration/alphabet_data.cpp",
+              "src/maine/registration/alphabet_data.hpp",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 51,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 51,
+                  "sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "70811d8ec75b7d12ef7a49d2b5016a58406fb9589aa27df906d979f6c81b63e5",
+            "dependency_timestamp_normalized_sha256": "a936c9353e0dba73a6f5d0a3ceeb8d0f91e811ff46c6ec17ade59d678fec56c7",
+            "module_name": "th05/regalpha.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/regalpha.cpp",
+              "src/maine/registration/alphabet_data.cpp",
+              "src/maine/registration/alphabet_data.hpp",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 51,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 51,
+                  "sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/regalpha.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/regalpha.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_alphabet_data_bindings.asm",
+            "sha256": "b8de8340aceecc87f1ff95e7c4f8dd0a9355792d0718c3a9f61b68e996dd8bc8"
+          },
+          {
+            "path": "src/maine/registration/alphabet_data.cpp",
+            "sha256": "cb5db678c3e905c0266bf1db0b57d2dadc6171a14c83b4b7b535d0101321362f"
+          },
+          {
+            "path": "src/maine/registration/alphabet_data.hpp",
+            "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+          },
+          {
+            "path": "src/maine/registration/glyphball.hpp",
+            "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_alphabet_data_bindings.asm",
+          "sha256": "b8de8340aceecc87f1ff95e7c4f8dd0a9355792d0718c3a9f61b68e996dd8bc8"
+        },
+        {
+          "path": "src/maine/registration/alphabet_data.cpp",
+          "sha256": "cb5db678c3e905c0266bf1db0b57d2dadc6171a14c83b4b7b535d0101321362f"
+        },
+        {
+          "path": "src/maine/registration/alphabet_data.hpp",
+          "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+        },
+        {
+          "path": "src/maine/registration/glyphball.hpp",
+          "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "9daa825dce7113f133e67cb827cbf2cbe3b331f892d779064ce9e53499e96a97",
+      "compiled_negative_control": {
+        "target_start": 71166,
+        "candidate_start": 71166,
+        "size": 51,
+        "target_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+        "candidate_sha256": "ea745caa4014d483ee98c6aaa84b9f320f98dbaa2d769a60c461e603a816441c",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71166,
+          "size": 51,
+          "module": "th05/regalpha.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-alphabet-data",
+        "entry_sha256": "03cee9a73259a8b0ca41b21e36f8175df5f1493391639b0d3ce0733af0f28c08",
+        "mutation": {
+          "unit": "maine-registration-alphabet-data",
+          "source": "src/maine/registration/alphabet_data.cpp",
+          "find": "    RA_A, RA_B, RA_C,",
+          "replace": "    RA_B, RA_B, RA_C,"
+        },
+        "control_sha256": "75e39cd1d131e84bd46a95e523e812f5b329e57f70594ca0e41fab319232b470",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71166,
+          "candidate_start": 71166,
+          "size": 51,
+          "target_sha256": "5c20537901ef7a0188aa24a9b037a3b62a51b9ede3a930545c903c483ed095ac",
+          "candidate_sha256": "ea745caa4014d483ee98c6aaa84b9f320f98dbaa2d769a60c461e603a816441c",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71166,
+            "size": 51,
+            "module": "th05/regalpha.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "5f15ac278885257e840d7cff94bd3cd802988a84dcd0d3bbb985089d12ab499e",
+          "dependency_timestamp_normalized_sha256": "e1687f55cd5e23910be1a6eccd24d6bb80299b213b88712cc97edb648606b38b",
+          "module_name": "th05/regalpha.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/regalpha.cpp",
+            "src/maine/registration/alphabet_data.cpp",
+            "src/maine/registration/alphabet_data.hpp",
+            "src/maine/registration/glyphball.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 51,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 51,
+                "sha256": "ea745caa4014d483ee98c6aaa84b9f320f98dbaa2d769a60c461e603a816441c"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/regalpha.cpp"
         ]
       },
       "target_view": {

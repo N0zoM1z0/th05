@@ -526,3 +526,26 @@ unit = "maine-verdict-stage-scores"
 source = "src/maine/verdict/stage_scores.cpp"
 find = "graph_putsa_fx(verdict_text_left, verdict_text_top + 64,"
 replace = "graph_putsa_fx(verdict_text_left, verdict_text_top + 65,"
+
+[[units]]
+id = "maine-registration-alphabet-data"
+source = "src/maine/registration/alphabet_data.cpp"
+module = "th05/regalpha.cpp"
+segment = "_DATA"
+wrapper_options = "-zCREG_ALPHA_DATA_TEXT -zPGROUP_01"
+bindings_source = "probes/units/maine_registration_alphabet_data_bindings.asm"
+binary = "E"
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+functions = 0
+target_start = 71166
+size = 51
+alignment_offsets = []
+padding_bytes = []
+data_semantics = ["ui-text", "semantic-tables"]
+
+[[controls]]
+unit = "maine-registration-alphabet-data"
+source = "src/maine/registration/alphabet_data.cpp"
+find = "    RA_A, RA_B, RA_C,"
+replace = "    RA_B, RA_B, RA_C,"
