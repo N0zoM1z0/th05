@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "379819bc7b68af3c45e2702ba2f26ed00decd9f1ac3e353449484b38ab2b5660",
+  "replay_receipt_sha256": "844fac0a5e7662c40f74bca709e8637dc2766e8638accd306a82e190513ee63e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140382,
-    "candidate_start": 140382,
-    "size": 19,
-    "target_sha256": "75f850f33402b77efdf0e6cbf0e2aba28fbad3729591ae0dcc70a89ee4ebd35a",
-    "candidate_sha256": "05fe1b9d25806d6d76047740ec924974c9046c444ba83c8e00acb22d20765d90",
+    "target_start": 141202,
+    "candidate_start": 141202,
+    "size": 64,
+    "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+    "candidate_sha256": "5946e6e1890a28d6615ce0c83561e53c6110802b9b815405fafe9e026f5207a8",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 140382,
-      "size": 19,
-      "module": "th05/bon_gly.cpp",
+      "start": 141202,
+      "size": 64,
+      "module": "th05/edrop.cpp",
       "segment": "_DATA"
     }
   },
@@ -61633,6 +61633,379 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bon_gly.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-item-enemy-drop-data",
+      "entry_sha256": "68b589a7563c390e6f95be3dda009acbff7ddadbd55168269cdd0bbd7d30f4f3",
+      "result": {
+        "id": "main-item-enemy-drop-data",
+        "entry_sha256": "68b589a7563c390e6f95be3dda009acbff7ddadbd55168269cdd0bbd7d30f4f3",
+        "rounds": [
+          {
+            "target_start": 141202,
+            "candidate_start": 141202,
+            "size": 64,
+            "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+            "candidate_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141202,
+              "size": 64,
+              "module": "th05/edrop.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141202,
+            "candidate_start": 141202,
+            "size": 64,
+            "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+            "candidate_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141202,
+              "size": 64,
+              "module": "th05/edrop.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "2d0ecd1fdcd1d18393662fbcb467b21cb04775f18789da9666b8b2b681df8582",
+            "dependency_timestamp_normalized_sha256": "619832cd0639ab3604a7722b1268c128fa636c15386e8826409ef7ad255d87a6",
+            "module_name": "th05/edrop.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/edrop.cpp",
+              "src/main/item/enemy_drop_data.cpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 64,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 64,
+                  "sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "88cf2cdcb77527c07e55f1f74356a2452ec8ab6a3fc647053bd2d53171afe182",
+            "dependency_timestamp_normalized_sha256": "619832cd0639ab3604a7722b1268c128fa636c15386e8826409ef7ad255d87a6",
+            "module_name": "th05/edrop.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/edrop.cpp",
+              "src/main/item/enemy_drop_data.cpp",
+              "src/main/item/item.hpp",
+              "src/main/bullet/update.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 64,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 64,
+                  "sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/edrop.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/edrop.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/item_enemy_drop_data_bindings.asm",
+            "sha256": "210cb6b120f2a3c32887e95ff8c483cecbbcd00c1a4cc14b09ec67a68da82635"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/bullet/update.hpp",
+            "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/item/enemy_drop_data.cpp",
+            "sha256": "280d3fcfb20452373865e31f21f9d00cf72c4f98849258918d56063bd3bf1252"
+          },
+          {
+            "path": "src/main/item/item.hpp",
+            "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/item_enemy_drop_data_bindings.asm",
+          "sha256": "210cb6b120f2a3c32887e95ff8c483cecbbcd00c1a4cc14b09ec67a68da82635"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/update.hpp",
+          "sha256": "a3351573ffe9d5a06446bfb211a42e9ea83ebf03ad7dbadaee8247114cb28321"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/item/enemy_drop_data.cpp",
+          "sha256": "280d3fcfb20452373865e31f21f9d00cf72c4f98849258918d56063bd3bf1252"
+        },
+        {
+          "path": "src/main/item/item.hpp",
+          "sha256": "58b8b915b84e1772cb7e4fc7351f1f14860ec0960d97d963060de6830c2873e0"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "844fac0a5e7662c40f74bca709e8637dc2766e8638accd306a82e190513ee63e",
+      "compiled_negative_control": {
+        "target_start": 141202,
+        "candidate_start": 141202,
+        "size": 64,
+        "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+        "candidate_sha256": "5946e6e1890a28d6615ce0c83561e53c6110802b9b815405fafe9e026f5207a8",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141202,
+          "size": 64,
+          "module": "th05/edrop.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-item-enemy-drop-data",
+        "entry_sha256": "68b589a7563c390e6f95be3dda009acbff7ddadbd55168269cdd0bbd7d30f4f3",
+        "mutation": {
+          "unit": "main-item-enemy-drop-data",
+          "source": "src/main/item/enemy_drop_data.cpp",
+          "find": "    IT_POWER, IT_POINT, IT_POWER,",
+          "replace": "    IT_POINT, IT_POINT, IT_POWER,"
+        },
+        "control_sha256": "9e492966ba9c48b7dfd18a8c05c935b3428c799ab0afbe73d52ccde2765c37a4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141202,
+          "candidate_start": 141202,
+          "size": 64,
+          "target_sha256": "d2930bb09f33d336427267bc1167e55b38ce69e6b727d1fcf47243e877e72e7c",
+          "candidate_sha256": "5946e6e1890a28d6615ce0c83561e53c6110802b9b815405fafe9e026f5207a8",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141202,
+            "size": 64,
+            "module": "th05/edrop.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "c8df707c2c8edd2cb6d5332bc95b32d1ad7ea4d5d6e7f28b6bf3004ceda7d67a",
+          "dependency_timestamp_normalized_sha256": "c793ef541d0310cba94ea0ea4cbf7ac0a8508f9b15e0e641eaef64f25472174f",
+          "module_name": "th05/edrop.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/edrop.cpp",
+            "src/main/item/enemy_drop_data.cpp",
+            "src/main/item/item.hpp",
+            "src/main/bullet/update.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 64,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 64,
+                "sha256": "5946e6e1890a28d6615ce0c83561e53c6110802b9b815405fafe9e026f5207a8"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/edrop.cpp"
         ]
       },
       "receipt_aggregate_pass": true

@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **273 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
-**88,622 authored bytes exact**: 77,018 CODE and 11,604 initialized DATA.
+Current acceptance: **274 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
+**88,686 authored bytes exact**: 77,018 CODE and 11,668 initialized DATA.
 CODE is 76,348 instruction plus 670 semantic compiler-table bytes.
-Complete compared extents total 88,698; 76 checked padding bytes receive
-no credit. MAIN has 370 functions / 60,302 CODE / 2,895 DATA;
+Complete compared extents total 88,762; 76 checked padding bytes receive
+no credit. MAIN has 370 functions / 60,302 CODE / 2,959 DATA;
 OP 61 / 11,218 / 8,615; MAINE 42 / 5,498 / 94.
 Global denominator and percentage remain unreviewed.
 
@@ -1227,3 +1227,14 @@ original fixup orders. Nine functions are raw exact; main differs only in
 twelve bytes positioning pushDS around the same rank-string calculation.
 Trial b restores the maintained TH04 donor's explicit address-of-first-element
 expression. Trial a stays failed and unchanged; neither trial is imported yet.
+
+## MAIN automatic enemy drop schedule
+
+`main-item-enemy-drop-data-b` adds64 immutable gameplay selector bytes at
+original22792..227D2, DS209D:1DC2. The full unchanged item header, native
+modulo64/every-second-request consumer, semantic named schedule and complete
+array establish the extent. Two fresh producers, empty original orderedfixups
+and own first-drop power-to-point control pass. Attempt a stopped at linking
+because the header's empty HUD_OVRL_TEXT was outside MAIN_01's window; b
+places that foreign empty segment inside its genuine group. No caller/header
+changed and no table values come from the address-only binder.

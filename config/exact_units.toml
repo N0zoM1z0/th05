@@ -3940,3 +3940,26 @@ unit = "main-stage-bonus-glyph-text-data"
 source = "src/main/stage/bonus_glyph_text.cpp"
 find = "    BG_EMPTY,"
 replace = "    BG_NULL,"
+
+[[units]]
+id = "main-item-enemy-drop-data"
+source = "src/main/item/enemy_drop_data.cpp"
+module = "th05/edrop.cpp"
+segment = "_DATA"
+wrapper_options = "-zCITEM_DROP_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/item_enemy_drop_data_bindings.asm"
+binary = "M"
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+functions = 0
+target_start = 141202
+size = 64
+alignment_offsets = []
+padding_bytes = []
+data_semantics = ["semantic-tables"]
+
+[[controls]]
+unit = "main-item-enemy-drop-data"
+source = "src/main/item/enemy_drop_data.cpp"
+find = "    IT_POWER, IT_POINT, IT_POWER,"
+replace = "    IT_POINT, IT_POINT, IT_POWER,"
