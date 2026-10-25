@@ -2,53 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6816fd34a2183480d5c8030ecc18a60a0a91be62500838bb1e55ef92ade35df8",
+  "replay_receipt_sha256": "965831477802a74492291d00df9f015b8475aba9e2fbd8744d7a5ccc8ef03d27",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 81496,
-    "candidate_start": 81496,
-    "size": 183,
-    "target_sha256": "0ab446c768634bba19b2025529d996c309f0c9c19e50dc9dae4916c9f900d3a2",
-    "candidate_sha256": "b151e1d5e7228ee98e0d926139e29270c583d5d70e1538e8c0b53d54c53ad832",
+    "target_start": 116264,
+    "candidate_start": 116264,
+    "size": 65,
+    "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+    "candidate_sha256": "c3082ad1caf364af601ebcfc2a5abbb1242b7ece143ec4b0452cda43428c8d16",
     "raw_exact": false,
-    "target_fixups": [
-      179,
-      146,
-      132,
-      114,
-      107,
-      86,
-      81,
-      68,
-      59,
-      52,
-      40,
-      31
-    ],
-    "candidate_fixups": [
-      179,
-      146,
-      132,
-      114,
-      107,
-      86,
-      81,
-      68,
-      59,
-      52,
-      40,
-      31
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 81496,
-      "size": 183,
-      "function_symbol": "dialog_animate()",
-      "contribution_start": 81496,
-      "contribution_size": 183,
+      "start": 116264,
+      "size": 65,
+      "function_symbol": "midboss_defeat_update()",
+      "contribution_start": 115873,
+      "contribution_size": 456,
       "boundary_kind": "contribution-end",
       "next_function_symbol": null
     }
@@ -65736,6 +65710,292 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-dialog-animate"
+      ]
+    },
+    {
+      "id": "main-midboss-defeat-update",
+      "entry_sha256": "74facc070d97d015bab1f2835c9dfc701039df56f56fdacd25d72cfabdae5365",
+      "result": {
+        "id": "main-midboss-defeat-update",
+        "entry_sha256": "74facc070d97d015bab1f2835c9dfc701039df56f56fdacd25d72cfabdae5365",
+        "rounds": [
+          {
+            "target_start": 116264,
+            "candidate_start": 116264,
+            "size": 65,
+            "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+            "candidate_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 116264,
+              "size": 65,
+              "function_symbol": "midboss_defeat_update()",
+              "contribution_start": 115873,
+              "contribution_size": 456,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 116264,
+            "candidate_start": 116264,
+            "size": 65,
+            "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+            "candidate_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 116264,
+              "size": 65,
+              "function_symbol": "midboss_defeat_update()",
+              "contribution_start": 115873,
+              "contribution_size": 456,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6a870971f195d4cc7f439859c1eeedc011bde0dc532fe49a8d5e812d30112199",
+            "dependency_timestamp_normalized_sha256": "85ddf3f6fe09661a1791b27b60d0cf5a848ee49a453b6c98a3edff3d55092e3d",
+            "module_name": "th05/mb_life.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mb_life.cpp",
+              "src/main/midboss/lifecycle.cpp",
+              "src/main/midboss/lifecycle.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "84f0aa70348a62ae79669dbe429586fda05fed6c812b41803cceec48e23dc723",
+            "dependency_timestamp_normalized_sha256": "85ddf3f6fe09661a1791b27b60d0cf5a848ee49a453b6c98a3edff3d55092e3d",
+            "module_name": "th05/mb_life.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mb_life.cpp",
+              "src/main/midboss/lifecycle.cpp",
+              "src/main/midboss/lifecycle.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mb_life.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mb_life.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/midboss_lifecycle_bindings.asm",
+            "sha256": "25aed0c1ef47e591e7714c3f3739bcc92ecca32b10cc13ebcdb6af2ccde4e5a6"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/midboss/lifecycle.cpp",
+            "sha256": "b40b68c54e15db86bae8c575c0a411a11d9ad8143ae57fe17ae720cf25cd4098"
+          },
+          {
+            "path": "src/main/midboss/lifecycle.hpp",
+            "sha256": "b0c92b4a3cb5caf86299b7f3e6d7bfea363c750610cccd70b46caaa5688aa3bb"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/midboss_lifecycle_bindings.asm",
+          "sha256": "25aed0c1ef47e591e7714c3f3739bcc92ecca32b10cc13ebcdb6af2ccde4e5a6"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/midboss/lifecycle.cpp",
+          "sha256": "b40b68c54e15db86bae8c575c0a411a11d9ad8143ae57fe17ae720cf25cd4098"
+        },
+        {
+          "path": "src/main/midboss/lifecycle.hpp",
+          "sha256": "b0c92b4a3cb5caf86299b7f3e6d7bfea363c750610cccd70b46caaa5688aa3bb"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "965831477802a74492291d00df9f015b8475aba9e2fbd8744d7a5ccc8ef03d27",
+      "compiled_negative_control": {
+        "target_start": 116264,
+        "candidate_start": 116264,
+        "size": 65,
+        "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+        "candidate_sha256": "c3082ad1caf364af601ebcfc2a5abbb1242b7ece143ec4b0452cda43428c8d16",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 116264,
+          "size": 65,
+          "function_symbol": "midboss_defeat_update()",
+          "contribution_start": 115873,
+          "contribution_size": 456,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-midboss-defeat-update",
+        "entry_sha256": "74facc070d97d015bab1f2835c9dfc701039df56f56fdacd25d72cfabdae5365",
+        "mutation": {
+          "unit": "main-midboss-defeat-update",
+          "source": "src/main/midboss/lifecycle.cpp",
+          "find": "if(midboss.phase_frame == 1)",
+          "replace": "if(midboss.phase_frame == 2)"
+        },
+        "control_sha256": "2f59e353e7ee9dd71956cded719ec3b7740632a1e69fc5db51928baf2165bffa",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 116264,
+          "candidate_start": 116264,
+          "size": 65,
+          "target_sha256": "202aef40873c342dea624fd5cc27fe33f452cedb69549640acb04c8017ece5b1",
+          "candidate_sha256": "c3082ad1caf364af601ebcfc2a5abbb1242b7ece143ec4b0452cda43428c8d16",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 116264,
+            "size": 65,
+            "function_symbol": "midboss_defeat_update()",
+            "contribution_start": 115873,
+            "contribution_size": 456,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "99ed61b090249e2d11ebb2efaa874b6690edeae0a43f3856afc9762a8998a370",
+          "dependency_timestamp_normalized_sha256": "12c210c9a5ab1501ef796413f5804d7569cc279cefd92755007cfd0418271152",
+          "module_name": "th05/mb_life.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mb_life.cpp",
+            "src/main/midboss/lifecycle.cpp",
+            "src/main/midboss/lifecycle.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mb_life.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-midboss-defeat-update"
       ]
     }
   ]

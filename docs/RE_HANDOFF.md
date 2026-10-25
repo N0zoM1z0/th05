@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **313 bounded C/C++ CODE/DATA units / 498 complete function occurrences**,
-**97,788 authored bytes exact**: 82,451 CODE and 15,337 initialized DATA.
-CODE is 81,759 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 97,869; 81 checked padding bytes receive
-no credit. MAIN has 381 functions / 61,331 CODE / 3,091 DATA;
+Current acceptance: **314 bounded C/C++ CODE/DATA units / 499 complete function occurrences**,
+**97,853 authored bytes exact**: 82,516 CODE and 15,337 initialized DATA.
+CODE is 81,824 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 97,934; 81 checked padding bytes receive
+no credit. MAIN has 382 functions / 61,396 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,56 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 135,115 bytes. The global denominator is still unreviewed;
+ownership is now 135,050 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete dialog animation
+## Latest accepted C++: complete midboss defeat update
+
+The new natural six-function lifecycle/HP/rewards TU adds only the complete
+65-byte `midboss_defeat_update()` at MAIN1C628..1C669. It has no instruction
+NOPs, tables, padding, ordered loader fixups or owned DATA/BSS. The real typed
+far-cdecl reset call now has the native four-byte PUSH CS/CALL form because
+its genuine provider is defined in the same source TU. No assembly, false
+near signature, samecodeseg annotation or artificial padding is used.
+See [midboss lifecycle](../src/main/midboss/lifecycle.md).
+
+All six bodies preserve the current TH05 state/HP/default bodies literally.
+The existing maintained TH04 donor corroborates the complete same-family
+order, and pinned ReC98 explicitly calls for replacing its manual far-call
+macro with a typed call when reset is in the same TU. The new header preserves
+actual first-declaration groups and reuses canonical full types. No accepted
+header or older source is changed. All391 previously accepted prefix bytes
+remain in their four unchanged acceptance rows and receive no new credit.
+
+Only `.analysis/unit-replays/main-midboss-lifecycle-local-a/receipt.json`
+is imported, SHA-256
+`965831477802a74492291d00df9f015b8475aba9e2fbd8744d7a5ccc8ef03d27`.
+Two fresh deterministic complete65-byte comparisons and an own phase-frame1
+to2 compiled negative pass. Both actual full456-byte compiler contributions
+also match original raw bytes and ordered fixups `[165,19]`; their original
+164 instructions contain no NOPs/tables. Installed execution proofs and all
+unrelated accepted artifacts are reused. Global unknown decreases135,115 to
+135,050 (MAIN55,337 to55,272); C/C++ is97,853 authored bytes. ASM, vendor,
+DATA, resource and checked-padding totals and null denominator stay unchanged.
+
+Saved import,326-test CI, target ownership verification and all four empty
+incremental plans pass. Every older accepted ledger row stays identical.
+Independent actual review: `.analysis/midboss-lifecycle-local-actual-review.json`,
+SHA-256 `657ad5030cdeb2b91f667b85d91ad2009a9b0ec61c56f33ae413de6ec771a0cc`.
+Root final review: `.analysis/midboss-lifecycle-root-final-review.json`,
+SHA-256 `2ad1827f2b2cb3f416837743525e6e629e5a282c77982cdcaedc4fe7fbf015b1`.
+
+A bounded new gameplay-loop semantic-expression producer improves the prior
+438-byte lowering to442 but still fails the complete445-byte size gate.
+Two real ternary operations restore four missing control-flow bytes, and
+truthful same-CS context restores far-call relaxation. Integrated ordinary
+preincrement still lacks the native old-value copy/word-mask dataflow.
+No second producer, negative or acceptance occurs; do not repeat variants
+without new source evidence. See [MAIN notes](../src/main/runtime/main.md).
+First-producer review: `.analysis/gameplay-loop-expression-first-review.json`,
+SHA-256 `3bcad53f809161e6d0bd3b12bbc27873d55e10905678875b5036260a5689b50f`.
+
+## Previous accepted C++: complete dialog animation
 
 The complete MAIN far-cdecl `dialog_animate()` at13E58..13F0F adds182
 instruction bytes and one function. All183 bytes match; its sole NOP at

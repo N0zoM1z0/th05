@@ -3,6 +3,7 @@
 #endif
 #include "src/main/runtime/gameplay_loop.hpp"
 #pragma codeseg DEMO_TEXT main_01
+#pragma samecodeseg playperf_raise
 
 void near gameplay_loop(void)
 {
@@ -74,8 +75,10 @@ void near gameplay_loop(void)
             } else {
                 if(debug_frame_step == 1) {
                     debug_frame_step = 0;
-                } else if(debug_frame_step == -2) {
-                    debug_frame_step = -1;
+                } else {
+                    (debug_frame_step == -2)
+                        ? (void)(debug_frame_step = -1)
+                        : (void)0;
                 }
             }
         }
@@ -96,15 +99,14 @@ void near gameplay_loop(void)
         snd_se_update();
         frames_unused++;
 
-        // Real counter semantics, with no pseudo-register dataflow template.
-        stage_frame++;
-        stage_frame_mod16 = (stage_frame & 15);
+        // The new frame value directly supplies the modulo fields.
+        stage_frame_mod16 = (++stage_frame & 15);
         stage_frame_mod8 = (stage_frame_mod16 & 7);
         stage_frame_mod4 = (stage_frame_mod8 & 3);
         stage_frame_mod2 = (stage_frame_mod4 & 1);
-        if((stage_frame & 4095) == 0) {
-            playperf_raise(1);
-        }
+        ((stage_frame & 4095) == 0)
+            ? (void)playperf_raise(1)
+            : (void)0;
         score_update_and_render();
     } while(quit == Q_KEEP_RUNNING);
 }

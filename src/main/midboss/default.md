@@ -70,3 +70,12 @@ The complete original 65-byte defeat update remains unaccepted: its natural
 far reset call produces one extra byte, giving 66. The outside-owned paragraph
 context preserves original DS without padding or truncating that function.
 The failed whole-contribution diagnostics retain their original verdict.
+
+## Later local-definition acceptance
+
+The new complete six-function lifecycle/HP/rewards TU restores the genuine
+local-definition context for the typed far reset call. Its full456 bytes
+match, and only the previously missing65-byte defeat update is imported.
+See [complete midboss lifecycle](lifecycle.md). The old two bonus acceptance
+rows and all state/HP/default source identities remain unchanged; the old
+66-byte failed result is preserved rather than relabeled.

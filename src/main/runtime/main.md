@@ -84,3 +84,31 @@ the independently verified same-CS far GameExecl context. Its complete110
 bytes pass and109 instructions are accepted after excluding one checked NOP.
 See `entry.md`. The combined555-byte candidate and complete gameplay loop
 remain unaccepted; their earlier548-byte failed artifact is preserved.
+
+## Bounded natural-expression result
+
+One new standalone gameplay-loop producer is retained in
+`.analysis/unit-replays/main-gameplay-loop-expressions-a/`. Two meaningful
+conditional expressions recover the native debug-transition and periodic
+rank-call control flow. The periodic-call expression follows the maintained
+TH04 donor, and the same loop's existing palette expression corroborates the
+compiler form. The real new frame value supplies modulo16 through ordinary
+`++stage_frame`; no physical-register or unused-value expression is inserted.
+The independently proved AE1 far `playperf_raise` interface is communicated
+with its provider-specific samecodeseg annotation, retaining the far ABI.
+
+The complete result is442 bytes versus native445. Both two-byte control-flow
+branches are restored, and TLINK now emits the real relaxation NOP. The
+remaining three-byte difference is the counter operation: actual memory
+increment/load/byte-mask differs from native AX load/old-value DX copy/
+increment/store/word-mask. The first complete-extent gate stops before a
+second producer or negative. No bytes, record edits, arbitrary barriers,
+flags or further expression variants are introduced. This source remains
+unaccepted; its failed replay manifest is kept privately and omitted from
+normal incremental plans.
+
+Private `.analysis/gameplay-loop-expression-first-review.json`, SHA-256
+`3bcad53f809161e6d0bd3b12bbc27873d55e10905678875b5036260a5689b50f`,
+records the actual object, linked artifact, complete MAP scope, instruction
+comparison and raw relocation lists. Unchanged older accepted entry inputs
+are reused; no gameplay-loop bytes receive authored credit.

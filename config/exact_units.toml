@@ -4183,3 +4183,22 @@ unit = "main-dialog-animate"
 source = "src/main/dialog/animate.cpp"
 find = "if(dialog_sequence_id == 0)"
 replace = "if(dialog_sequence_id == 1)"
+
+[[units]]
+id = "main-midboss-defeat-update"
+source = "src/main/midboss/lifecycle.cpp"
+module = "th05/mb_life.cpp"
+segment = "MIDBOSS_FAMILY_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/midboss_lifecycle_bindings.asm"
+function_symbol = "midboss_defeat_update()"
+target_start = 0x1c628
+size = 65
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-midboss-defeat-update"
+source = "src/main/midboss/lifecycle.cpp"
+find = "if(midboss.phase_frame == 1)"
+replace = "if(midboss.phase_frame == 2)"
