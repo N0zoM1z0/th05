@@ -146,7 +146,7 @@ class FunctionScopeTests(unittest.TestCase):
     def test_render_does_not_call_a_function_unit_a_complete_contribution(self):
         markdown, _ = progress.render({"unit_count": 1, "functions": 1, "instruction_bytes": 4,
                                        "complete_extent_bytes": 4})
-        self.assertIn("1 bounded C++ units pass", markdown)
+        self.assertIn("1 bounded C/C++ units pass", markdown)
         self.assertIn("Unaccepted functions in the same translation unit receive no credit", markdown)
         self.assertNotIn("1 complete C++ contributions", markdown)
 

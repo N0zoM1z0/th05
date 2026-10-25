@@ -382,7 +382,7 @@ class InitializedDataReplayTests(unittest.TestCase):
         markdown, svg = progress.render(combined)
         self.assertIn("9 initialized DATA bytes", svg)
         self.assertIn("5 authored code bytes", svg)
-        self.assertIn("| OP decoded C++ units | 1 | 9 | 9 | 10 |", markdown)
+        self.assertIn("| OP decoded C/C++ units | 1 | 9 | 9 | 10 |", markdown)
 
 
 if __name__ == "__main__":

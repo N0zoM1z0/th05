@@ -1,0 +1,42 @@
+; PC-98 firmware keyboard state: byte groups in segment zero.
+KEYGROUP_0 equ 052Ah
+KEYGROUP_2 equ 052Ch
+KEYGROUP_3 equ 052Dh
+KEYGROUP_5 equ 052Fh
+KEYGROUP_6 equ 0530h
+KEYGROUP_7 equ 0531h
+KEYGROUP_8 equ 0532h
+KEYGROUP_9 equ 0533h
+K0_ESC equ 01h
+K2_Q equ 01h
+K3_RETURN equ 10h
+K5_Z equ 02h
+K5_X equ 04h
+K6_SPACE equ 10h
+K7_ARROW_UP equ 04h
+K7_ARROW_LEFT equ 08h
+K7_ARROW_RIGHT equ 10h
+K7_ARROW_DOWN equ 20h
+K8_NUM_7 equ 04h
+K8_NUM_8 equ 08h
+K8_NUM_9 equ 10h
+K8_NUM_4 equ 40h
+K9_NUM_6 equ 01h
+K9_NUM_1 equ 04h
+K9_NUM_2 equ 08h
+K9_NUM_3 equ 10h
+
+; Game input bits. Diagonals have distinct high-byte flags.
+INPUT_UP equ 0001h
+INPUT_DOWN equ 0002h
+INPUT_LEFT equ 0004h
+INPUT_RIGHT equ 0008h
+INPUT_BOMB equ 0010h
+INPUT_SHOT equ 0020h
+INPUT_UP_LEFT equ 0100h
+INPUT_UP_RIGHT equ 0200h
+INPUT_DOWN_LEFT equ 0400h
+INPUT_DOWN_RIGHT equ 0800h
+INPUT_CANCEL equ 1000h
+INPUT_OK equ 2000h
+INPUT_Q equ 4000h

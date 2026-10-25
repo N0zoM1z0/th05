@@ -39,8 +39,11 @@ that a compiler will preserve the required physical objects.
 
 The four formatting punctuation objects at DS1614..1620 (12 bytes) and the two
 physically distinct `回` counter-unit objects at16BC..16C2 (6 bytes) are outside
-both owners. They remain unknown/uncredited. The rank glyph table, formatter
-state, staff state and staff filenames are also outside these owners. There is
+both owners. They were initially left unknown; the later independent
+[C formatting banks](format_text_data.md) recover those 18 bytes without changing
+these accepted inputs. The rank glyph table and formatter settings have their
+own [50-byte state owner](state_data.md). Staff state and staff filenames are
+also outside these owners. There is
 no overlap with the separate all-cast DATA ranges10930..109FA or10B16..115F9.
 No ownership inventory or denominator classification was changed here.
 

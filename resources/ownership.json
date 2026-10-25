@@ -6,8 +6,8 @@
   "unknown_policy": "retain every unknown interval; source/vendor ownership changes require explicit complete-scope review; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 1610,
-    "accepted-cxx-initialized-data": 13659,
+    "accepted-c-initialized-data": 1628,
+    "accepted-cxx-initialized-data": 13709,
     "accepted-cxx-instructions": 80938,
     "accepted-cxx-switch-table": 692,
     "accepted-reviewed-asm-dispatch-table": 210,
@@ -18,7 +18,7 @@
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 79,
-    "unknown": 162327,
+    "unknown": 162259,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -5164,7 +5164,8 @@
       "sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
       "original_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
       "byte_counts": {
-        "accepted-cxx-initialized-data": 3529,
+        "accepted-c-initialized-data": 18,
+        "accepted-cxx-initialized-data": 3579,
         "accepted-cxx-instructions": 9530,
         "accepted-cxx-switch-table": 50,
         "accepted-reviewed-asm-initialized-data": 32,
@@ -5173,7 +5174,7 @@
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 2,
-        "unknown": 39933,
+        "unknown": 39865,
         "verified-vendor-code": 21894,
         "verified-vendor-initialized-data": 1259
       },
@@ -6278,8 +6279,20 @@
         },
         {
           "start": 71217,
-          "end": 71472,
+          "end": 71410,
           "kind": "unknown"
+        },
+        {
+          "start": 71410,
+          "end": 71460,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "maine-verdict-state-data"
+        },
+        {
+          "start": 71460,
+          "end": 71472,
+          "kind": "accepted-c-initialized-data",
+          "unit": "maine-verdict-punctuation-data"
         },
         {
           "start": 71472,
@@ -6290,7 +6303,8 @@
         {
           "start": 71628,
           "end": 71634,
-          "kind": "unknown"
+          "kind": "accepted-c-initialized-data",
+          "unit": "maine-verdict-counter-units-data"
         },
         {
           "start": 71634,

@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "493d5979d725083aa4d8053fc0b5e3648a757188feccb45d3b954597170c187a",
+  "replay_receipt_sha256": "fc33c8d7f9d2f5b7cf26aeae1996555576415df0d959609a0f8618da4fbadcf2",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 67438,
-    "candidate_start": 67438,
-    "size": 34,
-    "target_sha256": "cd23bba63d4e0f7eefd44532632599ed5e7a5932338ffe77ce115dc038058686",
-    "candidate_sha256": "6afe29cf41af68df7e326855b9f699cb66d7d0acddf834487cfb45105d658ca6",
+    "target_start": 71628,
+    "candidate_start": 71628,
+    "size": 6,
+    "target_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+    "candidate_sha256": "9d3479f9b21847b3a1bac041aa2b1d76fcc487e7e7bb0f0e85e617c94e4c6840",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 67438,
-      "size": 34,
-      "module": "th05/se_prio.cpp",
+      "start": 71628,
+      "size": 6,
+      "module": "th05/vcount.c",
       "segment": "_DATA"
     }
   },
@@ -24291,6 +24291,1043 @@
           "-ml",
           "-DBINARY='E'",
           "th05/se_prio.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-state-data",
+      "entry_sha256": "d838e3dd176289fd551112b476dc00af825880f49efb0b59a524df63b02e2109",
+      "result": {
+        "id": "maine-verdict-state-data",
+        "entry_sha256": "d838e3dd176289fd551112b476dc00af825880f49efb0b59a524df63b02e2109",
+        "rounds": [
+          {
+            "target_start": 71410,
+            "candidate_start": 71410,
+            "size": 50,
+            "target_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+            "candidate_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71410,
+              "size": 50,
+              "module": "th05/vstate.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71410,
+            "candidate_start": 71410,
+            "size": 50,
+            "target_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+            "candidate_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71410,
+              "size": 50,
+              "module": "th05/vstate.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "c0fdd9e21a6a02bcc6077db098f6c6b821507c099a80721480ffd7cf396d594f",
+            "dependency_timestamp_normalized_sha256": "601d8a592dc0f5a6268b224d621b41a65bb1d824f9335d1f3dfff232710bbc6c",
+            "module_name": "th05/vstate.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vstate.cpp",
+              "src/maine/verdict/state_data.cpp",
+              "src/maine/verdict/state_data.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 50,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "211bdf9e976bdbd841ebbe0d97d0df0b4e70193fb303ab461986a6b2c1afc84d",
+            "dependency_timestamp_normalized_sha256": "601d8a592dc0f5a6268b224d621b41a65bb1d824f9335d1f3dfff232710bbc6c",
+            "module_name": "th05/vstate.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vstate.cpp",
+              "src/maine/verdict/state_data.cpp",
+              "src/maine/verdict/state_data.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 50,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vstate.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vstate.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_state_data_bindings.asm",
+            "sha256": "1a401b609cfcfc4780388f22917d26f47919e2a1f197e86fa10f0a35fc094644"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/verdict/state_data.cpp",
+            "sha256": "04afd7c7125401d29ceee41a13f92df7b273d9b1cc232d9cccc1ffafcd559efe"
+          },
+          {
+            "path": "src/maine/verdict/state_data.hpp",
+            "sha256": "7d16b69bb1419dfc7d8fdb57739cf608240cc431660719e40d4d6f78f381a72e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_state_data_bindings.asm",
+          "sha256": "1a401b609cfcfc4780388f22917d26f47919e2a1f197e86fa10f0a35fc094644"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/verdict/state_data.cpp",
+          "sha256": "04afd7c7125401d29ceee41a13f92df7b273d9b1cc232d9cccc1ffafcd559efe"
+        },
+        {
+          "path": "src/maine/verdict/state_data.hpp",
+          "sha256": "7d16b69bb1419dfc7d8fdb57739cf608240cc431660719e40d4d6f78f381a72e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "09d58fb10a8bd24becfa01c983c9cf70660333cdef5501113a07ebd5beaeda1a",
+      "compiled_negative_control": {
+        "target_start": 71410,
+        "candidate_start": 71410,
+        "size": 50,
+        "target_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+        "candidate_sha256": "c2c3e8512baf20cab88be675356cd76f50d267034b0a03636e2730b12f069ff6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71410,
+          "size": 50,
+          "module": "th05/vstate.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-state-data",
+        "entry_sha256": "d838e3dd176289fd551112b476dc00af825880f49efb0b59a524df63b02e2109",
+        "mutation": {
+          "unit": "maine-verdict-state-data",
+          "source": "src/maine/verdict/state_data.cpp",
+          "find": "{ VERDICT_GLYPH_EMPTY, VR_N, VR_O, VR_R, VR_M, VR_A, VR_L,",
+          "replace": "{ VERDICT_GLYPH_EMPTY, VR_M, VR_O, VR_R, VR_M, VR_A, VR_L,"
+        },
+        "control_sha256": "65f9114e23ad0dae78527fcf60d847d1b9c594a023bb1cdb900dca725d2a7979",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71410,
+          "candidate_start": 71410,
+          "size": 50,
+          "target_sha256": "d7bc9c56cb027eb670ca04d697e7dd81e5fc1671c420fed7c92032c0380245fc",
+          "candidate_sha256": "c2c3e8512baf20cab88be675356cd76f50d267034b0a03636e2730b12f069ff6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71410,
+            "size": 50,
+            "module": "th05/vstate.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "46c26d1025b0b4aeb215d4ae3f1147a5271b32b998dbe3f2d4a271ea64dfeab2",
+          "dependency_timestamp_normalized_sha256": "5d04503d0975dab1bd793e04e9b18cd4cc073f42565b0365b74dfc896b3b3485",
+          "module_name": "th05/vstate.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vstate.cpp",
+            "src/maine/verdict/state_data.cpp",
+            "src/maine/verdict/state_data.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 50,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 50,
+                "sha256": "c2c3e8512baf20cab88be675356cd76f50d267034b0a03636e2730b12f069ff6"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vstate.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-punctuation-data",
+      "entry_sha256": "f7f79d1844bd906722086a1751378450bfa924f0f4d75153faad4b5d2c15ebec",
+      "result": {
+        "id": "maine-verdict-punctuation-data",
+        "entry_sha256": "f7f79d1844bd906722086a1751378450bfa924f0f4d75153faad4b5d2c15ebec",
+        "rounds": [
+          {
+            "target_start": 71460,
+            "candidate_start": 71460,
+            "size": 12,
+            "target_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+            "candidate_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71460,
+              "size": 12,
+              "module": "th05/vpunct.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71460,
+            "candidate_start": 71460,
+            "size": 12,
+            "target_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+            "candidate_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71460,
+              "size": 12,
+              "module": "th05/vpunct.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d98ae6b6a62b365fa545c02079697cd04380ac1b84fde8e84a1d68933af046fd",
+            "dependency_timestamp_normalized_sha256": "6d5de2f47caae97e6ac540a426a67e4d4304aa141d0f02ae073e17b0e3dbab0c",
+            "module_name": "th05/vpunct.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vpunct.c",
+              "src/maine/verdict/punctuation_data.c",
+              "src/maine/verdict/format_text_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 12,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 12,
+                  "sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "75be1bdb5da03b983a532c76c772c2ef16963ea35b51f3ac347438d92e8314cf",
+            "dependency_timestamp_normalized_sha256": "6d5de2f47caae97e6ac540a426a67e4d4304aa141d0f02ae073e17b0e3dbab0c",
+            "module_name": "th05/vpunct.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vpunct.c",
+              "src/maine/verdict/punctuation_data.c",
+              "src/maine/verdict/format_text_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 12,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 12,
+                  "sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vpunct.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vpunct.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_vpunct_data_bindings.asm",
+            "sha256": "72aa42b3f46d4a7442d2d4f2a8a382ef9b6c760b2b9f24b8e3020d4780c31f9e"
+          },
+          {
+            "path": "src/maine/verdict/format_text_c.h",
+            "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+          },
+          {
+            "path": "src/maine/verdict/punctuation_data.c",
+            "sha256": "5189493e608671ca302b76fa6ffa5f9b0f5559ceb93dc7061075304a4b268f99"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_verdict_vpunct_data_bindings.asm",
+              "sha256": "72aa42b3f46d4a7442d2d4f2a8a382ef9b6c760b2b9f24b8e3020d4780c31f9e"
+            },
+            {
+              "path": "src/maine/verdict/format_text_c.h",
+              "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+            },
+            {
+              "path": "src/maine/verdict/punctuation_data.c",
+              "sha256": "d4ebd7cac8811e345bf1a3328dee0262f2a1754c7cc8d320af658900432ca09c"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_verdict_vpunct_data_bindings.asm",
+              "sha256": "72aa42b3f46d4a7442d2d4f2a8a382ef9b6c760b2b9f24b8e3020d4780c31f9e"
+            },
+            {
+              "path": "src/maine/verdict/format_text_c.h",
+              "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+            },
+            {
+              "path": "src/maine/verdict/punctuation_data.c",
+              "sha256": "d4ebd7cac8811e345bf1a3328dee0262f2a1754c7cc8d320af658900432ca09c"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_vpunct_data_bindings.asm",
+          "sha256": "72aa42b3f46d4a7442d2d4f2a8a382ef9b6c760b2b9f24b8e3020d4780c31f9e"
+        },
+        {
+          "path": "src/maine/verdict/format_text_c.h",
+          "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+        },
+        {
+          "path": "src/maine/verdict/punctuation_data.c",
+          "sha256": "5189493e608671ca302b76fa6ffa5f9b0f5559ceb93dc7061075304a4b268f99"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "37e15401a8b5abe163aeeb271d8c18ae26148230100199a0d9772e4d768d8a41",
+      "compiled_negative_control": {
+        "target_start": 71460,
+        "candidate_start": 71460,
+        "size": 12,
+        "target_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+        "candidate_sha256": "7b17a3107b65ab73ea05d9fc28c37597e6a699df345ac30a670361f80727ec68",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71460,
+          "size": 12,
+          "module": "th05/vpunct.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-punctuation-data",
+        "entry_sha256": "f7f79d1844bd906722086a1751378450bfa924f0f4d75153faad4b5d2c15ebec",
+        "mutation": {
+          "unit": "maine-verdict-punctuation-data",
+          "source": "src/maine/verdict/punctuation_data.c",
+          "find": "\"\uff05\"",
+          "replace": "\"\uff06\""
+        },
+        "control_sha256": "55da8fc4ff505fd3b885cc542d636f88d6bd63dee1715475aace31671b43ccf9",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71460,
+          "candidate_start": 71460,
+          "size": 12,
+          "target_sha256": "e95fbeb922a24f49584be26faba707286c4babea34738b4444c62d9b7e6408ae",
+          "candidate_sha256": "7b17a3107b65ab73ea05d9fc28c37597e6a699df345ac30a670361f80727ec68",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71460,
+            "size": 12,
+            "module": "th05/vpunct.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "b774355b84c2dc7139ac4d18ec6eca0f19c5e65e0771c20690d3321d41a6e554",
+          "dependency_timestamp_normalized_sha256": "8eb30d9d01ee20ce25b0a80a2535d165747adb9edae2cb614ae407bb6b6245dc",
+          "module_name": "th05/vpunct.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vpunct.c",
+            "src/maine/verdict/punctuation_data.c",
+            "src/maine/verdict/format_text_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 12,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 12,
+                "sha256": "7b17a3107b65ab73ea05d9fc28c37597e6a699df345ac30a670361f80727ec68"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vpunct.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_vpunct_data_bindings.asm",
+            "sha256": "72aa42b3f46d4a7442d2d4f2a8a382ef9b6c760b2b9f24b8e3020d4780c31f9e"
+          },
+          {
+            "path": "src/maine/verdict/format_text_c.h",
+            "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+          },
+          {
+            "path": "src/maine/verdict/punctuation_data.c",
+            "sha256": "1c80cece2bc89182cb5100d12e1bd35b0ce47825a7ff2e1a7cc74b73db6e422c"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-counter-units-data",
+      "entry_sha256": "06f2df2b5dca957f86f652a0c2ae4d444ba4c8b3ba32c051fd150bd567c41615",
+      "result": {
+        "id": "maine-verdict-counter-units-data",
+        "entry_sha256": "06f2df2b5dca957f86f652a0c2ae4d444ba4c8b3ba32c051fd150bd567c41615",
+        "rounds": [
+          {
+            "target_start": 71628,
+            "candidate_start": 71628,
+            "size": 6,
+            "target_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+            "candidate_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71628,
+              "size": 6,
+              "module": "th05/vcount.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71628,
+            "candidate_start": 71628,
+            "size": 6,
+            "target_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+            "candidate_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71628,
+              "size": 6,
+              "module": "th05/vcount.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "99955e27b1e8aa8207a166e260a472d3300c536943524c83305255d24b4ad787",
+            "dependency_timestamp_normalized_sha256": "7f38b90254bdde73e28203cc63970a403bc365292fc8346cce07f4121856fe04",
+            "module_name": "th05/vcount.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vcount.c",
+              "src/maine/verdict/counter_units_data.c",
+              "src/maine/verdict/format_text_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "427c4ff91f70db4b66bb557e93888f39302fb001315359a91f56e59dc3cd88cf",
+            "dependency_timestamp_normalized_sha256": "7f38b90254bdde73e28203cc63970a403bc365292fc8346cce07f4121856fe04",
+            "module_name": "th05/vcount.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vcount.c",
+              "src/maine/verdict/counter_units_data.c",
+              "src/maine/verdict/format_text_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vcount.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vcount.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_vcount_data_bindings.asm",
+            "sha256": "1cea09e348e865e1398b906a16d461321e23b4e5311d057157c2572e58631745"
+          },
+          {
+            "path": "src/maine/verdict/counter_units_data.c",
+            "sha256": "d86d06279eed578f2da79c60ee61f08705839b672d7f114f2ed4ff4332c14e1b"
+          },
+          {
+            "path": "src/maine/verdict/format_text_c.h",
+            "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_verdict_vcount_data_bindings.asm",
+              "sha256": "1cea09e348e865e1398b906a16d461321e23b4e5311d057157c2572e58631745"
+            },
+            {
+              "path": "src/maine/verdict/counter_units_data.c",
+              "sha256": "0104824c132e9d40c78d007cb80f30feec79a3e7d98fdd79cb1aa88e39b88f4c"
+            },
+            {
+              "path": "src/maine/verdict/format_text_c.h",
+              "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_verdict_vcount_data_bindings.asm",
+              "sha256": "1cea09e348e865e1398b906a16d461321e23b4e5311d057157c2572e58631745"
+            },
+            {
+              "path": "src/maine/verdict/counter_units_data.c",
+              "sha256": "0104824c132e9d40c78d007cb80f30feec79a3e7d98fdd79cb1aa88e39b88f4c"
+            },
+            {
+              "path": "src/maine/verdict/format_text_c.h",
+              "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_vcount_data_bindings.asm",
+          "sha256": "1cea09e348e865e1398b906a16d461321e23b4e5311d057157c2572e58631745"
+        },
+        {
+          "path": "src/maine/verdict/counter_units_data.c",
+          "sha256": "d86d06279eed578f2da79c60ee61f08705839b672d7f114f2ed4ff4332c14e1b"
+        },
+        {
+          "path": "src/maine/verdict/format_text_c.h",
+          "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "fc33c8d7f9d2f5b7cf26aeae1996555576415df0d959609a0f8618da4fbadcf2",
+      "compiled_negative_control": {
+        "target_start": 71628,
+        "candidate_start": 71628,
+        "size": 6,
+        "target_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+        "candidate_sha256": "9d3479f9b21847b3a1bac041aa2b1d76fcc487e7e7bb0f0e85e617c94e4c6840",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71628,
+          "size": 6,
+          "module": "th05/vcount.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-counter-units-data",
+        "entry_sha256": "06f2df2b5dca957f86f652a0c2ae4d444ba4c8b3ba32c051fd150bd567c41615",
+        "mutation": {
+          "unit": "maine-verdict-counter-units-data",
+          "source": "src/maine/verdict/counter_units_data.c",
+          "find": "    \"\u56de\",",
+          "replace": "    \"\u5ea6\","
+        },
+        "control_sha256": "ac967045454bf5430adb8999c5c4690cae2bcfe344ccae4ca2faa202eae5d003",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71628,
+          "candidate_start": 71628,
+          "size": 6,
+          "target_sha256": "c1be24ff104f2d99dfd5960ecba16664ad3ef51dd5a82492e2d13258ed9f5574",
+          "candidate_sha256": "9d3479f9b21847b3a1bac041aa2b1d76fcc487e7e7bb0f0e85e617c94e4c6840",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71628,
+            "size": 6,
+            "module": "th05/vcount.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "ff9c4e4a0daa501cc7bc57ce7007f05da31c6c3f8c9e3a5cad629490c90ac823",
+          "dependency_timestamp_normalized_sha256": "9eed2e2162b1ea2bd4fe794dd7203d700625d98fe37917af5f5376a420bddcbe",
+          "module_name": "th05/vcount.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vcount.c",
+            "src/maine/verdict/counter_units_data.c",
+            "src/maine/verdict/format_text_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 6,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 6,
+                "sha256": "9d3479f9b21847b3a1bac041aa2b1d76fcc487e7e7bb0f0e85e617c94e4c6840"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vcount.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_vcount_data_bindings.asm",
+            "sha256": "1cea09e348e865e1398b906a16d461321e23b4e5311d057157c2572e58631745"
+          },
+          {
+            "path": "src/maine/verdict/counter_units_data.c",
+            "sha256": "1ed3659c16a468777bdb54a2af5c3aa74f17d4c8fa987c552c89a6a6bd45311c"
+          },
+          {
+            "path": "src/maine/verdict/format_text_c.h",
+            "sha256": "da3a176b7416efa941084c73ea7ffdcfc034b42b289d9714bcf68f87d5566fdd"
+          }
         ]
       },
       "target_view": {

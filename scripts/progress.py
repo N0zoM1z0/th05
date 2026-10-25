@@ -299,7 +299,7 @@ def render(summary: dict) -> tuple[str, str]:
     padding = summary.get("padding_bytes", extent - authored)
     scopes = summary.get("artifacts", {"main": summary})
     rows, data_rows = [], []
-    for name, label in (("main", "MAIN bounded C++ units"), ("op", "OP decoded C++ units"), ("maine", "MAINE decoded C++ units")):
+    for name, label in (("main", "MAIN bounded C/C++ units"), ("op", "OP decoded C/C++ units"), ("maine", "MAINE decoded C/C++ units")):
         scope = scopes.get(name, {})
         data_units = [unit for unit in scope.get('units', []) if unit.get('extent_kind') == 'initialized-data']
         code_extent = scope.get('complete_extent_bytes', 0) - sum(unit['size'] for unit in data_units)
@@ -353,7 +353,7 @@ complete authored ownership denominator remains under review.
 {data_scope_rows}
 | ZUN | 0 | 0 | 0 | 0 |
 
-{count} bounded C++ units pass two cold producers, raw bytes and original
+{count} bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with

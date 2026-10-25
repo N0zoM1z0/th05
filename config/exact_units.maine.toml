@@ -959,3 +959,68 @@ unit = "maine-se-priority-data"
 source = "src/shared/sound/se_priority_data.cpp"
 find = "36, 16, 4, 16, 8, 48, 80"
 replace = "36, 16, 4, 16, 8, 47, 80"
+
+[[units]]
+id = "maine-verdict-state-data"
+source = "src/maine/verdict/state_data.cpp"
+module = "th05/vstate.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_state_data_bindings.asm"
+target_start = 0x116f2
+size = 50
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state", "ui-text"]
+alignment_offsets = []
+
+[[controls]]
+unit = "maine-verdict-state-data"
+source = "src/maine/verdict/state_data.cpp"
+find = "{ VERDICT_GLYPH_EMPTY, VR_N, VR_O, VR_R, VR_M, VR_A, VR_L,"
+replace = "{ VERDICT_GLYPH_EMPTY, VR_M, VR_O, VR_R, VR_M, VR_A, VR_L,"
+
+[[units]]
+id = "maine-verdict-punctuation-data"
+source = "src/maine/verdict/punctuation_data.c"
+module = "th05/vpunct.c"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_vpunct_data_bindings.asm"
+target_start = 71460
+size = 12
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+source_encoding = "cp932"
+
+[[controls]]
+unit = "maine-verdict-punctuation-data"
+source = "src/maine/verdict/punctuation_data.c"
+find = "\"％\""
+replace = "\"＆\""
+
+[[units]]
+id = "maine-verdict-counter-units-data"
+source = "src/maine/verdict/counter_units_data.c"
+module = "th05/vcount.c"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_vcount_data_bindings.asm"
+target_start = 71628
+size = 6
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+source_encoding = "cp932"
+
+[[controls]]
+unit = "maine-verdict-counter-units-data"
+source = "src/maine/verdict/counter_units_data.c"
+find = "    \"回\","
+replace = "    \"度\","

@@ -5,12 +5,12 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **306 bounded C/C++ CODE/DATA units / 494 complete function occurrences**,
-**96,899 authored bytes exact**: 81,630 CODE and 15,269 initialized DATA.
+Current acceptance: **309 bounded C/C++ CODE/DATA units / 494 complete function occurrences**,
+**96,967 authored bytes exact**: 81,630 CODE and 15,337 initialized DATA.
 CODE is 80,938 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 96,978; 79 checked padding bytes receive
+Complete compared extents total 97,046; 79 checked padding bytes receive
 no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
-OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
+OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,597.
 Global denominator and percentage remain unreviewed.
 
 Separately reviewed ASM now contributes **5,824 instruction bytes,
@@ -18,10 +18,51 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 162,327 bytes. The global denominator is still unreviewed,
+ownership is now 162,259 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
-## Latest source investigations: no new acceptance
+## Latest accepted verdict DATA
+
+Three complete MAINE DATA contributions add 68 bytes, without changing or
+replaying any previously accepted source. Function/instruction/CODE/ASM counts
+are unchanged. Source notes: [state and rank labels](../src/maine/verdict/state_data.md)
+and [formatting banks](../src/maine/verdict/format_text_data.md).
+
+| Receipt under `.analysis/unit-replays/` | Complete original range | Credit |
+| --- | --- | ---: |
+| maine-verdict-state-data-d | 116F2..11724 | 50 C++ DATA |
+| maine-verdict-punctuation-data-a | 11724..11730 | 12 C DATA |
+| maine-verdict-counter-units-data-a | 117CC..117D2 | 6 C DATA |
+
+Each has two fresh deterministic complete compiler DATA producers, full
+raw/ordered-fixup/OMF/MAP validation and its own compiled DATA negative. All
+ordered fixup lists are empty. These are actual semantic settings and glyph/UI
+text, without fonts, raster assets, BSS or padding. The state owner preserves
+all seven real globals and canonical underlying types, including the original
+31-character formatter-symbol truncation. GAME5 M/N order is checked separately
+from the older bold-font names. The two C banks preserve complete const array
+fields and distinct duplicate strings, with explicit new field APIs rather
+than invented old global aliases. Future caller integration is not claimed.
+
+State-a passed DATA bytes but exposed an unwanted empty SHARED SEGDEF in
+GROUP_01 from including the full logic header; it is not imported. The new
+DATA-only declarations preserve the same ABI and keep the foreign SHARED
+frame separate. State-b stopped on a missing historical bool typedef. State-c
+passed after including its unchanged defining header; final-d freshly compiles
+the final header/private-enum arrangement. All failed/intermediate evidence
+remains intact. Only the final three receipts are imported. Installed execution
+probes and all unrelated objects/evidence are reused.
+
+Root native/public/frame readback is
+`.analysis/verdict-state-data/root-final-native-review.json`, SHA-256
+`e93c89ac086564a47e5e705b64d7a5deb48ffc2733563face3392276e11ed50a`.
+Independent native/source review is
+`.analysis/verdict-data-source-native-review.json`, SHA-256
+`492e3eb12cb77b94cf9bdec5c2590563bacb5390d01de3b719af7507ac60eb6d`.
+The generated progress labels now correctly name combined C/C++ scopes, rather
+than labeling the new C DATA contributions as C++.
+
+## Retained source investigations: no new acceptance
 
 Two first-producer C++ attempts now have maintained source and frozen failure
 evidence. Neither changes any counter or ownership category:
@@ -54,6 +95,14 @@ fixups [43,173]/[41], but no independent original-ASM attribution was found.
 Allocator vendor ancestry does not classify the game loaders. All these scopes
 remain unknown. No tool surface, accepted source/header or accepted evidence
 changed; installed execution proofs and accepted objects were reused.
+
+The later [input provider review](../src/shared/hardware/input_sense.md) adds
+maintained semantic source for the shared reset/sense algorithm, but does not
+promote its origin or run an assembler. Each complete native262-byte family
+contains261 instruction bytes and the actual EVEN NOP at261, with ordered
+fixup251. Manual reset-prefix fallthrough history does not prove the complete
+sense body's original language. All786 provider bytes remain unknown; the
+new source and bounded vendor/native origin report prevent blanket ASM credit.
 
 ## Retained evidence
 

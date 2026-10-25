@@ -136,7 +136,7 @@ class ExtentMetadataTests(unittest.TestCase):
                    'authored_code_bytes': 6088, 'instruction_bytes': 5972,
                    'code_data_bytes': 116, 'padding_bytes': 11}
         markdown, svg = render(summary)
-        self.assertIn('| MAIN bounded C++ units | 36 | 6088 | 5972 | 116 | 6099 |', markdown)
+        self.assertIn('| MAIN bounded C/C++ units | 36 | 6088 | 5972 | 116 | 6099 |', markdown)
         self.assertIn('6088 authored code bytes', svg)
         self.assertIn('5972 instruction', svg)
         self.assertIn('116 compiler switch-table', svg)
