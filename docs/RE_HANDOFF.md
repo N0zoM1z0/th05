@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **265 bounded C/C++ CODE/DATA units / 466 complete function occurrences**,
-**87,533 authored bytes exact**: 75,999 CODE and 11,534 initialized DATA.
-CODE is 75,341 instruction plus 658 semantic compiler-table bytes.
-Complete compared extents total 87,609; 76 checked padding bytes receive
-no credit. MAIN has 370 functions / 60,302 CODE / 2,876 DATA;
-OP 61 / 11,218 / 8,615; MAINE 35 / 4,479 / 43.
+Current acceptance: **272 bounded C/C++ CODE/DATA units / 473 complete function occurrences**,
+**88,571 authored bytes exact**: 77,018 CODE and 11,553 initialized DATA.
+CODE is 76,348 instruction plus 670 semantic compiler-table bytes.
+Complete compared extents total 88,647; 76 checked padding bytes receive
+no credit. MAIN has 370 functions / 60,302 CODE / 2,895 DATA;
+OP 61 / 11,218 / 8,615; MAINE 42 / 5,498 / 43.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1163,3 +1163,52 @@ coordinate locals; restoring exactly those two qualifiers recovers the native
 six-byte frame and711-byte whole extent. No physical register alias, new ABI
 or calculation was introduced. The old717 input/object and forensic evidence
 remain private. See `src/maine/verdict/format.md`.
+
+## MAINE registration, comments and stage scores
+
+`maine-registration-alphabet-a` adds49 instructions, with the real three-word
+near Pascal interface and row21→22 negative. `maine-registration-commit-b`
+adds113; its first a producer had correct size/order but five changed bytes
+from the second loop's initializer sequence. Reordering only that real
+initializer recovers all bytes; the speed96→80 control is rejected.
+`maine-registration-frame-a` adds40 through real Borland `outportb` and actual
+far/near callbacks, with wait1→2 control. All three get independent two-cold
+producer proofs. The complete28-byte glyph type, nine allocated/eight active
+slots, genuine six unused bytes and existing headers remain unchanged.
+
+`maine-verdict-comments-a` adds66 instructions and
+`maine-verdict-stage-scores-a` adds258, with independent Y296→297 and64→65
+negatives. Both use true far graphics and full Score8/resident fields.
+Animation108 remains inactive because its original MZ sequence splits into
+two record runs; no pointless standalone ordered-failure probe was run.
+
+`main-stage-bonus-glyph-text-data-a` adds19 semantic selector-text DATA bytes
+for CLEAR BONUS and CONGRATULATION at2245E..22471, with EMPTY→NUL negative.
+They provide the actual const near-char objects consumed by accepted bonus
+CODE. All19 bytes compare; no font bitmap, padding, BSS or CODE is credited.
+
+## MAINE bonus and comment selection
+
+`maine-verdict-bonus-comments-b` adds493 complete CODE bytes / two functions:
+481 instructions and a twelve-byte generated switch table, no padding.
+Both fresh positives, original fixup324 and life1 bonus2500→2501 negative
+pass. Its full Resident128/Score8 source preserves TH05 credit/bomb/graze
+rules, signed clamp and actual unsigned unknown-byte comparison. The first
+compiler attempt stopped before OBJ because int32_t was not defined; the
+local is now signed long, with shared ABI headers unchanged.
+
+Registration spawn304 remains unaccepted: its first producer is303 with a
+missing zero before the four-word table, plus initializer/register allocation
+differences across39 instruction bytes. All295 instruction boundaries and
+original ordered fixups match, but full raw equality does not. Its failed
+entry is removed from default replay selection; no source/flag matrix follows.
+Native retained EMS/Alice/Item/HUD comparisons falsify simple first-prototype
+and end-of-function table-flush alignment rules. All failures remain private.
+
+A private coherent3384-byte verdict family proposal preserves ten genuine
+functions and one canonical body per function. It does not prove the original
+TH05 TU. Any trial must use an isolated workspace, two actual fresh producers,
+full raw/ordered comparisons and a real main-clamp negative. Existing retained
+scope projection can reuse those producers and four old IDs atomically; no
+retirement API, byte prefix, OMF reordering or implicit ownership change is
+authorized by a merely prepared source proposal.

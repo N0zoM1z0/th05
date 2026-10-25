@@ -7,17 +7,17 @@ complete authored ownership denominator remains under review.
 | --- | ---: | ---: | ---: | ---: | ---: |
 | MAIN bounded C++ units | 370 | 60302 | 59766 | 536 | 60368 |
 | OP decoded C++ units | 61 | 11218 | 11112 | 106 | 11223 |
-| MAINE decoded C++ units | 35 | 4479 | 4463 | 16 | 4481 |
+| MAINE decoded C++ units | 42 | 5498 | 5470 | 28 | 5500 |
 | ZUN | 0 | 0 | 0 | 0 | 0 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C++ units | 15 | 2876 | 63178 | 63247 |
+| MAIN bounded C++ units | 16 | 2895 | 63197 | 63266 |
 | OP decoded C++ units | 7 | 8615 | 19833 | 19838 |
-| MAINE decoded C++ units | 1 | 43 | 4522 | 4524 |
+| MAINE decoded C++ units | 1 | 43 | 5541 | 5543 |
 | ZUN | 0 | 0 | 0 | 0 |
 
-265 bounded C++ units pass two cold producers, raw bytes and original
+272 bounded C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,9 +27,9 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored bytes are 87533: 75999 authored CODE plus 11534
+Total authored bytes are 88571: 77018 authored CODE plus 11553
 initialized DATA bytes. This does not change the global denominator.
-Authored code includes 658 bytes of explicitly classified compiler switch
+Authored code includes 670 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 76 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete

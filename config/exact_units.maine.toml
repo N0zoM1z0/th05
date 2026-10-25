@@ -409,3 +409,120 @@ unit = "maine-verdict-format"
 source = "src/maine/verdict/format.cpp"
 find = "digit = num / 100;"
 replace = "digit = num / 101;"
+
+[[units]]
+id = "maine-registration-alphabet"
+source = "src/maine/registration/alphabet.cpp"
+module = "th05/r_alpha.cpp"
+segment = "REG_ALPHA_TEXT"
+wrapper_options = "-zPGROUP_01"
+target_start = 48365
+size = 49
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_registration_alphabet_bindings.asm"
+
+[[units]]
+id = "maine-registration-commit"
+source = "src/maine/registration/commit.cpp"
+module = "th05/r_commit.cpp"
+segment = "REG_COMMIT_TEXT"
+wrapper_options = "-zPGROUP_01"
+target_start = 49516
+size = 113
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/maine_registration_commit_bindings.asm"
+
+[[controls]]
+unit = "maine-registration-alphabet"
+source = "src/maine/registration/alphabet.cpp"
+find = "(row_r + 21)"
+replace = "(row_r + 22)"
+
+[[controls]]
+unit = "maine-registration-commit"
+source = "src/maine/registration/commit.cpp"
+find = "ball->speed.v = 6 * 16;"
+replace = "ball->speed.v = 5 * 16;"
+
+[[units]]
+id = "maine-registration-frame"
+source = "src/maine/registration/frame.cpp"
+module = "th05/r_frame.cpp"
+segment = "REG_FRAME_TEXT"
+wrapper_options = "-zPGROUP_01"
+target_start = 48414
+size = 40
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_registration_frame_bindings.asm"
+
+[[controls]]
+unit = "maine-registration-frame"
+source = "src/maine/registration/frame.cpp"
+find = "frame_delay(1);"
+replace = "frame_delay(2);"
+
+[[units]]
+id = "maine-verdict-bonus-comments"
+source = "src/maine/verdict/bonus.cpp"
+module = "th05/vbonus.cpp"
+segment = "VERDICT_LOGIC_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_bonus_bindings.asm"
+target_start = 51374
+size = 493
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 328, size = 12, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "maine-verdict-bonus-comments"
+source = "src/maine/verdict/bonus.cpp"
+find = "case 1: bonus = 2500; break;"
+replace = "case 1: bonus = 2501; break;"
+
+[[units]]
+id = "maine-verdict-comments"
+source = "src/maine/verdict/comments.cpp"
+module = "th05/vcomment.cpp"
+segment = "VERDICT_COMMENT_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_comments_bindings.asm"
+target_start = 53615
+size = 66
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-verdict-comments"
+source = "src/maine/verdict/comments.cpp"
+find = "verdict_text_top + 296"
+replace = "verdict_text_top + 297"
+
+[[units]]
+id = "maine-verdict-stage-scores"
+source = "src/maine/verdict/stage_scores.cpp"
+module = "th05/vstscore.cpp"
+segment = "VERDICT_SCORES_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_verdict_stage_scores_bindings.asm"
+target_start = 53789
+size = 258
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-verdict-stage-scores"
+source = "src/maine/verdict/stage_scores.cpp"
+find = "graph_putsa_fx(verdict_text_left, verdict_text_top + 64,"
+replace = "graph_putsa_fx(verdict_text_left, verdict_text_top + 65,"

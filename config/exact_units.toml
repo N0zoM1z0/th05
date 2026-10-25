@@ -3918,3 +3918,25 @@ unit = "main-shinki-devil"
 source = "src/main/boss/shinki/devil.inl"
 find = "boss.phase_frame >= 2500"
 replace = "boss.phase_frame >= 2501"
+
+[[units]]
+id = "main-stage-bonus-glyph-text-data"
+source = "src/main/stage/bonus_glyph_text.cpp"
+module = "th05/bon_gly.cpp"
+segment = "_DATA"
+wrapper_options = "-zCBONUS_GLYPH_DATA_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_glyph_text_bindings.asm"
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+functions = 0
+target_start = 140382
+size = 19
+alignment_offsets = []
+padding_bytes = []
+data_semantics = ["ui-text"]
+
+[[controls]]
+unit = "main-stage-bonus-glyph-text-data"
+source = "src/main/stage/bonus_glyph_text.cpp"
+find = "    BG_EMPTY,"
+replace = "    BG_NULL,"

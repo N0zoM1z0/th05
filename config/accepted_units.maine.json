@@ -2,34 +2,23 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "cecc83d774a01f00ded27630b70bf01b724bb08518d523eb578480b47de523a2",
+  "replay_receipt_sha256": "8aeaeed6a399459d086d650a59079cba1e2f056154c87f7b69160b78d8364fd7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 50663,
-    "candidate_start": 50663,
-    "size": 711,
-    "candidate_size": 714,
-    "target_sha256": "a6b37b5192ed4e044c6e9dffb14fe7a17a994d1be1ce2f125a6b7434399d0ac8",
-    "candidate_sha256": "6fd12c895b3a5fea13b7a0f9d693ca1ada2ee87aa68785a619398fc73e1b03c5",
+    "target_start": 51374,
+    "candidate_start": 51374,
+    "size": 493,
+    "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+    "candidate_sha256": "9ee93ab44b2d78efae8bc8c37913266aa3c50199be342ced9df50f9c08afe015",
     "raw_exact": false,
     "target_fixups": [
-      703,
-      582,
-      564,
-      314,
-      293,
-      145
+      324
     ],
     "candidate_fixups": [
-      706,
-      585,
-      567,
-      317,
-      296,
-      148
+      324
     ],
-    "fixups_exact": false,
+    "fixups_exact": true,
     "exact": false
   },
   "units": [
@@ -8381,6 +8370,1813 @@
           "-ml",
           "-DBINARY='E'",
           "th05/vformat.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-alphabet",
+      "entry_sha256": "2b696907d515694356f9efb7d4ff44ebc3b5cb9ab4280c151bb1a0c2d787e613",
+      "result": {
+        "id": "maine-registration-alphabet",
+        "entry_sha256": "2b696907d515694356f9efb7d4ff44ebc3b5cb9ab4280c151bb1a0c2d787e613",
+        "rounds": [
+          {
+            "target_start": 48365,
+            "candidate_start": 48365,
+            "size": 49,
+            "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+            "candidate_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+            "raw_exact": true,
+            "target_fixups": [
+              41
+            ],
+            "candidate_fixups": [
+              41
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48365,
+            "candidate_start": 48365,
+            "size": 49,
+            "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+            "candidate_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+            "raw_exact": true,
+            "target_fixups": [
+              41
+            ],
+            "candidate_fixups": [
+              41
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "dba97ef412a90b32494a8b45090630097b799bd697734ce57f08c4fe9103448a",
+            "dependency_timestamp_normalized_sha256": "0f06d61dcffc1d16cce01875db8a60ff81d414f095c24293e48929dc244233a6",
+            "module_name": "th05/r_alpha.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_alpha.cpp",
+              "src/maine/registration/alphabet.cpp",
+              "src/maine/registration/alphabet.hpp",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "e68974fc4556ea0dc8d64270850764b078b8b65b3b30d2848914a12b8ebf8548",
+            "dependency_timestamp_normalized_sha256": "0f06d61dcffc1d16cce01875db8a60ff81d414f095c24293e48929dc244233a6",
+            "module_name": "th05/r_alpha.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_alpha.cpp",
+              "src/maine/registration/alphabet.cpp",
+              "src/maine/registration/alphabet.hpp",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_alpha.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_alpha.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_alphabet_bindings.asm",
+            "sha256": "a3892c1820024dbcab0bb10b76c8929f6ec903648817edb654cf2d08edd136c9"
+          },
+          {
+            "path": "src/maine/registration/alphabet.cpp",
+            "sha256": "caccc51a8f5e9451351cb46670684b2d5b55f70f494407c91d587384b92fbf8a"
+          },
+          {
+            "path": "src/maine/registration/alphabet.hpp",
+            "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
+          },
+          {
+            "path": "src/maine/registration/glyphball.hpp",
+            "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_alphabet_bindings.asm",
+          "sha256": "a3892c1820024dbcab0bb10b76c8929f6ec903648817edb654cf2d08edd136c9"
+        },
+        {
+          "path": "src/maine/registration/alphabet.cpp",
+          "sha256": "caccc51a8f5e9451351cb46670684b2d5b55f70f494407c91d587384b92fbf8a"
+        },
+        {
+          "path": "src/maine/registration/alphabet.hpp",
+          "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
+        },
+        {
+          "path": "src/maine/registration/glyphball.hpp",
+          "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "3b27bd59c984a0bebdbe56e1c72fd32d97fed3edba64c95aeb1cfaec241d1001",
+      "compiled_negative_control": {
+        "target_start": 48365,
+        "candidate_start": 48365,
+        "size": 49,
+        "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+        "candidate_sha256": "6e65188585627b8be7010194eccd1b100264988468896a2d970e8ee84cf80442",
+        "raw_exact": false,
+        "target_fixups": [
+          41
+        ],
+        "candidate_fixups": [
+          41
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-alphabet",
+        "entry_sha256": "2b696907d515694356f9efb7d4ff44ebc3b5cb9ab4280c151bb1a0c2d787e613",
+        "mutation": {
+          "unit": "maine-registration-alphabet",
+          "source": "src/maine/registration/alphabet.cpp",
+          "find": "(row_r + 21)",
+          "replace": "(row_r + 22)"
+        },
+        "control_sha256": "ff79fffe288685777354087939bdb546c225cefd75a974020fac5f385c1f49f1",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48365,
+          "candidate_start": 48365,
+          "size": 49,
+          "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
+          "candidate_sha256": "6e65188585627b8be7010194eccd1b100264988468896a2d970e8ee84cf80442",
+          "raw_exact": false,
+          "target_fixups": [
+            41
+          ],
+          "candidate_fixups": [
+            41
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "e1a238393e7bff01b5bb7caa43eea220b713dcf658ae791a70eb8e21addcf333",
+          "dependency_timestamp_normalized_sha256": "3395ca5b6be2b93207097909fdb87411a325e48db0d3e1c2b858e80b191f9bee",
+          "module_name": "th05/r_alpha.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_alpha.cpp",
+            "src/maine/registration/alphabet.cpp",
+            "src/maine/registration/alphabet.hpp",
+            "src/maine/registration/glyphball.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_alpha.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-commit",
+      "entry_sha256": "b289b66571762390959389f0907cd5639e22b3b1ecf0b905c30edd1dde4b7af9",
+      "result": {
+        "id": "maine-registration-commit",
+        "entry_sha256": "b289b66571762390959389f0907cd5639e22b3b1ecf0b905c30edd1dde4b7af9",
+        "rounds": [
+          {
+            "target_start": 49516,
+            "candidate_start": 49516,
+            "size": 113,
+            "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+            "candidate_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+            "raw_exact": true,
+            "target_fixups": [
+              54,
+              15
+            ],
+            "candidate_fixups": [
+              54,
+              15
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 49516,
+            "candidate_start": 49516,
+            "size": 113,
+            "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+            "candidate_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+            "raw_exact": true,
+            "target_fixups": [
+              54,
+              15
+            ],
+            "candidate_fixups": [
+              54,
+              15
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "16d10ec0db3e9848372e752a45dc5e329fe067d3cfbd778086f19b0579a9c6ce",
+            "dependency_timestamp_normalized_sha256": "3cedeee2f9ffcc02c499c753ae3f3df70cd55d6b33ec5ec2da1fc85e2ed0ef25",
+            "module_name": "th05/r_commit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_commit.cpp",
+              "src/maine/registration/commit.cpp",
+              "src/maine/registration/commit.hpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "0fb4f652b66c603f1b783c679bcf6f0a1bc81de1041cbae2a93b2d4e7e3fff07",
+            "dependency_timestamp_normalized_sha256": "3cedeee2f9ffcc02c499c753ae3f3df70cd55d6b33ec5ec2da1fc85e2ed0ef25",
+            "module_name": "th05/r_commit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_commit.cpp",
+              "src/maine/registration/commit.cpp",
+              "src/maine/registration/commit.hpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_commit.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_commit.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_commit_bindings.asm",
+            "sha256": "3476e30ce6417b548694dc6a1f7d419e946c64da73c6c7d38d4a7f333d60a821"
+          },
+          {
+            "path": "src/maine/registration/commit.cpp",
+            "sha256": "1eff7ef6adfd7b06ccac818e8209150a111b4e2a7dc9d9417da05520ded59067"
+          },
+          {
+            "path": "src/maine/registration/commit.hpp",
+            "sha256": "e77b9359150f534f21fd26a51e03b03b8973e677ac62aa903fb0eff2ccfb5b50"
+          },
+          {
+            "path": "src/maine/registration/glyphball.hpp",
+            "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_commit_bindings.asm",
+          "sha256": "3476e30ce6417b548694dc6a1f7d419e946c64da73c6c7d38d4a7f333d60a821"
+        },
+        {
+          "path": "src/maine/registration/commit.cpp",
+          "sha256": "1eff7ef6adfd7b06ccac818e8209150a111b4e2a7dc9d9417da05520ded59067"
+        },
+        {
+          "path": "src/maine/registration/commit.hpp",
+          "sha256": "e77b9359150f534f21fd26a51e03b03b8973e677ac62aa903fb0eff2ccfb5b50"
+        },
+        {
+          "path": "src/maine/registration/glyphball.hpp",
+          "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "aa3c53579b969bbf3320c0ceba872000365f013c878e320f1b1bdf8c14ae29e8",
+      "compiled_negative_control": {
+        "target_start": 49516,
+        "candidate_start": 49516,
+        "size": 113,
+        "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+        "candidate_sha256": "665c2a361188b70b30d601c70b66b3957821a3da4fc7293af8f70fce0624d8e8",
+        "raw_exact": false,
+        "target_fixups": [
+          54,
+          15
+        ],
+        "candidate_fixups": [
+          54,
+          15
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-commit",
+        "entry_sha256": "b289b66571762390959389f0907cd5639e22b3b1ecf0b905c30edd1dde4b7af9",
+        "mutation": {
+          "unit": "maine-registration-commit",
+          "source": "src/maine/registration/commit.cpp",
+          "find": "ball->speed.v = 6 * 16;",
+          "replace": "ball->speed.v = 5 * 16;"
+        },
+        "control_sha256": "3000efe7d673a5c56faca9f516b72ca768fed4ea5287b305a8b959a598820f3a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 49516,
+          "candidate_start": 49516,
+          "size": 113,
+          "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
+          "candidate_sha256": "665c2a361188b70b30d601c70b66b3957821a3da4fc7293af8f70fce0624d8e8",
+          "raw_exact": false,
+          "target_fixups": [
+            54,
+            15
+          ],
+          "candidate_fixups": [
+            54,
+            15
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "2165cfe1fd14b7bdc0e69d87c4f82977db036025c3b98794833068bd351d5221",
+          "dependency_timestamp_normalized_sha256": "56432ccac4b053336b09f45b94bc26fa965de7431ea2df9a5b7ad7923f0f56d9",
+          "module_name": "th05/r_commit.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_commit.cpp",
+            "src/maine/registration/commit.cpp",
+            "src/maine/registration/commit.hpp",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/maine/registration/glyphball.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_commit.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-frame",
+      "entry_sha256": "9a00ea75332f88c71d760a8a8bb0f1914c54855b90a25386a8a9d8b014b51778",
+      "result": {
+        "id": "maine-registration-frame",
+        "entry_sha256": "9a00ea75332f88c71d760a8a8bb0f1914c54855b90a25386a8a9d8b014b51778",
+        "rounds": [
+          {
+            "target_start": 48414,
+            "candidate_start": 48414,
+            "size": 40,
+            "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+            "candidate_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+            "raw_exact": true,
+            "target_fixups": [
+              16,
+              6
+            ],
+            "candidate_fixups": [
+              16,
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48414,
+            "candidate_start": 48414,
+            "size": 40,
+            "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+            "candidate_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+            "raw_exact": true,
+            "target_fixups": [
+              16,
+              6
+            ],
+            "candidate_fixups": [
+              16,
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d35f949cec2615335ec2bd0021f099545963cff019b4cc15a8002298acbfe8c1",
+            "dependency_timestamp_normalized_sha256": "0341e56e829d7a33de596ed05b8fd7949d4e71f4e24d9b7a513edfb2922b297a",
+            "module_name": "th05/r_frame.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_frame.cpp",
+              "src/maine/registration/frame.cpp",
+              "src/maine/registration/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "d35f949cec2615335ec2bd0021f099545963cff019b4cc15a8002298acbfe8c1",
+            "dependency_timestamp_normalized_sha256": "0341e56e829d7a33de596ed05b8fd7949d4e71f4e24d9b7a513edfb2922b297a",
+            "module_name": "th05/r_frame.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_frame.cpp",
+              "src/maine/registration/frame.cpp",
+              "src/maine/registration/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/maine/registration/glyphball.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_frame.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_frame.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_frame_bindings.asm",
+            "sha256": "55ef991e98780e23b66eaefd5a97d944c7a90f131e25d5c2baff5f1ae7026481"
+          },
+          {
+            "path": "src/maine/registration/frame.cpp",
+            "sha256": "18213a65a0ee93ee94d0ab832c66d624f6d4b599a03f0e4c027aac9674f9eaeb"
+          },
+          {
+            "path": "src/maine/registration/frame.hpp",
+            "sha256": "3a3ace5ca7d825b50911b0f9390f24a9706dd2f1484a9ef87238c0cfb0d3ec9f"
+          },
+          {
+            "path": "src/maine/registration/glyphball.hpp",
+            "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_frame_bindings.asm",
+          "sha256": "55ef991e98780e23b66eaefd5a97d944c7a90f131e25d5c2baff5f1ae7026481"
+        },
+        {
+          "path": "src/maine/registration/frame.cpp",
+          "sha256": "18213a65a0ee93ee94d0ab832c66d624f6d4b599a03f0e4c027aac9674f9eaeb"
+        },
+        {
+          "path": "src/maine/registration/frame.hpp",
+          "sha256": "3a3ace5ca7d825b50911b0f9390f24a9706dd2f1484a9ef87238c0cfb0d3ec9f"
+        },
+        {
+          "path": "src/maine/registration/glyphball.hpp",
+          "sha256": "ccb5967af72eddb8022b966073c0ffdbeb1ec0f819812978c5a7d1f1edd24652"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8aa796da065ef5f3f577322e1c023631b4d12783c6120767e61abf470841a7f0",
+      "compiled_negative_control": {
+        "target_start": 48414,
+        "candidate_start": 48414,
+        "size": 40,
+        "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+        "candidate_sha256": "ecefc6785fb2ac4a7f24237dac42aa84ea87d49d706fa929550b0e3df9c3feb9",
+        "raw_exact": false,
+        "target_fixups": [
+          16,
+          6
+        ],
+        "candidate_fixups": [
+          16,
+          6
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-frame",
+        "entry_sha256": "9a00ea75332f88c71d760a8a8bb0f1914c54855b90a25386a8a9d8b014b51778",
+        "mutation": {
+          "unit": "maine-registration-frame",
+          "source": "src/maine/registration/frame.cpp",
+          "find": "frame_delay(1);",
+          "replace": "frame_delay(2);"
+        },
+        "control_sha256": "5a45bc8b1fb7a647e7415fb56c7e6879b0a2dd599f1dc7cf83793524f828029d",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48414,
+          "candidate_start": 48414,
+          "size": 40,
+          "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
+          "candidate_sha256": "ecefc6785fb2ac4a7f24237dac42aa84ea87d49d706fa929550b0e3df9c3feb9",
+          "raw_exact": false,
+          "target_fixups": [
+            16,
+            6
+          ],
+          "candidate_fixups": [
+            16,
+            6
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "cbca35f6f20e8ce4c10b14f4d0395947217c536c3880d97650cbe8ddc1f85765",
+          "dependency_timestamp_normalized_sha256": "6273f1212c5019bf700ed3b01e834828e92d38920fe12bc7d61d8d51b8c163df",
+          "module_name": "th05/r_frame.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_frame.cpp",
+            "src/maine/registration/frame.cpp",
+            "src/maine/registration/frame.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/maine/registration/glyphball.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_frame.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-bonus-comments",
+      "entry_sha256": "2c73b14c14f745891819f16e76e860af94c1b9f33158c2f8409077f0037bf342",
+      "result": {
+        "id": "maine-verdict-bonus-comments",
+        "entry_sha256": "2c73b14c14f745891819f16e76e860af94c1b9f33158c2f8409077f0037bf342",
+        "rounds": [
+          {
+            "target_start": 51374,
+            "candidate_start": 51374,
+            "size": 493,
+            "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+            "candidate_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+            "raw_exact": true,
+            "target_fixups": [
+              324
+            ],
+            "candidate_fixups": [
+              324
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 51374,
+            "candidate_start": 51374,
+            "size": 493,
+            "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+            "candidate_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+            "raw_exact": true,
+            "target_fixups": [
+              324
+            ],
+            "candidate_fixups": [
+              324
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d3bce910a772584945767ce9dcf5b190c145473184a7ef1fe570a4be48f091ce",
+            "dependency_timestamp_normalized_sha256": "90a359f585295ab8ff8aa2ffbe89254988ace6d5c233bd47e6face21e47c5bd0",
+            "module_name": "th05/vbonus.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vbonus.cpp",
+              "src/maine/verdict/bonus.cpp",
+              "src/maine/verdict/bonus.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "e9548d9550892d26d78ed6e9b0d27810d77fb70089156703f29e1a24430d06d6",
+            "dependency_timestamp_normalized_sha256": "90a359f585295ab8ff8aa2ffbe89254988ace6d5c233bd47e6face21e47c5bd0",
+            "module_name": "th05/vbonus.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vbonus.cpp",
+              "src/maine/verdict/bonus.cpp",
+              "src/maine/verdict/bonus.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vbonus.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vbonus.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_bonus_bindings.asm",
+            "sha256": "2c934b929943f47b8b073cbacb1a14c397aaf9cbcd3521e9b3705bf1ee75b32e"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/verdict/bonus.cpp",
+            "sha256": "a0132139453d8de1d5009c367ae434128b512927fec6c8b5eacb04fc243d8382"
+          },
+          {
+            "path": "src/maine/verdict/bonus.hpp",
+            "sha256": "80d16e03f9dc0a6e659b61983f022274b1c68526d6964a4607b4f88bcef5783d"
+          },
+          {
+            "path": "src/maine/verdict/format.hpp",
+            "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_bonus_bindings.asm",
+          "sha256": "2c934b929943f47b8b073cbacb1a14c397aaf9cbcd3521e9b3705bf1ee75b32e"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/verdict/bonus.cpp",
+          "sha256": "a0132139453d8de1d5009c367ae434128b512927fec6c8b5eacb04fc243d8382"
+        },
+        {
+          "path": "src/maine/verdict/bonus.hpp",
+          "sha256": "80d16e03f9dc0a6e659b61983f022274b1c68526d6964a4607b4f88bcef5783d"
+        },
+        {
+          "path": "src/maine/verdict/format.hpp",
+          "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8aeaeed6a399459d086d650a59079cba1e2f056154c87f7b69160b78d8364fd7",
+      "compiled_negative_control": {
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 493,
+        "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+        "candidate_sha256": "9ee93ab44b2d78efae8bc8c37913266aa3c50199be342ced9df50f9c08afe015",
+        "raw_exact": false,
+        "target_fixups": [
+          324
+        ],
+        "candidate_fixups": [
+          324
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "2c73b14c14f745891819f16e76e860af94c1b9f33158c2f8409077f0037bf342",
+        "mutation": {
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/bonus.cpp",
+          "find": "case 1: bonus = 2500; break;",
+          "replace": "case 1: bonus = 2501; break;"
+        },
+        "control_sha256": "ae5b9fbe1082e879b521f88a80ce947ca7591076acb00ab5ab42c1669ac9b6fd",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 493,
+          "target_sha256": "deb639b3ff4d6e8845c55289d29d025baabd450368d0a91f01f0a3c0af8d76f2",
+          "candidate_sha256": "9ee93ab44b2d78efae8bc8c37913266aa3c50199be342ced9df50f9c08afe015",
+          "raw_exact": false,
+          "target_fixups": [
+            324
+          ],
+          "candidate_fixups": [
+            324
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "377ff6ba48d2d662a9dc703d8068e8d2c4a2c14261aaf36a8fe552450dcb2426",
+          "dependency_timestamp_normalized_sha256": "8bec97c98c5af21162332175bb9ce6ed2a6abb6abcac78020aa459abd5b8e618",
+          "module_name": "th05/vbonus.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vbonus.cpp",
+            "src/maine/verdict/bonus.cpp",
+            "src/maine/verdict/bonus.hpp",
+            "src/maine/verdict/format.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vbonus.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-comments",
+      "entry_sha256": "bdec5a635f6939cd52ebb0968249e08a09b1e43f06937ac6b6e0b225b792718c",
+      "result": {
+        "id": "maine-verdict-comments",
+        "entry_sha256": "bdec5a635f6939cd52ebb0968249e08a09b1e43f06937ac6b6e0b225b792718c",
+        "rounds": [
+          {
+            "target_start": 53615,
+            "candidate_start": 53615,
+            "size": 66,
+            "target_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+            "candidate_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+            "raw_exact": true,
+            "target_fixups": [
+              62,
+              35
+            ],
+            "candidate_fixups": [
+              62,
+              35
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 53615,
+            "candidate_start": 53615,
+            "size": 66,
+            "target_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+            "candidate_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+            "raw_exact": true,
+            "target_fixups": [
+              62,
+              35
+            ],
+            "candidate_fixups": [
+              62,
+              35
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "bdd8f72d1dc316fec34389aaa7cba99380546104546f861e1c0583188b53ea9a",
+            "dependency_timestamp_normalized_sha256": "f3fcc150107b0d525429aca453658e883484c85b59434b7648a49169afec538a",
+            "module_name": "th05/vcomment.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vcomment.cpp",
+              "src/maine/verdict/comments.cpp",
+              "src/maine/verdict/display.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "a5a6ee1e36bc6a0b9e2da32f932b86e89b96f5f8af9b7e23ed9662a1c6ef6bf3",
+            "dependency_timestamp_normalized_sha256": "f3fcc150107b0d525429aca453658e883484c85b59434b7648a49169afec538a",
+            "module_name": "th05/vcomment.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vcomment.cpp",
+              "src/maine/verdict/comments.cpp",
+              "src/maine/verdict/display.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vcomment.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vcomment.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_comments_bindings.asm",
+            "sha256": "a654b1795de90ab28a99cc72606148734cce72dc61c79b2e61361a26a7410fb1"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/verdict/comments.cpp",
+            "sha256": "a1beca0f7f9299bd33cfd77b45983018bc242cfa9a91e9593ed66d55efa0e3d3"
+          },
+          {
+            "path": "src/maine/verdict/display.hpp",
+            "sha256": "ac8bfe9bc1ef222f501fc87f91e56432f8188705c363c5c762c1f206be731298"
+          },
+          {
+            "path": "src/maine/verdict/format.hpp",
+            "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_comments_bindings.asm",
+          "sha256": "a654b1795de90ab28a99cc72606148734cce72dc61c79b2e61361a26a7410fb1"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/verdict/comments.cpp",
+          "sha256": "a1beca0f7f9299bd33cfd77b45983018bc242cfa9a91e9593ed66d55efa0e3d3"
+        },
+        {
+          "path": "src/maine/verdict/display.hpp",
+          "sha256": "ac8bfe9bc1ef222f501fc87f91e56432f8188705c363c5c762c1f206be731298"
+        },
+        {
+          "path": "src/maine/verdict/format.hpp",
+          "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "1b819bb0552516a6f50324242d584d7a7897572cfb65d4643168e1f3ef017d20",
+      "compiled_negative_control": {
+        "target_start": 53615,
+        "candidate_start": 53615,
+        "size": 66,
+        "target_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+        "candidate_sha256": "fbef9d54f76ee337229207ffe8ed70ce9fcbdafdb32a4871e60dab9fce446495",
+        "raw_exact": false,
+        "target_fixups": [
+          62,
+          35
+        ],
+        "candidate_fixups": [
+          62,
+          35
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-comments",
+        "entry_sha256": "bdec5a635f6939cd52ebb0968249e08a09b1e43f06937ac6b6e0b225b792718c",
+        "mutation": {
+          "unit": "maine-verdict-comments",
+          "source": "src/maine/verdict/comments.cpp",
+          "find": "verdict_text_top + 296",
+          "replace": "verdict_text_top + 297"
+        },
+        "control_sha256": "b4246b1e1b9ad48931cf4a8a701624292191135cfcdffc7ebb6caa3e10b0eaba",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 53615,
+          "candidate_start": 53615,
+          "size": 66,
+          "target_sha256": "e24bd297ac02813471ff119c296303a96f490f141c66be8afec3aac2e0ef9e94",
+          "candidate_sha256": "fbef9d54f76ee337229207ffe8ed70ce9fcbdafdb32a4871e60dab9fce446495",
+          "raw_exact": false,
+          "target_fixups": [
+            62,
+            35
+          ],
+          "candidate_fixups": [
+            62,
+            35
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "547c2c32beff3558c35e4276642082558d0720a9320c69c115a833a7d6776990",
+          "dependency_timestamp_normalized_sha256": "f0fc26bd929fdef00b03aad4030a8129e835aa0b26c48fd80e1ef4e34c6dc6f7",
+          "module_name": "th05/vcomment.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vcomment.cpp",
+            "src/maine/verdict/comments.cpp",
+            "src/maine/verdict/display.hpp",
+            "src/maine/verdict/format.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vcomment.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-verdict-stage-scores",
+      "entry_sha256": "faebf73e5b946b227d672ed1f4fca94ba040a814e4c149e21e2dc8741f5aaf2a",
+      "result": {
+        "id": "maine-verdict-stage-scores",
+        "entry_sha256": "faebf73e5b946b227d672ed1f4fca94ba040a814e4c149e21e2dc8741f5aaf2a",
+        "rounds": [
+          {
+            "target_start": 53789,
+            "candidate_start": 53789,
+            "size": 258,
+            "target_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+            "candidate_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+            "raw_exact": true,
+            "target_fixups": [
+              172,
+              148,
+              124,
+              100,
+              76,
+              52,
+              28
+            ],
+            "candidate_fixups": [
+              172,
+              148,
+              124,
+              100,
+              76,
+              52,
+              28
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 53789,
+            "candidate_start": 53789,
+            "size": 258,
+            "target_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+            "candidate_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+            "raw_exact": true,
+            "target_fixups": [
+              172,
+              148,
+              124,
+              100,
+              76,
+              52,
+              28
+            ],
+            "candidate_fixups": [
+              172,
+              148,
+              124,
+              100,
+              76,
+              52,
+              28
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7363b8cd6cb68e6f5199ae7500a2724fb28e73525c82505c10d4e75c4e2d841f",
+            "dependency_timestamp_normalized_sha256": "76e319041b57dc1255aaf4d5430622d36555aeb1d8424e73a428930f4eea39ce",
+            "module_name": "th05/vstscore.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vstscore.cpp",
+              "src/maine/verdict/stage_scores.cpp",
+              "src/maine/verdict/display.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "7363b8cd6cb68e6f5199ae7500a2724fb28e73525c82505c10d4e75c4e2d841f",
+            "dependency_timestamp_normalized_sha256": "76e319041b57dc1255aaf4d5430622d36555aeb1d8424e73a428930f4eea39ce",
+            "module_name": "th05/vstscore.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/vstscore.cpp",
+              "src/maine/verdict/stage_scores.cpp",
+              "src/maine/verdict/display.hpp",
+              "src/maine/verdict/format.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vstscore.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vstscore.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_verdict_stage_scores_bindings.asm",
+            "sha256": "c1b220b865879ca0442c1189cb79f7edc3014877d25fe733b526730ca113c2e2"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/verdict/display.hpp",
+            "sha256": "ac8bfe9bc1ef222f501fc87f91e56432f8188705c363c5c762c1f206be731298"
+          },
+          {
+            "path": "src/maine/verdict/format.hpp",
+            "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+          },
+          {
+            "path": "src/maine/verdict/stage_scores.cpp",
+            "sha256": "4e15974402be4141cdb3dcce4923f60c7d4f005384de66ccea5fe84a46499cd3"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_verdict_stage_scores_bindings.asm",
+          "sha256": "c1b220b865879ca0442c1189cb79f7edc3014877d25fe733b526730ca113c2e2"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/verdict/display.hpp",
+          "sha256": "ac8bfe9bc1ef222f501fc87f91e56432f8188705c363c5c762c1f206be731298"
+        },
+        {
+          "path": "src/maine/verdict/format.hpp",
+          "sha256": "5f26fd4e54edccb643e00c7b962b6c11dc3b32fd139e065745a7c72a9395cb77"
+        },
+        {
+          "path": "src/maine/verdict/stage_scores.cpp",
+          "sha256": "4e15974402be4141cdb3dcce4923f60c7d4f005384de66ccea5fe84a46499cd3"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a0f7b3cb60c261d4d98806dbde6db133ddb2a2abcef789a566093e6ebc49fcca",
+      "compiled_negative_control": {
+        "target_start": 53789,
+        "candidate_start": 53789,
+        "size": 258,
+        "target_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+        "candidate_sha256": "eb94dcbf36ed70498f2255420ce73a916dc20e62752d3aa2012f5674b4ec058d",
+        "raw_exact": false,
+        "target_fixups": [
+          172,
+          148,
+          124,
+          100,
+          76,
+          52,
+          28
+        ],
+        "candidate_fixups": [
+          172,
+          148,
+          124,
+          100,
+          76,
+          52,
+          28
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-verdict-stage-scores",
+        "entry_sha256": "faebf73e5b946b227d672ed1f4fca94ba040a814e4c149e21e2dc8741f5aaf2a",
+        "mutation": {
+          "unit": "maine-verdict-stage-scores",
+          "source": "src/maine/verdict/stage_scores.cpp",
+          "find": "graph_putsa_fx(verdict_text_left, verdict_text_top + 64,",
+          "replace": "graph_putsa_fx(verdict_text_left, verdict_text_top + 65,"
+        },
+        "control_sha256": "0be20b5dd6d7fdb2402d466b4e9f2c97890ddc8a026afd0a5f7c6ba2ccd86d42",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 53789,
+          "candidate_start": 53789,
+          "size": 258,
+          "target_sha256": "46ce0adaa000861a2cda4150542293faaeebf3e2967872ebb8d4b651162fbfd3",
+          "candidate_sha256": "eb94dcbf36ed70498f2255420ce73a916dc20e62752d3aa2012f5674b4ec058d",
+          "raw_exact": false,
+          "target_fixups": [
+            172,
+            148,
+            124,
+            100,
+            76,
+            52,
+            28
+          ],
+          "candidate_fixups": [
+            172,
+            148,
+            124,
+            100,
+            76,
+            52,
+            28
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "739a3362fbd47277f75839c726bf22804f2c551e74915e8b960eede3689dcee5",
+          "dependency_timestamp_normalized_sha256": "61aa4272f72fb9e07e67cf60c4d9b275d17451d7513ec589ee1006a3a06ae469",
+          "module_name": "th05/vstscore.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/vstscore.cpp",
+            "src/maine/verdict/stage_scores.cpp",
+            "src/maine/verdict/display.hpp",
+            "src/maine/verdict/format.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/vstscore.cpp"
         ]
       },
       "target_view": {
