@@ -21,6 +21,40 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 162,327 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
+## Latest source investigations: no new acceptance
+
+Two first-producer C++ attempts now have maintained source and frozen failure
+evidence. Neither changes any counter or ownership category:
+
+| Candidate | Native / actual complete CODE | Result |
+| --- | --- | --- |
+| MAIN held-input sampling | 16 / 18 | Two genuine TLINK relaxation NOPs |
+| OP piano current-note query | 30 / 51 | Separate byte loads, stack local and frame |
+
+See [held-input notes](../src/shared/hardware/input_held.md) and
+[current-note notes](../src/op/piano/current_note.md). Actual compiler/OMF/MAP/MZ
+outputs are retained under `.analysis/{input-held-natural,piano-note-natural}/`.
+The first size gate stopped each replay; no second positive or negative was
+compiled. OP/MAINE held-input binders are prepared but unbuilt. Proposals are
+parked privately and removed from all live exact manifests, so default replay
+plans remain empty. Do not repeat these unchanged producer contexts or strip
+NOPs. The full 98-byte candidate PMD QQ layout compiled with offset/size checks;
+external driver allocation extent and original source type remain unproved.
+
+Independent vector/input review did not justify converting MAIN's 160-byte far
+vector family, 56-byte near vector, or the 16+42-byte input wrappers wholesale to
+original ASM. Normal ABI, synthetic donor register algorithms and a failed C++
+probe do not establish historical source language. The private origin report is
+`.analysis/vector-input-native-origin-review.json`, SHA-256
+`c5533ad8c6319d7b47dc06ce1772aece7ef5d7ffb55802c845d0a6ab626fb424`.
+
+The independent [STD/MAP loader review](../src/main/formats/loader_origin.md)
+also defers ASM promotion: complete MAIN STD184/MAP68 have zero NOPs and ordered
+fixups [43,173]/[41], but no independent original-ASM attribution was found.
+Allocator vendor ancestry does not classify the game loaders. All these scopes
+remain unknown. No tool surface, accepted source/header or accepted evidence
+changed; installed execution proofs and accepted objects were reused.
+
 ## Retained evidence
 
 Public acceptance lives in `config/accepted_units{,.op,.maine}.json`;
