@@ -23,16 +23,17 @@ and 15,269 initialized DATA bytes. Complete compared extents contain
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
-Separately reviewed assembly now contributes **4,237 instruction bytes,
+Separately reviewed assembly now contributes **4,483 instruction bytes,
 186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. The
 [text renderer](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md),
 [enemy VM](src/main/enemy/script.md),
 [bullet generation](src/main/bullet/spawn.md),
 [image kernels](docs/reconstruction/IMAGE_KERNEL_ASM_OWNERSHIP.md),
-[opaque CDG](src/shared/graphics/cdg_opaque.md) and
-[laser geometry/render/hit](src/main/bullet/laser_render_hit.md) cover
-4,540 complete compared bytes with
-two fresh producers and own assembled negatives. Fifty-three alignment,
+[opaque CDG](src/shared/graphics/cdg_opaque.md),
+[laser geometry/render/hit](src/main/bullet/laser_render_hit.md) and
+[EGC rectangles](src/shared/hardware/egc_rect_copy.md) cover
+4,788 complete compared bytes with
+two fresh producers and own assembled negatives. 55 checked alignment,
 inert-branch and runtime-placeholder bytes compare normally with zero credit.
 Explicit native ownership decisions leave C/C++ counters unchanged. Literal
 historical source and original assembler identity remain unknown.

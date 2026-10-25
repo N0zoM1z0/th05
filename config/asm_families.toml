@@ -440,3 +440,65 @@ kind = "alignment"
 offset = 101
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "op-egc-rect-copy"
+artifact = "op"
+source = "src/shared/hardware/egc_rect_copy.asm"
+types = "src/shared/hardware/egc_rect_copy_types.inc"
+symbols = "probes/units/egc_rect_copy_symbols.inc"
+bindings = "probes/units/op_egc_rect_copy_bindings.asm"
+notes = "src/shared/hardware/egc_rect_copy.md"
+target_start = 58072
+size = 124
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = [116]
+tables = []
+native_review_sha256 = "272a82180a0265aea159bd045621c57b7613366008ad689bcbb77de0f9934be3"
+target_scope_sha256 = "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+egc_rect_copy = 0
+"egc_copy_rect_1_to_0_16(int,int,int,int)" = 0
+egc_rect_copy_end = 124
+[units.negative]
+find = "VISIBLE_ROWS equ 400"
+replace = "VISIBLE_ROWS equ 399"
+[[units.uncredited]]
+offset = 123
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "maine-egc-rect-copy"
+artifact = "maine"
+source = "src/shared/hardware/egc_rect_copy.asm"
+types = "src/shared/hardware/egc_rect_copy_types.inc"
+symbols = "probes/units/egc_rect_copy_symbols.inc"
+bindings = "probes/units/maine_egc_rect_copy_bindings.asm"
+notes = "src/shared/hardware/egc_rect_copy.md"
+target_start = 62466
+size = 124
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = [116]
+tables = []
+native_review_sha256 = "72c9d8aebb104780d74441f46fdbf218cd1063bf26784cd3c47873be920ab219"
+target_scope_sha256 = "f36bd0e59ad61856b8811ebef9553396fb69c3862e62fabf3b8d8979d53c194c"
+semantic_inputs = ["src/op/main/menu.hpp", "src/maine/cutscene/cutscene.hpp", "src/shared/abi.hpp"]
+[units.publics]
+egc_rect_copy = 0
+"egc_copy_rect_1_to_0_16(int,int,int,int)" = 0
+egc_rect_copy_end = 124
+[units.negative]
+find = "VISIBLE_ROWS equ 400"
+replace = "VISIBLE_ROWS equ 399"
+[[units.uncredited]]
+offset = 123
+size = 1
+kind = "alignment"

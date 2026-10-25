@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **4,237 instruction bytes,
-186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,540
-complete compared bytes include 53 checked uncredited alignment, inert-branch
+Separately reviewed ASM now contributes **4,483 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 4,788
+complete compared bytes include 55 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 163,966 bytes. The global denominator is still unreviewed,
+ownership is now 163,718 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -465,3 +465,41 @@ Native segment/string/BP protocols support reviewed original ASM; historical
 mixed C/ASM and renamed vendor adaptations remain unproved. No inspected
 portion has positive compiler-generated provenance, and synthetic reference
 C++ register templates receive no C/C++ credit.
+
+
+## EGC public rectangle procedures; setup helpers remain unknown
+
+Two complete public owners at OP E2D8..E354 and MAINE F402..F47E add 246
+reviewed ASM instruction bytes across 248 compared bytes. Each has RETF 8 at
+relative 120, NOP 123 (checked, zero credit) and ordered MZ fixup [116] for
+far EGC_OFF 0000:082C/083A. Actual CS frames are 0D30/0E80; the complete
+foreign width word is DS 0EFE:3F1E / 1011:2E86. No DATA or asset bytes are
+owned. Reviewed ASM totals 4,733 credited bytes (4,483 instructions, 186 CODE
+tables, 64 DATA), 4,788 compared with 55 uncredited; unknown is 163,718 bytes.
+C/C++ counters and the unreviewed global denominator remain unchanged.
+
+Native/source review independently supports public ASM via BP stride repurpose,
+private register roles and explicit page switching. The two 64-byte helpers at
+E354..E394 and F47E..F4BE stay entirely unknown. A bounded 653-member vendor
+search found positive resemblance between their last 34-byte setup and upstream
+EGC_START, with changed zeroing and omitted calls; this supports neither blanket
+original credit nor blanket vendor exclusion. Do not count or imitate them to
+avoid their ownership question. The MAINE helper is distinct from the parked
+cutscene helper A6D1. See [complete owner review](../src/shared/hardware/egc_rect_copy.md).
+
+`.analysis/egc-rect-native/{op-a,maine-a}/receipt.json` each has two fresh
+independent complete TASM producers and its own 400-to-399 clipping-bound negative.
+Full raw/ordered fixups, OMF/MAP/public/real-frame checks pass; both records and
+explicit adoption decisions are imported. Actual compiler aliases and near
+helper addresses are bound without changing SHARED's no-group context. No old
+source/dependency changed or required replay; tool execution proofs are reused.
+Native/source reports are `.analysis/egc-rect-native-review.json` and
+`.analysis/egc-rect-maintained-source-review.json`, hashed in the owner notes.
+
+Keep left SAR4 versus width SHR4, DEC BX/JNS height (height 0 copies one row),
+word wrapping and per-word signed/range clipping. If all words are clipped,
+there is no page-port write; do not force page 0. GAME5 preserves DF/IF and
+returns ES=A800. Helper bodies and their terminal NOPs receive no credit or
+ownership exclusion in this change. Literal historical mixed-source possibilities
+remain unproved; no inspected public portion has positive compiler-generated
+provenance.
