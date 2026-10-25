@@ -122,6 +122,19 @@ two-byte branch to its own fall-through compare normally with zero credit.
 `reviewed_enemy_vm_unit.json` explicitly adopts only that complete scope after
 acceptance; unknown neighbors and foreign helper code cannot receive credit.
 
+Other opt-in complete ASM families use `replay_asm_family.py`. Per-entry source,
+typed include, symbols, binder and semantic ABI identities support incremental
+planning; unrelated manifest entries do not force recompilation. Each entry
+needs its own two fresh producers, complete ordinary CODE SEGDEF/LEDATA/MAP
+coverage, native instruction/handler review, CS/DGROUP frames and actual
+entry/table/patch publics, full raw/ordered-fixup checks and own assembled
+semantic negative. Multiple replacement receipts import atomically. Original
+verifier snapshots stay archived; a stricter current verifier may re-read
+unchanged actual producers without claiming fresh compilation. Explicit
+per-record/source-note adoption remains separate from exact replay. ASM dispatch
+tables, alignment, inert branches and runtime placeholders retain their distinct
+classifications and never change C/C++ counters or mask compared bytes.
+
 Each DATA acceptance needs its own compiled negative DATA mutation. A mutation
 that only changes CODE is insufficient. Select one DATA contribution per
 focused replay; CODE units from the same owner can share its one TU compilation

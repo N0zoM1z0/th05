@@ -44,6 +44,8 @@ def main() -> int:
         subprocess.run([sys.executable, "scripts/review_text_fx_asm.py", "--structural-check"], cwd=ROOT, check=True)
     if (ROOT / "config/enemy_vm_acceptance.json").exists():
         subprocess.run([sys.executable, "scripts/replay_enemy_vm.py", "--check"], cwd=ROOT, check=True)
+    if (ROOT / "config/accepted_asm_families.json").exists():
+        subprocess.run([sys.executable, "scripts/replay_asm_family.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "resources/ownership.json").exists():
         subprocess.run([sys.executable, "scripts/ownership.py", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)

@@ -273,6 +273,18 @@ def summarize_all(root: Path = ROOT) -> dict:
         combined["reviewed_asm_code_bytes"] = combined.get("reviewed_asm_code_bytes", 0) + 1130
         combined["reviewed_asm_table_bytes"] = 118
         combined["reviewed_asm_uncredited_bytes"] = combined.get("reviewed_asm_uncredited_bytes", 0) + 4
+    if (root / "config/reviewed_asm_families.json").exists():
+        from replay_asm_family import reviewed_claims as reviewed_generic_asm
+        claims, _ = reviewed_generic_asm(root, tomllib.loads((root / "config/ownership.toml").read_text())["views"])
+        for rows in claims.values():
+            for row in rows:
+                size = row["end"] - row["start"]
+                kind = row["kind"]
+                key = ("reviewed_asm_code_bytes" if kind == "accepted-reviewed-asm-instructions" else
+                       "reviewed_asm_table_bytes" if kind == "accepted-reviewed-asm-dispatch-table" else
+                       "reviewed_asm_data_bytes" if kind == "accepted-reviewed-asm-initialized-data" else
+                       "reviewed_asm_uncredited_bytes")
+                combined[key] = combined.get(key, 0) + size
     return combined
 
 
@@ -320,7 +332,8 @@ These ASM scopes have explicit native ownership decisions and remain separate
 from all C/C++ counters. Raster resources and every other unknown interval stay
 in the observation universe. Historical source text and original assembler
 identity remain unknown. See [text-renderer review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
-and [enemy VM review](../src/main/enemy/script.md).
+and [enemy VM review](../src/main/enemy/script.md), plus
+[bullet generation review](../src/main/bullet/spawn.md).
 
 '''
         asm_svg = f'<text x="24" y="198" font-size="12" fill="#c9bddc">Reviewed ASM: {summary["reviewed_asm_code_bytes"]} instruction + {summary.get("reviewed_asm_table_bytes", 0)} table + {summary.get("reviewed_asm_data_bytes", 0)} DATA · {summary["reviewed_asm_uncredited_bytes"]} uncredited bytes</text>\n'

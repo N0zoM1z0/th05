@@ -13,11 +13,11 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **1,808 instruction bytes,
-118 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 2,008
-complete compared bytes include 18 checked uncredited alignment, inert-branch
+Separately reviewed ASM now contributes **2,802 instruction bytes,
+186 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 3,078
+complete compared bytes include 26 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 166,498 bytes. The global denominator is still unreviewed,
+ownership is now 165,428 bytes. The global denominator is still unreviewed,
 and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
@@ -254,7 +254,7 @@ actual source aliases, argv/logs, OMF/MAP/MZ, public/alias/table bounds, native
 review and installed tool proofs. `config/enemy_vm_acceptance.json` records
 exactness; `config/reviewed_enemy_vm_unit.json` explicitly adopts exactly this
 one complete scope. The original59-entry table remains separate from compiler
-switch tables. Unknown falls166498 after classifying1252 previously unknown
+switch tables. At that checkpoint unknown fell to166498 after classifying1252 previously unknown
 bytes; all source-presence and global-denominator limitations remain explicit.
 
 Initial diagnostics-a/-b stopped before linking on binder CS assumptions;
@@ -264,6 +264,43 @@ No accepted C/C++ dependency changed; no unrelated C/C++ unit or unchanged tool
 execution probe was rebuilt. A bounded read-only survey of187 existing accepted
 C/C++ owner/receipt contexts found no additional whole DATA matches, recorded
 under`.analysis/semantic-data-routing/`; do not rerun it without changed inputs.
+
+## Complete original-assembly bullet generation
+
+The two new complete owners occupy MAIN171EA..173DE(500 bytes) and
+1743C..17676(570 bytes), CS1527/DS209D. `spawn_groups.asm` preserves AL speed
+tuning, four emission wrappers and the complete velocity/angle dispatcher.
+`spawn_raw.asm` preserves allocation, the far emission trampoline and one
+coherent232-byte Easy/Hard/Lunatic shared dispatcher. The middle C++ clip94
+and following C++ tune66 stay separately accepted with unchanged evidence.
+
+Independent native/source review confirms genuine private register and CS
+self-modification protocols, complete Bullet32/Template14/gather-template14
+layouts, symbolic tables and preserved stale-AH/signed-stack behavior. No
+compiler body, opcode array or target-byte transcription was promoted. The
+new credit is994 ASM instruction +68 symbolic CODE-table bytes. Four EVEN
+bytes, an inert two-byte JMP and two dummy123 operands compare normally with
+zero credit. All1070 complete bytes and empty ordered fixup streams pass.
+See [complete source/ABI/origin notes](../src/main/bullet/spawn.md).
+
+`.analysis/bullet-spawn-native/groups-a/receipt.json` and`raw-a/receipt.json`
+have two fresh producers each and their own speed-cap128-to127 / gather-points
+8-to9 negatives. Actual saved aliases, argv/logs, OMF/MAP/MZ, complete public,
+patch/table bounds, native instructions/handlers and tool identities were
+revalidated at atomic import. Groups' unchanged objects were reused when the
+stricter DS-frame readback guard was added; no duplicate compilation was claimed.
+Its historical verifier snapshot remains archived. All unchanged installed
+execution probes were reused after identity checks.
+
+The new opt-in generic lane is `scripts/replay_asm_family.py` with descriptors
+in`config/asm_families.toml`, exact records in`accepted_asm_families.json` and
+explicit per-record/note adoption in`reviewed_asm_families.json`. It supports
+`--plan`, one selected `--unit`, and repeated atomic`--accept` arguments.
+Manifest changes for an unrelated entry do not stale an unchanged owner;
+actual shared assembler/semantic ABI input changes select their affected closure.
+Review-note changes need explicit adoption, not unnecessary assembler replay.
+Unknown ownership is now165428 after classifying1070 further bytes; the total
+observation universe and unreviewed global denominator are unchanged.
 
 ## Parked work: preserve findings before trying variants
 

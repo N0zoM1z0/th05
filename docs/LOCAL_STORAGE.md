@@ -64,6 +64,11 @@ incremental replay.
   `replay-a/` positive producers, own interval negative and frozen source/tool
   evidence. Initial binder diagnostics are retained. The read-only existing
   DATA routing survey remains under `.analysis/semantic-data-routing/`.
+- `.analysis/bullet-spawn-native/`: both complete native boundary/handler
+  reviews, `groups-a/` and `raw-a/` two-producer/own-negative evidence, source,
+  actual argv/logs and tool proofs. Keep the initial whole diagnostic and the
+  groups producer's historical verifier snapshot; current import also rechecks
+  its real unchanged DATA frame. Both are explicitly adopted ASM evidence.
 - `.analysis/toolchain/`: installed tools, attestations and independent active
   TC4 headers/libraries inside the Wine prefix are all checked. The approximately
   1.3 GiB Wine environment is operational state, not a disposable build cache.

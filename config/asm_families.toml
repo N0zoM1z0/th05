@@ -1,0 +1,111 @@
+schema_version = 1
+
+[[units]]
+id = "main-bullet-spawn-groups"
+artifact = "main"
+source = "src/main/bullet/spawn_groups.asm"
+types = "src/main/bullet/spawn_types.inc"
+symbols = "probes/units/bullet_spawn_symbols.inc"
+bindings = "probes/units/bullet_spawn_groups_bindings.asm"
+notes = "src/main/bullet/spawn.md"
+target_start = 94698
+size = 500
+segment = "BULLET_A_TEXT"
+group = "main_03"
+cs_base = 86640
+instruction_nops = []
+fixups = []
+native_review_sha256 = "03fa82603237f28847073185ce6b4b186f018391f4f9f9aad19923bfab05c74a"
+target_scope_sha256 = "0b86b7142497bb087f1b44bd63889da4936a3f793170f15423e3a874e76a3f54"
+semantic_inputs = ["src/main/bullet/template.hpp", "src/main/bullet/update.hpp", "src/shared/geometry.hpp", "src/shared/abi.hpp", "src/main/gather/gather.hpp"]
+[units.publics]
+"@playperf_speedtune" = 0
+"_bullets_add_regular" = 26
+"_bullets_add_special" = 46
+"_bullets_add_regular_fixedspeed" = 76
+"_bullets_add_special_fixedspeed" = 90
+"_bullet_velocity_and_angle_set" = 104
+"bullet_group_dispatch" = 468
+"bullet_spawn_groups_end" = 500
+"bullet_group_dispatch_end" = 500
+[units.negative]
+find = "SPEED_TUNE_MAX equ (8 shl 4)"
+replace = "SPEED_TUNE_MAX equ ((8 shl 4) - 1)"
+[[units.tables]]
+offset = 468
+size = 32
+[[units.uncredited]]
+offset = 45
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 75
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-bullet-spawn-raw"
+artifact = "main"
+source = "src/main/bullet/spawn_raw.asm"
+types = "src/main/bullet/spawn_types.inc"
+symbols = "probes/units/bullet_spawn_symbols.inc"
+bindings = "probes/units/bullet_spawn_raw_bindings.asm"
+notes = "src/main/bullet/spawn.md"
+target_start = 95292
+size = 570
+segment = "BULLET_A_TEXT"
+group = "main_03"
+cs_base = 86640
+instruction_nops = []
+fixups = []
+native_review_sha256 = "e0fdc9e5d40dfd89f644f6cfa744077f10d9c879910196d37b9a66d74c6a4386"
+target_scope_sha256 = "0874c3b50c46a957cb230de6aa1ed9d386fa2f3e097a12fb2236e394c8ca17b4"
+semantic_inputs = ["src/main/bullet/template.hpp", "src/main/bullet/update.hpp", "src/shared/geometry.hpp", "src/shared/abi.hpp", "src/main/gather/gather.hpp"]
+[units.publics]
+"_bullets_add_raw" = 0
+"bullet_allocation_inert" = 178
+"bullet_spawn_flag_patch" = 193
+"bullet_move_flag_patch" = 212
+"_bullets_add_regular_far" = 334
+"TUNE_FOR_EASY" = 338
+"bullet_easy_dispatch" = 394
+"bullet_easy_dispatch_end" = 406
+"TUNE_FOR_HARD" = 406
+"bullet_hard_dispatch" = 484
+"TUNE_FOR_LUNATIC" = 494
+"bullet_hard_dispatch_end" = 494
+"bullet_lunatic_dispatch" = 556
+"bullet_spawn_raw_end" = 570
+"bullet_lunatic_dispatch_end" = 570
+[units.negative]
+find = "mov\t_gather_template.GT_ring_points, 8"
+replace = "mov\t_gather_template.GT_ring_points, 9"
+[[units.tables]]
+offset = 394
+size = 12
+[[units.tables]]
+offset = 484
+size = 10
+[[units.tables]]
+offset = 556
+size = 14
+[[units.uncredited]]
+offset = 178
+size = 2
+kind = "inert-branch"
+[[units.uncredited]]
+offset = 193
+size = 1
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 212
+size = 1
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 393
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 555
+size = 1
+kind = "alignment"

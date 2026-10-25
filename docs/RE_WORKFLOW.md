@@ -27,6 +27,14 @@ and requires a subsequent explicit reviewed ownership decision; see the
 [assembly review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md). An inferred replay
 alone grants no global ownership credit, and compiler code cannot use this lane.
 
+Additional reviewed ASM families can opt into `config/asm_families.toml` and
+`replay_asm_family.py`. Use `--plan`, compile only the selected new/affected
+`--unit`, and atomically import repeated `--accept` receipts where needed.
+Current verification can re-read unchanged saved objects when checks tighten;
+keep the original verifier snapshot and do not claim fresh compilation.
+Per-record/note ownership adoption is explicit and remains separate from the
+CODE oracle, C/C++ counters and the global denominator.
+
 When several accepted owners in one artifact share changed dependencies,
 import all their replacement receipts atomically with repeated arguments:
 `python3 scripts/progress.py --accept PATH_A --accept PATH_B`.
