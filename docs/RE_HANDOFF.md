@@ -18,7 +18,7 @@ Separately reviewed ASM now contributes **5,824 instruction bytes,
 and 64 semantic DATA bytes**. Its 6,179
 complete compared bytes include 57 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 153,745 bytes. The global denominator is still unreviewed;
+ownership is now 135,616 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
 ## Latest accepted C++: ZUN resident configuration
@@ -60,6 +60,67 @@ Independent final gate report: `.analysis/zun-resident-review/gate-review.json`,
 SHA-256 `b95ec4edc9bed9c4acbfc6abfc0fc01f95ca35f30171cc784879ff9e5dd63c88`.
 Saved-producer import,303 public tests, full CI and native ownership readback
 pass. All four incremental plans are empty; no old compiler unit was replayed.
+
+## Latest ownership: complete MAIN CL runtime, zero authored credit
+
+A separate explicit decision now classifies24 additional complete CL.LIB CODE
+members,18,129 bytes, as third-party runtime. It adds no authored functions,
+C/C++/ASM bytes or unit acceptance. Global unknown falls153,745→135,616;
+verified vendor CODE grows50,007→68,136. MAIN unknown is55,838. The observed
+universe remains319,268; global authored denominator/percentage staynull.
+See[complete runtime review](reconstruction/MAIN_RUNTIME_OWNERSHIP.md).
+
+`review_main_runtime.py` uses unchanged distributed CL OMF and actual retained
+MZ/MAP, first reconstructing the full calibration then all native bytes/fixups.
+Fixed native DGROUP209D, lateDATA offsets minus18 and final libraryBSS offsets
+minus20 have separate primary anchors: eight already-reviewed whole DATA
+objects and the real C0L.OBJ startup segment-fixup/clear boundaries. Do not
+translate SSasDGROUP or infer every DATA offset from one frame shift. Early
+CRT offsets, CODE positions, foreign segments, OMF bytes/order and linker
+transformations remain unchanged. Complete unique raw native matches and
+original loader-relocation order are mandatory; no operand masking/inversion,
+candidate patch, synthesized executable, compiler, decoder or Ghidra run.
+
+The large exception/RTTI member `xx` alone is12,622 bytes,187 original OMF
+fixups and20 ordered loader sites. LOADPROG is the full871 bytesAAB6..AE1D,
+with RETAE1C and14 actual relaxationNOPs; outsidezeroAE1D staysunknown and
+accepted slowdown beginsAE1E. AE10 is a paragraph frame inside the final
+library path, not a function boundary. These are whole vendor CODE classes,
+including their own constants/padding, with zero source/instruction credit.
+Ten unsupported/gapped/raw-inexact member candidates remain deferred.
+
+`config/main_runtime_ownership.json` is stillPROPOSAL;
+`config/reviewed_main_runtime_units.json` separately adopts onlythe24 listed
+complete objects. The gapless overlay rejects overlap and changes no older
+accepted/reviewed evidence. Public structural checks need no proprietary files;
+`--check` and ownership `--verify-targets` repeat the actual proof. Fourteen
+new public tests and seven private actual byte/binding/order/extent negatives
+exercise the mandatory gates. All seven mutated views were rejected; original
+files and installed surfaces are untouched.
+
+Independent complete/native/model review:
+`.analysis/vendor-review/main-runtime-independent-review.json`, SHA-256
+`4e950255528366465e063cb50607bdf36579ec864a8d9c4fe313a55b9e8c4a75`.
+Root actual seven-negative review:
+`.analysis/vendor-review/main-runtime-negative-review.json`, SHA-256
+`99ec0452283426e0f3e523c9bb01c0fb3600e841c74a416111312f0226e16523`.
+Preserve all `.analysis/vendor-review/main-*runtime*` probes and reports,
+including the earlier frame-only failure; it supplies no classification.
+All116 actual far-call relaxation NOPs in these24 vendor members are listed
+in `config/main_runtime_padding.json` as checked vendor padding, zero authored
+credit, preserving original record order. Their vendor ownership stays
+orthogonal to the79 checked padding bytes of accepted C/C++ units.
+
+Final independent adoption/overlay gate:
+`.analysis/vendor-review/main-runtime-final-gate-review.json`, SHA-256
+`70481d0fb6eceec74e6825163207eb19609e2b9ca95fccab07ea3d322c48b2f7`.
+Current full CI passes317 tests; native ownership replay and all four empty
+incremental plans pass. Root final audit is
+`.analysis/vendor-review/main-runtime-root-final-review.json`, SHA-256
+`ac0524934853084a54b42f6ad2bae463141dabf76e8271c2ea983a74010c814c`.
+Independent all116 native padding roles:
+`.analysis/vendor-review/main-runtime-padding-review.json`, SHA-256
+`0cdcbdbaa8bd276ea12c2c3e2808e70844c24ae05822b09c95b39636e56d6ea4`.
 
 ## Latest B4 return-ABI investigation: no acceptance
 

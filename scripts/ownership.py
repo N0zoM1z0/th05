@@ -440,6 +440,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     generic_asm, generic_asm_sha = reviewed_generic_asm(root, config["views"], verify_targets=verify_targets)
     from review_font_resource import reviewed_claims as reviewed_font_resources
     fonts, fonts_sha = reviewed_font_resources(root, config["views"], verify_targets=verify_targets)
+    from review_main_runtime import reviewed_claims as reviewed_runtime
+    runtime, runtime_sha = reviewed_runtime(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -465,6 +467,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             claims, review_sha = reviewed_vendor(root, view=view, verify_targets=verify_targets)
             master_claims, master_review_sha = reviewed_master(root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
+            pieces = overlay_vendor(view["size"], pieces, runtime)
         elif name in ("op", "maine"):
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
@@ -490,6 +493,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
+        if runtime_sha and name == "main":
+            views[name]["runtime_vendor_review_sha256"] = runtime_sha
         if master_review_sha:
             views[name]["master_vendor_review_sha256"] = master_review_sha
         if additions_sha and name in additions:

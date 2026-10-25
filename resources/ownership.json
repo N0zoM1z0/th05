@@ -19,8 +19,8 @@
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 79,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 153745,
-    "verified-vendor-code": 50007,
+    "unknown": 135616,
+    "verified-vendor-code": 68136,
     "verified-vendor-initialized-data": 3777
   },
   "views": {
@@ -40,8 +40,8 @@
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 2,
         "checked-uncredited-padding": 72,
-        "unknown": 73967,
-        "verified-vendor-code": 3381,
+        "unknown": 55838,
+        "verified-vendor-code": 21510,
         "verified-vendor-initialized-data": 1259
       },
       "intervals": [
@@ -333,7 +333,9 @@
         {
           "start": 17896,
           "end": 17923,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "_abort"
         },
         {
           "start": 17923,
@@ -352,7 +354,9 @@
         {
           "start": 18004,
           "end": 18053,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "atexit"
         },
         {
           "start": 18053,
@@ -384,8 +388,17 @@
         },
         {
           "start": 18510,
+          "end": 18552,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "errormsg"
+        },
+        {
+          "start": 18552,
           "end": 18722,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "exit"
         },
         {
           "start": 18722,
@@ -418,7 +431,9 @@
         {
           "start": 19065,
           "end": 19147,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "ioerror"
         },
         {
           "start": 19147,
@@ -429,6 +444,13 @@
         },
         {
           "start": 19168,
+          "end": 19213,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "lseek"
+        },
+        {
+          "start": 19213,
           "end": 19967,
           "kind": "unknown"
         },
@@ -448,6 +470,51 @@
         },
         {
           "start": 20023,
+          "end": 20187,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "setupio"
+        },
+        {
+          "start": 20187,
+          "end": 20235,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "toupper"
+        },
+        {
+          "start": 20235,
+          "end": 20378,
+          "kind": "unknown"
+        },
+        {
+          "start": 20378,
+          "end": 21027,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "xxv"
+        },
+        {
+          "start": 21027,
+          "end": 21119,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "cputype"
+        },
+        {
+          "start": 21119,
+          "end": 22234,
+          "kind": "unknown"
+        },
+        {
+          "start": 22234,
+          "end": 22586,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "fbrk"
+        },
+        {
+          "start": 22586,
           "end": 23355,
           "kind": "unknown"
         },
@@ -461,7 +528,9 @@
         {
           "start": 23414,
           "end": 23622,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "_pathops"
         },
         {
           "start": 23622,
@@ -479,8 +548,24 @@
         },
         {
           "start": 23864,
+          "end": 23940,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "flushall"
+        },
+        {
+          "start": 23940,
+          "end": 24432,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "fseek"
+        },
+        {
+          "start": 24432,
           "end": 25266,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "fullpath"
         },
         {
           "start": 25266,
@@ -492,7 +577,9 @@
         {
           "start": 25423,
           "end": 25535,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "getenv"
         },
         {
           "start": 25535,
@@ -524,8 +611,24 @@
         },
         {
           "start": 25802,
+          "end": 25873,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "srchenv"
+        },
+        {
+          "start": 25873,
+          "end": 26195,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "srchstr"
+        },
+        {
+          "start": 26195,
           "end": 26484,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "setvbuf"
         },
         {
           "start": 26484,
@@ -571,8 +674,24 @@
         },
         {
           "start": 26811,
+          "end": 27169,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "write"
+        },
+        {
+          "start": 27169,
+          "end": 27260,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "writea"
+        },
+        {
+          "start": 27260,
           "end": 27323,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "xfflush"
         },
         {
           "start": 27323,
@@ -583,8 +702,15 @@
         },
         {
           "start": 27836,
-          "end": 41413,
+          "end": 28791,
           "kind": "unknown"
+        },
+        {
+          "start": 28791,
+          "end": 41413,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "xx"
         },
         {
           "start": 41413,
@@ -614,6 +740,18 @@
         },
         {
           "start": 42724,
+          "end": 43702,
+          "kind": "unknown"
+        },
+        {
+          "start": 43702,
+          "end": 44573,
+          "kind": "verified-vendor-code",
+          "library": "CL.LIB",
+          "member": "loadprog"
+        },
+        {
+          "start": 44573,
           "end": 44574,
           "kind": "unknown"
         },
@@ -3741,6 +3879,7 @@
         }
       ],
       "vendor_review_sha256": "3d854c0b4f4c8690093a4fe3e63b7306dc81be3caa189c6b9d2bd000290d6125",
+      "runtime_vendor_review_sha256": "41aa97e3016cb4039139959deb6fe2f9a975725441eb2ad470b74c025cd07aff",
       "master_vendor_review_sha256": "858e3b1e7a03cac3fd5b2d27cd3fce1a9da6f6ffbc503d0881af54c758444ed4",
       "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff",
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
