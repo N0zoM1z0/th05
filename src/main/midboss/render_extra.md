@@ -31,3 +31,9 @@ boundaries, NOP checks, callback identity and source hashes.
 to the semantic donor. The private unit proposal uses a meaningful damage reset
 0-to-1 negative. `python3 .analysis/extra-survivor-render-review.py` repeats the
 bounded checks. This owner remains uncompiled and unaccepted.
+
+The focused `main-midboss-extra-render-a` replay subsequently passed two fresh
+complete 101-byte producers, full raw bytes, original ordered fixups `[78,57]`,
+and its own compiled damage-reset 0-to-1 control. The root imported this exact
+Extra callback independently of the stage-five twin. Its C++, accepted shared
+ABI header and independent binder are frozen.

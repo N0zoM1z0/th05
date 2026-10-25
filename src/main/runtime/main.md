@@ -77,3 +77,10 @@ reviewed scope, if needed; it is not independent function acceptance.
 Two fresh complete strict raw/ordered comparisons and the compiled negative
 remain required before any authored credit. The subsequent stage-session
 initializer beginning at `0xB237` is not recovered by this packet.
+
+The later `main-entry-c` focused replay supersedes the entry-only blocker:
+the canonical unchanged main body is now factored into `entry.cpp`, with
+the independently verified same-CS far GameExecl context. Its complete110
+bytes pass and109 instructions are accepted after excluding one checked NOP.
+See `entry.md`. The combined555-byte candidate and complete gameplay loop
+remain unaccepted; their earlier548-byte failed artifact is preserved.

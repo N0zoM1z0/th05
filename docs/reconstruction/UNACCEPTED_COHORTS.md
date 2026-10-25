@@ -7,7 +7,7 @@ Private producer paths below are under `.analysis/unit-replays/`.
 
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
-| MAIN entry/frame loop | Original555; failed link leaves a548-byte contribution, with frame lowering and real far-call differences. The active background callback name was corrected afterward without replay. | `main-runtime-prefix-a` |
+| MAIN frame loop | Original445; failed combined link leaves a438-byte loop, with frame lowering and a real far-call context difference. The separate complete110-byte entry is now accepted through verified same-CS context. | `main-runtime-prefix-a`, accepted `main-entry-c` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
 | Standalone laser collision | One immutable quotient removes repeated division, but first producer218 still differs from original210. The boundary gate stopped before second and negative builds. | `main-shots-laser-collision-a` |
 | Item motion/collection | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
@@ -18,6 +18,7 @@ Private producer paths below are under `.analysis/unit-replays/`.
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
 | Mai/Yuki foreground callback | Original194, producer198 due to coordinate allocation. Its complete sprite helper75 is separately accepted. | `main-mai-yuki-foreground-a` |
 | Mima bomb control | Raw161 bytes agree; original ordered fixups `[55,27,135]` differ from `[135,55,27]`. Complete adjacent366 also remains ordered-inexact. The real drawing205 scope alone is accepted. | `main-mima-bomb-control-a`, `main-mima-bomb-full-a` |
+| MAP release | Natural ordinary producer27 differs from original23 by its frame prologue/epilogue. First size gate stopped; no second/negative build or flag variants. Separate STD release23 passes with its independently documented source context. | `main-map-free-a`, accepted `main-std-free-a` |
 
 The retained producers pin the particular source snapshots they compiled;
 notes distinguish later semantic corrections from actual new compilations.

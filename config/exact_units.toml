@@ -3345,3 +3345,130 @@ unit = "main-item-reward-tables-data"
 source = "src/main/item/reward_tables.cpp"
 find = "    150, 200, 250, 300, 350, 400, 450, 500,"
 replace = "    151, 200, 250, 300, 350, 400, 450, 500,"
+
+[[units]]
+id = "main-player-update"
+source = "src/main/player/update.cpp"
+module = "th05/p_update.cpp"
+segment = "PLAYER_UPDATE_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/player_update_bindings.asm"
+target_start = 52285
+size = 281
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-player-update"
+source = "src/main/player/update.cpp"
+find = "miss_time = PLAYER_UPDATE_DEATHBOMB_TIME;"
+replace = "miss_time = PLAYER_UPDATE_DEATHBOMB_TIME + 1;"
+
+[[units]]
+id = "main-stage-bonus-helpers"
+source = "src/main/stage/bonus_helpers.cpp"
+module = "th05/bonus_h.cpp"
+segment = "BONUS_HELP_TEXT"
+wrapper_options = "-zCBONUS_HELP_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_helpers_bindings.asm"
+target_start = 116329
+size = 305
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = [{offset = 297, size = 8, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "main-stage-bonus-helpers"
+source = "src/main/stage/bonus_helpers.cpp"
+find = "*points /= 10UL;"
+replace = "*points /= 9UL;"
+
+[[units]]
+id = "main-std-free"
+source = "src/main/formats/std_free.cpp"
+module = "th05/std_free.cpp"
+segment = "STD_FREE_TEXT"
+wrapper_options = "-zCSTD_FREE_TEXT -zPmain_01"
+bindings_source = "probes/units/std_free_bindings.asm"
+target_start = 51194
+size = 23
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+id = "std-release-allocated-guard"
+unit = "main-std-free"
+source = "src/main/formats/std_free.cpp"
+find = "if(std_seg) {"
+replace = "if(!std_seg) {"
+
+[[units]]
+id = "main-entry"
+source = "src/main/runtime/entry.cpp"
+module = "th05/entry.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = "-zCDEMO_TEXT -zPmain_01"
+bindings_source = "probes/units/main_entry_bindings.asm"
+target_start = 44600
+size = 110
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = [103]
+code_data_ranges = []
+
+[[controls]]
+unit = "main-entry"
+source = "src/main/runtime/entry.cpp"
+find = "mem_assign_paras = (291200 >> 4);"
+replace = "mem_assign_paras = (291216 >> 4);"
+
+[[units]]
+id = "main-stage-clear-bonus"
+source = "src/main/stage/bonus_full.cpp"
+module = "th05/bonus.cpp"
+segment = "BONUS_HELP_TEXT"
+wrapper_options = "-zCBONUS_HELP_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_full_bindings.asm"
+target_start = 116634
+size = 561
+functions = 1
+origin = "compiler-generated-cxx"
+function_symbol = "stage_clear_bonus()"
+alignment_offsets = [280, 311, 340, 375, 416, 443, 544]
+padding_bytes = []
+code_data_ranges = []
+function_end_symbol = "stage_allclear_bonus()"
+
+[[units]]
+id = "main-stage-allclear-bonus"
+source = "src/main/stage/bonus_full.cpp"
+module = "th05/bonus.cpp"
+segment = "BONUS_HELP_TEXT"
+wrapper_options = "-zCBONUS_HELP_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_full_bindings.asm"
+target_start = 117195
+size = 579
+functions = 1
+origin = "compiler-generated-cxx"
+function_symbol = "stage_allclear_bonus()"
+alignment_offsets = [313, 344, 373, 408, 443, 478, 505, 539, 562]
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-stage-clear-bonus"
+source = "src/main/stage/bonus_full.cpp"
+find = "value = (stage_id * 100) + 100;"
+replace = "value = (stage_id * 101) + 100;"
+
+[[controls]]
+unit = "main-stage-allclear-bonus"
+source = "src/main/stage/bonus_full.cpp"
+find = "extra = 50000UL;"
+replace = "extra = 49900UL;"

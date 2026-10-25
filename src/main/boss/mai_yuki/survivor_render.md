@@ -32,3 +32,9 @@ Its `*-unit-proposal.json` supplies the meaningful animation `/ 2` to `/ 3`
 negative. `python3 .analysis/extra-survivor-render-review.py` repeats the bounded
 checks. This source remains uncompiled and unaccepted until two fresh complete
 raw/original-order producers, OMF/MAP/dependency gates and its own control pass.
+
+The focused `main-mai-yuki-survivor-render-a` replay passed two fresh complete
+126-byte producers, all raw bytes, original ordered fixups `[114,96,44]`, and
+its own compiled animation-divisor 2-to-3 negative. The root imported the whole
+callback. Its C++, shared complete ABI header and independent binder are now
+frozen accepted inputs.

@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **227 bounded C++ CODE/DATA units / 427 complete function occurrences**,
-**77,300 authored bytes exact**: 68,211 CODE and 9,089 initialized DATA.
-CODE is 67,569 instruction plus 642 semantic compiler-table bytes.
-Complete compared extents total 77,349; 49 checked padding bytes receive
-no credit. MAIN has 345 functions / 55,646 CODE / 431 DATA;
+Current acceptance: **233 bounded C++ CODE/DATA units / 434 complete function occurrences**,
+**79,142 authored bytes exact**: 70,053 CODE and 9,089 initialized DATA.
+CODE is 69,403 instruction plus 650 semantic compiler-table bytes.
+Complete compared extents total 79,208; 66 checked padding bytes receive
+no credit. MAIN has 352 functions / 57,488 CODE / 431 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -886,3 +886,32 @@ seven word sprite selectors, forty-three word overflow rewards and the eight
 legacy Dream rewards. The complete three-array DATA contribution passes two
 fresh producers, empty original fixups and its own compiled150-to151 reward
 mutation. No BSS, padding, asset image or code bytes receive credit here.
+
+## Player update and stage-bonus modifiers
+
+`main-player-update-b` adds the complete281-byte player lifecycle callback,
+with its own deathbomb-window mutation and no padding. Its preceding286-byte
+candidate stored the byte movement return in a single-use temporary; consuming
+that result directly in the ordinary retry condition recovers the original
+flow. Real Motion, Point and near Pascal callback declarations remain intact.
+
+`main-stage-bonus-helpers-a` adds two complete helpers /305 bytes:297
+instructions plus eight generated rank-table bytes, no padding. Two fresh
+producers, the original ordered relocation and its own divisor mutation pass.
+The actual TH05 near description pointers replace the donor's far table type.
+The full later bonus flows remain separate work; no context receives duplicate
+credit. Existing accepted owners were reused without cold replay.
+
+`main-std-free-a` adds23 complete instructions with its own guard mutation.
+MAP release27 differs from original23 and stopped at the first boundary gate;
+the natural source and failure remain, without a default replay entry.
+`main-entry-c` adds109 instructions from the complete110-byte entry, excluding
+its checked relaxation NOP. The actual accepted GameExecl's same-CS/RETF4
+contract establishes the far-call context; the gameplay loop stays open.
+
+`main-stage-bonus-full-a` then passes the complete normal561/allclear579
+functions in their genuine1445-byte family context, preserving allclear's
+nonmonotone original fixup order. Only the two later scopes receive new credit:
+1124 instructions after16 checked NOPs, with no duplicate helper credit.
+Both share the compiled stage-clear factor mutation; the configured allclear
+mutation was not independently compiled. Source notes preserve these limits.
