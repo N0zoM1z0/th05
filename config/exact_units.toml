@@ -2924,3 +2924,66 @@ unit = "main-exalice-foreground"
 source = "src/main/boss/exalice/foreground.cpp"
 find = "patnum += 8;"
 replace = "patnum += 7;"
+
+[[units]]
+id = "main-reimu-bomb-draw"
+source = "src/main/player/reimu_bomb_draw.cpp"
+module = "th05/r_bdraw.cpp"
+segment = "REIMU_DRAW_TEXT"
+wrapper_options = "-zCREIMU_DRAW_TEXT -zPmain_01"
+bindings_source = "probes/units/reimu_bomb_draw_bindings.asm"
+target_start = 64791
+size = 84
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-reimu-bomb-draw"
+source = "src/main/player/reimu_bomb_draw.cpp"
+find = "PaletteTone = 196 - ((bomb_frame - 32) * 3);"
+replace = "PaletteTone = 195 - ((bomb_frame - 32) * 3);"
+
+[[units]]
+id = "main-yuuka-bomb-draw"
+source = "src/main/player/yuuka_bomb_draw.cpp"
+module = "th05/y_bdraw.cpp"
+segment = "YUUKA_DRAW_TEXT"
+wrapper_options = "-zCYUUKA_DRAW_TEXT -zPmain_01"
+bindings_source = "probes/units/yuuka_bomb_draw_bindings.asm"
+target_start = 66297
+size = 120
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-yuuka-bomb-draw"
+source = "src/main/player/yuuka_bomb_draw.cpp"
+find = "PaletteTone = 150;"
+replace = "PaletteTone = 149;"
+
+[[units]]
+id = "main-exalice-custom-render"
+source = "src/main/boss/exalice/custom_render.cpp"
+module = "th05/bx_cus.cpp"
+segment = "EX_CUSTOM_TEXT"
+wrapper_options = "-zCEX_CUSTOM_TEXT -zPmain_01"
+bindings_source = "probes/units/exalice_custom_render_bindings.asm"
+target_start = 72569
+size = 308
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-exalice-custom-render"
+source = "src/main/boss/exalice/custom_render.cpp"
+find = "angle += 8)"
+replace = "angle += 9)"

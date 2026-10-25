@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **207 bounded C++ CODE/DATA units / 404 complete function occurrences**,
-**71,949 authored bytes exact**: 62,976 CODE and 8,973 initialized DATA.
-CODE is 62,342 instruction plus 634 semantic compiler-table bytes.
-Complete compared extents total 71,982; 33 checked padding bytes receive
-no credit. MAIN has 322 functions / 50,411 CODE / 315 DATA;
+Current acceptance: **210 bounded C++ CODE/DATA units / 407 complete function occurrences**,
+**72,461 authored bytes exact**: 63,488 CODE and 8,973 initialized DATA.
+CODE is 62,854 instruction plus 634 semantic compiler-table bytes.
+Complete compared extents total 72,494; 33 checked padding bytes receive
+no credit. MAIN has 325 functions / 50,923 CODE / 315 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -781,3 +781,20 @@ all four original ordered fixups and its own sprite-bank mutation.
 Natural failed candidates are retained with zero exact credit; see
 `docs/reconstruction/UNACCEPTED_COHORTS.md`. Their known failures are not in the
 default incremental replay manifest.
+
+## Character bomb preludes and EX-Alice custom bullets
+
+`main-reimu-bomb-draw-a` and `main-yuuka-bomb-draw-a` add the complete84/120
+instruction-byte callbacks, with two fresh producers and independent palette
+mutations. `main-exalice-custom-render-a` adds the complete308-byte firewave
+fill/sprite/collision renderer and cheeto-render dispatch, retaining all three
+original ordered fixups and its own phase-step mutation. All use full existing
+storage and genuine graphics interfaces. Together these add512 CODE bytes.
+
+Stage-session initialization803 stopped at first producer802: mandatory zero
+missing and three unchanged-length far-transfer mismatches. Shot rendering's
+safe word-local producer173 also remains unaccepted against164. The one genuine
+byte-domain experiment175 clobbered the raw renderer's AX left argument; it was
+abandoned and the safe original source restored exactly. These failures did not
+run second or negative builds. No flags, padding or physical-register algorithm
+variants followed. The default replay plan is empty for unchanged evidence.

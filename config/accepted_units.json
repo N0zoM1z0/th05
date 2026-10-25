@@ -2,27 +2,25 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e7856d9b9db72059ee981dc703eb6e240b53e87a93228cad19bdfc86443961a5",
+  "replay_receipt_sha256": "4be860f4aebba35037f22ec705d28553af7147e0c6d759dccfa4b78ecae24939",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 72877,
-    "candidate_start": 72877,
-    "size": 163,
-    "target_sha256": "c6b815fc5ede467893efadd59b74431be7be5c2655d0865681e01447408aabdd",
-    "candidate_sha256": "9ee23683f1ffd279b57a6b740ca07e8e863cc24c4478bfd6d81fb07ed873ebf0",
+    "target_start": 72569,
+    "candidate_start": 72569,
+    "size": 308,
+    "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+    "candidate_sha256": "4d74cc4a05289ee03d9b0ce87c7ba27779cc2c17504121524d9e5bb421d5782c",
     "raw_exact": false,
     "target_fixups": [
-      151,
-      106,
-      88,
-      44
+      211,
+      144,
+      82
     ],
     "candidate_fixups": [
-      151,
-      106,
-      88,
-      44
+      211,
+      144,
+      82
     ],
     "fixups_exact": true,
     "exact": false
@@ -45915,6 +45913,857 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bx_fg.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-reimu-bomb-draw",
+      "entry_sha256": "455c6ba2d410da1a8f9cfed23dd5c7fa3f1e56923554d2589bce247ac8cf4c61",
+      "result": {
+        "id": "main-reimu-bomb-draw",
+        "entry_sha256": "455c6ba2d410da1a8f9cfed23dd5c7fa3f1e56923554d2589bce247ac8cf4c61",
+        "rounds": [
+          {
+            "target_start": 64791,
+            "candidate_start": 64791,
+            "size": 84,
+            "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+            "candidate_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+            "raw_exact": true,
+            "target_fixups": [
+              80,
+              14
+            ],
+            "candidate_fixups": [
+              80,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 64791,
+            "candidate_start": 64791,
+            "size": 84,
+            "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+            "candidate_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+            "raw_exact": true,
+            "target_fixups": [
+              80,
+              14
+            ],
+            "candidate_fixups": [
+              80,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "25c0d57ce6932de826c5a2a5102d22ea0a657750c69591a82fda0b99ea5e4319",
+            "dependency_timestamp_normalized_sha256": "93526bdf119203e7326a2b88f16d119b56aaec066764be4dc5e80cd4529fd9ed",
+            "module_name": "th05/r_bdraw.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_bdraw.cpp",
+              "src/main/player/reimu_bomb_draw.cpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "a33891ef0d11a69d472729b024785e21a3c063862998c09097b6ddec9da08484",
+            "dependency_timestamp_normalized_sha256": "93526bdf119203e7326a2b88f16d119b56aaec066764be4dc5e80cd4529fd9ed",
+            "module_name": "th05/r_bdraw.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_bdraw.cpp",
+              "src/main/player/reimu_bomb_draw.cpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/r_bdraw.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/r_bdraw.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/reimu_bomb_draw_bindings.asm",
+            "sha256": "f9c8a7a228863157241df32f23167c8319671761477ab5902ca09a746a2090a6"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/bomb_draw.hpp",
+            "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+          },
+          {
+            "path": "src/main/player/bombanim.hpp",
+            "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+          },
+          {
+            "path": "src/main/player/reimu_bomb_draw.cpp",
+            "sha256": "b2821aabafc765d8106ba01c6e30a1ca65a43e4b0d136ada603c4437b4a7424d"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/reimu_bomb_draw_bindings.asm",
+          "sha256": "f9c8a7a228863157241df32f23167c8319671761477ab5902ca09a746a2090a6"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/bomb_draw.hpp",
+          "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+        },
+        {
+          "path": "src/main/player/bombanim.hpp",
+          "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+        },
+        {
+          "path": "src/main/player/reimu_bomb_draw.cpp",
+          "sha256": "b2821aabafc765d8106ba01c6e30a1ca65a43e4b0d136ada603c4437b4a7424d"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c356539e9368657767b93f25f2548f3fdb5299d2cd80224c74b8df0ec6be0789",
+      "compiled_negative_control": {
+        "target_start": 64791,
+        "candidate_start": 64791,
+        "size": 84,
+        "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+        "candidate_sha256": "249aafa16188b967c901337c26ea2fca87cde23f1267291d695dc22af6b7ce2f",
+        "raw_exact": false,
+        "target_fixups": [
+          80,
+          14
+        ],
+        "candidate_fixups": [
+          80,
+          14
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-reimu-bomb-draw",
+        "entry_sha256": "455c6ba2d410da1a8f9cfed23dd5c7fa3f1e56923554d2589bce247ac8cf4c61",
+        "mutation": {
+          "unit": "main-reimu-bomb-draw",
+          "source": "src/main/player/reimu_bomb_draw.cpp",
+          "find": "PaletteTone = 196 - ((bomb_frame - 32) * 3);",
+          "replace": "PaletteTone = 195 - ((bomb_frame - 32) * 3);"
+        },
+        "control_sha256": "77e7be9767b3a0de9ec974e8a30eab296f2e65d8d10ff083f15747864b30d3dd",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 64791,
+          "candidate_start": 64791,
+          "size": 84,
+          "target_sha256": "2e34a78e240d457033249130119d3b35c70d0dc4480734eb17f0337a52c1f797",
+          "candidate_sha256": "249aafa16188b967c901337c26ea2fca87cde23f1267291d695dc22af6b7ce2f",
+          "raw_exact": false,
+          "target_fixups": [
+            80,
+            14
+          ],
+          "candidate_fixups": [
+            80,
+            14
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "314c24db03e1cf2337b87b6e35f0e7a4600a919be33dab2cc2808167ca747ab7",
+          "dependency_timestamp_normalized_sha256": "4eceb9dd289ecb39d6e83384fce1909f4e57dbeba0251207cd23074b85b6b98e",
+          "module_name": "th05/r_bdraw.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_bdraw.cpp",
+            "src/main/player/reimu_bomb_draw.cpp",
+            "src/main/player/bomb_draw.hpp",
+            "src/main/player/bombanim.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/r_bdraw.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-yuuka-bomb-draw",
+      "entry_sha256": "a23c7e5adbab104297f7cf02156cfaaef8a57d8413cfb77f0b4497f6667aa868",
+      "result": {
+        "id": "main-yuuka-bomb-draw",
+        "entry_sha256": "a23c7e5adbab104297f7cf02156cfaaef8a57d8413cfb77f0b4497f6667aa868",
+        "rounds": [
+          {
+            "target_start": 66297,
+            "candidate_start": 66297,
+            "size": 120,
+            "target_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+            "candidate_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+            "raw_exact": true,
+            "target_fixups": [
+              116,
+              81,
+              14
+            ],
+            "candidate_fixups": [
+              116,
+              81,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 66297,
+            "candidate_start": 66297,
+            "size": 120,
+            "target_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+            "candidate_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+            "raw_exact": true,
+            "target_fixups": [
+              116,
+              81,
+              14
+            ],
+            "candidate_fixups": [
+              116,
+              81,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7575b7dcbf9e828cd568395bccdd93ffd9a92849a8f30229410b39b75d4d539c",
+            "dependency_timestamp_normalized_sha256": "a593e7212619d0a51868d17243f198a4bfce468dbabdb9eb2932d43e356b9103",
+            "module_name": "th05/y_bdraw.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/y_bdraw.cpp",
+              "src/main/player/yuuka_bomb_draw.cpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "7575b7dcbf9e828cd568395bccdd93ffd9a92849a8f30229410b39b75d4d539c",
+            "dependency_timestamp_normalized_sha256": "a593e7212619d0a51868d17243f198a4bfce468dbabdb9eb2932d43e356b9103",
+            "module_name": "th05/y_bdraw.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/y_bdraw.cpp",
+              "src/main/player/yuuka_bomb_draw.cpp",
+              "src/main/player/bomb_draw.hpp",
+              "src/main/player/bombanim.hpp",
+              "src/main/hud/overlay.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/y_bdraw.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/y_bdraw.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/yuuka_bomb_draw_bindings.asm",
+            "sha256": "17df2a5b42a90fdb0802263ce649a6af77ef1aa1d21153e811be66d80ee1d7f1"
+          },
+          {
+            "path": "src/main/hud/overlay.hpp",
+            "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/bomb_draw.hpp",
+            "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+          },
+          {
+            "path": "src/main/player/bombanim.hpp",
+            "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+          },
+          {
+            "path": "src/main/player/yuuka_bomb_draw.cpp",
+            "sha256": "18b49b3ddcaf5d7043d5a19b5ab58634be1f47b3cdc003d902d1e96a057559d8"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/yuuka_bomb_draw_bindings.asm",
+          "sha256": "17df2a5b42a90fdb0802263ce649a6af77ef1aa1d21153e811be66d80ee1d7f1"
+        },
+        {
+          "path": "src/main/hud/overlay.hpp",
+          "sha256": "b6bdcd835d35b6079d06384376dfc9c1c5c2cbbf81b1a331a90f2839dbc5736f"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/bomb_draw.hpp",
+          "sha256": "61cf05fdf99ddb4e1ee5c8fb7d3d8576d8ed1927bc2cce22cece3f61a718505d"
+        },
+        {
+          "path": "src/main/player/bombanim.hpp",
+          "sha256": "59c0e985e9c4a8e38d964618d6ed40f573ef512d7ebb28d9e2500ba01310ce98"
+        },
+        {
+          "path": "src/main/player/yuuka_bomb_draw.cpp",
+          "sha256": "18b49b3ddcaf5d7043d5a19b5ab58634be1f47b3cdc003d902d1e96a057559d8"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "93ac5c24b60cf0a545fe05c7236b552793b9d850a7674dd5eba7d8b7db9f0650",
+      "compiled_negative_control": {
+        "target_start": 66297,
+        "candidate_start": 66297,
+        "size": 120,
+        "target_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+        "candidate_sha256": "a24c4c81f9e6d391699dca6ebb35f88d341a582e82d038821f59b53cc215bd91",
+        "raw_exact": false,
+        "target_fixups": [
+          116,
+          81,
+          14
+        ],
+        "candidate_fixups": [
+          116,
+          81,
+          14
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-yuuka-bomb-draw",
+        "entry_sha256": "a23c7e5adbab104297f7cf02156cfaaef8a57d8413cfb77f0b4497f6667aa868",
+        "mutation": {
+          "unit": "main-yuuka-bomb-draw",
+          "source": "src/main/player/yuuka_bomb_draw.cpp",
+          "find": "PaletteTone = 150;",
+          "replace": "PaletteTone = 149;"
+        },
+        "control_sha256": "a4b18b9490c6dd4a39388d4821d9993b2a29ea6da5c74ea428514548966ed64a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 66297,
+          "candidate_start": 66297,
+          "size": 120,
+          "target_sha256": "7b86128b02e2a5b0eede944c1bdd811b7435cd3dd454c3eb76fdf0fbbc19b82c",
+          "candidate_sha256": "a24c4c81f9e6d391699dca6ebb35f88d341a582e82d038821f59b53cc215bd91",
+          "raw_exact": false,
+          "target_fixups": [
+            116,
+            81,
+            14
+          ],
+          "candidate_fixups": [
+            116,
+            81,
+            14
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "7b0afa7d81b38a53039558e5ff7c0de217b710f5e1fd88500a35c001ccf17b81",
+          "dependency_timestamp_normalized_sha256": "142be6b1754bc7e44c3ae29b8206123625b7154df676d0e853035c06faf66d0a",
+          "module_name": "th05/y_bdraw.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/y_bdraw.cpp",
+            "src/main/player/yuuka_bomb_draw.cpp",
+            "src/main/player/bomb_draw.hpp",
+            "src/main/player/bombanim.hpp",
+            "src/main/hud/overlay.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/y_bdraw.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-custom-render",
+      "entry_sha256": "1a077b00307dc4ca3efdbc25c8212b4d2f7780e20aa677c1405b9f6962376c9a",
+      "result": {
+        "id": "main-exalice-custom-render",
+        "entry_sha256": "1a077b00307dc4ca3efdbc25c8212b4d2f7780e20aa677c1405b9f6962376c9a",
+        "rounds": [
+          {
+            "target_start": 72569,
+            "candidate_start": 72569,
+            "size": 308,
+            "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+            "candidate_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+            "raw_exact": true,
+            "target_fixups": [
+              211,
+              144,
+              82
+            ],
+            "candidate_fixups": [
+              211,
+              144,
+              82
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 72569,
+            "candidate_start": 72569,
+            "size": 308,
+            "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+            "candidate_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+            "raw_exact": true,
+            "target_fixups": [
+              211,
+              144,
+              82
+            ],
+            "candidate_fixups": [
+              211,
+              144,
+              82
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ca9d4eb7a4ac70bf28b6ee03505c4c69a3639062aaca3717581b7e34e498ad20",
+            "dependency_timestamp_normalized_sha256": "c2a59f3e43bb439629e637a9cdd92805acb0264fccbec2f38c7276f57f473f15",
+            "module_name": "th05/bx_cus.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bx_cus.cpp",
+              "src/main/boss/exalice/custom_render.cpp",
+              "src/main/boss/exalice/custom_render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "e7779d2999e3a4e093bc736865016377708059b944b451ab7a863d6e193b13ac",
+            "dependency_timestamp_normalized_sha256": "c2a59f3e43bb439629e637a9cdd92805acb0264fccbec2f38c7276f57f473f15",
+            "module_name": "th05/bx_cus.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bx_cus.cpp",
+              "src/main/boss/exalice/custom_render.cpp",
+              "src/main/boss/exalice/custom_render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bx_cus.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bx_cus.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/exalice_custom_render_bindings.asm",
+            "sha256": "c5aab1f56f421d92eeba3766df7822b44609645bd4c9e16198768bd09cd2154f"
+          },
+          {
+            "path": "src/main/boss/exalice/custom_render.cpp",
+            "sha256": "a5a08d2cde85c55e0f7476549e7a8e2aa387e3ece820c938adb53385b8afaf48"
+          },
+          {
+            "path": "src/main/boss/exalice/custom_render.hpp",
+            "sha256": "a112b8725e0ae47010990837eaf18d3483d8a30343ab57220fbe91a9fac4d4ec"
+          },
+          {
+            "path": "src/main/boss/explosion.hpp",
+            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/exalice_custom_render_bindings.asm",
+          "sha256": "c5aab1f56f421d92eeba3766df7822b44609645bd4c9e16198768bd09cd2154f"
+        },
+        {
+          "path": "src/main/boss/exalice/custom_render.cpp",
+          "sha256": "a5a08d2cde85c55e0f7476549e7a8e2aa387e3ece820c938adb53385b8afaf48"
+        },
+        {
+          "path": "src/main/boss/exalice/custom_render.hpp",
+          "sha256": "a112b8725e0ae47010990837eaf18d3483d8a30343ab57220fbe91a9fac4d4ec"
+        },
+        {
+          "path": "src/main/boss/explosion.hpp",
+          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4be860f4aebba35037f22ec705d28553af7147e0c6d759dccfa4b78ecae24939",
+      "compiled_negative_control": {
+        "target_start": 72569,
+        "candidate_start": 72569,
+        "size": 308,
+        "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+        "candidate_sha256": "4d74cc4a05289ee03d9b0ce87c7ba27779cc2c17504121524d9e5bb421d5782c",
+        "raw_exact": false,
+        "target_fixups": [
+          211,
+          144,
+          82
+        ],
+        "candidate_fixups": [
+          211,
+          144,
+          82
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-custom-render",
+        "entry_sha256": "1a077b00307dc4ca3efdbc25c8212b4d2f7780e20aa677c1405b9f6962376c9a",
+        "mutation": {
+          "unit": "main-exalice-custom-render",
+          "source": "src/main/boss/exalice/custom_render.cpp",
+          "find": "angle += 8)",
+          "replace": "angle += 9)"
+        },
+        "control_sha256": "2eaa18386db9b663924524caa1a0209ebac34f1218eaec3946b32024b9856a15",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 72569,
+          "candidate_start": 72569,
+          "size": 308,
+          "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
+          "candidate_sha256": "4d74cc4a05289ee03d9b0ce87c7ba27779cc2c17504121524d9e5bb421d5782c",
+          "raw_exact": false,
+          "target_fixups": [
+            211,
+            144,
+            82
+          ],
+          "candidate_fixups": [
+            211,
+            144,
+            82
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "d10a7b80cb51162ea978193db7525f196231e5b366a51716518005c9991b73d0",
+          "dependency_timestamp_normalized_sha256": "d303ed1b6230d870a9f8c67a97ea4e53b85d8724d660f832346f9c4918499e45",
+          "module_name": "th05/bx_cus.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bx_cus.cpp",
+            "src/main/boss/exalice/custom_render.cpp",
+            "src/main/boss/exalice/custom_render.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/explosion.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bx_cus.cpp"
         ]
       },
       "receipt_aggregate_pass": true

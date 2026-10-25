@@ -7,10 +7,10 @@
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-cxx-initialized-data": 8973,
-    "accepted-cxx-instructions": 62342,
+    "accepted-cxx-instructions": 62854,
     "accepted-cxx-switch-table": 634,
     "checked-uncredited-padding": 33,
-    "unknown": 244009,
+    "unknown": 243497,
     "verified-vendor-code": 3277
   },
   "views": {
@@ -21,10 +21,10 @@
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
         "accepted-cxx-initialized-data": 315,
-        "accepted-cxx-instructions": 49899,
+        "accepted-cxx-instructions": 50411,
         "accepted-cxx-switch-table": 512,
         "checked-uncredited-padding": 27,
-        "unknown": 91928,
+        "unknown": 91416,
         "verified-vendor-code": 3277
       },
       "intervals": [
@@ -980,7 +980,8 @@
         {
           "start": 64791,
           "end": 64875,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-reimu-bomb-draw"
         },
         {
           "start": 64875,
@@ -1032,7 +1033,8 @@
         {
           "start": 66297,
           "end": 66417,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-yuuka-bomb-draw"
         },
         {
           "start": 66417,
@@ -1188,8 +1190,14 @@
         },
         {
           "start": 71373,
-          "end": 72877,
+          "end": 72569,
           "kind": "unknown"
+        },
+        {
+          "start": 72569,
+          "end": 72877,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-exalice-custom-render"
         },
         {
           "start": 72877,

@@ -9,7 +9,10 @@ Private producer paths below are under `.analysis/unit-replays/`.
 | --- | --- | --- |
 | MAIN entry/frame loop | Original555; failed link leaves a548-byte contribution, with frame lowering and real far-call differences. The active background callback name was corrected afterward without replay. | `main-runtime-prefix-a` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
+| Standalone laser collision | One immutable quotient removes repeated division, but first producer218 still differs from original210. The boundary gate stopped before second and negative builds. | `main-shots-laser-collision-a` |
 | Shot update | Original408 includes eight compiler switch-table bytes. First producer431 spills full returned points; a later unsigned type interpretation has not been replayed. | `main-shots-update-a` |
+| Shot rendering | Original164, safe word-local producer173; the one byte-local experiment175 was stopped at the first boundary check and abandoned. The safe original source is restored. | `main-shots-render-a`, `main-shots-render-b` |
+| Stage-session initialization | Original803 includes mandatory zero at772 and thirty table bytes. First producer802 stops at the complete-contribution boundary gate; no padding/flag variants follow. | `main-stage-session-init-a` |
 | Stage-two background | Original492+653. First complete producer498+664; the later branch-destination initializer476 still differs. No filler or ABI shortcut is supplied. | `main-stage2-background-b`, `main-stage2-particle-init-a` |
 | Sara foreground | Original159, producer161 due to coordinate allocation. The separate complete Louise116 owner is accepted. | `main-sara-louise-foreground-a` |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
