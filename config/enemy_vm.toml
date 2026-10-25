@@ -1,0 +1,16 @@
+schema_version = 1
+artifact = "th05-main"
+source = "src/main/enemy/script.asm"
+types = "src/main/enemy/script_types.inc"
+bindings = "probes/units/enemy_vm_bindings.asm"
+symbols = "probes/units/enemy_vm_symbols.inc"
+target_start = 86924
+size = 1252
+cs_base = 86640
+ds_base = 133584
+native_review_sha256 = "c7d20919adb8ea0a565b959bf1eeb2d85b797bf74125f2a0033e53ff47d2e0bc"
+alignment_offsets = [103, 1251]
+inert_branch_range = [1100, 1102]
+dispatch_range = [1133, 1251]
+negative_find = "AUTOFIRE_INTERVAL_MIN equ 16"
+negative_replace = "AUTOFIRE_INTERVAL_MIN equ 17"

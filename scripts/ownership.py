@@ -105,6 +105,7 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     """Adopt reviewed ASM only where ownership was previously unknown."""
     validate_partition(size, pieces)
     allowed = {"accepted-reviewed-asm-instructions", "accepted-reviewed-asm-initialized-data",
+               "accepted-reviewed-asm-dispatch-table", "checked-uncredited-asm-inert-branch",
                "checked-uncredited-asm-alignment", "checked-uncredited-asm-runtime-placeholder"}
     for row in claims:
         if (row.get("kind") not in allowed or not row.get("unit")
@@ -405,6 +406,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_text_fx_asm import reviewed_claims as reviewed_asm_claims
     asm, asm_sha = reviewed_asm_claims(root, config["views"], verify_targets=verify_targets)
+    from replay_enemy_vm import reviewed_claims as reviewed_enemy_vm_claims
+    enemy_vm, enemy_vm_sha = reviewed_enemy_vm_claims(root, config["views"], verify_targets=verify_targets)
     views = {}
     for name, view in config["views"].items():
         target = target_by_id["th05-" + name]
@@ -442,6 +445,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in asm:
             pieces = overlay_asm(view["size"], pieces, asm[name])
+        if name in enemy_vm:
+            pieces = overlay_asm(view["size"], pieces, enemy_vm[name])
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -459,6 +464,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["cl_data_review_sha256"] = cl_data_sha
         if asm_sha and name in asm:
             views[name]["text_fx_asm_review_sha256"] = asm_sha
+        if enemy_vm_sha and name in enemy_vm:
+            views[name]["enemy_vm_asm_review_sha256"] = enemy_vm_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])
@@ -468,6 +475,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             summary.get('authored_data_bytes', 0) or
             counts["checked-uncredited-padding"] != summary["padding_bytes"] or
             counts["accepted-reviewed-asm-instructions"] != summary.get("reviewed_asm_code_bytes", 0) or
+            counts["accepted-reviewed-asm-dispatch-table"] != summary.get("reviewed_asm_table_bytes", 0) or
             counts["accepted-reviewed-asm-initialized-data"] != summary.get("reviewed_asm_data_bytes", 0)):
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",

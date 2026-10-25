@@ -23,11 +23,13 @@ and 15,269 initialized DATA bytes. Complete compared extents contain
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
-Separately, the [reviewed text-renderer assembly](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
-adds **678 ASM instruction bytes and 64 semantic DATA bytes**. Its complete
-756-byte scopes pass two fresh producers and own assembled negatives; 14
-alignment/runtime-placeholder bytes compare normally with zero authored credit.
-This explicit native ownership review leaves C/C++ counters unchanged. Literal
+Separately reviewed assembly now contributes **1,808 instruction bytes,
+118 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. The
+[text renderer](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md) and
+[enemy VM](src/main/enemy/script.md) cover 2,008 complete compared bytes with
+two fresh producers and own assembled negatives. Eighteen alignment,
+inert-branch and runtime-placeholder bytes compare normally with zero credit.
+Explicit native ownership decisions leave C/C++ counters unchanged. Literal
 historical source and original assembler identity remain unknown.
 
 No global authored-byte denominator has been accepted yet; the overall

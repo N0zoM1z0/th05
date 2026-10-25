@@ -264,6 +264,15 @@ def summarize_all(root: Path = ROOT) -> dict:
         combined["reviewed_asm_code_bytes"] = proof["authored_asm_code_bytes"]
         combined["reviewed_asm_data_bytes"] = proof["authored_asm_data_bytes"]
         combined["reviewed_asm_uncredited_bytes"] = proof["checked_alignment_bytes"] + proof["checked_runtime_patch_placeholder_bytes"]
+    enemy_vm_decision = root / "config/reviewed_enemy_vm_unit.json"
+    if enemy_vm_decision.exists():
+        from replay_enemy_vm import reviewed_claims
+        # Validates the explicit selection and all source/producer metadata;
+        # actual target/producer readback is performed by private acceptance.
+        reviewed_claims(root, tomllib.loads((root / "config/ownership.toml").read_text())["views"])
+        combined["reviewed_asm_code_bytes"] = combined.get("reviewed_asm_code_bytes", 0) + 1130
+        combined["reviewed_asm_table_bytes"] = 118
+        combined["reviewed_asm_uncredited_bytes"] = combined.get("reviewed_asm_uncredited_bytes", 0) + 4
     return combined
 
 
@@ -303,16 +312,18 @@ and renderer CODE are excluded. See [ASM DATA review](../src/shared/graphics/tex
     asm_svg = ""
     if summary.get("reviewed_asm_code_bytes"):
         asm_note = f'''Separately reviewed handwritten ASM reconstruction contributes
-{summary['reviewed_asm_code_bytes']} instruction bytes and {summary['reviewed_asm_data_bytes']} initialized DATA bytes.
+{summary['reviewed_asm_code_bytes']} instruction bytes, {summary.get('reviewed_asm_table_bytes', 0)} symbolic CODE-dispatch table bytes
+and {summary.get('reviewed_asm_data_bytes', 0)} initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
-{summary['reviewed_asm_uncredited_bytes']} alignment/runtime-placeholder bytes compare normally with zero credit.
-These ASM scopes have an explicit native ownership decision and remain separate
+{summary['reviewed_asm_uncredited_bytes']} alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
+These ASM scopes have explicit native ownership decisions and remain separate
 from all C/C++ counters. Raster resources and every other unknown interval stay
 in the observation universe. Historical source text and original assembler
-identity remain unknown. See [ASM ownership review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md).
+identity remain unknown. See [text-renderer review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
+and [enemy VM review](../src/main/enemy/script.md).
 
 '''
-        asm_svg = f'<text x="24" y="198" font-size="12" fill="#c9bddc">Reviewed ASM: {summary["reviewed_asm_code_bytes"]} instruction + {summary["reviewed_asm_data_bytes"]} DATA bytes · {summary["reviewed_asm_uncredited_bytes"]} uncredited bytes</text>\n'
+        asm_svg = f'<text x="24" y="198" font-size="12" fill="#c9bddc">Reviewed ASM: {summary["reviewed_asm_code_bytes"]} instruction + {summary.get("reviewed_asm_table_bytes", 0)} table + {summary.get("reviewed_asm_data_bytes", 0)} DATA · {summary["reviewed_asm_uncredited_bytes"]} uncredited bytes</text>\n'
     markdown = f'''# TH05 progress
 
 Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
@@ -362,7 +373,7 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
     svg_height = 214 if asm_svg else 190
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{svg_height}" viewBox="0 0 720 {svg_height}" role="img" aria-labelledby="title desc">
 <title id="title">TH05 source reconstruction progress</title>
-<desc id="desc">Goal 98 percent authored bytes exact. {functions} C/C++ functions, {authored} authored C/C++ code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes; {data} initialized DATA bytes, {total} total C/C++ authored bytes. Separately reviewed ASM: {summary.get('reviewed_asm_code_bytes', 0)} instruction and {summary.get('reviewed_asm_data_bytes', 0)} DATA bytes. Global denominator under review.</desc>
+<desc id="desc">Goal 98 percent authored bytes exact. {functions} C/C++ functions, {authored} authored C/C++ code bytes exact: {instructions} instruction and {tables} compiler switch-table bytes; {data} initialized DATA bytes, {total} total C/C++ authored bytes. Separately reviewed ASM: {summary.get('reviewed_asm_code_bytes', 0)} instruction, {summary.get('reviewed_asm_table_bytes', 0)} CODE-table and {summary.get('reviewed_asm_data_bytes', 0)} DATA bytes. Global denominator under review.</desc>
 <rect width="720" height="{svg_height}" rx="12" fill="#181b29"/>
 <g font-family="system-ui,sans-serif" fill="#f3f0fa">
 <text x="24" y="35" font-size="21" font-weight="600">TH05 · Mystic Square</text>

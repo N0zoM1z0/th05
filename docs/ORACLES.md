@@ -111,6 +111,17 @@ normally with zero credit. Two actual hardware-delay NOPs remain instructions.
 Reviewed ASM instructions and DATA stay separate from C/C++ counters; no rule
 here promotes compiler-generated code, raster resources or the ZUN inference.
 
+The complete enemy VM family uses `replay_enemy_vm.py`: five procedures and
+their real 59-word symbolic CODE dispatcher form one complete ASM contribution.
+Native hidden SI/CF/ES contracts and independent source review establish its
+assembly origin. Both positive producers and the own minimum-interval negative
+retain complete OMF/MAP/MZ, aliases, actual argv/logs and the ordered original
+fixup at909. Its 118 semantic ASM table bytes are separate from ASM instruction
+bytes and compiler-generated switch tables. Two EVEN bytes and the original
+two-byte branch to its own fall-through compare normally with zero credit.
+`reviewed_enemy_vm_unit.json` explicitly adopts only that complete scope after
+acceptance; unknown neighbors and foreign helper code cannot receive credit.
+
 Each DATA acceptance needs its own compiled negative DATA mutation. A mutation
 that only changes CODE is insufficient. Select one DATA contribution per
 focused replay; CODE units from the same owner can share its one TU compilation

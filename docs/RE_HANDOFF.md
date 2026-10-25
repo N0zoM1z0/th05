@@ -13,11 +13,12 @@ no credit. MAIN has 378 functions / 60,832 CODE / 3,091 DATA;
 OP 61 / 11,218 / 8,649; MAINE 55 / 9,580 / 3,529.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed text-renderer ASM now contributes **678 instruction bytes
-and 64 semantic DATA bytes**. Its 756 complete compared bytes include 14 checked
-uncredited alignment/runtime-placeholder bytes. C/C++ counters above are
-unchanged; unknown ownership is now 167,750 bytes. The global denominator is
-still unreviewed, and the ZUN child inference remains unpromoted.
+Separately reviewed ASM now contributes **1,808 instruction bytes,
+118 symbolic CODE-dispatch table bytes and 64 semantic DATA bytes**. Its 2,008
+complete compared bytes include 18 checked uncredited alignment, inert-branch
+and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
+ownership is now 166,498 bytes. The global denominator is still unreviewed,
+and the ZUN child inference remains unpromoted.
 
 ## Retained evidence
 
@@ -219,7 +220,7 @@ The unchanged DATA source/receipt remains
 is not rewritten. Actual dependency identities and archived DATA producers
 were revalidated without recompiling. Adoption also re-read the saved CODE
 OMF/MAP/MZ, source aliases, argv/logs, public/operand boundaries, pinned decoded
-views and tool proofs. Unknown ownership is167750 after classifying756 bytes;
+views and tool proofs. At that checkpoint unknown ownership was167750 after classifying756 bytes;
 64 intervening raster bytes remain unknown. No C/C++ source or accepted
 C/C++ dependency changed, and no unrelated unit or unchanged tool probe ran.
 
@@ -229,6 +230,40 @@ the type error. `diagnostic-b` passes the complete346-byte OP extent; neither
 diagnostic is an accepted receipt. Earlier C++ state and ASM DATA diagnostics
 remain private as documented in the DATA notes. MAIN has no corresponding
 reviewed owner. Full program linkage/packing and the98% objective remain open.
+
+## Complete native enemy VM assembly
+
+`src/main/enemy/script.asm` and its complete type include reconstruct the
+five-procedure family1538C..15870 in MAIN03/CS1527. The full1252-byte contribution
+has1130 authored ASM instruction bytes,118 symbolic CODE-dispatch table bytes,
+two checked EVEN bytes and a checked two-byte inert conditional jump. Its only
+original ordered MZ fixup is family909 (sound far call14AB:0232). C/C++ counts
+and all foreign Motion/vector/angle/RNG/sound providers remain unchanged.
+
+Native and maintained-source review establishes a hidden DS:SI enemy API,
+CF clipping return, private ES/register protocol and cross-handler continuations.
+This is reviewed original-assembly reconstruction, not compiler-body conversion.
+All59 symbolic table entries land on actual interpreter instructions;57 handlers
+are distinct. The source preserves an unspecified AL result for invalid opcodes,
+entry clear-DF assumption, original timed-frame behavior and a DL-clobber bug
+in current-turn opcodes07/08. See [full source/ABI/origin notes](../src/main/enemy/script.md).
+
+`.analysis/enemy-vm-native/replay-a/receipt.json` supplies two fresh deterministic
+whole producers and its own minimum-interval16-to17 negative. Import re-read
+actual source aliases, argv/logs, OMF/MAP/MZ, public/alias/table bounds, native
+review and installed tool proofs. `config/enemy_vm_acceptance.json` records
+exactness; `config/reviewed_enemy_vm_unit.json` explicitly adopts exactly this
+one complete scope. The original59-entry table remains separate from compiler
+switch tables. Unknown falls166498 after classifying1252 previously unknown
+bytes; all source-presence and global-denominator limitations remain explicit.
+
+Initial diagnostics-a/-b stopped before linking on binder CS assumptions;
+diagnostic-c matched all1252 raw bytes and ordered[909]. They are not accepted
+receipts. The final source adds the independently reviewed DL-clobber note.
+No accepted C/C++ dependency changed; no unrelated C/C++ unit or unchanged tool
+execution probe was rebuilt. A bounded read-only survey of187 existing accepted
+C/C++ owner/receipt contexts found no additional whole DATA matches, recorded
+under`.analysis/semantic-data-routing/`; do not rerun it without changed inputs.
 
 ## Parked work: preserve findings before trying variants
 

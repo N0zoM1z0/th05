@@ -41,13 +41,15 @@ OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
 Separately reviewed handwritten ASM reconstruction contributes
-678 instruction bytes and 64 initialized DATA bytes.
+1808 instruction bytes, 118 symbolic CODE-dispatch table bytes
+and 64 initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
-14 alignment/runtime-placeholder bytes compare normally with zero credit.
-These ASM scopes have an explicit native ownership decision and remain separate
+18 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
+These ASM scopes have explicit native ownership decisions and remain separate
 from all C/C++ counters. Raster resources and every other unknown interval stay
 in the observation universe. Historical source text and original assembler
-identity remain unknown. See [ASM ownership review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md).
+identity remain unknown. See [text-renderer review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md)
+and [enemy VM review](../src/main/enemy/script.md).
 
 The targets contain 256,877 stored bytes, or 319,268 decoded/container bytes.
 Neither figure is an accepted authored denominator. Runtime/library/data/stub

@@ -60,6 +60,10 @@ incremental replay.
   Both initial diagnostic directories preserve the EQU-versus-word binding
   finding. The explicit adopted ASM classification also depends on unchanged
   DATA evidence under `.analysis/textfx-data-native/asm-c/`.
+- `.analysis/enemy-vm-native/`: full native family/handler review, accepted
+  `replay-a/` positive producers, own interval negative and frozen source/tool
+  evidence. Initial binder diagnostics are retained. The read-only existing
+  DATA routing survey remains under `.analysis/semantic-data-routing/`.
 - `.analysis/toolchain/`: installed tools, attestations and independent active
   TC4 headers/libraries inside the Wine prefix are all checked. The approximately
   1.3 GiB Wine environment is operational state, not a disposable build cache.

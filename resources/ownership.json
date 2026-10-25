@@ -10,12 +10,14 @@
     "accepted-cxx-initialized-data": 13659,
     "accepted-cxx-instructions": 80938,
     "accepted-cxx-switch-table": 692,
+    "accepted-reviewed-asm-dispatch-table": 118,
     "accepted-reviewed-asm-initialized-data": 64,
-    "accepted-reviewed-asm-instructions": 678,
-    "checked-uncredited-asm-alignment": 2,
+    "accepted-reviewed-asm-instructions": 1808,
+    "checked-uncredited-asm-alignment": 4,
+    "checked-uncredited-asm-inert-branch": 2,
     "checked-uncredited-asm-runtime-placeholder": 12,
     "checked-uncredited-padding": 79,
-    "unknown": 167750,
+    "unknown": 166498,
     "verified-vendor-code": 50007,
     "verified-vendor-initialized-data": 3777
   },
@@ -30,8 +32,12 @@
         "accepted-cxx-initialized-data": 1481,
         "accepted-cxx-instructions": 60296,
         "accepted-cxx-switch-table": 536,
+        "accepted-reviewed-asm-dispatch-table": 118,
+        "accepted-reviewed-asm-instructions": 1130,
+        "checked-uncredited-asm-alignment": 2,
+        "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-padding": 72,
-        "unknown": 77323,
+        "unknown": 76071,
         "verified-vendor-code": 3381,
         "verified-vendor-initialized-data": 1259
       },
@@ -2031,6 +2037,60 @@
         },
         {
           "start": 85954,
+          "end": 86924,
+          "kind": "unknown"
+        },
+        {
+          "start": 86924,
+          "end": 87027,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 87027,
+          "end": 87028,
+          "kind": "checked-uncredited-asm-alignment",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 87028,
+          "end": 88024,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 88024,
+          "end": 88026,
+          "kind": "checked-uncredited-asm-inert-branch",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 88026,
+          "end": 88057,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 88057,
+          "end": 88175,
+          "kind": "accepted-reviewed-asm-dispatch-table",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 88175,
+          "end": 88176,
+          "kind": "checked-uncredited-asm-alignment",
+          "unit": "main-enemy-vm-family",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 88176,
           "end": 88340,
           "kind": "unknown"
         },
@@ -3432,7 +3492,8 @@
       "master_vendor_review_sha256": "858e3b1e7a03cac3fd5b2d27cd3fce1a9da6f6ffbc503d0881af54c758444ed4",
       "master_additions_review_sha256": "00de9b14c29a47d6804e4b4ee4ff688cfa19665e406ad62f34a35d0a13257aff",
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
-      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14"
+      "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
+      "enemy_vm_asm_review_sha256": "591748cbd8ca5346fde546e068bc77f1d1a14f2982457a18db5d6e365bffd835"
     },
     "op": {
       "kind": "retained-diet-decoded-load-module",
