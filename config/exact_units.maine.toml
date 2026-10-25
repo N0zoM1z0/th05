@@ -212,25 +212,6 @@ find = "measure_target += 30;"
 replace = "measure_target += 29;"
 
 [[units]]
-id = "maine-staff-clip"
-source = "src/maine/staff/staff.cpp"
-module = "th05/staff.cpp"
-segment = "SCORE_TEXT"
-wrapper_options = "-zPgroup_01"
-target_start = 0xd31f
-size = 104
-alignment_offsets = []
-functions = 1
-origin = "compiler-generated-cxx"
-bindings_source = "probes/units/maine_staff_bindings.asm"
-
-[[controls]]
-unit = "maine-staff-clip"
-source = "src/maine/staff/staff.cpp"
-find = "(space_window_center.x - (space_window_w / 2)) - 8"
-replace = "(space_window_center.x - (space_window_w / 2)) - 7"
-
-[[units]]
 id = "maine-entry"
 source = "src/maine/entry/entry.cpp"
 module = "th05/maine_e.cpp"
@@ -371,25 +352,6 @@ source = "src/shared/core/game_exit.cpp"
 find = "exit_graph_accesspage(1);"
 replace = "exit_graph_accesspage(0);"
 
-
-[[units]]
-id = "maine-staff-lifecycle-prefix"
-source = "src/maine/staff/lifecycle.cpp"
-module = "th05/stflife.cpp"
-segment = "STAFF_LIFE_TEXT"
-target_start = 54151
-size = 602
-functions = 4
-alignment_offsets = []
-origin = "compiler-generated-cxx"
-wrapper_options = "-zPgroup_01"
-bindings_source = "probes/units/maine_staff_lifecycle_bindings.asm"
-
-[[controls]]
-unit = "maine-staff-lifecycle-prefix"
-source = "src/maine/staff/lifecycle.cpp"
-find = "p->speed.v = 10;"
-replace = "p->speed.v = 11;"
 
 [[units]]
 id = "maine-registration-alphabet"
@@ -651,12 +613,6 @@ functions = 4
 origin = "compiler-generated-cxx"
 bindings_source = "probes/units/maine_staff_orb_opening_bindings.asm"
 
-[[controls]]
-unit = "maine-staff-orb-opening"
-source = "src/maine/staff/orb_opening.cpp"
-find = "p->speed.v = 3 * 16;"
-replace = "p->speed.v = 4 * 16;"
-
 [[units]]
 id = "maine-staff-rain-spawn"
 source = "src/maine/staff/rain.cpp"
@@ -686,12 +642,6 @@ origin = "compiler-generated-cxx"
 bindings_source = "probes/units/maine_staff_rain_bindings.asm"
 function_symbol = "staff_rain_update()"
 
-[[controls]]
-unit = "maine-staff-rain-spawn"
-source = "src/maine/staff/rain.cpp"
-find = "p->speed.v = (irand() % 24) + 8;"
-replace = "p->speed.v = (irand() % 24) + 9;"
-
 [[units]]
 id = "maine-staff-frame"
 source = "src/maine/staff/frame.cpp"
@@ -705,46 +655,155 @@ functions = 1
 origin = "compiler-generated-cxx-dos-intrinsics"
 bindings_source = "probes/units/maine_staff_frame_bindings.asm"
 
-[[controls]]
-unit = "maine-staff-frame"
-source = "src/maine/staff/frame.cpp"
-find = "frame_delay(1);"
-replace = "frame_delay(2);"
 
 [[units]]
-id = "maine-staff-image-phase-a"
-source = "src/maine/staff/image_phase_a.cpp"
-module = "th05/st_imga.cpp"
-segment = "STAFF_IMAGE_A_TEXT"
+id = "maine-staff-clip"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
 wrapper_options = "-zPgroup_01"
-target_start = 56577
-size = 376
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 54047
+size = 104
 functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
 alignment_offsets = []
-origin = "compiler-generated-cxx"
-bindings_source = "probes/units/staff_image_phase_a_bindings.asm"
-
-[[controls]]
-unit = "maine-staff-image-phase-a"
-source = "src/maine/staff/image_phase_a.cpp"
-find = "staff_image_wipe_extent_a = ((image->pixel_w / 16) + 7);"
-replace = "staff_image_wipe_extent_a = ((image->pixel_w / 16) + 8);"
+code_data_ranges = []
+function_symbol = "space_window_set(int,int,int,int)"
+function_end_symbol = "staff_particles_init()"
 
 [[units]]
 id = "maine-staff-text-wipe"
-source = "src/maine/staff/wipe.cpp"
-module = "th05/stfwipe.cpp"
-segment = "STAFF_WIPE_TEXT"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
 wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
 target_start = 56294
 size = 283
-alignment_offsets = []
 functions = 1
 origin = "compiler-generated-cxx-dos-intrinsics"
-bindings_source = "probes/units/maine_staff_wipe_bindings.asm"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_text_wipe(int,int,int,int,int,int)"
+function_end_symbol = "staff_image_update_a(int,int,int,int)"
+
+[[units]]
+id = "maine-staff-image-phase-a"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 56577
+size = 376
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_image_update_a(int,int,int,int)"
+function_end_symbol = "staff_image_update_b(int,int,int,int)"
+
+[[units]]
+id = "maine-staff-image-b"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 56953
+size = 376
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_image_update_b(int,int,int,int)"
+function_end_symbol = "staff_scene_render()"
+
+[[units]]
+id = "maine-staff-lifecycle-prefix"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 54151
+size = 278
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_particles_init()"
+function_end_symbol = "staff_particles_gather()"
+
+[[units]]
+id = "maine-staff-particles-gather"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 54429
+size = 108
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_particles_gather()"
+function_end_symbol = "staff_particles_clear()"
+
+[[units]]
+id = "maine-staff-particles-clear"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 54537
+size = 40
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_particles_clear()"
+function_end_symbol = "staff_particles_scatter()"
+
+[[units]]
+id = "maine-staff-particles-scatter"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 54577
+size = 176
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_symbol = "staff_particles_scatter()"
+function_end_symbol = "staff_particles_update()"
 
 [[controls]]
-unit = "maine-staff-text-wipe"
-source = "src/maine/staff/wipe.cpp"
-find = "grcg_setcolor(STAFF_WIPE_GRCG_RMW, 1);"
-replace = "grcg_setcolor(STAFF_WIPE_GRCG_RMW, 2);"
+unit = "maine-staff-orb-opening"
+source = "src/maine/staff/body/staff_orb_spark_add.inl"
+find = "p->speed.v = 3 * 16;"
+replace = "p->speed.v = 4 * 16;"
+
+[[controls]]
+unit = "maine-staff-rain-spawn"
+source = "src/maine/staff/body/staff_rain_spawn.inl"
+find = "p->speed.v = (irand() % 24) + 8;"
+replace = "p->speed.v = (irand() % 24) + 9;"
+
+[[controls]]
+unit = "maine-staff-frame"
+source = "src/maine/staff/body/staff_frame_advance.inl"
+find = "frame_delay(1);"
+replace = "frame_delay(2);"
+
+[[controls]]
+unit = "maine-staff-image-b"
+source = "src/maine/staff/body/staff_image_update_b.inl"
+find = "(image->pixel_w / 16) + 7;"
+replace = "(image->pixel_w / 16) + 8;"

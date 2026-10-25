@@ -1,5 +1,9 @@
 # Staff text wipe
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 This accepted owner recovers the complete original MAINE helper at `DBE6..DD01`:
 283 bytes, 112 instructions, near Pascal `RET 12`, and original ordered MZ
 fixups **[261, 86, 53]**. It contains no NOP instructions, padding or CODE data

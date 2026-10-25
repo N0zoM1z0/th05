@@ -20,6 +20,10 @@ extern "C" {
     void pascal far super_put_rect(int x, int y, int pattern);
     void pascal far super_put_tiny_small(int x, int y, int pattern);
 }
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_DRAW_TEXT group_01
+#endif
 void near staff_scene_render(void);
 #endif

@@ -1,5 +1,9 @@
 # Staff scene renderer candidate
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 The complete original MAINE procedure atDFF1..E34E is861 bytes/335 instructions
 with no NOPs, compiler tables or padding. It clears the window, draws48 stars,
 eight orb trails, the main orb and64 particles, then draws an eight-pixel frame.

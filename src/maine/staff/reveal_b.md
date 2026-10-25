@@ -1,5 +1,12 @@
 # Staff image phase B candidate
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+The complete376-byte B function is now accepted by the full-family two-fresh
+producer replay, with its own compiled extent7-to-8 control and original
+ordered fixups `[85,160]`. The single-producer discussion below is historical.
+
 The pinned original MAINE decoded image contains one complete function at
 `DE79..DFF1`,376 bytes, frame`0A54:3939`. All141 instructions decode through
 near `RET8`; there are no NOPs, compiler tables, padding or accepted overlap.

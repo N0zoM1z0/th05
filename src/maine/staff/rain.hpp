@@ -33,7 +33,11 @@ extern "C" { extern Palette8 __cdecl Palettes; }
 
 #pragma codeseg _TEXT
 extern "C" void pascal far palette_show(void);
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_RAIN_TEXT group_01
+#endif
 void near staff_rain_spawn(void);
 int near staff_rain_update(void);
 

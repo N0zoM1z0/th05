@@ -1,5 +1,9 @@
 # Staff particle and star lifecycle candidate
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 `maine-staff-lifecycle-prefix-b` accepts the complete602-byte prefix through
 two fresh producers, all original bytes and ordered fixups, and its rejected
 speed10→11 control. It adds four functions. The626-byte original updater is

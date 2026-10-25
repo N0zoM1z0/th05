@@ -1,5 +1,9 @@
 # Staff image phase A
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 This new natural C++ owner covers the complete original MAINE function
 `DD01..DE79`,376 instruction bytes and141 instructions. All18 direct branches
 target instruction boundaries in the same function. There are no NOPs, padding,

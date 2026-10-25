@@ -1,5 +1,9 @@
 # MAINE staff clip
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 The natural owner adapts pinned nmlgc/ReC98
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`, `th05/staff.cpp` and
 `th01/math/dir.hpp`, reusing the maintained `shared/geometry.hpp` classes.

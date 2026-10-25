@@ -3,12 +3,12 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **287 bounded C/C++ CODE/DATA units / 484 complete function occurrences**,
-**92,262 authored bytes exact**: 80,534 CODE and 11,728 initialized DATA.
-CODE is 79,842 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 92,338; 76 checked padding bytes receive
+Current acceptance: **291 bounded C/C++ CODE/DATA units / 485 complete function occurrences**,
+**92,638 authored bytes exact**: 80,910 CODE and 11,728 initialized DATA.
+CODE is 80,218 instruction plus 692 semantic compiler-table bytes.
+Complete compared extents total 92,714; 76 checked padding bytes receive
 no credit. MAIN has 370 functions / 60,302 CODE / 3,019 DATA;
-OP 61 / 11,218 / 8,615; MAINE 53 / 9,014 / 94.
+OP 61 / 11,218 / 8,615; MAINE 54 / 9,390 / 94.
 Global denominator and percentage remain unreviewed.
 
 ## Retained evidence
@@ -1353,3 +1353,41 @@ with allrealbodies includingfailedlife/render. It is not a numericalprefix,
 originalTUclaim or permission toimporta raw-falsewholeparent. Any future
 selection usescompletefunctionscopes and freshactualproducers, with explicit
 necessaryrefresh ofchangedoldacceptedsourceclosures.
+
+## Full staff context recovers B without normalization
+
+`maine-staff-full-scopes-a` proves eight complete functions/1741 instructions
+from two fresh actual4223-byte full-TU producers, plus own Bextent7-to-8
+negative. All17 genuine bodies remain, including the623-vs626 updater and
+858-vs861 renderer; no whole4229-byte exactness is claimed. ActualLEDATA
+ends1017/2034/3056/4078/4223; Bstart2903 hasfixups2988/3063 acrossrealcut3056,
+yieldingoriginal localorder[85,160]. A andwipe/clip/life4 also raw/orderpass.
+No raw-falsewholeparent projection, numericalprefix, bodyASM or sort occurred.
+
+The old602-byte lifecycleunit becomesinit278 (reusedID) plusgather108/clear40/
+scatter176 newIDs: same602/fourfunctions retained. Onlynew B376/onefunction
+is added. Sourcecanonicalization reverses10CPPs and8headerguards literally.
+Exactaffectedclosure waseightoldrecords, no MAIN/OPacceptedinputs changed.
+Three necessaryfreshstandalonegroups orb483/rain161+271/frame86 pass their
+own oldmeaningfulcontrols under the canonicalsource closures. Allfourpassing
+receipts importedatomically; unrelated entries/controls/records preserved.
+Current15acceptedfunctions/2742instructions inthis17functionfamily; thetwo
+large626/861 functions remain unaccepted. See `src/maine/staff/full.md`.
+
+New controller991 atE422..E801 is sourcepresentonly. ONEactualdiagnostic
+produced1001 and theknownstandalone29fixuporder fails; no2nd/negative/credit.
+Nativeforensic foundfour top-testinitialjumps(+8) andfadeinitialjump(+2);
+sourcepeerispreparing naturaldo-loop restoration and anactualinputgate
+correction. Two neighboringbitmapkernels43/83 stayrealexternalproviders.
+E800RET isinsidecontroller; E801zerooutside, nextSHAREDprocedureE802 while
+paragraphframe remainsE800. No blanket+5reference address conversion is used.
+
+Controllerupdate: the authorizedordinarydo-loop/idle-inputgate/lifetimefix
+producedall991rawbytes exactly inONEactualb diagnostic. ActualMAP proves
+SHAREDwordE802/frameE80 andDATA10110/DS1011 withoutrebase. Original29order
+remainsdifferent fromthe standalone descendingstream, so it isunaccepted,
+with nosecond/negative ordefaultentry. a1001 andb991 snapshotsstayimmutable.
+
+Currentcumulativeacceptance is92638 authoredbytes/485completefunctions/291
+boundedunits. Fullstaffdirect8+threeoldstandalonegroups wereatomicimported;
+no unrelatedunit wascoldreplayed. Globaldenominator remainsunreviewed.

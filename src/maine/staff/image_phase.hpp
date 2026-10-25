@@ -43,11 +43,19 @@ extern "C" void pascal far text_putsa(unsigned int x, unsigned int y,
     const char far *text, unsigned int attribute);
 #pragma codeseg SHARED
 extern "C" void pascal far cdg_put_noalpha_8(int left, int top, int slot);
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_WIPE_TEXT group_01
+#endif
 // Six true word slots and RET12; actual callers consume AL status0/1/2.
 unsigned char pascal near staff_text_wipe(int left, int top, int width,
     int height, int extent, int direction);
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_IMAGE_A_TEXT group_01
+#endif
 int pascal near staff_image_update_a(int center_x, int center_y,
     int slot, int measure);
 #pragma codeseg

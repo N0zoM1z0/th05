@@ -1,5 +1,9 @@
 # Staff frame pump
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 This accepted owner is the complete near procedure at original decoded MAINE
 `E34E..E3A4`: 86 bytes, 30 instructions, final near RET, no instruction NOPs,
 padding or CODE data tables. Original ordered MZ fixup offsets are **[60, 46,

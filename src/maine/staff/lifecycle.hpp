@@ -5,7 +5,11 @@
 // Preserve the true first-declaration contexts of the accepted clip provider.
 #pragma codeseg _TEXT
 extern "C" void pascal far grc_setclip(int left, int top, int right, int bottom);
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg SCORE_TEXT group_01
+#endif
 void pascal near space_window_set(int center_x, int center_y, int w, int h);
 #include "src/maine/staff/staff.hpp"
 
@@ -55,11 +59,19 @@ extern "C" {
 #include "src/shared/math/vector.hpp"
 
 // Both real foreign trail providers are no-argument near procedures.
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_TRAIL_TEXT group_01
+#endif
 void near staff_orb_spark_add(void);
 void near staff_orb_trail_update(void);
 
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_LIFE_TEXT group_01
+#endif
 void near staff_particles_init(void);
 void near staff_particles_gather(void);
 void near staff_particles_clear(void);

@@ -36,7 +36,11 @@ extern "C" {
         const char far *text, unsigned int attribute);
 }
 
+#ifdef TH05_STAFF_FULL_FAMILY
+#pragma codeseg STAFF_FULL_TEXT group_01
+#else
 #pragma codeseg STAFF_WIPE_TEXT group_01
+#endif
 // Identical to the shared image_phase.hpp API; no bool or enum-return alias.
 unsigned char pascal near staff_text_wipe(int left, int top, int width,
     int height, int extent, int direction);

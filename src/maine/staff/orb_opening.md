@@ -1,5 +1,9 @@
 # Staff orb and opening camera helpers
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 This accepted owner recovers four contiguous complete MAINE procedures, independently
 of the preceding, parked particle updater. `maine-staff-orb-opening-a` passes both fresh deterministic producers,
 all483 raw bytes, original ordered fixups and the compiled spark-speed control.

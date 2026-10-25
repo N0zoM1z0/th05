@@ -1,5 +1,9 @@
 # Staff rain transition
 
+Current canonical bodies and producer choices are documented in
+[full.md](full.md). Earlier standalone diagnostics and controls below remain
+historical evidence; they are not relabelled as fresh compilation.
+
 This accepted natural C++ source covers two complete contiguous MAINE procedures:
 `staff_rain_spawn()` at `DA36..DAD7` (161 bytes) and
 `staff_rain_update()` at `DAD7..DBE6` (271 bytes). Both are near in frame `0A54`.
