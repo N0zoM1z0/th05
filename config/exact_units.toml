@@ -3472,3 +3472,191 @@ unit = "main-stage-allclear-bonus"
 source = "src/main/stage/bonus_full.cpp"
 find = "extra = 50000UL;"
 replace = "extra = 49900UL;"
+
+[[units]]
+id = "main-hud-indicators"
+source = "src/main/hud/indicators.cpp"
+module = "th05/hud_inds.cpp"
+segment = "HUD_INDICATORS_TEXT"
+wrapper_options = "-G -zPmain_01"
+bindings_source = "probes/units/hud_indicators_bindings.asm"
+target_start = 53666
+size = 233
+functions = 4
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-hud-indicators"
+source = "src/main/hud/indicators.cpp"
+find = "hud_bar_put(20, dream,"
+replace = "hud_bar_put(19, dream,"
+
+[[units]]
+id = "main-hud-lives-bombs"
+source = "src/main/hud/lives_bombs.cpp"
+module = "th05/hud_res.cpp"
+segment = "HUD_RESOURCES_TEXT"
+wrapper_options = "-zCHUD_RESOURCES_TEXT -zPmain_01"
+bindings_source = "probes/units/hud_lives_bombs_bindings.asm"
+target_start = 53301
+size = 365
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+id = "lives-icon-cutover-six-to-seven"
+unit = "main-hud-lives-bombs"
+source = "src/main/hud/lives_bombs.cpp"
+find = "if(value < 6) {"
+replace = "if(value < 7) {"
+
+[[units]]
+id = "main-mai-shared-pattern-data"
+source = "src/main/boss/mai_yuki/mai_shared_tables.cpp"
+module = "th05/mai_tbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_shared_tables_bindings.asm"
+target_start = 139958
+size = 16
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+
+[[controls]]
+unit = "main-mai-shared-pattern-data"
+source = "src/main/boss/mai_yuki/mai_shared_tables.cpp"
+find = "    mai_pattern_random_crosses,\n    mai_pattern_sweeping_pellets,"
+replace = "    mai_pattern_sweeping_pellets,\n    mai_pattern_random_crosses,"
+
+[[units]]
+id = "main-yuki-shared-pattern-data"
+source = "src/main/boss/mai_yuki/yuki_shared_tables.cpp"
+module = "th05/yuki_tbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/yuki_shared_tables_bindings.asm"
+target_start = 139982
+size = 24
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+
+[[controls]]
+unit = "main-yuki-shared-pattern-data"
+source = "src/main/boss/mai_yuki/yuki_shared_tables.cpp"
+find = "    yuki_pattern_random_aimed_fan,\n    yuki_pattern_small_ball_stacks,"
+replace = "    yuki_pattern_small_ball_stacks,\n    yuki_pattern_random_aimed_fan,"
+
+[[units]]
+id = "main-shinki-phase23"
+source = "src/main/boss/shinki/phase23.cpp"
+module = "th05/b6_phase.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zCB6_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/shinki_phase23_bindings.asm"
+target_start = 109754
+size = 102
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-shinki-phase23"
+source = "src/main/boss/shinki/phase23.cpp"
+find = "snd_se_play(8);"
+replace = "snd_se_play(9);"
+
+[[units]]
+id = "main-stage-bonus-ui-text"
+source = "src/main/stage/bonus_strings.cpp"
+module = "th05/bonus_ui.cpp"
+segment = "_DATA"
+wrapper_options = "-zCBONUS_UI_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_strings_bindings.asm"
+source_encoding = "cp932"
+target_start = 140401
+size = 719
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-stage-bonus-ui-text"
+source = "src/main/stage/bonus_strings.cpp"
+find = "\u96e3\u6613\u5ea6\u30dc\u30fc\u30ca\u30b9\uff08\uff25\uff41\uff53\uff59\uff09\u3000\u3000\u3000\u3000\u00d7\u3000\uff10\uff0e\uff15"
+replace = "\u96e3\u6613\u5ea6\u30dc\u30fc\u30ca\u30b9\uff08\uff25\uff41\uff53\uff59\uff09\u3000\u3000\u3000\u3000\u00d7\u3000\uff10\uff0e\uff16"
+
+[[units]]
+id = "main-hud-hp-draw"
+source = "src/main/hud/hp_draw.cpp"
+module = "th05/hp_draw.cpp"
+segment = "HUD_HP_DRAW_TEXT"
+wrapper_options = "-zCHUD_HP_DRAW_TEXT -zPmain_01"
+bindings_source = "probes/units/hud_hp_draw_bindings.asm"
+target_start = 53899
+size = 152
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[units]]
+id = "main-hud-score-reset"
+source = "src/main/hud/score_reset.cpp"
+module = "th05/sc_reset.cpp"
+segment = "SCORE_RESET_TEXT"
+wrapper_options = "-zCSCORE_RESET_TEXT -zPmain_01"
+bindings_source = "probes/units/hud_score_reset_bindings.asm"
+target_start = 53190
+size = 111
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+id = "hp-draw-row-nine-to-ten"
+unit = "main-hud-hp-draw"
+source = "src/main/hud/hp_draw.cpp"
+find = "hud_bar_put(9, bar_value"
+replace = "hud_bar_put(10, bar_value"
+
+[[controls]]
+id = "score-reset-preserve-digit-zero"
+unit = "main-hud-score-reset"
+source = "src/main/hud/score_reset.cpp"
+find = "i > 0"
+replace = "i >= 0"
+
+[[units]]
+id = "main-stage-bonus-ui-pointers"
+source = "src/main/stage/bonus_pointers.cpp"
+module = "th05/bonus_pt.cpp"
+segment = "_DATA"
+wrapper_options = "-zCBONUS_PTR_TEXT -zPmain_03"
+bindings_source = "probes/units/stage_bonus_pointers_bindings.asm"
+target_start = 140340
+size = 42
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers", "semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-stage-bonus-ui-pointers"
+source = "src/main/stage/bonus_pointers.cpp"
+find = "    bonus_easy_text,"
+replace = "    bonus_normal_text,"

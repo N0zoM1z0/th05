@@ -177,3 +177,14 @@ The additional real segment boundary before the static helper begins at the
 original even address `1ACBA`. This preserves the compiler's genuine final
 word-table alignment phase. No byte, fake function or barrier was added to
 force alignment; the complete final update, table and padding remain unaccepted.
+
+## Independent private-helper acceptance
+
+The later `main-shinki-phase23-a` replay recovers the genuine private102-byte
+helper `[1ACBA,1AD20)` through one complete standalone CODE contribution.
+Its static near declaration and natural function body are unchanged; the
+compiler emits the unused private definition without a synthetic caller or
+exported alias. Two fresh producers, raw bytes, original fixup72 and its
+sound mutation pass. See `phase23.md`. This resolves only the former static
+MAP-public obstacle; ball220 and the four internally ordered-inexact functions
+remain unaccepted. Previously accepted scopes are unchanged and not replayed.

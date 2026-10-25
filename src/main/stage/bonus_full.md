@@ -5,9 +5,9 @@ the accepted multiplier/modifier pair contributes 305 bytes, followed by
 `stage_clear_bonus()` at `[1C79A,1C9CB)` (561 bytes) and
 `stage_allclear_bonus()` at `[1C9CB,1CC0E)` (579 bytes). The full source includes
 the unchanged maintained helper bodies through their frozen combine guard.
-The two later complete functions are proposed independently, with no duplicate
-credit for the accepted helper pair. The full source is currently uncompiled
-and unaccepted.
+The two later complete functions are accepted independently, with no duplicate
+credit for the accepted helper pair. The successful shared-context replay is
+recorded below.
 
 The maintained TH04 stage-bonus C++ is a semantic donor. Native original TH05
 review determines its actual fields, arguments, constants and control flow.
@@ -76,3 +76,14 @@ stage scaling 100-to-101 and all-clear reward 50,000-to-49,900 are meaningful
 separate control proposals; a grouped replay must report which control it
 actually compiled. Neither a configured control nor source presence grants
 acceptance.
+
+The focused `main-stage-bonus-full-a` replay subsequently passed both complete
+561/579-byte functions in two fresh compilations of their shared genuine TU.
+Complete raw bytes, actual original ordered fixups, OMF/MAP/dependency gates
+and all sixteen checked NOPs passed. The accepted new total is 1,124 authored
+instruction bytes, with no additional credit for the unchanged helper prefix.
+The actual compiled negative changed normal stage scaling from 100 to 101
+and was rejected. That first-scope mutation supplies the shared oracle control
+for the all-clear scope; its separately proposed 50,000-to-49,900 mutation
+was not compiled in this replay. Both scopes were imported and committed in
+`fcdef3f`.

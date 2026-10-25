@@ -3,11 +3,11 @@
 Goal: at least 98% authored bytes exact. Commit prefix: `gpt-6.1-sol:`.
 Repository: https://github.com/N0zoM1z0/th05 .
 
-Current acceptance: **233 bounded C++ CODE/DATA units / 434 complete function occurrences**,
-**79,142 authored bytes exact**: 70,053 CODE and 9,089 initialized DATA.
-CODE is 69,403 instruction plus 650 semantic compiler-table bytes.
-Complete compared extents total 79,208; 66 checked padding bytes receive
-no credit. MAIN has 352 functions / 57,488 CODE / 431 DATA;
+Current acceptance: **242 bounded C++ CODE/DATA units / 443 complete function occurrences**,
+**80,906 authored bytes exact**: 71,016 CODE and 9,890 initialized DATA.
+CODE is 70,366 instruction plus 650 semantic compiler-table bytes.
+Complete compared extents total 80,972; 66 checked padding bytes receive
+no credit. MAIN has 361 functions / 58,451 CODE / 1,232 DATA;
 OP 56 / 9,471 / 8,615; MAINE 26 / 3,094 / 43.
 Global denominator and percentage remain unreviewed.
 
@@ -915,3 +915,34 @@ nonmonotone original fixup order. Only the two later scopes receive new credit:
 1124 instructions after16 checked NOPs, with no duplicate helper credit.
 Both share the compiled stage-clear factor mutation; the configured allclear
 mutation was not independently compiled. Source notes preserve these limits.
+
+## Additional HUD, shared schedules and private Shinki helper
+
+`main-hud-lives-bombs-a` adds365 complete instructions/two functions with
+one coherent lives-threshold mutation. `main-hud-indicators-b` adds233/four
+with its own Dream-bar row mutation. The latter supersedes first229: the
+canonical bar value is an int, not a narrowed byte formal. Both retain the
+documented HUD donor context, original ordered fixups and full UI records.
+
+`main-mai-shared-pattern-data-a` and `main-yuki-shared-pattern-data-a` add
+16/24 initialized semantic near-callback DATA bytes with separate compiled
+attack-order swaps. The intervening eight zeros remain unknown. No shared
+updater or survivor-table acceptance transfers.
+
+`main-shinki-phase23-a` adds the complete102-byte genuine private helper.
+Its unchanged static body emits one whole contribution, resolving the old
+missing-public boundary obstacle without exporting or adding a caller.
+Two fresh producers, original fixup72 and its sound mutation pass. Remaining
+Shinki order/ball blockers retain zero credit and their saved evidence.
+
+`main-hud-hp-draw-a` and `main-hud-score-reset-a` add152/111 complete
+instructions, each with its own compiled mutation. HP retains the real word
+bar API and complete local UI records. Reset keeps the original highest-score
+comparison and preserves digit0 while clearing the other seven digits.
+
+`main-stage-bonus-ui-text-a` adds719 initialized DATA bytes from21 readable
+Japanese UI strings, through pinned actual CP932 compilation and its own
+Easy-factor text mutation. `main-stage-bonus-ui-pointers-a` adds42 real near
+description/label pointers to those objects, with its own Easy/Normal selection
+mutation. Gaiji/font byte arrays remain foreign and uncredited. Both pass
+whole DATA ownership, two fresh producers and the empty original MZ stream.
