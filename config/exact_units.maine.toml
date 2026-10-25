@@ -710,3 +710,41 @@ unit = "maine-staff-frame"
 source = "src/maine/staff/frame.cpp"
 find = "frame_delay(1);"
 replace = "frame_delay(2);"
+
+[[units]]
+id = "maine-staff-image-phase-a"
+source = "src/maine/staff/image_phase_a.cpp"
+module = "th05/st_imga.cpp"
+segment = "STAFF_IMAGE_A_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 56577
+size = 376
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/staff_image_phase_a_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-image-phase-a"
+source = "src/maine/staff/image_phase_a.cpp"
+find = "staff_image_wipe_extent_a = ((image->pixel_w / 16) + 7);"
+replace = "staff_image_wipe_extent_a = ((image->pixel_w / 16) + 8);"
+
+[[units]]
+id = "maine-staff-text-wipe"
+source = "src/maine/staff/wipe.cpp"
+module = "th05/stfwipe.cpp"
+segment = "STAFF_WIPE_TEXT"
+wrapper_options = "-zPgroup_01"
+target_start = 56294
+size = 283
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/maine_staff_wipe_bindings.asm"
+
+[[controls]]
+unit = "maine-staff-text-wipe"
+source = "src/maine/staff/wipe.cpp"
+find = "grcg_setcolor(STAFF_WIPE_GRCG_RMW, 1);"
+replace = "grcg_setcolor(STAFF_WIPE_GRCG_RMW, 2);"
