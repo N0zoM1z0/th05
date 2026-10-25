@@ -61,6 +61,22 @@ SHA-256 `b95ec4edc9bed9c4acbfc6abfc0fc01f95ca35f30171cc784879ff9e5dd63c88`.
 Saved-producer import,303 public tests, full CI and native ownership readback
 pass. All four incremental plans are empty; no old compiler unit was replayed.
 
+## New unaccepted ZUN entry source
+
+The adjacent complete269-byte `main` now has natural maintained source in
+`src/zun/resident/initialize.cpp/.hpp`, with notes in
+[entry candidate](../src/zun/resident/initialize.md). Its only first producer,
+`.analysis/zun-resident/main-natural-a/`, emits260 bytes. The original-order
+wrapper includes unchanged config then entry: valid OMF `_TEXT`582, config
+public0, `_main`322, empty DATA/BSS. This is a complete-size rejection, with
+zero added functions/bytes, no link/raw comparison, second build, negative or
+acceptance import. All three reference artificial barriers and reference-ID
+helper workarounds are omitted. Do not insert nine compensating bytes or copy
+instruction transcriptions. Exact discrepancy cause remains unresolved.
+Independent semantic/OMF/input review: `.analysis/zun-resident-review/main-natural-review.json`,
+SHA-256 `38e43ebe9353838824ea727405e748a0259c2c5e041884c13a0b25b67eda7357`;
+no semantic issue found. Full303-test CI passes; generated counts are unchanged.
+
 ## Previous ownership review: embedded font, zero source credit
 
 An explicit [font resource review](reconstruction/ZUN_FONT_RESOURCE.md) now
