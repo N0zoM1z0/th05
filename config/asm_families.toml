@@ -1035,3 +1035,33 @@ replace = "POINTNUM_FIELD_LEFT equ (PLAYFIELD_LEFT - 1)"
 offset = 115
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-spark-render"
+artifact = "main"
+source = "src/main/effects/spark/render.asm"
+types = "src/main/effects/spark/render_types.inc"
+symbols = "probes/units/spark_render_symbols.inc"
+bindings = "probes/units/spark_render_bindings.asm"
+notes = "src/main/effects/spark/render.md"
+target_start = 0xe020
+size = 102
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "58056879ebde7a5e1c4e6e41b0b32a8d2ab1486ed54bb6976055537c2c542129"
+target_scope_sha256 = "1a47929cd14cf2dae3b52cfc23de6cb226da96430f591cf90990b6bf1291bea2"
+semantic_inputs = []
+[units.publics]
+"@spark_render" = 0
+"spark_render_end" = 102
+[units.negative]
+find = "SPARK_DRAW_ROWS equ SPARK_H"
+replace = "SPARK_DRAW_ROWS equ (SPARK_H - 1)"
+[[units.uncredited]]
+offset = 101
+size = 1
+kind = "alignment"

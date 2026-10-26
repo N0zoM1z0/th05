@@ -13,15 +13,81 @@ no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,826 instruction bytes,
+Separately reviewed ASM now contributes **6,927 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 7,192
-complete compared bytes include 68 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 7,294
+complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 131,803 bytes. The global denominator is still unreviewed;
+ownership is now 131,701 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted ASM: point popup driver and private mask writer
+## Latest accepted ASM: private spark mask worker
+
+MAIN @spark_render E020..E086 adds 101 reviewed ASM instruction bytes from a
+complete 102-byte worker. Sole NOP 101 is final EVEN padding with zero credit;
+the row macro's EVEN at relative 64 emits zero. Native ordered MZ fixups are
+empty. AX=left pixels, DX=ring top, CX=cel&7, ES=VRAM; SI/DI/BP/DS/ES and IF
+are preserved, AX/DX/BX/CX scratch, clear DF required. This differs from the
+point-popup worker's AX/DX protocol. Full shift-major mask geometry is eight
+shifts/eight cels/eight rows/two bytes: all 1024 bytes at DS:14AA..18AA remain
+foreign and uncredited. Pool/batch/update/scroll/color ownership is excluded.
+See [spark source/ABI/origin review](../src/main/effects/spark/render.md).
+
+Private register behavior and the semantic shared row macro support inferred
+original ASM only for this worker; literal historical source/assembler and
+exhaustive library ancestry remain unproved. Bounded primary library review
+found no positive borrowed body. The generated-bank native model passes 464
+cases of shifts/cels/aliases, transparent/byte/WORD writes, ring wrap and
+stack/register behavior, plus foreign native batch/color/scroll behavior with
+zero credit. Colored GRCG framebuffer effects and invalid coordinates are not
+modeled. Report `.analysis/spark-render-native-semantic-check.json`, SHA-256
+`644360005afc5987d6a5a92c8f35f1214355beb9ddacb910c4161cd1298a2110`.
+
+The ordinary batch C++ candidate E0D2..E10E generated 71 CODE bytes against 60,
+using the single inherited -k- profile. The initial missing screen_x_t alias
+failed before any object and was corrected to canonical pixel_t. The next
+object has correct CL lifetime but stack/frame overhead. Its first link also
+failed on the raw-color binder's uppercase spelling; the actual lowercase
+EXTDEF was then bound without recompiling/relinking, because complete 71-byte
+own SEGDEF already proves the size failure. There is no second/control CPP
+producer, receipt, instruction/flag search or ASM promotion. Update E086..E0D2
+remains unknown; accepted lifecycle E10E..E152 and its 96-entry original bug
+remain unchanged. Independent failed-candidate review:
+`.analysis/spark-batch-natural-first-independent-review.json`, SHA-256
+`a115d9311c7786d32548e442013165084dc16d9ca5ecfd3918ee89d617cc9da8`.
+
+The unchanged normal gate passes two fresh worker producers and its own
+seven-row negative. The negative changes only relative 43 (392 to 393), 48/60
+(8 to 7), retaining 102 bytes, all frames/publics, NOP 101 and empty relocation
+order. Actual staged inputs/argv/logs, ordinary CRC-valid OMF, MAP and MZ were
+re-read. Positive normalized objects, MAP and whole MZ agree; no worker
+producer failed, continued or was rebuilt. Installed execution proofs and
+all unchanged accepted objects are reused after actual dependency checks.
+Receipt `.analysis/asm-replays/main-spark-render-a/receipt.json`, SHA-256
+`07396f7c5d98ebed0efee771542202fcf6b5cd9a02b6210cfc2e0c37e648080a`.
+Independent actual-producer review:
+`.analysis/spark-render-actual-replay-independent-review.json`, SHA-256
+`820d8df51fb980176b1b6cd54431a699992ef8996fc463985c4be28fc1810e41`.
+
+Explicit per-record adoption adds only101 ASM instruction bytes and one
+checked alignment byte. ASM totals are 6927 instructions/210 dispatch/24
+semantic CODE/64 DATA, complete 7294 and uncredited 69. Unknown drops 131803 to
+131701 (MAIN 52093 to 51991). CPP 98451, vendor CODE 69770/DATA 3777, font 8192,
+all initialized DATA and the null global denominator remain unchanged.
+
+All 364 CI tests, target ownership, generated progress and diff checks pass.
+All five incremental plans are empty. The 30 older ASM records, descriptors
+and adoption entries and 52 other config files (including all four C/C++
+ledgers) remain unchanged. OP/MAINE intervals/counts/targets are unchanged;
+only shared ASM-decision provenance updates. The ZUN view is byte-identical.
+The two existing aggregate test constants add 101 instruction bytes and one
+alignment byte; partition and tamper checks remain intact. Final adoption
+review: `.analysis/spark-render-final-adoption-independent-review.json`,
+SHA-256 `51ad8ccce6b931ade4b0259ef636f642a8fe487f1a689909a43bb60fb2ebe8ca`.
+Root evidence: `.analysis/spark-render-root-final-review.json`, SHA-256
+`ea54e404571320cb1569bd39349bcb9f5878bce25f2ed7e2f0bfe3a04e358436`.
+
+## Previous accepted ASM: point popup driver and private mask writer
 
 Two complete separate MAIN procedures add 220 reviewed ASM instruction bytes:
 private @pointnum_put at BE3A..BEA4 (106 complete, 105 instructions) and
