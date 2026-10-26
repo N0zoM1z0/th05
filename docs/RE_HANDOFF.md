@@ -87,6 +87,47 @@ SHA-256 `51ad8ccce6b931ade4b0259ef636f642a8fe487f1a689909a43bb60fb2ebe8ca`.
 Root evidence: `.analysis/spark-render-root-final-review.json`, SHA-256
 `ea54e404571320cb1569bd39349bcb9f5878bce25f2ed7e2f0bfe3a04e358436`.
 
+## Next bounded native route: Cheeto mask worker, no acceptance
+
+MAIN @cheeto_put DE72..DF28 is 182 complete bytes with NOPs 41/63/71/93 and
+empty ordered MZ fixups. Three near RET paths cover the outer driver and two
+row helpers. Actual callers 12F9C/12FDC corroborate AX-left/DX-top/BX-sprite,
+CL-shift/CH-rowcount/DL-mask/DH-BL-carry/BH-wordcount and returned row ZF.
+A generated per-pixel native model passes 1280 cases: 16 sprites, 8 shifts,
+both byte parities, zero/full/alternating/generated masks, top rows
+0/367/368/369/399, 96 writes per sprite, bank/plane canaries and preserved ABI.
+This is mask-write behavior, not colored GRCG framebuffer emulation, and uses
+valid coordinates/clear DF only. Full 2048-byte bank DS:378A..3F8A is runtime
+BSS beyond the observed loaded image, unobserved and uncredited.
+
+ASM language is strongly supported, but mixed ancestry remains unresolved:
+modern bb_cheeto explicitly adapts z_super_roll_put_tiny_32x32, whose header
+names Master SUPERRPT and Koizuka/ZUN. Two literal three-operation packing
+idioms survive at DEDE..DEE4 and DF0D..DF13 (six native bytes each), without
+primary assembler/object byte proof. Longer algorithms differ in operands,
+order and geometry, so no unchanged whole vendor body is established.
+The short idioms alone do not prove vendor ownership. Hold full authored
+adoption; no source diff fragment credit, blanket vendor classification or
+revision of older accepted workers follows from this bounded investigation.
+See [full native routing and evidence](reconstruction/CHEETO_PUT_ROUTING.md).
+
+No compiler/assembler/linker producer, receipt, source reconstruction,
+acceptance or counter change was attempted. All 182 bytes remain unknown;
+all four NOPs would receive zero authored credit under future acceptance.
+Model report `.analysis/cheeto-put-native-semantic-check.json`, SHA-256
+`3494a75e878d7af1aa168145004ee5d9b6fe1d3471a82b0f9a0d6b8263fa25b7`.
+Independent origin review:
+`.analysis/cheeto-put-independent-native-origin-review.json`, SHA-256
+`826f1da15611bb809e6232f5aea025b96ecad392439ad7d73a771ec3fa91a7b8`.
+Root route review `.analysis/cheeto-put-routing-root-review.json`, SHA-256
+`1cecfac5711e66c7d5401ae81a7b9bf4725ff80f66104cca83d04aa729e66a4f`.
+
+All 364 CI tests and diff checks pass. This follow-up changes only routing
+and handoff prose; sources, acceptance/ownership ledgers, generated progress
+and the five source-current empty plans from 91e7cd6 remain unchanged.
+No proprietary pixels, binary output or raw instruction transcription is
+published.
+
 ## Previous accepted ASM: point popup driver and private mask writer
 
 Two complete separate MAIN procedures add 220 reviewed ASM instruction bytes:
