@@ -21,6 +21,79 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 131,701 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
+## Handoff checkpoint: 2026-10-26
+
+The user cleared the reconstruction goal and requested cleanup/handoff.
+New target work is stopped. Starting HEAD was 25a455c, clean and synchronized
+with origin/main; the latest accepted-source commit is 91e7cd6. This handoff
+changes no maintained source, ABI, compiler option, accepted evidence, toolchain,
+resource decision or authored counter. No compiler/assembler/linker/Ghidra
+producer was started in the final read-only investigation. Private evidence
+and tools stay in ignored directories; do not delete them as temporary clutter.
+
+The independent review agent was interrupted before a new sprite-resource
+investigation could finish. No independent sprite-resource report or producer
+is available, and no pending result should be treated as acceptance.
+Resume target work only when the user requests it again.
+
+### Prepared next C++ question: point-number lifecycle
+
+Private review `.analysis/pointnum-lifecycle-independent-native-review.json`,
+SHA-256 `1c286e13ea60e278eac0c5e432ba698f454a765aa3b65755d98620267b758f55`,
+reviews three contiguous complete MAIN scopes:
+
+| Function | Native scope | Complete bytes | Alignment NOP |
+| --- | --- | ---: | ---: |
+| pointnums_init | E16E..E17A | 12 | 11 |
+| pointnums_invalidate | E17A..E1A6 | 44 | none |
+| pointnums_update | E1A6..E216 | 112 | 111 |
+
+All ordered MZ fixup lists are empty. All 168 bytes remain unknown. No new
+C++ source/header/binder/manifest, first producer, negative or receipt was
+created. A single natural -k- context, following the accepted Spark pointer/
+count loop context, is only a supported next hypothesis. Alignment must be
+produced naturally and compared, with zero authored credit; do not add padding,
+try a flag matrix or infer ASM origin from the modern donor's filename.
+
+Retain the full TH05 record of 16 bytes, pool of 280 (200 white + 80 yellow),
+and alive list of 281 near WORD pointers including its terminator. Globals are white index DS3FA4, yellow index
+DS3FA5, alive list DS3FA6, first-yellow DS41D8 and pool DS9F04. These runtime BSS
+objects receive no DATA credit. Invalidation passes previousY then currentX
+to the real near Pascal tiles provider BAD2/RET4. The two values are at record
+6/2 and are noncontiguous: a current-SPPoint reinterpretation is wrong.
+
+Update preserves native quirks: old age>=24 moves up 8 subpixels; previousY
+is saved before signed Y<=-64 removal; BYTE age wraps; flag 2 is freed and
+other nonzero flags are processed; the first-yellow test uses remaining<=80.
+The complete report contains native boundaries, arguments and source context.
+
+### Prepared resource-only question: shifted sprite masks
+
+A completed root-only read confirmed mathematical horizontal-shift consistency
+for the full observed pointnum bank DS084A..0E4A (1536 bytes, glyph-major) and
+spark bank DS14AA..18AA (1024 bytes, shift-major), with zero mismatches.
+Captured metadata `.analysis/sprite-mask-resource-root-routing.json`, SHA-256
+`c528d0f81e57e7945fd066c19eb2098d17177602a72eacb937628e4cac56ebba`.
+
+This is preparation only. No public raster payload, registered resource model,
+consumer verifier, independent resource review or adoption was produced.
+All 2560 bytes remain unknown and receive zero authored credit. A future
+resource-only review would require complete native consumer/geometry/bounds
+checks and a separate decision; it cannot claim C/C++ or ASM exact source.
+The Cheeto 182-byte mixed-ancestry route below likewise remains unknown.
+
+Final handoff checks: all four pinned targets pass candidate-local attestation;
+all five incremental plans are empty and execute no compiler tools. Native
+ownership verification, all 364 CI tests and diff checks pass. Source, config,
+tool/verifier, test and generated-progress identities are unchanged. Only this
+handoff prose changes. The repository-scoped process check found no heavy
+reconstruction job; the independent review agent is interrupted.
+
+Saved checks: `.analysis/handoff-20261026-*-plan.json`,
+`.analysis/handoff-20261026-ownership.log`, `.analysis/handoff-20261026-ci.log`,
+`.analysis/handoff-20261026-preserved-identities.json` and
+`.analysis/handoff-20261026-process-check.json`.
+
 ## Latest accepted ASM: private spark mask worker
 
 MAIN @spark_render E020..E086 adds 101 reviewed ASM instruction bytes from a
@@ -69,7 +142,7 @@ Independent actual-producer review:
 `.analysis/spark-render-actual-replay-independent-review.json`, SHA-256
 `820d8df51fb980176b1b6cd54431a699992ef8996fc463985c4be28fc1810e41`.
 
-Explicit per-record adoption adds only101 ASM instruction bytes and one
+Explicit per-record adoption adds only 101 ASM instruction bytes and one
 checked alignment byte. ASM totals are 6927 instructions/210 dispatch/24
 semantic CODE/64 DATA, complete 7294 and uncredited 69. Unknown drops 131803 to
 131701 (MAIN 52093 to 51991). CPP 98451, vendor CODE 69770/DATA 3777, font 8192,
