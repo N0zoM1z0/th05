@@ -202,3 +202,21 @@ The family total is13 functions /2559 instruction bytes, with zero new
 padding or CODE tables. Remaining complete extents are ball220, wing386 and
 update959; they stay unaccepted. The old mixed suffix is not relabelled exact.
 See `cheeto_walls.md` and `devil.md`.
+
+## Complete update accepted through adjacent final-pattern context
+
+The new `update_context.cpp` owner contains the genuine contiguous Devil,
+circles/spirals, float and updater functions, with unchanged natural bodies.
+Two fresh producers pass the updater's complete959 bytes, including its zero,
+26 compiler-table bytes and original ordered fixups `[862,461,165,128]`.
+The own default defeat-bonus65-to64 compiled negative is rejected. The
+2,134-byte contribution naturally restores both alignment and OMF relocation
+grouping; no output is patched or normalized. Only the complete updater gets
+new credit, not its already accepted1,175-byte context prefix. Historical
+source/TU identity and whole-program linkage remain unproved.
+
+This supersedes the update's earlier unaccepted status without changing those
+failed receipts or any older accepted record. The family now has14 complete
+accepted functions /3517 authored CODE bytes (3491 instruction plus26 table).
+Its remaining unaccepted complete scopes are ball220 and wing386. See
+[complete source, ABI and producer review](update_context.md).

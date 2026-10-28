@@ -4259,3 +4259,25 @@ unit = "main-item-splash-render"
 source = "src/main/item/splash_render.cpp"
 find = "grcg_setcolor_direct(15);"
 replace = "grcg_setcolor_direct(14);"
+
+[[units]]
+id = "main-shinki-update-context"
+source = "src/main/boss/shinki/update_context.cpp"
+module = "th05/b6_ctx.cpp"
+segment = "B6_UPDATE_TEXT"
+wrapper_options = "-zCB6_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/shinki_update_context_bindings.asm"
+function_symbol = "shinki_update()"
+target_start = 0x1b6db
+size = 959
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{ offset = 932, value = 0 }]
+code_data_ranges = [{ offset = 933, size = 26, kind = "compiler-switch-table" }]
+
+[[controls]]
+unit = "main-shinki-update-context"
+source = "src/main/boss/shinki/update_context.cpp"
+find = "boss_defeat_update(65);"
+replace = "boss_defeat_update(64);"

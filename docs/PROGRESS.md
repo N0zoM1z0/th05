@@ -5,19 +5,19 @@ complete authored ownership denominator remains under review.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 385 | 61928 | 61392 | 536 | 61999 |
+| MAIN bounded C/C++ units | 386 | 62886 | 62324 | 562 | 62958 |
 | OP decoded C/C++ units | 62 | 11251 | 11145 | 106 | 11257 |
 | MAINE decoded C/C++ units | 56 | 9613 | 9563 | 50 | 9616 |
 | ZUN embedded C/C++ units | 1 | 322 | 322 | 0 | 322 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 20 | 3091 | 65019 | 65093 |
+| MAIN bounded C/C++ units | 20 | 3091 | 65977 | 66052 |
 | OP decoded C/C++ units | 8 | 8649 | 19900 | 19906 |
 | MAINE decoded C/C++ units | 11 | 3597 | 13210 | 13213 |
 | ZUN embedded C/C++ units | 0 | 0 | 322 | 322 |
 
-319 bounded C/C++ units pass two cold producers, raw bytes and original
+320 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,10 +27,10 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 98451: 83114 authored CODE plus 15337
+Total authored C/C++ bytes are 99409: 84072 authored CODE plus 15337
 initialized DATA bytes. This does not change the global denominator.
-Authored code includes 692 bytes of explicitly classified compiler switch
-tables; these remain separate from instruction bytes. All 83 observed
+Authored code includes 718 bytes of explicitly classified compiler switch
+tables; these remain separate from instruction bytes. All 84 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.

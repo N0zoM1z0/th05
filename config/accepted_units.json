@@ -2,24 +2,40 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6f59779f016de2b0836ce3169faa5d08a69054efdb3dc20c747e0622eecef4d5",
+  "replay_receipt_sha256": "f24cd051d993235d3c8dba38871681d74e94e716bcaecbb8e61e8dfa69e8c317",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 56487,
-    "candidate_start": 56487,
-    "size": 131,
-    "target_sha256": "aca75a762c0a8b59154df0978e331fe13a9fc0beac3156c17296af3ce894f71e",
-    "candidate_sha256": "8d6d0abf09b2e25325ac05885a05138b84898c3fe0017ae00b80159298123910",
+    "target_start": 112347,
+    "candidate_start": 112347,
+    "size": 959,
+    "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+    "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
     "raw_exact": false,
     "target_fixups": [
-      50
+      862,
+      461,
+      165,
+      128
     ],
     "candidate_fixups": [
-      50
+      862,
+      461,
+      165,
+      128
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 112347,
+      "size": 959,
+      "function_symbol": "shinki_update()",
+      "contribution_start": 111172,
+      "contribution_size": 2134,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -67102,6 +67118,440 @@
             "symbol_model_sha256": "48f4a47d9c720d15393e2db5e257ac194e1e05f280b922ab733549c281a2b6aa"
           }
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-update-context",
+      "entry_sha256": "79e6dca7eb29863b75171792828b99f04d5a0ba6883e93ae71b4b05aa8a23822",
+      "result": {
+        "id": "main-shinki-update-context",
+        "entry_sha256": "79e6dca7eb29863b75171792828b99f04d5a0ba6883e93ae71b4b05aa8a23822",
+        "rounds": [
+          {
+            "target_start": 112347,
+            "candidate_start": 112347,
+            "size": 959,
+            "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+            "candidate_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+            "raw_exact": true,
+            "target_fixups": [
+              862,
+              461,
+              165,
+              128
+            ],
+            "candidate_fixups": [
+              862,
+              461,
+              165,
+              128
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 112347,
+              "size": 959,
+              "function_symbol": "shinki_update()",
+              "contribution_start": 111172,
+              "contribution_size": 2134,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 112347,
+            "candidate_start": 112347,
+            "size": 959,
+            "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+            "candidate_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+            "raw_exact": true,
+            "target_fixups": [
+              862,
+              461,
+              165,
+              128
+            ],
+            "candidate_fixups": [
+              862,
+              461,
+              165,
+              128
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 112347,
+              "size": 959,
+              "function_symbol": "shinki_update()",
+              "contribution_start": 111172,
+              "contribution_size": 2134,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "b3190a246190145bc35cb4cb2477d5a543f26529d1c5fdde1f706c0da799f235",
+            "dependency_timestamp_normalized_sha256": "fe8ee81afd0a53c24f65c2a118c1aabf2df9cd6e92ddaa512f7a015fb0fa45d5",
+            "module_name": "th05/b6_ctx.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b6_ctx.cpp",
+              "src/main/boss/shinki/update_context.cpp",
+              "src/main/boss/shinki/update_standalone.hpp",
+              "src/main/boss/shinki/shinki.hpp",
+              "src/main/boss/sara/sara.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/shinki/hp.inl",
+              "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/devil.inl"
+            ]
+          },
+          {
+            "sha256": "54c24eb1e9f3c6ea5e6b33b403c3aa6e8b12dbc990e335a596d143884f4bf9b5",
+            "dependency_timestamp_normalized_sha256": "fe8ee81afd0a53c24f65c2a118c1aabf2df9cd6e92ddaa512f7a015fb0fa45d5",
+            "module_name": "th05/b6_ctx.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b6_ctx.cpp",
+              "src/main/boss/shinki/update_context.cpp",
+              "src/main/boss/shinki/update_standalone.hpp",
+              "src/main/boss/shinki/shinki.hpp",
+              "src/main/boss/sara/sara.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/shinki/hp.inl",
+              "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/devil.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b6_ctx.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b6_ctx.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shinki_update_context_bindings.asm",
+            "sha256": "2e2aef92594546e5735dce2d0fdfe5e326d7840d005439c4fba0e13964d0ee28"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/boss/sara/sara.hpp",
+            "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/devil.inl",
+            "sha256": "d5a3a352c5ef9690995e201a387539b0faa24d062f2c2ac8bef5a94e1134c462"
+          },
+          {
+            "path": "src/main/boss/shinki/hp.inl",
+            "sha256": "26d23af5b7f8a342a6c7b5f1d50af120cc03d485934f25f9e1227b46351b8344"
+          },
+          {
+            "path": "src/main/boss/shinki/shinki.hpp",
+            "sha256": "a545cd114f86f129f0b9b478f7602f1315efd5adccbb5e5caa8b1702a6909cbb"
+          },
+          {
+            "path": "src/main/boss/shinki/update_context.cpp",
+            "sha256": "33d5d66ab71baac1e2eaa8f7b7ee579ffcf7cba8e938c609fe19ea924449fc0a"
+          },
+          {
+            "path": "src/main/boss/shinki/update_standalone.hpp",
+            "sha256": "128e98e590e9ea658eddeda40a43fd039f6e6eb3538d8377fe6015b9b743d72c"
+          },
+          {
+            "path": "src/main/boss/shinki/wing_coordinates.inl",
+            "sha256": "84d4ebdb185c069cf60466093237ca9f3b994fea8eaef30263c17c9c98c19f63"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shinki_update_context_bindings.asm",
+          "sha256": "2e2aef92594546e5735dce2d0fdfe5e326d7840d005439c4fba0e13964d0ee28"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/boss/sara/sara.hpp",
+          "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/devil.inl",
+          "sha256": "d5a3a352c5ef9690995e201a387539b0faa24d062f2c2ac8bef5a94e1134c462"
+        },
+        {
+          "path": "src/main/boss/shinki/hp.inl",
+          "sha256": "26d23af5b7f8a342a6c7b5f1d50af120cc03d485934f25f9e1227b46351b8344"
+        },
+        {
+          "path": "src/main/boss/shinki/shinki.hpp",
+          "sha256": "a545cd114f86f129f0b9b478f7602f1315efd5adccbb5e5caa8b1702a6909cbb"
+        },
+        {
+          "path": "src/main/boss/shinki/update_context.cpp",
+          "sha256": "33d5d66ab71baac1e2eaa8f7b7ee579ffcf7cba8e938c609fe19ea924449fc0a"
+        },
+        {
+          "path": "src/main/boss/shinki/update_standalone.hpp",
+          "sha256": "128e98e590e9ea658eddeda40a43fd039f6e6eb3538d8377fe6015b9b743d72c"
+        },
+        {
+          "path": "src/main/boss/shinki/wing_coordinates.inl",
+          "sha256": "84d4ebdb185c069cf60466093237ca9f3b994fea8eaef30263c17c9c98c19f63"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f24cd051d993235d3c8dba38871681d74e94e716bcaecbb8e61e8dfa69e8c317",
+      "compiled_negative_control": {
+        "target_start": 112347,
+        "candidate_start": 112347,
+        "size": 959,
+        "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+        "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
+        "raw_exact": false,
+        "target_fixups": [
+          862,
+          461,
+          165,
+          128
+        ],
+        "candidate_fixups": [
+          862,
+          461,
+          165,
+          128
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 112347,
+          "size": 959,
+          "function_symbol": "shinki_update()",
+          "contribution_start": 111172,
+          "contribution_size": 2134,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-update-context",
+        "entry_sha256": "79e6dca7eb29863b75171792828b99f04d5a0ba6883e93ae71b4b05aa8a23822",
+        "mutation": {
+          "unit": "main-shinki-update-context",
+          "source": "src/main/boss/shinki/update_context.cpp",
+          "find": "boss_defeat_update(65);",
+          "replace": "boss_defeat_update(64);"
+        },
+        "control_sha256": "0f5ce2892da4c6507e9772834225cb6d3f4db1b153b07d63c58e8d4f36098fa2",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 112347,
+          "candidate_start": 112347,
+          "size": 959,
+          "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+          "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
+          "raw_exact": false,
+          "target_fixups": [
+            862,
+            461,
+            165,
+            128
+          ],
+          "candidate_fixups": [
+            862,
+            461,
+            165,
+            128
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 112347,
+            "size": 959,
+            "function_symbol": "shinki_update()",
+            "contribution_start": 111172,
+            "contribution_size": 2134,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "777bc6394e47016ad6dacc417d5808b9dec34ac4717a6d6538c4b9b68b3616ce",
+          "dependency_timestamp_normalized_sha256": "3811ce845a79c27f3d1b64e7b65e587ff8b7987319b511c5ade5a1df5555577d",
+          "module_name": "th05/b6_ctx.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/b6_ctx.cpp",
+            "src/main/boss/shinki/update_context.cpp",
+            "src/main/boss/shinki/update_standalone.hpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/devil.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/b6_ctx.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }

@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **319 bounded C/C++ CODE/DATA units / 504 complete function occurrences**,
-**98,451 authored bytes exact**: 83,114 CODE and 15,337 initialized DATA.
-CODE is 82,422 instruction plus 692 semantic compiler-table bytes.
-Complete compared extents total 98,534; 83 checked padding bytes receive
-no credit. MAIN has 385 functions / 61,928 CODE / 3,091 DATA;
+Current acceptance: **320 bounded C/C++ CODE/DATA units / 505 complete function occurrences**,
+**99,409 authored bytes exact**: 84,072 CODE and 15,337 initialized DATA.
+CODE is 83,354 instruction plus 718 semantic compiler-table bytes.
+Complete compared extents total 99,493; 84 checked padding bytes receive
+no credit. MAIN has 386 functions / 62,886 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,61 @@ Separately reviewed ASM now contributes **6,927 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,294
 complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 131,701 bytes. The global denominator is still unreviewed;
+ownership is now 130,742 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Resumed work: 2026-10-28
+## Latest accepted C++: complete Shinki update, 2026-10-28
+
+MAIN `[1B6DB,1BA9A)` now adds one complete far Pascal Boss update: 959
+compared bytes, 932 instructions plus26 semantic compiler-table bytes and one
+checked uncredited zero at932. All261 instructions, direct branches, thirteen
+switch destinations and the final RETF were reread. There are no instruction
+NOPs. Original ordered MZ fixups `[862,461,165,128]` pass unchanged.
+
+The accepted `update_context.cpp` contains the genuine adjacent Devil802,
+circles/spirals315, float58 and updater959 bodies. The first uses its unchanged
+canonical `.inl`; the other three retain the maintained full owner's tokens.
+This complete2,134-byte compiler contribution naturally emits the native zero
+and groups all four updater segment fixups in its second LEDATA record.
+There is no fake prefix, padding, instruction/ABI change or fixup sorting.
+Only the updater receives new credit; the1,175-byte prefix is already accepted
+elsewhere. Literal historical TU identity remains unproved.
+
+The preceding standalone candidate compiled valid958-byte OMF, then its link
+failed on five actual31-character truncated symbols. Their EXTDEF spellings
+were read and the private binder corrected without recompiling/relinking,
+because the complete958-byte object already disproved its size. That failure
+stays archived. The separate386-byte wing candidate was prepared but never
+compiled; duplicate preparation files are private. Ball220 and wing386 stay
+unknown. No old accepted source/header, record, ABI or tool identity changed.
+
+The successful normal replay has two fresh deterministic positives, complete
+raw bytes and ordered fixups, CRC-valid ordinary OMF, actual sources/argv/logs,
+MAP/public/CS/DGROUP readback and its own compiled default-bonus65-to64 negative.
+The negative changes only relative908, retaining extent/table/zero/fixups, and
+is rejected. Whole positive scaffold MZs and MAPs agree; this is not whole-game
+equality. Installed tool execution proofs and all unchanged objects are reused.
+Receipt `.analysis/unit-replays/main-shinki-update-context-a/receipt.json`,
+SHA-256 `f24cd051d993235d3c8dba38871681d74e94e716bcaecbb8e61e8dfa69e8c317`.
+Root checks: `.analysis/shinki-resumed-native-scopes.json` and
+`.analysis/shinki-update-context-root-review.json`.
+See [complete source and producer review](../src/main/boss/shinki/update_context.md).
+
+The explicit import adds958 authored CODE bytes and one checked padding byte;
+unknown falls131701 to130742 (MAIN51991 to51032). Initialized DATA, all ASM,
+vendor and font counters are unchanged. All previous accepted C/C++ records
+and manifest entries/controls are byte-for-byte unchanged. The global authored
+denominator and98% goal remain unproved.
+
+Final checks pass: native target ownership verification, all364 CI tests,
+public source/configuration gates and `git diff --check`. All five incremental
+plans are empty and execute no compiler tools. Saved evidence:
+`.analysis/shinki-update-context-{native-ownership,final-ci}.log` and
+`.analysis/shinki-update-context-final-plans.json`. OP/MAINE/ZUN ownership
+views are byte-for-byte unchanged. Point-number semantics were committed and
+pushed separately as81dc9a5 before this Boss acceptance.
+
+## Resumed work: point-number lifecycle, 2026-10-28
 
 The user resumed reconstruction; the earlier stop below is historical.
 All four targets pass candidate-local attestation and the starting worktree
