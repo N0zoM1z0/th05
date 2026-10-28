@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Public validation; never needs proprietary games or compilers."""
+"""Lightweight exact-state checks; --full also runs tooling regression tests."""
+import argparse
 import ast
 from pathlib import Path
 import subprocess
@@ -9,11 +10,7 @@ import tomllib
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main() -> int:
-    for path in sorted((ROOT / "scripts").rglob("*.py")):
-        ast.parse(path.read_text(), filename=str(path))
-    for path in (ROOT / "config").glob("*.toml"):
-        tomllib.loads(path.read_text())
+def full_checks() -> int:
     result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests"], cwd=ROOT)
     if result.returncode:
         return result.returncode
@@ -70,6 +67,25 @@ def main() -> int:
         subprocess.run([sys.executable, "scripts/review_font_resource.py"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     print("PASS: public source/configuration validation")
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--full", action="store_true",
+                        help="also run all tooling tests and specialized metadata checks")
+    args = parser.parse_args()
+    for path in sorted((ROOT / "scripts").rglob("*.py")):
+        ast.parse(path.read_text(), filename=str(path))
+    for path in (ROOT / "config").glob("*.toml"):
+        tomllib.loads(path.read_text())
+    if args.full:
+        return full_checks()
+    for script in ("progress.py", "ownership.py"):
+        subprocess.run([sys.executable, "scripts/" + script, "--check"],
+                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
+    print("PASS: exact source/configuration, progress and ownership checks")
     return 0
 
 

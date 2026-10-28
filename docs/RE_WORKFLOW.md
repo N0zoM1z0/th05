@@ -1,99 +1,41 @@
-# Reconstruction workflow
+# Exact reconstruction workflow
 
-1. Read the handoff; inspect `git status --short`.
-2. Run `python3 scripts/preflight.py` and attest the selected analysis view.
-3. Choose one reviewed function or coherent translation unit. Record artifact,
-   segment:offset, complete extent, origin and confidence.
-4. Recover semantics and declarations as C/C++; preserve original Borland ABI.
-5. Compile in two fresh workspaces with the pinned toolchain. Inspect OMF records,
-   segment layout and fixups; compare all bytes in the declared extent.
-   Compile only the selected new/affected units. Reuse unchanged accepted units
-   and successful tool execution probes after identity checks; use
-   `scripts/replay_units.py --plan` or `--units ID...`. Importing a new receipt
-   merges it into existing acceptance without rebuilding unrelated units.
-6. Reject mismatches. Store compiler experiments privately and retain concise
-   replayable observations. Separate source-present from exact acceptance.
-7. Run affected checks, public CI, and `git diff --check`. Update progress and
-   the handoff and gapless ownership inventory (`scripts/ownership.py --write`);
-   commit with `gpt-6.1-sol: ...` and push.
+1. Read the current handoff, inspect `git status --short`, and run preflight.
+2. Choose one function or coherent source unit. Confirm the pinned target,
+   complete extent, ABI and source ownership.
+3. Recover maintained C/C++ and replay only the new/affected unit. Inspect its
+   actual OMF/MAP, complete bytes and original ordered fixups. Stop after a
+   first-producer boundary/size failure; revise the source instead of adding tests.
+4. Import a passing receipt. Reuse unchanged accepted evidence; refresh only
+   the demonstrated dependency closure when a shared input changes.
+5. Update progress/ownership for acceptance changes, run `git diff --check`,
+   write a short handoff and commit/push substantive work.
 
-Use one CPU and low scheduling priority for heavy tools. Keep Wine writers
-serial and Ghidra's heap bounded. Never modify the original HDI or executables.
+Typical commands:
 
-For native evidence establishing a handwritten-assembly owner, keep semantic
-ASM reconstruction and its exact gates separate from C/C++ recovery. The text
-renderer uses `replay_text_fx_render.py`, retains its unchanged DATA producers,
-and requires a subsequent explicit reviewed ownership decision; see the
-[assembly review](reconstruction/TEXT_FX_ASM_OWNERSHIP.md). An inferred replay
-alone grants no global ownership credit, and compiler code cannot use this lane.
+```sh
+python3 scripts/replay_units.py --units UNIT_ID --output .analysis/unit-replays/RUN
+python3 scripts/progress.py --accept .analysis/unit-replays/RUN/receipt.json --write
+python3 scripts/ownership.py --write
+python3 scripts/ci.py
+```
 
-Additional reviewed ASM families can opt into `config/asm_families.toml` and
-`replay_asm_family.py`. Use `--plan`, compile only the selected new/affected
-`--unit`, and atomically import repeated `--accept` receipts where needed.
-Current verification can re-read unchanged saved objects when checks tighten;
-keep the original verifier snapshot and do not claim fresh compilation.
-Per-record/note ownership adoption is explicit and remains separate from the
-CODE oracle, C/C++ counters and the global denominator.
+Use `--artifact op`, `--artifact maine` or `--artifact zun` for their own
+manifests and ledgers. ASM uses `scripts/replay_asm_family.py` and remains a
+separate source classification. Run Wine/Borland and Ghidra serially on one CPU.
 
-When several accepted owners in one artifact share changed dependencies,
-import all their replacement receipts atomically with repeated arguments:
-`python3 scripts/progress.py --accept PATH_A --accept PATH_B`.
-Each receipt undergoes full producer, source, tool and negative-control
-validation. All replacements merge in memory before the final source-freshness
-check; the ledger is replaced once, only if the whole batch passes. Per-unit
-original receipt provenance is retained. Duplicate receipts or imported unit
-IDs fail. `--units ID...` keeps its explicit subset semantics for exactly one
-`--accept` receipt; batch imports require each complete receipt to pass.
+The exact replay is the primary check. Ordinary function recovery does not
+require new unit tests, CPU models, allocation-failure/null-pointer cases,
+exhaustive inputs, fault injection or whole-game validation. A focused semantic
+experiment is useful only when it resolves a concrete recovery question.
+Do not expand it into another completion requirement.
 
-OP and MAINE use `--artifact op` / `--artifact maine` on replay and acceptance,
-with separate `exact_units.*.toml` and `accepted_units.*.json` files. Their
-retained decoded view is pinned by receipt and canonical proof hashes. Replay
-and acceptance verify original packed identity, decoded bytes, ordered fixups
-and historical two-load observations without running the decoder again. Public
-summaries verify the same pinned proof without requiring private game files.
+`python3 scripts/ci.py` is the lightweight public consistency check. Run relevant
+tooling tests when changing the oracle/build scripts; `--full` is available for
+an intentional full tooling regression. Do not run the full suite after each
+source candidate. Existing receipts can share their compiled oracle control;
+additional per-function controls are optional investigations.
 
-Default compiler binary contexts are M/O/E; a new unit may explicitly set
-`binary` for a genuine exception. MAINE's reference build mixes all three
-contexts, so follow its real producer rather than forcing every shared TU to E.
-`build_reference.py op` or `maine` builds only that artifact's calibration
-closure. Calibration and shape surveys are routing evidence with zero credit.
-
-Retained-producer scope review can project complete functions from multiple real
-CODE contributions of the same saved replay. It may carry the identical complete
-negative-control owner, with unchanged identity, to prove the same strict oracle.
-All original results are validated, including excluded failures. A scope must
-belong to exactly one original whole contribution; overlaps, changed controls
-and stale source/producer identities fail. No new compilation is claimed.
-
-Retained whole DATA review uses `review_saved_data.py --artifact ARTIFACT
---from-receipt PATH --unit DATA_ID --output PATH`. It revalidates two archived
-original whole-CODE producers with identical actual compiler argv and complete
-source/binding/tool identities, then compiles exactly one fresh DATA mutation.
-It never claims fresh positive compilations. Original aggregate failures stay
-in the archived parent, and all parent results are rechecked. A parent lacking
-saved actual argv needs a focused normal replay instead.
-
-A focused replay checks the first producer's actual complete MAP extent before
-starting its second producer. An invalid boundary or size stops immediately,
-retaining the first build artifacts and avoiding the unnecessary second build.
-Accepted scopes still require both independent cold producers and their real
-compiled negative. Raw/fixup mismatches with valid extents continue to retain
-both producer results for strict subset and retained-scope review.
-
-
-Compiler wrapper modules use explicit relative DOS8.3 paths, including directory
-components. Replay validates these before target access or tool execution.
-A nine-character stem can silently compile under a Wine short-name alias,
-leaving the intended object name absent. Maintained source paths remain their
-normal descriptive paths; only the small generated wrapper uses the DOS alias.
-
-
-A normal multi-owner replay compiles one configured negative owner. Its shared
-oracle control does not imply a separate mutation was compiled for every owner.
-Use `scripts/supplement_negative.py --parent RECEIPT --unit ID --output PATH`
-when an additional owner needs its own mutation: it first revalidates every
-saved parent result and actual source/OMF/MAP/MZ dependency, retains both existing
-positive producers, and compiles exactly one negative. It changes no acceptance
-or authored-byte counts. `--check PATH/receipt.json` rechecks the parent, source
-mutation, actual argv, OMF, linked output, pinned tool receipt and rejection
-without compiling. Failed/stale parents stop before new compilation or output creation.
+[Acceptance](ORACLES.md) defines exactness. The optional
+[receipt format reference](reconstruction/ORACLE_FORMATS.md) documents special
+DATA, ASM and retained-producer lanes; it is not a checklist for every target.

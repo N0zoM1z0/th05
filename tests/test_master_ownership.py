@@ -151,13 +151,13 @@ class MasterDecisionTests(unittest.TestCase):
 
 
 class MasterPublicCITests(unittest.TestCase):
-    def test_public_ci_dispatches_structure_only_without_private_replay(self):
+    def test_full_ci_dispatches_structure_only_without_private_replay(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)
             for name in ("scripts","config","tests"):(root/name).mkdir()
             (root / "config/master_vendor_ownership.json").write_text("{}")
             with patch.object(ci,"ROOT",root), patch.object(ci.subprocess,"run",return_value=SimpleNamespace(returncode=0)) as run:
-                self.assertEqual(ci.main(),0)
+                self.assertEqual(ci.full_checks(),0)
             commands=[x.args[0] for x in run.call_args_list]
             self.assertIn([sys.executable,"scripts/review_master.py","--structural-check"],commands)
             self.assertNotIn([sys.executable,"scripts/review_master.py","--check"],commands)

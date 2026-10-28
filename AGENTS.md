@@ -1,54 +1,54 @@
 # TH05 reconstruction
 
-The goal is at least 98% **authored bytes exact**, built from maintained source.
-Commit messages use `gpt-6.1-sol: ...`. Keep code and documentation in English.
-
-Read `docs/RE_HANDOFF.md`, `docs/RE_WORKFLOW.md` and `docs/ORACLES.md` first.
+Goal: at least 98% **authored bytes exact** from maintained source.
+Commit messages use `gpt-6.1-sol: ...`. Code and documentation stay in English.
+Read `docs/RE_HANDOFF.md` for current work and `docs/ORACLES.md` for acceptance.
 Run `git status --short` and `python3 scripts/preflight.py` before target work.
 
-- Attest targets against `config/targets.toml`. The supplied Japanese copy has
-  candidate-local-attested provenance, not independently proved pristine status.
-- Preserve 16-bit Borland ABI, near/far pointers, Pascal cleanup, memory model,
-  segment groups, relocation ownership and linker order.
-- Source belongs under `src/{main,op,maine,zun,shared}/`, by subsystem.
-- ReC98 and TH03/TH04 are candidate references; their acceptance never transfers.
-- Never count copied target bytes, target-derived instruction transcriptions,
-  placeholders, padding or normalization as authored exact source.
-- Classify reviewed genuine original assembly separately. Compiler-generated
-  code must be recovered as C/C++ before counting as authored C/C++ bytes.
-- Source presence, semantics, exact units, decoded bytes, packed bytes and whole
-  executable acceptance are separate claims. Never combine their percentages.
-- Native boundary review must enumerate instruction NOPs. Classify linker
-  relaxation/alignment NOPs as checked padding with zero authored credit;
-  compare those bytes normally and preserve the original relocation order.
-- Unit acceptance requires pinned target/toolchain, reviewed complete boundaries,
-  two fresh deterministic builds, OMF integrity, full raw-byte comparison and
-  relocation agreement. Unknown ownership stays in the denominator until reviewed.
-- Keep proprietary tools, games/assets/images, databases and outputs private in
-  ignored directories. Ghidra projects use `ghidra-project/`, not `.analysis/`.
-- Serialize Wine/Borland builds and Ghidra. Use one CPU, nice priority and bounded
-  heap/memory; avoid duplicate tool downloads and unbounded process pools.
-- Run affected checks, `python3 scripts/ci.py`, and `git diff --check` before
-  committing; update the handoff and generated progress. Commit and push often.
+## Work priority
 
-## User-directed incremental work
+- Spend time recovering C/C++ and matching original bytes. Run only new or
+  affected units; reuse unchanged accepted objects, evidence and tool probes
+  after dependency identity checks. Do not cold-replay the whole accepted set.
+- Do not add allocation-failure, null-pointer, defensive-behavior, exhaustive
+  input, fault-injection or whole-game tests to ordinary reconstruction work.
+  Use a small semantic check only when a specific source/ABI ambiguity blocks
+  exact recovery; it is not an additional acceptance gate.
+- New C/C++ functions do not need new Python tests or CPU behavior models.
+  Test the oracle/build tools when those tools change. `scripts/ci.py` checks
+  source/configuration and progress; `--full` is an explicit tooling test run,
+  not a requirement for every function or commit.
+- Keep evidence concise: target extent, source/ABI decision, byte/fixup result
+  and receipt. Historical investigations are reference, not recurring tasks.
+- Run the affected exact replay and `git diff --check`. Update generated
+  progress/ownership when acceptance changes, leave a short handoff, and
+  commit and push substantive progress.
 
-The user explicitly requested faster progress on 2026-10-24: replay only the
-necessary units. Reuse accepted unchanged evidence and objects after checking
-their actual dependency identities. Compile/replay new or affected units;
-do not automatically cold-replay the entire accepted set. Reuse successful
-toolchain execution probes when all relevant installed surfaces and the pinned
-manifest remain unchanged. Shared ABI, flags, binding or layout changes require
-only their demonstrated affected closure, with broader replay when necessary.
+## Exactness and source
 
-## Borland context checks before replay
+- Pin targets/toolchain and review complete boundaries. Acceptance needs two
+  deterministic builds, valid OMF, full raw bytes and original relocation order.
+  Keep the replay's shared oracle control; extra per-function negatives are
+  unnecessary unless the oracle itself is under investigation.
+- Preserve the 16-bit Borland ABI, near/far pointers, Pascal cleanup, memory
+  model, segment groups and linker order. Source belongs under
+  `src/{main,op,maine,zun,shared}/`, by subsystem.
+- ReC98 and TH03/TH04 are references; their acceptance does not transfer.
+  Do not count target-byte copies, instruction transcriptions, placeholders,
+  padding or normalization as authored exact source. Review original ASM
+  separately; recover compiler-generated code as C/C++.
+- Compare padding normally but give it zero authored credit. Keep source,
+  semantics, exact units, decoded/packed files and whole EXE claims separate.
+  Unknown ownership remains unknown; the global denominator is not yet reviewed.
+- The supplied Japanese copy is candidate-local-attested, not independently
+  proved pristine. Keep proprietary inputs and outputs in ignored directories;
+  Ghidra projects use `ghidra-project/`.
+- Serialize Wine/Borland and Ghidra. Use one CPU, nice priority and bounded memory.
 
-- Keep `#pragma option -zC/-zP` before all C/C++ tokens. Use `#pragma codeseg
-  SEG GROUP` for selectors after includes. Preserve the actual first declaration
-  context for every near callback.
-- `.model large` already declares word-aligned `_DATA` and `_BSS`; do not
-  redeclare them byte-aligned. Keep every individual ORG below 64 KiB.
-- Bind actual compiler EXTDEF names (including Borland's 31-character truncation).
-  Place even empty foreign compiler SEGDEFs at their real group context: a
-  differently named scaffold segment can leave an empty segment beyond the
-  group's 64 KiB window. Check actual OMF GRPDEF before changing source ABI.
+## Borland details that affect bytes
+
+- Put `#pragma option -zC/-zP` before C/C++ tokens; use `#pragma codeseg SEG GROUP`
+  after includes. Preserve the first declaration context of near callbacks.
+- `.model large` already declares word-aligned `_DATA`/`_BSS`. Keep each ORG
+  below 64 KiB, bind actual EXTDEF names including 31-character truncation,
+  and place empty foreign SEGDEFs in their actual group context.

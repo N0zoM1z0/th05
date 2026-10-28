@@ -13,17 +13,17 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **504 complete C/C++ functions / 83,114 authored CODE bytes**
+The first **512 complete C/C++ functions / 87,284 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
 fixups and compiled controls. Separately, **15,337 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored C/C++ bytes exact are
-**98,451**: 82,422 instruction, 692 compiler switch-table
+**102,621**: 86,492 instruction, 792 compiler switch-table
 and 15,337 initialized DATA bytes. Complete compared extents contain
-98,534 bytes, including 83 excluded padding bytes. The oracle
+102,708 bytes, including 87 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
-Separately reviewed assembly now contributes **6,927 instruction bytes,
+Separately reviewed assembly now contributes **7,020 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
 and 64 semantic DATA bytes**. The
 [text renderer](docs/reconstruction/TEXT_FX_ASM_OWNERSHIP.md),
@@ -42,8 +42,8 @@ and 64 semantic DATA bytes**. The
 [piano drawing](src/op/piano/piano.md),
 [sound loading](src/shared/sound/load.md) and
 [EGC rectangles](src/shared/hardware/egc_rect_copy.md) cover
-7,294 complete compared bytes with
-two independent producers and own assembled negatives. 69 checked alignment,
+7,388 complete compared bytes with
+two independent producers and own assembled negatives. 70 checked alignment,
 inert-branch and runtime-placeholder bytes compare normally with zero credit.
 Explicit native ownership decisions leave C/C++ counters unchanged. Literal
 historical source and original assembler identity remain unknown.
@@ -60,12 +60,19 @@ interval across all four targets; it grants no inferred vendor exclusions.
 [EGC shifts](docs/reconstruction/MASTER_EGC_SHIFTS_VENDOR_REVIEW.md) and
 [EMS transfers](docs/reconstruction/MASTER_EMS_TRANSFERS_VENDOR_REVIEW.md) and
 [unchanged original circle fill](docs/reconstruction/MASTER_PRIMARY_CIRCLEFILL_VENDOR_REVIEW.md) and
-[circle outline](docs/reconstruction/MASTER_PRIMARY_CIRCLEX_VENDOR_REVIEW.md) classify
-69,770 third-party CODE bytes. The [SIN8](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
+[circle outline](docs/reconstruction/MASTER_PRIMARY_CIRCLEX_VENDOR_REVIEW.md) and
+[string runtime](docs/reconstruction/STRING_RUNTIME_OWNERSHIP.md) classify
+73,804 third-party CODE bytes. The [SIN8](docs/reconstruction/MASTER_SIN8_VENDOR_REVIEW.md)
 and [CL DATA](docs/reconstruction/CL_DATA_OWNERSHIP.md) reviews classify 3,777
-initialized library DATA bytes. All 73,547 vendor bytes grant zero authored
+initialized library DATA bytes. All 77,581 vendor bytes grant zero authored
 credit. A separately reviewed [8,192-byte ZUN font resource](docs/reconstruction/ZUN_FONT_RESOURCE.md)
-also grants zero authored credit. Unknown ownership remains 131,701 bytes.
+also grants zero authored credit. Unknown ownership remains 123,399 bytes.
+
+Daily work focuses on the selected exact replay and generated-state checks.
+`python3 scripts/ci.py` runs lightweight public consistency checks;
+`python3 scripts/ci.py --full` explicitly runs all tooling tests. Ordinary
+function recovery does not require new CPU models, defensive-behavior tests
+or a full test run. See the [workflow](docs/RE_WORKFLOW.md).
 
 Replays are incremental: unchanged accepted units and tool execution probes are
 reused after input identity checks. Only new or affected units are compiled.

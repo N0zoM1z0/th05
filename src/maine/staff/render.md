@@ -35,3 +35,9 @@ The native full-boundary review is `.analysis/staff-render-native/root-review.js
 independent forensic detail is `workflow-review.json` in that private directory.
 The private source/control proposal is `unit-proposal.json`; the meaningful
 uncompiled negative would change the first trail color from6 to5.
+
+A later ordinary declaration/loop-initialization-order trial
+(`.analysis/native-producers/maine-staff-order-a`) still emits4223 for the full
+4229-byte family, including updater623 and renderer858. It does not recover
+either missing pointer reload. Both maintained bodies were restored byte-exact;
+no accepted owner was rebuilt and no behavior-test expansion is required.

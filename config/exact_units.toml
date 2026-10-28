@@ -4403,3 +4403,22 @@ unit = "main-mai-yuki-foreground"
 source = "src/main/boss/mai_yuki/foreground_body.inl"
 find = "if(boss.phase == MY_FG_PHASE_EXPLODE_BIG)"
 replace = "if(boss.phase != MY_FG_PHASE_EXPLODE_BIG)"
+
+[[units]]
+id = "main-b4ball-render"
+source = "src/main/boss/mai_yuki/b4ball_render.cpp"
+module = "th05/b4render.cpp"
+segment = "YUKI_SOLO_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x108df
+size = 96
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+bindings_source = "probes/units/b4ball_render_bindings.asm"
+
+[[controls]]
+unit = "main-b4ball-render"
+source = "src/main/boss/mai_yuki/b4ball_render.cpp"
+find = "B4_RENDER_DAMAGE_CELS = 8;"
+replace = "B4_RENDER_DAMAGE_CELS = 9;"
