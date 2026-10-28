@@ -80,4 +80,3 @@ bool pascal near dialog_op(uint8_t c)
     }
     return false;
 }
-

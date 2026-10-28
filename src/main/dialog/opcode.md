@@ -66,3 +66,7 @@ Semantic model `.analysis/dialog-opcode-semantic-model.json`, SHA-256
 Failed first producers:
 `.analysis/unit-replays/main-dialog-opcode-standalone-a/` and
 `.analysis/unit-replays/main-dialog-opcode-context-a/`.
+
+After that producer review, one empty final line was removed from opcode.inl
+to satisfy the staged diff check. The archived source hashes describe the
+original producer snapshots; this whitespace cleanup claims no new compilation.

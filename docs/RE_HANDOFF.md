@@ -62,6 +62,10 @@ ownership reuses the successful native verification from343536d; no new native
 ownership claim is made. Logs: `.analysis/dialog-opcode-final-ci.log`,
 `.analysis/dialog-opcode-final-plans.json` and
 `.analysis/dialog-opcode-actual-inputs-check.json`.
+The staged check subsequently caught one extra final blank line in the new
+opcode.inl; a follow-up removes it. Archived producer/source hashes retain
+their original snapshots, with no fresh build claimed for that whitespace-only
+cleanup. Accepted dependencies and counters are unaffected.
 
 ## Latest reviewed ASM: shared point-popup allocation, 2026-10-28
 
