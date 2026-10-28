@@ -10,6 +10,8 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
 - Spend time recovering C/C++ and matching original bytes. Run only new or
   affected units; reuse unchanged accepted objects, evidence and tool probes
   after dependency identity checks. Do not cold-replay the whole accepted set.
+- Preserve original behavior, including unchecked allocations and pointers.
+  Do not add defensive fixes or require new error handling during reconstruction.
 - Do not add allocation-failure, null-pointer, defensive-behavior, exhaustive
   input, fault-injection or whole-game tests to ordinary reconstruction work.
   Use a small semantic check only when a specific source/ABI ambiguity blocks

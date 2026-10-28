@@ -76,6 +76,9 @@ allocation-failure/null-pointer checks, exhaustive inputs, fault injection or
 per-function supplementary negatives. Such experiments are optional and useful
 only for a concrete source/ABI ambiguity. Historical test narratives are not
 an ongoing checklist; earlier detailed handoffs remain in Git history.
+Preserve original unchecked behavior instead of adding defensive fixes.
+The follow-up cleanup removes redundant batch rollback/argument-error tests;
+batch dependency refresh and invalid-object/oracle checks remain covered.
 
 Replay only new/affected units and reuse unchanged accepted dependencies/tools.
 `python3 scripts/ci.py` now performs lightweight public consistency checks;

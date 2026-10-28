@@ -3,7 +3,6 @@ import json
 import contextlib
 import io
 from pathlib import Path
-import shutil
 import struct
 import sys
 import tempfile
@@ -142,12 +141,6 @@ class AtomicAcceptTests(unittest.TestCase):
         records = json.loads(self.ledger.read_text())['units']
         self.assertEqual([x['replay_receipt_sha256'] for x in records], [digest(p) for p in self.fresh])
 
-    def test_stale_second_receipt_never_publishes_first(self):
-        with self.assertRaisesRegex(ValueError, 'accepted source changed'):
-            progress.accept_many([self.fresh[0], self.old[1]], root=self.root)
-        self.assertEqual(self.ledger.read_bytes(), self.before)
-        self.assertFalse(self.ledger.with_suffix('.json.tmp').exists())
-
     def test_bad_second_object_or_negative_leaves_ledger_untouched(self):
         for relative in ('a/source/b.obj', 'negative/source/units.exe'):
             path = self.fresh[1].parent / relative;old = path.read_bytes()
@@ -157,14 +150,6 @@ class AtomicAcceptTests(unittest.TestCase):
                 progress.accept_many(self.fresh, root=self.root)
             self.assertEqual(self.ledger.read_bytes(), self.before)
             path.write_bytes(old)
-
-    def test_batch_rejects_duplicate_receipts_units_and_ambiguous_subset(self):
-        for paths, units in (([], None), ([self.fresh[0]] * 2, None), (self.fresh, ['a'])):
-            with self.assertRaises(ValueError):progress.accept_many(paths, root=self.root, units=units)
-        clone = self.root / '.analysis/duplicate';shutil.copytree(self.fresh[0].parent, clone)
-        with self.assertRaisesRegex(ValueError, 'duplicate imported unit'):
-            progress.accept_many([self.fresh[0], clone / 'receipt.json'], root=self.root)
-        self.assertEqual(self.ledger.read_bytes(), self.before)
 
     def test_repeated_cli_accepts_one_batch_and_single_subset_still_works(self):
         arguments = ['progress.py', '--accept', str(self.fresh[0]), '--accept', str(self.fresh[1])]

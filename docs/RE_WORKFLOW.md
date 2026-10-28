@@ -29,6 +29,8 @@ require new unit tests, CPU models, allocation-failure/null-pointer cases,
 exhaustive inputs, fault injection or whole-game validation. A focused semantic
 experiment is useful only when it resolves a concrete recovery question.
 Do not expand it into another completion requirement.
+Preserve the original error handling and unchecked operations; defensive fixes
+are outside ordinary exact recovery.
 
 `python3 scripts/ci.py` is the lightweight public consistency check. Run relevant
 tooling tests when changing the oracle/build scripts; `--full` is available for
