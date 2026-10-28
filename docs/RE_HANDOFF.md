@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **322 bounded C/C++ CODE/DATA units / 507 complete function occurrences**,
-**101,132 authored bytes exact**: 85,795 CODE and 15,337 initialized DATA.
-CODE is 85,027 instruction plus 768 semantic compiler-table bytes.
-Complete compared extents total 101,218; 86 checked padding bytes receive
-no credit. MAIN has 388 functions / 64,609 CODE / 3,091 DATA;
+Current acceptance: **323 bounded C/C++ CODE/DATA units / 508 complete function occurrences**,
+**102,149 authored bytes exact**: 86,812 CODE and 15,337 initialized DATA.
+CODE is 86,020 instruction plus 792 semantic compiler-table bytes.
+Complete compared extents total 102,236; 87 checked padding bytes receive
+no credit. MAIN has 389 functions / 65,626 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,53 @@ Separately reviewed ASM now contributes **6,927 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,294
 complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 129,017 bytes. The global denominator is still unreviewed;
+ownership is now 127,999 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete Mai solo update, 2026-10-28
+## Latest accepted C++: complete shared Mai/Yuki update, 2026-10-28
+
+MAIN `[17FDB,183D5)` adds the complete1,018-byte far Pascal shared updater:
+993 instruction bytes, one checked zero at993 and24 compiler-table bytes at994.
+All282 instructions, complete returns, direct branches, six case values and
+six table targets were reread. There are no instruction NOPs. Original ordered
+fixups `[942,931,915,898,874,723,312,171,123]` pass unchanged.
+
+`update_context.cpp` precedes the byte-for-byte unchanged callback body with
+the ten genuine adjacent final patterns from canonical `remaining_patterns.inl`.
+Their939 bytes are already accepted and receive no additional credit. The
+complete1,957-byte contribution naturally emits the zero and keeps all nine
+updater segment fixups in its second LEDATA. Its historical TU identity is
+unproved. Full canonical types, first declarations and real foreign CS/DS
+groups remain unchanged; no accepted source/header/control or verifier changed.
+
+The first new normal replay passes two fresh positives, full raw bytes, ordered
+fixups, CRC-valid OMF/LEDATA, actual sources/argv/logs, link response and
+MAP/public/frame readback. Its own HP5500-to5501 compiled negative changes only
+relative509 and is rejected while retaining extent/zero/tables/fixups. Positive
+normalized objects, MAPs and whole scaffold MZs agree. The full contribution
+also has exact raw CODE, but only the updater gets new acceptance. Old standalone
+failures remain archived and unaccepted; no output is repaired or normalized.
+Installed execution probes and all unchanged accepted objects are reused.
+
+Receipt `.analysis/unit-replays/main-mai-yuki-update-context-a/receipt.json`,
+SHA-256 `7266d6778d95b7448f1be6fe8d9cb4cbc545967b443d086868fe8523080b4b14`.
+Native/actual source reviews: `.analysis/mai-yuki-update-context-native-review.json`
+and `.analysis/mai-yuki-update-context-root-review.json` (SHA-256
+`0c7abe509a8a9e26a85b602028a1e1e59ce5f0be4f33a9484b84db8caf9f424b`).
+See [complete context review](../src/main/boss/mai_yuki/update_context.md).
+
+Import adds1,017 authored CODE bytes and one checked padding byte. Unknown falls
+129017 to127999 (MAIN49307 to48289). DATA, ASM, vendor and font counters stay
+unchanged. The global authored denominator and98% goal remain unproved.
+
+Final native ownership verification, all364 CI tests, public source gates and
+diff checks pass. All five incremental plans are empty and execute no compiler
+tools. Every older accepted record and manifest entry/control, and the complete
+OP/MAINE/ZUN ownership views, are unchanged. Logs:
+`.analysis/mai-yuki-update-context-{native-ownership,final-ci}.log` and
+`.analysis/mai-yuki-update-context-final-plans.json`.
+
+## Previous accepted C++: complete Mai solo update, 2026-10-28
 
 MAIN `[1952B,1983D)` now adds the complete786-byte C Pascal far updater:
 765 instruction bytes, one checked zero at765 and20 semantic compiler-table

@@ -4324,3 +4324,25 @@ unit = "main-mai-update"
 source = "src/main/boss/mai_yuki/mai_update.cpp"
 find = "boss.phase_end_hp = 5800;"
 replace = "boss.phase_end_hp = 5801;"
+
+[[units]]
+id = "main-mai-yuki-update-context"
+source = "src/main/boss/mai_yuki/update_context.cpp"
+module = "th05/my_ctx.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_update_context_bindings.asm"
+function_symbol = "mai_yuki_update()"
+target_start = 0x17fdb
+size = 1018
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{ offset = 993, value = 0 }]
+code_data_ranges = [{ offset = 994, size = 24, kind = "compiler-switch-table" }]
+
+[[controls]]
+unit = "main-mai-yuki-update-context"
+source = "src/main/boss/mai_yuki/update_context.cpp"
+find = "(boss.hp + boss2.hp) < 5500"
+replace = "(boss.hp + boss2.hp) < 5501"

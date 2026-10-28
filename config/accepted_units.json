@@ -2,26 +2,50 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "abcc944fab064baff01b8674307959094762d548aee963ee8b5b81da12dce47e",
+  "replay_receipt_sha256": "7266d6778d95b7448f1be6fe8d9cb4cbc545967b443d086868fe8523080b4b14",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 103723,
-    "candidate_start": 103723,
-    "size": 786,
-    "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
-    "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
+    "target_start": 98267,
+    "candidate_start": 98267,
+    "size": 1018,
+    "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+    "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
     "raw_exact": false,
     "target_fixups": [
-      251,
-      145
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
     ],
     "candidate_fixups": [
-      251,
-      145
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 98267,
+      "size": 1018,
+      "function_symbol": "mai_yuki_update()",
+      "contribution_start": 97328,
+      "contribution_size": 1957,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -68354,6 +68378,511 @@
           "-ml",
           "-DBINARY='M'",
           "th05/mai_upd.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-yuki-update-context",
+      "entry_sha256": "789b47a8f4e3e7ad502d4bc27390e4eeadddf247836618561a459c8c7ecd3592",
+      "result": {
+        "id": "main-mai-yuki-update-context",
+        "entry_sha256": "789b47a8f4e3e7ad502d4bc27390e4eeadddf247836618561a459c8c7ecd3592",
+        "rounds": [
+          {
+            "target_start": 98267,
+            "candidate_start": 98267,
+            "size": 1018,
+            "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+            "candidate_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+            "raw_exact": true,
+            "target_fixups": [
+              942,
+              931,
+              915,
+              898,
+              874,
+              723,
+              312,
+              171,
+              123
+            ],
+            "candidate_fixups": [
+              942,
+              931,
+              915,
+              898,
+              874,
+              723,
+              312,
+              171,
+              123
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 98267,
+              "size": 1018,
+              "function_symbol": "mai_yuki_update()",
+              "contribution_start": 97328,
+              "contribution_size": 1957,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 98267,
+            "candidate_start": 98267,
+            "size": 1018,
+            "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+            "candidate_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+            "raw_exact": true,
+            "target_fixups": [
+              942,
+              931,
+              915,
+              898,
+              874,
+              723,
+              312,
+              171,
+              123
+            ],
+            "candidate_fixups": [
+              942,
+              931,
+              915,
+              898,
+              874,
+              723,
+              312,
+              171,
+              123
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 98267,
+              "size": 1018,
+              "function_symbol": "mai_yuki_update()",
+              "contribution_start": 97328,
+              "contribution_size": 1957,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "e97c8340ab99a0601ad6f8b94598c5307661a1d7aa37b95e3d037bc966dea1b4",
+            "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
+            "module_name": "th05/my_ctx.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_ctx.cpp",
+              "src/main/boss/mai_yuki/update_context.cpp",
+              "src/main/boss/mai_yuki/update.hpp",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/mai_yuki/later_patterns.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/remaining_patterns.inl"
+            ]
+          },
+          {
+            "sha256": "5e3f854775f519b5fd4789719032f2a0b94017ae03ca28eed223787b66457fa9",
+            "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
+            "module_name": "th05/my_ctx.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_ctx.cpp",
+              "src/main/boss/mai_yuki/update_context.cpp",
+              "src/main/boss/mai_yuki/update.hpp",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/mai_yuki/later_patterns.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/remaining_patterns.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_ctx.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_ctx.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_update_context_bindings.asm",
+            "sha256": "b6af8e3c504e4fe82792b5979e0634e81fdb78fc27d86de112b2a752c33b7941"
+          },
+          {
+            "path": "src/main/boss/mai_yuki.hpp",
+            "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/later_patterns.hpp",
+            "sha256": "1b0fde4e48759620770bdbf95dd9084502cf35410afa15ccf62326c18e911c2a"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/remaining_patterns.inl",
+            "sha256": "583cb658664597152c796719f5c55f7694d61aebb71ec1aa7b07fb6d3834ba51"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/update.hpp",
+            "sha256": "2ff70d0bfdb2d56cfd16b9af4c2ad4aeef8c5d8bac5c360078a4d4ba8af6c07d"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/update_context.cpp",
+            "sha256": "4f11e0c9cd894220ca6d7aa1d3ebcfc6548cf16d9518a7ff5e9ec524e4e82a8c"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/laser.hpp",
+            "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/dialog/file.hpp",
+            "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_yuki_update_context_bindings.asm",
+          "sha256": "b6af8e3c504e4fe82792b5979e0634e81fdb78fc27d86de112b2a752c33b7941"
+        },
+        {
+          "path": "src/main/boss/mai_yuki.hpp",
+          "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+          "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/later_patterns.hpp",
+          "sha256": "1b0fde4e48759620770bdbf95dd9084502cf35410afa15ccf62326c18e911c2a"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/remaining_patterns.inl",
+          "sha256": "583cb658664597152c796719f5c55f7694d61aebb71ec1aa7b07fb6d3834ba51"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/update.hpp",
+          "sha256": "2ff70d0bfdb2d56cfd16b9af4c2ad4aeef8c5d8bac5c360078a4d4ba8af6c07d"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/update_context.cpp",
+          "sha256": "4f11e0c9cd894220ca6d7aa1d3ebcfc6548cf16d9518a7ff5e9ec524e4e82a8c"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/laser.hpp",
+          "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/dialog/file.hpp",
+          "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "7266d6778d95b7448f1be6fe8d9cb4cbc545967b443d086868fe8523080b4b14",
+      "compiled_negative_control": {
+        "target_start": 98267,
+        "candidate_start": 98267,
+        "size": 1018,
+        "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+        "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
+        "raw_exact": false,
+        "target_fixups": [
+          942,
+          931,
+          915,
+          898,
+          874,
+          723,
+          312,
+          171,
+          123
+        ],
+        "candidate_fixups": [
+          942,
+          931,
+          915,
+          898,
+          874,
+          723,
+          312,
+          171,
+          123
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 98267,
+          "size": 1018,
+          "function_symbol": "mai_yuki_update()",
+          "contribution_start": 97328,
+          "contribution_size": 1957,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-mai-yuki-update-context",
+        "entry_sha256": "789b47a8f4e3e7ad502d4bc27390e4eeadddf247836618561a459c8c7ecd3592",
+        "mutation": {
+          "unit": "main-mai-yuki-update-context",
+          "source": "src/main/boss/mai_yuki/update_context.cpp",
+          "find": "(boss.hp + boss2.hp) < 5500",
+          "replace": "(boss.hp + boss2.hp) < 5501"
+        },
+        "control_sha256": "47cb3a31338cac2cca93487104d99ca2d71d76b6582849e9567ec1d8fd6270fa",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 98267,
+          "candidate_start": 98267,
+          "size": 1018,
+          "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+          "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
+          "raw_exact": false,
+          "target_fixups": [
+            942,
+            931,
+            915,
+            898,
+            874,
+            723,
+            312,
+            171,
+            123
+          ],
+          "candidate_fixups": [
+            942,
+            931,
+            915,
+            898,
+            874,
+            723,
+            312,
+            171,
+            123
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 98267,
+            "size": 1018,
+            "function_symbol": "mai_yuki_update()",
+            "contribution_start": 97328,
+            "contribution_size": 1957,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "8dee0cd0c6a64ba4a1a3dec7f9c220d5197f1ca862b0673a69af3dc96186a41a",
+          "dependency_timestamp_normalized_sha256": "cb714ac14557c16c97d9fa4c998ef2c2cd17c85fcb49256a25fcf3ff4b158317",
+          "module_name": "th05/my_ctx.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/my_ctx.cpp",
+            "src/main/boss/mai_yuki/update_context.cpp",
+            "src/main/boss/mai_yuki/update.hpp",
+            "src/main/dialog/file.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/mai_yuki/later_patterns.hpp",
+            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "src/main/boss/mai_yuki.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/mai_yuki/remaining_patterns.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/my_ctx.cpp"
         ]
       },
       "receipt_aggregate_pass": true

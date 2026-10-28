@@ -122,3 +122,15 @@ its original fixup stream and differs only at the table-base operand by1;
 the24 table bytes themselves agree. The entire function, zero and tables
 remain mandatory. No clipping, inserted byte, normalization or speculative
 flag/context replay is used, and this owner is outside default selection.
+
+## Accepted complete callback in adjacent final-pattern context
+
+The later `update_context.cpp` retains this callback's body byte-for-byte and
+places the genuine preceding ten final patterns (939 bytes) in the same
+compiler contribution through their unchanged canonical `.inl`. Two fresh
+positive producers match the complete1,018-byte updater, its zero, both tables
+and original nine-entry ordered fixup stream. The own combined-HP5500-to5501
+compiled negative is rejected. Only the updater adds credit; the prefix's
+previous acceptance is unchanged. No source padding or output repair is used.
+The old standalone failures stay archived and unaccepted. See the
+[complete source/context and actual producer review](update_context.md).
