@@ -4365,3 +4365,41 @@ unit = "main-map-free"
 source = "src/main/formats/map_free.cpp"
 find = "if(map_seg) {"
 replace = "if(!map_seg) {"
+
+[[units]]
+id = "main-sara-foreground"
+source = "src/main/boss/sara/foreground.cpp"
+module = "th05/sara_fg.cpp"
+segment = "BOSS_FG_TEXT"
+wrapper_options = "-zCBOSS_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/sara_foreground_bindings.asm"
+target_start = 0x140c4
+size = 159
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-sara-foreground"
+source = "src/main/boss/sara/foreground.inl"
+find = "if(boss.phase == BOSS_FG_PHASE_EXPLODE_BIG)"
+replace = "if(boss.phase != BOSS_FG_PHASE_EXPLODE_BIG)"
+
+[[units]]
+id = "main-mai-yuki-foreground"
+source = "src/main/boss/mai_yuki/foreground_standalone.cpp"
+module = "th05/my_fg.cpp"
+segment = "MY_FG_TEXT"
+wrapper_options = "-zCMY_FG_TEXT -zPmain_01"
+bindings_source = "probes/units/mai_yuki_foreground_standalone_bindings.asm"
+target_start = 0x1081d
+size = 194
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-mai-yuki-foreground"
+source = "src/main/boss/mai_yuki/foreground_body.inl"
+find = "if(boss.phase == MY_FG_PHASE_EXPLODE_BIG)"
+replace = "if(boss.phase != MY_FG_PHASE_EXPLODE_BIG)"

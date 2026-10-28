@@ -2,21 +2,23 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e210879366e2b607fdc66db98c8cf527d5021c21f009998c22582105fc602d11",
+  "replay_receipt_sha256": "2900fbcabf4b371807bc64861f3402b78bfa0e30e751cb764f12b84c0c381c39",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58886,
-    "candidate_start": 58886,
-    "size": 23,
-    "target_sha256": "88d008ea53d32f1bd316c98dba250d03709cc549c95c0bfdd2c1227ce8eaf785",
-    "candidate_sha256": "7dce1d24941978cecdbe0c4e5fd35876c5c9c9486341562b6cf794235e9ba690",
+    "target_start": 67613,
+    "candidate_start": 67613,
+    "size": 194,
+    "target_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+    "candidate_sha256": "ebb84589e2d32238eb24e9b068c2742e00acd6c3e5373f1203a9e3f8e7bd0e0c",
     "raw_exact": false,
     "target_fixups": [
-      14
+      90,
+      71
     ],
     "candidate_fixups": [
-      14
+      90,
+      71
     ],
     "fixups_exact": true,
     "exact": false
@@ -69083,6 +69085,559 @@
           "-ml",
           "-DBINARY='M'",
           "th05/map_free.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-sara-foreground",
+      "entry_sha256": "5e96995a036c35552e368cbfc862da696959ec19fd639b917f2bd45bd62da02d",
+      "result": {
+        "id": "main-sara-foreground",
+        "entry_sha256": "5e96995a036c35552e368cbfc862da696959ec19fd639b917f2bd45bd62da02d",
+        "rounds": [
+          {
+            "target_start": 82116,
+            "candidate_start": 82116,
+            "size": 159,
+            "target_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+            "candidate_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+            "raw_exact": true,
+            "target_fixups": [
+              147,
+              129,
+              44
+            ],
+            "candidate_fixups": [
+              147,
+              129,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 82116,
+            "candidate_start": 82116,
+            "size": 159,
+            "target_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+            "candidate_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+            "raw_exact": true,
+            "target_fixups": [
+              147,
+              129,
+              44
+            ],
+            "candidate_fixups": [
+              147,
+              129,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "cd4d8bee68aedd86d2c2ee8ac218688a6cb850fa03352285d20302510d83d743",
+            "dependency_timestamp_normalized_sha256": "9985b4f7d0009558d768efe11cbd813c407d05fff3f7b90d3c9ac3048301ade9",
+            "module_name": "th05/sara_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sara_fg.cpp",
+              "src/main/boss/sara/foreground.cpp",
+              "src/main/boss/foreground.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/sara/foreground.inl"
+            ]
+          },
+          {
+            "sha256": "9f95782e19fc4a6db5c34232494755f33ae1e8bef1b00f5a9e250e926fd414bd",
+            "dependency_timestamp_normalized_sha256": "9985b4f7d0009558d768efe11cbd813c407d05fff3f7b90d3c9ac3048301ade9",
+            "module_name": "th05/sara_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sara_fg.cpp",
+              "src/main/boss/sara/foreground.cpp",
+              "src/main/boss/foreground.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/sara/foreground.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sara_fg.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sara_fg.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/sara_foreground_bindings.asm",
+            "sha256": "435890a89574769bc35cec60d0ce1eb33f3307591cc3c52c46e1160141f2e8a1"
+          },
+          {
+            "path": "src/main/boss/foreground.hpp",
+            "sha256": "74f85ba8ac6b55b175e83d60d51235d3343e52a4c1937641994e0488387ff318"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/boss/sara/foreground.cpp",
+            "sha256": "839385cd7be4bc9f20a505c5a00dd732e14397be464ba8337bee3c037a8afc0c"
+          },
+          {
+            "path": "src/main/boss/sara/foreground.inl",
+            "sha256": "992d441f273c76c92b4630be63008cdce9950dbd647b63b91ce9c47966232ba9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/sara_foreground_bindings.asm",
+          "sha256": "435890a89574769bc35cec60d0ce1eb33f3307591cc3c52c46e1160141f2e8a1"
+        },
+        {
+          "path": "src/main/boss/foreground.hpp",
+          "sha256": "74f85ba8ac6b55b175e83d60d51235d3343e52a4c1937641994e0488387ff318"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/boss/sara/foreground.cpp",
+          "sha256": "839385cd7be4bc9f20a505c5a00dd732e14397be464ba8337bee3c037a8afc0c"
+        },
+        {
+          "path": "src/main/boss/sara/foreground.inl",
+          "sha256": "992d441f273c76c92b4630be63008cdce9950dbd647b63b91ce9c47966232ba9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "ff85f75656a7c9ef8a4eb3a62197a587ae1b54139b513f90776b3ac69e1fe0b7",
+      "compiled_negative_control": {
+        "target_start": 82116,
+        "candidate_start": 82116,
+        "size": 159,
+        "target_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+        "candidate_sha256": "53809779bca09994fb478318f5414e18b122704206b64ff9d115f15db574d1d1",
+        "raw_exact": false,
+        "target_fixups": [
+          147,
+          129,
+          44
+        ],
+        "candidate_fixups": [
+          147,
+          129,
+          44
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-sara-foreground",
+        "entry_sha256": "5e96995a036c35552e368cbfc862da696959ec19fd639b917f2bd45bd62da02d",
+        "mutation": {
+          "unit": "main-sara-foreground",
+          "source": "src/main/boss/sara/foreground.inl",
+          "find": "if(boss.phase == BOSS_FG_PHASE_EXPLODE_BIG)",
+          "replace": "if(boss.phase != BOSS_FG_PHASE_EXPLODE_BIG)"
+        },
+        "control_sha256": "672991086496eddc9dcc3637783d2ea233da304ebc6b7b103948858a42f4a120",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 82116,
+          "candidate_start": 82116,
+          "size": 159,
+          "target_sha256": "738b1a76effa5e5f24a00f1d4e850de9da6aa66de68fa83110f2f85490c39364",
+          "candidate_sha256": "53809779bca09994fb478318f5414e18b122704206b64ff9d115f15db574d1d1",
+          "raw_exact": false,
+          "target_fixups": [
+            147,
+            129,
+            44
+          ],
+          "candidate_fixups": [
+            147,
+            129,
+            44
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "6bdf0d350036771e8d8bdc9d6dbbebb0df44ceb5c627944a714f8cf448f93018",
+          "dependency_timestamp_normalized_sha256": "ae881fc6eb5d8021bf69d6aaa03428b5b75fbf3d634155931fd7ea455f0382ca",
+          "module_name": "th05/sara_fg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sara_fg.cpp",
+            "src/main/boss/sara/foreground.cpp",
+            "src/main/boss/foreground.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/sara/foreground.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sara_fg.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-yuki-foreground",
+      "entry_sha256": "b742802c57f2e3d1424e750df247d56f450ff29093c09bab1932789ffea19551",
+      "result": {
+        "id": "main-mai-yuki-foreground",
+        "entry_sha256": "b742802c57f2e3d1424e750df247d56f450ff29093c09bab1932789ffea19551",
+        "rounds": [
+          {
+            "target_start": 67613,
+            "candidate_start": 67613,
+            "size": 194,
+            "target_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+            "candidate_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+            "raw_exact": true,
+            "target_fixups": [
+              90,
+              71
+            ],
+            "candidate_fixups": [
+              90,
+              71
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 67613,
+            "candidate_start": 67613,
+            "size": 194,
+            "target_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+            "candidate_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+            "raw_exact": true,
+            "target_fixups": [
+              90,
+              71
+            ],
+            "candidate_fixups": [
+              90,
+              71
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0ff3782a16375aec73a9a73a2de374f75d05707065c42a88aff03d112ee22116",
+            "dependency_timestamp_normalized_sha256": "b1357a90ac162ef9965594bdd2fa9f71a5ad4abf2424611be39cb6f2017d6874",
+            "module_name": "th05/my_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_fg.cpp",
+              "src/main/boss/mai_yuki/foreground_standalone.cpp",
+              "src/main/boss/mai_yuki/foreground.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/mai_yuki/foreground_body.inl"
+            ]
+          },
+          {
+            "sha256": "0ff3782a16375aec73a9a73a2de374f75d05707065c42a88aff03d112ee22116",
+            "dependency_timestamp_normalized_sha256": "b1357a90ac162ef9965594bdd2fa9f71a5ad4abf2424611be39cb6f2017d6874",
+            "module_name": "th05/my_fg.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/my_fg.cpp",
+              "src/main/boss/mai_yuki/foreground_standalone.cpp",
+              "src/main/boss/mai_yuki/foreground.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/mai_yuki/foreground_body.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_fg.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/my_fg.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_yuki_foreground_standalone_bindings.asm",
+            "sha256": "ee7572d28e7f65cb659ed43a239fccd07474b5e040eb64626fe75bc2724e5d55"
+          },
+          {
+            "path": "src/main/boss/mai_yuki.hpp",
+            "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/foreground.hpp",
+            "sha256": "a98cc930b20e4b7ba9f70875e235c7d9f94e8417f4f529718bd77acac1a469c2"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/foreground_body.inl",
+            "sha256": "d3ae7531cca903ffd4b05fe07773bbaca895fd258ae9087714088a6a452176cb"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/foreground_standalone.cpp",
+            "sha256": "6675f8c03ce012ceade10f6543331cb0060fa695bf7139b94724cb012b44c045"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_yuki_foreground_standalone_bindings.asm",
+          "sha256": "ee7572d28e7f65cb659ed43a239fccd07474b5e040eb64626fe75bc2724e5d55"
+        },
+        {
+          "path": "src/main/boss/mai_yuki.hpp",
+          "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/foreground.hpp",
+          "sha256": "a98cc930b20e4b7ba9f70875e235c7d9f94e8417f4f529718bd77acac1a469c2"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/foreground_body.inl",
+          "sha256": "d3ae7531cca903ffd4b05fe07773bbaca895fd258ae9087714088a6a452176cb"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/foreground_standalone.cpp",
+          "sha256": "6675f8c03ce012ceade10f6543331cb0060fa695bf7139b94724cb012b44c045"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2900fbcabf4b371807bc64861f3402b78bfa0e30e751cb764f12b84c0c381c39",
+      "compiled_negative_control": {
+        "target_start": 67613,
+        "candidate_start": 67613,
+        "size": 194,
+        "target_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+        "candidate_sha256": "ebb84589e2d32238eb24e9b068c2742e00acd6c3e5373f1203a9e3f8e7bd0e0c",
+        "raw_exact": false,
+        "target_fixups": [
+          90,
+          71
+        ],
+        "candidate_fixups": [
+          90,
+          71
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-mai-yuki-foreground",
+        "entry_sha256": "b742802c57f2e3d1424e750df247d56f450ff29093c09bab1932789ffea19551",
+        "mutation": {
+          "unit": "main-mai-yuki-foreground",
+          "source": "src/main/boss/mai_yuki/foreground_body.inl",
+          "find": "if(boss.phase == MY_FG_PHASE_EXPLODE_BIG)",
+          "replace": "if(boss.phase != MY_FG_PHASE_EXPLODE_BIG)"
+        },
+        "control_sha256": "bce47e42e41a706401855b356763bacb76e89f9dbbe01c8ea0f72ffc42d44876",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 67613,
+          "candidate_start": 67613,
+          "size": 194,
+          "target_sha256": "d1db02567896c47df842f9494c13101d11dc64026dd7161ea5b0ab1cfa8a2de3",
+          "candidate_sha256": "ebb84589e2d32238eb24e9b068c2742e00acd6c3e5373f1203a9e3f8e7bd0e0c",
+          "raw_exact": false,
+          "target_fixups": [
+            90,
+            71
+          ],
+          "candidate_fixups": [
+            90,
+            71
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "e8d5e95e4d943e48610f98e929b825c775707af570e866290a8390b6cf31c5dd",
+          "dependency_timestamp_normalized_sha256": "ecdae08c1ac09aa1f062e1537e473e2812e8297e33340431ece2ef4453c8be10",
+          "module_name": "th05/my_fg.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/my_fg.cpp",
+            "src/main/boss/mai_yuki/foreground_standalone.cpp",
+            "src/main/boss/mai_yuki/foreground.hpp",
+            "src/main/boss/mai_yuki.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/mai_yuki/foreground_body.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/my_fg.cpp"
         ]
       },
       "receipt_aggregate_pass": true

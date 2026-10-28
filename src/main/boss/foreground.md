@@ -85,3 +85,38 @@ imported `main-louise-foreground` as one complete function and 116 authored
 CODE bytes, with no padding or tables. Its CPP, shared implementation, header
 and binder are now frozen accepted dependencies. This acceptance does not
 transfer to Sara or the failed combined producer.
+
+## Complete Sara foreground accepted
+
+The new ordinary declaration order is `left, top, patnum`, matching the
+unchanged coordinate-then-sprite computations. The previous order was
+`top, patnum, left`. These are uninitialized ordinary signed int declarations;
+their types, names, all calculations, evaluation order and calls are unchanged.
+No `register`, physical-register reference, alias, compiler option, barrier or
+padding is introduced. Borland now naturally retains left in DI and top in
+the genuine stack local, matching all159 native bytes and ordered fixups
+`[147,129,44]`. Literal historical declaration spelling remains unproved.
+
+The complete definition is shared in sara/foreground.inl by the standalone
+sara/foreground.cpp and the combined foreground.cpp. The existing accepted
+Louise source, header, control and objects are unchanged. The first direct-source
+replay passed; after canonical factoring, `main-sara-foreground-order-b`
+supplies a normal replay with two fresh producers of the actual maintained
+source closure. Its own phase-equality inversion changes only byte31 from75
+to74, retaining full extent and fixup order, and is rejected.
+
+The native procedure and both final source producers each pass1,744 modeled
+rendering cases. Graphics and explosion functions are explicit ABI stubs;
+arguments, ordering, full24-byte Boss records, canaries, stack and preserved
+registers are checked. This does not execute hardware, raster assets, the
+explosion pools or the complete game. An initial model used the wrong damage
+offset16; its first native case failed. Canonical offset18 corrected the model
+without changing game source or producer output; the failed model/log remain.
+
+Receipt `.analysis/unit-replays/main-sara-foreground-order-b/receipt.json`, SHA-256
+`ff85f75656a7c9ef8a4eb3a62197a587ae1b54139b513f90776b3ac69e1fe0b7`.
+Joint native/source/actual-producer review `.analysis/foreground-order-root-review.json`,
+SHA-256 `0d0eb838524f6b4d046a84d4acb135b4f422c1aeb50e60032ec7ae60c39ee8a6`.
+The earlier161-byte failure stays archived. Only this complete159-byte function
+gets new acceptance; the newly shared combined TU has not been replayed or
+accepted as a whole. No DATA, padding, ASM or whole-EXE credit is added.

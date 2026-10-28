@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **324 bounded C/C++ CODE/DATA units / 509 complete function occurrences**,
-**102,172 authored bytes exact**: 86,835 CODE and 15,337 initialized DATA.
-CODE is 86,043 instruction plus 792 semantic compiler-table bytes.
-Complete compared extents total 102,259; 87 checked padding bytes receive
-no credit. MAIN has 390 functions / 65,649 CODE / 3,091 DATA;
+Current acceptance: **326 bounded C/C++ CODE/DATA units / 511 complete function occurrences**,
+**102,525 authored bytes exact**: 87,188 CODE and 15,337 initialized DATA.
+CODE is 86,396 instruction plus 792 semantic compiler-table bytes.
+Complete compared extents total 102,612; 87 checked padding bytes receive
+no credit. MAIN has 392 functions / 66,002 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,8 +18,68 @@ Separately reviewed ASM now contributes **7,020 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,388
 complete compared bytes include 70 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 123,848 bytes. The global denominator is still unreviewed;
+ownership is now 123,495 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest accepted C++: Sara159 and shared Mai/Yuki194 foreground callbacks
+
+Two complete MAIN callbacks now pass their own independent normal replays:
+Sara `[140C4,14163)`159 and Mai/Yuki `[1081D,108DF)`194. All63/76 native
+instructions, direct branches and final near returns are reread. There are
+no instruction NOPs, tables or padding. Original ordered fixups are
+`[147,129,44]` and `[90,71]` respectively.
+
+Only ordinary uninitialized local declaration order changes: Sara now declares
+left/top/patnum in computation order; Mai's two coordinates precede Yuki's,
+as do their unchanged calculations. Names, types, expressions, reads, calls,
+evaluation order, canonical full24-byte Boss ABI and compiler flags are
+unchanged. No register hint, pseudoregister, alias, barrier, padding or output
+normalization is used. This resolves the old coordinate-allocation gaps.
+Literal historical source spelling remains unproved.
+
+Canonical inl definitions are shared with both existing combined candidates.
+The initial direct-source replays passed; factoring was followed by two new
+normal fresh producers and own compiled controls per canonical owner. Both
+final pairs match every raw byte and original ordered fixup, with valid OMF,
+one full CODE LEDATA each, actual source/argv/log/link-response/frame/public
+readback and deterministic normalized objects, MAPs and whole scaffold MZs.
+Their phase-equality inversions change only byte31/51,75 to74, retaining all
+boundaries/fixups and being rejected. Neither old failure is relabelled exact.
+
+Sara's native and both final producers each pass1,744 semantic cases;
+Mai/Yuki's each pass7,424, totaling27,504. Cases cover all256 sprite values,
+critical animation/phase/damage partitions, signed coordinates, full records,
+canaries and actual stack/register contracts. The accepted75-byte Mai/Yuki
+helper executes without extra credit; graphics/explosion providers are ABI
+stubs. Hardware/assets/interrupts/whole-game effects are excluded. The initial
+model's damage-offset16 mistake failed immediately against native; canonical
+offset18 corrected it with no source/producer changes, retaining the failure.
+
+Receipts `.analysis/unit-replays/main-sara-foreground-order-b/receipt.json`
+(SHA-256 `ff85f75656a7c9ef8a4eb3a62197a587ae1b54139b513f90776b3ac69e1fe0b7`)
+and `.analysis/unit-replays/main-mai-yuki-foreground-order-b/receipt.json`
+(`2900fbcabf4b371807bc64861f3402b78bfa0e30e751cb764f12b84c0c381c39`).
+Joint review `.analysis/foreground-order-root-review.json`, SHA-256
+`0d0eb838524f6b4d046a84d4acb135b4f422c1aeb50e60032ec7ae60c39ee8a6`;
+model `.analysis/foreground-order-semantic-model.json`, SHA-256
+`0344d525df23ea8eb62de5920630294594bbd2bfebb0b2137542dfe3082f7c7b`.
+
+Atomic import adds353 authored instruction bytes and two complete functions.
+Unknown falls123848 to123495 (MAIN44138 to43785). Existing Louise116,
+Mai/Yuki helper75 and all other accepted records remain unchanged; no old
+compiler owner is replayed. DATA/ASM/vendor/resource counts are unchanged.
+The combined TUs and whole EXE are unaccepted; global98% remains unproved.
+See [Sara](../src/main/boss/foreground.md) and
+[Mai/Yuki](../src/main/boss/mai_yuki/foreground.md) for complete source evidence.
+
+Final complete native ownership verification, all373 CI tests, public gates
+and diff checks pass. Five incremental plans are empty and execute no compiler
+tools. Every older MAIN record, manifest entry/control and complete OP/MAINE/
+ZUN ownership view is unchanged. The only inventory changes are the two MAIN
+instruction scopes, totaling353 bytes. Evidence:
+`.analysis/foreground-order-native-ownership.log`,
+`.analysis/foreground-order-final-ci.log` and
+`.analysis/foreground-order-final-plans.json`.
 
 ## Latest ownership: six complete Borland string CODE contributions
 

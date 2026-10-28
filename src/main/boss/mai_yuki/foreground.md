@@ -65,3 +65,43 @@ fixups `[67,49]`, and the own animation-speed negative control. The root
 accepted those 75 bytes only. `sprite_put.cpp`, its complete ABI header and its
 independent binder are now frozen accepted inputs. The coherent callback still
 emits 198 bytes and receives no exact credit.
+
+## Complete shared foreground accepted
+
+The new declaration order is Mai-left, Mai-top, Yuki-left, Yuki-top, as in the
+unchanged calculation sequence. Only the order of the four uninitialized
+ordinary int declarations changes. Their types/names, expressions, field
+reads, statement order and actual APIs are identical. No register hint,
+pseudoregister, type alias, option variant, barrier or padding is introduced.
+Borland naturally retains Mai's coordinates in SI/DI and Yuki's in the two
+actual stack slots, reproducing all194 bytes and ordered fixups `[90,71]`.
+
+foreground_body.inl now holds the single canonical callback definition for
+foreground_standalone.cpp and the combined foreground.cpp. The existing
+75-byte sprite helper, its ABI/header, control and acceptance are unchanged.
+The initial direct-source replay passed; after factoring, the final normal
+`main-mai-yuki-foreground-order-b` replay supplies two fresh current producers
+and its own phase-equality inversion. The mutation changes only byte51 from75
+to74 and is rejected, preserving the complete size and fixup order. Both
+positives have ordinary complete OMF/LEDATA, deterministic normalized objects,
+MAPs and whole scaffold MZs. Actual staged source, argv/logs, link response,
+CS AE1/DGROUP209D frames and public boundaries are reread on import.
+
+Native and both final source callbacks each pass7,424 modeled cases. The real
+already-accepted75-byte helper executes with zero additional credit. The
+model checks all256 sprite values, all eight valid animation frames for the
+critical sprite banks, phase/defeat/damage partitions, signed coordinates,
+actual graphics stack arguments, clearing both damage flags, complete Boss
+records/canaries and preserved stack/registers. Graphics/explosion renderers
+are ABI stubs; hardware, assets, interrupts and the complete game are excluded.
+The shared initial damage-offset modeling error and correction are recorded
+in the joint review; producer/source bytes were never changed to fit a model.
+
+Receipt `.analysis/unit-replays/main-mai-yuki-foreground-order-b/receipt.json`, SHA-256
+`2900fbcabf4b371807bc64861f3402b78bfa0e30e751cb764f12b84c0c381c39`.
+Joint review `.analysis/foreground-order-root-review.json`, SHA-256
+`0d0eb838524f6b4d046a84d4acb135b4f422c1aeb50e60032ec7ae60c39ee8a6`.
+Joint semantic model `.analysis/foreground-order-semantic-model.json`, SHA-256
+`0344d525df23ea8eb62de5920630294594bbd2bfebb0b2137542dfe3082f7c7b`.
+The earlier198-byte callback failure is preserved. Only the complete194-byte
+callback adds credit, not its existing helper, combined TU, state or providers.
