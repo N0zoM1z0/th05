@@ -2,7 +2,9 @@
 
 Candidate natural C++ for the complete original MAIN callback at load
 `1952B..1983D`, frame `1527`, group offset `42BB`. Its far Pascal entry
-returns without arguments. Its focused first producer remains unaccepted.
+returns without arguments. Its earlier first producer remains a retained
+failure; the complete function is now accepted through the late word-alignment
+context described below.
 
 The original contains 226 instructions occupying 765 bytes, a zero byte at
 offset 765, and a ten-entry compiler switch table at offsets `766..786`.
@@ -61,3 +63,50 @@ outside default replay selection and receives no credit. Subsequent source
 integration uses the actual common survivor callback atDS4438, shared with
 Yuki, with distinct inner void callback443A. No accepted header is altered
 for this unaccepted owner's missing table-prefix zero.
+
+## Accepted complete callback after explicit table alignment
+
+The first new adjacent-context attempt put the actual 461-byte laser cycle
+before the unchanged callback. Its frontend failed because the early bool
+declaration preceded the canonical Turbo C++ bool typedef. Including the
+unchanged movement header before that declaration fixed the integration error.
+The resulting real producer emitted 1,246 bytes, still one short of 1,247;
+the missing table zero persisted. Its proposed C-linkage `MAI_UPDATE` function
+scope also hit the existing oracle guard requiring demangled function publics.
+That guard is unchanged. Both failed contexts and their source snapshots stay
+private; they provide no acceptance or credit.
+
+Inspection of the original standalone source found that it had never enabled
+ordinary `-a2`, unlike the other reviewed table-producing Boss owners. The
+maintained source now explicitly restores `MAI_UPDATE_TEXT main_03` after
+includes and enables `-a2` only after every canonical object type is complete.
+The function body is byte-for-byte unchanged. This supplies a natural compiler
+word-table context, without changing any structure alignment or accepted header,
+inserting a byte, adding a helper or retagging the genuine C Pascal ABI.
+It does not prove the historical compiler option's literal spelling.
+
+`main-mai-update-aligned-a` passes two fresh complete 786-byte contributions,
+the zero at 765, all twenty table bytes, and ordered fixups `[251,145]`.
+There are 226 native instructions and no instruction NOPs. The existing binder
+is unchanged; actual CS is 1527, DS 209D and the C Pascal entry remains
+`MAI_UPDATE` with its real far returns. Whole-contribution acceptance covers
+both return paths, the complete table and every relocation without requiring
+a new interpretation of C public labels.
+
+Both ordinary CRC-valid compiler objects contain exactly one 786-byte LEDATA
+payload. Normalized object identities, MAPs and whole scaffold MZs agree.
+The own compiled negative changes initial end-HP5800 to5801, differs only at
+relative70, and is rejected with complete size/zero/table/fixups retained.
+Actual input snapshots, compiler arguments, link response, logs, OMF and
+MAP/frame evidence were reread. Installed execution probes and every unchanged
+accepted object are reused after identity checks; none is cold-replayed.
+
+Receipt `.analysis/unit-replays/main-mai-update-aligned-a/receipt.json`, SHA-256
+`abcc944fab064baff01b8674307959094762d548aee963ee8b5b81da12dce47e`.
+Native review `.analysis/mai-update-context-native-review.json`; root actual
+producer/source review `.analysis/mai-update-aligned-root-review.json`, SHA-256
+`1876a1b76fce7bae721e796f6aa10871ee68d252477396c0aaea4bbad9eb761d`.
+New credit is one complete function and785 authored CODE bytes (765 instructions
+plus20 compiler-table bytes). The zero gets none; the separate accepted laser
+cycle is unchanged and not counted again. No DATA, ASM, packed-container or
+whole-game equality is claimed.

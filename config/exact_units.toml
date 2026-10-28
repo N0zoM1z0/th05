@@ -4303,3 +4303,24 @@ unit = "main-alice-update-context"
 source = "src/main/boss/alice/update_context.cpp"
 find = "boss.phase_end_hp = 7400;"
 replace = "boss.phase_end_hp = 7300;"
+
+[[units]]
+id = "main-mai-update"
+source = "src/main/boss/mai_yuki/mai_update.cpp"
+module = "th05/mai_upd.cpp"
+segment = "MAI_UPDATE_TEXT"
+wrapper_options = "-zCMAI_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_update_bindings.asm"
+target_start = 0x1952b
+size = 786
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{ offset = 765, value = 0 }]
+code_data_ranges = [{ offset = 766, size = 20, kind = "compiler-switch-table" }]
+
+[[controls]]
+unit = "main-mai-update"
+source = "src/main/boss/mai_yuki/mai_update.cpp"
+find = "boss.phase_end_hp = 5800;"
+replace = "boss.phase_end_hp = 5801;"

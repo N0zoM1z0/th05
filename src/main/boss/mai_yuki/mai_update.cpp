@@ -1,6 +1,9 @@
 // Complete Mai solo state machine, including the compiler's switch table.
 #pragma option -zCMAI_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_update.hpp"
+// Canonical object types are complete before the compiler table alignment.
+#pragma codeseg MAI_UPDATE_TEXT main_03
+#pragma option -a2
 
 extern "C" void pascal far mai_update(void)
 {

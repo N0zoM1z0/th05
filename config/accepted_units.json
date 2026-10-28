@@ -2,34 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "58d732d4bb129bdc282b4166742a121204cf8add538e7b9fb095426ed83a62e0",
+  "replay_receipt_sha256": "abcc944fab064baff01b8674307959094762d548aee963ee8b5b81da12dce47e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 125334,
-    "candidate_start": 125334,
-    "size": 939,
-    "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-    "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+    "target_start": 103723,
+    "candidate_start": 103723,
+    "size": 786,
+    "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+    "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
     "raw_exact": false,
     "target_fixups": [
-      133
+      251,
+      145
     ],
     "candidate_fixups": [
-      133
+      251,
+      145
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 125334,
-      "size": 939,
-      "function_symbol": "alice_update()",
-      "contribution_start": 124772,
-      "contribution_size": 1501,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -67964,6 +67956,404 @@
           "-ml",
           "-DBINARY='M'",
           "th05/a_ctx.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mai-update",
+      "entry_sha256": "373da3fecb51979463cde4915d15f4b997ea2ac761fb5ea9477472a7ee4c7859",
+      "result": {
+        "id": "main-mai-update",
+        "entry_sha256": "373da3fecb51979463cde4915d15f4b997ea2ac761fb5ea9477472a7ee4c7859",
+        "rounds": [
+          {
+            "target_start": 103723,
+            "candidate_start": 103723,
+            "size": 786,
+            "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+            "candidate_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+            "raw_exact": true,
+            "target_fixups": [
+              251,
+              145
+            ],
+            "candidate_fixups": [
+              251,
+              145
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 103723,
+            "candidate_start": 103723,
+            "size": 786,
+            "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+            "candidate_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+            "raw_exact": true,
+            "target_fixups": [
+              251,
+              145
+            ],
+            "candidate_fixups": [
+              251,
+              145
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "20380c60acbfd5e3221a48376bfbde98f463641785f67b49c7e7456845fbf44a",
+            "dependency_timestamp_normalized_sha256": "44ba5372e979c5477b21bb16dafcf752d51d390f63e865dbfd49043cf1bca83c",
+            "module_name": "th05/mai_upd.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mai_upd.cpp",
+              "src/main/boss/mai_yuki/mai_update.cpp",
+              "src/main/boss/mai_yuki/mai_update.hpp",
+              "src/main/boss/mai_yuki/b4ball.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "15b9cc5e58221e11ac147905ead4a5003d1c18187c277b334f201fb63a43517d",
+            "dependency_timestamp_normalized_sha256": "44ba5372e979c5477b21bb16dafcf752d51d390f63e865dbfd49043cf1bca83c",
+            "module_name": "th05/mai_upd.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mai_upd.cpp",
+              "src/main/boss/mai_yuki/mai_update.cpp",
+              "src/main/boss/mai_yuki/mai_update.hpp",
+              "src/main/boss/mai_yuki/b4ball.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mai_upd.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mai_upd.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mai_update_bindings.asm",
+            "sha256": "068d19652cd0a0e55c9f23a67649a9f077c997c9ae3ba6e2b49842f0c063be70"
+          },
+          {
+            "path": "src/main/boss/mai_yuki.hpp",
+            "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/b4ball.hpp",
+            "sha256": "d5f26216dacfbe5c38280b178a34baa4230fb022255648806bb6086f9c3be920"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+            "sha256": "efc2b5059fd1ca3ff34ebfc527711646197dc47bb2eede29e7182729ed7e9161"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/mai_update.cpp",
+            "sha256": "61849230a97ff14486f95d78b1408db8381b898f4f2d108fc9b3d3d98657c8f3"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/mai_update.hpp",
+            "sha256": "4a301cbc1cb1cddc681a24ff0a78ebf0d131f11e249f81835eb12f2c229079d7"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/laser.hpp",
+            "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mai_update_bindings.asm",
+          "sha256": "068d19652cd0a0e55c9f23a67649a9f077c997c9ae3ba6e2b49842f0c063be70"
+        },
+        {
+          "path": "src/main/boss/mai_yuki.hpp",
+          "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/b4ball.hpp",
+          "sha256": "d5f26216dacfbe5c38280b178a34baa4230fb022255648806bb6086f9c3be920"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+          "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+          "sha256": "efc2b5059fd1ca3ff34ebfc527711646197dc47bb2eede29e7182729ed7e9161"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/mai_update.cpp",
+          "sha256": "61849230a97ff14486f95d78b1408db8381b898f4f2d108fc9b3d3d98657c8f3"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/mai_update.hpp",
+          "sha256": "4a301cbc1cb1cddc681a24ff0a78ebf0d131f11e249f81835eb12f2c229079d7"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/laser.hpp",
+          "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "abcc944fab064baff01b8674307959094762d548aee963ee8b5b81da12dce47e",
+      "compiled_negative_control": {
+        "target_start": 103723,
+        "candidate_start": 103723,
+        "size": 786,
+        "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+        "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
+        "raw_exact": false,
+        "target_fixups": [
+          251,
+          145
+        ],
+        "candidate_fixups": [
+          251,
+          145
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-mai-update",
+        "entry_sha256": "373da3fecb51979463cde4915d15f4b997ea2ac761fb5ea9477472a7ee4c7859",
+        "mutation": {
+          "unit": "main-mai-update",
+          "source": "src/main/boss/mai_yuki/mai_update.cpp",
+          "find": "boss.phase_end_hp = 5800;",
+          "replace": "boss.phase_end_hp = 5801;"
+        },
+        "control_sha256": "06f45a98aff14eed38e379f758f9048b34da5750516ad5d35fc7dcdc3bd69770",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 103723,
+          "candidate_start": 103723,
+          "size": 786,
+          "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+          "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
+          "raw_exact": false,
+          "target_fixups": [
+            251,
+            145
+          ],
+          "candidate_fixups": [
+            251,
+            145
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "0528247066c1eeb0f56a6fc117b184a19a501c707f2cd13064430e02a4eeae5d",
+          "dependency_timestamp_normalized_sha256": "0671a226150848a3b8110bc3321b3efea8536cb28150313c663dffc7c6d99c83",
+          "module_name": "th05/mai_upd.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mai_upd.cpp",
+            "src/main/boss/mai_yuki/mai_update.cpp",
+            "src/main/boss/mai_yuki/mai_update.hpp",
+            "src/main/boss/mai_yuki/b4ball.hpp",
+            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "src/main/boss/mai_yuki.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mai_upd.cpp"
         ]
       },
       "receipt_aggregate_pass": true

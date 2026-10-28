@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **321 bounded C/C++ CODE/DATA units / 506 complete function occurrences**,
-**100,347 authored bytes exact**: 85,010 CODE and 15,337 initialized DATA.
-CODE is 84,262 instruction plus 748 semantic compiler-table bytes.
-Complete compared extents total 100,432; 85 checked padding bytes receive
-no credit. MAIN has 387 functions / 63,824 CODE / 3,091 DATA;
+Current acceptance: **322 bounded C/C++ CODE/DATA units / 507 complete function occurrences**,
+**101,132 authored bytes exact**: 85,795 CODE and 15,337 initialized DATA.
+CODE is 85,027 instruction plus 768 semantic compiler-table bytes.
+Complete compared extents total 101,218; 86 checked padding bytes receive
+no credit. MAIN has 388 functions / 64,609 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,60 @@ Separately reviewed ASM now contributes **6,927 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,294
 complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 129,803 bytes. The global denominator is still unreviewed;
+ownership is now 129,017 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete Alice update, 2026-10-28
+## Latest accepted C++: complete Mai solo update, 2026-10-28
+
+MAIN `[1952B,1983D)` now adds the complete786-byte C Pascal far updater:
+765 instruction bytes, one checked zero at765 and20 semantic compiler-table
+bytes at766. All226 instructions, complete returns, direct branches and ten
+table targets were reread; there are no instruction NOPs. The original ordered
+MZ fixups `[251,145]` pass unchanged.
+
+The maintained source now enables ordinary `-a2` after all canonical types and
+restores its actual CODE selector after includes. Its function body is unchanged;
+the prior source lacked that table-alignment context. No structure layout,
+foreign ABI, callback, binder, compiler invocation flag or verifier rule changed.
+The standalone complete contribution naturally emits the native zero; historical
+option spelling remains unproved. The separate461-byte laser cycle retains
+its old accepted source and evidence and receives no additional credit.
+
+The earlier new adjacent-cycle hypothesis did not resolve the zero. Its initial
+frontend failed because bool preceded the real canonical typedef; after fixing
+that include order, the real source produced1246 instead of1247 bytes. Its
+C-linkage function-scope proposal also failed the existing demangled-public
+guard. Neither attempt has a second producer, negative, receipt or acceptance;
+their snapshots are retained privately. No guard was relaxed to admit C labels.
+Only the subsequent complete-contribution aligned owner is accepted.
+
+Two fresh positive producers match all786 raw bytes and original ordered fixups;
+their CRC-valid single-LEDATA OMF, normalized object identities, MAPs and whole
+scaffold MZs agree. The own HP5800-to5801 compiled negative changes only relative70
+and is rejected, retaining extent/zero/table/fixups. Actual staged sources,
+argv/logs, link response and CS1527/DS209D MAP frames were reread. Installed
+execution probes and all unchanged accepted objects are reused.
+
+Receipt `.analysis/unit-replays/main-mai-update-aligned-a/receipt.json`, SHA-256
+`abcc944fab064baff01b8674307959094762d548aee963ee8b5b81da12dce47e`.
+Native/actual source review: `.analysis/mai-update-context-native-review.json`
+and `.analysis/mai-update-aligned-root-review.json` (SHA-256
+`1876a1b76fce7bae721e796f6aa10871ee68d252477396c0aaea4bbad9eb761d`).
+See [complete Mai update review](../src/main/boss/mai_yuki/mai_update.md).
+
+Import adds785 authored CODE bytes and one checked padding byte. Unknown falls
+129803 to129017 (MAIN50093 to49307). DATA, ASM, vendor and font counters are
+unchanged. The global authored denominator and98% goal remain unproved.
+
+Final native ownership verification, all364 CI tests, public source gates and
+diff checks pass. All five incremental plans are empty and execute no compiler
+tools. Every older accepted record and manifest entry/control, and the complete
+OP/MAINE/ZUN ownership views, are unchanged. Logs:
+`.analysis/mai-update-aligned-{native-ownership,final-ci}.log` and
+`.analysis/mai-update-aligned-final-plans.json`. The preceding complete Alice
+acceptance was committed and pushed separately as c9a2d40.
+
+## Previous accepted C++: complete Alice update, 2026-10-28
 
 MAIN `[1E996,1ED41)` now adds the complete939-byte far Pascal Boss updater:
 908 instruction bytes, one checked zero at908 and30 compiler-table bytes at909.
