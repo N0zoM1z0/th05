@@ -52,3 +52,10 @@ builds. Its real `input_wait_for_change(0)`→`(1)` mutation is rejected. The bi
 names the real earlier box/command helpers and later face/cleanup functions;
 it supplies no bodies. Only this complete runner and the separately accepted
 106-byte box pair receive credit, not the full832-byte runtime.
+
+The unchanged command body is now shared through opcode.inl. A subsequent
+isolated interpreter and a split-segment context with the genuine earlier STD
+callbacks both still emit455 versus456 bytes. Both stop after their first
+size failure; no acceptance or padding follows. All256 command bytes and
+boundary scenarios pass780 cases per native/compiled interpreter, with foreign
+ABI stubs. See [complete context and semantic evidence](opcode.md).

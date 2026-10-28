@@ -21,6 +21,48 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 127,882 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
+## Latest bounded C++ investigation: complete dialog interpreter
+
+The complete456-byte MAIN interpreter `[13B82,13D4A)` is reviewed again:
+425 instruction bytes, zero425,30 table bytes at426, no instruction NOPs,
+and original ordered fixups `[395,336,312,269,224,217,174,145,136,86]`.
+Its unchanged command body is factored into opcode.inl. The new independent
+TU retains canonical declarations, packed sprite payload, real unsigned
+filename pointer, selector and late `-a2`, but still emits455 bytes. A second
+context includes the literal two genuine earlier STD callback definitions in
+their separate actual73-byte CODE contribution; the interpreter remains455.
+Both first size gates stop before any second producer, negative or receipt.
+The failed proposals stay outside the live manifest.
+
+Both actual425-byte instruction regions differ only at23/116/180: table base
+and two foreign forward-call offsets, each shifted by the missing byte. All15
+case targets and ordered fixups agree. The STD prefix keeps its size and real
+relaxation NOP24, but its forward animation call also drifts one byte; it is
+not a new exact or replacement claim. No graphics prefix, object patch,
+normalization, padding, forced register or ABI change is introduced.
+
+Native and both real compiled interpreters pass780 cases each: all256 command
+bytes under three scenarios plus twelve byte-pointer wrap cases. Checks cover
+return/stack/registers, full pointer/cursor/side state, canaries and actual
+foreign-call arguments/order. Graphics/audio/delay/strlen are explicit ABI
+stubs; hardware, assets, blocking/timing and STD execution are excluded.
+All2,340 cases grant no exact credit. See [review](../src/main/dialog/opcode.md).
+Private actual review `.analysis/dialog-opcode-root-review.json`, SHA-256
+`cbfac3b961c10cd82eba16ca5b9561722359c57a8c760628fd97333f94b54df8`;
+model `.analysis/dialog-opcode-semantic-model.json`, SHA-256
+`d81121f28079d6fd1e4d0de76fb48790ef42bedf186bf282dba387d108c7f593`.
+Acceptance, ownership, generated progress and all authored counters remain
+unchanged from343536d. Earlier accepted objects and tool execution proofs
+are reused after actual dependency checks.
+
+All364 CI tests, public gates and diff checks pass. The five incremental
+plans are empty and execute no compiler tools. Canonical snapshots and actual
+consumed aliases are re-read for both failed producers. The unchanged accepted
+ownership reuses the successful native verification from343536d; no new native
+ownership claim is made. Logs: `.analysis/dialog-opcode-final-ci.log`,
+`.analysis/dialog-opcode-final-plans.json` and
+`.analysis/dialog-opcode-actual-inputs-check.json`.
+
 ## Latest reviewed ASM: shared point-popup allocation, 2026-10-28
 
 The complete94-byte MAIN procedure `[16E28,16E86)` has two live public entries,
