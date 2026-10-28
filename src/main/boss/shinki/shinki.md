@@ -220,3 +220,9 @@ failed receipts or any older accepted record. The family now has14 complete
 accepted functions /3517 authored CODE bytes (3491 instruction plus26 table).
 Its remaining unaccepted complete scopes are ball220 and wing386. See
 [complete source, ABI and producer review](update_context.md).
+
+The subsequent standalone wing replay reproduces all386 raw bytes twice but
+still fails ordered fixups `[305,76]` versus original `[76,305]`. New natural
+scalar ball consumers emit232 versus220; a single old-body no-optimization
+diagnostic emits224. No failed scope is accepted. Full-pool native/actual
+scalar checks pass96 cases. See [current bounded investigation](wing_preparation.md).

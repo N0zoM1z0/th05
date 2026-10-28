@@ -18,8 +18,70 @@ Separately reviewed ASM now contributes **7,020 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,388
 complete compared bytes include 70 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 127,882 bytes. The global denominator is still unreviewed;
+ownership is now 123,848 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest ownership: six complete Borland string CODE contributions
+
+Three real CL.LIB members (ctor2,ctor3,strings), each with complete _TEXT and
+_TEXTC contributions, establish4,034 additional vendor CODE bytes. Distributed
+OMF independently reproduces the pinned calibration and the original under
+the reviewed native bindings. All209 original fixup actions and131 original
+loader sites retain their order; full SEGDEF/LEDATA/MAP boundaries and all
+raw bytes pass. Existing late DATA/BSS anchors are reused without changing
+the old review. Native far CALLs independently anchor the new _TEXTC frame:
+calibration1FD8D to original1FD7A, paragraph-16/offset-3, linear-19.
+
+All28 real linker-relaxation NOPs are enumerated as checked padding with zero
+authored credit. The two other90 bytes are metadata and a CALL operand.
+Each contribution's own decoded-object byte mutation is rejected; these are
+model controls, not compiled-source negatives. The explicit adoption grants
+zero authored bytes/functions/units/ASM/DATA and does not reconstruct Borland
+source. The original strings DATA102 is already owned separately.
+
+Unknown falls127882 to123848 (MAIN48172 to44138); vendor CODE69770 to73804.
+All existing authored/ASM/DATA counters and accepted source records stay
+unchanged. New native verification and nine structural/adoption regression
+tests pass. See [full review](reconstruction/STRING_RUNTIME_OWNERSHIP.md).
+
+## Latest bounded Boss investigation: Shinki wing386 and ball220
+
+The new standalone wing source retains the literal maintained algorithm and
+full canonical types. Its first frontend fails before object because bool
+precedes its actual typedef; the corrected new header includes unchanged
+movement.hpp first. The next two fresh producers match all386 raw bytes but
+emit fixups `[305,76]` versus original `[76,305]`. The own shake8-to9 control
+changes only byte311. The aggregate remains failed, unimported and outside
+the live manifest. No order normalization or synthetic prefix follows.
+
+New ordinary scalar consumers of the genuine Motion return each generate232
+versus original220, stopping at first size gates. One fixed-O- diagnostic on
+the old body produces224 and stays private; no legacy-profile source owner
+is maintained. The original216-byte candidate is unchanged. Native and both
+actual scalar outputs pass96 full-pool cases /6,048 visited record slots,
+including clipping/collision, cloud/decay, clear/zap and stack/register checks.
+The real native Motion provider executes without credit; graphics/interrupts
+and complete game execution are excluded. No shared type, accepted source,
+return ABI, barrier, forced register or padding is changed.
+
+Both native scopes retain complete boundaries and no instruction NOPs or
+tables. Wing has386 instruction bytes/two ordered fixups; ball220 has no fixups.
+These scopes still receive zero exact credit. Source/producer review
+`.analysis/shinki-wing-balls-root-review.json`, SHA-256
+`273fdda668ee1168da244a77f903094842d335cf183f3007af8a1ff90e28c39d`;
+model `.analysis/shinki-balls-semantic-model.json`, SHA-256
+`ea2bd3684eda5abb2a63ac9e9e8796c3317a7a02915e9e1dc843a9ebc8a54b53`.
+See [detailed evidence](../src/main/boss/shinki/wing_preparation.md).
+
+Final complete native ownership verification, all373 CI tests, public gates
+and diff checks pass. Nine tests are new string-runtime structural/adoption
+checks. All five incremental plans are empty and run no compiler tools. Old
+accepted C/C++/ASM entries, source records, toolchain, generated progress/SVG
+and complete OP/MAINE/ZUN ownership views remain unchanged. The MAIN ownership
+change is exactly the six new vendor contributions. Logs:
+`.analysis/string-runtime-native-ownership.log`,
+`.analysis/string-runtime-final-ci.log` and
+`.analysis/string-runtime-final-plans.json`.
 
 ## Latest bounded C++ investigation: complete dialog interpreter
 

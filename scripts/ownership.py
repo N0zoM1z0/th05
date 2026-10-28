@@ -442,6 +442,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     fonts, fonts_sha = reviewed_font_resources(root, config["views"], verify_targets=verify_targets)
     from review_main_runtime import reviewed_claims as reviewed_runtime
     runtime, runtime_sha = reviewed_runtime(root, config["views"], verify_targets=verify_targets)
+    from review_string_runtime import reviewed_claims as reviewed_strings
+    strings, strings_sha = reviewed_strings(root, config["views"], verify_targets=verify_targets)
     from review_master_egc_shifts import reviewed_claims as reviewed_egc_shifts
     egc_shifts, egc_shifts_sha = reviewed_egc_shifts(root, config["views"], verify_targets=verify_targets)
     from review_master_ems_transfers import reviewed_claims as reviewed_ems_transfers
@@ -476,6 +478,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             master_claims, master_review_sha = reviewed_master(root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
+            pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
             pieces = overlay_vendor(view["size"], pieces, ems_transfers)
             pieces = overlay_vendor(view["size"], pieces, primary_circlefill)
@@ -507,6 +510,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["vendor_review_sha256"] = review_sha
         if runtime_sha and name == "main":
             views[name]["runtime_vendor_review_sha256"] = runtime_sha
+        if strings_sha and name == "main":
+            views[name]["string_runtime_review_sha256"] = strings_sha
         if master_review_sha:
             views[name]["master_vendor_review_sha256"] = master_review_sha
         if egc_shifts_sha and name == "main":

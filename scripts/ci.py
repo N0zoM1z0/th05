@@ -47,6 +47,9 @@ def main() -> int:
     if (ROOT / "config/main_runtime_ownership.json").exists():
         subprocess.run([sys.executable, "scripts/review_main_runtime.py", "--structural-check"],
                        cwd=ROOT, check=True)
+    if (ROOT / "config/string_runtime_ownership.json").exists():
+        subprocess.run([sys.executable, "scripts/review_string_runtime.py", "--structural-check"],
+                       cwd=ROOT, check=True)
     if (ROOT / "config/accepted_units.json").exists():
         subprocess.run([sys.executable, "scripts/progress.py", "--check"], cwd=ROOT, check=True)
     if (ROOT / "config/zun_memory_acceptance.json").exists():
