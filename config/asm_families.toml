@@ -1065,3 +1065,34 @@ replace = "SPARK_DRAW_ROWS equ (SPARK_H - 1)"
 offset = 101
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-pointnum-add"
+artifact = "main"
+source = "src/main/pointnum/add.asm"
+types = "src/main/pointnum/pointnum_types.inc"
+symbols = "probes/units/pointnum_add_symbols.inc"
+bindings = "probes/units/pointnum_add_bindings.asm"
+notes = "src/main/pointnum/add.md"
+target_start = 0x16e28
+size = 94
+segment = "MAIN_03_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "5338df22cf23a24cbee1d46ab319f221635aa94d5f5015a58572b5d1909834f5"
+target_scope_sha256 = "4bbcb911b3ad33742a17ce69d50aca1a0bade37fee2985f5c8284f8c15f75602"
+semantic_inputs = []
+[units.publics]
+"pointnums_add_yellow(int,int,unsigned int)" = 0
+"pointnums_add_white(int,int,unsigned int)" = 26
+"pointnums_add_end" = 94
+[units.negative]
+find = "POINTNUM_WHITE_LAST equ (POINTNUM_WHITE_COUNT - 1)"
+replace = "POINTNUM_WHITE_LAST equ (POINTNUM_WHITE_COUNT - 2)"
+[[units.uncredited]]
+offset = 93
+size = 1
+kind = "alignment"

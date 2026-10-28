@@ -13,13 +13,62 @@ no credit. MAIN has 390 functions / 65,649 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
-Separately reviewed ASM now contributes **6,927 instruction bytes,
+Separately reviewed ASM now contributes **7,020 instruction bytes,
 210 symbolic CODE-dispatch table bytes, 24 semantic CODE-coordinate bytes
-and 64 semantic DATA bytes**. Its 7,294
-complete compared bytes include 69 checked uncredited alignment, inert-branch
+and 64 semantic DATA bytes**. Its 7,388
+complete compared bytes include 70 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 127,976 bytes. The global denominator is still unreviewed;
+ownership is now 127,882 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
+
+## Latest reviewed ASM: shared point-popup allocation, 2026-10-28
+
+The complete94-byte MAIN procedure `[16E28,16E86)` has two live public entries,
+yellow at16E28 and white at16E42, one common allocation path and one RET6.
+Both cursor updates and the flag/age write precede its shared BP frame. This
+native shared-entry graph supports inferred original handwritten ASM for this
+procedure only; donor syntax and compiler failure are not origin evidence.
+Root performed the bounded origin/source review without claiming an independent
+agent review. Literal historical source and exhaustive vendor ancestry remain
+unproved. See [allocation review](../src/main/pointnum/add.md).
+
+Two fresh complete producers pass all94 raw bytes, empty ordered MZ fixups,
+ordinary OMF/LEDATA, original frames/publics and deterministic objects/MAP/MZ.
+The own white-ring threshold negative changes only byte38,199 to198, and is
+rejected. The initial decorated-vs-demangled MAP public-name guard failure is
+preserved; only manifest names were corrected before the fresh replay. No
+source continuation, verifier relaxation or older-unit cold replay occurs.
+Receipt `.analysis/asm-replays/main-pointnum-add-b/receipt.json`, SHA-256
+`dc2ded742d8980511b7bfa79b27683df0fd83347bee7d9e7f6f8e757329d363f`.
+Actual source/producer review `.analysis/pointnum-add-root-final-review.json`,
+SHA-256 `674781fdbc1f216069a6d34b7cde44a2f88939573e7c01540e282f95f6be94a1`.
+
+Native and both fresh source add paths each pass3,080 cases, covering all280
+valid cursors and eleven decimal boundaries with complete pool/cursor/ABI
+checks. The foreign native digit converter also passes all65,536 WORD inputs.
+Separate reviewed adoption adds93 ASM instruction bytes; final EVEN NOP93 is
+compared with zero credit. Unknown falls127976 to127882 (MAIN48266 to48172).
+C/C++ counters, BSS, the existing accepted HUD power-table DATA, digit provider
+and neighboring procedures gain no credit from this adoption.
+
+Natural `digits.cpp` recovers the complete foreign Pascal converter's arithmetic
+but generates96 bytes against58. Its first size gate stops before a second
+or negative; the proposal stays outside the live manifest. Actual compiled
+output independently passes every65,536 WORD input with generated powers,
+digits/canaries/width and Pascal preservation checks. ENTER6, stack locals and
+separate quotient/remainder DIVs explain the main lowering difference. This
+does not justify ASM promotion or instruction transcription. All58 native
+converter bytes stay unknown. See [conversion evidence](../src/main/pointnum/digits.md).
+
+Final native ownership verification, all364 CI tests, public gates and diff
+checks pass. CI's initial fixed ASM-total assertion is updated by exactly
+93 instruction bytes and one alignment byte; the initial failure is retained
+in `.analysis/pointnum-add-ci-initial.log`. All five incremental plans are
+empty. Older ASM records/manifest rows, C/C++ acceptance and OP/MAINE/ZUN
+ownership intervals/counts are unchanged; OP/MAINE carry the updated shared
+ASM decision digest. Evidence: `.analysis/pointnum-add-ci.log`,
+`.analysis/pointnum-add-native-ownership.log` and
+`.analysis/pointnum-add-final-plans.json`.
 
 ## Latest bounded runtime investigation: stage entry and frame counter
 
