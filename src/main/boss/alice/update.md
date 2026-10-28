@@ -50,3 +50,12 @@ clipping, flag sweep or barrier is used to force agreement. The whole owner
 is outside the default replay manifest and receives no callback credit.
 The genuine spread now has its own independently accepted 63-byte owner in
 `final_spread.cpp`, sharing this unchanged real body through `final_spread.inl`.
+
+The subsequent `update_context.cpp` restores the genuine adjacent three
+charge/fire functions before these two natural bodies. Its normal focused
+replay passes two fresh complete939-byte updater scopes, the native zero,
+all30 switch-table bytes, ordered fixup133 and its own initial-HP7400-to7300
+compiled negative. Only the updater adds credit; the562-byte preceding source
+context is already accepted. This supersedes the callback's unaccepted status
+without altering the old failed receipt or any existing accepted record.
+See [complete context and producer review](update_context.md).

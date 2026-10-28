@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **320 bounded C/C++ CODE/DATA units / 505 complete function occurrences**,
-**99,409 authored bytes exact**: 84,072 CODE and 15,337 initialized DATA.
-CODE is 83,354 instruction plus 718 semantic compiler-table bytes.
-Complete compared extents total 99,493; 84 checked padding bytes receive
-no credit. MAIN has 386 functions / 62,886 CODE / 3,091 DATA;
+Current acceptance: **321 bounded C/C++ CODE/DATA units / 506 complete function occurrences**,
+**100,347 authored bytes exact**: 85,010 CODE and 15,337 initialized DATA.
+CODE is 84,262 instruction plus 748 semantic compiler-table bytes.
+Complete compared extents total 100,432; 85 checked padding bytes receive
+no credit. MAIN has 387 functions / 63,824 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,52 @@ Separately reviewed ASM now contributes **6,927 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,294
 complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 130,742 bytes. The global denominator is still unreviewed;
+ownership is now 129,803 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest accepted C++: complete Shinki update, 2026-10-28
+## Latest accepted C++: complete Alice update, 2026-10-28
+
+MAIN `[1E996,1ED41)` now adds the complete939-byte far Pascal Boss updater:
+908 instruction bytes, one checked zero at908 and30 compiler-table bytes at909.
+All233 instructions, the final RETF, direct branches and fifteen table targets
+were reread; there are no instruction NOPs. Original ordered fixup `[133]`
+passes without sorting or masking.
+
+The new `update_context.cpp` uses three genuine adjacent charge/fire patterns
+(499), final spread63 and updater939, all in native order. The copied bodies
+retain the full maintained owners' tokens, and final spread uses its canonical
+unchanged `.inl`. This coherent1,501-byte source contribution naturally emits
+the previously missing zero. Only the updater gets new credit; the562-byte
+prefix is already accepted. Literal historical TU identity remains unproved.
+Actual CS groups1527/AE1, shared14AB and DS209D, including empty foreign
+segments, retain their real context. No old source/header, flag or ABI changed.
+
+The first normal replay passes both fresh positives, full raw bytes, ordered
+fixups, CRC-valid OMF/LEDATA, actual staged inputs/argv/logs, MAP/public/frame
+readback and its own compiled HP7400-to7300 negative. That negative changes only
+relative86, retaining complete extent/zero/table/fixup, and is rejected. Positive
+normalized objects, whole scaffold MZs and MAPs agree. No failed producer,
+second context, flag sweep or output repair was needed for this owner.
+Installed execution proofs and all unchanged accepted objects were reused.
+
+Receipt `.analysis/unit-replays/main-alice-update-context-a/receipt.json`,
+SHA-256 `58d732d4bb129bdc282b4166742a121204cf8add538e7b9fb095426ed83a62e0`.
+Root native/producer reviews are `.analysis/alice-update-context-native-review.json`
+and `.analysis/alice-update-context-root-review.json` (SHA-256
+`b4266261aed1cd13600c6174b89f1962d73c8e74d6ba717751600257e87de2e6`).
+See [complete context review](../src/main/boss/alice/update_context.md).
+
+Explicit import adds938 authored CODE bytes and one checked padding byte.
+Unknown falls130742 to129803 (MAIN51032 to50093). DATA, ASM, vendor and font
+counts are unchanged; the global authored denominator and98% remain unproved.
+
+Native ownership verification, all364 CI tests, public gates and diff checks
+pass. All five incremental plans are empty; no old compiler producer was
+replayed. All previous accepted records and OP/MAINE/ZUN ownership views are
+unchanged. Logs: `.analysis/alice-update-context-{native-ownership,final-ci}.log`
+and `.analysis/alice-update-context-final-plans.json`.
+
+## Previous accepted C++: complete Shinki update, 2026-10-28
 
 MAIN `[1B6DB,1BA9A)` now adds one complete far Pascal Boss update: 959
 compared bytes, 932 instructions plus26 semantic compiler-table bytes and one

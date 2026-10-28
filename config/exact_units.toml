@@ -4281,3 +4281,25 @@ unit = "main-shinki-update-context"
 source = "src/main/boss/shinki/update_context.cpp"
 find = "boss_defeat_update(65);"
 replace = "boss_defeat_update(64);"
+
+[[units]]
+id = "main-alice-update-context"
+source = "src/main/boss/alice/update_context.cpp"
+module = "th05/a_ctx.cpp"
+segment = "B4_UPDATE_TEXT"
+wrapper_options = "-zCB4_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/alice_update_context_bindings.asm"
+function_symbol = "alice_update()"
+target_start = 0x1e996
+size = 939
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+padding_bytes = [{ offset = 908, value = 0 }]
+code_data_ranges = [{ offset = 909, size = 30, kind = "compiler-switch-table" }]
+
+[[controls]]
+unit = "main-alice-update-context"
+source = "src/main/boss/alice/update_context.cpp"
+find = "boss.phase_end_hp = 7400;"
+replace = "boss.phase_end_hp = 7300;"
