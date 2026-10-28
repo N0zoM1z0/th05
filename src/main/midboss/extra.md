@@ -34,15 +34,14 @@ the second-half health threshold from1000 to1001, preserving all other source.
 
 `main-midboss5-extra-b/receipt.json` accepts this complete366-byte callback.
 Both independent fresh producers reproduce every raw byte and both original
-ordered relocation sites (relative323,155). The separately compiled HP
-threshold1000→1001 mutation is rejected. Credit is one complete function and
+ordered relocation sites (relative323,155). The batch's compiled control belongs
+to stage five and covers this replay. Credit is one complete function and
 366 instruction/authored-code bytes, with no DATA, table or padding credit.
-The stage-five function in the same receipt has its own producer group and
-control; its acceptance is separate from this callback.
+The stage-five function's acceptance is separate from this callback.
 
 
-The batch's compiled control belongs to stage five. This owner's independent
-HP1000→1001 rejection is additionally recorded in
+This owner's supplementary HP1000→1001 rejection is historically recorded in
 `main-midboss-extra-negative-c/receipt.json`: one fresh negative, with both
-parent positive producers revalidated and reused. `supplement_negative.py
---check` rechecks these actual artifacts without compiling.
+parent positive producers revalidated and reused. The retired checker remains
+in Git history at `3af324e`. This additional experiment is not an acceptance
+requirement.

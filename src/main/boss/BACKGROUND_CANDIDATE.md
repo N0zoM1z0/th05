@@ -196,9 +196,9 @@ its complete original position and ordered raw/fixup proof.
 
 The earlier monolithic diagnostic `.analysis/compiler-probes/boss-bg-c` compiled
 3253 natural bytes and found ten raw/fixup matches before the split. It is a
-routing observation, not the current acceptance producer. The standalone
-`diagnose_boss_background.py` intentionally handles that monolithic candidate
-shape; the current split owner is replayed through `replay_units.py`.
+routing observation, not the current acceptance producer. Its retired
+monolithic diagnostic remains in Git history at `3af324e`; the current split
+owner is replayed through `scripts/replay_units.py`.
 
 Natural random-range helpers preserve separate float-to-subpixel and signed
 range inline layers. Introducing local min/max temporaries prevented this

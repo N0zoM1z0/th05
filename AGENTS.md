@@ -20,8 +20,9 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
   not a requirement for every function or commit.
 - Keep evidence concise: target extent, source/ABI decision, byte/fixup result
   and receipt. Historical investigations are reference, not recurring tasks.
-- Run the affected exact replay and `git diff --check`. Update generated
-  progress/ownership when acceptance changes, leave a short handoff, and
+- Replay affected units when source or build inputs change; documentation and
+  test cleanup need no compiler run. Run `git diff --check`, update generated
+  progress/ownership only when acceptance changes, leave a short handoff, and
   commit and push substantive progress.
 
 ## Exactness and source

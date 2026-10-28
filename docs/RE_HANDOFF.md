@@ -82,3 +82,12 @@ complete bytes and original relocation order. Serialize Wine/Borland/Ghidra.
 This change passes the lightweight consistency check and all362 tooling tests
 in one explicit full run for the CI-tool change. The MAIN incremental plan is
 empty and diff checks pass. This result does not add a recurring test obligation.
+
+Follow-up cleanup retires the zero-compare probe, obsolete monolithic boss
+background diagnostic and supplemental-negative compiler tool themselves.
+Their scripts remain in Git history at `3af324e`; historical receipts and
+accepted bytes are unchanged. The normal replay retains its shared compiled
+control. Documentation/test-only cleanup needs no compiler replay or generated
+progress refresh. Existing boss source edits belong to concurrent work.
+Validation: lightweight CI and 17 focused oracle/function-boundary tests pass;
+`git diff --check` passes. No compiler replay or full tooling run was needed.

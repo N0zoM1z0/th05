@@ -36,6 +36,10 @@ an intentional full tooling regression. Do not run the full suite after each
 source candidate. Existing receipts can share their compiled oracle control;
 additional per-function controls are optional investigations.
 
+Documentation and test cleanup need no compiler replay or generated progress
+refresh when source, build inputs and acceptance are unchanged. Retired one-off
+diagnostics remain in Git history; they are not part of the active workflow.
+
 [Acceptance](ORACLES.md) defines exactness. The optional
 [receipt format reference](reconstruction/ORACLE_FORMATS.md) documents special
 DATA, ASM and retained-producer lanes; it is not a checklist for every target.

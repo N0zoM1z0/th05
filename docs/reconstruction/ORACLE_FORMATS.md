@@ -11,7 +11,6 @@ normal process. Detailed receipt fields live in the corresponding scripts.
 | Merge one or several receipts atomically | `scripts/progress.py --accept PATH` (repeat for a batch) |
 | Reuse whole initialized DATA from two saved CODE producers | `scripts/review_saved_data.py` |
 | Project complete functions from a saved mixed-result receipt | `scripts/review_saved_scopes.py` |
-| Optional additional compiled control for an existing owner | `scripts/supplement_negative.py` |
 | Reviewed assembly families | `scripts/replay_asm_family.py` |
 | Text renderer CODE / DATA | `scripts/replay_text_fx_render.py` / `scripts/replay_text_fx_data.py` |
 | Original text-renderer ASM ownership | [Text FX review](TEXT_FX_ASM_OWNERSHIP.md) |
@@ -43,5 +42,6 @@ cannot relabel compiler-generated code or assets. Padding and runtime-patched
 placeholders are compared with zero authored credit. Semantic dispatch/coordinate
 tables remain distinct from instructions and resources.
 
-Supplemental per-function negatives and CPU behavior models are optional
-investigations. Do not add them just because an extra tool or format exists.
+The normal replay's shared compiled control is sufficient. The retired
+supplemental-negative tool remains in Git history at `3af324e`; its historical
+reports add no acceptance requirement or authored credit.
