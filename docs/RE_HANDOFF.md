@@ -21,6 +21,40 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 127,999 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
+## Latest bounded C++ investigation: point-popup invalidation
+
+The complete44-byte MAIN invalidator `[E17A,E1A6)` still has no NOPs or
+ordered fixups and remains wholly unknown. New `src/main/pointnum/invalidate.cpp`
+retains full280-record traversal, true previousY/currentX scalar arguments,
+variable width and the canonical full16-byte record/header. The signed count
+removes the earlier redundant zero-test lowering without changing behavior.
+
+The explicit coordinate-local source emits52 bytes because the compiler keeps
+a stack slot, dead store and frame. Block scope plus `register` produces the
+same52 raw bytes. Removing that local and using canonical Subpixel conversions
+emits43 bytes, with two memory PUSHes rather than native current-X preload into
+AX followed by previousY/AX PUSHes. No second producer, compiled negative,
+receipt, acceptance, padding, ABI change, flag search or ASM promotion follows
+from any size failure. The proposal is parked outside the live manifest.
+
+All three actual OMF/MAP/source/argv sets are reread; review
+`.analysis/pointnums-invalidate-scalar-producers.json`, SHA-256
+`f30e293d20a1ac0265e541ce33ed858ae4ac12a2cb6a8f597596e1d8d99333c0`.
+The final native/CPP full-pool semantic model passes seven empty/full/mixed
+cases, signed coordinates, full word widths, all six flags, actual RET4 argument
+and box readback, scratch clobbers and preserved state/tails/ABI. Tile effects
+are excluded. Report `.analysis/pointnums-invalidate-scalar-semantic-check.json`,
+SHA-256 `e6746fe0d4a820d18ffdedebf2b60f71bfbd4cd1154d779f9ecc27f481efbccf`.
+See [full source and failure notes](../src/main/pointnum/invalidate.md).
+All authored/ownership counters and accepted evidence stay unchanged.
+
+All364 CI tests, public source gates and diff checks pass. The exact manifests,
+acceptance ledger, generated progress/ownership and toolchain configuration
+are byte-for-byte unchanged from the accepted Boss checkpoint bdfb5a2; its
+successful native ownership verification is reused. All five incremental plans
+are empty. Logs: `.analysis/pointnums-invalidate-scalar-{ci,progress,ownership}.log`
+and `.analysis/pointnums-invalidate-scalar-final-plans.json`.
+
 ## Latest accepted C++: complete shared Mai/Yuki update, 2026-10-28
 
 MAIN `[17FDB,183D5)` adds the complete1,018-byte far Pascal shared updater:
