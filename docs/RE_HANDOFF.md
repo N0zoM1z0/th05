@@ -80,8 +80,11 @@ an ongoing checklist; earlier detailed handoffs remain in Git history.
 Replay only new/affected units and reuse unchanged accepted dependencies/tools.
 `python3 scripts/ci.py` now performs lightweight public consistency checks;
 `--full` explicitly runs the tooling regression suite. Full CI is not required
-after each function or commit. The obsolete zero-compare probe, one-off boss
-background diagnostic and supplemental-control mock suites were removed.
+after each function or commit. The obsolete zero-compare probe, monolithic
+boss-background diagnostic and supplemental-negative tools themselves are also
+retired, along with their mock suites; their scripts remain in Git at3af324e.
+The normal replay's shared control is sufficient. Documentation/test-only
+cleanup needs no compiler replay or generated progress refresh.
 
 Keep short evidence notes, update generated progress/ownership for accepted
 changes, and commit/push substantive progress. Preserve the
