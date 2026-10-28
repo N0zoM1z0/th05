@@ -5,11 +5,11 @@ and percentage are still unreviewed; this objective has not been reached.
 Repository: https://github.com/N0zoM1z0/th05 .
 Commit messages: `gpt-6.1-sol: ...`. Keep maintained code and docs in English.
 
-Current acceptance: **323 bounded C/C++ CODE/DATA units / 508 complete function occurrences**,
-**102,149 authored bytes exact**: 86,812 CODE and 15,337 initialized DATA.
-CODE is 86,020 instruction plus 792 semantic compiler-table bytes.
-Complete compared extents total 102,236; 87 checked padding bytes receive
-no credit. MAIN has 389 functions / 65,626 CODE / 3,091 DATA;
+Current acceptance: **324 bounded C/C++ CODE/DATA units / 509 complete function occurrences**,
+**102,172 authored bytes exact**: 86,835 CODE and 15,337 initialized DATA.
+CODE is 86,043 instruction plus 792 semantic compiler-table bytes.
+Complete compared extents total 102,259; 87 checked padding bytes receive
+no credit. MAIN has 390 functions / 65,649 CODE / 3,091 DATA;
 OP 62 / 11,251 / 8,649; MAINE 56 / 9,613 / 3,597; ZUN 1 / 322 / 0.
 Global denominator and percentage remain unreviewed.
 
@@ -18,10 +18,46 @@ Separately reviewed ASM now contributes **6,927 instruction bytes,
 and 64 semantic DATA bytes**. Its 7,294
 complete compared bytes include 69 checked uncredited alignment, inert-branch
 and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
-ownership is now 127,999 bytes. The global denominator is still unreviewed;
+ownership is now 127,976 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
-## Latest bounded C++ investigation: point-popup invalidation
+## Latest accepted C++: complete MAP release, 2026-10-28
+
+MAIN `[E606,E61D)` adds the complete23-byte MAP release: six instructions,
+no stack frame, no instruction NOPs and original ordered MZ fixup `[14]`.
+The following90 remains unknown outside the source contribution. Full MAP8-byte
+header,320-byte section, two-byte segment pointer and true far Pascal HMEM_FREE
+word-argument/RET2 ABI are unchanged, as are binder and function body.
+
+The new fixed ordinary `-k-` profile expresses the native frameless contract;
+it does not prove the literal historical option. The previous27-byte producer
+remains failed. The accepted STD context was a reference only; this MAP owner
+has its own two fresh complete producers and guard-inversion compiled negative.
+Both positives match all23 raw bytes and ordered fixup14, have ordinary valid
+single-LEDATA OMF, equal normalized objects/MAPs/whole scaffold MZs and actual
+source/argv/log/link-response/frame readback. The negative changes only branch
+byte5 (JE toJNE), retaining full extent/fixup, and is rejected. Installed
+execution probes and all unchanged accepted objects are reused.
+
+Receipt `.analysis/unit-replays/main-map-free-frameless-a/receipt.json`, SHA-256
+`e210879366e2b607fdc66db98c8cf527d5021c21f009998c22582105fc602d11`.
+Native/actual producer reviews: `.analysis/map-free-frameless-native-review.json`
+and `.analysis/map-free-frameless-root-review.json` (SHA-256
+`9448aeb6a594abf700f1bf4f4177ad2d6d573b1fa3dbd34dcc40f72c6b972d98`).
+See [complete release review](../src/main/formats/README.md).
+
+Import adds23 authored instruction bytes and one function. Unknown falls127999
+to127976 (MAIN48289 to48266). All DATA, ASM, vendor and font counters stay
+unchanged; global authored denominator and98% remain unproved. Older accepted
+sources, records, ABI, toolchain and controls are unchanged.
+
+Final native ownership verification, all364 CI tests, public source gates and
+diff checks pass. All five incremental plans are empty and run no compiler
+tools; older accepted records/entries/controls and OP/MAINE/ZUN ownership views
+are unchanged. Logs: `.analysis/map-free-frameless-{native-ownership,final-ci}.log`
+and `.analysis/map-free-frameless-final-plans.json`.
+
+## Previous bounded C++ investigation: point-popup invalidation
 
 The complete44-byte MAIN invalidator `[E17A,E1A6)` still has no NOPs or
 ordered fixups and remains wholly unknown. New `src/main/pointnum/invalidate.cpp`

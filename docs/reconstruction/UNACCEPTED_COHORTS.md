@@ -18,7 +18,7 @@ Private producer paths below are under `.analysis/unit-replays/`.
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
 | Mai/Yuki foreground callback | Original194, producer198 due to coordinate allocation. Its complete sprite helper75 is separately accepted. | `main-mai-yuki-foreground-a` |
 | Mima bomb control | Raw161 bytes agree; original ordered fixups `[55,27,135]` differ from `[135,55,27]`. Complete adjacent366 also remains ordered-inexact. The real drawing205 scope alone is accepted. | `main-mima-bomb-control-a`, `main-mima-bomb-full-a` |
-| MAP release | Natural ordinary producer27 differs from original23 by its frame prologue/epilogue. First size gate stopped; no second/negative build or flag variants. Separate STD release23 passes with its independently documented source context. | `main-map-free-a`, accepted `main-std-free-a` |
+| MAP release (superseded) | Old ordinary producer27 remains failed. The subsequent fixed frameless `-k-` profile accepts the complete23-byte MAP owner through its own two fresh producers, ordered fixup14 and compiled guard inversion; the body/types/binder are unchanged. | `main-map-free-a`, accepted `main-map-free-frameless-a` |
 
 The retained producers pin the particular source snapshots they compiled;
 notes distinguish later semantic corrections from actual new compilations.

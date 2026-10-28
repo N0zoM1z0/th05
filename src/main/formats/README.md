@@ -1,6 +1,6 @@
 # STD and MAP allocation release candidates
 
-Two ordinary C++ functions are prepared without importing the loader bodies:
+Both ordinary C++ release functions are now accepted without importing loaders:
 
 | Owner | Original MZ program-image interval | Code | Ordered MZ fixups |
 | --- | --- | ---: | --- |
@@ -64,7 +64,7 @@ deterministic producers passed full raw bytes, the original ordered `[14]`
 fixup and OMF checks. Its own compiled allocation-guard inversion was rejected.
 STD source/header and the maintained binder are frozen accepted dependencies.
 
-MAP remains unaccepted. `main-map-free-a` stopped at its first producer's
+The earlier `main-map-free-a` stopped at its first producer's
 complete-contribution gate: ordinary natural source generated27 rather than23
 bytes, with `PUSH BP; MOV BP,SP` and `POP BP` adding four bytes around the same
 release algorithm. The shortened target's original producer context is not
@@ -72,8 +72,36 @@ proved. The larger function also shifts its fixed foreign context by four
 bytes, so its actual segment-variable address is `4ADC` instead of `4AD8`;
 this is layout drift, not new object-field evidence. No second positive or
 MAP negative was compiled. The ordinary MAP source is retained unchanged,
-without a `-k-`, register, flag or prologue retry.
+without a `-k-`, register, flag or prologue retry at that checkpoint.
 
 Private proposals, independent native boundaries and artifact/source hashes
 are in `.analysis/std-map-free/`. The actual MAP first-producer review is
 `map-first-producer-review.json`. Neither parked loader receives credit.
+
+## Complete frameless MAP release accepted
+
+Native rereading confirms that `[E606,E61D)` has six instructions, no stack
+frame or instruction NOP, one ordered segment fixup at14 and the real near RET.
+The following90 atE61D remains outside the complete source contribution,
+unknown and uncredited. The MAP body and full canonical types are unchanged;
+only initial `-k-` is now enabled to express a frameless producer context.
+This is a fixed ordinary compiler profile supported by the native frame
+contract, not proof of the historical option's literal spelling. STD's
+candidate context informed the question; its acceptance is not transferred.
+
+`main-map-free-frameless-a` passes two fresh whole23-byte producers, original
+ordered fixup14, CRC-valid OMF and an own compiled guard inversion. The negative
+changes only branch byte5 (JE toJNE), retains the23-byte extent and fixup14,
+and is rejected. Both objects have one23-byte LEDATA payload; normalized object
+identities, MAPs and whole scaffold MZs agree. Actual input snapshots, compiler
+arguments, logs, link response, CS AE1 and DS209D were reread. The existing
+binder and header are unchanged. Installed execution probes and all older
+accepted objects are reused after dependency checks.
+
+Receipt `.analysis/unit-replays/main-map-free-frameless-a/receipt.json`, SHA-256
+`e210879366e2b607fdc66db98c8cf527d5021c21f009998c22582105fc602d11`.
+Native review `.analysis/map-free-frameless-native-review.json`; actual-producer
+review `.analysis/map-free-frameless-root-review.json`, SHA-256
+`9448aeb6a594abf700f1bf4f4177ad2d6d573b1fa3dbd34dcc40f72c6b972d98`.
+Credit is one complete function /23 authored instruction bytes. No DATA,
+loader, vendor implementation or whole-program equality is claimed.

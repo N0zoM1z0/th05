@@ -4346,3 +4346,22 @@ unit = "main-mai-yuki-update-context"
 source = "src/main/boss/mai_yuki/update_context.cpp"
 find = "(boss.hp + boss2.hp) < 5500"
 replace = "(boss.hp + boss2.hp) < 5501"
+
+[[units]]
+id = "main-map-free"
+source = "src/main/formats/map_free.cpp"
+module = "th05/map_free.cpp"
+segment = "MAP_FREE_TEXT"
+wrapper_options = "-zCMAP_FREE_TEXT -zPmain_01"
+bindings_source = "probes/units/map_free_bindings.asm"
+target_start = 0xe606
+size = 23
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-map-free"
+source = "src/main/formats/map_free.cpp"
+find = "if(map_seg) {"
+replace = "if(!map_seg) {"
