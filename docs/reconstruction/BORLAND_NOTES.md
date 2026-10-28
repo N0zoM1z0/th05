@@ -5,6 +5,14 @@ TH03/TH04's workflow; they do not establish historical source spelling or allow
 another target to inherit acceptance. Per-owner notes and retained receipts
 contain the full boundaries and bindings.
 
+## Actual compiler switches
+
+The installed Turbo C++4.02 help identifies `-O` as jump optimization and `-Z`
+as suppression of register reloads. Do not assume modern optimizer meanings.
+Statement-scoped option pragmas did not change the retained sword/Staff
+producers; inspect actual output before attributing an effect to them.
+The captured tool help remains in `.analysis/compiler-help-sword-20261028/`.
+
 ## Types and calling conventions
 
 The real ABI has two-byte int/near pointers, four-byte far pointers and

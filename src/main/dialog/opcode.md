@@ -1,72 +1,43 @@
-# Complete dialog interpreter: isolated and split-context investigation
+# Complete dialog interpreter candidate
 
-The pinned MAIN interpreter at `[13B82,13D4A)` is456 bytes:425 instruction
-bytes, one zero at425 and the complete30-byte command table at426. Its124
-instructions have no NOPs. All fifteen command-table destinations and direct
-branches land on reviewed instruction starts. Original ordered MZ fixups are
-`[395,336,312,269,224,217,174,145,136,86]`. The target remains the locally
-attested Japanese candidate, not an independently proved pristine executable.
+The pinned MAIN interpreter `[13B82,13D4A)` is 456 bytes: 425 instruction bytes,
+one zero at 425 and a 30-byte command table at 426. Its 124 instructions have no
+NOPs. All fifteen table destinations and direct branches land on reviewed
+instruction boundaries. Original ordered MZ fixups are
+`[395,336,312,269,224,217,174,145,136,86]`.
 
-The unchanged semantic command body is factored from runtime.cpp into
-opcode.inl. The existing box/run producers, shared declarations, packed5-byte
-sprite command and all accepted dependencies are unchanged. opcode.cpp puts
-the complete interpreter in its own real main_01 contribution and restores
-the CODE selector and ordinary late `-a2` after includes. Its first producer
-still emits455 bytes and stops at the complete size gate. This independently
-confirms that isolating the interpreter does not restore the missing zero.
+The canonical semantic body is `opcode.inl`; `opcode.cpp` uses the actual
+main_01 context and late `-a2` after the packed declarations. The complete
+five-byte sprite command and all accepted box/run dependencies are unchanged.
+Direct compilation produces 455 bytes. The missing compiler-owned zero also
+moves the table operand and forward external labels one byte early. Ordered
+fixups agree, but the full byte/size gate fails; no exact credit is imported.
 
-opcode_context.cpp additionally contains the literal maintained definitions
-of the two genuinely earlier STD callbacks, in native source order. They
-occupy a separate73-byte CODE contribution at their actual139F5 address.
-The symbol-only binder leaves the intervening three graphics helpers and
-box functions foreign, without supplying instructions or values. The new
-interpreter contribution is again455 bytes and fails its first size gate.
-There is no second positive, compiled negative, receipt or acceptance for
-either attempt. Both proposals are retained privately outside the live manifest.
+A genuine STD-callback prefix in a separate segment also produced 455. Its
+experimental `opcode_context.cpp` and binder were retired during cleanup;
+complete frozen inputs remain under
+`.analysis/unit-replays/main-dialog-opcode-context-a/`. The independent failed
+baseline remains in `main-dialog-opcode-standalone-a/` under the same parent.
+Declaration timing, switch casts, explicit reserved cases and initial alignment
+trials remain failed. `-G` produces 468. Those alternative diagnostics are
+[archived](../../../docs/LOCAL_STORAGE.md).
 
-Actual OMF, staged source, compiler arguments, MAP and MZ are reread. Both
-interpreters start at13B82. Their425-byte instruction bodies differ only at
-relative23,116,180: the table operand is one byte earlier and the short source
-contribution shifts the two foreign forward labels one byte earlier. All15
-compiler-generated case targets agree with the native table. Ordered fixups
-agree. The STD prefix retains its73-byte size and actual relaxed transfer,
-including uncredited NOP24, but its forward animation call also shifts by one
-byte at27. It is not raw exact or a replacement for the existing accepted
-callback owner. These are diagnostic observations, not normalized acceptance.
+## Compiler-generated ASM observation
 
-The split-segment prefix therefore does not resolve the table phase. The
-intervening218-byte graphics implementation remains a separate source/language
-question; it must not be replaced by an instruction transcription, fabricated
-prefix, inside-function reservation or padding. No source body, object, table
-word, operand or relocation stream is patched to manufacture equality.
+Compiling the unchanged C++ with TCC `-S` emits a genuine `db 1 dup (?)`
+between RET2 and the command table. Assembling that unmodified generated file
+with TASM32 reproduces all 456 raw bytes, including the zero. Its original
+fixups are instead emitted in ascending order, so the result still fails exact
+acceptance. A diagnostic DOS TASM 4.1 from existing private media gives the same
+raw equality and wrong order; it is not an accepted/pinned toolchain addition.
+No ASM instruction transcription, output patch or relocation sorting is used.
 
-## Native and compiled behavior
+Both raw-equal failed diagnostics remain live:
+`.analysis/native-producers/main-dialog-via-asm-a/` and
+`main-dialog-via-asm16-a/`. The standalone source is restored. The remaining
+question is producer/source context that reproduces both table alignment and
+original relocation order, not adding a zero by hand.
 
-Each of the native and two actual compiled interpreters passes780 cases:
-all256 command bytes under three state/payload scenarios, plus twelve byte-read
-cases wrapping the script offset fromFFFF to0000. The model checks AL's boolean
-result, Pascal cleanup, preserved SI/DI/BP/CS/DS/SS, complete dialog pointer,
-cursor/side fields and adjacent canaries. It checks actual stack words and call
-order for faces, filenames, sprite cleanup, packed sprite payloads, sound,
-palette fades, gaiji and text wiping. Cases include nonzero unused parameter
-high bytes, noncanonical nonzero sides, extreme coordinates, empty filenames,
-unsigned filename bytes and stop/play music commands. The original false-return
-quirk for executed commands remains intact.
-
-Foreign graphics, audio, delay and strlen use explicit ABI stubs with scratch
-register clobbers. Hardware effects, assets, timing, blocking behavior and the
-STD callbacks are not executed by this model. The2,340 total cases establish
-bounded interpreter semantics, with zero exact or authored credit.
-
-Native/source/actual producer review:
-`.analysis/dialog-opcode-root-review.json`, SHA-256
-`cbfac3b961c10cd82eba16ca5b9561722359c57a8c760628fd97333f94b54df8`.
-Semantic model `.analysis/dialog-opcode-semantic-model.json`, SHA-256
-`d81121f28079d6fd1e4d0de76fb48790ef42bedf186bf282dba387d108c7f593`.
-Failed first producers:
-`.analysis/unit-replays/main-dialog-opcode-standalone-a/` and
-`.analysis/unit-replays/main-dialog-opcode-context-a/`.
-
-After that producer review, one empty final line was removed from opcode.inl
-to satisfy the staged diff check. The archived source hashes describe the
-original producer snapshots; this whitespace cleanup claims no new compilation.
+The earlier native/producer review is `.analysis/dialog-opcode-root-review.json`,
+SHA-256 `cbfac3b961c10cd82eba16ca5b9561722359c57a8c760628fd97333f94b54df8`.
+Its semantic model is historical corroboration, not a recurring acceptance task.

@@ -1,6 +1,6 @@
 # Yumeko later patterns
 
-The natural three-function candidate spans original MAIN `1F088..1F3F0`:
+The former three-function candidate spanned original MAIN `1F088..1F3F0`:
 aimed swords (354 bytes), counterrotating spreads (314), and mirrored
 spreads (204). Canonical Sword, Boss, bullet and Subpixel types are reused
 without changing accepted declarations. Gather takes the real colors 7,6;
@@ -20,8 +20,9 @@ The two unchanged spread bodies live in `spreads.inl`. Their standalone
 `spreads.cpp` owner begins at the complete second function, original
 `1F1EA..1F3F0`, with a correctly bound DS209D and all actual foreign calls.
 Its symbol-only binder supplies no omitted candidate instructions or state
-contents. The failed three-function candidate also includes the same real
-bodies; it receives no aimed-sword credit and is outside default replay.
+contents. The failed three-function candidate also included the same real
+bodies; it received no aimed-sword credit. Its redundant wrapper and binder
+were retired during handoff cleanup; frozen producers and Git retain them.
 
 `main-yumeko-spreads-a` passes two fresh deterministic full 518-byte raw
 comparisons and the complete original ordered relocation stream for both
@@ -30,8 +31,8 @@ and rejected. Credit is two complete functions and 518 instruction bytes,
 with no compiler tables, padding, DATA or BSS. No class ABI reinterpretation,
 register forcing, shared constructor change or artificial work is introduced.
 
-The canonical aimed body now lives in `aimed_swords.inl`; both the combined
-candidate and new standalone wrapper include it. A reviewed word-value view
+The canonical aimed body lives in `aimed_swords.inl`, included by its
+standalone wrapper. A reviewed word-value view
 of the actual near Pascal aim ABI removes the old three-byte coordinate store,
 producing all354 raw bytes. Its original nonmonotone relocation stream remains
 unmatched standalone, so no aimed-sword credit is imported. The accepted spread

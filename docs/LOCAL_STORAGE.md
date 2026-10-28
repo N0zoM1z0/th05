@@ -1,27 +1,71 @@
-# Local storage and evidence retention
+# Local storage and handoff cleanup
 
-This document covers the private workspace, not files distributed by GitHub.
-Targets, assets, tools, projects, evidence and archives remain ignored.
+Private targets, tools, assets, databases and evidence remain ignored. This
+cleanup changes no acceptance, generated progress or compiler inputs of
+accepted units.
 
-## Handoff cleanup, 2026-10-25
+## Current cleanup, 2026-10-28
 
-Cleanup reclaimed approximately48 MiB net, including the retained compressed
-backups. It removed
-three duplicate worktree checkouts after full compressed backup and comparison,
-removed regenerable Python/Ruff caches, and packed loose Git objects. Git
-branches and history were retained. No target, toolchain, reference checkout,
-accepted producer, compiled negative or parked native diagnostic was deleted.
+The private audit is `.analysis/cleanup-handoff/2026-10-28/`:
 
-The three dirty checkouts were `op-score-canonical`, `verdict-full-context`
-and `staff-full-context`. Complete archives, original base/branch/status,
-SHA-256 identities and verification results are private under
-`.analysis/cleanup-handoff/worktrees/`. Archives exclude only worktree `.git`
-registration and regenerable Python/Ruff caches; symlinks were stored without
-following them. Uncommitted and untracked source was preserved. The three
-archives total about3.8 MiB, replacing roughly30 MiB of duplicate checkout files.
+- `accepted-receipts.json`: all 328 current C/C++ records resolve to 232 receipt
+  hashes, with no missing receipt. Retained-parent receipt hashes also agree.
+  This is an identity inventory, not a cold replay or full receipt re-import.
+- `selection.json` / `result.json`: exact paths and hashes for 24 terminal
+  alternative producers, duplicate source backups and unused DOS-assembler
+  extraction. All 1,449 archived files were compared before original removal.
+- `trial-summary.json`: compact results from the archived compiler trials.
+- `diagnostics.tar.xz`: path-preserving private archive, 3,193,216 bytes,
+  SHA-256 `2d9fbba6225f54748efe7e89ba27d81960fd8409b7b6eebc1366dc1151175b8e`.
 
-To restore one, first read its JSON metadata and verify the archive SHA-256.
-For example, from the repository root:
+Archiving reclaimed about 25.1 MiB of allocated storage. Regenerable Python
+caches under `scripts/` and `tests/` were removed. Loose Git objects were
+repacked without dropping history. Current baseline/raw-equal diagnostics,
+all acceptance evidence and installed tools remain at their existing paths.
+The alternative TASM16 extraction is archived; it was never added to the pinned
+accepted toolchain.
+
+Restore a specific historical trial only if needed. From the repository root:
+
+```sh
+sha256sum .analysis/cleanup-handoff/2026-10-28/diagnostics.tar.xz
+# Compare with the SHA-256 above, then restore only the desired directory:
+tar -xJf .analysis/cleanup-handoff/2026-10-28/diagnostics.tar.xz \
+    .analysis/native-producers/main-yumeko-swords-decay-else-a
+```
+
+Archive members retain original repository-relative paths. Review
+`selection.json` before restoring other members; do not overlay an active trial.
+The removed experimental dialog/combined-Yumeko wrappers and binders also
+remain in Git history and their frozen producer snapshots. Canonical semantic
+bodies and current standalone wrappers are maintained under `src/`.
+
+## Keep live for incremental reconstruction
+
+- `.analysis/targets/` and `.analysis/decoded/`: pinned originals and decoded
+  payload/receipt/ordered-relocation views.
+- `.analysis/unit-replays/`: accepted receipts, both producers, controls, source
+  snapshots and tool evidence. Retained-parent reviews can hash every file in
+  their parent archive, including logs; those files are not disposable caches.
+- Native ASM/vendor evidence under `.analysis/`, including calibration
+  `.analysis/builds/`, ownership reviews and actual source/object/listing inputs.
+- `.analysis/toolchain/`, `.tools/`, `_reference/` and `ghidra-project/`:
+  installed compiler/Wine state, pinned analysis tools, references and projects.
+  Shared installations and sibling repositories are not cleanup targets.
+- Current baseline/raw-equal native producers and their reviews/proposals.
+  A failed aggregate can still contain accepted complete scopes.
+
+Public CI does not validate private evidence retention. Check actual path
+ownership before further pruning; a filename containing “failed” proves nothing
+about its dependencies. Ordinary source-tree Python caches can be regenerated;
+use `PYTHONDONTWRITEBYTECODE=1` for cleanup checks.
+
+## Earlier cleanup, 2026-10-25
+
+Three dirty duplicate worktrees were archived and retired: `op-score-canonical`,
+`verdict-full-context` and `staff-full-context`. Their verified archives and
+base/branch/status metadata remain in `.analysis/cleanup-handoff/worktrees/`.
+For example, restore the recorded branch/base first, then overlay its archive:
 
 ```sh
 git worktree add .analysis/worktrees/staff-full-context reconstruction/staff-full-context
@@ -29,68 +73,7 @@ tar -xzf .analysis/cleanup-handoff/worktrees/staff-full-context.tar.gz \
     -C .analysis/worktrees/staff-full-context
 ```
 
-The archive overlays the original dirty state on its preserved branch/base.
-Historical producer command lines may mention these retired checkout paths;
-actual frozen producer artifacts and source snapshots remain in their original
-retained evidence directories. Restore a checkout if a historical investigation
-specifically needs its old working path. It is not required for normal root
-incremental replay.
-
-## Preserve these trees
-
-- `.analysis/targets/` and `.analysis/decoded/`: attested originals and actual
-  decoded views/ordered relocation streams. Do not replace decoded images with
-  fabricated MZ files or rerun decoders merely to restore local state.
-- `.analysis/unit-replays/`: two independent producers, own/shared negative,
-  source snapshots, manifests, argv, tool proofs and target views. A failed
-  whole producer can contain accepted complete scopes. Seven derived reviews
-  hash every file in their parent archives, including logs. Do not trim them.
-- `.analysis/native-producers/`, native reviews and candidate freezes: retained
-  limitations prevent repeated invalid source/ABI hypotheses. Failure names
-  are not evidence that their contents are unused.
-- `.analysis/textfx-data-native/`: the complete native instruction/boundary
-  review and accepted `asm-c/` producers, source snapshots and both negative
-  controls per artifact. `asm-a`/`asm-b` and the unimported C++ state receipts
-  under `.analysis/unit-replays/` preserve earlier classification decisions.
-- `.analysis/builds/` and `.analysis/vendor-review/`: calibration binaries,
-  listings, objects and source closures support library ownership and some
-  retained DATA evidence. Keep their original paths and contents.
-- `.analysis/textfx-render-native/`: accepted `replay-a/` complete CODE producers,
-  own negatives, source/argv/tool/target snapshots and native ownership review.
-  Both initial diagnostic directories preserve the EQU-versus-word binding
-  finding. The explicit adopted ASM classification also depends on unchanged
-  DATA evidence under `.analysis/textfx-data-native/asm-c/`.
-- `.analysis/enemy-vm-native/`: full native family/handler review, accepted
-  `replay-a/` positive producers, own interval negative and frozen source/tool
-  evidence. Initial binder diagnostics are retained. The read-only existing
-  DATA routing survey remains under `.analysis/semantic-data-routing/`.
-- `.analysis/bullet-spawn-native/`: both complete native boundary/handler
-  reviews, `groups-a/` and `raw-a/` two-producer/own-negative evidence, source,
-  actual argv/logs and tool proofs. Keep the initial whole diagnostic and the
-  groups producer's historical verifier snapshot; current import also rechecks
-  its real unchanged DATA frame. Both are explicitly adopted ASM evidence.
-- `.analysis/toolchain/`: installed tools, attestations and independent active
-  TC4 headers/libraries inside the Wine prefix are all checked. The approximately
-  1.3 GiB Wine environment is operational state, not a disposable build cache.
-- `.tools/`, `_reference/ReC98` and `ghidra-project/`: keep the pinned analysis
-  tools, donor checkout/MSDOSplayer and databases. Many analysis-tool files are
-  already hard-linked to reused immutable installations; removing them would
-  not necessarily reclaim physical storage. Never modify sibling repositories.
-
-The private `.analysis/EVIDENCE_STORAGE_GUARDS.md` and
-`.analysis/cleanup-current-receipt-guards.json` identify the209 current receipts
-supporting298 accepted records. Unlisted paths are not automatically disposable.
-Public CI checks source/config consistency; it alone does not prove private
-producers still exist. Cleanup additionally compared33,159 protected files
-before/after, with identical tree hashes, and retained the audit records under
-`.analysis/cleanup-handoff/`. The existing private validator rechecked208 whole
-receipts. One historical stage DATA receipt rejects whole-receipt re-import
-because an unselected CODE descriptor later received corrected NOP padding
-metadata; its accepted DATA was separately rechecked against both actual
-producers and its own negative. This pre-existing descriptor drift is recorded
-in the handoff; cleanup did not modify the receipt or any protected file.
-
-Further storage reduction needs a path-aware evidence audit. Avoid blanket
-`rm` operations on `.analysis`, build logs, old-looking receipts or the Wine
-prefix. Ordinary Python/Ruff caches can be regenerated. Run public checks with
-`PYTHONDONTWRITEBYTECODE=1` if you want to avoid rebuilding bytecode caches.
+Old producer commands may mention those retired worktree paths. Normal root
+incremental replay does not require restoring them. The old
+`.analysis/cleanup-current-receipt-guards.json` inventory describes 298 records
+at that historical point; use the 2026-10-28 inventory for the current 328.

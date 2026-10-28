@@ -18,8 +18,13 @@ one byte longer. Together these explain the three-byte gap. The body remains
 unaccepted and outside the live manifest. Diagnostic:
 `.analysis/native-producers/main-yumeko-swords-update-a`.
 
-One bounded `-O-` investigation emits285 and shifts the relocation to76; it is
-rejected and the ordinary280-byte source is restored. No flag matrix or extra
-behavior tests follow. Restoring this complete function is also important for
-the genuine compiler context of the adjacent354/428-byte attacks; see
+Disabling jump optimization emits 285 and shifts the relocation to 76. Removing
+the nested continue or using a decay `else` under that profile still emits 285.
+Statement-scoped `-O-` pragmas leave 280 unchanged; a switch emits 286. A scalar
+word-pair alias either fails the frontend or emits 320; it is not adopted.
+All trials failed, and the ordinary 280-byte source is restored. Alternative
+producers are archived; see [storage](../../../../docs/LOCAL_STORAGE.md).
+
+Restoring this complete function is also important for the genuine compiler
+context of the adjacent354/428-byte attacks; see
 [attack recovery](laser_swords.md).

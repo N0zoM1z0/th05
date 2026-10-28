@@ -65,6 +65,12 @@ relative original relocation order, and claims no complete executable layout.
 
 The binder contains only real foreign symbols and outside extents, with CODE
 frameA54, master frame0, SHARED frameE80 and DS1011. The full wrapper owns no
-initialized DATA or BSS. The isolated worktree, first single-producer diagnostic
-and old failed/accepted receipts remain private and unchanged. No decoder or
+initialized DATA or BSS. The retired worktree archive, first diagnostic
+and old failed/accepted receipts remain private. No decoder or
 game was rerun; comparison uses the pinned original decoded view.
+
+Later focused trials remain failed: global `-Z-` emits 4283; explicit expressions
+emit 4230; the full class helper API, implicit conversions and statement-scoped
+`-Z-` still emit 4223. None recovers the two missing pointer loads. Source and
+shared headers were restored, so accepted source identities are unchanged.
+Those alternatives are archived as described in [storage](../../../docs/LOCAL_STORAGE.md).

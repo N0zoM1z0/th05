@@ -12,7 +12,7 @@ original relocation order differs from each standalone compiler result.
 | Laser/swords428 | 232,72,402,382 | 402,382,232,72 |
 
 The aimed body is canonical in `aimed_swords.inl`, included by its independent
-wrapper and the existing unaccepted combined family. The local word-value aim
+wrapper. The superseded combined wrapper is retained in Git. The word-value aim
 adapter removes the old three-byte Subpixel temporary. Native171CC reads X/Y
 as words at BP+8/+6, angle as a byte at BP+4, and returns RET6. Both canonical
 Subpixels are two bytes; their original declaration and full types are unchanged.
@@ -39,7 +39,12 @@ prototype also keeps its definition in B5_UPDATE_TEXT; a later selector does
 not move it to the requested segment. This context attempt failed its requested
 scope gate and is preserved privately, with no imported scope or filler bytes.
 
-The next task is the genuine updater/source-context gap, not relocation sorting.
+The `-y` line-information trial also reproduces354 raw bytes but leaves the
+standalone relocation order unchanged. The separate-segment trial likewise
+does not restore the original stream. Both are archived as failed alternatives.
+
+The remaining question is the genuine updater/source-context gap.
 All782 raw-matching bytes remain unknown in authored-exact progress. Joint
 review `.analysis/yumeko-later-root-review.json`, SHA-256
 `1099a5063c7943fba749a258d3e449b1fdf1c75c916d329b5ef33cdbda94001c`.
+See [storage](../../../../docs/LOCAL_STORAGE.md) for archived trial restoration.
