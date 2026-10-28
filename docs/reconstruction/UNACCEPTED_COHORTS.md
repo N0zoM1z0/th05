@@ -7,12 +7,12 @@ Private producer paths below are under `.analysis/unit-replays/`.
 
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
-| MAIN frame loop | Original445; failed combined link leaves a438-byte loop, with frame lowering and a real far-call context difference. The separate complete110-byte entry is now accepted through verified same-CS context. | `main-runtime-prefix-a`, accepted `main-entry-c` |
+| MAIN frame loop | Original445; the current natural baseline442 and later442/444/442 counter forms remain failed. All65,536 counter inputs agree in memory semantics, without proving whole-loop behavior. Baseline restored; separate110-byte entry is accepted. | `main-gameplay-loop-expressions-a`, `main-gameplay-loop-{modulo,postincrement,compound}-a` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
 | Standalone laser collision | One immutable quotient removes repeated division, but first producer218 still differs from original210. The boundary gate stopped before second and negative builds. | `main-shots-laser-collision-a` |
 | Item motion/collection | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
 | Shot rendering | Original164, safe word-local producer173; the one byte-local experiment175 was stopped at the first boundary check and abandoned. The safe original source is restored. | `main-shots-render-a`, `main-shots-render-b` |
-| Stage-session initialization | Original803 includes mandatory zero at772 and thirty table bytes. First producer802 stops at the complete-contribution boundary gate; no padding/flag variants follow. | `main-stage-session-init-a` |
+| Stage-session initialization | Original803 includes mandatory zero772, thirty table bytes and three uncredited relaxation NOPs213/403/595. New common SEGDEF restores transfer/fixup routing; late `-a2` still emits802 and is rejected. Correct potential credit799, not802. | `main-stage-session-init-a`, `main-stage-session-common-a`, diagnostic `stage-session-common-routing-a` |
 | Bullet/pellet rendering | Original334, producer330: native manual BP prologue differs by2 bytes and ordinary local allocation by2. No padding/flags/register variants follow. | `main-bullets-render-a` |
 | Sara foreground | Original159, producer161 due to coordinate allocation. The separate complete Louise116 owner is accepted. | `main-sara-louise-foreground-a` |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |

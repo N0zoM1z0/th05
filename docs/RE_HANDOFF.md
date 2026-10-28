@@ -21,6 +21,50 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 127,976 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
+## Latest bounded runtime investigation: stage entry and frame counter
+
+Native stage-session `[B237,B55A)`803 is reread completely. Its772-byte
+instruction extent includes genuine linker-relaxation NOPs213/403/595; these
+three and zero772 receive no credit. All three tables total30 bytes and remain
+mandatory. This corrects older potential credit802 to799; all803 bytes stay
+unknown. No previous accepted classification or counter changes.
+
+New `stage_session_common_bindings.asm` gives the genuine far services one
+common public CODE SEGDEF across two symbol-only objects around the real CPP.
+An initial diagnostic reuses the unchanged archived802-byte compiler object,
+with its actual old end only for foreign routing. All three same-CS transfers
+and original23-fixup order are restored; body differences are only table-base
+operands261/325/433. This is not acceptance or a new CPP producer. The subsequent
+real source with late `-a2` still emits802 and fails its first size gate; there
+is no second or negative. The intended803-byte positive layout is unproved.
+The prepared source/binder stay maintained; their proposal is outside the live
+manifest. See [complete context evidence](../src/main/runtime/stage_session_context.md).
+
+The native preceding entry110/loop445/new-game468 form a genuine1,023-byte
+prefix, but a shared original-size source context remains unproved because
+the loop is still short. New ordinary modulo/postincrement/compound-result
+forms emit442/444/442, each rejected at its first complete boundary. Baseline
+loop source is restored unchanged; no registers, types, volatile, inert
+operations, padding or compiler-flag matrix is used.
+
+All65,536 WORD inputs execute against actual native and all three compiled
+counter blocks:262,144 cases agree on increment/wrap and modulo2/4/8/16 memory
+outputs and adjacent canaries. Scratch registers, callbacks, interrupts, ports
+and whole-loop behavior are excluded; all445 native bytes remain unknown.
+Report `.analysis/gameplay-counter-memory-model.json`, SHA-256
+`e2dbb6e2d9b22489d8ffb6365e96bd8f3d63eb9657aeafc0c6afdab89d1c83aa`.
+Native stage review `.analysis/stage-session-current-native-review.json`;
+actual producer/source/layout review `.analysis/runtime-stage-loop-resumed-review.json`,
+SHA-256 `e5f5d276eddd16da058657c648b5c48038feb8a6dfec4d0d518dc6be143ecc78`.
+This investigation changes no acceptance, authored credit or ownership ledger.
+
+All364 CI tests, public gates and diff checks pass. The baseline loop,
+accepted manifests/records, generated progress/ownership and pinned toolchain
+configuration are byte-for-byte unchanged from the MAP checkpoint f14f3aa.
+Its successful native ownership verification is reused. All five incremental
+plans are empty. Evidence: `.analysis/runtime-stage-loop-final-ci.log` and
+`.analysis/runtime-stage-loop-final-plans.json`.
+
 ## Latest accepted C++: complete MAP release, 2026-10-28
 
 MAIN `[E606,E61D)` adds the complete23-byte MAP release: six instructions,

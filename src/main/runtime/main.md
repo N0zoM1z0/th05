@@ -112,3 +112,29 @@ Private `.analysis/gameplay-loop-expression-first-review.json`, SHA-256
 records the actual object, linked artifact, complete MAP scope, instruction
 comparison and raw relocation lists. Unchanged older accepted entry inputs
 are reused; no gameplay-loop bytes receive authored credit.
+
+## Subsequent bounded counter-expression checks
+
+The stage-session investigation required rechecking the genuine preceding
+loop. Replacing the first mask with ordinary unsigned `%16` still emits442
+bytes, with the same memory increment/load and byte mask. Consuming the
+postincrement result as `(stage_frame++ + 1) %16` emits444, computing the byte
+result before the memory increment; it still differs from native445.
+The ordinary compound-result `(stage_frame += 1) %16` returns to442. All three
+complete-function first-size gates reject the outputs before a second producer
+or compiled negative. There is no physical-register alias, type change,
+volatile annotation, inactive operation or compiler-flag matrix. The original
+maintained baseline source is restored byte-for-byte.
+
+An independent model executes the actual native and each of these three
+compiled counter blocks for all65,536 input WORDs, including FFFF-to0 wrap.
+All262,144 executions produce the mathematical next frame and modulo2/4/8/16
+memory bytes, preserving adjacent canaries. Only these memory outputs are
+checked: scratch-register differences, interrupts, callbacks, ports and the
+whole loop are excluded. This proves bounded counter semantics, not exact
+acceptance; all445 native bytes remain unknown.
+Report `.analysis/gameplay-counter-memory-model.json`, SHA-256
+`e2dbb6e2d9b22489d8ffb6365e96bd8f3d63eb9657aeafc0c6afdab89d1c83aa`.
+Actual source/OMF/MAP/argv evidence is in
+`.analysis/runtime-stage-loop-resumed-review.json`, SHA-256
+`e5f5d276eddd16da058657c648b5c48038feb8a6dfec4d0d518dc6be143ecc78`.

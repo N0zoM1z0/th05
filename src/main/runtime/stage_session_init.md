@@ -6,8 +6,11 @@ Natural C++ candidate for original MAIN load `B237..B55A`, frame `AE1`, DS
 seven stage entries at `[773,787)`, four second-character entries at
 `[787,795)`, and four first-character entries at `[795,803)`. Every table target
 was checked against a complete original instruction boundary. No byte is
-masked or supplied by the source/binder. The zero receives no authored credit;
-potential authored CODE is 802 bytes, including all 30 generated table bytes.
+masked or supplied by the source/binder. The zero receives no authored credit.
+The instruction extent includes three genuine linker-relaxation NOPs at
+213/403/595, also checked with zero credit. Correct potential authored CODE
+is799 bytes:769 instructions plus all30 generated table bytes. The older802
+estimate did not subtract these NOPs and is superseded.
 The retained first producer is inexact, as recorded below. This owner is
 unaccepted.
 
@@ -106,8 +109,18 @@ do not constitute new source-global discoveries or exact comparisons.
 
 Private `.analysis/stage-session-init-a-forensics.json` pins the actual
 object/MAP/MZ and compiler input hashes, table locations, transfer instructions
-and both unmodified relocation sequences. CPP, header and binder remain
-byte-identical to the saved first producer. The early complete-extent gate
+and both unmodified relocation sequences. At that checkpoint, CPP, header and
+binder were byte-identical to the saved first producer. The early complete-extent gate
 stopped before the second producer and negative control. No authored credit
-was imported, and no further flags, padding, source or binder variants are
-proposed for this missing-zero owner.
+was imported, and no further flags, padding, source or binder variants were
+proposed at that checkpoint for this missing-zero owner.
+
+## Subsequent common-segment evidence
+
+A diagnostic relink of the unchanged old802-byte compiler object restores the
+three real same-segment far transfers and the original23-entry relocation
+order using before/after symbol-only bindings. It does not supply the missing
+zero. The subsequent new compiler owner with late `-a2` still emits802 and
+is stopped at the first size gate. Both failures remain unaccepted; the new
+profile is outside default replay selection. See
+[actual binding, boundary and compiler evidence](stage_session_context.md).
