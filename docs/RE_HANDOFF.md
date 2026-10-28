@@ -21,6 +21,33 @@ and runtime-placeholder bytes. C/C++ counters above are unchanged; unknown
 ownership is now 131,701 bytes. The global denominator is still unreviewed;
 every other unreviewed ZUN child scope stays unknown.
 
+## Resumed work: 2026-10-28
+
+The user resumed reconstruction; the earlier stop below is historical.
+All four targets pass candidate-local attestation and the starting worktree
+was clean. The previous handoff turn made progress by preserving reviewed
+native evidence; its pending point-number route has now been implemented.
+
+The three point-number lifecycle scopes now have maintained natural C++ and
+complete typed foreign storage in `src/main/pointnum/lifecycle.*`. Re-reading
+the immutable MAIN bytes confirms the original 12/44/112-byte boundaries,
+empty ordered fixups, and only alignment NOPs at init11/update111. The first
+binder failed before compilation on missing ASSUME CS; that declaration was
+corrected. One successful natural C++ producer emits 184 bytes (11/47/126)
+against 168 and is rejected at the size gate. There is no second positive,
+compiled negative, acceptance, ASM promotion or authored credit. The private
+proposal is removed from the live manifest; no accepted source is changed.
+
+Both original and retained compiler output pass 68 generated pool/model cases,
+including 15,360 update input combinations, all unsigned ages, signed-Y edges,
+six flags, list termination, yellow boundary and preserved record/list tails.
+Tile invalidation checks the actual previousY/currentX scalar RET4 boundary
+with scratch clobbers; provider effects are outside the model. Report
+`.analysis/pointnum-lifecycle-semantic-check.json`, SHA-256
+`3520f2550feaf9d251bb5a3b69e1caa7650eba60e8b295b23ab96b43ca6259dc`.
+See [scope, source and failed producer notes](../src/main/pointnum/lifecycle.md).
+All acceptance and ownership counters remain unchanged.
+
 ## Handoff checkpoint: 2026-10-26
 
 The user cleared the reconstruction goal and requested cleanup/handoff.
