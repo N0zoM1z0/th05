@@ -13,13 +13,13 @@ The project reuses the build and analysis lessons from
 [TH03](https://github.com/N0zoM1z0/th03). ReC98 is a pinned candidate reference;
 its progress and exactness labels do not transfer to this repository.
 
-The first **512 complete C/C++ functions / 87,284 authored CODE bytes**
+The first **513 complete C/C++ functions / 87,350 authored CODE bytes**
 pass independent cold producers, complete raw comparison, original ordered
 fixups and compiled controls. Separately, **15,337 initialized semantic DATA
 bytes** pass their own compiled DATA mutations. Total authored C/C++ bytes exact are
-**102,621**: 86,492 instruction, 792 compiler switch-table
+**102,687**: 86,558 instruction, 792 compiler switch-table
 and 15,337 initialized DATA bytes. Complete compared extents contain
-102,708 bytes, including 87 excluded padding bytes. The oracle
+102,774 bytes, including 87 excluded padding bytes. The oracle
 supplies explicit original external-symbol bindings; whole-program placement
 and standalone linkage remain open.
 
@@ -66,7 +66,7 @@ interval across all four targets; it grants no inferred vendor exclusions.
 and [CL DATA](docs/reconstruction/CL_DATA_OWNERSHIP.md) reviews classify 3,777
 initialized library DATA bytes. All 77,581 vendor bytes grant zero authored
 credit. A separately reviewed [8,192-byte ZUN font resource](docs/reconstruction/ZUN_FONT_RESOURCE.md)
-also grants zero authored credit. Unknown ownership remains 123,399 bytes.
+also grants zero authored credit. Unknown ownership remains 123,333 bytes.
 
 Daily work focuses on the selected exact replay and generated-state checks.
 `python3 scripts/ci.py` runs lightweight public consistency checks;

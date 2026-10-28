@@ -31,8 +31,9 @@ org (17204h - 15270h)
 _bullets_add_regular label near
 org (18459h - 15270h)
 MAIN_035_TEXT ends
-B4_UPDATE_AFTER_TEXT segment byte public 'CODE' use16
-org (209d0h - 1856ah)
+; This natural paragraph boundary lies after both273 and278-byte bodies.
+B4_UPDATE_AFTER_TEXT segment para public 'CODE' use16
+org (209d0h - 18570h)
 B4_UPDATE_AFTER_TEXT ends
 main_03 group MAIN_035_TEXT, B4_UPDATE_AFTER_TEXT
 _DATA segment word public 'DATA' use16

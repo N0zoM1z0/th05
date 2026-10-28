@@ -160,3 +160,10 @@ Independent actual OMF/MAP/MZ/code review:
 `.analysis/b4ball-return-bridge-actual-review.json`, SHA-256
 `973105654a4da84435a633d1a3f7ba56b3ff2a623c7ab570fad408b72c47ebe1`.
 Authored units, function counts, C/C++/ASM bytes and ownership are unchanged.
+
+A later outside-only PARA correction now preserves DS209D for both273/278-byte
+bodies and retains the actual template base577E. A shared C++ cleanup label
+still emits278; two eager ordinary coordinate deltas emit290. Both failed first
+producers are retained under `main-b4ball-update-{cleanup,deltas}-a`. The source
+was restored byte-exact; only the factual outside binder alignment is maintained.
+No new acceptance, behavior model or unrelated tests are claimed.

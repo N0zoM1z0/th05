@@ -5,14 +5,14 @@ authored denominator and percentage remain unreviewed; the goal is not complete.
 
 ## Current accepted source
 
-327 bounded C/C++ CODE/DATA units, 512 complete function occurrences:
-**102,621 authored bytes exact** = 87,284 CODE + 15,337 initialized DATA.
-CODE consists of 86,492 instruction and 792 compiler-table bytes. Complete
-compared extents total 102,708, including 87 uncredited padding bytes.
+328 bounded C/C++ CODE/DATA units, 513 complete function occurrences:
+**102,687 authored bytes exact** = 87,350 CODE + 15,337 initialized DATA.
+CODE consists of 86,558 instruction and 792 compiler-table bytes. Complete
+compared extents total 102,774, including 87 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 393 | 66,098 | 3,091 |
+| MAIN | 394 | 66,164 | 3,091 |
 | OP | 62 | 11,251 | 8,649 |
 | MAINE | 56 | 9,613 | 3,597 |
 | ZUN | 1 | 322 | 0 |
@@ -20,24 +20,22 @@ compared extents total 102,708, including 87 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction, 210 dispatch-table, 24 semantic
 CODE-coordinate and 64 DATA bytes; 7,388 complete bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. These are separate from
-C/C++ credit. Unknown ownership: **123,399 bytes**, including MAIN 43,689.
+C/C++ credit. Unknown ownership: **123,333 bytes**, including MAIN 43,623.
 Generated authority: [progress](PROGRESS.md), [ownership](../resources/ownership.json).
 
 ## Latest exact recovery
 
-`main-b4ball-render`: MAIN `[108DF,1093F)`, 96 bytes/37 instructions, no NOPs,
-tables, padding or relocations. Maintained C++ uses the canonical full26-byte
-ball records and actual AX/DX/ES graphics boundary. Two normal fresh producers
-match every byte; their own damage-offset8-to9 control is rejected. Import
-adds96 instruction bytes/one function; older accepted records are unchanged.
+`main-yumeko-swords-render`: MAIN `[143E0,14422)`,66 bytes/28 instructions,
+no NOPs, tables, padding or relocations. Two fresh normal producers match all
+bytes and ordered fixups; the live/free predicate control is rejected at byte22.
+Import adds66 instruction bytes/one function. Older records remain unchanged.
+Receipt `.analysis/unit-replays/main-yumeko-swords-render-a/receipt.json`, SHA-256
+`b1bd8679efe138790eec8986c303143b5a1194a3f664f1ce7873f409882ea5e0`.
+See [source evidence](../src/main/boss/yumeko/swords_render.md).
 
-Receipt: `.analysis/unit-replays/main-b4ball-render-a/receipt.json`, SHA-256
-`fad693879f203da0876abbb69094e62c7817d0b8bd9fde9e8bb38ab3fc0f6df5`.
-See [source evidence](../src/main/boss/mai_yuki/b4ball_render.md).
-
-Previous accepted additions at3915fba: Sara159 and Mai/Yuki194 foregrounds.
-Ordinary local declaration order resolved both register allocations. Their
-canonical inls, accepted receipts and full per-owner notes remain unchanged.
+Previous3af324e added B4 renderer96 and narrowed routine validation to exact
+work. The simplified process remains in effect; no new behavior models/tests
+were added in this iteration.
 
 ## Current work direction
 
@@ -45,20 +43,31 @@ The major boss update callbacks are already accepted. Continue on genuine
 unmatched functions and their leaves, using native bytes and current source
 rather than treating old failed experiments as restrictions.
 
-- Shinki wing preparation386 matches raw bytes but its relocation order differs.
-  A genuine compiler context is still needed; never sort the relocation stream.
-- Shinki ball updater220: ordinary scalar candidate232 remains inexact.
-- Dialog opcode456: standalone and real-prefix candidates455 remain inexact.
-- Staff updater626 and renderer861: candidates623/858 each omit one redundant
-  trail-pointer reload. The new ordinary declaration/initialization-order trial
-  still emits4223 for the full4229 family; both canonical inls were restored.
-- Generic boss collision43: scalar declaration-order candidate46 and full-point
-  candidate59 remain inexact. Shinki particle renderer159: ordinary coordinates
-  produce171. These single-producer diagnostics add no credit.
+- **Next: Yumeko sword updater283**, now recovered as ordinary280-byte C++.
+  Missing local removal proxy2, merged loop-tail jump2 and a one-byte longer
+  player-Y calculation explain the gap. A targeted-O- profile285 was rejected;
+  baseline280 restored. Do not insert padding or a register arithmetic template.
+- Yumeko aimed swords354 and laser/swords428 now match every raw byte, but
+  standalone relocation order differs. They remain unaccepted. The actual
+  aim ABI is two coordinate words plus one angle word, near Pascal RET6; a
+  local word-value view removes the old Subpixel temporary without editing
+  shared declarations. Full records and ordinary calculations are retained.
+- A genuine allocator121/updater280/patterns435 prefix restores the aimed
+  relocation stream, but places the function three bytes early. Its requested
+  separate-segment scope fails because first declaration fixes B5_UPDATE_TEXT.
+  This is an actual failed producer, not acceptance. Correct updater/context
+  recovery is needed. [Details](../src/main/boss/yumeko/laser_swords.md).
+- B4 updater273 remains278; eager deltas290 and cleanup label278 were rejected.
+  Source restored; corrected outside PARA placement now keeps DS209D for273/278.
+- Shinki wing386 still has a relocation-order mismatch; scalar ball updater232
+  remains inexact against220. Dialog opcode455 remains short of456.
+- Staff updater623/renderer858 still differ from626/861. Generic boss collision
+  scalar46/full-point59 differ from43; Shinki particle171 differs from159.
 
-The latter diagnostics and concise root findings remain under
-`.analysis/scalar-render-followups-root-review.json`; the maintained standalone
-candidates are not registered for default replay. No failed result is accepted.
+Joint current review: `.analysis/yumeko-later-root-review.json`, SHA-256
+`1099a5063c7943fba749a258d3e449b1fdf1c75c916d329b5ef33cdbda94001c`.
+Only the renderer66 is accepted;782 raw-equal attack bytes stay unknown.
+All unchanged accepted owners and installed execution proofs were reused.
 
 ## User-directed focus, 2026-10-28
 
@@ -78,16 +87,3 @@ Keep short evidence notes, update generated progress/ownership for accepted
 changes, and commit/push substantive progress. Preserve the
 [exact contract](ORACLES.md), [workflow](RE_WORKFLOW.md), original Borland ABI,
 complete bytes and original relocation order. Serialize Wine/Borland/Ghidra.
-
-This change passes the lightweight consistency check and all362 tooling tests
-in one explicit full run for the CI-tool change. The MAIN incremental plan is
-empty and diff checks pass. This result does not add a recurring test obligation.
-
-Follow-up cleanup retires the zero-compare probe, obsolete monolithic boss
-background diagnostic and supplemental-negative compiler tool themselves.
-Their scripts remain in Git history at `3af324e`; historical receipts and
-accepted bytes are unchanged. The normal replay retains its shared compiled
-control. Documentation/test-only cleanup needs no compiler replay or generated
-progress refresh. Existing boss source edits belong to concurrent work.
-Validation: lightweight CI and 17 focused oracle/function-boundary tests pass;
-`git diff --check` passes. No compiler replay or full tooling run was needed.

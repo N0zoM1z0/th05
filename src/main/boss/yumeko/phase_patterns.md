@@ -29,3 +29,10 @@ functions. The real counterrotation reset frame 256→257 mutation is compiled
 and rejected. Credit is two complete functions and 518 instruction bytes,
 with no compiler tables, padding, DATA or BSS. No class ABI reinterpretation,
 register forcing, shared constructor change or artificial work is introduced.
+
+The canonical aimed body now lives in `aimed_swords.inl`; both the combined
+candidate and new standalone wrapper include it. A reviewed word-value view
+of the actual near Pascal aim ABI removes the old three-byte coordinate store,
+producing all354 raw bytes. Its original nonmonotone relocation stream remains
+unmatched standalone, so no aimed-sword credit is imported. The accepted spread
+owner and its dependencies are unchanged. See [current recovery](laser_swords.md).

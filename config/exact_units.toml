@@ -4422,3 +4422,22 @@ unit = "main-b4ball-render"
 source = "src/main/boss/mai_yuki/b4ball_render.cpp"
 find = "B4_RENDER_DAMAGE_CELS = 8;"
 replace = "B4_RENDER_DAMAGE_CELS = 9;"
+
+[[units]]
+id = "main-yumeko-swords-render"
+source = "src/main/boss/yumeko/swords_render.cpp"
+module = "th05/yumesr.cpp"
+segment = "YUMEKO_UPDATE_MAIN01_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/yumeko_swords_render_bindings.asm"
+target_start = 0x143e0
+size = 66
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-yumeko-swords-render"
+source = "src/main/boss/yumeko/swords_render.cpp"
+find = "if(sword->flag != F_FREE)"
+replace = "if(sword->flag == F_FREE)"
