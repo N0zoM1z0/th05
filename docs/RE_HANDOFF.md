@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-328 bounded C/C++ CODE/DATA units, 513 complete function occurrences:
-**102,687 authored bytes exact** = 87,350 CODE + 15,337 initialized DATA.
-CODE is 86,558 instruction + 792 compiler-table bytes. Complete compared
-extents total 102,774, including 87 uncredited padding bytes.
+329 bounded C/C++ CODE/DATA units, 518 complete function occurrences:
+**102,977 authored bytes exact** = 87,640 CODE + 15,337 initialized DATA.
+CODE is 86,840 instruction + 800 compiler-table bytes. Complete compared
+extents total 103,064, including 87 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 394 | 66,164 | 3,091 |
+| MAIN | 399 | 66,454 | 3,091 |
 | OP | 62 | 11,251 | 8,649 |
 | MAINE | 56 | 9,613 | 3,597 |
 | ZUN | 1 | 322 | 0 |
@@ -22,17 +22,21 @@ extents total 102,774, including 87 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**123,333 bytes**, including MAIN 43,623. The global authored denominator and
+**123,043 bytes**, including MAIN 43,333. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery: `main-yumeko-swords-render`, MAIN `[143E0,14422)`,
-66 instruction bytes/one complete function, accepted in `5c3466b`. No NOP,
-table, padding or relocation. Receipt:
-`.analysis/unit-replays/main-yumeko-swords-render-a/receipt.json`, SHA-256
-`b1bd8679efe138790eec8986c303143b5a1194a3f664f1ce7873f409882ea5e0`.
-Later compiler trials add no exact credit; maintained source was restored.
+Latest exact recovery: `main-boss-explosion-spawn`, MAIN `[176CE,177F0)`,
+five complete C++ functions/290 bytes: small reset, small/big creation and both
+second-Boss position wrappers. All 282 instruction and eight compiler-table
+bytes match, with original ordered fixups `[244,128]`, no padding and no owned
+DATA/BSS. Two fresh producers and the shared compiled negative pass. Receipt:
+`.analysis/unit-replays/main-boss-explosion-spawn-a/receipt.json`, SHA-256
+`38a436ec0c398793b5a62d364e205cb59b711fc56e5674d81b1bab605013274f`.
+See [source/ABI review](../src/main/boss/explosion_spawn.md). The adjacent
+22-byte wrapper before `176CE` remains unknown; no whole-family extension is
+implied. Defeat/collision source was inspected but not changed or compiled.
 
 ## Useful next work
 
@@ -72,12 +76,14 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-All four incremental plans are empty after cleanup; no compiler was run.
+The MAIN incremental plan is empty after the focused explosion-spawn replay;
+no unchanged accepted unit was compiled. Other artifact inputs are unchanged.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
 backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
-the current 328-record/232-receipt inventory. All accepted evidence stays live.
+the prior cleanup's 328-record/232-receipt inventory. The new explosion-spawn
+receipt adds one accepted record; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

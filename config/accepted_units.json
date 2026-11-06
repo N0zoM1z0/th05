@@ -2,18 +2,24 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "b1bd8679efe138790eec8986c303143b5a1194a3f664f1ce7873f409882ea5e0",
+  "replay_receipt_sha256": "38a436ec0c398793b5a62d364e205cb59b711fc56e5674d81b1bab605013274f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 82912,
-    "candidate_start": 82912,
-    "size": 66,
-    "target_sha256": "bec5fbdb57f762b5215e354850286a2758e2caaa07c650e01f4f85dc09c5ce0a",
-    "candidate_sha256": "87a5fbadebb076b84cdc027d24f4636004d1c6bbbf0eb947c3fc9a30a13cbefc",
+    "target_start": 95950,
+    "candidate_start": 95950,
+    "size": 290,
+    "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+    "candidate_sha256": "32bde052d30f64e3f9e43f9e269a1b5e846a554d7b8cdbc4d892714f72a8d2ba",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      244,
+      128
+    ],
+    "candidate_fixups": [
+      244,
+      128
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -70350,6 +70356,276 @@
           "-ml",
           "-DBINARY='M'",
           "th05/yumesr.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-boss-explosion-spawn",
+      "entry_sha256": "8863be1abe92d207dc1e04bb54639ffe472b8c2b6e36615f63bdfbc35dc6f109",
+      "result": {
+        "id": "main-boss-explosion-spawn",
+        "entry_sha256": "8863be1abe92d207dc1e04bb54639ffe472b8c2b6e36615f63bdfbc35dc6f109",
+        "rounds": [
+          {
+            "target_start": 95950,
+            "candidate_start": 95950,
+            "size": 290,
+            "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+            "candidate_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+            "raw_exact": true,
+            "target_fixups": [
+              244,
+              128
+            ],
+            "candidate_fixups": [
+              244,
+              128
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 95950,
+            "candidate_start": 95950,
+            "size": 290,
+            "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+            "candidate_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+            "raw_exact": true,
+            "target_fixups": [
+              244,
+              128
+            ],
+            "candidate_fixups": [
+              244,
+              128
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "3235424cdb1e61d7943b1b255b6313b9ac48d85c6e9626b7b9cced65c1232285",
+            "dependency_timestamp_normalized_sha256": "eaf087842077511d7a4a01da96e954c260079175c09072bfc525d580999f7168",
+            "module_name": "th05/bexp_new.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bexp_new.cpp",
+              "src/main/boss/explosion_spawn.cpp",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "f1d086fae0fa088dcd8ed66334e8375f18dd5a2728a7ae4efdd466c80f415db6",
+            "dependency_timestamp_normalized_sha256": "eaf087842077511d7a4a01da96e954c260079175c09072bfc525d580999f7168",
+            "module_name": "th05/bexp_new.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bexp_new.cpp",
+              "src/main/boss/explosion_spawn.cpp",
+              "src/main/boss/explosion.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bexp_new.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bexp_new.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/boss_explosion_spawn_bindings.asm",
+            "sha256": "35bf903e1952b1cba1354f5d0f1825e3aceba97c9f141950b73680a4e4ff6a82"
+          },
+          {
+            "path": "src/main/boss/explosion.hpp",
+            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          },
+          {
+            "path": "src/main/boss/explosion_spawn.cpp",
+            "sha256": "b70d246a745f619189fb98c7105e6c72b67d0e7fbf2dd1ba17a1f86f692c415c"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/boss_explosion_spawn_bindings.asm",
+          "sha256": "35bf903e1952b1cba1354f5d0f1825e3aceba97c9f141950b73680a4e4ff6a82"
+        },
+        {
+          "path": "src/main/boss/explosion.hpp",
+          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+        },
+        {
+          "path": "src/main/boss/explosion_spawn.cpp",
+          "sha256": "b70d246a745f619189fb98c7105e6c72b67d0e7fbf2dd1ba17a1f86f692c415c"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "38a436ec0c398793b5a62d364e205cb59b711fc56e5674d81b1bab605013274f",
+      "compiled_negative_control": {
+        "target_start": 95950,
+        "candidate_start": 95950,
+        "size": 290,
+        "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+        "candidate_sha256": "32bde052d30f64e3f9e43f9e269a1b5e846a554d7b8cdbc4d892714f72a8d2ba",
+        "raw_exact": false,
+        "target_fixups": [
+          244,
+          128
+        ],
+        "candidate_fixups": [
+          244,
+          128
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-boss-explosion-spawn",
+        "entry_sha256": "8863be1abe92d207dc1e04bb54639ffe472b8c2b6e36615f63bdfbc35dc6f109",
+        "mutation": {
+          "unit": "main-boss-explosion-spawn",
+          "source": "src/main/boss/explosion_spawn.cpp",
+          "find": "snd_se_play(15);",
+          "replace": "snd_se_play(14);"
+        },
+        "control_sha256": "61ea5b90cf67e171c0aa358307c99cfd45448170523f0c98a3acf06d377275d8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 95950,
+          "candidate_start": 95950,
+          "size": 290,
+          "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
+          "candidate_sha256": "32bde052d30f64e3f9e43f9e269a1b5e846a554d7b8cdbc4d892714f72a8d2ba",
+          "raw_exact": false,
+          "target_fixups": [
+            244,
+            128
+          ],
+          "candidate_fixups": [
+            244,
+            128
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "5c2fc97c2901d53aa0a39a86505acbf42c0efcee1853635faef28c865f6416e7",
+          "dependency_timestamp_normalized_sha256": "9345c6e4a9aa7c2c531e24425bfa6f20ce1f4d7d5e02226b687afc920a0da6c5",
+          "module_name": "th05/bexp_new.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bexp_new.cpp",
+            "src/main/boss/explosion_spawn.cpp",
+            "src/main/boss/explosion.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bexp_new.cpp"
         ]
       },
       "receipt_aggregate_pass": true

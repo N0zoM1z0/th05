@@ -4441,3 +4441,23 @@ unit = "main-yumeko-swords-render"
 source = "src/main/boss/yumeko/swords_render.cpp"
 find = "if(sword->flag != F_FREE)"
 replace = "if(sword->flag == F_FREE)"
+
+[[units]]
+id = "main-boss-explosion-spawn"
+source = "src/main/boss/explosion_spawn.cpp"
+module = "th05/bexp_new.cpp"
+segment = "BOSS_EXP_SPAWN_TEXT"
+wrapper_options = "-zPmain_03"
+target_start = 0x176ce
+size = 290
+alignment_offsets = []
+code_data_ranges = [{ offset = 135, size = 8, kind = "compiler-switch-table" }]
+functions = 5
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/boss_explosion_spawn_bindings.asm"
+
+[[controls]]
+unit = "main-boss-explosion-spawn"
+source = "src/main/boss/explosion_spawn.cpp"
+find = "snd_se_play(15);"
+replace = "snd_se_play(14);"
