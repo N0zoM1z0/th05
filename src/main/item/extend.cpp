@@ -1,7 +1,11 @@
 // Natural TH05 point-item extend check. Original complete helper near1CDAC.
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_EXTEND_TEXT -zPmain_03
+#endif
 #include "src/main/item/update.hpp"
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma codeseg ITEM_EXTEND_TEXT main_03
+#endif
 
 void near item_extend_check(void)
 {

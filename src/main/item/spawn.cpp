@@ -1,8 +1,12 @@
 // Natural spawn/death-drop algorithms adapted from maintained TH04 item owner.
 // Real TH05 changes: bomb-drop conversion, forty slots, global remaining lives.
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_SPAWN_TEXT -zPmain_03
+#endif
 #include "src/main/item/spawn.hpp"
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma codeseg ITEM_SPAWN_TEXT main_03
+#endif
 
 void pascal near items_add(subpixel_t x, subpixel_t y, item_type_t type)
 {

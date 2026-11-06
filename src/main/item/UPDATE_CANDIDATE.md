@@ -1,5 +1,10 @@
 # TH05 collection and update candidates
 
+The complete initialization/spawn/extend/collection/miss family is now accepted
+through one natural source contribution; see [current exact family](family.md).
+The collection failures and standalone proposals below are historical. The
+separate motion updater remains unaccepted.
+
 Natural semantic donor: maintained TH04 `src/main/item/items_update.cpp`.
 TH05 behavior, complete returns, operands, data widths, branches and call frames
 were independently reviewed in the supplied original MAIN. ReC98

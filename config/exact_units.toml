@@ -1380,25 +1380,6 @@ replace = "midboss.damage_this_frame = 1;"
 # Private natural item proposals; zero acceptance.
 
 [[units]]
-id = "main-item-spawn"
-source = "src/main/item/spawn.cpp"
-module = "th05/it_spawn.cpp"
-segment = "ITEM_SPAWN_TEXT"
-wrapper_options = "-zPmain_03"
-bindings_source = "probes/units/item_spawn_bindings.asm"
-target_start = 0x1cc2b
-size = 385
-functions = 2
-alignment_offsets = []
-origin = "compiler-generated-cxx"
-
-[[controls]]
-unit = "main-item-spawn"
-source = "src/main/item/spawn.cpp"
-find = "item->pos.velocity.y.v = -TO_SP(3);"
-replace = "item->pos.velocity.y.v = -TO_SP(4);"
-
-[[units]]
 id = "main-item-splashes"
 source = "src/main/item/splash.cpp"
 module = "th05/it_spl_u.cpp"
@@ -1491,45 +1472,6 @@ unit = "main-ems-allocate"
 source = "src/main/ems/ems.cpp"
 find = "(ems_space() < EMSSIZE)"
 replace = "(ems_space() <= EMSSIZE)"
-
-[[units]]
-id = "main-item-extends"
-source = "src/main/item/extend.cpp"
-module = "th05/it_extnd.cpp"
-segment = "ITEM_EXTEND_TEXT"
-wrapper_options = "-zPmain_03"
-bindings_source = "probes/units/item_extend_bindings.asm"
-target_start = 118188
-size = 79
-functions = 1
-alignment_offsets = []
-origin = "compiler-generated-cxx"
-
-[[controls]]
-unit = "main-item-extends"
-source = "src/main/item/extend.cpp"
-find = "playperf_raise(4);"
-replace = "playperf_raise(5);"
-
-[[units]]
-id = "main-item-miss-penalty"
-source = "src/main/item/collect.cpp"
-module = "th05/it_rewrd.cpp"
-segment = "ITEM_REWARD_TEXT"
-wrapper_options = "-zPmain_03"
-bindings_source = "probes/units/item_rewards_bindings.asm"
-function_symbol = "item_miss_penalty(item_t near*)"
-target_start = 118887
-size = 70
-functions = 1
-alignment_offsets = []
-origin = "compiler-generated-cxx"
-
-[[controls]]
-unit = "main-item-miss-penalty"
-source = "src/main/item/collect.cpp"
-find = "playperf_lower(4);"
-replace = "playperf_lower(5);"
 
 [[units]]
 id = "main-dialog-box"
@@ -4868,3 +4810,24 @@ unit = "main-sara-phase-pattern-data"
 source = "src/main/boss/sara/pattern_tables.cpp"
 find = "        pattern_blue_curve_counterclockwise,\n        pattern_blue_curve_clockwise,"
 replace = "        pattern_blue_curve_clockwise,\n        pattern_blue_curve_counterclockwise,"
+
+[[units]]
+id = "main-item-family"
+source = "src/main/item/family.cpp"
+module = "th05/it_full.cpp"
+segment = "ITEM_FAMILY_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/item_family_bindings.asm"
+target_start = 117774
+size = 1183
+functions = 6
+alignment_offsets = []
+padding_bytes = [{offset = 1098, value = 0}]
+code_data_ranges = [{offset = 1099, size = 14, kind = "compiler-switch-table"}]
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-item-family"
+source = "src/main/item/collect.cpp"
+find = "base_points = 12800;"
+replace = "base_points = 12801;"

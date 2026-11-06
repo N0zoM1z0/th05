@@ -88,8 +88,10 @@ remaining `%64` division and both meaningful RNG draws are preserved.
 The separate [item and splash renderers](render.md) now add202 instruction bytes
 in two complete functions. They reuse the canonical20-byte item and10-byte splash
 records and real graphics APIs. Old spawn/update/invalidation inputs remain
-unchanged. Splash initialization and the parked item collection/update functions
-receive no credit through this renderer acceptance.
+unchanged. Splash initialization and the item motion updater
+receive no credit through this renderer acceptance. The complete collection
+function and item initializer are now accepted through the [natural family](family.md),
+which preserves the earlier spawn/extend/miss coverage in one contribution.
 
 The later [initializer and dot experiments](initialization_and_dot_candidates.md)
 retain honest first-producer negatives. Their26/28 native bytes remain unknown;

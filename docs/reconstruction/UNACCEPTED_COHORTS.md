@@ -16,7 +16,7 @@ identify single-producer diagnostics and archived alternatives.
 | MAIN frame loop | Original445; baseline442 and later442/444/442 counter forms remain failed. Baseline restored; separate110-byte entry is accepted. | `main-gameplay-loop-expressions-a`, `main-gameplay-loop-{modulo,postincrement,compound}-a` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
 | Standalone laser collision | Immutable quotient baseline218 versus210. Readonly inline clamp233, assigned inline parameter221 and register quotient221 all fail; baseline restored. | `main-shots-laser-collision-a`; [current notes](../../src/main/player/shot_runtime.md) |
-| Item motion/collection | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
+| Item motion updater | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
 | Shot rendering | Original164, safe word-local producer173; the one byte-local experiment175 was stopped at the first boundary check and abandoned. The safe original source is restored. | `main-shots-render-a`, `main-shots-render-b` |
 | Stage-session initialization | Original803 includes mandatory zero772, thirty table bytes and three uncredited relaxation NOPs213/403/595. New common SEGDEF restores transfer/fixup routing; late `-a2` still emits802 and is rejected. Correct potential credit799, not802. | `main-stage-session-init-a`, `main-stage-session-common-a`, diagnostic `stage-session-common-routing-a` |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
@@ -50,3 +50,8 @@ Both complete stage-two background functions are now accepted independently:
 initializer492 (`main-stage2-particle-initializer-a`) and updater653
 (`main-stage2-update-abi-a`). Earlier498/476/664 observations stay archived,
 but are superseded as open blockers. No whole-combined-TU equality is implied.
+
+The item collection blocker is also superseded: the genuine [six-function
+family](../../src/main/item/family.md) matches its whole 1,183-byte contribution
+and original record order. New collector 620 and initializer 29 add 648 authored
+bytes; the separate 241-byte motion updater remains unaccepted.

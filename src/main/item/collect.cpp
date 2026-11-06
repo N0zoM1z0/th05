@@ -1,8 +1,12 @@
 // Natural item collection/miss algorithms adapted from maintained TH04 source.
 // TH05 dream, point scoring, globals and counters independently reconstructed.
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_REWARD_TEXT -zPmain_03
+#endif
 #include "src/main/item/update.hpp"
+#ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma codeseg ITEM_REWARD_TEXT main_03
+#endif
 
 void pascal near item_collect(item_t near *item)
 {

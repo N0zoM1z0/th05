@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-358 bounded C/C++ CODE/DATA units, 539 complete function occurrences:
-**104,920 authored bytes exact** = 89,297 CODE + 15,623 initialized DATA.
-CODE is 88,489 instruction + 808 compiler-table bytes. Complete compared
-extents total 105,008, including 88 uncredited padding bytes.
+356 bounded C/C++ CODE/DATA units, 541 complete function occurrences:
+**105,568 authored bytes exact** = 89,945 CODE + 15,623 initialized DATA.
+CODE is 89,123 instruction + 822 compiler-table bytes. Complete compared
+extents total 105,657, including 89 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 414 | 67,875 | 3,341 |
+| MAIN | 416 | 68,523 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,37 @@ extents total 105,008, including 88 uncredited padding bytes.
 Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**119,576 bytes**, including MAIN 40,138. The global authored denominator and
+**118,927 bytes**, including MAIN 39,489. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete MAIN score-codec pair C812..C882 adds 112
+Latest recovery: the complete six-function C++ item family at 1CC0E..1D0AD
+now passes all 1,183 raw bytes and 18 original ordered fixups. New coverage is
+initializer 29 and collector 620; the collector includes 14 generated table bytes
+and one uncredited zero. Net credit is 648 authored bytes (634 instructions + 14
+compiler-table), two functions. The old 385-byte spawn, 79-byte extend and 70-byte
+penalty records are replaced by one whole-family unit without double-counting
+or losing coverage, so the total unit count decreases by two. See
+[family source/ABI/receipt review](../src/main/item/family.md).
+
+The family directly includes each existing source body once under guarded
+selectors. Restoring maintained TH04's `#pragma option -a` after canonical types
+recovers the missing compiler table-alignment zero; genuine preceding functions
+supply the original relocation record context. No source byte padding, alias,
+barrier, opcode or output edit is introduced. The full-word far Pascal IRand
+API and complete item/splash/Motion types remain unchanged. The real unmangled
+C/Pascal death-drop public is retained, hence whole-contribution acceptance.
+
+Final `.analysis/unit-replays/main-item-family-whole-e/receipt.json` contains
+two fresh deterministic producers and the shared full-dream reward 12800-to-12801
+negative. Explicit migration preserves all 534 old accepted bytes/four functions;
+all unrelated acceptance records are byte-identical. The comparison migration
+is recorded at `.analysis/item-family-acceptance-migration.json`. No full replay
+or behavior model is run. The 241-byte item motion updater and 445-byte gameplay
+loop remain unaccepted; the accepted collector does not resolve either one.
+
+Previous recovery: the complete MAIN score-codec pair C812..C882 adds 112
 reviewed ASM instruction bytes: decoder 55 plus encoder 57. Typed semantic
 source follows maintained TH04's codec and the independently identified
 MAIN-only original ASM family. ReC98 8dbb4505 explicitly describes the
