@@ -19,15 +19,28 @@ extents total 104,496, including 88 uncredited padding bytes.
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 7,876 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,256 compared bytes include 82 uncredited.
+Separate reviewed ASM: 8,166 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,546 compared bytes include 82 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**120,743 bytes**, including MAIN 41,205. The global authored denominator and
+**120,453 bytes**, including MAIN 40,915. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete 64-byte C section-offset table MAIN 218DA..2191A
+Latest recovery: the complete MAIN scrolling strip copier BC6E..BD24 (182)
+and dirty half-tile redraw BDAE..BE1A (108), separately reviewed handwritten
+ASM. Both pass two fresh producers, full ordinary OMF/MAP, raw bytes and
+original ordered fixups ([] / [103]), with rejected visible-column mutations.
+There is no padding or new DATA/BSS. Strip height/scratch state, the complete
+cache/flag arrays and real EGC providers remain foreign. The redraw stops at
+BE1A; the following 32-byte C++ motion method is excluded. Source-language
+inference uses the complete hardware/register protocols, independently of C++
+failures. See [strip](../src/main/tile/scroll_strip.md) and
+[redraw](../src/main/tile/redraw.md). Final receipts under `.analysis/`:
+`asm-replays/main-tile-scroll-strip-a` and `asm-replays/main-tile-redraw-b`.
+No unchanged accepted source was recompiled and no full replay was run.
+
+Previous recovery: the complete 64-byte C section-offset table MAIN 218DA..2191A
 and the independent tile-cache fill BB9E..BBEC (78) / full renderer BBEC..BC2E
 (66). The table is generated as 32 section IDs times a 320-byte MAP section,
 with its own compiled DATA mutation. Explicit ASM adoption credits 143
@@ -199,6 +212,12 @@ cannot resolve the original386-byte order problem. All are failed diagnostics,
 with unchanged accepted source and no credit; per-owner notes pin evidence.
 Other retained candidates are indexed in
 [UNACCEPTED_COHORTS.md](reconstruction/UNACCEPTED_COHORTS.md).
+One new ordinary gather-template assignment emits a valid 27-byte object,
+matching the native helper's size but using stack-passed far pointers and
+F_SCOPY@ instead of the inline seven-WORD copy. The link stops at that real
+unresolved provider; no placeholder, second producer or negative was added.
+The source stays outside live manifests and grants no credit. See
+[copy diagnostic](../src/main/gather/copy.md).
 The major boss update callbacks already have accepted owners; do not replay
 those unchanged functions while investigating their remaining neighbors.
 

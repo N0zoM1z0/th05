@@ -1274,3 +1274,55 @@ replace = "TILE_RENDER_COLUMNS equ (TILE_VISIBLE_COLUMNS - 1)"
 offset = 23
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-tile-redraw"
+artifact = "main"
+source = "src/main/tile/redraw.asm"
+types = "src/main/tile/render_types.inc"
+symbols = "probes/units/tile_redraw_symbols.inc"
+bindings = "probes/units/tile_redraw_bindings.asm"
+notes = "src/main/tile/redraw.md"
+target_start = 48558
+size = 108
+segment = "TILE_REDRAW_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = [103]
+tables = []
+native_review_sha256 = "b0a3aa000d47d16759870a52725337c9950ec0a20d50389cd35f99756731a6a9"
+target_scope_sha256 = "1b4c22bb3bade59f1bb99bda0210ccf6d3df4652e867d73b941874f32424d1be"
+semantic_inputs = ["src/main/tile/section_offsets.h", "src/main/tile/render.cpp", "src/main/stage/background2.hpp"]
+[units.publics]
+"tiles_redraw_invalidated()" = 0
+"tile_redraw_end" = 108
+[units.negative]
+find = "TILE_REDRAW_COLUMNS equ TILE_VISIBLE_COLUMNS"
+replace = "TILE_REDRAW_COLUMNS equ (TILE_VISIBLE_COLUMNS - 1)"
+
+[[units]]
+id = "main-tile-scroll-strip"
+artifact = "main"
+source = "src/main/tile/copy_scroll_strip.asm"
+types = "src/main/tile/render_types.inc"
+symbols = "probes/units/tile_strip_symbols.inc"
+bindings = "probes/units/tile_strip_bindings.asm"
+notes = "src/main/tile/scroll_strip.md"
+target_start = 48238
+size = 182
+segment = "TILE_STRIP_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "973176b76679755127c0e4069390db4e4405d460d0c46bb1f582d6a9fc6b53e4"
+target_scope_sha256 = "ef931ef7d052e99298d15fc7867bc7307d02ed1987ef25d314fd3d8d1d6a8f16"
+semantic_inputs = ["src/main/tile/section_offsets.h", "src/main/scroll/driver.hpp", "src/main/formats/map_free.hpp"]
+[units.publics]
+"_tiles_copy_scroll_strip" = 0
+"tile_copy_scroll_strip_end" = 182
+[units.negative]
+find = "TILE_STRIP_COLUMNS equ TILE_VISIBLE_COLUMNS"
+replace = "TILE_STRIP_COLUMNS equ (TILE_VISIBLE_COLUMNS - 1)"

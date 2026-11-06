@@ -8,6 +8,7 @@ identify single-producer diagnostics and archived alternatives.
 
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
+| Gather template copy | Original 27; ordinary assignment also emits 27 but calls F_SCOPY@ with far pointers. Link stops at the real unresolved provider; no accepted bytes. | [Copy](../../src/main/gather/copy.md) |
 | OP score decoder | Original169; ordinary byte key181, register byte key182. The local-key spills across the byte-rotate primitive remain unresolved; ordinary181 source restored. | [Decoder](../../src/shared/score/decode.md) |
 | Staff bitmap capture | Native 43; original far-pointer candidate 69, new segment-qualified capture 58. Ordinary pointer register declarations also emit 58; first source restored. | [Capture evidence](../../src/maine/staff/bitmap.md) |
 | Near vector helper | Native 55 plus a separate unknown EVEN byte; wide-local C++ 106, word-domain candidate 92. No ASM promotion. | [Vector](../../src/shared/math/vector2_near.md) |
