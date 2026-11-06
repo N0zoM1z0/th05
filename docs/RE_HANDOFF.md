@@ -141,6 +141,15 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+Two new scalar C++ candidates stay outside all live manifests. Near vector
+has a complete 55-byte procedure plus a separate unknown EVEN NOP; narrowing
+samples/results and reusing a real table offset reduces 106 to 92, still inexact.
+No ASM ownership is inferred from its 32-bit native arithmetic. Scroll-coordinate
+conversion emits 47 versus 40 due to DX allocation; an inline form emits 51 and
+was reverted. Its corrected empty foreign SEGDEF context is verified by
+relinking the saved 47-byte object, without another compiler invocation.
+See [vector](../src/shared/math/vector2_near.md) and
+[scroll ABI/diagnostics](../src/main/scroll/coordinates.md). No new credit.
 A read-only Staff OMF review confirms one 991-byte controller CODE record;
 the existing full family uses roughly 1-KiB chunks. This supports a context
 explanation for the original two fixup runs without proving its TU or allowing
