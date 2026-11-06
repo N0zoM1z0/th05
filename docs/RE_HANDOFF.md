@@ -19,15 +19,27 @@ extents total 104,364, including 88 uncredited padding bytes.
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
+Separate reviewed ASM: 7,198 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 7,570 compared bytes include 74 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,743 bytes**, including MAIN 42,205. The global authored denominator and
+**121,561 bytes**, including MAIN 42,023. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery:the complete11-byte `pointnums_init()` in MAIN, with
+Latest recovery: the complete 182-byte Cheeto mask kernel MAIN DE72..DF28,
+separately adopted as 178 reviewed ASM instruction bytes plus four compared,
+uncredited EVEN NOPs. Two fresh producers reproduce all raw bytes, valid OMF,
+native frames/publics and original empty ordered fixups; the 31-row mutation
+is rejected. Private CH/ZF row-worker and packed register protocols support
+the handwritten-ASM inference. TH04/ReC98 and three pinned primary Master
+sources inform the review without proving literal historical source or
+excluding adaptation. The 2048-byte bank, adjacent loader/scroll provider and
+already accepted C++ caller receive no extra credit. See
+[source/ABI/receipt review](../src/main/bullet/cheeto_put.md).
+Receipt: `.analysis/asm-replays/main-cheeto-put-a/receipt.json`.
+
+The previous complete 11-byte `pointnums_init()` remains accepted in MAIN, with
 no DATA, BSS, table or padding credit:
 
 | Unit | Native load scope | Bytes | Receipt under `.analysis/unit-replays/` |
@@ -147,7 +159,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans are empty after the focused point-init
+The MAIN/OP/MAINE incremental plans remain empty after the focused Cheeto ASM
 replay. No whole accepted-set replay was run. Update/Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -155,6 +167,7 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-twenty-one records/twenty receipts; all accepted evidence stays live.
+twenty-one C/C++ records/twenty receipts and one Cheeto ASM receipt; all
+accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

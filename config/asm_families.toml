@@ -1096,3 +1096,45 @@ replace = "POINTNUM_WHITE_LAST equ (POINTNUM_WHITE_COUNT - 2)"
 offset = 93
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-cheeto-put"
+artifact = "main"
+source = "src/main/bullet/cheeto_put.asm"
+types = "src/main/bullet/cheeto_put_types.inc"
+symbols = "probes/units/cheeto_put_symbols.inc"
+bindings = "probes/units/cheeto_put_bindings.asm"
+notes = "src/main/bullet/cheeto_put.md"
+target_start = 0xDE72
+size = 182
+segment = "MAIN_01_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "64d2444a0655c2eb665b35380a998b6cd953eec80de03d84c6c269af7f4f3088"
+target_scope_sha256 = "1a5b7e235dc69857a8262350e57c75288fba16cf952ae67288a9d651c8c719cd"
+semantic_inputs = []
+[units.publics]
+"@cheeto_put" = 0
+"cheeto_put_end" = 182
+[units.negative]
+find = "CHEETO_DRAW_ROWS equ CHEETO_H"
+replace = "CHEETO_DRAW_ROWS equ (CHEETO_H - 1)"
+[[units.uncredited]]
+offset = 41
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 63
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 71
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 93
+size = 1
+kind = "alignment"
