@@ -7,27 +7,42 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-351 bounded C/C++ CODE/DATA units, 534 complete function occurrences:
-**104,408 authored bytes exact** = 88,809 CODE + 15,599 initialized DATA.
-CODE is 88,001 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,496, including 88 uncredited padding bytes.
+353 bounded C/C++ CODE/DATA units, 536 complete function occurrences:
+**104,410 authored bytes exact** = 88,811 CODE + 15,599 initialized DATA.
+CODE is 88,003 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,498, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 411 | 67,487 | 3,317 |
+| MAIN | 413 | 67,489 | 3,317 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 8,166 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,546 compared bytes include 82 uncredited.
+Separate reviewed ASM: 8,284 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,669 compared bytes include 87 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**120,453 bytes**, including MAIN 40,915. The global authored denominator and
+**120,328 bytes**, including MAIN 40,790. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete MAIN scrolling strip copier BC6E..BD24 (182)
+Latest recovery: both complete MAIN random-reader families, C700..C73E (62)
+and 1529C..152D9 (61), pass two fresh ASM producers, raw bytes, empty ordered
+fixups and their normal high-cursor-byte mutation. Explicit adoption adds118
+instruction bytes; five NOPs compare with zero credit. The shared byte ring
+and full WORD cursor remain foreign, including the index255 overlapping read.
+Their near/Pascal stack interfaces are preserved without a BP frame. See
+[family/ABI/receipts](../src/main/math/randring_readers.md). Final receipts:
+`.analysis/asm-replays/main-randring-{1,2}-a/receipt.json`.
+The two actual no-op callbacks at C73E/C740 are independently exact ordinary
+C++ definitions, adding two complete functions and two instruction bytes;
+their neighboring NOPs remain foreign. Both share one normal compiled return-
+distance negative. See [callbacks](../src/main/runtime/null_callbacks.md) and
+`.analysis/unit-replays/main-null-callbacks-a/receipt.json`. No other accepted
+source was changed or recompiled, and no full replay was run.
+
+Previous recovery: the complete MAIN scrolling strip copier BC6E..BD24 (182)
 and dirty half-tile redraw BDAE..BE1A (108), separately reviewed handwritten
 ASM. Both pass two fresh producers, full ordinary OMF/MAP, raw bytes and
 original ordered fixups ([] / [103]), with rejected visible-column mutations.
@@ -218,6 +233,14 @@ F_SCOPY@ instead of the inline seven-WORD copy. The link stops at that real
 unresolved provider; no placeholder, second producer or negative was added.
 The source stays outside live manifests and grants no credit. See
 [copy diagnostic](../src/main/gather/copy.md).
+The random raw-reader C++ candidate emits21 bytes with a natural local,
+15 with a register local, and19 with prefix increment, versus13 native bytes.
+The compact15 source remains outside manifests; ASM origin is reviewed
+independently of those failures. EMS compiler `-S` plus unmodified TASM output
+remains684 raw-equal but emits ascending fixups, so it cannot accept the boss
+preload. ZUN main's nine-byte gap is three merged message calls; a targeted
+`-O-` source profile emits262 versus269, and the260 baseline is restored.
+Per-owner notes retain all three findings; do not repeat these same trials.
 The major boss update callbacks already have accepted owners; do not replay
 those unchanged functions while investigating their remaining neighbors.
 

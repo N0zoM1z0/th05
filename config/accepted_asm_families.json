@@ -10083,6 +10083,489 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "76876285a24c0d0f0f876928df26a16362b7aec5083a43d4b3adb322946de2d1"
+    },
+    "main-randring-1": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-randring-1",
+        "artifact": "main",
+        "source": "src/main/math/randring_readers.asm",
+        "types": "src/main/math/randring_1_types.inc",
+        "symbols": "probes/units/randring_symbols.inc",
+        "bindings": "probes/units/randring_1_bindings.asm",
+        "notes": "src/main/math/randring_readers.md",
+        "target_start": 50944,
+        "size": 62,
+        "segment": "RANDRING_1_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "4e57c957eda40336b9527f1d15ac3836c697fedac43794778872575b847fcca3",
+        "target_scope_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+        "semantic_inputs": [
+          "src/shared/abi.hpp",
+          "src/main/math/randring_fill.cpp"
+        ],
+        "publics": {
+          "randring1_next16()": 0,
+          "randring1_next16_and(unsigned int)": 14,
+          "randring1_next16_mod(unsigned int)": 36,
+          "randring_readers_end": 62
+        },
+        "negative": {
+          "find": "RING_CURSOR_BYTE equ 0",
+          "replace": "RING_CURSOR_BYTE equ 1"
+        },
+        "uncredited": [
+          {
+            "offset": 13,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 35,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 61,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/randring_1_bindings.asm",
+          "sha256": "8e1c5a588287e5dd52b2daa9fc7c2ab28951758ec64956a64b5302ee99aab711"
+        },
+        {
+          "path": "probes/units/randring_symbols.inc",
+          "sha256": "b5584ad727d4f548298d3a1083f67d8e5a36ea12c3f028896010155d32f17fd6"
+        },
+        {
+          "path": "src/main/math/randring_1_types.inc",
+          "sha256": "0e978031c1f98b6d8479e85a17dd520787840809f0da46e0ce3e885a0f94a0cf"
+        },
+        {
+          "path": "src/main/math/randring_fill.cpp",
+          "sha256": "77e61d462429d2dd5eca0f977cc118578931ec046b56aa7743dffaa309ad34e9"
+        },
+        {
+          "path": "src/main/math/randring_readers.asm",
+          "sha256": "d1b751777fa89f63d441d9c545f69cd446080d9caefb4b4c351a6bcb8b7061d1"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 59,
+        "dispatch-table": 0,
+        "alignment": 3,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 50944,
+            "candidate_start": 50944,
+            "size": 62,
+            "target_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+            "candidate_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "RANDRING_1_TEXT",
+            "size": 62,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 62,
+                "sha256": "ef4e4609ceb861de5b6753e2bfa216c7c0b8c0952eb49db20197db2fa1fd1d83"
+              }
+            ]
+          },
+          "object_sha256": "08b560d830dffa036b4e2155f06a5c44336ae6dbfd1a72cdc52f1372478d836c",
+          "object_normalized_sha256": "aa2035d87ea4152a85c3ce6616a90d287d987b723f9f7e222abd0c9634e238f2",
+          "bindings_sha256": "0a9205ca293cb18dddf78353c790aea41d1deff730dc07fc57ecdc0d7cfb61ed",
+          "bindings_normalized_sha256": "ab35451a1f12c98097226222b2e2a15a29741135d8db517dee78021f42a1dbd4",
+          "map_sha256": "e403b21b6d97a7de5a42966fc44635726a06bfb9b54adec6d4deb64a4f7cece1",
+          "mz_sha256": "a863fcfab0e47a22cbbb3fddf0aba83072a86aba89d43b0a670656fc8c085efd",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 50944,
+            "candidate_start": 50944,
+            "size": 62,
+            "target_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+            "candidate_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "RANDRING_1_TEXT",
+            "size": 62,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 62,
+                "sha256": "ef4e4609ceb861de5b6753e2bfa216c7c0b8c0952eb49db20197db2fa1fd1d83"
+              }
+            ]
+          },
+          "object_sha256": "92e4594b1b0a3dc44131eb41b958d9ba6b2805c23bd033fa90ef4a59f6426a9b",
+          "object_normalized_sha256": "aa2035d87ea4152a85c3ce6616a90d287d987b723f9f7e222abd0c9634e238f2",
+          "bindings_sha256": "5f526a62e9e4f97428070b4bc522ea45c84bcabf475927e0cc848d683f4d91c9",
+          "bindings_normalized_sha256": "ab35451a1f12c98097226222b2e2a15a29741135d8db517dee78021f42a1dbd4",
+          "map_sha256": "e403b21b6d97a7de5a42966fc44635726a06bfb9b54adec6d4deb64a4f7cece1",
+          "mz_sha256": "a863fcfab0e47a22cbbb3fddf0aba83072a86aba89d43b0a670656fc8c085efd",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 50944,
+          "candidate_start": 50944,
+          "size": 62,
+          "target_sha256": "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a",
+          "candidate_sha256": "1c5eedbcc45a88739811359f172c176c8db29a9253c6762281e325e8564b1e0f",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "RANDRING_1_TEXT",
+          "size": 62,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 62,
+              "sha256": "3ffff35cf86a7f6ff335c58ec0bf696232b2643e2a90c9f0ebb3b3e7a5e86d75"
+            }
+          ]
+        },
+        "object_sha256": "b51c2087ec6c0f5b54ae8cc25e471d3794e4e939d00344e95633b25a456676e8",
+        "object_normalized_sha256": "c00081174505ea75ba3b830038ee3e22cfe3c48f3623eca8d4a4915133467a23",
+        "bindings_sha256": "d28f3fe599c997721969278a8aa196f9c6202fa88b3f504be42e513fa6fa1f99",
+        "bindings_normalized_sha256": "ab35451a1f12c98097226222b2e2a15a29741135d8db517dee78021f42a1dbd4",
+        "map_sha256": "e403b21b6d97a7de5a42966fc44635726a06bfb9b54adec6d4deb64a4f7cece1",
+        "mz_sha256": "19bf33205c9fa39ad9abbec6fdc4fee8d800eb1922b0ece5459c67d33fb1ced5",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "a340f3eba11bb951ae6ae3132cdf6344bcc0d6d69bb745876d23afa128500fc0"
+    },
+    "main-randring-2": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-randring-2",
+        "artifact": "main",
+        "source": "src/main/math/randring_readers.asm",
+        "types": "src/main/math/randring_2_types.inc",
+        "symbols": "probes/units/randring_symbols.inc",
+        "bindings": "probes/units/randring_2_bindings.asm",
+        "notes": "src/main/math/randring_readers.md",
+        "target_start": 86684,
+        "size": 61,
+        "segment": "RANDRING_2_TEXT",
+        "group": "main_03",
+        "cs_base": 86640,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "28749f1e4a39f49292c69fd3003422b3f9e62f7cbd2f926e4983d09129eb3b22",
+        "target_scope_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+        "semantic_inputs": [
+          "src/shared/abi.hpp",
+          "src/main/math/randring_fill.cpp"
+        ],
+        "publics": {
+          "randring2_next16()": 0,
+          "randring2_next16_and(unsigned int)": 14,
+          "randring2_next16_mod(unsigned int)": 36,
+          "randring_readers_end": 61
+        },
+        "negative": {
+          "find": "RING_CURSOR_BYTE equ 0",
+          "replace": "RING_CURSOR_BYTE equ 1"
+        },
+        "uncredited": [
+          {
+            "offset": 13,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 35,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/randring_2_bindings.asm",
+          "sha256": "9e7a247e7343cf4783e3ac5021477bd3992f40b54f911e7a7427d48cc9cc72b6"
+        },
+        {
+          "path": "probes/units/randring_symbols.inc",
+          "sha256": "b5584ad727d4f548298d3a1083f67d8e5a36ea12c3f028896010155d32f17fd6"
+        },
+        {
+          "path": "src/main/math/randring_2_types.inc",
+          "sha256": "9338bc5c60b1ca4f59ac94fa658045120363d4f704d21e72a79607430f721c4b"
+        },
+        {
+          "path": "src/main/math/randring_fill.cpp",
+          "sha256": "77e61d462429d2dd5eca0f977cc118578931ec046b56aa7743dffaa309ad34e9"
+        },
+        {
+          "path": "src/main/math/randring_readers.asm",
+          "sha256": "d1b751777fa89f63d441d9c545f69cd446080d9caefb4b4c351a6bcb8b7061d1"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 59,
+        "dispatch-table": 0,
+        "alignment": 2,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 86684,
+            "candidate_start": 86684,
+            "size": 61,
+            "target_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+            "candidate_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "RANDRING_2_TEXT",
+            "size": 61,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 61,
+                "sha256": "554d311422c793ea41298b44c922ef19bfeb204de901a87924081c5948a96f5d"
+              }
+            ]
+          },
+          "object_sha256": "a1651868727d7fc56837697330a55846065c6eaac145985039f5c0032c8e83be",
+          "object_normalized_sha256": "f7a2411f088abd9eb86b97878b6e2c4652f6ec32582eacdc998f7e53c2d9dfa9",
+          "bindings_sha256": "3e0d03f23bd2a324e1815d283089ed76c0c2730306c7e53c9682841dd0256e78",
+          "bindings_normalized_sha256": "c9ee1190da096917b0f5545df9195b0e9bca97b5d5008432b550d5e6cac371e6",
+          "map_sha256": "bf7368aa80ef51135400fb60ad31840faa6c08b6b0ec0c1350a0ff339322e9ac",
+          "mz_sha256": "b31bdfb530716358ef21c80d873a6e5ad60dd55dffb8c235317bf54b4f85d894",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        },
+        {
+          "comparison": {
+            "target_start": 86684,
+            "candidate_start": 86684,
+            "size": 61,
+            "target_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+            "candidate_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "RANDRING_2_TEXT",
+            "size": 61,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 61,
+                "sha256": "554d311422c793ea41298b44c922ef19bfeb204de901a87924081c5948a96f5d"
+              }
+            ]
+          },
+          "object_sha256": "d74a47b3b88f6b2a23f248d58db0d409196d702495566a94318ae29db78e715d",
+          "object_normalized_sha256": "f7a2411f088abd9eb86b97878b6e2c4652f6ec32582eacdc998f7e53c2d9dfa9",
+          "bindings_sha256": "c1a40424357aa025e31ad05a248816414e4e903008dc72a245ae7321c8a00c25",
+          "bindings_normalized_sha256": "c9ee1190da096917b0f5545df9195b0e9bca97b5d5008432b550d5e6cac371e6",
+          "map_sha256": "bf7368aa80ef51135400fb60ad31840faa6c08b6b0ec0c1350a0ff339322e9ac",
+          "mz_sha256": "b31bdfb530716358ef21c80d873a6e5ad60dd55dffb8c235317bf54b4f85d894",
+          "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 86684,
+          "candidate_start": 86684,
+          "size": 61,
+          "target_sha256": "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab",
+          "candidate_sha256": "8738239b987d92535ccfec5619a28c4e33a143526562d03c46e601c1da638375",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "RANDRING_2_TEXT",
+          "size": 61,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 61,
+              "sha256": "f7e74fc4eb6f6258857a8203e2b614460cb119c30e01cda1e6738e8ac7626d1b"
+            }
+          ]
+        },
+        "object_sha256": "996033376902b5c5cdaa7d5943d2a856a723582dc545d353c3faace57c7cb684",
+        "object_normalized_sha256": "0c191f1a3a7e99578b2fae99c44dd6d5c279a4d442ee87441337d3d552990c1f",
+        "bindings_sha256": "c1a40424357aa025e31ad05a248816414e4e903008dc72a245ae7321c8a00c25",
+        "bindings_normalized_sha256": "c9ee1190da096917b0f5545df9195b0e9bca97b5d5008432b550d5e6cac371e6",
+        "map_sha256": "bf7368aa80ef51135400fb60ad31840faa6c08b6b0ec0c1350a0ff339322e9ac",
+        "mz_sha256": "d544374b4b699cebe0d0a8d975275b26834db0432ac5877ba22a1678bf66f411",
+        "commands_sha256": "63022f0de064415ada8065b4583214ac1d2492759aec2ea846d47a441b84c065"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "af781fdf17fc79c4e949b8158d183ef39d069faf6836833c6e3dc298686f298a"
     }
   }
 }

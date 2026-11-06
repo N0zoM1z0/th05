@@ -45,3 +45,11 @@ order is `[71,24,133,114]`; the diagnostic still emits `[133,114,71,24]`.
 No maintained source, binder or accepted entry changed. Its sole first producer
 is retained at `.analysis/native-producers/main-ems-lines-a/`; it is not an
 acceptance receipt and grants no additional credit.
+
+A later unmodified compiler `-S` output assembled by TASM32 also matches all
+684 raw bytes, but emits all 24 MZ fixups in ascending order. It cannot recover
+the native two descending runs. Its ordinary CODE LEDATA extents are 413 bytes
+at0 and270 at414, separated by the original one-byte zero alignment; no record
+or instruction was edited. The single diagnostic is retained at
+`.analysis/native-producers/main-ems-via-asm-a/`, with no second producer,
+negative or acceptance. This route need not be repeated unchanged.

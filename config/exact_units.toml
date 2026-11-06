@@ -4771,3 +4771,35 @@ unit = "main-tile-section-offsets"
 source = "src/main/tile/section_offsets.c"
 find = "((section_id) * TILE_SECTION_BYTES)"
 replace = "(((section_id) + 1) * TILE_SECTION_BYTES)"
+
+[[units]]
+id = "main-null-callback-near"
+source = "src/main/runtime/null_callbacks.cpp"
+module = "th05/null.cpp"
+segment = "NULL_NEAR_TEXT"
+wrapper_options = "-zCNULL_NEAR_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/null_callbacks_bindings.asm"
+target_start = 51006
+size = 1
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[units]]
+id = "main-null-callback-far"
+source = "src/main/runtime/null_callbacks.cpp"
+module = "th05/null.cpp"
+segment = "NULL_FAR_TEXT"
+wrapper_options = "-zCNULL_NEAR_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/null_callbacks_bindings.asm"
+target_start = 51008
+size = 1
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-null-callback-near"
+source = "src/main/runtime/null_callbacks.cpp"
+find = "extern \"C\" void pascal near nullfunc_near(void)"
+replace = "extern \"C\" void pascal far nullfunc_near(void)"

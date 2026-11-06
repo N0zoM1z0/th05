@@ -1326,3 +1326,79 @@ semantic_inputs = ["src/main/tile/section_offsets.h", "src/main/scroll/driver.hp
 [units.negative]
 find = "TILE_STRIP_COLUMNS equ TILE_VISIBLE_COLUMNS"
 replace = "TILE_STRIP_COLUMNS equ (TILE_VISIBLE_COLUMNS - 1)"
+
+[[units]]
+id = "main-randring-1"
+artifact = "main"
+source = "src/main/math/randring_readers.asm"
+types = "src/main/math/randring_1_types.inc"
+symbols = "probes/units/randring_symbols.inc"
+bindings = "probes/units/randring_1_bindings.asm"
+notes = "src/main/math/randring_readers.md"
+target_start = 50944
+size = 62
+segment = "RANDRING_1_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "4e57c957eda40336b9527f1d15ac3836c697fedac43794778872575b847fcca3"
+target_scope_sha256 = "d8b3d8f103649cd3ff8e6e2119439eb25e24d5f4a144db201ce3a97c7fd6145a"
+semantic_inputs = ["src/shared/abi.hpp", "src/main/math/randring_fill.cpp"]
+[units.publics]
+"randring1_next16()" = 0
+"randring1_next16_and(unsigned int)" = 14
+"randring1_next16_mod(unsigned int)" = 36
+"randring_readers_end" = 62
+[units.negative]
+find = "RING_CURSOR_BYTE equ 0"
+replace = "RING_CURSOR_BYTE equ 1"
+[[units.uncredited]]
+offset = 13
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 35
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 61
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-randring-2"
+artifact = "main"
+source = "src/main/math/randring_readers.asm"
+types = "src/main/math/randring_2_types.inc"
+symbols = "probes/units/randring_symbols.inc"
+bindings = "probes/units/randring_2_bindings.asm"
+notes = "src/main/math/randring_readers.md"
+target_start = 86684
+size = 61
+segment = "RANDRING_2_TEXT"
+group = "main_03"
+cs_base = 86640
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "28749f1e4a39f49292c69fd3003422b3f9e62f7cbd2f926e4983d09129eb3b22"
+target_scope_sha256 = "ddc731cf42af98b4f786a979019d36d95e2982fd7c79e8073b3f3c62ddaba6ab"
+semantic_inputs = ["src/shared/abi.hpp", "src/main/math/randring_fill.cpp"]
+[units.publics]
+"randring2_next16()" = 0
+"randring2_next16_and(unsigned int)" = 14
+"randring2_next16_mod(unsigned int)" = 36
+"randring_readers_end" = 61
+[units.negative]
+find = "RING_CURSOR_BYTE equ 0"
+replace = "RING_CURSOR_BYTE equ 1"
+[[units.uncredited]]
+offset = 13
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 35
+size = 1
+kind = "alignment"

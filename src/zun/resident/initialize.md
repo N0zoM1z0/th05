@@ -38,8 +38,9 @@ The source reference is pinned ReC98 `b6ba5b0a`: `th05/res_kso.cpp` includes
 ID helper workarounds are also not copied. Direct typed provider calls derive
 ID length and paragraph count from the canonical structure. The source keeps
 the real `#pragma option -2` before C/C++ tokens and compiles in tiny model.
-The exact reason for all nine differing bytes has not been isolated; no
-instruction gaps or padding are invented to compensate.
+The nine-byte gap is now isolated to three DOS message calls that the compiler
+merges into a shared error tail. Other local-frame, argument and segment-pointer
+operations agree in shape. No instruction gaps or padding compensate for them.
 
 Only `.analysis/zun-resident/main-natural-a/` is evidence for this candidate.
 The private wrapper includes the unchanged accepted configuration source and
@@ -64,3 +65,13 @@ Independent semantic/OMF/input review is retained at
 `38e43ebe9353838824ea727405e748a0259c2c5e041884c13a0b25b67eda7357`.
 It found no semantic issue and confirms the zero-credit size rejection.
 All 303 public tests and full CI pass with this source present.
+
+A later targeted jump-optimization diagnostic applies the supported `-O-`
+pragma before the entry's tokens, keeping the preceding configuration intact.
+Its valid object emits322 bytes for configuration and262 for main, still
+seven short. It does not eliminate the shared message tail. An initial
+unsupported `-O-j` spelling fails the frontend and produces no object; the
+cached compiler usage identifies `-O` itself as the jump-optimization switch.
+Both attempts are retained under `.analysis/zun-resident/main-jumps-{a,b}/`.
+No link, second producer or negative followed. The original260-byte source
+profile is restored, with no accepted source or progress change from this trial.

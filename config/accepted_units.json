@@ -2,28 +2,20 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "d9d494eafb17b98988093c67cba2ca867edbaa091aeeab0c21f02c9b1c7210e6",
+  "replay_receipt_sha256": "e07e0f7e56589fd1d76bae7d33c18687596e21eb82fba97f1567bf7655301395",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 137434,
-    "candidate_start": 137434,
-    "size": 64,
-    "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
-    "candidate_sha256": "41549e142e227b8ee42508f685feab4b3393e0bb0fd9b57afd4f0927444d319a",
+    "target_start": 51006,
+    "candidate_start": 51006,
+    "size": 1,
+    "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+    "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 137434,
-      "size": 64,
-      "module": "th05/tileoffs.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -74875,6 +74867,404 @@
           "-ml",
           "-DBINARY='M'",
           "th05/tileoffs.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-null-callback-near",
+      "entry_sha256": "6e0901e853d2a838ab7a2bcf00da11565e39f3adc6bf86d3f2da0de7d0fed1f3",
+      "result": {
+        "id": "main-null-callback-near",
+        "entry_sha256": "6e0901e853d2a838ab7a2bcf00da11565e39f3adc6bf86d3f2da0de7d0fed1f3",
+        "rounds": [
+          {
+            "target_start": 51006,
+            "candidate_start": 51006,
+            "size": 1,
+            "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+            "candidate_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 51006,
+            "candidate_start": 51006,
+            "size": 1,
+            "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+            "candidate_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "044af1872e387962dfe0345fecf01661a9c777621a69659fc164287b4ccc02a7",
+            "dependency_timestamp_normalized_sha256": "5053160f27ff1959092899dc688631f59451d43c4ea54eb7a40eac3e29aa56ce",
+            "module_name": "th05/null.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/null.cpp",
+              "src/main/runtime/null_callbacks.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "6bf08c690b97b59bcaaa3f629c0bab0737e4a360485e0f31e16ddf651b221ae9",
+            "dependency_timestamp_normalized_sha256": "5053160f27ff1959092899dc688631f59451d43c4ea54eb7a40eac3e29aa56ce",
+            "module_name": "th05/null.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/null.cpp",
+              "src/main/runtime/null_callbacks.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/null.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/null.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/null_callbacks_bindings.asm",
+            "sha256": "1e7929287488d87c48da917f5080ac15aecaafc373fd4f59f0a8023a999b3fcc"
+          },
+          {
+            "path": "src/main/runtime/null_callbacks.cpp",
+            "sha256": "99ed0b4d08ad7662a5228252d2f05b19757c6b5bdf3ed790e9cdb5326a6a3ba3"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/null_callbacks_bindings.asm",
+          "sha256": "1e7929287488d87c48da917f5080ac15aecaafc373fd4f59f0a8023a999b3fcc"
+        },
+        {
+          "path": "src/main/runtime/null_callbacks.cpp",
+          "sha256": "99ed0b4d08ad7662a5228252d2f05b19757c6b5bdf3ed790e9cdb5326a6a3ba3"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e07e0f7e56589fd1d76bae7d33c18687596e21eb82fba97f1567bf7655301395",
+      "compiled_negative_control": {
+        "target_start": 51006,
+        "candidate_start": 51006,
+        "size": 1,
+        "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+        "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-null-callback-near",
+        "entry_sha256": "6e0901e853d2a838ab7a2bcf00da11565e39f3adc6bf86d3f2da0de7d0fed1f3",
+        "mutation": {
+          "unit": "main-null-callback-near",
+          "source": "src/main/runtime/null_callbacks.cpp",
+          "find": "extern \"C\" void pascal near nullfunc_near(void)",
+          "replace": "extern \"C\" void pascal far nullfunc_near(void)"
+        },
+        "control_sha256": "ac6108470b202b7325f7dc05c519fdfe2e94d1c92ce3adaa00d6fb50f3c4f4ba",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 51006,
+          "candidate_start": 51006,
+          "size": 1,
+          "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+          "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "099f9541ee19744ccb9e2fdd82a85fbd0b2f42443f94a5914dad16f50482b70f",
+          "dependency_timestamp_normalized_sha256": "0431c382e74631018cf1ab237221d716854174f22b2f7e296503708a355bb7d8",
+          "module_name": "th05/null.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/null.cpp",
+            "src/main/runtime/null_callbacks.cpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/null.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-null-callback-far",
+      "entry_sha256": "fd8f6776ddd819b2d5ed8bcbf81da121d335ab9cc68e91b0bbda438be46242da",
+      "result": {
+        "id": "main-null-callback-far",
+        "entry_sha256": "fd8f6776ddd819b2d5ed8bcbf81da121d335ab9cc68e91b0bbda438be46242da",
+        "rounds": [
+          {
+            "target_start": 51008,
+            "candidate_start": 51008,
+            "size": 1,
+            "target_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+            "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 51008,
+            "candidate_start": 51008,
+            "size": 1,
+            "target_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+            "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "044af1872e387962dfe0345fecf01661a9c777621a69659fc164287b4ccc02a7",
+            "dependency_timestamp_normalized_sha256": "5053160f27ff1959092899dc688631f59451d43c4ea54eb7a40eac3e29aa56ce",
+            "module_name": "th05/null.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/null.cpp",
+              "src/main/runtime/null_callbacks.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "6bf08c690b97b59bcaaa3f629c0bab0737e4a360485e0f31e16ddf651b221ae9",
+            "dependency_timestamp_normalized_sha256": "5053160f27ff1959092899dc688631f59451d43c4ea54eb7a40eac3e29aa56ce",
+            "module_name": "th05/null.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/null.cpp",
+              "src/main/runtime/null_callbacks.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/null.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/null.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/null_callbacks_bindings.asm",
+            "sha256": "1e7929287488d87c48da917f5080ac15aecaafc373fd4f59f0a8023a999b3fcc"
+          },
+          {
+            "path": "src/main/runtime/null_callbacks.cpp",
+            "sha256": "99ed0b4d08ad7662a5228252d2f05b19757c6b5bdf3ed790e9cdb5326a6a3ba3"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/null_callbacks_bindings.asm",
+          "sha256": "1e7929287488d87c48da917f5080ac15aecaafc373fd4f59f0a8023a999b3fcc"
+        },
+        {
+          "path": "src/main/runtime/null_callbacks.cpp",
+          "sha256": "99ed0b4d08ad7662a5228252d2f05b19757c6b5bdf3ed790e9cdb5326a6a3ba3"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e07e0f7e56589fd1d76bae7d33c18687596e21eb82fba97f1567bf7655301395",
+      "compiled_negative_control": {
+        "target_start": 51006,
+        "candidate_start": 51006,
+        "size": 1,
+        "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+        "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-null-callback-near",
+        "entry_sha256": "6e0901e853d2a838ab7a2bcf00da11565e39f3adc6bf86d3f2da0de7d0fed1f3",
+        "mutation": {
+          "unit": "main-null-callback-near",
+          "source": "src/main/runtime/null_callbacks.cpp",
+          "find": "extern \"C\" void pascal near nullfunc_near(void)",
+          "replace": "extern \"C\" void pascal far nullfunc_near(void)"
+        },
+        "control_sha256": "ac6108470b202b7325f7dc05c519fdfe2e94d1c92ce3adaa00d6fb50f3c4f4ba",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 51006,
+          "candidate_start": 51006,
+          "size": 1,
+          "target_sha256": "ae3f4619b0413d70d3004b9131c3752153074e45725be13b9a148978895e359e",
+          "candidate_sha256": "383e5d7d58caa41ce723cf16af471b38f6ee9065c032d07fa6bef1678cb72f1d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "099f9541ee19744ccb9e2fdd82a85fbd0b2f42443f94a5914dad16f50482b70f",
+          "dependency_timestamp_normalized_sha256": "0431c382e74631018cf1ab237221d716854174f22b2f7e296503708a355bb7d8",
+          "module_name": "th05/null.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/null.cpp",
+            "src/main/runtime/null_callbacks.cpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/null.cpp"
         ]
       },
       "receipt_aggregate_pass": true
