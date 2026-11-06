@@ -1,4 +1,4 @@
-# Final EX-Alice patterns candidate
+# Final EX-Alice patterns
 
 Four complete patterns cover original MAIN `19EB2..1A1DB`,809 instruction
 bytes and265 instructions. No table, padding, initialized DATA or BSS occurs.
@@ -63,9 +63,18 @@ fresh producers pass every selected function's full raw bytes, actual public
 return boundary and original ordered fixups. One real cheeto speed3→4 control
 is compiled in the first function; no separate negative per sibling is claimed.
 
-The spiral/gather function remains unaccepted. A separate read of both saved
+The spiral/gather function was initially unaccepted. A separate read of both saved
 positive MZ files confirms all334 raw bytes, but the original ordered fixups
-are[86,256] and both producers emit[256,86]. No sorting or normalization is
-applied, and no credit is granted for those334 bytes or a whole809-byte owner.
+are[86,256] and both direct producers emit[256,86]. No sorting or normalization is
+applied, and that receipt grants no credit for those334 bytes or a whole809-byte owner.
 All compiler instructions remain in the real TU so accepted neighbors retain
 their correct physical context. No DATA, BSS, tables or padding receive credit.
+
+The [standalone spiral/gather owner](spiral_gather.md) now independently accepts
+all 334 C++ instruction bytes through unchanged compiler assembly consumed by
+TASM32. Two fresh chains preserve the original `[86,256]`; the radius mutation
+is rejected. Its body is extracted verbatim into `spiral_gather.inl` and included
+here once. The three existing function scopes were replayed after this source
+change and remain exact, with no new credit. All four functions are now accepted
+in their respective bounded contexts; the full 809-byte contribution still has
+no whole-owner ordered-fixup acceptance claim.

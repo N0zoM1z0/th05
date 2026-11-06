@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-359 bounded C/C++ CODE/DATA units, 545 complete function occurrences:
-**105,714 authored bytes exact** = 90,091 CODE + 15,623 initialized DATA.
-CODE is 89,269 instruction + 822 compiler-table bytes. Complete compared
-extents total 105,804, including 90 uncredited padding bytes.
+360 bounded C/C++ CODE/DATA units, 546 complete function occurrences:
+**106,048 authored bytes exact** = 90,425 CODE + 15,623 initialized DATA.
+CODE is 89,603 instruction + 822 compiler-table bytes. Complete compared
+extents total 106,138, including 90 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 420 | 68,669 | 3,341 |
+| MAIN | 421 | 69,003 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,31 @@ extents total 105,804, including 90 uncredited padding bytes.
 Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**118,780 bytes**, including MAIN 39,342. The global authored denominator and
+**118,446 bytes**, including MAIN 39,008. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: curved-bullet BB load at DE58..DE71 (25) and MPN release at
+Latest recovery: EX-Alice's complete spiral/gather attack at 19FAE..1A0FC
+adds 334 C++ instruction bytes and one function. Two fresh chains through the
+existing unedited compiler-assembly recipe match all raw bytes and original
+ordered fixups `[86,256]`; a radius 256-to-257 compiled negative is rejected.
+The body is extracted verbatim into one shared `.inl`. Its three accepted
+neighbors were replayed after this source change and retain their 475 bytes;
+all unrelated acceptance records are identical. No build tool/header changed.
+See [source/ABI/receipts](../src/main/boss/exalice/spiral_gather.md),
+`.analysis/unit-replays/main-exalice-spiral-compiler-assembly-b/receipt.json`
+and affected `.analysis/unit-replays/main-exalice-final-shared-body-c/receipt.json`.
+No DATA, BSS, ASM, padding or whole-TU credit is added. SVG counts are refreshed.
+
+One bounded Mai tracking-laser follow-up remains inexact. An ordinary current
+angle snapshot emits 190 versus 186 through compiler assembly; DL allocation
+and extra transfers drift the following paragraph/DS frame. The native placement
+gate rejects it before acceptance. Experimental files are removed and the
+existing source is unchanged. No second producer, negative or flag matrix runs.
+See [tracker diagnostics](../src/main/boss/mai_yuki/later_patterns.md).
+
+Previous recovery: curved-bullet BB load at DE58..DE71 (25) and MPN release at
 420E..4225 (23) pass two fresh direct C++ producers, whole OMF/MAP contributions,
 full raw bytes and original empty fixup streams. Their shared read-length
 2048-to-2047 negative is rejected. Net credit is 47 instruction bytes and two

@@ -109,3 +109,16 @@ selected pattern's initial angle0x20→0x21 control is compiled and rejected
 for this whole owner. Ten complete functions are accepted, without claiming
 separate negatives per sibling. The tracking function remains unaccepted;
 no DATA, BSS, compiler tables or padding receive credit.
+
+A later read of the saved 185-byte tracker identifies a real dataflow gap:
+native keeps the current laser angle in AL while subtracting it from the byte
+delta local, and shares the final angle store. One new ordinary current-angle
+snapshot candidate was tried through the unchanged compiler-assembly recipe.
+It emits 190 bytes versus 186: the compiler keeps the snapshot in DL and adds
+transfers, so the following paragraph and DS frame drift. The existing native
+placement gate rejects it. No binder compensation, second producer, negative,
+register algorithm or option matrix follows. Experimental standalone files were
+removed; the existing 185-byte candidate source and accepted siblings remain
+unchanged. Actual inputs, generated assembly and the one failed producer remain
+under `.analysis/native-producers/main-mai-tracking-compiler-assembly-a/`;
+`.analysis/mai-tracking-current-angle-snapshot-review.json` records the result.

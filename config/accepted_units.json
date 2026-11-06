@@ -2,18 +2,24 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "4b6107cabf53d354a6ee588dd6d74bcdc745ac199395902b732d0c8b80d9dda3",
+  "replay_receipt_sha256": "955968f00fa9aa1e17a19214e4d29334d5c6ea98a3606654896f1a2cf5ee9b98",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 56920,
-    "candidate_start": 56920,
-    "size": 25,
-    "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
-    "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
+    "target_start": 106414,
+    "candidate_start": 106414,
+    "size": 334,
+    "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+    "candidate_sha256": "f0718e9b756b3a5e233499289549558574844fbaf0bdf2f02869e14dc889f9a6",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      86,
+      256
+    ],
+    "candidate_fixups": [
+      86,
+      256
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -33852,8 +33858,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0c41794edc6e15d69b86b260f71eb86bbfccdd817fccbf512f9bbd2f2a4d27d8",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "71094a91d3fcb8b88b9f3cd850900a583587357caa0f85aefbd608c5909dc065",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -33882,12 +33888,13 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           },
           {
-            "sha256": "0ae813df77c9a647fe6e784959d53d517be8dc81de4874a5580d45e853e5c221",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "7259d2e293c63334ebcd96c9547b64a3ab8fe71ad9e6a03e4a6e9ce96c08c4df",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -33916,7 +33923,8 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           }
         ],
@@ -33959,7 +33967,7 @@
           },
           {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+            "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -33968,6 +33976,10 @@
           {
             "path": "src/main/boss/exalice/patterns.hpp",
             "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/exalice/spiral_gather.inl",
+            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -34019,7 +34031,7 @@
         },
         {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+          "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -34028,6 +34040,10 @@
         {
           "path": "src/main/boss/exalice/patterns.hpp",
           "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/exalice/spiral_gather.inl",
+          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -34072,7 +34088,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "fa9a5fb96dcfc6ae7e5753af5b3aa444c2c4c49d86aa3dcc94c7b4b93d41a8bd",
+      "replay_receipt_sha256": "232876579ad3a084ae66d60c8c0f37b4ed87fa8e06be306041899d6c300f3c27",
       "compiled_negative_control": {
         "target_start": 106162,
         "candidate_start": 106162,
@@ -34137,8 +34153,8 @@
           }
         },
         "omf": {
-          "sha256": "88f328f05bf8c981830218bdcf4b8e5937aa8e05b5a75bfb858a292f28a04cc5",
-          "dependency_timestamp_normalized_sha256": "4db7e27d64cc4381b2d4137a36f7b9ee3a354581f1884e040ee18c39450b18f5",
+          "sha256": "3c079de9ad2d30db87c18e6402a4ee0a018ec582bc8f3cfedb029a3c5078120a",
+          "dependency_timestamp_normalized_sha256": "9bce1cbda7b7dbcc308d8a69281d76377c0265db727825cd5b4756e5c1a6dafa",
           "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -34167,7 +34183,8 @@
             "src/shared/abi.hpp",
             "src/shared/math/vector.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/spiral_gather.inl"
           ]
         },
         "compiler_arguments": [
@@ -34249,8 +34266,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0c41794edc6e15d69b86b260f71eb86bbfccdd817fccbf512f9bbd2f2a4d27d8",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "71094a91d3fcb8b88b9f3cd850900a583587357caa0f85aefbd608c5909dc065",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34279,12 +34296,13 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           },
           {
-            "sha256": "0ae813df77c9a647fe6e784959d53d517be8dc81de4874a5580d45e853e5c221",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "7259d2e293c63334ebcd96c9547b64a3ab8fe71ad9e6a03e4a6e9ce96c08c4df",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34313,7 +34331,8 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           }
         ],
@@ -34356,7 +34375,7 @@
           },
           {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+            "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -34365,6 +34384,10 @@
           {
             "path": "src/main/boss/exalice/patterns.hpp",
             "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/exalice/spiral_gather.inl",
+            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -34416,7 +34439,7 @@
         },
         {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+          "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -34425,6 +34448,10 @@
         {
           "path": "src/main/boss/exalice/patterns.hpp",
           "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/exalice/spiral_gather.inl",
+          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -34469,7 +34496,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "fa9a5fb96dcfc6ae7e5753af5b3aa444c2c4c49d86aa3dcc94c7b4b93d41a8bd",
+      "replay_receipt_sha256": "232876579ad3a084ae66d60c8c0f37b4ed87fa8e06be306041899d6c300f3c27",
       "compiled_negative_control": {
         "target_start": 106162,
         "candidate_start": 106162,
@@ -34534,8 +34561,8 @@
           }
         },
         "omf": {
-          "sha256": "88f328f05bf8c981830218bdcf4b8e5937aa8e05b5a75bfb858a292f28a04cc5",
-          "dependency_timestamp_normalized_sha256": "4db7e27d64cc4381b2d4137a36f7b9ee3a354581f1884e040ee18c39450b18f5",
+          "sha256": "3c079de9ad2d30db87c18e6402a4ee0a018ec582bc8f3cfedb029a3c5078120a",
+          "dependency_timestamp_normalized_sha256": "9bce1cbda7b7dbcc308d8a69281d76377c0265db727825cd5b4756e5c1a6dafa",
           "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -34564,7 +34591,8 @@
             "src/shared/abi.hpp",
             "src/shared/math/vector.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/spiral_gather.inl"
           ]
         },
         "compiler_arguments": [
@@ -34654,8 +34682,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0c41794edc6e15d69b86b260f71eb86bbfccdd817fccbf512f9bbd2f2a4d27d8",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "71094a91d3fcb8b88b9f3cd850900a583587357caa0f85aefbd608c5909dc065",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34684,12 +34712,13 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           },
           {
-            "sha256": "0ae813df77c9a647fe6e784959d53d517be8dc81de4874a5580d45e853e5c221",
-            "dependency_timestamp_normalized_sha256": "71f5dd97f6ad19c390428fbb4fa8171239f863a58a9cc388eb1813211283ae71",
+            "sha256": "7259d2e293c63334ebcd96c9547b64a3ab8fe71ad9e6a03e4a6e9ce96c08c4df",
+            "dependency_timestamp_normalized_sha256": "5f9e1e5812ab494b8f0146e3a5ad1ddc61f0133c983c618d003b0fb15711edc8",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34718,7 +34747,8 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/spiral_gather.inl"
             ]
           }
         ],
@@ -34761,7 +34791,7 @@
           },
           {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+            "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -34770,6 +34800,10 @@
           {
             "path": "src/main/boss/exalice/patterns.hpp",
             "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/exalice/spiral_gather.inl",
+            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -34821,7 +34855,7 @@
         },
         {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "66ddb9adcd4fec44e8fe96d29b7a95cc5f8e03ce9302dc3ed5c3f6c458bae345"
+          "sha256": "104465e53d7edd2a4a13f222a500f3a0627b18fb4a858e8a66a33af49da9f758"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -34830,6 +34864,10 @@
         {
           "path": "src/main/boss/exalice/patterns.hpp",
           "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/exalice/spiral_gather.inl",
+          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -34874,7 +34912,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "fa9a5fb96dcfc6ae7e5753af5b3aa444c2c4c49d86aa3dcc94c7b4b93d41a8bd",
+      "replay_receipt_sha256": "232876579ad3a084ae66d60c8c0f37b4ed87fa8e06be306041899d6c300f3c27",
       "compiled_negative_control": {
         "target_start": 106162,
         "candidate_start": 106162,
@@ -34939,8 +34977,8 @@
           }
         },
         "omf": {
-          "sha256": "88f328f05bf8c981830218bdcf4b8e5937aa8e05b5a75bfb858a292f28a04cc5",
-          "dependency_timestamp_normalized_sha256": "4db7e27d64cc4381b2d4137a36f7b9ee3a354581f1884e040ee18c39450b18f5",
+          "sha256": "3c079de9ad2d30db87c18e6402a4ee0a018ec582bc8f3cfedb029a3c5078120a",
+          "dependency_timestamp_normalized_sha256": "9bce1cbda7b7dbcc308d8a69281d76377c0265db727825cd5b4756e5c1a6dafa",
           "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -34969,7 +35007,8 @@
             "src/shared/abi.hpp",
             "src/shared/math/vector.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/spiral_gather.inl"
           ]
         },
         "compiler_arguments": [
@@ -76916,6 +76955,535 @@
           "-DBINARY='M'",
           "th05/bbcheeto.cpp"
         ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-spiral-gather",
+      "entry_sha256": "95271ad5be58c5c5824ce860bc0decbbdea931c715fe28ed4dff31d6c620a7c6",
+      "result": {
+        "id": "main-exalice-spiral-gather",
+        "entry_sha256": "95271ad5be58c5c5824ce860bc0decbbdea931c715fe28ed4dff31d6c620a7c6",
+        "rounds": [
+          {
+            "target_start": 106414,
+            "candidate_start": 106414,
+            "size": 334,
+            "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+            "candidate_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+            "raw_exact": true,
+            "target_fixups": [
+              86,
+              256
+            ],
+            "candidate_fixups": [
+              86,
+              256
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 106414,
+            "candidate_start": 106414,
+            "size": 334,
+            "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+            "candidate_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+            "raw_exact": true,
+            "target_fixups": [
+              86,
+              256
+            ],
+            "candidate_fixups": [
+              86,
+              256
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "omfs": [
+          {
+            "sha256": "80f9c60985a8ac0910268b66367f0242ad94abf725a2c403fd974f29c096d1ef",
+            "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "x_spiral.asm"
+            ]
+          },
+          {
+            "sha256": "51577942c902dc5bb8e87f7f73dbe5655cf74137eb1900497eade3ad15800bbe",
+            "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "x_spiral.asm"
+            ]
+          }
+        ],
+        "compiler_assembly": [
+          {
+            "comparison": {
+              "target_start": 106414,
+              "candidate_start": 106414,
+              "size": 334,
+              "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+              "candidate_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+              "raw_exact": true,
+              "target_fixups": [
+                86,
+                256
+              ],
+              "candidate_fixups": [
+                86,
+                256
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/main/boss/exalice/final_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/boss/exalice/spiral_gather.cpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/movement.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/bullet/template.hpp",
+              "src/main/gather/gather.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/player/player.hpp",
+              "src/main/stage/setup.hpp",
+              "src/shared/abi.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/math/vector.hpp"
+            ],
+            "omf": {
+              "sha256": "80f9c60985a8ac0910268b66367f0242ad94abf725a2c403fd974f29c096d1ef",
+              "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "x_spiral.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "EXALICE_FIN_TEXT",
+              "size": 334,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 334,
+                  "sha256": "cf3638a599367fe26099dcfeec5bab96d4d90301754efc3e980bc56dc388a66f"
+                }
+              ]
+            },
+            "map_sha256": "d97781cd9c1b1e3b23fa735ffd16c4a05dc787e9ab3d0bc300fe09a52ed1f207",
+            "mz_sha256": "63f6d252ccfc6f82aeb7e5a835bb1a0a2953758ac8201700a9859d7e98a2dda8",
+            "commands_sha256": "65f8c693ec6a9920eb3080c13ab20ad87c2220d260b9d294619d77cc8b2b6977",
+            "compiler_generated_assembly_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "assembly_after_tasm_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "wrapper_sha256": "87abebd42102d91c5442fd05a39fb6604ed4fd8056abd9b7b46ebabdb12647c0"
+          },
+          {
+            "comparison": {
+              "target_start": 106414,
+              "candidate_start": 106414,
+              "size": 334,
+              "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+              "candidate_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+              "raw_exact": true,
+              "target_fixups": [
+                86,
+                256
+              ],
+              "candidate_fixups": [
+                86,
+                256
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/main/boss/exalice/final_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/boss/exalice/spiral_gather.cpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/movement.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/bullet/template.hpp",
+              "src/main/gather/gather.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/player/player.hpp",
+              "src/main/stage/setup.hpp",
+              "src/shared/abi.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/math/vector.hpp"
+            ],
+            "omf": {
+              "sha256": "51577942c902dc5bb8e87f7f73dbe5655cf74137eb1900497eade3ad15800bbe",
+              "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "x_spiral.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "EXALICE_FIN_TEXT",
+              "size": 334,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 334,
+                  "sha256": "cf3638a599367fe26099dcfeec5bab96d4d90301754efc3e980bc56dc388a66f"
+                }
+              ]
+            },
+            "map_sha256": "d97781cd9c1b1e3b23fa735ffd16c4a05dc787e9ab3d0bc300fe09a52ed1f207",
+            "mz_sha256": "63f6d252ccfc6f82aeb7e5a835bb1a0a2953758ac8201700a9859d7e98a2dda8",
+            "commands_sha256": "65f8c693ec6a9920eb3080c13ab20ad87c2220d260b9d294619d77cc8b2b6977",
+            "compiler_generated_assembly_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "assembly_after_tasm_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "wrapper_sha256": "87abebd42102d91c5442fd05a39fb6604ed4fd8056abd9b7b46ebabdb12647c0"
+          }
+        ],
+        "compiler_arguments": [
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/x_spiral.cpp"
+          ],
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/x_spiral.cpp"
+          ]
+        ],
+        "producer_paths": [
+          "a/source",
+          "b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/exalice_spiral_bindings.asm",
+            "sha256": "67c1d1fa25fdd28d9272d07546e63a0938f7dea71028e2fa39cf1bc385fd3b0e"
+          },
+          {
+            "path": "scripts/lib/binding_layout.py",
+            "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+          },
+          {
+            "path": "scripts/lib/compiler_assembly.py",
+            "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+          },
+          {
+            "path": "scripts/lib/omf.py",
+            "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+          },
+          {
+            "path": "scripts/lib/reference_build.py",
+            "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+          },
+          {
+            "path": "scripts/lib/replay_toolchain.py",
+            "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+          },
+          {
+            "path": "scripts/lib/tiny_com.py",
+            "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+          },
+          {
+            "path": "scripts/lib/unit_context.py",
+            "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+          },
+          {
+            "path": "scripts/lib/unit_extents.py",
+            "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+          },
+          {
+            "path": "scripts/lib/unit_oracle.py",
+            "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+          },
+          {
+            "path": "scripts/lib/unit_sources.py",
+            "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+          },
+          {
+            "path": "scripts/replay_asm_family.py",
+            "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+          },
+          {
+            "path": "src/main/boss/exalice/final_patterns.hpp",
+            "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
+          },
+          {
+            "path": "src/main/boss/exalice/patterns.hpp",
+            "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/exalice/spiral_gather.cpp",
+            "sha256": "3edc8eeccb538744d6e981995b82dbce98cdc3a642296b77e8de3139fde4ee5c"
+          },
+          {
+            "path": "src/main/boss/exalice/spiral_gather.inl",
+            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "object_normalized_equal": true,
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/exalice_spiral_bindings.asm",
+          "sha256": "67c1d1fa25fdd28d9272d07546e63a0938f7dea71028e2fa39cf1bc385fd3b0e"
+        },
+        {
+          "path": "scripts/lib/binding_layout.py",
+          "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+        },
+        {
+          "path": "scripts/lib/compiler_assembly.py",
+          "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/tiny_com.py",
+          "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_sources.py",
+          "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+        },
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "src/main/boss/exalice/final_patterns.hpp",
+          "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
+        },
+        {
+          "path": "src/main/boss/exalice/patterns.hpp",
+          "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/exalice/spiral_gather.cpp",
+          "sha256": "3edc8eeccb538744d6e981995b82dbce98cdc3a642296b77e8de3139fde4ee5c"
+        },
+        {
+          "path": "src/main/boss/exalice/spiral_gather.inl",
+          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "955968f00fa9aa1e17a19214e4d29334d5c6ea98a3606654896f1a2cf5ee9b98",
+      "compiled_negative_control": {
+        "target_start": 106414,
+        "candidate_start": 106414,
+        "size": 334,
+        "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+        "candidate_sha256": "f0718e9b756b3a5e233499289549558574844fbaf0bdf2f02869e14dc889f9a6",
+        "raw_exact": false,
+        "target_fixups": [
+          86,
+          256
+        ],
+        "candidate_fixups": [
+          86,
+          256
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-spiral-gather",
+        "entry_sha256": "95271ad5be58c5c5824ce860bc0decbbdea931c715fe28ed4dff31d6c620a7c6",
+        "mutation": {
+          "unit": "main-exalice-spiral-gather",
+          "source": "src/main/boss/exalice/spiral_gather.inl",
+          "find": "gather_template.radius.v = to_sp(256);",
+          "replace": "gather_template.radius.v = to_sp(257);"
+        },
+        "control_sha256": "733ad13703ab9e252889ce7843b6fbaa78465b4c988a428fe34a4f6d9c05b89d",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 106414,
+          "candidate_start": 106414,
+          "size": 334,
+          "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+          "candidate_sha256": "f0718e9b756b3a5e233499289549558574844fbaf0bdf2f02869e14dc889f9a6",
+          "raw_exact": false,
+          "target_fixups": [
+            86,
+            256
+          ],
+          "candidate_fixups": [
+            86,
+            256
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "compiler_arguments": [
+          "-S",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/x_spiral.cpp"
+        ],
+        "omf": {
+          "sha256": "df2d9b73b76211ffbd3fa44865b9d7882dee75f39b3656414ccb451479506423",
+          "dependency_timestamp_normalized_sha256": "926acdb35f7fbdada8fb148b50e92eee3804b74b205c502ee4cab944cbccac2d",
+          "module_name": "unit.asm",
+          "translator_comments": [
+            "Turbo Assembler  Version 5.0"
+          ],
+          "dependency_paths": [
+            "unit.asm",
+            "x_spiral.asm"
+          ]
+        }
       },
       "receipt_aggregate_pass": true
     }
