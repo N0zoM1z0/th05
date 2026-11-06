@@ -1170,3 +1170,51 @@ unit = "maine-registration-places"
 source = "src/maine/registration/places.inl"
 find = "place < SCOREDAT_PLACES;"
 replace = "place < (SCOREDAT_PLACES - 1);"
+
+[[units]]
+id = "maine-registration-values"
+source = "src/maine/registration/values.cpp"
+module = "th05/r_values.cpp"
+segment = "REG_VALUES_TEXT"
+wrapper_options = "-zCREG_VALUES_TEXT -zPGROUP_01"
+bindings_source = "probes/units/maine_registration_values_bindings.asm"
+target_start = 0xb730
+size = 852
+functions = 3
+alignment_offsets = []
+padding_bytes = [{ offset = 843, value = 0 }]
+code_data_ranges = [
+    { offset = 649, size = 8, kind = "compiler-switch-table" },
+    { offset = 844, size = 8, kind = "compiler-switch-table" },
+]
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "maine-registration-values"
+source = "src/maine/registration/score.inl"
+find = "for(digit = 6;"
+replace = "for(digit = 5;"
+
+[[units]]
+id = "maine-registration-display"
+source = "src/maine/registration/display.cpp"
+module = "th05/r_disp.cpp"
+segment = "REG_DISPLAY_TEXT"
+wrapper_options = "-zCREG_DISPLAY_TEXT -zPGROUP_01"
+bindings_source = "probes/units/maine_registration_display_bindings.asm"
+target_start = 0xba84
+size = 591
+functions = 2
+alignment_offsets = []
+padding_bytes = [{ offset = 354, value = 0 }, { offset = 582, value = 0 }]
+code_data_ranges = [
+    { offset = 355, size = 8, kind = "compiler-switch-table" },
+    { offset = 583, size = 8, kind = "compiler-switch-table" },
+]
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "maine-registration-display"
+source = "src/maine/registration/place.inl"
+find = "reinterpret_cast<const char *>(hi.score.g_name[place_r]), 2"
+replace = "reinterpret_cast<const char *>(hi.score.g_name[place_r]), 3"

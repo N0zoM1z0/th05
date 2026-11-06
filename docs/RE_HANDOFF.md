@@ -7,27 +7,45 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-363 bounded C/C++ CODE/DATA units, 550 complete function occurrences:
-**107,145 authored bytes exact** = 91,522 CODE + 15,623 initialized DATA.
-CODE is 90,682 instruction + 840 compiler-table bytes. Complete compared
-extents total 107,237, including 92 uncredited padding bytes.
+365 bounded C/C++ CODE/DATA units, 555 complete function occurrences:
+**108,585 authored bytes exact** = 92,962 CODE + 15,623 initialized DATA.
+CODE is 92,090 instruction + 872 compiler-table bytes. Complete compared
+extents total 108,680, including 95 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
 | MAIN | 422 | 69,014 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
-| MAINE | 62 | 10,817 | 3,615 |
+| MAINE | 67 | 12,257 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**117,312 bytes**, including MAIN 38,962 and MAINE 38,607. The global authored denominator and
+**115,869 bytes**, including MAIN 38,962 and MAINE 37,164. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: MAINE's complete places_put wrapper at BCD3..BCED adds 26
+Latest recovery: five complete C++ insertion/rendering functions at
+B730..BCD3 add 1440 authored CODE bytes (1408 instructions + 32 compiler-table
+bytes), with three compared zero-padding bytes. Two fresh producers match both
+real contexts, values 852 / display 591, with original ordered relocations.
+The shared score-loop six-to-five compiled negative is rejected. See
+[source/ABI/receipt](../src/maine/registration/rendering.md) and
+`.analysis/unit-replays/maine-registration-values-display-a/receipt.json`.
+
+Each body lives once in its canonical .inl. The genuine insertion predecessor
+restores the score/stage table phase; a common declaration context for adjacent
+name/row restores the row's missing alignment zero. Stage declares int y before
+byte color to preserve original stack slots. Native four-panel coordinates,
+Extra rank stage marker, equal-score insertion and unchecked selector paths are
+retained. All prior accepted records/source/header identities are unchanged;
+only the two new units are replayed. No producer tool or behavior model changes.
+The 1034-byte menu remains raw-only; this acceptance does not resolve its
+broader original CODE-record/relocation context.
+
+Previous recovery: MAINE's complete places_put wrapper at BCD3..BCED adds 26
 C++ instruction bytes and one function. Two fresh direct producers preserve
 full OMF/MAP/raw and empty fixups; the five-to-four-place negative is rejected.
 The two-word row renderer at BBEF remains foreign. See

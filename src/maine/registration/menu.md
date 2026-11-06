@@ -50,4 +50,6 @@ order-false), `maine-registration-full-a/` (original compiled object/inputs),
 `.analysis/registration-full-context-review.json`. Early a/link-b/c menu
 diagnostics remain separate failures. Future work needs a genuine broader
 producer/table context; replaying these same failed shapes adds no evidence.
-Only the independently [accepted places wrapper](places.md) receives new credit.
+That menu experiment receives no credit. The independently [accepted places
+wrapper](places.md) and later [insertion/rendering recovery](rendering.md) have
+their own complete acceptance scopes; they do not transfer acceptance here.

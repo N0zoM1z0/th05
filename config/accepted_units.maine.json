@@ -2,18 +2,30 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "2cb43901fe3dd7fee72f1635e74b44b4aceb68d5dff9f6c625cc1db7c7260bc5",
+  "replay_receipt_sha256": "2e4fcca99d55de228471d16e6edcda9768397bfa55ecaf5379f38a7c51bcc312",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 48339,
-    "candidate_start": 48339,
-    "size": 26,
-    "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
-    "candidate_sha256": "4e9a5601cf377786b888729f55d889cf5e6776ae51d062332615181e4ee6088b",
+    "target_start": 46896,
+    "candidate_start": 46896,
+    "size": 852,
+    "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+    "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      835,
+      817,
+      629,
+      592,
+      556
+    ],
+    "candidate_fixups": [
+      835,
+      817,
+      629,
+      592,
+      556
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -27631,6 +27643,784 @@
           "-ml",
           "-DBINARY='E'",
           "th05/r_places.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-values",
+      "entry_sha256": "fdf7e7f6bc6d425098adb4fe72eca57692d9cf938bff682752a09643455c3d00",
+      "result": {
+        "id": "maine-registration-values",
+        "entry_sha256": "fdf7e7f6bc6d425098adb4fe72eca57692d9cf938bff682752a09643455c3d00",
+        "rounds": [
+          {
+            "target_start": 46896,
+            "candidate_start": 46896,
+            "size": 852,
+            "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+            "candidate_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+            "raw_exact": true,
+            "target_fixups": [
+              835,
+              817,
+              629,
+              592,
+              556
+            ],
+            "candidate_fixups": [
+              835,
+              817,
+              629,
+              592,
+              556
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 46896,
+            "candidate_start": 46896,
+            "size": 852,
+            "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+            "candidate_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+            "raw_exact": true,
+            "target_fixups": [
+              835,
+              817,
+              629,
+              592,
+              556
+            ],
+            "candidate_fixups": [
+              835,
+              817,
+              629,
+              592,
+              556
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "641b43b38ca6237b32ad70abcb39f923310ed859827a81335ecd9cd037a416de",
+            "dependency_timestamp_normalized_sha256": "5adef641f548d75b8292af31c388a0493b0472061557c7845d93675d4c35b1cc",
+            "module_name": "th05/r_values.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_values.cpp",
+              "src/maine/registration/values.cpp",
+              "src/maine/registration/values.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/insert.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/maine/registration/insert.inl",
+              "src/maine/registration/score.inl",
+              "src/maine/registration/stage.inl"
+            ]
+          },
+          {
+            "sha256": "f4f095e56073f02a9312b8776218d5c0808d989cadd37a9996a3082926915db3",
+            "dependency_timestamp_normalized_sha256": "5adef641f548d75b8292af31c388a0493b0472061557c7845d93675d4c35b1cc",
+            "module_name": "th05/r_values.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_values.cpp",
+              "src/maine/registration/values.cpp",
+              "src/maine/registration/values.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/insert.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/maine/registration/insert.inl",
+              "src/maine/registration/score.inl",
+              "src/maine/registration/stage.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_values.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_values.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_values_bindings.asm",
+            "sha256": "7f98d418a12b534a9782fb3321f72b474d37e7ec38eb06c98b11b7903da5b444"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/registration/insert.hpp",
+            "sha256": "a87ec7003addbefcb77080863f1d2f1bd725b551431a2127abfdb03181ac6f8d"
+          },
+          {
+            "path": "src/maine/registration/insert.inl",
+            "sha256": "d4ebd1cd618fff4925c80ec8c87fdf8674cc83374410f7607bd3ef63cd3aab10"
+          },
+          {
+            "path": "src/maine/registration/score.inl",
+            "sha256": "43fbfeb2df6ed67c091be0987d8d2fbd6ea6d2de4321f889e403acbb0d3760f8"
+          },
+          {
+            "path": "src/maine/registration/stage.inl",
+            "sha256": "38043a1b9c3052d671425eb616498be69556238b8dc76c8c9ab0b47da321cc52"
+          },
+          {
+            "path": "src/maine/registration/values.cpp",
+            "sha256": "814e4a9426f6c85b62e2672adffbb951bd4563611fa3fdf933e2c0eb1a142073"
+          },
+          {
+            "path": "src/maine/registration/values.hpp",
+            "sha256": "d9537cec0993e514ed90736fe9eed192a660f1bc8d7b8636ef07fdd5e42cdee7"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_values_bindings.asm",
+          "sha256": "7f98d418a12b534a9782fb3321f72b474d37e7ec38eb06c98b11b7903da5b444"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/registration/insert.hpp",
+          "sha256": "a87ec7003addbefcb77080863f1d2f1bd725b551431a2127abfdb03181ac6f8d"
+        },
+        {
+          "path": "src/maine/registration/insert.inl",
+          "sha256": "d4ebd1cd618fff4925c80ec8c87fdf8674cc83374410f7607bd3ef63cd3aab10"
+        },
+        {
+          "path": "src/maine/registration/score.inl",
+          "sha256": "43fbfeb2df6ed67c091be0987d8d2fbd6ea6d2de4321f889e403acbb0d3760f8"
+        },
+        {
+          "path": "src/maine/registration/stage.inl",
+          "sha256": "38043a1b9c3052d671425eb616498be69556238b8dc76c8c9ab0b47da321cc52"
+        },
+        {
+          "path": "src/maine/registration/values.cpp",
+          "sha256": "814e4a9426f6c85b62e2672adffbb951bd4563611fa3fdf933e2c0eb1a142073"
+        },
+        {
+          "path": "src/maine/registration/values.hpp",
+          "sha256": "d9537cec0993e514ed90736fe9eed192a660f1bc8d7b8636ef07fdd5e42cdee7"
+        },
+        {
+          "path": "src/op/hiscore/view.hpp",
+          "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+        },
+        {
+          "path": "src/op/main/menu.hpp",
+          "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+        },
+        {
+          "path": "src/op/main/strings.hpp",
+          "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2e4fcca99d55de228471d16e6edcda9768397bfa55ecaf5379f38a7c51bcc312",
+      "compiled_negative_control": {
+        "target_start": 46896,
+        "candidate_start": 46896,
+        "size": 852,
+        "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+        "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
+        "raw_exact": false,
+        "target_fixups": [
+          835,
+          817,
+          629,
+          592,
+          556
+        ],
+        "candidate_fixups": [
+          835,
+          817,
+          629,
+          592,
+          556
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-values",
+        "entry_sha256": "fdf7e7f6bc6d425098adb4fe72eca57692d9cf938bff682752a09643455c3d00",
+        "mutation": {
+          "unit": "maine-registration-values",
+          "source": "src/maine/registration/score.inl",
+          "find": "for(digit = 6;",
+          "replace": "for(digit = 5;"
+        },
+        "control_sha256": "b6f016932486b7b524a1ac5817732d231fbd737961ab7bdd871962484d144b79",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 46896,
+          "candidate_start": 46896,
+          "size": 852,
+          "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+          "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
+          "raw_exact": false,
+          "target_fixups": [
+            835,
+            817,
+            629,
+            592,
+            556
+          ],
+          "candidate_fixups": [
+            835,
+            817,
+            629,
+            592,
+            556
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "116f63a4f13958b4f5834dee042ba0fe85083decb56b36aff09e404d05e6e02a",
+          "dependency_timestamp_normalized_sha256": "af76015daa602fb054ec1c1dd449771afc70f47a35d914584c9196e7676ebf3d",
+          "module_name": "th05/r_values.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_values.cpp",
+            "src/maine/registration/values.cpp",
+            "src/maine/registration/values.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp",
+            "src/maine/registration/insert.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/maine/registration/insert.inl",
+            "src/maine/registration/score.inl",
+            "src/maine/registration/stage.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_values.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-display",
+      "entry_sha256": "ddcc3655df2a34a69feb7b21e2f3cd7c735b9ede1a0cf365680f2d05790b43b4",
+      "result": {
+        "id": "maine-registration-display",
+        "entry_sha256": "ddcc3655df2a34a69feb7b21e2f3cd7c735b9ede1a0cf365680f2d05790b43b4",
+        "rounds": [
+          {
+            "target_start": 47748,
+            "candidate_start": 47748,
+            "size": 591,
+            "target_sha256": "a38e378759a5bfdd7e750ceb992f6eb15c72ad546717d2f6a442c50f6ff7330e",
+            "candidate_sha256": "a38e378759a5bfdd7e750ceb992f6eb15c72ad546717d2f6a442c50f6ff7330e",
+            "raw_exact": true,
+            "target_fixups": [
+              574,
+              551,
+              340,
+              322,
+              304,
+              286,
+              269,
+              235,
+              224,
+              185,
+              163,
+              135
+            ],
+            "candidate_fixups": [
+              574,
+              551,
+              340,
+              322,
+              304,
+              286,
+              269,
+              235,
+              224,
+              185,
+              163,
+              135
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 47748,
+            "candidate_start": 47748,
+            "size": 591,
+            "target_sha256": "a38e378759a5bfdd7e750ceb992f6eb15c72ad546717d2f6a442c50f6ff7330e",
+            "candidate_sha256": "a38e378759a5bfdd7e750ceb992f6eb15c72ad546717d2f6a442c50f6ff7330e",
+            "raw_exact": true,
+            "target_fixups": [
+              574,
+              551,
+              340,
+              322,
+              304,
+              286,
+              269,
+              235,
+              224,
+              185,
+              163,
+              135
+            ],
+            "candidate_fixups": [
+              574,
+              551,
+              340,
+              322,
+              304,
+              286,
+              269,
+              235,
+              224,
+              185,
+              163,
+              135
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "46b87ad6586a6f427ccbedd72b88c535b5d382f15f46af410b3080b01b4de851",
+            "dependency_timestamp_normalized_sha256": "afa7b1883ea12014d0d51f2720c4c4996a9642923083c9edb3284b2c8ec0c0b5",
+            "module_name": "th05/r_disp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_disp.cpp",
+              "src/maine/registration/display.cpp",
+              "src/maine/registration/display.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/name.inl",
+              "src/maine/registration/place.inl"
+            ]
+          },
+          {
+            "sha256": "cfe2070b100cce89de044c133e886bf17ad85ceb336b10fc168c42e6568b6cee",
+            "dependency_timestamp_normalized_sha256": "afa7b1883ea12014d0d51f2720c4c4996a9642923083c9edb3284b2c8ec0c0b5",
+            "module_name": "th05/r_disp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_disp.cpp",
+              "src/maine/registration/display.cpp",
+              "src/maine/registration/display.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/name.inl",
+              "src/maine/registration/place.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-1/a/source",
+          "group-1/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_disp.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_disp.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_display_bindings.asm",
+            "sha256": "e07c0db24274c84589f8a37c5f9ce3a529d12d505ebc6e097acc107c4629a8c0"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/registration/display.cpp",
+            "sha256": "b38937400c120415bc5628bc62bd0d5c38ce92051cc1e2ab65a902ddce0f150f"
+          },
+          {
+            "path": "src/maine/registration/display.hpp",
+            "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
+          },
+          {
+            "path": "src/maine/registration/name.inl",
+            "sha256": "0286951aaedfba05719913715341b4a164618950f664d24daf80ab5c5a6f090e"
+          },
+          {
+            "path": "src/maine/registration/place.inl",
+            "sha256": "a05c945aee5820c3c741e3c0c7f5c42756063e3cce8d20a6adcc6c5b5497630f"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_display_bindings.asm",
+          "sha256": "e07c0db24274c84589f8a37c5f9ce3a529d12d505ebc6e097acc107c4629a8c0"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/registration/display.cpp",
+          "sha256": "b38937400c120415bc5628bc62bd0d5c38ce92051cc1e2ab65a902ddce0f150f"
+        },
+        {
+          "path": "src/maine/registration/display.hpp",
+          "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
+        },
+        {
+          "path": "src/maine/registration/name.inl",
+          "sha256": "0286951aaedfba05719913715341b4a164618950f664d24daf80ab5c5a6f090e"
+        },
+        {
+          "path": "src/maine/registration/place.inl",
+          "sha256": "a05c945aee5820c3c741e3c0c7f5c42756063e3cce8d20a6adcc6c5b5497630f"
+        },
+        {
+          "path": "src/op/hiscore/view.hpp",
+          "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+        },
+        {
+          "path": "src/op/main/menu.hpp",
+          "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+        },
+        {
+          "path": "src/op/main/strings.hpp",
+          "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2e4fcca99d55de228471d16e6edcda9768397bfa55ecaf5379f38a7c51bcc312",
+      "compiled_negative_control": {
+        "target_start": 46896,
+        "candidate_start": 46896,
+        "size": 852,
+        "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+        "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
+        "raw_exact": false,
+        "target_fixups": [
+          835,
+          817,
+          629,
+          592,
+          556
+        ],
+        "candidate_fixups": [
+          835,
+          817,
+          629,
+          592,
+          556
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-values",
+        "entry_sha256": "fdf7e7f6bc6d425098adb4fe72eca57692d9cf938bff682752a09643455c3d00",
+        "mutation": {
+          "unit": "maine-registration-values",
+          "source": "src/maine/registration/score.inl",
+          "find": "for(digit = 6;",
+          "replace": "for(digit = 5;"
+        },
+        "control_sha256": "b6f016932486b7b524a1ac5817732d231fbd737961ab7bdd871962484d144b79",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 46896,
+          "candidate_start": 46896,
+          "size": 852,
+          "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
+          "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
+          "raw_exact": false,
+          "target_fixups": [
+            835,
+            817,
+            629,
+            592,
+            556
+          ],
+          "candidate_fixups": [
+            835,
+            817,
+            629,
+            592,
+            556
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "116f63a4f13958b4f5834dee042ba0fe85083decb56b36aff09e404d05e6e02a",
+          "dependency_timestamp_normalized_sha256": "af76015daa602fb054ec1c1dd449771afc70f47a35d914584c9196e7676ebf3d",
+          "module_name": "th05/r_values.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_values.cpp",
+            "src/maine/registration/values.cpp",
+            "src/maine/registration/values.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp",
+            "src/maine/registration/insert.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/maine/registration/insert.inl",
+            "src/maine/registration/score.inl",
+            "src/maine/registration/stage.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_values.cpp"
         ]
       },
       "target_view": {
