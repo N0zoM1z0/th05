@@ -127,6 +127,12 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+The newly prepared OP score decoder has a complete 169-byte native boundary.
+Ordinary C++ with a named byte-rotate primitive emits 181; a register byte key
+emits 182. The 181-byte source is restored, outside all live manifests, and
+neither trial grants credit. The two extra key store/load pairs across the
+rotation explain the first 12-byte gap. No fixed-AL algorithm was introduced;
+see [decoder evidence](../src/shared/score/decode.md).
 The independent point-popup updater is reduced from126 to114 and then111
 bytes with natural field assignment, signed countdown and byte/unsigned
 comparison domains. Its size now agrees with the complete111-byte native
