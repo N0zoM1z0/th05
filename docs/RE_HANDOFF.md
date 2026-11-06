@@ -7,27 +7,50 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-360 bounded C/C++ CODE/DATA units, 546 complete function occurrences:
-**106,048 authored bytes exact** = 90,425 CODE + 15,623 initialized DATA.
-CODE is 89,603 instruction + 822 compiler-table bytes. Complete compared
-extents total 106,138, including 90 uncredited padding bytes.
+361 bounded C/C++ CODE/DATA units, 547 complete function occurrences:
+**106,059 authored bytes exact** = 90,436 CODE + 15,623 initialized DATA.
+CODE is 89,614 instruction + 822 compiler-table bytes. Complete compared
+extents total 106,149, including 90 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 421 | 69,003 | 3,341 |
+| MAIN | 422 | 69,014 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
+Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**118,446 bytes**, including MAIN 39,008. The global authored denominator and
+**118,400 bytes**, including MAIN 38,962. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: EX-Alice's complete spiral/gather attack at 19FAE..1A0FC
+Latest recovery: the complete C++ CONTINUE score entry at C998..C9A3 adds
+11 instruction bytes and one function. Two fresh producers preserve full
+OMF/MAP/raw and empty fixups; the guard-inversion negative is rejected. No
+TH04 file-loading call or new validation is added. See
+[source/ABI/receipt](../src/main/score/continue_enter.md) and
+`.analysis/unit-replays/main-score-continue-entry-b/receipt.json`.
+
+Separately, Mima's private ES/EAX/DI band worker at 10508..1052B adds 35
+reviewed ASM instruction bytes, with no C/C++ credit. Two verified callers
+configure ES without stack arguments and preserve DI outside the worker;
+the worker deliberately clobbers DI. Its private ABI, rather than a failed
+C++ producer, supports the bounded assembly-origin decision. Both fresh
+ASM producers and the band-width negative pass. Surrounding entry points
+remain unknown. See [source/ABI/receipt](../src/main/player/mima_bands.md)
+and `.analysis/asm-replays/main-mima-bands-a/receipt.json`.
+
+The new full 50x32 tile-dirty-map C++ fill remains unaccepted: the real
+Borland memory intrinsic emits 16 bytes / REP STOSW versus native 22 /
+REP STOSD. After correcting unavailable TC4 boolean aliases, one complete
+producer establishes that gap. No second/negative, padding, flag matrix or
+ASM promotion follows. See [candidate](../src/main/tile/invalidate_all.md).
+No accepted source/header or build tool changed, so no old unit was replayed.
+
+Previous recovery: EX-Alice's complete spiral/gather attack at 19FAE..1A0FC
 adds 334 C++ instruction bytes and one function. Two fresh chains through the
 existing unedited compiler-assembly recipe match all raw bytes and original
 ordered fixups `[86,256]`; a radius 256-to-257 compiled negative is rejected.

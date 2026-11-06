@@ -5,19 +5,19 @@ complete authored ownership denominator remains under review.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 421 | 69003 | 68337 | 666 | 69081 |
+| MAIN bounded C/C++ units | 422 | 69014 | 68348 | 666 | 69092 |
 | OP decoded C/C++ units | 65 | 11369 | 11263 | 106 | 11375 |
 | MAINE decoded C/C++ units | 59 | 9731 | 9681 | 50 | 9734 |
 | ZUN embedded C/C++ units | 1 | 322 | 322 | 0 | 322 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 27 | 3341 | 72344 | 72425 |
+| MAIN bounded C/C++ units | 27 | 3341 | 72355 | 72436 |
 | OP decoded C/C++ units | 9 | 8667 | 20036 | 20042 |
 | MAINE decoded C/C++ units | 12 | 3615 | 13346 | 13349 |
 | ZUN embedded C/C++ units | 0 | 0 | 322 | 322 |
 
-360 bounded C/C++ units pass two cold producers, raw bytes and original
+361 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,7 +27,7 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 106048: 90425 authored CODE plus 15623
+Total authored C/C++ bytes are 106059: 90436 authored CODE plus 15623
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 822 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 90 observed
@@ -41,7 +41,7 @@ OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
 Separately reviewed handwritten ASM reconstruction contributes
-8524 instruction bytes, 210 symbolic CODE-dispatch table bytes,
+8559 instruction bytes, 210 symbolic CODE-dispatch table bytes,
 24 semantic CODE-table bytes and 64 initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
 89 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.

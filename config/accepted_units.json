@@ -2,24 +2,18 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "955968f00fa9aa1e17a19214e4d29334d5c6ea98a3606654896f1a2cf5ee9b98",
+  "replay_receipt_sha256": "20345b78bff26f7fb51164d242ce76d43b390c35e9d5bd127f2c78ceacf0120e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 106414,
-    "candidate_start": 106414,
-    "size": 334,
-    "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
-    "candidate_sha256": "f0718e9b756b3a5e233499289549558574844fbaf0bdf2f02869e14dc889f9a6",
+    "target_start": 51608,
+    "candidate_start": 51608,
+    "size": 11,
+    "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+    "candidate_sha256": "cdcb7453c1699714553d113e604746d5e19e5760eccb881e0d64c5cd32187748",
     "raw_exact": false,
-    "target_fixups": [
-      86,
-      256
-    ],
-    "candidate_fixups": [
-      86,
-      256
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -77484,6 +77478,216 @@
             "x_spiral.asm"
           ]
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-score-continue-entry",
+      "entry_sha256": "1352238c04dc0973b4396541cf28e98f8d53d1437eef07b4687632322caa68b3",
+      "result": {
+        "id": "main-score-continue-entry",
+        "entry_sha256": "1352238c04dc0973b4396541cf28e98f8d53d1437eef07b4687632322caa68b3",
+        "rounds": [
+          {
+            "target_start": 51608,
+            "candidate_start": 51608,
+            "size": 11,
+            "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+            "candidate_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 51608,
+            "candidate_start": 51608,
+            "size": 11,
+            "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+            "candidate_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "484635fa89616ddd26f369ec5ce75bffb7efd5a2cb6665c1f418d10ba6636843",
+            "dependency_timestamp_normalized_sha256": "7b97c01db65f74ac3852a5bc0e2055d90c0b40347f1ceb90afbfd2396cba60fa",
+            "module_name": "th05/sc_entry.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_entry.cpp",
+              "src/main/score/continue_enter.cpp",
+              "src/main/score/continue_enter.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "c786ea33667a864343326f74ed25d796539b9456451f03790dbe20802fbdc5c6",
+            "dependency_timestamp_normalized_sha256": "7b97c01db65f74ac3852a5bc0e2055d90c0b40347f1ceb90afbfd2396cba60fa",
+            "module_name": "th05/sc_entry.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_entry.cpp",
+              "src/main/score/continue_enter.cpp",
+              "src/main/score/continue_enter.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_entry.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_entry.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/score_continue_bindings.asm",
+            "sha256": "24b0ef860ed7c0a53e64c7216633ce94a9dd1ab71e0e77d720a861cfe64ab3ca"
+          },
+          {
+            "path": "src/main/score/continue_enter.cpp",
+            "sha256": "d6fb760e59165f7c4a25706c31cb0b19a3256d7c30348ca6774e94caaeb6851f"
+          },
+          {
+            "path": "src/main/score/continue_enter.hpp",
+            "sha256": "edc372f6f6d13bb9d93db13b9f7b8bcdb20eb54f34f0aa7b355711832aa93899"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/score_continue_bindings.asm",
+          "sha256": "24b0ef860ed7c0a53e64c7216633ce94a9dd1ab71e0e77d720a861cfe64ab3ca"
+        },
+        {
+          "path": "src/main/score/continue_enter.cpp",
+          "sha256": "d6fb760e59165f7c4a25706c31cb0b19a3256d7c30348ca6774e94caaeb6851f"
+        },
+        {
+          "path": "src/main/score/continue_enter.hpp",
+          "sha256": "edc372f6f6d13bb9d93db13b9f7b8bcdb20eb54f34f0aa7b355711832aa93899"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "20345b78bff26f7fb51164d242ce76d43b390c35e9d5bd127f2c78ceacf0120e",
+      "compiled_negative_control": {
+        "target_start": 51608,
+        "candidate_start": 51608,
+        "size": 11,
+        "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+        "candidate_sha256": "cdcb7453c1699714553d113e604746d5e19e5760eccb881e0d64c5cd32187748",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-score-continue-entry",
+        "entry_sha256": "1352238c04dc0973b4396541cf28e98f8d53d1437eef07b4687632322caa68b3",
+        "mutation": {
+          "unit": "main-score-continue-entry",
+          "source": "src/main/score/continue_enter.cpp",
+          "find": "if(turbo_mode) {",
+          "replace": "if(!turbo_mode) {"
+        },
+        "control_sha256": "97a756f2cf5e831ae230769bf41218eed96f45f648d41a3a7e8f97adc7ce3afe",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 51608,
+          "candidate_start": 51608,
+          "size": 11,
+          "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
+          "candidate_sha256": "cdcb7453c1699714553d113e604746d5e19e5760eccb881e0d64c5cd32187748",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "c9f6b6588fcf7ad650b7b1634e47b7c317094119172dc8741e6b3b7e6d53b716",
+          "dependency_timestamp_normalized_sha256": "fb17aad9b798dd6d3a3e81c8d879ae02d7c80393551b692a0e5ba5fdf772e7aa",
+          "module_name": "th05/sc_entry.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sc_entry.cpp",
+            "src/main/score/continue_enter.cpp",
+            "src/main/score/continue_enter.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sc_entry.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }

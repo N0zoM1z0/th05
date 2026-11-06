@@ -4917,3 +4917,23 @@ unit = "main-exalice-spiral-gather"
 source = "src/main/boss/exalice/spiral_gather.inl"
 find = "gather_template.radius.v = to_sp(256);"
 replace = "gather_template.radius.v = to_sp(257);"
+
+
+[[units]]
+id = "main-score-continue-entry"
+source = "src/main/score/continue_enter.cpp"
+module = "th05/sc_entry.cpp"
+segment = "SCORE_ENTRY_TEXT"
+wrapper_options = "-zCSCORE_ENTRY_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/score_continue_bindings.asm"
+target_start = 0xc998
+size = 11
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-score-continue-entry"
+source = "src/main/score/continue_enter.cpp"
+find = "if(turbo_mode) {"
+replace = "if(!turbo_mode) {"

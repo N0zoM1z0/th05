@@ -1466,3 +1466,30 @@ semantic_inputs = ["src/op/hiscore/view.hpp", "src/shared/abi.hpp"]
 [units.negative]
 find = "SCORE_ROTATE_BITS equ 3"
 replace = "SCORE_ROTATE_BITS equ 2"
+
+
+[[units]]
+id = "main-mima-bands"
+artifact = "main"
+source = "src/main/player/mima_bands.asm"
+types = "src/main/player/mima_bands_types.inc"
+symbols = "probes/units/mima_bands_symbols.inc"
+bindings = "probes/units/mima_bands_bindings.asm"
+notes = "src/main/player/mima_bands.md"
+target_start = 0x10508
+size = 35
+segment = "MIMA_BANDS_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "8ed2d78a899de8acd31407e0b4c4dc50e38c4afe0c30c5998b1cf5f6123fea2c"
+target_scope_sha256 = "8c28d126d1951b1248898db529a8fcae13fc44226f94eb8edec940f084386ddd"
+semantic_inputs = ["src/main/player/bomb_draw.hpp", "src/main/player/mima_bomb.cpp"]
+[units.publics]
+"mima_bomb_bands_fill" = 0
+"mima_bomb_bands_end" = 35
+[units.negative]
+find = "BAND_WIDTH_PIXELS equ 176"
+replace = "BAND_WIDTH_PIXELS equ 144"
