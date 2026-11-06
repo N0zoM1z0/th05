@@ -7,43 +7,46 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-344 bounded C/C++ CODE/DATA units, 531 complete function occurrences:
-**104,187 authored bytes exact** = 88,706 CODE + 15,481 initialized DATA.
+347 bounded C/C++ CODE/DATA units, 531 complete function occurrences:
+**104,241 authored bytes exact** = 88,706 CODE + 15,535 initialized DATA.
 CODE is 87,898 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,275, including 88 uncredited padding bytes.
+extents total 104,329, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 408 | 67,384 | 3,235 |
-| OP | 64 | 11,319 | 8,649 |
-| MAINE | 58 | 9,681 | 3,597 |
+| MAIN | 408 | 67,384 | 3,253 |
+| OP | 64 | 11,319 | 8,667 |
+| MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,832 bytes**, including MAIN 42,258. The global authored denominator and
+**121,778 bytes**, including MAIN 42,240. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery:141 instruction bytes across three complete occurrences
-of the shared FAR cdecl MMD resident detector, with no DATA or padding credit:
+Latest exact recovery:54 initialized semantic C DATA bytes across three
+complete sound extension/mode banks, with no CODE, BSS or padding credit:
 
 | Unit | Native load scope | Bytes | Receipt under `.analysis/unit-replays/` |
 | --- | --- | ---: | --- |
-| `main-mmd-resident` | `[14BA4,14BD3)` | 47 | `main-mmd-resident-exact/receipt.json` |
-| `op-mmd-resident` | `[D350,D37F)` | 47 | `op-mmd-resident-exact/receipt.json` |
-| `maine-mmd-resident` | `[E84E,E87D)` | 47 | `maine-mmd-resident-exact/receipt.json` |
+| `main-sound-load-resources` | `[211F6,21208)` | 18 | `main-sound-load-resources-exact-b/receipt.json` |
+| `op-sound-load-resources` | `[FA32,FA44)` | 18 | `op-sound-load-resources-exact-b/receipt.json` |
+| `maine-sound-load-resources` | `[107DC,107EE)` | 18 | `maine-sound-load-resources-exact/receipt.json` |
 
-The type-checked five-byte ISR signature header and real interrupt vector61h
-are read through a typed ES pointer. Conditions, state writes and both returns
-are ordinary C++; the reference LES/forced RETF are not transcribed. A named
-far-pointer trial emitted60; direct typed field accesses recover47 naturally.
-Each artifact passes two deterministic builds, valid OMF, all raw bytes/order
-and its compiled interrupt-selection mutation. See [resident review](../src/shared/sound/resident.md).
-The adjacent PMD candidate emits51 versus46, with ordinary DX result allocation;
-`register` changes nothing. It stays outside acceptance.
+The C initializer preserves the15-byte compact extension bank and three real
+initial mode/availability bytes. Mode3's four-byte read still overlaps the SE
+mode. Each artifact passes two deterministic builds, valid OMF, all raw bytes
+and original order, plus its own compiled DATA filename mutation. Foreign
+context uses legal16-bit ORGs; OP retains the actual Music Room DATA end to
+satisfy the validation MZ's minimum allocation. See [resource review](../src/shared/sound/load_resources.md).
+
+The previous three MMD detectors remain accepted with141 instruction bytes.
+The adjacent PMD candidate emits51 versus46; `register` and the C frontend
+both leave DX allocation unchanged. The C trial also confirms the corrected
+outside-only binder's original DS positions. See [resident review](../src/shared/sound/resident.md).
 
 The previous shared `frame_delay` remains accepted in all three programs,
 with63 instruction bytes and no padding credit. Its [ABI review](../src/shared/hardware/frame_delay.md)
@@ -95,6 +98,12 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+A new standalone stage-switch defeat trial emits411 versus414, still merging
+all-clear calls; its experimental source/binder were removed. A named-word
+frame-loop counter emits451 versus445; baseline442 was restored. Shinki wing's
+standalone `-v` emits384 CODE/four DATA and needs new float helpers, so it
+cannot resolve the original386-byte order problem. All are failed diagnostics,
+with unchanged accepted source and no credit; per-owner notes pin evidence.
 Other retained candidates are indexed in
 [UNACCEPTED_COHORTS.md](reconstruction/UNACCEPTED_COHORTS.md).
 The major boss update callbacks already have accepted owners; do not replay
@@ -120,7 +129,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans are empty after the three focused MMD
+The MAIN/OP/MAINE incremental plans are empty after the three focused sound DATA
 replays. No whole accepted-set replay was run.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -128,6 +137,6 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-sixteen records/fifteen receipts; all accepted evidence stays live.
+nineteen records/eighteen receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

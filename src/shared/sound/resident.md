@@ -62,5 +62,8 @@ Frozen diagnostics are `main-pmd-resident-b` and
 nominal tail also displaced DATA; no whole-linked behavioral claim is made.
 The maintained outside-only binder now aligns its foreign DATA gap to a real
 paragraph, accommodating either46 or51 bytes without padding a function.
-That scaffold correction is uncompiled and unaccepted. No PMD unit is in a
-live exact manifest, and no OP/MAINE PMD producer was run.
+A subsequent ordinary C-frontend diagnostic still emits51 with the same DX
+result allocation. It confirms the corrected binder's real DS addresses;
+neither language form is exact. That first producer is retained at
+`main-pmd-resident-c-a`; its experimental C source was removed. No PMD unit is
+in a live exact manifest, and no OP/MAINE PMD producer was run.

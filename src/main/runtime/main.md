@@ -138,3 +138,11 @@ Report `.analysis/gameplay-counter-memory-model.json`, SHA-256
 Actual source/OMF/MAP/argv evidence is in
 `.analysis/runtime-stage-loop-resumed-review.json`, SHA-256
 `e5f5d276eddd16da058657c648b5c48038feb8a6dfec4d0d518dc6be143ecc78`.
+
+A later ordinary named-word trial captures `previous_frame = stage_frame++`
+and uses `previous_frame + 1` for the modulo16 field. Its complete first
+producer emits451 bytes, including an SI save and a different counter schedule,
+against native445. It also fails; the original442-byte source is restored
+byte for byte. Frozen inputs are under
+`.analysis/native-producers/main-gameplay-word-counter-a/`. No new behavior
+model, second producer, compiled negative or accepted credit is claimed.

@@ -1081,3 +1081,23 @@ unit = "maine-mmd-resident"
 source = "src/shared/sound/mmd_resident.cpp"
 find = "snd_interrupt_if_midi = 0x61;"
 replace = "snd_interrupt_if_midi = 0x60;"
+
+[[units]]
+id = "maine-sound-load-resources"
+source = "src/shared/sound/load_resources.c"
+module = "th05/snd_data.c"
+segment = "_DATA"
+bindings_source = "probes/units/maine_sound_load_resources_bindings.asm"
+target_start = 0x107dc
+size = 18
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "state"]
+
+[[controls]]
+unit = "maine-sound-load-resources"
+source = "src/shared/sound/load_resources.c"
+find = '"efc", "m", "m2\0mmd", 0, 0, 0'
+replace = '"efs", "m", "m2\0mmd", 0, 0, 0'

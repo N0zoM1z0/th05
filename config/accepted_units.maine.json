@@ -2,20 +2,28 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "14439663721df02a1d3ad5a0e770042f32b2a5c4afcbf4457fa2366ee382762f",
+  "replay_receipt_sha256": "2201c494a9722c85ba382607ff000f6e809fe6e76380832b94c90148707f9432",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 59470,
-    "candidate_start": 59470,
-    "size": 47,
-    "target_sha256": "b5dc0c8df6bc153f2db0a5d00b7d824b265e7951b88bc36cbdac30a444aad27c",
-    "candidate_sha256": "41ef2ebae35332069c6173524ff1d5ecd8eaf1fefdb45b3fd590cd1ce9cbc6fd",
+    "target_start": 67548,
+    "candidate_start": 67548,
+    "size": 18,
+    "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+    "candidate_sha256": "a970cc0ff66b10896a2d3365e397bcd64d492d156dac77b74b48d33bcb2166e2",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 67548,
+      "size": 18,
+      "module": "th05/snd_data.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -26143,6 +26151,304 @@
           "-ml",
           "-DBINARY='E'",
           "th05/snd_mr.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-sound-load-resources",
+      "entry_sha256": "bba6213b0bc565559eabb8820503d2a8648cdb3afd1b18545a24c91ac7c8ffd0",
+      "result": {
+        "id": "maine-sound-load-resources",
+        "entry_sha256": "bba6213b0bc565559eabb8820503d2a8648cdb3afd1b18545a24c91ac7c8ffd0",
+        "rounds": [
+          {
+            "target_start": 67548,
+            "candidate_start": 67548,
+            "size": 18,
+            "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+            "candidate_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67548,
+              "size": 18,
+              "module": "th05/snd_data.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 67548,
+            "candidate_start": 67548,
+            "size": 18,
+            "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+            "candidate_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67548,
+              "size": 18,
+              "module": "th05/snd_data.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "b5e27bc78caf69e0dfea2ce83d6dfad4c7e40a45cf309a622f6f308827c2d996",
+            "dependency_timestamp_normalized_sha256": "dee8b739c86e01803b9fcb3bf9840bb6799162b60b044a9eddd9b6ce7f8e93e7",
+            "module_name": "th05/snd_data.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_data.c",
+              "src/shared/sound/load_resources.c",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 18,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 18,
+                  "sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "7d4a05e7dca1969d81c00890439adb61b9c3998a248dc40266ab37463b906d00",
+            "dependency_timestamp_normalized_sha256": "dee8b739c86e01803b9fcb3bf9840bb6799162b60b044a9eddd9b6ce7f8e93e7",
+            "module_name": "th05/snd_data.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_data.c",
+              "src/shared/sound/load_resources.c",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 18,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 18,
+                  "sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/snd_data.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/snd_data.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_sound_load_resources_bindings.asm",
+            "sha256": "ce137a0e63f3d924c819c28dc940a480d29768d8a6fb96f12b17013776e0d576"
+          },
+          {
+            "path": "src/shared/sound/load_resources.c",
+            "sha256": "a5f4fd541d5528e976d66a3f57e5cd3e2f26c2b249a2c32121f5adbad1f6bfb0"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_sound_load_resources_bindings.asm",
+          "sha256": "ce137a0e63f3d924c819c28dc940a480d29768d8a6fb96f12b17013776e0d576"
+        },
+        {
+          "path": "src/shared/sound/load_resources.c",
+          "sha256": "a5f4fd541d5528e976d66a3f57e5cd3e2f26c2b249a2c32121f5adbad1f6bfb0"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2201c494a9722c85ba382607ff000f6e809fe6e76380832b94c90148707f9432",
+      "compiled_negative_control": {
+        "target_start": 67548,
+        "candidate_start": 67548,
+        "size": 18,
+        "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+        "candidate_sha256": "a970cc0ff66b10896a2d3365e397bcd64d492d156dac77b74b48d33bcb2166e2",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 67548,
+          "size": 18,
+          "module": "th05/snd_data.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-sound-load-resources",
+        "entry_sha256": "bba6213b0bc565559eabb8820503d2a8648cdb3afd1b18545a24c91ac7c8ffd0",
+        "mutation": {
+          "unit": "maine-sound-load-resources",
+          "source": "src/shared/sound/load_resources.c",
+          "find": "\"efc\", \"m\", \"m2\\0mmd\", 0, 0, 0",
+          "replace": "\"efs\", \"m\", \"m2\\0mmd\", 0, 0, 0"
+        },
+        "control_sha256": "90daa97d9b4c3f55939070fbd8f51d65dabb9af98e286d993c1a1b8ab35a869c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 67548,
+          "candidate_start": 67548,
+          "size": 18,
+          "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
+          "candidate_sha256": "a970cc0ff66b10896a2d3365e397bcd64d492d156dac77b74b48d33bcb2166e2",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 67548,
+            "size": 18,
+            "module": "th05/snd_data.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "2c03fc25829f11a20ecd64c16661af8fbabaa32fcd98d207e77ab0ca361174a0",
+          "dependency_timestamp_normalized_sha256": "9f1dd242c5483032f2ab666df91b4b09b670539b537f84fffb38bfc9bb873f62",
+          "module_name": "th05/snd_data.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_data.c",
+            "src/shared/sound/load_resources.c",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 18,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 18,
+                "sha256": "a970cc0ff66b10896a2d3365e397bcd64d492d156dac77b74b48d33bcb2166e2"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/snd_data.c"
         ]
       },
       "target_view": {

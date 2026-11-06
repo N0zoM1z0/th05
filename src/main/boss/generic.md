@@ -109,3 +109,10 @@ against the original43-byte AX/DX function. It grants no credit; maintained
 source and binder were restored exactly, with trial inputs retained at
 `.analysis/native-producers/main-boss-player-collision-register-a/`.
 The accepted six-function owner and maintained baseline remain unchanged.
+
+A later independent complete defeat-function trial uses a stage-ID `switch`
+for dialog/bonus selection. It emits411 rather than414: the compiler still
+merges the two all-clear call tails, while ordinary switch promotion adds
+three bytes over the408-byte baseline. Its first producer is retained at
+`.analysis/native-producers/main-boss-defeat-switch-a/`. Experimental source
+and binder were removed; no accepted dependency, order or byte was changed.

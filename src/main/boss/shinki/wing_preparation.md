@@ -64,3 +64,11 @@ The wing receipt is `.analysis/unit-replays/main-shinki-wing-preparation-b/recei
 Scalar/consumer first producers are under `main-shinki-balls-{scalar,consumer-scalars}-a`;
 the separate branch-profile first producer is `main-shinki-balls-branch-profile-a`.
 Existing accepted Shinki definitions, types, entries and controls stay unchanged.
+
+One later standalone `-v` source-debugging diagnostic emits384 CODE bytes and
+four DATA bytes, introducing `F_FTOL@` and `FIDRQQ` references absent from the
+native function. Linking stops at those undefined real runtime helpers. This
+profile already changes generated code; it is not a solution to relocation
+order. No fake helpers are bound, and no second producer or negative follows.
+Evidence is `.analysis/native-producers/main-shinki-wing-debug-a/`; maintained
+source, headers and accepted entries remain unchanged.
