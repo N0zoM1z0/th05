@@ -1138,3 +1138,83 @@ kind = "alignment"
 offset = 93
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-tiny32"
+artifact = "main"
+source = "src/shared/graphics/tiny32.asm"
+types = "src/shared/graphics/tiny_types.inc"
+symbols = "probes/units/tiny32_symbols.inc"
+bindings = "probes/units/tiny32_bindings.asm"
+notes = "src/shared/graphics/tiny.md"
+target_start = 48994
+size = 282
+segment = "TINY32_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "c432ce5891534b50a40a94ca3948bf95b2581e036d5b870fb5e9c9bd59ac0224"
+target_scope_sha256 = "5be0fb90410e35db77c21acba6c959339bcfa894fd5161f22f3cd1d925158cf0"
+semantic_inputs = []
+[units.publics]
+"Z_SUPER_ROLL_PUT_TINY_32X32_RAW" = 0
+"tiny32_end" = 282
+[units.negative]
+find = "TINY_PIXEL_MASK equ (TINY_PIXEL_PHASES - 1)"
+replace = "TINY_PIXEL_MASK equ (TINY_PIXEL_PHASES - 2)"
+[[units.uncredited]]
+offset = 85
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 131
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 173
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 223
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-tiny16"
+artifact = "main"
+source = "src/shared/graphics/tiny16.asm"
+types = "src/shared/graphics/tiny_types.inc"
+symbols = "probes/units/tiny16_symbols.inc"
+bindings = "probes/units/tiny16_bindings.asm"
+notes = "src/shared/graphics/tiny.md"
+target_start = 49276
+size = 260
+segment = "TINY16_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "d41591a48f4c959b30daae8637b9cb9212cec9991d529ab4b8bb0468b586d101"
+target_scope_sha256 = "790950f77d3557c3764af2880c48dae2cd5a8e3f6b187f625ab85eb04dc2185f"
+semantic_inputs = []
+[units.publics]
+"Z_SUPER_ROLL_PUT_TINY_16X16_RAW" = 0
+"tiny16_end" = 260
+[units.negative]
+find = "TINY_PIXEL_MASK equ (TINY_PIXEL_PHASES - 1)"
+replace = "TINY_PIXEL_MASK equ (TINY_PIXEL_PHASES - 2)"
+[[units.uncredited]]
+offset = 51
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 119
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 223
+size = 1
+kind = "alignment"

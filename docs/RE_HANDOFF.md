@@ -19,13 +19,27 @@ extents total 104,432, including 88 uncredited padding bytes.
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 7,198 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 7,570 compared bytes include 74 uncredited.
+Separate reviewed ASM: 7,733 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,112 compared bytes include 81 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,493 bytes**, including MAIN 41,955. The global authored denominator and
+**120,951 bytes**, including MAIN 41,413. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
+
+Latest reviewed ASM: the complete color tiny kernels MAIN BF62..C07C (32x32,
+282 bytes) and C07C..C180 (16x16, 260 bytes). Two fresh final-source producers
+per kernel reproduce all 542 raw bytes, native frames/publics and empty ordered
+fixups; each phase-mask mutation is rejected. Explicit adoption adds 535 ASM
+instruction bytes and seven compared, uncredited EVEN NOPs. The positive
+Master ancestry is documented: these game adaptations have hybrid near
+interfaces and caller-owned graphics state, rather than the unchanged library
+entry. The 32x32 CS coordinate at BF60..BF62 remains foreign and unknown;
+handles, sprites, C++ callers and the accepted monochrome kernel are unchanged.
+See [native/source/receipt review](../src/shared/graphics/tiny.md).
+Final receipts: `.analysis/asm-replays/main-tiny32-b/receipt.json` and
+`main-tiny16-a/receipt.json`. The earlier 32x32 packet predates a corrected
+comment only and is not adopted; no failed source producer is claimed.
 
 Latest C++ recovery: complete 68-byte `map_load()` MAIN E5C2..E606, with
 original ordered fixup `[41]`, no padding or DATA/BSS. The TH04 MAP format and
@@ -176,7 +190,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans remain empty after the focused MAP-load
+The MAIN/OP/MAINE incremental plans remain empty after the focused tiny ASM
 replay. No whole accepted-set replay was run. Update/Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -184,7 +198,7 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-twenty-two C/C++ records/twenty-one receipts and one Cheeto ASM receipt; all
-accepted evidence stays live.
+twenty-two C/C++ records/twenty-one receipts, one Cheeto ASM receipt and two
+adopted tiny ASM receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.
