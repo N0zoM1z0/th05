@@ -15,7 +15,9 @@ from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
     unit_extent_kind, validate_data_scope_evidence)
 
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, relative_path,
-    compiler_dependencies, scoped_snapshot, validate_snapshot)
+    compiler_dependencies, validate_snapshot)
+from lib.compiler_assembly import (scoped_snapshot, enabled as assembly_pipeline,
+    validate_result_metadata as validate_assembly_result)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -134,7 +136,11 @@ def validate_result(entry: dict, result: dict, *, require_exact: bool = True) ->
         raise ValueError("unit aggregate exact verdict disagrees with its cold evidence")
     if len({obj["dependency_timestamp_normalized_sha256"] for obj in result["omfs"]}) != 1:
         raise ValueError("cold OMF objects are nondeterministic")
-    if any(obj["translator_comments"] != ["TC86 Borland C++ 4.02"] for obj in result["omfs"]):
+    expected_translator = ["TC86 Borland C++ 4.02"]
+    if assembly_pipeline(entry):
+        validate_assembly_result(entry, result)
+        expected_translator = ["Turbo Assembler  Version 5.0"]
+    if any(obj["translator_comments"] != expected_translator for obj in result["omfs"]):
         raise ValueError("compiler producer identity disagrees")
 
 
@@ -458,6 +464,10 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
     receipt_path = receipt_path.resolve()
     work = receipt_path.parent
     receipt = json.loads(receipt_path.read_text())
+    if receipt.get("kind") == "bounded-cxx-compiler-assembly-replay":
+        from lib.compiler_assembly import validate_receipt
+        return validate_receipt(receipt_path, root=root, units=units,
+                                artifact_name=artifact_name, validate_only=validate_only)
     if receipt.get("kind") == "reviewed-complete-scopes-of-retained-producers":
         from review_saved_scopes import validate_review
         validate_review(receipt_path, root=root, artifact_name=artifact_name,

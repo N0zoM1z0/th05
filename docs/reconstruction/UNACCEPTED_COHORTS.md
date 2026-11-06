@@ -23,7 +23,7 @@ identify single-producer diagnostics and archived alternatives.
 | Yumeko sword updater | Original283; natural280. Jump-option/control-flow alternatives fail; baseline restored. | [Current notes](../../src/main/boss/yumeko/swords_update.md) |
 | Yumeko aimed / laser-swords attacks | All354/428 raw bytes agree; original ordered fixups still differ. Genuine prefix context remains three bytes short. | [Current notes](../../src/main/boss/yumeko/laser_swords.md) |
 | Dialog opcode | Direct compiler455 against456; generated-ASM route matches456 raw bytes but reverses fixup order. | [Current notes](../../src/main/dialog/opcode.md) |
-| Shinki wing / ball updater | Wing386 raw-equal with wrong order; scalar ball updater232 against220. | [Current notes](../../src/main/boss/shinki/wing_preparation.md) |
+| Shinki ball updater | Scalar updater232 against220 remains inexact. The separate386-byte wing transition is now accepted through unmodified compiler assembly output and TASM32. | [Current notes](../../src/main/boss/shinki/wing_preparation.md) |
 | Staff updater / renderer | Complete626/861 originals versus623/858; other15 family functions are accepted. | [Current notes](../../src/maine/staff/full.md) |
 
 The retained producers pin the particular source snapshots they compiled;

@@ -65,6 +65,20 @@ is a bounded negative observation, not proof that natural C++ is impossible.
 The complete original particle function stays unaccepted; no fake zero address
 or handwritten compiler-body instructions substitute for a solution.
 
+Preparing that renderer's genuine AX/CX graphics arguments before its signed
+clipping predicates now gives a maintained158-byte C++ candidate, replacing
+the171-byte coordinate-spill candidate. Its sole remaining instruction
+difference is the same OR/CMP zero encoding; it stays outside acceptance.
+
+The386-byte Shinki wing transition is now accepted through an explicit
+TCC `-S` / TASM32 recipe. Unchanged compiler-generated instructions reproduce
+the original ascending fixups `[76,305]`, while direct TCC emits `[305,76]`.
+Missing foreign CODE SEGDEFs in compiler GROUP declarations require an empty
+context wrapper, with actual group membership checked against the real binder.
+No generated instruction or fixup is patched or sorted. Two fresh chains and
+the shared compiled source negative qualify C++ credit; invoking an assembler
+does not turn the maintained C++ algorithm into authored ASM.
+
 ## Layout and oracle scope
 
 Symbol-only linker context can anchor real external symbols and function

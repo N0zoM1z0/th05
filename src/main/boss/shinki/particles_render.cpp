@@ -11,7 +11,6 @@ void near shinki_bg_particles_render(void)
     boss_particle_t near *particle;
     int patnum;
     int left;
-    int top;
     int i;
     _ES = SEG_PLANE_B;
     particle = boss_particles;
@@ -29,13 +28,18 @@ void near shinki_bg_particles_render(void)
                 patnum = particle->patnum;
             }
             left = PLAYFIELD_LEFT + (particle->pos.x.v >> 4) - PARTICLE_W / 2;
-            top = PLAYFIELD_TOP + (particle->pos.y.v >> 4) - PARTICLE_H / 2;
-            if(!(left > PLAYFIELD_LEFT - PARTICLE_W &&
-                 left < PLAYFIELD_RIGHT && top > 0 && top < PLAYFIELD_BOTTOM)) {
+            // Prepare the real graphics arguments before clipping. No call
+            // intervenes before the draw; comparisons preserve AX and CX.
+            _AX = PLAYFIELD_TOP + (particle->pos.y.v >> 4) - PARTICLE_H / 2;
+            _CX = left;
+            if(!(static_cast<int>(_CX) > PLAYFIELD_LEFT - PARTICLE_W &&
+                 static_cast<int>(_CX) < PLAYFIELD_RIGHT &&
+                 static_cast<int>(_AX) > 0 &&
+                 static_cast<int>(_AX) < PLAYFIELD_BOTTOM)) {
                 particle->pos = particle->origin;
                 particle->age = 0;
             } else {
-                z_super_roll_put_16x16_mono(left, top, patnum);
+                z_super_roll_put_16x16_mono_raw(patnum);
                 particle->age++;
             }
         }

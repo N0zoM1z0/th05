@@ -29,8 +29,9 @@ from lib.unit_sources import producer_snapshot, source_encoding, stage_inputs
 from lib.unit_extents import (classify_data_extent, initialized_data_omf_scope,
     unit_extent_kind)
 from lib.replay_toolchain import (bindings_source, digest, entry_digest, freeze_toolchain,
-    required_input_paths, scoped_snapshot, snapshot_paths, staged_paths,
+    required_input_paths, snapshot_paths, staged_paths,
     static_toolchain, validate_snapshot)
+from lib.compiler_assembly import scoped_snapshot, enabled as assembly_pipeline
 
 ROOT = Path(__file__).resolve().parents[1]
 OMF_FIELDS = ("sha256", "dependency_timestamp_normalized_sha256", "module_name",
@@ -84,7 +85,7 @@ def translation_units(units: list[dict], *, binary: str | None = "M") -> list[li
                     for part in module.split("/"))):
             raise ValueError(f"compiler wrapper module must use a relative DOS 8.3 path: {module}")
         key = entry["module"].replace("\\", "/").casefold()
-        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry), binding_layout.after_compiler(entry))
+        identity = (entry["source"], entry["module"], entry.get("wrapper_options", ""), bindings_source(entry), unit_binary(entry, binary), source_encoding(entry), binding_layout.after_compiler(entry), entry.get("compiler_pipeline"))
         if key in grouped and grouped[key][0] != identity:
             raise ValueError("one module cannot have conflicting source, flags or binding contexts")
         grouped.setdefault(key, (identity, []))[1].append(entry)
@@ -207,6 +208,16 @@ def main() -> int:
     if not units or args.plan:
         print(json.dumps({"selected": reasons, "work_required": bool(units), "tools_executed": False}, indent=2))
         return 0
+    if any(assembly_pipeline(unit) for unit in units):
+        if len(units) != 1 or context.name != "main":
+            raise ValueError("select one MAIN compiler-assembly unit for its focused replay")
+        from lib.compiler_assembly import replay
+        work = (args.output or ROOT / ".analysis/unit-replays" / uuid.uuid4().hex).resolve()
+        receipt = replay(ROOT, units[0], manifest_bytes, work)
+        print(json.dumps({"pass": receipt["pass"], "selected": reasons,
+                          "compiler_pipeline": units[0]["compiler_pipeline"],
+                          "receipt": str(work / "receipt.json")}, indent=2))
+        return 0 if receipt["pass"] else 1
     controls = {row["unit"]: row for row in manifest.get("controls", [])}
     data_units = [unit for unit in units if unit_extent_kind(unit) == 'initialized-data']
     if len(data_units) > 1:

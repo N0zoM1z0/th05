@@ -8,6 +8,7 @@ normal process. Detailed receipt fields live in the corresponding scripts.
 | Work | Tool / reference |
 | --- | --- |
 | New/affected C/C++ CODE or initialized DATA | `scripts/replay_units.py` |
+| C/C++ compiler output consumed unchanged by TASM32 | `compiler_pipeline = "tcc-s-tasm32"`, `scripts/lib/compiler_assembly.py` |
 | Merge one or several receipts atomically | `scripts/progress.py --accept PATH` (repeat for a batch) |
 | Reuse whole initialized DATA from two saved CODE producers | `scripts/review_saved_data.py` |
 | Project complete functions from a saved mixed-result receipt | `scripts/review_saved_scopes.py` |
@@ -45,3 +46,21 @@ tables remain distinct from instructions and resources.
 The normal replay's shared compiled control is sufficient. The retired
 supplemental-negative tool remains in Git history at `3af324e`; its historical
 reports add no acceptance requirement or authored credit.
+
+The opt-in compiler-assembly recipe currently handles one raw MAIN whole CODE
+contribution at a time, with explicit native CS/DS/group pins. The maintained
+source is C/C++; TCC emits `-S` output and the pinned TASM32 consumes it without
+an edit. A deterministic wrapper declares only absent foreign CODE segments
+named by compiler GROUPs and checked against the actual symbol-only binder.
+The wrapper contains no instructions or initialized payload. Input mtimes are
+fixed reproducibility metadata. Raw bytes and ordered fixups are never changed.
+
+Its `bounded-cxx-compiler-assembly-replay` receipt records two independent
+compiler/assembler/linker chains, the compiler file's before/after hash, TCC
+E9 consumed-source dependencies, actual commands/logs, complete ordinary
+OMF/LEDATA, native MAP frames, deterministic outputs and the normal compiled
+source negative. `progress.py --accept` reads the saved artifacts again. The
+source/recipe snapshot selects only this owner when its real inputs change;
+direct-object units retain their existing replay and evidence. These bytes
+remain C/C++ authored CODE, with no inferred original-ASM ownership or literal
+historical-producer claim. See [Shinki acceptance](../../src/main/boss/shinki/wing_preparation.md).

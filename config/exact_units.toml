@@ -4803,3 +4803,26 @@ unit = "main-null-callback-near"
 source = "src/main/runtime/null_callbacks.cpp"
 find = "extern \"C\" void pascal near nullfunc_near(void)"
 replace = "extern \"C\" void pascal far nullfunc_near(void)"
+
+[[units]]
+id = "main-shinki-wing-preparation"
+source = "src/main/boss/shinki/wing_preparation.cpp"
+module = "th05/b6_wing.cpp"
+segment = "B6_WING_TEXT"
+wrapper_options = "-zCB6_WING_TEXT -zPmain_03"
+bindings_source = "probes/units/shinki_wing_preparation_bindings.asm"
+target_start = 110046
+size = 386
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "main_03"
+cs_base = 86640
+ds_base = 133584
+
+[[controls]]
+unit = "main-shinki-wing-preparation"
+source = "src/main/boss/shinki/wing_preparation.cpp"
+find = "playfield_shake_anim_time = 8;"
+replace = "playfield_shake_anim_time = 9;"

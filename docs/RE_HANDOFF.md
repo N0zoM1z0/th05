@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-353 bounded C/C++ CODE/DATA units, 536 complete function occurrences:
-**104,410 authored bytes exact** = 88,811 CODE + 15,599 initialized DATA.
-CODE is 88,003 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,498, including 88 uncredited padding bytes.
+354 bounded C/C++ CODE/DATA units, 537 complete function occurrences:
+**104,796 authored bytes exact** = 89,197 CODE + 15,599 initialized DATA.
+CODE is 88,389 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,884, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 413 | 67,489 | 3,317 |
+| MAIN | 414 | 67,875 | 3,317 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,26 @@ extents total 104,498, including 88 uncredited padding bytes.
 Separate reviewed ASM: 8,412 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,799 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**120,198 bytes**, including MAIN 40,660. The global authored denominator and
+**119,812 bytes**, including MAIN 40,274. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete consecutive player-shot helper family MAIN
+Latest recovery: the complete386-byte C++ Shinki wing transition at
+1ADDE..1AF60 now matches all raw bytes and original ordered fixups `[76,305]`.
+The explicit `tcc-s-tasm32` recipe compiles unchanged C++ with `-S`, assembles
+the unedited compiler file and links the real symbol-only binder. An empty
+foreign CODE context wrapper resolves compiler GROUP declarations; it emits
+no instructions or data. Two fresh chains are deterministic, and the normal
+shake8-to9 mutation changes only byte311 and is rejected. No DATA, BSS, padding
+or ASM credit is added. See [C++/ABI/receipt evidence](../src/main/boss/shinki/wing_preparation.md)
+and `.analysis/unit-replays/main-shinki-wing-compiler-assembly-b/receipt.json`.
+The new recipe validates consumed C++ inputs, unchanged compiler text, actual
+commands, complete OMF/MAP/MZ and independent saved producer directories.
+Focused tooling tests and saved-artifact rejection checks pass. Other accepted
+units/probes are reused after identity checks; no full CI or cold replay runs.
+
+Previous recovery: the complete consecutive player-shot helper family MAIN
 E38C..E40E (130): allocation56, angle velocity30 and power-level update44.
 Two fresh ASM producers match full ordinary OMF/MAP, every raw byte and the
 empty original fixup stream; their shared primary-sprite mutation is rejected.
@@ -99,7 +113,7 @@ Final receipts: `.analysis/asm-replays/main-tiny32-b/receipt.json` and
 `main-tiny16-a/receipt.json`. The earlier 32x32 packet predates a corrected
 comment only and is not adopted; no failed source producer is claimed.
 
-Latest C++ recovery: complete 68-byte `map_load()` MAIN E5C2..E606, with
+Previous C++ recovery: complete 68-byte `map_load()` MAIN E5C2..E606, with
 original ordered fixup `[41]`, no padding or DATA/BSS. The TH04 MAP format and
 flow remain canonical; TH05 uses direct DOS transfers and frees the old
 segment first. The initial 70-byte diagnostic reloaded the stored segment;
@@ -195,10 +209,15 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | EMS boss-face preload (154) | Full natural family is raw-equal. Original scoped fixups `[71,24,133,114]` differ from compiler `[133,114,71,24]`; a fresh `-y` diagnostic changes neither. | [EMS cache](../src/main/ems/ems.md) |
 | Staff updater (626) / renderer (861) | Current full-family output 623/858. Archived global `-Z-` MAP confirms630/879 without another build. Other declaration/API/expression trials fail; source restored. | [Staff family](../src/maine/staff/full.md) |
 | Staff controller (991 bytes) | All raw bytes match; standalone fixups form one descending run instead of the original two. Bitmap predecessor (126) still compiles to 211. | [Controller](../src/maine/staff/controller.md) |
-| Shinki wing (386) / ball updater (220) | Wing raw-equal with wrong order; ordinary scalar ball candidate 232. | [Wing/balls](../src/main/boss/shinki/wing_preparation.md) |
+| Shinki ball updater (220) | Ordinary scalar candidate232 remains inexact. The independent386-byte wing transition is accepted through the unedited compiler-assembly recipe. | [Wing/balls](../src/main/boss/shinki/wing_preparation.md) |
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 fail. New jump-optimization-off profile emits274 with different first branch, Y lowering and loop tail; baseline restored. | [B4](../src/main/boss/mai_yuki/b4ball_update.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+Preparing the particle renderer's actual AX/CX graphics arguments before
+clipping reduces171 to158 bytes. Only OR AX,AX versus native CMP AX,0 remains;
+the prior sixteen zero-spelling/option observations already cover that issue.
+The compact source is retained outside manifests, with no second producer,
+negative or new game model. See [renderer](../src/main/boss/shinki/particles_render.md).
 Two new scalar C++ candidates stay outside all live manifests. Near vector
 has a complete 55-byte procedure plus a separate unknown EVEN NOP; narrowing
 samples/results and reusing a real table offset reduces 106 to 92, still inexact.
