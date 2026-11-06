@@ -326,6 +326,14 @@ ordered fixups and their own mutations. One checked wrapper NOP receives zero
 credit. Do not infer multiple emitted contributions from source pragmas alone;
 inspect actual OMF/MAP before expanding a replay.
 
+A separate natural CDG-free-all loop with the correct far external cleanup
+and samecodeseg annotation emits15 bytes, versus original14. All loop
+instructions agree, but the external far-to-near relaxation retains one NOP;
+the original local-family call is four bytes. This is not an accepted owner
+and does not justify changing the actual far API. Frozen inputs remain in
+`.analysis/native-producers/main-cdg-free-all-a/`; experimental root files
+were removed.
+
 ## A real near-array view at a far API boundary
 
 `main-hud-put-context-a` already reproduced the full1198 extent, accepted861

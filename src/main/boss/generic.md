@@ -102,3 +102,10 @@ produce 408 and 46 bytes; a six-byte context hole sits outside all compiler
 functions and restores the original collision address for the accepted callers.
 The final paragraph context preserves original DS. No hole, inexact helper
 body, initialized DATA or whole executable contributes progress.
+
+A later independent collision-only diagnostic gives both deltas ordinary
+`register` declarations. This still emits46 bytes with DX/BX allocation,
+against the original43-byte AX/DX function. It grants no credit; maintained
+source and binder were restored exactly, with trial inputs retained at
+`.analysis/native-producers/main-boss-player-collision-register-a/`.
+The accepted six-function owner and maintained baseline remain unchanged.

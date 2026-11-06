@@ -4539,3 +4539,62 @@ unit = "main-dialog-exit"
 source = "src/main/dialog/exit.cpp"
 find = "BOMB_BG_REIMU_FN, 0"
 replace = "BOMB_BG_REIMU_FN, 1"
+
+[[units]]
+id = "main-bb-playchar"
+source = "src/main/formats/bb_playchar.cpp"
+module = "th05/bb_char.cpp"
+segment = "BB_PLAYCHAR_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x10432
+size = 41
+alignment_offsets = []
+functions = 2
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/bb_playchar_bindings.asm"
+
+[[controls]]
+unit = "main-bb-playchar"
+source = "src/main/formats/bb_playchar.cpp"
+find = "bb_playchar_fn[2] +="
+replace = "bb_playchar_fn[1] +="
+
+[[units]]
+id = "main-bb-playchar-filename"
+source = "src/main/formats/bb_playchar.cpp"
+module = "th05/bb_char.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+target_start = 0x222ac
+size = 7
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/bb_playchar_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+
+[[controls]]
+unit = "main-bb-playchar-filename"
+source = "src/main/formats/bb_playchar.cpp"
+find = '"BB0.BB"'
+replace = '"BB1.BB"'
+
+[[units]]
+id = "main-stage2-invalidate"
+source = "src/main/stage/stage2_invalidate.cpp"
+module = "th05/s2_inval.cpp"
+segment = "STAGE2_INVALIDATE_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x116cd
+size = 51
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/stage2_invalidate_bindings.asm"
+
+[[controls]]
+unit = "main-stage2-invalidate"
+source = "src/main/stage/stage2_invalidate.cpp"
+find = "tile_invalidate_box.x = 8;"
+replace = "tile_invalidate_box.x = 9;"
