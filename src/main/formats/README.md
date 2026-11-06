@@ -105,3 +105,8 @@ review `.analysis/map-free-frameless-root-review.json`, SHA-256
 `9448aeb6a594abf700f1bf4f4177ad2d6d573b1fa3dbd34dcc40f72c6b972d98`.
 Credit is one complete function /23 authored instruction bytes. No DATA,
 loader, vendor implementation or whole-program equality is claimed.
+
+The [BB text-mask lifecycle](bb_text.md) now accepts 99 C++ instruction bytes
+through unchanged compiler assembly output and original ascending fixups. The
+[general BB loader](bb_load.md) remains a natural 56-byte candidate versus 55;
+its genuine far-filename and segment-result interfaces stay intact.

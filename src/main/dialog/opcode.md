@@ -41,3 +41,11 @@ original relocation order, not adding a zero by hand.
 The earlier native/producer review is `.analysis/dialog-opcode-root-review.json`,
 SHA-256 `cbfac3b961c10cd82eba16ca5b9561722359c57a8c760628fd97333f94b54df8`.
 Its semantic model is historical corroboration, not a recurring acceptance task.
+
+A later normal `-a` spelling after the canonical types, prompted by the
+item-family result, still emits 455 with the same native descending fixups.
+The complete first-size gate fails; no second producer or negative runs.
+The source is restored byte-for-byte. Diagnostic:
+`.analysis/native-producers/main-dialog-opcode-word-alignment-b/`.
+Together with the stage initializer follow-up, this confirms that the item
+recovery's genuine source context cannot be replaced by this spelling alone.

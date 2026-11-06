@@ -4831,3 +4831,26 @@ unit = "main-item-family"
 source = "src/main/item/collect.cpp"
 find = "base_points = 12800;"
 replace = "base_points = 12801;"
+
+[[units]]
+id = "main-bb-text-lifecycle"
+source = "src/main/formats/bb_text.cpp"
+module = "th05/bb_text.cpp"
+segment = "BB_TEXT_LOAD_TEXT"
+wrapper_options = "-zCBB_TEXT_LOAD_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/bb_text_bindings.asm"
+target_start = 58550
+size = 99
+functions = 2
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+compiler_pipeline = "tcc-s-tasm32"
+group = "main_01"
+cs_base = 44560
+ds_base = 133584
+
+[[controls]]
+unit = "main-bb-text-lifecycle"
+source = "src/main/formats/bb_text.cpp"
+find = "bb_txt_fn[3] = '2';"
+replace = "bb_txt_fn[3] = '3';"

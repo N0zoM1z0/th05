@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-356 bounded C/C++ CODE/DATA units, 541 complete function occurrences:
-**105,568 authored bytes exact** = 89,945 CODE + 15,623 initialized DATA.
-CODE is 89,123 instruction + 822 compiler-table bytes. Complete compared
-extents total 105,657, including 89 uncredited padding bytes.
+357 bounded C/C++ CODE/DATA units, 543 complete function occurrences:
+**105,667 authored bytes exact** = 90,044 CODE + 15,623 initialized DATA.
+CODE is 89,222 instruction + 822 compiler-table bytes. Complete compared
+extents total 105,756, including 89 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 416 | 68,523 | 3,341 |
+| MAIN | 418 | 68,622 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,32 @@ extents total 105,657, including 89 uncredited padding bytes.
 Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**118,927 bytes**, including MAIN 39,489. The global authored denominator and
+**118,828 bytes**, including MAIN 39,390. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete six-function C++ item family at 1CC0E..1D0AD
+Latest recovery: natural C++ BB text-mask load/release at E4B6..E519 accepts
+99 instruction bytes and two complete functions. The direct producer was raw
+exact but ordered-inexact; unchanged TCC `-S` output consumed by TASM32 gives
+the original ascending `[6,90]`. Two fresh chains, complete OMF/MAP/raw/order
+and the shared second-filename 2-to-3 negative pass. No padding, DATA, BSS or
+ASM credit is added; the following E519 NOP remains foreign. Source preserves
+all unchecked DOS I/O, 3072-byte allocation, 2048+1024-byte reads and repeated
+filename mutation. See [source/ABI/receipt review](../src/main/formats/bb_text.md)
+and `.analysis/unit-replays/main-bb-text-lifecycle-compiler-assembly-b/receipt.json`.
+No recipe or accepted dependency changed, so no older unit is cold-replayed.
+
+Three bounded follow-ups remain inexact: normal `-a` spelling alone still gives
+stage initialization 802 and dialog opcode 455; both sources are restored to
+baseline. The new natural general BB loader emits 56 against native 55, retaining
+its genuine near Pascal far-filename/segment-result types and named-parameter
+LDS transport. It remains outside the live manifest with zero credit. See
+[general-loader notes](../src/main/formats/bb_load.md) and private
+`.analysis/bb-and-word-alignment-followups.json`. No second/negative is run for
+these failed shapes, no register/flag matrix or CPU behavior model is added.
+
+Previous recovery: the complete six-function C++ item family at 1CC0E..1D0AD
 now passes all 1,183 raw bytes and 18 original ordered fixups. New coverage is
 initializer 29 and collector 620; the collector includes 14 generated table bytes
 and one uncredited zero. Net credit is 648 authored bytes (634 instructions + 14

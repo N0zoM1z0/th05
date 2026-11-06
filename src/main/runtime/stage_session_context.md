@@ -58,3 +58,11 @@ Actual stage-binding/counter evidence:
 All 803 stage-init bytes and all 445 loop bytes remain unknown. Successful
 installed execution probes and unrelated accepted objects were reused;
 there is no global, packed-container or whole-program exactness claim.
+
+A later first producer restores the donor-style normal `-a` after canonical
+types, motivated by the successful item-family recovery. This standalone
+initializer still emits 802 bytes, with the native 23-site order but no zero.
+The source is restored to its prior baseline. Evidence:
+`.analysis/native-producers/main-stage-session-word-alignment-b/`.
+Normal alignment spelling alone does not establish the missing real context;
+no second producer, negative or authored credit is added.
