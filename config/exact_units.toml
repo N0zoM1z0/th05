@@ -4937,3 +4937,22 @@ unit = "main-score-continue-entry"
 source = "src/main/score/continue_enter.cpp"
 find = "if(turbo_mode) {"
 replace = "if(!turbo_mode) {"
+
+[[units]]
+id = "main-score-current-save"
+source = "src/main/score/current_save.cpp"
+module = "th05/sc_save.cpp"
+segment = "SCORE_IO_TEXT"
+wrapper_options = "-zCSCORE_IO_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/score_current_save_bindings.asm"
+target_start = 0xc8b9
+size = 55
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "main-score-current-save"
+source = "src/main/score/current_seek.inl"
+find = "_AX = 0x4200;"
+replace = "_AX = 0x4201;"

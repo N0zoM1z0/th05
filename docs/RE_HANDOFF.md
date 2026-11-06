@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-365 bounded C/C++ CODE/DATA units, 555 complete function occurrences:
-**108,585 authored bytes exact** = 92,962 CODE + 15,623 initialized DATA.
-CODE is 92,090 instruction + 872 compiler-table bytes. Complete compared
-extents total 108,680, including 95 uncredited padding bytes.
+366 bounded C/C++ CODE/DATA units, 556 complete function occurrences:
+**108,640 authored bytes exact** = 93,017 CODE + 15,623 initialized DATA.
+CODE is 92,145 instruction + 872 compiler-table bytes. Complete compared
+extents total 108,735, including 95 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 422 | 69,014 | 3,341 |
+| MAIN | 423 | 69,069 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 67 | 12,257 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,29 @@ extents total 108,680, including 95 uncredited padding bytes.
 Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**115,869 bytes**, including MAIN 38,962 and MAINE 37,164. The global authored denominator and
+**115,814 bytes**, including MAIN 38,907 and MAINE 37,164. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: five complete C++ insertion/rendering functions at
+Latest recovery: MAIN current-score save at C8B9..C8F0 adds one complete C++
+function / 55 instruction bytes. Two fresh direct producers match complete
+OMF/MAP/raw and empty relocations; the shared DOS seek-origin zero-to-one
+negative is rejected. Borland register bindings only express the actual INT 21h
+file API. Full section/resident types, byte seek arithmetic and unchecked open
+behavior are unchanged. See [source/ABI/receipt](../src/main/score/current.md)
+and `.analysis/unit-replays/main-score-current-save-a/receipt.json`.
+
+The complete two-function C++ current-score context emits 109 versus 110.
+The loader's ordinary early return and explicit if/else both merge the failure
+RET with the final RET, leaving 54 versus native 55. It remains unaccepted;
+no barrier, filler, profile sweep or ASM promotion is added. Canonical shared
+.inl bodies keep the independently accepted save source stable. All older
+accepted records/dependencies are unchanged; no old owner is replayed. MAINE's
+file lifecycle was confirmed already accepted and was not rebuilt. No producer
+tool or behavior model changes.
+
+Previous recovery: five complete C++ insertion/rendering functions at
 B730..BCD3 add 1440 authored CODE bytes (1408 instructions + 32 compiler-table
 bytes), with three compared zero-padding bytes. Two fresh producers match both
 real contexts, values 852 / display 591, with original ordered relocations.

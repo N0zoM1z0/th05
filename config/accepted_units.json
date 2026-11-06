@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "20345b78bff26f7fb51164d242ce76d43b390c35e9d5bd127f2c78ceacf0120e",
+  "replay_receipt_sha256": "91939289af4e319dff58f82691de58d59c6f2a33dbb6adc36a6a41398d0cfc14",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 51608,
-    "candidate_start": 51608,
-    "size": 11,
-    "target_sha256": "121fce93c2a09e040b2e94ceb5a0be85eb201cfe3489effead7a4d1144a676cc",
-    "candidate_sha256": "cdcb7453c1699714553d113e604746d5e19e5760eccb881e0d64c5cd32187748",
+    "target_start": 51385,
+    "candidate_start": 51385,
+    "size": 55,
+    "target_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+    "candidate_sha256": "443ce677bf59b7e1e6aea73cbd406cf9b2b3bc183e1695c3990c69eeb052fe4d",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -77687,6 +77687,285 @@
           "-ml",
           "-DBINARY='M'",
           "th05/sc_entry.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-score-current-save",
+      "entry_sha256": "2e391fe3ad30993de4da3696f0a08c3f3f33c91767e2ee702ff4ab6b958ebc98",
+      "result": {
+        "id": "main-score-current-save",
+        "entry_sha256": "2e391fe3ad30993de4da3696f0a08c3f3f33c91767e2ee702ff4ab6b958ebc98",
+        "rounds": [
+          {
+            "target_start": 51385,
+            "candidate_start": 51385,
+            "size": 55,
+            "target_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+            "candidate_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 51385,
+            "candidate_start": 51385,
+            "size": 55,
+            "target_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+            "candidate_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "b6f9d6dc75ef143f1716f0f7ba8cedfa0b5e8ec0d07520cb8975bef764380c43",
+            "dependency_timestamp_normalized_sha256": "adef332fbf8a7dd9878514c4bd3471bb639dce293dc873335da6b6497ec8ab3f",
+            "module_name": "th05/sc_save.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_save.cpp",
+              "src/main/score/current_save.cpp",
+              "src/main/score/current.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/main/score/current_seek.inl",
+              "src/main/score/current_save.inl"
+            ]
+          },
+          {
+            "sha256": "7f441f6a8e92701f3fc386e0680396c691b355640b70f8e80bcc93e264456f28",
+            "dependency_timestamp_normalized_sha256": "adef332fbf8a7dd9878514c4bd3471bb639dce293dc873335da6b6497ec8ab3f",
+            "module_name": "th05/sc_save.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_save.cpp",
+              "src/main/score/current_save.cpp",
+              "src/main/score/current.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/main/score/current_seek.inl",
+              "src/main/score/current_save.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_save.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_save.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/score_current_save_bindings.asm",
+            "sha256": "850d85749c9a47cfd3b74305cd22dd98f914fb4d53d71c33212b05b210b1b857"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/score/current.hpp",
+            "sha256": "3807c047fcc74f47abe4da161ae4100ce162bf2f027bc9fa235ba99ee304e462"
+          },
+          {
+            "path": "src/main/score/current_save.cpp",
+            "sha256": "f90042d54cca52dbe7b605da3d2692d4e3f559ee55fee86b7a2eb834b801c319"
+          },
+          {
+            "path": "src/main/score/current_save.inl",
+            "sha256": "0c2e01223fd4576bd8f77d2cb1686d9e70ee71845e8e8c99339488dd36fb0360"
+          },
+          {
+            "path": "src/main/score/current_seek.inl",
+            "sha256": "ba75137e3d5d3434ea561b2a861443dd0ea535e36e67edeefa3a886e2045662b"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/score_current_save_bindings.asm",
+          "sha256": "850d85749c9a47cfd3b74305cd22dd98f914fb4d53d71c33212b05b210b1b857"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/score/current.hpp",
+          "sha256": "3807c047fcc74f47abe4da161ae4100ce162bf2f027bc9fa235ba99ee304e462"
+        },
+        {
+          "path": "src/main/score/current_save.cpp",
+          "sha256": "f90042d54cca52dbe7b605da3d2692d4e3f559ee55fee86b7a2eb834b801c319"
+        },
+        {
+          "path": "src/main/score/current_save.inl",
+          "sha256": "0c2e01223fd4576bd8f77d2cb1686d9e70ee71845e8e8c99339488dd36fb0360"
+        },
+        {
+          "path": "src/main/score/current_seek.inl",
+          "sha256": "ba75137e3d5d3434ea561b2a861443dd0ea535e36e67edeefa3a886e2045662b"
+        },
+        {
+          "path": "src/op/hiscore/view.hpp",
+          "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+        },
+        {
+          "path": "src/op/main/menu.hpp",
+          "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+        },
+        {
+          "path": "src/op/main/strings.hpp",
+          "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "91939289af4e319dff58f82691de58d59c6f2a33dbb6adc36a6a41398d0cfc14",
+      "compiled_negative_control": {
+        "target_start": 51385,
+        "candidate_start": 51385,
+        "size": 55,
+        "target_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+        "candidate_sha256": "443ce677bf59b7e1e6aea73cbd406cf9b2b3bc183e1695c3990c69eeb052fe4d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-score-current-save",
+        "entry_sha256": "2e391fe3ad30993de4da3696f0a08c3f3f33c91767e2ee702ff4ab6b958ebc98",
+        "mutation": {
+          "unit": "main-score-current-save",
+          "source": "src/main/score/current_seek.inl",
+          "find": "_AX = 0x4200;",
+          "replace": "_AX = 0x4201;"
+        },
+        "control_sha256": "15f737e2155e0333a0246b0eec248fa7ea1f009a2382274fb8089ca5736fab00",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 51385,
+          "candidate_start": 51385,
+          "size": 55,
+          "target_sha256": "af53bdb1d135b043077b5bde65eb263720b81575472190d5c976d2792d19c663",
+          "candidate_sha256": "443ce677bf59b7e1e6aea73cbd406cf9b2b3bc183e1695c3990c69eeb052fe4d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "a287b174ec79ffedc09e0a98f64292053809a3082eea26a6dc34696b48126423",
+          "dependency_timestamp_normalized_sha256": "5b7bd0cd64b0f0a68beeca60e1e05a28779c039488e32d6eb228cfc2712c6deb",
+          "module_name": "th05/sc_save.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sc_save.cpp",
+            "src/main/score/current_save.cpp",
+            "src/main/score/current.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp",
+            "src/main/score/current_seek.inl",
+            "src/main/score/current_save.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sc_save.cpp"
         ]
       },
       "receipt_aggregate_pass": true
