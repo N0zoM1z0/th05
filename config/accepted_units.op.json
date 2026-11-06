@@ -2,30 +2,20 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "406366a994eca039020eaefb508d58a52917bfa75b0a3d4ad785343367104b3f",
+  "replay_receipt_sha256": "45f50dd52bc907b12f10399dabc59afe4b075f43621b4e7bb7ac1286b857dca7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 57585,
-    "candidate_start": 57585,
-    "size": 34,
-    "target_sha256": "3173ffdc8e36be9e702191215edfe470ce819b8ca4847882b444dd1a81a6eceb",
-    "candidate_sha256": "102f3884e407856a38274f26b73313d67605e6dbd7bc7d56b4d39adbc404dc10",
+    "target_start": 57694,
+    "candidate_start": 57694,
+    "size": 21,
+    "target_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+    "candidate_sha256": "30142053e5b9919f1d80ea2c9d215025ef85bedc6d098c329c7481affd1df651",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 57585,
-      "size": 34,
-      "function_symbol": "snd_delay_until_measure(int,unsigned int)",
-      "contribution_start": 57550,
-      "contribution_size": 69,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -34889,6 +34879,244 @@
       "receipt_selected_subset": [
         "op-sound-wait"
       ]
+    },
+    {
+      "id": "op-frame-delay",
+      "entry_sha256": "07fb958846e7c9a29dc1474c8d585e8667966e7648544cf99b8ac9dc9b8be92f",
+      "result": {
+        "id": "op-frame-delay",
+        "entry_sha256": "07fb958846e7c9a29dc1474c8d585e8667966e7648544cf99b8ac9dc9b8be92f",
+        "rounds": [
+          {
+            "target_start": 57694,
+            "candidate_start": 57694,
+            "size": 21,
+            "target_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+            "candidate_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 57694,
+            "candidate_start": 57694,
+            "size": 21,
+            "target_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+            "candidate_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "adfc279e8f4b4a023a685ff2e06651df006d41050f31320fc28f46f57204393c",
+            "dependency_timestamp_normalized_sha256": "9df22ccf0601890c5ee823312d9028676fdc9487408dfa38842155473b1ce19b",
+            "module_name": "th05/frame_d.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/frame_d.cpp",
+              "src/shared/hardware/frame_delay.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "4bca32b778c3ebd64bc1118a24c804ec84ca3aa55f454f72276da5f4dd0d6116",
+            "dependency_timestamp_normalized_sha256": "9df22ccf0601890c5ee823312d9028676fdc9487408dfa38842155473b1ce19b",
+            "module_name": "th05/frame_d.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/frame_d.cpp",
+              "src/shared/hardware/frame_delay.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/frame_d.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/frame_d.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_frame_delay_bindings.asm",
+            "sha256": "83bba14a6263cfc41733a6e8bdd722219b4d868b45d161950c3fa78325668689"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/hardware/frame_delay.cpp",
+            "sha256": "652ee8e7c6250bacb102ec845d071abd7fe0c1d6fa038ad13a3e49064178b717"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_frame_delay_bindings.asm",
+          "sha256": "83bba14a6263cfc41733a6e8bdd722219b4d868b45d161950c3fa78325668689"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/hardware/frame_delay.cpp",
+          "sha256": "652ee8e7c6250bacb102ec845d071abd7fe0c1d6fa038ad13a3e49064178b717"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "45f50dd52bc907b12f10399dabc59afe4b075f43621b4e7bb7ac1286b857dca7",
+      "compiled_negative_control": {
+        "target_start": 57694,
+        "candidate_start": 57694,
+        "size": 21,
+        "target_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+        "candidate_sha256": "30142053e5b9919f1d80ea2c9d215025ef85bedc6d098c329c7481affd1df651",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-frame-delay",
+        "entry_sha256": "07fb958846e7c9a29dc1474c8d585e8667966e7648544cf99b8ac9dc9b8be92f",
+        "mutation": {
+          "unit": "op-frame-delay",
+          "source": "src/shared/hardware/frame_delay.cpp",
+          "find": "vsync_Count1 = 0;",
+          "replace": "vsync_Count1 = 1;"
+        },
+        "control_sha256": "a2d5ff4f1495985dc717e3b668cc4a88f36daca50b580caf5910a92fb0d9f419",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 57694,
+          "candidate_start": 57694,
+          "size": 21,
+          "target_sha256": "98a7d9cacce8ffcd681c498f16fbb8173b19eb322dc382c86f9279c19b9acc5e",
+          "candidate_sha256": "30142053e5b9919f1d80ea2c9d215025ef85bedc6d098c329c7481affd1df651",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "de21221354cce34b68b72bea328690919efc0d02b3aaf6469408aff9ee2e1fd6",
+          "dependency_timestamp_normalized_sha256": "b9c12f44792c0f59750cde1d041278b2973b66ddbef6ba5b0e45aa9a3abba38e",
+          "module_name": "th05/frame_d.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/frame_d.cpp",
+            "src/shared/hardware/frame_delay.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/frame_d.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-op",

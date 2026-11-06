@@ -38,3 +38,10 @@ bytes:521 instructions plus8 compiler switch-table bytes; the one compared
 zero is excluded. The154-byte boss-face preload remains unaccepted because
 its own ordered fixup list differs, despite identical raw code. No fixup sorting,
 record splitting, masking, target bytes or handwritten padding is used.
+
+A later independent `-y` line-information diagnostic leaves all684 raw bytes
+equal but retains the same wrong ordered fixup stream. The boss scope's original
+order is `[71,24,133,114]`; the diagnostic still emits `[133,114,71,24]`.
+No maintained source, binder or accepted entry changed. Its sole first producer
+is retained at `.analysis/native-producers/main-ems-lines-a/`; it is not an
+acceptance receipt and grants no additional credit.

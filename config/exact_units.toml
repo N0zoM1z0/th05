@@ -4638,3 +4638,21 @@ unit = "main-dialog-resource-pointer"
 source = "src/main/dialog/resource_pointer.c"
 find = "dialog_resources.script_file"
 replace = "dialog_resources.boss_faceset"
+
+[[units]]
+id = "main-frame-delay"
+source = "src/shared/hardware/frame_delay.cpp"
+module = "th05/frame_d.cpp"
+segment = "SHARED"
+bindings_source = "probes/units/main_frame_delay_bindings.asm"
+target_start = 0x15102
+size = 21
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "main-frame-delay"
+source = "src/shared/hardware/frame_delay.cpp"
+find = "vsync_Count1 = 0;"
+replace = "vsync_Count1 = 1;"

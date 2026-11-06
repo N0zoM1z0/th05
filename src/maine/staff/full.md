@@ -74,3 +74,12 @@ emit 4230; the full class helper API, implicit conversions and statement-scoped
 `-Z-` still emit 4223. None recovers the two missing pointer loads. Source and
 shared headers were restored, so accepted source identities are unchanged.
 Those alternatives are archived as described in [storage](../../../docs/LOCAL_STORAGE.md).
+
+Further ordinary inline geometry trials also fail: a point comparison returns
+an `int` and materializes a Boolean, making the updater637 bytes; an object
+reference camera helper creates a parameter temporary and emits632. Passing
+the actual near pointer by reference returns to623. The complete contributions
+are4237,4232 and4223 respectively, and the renderer remains858. Frozen first
+producers are under `.analysis/native-producers/maine-staff-point-comparison-b`,
+`maine-staff-camera-helper-a` and `maine-staff-camera-helper-reference-a`.
+All source was restored byte for byte; no accepted dependency changed.

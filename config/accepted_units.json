@@ -2,32 +2,20 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a9a407bd625e965609ba51ea2414a89baa3ce5aaa0f9af8aef084793c068f190",
+  "replay_receipt_sha256": "3f993167b8c9bca9a5cffa8a31c5c30b5d2983bfe46d73534f6185dca402543d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141468,
-    "candidate_start": 141468,
-    "size": 4,
-    "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
-    "candidate_sha256": "9a58aaa3e1d2d440145c3b307d871f0e013e78e63560e834e169c4b1523d4145",
+    "target_start": 86274,
+    "candidate_start": 86274,
+    "size": 21,
+    "target_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+    "candidate_sha256": "36b41705815d9002c5fa7e89869397aa238e03e007e2efe4e603b1ef7c71085d",
     "raw_exact": false,
-    "target_fixups": [
-      2
-    ],
-    "candidate_fixups": [
-      2
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 141468,
-      "size": 4,
-      "module": "th05/dlg_ptr.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -73212,6 +73200,208 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlg_ptr.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-frame-delay",
+      "entry_sha256": "97cbcbde1f7ea7648b64b44c3591e549aaff518f460bb5e891613b2f542cf343",
+      "result": {
+        "id": "main-frame-delay",
+        "entry_sha256": "97cbcbde1f7ea7648b64b44c3591e549aaff518f460bb5e891613b2f542cf343",
+        "rounds": [
+          {
+            "target_start": 86274,
+            "candidate_start": 86274,
+            "size": 21,
+            "target_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+            "candidate_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 86274,
+            "candidate_start": 86274,
+            "size": 21,
+            "target_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+            "candidate_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "06e07dc9600a7a1af57d2678aa5cf67adab53ba98c999621ee03cfaed54d48ad",
+            "dependency_timestamp_normalized_sha256": "9df22ccf0601890c5ee823312d9028676fdc9487408dfa38842155473b1ce19b",
+            "module_name": "th05/frame_d.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/frame_d.cpp",
+              "src/shared/hardware/frame_delay.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "6fb8eb42dc643e60d64fcd54f5a3764fac2c5156b3fa6e01c9a796e9d29bd83c",
+            "dependency_timestamp_normalized_sha256": "9df22ccf0601890c5ee823312d9028676fdc9487408dfa38842155473b1ce19b",
+            "module_name": "th05/frame_d.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/frame_d.cpp",
+              "src/shared/hardware/frame_delay.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/frame_d.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/frame_d.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_frame_delay_bindings.asm",
+            "sha256": "d2f31c825d1fc83e98e55e208c085d78df26480e241eed259bbdfc4f0a6ec699"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/hardware/frame_delay.cpp",
+            "sha256": "652ee8e7c6250bacb102ec845d071abd7fe0c1d6fa038ad13a3e49064178b717"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_frame_delay_bindings.asm",
+          "sha256": "d2f31c825d1fc83e98e55e208c085d78df26480e241eed259bbdfc4f0a6ec699"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/hardware/frame_delay.cpp",
+          "sha256": "652ee8e7c6250bacb102ec845d071abd7fe0c1d6fa038ad13a3e49064178b717"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "3f993167b8c9bca9a5cffa8a31c5c30b5d2983bfe46d73534f6185dca402543d",
+      "compiled_negative_control": {
+        "target_start": 86274,
+        "candidate_start": 86274,
+        "size": 21,
+        "target_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+        "candidate_sha256": "36b41705815d9002c5fa7e89869397aa238e03e007e2efe4e603b1ef7c71085d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-frame-delay",
+        "entry_sha256": "97cbcbde1f7ea7648b64b44c3591e549aaff518f460bb5e891613b2f542cf343",
+        "mutation": {
+          "unit": "main-frame-delay",
+          "source": "src/shared/hardware/frame_delay.cpp",
+          "find": "vsync_Count1 = 0;",
+          "replace": "vsync_Count1 = 1;"
+        },
+        "control_sha256": "c54f3363d0d258b81a3e44d70124d6f9cf391ac28f55732a09528da4358ee304",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 86274,
+          "candidate_start": 86274,
+          "size": 21,
+          "target_sha256": "19e125307ad85fc82f9d64cd312c67a240adf6a6dbeb7de5df6c6707589c18f6",
+          "candidate_sha256": "36b41705815d9002c5fa7e89869397aa238e03e007e2efe4e603b1ef7c71085d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "cd0acad222286424a4cf7ac4ce95ff5bea0b55b8de1b6edd4d0e4e2f580d3408",
+          "dependency_timestamp_normalized_sha256": "b9c12f44792c0f59750cde1d041278b2973b66ddbef6ba5b0e45aa9a3abba38e",
+          "module_name": "th05/frame_d.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/frame_d.cpp",
+            "src/shared/hardware/frame_delay.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/frame_d.cpp"
         ]
       },
       "receipt_aggregate_pass": true
