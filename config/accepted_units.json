@@ -2,18 +2,22 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "b5c7cc3790595636914cd2ac84b054ecfc4e4877c504764ffb4cd9298b1bf550",
+  "replay_receipt_sha256": "022497f138a594b02c8e3d2349be0be32b1b44da5289c8048d7c10c5359ab307",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 57710,
-    "candidate_start": 57710,
-    "size": 11,
-    "target_sha256": "cca7bf250e3e69a296fccc57ed800a415c77a7878161ff2ad8dd0bc75df84bbc",
-    "candidate_sha256": "0765f5082672f9c44482c400b5c2b119cfe3b44e5460a24b509b1d276c0eba33",
+    "target_start": 58818,
+    "candidate_start": 58818,
+    "size": 68,
+    "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+    "candidate_sha256": "1b8e1e2f3f4938c0a5aef966a6e866e08095d1a3b7ad28d2e5dab8f96c1c9060",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      41
+    ],
+    "candidate_fixups": [
+      41
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -74363,6 +74367,246 @@
           "-ml",
           "-DBINARY='M'",
           "th05/pn_init.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-map-load",
+      "entry_sha256": "2fe396ffdc6b5269bb510c8f305e8a534a644ac4bfb689530bbc16f6ded02f68",
+      "result": {
+        "id": "main-map-load",
+        "entry_sha256": "2fe396ffdc6b5269bb510c8f305e8a534a644ac4bfb689530bbc16f6ded02f68",
+        "rounds": [
+          {
+            "target_start": 58818,
+            "candidate_start": 58818,
+            "size": 68,
+            "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+            "candidate_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+            "raw_exact": true,
+            "target_fixups": [
+              41
+            ],
+            "candidate_fixups": [
+              41
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 58818,
+            "candidate_start": 58818,
+            "size": 68,
+            "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+            "candidate_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+            "raw_exact": true,
+            "target_fixups": [
+              41
+            ],
+            "candidate_fixups": [
+              41
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d05f7b1d7234013ef842f797f029134373d44171ce6b4dcbe5118f39cf3322de",
+            "dependency_timestamp_normalized_sha256": "d344eb8579888fd7eb557794fa5ea76e8d9bd9d593c5d5ec480e0cb3f7ac947f",
+            "module_name": "th05/map_load.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/map_load.cpp",
+              "src/main/formats/map_load.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/map_load.hpp",
+              "src/main/formats/map_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "6a26b6b6627fbaa7e2f854f17f749d588ba76a2155d4f99b5360b3f84eb0d131",
+            "dependency_timestamp_normalized_sha256": "d344eb8579888fd7eb557794fa5ea76e8d9bd9d593c5d5ec480e0cb3f7ac947f",
+            "module_name": "th05/map_load.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/map_load.cpp",
+              "src/main/formats/map_load.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/map_load.hpp",
+              "src/main/formats/map_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/map_load.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/map_load.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/map_load_bindings.asm",
+            "sha256": "8906a835ed0c2a219ec82f6c0581211077fa7bbbd70b155db58d7c7b2d68c9aa"
+          },
+          {
+            "path": "src/main/formats/map_free.hpp",
+            "sha256": "5c25b3eb5064d8ef32af0b2e99445e2b0572aeffad07b94fae4a1e793fe8e032"
+          },
+          {
+            "path": "src/main/formats/map_load.cpp",
+            "sha256": "c5b57a90a0b7fdb9287e9b5f0764c77974532e9890e5b7890fc7a1df448c766d"
+          },
+          {
+            "path": "src/main/formats/map_load.hpp",
+            "sha256": "7fbf6978a8ac2a036d339f69184c77eb0b05379af08de46dc7740647999a3144"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/map_load_bindings.asm",
+          "sha256": "8906a835ed0c2a219ec82f6c0581211077fa7bbbd70b155db58d7c7b2d68c9aa"
+        },
+        {
+          "path": "src/main/formats/map_free.hpp",
+          "sha256": "5c25b3eb5064d8ef32af0b2e99445e2b0572aeffad07b94fae4a1e793fe8e032"
+        },
+        {
+          "path": "src/main/formats/map_load.cpp",
+          "sha256": "c5b57a90a0b7fdb9287e9b5f0764c77974532e9890e5b7890fc7a1df448c766d"
+        },
+        {
+          "path": "src/main/formats/map_load.hpp",
+          "sha256": "7fbf6978a8ac2a036d339f69184c77eb0b05379af08de46dc7740647999a3144"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "022497f138a594b02c8e3d2349be0be32b1b44da5289c8048d7c10c5359ab307",
+      "compiled_negative_control": {
+        "target_start": 58818,
+        "candidate_start": 58818,
+        "size": 68,
+        "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+        "candidate_sha256": "1b8e1e2f3f4938c0a5aef966a6e866e08095d1a3b7ad28d2e5dab8f96c1c9060",
+        "raw_exact": false,
+        "target_fixups": [
+          41
+        ],
+        "candidate_fixups": [
+          41
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-map-load",
+        "entry_sha256": "2fe396ffdc6b5269bb510c8f305e8a534a644ac4bfb689530bbc16f6ded02f68",
+        "mutation": {
+          "unit": "main-map-load",
+          "source": "src/main/formats/map_load.cpp",
+          "find": "map_fn[3] = ('0' + stage_id);",
+          "replace": "map_fn[3] = ('1' + stage_id);"
+        },
+        "control_sha256": "3016e84d530e4377202c59c9521db05cbe9b31f2689aab600b4fd8daf7ea69c3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 58818,
+          "candidate_start": 58818,
+          "size": 68,
+          "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
+          "candidate_sha256": "1b8e1e2f3f4938c0a5aef966a6e866e08095d1a3b7ad28d2e5dab8f96c1c9060",
+          "raw_exact": false,
+          "target_fixups": [
+            41
+          ],
+          "candidate_fixups": [
+            41
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "e83c56cc014d96f71e590aeb7c8d5762c67b45133ff37183add54bd81c874793",
+          "dependency_timestamp_normalized_sha256": "900dafccd209e5aecd74cf9b61e9ff6160fba107f9ee2b332d31649582177afd",
+          "module_name": "th05/map_load.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/map_load.cpp",
+            "src/main/formats/map_load.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/formats/map_load.hpp",
+            "src/main/formats/map_free.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/map_load.cpp"
         ]
       },
       "receipt_aggregate_pass": true

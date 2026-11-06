@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-349 bounded C/C++ CODE/DATA units, 533 complete function occurrences:
-**104,276 authored bytes exact** = 88,741 CODE + 15,535 initialized DATA.
-CODE is 87,933 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,364, including 88 uncredited padding bytes.
+350 bounded C/C++ CODE/DATA units, 534 complete function occurrences:
+**104,344 authored bytes exact** = 88,809 CODE + 15,535 initialized DATA.
+CODE is 88,001 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,432, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 410 | 67,419 | 3,253 |
+| MAIN | 411 | 67,487 | 3,253 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,23 @@ extents total 104,364, including 88 uncredited padding bytes.
 Separate reviewed ASM: 7,198 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,570 compared bytes include 74 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,561 bytes**, including MAIN 42,023. The global authored denominator and
+**121,493 bytes**, including MAIN 41,955. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete 182-byte Cheeto mask kernel MAIN DE72..DF28,
+Latest C++ recovery: complete 68-byte `map_load()` MAIN E5C2..E606, with
+original ordered fixup `[41]`, no padding or DATA/BSS. The TH04 MAP format and
+flow remain canonical; TH05 uses direct DOS transfers and frees the old
+segment first. The initial 70-byte diagnostic reloaded the stored segment;
+consuming the allocator's still-live actual AX return restores the original
+68 bytes without changing its complete segment-pointer ABI. Two deterministic
+builds, valid OMF/native CS/DS placement, all bytes/fixups and the compiled
+filename mutation pass. The accepted adjacent release is unchanged. See
+[source/ABI review](../src/main/formats/map_load.md) and
+`.analysis/unit-replays/main-map-load-exact/receipt.json`.
+
+The previous complete 182-byte Cheeto mask kernel MAIN DE72..DF28 is
 separately adopted as 178 reviewed ASM instruction bytes plus four compared,
 uncredited EVEN NOPs. Two fresh producers reproduce all raw bytes, valid OMF,
 native frames/publics and original empty ordered fixups; the 31-row mutation
@@ -159,7 +170,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans remain empty after the focused Cheeto ASM
+The MAIN/OP/MAINE incremental plans remain empty after the focused MAP-load
 replay. No whole accepted-set replay was run. Update/Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -167,7 +178,7 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-twenty-one C/C++ records/twenty receipts and one Cheeto ASM receipt; all
+twenty-two C/C++ records/twenty-one receipts and one Cheeto ASM receipt; all
 accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

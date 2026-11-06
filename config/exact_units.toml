@@ -4732,3 +4732,22 @@ unit = "main-pointnums-init"
 source = "src/main/pointnum/init.inl"
 find = "pointnum_white_p = 0;"
 replace = "pointnum_white_p = 1;"
+
+[[units]]
+id = "main-map-load"
+source = "src/main/formats/map_load.cpp"
+module = "th05/map_load.cpp"
+segment = "MAP_LOAD_TEXT"
+wrapper_options = "-zCMAP_LOAD_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/map_load_bindings.asm"
+target_start = 58818
+size = 68
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-map-load"
+source = "src/main/formats/map_load.cpp"
+find = "map_fn[3] = ('0' + stage_id);"
+replace = "map_fn[3] = ('1' + stage_id);"
