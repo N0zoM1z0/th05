@@ -7,27 +7,47 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-356 bounded C/C++ CODE/DATA units, 537 complete function occurrences:
-**104,820 authored bytes exact** = 89,197 CODE + 15,623 initialized DATA.
-CODE is 88,389 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,908, including 88 uncredited padding bytes.
+358 bounded C/C++ CODE/DATA units, 539 complete function occurrences:
+**104,920 authored bytes exact** = 89,297 CODE + 15,623 initialized DATA.
+CODE is 88,489 instruction + 808 compiler-table bytes. Complete compared
+extents total 105,008, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
 | MAIN | 414 | 67,875 | 3,341 |
-| OP | 64 | 11,319 | 8,667 |
-| MAINE | 58 | 9,681 | 3,615 |
+| OP | 65 | 11,369 | 8,667 |
+| MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 8,412 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,799 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**119,788 bytes**, including MAIN 40,250. The global authored denominator and
+**119,688 bytes**, including MAIN 40,250. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: natural near-callback schedules for Shinki and Sara add
+Latest recovery: the natural TH04 background-release body now accepts both
+complete 50-byte OP/MAINE occurrences, adding 100 C++ instruction bytes and
+two functions. Direct TCC's descending fixups were the only prior blocker;
+TCC `-S` output consumed unchanged by TASM32 gives the original ascending
+`[14,23,32,41]` in both. Each fresh focused replay passes two deterministic
+producers, full OMF/MAP/raw/fixups and its own E-to-G argument negative. The
+four segment handles and allocators remain external. See
+[full source/ABI/receipt review](../src/shared/hardware/bgimage_free.md).
+
+The explicit compiler-assembly recipe now validates MAIN/M, OP/O and MAINE/E
+contexts. OP/MAINE keep the ordinary pinned decoded proof, frozen payload and
+original relocation stream; no decoding or packed-file equality is claimed.
+Five saved-artifact substitution cases are rejected without compilation.
+Only the accepted Shinki wing owner depended on this changed recipe, so its
+two fresh positives/shared negative were rerun and pass without new coverage:
+`.analysis/unit-replays/main-shinki-wing-artifact-context-c/receipt.json`.
+The two new functions plus that affected owner are the entire build scope;
+all other accepted objects and tool probes are reused after identity checks.
+Focused compiler/decoded/incremental tooling tests pass; no full replay runs.
+
+Previous recovery: natural near-callback schedules for Shinki and Sara add
 24 initialized C++ DATA bytes: MAIN 22420..22428 (8) and 2293E..2294E (16).
 Each complete contribution passes two fresh producers, full raw bytes and
 original empty fixups, plus its own compiled attack-order swap negative.

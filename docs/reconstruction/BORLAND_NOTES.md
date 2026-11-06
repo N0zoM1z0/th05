@@ -79,6 +79,13 @@ No generated instruction or fixup is patched or sorted. Two fresh chains and
 the shared compiled source negative qualify C++ credit; invoking an assembler
 does not turn the maintained C++ algorithm into authored ASM.
 
+The same unmodified compiler-output recipe also accepts the two 50-byte
+OP/MAINE background release functions. Their original four far-call fixups
+are ascending `[14,23,32,41]`; direct TCC objects are descending. These shared
+segments are genuinely ungrouped, and their M/O/E compilation contexts and
+decoded target proofs remain separate. No source algorithm or generated
+instruction changed. Nonmonotonic order failures still need their own evidence.
+
 ## Layout and oracle scope
 
 Symbol-only linker context can anchor real external symbols and function

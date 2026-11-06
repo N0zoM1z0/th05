@@ -214,7 +214,9 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_nam
         if target_view is not None and item.get("target_view") != target_view:
             raise ValueError("accepted decoded unit belongs to a different comparison context")
         if artifact_name != "main" or "binary" in entry:
-            if item["result"].get("compiler_arguments") != [compiler_arguments(entry, context.binary)] * 2:
+            from lib.compiler_assembly import arguments as assembly_arguments
+            expected = assembly_arguments(entry) if assembly_pipeline(entry) else compiler_arguments(entry, context.binary)
+            if item["result"].get("compiler_arguments") != [expected] * 2:
                 raise ValueError("accepted producer binary arguments changed")
         if artifact_name == "zun" and any(row.get("candidate_address_bias") != 0x100
                                           for row in item["result"]["rounds"]):

@@ -20,6 +20,7 @@ from .replay_toolchain import (bindings_source, digest, entry_digest, include_cl
     relative_path, scoped_snapshot as direct_snapshot, snapshot_paths, staged_paths,
     freeze_toolchain, static_toolchain, validate_full_toolchain, validate_snapshot)
 from .tiny_com import UnitContext, compiler_arguments as direct_arguments, load_unit_target
+from .unit_context import freeze_target_view
 from .unit_oracle import compare_mapped_unit, map_unit_scope
 from .unit_sources import source_encoding, stage_inputs, validate_producer_inputs
 from .unit_extents import unit_extent_kind
@@ -56,8 +57,8 @@ def validate_entry(entry: dict) -> None:
             or not entry["source"].endswith((".c", ".cpp"))
             or source_encoding(entry) != "raw" or entry.get("generated_sources")
             or unit_extent_kind(entry) != "code" or "function_symbol" in entry
-            or binding_layout.after_compiler(entry) or entry.get("binary", "M") != "M"):
-        raise ValueError("compiler assembly requires one raw MAIN whole C/C++ CODE contribution")
+            or binding_layout.after_compiler(entry) or entry.get("binary", "M") not in ("M", "O", "E")):
+        raise ValueError("compiler assembly requires one raw MZ whole C/C++ CODE contribution")
     if any(type(entry.get(key)) is not int for key in ("cs_base", "ds_base")) or not entry.get("group"):
         raise ValueError("compiler assembly requires reviewed native CS/DS/group context")
     if Path(entry["module"]).stem.casefold() in {"bindings", "unit"}:
@@ -66,10 +67,19 @@ def validate_entry(entry: dict) -> None:
 
 def arguments(entry: dict) -> list[str]:
     validate_entry(entry)
-    argv = direct_arguments(entry, "M")
+    argv = direct_arguments(entry, entry.get("binary", "M"))
     if argv[0] != "-c":
         raise ValueError("unexpected direct compiler recipe")
     return ["-S", *argv[1:]]
+
+
+def artifact_context(root: Path, entry: dict, artifact_name: str) -> UnitContext:
+    if artifact_name not in ("main", "op", "maine"):
+        raise ValueError("compiler assembly supports MZ artifact contexts only")
+    context = UnitContext(root, artifact_name)
+    if entry.get("binary", "M") != context.binary:
+        raise ValueError("compiler assembly binary differs from its artifact context")
+    return context
 
 
 def compiler_dependencies(raw: bytes, entry: dict) -> list[str]:
@@ -277,19 +287,22 @@ def cold_round(root: Path, work: Path, inputs: Path, entry: dict, paths: set[str
     return stage
 
 
-def replay(root: Path, entry: dict, manifest_bytes: bytes, work: Path) -> dict:
+def replay(root: Path, entry: dict, manifest_bytes: bytes, work: Path,
+           *, artifact_name: str = "main") -> dict:
     validate_entry(entry)
     if work.exists():
         raise ValueError("compiler assembly requires a new output directory")
     work.resolve().relative_to((root / ".analysis").resolve())
-    context = UnitContext(root)
+    context = artifact_context(root, entry, artifact_name)
     config = tomllib.loads(manifest_bytes.decode())
     controls = [row for row in config.get("controls", []) if row["unit"] == entry["id"]]
     if len(controls) != 1:
         raise ValueError("compiler assembly needs one normal compiled source control")
     mutation = controls[0]
-    artifact, target, _ = load_unit_target(context, config)
+    artifact, target, target_view = load_unit_target(context, config)
     work.mkdir(parents=True)
+    if target_view is not None:
+        freeze_target_view(context, work / "target-view")
     (work / "exact-units.toml").write_bytes(manifest_bytes)
     initial = staged_paths(root, entry) | set(PRODUCER_FILES)
     inputs = work / "inputs"
@@ -326,6 +339,8 @@ def replay(root: Path, entry: dict, manifest_bytes: bytes, work: Path) -> dict:
                    "source_inputs": snapshots, "result": result, "negative": negative, "mutation": mutation,
                    "complete_executable_exact": False,
                    "pass": result["exact"] and not negative["comparison"]["raw_exact"]}
+        if target_view is not None:
+            receipt.update(artifact=context.artifact, target_view=target_view)
         (work / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
         validate_snapshot(root, snapshots)
     return receipt
@@ -334,8 +349,6 @@ def replay(root: Path, entry: dict, manifest_bytes: bytes, work: Path) -> dict:
 def validate_receipt(receipt_path: Path, *, root: Path, units: list[str] | None = None,
                      artifact_name: str = "main", validate_only: bool = False) -> dict:
     import progress
-    if artifact_name != "main":
-        raise ValueError("compiler assembly currently supports MAIN C/C++ only")
     work = receipt_path.resolve().parent
     receipt = json.loads(receipt_path.read_text())
     if (receipt.get("kind") != KIND or receipt.get("schema_version") != 1
@@ -345,7 +358,7 @@ def validate_receipt(receipt_path: Path, *, root: Path, units: list[str] | None 
     validate_entry(entry)
     if units is not None and units != [entry["id"]]:
         raise ValueError("compiler assembly receipt has exactly one whole unit")
-    context = UnitContext(root)
+    context = artifact_context(root, entry, artifact_name)
     config = context.config()
     live = next(row for row in config["units"] if row["id"] == entry["id"])
     frozen = tomllib.loads((work / "exact-units.toml").read_text())
@@ -353,6 +366,7 @@ def validate_receipt(receipt_path: Path, *, root: Path, units: list[str] | None 
     if (entry_digest(live) != entry_digest(entry) or entry_digest(historical) != entry_digest(entry)
             or digest(work / "exact-units.toml") != receipt["manifest_sha256"]
             or frozen["artifact"] != context.artifact
+            or frozen.get("target_view") != config.get("target_view")
             or receipt["mutation"] not in config.get("controls", [])
             or receipt["mutation"] not in frozen.get("controls", [])):
         raise ValueError("compiler assembly source/configuration identity changed")
@@ -366,9 +380,15 @@ def validate_receipt(receipt_path: Path, *, root: Path, units: list[str] | None 
             or proof["original_full_receipt_sha256"] != receipt["toolchain_receipt_sha256"]
             or proof["manifest_sha256"] != tool_sha or proof["reused"] != receipt["toolchain_reused"]):
         raise ValueError("compiler assembly pinned execution/tool proof changed")
-    artifact, target, _ = load_unit_target(context, config)
+    artifact, target, target_view = load_unit_target(context, config)
     if receipt["target_sha256"] != artifact["sha256"]:
         raise ValueError("compiler assembly target changed")
+    if target_view is not None:
+        if (receipt.get("artifact") != context.artifact or receipt.get("target_view") != target_view
+                or load_unit_target(context, frozen, cache=work / "target-view")[2] != target_view):
+            raise ValueError("compiler assembly decoded comparison proof changed")
+    elif receipt.get("target_view") is not None:
+        raise ValueError("compiler assembly MAIN cannot claim a decoded comparison view")
     result = receipt["result"]
     if (result.get("entry_sha256") != entry_digest(entry)
             or receipt["mutation"]["unit"] != entry["id"]):
@@ -418,5 +438,7 @@ def validate_receipt(receipt_path: Path, *, root: Path, units: list[str] | None 
                 "toolchain_receipt_sha256": receipt["toolchain_receipt_sha256"],
                 "replay_receipt_sha256": digest(receipt_path), "compiled_negative_control": control,
                 "negative_control": negative, "receipt_aggregate_pass": True}
+    if target_view is not None:
+        imported["target_view"] = target_view
     return {"imported": [imported], "target_sha": artifact["sha256"], "tool_sha": tool_sha,
-            "replay_sha": digest(receipt_path), "control": control, "target_view": None}
+            "replay_sha": digest(receipt_path), "control": control, "target_view": target_view}

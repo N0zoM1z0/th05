@@ -47,8 +47,10 @@ The normal replay's shared compiled control is sufficient. The retired
 supplemental-negative tool remains in Git history at `3af324e`; its historical
 reports add no acceptance requirement or authored credit.
 
-The opt-in compiler-assembly recipe currently handles one raw MAIN whole CODE
-contribution at a time, with explicit native CS/DS/group pins. The maintained
+The opt-in compiler-assembly recipe handles one raw MZ whole CODE contribution
+at a time, with explicit native CS/DS/group pins. MAIN, OP and MAINE use their
+actual M/O/E compiler binary context; decoded entries require an explicit
+`binary` value. `(none)` records an originally ungrouped CODE segment. The maintained
 source is C/C++; TCC emits `-S` output and the pinned TASM32 consumes it without
 an edit. A deterministic wrapper declares only absent foreign CODE segments
 named by compiler GROUPs and checked against the actual symbol-only binder.
@@ -64,3 +66,9 @@ source/recipe snapshot selects only this owner when its real inputs change;
 direct-object units retain their existing replay and evidence. These bytes
 remain C/C++ authored CODE, with no inferred original-ASM ownership or literal
 historical-producer claim. See [Shinki acceptance](../../src/main/boss/shinki/wing_preparation.md).
+
+OP/MAINE receipts retain the same pinned decoded load-module proof as ordinary
+unit replays, including a frozen payload and original ordered relocation file.
+Import revalidates both the live attested view and that saved copy against the
+manifest pins. This adds no decoding, packed-file equality or new denominator
+claim. See [background release](../../src/shared/hardware/bgimage_free.md).

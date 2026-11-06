@@ -1101,3 +1101,27 @@ unit = "maine-sound-load-resources"
 source = "src/shared/sound/load_resources.c"
 find = '"efc", "m", "m2\0mmd", 0, 0, 0'
 replace = '"efs", "m", "m2\0mmd", 0, 0, 0'
+
+[[units]]
+id = "maine-bgimage-free"
+source = "src/shared/hardware/bgimage_free.cpp"
+module = "th05/bgfree.cpp"
+segment = "SHARED"
+wrapper_options = "-zCSHARED -k-"
+bindings_source = "probes/units/maine_bgimage_free_bindings.asm"
+target_start = 60426
+size = 50
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+binary = "E"
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 59392
+ds_base = 65808
+
+[[controls]]
+unit = "maine-bgimage-free"
+source = "src/shared/hardware/bgimage_free.cpp"
+find = "hmem_free(bgimage.E);"
+replace = "hmem_free(bgimage.G);"

@@ -50,6 +50,18 @@ unchanged compiler output after input identity checks. Both are diagnostic,
 not substitutes for the final two fresh producers. Old direct-object and
 `-v`/four-DATA-byte failures remain historical and unaccepted.
 
+## Affected replay after adding decoded artifact contexts
+
+The recipe now supports explicit OP/MAINE binary and decoded-target proofs.
+Its source identity therefore changed for this accepted wing owner. Only this
+accepted owner was replayed: two fresh unchanged C++ chains still match all386
+bytes and `[76,305]`, with the same shake-duration negative rejected.
+The replacement adopted receipt is
+`.analysis/unit-replays/main-shinki-wing-artifact-context-c/receipt.json`,
+SHA-256 `cf074f3e7ad481533070945dc10777f56576091105fd4fc5f6d32000d1ae7655`.
+The earlier b receipt remains historical evidence. Coverage stays386 bytes;
+this receipt replacement adds no function or authored byte.
+
 ## Ball updater remains unaccepted
 
 The original ball update1AACF..1ABAB is220 instruction bytes, no NOPs, table

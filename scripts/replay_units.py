@@ -209,11 +209,11 @@ def main() -> int:
         print(json.dumps({"selected": reasons, "work_required": bool(units), "tools_executed": False}, indent=2))
         return 0
     if any(assembly_pipeline(unit) for unit in units):
-        if len(units) != 1 or context.name != "main":
-            raise ValueError("select one MAIN compiler-assembly unit for its focused replay")
+        if len(units) != 1:
+            raise ValueError("select one compiler-assembly unit for its focused replay")
         from lib.compiler_assembly import replay
         work = (args.output or ROOT / ".analysis/unit-replays" / uuid.uuid4().hex).resolve()
-        receipt = replay(ROOT, units[0], manifest_bytes, work)
+        receipt = replay(ROOT, units[0], manifest_bytes, work, artifact_name=context.name)
         print(json.dumps({"pass": receipt["pass"], "selected": reasons,
                           "compiler_pipeline": units[0]["compiler_pipeline"],
                           "receipt": str(work / "receipt.json")}, indent=2))

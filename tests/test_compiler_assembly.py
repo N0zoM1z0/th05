@@ -108,6 +108,23 @@ class CompilerAssemblyTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "independent"):
                 recipe.producer_directories(root)
 
+    def test_decoded_artifacts_require_their_actual_compiler_binary(self):
+        for name, binary in (("main", "M"), ("op", "O"), ("maine", "E")):
+            entry = {**self.entry, "binary": binary}
+            self.assertEqual(recipe.artifact_context(ROOT, entry, name).binary, binary)
+            self.assertIn(f"-DBINARY='{binary}'", recipe.arguments(entry))
+            other = "op" if name == "main" else "main"
+            with self.assertRaisesRegex(ValueError, "binary differs"):
+                recipe.artifact_context(ROOT, entry, other)
+        with self.assertRaisesRegex(ValueError, "MZ"):
+            recipe.artifact_context(ROOT, self.entry, "zun")
+
+    def test_ungrouped_foreign_far_code_needs_no_context_instructions(self):
+        raw = b".386p\nSHARED segment byte public use16 'CODE'\nSHARED ends\nend\n"
+        self.assertEqual(recipe.assembly_wrapper(raw, b"", "bgfree.asm"),
+                         b".386p\ninclude bgfree.asm\n")
+        recipe.validate_entry({**self.entry, "group": "(none)", "segment": "SHARED"})
+
 
 if __name__ == "__main__":
     unittest.main()
