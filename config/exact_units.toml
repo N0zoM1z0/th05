@@ -4956,3 +4956,22 @@ unit = "main-score-current-save"
 source = "src/main/score/current_seek.inl"
 find = "_AX = 0x4200;"
 replace = "_AX = 0x4201;"
+
+[[units]]
+id = "main-score-current-load"
+source = "src/main/score/current_load.cpp"
+module = "th05/sc_load.cpp"
+segment = "SCORE_IO_TEXT"
+wrapper_options = "-zCSCORE_IO_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/score_current_load_bindings.asm"
+target_start = 0xc882
+size = 55
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "main-score-current-load"
+source = "src/main/score/current_load.inl"
+find = "_CX = sizeof(hi);"
+replace = "_CX = sizeof(hi) - 1;"

@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-366 bounded C/C++ CODE/DATA units, 556 complete function occurrences:
-**108,640 authored bytes exact** = 93,017 CODE + 15,623 initialized DATA.
-CODE is 92,145 instruction + 872 compiler-table bytes. Complete compared
-extents total 108,735, including 95 uncredited padding bytes.
+367 bounded C/C++ CODE/DATA units, 557 complete function occurrences:
+**108,695 authored bytes exact** = 93,072 CODE + 15,623 initialized DATA.
+CODE is 92,200 instruction + 872 compiler-table bytes. Complete compared
+extents total 108,790, including 95 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 423 | 69,069 | 3,341 |
+| MAIN | 424 | 69,124 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 67 | 12,257 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,27 @@ extents total 108,735, including 95 uncredited padding bytes.
 Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**115,814 bytes**, including MAIN 38,907 and MAINE 37,164. The global authored denominator and
+**115,759 bytes**, including MAIN 38,852 and MAINE 37,164. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: MAIN current-score save at C8B9..C8F0 adds one complete C++
+Latest recovery: MAIN current-score load at C882..C8B9 adds one complete C++
+function / 55 instruction bytes. The source -O- pragma disables the diagnosed
+jump folding, naturally retaining native JNC/early RET and the final RET. The
+DOS algorithm, hardware bindings and full score types are unchanged; historical
+original compiler flags remain unproved. Two fresh direct producers match the
+complete OMF/MAP/raw extent and empty fixups. A 96-to-95-byte read-count negative
+is rejected. See [source/ABI/receipt](../src/main/score/current.md) and
+`.analysis/unit-replays/main-score-current-load-a/receipt.json`.
+
+The earlier save's source/header/seek inputs and all older accepted records
+remain unchanged; only the new load unit is replayed. No barrier, filler,
+register algorithm, output editing or producer-tool change is used. Current
+load/save now independently cover all 110 original bytes. The combined optimized
+wrapper remains 109 and is not an accepted whole-TU claim.
+
+Previous recovery: MAIN current-score save at C8B9..C8F0 adds one complete C++
 function / 55 instruction bytes. Two fresh direct producers match complete
 OMF/MAP/raw and empty relocations; the shared DOS seek-origin zero-to-one
 negative is rejected. Borland register bindings only express the actual INT 21h
@@ -37,8 +52,9 @@ and `.analysis/unit-replays/main-score-current-save-a/receipt.json`.
 
 The complete two-function C++ current-score context emits 109 versus 110.
 The loader's ordinary early return and explicit if/else both merge the failure
-RET with the final RET, leaving 54 versus native 55. It remains unaccepted;
-no barrier, filler, profile sweep or ASM promotion is added. Canonical shared
+RET with the final RET, leaving 54 versus native 55. Those optimized shapes
+remain unaccepted; the standalone load recovery is described above. No barrier,
+filler or ASM promotion is added. Canonical shared
 .inl bodies keep the independently accepted save source stable. All older
 accepted records/dependencies are unchanged; no old owner is replayed. MAINE's
 file lifecycle was confirmed already accepted and was not rebuilt. No producer

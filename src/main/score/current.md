@@ -1,4 +1,4 @@
-# Current score file: exact C++ save, pending load
+# Current score file: exact C++ save and load
 
 MAIN `C8B9..C8F0` is the complete 55-byte `scoredat_save_cur` function:
 22 instructions, near C++ void/no arguments, RET0, CS AE1 / main_01, DS 209D.
@@ -39,10 +39,32 @@ ordinary early-return and explicit if/else C++ spellings emit 54: TCC merges its
 failure RET with the final RET, changing native `JNC / RET` into a jump to the
 end. The remaining DOS body matches after that shift. These first diagnostics
 are retained in `.analysis/native-producers/main-score-current-a/` and `-b/`.
-No artificial barrier, filler, second positive or negative is added for that
-known failure. `current.cpp` retains the complete natural two-function context;
-only `current_save.cpp` is accepted. Shared canonical `.inl` bodies avoid copied
-implementations. The loader remains unaccepted, with zero authored credit.
+No artificial barrier, filler, second positive or negative is added for those
+known failed profiles. `current.cpp` retains the complete natural two-function
+context; its combined 109-byte producer remains unaccepted. Shared canonical
+`.inl` bodies avoid copied implementations.
+
+## Exact standalone load
+
+The failure is caused by jump folding. `current_load.cpp` uses the pinned
+compiler's source `-O-` pragma with the ordinary early-return body. This emits
+the native `JNC / RET` and final RET naturally, recovering all 55 bytes / 23
+instructions without changing the DOS algorithm or types. Original historical
+compiler options remain unknown; this is an actual exact reconstruction profile,
+not proof of those original options. There are no padding, table, DATA, BSS or
+MZ relocations. The genuine no-argument near ABI remains unchanged.
+
+Two fresh direct TCC/OMF/MAP/TLINK producers pass the complete load scope and
+original empty relocation order. The 96-to-95-byte read-count negative is
+rejected, retaining the original extent and empty fixups. Receipt:
+`.analysis/unit-replays/main-score-current-load-a/receipt.json`, SHA-256
+`10564f87144548f90952b0596312e1856830d879ae2e6ca011e91c5ae53c3605`.
+Native/source/profile review: `.analysis/score-current-load-native-review.json`,
+SHA-256 `6d337f8c4bc3efd73187a87529fde9d54a636f9c7c22a172b18185a2e7e4d13f`.
+New credit is one function / 55 C++ instruction bytes. The earlier save body,
+header, seek helper, acceptance record and all other accepted dependencies are
+unchanged; no old owner is rebuilt. Together the two independently accepted
+functions cover all 110 original bytes, with their own genuine source profiles.
 
 Target provenance remains candidate-local-attested; no packed-file or whole-game
 claim follows. No producer tool or behavior model changes.
