@@ -4826,3 +4826,45 @@ unit = "main-shinki-wing-preparation"
 source = "src/main/boss/shinki/wing_preparation.cpp"
 find = "playfield_shake_anim_time = 8;"
 replace = "playfield_shake_anim_time = 9;"
+
+[[units]]
+id = "main-shinki-phase-pattern-data"
+source = "src/main/boss/shinki/pattern_tables.cpp"
+module = "th05/b6_ptbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCB6_TABLES_TEXT -zPmain_03"
+bindings_source = "probes/units/shinki_pattern_tables_bindings.asm"
+target_start = 140320
+size = 8
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+
+[[controls]]
+unit = "main-shinki-phase-pattern-data"
+source = "src/main/boss/shinki/pattern_tables.cpp"
+find = "{ pattern_curved_rings, pattern_dualspeed_rings }"
+replace = "{ pattern_dualspeed_rings, pattern_curved_rings }"
+
+[[units]]
+id = "main-sara-phase-pattern-data"
+source = "src/main/boss/sara/pattern_tables.cpp"
+module = "th05/b1_ptbl.cpp"
+segment = "_DATA"
+wrapper_options = "-zCB1_TABLES_TEXT -zPmain_03"
+bindings_source = "probes/units/sara_pattern_tables_bindings.asm"
+target_start = 141630
+size = 16
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+
+[[controls]]
+unit = "main-sara-phase-pattern-data"
+source = "src/main/boss/sara/pattern_tables.cpp"
+find = "        pattern_blue_curve_counterclockwise,\n        pattern_blue_curve_clockwise,"
+replace = "        pattern_blue_curve_clockwise,\n        pattern_blue_curve_counterclockwise,"

@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-354 bounded C/C++ CODE/DATA units, 537 complete function occurrences:
-**104,796 authored bytes exact** = 89,197 CODE + 15,599 initialized DATA.
+356 bounded C/C++ CODE/DATA units, 537 complete function occurrences:
+**104,820 authored bytes exact** = 89,197 CODE + 15,623 initialized DATA.
 CODE is 88,389 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,884, including 88 uncredited padding bytes.
+extents total 104,908, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 414 | 67,875 | 3,317 |
+| MAIN | 414 | 67,875 | 3,341 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,28 @@ extents total 104,884, including 88 uncredited padding bytes.
 Separate reviewed ASM: 8,412 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,799 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**119,812 bytes**, including MAIN 40,274. The global authored denominator and
+**119,788 bytes**, including MAIN 40,250. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete386-byte C++ Shinki wing transition at
+Latest recovery: natural near-callback schedules for Shinki and Sara add
+24 initialized C++ DATA bytes: MAIN 22420..22428 (8) and 2293E..2294E (16).
+Each complete contribution passes two fresh producers, full raw bytes and
+original empty fixups, plus its own compiled attack-order swap negative.
+Callback providers and all neighboring state remain foreign. See
+[Shinki table](../src/main/boss/shinki/pattern_tables.md) and
+[Sara table](../src/main/boss/sara/pattern_tables.md). No accepted dependency
+was changed or cold-replayed. Generic boss collision remains 46 versus 43;
+read-only TH04 comparison found no new natural source/ABI evidence for a trial.
+
+The progress SVG now follows TH04's 788x440 dark, four-artifact/two-column card
+style. Its columns compare accepted CODE and DATA byte counts on explicit
+shared column scales; they do not imply an unreviewed authored percentage.
+Counts, goal 98% and separate reviewed ASM remain explicit. Focused renderer
+and progress-metadata tests cover the changed output; no full tooling suite.
+
+Previous recovery: the complete386-byte C++ Shinki wing transition at
 1ADDE..1AF60 now matches all raw bytes and original ordered fixups `[76,305]`.
 The explicit `tcc-s-tasm32` recipe compiles unchanged C++ with `-S`, assembles
 the unedited compiler file and links the real symbol-only binder. An empty
