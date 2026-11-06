@@ -4598,3 +4598,43 @@ unit = "main-stage2-invalidate"
 source = "src/main/stage/stage2_invalidate.cpp"
 find = "tile_invalidate_box.x = 8;"
 replace = "tile_invalidate_box.x = 9;"
+
+[[units]]
+id = "main-dialog-resource-bank"
+source = "src/main/dialog/resources.c"
+module = "th05/dlg_data.c"
+segment = "_DATA"
+target_start = 0x228b8
+size = 133
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+bindings_source = "probes/units/dialog_resources_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "ui-text", "state"]
+
+[[controls]]
+unit = "main-dialog-resource-bank"
+source = "src/main/dialog/resources.c"
+find = '"st06b"'
+replace = '"st06c"'
+
+[[units]]
+id = "main-dialog-resource-pointer"
+source = "src/main/dialog/resource_pointer.c"
+module = "th05/dlg_ptr.c"
+segment = "_DATA"
+target_start = 0x2289c
+size = 4
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+bindings_source = "probes/units/dialog_resource_pointer_bindings.asm"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers"]
+
+[[controls]]
+unit = "main-dialog-resource-pointer"
+source = "src/main/dialog/resource_pointer.c"
+find = "dialog_resources.script_file"
+replace = "dialog_resources.boss_faceset"

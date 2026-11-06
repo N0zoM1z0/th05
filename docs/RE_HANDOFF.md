@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-336 bounded C/C++ CODE/DATA units, 525 complete function occurrences:
-**103,846 authored bytes exact** = 88,502 CODE + 15,344 initialized DATA.
+338 bounded C/C++ CODE/DATA units, 525 complete function occurrences:
+**103,983 authored bytes exact** = 88,502 CODE + 15,481 initialized DATA.
 CODE is 87,694 instruction + 808 compiler-table bytes. Complete compared
-extents total 103,934, including 88 uncredited padding bytes.
+extents total 104,071, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 406 | 67,316 | 3,098 |
+| MAIN | 406 | 67,316 | 3,235 |
 | OP | 62 | 11,251 | 8,649 |
 | MAINE | 56 | 9,613 | 3,597 |
 | ZUN | 1 | 322 | 0 |
@@ -22,27 +22,27 @@ extents total 103,934, including 88 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**122,173 bytes**, including MAIN 42,463. The global authored denominator and
+**122,036 bytes**, including MAIN 42,326. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery: three complete C++ functions/92 instruction bytes plus
-seven initialized filename bytes. No table, padding or BSS is newly credited.
+Latest exact recovery:137 initialized semantic C DATA bytes in two complete
+contributions, with no new CODE, padding, BSS or function credit:
 
-| Unit | MAIN scope | Authored bytes | Receipt under `.analysis/unit-replays/` |
+| Unit | MAIN scope | Bytes | Receipt under `.analysis/unit-replays/` |
 | --- | --- | ---: | --- |
-| `main-bb-playchar` | `[10432,1045B)` | 41 / two functions | `main-bb-playchar-a/receipt.json` |
-| `main-bb-playchar-filename` | `[222AC,222B3)` | 7 DATA | same receipt |
-| `main-stage2-invalidate` | `[116CD,11700)` | 51 / one function | `main-stage2-invalidate-a/receipt.json` |
+| `main-dialog-resource-bank` | `[228B8,2293D)` | 133 | `main-dialog-resource-bank-a/receipt.json` |
+| `main-dialog-resource-pointer` | `[2289C,228A0)` | 4 | `main-dialog-resource-pointer-a/receipt.json` |
 
-Both focused replays pass two deterministic builds, valid OMF, all raw bytes,
-original fixups and compiled controls (including the required separate DATA
-mutation). See [BB source/ABI review](../src/main/formats/bb_playchar.md) and
-[stage-two invalidator](../src/main/stage/stage2_invalidate.md) for receipt
-hashes. Complete canonical headers and prior accepted source are unchanged.
-The original BB trailing NOP and filename alignment remain outside these
-complete contributions and receive no credit.
+The bank has17 semantic fields: signed sequence state,15 filenames/basenames
+and the real tiny text buffer. The normal C far-pointer initializer points to
+the script field at209D:1EE9, with original ordered fixup `[2]`. Each focused
+DATA replay passes two deterministic builds, valid OMF, all raw bytes/order
+and its own compiled DATA mutation. No old function or shared header changed.
+See [source/ABI review](../src/main/dialog/resources.md) for field coverage and
+receipt hashes. The intervening BOX_TILES graphics pattern and following
+alignment byte remain foreign and uncredited.
 
 The stage-two boundary was missed by the old prefix survey's543-byte reference
 public spacing: original RET ends at116FF and the accepted initializer begins
@@ -61,6 +61,7 @@ Alice's independent callback trials avoid compiling the accepted puppet owner.
 Ordinary register declarations restore the native pattern/left allocation;
 the joined byte-frame version still emits146 because of a six-byte store/load,
 and a simple inline quarter-frame helper emits148 with duplicated division.
+An ordinary register-byte declaration also leaves146 unchanged.
 Both failed first producers are retained, experimental files removed and
 baseline source unchanged. The earlier conditional helper's543-byte combined
 failure is historical. [Details](../src/main/boss/alice/foreground.md).
@@ -109,7 +110,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN incremental plan is empty after the focused BB and stage-two replays.
+The MAIN incremental plan is empty after the two focused dialog DATA replays.
 No whole accepted-set replay was run. Other artifact inputs are unchanged.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -117,6 +118,6 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-eight records/seven receipts; all accepted evidence stays live.
+ten records/nine receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

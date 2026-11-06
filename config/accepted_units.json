@@ -2,20 +2,32 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "411d87a8be3ea0120654c259bc652b3eef129c3f5f8fe5a3f772e5f725a27745",
+  "replay_receipt_sha256": "a9a407bd625e965609ba51ea2414a89baa3ce5aaa0f9af8aef084793c068f190",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 71373,
-    "candidate_start": 71373,
-    "size": 51,
-    "target_sha256": "166318f675b674a40e9fba339aa827f0b001f141c52ecc64b2f8d72528a860ea",
-    "candidate_sha256": "63ca245bae017008390f490c146f8099c77bf51aa286910451eb4cdadca28d01",
+    "target_start": 141468,
+    "candidate_start": 141468,
+    "size": 4,
+    "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+    "candidate_sha256": "9a58aaa3e1d2d440145c3b307d871f0e013e78e63560e834e169c4b1523d4145",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      2
+    ],
+    "candidate_fixups": [
+      2
+    ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 141468,
+      "size": 4,
+      "module": "th05/dlg_ptr.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -72638,6 +72650,568 @@
           "-ml",
           "-DBINARY='M'",
           "th05/s2_inval.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-dialog-resource-bank",
+      "entry_sha256": "9550993d078061b3e414077f2a083d4a6aadb284d93c6a7bce6155f425aa2b7a",
+      "result": {
+        "id": "main-dialog-resource-bank",
+        "entry_sha256": "9550993d078061b3e414077f2a083d4a6aadb284d93c6a7bce6155f425aa2b7a",
+        "rounds": [
+          {
+            "target_start": 141496,
+            "candidate_start": 141496,
+            "size": 133,
+            "target_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+            "candidate_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141496,
+              "size": 133,
+              "module": "th05/dlg_data.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141496,
+            "candidate_start": 141496,
+            "size": 133,
+            "target_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+            "candidate_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141496,
+              "size": 133,
+              "module": "th05/dlg_data.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "f9a309333095bd619dd9263bf8e595fd8129e041d3c3b8a7e6c55737c146ac9d",
+            "dependency_timestamp_normalized_sha256": "a7765f9b601db38fa26274d87d78ffe4755ece1c889fd64daea9f9c9bcd28d20",
+            "module_name": "th05/dlg_data.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlg_data.c",
+              "src/main/dialog/resources.c",
+              "src/main/dialog/resource_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 133,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 133,
+                  "sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "64b7916186cab860550f117a0b0fe6c332c58caf2ecbcc9b55b354cc3aa57588",
+            "dependency_timestamp_normalized_sha256": "a7765f9b601db38fa26274d87d78ffe4755ece1c889fd64daea9f9c9bcd28d20",
+            "module_name": "th05/dlg_data.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlg_data.c",
+              "src/main/dialog/resources.c",
+              "src/main/dialog/resource_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 133,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 133,
+                  "sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlg_data.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlg_data.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/dialog_resources_bindings.asm",
+            "sha256": "395ce1300bd80e993f9f79a2910ab62f6381f5e2be6aee681f136613a6b4ff11"
+          },
+          {
+            "path": "src/main/dialog/resource_data.h",
+            "sha256": "35efc611943c3b55a0472801a323a4d098769f09bed1c6ef544b2f715e4e2f6a"
+          },
+          {
+            "path": "src/main/dialog/resources.c",
+            "sha256": "fd4f2fa05b1fdabfc3072f4096616d71edf7a0aa58e7068e8c6292eebd970219"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/dialog_resources_bindings.asm",
+          "sha256": "395ce1300bd80e993f9f79a2910ab62f6381f5e2be6aee681f136613a6b4ff11"
+        },
+        {
+          "path": "src/main/dialog/resource_data.h",
+          "sha256": "35efc611943c3b55a0472801a323a4d098769f09bed1c6ef544b2f715e4e2f6a"
+        },
+        {
+          "path": "src/main/dialog/resources.c",
+          "sha256": "fd4f2fa05b1fdabfc3072f4096616d71edf7a0aa58e7068e8c6292eebd970219"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "715b8eab639c7fe7f9d21b3076c820a1fe218cb1ff747a52110cf4bfd12a7cad",
+      "compiled_negative_control": {
+        "target_start": 141496,
+        "candidate_start": 141496,
+        "size": 133,
+        "target_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+        "candidate_sha256": "ce515aba3fa3d18649aaf0dc2d4da84b213eab0bdb44ab7e7663ce8f52178af8",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141496,
+          "size": 133,
+          "module": "th05/dlg_data.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-dialog-resource-bank",
+        "entry_sha256": "9550993d078061b3e414077f2a083d4a6aadb284d93c6a7bce6155f425aa2b7a",
+        "mutation": {
+          "unit": "main-dialog-resource-bank",
+          "source": "src/main/dialog/resources.c",
+          "find": "\"st06b\"",
+          "replace": "\"st06c\""
+        },
+        "control_sha256": "bc7a32d2d8147442cffb3cbb8fa4fc52f7d0906d9a6c841e58a53abb36c1f1fa",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141496,
+          "candidate_start": 141496,
+          "size": 133,
+          "target_sha256": "389c5928d93186fa8601149ab75346084524726859e11aea5731aedc40bd846b",
+          "candidate_sha256": "ce515aba3fa3d18649aaf0dc2d4da84b213eab0bdb44ab7e7663ce8f52178af8",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141496,
+            "size": 133,
+            "module": "th05/dlg_data.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "8f98a186a09088c12d4853f7864937c26f5f6c2f064e66d9f127739b636ffdd1",
+          "dependency_timestamp_normalized_sha256": "85d9b629651e0f327f1877152b22e37f2a316ea8b660a80fcf29b5940da49f4f",
+          "module_name": "th05/dlg_data.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dlg_data.c",
+            "src/main/dialog/resources.c",
+            "src/main/dialog/resource_data.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 133,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 133,
+                "sha256": "ce515aba3fa3d18649aaf0dc2d4da84b213eab0bdb44ab7e7663ce8f52178af8"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dlg_data.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-dialog-resource-pointer",
+      "entry_sha256": "02ee902a047a548311c6a19a69d6bacef2c5fee48afd09a502587a633469d9f3",
+      "result": {
+        "id": "main-dialog-resource-pointer",
+        "entry_sha256": "02ee902a047a548311c6a19a69d6bacef2c5fee48afd09a502587a633469d9f3",
+        "rounds": [
+          {
+            "target_start": 141468,
+            "candidate_start": 141468,
+            "size": 4,
+            "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+            "candidate_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+            "raw_exact": true,
+            "target_fixups": [
+              2
+            ],
+            "candidate_fixups": [
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141468,
+              "size": 4,
+              "module": "th05/dlg_ptr.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141468,
+            "candidate_start": 141468,
+            "size": 4,
+            "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+            "candidate_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+            "raw_exact": true,
+            "target_fixups": [
+              2
+            ],
+            "candidate_fixups": [
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141468,
+              "size": 4,
+              "module": "th05/dlg_ptr.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "f749f05eafd788fc063f95e30d72a9c58b343f2eefd072daf487f74894c93b54",
+            "dependency_timestamp_normalized_sha256": "d9272926ac82ee9ac41b636d10455531f735263ea2033406190991f571874ccd",
+            "module_name": "th05/dlg_ptr.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlg_ptr.c",
+              "src/main/dialog/resource_pointer.c",
+              "src/main/dialog/resource_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "567196a3d962c646aa6dafb65bc9a15222e8b4d7eece46ca6e261eef021c9b95",
+            "dependency_timestamp_normalized_sha256": "d9272926ac82ee9ac41b636d10455531f735263ea2033406190991f571874ccd",
+            "module_name": "th05/dlg_ptr.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlg_ptr.c",
+              "src/main/dialog/resource_pointer.c",
+              "src/main/dialog/resource_data.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlg_ptr.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlg_ptr.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/dialog_resource_pointer_bindings.asm",
+            "sha256": "c94a26a1ee6822b72b1f22518952b74b392b6e5f8da2b388d8b713ed149bdc2a"
+          },
+          {
+            "path": "src/main/dialog/resource_data.h",
+            "sha256": "35efc611943c3b55a0472801a323a4d098769f09bed1c6ef544b2f715e4e2f6a"
+          },
+          {
+            "path": "src/main/dialog/resource_pointer.c",
+            "sha256": "d4ddd4040b4a774c5b48ab5cb132629d283eef16a4edddc8056e56380db54571"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/dialog_resource_pointer_bindings.asm",
+          "sha256": "c94a26a1ee6822b72b1f22518952b74b392b6e5f8da2b388d8b713ed149bdc2a"
+        },
+        {
+          "path": "src/main/dialog/resource_data.h",
+          "sha256": "35efc611943c3b55a0472801a323a4d098769f09bed1c6ef544b2f715e4e2f6a"
+        },
+        {
+          "path": "src/main/dialog/resource_pointer.c",
+          "sha256": "d4ddd4040b4a774c5b48ab5cb132629d283eef16a4edddc8056e56380db54571"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a9a407bd625e965609ba51ea2414a89baa3ce5aaa0f9af8aef084793c068f190",
+      "compiled_negative_control": {
+        "target_start": 141468,
+        "candidate_start": 141468,
+        "size": 4,
+        "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+        "candidate_sha256": "9a58aaa3e1d2d440145c3b307d871f0e013e78e63560e834e169c4b1523d4145",
+        "raw_exact": false,
+        "target_fixups": [
+          2
+        ],
+        "candidate_fixups": [
+          2
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141468,
+          "size": 4,
+          "module": "th05/dlg_ptr.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-dialog-resource-pointer",
+        "entry_sha256": "02ee902a047a548311c6a19a69d6bacef2c5fee48afd09a502587a633469d9f3",
+        "mutation": {
+          "unit": "main-dialog-resource-pointer",
+          "source": "src/main/dialog/resource_pointer.c",
+          "find": "dialog_resources.script_file",
+          "replace": "dialog_resources.boss_faceset"
+        },
+        "control_sha256": "5ce914f37c026f036ed2bfe75c382a7e1f85bf1729f71fa0b6e80653104ef8ce",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141468,
+          "candidate_start": 141468,
+          "size": 4,
+          "target_sha256": "2047c3856050e36180c06e1b22818a65b3222ab8e548e7c3da6d6c9c36d18d86",
+          "candidate_sha256": "9a58aaa3e1d2d440145c3b307d871f0e013e78e63560e834e169c4b1523d4145",
+          "raw_exact": false,
+          "target_fixups": [
+            2
+          ],
+          "candidate_fixups": [
+            2
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141468,
+            "size": 4,
+            "module": "th05/dlg_ptr.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "27494fcf78633e407d59dc5efcf37f947c97b30799bf3d9eb963eb84547e9b66",
+          "dependency_timestamp_normalized_sha256": "c67bf5a02616e128fbd3290e8ef89f9f9fd338c02a2654c922d9501d343d5907",
+          "module_name": "th05/dlg_ptr.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dlg_ptr.c",
+            "src/main/dialog/resource_pointer.c",
+            "src/main/dialog/resource_data.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 4,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 4,
+                "sha256": "40d95a7c7f1655a0070ddf3ce81eb83c0e88ab92766b85e6a0bb98503896e036"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dlg_ptr.c"
         ]
       },
       "receipt_aggregate_pass": true
