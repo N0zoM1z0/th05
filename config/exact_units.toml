@@ -4694,3 +4694,22 @@ unit = "main-sound-load-resources"
 source = "src/shared/sound/load_resources.c"
 find = '"efc", "m", "m2\0mmd", 0, 0, 0'
 replace = '"efs", "m", "m2\0mmd", 0, 0, 0'
+
+[[units]]
+id = "main-randring-fill"
+source = "src/main/math/randring_fill.cpp"
+module = "th05/randfill.cpp"
+segment = "RANDRING_FILL_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/randring_fill_bindings.asm"
+target_start = 0xc6e8
+size = 24
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-randring-fill"
+source = "src/main/math/randring_fill.cpp"
+find = "randring_p = 0;"
+replace = "randring_p = 1;"

@@ -2,28 +2,24 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "afca925f2236346169b8063a8e53ee54f0e1402fc0f2567d7c1b2294fb460c4b",
+  "replay_receipt_sha256": "ce145eab85cab6687b0bc844a12478f8d8879569aa3bbbfb37f32cd2a6fdfc12",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 135670,
-    "candidate_start": 135670,
-    "size": 18,
-    "target_sha256": "f78e5f64269b01ac669d1011c2f659235551686350a32db5160d2ee513e66cae",
-    "candidate_sha256": "a970cc0ff66b10896a2d3365e397bcd64d492d156dac77b74b48d33bcb2166e2",
+    "target_start": 50920,
+    "candidate_start": 50920,
+    "size": 24,
+    "target_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+    "candidate_sha256": "8477230256512dec12a56e96103e338120897ddf79b846ac6d28e87cebefca2d",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      7
+    ],
+    "candidate_fixups": [
+      7
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 135670,
-      "size": 18,
-      "module": "th05/snd_data.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -73885,6 +73881,221 @@
           "-ml",
           "-DBINARY='M'",
           "th05/snd_data.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-randring-fill",
+      "entry_sha256": "b57a76f1015f95ed9259e243052a950dbb8e87b4bddcbf48a899cfb987a07485",
+      "result": {
+        "id": "main-randring-fill",
+        "entry_sha256": "b57a76f1015f95ed9259e243052a950dbb8e87b4bddcbf48a899cfb987a07485",
+        "rounds": [
+          {
+            "target_start": 50920,
+            "candidate_start": 50920,
+            "size": 24,
+            "target_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+            "candidate_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+            "raw_exact": true,
+            "target_fixups": [
+              7
+            ],
+            "candidate_fixups": [
+              7
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 50920,
+            "candidate_start": 50920,
+            "size": 24,
+            "target_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+            "candidate_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+            "raw_exact": true,
+            "target_fixups": [
+              7
+            ],
+            "candidate_fixups": [
+              7
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "5ef9d79e144e9230673dd256ae360de027e14aabd04fe53cfe12135c98e7036d",
+            "dependency_timestamp_normalized_sha256": "70c4e78b1aee9b7dbe171872db9bfa36e95c17ee815a3f0dd28cc5fa1b53708d",
+            "module_name": "th05/randfill.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/randfill.cpp",
+              "src/main/math/randring_fill.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "7bfe45d3e6f675a1a226a7df3128c3707c1bb6b42028e060e05114e486079449",
+            "dependency_timestamp_normalized_sha256": "70c4e78b1aee9b7dbe171872db9bfa36e95c17ee815a3f0dd28cc5fa1b53708d",
+            "module_name": "th05/randfill.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/randfill.cpp",
+              "src/main/math/randring_fill.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/randfill.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/randfill.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/randring_fill_bindings.asm",
+            "sha256": "4e68f085b99729a3af73444adecb839b40bfb4db51515fbb172a20cd408dba12"
+          },
+          {
+            "path": "src/main/math/randring_fill.cpp",
+            "sha256": "77e61d462429d2dd5eca0f977cc118578931ec046b56aa7743dffaa309ad34e9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/randring_fill_bindings.asm",
+          "sha256": "4e68f085b99729a3af73444adecb839b40bfb4db51515fbb172a20cd408dba12"
+        },
+        {
+          "path": "src/main/math/randring_fill.cpp",
+          "sha256": "77e61d462429d2dd5eca0f977cc118578931ec046b56aa7743dffaa309ad34e9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "ce145eab85cab6687b0bc844a12478f8d8879569aa3bbbfb37f32cd2a6fdfc12",
+      "compiled_negative_control": {
+        "target_start": 50920,
+        "candidate_start": 50920,
+        "size": 24,
+        "target_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+        "candidate_sha256": "8477230256512dec12a56e96103e338120897ddf79b846ac6d28e87cebefca2d",
+        "raw_exact": false,
+        "target_fixups": [
+          7
+        ],
+        "candidate_fixups": [
+          7
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-randring-fill",
+        "entry_sha256": "b57a76f1015f95ed9259e243052a950dbb8e87b4bddcbf48a899cfb987a07485",
+        "mutation": {
+          "unit": "main-randring-fill",
+          "source": "src/main/math/randring_fill.cpp",
+          "find": "randring_p = 0;",
+          "replace": "randring_p = 1;"
+        },
+        "control_sha256": "14b1a3535b68d243cb1e8070ff20e0821fb747f1874b5b70a0e46cd78f6d0121",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 50920,
+          "candidate_start": 50920,
+          "size": 24,
+          "target_sha256": "54e7237b3382200c40f0e89200792bd1803b4e1a0e9a136f8586f347f03d61c2",
+          "candidate_sha256": "8477230256512dec12a56e96103e338120897ddf79b846ac6d28e87cebefca2d",
+          "raw_exact": false,
+          "target_fixups": [
+            7
+          ],
+          "candidate_fixups": [
+            7
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "7be105d81b44c9d74d2176c1e80b3280c3c20697b6521efba12a5776493638ff",
+          "dependency_timestamp_normalized_sha256": "e6e4d2a608592f6e608db08871f587862687e5946788a81474a9bc15523f96a0",
+          "module_name": "th05/randfill.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/randfill.cpp",
+            "src/main/math/randring_fill.cpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/randfill.cpp"
         ]
       },
       "receipt_aggregate_pass": true

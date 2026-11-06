@@ -83,3 +83,9 @@ are4237,4232 and4223 respectively, and the renderer remains858. Frozen first
 producers are under `.analysis/native-producers/maine-staff-point-comparison-b`,
 `maine-staff-camera-helper-a` and `maine-staff-camera-helper-reference-a`.
 All source was restored byte for byte; no accepted dependency changed.
+
+A later read-only check of the verified archived global `-Z-` producer's MAP
+confirms complete updater630 and renderer879, versus626/861. No whole-family
+failure hid an exact renderer. The archive was not restored over the worktree
+and no compiler ran. Scope/hash evidence is
+`.analysis/staff-reload-scope-readback.json`; the storage archive remains intact.

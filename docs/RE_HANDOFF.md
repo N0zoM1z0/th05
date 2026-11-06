@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-347 bounded C/C++ CODE/DATA units, 531 complete function occurrences:
-**104,241 authored bytes exact** = 88,706 CODE + 15,535 initialized DATA.
-CODE is 87,898 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,329, including 88 uncredited padding bytes.
+348 bounded C/C++ CODE/DATA units, 532 complete function occurrences:
+**104,265 authored bytes exact** = 88,730 CODE + 15,535 initialized DATA.
+CODE is 87,922 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,353, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 408 | 67,384 | 3,253 |
+| MAIN | 409 | 67,408 | 3,253 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,26 +22,29 @@ extents total 104,329, including 88 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,778 bytes**, including MAIN 42,240. The global authored denominator and
+**121,754 bytes**, including MAIN 42,216. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery:54 initialized semantic C DATA bytes across three
-complete sound extension/mode banks, with no CODE, BSS or padding credit:
+Latest exact recovery:the complete24-byte `randring_fill()` in MAIN, with
+no DATA, BSS, table or padding credit:
 
 | Unit | Native load scope | Bytes | Receipt under `.analysis/unit-replays/` |
 | --- | --- | ---: | --- |
-| `main-sound-load-resources` | `[211F6,21208)` | 18 | `main-sound-load-resources-exact-b/receipt.json` |
-| `op-sound-load-resources` | `[FA32,FA44)` | 18 | `op-sound-load-resources-exact-b/receipt.json` |
-| `maine-sound-load-resources` | `[107DC,107EE)` | 18 | `maine-sound-load-resources-exact/receipt.json` |
+| `main-randring-fill` | `[C6E8,C700)` | 24 | `main-randring-fill-exact-b/receipt.json` |
 
-The C initializer preserves the15-byte compact extension bank and three real
-initial mode/availability bytes. Mode3's four-byte read still overlaps the SE
-mode. Each artifact passes two deterministic builds, valid OMF, all raw bytes
-and original order, plus its own compiled DATA filename mutation. Foreign
-context uses legal16-bit ORGs; OP retains the actual Music Room DATA end to
-satisfy the validation MZ's minimum allocation. See [resource review](../src/shared/sound/load_resources.md).
+The maintained TH04 donor's descending loop becomes the original SI traversal
+through an ordinary register local. IRand keeps its real far Pascal integer
+return, with truncation only at each byte store; both cursor bytes are cleared.
+Two deterministic builds, valid OMF, all raw bytes and original fixup `[7]`
+pass, and the compiled cursor-reset mutation is rejected. See
+[source/ABI review](../src/main/math/randring_fill.md). The old short-prefix
+survey omitted this routine; it did not establish a language or ownership result.
+
+The previous three18-byte sound extension/mode banks remain accepted with54
+initialized C DATA bytes. Their compact bank and cross-field mode3 read remain
+unchanged; see [resource review](../src/shared/sound/load_resources.md).
 
 The previous three MMD detectors remain accepted with141 instruction bytes.
 The adjacent PMD candidate emits51 versus46; `register` and the C frontend
@@ -92,12 +95,17 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | Yumeko aimed swords (354) / laser-swords (428) | Both raw-equal; original relocation order differs standalone. Genuine allocator/updater/pattern context restores aimed order but starts three bytes early. `-y` does not fix the standalone order. | [Attacks](../src/main/boss/yumeko/laser_swords.md) |
 | Dialog opcode (456 bytes) | Direct compiler emits 455; unchanged compiler-generated ASM assembled with TASM reproduces 456 raw bytes, but reverses original fixup order. No acceptance. | [Interpreter](../src/main/dialog/opcode.md) |
 | EMS boss-face preload (154) | Full natural family is raw-equal. Original scoped fixups `[71,24,133,114]` differ from compiler `[133,114,71,24]`; a fresh `-y` diagnostic changes neither. | [EMS cache](../src/main/ems/ems.md) |
-| Staff updater (626) / renderer (861) | Current full-family output 623/858. Declaration, class API, expression and scoped-option trials do not recover the pointer loads; source restored. Fifteen other functions remain accepted. | [Staff family](../src/maine/staff/full.md) |
+| Staff updater (626) / renderer (861) | Current full-family output 623/858. Archived global `-Z-` MAP confirms630/879 without another build. Other declaration/API/expression trials fail; source restored. | [Staff family](../src/maine/staff/full.md) |
 | Staff controller (991 bytes) | All raw bytes match; standalone fixups form one descending run instead of the original two. Bitmap predecessor (126) still compiles to 211. | [Controller](../src/maine/staff/controller.md) |
 | Shinki wing (386) / ball updater (220) | Wing raw-equal with wrong order; ordinary scalar ball candidate 232. | [Wing/balls](../src/main/boss/shinki/wing_preparation.md) |
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+The newly routed spark updater `[E086,E0D2)` has a complete ordinary C++
+candidate:72 versus76, with merged remove stores and a Y copy. A named Y plus
+early-continue loop emits84; the72-byte source is restored, and its outside
+binder alignment correction remains uncompiled. There is no new spark credit.
+See [candidate and ABI evidence](../src/main/effects/spark/update.md).
 A new standalone stage-switch defeat trial emits411 versus414, still merging
 all-clear calls; its experimental source/binder were removed. A named-word
 frame-loop counter emits451 versus445; baseline442 was restored. Shinki wing's
@@ -129,14 +137,14 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans are empty after the three focused sound DATA
-replays. No whole accepted-set replay was run.
+The MAIN/OP/MAINE incremental plans are empty after the focused ring-fill
+replay. No whole accepted-set replay was run. Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
 backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-nineteen records/eighteen receipts; all accepted evidence stays live.
+twenty records/nineteen receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.
