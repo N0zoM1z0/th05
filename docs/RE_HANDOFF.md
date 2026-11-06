@@ -141,6 +141,14 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+A read-only Staff OMF review confirms one 991-byte controller CODE record;
+the existing full family uses roughly 1-KiB chunks. This supports a context
+explanation for the original two fixup runs without proving its TU or allowing
+an artificial prefix. A new segment-qualified bitmap capture reduces its
+69-byte output to 58 versus native 43; ordinary pointer register hints also
+emit 58 and were reverted. No controller or restore was recompiled, no new
+exact credit is claimed, and the candidate stays outside live manifests.
+See [capture and ABI evidence](../src/maine/staff/bitmap.md).
 The newly prepared OP score decoder has a complete 169-byte native boundary.
 Ordinary C++ with a named byte-rotate primitive emits 181; a register byte key
 emits 182. The 181-byte source is restored, outside all live manifests, and

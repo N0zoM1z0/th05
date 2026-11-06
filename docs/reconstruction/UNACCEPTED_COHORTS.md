@@ -9,6 +9,7 @@ identify single-producer diagnostics and archived alternatives.
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
 | OP score decoder | Original169; ordinary byte key181, register byte key182. The local-key spills across the byte-rotate primitive remain unresolved; ordinary181 source restored. | [Decoder](../../src/shared/score/decode.md) |
+| Staff bitmap capture | Native 43; original far-pointer candidate 69, new segment-qualified capture 58. Ordinary pointer register declarations also emit 58; first source restored. | [Capture evidence](../../src/maine/staff/bitmap.md) |
 | MAIN frame loop | Original445; baseline442 and later442/444/442 counter forms remain failed. Baseline restored; separate110-byte entry is accepted. | `main-gameplay-loop-expressions-a`, `main-gameplay-loop-{modulo,postincrement,compound}-a` |
 | Shot collision pair | Original399+210; current compiled419+233. Repeated quotient evaluation still adds instructions; the real far selector context also remains unresolved. | `main-shot-collision-scopes-c` |
 | Standalone laser collision | Immutable quotient baseline218 versus210. Readonly inline clamp233, assigned inline parameter221 and register quotient221 all fail; baseline restored. | `main-shots-laser-collision-a`; [current notes](../../src/main/player/shot_runtime.md) |

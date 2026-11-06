@@ -107,3 +107,35 @@ records the full emitted functions and checks these segment/loop properties.
 Its `diagnostic-b-review.json` preserves the diagnostic receipt hash. CPP/HPP
 and binder inputs were unchanged by this audit; no algorithm, copy length,
 register allocation, padding or additional build was tried.
+
+## Segment-qualified capture candidate
+
+`bitmap_snap_segmented.cpp` independently keeps the full buffer and real
+Pascal argument while selecting E000 as source DS and entry DS as destination
+ES once. Its ordinary near source pointer and `__es` destination pointer retain
+the two-byte offsets; installed `__memcpy__` supplies each forty-byte row copy.
+Only the real DS save/restore and segment transition are explicit hardware
+operations. No physical SI/DI algorithm, new guard or fabricated pixel data
+is introduced. The original two-function candidate remains unchanged.
+
+The first successful direct producer emits 58 bytes, versus the earlier
+capture's 69 and the native 43. Actual disassembly confirms one DS save and
+restore around all 352 copies of twenty words, source stride 80 and destination
+stride 40, with preserved BP/SI/DI and ES left at the RAM segment. The remaining
+extra code holds the row count on the stack, transports BX/DX cursors into
+SI/DI each row, and uses a longer frame and ES assignment. This is static
+evidence only; no device execution or additional model was run.
+
+An ordinary `register` declaration for both pointers produces the same 58 raw
+bytes. The first source was restored byte-for-byte. These two single producers
+remain at `.analysis/native-producers/maine-bitmap-snap-segmented-a/` and
+`maine-bitmap-snap-segmented-register-a/`. Neither passed the complete 43-byte
+gate; no second positive, negative or acceptance receipt was produced.
+The nominal target-sized foreign tail leaves diagnostic DS1012 rather than
+native DS1011, and no original whole-layout equality is claimed.
+
+The private proposal stays outside the live manifest. Complete native and
+actual instruction/ABI evidence is `.analysis/bitmap-snap-segmented-review.json`,
+SHA-256 `5f165995d756e176788172f44be4366cc55f646071fa15b0941dba7692345205`.
+This reduces one recovery gap without changing any accepted owner, counter,
+initialized DATA, BSS ownership or bitmap-restore implementation.

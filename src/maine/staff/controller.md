@@ -92,3 +92,21 @@ bodies and retain all original bytes/order and fresh-producer/control gates.
 The a/b artifacts and source snapshots remain private under
 `.analysis/native-producers/maine-staff-controller-a` and `-b`, with the precise
 flow-recovery proof under `.analysis/staff-controller-a-forensic/`.
+
+## Saved OMF context review
+
+A later read-only inspection revalidates standalone b's 991 raw bytes and
+original target, without recompiling the controller. Its saved object has one
+991-byte CODE LEDATA and one 516-byte FIXUPP payload. The existing full staff
+object instead has consecutive CODE chunks of 1017, 1017, 1022, 1022 and 145
+bytes. This supports a compiler buffering explanation for different descending
+runs, without proving a universal 1024-byte split or the original TU.
+
+The real native bitmap cohort supplies 126 preceding bytes. Its ordinary
+211-byte candidate, and the new [58-byte segmented capture](bitmap.md), are
+not exact prefix replacements: changing those definitions also moves the real
+bitmap providers and the controller's near-call bytes. No byte-count prefix,
+provider alias, fixup sorting or new controller producer follows from this
+observation. The frozen evidence is
+`.analysis/staff-controller-record-context-review.json`, SHA-256
+`6e42f8c6d87271a01e6b9a14c1a4b8440fd2d7177bd408f8e39422699c895cd1`.
