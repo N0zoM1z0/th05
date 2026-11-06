@@ -27,7 +27,26 @@ percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: MAIN current-score load at C882..C8B9 adds one complete C++
+Latest source follow-up: the unaccepted shot collision consumer now has the
+truthful samecodeseg selector annotation already used by accepted bomb callers.
+Its single new producer confirms native NOP/PUSH CS/CALL to AE1:219C, retaining
+the true far-Pascal RETF8 ABI. The quotient gaps remain: current pair 652 versus
+native 609, with diagnostic DS209F versus209D. No new exact unit or counter is
+added. Shared shot headers and the accepted updater remain unchanged. See
+[source/ABI/diagnostic](../src/main/player/shot_runtime.md).
+
+Three bounded independent source/native reviews supply no other accepted change.
+Staff renderer -O- was absent from verified retained archives; its one actual
+new producer remains the same 858 bytes versus861, ruling out jump folding.
+Boss defeat's complete Extra-stage action/reset/return still merges the two
+all-clear calls, emitting408 versus414. The inline-function byte-rotate proposal
+is rejected by TC4's ban on assembly inside inline/template functions. All
+three trial sources are restored/removed after freezing evidence. Do not repeat
+these unchanged trials or turn their failures into ASM ownership decisions.
+Private concise review: `.analysis/focused-source-followups-selector-review.json`.
+No second producer, negative, behavior model or producer-tool change is added.
+
+Latest exact recovery: MAIN current-score load at C882..C8B9 adds one complete C++
 function / 55 instruction bytes. The source -O- pragma disables the diagnosed
 jump folding, naturally retaining native JNC/early RET and the final RET. The
 DOS algorithm, hardware bindings and full score types are unchanged; historical

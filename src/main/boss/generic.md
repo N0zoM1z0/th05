@@ -116,3 +116,13 @@ merges the two all-clear call tails, while ordinary switch promotion adds
 three bytes over the408-byte baseline. Its first producer is retained at
 `.analysis/native-producers/main-boss-defeat-switch-a/`. Experimental source
 and binder were removed; no accepted dependency, order or byte was changed.
+
+A later complete-action trial gives the Extra-stage all-clear branch both
+existing homing resets and an immediate return. The normal compiler still
+merges the two all-clear call sites and emits 408 rather than native 414;
+its later fixups remain six bytes early. No barrier, extra state mutation or
+compiler-register algorithm is introduced. The failed standalone source/binder
+are removed after freezing their genuine inputs and object under
+`.analysis/native-producers/main-boss-defeat-complete-tail-a/`. The accepted
+generic CODE/DATA and all maintained source inputs remain unchanged. No second
+producer, negative or new credit is added.

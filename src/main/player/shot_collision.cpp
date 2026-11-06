@@ -1,6 +1,7 @@
 // Full shot damage, bomb contribution and laser-reflected bullet collisions.
 #pragma option -zCSHOT_HIT_TEXT -zPmain_01
 #include "src/main/player/shot_runtime.hpp"
+#pragma samecodeseg select_for_playchar
 
 extern BulletTemplate bullet_template;
 

@@ -38,6 +38,14 @@ Actual frozen producers:
 - `.analysis/native-producers/op-score-decode-local-key-a/`
 - `.analysis/native-producers/op-score-decode-register-key-a/`
 
+A later ordinary inline-function rotate expression cannot compile: TC4 rejects
+assembly inside inline and template functions. The attempted primitive operates
+on its named byte parameter, without the fixed-AL template, but the frontend
+restriction prevents a producer object. The failed input and exact diagnostic
+remain at `.analysis/native-producers/op-score-decode-inline-rotate-a/`.
+The maintained 181-byte source is restored byte-for-byte. No out-of-line helper,
+second producer, negative or acceptance follows from that failed expression.
+
 Complete native/source review:
 `.analysis/op-score-decode-native-source-review.json`.
 The proposal `.analysis/op-score-decode-proposal.json` stays outside the live

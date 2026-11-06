@@ -154,6 +154,27 @@ real return-boundary bridge; it never authorized physical-register algorithm
 transcription or fake return types.
 
 
+## Correct selector code frame
+
+The collision consumer now locally declares `#pragma samecodeseg
+select_for_playchar`, retaining its real far-Pascal four-word API. Native callers
+and the existing accepted bomb-family/runtime headers independently establish
+this same AE1 code frame and RETF8. The shared shot header is unchanged, so the
+accepted updater does not need a refresh.
+
+One new direct producer now emits the original NOP/PUSH CS/CALL transfer to
+AE1:219C (load CFAC). This repairs the selector protocol without relabelling the
+provider near. Full collision acceptance still fails: the current repeated-
+quotient pair emits 652 versus 609 bytes (419 ordinary / 233 laser). Its source
+growth also leaves the diagnostic foreign DS at 209F rather than native 209D.
+No body, relocation order or fixed tail is normalized to conceal those gaps.
+The actual frozen input/MAP/OMF/MZ is retained at
+`.analysis/native-producers/main-shot-collision-selector-context-b/`.
+Native/actual transfer evidence is
+`.analysis/focused-source-followups-selector-review.json`, SHA-256
+`02ba5582fde884d817fa89a996ac6fb67b7253026a08dec0c50614a6ea7bcbde`.
+Both complete functions remain outside the manifest, with zero new exact credit.
+
 ## Accepted updater
 
 `main-shots-update-abi-b` passes two fresh deterministic producers for the

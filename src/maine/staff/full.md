@@ -89,3 +89,14 @@ confirms complete updater630 and renderer879, versus626/861. No whole-family
 failure hid an exact renderer. The archive was not restored over the worktree
 and no compiler ran. Scope/hash evidence is
 `.analysis/staff-reload-scope-readback.json`; the storage archive remains intact.
+
+A bounded read-only source/ABI review again finds the renderer's pointer load
+at native relative 195 redundant after the load at 186 and CMP/JE at 189/193.
+The two verified private staff archives and retained live staff text contain no
+earlier -O- probe. One new standalone -O- diagnostic still emits 858 bytes,
+byte-identical to the earlier standalone renderer, against native 861. This
+rules out jump folding for this missing reload; it does not establish origin
+or allow a barrier/volatile local. The unaccepted wrapper is restored exactly.
+Evidence: `.analysis/native-producers/maine-staff-render-jumps-a/` and
+`.analysis/focused-source-followups-selector-review.json`. No accepted input,
+second producer, negative, new ownership or progress count changes.
