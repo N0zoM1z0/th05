@@ -167,3 +167,14 @@ still emits278; two eager ordinary coordinate deltas emit290. Both failed first
 producers are retained under `main-b4ball-update-{cleanup,deltas}-a`. The source
 was restored byte-exact; only the factual outside binder alignment is maintained.
 No new acceptance, behavior model or unrelated tests are claimed.
+
+A later single `-O-` diagnostic before all source tokens emits274 bytes,
+against273 native, with ordered fixups `[234,155,119]` versus
+`[235,156,118]`. It restores the short clipping/removal-proxy layout but leaves
+a five-byte inverted branch where the native first free-slot test uses a
+four-byte conditional branch. The native Y subtraction is eager in DX; the
+candidate copies DX into AX only after the X comparison. The shot-damage
+zero branch and an extra loop-tail jump also differ. Equal or near-equal size
+does not accept those differences. This one producer is retained at
+`.analysis/native-producers/main-b4ball-update-jumps-a/`; no second producer
+or negative follows. The prior278-byte normal-profile source is restored.

@@ -19,15 +19,30 @@ extents total 104,498, including 88 uncredited padding bytes.
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 8,284 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,669 compared bytes include 87 uncredited.
+Separate reviewed ASM: 8,412 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,799 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**120,328 bytes**, including MAIN 40,790. The global authored denominator and
+**120,198 bytes**, including MAIN 40,660. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: both complete MAIN random-reader families, C700..C73E (62)
+Latest recovery: the complete consecutive player-shot helper family MAIN
+E38C..E40E (130): allocation56, angle velocity30 and power-level update44.
+Two fresh ASM producers match full ordinary OMF/MAP, every raw byte and the
+empty original fixup stream; their shared primary-sprite mutation is rejected.
+Explicit adoption adds128 instruction bytes. The allocator's alignment NOP
+and the actual HUD far-call relaxation NOP compare with zero credit. The
+preincrement scan, hidden angle write through the point pointer and the real
+near/Pascal/far interfaces remain intact. Pool, player, cursor, tables and
+HUD provider are foreign; no accepted caller/header/table was changed. See
+[source/ABI/receipt review](../src/main/player/shot_helpers.md) and
+`.analysis/asm-replays/main-shot-helpers-c/receipt.json`. The original routing
+distance74 after shot_velocity_set includes the independent44-byte level
+updater; the velocity function itself is30. No C/C++ bytes or full EXE claim
+is added, and no whole replay was run.
+
+Previous recovery: both complete MAIN random-reader families, C700..C73E (62)
 and 1529C..152D9 (61), pass two fresh ASM producers, raw bytes, empty ordered
 fixups and their normal high-cursor-byte mutation. Explicit adoption adds118
 instruction bytes; five NOPs compare with zero credit. The shared byte ring
@@ -181,7 +196,7 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | Staff updater (626) / renderer (861) | Current full-family output 623/858. Archived global `-Z-` MAP confirms630/879 without another build. Other declaration/API/expression trials fail; source restored. | [Staff family](../src/maine/staff/full.md) |
 | Staff controller (991 bytes) | All raw bytes match; standalone fixups form one descending run instead of the original two. Bitmap predecessor (126) still compiles to 211. | [Controller](../src/maine/staff/controller.md) |
 | Shinki wing (386) / ball updater (220) | Wing raw-equal with wrong order; ordinary scalar ball candidate 232. | [Wing/balls](../src/main/boss/shinki/wing_preparation.md) |
-| B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
+| B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 fail. New jump-optimization-off profile emits274 with different first branch, Y lowering and loop tail; baseline restored. | [B4](../src/main/boss/mai_yuki/b4ball_update.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
 Two new scalar C++ candidates stay outside all live manifests. Near vector

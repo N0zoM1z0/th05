@@ -1402,3 +1402,40 @@ kind = "alignment"
 offset = 35
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-shot-helpers"
+artifact = "main"
+source = "src/main/player/shot_helpers.asm"
+types = "src/main/player/shot_helpers_types.inc"
+symbols = "probes/units/shot_helpers_symbols.inc"
+bindings = "probes/units/shot_helpers_bindings.asm"
+notes = "src/main/player/shot_helpers.md"
+target_start = 58252
+size = 130
+segment = "SHOT_HELPERS_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "547b15bff857e1bb7d6c5300b4a413c3029c7a0e6f0530eb8b128a83447845c4"
+target_scope_sha256 = "af486f902aa1f33261b1624865e2e0c1f8da3c2fe36da348c249c489a493bf47"
+semantic_inputs = ["src/main/player/reimu.hpp", "src/shared/geometry.hpp", "src/main/player/shot_velocity_data.h", "src/main/player/power_thresholds.hpp", "src/main/hud/indicators.hpp", "src/main/player/miss.hpp", "src/main/runtime/stage_session_init.hpp"]
+[units.publics]
+"shots_add()" = 0
+"shot_velocity_set(sppoint near*,unsigned char)" = 56
+"SHOT_LEVEL_UPDATE" = 86
+"shot_level_update()" = 86
+"shot_helpers_end" = 130
+[units.negative]
+find = "SHOT_PRIMARY_PATTERN equ 20"
+replace = "SHOT_PRIMARY_PATTERN equ 21"
+[[units.uncredited]]
+offset = 55
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 124
+size = 1
+kind = "alignment"
