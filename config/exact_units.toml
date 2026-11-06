@@ -4751,3 +4751,23 @@ unit = "main-map-load"
 source = "src/main/formats/map_load.cpp"
 find = "map_fn[3] = ('0' + stage_id);"
 replace = "map_fn[3] = ('1' + stage_id);"
+
+[[units]]
+id = "main-tile-section-offsets"
+source = "src/main/tile/section_offsets.c"
+module = "th05/tileoffs.c"
+segment = "_DATA"
+bindings_source = "probes/units/tile_section_offsets_bindings.asm"
+target_start = 0x218DA
+size = 64
+alignment_offsets = []
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+
+[[controls]]
+unit = "main-tile-section-offsets"
+source = "src/main/tile/section_offsets.c"
+find = "((section_id) * TILE_SECTION_BYTES)"
+replace = "(((section_id) + 1) * TILE_SECTION_BYTES)"

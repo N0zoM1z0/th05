@@ -7,28 +7,43 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-350 bounded C/C++ CODE/DATA units, 534 complete function occurrences:
-**104,344 authored bytes exact** = 88,809 CODE + 15,535 initialized DATA.
+351 bounded C/C++ CODE/DATA units, 534 complete function occurrences:
+**104,408 authored bytes exact** = 88,809 CODE + 15,599 initialized DATA.
 CODE is 88,001 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,432, including 88 uncredited padding bytes.
+extents total 104,496, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 411 | 67,487 | 3,253 |
+| MAIN | 411 | 67,487 | 3,317 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 7,733 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,112 compared bytes include 81 uncredited.
+Separate reviewed ASM: 7,876 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,256 compared bytes include 82 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**120,951 bytes**, including MAIN 41,413. The global authored denominator and
+**120,743 bytes**, including MAIN 41,205. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest reviewed ASM: the complete color tiny kernels MAIN BF62..C07C (32x32,
-282 bytes) and C07C..C180 (16x16, 260 bytes). Two fresh final-source producers
+Latest recovery: the complete 64-byte C section-offset table MAIN 218DA..2191A
+and the independent tile-cache fill BB9E..BBEC (78) / full renderer BBEC..BC2E
+(66). The table is generated as 32 section IDs times a 320-byte MAP section,
+with its own compiled DATA mutation. Explicit ASM adoption credits 143
+instruction bytes plus one compared, uncredited loop-alignment NOP. Each
+kernel has two independently built objects, valid OMF/native frames and
+original ordered fixups ([] / [61]), with rejected visible-column mutations.
+The renderer's first valid object is reused after correcting only its MAP
+public locator to TLINK's `tiles_render_all()` display spelling; no source,
+ABI, generated object or fixup was changed. EGC setup/off providers, cache,
+MAP/script inputs and sprites remain foreign. See
+[source/ABI/receipt review](../src/main/tile/sections.md). Final receipts:
+`unit-replays/main-tile-section-offsets-exact`, `asm-replays/main-tile-fill-a`
+and `asm-replays/main-tile-render-b`, each under `.analysis/`.
+
+The previous complete color tiny kernels MAIN BF62..C07C (32x32,
+282 bytes) and C07C..C180 (16x16, 260 bytes) remain accepted. Two fresh final-source producers
 per kernel reproduce all 542 raw bytes, native frames/publics and empty ordered
 fixups; each phase-mask mutation is rejected. Explicit adoption adds 535 ASM
 instruction bytes and seven compared, uncredited EVEN NOPs. The positive
@@ -207,7 +222,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans remain empty after the focused tiny ASM
+The MAIN/OP/MAINE incremental plans remain empty after the focused tile
 replay. No whole accepted-set replay was run. Update/Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -215,7 +230,7 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-twenty-two C/C++ records/twenty-one receipts, one Cheeto ASM receipt and two
-adopted tiny ASM receipts; all accepted evidence stays live.
+twenty-three C/C++ records/twenty-two receipts, one Cheeto ASM receipt, two
+adopted tiny ASM receipts and two tile ASM receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

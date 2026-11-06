@@ -6,20 +6,20 @@
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 1819,
+    "accepted-c-initialized-data": 1883,
     "accepted-cxx-initialized-data": 13716,
     "accepted-cxx-instructions": 88001,
     "accepted-cxx-switch-table": 808,
     "accepted-reviewed-asm-dispatch-table": 210,
     "accepted-reviewed-asm-initialized-data": 64,
-    "accepted-reviewed-asm-instructions": 7733,
+    "accepted-reviewed-asm-instructions": 7876,
     "accepted-reviewed-asm-semantic-code-table": 24,
-    "checked-uncredited-asm-alignment": 51,
+    "checked-uncredited-asm-alignment": 52,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 88,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 120951,
+    "unknown": 120743,
     "verified-vendor-code": 73804,
     "verified-vendor-initialized-data": 3777
   },
@@ -30,17 +30,17 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-c-initialized-data": 1765,
+        "accepted-c-initialized-data": 1829,
         "accepted-cxx-initialized-data": 1488,
         "accepted-cxx-instructions": 66835,
         "accepted-cxx-switch-table": 652,
         "accepted-reviewed-asm-dispatch-table": 186,
-        "accepted-reviewed-asm-instructions": 5060,
-        "checked-uncredited-asm-alignment": 37,
+        "accepted-reviewed-asm-instructions": 5203,
+        "checked-uncredited-asm-alignment": 38,
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 2,
         "checked-uncredited-padding": 79,
-        "unknown": 41413,
+        "unknown": 41205,
         "verified-vendor-code": 27178,
         "verified-vendor-initialized-data": 1259
       },
@@ -1019,6 +1019,39 @@
         },
         {
           "start": 47826,
+          "end": 48030,
+          "kind": "unknown"
+        },
+        {
+          "start": 48030,
+          "end": 48108,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-tile-fill",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 48108,
+          "end": 48131,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-tile-render",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 48131,
+          "end": 48132,
+          "kind": "checked-uncredited-asm-alignment",
+          "unit": "main-tile-render",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 48132,
+          "end": 48174,
+          "kind": "accepted-reviewed-asm-instructions",
+          "unit": "main-tile-render",
+          "origin": "reviewed-native-handwritten-assembly-reconstruction"
+        },
+        {
+          "start": 48174,
           "end": 48462,
           "kind": "unknown"
         },
@@ -4332,6 +4365,17 @@
         },
         {
           "start": 135688,
+          "end": 137434,
+          "kind": "unknown"
+        },
+        {
+          "start": 137434,
+          "end": 137498,
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-tile-section-offsets"
+        },
+        {
+          "start": 137498,
           "end": 137538,
           "kind": "unknown"
         },
@@ -4684,7 +4728,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "enemy_vm_asm_review_sha256": "591748cbd8ca5346fde546e068bc77f1d1a14f2982457a18db5d6e365bffd835",
-      "asm_family_review_sha256": "d5cdaf5c5778372710ff359406fbf0aa36362ee10d4c55becd66365150b26c46"
+      "asm_family_review_sha256": "7a906f646802a2405afac31a276ccc22935e3b0b1bd45011c2fcd8eac94497f0"
     },
     "op": {
       "kind": "retained-diet-decoded-load-module",
@@ -6147,7 +6191,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e",
-      "asm_family_review_sha256": "d5cdaf5c5778372710ff359406fbf0aa36362ee10d4c55becd66365150b26c46"
+      "asm_family_review_sha256": "7a906f646802a2405afac31a276ccc22935e3b0b1bd45011c2fcd8eac94497f0"
     },
     "maine": {
       "kind": "retained-diet-decoded-load-module",
@@ -7481,7 +7525,7 @@
       "master_sin8_review_sha256": "711a8ec4561dfe4e374ef8409003c1058a6f716e63c580c609222cf5bab07320",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "text_fx_asm_review_sha256": "c2de5707e4561a6a1d80475560f4b42711f3e02e0e27fa93f3b2b14d86a21d5e",
-      "asm_family_review_sha256": "d5cdaf5c5778372710ff359406fbf0aa36362ee10d4c55becd66365150b26c46"
+      "asm_family_review_sha256": "7a906f646802a2405afac31a276ccc22935e3b0b1bd45011c2fcd8eac94497f0"
     },
     "zun": {
       "kind": "com-file",

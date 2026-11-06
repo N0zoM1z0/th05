@@ -2,24 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "022497f138a594b02c8e3d2349be0be32b1b44da5289c8048d7c10c5359ab307",
+  "replay_receipt_sha256": "d9d494eafb17b98988093c67cba2ca867edbaa091aeeab0c21f02c9b1c7210e6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58818,
-    "candidate_start": 58818,
-    "size": 68,
-    "target_sha256": "9ac68bd35e2a1f758c1cff9bf8a9ba339361787f86b2543d1ae7c88609ab9b3c",
-    "candidate_sha256": "1b8e1e2f3f4938c0a5aef966a6e866e08095d1a3b7ad28d2e5dab8f96c1c9060",
+    "target_start": 137434,
+    "candidate_start": 137434,
+    "size": 64,
+    "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+    "candidate_sha256": "41549e142e227b8ee42508f685feab4b3393e0bb0fd9b57afd4f0927444d319a",
     "raw_exact": false,
-    "target_fixups": [
-      41
-    ],
-    "candidate_fixups": [
-      41
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 137434,
+      "size": 64,
+      "module": "th05/tileoffs.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -74607,6 +74611,270 @@
           "-ml",
           "-DBINARY='M'",
           "th05/map_load.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-tile-section-offsets",
+      "entry_sha256": "410b93c5f9bd081552a648667dda96667f7109860095b75e3210d07ee0f99fe8",
+      "result": {
+        "id": "main-tile-section-offsets",
+        "entry_sha256": "410b93c5f9bd081552a648667dda96667f7109860095b75e3210d07ee0f99fe8",
+        "rounds": [
+          {
+            "target_start": 137434,
+            "candidate_start": 137434,
+            "size": 64,
+            "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+            "candidate_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137434,
+              "size": 64,
+              "module": "th05/tileoffs.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137434,
+            "candidate_start": 137434,
+            "size": 64,
+            "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+            "candidate_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137434,
+              "size": 64,
+              "module": "th05/tileoffs.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "16cfe9be730c371cfc0193b688765d71fb32b9fd5146767ce33d15d5e5e862f3",
+            "dependency_timestamp_normalized_sha256": "dd8d61f4a33ad59f1536b3d8c2afb772a7aa849a43af85ce8408c9849c74581b",
+            "module_name": "th05/tileoffs.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/tileoffs.c",
+              "src/main/tile/section_offsets.c",
+              "src/main/tile/section_offsets.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 64,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 64,
+                  "sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "656ede06aa74a8032f9cf38fc723da60a6306221a5edd550f3a8388663b2be54",
+            "dependency_timestamp_normalized_sha256": "dd8d61f4a33ad59f1536b3d8c2afb772a7aa849a43af85ce8408c9849c74581b",
+            "module_name": "th05/tileoffs.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/tileoffs.c",
+              "src/main/tile/section_offsets.c",
+              "src/main/tile/section_offsets.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 64,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 64,
+                  "sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/tileoffs.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/tileoffs.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/tile_section_offsets_bindings.asm",
+            "sha256": "ef4baf7d0be856407ddd64f7e38b7bdf22191eb5bf3c8ccce0fde739d3a95163"
+          },
+          {
+            "path": "src/main/tile/section_offsets.c",
+            "sha256": "bbc178a49864a73c28d6edd7b858096def4b27bfdeb982409479ae318bdb86f2"
+          },
+          {
+            "path": "src/main/tile/section_offsets.h",
+            "sha256": "0d1d51630342b43c7df5891e88fccdeba0ad659a0ed382c18a40f86d578e9255"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/tile_section_offsets_bindings.asm",
+          "sha256": "ef4baf7d0be856407ddd64f7e38b7bdf22191eb5bf3c8ccce0fde739d3a95163"
+        },
+        {
+          "path": "src/main/tile/section_offsets.c",
+          "sha256": "bbc178a49864a73c28d6edd7b858096def4b27bfdeb982409479ae318bdb86f2"
+        },
+        {
+          "path": "src/main/tile/section_offsets.h",
+          "sha256": "0d1d51630342b43c7df5891e88fccdeba0ad659a0ed382c18a40f86d578e9255"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d9d494eafb17b98988093c67cba2ca867edbaa091aeeab0c21f02c9b1c7210e6",
+      "compiled_negative_control": {
+        "target_start": 137434,
+        "candidate_start": 137434,
+        "size": 64,
+        "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+        "candidate_sha256": "41549e142e227b8ee42508f685feab4b3393e0bb0fd9b57afd4f0927444d319a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137434,
+          "size": 64,
+          "module": "th05/tileoffs.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-tile-section-offsets",
+        "entry_sha256": "410b93c5f9bd081552a648667dda96667f7109860095b75e3210d07ee0f99fe8",
+        "mutation": {
+          "unit": "main-tile-section-offsets",
+          "source": "src/main/tile/section_offsets.c",
+          "find": "((section_id) * TILE_SECTION_BYTES)",
+          "replace": "(((section_id) + 1) * TILE_SECTION_BYTES)"
+        },
+        "control_sha256": "3dfcd32f517f3022419fc75711ca051e75ac481bab42f47464b902f4c8875a3e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137434,
+          "candidate_start": 137434,
+          "size": 64,
+          "target_sha256": "b61e5f551055baa01cd831ead30e2283c4a59af9230a13dd93d13eaac0b52a48",
+          "candidate_sha256": "41549e142e227b8ee42508f685feab4b3393e0bb0fd9b57afd4f0927444d319a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137434,
+            "size": 64,
+            "module": "th05/tileoffs.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "ba776057e8ee2256257b00d6271d3c9f44d5cd0087dd72dbdca0b1569b70c060",
+          "dependency_timestamp_normalized_sha256": "367f0221cc0968fd8ffe10ad4f8f100532cd47a870a9cfbbb0287a0de920cc7b",
+          "module_name": "th05/tileoffs.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/tileoffs.c",
+            "src/main/tile/section_offsets.c",
+            "src/main/tile/section_offsets.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 64,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 64,
+                "sha256": "41549e142e227b8ee42508f685feab4b3393e0bb0fd9b57afd4f0927444d319a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/tileoffs.c"
         ]
       },
       "receipt_aggregate_pass": true

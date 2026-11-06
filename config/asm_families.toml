@@ -1218,3 +1218,59 @@ kind = "alignment"
 offset = 223
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-tile-fill"
+artifact = "main"
+source = "src/main/tile/fill_initial.asm"
+types = "src/main/tile/render_types.inc"
+symbols = "probes/units/tile_fill_symbols.inc"
+bindings = "probes/units/tile_fill_bindings.asm"
+notes = "src/main/tile/sections.md"
+target_start = 48030
+size = 78
+segment = "TILE_FILL_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "3a30c1761b16413a8898ca477c4406be83f083dab1c84a5136f56a3d42aee90d"
+target_scope_sha256 = "654d43d7dbee27310775936e02e3198ead1b357ed78c04f45cee0581f78842d9"
+semantic_inputs = ["src/main/tile/section_offsets.h", "src/main/formats/map_free.hpp", "src/main/stage/background2.hpp"]
+[units.publics]
+"TILES_FILL_INITIAL" = 0
+"tile_fill_initial_end" = 78
+[units.negative]
+find = "TILE_FILL_COLUMNS equ TILE_VISIBLE_COLUMNS"
+replace = "TILE_FILL_COLUMNS equ (TILE_VISIBLE_COLUMNS - 2)"
+
+[[units]]
+id = "main-tile-render"
+artifact = "main"
+source = "src/main/tile/render_all.asm"
+types = "src/main/tile/render_types.inc"
+symbols = "probes/units/tile_render_symbols.inc"
+bindings = "probes/units/tile_render_bindings.asm"
+notes = "src/main/tile/sections.md"
+target_start = 48108
+size = 66
+segment = "TILE_RENDER_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = [61]
+tables = []
+native_review_sha256 = "fb6d57fea37fda8607645d70f5be9264719fcc7e906ff9e4c8b438a609e194ee"
+target_scope_sha256 = "45ed478bbd8aed2712c8a00679f331b5abe265b97781bf3254a16fa6329747fa"
+semantic_inputs = ["src/main/tile/section_offsets.h", "src/main/formats/map_free.hpp", "src/main/stage/background2.hpp"]
+[units.publics]
+"tiles_render_all()" = 0
+"tile_render_all_end" = 66
+[units.negative]
+find = "TILE_RENDER_COLUMNS equ TILE_VISIBLE_COLUMNS"
+replace = "TILE_RENDER_COLUMNS equ (TILE_VISIBLE_COLUMNS - 1)"
+[[units.uncredited]]
+offset = 23
+size = 1
+kind = "alignment"
