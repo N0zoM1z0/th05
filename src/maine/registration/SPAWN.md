@@ -1,4 +1,7 @@
-# Registration glyph creation candidate
+# Registration glyph creation
+
+Now [accepted with the complete adjacent animation function](motion.md).
+The original failed standalone investigation below remains historical evidence.
 
 This complete natural C++ owner targets original MAINE `[0xBD46,0xBE76)`,
 304 bytes: 295 instruction bytes, one original zero at relative295 and an
@@ -68,3 +71,10 @@ declaration. The missing zero remains unexplained. This candidate is parked;
 no alignment-only retry, compiler-register hint, flag matrix, artificial prefix
 or further compilation is proposed. The private native forensic report is
 `.analysis/maine-registration-spawn303-forensic.json`.
+
+The later complete family restores the evidenced place-before-pointer capture,
+using ordinary register-qualified pointer/place locals, and canonical word
+alignment after types. Both 304-byte creation and 758-byte animation, their
+zeros/tables and the complete original fixup stream now pass two fresh direct
+producers with one shared speed-bias negative. The old failed packet is not
+imported; no source padding, body conversion or acceptance transfer is used.

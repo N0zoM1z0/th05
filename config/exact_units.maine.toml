@@ -1125,3 +1125,28 @@ unit = "maine-bgimage-free"
 source = "src/shared/hardware/bgimage_free.cpp"
 find = "hmem_free(bgimage.E);"
 replace = "hmem_free(bgimage.G);"
+
+
+[[units]]
+id = "maine-registration-motion"
+source = "src/maine/registration/motion.cpp"
+module = "th05/r_motion.cpp"
+segment = "REG_MOTION_TEXT"
+wrapper_options = "-zCREG_MOTION_TEXT -zPGROUP_01"
+bindings_source = "probes/units/maine_registration_motion_bindings.asm"
+target_start = 0xbd46
+size = 1062
+functions = 2
+alignment_offsets = []
+padding_bytes = [{ offset = 295, value = 0 }, { offset = 1051, value = 0 }]
+code_data_ranges = [
+    { offset = 296, size = 8, kind = "compiler-switch-table" },
+    { offset = 1052, size = 10, kind = "compiler-switch-table" },
+]
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "maine-registration-motion"
+source = "src/maine/registration/spawn.inl"
+find = "ball->speed.v = (irand() % (4 * 16)) + (4 * 16);"
+replace = "ball->speed.v = (irand() % (4 * 16)) + (4 * 16 + 1);"

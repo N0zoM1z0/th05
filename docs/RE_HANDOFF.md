@@ -7,27 +7,51 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-361 bounded C/C++ CODE/DATA units, 547 complete function occurrences:
-**106,059 authored bytes exact** = 90,436 CODE + 15,623 initialized DATA.
-CODE is 89,614 instruction + 822 compiler-table bytes. Complete compared
-extents total 106,149, including 90 uncredited padding bytes.
+362 bounded C/C++ CODE/DATA units, 549 complete function occurrences:
+**107,119 authored bytes exact** = 91,496 CODE + 15,623 initialized DATA.
+CODE is 90,656 instruction + 840 compiler-table bytes. Complete compared
+extents total 107,211, including 92 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
 | MAIN | 422 | 69,014 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
-| MAINE | 59 | 9,731 | 3,615 |
+| MAINE | 61 | 10,791 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**118,400 bytes**, including MAIN 38,962. The global authored denominator and
+**117,338 bytes**, including MAIN 38,962 and MAINE 38,633. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete C++ CONTINUE score entry at C998..C9A3 adds
+Latest recovery: the complete MAINE registration creation/animation family
+at BD46..C16C adds two C++ functions and 1060 authored CODE bytes: 1042
+instructions plus18 compiler-table bytes. Both zeros are compared without
+credit. Two fresh direct producers match all1062 raw bytes and original
+ordered fixups `[709,534,384,122,114,1034]`; the shared spawn-speed bias64-to65
+negative is rejected. See [source/ABI/receipt](../src/maine/registration/motion.md)
+and `.analysis/unit-replays/maine-registration-motion-c/receipt.json`.
+
+The new updater is ordinary typed C++, preserving cloud fallthrough, byte
+steering, edge bounce, arrival glyph writes, delayed removal and invalid-phase
+stale locals. The previously unaccepted creator now captures place before
+selecting its pointer; ordinary register locals and word alignment recover
+its complete304 bytes. Their genuine adjacent context emits actual OMF CODE
+records0..1024 and1024..1062, restoring the updater's former order failure.
+One common declaration header keeps empty SHARED in its true ungrouped E80
+context. No instruction/fixup/padding output is edited or normalized.
+
+All earlier accepted records and source/header inputs are identical; only
+this new two-function owner was replayed. No tool or behavior test changed,
+no target was decoded again. The registration menu1034 and name-rendering
+functions remain unknown; the real glyph creator/updater do not transfer
+acceptance to those neighbors. Staff updater/renderer remain unchanged and
+unaccepted: this turn's read-only review found no new ABI/type correction.
+
+Previous recovery: the complete C++ CONTINUE score entry at C998..C9A3 adds
 11 instruction bytes and one function. Two fresh producers preserve full
 OMF/MAP/raw and empty fixups; the guard-inversion negative is rejected. No
 TH04 file-loading call or new validation is added. See
