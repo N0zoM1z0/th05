@@ -1,14 +1,66 @@
 # Local storage and handoff cleanup
 
-Private targets, tools, assets, databases and evidence remain ignored. This
-cleanup changes no acceptance, generated progress or compiler inputs of
-accepted units.
+Private originals, tools, assets, databases and evidence remain ignored.
+Cleanup changes no acceptance or compiler inputs of accepted units.
 
-## Current cleanup, 2026-10-28
+## Current cleanup, 2026-11-06
+
+Private audit: `.analysis/cleanup-handoff/2026-11-06/`.
+
+- `accepted-receipts.json`: **367** current C/C++ records resolve to **267**
+  distinct receipt hashes, with no missing receipt. Transitive accepted-parent
+  roots are retained. This is an identity/retention audit, not a cold replay.
+- `selection.json`: 51 terminal raw-false historical producers whose current
+  source inputs differ. Accepted/transitive dependencies, current baselines,
+  raw-equal producers and the new OP ZUNsoft lead are excluded.
+- `diagnostics.tar.xz`: all **2,148** selected files, individually compared
+  against their original SHA-256 before the redundant originals were removed.
+  Archive size **447,744 bytes**, SHA-256
+  `2d5befd3b9ceeff23ed4c615af08028cd6f283a06fb0adba68ac423cf543346f`.
+- `result.json`: original disk allocation 45,785,088 bytes; retained live
+  metadata 7,790,592 bytes; net reclaimed **37,543,936 bytes (35.8 MiB)**.
+- `protected-before.json` / `protected-after.json`: content identities for
+  accepted replay roots, targets, decoded views, calibration/ASM/vendor inputs,
+  installed compiler files and the current leading diagnostics.
+- `retention-validation.json`: all 30,930 protected files are unchanged and all
+  267 required receipt hashes still resolve.
+- `cache-cleanup.json`: about 1.0 MiB of regenerable `scripts/` / `tests/` Python
+  caches removed. Cleanup checks use `PYTHONDONTWRITEBYTECODE=1`.
+- `git-storage.json`: `git repack -Ad` reclaimed another 17,133,568 bytes
+  (16.3 MiB), with refs and HEAD unchanged. Capital `-A` retains unreachable
+  packed objects as loose objects; no prune or history deletion was performed.
+
+These operations reclaimed approximately **53.2 MiB** in total. All four
+incremental plans are empty and the light public consistency check passes.
+No compiler replay, whole test suite or target decoding was run during cleanup.
+
+Archived producer directories keep their unchanged `native-diagnostic.json`
+and an `ARCHIVED.json` pointer. Full CPP/ASM/OMF/MAP/MZ/log/source snapshots
+remain recoverable from the archive; absence of those loose files is intentional.
+Failed aggregate builds can contain accepted scopes, so names such as "failed"
+are never sufficient grounds for deletion. No target, installed tool, accepted
+receipt, shared sibling installation or Ghidra project was removed.
+
+Restore only a needed archived producer, not the whole archive:
+
+```sh
+sha256sum .analysis/cleanup-handoff/2026-11-06/diagnostics.tar.xz
+# Compare the hash above and inspect this path's ARCHIVED.json first.
+tar -xJf .analysis/cleanup-handoff/2026-11-06/diagnostics.tar.xz \
+    .analysis/native-producers/main-boss-defeat-complete-tail-a
+```
+
+Members use original repository-relative paths. Do not overlay an active trial;
+use a fresh diagnostic directory for new work. Once a producer is restored,
+remove its stale `ARCHIVED.json` marker. Historical worktree archives have their
+own restoration instructions below. The active source/next work is in
+[the current handoff](RE_HANDOFF.md), rather than the historical cleanup logs.
+
+## Earlier cleanup, 2026-10-28
 
 The private audit is `.analysis/cleanup-handoff/2026-10-28/`:
 
-- `accepted-receipts.json`: all 328 current C/C++ records resolve to 232 receipt
+- `accepted-receipts.json`: all 328 C/C++ records then current resolve to 232 receipt
   hashes, with no missing receipt. Retained-parent receipt hashes also agree.
   This is an identity inventory, not a cold replay or full receipt re-import.
 - `selection.json` / `result.json`: exact paths and hashes for 24 terminal
@@ -76,4 +128,4 @@ tar -xzf .analysis/cleanup-handoff/worktrees/staff-full-context.tar.gz \
 Old producer commands may mention those retired worktree paths. Normal root
 incremental replay does not require restoring them. The old
 `.analysis/cleanup-current-receipt-guards.json` inventory describes 298 records
-at that historical point; use the 2026-10-28 inventory for the current 328.
+at that historical point; the current inventory is the 2026-11-06 one above.

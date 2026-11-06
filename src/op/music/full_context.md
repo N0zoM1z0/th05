@@ -49,6 +49,15 @@ The source preserves compiler output; the complete helper remains
 unaccepted. Neither a successful copy nor surrounding exact functions can
 promote those 30 bytes.
 
+A later isolated diagnostic compiles the identical natural helper through the
+existing unedited TCC -S / TASM32 recipe. Its complete 30 bytes are identical
+to the retained direct producer, including the two differing XOR encodings.
+It therefore remains unaccepted; no second producer, negative or Music Room
+refresh follows. Actual source/ASM/OMF/MAP/MZ evidence is retained at
+`.analysis/native-producers/op-nopoly-compiler-assembly-a/`. The temporary
+standalone source and binder are removed; canonical Music Room inputs remain
+unchanged. This is a failed C++ compiler recipe, not an ASM ownership decision.
+
 ## Canonical source and affected acceptance
 
 The factor preserves every pre-existing implementation byte. Only the old

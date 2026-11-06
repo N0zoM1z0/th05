@@ -64,7 +64,9 @@ Independent semantic/OMF/input review is retained at
 `.analysis/zun-resident-review/main-natural-review.json`, SHA-256
 `38e43ebe9353838824ea727405e748a0259c2c5e041884c13a0b25b67eda7357`.
 It found no semantic issue and confirms the zero-credit size rejection.
-All 303 public tests and full CI pass with this source present.
+Historical public checks passed with this source present. That old test count
+is not current progress and does not accept the entry; ordinary recovery needs
+only the focused checks described in the current workflow.
 
 A later targeted jump-optimization diagnostic applies the supported `-O-`
 pragma before the entry's tokens, keeping the preceding configuration intact.

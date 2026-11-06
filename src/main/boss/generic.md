@@ -1,4 +1,10 @@
-# TH05 generic boss behavior candidate
+# Generic boss: accepted helpers/DATA, pending defeat/collision
+
+Current status: `main-boss-generic` independently accepts six functions / 352
+CODE bytes; `main-boss-generic-data` accepts the complete 10-byte item-drop
+DATA table. Defeat (414) and player collision (43) remain unaccepted. The
+preparation notes below are historical context; use the current ledgers for
+acceptance.
 
 Natural source adapts pinned nmlgc/ReC98
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`,
@@ -79,8 +85,9 @@ There are no DATA fixups or source-owned BSS. The already accepted stage-owned
 `boss_phase_timed_out` byte begins exactly at `1FC8` and remains external. The
 binder stops its DATA prefix before the entire compiler-owned table, then
 uses only labels in the following foreign BSS context for later DS objects.
-It never duplicates the table or stage flag. DATA remains uncredited pending
-its own validation/ownership acceptance.
+It never duplicates the table or stage flag. This table is now independently
+accepted as `main-boss-generic-data`; that DATA result grants no acceptance to
+the pending defeat/collision CODE.
 
 A natural compiled negative changes the unique
 `boss.phase_state.patterns_seen = 0;` to `boss.phase_state.patterns_seen = 1;`
