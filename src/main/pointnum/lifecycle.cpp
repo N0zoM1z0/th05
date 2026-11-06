@@ -3,11 +3,7 @@
 #include "src/main/pointnum/lifecycle.hpp"
 #pragma codeseg POINTNUM_LIFE_TEXT main_01
 
-extern "C" void near pointnums_init(void)
-{
-    pointnum_white_p = 0;
-    pointnum_yellow_p = 0;
-}
+#include "src/main/pointnum/init.inl"
 
 void near pointnums_invalidate(void)
 {
@@ -26,7 +22,7 @@ void near pointnums_invalidate(void)
     } while(--remaining != 0);
 }
 
-extern "C" void near pointnums_update(void)
+extern "C" void pascal near pointnums_update(void)
 {
     register pointnum_t near *pointnum;
     register unsigned int remaining;

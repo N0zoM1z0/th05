@@ -18,6 +18,12 @@ The first extent gate stopped before a second producer or negative. No further
 intrinsic API, flag, expression or instruction-template trial is supported by
 this result. The native26 bytes remain unknown.
 
+A later single `-G` speed-profile diagnostic, motivated by the documented
+renderer precedent, still emits24 bytes with the same intrinsic setup order.
+It adds no credit and changes no source/header or accepted entry. The frozen
+first producer is `.analysis/native-producers/main-item-splash-init-speed-a/`;
+no second producer, compiled negative or further flag matrix follows.
+
 The native dot helper atE152..E16E is28 bytes and has a real fastcall AX/DX
 interface and incoming ES graphics plane. The new source expresses the ordinary
 row*80 plus byte-column address and pixel mask through a named ES pointer. One

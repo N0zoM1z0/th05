@@ -1,11 +1,12 @@
-# Point-popup lifecycle: semantic recovery, no exact acceptance
+# Point-popup lifecycle
 
-The three complete MAIN functions are init `[E16E,E17A)` (12 bytes),
-invalidate `[E17A,E1A6)` (44), and update `[E1A6,E216)` (112).
-All original ordered MZ fixup lists are empty. Init-relative 11 and
-update-relative 111 are alignment NOPs, with zero potential authored credit.
-No table or initialized DATA belongs to these scopes. The adjacent accepted
-renderer starts at E216 and is excluded.
+The native procedure bodies are init `[E16E,E179)` (11 bytes), invalidate
+`[E17A,E1A6)` (44), and update `[E1A6,E215)` (111). Separate EVEN NOPs at E179
+and E215 complete the old168-byte family extent. All original ordered MZ fixup
+lists are empty; neither NOP has authored credit. No table or initialized DATA
+belongs to these scopes. The accepted renderer starts at E216 and is excluded.
+The initializer now has independent [11-byte C++ acceptance](init.md);
+invalidation, update and both alignment bytes remain unaccepted.
 
 `lifecycle.cpp` recovers ordinary C++ semantics, using the complete 16-byte
 record also maintained in `stage_state_init.hpp`. The 280 records, 281 near
@@ -32,7 +33,8 @@ has a stack local/frame and different allocation and branch merging. The
 strict size gate rejected it before a second positive or compiled negative.
 No padding, ABI retagging, instruction transcription, flag search or ASM
 promotion follows from this failure. The provisional entry is parked outside
-the live exact manifest. All 168 target bytes remain unknown and uncredited.
+the live exact manifest. That failed whole producer grants no acceptance;
+the later independent initializer does not transfer credit to its neighbors.
 
 Private producer: `.analysis/unit-replays/main-pointnum-lifecycle-natural-b/`;
 failed initial binder: `main-pointnum-lifecycle-natural-a/`.
@@ -54,5 +56,13 @@ Report `.analysis/pointnum-lifecycle-semantic-check.json`, SHA-256
 The later standalone `invalidate.cpp` uses a signed count and canonical
 scalar conversions, without a coordinate local. Its complete43-byte output
 passes full-pool semantic checks but remains one byte short of the native44;
-all original168 lifecycle bytes remain unknown. The old184-byte producer and
+invalidation and update remain unknown. The old184-byte producer and
 its model evidence are unchanged. See [actual scalar-source trials](invalidate.md).
+
+The initializer body is now shared literally through `init.inl`. Published
+init/update declarations and definitions use their actual no-argument near
+Pascal interface, with no record-layout change. No old accepted unit consumed
+this header, and the retained184-byte failure/model is historical evidence,
+not a fresh build after this source factoring.
+The new independent [field-domain updater](update.md) emits111 bytes, but its
+raw bytes still differ and it grants no credit. No old semantic model was rerun.

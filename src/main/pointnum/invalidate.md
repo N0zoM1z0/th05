@@ -29,7 +29,8 @@ Every replay stopped at its first complete-size gate, with no second
 positive, compiled negative or receipt. The final 43-byte source is maintained
 in `invalidate.cpp`; its proposal is parked outside the live exact manifest.
 The original 44 bytes remain entirely unknown and uncredited. Init/update
-and their two alignment NOPs remain outside this source and unaccepted.
+and both alignment NOPs remain outside this source; init now has its own
+independent [11-byte acceptance](init.md), while update remains unaccepted.
 
 Actual ordinary CRC-valid OMF, complete MAP extents, source snapshots and
 compiler argv were reread for all three attempts. Private first producers

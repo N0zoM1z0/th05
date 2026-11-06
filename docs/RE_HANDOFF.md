@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-348 bounded C/C++ CODE/DATA units, 532 complete function occurrences:
-**104,265 authored bytes exact** = 88,730 CODE + 15,535 initialized DATA.
-CODE is 87,922 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,353, including 88 uncredited padding bytes.
+349 bounded C/C++ CODE/DATA units, 533 complete function occurrences:
+**104,276 authored bytes exact** = 88,741 CODE + 15,535 initialized DATA.
+CODE is 87,933 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,364, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 409 | 67,408 | 3,253 |
+| MAIN | 410 | 67,419 | 3,253 |
 | OP | 64 | 11,319 | 8,667 |
 | MAINE | 58 | 9,681 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,25 +22,28 @@ extents total 104,353, including 88 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,754 bytes**, including MAIN 42,216. The global authored denominator and
+**121,743 bytes**, including MAIN 42,205. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery:the complete24-byte `randring_fill()` in MAIN, with
+Latest exact recovery:the complete11-byte `pointnums_init()` in MAIN, with
 no DATA, BSS, table or padding credit:
 
 | Unit | Native load scope | Bytes | Receipt under `.analysis/unit-replays/` |
 | --- | --- | ---: | --- |
-| `main-randring-fill` | `[C6E8,C700)` | 24 | `main-randring-fill-exact-b/receipt.json` |
+| `main-pointnums-init` | `[E16E,E179)` | 11 | `main-pointnums-init-exact/receipt.json` |
 
-The maintained TH04 donor's descending loop becomes the original SI traversal
-through an ordinary register local. IRand keeps its real far Pascal integer
-return, with truncation only at each byte store; both cursor bytes are cleared.
-Two deterministic builds, valid OMF, all raw bytes and original fixup `[7]`
-pass, and the compiled cursor-reset mutation is rejected. See
-[source/ABI review](../src/main/math/randring_fill.md). The old short-prefix
-survey omitted this routine; it did not establish a language or ownership result.
+The procedure ends at RET E178; native E179 is a separate EVEN NOP after ENDP,
+outside the complete11-byte compiler contribution. It remains unknown and
+uncredited, with no masking or padding copy. Two deterministic builds, valid
+OMF, all raw bytes/ordered fixups and the compiled white-cursor mutation pass.
+The canonical body is shared with the retained family, whose init/update
+prototypes now preserve the published near Pascal interface. No old accepted
+unit consumed that header. See [boundary/ABI review](../src/main/pointnum/init.md).
+
+The previous24-byte ring fill remains accepted with its original fixup `[7]`;
+see [source/ABI review](../src/main/math/randring_fill.md).
 
 The previous three18-byte sound extension/mode banks remain accepted with54
 initialized C DATA bytes. Their compact bank and cross-field mode3 read remain
@@ -101,6 +104,13 @@ under `.analysis/native-producers/`; no signature or output is patched.
 | B4 ball updater (273 bytes) | Natural 278; eager-delta 290 and cleanup-label 278 alternatives fail. | [B4](../src/main/boss/mai_yuki/b4ball_render.md) |
 
 Generic boss collision (43) and Shinki particle renderer (159) also remain inexact.
+The independent point-popup updater is reduced from126 to114 and then111
+bytes with natural field assignment, signed countdown and byte/unsigned
+comparison domains. Its size now agrees with the complete111-byte native
+procedure body, but raw bytes/register allocation and merged tails differ.
+It remains outside acceptance; see [updater](../src/main/pointnum/update.md).
+The splash memset initializer still emits24 versus26 under one new `-G`
+diagnostic. It grants no credit, and that same profile need not be repeated.
 The newly routed spark updater `[E086,E0D2)` has a complete ordinary C++
 candidate:72 versus76, with merged remove stores and a Y copy. A named Y plus
 early-continue loop emits84; the72-byte source is restored, and its outside
@@ -137,14 +147,14 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans are empty after the focused ring-fill
-replay. No whole accepted-set replay was run. Spark proposals stay private.
+The MAIN/OP/MAINE incremental plans are empty after the focused point-init
+replay. No whole accepted-set replay was run. Update/Spark proposals stay private.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
 backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-twenty records/nineteen receipts; all accepted evidence stays live.
+twenty-one records/twenty receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

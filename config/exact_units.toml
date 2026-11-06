@@ -4713,3 +4713,22 @@ unit = "main-randring-fill"
 source = "src/main/math/randring_fill.cpp"
 find = "randring_p = 0;"
 replace = "randring_p = 1;"
+
+[[units]]
+id = "main-pointnums-init"
+source = "src/main/pointnum/init.cpp"
+module = "th05/pn_init.cpp"
+segment = "POINTNUM_LIFE_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/pointnum_init_bindings.asm"
+target_start = 0xe16e
+size = 11
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "main-pointnums-init"
+source = "src/main/pointnum/init.inl"
+find = "pointnum_white_p = 0;"
+replace = "pointnum_white_p = 1;"

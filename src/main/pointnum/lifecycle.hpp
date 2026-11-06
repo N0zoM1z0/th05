@@ -27,9 +27,9 @@ extern pointnum_t near *pointnums_alive[POINTNUM_COUNT + 1];
 extern pointnum_t near *pointnum_first_yellow_alive;
 
 #pragma codeseg POINTNUM_LIFE_TEXT main_01
-extern "C" void near pointnums_init(void);
+extern "C" void pascal near pointnums_init(void);
 void near pointnums_invalidate(void);
-extern "C" void near pointnums_update(void);
+extern "C" void pascal near pointnums_update(void);
 
 typedef char pointnum_record_is_16[(sizeof(pointnum_t) == 16) ? 1 : -1];
 typedef char pointnum_current_at_2[(offsetof(pointnum_t, center_cur) == 2) ? 1 : -1];
