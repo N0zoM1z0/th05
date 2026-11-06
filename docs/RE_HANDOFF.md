@@ -7,41 +7,47 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-341 bounded C/C++ CODE/DATA units, 528 complete function occurrences:
-**104,046 authored bytes exact** = 88,565 CODE + 15,481 initialized DATA.
-CODE is 87,757 instruction + 808 compiler-table bytes. Complete compared
-extents total 104,134, including 88 uncredited padding bytes.
+344 bounded C/C++ CODE/DATA units, 531 complete function occurrences:
+**104,187 authored bytes exact** = 88,706 CODE + 15,481 initialized DATA.
+CODE is 87,898 instruction + 808 compiler-table bytes. Complete compared
+extents total 104,275, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 407 | 67,337 | 3,235 |
-| OP | 63 | 11,272 | 8,649 |
-| MAINE | 57 | 9,634 | 3,597 |
+| MAIN | 408 | 67,384 | 3,235 |
+| OP | 64 | 11,319 | 8,649 |
+| MAINE | 58 | 9,681 | 3,597 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**121,973 bytes**, including MAIN 42,305. The global authored denominator and
+**121,832 bytes**, including MAIN 42,258. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery:63 instruction bytes across three complete occurrences
-of the shared FAR Pascal `frame_delay(int)`, with no DATA or padding credit:
+Latest exact recovery:141 instruction bytes across three complete occurrences
+of the shared FAR cdecl MMD resident detector, with no DATA or padding credit:
 
 | Unit | Native load scope | Bytes | Receipt under `.analysis/unit-replays/` |
 | --- | --- | ---: | --- |
-| `main-frame-delay` | `[15102,15117)` | 21 | `main-frame-delay-exact/receipt.json` |
-| `op-frame-delay` | `[E15E,E173)` | 21 | `op-frame-delay-exact/receipt.json` |
-| `maine-frame-delay` | `[F288,F29D)` | 21 | `maine-frame-delay-exact/receipt.json` |
+| `main-mmd-resident` | `[14BA4,14BD3)` | 47 | `main-mmd-resident-exact/receipt.json` |
+| `op-mmd-resident` | `[D350,D37F)` | 47 | `op-mmd-resident-exact/receipt.json` |
+| `maine-mmd-resident` | `[E84E,E87D)` | 47 | `maine-mmd-resident-exact/receipt.json` |
 
-The signed argument retains its unsigned-word wait semantics. DOS `peek`
-transports it from the genuine SS:SP+4 boundary; the volatile counter comparison
-is C++. The old survey's22nd byte is outside the function and uncredited.
-Each artifact passes its own two deterministic builds, valid OMF, complete raw
-bytes/ordered fixups and compiled reset-to-one mutation. No old function or
-shared header changed. See [source/ABI review](../src/shared/hardware/frame_delay.md).
+The type-checked five-byte ISR signature header and real interrupt vector61h
+are read through a typed ES pointer. Conditions, state writes and both returns
+are ordinary C++; the reference LES/forced RETF are not transcribed. A named
+far-pointer trial emitted60; direct typed field accesses recover47 naturally.
+Each artifact passes two deterministic builds, valid OMF, all raw bytes/order
+and its compiled interrupt-selection mutation. See [resident review](../src/shared/sound/resident.md).
+The adjacent PMD candidate emits51 versus46, with ordinary DX result allocation;
+`register` changes nothing. It stays outside acceptance.
+
+The previous shared `frame_delay` remains accepted in all three programs,
+with63 instruction bytes and no padding credit. Its [ABI review](../src/shared/hardware/frame_delay.md)
+records the genuine SS:SP+4 word transport and unsigned comparison.
 
 The previous dialog resource bank133 and far script pointer4 remain accepted.
 Their [resource review](../src/main/dialog/resources.md) records all17 semantic
@@ -114,7 +120,7 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN/OP/MAINE incremental plans are empty after the three focused VSync
+The MAIN/OP/MAINE incremental plans are empty after the three focused MMD
 replays. No whole accepted-set replay was run.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
@@ -122,6 +128,6 @@ backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
 the prior cleanup's 328-record/232-receipt inventory. Subsequent recoveries add
-thirteen records/twelve receipts; all accepted evidence stays live.
+sixteen records/fifteen receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

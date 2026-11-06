@@ -127,6 +127,18 @@ is no native evidence that TCC would avoid storage or preserve the original
 word-width test. No further quotient variant is proposed; both collision
 functions remain parked and unaccepted.
 
+Later standalone laser diagnostics test ordinary C++ ways to retain a single
+quotient without physical register arithmetic. A readonly inline clamp expands
+the division twice and emits233 bytes. Assigning the inline parameter once
+emits221, with a stack temporary; an ordinary `register const int` quotient
+also emits221 with different register allocation. All fail against210 and
+stop after one producer, without supplementary negatives or behavior models.
+The original218-byte immutable-quotient source is restored byte for byte.
+Frozen inputs are `main-shot-laser-inline-a`,
+`main-shot-laser-inline-assignment-a` and
+`main-shot-laser-register-quotient-a` under `.analysis/native-producers/`.
+No accepted header, source or unit changed.
+
 `main-shots-update-a` generated 431 complete bytes instead of 408. Its typed
 point receiver increased the frame from six to ten bytes and spilled both
 DX:AX returns. The first clipping/cache region grew by 13 bytes and the second

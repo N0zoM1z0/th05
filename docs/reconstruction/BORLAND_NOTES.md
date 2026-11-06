@@ -195,6 +195,17 @@ compiled HP-threshold mutation. Prefix111 already has an owner and is not
 counted twice. This is evidence for this source-definition context; unrelated
 far calls and source cohorts still require their own actual producers.
 
+## Typed IVT reads can retain the native far-pointer access
+
+MMD resident detection now has independent47-byte acceptance in MAIN, OP and
+MAINE. A named far-pointer local emitted60 bytes with a stack spill and frame.
+The maintained TH04 typed signature-access form instead lets TC4J retain the
+real IVT pointer in ES:BX; every field test and both FAR returns are ordinary
+C++. Only ES=0 is an explicit hardware boundary. No handwritten LES, forced
+return register or RETF is needed. This observation is specific to those
+actual producers; adjacent PMD's ordinary result still lives in DX and emits51
+instead of46. See [resident detection](../../src/shared/sound/resident.md).
+
 ## Proven same-CS declarations retain real far interfaces
 
 `main-stage-runtime-init-a` independently verifies the natural 174-byte TH05
