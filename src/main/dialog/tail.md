@@ -41,5 +41,13 @@ with182 authored instructions and one checked relaxation NOP. It preserves
 the real far Pascal GameExecl API and states its independently proven same-CS
 context, while binding later foreign helpers to their actual native addresses.
 See [complete dialog animation](animate.md). The original315 accepted bytes,
-source/header and old mixed results above remain unchanged; the122-byte exit
-switch owner is still unaccepted and receives no transferred credit.
+source/header and old mixed results above remain unchanged.
+
+## Later complete exit acceptance
+
+The literal-body standalone [exit owner](exit.md) now reproduces all122 bytes,
+including the natural compiler alignment zero and eight switch-table bytes.
+`main-dialog-exit-a` passes two producers, complete raw bytes, original ordered
+fixups and its shared compiled image-index mutation. It adds121 authored bytes;
+the zero has no authored credit. The older combined tail remains inexact and
+unchanged, and no acceptance is transferred from its other functions.

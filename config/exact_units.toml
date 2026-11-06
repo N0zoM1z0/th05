@@ -4518,3 +4518,24 @@ unit = "main-bullets-render"
 source = "src/main/bullet/render.cpp"
 find = "patnum = BR_CLOUD_BLUE - 1;"
 replace = "patnum = BR_CLOUD_BLUE - 2;"
+
+[[units]]
+id = "main-dialog-exit"
+source = "src/main/dialog/exit.cpp"
+module = "th05/dlg_exit.cpp"
+segment = "DIALOG_TAIL_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x14007
+size = 122
+alignment_offsets = []
+padding_bytes = [{ offset = 113, value = 0 }]
+code_data_ranges = [{ offset = 114, size = 8, kind = "compiler-switch-table" }]
+functions = 1
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/dialog_exit_bindings.asm"
+
+[[controls]]
+unit = "main-dialog-exit"
+source = "src/main/dialog/exit.cpp"
+find = "BOMB_BG_REIMU_FN, 0"
+replace = "BOMB_BG_REIMU_FN, 1"

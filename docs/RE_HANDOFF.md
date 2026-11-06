@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-332 bounded C/C++ CODE/DATA units, 521 complete function occurrences:
-**103,626 authored bytes exact** = 88,289 CODE + 15,337 initialized DATA.
-CODE is 87,489 instruction + 800 compiler-table bytes. Complete compared
-extents total 103,713, including 87 uncredited padding bytes.
+333 bounded C/C++ CODE/DATA units, 522 complete function occurrences:
+**103,747 authored bytes exact** = 88,410 CODE + 15,337 initialized DATA.
+CODE is 87,602 instruction + 808 compiler-table bytes. Complete compared
+extents total 103,835, including 88 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 402 | 67,103 | 3,091 |
+| MAIN | 403 | 67,224 | 3,091 |
 | OP | 62 | 11,251 | 8,649 |
 | MAINE | 56 | 9,613 | 3,597 |
 | ZUN | 1 | 322 | 0 |
@@ -22,20 +22,21 @@ extents total 103,713, including 87 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**122,394 bytes**, including MAIN 42,684. The global authored denominator and
+**122,272 bytes**, including MAIN 42,562. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery: three complete C++ renderers, 649 instruction bytes,
-no tables, padding or owned DATA/BSS. Each passes two deterministic producers,
-full raw bytes, original ordered fixups and its shared compiled control:
-
-| Unit | MAIN scope | Bytes | Receipt under `.analysis/unit-replays/` |
-| --- | --- | ---: | --- |
-| `main-shinki-custombullets-render` | `[12FF5,13066)` | 113 | `main-shinki-custombullets-render-a/receipt.json` |
-| `main-cheetos-render` | `[12F2B,12FF5)` | 202 | `main-cheetos-render-a/receipt.json` |
-| `main-bullets-render` | `[13185,132D3)` | 334 | `main-bullets-render-b/receipt.json` |
+Latest exact recovery: complete `dialog_exit()`, MAIN `[14007,14081)`,122
+compared bytes/121 authored:113 instructions, eight compiler-table bytes and
+one uncredited zero. The literal maintained body in an independent C++
+contribution naturally restores the switch alignment that the old combined
+tail missed. No accepted tail source/header changed. Two deterministic builds,
+full raw bytes, original fixups `[108,50,23]` and the shared compiled image-index
+mutation pass. Receipt:
+`.analysis/unit-replays/main-dialog-exit-a/receipt.json`, SHA-256
+`e03acb44c4d7ba10fdea9f72bb75711e02502046e981019bdf39fbec248638e9`.
+See [exit source/ABI review](../src/main/dialog/exit.md).
 
 The Cheeto renderer established documented `-G` speed generation as the natural
 source context for the original PUSH BP/MOV BP,SP/SUB SP prologue. This also
@@ -45,9 +46,14 @@ interfaces remain unchanged. [Compiler notes](reconstruction/BORLAND_NOTES.md)
 and each source's adjacent Markdown record complete scopes, ABI and receipt
 hashes. The previous five explosion-creation functions remain accepted.
 
-A separate Alice animation-frame helper trial did not expand inline; it
-produced an inexact 543-byte combined contribution. The baseline source was
-restored exactly; no new Alice credit is claimed. Defeat/collision is unchanged.
+Alice's independent callback trials avoid compiling the accepted puppet owner.
+Ordinary register declarations restore the native pattern/left allocation;
+the joined byte-frame version still emits146 because of a six-byte store/load,
+and a simple inline quarter-frame helper emits148 with duplicated division.
+Both failed first producers are retained, experimental files removed and
+baseline source unchanged. The earlier conditional helper's543-byte combined
+failure is historical. [Details](../src/main/boss/alice/foreground.md).
+No new Alice credit is claimed; defeat/collision is unchanged.
 
 ## Useful next work
 
@@ -87,14 +93,14 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN incremental plan is empty after the three focused renderer replays.
+The MAIN incremental plan is empty after the focused dialog-exit replay.
 No whole accepted-set replay was run. Other artifact inputs are unchanged.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
 backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
-the prior cleanup's 328-record/232-receipt inventory. Explosion creation and
-the three renderers add four records/receipts; all accepted evidence stays live.
+the prior cleanup's 328-record/232-receipt inventory. Explosion creation,
+three renderers and dialog exit add five records/receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.

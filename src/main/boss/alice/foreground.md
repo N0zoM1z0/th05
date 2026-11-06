@@ -71,3 +71,14 @@ unaccepted callback. `main-alice-puppets-whole-a` then passed two fresh complete
 381-byte producers, raw bytes, original ordered fixups and the own beam-color
 9-to-10 negative control. The root accepted only these 381 bytes; the separate
 150-byte callback candidate receives no credit.
+
+Two later independent callback trials retain the complete140-byte target scope
+without recompiling the accepted puppet owner. A joined byte-frame local with
+an attack bypass emits146: ordinary pattern/left register declarations restore
+the native allocation, but a six-byte byte-local store/reload remains at the
+join. A simple inline quarter-frame helper emits148, retaining the duplicated
+divide. Both stop after one diagnostic producer and grant no credit. Their
+inputs are retained under `.analysis/native-producers/main-alice-foreground-`
+`{joined-frame,inline-quarter}-a/`. Experimental standalone files were removed;
+the baseline source is unchanged. The earlier helper containing conditional
+returns also remains failed because this compiler did not expand it inline.
