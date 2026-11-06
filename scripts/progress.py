@@ -405,7 +405,7 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
 
 
 def render_svg(summary: dict) -> str:
-    """TH04 card styling, with byte scales rather than unreviewed percentages."""
+    """Use the TH04 card layout while retaining TH05's accepted-byte measures."""
     scopes = summary.get("artifacts", {"main": summary})
     display = (("op", "OP.EXE"), ("main", "MAIN.EXE"),
                ("maine", "MAINE.EXE"), ("zun", "ZUN.COM"))
@@ -419,6 +419,9 @@ def render_svg(summary: dict) -> str:
         return (f'<rect x="{x}" y="{y}" width="282" height="12" rx="4" fill="#353b52"/>\n  '
                 f'<rect x="{x}" y="{y}" width="{width:.2f}" height="12" fill="{color}"/>')
 
+    primary = 'fill="#f4f4f5" font-family="sans-serif"'
+    secondary = 'fill="#c8cad2" font-family="sans-serif"'
+    mono = 'fill="#c8cad2" font-family="monospace"'
     rows = []
     for index, (name, label) in enumerate(display):
         scope = scopes.get(name, {})
@@ -427,12 +430,12 @@ def render_svg(summary: dict) -> str:
         y = 118 + index * 62
         functions = scope.get("functions", 0)
         function_label = "function" if functions == 1 else "functions"
-        rows.append(f'''<text x="24" y="{y + 10}" font-size="14" font-weight="600">{label}</text>
-  <text x="24" y="{y + 30}" fill="#c8cad2" font-family="monospace" font-size="11">{functions} {function_label}</text>
+        rows.append(f'''<text x="24" y="{y + 10}" {primary} font-size="14" font-weight="600">{label}</text>
+  <text x="24" y="{y + 30}" {mono} font-size="11">{functions} {function_label}</text>
   {bar(154, y + 3, code, code_max, "#9b6de3")}
   {bar(476, y + 3, data, data_max, "#55c7a6")}
-  <text x="154" y="{y + 32}" fill="#c8cad2" font-family="monospace" font-size="11">{code:,} bytes exact</text>
-  <text x="476" y="{y + 32}" fill="#c8cad2" font-family="monospace" font-size="11">{data:,} bytes exact</text>''')
+  <text x="154" y="{y + 32}" {mono} font-size="11">{code:,} bytes exact</text>
+  <text x="476" y="{y + 32}" {mono} font-size="11">{data:,} bytes exact</text>''')
     artifact_rows = "\n  ".join(rows)
     instructions = summary['instruction_bytes']
     tables = summary.get('code_data_bytes', 0)
@@ -447,19 +450,18 @@ def render_svg(summary: dict) -> str:
   <title id="title">TH05 reconstruction progress by artifact</title>
   <desc id="desc">Accepted bounded C/C++ source only: {summary['functions']} functions, {code} authored code bytes ({instructions} instruction and {tables} compiler switch-table bytes), {data} initialized DATA bytes. {padding} padding bytes earn no credit. Bars compare byte counts across artifacts on the indicated column scales, not completion percentages. Separately reviewed ASM: {asm} authored bytes. Global authored denominator under review; goal 98 percent.</desc>
   <rect width="788" height="440" rx="8" fill="#1f2335"/>
-  <g fill="#f4f4f5" font-family="sans-serif">
-  <text x="24" y="31" font-size="18" font-weight="600">TH05 reconstruction progress</text>
-  <text x="24" y="52" fill="#c8cad2" font-size="12">Accepted C/C++ source · column scales compare bytes across artifacts</text>
-  <text x="154" y="83" font-size="13" font-weight="600">Authored CODE</text>
-  <text x="476" y="83" font-size="13" font-weight="600">Initialized DATA</text>
-  <text x="154" y="100" fill="#c8cad2" font-size="11">Instructions + compiler tables · scale 0–{code_max:,} B</text>
-  <text x="476" y="100" fill="#c8cad2" font-size="11">Semantic data · scale 0–{data_max:,} B</text>
+  <text x="24" y="31" {primary} font-size="18" font-weight="600">TH05 reconstruction progress</text>
+  <text x="24" y="52" {secondary} font-size="12">Accepted C/C++ source · column scales compare bytes across artifacts</text>
+  <text x="154" y="83" {primary} font-size="13" font-weight="600">Authored CODE</text>
+  <text x="476" y="83" {primary} font-size="13" font-weight="600">Initialized DATA</text>
+  <text x="154" y="100" {secondary} font-size="11">Instructions + compiler tables · scale 0–{code_max:,} B</text>
+  <text x="476" y="100" {secondary} font-size="11">Semantic data · scale 0–{data_max:,} B</text>
   {artifact_rows}
   <path d="M24 366 H764" stroke="#4b526d"/>
-  <text x="24" y="392" font-size="13" font-weight="600">{total:,} C/C++ bytes exact · {summary['functions']} functions</text>
-  <text x="764" y="392" fill="#c8cad2" text-anchor="end" font-family="monospace" font-size="12">Reviewed ASM: {asm:,} B</text>
-  <text x="24" y="418" fill="#c8cad2" font-size="11">Goal 98% authored bytes exact · global denominator under review · no global percentage yet</text>
-  </g>
+  <text x="24" y="392" {primary} font-size="13" font-weight="600">Accepted authored C/C++ bytes only</text>
+  <text x="764" y="392" {mono} text-anchor="end" font-size="12">{total:,} B · {summary['functions']} functions</text>
+  <text x="24" y="413" {secondary} font-size="11">Reviewed ASM: {asm:,} B · padding earns no credit</text>
+  <text x="764" y="413" {secondary} text-anchor="end" font-size="11">Goal 98% · global authored-byte denominator: n/a</text>
 </svg>
 '''
 

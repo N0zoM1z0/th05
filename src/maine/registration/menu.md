@@ -1,0 +1,53 @@
+# Registration menu: raw-exact C++, ordered-inexact
+
+The complete original MAINE `C1DD..C5E7` function is 1034 instruction bytes /
+341 instructions, with no padding, tables, DATA or BSS. All direct branches
+and the terminal RET are reviewed in the retained decoded target. CS is A54 /
+GROUP_01 and DS 1011. This menu remains outside the live exact manifest and
+receives zero authored credit.
+
+`menu.inl` restores the full ordinary C++ menu using maintained TH04's
+registration menu structure and the real TH05 behavior. It loads all four
+characters' score panels, applies Turbo/Extra eligibility, prepares both video
+pages, records the original clear flag and runs the 3x17 gaiji keyboard. It
+preserves held-key repeat, wrapped keyboard coordinates, glyphball creation,
+current/preceding-ball removal, forced Enter selection at the last slot,
+confirmation through the commit/wait helper and save-without-name acknowledgement.
+The current name cursor is not spuriously reset. The clear test reads only the
+real `score_last.continues_used` byte in the complete 128-byte Resident union.
+The 96-byte Score (92-byte payload) and 28-byte Glyphball / nine-slot 252-byte
+pool types are unchanged.
+All strings, fonts, images, score sections and state remain foreign.
+
+The first CPP object links after correcting the actual cdecl `_super_free`
+name and the compiler-truncated warning-array identifier. Reassembly/relinking
+reuses that unchanged object after source/header identity checks; it is not a
+second compilation. The 1034-byte shape still differs in two exit/lock blocks.
+An ordinary zero-input `if`, plus separate complete confirmation actions for
+Enter and Cancel, restores the native common-tail lowering. Producer d matches
+all 1034 raw bytes. Factoring its body into the canonical `.inl` reconstructs
+that saved CPP file byte-for-byte; the declaration header is also unchanged.
+There is no physical-register algorithm, artificial barrier or copied opcode.
+
+Original relocation order is a 24-site descending run `[748,...,29]`, followed
+by `[1028,1021,1016,1011,1006,919,764]`. Standalone TCC instead puts 30 sites in
+its first descending run and 1028 last. The raw pass does not satisfy the
+original ordered oracle. No second positive or compiled negative is run for
+this known order failure; it is not accepted through normalization or ASM.
+
+One genuine seven-function context, beginning with the adjacent 26-byte places
+wrapper and including the original alphabet/frame/creation/animation/commit
+bodies before the menu, also fails. It emits 2323 against 2324, omitting the
+creator's original zero at family offset 410. Later calls/table addresses drift,
+and the original full relocation partition is not restored. No padding, fake
+prefix, profile sweep or output edit follows. That failed context is preserved
+privately, avoiding duplicate maintained bodies or needless source-sensitive
+replays of the accepted neighbors. Their existing records remain unchanged.
+
+Evidence: `.analysis/native-producers/maine-registration-menu-d/` (raw-exact,
+order-false), `maine-registration-full-a/` (original compiled object/inputs),
+`maine-registration-full-link-c/` (corrected binder, unchanged object), and
+`.analysis/registration-full-context-review.json`. Early a/link-b/c menu
+diagnostics remain separate failures. Future work needs a genuine broader
+producer/table context; replaying these same failed shapes adds no evidence.
+Only the independently [accepted places wrapper](places.md) receives new credit.

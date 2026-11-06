@@ -7,27 +7,56 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-362 bounded C/C++ CODE/DATA units, 549 complete function occurrences:
-**107,119 authored bytes exact** = 91,496 CODE + 15,623 initialized DATA.
-CODE is 90,656 instruction + 840 compiler-table bytes. Complete compared
-extents total 107,211, including 92 uncredited padding bytes.
+363 bounded C/C++ CODE/DATA units, 550 complete function occurrences:
+**107,145 authored bytes exact** = 91,522 CODE + 15,623 initialized DATA.
+CODE is 90,682 instruction + 840 compiler-table bytes. Complete compared
+extents total 107,237, including 92 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
 | MAIN | 422 | 69,014 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
-| MAINE | 61 | 10,791 | 3,615 |
+| MAINE | 62 | 10,817 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
 Separate reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,946 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**117,338 bytes**, including MAIN 38,962 and MAINE 38,633. The global authored denominator and
+**117,312 bytes**, including MAIN 38,962 and MAINE 38,607. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the complete MAINE registration creation/animation family
+Latest recovery: MAINE's complete places_put wrapper at BCD3..BCED adds 26
+C++ instruction bytes and one function. Two fresh direct producers preserve
+full OMF/MAP/raw and empty fixups; the five-to-four-place negative is rejected.
+The two-word row renderer at BBEF remains foreign. See
+[source/ABI/receipt](../src/maine/registration/places.md) and
+`.analysis/unit-replays/maine-registration-places-a/receipt.json`.
+
+The new 1034-byte registration menu C1DD..C5E7 is raw-exact in one real producer,
+but original 31-site relocation order differs. It remains unaccepted, outside
+the manifest, with zero credit. Separate Enter/Cancel confirmation actions
+and an ordinary zero-input if recover the original common-tail lowering.
+The full menu uses canonical Resident (128), Score (96) and Glyphball (28), preserving
+the original input repeat, ball removal/wait, clear-byte test and save paths.
+See [source/ABI/diagnostics](../src/maine/registration/menu.md).
+
+A genuine seven-function 2324-byte context from the places wrapper through the
+menu emits 2323, missing the creator's zero at relative 410 and still failing
+the full relocation partition. Its real source/object inputs are retained
+privately; no padding, fake prefix, flag matrix or repeated negative is added.
+All prior accepted records/source/header identities remain unchanged and no
+old owner is replayed. Future menu work needs new genuine producer/table
+context, not another unchanged standalone or seven-function replay.
+
+The SVG now also matches TH04's explicit typography and footer layout: summary
+label at left, accepted counts at right, and separate small-print ASM/denominator
+notes below. CODE/DATA scales and zero-padding-credit accounting are unchanged;
+TH05 has no complete candidate census or global authored denominator. Only the
+existing SVG renderer tests and light source/configuration checks are needed.
+
+Previous recovery: the complete MAINE registration creation/animation family
 at BD46..C16C adds two C++ functions and 1060 authored CODE bytes: 1042
 instructions plus18 compiler-table bytes. Both zeros are compared without
 credit. Two fresh direct producers match all1062 raw bytes and original

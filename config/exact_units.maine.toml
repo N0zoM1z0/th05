@@ -1150,3 +1150,23 @@ unit = "maine-registration-motion"
 source = "src/maine/registration/spawn.inl"
 find = "ball->speed.v = (irand() % (4 * 16)) + (4 * 16);"
 replace = "ball->speed.v = (irand() % (4 * 16)) + (4 * 16 + 1);"
+
+
+[[units]]
+id = "maine-registration-places"
+source = "src/maine/registration/places.cpp"
+module = "th05/r_places.cpp"
+segment = "REG_PLACES_TEXT"
+wrapper_options = "-zCREG_PLACES_TEXT -zPGROUP_01"
+bindings_source = "probes/units/maine_registration_places_bindings.asm"
+target_start = 0xbcd3
+size = 26
+functions = 1
+alignment_offsets = []
+origin = "compiler-generated-cxx"
+
+[[controls]]
+unit = "maine-registration-places"
+source = "src/maine/registration/places.inl"
+find = "place < SCOREDAT_PLACES;"
+replace = "place < (SCOREDAT_PLACES - 1);"

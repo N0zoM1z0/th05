@@ -2,32 +2,18 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "19223f798f25482d0025f71ee794e748ba3a05278db0ff9b908c11fab04e1b05",
+  "replay_receipt_sha256": "2cb43901fe3dd7fee72f1635e74b44b4aceb68d5dff9f6c625cc1db7c7260bc5",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 48454,
-    "candidate_start": 48454,
-    "size": 1062,
-    "target_sha256": "3ac9643a542ccb702245ef74b0d3c3fa753659d953366ab643cc01cb2380efe9",
-    "candidate_sha256": "1b09ae704839953e1d9b754ecf0aa94f4bfc17e10aedcc6b411064c3502a3ef2",
+    "target_start": 48339,
+    "candidate_start": 48339,
+    "size": 26,
+    "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+    "candidate_sha256": "4e9a5601cf377786b888729f55d889cf5e6776ae51d062332615181e4ee6088b",
     "raw_exact": false,
-    "target_fixups": [
-      709,
-      534,
-      384,
-      122,
-      114,
-      1034
-    ],
-    "candidate_fixups": [
-      709,
-      534,
-      384,
-      122,
-      114,
-      1034
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -27344,6 +27330,307 @@
           "-ml",
           "-DBINARY='E'",
           "th05/r_motion.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-registration-places",
+      "entry_sha256": "89b93d05784df552553c9c641a9760db3430fbcc34e3647ceb6f8ea93acf1203",
+      "result": {
+        "id": "maine-registration-places",
+        "entry_sha256": "89b93d05784df552553c9c641a9760db3430fbcc34e3647ceb6f8ea93acf1203",
+        "rounds": [
+          {
+            "target_start": 48339,
+            "candidate_start": 48339,
+            "size": 26,
+            "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+            "candidate_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48339,
+            "candidate_start": 48339,
+            "size": 26,
+            "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+            "candidate_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "60bce9386bf596d073f8f76e418bdcec252cae0f55e17a274079663047248354",
+            "dependency_timestamp_normalized_sha256": "d0dc6fba62230fa5431705651eaa26b5f301292df6293bd01cfbafe3efae7a0b",
+            "module_name": "th05/r_places.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_places.cpp",
+              "src/maine/registration/places.cpp",
+              "src/maine/registration/places.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/places.inl"
+            ]
+          },
+          {
+            "sha256": "b1e664c554b441152e3021078adb694643f0f583e292a178654bf716ff227b41",
+            "dependency_timestamp_normalized_sha256": "d0dc6fba62230fa5431705651eaa26b5f301292df6293bd01cfbafe3efae7a0b",
+            "module_name": "th05/r_places.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/r_places.cpp",
+              "src/maine/registration/places.cpp",
+              "src/maine/registration/places.hpp",
+              "src/op/hiscore/view.hpp",
+              "src/op/main/menu.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/op/main/strings.hpp",
+              "src/maine/registration/places.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_places.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/r_places.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_registration_places_bindings.asm",
+            "sha256": "5679e60fd6331a551ac3fac0ed010876e1f0e88f04a88f2fcda7c416f316d638"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/registration/places.cpp",
+            "sha256": "fef045a7b7a9c069962fc8d8c89919422f1c6337a2ad6f9f1c642c223b935472"
+          },
+          {
+            "path": "src/maine/registration/places.hpp",
+            "sha256": "08d0ed09cc3cf8464aef13e1db52783cba491dd0190341f3abe8188f1fcd9260"
+          },
+          {
+            "path": "src/maine/registration/places.inl",
+            "sha256": "b1d1cffd9a0549fbac3cb1d6937ff2a24cccc9b066ba8394b2e2c68da9b418b5"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_registration_places_bindings.asm",
+          "sha256": "5679e60fd6331a551ac3fac0ed010876e1f0e88f04a88f2fcda7c416f316d638"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/maine/registration/places.cpp",
+          "sha256": "fef045a7b7a9c069962fc8d8c89919422f1c6337a2ad6f9f1c642c223b935472"
+        },
+        {
+          "path": "src/maine/registration/places.hpp",
+          "sha256": "08d0ed09cc3cf8464aef13e1db52783cba491dd0190341f3abe8188f1fcd9260"
+        },
+        {
+          "path": "src/maine/registration/places.inl",
+          "sha256": "b1d1cffd9a0549fbac3cb1d6937ff2a24cccc9b066ba8394b2e2c68da9b418b5"
+        },
+        {
+          "path": "src/op/hiscore/view.hpp",
+          "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+        },
+        {
+          "path": "src/op/main/menu.hpp",
+          "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+        },
+        {
+          "path": "src/op/main/strings.hpp",
+          "sha256": "1de246ca8281d16bb10f2fb9c5b6aa25cc8b4c449dbc3e5be3b4ed6e970c5146"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2cb43901fe3dd7fee72f1635e74b44b4aceb68d5dff9f6c625cc1db7c7260bc5",
+      "compiled_negative_control": {
+        "target_start": 48339,
+        "candidate_start": 48339,
+        "size": 26,
+        "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+        "candidate_sha256": "4e9a5601cf377786b888729f55d889cf5e6776ae51d062332615181e4ee6088b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-registration-places",
+        "entry_sha256": "89b93d05784df552553c9c641a9760db3430fbcc34e3647ceb6f8ea93acf1203",
+        "mutation": {
+          "unit": "maine-registration-places",
+          "source": "src/maine/registration/places.inl",
+          "find": "place < SCOREDAT_PLACES;",
+          "replace": "place < (SCOREDAT_PLACES - 1);"
+        },
+        "control_sha256": "5a7204cc9784344ee20fa1c8473397e84ff60c7ba8b17681d9fc37e739a89ce1",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48339,
+          "candidate_start": 48339,
+          "size": 26,
+          "target_sha256": "6d7142da4a5268f5adbcb6a189f31ea748e75987a3cf50549371efd3a825c001",
+          "candidate_sha256": "4e9a5601cf377786b888729f55d889cf5e6776ae51d062332615181e4ee6088b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "cdc16aced85a73b44e126b10fdd1b50e964aa64db06100b5ec9dc2fcc511f01e",
+          "dependency_timestamp_normalized_sha256": "ca548a38070c11b29ca21107bdb40a232eef7e96fd459662095758c48e2be7b0",
+          "module_name": "th05/r_places.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/r_places.cpp",
+            "src/maine/registration/places.cpp",
+            "src/maine/registration/places.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp",
+            "src/maine/registration/places.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/r_places.cpp"
         ]
       },
       "target_view": {

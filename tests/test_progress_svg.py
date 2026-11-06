@@ -28,10 +28,11 @@ class ProgressSvgTests(unittest.TestCase):
         self.assertEqual([r.get('width') for r in bars],
                          ['141.00', '282.00', '282.00', '70.50',
                           '0.00', '0.00', '0.00', '0.00'])
-        self.assertIn('350 C/C++ bytes exact', svg)
+        self.assertIn('Accepted authored C/C++ bytes only', svg)
+        self.assertIn('350 B · 5 functions', svg)
         self.assertIn('7 padding bytes earn no credit', svg)
         self.assertIn('not completion percentages', svg)
-        self.assertIn('global denominator under review', svg)
+        self.assertIn('global authored-byte denominator: n/a', svg)
 
     def test_empty_columns_and_single_artifact_fallback_are_valid(self):
         summary = {'functions': 0, 'instruction_bytes': 0, 'complete_extent_bytes': 0}
