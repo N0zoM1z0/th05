@@ -1439,3 +1439,30 @@ kind = "alignment"
 offset = 124
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-scoredat-code"
+artifact = "main"
+source = "src/main/score/scoredat_code.asm"
+types = "src/main/score/scoredat_code_types.inc"
+symbols = "probes/units/scoredat_code_symbols.inc"
+bindings = "probes/units/scoredat_code_bindings.asm"
+notes = "src/main/score/scoredat_code.md"
+target_start = 51218
+size = 112
+segment = "SCORE_CODE_TEXT"
+group = "main_01"
+cs_base = 0xAE10
+instruction_nops = []
+fixups = [84]
+tables = []
+native_review_sha256 = "965557bfa853466f091fd26953ae083828e2e68cc74cd1b85a1db86db6420581"
+target_scope_sha256 = "1996df0e319afe206538428afb88264b42359fdb5fb1f348df4ffec2603d1427"
+semantic_inputs = ["src/op/hiscore/view.hpp", "src/shared/abi.hpp"]
+[units.publics]
+"scoredat_decode()" = 0
+"scoredat_encode()" = 55
+"scoredat_code_end" = 112
+[units.negative]
+find = "SCORE_ROTATE_BITS equ 3"
+replace = "SCORE_ROTATE_BITS equ 2"

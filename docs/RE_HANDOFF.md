@@ -19,15 +19,32 @@ extents total 105,008, including 88 uncredited padding bytes.
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
 
-Separate reviewed ASM: 8,412 instruction + 210 dispatch-table + 24 semantic
-CODE-coordinate + 64 DATA bytes; 8,799 compared bytes include 89 uncredited.
+Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
+CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**119,688 bytes**, including MAIN 40,250. The global authored denominator and
+**119,576 bytes**, including MAIN 40,138. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: the natural TH04 background-release body now accepts both
+Latest recovery: the complete MAIN score-codec pair C812..C882 adds 112
+reviewed ASM instruction bytes: decoder 55 plus encoder 57. Typed semantic
+source follows maintained TH04's codec and the independently identified
+MAIN-only original ASM family. ReC98 8dbb4505 explicitly describes the
+separate micro-optimized MAIN ASM implementations; c1b0a1c1 confirms their
+parameterless Pascal ABI. No failed C++ producer establishes this origin.
+
+The final pair passes two fresh deterministic TASM producers, full ordinary
+OMF/MAP, all 112 raw bytes and original ordered fixup `[84]`, plus one shared
+rotate 3-to-2 assembled negative. No NOP, table, DATA, BSS or padding is owned.
+The canonical 96-byte score section and actual far IRAND provider remain
+foreign; no other accepted unit or execution probe was rebuilt. See
+[source/ABI/receipt review](../src/main/score/scoredat_code.md) and
+`.analysis/asm-replays/main-scoredat-code-b/receipt.json`. C/C++ counters are
+unchanged. The first attempt's positives were raw-exact but its negative
+constant was outside the supported source mutation anchor; it has no receipt.
+
+Previous recovery: the natural TH04 background-release body now accepts both
 complete 50-byte OP/MAINE occurrences, adding 100 C++ instruction bytes and
 two functions. Direct TCC's descending fixups were the only prior blocker;
 TCC `-S` output consumed unchanged by TASM32 gives the original ascending
