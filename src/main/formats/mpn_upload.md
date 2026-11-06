@@ -40,11 +40,12 @@ interrupt intrinsics. The initial positive ASM inference was challenged and
 withdrawn under the same policy as the deferred STD/MAP loaders. It stays
 unknown; no assembly source or producer is made for it.
 
-MPN_FREE at 420E..4225 is an ordinary 23-byte guard/release/clear/RETF function.
-Its trailing NOP at 4225 is outside that function. It also stays C++/unknown;
-neither its language nor unframed producer context transfers from the adjacent
-accepted renderer. The separately reviewed 92-byte MPN drawing family at
-4226..4282 and its existing acceptance remain unchanged.
+MPN_FREE at 420E..4225 is now independently [accepted as natural C++](mpn_free.md):
+23 compared bytes, including one uncredited call-relaxation NOP. Its trailing
+NOP at 4225 remains outside the function. Two fresh direct producers preserve
+the actual same-segment far allocator context; no language or acceptance is
+transferred from the adjacent renderer. The separately reviewed 92-byte MPN
+drawing family at 4226..4282 remains unchanged.
 
 Private corrective language review:
 `.analysis/mpn-load-inner-origin-challenge-review.json`, SHA-256

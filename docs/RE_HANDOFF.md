@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-357 bounded C/C++ CODE/DATA units, 543 complete function occurrences:
-**105,667 authored bytes exact** = 90,044 CODE + 15,623 initialized DATA.
-CODE is 89,222 instruction + 822 compiler-table bytes. Complete compared
-extents total 105,756, including 89 uncredited padding bytes.
+359 bounded C/C++ CODE/DATA units, 545 complete function occurrences:
+**105,714 authored bytes exact** = 90,091 CODE + 15,623 initialized DATA.
+CODE is 89,269 instruction + 822 compiler-table bytes. Complete compared
+extents total 105,804, including 90 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 418 | 68,622 | 3,341 |
+| MAIN | 420 | 68,669 | 3,341 |
 | OP | 65 | 11,369 | 8,667 |
 | MAINE | 59 | 9,731 | 3,615 |
 | ZUN | 1 | 322 | 0 |
@@ -22,12 +22,26 @@ extents total 105,756, including 89 uncredited padding bytes.
 Separate reviewed ASM: 8,524 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 8,911 compared bytes include 89 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**118,828 bytes**, including MAIN 39,390. The global authored denominator and
+**118,780 bytes**, including MAIN 39,342. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest recovery: natural C++ BB text-mask load/release at E4B6..E519 accepts
+Latest recovery: curved-bullet BB load at DE58..DE71 (25) and MPN release at
+420E..4225 (23) pass two fresh direct C++ producers, whole OMF/MAP contributions,
+full raw bytes and original empty fixup streams. Their shared read-length
+2048-to-2047 negative is rejected. Net credit is 47 instruction bytes and two
+functions; the real same-segment MPN call-relaxation NOP is compared with zero
+credit. Filename, mask resource and image handle remain foreign. See
+[BB load](../src/main/formats/bb_cheeto.md), [MPN release](../src/main/formats/mpn_free.md)
+and `.analysis/unit-replays/main-bb-cheeto-and-mpn-free-a/receipt.json`.
+No build tool or accepted dependency changed; no old unit was cold-replayed.
+Progress SVG was checked against the actual maintained TH04 SVG: matching
+788x440 dark card, four rows, two columns, colors and spacing. Generated counts
+are refreshed; the explicit CODE/DATA byte scales do not invent a percentage.
+The MPN inner loader and upload remain unaccepted and outside live manifests.
+
+Previous recovery: natural C++ BB text-mask load/release at E4B6..E519 accepts
 99 instruction bytes and two complete functions. The direct producer was raw
 exact but ordered-inexact; unchanged TCC `-S` output consumed by TASM32 gives
 the original ascending `[6,90]`. Two fresh chains, complete OMF/MAP/raw/order

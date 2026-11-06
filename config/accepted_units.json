@@ -2,24 +2,18 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "33bb73826ce3fcd35602da0013d3736667d1bfba8cae547b425578a28e99f5ba",
+  "replay_receipt_sha256": "4b6107cabf53d354a6ee588dd6d74bcdc745ac199395902b732d0c8b80d9dda3",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58550,
-    "candidate_start": 58550,
-    "size": 99,
-    "target_sha256": "cf8ab89c8d8de09c5ccd2823a34deb499d521350d625e91280f89e2e1a8a7e4f",
-    "candidate_sha256": "5310ae1fdca52793cf31085084035774747eefe73c562cb6246d20fb4dd69021",
+    "target_start": 56920,
+    "candidate_start": 56920,
+    "size": 25,
+    "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+    "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
     "raw_exact": false,
-    "target_fixups": [
-      6,
-      90
-    ],
-    "candidate_fixups": [
-      6,
-      90
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -76486,6 +76480,442 @@
             "bb_text.asm"
           ]
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-bb-cheeto-load",
+      "entry_sha256": "1a09a25eaa316e5572a07d8f2d629357224c0a7d2cec7029513dc6b9017feb52",
+      "result": {
+        "id": "main-bb-cheeto-load",
+        "entry_sha256": "1a09a25eaa316e5572a07d8f2d629357224c0a7d2cec7029513dc6b9017feb52",
+        "rounds": [
+          {
+            "target_start": 56920,
+            "candidate_start": 56920,
+            "size": 25,
+            "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+            "candidate_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 56920,
+            "candidate_start": 56920,
+            "size": 25,
+            "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+            "candidate_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d492f83e3f34d693661cb88e5e0b2d5714cd450313b6d9c5f4e0d62b904d6a1d",
+            "dependency_timestamp_normalized_sha256": "4c8d273e6ef53646147162ee540dd2896dd2c6baf617caf2549c0a04679ed3f0",
+            "module_name": "th05/bbcheeto.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bbcheeto.cpp",
+              "src/main/formats/bb_cheeto.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/bb_cheeto.hpp",
+              "src/main/formats/bb_load.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "c7c14c9729dae1082382bd3ed39043a2ba4521a6ed75f1fd5150930bd08f9972",
+            "dependency_timestamp_normalized_sha256": "4c8d273e6ef53646147162ee540dd2896dd2c6baf617caf2549c0a04679ed3f0",
+            "module_name": "th05/bbcheeto.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bbcheeto.cpp",
+              "src/main/formats/bb_cheeto.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/formats/bb_cheeto.hpp",
+              "src/main/formats/bb_load.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bbcheeto.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bbcheeto.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/bb_cheeto_bindings.asm",
+            "sha256": "5f858a5c83bc3c6fcacc1857f2df88b08b935035f6596cd4c1cea6c0dcbc386c"
+          },
+          {
+            "path": "src/main/formats/bb_cheeto.cpp",
+            "sha256": "295fd378e9e83caa5181582f0631b14abef3e31a4811e145b57bcd419f3ea6a6"
+          },
+          {
+            "path": "src/main/formats/bb_cheeto.hpp",
+            "sha256": "6dda7c578973842e9e6a212d65049a763857771cf9ed2ed253ab7fc49f8f95fa"
+          },
+          {
+            "path": "src/main/formats/bb_load.hpp",
+            "sha256": "d82626eed443e4ac328a4aca1a4fe95b7a6f34e3b0ed7128eccd40aaa136283d"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/bb_cheeto_bindings.asm",
+          "sha256": "5f858a5c83bc3c6fcacc1857f2df88b08b935035f6596cd4c1cea6c0dcbc386c"
+        },
+        {
+          "path": "src/main/formats/bb_cheeto.cpp",
+          "sha256": "295fd378e9e83caa5181582f0631b14abef3e31a4811e145b57bcd419f3ea6a6"
+        },
+        {
+          "path": "src/main/formats/bb_cheeto.hpp",
+          "sha256": "6dda7c578973842e9e6a212d65049a763857771cf9ed2ed253ab7fc49f8f95fa"
+        },
+        {
+          "path": "src/main/formats/bb_load.hpp",
+          "sha256": "d82626eed443e4ac328a4aca1a4fe95b7a6f34e3b0ed7128eccd40aaa136283d"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4b6107cabf53d354a6ee588dd6d74bcdc745ac199395902b732d0c8b80d9dda3",
+      "compiled_negative_control": {
+        "target_start": 56920,
+        "candidate_start": 56920,
+        "size": 25,
+        "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+        "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bb-cheeto-load",
+        "entry_sha256": "1a09a25eaa316e5572a07d8f2d629357224c0a7d2cec7029513dc6b9017feb52",
+        "mutation": {
+          "unit": "main-bb-cheeto-load",
+          "source": "src/main/formats/bb_cheeto.cpp",
+          "find": "_CX = BB_SIZE;",
+          "replace": "_CX = BB_SIZE - 1;"
+        },
+        "control_sha256": "5951ae5004e95066c1bd2991708915790eb26484c696700d1e9f19b8afc059e5",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 56920,
+          "candidate_start": 56920,
+          "size": 25,
+          "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+          "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "f2e0faf0fb1f6a9642bec71827652f8988a867996af4ff2d7e8c57f1eb269ad7",
+          "dependency_timestamp_normalized_sha256": "03bc6554031403777a3a3560e4427665aa3744cdcf658ee0a8ba49d32933b8a6",
+          "module_name": "th05/bbcheeto.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bbcheeto.cpp",
+            "src/main/formats/bb_cheeto.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/formats/bb_cheeto.hpp",
+            "src/main/formats/bb_load.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bbcheeto.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-mpn-free",
+      "entry_sha256": "752a73af2feae79e403bdf8b7434a426e5c50ef92d75d20d761f7030f337a5d4",
+      "result": {
+        "id": "main-mpn-free",
+        "entry_sha256": "752a73af2feae79e403bdf8b7434a426e5c50ef92d75d20d761f7030f337a5d4",
+        "rounds": [
+          {
+            "target_start": 16910,
+            "candidate_start": 16910,
+            "size": 23,
+            "target_sha256": "b72e5ab47daa3b15f8b11b616b751839fd5b4e431e6ca25f02f58b9a08a1ebae",
+            "candidate_sha256": "b72e5ab47daa3b15f8b11b616b751839fd5b4e431e6ca25f02f58b9a08a1ebae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 16910,
+            "candidate_start": 16910,
+            "size": 23,
+            "target_sha256": "b72e5ab47daa3b15f8b11b616b751839fd5b4e431e6ca25f02f58b9a08a1ebae",
+            "candidate_sha256": "b72e5ab47daa3b15f8b11b616b751839fd5b4e431e6ca25f02f58b9a08a1ebae",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "94bb58853aac48faf591e971ca4e0aa7b416f36bc11608d9563d58566f921c36",
+            "dependency_timestamp_normalized_sha256": "841ea39fb80a3669d6514b3bdca5e69c6964070f1245c617bde05f0b2b5ef116",
+            "module_name": "th05/mpn_free.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mpn_free.cpp",
+              "src/main/formats/mpn_free.cpp",
+              "src/main/formats/mpn_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "f3b9d84987bf49a08a585c6be3fd517fe1ec7ccfea324604211e1b2886c90910",
+            "dependency_timestamp_normalized_sha256": "841ea39fb80a3669d6514b3bdca5e69c6964070f1245c617bde05f0b2b5ef116",
+            "module_name": "th05/mpn_free.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mpn_free.cpp",
+              "src/main/formats/mpn_free.cpp",
+              "src/main/formats/mpn_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-1/a/source",
+          "group-1/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mpn_free.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mpn_free.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/mpn_free_bindings.asm",
+            "sha256": "7bed1de5c02300e7992be1c72643592f62a15afc889b72fe9a2e7417d307ad17"
+          },
+          {
+            "path": "src/main/formats/mpn_free.cpp",
+            "sha256": "377bdce1ec991e8acce86366760c5a9fe987e7eb5d02703590d2c445f554d395"
+          },
+          {
+            "path": "src/main/formats/mpn_free.hpp",
+            "sha256": "3a15a7651052b34f8503b8118d30c5224663fba9f9b8920effe82d908eae5357"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/mpn_free_bindings.asm",
+          "sha256": "7bed1de5c02300e7992be1c72643592f62a15afc889b72fe9a2e7417d307ad17"
+        },
+        {
+          "path": "src/main/formats/mpn_free.cpp",
+          "sha256": "377bdce1ec991e8acce86366760c5a9fe987e7eb5d02703590d2c445f554d395"
+        },
+        {
+          "path": "src/main/formats/mpn_free.hpp",
+          "sha256": "3a15a7651052b34f8503b8118d30c5224663fba9f9b8920effe82d908eae5357"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4b6107cabf53d354a6ee588dd6d74bcdc745ac199395902b732d0c8b80d9dda3",
+      "compiled_negative_control": {
+        "target_start": 56920,
+        "candidate_start": 56920,
+        "size": 25,
+        "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+        "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-bb-cheeto-load",
+        "entry_sha256": "1a09a25eaa316e5572a07d8f2d629357224c0a7d2cec7029513dc6b9017feb52",
+        "mutation": {
+          "unit": "main-bb-cheeto-load",
+          "source": "src/main/formats/bb_cheeto.cpp",
+          "find": "_CX = BB_SIZE;",
+          "replace": "_CX = BB_SIZE - 1;"
+        },
+        "control_sha256": "5951ae5004e95066c1bd2991708915790eb26484c696700d1e9f19b8afc059e5",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 56920,
+          "candidate_start": 56920,
+          "size": 25,
+          "target_sha256": "c7dd9ca4d4a6de9cf5a88c18ab856fa2fda9e1d35089bd1485d4abad9e0e883b",
+          "candidate_sha256": "6b3dd1fcdb5a8f02aa5f418092fe4b457c8dddc4899c832c6ec2f936c557a1fe",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "f2e0faf0fb1f6a9642bec71827652f8988a867996af4ff2d7e8c57f1eb269ad7",
+          "dependency_timestamp_normalized_sha256": "03bc6554031403777a3a3560e4427665aa3744cdcf658ee0a8ba49d32933b8a6",
+          "module_name": "th05/bbcheeto.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bbcheeto.cpp",
+            "src/main/formats/bb_cheeto.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/formats/bb_cheeto.hpp",
+            "src/main/formats/bb_load.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bbcheeto.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }

@@ -110,3 +110,9 @@ The [BB text-mask lifecycle](bb_text.md) now accepts 99 C++ instruction bytes
 through unchanged compiler assembly output and original ascending fixups. The
 [general BB loader](bb_load.md) remains a natural 56-byte candidate versus 55;
 its genuine far-filename and segment-result interfaces stay intact.
+
+The [curved-bullet .BB loader](bb_cheeto.md) and [MPN release](mpn_free.md)
+now add two independently compiled functions: 48 compared bytes, including
+one uncredited call-relaxation NOP, for 47 authored C++ instruction bytes.
+The DOS transfer preserves unchecked behavior; the release uses the genuine
+same-segment allocator. Their shared focused receipt changes no older owner.
