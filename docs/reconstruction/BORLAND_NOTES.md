@@ -13,6 +13,14 @@ Statement-scoped option pragmas did not change the retained sword/Staff
 producers; inspect actual output before attributing an effect to them.
 The captured tool help remains in `.analysis/compiler-help-sword-20261028/`.
 
+`-G` means generate for speed. The accepted Cheeto and bullet renderers show
+that it emits PUSH BP/MOV BP,SP/SUB SP in place of the shorter ENTER prologue.
+Ordinary `register` declarations also recover their original local allocation:
+Cheeto marks its node index; the bullet renderer marks its pattern and pointer.
+These are natural compiler hints, with no variables bound to physical registers.
+See [Cheeto](../../src/main/bullet/cheeto_render.md) and
+[bullets](../../src/main/bullet/render.md) for complete raw-byte receipts.
+
 ## Types and calling conventions
 
 The real ABI has two-byte int/near pointers, four-byte far pointers and

@@ -14,7 +14,6 @@ identify single-producer diagnostics and archived alternatives.
 | Item motion/collection | Original241; safe typed-return producer248 remains. One long return-borrow experiment235 overwrote returned X during ordinary pickup arithmetic, making X subtraction self-subtraction. Safe source restored; no second/negative or register-forcing variants. | `main-items-update-abi-a` |
 | Shot rendering | Original164, safe word-local producer173; the one byte-local experiment175 was stopped at the first boundary check and abandoned. The safe original source is restored. | `main-shots-render-a`, `main-shots-render-b` |
 | Stage-session initialization | Original803 includes mandatory zero772, thirty table bytes and three uncredited relaxation NOPs213/403/595. New common SEGDEF restores transfer/fixup routing; late `-a2` still emits802 and is rejected. Correct potential credit799, not802. | `main-stage-session-init-a`, `main-stage-session-common-a`, diagnostic `stage-session-common-routing-a` |
-| Bullet/pellet rendering | Original334, producer330: native manual BP prologue differs by2 bytes and ordinary local allocation by2. No padding/flags/register variants follow. | `main-bullets-render-a` |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | `main-alice-foreground-a` |
 | Yumeko sword updater | Original283; natural280. Jump-option/control-flow alternatives fail; baseline restored. | [Current notes](../../src/main/boss/yumeko/swords_update.md) |
 | Yumeko aimed / laser-swords attacks | All354/428 raw bytes agree; original ordered fixups still differ. Genuine prefix context remains three bytes short. | [Current notes](../../src/main/boss/yumeko/laser_swords.md) |
@@ -32,7 +31,8 @@ repeat identical failed builds.
 
 Superseded blockers are accepted: Sara foreground159, Mai/Yuki foreground194,
 Mima bomb control161 through the genuine [bomb family](../../src/main/player/bomb_family.md),
-and frameless MAP release23. Their earlier failed producers are historical
+frameless MAP release23, and complete bullet/pellet rendering334 through the
+documented speed option and ordinary register declarations. Their failed producers are historical
 evidence, not pending work. Some terminal alternatives are now compressed;
 see [local storage](../LOCAL_STORAGE.md) before looking for their old paths.
 

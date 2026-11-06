@@ -1,13 +1,13 @@
 // Large-bullet clouds and normal/clearing pellet rendering in true pool order.
-#pragma option -zCBULLET_RENDER_TEXT -zPmain_01
+#pragma option -zCBULLET_RENDER_TEXT -zPmain_01 -G
 #include "src/main/bullet/render.hpp"
 #pragma codeseg BULLET_RENDER_TEXT main_01
 
 extern "C" void pascal near bullets_render(void)
 {
     int i;
-    int patnum;
-    bullet_t near *bullet;
+    register int patnum;
+    register bullet_t near *bullet;
     _ES = SEG_PLANE_B;
     bullet = &bullets[BULLET_COUNT - 1];
     for(i = 0; i < BULLET16_COUNT; i++, bullet--) {

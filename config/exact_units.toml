@@ -4461,3 +4461,60 @@ unit = "main-boss-explosion-spawn"
 source = "src/main/boss/explosion_spawn.cpp"
 find = "snd_se_play(15);"
 replace = "snd_se_play(14);"
+
+[[units]]
+id = "main-shinki-custombullets-render"
+source = "src/main/boss/shinki/custombullets_render.cpp"
+module = "th05/b6cbr.cpp"
+segment = "MAIN_0_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x12ff5
+size = 113
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+bindings_source = "probes/units/shinki_custombullets_render_bindings.asm"
+
+[[controls]]
+unit = "main-shinki-custombullets-render"
+source = "src/main/boss/shinki/custombullets_render.cpp"
+find = "_AH = 15;"
+replace = "_AH = 14;"
+
+[[units]]
+id = "main-cheetos-render"
+source = "src/main/bullet/cheeto_render.cpp"
+module = "th05/cheeto_r.cpp"
+segment = "CHEETO_RENDER_TEXT"
+wrapper_options = "-zPmain_01"
+target_start = 0x12f2b
+size = 202
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+bindings_source = "probes/units/cheeto_render_bindings.asm"
+
+[[controls]]
+unit = "main-cheetos-render"
+source = "src/main/bullet/cheeto_render.cpp"
+find = "node_i -= 2"
+replace = "node_i -= 1"
+
+[[units]]
+id = "main-bullets-render"
+source = "src/main/bullet/render.cpp"
+module = "th05/bul_r.cpp"
+segment = "BULLET_RENDER_TEXT"
+wrapper_options = "-zCBULLET_RENDER_TEXT -zPmain_01"
+target_start = 0x13185
+size = 334
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+bindings_source = "probes/units/bullet_render_bindings.asm"
+
+[[controls]]
+unit = "main-bullets-render"
+source = "src/main/bullet/render.cpp"
+find = "patnum = BR_CLOUD_BLUE - 1;"
+replace = "patnum = BR_CLOUD_BLUE - 2;"

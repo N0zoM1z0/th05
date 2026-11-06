@@ -7,14 +7,14 @@ not proof that a different natural source context cannot work.
 
 ## Accepted state
 
-329 bounded C/C++ CODE/DATA units, 518 complete function occurrences:
-**102,977 authored bytes exact** = 87,640 CODE + 15,337 initialized DATA.
-CODE is 86,840 instruction + 800 compiler-table bytes. Complete compared
-extents total 103,064, including 87 uncredited padding bytes.
+332 bounded C/C++ CODE/DATA units, 521 complete function occurrences:
+**103,626 authored bytes exact** = 88,289 CODE + 15,337 initialized DATA.
+CODE is 87,489 instruction + 800 compiler-table bytes. Complete compared
+extents total 103,713, including 87 uncredited padding bytes.
 
 | Artifact | Functions | CODE | Initialized DATA |
 | --- | ---: | ---: | ---: |
-| MAIN | 399 | 66,454 | 3,091 |
+| MAIN | 402 | 67,103 | 3,091 |
 | OP | 62 | 11,251 | 8,649 |
 | MAINE | 56 | 9,613 | 3,597 |
 | ZUN | 1 | 322 | 0 |
@@ -22,21 +22,32 @@ extents total 103,064, including 87 uncredited padding bytes.
 Separate reviewed ASM: 7,020 instruction + 210 dispatch-table + 24 semantic
 CODE-coordinate + 64 DATA bytes; 7,388 compared bytes include 70 uncredited.
 Vendor CODE/DATA: 73,804/3,777; font resource: 8,192. Unknown ownership remains
-**123,043 bytes**, including MAIN 43,333. The global authored denominator and
+**122,394 bytes**, including MAIN 42,684. The global authored denominator and
 percentage are unreviewed; the at-least-98% goal is not complete.
 [Generated progress](PROGRESS.md) and [ownership](../resources/ownership.json)
 are authoritative.
 
-Latest exact recovery: `main-boss-explosion-spawn`, MAIN `[176CE,177F0)`,
-five complete C++ functions/290 bytes: small reset, small/big creation and both
-second-Boss position wrappers. All 282 instruction and eight compiler-table
-bytes match, with original ordered fixups `[244,128]`, no padding and no owned
-DATA/BSS. Two fresh producers and the shared compiled negative pass. Receipt:
-`.analysis/unit-replays/main-boss-explosion-spawn-a/receipt.json`, SHA-256
-`38a436ec0c398793b5a62d364e205cb59b711fc56e5674d81b1bab605013274f`.
-See [source/ABI review](../src/main/boss/explosion_spawn.md). The adjacent
-22-byte wrapper before `176CE` remains unknown; no whole-family extension is
-implied. Defeat/collision source was inspected but not changed or compiled.
+Latest exact recovery: three complete C++ renderers, 649 instruction bytes,
+no tables, padding or owned DATA/BSS. Each passes two deterministic producers,
+full raw bytes, original ordered fixups and its shared compiled control:
+
+| Unit | MAIN scope | Bytes | Receipt under `.analysis/unit-replays/` |
+| --- | --- | ---: | --- |
+| `main-shinki-custombullets-render` | `[12FF5,13066)` | 113 | `main-shinki-custombullets-render-a/receipt.json` |
+| `main-cheetos-render` | `[12F2B,12FF5)` | 202 | `main-cheetos-render-a/receipt.json` |
+| `main-bullets-render` | `[13185,132D3)` | 334 | `main-bullets-render-b/receipt.json` |
+
+The Cheeto renderer established documented `-G` speed generation as the natural
+source context for the original PUSH BP/MOV BP,SP/SUB SP prologue. This also
+resolved the former bullet-rendering blocker with ordinary register-qualified
+pattern/pointer locals. Shared headers, full types, semantics and hardware
+interfaces remain unchanged. [Compiler notes](reconstruction/BORLAND_NOTES.md)
+and each source's adjacent Markdown record complete scopes, ABI and receipt
+hashes. The previous five explosion-creation functions remain accepted.
+
+A separate Alice animation-frame helper trial did not expand inline; it
+produced an inexact 543-byte combined contribution. The baseline source was
+restored exactly; no new Alice credit is claimed. Defeat/collision is unchanged.
 
 ## Useful next work
 
@@ -76,14 +87,14 @@ No compiler or Ghidra job is running. Current baseline and raw-equal diagnostics
 remain under `.analysis/native-producers/`. The private
 `single_main_producer.py` / `single_native_producer.py` run one diagnostic
 producer, never an acceptance receipt. Wine/Borland/Ghidra remain serialized.
-The MAIN incremental plan is empty after the focused explosion-spawn replay;
-no unchanged accepted unit was compiled. Other artifact inputs are unchanged.
+The MAIN incremental plan is empty after the three focused renderer replays.
+No whole accepted-set replay was run. Other artifact inputs are unchanged.
 
 Handoff cleanup archived 24 terminal alternative producers plus duplicate
 backups and unused assembler extraction. The two obsolete combined wrappers
 and their binders were removed; semantic bodies and accepted owners remain.
 See [local storage](LOCAL_STORAGE.md) for the archive, restoration commands and
-the prior cleanup's 328-record/232-receipt inventory. The new explosion-spawn
-receipt adds one accepted record; all accepted evidence stays live.
+the prior cleanup's 328-record/232-receipt inventory. Explosion creation and
+the three renderers add four records/receipts; all accepted evidence stays live.
 Retired zero-compare, boss-background and supplemental-negative tools remain
 in Git at `3af324e`; they are not part of the active workflow.
