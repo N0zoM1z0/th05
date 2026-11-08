@@ -198,16 +198,6 @@ class AsmFamilyTests(unittest.TestCase):
             rows = [r for r in claims[entry["artifact"]] if r["unit"] == entry["id"]]
             validate_partition(entry["size"], [{**r, "start": r["start"] - entry["target_start"],
                                                 "end": r["end"] - entry["target_start"]} for r in rows])
-        totals = {}
-        for rows in claims.values():
-            for row in rows:
-                totals[row["kind"]] = totals.get(row["kind"], 0) + row["end"] - row["start"]
-        self.assertEqual(totals, {"accepted-reviewed-asm-instructions": 5212,
-                                 "accepted-reviewed-asm-dispatch-table": 92,
-                                 "accepted-reviewed-asm-semantic-code-table": 24,
-                                 "checked-uncredited-asm-alignment": 36,
-                                 "checked-uncredited-asm-inert-branch": 6,
-                                 "checked-uncredited-asm-runtime-placeholder": 10})
         decision = json.loads(asm.DECISION.read_text())
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

@@ -1,5 +1,11 @@
 # Exact reconstruction workflow
 
+> Current workflow: follow the **Highest priority** section in `AGENTS.md`.
+> Prefer affected exact comparisons and useful Markdown knowledge. Ordinary
+> notes do not require full CI, native replay or document-hash/pin refreshes.
+> Older broad validation instructions apply only when their impact is relevant.
+
+
 1. Read the current handoff, inspect `git status --short`, and run preflight.
 2. Choose one function or coherent source unit. Confirm the pinned target,
    complete extent, ABI and source ownership.

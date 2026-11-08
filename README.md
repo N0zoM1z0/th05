@@ -1,5 +1,7 @@
 # 東方怪綺談 ～ Mystic Square
 
+Agent workflow: follow the highest-priority requirements in [AGENTS.md](AGENTS.md). Use affected exact checks and searchable Markdown knowledge; ordinary notes do not require full CI or replay.
+
 <p align="center">
   <img src="resources/progress.svg" alt="TH05 authored byte exact reconstruction progress">
 </p>
