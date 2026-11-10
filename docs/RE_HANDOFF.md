@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The complete MAIN **Yumeko 283-byte sword updater** is now exact reviewed
+native-language ASM (`1EDBA..1EED5`), after genuine natural C++ control-flow
+experiments failed to produce the two original far-reaching near `JL/JGE`
+branches. Strict two-producer/own twirl-step negative passes all raw bytes
+and its one original ordered relocation, without changing any accepted
+354/428-byte Yumeko attacks. Receipt:
+`.analysis/gpt-web-yumeko-swords-asm-a/receipt.json`.
+See [sword lifecycle review](../src/main/boss/yumeko/swords_update.md).
+
 The MAIN **414-byte generic Boss defeat controller is now source-exact C++**:
 restoring the original ReC98 empty inline `optimization_barrier()` after the
 Extra Stage all-clear reward prevents the old six-byte common-tail merge.
@@ -138,7 +147,8 @@ flag bank. This adds reviewed ASM ownership, **not C++ CODE credit**. The failed
 Yumeko's two large Boss attacks now pass independent exact MAIN source replays:
 aimed swords354 and laser/swords428 (782 new authored C++ bytes). Their genuine
 ten-function C++ context restores the original unsorted OMF relocation order,
-while the 283-byte sword updater remains size-exact but raw-inexact. Four
+while the original 283-byte sword updater is now separately accepted as
+reviewed exact ASM, not pure C++. Four
 changed accepted standalone wrappers were refreshed only in affected local
 replays. See [Yumeko attack context](../src/main/boss/yumeko/attacks_context.md)
 and [detailed attack evidence](../src/main/boss/yumeko/laser_swords.md).

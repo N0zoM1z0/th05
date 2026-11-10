@@ -1765,3 +1765,29 @@ semantic_inputs = ["src/shared/math/vector2_near.hpp"]
 [units.negative]
 find = "sar eax, VECTOR2_TRIG_FRAC_BITS"
 replace = "sar eax, (VECTOR2_TRIG_FRAC_BITS - 1)"
+
+[[units]]
+id = "main-yumeko-swords-update-asm"
+artifact = "main"
+source = "src/main/boss/yumeko/swords_update.asm"
+types = "src/main/boss/yumeko/swords_update_types.inc"
+symbols = "probes/units/yumeko_swords_update_symbols.inc"
+bindings = "probes/units/yumeko_swords_update_bindings.asm"
+notes = "src/main/boss/yumeko/swords_update.md"
+target_start = 0x1edba
+size = 283
+segment = "B5_UPDATE_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = [75]
+tables = []
+native_review_sha256 = "06953acf202cbdc478265cbd383abf0cebcd6b441d4c87a2caebf33464d1d93f"
+target_scope_sha256 = "5aedab8dc3a06d16fdd86611d2ea1bd7f2340b30f40b69158a805955c6578a88"
+semantic_inputs = ["src/main/boss/yumeko/patterns.hpp"]
+[units.publics]
+"SWORDS_UPDATE" = 0
+"swords_update_end" = 283
+[units.negative]
+find = "add word ptr [si+SWORD_PATNUM_TINY], SWORD_TWIRL_STEP"
+replace = "add word ptr [si+SWORD_PATNUM_TINY], (SWORD_TWIRL_STEP + 1)"

@@ -1,3 +1,41 @@
+## 2026-11-10 accepted complete 283-byte original-register ASM owner
+
+**`SWORDS_UPDATE` is now exact** at MAIN `[1EDBA,1EED5)`: one complete
+**283-byte** 100-instruction near-Pascal original-language assembly function,
+with the original single ordered MZ relocation at relative `+75` (the true
+SHARED-frame sound call). This resolves the two original `JL/JGE` near
+conditional branches which Turbo C++ repeatedly shortened into local
+jump pairs. The native original CPU/branch semantics and source-language
+reference are preserved in `_reference/ReC98/th05/main/bullet/swords_add_update.asm`;
+its historical original translator/assembler identity is not claimed.
+
+The maintained `swords_update.asm` uses only named real sword structure offsets
+and semantic constants from the canonical `patterns.hpp` (26-byte entity,
+63 sword slots, fixed pattern indices and signed subpixel hit geometry).
+The compiler owns no fake table, game-state DATA, BSS, padding or copied code
+array. Its source-free binder imports the true `custom_entities`, stage/shot
+state, original player position, near motion and pattern functions and far
+sound provider at the real main_01/SHARED/main_03 frames. No instruction
+bytes, nearby accepted sword allocator or attack callback bodies are supplied
+by that binder.
+
+Two independent TASM32/TLINK positive producers emit **283/283 exact raw
+bytes**, the literal original ordered fixup, true MAP symbol boundaries and
+complete OMF linked extent; its own meaningful semantic negative increases
+the clockwise twirl step 2→3 and is rejected. Receipt:
+`.analysis/gpt-web-yumeko-swords-asm-a/receipt.json`; native source review:
+`.analysis/gpt-web-yumeko-swords-asm-native-review.json`.
+
+All **283 bytes are classified as reviewed ASM instruction credit**, not C++
+codegen credit. The original experimental natural
+`src/main/boss/yumeko/swords_update.cpp` remains useful as an inexact
+source-language port; its previously attempted 283-byte generated code is
+*not* credited. The two accepted 354/428-byte Yumeko sword attack callbacks,
+the 121-byte sword allocator and the other original-order accepted callbacks
+are unchanged and not replayed, with **no ownership overlap**.
+
+---
+
 # Sword updater candidate
 
 Original MAIN `[1EDBA,1EED5)` is283 bytes, with one far relocation at75 and
