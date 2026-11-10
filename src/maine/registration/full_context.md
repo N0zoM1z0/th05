@@ -27,3 +27,14 @@ byte-rotation code in each codec is the legitimate historical encryption
 primitive; its original C++ byte-local and AL key access are preserved.
 
 Receipt: `.analysis/unit-replays/gpt-web-maine-registration-codecs-full-20261110/receipt.json`.
+
+The original-order source no longer duplicates the accepted score lifecycle,
+alphabet cursor, frame pump or registration commit bodies. Their single
+maintained implementations are included from `src/maine/score/end_body.inl`
+and `src/maine/registration/{alphabet,frame,commit}_body.inl` by both the
+standalone wrappers and this combined compiler context. The existing natural
+semantics and original declaration order are unchanged. After factoring, all
+seven affected accepted owners (416/49/40/113/86/100/1034 bytes) passed their
+own focused two-producer raw/ordered-fixup comparisons and compiled negatives.
+Receipt: `.analysis/unit-replays/gpt-web-maine-single-source-refactor-20261110/receipt.json`.
+This is source-maintenance work, not new byte coverage.

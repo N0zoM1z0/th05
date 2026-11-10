@@ -247,7 +247,7 @@ source_encoding = "cp932"
 
 [[controls]]
 unit = "maine-score-end"
-source = "src/maine/score/end.cpp"
+source = "src/maine/score/end_body.inl"
 find = "hi.score.g_stage[i] = (gb_6 - i);"
 replace = "hi.score.g_stage[i] = (gb_5 - i);"
 
@@ -381,13 +381,13 @@ bindings_source = "probes/units/maine_registration_commit_bindings.asm"
 
 [[controls]]
 unit = "maine-registration-alphabet"
-source = "src/maine/registration/alphabet.cpp"
+source = "src/maine/registration/alphabet_body.inl"
 find = "(row_r + 21)"
 replace = "(row_r + 22)"
 
 [[controls]]
 unit = "maine-registration-commit"
-source = "src/maine/registration/commit.cpp"
+source = "src/maine/registration/commit_body.inl"
 find = "ball->speed.v = 6 * 16;"
 replace = "ball->speed.v = 5 * 16;"
 
@@ -406,7 +406,7 @@ bindings_source = "probes/units/maine_registration_frame_bindings.asm"
 
 [[controls]]
 unit = "maine-registration-frame"
-source = "src/maine/registration/frame.cpp"
+source = "src/maine/registration/frame_body.inl"
 find = "frame_delay(1);"
 replace = "frame_delay(2);"
 

@@ -2,30 +2,54 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "41dce02e26ae099b43e030bb1474b53ca1f7efe8ea80623b11b59932f38d8b36",
+  "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 46294,
-    "candidate_start": 46294,
-    "size": 86,
-    "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-    "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+    "target_start": 46480,
+    "candidate_start": 46480,
+    "size": 416,
+    "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+    "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      411,
+      400,
+      389,
+      365,
+      354,
+      332,
+      321,
+      289,
+      251,
+      246,
+      235,
+      205,
+      192,
+      177,
+      160,
+      139
+    ],
+    "candidate_fixups": [
+      411,
+      400,
+      389,
+      365,
+      354,
+      332,
+      321,
+      289,
+      251,
+      246,
+      235,
+      205,
+      192,
+      177,
+      160,
+      139
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 46294,
-      "size": 86,
-      "function_symbol": "scoredat_decode()",
-      "contribution_start": 46294,
-      "contribution_size": 4369,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "scoredat_encode()"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -5440,8 +5464,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "cc9eaf1be54cc4172b7183097d855ed34352e116a9d3a981ef63d64ae471c554",
-            "dependency_timestamp_normalized_sha256": "e66552fb904d38f81fb97b48fe6ca7caa649f1874d946d40a4e09d2adeb24ed1",
+            "sha256": "7e5a3dcba6b64e454ad14cd2fd845e9ee1b8424c47bf255ef28119d39d88f945",
+            "dependency_timestamp_normalized_sha256": "e9804bf9968e9baa4d5b9178affeb0d0a69f6880d3aaa8b98c9eb359f971401f",
             "module_name": "th05/hi_end.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5457,12 +5481,13 @@
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/main/strings.hpp"
+              "src/op/main/strings.hpp",
+              "src/maine/score/end_body.inl"
             ]
           },
           {
-            "sha256": "92c6e08f838767b679768813e79cf8b96aa231f2ab5723ff44aecbadc02c3d3d",
-            "dependency_timestamp_normalized_sha256": "e66552fb904d38f81fb97b48fe6ca7caa649f1874d946d40a4e09d2adeb24ed1",
+            "sha256": "85e36bd5c5af21d50d582a2a9598f81c96c00a141fdb78821b90adc49c9f63ab",
+            "dependency_timestamp_normalized_sha256": "e9804bf9968e9baa4d5b9178affeb0d0a69f6880d3aaa8b98c9eb359f971401f",
             "module_name": "th05/hi_end.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5478,7 +5503,8 @@
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/main/strings.hpp"
+              "src/op/main/strings.hpp",
+              "src/maine/score/end_body.inl"
             ]
           }
         ],
@@ -5525,11 +5551,15 @@
           },
           {
             "path": "src/maine/score/end.cpp",
-            "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
           },
           {
             "path": "src/maine/score/end.hpp",
             "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
           },
           {
             "path": "src/op/hiscore/view.hpp",
@@ -5560,11 +5590,15 @@
             },
             {
               "path": "src/maine/score/end.cpp",
-              "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+              "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
             },
             {
               "path": "src/maine/score/end.hpp",
               "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+            },
+            {
+              "path": "src/maine/score/end_body.inl",
+              "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
             },
             {
               "path": "src/op/hiscore/view.hpp",
@@ -5594,11 +5628,15 @@
             },
             {
               "path": "src/maine/score/end.cpp",
-              "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+              "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
             },
             {
               "path": "src/maine/score/end.hpp",
               "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+            },
+            {
+              "path": "src/maine/score/end_body.inl",
+              "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
             },
             {
               "path": "src/op/hiscore/view.hpp",
@@ -5631,11 +5669,15 @@
         },
         {
           "path": "src/maine/score/end.cpp",
-          "sha256": "0ce1d4a30661043931b06837ad99e3ad63144ff07bed65ff579b4a403a646f4e"
+          "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
         },
         {
           "path": "src/maine/score/end.hpp",
           "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+        },
+        {
+          "path": "src/maine/score/end_body.inl",
+          "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
         },
         {
           "path": "src/op/hiscore/view.hpp",
@@ -5656,7 +5698,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc6177840b35d611d6a956cde45e68df0c331fc5cb1d256ac3a287c74e993bb3",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
         "target_start": 46480,
         "candidate_start": 46480,
@@ -5708,11 +5750,11 @@
         "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
           "unit": "maine-score-end",
-          "source": "src/maine/score/end.cpp",
+          "source": "src/maine/score/end_body.inl",
           "find": "hi.score.g_stage[i] = (gb_6 - i);",
           "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "1850ec1e1ec191e2e9d90dca3d6e3e6eadced7fad147a80d7440ea6ea021ab76",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 46480,
@@ -5761,8 +5803,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ba3ebc75137f53d96b3ff9fc9a56c9ade5a7f3aca4b76dbdbda841ec076310b3",
-          "dependency_timestamp_normalized_sha256": "7df3402ce011d61df70d9ff76ebf13cc24de982c0ea8f076aee6119832975104",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
           "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -5778,7 +5820,8 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/main/strings.hpp"
+            "src/op/main/strings.hpp",
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -5805,11 +5848,15 @@
           },
           {
             "path": "src/maine/score/end.cpp",
-            "sha256": "1e4d527945daa47ecf66468d370d111a78b95d2d5119519fc9737cc655a65247"
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
           },
           {
             "path": "src/maine/score/end.hpp",
             "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
           },
           {
             "path": "src/op/hiscore/view.hpp",
@@ -7458,8 +7505,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "dba97ef412a90b32494a8b45090630097b799bd697734ce57f08c4fe9103448a",
-            "dependency_timestamp_normalized_sha256": "0f06d61dcffc1d16cce01875db8a60ff81d414f095c24293e48929dc244233a6",
+            "sha256": "888962cf85985cb8f2fd39f454482cff07d4d36a6ccac600ae2281895ed8bf0e",
+            "dependency_timestamp_normalized_sha256": "d5d388369a8079bd8e71382badc664801795fc7a70e012fdc45b058e53664eab",
             "module_name": "th05/r_alpha.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7473,12 +7520,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/registration/alphabet_body.inl"
             ]
           },
           {
-            "sha256": "e68974fc4556ea0dc8d64270850764b078b8b65b3b30d2848914a12b8ebf8548",
-            "dependency_timestamp_normalized_sha256": "0f06d61dcffc1d16cce01875db8a60ff81d414f095c24293e48929dc244233a6",
+            "sha256": "7570ba2c239f97c9c6294aea4bda0c7d47e45fab13a5f91d11a73538436c755e",
+            "dependency_timestamp_normalized_sha256": "d5d388369a8079bd8e71382badc664801795fc7a70e012fdc45b058e53664eab",
             "module_name": "th05/r_alpha.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7492,13 +7540,14 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/maine/registration/alphabet_body.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -7535,11 +7584,15 @@
           },
           {
             "path": "src/maine/registration/alphabet.cpp",
-            "sha256": "caccc51a8f5e9451351cb46670684b2d5b55f70f494407c91d587384b92fbf8a"
+            "sha256": "1213ec0322015b21b79b6461c02bcb190f8d445d287365c6e2479f2c9f680259"
           },
           {
             "path": "src/maine/registration/alphabet.hpp",
             "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
+          },
+          {
+            "path": "src/maine/registration/alphabet_body.inl",
+            "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -7563,11 +7616,15 @@
         },
         {
           "path": "src/maine/registration/alphabet.cpp",
-          "sha256": "caccc51a8f5e9451351cb46670684b2d5b55f70f494407c91d587384b92fbf8a"
+          "sha256": "1213ec0322015b21b79b6461c02bcb190f8d445d287365c6e2479f2c9f680259"
         },
         {
           "path": "src/maine/registration/alphabet.hpp",
           "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
+        },
+        {
+          "path": "src/maine/registration/alphabet_body.inl",
+          "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -7584,67 +7641,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "3b27bd59c984a0bebdbe56e1c72fd32d97fed3edba64c95aeb1cfaec241d1001",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 48365,
-        "candidate_start": 48365,
-        "size": 49,
-        "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
-        "candidate_sha256": "6e65188585627b8be7010194eccd1b100264988468896a2d970e8ee84cf80442",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
         "target_fixups": [
-          41
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "candidate_fixups": [
-          41
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-registration-alphabet",
-        "entry_sha256": "2b696907d515694356f9efb7d4ff44ebc3b5cb9ab4280c151bb1a0c2d787e613",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-registration-alphabet",
-          "source": "src/maine/registration/alphabet.cpp",
-          "find": "(row_r + 21)",
-          "replace": "(row_r + 22)"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "ff79fffe288685777354087939bdb546c225cefd75a974020fac5f385c1f49f1",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 48365,
-          "candidate_start": 48365,
-          "size": 49,
-          "target_sha256": "667da590800a07f9376243d0a0f0875d318303c97346b6018d876b34acbc9c9f",
-          "candidate_sha256": "6e65188585627b8be7010194eccd1b100264988468896a2d970e8ee84cf80442",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
           "target_fixups": [
-            41
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "candidate_fixups": [
-            41
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "e1a238393e7bff01b5bb7caa43eea220b713dcf658ae791a70eb8e21addcf333",
-          "dependency_timestamp_normalized_sha256": "3395ca5b6be2b93207097909fdb87411a325e48db0d3e1c2b858e80b191f9bee",
-          "module_name": "th05/r_alpha.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/r_alpha.cpp",
-            "src/maine/registration/alphabet.cpp",
-            "src/maine/registration/alphabet.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
-            "C:\\TC4\\INCLUDE\\_null.h"
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/op/main/strings.hpp",
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -7658,7 +7778,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/r_alpha.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
@@ -7746,8 +7904,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "16d10ec0db3e9848372e752a45dc5e329fe067d3cfbd778086f19b0579a9c6ce",
-            "dependency_timestamp_normalized_sha256": "3cedeee2f9ffcc02c499c753ae3f3df70cd55d6b33ec5ec2da1fc85e2ed0ef25",
+            "sha256": "164f5536f0ca6ae5574fe4942690de3706303259573ba1637c3e14a076fbe8ba",
+            "dependency_timestamp_normalized_sha256": "00d873301dff15ed7f4f91a5fba4d80c4d75cba78dc2891b2afc71778923c909",
             "module_name": "th05/r_commit.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7763,12 +7921,13 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/maine/registration/glyphball.hpp",
               "src/shared/geometry.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/maine/registration/commit_body.inl"
             ]
           },
           {
-            "sha256": "0fb4f652b66c603f1b783c679bcf6f0a1bc81de1041cbae2a93b2d4e7e3fff07",
-            "dependency_timestamp_normalized_sha256": "3cedeee2f9ffcc02c499c753ae3f3df70cd55d6b33ec5ec2da1fc85e2ed0ef25",
+            "sha256": "ba28ea2e2473894b3b127199fe3584321377b43e901905814ac63de43854cb4d",
+            "dependency_timestamp_normalized_sha256": "00d873301dff15ed7f4f91a5fba4d80c4d75cba78dc2891b2afc71778923c909",
             "module_name": "th05/r_commit.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7784,13 +7943,14 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/maine/registration/glyphball.hpp",
               "src/shared/geometry.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/maine/registration/commit_body.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-3/a/source",
+          "group-3/b/source"
         ],
         "compiler_arguments": [
           [
@@ -7827,11 +7987,15 @@
           },
           {
             "path": "src/maine/registration/commit.cpp",
-            "sha256": "1eff7ef6adfd7b06ccac818e8209150a111b4e2a7dc9d9417da05520ded59067"
+            "sha256": "0ab06b55dafa605a75552766f4aa38b56b982003fcae439a7f2657a174af0240"
           },
           {
             "path": "src/maine/registration/commit.hpp",
             "sha256": "e77b9359150f534f21fd26a51e03b03b8973e677ac62aa903fb0eff2ccfb5b50"
+          },
+          {
+            "path": "src/maine/registration/commit_body.inl",
+            "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -7859,11 +8023,15 @@
         },
         {
           "path": "src/maine/registration/commit.cpp",
-          "sha256": "1eff7ef6adfd7b06ccac818e8209150a111b4e2a7dc9d9417da05520ded59067"
+          "sha256": "0ab06b55dafa605a75552766f4aa38b56b982003fcae439a7f2657a174af0240"
         },
         {
           "path": "src/maine/registration/commit.hpp",
           "sha256": "e77b9359150f534f21fd26a51e03b03b8973e677ac62aa903fb0eff2ccfb5b50"
+        },
+        {
+          "path": "src/maine/registration/commit_body.inl",
+          "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -7884,73 +8052,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "aa3c53579b969bbf3320c0ceba872000365f013c878e320f1b1bdf8c14ae29e8",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 49516,
-        "candidate_start": 49516,
-        "size": 113,
-        "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
-        "candidate_sha256": "665c2a361188b70b30d601c70b66b3957821a3da4fc7293af8f70fce0624d8e8",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
         "target_fixups": [
-          54,
-          15
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "candidate_fixups": [
-          54,
-          15
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-registration-commit",
-        "entry_sha256": "b289b66571762390959389f0907cd5639e22b3b1ecf0b905c30edd1dde4b7af9",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-registration-commit",
-          "source": "src/maine/registration/commit.cpp",
-          "find": "ball->speed.v = 6 * 16;",
-          "replace": "ball->speed.v = 5 * 16;"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "3000efe7d673a5c56faca9f516b72ca768fed4ea5287b305a8b959a598820f3a",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 49516,
-          "candidate_start": 49516,
-          "size": 113,
-          "target_sha256": "79032e44454742f784d1c7aff449de7a00f6ed00805cd81c74e6dc0f2a743bf5",
-          "candidate_sha256": "665c2a361188b70b30d601c70b66b3957821a3da4fc7293af8f70fce0624d8e8",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
           "target_fixups": [
-            54,
-            15
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "candidate_fixups": [
-            54,
-            15
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "2165cfe1fd14b7bdc0e69d87c4f82977db036025c3b98794833068bd351d5221",
-          "dependency_timestamp_normalized_sha256": "56432ccac4b053336b09f45b94bc26fa965de7431ea2df9a5b7ad7923f0f56d9",
-          "module_name": "th05/r_commit.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/r_commit.cpp",
-            "src/maine/registration/commit.cpp",
-            "src/maine/registration/commit.hpp",
-            "src/shared/sound/se.hpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
-            "src/shared/abi.hpp"
+            "src/op/main/strings.hpp",
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -7964,7 +8189,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/r_commit.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
@@ -8052,8 +8315,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d35f949cec2615335ec2bd0021f099545963cff019b4cc15a8002298acbfe8c1",
-            "dependency_timestamp_normalized_sha256": "0341e56e829d7a33de596ed05b8fd7949d4e71f4e24d9b7a513edfb2922b297a",
+            "sha256": "54d53bea895d3c15652bd77f7d474f5b663b315e51b180a3714379c2c1f5e48f",
+            "dependency_timestamp_normalized_sha256": "1e2b6fd4c67b0e57f1c4771e9c58f577f56f42b5d98065aaf2b22ee83ff6b65f",
             "module_name": "th05/r_frame.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -8070,12 +8333,13 @@
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/shared/sound/se.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/maine/registration/frame_body.inl"
             ]
           },
           {
-            "sha256": "d35f949cec2615335ec2bd0021f099545963cff019b4cc15a8002298acbfe8c1",
-            "dependency_timestamp_normalized_sha256": "0341e56e829d7a33de596ed05b8fd7949d4e71f4e24d9b7a513edfb2922b297a",
+            "sha256": "4fa4897350962d60347b2a8357835b3f8a92a6c12782049215e1ea949f1da201",
+            "dependency_timestamp_normalized_sha256": "1e2b6fd4c67b0e57f1c4771e9c58f577f56f42b5d98065aaf2b22ee83ff6b65f",
             "module_name": "th05/r_frame.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -8092,13 +8356,14 @@
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/shared/sound/se.hpp",
-              "src/shared/abi.hpp"
+              "src/shared/abi.hpp",
+              "src/maine/registration/frame_body.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -8135,11 +8400,15 @@
           },
           {
             "path": "src/maine/registration/frame.cpp",
-            "sha256": "18213a65a0ee93ee94d0ab832c66d624f6d4b599a03f0e4c027aac9674f9eaeb"
+            "sha256": "3daba9675db451cb016e1867cae4012d7be57716900ccc5e0f2daab16948863c"
           },
           {
             "path": "src/maine/registration/frame.hpp",
             "sha256": "3a3ace5ca7d825b50911b0f9390f24a9706dd2f1484a9ef87238c0cfb0d3ec9f"
+          },
+          {
+            "path": "src/maine/registration/frame_body.inl",
+            "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -8167,11 +8436,15 @@
         },
         {
           "path": "src/maine/registration/frame.cpp",
-          "sha256": "18213a65a0ee93ee94d0ab832c66d624f6d4b599a03f0e4c027aac9674f9eaeb"
+          "sha256": "3daba9675db451cb016e1867cae4012d7be57716900ccc5e0f2daab16948863c"
         },
         {
           "path": "src/maine/registration/frame.hpp",
           "sha256": "3a3ace5ca7d825b50911b0f9390f24a9706dd2f1484a9ef87238c0cfb0d3ec9f"
+        },
+        {
+          "path": "src/maine/registration/frame_body.inl",
+          "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -8192,74 +8465,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8aa796da065ef5f3f577322e1c023631b4d12783c6120767e61abf470841a7f0",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 48414,
-        "candidate_start": 48414,
-        "size": 40,
-        "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
-        "candidate_sha256": "ecefc6785fb2ac4a7f24237dac42aa84ea87d49d706fa929550b0e3df9c3feb9",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
         "target_fixups": [
-          16,
-          6
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "candidate_fixups": [
-          16,
-          6
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-registration-frame",
-        "entry_sha256": "9a00ea75332f88c71d760a8a8bb0f1914c54855b90a25386a8a9d8b014b51778",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-registration-frame",
-          "source": "src/maine/registration/frame.cpp",
-          "find": "frame_delay(1);",
-          "replace": "frame_delay(2);"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "5a45bc8b1fb7a647e7415fb56c7e6879b0a2dd599f1dc7cf83793524f828029d",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 48414,
-          "candidate_start": 48414,
-          "size": 40,
-          "target_sha256": "5180a0a979809973017bf423cb84b9b2fa77fdd3e63e4dcf42e571fe3c982aab",
-          "candidate_sha256": "ecefc6785fb2ac4a7f24237dac42aa84ea87d49d706fa929550b0e3df9c3feb9",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
           "target_fixups": [
-            16,
-            6
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "candidate_fixups": [
-            16,
-            6
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "cbca35f6f20e8ce4c10b14f4d0395947217c536c3880d97650cbe8ddc1f85765",
-          "dependency_timestamp_normalized_sha256": "6273f1212c5019bf700ed3b01e834828e92d38920fe12bc7d61d8d51b8c163df",
-          "module_name": "th05/r_frame.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/r_frame.cpp",
-            "src/maine/registration/frame.cpp",
-            "src/maine/registration/frame.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
+            "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/shared/sound/se.hpp",
-            "src/shared/abi.hpp"
+            "src/op/main/strings.hpp",
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -8273,7 +8602,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/r_frame.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
@@ -28763,8 +29130,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "fa003c8f0485e8412c73eedcf98f190201989967755e0c35e32098e006d5f20a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28809,20 +29176,24 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           },
           {
-            "sha256": "8c9790c7377072baa6e88c5b12f7bbcf46383683a946598a025ad7d065e8114a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28867,21 +29238,25 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
         "compiler_arguments": [
           [
@@ -28925,16 +29300,28 @@
             "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
           },
           {
+            "path": "src/maine/registration/alphabet_body.inl",
+            "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+          },
+          {
             "path": "src/maine/registration/alphabet_data.hpp",
             "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+          },
+          {
+            "path": "src/maine/registration/commit_body.inl",
+            "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
           },
           {
             "path": "src/maine/registration/display.hpp",
             "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
           },
           {
+            "path": "src/maine/registration/frame_body.inl",
+            "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+          },
+          {
             "path": "src/maine/registration/full_context.cpp",
-            "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+            "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -29001,6 +29388,10 @@
             "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
           },
           {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+          },
+          {
             "path": "src/op/hiscore/view.hpp",
             "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
           },
@@ -29041,16 +29432,28 @@
           "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
         },
         {
+          "path": "src/maine/registration/alphabet_body.inl",
+          "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+        },
+        {
           "path": "src/maine/registration/alphabet_data.hpp",
           "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+        },
+        {
+          "path": "src/maine/registration/commit_body.inl",
+          "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
         },
         {
           "path": "src/maine/registration/display.hpp",
           "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
         },
         {
+          "path": "src/maine/registration/frame_body.inl",
+          "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+        },
+        {
           "path": "src/maine/registration/full_context.cpp",
-          "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+          "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -29117,6 +29520,10 @@
           "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
         },
         {
+          "path": "src/maine/score/end_body.inl",
+          "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+        },
+        {
           "path": "src/op/hiscore/view.hpp",
           "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
         },
@@ -29143,118 +29550,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "41dce02e26ae099b43e030bb1474b53ca1f7efe8ea80623b11b59932f38d8b36",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 46294,
-        "candidate_start": 46294,
-        "size": 86,
-        "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-        "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
+        "candidate_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 46294,
-          "size": 86,
-          "function_symbol": "scoredat_decode()",
-          "contribution_start": 46294,
-          "contribution_size": 4369,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "scoredat_encode()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-score-decode-context",
-        "entry_sha256": "1f33b175cbe4de84b19316bedafde6805c8d3c0ac9bbc62de593ffcbcda7104a",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-score-decode-context",
-          "source": "src/maine/registration/full_context.cpp",
-          "find": "value ^= _AL;",
-          "replace": "value += _AL;"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "522a3ef0ed4dbfa41671cbd1f45263bd3782bff4901bc4e8c1b1f26924f6850e",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 46294,
-          "candidate_start": 46294,
-          "size": 86,
-          "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-          "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
+          "candidate_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 46294,
-            "size": 86,
-            "function_symbol": "scoredat_decode()",
-            "contribution_start": 46294,
-            "contribution_size": 4369,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "scoredat_encode()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "4bbeb0b9c3735d1fc7e6d01b9b2843dc5c96c5750b30bea3851deed6b7957356",
-          "dependency_timestamp_normalized_sha256": "4e9bd038939404ab0ed6728cfb2f9c5d9e82b89715c2f4194ac3f26887f9ffe5",
-          "module_name": "th05/rcfctx.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/rcfctx.cpp",
-            "src/maine/registration/full_context.cpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/hiscore/view.hpp",
-            "src/op/main/menu.hpp",
-            "src/main/hud/resident.hpp",
             "src/op/main/strings.hpp",
-            "src/maine/score/end.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
-            "src/shared/abi.hpp",
-            "src/maine/registration/values.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/insert.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/display.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/places.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/motion.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp",
-            "src/maine/registration/menu.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/hud/resident.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet_data.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/insert.inl",
-            "src/maine/registration/score.inl",
-            "src/maine/registration/stage.inl",
-            "src/maine/registration/name.inl",
-            "src/maine/registration/place.inl",
-            "src/maine/registration/places.inl",
-            "src/maine/registration/spawn.inl",
-            "src/maine/registration/update.inl",
-            "src/maine/registration/menu.inl"
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -29268,7 +29687,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/rcfctx.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
@@ -29376,8 +29833,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "fa003c8f0485e8412c73eedcf98f190201989967755e0c35e32098e006d5f20a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -29422,20 +29879,24 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           },
           {
-            "sha256": "8c9790c7377072baa6e88c5b12f7bbcf46383683a946598a025ad7d065e8114a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -29480,21 +29941,25 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
         "compiler_arguments": [
           [
@@ -29538,16 +30003,28 @@
             "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
           },
           {
+            "path": "src/maine/registration/alphabet_body.inl",
+            "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+          },
+          {
             "path": "src/maine/registration/alphabet_data.hpp",
             "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+          },
+          {
+            "path": "src/maine/registration/commit_body.inl",
+            "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
           },
           {
             "path": "src/maine/registration/display.hpp",
             "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
           },
           {
+            "path": "src/maine/registration/frame_body.inl",
+            "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+          },
+          {
             "path": "src/maine/registration/full_context.cpp",
-            "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+            "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -29614,6 +30091,10 @@
             "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
           },
           {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+          },
+          {
             "path": "src/op/hiscore/view.hpp",
             "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
           },
@@ -29654,16 +30135,28 @@
           "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
         },
         {
+          "path": "src/maine/registration/alphabet_body.inl",
+          "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+        },
+        {
           "path": "src/maine/registration/alphabet_data.hpp",
           "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+        },
+        {
+          "path": "src/maine/registration/commit_body.inl",
+          "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
         },
         {
           "path": "src/maine/registration/display.hpp",
           "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
         },
         {
+          "path": "src/maine/registration/frame_body.inl",
+          "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+        },
+        {
           "path": "src/maine/registration/full_context.cpp",
-          "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+          "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -29730,6 +30223,10 @@
           "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
         },
         {
+          "path": "src/maine/score/end_body.inl",
+          "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+        },
+        {
           "path": "src/op/hiscore/view.hpp",
           "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
         },
@@ -29756,118 +30253,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "41dce02e26ae099b43e030bb1474b53ca1f7efe8ea80623b11b59932f38d8b36",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 46294,
-        "candidate_start": 46294,
-        "size": 86,
-        "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-        "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
+        "candidate_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 46294,
-          "size": 86,
-          "function_symbol": "scoredat_decode()",
-          "contribution_start": 46294,
-          "contribution_size": 4369,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "scoredat_encode()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-score-decode-context",
-        "entry_sha256": "1f33b175cbe4de84b19316bedafde6805c8d3c0ac9bbc62de593ffcbcda7104a",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-score-decode-context",
-          "source": "src/maine/registration/full_context.cpp",
-          "find": "value ^= _AL;",
-          "replace": "value += _AL;"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "522a3ef0ed4dbfa41671cbd1f45263bd3782bff4901bc4e8c1b1f26924f6850e",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 46294,
-          "candidate_start": 46294,
-          "size": 86,
-          "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-          "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
+          "candidate_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 46294,
-            "size": 86,
-            "function_symbol": "scoredat_decode()",
-            "contribution_start": 46294,
-            "contribution_size": 4369,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "scoredat_encode()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "4bbeb0b9c3735d1fc7e6d01b9b2843dc5c96c5750b30bea3851deed6b7957356",
-          "dependency_timestamp_normalized_sha256": "4e9bd038939404ab0ed6728cfb2f9c5d9e82b89715c2f4194ac3f26887f9ffe5",
-          "module_name": "th05/rcfctx.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/rcfctx.cpp",
-            "src/maine/registration/full_context.cpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/hiscore/view.hpp",
-            "src/op/main/menu.hpp",
-            "src/main/hud/resident.hpp",
             "src/op/main/strings.hpp",
-            "src/maine/score/end.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
-            "src/shared/abi.hpp",
-            "src/maine/registration/values.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/insert.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/display.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/places.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/motion.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp",
-            "src/maine/registration/menu.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/hud/resident.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet_data.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/insert.inl",
-            "src/maine/registration/score.inl",
-            "src/maine/registration/stage.inl",
-            "src/maine/registration/name.inl",
-            "src/maine/registration/place.inl",
-            "src/maine/registration/places.inl",
-            "src/maine/registration/spawn.inl",
-            "src/maine/registration/update.inl",
-            "src/maine/registration/menu.inl"
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -29881,7 +30390,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/rcfctx.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
@@ -30105,8 +30652,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "fa003c8f0485e8412c73eedcf98f190201989967755e0c35e32098e006d5f20a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -30151,20 +30698,24 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           },
           {
-            "sha256": "8c9790c7377072baa6e88c5b12f7bbcf46383683a946598a025ad7d065e8114a",
-            "dependency_timestamp_normalized_sha256": "98c91e604415f07f92da3f76a00a00e5524143f04fee4fd734bdc2514ede2346",
+            "sha256": "d888603fa4ced0d36763c470bac5b12bfbe6232857d9b4a0e68c3078f3468a78",
+            "dependency_timestamp_normalized_sha256": "81bd63bdc146f475b457ba6baf86982cd2173beb6a0ed43102de6e4e2bfa00d0",
             "module_name": "th05/rcfctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -30209,21 +30760,25 @@
               "src/op/hiscore/view.hpp",
               "src/maine/registration/alphabet_data.hpp",
               "src/maine/registration/glyphball.hpp",
+              "src/maine/score/end_body.inl",
               "src/maine/registration/insert.inl",
               "src/maine/registration/score.inl",
               "src/maine/registration/stage.inl",
               "src/maine/registration/name.inl",
               "src/maine/registration/place.inl",
               "src/maine/registration/places.inl",
+              "src/maine/registration/alphabet_body.inl",
+              "src/maine/registration/frame_body.inl",
               "src/maine/registration/spawn.inl",
               "src/maine/registration/update.inl",
+              "src/maine/registration/commit_body.inl",
               "src/maine/registration/menu.inl"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
         "compiler_arguments": [
           [
@@ -30267,16 +30822,28 @@
             "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
           },
           {
+            "path": "src/maine/registration/alphabet_body.inl",
+            "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+          },
+          {
             "path": "src/maine/registration/alphabet_data.hpp",
             "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+          },
+          {
+            "path": "src/maine/registration/commit_body.inl",
+            "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
           },
           {
             "path": "src/maine/registration/display.hpp",
             "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
           },
           {
+            "path": "src/maine/registration/frame_body.inl",
+            "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+          },
+          {
             "path": "src/maine/registration/full_context.cpp",
-            "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+            "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
           },
           {
             "path": "src/maine/registration/glyphball.hpp",
@@ -30343,6 +30910,10 @@
             "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
           },
           {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+          },
+          {
             "path": "src/op/hiscore/view.hpp",
             "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
           },
@@ -30383,16 +30954,28 @@
           "sha256": "84d13249165767aa85b3d447148ff2018014c55d994aac0e4cc4fc328cc806b3"
         },
         {
+          "path": "src/maine/registration/alphabet_body.inl",
+          "sha256": "0b8332d21285ceb8166daaa9243a672eb88c06154b67dee3a875332b577f44ed"
+        },
+        {
           "path": "src/maine/registration/alphabet_data.hpp",
           "sha256": "6648195689e01b6e1b7058f8ac2901b70a5c111e98ef4b69af1cc2b47af25a01"
+        },
+        {
+          "path": "src/maine/registration/commit_body.inl",
+          "sha256": "7bc76c462390cd8c87b7320988c3eb0cf2122ae15ec900559e071f845b7cb2d3"
         },
         {
           "path": "src/maine/registration/display.hpp",
           "sha256": "404e0aa0d4f996fe3e968274d79213efe8fe4f9305ab6594d6424550e0303999"
         },
         {
+          "path": "src/maine/registration/frame_body.inl",
+          "sha256": "6222c679e19052d4f8cf5ffaa88959fee8b0bf0389a3753127bb4fcf300e900b"
+        },
+        {
           "path": "src/maine/registration/full_context.cpp",
-          "sha256": "43fe714e640bb887d62c00936ebd43733227bb83bbd6ba5417b1a8e6458ceaab"
+          "sha256": "73eee600202a4f616b295743919df5c4eee348608bc4f21092ac7fd4af5c1b0b"
         },
         {
           "path": "src/maine/registration/glyphball.hpp",
@@ -30459,6 +31042,10 @@
           "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
         },
         {
+          "path": "src/maine/score/end_body.inl",
+          "sha256": "066a9af308b5ce6f9bc7ec66263cfa828f544214574eafa4625d17b9d7e41419"
+        },
+        {
           "path": "src/op/hiscore/view.hpp",
           "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
         },
@@ -30485,118 +31072,130 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "41dce02e26ae099b43e030bb1474b53ca1f7efe8ea80623b11b59932f38d8b36",
+      "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
       "compiled_negative_control": {
-        "target_start": 46294,
-        "candidate_start": 46294,
-        "size": 86,
-        "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-        "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+        "target_start": 46480,
+        "candidate_start": 46480,
+        "size": 416,
+        "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+        "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
+        "candidate_fixups": [
+          411,
+          400,
+          389,
+          365,
+          354,
+          332,
+          321,
+          289,
+          251,
+          246,
+          235,
+          205,
+          192,
+          177,
+          160,
+          139
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 46294,
-          "size": 86,
-          "function_symbol": "scoredat_decode()",
-          "contribution_start": 46294,
-          "contribution_size": 4369,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "scoredat_encode()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-score-decode-context",
-        "entry_sha256": "1f33b175cbe4de84b19316bedafde6805c8d3c0ac9bbc62de593ffcbcda7104a",
+        "unit_id": "maine-score-end",
+        "entry_sha256": "85dff037ac145ccc44bc289686a97deaf8bf900fc07ca49faf2e9dcd0910257a",
         "mutation": {
-          "unit": "maine-score-decode-context",
-          "source": "src/maine/registration/full_context.cpp",
-          "find": "value ^= _AL;",
-          "replace": "value += _AL;"
+          "unit": "maine-score-end",
+          "source": "src/maine/score/end_body.inl",
+          "find": "hi.score.g_stage[i] = (gb_6 - i);",
+          "replace": "hi.score.g_stage[i] = (gb_5 - i);"
         },
-        "control_sha256": "522a3ef0ed4dbfa41671cbd1f45263bd3782bff4901bc4e8c1b1f26924f6850e",
+        "control_sha256": "89eb8900cca8b3db9d470ce0ee385c3737676a1792b4faabd05cce45cc911f89",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 46294,
-          "candidate_start": 46294,
-          "size": 86,
-          "target_sha256": "aa7542cdad9996fb94aa91220688194546e53e9865e9c9c51dd3d7bc5c7a5431",
-          "candidate_sha256": "82b2ec1f93dd5b49be258adbe30829330540cae0aec896a3d7a782a06c32ffa5",
+          "target_start": 46480,
+          "candidate_start": 46480,
+          "size": 416,
+          "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
+          "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
+          "candidate_fixups": [
+            411,
+            400,
+            389,
+            365,
+            354,
+            332,
+            321,
+            289,
+            251,
+            246,
+            235,
+            205,
+            192,
+            177,
+            160,
+            139
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 46294,
-            "size": 86,
-            "function_symbol": "scoredat_decode()",
-            "contribution_start": 46294,
-            "contribution_size": 4369,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "scoredat_encode()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "4bbeb0b9c3735d1fc7e6d01b9b2843dc5c96c5750b30bea3851deed6b7957356",
-          "dependency_timestamp_normalized_sha256": "4e9bd038939404ab0ed6728cfb2f9c5d9e82b89715c2f4194ac3f26887f9ffe5",
-          "module_name": "th05/rcfctx.cpp",
+          "sha256": "266a3b6933d3b73714db821437038ac745b15768731160afe189a94d2708d75b",
+          "dependency_timestamp_normalized_sha256": "8fd619a821840fb791dd139efef5ee8ee856aed062e31e22ff692a60b9731f85",
+          "module_name": "th05/hi_end.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/rcfctx.cpp",
-            "src/maine/registration/full_context.cpp",
+            "th05/hi_end.cpp",
+            "src/maine/score/end.cpp",
+            "src/maine/score/end.hpp",
+            "src/op/hiscore/view.hpp",
+            "src/op/main/menu.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/hiscore/view.hpp",
-            "src/op/main/menu.hpp",
-            "src/main/hud/resident.hpp",
             "src/op/main/strings.hpp",
-            "src/maine/score/end.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/shared/geometry.hpp",
-            "src/shared/abi.hpp",
-            "src/maine/registration/values.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/insert.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/display.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/places.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/motion.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp",
-            "src/maine/registration/menu.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/hud/resident.hpp",
-            "src/op/hiscore/view.hpp",
-            "src/maine/registration/alphabet_data.hpp",
-            "src/maine/registration/glyphball.hpp",
-            "src/maine/registration/insert.inl",
-            "src/maine/registration/score.inl",
-            "src/maine/registration/stage.inl",
-            "src/maine/registration/name.inl",
-            "src/maine/registration/place.inl",
-            "src/maine/registration/places.inl",
-            "src/maine/registration/spawn.inl",
-            "src/maine/registration/update.inl",
-            "src/maine/registration/menu.inl"
+            "src/maine/score/end_body.inl"
           ]
         },
         "compiler_arguments": [
@@ -30610,7 +31209,45 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/rcfctx.cpp"
+          "th05/hi_end.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_end_bindings.asm",
+            "sha256": "e05208f7688eb43c75b0f281250f9ce1b1e746e0843241ed8a18bf7c81291d55"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/maine/score/end.cpp",
+            "sha256": "620b0e6de97fcf4986f3ec00eef5b5fc33294033dcd300b7d159c82b45293cd6"
+          },
+          {
+            "path": "src/maine/score/end.hpp",
+            "sha256": "845d1c157651cf3e4956c341c8d40145fddda8a35a04c6a9bbade351330c2fc0"
+          },
+          {
+            "path": "src/maine/score/end_body.inl",
+            "sha256": "068a5c620e36d5e748bcc91bed0a6c60d1712e969b00a5c2ca3fe159ebef32f6"
+          },
+          {
+            "path": "src/op/hiscore/view.hpp",
+            "sha256": "3cb61b8c080f1b82855092dc4f7d40a59df5fc5806aaa35208db715010ad15b6"
+          },
+          {
+            "path": "src/op/main/menu.hpp",
+            "sha256": "6780ac286f3950f97c50d5a9db4a22b5fd038004e78ab8d5c4ba60d2cdc83856"
+          },
+          {
+            "path": "src/op/main/strings.hpp",
+            "sha256": "57a975b645d00ee5d02695b4ce79c19883692101d76fb7c764ed3105de2cf1c5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
         ]
       },
       "target_view": {
