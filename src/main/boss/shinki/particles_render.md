@@ -1,4 +1,4 @@
-# Background particle renderer candidate
+# Background particle renderer: exact C++ with original symbolic-zero operand
 
 Original MAIN `[10CB2,10D51)` is159 bytes/60 instructions with no instruction
 NOPs, table, padding or relocations. The standalone source uses the complete
@@ -59,3 +59,40 @@ variants are retained under `.analysis/gpt-web-shinki-particles-zero-*-a/`
 and `.analysis/gpt-web-shinki-particles-zero-*.cpp` for a future genuinely
 source-backed original zero-operand solution. No existing accepted renderer or
 Boss owner was recompiled for this failed standalone trial.
+
+## 2026-11-10: complete 159-byte exact source recovery
+
+`shinki_bg_particles_render()` now passes native source replay at
+`[10CB2,10D51)` with **159/159 original raw bytes** and the unchanged empty
+ordered MZ relocation stream. Two independent Turbo C++/TLINK builds and a
+compiled age-increment mutation (`++` → `+=2`) pass the scoped oracle.
+The complete original 64-particle loop, motion, animation, clipping, reset and
+monochrome drawing calls remain ordinary C++ with the original `_AX`/`_CX`
+hardware register interface.
+
+The last discrepancy was the original `CMP AX,0` at relative `+6E`. Turbo C++
+reduces `top > 0` to a two-byte `OR AX,AX`; rewriting it as `top >= 1`
+emits a three-byte comparison but has the wrong literal/condition. ReC98's
+preserved `th05/main/boss/render.cpp` explicitly uses
+`keep_0(PLAYFIELD_TOP - PARTICLE_H)` at precisely this boundary. Its
+`decomp.hpp` provides a template that returns the address of an external
+near `address_0` when the input is a compile-time zero. Reintroducing this
+source-level helper forces a genuine linker-resolved **three-byte
+`CMP AX,0000`** while retaining the original signed condition.
+
+The external `_address_0` is a *symbolic zero operand*, not game state: the
+source-free binder exports a public label at offset zero of the actual
+`DGROUP/_DATA` segment, with no initialized data, added storage or CODE. The
+linker resolves the offset to zero and does not introduce a module
+relocation. An earlier attempt to place the alias in `_TEXT` was correctly
+rejected by TLINK as a cross-segment fixup overflow, confirming that the
+operand's segment group matters. The accepted source has the original
+DGROUP/DS `209D`, original CS `AE1`, unchanged particle array at DS `4684`
+and original 159-byte function extent. No target-byte template, NOP, ignored
+function suffix or post-link patch was used.
+
+Focused receipt:
+`.analysis/unit-replays/gpt-web-main-shinki-particles-render-159-20261110/receipt.json`.
+The full 159 bytes receive C++-owned CODE credit for the complete function;
+previous 158/159-but-wrong diagnostics above are superseded. No other Boss
+owners were changed or replayed.

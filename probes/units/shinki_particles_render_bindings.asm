@@ -17,7 +17,10 @@ SHINKI_PARTICLE_DGROUP_GAP segment para public 'CODE' use16
 org (209D0h - 10D60h)
 SHINKI_PARTICLE_DGROUP_GAP ends
 _DATA segment word public 'DATA' use16
-public _boss_particles
+; Real DGROUP offset 0000: the original keep_0() symbolic zero operand.
+; Public alias only, no initialized data emitted.
+public _address_0, _boss_particles
+_address_0 label word
 org 04684h
 _boss_particles label byte
 org 04A84h

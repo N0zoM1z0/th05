@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN Shinki's complete 159-byte background particle renderer is now
+source-exact C++: two independent Borland/TLINK builds, literal native code
+and ordered fixups, and a rejected real age-update mutation. Restoring the
+original ReC98 `keep_0(PLAYFIELD_TOP - PARTICLE_H)` source construct forces
+`CMP AX,0000`, using a zero-offset *public alias* in the authentic DGROUP
+with no added DATA. This resolves the former 158-byte `OR AX,AX` blocker.
+Receipt: `.analysis/unit-replays/gpt-web-main-shinki-particles-render-159-20261110/receipt.json`.
+See [Shinki background renderer](../src/main/boss/shinki/particles_render.md).
+
 MAIN Mai/Yuki's complete `B4BALLS_UPDATE` state machine is now exact natural
 C++: **273/273 bytes**, original three ordered relocation sites, two real
 Turbo C++/TLINK producers and a rejected 550→551 kill-score mutation.

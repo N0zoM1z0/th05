@@ -5133,3 +5133,22 @@ unit = "main-b4ball-update"
 source = "src/main/boss/mai_yuki/b4ball_update.cpp"
 find = "score_delta += B4_UPDATE_KILL_SCORE;"
 replace = "score_delta += B4_UPDATE_KILL_SCORE + 1;"
+
+[[units]]
+id = "main-shinki-particles-render"
+source = "src/main/boss/shinki/particles_render.cpp"
+module = "th05/b6partr.cpp"
+segment = "SHINKI_PARTICLE_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/shinki_particles_render_bindings.asm"
+target_start = 0x10cb2
+size = 159
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-shinki-particles-render"
+source = "src/main/boss/shinki/particles_render.cpp"
+find = "particle->age++;"
+replace = "particle->age += 2;"

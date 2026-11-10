@@ -4,6 +4,16 @@
 #include "src/main/boss/background.hpp"
 #pragma codeseg SHINKI_PARTICLE_TEXT main_01
 
+// ReC98's source-level keep_0: force a symbolic zero operand through
+// a real near relocatable label, so native CMP AX,0000 is not optimized to OR.
+template <class T> inline T keep_0(T x) {
+    if(x == 0) {
+        extern void *near address_0;
+        return reinterpret_cast<T>(&address_0);
+    }
+    return x;
+}
+
 typedef char shinki_render_record_is_16[(sizeof(boss_particle_t) == 16) ? 1 : -1];
 
 void near shinki_bg_particles_render(void)
@@ -34,7 +44,7 @@ void near shinki_bg_particles_render(void)
             _CX = left;
             if(!(static_cast<int>(_CX) > PLAYFIELD_LEFT - PARTICLE_W &&
                  static_cast<int>(_CX) < PLAYFIELD_RIGHT &&
-                 static_cast<int>(_AX) > 0 &&
+                 static_cast<int>(_AX) > keep_0(PLAYFIELD_TOP - PARTICLE_H) &&
                  static_cast<int>(_AX) < PLAYFIELD_BOTTOM)) {
                 particle->pos = particle->origin;
                 particle->age = 0;
