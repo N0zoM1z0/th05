@@ -59,3 +59,32 @@ callbacks both still emit455 versus456 bytes. Both stop after their first
 size failure; no acceptance or padding follows. All256 command bytes and
 boundary scenarios pass780 cases per native/compiled interpreter, with foreign
 ABI stubs. See [complete context and semantic evidence](opcode.md).
+
+## 2026-11-10: exact 88-byte PC-98 dialog box tile renderer
+
+`dialog_box_put(unsigned int,unsigned int,int)` is now independently
+accepted as a complete 88-byte source-owned function at `[13A3E,13A96)`.
+The source `box_put.cpp` reconstructs ReC98's original register-directed
+GRCG tile drawing: far `grcg_setcolor(0xC0,1)`, VRAM plane `A800`,
+AX/DX-to-DI screen offset, BX tile selection, 48 rows of 20 `REP STOSW`
+words, tile-wrap test and final output-port disable. The C++ frame retains
+its real near-Pascal three-word arguments and `RET 6`.
+
+The 92-byte first producer was already semantically correct but Borland
+chose the reverse register encoding for two AX+DX additions and the AX→DI
+move, and copied DX into AX to test the loop. Source-level register
+primitives for those original operations, together with a C++ row label and
+real `DEC DX`/`JNE` inline loop, restore the original **88/88 bytes**. This
+is genuine C++ with PC-98 register inline assembly, not pure high-level C++
+or a copied opcode sequence. The only original relocation is far GRCG call
+`+13`, and the original source-free binder resolves the actual tile array
+in DGROUP without adding initialized data.
+
+Two fresh independent Turbo C++/TLINK producers pass all 88 raw bytes,
+original relocation order and physical MAP/OMF boundaries; changing the
+48-row drawing count to 47 is compiled and rejected. Receipt:
+`.analysis/unit-replays/gpt-web-main-dialog-box-put-88-20261110/receipt.json`.
+
+The following 56-byte interpage copy and 74-byte face unput still lack
+source ownership. The independent 106-byte box-wipe/fade pair remains
+accepted, while the 456-byte dialog opcode remains unaccepted.

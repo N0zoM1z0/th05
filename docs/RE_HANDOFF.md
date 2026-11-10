@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN `dialog_box_put()` PC-98 tile renderer is now complete native-exact
+**88/88-byte C++ with original register inline assembly** at `13A3E..13A96`.
+Two independent builds and its 48→47 row-count compiled negative pass,
+with the actual far GRCG fixup at `+13`. See
+[dialog graphics context](../src/main/dialog/runtime.md) and
+`.analysis/unit-replays/gpt-web-main-dialog-box-put-88-20261110/receipt.json`.
+
 The MAIN Mai/Yuki **186-byte tracking laser Boss callback** is newly exact:
 `[17B76,17C30)`, two unmodified TCC-generated-ASM/TASM32 producers and a
 compiled stop-frame negative match the genuine two-site ordered relocation

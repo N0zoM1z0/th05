@@ -5302,3 +5302,23 @@ unit = "main-mai-yuki-tracking-laser-compilerasm"
 source = "src/main/boss/mai_yuki/tracking_laser.cpp"
 find = "if(boss.phase_frame == 160) {"
 replace = "if(boss.phase_frame == 161) {"
+
+[[units]]
+id = "main-dialog-box-put-exact"
+source = "src/main/dialog/box_put.cpp"
+module = "th05/dlgboxp.cpp"
+segment = "DIALOG_RUN_TEXT"
+wrapper_options = "-zCDIALOG_RUN_TEXT -zPmain_01"
+bindings_source = "probes/units/dialog_box_put_bindings.asm"
+target_start = 0x13a3e
+size = 88
+functions = 1
+function_symbol = "dialog_box_put(unsigned int,unsigned int,int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-dialog-box-put-exact"
+source = "src/main/dialog/box_put.cpp"
+find = "_DX = 48;"
+replace = "_DX = 47;"
