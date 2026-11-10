@@ -1,9 +1,9 @@
-# Generic boss: exact defeat and six helpers; collision still pending
+# Generic boss: all 809 CODE bytes exact across defeat, helpers and player collision
 
 Current status: `main-boss-generic` independently accepts six functions / 352
 CODE bytes; `main-boss-generic-data` accepts the complete 10-byte item-drop
 DATA table. The full **414-byte defeat** controller is now accepted; only the separate
-43-byte player-collision function remains unaccepted. The
+The complete **43-byte player collision is now accepted** in its own source scope. The
 preparation notes below are historical context; use the current ledgers for
 acceptance.
 
@@ -223,3 +223,26 @@ all three selected negative-controlled real units passed. The 414 new
 instruction bytes are counted only once as C++ CODE, and no packed-file or
 whole-game completeness is implied. Earlier 408/411/414-but-wrong diagnostic
 variants remain historical evidence superseded by this accepted source.
+
+## 2026-11-10: original-register 43-byte Boss/player collision accepted
+
+The final formerly pending `boss_hittest_player()` at `[1FD4F,1FD7A)` now
+matches the entire native **43/43 byte** body and empty fixup stream from
+original C++ using true `_AX` and `_DX` pseudoregisters (as explicitly
+preserved in ReC98 `th04/main/boss/boss.cpp`). Ordinary local X/Y candidates
+were 46 bytes because Borland allocated X to BX instead of the original AX.
+The canonical collision source now lives in `collision_body.inl`, shared by
+the focused wrapper and this original-order `generic.cpp`; it emits no
+handwritten assembler, register-hint instruction or inserted padding.
+
+The new `main-boss-player-collision` was validated twice, with a rejected
+actual hit-flag compiled negative. Changes to its shared source caused the
+existing six-helper 352-byte CODE scope, complete 414-byte Boss defeat scope
+and 10-byte DATA table to be locally recompiled and negative-controlled;
+all remain exact. The original three consecutive non-overlapping CODE
+functions/contributions now sum to **809 complete source-owned CODE bytes**,
+with zero unaccepted collision/defeat gaps. This turn adds only the new 43
+bytes, not the old 352/414 or DATA10. Receipt:
+`.analysis/unit-replays/gpt-web-main-boss-collision-43-and-neighbors-20261110/receipt.json`.
+See [collision review](collision.md). Earlier 43/46 and unaccepted references
+throughout this document are historical failed trial results.

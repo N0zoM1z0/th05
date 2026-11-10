@@ -5094,3 +5094,23 @@ unit = "main-boss-defeat-update-complete"
 source = "src/main/boss/generic.cpp"
 find = "if(stage_id != STAGE_EXTRA) {"
 replace = "if(stage_id == STAGE_EXTRA) {"
+
+[[units]]
+id = "main-boss-player-collision"
+source = "src/main/boss/generic.cpp"
+module = "th05/boss.cpp"
+segment = "BOSS_COLLISION_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/boss_generic_bindings.asm"
+target_start = 0x1fd4f
+size = 43
+functions = 1
+function_symbol = "boss_hittest_player()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-boss-player-collision"
+source = "src/main/boss/collision_body.inl"
+find = "player_is_hit = true;"
+replace = "player_is_hit = false;"

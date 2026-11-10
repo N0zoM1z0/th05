@@ -1,6 +1,7 @@
 // Natural generic TH05 boss behavior, specialized to the pinned original.
 #pragma option -zCBOSS_TEXT
 
+#include <dos.h>
 #include "src/main/boss/generic.hpp"
 
 // Processes any collision between the player and boss sprites.
@@ -200,21 +201,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 	homing_target.y.v = HOMING_TARGET_NONE;
 }
 
-// The following natural collision function still emits 46 bytes versus
-// the original 43; it remains an entirely separate unaccepted scope.
+// The complete original-register player collision now uses the same real
+// AX/DX state as the original C++ source and compiles to 43 native bytes.
 #pragma codeseg BOSS_COLLISION_TEXT main_03
-void near boss_hittest_player(void)
-{
-	subpixel_t delta_x = boss.pos.cur.x.v;
-	subpixel_t delta_y = boss.pos.cur.y.v;
-	delta_x -= player_pos.cur.x.v;
-	delta_y -= player_pos.cur.y.v;
-
-	// You probably wouldn't swap X and Y in sane code.
-	if(overlap_wh_inplace_fast(
-		delta_y, delta_x, to_sp(BOSS_H / 2), to_sp(BOSS_W / 2)
-	)) {
-		player_is_hit = true;
-	}
-
-}
+#include "src/main/boss/collision_body.inl"

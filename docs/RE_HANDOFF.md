@@ -15,14 +15,24 @@ and its one original ordered relocation, without changing any accepted
 `.analysis/gpt-web-yumeko-swords-asm-a/receipt.json`.
 See [sword lifecycle review](../src/main/boss/yumeko/swords_update.md).
 
+The complete MAIN `boss_hittest_player()` is now **43/43 bytes exact C++**
+using the original ReC98 `AX/DX` register expressions rather than ordinary
+local X/Y variables. Two independent real compiler producers and its compiled
+hit-flag negative passed with the true empty original ordered fixup list.
+The generic Boss original CODE has now **809/809 exact raw bytes** across
+352 helper, 414 defeat and 43 collision contributions, with per-function
+source/fixup acceptance and zero internal foreign gaps. The shared source
+and focused receipt are in [collision review](../src/main/boss/collision.md)
+and `.analysis/unit-replays/gpt-web-main-boss-collision-43-and-neighbors-20261110/receipt.json`.
+
 The MAIN **414-byte generic Boss defeat controller is now source-exact C++**:
 restoring the original ReC98 empty inline `optimization_barrier()` after the
 Extra Stage all-clear reward prevents the old six-byte common-tail merge.
 Two independent compiler/linker producers match all **414/414** bytes and six
 original ordered fixups, and a real Extra Stage bonus-branch compiled negative
 is rejected. The original six Boss helpers (352 CODE bytes) and 10-byte
-semantic DATA table were locally refreshed and stay exact. The following
-43-byte player-collision function remains unaccepted. The focused receipt is
+semantic DATA table were locally refreshed and stay exact. The adjacent 43-byte player-collision function is also now source-exact,
+so the original generic Boss CODE range is complete. The focused receipt is
 `.analysis/unit-replays/gpt-web-main-boss-defeat-414-and-neighbors-20261110/receipt.json`.
 **This turn's three newly accepted full Boss callbacks contribute 774 natural
 C++ bytes** (Alice 140, Shinki 220, generic defeat 414). See
@@ -222,7 +232,7 @@ Focused native/actual compiler analysis continued on substantial owner
 functions. Shinki's ball updater has a 221-byte natural `-O-` trial against
 native 220 (last short/near branch-layout difference); Yumeko's sword updater
 can now compile the original 283-byte complete *size* with fixup `[75]`, but
-still differs in twirl branch output; the generic boss-player collision
+still differs in twirl branch output; the formerly inexact generic boss-player collision
 remains 43 target versus 45 best candidate. Source/ABI outcomes, failed
 variants and next codegen questions are recorded in each owner Markdown.
 
@@ -267,7 +277,7 @@ before relying on old census/routing files.
 | Yumeko sword update, 283 | Current 283 matches size and fixup but differs in twirl branches; both later large attacks accepted separately | [Swords](../src/main/boss/yumeko/swords_update.md) |
 | Dialog opcode, 456 | Direct 455; compiler-assembly raw 456 has wrong fixup order | [Dialog](../src/main/dialog/opcode.md) |
 | EMS boss-face preload, 154 | Raw exact; `[71,24,133,114]` order unresolved | [EMS](../src/main/ems/ems.md) |
-| Generic boss defeat/collision, 414 / 43 | Current 408 / 46; four new natural branch trials still merge all-clear calls | [Generic boss](../src/main/boss/generic.md) |
+| Generic boss defeat/collision, 414 / 43 | Accepted 414/43 separately, original shared-source 809 CODE exact | [Generic boss](../src/main/boss/generic.md) |
 | OP score decode, 169 | Ordinary key emits 181. TC4 rejects assembly inside inline/template functions | [Decoder](../src/shared/score/decode.md) |
 | ZUN resident entry, 269 | Current 260; `-O-` emits 262 | [Resident](../src/zun/resident/initialize.md) |
 
