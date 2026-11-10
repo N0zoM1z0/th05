@@ -50,3 +50,33 @@ SI/DI/BP/DS/SP and IF/DF. Tile-provider effects are excluded.
 Report `.analysis/pointnums-invalidate-scalar-semantic-check.json`, SHA-256
 `e6746fe0d4a820d18ffdedebf2b60f71bfbd4cd1154d779f9ecc27f481efbccf`.
 This is bounded semantic evidence, not exact acceptance.
+
+## Exact reviewed native invalidation source — 2026-11-10
+
+The full original `pointnums_invalidate()` at MAIN `[E17A,E1A6)` is now an
+independently verified **44-byte / 19-instruction** reviewed assembly owner.
+The natural source `invalidate.cpp` remains the single real typed C++
+experiment: previous builds produced 43 bytes at best, without the original
+complete instruction layout. The real TH04 `main/pointnum/inv_upd.asm`
+provides independently maintained assembly semantics for the no-frame
+near-Pascal loop, `F_FREE` skip, full 280-slot pointnum walk, and previous-Y /
+current-X parameter pair to the real `TILES_INVALIDATE_AROUND` provider.
+
+`invalidate.asm` maintains these operations with canonical 16-byte
+`pointnum_t` offsets, original hitbox height8, full 280-record count, near
+`RET`, register-preservation and actual source state at `DS:3502` / `DS:9F04`.
+The binder contributes only external symbolic addresses (actual CS AE1,
+DS209D) and outside ranges, with no game DATA, BSS, padding or opcode body.
+Its own paragraph-aligned foreign tail was adjusted to its *true* initial
+paragraph after `E1A6`, so linker placement naturally produces the original
+DS frame. This is original-language reviewed ASM credit, not reconstructed
+compiler-generated C++ or a claim of historical source identity.
+
+Focused receipt `.analysis/gpt-web-pointnums-invalidate-asm-b/receipt.json`
+verifies two independent genuine TASM32/TLINK producers, complete **44/44
+raw bytes**, the native empty ordered relocation stream, entire OMF source
+LEDATA and original MAP public `pointnums_invalidate()`. Its natural source
+negative changes the hitbox height from8 to9, and the complete 44-byte unit
+fails the original comparison as required. The accepted adjacent 111-byte
+pointnum updater and previous init/render helpers are unchanged and were
+not cold-replayed.

@@ -12635,6 +12635,226 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "91a8a9c5e0738abe66d56366bed0b0a5c1eeafdb1e9a6ec396f169aa22c67f35"
+    },
+    "main-pointnums-invalidate": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-pointnums-invalidate",
+        "artifact": "main",
+        "source": "src/main/pointnum/invalidate.asm",
+        "types": "src/main/pointnum/pointnum_types.inc",
+        "symbols": "probes/units/pointnums_invalidate_symbols.inc",
+        "bindings": "probes/units/pointnums_invalidate_asm_bindings.asm",
+        "notes": "src/main/pointnum/invalidate.md",
+        "target_start": 57722,
+        "size": 44,
+        "segment": "POINTNUM_INV_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "c3f777b5c8d7ba2d26078bddc5c93b4a21782e7fd88cee75f0b0f83b43fcd8fd",
+        "target_scope_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+        "semantic_inputs": [
+          "src/main/pointnum/lifecycle.hpp"
+        ],
+        "publics": {
+          "pointnums_invalidate()": 0,
+          "pointnums_invalidate_end": 44
+        },
+        "negative": {
+          "find": "POINTNUM_INVALIDATE_HEIGHT equ POINTNUM_H",
+          "replace": "POINTNUM_INVALIDATE_HEIGHT equ (POINTNUM_H + 1)"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/pointnums_invalidate_asm_bindings.asm",
+          "sha256": "a3bd96ba2034577a4deb3c0ff378575b9a2422f1a4b8d3a745f6a9e390610ceb"
+        },
+        {
+          "path": "probes/units/pointnums_invalidate_symbols.inc",
+          "sha256": "d3f5d642fa9e8e677da0b287e0d94d0fe38983b70e73ed22b0a496e04548ca5b"
+        },
+        {
+          "path": "src/main/pointnum/invalidate.asm",
+          "sha256": "d855d9c9df3bf1d5be12e83cdbfd05558b83e015aa22b0da80d8b5cbd300ef43"
+        },
+        {
+          "path": "src/main/pointnum/lifecycle.hpp",
+          "sha256": "aa82dabbf00dc9f6c8735c4ea0398a7afd813b50a2260da633468838fbecbab6"
+        },
+        {
+          "path": "src/main/pointnum/pointnum_types.inc",
+          "sha256": "f807abda8c362b35cbf77a2bc1b808a690f1211b22604c5072e36d4238205e9b"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 44,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 57722,
+            "candidate_start": 57722,
+            "size": 44,
+            "target_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+            "candidate_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "POINTNUM_INV_TEXT",
+            "size": 44,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 44,
+                "sha256": "4f0cb8b23f4011aac3b182b511c71507e3ba1174eb6ac9ce7d2a3a793e1964f7"
+              }
+            ]
+          },
+          "object_sha256": "9d19cfc795bacc1eafae6b89c3e41a5c25af6e639e35f9e383f3718995804679",
+          "object_normalized_sha256": "1a76ac74d7e7e47e75f11b4dcf214bddde7e81ac32730b925c15388570941d46",
+          "bindings_sha256": "3991c369a88f3c99b4b83f685a9fc410dba442d5b991ad25e22f3919f4a49025",
+          "bindings_normalized_sha256": "a08880876f117d9998590b4ca3f6e8c5b1cd0a7729970ad2f4744bf899824d44",
+          "map_sha256": "a5e753f344d82c2ade40854140fc4e8d3c1c014067851489f7f2a2dddc5fd092",
+          "mz_sha256": "0a55202cfc45bea9425dcd409af7b365aa22a71ca327cef6779d94b779173b89",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 57722,
+            "candidate_start": 57722,
+            "size": 44,
+            "target_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+            "candidate_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "POINTNUM_INV_TEXT",
+            "size": 44,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 44,
+                "sha256": "4f0cb8b23f4011aac3b182b511c71507e3ba1174eb6ac9ce7d2a3a793e1964f7"
+              }
+            ]
+          },
+          "object_sha256": "8c7967c4106fcc22cb75966a46a33a3848436a173323c8ce519e9b312f5478e9",
+          "object_normalized_sha256": "1a76ac74d7e7e47e75f11b4dcf214bddde7e81ac32730b925c15388570941d46",
+          "bindings_sha256": "17760f47f14cda2647fea36c643af13ef0d4ce8afd68d65f625edbb0e42be0f2",
+          "bindings_normalized_sha256": "a08880876f117d9998590b4ca3f6e8c5b1cd0a7729970ad2f4744bf899824d44",
+          "map_sha256": "a5e753f344d82c2ade40854140fc4e8d3c1c014067851489f7f2a2dddc5fd092",
+          "mz_sha256": "0a55202cfc45bea9425dcd409af7b365aa22a71ca327cef6779d94b779173b89",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 57722,
+          "candidate_start": 57722,
+          "size": 44,
+          "target_sha256": "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38",
+          "candidate_sha256": "701acfe89bd068ef565d2424d5635abdf19cee5559e7ee366a8def27e46abcb6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "POINTNUM_INV_TEXT",
+          "size": 44,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 44,
+              "sha256": "2e7a7444c492a2d2aa9fbc780c54e298f51ba9c6261df15579e3e72504eb747b"
+            }
+          ]
+        },
+        "object_sha256": "4496d10500549ca7dd4eb9049dc374a1090d512ee2e5c8d37a537f2327006030",
+        "object_normalized_sha256": "a024a39e4682f2a479dc0fa05c9e311cd512fdf885b19a69ff106a746173c012",
+        "bindings_sha256": "17760f47f14cda2647fea36c643af13ef0d4ce8afd68d65f625edbb0e42be0f2",
+        "bindings_normalized_sha256": "a08880876f117d9998590b4ca3f6e8c5b1cd0a7729970ad2f4744bf899824d44",
+        "map_sha256": "a5e753f344d82c2ade40854140fc4e8d3c1c014067851489f7f2a2dddc5fd092",
+        "mz_sha256": "2e31f753524096add12d84eb430f76074d2317460c04bb772e2a7667d5c4376f",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "9bbd529ce541dcb54e1ec99fe9fa385c4cd7e3896bd3937156a4822235652a7a"
     }
   }
 }

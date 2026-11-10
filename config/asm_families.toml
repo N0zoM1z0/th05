@@ -1657,3 +1657,29 @@ replace = "POINTNUM_EXPIRE_AGE equ 37"
 offset = 111
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-pointnums-invalidate"
+artifact = "main"
+source = "src/main/pointnum/invalidate.asm"
+types = "src/main/pointnum/pointnum_types.inc"
+symbols = "probes/units/pointnums_invalidate_symbols.inc"
+bindings = "probes/units/pointnums_invalidate_asm_bindings.asm"
+notes = "src/main/pointnum/invalidate.md"
+target_start = 0xe17a
+size = 44
+segment = "POINTNUM_INV_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "c3f777b5c8d7ba2d26078bddc5c93b4a21782e7fd88cee75f0b0f83b43fcd8fd"
+target_scope_sha256 = "d1327a79e901d8b2698df5498a4f3819aa02a4fc70732a01fef4d0bf5e851c38"
+semantic_inputs = ["src/main/pointnum/lifecycle.hpp"]
+[units.publics]
+"pointnums_invalidate()" = 0
+"pointnums_invalidate_end" = 44
+[units.negative]
+find = "POINTNUM_INVALIDATE_HEIGHT equ POINTNUM_H"
+replace = "POINTNUM_INVALIDATE_HEIGHT equ (POINTNUM_H + 1)"
