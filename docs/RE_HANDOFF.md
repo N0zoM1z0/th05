@@ -6,6 +6,19 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN **414-byte generic Boss defeat controller is now source-exact C++**:
+restoring the original ReC98 empty inline `optimization_barrier()` after the
+Extra Stage all-clear reward prevents the old six-byte common-tail merge.
+Two independent compiler/linker producers match all **414/414** bytes and six
+original ordered fixups, and a real Extra Stage bonus-branch compiled negative
+is rejected. The original six Boss helpers (352 CODE bytes) and 10-byte
+semantic DATA table were locally refreshed and stay exact. The following
+43-byte player-collision function remains unaccepted. The focused receipt is
+`.analysis/unit-replays/gpt-web-main-boss-defeat-414-and-neighbors-20261110/receipt.json`.
+**This turn's three newly accepted full Boss callbacks contribute 774 natural
+C++ bytes** (Alice 140, Shinki 220, generic defeat 414). See
+[Boss source review](../src/main/boss/generic.md).
+
 MAIN Stage 3 Alice's 140-byte foreground and Stage 6 Shinki's 220-byte
 ball updater are newly source-exact **C++ Boss** functions this turn: 360
 new complete native CODE bytes, both with two fresh producers and rejected

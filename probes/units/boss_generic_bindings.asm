@@ -99,11 +99,10 @@ BOSS_TEXT ends
 BOSS_DEFEAT_TEXT segment byte public 'CODE' use16
 BOSS_DEFEAT_TEXT ends
 
-; Six uncredited bytes follow the actual 408-byte defeat contribution and
-; precede the whole 46-byte natural collision function. Both remain unaccepted.
-; The first six accepted functions end before either function or this hole.
+; The authentic 414-byte defeat body now reaches native collision start 1FD4F.
+; The following ordinary 46-byte collision candidate remains unaccepted.
+; There is no foreign CODE byte between two complete functions.
 BOSS_COLLISION_TEXT segment byte public 'CODE' use16
-org 6
 BOSS_COLLISION_TEXT ends
 main_03 group BOSS_TEXT, BOSS_DEFEAT_TEXT, BOSS_COLLISION_TEXT
 

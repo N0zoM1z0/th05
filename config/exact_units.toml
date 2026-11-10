@@ -5074,3 +5074,23 @@ unit = "main-shinki-balls-update"
 source = "src/main/boss/shinki/balls_update_body.inl"
 find = "p->age++;"
 replace = "p->age += 2;"
+
+[[units]]
+id = "main-boss-defeat-update-complete"
+source = "src/main/boss/generic.cpp"
+module = "th05/boss.cpp"
+segment = "BOSS_DEFEAT_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/boss_generic_bindings.asm"
+target_start = 0x1fbb1
+size = 414
+functions = 1
+function_symbol = "boss_defeat_update(unsigned int)"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-boss-defeat-update-complete"
+source = "src/main/boss/generic.cpp"
+find = "if(stage_id != STAGE_EXTRA) {"
+replace = "if(stage_id == STAGE_EXTRA) {"

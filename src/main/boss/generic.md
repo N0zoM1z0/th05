@@ -1,8 +1,9 @@
-# Generic boss: accepted helpers/DATA, pending defeat/collision
+# Generic boss: exact defeat and six helpers; collision still pending
 
 Current status: `main-boss-generic` independently accepts six functions / 352
 CODE bytes; `main-boss-generic-data` accepts the complete 10-byte item-drop
-DATA table. Defeat (414) and player collision (43) remain unaccepted. The
+DATA table. The full **414-byte defeat** controller is now accepted; only the separate
+43-byte player-collision function remains unaccepted. The
 preparation notes below are historical context; use the current ledgers for
 acceptance.
 
@@ -183,3 +184,42 @@ relocation reordering, fake state mutation or change to already accepted six
 Boss helpers was added. The natural duplicated all-clear behavior is still
 correct but gets merged by Turbo C++; further work must reconstruct original
 branch lowering or a genuine original assembler-language source interface.
+
+## 2026-11-10: exact 414-byte Boss defeat C++ state machine
+
+The original `boss_defeat_update(unsigned int)` now has a complete, accepted
+natural C++ source owner `main-boss-defeat-update-complete` at
+`[1FBB1,1FD4F)`. All **414/414 raw bytes**, original literal six-site
+ordered relocation stream `[395,365,351,337,254,33]`, near-Pascal parameter
+frame, original branch/call structure and full MAP/OMF boundaries match in
+two fresh Borland/TLINK producers. The meaningful compiled negative reverses
+the Extra Stage bonus selection and is rejected. The previously accepted six
+352-byte Boss helpers and 10-byte item-drop DATA initializer were refreshed
+in the same focused replay and remain strictly exact; they add no new bytes.
+
+The final six-byte codegen gap arose because Turbo C++ was merging two real
+`stage_allclear_bonus()` call exits in its common tail. The pinned ReC98
+`th04/main/boss/boss.cpp` **actually** contains a call to
+`optimization_barrier()` immediately after the **Extra Stage branch's**
+all-clear reward; `decomp.hpp` implements this as an empty inlined function
+returning `false`. Restoring exactly that authentic source-level statement
+prevents the common-tail merger and naturally generates both distinct
+original near calls and intervening jumps. Neither the barrier nor its inline
+body emits a NOP, instruction template, stub, fake state mutation or source
+DATA. Putting the same call at the last-stage exit, before the reward or in
+other branches did not work; the original position is causally necessary.
+
+The independent source-owned `BOSS_DEFEAT_TEXT` now has its genuine 414-byte
+function extent, so the old six-byte source-free `BOSS_COLLISION_TEXT` bridge
+was removed from the binder rather than credited. The following ordinary
+collision C++ candidate still generates 46 versus the native complete 43;
+its offset remains correctly anchored at original `1FD4F`, and it remains
+**unaccepted**. There is no overlapping or partial acceptance.
+
+Focused receipt:
+`.analysis/unit-replays/gpt-web-main-boss-defeat-414-and-neighbors-20261110/receipt.json`.
+The two accepted comparison rounds have unchanged original code and fixups;
+all three selected negative-controlled real units passed. The 414 new
+instruction bytes are counted only once as C++ CODE, and no packed-file or
+whole-game completeness is implied. Earlier 408/411/414-but-wrong diagnostic
+variants remain historical evidence superseded by this accepted source.
