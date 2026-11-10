@@ -54,6 +54,14 @@ new complete native CODE bytes, both with two fresh producers and rejected
 compiled semantic negatives. Their respective existing accepted 381-byte
 puppet and 81-byte ball-adder neighbors were not double counted.
 
+MAIN Mai/Yuki `b4balls_update()` is now exact natural C++:
+**273/273 bytes** at `18459..1856A`, original ordered fixups `[235,156,118]`,
+two fresh Borland/TLINK producers and a rejected kill-score mutation.
+The native AX/DX motion-return overlap and a zero-instruction C++ clip-branch
+barrier restore original codegen without body or linkage patching. See
+[B4 update](../src/main/boss/mai_yuki/b4ball_update.md) and
+`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
+
 MAIN Alice's Boss foreground callback is now exact natural C++:
 **140/140 bytes** at `14354..143E0`, original three-site ordered fixups,
 two independent real compiler/linker producers and its own rejected animation
@@ -183,7 +191,7 @@ producers, ordered fixups and an own compiled negative.
 OP ZUNsoft CODE **and** its independent filename DATA also pass focused
 individual two-producer exact replays and are committed. A separate attempt on
 MAIN's larger boss/attack controllers identified reproducible code-generation
-gaps without claiming byte credit: boss defeat 414/408, B4 ball 273/278 (or
+gaps without claiming byte credit: boss defeat and B4 ball formerly 414/408 and 273/278 (or
 274 without optimization), and Mai tracking laser 186/185. The previously raw-only MAINE menu limitation was resolved by genuine
 score-codec compiler context; old failures remain historical evidence.
 

@@ -238,3 +238,36 @@ arithmetic, the first empty-slot branch and the loop-tail jump. These are
 separate true compiled diagnostics in `.analysis/gpt-web-b4-*`, not proof of
 exactness. `b4ball_update.cpp`, the binder and accepted neighboring callbacks
 remain unchanged.
+
+## 2026-11-10: accepted complete 273-byte B4 projectile updater
+
+`b4balls_update()` now passes full original-source replay at
+`[18459,1856A)` as `main-b4ball-update`: **273/273 raw instruction bytes**,
+the literal original three-site relocation order `[235,156,118]` and its
+complete MAP/OMF native boundaries all match in two fresh Borland/TLINK
+builds. Its own compiled kill-score mutation (550→551) is rejected.
+
+Two source-level changes closed the historical 278/274-byte compiler gap.
+First, the actual PlayfieldMotion return is consumed through the same
+original `_AX`/`_DX` DOS register ABI used in ReC98's Boss collision, with
+both signed coordinate differences updated *in place* before the genuine
+unsigned overlap test. This avoids the delayed Y-copy branch lowering.
+Second, an empty inline `optimization_barrier()` after the original clipping
+condition prevents Turbo C++ from threading the free-slot branch across the
+full update loop. Like the confirmed Shinki and generic Boss cases, the
+helper produces **zero executable instructions**; it is a source codegen
+control with no gameplay side effects. The literal historical B4 translation
+unit is not known, so this is evidence for a maintainable semantically exact
+C++ implementation, not a claim of historical source identity. No byte
+insertion, raw register template, linker patch or padding is used.
+
+The complete function retains the full 26-byte B4 record, 63 live slots,
+signed decay-velocity division, shot-hit damage, revenge bullet spawning,
+score delta and original unchecked state transitions. The independent binder
+still resolves `main_03` CS `1527` and DS `209D` without emitted DATA or
+inside-function holes. The successful focused receipt and inputs are
+`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
+All previous 278/274-byte diagnostics in this note are historical failures
+superseded by the accepted complete 273-byte function. **Only 273 new C++
+instruction bytes** gain credit; adjacent accepted Mai/Yuki sources are not
+counted again.
