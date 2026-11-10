@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN original-register .BB resource loader is now exact, **55/55
+complete ASM bytes** at `F930..F967`, original allocator fixup `+7`, two fresh
+TASM/TLINK producers and a rejected 2048→2047 read-length mutation. The
+historical 56-byte C++ candidate remains inexact. See
+[BB loader review](../src/main/formats/bb_load.md).
+
 MAIN's complete **803-byte stage-session initializer** is newly accepted as
 native-exact natural C++: the full original `[B237,B55A)` code and 23-site
 literal ordered relocation stream match two independent real compiler/linker

@@ -1791,3 +1791,29 @@ semantic_inputs = ["src/main/boss/yumeko/patterns.hpp"]
 [units.negative]
 find = "add word ptr [si+SWORD_PATNUM_TINY], SWORD_TWIRL_STEP"
 replace = "add word ptr [si+SWORD_PATNUM_TINY], (SWORD_TWIRL_STEP + 1)"
+
+[[units]]
+id = "main-bb-load-asm"
+artifact = "main"
+source = "src/main/formats/bb_load.asm"
+types = "src/main/formats/bb_load_types.inc"
+symbols = "probes/units/bb_load_symbols.inc"
+bindings = "probes/units/bb_load_bindings.asm"
+notes = "src/main/formats/bb_load.md"
+target_start = 0xf930
+size = 55
+segment = "BB_LOAD_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = [7]
+tables = []
+native_review_sha256 = "3613591190b3a85523679c138c777c95a6761568f43734e446cd8183a0bf193c"
+target_scope_sha256 = "fbe7e6559c9d003c1651a58631222836cf9b04ead5ed23fb84d802d5d64076fe"
+semantic_inputs = ["src/main/formats/bb_load.hpp"]
+[units.publics]
+"BB_LOAD" = 0
+"bb_load_end" = 55
+[units.negative]
+find = "mov cx, BB_LOAD_BYTES"
+replace = "mov cx, (BB_LOAD_BYTES - 1)"
