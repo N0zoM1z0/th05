@@ -5236,3 +5236,45 @@ unit = "main-shots-render-exact"
 source = "src/main/player/shot_render.cpp"
 find = "(shot->age & 1)"
 replace = "(shot->age & 0)"
+
+[[units]]
+id = "main-shots-hittest-exact"
+source = "src/main/player/shot_collision.cpp"
+module = "th05/shot_hit.cpp"
+segment = "SHOT_HIT_TEXT"
+wrapper_options = "-zCSHOT_HIT_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_collision_bindings.asm"
+target_start = 0x13683
+size = 399
+functions = 1
+function_symbol = "shots_hittest()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-shots-hittest-exact"
+source = "src/main/player/shot_collision.cpp"
+find = "damage += 22;"
+replace = "damage += 23;"
+
+[[units]]
+id = "main-shots-hittest-laser-exact"
+source = "src/main/player/shot_collision.cpp"
+module = "th05/shot_hit.cpp"
+segment = "SHOT_HIT_TEXT"
+wrapper_options = "-zCSHOT_HIT_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_collision_bindings.asm"
+target_start = 0x13812
+size = 210
+functions = 1
+function_symbol = "shots_hittest_laser()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-shots-hittest-laser-exact"
+source = "src/main/player/shot_collision.cpp"
+find = "if(rank != 0 || stage_frame_mod4 == 0) {"
+replace = "if(rank != 0 && stage_frame_mod4 == 0) {"

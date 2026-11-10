@@ -6,6 +6,18 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's **399-byte shot collision** and **210-byte laser collision** are
+newly accepted as *separate complete native-exact C++ functions*, both with
+two independent compiler/linker producers and rejected real semantic
+negatives. The original unsigned shot damage is divided **once**; the
+16-bit quotient is kept in AX and its minimum-one clamp is applied before
+the score accumulation. Their literal original ordered MZ relocation lists
+are `[134]` and `[166,134]`. Combined 609-byte CODE is raw-exact, but its
+cross-function whole-object OMF fixup groups remain ordered differently;
+**no whole-object OMF acceptance is claimed**. Receipt:
+`.analysis/unit-replays/gpt-web-main-shot-collision-pair-609-20261110/receipt.json`.
+See [shot damage/collision source](../src/main/player/shot_runtime.md).
+
 MAIN's complete **164-byte shot and hit-animation renderer** is now exact:
 `[13573,13617)`, original empty relocation stream, two independent Turbo C++
 producers and a rejected compiled age-parity mutation. The sprite number

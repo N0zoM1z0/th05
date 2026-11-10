@@ -1,5 +1,7 @@
-// Full shot damage, bomb contribution and laser-reflected bullet collisions.
+// Complete native shot and laser collision state machines. Preserve the
+// original AX quotient through the minimum-one-damage clamp in both loops.
 #pragma option -zCSHOT_HIT_TEXT -zPmain_01
+#include <dos.h>
 #include "src/main/player/shot_runtime.hpp"
 #pragma samecodeseg select_for_playchar
 
@@ -19,8 +21,9 @@ int far shots_hittest(void)
         if(static_cast<unsigned int>(alive->pos.x.v - left) <= width &&
            static_cast<unsigned int>(alive->pos.y.v - top) <= height) {
             hits++;
-            damage += (static_cast<unsigned char>(alive->shot->damage) / hits)
-                ? (static_cast<unsigned char>(alive->shot->damage) / hits) : 1;
+            _AX = (static_cast<unsigned char>(alive->shot->damage) / hits);
+            if(!_AX) _AX = 1;
+            damage += _AX;
             shot_hit_spark_cycle++;
             if(shot_hit_spark_cycle & 1) {
                 sparks_add_random(alive->pos.x, alive->pos.y, 8 * 16, 1);
@@ -84,8 +87,9 @@ int far shots_hittest_laser(void)
         if(static_cast<unsigned int>(alive->pos.x.v - left) <= width &&
            static_cast<unsigned int>(alive->pos.y.v - top) <= height) {
             hits++;
-            damage += (static_cast<unsigned char>(alive->shot->damage) / hits)
-                ? (static_cast<unsigned char>(alive->shot->damage) / hits) : 1;
+            _AX = (static_cast<unsigned char>(alive->shot->damage) / hits);
+            if(!_AX) _AX = 1;
+            damage += _AX;
             shot_hit_spark_cycle++;
             if(shot_hit_spark_cycle & 1) {
                 sparks_add_random(alive->pos.x, alive->pos.y, 8 * 16, 1);

@@ -2,30 +2,33 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "034312967b28c8671c944697b5ae45c21ca6fa23b26418e42d6818a39d99c427",
+  "replay_receipt_sha256": "2c6e0cb5b0f4927e20e1233822ccd22761b871a108c27fe85bdcaad47fb1b08f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 79219,
-    "candidate_start": 79219,
-    "size": 164,
-    "candidate_size": 161,
-    "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
-    "candidate_sha256": "141b0b1d38df4a02e5bd085c4463f152698e993a94411c3c9b5023225c5db2c4",
+    "target_start": 79491,
+    "candidate_start": 79491,
+    "size": 399,
+    "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+    "candidate_sha256": "8c3c637ff2badc40046df8a6bf218aa81022cf3bf1bbf89ecdba449cc5a34357",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      134
+    ],
+    "candidate_fixups": [
+      134
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 79219,
-      "size": 161,
-      "function_symbol": "shots_render()",
-      "contribution_start": 79219,
-      "contribution_size": 161,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "start": 79491,
+      "size": 399,
+      "function_symbol": "shots_hittest()",
+      "contribution_start": 79491,
+      "contribution_size": 609,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "shots_hittest_laser()"
     }
   },
   "units": [
@@ -83543,6 +83546,676 @@
           "-ml",
           "-DBINARY='M'",
           "th05/s_rend.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shots-hittest-exact",
+      "entry_sha256": "1ed09ed83ec61e28bc689b2ccf4bcfaf15f6822ab51deec6424d009efa67be12",
+      "result": {
+        "id": "main-shots-hittest-exact",
+        "entry_sha256": "1ed09ed83ec61e28bc689b2ccf4bcfaf15f6822ab51deec6424d009efa67be12",
+        "rounds": [
+          {
+            "target_start": 79491,
+            "candidate_start": 79491,
+            "size": 399,
+            "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+            "candidate_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+            "raw_exact": true,
+            "target_fixups": [
+              134
+            ],
+            "candidate_fixups": [
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79491,
+              "size": 399,
+              "function_symbol": "shots_hittest()",
+              "contribution_start": 79491,
+              "contribution_size": 609,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shots_hittest_laser()"
+            }
+          },
+          {
+            "target_start": 79491,
+            "candidate_start": 79491,
+            "size": 399,
+            "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+            "candidate_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+            "raw_exact": true,
+            "target_fixups": [
+              134
+            ],
+            "candidate_fixups": [
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79491,
+              "size": 399,
+              "function_symbol": "shots_hittest()",
+              "contribution_start": 79491,
+              "contribution_size": 609,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "shots_hittest_laser()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a9e86ef49bcedafbf1d74cc952ff2558e73db542e5f426640a9a29c3a1eba0d4",
+            "dependency_timestamp_normalized_sha256": "c6061fe111ecd6b26d36f256bfd820372dc89ee3b445b7cd7b36d676543ae735",
+            "module_name": "th05/shot_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shot_hit.cpp",
+              "src/main/player/shot_collision.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "d0f9ce6f473f9bd348eb1ba9a7155443a102f0863728dd5fd3d3d67d547b14d3",
+            "dependency_timestamp_normalized_sha256": "c6061fe111ecd6b26d36f256bfd820372dc89ee3b445b7cd7b36d676543ae735",
+            "module_name": "th05/shot_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shot_hit.cpp",
+              "src/main/player/shot_collision.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shot_hit.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shot_hit.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_collision_bindings.asm",
+            "sha256": "d72b2c3bade4bef0d877894d079360b1bd89c9365e447c7b992b8a570f6d8dec"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/main/player/shot_collision.cpp",
+            "sha256": "0a55025261de47a2b890ab55e57861fbcbd4b06cc573429cbbff6a465f2cc002"
+          },
+          {
+            "path": "src/main/player/shot_runtime.hpp",
+            "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_collision_bindings.asm",
+          "sha256": "d72b2c3bade4bef0d877894d079360b1bd89c9365e447c7b992b8a570f6d8dec"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/main/player/shot_collision.cpp",
+          "sha256": "0a55025261de47a2b890ab55e57861fbcbd4b06cc573429cbbff6a465f2cc002"
+        },
+        {
+          "path": "src/main/player/shot_runtime.hpp",
+          "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2c6e0cb5b0f4927e20e1233822ccd22761b871a108c27fe85bdcaad47fb1b08f",
+      "compiled_negative_control": {
+        "target_start": 79491,
+        "candidate_start": 79491,
+        "size": 399,
+        "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+        "candidate_sha256": "8c3c637ff2badc40046df8a6bf218aa81022cf3bf1bbf89ecdba449cc5a34357",
+        "raw_exact": false,
+        "target_fixups": [
+          134
+        ],
+        "candidate_fixups": [
+          134
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 79491,
+          "size": 399,
+          "function_symbol": "shots_hittest()",
+          "contribution_start": 79491,
+          "contribution_size": 609,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "shots_hittest_laser()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shots-hittest-exact",
+        "entry_sha256": "1ed09ed83ec61e28bc689b2ccf4bcfaf15f6822ab51deec6424d009efa67be12",
+        "mutation": {
+          "unit": "main-shots-hittest-exact",
+          "source": "src/main/player/shot_collision.cpp",
+          "find": "damage += 22;",
+          "replace": "damage += 23;"
+        },
+        "control_sha256": "f676f259b8173840ed41fd4b367835a3a3068e0c240fab0c61a7052509c74a26",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 79491,
+          "candidate_start": 79491,
+          "size": 399,
+          "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+          "candidate_sha256": "8c3c637ff2badc40046df8a6bf218aa81022cf3bf1bbf89ecdba449cc5a34357",
+          "raw_exact": false,
+          "target_fixups": [
+            134
+          ],
+          "candidate_fixups": [
+            134
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 79491,
+            "size": 399,
+            "function_symbol": "shots_hittest()",
+            "contribution_start": 79491,
+            "contribution_size": 609,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "shots_hittest_laser()"
+          }
+        },
+        "omf": {
+          "sha256": "1a63b3033298a9d3f029dd70166cec99f22b333f4d843300653f019a6120bd6c",
+          "dependency_timestamp_normalized_sha256": "2345eb2c97cf35bec5b655e75323217626f7269e645d3676fc3fa34298d50a56",
+          "module_name": "th05/shot_hit.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/shot_hit.cpp",
+            "src/main/player/shot_collision.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/shot_runtime.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/shot_hit.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shots-hittest-laser-exact",
+      "entry_sha256": "322c792cf34d48788d177739310125d595a327672ac3c1dd5679b1e3a956d6e3",
+      "result": {
+        "id": "main-shots-hittest-laser-exact",
+        "entry_sha256": "322c792cf34d48788d177739310125d595a327672ac3c1dd5679b1e3a956d6e3",
+        "rounds": [
+          {
+            "target_start": 79890,
+            "candidate_start": 79890,
+            "size": 210,
+            "target_sha256": "4d9390eccb86096e89825883f90fcbd343b682f7382884d40effaed6ab89eece",
+            "candidate_sha256": "4d9390eccb86096e89825883f90fcbd343b682f7382884d40effaed6ab89eece",
+            "raw_exact": true,
+            "target_fixups": [
+              166,
+              134
+            ],
+            "candidate_fixups": [
+              166,
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79890,
+              "size": 210,
+              "function_symbol": "shots_hittest_laser()",
+              "contribution_start": 79491,
+              "contribution_size": 609,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 79890,
+            "candidate_start": 79890,
+            "size": 210,
+            "target_sha256": "4d9390eccb86096e89825883f90fcbd343b682f7382884d40effaed6ab89eece",
+            "candidate_sha256": "4d9390eccb86096e89825883f90fcbd343b682f7382884d40effaed6ab89eece",
+            "raw_exact": true,
+            "target_fixups": [
+              166,
+              134
+            ],
+            "candidate_fixups": [
+              166,
+              134
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79890,
+              "size": 210,
+              "function_symbol": "shots_hittest_laser()",
+              "contribution_start": 79491,
+              "contribution_size": 609,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a9e86ef49bcedafbf1d74cc952ff2558e73db542e5f426640a9a29c3a1eba0d4",
+            "dependency_timestamp_normalized_sha256": "c6061fe111ecd6b26d36f256bfd820372dc89ee3b445b7cd7b36d676543ae735",
+            "module_name": "th05/shot_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shot_hit.cpp",
+              "src/main/player/shot_collision.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "d0f9ce6f473f9bd348eb1ba9a7155443a102f0863728dd5fd3d3d67d547b14d3",
+            "dependency_timestamp_normalized_sha256": "c6061fe111ecd6b26d36f256bfd820372dc89ee3b445b7cd7b36d676543ae735",
+            "module_name": "th05/shot_hit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shot_hit.cpp",
+              "src/main/player/shot_collision.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shot_hit.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shot_hit.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_collision_bindings.asm",
+            "sha256": "d72b2c3bade4bef0d877894d079360b1bd89c9365e447c7b992b8a570f6d8dec"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/main/player/shot_collision.cpp",
+            "sha256": "0a55025261de47a2b890ab55e57861fbcbd4b06cc573429cbbff6a465f2cc002"
+          },
+          {
+            "path": "src/main/player/shot_runtime.hpp",
+            "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_collision_bindings.asm",
+          "sha256": "d72b2c3bade4bef0d877894d079360b1bd89c9365e447c7b992b8a570f6d8dec"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/main/player/shot_collision.cpp",
+          "sha256": "0a55025261de47a2b890ab55e57861fbcbd4b06cc573429cbbff6a465f2cc002"
+        },
+        {
+          "path": "src/main/player/shot_runtime.hpp",
+          "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2c6e0cb5b0f4927e20e1233822ccd22761b871a108c27fe85bdcaad47fb1b08f",
+      "compiled_negative_control": {
+        "target_start": 79491,
+        "candidate_start": 79491,
+        "size": 399,
+        "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+        "candidate_sha256": "8c3c637ff2badc40046df8a6bf218aa81022cf3bf1bbf89ecdba449cc5a34357",
+        "raw_exact": false,
+        "target_fixups": [
+          134
+        ],
+        "candidate_fixups": [
+          134
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 79491,
+          "size": 399,
+          "function_symbol": "shots_hittest()",
+          "contribution_start": 79491,
+          "contribution_size": 609,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "shots_hittest_laser()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shots-hittest-exact",
+        "entry_sha256": "1ed09ed83ec61e28bc689b2ccf4bcfaf15f6822ab51deec6424d009efa67be12",
+        "mutation": {
+          "unit": "main-shots-hittest-exact",
+          "source": "src/main/player/shot_collision.cpp",
+          "find": "damage += 22;",
+          "replace": "damage += 23;"
+        },
+        "control_sha256": "f676f259b8173840ed41fd4b367835a3a3068e0c240fab0c61a7052509c74a26",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 79491,
+          "candidate_start": 79491,
+          "size": 399,
+          "target_sha256": "af54d36afaa10f5c2446474125f914353560716bbe53416aeb97281faf2ebab0",
+          "candidate_sha256": "8c3c637ff2badc40046df8a6bf218aa81022cf3bf1bbf89ecdba449cc5a34357",
+          "raw_exact": false,
+          "target_fixups": [
+            134
+          ],
+          "candidate_fixups": [
+            134
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 79491,
+            "size": 399,
+            "function_symbol": "shots_hittest()",
+            "contribution_start": 79491,
+            "contribution_size": 609,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "shots_hittest_laser()"
+          }
+        },
+        "omf": {
+          "sha256": "1a63b3033298a9d3f029dd70166cec99f22b333f4d843300653f019a6120bd6c",
+          "dependency_timestamp_normalized_sha256": "2345eb2c97cf35bec5b655e75323217626f7269e645d3676fc3fa34298d50a56",
+          "module_name": "th05/shot_hit.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/shot_hit.cpp",
+            "src/main/player/shot_collision.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/shot_runtime.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/shot_hit.cpp"
         ]
       },
       "receipt_aggregate_pass": true

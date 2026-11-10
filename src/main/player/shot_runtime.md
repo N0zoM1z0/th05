@@ -1,9 +1,10 @@
 # Shot motion and collision runtime
 
 The complete shot updater is accepted from `main-shots-update-abi-b`, using
-MAIN frame `AE1` and DS `209D`. The two collision functions remain parked
-candidates. Historical failed producer observations are retained below;
-their byte counts do not establish acceptance.
+MAIN frame `AE1` and DS `209D`. **Both original collision functions are now
+independently accepted** as complete native-exact C++ functions. Historical
+failed producer observations below remain for context; their byte counts
+never established acceptance.
 
 | Function | Original load interval | Complete bytes | Original ordered MZ offsets |
 | --- | --- | ---: | --- |
@@ -191,3 +192,55 @@ memory operations without a changed record/prototype, compiler flag, idle
 branch, physical-register hint or barrier. Full Motion/Point declarations,
 the exact result lifetime and cache stores remain intact. No acceptance
 transfers to either collision function or the separately parked renderer.
+
+## 2026-11-10: complete exact 609-byte collision pair
+
+The original native 399-byte `shots_hittest()` and 210-byte
+`shots_hittest_laser()` are now each **accepted as complete C++ functions**:
+`[13683,13812)` and `[13812,138E4)`, respectively. Both real linked sources
+match **399/399 and 210/210 original raw bytes**, their actual complete far
+cdecl API, MAP boundaries, original DS `209D`, and native per-function
+ordered relocation sites `[134]` and `[166,134]`. Each function was tested
+in **two fresh isolated Borland/TLINK producers**, and its own compiled
+semantic negative was rejected: Marisa bomb damage `22→23` in the normal
+function, and `rank != 0 || stage_frame_mod4 == 0` changed to an `&&` test
+for reflected bullets in the laser function.
+
+The missing codegen detail was the **actual quotient lifetime**, not an
+imaginary extra code fragment. In the old source the ternary
+`(damage / hits) ? (damage / hits) : 1` caused Turbo C++ to compute the real
+signed 16-bit IDIV *twice* and added 20 instruction bytes to **each** loop.
+The true ABI returns a signed word quotient in AX. Preserve this real
+hardware-register result explicitly in both loops:
+
+```cpp
+_AX = (static_cast<unsigned char>(alive->shot->damage) / hits);
+if(!_AX) _AX = 1;
+damage += _AX;
+```
+
+The compiler naturally generates the original AX quotient check, one-byte
+minimum damage clamp, `ADD SI,AX`/`ADD DI,AX`, real spark cadence, converted
+hit animation, slot invalidation, bomb and playchar multipliers, and laser
+reflected-bullet side effects. The character selector's original NOP/PUSH-CS/
+CALL relaxation remains the genuine linked far-Pascal helper. No hand-coded
+`IDIV` instruction, alternate method prototype, fabricated record, rewritten
+foreign code, linker patch or normalized relocations are introduced. The
+maintained `shot_collision.cpp` is the sole shared source.
+
+An important ownership distinction: the **entire 609-byte linked CODE image
+is also byte-exact**, but the *whole source object's* OMF relocation group
+order is `[565,533,134]` while the original full group is
+`[134,565,533]`. The two **individual complete-function** ordered MZ streams
+match exactly. Only these two functions are accepted and credited independently,
+not a 609-byte whole-TU OMF receipt. This unresolved interfunction group
+partition should be addressed separately if whole-object acceptance is later
+needed; no sorting or synthetic interfunction fixups are permitted.
+
+Focused acceptance receipt:
+`.analysis/unit-replays/gpt-web-main-shot-collision-pair-609-20261110/receipt.json`.
+This adds **609 C++ CODE bytes** as two non-overlapping complete functions,
+not duplicate credit for the previously accepted 408-byte shot updater,
+164-byte shot renderer, or existing near hitshot conversion helper. All
+previous 419/233/218-byte producer failures in this document are now
+historical—not active blockers.
