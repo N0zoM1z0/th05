@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
+**27/27 original-register ASM bytes**, with genuine source-backed DS→ES
+7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word
+count mutation. The old equal-length C++ struct assignment remains inexact.
+See [Gather copy review](../src/main/gather/copy.md); focused receipt:
+`.analysis/gpt-web-main-gather-copy-asm-a/receipt.json`.
+
 MAIN's **399-byte shot collision** and **210-byte laser collision** are
 newly accepted as *separate complete native-exact C++ functions*, both with
 two independent compiler/linker producers and rejected real semantic

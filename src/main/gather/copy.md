@@ -1,4 +1,4 @@
-# Gather template copy: ordinary C++ diagnostic
+# Gather template copy: exact original-register ASM; ordinary C++ still inexact
 
 The near Pascal helper MAIN16F70..16F8B is a complete 27-byte procedure,
 taking one near gather reference and returning with RET2. It copies the full
@@ -20,3 +20,32 @@ The complete object diagnostic is `.analysis/gather-copy-to-natural-review.json`
 which records the failed link and source dependencies.
 The current simple source and symbol-only binder remain available for further
 natural source work; they are not accepted build inputs.
+
+## 2026-11-10: complete 27-byte original-register copy
+
+The complete near-Pascal `set_gather_template_to_bullet_template` function
+at MAIN `[16F70,16F8B)` now has a **reviewed source-backed ASM owner**,
+`main-gather-copy-to-asm`. The original 27-byte code, all 15 instructions,
+actual MAP/public and OMF boundaries, empty relocation stream and a compiled
+semantic negative are checked in two independent genuine TASM/TLINK rounds.
+The negative reduces the real word count 7→6 and fails raw comparison.
+
+The semantic provenance is pinned ReC98 `th04/main/gather.cpp`:
+`copy_near_struct_member(gather,offsetof(gather_t,bullet_template),
+bullet_template,0,sizeof(BulletTemplate),prepare_si_di)` implements the
+original register-level bulk copy. The TH05 actual native 16-bit instructions
+independently confirm `PUSH BP; MOV BP,SP`, preserved SI/DI, `MOV CX,7`,
+`PUSH DS; POP ES`, `SI=offset bullet_template` at DS577E,
+`DI=[BP+4]+24`, `REP MOVSW`, and original near-Pascal `RET 2`.
+No foreign DATA object, allocation, helper body, source-owned padding or
+machine-code byte template is emitted. The existing 14-byte BulletTemplate,
+38-byte gather record and 24-byte member offset remain unchanged.
+
+The maintained semantic ASM source is `copy_to_bullet.asm`, with named size
+constants in `copy_to_types.inc` and real source-free external symbols in
+`probes/units/gather_copy_symbols.inc`; the existing original physical
+binder stays in place. Receipt:
+`.analysis/gpt-web-main-gather-copy-asm-a/receipt.json`.
+This adds **27 reviewed ASM instruction bytes**. The earlier ordinary
+`gather.bullet_template = bullet_template` C++ remains inexact and unaccepted;
+it is not retroactively credited as compiler-exact C++.

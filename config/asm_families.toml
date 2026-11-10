@@ -1817,3 +1817,29 @@ semantic_inputs = ["src/main/formats/bb_load.hpp"]
 [units.negative]
 find = "mov cx, BB_LOAD_BYTES"
 replace = "mov cx, (BB_LOAD_BYTES - 1)"
+
+[[units]]
+id = "main-gather-copy-to-asm"
+artifact = "main"
+source = "src/main/gather/copy_to_bullet.asm"
+types = "src/main/gather/copy_to_types.inc"
+symbols = "probes/units/gather_copy_symbols.inc"
+bindings = "probes/units/gather_copy_to_bindings.asm"
+notes = "src/main/gather/copy.md"
+target_start = 0x16f70
+size = 27
+segment = "GATHER_COPY_TO_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "58ea3fca0dca4f96445633f7fe2ebaa834270e8e2b678f1065a2c0b0bbbe2466"
+target_scope_sha256 = "b15a56c6a174d61c9eb718e2549eeb66186410b119cc1ac5feacadc31ede5176"
+semantic_inputs = ["src/main/gather/gather.hpp"]
+[units.publics]
+"SET_GATHER_TEMPLATE_TO_BULLET_TEMPLATE" = 0
+"gather_copy_to_end" = 27
+[units.negative]
+find = "mov cx, GATHER_BULLET_WORDS"
+replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
