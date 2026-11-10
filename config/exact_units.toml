@@ -5322,3 +5322,23 @@ unit = "main-dialog-box-put-exact"
 source = "src/main/dialog/box_put.cpp"
 find = "_DX = 48;"
 replace = "_DX = 47;"
+
+[[units]]
+id = "main-dialog-interpage-copy-exact"
+source = "src/main/dialog/interpage_copy.cpp"
+module = "th05/dlpgcp.cpp"
+segment = "DIALOG_RUN_TEXT"
+wrapper_options = "-zCDIALOG_RUN_TEXT -zPmain_01"
+bindings_source = "probes/units/dialog_interpage_copy_bindings.asm"
+target_start = 0x13a96
+size = 56
+functions = 1
+function_symbol = "playfield_copy_front_to_back()"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-dialog-interpage-copy-exact"
+source = "src/main/dialog/interpage_copy.cpp"
+find = "_CX = 24;"
+replace = "_CX = 23;"

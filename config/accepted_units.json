@@ -2,31 +2,31 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "d56339b95a4728ef0c1fe26ad35f4e55408f62f54205636df8d699616a711de3",
+  "replay_receipt_sha256": "d6ce9baed62572a0c2bc6fe537aa79887de9c8fa96c5e3b193f75c061870c0d1",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 80446,
-    "candidate_start": 80446,
-    "size": 88,
-    "target_sha256": "b3762ea29c3485147a672980ea114da498f63545d7f5edb2da74391a0ecb58ea",
-    "candidate_sha256": "ef852c3a5a5566959e5fe9ddc312ea82ca727beb1ff42f987e2649985b06b276",
+    "target_start": 80534,
+    "candidate_start": 80534,
+    "size": 56,
+    "target_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+    "candidate_sha256": "fb99c9186a4d3a7fff3038a4074908aa981556f98097207361aba3d9118610ca",
     "raw_exact": false,
     "target_fixups": [
-      13
+      51
     ],
     "candidate_fixups": [
-      13
+      51
     ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 80446,
-      "size": 88,
-      "function_symbol": "dialog_box_put(unsigned int,unsigned int,int)",
-      "contribution_start": 80446,
-      "contribution_size": 88,
+      "start": 80534,
+      "size": 56,
+      "function_symbol": "playfield_copy_front_to_back()",
+      "contribution_start": 80534,
+      "contribution_size": 56,
       "boundary_kind": "contribution-end",
       "next_function_symbol": null
     }
@@ -85039,6 +85039,300 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlgboxp.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-dialog-interpage-copy-exact",
+      "entry_sha256": "e20c3b658a1beec8aec1c4c41604a5f3ee8a43e6ce13058fff884ba4f3673240",
+      "result": {
+        "id": "main-dialog-interpage-copy-exact",
+        "entry_sha256": "e20c3b658a1beec8aec1c4c41604a5f3ee8a43e6ce13058fff884ba4f3673240",
+        "rounds": [
+          {
+            "target_start": 80534,
+            "candidate_start": 80534,
+            "size": 56,
+            "target_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+            "candidate_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+            "raw_exact": true,
+            "target_fixups": [
+              51
+            ],
+            "candidate_fixups": [
+              51
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 80534,
+              "size": 56,
+              "function_symbol": "playfield_copy_front_to_back()",
+              "contribution_start": 80534,
+              "contribution_size": 56,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 80534,
+            "candidate_start": 80534,
+            "size": 56,
+            "target_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+            "candidate_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+            "raw_exact": true,
+            "target_fixups": [
+              51
+            ],
+            "candidate_fixups": [
+              51
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 80534,
+              "size": 56,
+              "function_symbol": "playfield_copy_front_to_back()",
+              "contribution_start": 80534,
+              "contribution_size": 56,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "79e7281e2d06a565c097ed92cac4610232b5dcdf3a63b39a78f7199521700fcd",
+            "dependency_timestamp_normalized_sha256": "9b78fb75180d0663b041ac86fdd12d224320d2a459fddad29dad17337dc92276",
+            "module_name": "th05/dlpgcp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlpgcp.cpp",
+              "src/main/dialog/interpage_copy.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/dialog/runtime.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp"
+            ]
+          },
+          {
+            "sha256": "79e7281e2d06a565c097ed92cac4610232b5dcdf3a63b39a78f7199521700fcd",
+            "dependency_timestamp_normalized_sha256": "9b78fb75180d0663b041ac86fdd12d224320d2a459fddad29dad17337dc92276",
+            "module_name": "th05/dlpgcp.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dlpgcp.cpp",
+              "src/main/dialog/interpage_copy.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/dialog/runtime.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/dialog/file.hpp",
+              "src/shared/abi.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlpgcp.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dlpgcp.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/dialog_interpage_copy_bindings.asm",
+            "sha256": "8720c0b65cd96cc244c64555349a919ffd610bac82a7c4e613fb0f2cc1a0411e"
+          },
+          {
+            "path": "src/main/dialog/file.hpp",
+            "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+          },
+          {
+            "path": "src/main/dialog/interpage_copy.cpp",
+            "sha256": "31fef65a8209ee4819b033b32025733804adcbbeceb6ab5f056370a8a182d5e9"
+          },
+          {
+            "path": "src/main/dialog/runtime.hpp",
+            "sha256": "3d031417aafcf07f185ba54f3ba063ec6f9d72bf18025501fd145019913b5ba1"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/dialog_interpage_copy_bindings.asm",
+          "sha256": "8720c0b65cd96cc244c64555349a919ffd610bac82a7c4e613fb0f2cc1a0411e"
+        },
+        {
+          "path": "src/main/dialog/file.hpp",
+          "sha256": "27c152195185f0b0275bdb2399108d3a74e702dc0fcff76e7c8855d8d38d87de"
+        },
+        {
+          "path": "src/main/dialog/interpage_copy.cpp",
+          "sha256": "31fef65a8209ee4819b033b32025733804adcbbeceb6ab5f056370a8a182d5e9"
+        },
+        {
+          "path": "src/main/dialog/runtime.hpp",
+          "sha256": "3d031417aafcf07f185ba54f3ba063ec6f9d72bf18025501fd145019913b5ba1"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d6ce9baed62572a0c2bc6fe537aa79887de9c8fa96c5e3b193f75c061870c0d1",
+      "compiled_negative_control": {
+        "target_start": 80534,
+        "candidate_start": 80534,
+        "size": 56,
+        "target_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+        "candidate_sha256": "fb99c9186a4d3a7fff3038a4074908aa981556f98097207361aba3d9118610ca",
+        "raw_exact": false,
+        "target_fixups": [
+          51
+        ],
+        "candidate_fixups": [
+          51
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 80534,
+          "size": 56,
+          "function_symbol": "playfield_copy_front_to_back()",
+          "contribution_start": 80534,
+          "contribution_size": 56,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-dialog-interpage-copy-exact",
+        "entry_sha256": "e20c3b658a1beec8aec1c4c41604a5f3ee8a43e6ce13058fff884ba4f3673240",
+        "mutation": {
+          "unit": "main-dialog-interpage-copy-exact",
+          "source": "src/main/dialog/interpage_copy.cpp",
+          "find": "_CX = 24;",
+          "replace": "_CX = 23;"
+        },
+        "control_sha256": "7e92de05f61e5eaef89e3bcc8e9065282f133c7d2b0e733e934c812ea6cbe357",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 80534,
+          "candidate_start": 80534,
+          "size": 56,
+          "target_sha256": "d6911b58fe45c4feb91f67d2671ecfc2886ae874e9a7b4f17dbcc8d2a9623367",
+          "candidate_sha256": "fb99c9186a4d3a7fff3038a4074908aa981556f98097207361aba3d9118610ca",
+          "raw_exact": false,
+          "target_fixups": [
+            51
+          ],
+          "candidate_fixups": [
+            51
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 80534,
+            "size": 56,
+            "function_symbol": "playfield_copy_front_to_back()",
+            "contribution_start": 80534,
+            "contribution_size": 56,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "cd652d68c0b3d4b15cd2c8103d035f82c4bd88242932afa377f1a7deb291b8d8",
+          "dependency_timestamp_normalized_sha256": "b21247cc2385b0d25d5bccf20ecb69abea3290ddf1d47b7e7796111463c79dde",
+          "module_name": "th05/dlpgcp.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dlpgcp.cpp",
+            "src/main/dialog/interpage_copy.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/dialog/runtime.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/dialog/file.hpp",
+            "src/shared/abi.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dlpgcp.cpp"
         ]
       },
       "receipt_aggregate_pass": true

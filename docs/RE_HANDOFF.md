@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN `playfield_copy_front_to_back()` EGC hardware renderer is now
+**56/56 bytes exact** at `13A96..13ACE`, with original fixup `+51`,
+two independent compiler/linker rounds and a rejected 24→23 inner-word
+mutation. Source is genuine C++ with 16-bit register-level hardware loops.
+See [dialog graphics](../src/main/dialog/runtime.md) and
+`.analysis/unit-replays/gpt-web-dialog-interpage-56-20261110/receipt.json`.
+
 The MAIN `dialog_box_put()` PC-98 tile renderer is now complete native-exact
 **88/88-byte C++ with original register inline assembly** at `13A3E..13A96`.
 Two independent builds and its 48→47 row-count compiled negative pass,

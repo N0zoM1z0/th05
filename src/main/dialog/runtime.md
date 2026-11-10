@@ -88,3 +88,23 @@ original relocation order and physical MAP/OMF boundaries; changing the
 The following 56-byte interpage copy and 74-byte face unput still lack
 source ownership. The independent 106-byte box-wipe/fade pair remains
 accepted, while the 456-byte dialog opcode remains unaccepted.
+
+## 2026-11-10: exact 56-byte EGC front-to-back playfield copy
+
+`playfield_copy_front_to_back()` is now independently accepted at MAIN
+`[13A96,13ACE)` as `main-dialog-interpage-copy-exact`. The source
+`interpage_copy.cpp` follows the original ReC98 shared-dialog hardware
+algorithm: activate the EGC, select ES:A850, begin at DI:72B4, and copy
+384 pixels across 368 rows using the live EGC page-selection port and the
+ES segment. The 24-word inner loop uses the original `LOOP` register jump;
+the signed DI row-step condition is expressed by source-level register
+operations. The original far `EGC_OFF` call remains at relocation `+51`.
+
+Two fresh Borland/TLINK producers match **56/56 original bytes**, literal
+fixup `[51]`, and full MAP boundaries; a compiled change from 24 to 23
+words per row is rejected. The genuine 16-bit row-loop primitives remain
+source-level inline hardware assembly, not a target-byte copy. Receipt:
+`.analysis/unit-replays/gpt-web-dialog-interpage-56-20261110/receipt.json`.
+The 88-byte dialog box renderer and 56-byte interpage copy now have
+separate complete owners. Face unput (74) and dialog opcode (456) remain
+unaccepted; adjacent already-accepted C++ scopes are unchanged.
