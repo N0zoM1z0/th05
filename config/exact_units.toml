@@ -5172,3 +5172,26 @@ unit = "main-gameplay-loop-exact"
 source = "src/main/runtime/gameplay_loop.cpp"
 find = "stage_frame_mod16 = (_AX &= 15);"
 replace = "stage_frame_mod16 = (_AX &= 7);"
+
+[[units]]
+id = "main-stage-session-init-exact"
+source = "src/main/runtime/stage_complete_context.cpp"
+module = "th05/gsjoin.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/stage_complete_context_bindings.asm"
+bindings_after_compiler = true
+target_start = 0xb237
+size = 803
+functions = 1
+function_symbol = "stage_session_init()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = [213, 403, 595]
+padding_bytes = [{offset = 772, value = 0}]
+code_data_ranges = [{offset = 773, size = 30, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "main-stage-session-init-exact"
+source = "src/main/runtime/stage_complete_context.cpp"
+find = "pellet_bottom_col = 9;"
+replace = "pellet_bottom_col = 8;"

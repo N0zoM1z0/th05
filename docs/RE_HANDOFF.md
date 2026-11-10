@@ -6,6 +6,18 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's complete **803-byte stage-session initializer** is newly accepted as
+native-exact natural C++: the full original `[B237,B55A)` code and 23-site
+literal ordered relocation stream match two independent real compiler/linker
+builds; a compiled pellet-column mutation is rejected. Its four genuine
+original-order predecessors/functions — 110-byte `main()`, 445-byte gameplay,
+468-byte new-game initializer and 803-byte stage session — now reproduce all
+**1826 continuous bytes** from AE38 to B55A. The original compiler table zero
+and three relaxed call NOPs are checked but excluded from authorship; **799
+new authored bytes** are credited. See
+[stage-session source](../src/main/runtime/stage_session_context.md) and
+`.analysis/unit-replays/gpt-web-main-stage-session-init-803-final-20261110/receipt.json`.
+
 MAIN's entire gameplay frame loop is now exact C++: original
 `[AEA6,B063)`, **445/445 compared bytes** including one uncredited
 linker NOP, native 11-site relocation order, two fresh producers and a
