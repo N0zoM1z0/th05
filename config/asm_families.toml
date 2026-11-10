@@ -1575,3 +1575,29 @@ replace = "DIRTY_RESET_DWORDS equ (DIRTY_MAP_DWORDS - 1)"
 offset = 19
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-tile-invalidate-around"
+artifact = "main"
+source = "src/main/tile/invalidate_around.asm"
+types = "src/main/tile/invalidate_around_types.inc"
+symbols = "probes/units/tile_invalidate_around_symbols.inc"
+bindings = "probes/units/tile_invalidate_around_bindings.asm"
+notes = "src/main/tile/invalidate_around.md"
+target_start = 0xbad2
+size = 204
+segment = "TILE_INVALIDATE_AROUND_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "02f57422238e360da83d821e7f09e8010b8e9dc625fd7fd04f25a4efaf3ca90f"
+target_scope_sha256 = "861947c1e6544cc355e8f90ccc56e41dd25cbd1db6a8b3f98b21ed364a739f6e"
+semantic_inputs = ["src/main/player/invalidate.cpp", "src/main/scroll/driver.hpp"]
+[units.publics]
+"TILES_INVALIDATE_AROUND" = 0
+"tile_invalidate_around_end" = 204
+[units.negative]
+find = "and dx, (DIRTY_ROW_HEIGHT_PIXELS - 1)"
+replace = "and dx, (DIRTY_ROW_HEIGHT_PIXELS - 2)"

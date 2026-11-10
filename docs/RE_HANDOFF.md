@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The complete 204-byte `TILES_INVALIDATE_AROUND` MAIN gameplay helper has
+now passed independent native ASM replay and its own compiled semantic negative.
+Its complete scroll-wrap, hitbox-clipping and `REP STOSB` dirty-map algorithm
+matches all 82 original instructions and the empty original ordered fixup
+stream at `[BAD2,BB9E)`. This is reviewed ASM credit, not compiler-generated
+Boss source. See [tile collision invalidation](../src/main/tile/invalidate_around.md).
+
 The adjacent MAIN `tiles_invalidate_reset` now also passes exact source
 replay: 20 compared bytes, 19 reviewed ASM instruction bytes and one checked
 `EVEN` NOP. It uses the same authentic 400-DWORD ES:DI fill and has its own
