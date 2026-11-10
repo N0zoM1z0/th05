@@ -32,3 +32,30 @@ The compact158-byte source is retained outside live manifests. Its one new
 producer is `.analysis/native-producers/main-shinki-particles-render-early-args-a/`.
 The first size gate needs no second producer, compiled negative or new CPU
 model. No partial fragment, normalized opcode or extra padding earns credit.
+
+## 2026-11-10 source-level signed-zero comparator trials
+
+A new focused one-producer sweep tested 15 genuinely typed C++ spellings of
+the renderer's signed top-clip predicate without changing its 64-particle
+lifecycle, actual AX/CX drawing arguments, 16-byte records, or foreign
+monochrome sprite API. The current `top > 0` still emits **158 bytes**, one
+short of the original 159, because Borland lowers signed comparison against
+literal zero to `OR AX,AX` (two bytes). Source-equivalent `top >= 1` emits
+**159 bytes** with all surrounding code and state accesses at the correct
+original positions, but the word compare uses immediate **1** and a `JL`
+instead of the native immediate **0** and `JLE`: exactly two opcode/data-byte
+differences remain, at function-relative offsets `+6F` and `+71`. Other
+boolean decompositions introduce additional real branches and remain inexact.
+
+The retained ReC98 `th05/main/boss/render.cpp` has an explicit
+`keep_0(PLAYFIELD_TOP - PARTICLE_H)` exactly at this predicate. Its
+`decomp.hpp` implements `keep_0` through an external symbolic zero address,
+so it can prevent `OR` canonicalization. That explains the historical
+compiler discrepancy, but creating a ghost game-state DATA label solely to
+force the opcode would undermine the source/binder provenance requirements.
+No such label or target-derived instruction was inserted, and **this full
+159-byte function remains unaccepted**. The first producer and complete source
+variants are retained under `.analysis/gpt-web-shinki-particles-zero-*-a/`
+and `.analysis/gpt-web-shinki-particles-zero-*.cpp` for a future genuinely
+source-backed original zero-operand solution. No existing accepted renderer or
+Boss owner was recompiled for this failed standalone trial.
