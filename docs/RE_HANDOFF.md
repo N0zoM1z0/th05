@@ -22,6 +22,17 @@ short inverted branch plus JMP. The failed authentic context was frozen under
 `.analysis/gpt-web-shinki-b6-real-context-a/`; no accepted Shinki input was
 modified. See [Shinki diagnostics](../src/main/boss/shinki/wing_preparation.md).
 
+MAINE's 1034-byte registration menu is now exact natural Borland C++.
+Restoring its real original source-code predecessors back through two score
+codecs (86+100 bytes) naturally restores the original compiler alignment and
+31-site ordered fixup stream. Three complete C++ scopes pass two independent
+producers and their own compiled negatives: **1220 newly accepted bytes**.
+The 4369-byte real source/segment context is
+[src/maine/registration/full_context.cpp](../src/maine/registration/full_context.cpp)
+and the receipt is
+`.analysis/unit-replays/gpt-web-maine-registration-codecs-full-20261110/receipt.json`.
+See [menu recovery](../src/maine/registration/menu.md).
+
 The complete MAIN `POINTNUMS_UPDATE` point-popup lifecycle is now exact:
 `[E1A6,E216)`, 112/112 compared bytes including the uncredited alignment
 NOP, **111 reviewed ASM instruction bytes**, two independent builds and its
@@ -74,8 +85,8 @@ OP ZUNsoft CODE **and** its independent filename DATA also pass focused
 individual two-producer exact replays and are committed. A separate attempt on
 MAIN's larger boss/attack controllers identified reproducible code-generation
 gaps without claiming byte credit: boss defeat 414/408, B4 ball 273/278 (or
-274 without optimization), and Mai tracking laser 186/185. MAINE's1034-byte
-menu remains raw-exact but ordered-relocation-inexact even via TCC-S/TASM32.
+274 without optimization), and Mai tracking laser 186/185. The previously raw-only MAINE menu limitation was resolved by genuine
+score-codec compiler context; old failures remain historical evidence.
 
 Start with `git status --short` and `python3 scripts/preflight.py`. Read
 [workflow](RE_WORKFLOW.md) and [acceptance](ORACLES.md). Reuse the existing attested
@@ -170,7 +181,7 @@ before relying on old census/routing files.
 
 | Still unaccepted | Current evidence | Notes |
 | --- | --- | --- |
-| MAINE registration menu, 1034 | Raw exact; original relocation order differs | [Menu](../src/maine/registration/menu.md) |
+| MAINE registration menu, 1034 | Accepted exact after original-order score codec prefix | [Menu](../src/maine/registration/menu.md) |
 | MAIN shot collision, 399 + 210 | Current pair 419 + 233; quotient gaps remain. Selector transfer now correctly NOP/PUSH CS/CALL, far Pascal RETF8 | [Shots](../src/main/player/shot_runtime.md) |
 | Staff updater/render, 626 / 861 | Current 623 / 858. Renderer `-O-` still byte-identical 858; `-Z-` and documented source trials fail | [Staff](../src/maine/staff/full.md) |
 | Staff controller, 991 | Raw exact; ordered fixups differ. Bitmap prefix remains inexact | [Controller](../src/maine/staff/controller.md) |

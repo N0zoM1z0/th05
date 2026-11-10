@@ -1,10 +1,10 @@
-# Registration menu: raw-exact C++, ordered-inexact
+# Registration menu: exact natural C++ in its authentic compiler context
 
 The complete original MAINE `C1DD..C5E7` function is 1034 instruction bytes /
 341 instructions, with no padding, tables, DATA or BSS. All direct branches
 and the terminal RET are reviewed in the retained decoded target. CS is A54 /
-GROUP_01 and DS 1011. This menu remains outside the live exact manifest and
-receives zero authored credit.
+GROUP_01 and DS 1011. Its original 31-site relocation order was blocked in the standalone object,
+but is now accepted through the complete original-order source context.
 
 `menu.inl` restores the full ordinary C++ menu using maintained TH04's
 registration menu structure and the real TH05 behavior. It loads all four
@@ -65,3 +65,36 @@ receipt: `.analysis/unit-replays/gpt-web-maine-registration-menu-pipeline-a/rece
 (`pass=false`). Its trial-only manifest entry was removed and the maintained
 menu source and binder remain unchanged. The next route needs genuine new link
 context rather than repeating either known relocation order.
+
+## Complete original-order C++ recovery — 2026-11-10
+
+The menu is now **accepted as `maine-registration-menu-context`**: both new
+independent MAINE C++ producers exactly match **1034/1034 raw instruction
+bytes** and all **31 original ordered relocation sites**. A compiled
+`palette_black_in(2)` → `(3)` negative is rejected. The actual source is
+`src/maine/registration/full_context.cpp`, the original 4369-byte/17-function
+C++ CODE context beginning at `B4D6`, with the real original codecs, score
+lifecycle, value and name renderers, glyphball lifecycle and registration menu
+in exact original order. `REG_FULL_TEXT` carries the genuine compiler segment;
+source-free bindings preserve the original frame `A54`, shared frame `E80`,
+DGROUP `1011` and all foreign resources. No blank prefix, fake object, target
+bytes, sorted FIXUPPs or relocation patch is introduced.
+
+The breakthrough was adding the authentic preceding `scoredat_decode()` (86
+bytes) and `scoredat_encode()` (100 bytes) before the already recovered 416-byte
+score lifecycle, 852-byte score/value rendering and 591-byte name displays.
+Both codec C++ bodies reproduce native register allocation naturally once
+the *documented real* AL/key2 byte-rotate primitive and direct near record
+addressing are preserved. The exact original CODE record boundary then falls
+between the menu's relocation offsets 748 and 764; actual emitted order is
+identical to the native descending 24-site run followed by the final seven
+sites. Both codecs are separately accepted as complete C++ function owners.
+
+Focused multi-unit receipt:
+`.analysis/unit-replays/gpt-web-maine-registration-codecs-full-20261110/receipt.json`.
+The new credited total is **1220 compiler-owned instruction bytes** (86 codec
++ 100 codec + 1034 menu). Previous individual accepted score, display and
+registration-glyph functions are source-equivalent context providers, with
+no duplicate ownership or new credit. The earlier standalone/fewer-predecessor
+failure descriptions above remain as historical investigation, not current
+acceptance status.

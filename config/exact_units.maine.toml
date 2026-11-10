@@ -1236,3 +1236,65 @@ unit = "maine-pmd-resident"
 source = "src/shared/sound/pmd_resident.cpp"
 find = "snd_interrupt_if_midi = 0x60;"
 replace = "snd_interrupt_if_midi = 0x61;"
+
+[[units]]
+id = "maine-score-decode-context"
+source = "src/maine/registration/full_context.cpp"
+module = "th05/rcfctx.cpp"
+segment = "REG_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_registration_full_context_bindings.asm"
+target_start = 0xb4d6
+size = 86
+functions = 1
+function_symbol = "scoredat_decode()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+function_end_symbol = "scoredat_encode()"
+
+[[controls]]
+unit = "maine-score-decode-context"
+source = "src/maine/registration/full_context.cpp"
+find = "value ^= _AL;"
+replace = "value += _AL;"
+
+[[units]]
+id = "maine-score-encode-context"
+source = "src/maine/registration/full_context.cpp"
+module = "th05/rcfctx.cpp"
+segment = "REG_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_registration_full_context_bindings.asm"
+target_start = 0xb52c
+size = 100
+functions = 1
+function_symbol = "scoredat_encode()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+function_end_symbol = "scoredat_recreate()"
+
+[[controls]]
+unit = "maine-score-encode-context"
+source = "src/maine/registration/full_context.cpp"
+find = "feedback ^= _AL;"
+replace = "feedback += _AL;"
+
+[[units]]
+id = "maine-registration-menu-context"
+source = "src/maine/registration/full_context.cpp"
+module = "th05/rcfctx.cpp"
+segment = "REG_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_registration_full_context_bindings.asm"
+target_start = 0xc1dd
+size = 1034
+functions = 1
+function_symbol = "regist_menu()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "maine-registration-menu-context"
+source = "src/maine/registration/menu.inl"
+find = "palette_black_in(2);"
+replace = "palette_black_in(3);"
