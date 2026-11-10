@@ -5278,3 +5278,27 @@ unit = "main-shots-hittest-laser-exact"
 source = "src/main/player/shot_collision.cpp"
 find = "if(rank != 0 || stage_frame_mod4 == 0) {"
 replace = "if(rank != 0 && stage_frame_mod4 == 0) {"
+
+[[units]]
+id = "main-mai-yuki-tracking-laser-compilerasm"
+source = "src/main/boss/mai_yuki/tracking_laser.cpp"
+module = "th05/mytrka.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zCMAIN_035_TEXT -zPmain_03"
+bindings_source = "probes/units/mai_yuki_tracking_laser_bindings.asm"
+target_start = 0x17b76
+size = 186
+functions = 1
+origin = "compiler-generated-cxx"
+compiler_pipeline = "tcc-s-tasm32"
+binary = "M"
+cs_base = 0x15270
+ds_base = 0x209d0
+group = "main_03"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-mai-yuki-tracking-laser-compilerasm"
+source = "src/main/boss/mai_yuki/tracking_laser.cpp"
+find = "if(boss.phase_frame == 160) {"
+replace = "if(boss.phase_frame == 161) {"

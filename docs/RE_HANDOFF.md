@@ -6,6 +6,16 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN Mai/Yuki **186-byte tracking laser Boss callback** is newly exact:
+`[17B76,17C30)`, two unmodified TCC-generated-ASM/TASM32 producers and a
+compiled stop-frame negative match the genuine two-site ordered relocation
+stream `[38,130]`. Direct TCC already matched all 186 machine-code bytes
+but reversed these two fixups. One source-level register `SUB` maintains the
+original AL angle-difference operation. The adjacent 939-byte attack context
+remains independently accepted without double credit. See
+[Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
+`.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
+
 MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
 **27/27 original-register ASM bytes**, with genuine source-backed DS→ES
 7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word

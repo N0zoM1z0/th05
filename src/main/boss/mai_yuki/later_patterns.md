@@ -136,3 +136,29 @@ emitted sizes 185, 187, 188, 189 or 190, none 186. First-producer reports are
 retained in `.analysis/gpt-web-track-*-a`; no TASM recipe or negative is claimed
 for a code-mismatching candidate. The ten accepted later patterns, canonical
 header, and maintained tracker remain unchanged.
+
+## 2026-11-10: exact 186-byte tracking laser callback
+
+`mai_pattern_tracking_laser()` is now accepted at MAIN `[17B76,17C30)` as
+`main-mai-yuki-tracking-laser-compilerasm`. The maintained original-order
+C++ source is `tracking_laser.cpp`. It preserves the Boss's 48/80/160-frame
+laser lifecycle, signed angular tracking, and real `AL` laser-angle state. A
+single Turbo C++ inline register `SUB` expresses the original signed byte
+local-angle difference; the remaining algorithm is ordinary C++.
+
+The direct Turbo C++ object and its authentic 1125-byte neighboring pattern
+context were already **raw-byte exact**, but direct object generation reverses
+the native two ordered fixups to `[130,38]`. The supported, unedited
+**TCC `-S` → TASM32** compiler pipeline generates the same 186 native bytes
+with the genuine ordered `[38,130]` relocations. The bound physical CS/DS
+remain `1527`/`209D` with the remaining 939 bytes supplied as foreign
+source-free context, not extra credited instructions. No object bytes or
+relocation streams are patched or sorted.
+
+Two fresh independent compiler/assembler/linker producer rounds match
+**186/186 raw bytes**, complete OMF/MZ bounds and ordered fixups. The own
+compiled control changes the stop frame 160→161 and is rejected. The focused
+receipt is `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
+The adjacent accepted 543-byte initial attacks, 939-byte remaining attacks,
+and 1018-byte major Mai/Yuki state machine keep their existing independent
+owners. This adds **186 new compiler-owned CODE bytes** only.
