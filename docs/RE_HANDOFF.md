@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The OP complete two-record score decoder is now source-exact:
+**169/169 C++ instruction bytes** at `C7D5..C87E`, two native Borland
+producers and a rejected compiled XOR→addition mutation. Preserving the
+original `AL` key2 register across each inline byte rotation removes both
+former six-byte spills. The two 96-byte records and checksum semantics are
+unchanged. Receipt:
+`.analysis/unit-replays/gpt-web-op-score-decode-original-al-169-a/receipt.json`.
+See [OP score decoder](../src/shared/score/decode.md).
+
 The MAIN original-register .BB resource loader is now exact, **55/55
 complete ASM bytes** at `F930..F967`, original allocator fixup `+7`, two fresh
 TASM/TLINK producers and a rejected 2048→2047 read-length mutation. The

@@ -1,4 +1,4 @@
-# Ordinary score decoder candidate
+# OP score decoder: exact original AL-key compiler source
 
 The complete OP compiler function is decoded C7D5..C87E, 169 instruction bytes,
 without tables, padding or original MZ fixups. Its no-argument near Pascal
@@ -47,3 +47,41 @@ Complete native/source review:
 The proposal `.analysis/op-score-decode-proposal.json` stays outside the live
 exact manifest. This source adds zero accepted functions or authored bytes;
 the neighboring encoder and MAIN/MAINE codecs remain untouched.
+
+## Complete 169-byte OP decoder accepted — 2026-11-10
+
+The original `scoredat_decode()` OP function at `[C7D5,C87E)` is now exact
+natural C++ with the authentic TC4J byte-rotate inline operation. Both fresh
+Borland compiler/linker producers reproduce **169/169 instruction bytes**,
+the unchanged empty original MZ relocation stream and the real complete
+function boundaries. Its compiled negative changes the decryption XOR to
+addition, changing the complete original code and being rejected.
+
+The old 181-byte ordinary byte-key version was exactly **12 bytes too long**:
+each of its two independent score sections spilled the `key2` byte to a
+stack local and reloaded it after the original `ROR [BP-1],3`. The original
+assembly instead loads each section's key directly into `AL` and preserves
+that register through the rotate, then executes `XOR [BP-1],AL`. This
+source-level dataflow is now explicitly represented by the DOS register
+interface in the single maintained decode macro:
+
+```cpp
+_AL = (section).key2;
+asm { ror value, 3; }
+value ^= _AL;
+```
+
+The rest is unchanged C++: both 96-byte records at DS5060/50C0, the 91-byte
+forward decryption loop, direct wrapped key1 plus current-byte reconstruction,
+92-byte checksum, early failure return from the first record and final
+checksum difference from the second. No file-format changes, error handling,
+foreign DATA, instruction templates or target-derived patches were added.
+The full source is in `decode.cpp`; the original near-Pascal ABI and
+`scoredat_section_t` are preserved from the shared OP header.
+
+Focused receipt:
+`.analysis/unit-replays/gpt-web-op-score-decode-original-al-169-a/receipt.json`.
+The old 181/182-byte first-producer diagnostics above are historical failed
+C++ variants. The function adds **169 exact OP C++ CODE bytes** and no
+additional record or asset ownership. No other accepted source depends on
+this file, so unrelated artifacts need no replay.

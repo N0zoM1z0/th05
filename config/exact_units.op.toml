@@ -935,3 +935,23 @@ unit = "op-pmd-resident"
 source = "src/shared/sound/pmd_resident.cpp"
 find = "snd_interrupt_if_midi = 0x60;"
 replace = "snd_interrupt_if_midi = 0x61;"
+
+[[units]]
+id = "op-score-decode-original-al"
+source = "src/shared/score/decode.cpp"
+module = "th05/score_d.cpp"
+segment = "SCORE_TEXT"
+wrapper_options = "-zCSCORE_TEXT -zPop_01"
+bindings_source = "probes/units/op_score_decode_bindings.asm"
+target_start = 0xc7d5
+size = 169
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+source_encoding = "cp932"
+
+[[controls]]
+unit = "op-score-decode-original-al"
+source = "src/shared/score/decode.cpp"
+find = "value ^= _AL; \\"
+replace = "value += _AL; \\"
