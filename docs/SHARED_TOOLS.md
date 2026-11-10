@@ -37,6 +37,14 @@ Use existing headless/Xvfb compiler wrappers where required. Historical
 verifier recipes naming system Wine retain the same shared binary and their
 recorded game-specific prefix/profile.
 
+TH05's prefix keeps its registry, compiler installation and writable directories
+private. Byte-identical Wine builtin DLLs and executables in `system32`,
+`syswow64` and `winsxs` link to the matching read-only host Wine package files;
+both x86 and x64 components remain available. Compiler, assembler, linker and
+executable probes pass with the duplicate local copies absent. Focused MAIN
+C++ and OP C DATA replays also pass two builds, complete bytes, original ordered
+fixups and their compiled controls.
+
 Read-only source access to other registered games remains available through
 Factory for cross-reference. Shared tools do not grant writes to their mutable
 state. Ordinary analysis and source browsing do not require a full replay.
