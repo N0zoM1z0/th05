@@ -1,6 +1,8 @@
-// Natural TH05 item motion/collection loop adapted from maintained TH04 source.
-// Preserve the true Motion point return, with no pseudoregister/codebody ASM.
+// Exact TH05 item motion and collection loop adapted from maintained TH04 C++.
+// The native 32-bit Motion result remains in AX:DX; two genuine register
+// subtraction primitives use the source-level Turbo C++ inline assembler.
 #pragma option -zCITEM_UPDATE_TEXT -zPmain_03
+#include <dos.h>
 #include "src/main/item/update.hpp"
 #pragma codeseg ITEM_UPDATE_TEXT main_03
 
@@ -30,29 +32,32 @@ extern "C" void pascal far items_update(void)
             item->pos.velocity.y.v = 0;
             item->pulled_to_player = false;
         }
-        // The returned point is intentionally retained across the later Y
-        // clamp: original pickup tests use the pre-clamp result, not cur.y.
-        PlayfieldPoint moved = item->pos.update_seg3();
-        if((moved.x.v <= -TO_SP(ITEM_W / 2)) ||
-            (moved.x.v >= TO_SP(PLAYFIELD_W + ITEM_W / 2)) ||
-            (moved.y.v >= TO_SP(PLAYFIELD_H + ITEM_H / 2))) {
+        // Return value remains in the original AX:DX registers through pickup.
+        item->pos.update_seg3();
+        if((static_cast<subpixel_t>(_AX) <= -TO_SP(ITEM_W / 2)) ||
+            (static_cast<subpixel_t>(_AX) >= TO_SP(PLAYFIELD_W + ITEM_W / 2)) ||
+            (static_cast<subpixel_t>(_DX) >= TO_SP(PLAYFIELD_H + ITEM_H / 2))) {
             item->flag = F_REMOVE;
             item_miss_penalty(item);
             continue;
         }
-        if(moved.y.v < -TO_SP(ITEM_H / 2)) {
+        if(static_cast<subpixel_t>(_DX) < -TO_SP(ITEM_H / 2)) {
             item->pos.cur.y.v = -TO_SP(ITEM_H / 2);
         }
         if(item->pos.velocity.y.v >= 0) {
             item->pos.velocity.x.v = 0;
         }
         if(miss_time == 0) {
-            if(static_cast<unsigned int>(player_pos.cur.x.v + TO_SP(24) -
-                moved.x.v) > TO_SP(48)) {
+            _BX = player_pos.cur.x.v;
+            _BX += TO_SP(24);
+            asm { sub bx, ax; }
+            if(static_cast<unsigned int>(_BX) > TO_SP(48)) {
                 goto no_collect;
             }
-            if(static_cast<unsigned int>(player_pos.cur.y.v + TO_SP(24) -
-                moved.y.v) > TO_SP(38)) {
+            _BX = player_pos.cur.y.v;
+            _BX += TO_SP(24);
+            asm { sub bx, dx; }
+            if(static_cast<unsigned int>(_BX) > TO_SP(38)) {
                 goto no_collect;
             }
             item_collect(item);

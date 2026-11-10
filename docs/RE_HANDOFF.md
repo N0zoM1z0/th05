@@ -6,6 +6,16 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's **241-byte item motion and pickup state machine** is newly exact:
+original `[1D0AD,1D19E)`, two native relocation sites, two independent
+Borland producers and a rejected compiled pull-speed mutation. Restoring the
+actual `DX:AX` Motion return and preserving it through `BX` pickup arithmetic
+solves the old X-clobbering bug. Two source-level inline `SUB BX,AX/DX`
+operations recover the exact original register direction encoding; the rest
+remains ordinary C++. Receipt:
+`.analysis/unit-replays/gpt-web-main-items-update-241-exact-a/receipt.json`.
+See [item update](../src/main/item/update_abi.md).
+
 The OP complete two-record score decoder is now source-exact:
 **169/169 C++ instruction bytes** at `C7D5..C87E`, two native Borland
 producers and a rejected compiled XOR→addition mutation. Preserving the

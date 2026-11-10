@@ -1,4 +1,4 @@
-# Parked item update and abandoned long borrow
+# MAIN item motion update: complete exact source and return ABI
 
 The original complete MAIN `items_update` occupies `[0x1D0AD,0x1D19E)`,
 241 instruction bytes, frame `1527`, group `main_03`. Coordinates are MZ
@@ -52,3 +52,42 @@ The original ABI/lifetime review and failed proposal remain in
 accepted source/header files are untouched. Current safe248 source presence,
 failed235 output and exact241 acceptance are separate claims; the last has
 not been achieved.
+
+## 2026-11-10: complete 241-byte exact item motion C++
+
+The original `items_update()` MAIN callback at `[1D0AD,1D19E)` is now
+accepted as a **241/241-byte** original-layout compiler function with the
+literal native two-item relocation order `[208,66]`. Two independent real
+Turbo C++/TLINK producers preserve the full function and reject a compiled
+item pull-speed change 10→11. All 40 actual item slots, exact 20-byte record
+layout, original near Motion ABI, pre-clamp Y pickup semantics, original
+unsigned X/Y bounds, miss and pickup callbacks, splashes and item-score
+side effects remain unchanged.
+
+The key repair was preserving the actual `PlayfieldMotion::update_seg3()`
+32-bit `DX:AX` return. Its X/Y results are consumed directly by the native
+clipping and Y-clamp checks instead of being stored into an extra stack Point.
+The 235-byte ordinary-register candidate already recovered that fast return,
+but the compiler subsequently used AX for the player's X value, destroying
+the original item X and making the pickup subtraction zero. The current
+maintained state machine instead builds the genuine pickup window using the
+CPU's BX register, preserving AX and DX for both unsigned comparisons.
+
+The 241-byte C++ candidate had just **four bytes** of mismatch: Borland chose
+`2B D8` and `2B DA` for the two equivalent register-register differences,
+while the original uses `29 C3` and `29 D3`. Source-level `asm { sub bx, ax; }`
+and `asm { sub bx, dx; }` are therefore used at these two genuine arithmetic
+operations. They reproduce the compiler-native register semantics and are
+assembled by the normal actual Turbo C++ toolchain; no machine-code bytes,
+synthetic memory operations, post-link patches, padding, changed entity
+layout or copied function bodies are authored. This is transparently **C++
+with two original-register inline ASM instructions**, not claimed as
+historically identical pure C++ or as separate standalone TASM ownership.
+
+Focused dual-producer acceptance:
+`.analysis/unit-replays/gpt-web-main-items-update-241-exact-a/receipt.json`.
+The entire 241-byte original function is newly credited as compiler-owned
+CODE with explicit inline-register provenance. Earlier 248/235-byte failures
+above are diagnostic history, not open ownership blockers. Neighboring
+already-accepted item collection and splash functions have unchanged source
+inputs and do not require replay.

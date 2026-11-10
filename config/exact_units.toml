@@ -5195,3 +5195,23 @@ unit = "main-stage-session-init-exact"
 source = "src/main/runtime/stage_session_init_body.inl"
 find = "pellet_bottom_col = 9;"
 replace = "pellet_bottom_col = 8;"
+
+[[units]]
+id = "main-items-update-exact"
+source = "src/main/item/update.cpp"
+module = "th05/it_updat.cpp"
+segment = "ITEM_UPDATE_TEXT"
+wrapper_options = "-zCITEM_UPDATE_TEXT -zPmain_03"
+bindings_source = "probes/units/item_update_bindings.asm"
+target_start = 0x1d0ad
+size = 241
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-items-update-exact"
+source = "src/main/item/update.cpp"
+find = "TO_SP(ITEM_PULL_SPEED)"
+replace = "TO_SP(ITEM_PULL_SPEED + 1)"
