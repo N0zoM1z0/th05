@@ -88,6 +88,15 @@ the already accepted neighboring 164-byte renderer and 399-byte collision
 function. Receipt `.analysis/gpt-web-hitshot-from-asm-a/receipt.json`; see
 [HitShot source](../src/main/player/hitshot_from.md).
 
+The second complete Gather bullet-template copier
+`set_bullet_template_to_gather_template()` is now exact at `[17087,170A2)`:
+**27/27 reviewed original-register ASM bytes**, original empty relocation
+stream, two fresh TASM/TLINK producers and a rejected 7→6-word copy negative.
+Its original odd entry requires a *byte-aligned* CODESEG; using the prior
+copy's word alignment was provably incorrect. The earlier forward copy is
+independently accepted at `[16F70,16F8B)` without double credit.
+See [Gather reverse copy](../src/main/gather/copy_from.md).
+
 MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
 **27/27 original-register ASM bytes**, with genuine source-backed DS→ES
 7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word

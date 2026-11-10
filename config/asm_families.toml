@@ -1950,3 +1950,29 @@ semantic_inputs = ["src/shared/hardware/input_held.hpp"]
 [units.negative]
 find = "mov ah, 2"
 replace = "mov ah, 3"
+
+[[units]]
+id = "main-gather-copy-from-asm"
+artifact = "main"
+source = "src/main/gather/copy_from_bullet.asm"
+types = "src/main/gather/copy_to_types.inc"
+symbols = "probes/units/gather_copy_symbols.inc"
+bindings = "probes/units/gather_copy_from_bindings.asm"
+notes = "src/main/gather/copy_from.md"
+target_start = 0x17087
+size = 27
+segment = "GATHER_COPY_FROM_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "81e8a1f3b14735d65f8a0dc0f416d9117dab2f03ea835c8bd30a01c5616257e5"
+target_scope_sha256 = "00737590ca5017b7e234f3caf923db9f06939798b6f3231b134e0ce1c6ba18eb"
+semantic_inputs = ["src/main/gather/gather.hpp"]
+[units.publics]
+"SET_BULLET_TEMPLATE_TO_GATHER_TEMPLATE" = 0
+"gather_copy_from_end" = 27
+[units.negative]
+find = "mov cx, GATHER_BULLET_WORDS"
+replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
