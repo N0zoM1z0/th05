@@ -19,10 +19,12 @@ The collision pair contains 143 and 73 instructions, without tables or padding.
 Its combined 609-byte ordered relocation list is `[134,565,533]`; the order is
 not sorted or normalized.
 
-The renderer between update and collision code remains a foreign hardware
-owner. Likewise, the genuine existing `hitshot_from` helper remains external;
-neither hardware rendering nor helper instructions have been transcribed into
-compiler C++.
+The 164-byte shot renderer between update and collision is now separately
+accepted as complete register-aware C++. The following genuine 108-byte
+`hitshot_from` helper is separately accepted as original-register ASM from
+ReC98 `th05/main/player/hitshot_from.asm`, with its own two builds and signed
+velocity-divisor negative. Neither neighboring scope is counted as collision
+C++ credit. See [hitshot animator](hitshot_from.md).
 
 ## Complete types and genuine interfaces
 

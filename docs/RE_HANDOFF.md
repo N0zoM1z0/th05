@@ -46,6 +46,14 @@ compilers match all raw bytes and `GRAPH_SCROLLUP` fixup `+57`; changing the
 [scroll driver](../src/main/scroll/driver.md) and
 `.analysis/unit-replays/gpt-web-main-scroll-driver-115-20261110/receipt.json`.
 
+MAIN's **108-byte `hitshot_from()` near-Pascal animation creator** is now
+exact source-backed ASM at `[13617,13683)`: 24 circular 14-byte animation
+slots, original signed velocity division by six, zero native relocations and
+two independent TASM/TLINK builds with rejected 6→5 negative. This joins
+the already accepted neighboring 164-byte renderer and 399-byte collision
+function. Receipt `.analysis/gpt-web-hitshot-from-asm-a/receipt.json`; see
+[HitShot source](../src/main/player/hitshot_from.md).
+
 MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
 **27/27 original-register ASM bytes**, with genuine source-backed DS→ES
 7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word

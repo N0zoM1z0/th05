@@ -80,3 +80,24 @@ surrounding Box/Runner source is unchanged. A genuine different original
 compiler-context layout, not source-visible fake zero-byte instructions,
 patched MZ data or sorted fixups, is still required before claiming an exact
 456-byte opcode function.
+
+## 2026-11-10: original three-graphics-prefix compiler context
+
+The three fully accepted PC-98 dialog hardware functions (88-byte tile box,
+56-byte EGC interpage copy and 74-byte face restore) were compiled in the
+same real `main_01` code segment, followed by the existing 106-byte dialog
+wipe/fade, the 456-byte opcode interpreter and the 270-byte script runner.
+The **seven-function source still emits 1049 instead of 1050 bytes**:
+`dialog_op()` is **455 instead of 456**, though all ten original relative
+fixup sites and their native order are preserved. Placing the runner in a
+separate genuine compiler group did not change the opcode extent. An
+independent TCC `-S`/TASM32 run of the actual seven-function code likewise
+emitted 1049 bytes; the original one-byte switch-table alignment is not
+restored by these real predecessors alone.
+
+Frozen first-producer sources and original disassembly evidence are retained
+under `.analysis/gpt-web-dialog-graphics-opcode-context-b/`,
+`.analysis/gpt-web-dialog-graphics-opcode-split-a/` and
+`.analysis/gpt-web-dialog-fullgraphics-compilerasm-c/`. This is a focused
+failure and does not change the accepted three hardware functions or their
+neighbors. The 456-byte opcode remains an open compiler-context issue.
