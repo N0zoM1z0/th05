@@ -40,11 +40,13 @@ instructions and 48 are the controller's compiler switch table; no padding.
 - Focused receipt: `.analysis/unit-replays/gpt-web-op-zunsoft-20261110/receipt.json`.
 - Native preliminary review remains at `.analysis/op-zunsoft-native-review.json`.
 
-The 54-byte initialized filename source at decoded OP `FECA..FF00` is still
-unaccepted. `filenames.cpp`, its independent binding scaffold and
-`.analysis/op-zunsoft-filenames-proposal.json` are ready for a focused DATA
-comparison and compiled data-mutation control. Do not merge this DATA scope
-into the accepted CODE unit.
+The independent six-filename initialized DATA contribution at decoded OP
+`FECA..FF00` now also passes: 54/54 bytes, two cold producers and a compiled
+filename-mutation negative. The early standalone link needed an original
+foreign DATA suffix through DS:2817 to satisfy DOS MZ stack bounds; the
+compiler-owned `_DATA` remains complete at DS:0EEA..0F20. The separate receipt
+is `.analysis/unit-replays/gpt-web-op-zunsoft-filenames-b-20261110/receipt.json`.
+Both ZUNsoft scopes are accepted. The next task is a substantial MAIN boss gap.
 
 ## Settled and pending work
 

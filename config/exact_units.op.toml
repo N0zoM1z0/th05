@@ -896,3 +896,24 @@ unit = "op-zunsoft"
 source = "src/op/zunsoft/zunsoft_pyro_new.inl"
 find = "((irand() % 224) + 64)"
 replace = "((irand() % 224) + 65)"
+
+[[units]]
+id = "op-zunsoft-filenames"
+source = "src/op/zunsoft/filenames.cpp"
+module = "th05/zs_fn.cpp"
+segment = "_DATA"
+wrapper_options = "-zCZUNSOFT_DATA_TEXT -zPop_01"
+bindings_source = "probes/units/op_zunsoft_filenames_bindings.asm"
+target_start = 0xfeca
+size = 54
+functions = 0
+origin = "compiler-generated-cxx"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+
+[[controls]]
+unit = "op-zunsoft-filenames"
+source = "src/op/zunsoft/filenames.cpp"
+find = "\"zun00.pi\""
+replace = "\"zun00.pj\""

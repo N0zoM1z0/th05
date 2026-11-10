@@ -63,12 +63,15 @@ not imply cdecl. This correction changes documentation only; source and binder
 remain frozen. The original diagnostic was only a preliminary result; formal replay has
 since independently accepted the same source and binder.
 
-## Separate filename source, unbuilt
+## Separate filename source: accepted initialized DATA
 
-`filenames.cpp` prepares six mutable source name arrays, in original order,
-covering exactly 54 native bytes at OP FECA..FF00 / DS 0EEA..0F20. These names
-come from the natural reference, not image/font payloads. The private proposal
-is `.analysis/op-zunsoft-filenames-proposal.json`, with a filename mutation for
-a future independent DATA replay. Its symbol-only binder is separate from
-CODE. No compiler, OMF/MAP check or DATA acceptance has been run for this source;
-all 54 bytes remain uncredited.
+`filenames.cpp` holds six mutable source-name arrays in original order,
+covering exactly 54 native bytes at decoded OP `FECA..FF00` / DS `0EEA..0F20`.
+Two independent compiler producers match every DATA byte, and the compiled
+filename mutation changes the owned DATA as expected. The binder retains
+foreign DATA after the six strings through the already accepted Music Room
+DATA endpoint DS:2817, which supplies sufficient original context for a valid
+DOS MZ image without fabricating a stack. Only the six strings earn DATA
+credit. This is an independent `op-zunsoft-filenames` acceptance, receipt
+`.analysis/unit-replays/gpt-web-op-zunsoft-filenames-b-20261110/receipt.json`.
+Image/font payloads and unrelated initialized DATA remain foreign.

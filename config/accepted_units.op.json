@@ -2,88 +2,28 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "6d90b4ae92220d2449eb12f4e856e8270d0b9d0f00064546f71220ac403a9b92",
+  "replay_receipt_sha256": "4329c7ad427b268a4621af8b009b7bf21cb0e127c1dffcad8742494322a473ee",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 46614,
-    "candidate_start": 46614,
-    "size": 1150,
-    "target_sha256": "00c4f4c5435b9e470cbe095426447d0ee8c7106ecabdc25126e5e61ce5127998",
-    "candidate_sha256": "dbe03aa9637856a2413fdf659acaf514381e6ba2d0a561002d825ce749f3c5d4",
+    "target_start": 65226,
+    "candidate_start": 65226,
+    "size": 54,
+    "target_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+    "candidate_sha256": "6d15a6df83482d9e2a3ab9aa82d017270b5fa1a73cc98eda385b1a489969ace4",
     "raw_exact": false,
-    "target_fixups": [
-      967,
-      822,
-      796,
-      787,
-      778,
-      769,
-      760,
-      749,
-      711,
-      704,
-      598,
-      587,
-      576,
-      571,
-      564,
-      557,
-      547,
-      540,
-      523,
-      488,
-      413,
-      382,
-      352,
-      311,
-      281,
-      245,
-      91,
-      74,
-      1096,
-      1091,
-      1086,
-      1070,
-      1065
-    ],
-    "candidate_fixups": [
-      967,
-      822,
-      796,
-      787,
-      778,
-      769,
-      760,
-      749,
-      711,
-      704,
-      598,
-      587,
-      576,
-      571,
-      564,
-      557,
-      547,
-      540,
-      523,
-      488,
-      413,
-      382,
-      352,
-      311,
-      281,
-      245,
-      91,
-      74,
-      1096,
-      1091,
-      1086,
-      1070,
-      1065
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 65226,
+      "size": 54,
+      "module": "th05/zs_fn.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -36773,6 +36713,295 @@
           "-ml",
           "-DBINARY='O'",
           "th05/zunsoft.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "op-zunsoft-filenames",
+      "entry_sha256": "2e06a54a57a9fd1f45d326d55c90bb2f5b290cd5df06a490179d0521095b49cc",
+      "result": {
+        "id": "op-zunsoft-filenames",
+        "entry_sha256": "2e06a54a57a9fd1f45d326d55c90bb2f5b290cd5df06a490179d0521095b49cc",
+        "rounds": [
+          {
+            "target_start": 65226,
+            "candidate_start": 65226,
+            "size": 54,
+            "target_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+            "candidate_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 65226,
+              "size": 54,
+              "module": "th05/zs_fn.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 65226,
+            "candidate_start": 65226,
+            "size": 54,
+            "target_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+            "candidate_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 65226,
+              "size": 54,
+              "module": "th05/zs_fn.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "1fced936081a293f73c32b43f220ba56d8cc570014480dd246d31d49ba54c220",
+            "dependency_timestamp_normalized_sha256": "e587a924fd2ab06c1abe4db2319d42522b1bcfa2200cb7d5d51530c5235d5963",
+            "module_name": "th05/zs_fn.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zs_fn.cpp",
+              "src/op/zunsoft/filenames.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 54,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 54,
+                  "sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "a885a4aba119be9baf8330fe767fbd09c433d30655a1e1885d9f360ad3e047c1",
+            "dependency_timestamp_normalized_sha256": "e587a924fd2ab06c1abe4db2319d42522b1bcfa2200cb7d5d51530c5235d5963",
+            "module_name": "th05/zs_fn.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zs_fn.cpp",
+              "src/op/zunsoft/filenames.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 54,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 54,
+                  "sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/zs_fn.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/zs_fn.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_zunsoft_filenames_bindings.asm",
+            "sha256": "d90d6a56b97a7d0dbb0ad7eabadefcaa8762fb213dbdddf88bbf92fdc343b147"
+          },
+          {
+            "path": "src/op/zunsoft/filenames.cpp",
+            "sha256": "1246f4fdcf08b15ae47d06a613826dab9d9f353057d6455a61294fddc8f900dc"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_zunsoft_filenames_bindings.asm",
+          "sha256": "d90d6a56b97a7d0dbb0ad7eabadefcaa8762fb213dbdddf88bbf92fdc343b147"
+        },
+        {
+          "path": "src/op/zunsoft/filenames.cpp",
+          "sha256": "1246f4fdcf08b15ae47d06a613826dab9d9f353057d6455a61294fddc8f900dc"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4329c7ad427b268a4621af8b009b7bf21cb0e127c1dffcad8742494322a473ee",
+      "compiled_negative_control": {
+        "target_start": 65226,
+        "candidate_start": 65226,
+        "size": 54,
+        "target_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+        "candidate_sha256": "6d15a6df83482d9e2a3ab9aa82d017270b5fa1a73cc98eda385b1a489969ace4",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 65226,
+          "size": 54,
+          "module": "th05/zs_fn.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "op-zunsoft-filenames",
+        "entry_sha256": "2e06a54a57a9fd1f45d326d55c90bb2f5b290cd5df06a490179d0521095b49cc",
+        "mutation": {
+          "unit": "op-zunsoft-filenames",
+          "source": "src/op/zunsoft/filenames.cpp",
+          "find": "\"zun00.pi\"",
+          "replace": "\"zun00.pj\""
+        },
+        "control_sha256": "cb7d7eb890e8112f890832968c0e1fcb79a6b121b0a6051358441f3b2f8053fd",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 65226,
+          "candidate_start": 65226,
+          "size": 54,
+          "target_sha256": "b7ac063defe564913b6dfae92da4bf4e3166b437001fea385dcaf074fdc1baec",
+          "candidate_sha256": "6d15a6df83482d9e2a3ab9aa82d017270b5fa1a73cc98eda385b1a489969ace4",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 65226,
+            "size": 54,
+            "module": "th05/zs_fn.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "9551b360fcf21098288c872df998af40b473db47a8c9d607783523e0f8e16206",
+          "dependency_timestamp_normalized_sha256": "149a2c5c423dcc3b6ece6187e4f0a4b299bf8cb7262c29c02e753f712cff2cd4",
+          "module_name": "th05/zs_fn.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/zs_fn.cpp",
+            "src/op/zunsoft/filenames.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 54,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 54,
+                "sha256": "6d15a6df83482d9e2a3ab9aa82d017270b5fa1a73cc98eda385b1a489969ace4"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/zs_fn.cpp"
         ]
       },
       "target_view": {
