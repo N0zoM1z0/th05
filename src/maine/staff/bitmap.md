@@ -138,3 +138,38 @@ actual instruction/ABI evidence is `.analysis/bitmap-snap-segmented-review.json`
 SHA-256 `5f165995d756e176788172f44be4366cc55f646071fa15b0941dba7692345205`.
 This reduces one recovery gap without changing any accepted owner, counter,
 initialized DATA, BSS ownership or bitmap-restore implementation.
+
+## 2026-11-10 native handwritten-ASM reconstruction candidate
+
+The independent maintained hardware routine candidate
+`src/maine/staff/bitmap_transfers.asm` now reconstructs both original
+near-Pascal device kernels in a single 126-byte semantic-assembly contribution.
+Its real `E3A4..E3CF` 43-byte capture and `E3CF..E422` 83-byte restore preserve
+all row counts, 40-byte data widths, 80-byte VRAM strides, native E000/A800
+segment switching, TDW/RMW color controls, REP MOVSW/STOSW, data lifetime,
+caller DS, and trailing `OUT 7Ch,AL`. Symbolic constants, the actual bitmap
+buffer, the far GRCG driver and the source-free binder are separate. The native
+full span has 56 complete instructions and original ordered fixups `[89,57]`.
+The pinned ReC98 `th05/end/verdict_bitmap.asm` is source-language/algorithm
+evidence, not proof of an identical historical assembler producer.
+
+A real pinned TASM32/TLINK first producer places the entire 126-byte CODE
+contribution and both public function boundaries exactly at original CS A54,
+with DATA frame 1011. However its raw bytes **differ at exactly three XOR
+opcode-direction bytes**, at complete offsets 13, 64 and 91: native uses
+`31` while TASM32 chooses equally semantic `33`. The native relocation order
+is `[89,57]`, while the actual producer records `[57,89]`. The strict ASM
+replay correctly stops at the first positive and does not build a second
+producer or negative. Nothing is accepted or credited: no opcode patch, fixup
+sorting, normalization, compiler-origin C++ claim or resource-byte substitution.
+
+The meaningful source, semantic type constants and dedicated symbol-only
+scaffold are retained for future original-assembler/codegen investigation:
+`bitmap_transfers.asm`, `bitmap_transfers_types.inc`,
+`probes/units/maine_staff_bitmap_symbols.inc`, and
+`probes/units/maine_staff_bitmap_asm_bindings.asm`. Original attempts and frozen
+native instruction evidence are retained privately under
+`.analysis/gpt-web-maine-staff-bitmap-{a,b}/` and
+`.analysis/gpt-web-maine-staff-bitmap-native-review.json`. The rejected unit is
+**not** registered in the default live ASM manifest and cannot accrue credit
+from the existing C++ two-function proposal or from the controller.

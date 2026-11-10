@@ -70,3 +70,25 @@ acceptance gate: `.analysis/shinki-balls-semantic-model.json`, SHA-256
 Earlier native/source/actual review: `.analysis/shinki-wing-balls-root-review.json`,
 SHA-256 `273fdda668ee1168da244a77f903094842d335cf183f3007af8a1ff90e28c39d`.
 Only the separate wing function gains386 C++ bytes and one complete function.
+
+## 2026-11-10 220-byte ball controller codegen investigation
+
+A new bounded first-producer series confirms optimized natural `b6balls_update`
+216 bytes and no-optimization source 224 bytes versus the native complete
+220. The best ordinary `-O-` branch control encloses the active ball body in
+`if(p->flag != B6BF_FREE)` and reverses the cloud transition predicate, without
+changing the full canonical Ball/Motion/return types. It emits **221 bytes**, no
+fixups, versus native 220. Target and candidate have identical algorithmic
+collision/decay instruction shapes and return semantics, but at target relative
+`+23` the native four-byte near `JGE` becomes the producer's two-byte short
+`JL` plus a three-byte `JMP` to the loop tail, leaving one extra byte. Native
+DATA offsets then drift due the failed contribution size. Twelve additional
+branch/goto and scoped option variants stay at 221 or 223; none is exact.
+
+Evidence: `.analysis/gpt-web-shinki-noopt-compare-inverted-free-wrapped-a/`
+and `.analysis/gpt-web-shinki-cloud-*-a/`. The 221-byte source and all tests are
+private snapshots, **not** changes to accepted C++ or new source credit. The
+current maintained scalar candidate, all other Shinki accepted functions and
+the existing vendor and hardware interfaces remain unchanged. A future owner
+must match the full 220-byte function and ordered relocations without compiler
+padding or instruction surgery.

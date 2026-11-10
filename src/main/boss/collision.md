@@ -16,3 +16,19 @@ Evidence: `.analysis/native-producers/main-boss-collision-order-a` and
 `.analysis/scalar-render-followups-root-review.json`. No physical register
 hints, ABI changes, padding or byte normalization are used. Further work should
 recover genuine source context rather than extend behavior tests.
+
+## 2026-11-10 whole boss-player collision register-allocation trials
+
+The original full collision callback `1FD4F..1FD7A` is 43 bytes with no
+fixups. A standalone replay of the maintained natural expression remains 46
+bytes: the compiler keeps X in BX and Y in DX, while the native code uses AX
+and DX. The three one-byte deltas are the X load, X addition and X comparison.
+Seventeen ordinary C++ variants tested declaration/initialization and
+subtraction order, register hints, direct Boolean checks and reordered overlap
+conditions. The closest 45-byte candidate computes fresh temporary AX values
+with different dataflow; it is still not the native full 43-byte function.
+Actual single-producer snapshots are under
+`.analysis/gpt-web-boss-collision-*-a/`. These trials are not exact acceptance;
+no artificial register-body transcript, linker adjustment or partial byte
+claim was introduced. The original `collision.cpp` and accepted six-function
+generic Boss helper owner remain unchanged.

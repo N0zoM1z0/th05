@@ -65,6 +65,24 @@ is `.analysis/unit-replays/gpt-web-op-zunsoft-filenames-b-20261110/receipt.json`
 Both ZUNsoft scopes are accepted. Continue the substantial MAIN Boss gaps,
 especially the Shinki ball updater and generic defeat controller.
 
+## 2026-11-10 Boss and Staff investigation (unaccepted)
+
+Focused native/actual compiler analysis continued on substantial owner
+functions. Shinki's ball updater has a 221-byte natural `-O-` trial against
+native 220 (last short/near branch-layout difference); Yumeko's sword updater
+can now compile the original 283-byte complete *size* with fixup `[75]`, but
+still differs in twirl branch output; the generic boss-player collision
+remains 43 target versus 45 best candidate. Source/ABI outcomes, failed
+variants and next codegen questions are recorded in each owner Markdown.
+
+The two Staff verdict VRAM transfer routines now have one maintained semantic
+ASM candidate covering all 126 native instruction bytes, but pinned TASM32
+emits three different XOR opcode-direction bytes and reverses two ordered
+fixups. It remains **outside** the live ASM manifest and earns zero credit;
+see `src/maine/staff/bitmap.md`. Unmodified accepted C++/ASM owners were never
+replayed. All these diagnostics are available privately under
+`.analysis/gpt-web-*/`; no full-set cold replay was performed.
+
 ## Settled and pending work
 
 MAIN current-score load/save are independently accepted, 55 bytes each. Load's

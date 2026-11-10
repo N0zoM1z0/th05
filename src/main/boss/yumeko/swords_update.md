@@ -27,3 +27,29 @@ All trials failed, and the ordinary 280-byte source is restored.
 Restoring this complete function is also important for the genuine compiler
 context of the adjacent354/428-byte attacks; see
 [attack recovery](laser_swords.md).
+
+## 2026-11-10 exact-size controller reconstruction experiments
+
+The full original `swords_update` remains a 283-byte near Pascal function,
+with original ordered relocation `[75]`. A fresh isolated rebuild of the old
+maintained source confirms 280 bytes, while whole-function `-O-` produces 285.
+We tested explicit early free-slot control flow, true bounded DX:AX point-return
+use, and ordinary source-level clip/collision expressions. The natural
+`-O-` branch where the free-slot condition encloses the active body, combined
+with the actual pair of register-word player deltas and a nested Y comparison,
+now emits **283 complete bytes with the original ordered fixup `[75]`**.
+The two specific first-producer diagnostics are
+`.analysis/gpt-web-yumeko-reg-dx-mutate-compare-a/` and
+`.analysis/gpt-web-yumeko-reg-register-add-then-test-a/`.
+
+**This is not raw-exact and receives no credit.** In the twirl section the
+original uses near conditional branches from `+5E` and `+72` directly to the
+loop tail, whereas current `-O-` lowering uses shorter local tests plus
+additional jumps. The code after the twirl through the final return can be
+recovered at the original complete offsets, but no byte-range subset is counted.
+Twelve more source-equivalent twirl/continue/goto and local `#pragma -O` variants
+emitted 283, 287, 288 or 293 bytes; none was full raw-equal. Private immutable
+first producer/variant snapshots reside under `.analysis/gpt-web-yumeko-*`.
+The maintained 280-byte natural source, frozen accepted neighbors and original
+relocation data are unchanged. Future work should focus on genuine compiler
+control-flow lowering or original adjacent TU context, not patching jumps.
