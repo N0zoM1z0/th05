@@ -173,3 +173,28 @@ native instruction evidence are retained privately under
 `.analysis/gpt-web-maine-staff-bitmap-native-review.json`. The rejected unit is
 **not** registered in the default live ASM manifest and cannot accrue credit
 from the existing C++ two-function proposal or from the controller.
+
+## 2026-11-10 exact in genuine Turbo C++ original-register context
+
+Both near-Pascal device-copy kernels are **now accepted** as complete functions
+through the authentic Staff 20-function compiler object. The previous
+standalone TASM attempt above remains a genuine failed *different producer*,
+not a reason to reject the present natural compiler result.
+
+`bitmap_hardware_context.inl` preserves the real hand-assembly-style hardware
+operations: DS-to-ES RAM snapshot, E000h capture plane, A800h clear plane,
+352 rows, 20 WORDs per row, 40/80-byte strides, GRCG TDW/RMW changes and
+final port 7Ch disable. C++ compiles the near-Pascal stack frame and SI/DI
+saves, while original CPU instructions remain in source-level `asm` blocks.
+That avoids the duplicate push/pop pair which produced eight excess bytes in
+the first combined context. The resulting two functions match exact native
+**43/43** and **83/83** code and literal original far-call relocation order;
+no XOR opcode bytes, fixup list or object were manually modified. The real
+buffer remains an external DGROUP object at DS56D8, with no stored bitmap
+content added by this owner.
+
+Each function passed two fresh TCC/TLINK builds and its own meaningful
+negative (352→351 rows, TDW color1→2). Acceptance origin is explicitly C++
+**with embedded original-register hardware assembly**, not normal C++ codegen
+and not a distinct TASM32-source claim. See [full Staff context](complete_context.md)
+for the accepted receipts and original physical MAP proof.

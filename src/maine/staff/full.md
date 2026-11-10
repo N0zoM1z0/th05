@@ -128,3 +128,16 @@ The full family is now **4229 bytes/17 complete functions accepted**; it does
 not claim the adjacent 126-byte bitmap device kernels or the 991-byte Staff
 controller. The controller's true predecessor CALL offsets can now be
 investigated with no six-byte C++-owned gap.
+
+## 2026-11-10 final 20-function source context
+
+The accepted 4229-byte / 17-function full scene is now followed by the two
+**exact 43+83-byte bitmap transfers** and the **exact 991-byte controller** in
+`staff_complete_context.cpp`. The entire physical `[D31F,E801)` 5346-byte
+original CODE span is raw-exact with literal original relocation order in a
+fresh real compiler/linker producer. The three following functions add **1117
+new** exact bytes, independently verified by two-producer, negative-controlled
+scoped acceptances. Historical earlier statements that bitmap and controller
+were unaccepted apply only to the old single-function/fewer-prefix diagnostics.
+See [full Staff and controller recovery](complete_context.md). No previous
+17-function credit is duplicated.

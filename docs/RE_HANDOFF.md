@@ -6,6 +6,18 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+**MAINE's complete Staff scene, bitmap and controller source is now exact:**
+20 genuine functions, **5346/5346 native CODE bytes**, original literal
+ordered relocation stream, all at the real `[D31F,E801)` original position.
+The two 43/83-byte GRCG bitmap kernels use original-register inline assembly
+inside TCC; the 991-byte `staffroll_animate()` controller is ordinary C++.
+Each of these three newly accepted complete scopes passed two focused fresh
+compiler/linker producers and its own negative (**1117 new bytes**). Together
+with the earlier 626+861 update/render source recovery, this turn adds
+**2604 new MAINE CODE bytes**, without double counting the 17 already
+accepted scene functions. The exact source and original frame proof:
+[Staff complete context](../src/maine/staff/complete_context.md).
+
 MAINE's full 17-function Staff scene context now reproduces **4229/4229
 exact C++ CODE bytes and the complete original ordered relocation stream**.
 Two previously blocked major functions are newly accepted: the 626-byte
@@ -14,8 +26,9 @@ Restoring the genuine source-level trail-pointer `if/else` and initial loop
 order generated the missing three-byte reloads naturally. The eight dependent
 accepted neighbors were locally refreshed and stay exact. Receipts:
 `.analysis/unit-replays/gpt-web-maine-staff-{two-major-functions,neighbor-refresh}-20261110/receipt.json`.
-See [Staff full family](../src/maine/staff/full.md). The separate 991-byte
-Staff controller is still unaccepted and next in focus.
+See [Staff full family](../src/maine/staff/full.md). The subsequent 991-byte
+Staff controller is now accepted through the real bitmap/controller source
+context described above.
 
 The complete 40-byte MAIN near-Pascal scroll-to-VRAM coordinate helper is
 now exact as source-backed ASM (`DF28..DF50`): two independent TASM/TLINK

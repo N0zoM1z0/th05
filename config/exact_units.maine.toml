@@ -1342,3 +1342,68 @@ unit = "maine-staff-scene-render"
 source = "src/maine/staff/body/staff_scene_render.inl"
 find = "trail_color = 6"
 replace = "trail_color = 5"
+
+[[units]]
+id = "maine-staff-bitmap-snap-context"
+source = "src/maine/staff/staff_complete_context.cpp"
+module = "th05/stinctx.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_staff_complete_context_bindings.asm"
+target_start = 0xe3a4
+size = 43
+functions = 1
+function_symbol = "verdict_bitmap_snap(unsigned int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_end_symbol = "verdict_bitmap_put(unsigned int)"
+
+[[controls]]
+unit = "maine-staff-bitmap-snap-context"
+source = "src/maine/staff/bitmap_hardware_context.inl"
+find = "mov ax, 352"
+replace = "mov ax, 351"
+
+[[units]]
+id = "maine-staff-bitmap-put-context"
+source = "src/maine/staff/staff_complete_context.cpp"
+module = "th05/stinctx.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_staff_complete_context_bindings.asm"
+target_start = 0xe3cf
+size = 83
+functions = 1
+function_symbol = "verdict_bitmap_put(unsigned int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+function_end_symbol = "staffroll_animate()"
+
+[[controls]]
+unit = "maine-staff-bitmap-put-context"
+source = "src/maine/staff/bitmap_hardware_context.inl"
+find = "grcg_setcolor(0x80, 1);"
+replace = "grcg_setcolor(0x80, 2);"
+
+[[units]]
+id = "maine-staff-controller-context"
+source = "src/maine/staff/staff_complete_context.cpp"
+module = "th05/stinctx.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/maine_staff_complete_context_bindings.asm"
+target_start = 0xe422
+size = 991
+functions = 1
+function_symbol = "staffroll_animate()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-staff-controller-context"
+source = "src/maine/staff/controller_body.inl"
+find = "Palettes.colors[0].c.b = 48;"
+replace = "Palettes.colors[0].c.b = 47;"

@@ -1,4 +1,4 @@
-# Natural staff-roll controller candidate
+# Staff-roll controller: exact through native-order compiler context
 
 This independent C++ candidate owns the complete original MAINE function
 `E422..E801`:991 instruction bytes,312 instructions and48 internal branches.
@@ -110,3 +110,23 @@ provider alias, fixup sorting or new controller producer follows from this
 observation. The frozen evidence is
 `.analysis/staff-controller-record-context-review.json`, SHA-256
 `6e42f8c6d87271a01e6b9a14c1a4b8440fd2d7177bd408f8e39422699c895cd1`.
+
+## 2026-11-10 acceptance — genuine 991-byte complete controller
+
+The original near C++ controller `[E422,E801)` has now passed strict original
+raw and ordered-fixup matching in two independent Borland producers. Its
+original **29-site** relocation stream begins `[705,340,...,39]` and ends
+`[985,971,966,950,938]`; the earlier standalone object reversed these two
+runs. Including all preceding 17 exact Staff scene functions and the 43+83
+original-register bitmap loops in the **same actual source CODESEG** naturally
+restores the OMF record cut, without changing the controller logic or sorting
+FIXUPP records. `controller_body.inl` is identical to the preexisting complete
+controller function, included by both standalone and combined wrappers.
+
+A source-independent binder retains the real library, GRCG/bitmap and mutable
+state addresses. The controller has no authored data, tables, alignment or
+interior holes; its own semantic negative changes the initial palette blue
+component 48→47 and is rejected after normal compilation. Full context and
+three focused receipts: [complete Staff source](complete_context.md) and
+`.analysis/unit-replays/gpt-web-maine-staff-controller-991-20261110/receipt.json`.
+This supersedes the earlier raw-only standalone diagnostics above.
