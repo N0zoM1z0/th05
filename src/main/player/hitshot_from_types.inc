@@ -1,0 +1,21 @@
+; Original 14-byte HitShot and 18-byte Shot state-machine member offsets.
+HITSHOT_RECORD_BYTES    equ 14
+HITSHOT_COUNT           equ 24
+HITSHOT_AGE             equ 0
+HITSHOT_PATTERN         equ 1
+HITSHOT_CURRENT_POS     equ 2
+HITSHOT_PREVIOUS_POS    equ 6
+HITSHOT_VELOCITY_X      equ 10
+HITSHOT_VELOCITY_Y      equ 12
+SHOT_FLAG               equ 0
+SHOT_CURRENT_POS        equ 2
+SHOT_PREVIOUS_POS       equ 6
+SHOT_VELOCITY_X         equ 10
+SHOT_VELOCITY_Y         equ 12
+SHOT_PATTERN_BASE       equ 14
+SHOT_REMOVE             equ 2
+HITSHOT_ACTIVE          equ 1
+SHOT_REIMU_PATTERN      equ 20
+HITSHOT_REIMU_PATTERN   equ 28
+HITSHOT_OTHER_PATTERN   equ 32
+HITSHOT_BRAKE_DIVISOR   equ 6

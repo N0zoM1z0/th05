@@ -1843,3 +1843,29 @@ semantic_inputs = ["src/main/gather/gather.hpp"]
 [units.negative]
 find = "mov cx, GATHER_BULLET_WORDS"
 replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
+
+[[units]]
+id = "main-hitshot-from-asm"
+artifact = "main"
+source = "src/main/player/hitshot_from.asm"
+types = "src/main/player/hitshot_from_types.inc"
+symbols = "probes/units/hitshot_from_symbols.inc"
+bindings = "probes/units/hitshot_from_bindings.asm"
+notes = "src/main/player/hitshot_from.md"
+target_start = 0x13617
+size = 108
+segment = "HITSHOT_FROM_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "6ead1259985c3f2f43df6130af047f1d3c6ea4d9bc3dad85faf9bd5f5b9fba70"
+target_scope_sha256 = "d1406382e1af6f7a1e5513b3ac122509861a2dc8ea03dbc6a33f8a51c6a977d5"
+semantic_inputs = ["src/main/player/shot_runtime.hpp"]
+[units.publics]
+"HITSHOT_FROM" = 0
+"hitshot_from_end" = 108
+[units.negative]
+find = "mov bx, HITSHOT_BRAKE_DIVISOR"
+replace = "mov bx, (HITSHOT_BRAKE_DIVISOR - 1)"
