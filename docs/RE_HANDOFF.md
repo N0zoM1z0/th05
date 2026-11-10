@@ -6,6 +6,10 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+A complete native-ASM `CDG_FREE_ALL` loop now passes MAIN focused replay: 14
+bytes and a semantic negative, using its true same-CS FAR Pascal provider and
+BYTE-aligned original shared segment. See
+[src/main/formats/cdg_free_all.md](../src/main/formats/cdg_free_all.md).
 The PMD resident detector is now exact across MAIN, OP and MAINE: three
 independent 46-byte C++ source owners (138 total), each passing two fresh
 producers, ordered fixups and an own compiled negative.

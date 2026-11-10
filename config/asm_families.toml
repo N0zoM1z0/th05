@@ -1493,3 +1493,29 @@ semantic_inputs = ["src/main/player/bomb_draw.hpp", "src/main/player/mima_bomb.c
 [units.negative]
 find = "BAND_WIDTH_PIXELS equ 176"
 replace = "BAND_WIDTH_PIXELS equ 144"
+
+[[units]]
+id = "main-cdg-free-all"
+artifact = "main"
+source = "src/main/formats/cdg_free_all.asm"
+types = "src/main/formats/cdg_free_all_types.inc"
+symbols = "probes/units/cdg_free_all_symbols.inc"
+bindings = "probes/units/cdg_free_all_asm_bindings.asm"
+notes = "src/main/formats/cdg_free_all.md"
+target_start = 0x1526e
+size = 14
+segment = "SHARED"
+group = "(none)"
+cs_base = 0x14ab0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "9e895651bab84f996cacd5bdfe4aa1675f2830ddb5650c2cb5c8ae2af5cf61f9"
+target_scope_sha256 = "6c5820dfe20f29f30bad5eecb964e1e954101b842d7772457962ec1b0bda44b6"
+semantic_inputs = ["src/main/ems/ems.hpp"]
+[units.publics]
+"CDG_FREE_ALL" = 0
+"cdg_free_all_end" = 14
+[units.negative]
+find = "mov si, CDG_SLOT_COUNT - 1"
+replace = "mov si, CDG_SLOT_COUNT - 2"
