@@ -13302,6 +13302,226 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "98a82c9077e99c29e1c2720a0754df388285aa52d29224b05c4229a4537a0de4"
+    },
+    "main-vector2-near-asm": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-vector2-near-asm",
+        "artifact": "main",
+        "source": "src/shared/math/vector2_near.asm",
+        "types": "src/shared/math/vector2_near_types.inc",
+        "symbols": "probes/units/vector2_near_symbols.inc",
+        "bindings": "probes/units/vector2_near_bindings.asm",
+        "notes": "src/shared/math/vector2_near.md",
+        "target_start": 86746,
+        "size": 55,
+        "segment": "VECTOR2_NEAR_TEXT",
+        "group": "main_03",
+        "cs_base": 86640,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "ed180b84c04e426fd3452fb907134f119012f0e9b093608d13ac0f7ea82ea76b",
+        "target_scope_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+        "semantic_inputs": [
+          "src/shared/math/vector2_near.hpp"
+        ],
+        "publics": {
+          "VECTOR2_NEAR": 0,
+          "vector2_near_end": 55
+        },
+        "negative": {
+          "find": "sar eax, VECTOR2_TRIG_FRAC_BITS",
+          "replace": "sar eax, (VECTOR2_TRIG_FRAC_BITS - 1)"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/vector2_near_bindings.asm",
+          "sha256": "1185c68e46bdd18f319170cbe2ed7a3fcefb53f244f31221c3eda2ca070295b6"
+        },
+        {
+          "path": "probes/units/vector2_near_symbols.inc",
+          "sha256": "7b790ce1c93caeb6ccd4f04d7b20c2f95149df6da0becfd40e1a9ee4c4a724a4"
+        },
+        {
+          "path": "src/shared/math/vector2_near.asm",
+          "sha256": "64ad956793f02e6e002271cac5eb8a3bf92b2800ac6a92c6a063a5c54f067708"
+        },
+        {
+          "path": "src/shared/math/vector2_near.hpp",
+          "sha256": "5ee79cfb3e8a43492ea2796c372821a2a96ac326903907eb04134392f06ff18f"
+        },
+        {
+          "path": "src/shared/math/vector2_near_types.inc",
+          "sha256": "5a6954efbdec0d3f7a6d1fb288bc684b8a47fe7b6ace0c9b6bcc15116c3e7be2"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 55,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 86746,
+            "candidate_start": 86746,
+            "size": 55,
+            "target_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+            "candidate_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "VECTOR2_NEAR_TEXT",
+            "size": 55,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 55,
+                "sha256": "7d095b81d44a3257e45cf8d65f189fccca8d9d2920c3e7c9912586aec9256e17"
+              }
+            ]
+          },
+          "object_sha256": "c3f7e33440284d4831dd0fd3a5f6a7e503888eca94368ee5b7637c63e2dde942",
+          "object_normalized_sha256": "7ea9ecc2ce9a68a52a714226b8a144a47b8aa36fe685d69343645e1767eec3b1",
+          "bindings_sha256": "009442fe2a6ec785a87c3fa0b84d9155f5b4e9a7366208cdc8687b32b16a4208",
+          "bindings_normalized_sha256": "6d967f0d34304bc81ada301b5707ae475e2eda8acfdf0386583a6972bd09c859",
+          "map_sha256": "143359c50402282be7c1ee66c4a377b2d18b30cfaea3a90c6495db5fd750faaf",
+          "mz_sha256": "7b54c6a588843f05e8393dac88bf38cb3557192064efd2b136e84ccfa0626fdd",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 86746,
+            "candidate_start": 86746,
+            "size": 55,
+            "target_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+            "candidate_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "VECTOR2_NEAR_TEXT",
+            "size": 55,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 55,
+                "sha256": "7d095b81d44a3257e45cf8d65f189fccca8d9d2920c3e7c9912586aec9256e17"
+              }
+            ]
+          },
+          "object_sha256": "d1abf041ed52c637f60900b443e646b9e57549278e07690184e632b3042f62ec",
+          "object_normalized_sha256": "7ea9ecc2ce9a68a52a714226b8a144a47b8aa36fe685d69343645e1767eec3b1",
+          "bindings_sha256": "a883d0e9f9f08b4afbeb01ba63747fcbec8d0f12a9ebdab34892ee1e098889fa",
+          "bindings_normalized_sha256": "6d967f0d34304bc81ada301b5707ae475e2eda8acfdf0386583a6972bd09c859",
+          "map_sha256": "143359c50402282be7c1ee66c4a377b2d18b30cfaea3a90c6495db5fd750faaf",
+          "mz_sha256": "7b54c6a588843f05e8393dac88bf38cb3557192064efd2b136e84ccfa0626fdd",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 86746,
+          "candidate_start": 86746,
+          "size": 55,
+          "target_sha256": "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021",
+          "candidate_sha256": "5cc97b15799018fec6db6170ef81913b149cdd884d98d3dbe37b976ab205c329",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "VECTOR2_NEAR_TEXT",
+          "size": 55,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 55,
+              "sha256": "ea1eb94195d5124e9d8927dd782c0098ac5d1d2db2b3b5236bfe95f7122e7aab"
+            }
+          ]
+        },
+        "object_sha256": "1860a3944d4e2184535618d0ecc66cb8250e54558d89f0f7cc5f02baab6904db",
+        "object_normalized_sha256": "b6e87578c0b18bfa5388f2df8190cbee00b2e8e5eb0a1c67bedc79c341b52892",
+        "bindings_sha256": "12e4cc8d28444516ba4fd742df3216508a6a7ddd86c37c272058da44abd25d9d",
+        "bindings_normalized_sha256": "6d967f0d34304bc81ada301b5707ae475e2eda8acfdf0386583a6972bd09c859",
+        "map_sha256": "143359c50402282be7c1ee66c4a377b2d18b30cfaea3a90c6495db5fd750faaf",
+        "mz_sha256": "e5f08780ede18d95521d14eb1dd210c547fb0c1e664881c1203deb1bcf17b219",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "97aea20e17319e444b80f68f09eb08396d0bbdc89a5b2d68bb4f221d93301ecf"
     }
   }
 }

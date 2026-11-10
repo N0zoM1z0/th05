@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's original-register `VECTOR2_NEAR` near-Pascal math helper is now exact
+as a complete **55-byte reviewed ASM** contribution at `152DA..15311`.
+Two independent TASM/TLINK builds and a compiled signed-product shift negative
+passed. Its former 92-byte natural C++ candidate remains inexact. See
+[near vector review](../src/shared/math/vector2_near.md).
+
 **MAINE's complete Staff scene, bitmap and controller source is now exact:**
 20 genuine functions, **5346/5346 native CODE bytes**, original literal
 ordered relocation stream, all at the real `[D31F,E801)` original position.

@@ -1,4 +1,4 @@
-# Near vector candidate
+# Near vector: exact source-language ASM, inexact natural C++
 
 The complete MAIN procedure is 152DA..15311, 55 instruction bytes with no
 table or MZ fixup. ReC98 b6ba5b0a th04/math/vector2n.asm places ENDP before
@@ -34,3 +34,27 @@ C/C++ counts and ownership remain unchanged.
 
 Review SHA-256:
 `522ab7e042c6281f08cf84247377b2fb8f23812af9dc3cb64bcb27c954e9f2a3`.
+
+## 2026-11-10 exact register-level near Pascal vector
+
+A maintained original-language `vector2_near.asm` now reproduces the complete
+MAIN `[152DA,15311)` **55/55 byte** function. The real preserved ReC98
+`th04/math/vector2n.asm` supplies a true 16-bit near-Pascal algorithm using
+32-bit signed `MOVSX`, `IMUL` and arithmetic `SAR`, not a guessed compiler
+pattern or a target byte array. The function reads the signed length from
+SS:BP+4, the byte angle from BP+6 and the near SPPoint reference from BP+8;
+it saves BP and returns with `RET 6`. Both original sine and cosine samples
+are loaded from the externally bound unmodified DS tables before the first
+output write, and both signed products are shifted by eight before storing
+their low words. The original following `EVEN` NOP at 15311 remains **outside**
+this function and does not earn credit.
+
+Two independent TASM32/TLINK producers match the entire 55-byte CODE,
+original empty ordered relocation stream, original `main_03`/CS1527 and
+DGROUP/DS209D framing, true MAP bounds and CRC-valid linked/OMF bytes.
+Changing the real X-product shift to seven bits compiles a same-extent
+negative that fails comparison. The exact receipt is
+`.analysis/gpt-web-main-vector2-near-asm-b/receipt.json` and the pinned
+native review is `.analysis/gpt-web-vector2-near-native-review-20261110.json`.
+All 55 bytes gain **reviewed ASM instruction ownership**. The earlier natural
+C++ 92-byte candidate is still inexact and is not reclassified or replaced.

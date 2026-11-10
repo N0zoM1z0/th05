@@ -1739,3 +1739,29 @@ semantic_inputs = ["src/main/scroll/coordinates.hpp"]
 [units.negative]
 find = "SCROLL_RING_HEIGHT equ 400"
 replace = "SCROLL_RING_HEIGHT equ 401"
+
+[[units]]
+id = "main-vector2-near-asm"
+artifact = "main"
+source = "src/shared/math/vector2_near.asm"
+types = "src/shared/math/vector2_near_types.inc"
+symbols = "probes/units/vector2_near_symbols.inc"
+bindings = "probes/units/vector2_near_bindings.asm"
+notes = "src/shared/math/vector2_near.md"
+target_start = 0x152da
+size = 55
+segment = "VECTOR2_NEAR_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "ed180b84c04e426fd3452fb907134f119012f0e9b093608d13ac0f7ea82ea76b"
+target_scope_sha256 = "487253be0e221d5c46eb84917b9a3d84ced10f7fbb2a5691af8eccd6ed0a8021"
+semantic_inputs = ["src/shared/math/vector2_near.hpp"]
+[units.publics]
+"VECTOR2_NEAR" = 0
+"vector2_near_end" = 55
+[units.negative]
+find = "sar eax, VECTOR2_TRIG_FRAC_BITS"
+replace = "sar eax, (VECTOR2_TRIG_FRAC_BITS - 1)"
