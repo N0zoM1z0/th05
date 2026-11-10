@@ -92,3 +92,15 @@ current maintained scalar candidate, all other Shinki accepted functions and
 the existing vendor and hardware interfaces remain unchanged. A future owner
 must match the full 220-byte function and ordered relocations without compiler
 padding or instruction surgery.
+
+## 2026-11-10 additional ball-update codegen trials
+
+The complete native 220-byte Shinki ball updater remains a hard C++ lowering
+gap. Sixteen real noopt/register/speed/jump-profile variations on the
+221-byte cloud-branch candidate emitted 216, 220, 221, 222 or 224 bytes.
+The one 220-byte form changed the real forward traversal into a countdown,
+which is not a valid general semantics-preserving replacement; its compiled
+raw bytes also fail. The other variants never reproduced the native
+long conditional branch at relative `+23`. No source, context, accepted Boss
+unit or target was modified. One-producer private evidence is retained under
+`.analysis/gpt-web-boss-shinki-flags-*-a/`.

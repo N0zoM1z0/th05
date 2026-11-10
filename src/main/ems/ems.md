@@ -53,3 +53,55 @@ at0 and270 at414, separated by the original one-byte zero alignment; no record
 or instruction was edited. The single diagnostic is retained at
 `.analysis/native-producers/main-ems-via-asm-a/`, with no second producer,
 negative or acceptance. This route need not be repeated unchanged.
+
+## 2026-11-10 original lifecycle context and switch-table alignment review
+
+The remaining complete `ems_preload_boss_faceset(const char far*)` at
+`B9CC..BA66` is still raw-exact C++ with original 4-site relocation order
+`[71,24,133,114]` unresolved in the native compiler contribution. A series of
+first-producer diagnostics used only **actual adjacent original functions**:
+
+- A same-TU DEMO94+114 followed by the original EMS684 bytes retains EMS raw
+  equality but emits boss relocation order `[133,114,71,24]`.
+- A single real MAIN01 CODE contribution with complete stage-session-free47,
+  pause287, demo208 and EMS684 (**1226 bytes**) emits the original complete
+  compiler switch-table alignment zero at `B9C3`, the table at `B9C4..B9CB`,
+  and the boss function at **exactly B9CC**. All EMS684 bytes match, but the
+  boss's literal relocation sequence is `[24,133,114,71]`. Original CODE OMF
+  LEDATAs are represented by actual compiler chunks of 1022 and 204 bytes.
+- Adding the real 174-byte `stage_runtime_init` before the full 1226-byte
+  stage-release/pause/DEMO/EMS prefix makes a genuine **1400-byte** unified
+  C++ source contribution starting at original even `B55A`. The compiler
+  preserves the original Boss start **B9CC**, its full **154/154** raw bytes,
+  the normal switch-table zero and DS209D, but the four ordered relocations
+  become `[133,114,71,24]` (`gpt-web-ems-stage-session-demo-b`). Real empty
+  compiler SEGDEFs and native external labels were bound at their original
+  positions without introducing source-code holes or patching linked bytes.
+- Omitting only the complete 47-byte preceding stage-release function yields
+  a genuine pause287 + demo208 + EMS source contribution of **1178** bytes.
+  Here both complete boss raw bytes and its **literal** `[71,24,133,114]`
+  relocations match, but the boss begins at **B9CB**, not original B9CC:
+  compiling from physical odd B637 shifts the code-segment-relative parity and
+  omits the switch table's required compiler-generated zero. TCC emits chunks
+  of 1024 and 154 bytes in this context. Its preceding table is therefore
+  also one byte early; it cannot be an accepted complete-function source.
+
+Eight additional real function-boundary CODESEG reselect trials left
+the full even-start context raw-exact but ordered-inexact
+(`gpt-web-ems-reselect-*-a`). Real same-segment CODESEG pragmas at the actual function boundary, `-y` line
+information, `-a1/-a2/-a16`, ordinary optimization and register options, and
+multiple source-equivalent pause/EMS rewrites were each compiled in bounded
+first-producer trials. None recovers **both** original table alignment and
+original OMF fixup record grouping. Original C++ declarations, pointers,
+resource copies and call ABI are unchanged. We did not insert the missing byte,
+shift scope coordinates, edit emitted OMF, normalize relocation lists or grant
+154-byte credit. Future work needs a *genuine* compiler buffer-boundary context
+that preserves the original full switch table and second/third FIXUPP runs.
+
+Key private real producer roots: `.analysis/gpt-web-ems-unified-boss-a/`,
+`.analysis/gpt-web-ems-pause-demo-boss-a/`,
+`.analysis/gpt-web-ems-stage-session-demo-b/`,
+`.analysis/gpt-web-ems-boundary-*-a/`, `.analysis/gpt-web-ems-align-*-a/`
+and `.analysis/gpt-web-ems-natural-prefix-*-a/`. Original maintained EMS and
+accepted neighboring DEMO/session sources were not changed, so no accepted
+unit required cold replay.

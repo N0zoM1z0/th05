@@ -121,6 +121,20 @@ see `src/maine/staff/bitmap.md`. Unmodified accepted C++/ASM owners were never
 replayed. All these diagnostics are available privately under
 `.analysis/gpt-web-*/`; no full-set cold replay was performed.
 
+### Fresh EMS Boss preload blocker (2026-11-10)
+
+The complete 154-byte EMS boss-face preloader is *raw exact* from natural C++.
+A genuine 1226-byte stage-release/pause/DEMO/EMS producer preserves native
+B9CC placement and the original compiler switch-table zero but emits wrong
+relocation order. Removing only the real 47-byte stage-release predecessor
+restores all four original ordered relocations, yet loses the switch-table
+alignment zero and moves the function to B9CB. Adding the complete genuine 174-byte stage-runtime predecessor also preserves
+B9CC and all 154 raw bytes, but emits `[133,114,71,24]`, not native order.
+Eight CODESEG reselect variants, `-a`/`-y` and other natural-source trials
+likewise do not satisfy both gates. See
+[EMS compiler context](../src/main/ems/ems.md). Do not accept a shifted function
+or pad its predecessor to reach the target.
+
 ## Settled and pending work
 
 MAIN current-score load/save are independently accepted, 55 bytes each. Load's

@@ -145,3 +145,20 @@ reversed branch order) all still generate 408 bytes. Their first cold diagnostic
 are retained in `.analysis/gpt-web-defeat-{v1,v2,v3,v4}-a/` (not acceptance).
 No inert compiler barriers or fabricated function bytes were introduced. The
 retained natural `generic.cpp` and six accepted helpers are unchanged.
+
+## 2026-11-10 full-size defeat-call experiments
+
+Thirteen genuine C++ stage-bonus/dialog branch layouts and three documented
+compiler-option profiles were compiled as bounded first-producer diagnostics
+without affecting the six accepted neighboring functions. Ordinary baseline
+remains 408 against native 414. A reordered last-stage dispatch emits **414
+bytes** but emits two dialog far-call relocation sites rather than the original one, so
+fails original semantics and ordered-fixup comparison. A decoupled dialog
+condition emits **415 bytes with the same six relocation sites**, shifted one
+byte after the stage branches. `-O-` alternatives generally emit 417–429 bytes;
+`-Z-` and `-G` do not fix the original merged all-clear tail. The original
+requires *two* identical separate all-clear calls without duplicating
+`dialog_animate` or manufacturing an inert branch. Source and accepted ledgers
+are untouched. Private real trial roots:
+`.analysis/gpt-web-boss-defeat-calls-*-a/` and
+`.analysis/gpt-web-defeat-option-*-a/`.
