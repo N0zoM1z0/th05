@@ -1519,3 +1519,29 @@ semantic_inputs = ["src/main/ems/ems.hpp"]
 [units.negative]
 find = "mov si, CDG_SLOT_COUNT - 1"
 replace = "mov si, CDG_SLOT_COUNT - 2"
+
+[[units]]
+id = "main-tile-invalidate-all"
+artifact = "main"
+source = "src/main/tile/invalidate_all.asm"
+types = "src/main/tile/invalidate_all_types.inc"
+symbols = "probes/units/tile_invalidate_all_symbols.inc"
+bindings = "probes/units/tile_invalidate_all_asm_bindings.asm"
+notes = "src/main/tile/invalidate_all.md"
+target_start = 0xbd38
+size = 22
+segment = "TILE_INVALIDATE_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "3bf230dca1e928f5c5f55580100fd75c45261354da56f827980ce8ac38f49fd2"
+target_scope_sha256 = "d5188a6cda59e625dc0df311c277d91d98cd5621f2644764da5f0d769b81248d"
+semantic_inputs = ["src/main/tile/invalidate_all.cpp"]
+[units.publics]
+"tiles_invalidate_all()" = 0
+"tile_invalidate_all_end" = 22
+[units.negative]
+find = "DIRTY_FLAG_VALUE equ 1"
+replace = "DIRTY_FLAG_VALUE equ 2"

@@ -85,3 +85,18 @@ cohort the updater still differs at twirl control-flow branches, so it remains
 positive and negative receipts for the two newly accepted large attacks are
 linked in [the attack context review](laser_swords.md); only their affected
 standalone accepted neighbors were refreshed.
+
+## Second twirl control-flow pass, 2026-11-10
+
+The correct-length, original-order coherent compiler context remained fixed.
+Eight new source-equivalent twirl cases were compiled with the real sword
+renderer, allocator and seven later attack functions, without artificial
+prefixes. Fall-through without `else`, direct early `continue`, shared loop-tail
+gotos and reversed parity dispatch generated full MAIN03 contributions of
+2141/2144/2147/2149 versus the original 2139 bytes. None had complete raw
+agreement. Actual one-producer and source snapshots are retained under
+`.analysis/gpt-web-sword-twirl2-*-a/`. The maintained 283-byte updater, original
+relocation stream and the 354/428-byte accepted Boss attacks remain unchanged.
+The remaining difference is two twirl branches at updater relative `+5E` and
+`+72`, which must naturally target the loop tail rather than local skip/jump
+pairs. No partial credit or manual instruction repair is claimed.

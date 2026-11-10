@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The original MAIN `tiles_invalidate_all` is now fully recovered as a 22-byte
+register-level ASM kernel (`BD38..BD4E`). Two independent TASM/TLINK producers
+and its own dirty-value negative pass: true ES:DI/32-bit REP STOSD of the 1600-byte
+flag bank. This adds reviewed ASM ownership, **not C++ CODE credit**. The failed
+16-byte natural C++ intrinsic is unchanged. See
+[tile invalidation](../src/main/tile/invalidate_all.md).
+
 Yumeko's two large Boss attacks now pass independent exact MAIN source replays:
 aimed swords354 and laser/swords428 (782 new authored C++ bytes). Their genuine
 ten-function C++ context restores the original unsorted OMF relocation order,
