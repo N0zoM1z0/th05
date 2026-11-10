@@ -1713,3 +1713,29 @@ replace = "SPARK_RENDER_COLOR equ 13"
 offset = 59
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-scroll-coordinate"
+artifact = "main"
+source = "src/main/scroll/coordinates.asm"
+types = "src/main/scroll/coordinates_types.inc"
+symbols = "probes/units/scroll_coordinate_symbols.inc"
+bindings = "probes/units/scroll_coordinate_bindings.asm"
+notes = "src/main/scroll/coordinates.md"
+target_start = 0xdf28
+size = 40
+segment = "SCROLL_COORDINATE_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "98d379126a6dc8af95c93a35bf08996163f4a989d04d5e065dcdc691a007ad1c"
+target_scope_sha256 = "11b3db744df4f16ea1d8fdc5616ca8bed726b56b752444e2e8b62df19c96b8ea"
+semantic_inputs = ["src/main/scroll/coordinates.hpp"]
+[units.publics]
+"SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1" = 0
+"scroll_coordinate_end" = 40
+[units.negative]
+find = "SCROLL_RING_HEIGHT equ 400"
+replace = "SCROLL_RING_HEIGHT equ 401"

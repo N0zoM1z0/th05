@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The complete 40-byte MAIN near-Pascal scroll-to-VRAM coordinate helper is
+now exact as source-backed ASM (`DF28..DF50`): two independent TASM/TLINK
+builds, original empty fixup stream and a rejected 400→401 ring-height
+mutation. Its former natural C++ attempt still fails. See
+[scroll coordinates](../src/main/scroll/coordinates.md).
+
 Latest focused MAIN source recoveries complete the Spark render/update and
 Pointnum update/invalidation pairs: `sparks_update` 76 ASM instruction bytes,
 `sparks_render` 59 instructions plus one checked EVEN, `pointnums_update`

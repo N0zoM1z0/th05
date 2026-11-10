@@ -1,4 +1,4 @@
-# Scroll coordinate candidate
+# Scroll coordinate: exact original ASM, inexact natural C++
 
 The complete native MAIN helper DF28..DF50 contains 40 instruction bytes,
 without tables, padding or MZ fixups. It is near Pascal with one signed WORD
@@ -36,3 +36,25 @@ negative, behavior model, DATA/BSS ownership or authored-byte credit is added.
 
 Review SHA-256:
 `b4b2c57970ced11c5348e12129e6616219c2999dff939ac491e419e1b1b4992a`.
+
+## Exact original-register scroll converter — 2026-11-10
+
+`coordinates.asm` now reconstructs the complete 40-byte MAIN near-Pascal
+`SCROLL_SUBPIXEL_Y_TO_VRAM_SEG1` body at `[DF28, DF50)`. The genuine
+ReC98 `th04/main/scroll_y_1.asm` provides a complete original-language
+reference for the register and ring semantics. The TH05 disassembly and
+independent parameter/storage ABI review confirm the same one-word stack
+argument, `BX=SP` and SS:BX+2 retrieval, `SAR AX,4`, optional scrolling
+origin and exactly one correction against 400 VRAM lines. No external
+DATA, range normalization, padding or 32-bit signed widening is introduced.
+
+The standalone C++ owner above remains 47/40 and unaccepted; it is not
+relabelled as compiler-exact. This function is instead reviewed as a real
+hand-assembly algorithm. Two independent TASM32/TLINK producers pass **40/40
+raw bytes**, original empty ordered relocation list, complete public/MAP/OMF
+boundaries and the actual main_01/CS `AE1`, DGROUP/DS `209D`. Its compiled
+ring-height control changes 400→401, retains the function extent and is
+rejected. The accepted receipt is
+`.analysis/gpt-web-main-scroll-coordinate-asm-a/receipt.json`.
+This adds **40 reviewed ASM instruction bytes**, not C++ credit, and leaves
+the unrelated scroll driver unchanged.
