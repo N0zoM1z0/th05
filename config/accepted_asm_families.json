@@ -12188,6 +12188,226 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "989a7b060ed40ef7856e2401d57c255510059dbce14c56193b2d66ee42fe8a25"
+    },
+    "main-sparks-update": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-sparks-update",
+        "artifact": "main",
+        "source": "src/main/effects/spark/update.asm",
+        "types": "src/main/effects/spark/update_types.inc",
+        "symbols": "probes/units/spark_update_symbols.inc",
+        "bindings": "probes/units/spark_update_asm_bindings.asm",
+        "notes": "src/main/effects/spark/update.md",
+        "target_start": 57478,
+        "size": 76,
+        "segment": "SPARK_UPDATE_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "a35d6283e93111cd7100bff513db2f800863d3ed4e3f7c095f1ea3a5952570f2",
+        "target_scope_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+        "semantic_inputs": [
+          "src/main/effects/spark/lifecycle.hpp"
+        ],
+        "publics": {
+          "_sparks_update": 0,
+          "sparks_update_end": 76
+        },
+        "negative": {
+          "find": "cmp byte ptr [si + SPARK_AGE_OFFSET], SPARK_MAX_AGE",
+          "replace": "cmp byte ptr [si + SPARK_AGE_OFFSET], (SPARK_MAX_AGE + 1)"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/spark_update_asm_bindings.asm",
+          "sha256": "f4eff29391e9e040b71ba02a97964192eba01ad8c74da9ee874f529407784e9e"
+        },
+        {
+          "path": "probes/units/spark_update_symbols.inc",
+          "sha256": "7294e7c91b6841bd8dbe5a901b172dd30fe1ae6e38a65e55a8e3e80874d5c53e"
+        },
+        {
+          "path": "src/main/effects/spark/lifecycle.hpp",
+          "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+        },
+        {
+          "path": "src/main/effects/spark/update.asm",
+          "sha256": "a840367cb318cbe27140eaa7710fc458a52ee1cfd7b3a3db4803de6e356ff726"
+        },
+        {
+          "path": "src/main/effects/spark/update_types.inc",
+          "sha256": "05cc112a4e010a32e6756f2afe1a44bd5ae492b53b2ca9e40b1064dcabc367fd"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 76,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 57478,
+            "candidate_start": 57478,
+            "size": 76,
+            "target_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+            "candidate_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SPARK_UPDATE_TEXT",
+            "size": 76,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 76,
+                "sha256": "fd30846c841b43cf6787fe72c894e6c41c9974cc35a8149496c3d539dded7b4b"
+              }
+            ]
+          },
+          "object_sha256": "132d3c6b8d04320d19297fceb52d2062d7f7a763a02e0115602a5937c955e01c",
+          "object_normalized_sha256": "236a16e8da85d049a2eb45407363582de16bb9028d0e4abf2d3fa2b88ef2e13b",
+          "bindings_sha256": "d306415599c295d6adc2102f20691be346730b1f18fcb1487b990fbc0efdc643",
+          "bindings_normalized_sha256": "bf64f877424d4522fa9553caa0f86537494050537a049d368c4314666e120c83",
+          "map_sha256": "bc8094a580fbcd9c012d675380f71059d843333ba76abe9fb25990a3b9bff348",
+          "mz_sha256": "2c26622ccc30a07b89409ecfc297cc88c2d46e9ac325e0735991189749b805cf",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 57478,
+            "candidate_start": 57478,
+            "size": 76,
+            "target_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+            "candidate_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SPARK_UPDATE_TEXT",
+            "size": 76,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 76,
+                "sha256": "fd30846c841b43cf6787fe72c894e6c41c9974cc35a8149496c3d539dded7b4b"
+              }
+            ]
+          },
+          "object_sha256": "cff444c2483786e46ffdf462c0e6b1483ed78af004e3d7cd8d283a73354f2397",
+          "object_normalized_sha256": "236a16e8da85d049a2eb45407363582de16bb9028d0e4abf2d3fa2b88ef2e13b",
+          "bindings_sha256": "a2a0eeac7a1f547149162f9eed14b0b238903fcb80a657f159d132297dfb196c",
+          "bindings_normalized_sha256": "bf64f877424d4522fa9553caa0f86537494050537a049d368c4314666e120c83",
+          "map_sha256": "bc8094a580fbcd9c012d675380f71059d843333ba76abe9fb25990a3b9bff348",
+          "mz_sha256": "2c26622ccc30a07b89409ecfc297cc88c2d46e9ac325e0735991189749b805cf",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 57478,
+          "candidate_start": 57478,
+          "size": 76,
+          "target_sha256": "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908",
+          "candidate_sha256": "7da5398269ba2153928b1d121ad48dc26e05c66e42ffff6e5d939b0bcdebb0c5",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SPARK_UPDATE_TEXT",
+          "size": 76,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 76,
+              "sha256": "c2ea091baf59441e9dac7e84ef210ecc36f14d8ef0586119ca9f360db3da3a50"
+            }
+          ]
+        },
+        "object_sha256": "dc94df4880b403a7524dadfbc15c65927d8e0142b9c5dc2b86766c4bf302258a",
+        "object_normalized_sha256": "0714f89aa1b0e3c92b5f1319d8391a05053e4cb6e37a277ca78a70c3f3b16e72",
+        "bindings_sha256": "a2a0eeac7a1f547149162f9eed14b0b238903fcb80a657f159d132297dfb196c",
+        "bindings_normalized_sha256": "bf64f877424d4522fa9553caa0f86537494050537a049d368c4314666e120c83",
+        "map_sha256": "bc8094a580fbcd9c012d675380f71059d843333ba76abe9fb25990a3b9bff348",
+        "mz_sha256": "83b871ae541169537f44a6eedc57e69376c93a1a1151d3014fea0dedb6320f8d",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "263c98926ad21b36ce00a3067779f6ee665759f70a5aa626332eabf77813cb22"
     }
   }
 }

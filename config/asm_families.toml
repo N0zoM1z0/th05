@@ -1601,3 +1601,29 @@ semantic_inputs = ["src/main/player/invalidate.cpp", "src/main/scroll/driver.hpp
 [units.negative]
 find = "and dx, (DIRTY_ROW_HEIGHT_PIXELS - 1)"
 replace = "and dx, (DIRTY_ROW_HEIGHT_PIXELS - 2)"
+
+[[units]]
+id = "main-sparks-update"
+artifact = "main"
+source = "src/main/effects/spark/update.asm"
+types = "src/main/effects/spark/update_types.inc"
+symbols = "probes/units/spark_update_symbols.inc"
+bindings = "probes/units/spark_update_asm_bindings.asm"
+notes = "src/main/effects/spark/update.md"
+target_start = 0xe086
+size = 76
+segment = "SPARK_UPDATE_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "a35d6283e93111cd7100bff513db2f800863d3ed4e3f7c095f1ea3a5952570f2"
+target_scope_sha256 = "67f6ca2bbd3b312b2efa3ec1e56925b8094d3282c9386e62848e1f0af5799908"
+semantic_inputs = ["src/main/effects/spark/lifecycle.hpp"]
+[units.publics]
+"_sparks_update" = 0
+"sparks_update_end" = 76
+[units.negative]
+find = "cmp byte ptr [si + SPARK_AGE_OFFSET], SPARK_MAX_AGE"
+replace = "cmp byte ptr [si + SPARK_AGE_OFFSET], (SPARK_MAX_AGE + 1)"

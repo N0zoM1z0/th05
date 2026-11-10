@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN Spark lifecycle has an additional exact complete function:
+`_sparks_update` at `[E086,E0D2)`, **76/76 reviewed ASM instruction bytes** in
+two independent focused producers with its own rejected age-limit mutation.
+The previous natural C++ output remains 72 bytes and uncredited. See
+[spark update](../src/main/effects/spark/update.md).
+
 The complete 204-byte `TILES_INVALIDATE_AROUND` MAIN gameplay helper has
 now passed independent native ASM replay and its own compiled semantic negative.
 Its complete scroll-wrap, hitbox-clipping and `REP STOSB` dirty-map algorithm

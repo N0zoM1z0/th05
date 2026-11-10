@@ -1,0 +1,16 @@
+; PC-98 TH05 active spark pool: canonical 16-byte record, 64 active slots.
+SPARK_ACTIVE_COUNT       equ 64
+SPARK_RECORD_SIZE        equ 16
+SPARK_FLAG_OFFSET        equ 0
+SPARK_AGE_OFFSET         equ 1
+SPARK_CENTER_OFFSET      equ 2
+SPARK_VELOCITY_Y_OFFSET  equ 12
+SPARK_FLAG_FREE          equ 0
+SPARK_FLAG_ALIVE         equ 1
+SPARK_FLAG_REMOVE        equ 2
+SPARK_WIDTH_PIXELS       equ 8
+SPARK_HEIGHT_PIXELS      equ 8
+PLAYFIELD_WIDTH_PIXELS   equ 384
+PLAYFIELD_HEIGHT_PIXELS  equ 368
+SPARK_SUBPIXELS_PER_DOT  equ 16
+SPARK_MAX_AGE            equ 40
