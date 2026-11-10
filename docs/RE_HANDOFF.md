@@ -6,7 +6,9 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-OP ZUNsoft CODE **and** its independent filename DATA now pass focused
+MAIN PMD resident (`main-pmd-resident`, 46 exact C++ bytes) now joins the
+accepted source set through its own two-producer/negative replay.
+OP ZUNsoft CODE **and** its independent filename DATA also pass focused
 individual two-producer exact replays and are committed. A separate attempt on
 MAIN's larger boss/attack controllers identified reproducible code-generation
 gaps without claiming byte credit: boss defeat 414/408, B4 ball 273/278 (or
@@ -29,7 +31,15 @@ Use the [generated progress](PROGRESS.md), accepted-unit ledgers and
 The global authored denominator remains unreviewed. The supplied Japanese copy
 is candidate-local-attested.
 
-## Latest accepted packet: OP ZUNsoft CODE
+## Latest exact MAIN leaf: PMD detector
+
+`src/shared/sound/pmd_resident.cpp` now preserves the real AX/ES interrupt
+vector and return contract. The first normal local result compiled to 51 bytes;
+restoring `_AX` yields the complete 46-byte target, no fixups, in both fresh
+producer rounds with a rejected interrupt-selector compiled negative. Receipt:
+`.analysis/unit-replays/gpt-web-main-pmd-resident-20261110/receipt.json`.
+
+## Previous accepted packet: OP ZUNsoft CODE
 
 Four natural C++ functions, including the 654-byte logo controller, now own the
 complete decoded OP `B616..BA94` extent: **1150/1150 raw bytes** and all
@@ -49,7 +59,8 @@ filename-mutation negative. The early standalone link needed an original
 foreign DATA suffix through DS:2817 to satisfy DOS MZ stack bounds; the
 compiler-owned `_DATA` remains complete at DS:0EEA..0F20. The separate receipt
 is `.analysis/unit-replays/gpt-web-op-zunsoft-filenames-b-20261110/receipt.json`.
-Both ZUNsoft scopes are accepted. The next task is a substantial MAIN boss gap.
+Both ZUNsoft scopes are accepted. Continue the substantial MAIN Boss gaps,
+especially the Shinki ball updater and generic defeat controller.
 
 ## Settled and pending work
 

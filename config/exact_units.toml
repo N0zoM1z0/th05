@@ -4975,3 +4975,21 @@ unit = "main-score-current-load"
 source = "src/main/score/current_load.inl"
 find = "_CX = sizeof(hi);"
 replace = "_CX = sizeof(hi) - 1;"
+
+[[units]]
+id = "main-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+module = "th05/snd_pr.cpp"
+segment = "SHARED"
+bindings_source = "probes/units/main_pmd_resident_bindings.asm"
+target_start = 0x14b76
+size = 46
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+find = "snd_interrupt_if_midi = 0x60;"
+replace = "snd_interrupt_if_midi = 0x61;"

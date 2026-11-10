@@ -47,21 +47,32 @@ Native boundaries and complete instruction/branch review are retained in
 also retain their earlier independent [mode-selection acceptance](modes.md).
 This claims no initialized DATA, BSS, packed-file or whole-executable recovery.
 
-## PMD remains unaccepted
+## PMD detector: exact MAIN C++ reconstruction
 
-The adjacent MAIN PMD detector is `[14B76,14BA4)`,46 bytes. The new ordinary
-`pmd_resident.cpp` keeps the same state reset, vector60h signature check and
-integer result. Its first successful compiler producer emits51 bytes: the
-result lives in DX, making the three byte stores one byte longer each, with
-an additional two-byte transfer into the return register. An ordinary
-`register` declaration leaves51 unchanged and was reverted. Neither trial
-contains a physical-register arithmetic algorithm or grants exact credit.
+The adjacent MAIN PMD detector `[14B76,14BA4)` now has a complete, independently
+accepted 46-byte C++ owner, `main-pmd-resident`. The native 16-bit function
+initializes AX to zero, selects interrupt `60h`, resets three sound-mode bytes
+from AL, sets ES from AX, examines the original PMD driver signature in the
+interrupt vector and increments AX on success before returning via far C RETF.
+All 46 instruction bytes and the empty original relocation stream match in
+two fresh deterministic producers. No DATA/BSS, padding, target bytes or
+handwritten instruction body is attributed to this owner.
 
-Current diagnostic: `.analysis/native-producers/main-pmd-resident-b/`. Its old
-nominal tail also displaced DATA; no whole-linked behavioral claim is made.
-The maintained outside-only binder now aligns its foreign DATA gap to a real
-paragraph, accommodating either46 or51 bytes without padding a function.
-A subsequent ordinary C-frontend diagnostic still emits51 with the same DX
-result allocation. It confirms the corrected binder's real DS addresses;
-neither language form is exact. The experimental C source was removed. No PMD unit is
-in a live exact manifest, and no OP/MAINE PMD producer was run.
+The initial ordinary C++ local `found` placed the result in DX. That added
+three one-byte-longer byte stores and a two-byte DX-to-AX return transfer,
+producing 51 versus 46 bytes. Multiple typed-state/return variants were
+compiled, including direct Boolean return, register and narrow scalar locals;
+none matched. The maintained original TH04 `th04/snd/pmd_res.c` demonstrates
+the real DOS AX convention. Restoring `_AX` as the original hardware/result
+state while retaining the typed `KAJA_ISR_MAGIC()` vector access naturally
+reproduces all 46 bytes without copying its inline `LES` assembly. This
+register use preserves a genuine externally observable CPU/ES contract, not
+an arbitrary code-size hint.
+
+Focused receipt:
+`.analysis/unit-replays/gpt-web-main-pmd-resident-20261110/receipt.json`.
+Both independent linked MAP/MZ/OMF producers are strictly raw/fixup exact; the
+compiled semantic negative changes selected interrupt `60h` to `61h` and is
+rejected. The original source, actual compiler arguments and all dependencies
+are recorded in that receipt. The unchanged accepted MMD owners need no
+replay. No complete executable or OP/MAINE PMD acceptance is inferred.

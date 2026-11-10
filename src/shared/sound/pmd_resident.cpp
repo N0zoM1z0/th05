@@ -5,14 +5,16 @@
 
 extern "C" int far snd_pmd_resident(void)
 {
-    int found = 0;
+    // The original PMD test uses AX both as the zero state shared with ES
+    // and as the returned result. This is a real DOS register contract.
+    _AX = 0;
     snd_interrupt_if_midi = 0x60;
-    snd_midi_possible = found;
-    snd_bgm_mode = found;
-    snd_se_mode = found;
-    _ES = found;
+    snd_midi_possible = _AX;
+    snd_bgm_mode = _AX;
+    snd_se_mode = _AX;
+    _ES = _AX;
     if(KAJA_ISR_MAGIC(0x60, 'P', 'M', 'D')) {
-        found++;
+        ++_AX;
     }
-    return found;
+    return _AX;
 }
