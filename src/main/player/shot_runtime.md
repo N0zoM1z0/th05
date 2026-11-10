@@ -134,9 +134,6 @@ emits221, with a stack temporary; an ordinary `register const int` quotient
 also emits221 with different register allocation. All fail against210 and
 stop after one producer, without supplementary negatives or behavior models.
 The original218-byte immutable-quotient source is restored byte for byte.
-Frozen inputs are `main-shot-laser-inline-a`,
-`main-shot-laser-inline-assignment-a` and
-`main-shot-laser-register-quotient-a` under `.analysis/native-producers/`.
 No accepted header, source or unit changed.
 
 `main-shots-update-a` generated 431 complete bytes instead of 408. Its typed

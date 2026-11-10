@@ -21,8 +21,7 @@ is a future candidate context, not proof of the historical original TU.
 
 To avoid unnecessary builds for the known standalone order failure, only one
 actual producer was run using the existing `cold_round` staging and pinned
-toolchain under `.analysis/native-producers/maine-staff-render-a`. It is a native
-shape diagnostic, never an acceptance receipt; no second or negative was run.
+toolchain. It was a native shape diagnostic, with no second producer or negative.
 It produced858 bytes/334 instructions. The sole missing instruction is an
 original redundant near-pointer reload immediately after the trail sentinel
 comparison. Both type layouts, pointers, signed arithmetic and genuine APIs

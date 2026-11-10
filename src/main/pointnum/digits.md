@@ -34,7 +34,6 @@ power values: the oversized contribution shifts foreign DATA, so it proves no
 original standalone layout. Semantic equivalence and exact acceptance remain
 separate.
 
-First build: `.analysis/unit-replays/main-pointnum-digits-natural-a/`.
 Proposal: `.analysis/pointnum-digits-natural-proposal.toml`.
 Actual compiled model: `.analysis/pointnum-digits-cpp-model.json`, SHA-256
 `ac90d2261b8b77248d3db1005165e7e4b41a9c3dbe77d5243f4487f753f9de0a`.

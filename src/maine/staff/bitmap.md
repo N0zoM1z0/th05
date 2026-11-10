@@ -127,9 +127,8 @@ SI/DI each row, and uses a longer frame and ES assignment. This is static
 evidence only; no device execution or additional model was run.
 
 An ordinary `register` declaration for both pointers produces the same 58 raw
-bytes. The first source was restored byte-for-byte. These two single producers
-remain at `.analysis/native-producers/maine-bitmap-snap-segmented-a/` and
-`maine-bitmap-snap-segmented-register-a/`. Neither passed the complete 43-byte
+bytes. The first source was restored byte-for-byte. Its current diagnostic is
+`.analysis/native-producers/maine-bitmap-snap-segmented-a/`. Neither trial passed the complete 43-byte
 gate; no second positive, negative or acceptance receipt was produced.
 The nominal target-sized foreign tail leaves diagnostic DS1012 rather than
 native DS1011, and no original whole-layout equality is claimed.

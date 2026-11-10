@@ -26,8 +26,8 @@ register allocation. Larger CODE also moves the nominal harness DATA frame,
 so no original whole-layout or device-execution claim is made. No second
 positive, negative, new model or live manifest entry was produced.
 
-Frozen producers are `.analysis/native-producers/main-vector2-near-natural-a/`
-and `main-vector2-near-word-domain-a/`. Complete native/actual/source evidence is
+Current diagnostic: `.analysis/native-producers/main-vector2-near-word-domain-a/`.
+Complete native/actual/source evidence is
 `.analysis/vector2-near-native-source-review.json`. The private proposal remains
 at `.analysis/vector2-near-proposal.json`; all accepted vector owners, headers,
 C/C++ counts and ownership remain unchanged.

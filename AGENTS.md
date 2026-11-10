@@ -41,6 +41,12 @@ actual exactness, target identity, natural-source and state-isolation rules.
 - Keep handoff focused on current work, evidence references, blockers and the
   next useful action. Generate progress from canonical ledgers; avoid manual
   duplicate counts, recurring full reports and unrelated documentation chores.
+- Retain necessary inputs, current source/ledgers/replay tools and concise
+  knowledge. Remove superseded builds, duplicate evidence, historical archives
+  and cleanup reports; a document reference alone is not a retention reason.
+  Keep a difficult compiler context only while it helps an unresolved problem.
+- Default CI checks the complete public checkout without originals or private
+  tools. Run specialized tooling tests only for the affected change.
 - Preserve dirty/untracked work, targets, useful evidence, game-specific Wine
   prefixes and analyzer projects. Exactness still requires a complete strict
   comparison; knowledge and successful commands alone confer no exact credit.

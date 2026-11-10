@@ -123,9 +123,8 @@ The damage assignment now appears inside its real condition, so the returned
 AX is tested immediately. These are two evidence-based changes, without
 inserting ASM, retagging an API or changing any accepted header/source.
 
-`.analysis/unit-replays/main-b4ball-update-return-b/` contains exactly one new
-compiler/assembler/linker producer. Its full contribution is278 bytes and88
-instructions, against273 bytes and88 instructions in the immutable original.
+An independent compiler/assembler/linker producer emitted 278 bytes and 88
+instructions, against 273 bytes and 88 instructions in the immutable original.
 The actual frame is now ENTER2; neither returned coordinate is stored on the
 stack. Actual immediate clips and the intervening memory flag comparison
 preserve AX/DX. The x distance is consumed in AX while DX remains untouched;
@@ -175,6 +174,5 @@ a five-byte inverted branch where the native first free-slot test uses a
 four-byte conditional branch. The native Y subtraction is eager in DX; the
 candidate copies DX into AX only after the X comparison. The shot-damage
 zero branch and an extra loop-tail jump also differ. Equal or near-equal size
-does not accept those differences. This one producer is retained at
-`.analysis/native-producers/main-b4ball-update-jumps-a/`; no second producer
-or negative follows. The prior278-byte normal-profile source is restored.
+does not accept those differences. The prior 278-byte normal-profile source is
+restored.

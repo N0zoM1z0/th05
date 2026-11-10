@@ -37,5 +37,4 @@ Native boundary/source/ABI review:
 `71db99e969e790dcf1854382df6ad18f741debdbf6920ff914ce8fabfd38e7df`.
 Receipt: `.analysis/unit-replays/main-bb-text-lifecycle-compiler-assembly-b/receipt.json`,
 SHA-256 `33bb73826ce3fcd35602da0013d3736667d1bfba8cae547b425578a28e99f5ba`.
-The earlier direct diagnostic is `.analysis/native-producers/main-bb-text-lifecycle-a/`.
 No CPU model, exhaustive input sweep or whole-game test is required or run.

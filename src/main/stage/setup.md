@@ -109,7 +109,7 @@ A small natural negative control changes the unique stage-1
 `midboss.frames_until = 2500;` to 2501. This changes a real unsigned-word
 initialization without altering the structure, function boundaries or API.
 
-The focused replay `.analysis/unit-replays/stage-setup-a` passes two isolated
+The focused replay `.analysis/unit-replays/main-stage-setup-padding-a` passes two isolated
 cold producers, normalized OMF determinism, full code raw/fixup equality and
 the compiled frame-2501 negative control. The importer rechecks saved producers
 and dependencies; unchanged accepted units were not rebuilt. A separate

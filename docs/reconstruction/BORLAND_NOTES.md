@@ -148,8 +148,7 @@ The pinned STDLIB.H declares `_crotr`, but a real optimized TC4J `-S` probe
 emits a far library call for `_crotr(value,3)`. Plain `(value >> 3) | (value << 5)`
 emits shifts and OR instead of byte ROR. The MAINE score codec consequently
 remains external until its genuine original implementation/context is recovered;
-API presence alone does not prove an exact natural C++ rotate. The retained
-probe is `.analysis/compiler-probes/byte-rotate-a`, with no source-byte credit.
+API presence alone does not prove an exact natural C++ rotate.
 
 ## Assembly-output backend is a hypothesis, not transferred acceptance
 
@@ -167,10 +166,7 @@ The resulting complete contribution is still4120 versus original4124;
 ball update remains216 versus220. Its TASM fixups are ascending and do not
 match the original order. This falsifies that backend explanation for the
 missing Shinki branches; it grants no new code, no cold acceptance and no
-reason to change accepted producers or the core replay pipeline. Evidence is
-`.analysis/compiler-probes/shinki-bmode-a/diagnostic-context2.json`, with the
-original failed integration steps retained. No additional source or flag
-variants were tried.
+reason to change accepted producers or the core replay pipeline.
 
 ## Dialog graphics helpers do not establish original ASM provenance
 
@@ -362,9 +358,7 @@ A separate natural CDG-free-all loop with the correct far external cleanup
 and samecodeseg annotation emits15 bytes, versus original14. All loop
 instructions agree, but the external far-to-near relaxation retains one NOP;
 the original local-family call is four bytes. This is not an accepted owner
-and does not justify changing the actual far API. Frozen inputs remain in
-`.analysis/native-producers/main-cdg-free-all-a/`; experimental root files
-were removed.
+and does not justify changing the actual far API.
 
 ## A real near-array view at a far API boundary
 

@@ -36,7 +36,7 @@ then const Yuki/Mai filenames at 58/68. All four individual CP932 payloads
 are correct; the category reordering differs from the original alternating
 layout. Both empty original/candidate relocation streams agree. Actual
 staged input and mutation identities were independently verified. This
-candidate remains unaccepted; its failed receipt is preserved unchanged.
+candidate remains unaccepted.
 
 Private `.analysis/mai-yuki-title-text-boundary-review.json` pins text,
 boundaries, original use-site instruction bytes and source hashes; the adjacent
@@ -44,9 +44,4 @@ unit-proposal JSON gives the independent initialized-DATA entry and control.
 Run `python3 .analysis/mai-yuki-title-text-review.py` to repeat its bounded
 native checks without executing a compiler or game.
 
-The superseded standalone C++ source/header and its unused binder were moved
-verbatim to private `.analysis/failed-semantic-banks/files/`, with original
-paths, sizes and hashes in that directory's parent manifest. All actual
-producer snapshots remain unchanged. Native replay reads the consumed
-canonical snapshots, rather than requiring removed live draft files. The
-accepted replacement is the C semantic model documented in `title_bank.md`.
+The accepted replacement is the C semantic model documented in `title_bank.md`.

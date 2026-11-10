@@ -41,10 +41,9 @@ scope gate and is preserved privately, with no imported scope or filler bytes.
 
 The `-y` line-information trial also reproduces354 raw bytes but leaves the
 standalone relocation order unchanged. The separate-segment trial likewise
-does not restore the original stream. Both are archived as failed alternatives.
+does not restore the original stream.
 
 The remaining question is the genuine updater/source-context gap.
 All782 raw-matching bytes remain unknown in authored-exact progress. Joint
 review `.analysis/yumeko-later-root-review.json`, SHA-256
 `1099a5063c7943fba749a258d3e449b1fdf1c75c916d329b5ef33cdbda94001c`.
-See [storage](../../../../docs/LOCAL_STORAGE.md) for archived trial restoration.

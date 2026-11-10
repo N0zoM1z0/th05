@@ -9,13 +9,11 @@ MZ fixups from maintained natural C++:
 | Mima circles | `[10058,1010D)` | 181 | `[152,133]` |
 | Yuuka hearts | `[1027B,102F9)` | 126 | `[94,43]` |
 
-None has padding, compiler tables or initialized DATA. Receipts are
-`.analysis/unit-replays/main-mima-circles-b/receipt.json` and
-`.analysis/unit-replays/main-yuuka-heart-d/receipt.json`, with the Marisa receipt
-at `.analysis/unit-replays/main-marisa-bomb-lasers-b/receipt.json`. Each uses two fresh
-positive producers and its own compiled mutation: circle distance 256 to 257,
-initial heart distance 16 to 17, or Marisa initial radius 24 to 25. All mutations
-are rejected.
+None has padding, compiler tables or initialized DATA. Current Mima/Marisa
+acceptance uses `.analysis/unit-replays/main-bomb-body-canonical-refresh-b/receipt.json`;
+Yuuka uses `.analysis/unit-replays/main-yuuka-heart-d/receipt.json`. Both replays
+have two deterministic producers and a rejected compiled control. The canonical
+family refresh shares its Reimu-star control across eight owners.
 
 The full canonical 480-byte bomb union and twelve-byte player motion are reused
 without ABI changes. Mima keeps eight ten-byte records, modulo-four spawning,

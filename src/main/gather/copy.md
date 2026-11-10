@@ -16,8 +16,7 @@ no placeholder provider, second producer, negative or behavior model was added.
 The proposal is outside the live manifest. The neighboring reverse copy is
 not recompiled, and neither procedure gains C++ or ASM credit from this trial.
 
-Private first producer: `.analysis/unit-replays/main-gather-copy-to-a/`.
 The complete object diagnostic is `.analysis/gather-copy-to-natural-review.json`,
-with the source/dependency snapshot and actual failed link log retained.
+which records the failed link and source dependencies.
 The current simple source and symbol-only binder remain available for further
 natural source work; they are not accepted build inputs.

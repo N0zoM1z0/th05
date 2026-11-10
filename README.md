@@ -39,7 +39,9 @@ retains every unknown interval without inferred exclusions. See the
 ownership evidence. ReC98 and sibling-project acceptance do not transfer.
 
 Daily work focuses on the selected exact replay and generated-state checks.
-`python3 scripts/ci.py` runs lightweight public consistency checks;
+`python3 scripts/ci.py` checks syntax across the complete public checkout,
+ledger/build consistency and accidentally tracked private outputs, without
+originals, private tools or pip dependencies;
 `python3 scripts/ci.py --full` explicitly runs all tooling tests. Ordinary
 function recovery does not require new CPU models, defensive-behavior tests
 or a full test run. See the [workflow](docs/RE_WORKFLOW.md).
@@ -105,7 +107,6 @@ provenance. Independent pristine-dump confirmation remains open.
 ## Reconstruction
 
 - [Current handoff](docs/RE_HANDOFF.md)
-- [Local storage and evidence retention](docs/LOCAL_STORAGE.md)
 - [Workflow](docs/RE_WORKFLOW.md)
 - [Exact oracle contract](docs/ORACLES.md)
 - [Borland reconstruction notes](docs/reconstruction/BORLAND_NOTES.md)

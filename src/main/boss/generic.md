@@ -113,15 +113,13 @@ body, initialized DATA or whole executable contributes progress.
 A later independent collision-only diagnostic gives both deltas ordinary
 `register` declarations. This still emits46 bytes with DX/BX allocation,
 against the original43-byte AX/DX function. It grants no credit; maintained
-source and binder were restored exactly, with trial inputs retained at
-`.analysis/native-producers/main-boss-player-collision-register-a/`.
+source and binder were restored exactly.
 The accepted six-function owner and maintained baseline remain unchanged.
 
 A later independent complete defeat-function trial uses a stage-ID `switch`
 for dialog/bonus selection. It emits411 rather than414: the compiler still
 merges the two all-clear call tails, while ordinary switch promotion adds
-three bytes over the408-byte baseline. Its first producer is retained at
-`.analysis/native-producers/main-boss-defeat-switch-a/`. Experimental source
+three bytes over the408-byte baseline. Experimental source
 and binder were removed; no accepted dependency, order or byte was changed.
 
 A later complete-action trial gives the Extra-stage all-clear branch both
@@ -129,7 +127,6 @@ existing homing resets and an immediate return. The normal compiler still
 merges the two all-clear call sites and emits 408 rather than native 414;
 its later fixups remain six bytes early. No barrier, extra state mutation or
 compiler-register algorithm is introduced. The failed standalone source/binder
-are removed after freezing their genuine inputs and object under
-`.analysis/native-producers/main-boss-defeat-complete-tail-a/`. The accepted
+were removed. The accepted
 generic CODE/DATA and all maintained source inputs remain unchanged. No second
 producer, negative or new credit is added.

@@ -76,7 +76,7 @@ Only the eight affected old records and the new menu record were imported;
 unrelated OP, MAIN and MAINE owners were not replayed. All source and producer
 identities are current, and CPP/header/binders are frozen accepted inputs.
 
-The original `op-hiscore-view-b` mixed receipt remains intact and failed. Its
-whole1,411 raw bytes matched, but its menu relocation order did not. The new
+The original mixed producer matched all 1,411 raw bytes, but its menu relocation
+order differed. The new
 standalone context proves that complete function independently; no fixups were
 sorted or patched, and no old positive or aggregate verdict was relabelled.

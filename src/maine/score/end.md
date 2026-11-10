@@ -72,8 +72,7 @@ an active byte-ROR assembly primitive, visible in the original at B4EA and
 B580. No codec assembly body or substitute helper is supplied here.
 
 The actual TC4 `stdlib.h` does declare `_crotr`; API availability alone does
-not prove intrinsic code generation. Root's retained diagnostic
-`.analysis/compiler-probes/byte-rotate-a/rotate.asm` shows a far library call
+not prove intrinsic code generation. The byte-rotate diagnostic showed a far library call
 for `_crotr(value, 3)`, and MOV/SAR/SHL/OR for the ordinary shift/or expression.
 Neither is an observed exact pure C++ replacement for the original byte ROR.
 The codec functions therefore stay outside this candidate's authored claim.

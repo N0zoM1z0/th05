@@ -89,8 +89,8 @@ descending run, while the original has two descending runs. The function stays
 unaccepted and outside the default replay plan. No sorting, normalization or
 artificial prefix is supplied. Any future context must contain genuine source
 bodies and retain all original bytes/order and fresh-producer/control gates.
-The a/b artifacts and source snapshots remain private under
-`.analysis/native-producers/maine-staff-controller-a` and `-b`, with the precise
+The current artifacts and source snapshots remain private under
+`.analysis/native-producers/maine-staff-controller-b`, with the precise
 flow-recovery proof under `.analysis/staff-controller-a-forensic/`.
 
 ## Saved OMF context review

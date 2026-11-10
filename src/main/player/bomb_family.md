@@ -89,6 +89,5 @@ MAINE and all unrelated MAIN source/receipt dependencies remain unchanged and
 were not rebuilt. Tool execution proofs were reused after identity checks.
 No whole-program placement, standalone linkage or packed-file match is claimed.
 
-Private native, inverse-factor and binding provenance reviews are under
-`.analysis/bomb-family-source-factor/`. All failed and passing producers remain
-preserved.
+Current acceptance and source identities are recorded in the MAIN ledger.
+The factor preserves the original algorithm bodies and binding context.

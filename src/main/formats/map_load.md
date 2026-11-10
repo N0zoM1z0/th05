@@ -27,8 +27,6 @@ No return type, pointer width or declaration is changed to obtain the bytes.
 
 The initial single-producer diagnostic emitted 70 bytes because assigning DS
 from stored `map_seg` reloaded memory instead of using the actual AX result.
-That failed diagnostic remains at
-`.analysis/native-producers/main-map-load-a/native-diagnostic.json`.
 The corrected ordinary source passes two fresh normal replay producers, valid
 OMF/MAP placement at CS AE1 and DS209D, all 68 raw bytes and ordered fixup `[41]`.
 The compiled filename-character mutation is rejected. Unchanged accepted

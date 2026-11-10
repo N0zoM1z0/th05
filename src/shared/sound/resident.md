@@ -57,13 +57,11 @@ an additional two-byte transfer into the return register. An ordinary
 `register` declaration leaves51 unchanged and was reverted. Neither trial
 contains a physical-register arithmetic algorithm or grants exact credit.
 
-Frozen diagnostics are `main-pmd-resident-b` and
-`main-pmd-resident-register-a` under `.analysis/native-producers/`. Their old
+Current diagnostic: `.analysis/native-producers/main-pmd-resident-b/`. Its old
 nominal tail also displaced DATA; no whole-linked behavioral claim is made.
 The maintained outside-only binder now aligns its foreign DATA gap to a real
 paragraph, accommodating either46 or51 bytes without padding a function.
 A subsequent ordinary C-frontend diagnostic still emits51 with the same DX
 result allocation. It confirms the corrected binder's real DS addresses;
-neither language form is exact. That first producer is retained at
-`main-pmd-resident-c-a`; its experimental C source was removed. No PMD unit is
+neither language form is exact. The experimental C source was removed. No PMD unit is
 in a live exact manifest, and no OP/MAINE PMD producer was run.

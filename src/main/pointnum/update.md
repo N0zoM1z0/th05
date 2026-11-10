@@ -24,9 +24,8 @@ false-arm Y reload, and merges the removal tails. Native uses BX/DI, SUB and
 two separate removal paths. No physical-register binding, ABI disguise,
 instruction template, output repair or padding was added to force these.
 
-The complete first producers are retained under
-`.analysis/native-producers/main-pointnums-update-fields-a/` and
-`main-pointnums-update-domains-a/`. The final111-byte independent candidate is
+Current diagnostic: `.analysis/native-producers/main-pointnums-update-domains-a/`.
+The final111-byte independent candidate is
 maintained outside the live exact manifest, alongside the old family body.
 No second producer, compiled negative, additional behavior model or credit
 is claimed. The already accepted11-byte initializer and its inputs are unchanged

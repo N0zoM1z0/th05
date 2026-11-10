@@ -83,8 +83,8 @@ natural source candidate until actual independent producers and negative pass.
 
 ## Single-producer diagnostic
 
-One actual cold producer under `.analysis/native-producers/maine-staff-image-b-a`
-produced the complete376-byte contribution. It differs at13 prefix bytes because
+One actual cold producer produced the complete 376-byte contribution. It differs
+at 13 prefix bytes because
 the source initialized the image pointer before copying the top coordinate.
 The original and independently accepted twin A capture top first. The maintained
 B source now restores that canonical initializer order; this revision has not

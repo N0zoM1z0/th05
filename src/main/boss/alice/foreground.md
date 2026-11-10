@@ -84,6 +84,5 @@ the baseline source is unchanged. The earlier helper containing conditional
 returns also remains failed because this compiler did not expand it inline.
 
 An ordinary `register unsigned char` declaration on that joined frame local
-also emits146, with the same store/reload. Its one-producer inputs remain at
-`.analysis/native-producers/main-alice-foreground-register-frame-a/`.
+also emits146, with the same store/reload.
 Experimental files were removed; the maintained baseline is unchanged.

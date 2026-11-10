@@ -22,7 +22,7 @@ Original MAIN01/SHARED/MAIN03/DGROUP frames are modeled without retagging a
 far API or supplying a helper body. The intended positive full end is B55A.
 
 Before any new compiler invocation, a diagnostic relink reused the exact
-archived 802-byte `stg_sess.obj` from `main-stage-session-init-a`. Its private
+earlier 802-byte `stg_sess.obj`. Its private
 binder copy uses the actual old contribution end B559 solely to anchor
 foreign symbols. The old object is unchanged; no output is patched. The
 result restores all three native transfer forms and the original ordered
@@ -35,9 +35,7 @@ The actual new normal profile additionally enables ordinary `-a2` after all
 canonical types and explicitly restores the CODE selector. It still emits
 802 bytes. The first complete-contribution size gate rejects it before a
 second producer or negative. The intended unchanged B55A tail cannot be
-treated as a valid full positive layout for that shorter result. Its actual
-source/argv/MAP/OMF and both binding views are retained under
-`.analysis/unit-replays/main-stage-session-common-a/`.
+treated as a valid full positive layout for that shorter result.
 The source and prepared common binder remain maintained, but the unit proposal
 is parked privately outside the live manifest. No table cropping, inserted
 zero, fixup sorting or ASM attribution follows from this failure.
@@ -62,7 +60,6 @@ there is no global, packed-container or whole-program exactness claim.
 A later first producer restores the donor-style normal `-a` after canonical
 types, motivated by the successful item-family recovery. This standalone
 initializer still emits 802 bytes, with the native 23-site order but no zero.
-The source is restored to its prior baseline. Evidence:
-`.analysis/native-producers/main-stage-session-word-alignment-b/`.
+The source is restored to its prior baseline.
 Normal alignment spelling alone does not establish the missing real context;
 no second producer, negative or authored credit is added.

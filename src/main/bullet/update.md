@@ -108,7 +108,7 @@ A natural negative control changes the unique
 If the typed sparks call needs further compiler investigation, the first four
 complete helpers form an independently reviewable 657-byte prefix (637
 instructions +20 table bytes); no partial function or switch table is omitted.
-Two isolated producers in `.analysis/unit-replays/bullet-update-d` reproduce
+Two isolated producers in `.analysis/unit-replays/main-bullet-update-padding-a` reproduce
 all 1619 bytes and the four original ordered MZ fixups. Their normalized OMF
 outputs are deterministic, actual dependency identities are frozen, and the
 compiled X-reflection mutation is rejected. Acceptance rechecks the saved

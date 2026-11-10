@@ -40,14 +40,10 @@ wrapper and including the original alphabet/frame/creation/animation/commit
 bodies before the menu, also fails. It emits 2323 against 2324, omitting the
 creator's original zero at family offset 410. Later calls/table addresses drift,
 and the original full relocation partition is not restored. No padding, fake
-prefix, profile sweep or output edit follows. That failed context is preserved
-privately, avoiding duplicate maintained bodies or needless source-sensitive
-replays of the accepted neighbors. Their existing records remain unchanged.
+prefix, profile sweep or output edit follows. The accepted neighbors remain unchanged.
 
 Evidence: `.analysis/native-producers/maine-registration-menu-d/` (raw-exact,
-order-false), `maine-registration-full-a/` (original compiled object/inputs),
-`maine-registration-full-link-c/` (corrected binder, unchanged object), and
-`.analysis/registration-full-context-review.json`. Early a/link-b/c menu
+order-false) and `.analysis/registration-full-context-review.json`. Early a/link-b/c menu
 diagnostics remain separate failures. Future work needs a genuine broader
 producer/table context; replaying these same failed shapes adds no evidence.
 That menu experiment receives no credit. The independently [accepted places

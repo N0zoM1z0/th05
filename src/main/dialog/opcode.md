@@ -13,14 +13,9 @@ Direct compilation produces 455 bytes. The missing compiler-owned zero also
 moves the table operand and forward external labels one byte early. Ordered
 fixups agree, but the full byte/size gate fails; no exact credit is imported.
 
-A genuine STD-callback prefix in a separate segment also produced 455. Its
-experimental `opcode_context.cpp` and binder were retired during cleanup;
-complete frozen inputs remain under
-`.analysis/unit-replays/main-dialog-opcode-context-a/`. The independent failed
-baseline remains in `main-dialog-opcode-standalone-a/` under the same parent.
+A genuine STD-callback prefix in a separate segment also produced 455.
 Declaration timing, switch casts, explicit reserved cases and initial alignment
-trials remain failed. `-G` produces 468. Those alternative diagnostics are
-[archived](../../../docs/LOCAL_STORAGE.md).
+trials failed. `-G` produces 468.
 
 ## Compiler-generated ASM observation
 
@@ -45,7 +40,6 @@ Its semantic model is historical corroboration, not a recurring acceptance task.
 A later normal `-a` spelling after the canonical types, prompted by the
 item-family result, still emits 455 with the same native descending fixups.
 The complete first-size gate fails; no second producer or negative runs.
-The source is restored byte-for-byte. Diagnostic:
-`.analysis/native-producers/main-dialog-opcode-word-alignment-b/`.
+The source is restored byte-for-byte.
 Together with the stage initializer follow-up, this confirms that the item
 recovery's genuine source context cannot be replaced by this spelling alone.

@@ -119,6 +119,5 @@ transfers, so the following paragraph and DS frame drift. The existing native
 placement gate rejects it. No binder compensation, second producer, negative,
 register algorithm or option matrix follows. Experimental standalone files were
 removed; the existing 185-byte candidate source and accepted siblings remain
-unchanged. Actual inputs, generated assembly and the one failed producer remain
-under `.analysis/native-producers/main-mai-tracking-compiler-assembly-a/`;
+unchanged.
 `.analysis/mai-tracking-current-angle-snapshot-review.json` records the result.

@@ -13,8 +13,7 @@ deliberately omitted from `b6balls_update`. Its genuine C++ behavior remains,
 including the actual PlayfieldPoint-returning `pos.update_seg3()` declaration
 and register-backed AX/DX clipping consumer. No alternative return type,
 assembly transcription, emitted opcode, ghost symbol, optimization barrier,
-or invented padding is supplied. The retained first cold pair
-`.analysis/unit-replays/main-shinki-a` demonstrates a216-byte natural update,
+or invented padding is supplied. The first cold pair demonstrated a216-byte natural update,
 four bytes shorter than the original220. The entire original220-byte function
 remains unaccepted. Its complete natural216-byte body is retained, without
 padding or restoring the barriers.

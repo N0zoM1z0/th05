@@ -104,21 +104,15 @@ focused cold raw-byte/fixup replay.
 
 ## Accepted complete function subset
 
-The original `op-hiscore-view-b` receipt retains its failed aggregate: all
-1,411 raw bytes match but the 312-byte `regist_view_menu` has differing ordered
-fixups and remains unaccepted. Seven other whole functions pass both raw and
-ordered comparisons, totaling 1,099 bytes (1,083 instructions, 16 tables).
-`op-hiscore-scopes-a` derives and validates these complete scopes from the two
-unchanged original cold producers, including the actual negative-control
-owner, without another compiler invocation. It archives the intact parent
-and recomputes real MAP boundaries, OMF identities and negative output.
+The original mixed producer matched all 1,411 raw bytes, but its 312-byte
+`regist_view_menu` had differing ordered fixups. Seven other complete functions
+passed both comparisons, totaling 1,099 bytes (1,083 instructions, 16 tables).
 
 The later canonical factor supersedes those seven records with fresh current
 evidence and separately accepts the complete312-byte menu. All three receipts
 `op-score-code-canonical-a`, `op-score-files-canonical-a` and
 `op-score-menu-canonical-a` passed and were imported atomically: the seven
 CODE scopes share their actual place-padding negative, while DATA53 and menu312
-each have their own compiled negative. The original mixed receipt and its
-menu-order failure remain unchanged. See `canonical_menu.md` for actual source,
+each have their own compiled negative. See `canonical_menu.md` for actual source,
 resource ownership and validation details; no relocation normalization or
 packed-container acceptance is claimed.

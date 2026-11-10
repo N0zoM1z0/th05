@@ -194,7 +194,7 @@ link context, outside every compiler function. It receives no credit and does
 not repair or accept the particle renderer. Every accepted function retains
 its complete original position and ordered raw/fixup proof.
 
-The earlier monolithic diagnostic `.analysis/compiler-probes/boss-bg-c` compiled
+The earlier monolithic diagnostic compiled
 3253 natural bytes and found ten raw/fixup matches before the split. It is a
 routing observation, not the current acceptance producer. Its retired
 monolithic diagnostic remains in Git history at `3af324e`; the current split

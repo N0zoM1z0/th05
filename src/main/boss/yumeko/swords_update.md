@@ -22,8 +22,7 @@ Disabling jump optimization emits 285 and shifts the relocation to 76. Removing
 the nested continue or using a decay `else` under that profile still emits 285.
 Statement-scoped `-O-` pragmas leave 280 unchanged; a switch emits 286. A scalar
 word-pair alias either fails the frontend or emits 320; it is not adopted.
-All trials failed, and the ordinary 280-byte source is restored. Alternative
-producers are archived; see [storage](../../../../docs/LOCAL_STORAGE.md).
+All trials failed, and the ordinary 280-byte source is restored.
 
 Restoring this complete function is also important for the genuine compiler
 context of the adjacent354/428-byte attacks; see

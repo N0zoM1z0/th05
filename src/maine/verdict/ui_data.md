@@ -27,8 +27,7 @@ bytes; neither extent contains MZ relocation words, padding or a table.
 An earlier uncompiled294-byte monolithic text hypothesis contained physically
 distinct but identical const initializers. Retained compiler evidence elsewhere
 shows that such objects can pool, so that hypothesis was not compiled or
-accepted. Its source, binder, proposal and native review remain private under
-`.analysis/verdict-ui-monolithic-uncompiled/`; its public CPP/binder were removed.
+accepted. The unused draft was removed.
 
 The two selected producers each contain no identical whole-object initializer.
 They are useful semantic object groups, not claims about historical TH05

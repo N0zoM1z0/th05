@@ -87,9 +87,8 @@ remain unaccepted; their earlier548-byte failed artifact is preserved.
 
 ## Bounded natural-expression result
 
-One new standalone gameplay-loop producer is retained in
-`.analysis/unit-replays/main-gameplay-loop-expressions-a/`. Two meaningful
-conditional expressions recover the native debug-transition and periodic
+An independent standalone gameplay-loop trial used two meaningful
+conditional expressions to recover the native debug-transition and periodic
 rank-call control flow. The periodic-call expression follows the maintained
 TH04 donor, and the same loop's existing palette expression corroborates the
 compiler form. The real new frame value supplies modulo16 through ordinary
@@ -143,6 +142,5 @@ A later ordinary named-word trial captures `previous_frame = stage_frame++`
 and uses `previous_frame + 1` for the modulo16 field. Its complete first
 producer emits451 bytes, including an SI save and a different counter schedule,
 against native445. It also fails; the original442-byte source is restored
-byte for byte. Frozen inputs are under
-`.analysis/native-producers/main-gameplay-word-counter-a/`. No new behavior
+byte for byte. No new behavior
 model, second producer, compiled negative or accepted credit is claimed.

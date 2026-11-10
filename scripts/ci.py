@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Check changed machine inputs; exact comparisons are selected by affected scope."""
+"""Fast public checks for the complete checkout, without private build inputs."""
 from pathlib import Path
 import ast
 import json
-import os
 import subprocess
 import sys
 import tomllib
@@ -11,40 +10,50 @@ import tomllib
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def public_files():
+    names = subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=ROOT
+    ).split(b"\0")
+    names = sorted({name for name in names if name})
+    # --no-index also catches private files accidentally force-added to Git.
+    ignored = subprocess.run(
+        ["git", "check-ignore", "--no-index", "--stdin", "-z"],
+        input=b"\0".join(names) + b"\0", cwd=ROOT, stdout=subprocess.PIPE, check=False
+    )
+    if ignored.returncode not in (0, 1):
+        raise RuntimeError("git check-ignore failed")
+    if ignored.stdout:
+        raise ValueError("private/generated files in public tree: " +
+                         ", ".join(name.decode() for name in ignored.stdout.split(b"\0") if name))
+    return [ROOT / name.decode() for name in names]
+
+
 def main():
     if sys.argv[1:] in (["--help"], ["-h"]):
-        print("usage: ci.py [--full | existing explicit check options]\nDefault: changed machine-input syntax and diff checks. Run affected exact/tool commands for the task.")
+        print("usage: ci.py [--full]\nDefault: complete public-tree syntax, ledgers, build configuration and private-file checks.\n--full: explicitly run the broad tooling suite.")
         return 0
     if len(sys.argv) > 1:
-        arguments = sys.argv[1:]
-        if not any(flag in arguments for flag in ('--full',)):
-            print("Unknown CI option; use no arguments for scoped checks or --full for the broad suite.", file=sys.stderr)
+        if sys.argv[1:] != ["--full"]:
+            print("Unknown CI option; use no arguments or --full.", file=sys.stderr)
             return 2
-        pass
-        return subprocess.call([sys.executable, str(ROOT / "scripts/ci-full.py"), *arguments], cwd=ROOT)
-    names = set()
-    for command in (["git", "diff", "HEAD", "--name-only", "-z"],
-                    ["git", "ls-files", "--others", "--exclude-standard", "-z"]):
-        names.update(n for n in subprocess.check_output(command, cwd=ROOT).decode().split("\0") if n)
-    if os.environ.get("CI"):
-        # Clean CI checkouts have no worktree diff. Inspect the commit being checked.
-        names.update(n for n in subprocess.check_output(
-            ["git", "show", "--format=", "--first-parent", "--name-only", "-z", "HEAD"],
-            cwd=ROOT).decode().split("\0") if n)
-    for name in sorted(names):
-        path = ROOT / name
+        return subprocess.call([sys.executable, str(ROOT / "scripts/ci-full.py"), "--full"], cwd=ROOT)
+    for path in public_files():
         if not path.is_file() or path.is_symlink():
             continue
         if path.suffix == ".py":
-            ast.parse(path.read_text(), filename=name)
+            ast.parse(path.read_text(), filename=str(path.relative_to(ROOT)))
         elif path.suffix == ".json":
             json.loads(path.read_text())
         elif path.suffix == ".toml":
             tomllib.loads(path.read_text())
         elif path.suffix == ".sh":
             subprocess.run(["bash", "-n", str(path)], check=True)
+    for script in ("progress.py", "ownership.py"):
+        subprocess.run([sys.executable, str(ROOT / "scripts" / script), "--check"],
+                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
-    print("Changed machine inputs checked. Use affected exact/tool checks; --full explicitly selects the broad suite.")
+    subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
+    print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")
     return 0
 
 

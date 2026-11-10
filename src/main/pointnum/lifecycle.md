@@ -36,8 +36,6 @@ promotion follows from this failure. The provisional entry is parked outside
 the live exact manifest. That failed whole producer grants no acceptance;
 the later independent initializer does not transfer credit to its neighbors.
 
-Private producer: `.analysis/unit-replays/main-pointnum-lifecycle-natural-b/`;
-failed initial binder: `main-pointnum-lifecycle-natural-a/`.
 The actual failed producer's DATA frame shifted by one paragraph because its
 CODE extent was larger; this is not an accepted original layout.
 

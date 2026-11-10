@@ -41,15 +41,6 @@ rejected. No additional game behavior model or per-function test is added.
 Only the new pipeline's focused tooling checks and existing incremental
 replay tests run; no full CI or accepted-set cold replay is required.
 
-Final receipt: `.analysis/unit-replays/main-shinki-wing-compiler-assembly-b/receipt.json`,
-SHA-256 `c3361fa39d92bc8d7936c3ca512e2c213d8019ab755823f2cf30fa29c894923e`.
-The earlier formal-a packet predates the independent-directory guard and is
-not adopted. The first private assembly attempt stops on missing foreign
-segment definitions; the subsequent private context continuation reuses that
-unchanged compiler output after input identity checks. Both are diagnostic,
-not substitutes for the final two fresh producers. Old direct-object and
-`-v`/four-DATA-byte failures remain historical and unaccepted.
-
 ## Affected replay after adding decoded artifact contexts
 
 The recipe now supports explicit OP/MAINE binary and decoded-target proofs.
@@ -59,7 +50,7 @@ bytes and `[76,305]`, with the same shake-duration negative rejected.
 The replacement adopted receipt is
 `.analysis/unit-replays/main-shinki-wing-artifact-context-c/receipt.json`,
 SHA-256 `cf074f3e7ad481533070945dc10777f56576091105fd4fc5f6d32000d1ae7655`.
-The earlier b receipt remains historical evidence. Coverage stays386 bytes;
+Coverage stays386 bytes;
 this receipt replacement adds no function or authored byte.
 
 ## Ball updater remains unaccepted

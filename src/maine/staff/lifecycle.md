@@ -118,15 +118,14 @@ the first producer's CPP bytes exactly. Header, binder and all other functional
 inputs stay frozen. Whether the genuine conversion reproduces the original
 lowering remains for the next actual producer; no exactness is asserted.
 
-The first source and its freeze manifest are archived under
-`.analysis/failed-staff-lifecycle-a-source/`; native mismatch evidence is
+Native mismatch evidence is
 `.analysis/maine-staff-lifecycle-a-forensic.json`, and the exact source delta
 is pinned by `.analysis/maine-staff-lifecycle-b-source-proof.json`.
 
 The single class-API recovery in `maine-staff-lifecycle-b` still emits1225
 bytes. It does not recover the updater's original626-byte extent, and no
-further updater source/flag variants are proposed. Both failed whole-family
-producers remain intact and unaccepted.
+further updater source/flag variants are proposed. Both whole-family candidates
+remain unaccepted.
 
 The current prefix factor moves the updater body verbatim into
 `lifecycle_update.cpp`; the first four algorithm bodies are unchanged. The
@@ -136,13 +135,11 @@ trail providers at `D853/D8B6`. There is no hole inside an owned function. The
 accepted ID is `maine-staff-lifecycle-prefix`, with four functions and the
 same meaningful initialized-speed negative. Its own fresh positive pair and
 compiled negative remain required. This is a new complete cohort, not a
-successful relabelling of either failed1228-byte request. Both source variants,
-the original proposal and old binder are archived in
-`.analysis/failed-staff-lifecycle-full/`; the inverse source-factor proof is
+successful relabelling of either failed1228-byte request. The inverse source-factor
+proof is
 `.analysis/maine-staff-prefix-factor-proof.json`.
 
-A later ordinary declaration/loop-initialization-order trial
-(`.analysis/native-producers/maine-staff-order-a`) still emits4223 for the full
+A later ordinary declaration/loop-initialization-order trial still emits 4223 for the full
 4229-byte family, including updater623 and renderer858. It does not recover
 either missing pointer reload. Both maintained bodies were restored byte-exact;
 no accepted owner was rebuilt and no behavior-test expansion is required.

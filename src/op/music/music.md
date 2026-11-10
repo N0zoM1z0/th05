@@ -112,18 +112,10 @@ source. Two fresh focused builds, complete raw-byte comparisons, ordered
 fixup agreement, and normal oracle controls are still required before either
 owned extent can be accepted.
 
-## Focused replay results
+## Replay findings
 
-`op-music-prefix-b` accepts the complete 381-byte prefix / four functions,
-including both cold producers, all 12 ordered fixups and the compiled rectangle
-mutation. `op-music-suffix-b` retains a failed aggregate and a passing compiled
-input-threshold negative; its complete function scopes need separate review.
-The foreign helper receives no source credit.
-
-`op-music-functions-a` subsequently accepts eight whole suffix functions /
-646 bytes with both fresh producers and a new compiled comment-loader control
-(`sizeof(cmt)` to `sizeof(cmt)-1`). The previous menu negative affected an
-unaccepted function, so it was not reused to claim these scopes. Both the
-502-byte polygon update and 837-byte music menu remain unaccepted: their raw
-code matches, but original ordered fixups differ. All MAP ends include the
-actual immediate neighbor, even when it is one of those excluded functions.
+The initial prefix matched 381 bytes and all 12 ordered fixups. Eight complete
+suffix functions subsequently matched 646 bytes with a comment-loader mutation
+as their control. The standalone polygon and menu bodies matched raw bytes but
+had different relocation order; their broader context is documented in
+[full_context.md](full_context.md). Use the OP ledger for current acceptance.

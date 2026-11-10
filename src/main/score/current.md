@@ -37,8 +37,7 @@ records and dependencies remain unchanged, so no old owner is rebuilt.
 The adjacent original loader `C882..C8B9` is 55 bytes / 23 instructions. Both
 ordinary early-return and explicit if/else C++ spellings emit 54: TCC merges its
 failure RET with the final RET, changing native `JNC / RET` into a jump to the
-end. The remaining DOS body matches after that shift. These first diagnostics
-are retained in `.analysis/native-producers/main-score-current-a/` and `-b/`.
+end. The remaining DOS body matches after that shift.
 No artificial barrier, filler, second positive or negative is added for those
 known failed profiles. `current.cpp` retains the complete natural two-function
 context; its combined 109-byte producer remains unaccepted. Shared canonical

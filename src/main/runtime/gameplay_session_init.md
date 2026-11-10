@@ -61,6 +61,6 @@ Accepted focused replay `main-gameplay-session-init-a` proves all468 bytes
 from two fresh deterministic producers, including both generated switch
 tables and the original empty ordered relocation list. The compiled
 initial-dream mutation from1 to2 changes output and is rejected. The receipt
-is `.analysis/unit-replays/main-gameplay-session-init-a/receipt.json`. This
+is `.analysis/unit-replays/main-gameplay-session-init-b/receipt.json`. This
 is owner-level negative coverage, not independent controls for each switch
 branch. Accepted source and binder remain frozen.

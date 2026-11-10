@@ -67,18 +67,10 @@ retaining each independent producer and own control provenance.
 
 Private `.analysis/main-resource-bank-boundary-review.json` and the adjacent
 unit-proposal JSON record all 38 native fields, original references and
-source identities. `.analysis/failed-semantic-text-data-review.json` preserves
-the initial pooling/category-reorder findings. The earlier stage-session
+source identities. The earlier stage-session
 803-byte C++ callback remains unaccepted; its original filename operands are
 native observations, with no transferred CODE credit.
 
 The current C boundary/proposal files are
 `.analysis/main-resource-bank-c-boundary-review.json` and its adjacent
-unit-proposal JSON. Original C++ drafts and the initial failed 322-byte
-compiler output remain unchanged as evidence.
-
-The uncompiled C++ draft source/header and failed standalone-array files were
-subsequently archived verbatim under `.analysis/failed-semantic-banks/files/`.
-The manifest preserves exact original paths, sizes and whole-file hashes.
-Actual compiler workspaces and canonical input snapshots remain intact.
-The accepted `.c`, C header and bank binder remain byte-for-byte frozen.
+unit-proposal JSON. The initial C++ draft emitted 322 bytes and was rejected.

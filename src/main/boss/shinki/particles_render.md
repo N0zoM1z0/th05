@@ -14,8 +14,7 @@ unchanged. No allocation hint, barrier, volatile access or padding is introduced
 
 The first diagnostic's fixed tail shifted DS labels by12. The corrected binder
 uses a real outside paragraph boundary shared by both candidate extents, keeping
-CS0AE1/DS209D and actual fields intact; it still emits171. Evidence:
-`.analysis/native-producers/main-shinki-particles-render-b` and
+CS0AE1/DS209D and actual fields intact; it still emits171. See
 `.analysis/scalar-render-followups-root-review.json`. Further work concerns
 source lowering, not additional behavior-test coverage.
 

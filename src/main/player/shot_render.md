@@ -41,8 +41,7 @@ check that ordinary sprite argument lowering preserves the real hybrid
 interface. The first semantic-safe word-local producer was173 bytes rather than164;
 its ordinary word spill and argument pushes account for the nine-byte
 difference. It preserves the real AX/DX protocol by pushing the already
-widened word directly from its local slot. That failed producer and source
-snapshot remain retained at `main-shots-render-a`.
+widened word directly from its local slot.
 
 The one authorized byte-local trial at `main-shots-render-b` produced175
 bytes and is abandoned. Actual native instructions prove a semantic API

@@ -65,20 +65,9 @@ Private integration inputs are `.analysis/mima-bomb-full-unit-proposal.json`,
 `.analysis/mima-bomb-full-bindings.asm`, and
 `.analysis/mima-bomb-full-boundary-review.json`. The symbol-only binder
 supplies foreign entry/state addresses, no helper bodies or resource values.
-The owner-level negative changes the outer-circle radius constant224 to223.
-The draw205 complete-function scope is accepted by
-`.analysis/unit-replays/main-mima-bomb-draw-a/receipt.json`. It reuses the two
-retained fresh producers from the preserved failed whole-cohort parent,
-with zero additional compiler invocations. The scoped real payloads match
-the original raw205 bytes and ordered eleven fixups, and the retained
-compiled radius224-to223 mutation is rejected in that same scope. Actual
-target/source identities, retained MZ payloads and ordered fixups, and the
-parent receipt hash were independently rechecked before this note.
-
-The complete-function boundary is the real next function `bomb_mima()` at
-`0x101DA`; no interior successful fragment is substituted. The failed
-whole366 parent stays preserved and no acceptance transfers to control161.
-This packet owns no initialized DATA or BSS.
+The draw205 complete-function scope matches all original bytes and eleven
+ordered fixups. Its complete boundary is the real next function `bomb_mima()`
+at `0x101DA`. This packet owns no initialized DATA or BSS.
 
 ## Superseding coherent-family acceptance
 
@@ -87,4 +76,5 @@ The earlier whole366-byte producer remains ordered-inexact. The new
 character bodies in one compiler contribution and independently accepts the
 complete161-byte Mima control. Actual OMF cuts, not relocation sorting, restore
 its original order. Draw205 retains its existing ID after the source-sensitive
-canonical-body refresh; the old parent evidence is preserved.
+canonical-body refresh. Current receipt:
+`.analysis/unit-replays/main-bomb-body-canonical-refresh-b/receipt.json`.

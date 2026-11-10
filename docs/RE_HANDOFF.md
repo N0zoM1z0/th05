@@ -1,4 +1,4 @@
-# TH05 handoff — 2026-11-06
+# TH05 handoff — 2026-11-10
 
 > Current workflow: follow the **Highest priority** section in `AGENTS.md`.
 > Prefer affected exact comparisons and useful Markdown knowledge. Ordinary
@@ -6,14 +6,11 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-Reconstruction was stopped for documentation/storage cleanup and transfer to the
-next agent. No new compiler or Ghidra job was started during cleanup. The last
-reconstruction checkpoint is `84a5de9`; this cleanup also preserves the new,
-unaccepted OP ZUNsoft source packet described below.
+The next source packet is OP ZUNsoft, described below. The last reconstruction
+checkpoint is `84a5de9`; acceptance is unchanged.
 
 Start with `git status --short` and `python3 scripts/preflight.py`. Read
-[workflow](RE_WORKFLOW.md), [acceptance](ORACLES.md) and
-[storage/restore instructions](LOCAL_STORAGE.md). Reuse the existing attested
+[workflow](RE_WORKFLOW.md) and [acceptance](ORACLES.md). Reuse the existing attested
 tools and decoded targets; do not bootstrap or cold-replay unchanged units.
 
 Private first-diagnostic helpers are `.analysis/single-main-native-producer.py`
@@ -23,25 +20,10 @@ never an acceptance receipt; formal replay remains the normal workflow.
 
 ## Authoritative accepted state
 
-The ledgers and [generated progress](PROGRESS.md) remain unchanged by cleanup:
-**367 C/C++ CODE/DATA units, 557 complete function occurrences, 108,695 authored
-bytes exact** = 93,072 CODE + 15,623 initialized DATA. CODE is 92,200 instruction
-+ 872 compiler-table bytes. Compared extents total 108,790, including 95
-zero-credit padding bytes.
-
-| Artifact | Functions | Authored CODE | Initialized DATA |
-| --- | ---: | ---: | ---: |
-| MAIN | 424 | 69,124 | 3,341 |
-| OP | 65 | 11,369 | 8,667 |
-| MAINE | 67 | 12,257 | 3,615 |
-| ZUN | 1 | 322 | 0 |
-
-Separately reviewed ASM: 8,559 instruction + 210 dispatch-table + 24 semantic
-CODE-table + 64 DATA bytes = 8,857 authored; 8,946 compared includes 89
-zero-credit bytes. Vendor CODE/DATA is 73,804/3,777; the font resource is 8,192.
-[Ownership](../resources/ownership.json) retains 115,759 unknown bytes.
-The global authored denominator and percentage are unreviewed; the 98% project
-goal has not been achieved. The supplied Japanese copy is candidate-local-attested.
+Use the [generated progress](PROGRESS.md), accepted-unit ledgers and
+[ownership inventory](../resources/ownership.json) for current totals and scopes.
+The global authored denominator remains unreviewed. The supplied Japanese copy
+is candidate-local-attested.
 
 ## Best next source packet: OP ZUNsoft
 
@@ -107,18 +89,13 @@ notes for other gaps. Do not repeat unchanged failed profiles, insert barriers,
 copy instruction sequences or promote failed C++ to ASM. Ordinary recovery
 needs no new defensive tests, CPU models or per-function extra negatives.
 
-## Evidence and cleanup
+## Local working state
 
-All accepted receipts, transitive parent evidence, targets, decoded caches,
-calibration builds, installed tools and current baseline/raw-equal diagnostics
-remain live. Terminal historical alternatives are compressed with verified
-per-file hashes; their original directories retain comparison metadata and an
-`ARCHIVED.json` restore pointer. Check [local storage](LOCAL_STORAGE.md) before
-assuming an old artifact path is missing. Shared Wine/Ghidra services owned by
-sibling repositories must not be stopped for this cleanup.
+Current accepted replay roots, calibration inputs and the pending ZUNsoft
+producer remain available. Superseded builds and diagnostic archives have been
+removed; use the findings in per-owner notes instead of archive restore recipes.
+The independent Wine prefix, Ghidra project and Factory tool selectors are live.
 
-The previous 589-line narrative is preserved as
-[historical handoff](history/RE_HANDOFF_2026-11-06_pre_cleanup.md); it is reference,
-not the active work queue. No acceptance, generated progress or oracle/build
-tool was changed. Cleanup validation uses identity/retention checks and light
-public consistency checks, with no compiler replay or full CI.
+Default `scripts/ci.py` checks the complete public checkout without private
+inputs. Select comparator/build tests for tooling changes and exact replays for
+new or affected source; `--full` remains an explicit broad tooling run.

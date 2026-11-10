@@ -33,16 +33,12 @@ CODE also shifts the nominal harness DATA frame, so no whole-linked semantic
 claim is made. Installed tool execution evidence was reused after identity
 checks; no model, second positive, negative or full CI was needed.
 
-Actual frozen producers:
-
-- `.analysis/native-producers/op-score-decode-local-key-a/`
-- `.analysis/native-producers/op-score-decode-register-key-a/`
+Current diagnostic: `.analysis/native-producers/op-score-decode-local-key-a/`.
 
 A later ordinary inline-function rotate expression cannot compile: TC4 rejects
 assembly inside inline and template functions. The attempted primitive operates
 on its named byte parameter, without the fixed-AL template, but the frontend
-restriction prevents a producer object. The failed input and exact diagnostic
-remain at `.analysis/native-producers/op-score-decode-inline-rotate-a/`.
+restriction prevents a producer object.
 The maintained 181-byte source is restored byte-for-byte. No out-of-line helper,
 second producer, negative or acceptance follows from that failed expression.
 

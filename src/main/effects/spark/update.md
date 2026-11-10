@@ -25,9 +25,8 @@ are not padding. An ordinary Y local plus an early-continue loop emits84:
 Y lives in CX, and the comma loop condition materializes a Boolean. Both
 first diagnostic producers have wrong complete extents; neither is an
 acceptance receipt or has a second producer or negative.
-The initial72-byte source is restored exactly. Frozen inputs are retained at
-`.analysis/native-producers/main-sparks-update-a/` and
-`main-sparks-update-coordinate-a/`.
+The initial72-byte source is restored exactly. Its diagnostic remains at
+`.analysis/native-producers/main-sparks-update-a/`.
 
 The initial nominal76-byte tail placed the72-byte diagnostic's foreign pool
 at209C:5AEA. The maintained outside-only binder now uses the actual72-byte

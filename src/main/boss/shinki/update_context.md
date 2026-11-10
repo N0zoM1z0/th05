@@ -23,8 +23,7 @@ standalone update emitted one valid 958-byte CODE SEGDEF/LEDATA, lacking the
 native zero. Its first link also exposed five Borland 31-character truncated
 EXTDEF names. Actual names were read from that object and corrected in the
 private binder, without recompiling or relinking: the complete object already
-disproved the 959-byte size hypothesis. That failed producer remains archived
-at `.analysis/unit-replays/main-shinki-update-standalone-a/`.
+disproved the 959-byte size hypothesis.
 
 The accepted owner uses four genuine adjacent complete functions in native
 order: Devil (802 bytes), final circles/spirals (315), floating motion (58),

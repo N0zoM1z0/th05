@@ -84,9 +84,9 @@ compiled negative. If natural output is 802 bytes because the zero is missing,
 retain that failure and stop: no flag search, padding insertion or partial
 table exemption is proposed.
 
-## Retained first-producer result
+## First-producer finding
 
-`main-stage-session-init-a/group-0/a/source` generated a complete **802-byte**
+The initial producer generated a complete **802-byte**
 CODE contribution. It has the same 772-byte instruction region and near RET
 at `B53A`, followed immediately by the same 30 table bytes at `B53B..B559`.
 The original zero at `B53B` is absent. The tables are byte-identical when

@@ -121,8 +121,7 @@ other three function bodies, header and binder are unchanged. The fresh b
 producers independently recover the original711-byte contribution, six-byte
 percentage frame and true E80 shared frame. All four complete bodies pass.
 
-The a source and first forensic receipt are preserved under
-`.analysis/failed-maine-verdict-format-a/`. Native per-function instructions,
+Native per-function instructions,
 actual OMF actions and input hashes are recorded in
 `.analysis/maine-verdict-format-a-native-forensic.json`; the inverse two-keyword
 proof is `.analysis/maine-verdict-format-b-two-keyword-proof.json`.

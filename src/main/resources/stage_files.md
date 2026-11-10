@@ -52,9 +52,4 @@ Private review/proposal files are
 checks, including all 34 original operand sites, readable object boundaries,
 reference lines and source identities.
 
-The failed standalone C++ source/header and its unused binder are archived
-verbatim in private `.analysis/failed-semantic-banks/files/`, preserving
-original paths and whole-file hashes in the parent manifest. The original
-compiler workspace and input snapshots remain intact; native replay reads
-those consumed canonical inputs. The accepted complete C field-bank model
-is documented in `resource_bank.md`.
+The accepted complete C field-bank model is documented in `resource_bank.md`.

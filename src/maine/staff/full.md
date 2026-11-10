@@ -65,38 +65,25 @@ relative original relocation order, and claims no complete executable layout.
 
 The binder contains only real foreign symbols and outside extents, with CODE
 frameA54, master frame0, SHARED frameE80 and DS1011. The full wrapper owns no
-initialized DATA or BSS. The retired worktree archive, first diagnostic
-and old failed/accepted receipts remain private. No decoder or
-game was rerun; comparison uses the pinned original decoded view.
+initialized DATA or BSS. Comparison uses the pinned decoded target.
 
-Later focused trials remain failed: global `-Z-` emits 4283; explicit expressions
-emit 4230; the full class helper API, implicit conversions and statement-scoped
-`-Z-` still emit 4223. None recovers the two missing pointer loads. Source and
-shared headers were restored, so accepted source identities are unchanged.
-Those alternatives are archived as described in [storage](../../../docs/LOCAL_STORAGE.md).
+Later trials confirm that ordinary source spelling has not recovered the two
+missing pointer loads:
 
-Further ordinary inline geometry trials also fail: a point comparison returns
-an `int` and materializes a Boolean, making the updater637 bytes; an object
-reference camera helper creates a parameter temporary and emits632. Passing
-the actual near pointer by reference returns to623. The complete contributions
-are4237,4232 and4223 respectively, and the renderer remains858. Frozen first
-producers are under `.analysis/native-producers/maine-staff-point-comparison-b`,
-`maine-staff-camera-helper-a` and `maine-staff-camera-helper-reference-a`.
-All source was restored byte for byte; no accepted dependency changed.
+| Trial | Full contribution | Updater / renderer |
+| --- | ---: | --- |
+| Baseline, class helper API, implicit conversion, scoped `-Z-` | 4223 | 623 / 858 |
+| Global `-Z-` | 4283 | 630 / 879 |
+| Explicit expressions | 4230 | Still inexact |
+| Point comparison returning `int` | 4237 | 637 / 858 |
+| Camera helper taking an object reference | 4232 | 632 / 858 |
+| Camera helper taking the near pointer by reference | 4223 | 623 / 858 |
 
-A later read-only check of the verified archived global `-Z-` producer's MAP
-confirms complete updater630 and renderer879, versus626/861. No whole-family
-failure hid an exact renderer. The archive was not restored over the worktree
-and no compiler ran. Scope/hash evidence is
-`.analysis/staff-reload-scope-readback.json`; the storage archive remains intact.
+The target updater/renderer sizes are 626/861. Standalone renderer `-O-` emits
+858 bytes, identical to its baseline. Native relative 195 reloads the pointer
+already loaded at 186 before CMP/JE at 189/193. Disabling jump folding does not
+recover that load. Source and shared headers were restored after the trials.
 
-A bounded read-only source/ABI review again finds the renderer's pointer load
-at native relative 195 redundant after the load at 186 and CMP/JE at 189/193.
-The two verified private staff archives and retained live staff text contain no
-earlier -O- probe. One new standalone -O- diagnostic still emits 858 bytes,
-byte-identical to the earlier standalone renderer, against native 861. This
-rules out jump folding for this missing reload; it does not establish origin
-or allow a barrier/volatile local. The unaccepted wrapper is restored exactly.
-Evidence: `.analysis/native-producers/maine-staff-render-jumps-a/` and
-`.analysis/focused-source-followups-selector-review.json`. No accepted input,
-second producer, negative, new ownership or progress count changes.
+Current full-family context: `.analysis/native-producers/maine-staff-full-a/`.
+Further work should investigate the genuine compiler/source context that
+preserves those reloads.

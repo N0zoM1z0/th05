@@ -126,8 +126,7 @@ barrier without changing any reachable stop/load/play behavior.
 
 ## Single-producer scope review and planned replay
 
-The retained `.analysis/compiler-probes/maine-cutscene-d/receipt.json`, produced
-by `.analysis/diagnose_cutscene_d.py`, contains one actual compiler invocation.
+The initial single-producer cutscene diagnostic used one actual compiler invocation.
 Its real MAP contributions are `CUTSCENE_TEXT` at `[A695,A704)` (111 bytes)
 and `CUTSCENE_AFTER_TEXT` at `[A705,B1B5)` (2736 bytes). Nine complete functions
 pass both full raw bytes and original ordered MZ fixups in this diagnostic:

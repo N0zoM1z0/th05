@@ -80,16 +80,12 @@ followed by all fourteen offsets beginning with the word at offset four.
 An initial enum-width diagnosis was incorrect and is retracted. The temporary
 byte-typedef variant b passed the selector check too and failed the identical
 fifteen layout checks. Neither attempt ran a second producer or negative.
-Both exact input sets and logs are retained privately. The first archive's
-`failed-hud-overlay-c-enum` directory name records the superseded diagnosis;
-its metadata now explicitly corrects it.
 
 Variant c restored the original enum header and put `-a2` before all types.
 Its actual diagnostic reduced to exactly three failures: the fade union was
 rounded to two bytes, shifting the two following frame bytes to offsets two
 and three. The enum-size check, complete bank size 164 and every remaining
 field offset passed. No object, second producer or negative was produced.
-Its exact three inputs and logs are preserved in the separate layout-c archive.
 
 The approved variant d therefore preserves the original source options and
 declares the original byte enum and fade union first. The header adds `-a2`
