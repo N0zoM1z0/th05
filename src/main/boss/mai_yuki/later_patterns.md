@@ -121,3 +121,18 @@ register algorithm or option matrix follows. Experimental standalone files were
 removed; the existing 185-byte candidate source and accepted siblings remain
 unchanged.
 `.analysis/mai-tracking-current-angle-snapshot-review.json` records the result.
+
+## 2026-11-10 tracking-laser ownership experiment
+
+An isolated natural 185-byte first function was compiled against the original
+`17B76` placement with a true foreign paragraph starting after native
+`17C30`; the baseline returns `[130,38]` ordered fixups versus original
+`[38,130]`. Native disassembly at source offset `+84` stores the arctangent in
+the byte local, loads current laser angle into AL, subtracts AL from the local,
+then shares the final angle write. The maintained compiler instead subtracts
+current angle from AL, stores the difference, and performs direct memory
+increment/decrement. Eight ordinary C++ current-angle/temp/shared-write trials
+emitted sizes 185, 187, 188, 189 or 190, none 186. First-producer reports are
+retained in `.analysis/gpt-web-track-*-a`; no TASM recipe or negative is claimed
+for a code-mismatching candidate. The ten accepted later patterns, canonical
+header, and maintained tracker remain unchanged.

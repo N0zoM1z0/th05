@@ -6,9 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-The OP ZUNsoft four-function CODE cohort has now passed focused two-producer
-exact replay and entered the accepted OP ledger. Next, tackle its independent
-54-byte filename DATA contribution, then revisit substantial MAIN boss gaps.
+OP ZUNsoft CODE **and** its independent filename DATA now pass focused
+individual two-producer exact replays and are committed. A separate attempt on
+MAIN's larger boss/attack controllers identified reproducible code-generation
+gaps without claiming byte credit: boss defeat 414/408, B4 ball 273/278 (or
+274 without optimization), and Mai tracking laser 186/185. MAINE's1034-byte
+menu remains raw-exact but ordered-relocation-inexact even via TCC-S/TASM32.
 
 Start with `git status --short` and `python3 scripts/preflight.py`. Read
 [workflow](RE_WORKFLOW.md) and [acceptance](ORACLES.md). Reuse the existing attested
@@ -67,7 +70,7 @@ before relying on old census/routing files.
 | Yumeko sword update, 283 | Current 280; genuine attack prefix remains three bytes short | [Swords](../src/main/boss/yumeko/swords_update.md) |
 | Dialog opcode, 456 | Direct 455; compiler-assembly raw 456 has wrong fixup order | [Dialog](../src/main/dialog/opcode.md) |
 | EMS boss-face preload, 154 | Raw exact; `[71,24,133,114]` order unresolved | [EMS](../src/main/ems/ems.md) |
-| Generic boss defeat/collision, 414 / 43 | Current 408 / 46; complete all-clear tail still merges calls | [Generic boss](../src/main/boss/generic.md) |
+| Generic boss defeat/collision, 414 / 43 | Current 408 / 46; four new natural branch trials still merge all-clear calls | [Generic boss](../src/main/boss/generic.md) |
 | OP score decode, 169 | Ordinary key emits 181. TC4 rejects assembly inside inline/template functions | [Decoder](../src/shared/score/decode.md) |
 | ZUN resident entry, 269 | Current 260; `-O-` emits 262 | [Resident](../src/zun/resident/initialize.md) |
 
@@ -78,8 +81,8 @@ needs no new defensive tests, CPU models or per-function extra negatives.
 
 ## Local working state
 
-Current accepted replay roots, calibration inputs and the pending ZUNsoft
-producer remain available. Superseded builds and diagnostic archives have been
+Current accepted replay roots, calibration inputs and the completed ZUNsoft
+producer receipts remain available. Superseded builds and diagnostic archives have been
 removed; use the findings in per-owner notes instead of archive restore recipes.
 The independent Wine prefix, Ghidra project and Factory tool selectors are live.
 

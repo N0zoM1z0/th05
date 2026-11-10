@@ -130,3 +130,18 @@ compiler-register algorithm is introduced. The failed standalone source/binder
 were removed. The accepted
 generic CODE/DATA and all maintained source inputs remain unchanged. No second
 producer, negative or new credit is added.
+
+## 2026-11-10 focused defeat controller compiler trials
+
+The standalone 414-byte `boss_defeat_update` trial links at the true original
+`1FBB1` start and retains all six original ordered fixup sites. The maintained
+source still generates a 408-byte *complete* function with actual fixups
+`[389,359,345,331,254,33]`, versus target
+`[395,365,351,337,254,33]`. Disassembly identifies the six-byte loss: the
+original duplicates the final all-clear call and jump in two real stage paths,
+while Turbo C++ common-tail merging emits only one copy. Four ordinary semantic
+preserving branch variants (explicit local gotos, inverted conditions, and
+reversed branch order) all still generate 408 bytes. Their first cold diagnostics
+are retained in `.analysis/gpt-web-defeat-{v1,v2,v3,v4}-a/` (not acceptance).
+No inert compiler barriers or fabricated function bytes were introduced. The
+retained natural `generic.cpp` and six accepted helpers are unchanged.

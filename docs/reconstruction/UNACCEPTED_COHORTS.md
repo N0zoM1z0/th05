@@ -7,7 +7,6 @@ Per-owner notes identify current diagnostics and source/ABI decisions.
 
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
-| OP ZUNsoft logo | Four new C++ functions, 1150 compared bytes (1102 instructions + 48 table), match one raw/ordered diagnostic. No second producer, negative or acceptance yet. Separate 54-byte filename source is unbuilt. | [Handoff packet](../../src/op/zunsoft/zunsoft.md) |
 | MAINE registration menu | Full 1034 raw bytes agree; original 31-site relocation order differs. Neighbor insertion/rendering/motion acceptance does not transfer. | [Menu](../../src/maine/registration/menu.md) |
 | General BB loader | Native 55; natural named-parameter C++ emits 56 with a BP frame and first allocator fixup 10 versus 7. Full far filename and segment return ABI preserved; no second/negative or credit. | [Loader](../../src/main/formats/bb_load.md) |
 | Gather template copy | Original 27; ordinary assignment also emits 27 but calls F_SCOPY@ with far pointers. Link stops at the real unresolved provider; no accepted bytes. | [Copy](../../src/main/gather/copy.md) |
@@ -35,7 +34,7 @@ algorithm, copied instruction body, or inserted padding replaces a complete
 natural owner. New investigations should use these observations rather than
 repeat identical failed builds.
 
-Superseded blockers are accepted: Sara foreground159, Mai/Yuki foreground194,
+Superseded blockers are accepted: OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
 Mima bomb control161 through the genuine [bomb family](../../src/main/player/bomb_family.md),
 frameless MAP release23, and complete bullet/pellet rendering334 through the
 documented speed option and ordinary register declarations. Their earlier

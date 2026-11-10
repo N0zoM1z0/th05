@@ -49,3 +49,19 @@ producer/table context; replaying these same failed shapes adds no evidence.
 That menu experiment receives no credit. The independently [accepted places
 wrapper](places.md) and later [insertion/rendering recovery](rendering.md) have
 their own complete acceptance scopes; they do not transfer acceptance here.
+
+## 2026-11-10 alternate genuine compiler pipeline
+
+The source was compiled twice with actual TCC `-S` followed by an **unedited**
+TASM32 consumer and a compiled `palette_black_in(2)` → `(3)` negative; the
+selected MAINE menu is the sole tested cohort. Both independent positives
+reproduce all 1034 original raw bytes, and the negative changes compiler output.
+They still fail ordered MZ relocation comparison. The target's original
+31-site mixed descending/run order begins `[748,739,601,...]` and later includes
+`[1028,1021,...,764]`, while the TASM producer writes all 31 sites in **ascending**
+order beginning `[29,46,53,...]`. These are not equivalent evidence streams;
+no reordering, patching, normalization or acceptance is performed. Failed focused
+receipt: `.analysis/unit-replays/gpt-web-maine-registration-menu-pipeline-a/receipt.json`
+(`pass=false`). Its trial-only manifest entry was removed and the maintained
+menu source and binder remain unchanged. The next route needs genuine new link
+context rather than repeating either known relocation order.

@@ -176,3 +176,18 @@ candidate copies DX into AX only after the X comparison. The shot-damage
 zero branch and an extra loop-tail jump also differ. Equal or near-equal size
 does not accept those differences. The prior 278-byte normal-profile source is
 restored.
+
+## 2026-11-10 clip and loop code-generation trials
+
+A fresh 278-byte baseline confirms the native clip proxy at offsets `+2F..+42`:
+three short conditional jumps share a local `JMP` to the original free-slot
+store at `+FF`; the fourth test skips that proxy. The maintained producer emits
+four long conditionals to the free-slot store, losing five bytes, while its
+player-distance code copies DX into AX after the X check instead of computing
+both eager deltas in AX/DX. Six equivalent C++ clip/loop layouts preserve the
+278-byte output. Seven `-O-` loop/free-slot variants emit 274 or 276, but not
+the original 273; the documented no-optimization output also differs in Y
+arithmetic, the first empty-slot branch and the loop-tail jump. These are
+separate true compiled diagnostics in `.analysis/gpt-web-b4-*`, not proof of
+exactness. `b4ball_update.cpp`, the binder and accepted neighboring callbacks
+remain unchanged.
