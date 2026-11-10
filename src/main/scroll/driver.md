@@ -1,4 +1,4 @@
-# TH05 scrolling driver candidate
+# TH05 scrolling driver: exact 115-byte source
 
 This natural C++ owner covers original MAIN `C506..C579`, one complete
 115-byte near-void function ending at its actual RET. Every original branch
@@ -80,3 +80,27 @@ binding address or outside extent is adjusted to hide it.
 Private `.analysis/scroll-driver-123-native-review.json` pins the actual MZ,
 MAP, OMF and source snapshots, native instruction correspondence and the exact
 eight-byte accounting. The maintained implementation stays ordinary typed C++.
+
+## Accepted complete scroll driver — 2026-11-10
+
+`scroll_driver()` now matches all **115/115 bytes** at `[C506,C579)`, with
+the original far `GRAPH_SCROLLUP` relocation at `+57`. Two independent
+Borland C++/TLINK builds also reject a compiled change to the genuine 400-line
+wrap rule. Receipt:
+`.analysis/unit-replays/gpt-web-main-scroll-driver-115-20261110/receipt.json`.
+
+The 123-byte ordinary C++ candidate was eight bytes longer because the
+fraction accumulator was reloaded and the signed scroll result was tested
+through an additional memory read. The original TH05 CPU dataflow keeps the
+byte fraction in AL, clears AH to obtain the 0–15-pixel advance in AX, and
+subtracts AX from the real `scroll_line` word in place. One original-register
+inline `SUB`/`JNS` pair uses the actual subtraction sign flag to apply the
+400-line wrap only when needed. The subsequent low-byte advance, fractional
+mask and shifted subpixel delta are built directly from AX. Those hardware
+instructions preserve the source behavior without artificial CODE bytes or
+post-link changes. The stage-5 scroll-disable, page origins, hardware scroll
+and tile-ring callback remain unchanged.
+
+This is natural C++ with a small inline register/flag primitive, not a pure
+C++ codegen claim. The previous failed first-producer diagnostics above remain
+historical; the complete 115-byte function is now independently accepted.

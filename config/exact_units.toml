@@ -5362,3 +5362,22 @@ unit = "main-dialog-face-unput-exact"
 source = "src/main/dialog/face_unput.cpp"
 find = "_CX = 8;"
 replace = "_CX = 7;"
+
+[[units]]
+id = "main-scroll-driver-exact"
+source = "src/main/scroll/driver.cpp"
+module = "th05/scr_drv.cpp"
+segment = "SCROLL_DRIVER_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/scroll_driver_bindings.asm"
+target_start = 0xc506
+size = 115
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-scroll-driver-exact"
+source = "src/main/scroll/driver.cpp"
+find = "scroll_line += 400;"
+replace = "scroll_line += 399;"

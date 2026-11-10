@@ -38,6 +38,14 @@ remains independently accepted without double credit. See
 [Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
 `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
 
+The MAIN 115-byte scroll state machine `scroll_driver()` is now exact C++
+with original register/flag operations at `[C506,C579)`: two independent
+compilers match all raw bytes and `GRAPH_SCROLLUP` fixup `+57`; changing the
+400-line wrap to 399 fails. Recovering AX's subpixel advance and in-place
+`SUB`/`JNS` removed the previous eight extra instructions. See
+[scroll driver](../src/main/scroll/driver.md) and
+`.analysis/unit-replays/gpt-web-main-scroll-driver-115-20261110/receipt.json`.
+
 MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
 **27/27 original-register ASM bytes**, with genuine source-backed DS→ES
 7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word

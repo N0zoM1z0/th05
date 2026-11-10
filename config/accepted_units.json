@@ -2,34 +2,24 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "18cf06267aa98308847905a1bebc70ba564223e266dad0cd8b7ba78d6ad446d5",
+  "replay_receipt_sha256": "8b4c139be9d566be3e0b64cd3a3dce810fed6d079de9fd7c695e43f1092aabbf",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 80590,
-    "candidate_start": 80590,
-    "size": 74,
-    "target_sha256": "ab8ba8eac6cd7c2005bf76f259eaf2eeab28b8f07985943f7e7f52862e45108c",
-    "candidate_sha256": "d2facaaf8ff41121d586c1dd6356e4185a889cb7ea574b530416b52b414e72f0",
+    "target_start": 50438,
+    "candidate_start": 50438,
+    "size": 115,
+    "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+    "candidate_sha256": "a2a40ec075d0fac86c377e95ca5e6d032d7e1201cb26eabd869be90de4fbd240",
     "raw_exact": false,
     "target_fixups": [
-      67
+      57
     ],
     "candidate_fixups": [
-      67
+      57
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 80590,
-      "size": 74,
-      "function_symbol": "dialog_face_unput_8(unsigned int,unsigned int)",
-      "contribution_start": 80590,
-      "contribution_size": 74,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -85627,6 +85617,246 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlgfunp.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-scroll-driver-exact",
+      "entry_sha256": "1526fecfe00b4b670a7fd839edc2feed81af9f7f8ce2595c73211c394826d64c",
+      "result": {
+        "id": "main-scroll-driver-exact",
+        "entry_sha256": "1526fecfe00b4b670a7fd839edc2feed81af9f7f8ce2595c73211c394826d64c",
+        "rounds": [
+          {
+            "target_start": 50438,
+            "candidate_start": 50438,
+            "size": 115,
+            "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+            "candidate_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+            "raw_exact": true,
+            "target_fixups": [
+              57
+            ],
+            "candidate_fixups": [
+              57
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 50438,
+            "candidate_start": 50438,
+            "size": 115,
+            "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+            "candidate_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+            "raw_exact": true,
+            "target_fixups": [
+              57
+            ],
+            "candidate_fixups": [
+              57
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "314cbf9dc94a3aa2e9e56f1d6c4037004f1dbd7546ae9d0b6d81f9179ddb3144",
+            "dependency_timestamp_normalized_sha256": "46261d18deca2473e45519a60605a97528fc541c0596f41eea408a6ca3e9704f",
+            "module_name": "th05/scr_drv.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scr_drv.cpp",
+              "src/main/scroll/driver.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/scroll/driver.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "8a6325c9e2f3d28cca2ea03dda06bfbfeaba2492072a3c8c1f1e9552c507c607",
+            "dependency_timestamp_normalized_sha256": "46261d18deca2473e45519a60605a97528fc541c0596f41eea408a6ca3e9704f",
+            "module_name": "th05/scr_drv.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scr_drv.cpp",
+              "src/main/scroll/driver.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/scroll/driver.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scr_drv.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scr_drv.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/scroll_driver_bindings.asm",
+            "sha256": "024f17da9b6752b71a8af91c2db8786f6d75bcf530b3f252329b1424fae62902"
+          },
+          {
+            "path": "src/main/scroll/driver.cpp",
+            "sha256": "cddb51d804ac12dd5f27c2be2ff2d5bfbafa356ef02265df743df23553fd8e9c"
+          },
+          {
+            "path": "src/main/scroll/driver.hpp",
+            "sha256": "42c6bb12bbf21cd17bbb75510d219f74b3f6cbfb0413dee049c5bc0ba046c4bb"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/scroll_driver_bindings.asm",
+          "sha256": "024f17da9b6752b71a8af91c2db8786f6d75bcf530b3f252329b1424fae62902"
+        },
+        {
+          "path": "src/main/scroll/driver.cpp",
+          "sha256": "cddb51d804ac12dd5f27c2be2ff2d5bfbafa356ef02265df743df23553fd8e9c"
+        },
+        {
+          "path": "src/main/scroll/driver.hpp",
+          "sha256": "42c6bb12bbf21cd17bbb75510d219f74b3f6cbfb0413dee049c5bc0ba046c4bb"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8b4c139be9d566be3e0b64cd3a3dce810fed6d079de9fd7c695e43f1092aabbf",
+      "compiled_negative_control": {
+        "target_start": 50438,
+        "candidate_start": 50438,
+        "size": 115,
+        "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+        "candidate_sha256": "a2a40ec075d0fac86c377e95ca5e6d032d7e1201cb26eabd869be90de4fbd240",
+        "raw_exact": false,
+        "target_fixups": [
+          57
+        ],
+        "candidate_fixups": [
+          57
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-scroll-driver-exact",
+        "entry_sha256": "1526fecfe00b4b670a7fd839edc2feed81af9f7f8ce2595c73211c394826d64c",
+        "mutation": {
+          "unit": "main-scroll-driver-exact",
+          "source": "src/main/scroll/driver.cpp",
+          "find": "scroll_line += 400;",
+          "replace": "scroll_line += 399;"
+        },
+        "control_sha256": "014f695c65a62c4a3604e8a88d2d5d86d97b7e0d396c36ff384ad13e93b81a50",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 50438,
+          "candidate_start": 50438,
+          "size": 115,
+          "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
+          "candidate_sha256": "a2a40ec075d0fac86c377e95ca5e6d032d7e1201cb26eabd869be90de4fbd240",
+          "raw_exact": false,
+          "target_fixups": [
+            57
+          ],
+          "candidate_fixups": [
+            57
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "ccd34e0877a79e820098826af9c53a3416474139a99b3fd759e90085e24d946b",
+          "dependency_timestamp_normalized_sha256": "d3c6941bde92d663e7ecbec8aee618965e608138e61f54b95f4fd467097d4c3d",
+          "module_name": "th05/scr_drv.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/scr_drv.cpp",
+            "src/main/scroll/driver.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/scroll/driver.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/scr_drv.cpp"
         ]
       },
       "receipt_aggregate_pass": true

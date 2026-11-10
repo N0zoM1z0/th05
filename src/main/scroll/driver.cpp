@@ -1,8 +1,9 @@
-// Ordinary fixed-point scrolling semantics, original TH05 sub_10214.
+// Exact native fixed-point scrolling, original TH05 sub_10214.
 // Semantic donor: maintained TH04 src/main/scroll/driver.cpp. Original TH05
-// instructions and ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47 corroborate
-// the stage-six gate and all byte/word state widths independently.
+// instructions and ReC98 corroborate the stage-six gate, actual 8/16-bit
+// accumulator and the native signed word subtraction flags.
 #pragma option -zCSCROLL_DRIVER_TEXT -zPmain_01
+#include <dos.h>
 #include "src/main/scroll/driver.hpp"
 #pragma codeseg SCROLL_DRIVER_TEXT main_01
 
@@ -17,14 +18,22 @@ void near scroll_driver(void)
     }
 
     scroll_last_delta.v = 0;
-    if((scroll_subpixel_line.v += scroll_speed.v) >= 16) {
-        int advance = (scroll_subpixel_line.v >> 4);
-        if((scroll_line -= advance) < 0) {
-            scroll_line += 400;
+    _AL = scroll_subpixel_line.v;
+    _AL += scroll_speed.v;
+    scroll_subpixel_line.v = _AL;
+    if(_AL >= 16) {
+        _AH = 0;
+        _AX >>= 4;
+        asm {
+            sub word ptr scroll_line, ax
+            jns scroll_native_nowrap
         }
-        scroll_row_advance_current = advance;
+        scroll_line += 400;
+    scroll_native_nowrap:;
+        scroll_row_advance_current = _AL;
         scroll_subpixel_line.v &= 15;
-        scroll_last_delta.v = (advance << 4);
+        _AX <<= 4;
+        scroll_last_delta.v = _AX;
     }
     scroll_tile_ring_update();
 }
