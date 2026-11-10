@@ -104,3 +104,19 @@ raw bytes also fail. The other variants never reproduced the native
 long conditional branch at relative `+23`. No source, context, accepted Boss
 unit or target was modified. One-producer private evidence is retained under
 `.analysis/gpt-web-boss-shinki-flags-*-a/`.
+
+## 2026-11-10 real preceding add/update compilation context
+
+A fresh single native producer also compiled the full real `b6balls_add()`
+source in its original MAIN03 translation unit directly before the natural
+ball updater. The accepted allocator retains its true 81-byte start at
+`1AA7E`; the updater then starts at the exact native `1AACF`, but the real
+compiled complete updater remains **221 bytes versus native 220**, with no
+relocations and the same cloud-state short-JL/near-JMP one-byte lowering
+difference. Thus the real preceding function/source context does not fix that
+specific compiler branch choice. The untouched first producer and every source
+input are frozen at `.analysis/gpt-web-shinki-b6-real-context-a/`; source and
+linker controls did not supply an interior function byte. The experimental
+standalone file was removed after confirming it was byte-identical to that
+frozen input. The accepted 81-byte add and all following Shinki callbacks are
+unchanged, no new Boss byte is credited and no full cold replay was run.

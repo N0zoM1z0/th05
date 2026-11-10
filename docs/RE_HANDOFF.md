@@ -6,6 +6,22 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+Latest focused MAIN source recoveries complete the Spark render/update and
+Pointnum update/invalidation pairs: `sparks_update` 76 ASM instruction bytes,
+`sparks_render` 59 instructions plus one checked EVEN, `pointnums_update`
+111 instructions plus one checked EVEN, and `pointnums_invalidate` 44
+instructions. Each independent owner passes two exact TASM/TLINK producers,
+original ordered fixups and its own compiled semantic negative. **290 reviewed
+ASM instruction bytes** are newly credited across these four functions, plus
+two checked uncredited NOPs; none is recategorized as natural C++.
+
+The full original-order C++ source context for Shinki `b6balls_add` (accepted
+81) and `b6balls_update` still emits a **221-byte** updater versus target220;
+its sole discrepancy is the native four-byte near cloud `JGE` versus the
+short inverted branch plus JMP. The failed authentic context was frozen under
+`.analysis/gpt-web-shinki-b6-real-context-a/`; no accepted Shinki input was
+modified. See [Shinki diagnostics](../src/main/boss/shinki/wing_preparation.md).
+
 The complete MAIN `POINTNUMS_UPDATE` point-popup lifecycle is now exact:
 `[E1A6,E216)`, 112/112 compared bytes including the uncredited alignment
 NOP, **111 reviewed ASM instruction bytes**, two independent builds and its
