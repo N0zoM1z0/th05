@@ -1,6 +1,8 @@
 // Natural allocator semantics from original TH05 sword pool behavior.
 // ReC98 b6ba5b0a swords_add_update.asm is corroborating disassembly evidence.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
+#endif
 #include "src/main/boss/yumeko/swords_add.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 

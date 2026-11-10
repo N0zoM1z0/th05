@@ -401,3 +401,18 @@ in `op-score-code-canonical-a`. The new CODE and53 DATA sources need different
 controls, so each necessary TU group is replayed separately and all replacements
 are imported atomically. Source inclusion is CPP-local: shared headers used by
 MAINE remain unchanged, keeping that unrelated closure out of replay.
+
+## Genuine cross-segment compiler context can recover unsorted fixup order
+
+The Yumeko aimed354 and laser428 Boss callbacks were raw-exact standalone but
+failed literal original MZ relocation order. Compiling both with their original
+adjacent patterns (seven total functions, 1735 bytes) also matches every raw
+byte, but retains the wrong record grouping. The missing context is the
+original 66-byte `main_01` sword renderer plus `main_03`'s 121-byte allocator
+and 283-byte updater. Combining these genuine natural functions in one C++ TU
+reproduces both original attack fixup lists unchanged, even though the updater's
+own branch bytes remain inexact. This is evidence for **OMF buffering across
+real CODE contributions**; zero bytes, a dummy prefix, output relocation
+sorting or an altered function interface are not needed. Source is maintained
+once per function, and only the two newly exact complete callbacks receive
+fresh credit. See `src/main/boss/yumeko/attacks_context.md`.

@@ -1,5 +1,7 @@
 // Complete mixed aimed volleys, laser shootouts and twirling swords.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
+#endif
 #include "src/main/boss/yumeko/laser_swords.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 

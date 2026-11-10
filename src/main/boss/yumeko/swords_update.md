@@ -53,3 +53,35 @@ first producer/variant snapshots reside under `.analysis/gpt-web-yumeko-*`.
 The maintained 280-byte natural source, frozen accepted neighbors and original
 relocation data are unchanged. Future work should focus on genuine compiler
 control-flow lowering or original adjacent TU context, not patching jumps.
+
+## Current 283-byte context source, still not raw-exact
+
+The maintained `swords_update.cpp` now uses the source-equivalent `-O-` scoped
+candidate from `.analysis/gpt-web-yumeko-variants/reg-dx-mutate-compare.cpp`.
+It consumes the genuine DX:AX return of `PlayfieldMotion::update_seg3()`
+immediately and computes both player-relative deltas before the shot overlap
+predicate. The complete body emits **283 instruction bytes** and its correct
+relative relocation `[75]`, but the original twirl branch graph still differs.
+It earns no standalone acceptance.
+
+This precise-length ordinary function is essential real context in the same
+compiler object as the 66-byte renderer, 121-byte allocator and later Yumeko
+attacks. The follow-on aimed 354 and laser 428 callbacks now compile
+raw/ordered-exact; see `laser_swords.md`. Its `-O-` jump profile is reset to
+`-O` before later independent pattern definitions, with no code padding,
+manual branch bytes or fabricated helper. Earlier 280-byte baseline remains
+recoverable from Git history; the noopt natural source is maintained for
+continued full-function reconstruction.
+
+## Exact-size context, adjacent attack owners recovered
+
+The natural `-O-` word-result consumer in `swords_update.cpp` now serves as a
+**283-byte genuine C++ context prefix** inside `attacks_context.cpp`. It
+preserves the real original position of the next seven functions and enables
+both previously blocked 354- and 428-byte attack functions to reproduce their
+original raw code **and unsorted ordered relocations**. In the compiled combined
+cohort the updater still differs at twirl control-flow branches, so it remains
+**unaccepted** in its entirety. No subsection earns partial credit. The
+positive and negative receipts for the two newly accepted large attacks are
+linked in [the attack context review](laser_swords.md); only their affected
+standalone accepted neighbors were refreshed.

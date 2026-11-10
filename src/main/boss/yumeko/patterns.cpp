@@ -1,6 +1,8 @@
 // Natural movement and attack behavior independently recovered from original
 // TH05. ReC98 b6ba5b0a disassembly supports semantics, not source acceptance.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
+#endif
 #include "src/main/boss/yumeko/patterns.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 

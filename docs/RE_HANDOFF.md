@@ -6,6 +6,14 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+Yumeko's two large Boss attacks now pass independent exact MAIN source replays:
+aimed swords354 and laser/swords428 (782 new authored C++ bytes). Their genuine
+ten-function C++ context restores the original unsorted OMF relocation order,
+while the 283-byte sword updater remains size-exact but raw-inexact. Four
+changed accepted standalone wrappers were refreshed only in affected local
+replays. See [Yumeko attack context](../src/main/boss/yumeko/attacks_context.md)
+and [detailed attack evidence](../src/main/boss/yumeko/laser_swords.md).
+
 A complete native-ASM `CDG_FREE_ALL` loop now passes MAIN focused replay: 14
 bytes and a semantic negative, using its true same-CS FAR Pascal provider and
 BYTE-aligned original shared segment. See
@@ -103,7 +111,7 @@ before relying on old census/routing files.
 | MAIN shot collision, 399 + 210 | Current pair 419 + 233; quotient gaps remain. Selector transfer now correctly NOP/PUSH CS/CALL, far Pascal RETF8 | [Shots](../src/main/player/shot_runtime.md) |
 | Staff updater/render, 626 / 861 | Current 623 / 858. Renderer `-O-` still byte-identical 858; `-Z-` and documented source trials fail | [Staff](../src/maine/staff/full.md) |
 | Staff controller, 991 | Raw exact; ordered fixups differ. Bitmap prefix remains inexact | [Controller](../src/maine/staff/controller.md) |
-| Yumeko sword update, 283 | Current 280; genuine attack prefix remains three bytes short | [Swords](../src/main/boss/yumeko/swords_update.md) |
+| Yumeko sword update, 283 | Current 283 matches size and fixup but differs in twirl branches; both later large attacks accepted separately | [Swords](../src/main/boss/yumeko/swords_update.md) |
 | Dialog opcode, 456 | Direct 455; compiler-assembly raw 456 has wrong fixup order | [Dialog](../src/main/dialog/opcode.md) |
 | EMS boss-face preload, 154 | Raw exact; `[71,24,133,114]` order unresolved | [EMS](../src/main/ems/ems.md) |
 | Generic boss defeat/collision, 414 / 43 | Current 408 / 46; four new natural branch trials still merge all-clear calls | [Generic boss](../src/main/boss/generic.md) |

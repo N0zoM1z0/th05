@@ -1,5 +1,7 @@
 // Draw all live swords in the actual custom-entity pool.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCYUMEKO_UPDATE_MAIN01_TEXT -zPmain_01
+#endif
 #include "src/main/boss/yumeko/swords_render.hpp"
 #pragma codeseg YUMEKO_UPDATE_MAIN01_TEXT main_01
 

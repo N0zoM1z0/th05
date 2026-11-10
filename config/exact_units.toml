@@ -4993,3 +4993,43 @@ unit = "main-pmd-resident"
 source = "src/shared/sound/pmd_resident.cpp"
 find = "snd_interrupt_if_midi = 0x60;"
 replace = "snd_interrupt_if_midi = 0x61;"
+
+[[units]]
+id = "main-yumeko-aimed-swords-context"
+source = "src/main/boss/yumeko/attacks_context.cpp"
+module = "th05/yfullctx.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/yumeko_complete_context_bindings.asm"
+target_start = 0x1f088
+size = 354
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "yumeko_pattern_aimed_swords()"
+
+[[controls]]
+unit = "main-yumeko-aimed-swords-context"
+source = "src/main/boss/yumeko/aimed_swords.inl"
+find = "boss.hp - boss.phase_end_hp < 600"
+replace = "boss.hp - boss.phase_end_hp < 601"
+
+[[units]]
+id = "main-yumeko-laser-swords-context"
+source = "src/main/boss/yumeko/attacks_context.cpp"
+module = "th05/yfullctx.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/yumeko_complete_context_bindings.asm"
+target_start = 0x1f3f0
+size = 428
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "yumeko_pattern_laser_swords()"
+
+[[controls]]
+unit = "main-yumeko-laser-swords-context"
+source = "src/main/boss/yumeko/laser_swords.cpp"
+find = "boss.hp - boss.phase_end_hp < 500"
+replace = "boss.hp - boss.phase_end_hp < 501"

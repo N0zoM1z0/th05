@@ -1,5 +1,7 @@
 // Complete aimed volleys and random swords, with the native word-value aim ABI.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
+#endif
 #include "src/main/boss/yumeko/phase_patterns.hpp"
 #include "src/main/boss/yumeko/angle_call.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03

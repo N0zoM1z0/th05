@@ -22,7 +22,6 @@ Per-owner notes identify current diagnostics and source/ABI decisions.
 | Stage-session initialization | Original803 includes mandatory zero772, thirty table bytes and three uncredited relaxation NOPs213/403/595. New common SEGDEF restores transfer/fixup routing; late `-a2` still emits802 and is rejected. Correct potential credit799, not802. | [Stage session](../../src/main/runtime/stage_session_context.md) |
 | Alice foreground callback | Original140, producer150. Its complete puppet-rendering neighbor381 is separately accepted. | [Alice callback](../../src/main/boss/alice/foreground.md) |
 | Yumeko sword updater | Original283; natural280. Jump-option/control-flow alternatives fail; baseline restored. | [Current notes](../../src/main/boss/yumeko/swords_update.md) |
-| Yumeko aimed / laser-swords attacks | All354/428 raw bytes agree; original ordered fixups still differ. Genuine prefix context remains three bytes short. | [Current notes](../../src/main/boss/yumeko/laser_swords.md) |
 | Dialog opcode | Direct compiler455 against456; generated-ASM route matches456 raw bytes but reverses fixup order. | [Current notes](../../src/main/dialog/opcode.md) |
 | Shinki ball updater | Scalar updater232 against220 remains inexact. The separate386-byte wing transition is now accepted through unmodified compiler assembly output and TASM32. | [Current notes](../../src/main/boss/shinki/wing_preparation.md) |
 | Staff updater / renderer | Complete626/861 originals versus623/858; other15 family functions are accepted. | [Current notes](../../src/maine/staff/full.md) |
@@ -34,7 +33,7 @@ algorithm, copied instruction body, or inserted padding replaces a complete
 natural owner. New investigations should use these observations rather than
 repeat identical failed builds.
 
-Superseded blockers are accepted: OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
+Superseded blockers are accepted: Yumeko aimed354 and laser428 attack callbacks in their full natural compiler context (782 new authored bytes), OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
 Mima bomb control161 through the genuine [bomb family](../../src/main/player/bomb_family.md),
 frameless MAP release23, and complete bullet/pellet rendering334 through the
 documented speed option and ordinary register declarations. Their earlier

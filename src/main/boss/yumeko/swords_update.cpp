@@ -1,18 +1,19 @@
 // Full sword twirling, camera-relative motion, player collision and decay.
+#ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
+#endif
 #include <dos.h>
 #include "src/main/boss/yumeko/update.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
+#pragma option -O-
 extern "C" void pascal near swords_update(void)
 {
     sword_t near *sword;
     int i;
     sword = swords;
     for(i = 1; i < 1 + SWORD_COUNT; i++, sword++) {
-        if(sword->flag == F_FREE) {
-            continue;
-        }
+        if(sword->flag != F_FREE) {
         if(bullet_clear_time != 0 && sword->flag == F_ALIVE) {
             sword->flag = F_REMOVE;
             sword->twirl_time = 0;
@@ -46,13 +47,15 @@ extern "C" void pascal near swords_update(void)
             goto remove;
         }
         if(sword->flag != F_REMOVE) {
-            if(static_cast<unsigned int>(static_cast<subpixel_t>(_AX) -
-                    player_pos.cur.x.v + 7 * 16) <= 14 * 16 &&
-               static_cast<unsigned int>(static_cast<subpixel_t>(_DX) -
-                    player_pos.cur.y.v + 7 * 16) <= 14 * 16) {
+            _AX -= player_pos.cur.x.v;
+            _DX -= player_pos.cur.y.v;
+            if(static_cast<unsigned int>(static_cast<subpixel_t>(_AX) + 7 * 16) <= 14 * 16) {
+                _DX += 7 * 16;
+                if(static_cast<unsigned int>(_DX) <= 14 * 16) {
                 player_is_hit = 1;
                 sword->flag = F_REMOVE;
                 continue;
+                }
             }
             continue;
         }
@@ -70,6 +73,7 @@ remove:
                     sword->flag = F_FREE;
                 }
             }
+        }
         }
     }
 }

@@ -1,10 +1,11 @@
-# Aimed-sword and laser/sword recovery
+# Aimed-sword and laser/sword recovery: exact in real context
 
 Two complete MAIN bodies now reproduce all original instruction bytes:
 aimed swords `[1F088,1F1EA)`354 and laser/swords `[1F3F0,1F59C)`428.
 Their109/132 native instructions, branches and final near returns are reviewed;
-there are no instruction NOPs, tables or padding. **Neither is accepted**:
-original relocation order differs from each standalone compiler result.
+there are no instruction NOPs, tables or padding. **Both are now accepted in the complete adjacent source context**, not in
+the earlier standalone objects: the original relocation order differs from
+each isolated compiler result. Historical failures below remain useful.
 
 | Scope | Original relocation offsets | Standalone compiler |
 | --- | --- | --- |
@@ -43,7 +44,94 @@ The `-y` line-information trial also reproduces354 raw bytes but leaves the
 standalone relocation order unchanged. The separate-segment trial likewise
 does not restore the original stream.
 
-The remaining question is the genuine updater/source-context gap.
-All782 raw-matching bytes remain unknown in authored-exact progress. Joint
+The earlier gap is resolved for both attack callbacks by the full original-order
+compiler context. The sword updater itself remains raw-inexact and unaccepted. Joint
 review `.analysis/yumeko-later-root-review.json`, SHA-256
 `1099a5063c7943fba749a258d3e449b1fdf1c75c916d329b5ef33cdbda94001c`.
+
+## Accepted complete 354- and 428-byte Boss attack callbacks
+
+Both callbacks now pass independently against the pinned MAIN executable:
+`main-yumeko-aimed-swords-context` at `[1F088,1F1EA)` and
+`main-yumeko-laser-swords-context` at `[1F3F0,1F59C)`. Each has two fresh,
+raw-exact compiler/linker producers, its full original ordered MZ relocation
+stream, the complete actual compiler OMF/MAP function-public boundary and a
+rejected compiled HP-threshold negative. This adds **782 authored C++ CODE
+bytes** and two complete functions, with no filler or target-byte copying.
+
+The missing record phase came from the genuine adjacent code before the attacks.
+`attacks_context.cpp` compiles the real 66-byte sword renderer in `main_01`
+followed by `main_03`'s allocator121, scalar sword updater283,
+three-pattern family435, aimed attack354, two spreads518 and laser attack428.
+The full original source layout is 66+2139=2205 compiler bytes. The
+supplier in `main_01` changes the compiler's natural OMF LEDATA/FIXUPP record
+breaks in the later `main_03` contribution. This reproduces the **literal**
+original 25-entry ordered fixup stream of that full main-03 group; no records
+are sorted or edited. Both new whole functions match their original offsets,
+including all near calls and DS operands.
+
+The isolated candidate sword updater was 280 bytes; the genuine DX:AX
+coordinate-return consumer with local `-O-` now emits the original **283-byte
+size**, allowing correct downstream addresses and record grouping. Its own
+raw bytes still differ, so its entire function remains unaccepted. The renderer,
+allocator, three original patterns and two spreads were already accepted:
+all six prior function bodies remain the same and receive **zero new credit**.
+The only needed source changes to their standalone wrappers are conditional
+guards around translation-unit-only `-zC/-zP` pragmas. The compiler still sees
+one canonical function body per existing `.cpp` when included in the combined
+context; no alternate implementation is copied to a new helper TU.
+
+The meaningful C++ negatives are `600 -> 601` in `aimed_swords.inl` and
+`500 -> 501` in `laser_swords.cpp`. Focused receipts:
+
+- `.analysis/unit-replays/gpt-web-main-yumeko-aimed-context-20261110/receipt.json`
+- `.analysis/unit-replays/gpt-web-main-yumeko-laser-context-20261110/receipt.json`
+
+All four affected prior accepted wrappers—sword render66, sword add121,
+patterns435, spreads518—have independent focused refreshed receipts under
+`.analysis/unit-replays/gpt-web-main-yumeko-{swords-render,swords-add,patterns,spreads}-context-refresh-20261110/`.
+No full accepted-set replay was performed.
+
+## Accepted two large callbacks with real Yumeko compiler context — 2026-11-10
+
+Reconstructed the actual adjacent source/record context, not a relocation
+rewrite. The maintained `attacks_context.cpp` contains the real MAIN01
+66-byte sword renderer and the MAIN03 121-byte sword allocator, 283-byte sword
+updater, three movement/pattern routines (435 bytes), aimed sword attack (354
+bytes), two spread attacks (518 bytes), and laser/sword attack (428 bytes) in
+their original order. Each `*.cpp` remains the single canonical definition:
+its standalone `-zC/-zP` pragma is suppressed only under
+`TH05_YUMEKO_COMBINED_CONTEXT`. In the context, the ordinary compiler switch
+is restored before the later patterns. This is a real contiguous multi-function
+compiler object with 2139 MAIN03 bytes plus 66 MAIN01 bytes, rather than a
+binder-supplied CODE prefix. All foreign compiler segments, near/far interfaces,
+CS frames and ordered relocations come from the actual TCC/TLINK output.
+
+The sword updater is a maintained ordinary C++ **283-byte context provider**
+using its native DX:AX point-return words and the jump-optimization-off
+profile. Its size and relocation agree with the original, but twirl-path
+branches remain different; **none of those 283 bytes are accepted**. The other
+five previously accepted neighboring functions (121, 66, 435 and 518-byte
+units; seven functions total) were recompiled through their own standalone
+sources and retained exactness. These are not new bytes.
+
+In the full context the aim and laser-sword functions now match the original
+**354/354** and **428/428** instruction bytes *and* literal relative MZ
+relocation order. The standalone wrong streams were `[329,309,203,71]` and
+`[402,382,232,72]`; original order `[71,329,309,203]` and
+`[232,72,402,382]` is recovered naturally through OMF record boundaries.
+Each callback underwent an **independent focused normal replay** with two
+fresh deterministic producers, full MAP function boundary and complete
+OMF/LEDATA checks, and its own compiled HP gate mutation (600→601 for aimed,
+500→501 for laser/swords). Both semantic negatives were rejected. Results:
+
+- `.analysis/unit-replays/gpt-web-main-yumeko-aimed-context-20261110/receipt.json`
+- `.analysis/unit-replays/gpt-web-main-yumeko-laser-context-20261110/receipt.json`
+
+The four affected accepted neighboring units also have independent focused
+refresh receipts:
+`gpt-web-main-yumeko-{swords-render,swords-add,patterns,spreads}-context-refresh-20261110`.
+Total **new** authored C++ CODE credit is 782 bytes across two complete major
+Boss attack functions; no prefix, false updater bytes, asset data, or global
+executable completeness is counted. The full source context provides a useful
+basis for finally restoring the sword updater's twirl branch lowering.
