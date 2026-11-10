@@ -5422,3 +5422,43 @@ unit = "main-player-sparks-circle-exact"
 source = "src/main/boss/player_sparks_circle.cpp"
 find = "player_pos.cur.y, 192, 24);"
 replace = "player_pos.cur.y, 192, 25);"
+
+[[units]]
+id = "main-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/main_input_wait_context_bindings.asm"
+target_start = 0x150c8
+size = 16
+functions = 1
+function_symbol = "input_reset_sense_held()"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "_CX = 1024;"
+replace = "_CX = 1023;"
+
+[[units]]
+id = "main-input-wait-change-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/main_input_wait_context_bindings.asm"
+target_start = 0x150d8
+size = 42
+functions = 1
+function_symbol = "input_wait_for_change(int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-input-wait-change-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "if(_FLAGS & 0x40) {"
+replace = "if(_FLAGS & 0x80) {"

@@ -44,3 +44,16 @@ The independent vector/input origin review is
 `.analysis/vector-input-native-origin-review.json`, SHA-256
 `c5533ad8c6319d7b47dc06ce1772aece7ef5d7ffb55802c845d0a6ab626fb424`.
 Unchanged accepted objects and installed tool execution proof were reused.
+
+## 2026-11-11: superseded by exact 16+42-byte C++ source
+
+The earlier 18-byte ordinary FAR-call first producer above is superseded in
+MAIN by a *separate* complete original-order source file,
+[`input_wait_context.cpp`](input_wait_context.cpp), which preserves the
+actual `PUSH CS / near CALL` hardware interface. The 16-byte held scanner and
+42-byte input-change wait each pass their own complete-function two-producer
+replay, original empty fixup list and meaningful compiled negative. See
+[input wait review](input_wait_context.md) and
+`.analysis/unit-replays/gpt-web-main-input-held-wait-58-20261111/receipt.json`.
+The original ordinary `input_held.cpp` is retained as failed historical
+source and receives no credit; the newly exact source is the accepted owner.

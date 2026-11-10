@@ -50,6 +50,17 @@ without claiming historical authoring language. Receipts:
 `.analysis/gpt-web-{op,maine}-input-sense-262-a/receipt.json`.
 See [shared OP/MAINE review](../src/shared/hardware/input_sense_op_maine.md).
 
+The next two real MAIN SHARED input functions now match as original C++:
+**16/16-byte held-key double-sampler** at `[150C8,150D8)` and
+**42/42-byte UI change wait** at `[150D8,15102)`. The same maintained
+translation unit preserves the original CS-relative input reset/sense calls,
+1024-port OUT delay and BP-based VSync timeout. Both complete scopes have
+two independent Borland/TLINK producers, empty original MZ fixups, and
+individual rejected compiled controls (1024→1023; ZERO→SIGN). This fills the
+58-byte gap between the accepted 262-byte input scanner and 21-byte frame
+delay; see [input wait context](../src/shared/hardware/input_wait_context.md)
+and `.analysis/unit-replays/gpt-web-main-input-held-wait-58-20261111/receipt.json`.
+
 The full MAIN **262-byte BIOS keyboard and joystick input scanner** is newly
 accepted as a two-entry original-register SHARED ASM family at
 `[14FC2,150C8)`. Two TASM32/TLINK producers match all 262 raw bytes,
