@@ -50,6 +50,17 @@ without claiming historical authoring language. Receipts:
 `.analysis/gpt-web-{op,maine}-input-sense-262-a/receipt.json`.
 See [shared OP/MAINE review](../src/shared/hardware/input_sense_op_maine.md).
 
+The two accepted MAIN held-key/wait C++ functions are now independently
+exact in OP and MAINE too: OP `E094..E0CE` and MAINE `F208..F242`, each
+with a 16-byte held scanner and 42-byte frame/input wait. Every complete
+scope has two real native producers, empty ordered relocations and its own
+rejected 1024→1023 or ZERO→SIGN mutation; real VSync words are OP DS2E4E
+and MAINE DS1DCA. This brings the same maintainable original-register C++
+module to **174 independently credited bytes across three binaries**. See
+[input wait context](../src/shared/hardware/input_wait_context.md) and the
+`.analysis/unit-replays/gpt-web-{op,maine}-input-held-wait-58-20261111/receipt.json`
+receipts.
+
 The next two real MAIN SHARED input functions now match as original C++:
 **16/16-byte held-key double-sampler** at `[150C8,150D8)` and
 **42/42-byte UI change wait** at `[150D8,15102)`. The same maintained

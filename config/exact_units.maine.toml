@@ -1407,3 +1407,43 @@ unit = "maine-staff-controller-context"
 source = "src/maine/staff/controller_body.inl"
 find = "Palettes.colors[0].c.b = 48;"
 replace = "Palettes.colors[0].c.b = 47;"
+
+[[units]]
+id = "maine-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_input_wait_context_bindings.asm"
+target_start = 0xf208
+size = 16
+functions = 1
+function_symbol = "input_reset_sense_held()"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "maine-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "_CX = 1024;"
+replace = "_CX = 1023;"
+
+[[units]]
+id = "maine-input-wait-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_input_wait_context_bindings.asm"
+target_start = 0xf218
+size = 42
+functions = 1
+function_symbol = "input_wait_for_change(int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "maine-input-wait-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "if(_FLAGS & 0x40) {"
+replace = "if(_FLAGS & 0x80) {"

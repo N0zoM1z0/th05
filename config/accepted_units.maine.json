@@ -2,89 +2,29 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "593add927ed8eda22f17e3eb9b64e15c3474446da6ca5c2e67f1b400170a4d1c",
+  "replay_receipt_sha256": "cbed2ca0b9f2f6236dc4e67bb618ab63a8308c90145aebcf78020abf41e76a63",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58402,
-    "candidate_start": 58402,
-    "size": 991,
-    "target_sha256": "58996e9cfc4ce14e865c7c965c4d3f5676a865330aca79426f5c63a36d41591e",
-    "candidate_sha256": "93b5a71340db2f23579d6b16998dec2de1b62dbe99f7f501d7f06f815b62a348",
+    "target_start": 61960,
+    "candidate_start": 61960,
+    "size": 16,
+    "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+    "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
     "raw_exact": false,
-    "target_fixups": [
-      705,
-      340,
-      304,
-      294,
-      285,
-      276,
-      265,
-      254,
-      243,
-      232,
-      221,
-      210,
-      199,
-      188,
-      177,
-      166,
-      155,
-      148,
-      130,
-      110,
-      96,
-      70,
-      50,
-      39,
-      985,
-      971,
-      966,
-      950,
-      938
-    ],
-    "candidate_fixups": [
-      705,
-      340,
-      304,
-      294,
-      285,
-      276,
-      265,
-      254,
-      243,
-      232,
-      221,
-      210,
-      199,
-      188,
-      177,
-      166,
-      155,
-      148,
-      130,
-      110,
-      96,
-      70,
-      50,
-      39,
-      985,
-      971,
-      966,
-      950,
-      938
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 58402,
-      "size": 991,
-      "function_symbol": "staffroll_animate()",
-      "contribution_start": 54047,
-      "contribution_size": 5346,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "start": 61960,
+      "size": 16,
+      "function_symbol": "input_reset_sense_held()",
+      "contribution_start": 61960,
+      "contribution_size": 58,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "input_wait_for_change(int)"
     }
   },
   "units": [
@@ -35289,6 +35229,584 @@
           "-ml",
           "-DBINARY='E'",
           "th05/stinctx.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-input-held-original-exact",
+      "entry_sha256": "6221e3aeb8afcd61df719f06eb9f20eb775e67b1a2c6752f08b1fe81a1f2168a",
+      "result": {
+        "id": "maine-input-held-original-exact",
+        "entry_sha256": "6221e3aeb8afcd61df719f06eb9f20eb775e67b1a2c6752f08b1fe81a1f2168a",
+        "rounds": [
+          {
+            "target_start": 61960,
+            "candidate_start": 61960,
+            "size": 16,
+            "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+            "candidate_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 61960,
+              "size": 16,
+              "function_symbol": "input_reset_sense_held()",
+              "contribution_start": 61960,
+              "contribution_size": 58,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "input_wait_for_change(int)"
+            }
+          },
+          {
+            "target_start": 61960,
+            "candidate_start": 61960,
+            "size": 16,
+            "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+            "candidate_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 61960,
+              "size": 16,
+              "function_symbol": "input_reset_sense_held()",
+              "contribution_start": 61960,
+              "contribution_size": 58,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "input_wait_for_change(int)"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7f03369adcfc75e919260cc44b1a3788e9dde884a673a6f0f85d44553b5c8b7a",
+            "dependency_timestamp_normalized_sha256": "b3fa79fc6e75842060a48e5bd8226b83abf167350024654706ca0bacfac52bc9",
+            "module_name": "th05/inpwait.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/inpwait.cpp",
+              "src/shared/hardware/input_wait_context.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/hardware/input_held.hpp"
+            ]
+          },
+          {
+            "sha256": "caead504f2a6af74a0b552805414eded80abbd3bcdd1f9810ae03c34c2e8f118",
+            "dependency_timestamp_normalized_sha256": "b3fa79fc6e75842060a48e5bd8226b83abf167350024654706ca0bacfac52bc9",
+            "module_name": "th05/inpwait.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/inpwait.cpp",
+              "src/shared/hardware/input_wait_context.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/hardware/input_held.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/inpwait.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/inpwait.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_input_wait_context_bindings.asm",
+            "sha256": "0263b05a39108d4c6899d287624a790216fa97add27ac7cde0802faf6160e7be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/hardware/input_held.hpp",
+            "sha256": "18d3d5d03f39dce5947a653a3be1d59a17c0b6c0d47d3009a842c5d231d61da8"
+          },
+          {
+            "path": "src/shared/hardware/input_wait_context.cpp",
+            "sha256": "bf2ac353e394fbef8569e3fdf2ca7f90216ee2a7f454b89a56f661b431f2b3dd"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_input_wait_context_bindings.asm",
+          "sha256": "0263b05a39108d4c6899d287624a790216fa97add27ac7cde0802faf6160e7be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/hardware/input_held.hpp",
+          "sha256": "18d3d5d03f39dce5947a653a3be1d59a17c0b6c0d47d3009a842c5d231d61da8"
+        },
+        {
+          "path": "src/shared/hardware/input_wait_context.cpp",
+          "sha256": "bf2ac353e394fbef8569e3fdf2ca7f90216ee2a7f454b89a56f661b431f2b3dd"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "cbed2ca0b9f2f6236dc4e67bb618ab63a8308c90145aebcf78020abf41e76a63",
+      "compiled_negative_control": {
+        "target_start": 61960,
+        "candidate_start": 61960,
+        "size": 16,
+        "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+        "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 61960,
+          "size": 16,
+          "function_symbol": "input_reset_sense_held()",
+          "contribution_start": 61960,
+          "contribution_size": 58,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "input_wait_for_change(int)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-input-held-original-exact",
+        "entry_sha256": "6221e3aeb8afcd61df719f06eb9f20eb775e67b1a2c6752f08b1fe81a1f2168a",
+        "mutation": {
+          "unit": "maine-input-held-original-exact",
+          "source": "src/shared/hardware/input_wait_context.cpp",
+          "find": "_CX = 1024;",
+          "replace": "_CX = 1023;"
+        },
+        "control_sha256": "263bcdbc9644432b8f8328881d4ebb6f2e0fd9654fcc62311e24e9a4f84eaf4e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 61960,
+          "candidate_start": 61960,
+          "size": 16,
+          "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+          "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 61960,
+            "size": 16,
+            "function_symbol": "input_reset_sense_held()",
+            "contribution_start": 61960,
+            "contribution_size": 58,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "input_wait_for_change(int)"
+          }
+        },
+        "omf": {
+          "sha256": "de98c0e12635a0cbdf0212e3b4a97309c810235ade17ecf704f140d40536b070",
+          "dependency_timestamp_normalized_sha256": "520fd3dd6c35c957958871c751911cf3f44f4edd45fdbf7f5dbae02b90aa62e4",
+          "module_name": "th05/inpwait.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/inpwait.cpp",
+            "src/shared/hardware/input_wait_context.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/hardware/input_held.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/inpwait.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-input-wait-original-exact",
+      "entry_sha256": "bac0f25a60e2528e9001e0ec743bd660507fa881145e52e196ad6631feb2bda1",
+      "result": {
+        "id": "maine-input-wait-original-exact",
+        "entry_sha256": "bac0f25a60e2528e9001e0ec743bd660507fa881145e52e196ad6631feb2bda1",
+        "rounds": [
+          {
+            "target_start": 61976,
+            "candidate_start": 61976,
+            "size": 42,
+            "target_sha256": "0afe85f6de49220f0efd9c8e78e6f38f1a98b2156d44579c5b3aa68817b7d6be",
+            "candidate_sha256": "0afe85f6de49220f0efd9c8e78e6f38f1a98b2156d44579c5b3aa68817b7d6be",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 61976,
+              "size": 42,
+              "function_symbol": "input_wait_for_change(int)",
+              "contribution_start": 61960,
+              "contribution_size": 58,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 61976,
+            "candidate_start": 61976,
+            "size": 42,
+            "target_sha256": "0afe85f6de49220f0efd9c8e78e6f38f1a98b2156d44579c5b3aa68817b7d6be",
+            "candidate_sha256": "0afe85f6de49220f0efd9c8e78e6f38f1a98b2156d44579c5b3aa68817b7d6be",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 61976,
+              "size": 42,
+              "function_symbol": "input_wait_for_change(int)",
+              "contribution_start": 61960,
+              "contribution_size": 58,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7f03369adcfc75e919260cc44b1a3788e9dde884a673a6f0f85d44553b5c8b7a",
+            "dependency_timestamp_normalized_sha256": "b3fa79fc6e75842060a48e5bd8226b83abf167350024654706ca0bacfac52bc9",
+            "module_name": "th05/inpwait.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/inpwait.cpp",
+              "src/shared/hardware/input_wait_context.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/hardware/input_held.hpp"
+            ]
+          },
+          {
+            "sha256": "caead504f2a6af74a0b552805414eded80abbd3bcdd1f9810ae03c34c2e8f118",
+            "dependency_timestamp_normalized_sha256": "b3fa79fc6e75842060a48e5bd8226b83abf167350024654706ca0bacfac52bc9",
+            "module_name": "th05/inpwait.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/inpwait.cpp",
+              "src/shared/hardware/input_wait_context.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/hardware/input_held.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/inpwait.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/inpwait.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_input_wait_context_bindings.asm",
+            "sha256": "0263b05a39108d4c6899d287624a790216fa97add27ac7cde0802faf6160e7be"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/hardware/input_held.hpp",
+            "sha256": "18d3d5d03f39dce5947a653a3be1d59a17c0b6c0d47d3009a842c5d231d61da8"
+          },
+          {
+            "path": "src/shared/hardware/input_wait_context.cpp",
+            "sha256": "bf2ac353e394fbef8569e3fdf2ca7f90216ee2a7f454b89a56f661b431f2b3dd"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_input_wait_context_bindings.asm",
+          "sha256": "0263b05a39108d4c6899d287624a790216fa97add27ac7cde0802faf6160e7be"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/hardware/input_held.hpp",
+          "sha256": "18d3d5d03f39dce5947a653a3be1d59a17c0b6c0d47d3009a842c5d231d61da8"
+        },
+        {
+          "path": "src/shared/hardware/input_wait_context.cpp",
+          "sha256": "bf2ac353e394fbef8569e3fdf2ca7f90216ee2a7f454b89a56f661b431f2b3dd"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "cbed2ca0b9f2f6236dc4e67bb618ab63a8308c90145aebcf78020abf41e76a63",
+      "compiled_negative_control": {
+        "target_start": 61960,
+        "candidate_start": 61960,
+        "size": 16,
+        "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+        "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 61960,
+          "size": 16,
+          "function_symbol": "input_reset_sense_held()",
+          "contribution_start": 61960,
+          "contribution_size": 58,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "input_wait_for_change(int)"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-input-held-original-exact",
+        "entry_sha256": "6221e3aeb8afcd61df719f06eb9f20eb775e67b1a2c6752f08b1fe81a1f2168a",
+        "mutation": {
+          "unit": "maine-input-held-original-exact",
+          "source": "src/shared/hardware/input_wait_context.cpp",
+          "find": "_CX = 1024;",
+          "replace": "_CX = 1023;"
+        },
+        "control_sha256": "263bcdbc9644432b8f8328881d4ebb6f2e0fd9654fcc62311e24e9a4f84eaf4e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 61960,
+          "candidate_start": 61960,
+          "size": 16,
+          "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
+          "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 61960,
+            "size": 16,
+            "function_symbol": "input_reset_sense_held()",
+            "contribution_start": 61960,
+            "contribution_size": 58,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "input_wait_for_change(int)"
+          }
+        },
+        "omf": {
+          "sha256": "de98c0e12635a0cbdf0212e3b4a97309c810235ade17ecf704f140d40536b070",
+          "dependency_timestamp_normalized_sha256": "520fd3dd6c35c957958871c751911cf3f44f4edd45fdbf7f5dbae02b90aa62e4",
+          "module_name": "th05/inpwait.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/inpwait.cpp",
+            "src/shared/hardware/input_wait_context.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/hardware/input_held.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/inpwait.cpp"
         ]
       },
       "target_view": {

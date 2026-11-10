@@ -955,3 +955,43 @@ unit = "op-score-decode-original-al"
 source = "src/shared/score/decode.cpp"
 find = "value ^= _AL; \\"
 replace = "value += _AL; \\"
+
+[[units]]
+id = "op-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_input_wait_context_bindings.asm"
+target_start = 0xe094
+size = 16
+functions = 1
+function_symbol = "input_reset_sense_held()"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "op-input-held-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "_CX = 1024;"
+replace = "_CX = 1023;"
+
+[[units]]
+id = "op-input-wait-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+module = "th05/inpwait.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_input_wait_context_bindings.asm"
+target_start = 0xe0a4
+size = 42
+functions = 1
+function_symbol = "input_wait_for_change(int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "op-input-wait-original-exact"
+source = "src/shared/hardware/input_wait_context.cpp"
+find = "if(_FLAGS & 0x40) {"
+replace = "if(_FLAGS & 0x80) {"

@@ -44,3 +44,34 @@ compiled semantic negative. **58 C++-owned CODE bytes** are newly credited.
 Earlier first-producer 18-byte failures in `input_held.md` are historical and
 not counted; none of the three accepted BIOS scanners is recompiled or
 credited again.
+
+## 2026-11-11: OP and MAINE also source-exact
+
+The same maintained original-order C++ module was independently compiled
+for **OP** and **MAINE**, with only the genuine source-free physical segment
+and DATA bindings changed. Both full functions are separately accepted in
+each artifact, making the complete held-key and waiting code source-exact
+across all three TH05 binaries:
+
+| Artifact | Held scanner (16) | Input change wait (42) | CS / DS | VSync word |
+| --- | --- | --- | --- | --- |
+| MAIN | `150C8..150D8` | `150D8..15102` | `14AB` / `209D` | DS267A |
+| OP | `E094..E0A4` | `E0A4..E0CE` | `D30` / `EFE` | DS2E4E |
+| MAINE | `F208..F218` | `F218..F242` | `E80` / `1011` | DS1DCA |
+
+For each of OP and MAINE both functions match every original byte and their
+original empty relocation lists in **two fresh native Borland/TLINK rounds**.
+Each additionally rejects its own compiled source mutation (1024→1023
+settling delay and ZERO→SIGN CPU timeout flag). Their foreign reset/sense
+entrypoints remain at OP `DF8E/DF96` and MAINE `F102/F10A`, exactly matching
+the separately accepted 262-byte full BIOS input scanners; the source never
+copies, reimplements or credits those scanners a second time. No synthetic
+padding, unknown keyboard value, OMF rewrite, changed far ABI or initialized
+provider payload is used.
+
+Focused accepted receipts:
+`.analysis/unit-replays/gpt-web-op-input-held-wait-58-20261111/receipt.json` and
+`.analysis/unit-replays/gpt-web-maine-input-held-wait-58-20261111/receipt.json`.
+Thus the **three binaries collectively gain 174 exact authored C++ bytes**,
+without reclassifying the separately accepted 783 original-register ASM
+instruction bytes of the three BIOS scanner families.
