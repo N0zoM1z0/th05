@@ -43,3 +43,40 @@ The complete first-size gate fails; no second producer or negative runs.
 The source is restored byte-for-byte.
 Together with the stage initializer follow-up, this confirms that the item
 recovery's genuine source context cannot be replaced by this spelling alone.
+
+## 2026-11-10 physical dialog table alignment follow-up
+
+The authentic `dialog_op()` C++ still compiles to **455 rather than 456 bytes**.
+The direct Turbo C++ object already preserves all ten **individual native
+ordered** relocation sites, but omits the natural CODE switch-table zero at
+function-relative +425. The generated unedited C++ assembly contains
+`db 1 dup (?)` in the *standalone* source and TASM32 then reproduces 456 raw
+bytes; its MZ fixup order is **ascending** rather than the original reverse
+record order. These failures are independent and cannot be conflated.
+
+New actual cold-source experiments tried the complete 106-byte preceding
+`dialog_box_wipe()`/fade implementation before the opcode and also the real
+270-byte following `dialog_run()` in a shared source. Both emitted the same
+native-ordered opcode fixups but a **455-byte** function. The joined
+106+455+270 source generated **831 bytes** rather than native 832. Compiling
+the authentic maintained three-function `runtime.cpp` via the supported
+unmodified `TCC -S → TASM32` pipeline likewise emitted **831 bytes**; the
+opcode table lacked a `db 1 dup (?)` declaration *within that combined
+translation unit*. The whole-group TASM relocation records were ascending
+instead of the native grouping, so no whole-code credit is possible.
+
+Additional isolated, real Turbo C++ compiler-option trials show `-a1` or
+`-a` after the packed header, and `-a1` before it, preserve the wrong
+455-byte extent. Both `-a4` and `-a8` are **invalid pragmas** in installed
+Turbo C++ 4.02; setting `-a2` before the packed runtime header breaks its
+intentional record layout assertion, so that source is invalid. These are
+failed observations, not a recommendation to override game ABI types.
+
+Frozen first-producer inputs and MAP/OMF/MZ evidence are kept under
+`.analysis/gpt-web-dialog-box-opcode-{b,run-a}/`,
+`.analysis/gpt-web-dialog-align-*-b/` and
+`.analysis/gpt-web-dialog-runtime-compilerasm-a/`. All current accepted
+surrounding Box/Runner source is unchanged. A genuine different original
+compiler-context layout, not source-visible fake zero-byte instructions,
+patched MZ data or sorted fixups, is still required before claiming an exact
+456-byte opcode function.

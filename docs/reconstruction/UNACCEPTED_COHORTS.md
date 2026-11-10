@@ -7,9 +7,9 @@ Per-owner notes identify current diagnostics and source/ABI decisions.
 
 | Candidate | Retained observation | Evidence |
 | --- | --- | --- |
-| General BB loader | Native 55; natural named-parameter C++ emits 56 with a BP frame and first allocator fixup 10 versus 7. Full far filename and segment return ABI preserved; no second/negative or credit. | [Loader](../../src/main/formats/bb_load.md) |
-| Near vector helper | Native 55 plus a separate unknown EVEN byte; wide-local C++ 106, word-domain candidate 92. No ASM promotion. | [Vector](../../src/shared/math/vector2_near.md) |
-| Scroll coordinate helper | Native 40; ordinary integer candidate 47, inline-helper form 51. Source 47 restored; corrected empty SEGDEF binding verified by relinking its existing object. | [Coordinate](../../src/main/scroll/coordinates.md) |
+| General BB loader C++ | Ordinary 56-byte C++ remains inexact versus native 55; the full 55-byte function is independently **accepted as reviewed original-register ASM**, not C++ credit. | [Loader](../../src/main/formats/bb_load.md) |
+| Near vector C++ | Ordinary 92/106-byte C++ remains inexact; the complete 55-byte native function is now **accepted as reviewed ASM**. Its separate following EVEN byte is not counted. | [Vector](../../src/shared/math/vector2_near.md) |
+| Scroll coordinate C++ | Ordinary 47/51-byte C++ remains inexact; the complete 40-byte function is now **accepted as reviewed ASM**. | [Coordinate](../../src/main/scroll/coordinates.md) |
 | Dialog opcode | Direct compiler455 against456; generated-ASM route matches456 raw bytes but reverses fixup order. | [Current notes](../../src/main/dialog/opcode.md) |
 
 Notes distinguish semantic corrections from actual compilations.
