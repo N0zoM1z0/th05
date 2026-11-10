@@ -162,3 +162,24 @@ requires *two* identical separate all-clear calls without duplicating
 are untouched. Private real trial roots:
 `.analysis/gpt-web-boss-defeat-calls-*-a/` and
 `.analysis/gpt-web-defeat-option-*-a/`.
+
+## 2026-11-10 original bonus-call inline-language trial
+
+The 414-byte `boss_defeat_update` remains unaccepted. A fresh isolated
+Borland C++ producer again confirms the baseline 408-byte function, with
+ordered fixups `[389,359,345,331,254,33]` rather than original
+`[395,365,351,337,254,33]`. Five further genuinely source-level attempts
+replaced only the Extra and/or last-stage *original near all-clear call* with
+Turbo C++ inline `asm { call stage_allclear_bonus; }`, preserving the same
+zero-argument near-Pascal side effect. Turbo C++ 4.02 rejected those function
+operands with `Invalid combination of opcode and operands`; no compiling
+alternate was produced. This disproves the simplistic direct inline-ASM
+fallback without deriving an original symbol-level assembler operand.
+
+Trial inputs and compiler error logs live in
+`.analysis/gpt-web-defeat-inline-*-a/` with source copies
+`.analysis/gpt-web-defeat-inline-*.cpp`. No compiler barrier, target byte,
+relocation reordering, fake state mutation or change to already accepted six
+Boss helpers was added. The natural duplicated all-clear behavior is still
+correct but gets merged by Turbo C++; further work must reconstruct original
+branch lowering or a genuine original assembler-language source interface.

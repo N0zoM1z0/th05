@@ -100,3 +100,25 @@ relocation stream and the 354/428-byte accepted Boss attacks remain unchanged.
 The remaining difference is two twirl branches at updater relative `+5E` and
 `+72`, which must naturally target the loop tail rather than local skip/jump
 pairs. No partial credit or manual instruction repair is claimed.
+
+## 2026-11-10 native-tail twirl branch variants
+
+Following exact recovery of the adjacent MAINE Staff source, twelve further
+source-level twirl variants were compiled in the **real original-order Yumeko
+attack translation unit**, not against a fabricated byte prefix. They tested
+negative-parity fall-through, genuine empty `if/else`, early `continue`,
+conditional loop-tail `goto`, a single `do/while` exit, and mixed semantic
+branch/jump forms. The normal complete original updater remains 283 bytes.
+The new coherent source lengths were 2139 at baseline, otherwise 2141–2149
+bytes rather than the original 2139. None reproduced the native two near
+conditional branches from updater-relative `+5E` and `+72` to the loop tail.
+The extra local short branches and jumps are still produced by the original
+compiler; there is no trustworthy native-authored C++ exactness claim.
+
+All twelve literal trial sources and first-producer MAP/OMF/MZ outputs are
+frozen under `.analysis/gpt-web-yumeko-twirl-else-*.cpp` and
+`.analysis/gpt-web-yumeko-twirl-else-*-a/`. The canonical updater and both
+accepted adjacent 354/428-byte major Boss attack owners were **not modified**;
+no acceptance receipt or partial CODE credit was created. The failed direct
+loop-tail trials are evidence for further compiler-control-flow recovery, not
+permission to insert a missing jump byte into generated output.
