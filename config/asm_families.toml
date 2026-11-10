@@ -1869,3 +1869,30 @@ semantic_inputs = ["src/main/player/shot_runtime.hpp"]
 [units.negative]
 find = "mov bx, HITSHOT_BRAKE_DIVISOR"
 replace = "mov bx, (HITSHOT_BRAKE_DIVISOR - 1)"
+
+[[units]]
+id = "main-input-sense-original-asm"
+artifact = "main"
+source = "src/shared/hardware/input_sense.asm"
+types = "src/shared/hardware/input_sense_types.inc"
+symbols = "probes/units/input_sense_symbols.inc"
+bindings = "probes/units/main_input_sense_asm_trial_bindings.asm"
+notes = "src/shared/hardware/input_sense.md"
+target_start = 0x14fc2
+size = 262
+segment = "SHARED"
+group = "(none)"
+cs_base = 0x14ab0
+instruction_nops = [261]
+fixups = [251]
+tables = []
+native_review_sha256 = "549e7bdc51fcbffdf9a6f8e83cadc1238d0c355266e4589b4774c88435fe1d33"
+target_scope_sha256 = "e8715135ec789f3647fae89f42fce0023be14ab29f4529868aaff59de0aadadf"
+semantic_inputs = ["src/shared/hardware/input_held.hpp"]
+[units.publics]
+"input_reset_sense()" = 0
+"input_sense()" = 8
+"input_sense_end" = 262
+[units.negative]
+find = "mov ah, 2"
+replace = "mov ah, 3"

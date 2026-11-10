@@ -52,3 +52,37 @@ vendor search and an independent semantic review of the maintained source.
 No assembler, linker, Ghidra session or target runtime was run for this owner.
 There is no live exact proposal, binder, producer or acceptance receipt.
 The adjacent [held-input C++ failure](input_held.md) remains separate evidence.
+
+## 2026-11-11: source-backed complete MAIN keyboard/joystick scanner accepted
+
+The *entire* original two-entry SHARED family is now accepted for MAIN at
+`[14FC2,150C8)` as `main-input-sense-original-asm`: **262/262 original
+bytes**, 261 decoded instruction bytes and one original trailing `EVEN` NOP
+at +261. Both real TASM32/TLINK producers reproduce the full raw scope,
+original single far `JS_SENSE` relocation at +251, native shared code frame
+14AB and DGROUP data frame 209D. The compiled semantic negative changes the
+original PC-98 BIOS shift-status `MOV AH,2` to `MOV AH,3` and is rejected.
+
+The source is the original-register implementation in
+`src/shared/hardware/input_sense.asm`, whose *complete* TH05 key map,
+low/high input byte OR masks, independent numpad diagonals, BIOS INT18
+shift-mask logic, and joystick conditional callback are corroborated by the
+pinned ReC98 `th04/hardware/input_s.asm` (`GAME=5`). A separate full native
+review decodes all 78 instructions, confirms both live public entrypoints
+at relative 0 and 8, and distinguishes the real reset-entry fallthrough
+from an invented separately returning helper. The symbol-only binder anchors
+real memory globals at DS03D0/2646/3064/3066 and JS_SENSE at 0000:367A;
+no firmware bytes, joystick body, initialized DATA or BSS are supplied.
+
+This is an *exact reviewed original-register ASM reconstruction*, not proof
+that the game authors originally wrote the complete body in assembly rather
+than C or a mixture. The earlier origin cautions above remain valid: the
+known hand-optimized eight-byte reset prefix **by itself** would not justify
+whole-body authorship. Here the independent **full** semantic source review,
+complete 262-byte native comparison, all original relocation/entry boundaries,
+and compiled negative provide the additional evidence for source-backed ASM
+ownership. Credit is 261 assembly instruction bytes; the one NOP compares
+but earns no authored credit. No C++ or vendor source authorship is inferred.
+
+Strict receipt:
+`.analysis/gpt-web-main-input-sense-262-asm-c/receipt.json`.

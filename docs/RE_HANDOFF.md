@@ -38,6 +38,17 @@ remains independently accepted without double credit. See
 [Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
 `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
 
+The full MAIN **262-byte BIOS keyboard and joystick input scanner** is newly
+accepted as a two-entry original-register SHARED ASM family at
+`[14FC2,150C8)`. Two TASM32/TLINK producers match all 262 raw bytes,
+original far JS_SENSE fixup +251, real SHARED/DS frames, and reject a
+compiled BIOS shift-status 2→3 mutation. Its 261 decoded instruction bytes
+are credited; the original trailing EVEN NOP is not. Historical authoring
+language remains uncertain: this is reviewed source-backed register assembly,
+not proven original handwritten authorship. See
+[input sense review](../src/shared/hardware/input_sense.md) and
+`.analysis/gpt-web-main-input-sense-262-asm-c/receipt.json`.
+
 The MAIN complete **204-byte tile-row scroll ring update** at
 `[C43A,C506)` is now exact source-backed C++ with authentic register/segment
 copy operations: two independent Borland/TLINK builds match all bytes,
