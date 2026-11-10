@@ -1683,3 +1683,33 @@ semantic_inputs = ["src/main/pointnum/lifecycle.hpp"]
 [units.negative]
 find = "POINTNUM_INVALIDATE_HEIGHT equ POINTNUM_H"
 replace = "POINTNUM_INVALIDATE_HEIGHT equ (POINTNUM_H + 1)"
+
+[[units]]
+id = "main-sparks-scene-render"
+artifact = "main"
+source = "src/main/effects/spark/scene_render.asm"
+types = "src/main/effects/spark/update_types.inc"
+symbols = "probes/units/spark_scene_render_symbols.inc"
+bindings = "probes/units/spark_scene_render_bindings.asm"
+notes = "src/main/effects/spark/scene_render.md"
+target_start = 0xe0d2
+size = 60
+segment = "SPARK_SCENE_RENDER_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "71dd96b95f8756ee85114d9e05192a29440bbe69845fd58bc5d7333174b7ed8c"
+target_scope_sha256 = "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da"
+semantic_inputs = ["src/main/effects/spark/lifecycle.hpp"]
+[units.publics]
+"_sparks_render" = 0
+"sparks_scene_render_end" = 60
+[units.negative]
+find = "SPARK_RENDER_COLOR equ 12"
+replace = "SPARK_RENDER_COLOR equ 13"
+[[units.uncredited]]
+offset = 59
+size = 1
+kind = "alignment"

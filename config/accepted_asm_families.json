@@ -12855,6 +12855,233 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "9bbd529ce541dcb54e1ec99fe9fa385c4cd7e3896bd3937156a4822235652a7a"
+    },
+    "main-sparks-scene-render": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-sparks-scene-render",
+        "artifact": "main",
+        "source": "src/main/effects/spark/scene_render.asm",
+        "types": "src/main/effects/spark/update_types.inc",
+        "symbols": "probes/units/spark_scene_render_symbols.inc",
+        "bindings": "probes/units/spark_scene_render_bindings.asm",
+        "notes": "src/main/effects/spark/scene_render.md",
+        "target_start": 57554,
+        "size": 60,
+        "segment": "SPARK_SCENE_RENDER_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "71dd96b95f8756ee85114d9e05192a29440bbe69845fd58bc5d7333174b7ed8c",
+        "target_scope_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+        "semantic_inputs": [
+          "src/main/effects/spark/lifecycle.hpp"
+        ],
+        "publics": {
+          "_sparks_render": 0,
+          "sparks_scene_render_end": 60
+        },
+        "negative": {
+          "find": "SPARK_RENDER_COLOR equ 12",
+          "replace": "SPARK_RENDER_COLOR equ 13"
+        },
+        "uncredited": [
+          {
+            "offset": 59,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/spark_scene_render_bindings.asm",
+          "sha256": "1d1a8bab37643a5cd06bcdcabf8d4769fcf8bdd09ab6a436b869459019bb14e6"
+        },
+        {
+          "path": "probes/units/spark_scene_render_symbols.inc",
+          "sha256": "b37900d4d671e84571bcf33b9fca286c7150e77bb2813f895c5f41e7ed8b9837"
+        },
+        {
+          "path": "src/main/effects/spark/lifecycle.hpp",
+          "sha256": "34524c741e77c27ccbc9477a4a9bd26b4ffd20bd6432f3e67c66b41732d77619"
+        },
+        {
+          "path": "src/main/effects/spark/scene_render.asm",
+          "sha256": "9f119e156cc988598ac75dce8412bb9699fb95697bfe73d34b1c7a48b1c08d21"
+        },
+        {
+          "path": "src/main/effects/spark/update_types.inc",
+          "sha256": "05cc112a4e010a32e6756f2afe1a44bd5ae492b53b2ca9e40b1064dcabc367fd"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 59,
+        "dispatch-table": 0,
+        "alignment": 1,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 57554,
+            "candidate_start": 57554,
+            "size": 60,
+            "target_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+            "candidate_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SPARK_SCENE_RENDER_TEXT",
+            "size": 60,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 60,
+                "sha256": "fab47bd19025bb14ee52c5798535fd56b3819b47ec02bf52aa0c709ea1d14f6c"
+              }
+            ]
+          },
+          "object_sha256": "3dbdc355369286dae4e2730478c5393ec30e1a6a942065667a6111077f24e27c",
+          "object_normalized_sha256": "b960f4b903404bb027e9ff7c18ba0658f6d9b41b97cafb4866934f014da37e94",
+          "bindings_sha256": "7dd7a2f1f72976e2cdf08f0d6ff5748f7772189051addb7446b651d128c19b8c",
+          "bindings_normalized_sha256": "bbe5ecd34189012032b000572205afa12922eab3bf5e45f1c4e2e4d86db8dc1b",
+          "map_sha256": "bac1edf93951d0cdcdfce80aad7d6499b464b9eaa58361cc74f18e70a4736f62",
+          "mz_sha256": "d7f18aee17c3d4bba7a10af87eb3c18ad1d28fe412ce79d251f0dcb6efaaa035",
+          "commands_sha256": "681d558f4fd619967024b17ba0a3f6358295dfb312afecc92ce315866cc5ac41"
+        },
+        {
+          "comparison": {
+            "target_start": 57554,
+            "candidate_start": 57554,
+            "size": 60,
+            "target_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+            "candidate_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SPARK_SCENE_RENDER_TEXT",
+            "size": 60,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 60,
+                "sha256": "fab47bd19025bb14ee52c5798535fd56b3819b47ec02bf52aa0c709ea1d14f6c"
+              }
+            ]
+          },
+          "object_sha256": "c06459a4e3bef4bfde082837d79e89965a2dc4b564da1c5eae9e8d1d5784dd26",
+          "object_normalized_sha256": "b960f4b903404bb027e9ff7c18ba0658f6d9b41b97cafb4866934f014da37e94",
+          "bindings_sha256": "160345862f0872272c0deaee834ca584cb354ea5a5a2ccd29f0a5c010abcdee7",
+          "bindings_normalized_sha256": "bbe5ecd34189012032b000572205afa12922eab3bf5e45f1c4e2e4d86db8dc1b",
+          "map_sha256": "bac1edf93951d0cdcdfce80aad7d6499b464b9eaa58361cc74f18e70a4736f62",
+          "mz_sha256": "d7f18aee17c3d4bba7a10af87eb3c18ad1d28fe412ce79d251f0dcb6efaaa035",
+          "commands_sha256": "681d558f4fd619967024b17ba0a3f6358295dfb312afecc92ce315866cc5ac41"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 57554,
+          "candidate_start": 57554,
+          "size": 60,
+          "target_sha256": "460ead548e32015023696e2d8cf433c5ea0a92d0a4adb799de91237e636fd5da",
+          "candidate_sha256": "5d60ab84c4073994928d6845bc3a60425ff8360056d577909ab86f4f0c261c5e",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SPARK_SCENE_RENDER_TEXT",
+          "size": 60,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 60,
+              "sha256": "21677a3c15b0245e53148ae109a1c6b89225361b073f13cb9277f159a0cbf73e"
+            }
+          ]
+        },
+        "object_sha256": "58791035c53e29c4432f541162055112fb1dffde6c26a52a0c2868f00b29ac8d",
+        "object_normalized_sha256": "11de47f7dd54baac329a9250c4b2283ae6d089f66d1883a5a6dae91b89591cd1",
+        "bindings_sha256": "160345862f0872272c0deaee834ca584cb354ea5a5a2ccd29f0a5c010abcdee7",
+        "bindings_normalized_sha256": "bbe5ecd34189012032b000572205afa12922eab3bf5e45f1c4e2e4d86db8dc1b",
+        "map_sha256": "bac1edf93951d0cdcdfce80aad7d6499b464b9eaa58361cc74f18e70a4736f62",
+        "mz_sha256": "c0e9181a287edb0e8903019cfd3a8fc0114101577fe56765b9016a3c82e4b0a3",
+        "commands_sha256": "681d558f4fd619967024b17ba0a3f6358295dfb312afecc92ce315866cc5ac41"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "e9b9d08eb128a5f6dcf6364e1fd31cebb6a162ec1b354ce0b0fd5acf30322c1b"
     }
   }
 }
