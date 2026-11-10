@@ -6,6 +6,14 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The MAIN `dialog_face_unput_8()` face restorer is now **74/74 bytes** exact,
+with the original far EGC fixup `+67`, two independent compiler/linker
+builds and a rejected 8→7 inner-word mutation. The native `MOV BX,AX`
+source-level register operation completes the third consecutive dialog
+hardware function. Together with accepted 88+56 predecessors, 218 bytes
+at `[13A3E,13B18)` have complete independent exact ownership. The
+456-byte dialog opcode remains unaccepted. See [dialog graphics](../src/main/dialog/runtime.md).
+
 The MAIN `playfield_copy_front_to_back()` EGC hardware renderer is now
 **56/56 bytes exact** at `13A96..13ACE`, with original fixup `+51`,
 two independent compiler/linker rounds and a rejected 24→23 inner-word

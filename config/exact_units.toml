@@ -5342,3 +5342,23 @@ unit = "main-dialog-interpage-copy-exact"
 source = "src/main/dialog/interpage_copy.cpp"
 find = "_CX = 24;"
 replace = "_CX = 23;"
+
+[[units]]
+id = "main-dialog-face-unput-exact"
+source = "src/main/dialog/face_unput.cpp"
+module = "th05/dlgfunp.cpp"
+segment = "DIALOG_RUN_TEXT"
+wrapper_options = "-zCDIALOG_RUN_TEXT -zPmain_01"
+bindings_source = "probes/units/dialog_face_unput_bindings.asm"
+target_start = 0x13ace
+size = 74
+functions = 1
+function_symbol = "dialog_face_unput_8(unsigned int,unsigned int)"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-dialog-face-unput-exact"
+source = "src/main/dialog/face_unput.cpp"
+find = "_CX = 8;"
+replace = "_CX = 7;"

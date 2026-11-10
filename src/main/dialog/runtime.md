@@ -108,3 +108,27 @@ source-level inline hardware assembly, not a target-byte copy. Receipt:
 The 88-byte dialog box renderer and 56-byte interpage copy now have
 separate complete owners. Face unput (74) and dialog opcode (456) remain
 unaccepted; adjacent already-accepted C++ scopes are unchanged.
+
+## 2026-11-10: exact 74-byte face restoration
+
+`dialog_face_unput_8(unsigned int,unsigned int)` is accepted as a complete
+near-Pascal function at `[13ACE,13B18)`, with **74/74 original bytes**, its
+single actual far `EGC_OFF` relocation at relative `67`, and two independent
+Turbo C++/TLINK builds. The 8→7 word-count compiled negative is rejected.
+
+The original ReC98 hardware flow restores the face region from the opposite
+PC-98 VRAM page using ES computed from top (`A800h + 5*top`), DI starting
+at `27B0h + left/8`, and the EGC page-switch port. Source-level 16-bit
+register operations preserve the eight-word inner `LOOP`, signed DI stride
+and the final far EGC shutdown. The initial diagnostic already had the
+correct 74-byte extent but Borland chose `MOV BX,AX`'s opposite encoding
+(`8B D8`). One actual inline register assignment `asm { mov bx, ax; }`
+restores the native `89 C3` without modifying any linked bytes.
+
+The preceding 88-byte box tile renderer and 56-byte EGC interpage copier
+are also independently accepted; **218 consecutive original dialog hardware
+bytes** now have complete source ownership. The following 106-byte box-wipe/
+fade owner remains accepted, while `dialog_op()` (456 bytes) still needs the
+original compiler switch-table alignment and OMF record partition.
+
+Receipt: `.analysis/unit-replays/gpt-web-main-dialog-face-unput-74-20261110/receipt.json`.
