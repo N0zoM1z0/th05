@@ -2601,7 +2601,7 @@ code_data_ranges = [{offset = 450, size = 10, kind = "compiler-switch-table"}, {
 [[controls]]
 id = "new-game-dream-initial"
 unit = "main-gameplay-session-init"
-source = "src/main/runtime/gameplay_session_init.cpp"
+source = "src/main/runtime/gameplay_session_init_body.inl"
 find = "dream = 1;"
 replace = "dream = 2;"
 
@@ -5192,6 +5192,6 @@ code_data_ranges = [{offset = 773, size = 30, kind = "compiler-switch-table"}]
 
 [[controls]]
 unit = "main-stage-session-init-exact"
-source = "src/main/runtime/stage_complete_context.cpp"
+source = "src/main/runtime/stage_session_init_body.inl"
 find = "pellet_bottom_col = 9;"
 replace = "pellet_bottom_col = 8;"

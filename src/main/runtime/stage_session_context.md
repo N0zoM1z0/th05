@@ -111,3 +111,16 @@ bodies, packed record definitions, callbacks, flags and game behavior remain
 unchanged; this is an original compiler-context recovery, not hand-emitted
 ASM or target-byte patching. All previous standalone 802-byte findings above
 are retained as historical diagnostics, not current ownership blockers.
+
+## 2026-11-10 single-source maintenance
+
+The accepted source no longer duplicates the two complete 468/803-byte
+initializer bodies. `gameplay_session_init_body.inl` and
+`stage_session_init_body.inl` are included by both the original standalone
+wrappers and `stage_complete_context.cpp`, preserving genuine function
+order, first-declaration code segments, all four native boundaries and
+source-level callbacks. Both independently scoped functions passed a fresh
+focused two-producer replay with exact original raw bytes and ordered
+fixups, and both real compiled semantic negatives were rejected. This
+refreshes **existing** acceptance, adding no new authored bytes:
+`.analysis/unit-replays/gpt-web-main-stage-session-shared-bodies-20261110/receipt.json`.
