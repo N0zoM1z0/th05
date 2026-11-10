@@ -1,4 +1,4 @@
-# MAIN entry and gameplay loop candidate
+# MAIN entry and exact gameplay loop
 
 The new natural source owns the complete original consecutive functions
 `main` at `[0xAE38,0xAEA6)` (110 bytes) and `gameplay_loop` at
@@ -144,3 +144,44 @@ producer emits451 bytes, including an SI save and a different counter schedule,
 against native445. It also fails; the original442-byte source is restored
 byte for byte. No new behavior
 model, second producer, compiled negative or accepted credit is claimed.
+
+## 2026-11-10: complete 445-byte natural C++ gameplay loop accepted
+
+`gameplay_loop()` at `[AEA6,B063)` is now accepted as
+`main-gameplay-loop-exact`, with **445/445 original raw bytes** and the
+original literal ordered 11 relocation sites. Two independent native Borland
+producer/linker runs reproduce the entire function and reject a compiled
+15→7 frame-modulus mutation. All original gameplay logic, input, sound,
+scroll, Boss/shot order, page flips, debug controls and the checked
+linker-relaxation NOP at offset424 remain unchanged. The NOP is compared but
+not credited as authored instructions.
+
+The last three-byte gap was caused by a compiler-lowered
+`stage_frame_mod16 = (++stage_frame & 15)` that used a shorter 8-bit mask.
+The actual TH05 counter sequence preserves the previous frame in the native
+DX register while AX holds and increments the new counter. The maintained
+C++ uses the actual DOS hardware register state to express this dataflow
+without writing assembler or modifying the counter's meaning:
+
+```cpp
+_AX = stage_frame;
+_DX = _AX;
+++_AX;
+stage_frame = _AX;
+stage_frame_mod16 = (_AX &= 15);
+```
+
+The final assignment is a **word-size register update** (native `AND AX,000F`),
+not the byte-only `AND AL,0F`. This restores the exact three-byte mask and
+keeps the old DX frame value in the same CPU register. A `DX = stage_frame`
+first spelling also generated 445 bytes but reversed the two register-load
+instructions; natural AX-first source matches both the original bytes and
+native instruction order. No unused game-state storage, opcode array,
+linker-address modification or manual NOP is introduced.
+
+Focused receipt:
+`.analysis/unit-replays/gpt-web-main-gameplay-loop-445-20261110/receipt.json`.
+All earlier 442/444/451-byte first-producer failures in this file are historical;
+the new scope adds **444 authored C++ instruction bytes**, excluding one
+compared relocation-relaxation NOP, as a complete 445-byte function. The
+separately accepted 110-byte MAIN entry remains an independent owner.

@@ -2,21 +2,54 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "7d99ffe0c85a43d319db924f7c11fc3df366dbb7e8baaa9cf94bc2ea8f2b0cec",
+  "replay_receipt_sha256": "37907bc0493680060c1155ee0ca769ae000912c8dcd5277c23257f40c3da21f1",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 68786,
-    "candidate_start": 68786,
-    "size": 159,
-    "candidate_size": 161,
-    "target_sha256": "8c955adb5faff1c018f84c8797e0b9054b07cb6c34a78629dcee4951f2e69566",
-    "candidate_sha256": "cbc125dfbe1e5553c088e54b08d137ea132ea257d8b5e1756e7544fad28e8309",
+    "target_start": 44710,
+    "candidate_start": 44710,
+    "size": 445,
+    "target_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+    "candidate_sha256": "8bf5508e4fd4aaf11488b36823f6629aa7186ff5b82bdb919305f00c9ff88b74",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      377,
+      340,
+      202,
+      165,
+      118,
+      113,
+      100,
+      95,
+      24,
+      19,
+      14
+    ],
+    "candidate_fixups": [
+      377,
+      340,
+      202,
+      165,
+      118,
+      113,
+      100,
+      95,
+      24,
+      19,
+      14
+    ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 44710,
+      "size": 445,
+      "function_symbol": "gameplay_loop()",
+      "contribution_start": 44710,
+      "contribution_size": 445,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -81985,6 +82018,377 @@
           "-ml",
           "-DBINARY='M'",
           "th05/b6partr.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-gameplay-loop-exact",
+      "entry_sha256": "a54abd91848c3ee6b56a320cb5be34a6be0ea7fb182861a0d71e61db83bcc8b5",
+      "result": {
+        "id": "main-gameplay-loop-exact",
+        "entry_sha256": "a54abd91848c3ee6b56a320cb5be34a6be0ea7fb182861a0d71e61db83bcc8b5",
+        "rounds": [
+          {
+            "target_start": 44710,
+            "candidate_start": 44710,
+            "size": 445,
+            "target_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+            "candidate_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+            "raw_exact": true,
+            "target_fixups": [
+              377,
+              340,
+              202,
+              165,
+              118,
+              113,
+              100,
+              95,
+              24,
+              19,
+              14
+            ],
+            "candidate_fixups": [
+              377,
+              340,
+              202,
+              165,
+              118,
+              113,
+              100,
+              95,
+              24,
+              19,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 44710,
+              "size": 445,
+              "function_symbol": "gameplay_loop()",
+              "contribution_start": 44710,
+              "contribution_size": 445,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 44710,
+            "candidate_start": 44710,
+            "size": 445,
+            "target_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+            "candidate_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+            "raw_exact": true,
+            "target_fixups": [
+              377,
+              340,
+              202,
+              165,
+              118,
+              113,
+              100,
+              95,
+              24,
+              19,
+              14
+            ],
+            "candidate_fixups": [
+              377,
+              340,
+              202,
+              165,
+              118,
+              113,
+              100,
+              95,
+              24,
+              19,
+              14
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 44710,
+              "size": 445,
+              "function_symbol": "gameplay_loop()",
+              "contribution_start": 44710,
+              "contribution_size": 445,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "292b47e9493b079ab93ecd8577539bdc8a8ff678f4f1498ccde08e73c01327fb",
+            "dependency_timestamp_normalized_sha256": "0ad73d45c6c020e306edcd55aba711e5a4af291f7aa464a91ab2c6260893e48e",
+            "module_name": "th05/g_loop.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/g_loop.cpp",
+              "src/main/runtime/gameplay_loop.cpp",
+              "src/main/runtime/gameplay_loop.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/runtime/main.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "91092e5fc255cf9ceb5a69b00e1eb07d6153dccae938d9ded92b472dae9343ad",
+            "dependency_timestamp_normalized_sha256": "0ad73d45c6c020e306edcd55aba711e5a4af291f7aa464a91ab2c6260893e48e",
+            "module_name": "th05/g_loop.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/g_loop.cpp",
+              "src/main/runtime/gameplay_loop.cpp",
+              "src/main/runtime/gameplay_loop.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/runtime/main.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/g_loop.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/g_loop.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/gameplay_loop_bindings.asm",
+            "sha256": "9d893ee8cdeaa0d0bf7760834c687b0c211fc492620df96afd2549441a1921dd"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/runtime/gameplay_loop.cpp",
+            "sha256": "f6f6b1f4e85cd6cf1248bf637f5347e75d26b55043a9f251986d1380413c3d7c"
+          },
+          {
+            "path": "src/main/runtime/gameplay_loop.hpp",
+            "sha256": "915ce86b182655efc9008ee1cb28fd500cbe813b36904aa9933b5151c6137e02"
+          },
+          {
+            "path": "src/main/runtime/main.hpp",
+            "sha256": "c13e24c511ae7f7b1dd5238b18d28cb8d1867cfcd1ef7108076f7163452e4885"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/gameplay_loop_bindings.asm",
+          "sha256": "9d893ee8cdeaa0d0bf7760834c687b0c211fc492620df96afd2549441a1921dd"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/runtime/gameplay_loop.cpp",
+          "sha256": "f6f6b1f4e85cd6cf1248bf637f5347e75d26b55043a9f251986d1380413c3d7c"
+        },
+        {
+          "path": "src/main/runtime/gameplay_loop.hpp",
+          "sha256": "915ce86b182655efc9008ee1cb28fd500cbe813b36904aa9933b5151c6137e02"
+        },
+        {
+          "path": "src/main/runtime/main.hpp",
+          "sha256": "c13e24c511ae7f7b1dd5238b18d28cb8d1867cfcd1ef7108076f7163452e4885"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "37907bc0493680060c1155ee0ca769ae000912c8dcd5277c23257f40c3da21f1",
+      "compiled_negative_control": {
+        "target_start": 44710,
+        "candidate_start": 44710,
+        "size": 445,
+        "target_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+        "candidate_sha256": "8bf5508e4fd4aaf11488b36823f6629aa7186ff5b82bdb919305f00c9ff88b74",
+        "raw_exact": false,
+        "target_fixups": [
+          377,
+          340,
+          202,
+          165,
+          118,
+          113,
+          100,
+          95,
+          24,
+          19,
+          14
+        ],
+        "candidate_fixups": [
+          377,
+          340,
+          202,
+          165,
+          118,
+          113,
+          100,
+          95,
+          24,
+          19,
+          14
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 44710,
+          "size": 445,
+          "function_symbol": "gameplay_loop()",
+          "contribution_start": 44710,
+          "contribution_size": 445,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-gameplay-loop-exact",
+        "entry_sha256": "a54abd91848c3ee6b56a320cb5be34a6be0ea7fb182861a0d71e61db83bcc8b5",
+        "mutation": {
+          "unit": "main-gameplay-loop-exact",
+          "source": "src/main/runtime/gameplay_loop.cpp",
+          "find": "stage_frame_mod16 = (_AX &= 15);",
+          "replace": "stage_frame_mod16 = (_AX &= 7);"
+        },
+        "control_sha256": "f60feb4c50d7800095f79761a20925ea5d5aa4aa824b15830e31f67289d7f8cc",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 44710,
+          "candidate_start": 44710,
+          "size": 445,
+          "target_sha256": "2168278f000205e07f8575fd783b66fe4d416d3a1d05fb6ea7790373dfee07a9",
+          "candidate_sha256": "8bf5508e4fd4aaf11488b36823f6629aa7186ff5b82bdb919305f00c9ff88b74",
+          "raw_exact": false,
+          "target_fixups": [
+            377,
+            340,
+            202,
+            165,
+            118,
+            113,
+            100,
+            95,
+            24,
+            19,
+            14
+          ],
+          "candidate_fixups": [
+            377,
+            340,
+            202,
+            165,
+            118,
+            113,
+            100,
+            95,
+            24,
+            19,
+            14
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 44710,
+            "size": 445,
+            "function_symbol": "gameplay_loop()",
+            "contribution_start": 44710,
+            "contribution_size": 445,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "46c513c3dba9bf9e428f0b8504c674a1fd770f496abac208730e3592adc9db7b",
+          "dependency_timestamp_normalized_sha256": "599dace9db8dbb00bf59de659090798613e7a0c856a8c77101547e985d5cc90d",
+          "module_name": "th05/g_loop.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/g_loop.cpp",
+            "src/main/runtime/gameplay_loop.cpp",
+            "src/main/runtime/gameplay_loop.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/runtime/main.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/g_loop.cpp"
         ]
       },
       "receipt_aggregate_pass": true

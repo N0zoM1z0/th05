@@ -8,7 +8,7 @@
   "byte_counts": {
     "accepted-c-initialized-data": 1883,
     "accepted-cxx-initialized-data": 13794,
-    "accepted-cxx-instructions": 99295,
+    "accepted-cxx-instructions": 99739,
     "accepted-cxx-switch-table": 920,
     "accepted-reviewed-asm-dispatch-table": 210,
     "accepted-reviewed-asm-initialized-data": 64,
@@ -17,9 +17,9 @@
     "checked-uncredited-asm-alignment": 62,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 22,
-    "checked-uncredited-padding": 95,
+    "checked-uncredited-padding": 96,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 107632,
+    "unknown": 107187,
     "verified-vendor-code": 73804,
     "verified-vendor-initialized-data": 3777
   },
@@ -32,15 +32,15 @@
       "byte_counts": {
         "accepted-c-initialized-data": 1829,
         "accepted-cxx-initialized-data": 1512,
-        "accepted-cxx-instructions": 70535,
+        "accepted-cxx-instructions": 70979,
         "accepted-cxx-switch-table": 666,
         "accepted-reviewed-asm-dispatch-table": 186,
         "accepted-reviewed-asm-instructions": 6813,
         "checked-uncredited-asm-alignment": 48,
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 2,
-        "checked-uncredited-padding": 81,
-        "unknown": 35845,
+        "checked-uncredited-padding": 82,
+        "unknown": 35400,
         "verified-vendor-code": 27178,
         "verified-vendor-initialized-data": 1259
       },
@@ -925,8 +925,21 @@
         },
         {
           "start": 44710,
+          "end": 45134,
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameplay-loop-exact"
+        },
+        {
+          "start": 45134,
+          "end": 45135,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-gameplay-loop-exact"
+        },
+        {
+          "start": 45135,
           "end": 45155,
-          "kind": "unknown"
+          "kind": "accepted-cxx-instructions",
+          "unit": "main-gameplay-loop-exact"
         },
         {
           "start": 45155,

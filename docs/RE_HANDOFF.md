@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's entire gameplay frame loop is now exact C++: original
+`[AEA6,B063)`, **445/445 compared bytes** including one uncredited
+linker NOP, native 11-site relocation order, two fresh producers and a
+compiled frame-mask negative. Preserving the original AX/DX old-frame
+register dataflow and word `AND AX,15` removes the last three-byte gap;
+no assembly or code padding was authored. Receipt:
+`.analysis/unit-replays/gpt-web-main-gameplay-loop-445-20261110/receipt.json`.
+See [MAIN gameplay source](../src/main/runtime/main.md).
+
 MAIN Shinki's complete 159-byte background particle renderer is now
 source-exact C++: two independent Borland/TLINK builds, literal native code
 and ordered fixups, and a rejected real age-update mutation. Restoring the

@@ -5152,3 +5152,23 @@ unit = "main-shinki-particles-render"
 source = "src/main/boss/shinki/particles_render.cpp"
 find = "particle->age++;"
 replace = "particle->age += 2;"
+
+[[units]]
+id = "main-gameplay-loop-exact"
+source = "src/main/runtime/gameplay_loop.cpp"
+module = "th05/g_loop.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/gameplay_loop_bindings.asm"
+target_start = 0xaea6
+size = 445
+functions = 1
+function_symbol = "gameplay_loop()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = [424]
+
+[[controls]]
+unit = "main-gameplay-loop-exact"
+source = "src/main/runtime/gameplay_loop.cpp"
+find = "stage_frame_mod16 = (_AX &= 15);"
+replace = "stage_frame_mod16 = (_AX &= 7);"

@@ -99,8 +99,13 @@ void near gameplay_loop(void)
         snd_se_update();
         frames_unused++;
 
-        // The new frame value directly supplies the modulo fields.
-        stage_frame_mod16 = (++stage_frame & 15);
+        // Preserve the original 16-bit CPU return-value dataflow: DX keeps
+        // the prior frame, AX holds the incremented frame and its word mask.
+        _AX = stage_frame;
+        _DX = _AX;
+        ++_AX;
+        stage_frame = _AX;
+        stage_frame_mod16 = (_AX &= 15);
         stage_frame_mod8 = (stage_frame_mod16 & 7);
         stage_frame_mod4 = (stage_frame_mod8 & 3);
         stage_frame_mod2 = (stage_frame_mod4 & 1);
