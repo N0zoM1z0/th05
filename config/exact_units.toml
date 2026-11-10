@@ -5381,3 +5381,24 @@ unit = "main-scroll-driver-exact"
 source = "src/main/scroll/driver.cpp"
 find = "scroll_line += 400;"
 replace = "scroll_line += 399;"
+
+[[units]]
+id = "main-scroll-tile-ring-update-exact"
+source = "src/main/scroll/ring_update.cpp"
+module = "th05/scr_ring.cpp"
+segment = "SCROLL_RING_CONTEXT"
+wrapper_options = ""
+bindings_source = "probes/units/scroll_ring_update_bindings.asm"
+bindings_after_compiler = true
+target_start = 0xc43a
+size = 204
+functions = 1
+function_symbol = "scroll_tile_ring_update()"
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-scroll-tile-ring-update-exact"
+source = "src/main/scroll/ring_update.cpp"
+find = "tile_row_in_section = 4;"
+replace = "tile_row_in_section = 3;"

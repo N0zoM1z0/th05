@@ -104,3 +104,12 @@ and tile-ring callback remain unchanged.
 This is natural C++ with a small inline register/flag primitive, not a pure
 C++ codegen claim. The previous failed first-producer diagnostics above remain
 historical; the complete 115-byte function is now independently accepted.
+
+## 2026-11-11: accepted upstream 204-byte tile-row producer
+
+The previously source-free `scroll_tile_ring_update()` callee at `C43A` is
+now independently accepted as a full **204-byte C++/register** state machine.
+The existing 115-byte scroll driver is unchanged and remains independently
+accepted. Both adjacent functions now form the exact original 319-byte
+`C43A..C579` code block. See [tile-ring source](ring_update.md) for the
+full STD/map dataflow, real physical frames and focused two-producer receipt.

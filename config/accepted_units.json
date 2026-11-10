@@ -2,24 +2,34 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "8b4c139be9d566be3e0b64cd3a3dce810fed6d079de9fd7c695e43f1092aabbf",
+  "replay_receipt_sha256": "d60808424ad1a40f13f0bf8ee6f98ee9a84e134ed6a8a57caef4adc96518a7d2",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 50438,
-    "candidate_start": 50438,
-    "size": 115,
-    "target_sha256": "becf0b34b3aa34c4d1f955889709e8dad8da656f98f862772d7b7ca9474ae382",
-    "candidate_sha256": "a2a40ec075d0fac86c377e95ca5e6d032d7e1201cb26eabd869be90de4fbd240",
+    "target_start": 50234,
+    "candidate_start": 50234,
+    "size": 204,
+    "target_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+    "candidate_sha256": "e0f1ee378f22f9cd52db5b4da52826bc119dc59578d36eb73dae7481ab5e199a",
     "raw_exact": false,
     "target_fixups": [
-      57
+      198
     ],
     "candidate_fixups": [
-      57
+      198
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 50234,
+      "size": 204,
+      "function_symbol": "scroll_tile_ring_update()",
+      "contribution_start": 50234,
+      "contribution_size": 204,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -85858,6 +85868,330 @@
           "-DBINARY='M'",
           "th05/scr_drv.cpp"
         ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-scroll-tile-ring-update-exact",
+      "entry_sha256": "2eee1891b65282eb4861092e6c13feba60bd809ffd6143d872a67d9cfaf4606b",
+      "result": {
+        "id": "main-scroll-tile-ring-update-exact",
+        "entry_sha256": "2eee1891b65282eb4861092e6c13feba60bd809ffd6143d872a67d9cfaf4606b",
+        "rounds": [
+          {
+            "target_start": 50234,
+            "candidate_start": 50234,
+            "size": 204,
+            "target_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+            "candidate_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+            "raw_exact": true,
+            "target_fixups": [
+              198
+            ],
+            "candidate_fixups": [
+              198
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 50234,
+              "size": 204,
+              "function_symbol": "scroll_tile_ring_update()",
+              "contribution_start": 50234,
+              "contribution_size": 204,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 50234,
+            "candidate_start": 50234,
+            "size": 204,
+            "target_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+            "candidate_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+            "raw_exact": true,
+            "target_fixups": [
+              198
+            ],
+            "candidate_fixups": [
+              198
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 50234,
+              "size": 204,
+              "function_symbol": "scroll_tile_ring_update()",
+              "contribution_start": 50234,
+              "contribution_size": 204,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "243fed3493a19d549d4ff48436dab029c61c6c6bb93b0bb2e6edf06aee2ecbc0",
+            "dependency_timestamp_normalized_sha256": "adff48f505da6421690864276b45f5f632e3a1461904e6eda20bdc1a8c7e2c8e",
+            "module_name": "th05/scr_ring.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scr_ring.cpp",
+              "src/main/scroll/ring_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/scroll/driver.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "4bcfc6f9419205608d43155f555c7b7d1294a98ee9cc7efcde18f469d07b50bd",
+            "dependency_timestamp_normalized_sha256": "adff48f505da6421690864276b45f5f632e3a1461904e6eda20bdc1a8c7e2c8e",
+            "module_name": "th05/scr_ring.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scr_ring.cpp",
+              "src/main/scroll/ring_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/scroll/driver.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scr_ring.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scr_ring.cpp"
+          ]
+        ],
+        "binding_context": [
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "ae3ba2ba5026edcd04f26f6db6874024277266b50093edbb2e07045bb155bfce",
+            "compiler_object": "scr_ring.obj",
+            "link_response_sha256": "97811f2fff8c8b181e3f06e5afc254f2cf01e8c23bda5a43b74efd384c3583e9",
+            "before": {
+              "sha256": "768dc92fd8b64bb46d2a461c95ef93727089e88a44cc7b511d10ee09eec540cf",
+              "symbol_model_sha256": "97915846153f449585effe46bd3d5fb09f7ada50d4fb16bae4ce179364deaf70"
+            },
+            "after": {
+              "sha256": "ca8ea52a84c06c8777bc8a69d95ee0e902e73e549722df980ff5d3538875c746",
+              "symbol_model_sha256": "83ea13ddbbf1bce98314b6b296c6220c9cfdca0107441148fdd4db4d20ed0852"
+            }
+          },
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "ae3ba2ba5026edcd04f26f6db6874024277266b50093edbb2e07045bb155bfce",
+            "compiler_object": "scr_ring.obj",
+            "link_response_sha256": "97811f2fff8c8b181e3f06e5afc254f2cf01e8c23bda5a43b74efd384c3583e9",
+            "before": {
+              "sha256": "0a8e692866cc5661d8f300dc996a0dc8a945f83cf746be13a81b8f9af1027eae",
+              "symbol_model_sha256": "97915846153f449585effe46bd3d5fb09f7ada50d4fb16bae4ce179364deaf70"
+            },
+            "after": {
+              "sha256": "2559ec51b440428c452f87f7d2b89f124a38d881114a18465c6bce6beffe6bbb",
+              "symbol_model_sha256": "83ea13ddbbf1bce98314b6b296c6220c9cfdca0107441148fdd4db4d20ed0852"
+            }
+          }
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/scroll_ring_update_bindings.asm",
+            "sha256": "ae3ba2ba5026edcd04f26f6db6874024277266b50093edbb2e07045bb155bfce"
+          },
+          {
+            "path": "src/main/scroll/driver.hpp",
+            "sha256": "42c6bb12bbf21cd17bbb75510d219f74b3f6cbfb0413dee049c5bc0ba046c4bb"
+          },
+          {
+            "path": "src/main/scroll/ring_update.cpp",
+            "sha256": "881d6aa641058d86d3f1682f472d8eb354ef5186ca85021a8e0208ffd6a0cb74"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/scroll_ring_update_bindings.asm",
+          "sha256": "ae3ba2ba5026edcd04f26f6db6874024277266b50093edbb2e07045bb155bfce"
+        },
+        {
+          "path": "src/main/scroll/driver.hpp",
+          "sha256": "42c6bb12bbf21cd17bbb75510d219f74b3f6cbfb0413dee049c5bc0ba046c4bb"
+        },
+        {
+          "path": "src/main/scroll/ring_update.cpp",
+          "sha256": "881d6aa641058d86d3f1682f472d8eb354ef5186ca85021a8e0208ffd6a0cb74"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d60808424ad1a40f13f0bf8ee6f98ee9a84e134ed6a8a57caef4adc96518a7d2",
+      "compiled_negative_control": {
+        "target_start": 50234,
+        "candidate_start": 50234,
+        "size": 204,
+        "target_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+        "candidate_sha256": "e0f1ee378f22f9cd52db5b4da52826bc119dc59578d36eb73dae7481ab5e199a",
+        "raw_exact": false,
+        "target_fixups": [
+          198
+        ],
+        "candidate_fixups": [
+          198
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 50234,
+          "size": 204,
+          "function_symbol": "scroll_tile_ring_update()",
+          "contribution_start": 50234,
+          "contribution_size": 204,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-scroll-tile-ring-update-exact",
+        "entry_sha256": "2eee1891b65282eb4861092e6c13feba60bd809ffd6143d872a67d9cfaf4606b",
+        "mutation": {
+          "unit": "main-scroll-tile-ring-update-exact",
+          "source": "src/main/scroll/ring_update.cpp",
+          "find": "tile_row_in_section = 4;",
+          "replace": "tile_row_in_section = 3;"
+        },
+        "control_sha256": "f3d9ff5abb54541a7e565afb220f72cf2547501769d77fe45d17d20c36adcb5c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 50234,
+          "candidate_start": 50234,
+          "size": 204,
+          "target_sha256": "d18cfb2727c3591930f3b8bbf91e9c5ceb962aab55f03095994a8596ae45931b",
+          "candidate_sha256": "e0f1ee378f22f9cd52db5b4da52826bc119dc59578d36eb73dae7481ab5e199a",
+          "raw_exact": false,
+          "target_fixups": [
+            198
+          ],
+          "candidate_fixups": [
+            198
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 50234,
+            "size": 204,
+            "function_symbol": "scroll_tile_ring_update()",
+            "contribution_start": 50234,
+            "contribution_size": 204,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "dba5f1d8d0c96a4d501689308e4b06ed849165e3c6823aae8e7928b24eb1ccd1",
+          "dependency_timestamp_normalized_sha256": "46dc11ed8be20c4f9a6270d5599ea0505c3085f7fc7f98ab9d0cc88e666baf20",
+          "module_name": "th05/scr_ring.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/scr_ring.cpp",
+            "src/main/scroll/ring_update.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/scroll/driver.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/scr_ring.cpp"
+        ],
+        "binding_context": {
+          "kind": "symbol-only-before-and-after-compiler",
+          "source_sha256": "ae3ba2ba5026edcd04f26f6db6874024277266b50093edbb2e07045bb155bfce",
+          "compiler_object": "scr_ring.obj",
+          "link_response_sha256": "97811f2fff8c8b181e3f06e5afc254f2cf01e8c23bda5a43b74efd384c3583e9",
+          "before": {
+            "sha256": "ed22feeb87edbaa6c795b97d8e062a003dd97d8a1fb2e21431ca00f2ea133124",
+            "symbol_model_sha256": "97915846153f449585effe46bd3d5fb09f7ada50d4fb16bae4ce179364deaf70"
+          },
+          "after": {
+            "sha256": "64f5c74bff215d77a7671f1836d917a840db3421703c4b8f181df21c260d837e",
+            "symbol_model_sha256": "83ea13ddbbf1bce98314b6b296c6220c9cfdca0107441148fdd4db4d20ed0852"
+          }
+        }
       },
       "receipt_aggregate_pass": true
     }

@@ -38,6 +38,17 @@ remains independently accepted without double credit. See
 [Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
 `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
 
+The MAIN complete **204-byte tile-row scroll ring update** at
+`[C43A,C506)` is now exact source-backed C++ with authentic register/segment
+copy operations: two independent Borland/TLINK builds match all bytes,
+original far EGC fixup `+198`, and reject a row-in-section 4→3 mutation.
+The corrected STD section/speed pointers, `DEC`/`JNS` native flags and actual
+byte-offset WORD section table eliminate the previous six-byte gap. The
+source-free before/after linker map retains CS `AE1` and DS `209D`; the
+following accepted 115-byte driver brings contiguous scroll CODE to **319
+bytes**. See [tile-row ring update](../src/main/scroll/ring_update.md) and
+`.analysis/unit-replays/gpt-web-main-scroll-tile-ring-204-20261111/receipt.json`.
+
 The MAIN 115-byte scroll state machine `scroll_driver()` is now exact C++
 with original register/flag operations at `[C506,C579)`: two independent
 compilers match all raw bytes and `GRAPH_SCROLLUP` fixup `+57`; changing the
