@@ -5402,3 +5402,23 @@ unit = "main-scroll-tile-ring-update-exact"
 source = "src/main/scroll/ring_update.cpp"
 find = "tile_row_in_section = 4;"
 replace = "tile_row_in_section = 3;"
+
+[[units]]
+id = "main-player-sparks-circle-exact"
+source = "src/main/boss/player_sparks_circle.cpp"
+module = "th05/pspkr.cpp"
+segment = "PLAYER_SPARK_RING_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/player_sparks_circle_bindings.asm"
+target_start = 0x176b8
+size = 22
+functions = 1
+function_symbol = "player_sparks_circle()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-player-sparks-circle-exact"
+source = "src/main/boss/player_sparks_circle.cpp"
+find = "player_pos.cur.y, 192, 24);"
+replace = "player_pos.cur.y, 192, 25);"

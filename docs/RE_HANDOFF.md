@@ -88,6 +88,14 @@ the already accepted neighboring 164-byte renderer and 399-byte collision
 function. Receipt `.analysis/gpt-web-hitshot-from-asm-a/receipt.json`; see
 [HitShot source](../src/main/player/hitshot_from.md).
 
+The complete player-centered far spark trigger directly before the accepted
+Boss explosion family is now exact natural C++: `176B8..176CE`, **22/22
+bytes**, two original-order compiler/linker producers, empty native fixups,
+and a rejected 24→25 spark-count mutation. The real signed subpixel radius
+is 192 and the count is 24; the 32-bit Pascal immediate's original order is
+preserved. See [player spark source](../src/main/boss/player_sparks_circle.md)
+and `.analysis/unit-replays/gpt-web-main-player-sparks-circle-22-20261111/receipt.json`.
+
 The second complete Gather bullet-template copier
 `set_bullet_template_to_gather_template()` is now exact at `[17087,170A2)`:
 **27/27 reviewed original-register ASM bytes**, original empty relocation
