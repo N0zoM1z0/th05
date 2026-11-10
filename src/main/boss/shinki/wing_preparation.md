@@ -53,7 +53,7 @@ SHA-256 `cf074f3e7ad481533070945dc10777f56576091105fd4fc5f6d32000d1ae7655`.
 Coverage stays386 bytes;
 this receipt replacement adds no function or authored byte.
 
-## Ball updater remains unaccepted
+## Earlier inexact ball-update producers (superseded)
 
 The original ball update1AACF..1ABAB is220 instruction bytes, no NOPs, table
 or MZ fixups. An older register-backed candidate emits216, merging two jumps;
@@ -120,3 +120,41 @@ linker controls did not supply an interior function byte. The experimental
 standalone file was removed after confirming it was byte-identical to that
 frozen input. The accepted 81-byte add and all following Shinki callbacks are
 unchanged, no new Boss byte is credited and no full cold replay was run.
+
+## 2026-11-10: exact native 220-byte ball update from genuine C++
+
+**`b6balls_update()` is now accepted as a complete original 220-byte
+source-owned C++ function at `[1AACF,1ABAB)`.** The authentic source
+`_reference/ReC98/th05/main/bullet/b6ball.cpp` includes two calls to
+`optimization_barrier()`, a genuine empty inlined false-returning function
+from the same pinned ReC98 `decomp.hpp`. Earlier candidates omitted them on
+the assumption that they were unnecessary. In reality those two source calls
+prevent Turbo C++'s jump threading from shortening four bytes of clipping and
+collision branches. Enabling its normal jump optimization simultaneously
+preserves the native **four-byte near JGE** out of the cloud state. The
+original scalar ball fields, real DX:AX motion return, C++ state machine,
+unmodified pointer geometry and near-callback ABI are unchanged. Neither
+barrier generates its own runtime instructions, branch operands or NOP bytes;
+no physical-register assembly or target-byte emission is introduced.
+
+The maintained body now has one canonical implementation in
+`balls_update_body.inl`, included by both `shinki.cpp` and the standalone
+`balls_update.cpp` wrapper. The old four-byte outside-function binder gap
+that separated natural 81+216 from original 81+220 is **removed**, not
+credited. The real combined `B6_BALLS_TEXT` is now **301/301 raw bytes**
+(81 adder, 220 updater), and its following genuine 271-byte pattern cohort
+stays at `1ABAB` with unchanged ordered fixups. The original `main_03` frame
+is `1527` and DS remains `209D` under the source-free binder.
+
+The new unit `main-shinki-balls-update` passed two independent Turbo C++/TLINK
+builds, literal raw comparison 220/220, empty native ordered relocation
+stream, complete OMF/MAP boundaries and its own compiled real motion-age
+negative (`p->age++` to `+=2`), which was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-main-shinki-balls-update-220-20261110/receipt.json`.
+Nine previously accepted same-translation-unit Shinki units were locally
+refreshed after the source and binder changes; all retain their exact native
+code, original ordered fixups and compiled negative results in
+`.analysis/unit-replays/gpt-web-main-shinki-b6-neighbor-refresh-20261110/receipt.json`.
+Only **220 new C++ instruction bytes** are credited; accepted adjacent
+functions are not counted again. The earlier 216/221/224-byte experiments in
+this document remain useful historical evidence, not unresolved blockers.

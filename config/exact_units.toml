@@ -5054,3 +5054,23 @@ unit = "main-alice-foreground-complete"
 source = "src/main/boss/alice/foreground.cpp"
 find = "patnum += stage_frame_mod8 / 4;"
 replace = "patnum += stage_frame_mod8 / 2;"
+
+[[units]]
+id = "main-shinki-balls-update"
+source = "src/main/boss/shinki/shinki.cpp"
+module = "th05/boss_6.cpp"
+segment = "B6_BALLS_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/shinki_bindings.asm"
+target_start = 0x1aacf
+size = 220
+functions = 1
+function_symbol = "b6balls_update()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-shinki-balls-update"
+source = "src/main/boss/shinki/balls_update_body.inl"
+find = "p->age++;"
+replace = "p->age += 2;"

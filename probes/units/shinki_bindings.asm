@@ -7,8 +7,7 @@ SHARED_BASE equ 14ab0h
 SHARED_END equ (SHARED_BASE + 03b0h)
 MAIN03_BASE equ 15270h
 UNIT_START equ 1aa7eh
-BALLS_CODE_SIZE equ 0129h ; observed natural81+216, not original301
-FOREIGN_BALLS_REMAINDER equ 4 ; outside accepted complete-function scopes
+BALLS_CODE_SIZE equ 012dh ; native exact81+220
 PATTERN_A_START equ 1ababh
 PATTERN_A_CODE_SIZE equ 010fh
 SUFFIX_START equ 1acbah
@@ -125,12 +124,8 @@ LASER_SC_TEXT ends
 B6_BALLS_TEXT segment byte public 'CODE' use16
 B6_BALLS_TEXT ends
 
-; Entire original b6balls_update remains unaccepted. This four-byte external
-; extent bridges the observed natural216-byte body to its original220-byte
-; boundary. It is neither source padding nor authored code; no bytes supplied.
-SHINKI_BALLS_FOREIGN_REMAINDER segment byte public 'CODE' use16
-org FOREIGN_BALLS_REMAINDER
-SHINKI_BALLS_FOREIGN_REMAINDER ends
+; Original 220-byte source-owned updater ends at 1ABAB. There is no
+; external gap and no source-hidden instruction within this function.
 
 ; Two complete pattern functions end at the genuine even boundary1ACBA.
 B6_PATTERN_A_TEXT segment byte public 'CODE' use16
@@ -161,7 +156,7 @@ org (MAIN03_BASE + 0a941h - UNIT_END)
 @BOSS_DEFEAT_UPDATE$QUI label near
 org (DGROUP_BASE - UNIT_END)
 SHINKI_MAIN03_TAIL ends
-main_03 group BULLET_A_TEXT, LASER_SC_TEXT, B6_BALLS_TEXT, SHINKI_BALLS_FOREIGN_REMAINDER, B6_PATTERN_A_TEXT, B6_UPDATE_TEXT, SHINKI_MAIN03_TAIL
+main_03 group BULLET_A_TEXT, LASER_SC_TEXT, B6_BALLS_TEXT, B6_PATTERN_A_TEXT, B6_UPDATE_TEXT, SHINKI_MAIN03_TAIL
 
 _DATA segment word public 'DATA' use16
 public _PaletteTone

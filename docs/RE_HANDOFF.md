@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN Stage 3 Alice's 140-byte foreground and Stage 6 Shinki's 220-byte
+ball updater are newly source-exact **C++ Boss** functions this turn: 360
+new complete native CODE bytes, both with two fresh producers and rejected
+compiled semantic negatives. Their respective existing accepted 381-byte
+puppet and 81-byte ball-adder neighbors were not double counted.
+
 MAIN Alice's Boss foreground callback is now exact natural C++:
 **140/140 bytes** at `14354..143E0`, original three-site ordered fixups,
 two independent real compiler/linker producers and its own rejected animation
@@ -60,12 +66,17 @@ original ordered fixups and its own compiled semantic negative. **290 reviewed
 ASM instruction bytes** are newly credited across these four functions, plus
 two checked uncredited NOPs; none is recategorized as natural C++.
 
-The full original-order C++ source context for Shinki `b6balls_add` (accepted
-81) and `b6balls_update` still emits a **221-byte** updater versus target220;
-its sole discrepancy is the native four-byte near cloud `JGE` versus the
-short inverted branch plus JMP. The failed authentic context was frozen under
-`.analysis/gpt-web-shinki-b6-real-context-a/`; no accepted Shinki input was
-modified. See [Shinki diagnostics](../src/main/boss/shinki/wing_preparation.md).
+The Stage 6 Shinki **220-byte full Boss ball updater is now accepted** as
+natural C++ after restoring both source-authentic empty inline
+`optimization_barrier()` calls, with normal compiler jump optimization.
+The real source now emits **301/301 raw bytes** for `b6balls_add` (81) and
+`b6balls_update` (220), with no four-byte foreign gap. The two-producer and
+compiled age negative pass; all **nine** changed accepted Shinki neighbors
+were locally refreshed and remain exact. New authored C++ credit is **220
+bytes**, not the reused 81 or any other pattern scope. Receipts:
+`.analysis/unit-replays/gpt-web-main-shinki-balls-update-220-20261110/receipt.json`
+and `.analysis/unit-replays/gpt-web-main-shinki-b6-neighbor-refresh-20261110/receipt.json`.
+See [Shinki detail](../src/main/boss/shinki/wing_preparation.md).
 
 MAINE's 1034-byte registration menu is now exact natural Borland C++.
 Restoring its real original source-code predecessors back through two score

@@ -20,7 +20,6 @@ Per-owner notes identify current diagnostics and source/ABI decisions.
 | Stage-session initialization | Original803 includes mandatory zero772, thirty table bytes and three uncredited relaxation NOPs213/403/595. New common SEGDEF restores transfer/fixup routing; late `-a2` still emits802 and is rejected. Correct potential credit799, not802. | [Stage session](../../src/main/runtime/stage_session_context.md) |
 | Yumeko sword updater | Original283; natural280. Jump-option/control-flow alternatives fail; baseline restored. | [Current notes](../../src/main/boss/yumeko/swords_update.md) |
 | Dialog opcode | Direct compiler455 against456; generated-ASM route matches456 raw bytes but reverses fixup order. | [Current notes](../../src/main/dialog/opcode.md) |
-| Shinki ball updater | Scalar updater232 against220 remains inexact. The separate386-byte wing transition is now accepted through unmodified compiler assembly output and TASM32. | [Current notes](../../src/main/boss/shinki/wing_preparation.md) |
 
 Notes distinguish semantic corrections from actual compilations.
 Per-owner notes contain full layouts, actual interfaces and boundary reviews.
@@ -29,7 +28,7 @@ algorithm, copied instruction body, or inserted padding replaces a complete
 natural owner. New investigations should use these observations rather than
 repeat identical failed builds.
 
-Superseded blockers are accepted: Alice foreground callback 140 in its true 521-byte two-function context, Staff bitmap 43+83, 991-byte controller and complete 626/861 updater/renderer, MAINE full registration menu 1034 and source-neighbor score codecs 86+100 (all original ordered fixups restored in authentic 4369-byte natural compiler context), Yumeko aimed354 and laser428 attack callbacks in their full natural compiler context (782 new authored bytes), OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
+Superseded blockers are accepted: Shinki ball update220 in true native C++ branch context, Alice foreground callback 140 in its true 521-byte two-function context, Staff bitmap 43+83, 991-byte controller and complete 626/861 updater/renderer, MAINE full registration menu 1034 and source-neighbor score codecs 86+100 (all original ordered fixups restored in authentic 4369-byte natural compiler context), Yumeko aimed354 and laser428 attack callbacks in their full natural compiler context (782 new authored bytes), OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
 Mima bomb control161 through the genuine [bomb family](../../src/main/player/bomb_family.md),
 frameless MAP release23, and complete bullet/pellet rendering334 through the
 documented speed option and ordinary register declarations. Their earlier

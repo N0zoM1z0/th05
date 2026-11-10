@@ -2,39 +2,30 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "3904db09e211fffe73b6b29d38ec39c8cba114a8a116b3401d5a408d18ea0a1a",
+  "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 82772,
-    "candidate_start": 82772,
-    "size": 140,
-    "candidate_size": 147,
-    "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
-    "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
+    "target_start": 109483,
+    "candidate_start": 109483,
+    "size": 271,
+    "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+    "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
     "raw_exact": false,
     "target_fixups": [
-      125,
-      107,
-      44
+      253,
+      222,
+      173,
+      73
     ],
     "candidate_fixups": [
-      132,
-      114,
-      44
+      253,
+      222,
+      173,
+      73
     ],
-    "fixups_exact": false,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 82772,
-      "size": 147,
-      "function_symbol": "alice_fg_render()",
-      "contribution_start": 82391,
-      "contribution_size": 528,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "fixups_exact": true,
+    "exact": false
   },
   "units": [
     {
@@ -10808,7 +10799,7 @@
               "size": 81,
               "function_symbol": "b6balls_add()",
               "contribution_start": 109182,
-              "contribution_size": 297,
+              "contribution_size": 301,
               "boundary_kind": "next-function",
               "next_function_symbol": "b6balls_update()"
             }
@@ -10830,7 +10821,7 @@
               "size": 81,
               "function_symbol": "b6balls_add()",
               "contribution_start": 109182,
-              "contribution_size": 297,
+              "contribution_size": 301,
               "boundary_kind": "next-function",
               "next_function_symbol": "b6balls_update()"
             }
@@ -10839,8 +10830,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10867,13 +10858,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10900,6 +10892,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -10940,7 +10933,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -10949,6 +10942,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -10964,7 +10961,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11008,7 +11005,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -11017,6 +11014,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -11032,7 +11033,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11073,7 +11074,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11130,8 +11131,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -11158,6 +11159,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -11233,8 +11235,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11261,13 +11263,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11294,6 +11297,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -11334,7 +11338,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -11343,6 +11347,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -11358,7 +11366,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11402,7 +11410,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -11411,6 +11419,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -11426,7 +11438,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11467,7 +11479,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11524,8 +11536,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -11552,6 +11564,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -11635,8 +11648,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11663,13 +11676,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11696,6 +11710,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -11736,7 +11751,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -11745,6 +11760,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -11760,7 +11779,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11804,7 +11823,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -11813,6 +11832,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -11828,7 +11851,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11869,7 +11892,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11926,8 +11949,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -11954,6 +11977,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -12041,8 +12065,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12069,13 +12093,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12102,6 +12127,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -12142,7 +12168,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -12151,6 +12177,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -12166,7 +12196,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -12210,7 +12240,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -12219,6 +12249,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -12234,7 +12268,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -12275,7 +12309,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -12332,8 +12366,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -12360,6 +12394,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -12447,8 +12482,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12475,13 +12510,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12508,6 +12544,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -12548,7 +12585,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -12557,6 +12594,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -12572,7 +12613,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -12616,7 +12657,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -12625,6 +12666,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -12640,7 +12685,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -12681,7 +12726,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -12738,8 +12783,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -12766,6 +12811,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -12853,8 +12899,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12881,13 +12927,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12914,6 +12961,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -12954,7 +13002,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -12963,6 +13011,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -12978,7 +13030,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -13022,7 +13074,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -13031,6 +13083,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -13046,7 +13102,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -13087,7 +13143,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -13144,8 +13200,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -13172,6 +13228,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -13259,8 +13316,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13287,13 +13344,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13320,6 +13378,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -13360,7 +13419,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -13369,6 +13428,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -13384,7 +13447,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -13428,7 +13491,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -13437,6 +13500,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -13452,7 +13519,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -13493,7 +13560,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -13550,8 +13617,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -13578,6 +13645,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -13669,8 +13737,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13697,13 +13765,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13730,6 +13799,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -13770,7 +13840,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -13779,6 +13849,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -13794,7 +13868,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -13838,7 +13912,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -13847,6 +13921,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -13862,7 +13940,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -13903,7 +13981,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -13960,8 +14038,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -13988,6 +14066,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -14063,8 +14142,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "24d8ca5841f0592c747635d54566bafc2bfc1c334de8c2f5273427c033e50398",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "18e4abcb00bd510201960cefd031e6f69e4985a135036d23ee458eb5fa2b2e8a",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14091,13 +14170,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
           },
           {
-            "sha256": "15ec454fe9f701022dfaedc3c9fc6f1ad58eac74974345ffccd813029b947d20",
-            "dependency_timestamp_normalized_sha256": "8e42370416f195f16568982b453048e6a37d4da287ea4130717a8819052744b0",
+            "sha256": "8d5f1f72591476f3c64ebf46a6eabf4a92282897233d27cba6962090c0481ec7",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14124,6 +14204,7 @@
               "src/shared/geometry.hpp",
               "src/main/boss/shinki/hp.inl",
               "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
               "src/main/boss/shinki/cheeto_walls.inl",
               "src/main/boss/shinki/devil.inl"
             ]
@@ -14164,7 +14245,7 @@
         "source_inputs": [
           {
             "path": "probes/units/shinki_bindings.asm",
-            "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -14173,6 +14254,10 @@
           {
             "path": "src/main/boss/sara/sara.hpp",
             "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
           },
           {
             "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -14188,7 +14273,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -14232,7 +14317,7 @@
       "source_inputs": [
         {
           "path": "probes/units/shinki_bindings.asm",
-          "sha256": "17b4ef4afe07f666366bd058064c9aa1efe555a4b1fec59fd47b02bfe3c8ebda"
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -14241,6 +14326,10 @@
         {
           "path": "src/main/boss/sara/sara.hpp",
           "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
         },
         {
           "path": "src/main/boss/shinki/cheeto_walls.inl",
@@ -14256,7 +14345,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "31cf5cd576e1bd149e8fc67a504b3f96827fb39f1ccefecfb592354d56b50856"
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -14297,7 +14386,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6579c35a3046d4fb9f347bc47a845137077f9fd84a53cff8e585a8f8ea0e2750",
+      "replay_receipt_sha256": "43fcfff2be627f46ff9f4739755d80a74fff23c82cf71a24cb8c80b5f5cf8927",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -14354,8 +14443,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d4b87cd268cce5d565fff54d87660e54803742298bbe96b2c914df5a62372cf2",
-          "dependency_timestamp_normalized_sha256": "1e2b12b138e199bfde18081339177c0ba3c10e3f7919f481f75b9fc791b975d8",
+          "sha256": "66eeac8bede2ad882230f9a3f5a3b8b53395d099eee23445a19b19bfd3f0842c",
+          "dependency_timestamp_normalized_sha256": "854da334811629bf5424ff10b7b38884fbbb79e6a8c749e0ad211a77587c4aa5",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -14382,6 +14471,7 @@
             "src/shared/geometry.hpp",
             "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
             "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl"
           ]
@@ -80096,6 +80186,413 @@
           "-ml",
           "-DBINARY='M'",
           "th05/b3fgex.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-balls-update",
+      "entry_sha256": "81fc2197d3c9a9c391f097b4f8c8f224e2d29ca05819aab4eb119f21cc22621f",
+      "result": {
+        "id": "main-shinki-balls-update",
+        "entry_sha256": "81fc2197d3c9a9c391f097b4f8c8f224e2d29ca05819aab4eb119f21cc22621f",
+        "rounds": [
+          {
+            "target_start": 109263,
+            "candidate_start": 109263,
+            "size": 220,
+            "target_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+            "candidate_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 109263,
+              "size": 220,
+              "function_symbol": "b6balls_update()",
+              "contribution_start": 109182,
+              "contribution_size": 301,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 109263,
+            "candidate_start": 109263,
+            "size": 220,
+            "target_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+            "candidate_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 109263,
+              "size": 220,
+              "function_symbol": "b6balls_update()",
+              "contribution_start": 109182,
+              "contribution_size": 301,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a49886951897199b94e7651505bce83249284a7ca69cf7170855dd0068b8d9e5",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
+            "module_name": "th05/boss_6.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_6.cpp",
+              "src/main/boss/shinki/shinki.cpp",
+              "src/main/boss/shinki/shinki.hpp",
+              "src/main/boss/sara/sara.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/shinki/hp.inl",
+              "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
+              "src/main/boss/shinki/cheeto_walls.inl",
+              "src/main/boss/shinki/devil.inl"
+            ]
+          },
+          {
+            "sha256": "d519c480d164516336f6880583969ef0dbc2c7071c8286851a1d0fe06e0d1bc1",
+            "dependency_timestamp_normalized_sha256": "bcaf9ba129e729d09e62bafb1ae4df52cf044d12f10ff1a73f90edcda13b4ca1",
+            "module_name": "th05/boss_6.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/boss_6.cpp",
+              "src/main/boss/shinki/shinki.cpp",
+              "src/main/boss/shinki/shinki.hpp",
+              "src/main/boss/sara/sara.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/shinki/hp.inl",
+              "src/main/boss/shinki/wing_coordinates.inl",
+              "src/main/boss/shinki/balls_update_body.inl",
+              "src/main/boss/shinki/cheeto_walls.inl",
+              "src/main/boss/shinki/devil.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_6.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_6.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shinki_bindings.asm",
+            "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/boss/sara/sara.hpp",
+            "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+          },
+          {
+            "path": "src/main/boss/shinki/balls_update_body.inl",
+            "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
+          },
+          {
+            "path": "src/main/boss/shinki/cheeto_walls.inl",
+            "sha256": "d1d03a3dc312159ad504b16e690a18c098ec637afcf95ad27e61e732f06516a9"
+          },
+          {
+            "path": "src/main/boss/shinki/devil.inl",
+            "sha256": "d5a3a352c5ef9690995e201a387539b0faa24d062f2c2ac8bef5a94e1134c462"
+          },
+          {
+            "path": "src/main/boss/shinki/hp.inl",
+            "sha256": "26d23af5b7f8a342a6c7b5f1d50af120cc03d485934f25f9e1227b46351b8344"
+          },
+          {
+            "path": "src/main/boss/shinki/shinki.cpp",
+            "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
+          },
+          {
+            "path": "src/main/boss/shinki/shinki.hpp",
+            "sha256": "a545cd114f86f129f0b9b478f7602f1315efd5adccbb5e5caa8b1702a6909cbb"
+          },
+          {
+            "path": "src/main/boss/shinki/wing_coordinates.inl",
+            "sha256": "84d4ebdb185c069cf60466093237ca9f3b994fea8eaef30263c17c9c98c19f63"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shinki_bindings.asm",
+          "sha256": "74109061a7920983b6bc156dc25c89abe5f6ccb315d2426b4681b3920a7c8dff"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/boss/sara/sara.hpp",
+          "sha256": "588edbb85d10756169455b97c490a02fa02ba9c749e9377181725aa07b68c9ef"
+        },
+        {
+          "path": "src/main/boss/shinki/balls_update_body.inl",
+          "sha256": "aac645995d46964082f2fc9617bf94c70ba09489330ba0585d4171ea71600a21"
+        },
+        {
+          "path": "src/main/boss/shinki/cheeto_walls.inl",
+          "sha256": "d1d03a3dc312159ad504b16e690a18c098ec637afcf95ad27e61e732f06516a9"
+        },
+        {
+          "path": "src/main/boss/shinki/devil.inl",
+          "sha256": "d5a3a352c5ef9690995e201a387539b0faa24d062f2c2ac8bef5a94e1134c462"
+        },
+        {
+          "path": "src/main/boss/shinki/hp.inl",
+          "sha256": "26d23af5b7f8a342a6c7b5f1d50af120cc03d485934f25f9e1227b46351b8344"
+        },
+        {
+          "path": "src/main/boss/shinki/shinki.cpp",
+          "sha256": "d2dbbf9c47f4fc925d57550da569405e09df134ad7633e3dd62e2e2f066e5c57"
+        },
+        {
+          "path": "src/main/boss/shinki/shinki.hpp",
+          "sha256": "a545cd114f86f129f0b9b478f7602f1315efd5adccbb5e5caa8b1702a6909cbb"
+        },
+        {
+          "path": "src/main/boss/shinki/wing_coordinates.inl",
+          "sha256": "84d4ebdb185c069cf60466093237ca9f3b994fea8eaef30263c17c9c98c19f63"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "cda8561a922f4617beabf5b9152d28a1a9fd7be83f1558051fbe5b031805e6b9",
+      "compiled_negative_control": {
+        "target_start": 109263,
+        "candidate_start": 109263,
+        "size": 220,
+        "candidate_size": 221,
+        "target_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+        "candidate_sha256": "96726f596a2bdc44ad1a08f61b59d1cc95b5f3a3607c6cae62fea466cc19284d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 109263,
+          "size": 221,
+          "function_symbol": "b6balls_update()",
+          "contribution_start": 109182,
+          "contribution_size": 302,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-balls-update",
+        "entry_sha256": "81fc2197d3c9a9c391f097b4f8c8f224e2d29ca05819aab4eb119f21cc22621f",
+        "mutation": {
+          "unit": "main-shinki-balls-update",
+          "source": "src/main/boss/shinki/balls_update_body.inl",
+          "find": "p->age++;",
+          "replace": "p->age += 2;"
+        },
+        "control_sha256": "7c7bddff0e8c1cf80a6db26c2d27bbf4536b2a4db393a7c456be98d9f39d5568",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 109263,
+          "candidate_start": 109263,
+          "size": 220,
+          "candidate_size": 221,
+          "target_sha256": "0389e04f1625e95b8becab3e90b3e4bb57f070804d495e26fe52c2af63eff7ee",
+          "candidate_sha256": "96726f596a2bdc44ad1a08f61b59d1cc95b5f3a3607c6cae62fea466cc19284d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 109263,
+            "size": 221,
+            "function_symbol": "b6balls_update()",
+            "contribution_start": 109182,
+            "contribution_size": 302,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "3110b77a0a1f20f299d1998a4124ffb2024c85686e47ded96903a4148903e378",
+          "dependency_timestamp_normalized_sha256": "34995aa412f646b15f293ae32ed5304f346bf3cffa0f831b8ac6d0c40ece8f55",
+          "module_name": "th05/boss_6.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true

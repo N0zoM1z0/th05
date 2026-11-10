@@ -1,5 +1,5 @@
 // Natural source: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
-// Empty optimization-barrier calls are deliberately omitted.
+// Original source-level optimization-barrier calls are preserved in the shared update body.
 /// Stage 6 Boss - Shinki
 /// ---------------------
 
@@ -62,68 +62,10 @@ void near b6balls_add(void)
 	}
 }
 
-void near b6balls_update(void)
-{
-	typedef char b6ball_backing_capacity_fits[
-		((sizeof(b6ball_t) * B6BALL_COUNT) <=
-		(sizeof(custom_t) * CUSTOM_COUNT)) ? 1 : -1];
+#include "src/main/boss/shinki/balls_update_body.inl"
 
-	b6ball_t near *p;
-	int i;
-	for((p = b6balls, i = 1); i < (1 + B6BALL_COUNT); (i++, p++)) {
-		if(p->flag == B6BF_FREE) {
-			continue;
-		}
-		if(p->flag == B6BF_CLOUD) {
-			p->cloud_radius.v -= to_sp(2.0f);
-			if(p->cloud_radius.v < to_sp(B6BALL_W / 2)) {
-				static_cast<unsigned char>(p->flag)++;
-			} else {
-				continue;
-			}
-		}
-
-		if(bullet_clear_time || bullet_zap.active) {
-			p->flag = B6BF_DECAY;
-		}
-
-		p->age++;
-		/* DX:AX = */ p->pos.update_seg3();
-		if(!playfield_encloses(_AX, _DX, B6BALL_W, B6BALL_H)) {
-			p->flag = B6BF_FREE;
-		} else if(p->flag != B6BF_DECAY) {
-			_AX -= player_pos.cur.x.v;
-			_DX -= player_pos.cur.y.v;
-			if(overlap_wh_inplace_fast(
-				_AX, _DX, to_sp(B6BALL_W / 2), to_sp(B6BALL_H / 2)
-			)) {
-				player_is_hit = true;
-				p->flag = B6BF_DECAY;
-				continue;
-			}
-		} else if(p->patnum_tiny < PAT_DECAY_B6BALL) {
-			// Rather brave to assume that the regular patnums of this entity
-			// can't be smaller. You know how you properly DRY decay state
-			// initialization? By moving it into a function...
-			p->patnum_tiny = PAT_DECAY_B6BALL;
-			p->pos.velocity.x.v /= 2;
-			p->pos.velocity.y.v /= 2;
-			p->decay_frame = 0;
-		} else /* if(p->flag == B6BF_DECAY) */ {
-			p->decay_frame++;
-			if((p->decay_frame % 4) == 0) {
-				p->patnum_tiny++;
-				if(p->patnum_tiny >= (PAT_DECAY_B6BALL_last + 1)) {
-					p->flag = B6BF_FREE;
-				}
-			}
-		}
-	}
-}
-
-// The complete natural ball-update candidate above is four bytes shorter
-// than its original function. A foreign context extent, outside accepted
-// code, restores the following genuine contribution's original position.
+// The complete natural ball updater now matches the original 220-byte
+// function and leads directly into the following accepted pattern group.
 #pragma codeseg B6_PATTERN_A_TEXT main_03
 bool near pattern_curved_rings(void)
 {
