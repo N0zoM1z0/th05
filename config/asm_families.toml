@@ -1545,3 +1545,33 @@ semantic_inputs = ["src/main/tile/invalidate_all.cpp"]
 [units.negative]
 find = "DIRTY_FLAG_VALUE equ 1"
 replace = "DIRTY_FLAG_VALUE equ 2"
+
+[[units]]
+id = "main-tile-invalidate-reset"
+artifact = "main"
+source = "src/main/tile/invalidate_reset.asm"
+types = "src/main/tile/invalidate_all_types.inc"
+symbols = "probes/units/tile_invalidate_all_symbols.inc"
+bindings = "probes/units/tile_invalidate_reset_asm_bindings.asm"
+notes = "src/main/tile/invalidate_reset.md"
+target_start = 0xbd24
+size = 20
+segment = "TILE_INVALIDATE_RESET_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "516c2cfdb3ec83100d27f02342114357b8c3aa3ba48cc1b5f8149da16ac8654e"
+target_scope_sha256 = "a19470201a6fe2ecdf1aaf0baf0d1003cf21455f389ee342c2a6fbc9d32322be"
+semantic_inputs = ["src/main/tile/invalidate_all.cpp"]
+[units.publics]
+"tiles_invalidate_reset()" = 0
+"tile_invalidate_reset_end" = 20
+[units.negative]
+find = "DIRTY_RESET_DWORDS equ DIRTY_MAP_DWORDS"
+replace = "DIRTY_RESET_DWORDS equ (DIRTY_MAP_DWORDS - 1)"
+[[units.uncredited]]
+offset = 19
+size = 1
+kind = "alignment"

@@ -31,3 +31,25 @@ No second producer, compiled negative, additional behavior model or credit
 is claimed. The already accepted11-byte initializer and its inputs are unchanged
 by this standalone source. A future passing replay may mutate the actual age
 threshold; no such mutation was compiled here.
+
+## 2026-11-10 register and Y-flow experiments
+
+A further 18 real one-producer tests varied ordinary register declarations,
+source ordering and lifetime for the complete point-record cursor, pointer-list
+cursor, age and counter. The generated functions stayed 111 bytes but all four
+distinct register-allocation forms remained raw-inexact. The original uses
+BX for the pointer list, SI for the record and DI for the remaining count;
+the compiler most often uses DI for the list, SI for the record and DX/CX for
+the count. No physical-register alias or target-byte repair was introduced.
+
+Another 10 typed Y-update variants replaced the previous ternary expression
+with direct field subtraction or a word temporary. These emitted 105/107 bytes
+for direct field forms, or 119–121 with a local, and still diverged. Twelve
+focused jump-optimization/registered-reload profile combinations emitted
+105–119 bytes without matching the complete original function. The native
+AX-held Y subtract and distinct removal tails are still unresolved.
+
+Private actual diagnostic roots `gpt-web-pointnum-{reg,y,profile}-*-a` retain
+cold compiler/MAP/OMF/MZ snapshots and individual source variants. The canonical
+111-byte `update.cpp` was never changed, no new unit was accepted, and existing
+accepted point-popup neighbors required no replay.

@@ -6,6 +6,12 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The adjacent MAIN `tiles_invalidate_reset` now also passes exact source
+replay: 20 compared bytes, 19 reviewed ASM instruction bytes and one checked
+`EVEN` NOP. It uses the same authentic 400-DWORD ES:DI fill and has its own
+semantic negative, with no cold replay of the already accepted all-dirty fill.
+See [tile reset](../src/main/tile/invalidate_reset.md).
+
 The original MAIN `tiles_invalidate_all` is now fully recovered as a 22-byte
 register-level ASM kernel (`BD38..BD4E`). Two independent TASM/TLINK producers
 and its own dirty-value negative pass: true ES:DI/32-bit REP STOSD of the 1600-byte
