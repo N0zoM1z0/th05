@@ -917,3 +917,21 @@ unit = "op-zunsoft-filenames"
 source = "src/op/zunsoft/filenames.cpp"
 find = "\"zun00.pi\""
 replace = "\"zun00.pj\""
+
+[[units]]
+id = "op-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+module = "th05/snd_pr.cpp"
+segment = "SHARED"
+bindings_source = "probes/units/op_pmd_resident_bindings.asm"
+target_start = 0xd322
+size = 46
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "op-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+find = "snd_interrupt_if_midi = 0x60;"
+replace = "snd_interrupt_if_midi = 0x61;"

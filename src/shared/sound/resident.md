@@ -47,15 +47,16 @@ Native boundaries and complete instruction/branch review are retained in
 also retain their earlier independent [mode-selection acceptance](modes.md).
 This claims no initialized DATA, BSS, packed-file or whole-executable recovery.
 
-## PMD detector: exact MAIN C++ reconstruction
+## PMD detector: exact MAIN, OP and MAINE C++ reconstruction
 
-The adjacent MAIN PMD detector `[14B76,14BA4)` now has a complete, independently
-accepted 46-byte C++ owner, `main-pmd-resident`. The native 16-bit function
+The PMD detector now has three independently accepted 46-byte C++ owners:
+MAIN `[14B76,14BA4)` (`main-pmd-resident`), OP `[D322,D350)`
+(`op-pmd-resident`) and MAINE `[E820,E84E)` (`maine-pmd-resident`). The native 16-bit function
 initializes AX to zero, selects interrupt `60h`, resets three sound-mode bytes
 from AL, sets ES from AX, examines the original PMD driver signature in the
 interrupt vector and increments AX on success before returning via far C RETF.
 All 46 instruction bytes and the empty original relocation stream match in
-two fresh deterministic producers. No DATA/BSS, padding, target bytes or
+two fresh deterministic producers **for each** target. No DATA/BSS, padding, target bytes or
 handwritten instruction body is attributed to this owner.
 
 The initial ordinary C++ local `found` placed the result in DX. That added
@@ -69,10 +70,16 @@ reproduces all 46 bytes without copying its inline `LES` assembly. This
 register use preserves a genuine externally observable CPU/ES contract, not
 an arbitrary code-size hint.
 
-Focused receipt:
-`.analysis/unit-replays/gpt-web-main-pmd-resident-20261110/receipt.json`.
-Both independent linked MAP/MZ/OMF producers are strictly raw/fixup exact; the
-compiled semantic negative changes selected interrupt `60h` to `61h` and is
-rejected. The original source, actual compiler arguments and all dependencies
-are recorded in that receipt. The unchanged accepted MMD owners need no
-replay. No complete executable or OP/MAINE PMD acceptance is inferred.
+Focused independent receipts (each with two positive compiler/linker producers):
+
+- MAIN `.analysis/unit-replays/gpt-web-main-pmd-resident-20261110/receipt.json`
+- OP `.analysis/unit-replays/gpt-web-op-pmd-resident-20261110/receipt.json`
+- MAINE `.analysis/unit-replays/gpt-web-maine-pmd-resident-20261110/receipt.json`
+
+Each compiled semantic negative changes the selected interrupt from `60h` to
+`61h` and is rejected. The original source, artifact-specific binary macro,
+CS/DS frames, actual MAP/MZ/OMF, compiler arguments and all source dependencies
+are recorded in each receipt. OP and MAINE comparisons use their independently
+pinned decoded load modules and original relocation order. All three accepted
+MMD owners are unchanged; no shared whole-executable or packed-file claim is
+inferred. Total new authored coverage from these three PMD owners is 138 bytes.

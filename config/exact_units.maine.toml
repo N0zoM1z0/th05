@@ -1218,3 +1218,21 @@ unit = "maine-registration-display"
 source = "src/maine/registration/place.inl"
 find = "reinterpret_cast<const char *>(hi.score.g_name[place_r]), 2"
 replace = "reinterpret_cast<const char *>(hi.score.g_name[place_r]), 3"
+
+[[units]]
+id = "maine-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+module = "th05/snd_pr.cpp"
+segment = "SHARED"
+bindings_source = "probes/units/maine_pmd_resident_bindings.asm"
+target_start = 0xe820
+size = 46
+alignment_offsets = []
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+
+[[controls]]
+unit = "maine-pmd-resident"
+source = "src/shared/sound/pmd_resident.cpp"
+find = "snd_interrupt_if_midi = 0x60;"
+replace = "snd_interrupt_if_midi = 0x61;"

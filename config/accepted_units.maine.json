@@ -2,30 +2,18 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "2e4fcca99d55de228471d16e6edcda9768397bfa55ecaf5379f38a7c51bcc312",
+  "replay_receipt_sha256": "f4a4ed7b635b60b55eb945dd2d470c126c162593e556a8eec3f44144e56ee631",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 46896,
-    "candidate_start": 46896,
-    "size": 852,
-    "target_sha256": "87167d8aa0c54a37cf170b0f5666e19fc1e7e0b1e3ceafbdeb1f3afdc24a3f7f",
-    "candidate_sha256": "c2404afc18abc8038b7468c5e4c5385c9b98bff7e8f449983be82bc4975f25de",
+    "target_start": 59424,
+    "candidate_start": 59424,
+    "size": 46,
+    "target_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+    "candidate_sha256": "542122ecf70d667f1eba6e28f79ad080b9d936cdd5bca20868f34822e8558980",
     "raw_exact": false,
-    "target_fixups": [
-      835,
-      817,
-      629,
-      592,
-      556
-    ],
-    "candidate_fixups": [
-      835,
-      817,
-      629,
-      592,
-      556
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -28421,6 +28409,255 @@
           "-ml",
           "-DBINARY='E'",
           "th05/r_values.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-pmd-resident",
+      "entry_sha256": "9b8d6b4e97ee09c28f05c5cd5895fb7a53239cee24919222ad92d8f02e96b84b",
+      "result": {
+        "id": "maine-pmd-resident",
+        "entry_sha256": "9b8d6b4e97ee09c28f05c5cd5895fb7a53239cee24919222ad92d8f02e96b84b",
+        "rounds": [
+          {
+            "target_start": 59424,
+            "candidate_start": 59424,
+            "size": 46,
+            "target_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+            "candidate_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 59424,
+            "candidate_start": 59424,
+            "size": 46,
+            "target_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+            "candidate_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ae0818ebd12f9eab4d1f203552c3ff1a43728cc4074639b2e65ed1be3fffb139",
+            "dependency_timestamp_normalized_sha256": "f7b74d543eb1d3506a7aca8ba24b7de917db0ac03dede9051a549e4a37d19bf2",
+            "module_name": "th05/snd_pr.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_pr.cpp",
+              "src/shared/sound/pmd_resident.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "dd1555bab5135140a065bed3dfa0d1c4527a33c61acf2757f7e7de160b3654bf",
+            "dependency_timestamp_normalized_sha256": "f7b74d543eb1d3506a7aca8ba24b7de917db0ac03dede9051a549e4a37d19bf2",
+            "module_name": "th05/snd_pr.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/snd_pr.cpp",
+              "src/shared/sound/pmd_resident.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/snd_pr.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/snd_pr.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_pmd_resident_bindings.asm",
+            "sha256": "6717d19f1515059b0dc44515e3081fa26654f9915789138c656cea6f10733d78"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/pmd_resident.cpp",
+            "sha256": "74c5fa043e2393e72444624cd856e01227a787c7eaf6b2196676f0aa3c70c851"
+          },
+          {
+            "path": "src/shared/sound/resident.hpp",
+            "sha256": "871ab243bdeeb19cd538a4dbde965fe3ea281dd33374a103fcfcd4db12ab34f3"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_pmd_resident_bindings.asm",
+          "sha256": "6717d19f1515059b0dc44515e3081fa26654f9915789138c656cea6f10733d78"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/pmd_resident.cpp",
+          "sha256": "74c5fa043e2393e72444624cd856e01227a787c7eaf6b2196676f0aa3c70c851"
+        },
+        {
+          "path": "src/shared/sound/resident.hpp",
+          "sha256": "871ab243bdeeb19cd538a4dbde965fe3ea281dd33374a103fcfcd4db12ab34f3"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f4a4ed7b635b60b55eb945dd2d470c126c162593e556a8eec3f44144e56ee631",
+      "compiled_negative_control": {
+        "target_start": 59424,
+        "candidate_start": 59424,
+        "size": 46,
+        "target_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+        "candidate_sha256": "542122ecf70d667f1eba6e28f79ad080b9d936cdd5bca20868f34822e8558980",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-pmd-resident",
+        "entry_sha256": "9b8d6b4e97ee09c28f05c5cd5895fb7a53239cee24919222ad92d8f02e96b84b",
+        "mutation": {
+          "unit": "maine-pmd-resident",
+          "source": "src/shared/sound/pmd_resident.cpp",
+          "find": "snd_interrupt_if_midi = 0x60;",
+          "replace": "snd_interrupt_if_midi = 0x61;"
+        },
+        "control_sha256": "d5caadf2dc5991299af2b50dcab08952765fd58aca2945b982f572bede5c567a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 59424,
+          "candidate_start": 59424,
+          "size": 46,
+          "target_sha256": "c73a039ac1de95a5a5b1d182c6d6668f9f46a0b410f1d669c3c509c40f5a7cab",
+          "candidate_sha256": "542122ecf70d667f1eba6e28f79ad080b9d936cdd5bca20868f34822e8558980",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "4b3f2029503e6d3e74a169b28c1798510f9ea70e7632687566c5b7a15e63b64a",
+          "dependency_timestamp_normalized_sha256": "89bcd6fe7c4c9df102d1a4f1c4684f7798e234541d3a76c6563914b88f680ef0",
+          "module_name": "th05/snd_pr.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/snd_pr.cpp",
+            "src/shared/sound/pmd_resident.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/sound/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/snd_pr.cpp"
         ]
       },
       "target_view": {

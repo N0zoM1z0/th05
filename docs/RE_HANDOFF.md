@@ -6,8 +6,9 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-MAIN PMD resident (`main-pmd-resident`, 46 exact C++ bytes) now joins the
-accepted source set through its own two-producer/negative replay.
+The PMD resident detector is now exact across MAIN, OP and MAINE: three
+independent 46-byte C++ source owners (138 total), each passing two fresh
+producers, ordered fixups and an own compiled negative.
 OP ZUNsoft CODE **and** its independent filename DATA also pass focused
 individual two-producer exact replays and are committed. A separate attempt on
 MAIN's larger boss/attack controllers identified reproducible code-generation
@@ -31,13 +32,15 @@ Use the [generated progress](PROGRESS.md), accepted-unit ledgers and
 The global authored denominator remains unreviewed. The supplied Japanese copy
 is candidate-local-attested.
 
-## Latest exact MAIN leaf: PMD detector
+## Latest exact cross-artifact leaf: PMD detector
 
 `src/shared/sound/pmd_resident.cpp` now preserves the real AX/ES interrupt
-vector and return contract. The first normal local result compiled to 51 bytes;
-restoring `_AX` yields the complete 46-byte target, no fixups, in both fresh
-producer rounds with a rejected interrupt-selector compiled negative. Receipt:
-`.analysis/unit-replays/gpt-web-main-pmd-resident-20261110/receipt.json`.
+vector and return contract. The old local result compiled to 51 bytes; using
+the native `_AX` result yields the full 46 bytes and zero fixups in all three
+independently built MAIN, OP and MAINE targets. Own 60h→61h compiler negatives
+are rejected in each. Focused receipts:
+`.analysis/unit-replays/gpt-web-{main,op,maine}-pmd-resident-20261110/receipt.json`.
+Only these three functions (138 authored CODE bytes) are newly credited.
 
 ## Previous accepted packet: OP ZUNsoft CODE
 
