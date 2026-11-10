@@ -1627,3 +1627,33 @@ semantic_inputs = ["src/main/effects/spark/lifecycle.hpp"]
 [units.negative]
 find = "cmp byte ptr [si + SPARK_AGE_OFFSET], SPARK_MAX_AGE"
 replace = "cmp byte ptr [si + SPARK_AGE_OFFSET], (SPARK_MAX_AGE + 1)"
+
+[[units]]
+id = "main-pointnums-update"
+artifact = "main"
+source = "src/main/pointnum/update.asm"
+types = "src/main/pointnum/pointnum_types.inc"
+symbols = "probes/units/pointnums_update_symbols.inc"
+bindings = "probes/units/pointnums_update_asm_bindings.asm"
+notes = "src/main/pointnum/update.md"
+target_start = 0xe1a6
+size = 112
+segment = "POINTNUM_UPDATE_TEXT"
+group = "main_01"
+cs_base = 0xae10
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "67d57c3e503377585d18dd8335ce7f74aabee3477fa6c0c5a8276c731b25b710"
+target_scope_sha256 = "b89f3ba639c989db5173b86a8a777256c26a464f2b6f14770f2c4cf7239f1e1c"
+semantic_inputs = ["src/main/pointnum/lifecycle.hpp"]
+[units.publics]
+"POINTNUMS_UPDATE" = 0
+"pointnums_update_end" = 112
+[units.negative]
+find = "POINTNUM_EXPIRE_AGE equ 36"
+replace = "POINTNUM_EXPIRE_AGE equ 37"
+[[units.uncredited]]
+offset = 111
+size = 1
+kind = "alignment"

@@ -1,9 +1,10 @@
-# Point-popup update field-domain candidate
+# Point-popup update: exact reviewed ASM, natural C++ still inexact
 
 The original procedure body `[E1A6,E215)` has111 instruction bytes, no table
 or relocation, and a final near RET. The separate EVEN at E215 extends the
-old family spacing to112; it remains foreign and uncredited. No passing
-compiler contribution or complete-function acceptance is claimed here.
+old family spacing to112; it remains foreign and uncredited. The first natural C++ source attempts did not produce a complete matching
+compiler contribution; the independently reviewed native-ASM owner below now
+recovers the entire original source range.
 
 `update.cpp` keeps the complete canonical16-byte record,280-record pool,
 281-entry near-pointer list and first-yellow pointer. It preserves the saved
@@ -53,3 +54,39 @@ Private actual diagnostic roots `gpt-web-pointnum-{reg,y,profile}-*-a` retain
 cold compiler/MAP/OMF/MZ snapshots and individual source variants. The canonical
 111-byte `update.cpp` was never changed, no new unit was accepted, and existing
 accepted point-popup neighbors required no replay.
+
+
+## Original-register complete ASM recovery — 2026-11-10
+
+The original MAIN `[E1A6,E216)` complete unit now has a maintained semantic
+ASM source at `update.asm`. The function owns **111 true instruction bytes**
+and one **uncredited, checked `EVEN` NOP** at the end. The 44 native
+disassembled entries, complete boundaries, near RET, lack of original fixups,
+and the full 16-byte pointnum record layout were independently reviewed. This
+is a reviewed original-assembly reconstruction, **not** recovered historical
+author source or compiler-generated C++ credit. TH04 ReC98
+`main/pointnum/inv_upd.asm` corroborates the actual BX survivor-pointer
+cursor, SI record cursor, DI 280-record countdown, CL 24-frame age state,
+and near-pointer compaction semantics.
+
+The 280 authentic entries start at DS `9F04`; the 281-entry pointer list at
+DS `3FA6`, and `pointnum_first_yellow_alive` at DS `41D8`. The loop preserves
+SI/DI, copies the real previous Y, subtracts 8 subpixels from the signed Y
+value on/after age24, expires below -64 or after age36, and writes exactly
+one trailing null pointer. It does not clamp extra records, allocate storage,
+reset other globals, or change the original flag semantics. Geometry and
+structure offsets are named in the already maintained `pointnum_types.inc`;
+external arrays are linked with address-only bindings. No game-state DATA,
+BSS or visual asset is emitted by this owner.
+
+The focused receipt
+`.analysis/gpt-web-pointnums-update-asm-a/receipt.json` passes two
+independent TASM32/TLINK producers, unmodified **112/112 raw bytes**, the
+original zero ordered fixups, native MAP/OMF function/public bounds and actual
+CS `AE1`/DS `209D`. Its real semantic negative changes expiry age36→37 and
+is rejected. One NOP at relative111 is compared but excluded from authored
+ASM instructions; reviewed credit is **111** bytes. The original neighboring
+accepted pointnum initializer (11-byte C++), point renderer and point draw
+helpers remain source-identical and require no cold replay. The inexact
+ordinary `update.cpp` remains as a historical natural-source candidate, not
+a second accepted implementation.

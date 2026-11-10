@@ -6,6 +6,13 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+The complete MAIN `POINTNUMS_UPDATE` point-popup lifecycle is now exact:
+`[E1A6,E216)`, 112/112 compared bytes including the uncredited alignment
+NOP, **111 reviewed ASM instruction bytes**, two independent builds and its
+age36→37 compiled negative. All 280 records, compacted survivor list and
+yellow cursor use their actual original storage. See
+[pointnum update](../src/main/pointnum/update.md).
+
 The MAIN Spark lifecycle has an additional exact complete function:
 `_sparks_update` at `[E086,E0D2)`, **76/76 reviewed ASM instruction bytes** in
 two independent focused producers with its own rejected age-limit mutation.
