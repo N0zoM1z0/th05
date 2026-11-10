@@ -2,28 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "b87e092b4af8e5bea5402848b35a95018d7d4f4d8a39ac4f08d6b0296e1bef88",
+  "replay_receipt_sha256": "f33569af915869240a92f306ab0f00158b373cb3365c3aa3d8e9f16f842e45d8",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141710,
-    "candidate_start": 141710,
-    "size": 10,
-    "target_sha256": "8b4df7a42c4255076a4683d1c77c79c47e7d406d6b562bcb4ffaedf1d351f506",
-    "candidate_sha256": "f85d8b14334333af1d8a45f8592288b04c965349eb9a8c647bf8bc7a73c5262c",
+    "target_start": 99417,
+    "candidate_start": 99417,
+    "size": 273,
+    "target_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+    "candidate_sha256": "34f82f266726af13d486520837f9c0a1729f60d49b81b904f804ee4000c14b5f",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      235,
+      156,
+      118
+    ],
+    "candidate_fixups": [
+      235,
+      156,
+      118
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 141710,
-      "size": 10,
-      "module": "th05/boss.cpp",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -81374,6 +81374,387 @@
           "-ml",
           "-DBINARY='M'",
           "th05/boss.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-b4ball-update",
+      "entry_sha256": "336e0734fbb578a15ca6b00c157fbdd7e51cc8190f962966d19fb3235900b592",
+      "result": {
+        "id": "main-b4ball-update",
+        "entry_sha256": "336e0734fbb578a15ca6b00c157fbdd7e51cc8190f962966d19fb3235900b592",
+        "rounds": [
+          {
+            "target_start": 99417,
+            "candidate_start": 99417,
+            "size": 273,
+            "target_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+            "candidate_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+            "raw_exact": true,
+            "target_fixups": [
+              235,
+              156,
+              118
+            ],
+            "candidate_fixups": [
+              235,
+              156,
+              118
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 99417,
+            "candidate_start": 99417,
+            "size": 273,
+            "target_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+            "candidate_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+            "raw_exact": true,
+            "target_fixups": [
+              235,
+              156,
+              118
+            ],
+            "candidate_fixups": [
+              235,
+              156,
+              118
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "46b3f5c37d21acada269709b24a25555d0ac2c43d187111ad5004a7eb5c078ab",
+            "dependency_timestamp_normalized_sha256": "6728565ba45e306ad4e6ea25f47025f08b0dc5fe4808456467de647a07d73970",
+            "module_name": "th05/b4b_upd.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b4b_upd.cpp",
+              "src/main/boss/mai_yuki/b4ball_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/mai_yuki/b4ball_update.hpp",
+              "src/main/boss/mai_yuki/b4ball.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "fba5723bd069f7ee71f2bd9f0adc30e5c121fcf67ed2c437b1dd8767bc771848",
+            "dependency_timestamp_normalized_sha256": "6728565ba45e306ad4e6ea25f47025f08b0dc5fe4808456467de647a07d73970",
+            "module_name": "th05/b4b_upd.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b4b_upd.cpp",
+              "src/main/boss/mai_yuki/b4ball_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/mai_yuki/b4ball_update.hpp",
+              "src/main/boss/mai_yuki/b4ball.hpp",
+              "src/main/boss/mai_yuki/initial_patterns.hpp",
+              "src/main/boss/mai_yuki.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b4b_upd.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b4b_upd.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/b4ball_update_bindings.asm",
+            "sha256": "14da750fcc913889540b3d8135bbd1f0512018828e4515f1f77977be5e911246"
+          },
+          {
+            "path": "src/main/boss/mai_yuki.hpp",
+            "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/b4ball.hpp",
+            "sha256": "d5f26216dacfbe5c38280b178a34baa4230fb022255648806bb6086f9c3be920"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/b4ball_update.cpp",
+            "sha256": "c40634e85d009c03570d27cef62f7e7eb1bab915407f1852193c59cb7b7e6b2b"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/b4ball_update.hpp",
+            "sha256": "d9b7349b6157df10463fec08a1a8225080fc531da93aff639e11434751ac302a"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/b4ball_update_bindings.asm",
+          "sha256": "14da750fcc913889540b3d8135bbd1f0512018828e4515f1f77977be5e911246"
+        },
+        {
+          "path": "src/main/boss/mai_yuki.hpp",
+          "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/b4ball.hpp",
+          "sha256": "d5f26216dacfbe5c38280b178a34baa4230fb022255648806bb6086f9c3be920"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/b4ball_update.cpp",
+          "sha256": "c40634e85d009c03570d27cef62f7e7eb1bab915407f1852193c59cb7b7e6b2b"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/b4ball_update.hpp",
+          "sha256": "d9b7349b6157df10463fec08a1a8225080fc531da93aff639e11434751ac302a"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
+          "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f33569af915869240a92f306ab0f00158b373cb3365c3aa3d8e9f16f842e45d8",
+      "compiled_negative_control": {
+        "target_start": 99417,
+        "candidate_start": 99417,
+        "size": 273,
+        "target_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+        "candidate_sha256": "34f82f266726af13d486520837f9c0a1729f60d49b81b904f804ee4000c14b5f",
+        "raw_exact": false,
+        "target_fixups": [
+          235,
+          156,
+          118
+        ],
+        "candidate_fixups": [
+          235,
+          156,
+          118
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-b4ball-update",
+        "entry_sha256": "336e0734fbb578a15ca6b00c157fbdd7e51cc8190f962966d19fb3235900b592",
+        "mutation": {
+          "unit": "main-b4ball-update",
+          "source": "src/main/boss/mai_yuki/b4ball_update.cpp",
+          "find": "score_delta += B4_UPDATE_KILL_SCORE;",
+          "replace": "score_delta += B4_UPDATE_KILL_SCORE + 1;"
+        },
+        "control_sha256": "7b53c30c5ffe7f5fec2f7542cf193f5c1f010b837cec61f8355e026327a3fb3c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 99417,
+          "candidate_start": 99417,
+          "size": 273,
+          "target_sha256": "1d9916f2f34a5db975ac5310083f94070871fb6e5de4744fab89d53404c2c8ee",
+          "candidate_sha256": "34f82f266726af13d486520837f9c0a1729f60d49b81b904f804ee4000c14b5f",
+          "raw_exact": false,
+          "target_fixups": [
+            235,
+            156,
+            118
+          ],
+          "candidate_fixups": [
+            235,
+            156,
+            118
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "712fb2551766503d55fb61c06118b94f414f759d2d982792fd99fe46bd5224b2",
+          "dependency_timestamp_normalized_sha256": "0e5d123c84e0f9090511996ccb2eead80194d0afe6e183b76f27fe73270267e4",
+          "module_name": "th05/b4b_upd.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/b4b_upd.cpp",
+            "src/main/boss/mai_yuki/b4ball_update.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/mai_yuki/b4ball_update.hpp",
+            "src/main/boss/mai_yuki/b4ball.hpp",
+            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "src/main/boss/mai_yuki.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/b4b_upd.cpp"
         ]
       },
       "receipt_aggregate_pass": true

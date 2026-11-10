@@ -6,6 +6,16 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN Mai/Yuki's complete `B4BALLS_UPDATE` state machine is now exact natural
+C++: **273/273 bytes**, original three ordered relocation sites, two real
+Turbo C++/TLINK producers and a rejected 550→551 kill-score mutation.
+The collision dataflow uses real `_AX`/`_DX` registers, and a zero-runtime
+compiler-control hint restores the native short-branch clipping structure.
+No claim is made that B4's unavailable original historical source used this
+exact control hint. See [B4 ball update review](../src/main/boss/mai_yuki/b4ball_update.md)
+and the focused receipt
+`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
+
 The complete MAIN **Yumeko 283-byte sword updater** is now exact reviewed
 native-language ASM (`1EDBA..1EED5`), after genuine natural C++ control-flow
 experiments failed to produce the two original far-reaching near `JL/JGE`

@@ -1,3 +1,50 @@
+## 2026-11-10: complete 273-byte B4 ball C++ recovery accepted
+
+**`B4BALLS_UPDATE` is now exact**, `main-b4ball-update`, original MAIN
+`[18459,1856A)`. Its full original 273 machine-code bytes, 88
+instructions, zero instruction NOPs and literal ordered fixups
+`[235,156,118]` match **twice** from independent Turbo C++/TLINK producers.
+The only candidate output is one complete exported near-Pascal C function;
+no source-body fragment, extra gap, patched instruction or relaxed comparison
+is accepted. The genuine compiled semantic negative increases the 550-point
+kill reward by one and is rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
+
+The original compiler gaps were two independent source-codegen issues.
+First, four clipped-axis conditions had been emitted as long conditional
+branches instead of the original three short branches to a common out-of-bounds
+jump plus one short branch to the continuation. A no-runtime-effect,
+false-returning `optimization_barrier()` immediately before the original
+`F_FREE` assignment causes Borland to preserve the genuine branch structure.
+The same hint is an attested technique in ReC98's analogous Shinki B6 source;
+**the exact historical B4 updater source is not available**, so this B4
+placement is a reconstructed compiler-control strategy, *not* a claim that
+ZUN's original text had the same statement. It does not emit an instruction,
+NOP, code filler or changed observable game behavior.
+
+Second, the former inline player-distance conditional copied DX into AX
+*after* checking X, adding unoriginal instructions. Following the preserved
+ReC98 Boss/player overlap ABI, `src/main/boss/mai_yuki/b4ball_update.cpp`
+now computes X and Y distance eagerly and independently in real `_AX`/`_DX`
+DOS pseudoregisters, then uses the canonical `overlap_wh_inplace_fast()`
+macro with the genuine 256-subpixel inclusive hitbox extent. The compiler
+naturally emits original `SUB AX` / `SUB DX` / `ADD AX` / `CMP AX` /
+`ADD DX` / `CMP DX` instructions. In the single-producer equal-sized candidate
+this one region accounted for *all* 18 differing bytes; the correct expression
+removes all 18 differences while retaining total 273-byte length.
+
+The remaining snow-hit logic, revenge bullets, velocity quartering, ten/4/3
+sound calls, elapsed-age decay and real `_EAX` packed 32-bit position copy
+remain ordinary source expressions and unchanged semantic state mutations.
+External score/shot/player/graphics state, true main_01/SHARED/main_03 link
+frames, DS209D and original resource buffers are source-free binder labels;
+none becomes authored DATA or BSS. The old natural 278, `-O-` 274 and other
+failed variants remain preserved as historical diagnostics below, superseded
+by the accepted *whole* function. **273 new authored C++ CODE bytes** are
+credited without modifying any previously accepted Mai/Yuki neighbor.
+
+---
+
 # B4 custom-ball update candidate
 
 The original complete MAIN function is `[18459,1856A)`,273 bytes and88

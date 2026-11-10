@@ -5114,3 +5114,22 @@ unit = "main-boss-player-collision"
 source = "src/main/boss/collision_body.inl"
 find = "player_is_hit = true;"
 replace = "player_is_hit = false;"
+
+[[units]]
+id = "main-b4ball-update"
+source = "src/main/boss/mai_yuki/b4ball_update.cpp"
+module = "th05/b4b_upd.cpp"
+segment = "MAIN_035_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/b4ball_update_bindings.asm"
+target_start = 0x18459
+size = 273
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-b4ball-update"
+source = "src/main/boss/mai_yuki/b4ball_update.cpp"
+find = "score_delta += B4_UPDATE_KILL_SCORE;"
+replace = "score_delta += B4_UPDATE_KILL_SCORE + 1;"

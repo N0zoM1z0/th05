@@ -4,6 +4,11 @@
 #include "src/main/boss/mai_yuki/b4ball_update.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
+// A source-level, zero-runtime-instruction compiler-control hint with the
+// same semantics as ReC98's decomp.hpp optimization_barrier().  This B4
+// function's exact historical source has not been recovered; we claim only
+// that this maintained C++ producer emits the original native function.
+inline bool optimization_barrier(void) { return false; }
 extern "C" void pascal near b4balls_update(void)
 {
     int damage;
@@ -24,14 +29,17 @@ extern "C" void pascal near b4balls_update(void)
            static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W * 16) + B4_UPDATE_CLIP_MARGIN ||
            static_cast<subpixel_t>(_DX) <= -B4_UPDATE_CLIP_MARGIN ||
            static_cast<subpixel_t>(_DX) >= (PLAYFIELD_H * 16) + B4_UPDATE_CLIP_MARGIN) {
+            optimization_barrier();
             ball->flag = F_FREE;
             continue;
         }
         if(ball->flag != F_REMOVE) {
-            if(static_cast<unsigned int>(static_cast<subpixel_t>(_AX) - player_pos.cur.x.v +
-                    B4_UPDATE_HIT_RADIUS) <= (2 * B4_UPDATE_HIT_RADIUS) &&
-               static_cast<unsigned int>(static_cast<subpixel_t>(_DX) - player_pos.cur.y.v +
-                    B4_UPDATE_HIT_RADIUS) <= (2 * B4_UPDATE_HIT_RADIUS)) {
+            // Both genuine returned Point words remain live in AX/DX until
+            // the two inclusive unsigned tests. ReC98 boss/player collision
+            // uses the same original register-level overlap convention.
+            _AX -= player_pos.cur.x.v;
+            _DX -= player_pos.cur.y.v;
+            if(overlap_wh_inplace_fast(_AX, _DX, (2 * B4_UPDATE_HIT_RADIUS), (2 * B4_UPDATE_HIT_RADIUS))) {
                 player_is_hit = 1;
             }
             // The original reloads the real current position at this boundary;
