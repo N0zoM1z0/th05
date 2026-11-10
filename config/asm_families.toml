@@ -1976,3 +1976,29 @@ semantic_inputs = ["src/main/gather/gather.hpp"]
 [units.negative]
 find = "mov cx, GATHER_BULLET_WORDS"
 replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
+
+[[units]]
+id = "main-sparks-add-circle-asm"
+artifact = "main"
+source = "src/main/boss/sparks_add_circle.asm"
+types = "src/main/boss/sparks_add_circle_types.inc"
+symbols = "probes/units/sparks_add_circle_symbols.inc"
+bindings = "probes/units/sparks_add_circle_bindings.asm"
+notes = "src/main/boss/sparks_add_circle.md"
+target_start = 0x16ee8
+size = 106
+segment = "SPARK_CIRCLE_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = [105]
+fixups = []
+tables = []
+native_review_sha256 = "0a4435181b360c4156633eb63457d8e3f792a37c95336a20c52d82ea6c7e45ee"
+target_scope_sha256 = "99a69e6147a83ce9f95fd09eea5e8bf62cea55c100321aff06da35cf02520a1f"
+semantic_inputs = ["src/shared/geometry.hpp"]
+[units.publics]
+"SPARKS_ADD_CIRCLE" = 0
+"sparks_add_circle_end" = 106
+[units.negative]
+find = "mov word ptr [si+SPARK_FLAG_AND_AGE], SPARK_ALIVE"
+replace = "mov word ptr [si+SPARK_FLAG_AND_AGE], (SPARK_ALIVE + 1)"

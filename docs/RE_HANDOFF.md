@@ -88,6 +88,16 @@ the already accepted neighboring 164-byte renderer and 399-byte collision
 function. Receipt `.analysis/gpt-web-hitshot-from-asm-a/receipt.json`; see
 [HitShot source](../src/main/player/hitshot_from.md).
 
+The **106-byte radial Spark-circle core** is newly exact as complete
+source-backed original-register ASM at `16EE8..16F52`: 64-slot/16-byte
+circular animation state, native register geometry, near Pascal velocity
+function, two fresh TASM/TLINK producers and rejected alive-state mutation.
+105 instruction bytes are credited; the single original EVEN NOP is not.
+It is independently called by the accepted 22-byte player-centered Spark
+wrapper, without duplicate coverage. See
+[Spark-circle core](../src/main/boss/sparks_add_circle.md) and
+`.analysis/gpt-web-main-sparks-circle-106-asm-a/receipt.json`.
+
 The complete player-centered far spark trigger directly before the accepted
 Boss explosion family is now exact natural C++: `176B8..176CE`, **22/22
 bytes**, two original-order compiler/linker producers, empty native fixups,
