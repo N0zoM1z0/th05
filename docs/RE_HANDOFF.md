@@ -38,6 +38,18 @@ remains independently accepted without double credit. See
 [Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
 `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
 
+The same complete source-backed keyboard/joystick input family is now
+original-register exact in **MAIN, OP and MAINE**. OP's `DF8E..E094`
+(`CS=D30`, `DS=EFE`, far `JS_SENSE=0000:2CBA`) and MAINE's
+`F102..F208` (`CS=E80`, `DS=1011`, provider `0000:2E82`) each passed two
+fresh original-byte and fixup `[251]` producer rounds plus rejected compiled
+BIOS Shift-status negatives. Each family contributes 261 reviewed ASM
+instruction bytes and one uncredited original NOP. All 3 binaries together
+have 783 exact complete instruction bytes from the *same maintained source*,
+without claiming historical authoring language. Receipts:
+`.analysis/gpt-web-{op,maine}-input-sense-262-a/receipt.json`.
+See [shared OP/MAINE review](../src/shared/hardware/input_sense_op_maine.md).
+
 The full MAIN **262-byte BIOS keyboard and joystick input scanner** is newly
 accepted as a two-entry original-register SHARED ASM family at
 `[14FC2,150C8)`. Two TASM32/TLINK producers match all 262 raw bytes,

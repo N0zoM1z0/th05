@@ -1896,3 +1896,57 @@ semantic_inputs = ["src/shared/hardware/input_held.hpp"]
 [units.negative]
 find = "mov ah, 2"
 replace = "mov ah, 3"
+
+[[units]]
+id = "op-input-sense-original-asm"
+artifact = "op"
+source = "src/shared/hardware/input_sense.asm"
+types = "src/shared/hardware/input_sense_types.inc"
+symbols = "probes/units/input_sense_symbols.inc"
+bindings = "probes/units/op_input_sense_asm_bindings.asm"
+notes = "src/shared/hardware/input_sense_op_maine.md"
+target_start = 0xdf8e
+size = 262
+segment = "SHARED"
+group = "(none)"
+cs_base = 0xd300
+instruction_nops = [261]
+fixups = [251]
+tables = []
+native_review_sha256 = "5c3752d52653758a564916e9c818f2acd48060fe432b73756c4e9fa1533e6830"
+target_scope_sha256 = "457fbd672f6295f376ed5ba066cebfc30e8b0ffdd872ff817a59b161b1dd3d8d"
+semantic_inputs = ["src/shared/hardware/input_held.hpp"]
+[units.publics]
+"input_reset_sense()" = 0
+"input_sense()" = 8
+"input_sense_end" = 262
+[units.negative]
+find = "mov ah, 2"
+replace = "mov ah, 3"
+
+[[units]]
+id = "maine-input-sense-original-asm"
+artifact = "maine"
+source = "src/shared/hardware/input_sense.asm"
+types = "src/shared/hardware/input_sense_types.inc"
+symbols = "probes/units/input_sense_symbols.inc"
+bindings = "probes/units/maine_input_sense_asm_bindings.asm"
+notes = "src/shared/hardware/input_sense_op_maine.md"
+target_start = 0xf102
+size = 262
+segment = "SHARED"
+group = "(none)"
+cs_base = 0xe800
+instruction_nops = [261]
+fixups = [251]
+tables = []
+native_review_sha256 = "eb6039eb431b1bdaf9b747c591f6789058df4dc69ead6ffe271d8657c7277a0a"
+target_scope_sha256 = "e7f64e47e444624cbad81eb66882afc672700569cc9aa2eb604d8fefad09a7c6"
+semantic_inputs = ["src/shared/hardware/input_held.hpp"]
+[units.publics]
+"input_reset_sense()" = 0
+"input_sense()" = 8
+"input_sense_end" = 262
+[units.negative]
+find = "mov ah, 2"
+replace = "mov ah, 3"
