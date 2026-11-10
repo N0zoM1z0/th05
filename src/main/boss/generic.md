@@ -2,10 +2,10 @@
 
 Current status: `main-boss-generic` independently accepts six functions / 352
 CODE bytes; `main-boss-generic-data` accepts the complete 10-byte item-drop
-DATA table. The full **414-byte defeat** controller is now accepted; only the separate
-The complete **43-byte player collision is now accepted** in its own source scope. The
-preparation notes below are historical context; use the current ledgers for
-acceptance.
+DATA table. The full **414-byte defeat** controller and the separate
+**43-byte player-collision** function are both accepted as complete source
+scopes. The preparation notes below are historical context; use the current
+ledgers for acceptance.
 
 Natural source adapts pinned nmlgc/ReC98
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`,
