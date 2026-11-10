@@ -2,10 +2,11 @@
 
 `full.cpp` compiles17 genuine staff procedures in native order, beginning with
 the window setter atD31F and ending with the frame pump atE3A4. The original
-complete interval is4229 bytes. The actual compiler contribution is4223: two
-unaccepted functions each omit one original redundant three-byte pointer load.
-They remain genuine functional source bodies in the family; no padding, byte
-patch, register template, empty barrier or invented prefix replaces them.
+complete interval is 4229 bytes. **The entire maintained C++ family now emits
+all 4229 exact original bytes and literal original ordered relocations.** The
+earlier 4223-byte diagnostic (two missing pointer reloads) is retained below
+as historical evidence. Neither repair adds fabricated instructions, barriers,
+handwritten assembly or an artificial prefix.
 This coherent family does not authenticate the historical original TU.
 
 Every function body has one canonical file under `body/`. Ten standalone CPPs
@@ -55,8 +56,10 @@ both161/271-byte functions and their shared spawn-speed8-to-9 control;
 control. Each group has two actual fresh deterministic producers. The four
 receipts are imported atomically, preserving unrelated records and controls.
 
-There are15 accepted complete functions/2742 instruction bytes in this family.
-The original particle updater626 and renderer861 remain unaccepted. In the
+There are now **17 accepted complete functions and 4229 exact C++ CODE bytes**
+in this family. `staff_particles_update` (626) and `staff_scene_render` (861)
+add 1487 new bytes; the previous 15 accepted functions retain their 2742
+bytes without duplicate credit. In the
 full producer, some opening/rain/frame near calls also differ because the two
 earlier functions are shorter; their refreshed standalone occurrences retain
 the original complete bytes instead. Actual MAP starts may differ from target
@@ -87,3 +90,41 @@ recover that load. Source and shared headers were restored after the trials.
 Current full-family context: `.analysis/native-producers/maine-staff-full-a/`.
 Further work should investigate the genuine compiler/source context that
 preserves those reloads.
+
+## 2026-11-10: complete 17-function exact source restoration
+
+The original CODEGEN obstacle was **two independent, three-byte pointer
+reloads**, one in the 626-byte particle updater's trail sentinel branch and
+one in the 861-byte scene renderer's trail sentinel branch. The actual original
+C++ control flow is recovered by expressing the negative sentinel condition
+as a literal `if/else` with the live update/draw statements in `else`. For the
+updater, `int i` is declared ahead of the `trail_center` word pointer to retain
+the native `BP-2` slot for the counter and `BP-4` for the pointer. For the
+renderer, the zero index assignment precedes the color initialization,
+restoring the original loop entry instructions. None of these changes modifies
+stage behavior, storage types, external ABIs or accepted helpers.
+
+The complete source in `full.cpp` now generates **4229/4229 exact bytes**, the
+unaltered physical positions from `D31F` through `E3A4`, and the full literal
+original OMF/MZ relocation order. Its true original source dependencies and
+binder are used, with no target-byte patch or relocation sorting. The new
+accepted scopes are:
+
+- `maine-staff-particles-update`: `[D5E1,D853)`, **626** complete C++ bytes,
+  original ordered fixups `[278,421]`
+- `maine-staff-scene-render`: `[DFF1,E34E)`, **861** complete C++ bytes,
+  original ordered fixups
+  `[781,708,645,577,555,407,382,365,258,245,165,91,28,849]`
+
+Both new scopes pass two independent source builds, a complete raw/ordered
+comparison and separate compiled semantic negatives (orb-trail cadence 3→4
+and trail color 6→5). Their receipt is
+`.analysis/unit-replays/gpt-web-maine-staff-two-major-functions-20261110/receipt.json`.
+Eight accepted neighbor scopes depending on these inlined bodies were locally
+refreshed in independent two-producer builds and retain all previous exact
+bytes and controls:
+`.analysis/unit-replays/gpt-web-maine-staff-neighbor-refresh-20261110/receipt.json`.
+The full family is now **4229 bytes/17 complete functions accepted**; it does
+not claim the adjacent 126-byte bitmap device kernels or the 991-byte Staff
+controller. The controller's true predecessor CALL offsets can now be
+investigated with no six-byte C++-owned gap.

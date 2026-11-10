@@ -1,9 +1,9 @@
 void near staff_particles_update(void)
 {
     orb_particle_t near *p = particles;
+    int i;
     SPPoint near *trail_center = orb_trails_center;
     SPPoint near *star_center = stars_center;
-    int i;
 
     for(i = 0; i < ORB_PARTICLE_COUNT; i++, p++) {
         if(p->center.x.v != STAFF_CENTER_NONE) {
@@ -37,7 +37,8 @@ void near staff_particles_update(void)
         }
     }
     for(i = 0; i < ORB_TRAIL_COUNT; i++, trail_center++) {
-        if(trail_center->x != STAFF_CENTER_NONE) {
+        if(trail_center->x == STAFF_CENTER_NONE) {
+        } else {
             trail_center->x.v -= space_camera_velocity.x.v;
             trail_center->y.v -= space_camera_velocity.y.v;
         }

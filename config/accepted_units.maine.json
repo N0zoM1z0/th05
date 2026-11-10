@@ -2,54 +2,36 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "54e4a49a27730aa8b47cd041a7c57ae3535ba086d4be92d9d3e654fa7b18e50c",
+  "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 46480,
-    "candidate_start": 46480,
-    "size": 416,
-    "target_sha256": "93f40c4e3e4606cceb8f3e8239561864f8c309008a93756c16a30c2c4cc765fc",
-    "candidate_sha256": "53b465ba238bca3cbec7201714ed0a1abe7252325f29ac1301619c9abf7b6d80",
+    "target_start": 56953,
+    "candidate_start": 56953,
+    "size": 376,
+    "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
+    "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
     "raw_exact": false,
     "target_fixups": [
-      411,
-      400,
-      389,
-      365,
-      354,
-      332,
-      321,
-      289,
-      251,
-      246,
-      235,
-      205,
-      192,
-      177,
-      160,
-      139
+      85,
+      160
     ],
     "candidate_fixups": [
-      411,
-      400,
-      389,
-      365,
-      354,
-      332,
-      321,
-      289,
-      251,
-      246,
-      235,
-      205,
-      192,
-      177,
-      160,
-      139
+      85,
+      160
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 56953,
+      "size": 376,
+      "function_symbol": "staff_image_update_b(int,int,int,int)",
+      "contribution_start": 54047,
+      "contribution_size": 4229,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "staff_scene_render()"
+    }
   },
   "units": [
     {
@@ -16623,7 +16605,7 @@
               "size": 104,
               "function_symbol": "space_window_set(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_init()"
             }
@@ -16649,7 +16631,7 @@
               "size": 104,
               "function_symbol": "space_window_set(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_init()"
             }
@@ -16658,8 +16640,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -16715,8 +16697,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -16859,7 +16841,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -16871,7 +16853,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -16991,7 +16973,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -17003,7 +16985,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -17068,10 +17050,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -17088,11 +17070,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -17110,7 +17092,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -17127,18 +17109,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -17254,7 +17236,7 @@
         "rounds": [
           {
             "target_start": 56294,
-            "candidate_start": 56291,
+            "candidate_start": 56294,
             "size": 283,
             "target_sha256": "3d1a0c1609058702ee09367bbc8927b1e82ec4976620c494294dc93ea9968ca7",
             "candidate_sha256": "3d1a0c1609058702ee09367bbc8927b1e82ec4976620c494294dc93ea9968ca7",
@@ -17273,18 +17255,18 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56291,
+              "start": 56294,
               "size": 283,
               "function_symbol": "staff_text_wipe(int,int,int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_image_update_a(int,int,int,int)"
             }
           },
           {
             "target_start": 56294,
-            "candidate_start": 56291,
+            "candidate_start": 56294,
             "size": 283,
             "target_sha256": "3d1a0c1609058702ee09367bbc8927b1e82ec4976620c494294dc93ea9968ca7",
             "candidate_sha256": "3d1a0c1609058702ee09367bbc8927b1e82ec4976620c494294dc93ea9968ca7",
@@ -17303,11 +17285,11 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56291,
+              "start": 56294,
               "size": 283,
               "function_symbol": "staff_text_wipe(int,int,int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_image_update_a(int,int,int,int)"
             }
@@ -17316,8 +17298,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -17373,8 +17355,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -17517,7 +17499,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -17529,7 +17511,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -17649,7 +17631,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -17661,7 +17643,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -17726,10 +17708,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -17746,11 +17728,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -17768,7 +17750,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -17785,18 +17767,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -17912,7 +17894,7 @@
         "rounds": [
           {
             "target_start": 56577,
-            "candidate_start": 56574,
+            "candidate_start": 56577,
             "size": 376,
             "target_sha256": "88fb5c0b8abc32157207d1c13d8382b98fbbde71933f1768bbf91f48db6ed8d2",
             "candidate_sha256": "88fb5c0b8abc32157207d1c13d8382b98fbbde71933f1768bbf91f48db6ed8d2",
@@ -17929,18 +17911,18 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56574,
+              "start": 56577,
               "size": 376,
               "function_symbol": "staff_image_update_a(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_image_update_b(int,int,int,int)"
             }
           },
           {
             "target_start": 56577,
-            "candidate_start": 56574,
+            "candidate_start": 56577,
             "size": 376,
             "target_sha256": "88fb5c0b8abc32157207d1c13d8382b98fbbde71933f1768bbf91f48db6ed8d2",
             "candidate_sha256": "88fb5c0b8abc32157207d1c13d8382b98fbbde71933f1768bbf91f48db6ed8d2",
@@ -17957,11 +17939,11 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56574,
+              "start": 56577,
               "size": 376,
               "function_symbol": "staff_image_update_a(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_image_update_b(int,int,int,int)"
             }
@@ -17970,8 +17952,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18027,8 +18009,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18171,7 +18153,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -18183,7 +18165,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -18303,7 +18285,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -18315,7 +18297,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -18380,10 +18362,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -18400,11 +18382,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -18422,7 +18404,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -18439,18 +18421,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -18566,7 +18548,7 @@
         "rounds": [
           {
             "target_start": 56953,
-            "candidate_start": 56950,
+            "candidate_start": 56953,
             "size": 376,
             "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
             "candidate_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
@@ -18583,18 +18565,18 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56950,
+              "start": 56953,
               "size": 376,
               "function_symbol": "staff_image_update_b(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_scene_render()"
             }
           },
           {
             "target_start": 56953,
-            "candidate_start": 56950,
+            "candidate_start": 56953,
             "size": 376,
             "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
             "candidate_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
@@ -18611,11 +18593,11 @@
             "exact": true,
             "map_scope": {
               "kind": "complete-function",
-              "start": 56950,
+              "start": 56953,
               "size": 376,
               "function_symbol": "staff_image_update_b(int,int,int,int)",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_scene_render()"
             }
@@ -18624,8 +18606,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18681,8 +18663,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18825,7 +18807,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -18837,7 +18819,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -18957,7 +18939,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -18969,7 +18951,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -19034,10 +19016,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -19054,11 +19036,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -19076,7 +19058,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -19093,18 +19075,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -19249,7 +19231,7 @@
               "size": 278,
               "function_symbol": "staff_particles_init()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_gather()"
             }
@@ -19285,7 +19267,7 @@
               "size": 278,
               "function_symbol": "staff_particles_init()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_gather()"
             }
@@ -19294,8 +19276,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -19351,8 +19333,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -19495,7 +19477,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -19507,7 +19489,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -19627,7 +19609,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -19639,7 +19621,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -19704,10 +19686,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -19724,11 +19706,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -19746,7 +19728,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -19763,18 +19745,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -19913,7 +19895,7 @@
               "size": 108,
               "function_symbol": "staff_particles_gather()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_clear()"
             }
@@ -19943,7 +19925,7 @@
               "size": 108,
               "function_symbol": "staff_particles_gather()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_clear()"
             }
@@ -19952,8 +19934,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -20009,8 +19991,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -20153,7 +20135,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -20165,7 +20147,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -20285,7 +20267,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -20297,7 +20279,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -20362,10 +20344,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -20382,11 +20364,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -20404,7 +20386,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -20421,18 +20403,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -20563,7 +20545,7 @@
               "size": 40,
               "function_symbol": "staff_particles_clear()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_scatter()"
             }
@@ -20585,7 +20567,7 @@
               "size": 40,
               "function_symbol": "staff_particles_clear()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_scatter()"
             }
@@ -20594,8 +20576,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -20651,8 +20633,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -20795,7 +20777,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -20807,7 +20789,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -20927,7 +20909,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -20939,7 +20921,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -21004,10 +20986,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -21024,11 +21006,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -21046,7 +21028,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -21063,18 +21045,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -21219,7 +21201,7 @@
               "size": 176,
               "function_symbol": "staff_particles_scatter()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_update()"
             }
@@ -21255,7 +21237,7 @@
               "size": 176,
               "function_symbol": "staff_particles_scatter()",
               "contribution_start": 54047,
-              "contribution_size": 4223,
+              "contribution_size": 4229,
               "boundary_kind": "next-function",
               "next_function_symbol": "staff_particles_update()"
             }
@@ -21264,8 +21246,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3501e1a3a763bb698e1aa2065f1722849283d1e39615909c7fd6d4e5ec803e88",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "e4d995c01060cff93614c4af2b5f7d7c4cea06e4ab012a9626bfe93c1f3707e6",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -21321,8 +21303,8 @@
             ]
           },
           {
-            "sha256": "36e06de12242b1e8d8ab0046b43b31a25f663a38e45f4a6d328f1000b15c2d6d",
-            "dependency_timestamp_normalized_sha256": "4d8dda4a6c2f5e07e4d5453e7b271f14ff4fcc0f376d36d682ce17608cdf3438",
+            "sha256": "6b54dd5b1a84941c7d480da23219572c13387c7523ecc18a23f0a7ca5f11a53b",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
             "module_name": "th05/stffull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -21465,7 +21447,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_particles_update.inl",
-            "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
           },
           {
             "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -21477,7 +21459,7 @@
           },
           {
             "path": "src/maine/staff/body/staff_scene_render.inl",
-            "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
           },
           {
             "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -21597,7 +21579,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_particles_update.inl",
-          "sha256": "8c9f304e3a42765ecfbbc16de78e63b0d309ff5b5e625ffe4d7f2aaf660ce243"
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
         },
         {
           "path": "src/maine/staff/body/staff_rain_spawn.inl",
@@ -21609,7 +21591,7 @@
         },
         {
           "path": "src/maine/staff/body/staff_scene_render.inl",
-          "sha256": "ab8fae71d0dc814f3fd774a19cff0807a8db5d08e72cfec10ff79b50788f26ff"
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
         },
         {
           "path": "src/maine/staff/body/staff_text_wipe.inl",
@@ -21674,10 +21656,10 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "26ea72375b79026ba5ee08442e389024498442809fe700d997c335a3fa8cc0d0",
+      "replay_receipt_sha256": "89674ca24f9e1f55acdbf41a92109f7335e0204c108c257a6770a70fd85d80c7",
       "compiled_negative_control": {
         "target_start": 56953,
-        "candidate_start": 56950,
+        "candidate_start": 56953,
         "size": 376,
         "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
         "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -21694,11 +21676,11 @@
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 56950,
+          "start": 56953,
           "size": 376,
           "function_symbol": "staff_image_update_b(int,int,int,int)",
           "contribution_start": 54047,
-          "contribution_size": 4223,
+          "contribution_size": 4229,
           "boundary_kind": "next-function",
           "next_function_symbol": "staff_scene_render()"
         }
@@ -21716,7 +21698,7 @@
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 56953,
-          "candidate_start": 56950,
+          "candidate_start": 56953,
           "size": 376,
           "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
           "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
@@ -21733,18 +21715,18 @@
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 56950,
+            "start": 56953,
             "size": 376,
             "function_symbol": "staff_image_update_b(int,int,int,int)",
             "contribution_start": 54047,
-            "contribution_size": 4223,
+            "contribution_size": 4229,
             "boundary_kind": "next-function",
             "next_function_symbol": "staff_scene_render()"
           }
         },
         "omf": {
-          "sha256": "d15bbead4f10daa720d659453c6b589ee417395a6db496730a238a5ef5115f39",
-          "dependency_timestamp_normalized_sha256": "9a97372c77529833f90e2c03969ac75f413dd579ec1147246448070cfc6cf21c",
+          "sha256": "8519f306abfe05e8bcbfbfb9f9cc523508c2836f1ea2370b700b667f1042cd1d",
+          "dependency_timestamp_normalized_sha256": "2dabc4f165b1bc8c9669ff6ec93c23f1d5d6c3f5e638e2d8ce650e73aba1ebfd",
           "module_name": "th05/stffull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -31248,6 +31230,1410 @@
             "path": "src/shared/abi.hpp",
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-staff-particles-update",
+      "entry_sha256": "eea8491abd6e768277ab8718e4afd72a70ef97b6b6dc94a394fffde9b2ae1772",
+      "result": {
+        "id": "maine-staff-particles-update",
+        "entry_sha256": "eea8491abd6e768277ab8718e4afd72a70ef97b6b6dc94a394fffde9b2ae1772",
+        "rounds": [
+          {
+            "target_start": 54753,
+            "candidate_start": 54753,
+            "size": 626,
+            "target_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+            "candidate_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+            "raw_exact": true,
+            "target_fixups": [
+              278,
+              421
+            ],
+            "candidate_fixups": [
+              278,
+              421
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 54753,
+              "size": 626,
+              "function_symbol": "staff_particles_update()",
+              "contribution_start": 54047,
+              "contribution_size": 4229,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_orb_spark_add()"
+            }
+          },
+          {
+            "target_start": 54753,
+            "candidate_start": 54753,
+            "size": 626,
+            "target_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+            "candidate_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+            "raw_exact": true,
+            "target_fixups": [
+              278,
+              421
+            ],
+            "candidate_fixups": [
+              278,
+              421
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 54753,
+              "size": 626,
+              "function_symbol": "staff_particles_update()",
+              "contribution_start": 54047,
+              "contribution_size": 4229,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_orb_spark_add()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "1a08400733ecb138d765223ef22b3f04ce734d28135cd1abf192ec2bf076bc9c",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
+            "module_name": "th05/stffull.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stffull.cpp",
+              "src/maine/staff/full.cpp",
+              "src/maine/staff/full.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/maine/staff/orb_opening.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/wipe.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/abi.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/shared/abi.hpp",
+              "src/maine/staff/reveal_b.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/maine/staff/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/body/space_window_set.inl",
+              "src/maine/staff/body/staff_particles_init.inl",
+              "src/maine/staff/body/staff_particles_gather.inl",
+              "src/maine/staff/body/staff_particles_clear.inl",
+              "src/maine/staff/body/staff_particles_scatter.inl",
+              "src/maine/staff/body/staff_particles_update.inl",
+              "src/maine/staff/body/staff_orb_spark_add.inl",
+              "src/maine/staff/body/staff_orb_trail_update.inl",
+              "src/maine/staff/body/staff_orb_particles_age.inl",
+              "src/maine/staff/body/staff_orb_opening_update.inl",
+              "src/maine/staff/body/staff_rain_spawn.inl",
+              "src/maine/staff/body/staff_rain_update.inl",
+              "src/maine/staff/body/staff_text_wipe.inl",
+              "src/maine/staff/body/staff_image_update_a.inl",
+              "src/maine/staff/body/staff_image_update_b.inl",
+              "src/maine/staff/body/staff_scene_render.inl",
+              "src/maine/staff/body/staff_frame_advance.inl"
+            ]
+          },
+          {
+            "sha256": "5aab0a7ffc9719e7ba166c261964f56ca50c03653a6edd4f88df4b73d73f49fe",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
+            "module_name": "th05/stffull.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stffull.cpp",
+              "src/maine/staff/full.cpp",
+              "src/maine/staff/full.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/maine/staff/orb_opening.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/wipe.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/abi.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/shared/abi.hpp",
+              "src/maine/staff/reveal_b.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/maine/staff/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/body/space_window_set.inl",
+              "src/maine/staff/body/staff_particles_init.inl",
+              "src/maine/staff/body/staff_particles_gather.inl",
+              "src/maine/staff/body/staff_particles_clear.inl",
+              "src/maine/staff/body/staff_particles_scatter.inl",
+              "src/maine/staff/body/staff_particles_update.inl",
+              "src/maine/staff/body/staff_orb_spark_add.inl",
+              "src/maine/staff/body/staff_orb_trail_update.inl",
+              "src/maine/staff/body/staff_orb_particles_age.inl",
+              "src/maine/staff/body/staff_orb_opening_update.inl",
+              "src/maine/staff/body/staff_rain_spawn.inl",
+              "src/maine/staff/body/staff_rain_update.inl",
+              "src/maine/staff/body/staff_text_wipe.inl",
+              "src/maine/staff/body/staff_image_update_a.inl",
+              "src/maine/staff/body/staff_image_update_b.inl",
+              "src/maine/staff/body/staff_scene_render.inl",
+              "src/maine/staff/body/staff_frame_advance.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stffull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stffull.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_staff_full_bindings.asm",
+            "sha256": "7786b149a276ef5e81256259f579b001ce90d0803f855e98de955ab22693cc3d"
+          },
+          {
+            "path": "src/maine/staff/body/space_window_set.inl",
+            "sha256": "32207e4a6dee84addf0c14348a1564ad67028f960a0fa213652953456383e9c6"
+          },
+          {
+            "path": "src/maine/staff/body/staff_frame_advance.inl",
+            "sha256": "f6859f29eaadda0ea04065d7acfe2c476b723a337e4268423aa7644f94ba160f"
+          },
+          {
+            "path": "src/maine/staff/body/staff_image_update_a.inl",
+            "sha256": "92d1e5e5c281a6bee3403737925b025a8762e2d5dd96e6cb0f8b885f06901b44"
+          },
+          {
+            "path": "src/maine/staff/body/staff_image_update_b.inl",
+            "sha256": "4338f1663866df11979be82f1bb87bfc9e53b0d7f78f75fba93054d452a4e1d3"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_opening_update.inl",
+            "sha256": "a75e1f99061c864b90f3f10ff2a323a6374ab2e1cd35e93623dc7a591a9150b7"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_particles_age.inl",
+            "sha256": "8510042a73025f15cc91896db8fc0f7e440e1c22154e08786438c10089b02ae8"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_spark_add.inl",
+            "sha256": "75ee0152cb38fe7e4fe519d184d6d7f85533b0e4b533bb837b44a5eb7b7e0acf"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_trail_update.inl",
+            "sha256": "f27a91a2bd188b9e0023913e8a8d5e2c741a94e71867f14dc29868720d7428ae"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_clear.inl",
+            "sha256": "c6bfe62a67bd9cb20fe9be14804be8aa12ec43bc4c677bb447595047187926ef"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_gather.inl",
+            "sha256": "18bd65ec17ec72a7afce1448dbdc7a73a5edde91053b7d072faaf931b3021320"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_init.inl",
+            "sha256": "ce9cb0bc3b896a940980e603f58f3c3c9995daf6f2f961dde70b821c414f3476"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_scatter.inl",
+            "sha256": "72873ea8f984723ac146c311a951e0c97e8d59c8b1c40af7bf1361e9f7ac0c37"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_update.inl",
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
+          },
+          {
+            "path": "src/maine/staff/body/staff_rain_spawn.inl",
+            "sha256": "67922f88c6c59d7f166b8cef6aac244c8a10114eb6c949f758230e42d1a8375a"
+          },
+          {
+            "path": "src/maine/staff/body/staff_rain_update.inl",
+            "sha256": "664eddb9571b5893d49d0bcfe42ff0386cb529ec96f24c0b2965f520a4d72319"
+          },
+          {
+            "path": "src/maine/staff/body/staff_scene_render.inl",
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
+          },
+          {
+            "path": "src/maine/staff/body/staff_text_wipe.inl",
+            "sha256": "795868932d82e74176c6424804789ed8e48fcad2a475e9553e54cea7f15f51c5"
+          },
+          {
+            "path": "src/maine/staff/frame.hpp",
+            "sha256": "7402c6e1ca05aebcd59c841cb6a4ccc0a5441dc5655073319447ff80ed3249ff"
+          },
+          {
+            "path": "src/maine/staff/full.cpp",
+            "sha256": "969f0ddd9ce0606cc09775c02d15826cd2146d9697e409f3db5c42ec53c41a97"
+          },
+          {
+            "path": "src/maine/staff/full.hpp",
+            "sha256": "fd682734ee7fcb68e5f5813e7c4bcc8545f1b9230e0377e2d68c63373d2959bf"
+          },
+          {
+            "path": "src/maine/staff/image_phase.hpp",
+            "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+          },
+          {
+            "path": "src/maine/staff/lifecycle.hpp",
+            "sha256": "0d277692d0f05008f6cd1f34c5465012e81f8a142b605fbc7fec31b88d7a674b"
+          },
+          {
+            "path": "src/maine/staff/orb_opening.hpp",
+            "sha256": "1fc4cc72cb5b954ec8d819e8e66dc26a029737f9fb44339c1bc7f8939a9d2f5c"
+          },
+          {
+            "path": "src/maine/staff/rain.hpp",
+            "sha256": "daa59f25606b93f4903901d69553254d1e52b3610aea21098497a11c4ddfc8b9"
+          },
+          {
+            "path": "src/maine/staff/render.hpp",
+            "sha256": "6ed913faad0e58f717eb16377be858fb42cc0176110dbbe1f87de8fe9473326e"
+          },
+          {
+            "path": "src/maine/staff/reveal_b.hpp",
+            "sha256": "a19630108af74c78f9e50c4f66e897345dadc7a627a3cec0de8802d530cfa741"
+          },
+          {
+            "path": "src/maine/staff/staff.hpp",
+            "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+          },
+          {
+            "path": "src/maine/staff/wipe.hpp",
+            "sha256": "39ac22264e2e0aeb9853d18bcfdbf2afa7868e7a0e3f817a5ee95a8b7c71502e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_staff_full_bindings.asm",
+          "sha256": "7786b149a276ef5e81256259f579b001ce90d0803f855e98de955ab22693cc3d"
+        },
+        {
+          "path": "src/maine/staff/body/space_window_set.inl",
+          "sha256": "32207e4a6dee84addf0c14348a1564ad67028f960a0fa213652953456383e9c6"
+        },
+        {
+          "path": "src/maine/staff/body/staff_frame_advance.inl",
+          "sha256": "f6859f29eaadda0ea04065d7acfe2c476b723a337e4268423aa7644f94ba160f"
+        },
+        {
+          "path": "src/maine/staff/body/staff_image_update_a.inl",
+          "sha256": "92d1e5e5c281a6bee3403737925b025a8762e2d5dd96e6cb0f8b885f06901b44"
+        },
+        {
+          "path": "src/maine/staff/body/staff_image_update_b.inl",
+          "sha256": "4338f1663866df11979be82f1bb87bfc9e53b0d7f78f75fba93054d452a4e1d3"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_opening_update.inl",
+          "sha256": "a75e1f99061c864b90f3f10ff2a323a6374ab2e1cd35e93623dc7a591a9150b7"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_particles_age.inl",
+          "sha256": "8510042a73025f15cc91896db8fc0f7e440e1c22154e08786438c10089b02ae8"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_spark_add.inl",
+          "sha256": "75ee0152cb38fe7e4fe519d184d6d7f85533b0e4b533bb837b44a5eb7b7e0acf"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_trail_update.inl",
+          "sha256": "f27a91a2bd188b9e0023913e8a8d5e2c741a94e71867f14dc29868720d7428ae"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_clear.inl",
+          "sha256": "c6bfe62a67bd9cb20fe9be14804be8aa12ec43bc4c677bb447595047187926ef"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_gather.inl",
+          "sha256": "18bd65ec17ec72a7afce1448dbdc7a73a5edde91053b7d072faaf931b3021320"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_init.inl",
+          "sha256": "ce9cb0bc3b896a940980e603f58f3c3c9995daf6f2f961dde70b821c414f3476"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_scatter.inl",
+          "sha256": "72873ea8f984723ac146c311a951e0c97e8d59c8b1c40af7bf1361e9f7ac0c37"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_update.inl",
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
+        },
+        {
+          "path": "src/maine/staff/body/staff_rain_spawn.inl",
+          "sha256": "67922f88c6c59d7f166b8cef6aac244c8a10114eb6c949f758230e42d1a8375a"
+        },
+        {
+          "path": "src/maine/staff/body/staff_rain_update.inl",
+          "sha256": "664eddb9571b5893d49d0bcfe42ff0386cb529ec96f24c0b2965f520a4d72319"
+        },
+        {
+          "path": "src/maine/staff/body/staff_scene_render.inl",
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
+        },
+        {
+          "path": "src/maine/staff/body/staff_text_wipe.inl",
+          "sha256": "795868932d82e74176c6424804789ed8e48fcad2a475e9553e54cea7f15f51c5"
+        },
+        {
+          "path": "src/maine/staff/frame.hpp",
+          "sha256": "7402c6e1ca05aebcd59c841cb6a4ccc0a5441dc5655073319447ff80ed3249ff"
+        },
+        {
+          "path": "src/maine/staff/full.cpp",
+          "sha256": "969f0ddd9ce0606cc09775c02d15826cd2146d9697e409f3db5c42ec53c41a97"
+        },
+        {
+          "path": "src/maine/staff/full.hpp",
+          "sha256": "fd682734ee7fcb68e5f5813e7c4bcc8545f1b9230e0377e2d68c63373d2959bf"
+        },
+        {
+          "path": "src/maine/staff/image_phase.hpp",
+          "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+        },
+        {
+          "path": "src/maine/staff/lifecycle.hpp",
+          "sha256": "0d277692d0f05008f6cd1f34c5465012e81f8a142b605fbc7fec31b88d7a674b"
+        },
+        {
+          "path": "src/maine/staff/orb_opening.hpp",
+          "sha256": "1fc4cc72cb5b954ec8d819e8e66dc26a029737f9fb44339c1bc7f8939a9d2f5c"
+        },
+        {
+          "path": "src/maine/staff/rain.hpp",
+          "sha256": "daa59f25606b93f4903901d69553254d1e52b3610aea21098497a11c4ddfc8b9"
+        },
+        {
+          "path": "src/maine/staff/render.hpp",
+          "sha256": "6ed913faad0e58f717eb16377be858fb42cc0176110dbbe1f87de8fe9473326e"
+        },
+        {
+          "path": "src/maine/staff/reveal_b.hpp",
+          "sha256": "a19630108af74c78f9e50c4f66e897345dadc7a627a3cec0de8802d530cfa741"
+        },
+        {
+          "path": "src/maine/staff/staff.hpp",
+          "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+        },
+        {
+          "path": "src/maine/staff/wipe.hpp",
+          "sha256": "39ac22264e2e0aeb9853d18bcfdbf2afa7868e7a0e3f817a5ee95a8b7c71502e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "7772011b97295813cb66e19468c9074da659b2e47cee4ee8bcba5647dac62425",
+      "compiled_negative_control": {
+        "target_start": 54753,
+        "candidate_start": 54753,
+        "size": 626,
+        "target_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+        "candidate_sha256": "4cfe497feacfc16795162292dd12cfa107bb1a12c4143814b1257af32c619ff7",
+        "raw_exact": false,
+        "target_fixups": [
+          278,
+          421
+        ],
+        "candidate_fixups": [
+          278,
+          421
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 54753,
+          "size": 626,
+          "function_symbol": "staff_particles_update()",
+          "contribution_start": 54047,
+          "contribution_size": 4229,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "staff_orb_spark_add()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-staff-particles-update",
+        "entry_sha256": "eea8491abd6e768277ab8718e4afd72a70ef97b6b6dc94a394fffde9b2ae1772",
+        "mutation": {
+          "unit": "maine-staff-particles-update",
+          "source": "src/maine/staff/body/staff_particles_update.inl",
+          "find": "if((staff_frame % 3) == 0) {",
+          "replace": "if((staff_frame % 4) == 0) {"
+        },
+        "control_sha256": "dd413481d6e66b5286b1d85f8e7e663395b23de556982742730571bcc8a3e323",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 54753,
+          "candidate_start": 54753,
+          "size": 626,
+          "target_sha256": "4e043a3a0f5c4f0c4705f9ad17875bd1facb9d82aa0e306d4bd25c3a8612e715",
+          "candidate_sha256": "4cfe497feacfc16795162292dd12cfa107bb1a12c4143814b1257af32c619ff7",
+          "raw_exact": false,
+          "target_fixups": [
+            278,
+            421
+          ],
+          "candidate_fixups": [
+            278,
+            421
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 54753,
+            "size": 626,
+            "function_symbol": "staff_particles_update()",
+            "contribution_start": 54047,
+            "contribution_size": 4229,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "staff_orb_spark_add()"
+          }
+        },
+        "omf": {
+          "sha256": "c729afd6cfa58fee82cac79fccdf8d089dfce3181ad9a0d2ac425f7ccc64b052",
+          "dependency_timestamp_normalized_sha256": "4dc8da82d581b83dff4638ffc515547de5c4304d00a26ef7e722fa5896bf49d8",
+          "module_name": "th05/stffull.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stffull.cpp",
+            "src/maine/staff/full.cpp",
+            "src/maine/staff/full.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/staff.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/maine/staff/orb_opening.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/rain.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/wipe.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/abi.hpp",
+            "src/maine/staff/image_phase.hpp",
+            "src/shared/abi.hpp",
+            "src/maine/staff/reveal_b.hpp",
+            "src/maine/staff/image_phase.hpp",
+            "src/maine/staff/render.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/frame.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/body/space_window_set.inl",
+            "src/maine/staff/body/staff_particles_init.inl",
+            "src/maine/staff/body/staff_particles_gather.inl",
+            "src/maine/staff/body/staff_particles_clear.inl",
+            "src/maine/staff/body/staff_particles_scatter.inl",
+            "src/maine/staff/body/staff_particles_update.inl",
+            "src/maine/staff/body/staff_orb_spark_add.inl",
+            "src/maine/staff/body/staff_orb_trail_update.inl",
+            "src/maine/staff/body/staff_orb_particles_age.inl",
+            "src/maine/staff/body/staff_orb_opening_update.inl",
+            "src/maine/staff/body/staff_rain_spawn.inl",
+            "src/maine/staff/body/staff_rain_update.inl",
+            "src/maine/staff/body/staff_text_wipe.inl",
+            "src/maine/staff/body/staff_image_update_a.inl",
+            "src/maine/staff/body/staff_image_update_b.inl",
+            "src/maine/staff/body/staff_scene_render.inl",
+            "src/maine/staff/body/staff_frame_advance.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/stffull.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-staff-scene-render",
+      "entry_sha256": "ff9de055b8ca0aa7e11655235befa961e24f33e1001ad6c8df82f9036a5476d8",
+      "result": {
+        "id": "maine-staff-scene-render",
+        "entry_sha256": "ff9de055b8ca0aa7e11655235befa961e24f33e1001ad6c8df82f9036a5476d8",
+        "rounds": [
+          {
+            "target_start": 57329,
+            "candidate_start": 57329,
+            "size": 861,
+            "target_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+            "candidate_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+            "raw_exact": true,
+            "target_fixups": [
+              781,
+              708,
+              645,
+              577,
+              555,
+              407,
+              382,
+              365,
+              258,
+              245,
+              165,
+              91,
+              28,
+              849
+            ],
+            "candidate_fixups": [
+              781,
+              708,
+              645,
+              577,
+              555,
+              407,
+              382,
+              365,
+              258,
+              245,
+              165,
+              91,
+              28,
+              849
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 57329,
+              "size": 861,
+              "function_symbol": "staff_scene_render()",
+              "contribution_start": 54047,
+              "contribution_size": 4229,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_frame_advance()"
+            }
+          },
+          {
+            "target_start": 57329,
+            "candidate_start": 57329,
+            "size": 861,
+            "target_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+            "candidate_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+            "raw_exact": true,
+            "target_fixups": [
+              781,
+              708,
+              645,
+              577,
+              555,
+              407,
+              382,
+              365,
+              258,
+              245,
+              165,
+              91,
+              28,
+              849
+            ],
+            "candidate_fixups": [
+              781,
+              708,
+              645,
+              577,
+              555,
+              407,
+              382,
+              365,
+              258,
+              245,
+              165,
+              91,
+              28,
+              849
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 57329,
+              "size": 861,
+              "function_symbol": "staff_scene_render()",
+              "contribution_start": 54047,
+              "contribution_size": 4229,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "staff_frame_advance()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6ee8f091c94628a00f8cc320c7019a0d8a39d90f24dcc13153e3087ffda32b80",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
+            "module_name": "th05/stffull.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stffull.cpp",
+              "src/maine/staff/full.cpp",
+              "src/maine/staff/full.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/maine/staff/orb_opening.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/wipe.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/abi.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/shared/abi.hpp",
+              "src/maine/staff/reveal_b.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/maine/staff/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/body/space_window_set.inl",
+              "src/maine/staff/body/staff_particles_init.inl",
+              "src/maine/staff/body/staff_particles_gather.inl",
+              "src/maine/staff/body/staff_particles_clear.inl",
+              "src/maine/staff/body/staff_particles_scatter.inl",
+              "src/maine/staff/body/staff_particles_update.inl",
+              "src/maine/staff/body/staff_orb_spark_add.inl",
+              "src/maine/staff/body/staff_orb_trail_update.inl",
+              "src/maine/staff/body/staff_orb_particles_age.inl",
+              "src/maine/staff/body/staff_orb_opening_update.inl",
+              "src/maine/staff/body/staff_rain_spawn.inl",
+              "src/maine/staff/body/staff_rain_update.inl",
+              "src/maine/staff/body/staff_text_wipe.inl",
+              "src/maine/staff/body/staff_image_update_a.inl",
+              "src/maine/staff/body/staff_image_update_b.inl",
+              "src/maine/staff/body/staff_scene_render.inl",
+              "src/maine/staff/body/staff_frame_advance.inl"
+            ]
+          },
+          {
+            "sha256": "b0516cd491186c2f548c356bf767f9c44310162f5a05875c974236c1863effad",
+            "dependency_timestamp_normalized_sha256": "df89a43b2ba4c78118300a7a868b0ef28c1cd71529c722db2aabb1a62b71b047",
+            "module_name": "th05/stffull.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stffull.cpp",
+              "src/maine/staff/full.cpp",
+              "src/maine/staff/full.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/staff.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/maine/staff/orb_opening.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/rain.hpp",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/wipe.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/abi.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/shared/abi.hpp",
+              "src/maine/staff/reveal_b.hpp",
+              "src/maine/staff/image_phase.hpp",
+              "src/maine/staff/render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/frame.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/maine/staff/lifecycle.hpp",
+              "src/maine/staff/body/space_window_set.inl",
+              "src/maine/staff/body/staff_particles_init.inl",
+              "src/maine/staff/body/staff_particles_gather.inl",
+              "src/maine/staff/body/staff_particles_clear.inl",
+              "src/maine/staff/body/staff_particles_scatter.inl",
+              "src/maine/staff/body/staff_particles_update.inl",
+              "src/maine/staff/body/staff_orb_spark_add.inl",
+              "src/maine/staff/body/staff_orb_trail_update.inl",
+              "src/maine/staff/body/staff_orb_particles_age.inl",
+              "src/maine/staff/body/staff_orb_opening_update.inl",
+              "src/maine/staff/body/staff_rain_spawn.inl",
+              "src/maine/staff/body/staff_rain_update.inl",
+              "src/maine/staff/body/staff_text_wipe.inl",
+              "src/maine/staff/body/staff_image_update_a.inl",
+              "src/maine/staff/body/staff_image_update_b.inl",
+              "src/maine/staff/body/staff_scene_render.inl",
+              "src/maine/staff/body/staff_frame_advance.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stffull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/stffull.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_staff_full_bindings.asm",
+            "sha256": "7786b149a276ef5e81256259f579b001ce90d0803f855e98de955ab22693cc3d"
+          },
+          {
+            "path": "src/maine/staff/body/space_window_set.inl",
+            "sha256": "32207e4a6dee84addf0c14348a1564ad67028f960a0fa213652953456383e9c6"
+          },
+          {
+            "path": "src/maine/staff/body/staff_frame_advance.inl",
+            "sha256": "f6859f29eaadda0ea04065d7acfe2c476b723a337e4268423aa7644f94ba160f"
+          },
+          {
+            "path": "src/maine/staff/body/staff_image_update_a.inl",
+            "sha256": "92d1e5e5c281a6bee3403737925b025a8762e2d5dd96e6cb0f8b885f06901b44"
+          },
+          {
+            "path": "src/maine/staff/body/staff_image_update_b.inl",
+            "sha256": "4338f1663866df11979be82f1bb87bfc9e53b0d7f78f75fba93054d452a4e1d3"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_opening_update.inl",
+            "sha256": "a75e1f99061c864b90f3f10ff2a323a6374ab2e1cd35e93623dc7a591a9150b7"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_particles_age.inl",
+            "sha256": "8510042a73025f15cc91896db8fc0f7e440e1c22154e08786438c10089b02ae8"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_spark_add.inl",
+            "sha256": "75ee0152cb38fe7e4fe519d184d6d7f85533b0e4b533bb837b44a5eb7b7e0acf"
+          },
+          {
+            "path": "src/maine/staff/body/staff_orb_trail_update.inl",
+            "sha256": "f27a91a2bd188b9e0023913e8a8d5e2c741a94e71867f14dc29868720d7428ae"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_clear.inl",
+            "sha256": "c6bfe62a67bd9cb20fe9be14804be8aa12ec43bc4c677bb447595047187926ef"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_gather.inl",
+            "sha256": "18bd65ec17ec72a7afce1448dbdc7a73a5edde91053b7d072faaf931b3021320"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_init.inl",
+            "sha256": "ce9cb0bc3b896a940980e603f58f3c3c9995daf6f2f961dde70b821c414f3476"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_scatter.inl",
+            "sha256": "72873ea8f984723ac146c311a951e0c97e8d59c8b1c40af7bf1361e9f7ac0c37"
+          },
+          {
+            "path": "src/maine/staff/body/staff_particles_update.inl",
+            "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
+          },
+          {
+            "path": "src/maine/staff/body/staff_rain_spawn.inl",
+            "sha256": "67922f88c6c59d7f166b8cef6aac244c8a10114eb6c949f758230e42d1a8375a"
+          },
+          {
+            "path": "src/maine/staff/body/staff_rain_update.inl",
+            "sha256": "664eddb9571b5893d49d0bcfe42ff0386cb529ec96f24c0b2965f520a4d72319"
+          },
+          {
+            "path": "src/maine/staff/body/staff_scene_render.inl",
+            "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
+          },
+          {
+            "path": "src/maine/staff/body/staff_text_wipe.inl",
+            "sha256": "795868932d82e74176c6424804789ed8e48fcad2a475e9553e54cea7f15f51c5"
+          },
+          {
+            "path": "src/maine/staff/frame.hpp",
+            "sha256": "7402c6e1ca05aebcd59c841cb6a4ccc0a5441dc5655073319447ff80ed3249ff"
+          },
+          {
+            "path": "src/maine/staff/full.cpp",
+            "sha256": "969f0ddd9ce0606cc09775c02d15826cd2146d9697e409f3db5c42ec53c41a97"
+          },
+          {
+            "path": "src/maine/staff/full.hpp",
+            "sha256": "fd682734ee7fcb68e5f5813e7c4bcc8545f1b9230e0377e2d68c63373d2959bf"
+          },
+          {
+            "path": "src/maine/staff/image_phase.hpp",
+            "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+          },
+          {
+            "path": "src/maine/staff/lifecycle.hpp",
+            "sha256": "0d277692d0f05008f6cd1f34c5465012e81f8a142b605fbc7fec31b88d7a674b"
+          },
+          {
+            "path": "src/maine/staff/orb_opening.hpp",
+            "sha256": "1fc4cc72cb5b954ec8d819e8e66dc26a029737f9fb44339c1bc7f8939a9d2f5c"
+          },
+          {
+            "path": "src/maine/staff/rain.hpp",
+            "sha256": "daa59f25606b93f4903901d69553254d1e52b3610aea21098497a11c4ddfc8b9"
+          },
+          {
+            "path": "src/maine/staff/render.hpp",
+            "sha256": "6ed913faad0e58f717eb16377be858fb42cc0176110dbbe1f87de8fe9473326e"
+          },
+          {
+            "path": "src/maine/staff/reveal_b.hpp",
+            "sha256": "a19630108af74c78f9e50c4f66e897345dadc7a627a3cec0de8802d530cfa741"
+          },
+          {
+            "path": "src/maine/staff/staff.hpp",
+            "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+          },
+          {
+            "path": "src/maine/staff/wipe.hpp",
+            "sha256": "39ac22264e2e0aeb9853d18bcfdbf2afa7868e7a0e3f817a5ee95a8b7c71502e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_staff_full_bindings.asm",
+          "sha256": "7786b149a276ef5e81256259f579b001ce90d0803f855e98de955ab22693cc3d"
+        },
+        {
+          "path": "src/maine/staff/body/space_window_set.inl",
+          "sha256": "32207e4a6dee84addf0c14348a1564ad67028f960a0fa213652953456383e9c6"
+        },
+        {
+          "path": "src/maine/staff/body/staff_frame_advance.inl",
+          "sha256": "f6859f29eaadda0ea04065d7acfe2c476b723a337e4268423aa7644f94ba160f"
+        },
+        {
+          "path": "src/maine/staff/body/staff_image_update_a.inl",
+          "sha256": "92d1e5e5c281a6bee3403737925b025a8762e2d5dd96e6cb0f8b885f06901b44"
+        },
+        {
+          "path": "src/maine/staff/body/staff_image_update_b.inl",
+          "sha256": "4338f1663866df11979be82f1bb87bfc9e53b0d7f78f75fba93054d452a4e1d3"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_opening_update.inl",
+          "sha256": "a75e1f99061c864b90f3f10ff2a323a6374ab2e1cd35e93623dc7a591a9150b7"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_particles_age.inl",
+          "sha256": "8510042a73025f15cc91896db8fc0f7e440e1c22154e08786438c10089b02ae8"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_spark_add.inl",
+          "sha256": "75ee0152cb38fe7e4fe519d184d6d7f85533b0e4b533bb837b44a5eb7b7e0acf"
+        },
+        {
+          "path": "src/maine/staff/body/staff_orb_trail_update.inl",
+          "sha256": "f27a91a2bd188b9e0023913e8a8d5e2c741a94e71867f14dc29868720d7428ae"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_clear.inl",
+          "sha256": "c6bfe62a67bd9cb20fe9be14804be8aa12ec43bc4c677bb447595047187926ef"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_gather.inl",
+          "sha256": "18bd65ec17ec72a7afce1448dbdc7a73a5edde91053b7d072faaf931b3021320"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_init.inl",
+          "sha256": "ce9cb0bc3b896a940980e603f58f3c3c9995daf6f2f961dde70b821c414f3476"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_scatter.inl",
+          "sha256": "72873ea8f984723ac146c311a951e0c97e8d59c8b1c40af7bf1361e9f7ac0c37"
+        },
+        {
+          "path": "src/maine/staff/body/staff_particles_update.inl",
+          "sha256": "ba28f23a1b1e882b0bef52ace7913ad32ebaf126a8708b20cc28b2b4fdbb2c29"
+        },
+        {
+          "path": "src/maine/staff/body/staff_rain_spawn.inl",
+          "sha256": "67922f88c6c59d7f166b8cef6aac244c8a10114eb6c949f758230e42d1a8375a"
+        },
+        {
+          "path": "src/maine/staff/body/staff_rain_update.inl",
+          "sha256": "664eddb9571b5893d49d0bcfe42ff0386cb529ec96f24c0b2965f520a4d72319"
+        },
+        {
+          "path": "src/maine/staff/body/staff_scene_render.inl",
+          "sha256": "28fcd5e46aec275d3863e61b3e4106e36ab97765bcef5f79dbd3d3fa54fd6f0d"
+        },
+        {
+          "path": "src/maine/staff/body/staff_text_wipe.inl",
+          "sha256": "795868932d82e74176c6424804789ed8e48fcad2a475e9553e54cea7f15f51c5"
+        },
+        {
+          "path": "src/maine/staff/frame.hpp",
+          "sha256": "7402c6e1ca05aebcd59c841cb6a4ccc0a5441dc5655073319447ff80ed3249ff"
+        },
+        {
+          "path": "src/maine/staff/full.cpp",
+          "sha256": "969f0ddd9ce0606cc09775c02d15826cd2146d9697e409f3db5c42ec53c41a97"
+        },
+        {
+          "path": "src/maine/staff/full.hpp",
+          "sha256": "fd682734ee7fcb68e5f5813e7c4bcc8545f1b9230e0377e2d68c63373d2959bf"
+        },
+        {
+          "path": "src/maine/staff/image_phase.hpp",
+          "sha256": "e68eeb04fd358942ddfe3ffaeb422ae6937801fb91631d023b1ab8c3622e13df"
+        },
+        {
+          "path": "src/maine/staff/lifecycle.hpp",
+          "sha256": "0d277692d0f05008f6cd1f34c5465012e81f8a142b605fbc7fec31b88d7a674b"
+        },
+        {
+          "path": "src/maine/staff/orb_opening.hpp",
+          "sha256": "1fc4cc72cb5b954ec8d819e8e66dc26a029737f9fb44339c1bc7f8939a9d2f5c"
+        },
+        {
+          "path": "src/maine/staff/rain.hpp",
+          "sha256": "daa59f25606b93f4903901d69553254d1e52b3610aea21098497a11c4ddfc8b9"
+        },
+        {
+          "path": "src/maine/staff/render.hpp",
+          "sha256": "6ed913faad0e58f717eb16377be858fb42cc0176110dbbe1f87de8fe9473326e"
+        },
+        {
+          "path": "src/maine/staff/reveal_b.hpp",
+          "sha256": "a19630108af74c78f9e50c4f66e897345dadc7a627a3cec0de8802d530cfa741"
+        },
+        {
+          "path": "src/maine/staff/staff.hpp",
+          "sha256": "ee11d1e64fa82d4ce84e9630061e3349401c22fb1ba5b4f9b69a5fc85136b800"
+        },
+        {
+          "path": "src/maine/staff/wipe.hpp",
+          "sha256": "39ac22264e2e0aeb9853d18bcfdbf2afa7868e7a0e3f817a5ee95a8b7c71502e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d8ff3652987f6e9c181252ebe467eb7205da2fa1d807f61b318868361a01c26f",
+      "compiled_negative_control": {
+        "target_start": 57329,
+        "candidate_start": 57329,
+        "size": 861,
+        "target_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+        "candidate_sha256": "e26f532ffa1fd590218bcf4767a251d4bc4ba52f629e0cf1629a87c0daabb426",
+        "raw_exact": false,
+        "target_fixups": [
+          781,
+          708,
+          645,
+          577,
+          555,
+          407,
+          382,
+          365,
+          258,
+          245,
+          165,
+          91,
+          28,
+          849
+        ],
+        "candidate_fixups": [
+          781,
+          708,
+          645,
+          577,
+          555,
+          407,
+          382,
+          365,
+          258,
+          245,
+          165,
+          91,
+          28,
+          849
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 57329,
+          "size": 861,
+          "function_symbol": "staff_scene_render()",
+          "contribution_start": 54047,
+          "contribution_size": 4229,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "staff_frame_advance()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-staff-scene-render",
+        "entry_sha256": "ff9de055b8ca0aa7e11655235befa961e24f33e1001ad6c8df82f9036a5476d8",
+        "mutation": {
+          "unit": "maine-staff-scene-render",
+          "source": "src/maine/staff/body/staff_scene_render.inl",
+          "find": "trail_color = 6",
+          "replace": "trail_color = 5"
+        },
+        "control_sha256": "b5ef6752b7be0a3363eaba0abe01794a0a9e4baafa7b8707bf63c6854b759c7e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 57329,
+          "candidate_start": 57329,
+          "size": 861,
+          "target_sha256": "3325362cd0d9a4a72da21103c6ad28f5f73e2e34550b2baade06fc21bc300559",
+          "candidate_sha256": "e26f532ffa1fd590218bcf4767a251d4bc4ba52f629e0cf1629a87c0daabb426",
+          "raw_exact": false,
+          "target_fixups": [
+            781,
+            708,
+            645,
+            577,
+            555,
+            407,
+            382,
+            365,
+            258,
+            245,
+            165,
+            91,
+            28,
+            849
+          ],
+          "candidate_fixups": [
+            781,
+            708,
+            645,
+            577,
+            555,
+            407,
+            382,
+            365,
+            258,
+            245,
+            165,
+            91,
+            28,
+            849
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 57329,
+            "size": 861,
+            "function_symbol": "staff_scene_render()",
+            "contribution_start": 54047,
+            "contribution_size": 4229,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "staff_frame_advance()"
+          }
+        },
+        "omf": {
+          "sha256": "9e361990424be822e48a2e0c83b9293dc71760897bfe3eebf7f0a66acc7ede3c",
+          "dependency_timestamp_normalized_sha256": "2f9444b1d3fc340bb388ef681a5edce3a0d7697e99d1cb81058fdf66d9ad64cf",
+          "module_name": "th05/stffull.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stffull.cpp",
+            "src/maine/staff/full.cpp",
+            "src/maine/staff/full.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/staff.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/maine/staff/orb_opening.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/rain.hpp",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/wipe.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/abi.hpp",
+            "src/maine/staff/image_phase.hpp",
+            "src/shared/abi.hpp",
+            "src/maine/staff/reveal_b.hpp",
+            "src/maine/staff/image_phase.hpp",
+            "src/maine/staff/render.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/frame.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/maine/staff/lifecycle.hpp",
+            "src/maine/staff/body/space_window_set.inl",
+            "src/maine/staff/body/staff_particles_init.inl",
+            "src/maine/staff/body/staff_particles_gather.inl",
+            "src/maine/staff/body/staff_particles_clear.inl",
+            "src/maine/staff/body/staff_particles_scatter.inl",
+            "src/maine/staff/body/staff_particles_update.inl",
+            "src/maine/staff/body/staff_orb_spark_add.inl",
+            "src/maine/staff/body/staff_orb_trail_update.inl",
+            "src/maine/staff/body/staff_orb_particles_age.inl",
+            "src/maine/staff/body/staff_orb_opening_update.inl",
+            "src/maine/staff/body/staff_rain_spawn.inl",
+            "src/maine/staff/body/staff_rain_update.inl",
+            "src/maine/staff/body/staff_text_wipe.inl",
+            "src/maine/staff/body/staff_image_update_a.inl",
+            "src/maine/staff/body/staff_image_update_b.inl",
+            "src/maine/staff/body/staff_scene_render.inl",
+            "src/maine/staff/body/staff_frame_advance.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/stffull.cpp"
         ]
       },
       "target_view": {

@@ -143,3 +143,14 @@ A later ordinary declaration/loop-initialization-order trial still emits 4223 fo
 4229-byte family, including updater623 and renderer858. It does not recover
 either missing pointer reload. Both maintained bodies were restored byte-exact;
 no accepted owner was rebuilt and no behavior-test expansion is required.
+
+## 2026-11-10 accepted update (supersedes earlier inexact diagnostics)
+
+The full original 626-byte `staff_particles_update` is now accepted as
+`maine-staff-particles-update`, with its original two ordered fixups. Moving the
+loop counter declaration before the trail pointer and placing real trail
+movement in the `else` of the existing sentinel check naturally recovers the
+missing three-byte pointer reload. No extra operation or fabricated bytes are
+inserted. Two focused producers and a separately compiled frame cadence
+3→4 negative pass. See [complete family review](full.md) and
+`.analysis/unit-replays/gpt-web-maine-staff-two-major-functions-20261110/receipt.json`.

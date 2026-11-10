@@ -40,3 +40,16 @@ A later ordinary declaration/loop-initialization-order trial
 4229-byte family, including updater623 and renderer858. It does not recover
 either missing pointer reload. Both maintained bodies were restored byte-exact;
 no accepted owner was rebuilt and no behavior-test expansion is required.
+
+## 2026-11-10 accepted render (supersedes inexact diagnostics)
+
+The original **861-byte** `staff_scene_render()` is now accepted as
+`maine-staff-scene-render`. Moving the normal loop index zeroing before the
+trail color assignment and spelling the existing sentinel conditional as
+`if(x == STAFF_CENTER_NONE) {} else { ... }` causes original Borland codegen
+to reload the near pointer after the branch. The output matches all 861
+original bytes and literal original relocation order in two independent
+builds; changing the initial trail color 6→5 is rejected in a compiled
+negative. No invented pointer load, assembly body or code patch was used.
+See [complete family review](full.md) and the focused receipt
+`.analysis/unit-replays/gpt-web-maine-staff-two-major-functions-20261110/receipt.json`.

@@ -6,6 +6,17 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAINE's full 17-function Staff scene context now reproduces **4229/4229
+exact C++ CODE bytes and the complete original ordered relocation stream**.
+Two previously blocked major functions are newly accepted: the 626-byte
+particle updater and 861-byte scene renderer (**1487 new C++ bytes**).
+Restoring the genuine source-level trail-pointer `if/else` and initial loop
+order generated the missing three-byte reloads naturally. The eight dependent
+accepted neighbors were locally refreshed and stay exact. Receipts:
+`.analysis/unit-replays/gpt-web-maine-staff-{two-major-functions,neighbor-refresh}-20261110/receipt.json`.
+See [Staff full family](../src/maine/staff/full.md). The separate 991-byte
+Staff controller is still unaccepted and next in focus.
+
 The complete 40-byte MAIN near-Pascal scroll-to-VRAM coordinate helper is
 now exact as source-backed ASM (`DF28..DF50`): two independent TASM/TLINK
 builds, original empty fixup stream and a rejected 400→401 ring-height

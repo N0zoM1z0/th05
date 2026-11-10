@@ -1298,3 +1298,47 @@ unit = "maine-registration-menu-context"
 source = "src/maine/registration/menu.inl"
 find = "palette_black_in(2);"
 replace = "palette_black_in(3);"
+
+[[units]]
+id = "maine-staff-particles-update"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 0xd5e1
+size = 626
+functions = 1
+function_symbol = "staff_particles_update()"
+function_end_symbol = "staff_orb_spark_add()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-staff-particles-update"
+source = "src/maine/staff/body/staff_particles_update.inl"
+find = "if((staff_frame % 3) == 0) {"
+replace = "if((staff_frame % 4) == 0) {"
+
+[[units]]
+id = "maine-staff-scene-render"
+source = "src/maine/staff/full.cpp"
+module = "th05/stffull.cpp"
+segment = "STAFF_FULL_TEXT"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_staff_full_bindings.asm"
+target_start = 0xdff1
+size = 861
+functions = 1
+function_symbol = "staff_scene_render()"
+function_end_symbol = "staff_frame_advance()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "maine-staff-scene-render"
+source = "src/maine/staff/body/staff_scene_render.inl"
+find = "trail_color = 6"
+replace = "trail_color = 5"

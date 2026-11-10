@@ -22,9 +22,11 @@ void near staff_scene_render(void)
         y = (star_center->y.v / 16) + space_window_center.y - 4;
         super_put_tiny_small(x, y, STAFF_STAR_BIG + (i % 2));
     }
+    i = 0;
     trail_color = 6;
-    for(i = 0; i < ORB_TRAIL_COUNT; i++, trail_center--) {
-        if(trail_center->x.v != STAFF_CENTER_NONE) {
+    for(; i < ORB_TRAIL_COUNT; i++, trail_center--) {
+        if(trail_center->x.v == STAFF_CENTER_NONE) {
+        } else {
             x = (trail_center->x.v / 16) + space_window_center.x;
             y = (trail_center->y.v / 16) + space_window_center.y;
             grcg_setcolor(STAFF_GRCG_RMW, trail_color++);
