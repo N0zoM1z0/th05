@@ -6,8 +6,9 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
-The next source packet is OP ZUNsoft, described below. The last reconstruction
-checkpoint is `84a5de9`; acceptance is unchanged.
+The OP ZUNsoft four-function CODE cohort has now passed focused two-producer
+exact replay and entered the accepted OP ledger. Next, tackle its independent
+54-byte filename DATA contribution, then revisit substantial MAIN boss gaps.
 
 Start with `git status --short` and `python3 scripts/preflight.py`. Read
 [workflow](RE_WORKFLOW.md) and [acceptance](ORACLES.md). Reuse the existing attested
@@ -25,41 +26,25 @@ Use the [generated progress](PROGRESS.md), accepted-unit ledgers and
 The global authored denominator remains unreviewed. The supplied Japanese copy
 is candidate-local-attested.
 
-## Best next source packet: OP ZUNsoft
+## Latest accepted packet: OP ZUNsoft CODE
 
-[Source and ABI notes](../src/op/zunsoft/zunsoft.md) describe four new C++
-functions at decoded OP `B616..BA94`: 1150 bytes = 1102 instructions + 48
-compiler switch-table bytes, no padding. Maintained TH04 bodies are adapted to
-TH05's actual input ordering and provider frames. The complete 14-byte pyro,
-256-slot pool and 48-byte palette types are retained; runtime state is foreign.
+Four natural C++ functions, including the 654-byte logo controller, now own the
+complete decoded OP `B616..BA94` extent: **1150/1150 raw bytes** and all
+**33/33 original ordered relocations** in both independent cold producers.
+The compiled spawn-speed negative was rejected. Of the 1150 bytes, 1102 are
+instructions and 48 are the controller's compiler switch table; no padding.
 
-The first actual diagnostic matches **all 1150 raw bytes and all 33 original
-ordered fixups**:
+- Maintained source: [ZUNsoft](../src/op/zunsoft/zunsoft.md).
+- Accepted unit: `op-zunsoft` in `config/exact_units.op.toml` and
+  `config/accepted_units.op.json`.
+- Focused receipt: `.analysis/unit-replays/gpt-web-op-zunsoft-20261110/receipt.json`.
+- Native preliminary review remains at `.analysis/op-zunsoft-native-review.json`.
 
-- Proposal: `.analysis/op-zunsoft-unit-proposal.json`.
-- Actual frozen producer: `.analysis/native-producers/op-zunsoft-a/`.
-- Comparison: its `native-diagnostic.json`, SHA-256
-  `e6b0709a0805b577d40aa3e2b3e19eb11d9aa14a67050a8316dcc93cb2acb163`.
-- Native/source/ABI review: `.analysis/op-zunsoft-native-review.json`, SHA-256
-  `9f5f028a3a56700d90886b98a4a95a6adde2507e9c6936b499e46901e2703d84`.
-
-**Not accepted:** only one producer, no compiled negative, no live manifest or
-ledger entry. No progress is credited. When reconstruction resumes, review the
-packet, register it, then run the normal focused two-producer/shared-control
-replay. The proposed control changes spawn-speed bias 64 to 65. Preserve the
-current CODE source/binder identities unless a real correction is required.
-
-The earlier `super_free` convention concern is resolved: pinned
-`libs/master.lib/func.hpp` expands `MASTER_RET` to **far pascal** in large model;
-`MASTER_CRET` is the distinct cdecl form. The current source declaration agrees.
-Descriptive scalar coordinate parameters preserve four real Pascal words and
-RET8; original source grouping/spelling is not proved.
-
-A separate `filenames.cpp` and `op_zunsoft_filenames_bindings.asm` prepare the
-six genuine source strings at OP `FECA..FF00` (DS `0EEA..0F20`), 54 bytes.
-`.analysis/op-zunsoft-filenames-proposal.json` records this **unbuilt** DATA
-candidate. It has no producer or credit and needs its own complete DATA scope
-and compiled DATA mutation. The image/font contents are not source-owned here.
+The 54-byte initialized filename source at decoded OP `FECA..FF00` is still
+unaccepted. `filenames.cpp`, its independent binding scaffold and
+`.analysis/op-zunsoft-filenames-proposal.json` are ready for a focused DATA
+comparison and compiled data-mutation control. Do not merge this DATA scope
+into the accepted CODE unit.
 
 ## Settled and pending work
 

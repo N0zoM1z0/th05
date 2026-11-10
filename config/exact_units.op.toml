@@ -876,3 +876,23 @@ unit = "op-bgimage-free"
 source = "src/shared/hardware/bgimage_free.cpp"
 find = "hmem_free(bgimage.E);"
 replace = "hmem_free(bgimage.G);"
+
+[[units]]
+id = "op-zunsoft"
+source = "src/op/zunsoft/zunsoft.cpp"
+module = "th05/zunsoft.cpp"
+segment = "OP_ZUNSOFT_TEXT"
+wrapper_options = "-zCOP_ZUNSOFT_TEXT -zPop_01"
+bindings_source = "probes/units/op_zunsoft_bindings.asm"
+target_start = 0xb616
+size = 1150
+functions = 4
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 1102, size = 48, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "op-zunsoft"
+source = "src/op/zunsoft/zunsoft_pyro_new.inl"
+find = "((irand() % 224) + 64)"
+replace = "((irand() % 224) + 65)"

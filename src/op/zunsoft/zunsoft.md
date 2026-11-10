@@ -44,9 +44,11 @@ division/random remainders, latched skip, per-frame ordering and unchecked APIs.
 Private proposal: `.analysis/op-zunsoft-unit-proposal.json`. Native/source/ABI
 review: `.analysis/op-zunsoft-native-review.json`, SHA-256
 `9f5f028a3a56700d90886b98a4a95a6adde2507e9c6936b499e46901e2703d84`.
-The ordinary shared control changes spawn-speed bias 64 to 65. The first `op-zunsoft-a` diagnostic matches all 1150 raw bytes and original
-ordered fixups, but is **not accepted**: one producer only, no compiled negative.
-The source/proposal are frozen for handoff; formal acceptance remains pending. Target provenance is
+The ordinary shared control changes spawn-speed bias 64 to 65. The focused `op-zunsoft` replay passes with two independent cold producers:
+all 1150 raw bytes and all 33 ordered fixups match, and the compiled speed-bias
+negative differs as required. The complete four-function CODE scope is accepted
+in `config/accepted_units.op.json`; the receipt is
+`.analysis/unit-replays/gpt-web-op-zunsoft-20261110/receipt.json`. Target provenance is
 candidate-local-attested; there is no packed-file or whole-program claim.
 
 
@@ -58,9 +60,8 @@ The source ABI review confirms the existing Pascal-far `super_free` declaration.
 for `__LARGE__` and expands `MASTER_RET` to `far pascal`. The distinct
 `MASTER_CRET` macro supplies `far cdecl`. Absence of `MASTER_CALL` therefore did
 not imply cdecl. This correction changes documentation only; source and binder
-remain frozen. The first exact diagnostic remains unaccepted. The user cleared
-the reconstruction goal, so no further source changes or builds were performed
-for this handoff.
+remain frozen. The original diagnostic was only a preliminary result; formal replay has
+since independently accepted the same source and binder.
 
 ## Separate filename source, unbuilt
 
