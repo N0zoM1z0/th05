@@ -8,17 +8,22 @@
 
 void pascal near alice_fg_render(void)
 {
+    int left;
     int top;
     int patnum;
-    int left;
     left = boss.pos.cur.x.v >> 4;
     top = (boss.pos.cur.y.v >> 4) - 16;
     if(boss.phase == ALICE_FG_PHASE_EXPLODE_BIG) {
         super_large_put(left, top, boss.sprite);
     } else {
         patnum = boss.sprite;
-        patnum += (patnum == ALICE_FG_PAT_STAY) ? (stage_frame_mod16 / 4) :
-            ((patnum == ALICE_FG_PAT_ATTACK) ? stage_frame_mod2 : (stage_frame_mod8 / 4));
+        if(patnum == ALICE_FG_PAT_STAY) {
+            patnum += stage_frame_mod16 / 4;
+        } else if(patnum == ALICE_FG_PAT_ATTACK) {
+            patnum += stage_frame_mod2;
+        } else {
+            patnum += stage_frame_mod8 / 4;
+        }
         if(boss.damage_this_frame == 0) {
             super_put(left, top, patnum);
         } else {

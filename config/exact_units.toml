@@ -5033,3 +5033,24 @@ unit = "main-yumeko-laser-swords-context"
 source = "src/main/boss/yumeko/laser_swords.cpp"
 find = "boss.hp - boss.phase_end_hp < 500"
 replace = "boss.hp - boss.phase_end_hp < 501"
+
+[[units]]
+id = "main-alice-foreground-complete"
+source = "src/main/boss/alice/foreground.cpp"
+module = "th05/b3fgex.cpp"
+segment = "ALICE_FG_TEXT"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/alice_foreground_exact_bindings.asm"
+target_start = 0x14354
+size = 140
+functions = 1
+function_symbol = "alice_fg_render()"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-alice-foreground-complete"
+source = "src/main/boss/alice/foreground.cpp"
+find = "patnum += stage_frame_mod8 / 4;"
+replace = "patnum += stage_frame_mod8 / 2;"

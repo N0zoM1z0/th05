@@ -2,42 +2,39 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "d7ee8900ffc9b377ed75d901d16e278240df84ab03afae105b7dcfadf0efe265",
+  "replay_receipt_sha256": "3904db09e211fffe73b6b29d38ec39c8cba114a8a116b3401d5a408d18ea0a1a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 127466,
-    "candidate_start": 127466,
-    "size": 518,
-    "target_sha256": "fbb00f7db066d61c0ef27531cd06fb8437977b94079065fd889266d380e61999",
-    "candidate_sha256": "6f71f39f7faeca38d30b0c625ac0e95a450f48115ffcc785916005b442466c49",
+    "target_start": 82772,
+    "candidate_start": 82772,
+    "size": 140,
+    "candidate_size": 147,
+    "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+    "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
     "raw_exact": false,
     "target_fixups": [
-      495,
-      472,
-      436,
-      391,
-      291,
-      252,
-      212,
-      166,
-      126,
-      69
+      125,
+      107,
+      44
     ],
     "candidate_fixups": [
-      495,
-      472,
-      436,
-      391,
-      291,
-      252,
-      212,
-      166,
-      126,
-      69
+      132,
+      114,
+      44
     ],
-    "fixups_exact": true,
-    "exact": false
+    "fixups_exact": false,
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 82772,
+      "size": 147,
+      "function_symbol": "alice_fg_render()",
+      "contribution_start": 82391,
+      "contribution_size": 528,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -79718,6 +79715,387 @@
           "-ml",
           "-DBINARY='M'",
           "th05/yfullctx.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-alice-foreground-complete",
+      "entry_sha256": "9cb8397c17cf123c7a918cebd5d75a0a9dbb07e972f39cb2c6a1c5f981d3e1e3",
+      "result": {
+        "id": "main-alice-foreground-complete",
+        "entry_sha256": "9cb8397c17cf123c7a918cebd5d75a0a9dbb07e972f39cb2c6a1c5f981d3e1e3",
+        "rounds": [
+          {
+            "target_start": 82772,
+            "candidate_start": 82772,
+            "size": 140,
+            "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+            "candidate_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+            "raw_exact": true,
+            "target_fixups": [
+              125,
+              107,
+              44
+            ],
+            "candidate_fixups": [
+              125,
+              107,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 82772,
+              "size": 140,
+              "function_symbol": "alice_fg_render()",
+              "contribution_start": 82391,
+              "contribution_size": 521,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 82772,
+            "candidate_start": 82772,
+            "size": 140,
+            "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+            "candidate_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+            "raw_exact": true,
+            "target_fixups": [
+              125,
+              107,
+              44
+            ],
+            "candidate_fixups": [
+              125,
+              107,
+              44
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 82772,
+              "size": 140,
+              "function_symbol": "alice_fg_render()",
+              "contribution_start": 82391,
+              "contribution_size": 521,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "32201578c27c48e87ece5de8dbd20262400f52aa3ca997ae86ee04ebdd685d90",
+            "dependency_timestamp_normalized_sha256": "9897c98afa332275f6dcf9c05ee05ca47e4b4d36568f2cfd962992d181c6905e",
+            "module_name": "th05/b3fgex.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b3fgex.cpp",
+              "src/main/boss/alice/foreground.cpp",
+              "src/main/boss/alice/foreground.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/alice/beam.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/puppets_render.cpp"
+            ]
+          },
+          {
+            "sha256": "5343480fe0a7eba59d4ccfd7fa389f229a96f78116cc8e2ef104c10273fc3ce0",
+            "dependency_timestamp_normalized_sha256": "9897c98afa332275f6dcf9c05ee05ca47e4b4d36568f2cfd962992d181c6905e",
+            "module_name": "th05/b3fgex.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/b3fgex.cpp",
+              "src/main/boss/alice/foreground.cpp",
+              "src/main/boss/alice/foreground.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/alice/beam.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/puppets_render.cpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b3fgex.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/b3fgex.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/alice_foreground_exact_bindings.asm",
+            "sha256": "9e83911f6db023c6e886dcc695265a7d42611cfc61b7810808af0e33cae0ba7f"
+          },
+          {
+            "path": "src/main/boss/alice/beam.hpp",
+            "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
+          },
+          {
+            "path": "src/main/boss/alice/foreground.cpp",
+            "sha256": "47ec2729691e3019bed523e77a1f187e4c865deb35f768f510dc32cceb8c9754"
+          },
+          {
+            "path": "src/main/boss/alice/foreground.hpp",
+            "sha256": "5e857c31889bd789e16e424f4a2ffbcbf9020c09a6d8c63fd61c0a228ad61896"
+          },
+          {
+            "path": "src/main/boss/alice/puppets_render.cpp",
+            "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/alice_foreground_exact_bindings.asm",
+          "sha256": "9e83911f6db023c6e886dcc695265a7d42611cfc61b7810808af0e33cae0ba7f"
+        },
+        {
+          "path": "src/main/boss/alice/beam.hpp",
+          "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
+        },
+        {
+          "path": "src/main/boss/alice/foreground.cpp",
+          "sha256": "47ec2729691e3019bed523e77a1f187e4c865deb35f768f510dc32cceb8c9754"
+        },
+        {
+          "path": "src/main/boss/alice/foreground.hpp",
+          "sha256": "5e857c31889bd789e16e424f4a2ffbcbf9020c09a6d8c63fd61c0a228ad61896"
+        },
+        {
+          "path": "src/main/boss/alice/puppets_render.cpp",
+          "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "3904db09e211fffe73b6b29d38ec39c8cba114a8a116b3401d5a408d18ea0a1a",
+      "compiled_negative_control": {
+        "target_start": 82772,
+        "candidate_start": 82772,
+        "size": 140,
+        "candidate_size": 147,
+        "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+        "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
+        "raw_exact": false,
+        "target_fixups": [
+          125,
+          107,
+          44
+        ],
+        "candidate_fixups": [
+          132,
+          114,
+          44
+        ],
+        "fixups_exact": false,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 82772,
+          "size": 147,
+          "function_symbol": "alice_fg_render()",
+          "contribution_start": 82391,
+          "contribution_size": 528,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-alice-foreground-complete",
+        "entry_sha256": "9cb8397c17cf123c7a918cebd5d75a0a9dbb07e972f39cb2c6a1c5f981d3e1e3",
+        "mutation": {
+          "unit": "main-alice-foreground-complete",
+          "source": "src/main/boss/alice/foreground.cpp",
+          "find": "patnum += stage_frame_mod8 / 4;",
+          "replace": "patnum += stage_frame_mod8 / 2;"
+        },
+        "control_sha256": "01eee22e1838058c2a16e59ea4a8ae89b61153f2879f22c8f0866ce5f7cb9e93",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 82772,
+          "candidate_start": 82772,
+          "size": 140,
+          "candidate_size": 147,
+          "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
+          "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
+          "raw_exact": false,
+          "target_fixups": [
+            125,
+            107,
+            44
+          ],
+          "candidate_fixups": [
+            132,
+            114,
+            44
+          ],
+          "fixups_exact": false,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 82772,
+            "size": 147,
+            "function_symbol": "alice_fg_render()",
+            "contribution_start": 82391,
+            "contribution_size": 528,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "ec2d001b311daa9f76e145b31f889e2bcdbf32d7d772f17c87bf1fe321b405c9",
+          "dependency_timestamp_normalized_sha256": "629f350265527dca8c100752da126d1a69f102347fc350112a02f06c64d3ca1e",
+          "module_name": "th05/b3fgex.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/b3fgex.cpp",
+            "src/main/boss/alice/foreground.cpp",
+            "src/main/boss/alice/foreground.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/alice/beam.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/alice/puppets_render.cpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/b3fgex.cpp"
         ]
       },
       "receipt_aggregate_pass": true

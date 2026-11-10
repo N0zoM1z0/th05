@@ -86,3 +86,41 @@ returns also remains failed because this compiler did not expand it inline.
 An ordinary `register unsigned char` declaration on that joined frame local
 also emits146, with the same store/reload.
 Experimental files were removed; the maintained baseline is unchanged.
+
+## 2026-11-10: complete 140-byte foreground C++ recovery
+
+**`alice_fg_render()` is now accepted** as a complete 140-byte natural C++
+source function at `[14354,143E0)`, with original ordered fixups
+`[125,107,44]`. This supersedes the earlier 150/146-byte standalone
+candidate failures above. The genuine adjacent `puppets_render()` is still
+included from its single maintained 381-byte source; its existing accepted
+owner is unchanged, and both functions together now reproduce all
+**521/521 original bytes** in the real physical `ALICE_FG_TEXT` segment.
+
+The earlier compiler assigned the X position to the BP local and Y to DI,
+which made both drawing calls use a three-byte stack push. Reordering the
+natural local declarations as **left, top, patnum** restores the native
+X-in-DI and Y-on-stack allocation, without physical register aliases. The
+conditional animation expression is written as three ordinary branches
+using the existing true frame-modulo variables; the native shared signed
+`/4` for the final animation frame is generated without the duplicated
+local compiler path. The same natural source preserves original big-explosion
+routing, damaged one-plane rendering, puppet rendering and both explosion
+updates. No instruction template, arbitrary ABI change, substituted DATA,
+artificial alignment byte or foreign helper implementation was used.
+
+The original binder's ten-byte 150-byte candidate end was incorrect once the
+function shrank to its real 140 bytes. The separately reviewed
+`probes/units/alice_foreground_exact_bindings.asm` restores the original
+`143E0` end and therefore the true DATA/DS209D address frame; it contains
+only foreign symbols and original outside intervals. The generated object
+naturally preserves the complete raw function and the literal original
+three-site relocation order, rather than postprocessing fixups.
+
+The focused receipt is
+`.analysis/unit-replays/gpt-web-main-alice-foreground-complete-20261110/receipt.json`.
+Two independent real Turbo C++/TLINK producers match all 140 bytes and
+all ordered fixups, with complete MAP/OMF boundaries. The compiled negative
+changes the actual alternate animation speed from `/4` to `/2` and is
+rejected. Only the 140-byte foreground callback adds new authored C++ CODE
+credit; previously accepted 381 puppet bytes are not counted again.

@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN Alice's Boss foreground callback is now exact natural C++:
+**140/140 bytes** at `14354..143E0`, original three-site ordered fixups,
+two independent real compiler/linker producers and its own rejected animation
+speed mutation. Reordering ordinary local declarations restores native
+DI/stack allocation; rebuilding the true end boundary restores DS209D.
+The adjacent accepted 381-byte puppet renderer remains unchanged, and their
+combined 521-byte CODE is raw/fixup exact. See
+[Alice foreground](../src/main/boss/alice/foreground.md).
+
 MAIN's original-register `VECTOR2_NEAR` near-Pascal math helper is now exact
 as a complete **55-byte reviewed ASM** contribution at `152DA..15311`.
 Two independent TASM/TLINK builds and a compiled signed-product shift negative
