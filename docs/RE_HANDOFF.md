@@ -6,6 +6,15 @@
 > Older broad validation instructions apply only when their impact is relevant.
 
 
+MAIN's complete **164-byte shot and hit-animation renderer** is now exact:
+`[13573,13617)`, original empty relocation stream, two independent Turbo C++
+producers and a rejected compiled age-parity mutation. The sprite number
+stays in the original `CX` word while real `AX/DX` coordinates reach the
+renderer; declaring the counter before the Shot pointer restores native
+`BP-2`/`BP-4` stack slots. No behavior or raw graphics ABI changes.
+Receipt: `.analysis/unit-replays/gpt-web-main-shot-render-164-20261110/receipt.json`.
+See [shot rendering](../src/main/player/shot_render.md).
+
 MAIN's **241-byte item motion and pickup state machine** is newly exact:
 original `[1D0AD,1D19E)`, two native relocation sites, two independent
 Borland producers and a rejected compiled pull-speed mutation. Restoring the

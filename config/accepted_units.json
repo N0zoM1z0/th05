@@ -2,26 +2,31 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "f1a3d9c7245891de421a3fcc995df48e0f6309d432ebe87180e6d51bbaf625d1",
+  "replay_receipt_sha256": "034312967b28c8671c944697b5ae45c21ca6fa23b26418e42d6818a39d99c427",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 118957,
-    "candidate_start": 118957,
-    "size": 241,
-    "target_sha256": "3bf6d4008b088f7d0ef950ad7d64642db920a124ef4e9348ab15676cdbe7b8f0",
-    "candidate_sha256": "307c86f14da27fb467b919390f1ee822f4c8a1ef5b0d1681417fe8934e7e8e6d",
+    "target_start": 79219,
+    "candidate_start": 79219,
+    "size": 164,
+    "candidate_size": 161,
+    "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+    "candidate_sha256": "141b0b1d38df4a02e5bd085c4463f152698e993a94411c3c9b5023225c5db2c4",
     "raw_exact": false,
-    "target_fixups": [
-      208,
-      66
-    ],
-    "candidate_fixups": [
-      208,
-      66
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 79219,
+      "size": 161,
+      "function_symbol": "shots_render()",
+      "contribution_start": 79219,
+      "contribution_size": 161,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -83208,6 +83213,336 @@
           "-ml",
           "-DBINARY='M'",
           "th05/it_updat.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shots-render-exact",
+      "entry_sha256": "ee7bdee67774d80894573b6afc461265917169ab9c966507003d2d11b14f7db6",
+      "result": {
+        "id": "main-shots-render-exact",
+        "entry_sha256": "ee7bdee67774d80894573b6afc461265917169ab9c966507003d2d11b14f7db6",
+        "rounds": [
+          {
+            "target_start": 79219,
+            "candidate_start": 79219,
+            "size": 164,
+            "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+            "candidate_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79219,
+              "size": 164,
+              "function_symbol": "shots_render()",
+              "contribution_start": 79219,
+              "contribution_size": 164,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 79219,
+            "candidate_start": 79219,
+            "size": 164,
+            "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+            "candidate_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 79219,
+              "size": 164,
+              "function_symbol": "shots_render()",
+              "contribution_start": 79219,
+              "contribution_size": 164,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "63010648deebd9aeb6a89f789553b4f71c7905794a560b0204d04924aed2fabb",
+            "dependency_timestamp_normalized_sha256": "cf0344cd17dc63ac2c6b9898563923d90017aa7cb3b9a42767488b2eb5acf0ec",
+            "module_name": "th05/s_rend.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/s_rend.cpp",
+              "src/main/player/shot_render.cpp",
+              "src/main/player/shot_render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          },
+          {
+            "sha256": "7763aea7dbcd071ce6e446ddc83f2a065b4abd5884278117df259860803ff477",
+            "dependency_timestamp_normalized_sha256": "cf0344cd17dc63ac2c6b9898563923d90017aa7cb3b9a42767488b2eb5acf0ec",
+            "module_name": "th05/s_rend.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/s_rend.cpp",
+              "src/main/player/shot_render.cpp",
+              "src/main/player/shot_render.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/player/shot_runtime.hpp",
+              "src/main/player/reimu.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/s_rend.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/s_rend.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/shot_render_bindings.asm",
+            "sha256": "ea7ca7edc17d4b0136eb168c152bbf13f565a110a841d2f92fbf1ce7e8c703a8"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/player/reimu.hpp",
+            "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+          },
+          {
+            "path": "src/main/player/shot_render.cpp",
+            "sha256": "1bde46dc2b2cdc5a9a80a5b15f8027631ac070562ff4a28cd4d90e98f40777d6"
+          },
+          {
+            "path": "src/main/player/shot_render.hpp",
+            "sha256": "407c24813cd29a440300432f03175c182a7692e8222f9c4c9b9fed571805979d"
+          },
+          {
+            "path": "src/main/player/shot_runtime.hpp",
+            "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/shot_render_bindings.asm",
+          "sha256": "ea7ca7edc17d4b0136eb168c152bbf13f565a110a841d2f92fbf1ce7e8c703a8"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/reimu.hpp",
+          "sha256": "52352d638617876270e86434ec6f25b7183206d10060714bf9b9fab4e35432be"
+        },
+        {
+          "path": "src/main/player/shot_render.cpp",
+          "sha256": "1bde46dc2b2cdc5a9a80a5b15f8027631ac070562ff4a28cd4d90e98f40777d6"
+        },
+        {
+          "path": "src/main/player/shot_render.hpp",
+          "sha256": "407c24813cd29a440300432f03175c182a7692e8222f9c4c9b9fed571805979d"
+        },
+        {
+          "path": "src/main/player/shot_runtime.hpp",
+          "sha256": "a10bfaf424e722b81b092abead1b13b0a3914d8ea6337e80e627467cf450c14e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "034312967b28c8671c944697b5ae45c21ca6fa23b26418e42d6818a39d99c427",
+      "compiled_negative_control": {
+        "target_start": 79219,
+        "candidate_start": 79219,
+        "size": 164,
+        "candidate_size": 161,
+        "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+        "candidate_sha256": "141b0b1d38df4a02e5bd085c4463f152698e993a94411c3c9b5023225c5db2c4",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 79219,
+          "size": 161,
+          "function_symbol": "shots_render()",
+          "contribution_start": 79219,
+          "contribution_size": 161,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shots-render-exact",
+        "entry_sha256": "ee7bdee67774d80894573b6afc461265917169ab9c966507003d2d11b14f7db6",
+        "mutation": {
+          "unit": "main-shots-render-exact",
+          "source": "src/main/player/shot_render.cpp",
+          "find": "(shot->age & 1)",
+          "replace": "(shot->age & 0)"
+        },
+        "control_sha256": "88f34a6116875dc56d84dccfba764e2696a5a21f6a897580992fd6bf032ba598",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 79219,
+          "candidate_start": 79219,
+          "size": 164,
+          "candidate_size": 161,
+          "target_sha256": "f90ce7a1bedcdf79604e4941c2d2d50ca7da84e3dcfd95ff3d10f0288502f422",
+          "candidate_sha256": "141b0b1d38df4a02e5bd085c4463f152698e993a94411c3c9b5023225c5db2c4",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 79219,
+            "size": 161,
+            "function_symbol": "shots_render()",
+            "contribution_start": 79219,
+            "contribution_size": 161,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "54132dee5ae64ed5f644fb2aad88eff945c4ccc28bf6358dc31da5317386ce12",
+          "dependency_timestamp_normalized_sha256": "15cfa49fb085b83465842a1c08580a15b5057313cd4c6399ae4a4ad998d26e3e",
+          "module_name": "th05/s_rend.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/s_rend.cpp",
+            "src/main/player/shot_render.cpp",
+            "src/main/player/shot_render.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/player/shot_runtime.hpp",
+            "src/main/player/reimu.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/s_rend.cpp"
         ]
       },
       "receipt_aggregate_pass": true

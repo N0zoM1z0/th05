@@ -1,4 +1,4 @@
-# Parked shot and hit-animation renderer
+# Complete exact shot and hit-animation renderer
 
 The maintained semantic-safe natural C++ candidate targets the complete
 original MAIN function
@@ -71,3 +71,44 @@ The proposed parity-mask mutation1-to0 was not compiled and is not claimed
 rejected. Full exact-acceptance requirements remain unmet. Detailed native
 forensics are retained in `.analysis/shot-render-first-producer-review.json`
 and `.analysis/shot-render-byte-protocol-review.json`.
+
+## Complete original 164-byte C++ shot renderer — 2026-11-10
+
+`shots_render()` is accepted as the complete MAIN `[13573,13617)`
+**164/164-byte** original code body. Two independent real Borland C++/TLINK
+producers match every instruction, the original empty relocation stream,
+MAP/OMF function bounds, and a compiled age-parity mutation (`&1` to `&0`)
+is rejected.
+
+The safe previous word-local sprite source emitted 173 bytes because it
+saved the sprite number in a BP local and pushed that word after preparing
+AX/DX graphics coordinates. A byte-local attempt was unsafe: loading the
+sprite argument into AL clobbered the draw function's X coordinate. The
+exact maintained C++ instead preserves the original hybrid hardware contract:
+zero CH, load the sprite base into CL, add the age parity as an unsigned byte,
+and pass the intact `CX` word to the true one-word near-Pascal raw renderer.
+The accepted graphics helper still receives left in AX, top in DX, VRAM
+plane in ES, and sprite in the Pascal stack slot. Nothing overwrites AX
+between coordinate preparation and draw.
+
+```cpp
+_CH = 0;
+_CL = shot->patnum_base;
+_CL += (shot->age & 1);
+shot_render_tiny(left, top, _CX);
+```
+
+The original register AL is generated naturally by the byte parity
+arithmetic. Moving the ordinary loop counter declaration before the
+`Shot*` near pointer lets Borland allocate the native `BP-2` counter and
+`BP-4` Shot pointer without register aliases or saved padding. It also
+retains all 64 cached-shot slots and the 24 original hitshot animation
+entries, their independent sentinel/age checks, genuine `ES=A800` graphics
+plane, and final port `7Ch` disable. No copied opcode, memory layout
+change, fake state write or new helper was introduced.
+
+Focused accepted receipt:
+`.analysis/unit-replays/gpt-web-main-shot-render-164-20261110/receipt.json`.
+All 164 bytes are complete source-owned C++ CODE, with DOS hardware-register
+intrinsics. Earlier 173/175-byte diagnostics above remain as historical
+failed compiler variants, not outstanding ownership blockers.

@@ -5215,3 +5215,24 @@ unit = "main-items-update-exact"
 source = "src/main/item/update.cpp"
 find = "TO_SP(ITEM_PULL_SPEED)"
 replace = "TO_SP(ITEM_PULL_SPEED + 1)"
+
+[[units]]
+id = "main-shots-render-exact"
+source = "src/main/player/shot_render.cpp"
+module = "th05/s_rend.cpp"
+segment = "SHOT_RENDER_TEXT"
+wrapper_options = "-zCSHOT_RENDER_TEXT -zPmain_01"
+bindings_source = "probes/units/shot_render_bindings.asm"
+target_start = 0x13573
+size = 164
+functions = 1
+function_symbol = "shots_render()"
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+code_data_ranges = []
+
+[[controls]]
+unit = "main-shots-render-exact"
+source = "src/main/player/shot_render.cpp"
+find = "(shot->age & 1)"
+replace = "(shot->age & 0)"
