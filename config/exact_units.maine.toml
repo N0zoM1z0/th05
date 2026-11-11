@@ -1485,3 +1485,28 @@ unit = "maine-sound-se-update-exact"
 source = "src/shared/sound/se_update_body.inl"
 find = "if(snd_se_frame == 0) {"
 replace = "if(snd_se_frame == 1) {"
+
+
+[[units]]
+id = "maine-bgimage-transfer-complete"
+source = "src/shared/hardware/bgimage_transfer.cpp"
+module = "th04/bgtrans.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_bgimage_transfer_bindings.asm"
+target_start = 0xeb6c
+size = 157
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 59392
+ds_base = 65808
+binary = "E"
+
+[[controls]]
+unit = "maine-bgimage-transfer-complete"
+source = "src/shared/hardware/bgimage_transfer.cpp"
+find = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(32000));"
+replace = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(31996));"

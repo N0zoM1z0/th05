@@ -49,3 +49,12 @@ SHA-256 `4d09585180a9c32bcd64230d11d33ae242108a2e3d6887dde501e47412d2585e`.
 
 MAINE receipt: `.analysis/unit-replays/maine-bgimage-free-compiler-assembly-a/receipt.json`,
 SHA-256 `5925d7b48be03ff0534727ac41b59cbca54d2aa15909273a16c399f29b23fbd9`.
+
+## Adjacent two-function transfer context
+
+The earlier unowned background snapshot and restore code directly before this
+free routine is now separately accepted as [exact C++](bgimage_transfer.md)
+for OP and MAINE. Both complete transfer functions compile together in the
+original C++ context; the intervening `EVEN` NOP remains outside their CODE
+owner. The accepted 50-byte free-function bytes and its unchanged source do
+not need a cold replay.
