@@ -321,3 +321,23 @@ ASM file. This correction reduces the reviewed Master-hook total by 18 and
 resolves an overlapping CODE owner; it does not reduce the original target.
 The adjacent joystick sense/SAJOUT is also reconstructed independently and
 its trailing zero remains unknown.
+
+## Correct full 126-byte machine-probe boundaries
+
+The original `GET_MACHINE_98` from Master `GETMAC98.ASM` is **126 bytes** in
+both front-end executables: OP `[0F98,1016)`, MAINE `[0FEA,1068)`. An earlier
+review accepted only the first 104 bytes of the OP body, ending at `1000`
+where an unrelated native MAP public called `__AHINCR` happens to occur.
+That public is **not a valid end delimiter** for this continuous original
+source procedure. The authentic TASM LEDATA covers all 126 bytes, including
+the final detector flags and the jump to `GET_MACHINE_DOSBOX`; the two
+ordered OMF actions, original raw target bytes and following
+`GET_MACHINE_AT` public all agree. The newly completed OP 22-byte tail and
+the entire MAINE 126-byte function have independent original source evidence.
+
+`GRCG_OFF` also matches the complete original `GC_SETCO.ASM` source in both
+OP `[0F0C,0F12)` and MAINE `[0F52,0F58)`, six bytes each with no OMF fixups.
+This repairs/extends existing source records rather than creating a second
+owner for the same code. The proof now contains **142 bounded source scopes
+and 9,110 original vendor CODE bytes**; the net gain in formerly unknown
+ownership is **160 bytes**. No other `__AHINCR` startup origin is assumed.

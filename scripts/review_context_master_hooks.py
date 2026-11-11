@@ -110,6 +110,8 @@ SCOPES = (
      {'op': (0xb92, 26), 'maine': (0xbae, 32)}, 'original-identical'),
     ('GRCG_SETCOLOR', 'libs/master.lib/grcg_setcolor.asm', 'GC_SETCO.ASM',
      {'op': (0xee2, 42), 'maine': (0xf28, 42)}, 'original-identical'),
+    ('GRCG_OFF', 'libs/master.lib/grcg_setcolor.asm', 'GC_SETCO.ASM',
+     {'op': (0x0f0c, 6), 'maine': (0x0f52, 6)}, 'original-identical'),
     ('GRCG_CIRCLEFILL', 'libs/master.lib/grcg_circlefill.asm', 'GC_CIRCF.ASM',
      {'maine': (0xd36, 150)}, 'reviewed-native-spelling'),
     # Complete original Master archive I/O and random-helper CODE. GAME=5
@@ -165,7 +167,7 @@ SCOPES = (
     ('GRAPH_COPY_PAGE', 'libs/master.lib/graph_copy_page.asm', 'GRPCPPG.ASM',
      {'op': (0x1250, 86), 'maine': (0x133c, 86)}, 'reviewed-native-spelling'),
     ('GET_MACHINE_98', 'libs/master.lib/get_machine_98.asm', 'GETMAC98.ASM',
-     {'op': (0x0f98, 104)}, 'native-machine-near-jump-port'),
+     {'op': (0x0f98, 126), 'maine': (0x0fea, 126)}, 'native-machine-near-jump-port'),
     ('IHYPOT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
      {'maine': (0x1af8, 24)}, 'isqrt-private-root-name'),
     ('ISQRT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
@@ -289,6 +291,7 @@ EXPECTED_NATIVE_FIXUPS = {
     'DOS_CLOSE': 0,
     'DOS_ROPEN': 1,
     'GRCG_SETCOLOR': 0,
+    'GRCG_OFF': 0,
     'GRCG_CIRCLEFILL': 0,
     'PFCLOSE': 0,
     'PFGETC': 0,
@@ -312,7 +315,7 @@ EXPECTED_NATIVE_FIXUPS = {
     'PALETTE_INIT': 3,
     'GRAPH_CLEAR': 2,
     'GRAPH_COPY_PAGE': 1,
-    'GET_MACHINE_98': 1,
+    'GET_MACHINE_98': 2,
     'IHYPOT': 0,
     'ISQRT': 0,
     'GRAPH_PI_FREE': 1,
@@ -535,6 +538,11 @@ def source_linked():
             if art not in positions:
                 continue
             start, size = positions[art]
+            if name == 'GET_MACHINE_98':
+                need(size == 126 and start + size ==
+                     (0x1016 if art == 'op' else 0x1068) and
+                     publics.get('GET_MACHINE_AT') == {start+size},
+                     'native GET_MACHINE_98 source body truncated at spurious __AHINCR symbol')
             if name == 'BFTENTRY_INVAL':
                 need(publics.get('BFNT_ENTRY_PAT') == {start + size} and
                      start == 0x272 and size == 20,
