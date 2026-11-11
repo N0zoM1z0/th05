@@ -99,6 +99,8 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Far vector pair resolved:** MAIN `14AB8..14B58` contains **159 newly accepted C++ instruction bytes** across two complete near-adjacent far-Pascal functions. TCC `-S`/TASM32 reproduces native 386 `MOVSX` and the original `[24]` second-function fixup; the one `14AFD` EVEN byte is outside both owners. See [complete source and receipts](../src/shared/math/vector_far.md).
 
+**Large MAINE cutscene interpreter remains open:** The 1,555-byte `script_op()` has an inexact native C++ producer. A fresh TCC `-S` / TASM32 experiment identified its missing compiler CODE-group declaration and reduced the linked byte mismatch to one switch-table pointer (two immediate bytes); the 42 original relocation sites remain wrongly ordered. See [dispatcher compiler context](../src/maine/cutscene/script_op_assembler_context.md). The nine separately accepted cutscene neighbors are unchanged.
+
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
 review include remaining original-language classification and data boundaries, not the already accepted MAIN MAP loader `E5C2..E606`. The STD loader, far vector pair, player region `C9BA..CAD2`, and Gather/point-popup raster subregions have accepted owners; the `14AFD` vector alignment byte remains uncredited. Use original
