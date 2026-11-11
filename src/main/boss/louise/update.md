@@ -83,3 +83,6 @@ at relative121. The phase-end HP3000→3001 compiled control is rejected.
 Credit is one complete function and581 authored bytes (565 instructions plus
 16 compiler-table bytes); the original padding byte is checked and excluded.
 No previously accepted helper source or header was changed.
+
+The eight original switch states and both three-mode pattern dispatches now
+use named phase/mode constants, preserving the numeric state machine.

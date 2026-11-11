@@ -60,3 +60,27 @@ The compiled beam width56→55 mutation is rejected.
 Credit is1 complete function(s) and354 authored instruction bytes;
 there is no owned table, padding, DATA or BSS. No previously accepted source
 or ABI header was changed to obtain this result.
+
+## Shared beam-state semantics (2026-11-11)
+
+The original animation protocol is now named without changing its storage:
+`boss_statebyte[9]` selects inactive (0), charging circles (1),
+contracting circles / connecting line (2), and paired beam sprites (3).
+The adjacent `boss_statebyte[8]` supplies the beam's sprite-pattern offset.
+Alice's beam controller writes these states at its 16-, 32- and
+64-frame milestones; actual beam attacks start at frame 80. The puppet
+motion owner suppresses shot damage during sprite phase 3, and the
+puppet foreground renders each corresponding circle, line or sprite.
+Both the standalone sources and the coherent Alice foreground/update
+translation-unit contexts use the same named values. The declarations
+are compiler constants and add no BSS or fabricated DATA.
+
+Focused, two-producer original-byte and ordered-relocation replays matched
+all five affected accepted extents: beam (354 bytes), puppet render (381),
+puppet entrance/movement (643), the complete Alice Boss update including
+its alignment/switch table (939), and combined foreground (140). Each
+replay also rejected its compiled semantic negative. The verification
+receipts are in `.analysis/unit-replays/` under
+`gpt-web-alice-beam-semantics-pair2-20261111` and
+`gpt-web-alice-beam-semantics-consumers2-20261111`. All five extents
+were accepted before this semantic-naming change; no duplicate credit is added.

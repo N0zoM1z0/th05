@@ -2,50 +2,30 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "4c518b9ec17b7b26bc6c9355edf2e557b50bc466c486d6c33a2fe4bab0bf4d4f",
+  "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 98267,
-    "candidate_start": 98267,
-    "size": 1018,
-    "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
-    "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
+    "target_start": 124418,
+    "candidate_start": 124418,
+    "size": 354,
+    "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+    "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
     "raw_exact": false,
     "target_fixups": [
-      942,
-      931,
-      915,
-      898,
-      874,
-      723,
-      312,
-      171,
-      123
+      350,
+      235,
+      219,
+      133
     ],
     "candidate_fixups": [
-      942,
-      931,
-      915,
-      898,
-      874,
-      723,
-      312,
-      171,
-      123
+      350,
+      235,
+      219,
+      133
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 98267,
-      "size": 1018,
-      "function_symbol": "mai_yuki_update()",
-      "contribution_start": 97328,
-      "contribution_size": 1957,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -27181,8 +27161,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "04714864db559559328dc847782200eb5c092c8bc6cdc9e5027f2d328d172c72",
-            "dependency_timestamp_normalized_sha256": "f7d600e631500575804e0e791d2bf52b9fa5c740f0176008f2e48022f9ae4393",
+            "sha256": "5be9a274950bbacbe36a5db8bcf293b90c07eccb06443571c6724cf90a2ded94",
+            "dependency_timestamp_normalized_sha256": "90bd7854027a1cbb04739f4d750c05043ddbfc260932cdd18f85e98c5fb03586",
             "module_name": "th05/a_beam.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -27202,12 +27182,13 @@
               "src/shared/geometry.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           },
           {
-            "sha256": "591b01a6106b32df8aa309a3477903535b33ad69f5be3e9fe839de625e019204",
-            "dependency_timestamp_normalized_sha256": "f7d600e631500575804e0e791d2bf52b9fa5c740f0176008f2e48022f9ae4393",
+            "sha256": "bbbb5d9009ef1c5810c06a32d9a425d6219c5bb347e6aa9690a535274b6098b0",
+            "dependency_timestamp_normalized_sha256": "90bd7854027a1cbb04739f4d750c05043ddbfc260932cdd18f85e98c5fb03586",
             "module_name": "th05/a_beam.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -27227,7 +27208,8 @@
               "src/shared/geometry.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           }
         ],
@@ -27270,11 +27252,15 @@
           },
           {
             "path": "src/main/boss/alice/beam.cpp",
-            "sha256": "77cb363af96fe798f2255a9e3ab40a2eabef4449c5dcd284df651eb95bbf0f12"
+            "sha256": "a06bb23a121ef604b4f4f979bb2f3b491c017502dde4b1ff3fdf38e893aeb102"
           },
           {
             "path": "src/main/boss/alice/beam.hpp",
             "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
+          },
+          {
+            "path": "src/main/boss/alice/beam_phase.hpp",
+            "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -27314,11 +27300,15 @@
         },
         {
           "path": "src/main/boss/alice/beam.cpp",
-          "sha256": "77cb363af96fe798f2255a9e3ab40a2eabef4449c5dcd284df651eb95bbf0f12"
+          "sha256": "a06bb23a121ef604b4f4f979bb2f3b491c017502dde4b1ff3fdf38e893aeb102"
         },
         {
           "path": "src/main/boss/alice/beam.hpp",
           "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
+        },
+        {
+          "path": "src/main/boss/alice/beam_phase.hpp",
+          "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -27351,7 +27341,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "cda48bf250abe1c5dcab6a6b0a665e9810e41f54de955e034710d7b4f2c28c34",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
         "target_start": 124418,
         "candidate_start": 124418,
@@ -27408,8 +27398,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "03f369f34a2b37eb0a0af4f6435fe02ca1d24b7f94a6430116245c98471c1466",
-          "dependency_timestamp_normalized_sha256": "c994c2c2608cddcd234a8cc4ecbf90caae5834c43b0d35b6604006f9c940140a",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
           "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -27429,7 +27419,8 @@
             "src/shared/geometry.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -27446,7 +27437,16 @@
           "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-louise-later-patterns",
@@ -28188,7 +28188,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4a18a2a7089035ab1701cf6225ac6667b575a3742f691b993642de965ef99c1d",
+            "sha256": "f48c77a54e6125fd4440522290f014c73e92763f494179306cc1ad9a2138e17d",
             "dependency_timestamp_normalized_sha256": "4578ef10843c67a51a835fe91a189ec822653e27861265ac1cbe3d5d582d8c76",
             "module_name": "th05/louiseu.cpp",
             "translator_comments": [
@@ -28223,7 +28223,7 @@
             ]
           },
           {
-            "sha256": "fac7f02d16f374d6924eaf58a6d593fbe24d0ac7f906a40d2697eba882a23aa0",
+            "sha256": "e4c4eba623425e515aafd3a5528a7d0c4d1e92d10460409c0a150732d182b772",
             "dependency_timestamp_normalized_sha256": "4578ef10843c67a51a835fe91a189ec822653e27861265ac1cbe3d5d582d8c76",
             "module_name": "th05/louiseu.cpp",
             "translator_comments": [
@@ -28259,8 +28259,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -28309,11 +28309,11 @@
           },
           {
             "path": "src/main/boss/louise/update.cpp",
-            "sha256": "e4e34145910d44198459ea027916f5da942ebfa42dcfffb3fe759f6ee4750c20"
+            "sha256": "49ec4b434214aab8f16d58f1b2d8f563cddc231197dc408c11ec496388f74fc0"
           },
           {
             "path": "src/main/boss/louise/update.hpp",
-            "sha256": "cc80ad6529163f75d433806d6ae7834657a8f1796f828b89aec9818560714d71"
+            "sha256": "db4881a26838a3ebd290ced26632ff4074ca44bb3c3605bbc5c207c430129af2"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -28369,11 +28369,11 @@
         },
         {
           "path": "src/main/boss/louise/update.cpp",
-          "sha256": "e4e34145910d44198459ea027916f5da942ebfa42dcfffb3fe759f6ee4750c20"
+          "sha256": "49ec4b434214aab8f16d58f1b2d8f563cddc231197dc408c11ec496388f74fc0"
         },
         {
           "path": "src/main/boss/louise/update.hpp",
-          "sha256": "cc80ad6529163f75d433806d6ae7834657a8f1796f828b89aec9818560714d71"
+          "sha256": "db4881a26838a3ebd290ced26632ff4074ca44bb3c3605bbc5c207c430129af2"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -28410,63 +28410,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "ed03db007fc8d7756b955aff3e0a5d52beca7064160cf8b64ec19d93a6db1b09",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 122176,
-        "candidate_start": 122176,
-        "size": 582,
-        "target_sha256": "539382869f7b7cd9a20390da239663bad5ff2aefd8eb90051bcd254adf7fa933",
-        "candidate_sha256": "0ca73ef169f9d16cbbe340923be0b9f5e270b6b7f3ae30f7543aa97bfaae43b5",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
-          121
+          350,
+          235,
+          219,
+          133
         ],
         "candidate_fixups": [
-          121
+          350,
+          235,
+          219,
+          133
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-louise-update",
-        "entry_sha256": "574a663446bc5867fa8646ebc806b9a6aa49a8a7d5d4e6adeb68115b84013b5f",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-louise-update",
-          "source": "src/main/boss/louise/update.cpp",
-          "find": "boss.phase_end_hp = 3000;",
-          "replace": "boss.phase_end_hp = 3001;"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "6e61401b6cfe3f8262203d6eacc35f5b94861b0a0e9f9c0a9ca3f9f82b11c146",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 122176,
-          "candidate_start": 122176,
-          "size": 582,
-          "target_sha256": "539382869f7b7cd9a20390da239663bad5ff2aefd8eb90051bcd254adf7fa933",
-          "candidate_sha256": "0ca73ef169f9d16cbbe340923be0b9f5e270b6b7f3ae30f7543aa97bfaae43b5",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
-            121
+            350,
+            235,
+            219,
+            133
           ],
           "candidate_fixups": [
-            121
+            350,
+            235,
+            219,
+            133
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "d0814600092590efd35cbd6b84371b35efa87547be75e896af74091291420525",
-          "dependency_timestamp_normalized_sha256": "2e71e5617ffbd603fd163093d50eca3500b258b376e6e6fc483dafd7d1df81c7",
-          "module_name": "th05/louiseu.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/louiseu.cpp",
-            "src/main/boss/louise/update.cpp",
-            "src/main/boss/louise/update.hpp",
-            "src/main/boss/louise/later.hpp",
-            "src/main/boss/louise/patterns.hpp",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
+            "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -28474,19 +28484,12 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/gather/gather.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/bullet/laser.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/stage/setup.hpp",
-            "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp"
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -28500,10 +28503,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/louiseu.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-yumeko-patterns",
@@ -28907,7 +28919,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "c1c8ee27a46ff45833766c31be49512d072059627f346ff8ec69ab44f6ca2ecb",
+            "sha256": "030ca03241820fd2079fcc5120093c0bcbfecfb8fedf37365b411f6f769361fa",
             "dependency_timestamp_normalized_sha256": "5f6b1ee07298f8615a287615f296ab9fdeb8e2a8d44c4e81a9ab386e3ed4ea28",
             "module_name": "th05/louisef.cpp",
             "translator_comments": [
@@ -28943,7 +28955,7 @@
             ]
           },
           {
-            "sha256": "784e17f9c7973fb8b3cc0be43c60f536a87d826565b8b6f0b12f14e2eb18517a",
+            "sha256": "b04a064960190940882ed35421dbe6df71795eaf341c1c8cf2a53e774c2c08c3",
             "dependency_timestamp_normalized_sha256": "5f6b1ee07298f8615a287615f296ab9fdeb8e2a8d44c4e81a9ab386e3ed4ea28",
             "module_name": "th05/louisef.cpp",
             "translator_comments": [
@@ -28980,8 +28992,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -29038,7 +29050,7 @@
           },
           {
             "path": "src/main/boss/louise/update.hpp",
-            "sha256": "cc80ad6529163f75d433806d6ae7834657a8f1796f828b89aec9818560714d71"
+            "sha256": "db4881a26838a3ebd290ced26632ff4074ca44bb3c3605bbc5c207c430129af2"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -29102,7 +29114,7 @@
         },
         {
           "path": "src/main/boss/louise/update.hpp",
-          "sha256": "cc80ad6529163f75d433806d6ae7834657a8f1796f828b89aec9818560714d71"
+          "sha256": "db4881a26838a3ebd290ced26632ff4074ca44bb3c3605bbc5c207c430129af2"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -29139,64 +29151,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "70309ee55b7a7f607557157da4b0439f1f100137ad67d4931066083a2f265c6a",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 121022,
-        "candidate_start": 121022,
-        "size": 122,
-        "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
-        "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
-          34
+          350,
+          235,
+          219,
+          133
         ],
         "candidate_fixups": [
-          34
+          350,
+          235,
+          219,
+          133
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-louise-flystep",
-        "entry_sha256": "a69ccf496499a29c9045cd3a5103132315c149474dca07637c73719ee39ea16d",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-louise-flystep",
-          "source": "src/main/boss/louise/flystep.cpp",
-          "find": "boss.pos.cur.x.v >= to_sp(336)",
-          "replace": "boss.pos.cur.x.v >= to_sp(335)"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "e717a9b792fe67a7a89412e4085c90b2475e8d5ecb3b9f117e7f90804d38875e",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 121022,
-          "candidate_start": 121022,
-          "size": 122,
-          "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
-          "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
-            34
+            350,
+            235,
+            219,
+            133
           ],
           "candidate_fixups": [
-            34
+            350,
+            235,
+            219,
+            133
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "49c19ce1ae84f9dc46130827e35b788424ffc2885cea905ee49c0e40c6a6a206",
-          "dependency_timestamp_normalized_sha256": "82000d6479bd9c6cc0177eb90d4c5f73d3ca809252b386a6b74b2c5a84c8fdee",
-          "module_name": "th05/louisef.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/louisef.cpp",
-            "src/main/boss/louise/flystep.cpp",
-            "src/main/boss/louise/flystep.hpp",
-            "src/main/boss/louise/update.hpp",
-            "src/main/boss/louise/later.hpp",
-            "src/main/boss/louise/patterns.hpp",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
+            "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -29204,19 +29225,12 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/gather/gather.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/bullet/laser.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/stage/setup.hpp",
-            "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp"
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -29230,10 +29244,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/louisef.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-alice-final-spread",
@@ -31367,8 +31390,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d4150c3632b98b810206cb20b93637b532588dae86bd32723d0f034981969f09",
-            "dependency_timestamp_normalized_sha256": "d7e1b127455dfd0584d9a3148352b88955ca33889b1e64b92ef5ffd0adf4ebff",
+            "sha256": "48bf5b760a210c48ff80eca5f41d581853fb5a8f5260210c6b9880f768751193",
+            "dependency_timestamp_normalized_sha256": "fb49a58a5ac1282064ef3466118b93521d827c4b4b4383be1bf87749b8cf6a08",
             "module_name": "th05/a_pmov.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -31392,12 +31415,13 @@
               "src/shared/geometry.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           },
           {
-            "sha256": "9f65a0f941c29a7b3ee370c29f29e020fa9386cafa8685570b8c46e24750614f",
-            "dependency_timestamp_normalized_sha256": "d7e1b127455dfd0584d9a3148352b88955ca33889b1e64b92ef5ffd0adf4ebff",
+            "sha256": "49687294349f6d64099e42260b5849ae617cd2a2622495ad889c408017084fba",
+            "dependency_timestamp_normalized_sha256": "fb49a58a5ac1282064ef3466118b93521d827c4b4b4383be1bf87749b8cf6a08",
             "module_name": "th05/a_pmov.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -31421,13 +31445,14 @@
               "src/shared/geometry.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-3/a/source",
+          "group-3/b/source"
         ],
         "compiler_arguments": [
           [
@@ -31467,8 +31492,12 @@
             "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
           },
           {
+            "path": "src/main/boss/alice/beam_phase.hpp",
+            "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+          },
+          {
             "path": "src/main/boss/alice/puppet_motion.cpp",
-            "sha256": "e50d8c59d4914d5b6a55d048ea6dfc25cd5879ec0731f0626922d6c1bf671f4b"
+            "sha256": "6fb44e98b3f32139f8b26857a9dc2089d39738f0f08595d85da51b546f2bb2ce"
           },
           {
             "path": "src/main/boss/alice/puppet_motion.hpp",
@@ -31519,8 +31548,12 @@
           "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
         },
         {
+          "path": "src/main/boss/alice/beam_phase.hpp",
+          "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+        },
+        {
           "path": "src/main/boss/alice/puppet_motion.cpp",
-          "sha256": "e50d8c59d4914d5b6a55d048ea6dfc25cd5879ec0731f0626922d6c1bf671f4b"
+          "sha256": "6fb44e98b3f32139f8b26857a9dc2089d39738f0f08595d85da51b546f2bb2ce"
         },
         {
           "path": "src/main/boss/alice/puppet_motion.hpp",
@@ -31561,85 +31594,72 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "4d7958f6418f32ce1746982951c8d6d50571521f82919f92ecbac85044a3cf6e",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 122758,
-        "candidate_start": 122758,
-        "size": 643,
-        "target_sha256": "32e0f2273a1a0c3548942f2b282a8de8f4f0fc79b4c353fb9e9808225546878c",
-        "candidate_sha256": "261b0a5f06df19380233aa2ec0bf7029a3100e56e212b74cf9f141f1b6c23755",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
-          524,
-          493,
-          477,
-          123,
-          95,
-          54,
-          26
+          350,
+          235,
+          219,
+          133
         ],
         "candidate_fixups": [
-          524,
-          493,
-          477,
-          123,
-          95,
-          54,
-          26
+          350,
+          235,
+          219,
+          133
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-puppet-motion",
-        "entry_sha256": "cf82e74de7fc3431af244359be0fb364e2642afbb348c3d46fc2e13becf315d1",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-alice-puppet-motion",
-          "source": "src/main/boss/alice/puppet_motion.cpp",
-          "find": "alice_puppet0.angle -= 2;",
-          "replace": "alice_puppet0.angle -= 3;"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "fd4b8c2939d0fbac42a2a1d90e7e0187e6919183128bcce92524a2d3461b57f5",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 122758,
-          "candidate_start": 122758,
-          "size": 643,
-          "target_sha256": "32e0f2273a1a0c3548942f2b282a8de8f4f0fc79b4c353fb9e9808225546878c",
-          "candidate_sha256": "261b0a5f06df19380233aa2ec0bf7029a3100e56e212b74cf9f141f1b6c23755",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
-            524,
-            493,
-            477,
-            123,
-            95,
-            54,
-            26
+            350,
+            235,
+            219,
+            133
           ],
           "candidate_fixups": [
-            524,
-            493,
-            477,
-            123,
-            95,
-            54,
-            26
+            350,
+            235,
+            219,
+            133
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "14fbc48743304cec0585d844618132c8997f31da32a193d59f30ca90ff4aadd7",
-          "dependency_timestamp_normalized_sha256": "f6453badbc42126739081c2c340353d17dd7927552dc89749bc76af946b98927",
-          "module_name": "th05/a_pmov.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_pmov.cpp",
-            "src/main/boss/alice/puppet_motion.cpp",
-            "src/main/boss/alice/puppet_motion.hpp",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -31653,9 +31673,7 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp"
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -31669,10 +31687,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_pmov.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-alice-opening-patterns",
@@ -42759,8 +42786,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "de8d1acee4631fe64ff6bce748ead1fe5b99f6ffb4803889a5ba82c29bb2e163",
-            "dependency_timestamp_normalized_sha256": "36e15ff9c3a4cf808b37b129700188cc1effdea0c886b584b4255d674f65883b",
+            "sha256": "3edfab25d1700d66f648fdb38470e81c554bd6623b698044e81baba8579371d3",
+            "dependency_timestamp_normalized_sha256": "2d519017708a37c71559fc92887afc0490b2434d7435073df2d8b93a90da5bf6",
             "module_name": "th05/b3_pupr.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42782,12 +42809,13 @@
               "src/shared/geometry.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           },
           {
-            "sha256": "a2ba9fa3d1873dd17b6eeb925d0fb2335c3ee44847f025b75e72c460434a2ca7",
-            "dependency_timestamp_normalized_sha256": "36e15ff9c3a4cf808b37b129700188cc1effdea0c886b584b4255d674f65883b",
+            "sha256": "ec7bdd381b59638f61cabddb58e856bafbf59520f176863d55e12f71f1dc9e42",
+            "dependency_timestamp_normalized_sha256": "2d519017708a37c71559fc92887afc0490b2434d7435073df2d8b93a90da5bf6",
             "module_name": "th05/b3_pupr.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -42809,13 +42837,14 @@
               "src/shared/geometry.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
         "compiler_arguments": [
           [
@@ -42855,12 +42884,16 @@
             "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
           },
           {
+            "path": "src/main/boss/alice/beam_phase.hpp",
+            "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+          },
+          {
             "path": "src/main/boss/alice/foreground.hpp",
             "sha256": "5e857c31889bd789e16e424f4a2ffbcbf9020c09a6d8c63fd61c0a228ad61896"
           },
           {
             "path": "src/main/boss/alice/puppets_render.cpp",
-            "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+            "sha256": "1f01d54c79ed6b82017369b7bd71552b5f4bf982b4d0e48f5ac64a15123937af"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -42903,12 +42936,16 @@
           "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
         },
         {
+          "path": "src/main/boss/alice/beam_phase.hpp",
+          "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+        },
+        {
           "path": "src/main/boss/alice/foreground.hpp",
           "sha256": "5e857c31889bd789e16e424f4a2ffbcbf9020c09a6d8c63fd61c0a228ad61896"
         },
         {
           "path": "src/main/boss/alice/puppets_render.cpp",
-          "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+          "sha256": "1f01d54c79ed6b82017369b7bd71552b5f4bf982b4d0e48f5ac64a15123937af"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -42941,111 +42978,86 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "392e327b6f2da70c28d73a08d0ea76825818b575e4d2d54e65b1a7107a0c216f",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 82391,
-        "candidate_start": 82391,
-        "size": 381,
-        "target_sha256": "15cd65c73036ddf0fe7078ad2f648732b7c3ec891b77aecd0cfb0e9c193d0d8b",
-        "candidate_sha256": "c4ebe3fb5a7a8de201c96fee5ba50e942944871f2d77c417d44dfb35160a561e",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
-          375,
-          355,
-          325,
-          313,
-          256,
-          240,
-          220,
-          204,
-          168,
-          148
+          350,
+          235,
+          219,
+          133
         ],
         "candidate_fixups": [
-          375,
-          355,
-          325,
-          313,
-          256,
-          240,
-          220,
-          204,
-          168,
-          148
+          350,
+          235,
+          219,
+          133
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-puppets-render",
-        "entry_sha256": "24784db89799daef85ebeca14dd0d8b9393b82eeabed7541153ad85d257e1e31",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-alice-puppets-render",
-          "source": "src/main/boss/alice/puppets_render.cpp",
-          "find": "grcg_setcolor(ALICE_FG_RMW, 9);",
-          "replace": "grcg_setcolor(ALICE_FG_RMW, 10);"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "8714c32b7e7190eb5d1f6007fb046f201e45a6e7db7ce8879539f9f063db10ce",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 82391,
-          "candidate_start": 82391,
-          "size": 381,
-          "target_sha256": "15cd65c73036ddf0fe7078ad2f648732b7c3ec891b77aecd0cfb0e9c193d0d8b",
-          "candidate_sha256": "c4ebe3fb5a7a8de201c96fee5ba50e942944871f2d77c417d44dfb35160a561e",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
-            375,
-            355,
-            325,
-            313,
-            256,
-            240,
-            220,
-            204,
-            168,
-            148
+            350,
+            235,
+            219,
+            133
           ],
           "candidate_fixups": [
-            375,
-            355,
-            325,
-            313,
-            256,
-            240,
-            220,
-            204,
-            168,
-            148
+            350,
+            235,
+            219,
+            133
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "6cd591f1543e6fad1e1d2148f969414b9e69ea9bb1c030e8a4b2d04c02ae262e",
-          "dependency_timestamp_normalized_sha256": "afeb73220de1caf599e31f12d8e025eb113de99fa6b04c6a95c8d295abe28d90",
-          "module_name": "th05/b3_pupr.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/b3_pupr.cpp",
-            "src/main/boss/alice/puppets_render.cpp",
-            "src/main/boss/alice/foreground.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -43059,10 +43071,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/b3_pupr.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-reimu-bomb-control",
@@ -66799,8 +66820,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "08d0a6cf23dc56556b81f8b9710c8d6ae557253972438b03ac1076de3d899f11",
-            "dependency_timestamp_normalized_sha256": "790579012c86a3b81f101eacec322e28d41b1d406a528fdd1bbf15d8158dd7da",
+            "sha256": "5e4713d77697bb5e8c3e961505f0a1b91857cf4eb803697c263e595751fcedf2",
+            "dependency_timestamp_normalized_sha256": "7fa75bd87913c9e67ee8e4600b5fe73986c95da6c5466314077ef39c764474b6",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -66827,6 +66848,7 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
+              "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/charge_patterns.hpp",
               "src/main/boss/alice/beam.hpp",
               "src/main/bullet/laser.hpp",
@@ -66835,8 +66857,8 @@
             ]
           },
           {
-            "sha256": "16ae827aadda0b7ea0ef314f229a5f0f5c563fb08ff873cea15cdf6d61d5ad3d",
-            "dependency_timestamp_normalized_sha256": "790579012c86a3b81f101eacec322e28d41b1d406a528fdd1bbf15d8158dd7da",
+            "sha256": "b2cdf6236d66bd8bc6adbcace576e4492d89bb2f8b18cd1d2320d64289edde1e",
+            "dependency_timestamp_normalized_sha256": "7fa75bd87913c9e67ee8e4600b5fe73986c95da6c5466314077ef39c764474b6",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -66863,6 +66885,7 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
+              "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/charge_patterns.hpp",
               "src/main/boss/alice/beam.hpp",
               "src/main/bullet/laser.hpp",
@@ -66872,8 +66895,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-5/a/source",
+          "group-5/b/source"
         ],
         "compiler_arguments": [
           [
@@ -66913,6 +66936,10 @@
             "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
           },
           {
+            "path": "src/main/boss/alice/beam_phase.hpp",
+            "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+          },
+          {
             "path": "src/main/boss/alice/charge_patterns.hpp",
             "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
           },
@@ -66922,11 +66949,11 @@
           },
           {
             "path": "src/main/boss/alice/update.hpp",
-            "sha256": "97ce648480bbcec54e4155057b9cf260c9daa56f12d0c54152cbe3c912929aeb"
+            "sha256": "3531e6aa039af3cbb4c6fd30ea30b2738eaa81b97b152988536fa132ee75b9ee"
           },
           {
             "path": "src/main/boss/alice/update_context.cpp",
-            "sha256": "7a4b75e603f0295cb07d73a05ae7c8d156bf949387c20340d1bac7202d81279f"
+            "sha256": "927c8d7b04ae118443ac20879f3006989178266e640883fd1d6e53ec440b404a"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -66981,6 +67008,10 @@
           "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
         },
         {
+          "path": "src/main/boss/alice/beam_phase.hpp",
+          "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+        },
+        {
           "path": "src/main/boss/alice/charge_patterns.hpp",
           "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
         },
@@ -66990,11 +67021,11 @@
         },
         {
           "path": "src/main/boss/alice/update.hpp",
-          "sha256": "97ce648480bbcec54e4155057b9cf260c9daa56f12d0c54152cbe3c912929aeb"
+          "sha256": "3531e6aa039af3cbb4c6fd30ea30b2738eaa81b97b152988536fa132ee75b9ee"
         },
         {
           "path": "src/main/boss/alice/update_context.cpp",
-          "sha256": "7a4b75e603f0295cb07d73a05ae7c8d156bf949387c20340d1bac7202d81279f"
+          "sha256": "927c8d7b04ae118443ac20879f3006989178266e640883fd1d6e53ec440b404a"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -67039,81 +67070,72 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "58d732d4bb129bdc282b4166742a121204cf8add538e7b9fb095426ed83a62e0",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 125334,
-        "candidate_start": 125334,
-        "size": 939,
-        "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-        "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
+          350,
+          235,
+          219,
           133
         ],
         "candidate_fixups": [
+          350,
+          235,
+          219,
           133
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 125334,
-          "size": 939,
-          "function_symbol": "alice_update()",
-          "contribution_start": 124772,
-          "contribution_size": 1501,
-          "boundary_kind": "contribution-end",
-          "next_function_symbol": null
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-update-context",
-        "entry_sha256": "87bba13e608817fbb3a0650dc68560815dbcd1f00e422302751e6e77aff90b08",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-alice-update-context",
-          "source": "src/main/boss/alice/update_context.cpp",
-          "find": "boss.phase_end_hp = 7400;",
-          "replace": "boss.phase_end_hp = 7300;"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "04a5e3f78eaae7ff1aeacc1b292349c844b753281be62ee357a9d45f9bb5e279",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 125334,
-          "candidate_start": 125334,
-          "size": 939,
-          "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-          "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
+            350,
+            235,
+            219,
             133
           ],
           "candidate_fixups": [
+            350,
+            235,
+            219,
             133
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 125334,
-            "size": 939,
-            "function_symbol": "alice_update()",
-            "contribution_start": 124772,
-            "contribution_size": 1501,
-            "boundary_kind": "contribution-end",
-            "next_function_symbol": null
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "824a34b8e3d0f600ea524126143c227d6bf9a5020b1bce85ecdb907f9a256f87",
-          "dependency_timestamp_normalized_sha256": "b617ae5739ddd72ea4a3c784c5ed16b4369f0f2676c52516e343c53d42613559",
-          "module_name": "th05/a_ctx.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_ctx.cpp",
-            "src/main/boss/alice/update_context.cpp",
-            "src/main/boss/alice/update.hpp",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -67127,16 +67149,7 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/gather/gather.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/bullet/template.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/boss/alice/charge_patterns.hpp",
-            "src/main/boss/alice/beam.hpp",
-            "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/boss/alice/final_spread.inl"
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -67150,10 +67163,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_ctx.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-mai-update",
@@ -80010,8 +80032,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "32201578c27c48e87ece5de8dbd20262400f52aa3ca997ae86ee04ebdd685d90",
-            "dependency_timestamp_normalized_sha256": "9897c98afa332275f6dcf9c05ee05ca47e4b4d36568f2cfd962992d181c6905e",
+            "sha256": "6d319527e3c6f5151f255701b70ac440e6ad8c874166f97d3b484ff937457e34",
+            "dependency_timestamp_normalized_sha256": "5eda4c6907c774d444df025d67e8a09f19c2108c84eead09daed444775e67e74",
             "module_name": "th05/b3fgex.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -80034,12 +80056,13 @@
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/alice/puppets_render.cpp"
+              "src/main/boss/alice/puppets_render.cpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           },
           {
-            "sha256": "5343480fe0a7eba59d4ccfd7fa389f229a96f78116cc8e2ef104c10273fc3ce0",
-            "dependency_timestamp_normalized_sha256": "9897c98afa332275f6dcf9c05ee05ca47e4b4d36568f2cfd962992d181c6905e",
+            "sha256": "6939c94fa344e917833d67e415b03ac97c1050d2592648ff0e763e3af2ce30a7",
+            "dependency_timestamp_normalized_sha256": "5eda4c6907c774d444df025d67e8a09f19c2108c84eead09daed444775e67e74",
             "module_name": "th05/b3fgex.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -80062,13 +80085,14 @@
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/alice/puppets_render.cpp"
+              "src/main/boss/alice/puppets_render.cpp",
+              "src/main/boss/alice/beam_phase.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-6/a/source",
+          "group-6/b/source"
         ],
         "compiler_arguments": [
           [
@@ -80108,6 +80132,10 @@
             "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
           },
           {
+            "path": "src/main/boss/alice/beam_phase.hpp",
+            "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+          },
+          {
             "path": "src/main/boss/alice/foreground.cpp",
             "sha256": "47ec2729691e3019bed523e77a1f187e4c865deb35f768f510dc32cceb8c9754"
           },
@@ -80117,7 +80145,7 @@
           },
           {
             "path": "src/main/boss/alice/puppets_render.cpp",
-            "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+            "sha256": "1f01d54c79ed6b82017369b7bd71552b5f4bf982b4d0e48f5ac64a15123937af"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -80160,6 +80188,10 @@
           "sha256": "274aac52bdc185602c50b3f6c2260d16458e328582ccfa2e7caf9795ca1dbfcc"
         },
         {
+          "path": "src/main/boss/alice/beam_phase.hpp",
+          "sha256": "fa5ecea4167312d4382b392f26f2e9bc918cfeffeef9aa37eb5194c070ce927a"
+        },
+        {
           "path": "src/main/boss/alice/foreground.cpp",
           "sha256": "47ec2729691e3019bed523e77a1f187e4c865deb35f768f510dc32cceb8c9754"
         },
@@ -80169,7 +80201,7 @@
         },
         {
           "path": "src/main/boss/alice/puppets_render.cpp",
-          "sha256": "c1c8a26fd0105b30397a9bbf53a8d9596c6686468cfb91e06a03c9ddb6b1e5bf"
+          "sha256": "1f01d54c79ed6b82017369b7bd71552b5f4bf982b4d0e48f5ac64a15123937af"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -80202,106 +80234,86 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "3904db09e211fffe73b6b29d38ec39c8cba114a8a116b3401d5a408d18ea0a1a",
+      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
       "compiled_negative_control": {
-        "target_start": 82772,
-        "candidate_start": 82772,
-        "size": 140,
-        "candidate_size": 147,
-        "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
-        "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
+        "target_start": 124418,
+        "candidate_start": 124418,
+        "size": 354,
+        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
         "raw_exact": false,
         "target_fixups": [
-          125,
-          107,
-          44
+          350,
+          235,
+          219,
+          133
         ],
         "candidate_fixups": [
-          132,
-          114,
-          44
+          350,
+          235,
+          219,
+          133
         ],
-        "fixups_exact": false,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 82772,
-          "size": 147,
-          "function_symbol": "alice_fg_render()",
-          "contribution_start": 82391,
-          "contribution_size": 528,
-          "boundary_kind": "contribution-end",
-          "next_function_symbol": null
-        }
+        "fixups_exact": true,
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-foreground-complete",
-        "entry_sha256": "9cb8397c17cf123c7a918cebd5d75a0a9dbb07e972f39cb2c6a1c5f981d3e1e3",
+        "unit_id": "main-alice-puppet-beam",
+        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
         "mutation": {
-          "unit": "main-alice-foreground-complete",
-          "source": "src/main/boss/alice/foreground.cpp",
-          "find": "patnum += stage_frame_mod8 / 4;",
-          "replace": "patnum += stage_frame_mod8 / 2;"
+          "unit": "main-alice-puppet-beam",
+          "source": "src/main/boss/alice/beam.cpp",
+          "find": "shot_hitbox_radius.x.v = to_sp(56);",
+          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
         },
-        "control_sha256": "01eee22e1838058c2a16e59ea4a8ae89b61153f2879f22c8f0866ce5f7cb9e93",
+        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 82772,
-          "candidate_start": 82772,
-          "size": 140,
-          "candidate_size": 147,
-          "target_sha256": "ab73494a6ff6ae5d2d2d7d856c193aa901b46534aee454a65f90539eababf364",
-          "candidate_sha256": "d249e626034a22336e2ba587e421326b0c1e7b476dfa55b09f5bccfa91cc60e6",
+          "target_start": 124418,
+          "candidate_start": 124418,
+          "size": 354,
+          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
+          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
           "raw_exact": false,
           "target_fixups": [
-            125,
-            107,
-            44
+            350,
+            235,
+            219,
+            133
           ],
           "candidate_fixups": [
-            132,
-            114,
-            44
+            350,
+            235,
+            219,
+            133
           ],
-          "fixups_exact": false,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 82772,
-            "size": 147,
-            "function_symbol": "alice_fg_render()",
-            "contribution_start": 82391,
-            "contribution_size": 528,
-            "boundary_kind": "contribution-end",
-            "next_function_symbol": null
-          }
+          "fixups_exact": true,
+          "exact": false
         },
         "omf": {
-          "sha256": "ec2d001b311daa9f76e145b31f889e2bcdbf32d7d772f17c87bf1fe321b405c9",
-          "dependency_timestamp_normalized_sha256": "629f350265527dca8c100752da126d1a69f102347fc350112a02f06c64d3ca1e",
-          "module_name": "th05/b3fgex.cpp",
+          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
+          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
+          "module_name": "th05/a_beam.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/b3fgex.cpp",
-            "src/main/boss/alice/foreground.cpp",
-            "src/main/boss/alice/foreground.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/a_beam.cpp",
+            "src/main/boss/alice/beam.cpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/alice/puppets_render.cpp"
+            "src/main/boss/alice/beam_phase.hpp"
           ]
         },
         "compiler_arguments": [
@@ -80315,10 +80327,19 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/b3fgex.cpp"
+          "th05/a_beam.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-foreground-complete",
+        "main-alice-puppet-beam",
+        "main-alice-puppet-motion",
+        "main-alice-puppets-render",
+        "main-alice-update-context",
+        "main-louise-flystep",
+        "main-louise-update"
+      ]
     },
     {
       "id": "main-shinki-balls-update",

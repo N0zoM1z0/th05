@@ -3,6 +3,7 @@
 #pragma option -zCALICE_FG_TEXT -zPmain_01
 #include "src/main/boss/alice/foreground.hpp"
 #endif
+#include "src/main/boss/alice/beam_phase.hpp"
 
 extern "C" void pascal near puppets_render(void)
 {
@@ -34,14 +35,14 @@ extern "C" void pascal near puppets_render(void)
                         super_put_1plane(left, top, patnum, 0, ALICE_FG_PUT_PLANES);
                     }
                     top = (puppet->pos.cur.y.v >> 4) + ALICE_FG_PLAYFIELD_TOP;
-                    if(boss_statebyte[9] == 1) {
+                    if(boss_statebyte[ALICE_BEAM_PHASE_SLOT] == ALICE_BEAM_CHARGE_CIRCLES) {
                         if(stage_frame_mod2 != 0) {
                             grcg_setcolor(ALICE_FG_RMW, 15);
                             grcg_circle(left + (ALICE_FG_PUPPET_W / 2), top,
                                 puppet->radius.radius_gather);
                             outportb(0x7C, 0);
                         }
-                    } else if(boss_statebyte[9] == 2) {
+                    } else if(boss_statebyte[ALICE_BEAM_PHASE_SLOT] == ALICE_BEAM_CONTRACTING) {
                         grcg_setcolor(ALICE_FG_RMW, 15);
                         grcg_circlefill(left + (ALICE_FG_PUPPET_W / 2), top,
                             puppet->radius.radius_gather);
@@ -52,12 +53,12 @@ extern "C" void pascal near puppets_render(void)
             }
         }
     }
-    if(boss_statebyte[9] == 2) {
+    if(boss_statebyte[ALICE_BEAM_PHASE_SLOT] == ALICE_BEAM_CONTRACTING) {
         grcg_setcolor(ALICE_FG_RMW, 9);
         grcg_hline(center_x[0], center_x[1], top);
         outportb(0x7C, 0);
-    } else if(boss_statebyte[9] == 3) {
-        super_put(center_x[0], top, boss_statebyte[8]);
-        super_put(center_x[0] + 64, top, boss_statebyte[8] + 1);
+    } else if(boss_statebyte[ALICE_BEAM_PHASE_SLOT] == ALICE_BEAM_SPRITES) {
+        super_put(center_x[0], top, boss_statebyte[ALICE_BEAM_PATTERN_SLOT]);
+        super_put(center_x[0] + 64, top, boss_statebyte[ALICE_BEAM_PATTERN_SLOT] + 1);
     }
 }

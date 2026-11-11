@@ -46,6 +46,24 @@ void near alice_pattern_final_spread(void);
 
 static const int ALICE_HP_TOTAL = 9600;
 static const int ALICE_PUPPET_HP = 500;
+// The original fifteen ordinary phases: opening, four waves and puppet beams.
+static const unsigned char ALICE_PHASE_SETUP = 0;
+static const unsigned char ALICE_PHASE_READY = 1;
+static const unsigned char ALICE_PHASE_PUPPET_ENTRANCE = 2;
+static const unsigned char ALICE_PHASE_PATTERN_WAVE_1 = 3;
+static const unsigned char ALICE_PHASE_BEAM_APPROACH_1 = 4;
+static const unsigned char ALICE_PHASE_BEAM_ATTACK_1 = 5;
+static const unsigned char ALICE_PHASE_PATTERN_WAVE_2 = 6;
+static const unsigned char ALICE_PHASE_BEAM_APPROACH_2 = 7;
+static const unsigned char ALICE_PHASE_BEAM_ATTACK_2 = 8;
+static const unsigned char ALICE_PHASE_PATTERN_WAVE_3 = 9;
+static const unsigned char ALICE_PHASE_BEAM_APPROACH_3 = 10;
+static const unsigned char ALICE_PHASE_BEAM_ATTACK_3 = 11;
+static const unsigned char ALICE_PHASE_PATTERN_WAVE_4 = 12;
+static const unsigned char ALICE_PHASE_RING_APPROACH = 13;
+static const unsigned char ALICE_PHASE_FINAL_SPREAD = 14;
+static const unsigned char ALICE_MODE_REPOSITION = 0;
+static const unsigned char ALICE_MODE_ATTACK = 1;
 static const unsigned char ALICE_PHASE_EXPLODE_SMALL = 253;
 static const unsigned char ALICE_PHASE_EXPLODE_BIG = 254;
 

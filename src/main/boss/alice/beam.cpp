@@ -1,6 +1,7 @@
 // Alice's stationary-puppet beam: charge, contract, animate and fire.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/beam.hpp"
+#include "src/main/boss/alice/beam_phase.hpp"
 
 void near alice_puppet_beam_pattern(void)
 {
@@ -15,32 +16,32 @@ void near alice_puppet_beam_pattern(void)
         return;
     }
     alice_beam_frame++;
-    if(alice_beam_frame < 16) {
+    if(alice_beam_frame < ALICE_BEAM_CHARGE_START) {
         return;
     }
-    if(alice_beam_frame == 16) {
-        boss_statebyte[9] = 1;
+    if(alice_beam_frame == ALICE_BEAM_CHARGE_START) {
+        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_CHARGE_CIRCLES;
         alice_puppet0.radius.radius_gather = alice_puppet1.radius.radius_gather = 64;
-        boss_statebyte[8] = -60;
+        boss_statebyte[ALICE_BEAM_PATTERN_SLOT] = -60;
         alice_beam_burst_window += 32;
         return;
     }
-    if(alice_beam_frame < 32) {
+    if(alice_beam_frame < ALICE_BEAM_CONTRACT_START) {
         return;
     }
-    if(alice_beam_frame < 64) {
-        boss_statebyte[9] = 2;
+    if(alice_beam_frame < ALICE_BEAM_SPRITES_START) {
+        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_CONTRACTING;
         alice_puppet0.radius.radius_gather = alice_puppet1.radius.radius_gather =
             ((64 - alice_beam_frame) * 2);
         return;
     }
-    if(alice_beam_frame < 80) {
-        if(alice_beam_frame == 64) {
+    if(alice_beam_frame < ALICE_BEAM_FIRE_START) {
+        if(alice_beam_frame == ALICE_BEAM_SPRITES_START) {
             snd_se_play(8);
         }
-        boss_statebyte[9] = 3;
+        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_SPRITES;
         if(alice_beam_frame == 71 || alice_beam_frame == 79) {
-            boss_statebyte[8] += 2;
+            boss_statebyte[ALICE_BEAM_PATTERN_SLOT] += 2;
         }
         return;
     }

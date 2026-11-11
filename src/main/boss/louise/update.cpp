@@ -16,7 +16,7 @@ void pascal far louise_update(void)
     gather_template.center = boss.pos.cur;
 
     switch(boss.phase) {
-    case 0:
+    case LOUISE_PHASE_SETUP:
         if(boss.phase_frame == 1) {
             boss.hp = LOUISE_HP_TOTAL;
             boss.phase_end_hp = 3000;
@@ -33,7 +33,7 @@ void pascal far louise_update(void)
         }
         break;
 
-    case 1:
+    case LOUISE_PHASE_READY:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= 64) {
             boss.phase++;
@@ -45,9 +45,9 @@ void pascal far louise_update(void)
         }
         break;
 
-    case 2:
+    case LOUISE_PHASE_BLUE_RED_SPREADS:
         switch(boss.mode) {
-        case 0:
+        case LOUISE_MODE_REPOSITION:
             if(louise_flystep(to_sp(1.0f), 96)) {
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
@@ -57,10 +57,10 @@ void pascal far louise_update(void)
                 }
             }
             break;
-        case 1:
+        case LOUISE_MODE_BLUE_SPREADS:
             louise_pattern_blue_spreads();
             break;
-        case 2:
+        case LOUISE_MODE_RED_STACKS:
             louise_pattern_red_stacks();
             break;
         }
@@ -72,7 +72,7 @@ void pascal far louise_update(void)
         boss_phase_next(ET_NW_SE, 1900);
         break;
 
-    case 3:
+    case LOUISE_PHASE_FIRE_TRANSITION_FIRST:
         boss_hittest_shots();
         if(boss.phase_frame >= 64) {
             boss.phase_frame = 0;
@@ -81,7 +81,7 @@ void pascal far louise_update(void)
         }
         break;
 
-    case 4:
+    case LOUISE_PHASE_MIRRORED_FANS:
         louise_pattern_mirrored_fans();
         if(louise_flystep(to_sp(0.875f), 128)) {
             boss.phase_frame = 0;
@@ -100,9 +100,9 @@ void pascal far louise_update(void)
         boss_statebyte[10] = 0x14;
         break;
 
-    case 5:
+    case LOUISE_PHASE_LASERS_AND_RINGS:
         switch(boss.mode) {
-        case 0:
+        case LOUISE_MODE_REPOSITION:
             if(louise_flystep(to_sp(3.0f), 48)) {
                 boss.mode = boss_statebyte[14] + 1;
                 boss_statebyte[14] = 1 - boss_statebyte[14];
@@ -113,10 +113,10 @@ void pascal far louise_update(void)
                 }
             }
             break;
-        case 1:
+        case LOUISE_MODE_SWEEPING_LASERS:
             louise_pattern_sweeping_lasers();
             break;
-        case 2:
+        case LOUISE_MODE_TURNING_RINGS:
             louise_pattern_turning_rings();
             break;
         }
@@ -128,7 +128,7 @@ void pascal far louise_update(void)
         boss_phase_next(ET_NW_SE, 0);
         break;
 
-    case 6:
+    case LOUISE_PHASE_FIRE_TRANSITION_SECOND:
         boss_hittest_shots();
         if(boss.phase_frame >= 64) {
             boss.phase_frame = 0;
@@ -137,7 +137,7 @@ void pascal far louise_update(void)
         }
         break;
 
-    case 7:
+    case LOUISE_PHASE_AIMED_PELLETS:
         louise_pattern_aimed_pellets();
         if(louise_flystep(to_sp(0.5f), 128)) {
             boss.phase_frame = 0;

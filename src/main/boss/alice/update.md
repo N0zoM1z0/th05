@@ -59,3 +59,7 @@ compiled negative. Only the updater adds credit; the562-byte preceding source
 context is already accepted. This supersedes the callback's unaccepted status
 without altering the old failed receipt or any existing accepted record.
 See [complete context and producer review](update_context.md).
+
+The original fifteen ordinary boss phases now distinguish puppet entrance,
+four pattern waves, three beam approach/attack pairs and final rings/spread.
+The movement and attack submodes retain their observed numeric values.

@@ -1,6 +1,7 @@
 // Alice's final spread and complete boss state machine.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
+#include "src/main/boss/alice/beam_phase.hpp"
 // Canonical object layouts are already parsed. Keep ordinary word alignment
 // and the genuine preceding spread; the whole-owner table gap remains open.
 #pragma option -a2
@@ -20,7 +21,7 @@ void pascal far alice_update(void)
     gather_template.center = bullet_template.origin;
 
     switch(boss.phase) {
-    case 0:
+    case ALICE_PHASE_SETUP:
         if(boss.phase_frame == 1) {
             boss.hp = ALICE_HP_TOTAL;
             boss.phase_end_hp = 7400;
@@ -37,19 +38,19 @@ void pascal far alice_update(void)
         }
         break;
 
-    case 1:
+    case ALICE_PHASE_READY:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= 64) {
             boss.phase++;
             boss.phase_frame = 0;
-            boss.mode = 1;
+            boss.mode = ALICE_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             boss_statebyte[10] = 24;
-            boss_statebyte[9] = 0;
+            boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_INACTIVE;
         }
         break;
 
-    case 2:
+    case ALICE_PHASE_PUPPET_ENTRANCE:
         alice_pattern_opening();
         boss_hittest_shots();
         if(boss.phase_frame == 128) {
@@ -73,7 +74,7 @@ void pascal far alice_update(void)
             alice_puppets_entrance();
             if(alice_puppet0.radius.radius_motion == 0) {
                 boss.phase++;
-                boss.mode = 0;
+                boss.mode = ALICE_MODE_REPOSITION;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen = 0;
                 boss_statebyte[7] = 0;
@@ -82,14 +83,14 @@ void pascal far alice_update(void)
         }
         break;
 
-    case 3:
-    case 6:
-    case 9:
-    case 12:
+    case ALICE_PHASE_PATTERN_WAVE_1:
+    case ALICE_PHASE_PATTERN_WAVE_2:
+    case ALICE_PHASE_PATTERN_WAVE_3:
+    case ALICE_PHASE_PATTERN_WAVE_4:
         switch(boss.mode) {
-        case 0:
+        case ALICE_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - 8)) {
-                boss.mode = 1;
+                boss.mode = ALICE_MODE_ATTACK;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= 24) {
@@ -99,7 +100,7 @@ void pascal far alice_update(void)
                     alice_pattern_table[boss_statebyte[7]][randring2_next16_mod(3)];
             }
             break;
-        case 1:
+        case ALICE_MODE_ATTACK:
             alice_pattern_current();
             break;
         }
@@ -117,9 +118,9 @@ phase_complete:
         boss.phase++;
         boss.phase_frame = 0;
         boss.phase_state.patterns_seen = 0;
-        boss.mode = 0;
+        boss.mode = ALICE_MODE_REPOSITION;
         boss.hp = boss.phase_end_hp;
-        if(boss.phase < 12) {
+        if(boss.phase < ALICE_PHASE_PATTERN_WAVE_4) {
             boss.phase_end_hp -= 2200;
         } else {
             boss.phase_end_hp = 0;
@@ -127,9 +128,9 @@ phase_complete:
         alice_beam_frame = 0;
         break;
 
-    case 4:
-    case 7:
-    case 10:
+    case ALICE_PHASE_BEAM_APPROACH_1:
+    case ALICE_PHASE_BEAM_APPROACH_2:
+    case ALICE_PHASE_BEAM_APPROACH_3:
         alice_puppet0.pos.prev.x.v = to_sp(128);
         alice_puppet0.pos.prev.y.v = to_sp(128);
         alice_puppet1.pos.prev.x.v = to_sp(256);
@@ -142,9 +143,9 @@ phase_complete:
         }
         goto movement_hittest;
 
-    case 5:
-    case 8:
-    case 11:
+    case ALICE_PHASE_BEAM_ATTACK_1:
+    case ALICE_PHASE_BEAM_ATTACK_2:
+    case ALICE_PHASE_BEAM_ATTACK_3:
         alice_puppet0.pos.prev.x.v = to_sp(128);
         alice_puppet0.pos.prev.y.v = to_sp(128);
         alice_puppet1.pos.prev.x.v = to_sp(256);
@@ -164,7 +165,7 @@ phase_complete:
         }
         boss.phase++;
         boss.phase_frame = 0;
-        boss_statebyte[9] = 0;
+        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_INACTIVE;
         alice_puppet0.pos.prev.x.v = to_sp(320);
         alice_puppet0.pos.prev.y.v = to_sp(96);
         alice_puppet1.pos.prev.x.v = to_sp(64);
@@ -174,7 +175,7 @@ phase_complete:
         alice_puppet_pattern1 = alice_puppet_spread;
         break;
 
-    case 13:
+    case ALICE_PHASE_RING_APPROACH:
         alice_puppet0.pos.prev.x.v = to_sp(64);
         alice_puppet0.pos.prev.y.v = to_sp(128);
         alice_puppet1.pos.prev.x.v = to_sp(320);
@@ -192,7 +193,7 @@ movement_hittest:
         boss_hittest_shots();
         break;
 
-    case 14:
+    case ALICE_PHASE_FINAL_SPREAD:
         alice_puppet0.pos.prev.x.v = to_sp(64);
         alice_puppet0.pos.prev.y.v = to_sp(128);
         alice_puppet1.pos.prev.x.v = to_sp(320);
@@ -217,7 +218,7 @@ movement_hittest:
     }
 
     hud_hp_update_and_render(boss.hp, ALICE_HP_TOTAL);
-    if(boss.phase >= 3 && boss.phase < ALICE_PHASE_EXPLODE_BIG) {
+    if(boss.phase >= ALICE_PHASE_PATTERN_WAVE_1 && boss.phase < ALICE_PHASE_EXPLODE_BIG) {
         alice_puppets_update();
     }
 }
