@@ -201,3 +201,24 @@ the collision switch is under
 The first malformed bounds-switch source probes produced frontend errors and
 were corrected before any size/code conclusion was drawn. All temporary
 source inclusions were removed; accepted C++ and ASM bytes are untouched.
+
+## Collision switch ordering cannot recover the two historical short joins
+
+Four additional natural-C++ `-O` trials recompiled the actual nine-function
+MAIN03 Yumeko source context, without changing player collision or sword
+decay semantics. An enum-state `switch` putting the collision `default`
+first, and another variant jumping from `F_REMOVE` directly to the decay
+label, both produced **2,141 bytes** (original **2,139**). Switching on the
+Boolean `flag != F_REMOVE` or `flag == F_REMOVE` instead emitted **2,150**
+and **2,151 bytes** respectively, including an extra near conditional/jump
+pair. All four complete original-byte and ordered relocation comparisons
+failed. Therefore merely changing the `case` order, using an explicit decay
+label, or switching on a Boolean cannot restore the two original short join
+jumps that Borland optimizes away. The accepted 283-byte original ASM owner
+and maintained C++ candidate remain unchanged.
+
+Reproduce with `.analysis/gpt-web-yumeko-collision-join-variants-20261111.py`;
+the real native builds and diagnostics are under
+`.analysis/gpt-web-yumeko-collision-join-*-first/` and the compact result
+file `.analysis/gpt-web-yumeko-collision-join-results-20261111.json`.
+All temporary source-inclusion trials were removed after compilation.
