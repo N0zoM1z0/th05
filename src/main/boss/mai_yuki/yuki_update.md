@@ -59,3 +59,19 @@ DS4438 callback slot shared by both survivor states. This is distinct from
 the shared-fight Yuki callback at4430 and the internal Mai void callback
 at443A. Only this826-byte accepted owner required replay for that rename;
 its final c receipt preserves the complete original raw bytes and fixups.
+
+## Solo Boss phase and pattern-count meaning
+
+The complete Yuki controller now names the original ten phases through the
+final snow-cross wave. Its three normal attack-wave dispatches distinguish
+reposition from active pattern callbacks; the first, second and final waves
+exhaust after 12, 24 and 36 completed patterns respectively. The intervening
+movement, rapid-fire and final arrival phases retain their original order.
+The stage's defeat transition remains phase 253 and the native switch table
+still holds 0–9 as ten genuine selector values.
+
+The actual `main-yuki-update` scope was rebuilt and compared at **826/826
+bytes**, including the 20-byte compiler switch table, two full return paths,
+and original ordered relocations. A compiled end-HP negative was rejected.
+The same focused receipt covers Mai and Yuki:
+`.analysis/unit-replays/gpt-web-survivor-solo-phase-semantic-20261111/receipt.json`.

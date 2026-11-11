@@ -110,3 +110,20 @@ New credit is one complete function and785 authored CODE bytes (765 instructions
 plus20 compiler-table bytes). The zero gets none; the separate accepted laser
 cycle is unchanged and not counted again. No DATA, ASM, packed-container or
 whole-game equality is claimed.
+
+## Solo Boss phase and pattern-count meaning
+
+The maintained complete Mai controller now names the original ten phases:
+setup, ready, entrance, first alternating attack wave, laser approach/cycle,
+second attack approach/wave, and final approach/wave. The original two nested
+mode dispatches and the final wave's reposition/attack dispatch use explicit
+mode names. Its first and middle waves each advance after 36 pattern cycles;
+the final wave exhausts after 20. The 253 explosion transition retains the
+original value. The source's immediate constants preserve the exact native
+switch keys 0–9, its alignment byte and the post-return word table.
+
+The focused `main-mai-update` native replay remains exact at **786/786 bytes**
+with ordered fixups and an independently compiled HP-threshold negative.
+It shares one scoped receipt with Yuki's complete updater at
+`.analysis/unit-replays/gpt-web-survivor-solo-phase-semantic-20261111/receipt.json`.
+No new CODE bytes are claimed for this improvement to already accepted source.

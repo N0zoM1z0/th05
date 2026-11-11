@@ -5,6 +5,24 @@
 #pragma codeseg MAI_UPDATE_TEXT main_03
 #pragma option -a2
 
+// The native ten-stage solo Boss switch and two alternating attack modes.
+static const unsigned char MAI_SOLO_PHASE_SETUP = 0;
+static const unsigned char MAI_SOLO_PHASE_READY = 1;
+static const unsigned char MAI_SOLO_PHASE_ENTRANCE = 2;
+static const unsigned char MAI_SOLO_PHASE_WAVE_FIRST = 3;
+static const unsigned char MAI_SOLO_PHASE_LASER_APPROACH = 4;
+static const unsigned char MAI_SOLO_PHASE_LASER_CYCLE = 5;
+static const unsigned char MAI_SOLO_PHASE_WAVE_MIDDLE_APPROACH = 6;
+static const unsigned char MAI_SOLO_PHASE_WAVE_MIDDLE = 7;
+static const unsigned char MAI_SOLO_PHASE_FINAL_APPROACH = 8;
+static const unsigned char MAI_SOLO_PHASE_WAVE_FINAL = 9;
+static const unsigned char MAI_SOLO_MODE_REPOSITION = 0;
+static const unsigned char MAI_SOLO_MODE_ATTACK = 1;
+static const unsigned char MAI_SOLO_PHASE_DEFEAT = 253;
+static const unsigned char MAI_SOLO_WAVE_FIRST_LIMIT = 36;
+static const unsigned char MAI_SOLO_WAVE_MIDDLE_LIMIT = 36;
+static const unsigned char MAI_SOLO_WAVE_FINAL_LIMIT = 20;
+
 extern "C" void pascal far mai_update(void)
 {
     int i;
@@ -16,7 +34,7 @@ extern "C" void pascal far mai_update(void)
     boss.phase_frame++;
 
     switch(boss.phase) {
-    case 0:
+    case MAI_SOLO_PHASE_SETUP:
         if(boss.phase_frame == 1) {
             boss.hp = 7800;
             boss.phase_end_hp = 5800;
@@ -37,7 +55,7 @@ extern "C" void pascal far mai_update(void)
             bg_render_bombing_func = mai_yuki_bg_render;
         }
         break;
-    case 1:
+    case MAI_SOLO_PHASE_READY:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= 64) {
             boss.sprite = 204;
@@ -46,13 +64,13 @@ extern "C" void pascal far mai_update(void)
             boss_custombullets_render = b4balls_render;
         }
         break;
-    case 2:
+    case MAI_SOLO_PHASE_ENTRANCE:
         boss_hittest_shots_invincible();
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
             boss.sprite = 188;
             boss.phase++;
             boss.phase_frame = 0;
-            boss.mode = 1;
+            boss.mode = MAI_SOLO_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             boss_explode_small(ET_VERTICAL);
             circles_add_growing(boss.pos.cur.x, boss.pos.cur.y);
@@ -62,21 +80,21 @@ extern "C" void pascal far mai_update(void)
             boss_sprite_stay = 188;
         }
         break;
-    case 3:
+    case MAI_SOLO_PHASE_WAVE_FIRST:
         switch(boss.mode) {
-        case 0:
+        case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - 32)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen >= 36) {
+                if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_FIRST_LIMIT) {
                     goto phase3_complete;
                 }
                 boss_solo_pattern_current = mai_solo_pattern_pair_first[
                     boss.phase_state.patterns_seen & 1];
             }
             break;
-        case 1:
+        case MAI_SOLO_MODE_ATTACK:
             boss_solo_pattern_current();
             break;
         }
@@ -87,14 +105,14 @@ extern "C" void pascal far mai_update(void)
 phase3_complete:
         boss_phase_next(ET_NW_SE, 2800);
         break;
-    case 4:
+    case MAI_SOLO_PHASE_LASER_APPROACH:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(192), to_sp(128))) {
             boss.phase++;
             boss.phase_frame = 0;
         }
         break;
-    case 5:
+    case MAI_SOLO_PHASE_LASER_CYCLE:
         mai_solo_laser_cycle();
         if(boss.phase_frame < 5000) {
             if(!boss_hittest_shots()) {
@@ -107,27 +125,27 @@ phase3_complete:
         }
         boss_phase_next(ET_HORIZONTAL, 1200);
         break;
-    case 6:
+    case MAI_SOLO_PHASE_WAVE_MIDDLE_APPROACH:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
             goto movement_complete;
         }
         break;
-    case 7:
+    case MAI_SOLO_PHASE_WAVE_MIDDLE:
         switch(boss.mode) {
-        case 0:
+        case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - 32)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen >= 36) {
+                if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_MIDDLE_LIMIT) {
                     goto phase7_complete;
                 }
                 boss_solo_pattern_current = mai_solo_pattern_pair_middle[
                     boss.phase_state.patterns_seen & 1];
             }
             break;
-        case 1:
+        case MAI_SOLO_MODE_ATTACK:
             boss_solo_pattern_current();
             break;
         }
@@ -138,7 +156,7 @@ phase3_complete:
 phase7_complete:
         boss_phase_next(ET_NW_SE, 0);
         break;
-    case 8:
+    case MAI_SOLO_PHASE_FINAL_APPROACH:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
 movement_complete:
@@ -148,14 +166,14 @@ movement_complete:
             boss_statebyte[11] = static_cast<unsigned char>(-4);
         }
         break;
-    case 9:
+    case MAI_SOLO_PHASE_WAVE_FINAL:
         switch(boss.mode) {
-        case 0:
+        case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - 4)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen >= 20) {
+                if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_FINAL_LIMIT) {
                     boss.phase_state.defeat_bonus = false;
                     goto defeat;
                 }
@@ -163,7 +181,7 @@ movement_complete:
                     boss.phase_state.patterns_seen & 1];
             }
             break;
-        case 1:
+        case MAI_SOLO_MODE_ATTACK:
             boss_solo_pattern_current();
             break;
         }
@@ -174,7 +192,7 @@ movement_complete:
 defeat:
         boss_explode_small(ET_VERTICAL);
         boss.phase_frame = 0;
-        boss.phase = 253;
+        boss.phase = MAI_SOLO_PHASE_DEFEAT;
         b4balls_reset();
         boss_custombullets_render = nullfunc_near;
         break;
