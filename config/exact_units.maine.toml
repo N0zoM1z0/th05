@@ -1696,3 +1696,27 @@ unit = "maine-cutscene-script-op-unified"
 source = "src/maine/cutscene/cutscene_joined.cpp"
 find = "#define CUTSCENE_SCRIPT_DEFAULT_COLOR 15"
 replace = "#define CUTSCENE_SCRIPT_DEFAULT_COLOR 14"
+
+[[units]]
+id = "maine-egc-rect-setup-exact"
+source = "src/shared/hardware/egc_rect_setup.cpp"
+module = "th05/egcrset.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_egc_rect_setup_bindings.asm"
+target_start = 62590
+size = 63
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 59392
+ds_base = 65808
+binary = "E"
+
+[[controls]]
+unit = "maine-egc-rect-setup-exact"
+source = "src/shared/hardware/egc_rect_setup.cpp"
+find = "_AX = 0xFFF0;"
+replace = "_AX = 0xFFEF;"

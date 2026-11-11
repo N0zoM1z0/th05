@@ -64,6 +64,7 @@ necessarily all authored bytes where padding is present.
 | MAIN Mima bomb backdrop | Four-entry **226-byte** GRCG family at `1052C..1060E` exact reviewed ASM; **224 authored** bytes, two uncredited NOPs | [Mima backdrop](../src/main/player/mima_backdrop.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
 | OP/MAINE .PI loader | One complete **50-byte** far-Pascal C++ file loader per binary, original far-call fixup `[42]` | [PI file load](../src/shared/graphics/pi_load_exact.md) |
+| OP/MAINE rectangle-copy setup | Complete **63-byte** C++/inline-hardware helper in each artifact, directly following the accepted 124-byte public copy function | [EGC rectangle setup](../src/shared/hardware/egc_rect_setup.md) |
 | OP/MAINE PI EGC setup | One complete **65-byte** C++ register setup per binary, original EGC far-call fixup `[3]` | [PI EGC setup](../src/shared/graphics/pi_mask_egc_setup.md) |
 | OP CDG monochrome renderer | **74-byte** exact C++ at decoded `E114..E15E`, signed VRAM positioning and native `REP MOVSD` loop | [CDG nocolors](../src/shared/graphics/cdg_put_nocolors_exact.md) |
 | OP/MAINE plain .PI draws | Four complete C++ functions; per binary **47-byte** full + **70-byte** quarter draw, excluding the original alignment NOP | [Plain PI wrappers](../src/shared/graphics/pi_plain_wrappers.md) |

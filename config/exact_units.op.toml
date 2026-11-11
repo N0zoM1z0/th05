@@ -1332,3 +1332,27 @@ unit = "op-snd-se-reset-exact"
 source = "src/shared/sound/se_reset_exact.cpp"
 find = "snd_se_playing = SE_NONE;"
 replace = "snd_se_playing = 0;"
+
+[[units]]
+id = "op-egc-rect-setup-exact"
+source = "src/shared/hardware/egc_rect_setup.cpp"
+module = "th05/egcrset.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_egc_rect_setup_bindings.asm"
+target_start = 58196
+size = 63
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-egc-rect-setup-exact"
+source = "src/shared/hardware/egc_rect_setup.cpp"
+find = "_AX = 0xFFF0;"
+replace = "_AX = 0xFFEF;"

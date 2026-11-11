@@ -6,18 +6,18 @@ complete authored ownership denominator remains under review.
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | MAIN bounded C/C++ units | 465 | 75872 | 75146 | 726 | 75956 |
-| OP decoded C/C++ units | 90 | 14016 | 13862 | 154 | 14022 |
-| MAINE decoded C/C++ units | 91 | 18448 | 18284 | 164 | 18456 |
+| OP decoded C/C++ units | 91 | 14079 | 13925 | 154 | 14085 |
+| MAINE decoded C/C++ units | 92 | 18511 | 18347 | 164 | 18519 |
 | ZUN embedded C/C++ units | 1 | 322 | 322 | 0 | 322 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
 | MAIN bounded C/C++ units | 27 | 3341 | 79213 | 79300 |
-| OP decoded C/C++ units | 10 | 8721 | 22737 | 22743 |
-| MAINE decoded C/C++ units | 12 | 3615 | 22063 | 22071 |
+| OP decoded C/C++ units | 10 | 8721 | 22800 | 22806 |
+| MAINE decoded C/C++ units | 12 | 3615 | 22126 | 22134 |
 | ZUN embedded C/C++ units | 0 | 0 | 322 | 322 |
 
-451 bounded C/C++ units pass two cold producers, raw bytes and original
+453 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,7 +27,7 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 124335: 108658 authored CODE plus 15677
+Total authored C/C++ bytes are 124461: 108784 authored CODE plus 15677
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 1044 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 101 observed
