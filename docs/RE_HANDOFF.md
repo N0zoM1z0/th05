@@ -41,6 +41,7 @@ necessarily all authored bytes where padding is present.
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
 | MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
+| MAIN MPN image upload | **69-byte** exact C++ at `E57C..E5C1` with original fixups `[12,32,61]` through unmodified TCC `-S`/TASM32 | [MPN uploader](../src/main/formats/mpn_upload.md) |
 | MAIN text bitmap painter | Full **98-byte** `bb_txt_put_8_raw` exact reviewed ASM at `E51A..E57C`; **96 authored** bytes and two checked NOPs | [Text bitmap drawing](../src/main/formats/bb_text_put.md) |
 | MAIN Boss BB tile masks | Full **232-byte** two-function original-register GRCG put/invalidate ASM at `F968..FA50`, ordered fixups `[17]` | [Boss bitmap masks](../src/main/tile/bb_mask_family.md) |
 | MAIN bullet/Gather invalidation | Full **168-byte** reviewed original ASM at `E40E..E4B6`, no alignment or relocations | [Bullet/Gather dirty tiles](../src/main/bullet/gather_invalidate.md) |

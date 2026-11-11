@@ -5563,3 +5563,26 @@ unit = "main-sound-se-update-exact"
 source = "src/shared/sound/se_update_body.inl"
 find = "if(snd_se_frame == 0) {"
 replace = "if(snd_se_frame == 1) {"
+
+[[units]]
+id = "main-mpn-upload-exact"
+source = "src/main/formats/mpn_upload.cpp"
+module = "th05/mpnreg.cpp"
+segment = "MPN_UPLOAD_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/mpn_upload_bindings.asm"
+target_start = 0xe57c
+size = 69
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "main_01"
+cs_base = 44560
+ds_base = 133584
+
+[[controls]]
+unit = "main-mpn-upload-exact"
+source = "src/main/formats/mpn_upload.cpp"
+find = "_DI += MPN_UPLOAD_TILE_H;"
+replace = "_DI += (MPN_UPLOAD_TILE_H + 1);"
