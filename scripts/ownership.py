@@ -499,9 +499,15 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_main_shifted_vendor import reviewed_claims as shifted_main_claims
             shifted_main, shifted_main_sha = shifted_main_claims(
                 root, view=view, verify_targets=verify_targets)
+            # Eight full native Master SUPER graphics procedures are linked
+            # from original symbolic ASM and the actual TASM OMF. Their DATA
+            # fixup shift comes from the original C0L/CRT layout, not bytes.
+            from review_master_super import reviewed_claims as master_super_claims
+            super_claims, super_review_sha = master_super_claims(
+                root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + master_claims + reserved_claims + env_claims +
-                                    c0_data_claims + shifted_main)
+                                    c0_data_claims + shifted_main + super_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -590,6 +596,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["setenvp_vendor_review_sha256"] = env_review_sha
         if name == "main" and shifted_main_sha:
             views[name]["shifted_vendor_review_sha256"] = shifted_main_sha
+        if name == "main" and super_review_sha:
+            views[name]["master_super_review_sha256"] = super_review_sha
         if name == "main" and c0_data_review_sha:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":
