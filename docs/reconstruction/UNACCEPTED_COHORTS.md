@@ -1,4 +1,4 @@
-# Current open reconstruction candidates — 2026-11-11
+# Open source alternatives and resolved reconstruction candidates — 2026-11-11
 
 The acceptance manifests and ledgers, not historical first-producer notes,
 determine which complete original extents are owned. See
@@ -37,12 +37,14 @@ ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
 source problem. Its two private raw-exact diagnostics use ReC98 artificial
 compiler barriers, so neither is accepted as historical natural C++.
 
-For vendor review, OP still has `xxas`, `signal`, `setenvp` and MAINE has
-`setenvp` deferred. The larger `farheap`/`exec` CODE owners in both binaries
-are now accepted from actual source-written OMF records; their 6/2-byte
-runtime CS: gaps stay unknown. Do not resurrect those as live unresolved
-functions merely because the earlier gapless verifier marked them deferred.
-See [current vendor review](VENDOR_CONTEXT_REVIEW.md).
+**Resolved vendor CODE, not open game-authored work:** OP's `xxas`,
+`signal` and `setenvp` and MAINE's `setenvp` are now source-exact native
+CL.LIB CODE, as are further `farheap`/`exec` members. The old
+`deferred_source_mismatches` in the frozen baseline describe earlier
+proposals; they do **not** supersede the later, explicit ownership
+reviews. Nearby runtime-writable CS: gaps, foreign DATA and BSS remain
+separate unknown regions. See the [updated vendor review](VENDOR_CONTEXT_REVIEW.md)
+and [source-linked CL.LIB contexts](CONTEXT_STRING_RUNTIME.md).
 
 ## Large unknown regions and superseded investigations
 

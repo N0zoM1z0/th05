@@ -31,9 +31,11 @@ forms in this run produced these real combined CODE lengths:
 | Conditional comma expression using `(void)` | 2144 B | No |
 | Odd-case early continuation with even-case fall-through | 2141 B | No |
 
-The independent native diagnostic tool and compiler cases are in ignored
-`.analysis/gpt-web-yumeko-newtwirl-probe.py` with result snapshots in
-`.analysis/gpt-web-yumeko-newtwirl-*-native-a/`. Each trial used
+The original native diagnostic script remains at
+`.analysis/gpt-web-yumeko-newtwirl-probe.py`. Only the valuable 2,139-byte
+baseline `.analysis/gpt-web-yumeko-newtwirl-baseline-native-a/`
+is retained; other generated unsuccessful native snapshots were pruned.
+Each trial used
 temporary `swords_update_trial.cpp` and `attacks_context_trial.cpp`,
 removed afterwards. **No fabricated branch, ASM replacement, acceptance
 claim or partial C++ code credit** is introduced. The exact original
@@ -59,10 +61,10 @@ The real original combined contribution is **2,139 bytes**. These new
 forms again introduce local short-branch proxies rather than the two
 original 386 near-conditional jumps to the loop tail. Their full
 function lengths, raw bytes and ordered relocations do not match, so
-none provides a natural C++ acceptance candidate. The ignored diagnostic
-source and first-producer reports are under
-`.analysis/gpt-web-yumeko-twirl3.py` and
-`.analysis/gpt-web-yumeko-twirl3-*-native/`. The accepted ASM and the
+none provides a natural C++ acceptance candidate. The reproducible
+probe `.analysis/gpt-web-yumeko-twirl3.py` remains; its old
+generated native-output directories were removed during storage cleanup.
+The accepted ASM and the
 adjacent 354-/428-byte Boss attack C++ source are unchanged.
 
 
@@ -84,9 +86,9 @@ still emits local short conditional branches and proxy jumps rather than
 the original pair of direct 386 near conditionals to the outer loop
 increment. All runs were first-producer scoped diagnostics and preserved
 the actual authored operands and sword behavior; no acceptance or machine
-code owner was changed. Inspect private outputs under
-`.analysis/gpt-web-yumeko-twirl4-*-native/` and the script
-`.analysis/gpt-web-yumeko-twirl4.py`.
+code owner was changed. The private
+`.analysis/gpt-web-yumeko-twirl4.py` can reproduce these trials;
+the superseded per-variant native build directories were deleted.
 
 ## Direct parity-tail C++ lowering trials
 
@@ -104,9 +106,10 @@ and genuine sword twirl semantics. None is a source/byte acceptance.
 All four continue to lower the original direct **386 near JL/JGE**
 branches into a short Jcc followed by proxy jumps. Original combined
 CODE is **2,139 B**, with the 283-byte updater already owned by exact
-reviewed ASM. First-producer inputs and outputs are kept only in ignored
-`.analysis/gpt-web-yumeko-direct-tail-*`; the trial script is
-`.analysis/gpt-web-yumeko-direct-tail-20261111.py`. The maintained C++
+reviewed ASM. The reproducible trial script is
+`.analysis/gpt-web-yumeko-direct-tail-20261111.py`; historical native
+build snapshots were pruned after their results were documented.
+The maintained C++
 port and adjacent accepted 354/428-byte major attack functions were
 left unchanged.
 
@@ -136,10 +139,11 @@ baseline but also restores the wrong short-branch proxies. Equivalent
 `else`, shared-label and collision-continuation rewrites under `-O`
 still produce the 2,135-byte optimized shape.
 
-Native diagnostics are retained under
-`.analysis/gpt-web-yumeko-conditional-long-*-native/` and the private
-probe `.analysis/gpt-web-yumeko-conditional-long-20261111.py`. No
-game-source or accepted ASM change was made. The remaining task is
+The actual 2,135-byte optimized native comparison is retained at
+`.analysis/gpt-web-yumeko-conditional-long-baseline-optim-native/`.
+The probe `.analysis/gpt-web-yumeko-conditional-long-20261111.py`
+can regenerate the other deleted trial snapshots. No game-source or
+accepted ASM change was made. The remaining task is
 to find historically plausible *natural C++ control flow* that
 preserves both original short jumps while enabling 386 near conditionals,
 without fake instructions or optimizer barriers.

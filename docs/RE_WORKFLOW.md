@@ -14,8 +14,9 @@
    first-producer boundary/size failure; revise the source instead of adding tests.
 4. Import a passing receipt. Reuse unchanged accepted evidence; refresh only
    the demonstrated dependency closure when a shared input changes.
-5. Update progress/ownership for acceptance changes, run `git diff --check`,
-   write a short handoff and commit/push substantive work.
+5. Update progress/ownership only for acceptance changes, inspect
+   `git diff --check`, write a short handoff and **commit locally**.
+   Push only after explicit permission.
 
 Typical commands:
 

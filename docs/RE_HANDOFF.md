@@ -1,139 +1,123 @@
-# TH05 reconstruction handoff — 2026-11-11
+# TH05 reconstruction — next-agent handoff (2026-11-11)
 
-## Start here
+## Read first
 
-The working branch is `main`. Read [AGENTS.md](../AGENTS.md) for the current
-lightweight workflow and [ORACLES.md](ORACLES.md) for exactness criteria. The
-source of truth is the **current acceptance ledger**, not older exploratory
-notes or a previous agent's handoff:
+Work on local `main`. Start with [AGENTS.md](../AGENTS.md),
+[exactness rules](ORACLES.md), `git status -sb` and
+`python3 scripts/preflight.py`. Local work is ahead of `origin/main`;
+**do not push** unless explicitly requested. Preserve and resolve any dirty
+changes, including ignored diagnostics. The original Japanese image has
+**candidate-local-attested** provenance, not an independently proven pristine
+dump.
 
-- `config/accepted_units.json`, `config/accepted_units.op.json`,
-  `config/accepted_units.maine.json` and `config/accepted_units.zun.json`:
-  accepted natural C/C++ (and scoped initialized DATA).
-- `config/accepted_asm_families.json` and
-  `config/reviewed_asm_families.json`: separately reviewed ASM ownership.
-- [Generated progress](PROGRESS.md) and
-  [gapless ownership map](../resources/ownership.json): coverage and unknown
-  ranges. The global authored-byte denominator is **not yet established**;
-  do not claim a percentage from the bounded accepted totals.
+These files, not historical trial notes, are authoritative:
 
-Use `git status -sb` before editing, including dirty files; no other agent is
-working in this repository. Preserve and integrate legitimate dirty work.
-Use only targeted complete-function native replay after changing executable
-inputs; **never run the full cold-replay set by default**. For documentation
-alone, inspect the diff and use lightweight validation. Commit substantive
-progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
+- [Accepted C/C++ ledgers](../config/accepted_units.json):
+  also `accepted_units.op.json`, `accepted_units.maine.json` and
+  `accepted_units.zun.json` in `config/`.
+- [Reviewed ASM ownership](../config/reviewed_asm_families.json),
+  [generated progress](PROGRESS.md) and
+  [gapless ownership](../resources/ownership.json).
+- `config/targets.toml` and `config/toolchain.toml`: pinned inputs;
+  `.analysis/builds/`: real native calibration objects and linker MAPs.
 
-## Verified current scope (separate authorship classes)
+**Current ledger snapshot:** 454 accepted bounded C/C++ units,
+**124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
+DATA). This is *not* a percentage: the global authored-byte denominator
+has not been accepted. Unknown ownership totals **44,341 decoded bytes**:
+MAIN 7,972; OP 13,747; MAINE 14,063; ZUN 8,559. Recalculate from the
+ledgers before quoting these numbers after further changes.
 
-The current accepted source is broader than the original C++ function list:
-C/C++ CODE and initialized DATA, reviewed handwritten ASM, CL.LIB/Master
-vendor CODE/DATA, and embedded assets are **different ownership classes**.
-Never infer instruction or authored percentage from a CODE SEGDEF or from a
-synthetic combined COM. Use the ledgers and generated ownership map for
-current counts rather than copying old checkpoint totals into reports.
+## Most useful next reconstruction work
 
-| Area | Current exact result | Evidence and limits |
-| --- | --- | --- |
-| MAIN large game functions | Mai/Yuki update **1,018 B**, Shinki update **959 B**, Alice update **939 B**, Yumeko update **884 B**, MAINE cutscene VM **1,555 B**; many other Boss/Staff owners in the table below | Already accepted C++; do not reopen older 1-byte/fixup failure notes as missing functions |
-| MAIN vendor CL.LIB | `farheap`/`exec` **2,040 object-written CODE bytes** (8 CS: state bytes remain unknown), `setenvp` **88 CODE bytes**, plus **2,621 newly reviewed full CODE bytes** (`new` 754, `xxas` 143, `signal` 769, `xmsg` 955); `_pathops` 208 independently corroborated without double-credit. C0L **144 initialized DATA bytes** | [Original OMF reviews](reconstruction/CL_VENDOR_OWNERSHIP.md); **zero game-authored credit** |
-| MAIN Master SUPER | **22 complete ASM functions and drawing helpers, 3,218 source-exact CODE bytes**: previous 2,568 bytes plus 650 bytes of original rectangle-renderer / dispatch / entry helpers; largest are 534-byte full roll and 456-byte one-plane renderers | [Full-function and helper reviews](reconstruction/MASTER_SUPER_NATIVE.md); unreviewed gaps and alignment remain unknown, **zero game-authored credit** |
-| MAIN Master BGM | Fifteen complete music-driver ASM functions, **2,122 newly reviewed original CODE bytes**, including the full 420-byte `BGM_INIT`, 320-byte `BGM_READ_SDATA`, 302-byte `_BGM_PLAY`, and the original ordered segment relocations | [Native music-driver source](reconstruction/MASTER_BGM_NATIVE.md); remaining unreviewed sound functions stay unknown, **zero game-authored credit** |
-| MAIN Master machine/I/O | **Seven complete original Master functions, 780 source-exact CODE bytes**, including 342-byte `GET_MACHINE_AT` hardware detector and 126-byte `GET_MACHINE_98`, palette fades and buffered read | [Original machine/I/O review](reconstruction/MASTER_MACHINE_NATIVE.md); zero game-authored C++ credit |
-| MAIN Master PFINT21 | **805 source-written CODE bytes** from the full `PFSTART` / `PFEND` / `PFOPEN` and two written ranges of the 351-byte `pfint21` interrupt hook; 2 runtime-writable bytes plus 1 alignment byte remain unknown | [Original native TASM proof](reconstruction/MASTER_PF_NATIVE.md); zero game-authored C++ credit |
-| MAIN Master graphics/display | Twenty-three complete original Master ASM functions, **3,982 previously unknown CODE bytes** exact, led by 754-byte `GRC_CLIP_POLYGON_N`, 414-byte `GRCG_LINE`, 400-byte `GRCG_POLYGON_CX` and 266-byte `PALETTE_SHOW`; 1,378 bytes added in the second display pass | [Original-source graphics review](reconstruction/MASTER_GRCG_NATIVE.md); existing circle owners not double-counted, **zero game-authored credit** |
-| MAIN Master file/DOS/heap | **28 complete original ASM procedures, 1,724 newly exact CODE bytes**, including `HMEM_ALLOC` (240 B), `HMEM_FREE` (168 B), `FILE_READ` (180 B) and `FILE_FLUSH` (108 B) | [Original native source review](reconstruction/MASTER_FILE_MEMORY_NATIVE.md); all bytes are third-party CODE, **zero game-authored credit** |
-| MAIN sprite resources | **2,752 complete source-produced bitmap bytes** from TH02/TH04 point numbers, pellets and sparks; original byte ranges and two independent native BMP-to-ASM generator builds match exactly | [Original sprite-source review](reconstruction/MAIN_SPRITE_BITMAPS.md); bitmap DATA is neither CPU instructions nor accepted game C++ |
-| OP/MAINE vendor CL.LIB | Each has **2,040 source-written CODE bytes** across `farheap` and `exec`; four original runtime-state gaps total **16 bytes** across both EXEs. Another **3,917 complete CODE bytes** are source-exact from OP/MAINE `xxas`, `signal`, `setenvp`, `new`, `_pathops` and `xmsg`; additionally **7,178 previously unknown CODE bytes** are now exact from complete OP/MAINE `ctor2`, `ctor3` and `strings` members (including two 2,371-byte `strings` CODE segments) | [Context review](reconstruction/VENDOR_CONTEXT_REVIEW.md) and [string class review](reconstruction/CONTEXT_STRING_RUNTIME.md); all writable state gaps and foreign DATA/BSS remain separate |
-| OP/MAINE Master PI loader | Both original `GRAPH_PI_LOAD_PACK` full **1,512-byte** native source-built procedures are now exact (**3,024 newly owned CODE bytes**), including the authentic MAINE DGROUP +1 paragraph difference and ordered segment fixups | [Original PI/RLE decoder review](reconstruction/CONTEXT_PI_PACK.md); source-backed Master library, **zero game-authored credit** |
-| OP/MAINE original Master functions | **65 complete original Master procedures, 9,934 source-exact CODE bytes**, including large polygon renderers, BGM playback/init/loaders, file I/O, heap and SUPER routines; the latest pass adds **43 complete functions / 5,836 bytes** | [Scoped original source and OMF review](reconstruction/CONTEXT_MASTER_LARGE.md); known padding remains unknown and no game-authored C++ credit is claimed |
-| OP/MAINE SUPERPTR renderers | **10 complete original Master rendering/exit functions, 1,010 new CODE bytes**, including two 318-byte rectangle renderers plus near shift/draw helpers | [Full original PROC review](reconstruction/CONTEXT_SUPER_HELPERS.md); adjacent one-byte EVENs remain unowned |
-| OP Music Room | Twelve chromatic key-top mask bytes at `DB01..DB0D` exactly reproduced | [Piano top masks](../src/op/piano/pressed_top.md): **semantic CODE data, zero CPU instructions** |
-| ZUN.COM inner and outer dispatch | Outer **371 B**, inner dispatcher/catalog/transfer **558 B** independently exact | [Outer](../src/zun/launcher/outer.md) and [inner](../src/zun/launcher/README.md); no child bytes transferred between sources |
-| ZUN.COM children | Separate exact `-O` **926 B**, `-I` **1,009 B**, `-G` **8,377 B**, and `-M` **311 B** child proofs | [ADPCM](../src/zun/adpcm/README.md), [interrupt](../src/zun/interrupt/README.md), [gaiji](../src/zun/gaiji/README.md); font resources and BSS are not executable instructions |
-| ZUN `-S` resident | Accepted **322 B** `cfg_init()` C++ CODE, **320 B** C++ initialized DATA; **1,056 B** Master vendor assembly, and **723 source-written B** C0T vendor CRT CODE/DATA | [Resident status](../src/zun/resident/initialize.md), [CRT](../src/zun/resident/crt_native.md), [semantic DATA](../src/zun/resident/semantic_data.md); the **269 B C++ `main()` is not accepted** |
+**1. ZUN resident `-S`: natural C++ entry.**
+The original `main()` is **269 bytes**, child COM `04A9..05B6`.
+[Maintained source](../src/zun/resident/initialize.cpp) compiles to
+**260 bytes** naturally. The separately accepted `cfg_init()` (322 B),
+semantic DATA (320 B), C0T startup, and Master resident providers are
+already solved. An experimental three-barrier ReC98-style source links
+**269/269 exact bytes**, but its self-assignments and artificial empty
+helper have no justified historical semantics; **never accept it as
+natural C++**. Other real-control-flow tests (shared error exit,
+separate labels) remain inexact. Start with the
+[resident source and diagnostic explanation](../src/zun/resident/initialize.md).
+Keep the full-link positive/negative private comparison under
+`.analysis/gpt-web-zun-main-exact-diagnostic-*`.
 
-The last [source-built ZUN envelope diagnostic](../src/zun/launcher/README.md)
-compares **13,250 of 18,116** original bytes in a nonoverlapping synthetic
-layout, leaving 4,866 bytes zero-filled. Its `-S` composition includes 1,698
-bytes from separate C++/Master producers; C0T has separate provenance but was
-**not included in that composite total**. No claim of an exact full launcher
-or complete `-S` child follows from this integration.
+**2. Yumeko sword lifecycle: original ASM exact, C++ alternative not.**
+The **283-byte** `swords_update()` already has a reviewed ASM owner.
+The natural [C++ alternative](../src/main/boss/yumeko/swords_update.cpp)
+is not accepted. In the real nine-function `main_03` context,
+`#pragma option -O-` yields the **correct 2,139-byte** combined CODE size
+but emits short twirl-branch proxies. Switching on Borland jump optimization
+(`-O`) produces the **correct two original near JL/JGE opcodes** at
+updater offsets `+5E` and `+72`, but removes two unrelated two-byte jumps
+in the bounds/collision paths: combined CODE becomes **2,135 bytes**.
+The next task is a *natural* source flow that preserves both short jumps
+and the near conditionals. See [compiler findings](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
+Useful private comparison outputs:
+`.analysis/gpt-web-yumeko-newtwirl-baseline-native-a/` and
+`.analysis/gpt-web-yumeko-conditional-long-baseline-optim-native/`.
+Do not insert NOPs, copied instructions, or optimizer barriers.
 
-## Major accepted source — avoid repeating superseded trials
+**3. Other unknown code/data.**
+Use `resources/ownership.json` and real function/SEGDEF boundaries.
+Unknown is not synonymous with game-authored code: it also includes
+foreign writable DATA/BSS, unreviewed library CRT, alignment, and resources.
+Prioritize a *complete* recoverable original function rather than filling
+adjacent gaps. Review the
+[resolved/unresolved candidate index](reconstruction/UNACCEPTED_COHORTS.md)
+before reviving an old experiment.
 
-Check the acceptance IDs before acting on old experimental notes. The
-[generated progress](PROGRESS.md) and [ownership map](../resources/ownership.json)
-are the complete, current inventories; these highlights are only the larger
-or historically confusing cases.
+## Do not repeat already accepted work
 
-| Area | Complete accepted scope | Evidence |
-| --- | --- | --- |
-| MAIN Mai/Yuki Boss | **1,018-byte** update controller, **939-byte** remaining patterns, **186-byte** tracking laser | [Controller](../src/main/boss/mai_yuki/update_context.md), [patterns](../src/main/boss/mai_yuki/later_patterns.md) |
-| MAIN Shinki Boss | **959-byte** update, **220-byte** ball updater, **386-byte** wing preparation, **159-byte** particle renderer | [Update](../src/main/boss/shinki/update_context.md), [ball/wing](../src/main/boss/shinki/shinki.md), [renderer](../src/main/boss/shinki/particles_render.md) |
-| MAIN Alice / Extra Alice Boss | **939-byte** Alice update; **1,060-byte** Extra Alice update; **140-byte** Alice foreground plus **381-byte** puppets | [Alice](../src/main/boss/alice/update_context.md), [Extra](../src/main/boss/exalice/update.md), [foreground](../src/main/boss/alice/foreground.md) |
-| MAIN Yumeko Boss | **884-byte** update; **354/428-byte** attacks; **283-byte** sword lifecycle exact *reviewed ASM* | [Update](../src/main/boss/yumeko/update.md), [attacks](../src/main/boss/yumeko/laser_swords.md), [swords](../src/main/boss/yumeko/swords_update.md) |
-| MAIN midboss and defeat | **65-byte** midboss defeat, **414-byte** Boss defeat and **43-byte** player collision, all accepted | [Midboss](../src/main/midboss/default.md), [generic Boss](../src/main/boss/generic.md) |
-| MAIN dialog/runtime | **456-byte** dialog interpreter, **803-byte** stage initializer, **280-byte** player movement ASM | [Dialog](../src/main/dialog/opcode.md), [stage](../src/main/runtime/stage_session_context.md), [player](../src/main/player/region_register.md) |
-| MAIN loaders/score | **184-byte** STD loader, **168-byte** high-score insertion, **159-byte** far-vector pair | [STD](../src/main/formats/std_load.md), [score](../src/main/score/continue_raw.md), [vector](../src/shared/math/vector_far.md) |
-| MAINE script and Staff | **1,555-byte** cutscene VM and **991/626/861-byte** Staff controller/update/render | [Cutscene](../src/maine/cutscene/cutscene.md), [Staff](../src/maine/staff/staff.md) |
-| OP Music Room | **218-byte** piano setup, **116-byte** renderer, **30-byte** note lookup, plus the separate 12-byte note-top table | [Piano source](../src/op/piano/setup_exact.md), [render](../src/op/piano/render_exact.md), [note](../src/op/piano/note_register.md) |
-| Shared sound and input | MAIN/OP/MAINE sound effects **57 + 76 B** per binary and **262-byte** BIOS scanner per binary | [Sound](../src/shared/sound/se.md), [input](../src/shared/hardware/input_sense_op_maine.md) |
+| Family | Accepted source status and useful evidence |
+| --- | --- |
+| Large game C++ controllers | MAIN Mai/Yuki **1,018 B**, Shinki **959 B**, Alice **939 B**, Extra Alice **1,060 B**, Yumeko **884 B**; MAINE cutscene VM **1,555 B** and major Staff controller/update/render functions. Their existing acceptance receipts remain current; recent Yumeko and Shinki phase-name edits were twice recompiled exactly. [Boss overview](../src/main/boss/yumeko/update.md), [Shinki](../src/main/boss/shinki/update_context.md), [MAINE](../src/maine/cutscene/cutscene.md). |
+| MAIN reviewed ASM and Master | Separate original-assembly owners for swords, graphics, BGM, memory and file functions. The latest [PFINT21 review](reconstruction/MASTER_PF_NATIVE.md) adds **805 real source-written CODE bytes**; the 2-byte dispatch word and one-byte alignment stay unknown. [Master geometry](reconstruction/MASTER_GRCG_NATIVE.md), [SUPER](reconstruction/MASTER_SUPER_NATIVE.md), [file/memory](reconstruction/MASTER_FILE_MEMORY_NATIVE.md). |
+| OP/MAINE vendor | Original CL.LIB `xxas`/`signal`/`setenvp` and related members are **already recovered as vendor CODE**; not open game-C++ tasks. [Vendor context](reconstruction/VENDOR_CONTEXT_REVIEW.md), [string runtime](reconstruction/CONTEXT_STRING_RUNTIME.md), [Master functions](reconstruction/CONTEXT_MASTER_LARGE.md), [large PI decoder](reconstruction/CONTEXT_PI_PACK.md), [render helpers](reconstruction/CONTEXT_SUPER_HELPERS.md). |
+| Embedded data | MAIN **2,752 B** original bitmap/preshift tables and ZUN **8,192 B** font bitmap are resources, not CPU instructions or authored C++. [Sprites](reconstruction/MAIN_SPRITE_BITMAPS.md), [font](reconstruction/ZUN_FONT_RESOURCE.md). |
+| ZUN packed children | Independent accepted/reviewed scopes for `-O`, `-I`, `-G` and `-M`, but **no full packed-file exactness** or accepted resident `-S` `main()`. [Launcher](../src/zun/launcher/README.md) and [resident](../src/zun/resident/initialize.md). |
 
-The 55-byte BB loader, 55-byte near-vector helper and 40-byte scroll
-coordinate helper also have exact *reviewed ASM* owners. Only their ordinary
-C++ alternatives remain inexact, not the machine-code ownership.
+The 55-byte BB loader, 55-byte near-vector helper, and 40-byte scroll
+coordinate helper also have exact **reviewed ASM** owners. Their
+ordinary C++ variants being inexact does not make the executable bytes
+unknown.
 
-## Open work for the next agent
+## Fast exactness workflow
 
-**Highest-value genuine code problem:** ZUN `-S` `main()` at COM
-`04A9..05B6`, **269 bytes**. Two native direct TCC/TLINK experiments are
-raw-exact under authentic `_INIT_`/BSS framing, but only with three explicit
-ReC98 optimizer barriers; those are diagnostic constructs, not trustworthy
-original source. The [resident investigation](../src/zun/resident/initialize.md)
-keeps the exact and negative experimental evidence. Do **not** accept those
-barriers as natural C++ or paste generated instructions. Try source-level
-control flow that authentically preserves the three independent error exits.
+For changed executable inputs, replay **only affected complete units**
+with their original ordered MZ fixups and meaningful compiled negative:
 
-**Other unresolved origin reviews:** OP's `xxas`, `signal` and `setenvp`,
-and MAINE's `setenvp`, have now been recovered as exact native CL.LIB
-contributions, not new authored Boss code. The remaining foreign DATA/BSS,
-runtime state slots and larger unknown ownership intervals near CRT startup
-should be classified using native function/SEGDEF boundaries. [Source candidates and
-resolved historical failures](reconstruction/UNACCEPTED_COHORTS.md) provide
-context; their earlier diagnostics are not current acceptance status.
+```sh
+python3 scripts/replay_units.py --units UNIT_ID --output .analysis/unit-replays/NEW_RUN
+# OP/MAINE/ZUN: add --artifact op|maine|zun
+python3 scripts/progress.py --accept .analysis/unit-replays/NEW_RUN/receipt.json --units UNIT_ID --write
+python3 scripts/ownership.py --write
+python3 scripts/ci.py
+git diff --check
+git commit -m "gpt-web: describe exact change"
+```
 
-**Author-language alternative:** Yumeko's 283-byte `swords_update()` has a
-complete *reviewed ASM* owner, while its ordinary C++ alternative still
-lowers two twirl jumps differently. See
-[sword update notes](../src/main/boss/yumeko/swords_update.md). This is a
-source-language refinement, **not missing executable ownership**. Major
-Mai/Yuki, Shinki, Alice, Yumeko and Staff state machines are already
-accepted in the primary ledger.
+ASM families use `scripts/replay_asm_family.py` and a separate source
+classification. Stop after a complete-size/byte failure rather than
+crediting fragments. For documentation-only changes, review the diff:
+**no cold replay, receipt refresh, or full tooling suite** is required.
+Commit locally; never push without permission.
 
-## Exactness workflow and cache hygiene
+## Local workspace and storage
 
-Run `git status -sb` and `python3 scripts/preflight.py` before source work.
-Compile/replay **only affected complete units** (`scripts/replay_units.py
---artifact main|op|maine --units ID --output NEW_DIR`; use
-`scripts/replay_asm_family.py` for supported original-ASM families). Require
-two independent native producers, complete bytes and **original ordered**
-MZ fixups, actual OMF/MAP and a meaningful compiled negative. For successful
-new source, accept the receipt, regenerate progress/ownership, check `git
-diff --check`, then commit `gpt-web: xxx`. Documentation changes require no
-native replay; do not run a full cold replay for handoff cleanup.
-
-The ignored `.analysis` directory holds the private original targets, decoded
-views, attested Borland/Wine toolchain, calibration MAPs, accepted replay
-receipts and some valuable failed compiler experiments. **Keep these.** On
-2026-11-11, a conservative local cleanup removed **126 unused paths**:
-no-receipt unreferenced failed replay directories, redundant generated
-adoption/progress logs and JSON snapshots, and Python caches. `.analysis`
-shrank from approximately **895 MB to 868 MB** (filesystem `du -sh`). No
-accepted receipt, original target, calibration build or toolchain was deleted.
-Ignored-cache deletion is local; the Git commit records the updated handoff,
-not the removed binary cache itself.
-
-Historical experiment notes may accurately describe *then-failed* candidates;
-read their later accepted sections and the **current ledgers** before
-repeating a resolved issue.
+`.analysis/` is ignored and is the private working set. **Keep** its
+original targets, pinned Borland/Wine toolchain, native calibration
+objects/MAPs, Ghidra data, the **336 locally present current accepted
+replay receipts**, and the highlighted unresolved ZUN/Yumeko diagnostics.
+A conservative 2026-11-11 cleanup removed **198 obsolete local outputs**:
+20 no-longer-current and unreferenced unit replays; 108 unreferenced
+one-off experimental directories; 44 superseded import/progress JSON
+snapshots; and 26 redundant unsuccessful Yumeko native builds.
+Allocated `.analysis` space fell from about **911 MiB to 835 MiB**
+(approximately **76 MiB saved**). The two key Yumeko compiled
+comparisons and all relevant experiment scripts remain. Historical
+experiments referenced by source notes are otherwise preserved.
+Only ignored local caches were deleted; the accepted ledgers and
+Git-tracked source are unchanged by that cleanup.
