@@ -320,6 +320,10 @@ def summarize_all(root: Path = ROOT) -> dict:
                        "reviewed_asm_data_bytes" if kind == "accepted-reviewed-asm-initialized-data" else
                        "reviewed_asm_uncredited_bytes")
                 combined[key] = combined.get(key, 0) + size
+    if (root / 'config/piano_pressed_top_acceptance.json').exists():
+        from replay_piano_top import ACCEPT, check_record
+        check_record(json.loads(ACCEPT.read_text()))
+        combined['reviewed_asm_semantic_table_bytes'] = combined.get('reviewed_asm_semantic_table_bytes', 0) + 12
     return combined
 
 

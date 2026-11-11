@@ -514,6 +514,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_asm(view["size"], pieces, enemy_vm[name])
         if name in generic_asm:
             pieces = overlay_asm(view["size"], pieces, generic_asm[name])
+        if name == 'op':
+            # OP's twelve musical key-top masks are semantic CODE data,
+            # not twelve decoded CPU instructions or an external sprite.
+            from replay_piano_top import reviewed_claims as piano_top_claims
+            pieces = overlay_asm(view['size'], pieces, piano_top_claims(root, view))
         if name in fonts:
             pieces = overlay_resources(view["size"], pieces, fonts[name])
         counts = Counter()
