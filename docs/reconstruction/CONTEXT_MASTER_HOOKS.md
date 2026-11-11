@@ -53,8 +53,10 @@ write `[156,158)`**. Those two bytes are zero in both original and calibration,
 and have no source LEDATA. They remain unowned, not classified as instructions,
 not padded, and not filled in by comparing adjacent bytes. The 406 written
 bytes per function are adopted under two explicitly separate source roles.
-The neighboring `GRAPH_PACK_PUT_8_NOCLIP` remains unclassified because native
-raw-byte equality does not establish its historical source owner.
+The neighboring `GRAPH_PACK_PUT_8_NOCLIP` is now separately classified as
+[Master/ZUN-derived CODE](CONTEXT_GRAPH_PACK_NOCLIP.md), with an exact source
+transformation from the original upstream Master procedure. Its two independent
+196-byte scopes are not included or double-counted in this hook proof.
 
 The source/linked evidence is
 [`config/context_master_hooks.json`](../../config/context_master_hooks.json),

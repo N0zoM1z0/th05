@@ -612,10 +612,15 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_master_hooks import reviewed_claims as master_hook_claims
             master_hooks, master_hooks_sha = master_hook_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Two game-ported packed-pixel blitters are exactly the original
+            # Master procedure minus three Y clipping guards and local renames.
+            from review_context_graph_pack_noclip import reviewed_claims as pack_noclip_claims
+            packed_blitters, packed_blitters_sha = pack_noclip_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
                                     shifted_context + string_context + pi_pack +
-                                    large_master + super_helpers + master_hooks)
+                                    large_master + super_helpers + master_hooks + packed_blitters)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -673,6 +678,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_super_helpers_review_sha256"] = super_helpers_sha
         if name in ("op","maine") and master_hooks_sha:
             views[name]["master_hooks_review_sha256"] = master_hooks_sha
+        if name in ("op","maine") and packed_blitters_sha:
+            views[name]["graph_pack_noclip_review_sha256"] = packed_blitters_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
