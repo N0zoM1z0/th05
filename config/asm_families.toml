@@ -2746,3 +2746,28 @@ semantic_inputs = ["src/shared/graphics/cdg_opaque.md"]
 [units.negative]
 find = "mov cx, BITS_PER_BYTE"
 replace = "mov cx, (BITS_PER_BYTE - 1)"
+
+[[units]]
+id = "main-clear-dwords-near-exact"
+artifact = "main"
+source = "src/main/runtime/clear_dwords_exact.asm"
+types = "src/main/runtime/clear_dwords_types.inc"
+symbols = "probes/units/clear_dwords_symbols.inc"
+bindings = "probes/units/clear_dwords_exact_bindings.asm"
+notes = "src/main/runtime/clear_dwords_exact.md"
+target_start = 53090
+size = 23
+segment = "CLEAR_DWORDS_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "76a324af476334bc3064170eafbbcadce830c174118488b8d957156e52f42e85"
+target_scope_sha256 = "1298bf7bfb44f89d50db3b3c14061787bf4febeff321f8aafd19b2bbb21a57eb"
+semantic_inputs = ["src/main/runtime/stage_state_init.hpp"]
+[units.publics]
+"clear_dwords" = 0
+"clear_dwords_end" = 23
+[units.negative]
+find = "mov cx, ss:[bx + FRAME_DWORD_COUNT_OFFSET]"
+replace = "mov cx, ss:[bx + FRAME_DEST_OFFSET]"

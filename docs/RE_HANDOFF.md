@@ -40,6 +40,7 @@ necessarily all authored bytes where padding is present.
 | MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
 | MAIN performance selectors | **76-byte** complete reviewed ASM family at `CF7A..CFC6`; **74 authored instruction bytes**, two uncredited `EVEN` NOPs | [Performance/selector family](../src/main/runtime/playperf_select.md) |
 | MAIN player physics | **280-byte** complete invalidation/movement native ASM at `C9BA..CAD2`; **239 instruction + 40 jump-table** bytes, original fixup `[60]` | [Player movement](../src/main/player/region_register.md) |
+| MAIN stage DWORD clear | Complete **23-byte** near original-register `clear_dwords()` at `CF62..CF79`; actual SS arguments and `REP STOSD` | [Stage pool clear](../src/main/runtime/clear_dwords_exact.md) |
 | MAIN motion updates | Two **32-byte** exact C++ implementations at `BE1A..BE3A` and `1527C..1529C`; real AX/DX Pascal point return | [Motion register ABI](../src/main/math/motion_register.md) |
 | MAIN tile-ring setter | Full **79-byte** far-Pascal C++ setter at `BEA4..BEF3`, real tile-ring and scroll state, empty fixups | [Tile-ring setter](../src/main/scroll/ring_set.md) |
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
