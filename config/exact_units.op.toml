@@ -1221,3 +1221,27 @@ unit = "op-pi-mask-egc-setup"
 source = "src/shared/graphics/pi_mask_egc_setup.cpp"
 find = "_AX &= 3;"
 replace = "_AX &= 2;"
+
+[[units]]
+id = "op-pi-load-exact"
+source = "src/shared/graphics/pi_load_exact.cpp"
+module = "th05/piload.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_pi_load_exact_bindings.asm"
+target_start = 56792
+size = 50
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "PI_LOAD_G"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-pi-load-exact"
+source = "src/shared/graphics/pi_load_exact.cpp"
+find = "_SI <<= 2;"
+replace = "_SI <<= 3;"

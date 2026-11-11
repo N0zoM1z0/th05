@@ -2,21 +2,21 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "f6f5d2703109adc6e828417fd266301870016d879c1fdd6caf77b01b16c811fe",
+  "replay_receipt_sha256": "429af62e58a806aa91e48eb0cded2ff6040c09f26296d9d4089d468e894b9e77",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 56727,
-    "candidate_start": 56727,
-    "size": 65,
-    "target_sha256": "93e2989cd2515312ccc908709709976d772022e1412f6bff9fc8e102a40e476d",
-    "candidate_sha256": "894b9583fbfe64429c07484a3e10a49083f8b192b98b612f30a7fa86afaa9755",
+    "target_start": 56792,
+    "candidate_start": 56792,
+    "size": 50,
+    "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+    "candidate_sha256": "462637410c41f580874b2718b49ebf4909071fe130d6f785271c82405e561d33",
     "raw_exact": false,
     "target_fixups": [
-      3
+      42
     ],
     "candidate_fixups": [
-      3
+      42
     ],
     "fixups_exact": true,
     "exact": false
@@ -41703,6 +41703,429 @@
           "dependency_paths": [
             "unit.asm",
             "maskegc.asm"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": true,
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      }
+    },
+    {
+      "id": "op-pi-load-exact",
+      "entry_sha256": "350c617e4d465f08ea15ce23fb926264371ba3f4c7d379b80492c3ea16b0d511",
+      "result": {
+        "id": "op-pi-load-exact",
+        "entry_sha256": "350c617e4d465f08ea15ce23fb926264371ba3f4c7d379b80492c3ea16b0d511",
+        "rounds": [
+          {
+            "target_start": 56792,
+            "candidate_start": 56792,
+            "size": 50,
+            "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+            "candidate_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+            "raw_exact": true,
+            "target_fixups": [
+              42
+            ],
+            "candidate_fixups": [
+              42
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 56792,
+            "candidate_start": 56792,
+            "size": 50,
+            "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+            "candidate_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+            "raw_exact": true,
+            "target_fixups": [
+              42
+            ],
+            "candidate_fixups": [
+              42
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "omfs": [
+          {
+            "sha256": "a0db031cef3646d323c855238903573d4051e89c0ea577e55561688cc1efcdc6",
+            "dependency_timestamp_normalized_sha256": "a98bbac4f1e0e62017cbbc1b6d9596f85b9dbb9d848b6863958d8965aaa1cdd9",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "piload.asm"
+            ]
+          },
+          {
+            "sha256": "82529d9f52b9ba464b36a35fc9efa6f1ecb2c1dca06a55dc7c43d33d63400b47",
+            "dependency_timestamp_normalized_sha256": "a98bbac4f1e0e62017cbbc1b6d9596f85b9dbb9d848b6863958d8965aaa1cdd9",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "piload.asm"
+            ]
+          }
+        ],
+        "compiler_assembly": [
+          {
+            "comparison": {
+              "target_start": 56792,
+              "candidate_start": 56792,
+              "size": 50,
+              "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+              "candidate_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+              "raw_exact": true,
+              "target_fixups": [
+                42
+              ],
+              "candidate_fixups": [
+                42
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/shared/graphics/pi_load_exact.cpp"
+            ],
+            "omf": {
+              "sha256": "a0db031cef3646d323c855238903573d4051e89c0ea577e55561688cc1efcdc6",
+              "dependency_timestamp_normalized_sha256": "a98bbac4f1e0e62017cbbc1b6d9596f85b9dbb9d848b6863958d8965aaa1cdd9",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "piload.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 50,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "a61dc54b22478a99124766b99aa236cddf4274b2ad5166f5cbaa50008502bf1c"
+                }
+              ]
+            },
+            "map_sha256": "76117a3d97f8e1aaaf594bb50b5c0f27bec90e5f8a2a09d75082350f85ef4f8a",
+            "mz_sha256": "d7fa64914a545c642af254e48d1e908346d2dc3e0cdd0de41c2f8d041ebdb93c",
+            "commands_sha256": "8bbfcd6769823ad4f4ac9b8b7b0ae0b08c97fa754f211979c530a37fe48fdaa9",
+            "compiler_generated_assembly_sha256": "909cb1082ee40a34dc9413d6c34c7f02149383f083b846131c1ed446328141cc",
+            "assembly_after_tasm_sha256": "909cb1082ee40a34dc9413d6c34c7f02149383f083b846131c1ed446328141cc",
+            "wrapper_sha256": "db96daa1d2f19293e960d022e40cb224fccbc08888a607c4914afdc99f32d35d"
+          },
+          {
+            "comparison": {
+              "target_start": 56792,
+              "candidate_start": 56792,
+              "size": 50,
+              "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+              "candidate_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+              "raw_exact": true,
+              "target_fixups": [
+                42
+              ],
+              "candidate_fixups": [
+                42
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/shared/graphics/pi_load_exact.cpp"
+            ],
+            "omf": {
+              "sha256": "82529d9f52b9ba464b36a35fc9efa6f1ecb2c1dca06a55dc7c43d33d63400b47",
+              "dependency_timestamp_normalized_sha256": "a98bbac4f1e0e62017cbbc1b6d9596f85b9dbb9d848b6863958d8965aaa1cdd9",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "piload.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 50,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "a61dc54b22478a99124766b99aa236cddf4274b2ad5166f5cbaa50008502bf1c"
+                }
+              ]
+            },
+            "map_sha256": "76117a3d97f8e1aaaf594bb50b5c0f27bec90e5f8a2a09d75082350f85ef4f8a",
+            "mz_sha256": "d7fa64914a545c642af254e48d1e908346d2dc3e0cdd0de41c2f8d041ebdb93c",
+            "commands_sha256": "8bbfcd6769823ad4f4ac9b8b7b0ae0b08c97fa754f211979c530a37fe48fdaa9",
+            "compiler_generated_assembly_sha256": "909cb1082ee40a34dc9413d6c34c7f02149383f083b846131c1ed446328141cc",
+            "assembly_after_tasm_sha256": "909cb1082ee40a34dc9413d6c34c7f02149383f083b846131c1ed446328141cc",
+            "wrapper_sha256": "db96daa1d2f19293e960d022e40cb224fccbc08888a607c4914afdc99f32d35d"
+          }
+        ],
+        "compiler_arguments": [
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/piload.cpp"
+          ],
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/piload.cpp"
+          ]
+        ],
+        "producer_paths": [
+          "a/source",
+          "b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_pi_load_exact_bindings.asm",
+            "sha256": "a7b6b771c9f4e5a6cf47203d2337f9f98233a5f6fd9f5d460cd01dc5c6a7d7f0"
+          },
+          {
+            "path": "scripts/lib/binding_layout.py",
+            "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+          },
+          {
+            "path": "scripts/lib/compiler_assembly.py",
+            "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+          },
+          {
+            "path": "scripts/lib/omf.py",
+            "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+          },
+          {
+            "path": "scripts/lib/reference_build.py",
+            "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+          },
+          {
+            "path": "scripts/lib/replay_toolchain.py",
+            "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+          },
+          {
+            "path": "scripts/lib/tiny_com.py",
+            "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+          },
+          {
+            "path": "scripts/lib/unit_context.py",
+            "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+          },
+          {
+            "path": "scripts/lib/unit_extents.py",
+            "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+          },
+          {
+            "path": "scripts/lib/unit_oracle.py",
+            "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+          },
+          {
+            "path": "scripts/lib/unit_sources.py",
+            "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+          },
+          {
+            "path": "scripts/replay_asm_family.py",
+            "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+          },
+          {
+            "path": "src/shared/graphics/pi_load_exact.cpp",
+            "sha256": "8cc1636c2545fbd98fcc0d31d32c47fd973bf0416a920f8d7ed5629d24f616d0"
+          }
+        ],
+        "object_normalized_equal": true,
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_pi_load_exact_bindings.asm",
+          "sha256": "a7b6b771c9f4e5a6cf47203d2337f9f98233a5f6fd9f5d460cd01dc5c6a7d7f0"
+        },
+        {
+          "path": "scripts/lib/binding_layout.py",
+          "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+        },
+        {
+          "path": "scripts/lib/compiler_assembly.py",
+          "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/tiny_com.py",
+          "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_sources.py",
+          "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+        },
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "src/shared/graphics/pi_load_exact.cpp",
+          "sha256": "8cc1636c2545fbd98fcc0d31d32c47fd973bf0416a920f8d7ed5629d24f616d0"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "429af62e58a806aa91e48eb0cded2ff6040c09f26296d9d4089d468e894b9e77",
+      "compiled_negative_control": {
+        "target_start": 56792,
+        "candidate_start": 56792,
+        "size": 50,
+        "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+        "candidate_sha256": "462637410c41f580874b2718b49ebf4909071fe130d6f785271c82405e561d33",
+        "raw_exact": false,
+        "target_fixups": [
+          42
+        ],
+        "candidate_fixups": [
+          42
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-pi-load-exact",
+        "entry_sha256": "350c617e4d465f08ea15ce23fb926264371ba3f4c7d379b80492c3ea16b0d511",
+        "mutation": {
+          "unit": "op-pi-load-exact",
+          "source": "src/shared/graphics/pi_load_exact.cpp",
+          "find": "_SI <<= 2;",
+          "replace": "_SI <<= 3;"
+        },
+        "control_sha256": "cbe84bb7663ad9c76203df9367d1e58f94b51d0930b98717c9781bf6e4aba57b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 56792,
+          "candidate_start": 56792,
+          "size": 50,
+          "target_sha256": "4638006ee2fe9d2f6048f2f2c1ee3d5520df8fb16f486e9f903005fde1aa5316",
+          "candidate_sha256": "462637410c41f580874b2718b49ebf4909071fe130d6f785271c82405e561d33",
+          "raw_exact": false,
+          "target_fixups": [
+            42
+          ],
+          "candidate_fixups": [
+            42
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "compiler_arguments": [
+          "-S",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/piload.cpp"
+        ],
+        "omf": {
+          "sha256": "b62a690d83811530d213479a2c76502c436f86c328bfbd9a04c85448b2e21258",
+          "dependency_timestamp_normalized_sha256": "541e0dcd993a20422d63d6f48329f7343aac23977366b89b1d831b7c5ae7ea28",
+          "module_name": "unit.asm",
+          "translator_comments": [
+            "Turbo Assembler  Version 5.0"
+          ],
+          "dependency_paths": [
+            "unit.asm",
+            "piload.asm"
           ]
         }
       },
