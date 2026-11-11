@@ -5586,3 +5586,22 @@ unit = "main-mpn-upload-exact"
 source = "src/main/formats/mpn_upload.cpp"
 find = "_DI += MPN_UPLOAD_TILE_H;"
 replace = "_DI += (MPN_UPLOAD_TILE_H + 1);"
+
+[[units]]
+id = "main-tile-ring-set-exact"
+source = "src/main/scroll/ring_set.cpp"
+module = "th05/rset.cpp"
+segment = "SCROLL_RSET_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/scroll_ring_set_bindings.asm"
+target_start = 0xbea4
+size = 79
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-tile-ring-set-exact"
+source = "src/main/scroll/ring_set.cpp"
+find = "scroll_active = 1;"
+replace = "scroll_active = 0;"

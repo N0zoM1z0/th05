@@ -2,26 +2,18 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "523299ece639217c2b4cbc760c05e8edb3bdc6285558210e4c5fc23a2e5dddcb",
+  "replay_receipt_sha256": "b933c043265086d20d5e885f03369fb1d8ba2a5368d3eae5b463cbd51307ae5a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58748,
-    "candidate_start": 58748,
-    "size": 69,
-    "target_sha256": "e20bf6c120f93fe61e229fe2576781e50a188f8df55df0bb6896937d52893658",
-    "candidate_sha256": "4fa605d9d30c74916517bcabf965423a0fc3d2b2f3bf187aae374c0d2388f640",
+    "target_start": 48804,
+    "candidate_start": 48804,
+    "size": 79,
+    "target_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+    "candidate_sha256": "280a463bd8ea45a56cbc2166e9e2e30fc5fb35047473d8c2589a7c3346387a3e",
     "raw_exact": false,
-    "target_fixups": [
-      12,
-      32,
-      61
-    ],
-    "candidate_fixups": [
-      12,
-      32,
-      61
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -89177,6 +89169,216 @@
             "mpnreg.asm"
           ]
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-tile-ring-set-exact",
+      "entry_sha256": "c53e4f55a98191f6075421b7c5c26c24df637b1776937cb2968b816877266e79",
+      "result": {
+        "id": "main-tile-ring-set-exact",
+        "entry_sha256": "c53e4f55a98191f6075421b7c5c26c24df637b1776937cb2968b816877266e79",
+        "rounds": [
+          {
+            "target_start": 48804,
+            "candidate_start": 48804,
+            "size": 79,
+            "target_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+            "candidate_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48804,
+            "candidate_start": 48804,
+            "size": 79,
+            "target_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+            "candidate_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "56e7c48da8b129bcb3afad6561c979ff30c4c9b11f485dac0340a009ced894e8",
+            "dependency_timestamp_normalized_sha256": "5060390208c8990d1c0471ae2f33ca25a3962ef42509307715b58a179423c885",
+            "module_name": "th05/rset.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/rset.cpp",
+              "src/main/scroll/ring_set.cpp",
+              "src/main/scroll/ring_set.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "2756ffe19c343c09b82f1abb7183819bdd477f7ec5e92972b77f2ef993514e4f",
+            "dependency_timestamp_normalized_sha256": "5060390208c8990d1c0471ae2f33ca25a3962ef42509307715b58a179423c885",
+            "module_name": "th05/rset.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/rset.cpp",
+              "src/main/scroll/ring_set.cpp",
+              "src/main/scroll/ring_set.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/rset.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/rset.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/scroll_ring_set_bindings.asm",
+            "sha256": "15e9f6b9ec6365a46e726bd461a330a116d803a87cc2db418f070d52282c621e"
+          },
+          {
+            "path": "src/main/scroll/ring_set.cpp",
+            "sha256": "ac95015879b73fee9ac7505d2203cd937fefbdab88db1a1a18ab4aa899c980ae"
+          },
+          {
+            "path": "src/main/scroll/ring_set.hpp",
+            "sha256": "3583c510284b397585f14c170781a6461c37525b9e8f4fbd20462ebf7a33a192"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/scroll_ring_set_bindings.asm",
+          "sha256": "15e9f6b9ec6365a46e726bd461a330a116d803a87cc2db418f070d52282c621e"
+        },
+        {
+          "path": "src/main/scroll/ring_set.cpp",
+          "sha256": "ac95015879b73fee9ac7505d2203cd937fefbdab88db1a1a18ab4aa899c980ae"
+        },
+        {
+          "path": "src/main/scroll/ring_set.hpp",
+          "sha256": "3583c510284b397585f14c170781a6461c37525b9e8f4fbd20462ebf7a33a192"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "b933c043265086d20d5e885f03369fb1d8ba2a5368d3eae5b463cbd51307ae5a",
+      "compiled_negative_control": {
+        "target_start": 48804,
+        "candidate_start": 48804,
+        "size": 79,
+        "target_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+        "candidate_sha256": "280a463bd8ea45a56cbc2166e9e2e30fc5fb35047473d8c2589a7c3346387a3e",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-tile-ring-set-exact",
+        "entry_sha256": "c53e4f55a98191f6075421b7c5c26c24df637b1776937cb2968b816877266e79",
+        "mutation": {
+          "unit": "main-tile-ring-set-exact",
+          "source": "src/main/scroll/ring_set.cpp",
+          "find": "scroll_active = 1;",
+          "replace": "scroll_active = 0;"
+        },
+        "control_sha256": "9c3d9a4533676708de5542bf0909a05da6698949eb1903ea91a0e514a663ff8a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48804,
+          "candidate_start": 48804,
+          "size": 79,
+          "target_sha256": "066192ed17ceca63181daaf112a78d4a440a2d8644db3f3d4acb7d1eeeb28ea4",
+          "candidate_sha256": "280a463bd8ea45a56cbc2166e9e2e30fc5fb35047473d8c2589a7c3346387a3e",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "46ecac9740c52fdfe5d35c84e334bc64204bfd43744466693ab4836dcc02f5df",
+          "dependency_timestamp_normalized_sha256": "fa89d52cbfae72d1547083511c1c3d26eec725b4c998588dabb6c9485411215e",
+          "module_name": "th05/rset.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/rset.cpp",
+            "src/main/scroll/ring_set.cpp",
+            "src/main/scroll/ring_set.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/rset.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }
