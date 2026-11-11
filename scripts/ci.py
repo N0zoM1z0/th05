@@ -55,6 +55,10 @@ def main():
     # CS: placeholders are deliberately unowned, not zero-filled source.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_vendor_reserved.py"), "--structural-check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Source-backed original CL setenvp CODE; the original data group is
+    # eighteen bytes below the calibration's, and _DATA/_INIT_ remain unknown.
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_setenvp.py"), "--structural-check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     # Lightweight source-current acceptance check for the separate ZUN.COM
     # -I child; no assembler, Wine, original target or cold replay is invoked.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_interrupt.py"), "--check"],

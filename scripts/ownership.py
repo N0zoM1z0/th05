@@ -483,7 +483,12 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_vendor_reserved import reviewed_claims as reviewed_reserved_vendor
             reserved_claims, reserved_review_sha = reviewed_reserved_vendor(
                 root, view=view, verify_targets=verify_targets)
-            pieces = overlay_vendor(view["size"], pieces, claims + master_claims + reserved_claims)
+            # setenvp's original four DATA-group offsets differ from the
+            # calibration's by 12h, but all ten genuine OMF CODE fixups resolve.
+            from review_main_setenvp import reviewed_claims as reviewed_setenvp
+            env_claims, env_review_sha = reviewed_setenvp(
+                root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims + master_claims + reserved_claims + env_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -532,6 +537,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
             views[name]["reserved_vendor_review_sha256"] = reserved_review_sha
+        if name == "main" and env_review_sha:
+            views[name]["setenvp_vendor_review_sha256"] = env_review_sha
         if runtime_sha and name == "main":
             views[name]["runtime_vendor_review_sha256"] = runtime_sha
         if strings_sha and name == "main":

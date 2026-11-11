@@ -123,3 +123,27 @@ contributions /1857 bytes across MAIN, OP and MAINE. These receive zero authored
 credit and do not transfer CODE acceptance or establish the global denominator.
 The ordinary relocation-free DATA lane preserves ambiguous, relocated,
 incomplete and all other unreviewed extents as unknown.
+
+## Subsequent exact original `setenvp` CODE record
+
+MAIN `[A6E4,A73C)` (88 bytes) is now [source-proven](../../config/main_setenvp_ownership.json)
+from the original Borland CL.LIB `setenvp` `_TEXT` LEDATA and all ten
+ordered CODE FIXUPP records. The calibration's `DGROUP=209E0` places
+`__environ` at offset `2576`; the original target's `DGROUP=209D0`
+places it at `2564`. This genuine linker-context difference accounts for
+the four originally mismatched pointer words. The remaining actual source
+fixups, including TLINK's distinct five-byte same-segment FAR CALL and
+FAR JMP shortenings, yield the complete authentic 88-byte function in both
+contexts without changing source or target bytes.
+
+The separate [explicit adoption](../../config/reviewed_main_setenvp.json)
+adds **88 bytes of third-party CODE and zero authored C++**. The zeroed
+four-byte original `_DATA` environment pointer and the `_INIT_` contribution
+remain unknown until their own source/data layout review. The existing 31
+complete CL.LIB owners and separate `exec`/`farheap` CODE record proof remain
+unchanged. The source-current review requires no native compilation:
+
+```sh
+python3 scripts/review_main_setenvp.py --structural-check
+python3 scripts/review_main_setenvp.py --check
+```
