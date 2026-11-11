@@ -246,6 +246,30 @@ void pascal near box_wait_animate(int frames_to_wait)
 #ifndef CUTSCENE_SCRIPT_DEFAULT_COLOR
 #define CUTSCENE_SCRIPT_DEFAULT_COLOR V_WHITE
 #endif
+// TH05's script is a byte-oriented control language. These 16 command
+// letters are the real sparse-switch keys; keeping the original ASCII values
+// is part of the original 64-byte Borland switch-table contract.
+// Subcommands (such as `wi`/`wo`, `fm`, `vp`, `p=` and `p-`) are parsed by the
+// corresponding handlers, not additional top-level opcode values.
+enum CutsceneCommandByte {
+    CUTSCENE_CMD_NEWLINE = 'n',
+    CUTSCENE_CMD_NEW_TEXT_BOX = 's',
+    CUTSCENE_CMD_TEXT_COLOR_OR_COLOR_MAP = 'c',
+    CUTSCENE_CMD_FONT_WEIGHT = 'b',
+    CUTSCENE_CMD_WHITE_FADE_OR_WAIT = 'w',
+    CUTSCENE_CMD_TEXT_INTERVAL_OR_DISPLAY_PAGE = 'v',
+    CUTSCENE_CMD_PALETTE_TONE = 't',
+    CUTSCENE_CMD_BLACK_FADE_OR_SONG_FADE = 'f',
+    CUTSCENE_CMD_SCREEN_SHAKE_OR_GAIJI = 'g',
+    CUTSCENE_CMD_RETURN_KEY_WAIT = 'k',
+    CUTSCENE_CMD_CLEAR_BOTH_PAGES = '@',
+    CUTSCENE_CMD_PICTURE_RESOURCE = 'p',
+    CUTSCENE_CMD_PICTURE_QUARTER = '=',
+    CUTSCENE_CMD_BGM_CONTROL = 'm',
+    CUTSCENE_CMD_SOUND_EFFECT = 'e',
+    CUTSCENE_CMD_END_SCRIPT = '$',
+};
+
 script_ret_t pascal near script_op(unsigned char c)
 {
 
@@ -262,14 +286,14 @@ script_ret_t pascal near script_op(unsigned char c)
 
 	c = tolower(c);
 	switch(c) {
-	case 'n':
+	case CUTSCENE_CMD_NEWLINE:
 		cursor.y += GLYPH_H;
 		cursor.x = BOX_LEFT;
 		if(cursor.y < BOX_BOTTOM) {
 			break;
 		}
 
-	case 's':
+	case CUTSCENE_CMD_NEW_TEXT_BOX:
 		c = *script_p;
 		box_1_to_0_animate();
 		if(c != '-') {
@@ -289,7 +313,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		graph_accesspage(0);
 		break;
 
-	case 'c':
+	case CUTSCENE_CMD_TEXT_COLOR_OR_COLOR_MAP:
 
 		c = tolower(*script_p);
 
@@ -300,12 +324,12 @@ script_ret_t pascal near script_op(unsigned char c)
 		text_col = p1;
 		break;
 
-	case 'b':
+	case CUTSCENE_CMD_FONT_WEIGHT:
 		script_param_read_number_first(p1, WEIGHT_BOLD);
 		graph_putsa_fx_func = static_cast<graph_putsa_fx_func_t>(p1);
 		break;
 
-	case 'w':
+	case CUTSCENE_CMD_WHITE_FADE_OR_WAIT:
 		c = tolower(*script_p);
 		if((c == 'o') || (c == 'i')) {
 			script_op_fade(c, palette_white_in, palette_white_out, p1);
@@ -337,7 +361,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		break;
 
-	case 'v':
+	case CUTSCENE_CMD_TEXT_INTERVAL_OR_DISPLAY_PAGE:
 		if(*script_p != 'p') {
 			script_param_read_number_first(p1, TEXT_INTERVAL_DEFAULT);
 			text_interval = p1;
@@ -348,7 +372,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		break;
 
-	case 't':
+	case CUTSCENE_CMD_PALETTE_TONE:
 		script_param_read_number_first(p1, 100);
 		if(!fast_forward) {
 			frame_delay(1);
@@ -356,7 +380,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		palette_settone(p1);
 		break;
 
-	case 'f':
+	case CUTSCENE_CMD_BLACK_FADE_OR_SONG_FADE:
 		c = *script_p;
 		if(c != 'm') {
 			if((c == 'i') || (c == 'o')) {
@@ -371,7 +395,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		break;
 
-	case 'g':
+	case CUTSCENE_CMD_SCREEN_SHAKE_OR_GAIJI:
 		if((GAME == 5) || (*script_p != 'a')) {
 			script_op_shake(fast_forward, p2, p1);
 		} else {
@@ -386,7 +410,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		return CONTINUE;
 
-	case 'k':
+	case CUTSCENE_CMD_RETURN_KEY_WAIT:
 
 		box_1_to_0_animate();
 
@@ -397,13 +421,13 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		return CONTINUE;
 
-	case '@':
+	case CUTSCENE_CMD_CLEAR_BOTH_PAGES:
 		graph_accesspage(1);	graph_clear();
 		graph_accesspage(0);	graph_clear();
 		bgimage_snap();
 		break;
 
-	case 'p':
+	case CUTSCENE_CMD_PICTURE_RESOURCE:
 		c = *script_p;
 		script_p++;
 
@@ -431,7 +455,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		}
 		break;
 
-	case '=':
+	case CUTSCENE_CMD_PICTURE_QUARTER:
 		script_param_number_default = PI_QUARTER_COUNT;
 		c = *script_p;
 
@@ -476,12 +500,12 @@ script_ret_t pascal near script_op(unsigned char c)
 		pic_copy_to_other(CUTSCENE_PIC_LEFT, CUTSCENE_PIC_TOP);
 		break;
 
-	case 'm':
+	case CUTSCENE_CMD_BGM_CONTROL:
 
 		script_op_bgm(true, c, fn, p1);
 		break;
 
-	case 'e':
+	case CUTSCENE_CMD_SOUND_EFFECT:
 		script_param_read_number_first(p1);
 		snd_se_play_force(p1);
 		break;
@@ -500,7 +524,7 @@ colmap_add:
 	colmap_count++;
 	break;
 
-	case '$':
+	case CUTSCENE_CMD_END_SCRIPT:
 		return STOP;
 	}
 	return CONTINUE;

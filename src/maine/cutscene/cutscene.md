@@ -208,3 +208,29 @@ three accepted scopes together cover all 2,848 original bytes: 1,241 from
 nine functions, 52 from EGC, and 1,555 from the dispatcher. Existing original
 16-byte `cutscene_animate` and 64-byte `script_op` CODE tables are included
 in their complete function extents, never double-counted.
+
+## Explicit TH05 cutscene command vocabulary and exact compiler tables
+
+The complete **1,555-byte `script_op()` cutscene VM** now uses named constants
+for all sixteen original ASCII script command bytes. They represent newline,
+new text box, text color/color-map registration, text font weight, white fade
+or wait, text-speed/page selection, palette tone, black fade/song fade,
+shake or gaiji output, Return-key wait, page clear, image resource handling,
+image quarter, BGM control, sound effect and script termination. Their original
+values (`'n'`, `'s'`, `'c'`, `'b'`, `'w'`, `'v'`, `'t'`, `'f'`, `'g'`, `'k'`, `'@'`,
+`'p'`, `'='`, `'m'`, `'e'`, `'$'`) remain untouched. Secondary arguments such
+as `wi`/`wo`, `fm`, `vp`, `p=`, `p-` and color-map assignment are intentionally
+handled within their existing command branches, not invented new opcodes.
+
+The 16 sparse-switch keys are still compiled naturally by Borland into the
+original 64-byte key/target switch table and retain their original jump and
+relocation sites. All ten complete source owners affected through the shared
+`cutscene.cpp` translation unit were replayed together (the VM plus script
+loading, parser, cursor, masked rendering, box animation, waiting and the
+479-byte cutscene animation controller). Their **2,796 total bounded bytes**
+match both independent real Borland/TLINK producers and the original ordered
+MZ relocations. The compiled change to the default text color was rejected as
+a semantic negative. The focused receipt is
+`.analysis/unit-replays/gpt-web-maine-cutscene-semantic-opcodes-20261111/receipt.json`.
+No new original target code ownership, BSS or Japanese script assets are
+claimed by this semantic source improvement. This was not a whole-MAINE replay.
