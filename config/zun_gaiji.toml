@@ -1,0 +1,24 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-G"
+container_start = 0x2488
+size = 8377
+sha256 = "b27d83dffa8d2bc9716a5e8cf135b95e181e67b1e34bb8cbbf28aa057153f6d8"
+source = "src/zun/gaiji/install.asm"
+source_encoding = "utf-8"
+assembler_encoding = "cp932"
+private_asset_include = "gaiji_private_asset.inc"
+resource_proof = "config/font_resource.json"
+resource_decision = "config/reviewed_font_resource.json"
+bitmap_sha256 = "d78a4cc412d893f6f734c970145188e49b5b15319ba5a4ca2b5ef5dcf8e8d2d5"
+origin = "inferred-original-register-assembly"
+global_authored_credit = "unreviewed"
+code_bytes = 75
+alignment_bytes = 1
+initialized_message_bytes = 109
+external_resource_bytes = 8192
+public_start = 0x100
+
+[negative]
+find = "FONT_ROWS_PER_GLYPH equ 16"
+replace = "FONT_ROWS_PER_GLYPH equ 15"

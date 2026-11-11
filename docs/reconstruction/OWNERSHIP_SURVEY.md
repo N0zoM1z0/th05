@@ -212,6 +212,8 @@ The inner table stores its own runtime starts, not outer-file offsets. Add
 records inner size `4551`, usage length `108`, and timestamp `2579AF64`; its
 initial jump reaches outer offset `4680` exactly.
 
+The `-G` 8,377-byte embedded member has now also been reconstructed from [complete semantic COM source](../../src/zun/gaiji/README.md) and two independent native TASM/TLINK producers. Its 75 instruction bytes, one original linker alignment byte, 109 message bytes, and separately reviewed 8,192 bitmap bytes remain distinct. Glyph bytes are generated only inside private replay builds. The IDA-generated reference is not evidence of literal historical source authorship, and no outer-launcher code is claimed.
+
 Three complete embedded payload MD5s agree with the reference ASM's original
 input identity, strengthening those source-routing links:
 

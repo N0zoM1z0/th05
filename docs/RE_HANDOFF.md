@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**ZUN `-G` gaiji child accepted:** Complete **8,377-byte** embedded COM, including **75 instruction bytes**, **1 linker-alignment byte**, **109 semantic message bytes**, and **8,192 separately reviewed font-resource bytes**. The exact bitmap is expanded only inside private `.analysis` from a pinned reference image, never copied into public source. Focused TASM/TLINK proof and compiled negative in [ZUN gaiji installer](../src/zun/gaiji/README.md); no global authored credit inferred.
+
 **ZUN `-I` interrupt child accepted:** One complete **1,009-byte** standalone COM reconstruction, containing **452 compared CODE bytes** (2 uncredited NOPs) and **557 initialized signature/message bytes**. See [interrupt guard](../src/zun/interrupt/README.md) and `config/zun_interrupt_acceptance.json`. Historical source-origin and global authored-code credit remain separately unresolved.
 
 **ZUN resident entry still open:** The 269-byte complete `main()` now has genuine 269-byte alternate C++ producers, but every linked candidate still differs in 183 branch/code bytes. The full failure evidence and safe next step are in [resident entry notes](../src/zun/resident/initialize.md); no new acceptance is claimed.
