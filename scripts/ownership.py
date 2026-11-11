@@ -502,6 +502,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_main_c0_data import reviewed_claims as reviewed_c0_data
             c0_data_claims, c0_data_review_sha = reviewed_c0_data(
                 root, view=view, verify_targets=verify_targets)
+            # Seven original Master machine/palette/buffered-file procedures,
+            # including the full 342-byte hardware detector.
+            from review_master_machine import reviewed_claims as machine_master_claims
+            machine_master, machine_master_sha = machine_master_claims(
+                root, view=view, verify_targets=verify_targets)
             # Five further actual MAIN CL.LIB CODE objects bind against
             # the independently observed original DGROUP/BSS/string frames.
             from review_main_shifted_vendor import reviewed_claims as shifted_main_claims
@@ -537,7 +542,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + master_claims + reserved_claims + env_claims +
                                     c0_data_claims + shifted_main + super_claims +
-                                    super_helper_ranges + bgm_claims + grcg_claims + io_claims)
+                                    super_helper_ranges + bgm_claims + grcg_claims +
+                                    io_claims + machine_master)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -665,6 +671,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_grcg_review_sha256"] = grcg_review_sha
         if name == "main" and io_review_sha:
             views[name]["master_io_review_sha256"] = io_review_sha
+        if name == "main" and machine_master_sha:
+            views[name]["master_machine_review_sha256"] = machine_master_sha
         if name == "main" and c0_data_review_sha:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":
