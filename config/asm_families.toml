@@ -2118,3 +2118,55 @@ semantic_inputs = ["src/main/ems/ems.hpp"]
 [units.negative]
 find = "mov cx, CDG_COPY_STRUCT_DWORDS"
 replace = "mov cx, (CDG_COPY_STRUCT_DWORDS - 1)"
+
+[[units]]
+id = "op-cdg-free-all"
+artifact = "op"
+source = "src/main/formats/cdg_free_all.asm"
+types = "src/main/formats/cdg_free_all_types.inc"
+symbols = "probes/units/cdg_free_all_symbols.inc"
+bindings = "probes/units/op_cdg_free_all_asm_bindings.asm"
+notes = "src/main/formats/cdg_free_all_op_maine.md"
+target_start = 0xe2ca
+size = 14
+segment = "SHARED"
+group = "(none)"
+cs_base = 0xd300
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "4d216ac44b871e088e241bca15998e7a75a95a301e7c18b4b32a66d7f862e1f6"
+target_scope_sha256 = "6c5820dfe20f29f30bad5eecb964e1e954101b842d7772457962ec1b0bda44b6"
+semantic_inputs = ["src/main/ems/ems.hpp"]
+[units.publics]
+"CDG_FREE_ALL" = 0
+"cdg_free_all_end" = 14
+[units.negative]
+find = "mov si, CDG_SLOT_COUNT - 1"
+replace = "mov si, CDG_SLOT_COUNT - 2"
+
+[[units]]
+id = "maine-cdg-free-all"
+artifact = "maine"
+source = "src/main/formats/cdg_free_all.asm"
+types = "src/main/formats/cdg_free_all_types.inc"
+symbols = "probes/units/cdg_free_all_symbols.inc"
+bindings = "probes/units/maine_cdg_free_all_asm_bindings.asm"
+notes = "src/main/formats/cdg_free_all_op_maine.md"
+target_start = 0xf3f4
+size = 14
+segment = "SHARED"
+group = "(none)"
+cs_base = 0xe800
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "6fe9ac79a77354f2b3d896999bc386c5908c53bce9cbb9ad90cb7d8206df3237"
+target_scope_sha256 = "6c5820dfe20f29f30bad5eecb964e1e954101b842d7772457962ec1b0bda44b6"
+semantic_inputs = ["src/main/ems/ems.hpp"]
+[units.publics]
+"CDG_FREE_ALL" = 0
+"cdg_free_all_end" = 14
+[units.negative]
+find = "mov si, CDG_SLOT_COUNT - 1"
+replace = "mov si, CDG_SLOT_COUNT - 2"

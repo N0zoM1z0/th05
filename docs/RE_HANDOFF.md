@@ -14,6 +14,18 @@ hardware function. Together with accepted 88+56 predecessors, 218 bytes
 at `[13A3E,13B18)` have complete independent exact ownership. The
 456-byte dialog opcode remains unaccepted. See [dialog graphics](../src/main/dialog/runtime.md).
 
+The complete **14-byte CDG_FREE_ALL far-Pascal bank release** now also
+passes exact reviewed original-register ASM in OP `E2CA..E2D8` and MAINE
+`F3F4..F402`. Two fresh TASM32/TLINK rounds each match every byte and the
+original empty MZ relocation list; original 64→63 slot mutations are
+rejected. The OP test-only MZ stack-validity problem was fixed by declaring
+the real foreign CDG bank DS3A96 as *uninitialized* source-free DATA, with no
+code or data byte authored. With earlier MAIN coverage, both complete CDG
+loader and CDG_FREE_ALL scopes are now independently accepted across all
+three binaries, adding **28 new authored ASM bytes** in OP/MAINE. See
+[CDG bank release](../src/main/formats/cdg_free_all_op_maine.md) and the
+`.analysis/gpt-web-{op,maine}-cdg-free-all-14-{b,a}/receipt.json` receipts.
+
 The same complete **342-byte CDG loader/reader/free ASM source** now passes
 strict original-byte and relocation replay in OP `E174..E2CA` and MAINE
 `F29E..F3F4`, each independently with two fresh TASM/TLINK producers and a
