@@ -3734,6 +3734,28 @@ find = "\"st06.mpn\""
 replace = "\"st07.mpn\""
 
 [[units]]
+id = "main-pause-clear-text-c"
+source = "src/main/resources/pause_spaces.c"
+module = "th05/pausdat.c"
+segment = "_DATA"
+wrapper_options = "-zCPAUSE_TEXT -zPmain_01"
+bindings_source = "probes/units/main_pause_spaces_bindings.asm"
+target_start = 134109
+size = 15
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-pause-clear-text-c"
+source = "src/main/resources/pause_spaces.c"
+find = "#define PAUSE_BLANK \"    \""
+replace = "#define PAUSE_BLANK \"   !\""
+
+[[units]]
 id = "main-session-files-c"
 source = "src/main/resources/session_files.c"
 module = "th05/sessfns.c"
