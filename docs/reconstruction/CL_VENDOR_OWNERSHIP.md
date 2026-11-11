@@ -147,3 +147,25 @@ unchanged. The source-current review requires no native compilation:
 python3 scripts/review_main_setenvp.py --structural-check
 python3 scripts/review_main_setenvp.py --check
 ```
+
+## Original complete C0L CRT initialized DATA
+
+MAIN's entire `C0L.OBJ` `_DATA` SEGDEF at `[209D0,20A60)` is now
+[separately source-reviewed](../../config/main_c0_data_ownership.json) from
+the pinned authentic Borland CRT object. Its eight original LEDATA/LIDATA
+records produce all **144 initialized DATA bytes**. An original OMF FIXUPP
+at DATA-relative `+82` binds the single unlinked zero word to `_BSSEND`;
+the original startup independently establishes offset `C734h`, while the
+calibration's genuine CRT layout uses `C748h`. This produces complete
+144/144 native bytes in both contexts without copied target data.
+
+The [explicit adoption](../../config/reviewed_main_c0_data.json) classifies
+only **144 vendor initialized DATA bytes**, zero instructions and zero
+game-authored bytes. The 14 preceding bytes `[209C2,209D0)` and 34 following
+`[20A60,20A82)` remain `unknown`; neither is included in this proof. The
+previous CL.LIB CODE owners, C0 startup, and other DATA decisions are unchanged.
+
+```sh
+python3 scripts/review_main_c0_data.py --structural-check
+python3 scripts/review_main_c0_data.py --check
+```

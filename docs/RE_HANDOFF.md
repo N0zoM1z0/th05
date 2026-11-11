@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**MAIN C0L CRT initialized DATA source-exact:** The full original **144-byte** Borland `_DATA` at `209D0..20A60` is now reconstructed from its actual LEDATA/LIDATA and `_BSSEND` fixup, using the original `C734h` vs calibration `C748h` CRT linker contexts. It is verified **vendor DATA, zero instruction/authored credit**. The surrounding 14- and 34-byte original gaps remain unknown. See [C0L source proof](reconstruction/CL_VENDOR_OWNERSHIP.md).
+
 **MAIN `setenvp` last large CODE gap resolved:** The complete **88-byte** original CL.LIB CODE source at `A6E4..A73C` is now verified using its genuine ten OMF FIXUPP records and original/calibration DGROUP placements (`2564` versus `2576`), including the actual FAR CALL/FAR JMP linker rewrites. `_DATA`/`_INIT_` remain unknown and no game-authored code is credited. See [vendor proof](reconstruction/CL_VENDOR_OWNERSHIP.md).
 
 **MAIN large `exec` / `farheap` vendor OMF records reviewed:** Complete original 933-byte `exec` and 1,115-byte `farheap` CODE segment ranges were reconstructed from pinned CL.LIB LIDATA/LEDATA, all FIXUPP and true linker context. **2,040 bytes of actual object-written vendor CODE-segment material** have explicit ownership; the two original `CS:` runtime state gaps (**2 + 6 bytes**) remain *unknown*, with no invented source bytes, no game-authored credit and no full cold replay. See [large vendor review](reconstruction/CL_VENDOR_OWNERSHIP.md) and `scripts/review_vendor_reserved.py`.

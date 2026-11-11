@@ -488,7 +488,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_main_setenvp import reviewed_claims as reviewed_setenvp
             env_claims, env_review_sha = reviewed_setenvp(
                 root, view=view, verify_targets=verify_targets)
-            pieces = overlay_vendor(view["size"], pieces, claims + master_claims + reserved_claims + env_claims)
+            # The original C0L CRT also supplies exactly 144 initialized DATA
+            # bytes, including its genuine _BSSEND linker word. These are
+            # vendor DATA, not executable bytes or guessed zero-filled BSS.
+            from review_main_c0_data import reviewed_claims as reviewed_c0_data
+            c0_data_claims, c0_data_review_sha = reviewed_c0_data(
+                root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces,
+                                    claims + master_claims + reserved_claims + env_claims + c0_data_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -539,6 +546,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["reserved_vendor_review_sha256"] = reserved_review_sha
         if name == "main" and env_review_sha:
             views[name]["setenvp_vendor_review_sha256"] = env_review_sha
+        if name == "main" and c0_data_review_sha:
+            views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":
             views[name]["runtime_vendor_review_sha256"] = runtime_sha
         if strings_sha and name == "main":
