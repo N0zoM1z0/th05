@@ -511,9 +511,15 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_master_bgm import reviewed_claims as master_bgm_claims
             bgm_claims, bgm_review_sha = master_bgm_claims(
                 root, view=view, verify_targets=verify_targets)
+            # Large Master GRCG clipping and primitive line/polygon drawing
+            # are proven from original ASM plus complete OMF FIXUPP contexts.
+            from review_master_grcg import reviewed_claims as master_grcg_claims
+            grcg_claims, grcg_review_sha = master_grcg_claims(
+                root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + master_claims + reserved_claims + env_claims +
-                                    c0_data_claims + shifted_main + super_claims + bgm_claims)
+                                    c0_data_claims + shifted_main + super_claims +
+                                    bgm_claims + grcg_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -606,6 +612,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_super_review_sha256"] = super_review_sha
         if name == "main" and bgm_review_sha:
             views[name]["master_bgm_review_sha256"] = bgm_review_sha
+        if name == "main" and grcg_review_sha:
+            views[name]["master_grcg_review_sha256"] = grcg_review_sha
         if name == "main" and c0_data_review_sha:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":
