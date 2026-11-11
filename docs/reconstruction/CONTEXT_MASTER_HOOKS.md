@@ -159,10 +159,10 @@ image bytes are kept in the existing Master-hook evidence.
 
 ## Original OP residency-palette and large masked trapezoid functions
 
-Four more **complete functions**, totaling **436 originally unknown CODE
+Four **complete source-backed functions**, totaling **418 CODE
 bytes**, are now source-backed in OP: `RESPAL_EXIST` (`2ADC..2B18`, 60 B),
 `RESPAL_CREATE` (`2B18..2B8E`, 118 B), `RESPAL_FREE` (`2B8E..2BAC`, 30 B),
-and `draw_trapezoid` (`2BD6..2CBA`, **228 B**). The trapezoid rasterizer is
+and `draw_trapezoid` (`2BD6..2CA8`, **210 B**). The trapezoid rasterizer is
 the original `KOIZOID.ASM` procedure, including the self-modifying drawing
 registers and full horizontal clipping/masking; the native GAME>=3 branch
 uses `trapezoid_hmask` in place of the original solid-plane word. The
@@ -179,16 +179,14 @@ TASM source** and matches the target under the actual linker; it is neither
 invented padding nor newly authored game logic. All source/procedure
 comparisons are complete and every transformed original line is constrained.
 
-The original complete bounds are supplied by MAP publics. The actual TASM
+The original complete source bounds are supplied by the TASM procedure and instruction stream; the `draw_trapezoid` private `RET` ends at `2CA8`, before the separate `SOUND_JOY`. The actual TASM
 OMF records 2, 2, 2 and **26 ordered fixup actions** respectively; they and
-all 436 native bytes match the original OP decoded MZ. These four scopes are
-unique in the original target. The two neighboring GAME-specific joystick
-functions `JS_START` (`2BAC..2BD6`, 42 B) and `JS_SENSE` (`2CBA..2CD0`,
-22 B) **remain unknown**: their source differs more substantially from the
-published original Master platform handlers. This review does not claim
-either complete joystick function, any mutable DATA or new game-authored
-C++/ASM credit. The shared evidence/decision now encompass **102 source
-scopes / 7,276 third-party CODE bytes** in OP and MAINE combined.
+all 418 native bytes match the original OP decoded MZ. These four source scopes are
+unique in the original target. The adjacent OP `JS_START`, `SOUND_JOY`,
+`JS_SENSE` and `SAJOUT` are now independently represented by reviewed ASM
+source with true native function boundaries. They do not overlap any
+`draw_trapezoid` source-owned byte. The Master vendor review does not claim
+those separate joystick source scopes, writable DATA or a new C++ owner.
 
 ## OP graphics / machine helpers and MAINE integer-square-root core
 
@@ -296,7 +294,7 @@ has **no CODE LEDATA and no FIXUPP there**. They lie after the real source
 `RET` and outside the complete source-written procedures. The review
 explicitly asserts their absence from both target/source claims rather than
 adopting or padding them. The existing verifier and adoption evidence now
-cover **131 source CODE scopes and 8,912 original third-party bytes** in OP
+cover **131 source CODE scopes and 8,894 original third-party bytes** in OP
 and MAINE combined, including **142 newly confirmed bytes** here.
 
 ## Text-screen mode helpers and MAINE graphics hide
@@ -309,5 +307,17 @@ All eight independent author ASM procedure bodies match the actual retained
 TASM source; full CODE LEDATA and original MZ bytes match, with no OMF or
 segment fixups. The private OP `putcmd` and its four-byte unowned tail remain
 as separately reviewed. The existing Master review now covers **139 source
-scopes / 8,968 bytes** in OP/MAINE. These are vendor CODE, not game-authored
+scopes / 8,950 bytes** in OP/MAINE. These are vendor CODE, not game-authored
 C++ or new gameplay behavior.
+
+## Correct KOIZOID boundary and separately reconstructed joystick input
+
+The real `draw_trapezoid` source body ends with `RET` at OP `2CA7`, so its
+complete authored CODE interval is **`2BD6..2CA8` (210 bytes)**. The prior
+228-byte review incorrectly included the following `SOUND_JOY` routine.
+OP `SOUND_JOY` occupies its **own** 18-byte source interval `2CA8..2CBA`,
+including one alignment NOP, now supplied by a separately replayed maintained
+ASM file. This correction reduces the reviewed Master-hook total by 18 and
+resolves an overlapping CODE owner; it does not reduce the original target.
+The adjacent joystick sense/SAJOUT is also reconstructed independently and
+its trailing zero remains unknown.

@@ -142,7 +142,7 @@ SCOPES = (
     ('RESPAL_FREE', 'libs/master.lib/respal_free.asm', 'RSPFREE.ASM',
      {'op': (0x2b8e, 30)}, 'respal-game5-port'),
     ('draw_trapezoid', 'libs/master.lib/draw_trapezoid.asm', 'KOIZOID.ASM',
-     {'op': (0x2bd6, 228)}, 'koizoid-game5-mask-port'),
+     {'op': (0x2bd6, 210)}, 'koizoid-game5-mask-port'),
     # Previously unknown OP display / machine functions and MAINE private
     # integer square-root helpers. All are complete source-written PROCs;
     # leave the following __AHINCR vendor startup and unrelated DATA unowned.
@@ -426,7 +426,7 @@ def game5_trapezoid_derived(author, native):
         else:
             expected.append(line)
     need(expected==actual,
-         'native 228-byte KOIZOID drawing source changed beyond namespaced fields and true GAME>=3 horizontal mask')
+         'native 210-byte KOIZOID drawing source changed beyond namespaced fields and true GAME>=3 horizontal mask')
 
 
 def private_master_display_derived(author, compiled, name):

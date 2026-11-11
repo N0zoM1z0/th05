@@ -920,6 +920,87 @@ size = 1
 kind = "alignment"
 
 [[units]]
+id = "op-sound-joy"
+artifact = "op"
+source = "src/op/joystick/sound_joy.asm"
+types = "src/op/joystick/js_start_types.inc"
+symbols = "src/op/joystick/sound_joy_symbols.inc"
+bindings = "probes/units/op_sound_joy_bindings.asm"
+notes = "src/op/joystick/sound_joy.md"
+target_start = 0x2CA8
+size = 18
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "5a76e927d98a385a8e94658e96bb2c6d128949601977dc8f4fea6b9e823dc753"
+target_scope_sha256 = "5a5e0d67865cdaa503220a27f5a29b0049aa27d19fc32eec2a48dffe6032b1fc"
+semantic_inputs = []
+[units.publics]
+"SOUND_JOY" = 0
+[units.negative]
+find = "mov al, JOY_PSG_INPUT_REGISTER"
+replace = "mov al, (JOY_PSG_INPUT_REGISTER - 1)"
+[[units.uncredited]]
+offset = 17
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "op-joystick-sense"
+artifact = "op"
+source = "src/shared/joystick/sense.asm"
+types = "src/shared/joystick/sense_types.inc"
+symbols = "src/shared/joystick/sense_symbols.inc"
+bindings = "probes/units/op_js_sense_bindings.asm"
+notes = "src/shared/joystick/sense.md"
+target_start = 0x2CBA
+size = 21
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "3c47741dd025cab633ecdef6258f5732e42331080445fd8880a87f0a20a28106"
+target_scope_sha256 = "1cd8b7987ff440a4cefa645ae52aa75f0cb2f084dde9620485cc9966f37d6d5b"
+semantic_inputs = []
+[units.publics]
+"JS_SENSE" = 0
+"SAJOUT" = 12
+[units.negative]
+find = "and ax, JOY_BUTTON_DIRECTION_BITS"
+replace = "and ax, (JOY_BUTTON_DIRECTION_BITS - 1)"
+
+[[units]]
+id = "maine-joystick-sense"
+artifact = "maine"
+source = "src/shared/joystick/sense.asm"
+types = "src/shared/joystick/sense_types.inc"
+symbols = "src/shared/joystick/sense_symbols.inc"
+bindings = "probes/units/maine_js_sense_bindings.asm"
+notes = "src/shared/joystick/sense.md"
+target_start = 0x2E82
+size = 21
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "edfc16bdf33686807d866a54132679d25456e3901337d0f090811bfc99528d2f"
+target_scope_sha256 = "1cd8b7987ff440a4cefa645ae52aa75f0cb2f084dde9620485cc9966f37d6d5b"
+semantic_inputs = []
+[units.publics]
+"JS_SENSE" = 0
+"SAJOUT" = 12
+[units.negative]
+find = "and ax, JOY_BUTTON_DIRECTION_BITS"
+replace = "and ax, (JOY_BUTTON_DIRECTION_BITS - 1)"
+
+[[units]]
 id = "main-mpn-loader"
 artifact = "main"
 source = "src/main/formats/mpn_loader.asm"
