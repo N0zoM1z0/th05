@@ -513,8 +513,8 @@ bindings_source = "probes/units/stage_setup_bindings.asm"
 [[controls]]
 unit = "main-stage-setup"
 source = "src/main/stage/setup.cpp"
-find = "midboss.frames_until = 2500;"
-replace = "midboss.frames_until = 2501;"
+find = "midboss.frames_until = STAGE1_MIDBOSS_TRIGGER_FRAME;"
+replace = "midboss.frames_until = (STAGE1_MIDBOSS_TRIGGER_FRAME + 1);"
 
 [[units]]
 id = "main-cheeto-update"

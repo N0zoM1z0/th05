@@ -121,3 +121,32 @@ complete bytes and the original relocation order. Linker relaxation NOPs at
 relative1153 and1173 are checked padding with zero authored credit, leaving
 1508 authored CODE bytes. Two fresh producers and the owner mutation pass;
 no maintained compiler inputs changed. The prior receipt remains archived.
+
+## Seven stage event clocks and rank-dependent Yumeko initial state
+
+The complete ten-function stage setup family now explicitly names the seven
+original midboss trigger times (2500, 2750, 5750, 3900, 4800, 30000,
+5800 frames) and their original 1000/1400/1400/1100/1550/3000 HP settings.
+Stage six deliberately has no midboss callback and uses the long 30,000-frame
+inactive timer, not a new late midboss spawn. Stage one still begins at its
+original playable-coordinate center while the later stages use their actual
+16-subpixel/motion entry vectors; no time or HP value has been changed.
+
+The Stage 5 setup still writes precisely the two original rank-dependent
+values in `boss_statebyte[0]` and `[1]`. These belong to the original Yumeko
+attack clock setup, not a new persistent object. The first delay is
+20/10/6/6 across difficulty levels, the second 48/32/24/24. Their near code
+still calls the genuine far Pascal `select_for_rank()` with the original four
+signed-word arguments and original ordered relocations, not copied macro
+bytes. The other stage setups retain their own distinct original music,
+boss-resource, hitbox and sprites.
+
+Both affected complete units were rebuilt together using independent native
+Borland/TLINK producers: `main-stage-setup` (1510 bytes, ten complete functions
+and original 30 ordered MZ relocations) and `main-stage-setup-data` (189 bytes,
+original resource filename initialized DATA). All **1699/1699 bounded original
+bytes** match; the compiled negative changes Stage 1's actual trigger frame
+2500→2501 and is rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-stage-seven-setup-clock-20261111/receipt.json`.
+These are semantic refinements of already accepted source, not additional
+CODE/DATA coverage or an unrelated cold replay.

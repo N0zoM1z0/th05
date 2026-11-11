@@ -7,6 +7,34 @@
 #pragma option -zCmain_01_TEXT -zPmain_01 -d-
 #include "src/main/stage/setup.hpp"
 
+// Original stage scheduling / Boss HP protocol: seven distinct stage
+// initializers share the same 22-byte midboss and 24-byte Boss structures.
+// These values are not stage numbers or guessed gameplay tuning; they are
+// the exact per-stage event trigger and original HP boundaries.
+static const unsigned int STAGE1_MIDBOSS_TRIGGER_FRAME = 2500;
+static const unsigned int STAGE2_MIDBOSS_TRIGGER_FRAME = 2750;
+static const unsigned int STAGE3_MIDBOSS_TRIGGER_FRAME = 5750;
+static const unsigned int STAGE4_MIDBOSS_TRIGGER_FRAME = 3900;
+static const unsigned int STAGE5_MIDBOSS_TRIGGER_FRAME = 4800;
+static const unsigned int STAGE6_MIDBOSS_DISABLED_FRAMES = 30000;
+static const unsigned int STAGEX_MIDBOSS_TRIGGER_FRAME = 5800;
+static const int STAGE1_MIDBOSS_INITIAL_HP = 1000;
+static const int STAGE2_MIDBOSS_INITIAL_HP = 1400;
+static const int STAGE3_MIDBOSS_INITIAL_HP = 1400;
+static const int STAGE4_MIDBOSS_INITIAL_HP = 1100;
+static const int STAGE5_MIDBOSS_INITIAL_HP = 1550;
+static const int STAGEX_MIDBOSS_INITIAL_HP = 3000;
+// Stage 5's first two bytes of Boss scratch are rank-adjusted attack
+// delays, not separate per-Boss mutable variables.
+static const int STAGE5_RANK_BASE_EASY = 20;
+static const int STAGE5_RANK_BASE_NORMAL = 10;
+static const int STAGE5_RANK_BASE_HARD = 6;
+static const int STAGE5_RANK_BASE_LUNATIC = 6;
+static const int STAGE5_RANK_REPEAT_EASY = 48;
+static const int STAGE5_RANK_REPEAT_NORMAL = 32;
+static const int STAGE5_RANK_REPEAT_HARD = 24;
+static const int STAGE5_RANK_REPEAT_LUNATIC = 24;
+
 bool boss_phase_timed_out = false;
 
 void near boss_reset(void)
@@ -50,11 +78,11 @@ void pascal near stage1_setup(void)
 {
 	midboss_update_func = midboss1_update;
 	midboss_render_func = midboss1_render;
-	midboss.frames_until = 2500;
+	midboss.frames_until = STAGE1_MIDBOSS_TRIGGER_FRAME;
 	STAGE_POINT_SET(midboss.pos. cur, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 6) / 23));
 	STAGE_POINT_SET(midboss.pos.prev, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 6) / 23));
 	STAGE_POINT_SET(midboss.pos.velocity, 0, 0);
-	midboss.hp = 1000;
+	midboss.hp = STAGE1_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 200;
 
 	boss_reset();
@@ -81,10 +109,10 @@ void pascal near stage2_setup(void)
 {
 	midboss_update_func = midboss2_update;
 	midboss_render_func = midboss2_render;
-	midboss.frames_until = 2750;
+	midboss.frames_until = STAGE2_MIDBOSS_TRIGGER_FRAME;
 	STAGE_MOTION_INIT(midboss.pos, 192, -32);
 	STAGE_POINT_SET(midboss.pos.velocity, 0.0f, 0.5f);
-	midboss.hp = 1400;
+	midboss.hp = STAGE2_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 202;
 
 	boss_reset();
@@ -108,10 +136,10 @@ void pascal near stage3_setup(void)
 {
 	midboss_update_func = midboss3_update;
 	midboss_render_func = midboss3_render;
-	midboss.frames_until = 5750;
+	midboss.frames_until = STAGE3_MIDBOSS_TRIGGER_FRAME;
 	STAGE_MOTION_INIT(midboss.pos, 192, -32);
 	STAGE_POINT_SET(midboss.pos.velocity, 0.0f, 0.5f);
-	midboss.hp = 1400;
+	midboss.hp = STAGE3_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 208;
 
 	boss_reset();
@@ -138,10 +166,10 @@ void pascal near stage4_setup(void)
 {
 	midboss_update_func = midboss4_update;
 	midboss_render_func = midboss4_render;
-	midboss.frames_until = 3900;
+	midboss.frames_until = STAGE4_MIDBOSS_TRIGGER_FRAME;
 	STAGE_MOTION_INIT(midboss.pos, 192, -32);
 	STAGE_POINT_SET(midboss.pos.velocity, 0.0f, 0.5f);
-	midboss.hp = 1100;
+	midboss.hp = STAGE4_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 208;
 
 	boss_reset();
@@ -167,10 +195,10 @@ void pascal near stage5_setup(void)
 {
 	midboss_update_func = midboss5_update;
 	midboss_render_func = midboss5_render;
-	midboss.frames_until = 4800;
+	midboss.frames_until = STAGE5_MIDBOSS_TRIGGER_FRAME;
 	STAGE_MOTION_INIT(midboss.pos, 192, -32);
 	STAGE_POINT_SET(midboss.pos.velocity, 0.0f, 0.5f);
-	midboss.hp = 1550;
+	midboss.hp = STAGE5_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 212;
 
 	boss_reset();
@@ -187,8 +215,8 @@ void pascal near stage5_setup(void)
 	cdg_load_all_noalpha(CDG_BG_BOSS, "st04bk.cdg");
 	bb_boss_load("st04.bb");
 
-	boss_statebyte[0] = select_for_rank(20, 10, 6, 6);
-	boss_statebyte[1] = select_for_rank(48, 32, 24, 24);
+	boss_statebyte[0] = select_for_rank(STAGE5_RANK_BASE_EASY, STAGE5_RANK_BASE_NORMAL, STAGE5_RANK_BASE_HARD, STAGE5_RANK_BASE_LUNATIC);
+	boss_statebyte[1] = select_for_rank(STAGE5_RANK_REPEAT_EASY, STAGE5_RANK_REPEAT_NORMAL, STAGE5_RANK_REPEAT_HARD, STAGE5_RANK_REPEAT_LUNATIC);
 
 	stage_render = nullfunc_near;
 	stage_invalidate = nullfunc_near;
@@ -198,7 +226,7 @@ void pascal near stage6_setup(void)
 {
 	midboss_update_func = nullfunc_far;
 	midboss_render_func = nullfunc_near;
-	midboss.frames_until = 30000;
+	midboss.frames_until = STAGE6_MIDBOSS_DISABLED_FRAMES;
 
 	boss_reset();
 	STAGE_MOTION_INIT(boss.pos, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 4) / 23));
@@ -221,10 +249,10 @@ void pascal near stagex_setup(void)
 {
 	midboss_update_func = midbossx_update;
 	midboss_render_func = midbossx_render;
-	midboss.frames_until = 5800;
+	midboss.frames_until = STAGEX_MIDBOSS_TRIGGER_FRAME;
 	STAGE_MOTION_INIT(midboss.pos, 192, -16);
 	midboss.angle = +0x40;
-	midboss.hp = 3000;
+	midboss.hp = STAGEX_MIDBOSS_INITIAL_HP;
 	midboss.sprite = 220;
 
 	boss_reset();
