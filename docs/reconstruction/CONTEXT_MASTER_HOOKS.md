@@ -1,10 +1,13 @@
 # OP/MAINE: original Master-derived display and archive hooks
 
-Ten complete original CODE procedures are now independently verified from
-maintained assembler source and the real pinned native TASM objects: **1,624
-previously unknown bytes**, 812 in each decoded executable. The two biggest
-whole functions, `PFOPEN` (296 bytes in each) and `PFSTART` (160 bytes in each),
-use TH05's original GAME=5 optimized archive-header code path.
+Ten complete procedures and two additional source-written parts of each
+original `PFEND` routine are independently verified against actual native
+TASM objects: **2,436 previously unknown CODE bytes**, 1,218 in each decoded
+executable. The complete `PFEND` function spans 408 bytes per target, but
+only 406 bytes per target are physically emitted by source LEDATA. The
+remaining two bytes per target are runtime-writable and stay unknown. The
+full `PFOPEN` (296 bytes per target) and `PFSTART` (160 bytes per target)
+use TH05's original GAME=5 optimized archive-header path.
 
 | Complete source procedure | OP decoded extent | MAINE decoded extent | Bytes per target |
 | --- | --- | --- | ---: |
@@ -13,6 +16,9 @@ use TH05's original GAME=5 optimized archive-header code path.
 | `GRAPH_GAIJI_PUTC` | `371E..37B8` | `38E6..3980` | 154 |
 | `PFSTART` | `37B8..3858` | `3980..3A20` | 160 |
 | `PFOPEN` | `39F0..3B18` | `3BB8..3CE0` | 296 |
+| `PFEND` source head | `3858..38F4` | `3A20..3ABC` | 156 |
+| `PFEND` runtime slot (*unknown*) | `38F4..38F6` | `3ABC..3ABE` | 0 credited (2 physical) |
+| `PFEND` source tail | `38F6..39F0` | `3ABE..3BB8` | 250 |
 
 The original Master 0.23 author archive independently identifies the source
 ancestry: `B_SP_SND.ASM`, `GRPGPUTS.ASM`, `GRPGJPUT.ASM`, `PFINT21.ASM` and
@@ -22,24 +28,33 @@ to be verbatim**: the GAME≥4 port changes the original gaiji-coordinate
 `ADC` to `ADD`. The archive functions are even more substantially adapted:
 GAME=5 uses a preloaded archive header and 32-bit offsets. Their source and
 foreign interface change is recorded explicitly, not normalized away. All
-five complete functions remain Master-derived third-party code, **zero new
-game-authored C++ or ASM credit**.
+five complete functions and PFEND's source-written ranges remain
+Master-derived third-party code, **zero new game-authored C++ or ASM credit**.
 
 The independently retained `th05_op.asm` and `th05_maine_master.asm` TASM
 objects are actual compiler/assembler producers. Their `_TEXT` LEDATA covers
 every credited byte exactly once; the actual OMF FIXUPP actions are resolved
 using the original `_TEXT`, DGROUP and `_BSS` MAP context. The complete raw
 bytes match *both* calibration and original decoded OP/MAINE images, preserving
-the original ordered MZ relocation stream. These ten scopes have 36 total
-original OMF offset16 actions, and no original MZ segment relocation sites.
-Each complete target extent is unique in its own decoded artifact. Nothing is
-inferred from adjacent matches or stripped from the comparison.
+the original ordered MZ relocation stream. The ten original complete-function scopes have 36 total OMF fixup actions;
+the two `PFEND` procedures add 84 more across their four source-written
+intervals, for 120 actions in all. Each `PFEND` source head has one original
+segment relocation at relative +75; the real ordered MZ relocation sites are
+compared, not sorted or masked. Each adopted byte interval is unique in its
+decoded original artifact. Nothing is inferred from adjacent matches or
+stripped from the comparison.
 
 The neighboring `GRAPH_PACK_PUT_8_NOCLIP` has unresolved original author
 provenance; its raw match alone does not establish this Master source lane.
-Likewise `PFEND` contains actual missing CODE LEDATA/runtimely written state
-and is not counted as one source-written procedure. Those spans remain unknown
-until their source extent and individual runtime slots can be reviewed.
+The full `PFEND` procedures have separately proven native PUBLIC start/end
+boundaries (`3858..39F0` OP, `3A20..3BB8` MAINE). Their exact ordinary CODE
+LEDATA covers relative `[0,156)` and `[158,408)` once each, but **does not
+write `[156,158)`**. Those two bytes are zero in both original and calibration,
+and have no source LEDATA. They remain unowned, not classified as instructions,
+not padded, and not filled in by comparing adjacent bytes. The 406 written
+bytes per function are adopted under two explicitly separate source roles.
+The neighboring `GRAPH_PACK_PUT_8_NOCLIP` remains unclassified because native
+raw-byte equality does not establish its historical source owner.
 
 The source/linked evidence is
 [`config/context_master_hooks.json`](../../config/context_master_hooks.json),
@@ -47,7 +62,7 @@ with explicit adoption in
 [`config/reviewed_context_master_hooks.json`](../../config/reviewed_context_master_hooks.json).
 Run `python3 scripts/review_context_master_hooks.py --check` for the focused
 native original/OMF/relocation checks. Public CI runs only the structural
-source-identity/ledger check. A bounded tool-negative review rejected a
-missing function, a clipped function, an invented relocation, altered author
-provenance and false authored credit. No whole-game cold replay or accepted
+source-identity/ledger check. Bounded proof negatives reject missing/clipped functions, an invented
+relocation, altered author provenance, modified runtime slot limits, and false
+authored credit. No whole-game cold replay or accepted
 unrelated C++ unit rebuilding was performed.
