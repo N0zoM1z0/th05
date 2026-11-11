@@ -505,6 +505,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_master_super import reviewed_claims as master_super_claims
             super_claims, super_review_sha = master_super_claims(
                 root, view=view, verify_targets=verify_targets)
+            # The original PROC/ENDP source also proves separate rectangle
+            # renderers, SUPERPUT dispatchers and complete auxiliary routines.
+            from review_master_super_helpers import reviewed_claims as super_helper_claims
+            super_helper_ranges, super_helper_sha = super_helper_claims(
+                root, view=view, verify_targets=verify_targets)
             # Nine complete original Master music-driver procedures, including
             # BGM_INIT and BGM_PLAY, also link through genuine near/segment
             # OMF fixups and the native CRT layout, not copied target code.
@@ -524,7 +529,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + master_claims + reserved_claims + env_claims +
                                     c0_data_claims + shifted_main + super_claims +
-                                    bgm_claims + grcg_claims + io_claims)
+                                    super_helper_ranges + bgm_claims + grcg_claims + io_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -615,6 +620,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["shifted_vendor_review_sha256"] = shifted_main_sha
         if name == "main" and super_review_sha:
             views[name]["master_super_review_sha256"] = super_review_sha
+        if name == "main" and super_helper_sha:
+            views[name]["master_super_helpers_review_sha256"] = super_helper_sha
         if name == "main" and bgm_review_sha:
             views[name]["master_bgm_review_sha256"] = bgm_review_sha
         if name == "main" and grcg_review_sha:

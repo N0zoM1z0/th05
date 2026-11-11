@@ -79,3 +79,36 @@ This is **source-backed third-party CODE ownership**, not authored game
 code, not all instruction bytes (a CODE segment can include live data),
 and not a full-game or packed-file reconstruction. The 98% authored-code
 goal and its denominator are unchanged.
+
+
+## Additional source-exact helper procedures
+
+The separate [SUPER helper source review](../../scripts/review_master_super_helpers.py)
+recovers **12 further complete original Master procedures (650 bytes)**,
+bringing the now source-verified SUPER total to **3,218 CODE bytes** across
+22 complete procedure extents. The new members are:
+
+| Complete group | Original MAIN extents | Native CODE |
+| --- | --- | ---: |
+| `SUPER_ENTRY_BFNT` | `2D16..2DA0` | 138 B |
+| `superptr_draw_shift`, `superptr_draw_noshift` and `superptr_draw` | `333A..3380`, `3380..33B0`, `33B0..33EF` | 181 B |
+| `SUPERPUT_DISP1`–`DISP4` and `SUPERPUT_DISP` | `34E0..3503`, `3504..3531`, `3532..3568`, `3568..3599`, `359A..35A2` | 191 B |
+| `SUPER_PUT_8` | `40E6..4162` | 124 B |
+| `SUPERPAT_NO_MEMORY` and `SUPERPTR_EXIT` | `2A24..2A2E`, `31F6..31FC` | 16 B |
+
+The independently pinned original Master 0.23 archive contains the full
+`PROC/ENDP` bodies for the inner renderers/dispatchers. The maintained
+port only namespaces their original patch/label names; the original
+commands, immediates and control flow remain identical. The entry-BFNT
+routine's original large-model `_push` is reconstructed through the
+real active `LDATA` branch. Full TASM OMF LEDATA and ordered FIXUPP
+reproduce all 12 complete original CODE ranges and their empty MZ
+relocation streams. Adjacent `EVEN` alignment bytes at `3503`,
+`3531`, `3599` and `33EF` remain outside these claimed functions.
+
+Evidence: [source/OMF proof](../../config/master_super_helpers.json) and
+[explicit adoption](../../config/reviewed_master_super_helpers.json).
+
+```sh
+python3 scripts/review_master_super_helpers.py --check
+```

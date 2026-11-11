@@ -63,6 +63,8 @@ def main():
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_super.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_super_helpers.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_bgm.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_grcg.py"),
