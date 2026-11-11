@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Complete original Master SMEM/VSYNC/memory CODE in OP and MAINE.
+"""Complete original Master RTC/SMEM/VSYNC/memory CODE in OP/MAINE.
 
-Twelve complete functions per artifact, including the unexported CRTBIOS
-helper between VSYNC_START and VSYNC_COUNT. Preserve their original separate
-source PROC boundaries, real CODE LEDATA, and every ordered FIXUPP/MZ site.
+Fourteen complete functions per artifact, including the private original RTC
+interrupt service routine and the unexported CRTBIOS/VSYNC helpers. Preserve
+the original complete PROC boundaries, real CODE LEDATA and ordered FIXUPP/MZ.
 """
 from __future__ import annotations
 
@@ -25,6 +25,8 @@ DECISION=ROOT/'config/reviewed_context_memory_vsync.json'
 # author FUNC or near PROC spans in the real retained TASM source; do not merge
 # VSYNC_START with the adjacent CRTBIOS_COOK and VSYNC_COUNT helper routines.
 SCOPE=(
+ ('rtc_int_set','atrtcmod.asm','ATRTCMOD.ASM',0x0454,0x0454,145,14),
+ ('RTC_INT','atrtcmod.asm','ATRTCMOD.ASM',0x04f8,0x04f8,68,8),
  ('SMEM_RELEASE','smem_release.asm','SMEMREL.ASM',0x2088,0x2222,22,1),
  ('SMEM_WGET','smem_wget.asm','SMEMWGET.ASM',0x209e,0x2238,96,4),
  ('VSYNC_START','vsync.asm','VSYNC.ASM',0x2162,0x2320,106,12),
@@ -43,6 +45,25 @@ ARTIFACTS=('op','maine')
 
 def normalized_author(author,name):
     original=symbolic_source(author)
+    if name in ('rtc_int_set','RTC_INT'):
+        # The original RTC code is unchanged apart from private CS: scratch
+        # names and the actual native `NOPCALL` far-to-near relocation.
+        if name=='rtc_int_set':
+            need(original.count('calldos_setvect')==2 and
+                 original.count('inal,imr')==2 and
+                 original.count('outimr,al')==2 and
+                 sum(line.count('timerorg') for line in original)==4,
+                 'original RTC timer, port, or vector source operands changed')
+        else:
+            need(sum(line.count('skipslot1') for line in original)==2 and
+                 original.count('jmpdwordptrcs:timerorg')==1,
+                 'original RTC private label or far dispatch changed')
+        return [line.replace('timerorg','rtc_timerorg')
+                    .replace('calldos_setvect','nopcalldos_setvect')
+                    .replace('inal,imr','inal,rtc_imr')
+                    .replace('outimr,al','outrtc_imr,al')
+                    .replace('skipslot1','skipslot11')
+                for line in original]
     if name not in ('VSYNC_START','CRTBIOS_COOK','VSYNC_COUNT','VSYNC_END'):
         return original
     if name=='VSYNC_START':
@@ -79,7 +100,16 @@ def replay():
         need(og-cg==(1 if art=='maine' else 0),'original memory/VSYNC CRT frame changed')
         for name,file,author,op_start,maine_start,size,expected_fixups in SCOPE:
             start=op_start if art=='op' else maine_start
-            if name in ('CRTBIOS_COOK','VSYNC_COUNT'):
+            if name=='RTC_INT':
+                # A private, complete near RTC ISR at 04F8..053C. `rtc_int_set`
+                # is the exported predecessor at 0454 and BCLOSER starts
+                # exactly at the original ISR end. The intervening 19 source-
+                # unreviewed bytes at 04E5..04F8 remain deliberately unowned.
+                need(start==0x04f8 and size==68 and
+                     public.get('rtc_int_set')=={0x0454} and
+                     public.get('BCLOSER')=={0x053c},
+                     'original private RTC interrupt/source boundaries differ')
+            elif name in ('CRTBIOS_COOK','VSYNC_COUNT'):
                 # Both near procedures are private to VSYNC.ASM and absent
                 # from TLINK's exported-public list. The two genuine outer
                 # public entries anchor their exact 106/10/58-byte layout.
@@ -129,8 +159,17 @@ def replay():
                          'original_CODE_sha256':sha(native),
                          'ordered_OMF_actions':linked,'ordered_original_MZ':mz,
                          'authored_credit':0})
+    # Do not pretend the 19 bytes after rtc_int_set are part of either
+    # reviewed procedure, even when the native source has adjacent labels.
+    for art in ARTIFACTS:
+        rtc=[r for r in rows if r['artifact']=='th05-'+art and
+             r['member'] in ('rtc_int_set','RTC_INT')]
+        need(len(rtc)==2 and rtc[0]['end']==0x04e5 and
+             rtc[1]['start']==0x04f8,
+             'original RTC unknown gap ownership boundary changed')
     return {'schema_version':1,'kind':'original-master-context-complete-SMEM-VSYNC-MEM-CODE',
             'scopes':rows,'source_written_CODE_bytes':sum(r['size'] for r in rows),
+            'rtc_unknown_gap':[0x04e5,0x04f8],
             'original_view_sha256':target_views,
             'author_archive_sha256':parent['inputs']['inner_archive']['sha256'],
             'parent_Master_sha256':digest_file(MASTER),
@@ -145,6 +184,7 @@ def validate(data):
     need(data.get('schema_version')==1 and
          data.get('kind')=='original-master-context-complete-SMEM-VSYNC-MEM-CODE' and
          data.get('source_written_CODE_bytes')==sum(x[3] for x in expected) and
+         data.get('rtc_unknown_gap')==[0x04e5,0x04f8] and
          data.get('author_archive_sha256')==parent['inputs']['inner_archive']['sha256'] and
          data.get('parent_Master_sha256')==digest_file(MASTER) and
          data.get('verifier_sha256')==digest_file(ROOT/'scripts/review_context_memory_vsync.py') and

@@ -54,3 +54,29 @@ Public CI runs only `--structural-check`. All 1,172 bytes remain third-party
 Master CODE with **zero game-authored C++ or ASM credit**; unrelated
 unreviewed game DATA, CODE and vendor buffers remain unknown. No full cold
 replay or whole-executable claim is made.
+
+## Original RTC timer setup and interrupt handler (426 additional CODE bytes)
+
+Two more complete Master 0.23 source procedures per OP/MAINE executable are
+now source-linked: `rtc_int_set` at `[0454,04E5)` (**145 bytes**) and the
+private `RTC_INT` service routine at `[04F8,053C)` (**68 bytes**). The complete
+four procedure bodies account for **426 original, previously unknown CODE
+bytes**. In each executable the authentic TASM OMF contains 14 ordered FIXUPP
+actions for `rtc_int_set` and eight for `RTC_INT`. The actual original MZ
+has one RTC segment relocation at `RTC_INT+3`, verified in the literal original
+order, not stripped or treated as a data-offset fixup.
+
+The original author's `ATRTCMOD.ASM` supplies both independent complete
+source procedures. The retained TH05 source changes only private `RTC_TIMERORG`
+CS: scratch labels, `RTC_IMR` port naming, the local `SKIPSLOT11` label and
+the actual `NOPCALL` spelling for the original vectored DOS call. The entire
+original instruction stream, register choices, RTC interrupt transition and
+real hardware I/O operations are unchanged. Both original decoded and
+calibration MZ bytes match the source-linked whole procedures exactly.
+
+**The 19 bytes at `[04E5,04F8)` remain unknown.** The reviewer anchors the
+actual private RTC handler between the original public `rtc_int_set` and the
+subsequent public `BCLOSER` at `053C`, but makes no claim about this intervening
+interval. The proof and adoption now cover 28 complete code functions,
+**1,598 vendor-source bytes overall**, while retaining zero game-authored
+CODE credit and all unrelated exact C++ units untouched.
