@@ -3778,6 +3778,29 @@ find = "\"KAO3.cd2\""
 replace = "\"KAO4.cd2\""
 
 [[units]]
+id = "main-score-resource-names-c"
+source = "src/main/score/resource_names.c"
+module = "th05/scornam.c"
+segment = "_DATA"
+wrapper_options = "-zCSCORE_RES_TEXT -zPmain_01"
+bindings_source = "probes/units/main_score_resource_names_bindings.asm"
+source_encoding = "cp932"
+target_start = 137518
+size = 20
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-score-resource-names-c"
+source = "src/main/score/resource_names.c"
+find = "\"GENSOU.SCR\""
+replace = "\"GENSOU.SCX\""
+
+[[units]]
 id = "main-shot-velocity-data"
 source = "src/main/player/shot_velocity_data.c"
 module = "th05/pveldata.c"

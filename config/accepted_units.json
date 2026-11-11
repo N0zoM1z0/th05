@@ -2,33 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "f593b12322e82e972da52ee2640580c6dbcadf351c0f6897f550dda961b6fe31",
+  "replay_receipt_sha256": "80a513cb757ef2813e9b3bfc34ca6e9796eee388e37ab557b9dcb92b596d5303",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 125334,
-    "candidate_start": 125334,
-    "size": 939,
-    "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-    "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+    "target_start": 137518,
+    "candidate_start": 137518,
+    "size": 20,
+    "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+    "candidate_sha256": "ef7d6ff36b2009d05410e0597fd4249f47023eb9d1e1e353a448105d629dd3c6",
     "raw_exact": false,
-    "target_fixups": [
-      133
-    ],
-    "candidate_fixups": [
-      133
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 125334,
-      "size": 939,
-      "function_symbol": "alice_update()",
-      "contribution_start": 124772,
-      "contribution_size": 1501,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 137518,
+      "size": 20,
+      "module": "th05/scornam.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -59440,6 +59434,326 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-session-files-c"
+      ]
+    },
+    {
+      "id": "main-score-resource-names-c",
+      "entry_sha256": "7f4113b363227fed0f0bf20dd5273b4292427e41c22e87e22ecbc8a8494ab9b5",
+      "result": {
+        "id": "main-score-resource-names-c",
+        "entry_sha256": "7f4113b363227fed0f0bf20dd5273b4292427e41c22e87e22ecbc8a8494ab9b5",
+        "rounds": [
+          {
+            "target_start": 137518,
+            "candidate_start": 137518,
+            "size": 20,
+            "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+            "candidate_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137518,
+              "size": 20,
+              "module": "th05/scornam.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137518,
+            "candidate_start": 137518,
+            "size": 20,
+            "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+            "candidate_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137518,
+              "size": 20,
+              "module": "th05/scornam.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "15a386c3db3b9a5cd3aa86b042f8fb7589a34d9167f10296b664f0c6b4346861",
+            "dependency_timestamp_normalized_sha256": "380b886649aec4f09b70ce85a96c4c90767f9d5163a2fabdc6947146e98c2de8",
+            "module_name": "th05/scornam.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scornam.c",
+              "src/main/score/resource_names.c",
+              "src/main/score/resource_names_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 20,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 20,
+                  "sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "662c83f34c09c512fad80b7efd9902a5823f8b8daded7a9e762e1bb097806920",
+            "dependency_timestamp_normalized_sha256": "380b886649aec4f09b70ce85a96c4c90767f9d5163a2fabdc6947146e98c2de8",
+            "module_name": "th05/scornam.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scornam.c",
+              "src/main/score/resource_names.c",
+              "src/main/score/resource_names_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 20,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 20,
+                  "sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scornam.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/scornam.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_score_resource_names_bindings.asm",
+            "sha256": "cb3ee7ed639e8d091cb2a664f1bc40cf6b80acf7a44876aff060a3688c0b9677"
+          },
+          {
+            "path": "src/main/score/resource_names.c",
+            "sha256": "0cf7e68dc1826987b6a2ec0f95a90d5923b887e919e73d63bf4d7eeda3e13b7b"
+          },
+          {
+            "path": "src/main/score/resource_names_c.h",
+            "sha256": "f9bbd9361839e638dc4c7ffe66910d9773fc8175cca36ad8fae4a86f60237839"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/main_score_resource_names_bindings.asm",
+              "sha256": "cb3ee7ed639e8d091cb2a664f1bc40cf6b80acf7a44876aff060a3688c0b9677"
+            },
+            {
+              "path": "src/main/score/resource_names.c",
+              "sha256": "4be26c14b84ced648dfe5b802c31a50051455e92dde87ca0a32b694e4ecf001d"
+            },
+            {
+              "path": "src/main/score/resource_names_c.h",
+              "sha256": "f9bbd9361839e638dc4c7ffe66910d9773fc8175cca36ad8fae4a86f60237839"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/main_score_resource_names_bindings.asm",
+              "sha256": "cb3ee7ed639e8d091cb2a664f1bc40cf6b80acf7a44876aff060a3688c0b9677"
+            },
+            {
+              "path": "src/main/score/resource_names.c",
+              "sha256": "4be26c14b84ced648dfe5b802c31a50051455e92dde87ca0a32b694e4ecf001d"
+            },
+            {
+              "path": "src/main/score/resource_names_c.h",
+              "sha256": "f9bbd9361839e638dc4c7ffe66910d9773fc8175cca36ad8fae4a86f60237839"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_score_resource_names_bindings.asm",
+          "sha256": "cb3ee7ed639e8d091cb2a664f1bc40cf6b80acf7a44876aff060a3688c0b9677"
+        },
+        {
+          "path": "src/main/score/resource_names.c",
+          "sha256": "0cf7e68dc1826987b6a2ec0f95a90d5923b887e919e73d63bf4d7eeda3e13b7b"
+        },
+        {
+          "path": "src/main/score/resource_names_c.h",
+          "sha256": "f9bbd9361839e638dc4c7ffe66910d9773fc8175cca36ad8fae4a86f60237839"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "80a513cb757ef2813e9b3bfc34ca6e9796eee388e37ab557b9dcb92b596d5303",
+      "compiled_negative_control": {
+        "target_start": 137518,
+        "candidate_start": 137518,
+        "size": 20,
+        "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+        "candidate_sha256": "ef7d6ff36b2009d05410e0597fd4249f47023eb9d1e1e353a448105d629dd3c6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137518,
+          "size": 20,
+          "module": "th05/scornam.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-score-resource-names-c",
+        "entry_sha256": "7f4113b363227fed0f0bf20dd5273b4292427e41c22e87e22ecbc8a8494ab9b5",
+        "mutation": {
+          "unit": "main-score-resource-names-c",
+          "source": "src/main/score/resource_names.c",
+          "find": "\"GENSOU.SCR\"",
+          "replace": "\"GENSOU.SCX\""
+        },
+        "control_sha256": "e6ee3bfac3fea0d4eb9359c8d253a5edfd3bd72c70be2a3016d1cfcedfd8144a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137518,
+          "candidate_start": 137518,
+          "size": 20,
+          "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
+          "candidate_sha256": "ef7d6ff36b2009d05410e0597fd4249f47023eb9d1e1e353a448105d629dd3c6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137518,
+            "size": 20,
+            "module": "th05/scornam.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "fd4d9ef3fda92b5a6ea60a00171dd9de192f65971dcb5f968a07a4831c18ff90",
+          "dependency_timestamp_normalized_sha256": "dba006d35e51c50bbddcb1be1829d68c06bde9ff9fd264433269d56e6f77778d",
+          "module_name": "th05/scornam.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/scornam.c",
+            "src/main/score/resource_names.c",
+            "src/main/score/resource_names_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 20,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 20,
+                "sha256": "ef7d6ff36b2009d05410e0597fd4249f47023eb9d1e1e353a448105d629dd3c6"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/scornam.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/main_score_resource_names_bindings.asm",
+            "sha256": "cb3ee7ed639e8d091cb2a664f1bc40cf6b80acf7a44876aff060a3688c0b9677"
+          },
+          {
+            "path": "src/main/score/resource_names.c",
+            "sha256": "62416758e2802ee96601784c016ee2ec3ba7d293a5022abc3f1c76c1e18b2b10"
+          },
+          {
+            "path": "src/main/score/resource_names_c.h",
+            "sha256": "f9bbd9361839e638dc4c7ffe66910d9773fc8175cca36ad8fae4a86f60237839"
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-score-resource-names-c"
       ]
     },
     {
