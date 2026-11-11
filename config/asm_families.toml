@@ -857,6 +857,40 @@ size = 1
 kind = "alignment"
 
 [[units]]
+id = "main-mpn-loader"
+artifact = "main"
+source = "src/main/formats/mpn_loader.asm"
+types = "src/main/formats/mpn_loader_types.inc"
+symbols = "src/main/formats/mpn_loader_symbols.inc"
+bindings = "probes/units/mpn_loader_bindings.asm"
+notes = "src/main/formats/mpn_loader.md"
+target_start = 0x41B2
+size = 92
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = [56, 82]
+fixups = []
+tables = []
+native_review_sha256 = "38a448d0d9358a901357e6da5de5bc3df40b270e8eaf251fafe40ffce3a6e8c2"
+target_scope_sha256 = "a914a948bf067d2688841219f129ae859456d176e032a505af04598537ca6b20"
+semantic_inputs = []
+[units.publics]
+"MPN_LOAD_INNER" = 0
+"mpn_free" = 92
+[units.negative]
+find = "mov cx, MPN_PALETTE_BYTES"
+replace = "mov cx, (MPN_PALETTE_BYTES - 1)"
+[[units.uncredited]]
+offset = 56
+size = 1
+kind = "runtime-placeholder"
+[[units.uncredited]]
+offset = 82
+size = 1
+kind = "runtime-placeholder"
+
+[[units]]
 id = "main-mpn-render"
 artifact = "main"
 source = "src/main/formats/mpn_render.asm"

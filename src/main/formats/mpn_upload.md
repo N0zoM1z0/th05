@@ -35,8 +35,10 @@ maintained C++ is compiled and rejected by the strict oracle. The native NOP
 at `E5C1` is **outside** this function and earns no authored credit. Other
 accepted MPN components (`mpn_free`, MPN drawing) and their inputs are unchanged.
 
-The separately unresolved `MPN_LOAD_INNER` (MAIN `41B2..420E`) retains its
-unknown language/owner classification: DOS interrupt and DS-swap patterns alone
-do not prove handwritten ASM. Its historical review is preserved at
-`.analysis/mpn-load-inner-origin-challenge-review.json`; recovering this
-69-byte C++ wrapper does not transfer source credit to the foreign loader.
+The formerly unresolved `MPN_LOAD_INNER` (MAIN `41B2..420E`) now has its own
+independently verified [92-byte reviewed ASM owner](mpn_loader.md). The game-
+specific handwritten-ASM classification is inferred from the native DOS and
+segment protocol, not claimed as recovered historical source. The earlier
+origin challenge remains at `.analysis/mpn-load-inner-origin-challenge-review.json`.
+Neither this 69-byte C++ wrapper nor the loader transfers source credit to the
+other; both retain separate complete acceptance receipts.
