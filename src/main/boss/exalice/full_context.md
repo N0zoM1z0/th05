@@ -60,3 +60,28 @@ The complete 18-case EX-Alice boss controller now uses named, observed phase
 constants for four regular/approach/charge waves and the final fan; both
 pattern-submode values and the four wave indices are also named. Matching
 standalone and full-context copies preserve the original switch layout.
+
+## Typed wave and final-palette state (2026-11-11)
+
+The maintained 18-stage EX-Alice Boss controller and its standalone mirror now
+use a shared `ExAliceBossScratch` view of the **actual 16 `boss_statebyte`
+bytes**. The original byte at offset 9 selects the active regular/charge
+wave (four table rows); its increment still occurs after each completed
+charge attack. Byte 10 is the final-fan palette step. The source now names
+its three original states—drain green, brighten RGB to the red threshold,
+then dim RGB—and preserves the exact `0 → 1 → 2 → 1` transitions, without
+adding a new reset. Byte 15 is the initial fan's own substate and is not
+mistaken for a persistent wave counter. Size and offset static assertions
+verify each physical byte; all foreign storage and state reuse remain intact.
+
+The FULL and standalone updater bodies are token-identical. The acceptance
+owner is **the actual `full_context.cpp`**, whose genuine far hit gate,
+near phase helper and full callback share the same original code context.
+The focused `main-exalice-update-full-context` replay built this source twice
+with the pinned Borland toolchain and exactly matched **1,060 original bytes**,
+including 52 bytes of three compiler switch tables and the original ordered
+relocations `[198,161]`. Its HP threshold semantic negative was compiled and
+rejected. Receipt:
+`.analysis/unit-replays/gpt-web-exalice-typed-palette-scratch-20261111/receipt.json`.
+No new target CODE bytes or separately duplicated 111-byte prefix receive
+credit; this is an actual semantic improvement to an already exact large Boss.

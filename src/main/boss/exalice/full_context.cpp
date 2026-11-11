@@ -3,6 +3,7 @@
 #pragma option -zCEXALICE_FULL_TEXT -zPmain_03
 #include "src/main/boss/exalice/full_context.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 #pragma codeseg EXALICE_FULL_TEXT main_03
 
 int far exalice_hittest_shots(void)
@@ -89,9 +90,9 @@ void pascal far exalice_update(void)
             boss.phase_state.patterns_seen = 0;
             boss.phase_frame = 0;
             boss_custombullets_render = exalice_custombullets_render;
-            boss_statebyte[15] = 0;
+            exalice_boss_scratch.initial_fan_substate = 0;
             exalice_pattern = exalice_pattern_random_fan;
-            boss_statebyte[9] = 0;
+            exalice_boss_scratch.wave_index = 0;
         }
         break;
     case EXALICE_PHASE_WAVE1_REGULAR:
@@ -102,7 +103,7 @@ regular_attack:
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 boss.mode++;
-                exalice_pattern = exalice_patterns_by_phase[boss_statebyte[9]][
+                exalice_pattern = exalice_patterns_by_phase[exalice_boss_scratch.wave_index][
                     boss.phase_state.patterns_seen & 1];
                 if(boss.phase_state.patterns_seen >= 32) {
                     goto regular_complete;
@@ -118,7 +119,7 @@ regular_attack:
         }
         boss_score_bonus(20);
 regular_complete:
-        switch(boss_statebyte[9]) {
+        switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
             exalice_phase_next(ET_CIRCLE, 21000);
             exalice_pattern = exalice_pattern_firewave_fans;
@@ -172,7 +173,7 @@ charge_hittest:
         }
         boss_score_bonus(20);
 charge_complete:
-        switch(boss_statebyte[9]) {
+        switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
             exalice_phase_next(ET_NW_SE, 18100);
             exalice_pattern = exalice_pattern_gravity_stacks;
@@ -191,7 +192,7 @@ charge_complete:
         }
         pellet_bottom_col = 9;
         exalice_backdrop_patnum = 200;
-        boss_statebyte[9]++;
+        exalice_boss_scratch.wave_index++;
         break;
     case EXALICE_PHASE_WAVE2_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE2_REGULAR:
@@ -240,25 +241,25 @@ charge_complete:
         }
         goto charge_hittest;
     case EXALICE_PHASE_FINAL_FAN:
-        if(boss_statebyte[10] == 0) {
+        if(exalice_boss_scratch.palette_step == EXALICE_PALETTE_DRAIN_GREEN) {
             if(Palettes.colors[0].c.g > 0) {
                 Palettes.colors[0].c.g--;
             } else {
-                boss_statebyte[10] = 1;
+                exalice_boss_scratch.palette_step = EXALICE_PALETTE_BRIGHTEN;
             }
-        } else if(boss_statebyte[10] == 1) {
+        } else if(exalice_boss_scratch.palette_step == EXALICE_PALETTE_BRIGHTEN) {
             Palettes.colors[0].c.r += 2;
             Palettes.colors[0].c.g++;
             Palettes.colors[0].c.b += 2;
             if(Palettes.colors[0].c.r >= 128) {
-                boss_statebyte[10] = 2;
+                exalice_boss_scratch.palette_step = EXALICE_PALETTE_DIM;
             }
         } else {
             Palettes.colors[0].c.r -= 2;
             Palettes.colors[0].c.g--;
             Palettes.colors[0].c.b -= 2;
             if(Palettes.colors[0].c.r == 0) {
-                boss_statebyte[10] = 1;
+                exalice_boss_scratch.palette_step = EXALICE_PALETTE_BRIGHTEN;
             }
         }
         palette_changed = true;
