@@ -23954,6 +23954,439 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "3dbee0f19a417deec36ede7f381f0220edc3979bfee56fffd5195ec623540865"
+    },
+    "main-joystick-start": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-joystick-start",
+        "artifact": "main",
+        "source": "src/main/joystick/js_start.asm",
+        "types": "src/op/joystick/js_start_types.inc",
+        "symbols": "src/main/joystick/js_start_symbols.inc",
+        "bindings": "probes/units/main_joystick_start_bindings.asm",
+        "notes": "src/main/joystick/js_start.md",
+        "target_start": 13886,
+        "size": 42,
+        "segment": "_TEXT",
+        "group": "(none)",
+        "cs_base": 0,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "44d9edc52114ccfb93f003fc1b4836c4520c7c605d10169cff54812926c46122",
+        "target_scope_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+        "semantic_inputs": [],
+        "publics": {
+          "JS_START": 0
+        },
+        "negative": {
+          "find": "mov cx, JOY_POLL_COUNT",
+          "replace": "mov cx, (JOY_POLL_COUNT - 1)"
+        },
+        "uncredited": [
+          {
+            "offset": 41,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/main_joystick_start_bindings.asm",
+          "sha256": "bb77a52c564c2cdc9e7988bf0f6cb4c6d6cfd934eb71ce0900691d136258abd1"
+        },
+        {
+          "path": "src/main/joystick/js_start.asm",
+          "sha256": "e8558fe5115880cfb8cc7c489b5597762586fc3ed44c980af085dc5d223d5710"
+        },
+        {
+          "path": "src/main/joystick/js_start_symbols.inc",
+          "sha256": "7199ea0b13e0902230749c0989845dd3d088f2ceb47be847eb20276046ead600"
+        },
+        {
+          "path": "src/op/joystick/js_start_types.inc",
+          "sha256": "54fe4dc04491df8110f4650cdc5ff9cd4e7637d9281203847267ac7323b392c1"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 41,
+        "dispatch-table": 0,
+        "alignment": 1,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 13886,
+            "candidate_start": 13886,
+            "size": 42,
+            "target_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+            "candidate_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "_TEXT",
+            "size": 42,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 42,
+                "sha256": "2215e1908e910d8db1c7a9590b903316f7bb44f66c5020d3bb8e6bee726a64db"
+              }
+            ]
+          },
+          "object_sha256": "1b4d8fcac59473da8695b2aad5a15d3ed7480d2af1ea34ae601ccef2447741e9",
+          "object_normalized_sha256": "b6a80725fbf8d2f3401df0fb4c116852e4e557b9243ff69c911c336e51248d72",
+          "bindings_sha256": "16efb27382cbf9bc93c663e17cc11f0e63aace206b420ab4707d3faa3295e493",
+          "bindings_normalized_sha256": "ee7cf30ec20dd18ce26b2cb74e9d91e0e41abb28abeb19b880f140591a01da26",
+          "map_sha256": "7c85e737cfeb2d74d4474b767b661ea1b77c572120db32dd5b8b227a505b2618",
+          "mz_sha256": "b223b39c712cafb716d33c69a61b9503a4cd69157e38f64d3c15de54d278cf3a",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 13886,
+            "candidate_start": 13886,
+            "size": 42,
+            "target_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+            "candidate_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "_TEXT",
+            "size": 42,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 42,
+                "sha256": "2215e1908e910d8db1c7a9590b903316f7bb44f66c5020d3bb8e6bee726a64db"
+              }
+            ]
+          },
+          "object_sha256": "dc8c8dd4c014d47888dddbbf9be0516630624f4c319b40c760ddc9ac33549132",
+          "object_normalized_sha256": "b6a80725fbf8d2f3401df0fb4c116852e4e557b9243ff69c911c336e51248d72",
+          "bindings_sha256": "7097278d48fbe754457168fa36dbf58530b5eb6d9611da7ff2fc0498f5967137",
+          "bindings_normalized_sha256": "ee7cf30ec20dd18ce26b2cb74e9d91e0e41abb28abeb19b880f140591a01da26",
+          "map_sha256": "7c85e737cfeb2d74d4474b767b661ea1b77c572120db32dd5b8b227a505b2618",
+          "mz_sha256": "b223b39c712cafb716d33c69a61b9503a4cd69157e38f64d3c15de54d278cf3a",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 13886,
+          "candidate_start": 13886,
+          "size": 42,
+          "target_sha256": "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817",
+          "candidate_sha256": "1a33cd9d1e2c67ca4c78b5116bc3d2a371280e7a6a8bac1527f31e2509ec1588",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "_TEXT",
+          "size": 42,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 42,
+              "sha256": "f354cc84134b8013bc9b36a9314010e7d10d0bee20b2bd8daf10caaa38e965fe"
+            }
+          ]
+        },
+        "object_sha256": "580147781e4635fd8919788f2930e051ce3e96f13c2d8a3f7e998987dada591f",
+        "object_normalized_sha256": "de953ce2fa8c62a894940842aaa4f6eabc3c2776bcb53f33464079b7a61df906",
+        "bindings_sha256": "6d9074f9c13b7a30d0d60548f9547238445a9472a74d0974e6a76d90cbdbedc3",
+        "bindings_normalized_sha256": "ee7cf30ec20dd18ce26b2cb74e9d91e0e41abb28abeb19b880f140591a01da26",
+        "map_sha256": "7c85e737cfeb2d74d4474b767b661ea1b77c572120db32dd5b8b227a505b2618",
+        "mz_sha256": "6c62c92613259334dd226ee32612160877c5fbafb2bcdf25b0ce869064fa5750",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "258a9b1fec63acc51acf2ba58c9d8419aa6f4eefd9ac73cc2807f388bbb1aee9"
+    },
+    "main-joystick-sense": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-joystick-sense",
+        "artifact": "main",
+        "source": "src/main/joystick/js_sense.asm",
+        "types": "src/shared/joystick/sense_types.inc",
+        "symbols": "src/main/joystick/js_sense_symbols.inc",
+        "bindings": "probes/units/main_joystick_sense_bindings.asm",
+        "notes": "src/main/joystick/js_sense.md",
+        "target_start": 13946,
+        "size": 12,
+        "segment": "_TEXT",
+        "group": "(none)",
+        "cs_base": 0,
+        "instruction_nops": [],
+        "fixups": [],
+        "tables": [],
+        "native_review_sha256": "ccae495c0994905d9d9063ced4dda6d6e2873a8a47907b134917636d22a5fd6f",
+        "target_scope_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+        "semantic_inputs": [],
+        "publics": {
+          "JS_SENSE": 0
+        },
+        "negative": {
+          "find": "and ax, JOY_BUTTON_DIRECTION_BITS",
+          "replace": "and ax, (JOY_BUTTON_DIRECTION_BITS - 1)"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/main_joystick_sense_bindings.asm",
+          "sha256": "879a67c943bb7b67808e9730d4023813ddd97f1b62a3f93da229a681e583fda4"
+        },
+        {
+          "path": "src/main/joystick/js_sense.asm",
+          "sha256": "9aa26787b50f1ea4a0ece6f8e19cbfa1eea186a14204a3504fb99ccddf59487c"
+        },
+        {
+          "path": "src/main/joystick/js_sense_symbols.inc",
+          "sha256": "8d282e9fcf4d5bc5707a57f42e7b44ede48e3d843e2150024e8c9d7f3a8274fe"
+        },
+        {
+          "path": "src/shared/joystick/sense_types.inc",
+          "sha256": "684ba34603010c81803d10b16bc6e65761f1a49886c31ca369aac850e3215567"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 12,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 13946,
+            "candidate_start": 13946,
+            "size": 12,
+            "target_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+            "candidate_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "_TEXT",
+            "size": 12,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 12,
+                "sha256": "2ef803e7d627bf47346b4051e39c70e18d6949c911186ee635852e3efe79f344"
+              }
+            ]
+          },
+          "object_sha256": "f443964384ac32aa565cecb3255844e27403f8226c5eeca4780846b3d671a70a",
+          "object_normalized_sha256": "23e5cc1a471eb32097896cac431f84c0f8d34d432f83e57ac63c0cc337dc2a89",
+          "bindings_sha256": "746fae2a2325067767b0f8c1418e4734c61b8b89fea533e1c550491779e76f1c",
+          "bindings_normalized_sha256": "e5def47b39be0ef554d9711700f21f307b8d5164fada7263eeb78304f6abd813",
+          "map_sha256": "34329dcd0197a6a7ac6b3b1e9b489b4f234f9eb2b5daac489247411422859dd1",
+          "mz_sha256": "fb4a268f8c785c820b54722eb9a6229ea516890fdbd4ca28b287b39ff4026da1",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 13946,
+            "candidate_start": 13946,
+            "size": 12,
+            "target_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+            "candidate_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "_TEXT",
+            "size": 12,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 12,
+                "sha256": "2ef803e7d627bf47346b4051e39c70e18d6949c911186ee635852e3efe79f344"
+              }
+            ]
+          },
+          "object_sha256": "64857c1c8a83e573bbf100590677410b0d5851fabac7bdb2df84b9a611155747",
+          "object_normalized_sha256": "23e5cc1a471eb32097896cac431f84c0f8d34d432f83e57ac63c0cc337dc2a89",
+          "bindings_sha256": "e757e0ae77e78d02106f902dc53371229c495b6e041b6ea2c9b2ac13ffabf369",
+          "bindings_normalized_sha256": "e5def47b39be0ef554d9711700f21f307b8d5164fada7263eeb78304f6abd813",
+          "map_sha256": "34329dcd0197a6a7ac6b3b1e9b489b4f234f9eb2b5daac489247411422859dd1",
+          "mz_sha256": "fb4a268f8c785c820b54722eb9a6229ea516890fdbd4ca28b287b39ff4026da1",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 13946,
+          "candidate_start": 13946,
+          "size": 12,
+          "target_sha256": "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04",
+          "candidate_sha256": "8b6591e9214b72fc40e0d2ddb383c827dc72b02f213bb6cf3c7d3acec718b9fd",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "_TEXT",
+          "size": 12,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 12,
+              "sha256": "82eb3b6d22f708c2d29ef590d4cfd600bc6739bb7e8491f0d8b67e9a17a1a5b7"
+            }
+          ]
+        },
+        "object_sha256": "4b34ace2473b98fa458e8f0e88757728aeac9d1c01dc684fb8b9b8e70444a0be",
+        "object_normalized_sha256": "ea029019e8c3ca89dd0ae9a8aaadd65332477ac061a415360d38f29406a4ba72",
+        "bindings_sha256": "5d311ab7f9bc39d04adf11d57de0736148a11d63509fee4fcd5ca839c9488e87",
+        "bindings_normalized_sha256": "e5def47b39be0ef554d9711700f21f307b8d5164fada7263eeb78304f6abd813",
+        "map_sha256": "34329dcd0197a6a7ac6b3b1e9b489b4f234f9eb2b5daac489247411422859dd1",
+        "mz_sha256": "e29985b9c4b83e423ce3e9e1fc9aa9f75c68b89f9e191a61aa1bbbb2f9774f82",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "ff7506ff1e533169841077e5fe15f0fd80367c1c38958d4627ef7a438e13ea64"
     }
   }
 }

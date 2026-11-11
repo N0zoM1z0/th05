@@ -1001,6 +1001,60 @@ find = "and ax, JOY_BUTTON_DIRECTION_BITS"
 replace = "and ax, (JOY_BUTTON_DIRECTION_BITS - 1)"
 
 [[units]]
+id = "main-joystick-start"
+artifact = "main"
+source = "src/main/joystick/js_start.asm"
+types = "src/op/joystick/js_start_types.inc"
+symbols = "src/main/joystick/js_start_symbols.inc"
+bindings = "probes/units/main_joystick_start_bindings.asm"
+notes = "src/main/joystick/js_start.md"
+target_start = 0x363E
+size = 42
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "44d9edc52114ccfb93f003fc1b4836c4520c7c605d10169cff54812926c46122"
+target_scope_sha256 = "2d97fe0a493007be39e9f9fba8a0b878730fe701ffd87567d90f9d5fee7cb817"
+semantic_inputs = []
+[units.publics]
+"JS_START" = 0
+[units.negative]
+find = "mov cx, JOY_POLL_COUNT"
+replace = "mov cx, (JOY_POLL_COUNT - 1)"
+[[units.uncredited]]
+offset = 41
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "main-joystick-sense"
+artifact = "main"
+source = "src/main/joystick/js_sense.asm"
+types = "src/shared/joystick/sense_types.inc"
+symbols = "src/main/joystick/js_sense_symbols.inc"
+bindings = "probes/units/main_joystick_sense_bindings.asm"
+notes = "src/main/joystick/js_sense.md"
+target_start = 0x367A
+size = 12
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "ccae495c0994905d9d9063ced4dda6d6e2873a8a47907b134917636d22a5fd6f"
+target_scope_sha256 = "4f13d4e437738204c18d860dd04d9c71113eb0995967da7a7538fbe19eb7bc04"
+semantic_inputs = []
+[units.publics]
+"JS_SENSE" = 0
+[units.negative]
+find = "and ax, JOY_BUTTON_DIRECTION_BITS"
+replace = "and ax, (JOY_BUTTON_DIRECTION_BITS - 1)"
+
+[[units]]
 id = "main-mpn-loader"
 artifact = "main"
 source = "src/main/formats/mpn_loader.asm"

@@ -24,8 +24,8 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,805 decoded bytes**:
-MAIN 5,819; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **28,751 decoded bytes**:
+MAIN 5,765; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
 
 ## Most useful next reconstruction work
@@ -144,3 +144,10 @@ reconstructs two original 21-byte intervals at `2CBA..2CCF` and
 `SAJOUT`. All three underwent independent exact TASM/TLINK double builds and
 compiled semantic negatives. The final zeros at OP `2CCF` and MAINE `2E97`
 are still unknown; original Master KOIZOID ownership ends before `SOUND_JOY`.
+
+MAIN's [game-specific joystick initialization](../src/main/joystick/js_start.md)
+and [far joystick sensor](../src/main/joystick/js_sense.md) now own the two
+complete exact ASM functions at `363E..3668` (42 B, one checked NOP) and
+`367A..3686` (12 B). Original `SOUND_JOY` and `SAJOUT` remain separate vendor
+owners, and the byte at `3679` remains unknown. These two independent
+native-replay receipts add 53 source instruction bytes, not a new C++ owner.
