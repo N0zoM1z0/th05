@@ -2,28 +2,36 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "3749a1ecff95f12442ad41f1147c48a78a2d5cd173bba970cb60295dfcc9ae27",
+  "replay_receipt_sha256": "e4a6a6e5058df129ccf8075b62a2823c5449457bb9b735c534f8593e6a110b8a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141720,
-    "candidate_start": 141720,
-    "size": 189,
-    "target_sha256": "df449c20947a5df4569dead7a1bb02e29b025282b80c8575debb0715c1babf93",
-    "candidate_sha256": "f96a3243348cdaaf9836f0a1dee5b484b736614594d31a271f482e705748b13a",
+    "target_start": 90180,
+    "candidate_start": 90180,
+    "size": 798,
+    "target_sha256": "a066446740ef10c1cecf99bf42ff92dab2fd9a91920e7a8884653e6d2cb4cd43",
+    "candidate_sha256": "c19228683f9054a46fe39ead0bb301f577f4569d671bda97eb8612371e240d62",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      746,
+      432,
+      336,
+      294,
+      190,
+      147,
+      16
+    ],
+    "candidate_fixups": [
+      746,
+      432,
+      336,
+      294,
+      190,
+      147,
+      16
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 141720,
-      "size": 189,
-      "module": "th05/main014.cpp",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -25668,7 +25676,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "82294ddd929f3577f54a513d80d60ce91ef4f5b00ce4d1f8017697ceca3388df",
+            "sha256": "ebbe02f59ed5c1d9c06d21dad01b7206994576153dc0b02a2869d5dfbe917bc0",
             "dependency_timestamp_normalized_sha256": "a2485f0967cd66a4a1b783dffe6ab33ece28755faeb8b03b6d0abd2eb8f27294",
             "module_name": "th05/midboss4.cpp",
             "translator_comments": [
@@ -25696,7 +25704,7 @@
             ]
           },
           {
-            "sha256": "73f3fc167745a7e4beeeff6bab40f35c016f55e8eb46559245a650cf5ceffe5d",
+            "sha256": "fcfb881403aa84a3b9c4b911e2dae192dfaa583bfb2e2e116e06e22e70d5f7be",
             "dependency_timestamp_normalized_sha256": "a2485f0967cd66a4a1b783dffe6ab33ece28755faeb8b03b6d0abd2eb8f27294",
             "module_name": "th05/midboss4.cpp",
             "translator_comments": [
@@ -25779,7 +25787,7 @@
           },
           {
             "path": "src/main/midboss/stage4.cpp",
-            "sha256": "56c0a1be0174e1847d14251a9ac2ba78bfa93c99a777835db21787a0da3484a1"
+            "sha256": "382d656c9e2498404704478161f92dc4d5b40fb3fe02017de5c7f49f0b2d90f7"
           },
           {
             "path": "src/main/midboss/stage4.hpp",
@@ -25827,7 +25835,7 @@
         },
         {
           "path": "src/main/midboss/stage4.cpp",
-          "sha256": "56c0a1be0174e1847d14251a9ac2ba78bfa93c99a777835db21787a0da3484a1"
+          "sha256": "382d656c9e2498404704478161f92dc4d5b40fb3fe02017de5c7f49f0b2d90f7"
         },
         {
           "path": "src/main/midboss/stage4.hpp",
@@ -25852,7 +25860,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "cd240472e714ba7fc5ff21b93e122992d6737d10bcdaae84b7030a4076f52a17",
+      "replay_receipt_sha256": "e4a6a6e5058df129ccf8075b62a2823c5449457bb9b735c534f8593e6a110b8a",
       "compiled_negative_control": {
         "target_start": 90180,
         "candidate_start": 90180,
@@ -25887,10 +25895,10 @@
         "mutation": {
           "unit": "main-midboss-stage4",
           "source": "src/main/midboss/stage4.cpp",
-          "find": "if(midboss.phase_frame >= 192) {",
-          "replace": "if(midboss.phase_frame >= 193) {"
+          "find": "if(midboss.phase_frame >= MIDBOSS4_ENTRANCE_END_FRAME) {",
+          "replace": "if(midboss.phase_frame >= (MIDBOSS4_ENTRANCE_END_FRAME + 1)) {"
         },
-        "control_sha256": "8979c7e2e3fe5542b669201595be91a9004d3bc3788c63165a9e8740a01b80fc",
+        "control_sha256": "2cccaf14e66c44515b743e6b5f1a49296065a42362fc3564385134499fa73fcf",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 90180,
@@ -25921,7 +25929,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "d7ff517f38c77c54b94a0ebbde4bc5d16df28251e178f531f14db79bf48bd459",
+          "sha256": "47d169a25ee866c0a4d3ee5d170971e78cc84be952ba3667ce7c37b0c2c7a976",
           "dependency_timestamp_normalized_sha256": "bd3c783ca7e3dd49daddc0f22b009bf1c8b0ba235f92475e8d6547d426266c7a",
           "module_name": "th05/midboss4.cpp",
           "translator_comments": [
@@ -25962,10 +25970,7 @@
           "th05/midboss4.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-midboss-stage4"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-midboss-stage2-patterns",

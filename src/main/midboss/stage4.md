@@ -97,3 +97,33 @@ including the four-entry switch table, its preceding uncredited alignment
 zero, and all seven ordered original MZ fixups. The existing compiled
 entrance-timing negative was rejected. Local receipt:
 `.analysis/unit-replays/gpt-web-midboss4-typed-pattern-20261111/receipt.json`.
+
+## Full Stage 4 telegraph/volley and reposition schedule (2026-11-11)
+
+The three real pattern helpers and the complete Stage 4 midboss update now
+name the actual original attack-clock protocol. Each pattern begins its
+telegraph at frame **16**, emits volleys in the inclusive frame **48..80**
+window, then returns to the shared reposition submode at frame **96**. The
+random-cloud volley only fires on 8-frame boundaries. Spiral rings alternate
+ordinary and cloud-forward bullets on an 8-frame cadence while adding a ring
+every 4 frames; aimed stacks also fire every 4 frames, with the original
+packed 3/8/4/4 spread fields and no added state. The entrance still changes
+from phase 0 to attack phase 1 after **192 frames**, with the original
+vulnerability gate and 24px hit radius. The pattern selector continues to
+cycle modulo three and to end after the original sixteen completed patterns.
+
+The original score bonus is fifteen score units and the separate item drop is
+one bomb; they remain distinct operations. The defeat spark count is 48.
+These names do not change the physical 16-byte scratch view or any original
+near/far callback, modulo integer width, compare strictness or stack layout.
+
+The complete `main-midboss-stage4` unit was replayed twice using the real
+pinned Borland/TLINK producers: **798/798 original raw bytes exact**, including
+three pattern functions (175/146/138), the 339-byte full Boss controller,
+the four-entry generated switch table, checked alignment zero and all seven
+original ordered MZ fixups. The compiled entrance threshold **192→193**
+mutation was updated to its source-named constant and rejected. Focused
+receipt:
+`.analysis/unit-replays/gpt-web-stage4-volley-gates-final-20261111/receipt.json`.
+This is semantic recovery of existing accepted C++ CODE, not a new byte claim
+or any unrelated full cold replay.

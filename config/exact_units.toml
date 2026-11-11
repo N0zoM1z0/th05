@@ -1717,8 +1717,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-midboss-stage4"
 source = "src/main/midboss/stage4.cpp"
-find = "if(midboss.phase_frame >= 192) {"
-replace = "if(midboss.phase_frame >= 193) {"
+find = "if(midboss.phase_frame >= MIDBOSS4_ENTRANCE_END_FRAME) {"
+replace = "if(midboss.phase_frame >= (MIDBOSS4_ENTRANCE_END_FRAME + 1)) {"
 
 [[units]]
 id = "main-midboss-stage2-patterns"
