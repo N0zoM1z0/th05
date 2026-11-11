@@ -63,6 +63,10 @@ def main():
     # toolchain is loaded by this lightweight source-current check.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_adpcm.py"), "--check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # The inner ZUN dispatcher owns only 558 bytes, with proof-only zero ORG
+    # placeholders for five children. Lightweight check never replays children.
+    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_dispatcher.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")

@@ -207,6 +207,8 @@ original member-checksum field has been established.
 | `4678–4680` | 8 | Inner copy/transfer helper |
 | `4680–46C4` | 68 | Outer COMCSTM wrapper code |
 
+The **550-byte inner dispatcher/catalog plus 8-byte distant transfer helper** now have independent exact semantic assembly sources and [focused double-producer proof](../../src/zun/launcher/README.md). The five embedded child holes total **17,187 bytes** and remain foreign in this independent replay: no child bytes are copied or inferred. Of the 558 compared source bytes, 213 are CODE and 345 are actual local message/count/catalog data; their historical authorship is still reviewed separately.
+
 The inner table stores its own runtime starts, not outer-file offsets. Add
 `12F` to each inner file offset to recover the table above. The outer header
 records inner size `4551`, usage length `108`, and timestamp `2579AF64`; its

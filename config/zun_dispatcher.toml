@@ -1,0 +1,44 @@
+schema_version = 1
+artifact = "th05-zun"
+source = "src/zun/launcher/dispatcher.asm"
+origin = "pipeline-reconstructed-assembly"
+global_authored_credit = "unreviewed"
+inner_start = 0x12F
+inner_prefix_size = 550
+inner_prefix_sha256 = "437275bbbb2f93ff4ca4b1cb2df0ab166a59bdce9235cbe18ca28ed2a6de4b96"
+transfer_start = 0x4678
+transfer_size = 8
+transfer_sha256 = "a580939da3b518b3001c1a4ff48fd9860511eddc239d702c6e13e41ac9125b00"
+child_hole_start = 550
+child_hole_bytes = 17187
+full_proof_com_size = 17745
+code_bytes = 213
+initialized_data_bytes = 345
+
+[publics]
+start = 0x100
+entry = 0x117
+print_procs = 0x133
+findentry = 0x166
+fixup = 0x197
+proc_count = 0x1DF
+proc_names = 0x1E1
+proc_entries = 0x2E1
+moveup_indirect = 0x323
+member_O = 0x326
+member_I = 0x6C4
+member_S = 0xAB5
+member_G = 0x2459
+member_M = 0x4512
+inner_moveup = 0x4649
+
+[child_sizes]
+"-O" = 926
+"-I" = 1009
+"-S" = 6564
+"-G" = 8377
+"-M" = 311
+
+[negative]
+find = "mov\tcx, 10h"
+replace = "mov\tcx, 0Fh"
