@@ -1534,3 +1534,51 @@ unit = "maine-pi-masked-wrappers"
 source = "src/shared/graphics/pi_masked_wrappers.cpp"
 find = "_AX = 160;"
 replace = "_AX = 159;"
+
+[[units]]
+id = "maine-pi-plain-full"
+source = "src/shared/graphics/pi_plain_full.cpp"
+module = "th05/piplful.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_pi_plain_full_bindings.asm"
+target_start = 61362
+size = 47
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "PI_PLAIN_G"
+cs_base = 59392
+ds_base = 65808
+binary = "E"
+
+[[controls]]
+unit = "maine-pi-plain-full"
+source = "src/shared/graphics/pi_plain_full.cpp"
+find = "_SI <<= 2;"
+replace = "_SI <<= 3;"
+
+[[units]]
+id = "maine-pi-plain-quarter"
+source = "src/shared/graphics/pi_plain_quarter.cpp"
+module = "th05/piplqua.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_pi_plain_quarter_bindings.asm"
+target_start = 61410
+size = 70
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "PI_PLAIN_G"
+cs_base = 59392
+ds_base = 65808
+binary = "E"
+
+[[controls]]
+unit = "maine-pi-plain-quarter"
+source = "src/shared/graphics/pi_plain_quarter.cpp"
+find = "_AX = 160;"
+replace = "_AX = 159;"
