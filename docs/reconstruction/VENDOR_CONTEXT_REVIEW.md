@@ -151,3 +151,41 @@ CRT DATA and additional authored functions. Use the generated
 [`resources/ownership.json`](../../resources/ownership.json), not old
 adoption-time totals, for the current unknown/vendor breakdown. The global
 authored denominator remains unreviewed.
+
+
+## MAINE original linker-frame recovery for five further CODE owners
+
+MAINE's retained calibration places `DGROUP` at `10100h`, whereas the
+original target's independent `xxas`/`signal` OMF segment bindings resolve
+to `10110h`. Three actual C++ `string` method entry points are also
+six bytes later in the original; their original 24-byte instruction
+prologues match the calibrated native implementations after this shift.
+
+Rebinding the original CL.LIB OMF source records through these separately
+observed linker positions resolves five more complete CODE contributions:
+
+| Member | Original MAINE interval | Complete CODE | Ordered OMF CODE FIXUPP |
+| --- | --- | ---: | ---: |
+| `new` | `4205..44F7` | 754 B | 46 |
+| `xxas` | `4633..46C2` | 143 B | 3 |
+| `signal` | `4F62..5263` | 769 B | 55 |
+| `_pathops` | `529E..536E` | 208 B | 7 |
+| `xmsg` | `63E4..679F` | 955 B | 49 |
+
+The [MAINE source proof](../../config/maine_shifted_vendor.json) checks
+the authentic native calibration *and* original target independently:
+source LEDATA coverage, actual OMF target and frame binding, complete linked
+bytes, ordered MZ relocations and unique original function extents. The
+[verifier](../../scripts/review_maine_shifted_vendor.py) does not patch
+the target or manufacture an OMF source; it derives original group
+and class-function addresses and reuses the original vendor records.
+
+The separate [ownership decision](../../config/reviewed_maine_shifted_vendor.json)
+adopts **2,829 additional vendor CODE bytes**, zero game-authored bytes
+and no other DATA, BSS, INIT or neighboring six-byte source content.
+The original class-entry offset is evidence for the library source fixups,
+not ownership of those upstream bytes.
+
+```sh
+python3 scripts/review_maine_shifted_vendor.py --check
+```
