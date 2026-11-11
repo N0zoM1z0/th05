@@ -82,3 +82,14 @@ The new [player renderer](render.md) owns the separate complete330-byte native
 function CD56..CEA0. It reuses canonical geometry and the maintained TH04
 high-level algorithm with TH05's fixed option sprite. This acceptance does
 not change the movement/invalidation failures above or transfer their credit.
+
+## 2026-11-11 native register-family recovery
+
+The 176/174-byte natural C++ candidates above remain unaccepted, and new
+register-oriented C++ trials also missed (the compact movement variant is
+140 bytes). Their compiler-lowering mismatch is documented in the independent
+[native player family](region_register.md). Full reviewed native ASM source now
+matches both complete functions and the 20-word dispatch table in one 280-byte
+unit, with literal original fixup `[60]` and a compiled semantic negative.
+This is a separate original-register language/source review; the failed C++
+producers were not promoted or reclassified by the byte match alone.

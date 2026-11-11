@@ -20078,6 +20078,268 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "519734a7239bab1ec7b25708c7df5c0c06e75afc00b605980dbd0e48cb9edc82"
+    },
+    "main-player-register-family": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-player-register-family",
+        "artifact": "main",
+        "source": "src/main/player/region_register.asm",
+        "types": "src/main/player/region_register_types.inc",
+        "symbols": "probes/units/player_register_symbols.inc",
+        "bindings": "probes/units/player_register_bindings.asm",
+        "notes": "src/main/player/region_register.md",
+        "target_start": 51642,
+        "size": 280,
+        "segment": "PLAYER_REGISTER_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [
+          60
+        ],
+        "native_review_sha256": "5642fcdef4132c6082627fc03ce7b26ccec2c73eb6e717e2bac6d1691d48167f",
+        "target_scope_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+        "semantic_inputs": [
+          "src/main/player/player.hpp",
+          "src/main/player/move.hpp",
+          "src/main/player/invalidate.hpp",
+          "src/shared/geometry.hpp"
+        ],
+        "publics": {
+          "player_invalidate": 0,
+          "player_move": 146,
+          "player_region_register_end": 280
+        },
+        "negative": {
+          "find": "add di, -MISS_EXPLOSION_RADIUS_VELOCITY",
+          "replace": "add di, -(MISS_EXPLOSION_RADIUS_VELOCITY + 1)"
+        },
+        "tables": [
+          {
+            "offset": 240,
+            "size": 40
+          }
+        ],
+        "uncredited": [
+          {
+            "offset": 145,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/player_register_bindings.asm",
+          "sha256": "f598c38f68c84719b9e53345e33e8b7d99dc74934e598b5ceb1a05a14364e0a1"
+        },
+        {
+          "path": "probes/units/player_register_symbols.inc",
+          "sha256": "0ba05d47559ac154c40d3596ade7e27a5ec6d58d5477acd152ae9fbd101036c0"
+        },
+        {
+          "path": "src/main/player/invalidate.hpp",
+          "sha256": "ded186a30f445d89652ce1a80eb6595775d1a03b2ea35c0cfe5ef2afc071ad17"
+        },
+        {
+          "path": "src/main/player/move.hpp",
+          "sha256": "a95beee33cc6303e1e88eccec9947a4bc30bb56f205ae2233175d0f9b117d64f"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/player/region_register.asm",
+          "sha256": "6c0fceebdaa7a650252aad4bcbcb6475409518619188f5065e34e14e9d6448e5"
+        },
+        {
+          "path": "src/main/player/region_register_types.inc",
+          "sha256": "91a880dc7e7b0f718b4b9fc6b45b095254f1cd9f6dc057de29612153a3cfcaee"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 239,
+        "dispatch-table": 40,
+        "alignment": 1,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 51642,
+            "candidate_start": 51642,
+            "size": 280,
+            "target_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+            "candidate_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+            "raw_exact": true,
+            "target_fixups": [
+              60
+            ],
+            "candidate_fixups": [
+              60
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "PLAYER_REGISTER_TEXT",
+            "size": 280,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 280,
+                "sha256": "356dc316742c2a6cb24dea7d06433a85b2602c54aa63145d8ab626a88bb096e3"
+              }
+            ]
+          },
+          "object_sha256": "22e0ed2b7851a4f1a8536d4444f21585d408e5ff1dc2e3b28ccc52fec01d5c40",
+          "object_normalized_sha256": "bc0330c0d3e87bd8f598ec825e2a32f036e4e559c436d9fe57bf13484bce9407",
+          "bindings_sha256": "a2fe52a3dacd59077a8dbac0fa14f0584a0a8f75b3d00d978bbd9ccf5740d2a7",
+          "bindings_normalized_sha256": "b1ec9b66e23f3804c5e0033df210bcb27e4ce1909c601df69aa763543d9323ac",
+          "map_sha256": "b386e475e35514999e6883bee7bdbacede2d7b5b28fd790e269086b65e63c7ad",
+          "mz_sha256": "80ce9fee4c6d574d113b0aa965b1c8d44896629e4b713a136b68f775b8aa1724",
+          "commands_sha256": "3d17d335d6cca7d05c75856d207a973505df4525b08a3fd2f29b6866d60406b8"
+        },
+        {
+          "comparison": {
+            "target_start": 51642,
+            "candidate_start": 51642,
+            "size": 280,
+            "target_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+            "candidate_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+            "raw_exact": true,
+            "target_fixups": [
+              60
+            ],
+            "candidate_fixups": [
+              60
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "PLAYER_REGISTER_TEXT",
+            "size": 280,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 280,
+                "sha256": "356dc316742c2a6cb24dea7d06433a85b2602c54aa63145d8ab626a88bb096e3"
+              }
+            ]
+          },
+          "object_sha256": "22e0ed2b7851a4f1a8536d4444f21585d408e5ff1dc2e3b28ccc52fec01d5c40",
+          "object_normalized_sha256": "bc0330c0d3e87bd8f598ec825e2a32f036e4e559c436d9fe57bf13484bce9407",
+          "bindings_sha256": "a2fe52a3dacd59077a8dbac0fa14f0584a0a8f75b3d00d978bbd9ccf5740d2a7",
+          "bindings_normalized_sha256": "b1ec9b66e23f3804c5e0033df210bcb27e4ce1909c601df69aa763543d9323ac",
+          "map_sha256": "b386e475e35514999e6883bee7bdbacede2d7b5b28fd790e269086b65e63c7ad",
+          "mz_sha256": "80ce9fee4c6d574d113b0aa965b1c8d44896629e4b713a136b68f775b8aa1724",
+          "commands_sha256": "3d17d335d6cca7d05c75856d207a973505df4525b08a3fd2f29b6866d60406b8"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 51642,
+          "candidate_start": 51642,
+          "size": 280,
+          "target_sha256": "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c",
+          "candidate_sha256": "f8eab5ea1d9f11f33367949aeddd6020e64c6bd4a33110e1594089888d5d7946",
+          "raw_exact": false,
+          "target_fixups": [
+            60
+          ],
+          "candidate_fixups": [
+            60
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "PLAYER_REGISTER_TEXT",
+          "size": 280,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 280,
+              "sha256": "6b558d6102cda33878a0e23e053b6bf8386a53e21bc0d4afd43d1ba5a478c224"
+            }
+          ]
+        },
+        "object_sha256": "296007e0922ede30ef7ae3322db7dc5d4265fbba864b6d27b57f268ec8af32fb",
+        "object_normalized_sha256": "06818299161803a86d0a8c18e44bbdd12b5ad1e602f8ab9cde8e098b9a636784",
+        "bindings_sha256": "3e4363f6060142747fc3810e31bff5a268d2f68f978246ec9df32c2811c62d76",
+        "bindings_normalized_sha256": "b1ec9b66e23f3804c5e0033df210bcb27e4ce1909c601df69aa763543d9323ac",
+        "map_sha256": "b386e475e35514999e6883bee7bdbacede2d7b5b28fd790e269086b65e63c7ad",
+        "mz_sha256": "4f547a91350a2b319aad998d246536d1c7497eabc1fe125201625d30e26a567c",
+        "commands_sha256": "3d17d335d6cca7d05c75856d207a973505df4525b08a3fd2f29b6866d60406b8"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "2475504dc0872e9a177a30184dc4c2498bcabd71651f60f2122333058f8b76d8"
     }
   }
 }

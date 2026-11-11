@@ -30,9 +30,10 @@ be described as uncovered code:
 
 ## Large unknown regions and superseded investigations
 
-The original MAIN `C9BA..CAD2` interval contains player routines and a
-switch table; `15311..158AA` also has significant unowned code. Neither is
-a single ready-made source unit. Review the original function boundaries,
+The original MAIN `C9BA..CAD2` player region is now complete reviewed native
+ASM with a symbolic 20-case dispatch table; its original natural C++
+alternatives remain unaccepted. Remaining core gaps include STD loading and
+score insertion, plus data/source-origin boundaries elsewhere. Review the original function boundaries,
 semantic source and foreign symbols before adding an acceptance candidate;
 use the generated ownership map to discover other live gaps.
 

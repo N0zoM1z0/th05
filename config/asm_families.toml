@@ -2527,3 +2527,36 @@ replace = "add bp, (DISPLAY_WIDTH_BASE_DIGITS + 1)"
 offset = 57
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-player-register-family"
+artifact = "main"
+source = "src/main/player/region_register.asm"
+types = "src/main/player/region_register_types.inc"
+symbols = "probes/units/player_register_symbols.inc"
+bindings = "probes/units/player_register_bindings.asm"
+notes = "src/main/player/region_register.md"
+target_start = 51642
+size = 280
+segment = "PLAYER_REGISTER_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = [60]
+native_review_sha256 = "5642fcdef4132c6082627fc03ce7b26ccec2c73eb6e717e2bac6d1691d48167f"
+target_scope_sha256 = "e0ec62839d7299394ebbcd13a9ed2113475075517ae1698fdd85176c24c95d9c"
+semantic_inputs = ["src/main/player/player.hpp", "src/main/player/move.hpp", "src/main/player/invalidate.hpp", "src/shared/geometry.hpp"]
+[units.publics]
+"player_invalidate" = 0
+"player_move" = 146
+"player_region_register_end" = 280
+[units.negative]
+find = "add di, -MISS_EXPLOSION_RADIUS_VELOCITY"
+replace = "add di, -(MISS_EXPLOSION_RADIUS_VELOCITY + 1)"
+[[units.tables]]
+offset = 240
+size = 40
+[[units.uncredited]]
+offset = 145
+size = 1
+kind = "alignment"

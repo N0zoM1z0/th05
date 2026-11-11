@@ -39,6 +39,7 @@ necessarily all authored bytes where padding is present.
 | MAIN shot collisions | **399 + 210** complete C++ functions, individual exact ordered fixups | [Shot collisions](../src/main/player/shot_runtime.md) |
 | MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
 | MAIN performance selectors | **76-byte** complete reviewed ASM family at `CF7A..CFC6`; **74 authored instruction bytes**, two uncredited `EVEN` NOPs | [Performance/selector family](../src/main/runtime/playperf_select.md) |
+| MAIN player physics | **280-byte** complete invalidation/movement native ASM at `C9BA..CAD2`; **239 instruction + 40 jump-table** bytes, original fixup `[60]` | [Player movement](../src/main/player/region_register.md) |
 | MAIN tile-ring setter | Full **79-byte** far-Pascal C++ setter at `BEA4..BEF3`, real tile-ring and scroll state, empty fixups | [Tile-ring setter](../src/main/scroll/ring_set.md) |
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
 | MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
@@ -84,8 +85,7 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
-review are MAIN `C9BA..CAD2` (player invalidation/movement and an inline switch table; the `C9A3` NOP remains outside the accepted `C9A4..C9BA` loader) and
-`15311..158AA` (not one automatically accepted function). Use original
+review include MAIN `C742..C7FA` (STD loader) and `C8F0..C998` (score insertion); the player region `C9BA..CAD2` and Gather/point-popup raster subregions have separately accepted native owners. Use original
 ReC98/source and native control-flow evidence before claiming ownership or
 credit. Further useful natural-C++ recovery opportunities can be found in
 [unaccepted candidates](reconstruction/UNACCEPTED_COHORTS.md). Do not
