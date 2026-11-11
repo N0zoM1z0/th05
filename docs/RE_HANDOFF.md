@@ -14,6 +14,16 @@ hardware function. Together with accepted 88+56 predecessors, 218 bytes
 at `[13A3E,13B18)` have complete independent exact ownership. The
 456-byte dialog opcode remains unaccepted. See [dialog graphics](../src/main/dialog/runtime.md).
 
+The same complete **342-byte CDG loader/reader/free ASM source** now passes
+strict original-byte and relocation replay in OP `E174..E2CA` and MAINE
+`F29E..F3F4`, each independently with two fresh TASM/TLINK producers and a
+rejected 3→2-DWORD metadata copy negative. Both use their own real CDG,
+file and HMEM DATA/call addresses. All three programs now have **342/342
+raw bytes**, 14 exact original ordered fixups and five uncredited NOPs per
+artifact, or **1,011 reviewed authored instruction bytes** total. See
+[OP/MAINE CDG resource proof](../src/main/formats/cdg_load_family_op_maine.md)
+and `.analysis/gpt-web-{op,maine}-cdg-load-family-342-a/receipt.json`.
+
 The MAIN shared **342-byte complete CDG resource loader family** at
 `[15118,1526E)` is now reviewed original-register ASM: two independent
 TASM32/TLINK builds match all raw bytes, the original 14-site ordered
