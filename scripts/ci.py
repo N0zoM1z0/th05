@@ -59,6 +59,10 @@ def main():
     # source-current ledger here: no original game, Wine or asset is loaded.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_gaiji.py"), "--check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Only inspect the recorded -O member/OMF boundaries; no game or native
+    # toolchain is loaded by this lightweight source-current check.
+    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_adpcm.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")

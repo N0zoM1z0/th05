@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**ZUN `-O` PMD/ADPCM RAM diagnostic accepted:** Complete **926-byte** standalone COM, including **892 CODE instruction bytes**, **34 initialized signature/status bytes**, and **42 runtime BSS bytes** (not part of the file). All ten procedure boundaries and full MZ-free COM bytes match two independent TASM/TLINK producers, with a rejected semantic timing mutation. See [ADPCM RAM diagnostic](../src/zun/adpcm/README.md); no global authored credit inferred.
+
 **ZUN `-G` gaiji child accepted:** Complete **8,377-byte** embedded COM, including **75 instruction bytes**, **1 linker-alignment byte**, **109 semantic message bytes**, and **8,192 separately reviewed font-resource bytes**. The exact bitmap is expanded only inside private `.analysis` from a pinned reference image, never copied into public source. Focused TASM/TLINK proof and compiled negative in [ZUN gaiji installer](../src/zun/gaiji/README.md); no global authored credit inferred.
 
 **ZUN `-I` interrupt child accepted:** One complete **1,009-byte** standalone COM reconstruction, containing **452 compared CODE bytes** (2 uncredited NOPs) and **557 initialized signature/message bytes**. See [interrupt guard](../src/zun/interrupt/README.md) and `config/zun_interrupt_acceptance.json`. Historical source-origin and global authored-code credit remain separately unresolved.

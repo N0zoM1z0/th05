@@ -1,0 +1,31 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-O"
+container_start = 0x355
+size = 926
+sha256 = "4f9a9451f19bdd8d3ea8949a5ea75df6c2f92a9a84dcf39e1d7cf13421acc8a0"
+source = "src/zun/adpcm/check.asm"
+source_encoding = "utf-8"
+assembler_encoding = "utf-8"
+origin = "inferred-original-register-assembly"
+global_authored_credit = "unreviewed"
+code_bytes = 892
+initialized_data_bytes = 34
+bss_bytes = 42
+instruction_nops = []
+
+[publics]
+ADPCM_DIAGNOSTIC_ENTRY = 0x100
+CHECK_BOARD = 0x127
+TRY_CLASSIC_BOARD = 0x1A0
+TRY_EXTENDED_BOARD = 0x247
+CHECK_RAM = 0x2E4
+ADPCM_SETUP = 0x2FB
+ADPCM_DRAIN = 0x3A8
+ADPCM_RECEIVE_ONCE = 0x428
+CHECK_RAM_SIGNATURE = 0x449
+WRITE_ADPCM_REGISTER = 0x455
+
+[negative]
+find = "FM_REGISTER_DELAY equ 100"
+replace = "FM_REGISTER_DELAY equ 101"
