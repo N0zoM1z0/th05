@@ -51,6 +51,10 @@ def main():
     for script in ("progress.py", "ownership.py"):
         subprocess.run([sys.executable, str(ROOT / "scripts" / script), "--check"],
                        cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Static-only CL.LIB review of two large CODE SEGDEFs. Their 8 runtime
+    # CS: placeholders are deliberately unowned, not zero-filled source.
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_vendor_reserved.py"), "--structural-check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     # Lightweight source-current acceptance check for the separate ZUN.COM
     # -I child; no assembler, Wine, original target or cold replay is invoked.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_interrupt.py"), "--check"],

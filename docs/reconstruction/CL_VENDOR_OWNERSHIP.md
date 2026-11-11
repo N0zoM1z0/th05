@@ -79,18 +79,42 @@ public proof pins the verifier, library parser and toolchain manifest. The
 separate review decision explicitly selects all 31 proven members; adding an
 unreviewed or deferred member fails closed in the inventory.
 
-Two whole candidates, 2048 bytes, remain **deferred**, even though their linked
-calibration bytes equal the original:
+Two additional large CODE members were **deferred from this gapless-LEDATA
+lane** as whole 2,048-byte contributions. Their real Borland OMF records
+contain runtime-write state reservations, not original executable bytes:
 
-- `farheap [0527F,056DA)`: LEDATA leaves original `[05285,0528B)` (six bytes)
-  unwritten inside its complete CODE SEGDEF. Both images contain zero there.
-- `exec [0A2FC,0A6A1)`: its 255-byte LIDATA expands exactly to the calibration
-  prefix, but `[0A460,0A462)` remains unwritten (two zero bytes in both images).
+- `farheap [0527F,056DA)` (1,115 bytes): 1,109 bytes are covered by original
+  LEDATA records; `[05285,0528B)` is an unwritten six-byte `CS:` state bank,
+  independently read and written by native far-heap operations.
+- `exec [0A2FC,0A6A1)` (933 bytes): 931 bytes are covered by original LIDATA
+  and LEDATA records, including a real 255-byte zero-initialized CODE buffer;
+  `[0A460,0A462)` is an unwritten two-byte `CS:` state slot, updated by
+  the native DOS exec code at `0A471` and referenced later.
 
-No implicit zero-fill exemption or reservation-ownership rule has been adopted.
-The exact reserved spans need explicit review of linker/object allocation
-semantics before either complete member can be excluded. This review does not cover startup, vendor DATA/BSS, master.lib, nearby gaps or any other
-artifact. Names and approximate instruction shape alone are never sufficient.
+These two are now separately reviewed with the original complete CL.LIB member
+records, complete target/calibration byte identity, all 70 ordered source
+FIXUPP resolutions, actual LIDATA expansion, and unique native CODE
+boundaries. The **separate** [reserved vendor proof](../../config/vendor_reserved_ownership.json),
+[explicit adoption](../../config/reviewed_vendor_reserved.json), and
+[verifier](../../scripts/review_vendor_reserved.py) pin precisely the four
+source-written intervals totaling **2,040 vendor bytes**. The eight
+unwritten bytes **remain `unknown` in the ownership partition**, with zero
+source credit: *no implicit linker zero-fill ownership exemption has been
+adopted*. This additional adoption does not rewrite or enlarge the original
+31-member, 2,901-byte gapless proof.
+
+To check the source-current record without private inputs, or verify the
+actual two original vendor members without recompiling the game:
+
+```sh
+python3 scripts/review_vendor_reserved.py --structural-check
+python3 scripts/review_vendor_reserved.py --check
+```
+
+All of this is third-party CODE-segment provenance. A CODE SEGDEF includes
+noninstruction buffers (notably the 255-byte LIDATA); it does not establish
+game-authored source or a denominator. Startup, vendor DATA/BSS, Master,
+nearby gaps and other artifacts remain independent.
 
 ## Independently reviewed initialized DATA
 

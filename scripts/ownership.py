@@ -476,7 +476,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         if name == "main":
             claims, review_sha = reviewed_vendor(root, view=view, verify_targets=verify_targets)
             master_claims, master_review_sha = reviewed_master(root, view=view, verify_targets=verify_targets)
-            pieces = overlay_vendor(view["size"], pieces, claims + master_claims)
+            # These two large CL.LIB CODE members have real original OMF
+            # source writes, but contain eight unwritten runtime CS: slots.
+            # Only the 2040 bytes emitted by LEDATA/LIDATA are owned; the
+            # reserved variables remain unknown, never implicit zero credit.
+            from review_vendor_reserved import reviewed_claims as reviewed_reserved_vendor
+            reserved_claims, reserved_review_sha = reviewed_reserved_vendor(
+                root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims + master_claims + reserved_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -508,6 +515,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
+        if name == "main" and reserved_review_sha:
+            views[name]["reserved_vendor_review_sha256"] = reserved_review_sha
         if runtime_sha and name == "main":
             views[name]["runtime_vendor_review_sha256"] = runtime_sha
         if strings_sha and name == "main":
