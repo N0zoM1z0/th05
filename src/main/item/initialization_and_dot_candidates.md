@@ -41,3 +41,10 @@ Private first-producer reviews:
   `d8285da4263d091b86cbd2cedf5866a15a9aa5e632f8a31858e442b6df2491a0`.
 - `.analysis/item-splash-dot-natural-first-review.json`, SHA-256
   `628ef35c2d757f90304f11e61dd3de7c17384852b03af91f5b0d36d4aa280ad5`.
+
+## Subsequent item-dot original-register ASM recovery
+
+The older 42-byte C++ dot diagnostic above remains inexact. The separate
+[28-byte near fastcall ASM renderer](splash_dot_exact.md) has since passed
+strict source/boundary/origin review and two native assembler producers.
+The accepted item/splash renderers and their C++ inputs are unchanged.

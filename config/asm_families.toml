@@ -2586,3 +2586,28 @@ semantic_inputs = ["src/main/boss/background.hpp", "src/main/player/mima_backdro
 [units.negative]
 find = "mov di, ALICE_LAST_ROW_LEFT"
 replace = "mov di, (ALICE_LAST_ROW_LEFT + 1)"
+
+[[units]]
+id = "main-item-splash-dot-exact"
+artifact = "main"
+source = "src/main/item/splash_dot_exact.asm"
+types = "src/main/item/splash_dot_exact_types.inc"
+symbols = "probes/units/item_splash_dot_symbols.inc"
+bindings = "probes/units/item_splash_dot_bindings.asm"
+notes = "src/main/item/splash_dot_exact.md"
+target_start = 57682
+size = 28
+segment = "ITEM_SPLASH_DOT_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "f6b18ad8a3a5d6049487b38bd215df8ae04b7595afa1b1cbcfe0d6b8a53766a3"
+target_scope_sha256 = "4898597cc5a5db17fa9565240b3a28784cb27361dc207996af2cafde6510b313"
+semantic_inputs = ["src/main/item/render.hpp", "src/main/item/splash_render.cpp"]
+[units.publics]
+"@item_splash_dot_render" = 0
+"item_splash_dot_end" = 28
+[units.negative]
+find = "and cl, BYTE_PIXEL_MASK"
+replace = "and cl, (BYTE_PIXEL_MASK - 1)"
