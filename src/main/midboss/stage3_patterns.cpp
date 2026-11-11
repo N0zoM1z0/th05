@@ -1,10 +1,11 @@
 // Natural animation, movement and patterns immediately before Stage3 update.
 #include "src/main/midboss/stage3_patterns.hpp"
+#include "src/main/midboss/stage3_scratch.hpp"
 
 void near midboss3_reposition(void)
 {
     if((midboss.phase_frame & 3) == 0) {
-        if(boss_statebyte[15] == 0) {
+        if(midboss3_scratch.reposition_returning == 0) {
             midboss.sprite++;
             if(midboss.sprite >= 220) {
                 midboss.sprite = 219;
@@ -15,15 +16,15 @@ void near midboss3_reposition(void)
                 } else if(midboss.pos.cur.x.v > to_sp(320)) {
                     midboss.pos.cur.x.v = to_sp(320);
                 }
-                boss_statebyte[15]++;
+                midboss3_scratch.reposition_returning++;
             }
         } else {
             midboss.sprite--;
             if(midboss.sprite < 212) {
                 midboss.sprite = 208;
-                boss_statebyte[15] = 0;
+                midboss3_scratch.reposition_returning = 0;
                 midboss.phase_frame = 0;
-                boss_statebyte[14] = 0;
+                midboss3_scratch.active_attack = 0;
             }
         }
     }
@@ -44,11 +45,11 @@ void near midboss3_gather_charge(void)
 
 void near midboss3_pattern_1(void)
 {
-    if(midboss.phase_frame < 32) {
+    if(midboss.phase_frame < MIDBOSS3_CHARGE_FRAMES) {
         midboss3_gather_charge();
         return;
     }
-    if(midboss.phase_frame == 32) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_FIRST_FRAME) {
         bullet_template.spawn_type = MIDBOSS3_SPAWN_CLOUD_FORWARDS;
         bullet_template.patnum = MIDBOSS3_PAT_BALL_BLUE;
         bullet_template.speed.v = midboss3_speed(1.5f);
@@ -63,30 +64,30 @@ void near midboss3_pattern_1(void)
         midboss.pos.cur.y.v -= to_sp(4);
         return;
     }
-    if(midboss.phase_frame == 48) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_SECOND_FRAME) {
         bullet_template.patnum = MIDBOSS3_PAT_BALL_RED;
         bullet_template.speed.v = midboss3_speed(3.0f);
         midboss3_set_spread_stack(4, 5, 4, 0.5f);
         goto fire;
     }
-    if(midboss.phase_frame == 64) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_THIRD_FRAME) {
         bullet_template.patnum = MIDBOSS3_PAT_BALL_BLUE;
         bullet_template.speed.v = midboss3_speed(2.0f);
         midboss3_set_spread_stack(7, 10, 4, 0.5f);
         goto fire;
     }
-    if(midboss.phase_frame >= 96) {
+    if(midboss.phase_frame >= MIDBOSS3_PATTERN_REPOSITION_FRAME) {
         midboss3_reposition();
     }
 }
 
 void near midboss3_pattern_2(void)
 {
-    if(midboss.phase_frame < 32) {
+    if(midboss.phase_frame < MIDBOSS3_CHARGE_FRAMES) {
         midboss3_gather_charge();
         return;
     }
-    if(midboss.phase_frame == 32) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_FIRST_FRAME) {
         bullet_template.spawn_type =
             MIDBOSS3_SPAWN_CLOUD_FORWARDS | MIDBOSS3_SPAWN_NO_DECELERATE;
         bullet_template.patnum = MIDBOSS3_PAT_BALL_BLUE;
@@ -96,7 +97,7 @@ void near midboss3_pattern_2(void)
         bullet_template.angle = 0;
         goto fire;
     }
-    if(midboss.phase_frame == 48) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_SECOND_FRAME) {
         bullet_template.group = BG_SPREAD_STACK_AIMED;
         bullet_template.patnum = MIDBOSS3_PAT_BALL_RED;
         midboss3_set_spread_for_rank(1, 1, 2, 4, 3, 3, 4, 4);
@@ -109,23 +110,23 @@ void near midboss3_pattern_2(void)
         midboss.pos.cur.y.v -= to_sp(4);
         return;
     }
-    if(midboss.phase_frame == 64) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_THIRD_FRAME) {
         bullet_template.patnum = MIDBOSS3_PAT_BALL_BLUE;
         midboss3_set_spread_for_rank(1, 1, 3, 5, 4, 5, 5, 4);
         goto stack;
     }
-    if(midboss.phase_frame >= 96) {
+    if(midboss.phase_frame >= MIDBOSS3_PATTERN_REPOSITION_FRAME) {
         midboss3_reposition();
     }
 }
 
 void near midboss3_pattern_3(void)
 {
-    if(midboss.phase_frame < 32) {
+    if(midboss.phase_frame < MIDBOSS3_CHARGE_FRAMES) {
         midboss3_gather_charge();
         return;
     }
-    if(midboss.phase_frame == 32) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_FIRST_FRAME) {
         bullet_template.spawn_type =
             MIDBOSS3_SPAWN_CLOUD_FORWARDS | MIDBOSS3_SPAWN_NO_DECELERATE;
         bullet_template.patnum = MIDBOSS3_PAT_DIAMOND_BLUE;
@@ -142,18 +143,18 @@ void near midboss3_pattern_3(void)
         midboss.pos.cur.y.v -= to_sp(4);
         return;
     }
-    if(midboss.phase_frame == 48) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_SECOND_FRAME) {
         bullet_template.speed.v = midboss3_speed(3.0f);
         bullet_template.spread = 21;
         bullet_template.spread_angle_delta = 4;
         goto fire;
     }
-    if(midboss.phase_frame == 64) {
+    if(midboss.phase_frame == MIDBOSS3_VOLLEY_THIRD_FRAME) {
         bullet_template.spread = 16;
         bullet_template.spread_angle_delta = 8;
         goto fire;
     }
-    if(midboss.phase_frame >= 96) {
+    if(midboss.phase_frame >= MIDBOSS3_PATTERN_REPOSITION_FRAME) {
         midboss3_reposition();
     }
 }

@@ -85,3 +85,31 @@ rejected. The ledger accepts `main-midboss-stage3-update`: one full callback,
 bytes. The one compiler zero is excluded from credit; DATA/BSS remains zero.
 No source variant, target bytes, fixup normalization or inside-function scaffold
 was introduced. CPP, ABI header and binder remained frozen during replay.
+
+## Shared 16-byte pattern and repositioning state (2026-11-11)
+
+The complete Stage 3 midboss update and its five original near movement/
+attack helper bodies now use a shared `Midboss3Scratch` *view* of the existing
+`boss_statebyte[16]`, not a new object. Byte 13 counts completed patterns,
+byte 14 selects transition / spread-stack / aimed-stack / diamond-spread
+attack states (`0..3`), and byte 15 flags the returning half of the sprite
+repositioning animation. Compile-time size/offset assertions pin all three
+physical bytes. The entrance still initializes the first real attack and
+pattern count to one; the transition state still advances `(done % 3) + 1`
+and the exhaustion threshold remains `MIDBOSS3_PATTERNS_MAX + 1`.
+
+All three firing callbacks retain their original common cadence: charge
+before frame 32, successive volleys at frames 32, 48 and 64, then the
+repositioning animation at frame 96. Each callback continues to use its own
+original rank-adjusted bullet shape, speed, spread and sound effects. The
+returning reposition state resets the original pattern phase and timer,
+without inventing additional zeroed fields or a second state allocation.
+
+The focused `main-midboss-stage3-update` (332 bytes) and
+`main-midboss-stage3-patterns` (616 bytes) replay rebuilt both affected
+sources twice with the actual pinned Borland/TLINK toolchain. The complete
+**948/948 original bytes** match, including the update's switch table,
+alignment zero and literal ordered relocations; the compiled semantic
+negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-midboss3-shared-pattern-20261111/receipt.json`.
+No new target CODE ownership or unrelated cold replay is claimed.

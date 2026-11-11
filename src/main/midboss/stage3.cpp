@@ -1,13 +1,14 @@
 // Natural phase/pattern state machine at original MAIN 1527:6A92.
 #include "src/main/midboss/stage3.hpp"
+#include "src/main/midboss/stage3_scratch.hpp"
 
 // The original four-word switch table has a real even-word boundary and one
 // compiler zero after the complete function's final RETF. All ABI types above
 // are already complete before applying the table-alignment option.
 #pragma option -a2
 
-#define midboss3_patterns_done boss_statebyte[13]
-#define midboss3_pattern boss_statebyte[14]
+#define midboss3_patterns_done midboss3_scratch.patterns_finished
+#define midboss3_pattern midboss3_scratch.active_attack
 
 void pascal far midboss3_update(void)
 {
@@ -16,26 +17,26 @@ void pascal far midboss3_update(void)
     midboss.phase_frame++;
 
     switch(midboss.phase) {
-    case 0:
+    case MIDBOSS3_PHASE_ENTRANCE:
         midboss.pos.update_seg3();
         midboss_hittest_shots_damage(to_sp(24), to_sp(24), 10);
         if(midboss.phase_frame >= 192) {
             midboss.phase++;
             midboss.phase_frame = 0;
             midboss.angle = 0;
-            boss_statebyte[15] = 0;
-            midboss3_pattern = 1;
+            midboss3_scratch.reposition_returning = 0;
+            midboss3_pattern = MIDBOSS3_ATTACK_SPREAD_STACKS;
             midboss3_patterns_done = 1;
             midboss.pos.velocity.x.v = 0;
         }
         break;
 
-    case 1:
+    case MIDBOSS3_PHASE_ATTACKS:
         midboss.pos.prev = midboss.pos.cur;
         switch(midboss3_pattern) {
-        case 0:
-            if(midboss.phase_frame >= 32) {
-                midboss3_pattern = (midboss3_patterns_done % 3) + 1;
+        case MIDBOSS3_ATTACK_REPOSITION:
+            if(midboss.phase_frame >= MIDBOSS3_REPOSITION_TRANSITION_FRAMES) {
+                midboss3_pattern = (midboss3_patterns_done % 3) + MIDBOSS3_ATTACK_SPREAD_STACKS;
                 midboss3_patterns_done++;
                 midboss.phase_frame = 0;
                 if(midboss3_patterns_done >= (MIDBOSS3_PATTERNS_MAX + 1)) {
@@ -43,13 +44,13 @@ void pascal far midboss3_update(void)
                 }
             }
             break;
-        case 1:
+        case MIDBOSS3_ATTACK_SPREAD_STACKS:
             midboss3_pattern_1();
             break;
-        case 2:
+        case MIDBOSS3_ATTACK_AIMED_STACKS:
             midboss3_pattern_2();
             break;
-        case 3:
+        case MIDBOSS3_ATTACK_DIAMOND_SPREADS:
             midboss3_pattern_3();
             break;
         }
