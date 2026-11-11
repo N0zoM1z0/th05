@@ -24,8 +24,8 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,017 decoded bytes**:
-MAIN 5,031; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **27,935 decoded bytes**:
+MAIN 4,949; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
 
 The original [MAIN standard-stage filename](../src/main/stage/std_filename.md)
@@ -35,8 +35,10 @@ adjacent [score-file/continue-name DATA](../src/main/score/resource_names.md)
 continues to own `2192E..21942` independently, with no byte counted twice.
 
 The [BFNT/EDGES/BYTE_MASK/BGM initializer review](reconstruction/MAIN_MASTER_LITERAL_TABLES.md)
-adds another **224 original Master third-party initialized-DATA bytes**:
-6+34+8+176 across four complete source-written tables. Its source-derived
+now owns **306 original Master third-party initialized-DATA bytes**:
+6+34+10+22+50+8+176 across seven complete source-written tables, including
+EPS0N notebook IDs, IBM video/font DOS device names and the full 16-color
+original RGB palette. Its source-derived
 `UNDF` note sentinel is 100. The adjacent alignment zeros, `intdiv`, and
 writable foreign DATA remain unknown; none of these tables is game-authored
 C++ or part of the accepted denominator.

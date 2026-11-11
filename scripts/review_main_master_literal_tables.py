@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Four complete original Master 0.23 literal DATA tables in TH05 MAIN.
+"""Seven complete original Master 0.23 literal DATA tables in TH05 MAIN.
 
 The complete historic ASM source is independently decoded, numeric literal
 initializers are evaluated (including UNDF=100 from BGM.INC), and genuine
@@ -30,6 +30,9 @@ SOURCE=ROOT/'.analysis/builds/main-calibration-b/source/libs/master.lib'
 TABLES=(
     ('BFNT_ID','BFNTID.ASM','bfnt_id[data].asm',0x20D36,0x20D58,6,'BFNT_ID'),
     ('EDGES','EDGES.ASM','edges[data].asm',0x20D4C,0x20D6E,34,'EDGES'),
+    ('EPSON_NOTES','GETMAC98.ASM','get_machine_98[data].asm',0x20D74,0x20D96,10,None),
+    ('IBM_VIDEO_DEVICES','GETMACAT.ASM','get_machine_at[data].asm',0x20D7E,0x20DA0,22,None),
+    ('PALETTE_DEFAULTS','PAL.ASM','pal[data].asm',0x20DAA,0x20DCC,50,'PaletteTone'),
     ('BYTE_MASK','WORDMASK.ASM','wordmask[data].asm',0x2107C,0x2109E,8,'BYTE_MASK'),
     ('BGM_NOTE_AND_LENGTH','B_DATA.ASM','bgm[data].asm',0x210B4,0x210D6,176,'note_dat'),
 )
@@ -61,6 +64,43 @@ def source_payload(raw: bytes, name: str, encoding: str, *, undf: int) -> bytes:
         need(len(words)==17 and words[0]==0 and words[-1]==0xffff,
              'complete original seventeen-word EDGES mask table differs')
         return struct.pack('<17H',*words)
+    if name=='EPSON_NOTES':
+        begin=[i for i,x in enumerate(lines) if re.fullmatch(r'epson_notes\s+db\s+[0-9a-f]{2}h',x)]
+        need(len(begin)==1,'original Epson notebook model table declaration missing')
+        vals=[]
+        for line in lines[begin[0]:]:
+            m=re.fullmatch(r'(?:epson_notes\s+)?db\s+([0-9a-f]{2})h',line)
+            if not m:break
+            vals.append(int(m[1],16))
+        need(vals==[0x0d,0x16,0x20,0x22,0x27,0x2a,0x2e,0x36,0x3f,0x00],
+             'whole original Epson notebook model ID list differs')
+        return bytes(vals)
+    if name=='IBM_VIDEO_DEVICES':
+        need(len([x for x in lines if re.fullmatch(r"ibmadsp\s+db\s+'\$ibmadsp',0",x)])==1 and
+             len([x for x in lines if re.fullmatch(r"ibmafnt\s+db\s+'\$ibmafnt',0",x)])==1 and
+             len([x for x in lines if re.fullmatch(r'exentry\s+dd\s+0',x)])==1,
+             'original IBM device names or extension entry initializer changed')
+        # Original foreign _DATA names and one zero FAR entry, not a 3rd
+        # game-authored filename or a pointer to invented CODE.
+        return b'$IBMADSP\0$IBMAFNT\0'+struct.pack('<L',0)
+    if name=='PALETTE_DEFAULTS':
+        need(len([x for x in lines if re.fullmatch(r'_palettetone\s+dw\s+100',x)])==1,
+             'original default palette tone no longer 100')
+        begin=[i for i,x in enumerate(lines)
+               if re.fullmatch(r'_palettesinit\s+db\s+[0-9a-f]{3}h,[0-9a-f]{3}h,[0-9a-f]{3}h',x)]
+        # Literal palette entries must be 16 RGB triplets; byte widths
+        # remain explicit, including the 0x77 gray and 0xaa reduced colors.
+        need(len(begin)==1,'original palette RGB table label missing')
+        triplets=[]
+        for line in lines[begin[0]:]:
+            m=re.fullmatch(r'(?:_palettesinit\s+)?db\s+([0-9a-f]{3}h,[0-9a-f]{3}h,[0-9a-f]{3}h)',line)
+            if not m:break
+            triplets.append([int(token[:-1],16) for token in m[1].split(',')])
+        need(len(triplets)==16 and triplets[0]==[0,0,0] and
+             triplets[7]==[255,255,255] and triplets[8]==[0x77]*3 and
+             triplets[15]==[0xaa]*3,
+             'original full 16-color default RGB palette differs')
+        return struct.pack('<H',100)+bytes(x for triple in triplets for x in triple)
     if name=='BYTE_MASK':
         rows=[x for x in lines if re.fullmatch(r'byte_mask\s+db\s+(?:0?[0-9a-f]{1,2}h\s*,?\s*){8}',x)]
         need(len(rows)==1,'original complete eight-byte BYTE_MASK table changed')
@@ -149,12 +189,19 @@ def replay() -> dict:
         need(not relative_fixups(original,start,size) and
              not relative_fixups(calibration,cal_start,size),
              'original Master literal initialized table unexpectedly contains relocations')
-        cal_label=(cal_start//16,cal_start%16)
-        # MAP addresses are FRAME:OFFSET with the true original _DATA segment
-        # at 209E and its historical linker offset (not linear grouping).
+        # MAP addresses are FRAME:OFFSET with the real historical
+        # calibration _DATA segment. Private labels in the source do not
+        # exist as publics: their exact OMF positions plus unique original
+        # literal DATA give the bounds, without inventing a MAP symbol.
         pub_offset=cal_start-0x209e0
-        need(len(re.findall(r'(?im)^\s*209E:'+f'{pub_offset:04X}'+r'\s+idle\s+'+re.escape(public)+r'\s*$',map_text))==2,
-             'native original Master DATA MAP public missing at true anchored location: '+name)
+        if public is not None:
+            need(len(re.findall(r'(?im)^\s*209E:'+f'{pub_offset:04X}'+r'\s+idle\s+'+re.escape(public)+r'\s*$',map_text))==2,
+                 'native original Master DATA MAP public missing at true anchored location: '+name)
+        else:
+            need(name in ('EPSON_NOTES','IBM_VIDEO_DEVICES') and
+                 cal_start in (0x20d96,0x20da0) and
+                 original.program_image.find(body,start+1)<0,
+                 'private foreign initialized table original address differs')
         local=cal_start-0x20A70
         evidence=[]
         cover=bytearray(size)
@@ -191,7 +238,7 @@ def replay() -> dict:
 def validate(meta: dict, decision_required=True):
     parent=json.loads(PARENT.read_text())
     need(meta.get('schema_version')==1 and meta.get('kind')=='complete-original-Master-literal-DATA' and
-         meta.get('source_count')==len(TABLES) and meta.get('DATA_bytes')==224 and
+         meta.get('source_count')==len(TABLES) and meta.get('DATA_bytes')==306 and
          meta.get('original_author_archive_sha256')==parent['inputs']['inner_archive']['sha256'] and
          meta.get('original_target_sha256')==parent['inputs']['target']['sha256'] and
          meta.get('native_OMF_sha256')==parent['inputs']['calibration_object']['sha256'] and
@@ -222,9 +269,9 @@ def validate(meta: dict, decision_required=True):
              'original source inclusion identity missing')
     if decision_required:
         d=json.loads(DECISION.read_text())
-        need(d=={'schema_version':1,'decision':'ADOPT_ONLY_FOUR_MASTER_LITERAL_DATA_TABLES',
+        need(d=={'schema_version':1,'decision':'ADOPT_ONLY_SEVEN_MASTER_LITERAL_DATA_TABLES',
                  'evidence_sha256':digest_file(PROOF),
-                 'scopes':[r['member'] for r in rows], 'DATA_bytes':224,
+                 'scopes':[r['member'] for r in rows], 'DATA_bytes':306,
                  'CODE_bytes':0,'authored_credit':0},
              'independent Master literal DATA adoption decision missing/stale')
 
@@ -248,15 +295,15 @@ def main():
     if args.write:
         need(not PROOF.exists() and not DECISION.exists(), 'original Master proof already exists')
         j=replay();PROOF.write_text(json.dumps(j,indent=2)+'\n')
-        decision={'schema_version':1,'decision':'ADOPT_ONLY_FOUR_MASTER_LITERAL_DATA_TABLES',
+        decision={'schema_version':1,'decision':'ADOPT_ONLY_SEVEN_MASTER_LITERAL_DATA_TABLES',
                   'evidence_sha256':digest_file(PROOF),
                   'scopes':[r['member'] for r in j['scope_rows']],
-                  'DATA_bytes':224,'CODE_bytes':0,'authored_credit':0}
+                  'DATA_bytes':306,'CODE_bytes':0,'authored_credit':0}
         DECISION.write_text(json.dumps(decision,indent=2)+'\n')
-        validate(j);print('PASS four source-linked original Master literal tables',j['DATA_bytes'])
+        validate(j);print('PASS seven source-linked original Master literal tables',j['DATA_bytes'])
     else:
         j=json.loads(PROOF.read_text());validate(j)
         if args.check:need(replay()==j, 'original full Master literal DATA OMF/MZ changed')
-        print('PASS four source-backed complete Master initialized DATA tables')
+        print('PASS seven source-backed complete Master initialized DATA tables')
 
 if __name__=='__main__':main()
