@@ -116,3 +116,11 @@ now add two independently compiled functions: 48 compared bytes, including
 one uncredited call-relaxation NOP, for 47 authored C++ instruction bytes.
 The DOS transfer preserves unchecked behavior; the release uses the genuine
 same-segment allocator. Their shared focused receipt changes no older owner.
+
+## Later STD loader acceptance
+
+The parked 184-byte STD parser described above has since been recovered from
+[exact natural C++](std_load.md) using TCC `-S` / TASM32 and symbolic
+`main_03` callback relocation. The old 94/184-byte blockers and historical
+source-language doubts remain useful diagnostic context, but not a live STD
+gap. The separate MAP loader is still assessed independently.

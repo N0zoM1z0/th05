@@ -35,3 +35,15 @@ DF requirements, DOS error behavior and unchecked parser behavior are in private
 `.analysis/std-map-loader-native-origin-review.json`, SHA-256
 `45f6604a3bfb648f54d326390770674d825805c8f41d66765b3424303e9423c3`.
 Earlier source and free-function outcomes remain in [format notes](README.md).
+
+## 2026-11-11 update: STD loaded through exact C++
+
+The STD source-language uncertainty above was resolved by an actual full
+Turbo C++ `-S` / TASM32 producer, not by declaring the native function ASM.
+The maintained [184-byte STD loader](std_load.md) now passes two complete
+positive builds, `[43,173]` ordered fixups and a compiled negative. Its
+symbolic `main_03` callback address and three real 386 `MOVZX` instructions
+all come from source. **The old 252-byte combined unknown tally is no longer
+current:** the 184 STD bytes are accepted C++; MAP's 68-byte loader remains
+an independently unresolved native origin/scope. The prior historical
+assessment is kept as context, not as the present STD acceptance status.

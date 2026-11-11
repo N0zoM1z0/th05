@@ -56,6 +56,7 @@ necessarily all authored bytes where padding is present.
 | MAIN Mima bomb backdrop | Four-entry **226-byte** GRCG family at `1052C..1060E` exact reviewed ASM; **224 authored** bytes, two uncredited NOPs | [Mima backdrop](../src/main/player/mima_backdrop.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
+| MAIN STD script loader | **184-byte** near C++ `std_load()` at `C742..C7FA`, 386 `MOVZX` and original ordered fixups `[43,173]` via TCC `-S`/TASM32 | [STD loader](../src/main/formats/std_load.md) |
 | MAIN high-score insertion | **168-byte** natural C++ `hiscore_continue_enter_raw()` at `C8F0..C998`, real TCC `-S`/TASM32 compilation, no fixups | [Insertion source](../src/main/score/continue_raw.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
 | MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
@@ -81,13 +82,15 @@ accepted from the joined 1,123-byte context. Its following runner has its
 own accepted standalone owner because the joined TU's runner fixup order
 differs; this does not invalidate the independently accepted opcode.
 
+**STD loader resolved:** The full 184-byte MAIN `std_load()` now has exact natural C++ at `C742..C7FA` through TCC `-S`/TASM32 and genuine `[43,173]` fixups. See [loader source and receipt](../src/main/formats/std_load.md).
+
 **Score insertion resolved:** The full 168-byte MAIN `C8F0..C998` is now exact C++ through genuine TCC `-S`/TASM32, including original eight DWORD string copies and ordered empty fixups. See [source and focused replay](../src/main/score/continue_raw.md).
 
 **Far vector pair resolved:** MAIN `14AB8..14B58` contains **159 newly accepted C++ instruction bytes** across two complete near-adjacent far-Pascal functions. TCC `-S`/TASM32 reproduces native 386 `MOVSX` and the original `[24]` second-function fixup; the one `14AFD` EVEN byte is outside both owners. See [complete source and receipts](../src/shared/math/vector_far.md).
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
-review include MAIN `C742..C7FA` (STD loader); the far vector pair is now exact C++; the player region `C9BA..CAD2` and Gather/point-popup raster subregions have separately accepted native owners. Use original
+review include MAIN `14AFD` (uncredited vector alignment) and the 68-byte MAP loader at `E5C2..E606`. The STD loader, far vector pair, player region `C9BA..CAD2`, and Gather/point-popup raster subregions now have accepted owners. Use original
 ReC98/source and native control-flow evidence before claiming ownership or
 credit. Further useful natural-C++ recovery opportunities can be found in
 [unaccepted candidates](reconstruction/UNACCEPTED_COHORTS.md). Do not
