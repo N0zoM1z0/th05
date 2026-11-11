@@ -1,0 +1,32 @@
+schema_version = 1
+artifact = "th05-zun"
+assembler_source = "src/zun/launcher/outer.asm"
+usage_source = "src/zun/launcher/usage_ja.txt"
+usage_encoding = "utf-8"
+proof_only_assembler_include = "usage_private.inc"
+origin = "third-party-comcstm-stub-reference"
+global_authored_credit = "unreviewed"
+header_size = 39
+usage_size = 264
+inner_start = 0x12F
+foreign_inner_size = 17745
+wrapper_start = 0x4680
+wrapper_size = 68
+container_size = 18116
+header_sha256 = "7e88ed6b8753d519169ab55c028fe80bd532e6a5459561d692874f6c911f8a22"
+usage_sha256 = "b0ad2c8c751b7e8e87fb63c625909062c54af80d4b09351005a179cfa1a76ee1"
+wrapper_sha256 = "0982f4fa42c53b1df727fd10f64ef5ae2515bbdc90fb1a595209b8dc943d95fd"
+code_bytes = 71
+semantic_header_and_usage_bytes = 300
+
+[publics]
+outer_header = 0x100
+outer_usage = 0x127
+inner_program_start = 0x22F
+outer_entry = 0x4780
+outer_copy_up = 0x47A8
+outer_end = 0x47C4
+
+[negative]
+find = "mov bx, 1          ; DOS standard output"
+replace = "mov bx, 2          ; DOS standard output"

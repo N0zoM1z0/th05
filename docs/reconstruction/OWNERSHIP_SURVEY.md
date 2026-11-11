@@ -207,6 +207,8 @@ original member-checksum field has been established.
 | `4678–4680` | 8 | Inner copy/transfer helper |
 | `4680–46C4` | 68 | Outer COMCSTM wrapper code |
 
+The **39-byte outer COMCSTM header, 264-byte original help text and 68-byte outer wrapper** also have [independent semantic source](../../src/zun/launcher/outer.md) and two exact TASM32/TLINK producers. The wrapper proof explicitly excludes all 17,745 inner bytes: 371 original source bytes are compared, with only 71 actual vendor CODE bytes and 300 header/text bytes. That exact vendor stub has no transferred ZUN-authored credit.
+
 The **550-byte inner dispatcher/catalog plus 8-byte distant transfer helper** now have independent exact semantic assembly sources and [focused double-producer proof](../../src/zun/launcher/README.md). The five embedded child holes total **17,187 bytes** and remain foreign in this independent replay: no child bytes are copied or inferred. Of the 558 compared source bytes, 213 are CODE and 345 are actual local message/count/catalog data; their historical authorship is still reviewed separately.
 
 The inner table stores its own runtime starts, not outer-file offsets. Add

@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**ZUN outer COMCSTM wrapper accepted:** 39-byte original header, 264-byte readable CP932 help and complete 68-byte vendor startup stub all match two native TASM/TLINK producers. Of **371 compared source-owned bytes**, 71 are CODE and 300 are semantic header/help text; the 17,745-byte inner COM is a foreign zero placeholder and remains outside this credit. See [outer wrapper source and focused proof](../src/zun/launcher/outer.md).
+
 **ZUN inner dispatcher and catalog accepted:** 550 original bytes of command parser, catalog and transfer CALL, plus the original 8-byte relocation-free `REP MOVSB` transfer helper, verified by two actual TASM/TLINK producers. The discontiguous **558 compared bytes** contain **213 instruction** and **345 semantic directory/message bytes**; **17,187 foreign child bytes are explicitly excluded**, and the global authored denominator is unchanged. See [dispatcher source and focused acceptance](../src/zun/launcher/README.md).
 
 **ZUN `-O` PMD/ADPCM RAM diagnostic accepted:** Complete **926-byte** standalone COM, including **892 CODE instruction bytes**, **34 initialized signature/status bytes**, and **42 runtime BSS bytes** (not part of the file). All ten procedure boundaries and full MZ-free COM bytes match two independent TASM/TLINK producers, with a rejected semantic timing mutation. See [ADPCM RAM diagnostic](../src/zun/adpcm/README.md); no global authored credit inferred.

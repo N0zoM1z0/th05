@@ -67,6 +67,10 @@ def main():
     # placeholders for five children. Lightweight check never replays children.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_dispatcher.py"), "--check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Only 71 outer COMCSTM instruction bytes and 300 header/text bytes belong
+    # to this wrapper. The 17,745-byte inner COM remains a foreign zero hole.
+    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_outer.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")
