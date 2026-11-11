@@ -5483,3 +5483,22 @@ unit = "main-ems-boss-faceset-complete-3226"
 source = "src/main/ems/ems_boss_lifecycle_prefix.inl"
 find = "cdg_load_all(CDG_FACESET_BOSS, fn);"
 replace = "cdg_load_all((CDG_FACESET_BOSS + 1), fn);"
+
+[[units]]
+id = "main-hiscore-load"
+source = "src/main/score/hiscore_load.cpp"
+module = "th05/hi_load.cpp"
+segment = "HISCORE_LOAD_TEXT"
+wrapper_options = "-zCHISCORE_LOAD_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/hiscore_load_bindings.asm"
+target_start = 0xc9a4
+size = 22
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-hiscore-load"
+source = "src/main/score/hiscore_load.cpp"
+find = "_CX = SCORE_DIGITS;"
+replace = "_CX = SCORE_DIGITS - 1;"

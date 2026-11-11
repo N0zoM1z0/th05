@@ -41,6 +41,7 @@ necessarily all authored bytes where padding is present.
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
+| MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
 | MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |
 
 Other previously reported blockers are **already resolved**: Shinki ball
@@ -72,7 +73,7 @@ isolated diagnostics: `.analysis/gpt-web-dialog-graphics-opcode-context-b/`,
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
-review are MAIN `C9A3..CAD2` (multiple bodies and an inline switch table) and
+review are MAIN `C9BA..CAD2` (player invalidation/movement and an inline switch table; the `C9A3` NOP remains outside the accepted `C9A4..C9BA` loader) and
 `15311..158AA` (not one automatically accepted function). Use original
 ReC98/source and native control-flow evidence before claiming ownership or
 credit. Further useful natural-C++ recovery opportunities can be found in
