@@ -79,3 +79,21 @@ for all798 raw bytes and all seven original ordered fixup sites. The compiled
 entrance threshold192→193 mutation is rejected. Acceptance is4 complete
 functions and797 authored bytes:789 instructions plus8 compiler-table bytes.
 The checked zero receives no credit. No accepted shared header was changed.
+
+## Typed Stage 4 pattern state (2026-11-11)
+
+The three original attack functions and the full Midboss 4 update now share a
+`Midboss4Scratch` view of the existing sixteen `boss_statebyte` bytes. The
+original slots are preserved exactly: byte 13 counts completed patterns, byte
+14 selects the transition/cloud/ring/stack submode, and byte 15 carries the
+shot-vulnerability gate. The update's two phases and four attack-pattern cases
+now have named, numerically identical selectors; each attack function still
+resets only the pattern selector at its original 96-frame boundary. The view
+adds no storage or new phase transition and checks each physical offset.
+
+The only affected exact unit, `main-midboss-stage4`, was rebuilt with two
+independent native Borland producers. All **798 original bytes** match,
+including the four-entry switch table, its preceding uncredited alignment
+zero, and all seven ordered original MZ fixups. The existing compiled
+entrance-timing negative was rejected. Local receipt:
+`.analysis/unit-replays/gpt-web-midboss4-typed-pattern-20261111/receipt.json`.

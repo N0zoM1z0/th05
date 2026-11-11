@@ -2,12 +2,21 @@
 // patterns retain the original compiler contribution's switch-table phase.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/stage4.hpp"
+#include "src/main/midboss/stage4_scratch.hpp"
 // Preserve the original word-aligned compiler table after all ABI types.
 #pragma option -a2
 
-#define patterns_done boss_statebyte[13]
-#define pattern boss_statebyte[14]
-#define vulnerable boss_statebyte[15]
+// Real two-phase dispatcher and four per-pattern submodes, with original
+// numeric values preserved in the compiler-generated switch table.
+static const unsigned char MIDBOSS4_PHASE_ENTRANCE = 0;
+static const unsigned char MIDBOSS4_PHASE_PATTERNS = 1;
+static const unsigned char MIDBOSS4_PATTERN_TRANSITION = 0;
+static const unsigned char MIDBOSS4_PATTERN_RANDOM_CLOUDS = 1;
+static const unsigned char MIDBOSS4_PATTERN_SPIRAL_RINGS = 2;
+static const unsigned char MIDBOSS4_PATTERN_AIMED_STACKS = 3;
+#define patterns_done midboss4_scratch.completed_patterns
+#define pattern midboss4_scratch.current_pattern
+#define vulnerable midboss4_scratch.shot_vulnerable
 
 void near midboss4_pattern_random_clouds(void)
 {
@@ -36,7 +45,7 @@ void near midboss4_pattern_random_clouds(void)
     if(midboss.phase_frame >= 96) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
         midboss.phase_frame = 0;
-        pattern = 0;
+        pattern = MIDBOSS4_PATTERN_TRANSITION;
     }
 }
 
@@ -66,7 +75,7 @@ void near midboss4_pattern_spiral_rings(void)
     if(midboss.phase_frame >= 96) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
         midboss.phase_frame = 0;
-        pattern = 0;
+        pattern = MIDBOSS4_PATTERN_TRANSITION;
     }
 }
 
@@ -96,7 +105,7 @@ void near midboss4_pattern_aimed_stacks(void)
     if(midboss.phase_frame >= 96) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
         midboss.phase_frame = 0;
-        pattern = 0;
+        pattern = MIDBOSS4_PATTERN_TRANSITION;
     }
 }
 
@@ -107,7 +116,7 @@ void pascal far midboss4_update(void)
     midboss.phase_frame++;
 
     switch(midboss.phase) {
-    case 0:
+    case MIDBOSS4_PHASE_ENTRANCE:
         if(midboss.phase_frame == 1) {
             vulnerable = 1;
         }
@@ -117,28 +126,28 @@ void pascal far midboss4_update(void)
             midboss.phase++;
             midboss.phase_frame = 0;
             midboss.angle = 0;
-            pattern = 1;
+            pattern = MIDBOSS4_PATTERN_RANDOM_CLOUDS;
             patterns_done = 0;
             midboss.pos.velocity.x.v = 0;
         }
         break;
 
-    case 1:
+    case MIDBOSS4_PHASE_PATTERNS:
         midboss.pos.prev = midboss.pos.cur;
         switch(pattern) {
-        case 0:
+        case MIDBOSS4_PATTERN_TRANSITION:
             if(midboss4_pattern_transition()) {
                 midboss.phase_frame = 0;
                 patterns_done++;
-                pattern = ((patterns_done % 3) + 1);
+                pattern = ((patterns_done % 3) + MIDBOSS4_PATTERN_RANDOM_CLOUDS);
                 if(patterns_done >= MIDBOSS4_PATTERN_BUDGET) {
                     goto defeat;
                 }
             }
             break;
-        case 1: midboss4_pattern_random_clouds(); break;
-        case 2: midboss4_pattern_spiral_rings(); break;
-        case 3: midboss4_pattern_aimed_stacks(); break;
+        case MIDBOSS4_PATTERN_RANDOM_CLOUDS: midboss4_pattern_random_clouds(); break;
+        case MIDBOSS4_PATTERN_SPIRAL_RINGS: midboss4_pattern_spiral_rings(); break;
+        case MIDBOSS4_PATTERN_AIMED_STACKS: midboss4_pattern_aimed_stacks(); break;
         }
         if(vulnerable) {
             stage4_midboss_hittest_shots(to_sp(24), to_sp(24));
