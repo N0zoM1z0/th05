@@ -5697,3 +5697,22 @@ unit = "main-std-load-exact"
 source = "src/main/formats/std_load.cpp"
 find = "std_fn[3] = '0' + stage_id;"
 replace = "std_fn[3] = '1' + stage_id;"
+
+[[units]]
+id = "main-egc-copy-setup-exact"
+source = "src/main/tile/egc_copy_setup.cpp"
+module = "th05/egccopy.cpp"
+segment = "EGC_SETUP_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/egc_copy_setup_bindings.asm"
+target_start = 0xbc2e
+size = 63
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-egc-copy-setup-exact"
+source = "src/main/tile/egc_copy_setup.cpp"
+find = "_AL = 0x80;"
+replace = "_AL = 0xC0;"

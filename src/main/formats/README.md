@@ -123,4 +123,5 @@ The parked 184-byte STD parser described above has since been recovered from
 [exact natural C++](std_load.md) using TCC `-S` / TASM32 and symbolic
 `main_03` callback relocation. The old 94/184-byte blockers and historical
 source-language doubts remain useful diagnostic context, but not a live STD
-gap. The separate MAP loader is still assessed independently.
+gap. The separate MAP loader was also independently accepted as a 68-byte C++
+function; see [MAP load](map_load.md).

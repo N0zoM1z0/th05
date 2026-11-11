@@ -44,6 +44,13 @@ The maintained [184-byte STD loader](std_load.md) now passes two complete
 positive builds, `[43,173]` ordered fixups and a compiled negative. Its
 symbolic `main_03` callback address and three real 386 `MOVZX` instructions
 all come from source. **The old 252-byte combined unknown tally is no longer
-current:** the 184 STD bytes are accepted C++; MAP's 68-byte loader remains
-an independently unresolved native origin/scope. The prior historical
+current:** the 184 STD bytes are accepted C++; The 68-byte MAP loader was separately accepted earlier as source-backed
+natural C++; see [MAP loader](map_load.md). The prior historical
 assessment is kept as context, not as the present STD acceptance status.
+
+## Updated MAP status
+
+The initial native-only source-origin review above predates the later exact
+[68-byte MAP C++ acceptance](map_load.md) at `E5C2..E606`, with the real
+original fixup `[41]`. Both STD and MAP now have separately accepted C++
+owners; the old combined unknown classification is historical evidence only.

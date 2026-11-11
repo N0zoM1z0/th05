@@ -34,8 +34,8 @@ The original MAIN `C9BA..CAD2` player region is now complete reviewed native
 ASM with a symbolic 20-case dispatch table; its original natural C++
 alternatives remain unaccepted. The 184-byte STD loader, 168-byte score insertion and 159-byte far vector
 pair are now accepted natural C++ using real TCC `-S`/TASM32 producers, not
-hand-credited ASM. Remaining standalone questions include the 68-byte MAP
-loader and unreviewed code/data origin boundaries. Review the original function boundaries,
+hand-credited ASM. The 68-byte MAP loader is also previously accepted C++; remaining
+questions include unreviewed code/data origin boundaries. Review the original function boundaries,
 semantic source and foreign symbols before adding an acceptance candidate;
 use the generated ownership map to discover other live gaps.
 

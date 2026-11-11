@@ -2,24 +2,18 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e55ca2a384b911bcdad9bc8879fa2c760c53008502eda0d517f5411dacb203cd",
+  "replay_receipt_sha256": "35fc0f6c0c658b200e881eac2a4f1f1ec4d34f133c055b15a2a474b8dffc718f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 51010,
-    "candidate_start": 51010,
-    "size": 184,
-    "target_sha256": "39f32b1ee11d64951c2ef7a9781b4b27d83dc87156955a7c1ee5a9f66eed1b85",
-    "candidate_sha256": "34dc175d028b125accbe3f6235f8d03887ad65f7e954812add4b271ae7b9834c",
+    "target_start": 48174,
+    "candidate_start": 48174,
+    "size": 63,
+    "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+    "candidate_sha256": "51810f9583dc650e4f9916084501d8948ec4e0f26dcd6e64e42be851640c68d6",
     "raw_exact": false,
-    "target_fixups": [
-      43,
-      173
-    ],
-    "candidate_fixups": [
-      43,
-      173
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -90977,6 +90971,191 @@
             "stdload.asm"
           ]
         }
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-egc-copy-setup-exact",
+      "entry_sha256": "e1561ff3930383f168e92760827a1ded30635bcb6a852025a8f52b32dabb744e",
+      "result": {
+        "id": "main-egc-copy-setup-exact",
+        "entry_sha256": "e1561ff3930383f168e92760827a1ded30635bcb6a852025a8f52b32dabb744e",
+        "rounds": [
+          {
+            "target_start": 48174,
+            "candidate_start": 48174,
+            "size": 63,
+            "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+            "candidate_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48174,
+            "candidate_start": 48174,
+            "size": 63,
+            "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+            "candidate_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "3bc779326e2e2308e35ffdee9c5ff3cde187d679139d592adcb51a4286f28166",
+            "dependency_timestamp_normalized_sha256": "574cb58907da6ca601d95421db872faeeb25b423849865705b3ebf4501bfb038",
+            "module_name": "th05/egccopy.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/egccopy.cpp",
+              "src/main/tile/egc_copy_setup.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          },
+          {
+            "sha256": "3bc779326e2e2308e35ffdee9c5ff3cde187d679139d592adcb51a4286f28166",
+            "dependency_timestamp_normalized_sha256": "574cb58907da6ca601d95421db872faeeb25b423849865705b3ebf4501bfb038",
+            "module_name": "th05/egccopy.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/egccopy.cpp",
+              "src/main/tile/egc_copy_setup.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/egccopy.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/egccopy.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/egc_copy_setup_bindings.asm",
+            "sha256": "719f7be44357937b14e53f0bd738593f04221962c5de9f7a69bd0e95425d56cd"
+          },
+          {
+            "path": "src/main/tile/egc_copy_setup.cpp",
+            "sha256": "ee6a57a71e621a422323e8204101836806e4f0dc69ebc357f7f2e3e2f2be81e0"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/egc_copy_setup_bindings.asm",
+          "sha256": "719f7be44357937b14e53f0bd738593f04221962c5de9f7a69bd0e95425d56cd"
+        },
+        {
+          "path": "src/main/tile/egc_copy_setup.cpp",
+          "sha256": "ee6a57a71e621a422323e8204101836806e4f0dc69ebc357f7f2e3e2f2be81e0"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "35fc0f6c0c658b200e881eac2a4f1f1ec4d34f133c055b15a2a474b8dffc718f",
+      "compiled_negative_control": {
+        "target_start": 48174,
+        "candidate_start": 48174,
+        "size": 63,
+        "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+        "candidate_sha256": "51810f9583dc650e4f9916084501d8948ec4e0f26dcd6e64e42be851640c68d6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-egc-copy-setup-exact",
+        "entry_sha256": "e1561ff3930383f168e92760827a1ded30635bcb6a852025a8f52b32dabb744e",
+        "mutation": {
+          "unit": "main-egc-copy-setup-exact",
+          "source": "src/main/tile/egc_copy_setup.cpp",
+          "find": "_AL = 0x80;",
+          "replace": "_AL = 0xC0;"
+        },
+        "control_sha256": "fbab90a0fac9e72dee4668d60a49af026ddddc195c1ca427ae3593825d6dd2a8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48174,
+          "candidate_start": 48174,
+          "size": 63,
+          "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
+          "candidate_sha256": "51810f9583dc650e4f9916084501d8948ec4e0f26dcd6e64e42be851640c68d6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "fc26cb784189cd07849c4768fbc9f2e67d2af0416fcf5d4a40d4f84724336268",
+          "dependency_timestamp_normalized_sha256": "7b29d41f3f850fa74fc34e98d31166a0000fbdb7c294267c1bb3a05eae60100e",
+          "module_name": "th05/egccopy.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/egccopy.cpp",
+            "src/main/tile/egc_copy_setup.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/egccopy.cpp"
+        ]
       },
       "receipt_aggregate_pass": true
     }

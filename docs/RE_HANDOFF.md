@@ -44,6 +44,7 @@ necessarily all authored bytes where padding is present.
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
 | MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
+| MAIN EGC copy setup | **63-byte** near C++/hardware register routine at `BC2E..BC6D`, empty fixups | [EGC hardware](../src/main/tile/egc_copy_setup.md) |
 | MAIN MPN image upload | **69-byte** exact C++ at `E57C..E5C1` with original fixups `[12,32,61]` through unmodified TCC `-S`/TASM32 | [MPN uploader](../src/main/formats/mpn_upload.md) |
 | MAIN text bitmap painter | Full **98-byte** `bb_txt_put_8_raw` exact reviewed ASM at `E51A..E57C`; **96 authored** bytes and two checked NOPs | [Text bitmap drawing](../src/main/formats/bb_text_put.md) |
 | MAIN Boss BB tile masks | Full **232-byte** two-function original-register GRCG put/invalidate ASM at `F968..FA50`, ordered fixups `[17]` | [Boss bitmap masks](../src/main/tile/bb_mask_family.md) |
@@ -90,7 +91,7 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
-review include MAIN `14AFD` (uncredited vector alignment) and the 68-byte MAP loader at `E5C2..E606`. The STD loader, far vector pair, player region `C9BA..CAD2`, and Gather/point-popup raster subregions now have accepted owners. Use original
+review include remaining original-language classification and data boundaries, not the already accepted MAIN MAP loader `E5C2..E606`. The STD loader, far vector pair, player region `C9BA..CAD2`, and Gather/point-popup raster subregions have accepted owners; the `14AFD` vector alignment byte remains uncredited. Use original
 ReC98/source and native control-flow evidence before claiming ownership or
 credit. Further useful natural-C++ recovery opportunities can be found in
 [unaccepted candidates](reconstruction/UNACCEPTED_COHORTS.md). Do not
