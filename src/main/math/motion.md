@@ -36,3 +36,12 @@ SHA-256 `a088615515765a2846e6e0c6f28e3bd02c7e3596d8a08355f59ab4ed69b63e74`.
 Independent actual-producer review:
 `.analysis/motion-seg1-natural-actual-independent-review.json`, SHA-256
 `31c86894c99928662c45b6d7b7666b0aef72efb1d10abf1bcc15853a52a98d84`.
+
+## 2026-11-11 exact register-context recovery
+
+The earlier conventional C++ candidate remains a useful failed comparison.
+Both identical native functions now have complete [32-byte compiler-specific
+C++ owners](motion_register.md), using the original register-valued Pascal
+return ABI without changing any shared geometry definition. The original
+natural-source uncertainty above is superseded by actual native compiler
+replay for these two owners, rather than inferred from the old failed build.

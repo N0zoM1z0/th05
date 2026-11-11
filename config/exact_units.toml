@@ -5716,3 +5716,41 @@ unit = "main-egc-copy-setup-exact"
 source = "src/main/tile/egc_copy_setup.cpp"
 find = "_AL = 0x80;"
 replace = "_AL = 0xC0;"
+
+[[units]]
+id = "main-motion-update-seg1-register"
+source = "src/main/math/motion_seg1_register.cpp"
+module = "th05/motion.cpp"
+segment = "MOTION_SEG1_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/motion_seg1_bindings.asm"
+target_start = 0xbe1a
+size = 32
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-motion-update-seg1-register"
+source = "src/main/math/motion_seg1_register.cpp"
+find = "_BX += 2;"
+replace = "_BX += 4;"
+
+[[units]]
+id = "main-motion-update-seg3-register"
+source = "src/main/math/motion_seg3_register.cpp"
+module = "th05/motion3.cpp"
+segment = "MOTION_SEG3_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/motion_seg3_register_bindings.asm"
+target_start = 0x1527c
+size = 32
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-motion-update-seg3-register"
+source = "src/main/math/motion_seg3_register.cpp"
+find = "_BX += 2;"
+replace = "_BX += 4;"

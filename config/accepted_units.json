@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "35fc0f6c0c658b200e881eac2a4f1f1ec4d34f133c055b15a2a474b8dffc718f",
+  "replay_receipt_sha256": "a218ffdc47b36c6eae5188bc1bcd4a2dc0f06367bd010d227e083cd0bf03624d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 48174,
-    "candidate_start": 48174,
-    "size": 63,
-    "target_sha256": "cb56511cc562a0626874ee6db6f72d851a7cd1d2c093ff6f4defebc4efba28f1",
-    "candidate_sha256": "51810f9583dc650e4f9916084501d8948ec4e0f26dcd6e64e42be851640c68d6",
+    "target_start": 48666,
+    "candidate_start": 48666,
+    "size": 32,
+    "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+    "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -91155,6 +91155,432 @@
           "-ml",
           "-DBINARY='M'",
           "th05/egccopy.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-motion-update-seg1-register",
+      "entry_sha256": "12638f6e34a9dbdb0700866847ce510039dac0b8c601dcb4edc954e69223f65a",
+      "result": {
+        "id": "main-motion-update-seg1-register",
+        "entry_sha256": "12638f6e34a9dbdb0700866847ce510039dac0b8c601dcb4edc954e69223f65a",
+        "rounds": [
+          {
+            "target_start": 48666,
+            "candidate_start": 48666,
+            "size": 32,
+            "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "candidate_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 48666,
+            "candidate_start": 48666,
+            "size": 32,
+            "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "candidate_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d97c89f57bcc9970ef4e8834548bdf2e9ebd0b45903a5b8a4f72887784ecfdb7",
+            "dependency_timestamp_normalized_sha256": "d71080bd3e25ea9932758d89e26b470b033b2ecde5c5e9999bf26cf6721c53cb",
+            "module_name": "th05/motion.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/motion.cpp",
+              "src/main/math/motion_seg1_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "d97c89f57bcc9970ef4e8834548bdf2e9ebd0b45903a5b8a4f72887784ecfdb7",
+            "dependency_timestamp_normalized_sha256": "d71080bd3e25ea9932758d89e26b470b033b2ecde5c5e9999bf26cf6721c53cb",
+            "module_name": "th05/motion.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/motion.cpp",
+              "src/main/math/motion_seg1_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/motion.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/motion.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/motion_seg1_bindings.asm",
+            "sha256": "5c41afd04a95ea62703c7736aab067ba139fa4a22a1d937126ef547bcaea7bf0"
+          },
+          {
+            "path": "src/main/math/motion_seg1_register.cpp",
+            "sha256": "7c970a08a92384ed1681aee07b70ac1416e6555459a976a466eb845ac0683e0a"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/motion_seg1_bindings.asm",
+          "sha256": "5c41afd04a95ea62703c7736aab067ba139fa4a22a1d937126ef547bcaea7bf0"
+        },
+        {
+          "path": "src/main/math/motion_seg1_register.cpp",
+          "sha256": "7c970a08a92384ed1681aee07b70ac1416e6555459a976a466eb845ac0683e0a"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a218ffdc47b36c6eae5188bc1bcd4a2dc0f06367bd010d227e083cd0bf03624d",
+      "compiled_negative_control": {
+        "target_start": 48666,
+        "candidate_start": 48666,
+        "size": 32,
+        "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+        "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-motion-update-seg1-register",
+        "entry_sha256": "12638f6e34a9dbdb0700866847ce510039dac0b8c601dcb4edc954e69223f65a",
+        "mutation": {
+          "unit": "main-motion-update-seg1-register",
+          "source": "src/main/math/motion_seg1_register.cpp",
+          "find": "_BX += 2;",
+          "replace": "_BX += 4;"
+        },
+        "control_sha256": "838f0177af88483b42749c6e4a2125db8a249224b587b35f59e2c6ad79017dc8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48666,
+          "candidate_start": 48666,
+          "size": 32,
+          "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+          "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "8ea25f41d804d57478c7075ead86c3bdc71616f1464901622783b6318923bc3d",
+          "dependency_timestamp_normalized_sha256": "84cd505ca8973dd8ae8754cce9f1c20091cd83d5e80bd702b234a761404a55ad",
+          "module_name": "th05/motion.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/motion.cpp",
+            "src/main/math/motion_seg1_register.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/motion.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-motion-update-seg3-register",
+      "entry_sha256": "a3999b8b8c442cb1ae9753249395160de1c3da13068c663ac8ccecd65d2b691c",
+      "result": {
+        "id": "main-motion-update-seg3-register",
+        "entry_sha256": "a3999b8b8c442cb1ae9753249395160de1c3da13068c663ac8ccecd65d2b691c",
+        "rounds": [
+          {
+            "target_start": 86652,
+            "candidate_start": 86652,
+            "size": 32,
+            "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "candidate_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 86652,
+            "candidate_start": 86652,
+            "size": 32,
+            "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "candidate_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "742c6f74165c3b7a07286647d68a5ca162a3d5c9e6c6dbaa58dc1bca26950a39",
+            "dependency_timestamp_normalized_sha256": "d0fad97fe1caabeb746258b38fbbc5d9b99323082f1827a0c882263921862aaf",
+            "module_name": "th05/motion3.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/motion3.cpp",
+              "src/main/math/motion_seg3_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "057b9a4a30baf39055dc7d87d8c22fe14d208f1f718f4cf78110a9071ad43d81",
+            "dependency_timestamp_normalized_sha256": "d0fad97fe1caabeb746258b38fbbc5d9b99323082f1827a0c882263921862aaf",
+            "module_name": "th05/motion3.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/motion3.cpp",
+              "src/main/math/motion_seg3_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-1/a/source",
+          "group-1/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/motion3.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/motion3.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/motion_seg3_register_bindings.asm",
+            "sha256": "caa31ffab0bc05eeac484106a2f0264a4ce78fbac09c37c725a602522e218bb9"
+          },
+          {
+            "path": "src/main/math/motion_seg3_register.cpp",
+            "sha256": "7ff68e5a715c380e666384995df83d58dfb4991665ce5f6b4a7a600f9f7002e7"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/motion_seg3_register_bindings.asm",
+          "sha256": "caa31ffab0bc05eeac484106a2f0264a4ce78fbac09c37c725a602522e218bb9"
+        },
+        {
+          "path": "src/main/math/motion_seg3_register.cpp",
+          "sha256": "7ff68e5a715c380e666384995df83d58dfb4991665ce5f6b4a7a600f9f7002e7"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a218ffdc47b36c6eae5188bc1bcd4a2dc0f06367bd010d227e083cd0bf03624d",
+      "compiled_negative_control": {
+        "target_start": 48666,
+        "candidate_start": 48666,
+        "size": 32,
+        "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+        "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-motion-update-seg1-register",
+        "entry_sha256": "12638f6e34a9dbdb0700866847ce510039dac0b8c601dcb4edc954e69223f65a",
+        "mutation": {
+          "unit": "main-motion-update-seg1-register",
+          "source": "src/main/math/motion_seg1_register.cpp",
+          "find": "_BX += 2;",
+          "replace": "_BX += 4;"
+        },
+        "control_sha256": "838f0177af88483b42749c6e4a2125db8a249224b587b35f59e2c6ad79017dc8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 48666,
+          "candidate_start": 48666,
+          "size": 32,
+          "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
+          "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "8ea25f41d804d57478c7075ead86c3bdc71616f1464901622783b6318923bc3d",
+          "dependency_timestamp_normalized_sha256": "84cd505ca8973dd8ae8754cce9f1c20091cd83d5e80bd702b234a761404a55ad",
+          "module_name": "th05/motion.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/motion.cpp",
+            "src/main/math/motion_seg1_register.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/motion.cpp"
         ]
       },
       "receipt_aggregate_pass": true
