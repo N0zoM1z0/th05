@@ -341,3 +341,15 @@ This repairs/extends existing source records rather than creating a second
 owner for the same code. The proof now contains **142 bounded source scopes
 and 9,110 original vendor CODE bytes**; the net gain in formerly unknown
 ownership is **160 bytes**. No other `__AHINCR` startup origin is assumed.
+
+## Small original DOS, GDC and page-display functions
+
+Four more original Master source extents are verified: OP `DOS_KEYCLEAR`
+(`0790..0796`, 6 B); MAINE `DOS_KEYCLEAR` (`07C8..07CE`, 6 B), `GRAPH_SHOW`
+(`1A86..1A8C`, 6 B), and `gdc_outpw` (`0FDE..0FE9`, 11 B). Each matches its
+complete original author ASM body, real TASM LEDATA, full decoded original
+machine instructions and original ordered relocations. The GDC procedure
+ends with `RET` at `0FE8`. TASM's following EVEN NOP at `0FE9` does **not**
+match the original image's zero and is explicitly excluded from CODE ownership.
+Together they account for **29 previously unknown vendor bytes**. The same
+focused Master proof now covers 146 source-backed scopes / 9,139 bytes.

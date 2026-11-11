@@ -61,6 +61,8 @@ SCOPES = (
      {'op': (0x748, 48), 'maine': (0x748, 48)}, 'original-identical'),
     ('DOS_AXDX', 'libs/master.lib/dos_axdx.asm', 'DOSC.ASM',
      {'op': (0x778, 24), 'maine': (0x778, 24)}, 'original-identical'),
+    ('DOS_KEYCLEAR', 'libs/master.lib/dos_keyclear.asm', 'DOSKEYCL.ASM',
+     {'op': (0x0790, 6), 'maine': (0x07c8, 6)}, 'original-identical'),
     ('DOS_READ', 'libs/master.lib/dos_read.asm', 'DOSREAD.ASM',
      {'op': (0x7c0, 26), 'maine': (0x7ce, 26)}, 'original-identical'),
     ('DOS_SEEK', 'libs/master.lib/dos_seek.asm', 'DOSSEEK.ASM',
@@ -112,6 +114,8 @@ SCOPES = (
      {'op': (0xee2, 42), 'maine': (0xf28, 42)}, 'original-identical'),
     ('GRCG_OFF', 'libs/master.lib/grcg_setcolor.asm', 'GC_SETCO.ASM',
      {'op': (0x0f0c, 6), 'maine': (0x0f52, 6)}, 'original-identical'),
+    ('gdc_outpw', 'libs/master.lib/gdc_outpw.asm', 'GDCOUTPW.ASM',
+     {'maine': (0x0fde, 11)}, 'original-identical'),
     ('GRCG_CIRCLEFILL', 'libs/master.lib/grcg_circlefill.asm', 'GC_CIRCF.ASM',
      {'maine': (0xd36, 150)}, 'reviewed-native-spelling'),
     # Complete original Master archive I/O and random-helper CODE. GAME=5
@@ -149,7 +153,7 @@ SCOPES = (
     # integer square-root helpers. All are complete source-written PROCs;
     # leave the following __AHINCR vendor startup and unrelated DATA unowned.
     ('GRAPH_SHOW', 'libs/master.lib/graph_show.asm', 'GRPSHOW.ASM',
-     {'op': (0x193c, 6)}, 'original-identical'),
+     {'op': (0x193c, 6), 'maine': (0x1a86, 6)}, 'original-identical'),
     ('GRAPH_START', 'libs/master.lib/graph_start.asm', 'GRPSTART.ASM',
      {'op': (0x1942, 38)}, 'original-identical'),
     ('JS_END', 'libs/master.lib/js_end.asm', 'JSEND.ASM',
@@ -292,6 +296,8 @@ EXPECTED_NATIVE_FIXUPS = {
     'DOS_ROPEN': 1,
     'GRCG_SETCOLOR': 0,
     'GRCG_OFF': 0,
+    'gdc_outpw': 0,
+    'DOS_KEYCLEAR': 0,
     'GRCG_CIRCLEFILL': 0,
     'PFCLOSE': 0,
     'PFGETC': 0,
@@ -538,6 +544,15 @@ def source_linked():
             if art not in positions:
                 continue
             start, size = positions[art]
+            if name == 'gdc_outpw':
+                # The complete original TASM procedure ends with RET at
+                # 0FE8, while the native assembler wrote an EVEN NOP at
+                # 0FE9 that *differs* from the original target's zero.
+                # Its 11 instruction bytes are owned, never the alignment.
+                need(art == 'maine' and (start,size)==(0x0fde,11) and
+                     calibration.program_image[0x0fe9]==0x90 and
+                     original.program_image[0x0fe9]==0,
+                     'original GDC word-output source ends before mismatched EVEN byte')
             if name == 'GET_MACHINE_98':
                 need(size == 126 and start + size ==
                      (0x1016 if art == 'op' else 0x1068) and
