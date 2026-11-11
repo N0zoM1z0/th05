@@ -607,10 +607,15 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_super_helpers import reviewed_claims as super_helpers_claims
             super_helpers, super_helpers_sha = super_helpers_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Source-backed original Master file and display CODE; exclude
+            # unwritten PFEND storage and the unresolved GRAPH_PACK origin.
+            from review_context_master_hooks import reviewed_claims as master_hook_claims
+            master_hooks, master_hooks_sha = master_hook_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
                                     shifted_context + string_context + pi_pack +
-                                    large_master + super_helpers)
+                                    large_master + super_helpers + master_hooks)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -666,6 +671,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_large_review_sha256"] = large_master_sha
         if name in ("op","maine") and super_helpers_sha:
             views[name]["master_super_helpers_review_sha256"] = super_helpers_sha
+        if name in ("op","maine") and master_hooks_sha:
+            views[name]["master_hooks_review_sha256"] = master_hooks_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
