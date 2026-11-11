@@ -4,6 +4,22 @@
 #include "src/main/midboss/stage1.hpp"
 #pragma codeseg MIDBOSS1_TEXT main_03
 
+// Real four-stage midboss dispatch. Both hittable approach phases share the
+// original 64-frame exit, but retain distinct switch-table indices.
+static const unsigned char MIDBOSS1_PHASE_HP_FILL = 0;
+static const unsigned char MIDBOSS1_PHASE_APPROACH_A = 1;
+static const unsigned char MIDBOSS1_PHASE_APPROACH_B = 2;
+static const unsigned char MIDBOSS1_PHASE_ORBIT_ATTACK = 3;
+// Native firing cycle speeds up when HP reaches the low-health threshold.
+static const int MIDBOSS1_PATTERN_INTERVAL_NORMAL = 16;
+static const int MIDBOSS1_PATTERN_INTERVAL_LOW_HP = 12;
+static const int MIDBOSS1_PATTERN_LOW_HP_THRESHOLD = 200;
+static const int MIDBOSS1_APPROACH_EXIT_FRAME = 64;
+static const int MIDBOSS1_ATTACK_TIMEOUT_FRAMES = 1500;
+static const int MIDBOSS1_ORBIT_ANGLE_STEP = 2;
+static const int MIDBOSS1_SPREAD_ROTATION_STEP = 0x14;
+
+
 void near midboss1_move(void)
 {
     midboss.pos.prev.x = midboss.pos.cur.x;
@@ -13,14 +29,14 @@ void near midboss1_move(void)
         midboss.pos.velocity.x.v, CosTable8[midboss.angle]);
     midboss.pos.cur.y.v = polar(((PLAYFIELD_H * 6) / 23) * 16,
         midboss.pos.velocity.x.v, SinTable8[midboss.angle]);
-    midboss.angle -= 0x02;
+    midboss.angle -= MIDBOSS1_ORBIT_ANGLE_STEP;
 }
 
 void near midboss1_pattern(void)
 {
-    int interval = 16;
-    if(midboss.hp <= 200) {
-        interval = 12;
+    int interval = MIDBOSS1_PATTERN_INTERVAL_NORMAL;
+    if(midboss.hp <= MIDBOSS1_PATTERN_LOW_HP_THRESHOLD) {
+        interval = MIDBOSS1_PATTERN_INTERVAL_LOW_HP;
     }
     if((midboss.phase_frame % interval) == 0) {
         bullet_template.spawn_type = MIDBOSS1_SPAWN_NORMAL;
@@ -32,7 +48,7 @@ void near midboss1_pattern(void)
         reinterpret_cast<uint16_t &>(bullet_template.spread) =
             (4 | (0x02 << 8));
         bullet_template.angle = boss.angle;
-        boss.angle += 0x14;
+        boss.angle += MIDBOSS1_SPREAD_ROTATION_STEP;
         bullet_template_tune();
         bullets_add_special();
 
@@ -57,26 +73,26 @@ void pascal far midboss1_update(void)
     bullet_template.origin = midboss.pos.cur;
     midboss.phase_frame++;
     switch(midboss.phase) {
-    case 0:
+    case MIDBOSS1_PHASE_HP_FILL:
         if(midboss.phase_frame >= (MIDBOSS1_HP_FILL_FRAMES + 128)) {
             midboss.phase++;
             midboss.phase_frame = 0;
             midboss.sprite = MIDBOSS1_SPRITE;
         }
         break;
-    case 1:
-    case 2:
+    case MIDBOSS1_PHASE_APPROACH_A:
+    case MIDBOSS1_PHASE_APPROACH_B:
         midboss_hittest_shots_damage(
             MIDBOSS1_W / 2 - MIDBOSS1_W / 8,
             MIDBOSS1_H / 2 - MIDBOSS1_H / 8, 10);
-        if(midboss.phase_frame >= 64) {
+        if(midboss.phase_frame >= MIDBOSS1_APPROACH_EXIT_FRAME) {
             midboss.phase++;
             midboss.phase_frame = 0;
             midboss.pos.velocity.x.v = 0;
             boss.angle = -0x20;
         }
         break;
-    case 3:
+    case MIDBOSS1_PHASE_ORBIT_ATTACK:
         midboss1_pattern();
         midboss.damage_this_frame = midboss_hittest_shots_damage(
             MIDBOSS1_W - MIDBOSS1_W / 4,
@@ -87,7 +103,7 @@ void pascal far midboss1_update(void)
         midboss.pos.velocity.x.v =
             ((MIDBOSS1_HP_TOTAL - midboss.hp) * 64UL * 16) / MIDBOSS1_HP_TOTAL;
         midboss1_move();
-        if(midboss.phase_frame < 1500) {
+        if(midboss.phase_frame < MIDBOSS1_ATTACK_TIMEOUT_FRAMES) {
             if(midboss.hp > 0) {
                 break;
             }

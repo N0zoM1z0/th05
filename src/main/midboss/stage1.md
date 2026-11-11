@@ -43,3 +43,28 @@ firing-interval16→17 negative also passed. Root imported three complete
 functions and542 authored bytes:534 instruction bytes plus8 semantic table
 bytes; the single alignment zero is excluded. The source and symbol binder were
 unchanged after the candidate freeze.
+
+## Named complete fight stages and low-HP shooting cadence
+
+The original three-function Stage 1 midboss compiler scope now identifies all
+four genuine `midboss1_update` switch values: HP fill (`0`), two distinct
+64-frame hittable approach phases (`1`, `2`), and the orbiting attack (`3`).
+Its real default handler retains the original defeat/update behavior. The
+bullet pattern fires at a 16-frame interval above 200 HP and a 12-frame
+interval at or below 200 HP, while the orbit phase still times out at 1500
+frames. The moving orbit's angular step (`2`) and the bullet spread's angular
+step (`0x14`) are now distinct source-named constants with the same numeric
+values, preserving the signed16 HP-to-orbit-radius calculation and native
+Pascal ABI. No independent state, fake code or new phase-transition writes
+were added.
+
+The entire `main-midboss-stage1` owner—81-byte `midboss1_move`, 168-byte
+`midboss1_pattern` and 294-byte `midboss1_update`—was twice recompiled against
+the pinned Borland/TLINK environment and remained **543/543 exact**, including
+its actual one-byte uncredited alignment, eight-byte switch table and all
+original ordered relocations. The meaningful compiled negative now mutates
+`MIDBOSS1_PATTERN_INTERVAL_NORMAL` from 16 to 17 rather than relying on the
+old unnamed local variable; it was compiled and rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-stage1-midboss-phases-final-20261111/receipt.json`.
+This improves an existing accepted C++ source family and does not grant any
+new executable CODE credit.
