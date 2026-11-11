@@ -24,9 +24,15 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,046 decoded bytes**:
-MAIN 5,060; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **28,017 decoded bytes**:
+MAIN 5,031; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
+
+The original [MAIN standard-stage filename](../src/main/stage/std_filename.md)
+now has its own **nine-byte, two-producer, negative-controlled natural C DATA**
+owner at `21924..2192D`. The following separator zero remains unknown. The
+adjacent [score-file/continue-name DATA](../src/main/score/resource_names.md)
+continues to own `2192E..21942` independently, with no byte counted twice.
 
 The [BFNT/EDGES/BYTE_MASK/BGM initializer review](reconstruction/MAIN_MASTER_LITERAL_TABLES.md)
 adds another **224 original Master third-party initialized-DATA bytes**:

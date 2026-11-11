@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "80a513cb757ef2813e9b3bfc34ca6e9796eee388e37ab557b9dcb92b596d5303",
+  "replay_receipt_sha256": "518b38e47119633d886b638651962d79404f203c5bede2595270c3da5bb2acf1",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 137518,
-    "candidate_start": 137518,
-    "size": 20,
-    "target_sha256": "4d522b66e1f16d5a70bdfce7b3a76ea80a54710aff5743a1da3f72efb904d554",
-    "candidate_sha256": "ef7d6ff36b2009d05410e0597fd4249f47023eb9d1e1e353a448105d629dd3c6",
+    "target_start": 137508,
+    "candidate_start": 137508,
+    "size": 9,
+    "target_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+    "candidate_sha256": "506e4542441da94bf9ad51a92c52224bf11fde6a1a3df58d034144f43d39235b",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 137518,
-      "size": 20,
-      "module": "th05/scornam.c",
+      "start": 137508,
+      "size": 9,
+      "module": "th05/stdfnam.c",
       "segment": "_DATA"
     }
   },
@@ -59434,6 +59434,282 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-session-files-c"
+      ]
+    },
+    {
+      "id": "main-std-filename-c",
+      "entry_sha256": "8570266309ecbddc2cadc7d6b71c81fd7c558ce3b1084cb9d0868ea0c61309c8",
+      "result": {
+        "id": "main-std-filename-c",
+        "entry_sha256": "8570266309ecbddc2cadc7d6b71c81fd7c558ce3b1084cb9d0868ea0c61309c8",
+        "rounds": [
+          {
+            "target_start": 137508,
+            "candidate_start": 137508,
+            "size": 9,
+            "target_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+            "candidate_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137508,
+              "size": 9,
+              "module": "th05/stdfnam.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137508,
+            "candidate_start": 137508,
+            "size": 9,
+            "target_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+            "candidate_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137508,
+              "size": 9,
+              "module": "th05/stdfnam.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "4d7cf3661b73fe45e5e3c47bc756163b35fd8c8927d4778ca9499dc4b3b77dbb",
+            "dependency_timestamp_normalized_sha256": "8b994b044ad17ddac83b38c4c0edfc5f60ebb64bbd9f15d8d3fca5de526e87c9",
+            "module_name": "th05/stdfnam.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stdfnam.c",
+              "src/main/stage/std_filename.c",
+              "src/main/stage/std_filename_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "ae8276a0cc2f3c3fb16f799fbbcfd928407135ef1da51687465752baeb0987b4",
+            "dependency_timestamp_normalized_sha256": "8b994b044ad17ddac83b38c4c0edfc5f60ebb64bbd9f15d8d3fca5de526e87c9",
+            "module_name": "th05/stdfnam.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stdfnam.c",
+              "src/main/stage/std_filename.c",
+              "src/main/stage/std_filename_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/stdfnam.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/stdfnam.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_std_filename_bindings.asm",
+            "sha256": "2d8667038500c8981dd33da1fdd21d162a4471a7db6ae1134a9b398ce9845fd9"
+          },
+          {
+            "path": "src/main/stage/std_filename.c",
+            "sha256": "caf2f38df8b87948d841a6b6de82345e4b100c74be0ac49af32a6be62e62f432"
+          },
+          {
+            "path": "src/main/stage/std_filename_c.h",
+            "sha256": "4fb472561275d1dd50a4b3a03174c2965fce2ef2b4419db259d41230090615a8"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_std_filename_bindings.asm",
+          "sha256": "2d8667038500c8981dd33da1fdd21d162a4471a7db6ae1134a9b398ce9845fd9"
+        },
+        {
+          "path": "src/main/stage/std_filename.c",
+          "sha256": "caf2f38df8b87948d841a6b6de82345e4b100c74be0ac49af32a6be62e62f432"
+        },
+        {
+          "path": "src/main/stage/std_filename_c.h",
+          "sha256": "4fb472561275d1dd50a4b3a03174c2965fce2ef2b4419db259d41230090615a8"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "518b38e47119633d886b638651962d79404f203c5bede2595270c3da5bb2acf1",
+      "compiled_negative_control": {
+        "target_start": 137508,
+        "candidate_start": 137508,
+        "size": 9,
+        "target_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+        "candidate_sha256": "506e4542441da94bf9ad51a92c52224bf11fde6a1a3df58d034144f43d39235b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137508,
+          "size": 9,
+          "module": "th05/stdfnam.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-std-filename-c",
+        "entry_sha256": "8570266309ecbddc2cadc7d6b71c81fd7c558ce3b1084cb9d0868ea0c61309c8",
+        "mutation": {
+          "unit": "main-std-filename-c",
+          "source": "src/main/stage/std_filename.c",
+          "find": "\"ST00.STD\"",
+          "replace": "\"ST01.STD\""
+        },
+        "control_sha256": "bc90c62a71630a6591780c85184d5ae71085fd010d0675bd6e9e8f5e71eb0c11",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137508,
+          "candidate_start": 137508,
+          "size": 9,
+          "target_sha256": "b9187f715989777dfcc3486828e65ec4fc128511178f8d455640f0f712a1d29e",
+          "candidate_sha256": "506e4542441da94bf9ad51a92c52224bf11fde6a1a3df58d034144f43d39235b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137508,
+            "size": 9,
+            "module": "th05/stdfnam.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "007735ed378c4b61b9cacf92e7f5da46d71f130d53ee1ff71521d570022a1dee",
+          "dependency_timestamp_normalized_sha256": "4efbf6fbd4b767a3285494e0c6b4d10d7d0c524098dd1617ef413bdc12fc2b81",
+          "module_name": "th05/stdfnam.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stdfnam.c",
+            "src/main/stage/std_filename.c",
+            "src/main/stage/std_filename_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 9,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 9,
+                "sha256": "506e4542441da94bf9ad51a92c52224bf11fde6a1a3df58d034144f43d39235b"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/stdfnam.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-std-filename-c"
       ]
     },
     {

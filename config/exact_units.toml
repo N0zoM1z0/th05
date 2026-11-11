@@ -3778,6 +3778,28 @@ find = "\"KAO3.cd2\""
 replace = "\"KAO4.cd2\""
 
 [[units]]
+id = "main-std-filename-c"
+source = "src/main/stage/std_filename.c"
+module = "th05/stdfnam.c"
+segment = "_DATA"
+wrapper_options = "-zCSTD_FILENAME_TEXT -zPmain_01"
+bindings_source = "probes/units/main_std_filename_bindings.asm"
+target_start = 137508
+size = 9
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-std-filename-c"
+source = "src/main/stage/std_filename.c"
+find = "\"ST00.STD\""
+replace = "\"ST01.STD\""
+
+[[units]]
 id = "main-score-resource-names-c"
 source = "src/main/score/resource_names.c"
 module = "th05/scornam.c"
