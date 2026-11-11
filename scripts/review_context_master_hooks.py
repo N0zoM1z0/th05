@@ -161,15 +161,29 @@ SCOPES = (
     ('PALETTE_INIT', 'libs/master.lib/palette_init.asm', 'PALINIT.ASM',
      {'op': (0x19bc, 52)}, 'original-identical'),
     ('GRAPH_CLEAR', 'libs/master.lib/graph_clear.asm', 'GRPCLEAR.ASM',
-     {'op': (0x1216, 58)}, 'original-identical'),
+     {'op': (0x1216, 58), 'maine': (0x1302, 58)}, 'original-identical'),
     ('GRAPH_COPY_PAGE', 'libs/master.lib/graph_copy_page.asm', 'GRPCPPG.ASM',
-     {'op': (0x1250, 86)}, 'reviewed-native-spelling'),
+     {'op': (0x1250, 86), 'maine': (0x133c, 86)}, 'reviewed-native-spelling'),
     ('GET_MACHINE_98', 'libs/master.lib/get_machine_98.asm', 'GETMAC98.ASM',
      {'op': (0x0f98, 104)}, 'native-machine-near-jump-port'),
     ('IHYPOT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
      {'maine': (0x1af8, 24)}, 'isqrt-private-root-name'),
     ('ISQRT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
      {'maine': (0x1b10, 116)}, 'isqrt-private-root-name'),
+    ('GRAPH_PI_FREE', 'libs/master.lib/graph_pi_free.asm', 'GRPPIFRE.ASM',
+     {'op': (0x12fc, 88), 'maine': (0x13ee, 88)}, 'reviewed-native-spelling'),
+    ('TEXT_CLEAR', 'libs/master.lib/text_clear.asm', 'TXCLEAR.ASM',
+     {'op': (0x20fe, 18), 'maine': (0x2298, 18)}, 'original-identical'),
+    ('MEM_UNASSIGN', 'libs/master.lib/mem_unassign.asm', 'MEMUNASI.ASM',
+     {'op': (0x24ce, 36), 'maine': (0x270c, 36)}, 'mem-game5-conditional-port'),
+    ('SUPER_ENTRY_BFNT', 'libs/master.lib/super_entry_bfnt.asm', 'SUPERBFT.ASM',
+     {'op': (0x2656, 138), 'maine': (0x2894, 138)}, 'reviewed-native-spelling'),
+    ('GRAPH_SCROLLUP', 'libs/master.lib/graph_scrollup.asm', 'GRPSCRLU.ASM',
+     {'maine': (0x1a2e, 88)}, 'original-identical'),
+    ('PALETTE_WHITE_IN', 'libs/master.lib/palette_white_in.asm', 'WHITEIN.ASM',
+     {'maine': (0x243c, 64)}, 'original-identical'),
+    ('PALETTE_WHITE_OUT', 'libs/master.lib/palette_white_out.asm', 'WHITEOUT.ASM',
+     {'maine': (0x247c, 64)}, 'original-identical'),
 )
 ARTIFACTS = ('op', 'maine')
 # Permitted spellings between the original Master 0.23 archived PROC and
@@ -215,6 +229,11 @@ NATIVE_SPELLINGS = {
     'GRAPH_COPY_PAGE': {
         'callsmem_wget': ('nopcallsmem_wget',),
         'callsmem_release': ('nopcallsmem_release',),
+    },
+    'GRAPH_PI_FREE': {'callhmem_free': ('nopcallhmem_free',)},
+    'SUPER_ENTRY_BFNT': {
+        '_push[bp+file_name+2]': ('ifldata','pushwordptr[bp+file_name+2]','endif'),
+        'push[bp+file_name]': ('pushwordptr[bp+file_name]',),
     },
 }
 
@@ -265,6 +284,13 @@ EXPECTED_NATIVE_FIXUPS = {
     'GET_MACHINE_98': 1,
     'IHYPOT': 0,
     'ISQRT': 0,
+    'GRAPH_PI_FREE': 1,
+    'TEXT_CLEAR': 0,
+    'MEM_UNASSIGN': 4,
+    'SUPER_ENTRY_BFNT': 6,
+    'GRAPH_SCROLLUP': 2,
+    'PALETTE_WHITE_IN': 4,
+    'PALETTE_WHITE_OUT': 4,
 }
 
 
@@ -407,7 +433,8 @@ def native_spelling_equivalent(author, compiled, name):
     replacements = NATIVE_SPELLINGS[name]
     # Specific source statements are pinned, so omissions never silently
     # turn a reviewed port difference into an accepted unrelated rewrite.
-    multiplicity = {'callvsync_wait': 2, 'callpalette_show': 2}
+    multiplicity = {'callvsync_wait': 2, 'callpalette_show': 2,
+                    'callhmem_free': 3}
     for old in replacements:
         count = multiplicity.get(old, 1)
         need(source_lines.count(old) == count,
@@ -429,13 +456,14 @@ PFEND_UNWRITTEN = (156, 2)
 def upstream_procedure(archive, filename, name):
     blocks = [b for b in source_blocks(archive[filename], 'cp932')
               if b['name'].casefold() == name.casefold()]
-    if name in ('PALETTE_BLACK_IN', 'PALETTE_BLACK_OUT'):
+    if name in ('PALETTE_BLACK_IN', 'PALETTE_BLACK_OUT',
+                 'PALETTE_WHITE_IN', 'PALETTE_WHITE_OUT'):
         # Master 0.23 has two same-name conditional platform definitions.
         # The first, shorter complete PROC is the one used in the PC-98 code.
         need(len(blocks) == 2 and
              len(symbolic_source(blocks[0]['text'])) <
              len(symbolic_source(blocks[1]['text'])),
-             'original Master palette platform definitions changed')
+             'original Master PC-98 palette platform definitions changed')
         return blocks[0]
     need(len(blocks) == 1, 'original author Master procedure absent: ' + name)
     return blocks[0]
@@ -509,6 +537,15 @@ def source_linked():
                 private_master_display_derived(upstream['text'],live[0]['text'],name)
             elif adaptation == 'native-machine-near-jump-port':
                 native_machine_98_derived(upstream['text'],live[0]['text'],name)
+            elif adaptation == 'mem-game5-conditional-port':
+                # The full original MEMUNASI.ASM has two GAME=1-only checks.
+                # Reuse the already reviewed MAIN source transformation rather
+                # than independently asserting that they are byte-equivalent.
+                from review_master_gap_functions import private_source_author, source_spelling
+                need(name == 'MEM_UNASSIGN' and
+                     private_source_author(upstream['text'],name) ==
+                     source_spelling(live[0]['text']),
+                     'original Master heap bounds / GAME=1 conditional source changed')
             elif adaptation == 'pf-game5-direct-decode':
                 author_lines = symbolic_source(upstream['text'])
                 native_lines = symbolic_source(live[0]['text'])

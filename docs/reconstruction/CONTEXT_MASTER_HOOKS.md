@@ -229,3 +229,43 @@ existing source evidence/decision now includes **115 source CODE scopes and
 7,850 third-party bytes**; none grants new game-authored C++ credit or a
 whole-executable reconstruction result. Only these bounded functions were
 rechecked, never a full cold replay.
+
+## Additional complete OP/MAINE font, page, palette and memory procedures
+
+Thirteen further complete native Master 0.23 procedures now have source-backed
+attribution: **280 bytes in OP** and **640 bytes in MAINE**, totaling **920
+formerly unknown CODE bytes**. Original raw bytes, full procedure boundaries
+and ordered OMF/MZ relocation sites are independently verified.
+
+| Complete original source procedures | OP CODE | MAINE CODE |
+| --- | ---: | ---: |
+| `GRAPH_PI_FREE` | 88 | 88 |
+| `TEXT_CLEAR` | 18 | 18 |
+| `MEM_UNASSIGN` | 36 | 36 |
+| `SUPER_ENTRY_BFNT` | 138 | 138 |
+| `GRAPH_CLEAR` / `GRAPH_COPY_PAGE` | previously accepted | 58 / 86 |
+| `GRAPH_SCROLLUP` | — | 88 |
+| `PALETTE_WHITE_IN` / `PALETTE_WHITE_OUT` | — | 64 / 64 |
+
+The actual TASM `GRAPH_PI_FREE` uses three genuine `NOPCALL` relaxations of
+the original Master heap release calls, and the page-copy function uses two
+previously reviewed `NOPCALL` forms. `SUPER_ENTRY_BFNT` uses the original
+far Pascal filename argument with explicit typed-word pushes and an original
+`IF LDATA` arm; its native source is not a target instruction dump. The
+`MEM_UNASSIGN` source retains its actual GAME=1-only bounds checks behind
+conditional assembler guards, which do not change the GAME=5 implementation.
+`TEXT_CLEAR`, `GRAPH_SCROLLUP` and `GRAPH_CLEAR` remain original-source
+identical under normalized whitespace. The two white palette functions have
+two platform-dependent original Master definitions; the reviewed TASM version
+matches the independently pinned **first PC-98 function body**, not a splice
+of the branches. All 35 new genuine OMF fixup actions (11 OP and 24 MAINE)
+are preserved in the original order and their complete CODE spans match
+both the original decoded payload and calibration image.
+
+The MAINE page-clear/page-copy functions extend their *existing* OP source
+rows rather than creating overlapping source claims. The unreviewed original
+`TEXT_PUTSA` code, startup helpers, DATA/BSS and other adjacent unknown
+bytes remain unowned. The existing evidence/decision now covers **128
+source-backed CODE scopes / 8,770 third-party bytes** in OP/MAINE,
+without increasing accepted game-authored C++ bytes or running any unrelated
+full cold replay.
