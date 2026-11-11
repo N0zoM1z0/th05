@@ -64,3 +64,26 @@ source and first-producer reports are under
 `.analysis/gpt-web-yumeko-twirl3.py` and
 `.analysis/gpt-web-yumeko-twirl3-*-native/`. The accepted ASM and the
 adjacent 354-/428-byte Boss attack C++ source are unchanged.
+
+
+## Outer twirl dispatch rewrite diagnostics
+
+Four further **semantic-equivalent** `swords_update()` source shapes were
+compiled in the full original-order nine-function MAIN03 context with the
+real Borland producer (no manually inserted instruction or barrier):
+
+| Candidate control flow | Full combined CODE | Whole raw/ordered MZ |
+| --- | ---: | --- |
+| Early goto to ordinary sword motion | 2141 B | Inexact |
+| Independent twirl-time conditionals | 2143 B | Inexact |
+| Flattened `else if` parity dispatch | 2143 B | Inexact |
+| Flattened parity dispatch with early `continue` guards | 2141 B | Inexact |
+
+The original combined CODE is **2139 bytes**. In particular, the compiler
+still emits local short conditional branches and proxy jumps rather than
+the original pair of direct 386 near conditionals to the outer loop
+increment. All runs were first-producer scoped diagnostics and preserved
+the actual authored operands and sword behavior; no acceptance or machine
+code owner was changed. Inspect private outputs under
+`.analysis/gpt-web-yumeko-twirl4-*-native/` and the script
+`.analysis/gpt-web-yumeko-twirl4.py`.
