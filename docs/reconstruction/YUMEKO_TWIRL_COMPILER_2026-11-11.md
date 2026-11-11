@@ -167,3 +167,37 @@ builds under `.analysis/gpt-web-yumeko-optim-flow-*-first/` and the summary
 `.analysis/gpt-web-yumeko-optim-flow-results-20261111.json`. All trial source
 files were removed. No code or acceptance metadata was modified for the
 unresolved natural updater; the previously exact reviewed ASM owner remains.
+
+## Natural C++ switch-on-bounds and collision-state experiments (2026-11-11)
+
+Three additional real Borland `-O`/TASM/TLINK first-producer experiments varied
+**actual gameplay control-flow**, without artificial side effects, assembly
+padding, optimizer barriers, copied target instructions or new runtime state:
+
+| Semantics-preserving source representation | Combined original-order CODE | Original complete equality |
+| --- | ---: | --- |
+| `switch(bool(out_of_bounds))` with explicit `goto remove` | 2,148 B | No |
+| `switch(bool(in_bounds))` with inverted removal dispatch | 2,148 B | No |
+| `switch(sword->flag)` routing `F_REMOVE` to decay and other flags to collision | 2,141 B | No |
+
+The real original nine-function context is **2,139 bytes**. Each alternative
+compiles successfully and differs in the full original machine bytes and
+ordered relocation positions. The boolean-boundary dispatches do preserve a
+separate short branch around a bounds gate that plain `-O` had coalesced, but
+at the expense of extra jump/condition encodings and a shifted collision tail.
+The separate collision-state switch also changes the emitted branch layout
+rather than restoring the native two short join jumps. These represent
+**negative code-shape evidence**, not accepted C++ equivalence. In particular,
+none replaces or claims the already accepted 283-byte reviewed ASM owner.
+
+Runnable private diagnostic:
+`.analysis/gpt-web-yumeko-natural-join-tests-20261111.py`, using the real
+main_03 original-order producer and the unchanged pinned negative/positive
+comparison. Corrected bounds-switch linked images and results are in
+`.analysis/gpt-web-yumeko-natural-join-*-fixed-first/` and
+`.analysis/gpt-web-yumeko-natural-join-results-fixed-20261111.json`;
+the collision switch is under
+`.analysis/gpt-web-yumeko-natural-join-collision-state-switch-first/`.
+The first malformed bounds-switch source probes produced frontend errors and
+were corrected before any size/code conclusion was drawn. All temporary
+source inclusions were removed; accepted C++ and ASM bytes are untouched.
