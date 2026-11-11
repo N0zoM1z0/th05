@@ -10,6 +10,27 @@ static const unsigned char MY_HIT_YUKI = 2;
 static const unsigned char MY_DEFEATED_MAI = MY_HIT_MAI - 1;
 static const unsigned char MY_DEFEATED_YUKI = MY_HIT_YUKI - 1;
 
+// One shared fight: the entry, each reposition, and the chosen survivor
+// observe different clocks. These remain compiler constants, never new state.
+static const int MY_SETUP_ENTRY_FRAME = 1;
+static const int MY_SETUP_EXIT_FRAME = 128;
+static const int MY_READY_EXIT_FRAME = 64;
+static const int MY_SHARED_RING_RADIUS_PIXELS = 64;
+static const int MY_SETUP_HIT_RADIUS_PIXELS = 24;
+static const int MY_SETUP_HIT_EFFECT = 10;
+static const int MY_REPOSITION_LASER_LEAD_FRAMES = 64;
+static const int MY_REPOSITION_NORMAL_LEAD_FRAMES = 16;
+static const int MY_REPOSITION_CLEAR_FRAME = 16;
+static const int MY_BULLET_CLEAR_MINIMUM = 20;
+static const int MY_PATTERN_VARIANT_MASK = 3;
+static const int MY_SMALL_EXPLOSION_FIRST_FRAME = 16;
+static const int MY_SMALL_EXPLOSION_BIG_FRAME = 32;
+static const int MY_BIG_EXPLOSION_SHAKE_FRAMES = 12;
+static const int MY_BIG_EXPLOSION_SPRITE_FRAMES = 8;
+static const int MY_BIG_EXPLOSION_EXIT_FRAME = 64;
+static const int MY_SURVIVOR_DIALOG_ENTRY_FRAME = 1;
+static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
+
 // All canonical physical interfaces are complete before ordinary word
 // alignment of the real six-value/six-destination compiler switch data.
 #pragma option -a2
@@ -28,12 +49,12 @@ void pascal far mai_yuki_update(void)
 
     switch(boss.phase) {
     case MY_PHASE_SETUP:
-        if(boss.phase_frame == 1) {
+        if(boss.phase_frame == MY_SETUP_ENTRY_FRAME) {
             boss.hp = MY_SHARED_HP;
             boss.phase_end_hp = 0;
             boss2.hp = MY_SHARED_HP;
             boss2.phase_end_hp = 0;
-            gather_template.radius.v = to_sp(64);
+            gather_template.radius.v = to_sp(MY_SHARED_RING_RADIUS_PIXELS);
             gather_template.angle_delta = 2;
             gather_template.ring_points = 8;
             for(i = MY_TINY_FIRST; i < MY_TINY_END; i++) {
@@ -41,8 +62,8 @@ void pascal far mai_yuki_update(void)
             }
         }
         boss_hittest_shots_invincible();
-        yuki_hittest_shots_damage(to_sp(24), to_sp(24), 10);
-        if(boss.phase_frame >= 128) {
+        yuki_hittest_shots_damage(to_sp(MY_SETUP_HIT_RADIUS_PIXELS), to_sp(MY_SETUP_HIT_RADIUS_PIXELS), MY_SETUP_HIT_EFFECT);
+        if(boss.phase_frame >= MY_SETUP_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
             snd_se_play(13);
@@ -52,8 +73,8 @@ void pascal far mai_yuki_update(void)
 
     case MY_PHASE_READY:
         boss_hittest_shots_invincible();
-        yuki_hittest_shots_damage(to_sp(24), to_sp(24), 10);
-        if(boss.phase_frame < 64) {
+        yuki_hittest_shots_damage(to_sp(MY_SETUP_HIT_RADIUS_PIXELS), to_sp(MY_SETUP_HIT_RADIUS_PIXELS), MY_SETUP_HIT_EFFECT);
+        if(boss.phase_frame < MY_READY_EXIT_FRAME) {
             break;
         }
         boss.phase++;
@@ -70,31 +91,31 @@ void pascal far mai_yuki_update(void)
         case MY_MODE_REPOSITION:
             if((boss.phase_state.patterns_seen == MY_PATTERN_HP_GATE_FIRST) ||
                (boss.phase_state.patterns_seen == MY_PATTERN_HP_GATE_SECOND)) {
-                state_result = boss.phase_frame - 64;
-                if(boss.phase_frame == 16) {
-                    if(bullet_clear_time < 20) {
-                        bullet_clear_time = 20;
+                state_result = boss.phase_frame - MY_REPOSITION_LASER_LEAD_FRAMES;
+                if(boss.phase_frame == MY_REPOSITION_CLEAR_FRAME) {
+                    if(bullet_clear_time < MY_BULLET_CLEAR_MINIMUM) {
+                        bullet_clear_time = MY_BULLET_CLEAR_MINIMUM;
                     }
                     snd_se_play(15);
                     boss_explode_small(ET_NW_SE);
                     boss2_explode_small(2);
                 }
             } else {
-                state_result = boss.phase_frame - 16;
+                state_result = boss.phase_frame - MY_REPOSITION_NORMAL_LEAD_FRAMES;
             }
             if(mai_yuki_flystep_random(state_result)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen < MY_PATTERN_FIRST_END) {
-                    mai_pattern_current = MAI_PATTERNS_FIRST[boss.phase_state.patterns_seen & 3];
-                    yuki_pattern_current = YUKI_PATTERNS_FIRST[boss.phase_state.patterns_seen & 3];
+                    mai_pattern_current = MAI_PATTERNS_FIRST[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
+                    yuki_pattern_current = YUKI_PATTERNS_FIRST[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
                 } else if(boss.phase_state.patterns_seen < MY_PATTERN_LASER_END) {
                     mai_pattern_current = mai_pattern_tracking_laser;
-                    yuki_pattern_current = YUKI_PATTERNS_LASER[boss.phase_state.patterns_seen & 3];
+                    yuki_pattern_current = YUKI_PATTERNS_LASER[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
                 } else if(boss.phase_state.patterns_seen < MY_PATTERN_FINAL_END) {
-                    mai_pattern_current = MAI_PATTERNS_FINAL[boss.phase_state.patterns_seen & 3];
-                    yuki_pattern_current = YUKI_PATTERNS_FINAL[boss.phase_state.patterns_seen & 3];
+                    mai_pattern_current = MAI_PATTERNS_FINAL[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
+                    yuki_pattern_current = YUKI_PATTERNS_FINAL[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
                 } else {
                     boss.phase_state.patterns_seen = 0;
                     // Pattern exhaustion selects Mai's defeat (Yuki survives).
@@ -108,12 +129,12 @@ void pascal far mai_yuki_update(void)
             yuki_pattern_update();
             break;
         }
-        if(((boss.hp + boss2.hp) < MY_HP_GATE_FIRST) && (boss.phase_state.patterns_seen < 9)) {
+        if(((boss.hp + boss2.hp) < MY_HP_GATE_FIRST) && (boss.phase_state.patterns_seen < MY_PATTERN_HP_GATE_FIRST)) {
             boss.mode = MY_MODE_REPOSITION;
             boss.phase_frame = 0;
             boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_FIRST;
         } else if(((boss.hp + boss2.hp) < MY_HP_GATE_SECOND) &&
-                  (boss.phase_state.patterns_seen < 14)) {
+                  (boss.phase_state.patterns_seen < MY_PATTERN_HP_GATE_SECOND)) {
             boss.mode = MY_MODE_REPOSITION;
             boss.phase_frame = 0;
             boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_SECOND;
@@ -133,7 +154,7 @@ void pascal far mai_yuki_update(void)
         break;
 
     case MY_PHASE_EXPLODE_SMALL:
-        if(boss.phase_frame == 16) {
+        if(boss.phase_frame == MY_SMALL_EXPLOSION_FIRST_FRAME) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_small(ET_VERTICAL);
             } else {
@@ -141,7 +162,7 @@ void pascal far mai_yuki_update(void)
             }
             break;
         }
-        if(boss.phase_frame == 32) {
+        if(boss.phase_frame == MY_SMALL_EXPLOSION_BIG_FRAME) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_big_circle();
                 boss.sprite = 4;
@@ -160,19 +181,19 @@ void pascal far mai_yuki_update(void)
         break;
 
     case MY_PHASE_EXPLODE_BIG:
-        if(boss.phase_frame < 12) {
+        if(boss.phase_frame < MY_BIG_EXPLOSION_SHAKE_FRAMES) {
             playfield_shake_x = (stage_frame_mod2 == 0) ? -4 : 4;
             playfield_shake_y = (stage_frame_mod4 <= 1) ? -4 : 4;
         }
         bg_render_bombing_func = tiles_render_all;
         slowdown_factor = 2;
-        if((boss.phase_frame % 8) == 0) {
+        if((boss.phase_frame % MY_BIG_EXPLOSION_SPRITE_FRAMES) == 0) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss.sprite++;
             } else {
                 boss2.sprite++;
             }
-            if(boss.phase_frame >= 64) {
+            if(boss.phase_frame >= MY_BIG_EXPLOSION_EXIT_FRAME) {
                 boss.phase++;
                 boss.phase_frame = 0;
             }
@@ -180,9 +201,9 @@ void pascal far mai_yuki_update(void)
         break;
 
     case MY_PHASE_SURVIVOR_DIALOG:
-        PaletteTone = 60;
+        PaletteTone = MY_SURVIVOR_DIALOG_PALETTE_TONE;
         palette_changed = true;
-        if(boss.phase_frame == 1) {
+        if(boss.phase_frame == MY_SURVIVOR_DIALOG_ENTRY_FRAME) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 dialog_load(MY_DIALOG_YUKI);
                 boss_bgm_title = MY_BGM_TITLE_YUKI;

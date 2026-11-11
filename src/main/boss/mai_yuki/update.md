@@ -168,3 +168,33 @@ ordered relocations still pass two independent focused Borland producers;
 the existing compiled semantic negative is rejected. The receipt is saved at
 `.analysis/unit-replays/gpt-web-mai-yuki-defeat-codes-real-context-20261111/receipt.json`.
 There is no change in already authored byte credit or input/gameplay behavior.
+
+## Complete two-Boss combat/defeat clocks and pattern selector (2026-11-11)
+
+Both maintained complete `mai_yuki_update` functions—`update.cpp` and the
+accepted combined `update_context.cpp`—now use the same semantic constants
+for the real shared fight schedule. Setup initializes the eight-point, 64px
+gather ring and the real 24px Yuki hit radius; the entry exits at frame 128,
+then the ready phase at frame 64. The shared repositioning phase has two
+separate flight lead-in clocks: 64 frames on the forced HP-gated transitions
+at pattern 9 or 14 and 16 frames on normal movement. The unusual effects
+and minimum bullet-clear timer are triggered at frame 16 of those special
+transitions. All five real near-pattern array selections retain the original
+2-bit `& 3` index and the exact branch keys.
+
+After either fighter is defeated, the first small explosion occurs at frame
+16, the large explosion and survivor sprite choice at frame 32, and the
+original last 12 frames of screen shake and 8-frame sprite progression run
+without new state fields. At frame 64, the surviving Boss's initial dialog
+and title are installed with the original palette tone 60 and one-frame
+callback transition. The explicit 0/1 survivor code still derives from the
+real hit-helper result minus one; no new enum object or cross-Boss reset is
+introduced. The two **complete source controller bodies are identical**.
+
+`main-mai-yuki-update-context` was replayed as its real 1,018-byte full
+Borland/TLINK unit, twice exact to the original including the 6-key switch
+table and original ordered relocations. The compiled `MY_HP_GATE_FIRST` +1
+mutation was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-mai-yuki-shared-cadence-20261111/receipt.json`.
+This is semantic recovery within an already accepted C++ owner; no new
+original target bytes or unrelated full MAIN replay are claimed.
