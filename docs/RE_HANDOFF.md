@@ -66,6 +66,7 @@ necessarily all authored bytes where padding is present.
 | OP/MAINE background snapshot | Per binary, complete **104-byte Snap + 53-byte Put** C++ from one real TCC translation unit, original ordered fixups `[15,26,37,48]` | [Background transfer](../src/shared/hardware/bgimage_transfer.md) |
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
 | MAIN STD script loader | **184-byte** near C++ `std_load()` at `C742..C7FA`, 386 `MOVZX` and original ordered fixups `[43,173]` via TCC `-S`/TASM32 | [STD loader](../src/main/formats/std_load.md) |
+| OP score encoder | **100-byte** near C++ `scoredat_encode()` at `C87E..C8E2`, exact original direct-object fixup order `[43,35]` | [Score encoder](../src/op/hiscore/encode_exact.md) |
 | MAIN high-score insertion | **168-byte** natural C++ `hiscore_continue_enter_raw()` at `C8F0..C998`, real TCC `-S`/TASM32 compilation, no fixups | [Insertion source](../src/main/score/continue_raw.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
 | MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
