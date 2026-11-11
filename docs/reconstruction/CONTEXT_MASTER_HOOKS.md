@@ -136,3 +136,23 @@ The existing proof at
 [`config/context_master_hooks.json`](../../config/context_master_hooks.json)
 and explicit adoption now cover these regions without a new oracle family.
 All 1,736 bytes are third-party Master code, not new game-authored source.
+
+## Packed-file I/O and random functions
+
+OP and MAINE now also own nine complete original archive I/O functions each,
+**398 bytes per executable / 796 bytes total**: `PFCLOSE` (26), `PFGETC`
+(16), `PFGETC1` (78), `PFGETX0` (68), `PFGETX1` (14), `PFREAD` (46),
+`PFREWIND` (60), `PFSEEK` (48), and `IRAND` (42). The native TASM OMF
+contains full CODE LEDATA for every range. There are five actual offset
+FIXUPP actions in the `IRAND` owner per executable; complete native and
+original MZ bytes and ordered relocations agree.
+
+All source bodies besides two are identical to the original Master author
+archive under normalized whitespace. `PFCLOSE` adds an explicit `word ptr`
+qualification to the original near stack argument. In TH05's `PFGETX1`, the
+original Master `ROR AL,4` after the archive-key XOR has been **removed**.
+This changes the nibble decoding operation; the native source is checked as a
+specific GAME=5 adaptation, not described as an equivalent original function.
+No other branch, call or instruction is removed in the accepted source
+comparison. The 18 whole-function bounds, source/OMF fixup counts and original
+image bytes are kept in the existing Master-hook evidence.

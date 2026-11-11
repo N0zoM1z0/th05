@@ -112,6 +112,26 @@ SCOPES = (
      {'op': (0xee2, 42), 'maine': (0xf28, 42)}, 'original-identical'),
     ('GRCG_CIRCLEFILL', 'libs/master.lib/grcg_circlefill.asm', 'GC_CIRCF.ASM',
      {'maine': (0xd36, 150)}, 'reviewed-native-spelling'),
+    # Complete original Master archive I/O and random-helper CODE. GAME=5
+    # intentionally removes one original nibble-rotation in PFGETX1.
+    ('PFCLOSE', 'libs/master.lib/pfclose.asm', 'PFCLOSE.ASM',
+     {'op': (0x1afa, 26), 'maine': (0x1c94, 26)}, 'reviewed-native-spelling'),
+    ('PFGETC', 'libs/master.lib/pfgetc.asm', 'PFGETC.ASM',
+     {'op': (0x1b14, 16), 'maine': (0x1cae, 16)}, 'original-identical'),
+    ('PFGETC1', 'libs/master.lib/pfgetc.asm', 'PFGETC.ASM',
+     {'op': (0x1b24, 78), 'maine': (0x1cbe, 78)}, 'original-identical'),
+    ('PFGETX0', 'libs/master.lib/pfgetc.asm', 'PFGETC.ASM',
+     {'op': (0x1b72, 68), 'maine': (0x1d0c, 68)}, 'original-identical'),
+    ('PFGETX1', 'libs/master.lib/pfgetc.asm', 'PFGETC.ASM',
+     {'op': (0x1bb6, 14), 'maine': (0x1d50, 14)}, 'pf-game5-direct-decode'),
+    ('PFREAD', 'libs/master.lib/pfread.asm', 'PFREAD.ASM',
+     {'op': (0x1bc4, 46), 'maine': (0x1d5e, 46)}, 'original-identical'),
+    ('PFREWIND', 'libs/master.lib/pfrewind.asm', 'PFREWIND.ASM',
+     {'op': (0x1bf2, 60), 'maine': (0x1d8c, 60)}, 'original-identical'),
+    ('PFSEEK', 'libs/master.lib/pfseek.asm', 'PFSEEK.ASM',
+     {'op': (0x1c2e, 48), 'maine': (0x1dc8, 48)}, 'original-identical'),
+    ('IRAND', 'libs/master.lib/random.asm', 'RANDOM.ASM',
+     {'op': (0x1c5e, 42), 'maine': (0x1df8, 42)}, 'original-identical'),
 )
 ARTIFACTS = ('op', 'maine')
 # Permitted spellings between the original Master 0.23 archived PROC and
@@ -152,6 +172,7 @@ NATIVE_SPELLINGS = {
         'push[bp+x]': ('pushwordptr[bp+x]',),
         'push[bp+y]': ('pushwordptr[bp+y]',),
     },
+    'PFCLOSE': {'push[bp+pf]': ('pushwordptr[bp+pf]',)},
 }
 
 
@@ -176,6 +197,15 @@ EXPECTED_NATIVE_FIXUPS = {
     'DOS_ROPEN': 1,
     'GRCG_SETCOLOR': 0,
     'GRCG_CIRCLEFILL': 0,
+    'PFCLOSE': 0,
+    'PFGETC': 0,
+    'PFGETC1': 0,
+    'PFGETX0': 0,
+    'PFGETX1': 0,
+    'PFREAD': 0,
+    'PFREWIND': 0,
+    'PFSEEK': 0,
+    'IRAND': 5,
 }
 
 
@@ -278,6 +308,16 @@ def source_linked():
                      'original Master BFNT header PROC source differs')
             elif adaptation == 'reviewed-native-spelling':
                 native_spelling_equivalent(upstream['text'], live[0]['text'], name)
+            elif adaptation == 'pf-game5-direct-decode':
+                author_lines = symbolic_source(upstream['text'])
+                native_lines = symbolic_source(live[0]['text'])
+                need(name == 'PFGETX1' and
+                     author_lines.count('roral,4') == 1 and
+                     author_lines.count('xoral,es:[pf_key]') == 1 and
+                     author_lines.index('roral,4') ==
+                     author_lines.index('xoral,es:[pf_key]') + 1 and
+                     [x for x in author_lines if x != 'roral,4'] == native_lines,
+                     'TH05 PFGETX1 source differs beyond the missing key nibble rotate')
             else:
                 need(adaptation == 'game5-archive-port' and
                      'if GAME eq 5' in live[0]['text'] and
