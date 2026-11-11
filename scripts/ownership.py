@@ -507,6 +507,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_main_atan8_data import reviewed_claims as atan8_data_claims
             atan8_claims, atan8_sha = atan8_data_claims(
                 root, view=view, verify_targets=verify_targets)
+            # Four additional complete original-source Master initializer
+            # tables: BFNT ID, EDGES, BYTE_MASK, BGM note/duration; no BSS.
+            from review_main_master_literal_tables import reviewed_claims as literal_table_claims
+            literal_tables, literal_tables_sha = literal_table_claims(
+                root, view=view, verify_targets=verify_targets)
             # Seven original Master machine/palette/buffered-file procedures,
             # including the full 342-byte hardware detector.
             from review_master_machine import reviewed_claims as machine_master_claims
@@ -564,7 +569,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                 root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + master_claims + reserved_claims + env_claims +
-                                    c0_data_claims + atan8_claims + shifted_main + super_claims +
+                                    c0_data_claims + atan8_claims + literal_tables + shifted_main + super_claims +
                                     super_helper_ranges + bgm_claims + grcg_claims +
                                     circle_helpers + gap_master + io_claims + machine_master +
                                     pf_claims + bfnt_entries)
@@ -743,6 +748,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if name == "main" and atan8_sha:
             views[name]["master_atan8_data_review_sha256"] = atan8_sha
+        if name == "main" and literal_tables_sha:
+            views[name]["master_literal_tables_review_sha256"] = literal_tables_sha
         if runtime_sha and name == "main":
             views[name]["runtime_vendor_review_sha256"] = runtime_sha
         if strings_sha and name == "main":

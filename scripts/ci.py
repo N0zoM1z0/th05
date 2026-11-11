@@ -91,6 +91,8 @@ def main():
     # never its following two source-unwritten DATA alignment zeros.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_atan8_data.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_master_literal_tables.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # OP and MAINE each contain complete CL farheap/exec CODE SEGDEFs with
     # eight original unwritten CS: state bytes. Adopt actual OMF writes only.
     for context in ("op", "maine"):

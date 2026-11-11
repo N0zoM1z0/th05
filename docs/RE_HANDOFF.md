@@ -24,9 +24,16 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,270 decoded bytes**:
-MAIN 5,284; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **28,046 decoded bytes**:
+MAIN 5,060; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
+
+The [BFNT/EDGES/BYTE_MASK/BGM initializer review](reconstruction/MAIN_MASTER_LITERAL_TABLES.md)
+adds another **224 original Master third-party initialized-DATA bytes**:
+6+34+8+176 across four complete source-written tables. Its source-derived
+`UNDF` note sentinel is 100. The adjacent alignment zeros, `intdiv`, and
+writable foreign DATA remain unknown; none of these tables is game-authored
+C++ or part of the accepted denominator.
 
 The original [Master ATAN8 lookup review](reconstruction/MAIN_ATAN8_NATIVE.md)
 now attributes 256 source-written initialized DATA bytes at MAIN
