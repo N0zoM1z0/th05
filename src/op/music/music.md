@@ -119,3 +119,12 @@ suffix functions subsequently matched 646 bytes with a comment-loader mutation
 as their control. The standalone polygon and menu bodies matched raw bytes but
 had different relocation order; their broader context is documented in
 [full_context.md](full_context.md). Use the OP ledger for current acceptance.
+
+## Later exact B-plane restore
+
+The previously foreign 30-byte `nopoly_B_put()` at `BFF6..C014` now has
+[complete exact C++ source](nopoly_put_exact.md). It uses direct Turbo C++
+register/`REP MOVSW` semantics to preserve the original XOR instruction
+encoding; the original generic `__memcpy__` trial remains an inexact
+code-generation alternative, not a separate accepted owner. The neighboring
+Music Room prefix and suffix source contributions remain unchanged.

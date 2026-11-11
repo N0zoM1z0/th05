@@ -1289,3 +1289,23 @@ unit = "op-cdg-nocolors-exact"
 source = "src/shared/graphics/cdg_put_nocolors_exact.cpp"
 find = "asm { sar di, 3 }"
 replace = "asm { sar di, 2 }"
+
+[[units]]
+id = "op-nopoly-plane-put-exact"
+source = "src/op/music/nopoly_put_exact.cpp"
+module = "th05/np_b.cpp"
+segment = "NP_B_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/op_nopoly_put_exact_bindings.asm"
+target_start = 0xbff6
+size = 30
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+binary = "O"
+
+[[controls]]
+unit = "op-nopoly-plane-put-exact"
+source = "src/op/music/nopoly_put_exact.cpp"
+find = "_CX = 32000 / 2;"
+replace = "_CX = 31998 / 2;"

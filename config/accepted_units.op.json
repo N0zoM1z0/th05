@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "943661551c732b889000987d3af7049dd750f225821ca7454e00e37bd414bbd0",
+  "replay_receipt_sha256": "22c6c66677c3eb53e4d6bd85a5b144dd166f57f5faa15e9cfd90ac309c4282a7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 57620,
-    "candidate_start": 57620,
-    "size": 74,
-    "target_sha256": "7cd7628a88c457f282269051b17d070447aff4b56090172970923c3cc9523708",
-    "candidate_sha256": "c90edf0069e40852fd7a21aff03e7959a84fab2f16a32b84c32176e59cb14c3d",
+    "target_start": 49142,
+    "candidate_start": 49142,
+    "size": 30,
+    "target_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+    "candidate_sha256": "a30df311648872083e7350996df078368874d1b1cc9214001e368c9fda004046",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -42867,6 +42867,233 @@
           }
         ]
       }
+    },
+    {
+      "id": "op-nopoly-plane-put-exact",
+      "entry_sha256": "f047cf7eb91775208c324dd4cb89f103868c68ba61dddf9e80ed5571ba76de48",
+      "result": {
+        "id": "op-nopoly-plane-put-exact",
+        "entry_sha256": "f047cf7eb91775208c324dd4cb89f103868c68ba61dddf9e80ed5571ba76de48",
+        "rounds": [
+          {
+            "target_start": 49142,
+            "candidate_start": 49142,
+            "size": 30,
+            "target_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+            "candidate_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 49142,
+            "candidate_start": 49142,
+            "size": 30,
+            "target_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+            "candidate_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ac50b0a4cb918f8eb99207accd01aa1bd8d5e95e5ccc5bcdf0e6d336e4bae615",
+            "dependency_timestamp_normalized_sha256": "7bf69b6b6875606400132c872ca8975de53acbbaa397b62aaad54416e79ec1a0",
+            "module_name": "th05/np_b.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/np_b.cpp",
+              "src/op/music/nopoly_put_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\mem.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "b8ad7b6a2d79390fd9915d3494522664c440f2ef34c208ff62a3fad54d37a301",
+            "dependency_timestamp_normalized_sha256": "7bf69b6b6875606400132c872ca8975de53acbbaa397b62aaad54416e79ec1a0",
+            "module_name": "th05/np_b.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/np_b.cpp",
+              "src/op/music/nopoly_put_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\mem.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/np_b.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/np_b.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_nopoly_put_exact_bindings.asm",
+            "sha256": "65fe4954fefb063ae6f4e47704f1d20d6a1bf28302be66dcaa51c115a21621bc"
+          },
+          {
+            "path": "src/op/music/nopoly_put_exact.cpp",
+            "sha256": "d37b3a2f5274e61f61ed85b4c44a3db12dbec650195574beee2b02a57928d475"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_nopoly_put_exact_bindings.asm",
+          "sha256": "65fe4954fefb063ae6f4e47704f1d20d6a1bf28302be66dcaa51c115a21621bc"
+        },
+        {
+          "path": "src/op/music/nopoly_put_exact.cpp",
+          "sha256": "d37b3a2f5274e61f61ed85b4c44a3db12dbec650195574beee2b02a57928d475"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "22c6c66677c3eb53e4d6bd85a5b144dd166f57f5faa15e9cfd90ac309c4282a7",
+      "compiled_negative_control": {
+        "target_start": 49142,
+        "candidate_start": 49142,
+        "size": 30,
+        "target_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+        "candidate_sha256": "a30df311648872083e7350996df078368874d1b1cc9214001e368c9fda004046",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-nopoly-plane-put-exact",
+        "entry_sha256": "f047cf7eb91775208c324dd4cb89f103868c68ba61dddf9e80ed5571ba76de48",
+        "mutation": {
+          "unit": "op-nopoly-plane-put-exact",
+          "source": "src/op/music/nopoly_put_exact.cpp",
+          "find": "_CX = 32000 / 2;",
+          "replace": "_CX = 31998 / 2;"
+        },
+        "control_sha256": "0e0f3cfedc9460edc2be3f44c4feaf4dae3ad990954ba0e4bea4abdcfc36ee9a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 49142,
+          "candidate_start": 49142,
+          "size": 30,
+          "target_sha256": "5471206cd4cc4e9c4707874bc9d2603c2da03687da1e466b8f8e0c1186f6cf9c",
+          "candidate_sha256": "a30df311648872083e7350996df078368874d1b1cc9214001e368c9fda004046",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "273d2132196ea2e2bb9ed4528a30f35d1a733ebdee203856e5800c5c6a6ef62d",
+          "dependency_timestamp_normalized_sha256": "15ec1c37a69fc164ccc67726a0dae8aa68fcdf7c9b29db50e32ea82b80cf2a7b",
+          "module_name": "th05/np_b.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/np_b.cpp",
+            "src/op/music/nopoly_put_exact.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\mem.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/np_b.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-op",
