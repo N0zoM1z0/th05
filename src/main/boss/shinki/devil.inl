@@ -6,6 +6,18 @@ void near pattern_devil(void)
 			(SHINKI_WING_W / 2) - (SHINKI_WING_W / 8)
 		),
 		COLUMN_W = (SHINKI_WING_W / 4),
+		// Devil's staged startup is shared with the whole Shinki controller.
+		DEVIL_PATTERN_START_FRAME = 192,
+		DEVIL_FORCE_LASER_FRAME = 1800,
+		DEVIL_SPREAD_INTERVAL_FRAMES = 4,
+		DEVIL_LASER_GROW_FRAMES = 64,
+		DEVIL_LASER_TURN_INTERVAL_FRAMES = 8,
+		DEVIL_FIRST_LASER_SWEEP_FRAME = 65,
+		// These angles close the clockwise/anti-clockwise turn-arounds.
+		DEVIL_SPREAD_OUTER_LOW = 0x30,
+		DEVIL_SPREAD_OUTER_HIGH = 0x40,
+		DEVIL_LASER_INNER_LOW = 0x38,
+		DEVIL_LASER_INNER_HIGH = 0x41,
 	};
 
 	// Since the columns are symmetrical, it's only necessary to track the
@@ -29,14 +41,14 @@ void near pattern_devil(void)
 	#define laser_grow_delay shinki_devil_laser_grow_delay
 	extern int laser_grow_delay;
 
-	if(boss.phase_frame < 192) {
+	if(boss.phase_frame < DEVIL_PATTERN_START_FRAME) {
 		return;
 	}
 
-	int phase_frame_minus_startup_delay = (boss.phase_frame - 192);
+	int phase_frame_minus_startup_delay = (boss.phase_frame - DEVIL_PATTERN_START_FRAME);
 
 	// Laser activation
-	if((boss.hp <= HP_PHASE_10_DEVIL_LASER) || (boss.phase_frame >= 1800)) {
+	if((boss.hp <= HP_PHASE_10_DEVIL_LASER) || (boss.phase_frame >= DEVIL_FORCE_LASER_FRAME)) {
 		if(laser_grow_delay == 0) {
 			laser_template.coords.width.nonshrink = 6;
 			laser_template.coords.angle = 0x40;
@@ -60,7 +72,7 @@ void near pattern_devil(void)
 	}
 
 	// Spread bullets
-	if((boss.phase_frame % 4) == 0) {
+	if((boss.phase_frame % DEVIL_SPREAD_INTERVAL_FRAMES) == 0) {
 		if(phase_frame_minus_startup_delay == 0) {
 			bullet_angle_inner = 0x20;
 			bullet_angle_outer = 0x00;
@@ -75,7 +87,7 @@ void near pattern_devil(void)
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_V_RED;
 		bullet_template.group = BG_SPREAD;
-		if((bullet_angle_outer == 0x40) && (bullet_intro_done == 0)) {
+		if((bullet_angle_outer == DEVIL_SPREAD_OUTER_HIGH) && (bullet_intro_done == 0)) {
 			bullet_intro_done++;
 		}
 		if(!bullet_intro_done) {
@@ -130,13 +142,13 @@ void near pattern_devil(void)
 			if(bullet_direction == CLOCKWISE) {
 				bullet_angle_outer -= 0x02;
 				bullet_angle_inner--;
-				if(bullet_angle_outer == 0x30) {
+				if(bullet_angle_outer == DEVIL_SPREAD_OUTER_LOW) {
 					bullet_direction++; // = COUNTERCLOCKWISE;
 				}
 			} else /* if(bullet_direction == COUNTERCLOCKWISE) */ {
 				bullet_angle_outer += 0x02;
 				bullet_angle_inner++;
-				if(bullet_angle_outer == 0x40) {
+				if(bullet_angle_outer == DEVIL_SPREAD_OUTER_HIGH) {
 					bullet_direction--; // = CLOCKWISE;
 				}
 			}
@@ -158,9 +170,9 @@ void near pattern_devil(void)
 	// Lasers
 	if(laser_grow_delay == 0) {
 		return;
-	} else if(laser_grow_delay < 64) {
+	} else if(laser_grow_delay < DEVIL_LASER_GROW_FRAMES) {
 		laser_grow_delay++;
-	} else if(laser_grow_delay == 64) {
+	} else if(laser_grow_delay == DEVIL_LASER_GROW_FRAMES) {
 		// MODDERS: Turn into a loop
 		laser_manual_grow(0);
 		laser_manual_grow(1);
@@ -168,11 +180,11 @@ void near pattern_devil(void)
 		laser_manual_grow(3);
 		laser_grow_delay++;
 	} else if(!lasers_active) {
-		if(bullet_angle_outer == 0x30) {
+		if(bullet_angle_outer == DEVIL_SPREAD_OUTER_LOW) {
 			// Pattern can now be safely ended
 			lasers_active++;
 		}
-	} else if((boss.phase_frame % 8) == 0) {
+	} else if((boss.phase_frame % DEVIL_LASER_TURN_INTERVAL_FRAMES) == 0) {
 		lasers[0].coords.angle = laser_angle_outer;
 		lasers[1].coords.angle = laser_angle_inner;
 		lasers[2].coords.angle = (0x80 - lasers[1].coords.angle);
@@ -180,18 +192,18 @@ void near pattern_devil(void)
 		if(laser_direction == CLOCKWISE) {
 			laser_angle_outer++;
 			laser_angle_inner--;
-			if(laser_angle_inner == 0x38) {
+			if(laser_angle_inner == DEVIL_LASER_INNER_LOW) {
 				laser_direction++; // = COUNTERCLOCKWISE;
 			}
 		} else /* if(laser_direction == COUNTERCLOCKWISE) */ {
 			laser_angle_outer--;
 			laser_angle_inner++;
-			if(laser_angle_inner == 0x41) {
+			if(laser_angle_inner == DEVIL_LASER_INNER_HIGH) {
 				laser_direction--; // = CLOCKWISE;
 			}
 		}
 		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= 2500)) {
-			if((laser_grow_delay++) == 65) {
+			if((laser_grow_delay++) == DEVIL_FIRST_LASER_SWEEP_FRAME) {
 				b6ball_interval = select_for_rank(52, 20, 16, 12);
 				boss_explode_small(ET_CIRCLE);
 			}

@@ -58,3 +58,28 @@ bytes, the original ordered fixups and its rejected2500→2501 control.
 both body factors; no unrelated unit was cold-replayed. The family now has
 13 accepted functions /2559 instruction bytes. Its remaining220/386/959-byte
 functions stay unaccepted, including the final update's table and padding.
+
+## Exact Devil laser/bullet state transitions
+
+The complete Devil attacker now gives semantic names to the true timing and
+angle limits, without changing their numeric values or the original eight-bit
+state overlay. Its spread bullets start after a **192-frame** staging delay
+and fire every four frames. Lasers are normally enabled by the HP gate, or
+forced after frame **1800**. The four fixed lasers begin a 64-frame growth
+counter, grow once when that counter reaches 64, and enter the turn phase at
+counter 65. The outer spread angle reaching `0x30` first establishes the
+`lasers_active` latch; the following 8-frame turns use inner laser reversal
+angles `0x38` and `0x41`, and accelerate the six-ball pattern at the original
+HP/frame fast-stage gate. This is not an unconditional cross-phase reset:
+Shinki's main controller later reads that same physical byte 10 as the
+late-wave selector.
+
+These timing names are local C++ enum constants, preserving Borland's original
+integer-width comparisons, modulo operations and ordinary control flow. The
+standalone 802-byte `pattern_devil()` and every other owner compiling its
+shared source context were replayed **together: 12 original units**, including
+the 959-byte complete Shinki controller, with two original-byte exact
+Borland/TLINK producers and the original ordered relocations. The existing
+compiled `2500 → 2501` laser-fast-stage negative was rejected. Evidence:
+`.analysis/unit-replays/gpt-web-shinki-devil-attack-timing-20261111/receipt.json`.
+No additional executable bytes are claimed by this refinement.
