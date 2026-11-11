@@ -41,6 +41,7 @@ necessarily all authored bytes where padding is present.
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
 | MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
+| MAIN Mima bomb backdrop | Four-entry **226-byte** GRCG family at `1052C..1060E` exact reviewed ASM; **224 authored** bytes, two uncredited NOPs | [Mima backdrop](../src/main/player/mima_backdrop.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |

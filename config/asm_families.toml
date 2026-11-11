@@ -2206,3 +2206,39 @@ kind = "alignment"
 offset = 55
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-mima-backdrop-family"
+artifact = "main"
+source = "src/main/player/mima_backdrop.asm"
+types = "src/main/player/mima_backdrop_types.inc"
+symbols = "probes/units/mima_backdrop_symbols.inc"
+bindings = "probes/units/mima_backdrop_bindings.asm"
+notes = "src/main/player/mima_backdrop.md"
+target_start = 66860
+size = 226
+segment = "MIMA_BACKDROP_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "a526acbe84c07abe0507c91a08b9c6f53f2cfe2548c40e8b4b11f168355a7c38"
+target_scope_sha256 = "37681319fbf6212fe8813a00f019bd846fcfcedd9b1d4fde294a5a4deb35c985"
+semantic_inputs = ["src/main/player/mima_bands.asm", "src/main/player/mima_bands_types.inc", "src/main/player/bomb_family.hpp"]
+[units.publics]
+"mima_backdrop_white_bands" = 0
+"mima_backdrop_black_columns" = 106
+"mima_backdrop_clear_pages" = 158
+"grcg_fill_playfield_rows" = 212
+"mima_backdrop_end" = 226
+[units.negative]
+find = "mov ax, VRAM_BAND_CENTER"
+replace = "mov ax, VRAM_BAND_BOTTOM"
+[[units.uncredited]]
+offset = 105
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 225
+size = 1
+kind = "alignment"
