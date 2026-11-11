@@ -159,3 +159,47 @@ symbol-only linkage. Both CRT and the adjacent accepted 322-byte
 configuration function now link exact under that layout; the separate
 **269-byte `main()` control flow remains unaccepted** and is not patched or
 reclassified as vendor material.
+
+## 2026-11-11: compiler optimization shape definitively isolated
+
+A further **private diagnostic only** restored the three historical ReC98
+`th02/res_init.cpp` optimization barriers *as experiment variables* and
+relinked with the now-proven authentic C0T `_INIT_` table (`0012h` bytes) and
+BSS (`0054h` bytes). Turbo C++ 4.02's real tiny-model `-c` compilation
+produced the original **269-byte `main()` CODE extent** **only when all three
+reference barriers were present**. With one missing, the direct-object entry
+was 260, 263 or 266 bytes. A separate `-S`/TASM32 experiment always emitted
+273 bytes regardless of the same barrier mask.
+
+Under the correct preserved CODE/DATA linker frames, the fully linked
+269-byte *experimental* `main()` matches **269/269 original bytes**, and the
+original 615-byte C0T startup, 322-byte accepted `cfg_init()` and 320-byte
+accepted semantic C++ DATA match as well. A second independent native `-c`
+producer reproduced every one of those scopes. A real compiled negative
+changed the `argc == 2` option-dispatch condition to `argc == 3`; it changed
+exactly one original `main()` byte and left all other scopes unchanged.
+
+The ignored, proof-local diagnostics are retained under:
+
+- `.analysis/gpt-web-zun-barrier-matrix-*/` (all three-barrier mask profiles)
+- `.analysis/gpt-web-zun-main-barrier-context-b/` (first correctly linked match)
+- `.analysis/gpt-web-zun-main-exact-diagnostic-positive-b/` (second match)
+- `.analysis/gpt-web-zun-main-exact-diagnostic-negative-argc/` (compiled negative)
+- `.analysis/gpt-web-zun-main-exact-diagnostic-summary.json` (range-only summary)
+
+**This is NOT an accepted game-authored C++ reconstruction.** The reference
+calls these self-assignments / empty inline-function calls explicit
+*optimization barriers*. Their purpose is to alter Borland's basic-block
+merging, not to express game behavior, and adding them solely to obtain a
+byte match would violate the oracle source-provenance rule. All artificial
+barriers remain private and ignored; the committed natural C++ source
+[`initialize.cpp`](initialize.cpp) remains unchanged and unaccepted.
+
+Sixteen further compilations of genuinely empty lexical scopes, including
+the historic `RES_INIT_BOTTOM` macro block and scoped individual error
+handlers, all still emit the natural 260-byte `main()` with no instruction
+credit. The remaining challenge is a historically credible control-flow
+expression that naturally prevents the three erroneous shared print tails,
+**not** compiler option selection, CRT placement, string encoding or a missing
+native provider. The existing accepted config/C0T/Master/DATA scopes all
+remain independent and current.

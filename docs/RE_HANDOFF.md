@@ -46,7 +46,7 @@ progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
 **ZUN `-S` authored initialization DATA exact:** The complete **320-byte** native C++ `_DATA` contributor at COM `16BE..17FE` now matches semantic configuration defaults, IDs, filenames, title and Japanese status messages through real TCC/TLINK/CP932; it earns DATA, **not instruction**, credit. See [ZUN resident semantic DATA](../src/zun/resident/semantic_data.md).
 
-**ZUN resident entry still open:** The 269-byte complete `main()` now has genuine 269-byte alternate C++ producers, but every linked candidate still differs in 183 branch/code bytes. The full failure evidence and safe next step are in [resident entry notes](../src/zun/resident/initialize.md); no new acceptance is claimed.
+**ZUN resident `main()` source remains unaccepted:** Two private real TCC `-c`/TLINK producers now generate **269/269 exact `main()` bytes** under the restored original CRT layout, with an effective compiled one-byte negative. However, they require the three explicit *artificial optimization barriers* present in the ReC98 reference. Those constructs are not historical game behavior and are **not committed or accepted as authored C++**. Sixteen natural no-op-free scope variants still generate 260 bytes. See [precise compiler diagnostic and source-origin limit](../src/zun/resident/initialize.md); do not relabel exact binary diagnostics as accepted source.
 
 ## Recent accepted code: do not reopen old failure notes as active blockers
 
