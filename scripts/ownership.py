@@ -633,11 +633,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_memory_vsync import reviewed_claims as memory_vsync_claims
             memory_vsync, memory_vsync_sha = memory_vsync_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            from review_context_machine_detect import reviewed_claims as machine_detect_claims
+            machine_detect, machine_detect_sha = machine_detect_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
                                     shifted_context + string_context + pi_pack +
                                     large_master + super_helpers + master_hooks +
-                                    packed_blitters + bgm_timer_functions + memory_vsync)
+                                    packed_blitters + bgm_timer_functions + memory_vsync + machine_detect)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -701,6 +704,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["bgm_timer_review_sha256"] = bgm_timer_sha
         if name in ("op","maine") and memory_vsync_sha:
             views[name]["memory_vsync_review_sha256"] = memory_vsync_sha
+        if name in ("op","maine") and machine_detect_sha:
+            views[name]["machine_detect_review_sha256"] = machine_detect_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
