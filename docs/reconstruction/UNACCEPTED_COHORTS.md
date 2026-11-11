@@ -28,6 +28,22 @@ be described as uncovered code:
 | Near vector helper | Ordinary C++ 92/106 versus original 55, with following EVEN byte excluded | Full 55-byte reviewed ASM, [review](../../src/shared/math/vector2_near.md) |
 | Scroll coordinate helper | Ordinary C++ 47/51 versus original 40 bytes | Full 40-byte reviewed ASM, [review](../../src/main/scroll/coordinates.md) |
 
+## Current follow-up candidates for an incoming agent
+
+The unaccepted natural C++ alternative for Yumeko's 283-byte
+`swords_update()` is worth investigating only as a source-language refinement:
+the executable function already has a complete, exact reviewed-ASM owner.
+ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
+source problem. Its two private raw-exact diagnostics use ReC98 artificial
+compiler barriers, so neither is accepted as historical natural C++.
+
+For vendor review, OP still has `xxas`, `signal`, `setenvp` and MAINE has
+`setenvp` deferred. The larger `farheap`/`exec` CODE owners in both binaries
+are now accepted from actual source-written OMF records; their 6/2-byte
+runtime CS: gaps stay unknown. Do not resurrect those as live unresolved
+functions merely because the earlier gapless verifier marked them deferred.
+See [current vendor review](VENDOR_CONTEXT_REVIEW.md).
+
 ## Large unknown regions and superseded investigations
 
 The original MAIN `C9BA..CAD2` player region is now complete reviewed native

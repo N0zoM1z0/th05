@@ -6,7 +6,7 @@ explicit reviewed decisions now adopt the listed complete contributions below
 as third-party library code. Authored credit remains zero and the authored byte
 denominator remains null.
 
-| Context | Complete adopted CODE contributions | Bytes | Retained link producers |
+| Context | Original gapless-lane adopted contributions | Original gapless-lane bytes | Retained link producers |
 | --- | ---: | ---: | ---: |
 | OP | 63 | 23,708 | 1 |
 | MAINE | 55 | 20,870 | 1 |
@@ -105,7 +105,10 @@ unreviewed. All other uncovered ranges, runtime writable variables, vendor
 DATA/BSS and game sources remain unknown pending their own proof. Existing
 MAIN original CODE and Master decisions do not transfer to these artifacts.
 
-The subsequent root-run `ownership.py --write --verify-targets` passed with
-47,855 verified vendor bytes across all contexts and 189,074 unknown bytes.
-Authored recovery stayed at 82,266 bytes; its denominator remains null. These
-are adoption-time inventory observations, not permanent totals or proof bounds.
+The original gapless-lane root adoption passed its then-current native
+`ownership.py --write --verify-targets` check. Its historical global totals
+are **superseded** by later source reviews of `farheap`, `exec`, `setenvp`,
+CRT DATA and additional authored functions. Use the generated
+[`resources/ownership.json`](../../resources/ownership.json), not old
+adoption-time totals, for the current unknown/vendor breakdown. The global
+authored denominator remains unreviewed.

@@ -167,7 +167,9 @@ current accepted 414-byte code is documented later in this file.
 
 ## 2026-11-10 original bonus-call inline-language trial
 
-The 414-byte `boss_defeat_update` remains unaccepted. A fresh isolated
+At that early diagnostic checkpoint, the 414-byte `boss_defeat_update`
+remained unaccepted; the complete-context acceptance later in this note
+supersedes it. A fresh isolated
 Borland C++ producer again confirms the baseline 408-byte function, with
 ordered fixups `[389,359,345,331,254,33]` rather than original
 `[395,365,351,337,254,33]`. Five further genuinely source-level attempts

@@ -56,6 +56,8 @@ producers and compiled negative. Its meaningful control changes
 The symbol-only context in
 `probes/units/shinki_cheeto_walls_bindings.asm` supplies true foreign functions
 and complete state addresses; it supplies no owned function, table or padding.
-No source DATA/BSS is defined. The separate Devil producer also passes 802 bytes. Wing preparation386,
-main update959 and the original220-byte ball updater remain unaccepted.
-The four missing ball bytes receive no credit.
+No source DATA/BSS is defined. The separate Devil producer also passes 802 bytes.
+At that checkpoint the 386-byte wing preparation, 959-byte Shinki update and
+220-byte ball updater still had failed standalone candidates. **All three now
+have accepted complete C++ owners**, and the earlier four missing ball bytes
+were never credited.

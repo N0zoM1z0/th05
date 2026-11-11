@@ -5,7 +5,9 @@ The complete adjacent original functions are `puppets_render` at
 (140 bytes). They use near frame `0AE1`/`main_01`, with DS `209D`. Native review
 decodes all 521 bytes as 189 instructions, validates the real returns and every
 direct branch destination, and finds no table, padding, DATA or BSS contribution.
-The candidate is uncompiled and has no accepted exact credit.
+At the initial proposal stage this candidate was not yet compiled or
+accepted; the later exact 381-byte puppet and 140-byte foreground owners at
+the end of this note supersede that status.
 
 The puppet renderer reuses the full accepted 26-byte `AlicePuppet` from
 `beam.hpp`, overlaid on the first two complete custom-entity slots. It clips
@@ -49,8 +51,9 @@ Private files `.analysis/alice-foreground-boundary-review.json` and
 boundaries, branch/call sites, target/source hashes, ABI bindings and proposal.
 `python3 .analysis/alice-foreground-review.py` repeats the bounded native review.
 The meaningful staged-source negative changes the beam color from 9 to 10.
-Acceptance still requires two fresh deterministic producers, strict raw bytes,
-original ordered fixups, OMF/MAP/dependency checks and rejection of that control.
+At the original proposal stage, acceptance required independent producers,
+original bytes/fixups, OMF/MAP/dependency checks and rejection of the control.
+The later accepted receipts meet those requirements.
 
 The first combined producer, `main-alice-foreground-a`, emitted 381 bytes for
 the puppet renderer and 150 for the 140-byte foreground callback. The puppet
@@ -59,7 +62,8 @@ fixups; its twelve raw differences were the DS offsets displaced by the
 combined callback's extra ten bytes. This was a failed full comparison, not an
 accepted normalized result. The callback's additional bytes were an ordinary
 left/top local allocation difference and a duplicated signed animation divide;
-it remains unaccepted, with no further speculative compiler variants proposed.
+that 150-byte diagnostic remained unaccepted. The accepted 140-byte
+natural callback later superseded this particular failed experiment.
 
 The unchanged complete puppet-rendering body was factored into
 `puppets_render.cpp`. The coherent `foreground.cpp` includes that canonical body

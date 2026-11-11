@@ -18,14 +18,16 @@ function and ends at209D0. It contains no instructions, initialized values,
 stack or inside-function holes. The failed parent's DS209C context is not
 reused. Accepted beam and charged-pattern owners remain unchanged.
 
-The full Alice callback remains unaccepted. Its first producer omitted a
-zero byte before the15-entry compiler switch table; the actual OMF had one
-nonempty CODE SEGDEF, so no declaration-context repair is claimed here.
+At that checkpoint the *larger Alice update controller* was unaccepted:
+its first producer omitted a natural zero before a 15-entry switch table.
+This was not a failure of the separate 63-byte final-spread callback. The
+later full-update acceptance supersedes the old combined-context experiment.
 
 
 `main-alice-final-spread-a` accepts the complete63-byte independent producer,
 with both fresh raw/ordered positives and the speed2→3 control. Its standalone
 binder preserves real DS209D; it does not inherit the failed whole-update
-scaffold's shifted tail. The natural callback remains unaccepted because its
-original table-prefix zero is not reproduced; these63 bytes do not claim the
-939-byte callback or the former1002-byte contribution.
+scaffold's shifted tail. The 939-byte update controller was still inexact at that historical
+checkpoint; this independent 63-byte callback acceptance did not transfer
+credit to it. The complete controller is now separately accepted as
+`main-alice-update-context`.

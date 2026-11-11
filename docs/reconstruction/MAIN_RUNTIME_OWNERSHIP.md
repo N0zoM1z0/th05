@@ -153,17 +153,23 @@ reordered original loader relocations, a clipped complete extent and changed
 library CODE. These are read-only mutated views; original files are untouched.
 
 Previously adopted 31 CL members / 2,901 bytes retain their original evidence.
-The present addition is not a blanket runtime-prefix exclusion. Ten other
-complete library candidates remain deferred: xxas, farheap, signal, exec,
-setenvp, new, xmsg, ctor2, ctor3 and strings. Unsupported group fixups, LIDATA,
+The present addition was not a blanket runtime-prefix exclusion. At this
+original review checkpoint, ten other library candidates were deferred:
+xxas, farheap, signal, exec, setenvp, new, xmsg, ctor2, ctor3 and strings.
+Subsequent independent native OMF reviews have resolved **farheap, exec and
+setenvp**, without modifying this older proposal or its evidence. Unsupported group fixups, LIDATA,
 unwritten SEGDEF gaps or remaining raw-byte differences require their own
 reviews. No internal hole, inter-member alignment, C0 startup, Master include,
 other target, game routine, DATA or asset receives ownership from this decision.
 
-The observation universe stays319,268 bytes. Unknown ownership decreases from
-153,745 to135,616; verified vendor CODE grows from50,007 to68,136. Authored C/C++
-remains97,289 bytes /495 functions /310 units. Reviewed ASM remains separate.
-The global authored denominator and percentage remain null.
+At the time of this original runtime-owner adoption, the recorded
+observation universe was 319,268 bytes; the then-current unknown/vendor and
+C++ totals reflected only the acceptance set available at that checkpoint.
+They are **historical**, not the latest totals after later CL.LIB, Master,
+ASM and authored-source reviews. Use the current
+[gapless ownership map](../../resources/ownership.json) and
+[generated progress](../PROGRESS.md) instead. The global authored
+denominator and percentage remain null.
 
 Independent native/model/complete-boundary report:
 `.analysis/vendor-review/main-runtime-independent-review.json`, SHA-256

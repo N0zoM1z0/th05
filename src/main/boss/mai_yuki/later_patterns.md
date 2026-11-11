@@ -107,8 +107,9 @@ tracking instructions or an internal gap.
 raw comparisons and original ordered fixups[920,833,462,136]. The real first
 selected pattern's initial angle0x20→0x21 control is compiled and rejected
 for this whole owner. Ten complete functions are accepted, without claiming
-separate negatives per sibling. The tracking function remains unaccepted;
-no DATA, BSS, compiler tables or padding receive credit.
+separate negatives per sibling. The tracking function was unaccepted in that first producer; its later
+186-byte compiler-assembly acceptance below supersedes this verdict. No DATA,
+BSS, compiler table or padding received credit from the failed trial.
 
 A later read of the saved 185-byte tracker identifies a real dataflow gap:
 native keeps the current laser angle in AL while subtracting it from the byte

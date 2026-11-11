@@ -66,8 +66,9 @@ end boundary. The first declaration of the real random helper belongs to
 main_03 before including foreign main_01 callback declarations; restoring this
 actual frame fixes both near calls without synthesizing helper code.
 
-The complete original 65-byte defeat update remains unaccepted: its natural
-far reset call produces one extra byte, giving 66. The outside-owned paragraph
+In that initial isolated trial the complete 65-byte defeat update was
+unaccepted: the far reset call produced one extra byte, giving 66. The later
+local-definition acceptance below supersedes this failed producer. The outside-owned paragraph
 context preserves original DS without padding or truncating that function.
 The failed whole-contribution diagnostics retain their original verdict.
 

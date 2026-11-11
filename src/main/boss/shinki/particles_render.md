@@ -24,8 +24,8 @@ raw drawing provider. No foreign call intervenes; comparison instructions
 preserve both arguments. Arithmetic and particle state remain ordinary C++.
 It removes the coordinate spill/reloads and emits158 bytes. The sole
 remaining instruction difference is OR AX,AX versus native CMP AX,0; branches
-and the later call shift by one byte. This full function remains unaccepted.
-The older combined candidate and sixteen zero-spelling/option observations
+and the later call shift by one byte. That 158-byte diagnostic remained unaccepted; the later 159-byte accepted
+function below supersedes it. The older combined candidate and sixteen zero-spelling/option observations
 already record that encoding issue, so no further zero-option sweep follows.
 
 The compact158-byte source is retained outside live manifests. Its one new
@@ -53,8 +53,9 @@ The retained ReC98 `th05/main/boss/render.cpp` has an explicit
 so it can prevent `OR` canonicalization. That explains the historical
 compiler discrepancy, but creating a ghost game-state DATA label solely to
 force the opcode would undermine the source/binder provenance requirements.
-No such label or target-derived instruction was inserted, and **this full
-159-byte function remains unaccepted**. The first producer and complete source
+At that interim checkpoint no such symbol or target-derived instruction
+had been inserted, and the full 159-byte function was still unaccepted.
+The later source-backed symbolic-zero solution below supersedes this trial. The first producer and complete source
 variants were historical one-off diagnostics; their emitted private build
 directories were pruned for storage. The original semantic zero-operand
 question is described here, and the later accepted 159-byte source recovery
