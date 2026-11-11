@@ -2,34 +2,20 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "cbd925ac6e33e0c60404e596152bca644672572682d8bd9b7e1d97aa3b4317c6",
+  "replay_receipt_sha256": "d6f185508340fadbe5eb3ddc29d19a4dbec9831bfd0a4ada34a09767f5a3c443",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 80590,
-    "candidate_start": 80590,
-    "size": 74,
-    "target_sha256": "ab8ba8eac6cd7c2005bf76f259eaf2eeab28b8f07985943f7e7f52862e45108c",
-    "candidate_sha256": "d2facaaf8ff41121d586c1dd6356e4185a889cb7ea574b530416b52b414e72f0",
+    "target_start": 85218,
+    "candidate_start": 85218,
+    "size": 57,
+    "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+    "candidate_sha256": "6f13f3ca89d0a7c0c67222acdd7b0efd71140d7af9a04e99f259e4974b28986a",
     "raw_exact": false,
-    "target_fixups": [
-      67
-    ],
-    "candidate_fixups": [
-      67
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 80590,
-      "size": 74,
-      "function_symbol": "dialog_face_unput_8(unsigned int,unsigned int)",
-      "contribution_start": 80590,
-      "contribution_size": 74,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -88285,6 +88271,472 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlgctx.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-sound-se-play-exact",
+      "entry_sha256": "35dc49161c8550a5738f6c756edabd4293855f72dc179f27c68cf542117f9aed",
+      "result": {
+        "id": "main-sound-se-play-exact",
+        "entry_sha256": "35dc49161c8550a5738f6c756edabd4293855f72dc179f27c68cf542117f9aed",
+        "rounds": [
+          {
+            "target_start": 85218,
+            "candidate_start": 85218,
+            "size": 57,
+            "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+            "candidate_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 85218,
+            "candidate_start": 85218,
+            "size": 57,
+            "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+            "candidate_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "42ad7919a6dad34a70a247c8319723aed535c9a02ed0295a0ec57547036d221b",
+            "dependency_timestamp_normalized_sha256": "ce341e0260619ef3e7ddd189dea5e0b534f26a9cef630788bcf5cdbf3e339369",
+            "module_name": "th05/seplay.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/seplay.cpp",
+              "src/shared/sound/se_play.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se_play_body.inl"
+            ]
+          },
+          {
+            "sha256": "42442b213b2bc4e6850bf83b8e06c2ce6ff3ab96a9f9894c5acb29c76bf48325",
+            "dependency_timestamp_normalized_sha256": "ce341e0260619ef3e7ddd189dea5e0b534f26a9cef630788bcf5cdbf3e339369",
+            "module_name": "th05/seplay.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/seplay.cpp",
+              "src/shared/sound/se_play.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se_play_body.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/seplay.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/seplay.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_se_play_bindings.asm",
+            "sha256": "e7f643787eb3c679fd8ffb53136c86f5663039ca960334929388a850e57dfeb8"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          },
+          {
+            "path": "src/shared/sound/se_play.cpp",
+            "sha256": "24005db697e95e259a05d50c3988bb8947cf54ce4dd4107a74408d0f99bb29a5"
+          },
+          {
+            "path": "src/shared/sound/se_play_body.inl",
+            "sha256": "10d2e2571bd32000a417f39f8dcb81d8d5a32152d6fa5631ccb81469306c8258"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_se_play_bindings.asm",
+          "sha256": "e7f643787eb3c679fd8ffb53136c86f5663039ca960334929388a850e57dfeb8"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        },
+        {
+          "path": "src/shared/sound/se_play.cpp",
+          "sha256": "24005db697e95e259a05d50c3988bb8947cf54ce4dd4107a74408d0f99bb29a5"
+        },
+        {
+          "path": "src/shared/sound/se_play_body.inl",
+          "sha256": "10d2e2571bd32000a417f39f8dcb81d8d5a32152d6fa5631ccb81469306c8258"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d6f185508340fadbe5eb3ddc29d19a4dbec9831bfd0a4ada34a09767f5a3c443",
+      "compiled_negative_control": {
+        "target_start": 85218,
+        "candidate_start": 85218,
+        "size": 57,
+        "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+        "candidate_sha256": "6f13f3ca89d0a7c0c67222acdd7b0efd71140d7af9a04e99f259e4974b28986a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-sound-se-play-exact",
+        "entry_sha256": "35dc49161c8550a5738f6c756edabd4293855f72dc179f27c68cf542117f9aed",
+        "mutation": {
+          "unit": "main-sound-se-play-exact",
+          "source": "src/shared/sound/se_play_body.inl",
+          "find": "_DX = peek(_SS, (_BX + 4));",
+          "replace": "_DX = peek(_SS, (_BX + 6));"
+        },
+        "control_sha256": "ffbca1fef75dd248f50d777a8f83a7b5bcdf1fd28f85f89d62f2b9c388ac2a90",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 85218,
+          "candidate_start": 85218,
+          "size": 57,
+          "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+          "candidate_sha256": "6f13f3ca89d0a7c0c67222acdd7b0efd71140d7af9a04e99f259e4974b28986a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "07f077a14af34567326e3e7880fb9256d6f55e6e8e9c043ee0d5615779d22f0d",
+          "dependency_timestamp_normalized_sha256": "086e3707922f9eb2fdb2fa85a0754b2237e70087be211b9a52b1844e0a9e51fc",
+          "module_name": "th05/seplay.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/seplay.cpp",
+            "src/shared/sound/se_play.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/sound/se_play_body.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/seplay.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-sound-se-update-exact",
+      "entry_sha256": "925faac0a7b256cde23c5fbe4a4c22f038a1f68ca47a35a7a8510ddefbe84e75",
+      "result": {
+        "id": "main-sound-se-update-exact",
+        "entry_sha256": "925faac0a7b256cde23c5fbe4a4c22f038a1f68ca47a35a7a8510ddefbe84e75",
+        "rounds": [
+          {
+            "target_start": 85276,
+            "candidate_start": 85276,
+            "size": 76,
+            "target_sha256": "3c0d533781916d26e34c8980794bb07846e367ba52cea4f20d1e391ca01b92bb",
+            "candidate_sha256": "3c0d533781916d26e34c8980794bb07846e367ba52cea4f20d1e391ca01b92bb",
+            "raw_exact": true,
+            "target_fixups": [
+              43
+            ],
+            "candidate_fixups": [
+              43
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 85276,
+            "candidate_start": 85276,
+            "size": 76,
+            "target_sha256": "3c0d533781916d26e34c8980794bb07846e367ba52cea4f20d1e391ca01b92bb",
+            "candidate_sha256": "3c0d533781916d26e34c8980794bb07846e367ba52cea4f20d1e391ca01b92bb",
+            "raw_exact": true,
+            "target_fixups": [
+              43
+            ],
+            "candidate_fixups": [
+              43
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "47ad34119113bfac6fe4f027fe5b8fef5eb040a35636a7b803ef82304cee805a",
+            "dependency_timestamp_normalized_sha256": "189bb9ca177dd72ebe821c1a456fe5c01b2c9076d1bef2307420cc062385a64c",
+            "module_name": "th05/seupdate.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/seupdate.cpp",
+              "src/shared/sound/se_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se_driver_play.inl",
+              "src/shared/sound/se_update_body.inl"
+            ]
+          },
+          {
+            "sha256": "b6c401e67e859067a0953243709b0bb792db40927a1d4c4fe4abb34c8e09481e",
+            "dependency_timestamp_normalized_sha256": "189bb9ca177dd72ebe821c1a456fe5c01b2c9076d1bef2307420cc062385a64c",
+            "module_name": "th05/seupdate.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/seupdate.cpp",
+              "src/shared/sound/se_update.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/shared/sound/se_driver_play.inl",
+              "src/shared/sound/se_update_body.inl"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-1/a/source",
+          "group-1/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/seupdate.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/seupdate.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_se_update_bindings.asm",
+            "sha256": "ae808a2be01fc8ed1c8b09f9d65244ed4e99b27ccd06c811d4b246462cb5ddd6"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          },
+          {
+            "path": "src/shared/sound/se_driver_play.inl",
+            "sha256": "d5c56545a18e87c58cbbe694a364b75e115ca268b2b4ef2240cc94551abbb2eb"
+          },
+          {
+            "path": "src/shared/sound/se_update.cpp",
+            "sha256": "c3dc56407c974b784ccc2dfbe0b334e931e80dddba1d84e19bf145e872bce6c9"
+          },
+          {
+            "path": "src/shared/sound/se_update_body.inl",
+            "sha256": "535d564070bf024f761f419666a3d4ba0d32b3cf48986a41000d3857c11910cc"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_se_update_bindings.asm",
+          "sha256": "ae808a2be01fc8ed1c8b09f9d65244ed4e99b27ccd06c811d4b246462cb5ddd6"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        },
+        {
+          "path": "src/shared/sound/se_driver_play.inl",
+          "sha256": "d5c56545a18e87c58cbbe694a364b75e115ca268b2b4ef2240cc94551abbb2eb"
+        },
+        {
+          "path": "src/shared/sound/se_update.cpp",
+          "sha256": "c3dc56407c974b784ccc2dfbe0b334e931e80dddba1d84e19bf145e872bce6c9"
+        },
+        {
+          "path": "src/shared/sound/se_update_body.inl",
+          "sha256": "535d564070bf024f761f419666a3d4ba0d32b3cf48986a41000d3857c11910cc"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d6f185508340fadbe5eb3ddc29d19a4dbec9831bfd0a4ada34a09767f5a3c443",
+      "compiled_negative_control": {
+        "target_start": 85218,
+        "candidate_start": 85218,
+        "size": 57,
+        "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+        "candidate_sha256": "6f13f3ca89d0a7c0c67222acdd7b0efd71140d7af9a04e99f259e4974b28986a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-sound-se-play-exact",
+        "entry_sha256": "35dc49161c8550a5738f6c756edabd4293855f72dc179f27c68cf542117f9aed",
+        "mutation": {
+          "unit": "main-sound-se-play-exact",
+          "source": "src/shared/sound/se_play_body.inl",
+          "find": "_DX = peek(_SS, (_BX + 4));",
+          "replace": "_DX = peek(_SS, (_BX + 6));"
+        },
+        "control_sha256": "ffbca1fef75dd248f50d777a8f83a7b5bcdf1fd28f85f89d62f2b9c388ac2a90",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 85218,
+          "candidate_start": 85218,
+          "size": 57,
+          "target_sha256": "ca62a055546b8d62ca8ecf351eccb2a19c55533cc9ce6f000b8ab18f084958f7",
+          "candidate_sha256": "6f13f3ca89d0a7c0c67222acdd7b0efd71140d7af9a04e99f259e4974b28986a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "07f077a14af34567326e3e7880fb9256d6f55e6e8e9c043ee0d5615779d22f0d",
+          "dependency_timestamp_normalized_sha256": "086e3707922f9eb2fdb2fa85a0754b2237e70087be211b9a52b1844e0a9e51fc",
+          "module_name": "th05/seplay.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/seplay.cpp",
+            "src/shared/sound/se_play.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/shared/sound/se_play_body.inl"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/seplay.cpp"
         ]
       },
       "receipt_aggregate_pass": true

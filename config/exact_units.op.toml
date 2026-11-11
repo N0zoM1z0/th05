@@ -995,3 +995,41 @@ unit = "op-input-wait-original-exact"
 source = "src/shared/hardware/input_wait_context.cpp"
 find = "if(_FLAGS & 0x40) {"
 replace = "if(_FLAGS & 0x80) {"
+
+[[units]]
+id = "op-sound-se-play-exact"
+source = "src/shared/sound/se_play.cpp"
+module = "th05/seplay.cpp"
+segment = "SHARED"
+wrapper_options = "-zCSHARED -k-"
+bindings_source = "probes/units/op_se_play_bindings.asm"
+target_start = 0xd602
+size = 57
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "op-sound-se-play-exact"
+source = "src/shared/sound/se_play_body.inl"
+find = "_DX = peek(_SS, (_BX + 4));"
+replace = "_DX = peek(_SS, (_BX + 6));"
+
+[[units]]
+id = "op-sound-se-update-exact"
+source = "src/shared/sound/se_update.cpp"
+module = "th05/seupdate.cpp"
+segment = "SHARED"
+wrapper_options = "-zCSHARED -k-"
+bindings_source = "probes/units/op_se_update_bindings.asm"
+target_start = 0xd63c
+size = 76
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "op-sound-se-update-exact"
+source = "src/shared/sound/se_update_body.inl"
+find = "if(snd_se_frame == 0) {"
+replace = "if(snd_se_frame == 1) {"

@@ -5,19 +5,19 @@ complete authored ownership denominator remains under review.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 451 | 74892 | 74166 | 726 | 74976 |
-| OP decoded C/C++ units | 73 | 12792 | 12638 | 154 | 12798 |
-| MAINE decoded C/C++ units | 78 | 16185 | 16085 | 100 | 16193 |
+| MAIN bounded C/C++ units | 453 | 75025 | 74299 | 726 | 75109 |
+| OP decoded C/C++ units | 75 | 12925 | 12771 | 154 | 12931 |
+| MAINE decoded C/C++ units | 80 | 16318 | 16218 | 100 | 16326 |
 | ZUN embedded C/C++ units | 1 | 322 | 322 | 0 | 322 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 27 | 3341 | 78233 | 78320 |
-| OP decoded C/C++ units | 10 | 8721 | 21513 | 21519 |
-| MAINE decoded C/C++ units | 12 | 3615 | 19800 | 19808 |
+| MAIN bounded C/C++ units | 27 | 3341 | 78366 | 78453 |
+| OP decoded C/C++ units | 10 | 8721 | 21646 | 21652 |
+| MAINE decoded C/C++ units | 12 | 3615 | 19933 | 19941 |
 | ZUN embedded C/C++ units | 0 | 0 | 322 | 322 |
 
-411 bounded C/C++ units pass two cold producers, raw bytes and original
+417 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,7 +27,7 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 119868: 104191 authored CODE plus 15677
+Total authored C/C++ bytes are 120267: 104590 authored CODE plus 15677
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 980 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 101 observed

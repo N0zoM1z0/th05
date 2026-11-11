@@ -36,3 +36,44 @@ boundaries under the strict scope parser; the proposed private function-scope
 registrations are not adopted. Future acceptance needs genuine complete
 compiler contributions, without relabelling C symbols or adding lookup/parameter
 register templates. No additional compiler variants were tried.
+
+## 2026-11-11: exact complete SE play/update functions in all three artifacts
+
+The original MAIN far-Pascal `SND_SE_PLAY` (57 bytes) and far-cdecl
+`_snd_se_update` (76 bytes) now compile exactly from maintained C++. They
+also pass the identical complete native extents independently in OP and MAINE,
+using each binary's original CODE, DATA, and `BGM_SOUND` far-call frames.
+**Six complete functions / 399 C++ instruction bytes** are accepted.
+The three inter-function `90` alignment bytes at MAIN `14D1B`, OP `D63B`,
+and MAINE `EB1F` remain outside the compiled functions and earn no credit.
+
+The real far-Pascal play entry fetches its word argument through the Borland
+`SS:[SP+4]` interface and retains it in `DX`. The original priority comparison
+loads the current effect into `BL`, clears `BH` and then indexes the existing
+unsigned-byte priority table; `DX` preserves the new effect. This removes the
+unwanted ordinary BP frame and three extra compiled bytes. Update likewise
+uses `BL`/`BH` for its priority-frame lookup, removing the previous extra
+byte without rewriting driver semantics. The genuine PMD `INT 60h`, Beep
+far-Pascal call, unchecked state transitions and unsigned priority/age
+comparisons are unchanged.
+
+`se_play_body.inl`, `se_update_body.inl` and `se_driver_play.inl` share
+maintained definitions with the original-order `se.cpp`. Each exact owner has
+an independent one-function compiler source (`se_play.cpp`/`se_update.cpp`)
+and a foreign-symbol-only binder for each artifact. This avoids injecting an
+alignment NOP with `codestring`, duplicating function bodies, or treating a
+partial compiler contribution as a complete owner. The existing accepted
+34-byte priority DATA per binary is unchanged.
+
+Focused receipts (two distinct positive producers, complete raw bytes, native
+ordered relocations, and a compiled source negative per artifact):
+
+- `.analysis/unit-replays/gpt-web-main-sound-se-both-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-op-sound-se-both-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-maine-sound-se-both-b/receipt.json`
+
+Each receipt selects exactly its two affected functions. The original ordered
+fixups are empty for play and `[43]` for update. The single mutation per
+artifact changes the actual play argument-stack word offset from `+4` to
+`+6`; the oracle rejects the modified code. Whole-game linkage and packed
+OP/MAINE executable identity are separate, not claimed by this acceptance.
