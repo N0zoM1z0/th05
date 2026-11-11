@@ -99,3 +99,20 @@ and authored-code bytes, zero compiler tables or padding, and no DATA/BSS
 credit. The combined receipt's Extra owner is a distinct compilation group
 with independent evidence. This Stage5 source/header/binder stayed unchanged
 during both launches; only the documented DOS module alias was corrected.
+
+## Shared Midboss 5 attack-state layout (2026-11-11)
+
+The accepted stage-five update and complete movement/bullet-pattern prefix now
+share the original sixteen-byte `Midboss5Scratch` layout. Byte 13 counts
+completed patterns, byte 14 selects flight (`0`) versus the active callback
+(`1`), and byte 15 cycles through four horizontal movement states, starting
+from zero on entry to the attack phase. The native pair of Midboss phases
+is named without changing either switch's numeric keys. The view is an alias
+of `boss_statebyte`, with compile-time size and offset checks; it adds no
+storage and changes no animation or attack transition.
+
+Both affected units were rebuilt with the pinned Borland producer twice:
+`main-midboss-stage5-update` (318 bytes) and `main-midboss-stage5-patterns`
+(462 bytes). All **780 bytes** and original ordered MZ relocations matched;
+the compiled semantic negative was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-midboss5-scratch-20261111/receipt.json`.

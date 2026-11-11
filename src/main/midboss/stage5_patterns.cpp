@@ -1,16 +1,17 @@
 // Complete natural movement and pattern prefix, original MAIN16724..168F2.
 #include "src/main/midboss/stage5_patterns.hpp"
+#include "src/main/midboss/stage5_scratch.hpp"
 
 bool near midboss5_flystep(void)
 {
     if(midboss.phase_frame == 1) {
-        if((boss_statebyte[15] == 0) || (boss_statebyte[15] == 3)) {
+        if((midboss5_scratch.horizontal_step == 0) || (midboss5_scratch.horizontal_step == 3)) {
             midboss.pos.velocity.x.v = to_sp(-2);
         } else {
             midboss.pos.velocity.x.v = to_sp(2);
         }
-        boss_statebyte[15]++;
-        boss_statebyte[15] &= 3;
+        midboss5_scratch.horizontal_step++;
+        midboss5_scratch.horizontal_step &= 3;
     }
     midboss.pos.update_seg3();
     if(midboss.phase_frame >= 32) {
@@ -40,7 +41,7 @@ void near midboss5_pattern_update(void)
     }
     if(midboss5_pattern_func()) {
         midboss.phase_frame = 0;
-        boss_statebyte[14] = 0;
+        midboss5_scratch.current_pattern_phase = 0;
         midboss.sprite = MIDBOSS5_SPRITE_CHARGE;
     }
 }
