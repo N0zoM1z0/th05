@@ -2771,3 +2771,28 @@ semantic_inputs = ["src/main/runtime/stage_state_init.hpp"]
 [units.negative]
 find = "mov cx, ss:[bx + FRAME_DWORD_COUNT_OFFSET]"
 replace = "mov cx, ss:[bx + FRAME_DEST_OFFSET]"
+
+[[units]]
+id = "main-louise-backdrop-fill"
+artifact = "main"
+source = "src/main/boss/backdrop_fill_louise.asm"
+types = "src/main/boss/backdrop_fill_louise_types.inc"
+symbols = "probes/units/louise_backdrop_fill_symbols.inc"
+bindings = "probes/units/louise_backdrop_fill_bindings.asm"
+notes = "src/main/boss/backdrop_fill_louise.md"
+target_start = 84650
+size = 14
+segment = "LOUISE_BACKDROP_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "0acf1ec5a05736961b49d8bba9a03ae11c7f3831038cdf471a41a6f2313c2179"
+target_scope_sha256 = "3e1d76fbdb3c3b0b49dcb16a7ffbae7ea064cb629f3065fa19eac8a4b02cc203"
+semantic_inputs = ["src/main/stage/setup.hpp", "src/main/boss/background.hpp"]
+[units.publics]
+"louise_backdrop_colorfill()" = 0
+"louise_backdrop_fill_end" = 14
+[units.negative]
+find = "mov di, LOUISE_BOTTOM_ROW_LEFT"
+replace = "mov di, (LOUISE_BOTTOM_ROW_LEFT + 1)"
