@@ -2170,3 +2170,39 @@ semantic_inputs = ["src/main/ems/ems.hpp"]
 [units.negative]
 find = "mov si, CDG_SLOT_COUNT - 1"
 replace = "mov si, CDG_SLOT_COUNT - 2"
+
+[[units]]
+id = "main-playperf-select-family"
+artifact = "main"
+source = "src/main/runtime/playperf_select.asm"
+types = "src/main/runtime/playperf_select_types.inc"
+symbols = "probes/units/playperf_select_symbols.inc"
+bindings = "probes/units/playperf_select_bindings.asm"
+notes = "src/main/runtime/playperf_select.md"
+target_start = 53114
+size = 76
+segment = "PLAYPERF_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "1b23871026068f2107f6d88c441519694516f75b39c4bba673874366d675dfc7"
+target_scope_sha256 = "6e121d7d444d06deec59db2998ae23af31937b63e178b77381499c5c0c340255"
+semantic_inputs = ["src/main/player/bomb_family.hpp", "src/main/stage/setup.hpp", "src/main/item/update.hpp"]
+[units.publics]
+"PLAYPERF_RAISE" = 0
+"PLAYPERF_LOWER" = 26
+"select_for_playchar(int,int,int,int)" = 50
+"SELECT_FOR_RANK" = 56
+"playperf_select_end" = 76
+[units.negative]
+find = "mov bx, SELECT_ARGUMENT_DISPLACEMENT"
+replace = "mov bx, (SELECT_ARGUMENT_DISPLACEMENT + 2)"
+[[units.uncredited]]
+offset = 25
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 55
+size = 1
+kind = "alignment"

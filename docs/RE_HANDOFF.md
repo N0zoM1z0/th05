@@ -37,6 +37,7 @@ necessarily all authored bytes where padding is present.
 | MAIN stage session | **803-byte** initializer; genuine four-function 1,826-byte compiler context | [Stage context](../src/main/runtime/stage_session_context.md) |
 | MAIN shot collisions | **399 + 210** complete C++ functions, individual exact ordered fixups | [Shot collisions](../src/main/player/shot_runtime.md) |
 | MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
+| MAIN performance selectors | **76-byte** complete reviewed ASM family at `CF7A..CFC6`; **74 authored instruction bytes**, two uncredited `EVEN` NOPs | [Performance/selector family](../src/main/runtime/playperf_select.md) |
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
 | MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
