@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Strict focused TASM32/TLINK proof of nine ZUN -S Master file functions.
+"""Strict focused TASM32/TLINK proof of ZUN -S Master file and DOS functions.
 
-Only nine full functions at COM 0698..0970 are native source-owned.
+Only fifteen original named functions/aliases at COM 0698..09D6 are native source-owned.
 All source-free code, DOS helper providers, and DATA/BSS are external.
 """
 from __future__ import annotations
@@ -29,24 +29,29 @@ FILENAMES={'file_family_native.asm':'filefamily.asm','master_file_tiny.inc':'mas
            'master_read.inc':'master_read.inc','master_close.inc':'master_close.inc',
            'master_ropen.inc':'master_ropen.inc',
            'master_write.inc':'master_write.inc','master_create.inc':'master_create.inc',
-           'master_seek.inc':'master_seek.inc','master_append.inc':'master_append.inc'}
+           'master_seek.inc':'master_seek.inc','master_append.inc':'master_append.inc',
+           'master_dos_free.inc':'master_dos_free.inc','master_dos_axdx.inc':'master_dos_axdx.inc',
+           'master_dos_puts2.inc':'master_dos_puts2.inc','master_dos_ropen.inc':'master_dos_ropen.inc'}
 PUBS={'FILE_READ':0x698,'FILE_FLUSH':0x74c,'FILE_CLOSE':0x7b8,'FILE_ROPEN':0x7c6,
       'FILE_WRITE':0x7fc,'FILE_CREATE':0x8a2,'FILE_SEEK':0x8de,
-      'FILE_TELL':0x912,'FILE_APPEND':0x920}
+      'FILE_TELL':0x912,'FILE_APPEND':0x920,
+      'DOS_FREE':0x970,'MEM_FREE':0x970,'DOS_AXDX':0x980,
+      'DOS_PUTS2':0x996,'DOS_ROPEN':0x9be,'FONTFILE_OPEN':0x9be}
 
 
 def scope(c:dict)->None:
     if (c.get('schema_version')!=1 or c.get('artifact')!='th05-zun' or
             c.get('member')!='-S' or c.get('member_start')!=0x0ae4 or
-            c.get('member_size')!=6564 or (c.get('start_com'),c.get('end_com'))!=(0x698,0x970) or
-            c.get('scope_size')!=728 or c.get('instruction_bytes')!=723 or
-            c.get('uncredited_alignment_offsets')!=[131,287,473,581,633] or
+            c.get('member_size')!=6564 or (c.get('start_com'),c.get('end_com'))!=(0x698,0x9d6) or
+            c.get('scope_size')!=830 or c.get('instruction_bytes')!=823 or
+            c.get('uncredited_alignment_offsets')!=[131,287,473,581,633,765,805] or
             c.get('origin')!='pinned-master-library-original-assembly' or
             c.get('global_authored_credit')!='vendor-zero' or
             c.get('source')!='src/zun/resident/file_family_native.asm' or
             c.get('includes')!=['src/zun/resident/'+x for x in (
                 'master_file_tiny.inc','master_read.inc','master_close.inc','master_ropen.inc',
-                'master_write.inc','master_create.inc','master_seek.inc','master_append.inc')] or
+                'master_write.inc','master_create.inc','master_seek.inc','master_append.inc',
+                'master_dos_free.inc','master_dos_axdx.inc','master_dos_puts2.inc','master_dos_ropen.inc')] or
             c.get('publics')!=PUBS or c.get('negative',{}).get('file')!=c['includes'][1]):
         raise ValueError('unreviewed source, vendor or actual native file-function scope')
 
@@ -61,16 +66,16 @@ def original(c:dict)->bytes:
     child=next(z for z in parse_launcher(raw,expected_sha256=a['sha256'])['payloads'] if z['name']=='-S')
     if (child['file_start'],child['size'])!=(c['member_start'],c['member_size']):
         raise ValueError('original ZUN -S complete member identity changed')
-    return raw[child['file_start']+(0x698-0x100):child['file_start']+(0x970-0x100)]
+    return raw[child['file_start']+(0x698-0x100):child['file_start']+(0x9d6-0x100)]
 
 
 def observe(where:Path,target:bytes,c:dict)->dict:
     data=(where/'filefamily.com').read_bytes()
-    st,en=0x698-0x100,0x970-0x100
+    st,en=0x698-0x100,0x9d6-0x100
     if len(data)<en or any(data[:st]) or any(data[en:]):
         raise ValueError('original foreign code/DGROUP values were supplied by this unit')
     body=data[st:en]
-    if len(body)!=728 or any(body[i]!=0x90 for i in (131,287,473,581,633)):
+    if len(body)!=830 or any(body[i]!=0x90 for i in (131,287,473,581,633,765,805)):
         raise ValueError('missing whole functions or original linker EVEN padding')
     obj=(where/'filefamily.obj').read_bytes();omf=describe_omf(obj)
     if not omf['valid'] or omf['translator_comments']!=['Turbo Assembler  Version 5.0']:
@@ -82,7 +87,7 @@ def observe(where:Path,target:bytes,c:dict)->dict:
     if len(ledatas)!=1:
         raise ValueError('source emits invented initialized data or extra owned code')
     seg,at=omf_index(ledatas[0].data,0)
-    if (seg,struct.unpack_from('<H',ledatas[0].data,at)[0],len(ledatas[0].data)-at-2)!=(1,0x698,728):
+    if (seg,struct.unpack_from('<H',ledatas[0].data,at)[0],len(ledatas[0].data)-at-2)!=(1,0x698,830):
         raise ValueError('wrong original complete family LEDATA')
     mapping=(where/'filefamily.map').read_text(encoding='cp437')
     for name,off in c['publics'].items():
@@ -91,12 +96,12 @@ def observe(where:Path,target:bytes,c:dict)->dict:
         if not matched or any(int(v,16)!=off for v in matched):
             raise ValueError('real original Master function boundary differs '+name)
     def instructions(x:bytes)->bytes:
-        return bytes(value for index,value in enumerate(x) if index not in (131,287,473,581,633))
+        return bytes(value for index,value in enumerate(x) if index not in (131,287,473,581,633,765,805))
     return {'size':len(body),'scope_exact':body==target,
             'scope_sha256':digest_bytes(body),
             'instruction_exact':instructions(body)==instructions(target),
-            'alignment_exact':all(body[i]==target[i] for i in (131,287,473,581,633)),
-            'source_code_extent':728,'source_instruction_bytes':723,
+            'alignment_exact':all(body[i]==target[i] for i in (131,287,473,581,633,765,805)),
+            'source_code_extent':830,'source_instruction_bytes':823,
             'foreign_zeroed':True,
             'omf_normalized_sha256':omf['dependency_timestamp_normalized_sha256'],
             'map_sha256':digest_file(where/'filefamily.map')}
@@ -129,7 +134,7 @@ def check(x:dict,c:dict)->None:
         raise ValueError('stale file-function source/manifest or false authored credit')
     pos=x.get('rounds',[]);neg=x.get('negative_control',{})
     if (len(pos)!=2 or any(not all(z[q] for q in ('scope_exact','instruction_exact','alignment_exact','foreign_zeroed'))
-            or z['size']!=728 for z in pos) or
+            or z['size']!=830 for z in pos) or
             pos[0]['omf_normalized_sha256']!=pos[1]['omf_normalized_sha256'] or
             neg.get('scope_exact') is not False or neg.get('instruction_exact') is not False or
             neg.get('alignment_exact') is not True or neg.get('foreign_zeroed') is not True):
@@ -145,7 +150,7 @@ def main()->int:
     args=parser.parse_args();c=tomllib.loads(CONFIG.read_text());scope(c)
     if args.check:
         check(json.loads(PUBLIC.read_text()),c)
-        print('PASS: exact 728-byte ZUN -S Master file I/O family, vendor zero credit')
+        print('PASS: exact 830-byte ZUN -S Master file/DOS family, vendor zero credit')
         return 0
     if args.accept:
         p=args.accept.resolve();x=json.loads(p.read_text())
@@ -167,7 +172,7 @@ def main()->int:
         finalized={**x,'replay_receipt_sha256':digest_file(p)}
         check(finalized,c)
         PUBLIC.write_text(json.dumps(finalized,indent=2)+'\n')
-        print('PASS: exact nine-function vendor file I/O family accepted')
+        print('PASS: exact Master file I/O and DOS helper family accepted')
         return 0
     out=args.output.resolve()
     if out.exists():parser.error('only a new focused replay directory is valid')
@@ -188,7 +193,7 @@ def main()->int:
              'rounds':pos,'negative_control':neg}
     check(receipt,c)
     (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
-    print('PASS: two exact 728-byte nine-function Master file native producers + negative:',out/'receipt.json')
+    print('PASS: two exact 830-byte Master file/DOS native producers + negative:',out/'receipt.json')
     return 0
 
 

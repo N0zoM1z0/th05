@@ -1,7 +1,7 @@
 # Exact ZUN `-S` Master buffered file I/O
 
-Nine complete original Master library routines form a contiguous **728-byte**
-native source contribution at ZUN resident COM offsets `0698..0970`:
+Thirteen complete original Master library routines form a contiguous **830-byte**
+native source contribution at ZUN resident COM offsets `0698..09D6`:
 
 | Function | Runtime COM range | Compared bytes |
 | --- | --- | ---: |
@@ -14,37 +14,43 @@ native source contribution at ZUN resident COM offsets `0698..0970`:
 | `FILE_SEEK` | `08DE..0912` | 52 (51 instructions + 1 `EVEN`) |
 | `FILE_TELL` | `0912..0920` | 14 |
 | `FILE_APPEND` | `0920..0970` | 80 |
+| `DOS_FREE` / `MEM_FREE` alias | `0970..0980` | 16 |
+| `DOS_AXDX` | `0980..0996` | 22 (21 instructions + 1 `EVEN`) |
+| `DOS_PUTS2` | `0996..09BE` | 40 (39 instructions + 1 `EVEN`) |
+| `DOS_ROPEN` / `FONTFILE_OPEN` alias | `09BE..09D6` | 24 |
 
 The maintained [assembler module](file_family_native.asm) composes the
 original Master routines preserved by ReC98 as `master_{read,close,ropen,
 write,create,seek,append}.inc`, with a tiny-model near-Pascal macro definition
-in `master_file_tiny.inc`. The implementation handles buffered reads and
+in `master_file_tiny.inc`. It also includes the preserved `master_dos_{free,
+axdx,puts2,ropen}.inc` near DOS service implementations and two genuine
+name aliases. The implementation handles buffered reads and
 writes, flushing, direct DOS access, creating, seeking, appending, current
 position and EOF status. It preserves the original unchecked DOS behavior.
 The historic routines are from Akihiko Koizuka's Master library, **vendor
 ASM**, not compiler-generated ZUN-authored C++.
 
-The isolated proof uses original DS offsets `1872/1874/1AAA..1AB8` for file
-state and two real source-free near provider addresses: `DOS_AXDX` at `0980`
-and `DOS_ROPEN` at `09BE`. ORG holes outside the nine functions supply no
-code or initialized data. No original target bytes are copied into this
-module, and neither buffer state nor foreign provider code is credited.
+The isolated proof uses original DS offsets `1872/1874/1876/1AAA..1AB8`
+for file state, while `DOS_AXDX` at `0980` and `DOS_ROPEN` at `09BE` are now
+genuine functions inside the same native source unit, not placeholder labels.
+Only foreign CODE after `09D6` and file state in DATA remain address-only
+ORG reservations; no initialized DATA or original target bytes are copied.
 
 The focused native receipt
-`.analysis/zun-file/gpt-web-all-file-a/receipt.json` contains two independent
+`.analysis/zun-file/gpt-web-file-dos-combined-a/receipt.json` contains two independent
 TASM32/TLINK producers. Each matches **728/728** bytes, all nine actual MAP
 function entries, one complete 728-byte CODE LEDATA, and deterministic OMF.
 A semantic negative in the buffered read loop changes the source of its
 exhaustion check, altering generated instructions; the strict oracle rejects
-it. Five natural `EVEN` padding NOPs, at scope-relative `131, 287, 473, 581,
-633`, are checked with zero instruction credit. **723 bytes are actual
-instructions.** The older 356-byte scoped receipt has been replaced, not
-counted a second time.
+it. Seven natural `EVEN` padding NOPs, at scope-relative `131, 287, 473, 581,
+633, 765, 805`, are checked with zero instruction credit. **823 bytes are
+actual instructions.** Earlier 356-/728-byte scoped receipts were superseded,
+not counted a second time.
 
 Together with the independently accepted [190-byte resident-memory
 providers](resdata_native.md), the complete source-owned Master core covers
-**918 consecutive original bytes** at `05DA..0970` (912 vendor instructions,
-6 checked alignment bytes). This does not accept or modify the separate
+**1,020 consecutive original bytes** at `05DA..09D6` (1,012 vendor
+instructions, 8 checked alignment bytes). This does not accept or modify the separate
 269-byte resident `main()` C++ function or the entire `-S` program.
 
 The accepted scoped ledger is

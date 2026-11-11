@@ -16,3 +16,13 @@ endm
 nopcall macro symbol
     call symbol
 endm
+
+; In tiny model the original Master general-purpose segment-pointer macros
+; are either empty (DS already holds the caller's DATA) or near MOV.
+_push macro segment_reg
+endm
+_pop macro segment_reg
+endm
+_lds macro reg, mem
+    mov reg, mem
+endm

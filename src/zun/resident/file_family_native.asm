@@ -4,6 +4,7 @@
 .model tiny
 locals
 include master_file_tiny.inc
+FileNotFound equ 0FFFEh
 _call macro nearproc
     call near ptr nearproc
 endm
@@ -19,12 +20,13 @@ include master_write.inc
 include master_create.inc
 include master_seek.inc
 include master_append.inc
+include master_dos_free.inc
+include master_dos_axdx.inc
+include master_dos_puts2.inc
+include master_dos_ropen.inc
 
+; Foreign CODE after DOS_ROPEN still belongs to other providers.
 ; Foreign provider near entry: no instruction body supplied in this unit.
-org 0980h
-DOS_AXDX label near
-org 09BEh
-DOS_ROPEN label near
 
 ; Foreign CODE ends before true DOS DGROUP. The holes are *outside* the
 ; source-owned four complete functions and never earn code credit.
@@ -34,6 +36,8 @@ org (01872h - 016BEh)
 file_BufferSize label word
 org (01874h - 016BEh)
 file_Handle label word
+org (01876h - 016BEh)
+file_sharingmode label byte
 org (01AAAh - 016BEh)
 file_Buffer label dword
 org (01AAEh - 016BEh)
