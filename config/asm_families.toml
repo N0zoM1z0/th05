@@ -2267,3 +2267,29 @@ semantic_inputs = ["src/main/bullet/update.hpp", "src/main/bullet/spawn_types.in
 [units.negative]
 find = "mov di, PELLET_COUNT"
 replace = "mov di, (PELLET_COUNT - 1)"
+
+[[units]]
+id = "main-bb-mask-family"
+artifact = "main"
+source = "src/main/tile/bb_mask_family.asm"
+types = "src/main/tile/bb_mask_family_types.inc"
+symbols = "probes/units/bb_mask_family_symbols.inc"
+bindings = "probes/units/bb_mask_family_bindings.asm"
+notes = "src/main/tile/bb_mask_family.md"
+target_start = 63848
+size = 232
+segment = "TILE_BB_MASK_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = [17]
+native_review_sha256 = "ed61619189df661481fb74bec6395b393766f9e6cd188aeab21fe8e2cbd8a107"
+target_scope_sha256 = "092f9d8401e86b2e43351a878b4e205e6d3185268b36f0a2eee38459d1685bf3"
+semantic_inputs = ["src/main/player/bomb_runtime.hpp", "src/main/formats/bb_load.md", "src/main/tile/invalidate_around.asm"]
+[units.publics]
+"tiles_bb_put_raw(int)" = 0
+"tiles_bb_invalidate_raw(int)" = 132
+"tile_bb_mask_end" = 232
+[units.negative]
+find = "mov @@top, PLAYFIELD_TOP"
+replace = "mov @@top, (PLAYFIELD_TOP + TILE_HEIGHT)"
