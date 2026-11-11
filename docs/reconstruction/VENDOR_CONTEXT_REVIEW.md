@@ -100,10 +100,49 @@ python3 scripts/review_context_reserved.py --context op --check
 python3 scripts/review_context_reserved.py --context maine --check
 ```
 
-OP's `xxas`, `signal`, `setenvp` and MAINE's `setenvp` remain separately
-unreviewed. All other uncovered ranges, runtime writable variables, vendor
-DATA/BSS and game sources remain unknown pending their own proof. Existing
-MAIN original CODE and Master decisions do not transfer to these artifacts.
+## Complete original OMF recovery for the remaining deferred CODE
+
+All four formerly deferred gapless CODE contributions are now source-verified
+from actual CL.LIB members, original CODE LEDATA and ordered OMF FIXUPP:
+
+| Artifact | Member | Target load interval | Complete CODE |
+| --- | --- | --- | ---: |
+| OP | `xxas` | `4457..44E6` | 143 B |
+| OP | `signal` | `4D86..5087` | 769 B |
+| OP | `setenvp` | `9C30..9C88` | 88 B |
+| MAINE | `setenvp` | `9E0C..9E64` | 88 B |
+
+OP's `xxas` and `signal` were deferred because their real OMF sources
+contain **GRPDEF target-method 1** bindings to the original DGROUP. The
+existing general vendor verifier did not support those bindings. Their
+complete original CODE records now resolve directly through the genuine
+group frame, without copying instructions or treating any fixup field as
+a wildcard. The `signal` member has **55 ordered CODE FIXUPP actions**.
+
+Both `setenvp` instances contain the original TLINK five-byte same-segment
+far-JMP lowering (`NOP; NOP; JMP near`), in addition to the known
+same-segment far-CALL lowering. Their original and retained-calibration
+CODE is identical, with all ten CODE OMF FIXUPP actions resolved. The
+different MAIN DATA-frame layout is not imported into either context.
+
+The separate [OP proof](../../config/context_remaining.op.json) and
+[MAINE proof](../../config/context_remaining.maine.json), explicit
+source-ownership decisions and [native verifier](../../scripts/review_context_remaining.py)
+adopt **1,088 complete CODE bytes** with zero game-authored credit.
+The checks use the original OMF CODE LEDATAs, actual symbol binding,
+full raw original/calibration bytes, ordered original MZ relocations
+and unique whole extents:
+
+```sh
+python3 scripts/review_context_remaining.py --context op --check
+python3 scripts/review_context_remaining.py --context maine --check
+```
+
+`--structural-check` validates the public proof without private native
+inputs; the ownership map overlays only explicitly selected CODE intervals.
+The source members' DATA/BSS/INIT records remain outside these claims.
+All other uncovered ranges, runtime writable variables, vendor DATA/BSS
+and game sources remain unknown pending their own review.
 
 The original gapless-lane root adoption passed its then-current native
 `ownership.py --write --verify-targets` check. Its historical global totals

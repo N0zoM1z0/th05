@@ -37,7 +37,7 @@ current counts rather than copying old checkpoint totals into reports.
 | --- | --- | --- |
 | MAIN large game functions | Mai/Yuki update **1,018 B**, Shinki update **959 B**, Alice update **939 B**, Yumeko update **884 B**, MAINE cutscene VM **1,555 B**; many other Boss/Staff owners in the table below | Already accepted C++; do not reopen older 1-byte/fixup failure notes as missing functions |
 | MAIN vendor CL.LIB | `farheap`/`exec` **2,040 object-written CODE bytes** (8 CS: state bytes remain unknown), `setenvp` **88 CODE bytes**, C0L **144 initialized DATA bytes** | [Original OMF reviews](reconstruction/CL_VENDOR_OWNERSHIP.md); **zero game-authored credit** |
-| OP/MAINE vendor CL.LIB | Each has **2,040 source-written CODE bytes** across `farheap` and `exec`; four original runtime-state gaps total **16 bytes** across both EXEs | [Context review](reconstruction/VENDOR_CONTEXT_REVIEW.md); all state gaps remain unknown, not padding |
+| OP/MAINE vendor CL.LIB | Each has **2,040 source-written CODE bytes** across `farheap` and `exec`; four original runtime-state gaps total **16 bytes** across both EXEs. Another **1,088 complete CODE bytes** from OP `xxas` (143), `signal` (769), `setenvp` (88) and MAINE `setenvp` (88) are now source-exact | [Context review](reconstruction/VENDOR_CONTEXT_REVIEW.md); all state gaps and CODE members' foreign DATA/BSS remain unknown |
 | OP Music Room | Twelve chromatic key-top mask bytes at `DB01..DB0D` exactly reproduced | [Piano top masks](../src/op/piano/pressed_top.md): **semantic CODE data, zero CPU instructions** |
 | ZUN.COM inner and outer dispatch | Outer **371 B**, inner dispatcher/catalog/transfer **558 B** independently exact | [Outer](../src/zun/launcher/outer.md) and [inner](../src/zun/launcher/README.md); no child bytes transferred between sources |
 | ZUN.COM children | Separate exact `-O` **926 B**, `-I` **1,009 B**, `-G` **8,377 B**, and `-M` **311 B** child proofs | [ADPCM](../src/zun/adpcm/README.md), [interrupt](../src/zun/interrupt/README.md), [gaiji](../src/zun/gaiji/README.md); font resources and BSS are not executable instructions |
@@ -85,11 +85,11 @@ keeps the exact and negative experimental evidence. Do **not** accept those
 barriers as natural C++ or paste generated instructions. Try source-level
 control flow that authentically preserves the three independent error exits.
 
-**Other unresolved origin reviews:** OP's `xxas`, `signal`, `setenvp` and
-MAINE's `setenvp` remain deferred in the original CL.LIB ownership lane.
-They are vendor provenance opportunities, *not* new authored Boss code. Larger
-unknown ownership intervals near CRT startup and data should first be
-classified using native function/SEGDEF boundaries. [Source candidates and
+**Other unresolved origin reviews:** OP's `xxas`, `signal` and `setenvp`,
+and MAINE's `setenvp`, have now been recovered as exact native CL.LIB
+contributions, not new authored Boss code. The remaining foreign DATA/BSS,
+runtime state slots and larger unknown ownership intervals near CRT startup
+should be classified using native function/SEGDEF boundaries. [Source candidates and
 resolved historical failures](reconstruction/UNACCEPTED_COHORTS.md) provide
 context; their earlier diagnostics are not current acceptance status.
 
