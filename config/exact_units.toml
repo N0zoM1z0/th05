@@ -5605,3 +5605,26 @@ unit = "main-tile-ring-set-exact"
 source = "src/main/scroll/ring_set.cpp"
 find = "scroll_active = 1;"
 replace = "scroll_active = 0;"
+
+[[units]]
+id = "main-score-continue-raw-exact"
+source = "src/main/score/continue_raw.cpp"
+module = "th05/sc_raw.cpp"
+segment = "SCORE_RAW_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/score_continue_raw_bindings.asm"
+target_start = 0xc8f0
+size = 168
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "main_01"
+cs_base = 44560
+ds_base = 133584
+
+[[controls]]
+unit = "main-score-continue-raw-exact"
+source = "src/main/score/continue_raw.cpp"
+find = "_DX = SCOREDAT_PLACES - 1;"
+replace = "_DX = SCOREDAT_PLACES - 2;"

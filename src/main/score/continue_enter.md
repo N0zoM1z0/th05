@@ -48,3 +48,11 @@ first-producer logs under `.analysis/unit-replays/gpt-web-main-score-continue-ra
 The next useful investigation is an authentic source-language treatment of
 the 386 string-copy primitive and compiler allocation, not copying target
 bytes, normalizing output or claiming a passing score insertion function.
+
+## 2026-11-11: resolved by real TCC `-S` and TASM32
+
+The earlier direct-`-c` assembler problem above is now resolved. A complete
+source with semantic 386 `MOVSD` mnemonics is accepted as
+[168-byte exact C++](continue_raw.md); using the native TCC `-S` output
+through TASM32 preserves both original bytes and fixups. The historical
+failed experiments remain compiler-language diagnostics, not current blockers.
