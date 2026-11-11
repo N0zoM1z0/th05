@@ -132,8 +132,9 @@ renderer, allocator and seven later attack functions, without artificial
 prefixes. Fall-through without `else`, direct early `continue`, shared loop-tail
 gotos and reversed parity dispatch generated full MAIN03 contributions of
 2141/2144/2147/2149 versus the original 2139 bytes. None had complete raw
-agreement. Actual one-producer and source snapshots are retained under
-`.analysis/gpt-web-sword-twirl2-*-a/`. The maintained 283-byte updater, original
+agreement. Those historical single-producer build directories were pruned for storage;
+the actual twirl control-flow findings are retained here. The maintained
+283-byte source candidate, original
 relocation stream and the 354/428-byte accepted Boss attacks remain unchanged.
 The remaining difference is two twirl branches at updater relative `+5E` and
 `+72`, which must naturally target the loop tail rather than local skip/jump
@@ -153,9 +154,9 @@ conditional branches from updater-relative `+5E` and `+72` to the loop tail.
 The extra local short branches and jumps are still produced by the original
 compiler; there is no trustworthy native-authored C++ exactness claim.
 
-All twelve literal trial sources and first-producer MAP/OMF/MZ outputs are
-frozen under `.analysis/gpt-web-yumeko-twirl-else-*.cpp` and
-`.analysis/gpt-web-yumeko-twirl-else-*-a/`. The canonical updater and both
+The historical trial semantics are recorded above; disposable per-variant
+first-producer MAP/OMF/MZ directories were pruned for storage on 2026-11-11.
+The canonical reviewed-ASM updater and both
 accepted adjacent 354/428-byte major Boss attack owners were **not modified**;
 no acceptance receipt or partial CODE credit was created. The failed direct
 loop-tail trials are evidence for further compiler-control-flow recovery, not

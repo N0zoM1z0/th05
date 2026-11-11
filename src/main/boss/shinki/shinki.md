@@ -1,11 +1,11 @@
-**Current superseding result (2026-11-10):** The full 220-byte
-`b6balls_update()` now passes independent native exact C++ replay from its
-real C++ `optimization_barrier()` semantics and is accepted. The canonical
-source is `balls_update_body.inl`; the source-free binder's former four-byte
-foreign gap is removed. Nine affected Shinki accepted callbacks were refreshed
-locally and remain exact. See [the acceptance details](wing_preparation.md).
-All earlier 216/221/232-byte and foreign-gap statements below describe
-*historical failed producers*, not current accepted status.
+**Current accepted status (2026-11-11):** Both the full **220-byte**
+`b6balls_update()` and the **386-byte** Shinki wing preparation function
+have independently accepted exact C++ owners in `config/accepted_units.json`.
+The canonical ball source is `balls_update_body.inl`; the obsolete four-byte
+foreign context gap was removed. See [wing preparation](wing_preparation.md)
+and [complete update](update_context.md) for original-source evidence.
+Earlier “ball/wing unaccepted,” 216/221/232-byte, ordered-fixup and foreign-gap
+statements below are *historical failed-producer notes*, not active blockers.
 
 TH05 Shinki update candidate
 ============================

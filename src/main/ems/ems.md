@@ -1,4 +1,12 @@
-# TH05 EMS initialization/cache candidate
+# TH05 EMS initialization/cache — complete four-function coverage
+
+**Current status (2026-11-11):** All four complete EMS callbacks, including
+the **154-byte Boss faceset preloader**, have accepted scoped C++ owners.
+For the Boss callback, authentic 3,226-byte original-order compiler context
+recovers both all 154 original machine-code bytes and the literal ordered
+fixups `[71,24,133,114]`. See the final acceptance section below and
+`config/accepted_units.json`. Earlier paragraphs discussing unresolved
+fixup ordering are preserved as historical investigation results.
 
 Natural source follows ReC98 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`, `th05/ems.cpp` → `th04/main/ems.cpp` and`ems.hpp`. This is one TU in the original four-function order. It reuses the canonical complete128-byte resident type and declares the complete16-byte CDG file/slot structure, including dimensions, bottom offset, dword width, image count, plane layout and both real segment pointers. Every field offset is checked; no shortened record or fake pointer ABI is introduced.
 
@@ -98,11 +106,10 @@ shift scope coordinates, edit emitted OMF, normalize relocation lists or grant
 154-byte credit. Future work needs a *genuine* compiler buffer-boundary context
 that preserves the original full switch table and second/third FIXUPP runs.
 
-Key private real producer roots: `.analysis/gpt-web-ems-unified-boss-a/`,
-`.analysis/gpt-web-ems-pause-demo-boss-a/`,
-`.analysis/gpt-web-ems-stage-session-demo-b/`,
-`.analysis/gpt-web-ems-boundary-*-a/`, `.analysis/gpt-web-ems-align-*-a/`
-and `.analysis/gpt-web-ems-natural-prefix-*-a/`. Original maintained EMS and
+Most disposable early EMS option/boundary compiler experiments were pruned
+for storage. The representative predecessor-context evidence remains under
+`.analysis/gpt-web-ems-stage-session-demo-b/`; the final accepted complete
+154-byte receipt is linked below. Original maintained EMS and
 accepted neighboring DEMO/session sources were not changed, so no accepted
 unit required cold replay.
 

@@ -132,8 +132,8 @@ the byte local, loads current laser angle into AL, subtracts AL from the local,
 then shares the final angle write. The maintained compiler instead subtracts
 current angle from AL, stores the difference, and performs direct memory
 increment/decrement. Eight ordinary C++ current-angle/temp/shared-write trials
-emitted sizes 185, 187, 188, 189 or 190, none 186. First-producer reports are
-retained in `.analysis/gpt-web-track-*-a`; no TASM recipe or negative is claimed
+emitted sizes 185, 187, 188, 189 or 190, none 186. Those historical one-off first-producer build directories were pruned for
+storage; no TASM recipe or negative was claimed
 for a code-mismatching candidate. The ten accepted later patterns, canonical
 header, and maintained tracker remain unchanged.
 

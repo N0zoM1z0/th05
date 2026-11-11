@@ -167,10 +167,10 @@ The meaningful source, semantic type constants and dedicated symbol-only
 scaffold are retained for future original-assembler/codegen investigation:
 `bitmap_transfers.asm`, `bitmap_transfers_types.inc`,
 `probes/units/maine_staff_bitmap_symbols.inc`, and
-`probes/units/maine_staff_bitmap_asm_bindings.asm`. Original attempts and frozen
-native instruction evidence are retained privately under
-`.analysis/gpt-web-maine-staff-bitmap-{a,b}/` and
-`.analysis/gpt-web-maine-staff-bitmap-native-review.json`. The rejected unit is
+`probes/units/maine_staff_bitmap_asm_bindings.asm`. Historical one-off standalone TASM build directories were pruned at
+handoff. The native instruction review remains in
+`.analysis/gpt-web-maine-staff-bitmap-native-review.json`. The rejected
+standalone unit is
 **not** registered in the default live ASM manifest and cannot accrue credit
 from the existing C++ two-function proposal or from the controller.
 

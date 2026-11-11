@@ -1,584 +1,113 @@
-# TH05 handoff — 2026-11-10
-
-> Current workflow: follow the **Highest priority** section in `AGENTS.md`.
-> Prefer affected exact comparisons and useful Markdown knowledge. Ordinary
-> notes do not require full CI, native replay or document-hash/pin refreshes.
-> Older broad validation instructions apply only when their impact is relevant.
-
-
-The MAIN `dialog_face_unput_8()` face restorer is now **74/74 bytes** exact,
-with the original far EGC fixup `+67`, two independent compiler/linker
-builds and a rejected 8→7 inner-word mutation. The native `MOV BX,AX`
-source-level register operation completes the third consecutive dialog
-hardware function. Together with accepted 88+56 predecessors, 218 bytes
-at `[13A3E,13B18)` have complete independent exact ownership. The
-456-byte dialog opcode remains unaccepted. See [dialog graphics](../src/main/dialog/runtime.md).
-
-The complete **14-byte CDG_FREE_ALL far-Pascal bank release** now also
-passes exact reviewed original-register ASM in OP `E2CA..E2D8` and MAINE
-`F3F4..F402`. Two fresh TASM32/TLINK rounds each match every byte and the
-original empty MZ relocation list; original 64→63 slot mutations are
-rejected. The OP test-only MZ stack-validity problem was fixed by declaring
-the real foreign CDG bank DS3A96 as *uninitialized* source-free DATA, with no
-code or data byte authored. With earlier MAIN coverage, both complete CDG
-loader and CDG_FREE_ALL scopes are now independently accepted across all
-three binaries, adding **28 new authored ASM bytes** in OP/MAINE. See
-[CDG bank release](../src/main/formats/cdg_free_all_op_maine.md) and the
-`.analysis/gpt-web-{op,maine}-cdg-free-all-14-{b,a}/receipt.json` receipts.
-
-The same complete **342-byte CDG loader/reader/free ASM source** now passes
-strict original-byte and relocation replay in OP `E174..E2CA` and MAINE
-`F29E..F3F4`, each independently with two fresh TASM/TLINK producers and a
-rejected 3→2-DWORD metadata copy negative. Both use their own real CDG,
-file and HMEM DATA/call addresses. All three programs now have **342/342
-raw bytes**, 14 exact original ordered fixups and five uncredited NOPs per
-artifact, or **1,011 reviewed authored instruction bytes** total. See
-[OP/MAINE CDG resource proof](../src/main/formats/cdg_load_family_op_maine.md)
-and `.analysis/gpt-web-{op,maine}-cdg-load-family-342-a/receipt.json`.
-
-The MAIN shared **342-byte complete CDG resource loader family** at
-`[15118,1526E)` is now reviewed original-register ASM: two independent
-TASM32/TLINK builds match all raw bytes, the original 14-site ordered
-relocation stream and the real six source entrypoints. The batch copy's
-compiled 3→2-DWORD negative is rejected. The full single/whole-image load,
-noalpha entrypoints, internal reader and single-slot release are preserved
-with native CDG/HMEM/file interfaces, five checked but uncredited NOPs and
-no extra DATA. **337 authored instruction bytes** are credited. The adjacent
-accepted `CDG_FREE_ALL` owner is not counted again. See
-[CDG loader review](../src/main/formats/cdg_load_family.md) and
-`.analysis/gpt-web-cdg-load-family-342-b/receipt.json`.
-
-The MAIN far-Pascal `sparks_add_random()` at `[16E86,16EE8)` is now exact
-reviewed original-register ASM: **98/98 bytes**, two independent TASM/TLINK
-producers and a rejected 31→30 random radial speed-span mutation. It
-preserves the genuine 64-slot Spark ring, two original near RNG/vector
-helpers, real CS1527/DS209D and empty native relocation stream. The next
-accepted 106-byte `sparks_add_circle()` remains an independent owner; one
-`EVEN` NOP is not credited. See
-[random Spark source](../src/main/boss/sparks_add_random.md) and
-`.analysis/gpt-web-main-sparks-random-98-asm-b/receipt.json`.
-
-The MAIN `playfield_copy_front_to_back()` EGC hardware renderer is now
-**56/56 bytes exact** at `13A96..13ACE`, with original fixup `+51`,
-two independent compiler/linker rounds and a rejected 24→23 inner-word
-mutation. Source is genuine C++ with 16-bit register-level hardware loops.
-See [dialog graphics](../src/main/dialog/runtime.md) and
-`.analysis/unit-replays/gpt-web-dialog-interpage-56-20261110/receipt.json`.
-
-The MAIN `dialog_box_put()` PC-98 tile renderer is now complete native-exact
-**88/88-byte C++ with original register inline assembly** at `13A3E..13A96`.
-Two independent builds and its 48→47 row-count compiled negative pass,
-with the actual far GRCG fixup at `+13`. See
-[dialog graphics context](../src/main/dialog/runtime.md) and
-`.analysis/unit-replays/gpt-web-main-dialog-box-put-88-20261110/receipt.json`.
-
-The MAIN Mai/Yuki **186-byte tracking laser Boss callback** is newly exact:
-`[17B76,17C30)`, two unmodified TCC-generated-ASM/TASM32 producers and a
-compiled stop-frame negative match the genuine two-site ordered relocation
-stream `[38,130]`. Direct TCC already matched all 186 machine-code bytes
-but reversed these two fixups. One source-level register `SUB` maintains the
-original AL angle-difference operation. The adjacent 939-byte attack context
-remains independently accepted without double credit. See
-[Mai/Yuki tracking review](../src/main/boss/mai_yuki/later_patterns.md) and
-`.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/receipt.json`.
-
-The same complete source-backed keyboard/joystick input family is now
-original-register exact in **MAIN, OP and MAINE**. OP's `DF8E..E094`
-(`CS=D30`, `DS=EFE`, far `JS_SENSE=0000:2CBA`) and MAINE's
-`F102..F208` (`CS=E80`, `DS=1011`, provider `0000:2E82`) each passed two
-fresh original-byte and fixup `[251]` producer rounds plus rejected compiled
-BIOS Shift-status negatives. Each family contributes 261 reviewed ASM
-instruction bytes and one uncredited original NOP. All 3 binaries together
-have 783 exact complete instruction bytes from the *same maintained source*,
-without claiming historical authoring language. Receipts:
-`.analysis/gpt-web-{op,maine}-input-sense-262-a/receipt.json`.
-See [shared OP/MAINE review](../src/shared/hardware/input_sense_op_maine.md).
-
-The two accepted MAIN held-key/wait C++ functions are now independently
-exact in OP and MAINE too: OP `E094..E0CE` and MAINE `F208..F242`, each
-with a 16-byte held scanner and 42-byte frame/input wait. Every complete
-scope has two real native producers, empty ordered relocations and its own
-rejected 1024→1023 or ZERO→SIGN mutation; real VSync words are OP DS2E4E
-and MAINE DS1DCA. This brings the same maintainable original-register C++
-module to **174 independently credited bytes across three binaries**. See
-[input wait context](../src/shared/hardware/input_wait_context.md) and the
-`.analysis/unit-replays/gpt-web-{op,maine}-input-held-wait-58-20261111/receipt.json`
-receipts.
-
-The next two real MAIN SHARED input functions now match as original C++:
-**16/16-byte held-key double-sampler** at `[150C8,150D8)` and
-**42/42-byte UI change wait** at `[150D8,15102)`. The same maintained
-translation unit preserves the original CS-relative input reset/sense calls,
-1024-port OUT delay and BP-based VSync timeout. Both complete scopes have
-two independent Borland/TLINK producers, empty original MZ fixups, and
-individual rejected compiled controls (1024→1023; ZERO→SIGN). This fills the
-58-byte gap between the accepted 262-byte input scanner and 21-byte frame
-delay; see [input wait context](../src/shared/hardware/input_wait_context.md)
-and `.analysis/unit-replays/gpt-web-main-input-held-wait-58-20261111/receipt.json`.
-
-The full MAIN **262-byte BIOS keyboard and joystick input scanner** is newly
-accepted as a two-entry original-register SHARED ASM family at
-`[14FC2,150C8)`. Two TASM32/TLINK producers match all 262 raw bytes,
-original far JS_SENSE fixup +251, real SHARED/DS frames, and reject a
-compiled BIOS shift-status 2→3 mutation. Its 261 decoded instruction bytes
-are credited; the original trailing EVEN NOP is not. Historical authoring
-language remains uncertain: this is reviewed source-backed register assembly,
-not proven original handwritten authorship. See
-[input sense review](../src/shared/hardware/input_sense.md) and
-`.analysis/gpt-web-main-input-sense-262-asm-c/receipt.json`.
-
-The MAIN complete **204-byte tile-row scroll ring update** at
-`[C43A,C506)` is now exact source-backed C++ with authentic register/segment
-copy operations: two independent Borland/TLINK builds match all bytes,
-original far EGC fixup `+198`, and reject a row-in-section 4→3 mutation.
-The corrected STD section/speed pointers, `DEC`/`JNS` native flags and actual
-byte-offset WORD section table eliminate the previous six-byte gap. The
-source-free before/after linker map retains CS `AE1` and DS `209D`; the
-following accepted 115-byte driver brings contiguous scroll CODE to **319
-bytes**. See [tile-row ring update](../src/main/scroll/ring_update.md) and
-`.analysis/unit-replays/gpt-web-main-scroll-tile-ring-204-20261111/receipt.json`.
-
-The 154-byte MAIN **EMS Boss faceset preload** at `[B9CC,BA66)` is now
-independently source-exact: two real Turbo C++/TLINK rounds match 154/154
-original bytes and **literal four-site native relocation order**
-`[71,24,133,114]`, plus a rejected compiled Boss CDG-slot mutation. The
-true 3,226-byte original-order compiler context and separate source-free
-foreign SHARED SEGDEF restore both compiler FIXUPP partition and physical
-CS14AB/DS209D. The three other EMS functions (155+267+108) remain accepted
-by their prior owners without double credit. See [EMS source details](../src/main/ems/ems.md) and
-`.analysis/unit-replays/gpt-web-main-ems-boss-154-full-context-20261111/receipt.json`.
-
-The MAIN 115-byte scroll state machine `scroll_driver()` is now exact C++
-with original register/flag operations at `[C506,C579)`: two independent
-compilers match all raw bytes and `GRAPH_SCROLLUP` fixup `+57`; changing the
-400-line wrap to 399 fails. Recovering AX's subpixel advance and in-place
-`SUB`/`JNS` removed the previous eight extra instructions. See
-[scroll driver](../src/main/scroll/driver.md) and
-`.analysis/unit-replays/gpt-web-main-scroll-driver-115-20261110/receipt.json`.
-
-MAIN's **108-byte `hitshot_from()` near-Pascal animation creator** is now
-exact source-backed ASM at `[13617,13683)`: 24 circular 14-byte animation
-slots, original signed velocity division by six, zero native relocations and
-two independent TASM/TLINK builds with rejected 6→5 negative. This joins
-the already accepted neighboring 164-byte renderer and 399-byte collision
-function. Receipt `.analysis/gpt-web-hitshot-from-asm-a/receipt.json`; see
-[HitShot source](../src/main/player/hitshot_from.md).
-
-The **106-byte radial Spark-circle core** is newly exact as complete
-source-backed original-register ASM at `16EE8..16F52`: 64-slot/16-byte
-circular animation state, native register geometry, near Pascal velocity
-function, two fresh TASM/TLINK producers and rejected alive-state mutation.
-105 instruction bytes are credited; the single original EVEN NOP is not.
-It is independently called by the accepted 22-byte player-centered Spark
-wrapper, without duplicate coverage. See
-[Spark-circle core](../src/main/boss/sparks_add_circle.md) and
-`.analysis/gpt-web-main-sparks-circle-106-asm-a/receipt.json`.
-
-The complete player-centered far spark trigger directly before the accepted
-Boss explosion family is now exact natural C++: `176B8..176CE`, **22/22
-bytes**, two original-order compiler/linker producers, empty native fixups,
-and a rejected 24→25 spark-count mutation. The real signed subpixel radius
-is 192 and the count is 24; the 32-bit Pascal immediate's original order is
-preserved. See [player spark source](../src/main/boss/player_sparks_circle.md)
-and `.analysis/unit-replays/gpt-web-main-player-sparks-circle-22-20261111/receipt.json`.
-
-The second complete Gather bullet-template copier
-`set_bullet_template_to_gather_template()` is now exact at `[17087,170A2)`:
-**27/27 reviewed original-register ASM bytes**, original empty relocation
-stream, two fresh TASM/TLINK producers and a rejected 7→6-word copy negative.
-Its original odd entry requires a *byte-aligned* CODESEG; using the prior
-copy's word alignment was provably incorrect. The earlier forward copy is
-independently accepted at `[16F70,16F8B)` without double credit.
-See [Gather reverse copy](../src/main/gather/copy_from.md).
-
-MAIN's near-Pascal Gather template copy at `[16F70,16F8B)` is now
-**27/27 original-register ASM bytes**, with genuine source-backed DS→ES
-7-word `REP MOVSW`, two fresh TASM/TLINK builds and a rejected 7→6 word
-count mutation. The old equal-length C++ struct assignment remains inexact.
-See [Gather copy review](../src/main/gather/copy.md); focused receipt:
-`.analysis/gpt-web-main-gather-copy-asm-a/receipt.json`.
-
-MAIN's **399-byte shot collision** and **210-byte laser collision** are
-newly accepted as *separate complete native-exact C++ functions*, both with
-two independent compiler/linker producers and rejected real semantic
-negatives. The original unsigned shot damage is divided **once**; the
-16-bit quotient is kept in AX and its minimum-one clamp is applied before
-the score accumulation. Their literal original ordered MZ relocation lists
-are `[134]` and `[166,134]`. Combined 609-byte CODE is raw-exact, but its
-cross-function whole-object OMF fixup groups remain ordered differently;
-**no whole-object OMF acceptance is claimed**. Receipt:
-`.analysis/unit-replays/gpt-web-main-shot-collision-pair-609-20261110/receipt.json`.
-See [shot damage/collision source](../src/main/player/shot_runtime.md).
-
-MAIN's complete **164-byte shot and hit-animation renderer** is now exact:
-`[13573,13617)`, original empty relocation stream, two independent Turbo C++
-producers and a rejected compiled age-parity mutation. The sprite number
-stays in the original `CX` word while real `AX/DX` coordinates reach the
-renderer; declaring the counter before the Shot pointer restores native
-`BP-2`/`BP-4` stack slots. No behavior or raw graphics ABI changes.
-Receipt: `.analysis/unit-replays/gpt-web-main-shot-render-164-20261110/receipt.json`.
-See [shot rendering](../src/main/player/shot_render.md).
-
-MAIN's **241-byte item motion and pickup state machine** is newly exact:
-original `[1D0AD,1D19E)`, two native relocation sites, two independent
-Borland producers and a rejected compiled pull-speed mutation. Restoring the
-actual `DX:AX` Motion return and preserving it through `BX` pickup arithmetic
-solves the old X-clobbering bug. Two source-level inline `SUB BX,AX/DX`
-operations recover the exact original register direction encoding; the rest
-remains ordinary C++. Receipt:
-`.analysis/unit-replays/gpt-web-main-items-update-241-exact-a/receipt.json`.
-See [item update](../src/main/item/update_abi.md).
-
-The OP complete two-record score decoder is now source-exact:
-**169/169 C++ instruction bytes** at `C7D5..C87E`, two native Borland
-producers and a rejected compiled XOR→addition mutation. Preserving the
-original `AL` key2 register across each inline byte rotation removes both
-former six-byte spills. The two 96-byte records and checksum semantics are
-unchanged. Receipt:
-`.analysis/unit-replays/gpt-web-op-score-decode-original-al-169-a/receipt.json`.
-See [OP score decoder](../src/shared/score/decode.md).
-
-The MAIN original-register .BB resource loader is now exact, **55/55
-complete ASM bytes** at `F930..F967`, original allocator fixup `+7`, two fresh
-TASM/TLINK producers and a rejected 2048→2047 read-length mutation. The
-historical 56-byte C++ candidate remains inexact. See
-[BB loader review](../src/main/formats/bb_load.md).
-
-MAIN's complete **803-byte stage-session initializer** is newly accepted as
-native-exact natural C++: the full original `[B237,B55A)` code and 23-site
-literal ordered relocation stream match two independent real compiler/linker
-builds; a compiled pellet-column mutation is rejected. Its four genuine
-original-order predecessors/functions — 110-byte `main()`, 445-byte gameplay,
-468-byte new-game initializer and 803-byte stage session — now reproduce all
-**1826 continuous bytes** from AE38 to B55A. The original compiler table zero
-and three relaxed call NOPs are checked but excluded from authorship; **799
-new authored bytes** are credited. See
-[stage-session source](../src/main/runtime/stage_session_context.md) and
-`.analysis/unit-replays/gpt-web-main-stage-session-init-803-final-20261110/receipt.json`.
-
-MAIN's entire gameplay frame loop is now exact C++: original
-`[AEA6,B063)`, **445/445 compared bytes** including one uncredited
-linker NOP, native 11-site relocation order, two fresh producers and a
-compiled frame-mask negative. Preserving the original AX/DX old-frame
-register dataflow and word `AND AX,15` removes the last three-byte gap;
-no assembly or code padding was authored. Receipt:
-`.analysis/unit-replays/gpt-web-main-gameplay-loop-445-20261110/receipt.json`.
-See [MAIN gameplay source](../src/main/runtime/main.md).
-
-MAIN Shinki's complete 159-byte background particle renderer is now
-source-exact C++: two independent Borland/TLINK builds, literal native code
-and ordered fixups, and a rejected real age-update mutation. Restoring the
-original ReC98 `keep_0(PLAYFIELD_TOP - PARTICLE_H)` source construct forces
-`CMP AX,0000`, using a zero-offset *public alias* in the authentic DGROUP
-with no added DATA. This resolves the former 158-byte `OR AX,AX` blocker.
-Receipt: `.analysis/unit-replays/gpt-web-main-shinki-particles-render-159-20261110/receipt.json`.
-See [Shinki background renderer](../src/main/boss/shinki/particles_render.md).
-
-MAIN Mai/Yuki's complete `B4BALLS_UPDATE` state machine is now exact natural
-C++: **273/273 bytes**, original three ordered relocation sites, two real
-Turbo C++/TLINK producers and a rejected 550→551 kill-score mutation.
-The collision dataflow uses real `_AX`/`_DX` registers, and a zero-runtime
-compiler-control hint restores the native short-branch clipping structure.
-No claim is made that B4's unavailable original historical source used this
-exact control hint. See [B4 ball update review](../src/main/boss/mai_yuki/b4ball_update.md)
-and the focused receipt
-`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
-
-The complete MAIN **Yumeko 283-byte sword updater** is now exact reviewed
-native-language ASM (`1EDBA..1EED5`), after genuine natural C++ control-flow
-experiments failed to produce the two original far-reaching near `JL/JGE`
-branches. Strict two-producer/own twirl-step negative passes all raw bytes
-and its one original ordered relocation, without changing any accepted
-354/428-byte Yumeko attacks. Receipt:
-`.analysis/gpt-web-yumeko-swords-asm-a/receipt.json`.
-See [sword lifecycle review](../src/main/boss/yumeko/swords_update.md).
-
-The complete MAIN `boss_hittest_player()` is now **43/43 bytes exact C++**
-using the original ReC98 `AX/DX` register expressions rather than ordinary
-local X/Y variables. Two independent real compiler producers and its compiled
-hit-flag negative passed with the true empty original ordered fixup list.
-The generic Boss original CODE has now **809/809 exact raw bytes** across
-352 helper, 414 defeat and 43 collision contributions, with per-function
-source/fixup acceptance and zero internal foreign gaps. The shared source
-and focused receipt are in [collision review](../src/main/boss/collision.md)
-and `.analysis/unit-replays/gpt-web-main-boss-collision-43-and-neighbors-20261110/receipt.json`.
-
-The MAIN **414-byte generic Boss defeat controller is now source-exact C++**:
-restoring the original ReC98 empty inline `optimization_barrier()` after the
-Extra Stage all-clear reward prevents the old six-byte common-tail merge.
-Two independent compiler/linker producers match all **414/414** bytes and six
-original ordered fixups, and a real Extra Stage bonus-branch compiled negative
-is rejected. The original six Boss helpers (352 CODE bytes) and 10-byte
-semantic DATA table were locally refreshed and stay exact. The adjacent 43-byte player-collision function is also now source-exact,
-so the original generic Boss CODE range is complete. The focused receipt is
-`.analysis/unit-replays/gpt-web-main-boss-defeat-414-and-neighbors-20261110/receipt.json`.
-**This turn's three newly accepted full Boss callbacks contribute 774 natural
-C++ bytes** (Alice 140, Shinki 220, generic defeat 414). See
-[Boss source review](../src/main/boss/generic.md).
-
-MAIN Stage 3 Alice's 140-byte foreground and Stage 6 Shinki's 220-byte
-ball updater are newly source-exact **C++ Boss** functions this turn: 360
-new complete native CODE bytes, both with two fresh producers and rejected
-compiled semantic negatives. Their respective existing accepted 381-byte
-puppet and 81-byte ball-adder neighbors were not double counted.
-
-MAIN Mai/Yuki `b4balls_update()` is now exact natural C++:
-**273/273 bytes** at `18459..1856A`, original ordered fixups `[235,156,118]`,
-two fresh Borland/TLINK producers and a rejected kill-score mutation.
-The native AX/DX motion-return overlap and a zero-instruction C++ clip-branch
-barrier restore original codegen without body or linkage patching. See
-[B4 update](../src/main/boss/mai_yuki/b4ball_update.md) and
-`.analysis/unit-replays/gpt-web-main-b4ball-update-273-final-20261110/receipt.json`.
-
-MAIN Alice's Boss foreground callback is now exact natural C++:
-**140/140 bytes** at `14354..143E0`, original three-site ordered fixups,
-two independent real compiler/linker producers and its own rejected animation
-speed mutation. Reordering ordinary local declarations restores native
-DI/stack allocation; rebuilding the true end boundary restores DS209D.
-The adjacent accepted 381-byte puppet renderer remains unchanged, and their
-combined 521-byte CODE is raw/fixup exact. See
-[Alice foreground](../src/main/boss/alice/foreground.md).
-
-MAIN's original-register `VECTOR2_NEAR` near-Pascal math helper is now exact
-as a complete **55-byte reviewed ASM** contribution at `152DA..15311`.
-Two independent TASM/TLINK builds and a compiled signed-product shift negative
-passed. Its former 92-byte natural C++ candidate remains inexact. See
-[near vector review](../src/shared/math/vector2_near.md).
-
-**MAINE's complete Staff scene, bitmap and controller source is now exact:**
-20 genuine functions, **5346/5346 native CODE bytes**, original literal
-ordered relocation stream, all at the real `[D31F,E801)` original position.
-The two 43/83-byte GRCG bitmap kernels use original-register inline assembly
-inside TCC; the 991-byte `staffroll_animate()` controller is ordinary C++.
-Each of these three newly accepted complete scopes passed two focused fresh
-compiler/linker producers and its own negative (**1117 new bytes**). Together
-with the earlier 626+861 update/render source recovery, this turn adds
-**2604 new MAINE CODE bytes**, without double counting the 17 already
-accepted scene functions. The exact source and original frame proof:
-[Staff complete context](../src/maine/staff/complete_context.md).
-
-MAINE's full 17-function Staff scene context now reproduces **4229/4229
-exact C++ CODE bytes and the complete original ordered relocation stream**.
-Two previously blocked major functions are newly accepted: the 626-byte
-particle updater and 861-byte scene renderer (**1487 new C++ bytes**).
-Restoring the genuine source-level trail-pointer `if/else` and initial loop
-order generated the missing three-byte reloads naturally. The eight dependent
-accepted neighbors were locally refreshed and stay exact. Receipts:
-`.analysis/unit-replays/gpt-web-maine-staff-{two-major-functions,neighbor-refresh}-20261110/receipt.json`.
-See [Staff full family](../src/maine/staff/full.md). The subsequent 991-byte
-Staff controller is now accepted through the real bitmap/controller source
-context described above.
-
-The complete 40-byte MAIN near-Pascal scroll-to-VRAM coordinate helper is
-now exact as source-backed ASM (`DF28..DF50`): two independent TASM/TLINK
-builds, original empty fixup stream and a rejected 400→401 ring-height
-mutation. Its former natural C++ attempt still fails. See
-[scroll coordinates](../src/main/scroll/coordinates.md).
-
-Latest focused MAIN source recoveries complete the Spark render/update and
-Pointnum update/invalidation pairs: `sparks_update` 76 ASM instruction bytes,
-`sparks_render` 59 instructions plus one checked EVEN, `pointnums_update`
-111 instructions plus one checked EVEN, and `pointnums_invalidate` 44
-instructions. Each independent owner passes two exact TASM/TLINK producers,
-original ordered fixups and its own compiled semantic negative. **290 reviewed
-ASM instruction bytes** are newly credited across these four functions, plus
-two checked uncredited NOPs; none is recategorized as natural C++.
-
-The Stage 6 Shinki **220-byte full Boss ball updater is now accepted** as
-natural C++ after restoring both source-authentic empty inline
-`optimization_barrier()` calls, with normal compiler jump optimization.
-The real source now emits **301/301 raw bytes** for `b6balls_add` (81) and
-`b6balls_update` (220), with no four-byte foreign gap. The two-producer and
-compiled age negative pass; all **nine** changed accepted Shinki neighbors
-were locally refreshed and remain exact. New authored C++ credit is **220
-bytes**, not the reused 81 or any other pattern scope. Receipts:
-`.analysis/unit-replays/gpt-web-main-shinki-balls-update-220-20261110/receipt.json`
-and `.analysis/unit-replays/gpt-web-main-shinki-b6-neighbor-refresh-20261110/receipt.json`.
-See [Shinki detail](../src/main/boss/shinki/wing_preparation.md).
-
-MAINE's 1034-byte registration menu is now exact natural Borland C++.
-Restoring its real original source-code predecessors back through two score
-codecs (86+100 bytes) naturally restores the original compiler alignment and
-31-site ordered fixup stream. Three complete C++ scopes pass two independent
-producers and their own compiled negatives: **1220 newly accepted bytes**.
-The 4369-byte real source/segment context is
-[src/maine/registration/full_context.cpp](../src/maine/registration/full_context.cpp)
-and the receipt is
-`.analysis/unit-replays/gpt-web-maine-registration-codecs-full-20261110/receipt.json`.
-See [menu recovery](../src/maine/registration/menu.md).
-
-The complete MAIN `POINTNUMS_UPDATE` point-popup lifecycle is now exact:
-`[E1A6,E216)`, 112/112 compared bytes including the uncredited alignment
-NOP, **111 reviewed ASM instruction bytes**, two independent builds and its
-age36→37 compiled negative. All 280 records, compacted survivor list and
-yellow cursor use their actual original storage. See
-[pointnum update](../src/main/pointnum/update.md).
-
-The MAIN Spark lifecycle has an additional exact complete function:
-`_sparks_update` at `[E086,E0D2)`, **76/76 reviewed ASM instruction bytes** in
-two independent focused producers with its own rejected age-limit mutation.
-The previous natural C++ output remains 72 bytes and uncredited. See
-[spark update](../src/main/effects/spark/update.md).
-
-The complete 204-byte `TILES_INVALIDATE_AROUND` MAIN gameplay helper has
-now passed independent native ASM replay and its own compiled semantic negative.
-Its complete scroll-wrap, hitbox-clipping and `REP STOSB` dirty-map algorithm
-matches all 82 original instructions and the empty original ordered fixup
-stream at `[BAD2,BB9E)`. This is reviewed ASM credit, not compiler-generated
-Boss source. See [tile collision invalidation](../src/main/tile/invalidate_around.md).
-
-The adjacent MAIN `tiles_invalidate_reset` now also passes exact source
-replay: 20 compared bytes, 19 reviewed ASM instruction bytes and one checked
-`EVEN` NOP. It uses the same authentic 400-DWORD ES:DI fill and has its own
-semantic negative, with no cold replay of the already accepted all-dirty fill.
-See [tile reset](../src/main/tile/invalidate_reset.md).
-
-The original MAIN `tiles_invalidate_all` is now fully recovered as a 22-byte
-register-level ASM kernel (`BD38..BD4E`). Two independent TASM/TLINK producers
-and its own dirty-value negative pass: true ES:DI/32-bit REP STOSD of the 1600-byte
-flag bank. This adds reviewed ASM ownership, **not C++ CODE credit**. The failed
-16-byte natural C++ intrinsic is unchanged. See
-[tile invalidation](../src/main/tile/invalidate_all.md).
-
-Yumeko's two large Boss attacks now pass independent exact MAIN source replays:
-aimed swords354 and laser/swords428 (782 new authored C++ bytes). Their genuine
-ten-function C++ context restores the original unsorted OMF relocation order,
-while the original 283-byte sword updater is now separately accepted as
-reviewed exact ASM, not pure C++. Four
-changed accepted standalone wrappers were refreshed only in affected local
-replays. See [Yumeko attack context](../src/main/boss/yumeko/attacks_context.md)
-and [detailed attack evidence](../src/main/boss/yumeko/laser_swords.md).
-
-A complete native-ASM `CDG_FREE_ALL` loop now passes MAIN focused replay: 14
-bytes and a semantic negative, using its true same-CS FAR Pascal provider and
-BYTE-aligned original shared segment. See
-[src/main/formats/cdg_free_all.md](../src/main/formats/cdg_free_all.md).
-The PMD resident detector is now exact across MAIN, OP and MAINE: three
-independent 46-byte C++ source owners (138 total), each passing two fresh
-producers, ordered fixups and an own compiled negative.
-OP ZUNsoft CODE **and** its independent filename DATA also pass focused
-individual two-producer exact replays and are committed. A separate attempt on
-MAIN's larger boss/attack controllers identified reproducible code-generation
-gaps without claiming byte credit: boss defeat and B4 ball formerly 414/408 and 273/278 (or
-274 without optimization), and Mai tracking laser 186/185. The previously raw-only MAINE menu limitation was resolved by genuine
-score-codec compiler context; old failures remain historical evidence.
-
-Start with `git status --short` and `python3 scripts/preflight.py`. Read
-[workflow](RE_WORKFLOW.md) and [acceptance](ORACLES.md). Reuse the existing attested
-tools and decoded targets; do not bootstrap or cold-replay unchanged units.
-
-Private first-diagnostic helpers are `.analysis/single-main-native-producer.py`
-(MAIN), `.analysis/single_op_producer.py` (OP), and
-`.analysis/single_native_producer.py` (MAINE). They produce one diagnostic,
-never an acceptance receipt; formal replay remains the normal workflow.
-
-## Authoritative accepted state
-
-Use the [generated progress](PROGRESS.md), accepted-unit ledgers and
-[ownership inventory](../resources/ownership.json) for current totals and scopes.
-The global authored denominator remains unreviewed. The supplied Japanese copy
-is candidate-local-attested.
-
-## Latest exact cross-artifact leaf: PMD detector
-
-`src/shared/sound/pmd_resident.cpp` now preserves the real AX/ES interrupt
-vector and return contract. The old local result compiled to 51 bytes; using
-the native `_AX` result yields the full 46 bytes and zero fixups in all three
-independently built MAIN, OP and MAINE targets. Own 60h→61h compiler negatives
-are rejected in each. Focused receipts:
-`.analysis/unit-replays/gpt-web-{main,op,maine}-pmd-resident-20261110/receipt.json`.
-Only these three functions (138 authored CODE bytes) are newly credited.
-
-## Previous accepted packet: OP ZUNsoft CODE
-
-Four natural C++ functions, including the 654-byte logo controller, now own the
-complete decoded OP `B616..BA94` extent: **1150/1150 raw bytes** and all
-**33/33 original ordered relocations** in both independent cold producers.
-The compiled spawn-speed negative was rejected. Of the 1150 bytes, 1102 are
-instructions and 48 are the controller's compiler switch table; no padding.
-
-- Maintained source: [ZUNsoft](../src/op/zunsoft/zunsoft.md).
-- Accepted unit: `op-zunsoft` in `config/exact_units.op.toml` and
-  `config/accepted_units.op.json`.
-- Focused receipt: `.analysis/unit-replays/gpt-web-op-zunsoft-20261110/receipt.json`.
-- Native preliminary review remains at `.analysis/op-zunsoft-native-review.json`.
-
-The independent six-filename initialized DATA contribution at decoded OP
-`FECA..FF00` now also passes: 54/54 bytes, two cold producers and a compiled
-filename-mutation negative. The early standalone link needed an original
-foreign DATA suffix through DS:2817 to satisfy DOS MZ stack bounds; the
-compiler-owned `_DATA` remains complete at DS:0EEA..0F20. The separate receipt
-is `.analysis/unit-replays/gpt-web-op-zunsoft-filenames-b-20261110/receipt.json`.
-Both ZUNsoft scopes are accepted. Continue the substantial MAIN Boss gaps,
-especially the Shinki ball updater and generic defeat controller.
-
-## 2026-11-10 Boss and Staff investigation (unaccepted)
-
-Focused native/actual compiler analysis continued on substantial owner
-functions. Shinki's ball updater has a 221-byte natural `-O-` trial against
-native 220 (last short/near branch-layout difference); Yumeko's sword updater
-can now compile the original 283-byte complete *size* with fixup `[75]`, but
-still differs in twirl branch output; the formerly inexact generic boss-player collision
-remains 43 target versus 45 best candidate. Source/ABI outcomes, failed
-variants and next codegen questions are recorded in each owner Markdown.
-
-The two Staff verdict VRAM transfer routines now have one maintained semantic
-ASM candidate covering all 126 native instruction bytes, but pinned TASM32
-emits three different XOR opcode-direction bytes and reverses two ordered
-fixups. It remains **outside** the live ASM manifest and earns zero credit;
-see `src/maine/staff/bitmap.md`. Unmodified accepted C++/ASM owners were never
-replayed. All these diagnostics are available privately under
-`.analysis/gpt-web-*/`; no full-set cold replay was performed.
-
-### Fresh EMS Boss preload blocker (2026-11-10)
-
-The complete 154-byte EMS boss-face preloader is *raw exact* from natural C++.
-A genuine 1226-byte stage-release/pause/DEMO/EMS producer preserves native
-B9CC placement and the original compiler switch-table zero but emits wrong
-relocation order. Removing only the real 47-byte stage-release predecessor
-restores all four original ordered relocations, yet loses the switch-table
-alignment zero and moves the function to B9CB. Adding the complete genuine 174-byte stage-runtime predecessor also preserves
-B9CC and all 154 raw bytes, but emits `[133,114,71,24]`, not native order.
-Eight CODESEG reselect variants, `-a`/`-y` and other natural-source trials
-likewise do not satisfy both gates. See
-[EMS compiler context](../src/main/ems/ems.md). Do not accept a shifted function
-or pad its predecessor to reach the target.
-
-## Settled and pending work
-
-MAIN current-score load/save are independently accepted, 55 bytes each. Load's
-source `-O-` profile preserves its native early RET; the combined optimized
-wrapper remains 109 versus 110 and is not a whole-TU acceptance. MAINE's score
-insertion/rendering five-function family (1443 compared / 1440 authored) and
-creation/animation pair (1062 compared / 1060 authored) are accepted. Major boss
-update callbacks already have accepted owners; check the current manifests
-before relying on old census/routing files.
-
-| Still unaccepted | Current evidence | Notes |
+# TH05 reconstruction handoff — 2026-11-11
+
+## Start here
+
+The working branch is `main`. Read [AGENTS.md](../AGENTS.md) for the current
+lightweight workflow and [ORACLES.md](ORACLES.md) for exactness criteria. The
+source of truth is the **current acceptance ledger**, not older exploratory
+notes or a previous agent's handoff:
+
+- `config/accepted_units.json`, `config/accepted_units.op.json`,
+  `config/accepted_units.maine.json` and `config/accepted_units.zun.json`:
+  accepted natural C/C++ (and scoped initialized DATA).
+- `config/accepted_asm_families.json` and
+  `config/reviewed_asm_families.json`: separately reviewed ASM ownership.
+- [Generated progress](PROGRESS.md) and
+  [gapless ownership map](../resources/ownership.json): coverage and unknown
+  ranges. The global authored-byte denominator is **not yet established**;
+  do not claim a percentage from the bounded accepted totals.
+
+Use `git status -sb` before editing, including dirty files; no other agent is
+working in this repository. Preserve and integrate legitimate dirty work.
+Use only targeted complete-function native replay after changing executable
+inputs; **never run the full cold-replay set by default**. For documentation
+alone, inspect the diff and use lightweight validation. Commit substantive
+progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
+
+## Recent accepted code: do not reopen old failure notes as active blockers
+
+The following statuses were checked against the acceptance manifests and
+ledgers as of this handoff. Each accepted owner has its own complete-scope
+evidence; referenced function sizes are compared extent bytes, not
+necessarily all authored bytes where padding is present.
+
+| Area | Current accepted scope | Maintained evidence |
 | --- | --- | --- |
-| MAINE registration menu, 1034 | Accepted exact after original-order score codec prefix | [Menu](../src/maine/registration/menu.md) |
-| MAIN shot collision, 399 + 210 | Current pair 419 + 233; quotient gaps remain. Selector transfer now correctly NOP/PUSH CS/CALL, far Pascal RETF8 | [Shots](../src/main/player/shot_runtime.md) |
-| Staff updater/render, 626 / 861 | Current 623 / 858. Renderer `-O-` still byte-identical 858; `-Z-` and documented source trials fail | [Staff](../src/maine/staff/full.md) |
-| Staff controller, 991 | Raw exact; ordered fixups differ. Bitmap prefix remains inexact | [Controller](../src/maine/staff/controller.md) |
-| Yumeko sword update, 283 | Current 283 matches size and fixup but differs in twirl branches; both later large attacks accepted separately | [Swords](../src/main/boss/yumeko/swords_update.md) |
-| Dialog opcode, 456 | Direct 455; compiler-assembly raw 456 has wrong fixup order | [Dialog](../src/main/dialog/opcode.md) |
-| EMS boss-face preload, 154 | Raw exact; `[71,24,133,114]` order unresolved | [EMS](../src/main/ems/ems.md) |
-| Generic boss defeat/collision, 414 / 43 | Accepted 414/43 separately, original shared-source 809 CODE exact | [Generic boss](../src/main/boss/generic.md) |
-| OP score decode, 169 | Ordinary key emits 181. TC4 rejects assembly inside inline/template functions | [Decoder](../src/shared/score/decode.md) |
-| ZUN resident entry, 269 | Current 260; `-O-` emits 262 | [Resident](../src/zun/resident/initialize.md) |
+| MAIN EMS Boss faceset | Full **154-byte** C++ function at `B9CC..BA66`; original ordered fixups `[71,24,133,114]` | [EMS review](../src/main/ems/ems.md) |
+| MAIN stage session | **803-byte** initializer; genuine four-function 1,826-byte compiler context | [Stage context](../src/main/runtime/stage_session_context.md) |
+| MAIN shot collisions | **399 + 210** complete C++ functions, individual exact ordered fixups | [Shot collisions](../src/main/player/shot_runtime.md) |
+| MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
+| MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
+| MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
+| MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
+| MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
+| MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |
 
-Use [the candidate index](reconstruction/UNACCEPTED_COHORTS.md) and per-owner
-notes for other gaps. Do not repeat unchanged failed profiles, insert barriers,
-copy instruction sequences or promote failed C++ to ASM. Ordinary recovery
-needs no new defensive tests, CPU models or per-function extra negatives.
+Other previously reported blockers are **already resolved**: Shinki ball
+updater **220** and wing preparation **386**, Yumeko sword updater **283**
+(reviewed ASM), generic Boss defeat **414** and player collision **43**,
+MAINE registration menu **1,034**, MAINE Staff controller **991** and
+updater/renderer **626/861**, and OP score decoder **169**. Check the
+individual accepted IDs before treating old candidate headings as current.
+The 55-byte BB loader, 55-byte near vector helper and 40-byte scroll
+coordinate helper are exact **reviewed ASM**, although alternative ordinary
+C++ source candidates for those functions remain inexact.
 
-## Local working state
+## Genuine open work
 
-Current accepted replay roots, calibration inputs and the completed ZUNsoft
-producer receipts remain available. Superseded builds and diagnostic archives have been
-removed; use the findings in per-owner notes instead of archive restore recipes.
-The independent Wine prefix, Ghidra project and Factory tool selectors are live.
+**MAIN dialog opcode interpreter — 456 bytes at `13B82..13D4A`.** The
+semantic C++ body is [`opcode.inl`](../src/main/dialog/opcode.inl), with
+investigation in [opcode.md](../src/main/dialog/opcode.md). Direct Turbo C++
+compilation emits **455** bytes with the correct ten-site ordered fixup list.
+A standalone TCC-generated-ASM/TASM build produces 456 raw bytes but the
+wrong fixup record order. Compiling all seven actual neighboring dialog
+functions (including the newly recovered 218-byte graphics prefix) produces
+1,049 instead of 1,050 bytes: the compiler omits the original single zero
+before the 30-byte switch table. Earlier `-a4/-a8` probes were invalid in
+this compiler. A genuine source/segment-context solution is needed; do **not**
+insert a made-up zero, copy target bytes or sort fixups. Useful preserved
+isolated diagnostics: `.analysis/gpt-web-dialog-graphics-opcode-context-b/`,
+`.analysis/gpt-web-dialog-graphics-opcode-split-a/`, and
+`.analysis/gpt-web-dialog-fullgraphics-compilerasm-c/`.
 
-Default `scripts/ci.py` checks the complete public checkout without private
-inputs. Select comparator/build tests for tooling changes and exact replays for
-new or affected source; `--full` remains an explicit broad tooling run.
+**Other unknown intervals.** The [ownership map](../resources/ownership.json)
+contains actual unowned code/data ranges. Examples requiring function-boundary
+review are MAIN `C9A3..CAD2` (multiple bodies and an inline switch table) and
+`15311..158AA` (not one automatically accepted function). Use original
+ReC98/source and native control-flow evidence before claiming ownership or
+credit. Further useful natural-C++ recovery opportunities can be found in
+[unaccepted candidates](reconstruction/UNACCEPTED_COHORTS.md). Do not
+reinvestigate Shinki or Staff functions already accepted simply because an
+old intermediate note calls them “unaccepted.”
+
+## Practical workflow and storage
+
+1. Inspect only the intended files and the current Git status. Prefer
+   complete Boss/controller functions **and** relevant leaf functions;
+   choose work by potential real source coverage, not only function size.
+2. Compare the **entire** changed original function and literal relocation
+   order using `scripts/replay_units.py --artifact main --units ID --output
+   .analysis/unit-replays/UNIQUE_NAME`. Use `--artifact op` or `--artifact
+   maine` for other binaries; reviewed original-ASM units use
+   `scripts/replay_asm_family.py --unit ID --native-review FILE --output DIR`.
+   Keep the meaningful compiled negative, the source inputs and original
+   MAP/OMF/MZ evidence. Do not substitute “same length” for byte exactness.
+3. On a genuine pass, adopt the focused receipt, update ownership/progress
+   with repository scripts, run the relevant checks, commit with the requested
+   `gpt-web:` prefix and leave the tree consistent. For pure prose cleanup,
+   no compiler or new receipt is necessary.
+
+The ignored `.analysis/` cache includes a private, attested Borland toolchain
+and Wine prefix, target bytes/decoded views, Ghidra context and many exact
+producer receipts. **Keep** those prerequisites, all accepted evidence,
+meaningful unresolved compiler-context diagnostics and the tracked source /
+ledgers. At the 2026-11-11 cleanup, **908 unreferenced, non-accepted `gpt-web-*`
+trial folders** were removed locally, reducing `.analysis` from about
+**1,503 MiB to 655 MiB** (848.6 MiB freed). Those disposable builds can be
+regenerated from maintained source; do not interpret their absence as lost
+acceptance. The tracked Git commit contains prose/source/ledger changes,
+while ignored cache deletion is local and is not itself represented by Git.
+
+Historical per-function notes remain valuable for source semantics and
+failed hypotheses, but their older intermediate conclusions should always
+be read alongside the latest accepted section and the current ledger.

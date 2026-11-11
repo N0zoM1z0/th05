@@ -1,41 +1,50 @@
-# Retained natural candidates
+# Current open reconstruction candidates — 2026-11-11
 
-These sources preserve useful reconstruction work and verified failure findings.
-Source presence supplies no exact credit. Known failures are absent from the
-default replay manifest; unchanged accepted owners need no cold replay.
-Per-owner notes identify current diagnostics and source/ABI decisions.
+The acceptance manifests and ledgers, not historical first-producer notes,
+determine which complete original extents are owned. See
+[the handoff](../RE_HANDOFF.md), [progress](../PROGRESS.md) and the
+[gapless ownership map](../../resources/ownership.json). The global authored
+denominator is still unmeasured; unreviewed intervals are not accepted by
+proximity to an accepted neighbor.
 
-| Candidate | Retained observation | Evidence |
+## Open complete-function codegen problem
+
+| Candidate | What was actually observed | Next useful investigation |
 | --- | --- | --- |
-| General BB loader C++ | Ordinary 56-byte C++ remains inexact versus native 55; the full 55-byte function is independently **accepted as reviewed original-register ASM**, not C++ credit. | [Loader](../../src/main/formats/bb_load.md) |
-| Near vector C++ | Ordinary 92/106-byte C++ remains inexact; the complete 55-byte native function is now **accepted as reviewed ASM**. Its separate following EVEN byte is not counted. | [Vector](../../src/shared/math/vector2_near.md) |
-| Scroll coordinate C++ | Ordinary 47/51-byte C++ remains inexact; the complete 40-byte function is now **accepted as reviewed ASM**. | [Coordinate](../../src/main/scroll/coordinates.md) |
-| Dialog opcode | Direct compiler455 against456; generated-ASM route matches456 raw bytes but reverses fixup order. | [Current notes](../../src/main/dialog/opcode.md) |
+| MAIN dialog interpreter, 456 bytes | Direct C++ gives 455 bytes with correct ordered fixups; standalone TCC-generated ASM gives 456 bytes with wrong fixup order. Real seven-function context still misses the one original switch-table alignment zero. | Restore authentic compiler/code-data alignment and OMF FIXUPP grouping without inserted target bytes. [Full notes](../../src/main/dialog/opcode.md). |
 
-Notes distinguish semantic corrections from actual compilations.
-Per-owner notes contain full layouts, actual interfaces and boundary reviews.
-No successful interior fragment, normalized relocation order, physical-register
-algorithm, copied instruction body, or inserted padding replaces a complete
-natural owner. New investigations should use these observations rather than
-repeat identical failed builds.
+## Different-language alternatives, not missing executable ownership
 
-Superseded blockers are accepted: native 27-byte Gather bullet-template copy as reviewed ASM, original 399+210 shot and laser collisions with single native AX quotient, MAIN 164-byte shot renderer with native CL/CH sprite, MAIN item motion 241 with native DX:AX and two inline BX SUB operations, OP score decoder169 with native AL/key2 handling, complete 803-byte stage-session initializer in true four-function 1826-byte original-order context, MAIN gameplay frame loop 445 with its true AX/DX word-mask dataflow, Mai/Yuki complete 273-byte B4 ball updater with native AX/DX hit-testing, generic Boss 43-byte AX/DX player collision after exact 414-byte defeat and 352-byte helpers, Yumeko complete 283-byte sword update as exact reviewed native ASM, Shinki ball update220 in true native C++ branch context, Alice foreground callback 140 in its true 521-byte two-function context, Staff bitmap 43+83, 991-byte controller and complete 626/861 updater/renderer, MAINE full registration menu 1034 and source-neighbor score codecs 86+100 (all original ordered fixups restored in authentic 4369-byte natural compiler context), Yumeko aimed354 and laser428 attack callbacks in their full natural compiler context (782 new authored bytes), OP ZUNsoft four-function CODE 1150 and independent filename DATA 54 (both with two producers and compiled negatives), Sara foreground159, Mai/Yuki foreground194,
-Mima bomb control161 through the genuine [bomb family](../../src/main/player/bomb_family.md),
-frameless MAP release23, and complete bullet/pellet rendering334 through the
-documented speed option and ordinary register declarations. Their earlier
-failures are superseded and do not need another replay.
+These complete machine-code functions **already have accepted reviewed ASM
+owners**. Only their ordinary C++ alternatives remain inexact and should not
+be described as uncovered code:
 
-The old shot-update blocker is superseded by the accepted complete408-byte
-`main-shots-update-abi-b` owner, including its eight generated table bytes.
-It keeps the full actual Motion return type and uses only its proven packed
-return boundary; no source fields or method ABI were shortened.
+| Alternative C++ source | Status of that alternative | Accepted owner |
+| --- | --- | --- |
+| BB resource loader | Ordinary C++ 56 versus original 55 bytes | Full 55-byte reviewed ASM, [review](../../src/main/formats/bb_load.md) |
+| Near vector helper | Ordinary C++ 92/106 versus original 55, with following EVEN byte excluded | Full 55-byte reviewed ASM, [review](../../src/shared/math/vector2_near.md) |
+| Scroll coordinate helper | Ordinary C++ 47/51 versus original 40 bytes | Full 40-byte reviewed ASM, [review](../../src/main/scroll/coordinates.md) |
 
-Both complete stage-two background functions are now accepted independently:
-initializer492 (`main-stage2-particle-initializer-a`) and updater653
-(`main-stage2-update-abi-a`). Earlier498/476/664 observations are superseded
-as open blockers. No whole-combined-TU equality is implied.
+## Large unknown regions and superseded investigations
 
-The item collection blocker is also superseded: the genuine [six-function
-family](../../src/main/item/family.md) matches its whole 1,183-byte contribution
-and original record order. New collector 620 and initializer 29 add 648 authored
-bytes; the separate 241-byte motion updater is now exact and independently accepted.
+The original MAIN `C9A3..CAD2` interval contains multiple routines and a
+switch table; `15311..158AA` also has significant unowned code. Neither is
+a single ready-made source unit. Review the original function boundaries,
+semantic source and foreign symbols before adding an acceptance candidate;
+use the generated ownership map to discover other live gaps.
+
+**Resolved, not open:** MAIN EMS Boss face loader **154** and its ordered
+fixups; shot collision functions **399 + 210**; stage initializer **803**;
+scroll ring/driver **204 + 115**; Mai/Yuki tracking laser **186**; Shinki
+ball/wing **220 + 386**; Yumeko swords **283** as original-register ASM;
+generic Boss defeat/collision **414 + 43**; OP score decoder **169**; MAINE
+registration menu **1,034** and Staff controller/update/render
+**991/626/861**. These each have an independently accepted owner. Earlier
+statements of inexactness in per-owner notebooks describe failed variants,
+not the current result. Unrelated unsettled source or whole-translation-unit
+claims do not invalidate a separately accepted full function.
+
+For recovery, keep meaningful semantic and ABI findings in the owner notes.
+Do not revive old trial binaries merely to repeat a failed compiler option,
+normalize fixup order, treat a partial fragment as a complete function, or
+add copied machine-code/padding to fabricate equality.

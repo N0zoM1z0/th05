@@ -143,7 +143,8 @@ original duplicates the final all-clear call and jump in two real stage paths,
 while Turbo C++ common-tail merging emits only one copy. Four ordinary semantic
 preserving branch variants (explicit local gotos, inverted conditions, and
 reversed branch order) all still generate 408 bytes. Their first cold diagnostics
-are retained in `.analysis/gpt-web-defeat-{v1,v2,v3,v4}-a/` (not acceptance).
+were disposable and their one-off build directories were pruned on
+2026-11-11 (these were never acceptance evidence).
 No inert compiler barriers or fabricated function bytes were introduced. The
 retained natural `generic.cpp` and six accepted helpers are unchanged.
 
@@ -160,9 +161,9 @@ byte after the stage branches. `-O-` alternatives generally emit 417–429 bytes
 `-Z-` and `-G` do not fix the original merged all-clear tail. The original
 requires *two* identical separate all-clear calls without duplicating
 `dialog_animate` or manufacturing an inert branch. Source and accepted ledgers
-are untouched. Private real trial roots:
-`.analysis/gpt-web-boss-defeat-calls-*-a/` and
-`.analysis/gpt-web-defeat-option-*-a/`.
+are untouched. Those failed first-producer call/option build directories were pruned at
+handoff. The source/branch/fixup observations above remain historical;
+current accepted 414-byte code is documented later in this file.
 
 ## 2026-11-10 original bonus-call inline-language trial
 
@@ -177,9 +178,9 @@ operands with `Invalid combination of opcode and operands`; no compiling
 alternate was produced. This disproves the simplistic direct inline-ASM
 fallback without deriving an original symbol-level assembler operand.
 
-Trial inputs and compiler error logs live in
-`.analysis/gpt-web-defeat-inline-*-a/` with source copies
-`.analysis/gpt-web-defeat-inline-*.cpp`. No compiler barrier, target byte,
+The ignored per-variant compiler outputs and error-log directories were
+pruned for storage; the attempted inline call forms and compiler errors are
+summarized above. Historical text does not supersede the accepted owner. No compiler barrier, target byte,
 relocation reordering, fake state mutation or change to already accepted six
 Boss helpers was added. The natural duplicated all-clear behavior is still
 correct but gets merged by Turbo C++; further work must reconstruct original

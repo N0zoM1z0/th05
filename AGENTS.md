@@ -53,7 +53,7 @@ actual exactness, target identity, natural-source and state-isolation rules.
 
 
 Goal: at least 98% **authored bytes exact** from maintained source.
-Commit messages use `gpt-6.1-sol: ...`. Code and documentation stay in English.
+Commit messages for this workstream use `gpt-web: ...` as requested. Code and documentation stay in English.
 Read `docs/RE_HANDOFF.md` for current work and `docs/ORACLES.md` for acceptance.
 Run `git status --short` and `python3 scripts/preflight.py` before target work.
 
@@ -77,7 +77,7 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
 - Replay affected units when source or build inputs change; documentation and
   test cleanup need no compiler run. Run `git diff --check`, update generated
   progress/ownership only when acceptance changes, leave a short handoff, and
-  commit and push substantive progress.
+  commit substantive progress locally. Push only with permission and remote access.
 
 ## Exactness and source
 

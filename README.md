@@ -62,6 +62,11 @@ authored-byte ownership decision or part of the C/C++ counters. See
 
 ## Setup
 
+For a connected Factory workspace, start with the
+[shared tool/runtime instructions](docs/SHARED_TOOLS.md) before running
+legacy per-repository bootstraps below. Preserve existing Wine toolchain,
+targets and analyzer project; bootstrap only in a genuinely new environment.
+
 Use your own Japanese game image. Game executables, assets, disk images and
 proprietary compiler binaries are never included in this repository.
 

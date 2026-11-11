@@ -72,10 +72,12 @@ Turbo C++ 4.02; setting `-a2` before the packed runtime header breaks its
 intentional record layout assertion, so that source is invalid. These are
 failed observations, not a recommendation to override game ABI types.
 
-Frozen first-producer inputs and MAP/OMF/MZ evidence are kept under
-`.analysis/gpt-web-dialog-box-opcode-{b,run-a}/`,
-`.analysis/gpt-web-dialog-align-*-b/` and
-`.analysis/gpt-web-dialog-runtime-compilerasm-a/`. All current accepted
+The disposable option-matrix and intermediate compilation outputs were
+pruned for storage. The representative real seven-function trials and their
+first-producer MAP/OMF/MZ evidence remain at
+`.analysis/gpt-web-dialog-graphics-opcode-context-b/`,
+`.analysis/gpt-web-dialog-graphics-opcode-split-a/` and
+`.analysis/gpt-web-dialog-fullgraphics-compilerasm-c/`. All current accepted
 surrounding Box/Runner source is unchanged. A genuine different original
 compiler-context layout, not source-visible fake zero-byte instructions,
 patched MZ data or sorted fixups, is still required before claiming an exact

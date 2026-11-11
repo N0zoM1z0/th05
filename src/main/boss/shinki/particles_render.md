@@ -55,9 +55,10 @@ compiler discrepancy, but creating a ghost game-state DATA label solely to
 force the opcode would undermine the source/binder provenance requirements.
 No such label or target-derived instruction was inserted, and **this full
 159-byte function remains unaccepted**. The first producer and complete source
-variants are retained under `.analysis/gpt-web-shinki-particles-zero-*-a/`
-and `.analysis/gpt-web-shinki-particles-zero-*.cpp` for a future genuinely
-source-backed original zero-operand solution. No existing accepted renderer or
+variants were historical one-off diagnostics; their emitted private build
+directories were pruned for storage. The original semantic zero-operand
+question is described here, and the later accepted 159-byte source recovery
+supersedes this standalone failure. No existing accepted renderer or
 Boss owner was recompiled for this failed standalone trial.
 
 ## 2026-11-10: complete 159-byte exact source recovery

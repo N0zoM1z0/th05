@@ -85,9 +85,8 @@ collision/decay instruction shapes and return semantics, but at target relative
 DATA offsets then drift due the failed contribution size. Twelve additional
 branch/goto and scoped option variants stay at 221 or 223; none is exact.
 
-Evidence: `.analysis/gpt-web-shinki-noopt-compare-inverted-free-wrapped-a/`
-and `.analysis/gpt-web-shinki-cloud-*-a/`. The 221-byte source and all tests are
-private snapshots, **not** changes to accepted C++ or new source credit. The
+These early 221-byte/branch-profile trial outputs were pruned for storage
+on 2026-11-11. Their codegen observations remain historical and inexact; **not** changes to accepted C++ or new source credit. The
 current maintained scalar candidate, all other Shinki accepted functions and
 the existing vendor and hardware interfaces remain unchanged. A future owner
 must match the full 220-byte function and ordered relocations without compiler
@@ -101,9 +100,9 @@ gap. Sixteen real noopt/register/speed/jump-profile variations on the
 The one 220-byte form changed the real forward traversal into a countdown,
 which is not a valid general semantics-preserving replacement; its compiled
 raw bytes also fail. The other variants never reproduced the native
-long conditional branch at relative `+23`. No source, context, accepted Boss
-unit or target was modified. One-producer private evidence is retained under
-`.analysis/gpt-web-boss-shinki-flags-*-a/`.
+long conditional branch at relative `+23`. No accepted Boss unit or target was modified by those failed experiments.
+Their one-producer private build directories were pruned for storage; see the
+later accepted original-ball and wing results in this note.
 
 ## 2026-11-10 real preceding add/update compilation context
 

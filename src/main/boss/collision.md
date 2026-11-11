@@ -65,8 +65,8 @@ Seventeen ordinary C++ variants tested declaration/initialization and
 subtraction order, register hints, direct Boolean checks and reordered overlap
 conditions. The closest 45-byte candidate computes fresh temporary AX values
 with different dataflow; it is still not the native full 43-byte function.
-Actual single-producer snapshots are under
-`.analysis/gpt-web-boss-collision-*-a/`. These trials are not exact acceptance;
+Those disposable single-producer build directories were pruned for the
+2026-11-11 handoff. These historical trials were not exact acceptance;
 no artificial register-body transcript, linker adjustment or partial byte
 claim was introduced. The original `collision.cpp` and accepted six-function
 generic Boss helper owner remain unchanged.
