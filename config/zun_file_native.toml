@@ -1,0 +1,28 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-S"
+member_start = 0x0AE4
+member_size = 6564
+start_com = 0x0698
+end_com = 0x07FC
+scope_size = 356
+instruction_bytes = 354
+uncredited_alignment_offsets = [131, 287]
+origin = "pinned-master-library-original-assembly"
+global_authored_credit = "vendor-zero"
+source = "src/zun/resident/file_family_native.asm"
+includes = [
+  "src/zun/resident/master_file_tiny.inc",
+  "src/zun/resident/master_read.inc",
+  "src/zun/resident/master_close.inc",
+  "src/zun/resident/master_ropen.inc",
+]
+[publics]
+FILE_READ = 0x698
+FILE_FLUSH = 0x74C
+FILE_CLOSE = 0x7B8
+FILE_ROPEN = 0x7C6
+[negative]
+file = "src/zun/resident/master_read.inc"
+find = "cmp\tfile_BufPtr,AX"
+replace = "cmp\tfile_InReadBuf,AX"

@@ -36,6 +36,8 @@ progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
 **ZUN `-I` interrupt child accepted:** One complete **1,009-byte** standalone COM reconstruction, containing **452 compared CODE bytes** (2 uncredited NOPs) and **557 initialized signature/message bytes**. See [interrupt guard](../src/zun/interrupt/README.md) and `config/zun_interrupt_acceptance.json`. Historical source-origin and global authored-code credit remain separately unresolved.
 
+**ZUN `-S` Master buffered file I/O exact:** `FILE_READ`, `FILE_FLUSH`, `FILE_CLOSE`, `FILE_ROPEN` now comprise a complete **356-byte** four-function native source contribution at `0698..07FC`, with **354 instructions and 2 checked `EVEN` NOPs**, two strict TASM/TLINK producers, and a rejected semantic negative. Alongside the already accepted resident memory pair, **546 contiguous bytes** are independently source exact. See [Master file I/O](../src/zun/resident/file_family_native.md). This is vendor ASM, not game-authored C++.
+
 **ZUN `-S` resident Master memory helpers exact:** `RESDATA_EXIST` (72 bytes) and `RESDATA_CREATE` (117 instruction + 1 checked alignment byte) now reproduce the complete native `05DA..0698` contribution with two TASM32/TLINK producers and a rejected semantic mutation. See [resident Master providers](../src/zun/resident/resdata_native.md). This is **vendor ASM**, not additional authored C++ credit; the 269-byte `main()` remains open.
 
 **ZUN resident entry still open:** The 269-byte complete `main()` now has genuine 269-byte alternate C++ producers, but every linked candidate still differs in 183 branch/code bytes. The full failure evidence and safe next step are in [resident entry notes](../src/zun/resident/initialize.md); no new acceptance is claimed.

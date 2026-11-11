@@ -112,3 +112,11 @@ compared at `05DA..0698` (190 bytes). See
 [exact memory providers](resdata_native.md). These are original 8086 vendor
 ASM, not substitutes for compiler-generated `main()`, and do not repair the
 still-mismatched 269-byte entry.
+
+## Subsequent complete foreign file I/O providers
+
+Four near-Pascal Master file I/O providers at `0698..07FC` now have
+independent, exact [vendor ASM source](file_family_native.md). The resident
+entry's DOS-file callbacks therefore have real original-code definitions
+rather than merely symbol addresses. This does not alter the C++ `main()`
+control flow or accept its still-mismatched 269-byte scope.

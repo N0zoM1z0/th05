@@ -75,6 +75,10 @@ def main():
     # whole unaccepted 6564-byte resident executable or authored C++.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_resdata.py"), "--check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Four complete original Master buffered-file near functions within the
+    # -S child; this source-current check does no native rebuild.
+    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_file_native.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")
