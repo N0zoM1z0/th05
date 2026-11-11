@@ -229,3 +229,18 @@ not the cause. These are native producer diagnostics in
 `.analysis/gpt-web-zun-source-returns-20261111.py`. They receive no
 C++ acceptance or partial byte credit. The maintained natural
 `initialize.cpp` is unchanged; no artificial optimizer barrier was added.
+
+## Natural error-label dispatch probes (2026-11-11)
+
+Two further genuinely behavioral C++ changes were built through TCC `-c`
+and linked against the accepted original C0T, resident DATA and config
+context. Distinct `goto` handlers for the three print-and-return
+failures generated a **261-byte** main; distinct handlers only for
+already-present and out-of-memory generated **260 bytes**. Neither
+matches the original 269-byte complete `-S` main, despite preserving
+the status messages and return values. The compiler still shares
+failure blocks. Private producer evidence is retained in
+`.analysis/gpt-web-zun-label-probe-*/` and the corresponding
+`.analysis/gpt-web-zun-label-probe-20261111.py` script.
+These failed variants do not change the maintained natural source
+or any accepted owner.
