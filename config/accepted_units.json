@@ -2,30 +2,36 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
+  "replay_receipt_sha256": "65464a3b8f2347193c83f5618fd3cc4332a786076d4d1c88eac8fc004d8372ec",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 124418,
-    "candidate_start": 124418,
-    "size": 354,
-    "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-    "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+    "target_start": 107082,
+    "candidate_start": 107082,
+    "size": 1060,
+    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
     "raw_exact": false,
     "target_fixups": [
-      350,
-      235,
-      219,
-      133
+      198,
+      161
     ],
     "candidate_fixups": [
-      350,
-      235,
-      219,
-      133
+      198,
+      161
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 107082,
+      "size": 1060,
+      "function_symbol": "exalice_update()",
+      "contribution_start": 106971,
+      "contribution_size": 1171,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -39588,8 +39594,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "b4c1dfd7637e34c3b45d9a33d3b91f34766e1d9771311b58994d7b352577fcff",
-            "dependency_timestamp_normalized_sha256": "6244e60729296f185cb87cfb7056f7ac90f167be4eb912f08db18c8b73e599f3",
+            "sha256": "4e73a3e2142564e2e7b3aa4906027e45dd8ab2cbd51a4e90a0a195e3a42ddf44",
+            "dependency_timestamp_normalized_sha256": "207ee856bc44908b7f20e214142b9a410b99c2b5acef0b67db539e569999e17d",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -39628,12 +39634,13 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/update_phases.hpp"
             ]
           },
           {
-            "sha256": "23f8bf48527e179d9c90dd7cbac8bdc5e6e036e9b48ad25d1600f9eb59b9991a",
-            "dependency_timestamp_normalized_sha256": "6244e60729296f185cb87cfb7056f7ac90f167be4eb912f08db18c8b73e599f3",
+            "sha256": "2a5007a9ba45ce2c5ca26d85cef6c3a0b44186bd2e3c46df6377792c3c7efb70",
+            "dependency_timestamp_normalized_sha256": "207ee856bc44908b7f20e214142b9a410b99c2b5acef0b67db539e569999e17d",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -39672,7 +39679,8 @@
               "src/shared/abi.hpp",
               "src/shared/math/vector.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/update_phases.hpp"
             ]
           }
         ],
@@ -39719,7 +39727,7 @@
           },
           {
             "path": "src/main/boss/exalice/full_context.cpp",
-            "sha256": "aa24bbc070dec0569231590ce254055e31112bafb729b61f5fc3edc4423957b8"
+            "sha256": "7264793a4d4e18e2a5478cacc854b2f17c6328e89de70ead2cba9c51775d3a43"
           },
           {
             "path": "src/main/boss/exalice/full_context.hpp",
@@ -39736,6 +39744,10 @@
           {
             "path": "src/main/boss/exalice/patterns.hpp",
             "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/exalice/update_phases.hpp",
+            "sha256": "1c1f8d77e7f7b92ba67c150fdf8308135b572dd993fadfe1548e1e77f97dbc3e"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -39795,7 +39807,7 @@
         },
         {
           "path": "src/main/boss/exalice/full_context.cpp",
-          "sha256": "aa24bbc070dec0569231590ce254055e31112bafb729b61f5fc3edc4423957b8"
+          "sha256": "7264793a4d4e18e2a5478cacc854b2f17c6328e89de70ead2cba9c51775d3a43"
         },
         {
           "path": "src/main/boss/exalice/full_context.hpp",
@@ -39812,6 +39824,10 @@
         {
           "path": "src/main/boss/exalice/patterns.hpp",
           "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/exalice/update_phases.hpp",
+          "sha256": "1c1f8d77e7f7b92ba67c150fdf8308135b572dd993fadfe1548e1e77f97dbc3e"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -39860,7 +39876,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6951decc467dd2523ebad9ca9a5deb4da9a7e105fbdbb7ef76df9d2e03e2f1d9",
+      "replay_receipt_sha256": "65464a3b8f2347193c83f5618fd3cc4332a786076d4d1c88eac8fc004d8372ec",
       "compiled_negative_control": {
         "target_start": 107082,
         "candidate_start": 107082,
@@ -39929,8 +39945,8 @@
           }
         },
         "omf": {
-          "sha256": "c4931c5a5c82d12aff23307f79f2f4921ec339a24019a277701af64f9134c489",
-          "dependency_timestamp_normalized_sha256": "7142ecb3cb5f996d3feff78a4e043142fd8252c5ec7d1ae6ed656a656739e394",
+          "sha256": "6c69a8cf178f33b235cb03cfdbe7f60ef8373f84418b8ecb98b2c6f341d3df0d",
+          "dependency_timestamp_normalized_sha256": "a4a16dafefeaf9364adf6dbfcb83b969e5fd09adfd12da86d124f8e8af71c47a",
           "module_name": "th05/x_full.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -39969,7 +39985,8 @@
             "src/shared/abi.hpp",
             "src/shared/math/vector.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/update_phases.hpp"
           ]
         },
         "compiler_arguments": [
@@ -39986,7 +40003,10 @@
           "th05/x_full.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-exalice-update-full-context"
+      ]
     },
     {
       "id": "main-b4ball-spawn",

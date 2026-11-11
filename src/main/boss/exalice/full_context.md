@@ -55,3 +55,8 @@ whole ordered fixups[309,272]. Only the updater1060 bytes/one function are
 imported here; the preceding111 bytes already have their own accepted owner
 and receive no second credit. Credit includes1008 instructions and52 complete
 switch-table bytes, with no padding, DATA or BSS.
+
+The complete 18-case EX-Alice boss controller now uses named, observed phase
+constants for four regular/approach/charge waves and the final fan; both
+pattern-submode values and the four wave indices are also named. Matching
+standalone and full-context copies preserve the original switch layout.

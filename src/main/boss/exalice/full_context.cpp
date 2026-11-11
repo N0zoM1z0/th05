@@ -2,6 +2,7 @@
 // All real bodies are maintained source, with no instruction or layout filler.
 #pragma option -zCEXALICE_FULL_TEXT -zPmain_03
 #include "src/main/boss/exalice/full_context.hpp"
+#include "src/main/boss/exalice/update_phases.hpp"
 #pragma codeseg EXALICE_FULL_TEXT main_03
 
 int far exalice_hittest_shots(void)
@@ -47,7 +48,7 @@ void pascal far exalice_update(void)
     boss.phase_frame++;
 
     switch(boss.phase) {
-    case 0:
+    case EXALICE_PHASE_SETUP:
         if(boss.phase_frame == 1) {
             boss.hp = 26500;
             boss.phase_end_hp = 23800;
@@ -80,11 +81,11 @@ void pascal far exalice_update(void)
             bg_render_bombing_func = exalice_bg_render;
         }
         break;
-    case 1:
+    case EXALICE_PHASE_READY:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= 64) {
             boss.phase++;
-            boss.mode = 1;
+            boss.mode = EXALICE_MODE_CHARGE;
             boss.phase_state.patterns_seen = 0;
             boss.phase_frame = 0;
             boss_custombullets_render = exalice_custombullets_render;
@@ -93,10 +94,10 @@ void pascal far exalice_update(void)
             boss_statebyte[9] = 0;
         }
         break;
-    case 2:
+    case EXALICE_PHASE_WAVE1_REGULAR:
 regular_attack:
         switch(boss.mode) {
-        case 0:
+        case EXALICE_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - 32)) {
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
@@ -108,7 +109,7 @@ regular_attack:
                 }
             }
             break;
-        case 1:
+        case EXALICE_MODE_CHARGE:
             exalice_charge_update();
             break;
         }
@@ -118,48 +119,48 @@ regular_attack:
         boss_score_bonus(20);
 regular_complete:
         switch(boss_statebyte[9]) {
-        case 0:
+        case EXALICE_WAVE_1:
             exalice_phase_next(ET_CIRCLE, 21000);
             exalice_pattern = exalice_pattern_firewave_fans;
             break;
-        case 1:
+        case EXALICE_WAVE_2:
             exalice_phase_next(ET_NW_SE, 15100);
             exalice_pattern = exalice_pattern_bouncing_rings;
             break;
-        case 2:
+        case EXALICE_WAVE_3:
             exalice_phase_next(ET_SW_NE, 9600);
             exalice_pattern = exalice_pattern_sweeping_lasers;
             break;
-        case 3:
+        case EXALICE_WAVE_4:
             exalice_phase_next(ET_HORIZONTAL, 3400);
             exalice_pattern = exalice_pattern_spiral_gather;
             break;
         }
         break;
-    case 3:
+    case EXALICE_PHASE_WAVE1_APPROACH:
         if(Palettes.colors[0].c.r < 96) {
             Palettes.colors[0].c.r += 2;
             palette_changed = true;
         }
         // The other approach phases share this movement without a red fade.
-    case 7:
-    case 11:
-    case 15:
+    case EXALICE_PHASE_WAVE2_APPROACH_SECOND:
+    case EXALICE_PHASE_WAVE3_APPROACH_SECOND:
+    case EXALICE_PHASE_WAVE4_APPROACH_SECOND:
 approach:
         if(boss_flystep_towards(to_sp(192), to_sp(64))) {
             boss.phase_frame = 0;
             boss.phase++;
-            boss.mode = 1;
+            boss.mode = EXALICE_MODE_CHARGE;
         }
         exalice_hittest_shots();
         break;
-    case 4:
+    case EXALICE_PHASE_WAVE1_CHARGE:
         if(Palettes.colors[0].c.r < 96) {
             Palettes.colors[0].c.r += 2;
             palette_changed = true;
         }
-    case 8:
-    case 12:
+    case EXALICE_PHASE_WAVE2_CHARGE:
+    case EXALICE_PHASE_WAVE3_CHARGE:
 charge_attack:
         exalice_charge_update();
         if(boss.phase_frame > 4000) {
@@ -172,19 +173,19 @@ charge_hittest:
         boss_score_bonus(20);
 charge_complete:
         switch(boss_statebyte[9]) {
-        case 0:
+        case EXALICE_WAVE_1:
             exalice_phase_next(ET_NW_SE, 18100);
             exalice_pattern = exalice_pattern_gravity_stacks;
             break;
-        case 1:
+        case EXALICE_WAVE_2:
             exalice_phase_next(ET_SW_NE, 12600);
             exalice_pattern = exalice_pattern_fixed_laser_fan;
             break;
-        case 2:
+        case EXALICE_WAVE_3:
             exalice_phase_next(ET_HORIZONTAL, 6800);
             exalice_pattern = exalice_pattern_cross_cheetos;
             break;
-        case 3:
+        case EXALICE_WAVE_4:
             exalice_phase_next(ET_VERTICAL, 0);
             break;
         }
@@ -192,30 +193,30 @@ charge_complete:
         exalice_backdrop_patnum = 200;
         boss_statebyte[9]++;
         break;
-    case 5:
-    case 6:
+    case EXALICE_PHASE_WAVE2_APPROACH_FIRST:
+    case EXALICE_PHASE_WAVE2_REGULAR:
         if(Palettes.colors[0].c.b < 96) {
             Palettes.colors[0].c.b += 2;
             Palettes.colors[0].c.r -= 2;
             palette_changed = true;
         }
-        if(boss.phase == 5) {
+        if(boss.phase == EXALICE_PHASE_WAVE2_APPROACH_FIRST) {
             goto approach;
         }
         goto regular_attack;
-    case 9:
-    case 10:
+    case EXALICE_PHASE_WAVE3_APPROACH_FIRST:
+    case EXALICE_PHASE_WAVE3_REGULAR:
         if(Palettes.colors[0].c.r < 48) {
             Palettes.colors[0].c.r++;
             Palettes.colors[0].c.b--;
             palette_changed = true;
         }
-        if(boss.phase == 9) {
+        if(boss.phase == EXALICE_PHASE_WAVE3_APPROACH_FIRST) {
             goto approach;
         }
         goto regular_attack;
-    case 13:
-    case 14:
+    case EXALICE_PHASE_WAVE4_APPROACH_FIRST:
+    case EXALICE_PHASE_WAVE4_REGULAR:
         if(Palettes.colors[0].c.g < 64) {
             if(Palettes.colors[0].c.r > 0) {
                 Palettes.colors[0].c.r--;
@@ -226,11 +227,11 @@ charge_complete:
             }
             palette_changed = true;
         }
-        if(boss.phase == 13) {
+        if(boss.phase == EXALICE_PHASE_WAVE4_APPROACH_FIRST) {
             goto approach;
         }
         goto regular_attack;
-    case 16:
+    case EXALICE_PHASE_WAVE4_CHARGE:
         if(exalice_charge_update()) {
             boss.phase_state.patterns_seen++;
             if(boss.phase_state.patterns_seen > 8) {
@@ -238,7 +239,7 @@ charge_complete:
             }
         }
         goto charge_hittest;
-    case 17:
+    case EXALICE_PHASE_FINAL_FAN:
         if(boss_statebyte[10] == 0) {
             if(Palettes.colors[0].c.g > 0) {
                 Palettes.colors[0].c.g--;
