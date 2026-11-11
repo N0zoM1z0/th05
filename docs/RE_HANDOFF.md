@@ -58,6 +58,7 @@ necessarily all authored bytes where padding is present.
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
 | MAIN high-score insertion | **168-byte** natural C++ `hiscore_continue_enter_raw()` at `C8F0..C998`, real TCC `-S`/TASM32 compilation, no fixups | [Insertion source](../src/main/score/continue_raw.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
+| MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
 | MAIN/OP/MAINE sound effects | Per binary, **57-byte** SE play + **76-byte** SE update exact C++; all original update fixups `[43]` | [Sound controller](../src/shared/sound/se.md) |
 | MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |
 
@@ -82,11 +83,11 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Score insertion resolved:** The full 168-byte MAIN `C8F0..C998` is now exact C++ through genuine TCC `-S`/TASM32, including original eight DWORD string copies and ordered empty fixups. See [source and focused replay](../src/main/score/continue_raw.md).
 
-**Far vector pair remains open:** MAIN `14AB8..14B58` has a 160-byte two-function candidate. Genuine C++ currently emits 171 bytes due signed 386 trig-table register lowering; the legacy inline assembler rejects direct `MOVSX` mnemonics. No target bytes were injected and no source credit was claimed. See [far vector compiler diagnostic](../src/shared/math/vector_far.md).
+**Far vector pair resolved:** MAIN `14AB8..14B58` contains **159 newly accepted C++ instruction bytes** across two complete near-adjacent far-Pascal functions. TCC `-S`/TASM32 reproduces native 386 `MOVSX` and the original `[24]` second-function fixup; the one `14AFD` EVEN byte is outside both owners. See [complete source and receipts](../src/shared/math/vector_far.md).
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
-review include MAIN `C742..C7FA` (STD loader) and `14AB8..14B58` (far vector pair); the player region `C9BA..CAD2` and Gather/point-popup raster subregions have separately accepted native owners. Use original
+review include MAIN `C742..C7FA` (STD loader); the far vector pair is now exact C++; the player region `C9BA..CAD2` and Gather/point-popup raster subregions have separately accepted native owners. Use original
 ReC98/source and native control-flow evidence before claiming ownership or
 credit. Further useful natural-C++ recovery opportunities can be found in
 [unaccepted candidates](reconstruction/UNACCEPTED_COHORTS.md). Do not

@@ -32,9 +32,9 @@ be described as uncovered code:
 
 The original MAIN `C9BA..CAD2` player region is now complete reviewed native
 ASM with a symbolic 20-case dispatch table; its original natural C++
-alternatives remain unaccepted. Remaining core gaps include STD loading and
-far vector calculation. The 168-byte score insertion at `C8F0..C998` is now
-accepted natural C++ using TCC `-S`/TASM32, not hand-credited ASM. Review the original function boundaries,
+alternatives remain unaccepted. Remaining core gaps include STD loading. The 168-byte score insertion and
+159-byte far vector pair are now accepted as natural C++ using real TCC
+`-S`/TASM32 producers, not hand-credited ASM. Review the original function boundaries,
 semantic source and foreign symbols before adding an acceptance candidate;
 use the generated ownership map to discover other live gaps.
 

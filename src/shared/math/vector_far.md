@@ -31,3 +31,40 @@ vector helper and the independent `vector2_at` implementation must not be
 recounted. A future candidate needs a source-language mechanism whose actual
 compiler output produces the signed 386 loads and original full CODE/fixup
 order without copying native instruction bytes.
+
+## 2026-11-11: both far-Pascal functions now exact C++
+
+The old 171-byte candidate above was a useful failed *direct* compiler
+experiment. The key toolchain difference is that Turbo C++ 4.02 accepts
+semantic inline 386 `MOVSX EDX,[BX+CosTable8]` and `MOVSX ECX,[BX+SinTable8]`
+when generating `.ASM` with `-S`, even though its direct `-c` assembler
+rejects the same mnemonics. Its unmodified generated assembly can be
+assembled by the real TASM32 and linked by TLINK. The signed 32-bit
+multiplication and arithmetic right shift remain ordinary C++ expressions.
+
+Two separately maintained complete far-Pascal C++ functions are now exact:
+
+| Original complete function | Source | Compared bytes | Original fixups |
+| --- | --- | ---: | --- |
+| MAIN `14AB8..14AFD`: `vector2()` | `vector2_far_direct.cpp` | 69 | `[]` |
+| MAIN `14AFE..14B58`: `vector2_between_plus()` | `vector2_far_between.cpp` | 90 | `[24]` |
+
+The original one-byte `EVEN` NOP at `14AFD` separates these two complete
+functions and is **not authored by either**. The original sine/cosine table
+storage at DS `041C/049C` and real far `iatan2` at `_TEXT:1F3A` are foreign.
+Both sources preserve the original Pascal cleanup sizes (12 and 20 bytes),
+far result references, signed multiplication, and actual EAX/EDX/ECX and
+SI/BX/DX register interface. No opcode emission, artificial alignment or
+binary bytes appear in the source. This is full source-backed C++ ownership,
+not a retrospective promotion of the earlier inexact diagnostic.
+
+Strict focused receipts:
+
+- `.analysis/unit-replays/gpt-web-main-vector2-far-direct-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-main-vector2-far-between-a/receipt.json`
+
+Each receipt contains two independent TCC `-S` / TASM32 / TLINK producers,
+complete original raw-byte and ordered-fixup comparisons, actual MAP/OMF
+scope checks and a compiled semantic negative that changes the byte angle's
+high part. Both negatives are rejected. No full cold replay or affected old
+compiler owner rebuild was needed.

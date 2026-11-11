@@ -31,3 +31,8 @@ The first OP scaffold omitted a stack and TLINK emitted invalid default stack
 allocation. Only that uncredited scaffold gained a real 128-byte stack; its
 fresh replay validates the resulting MZ before comparing the unchanged source.
 MAIN and MAINE retained their already valid independent contexts.
+
+The two older *far* vector entrypoints at MAIN `14AB8..14AFD` and
+`14AFE..14B58` now have separate [exact C++ owners](vector_far.md)
+through the real TCC `-S` / TASM32 pipeline. They are distinct from this
+already accepted `polar`/`vector2_at` pair; there is no overlapping credit.

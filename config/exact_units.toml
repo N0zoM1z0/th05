@@ -5628,3 +5628,49 @@ unit = "main-score-continue-raw-exact"
 source = "src/main/score/continue_raw.cpp"
 find = "_DX = SCOREDAT_PLACES - 1;"
 replace = "_DX = SCOREDAT_PLACES - 2;"
+
+[[units]]
+id = "main-vector2-far-direct"
+source = "src/shared/math/vector2_far_direct.cpp"
+module = "th05/v2direct.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/vector2_far_direct_bindings.asm"
+target_start = 0x14ab8
+size = 69
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 84656
+ds_base = 133584
+
+[[controls]]
+unit = "main-vector2-far-direct"
+source = "src/shared/math/vector2_far_direct.cpp"
+find = "_DH = 0;"
+replace = "_DH = 1;"
+
+[[units]]
+id = "main-vector2-far-between"
+source = "src/shared/math/vector2_far_between.cpp"
+module = "th05/v2betwn.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/vector2_far_between_bindings.asm"
+target_start = 0x14afe
+size = 90
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 84656
+ds_base = 133584
+
+[[controls]]
+unit = "main-vector2-far-between"
+source = "src/shared/math/vector2_far_between.cpp"
+find = "_DH = 0;"
+replace = "_DH = 1;"
