@@ -48,3 +48,11 @@ The older 42-byte C++ dot diagnostic above remains inexact. The separate
 [28-byte near fastcall ASM renderer](splash_dot_exact.md) has since passed
 strict source/boundary/origin review and two native assembler producers.
 The accepted item/splash renderers and their C++ inputs are unchanged.
+
+## Later register-aware C++ recovery
+
+The 26-byte initializer at `16362..1637C` is now accepted as complete
+[C++ register-context source](splash_init_register_exact.md). It retains the
+real 80-byte pool and fixes the final one-byte XOR code-generation difference
+without altering the linked output. The older 24-byte intrinsic diagnostic
+remains evidence of a different compiler lowering, not an active blocker.

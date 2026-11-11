@@ -5773,3 +5773,22 @@ unit = "main-enemy-bullet-template-push-exact"
 source = "src/main/enemy/template_push_exact.cpp"
 find = "_CX = sizeof(BulletTemplate) / sizeof(unsigned int);"
 replace = "_CX = (sizeof(BulletTemplate) / sizeof(unsigned int)) - 1;"
+
+[[units]]
+id = "main-item-splash-init-register-exact"
+source = "src/main/item/splash_init_register_exact.cpp"
+module = "th05/splinit.cpp"
+segment = "ITEM_SPLASH_INIT_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/item_splash_init_register_bindings.asm"
+target_start = 0x16362
+size = 26
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-item-splash-init-register-exact"
+source = "src/main/item/splash_init_register_exact.cpp"
+find = "_CX = sizeof(item_splashes) / sizeof(unsigned int);"
+replace = "_CX = sizeof(item_splashes) / sizeof(unsigned int) - 1;"

@@ -51,6 +51,7 @@ necessarily all authored bytes where padding is present.
 | MAIN Boss BB tile masks | Full **232-byte** two-function original-register GRCG put/invalidate ASM at `F968..FA50`, ordered fixups `[17]` | [Boss bitmap masks](../src/main/tile/bb_mask_family.md) |
 | MAIN point popup digits | **58-byte** original-register decimal converter at `15870..158AA`; **57 authored** ASM bytes and one checked `EVEN` | [Digit converter](../src/main/pointnum/digits_register.md) |
 | MAIN/OP GRCG hardware modes | MAIN **38-byte** three-function family (36 authored ASM); OP **26-byte** direct color helper, original I/O and zero-credit alignment | [GRCG mode/color](../src/shared/hardware/grcg_modecol_exact.md) |
+| MAIN item splash initialization | Complete **26-byte** C++ pool clear at `16362..1637C`, native `REP STOSW` and one-byte XOR encoding recovered | [Splash init](../src/main/item/splash_init_register_exact.md) |
 | MAIN item splash pixel | Complete **28-byte** original-register near-ASM at `E152..E16E`, exact AX/DX/ES point mask and no fixups | [Item splash dot](../src/main/item/splash_dot_exact.md) |
 | MAIN Gather graphics primitives | **122-byte** original ASM family at `15312..1538C`, 120 authored bytes and two checked NOPs | [Gather raster](../src/main/gather/raster_primitives.md) |
 | MAIN enemy bullet-template transfer | Complete **24-byte** natural C++ near-Pascal register copy at `16BCF..16BE7`; genuine seven-word `REP MOVSW` | [Enemy template transfer](../src/main/enemy/template_push_exact.md) |
