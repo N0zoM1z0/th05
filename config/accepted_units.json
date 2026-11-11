@@ -2,20 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "1a97ee3f9ee3285d0a13231f84dd85d59cab4cd02c23f7c54c99de7f04a947a6",
+  "replay_receipt_sha256": "f534c991917ab6c0cfca32a4472b9dc0fc54eee53c42f70ec5634ec93a4762bd",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 106971,
-    "candidate_start": 106971,
-    "size": 111,
-    "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-    "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+    "target_start": 134124,
+    "candidate_start": 134124,
+    "size": 66,
+    "target_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+    "candidate_sha256": "b8ec0c45d5a62e69a38938aeaba1f91f52bc85c73b3b19131e2c4f0dd009c518",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 134124,
+      "size": 66,
+      "module": "th05/sessfns.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -58886,6 +58894,282 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-session-files-c",
+      "entry_sha256": "b298e1033a157f8bfeb998c551d9e94953107562b1b26e129374797578c98495",
+      "result": {
+        "id": "main-session-files-c",
+        "entry_sha256": "b298e1033a157f8bfeb998c551d9e94953107562b1b26e129374797578c98495",
+        "rounds": [
+          {
+            "target_start": 134124,
+            "candidate_start": 134124,
+            "size": 66,
+            "target_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+            "candidate_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 134124,
+              "size": 66,
+              "module": "th05/sessfns.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 134124,
+            "candidate_start": 134124,
+            "size": 66,
+            "target_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+            "candidate_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 134124,
+              "size": 66,
+              "module": "th05/sessfns.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "f45516db1e816abb8c3e732238fd2cd5ff3bcedb219471cc71840e5c34143914",
+            "dependency_timestamp_normalized_sha256": "88cf37eae638d0175b2b5cc50e5f7e4195776b20b15eabd8ec74a6faf8e7cfe3",
+            "module_name": "th05/sessfns.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sessfns.c",
+              "src/main/resources/session_files.c",
+              "src/main/resources/session_files_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 66,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 66,
+                  "sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "42e8dc81456783560ba30dd2c465b7d713be38d2aec81f38cb5a270a35b73d34",
+            "dependency_timestamp_normalized_sha256": "88cf37eae638d0175b2b5cc50e5f7e4195776b20b15eabd8ec74a6faf8e7cfe3",
+            "module_name": "th05/sessfns.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sessfns.c",
+              "src/main/resources/session_files.c",
+              "src/main/resources/session_files_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 66,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 66,
+                  "sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sessfns.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sessfns.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_session_files_bindings.asm",
+            "sha256": "70c177af2f330a8b929e87a34f51d8d378425668dfec15f2e9700f933c9dc56d"
+          },
+          {
+            "path": "src/main/resources/session_files.c",
+            "sha256": "6e07f69f933e4d1f465f0168d7ebc74ec71d4c46b69db416c507fbebfddba091"
+          },
+          {
+            "path": "src/main/resources/session_files_c.h",
+            "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_session_files_bindings.asm",
+          "sha256": "70c177af2f330a8b929e87a34f51d8d378425668dfec15f2e9700f933c9dc56d"
+        },
+        {
+          "path": "src/main/resources/session_files.c",
+          "sha256": "6e07f69f933e4d1f465f0168d7ebc74ec71d4c46b69db416c507fbebfddba091"
+        },
+        {
+          "path": "src/main/resources/session_files_c.h",
+          "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f534c991917ab6c0cfca32a4472b9dc0fc54eee53c42f70ec5634ec93a4762bd",
+      "compiled_negative_control": {
+        "target_start": 134124,
+        "candidate_start": 134124,
+        "size": 66,
+        "target_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+        "candidate_sha256": "b8ec0c45d5a62e69a38938aeaba1f91f52bc85c73b3b19131e2c4f0dd009c518",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 134124,
+          "size": 66,
+          "module": "th05/sessfns.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-session-files-c",
+        "entry_sha256": "b298e1033a157f8bfeb998c551d9e94953107562b1b26e129374797578c98495",
+        "mutation": {
+          "unit": "main-session-files-c",
+          "source": "src/main/resources/session_files.c",
+          "find": "\"KAO3.cd2\"",
+          "replace": "\"KAO4.cd2\""
+        },
+        "control_sha256": "86ca1b3c8f76223c5ba0a46ceb7bda940ac5ec5d64304e0cea52dca752c96eb8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 134124,
+          "candidate_start": 134124,
+          "size": 66,
+          "target_sha256": "32f0e09d99aa803f15b9284a852b4fdc6e0f495416443431cf184d8e94307de0",
+          "candidate_sha256": "b8ec0c45d5a62e69a38938aeaba1f91f52bc85c73b3b19131e2c4f0dd009c518",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 134124,
+            "size": 66,
+            "module": "th05/sessfns.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "bb23e7626c8804d6346895200f8f54a72bcf8fc79b6379a33063386179a5d6a4",
+          "dependency_timestamp_normalized_sha256": "8958b923d6187aa33516d9e8fb80ef75ab33a53cf4fa475ffdef54c22784843e",
+          "module_name": "th05/sessfns.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sessfns.c",
+            "src/main/resources/session_files.c",
+            "src/main/resources/session_files_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 66,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 66,
+                "sha256": "b8ec0c45d5a62e69a38938aeaba1f91f52bc85c73b3b19131e2c4f0dd009c518"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sessfns.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-session-files-c"
+      ]
     },
     {
       "id": "main-shot-velocity-data",
