@@ -1125,3 +1125,27 @@ unit = "op-piano-current-note-register"
 source = "src/op/piano/note_register.cpp"
 find = "_AH = 4;"
 replace = "_AH = 3;"
+
+[[units]]
+id = "op-pi-masked-wrappers"
+source = "src/shared/graphics/pi_masked_wrappers.cpp"
+module = "th05/pimask.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_pi_masked_wrappers_bindings.asm"
+target_start = 56468
+size = 123
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "PI_MASK_GROUP"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-pi-masked-wrappers"
+source = "src/shared/graphics/pi_masked_wrappers.cpp"
+find = "_AX = 160;"
+replace = "_AX = 159;"

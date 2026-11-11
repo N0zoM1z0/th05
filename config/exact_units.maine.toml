@@ -1510,3 +1510,27 @@ unit = "maine-bgimage-transfer-complete"
 source = "src/shared/hardware/bgimage_transfer.cpp"
 find = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(32000));"
 replace = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(31996));"
+
+[[units]]
+id = "maine-pi-masked-wrappers"
+source = "src/shared/graphics/pi_masked_wrappers.cpp"
+module = "th05/pimask.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/maine_pi_masked_wrappers_bindings.asm"
+target_start = 60988
+size = 123
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "PI_MASK_GROUP"
+cs_base = 59392
+ds_base = 65808
+binary = "E"
+
+[[controls]]
+unit = "maine-pi-masked-wrappers"
+source = "src/shared/graphics/pi_masked_wrappers.cpp"
+find = "_AX = 160;"
+replace = "_AX = 159;"
