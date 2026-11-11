@@ -112,3 +112,24 @@ The ledger accepts `main-midboss-stage2-update`: one complete function,
 393 instruction/authored-code bytes, zero CODE tables or padding, and no owned
 DATA/BSS credit. The two source corrections above are retained explicitly;
 no target bytes, fixup reordering or artificial branch/padding was introduced.
+
+## Typed orbit drift and expansion state
+
+The complete Stage 2 controller and its three near movement/attack functions
+now share a `Midboss2Scratch` view of the existing sixteen `boss_statebyte`
+bytes. The entrance resets byte 15 to orbit expansion (`0`) and initializes
+byte 14 to drift `0x20`. During the orbit, byte 14 is read as a **signed
+8-bit** center displacement before it is incremented or decremented; retaining
+unsigned physical storage and the original explicit signed-char conversion
+is necessary for the original wraparound behavior. Byte 15 switches between
+radius expansion (`0`) and contraction (`1`) at the original velocity bounds.
+Neither field is moved to a new object or reset at an additional phase.
+
+The real three-stage selector (entrance, orbit attack, final attack) is named
+without changing its switch keys or the 400 HP / 1000-frame and 800-frame
+transitions. The full update and three-function pattern scope were replayed
+together with two independent Borland producers, preserving every original
+raw byte and ordered MZ relocation. The compiled 400-to-401 HP threshold and
+orbit-boundary semantic negatives were rejected. Receipt:
+`.analysis/unit-replays/gpt-web-stage2-midboss-scratch-20261111/receipt.json`.
+All already accepted source ownership and authored-byte credit are unchanged.

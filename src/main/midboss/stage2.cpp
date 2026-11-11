@@ -1,6 +1,7 @@
 // Natural TH05 stage-two midboss state machine, recovered from the original
 // callback at 1527:0B7B. Foreign movement/pattern bodies remain separate owners.
 #include "src/main/midboss/stage2.hpp"
+#include "src/main/midboss/stage2_scratch.hpp"
 
 void pascal far midboss2_update(void)
 {
@@ -8,22 +9,22 @@ void pascal far midboss2_update(void)
     midboss.phase_frame++;
 
     switch(midboss.phase) {
-    case 0:
+    case MIDBOSS2_PHASE_ENTRANCE:
         midboss.pos.update_seg3();
         midboss_hittest_shots_damage(to_sp(24), to_sp(24), 10);
         if(midboss.phase_frame >= 256) {
             midboss.phase++;
             midboss.phase_frame = 0;
             midboss.angle = 0;
-            boss_statebyte[15] = 0;
-            boss_statebyte[14] = 0x20;
+            midboss2_scratch.orbit_contracting = MIDBOSS2_ORBIT_EXPANDING;
+            midboss2_scratch.orbit_center_drift = MIDBOSS2_ORBIT_DRIFT_INITIAL;
             midboss.pos.velocity.x.v = 0;
             midboss2_orbit_center.x.v = to_sp(192);
             midboss2_orbit_center.y = midboss.pos.cur.y;
         }
         break;
 
-    case 1:
+    case MIDBOSS2_PHASE_ORBIT_ATTACK:
         midboss2_pattern();
         midboss2_move();
         stage2_midboss_hittest_shots(to_sp(24), to_sp(24));
@@ -46,7 +47,7 @@ void pascal far midboss2_update(void)
             midboss.pos.velocity.x.v, midboss.pos.velocity.y.v, 1);
         break;
 
-    case 2:
+    case MIDBOSS2_PHASE_FINAL_ATTACK:
         midboss2_pattern_final();
         midboss.pos.update_seg3();
         stage2_midboss_hittest_shots(to_sp(24), to_sp(24));

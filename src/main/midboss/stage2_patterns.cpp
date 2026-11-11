@@ -2,10 +2,11 @@
 // b6ba5b0a TH05 disassembly is evidence; no acceptance transfers from TH04.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/stage2_patterns.hpp"
+#include "src/main/midboss/stage2_scratch.hpp"
 #pragma codeseg B4_UPDATE_TEXT main_03
 
-#define midboss2_orbit_speed boss_statebyte[14]
-#define midboss2_orbit_contracting boss_statebyte[15]
+#define midboss2_orbit_speed midboss2_scratch.orbit_center_drift
+#define midboss2_orbit_contracting midboss2_scratch.orbit_contracting
 
 void near midboss2_move(void)
 {
@@ -18,15 +19,15 @@ void near midboss2_move(void)
     } else if(midboss2_orbit_center.x.v > to_sp(256)) {
         midboss2_orbit_speed -= 2;
     }
-    if(midboss2_orbit_contracting == 0) {
+    if(midboss2_orbit_contracting == MIDBOSS2_ORBIT_EXPANDING) {
         midboss.pos.velocity.x.v += to_sp(1);
         if(midboss.pos.velocity.x.v > to_sp(64)) {
-            midboss2_orbit_contracting = 1;
+            midboss2_orbit_contracting = MIDBOSS2_ORBIT_CONTRACTING;
         }
     } else {
         midboss.pos.velocity.x.v -= to_sp(1);
         if(midboss.pos.velocity.x.v <= to_sp(1)) {
-            midboss2_orbit_contracting = 0;
+            midboss2_orbit_contracting = MIDBOSS2_ORBIT_EXPANDING;
         }
     }
     midboss.angle -= 2;
