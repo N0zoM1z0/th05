@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "e9d81f0ec0905e77ab5a6334bc788ca169d8f1febdf256709b8486b44bfc440c",
+  "replay_receipt_sha256": "a8368d39d44c3d5b5447dd4e858152c6214d1762081cbb4616b40adf54b06fd9",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 55444,
-    "candidate_start": 55444,
-    "size": 218,
-    "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
-    "candidate_sha256": "ece2ab8e87ece7574e1c6b01e115cf1da1f1b6a6750fb6d0e39bd0199fe980b0",
+    "target_start": 55662,
+    "candidate_start": 55662,
+    "size": 116,
+    "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+    "candidate_sha256": "38fff5d21a707fea16e7370c0e7a0cee228a56eb18a5043e0dab7cfea937d220",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -39472,6 +39472,415 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "op-piano-render-116",
+      "entry_sha256": "881e85bf38891e2170948093aac4a7fff13e858570f974494b91006753cd7041",
+      "result": {
+        "id": "op-piano-render-116",
+        "entry_sha256": "881e85bf38891e2170948093aac4a7fff13e858570f974494b91006753cd7041",
+        "rounds": [
+          {
+            "target_start": 55662,
+            "candidate_start": 55662,
+            "size": 116,
+            "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+            "candidate_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 55662,
+            "candidate_start": 55662,
+            "size": 116,
+            "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+            "candidate_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "omfs": [
+          {
+            "sha256": "a1b34f2a6c7f81811f52f1a8da50de5a8134badc6ac68dc315e8abcf43c2eb6d",
+            "dependency_timestamp_normalized_sha256": "edfc73ce22463d715f8c792f47931d3a30d0f8130e1d3a2c980813df2719cc13",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "prender.asm"
+            ]
+          },
+          {
+            "sha256": "e6ba60923bd60ac46786bac7cc0cb351380ccfdc25a04311848cd878b0366be0",
+            "dependency_timestamp_normalized_sha256": "edfc73ce22463d715f8c792f47931d3a30d0f8130e1d3a2c980813df2719cc13",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "prender.asm"
+            ]
+          }
+        ],
+        "compiler_assembly": [
+          {
+            "comparison": {
+              "target_start": 55662,
+              "candidate_start": 55662,
+              "size": 116,
+              "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+              "candidate_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+              "raw_exact": true,
+              "target_fixups": [],
+              "candidate_fixups": [],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/op/piano/render_exact.cpp",
+              "src/shared/sound/pmd_part.hpp"
+            ],
+            "omf": {
+              "sha256": "a1b34f2a6c7f81811f52f1a8da50de5a8134badc6ac68dc315e8abcf43c2eb6d",
+              "dependency_timestamp_normalized_sha256": "edfc73ce22463d715f8c792f47931d3a30d0f8130e1d3a2c980813df2719cc13",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "prender.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 116,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 116,
+                  "sha256": "4ca0b6e3462faae108fb822cd5cfedfd043ed9290c51291121a3212c9176a313"
+                }
+              ]
+            },
+            "map_sha256": "384cb53d3b4c686d0396f617ef82b7514f8296395eeddb6333c0df8518cdc23c",
+            "mz_sha256": "fce5c4cc4bb4820d710e6f41009d606855cefb4d615492c4f44b0a672aacfa5c",
+            "commands_sha256": "a78b6c8a8fbe6af105f5838ee4198cdcfe350fdf408f515755e1b0a68d5ff2a7",
+            "compiler_generated_assembly_sha256": "83b745a3767adcb9abbc95a2e8b7f61aa16860ee675491cbfd6d8d232ffd8b27",
+            "assembly_after_tasm_sha256": "83b745a3767adcb9abbc95a2e8b7f61aa16860ee675491cbfd6d8d232ffd8b27",
+            "wrapper_sha256": "4ef7ae93c687fc7fc5d8cea0b6741898b6248fd88448605962533a8d23ba6f2f"
+          },
+          {
+            "comparison": {
+              "target_start": 55662,
+              "candidate_start": 55662,
+              "size": 116,
+              "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+              "candidate_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+              "raw_exact": true,
+              "target_fixups": [],
+              "candidate_fixups": [],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/op/piano/render_exact.cpp",
+              "src/shared/sound/pmd_part.hpp"
+            ],
+            "omf": {
+              "sha256": "e6ba60923bd60ac46786bac7cc0cb351380ccfdc25a04311848cd878b0366be0",
+              "dependency_timestamp_normalized_sha256": "edfc73ce22463d715f8c792f47931d3a30d0f8130e1d3a2c980813df2719cc13",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "prender.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 116,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 116,
+                  "sha256": "4ca0b6e3462faae108fb822cd5cfedfd043ed9290c51291121a3212c9176a313"
+                }
+              ]
+            },
+            "map_sha256": "384cb53d3b4c686d0396f617ef82b7514f8296395eeddb6333c0df8518cdc23c",
+            "mz_sha256": "fce5c4cc4bb4820d710e6f41009d606855cefb4d615492c4f44b0a672aacfa5c",
+            "commands_sha256": "a78b6c8a8fbe6af105f5838ee4198cdcfe350fdf408f515755e1b0a68d5ff2a7",
+            "compiler_generated_assembly_sha256": "83b745a3767adcb9abbc95a2e8b7f61aa16860ee675491cbfd6d8d232ffd8b27",
+            "assembly_after_tasm_sha256": "83b745a3767adcb9abbc95a2e8b7f61aa16860ee675491cbfd6d8d232ffd8b27",
+            "wrapper_sha256": "4ef7ae93c687fc7fc5d8cea0b6741898b6248fd88448605962533a8d23ba6f2f"
+          }
+        ],
+        "compiler_arguments": [
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/prender.cpp"
+          ],
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/prender.cpp"
+          ]
+        ],
+        "producer_paths": [
+          "a/source",
+          "b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/piano_render_exact_bindings.asm",
+            "sha256": "ff049f475a95ac74154fee00c0d99e6d3ff7cb703b8658d1e2aaf17ce861c362"
+          },
+          {
+            "path": "scripts/lib/binding_layout.py",
+            "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+          },
+          {
+            "path": "scripts/lib/compiler_assembly.py",
+            "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+          },
+          {
+            "path": "scripts/lib/omf.py",
+            "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+          },
+          {
+            "path": "scripts/lib/reference_build.py",
+            "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+          },
+          {
+            "path": "scripts/lib/replay_toolchain.py",
+            "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+          },
+          {
+            "path": "scripts/lib/tiny_com.py",
+            "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+          },
+          {
+            "path": "scripts/lib/unit_context.py",
+            "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+          },
+          {
+            "path": "scripts/lib/unit_extents.py",
+            "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+          },
+          {
+            "path": "scripts/lib/unit_oracle.py",
+            "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+          },
+          {
+            "path": "scripts/lib/unit_sources.py",
+            "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+          },
+          {
+            "path": "scripts/replay_asm_family.py",
+            "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+          },
+          {
+            "path": "src/op/piano/render_exact.cpp",
+            "sha256": "dbd52761735721e0b31ed0d2193b03211b0482033d082ff56c86210ba52f8575"
+          },
+          {
+            "path": "src/shared/sound/pmd_part.hpp",
+            "sha256": "06e66ce69c1d4a51761178bd610972937158d4c7dc6ec8fb2e5a413ac9a4732a"
+          }
+        ],
+        "object_normalized_equal": true,
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/piano_render_exact_bindings.asm",
+          "sha256": "ff049f475a95ac74154fee00c0d99e6d3ff7cb703b8658d1e2aaf17ce861c362"
+        },
+        {
+          "path": "scripts/lib/binding_layout.py",
+          "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+        },
+        {
+          "path": "scripts/lib/compiler_assembly.py",
+          "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/tiny_com.py",
+          "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_sources.py",
+          "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+        },
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "src/op/piano/render_exact.cpp",
+          "sha256": "dbd52761735721e0b31ed0d2193b03211b0482033d082ff56c86210ba52f8575"
+        },
+        {
+          "path": "src/shared/sound/pmd_part.hpp",
+          "sha256": "06e66ce69c1d4a51761178bd610972937158d4c7dc6ec8fb2e5a413ac9a4732a"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "a8368d39d44c3d5b5447dd4e858152c6214d1762081cbb4616b40adf54b06fd9",
+      "compiled_negative_control": {
+        "target_start": 55662,
+        "candidate_start": 55662,
+        "size": 116,
+        "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+        "candidate_sha256": "38fff5d21a707fea16e7370c0e7a0cee228a56eb18a5043e0dab7cfea937d220",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-piano-render-116",
+        "entry_sha256": "881e85bf38891e2170948093aac4a7fff13e858570f974494b91006753cd7041",
+        "mutation": {
+          "unit": "op-piano-render-116",
+          "source": "src/op/piano/render_exact.cpp",
+          "find": "_AH = 5;",
+          "replace": "_AH = 4;"
+        },
+        "control_sha256": "4474c232a895b1402281ec96f7287e7f7d6a5629ab77de0e5b6d55ad99a95ad8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 55662,
+          "candidate_start": 55662,
+          "size": 116,
+          "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
+          "candidate_sha256": "38fff5d21a707fea16e7370c0e7a0cee228a56eb18a5043e0dab7cfea937d220",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "compiler_arguments": [
+          "-S",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/prender.cpp"
+        ],
+        "omf": {
+          "sha256": "188e204ccc6496290c4da883e932bd7ac6266df1496d3a1df2280df945da719e",
+          "dependency_timestamp_normalized_sha256": "0137c9d0276e3979b26b193828864efd527be5e275029d39b8aaffa0742e3ef7",
+          "module_name": "unit.asm",
+          "translator_comments": [
+            "Turbo Assembler  Version 5.0"
+          ],
+          "dependency_paths": [
+            "unit.asm",
+            "prender.asm"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": true,
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      }
     }
   ],
   "artifact": "th05-op",

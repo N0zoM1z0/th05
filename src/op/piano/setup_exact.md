@@ -30,3 +30,8 @@ complete OMF/MAP function coverage, and the native empty ordered relocation
 stream. The negative changes the piano label highlight color from 5 to 4
 and is compiled and rejected. Existing keyboard/label ASM and current-note
 providers are foreign, with no duplicate acceptance.
+
+The immediately following [116-byte piano renderer](render_exact.md) is now
+also accepted as an independent exact C++ owner. Together the two adjacent
+functions cover all `D894..D9E2` (334 bytes) without a gap or overlapping
+piano ASM contributions.
