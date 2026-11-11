@@ -165,3 +165,12 @@ in two fresh workspaces, then compiled the animation-period negative. All
 changes the accepted box-wait function and is rejected. The 16-byte final
 compiler switch table counts separately from 1,225 instruction bytes. The
 EGC helper, dispatcher, inter-contribution hole and BSS receive no credit.
+
+## Later complete EGC setup recovery
+
+The older 51-byte EGC compiler diagnostic above is retained as evidence of
+an inexact *combined* candidate. A separate maintained C++ hardware-register
+owner now matches the entire 52-byte `A6D1..A705` routine; see
+[exact EGC setup](egc_setup_exact.md). The original nine accepted functions
+and their source inputs are unchanged. The 1,555-byte `script_op()` still has
+unmatched original relocation ordering and earns no code credit.

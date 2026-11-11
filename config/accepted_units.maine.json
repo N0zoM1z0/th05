@@ -2,21 +2,21 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "4675705ef8ae7a00d3d6349306d54e43fe3df77fc25e2f376b770f254853fe1b",
+  "replay_receipt_sha256": "f465b34af8f6a955f2a418e03dc0d8ba3bb64cdd7c2ca2fdf64f270f5d2fb665",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 61312,
-    "candidate_start": 61312,
-    "size": 50,
-    "target_sha256": "d93195cc824105ff4337206afbd3a58f29dccc9bdd60f029c8497e4af2c92c86",
-    "candidate_sha256": "b8dc81c0a4ab136ac2fb0da358697331664771489f2a1813383e1c874109941f",
+    "target_start": 42705,
+    "candidate_start": 42705,
+    "size": 52,
+    "target_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+    "candidate_sha256": "98394a368ca912d45af4a4bc6c8a3d3f552d051f4b88a05b8abdc36bd34063da",
     "raw_exact": false,
     "target_fixups": [
-      42
+      6
     ],
     "candidate_fixups": [
-      42
+      6
     ],
     "fixups_exact": true,
     "exact": false
@@ -38900,6 +38900,243 @@
           }
         ]
       }
+    },
+    {
+      "id": "maine-cutscene-egc-copy-exact",
+      "entry_sha256": "bce7b2826b0c6fae48eb349f761651856fc348e18e68987fe275798fc9112843",
+      "result": {
+        "id": "maine-cutscene-egc-copy-exact",
+        "entry_sha256": "bce7b2826b0c6fae48eb349f761651856fc348e18e68987fe275798fc9112843",
+        "rounds": [
+          {
+            "target_start": 42705,
+            "candidate_start": 42705,
+            "size": 52,
+            "target_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+            "candidate_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+            "raw_exact": true,
+            "target_fixups": [
+              6
+            ],
+            "candidate_fixups": [
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 42705,
+            "candidate_start": 42705,
+            "size": 52,
+            "target_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+            "candidate_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+            "raw_exact": true,
+            "target_fixups": [
+              6
+            ],
+            "candidate_fixups": [
+              6
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "980d4b98d75eefaac4533b3fdcd5b8730933f4b6c192bc036a6f8562c18d2031",
+            "dependency_timestamp_normalized_sha256": "7b360ce539358ce9ad63c5e27addf01b601807cc1242116b1ccfbdf7f7efd859",
+            "module_name": "th05/csegc.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/csegc.cpp",
+              "src/maine/cutscene/egc_setup_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          },
+          {
+            "sha256": "61b895a0e42bfc1522ec8f9c99842734d0398509e46f0e0a7571fde203e3a62a",
+            "dependency_timestamp_normalized_sha256": "7b360ce539358ce9ad63c5e27addf01b601807cc1242116b1ccfbdf7f7efd859",
+            "module_name": "th05/csegc.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/csegc.cpp",
+              "src/maine/cutscene/egc_setup_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/csegc.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/csegc.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_egc_exact_bindings.asm",
+            "sha256": "0503dbeb7a701f82fd8b3d7e29b96fbdb81f786f3c4f44e5c493ccf014838dc6"
+          },
+          {
+            "path": "src/maine/cutscene/egc_setup_exact.cpp",
+            "sha256": "a01860ab933df70cb28e13f61e7cdd6cb344b465b3925ac3b6d48b77a241164e"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_egc_exact_bindings.asm",
+          "sha256": "0503dbeb7a701f82fd8b3d7e29b96fbdb81f786f3c4f44e5c493ccf014838dc6"
+        },
+        {
+          "path": "src/maine/cutscene/egc_setup_exact.cpp",
+          "sha256": "a01860ab933df70cb28e13f61e7cdd6cb344b465b3925ac3b6d48b77a241164e"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "f465b34af8f6a955f2a418e03dc0d8ba3bb64cdd7c2ca2fdf64f270f5d2fb665",
+      "compiled_negative_control": {
+        "target_start": 42705,
+        "candidate_start": 42705,
+        "size": 52,
+        "target_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+        "candidate_sha256": "98394a368ca912d45af4a4bc6c8a3d3f552d051f4b88a05b8abdc36bd34063da",
+        "raw_exact": false,
+        "target_fixups": [
+          6
+        ],
+        "candidate_fixups": [
+          6
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-egc-copy-exact",
+        "entry_sha256": "bce7b2826b0c6fae48eb349f761651856fc348e18e68987fe275798fc9112843",
+        "mutation": {
+          "unit": "maine-cutscene-egc-copy-exact",
+          "source": "src/maine/cutscene/egc_setup_exact.cpp",
+          "find": "asm { mov ax, 0 }",
+          "replace": "asm { mov ax, 1 }"
+        },
+        "control_sha256": "53aa204c8db7e4e85882a42870b8054541cc4c175ab369ce9f6a1775c30d1d58",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 42705,
+          "candidate_start": 42705,
+          "size": 52,
+          "target_sha256": "23002c30db6dd32c6d091b814f5430b683417936183747f61f2ca92045b94d7f",
+          "candidate_sha256": "98394a368ca912d45af4a4bc6c8a3d3f552d051f4b88a05b8abdc36bd34063da",
+          "raw_exact": false,
+          "target_fixups": [
+            6
+          ],
+          "candidate_fixups": [
+            6
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "48d5e15de86a5ff200a263dbbc6ae302796940e0da377d0d346fbd197a386411",
+          "dependency_timestamp_normalized_sha256": "32de17445630b2139d81c30c4534480b3428d16ccb6a361501c32f4cb32f6ecb",
+          "module_name": "th05/csegc.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/csegc.cpp",
+            "src/maine/cutscene/egc_setup_exact.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/csegc.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-maine",

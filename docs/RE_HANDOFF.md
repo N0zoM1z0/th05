@@ -73,6 +73,7 @@ necessarily all authored bytes where padding is present.
 | MAIN high-score insertion | **168-byte** natural C++ `hiscore_continue_enter_raw()` at `C8F0..C998`, real TCC `-S`/TASM32 compilation, no fixups | [Insertion source](../src/main/score/continue_raw.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
 | MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
+| MAINE cutscene EGC setup | Complete **52-byte** near C++ at `A6D1..A705` with original `EGC_ON` fixup `[6]`; the 1,555-byte interpreter remains separate | [EGC setup](../src/maine/cutscene/egc_setup_exact.md) |
 | MAIN/OP/MAINE sound effects | Per binary, **57-byte** SE play + **76-byte** SE update exact C++; all original update fixups `[43]` | [Sound controller](../src/shared/sound/se.md) |
 | MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |
 

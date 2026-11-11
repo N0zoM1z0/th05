@@ -41,3 +41,14 @@ from meaningful source/module declarations. It must compare all 1,555 bytes
 and all 42 literal ordered fixups and compile a source negative before
 acceptance. Do not promote a partial matched function, artificial assembler
 patch or accepted neighbor as evidence for the interpreter itself.
+
+## Later direct/split compiler diagnostics
+
+The fresh local `gpt-web-maine-cutscene-direct-a` TCC `-c` experiment has all
+1,555 original script-op bytes exact, but its 42 relocations remain in a
+different OMF order. Moving script-op into its own real CODE segment yields
+its complete 1,555-byte function, but changes 27 far-call segment words and
+the relocation order; splitting `cutscene_animate` also yields one extra
+trailing compiler alignment byte. The isolated experiments are in the private
+`gpt-web-maine-cutscene-split-scriptop-{a,b}` directories. These are useful
+placement evidence, not acceptance or a reason to reorder fixup records.
