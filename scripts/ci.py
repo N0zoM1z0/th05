@@ -63,6 +63,12 @@ def main():
     # from its real _BSSEND FIXUPP; no other game DATA or CODE is claimed.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_c0_data.py"), "--structural-check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # OP and MAINE each contain complete CL farheap/exec CODE SEGDEFs with
+    # eight original unwritten CS: state bytes. Adopt actual OMF writes only.
+    for context in ("op", "maine"):
+        subprocess.run([sys.executable, str(ROOT / "scripts/review_context_reserved.py"),
+                        "--context", context, "--structural-check"],
+                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     # Lightweight source-current acceptance check for the separate ZUN.COM
     # -I child; no assembler, Wine, original target or cold replay is invoked.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_interrupt.py"), "--check"],

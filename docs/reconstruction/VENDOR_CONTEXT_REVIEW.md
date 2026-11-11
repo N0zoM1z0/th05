@@ -79,11 +79,31 @@ conflicts with accepted source or other vendor extents. With
 `verify_targets=True`, adoption replays the actual private review and compares
 its complete result with the reviewed proof.
 
-OP's `xxas`, `farheap`, `signal`, `exec` and `setenvp` remain deferred. MAINE's
-`farheap`, `exec` and `setenvp` remain deferred. Their unsupported fixup methods,
-incomplete LEDATA or unexplained reconstructed bytes are retained in public
-reason records. All uncovered gaps, DATA/BSS and other members remain unknown.
-Existing MAIN Master decisions do not transfer to either artifact.
+The earlier gapless review deferred OP's `xxas`, `farheap`, `signal`, `exec`
+and `setenvp`, plus MAINE's `farheap`, `exec` and `setenvp`. Subsequent focused
+original-OMF review now **resolves `farheap` and `exec` in both OP and MAINE**
+without altering that first, still-valid proposal: all four complete original
+CODE segment images (1,115 and 933 bytes per executable) match both original
+and calibration native links and all 70 ordered OMF CODE FIXUPP actions per
+executable. Exactly **2,040 byte-wise source-written CODE bytes** are adopted
+per artifact, while the original **6-byte and 2-byte writable `CS:` state
+slots remain `unknown`**, not invented source. The verified source records
+include `exec`'s authentic 255-byte LIDATA. There is no authored C++ credit.
+
+Independent [OP](../../config/vendor_reserved_context.op.json) and
+[MAINE](../../config/vendor_reserved_context.maine.json) proofs and explicit
+adoptions in `config/reviewed_vendor_reserved_context.{op,maine}.json` are
+checked with:
+
+```sh
+python3 scripts/review_context_reserved.py --context op --check
+python3 scripts/review_context_reserved.py --context maine --check
+```
+
+OP's `xxas`, `signal`, `setenvp` and MAINE's `setenvp` remain separately
+unreviewed. All other uncovered ranges, runtime writable variables, vendor
+DATA/BSS and game sources remain unknown pending their own proof. Existing
+MAIN original CODE and Master decisions do not transfer to these artifacts.
 
 The subsequent root-run `ownership.py --write --verify-targets` passed with
 47,855 verified vendor bytes across all contexts and 189,074 unknown bytes.

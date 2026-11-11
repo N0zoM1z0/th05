@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**OP/MAINE large `farheap` and `exec` source-written CODE reviewed:** Four complete CL.LIB CODE segment contributions (1,115 + 933 bytes in each executable) reproduce the original and calibrated binaries including all 70 unsorted OMF FIXUPP per binary and `exec`'s 255-byte LIDATA. **4,080 actual OMF source-written vendor CODE bytes** are now owned across OP and MAINE; the four 6-byte/2-byte runtime `CS:` slots (**16 bytes**) remain unknown, with no game-authored credit. See [original source and explicit scope review](reconstruction/VENDOR_CONTEXT_REVIEW.md).
+
 **MAIN C0L CRT initialized DATA source-exact:** The full original **144-byte** Borland `_DATA` at `209D0..20A60` is now reconstructed from its actual LEDATA/LIDATA and `_BSSEND` fixup, using the original `C734h` vs calibration `C748h` CRT linker contexts. It is verified **vendor DATA, zero instruction/authored credit**. The surrounding 14- and 34-byte original gaps remain unknown. See [C0L source proof](reconstruction/CL_VENDOR_OWNERSHIP.md).
 
 **MAIN `setenvp` last large CODE gap resolved:** The complete **88-byte** original CL.LIB CODE source at `A6E4..A73C` is now verified using its genuine ten OMF FIXUPP records and original/calibration DGROUP placements (`2564` versus `2576`), including the actual FAR CALL/FAR JMP linker rewrites. `_DATA`/`_INIT_` remain unknown and no game-authored code is credited. See [vendor proof](reconstruction/CL_VENDOR_OWNERSHIP.md).

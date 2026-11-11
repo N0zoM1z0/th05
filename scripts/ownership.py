@@ -505,7 +505,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         elif name in ("op", "maine"):
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
-            pieces = overlay_vendor(view["size"], pieces, claims)
+            # Two original CL.LIB CODE members per decoded artifact contain
+            # actual source LIDATA and small runtime-write CS: state slots.
+            # Adopt only the 2040 source-written bytes; the 8-byte holes
+            # remain original unknown bytes, with no invented code.
+            from review_context_reserved import reviewed_claims as context_reserved_claims
+            context_reserved, context_reserved_sha = context_reserved_claims(
+                root, name, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, claims + context_reserved)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -540,6 +547,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
+        if name in ("op", "maine") and context_reserved_sha:
+            views[name]["reserved_vendor_review_sha256"] = context_reserved_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
