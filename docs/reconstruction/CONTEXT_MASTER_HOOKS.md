@@ -269,3 +269,32 @@ bytes remain unowned. The existing evidence/decision now covers **128
 source-backed CODE scopes / 8,770 third-party bytes** in OP/MAINE,
 without increasing accepted game-authored C++ bytes or running any unrelated
 full cold replay.
+
+## Text-command dispatcher and attribute renderer: 142 original CODE bytes
+
+The original OP `TXESC.ASM` contributes two separate complete functions:
+`TEXT_SYSTEMLINE_SHOW` (`2142..2148`, six bytes) and its true private
+`putcmd` worker (`2148..215E`, 22 bytes). MAINE's original `TXPUTSA.ASM`
+contributes the complete 114-byte `TEXT_PUTSA` at `22AA..231C`. The complete
+near bodies match both the real TASM OMF and original decoded executable,
+with the one authentic offset16 OMF fixup in the MAINE text renderer and
+empty ordered original MZ segment relocations.
+
+The original text-command `putcmd` procedure spells its near ABI `CALLMODEL`;
+its actual native source uses `PROC` with the identical code and real `RET`.
+Its private entry has no public MAP symbol; the public
+`TEXT_SYSTEMLINE_SHOW` and the following `VSYNC_START` at `2162` anchor its
+true bytes. The original text renderer retains the same Shift-JIS character
+writes and video attribute loop, and its only source difference is an explicit
+`word ptr` for the Pascal `atrb` argument. No new game C++ source or text
+assets are claimed.
+
+**The last four bytes in each reviewed text interval remain unknown:**
+`OP 215E..2162` and `MAINE 231C..2320`. These eight original bytes are zero
+in both original and calibration, but more importantly the genuine TASM OMF
+has **no CODE LEDATA and no FIXUPP there**. They lie after the real source
+`RET` and outside the complete source-written procedures. The review
+explicitly asserts their absence from both target/source claims rather than
+adopting or padding them. The existing verifier and adoption evidence now
+cover **131 source CODE scopes and 8,912 original third-party bytes** in OP
+and MAINE combined, including **142 newly confirmed bytes** here.

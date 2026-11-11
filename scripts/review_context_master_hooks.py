@@ -184,8 +184,21 @@ SCOPES = (
      {'maine': (0x243c, 64)}, 'original-identical'),
     ('PALETTE_WHITE_OUT', 'libs/master.lib/palette_white_out.asm', 'WHITEOUT.ASM',
      {'maine': (0x247c, 64)}, 'original-identical'),
+    # The original sources contain two complete private/near text PROCs and
+    # a full 114-byte TEXT_PUTSA; the following four CODE bytes in each
+    # artifact have no source LEDATA and must remain unknown.
+    ('TEXT_SYSTEMLINE_SHOW', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2142, 6)}, 'original-identical'),
+    ('putcmd', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2148, 22)}, 'reviewed-native-spelling'),
+    ('TEXT_PUTSA', 'libs/master.lib/text_putsa.asm', 'TXPUTSA.ASM',
+     {'maine': (0x22aa, 114)}, 'reviewed-native-spelling'),
 )
 ARTIFACTS = ('op', 'maine')
+# These are the actual original CODE spans after the complete source-written
+# RET instructions, not compiler-owned instructions or accepted alignment.
+TEXT_UNWRITTEN_HOLES = (('th05-op', 0x215e, 0x2162),
+                        ('th05-maine', 0x231c, 0x2320))
 # Permitted spellings between the original Master 0.23 archived PROC and
 # the real TH05 TASM source: typed pointer sizes, preserved IF LDATA arms,
 # renamed BFNT header member, and actual native near-call relaxation macros.
@@ -235,6 +248,8 @@ NATIVE_SPELLINGS = {
         '_push[bp+file_name+2]': ('ifldata','pushwordptr[bp+file_name+2]','endif'),
         'push[bp+file_name]': ('pushwordptr[bp+file_name]',),
     },
+    'putcmd': {'putcmdproccallmodel': ('putcmdproc',)},
+    'TEXT_PUTSA': {'push[bp+atrb]': ('pushwordptr[bp+atrb]',)},
 }
 
 
@@ -291,6 +306,9 @@ EXPECTED_NATIVE_FIXUPS = {
     'GRAPH_SCROLLUP': 2,
     'PALETTE_WHITE_IN': 4,
     'PALETTE_WHITE_OUT': 4,
+    'TEXT_SYSTEMLINE_SHOW': 0,
+    'putcmd': 0,
+    'TEXT_PUTSA': 1,
 }
 
 
@@ -497,6 +515,11 @@ def source_linked():
                 need(publics.get('BFNT_ENTRY_PAT') == {start + size} and
                      start == 0x272 and size == 20,
                      'actual private BFNT error helper boundary changed')
+            elif name == 'putcmd':
+                need(art == 'op' and start == 0x2148 and size == 22 and
+                     publics.get('TEXT_SYSTEMLINE_SHOW') == {0x2142} and
+                     publics.get('VSYNC_START') == {0x2162},
+                     'private original text-command dispatcher boundary changed')
             else:
                 need(publics.get(name) == {start}, 'native public entry ambiguity: '+name)
             path = root / source
@@ -654,9 +677,28 @@ def source_linked():
                 'native_CODE_sha256': sha(native), 'original_ordered_MZ': mz,
                 'ordered_OMF_actions': linked, 'authored_credit': 0,
             })
+    # Both uninitialized four-byte stretches immediately follow genuine
+    # complete RETs; prove the original native TASM LEDATA never wrote them.
+    # Comparing target zero bytes alone would not prove their source origin.
+    for art,low,high in TEXT_UNWRITTEN_HOLES:
+        croot=ROOT / f'.analysis/builds/{art.removeprefix("th05-")}-calibration-a/source'
+        module='op' if art=='th05-op' else 'mainem'
+        obj=(croot / f'obj/th05/{module}.obj').read_bytes()
+        segs,bodies,fixups,groups=real_omf(obj)
+        need(all(pos+len(buf) <= low-0x272 or pos >= high-0x272 for pos,buf in bodies) and
+             not any(low<=f['site']<high for f in fixups),
+             'native TASM unexpectedly writes original text CODE scratch slots')
+        ctx=UnitContext(ROOT, art.removeprefix('th05-'))
+        original=load_unit_target(ctx,ctx.config())[1]
+        cal=parse_mz((croot / f'bin/th05/{art.removeprefix("th05-")}.exe').read_bytes())
+        need(original.program_image[low:high] == cal.program_image[low:high] == b'\0'*(high-low),
+             'unwritten original text helper bytes are no longer zero')
+        need(all(r['end']<=low or r['start']>=high for r in results if r['artifact']==art),
+             'original text helper claim swallows unreviewed CODE hole')
     return {
         'schema_version': 1, 'kind': 'original-OP-MAINE-Master-derived-file-and-display',
         'scopes': results, 'source_written_CODE_bytes': sum(x['size'] for x in results),
+        'text_unwritten_holes': [list(x) for x in TEXT_UNWRITTEN_HOLES],
         'target_view_sha256': target_views,
         'author_archive_sha256': parent['inputs']['inner_archive']['sha256'],
         'parent_Master_sha256': digest_file(MASTER),
@@ -684,9 +726,14 @@ def validate(record):
     need(set(views) == set(ARTIFACTS) and all(
          isinstance(views[a], str) and re.fullmatch('[0-9a-f]{64}', views[a])
          for a in ARTIFACTS), 'native decoded artifact identities absent')
+    need(record.get('text_unwritten_holes') == [list(x) for x in TEXT_UNWRITTEN_HOLES],
+         'unowned original text helper CODE holes altered or claimed')
     rows = record.get('scopes', [])
     need([(r['artifact'],r['member'],r['start'],r['size']) for r in rows] == expected,
          'source-listed original complete Master function extents changed')
+    for art,low,high in TEXT_UNWRITTEN_HOLES:
+        need(all(r['artifact']!=art or r['end']<=low or r['start']>=high for r in rows),
+             'source claim intersects unknown original text command bytes')
     for r in rows:
         known = next((scope for scope in SCOPES if scope[0] == r['member']), None)
         if known is None:
