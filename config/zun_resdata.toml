@@ -1,0 +1,20 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-S"
+member_start = 0x0AE4
+member_size = 6564
+scope_start_com = 0x05DA
+scope_end_com = 0x0698
+scope_bytes = 190
+instruction_bytes = 189
+uncredited_alignment_offsets = [189]
+source = "src/zun/resident/resdata_native.asm"
+origin = "pinned-master-library-original-assembly"
+global_authored_credit = "vendor-zero"
+[publics]
+RESDATA_EXIST = 0x05DA
+RESDATA_CREATE = 0x0622
+resdata_end = 0x0698
+[negative]
+find = "MCB_PARAGRAPHS equ 3"
+replace = "MCB_PARAGRAPHS equ 4"

@@ -71,6 +71,10 @@ def main():
     # to this wrapper. The 17,745-byte inner COM remains a foreign zero hole.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_outer.py"), "--check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # The vendor resident-data family is a narrow -S code owner, not the
+    # whole unaccepted 6564-byte resident executable or authored C++.
+    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_resdata.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")

@@ -103,3 +103,12 @@ This 269-byte ZUN main remains unaccepted. Its earlier 260-byte natural source
 is unchanged and still expresses the resident installation/removal behavior.
 The next useful work is to identify a historically meaningful branch-layout
 or compiler-context difference, not to promote an equal-length producer.
+
+## Later exact foreign-provider recovery
+
+The complete source-backed Master `RESDATA_EXIST`/`RESDATA_CREATE` calls that
+this natural resident entry invokes are now independently recovered and
+compared at `05DA..0698` (190 bytes). See
+[exact memory providers](resdata_native.md). These are original 8086 vendor
+ASM, not substitutes for compiler-generated `main()`, and do not repair the
+still-mismatched 269-byte entry.
