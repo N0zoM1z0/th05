@@ -573,9 +573,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_string_runtime import reviewed_claims as string_context_claims
             string_context, string_context_sha = string_context_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Original 1512-byte GRAPH_PI_LOAD_PACK in each executable is
+            # linked from the actual TASM OMF and independent Master source.
+            from review_context_pi_pack import reviewed_claims as pi_pack_claims
+            pi_pack, pi_pack_review_sha = pi_pack_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
-                                    shifted_context + string_context)
+                                    shifted_context + string_context + pi_pack)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -625,6 +630,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["shifted_vendor_review_sha256"] = shifted_context_sha
         if name in ("op","maine") and string_context_sha:
             views[name]["string_vendor_review_sha256"] = string_context_sha
+        if name in ("op","maine") and pi_pack_review_sha:
+            views[name]["master_pi_loader_review_sha256"] = pi_pack_review_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
