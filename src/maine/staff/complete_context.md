@@ -62,3 +62,25 @@ source context now accounts for **5346 exact CODE bytes**. This turn adds
 **1117 new bytes** (126 hardware inline-ASM-in-C++ and 991 ordinary C++),
 without counting the previously accepted 4229 a second time. No full cold
 replay of unrelated artifacts and no whole-MAINE executable claim are made.
+
+## Typed score-page navigation and music cue gates (2026-11-11)
+
+The complete 991-byte `staffroll_animate()` controller now states the original
+three-way score-page scroll protocol: HOLD (`0`), FORWARD (`1`) and BACKWARD
+(`2`). This remains the original signed word local `slide_direction`, not a
+new independent object or Boolean. The code still moves the bitmap by the
+actual `STAFF_VERDICT_SCROLL_STEP`, clamps to 0 or the genuine bitmap end,
+and restores HOLD only at the original boundary. The first input-sensitive
+frame (400), bitmap snapshot frame (350), verdict/comment frame pairs
+(256/257 and 320/321), and BGM measure gates (30 and 48) are named without
+changing the physical dispatch order or timing. The fade-in/out behavior and
+cancel/confirm handling are unchanged.
+
+The native source context is shared with the two previously accepted bitmap
+transfer functions. All three impacted scopes—both hardware bitmap helpers
+and the **complete 991-byte controller**—were rebuilt by two deterministic
+real Borland/TLINK producers and matched their full original raw CODE and
+literal ordered relocations. The compiled semantic negative on the palette
+blue channel was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-staff-scroll-states-20261111/receipt.json`.
+There is no new authored-byte credit, synthetic code, or full MAINE replay.

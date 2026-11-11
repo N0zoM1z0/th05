@@ -1,3 +1,19 @@
+// Score-page navigation is a true three-state word protocol, not a bool.
+// HOLD is preserved until an input edge; forward/backward motion clamps to
+// the bitmap boundaries and resets the same state to HOLD.
+enum StaffVerdictScrollMode {
+    STAFF_SCROLL_HOLD = 0,
+    STAFF_SCROLL_FORWARD = 1,
+    STAFF_SCROLL_BACKWARD = 2,
+};
+// Original music-measure gates and deliberate input/score presentation times.
+static const unsigned int STAFF_ORB_GATHER_MEASURE = 30;
+static const unsigned int STAFF_ORB_OPEN_MEASURE = 48;
+static const int STAFF_SCORE_PAGE_INPUT_FRAME = 400;
+static const int STAFF_SCORE_SNAPSHOT_FRAME = 350;
+static const int STAFF_SCORE_FIRST_VERDICT_FRAME = 256;
+static const int STAFF_SCORE_FIRST_COMMENT_FRAME = 320;
+
 void near staffroll_animate(void)
 {
     int frame;
@@ -51,7 +67,7 @@ void near staffroll_animate(void)
         }
         staff_frame_advance();
         frame++;
-    } while(staff_bgm_measure < 30);
+    } while(staff_bgm_measure < STAFF_ORB_GATHER_MEASURE);
     staff_particles_gather();
     for(frame = 0; frame < 32; frame++) {
         staff_orb_particles_age();
@@ -61,7 +77,7 @@ void near staffroll_animate(void)
     do {
         frame = staff_orb_opening_update();
         staff_frame_advance();
-    } while((frame == 0) || (staff_bgm_measure < 48));
+    } while((frame == 0) || (staff_bgm_measure < STAFF_ORB_OPEN_MEASURE));
 
     frame = 0;
     transition_done = 0;
@@ -125,53 +141,53 @@ void near staffroll_animate(void)
 
     frame = 0;
     bitmap_offset = 0;
-    slide_direction = 0;
+    slide_direction = STAFF_SCROLL_HOLD;
     for(;;) {
         input_reset_sense_held();
-        if((frame == 256) || (frame == 257)) {
+        if((frame == STAFF_SCORE_FIRST_VERDICT_FRAME) || (frame == (STAFF_SCORE_FIRST_VERDICT_FRAME + 1))) {
             verdict_main();
-        } else if((frame == 320) || (frame == 321)) {
+        } else if((frame == STAFF_SCORE_FIRST_COMMENT_FRAME) || (frame == (STAFF_SCORE_FIRST_COMMENT_FRAME + 1))) {
             verdict_comments_put();
-        } else if(frame == 350) {
+        } else if(frame == STAFF_SCORE_SNAPSHOT_FRAME) {
             verdict_bitmap_snap(0);
         }
         staff_rain_update();
         staff_image_update_a(176, 368, 10, STAFF_IMAGE_HOLD_MEASURE);
         frame++;
-        if(frame >= 400) {
+        if(frame >= STAFF_SCORE_PAGE_INPUT_FRAME) {
             if((key_det & STAFF_INPUT_CANCEL) || (key_det & STAFF_INPUT_BOMB)) {
                 staff_frame_advance();
                 break;
             }
-            if(slide_direction == 0) {
+            if(slide_direction == STAFF_SCROLL_HOLD) {
                 if((key_det & STAFF_INPUT_SHOT) || (key_det & STAFF_INPUT_OK)) {
                     if(bitmap_offset == 0) {
-                        slide_direction = 1;
+                        slide_direction = STAFF_SCROLL_FORWARD;
                     } else {
                         staff_frame_advance();
                         break;
                     }
                 }
                 if((key_det & STAFF_INPUT_DOWN) && (bitmap_offset == 0)) {
-                    slide_direction = 1;
+                    slide_direction = STAFF_SCROLL_FORWARD;
                 }
                 if((key_det & STAFF_INPUT_UP) &&
                     (bitmap_offset == STAFF_VERDICT_SCREEN_SIZE)) {
-                    slide_direction = 2;
+                    slide_direction = STAFF_SCROLL_BACKWARD;
                 }
             }
-            if(slide_direction == 1) {
+            if(slide_direction == STAFF_SCROLL_FORWARD) {
                 bitmap_offset += STAFF_VERDICT_SCROLL_STEP;
                 if(bitmap_offset > STAFF_VERDICT_SCREEN_SIZE) {
                     bitmap_offset = STAFF_VERDICT_SCREEN_SIZE;
-                    slide_direction = 0;
+                    slide_direction = STAFF_SCROLL_HOLD;
                 }
                 verdict_bitmap_put(bitmap_offset);
-            } else if(slide_direction == 2) {
+            } else if(slide_direction == STAFF_SCROLL_BACKWARD) {
                 bitmap_offset -= STAFF_VERDICT_SCROLL_STEP;
                 if(static_cast<int>(bitmap_offset) < 0) {
                     bitmap_offset = 0;
-                    slide_direction = 0;
+                    slide_direction = STAFF_SCROLL_HOLD;
                 }
                 verdict_bitmap_put(bitmap_offset);
             }
