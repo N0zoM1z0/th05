@@ -320,3 +320,26 @@ empty helper calls or instruction fillers. They do not alter the maintained
 `initialize.cpp` or its unaccepted status. Reproducible diagnostics:
 `.analysis/gpt-web-zun-noopt-natural-flow-20261111.py` and the saved linked
 `.analysis/gpt-web-zun-natural-return-*-no-jump-opt/` trials.
+
+## Natural resident-presence and allocation nesting (2026-11-11)
+
+Three further behavior-preserving `main()` arrangements were compiled with the
+real tiny-model TCC, original C0T, accepted `cfg_init()` and the same 320-byte
+DATA and TLINK frame. Their structure differs substantially from the
+maintained linear error returns: (1) fully nesting successful creation and
+initialization before the two failure exits, (2) allocating only in the
+`!seg` branch with the already-present exit in `else`, and (3) putting the
+successful path inside a nested `if(seg)` and sharing a bottom failure return.
+**All three still emit 260-byte CODE functions**, rather than the original
+269 bytes, with 150–154 positional mismatches in the original complete extent.
+Borland therefore coalesces the common error-print tails despite these
+meaningful control-flow changes. No dummy operations, optimizer barriers or
+copied instructions are involved, and no source or original-target acceptance
+has been changed.
+
+Reproduce with `.analysis/gpt-web-zun-nested-real-branches-20261111.py` and
+its three `.analysis/gpt-web-zun-natural-return-{nested-success-or-error,
+absent-only-creation,shared-bottom-failure-return}/result.json` records.
+This narrows the next investigation to the original compiler's construction
+of distinct error-call tails; further equivalent outer `if/else` rearrangements
+are unlikely to be productive without new disassembly or compiler evidence.
