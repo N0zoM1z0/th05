@@ -18655,6 +18655,239 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "2129cfd9f49f45381116ced15b9fa6c2089b671ecb2dd2eba3c061a02e941224"
+    },
+    "main-shinki-backdrop-fills": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-shinki-backdrop-fills",
+        "artifact": "main",
+        "source": "src/main/boss/shinki/backdrop_fills.asm",
+        "types": "src/main/boss/shinki/backdrop_fills_types.inc",
+        "symbols": "probes/units/shinki_backdrop_fills_symbols.inc",
+        "bindings": "probes/units/shinki_backdrop_fills_bindings.asm",
+        "notes": "src/main/boss/shinki/backdrop_fills.md",
+        "target_start": 50826,
+        "size": 94,
+        "segment": "SHINKI_BD_FILL_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "native_review_sha256": "189a0f97d2b5324a6cc46fd0230bfcae2f8f8bc0e7757ff00d0c0ebe05e64a04",
+        "target_scope_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+        "semantic_inputs": [
+          "src/main/boss/background.hpp",
+          "src/main/player/mima_backdrop.asm"
+        ],
+        "publics": {
+          "shinki_stage_backdrop_colorfill()": 0,
+          "boss_bg_fill_col_0()": 26,
+          "shinki_bg_type_d_colorfill()": 60,
+          "shinki_backdrop_fill_end": 94
+        },
+        "negative": {
+          "find": "mov di, STAGE_SECOND_BOTTOM_LEFT",
+          "replace": "mov di, (STAGE_SECOND_BOTTOM_LEFT + 1)"
+        },
+        "uncredited": [
+          {
+            "offset": 25,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/shinki_backdrop_fills_bindings.asm",
+          "sha256": "52811cc8b3dade04ce72f74bbc2c21f24fd8acbdc597208900cd070b34c23999"
+        },
+        {
+          "path": "probes/units/shinki_backdrop_fills_symbols.inc",
+          "sha256": "a6c5ad97a8e2f7f6390e42478114308e3255a2cd9abf5342bf79639af91e4850"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/shinki/backdrop_fills.asm",
+          "sha256": "ec0fa603bf78be885b8bc276c338e48f3270817fcc0e463722460332e8f190a5"
+        },
+        {
+          "path": "src/main/boss/shinki/backdrop_fills_types.inc",
+          "sha256": "7f80ba3a30f9a0c8c5bfd1447e5d55180614f81c89b8ac6ce81b793269e276af"
+        },
+        {
+          "path": "src/main/player/mima_backdrop.asm",
+          "sha256": "b9a7a5a6c152d6b8b2c8ef59367c31b8776e3d6eb63e6b8692a6de50d6a2e2f8"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 93,
+        "dispatch-table": 0,
+        "alignment": 1,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 50826,
+            "candidate_start": 50826,
+            "size": 94,
+            "target_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+            "candidate_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHINKI_BD_FILL_TEXT",
+            "size": 94,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 94,
+                "sha256": "a4514ed17dddacfb80a25dd3b48dcb4efa9bcc74eac92f2f71204b3c479b1670"
+              }
+            ]
+          },
+          "object_sha256": "869be6a5ddc65fdf2c0d0f3b1025caecb0bf457f598bd874c41748d33e8ae923",
+          "object_normalized_sha256": "8bbf6825d7167ee1b0af7ac2a73b55f4867c6858a830ce83db5fba61f76f1aa5",
+          "bindings_sha256": "f793f4f94380e615c586de07bb02a3d1d71d885490af724ff736c13017f019a1",
+          "bindings_normalized_sha256": "7c98517ced714e015bfd8b7e1e8b8b61e59efbf854fa069edd7fecf9782f7ca8",
+          "map_sha256": "8ede9065f5b889223a0c1cdbaf43d57726415e938d11731906762944c3ec0b16",
+          "mz_sha256": "9474ba138e74801bd7fd1fd8c23584de897f6a916e1e6de2dc769590480e5733",
+          "commands_sha256": "a890123c3004271ff5a89647af8a55a76072d339808ed2c2122df30deeb73ddc"
+        },
+        {
+          "comparison": {
+            "target_start": 50826,
+            "candidate_start": 50826,
+            "size": 94,
+            "target_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+            "candidate_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "SHINKI_BD_FILL_TEXT",
+            "size": 94,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 94,
+                "sha256": "a4514ed17dddacfb80a25dd3b48dcb4efa9bcc74eac92f2f71204b3c479b1670"
+              }
+            ]
+          },
+          "object_sha256": "3958508a991f9aeca42f3a067624cca953371b6e35c49a0d4ec6854e8c01527d",
+          "object_normalized_sha256": "8bbf6825d7167ee1b0af7ac2a73b55f4867c6858a830ce83db5fba61f76f1aa5",
+          "bindings_sha256": "dcdd8600eb46cdf3f413d619edcd0a8d0a7ba48891c9b5bfe9ce4dd3fe250294",
+          "bindings_normalized_sha256": "7c98517ced714e015bfd8b7e1e8b8b61e59efbf854fa069edd7fecf9782f7ca8",
+          "map_sha256": "8ede9065f5b889223a0c1cdbaf43d57726415e938d11731906762944c3ec0b16",
+          "mz_sha256": "9474ba138e74801bd7fd1fd8c23584de897f6a916e1e6de2dc769590480e5733",
+          "commands_sha256": "a890123c3004271ff5a89647af8a55a76072d339808ed2c2122df30deeb73ddc"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 50826,
+          "candidate_start": 50826,
+          "size": 94,
+          "target_sha256": "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee",
+          "candidate_sha256": "f34d3717fb86d88e2830a9011aa7d060e5232cfdf4f9b190a4472a40401c7f8b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "SHINKI_BD_FILL_TEXT",
+          "size": 94,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 94,
+              "sha256": "bc0966f8cb86489ceaae3a322231e628f49bc35860e4d1c873640ab4cffeb376"
+            }
+          ]
+        },
+        "object_sha256": "e8ce5e9c0a1f6854928946a12723461fdd6f03c3d6bff7e3f1d0b3542a40d465",
+        "object_normalized_sha256": "e6203f7d3a03d993ac2cf6ee3f3b7c85f7ccb8ed638f6cd00efd681e4dd34b7e",
+        "bindings_sha256": "bd28dc98601fcafc787f330a0893dce33c2185d63a9d72d10fb38bc060bc90ac",
+        "bindings_normalized_sha256": "7c98517ced714e015bfd8b7e1e8b8b61e59efbf854fa069edd7fecf9782f7ca8",
+        "map_sha256": "8ede9065f5b889223a0c1cdbaf43d57726415e938d11731906762944c3ec0b16",
+        "mz_sha256": "86a8c70f4b6efbdb5c884f6eeff66172c8021aa733d16fca5e5fb0d676a534be",
+        "commands_sha256": "a890123c3004271ff5a89647af8a55a76072d339808ed2c2122df30deeb73ddc"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "102dd00e50bdfff095d01022fb660f8e1b28100c83808b4277b2b5c573fef0c0"
     }
   }
 }

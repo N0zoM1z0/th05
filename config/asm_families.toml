@@ -2326,3 +2326,34 @@ kind = "alignment"
 offset = 97
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-shinki-backdrop-fills"
+artifact = "main"
+source = "src/main/boss/shinki/backdrop_fills.asm"
+types = "src/main/boss/shinki/backdrop_fills_types.inc"
+symbols = "probes/units/shinki_backdrop_fills_symbols.inc"
+bindings = "probes/units/shinki_backdrop_fills_bindings.asm"
+notes = "src/main/boss/shinki/backdrop_fills.md"
+target_start = 50826
+size = 94
+segment = "SHINKI_BD_FILL_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "189a0f97d2b5324a6cc46fd0230bfcae2f8f8bc0e7757ff00d0c0ebe05e64a04"
+target_scope_sha256 = "212ab8218bc146ea0e34811c3ff339aac8028a7cd29d603cc7f99cc3c554aaee"
+semantic_inputs = ["src/main/boss/background.hpp", "src/main/player/mima_backdrop.asm"]
+[units.publics]
+"shinki_stage_backdrop_colorfill()" = 0
+"boss_bg_fill_col_0()" = 26
+"shinki_bg_type_d_colorfill()" = 60
+"shinki_backdrop_fill_end" = 94
+[units.negative]
+find = "mov di, STAGE_SECOND_BOTTOM_LEFT"
+replace = "mov di, (STAGE_SECOND_BOTTOM_LEFT + 1)"
+[[units.uncredited]]
+offset = 25
+size = 1
+kind = "alignment"
