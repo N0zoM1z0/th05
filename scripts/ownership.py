@@ -628,11 +628,16 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_bgm_timers import reviewed_claims as bgm_timer_claims
             bgm_timer_functions, bgm_timer_sha = bgm_timer_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Original complete SMEM, VSYNC and memory allocator CODE,
+            # including the 10/58-byte private VSYNC near procedures.
+            from review_context_memory_vsync import reviewed_claims as memory_vsync_claims
+            memory_vsync, memory_vsync_sha = memory_vsync_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
                                     shifted_context + string_context + pi_pack +
                                     large_master + super_helpers + master_hooks +
-                                    packed_blitters + bgm_timer_functions)
+                                    packed_blitters + bgm_timer_functions + memory_vsync)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -694,6 +699,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["graph_pack_noclip_review_sha256"] = packed_blitters_sha
         if name in ("op","maine") and bgm_timer_sha:
             views[name]["bgm_timer_review_sha256"] = bgm_timer_sha
+        if name in ("op","maine") and memory_vsync_sha:
+            views[name]["memory_vsync_review_sha256"] = memory_vsync_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
