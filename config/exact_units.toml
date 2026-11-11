@@ -4000,7 +4000,7 @@ origin = "compiler-generated-cxx"
 
 [[controls]]
 unit = "main-dialog-boss-transition"
-source = "src/main/dialog/boss_transition.cpp"
+source = "src/main/dialog/boss_transition_body.inl"
 find = "total_std_frames++;"
 replace = "total_std_frames += 2;"
 
@@ -5319,7 +5319,7 @@ alignment_offsets = []
 
 [[controls]]
 unit = "main-dialog-box-put-exact"
-source = "src/main/dialog/box_put.cpp"
+source = "src/main/dialog/box_put_body.inl"
 find = "_DX = 48;"
 replace = "_DX = 47;"
 
@@ -5339,7 +5339,7 @@ alignment_offsets = []
 
 [[controls]]
 unit = "main-dialog-interpage-copy-exact"
-source = "src/main/dialog/interpage_copy.cpp"
+source = "src/main/dialog/interpage_copy_body.inl"
 find = "_CX = 24;"
 replace = "_CX = 23;"
 
@@ -5359,7 +5359,7 @@ alignment_offsets = []
 
 [[controls]]
 unit = "main-dialog-face-unput-exact"
-source = "src/main/dialog/face_unput.cpp"
+source = "src/main/dialog/face_unput_body.inl"
 find = "_CX = 8;"
 replace = "_CX = 7;"
 
@@ -5502,3 +5502,26 @@ unit = "main-hiscore-load"
 source = "src/main/score/hiscore_load.cpp"
 find = "_CX = SCORE_DIGITS;"
 replace = "_CX = SCORE_DIGITS - 1;"
+
+[[units]]
+id = "main-dialog-opcode-full-context"
+source = "src/main/dialog/opcode_full_context.cpp"
+module = "th05/dlgctx.cpp"
+segment = "DIALOG_RUN_TEXT"
+wrapper_options = "-zCDIALOG_RUN_TEXT -zPmain_01"
+bindings_source = "probes/units/dialog_opcode_full_context_bindings.asm"
+function_symbol = "dialog_op(unsigned char)"
+function_end_symbol = "dialog_run()"
+target_start = 0x13b82
+size = 456
+functions = 1
+origin = "compiler-generated-cxx-hardware-register-intrinsics"
+alignment_offsets = []
+padding_bytes = [{offset = 425, value = 0}]
+code_data_ranges = [{offset = 426, size = 30, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "main-dialog-opcode-full-context"
+source = "src/main/dialog/opcode.inl"
+find = "frame_delay(1);"
+replace = "frame_delay(2);"

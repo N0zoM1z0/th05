@@ -1,3 +1,51 @@
+# Accepted 456-byte dialog command interpreter — 2026-11-11
+
+The **complete** original `dialog_op(unsigned char)` at MAIN
+`[13B82,13D4A)` now has an accepted natural C++ owner, compiled with its
+**genuine preceding functions**, not with inserted padding or assembler bytes.
+The original includes 425 instruction bytes, a natural compiler-owned zero
+at function-relative offset 425, and the whole 30-byte switch dispatch table
+at offsets 426..455. All 124 instruction boundaries and table targets remain
+covered. The original ten ordered MZ fixup sites are
+`[395,336,312,269,224,217,174,145,136,86]`.
+
+The missing alignment byte in older 455-byte producers was a **translation
+unit compiler-context** effect. `opcode_full_context.cpp` places the real
+73-byte `std_update_*` transition pair before the already recovered 88/56/74
+PC-98 graphics functions, 106-byte box wipe/fade, unmodified opcode and
+270-byte runner. These functions all live in the original order as a
+**1,123-byte true code contribution** `[139F5,13E58)` and use shared
+canonical `.inl` bodies; no accepted semantics have been reimplemented or
+copied. The `TH05_DIALOG_OPCODE_FULL_CONTEXT` first-declaration selector
+in the callback header binds the two prefixed callbacks to the same real
+compiler segment in this combined producer. Their standalone segment/ABI
+stays unchanged in the independent accepted source.
+
+**Focused acceptance:**
+`.analysis/unit-replays/gpt-web-main-dialog-opcode-456-context-a/receipt.json`
+provides two independently rebuilt Turbo C++/TLINK producers, complete
+**456/456 exact raw bytes**, original ordered relocation sequence and true
+MAP complete-function boundary to the following `dialog_run()`. The
+compiled negative changes `frame_delay(1)` to `frame_delay(2)` and fails
+raw comparison while preserving the same ten fixups. The candidate's code
+contribution itself contains 1,123 raw original bytes, but its **runner's
+relocation-record order differs** from the actual original in this joined
+translation unit; therefore only the separately evidenced complete opcode
+function is newly accepted. We do not claim the entire TU, the packed EXE,
+assets, DATA/BSS or historical compiler source identity.
+
+All four refactored neighboring accepted owners (`main-dialog-boss-transition`,
+`main-dialog-box-put-exact`, `main-dialog-interpage-copy-exact`, and
+`main-dialog-face-unput-exact`) have independent fresh, focused two-producer
+exact replays and rejected real code changes. Box and runner remain accepted
+from their own unchanged sources. The earlier 455-byte and generated-ASM
+456-byte diagnostics below are superseded failures, retained to document why
+neither apparent byte length nor ASM fixup order alone was sufficient.
+
+---
+
+## Historical unsuccessful compiler-context probes (superseded)
+
 # Complete dialog interpreter candidate
 
 The pinned MAIN interpreter `[13B82,13D4A)` is 456 bytes: 425 instruction bytes,

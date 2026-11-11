@@ -25,7 +25,14 @@ extern nearfunc_t_near overlay1;
 
 // These are all real AE1-frame functions. Preserve each first declaration's
 // near callback context and the genuine far cdecl animation interface.
+// First declaration binds these near callbacks to their actual compiler
+// segment. The complete dialog context emits them before the graphics prefix;
+// their independent owner retains the original dedicated segment.
+#if defined(TH05_DIALOG_OPCODE_FULL_CONTEXT)
+#pragma codeseg DIALOG_RUN_TEXT main_01
+#else
 #pragma codeseg STD_ACTIVATE_TEXT main_01
+#endif
 bool near std_update_done(void);
 bool near std_update_frames_then_animate_dialog_and_activate_boss_if_done(void);
 void far dialog_animate(void);

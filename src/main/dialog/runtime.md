@@ -132,3 +132,16 @@ fade owner remains accepted, while `dialog_op()` (456 bytes) still needs the
 original compiler switch-table alignment and OMF record partition.
 
 Receipt: `.analysis/unit-replays/gpt-web-main-dialog-face-unput-74-20261110/receipt.json`.
+
+## 2026-11-11: complete interpreter recovered in the full native context
+
+The 456-byte `dialog_op()` is now accepted C++ after restoring its genuine
+preceding 73-byte STD callback pair before the graphics/box prefix in one
+compiler translation unit. The compiler naturally emits the exact zero
+before the 30-byte dispatch table. Both cold native producer replays match
+456 full bytes and all original ten fixup sites in their literal order;
+the frame-delay compiled negative is rejected. Each of the four refactored
+accepted precursor functions was independently replayed and remains exact.
+The accepted runner remains independent because the combined TU's runner
+FIXUPP ordering differs. See [opcode acceptance](opcode.md); old failed
+context experiments above do not describe the current acceptance state.

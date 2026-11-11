@@ -38,6 +38,7 @@ necessarily all authored bytes where padding is present.
 | MAIN shot collisions | **399 + 210** complete C++ functions, individual exact ordered fixups | [Shot collisions](../src/main/player/shot_runtime.md) |
 | MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
 | MAIN scrolling | **204-byte** tile-ring update + **115-byte** scroll driver, independently exact | [Ring](../src/main/scroll/ring_update.md), [driver](../src/main/scroll/driver.md) |
+| MAIN dialog opcode | Full **456-byte** `dialog_op()` at `13B82..13D4A`, including natural one-byte switch alignment, full 30-byte table and literal ten-site fixup order; 455 authored bytes | [Interpreter](../src/main/dialog/opcode.md) |
 | MAIN dialog graphics | **88 + 56 + 74** contiguous bytes, three source-owned graphics functions | [Dialog runtime](../src/main/dialog/runtime.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
 | MAIN/OP/MAINE CDG | Per binary, **342-byte** load/read/free family + **14-byte** free-all; reviewed ASM with real local provider addresses | [Loader](../src/main/formats/cdg_load_family_op_maine.md), [free-all](../src/main/formats/cdg_free_all_op_maine.md) |
@@ -56,20 +57,12 @@ C++ source candidates for those functions remain inexact.
 
 ## Genuine open work
 
-**MAIN dialog opcode interpreter — 456 bytes at `13B82..13D4A`.** The
-semantic C++ body is [`opcode.inl`](../src/main/dialog/opcode.inl), with
-investigation in [opcode.md](../src/main/dialog/opcode.md). Direct Turbo C++
-compilation emits **455** bytes with the correct ten-site ordered fixup list.
-A standalone TCC-generated-ASM/TASM build produces 456 raw bytes but the
-wrong fixup record order. Compiling all seven actual neighboring dialog
-functions (including the newly recovered 218-byte graphics prefix) produces
-1,049 instead of 1,050 bytes: the compiler omits the original single zero
-before the 30-byte switch table. Earlier `-a4/-a8` probes were invalid in
-this compiler. A genuine source/segment-context solution is needed; do **not**
-insert a made-up zero, copy target bytes or sort fixups. Useful preserved
-isolated diagnostics: `.analysis/gpt-web-dialog-graphics-opcode-context-b/`,
-`.analysis/gpt-web-dialog-graphics-opcode-split-a/`, and
-`.analysis/gpt-web-dialog-fullgraphics-compilerasm-c/`.
+**Dialog opcode resolved.** The 456-byte interpreter now has full source/
+compiler evidence (new accepted row above); do not reopen the earlier missing
+switch-table zero as a live blocker. Only the complete opcode extent is
+accepted from the joined 1,123-byte context. Its following runner has its
+own accepted standalone owner because the joined TU's runner fixup order
+differs; this does not invalidate the independently accepted opcode.
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary

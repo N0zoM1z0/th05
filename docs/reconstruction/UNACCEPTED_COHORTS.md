@@ -7,11 +7,14 @@ determine which complete original extents are owned. See
 denominator is still unmeasured; unreviewed intervals are not accepted by
 proximity to an accepted neighbor.
 
-## Open complete-function codegen problem
+## Resolved compiler-context problem
 
-| Candidate | What was actually observed | Next useful investigation |
-| --- | --- | --- |
-| MAIN dialog interpreter, 456 bytes | Direct C++ gives 455 bytes with correct ordered fixups; standalone TCC-generated ASM gives 456 bytes with wrong fixup order. Real seven-function context still misses the one original switch-table alignment zero. | Restore authentic compiler/code-data alignment and OMF FIXUPP grouping without inserted target bytes. [Full notes](../../src/main/dialog/opcode.md). |
+MAIN `dialog_op()` at `13B82..13D4A` is now accepted as a **complete
+456-byte C++ function**, with its original one-byte switch-table alignment,
+30-byte table and all ten ordered relocations. The real preceding 73-byte
+STD callbacks, followed by already accepted graphics and box functions,
+restore the exact compiler context. The previous 455-byte diagnostics are
+superseded. See [interpreter acceptance](../../src/main/dialog/opcode.md).
 
 ## Different-language alternatives, not missing executable ownership
 
