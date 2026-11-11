@@ -74,6 +74,9 @@ def main():
         subprocess.run([sys.executable, str(ROOT / "scripts/review_context_remaining.py"),
                         "--context", context, "--structural-check"],
                        cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+        subprocess.run([sys.executable, str(ROOT / "scripts/review_context_string_runtime.py"),
+                        "--context", context, "--structural-check"],
+                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_maine_shifted_vendor.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # Lightweight source-current acceptance check for the separate ZUN.COM

@@ -531,8 +531,15 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                     root, view=view, verify_targets=verify_targets)
             else:
                 shifted_context, shifted_context_sha = [], None
+            # The original six Borland string class CODE contributions
+            # are source-complete; OP's previously reviewed _TEXT set is
+            # not re-adopted. MAINE's _TEXTC starts six bytes later.
+            from review_context_string_runtime import reviewed_claims as string_context_claims
+            string_context, string_context_sha = string_context_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
-                                    claims + context_reserved + remaining_context + shifted_context)
+                                    claims + context_reserved + remaining_context +
+                                    shifted_context + string_context)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -573,6 +580,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["remaining_vendor_review_sha256"] = remaining_context_sha
         if name == "maine" and shifted_context_sha:
             views[name]["shifted_vendor_review_sha256"] = shifted_context_sha
+        if name in ("op","maine") and string_context_sha:
+            views[name]["string_vendor_review_sha256"] = string_context_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
