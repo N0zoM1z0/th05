@@ -2432,3 +2432,34 @@ kind = "alignment"
 offset = 99
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-mima-bomb-primitives"
+artifact = "main"
+source = "src/main/player/mima_bomb_primitives.asm"
+types = "src/main/player/mima_bomb_primitives_types.inc"
+symbols = "probes/units/mima_bomb_primitives_symbols.inc"
+bindings = "probes/units/mima_bomb_primitives_bindings.asm"
+notes = "src/main/player/mima_bomb_primitives.md"
+target_start = 66652
+size = 172
+segment = "MIMA_BOMB_PRIM_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "af3d8fb2de0038714980b438da5feeaf041f9d349ff4edccb83ee7ceba429948"
+target_scope_sha256 = "95ef64a6369c85a60f6f1bdb24a41d358a1d6a50133e05275a4829c7e20847a7"
+semantic_inputs = ["src/main/player/mima_backdrop.asm", "src/main/tile/bb_mask_family.md"]
+[units.publics]
+"GRCG_TILE_BB_PUT_8" = 0
+"MIMA_BOMB_BARS_WHITE" = 66
+"MIMA_BOMB_BARS_ALTERNATE" = 114
+"mima_bomb_primitives_end" = 172
+[units.negative]
+find = "mov cx, TILE_HEIGHT"
+replace = "mov cx, (TILE_HEIGHT - 1)"
+[[units.uncredited]]
+offset = 171
+size = 1
+kind = "alignment"
