@@ -147,3 +147,23 @@ accepted ASM change was made. The remaining task is
 to find historically plausible *natural C++ control flow* that
 preserves both original short jumps while enabling 386 near conditionals,
 without fake instructions or optimizer barriers.
+
+## Six additional real optimized-flow C++ first-producer experiments
+
+Six further **behavior-preserving** `-O` source variants were compiled in the
+real nine-function Yumeko MAIN03 context: separate bounds checks, inverted
+positive bounds gate, explicit collision `else` continuation, equivalent
+collision-to-decay goto, direct removal on an out-of-bounds path and a
+post-collision label. They are not accepted. Borland canonicalized all six to
+the same **2,135-byte** combined CODE shape with correct 386 near `JL/JGE`
+opcodes at sword-updater offsets `+5E/+72`, but still removed the original
+two unrelated short jumps. Original target is **2,139 bytes**; original
+relocation sites after the updater are displaced four bytes in all six
+variants, so even preserving the opcode family cannot grant source credit.
+
+The executable, source-cleaning one-producer diagnostic is retained in
+`.analysis/gpt-web-yumeko-optim-flow-boss-20261111.py`, with actual native
+builds under `.analysis/gpt-web-yumeko-optim-flow-*-first/` and the summary
+`.analysis/gpt-web-yumeko-optim-flow-results-20261111.json`. All trial source
+files were removed. No code or acceptance metadata was modified for the
+unresolved natural updater; the previously exact reviewed ASM owner remains.

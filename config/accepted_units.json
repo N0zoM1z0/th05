@@ -2,30 +2,50 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "618c9e6bbe107f0ce2e8133907ad0be859d5b151d173a3bc167d627c53ec40b0",
+  "replay_receipt_sha256": "0170e6b73bf77696fce880bc11c6361f035daf7eb429afa00b96f75c2332c150",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 109483,
-    "candidate_start": 109483,
-    "size": 271,
-    "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-    "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+    "target_start": 98267,
+    "candidate_start": 98267,
+    "size": 1018,
+    "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+    "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
     "raw_exact": false,
     "target_fixups": [
-      253,
-      222,
-      173,
-      73
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
     ],
     "candidate_fixups": [
-      253,
-      222,
-      173,
-      73
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 98267,
+      "size": 1018,
+      "function_symbol": "mai_yuki_update()",
+      "contribution_start": 97328,
+      "contribution_size": 1957,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -35462,8 +35482,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "441818d572d4d6783f6b2e93f2b7150e9c6e194c7bd92399ff346d91ab1d5256",
-            "dependency_timestamp_normalized_sha256": "f5578f68bda6fbbc17e9775897529497b2950066ca7f1ffbcacf3d7fb78db07d",
+            "sha256": "16e43623df344799a0b47f012486e562566dc5bd0760897ab456990e45f72feb",
+            "dependency_timestamp_normalized_sha256": "3661e45a8c0b3e3decd1b865211a3d4fc3fa1ecc7fd15eaf62132e9bb4fab9e7",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35494,12 +35514,13 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/stage/setup.hpp",
               "src/main/hud/resident.hpp",
-              "src/main/bullet/template.hpp"
+              "src/main/bullet/template.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp"
             ]
           },
           {
-            "sha256": "828fd8b49ba97bc9240fa0d9706b205b678cca960c1d480641aea3127186eb59",
-            "dependency_timestamp_normalized_sha256": "f5578f68bda6fbbc17e9775897529497b2950066ca7f1ffbcacf3d7fb78db07d",
+            "sha256": "7a1528282368749a5e29bb8d3c7325f6766f0c9910a42a27d7f9ae03df0026fe",
+            "dependency_timestamp_normalized_sha256": "3661e45a8c0b3e3decd1b865211a3d4fc3fa1ecc7fd15eaf62132e9bb4fab9e7",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35530,7 +35551,8 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/stage/setup.hpp",
               "src/main/hud/resident.hpp",
-              "src/main/bullet/template.hpp"
+              "src/main/bullet/template.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp"
             ]
           }
         ],
@@ -35580,6 +35602,10 @@
             "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
           },
           {
+            "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+            "sha256": "4ea2704ba8dfec8d304cb5d7d4677281ce8f3952b3561a7e8e2bfe2856610f7f"
+          },
+          {
             "path": "src/main/boss/yumeko/patterns.hpp",
             "sha256": "2d7e81b7796d3b6720633d0263774fb69b548aaa9b247a2688151d5279d64744"
           },
@@ -35589,7 +35615,7 @@
           },
           {
             "path": "src/main/boss/yumeko/update.cpp",
-            "sha256": "d6f93c96ff006f6d26bdaa018cf3756c2b05ead0e6f03d1049b486bd9c010a09"
+            "sha256": "1163f2c4365ac9f7010901e8eff27bfc454c3ec13579f3270b1ff09dba742205"
           },
           {
             "path": "src/main/boss/yumeko/update.hpp",
@@ -35644,6 +35670,10 @@
           "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
+          "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+          "sha256": "4ea2704ba8dfec8d304cb5d7d4677281ce8f3952b3561a7e8e2bfe2856610f7f"
+        },
+        {
           "path": "src/main/boss/yumeko/patterns.hpp",
           "sha256": "2d7e81b7796d3b6720633d0263774fb69b548aaa9b247a2688151d5279d64744"
         },
@@ -35653,7 +35683,7 @@
         },
         {
           "path": "src/main/boss/yumeko/update.cpp",
-          "sha256": "d6f93c96ff006f6d26bdaa018cf3756c2b05ead0e6f03d1049b486bd9c010a09"
+          "sha256": "1163f2c4365ac9f7010901e8eff27bfc454c3ec13579f3270b1ff09dba742205"
         },
         {
           "path": "src/main/boss/yumeko/update.hpp",
@@ -35694,7 +35724,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "c9be590de63bc5256acea41f4530618be0272124b20147bcef0f807e95c5a47d",
+      "replay_receipt_sha256": "e8f7ef96091f89fd75606955ac0e1426874438381afcca6b71fb1eca11235814",
       "compiled_negative_control": {
         "target_start": 128733,
         "candidate_start": 128733,
@@ -35760,8 +35790,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "70af492e7c728774cb4640b014ba8b0a9332837a3026fac98abe280f1e4c2e9d",
-          "dependency_timestamp_normalized_sha256": "939d7dd041c357391924b6af9e24e08117c95470e2cd453475c4c8b38a8a8aba",
+          "sha256": "8459a9c8a852f4205f312a8b29d534ed669fa8f4db2429409ad3da677f152e8d",
+          "dependency_timestamp_normalized_sha256": "2452c2d79c72280be40da21f8aeae22496ede512875701f27b5750d502593ce1",
           "module_name": "th05/yumeupd.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -35792,7 +35822,8 @@
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/stage/setup.hpp",
             "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp"
+            "src/main/bullet/template.hpp",
+            "src/main/boss/yumeko/final_ring_scratch.hpp"
           ]
         },
         "compiler_arguments": [
@@ -35809,10 +35840,7 @@
           "th05/yumeupd.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-yumeko-update"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-yumeko-sweep",
@@ -67832,7 +67860,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "f7b946c84c033862ec1817c279880814e64238a89951cc860bfd017f73d6bbde",
+            "sha256": "34a13d933c6170051608caf631324ddd7c1bbce383b1bc5935d9356f9c40222b",
             "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
@@ -67870,7 +67898,7 @@
             ]
           },
           {
-            "sha256": "a7285e0ceab05c870378b3633b0408bc1910508825cda85ed4bd11df28adb591",
+            "sha256": "c686d8d41f171293ab92a0d3b457019cde42a0ef08d4adcfdff6a191d9fa879d",
             "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
@@ -67967,7 +67995,7 @@
           },
           {
             "path": "src/main/boss/mai_yuki/update_context.cpp",
-            "sha256": "1c1983f72ecbe7cab73fb49f4dc9af6b76ebbd28fe05cb280189945fde9087a4"
+            "sha256": "ff489a2dbe73bf15f5fdbc40499ffa03fbe7c07e69409c3fe46c17bf5538be96"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -68043,7 +68071,7 @@
         },
         {
           "path": "src/main/boss/mai_yuki/update_context.cpp",
-          "sha256": "1c1983f72ecbe7cab73fb49f4dc9af6b76ebbd28fe05cb280189945fde9087a4"
+          "sha256": "ff489a2dbe73bf15f5fdbc40499ffa03fbe7c07e69409c3fe46c17bf5538be96"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -68092,7 +68120,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "4c518b9ec17b7b26bc6c9355edf2e557b50bc466c486d6c33a2fe4bab0bf4d4f",
+      "replay_receipt_sha256": "0170e6b73bf77696fce880bc11c6361f035daf7eb429afa00b96f75c2332c150",
       "compiled_negative_control": {
         "target_start": 98267,
         "candidate_start": 98267,
@@ -68189,7 +68217,7 @@
           }
         },
         "omf": {
-          "sha256": "d1c85cd2e3e6da0d6ed76a4d7200b1d7fc7d0f25554a674788c2c04ab8439330",
+          "sha256": "c355ace1fd64970958246e3532d7f3d7bc5ce228d278f7ad1f0f647e626e3cdf",
           "dependency_timestamp_normalized_sha256": "cb714ac14557c16c97d9fa4c998ef2c2cd17c85fcb49256a25fcf3ff4b158317",
           "module_name": "th05/my_ctx.cpp",
           "translator_comments": [
@@ -68240,10 +68268,7 @@
           "th05/my_ctx.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-mai-yuki-update-context"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-map-free",

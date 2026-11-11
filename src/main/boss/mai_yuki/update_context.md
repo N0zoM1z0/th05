@@ -53,3 +53,25 @@ New credit is one complete function and 1,017 authored CODE bytes:
 headers and controls stay unchanged; installed execution probes and accepted
 objects were reused after dependency checks. No DATA, ASM, packed-container
 or whole-game equality is claimed.
+
+## Exact defeat-identity protocol in both maintained controller sources
+
+The real `mai_yuki_hittest_shots()` returns 0/1/2 for no defeat / Mai defeated /
+Yuki defeated, as independently corroborated by the accepted `hittest.cpp`.
+The complete Boss controller stores a nonzero result **minus one** in
+`boss2.phase_state.patterns_seen` for the explosion and survivor-dialogue
+stages. Thus the value zero means Mai was defeated and Yuki survives; value
+one means Yuki was defeated and Mai survives. Pattern-cycle exhaustion
+selects Mai's defeat with hit code one. Four later checks now use the
+explicit `MY_DEFEATED_MAI` constant, making the original scratch-value
+conversion visible instead of pretending it is still a normal pattern count.
+
+Both `update.cpp` and the actually accepted, adjacent-final-pattern
+`update_context.cpp` now use the same source-level hit/defeat constants; these
+constants are private to the two controller bodies and do not add dependencies
+to the shared public Boss header. The **1,018-byte** complete accepted updater
+was recompiled by two independent targeted Borland producers with every
+original raw byte, switch table, alignment byte, and ordered relocation equal.
+Its compiled HP-gate semantic negative was rejected. Actual receipt:
+`.analysis/unit-replays/gpt-web-mai-yuki-defeat-codes-real-context-20261111/receipt.json`.
+There is no new authored-byte credit or change in the hit helper's ABI.

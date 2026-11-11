@@ -76,3 +76,21 @@ as expected. The receipt is retained under
 updated accepted-unit ledger records the new source identity.
 This is a source-readability improvement to an **already accepted**
 large Boss function, not an increase to newly owned author bytes.
+
+## Final-ring scratch protocol, checked against the complete controller
+
+The phase-10 ring controller now uses the named, strictly laid-out
+`YumekoFinalRingScratch` view of the actual sixteen `boss_statebyte` bytes.
+Offsets 14 and 15 respectively hold the advancing blue-bullet angle and the
+number of emitted alternating-turn rings. The first fourteen bytes remain
+unmodified and are not borrowed from any prior phase. Compile-time size and
+offset assertions guard the real source layout; no second gameplay allocation,
+recast global object, invented reset or emitted CODE filler is introduced.
+
+The complete `main-yumeko-update` unit was twice recompiled against the
+original Borland/TLINK context and remained **884/884 exact**, including its
+22-byte compiler switch table, one checked alignment zero, the original ordered
+segment relocations, and the compiled turn-count negative. The actual receipt
+is `.analysis/unit-replays/gpt-web-yumeko-final-scratch-20261111/receipt.json`.
+The separate 283-byte `swords_update()` natural C++ alternative remains an
+unaccepted challenge; its independently reviewed ASM owner is unchanged.

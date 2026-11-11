@@ -5,6 +5,16 @@
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/remaining_patterns.inl"
 
+// The shared hit selector's return values distinguish which Boss was hit.
+// Its nonzero result is stored minus one in boss2.phase_state.patterns_seen
+// during the survivor dialogue, so the *stored* loss codes are 0/1.
+static const unsigned char MY_HIT_NEITHER = 0;
+static const unsigned char MY_HIT_MAI = 1;
+static const unsigned char MY_HIT_YUKI = 2;
+static const unsigned char MY_DEFEATED_MAI = MY_HIT_MAI - 1;
+static const unsigned char MY_DEFEATED_YUKI = MY_HIT_YUKI - 1;
+
+
 // All canonical object types precede ordinary compiler-table word alignment.
 #pragma option -a2
 
@@ -91,7 +101,8 @@ void pascal far mai_yuki_update(void)
                     yuki_pattern_current = YUKI_PATTERNS_FINAL[boss.phase_state.patterns_seen & 3];
                 } else {
                     boss.phase_state.patterns_seen = 0;
-                    state_result = 1;
+                    // Pattern exhaustion selects Mai's defeat (Yuki survives).
+                    state_result = MY_HIT_MAI;
                     goto start_small_explosion;
                 }
             }
@@ -112,7 +123,7 @@ void pascal far mai_yuki_update(void)
             boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_SECOND;
         }
         state_result = mai_yuki_hittest_shots();
-        if(state_result == 0) {
+        if(state_result == MY_HIT_NEITHER) {
             break;
         }
         boss.phase_state.defeat_bonus = true;
@@ -127,7 +138,7 @@ void pascal far mai_yuki_update(void)
 
     case MY_PHASE_EXPLODE_SMALL:
         if(boss.phase_frame == 16) {
-            if(boss2.phase_state.patterns_seen == 0) {
+            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_small(ET_VERTICAL);
             } else {
                 boss2_explode_small(4);
@@ -135,7 +146,7 @@ void pascal far mai_yuki_update(void)
             break;
         }
         if(boss.phase_frame == 32) {
-            if(boss2.phase_state.patterns_seen == 0) {
+            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_big_circle();
                 boss.sprite = 4;
                 boss2.sprite = PAT_B4_STILL;
@@ -160,7 +171,7 @@ void pascal far mai_yuki_update(void)
         bg_render_bombing_func = tiles_render_all;
         slowdown_factor = 2;
         if((boss.phase_frame % 8) == 0) {
-            if(boss2.phase_state.patterns_seen == 0) {
+            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss.sprite++;
             } else {
                 boss2.sprite++;
@@ -176,7 +187,7 @@ void pascal far mai_yuki_update(void)
         PaletteTone = 60;
         palette_changed = true;
         if(boss.phase_frame == 1) {
-            if(boss2.phase_state.patterns_seen == 0) {
+            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 dialog_load(MY_DIALOG_YUKI);
                 boss_bgm_title = MY_BGM_TITLE_YUKI;
                 boss.pos.cur = boss2.pos.cur;

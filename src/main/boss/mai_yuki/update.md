@@ -147,3 +147,24 @@ The two combined-HP gates (5500 and 2250) skip to pattern cycles
 keys and transitions rather than introducing a new state machine; the
 complete source owner remains `update_context.cpp`, including its genuine
 preceding pattern definitions.
+
+## Typed survivor identity and the shared hit result
+
+The shared Boss updater's normal hit selector returns `0` for neither,
+`1` for Mai and `2` for Yuki. The same local `state_result` also carries
+signed flight-delay calculations in mutually exclusive states, so it is not
+mistakenly widened or replaced with a global enum-typed storage object.
+Only the *selection* values are named (`MY_HIT_NEITHER`, `MY_HIT_MAI`,
+`MY_HIT_YUKI`). On entry to the small explosion state, the original
+`boss2.phase_state.patterns_seen = state_result - 1` converts the hit
+identity into the survivor-dialogue latch: `MY_DEFEATED_MAI == 0` means
+Yuki survives, while `MY_DEFEATED_YUKI == 1` means Mai survives. Exhausting
+the combat pattern cycle selects Mai's defeat via the original nonzero
+`state_result = 1`. All four actual checks of this shared latch now use a
+named defeat code rather than pretending it is a normal pattern counter.
+
+The full `main-mai-yuki-update-context` 1,018-byte controller and its original
+ordered relocations still pass two independent focused Borland producers;
+the existing compiled semantic negative is rejected. The receipt is saved at
+`.analysis/unit-replays/gpt-web-mai-yuki-defeat-codes-real-context-20261111/receipt.json`.
+There is no change in already authored byte credit or input/gameplay behavior.

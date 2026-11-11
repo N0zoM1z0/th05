@@ -2,13 +2,14 @@
 // behavior. ReC98 b6ba5b0a disassembly is evidence, not an instruction template.
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/yumeko/update.hpp"
+#include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 // Applied after canonical record declarations. The original semantic switch
 // table has a genuine word boundary relative to this odd-address contribution.
 #pragma option -a2
 
-#define yumeko_final_angle boss_statebyte[14]
-#define yumeko_final_rings boss_statebyte[15]
+#define yumeko_final_angle yumeko_final_scratch.advancing_angle
+#define yumeko_final_rings yumeko_final_scratch.completed_rings
 static const int YUMEKO_HP_TOTAL = 8300;
 
 enum YumekoPhase {
