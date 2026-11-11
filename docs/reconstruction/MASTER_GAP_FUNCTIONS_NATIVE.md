@@ -78,3 +78,40 @@ The enlarged evidence/decision now cover 20 source-written functions and
 **1,281 bytes overall**, 202 more than the previous 17-function review.
 All 202 additional bytes remain Master third-party CODE with zero authored
 C++ or game-authored ASM credit.
+
+## Seven more complete original Master library procedures (235 CODE bytes)
+
+Seven further whole original-source functions are now recognized in MAIN:
+
+| Original function | Original decoded CODE | Bytes | Genuine OMF fixups |
+| --- | --- | ---: | ---: |
+| `FILE_ROPEN` | `0DF2..0E2E` | 60 | 8 |
+| `GET_MACHINE` | `1D5E..1D7A` | 28 | 0 |
+| `JS_END` | `1FA6..1FAC` | 6 | 0 |
+| `PFCLOSE` | `2262..227C` | 26 | 0 |
+| `PFGETX1` | `231E..232B` | 13 | 0 |
+| `PALETTE_ENTRY_RGB` | `23F0..2432` | 66 | 3 |
+| `MEM_UNASSIGN` | `29C6..29EA` | 36 | 4 |
+
+These are source-backed complete procedures with unique original addresses.
+The genuine Master 0.23 author archive identifies each original body. The
+native TASM source differs only through separately checked GAME=5 port forms:
+explicit WORD/far filename parameters for DOS calls, original `NOPCALL`
+linker-relaxation spelling, near-branch expansion and FM-R constant naming,
+plus two GAME=1-only heap checks guarded with `IF GAME EQ 1`. The `JS_END`
+helper is also complete despite its small size.
+
+Crucially, TH05's native **`PFGETX1` omits the original Master `ROR AL,4`**
+after the key XOR. This is a behavior-affecting archive-decoder change, not an
+equivalent source spelling. The original author instruction is recorded and
+must occur in the exact documented position for the source derivation to be
+accepted. Only this explicitly observed removal is permitted; the rest of
+the native procedure must match the original author block statement by
+statement. The actual raw CODE bytes and ordered original relocations still
+match the pinned Japanese MAIN target without adjustment.
+
+The same source and native OMF checks now cover **27 complete functions,
+1,516 third-party CODE bytes total**. The two adjacent unowned SUPER helper
+boundary bytes (`2121`, `41B1`) remain unknown. These new 235 bytes earn
+zero game-authored C++ or ASM credit, and this remains a bounded original
+load-module review, not a claim of full executable exactness.

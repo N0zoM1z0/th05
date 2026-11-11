@@ -28,9 +28,15 @@ MEMBERS = (
     ('RTC_INT',           0x04f8, 68),
     ('BFNT_PALETTE_SET',  0x0590, 64),
     ('GAIJI_PUTCA',      0x1d7a, 68),
+    ('FILE_ROPEN',       0x0df2, 60),
+    ('GET_MACHINE',      0x1d5e, 28),
     ('GRAPH_CLEAR',      0x1e62, 36),
+    ('JS_END',           0x1fa6, 6),
     ('LARGEPUT_DISP8',    0x20dc, 69),
     ('make_linework',     0x2122, 54),
+    ('PFCLOSE',          0x2262, 26),
+    ('PFGETX1',          0x231e, 13),
+    ('PALETTE_ENTRY_RGB', 0x23f0, 66),
     ('IRAND',            0x23c6, 42),
     ('TEXT_FILLCA',      0x2508, 56),
     ('TEXT_PUTSA',       0x2598, 114),
@@ -40,6 +46,7 @@ MEMBERS = (
     ('VSYNC_WAIT',       0x2704, 38),
     ('PALETTE_WHITE_IN', 0x272a, 64),
     ('PALETTE_WHITE_OUT',0x276a, 64),
+    ('MEM_UNASSIGN',      0x29c6, 36),
     ('EMS_EXIST',        0x4000, 34),
     ('EMS_SETNAME',      0x4052, 26),
     ('EMS_SPACE',        0x40ce, 24),
@@ -52,12 +59,23 @@ PRIVATE_AUTHOR = {
     'LARGEPUT_DISP8': ('LARGEPUT.ASM', 'DISP8'),
     'SUPERPT8_DISP': ('SUPERPT8.ASM', 'DISP'),
     'make_linework': ('MAKE_LIN.ASM', 'make_linework'),
+    'FILE_ROPEN': ('FILROPEN.ASM', 'FILE_ROPEN'),
+    'GET_MACHINE': ('GETMACHI.ASM', 'GET_MACHINE'),
+    'JS_END': ('JSEND.ASM', 'JS_END'),
+    'PFCLOSE': ('PFCLOSE.ASM', 'PFCLOSE'),
+    'PFGETX1': ('PFGETC.ASM', 'PFGETX1'),
+    'PALETTE_ENTRY_RGB': ('RGBLOAD.ASM', 'PALETTE_ENTRY_RGB'),
+    'MEM_UNASSIGN': ('MEMUNASI.ASM', 'MEM_UNASSIGN'),
 }
 # The two real single-byte *non-procedure* positions stay unknown. The first
 # differs between the calibration EVEN NOP and original zero; the second is
 # an original alignment zero at the end of the SUPERPT8 helper.
 UNOWNED_BOUNDARIES = (0x2121, 0x41b1)
-PRIVATE_OMF_ACTION_COUNTS = {'LARGEPUT_DISP8': 2, 'make_linework': 0, 'SUPERPT8_DISP': 0}
+PRIVATE_OMF_ACTION_COUNTS = {
+    'LARGEPUT_DISP8': 2, 'make_linework': 0, 'SUPERPT8_DISP': 0,
+    'FILE_ROPEN': 8, 'GET_MACHINE': 0, 'JS_END': 0, 'PFCLOSE': 0,
+    'PFGETX1': 0, 'PALETTE_ENTRY_RGB': 3, 'MEM_UNASSIGN': 4,
+}
 
 
 def private_source_author(old, member):
@@ -91,6 +109,55 @@ def private_source_author(old, member):
                     .replace('mov[bx+dlx],ax','mov[bx+make_lin_dlx],ax')
                     .replace('mov[bx+s],8000h','movwordptr[bx+make_lin_s],8000h')
                 for line in text]
+    if member in ('FILE_ROPEN','PALETTE_ENTRY_RGB'):
+        # Explicit WORD argument types and the original conditional far
+        # filename SEG push; they preserve the genuine DOS Pascal ABI.
+        filename = 'filename' if member == 'FILE_ROPEN' else 'file_name'
+        prefix = 'ss:' if member == 'PALETTE_ENTRY_RGB' else ''
+        old_far = '_push'+prefix+'[bx+'+filename+'+2]' if prefix else '_push[bp+filename+2]'
+        old_near = 'push'+prefix+'[bx+'+filename+']' if prefix else 'push[bp+filename]'
+        new_far = 'pushwordptr'+prefix+'[bx+'+filename+'+2]' if prefix else 'pushwordptr[bp+filename+2]'
+        new_near = 'pushwordptr'+prefix+'[bx+'+filename+']' if prefix else 'pushwordptr[bp+filename]'
+        need(text.count(old_far)==text.count(old_near)==1,
+             'original far file argument stack operands changed: '+member)
+        return [word for line in text for word in
+                (('ifldata',new_far,'endif') if line==old_far else
+                 (new_near,) if line==old_near else (line,))]
+    if member == 'GET_MACHINE':
+        need(text.count('jeget_machine_98')==text.count('movax,fmr')==1,
+             'original near machine detector branch or type changed')
+        return [word for line in text for word in
+                (('jnzzun1','nop','nop','jmpget_machine_98','zun1:') if line=='jeget_machine_98' else
+                 ('movax,fmr_machine',) if line=='movax,fmr' else (line,))]
+    if member == 'JS_END':
+        # The normalizer already treats TASM NOPCALL and CALL as one true
+        # near-call; the real OMF/raw target still checks the relaxation NOP.
+        need(text.count('calldos_keyclear')==1,'original JS_END call missing')
+        return text
+    if member == 'PFCLOSE':
+        need(text.count('push[bp+pf]')==1,'original packed file pointer push missing')
+        return [line.replace('push[bp+pf]','pushwordptr[bp+pf]') for line in text]
+    if member == 'PFGETX1':
+        # TH05 intentionally omits the original post-XOR nibble rotation.
+        # This is a real *semantic* change, not whitespace or name aliasing.
+        need(text.count('roral,4')==1 and text.count('xoral,es:[pf_key]')==1 and
+             text.index('roral,4')==text.index('xoral,es:[pf_key]')+1,
+             'original archive key nibble rotation context changed')
+        return [line for line in text if line!='roral,4']
+    if member == 'MEM_UNASSIGN':
+        # The native GAME=5 port surrounds exactly the two GAME=1-only heap
+        # bounds checks with conditional assembler guards. The bytes linked
+        # for GAME=5 remain source-written and independently compared.
+        need(text.count('jneshortfailure')==2 and
+             text.count('movax,mem_outseg')==1 and text.count('cmpmem_endmark,ax')==1,
+             'original Master heap bounds checks differ')
+        expanded=[]
+        for line in text:
+            if line in ('movax,mem_outseg','cmpmem_endmark,ax'):
+                expanded.append('ifgameeq1')
+            expanded.append(line)
+            if line=='jneshortfailure':expanded.append('endif')
+        return expanded
     raise ValueError('not an original private Master source procedure')
 
 
