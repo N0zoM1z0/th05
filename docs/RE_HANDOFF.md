@@ -24,8 +24,8 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **44,118 decoded bytes**:
-MAIN 7,749; OP 13,747; MAINE 14,063; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **43,039 decoded bytes**:
+MAIN 6,670; OP 13,747; MAINE 14,063; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
 
 ## Most useful next reconstruction work
@@ -74,7 +74,7 @@ before reviving an old experiment.
 | Family | Accepted source status and useful evidence |
 | --- | --- |
 | Large game C++ controllers | MAIN Mai/Yuki **1,018 B**, Shinki **959 B**, Alice **939 B**, Extra Alice **1,060 B**, Yumeko **884 B**; MAINE cutscene VM **1,555 B** and major Staff controller/update/render functions. Their existing acceptance receipts remain current; recent Yumeko and Shinki phase-name edits were twice recompiled exactly. [Boss overview](../src/main/boss/yumeko/update.md), [Shinki](../src/main/boss/shinki/update_context.md), [MAINE](../src/maine/cutscene/cutscene.md). |
-| MAIN reviewed ASM and Master | Separate original-assembly owners for swords, graphics, BGM, memory and file functions. The [circle helper review](reconstruction/MASTER_CIRCLE_HELPERS_NATIVE.md) now assigns 223 more full source-written Master CODE bytes, leaving the differing alignment byte at `121B` unknown. The earlier [PFINT21 review](reconstruction/MASTER_PF_NATIVE.md) adds **805 real source-written CODE bytes**; the 2-byte dispatch word and one-byte alignment stay unknown. [Master geometry](reconstruction/MASTER_GRCG_NATIVE.md), [SUPER](reconstruction/MASTER_SUPER_NATIVE.md), [file/memory](reconstruction/MASTER_FILE_MEMORY_NATIVE.md). |
+| MAIN reviewed ASM and Master | Separate original-assembly owners for swords, graphics, BGM, memory and file functions. The [circle helper review](reconstruction/MASTER_CIRCLE_HELPERS_NATIVE.md) assigns 223 full source-written Master CODE bytes, leaving the differing alignment byte at `121B` unknown. A [further Master source review](reconstruction/MASTER_GAP_FUNCTIONS_NATIVE.md) resolves 17 complete functions / 1,079 original vendor CODE bytes. The earlier [PFINT21 review](reconstruction/MASTER_PF_NATIVE.md) adds **805 real source-written CODE bytes**; the 2-byte dispatch word and one-byte alignment stay unknown. [Master geometry](reconstruction/MASTER_GRCG_NATIVE.md), [SUPER](reconstruction/MASTER_SUPER_NATIVE.md), [file/memory](reconstruction/MASTER_FILE_MEMORY_NATIVE.md). |
 | OP/MAINE vendor | Original CL.LIB `xxas`/`signal`/`setenvp` and related members are **already recovered as vendor CODE**; not open game-C++ tasks. [Vendor context](reconstruction/VENDOR_CONTEXT_REVIEW.md), [string runtime](reconstruction/CONTEXT_STRING_RUNTIME.md), [Master functions](reconstruction/CONTEXT_MASTER_LARGE.md), [large PI decoder](reconstruction/CONTEXT_PI_PACK.md), [render helpers](reconstruction/CONTEXT_SUPER_HELPERS.md). |
 | Embedded data | MAIN **2,752 B** original bitmap/preshift tables and ZUN **8,192 B** font bitmap are resources, not CPU instructions or authored C++. [Sprites](reconstruction/MAIN_SPRITE_BITMAPS.md), [font](reconstruction/ZUN_FONT_RESOURCE.md). |
 | ZUN packed children | Independent accepted/reviewed scopes for `-O`, `-I`, `-G` and `-M`, but **no full packed-file exactness** or accepted resident `-S` `main()`. [Launcher](../src/zun/launcher/README.md) and [resident](../src/zun/resident/initialize.md). |

@@ -71,6 +71,8 @@ def main():
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_circle_helpers.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_gap_functions.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_io.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_sprites.py"),

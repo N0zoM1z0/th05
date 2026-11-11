@@ -542,6 +542,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_master_circle_helpers import reviewed_claims as circle_helpers_claims
             circle_helpers, circle_helpers_sha = circle_helpers_claims(
                 root, view=view, verify_targets=verify_targets)
+            # Additional complete Master routines are proven against the
+            # original author archive and actual source-linked OMF/MZ bytes.
+            from review_master_gap_functions import reviewed_claims as gap_master_claims
+            gap_master, gap_master_sha = gap_master_claims(
+                root, view=view, verify_targets=verify_targets)
             # Complete original Master file/DOS/heap procedures are source-
             # exact under the genuine _TEXT/DGROUP and ordered OMF fixups.
             from review_master_io import reviewed_claims as master_io_claims
@@ -551,7 +556,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                                     claims + master_claims + reserved_claims + env_claims +
                                     c0_data_claims + shifted_main + super_claims +
                                     super_helper_ranges + bgm_claims + grcg_claims +
-                                    circle_helpers + io_claims + machine_master + pf_claims)
+                                    circle_helpers + gap_master + io_claims + machine_master + pf_claims)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -679,6 +684,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_grcg_review_sha256"] = grcg_review_sha
         if name == "main" and circle_helpers_sha:
             views[name]["master_circle_helpers_review_sha256"] = circle_helpers_sha
+        if name == "main" and gap_master_sha:
+            views[name]["master_gap_functions_review_sha256"] = gap_master_sha
         if name == "main" and io_review_sha:
             views[name]["master_io_review_sha256"] = io_review_sha
         if name == "main" and machine_master_sha:
