@@ -1,3 +1,28 @@
+// The original six starting-life settings and three starting-bomb settings
+// alter the final score *and* its allowed cap independently. Keep the actual
+// saved-game integers as the switch keys, not a new serialized enum field.
+enum VerdictStartingLives {
+    VERDICT_START_LIVES_ONE = 1,
+    VERDICT_START_LIVES_TWO = 2,
+    VERDICT_START_LIVES_THREE = 3,
+    VERDICT_START_LIVES_FOUR = 4,
+    VERDICT_START_LIVES_FIVE = 5,
+    VERDICT_START_LIVES_SIX = 6,
+};
+enum VerdictStartingBombs {
+    VERDICT_START_BOMBS_ZERO = 0,
+    VERDICT_START_BOMBS_ONE = 1,
+    VERDICT_START_BOMBS_TWO = 2,
+};
+// These are the original capped per-use penalties, not a change in scoring.
+static const int VERDICT_MISS_PENALTY_LIMIT = 10;
+static const int VERDICT_BOMB_PENALTY_LIMIT = 15;
+static const uint32_t VERDICT_MISS_PENALTY_PER_USE = 30000UL;
+static const uint32_t VERDICT_BOMB_PENALTY_PER_USE = 15000UL;
+static const int VERDICT_COMMENT_RECORD_BYTES = 30;
+static const int VERDICT_SECOND_COMMENT_BASE = 780;
+static const int VERDICT_COMMENT_DISPLAY_BYTES = 28;
+
 void near verdict_main(void)
 {
     uint32_t max_skill;
@@ -108,31 +133,31 @@ void near verdict_main(void)
         break;
     }
     switch(resident->credit_lives) {
-    case 1: skill += 50000UL; max_skill += 100000UL; break;
-    case 2: skill += 25000UL; max_skill += 50000UL; break;
-    case 3: break;
-    case 4: max_skill -= 25000UL; break;
-    case 5: max_skill -= 50000UL; break;
-    case 6: max_skill -= 75000UL; break;
+    case VERDICT_START_LIVES_ONE: skill += 50000UL; max_skill += 100000UL; break;
+    case VERDICT_START_LIVES_TWO: skill += 25000UL; max_skill += 50000UL; break;
+    case VERDICT_START_LIVES_THREE: break;
+    case VERDICT_START_LIVES_FOUR: max_skill -= 25000UL; break;
+    case VERDICT_START_LIVES_FIVE: max_skill -= 50000UL; break;
+    case VERDICT_START_LIVES_SIX: max_skill -= 75000UL; break;
     }
     switch(resident->credit_bombs) {
-    case 0: skill += 50000UL; max_skill += 100000UL; break;
-    case 1: skill += 30000UL; max_skill += 50000UL; break;
-    case 2: skill += 20000UL; max_skill += 25000UL; break;
+    case VERDICT_START_BOMBS_ZERO: skill += 50000UL; max_skill += 100000UL; break;
+    case VERDICT_START_BOMBS_ONE: skill += 30000UL; max_skill += 50000UL; break;
+    case VERDICT_START_BOMBS_TWO: skill += 20000UL; max_skill += 25000UL; break;
     }
     if(!resident->turbo_mode) {
         skill -= 200000UL;
         max_skill -= 100000UL;
     }
-    if(resident->miss_count >= 10) {
+    if(resident->miss_count >= VERDICT_MISS_PENALTY_LIMIT) {
         skill -= 300000UL;
     } else {
-        skill -= (static_cast<uint32_t>(resident->miss_count) * 30000UL);
+        skill -= (static_cast<uint32_t>(resident->miss_count) * VERDICT_MISS_PENALTY_PER_USE);
     }
-    if(resident->bombs_used >= 15) {
+    if(resident->bombs_used >= VERDICT_BOMB_PENALTY_LIMIT) {
         skill -= 225000UL;
     } else {
-        skill -= (static_cast<uint32_t>(resident->bombs_used) * 15000UL);
+        skill -= (static_cast<uint32_t>(resident->bombs_used) * VERDICT_BOMB_PENALTY_PER_USE);
     }
     if(resident->end_sequence < VERDICT_ES_EXTRA) {
         skill *= 7;
@@ -164,15 +189,15 @@ void near verdict_main(void)
             } else {
                 line = 1;
             }
-            file_seek((line * 30), 0);
+            file_seek((line * VERDICT_COMMENT_RECORD_BYTES), 0);
         }
-        file_read(verdict_comments[0], 30);
+        file_read(verdict_comments[0], VERDICT_COMMENT_RECORD_BYTES);
         line = verdict_comment_id();
-        file_seek((line * 30) + 780, 0);
-        file_read(verdict_comments[1], 30);
+        file_seek((line * VERDICT_COMMENT_RECORD_BYTES) + VERDICT_SECOND_COMMENT_BASE, 0);
+        file_read(verdict_comments[1], VERDICT_COMMENT_RECORD_BYTES);
         file_close();
-        verdict_comments[0][28] = 0;
-        verdict_comments[1][28] = 0;
+        verdict_comments[0][VERDICT_COMMENT_DISPLAY_BYTES] = 0;
+        verdict_comments[1][VERDICT_COMMENT_DISPLAY_BYTES] = 0;
     } else {
         graph_putsa_fx(verdict_text_left + 176, verdict_text_top + 272,
             verdict_text_color, verdict_unrated);

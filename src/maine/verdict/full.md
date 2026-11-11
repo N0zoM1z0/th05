@@ -68,3 +68,32 @@ records were preserved. The real foreign binder supplies master frame0, shared
 frameE80, CODE frameA54 and DS1011, with no own internal holes or function bodies.
 This demonstrates exact reproducibility from coherent maintained source, not
 identity with the historical original translation unit or packed executable.
+
+## Exact verdict score policy and two-comment disk protocol
+
+The maintained 1,748-byte `verdict_main()` now names the *original* starting
+life choices 1–6 and starting bomb choices 0–2 as values of two small switch
+key domains. These selectors are never serialized as new enum objects;
+`resident->credit_lives` and `resident->credit_bombs` retain their original
+canonical 128-byte resident layout and original integer values. The first
+and second kinds of starting resources continue to change **both** skill and
+max_skill independently. The original missed-shot penalty caps at ten misses
+and 30,000 per miss; the used-bomb penalty caps at fifteen and 15,000 each.
+Named limit/per-use constants preserve the original saturating 300,000 and
+225,000 penalties, the signed clamp and the rank multipliers.
+
+The final score also indexes exactly two **30-byte** comment records from
+the original archive: the score-selected comment record and a second record
+with its own base displacement of 780 bytes. Each read remains 30 bytes and
+is explicitly null-terminated at index 28. The names make the original
+disk-record protocol visible without changing the `FILE_ROPEN` / `FILE_SEEK`
+/ `FILE_READ` far ABI or any Japanese asset data.
+
+All ten affected complete source owners in the same original 3,384-byte
+translation-unit context were twice compiled with the real pinned Borland
+producer. They matched **3,384/3,384 original bytes**, including both of the
+main scoring function's compiler switch tables and every literal ordered MZ
+relocation. The compiled semantic negative was rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-verdict-scoring-policy-20261111/receipt.json`.
+No additional CODE coverage, new denominator or unrelated MAINE cold replay
+is inferred from this exact source-semantic improvement.

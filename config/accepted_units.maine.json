@@ -2,43 +2,79 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+  "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 43307,
-    "candidate_start": 43307,
-    "size": 152,
-    "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
-    "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+    "target_start": 51867,
+    "candidate_start": 51867,
+    "size": 1748,
+    "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
+    "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
     "raw_exact": false,
     "target_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
+      505,
+      478,
+      367,
+      303,
+      279,
+      255,
+      231,
+      207,
+      183,
+      159,
+      135,
+      111,
+      87,
+      63,
+      39,
+      1721,
+      1694,
+      1655,
+      1650,
+      1639,
+      1615,
+      1604,
+      1494,
+      1485
     ],
     "candidate_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
+      505,
+      478,
+      367,
+      303,
+      279,
+      255,
+      231,
+      207,
+      183,
+      159,
+      135,
+      111,
+      87,
+      63,
+      39,
+      1721,
+      1694,
+      1655,
+      1650,
+      1639,
+      1615,
+      1604,
+      1494,
+      1485
     ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 43307,
-      "size": 152,
-      "function_symbol": "box_wait_animate(int)",
-      "contribution_start": 42757,
-      "contribution_size": 2736,
+      "start": 51867,
+      "size": 1748,
+      "function_symbol": "verdict_main()",
+      "contribution_start": 50663,
+      "contribution_size": 3384,
       "boundary_kind": "next-function",
-      "next_function_symbol": "script_op(unsigned char)"
+      "next_function_symbol": "verdict_comments_put()"
     }
   },
   "units": [
@@ -9076,7 +9112,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9116,7 +9152,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9157,8 +9193,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -9203,7 +9267,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9242,35 +9306,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -9315,7 +9351,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9356,7 +9392,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -9439,7 +9475,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -9513,7 +9549,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -9671,7 +9707,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9711,7 +9747,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9752,8 +9788,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -9798,7 +9862,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9837,35 +9901,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -9910,7 +9946,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9951,7 +9987,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -10034,7 +10070,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -10108,7 +10144,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -10266,7 +10302,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10306,7 +10342,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10347,8 +10383,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -10393,7 +10457,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10432,35 +10496,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -10505,7 +10541,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10546,7 +10582,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -10629,7 +10665,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -10703,7 +10739,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -10857,7 +10893,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10897,7 +10933,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10938,8 +10974,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -10984,7 +11048,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11023,35 +11087,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -11096,7 +11132,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11137,7 +11173,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -11220,7 +11256,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -11294,7 +11330,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -11448,7 +11484,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -11488,7 +11524,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -11529,8 +11565,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -11575,7 +11639,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11614,35 +11678,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -11687,7 +11723,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11728,7 +11764,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -11811,7 +11847,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -11885,7 +11921,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -12031,7 +12067,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12071,7 +12107,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12112,8 +12148,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -12158,7 +12222,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12197,35 +12261,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -12270,7 +12306,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12311,7 +12347,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -12394,7 +12430,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -12468,7 +12504,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -12714,7 +12750,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12754,7 +12790,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12795,8 +12831,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -12841,7 +12905,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12880,35 +12944,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -12953,7 +12989,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12994,7 +13030,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -13077,7 +13113,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -13151,7 +13187,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -13309,7 +13345,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -13349,7 +13385,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -13390,8 +13426,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -13436,7 +13500,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13475,35 +13539,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -13548,7 +13584,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13589,7 +13625,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -13672,7 +13708,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -13746,7 +13782,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -13936,7 +13972,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -13976,7 +14012,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14017,8 +14053,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -14063,7 +14127,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14102,35 +14166,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -14175,7 +14211,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14216,7 +14252,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -14299,7 +14335,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -14373,7 +14409,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -14551,7 +14587,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "8900ba8d44d49b467115abcaa616303eb7a9404c6b6e551094273561d3b6ac6d",
+            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14591,7 +14627,7 @@
             ]
           },
           {
-            "sha256": "b9ca534a1a10deb4b8b46a0138b33f3d9d8a752a5d7fe2e782b496c2b0b9f833",
+            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14632,8 +14668,36 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/vfull.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -14678,7 +14742,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14717,35 +14781,7 @@
             "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
           }
         ],
-        "exact": true,
-        "compiler_arguments": [
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ],
-          [
-            "-c",
-            "-I.",
-            "-O",
-            "-b-",
-            "-3",
-            "-Z",
-            "-d",
-            "-DGAME=5",
-            "-ml",
-            "-DBINARY='E'",
-            "th05/vfull.cpp"
-          ]
-        ]
+        "exact": true
       },
       "source_inputs": [
         {
@@ -14790,7 +14826,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "9ef94ea790342e9f1adf63042ec3ef6035eda3568dd75b8e5987f3cdf460366e"
+          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14831,7 +14867,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a45e32fa2feb78c09b46821eecec98d9322db210ecb400690f3f876dec11bd4c",
+      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -14914,7 +14950,7 @@
           "replace": "resident->std_frames = 46001;"
         },
         "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
           "candidate_start": 51867,
@@ -14988,7 +15024,7 @@
           }
         },
         "omf": {
-          "sha256": "083ccfca8918c2fb35d377ad198aafa878cbc4cf66a337b3101aa0017c26483d",
+          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
