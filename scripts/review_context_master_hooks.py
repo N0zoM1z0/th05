@@ -180,6 +180,8 @@ SCOPES = (
      {'op': (0x2656, 138), 'maine': (0x2894, 138)}, 'reviewed-native-spelling'),
     ('GRAPH_SCROLLUP', 'libs/master.lib/graph_scrollup.asm', 'GRPSCRLU.ASM',
      {'maine': (0x1a2e, 88)}, 'original-identical'),
+    ('GRAPH_HIDE', 'libs/master.lib/graph_hide.asm', 'GRPHIDE.ASM',
+     {'maine': (0x13e8, 6)}, 'original-identical'),
     ('PALETTE_WHITE_IN', 'libs/master.lib/palette_white_in.asm', 'WHITEIN.ASM',
      {'maine': (0x243c, 64)}, 'original-identical'),
     ('PALETTE_WHITE_OUT', 'libs/master.lib/palette_white_out.asm', 'WHITEOUT.ASM',
@@ -187,6 +189,20 @@ SCOPES = (
     # The original sources contain two complete private/near text PROCs and
     # a full 114-byte TEXT_PUTSA; the following four CODE bytes in each
     # artifact have no source LEDATA and must remain unknown.
+    ('TEXT_HEIGHT', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2110, 10)}, 'original-identical'),
+    ('TEXT_SYSTEMLINE_SHOWN', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x211a, 10)}, 'original-identical'),
+    ('TEXT_25LINE', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2124, 6)}, 'original-identical'),
+    ('TEXT_20LINE', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x212a, 6)}, 'original-identical'),
+    ('TEXT_CURSOR_HIDE', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2130, 6)}, 'original-identical'),
+    ('TEXT_CURSOR_SHOW', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x2136, 6)}, 'original-identical'),
+    ('TEXT_SYSTEMLINE_HIDE', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
+     {'op': (0x213c, 6)}, 'original-identical'),
     ('TEXT_SYSTEMLINE_SHOW', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
      {'op': (0x2142, 6)}, 'original-identical'),
     ('putcmd', 'libs/master.lib/txesc.asm', 'TXESC.ASM',
@@ -309,6 +325,14 @@ EXPECTED_NATIVE_FIXUPS = {
     'TEXT_SYSTEMLINE_SHOW': 0,
     'putcmd': 0,
     'TEXT_PUTSA': 1,
+    'TEXT_HEIGHT': 0,
+    'TEXT_SYSTEMLINE_SHOWN': 0,
+    'TEXT_25LINE': 0,
+    'TEXT_20LINE': 0,
+    'TEXT_CURSOR_HIDE': 0,
+    'TEXT_CURSOR_SHOW': 0,
+    'TEXT_SYSTEMLINE_HIDE': 0,
+    'GRAPH_HIDE': 0,
 }
 
 

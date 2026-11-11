@@ -298,3 +298,16 @@ explicitly asserts their absence from both target/source claims rather than
 adopting or padding them. The existing verifier and adoption evidence now
 cover **131 source CODE scopes and 8,912 original third-party bytes** in OP
 and MAINE combined, including **142 newly confirmed bytes** here.
+
+## Text-screen mode helpers and MAINE graphics hide
+
+The seven complete OP text-mode helpers at `2110..2142` now contribute
+**50 original Master CODE bytes**: screen height, system-line visibility,
+25/20-line mode selectors, cursor hide/show, and system-line hide. MAINE's
+complete `GRAPH_HIDE` at `13E8..13EE` contributes another **6 bytes**.
+All eight independent author ASM procedure bodies match the actual retained
+TASM source; full CODE LEDATA and original MZ bytes match, with no OMF or
+segment fixups. The private OP `putcmd` and its four-byte unowned tail remain
+as separately reviewed. The existing Master review now covers **139 source
+scopes / 8,968 bytes** in OP/MAINE. These are vendor CODE, not game-authored
+C++ or new gameplay behavior.
