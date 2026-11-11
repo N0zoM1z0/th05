@@ -66,3 +66,18 @@ TASM/TLINK tools, then explicitly adopt its receipt:
 python3 scripts/replay_zun_dispatcher.py --output .analysis/zun-dispatcher/NEW
 python3 scripts/replay_zun_dispatcher.py --accept .analysis/zun-dispatcher/NEW/receipt.json
 ```
+
+## Source-built whole-envelope integration (excluding `-S`)
+
+A private, nonaccepting composition of the existing positive native producers
+now proves that the **11,552 original ZUN.COM bytes outside the `-S` child**
+all match in one collision-free address layout. It combines the outer header,
+usage and wrapper; the inner dispatcher/catalog and transfer; and separate
+`-O`, `-I`, `-G`, `-M` source-built COMs. Accepted source artifacts supply
+those bytes; **not one original target byte is imported** into the synthetic
+proof. The unaccepted `-S` `[0AE4,2488)` remains **6,564 literal zero bytes**,
+so the assembled test object is *not* identical to the full 18,116-byte COM.
+The private range/digest-only evidence is
+`.analysis/gpt-web-zun-envelope-combined-source-a/receipt.json`. This does
+not change accepted ownership, source-origin decisions or the authored-byte
+numerator; the next actual code target remains `-S`'s 269-byte C++ `main()`.
