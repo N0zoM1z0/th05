@@ -5,14 +5,15 @@
 extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lunatic);
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/update_standalone.hpp"
+#include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/wing_coordinates.inl"
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
 
 void near pattern_circles_and_alternating_spirals(void)
 {
-	#define pellet_angle	 boss_statebyte[14]
-	#define red_angle   	 boss_statebyte[15]
+	#define pellet_angle	 shinki_scratch.spiral_pellet_angle
+	#define red_angle   	 shinki_scratch.spiral_red_angle
 
 	int frame_in_cycle;
 
@@ -124,7 +125,7 @@ void pascal shinki_update(void)
 	// is not good enough?
 	// Careful, collides with [lasers_active] in pattern_devil()!
 	// MODDERS: Just use [boss.phase].
-	#define phase_relative boss_statebyte[10]
+	#define phase_relative shinki_scratch.wave_relative_index
 
 	enum {
 		PHASE_11_FRAMES = 16,

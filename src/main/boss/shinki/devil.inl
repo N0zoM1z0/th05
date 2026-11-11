@@ -10,21 +10,21 @@ void near pattern_devil(void)
 
 	// Since the columns are symmetrical, it's only necessary to track the
 	// inner and outer angles for spread bullets and lasers.
-	#define laser_direction  	boss_statebyte[7]
-	#define laser_angle_inner	boss_statebyte[8]
-	#define laser_angle_outer	boss_statebyte[9]
+	#define laser_direction  	shinki_devil_scratch.laser_direction
+	#define laser_angle_inner	shinki_devil_scratch.laser_angle_inner
+	#define laser_angle_outer	shinki_devil_scratch.laser_angle_outer
 
 	// Careful, collides with [phase_relative] in shinki_update()! *Must* be
 	// set to 1 before ending the pattern to ensure that the remaining phases
 	// run in their expected order. Guaranteed in the original code by setting
 	// HP_PHASE_10_DEVIL_LASER to a much higher value than HP_PHASE_10_END.
-	#define lasers_active    	boss_statebyte[10]
+	#define lasers_active    	shinki_devil_scratch.lasers_active
 
-	#define bullet_direction 	boss_statebyte[11]
-	#define bullet_intro_done	boss_statebyte[12]
-	#define b6ball_interval  	boss_statebyte[13]
-	#define bullet_angle_inner	boss_statebyte[14]
-	#define bullet_angle_outer	boss_statebyte[15]
+	#define bullet_direction 	shinki_devil_scratch.bullet_direction
+	#define bullet_intro_done	shinki_devil_scratch.bullet_intro_done
+	#define b6ball_interval  	shinki_devil_scratch.b6ball_interval
+	#define bullet_angle_inner	shinki_devil_scratch.bullet_angle_inner
+	#define bullet_angle_outer	shinki_devil_scratch.bullet_angle_outer
 
 	#define laser_grow_delay shinki_devil_laser_grow_delay
 	extern int laser_grow_delay;

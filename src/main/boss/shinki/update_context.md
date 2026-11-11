@@ -81,3 +81,31 @@ outputs, the switch table, and original ordered relocations at relative
 `boss_defeat_update(65)` negative control was rejected, and the
 accepted-unit ledger now identifies the renamed source. There is
 no new byte credit: the entire function was already exact.
+
+## Typed state-byte overlays for the complete Shinki controller
+
+The maintained update context and full boss source now share the actual
+16-byte `ShinkiPhaseScratch` view, with explicit size and offsets for the
+wave-relative phase index at byte 10 and final-circle pattern angles at
+bytes 14 and 15. The adjacent Devil pattern has its own complete
+`ShinkiDevilScratch` view of bytes 7–15, including laser direction/angles,
+laser-activation latch, bullet direction/intro flag, ball interval, and
+inner/outer bullet angles. No second object, reallocated buffer, or
+reinterpreted long-lived pointer is introduced.
+
+The byte-10 alias has an important real lifetime: when Devil lasers become
+active, their latch also establishes the value subsequently read by the
+shared late-wave transition. It must not be reset on that phase boundary.
+The other angle slots are reinitialized by the final circular pattern.
+The typed views preserve this original cross-phase state rather than
+inventing independent animation/latch variables.
+
+The focused source changes recompiled **all twelve affected original-source
+units** with independent deterministic producers, full raw bounds and
+original ordered relocations. The complete 959-byte Shinki updater and the
+adjacent Devil function both remain exact, as do the surrounding wing, ball,
+float and spiral functions. The compiled negative controls are rejected;
+no new target bytes are claimed, and already accepted unit boundaries remain
+unchanged. The complete accepted local replay receipt is
+`.analysis/unit-replays/gpt-web-shinki-scratch-complete-cohort/receipt.json`; it
+contains both fresh deterministic producers and the rejected compiled negative.

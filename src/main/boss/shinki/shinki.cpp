@@ -5,6 +5,7 @@
 
 #pragma option -zCB6_BALLS_TEXT -zPmain_03
 #include "src/main/boss/shinki/shinki.hpp"
+#include "src/main/boss/shinki/scratch.hpp"
 #pragma codeseg B6_BALLS_TEXT main_03
 
 
@@ -404,8 +405,8 @@ void near pattern_aimed_b6balls_and_symmetric_spreads(void)
 
 void near pattern_circles_and_alternating_spirals(void)
 {
-	#define pellet_angle	 boss_statebyte[14]
-	#define red_angle   	 boss_statebyte[15]
+	#define pellet_angle	 shinki_scratch.spiral_pellet_angle
+	#define red_angle   	 shinki_scratch.spiral_red_angle
 
 	int frame_in_cycle;
 
@@ -517,7 +518,7 @@ void pascal shinki_update(void)
 	// is not good enough?
 	// Careful, collides with [lasers_active] in pattern_devil()!
 	// MODDERS: Just use [boss.phase].
-	#define phase_relative boss_statebyte[10]
+	#define phase_relative shinki_scratch.wave_relative_index
 
 	enum {
 		PHASE_11_FRAMES = 16,
