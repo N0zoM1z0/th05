@@ -2293,3 +2293,36 @@ semantic_inputs = ["src/main/player/bomb_runtime.hpp", "src/main/formats/bb_load
 [units.negative]
 find = "mov @@top, PLAYFIELD_TOP"
 replace = "mov @@top, (PLAYFIELD_TOP + TILE_HEIGHT)"
+
+[[units]]
+id = "main-bb-text-put"
+artifact = "main"
+source = "src/main/formats/bb_text_put.asm"
+types = "src/main/formats/bb_text_put_types.inc"
+symbols = "probes/units/bb_text_put_symbols.inc"
+bindings = "probes/units/bb_text_put_bindings.asm"
+notes = "src/main/formats/bb_text_put.md"
+target_start = 58650
+size = 98
+segment = "BB_TEXT_PUT_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "d3c949414f785f5bb27f5d0e625c379f28462f5bbccc58e0f291c7026f376a58"
+target_scope_sha256 = "3a472252c62386cdd2fc68ee9a9a7953e8c3772a4cc0507bc556e773fd8c813a"
+semantic_inputs = ["src/main/formats/bb_text.md", "src/main/hud/overlay.hpp"]
+[units.publics]
+"bb_txt_put_8_raw(unsigned int,unsigned int)" = 0
+"bb_txt_put_end" = 98
+[units.negative]
+find = "mov cx, BB_TEXT_ROWS"
+replace = "mov cx, (BB_TEXT_ROWS - 1)"
+[[units.uncredited]]
+offset = 39
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 97
+size = 1
+kind = "alignment"

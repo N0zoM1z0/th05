@@ -1,0 +1,10 @@
+; Original BG bitmap width 32 pixels / four VRAM bytes and 32 raster rows.
+BB_TEXT_ROWS equ 32
+BB_TEXT_ROW_BYTES equ 4
+VRAM_ROW_BYTES equ (640 / 8)
+VRAM_PLANE_BYTES equ ((640 * 400) / 8)
+SCREEN_LINES equ 400
+BB_PIXELS_PER_BYTE_SHIFT equ 3
+BB_VRAM_Y_SHIFT_HIGH equ 6
+BB_VRAM_Y_SHIFT_LOW equ 2
+BB_SPRITE_BYTE_SHIFT equ 7
