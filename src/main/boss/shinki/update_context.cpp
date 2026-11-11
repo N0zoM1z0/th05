@@ -139,7 +139,14 @@ void pascal shinki_update(void)
 		SHINKI_PHASE_SYMMETRIC_SPREADS = 9,
 		SHINKI_PHASE_DEVIL = 10,
 		SHINKI_PHASE_DEFEAT_TRANSITION = 11,
-		SHINKI_PHASE_FINAL_CIRCLES = 12
+		SHINKI_PHASE_FINAL_CIRCLES = 12,
+		// The two pattern dispatch states are values of the original Boss mode.
+		SHINKI_MODE_FLYSTEP = 0,
+		SHINKI_MODE_PATTERN = 1,
+		SHINKI_FIRST_SHARED_WAVE = 0,
+		SHINKI_WAVE_PATTERN_LIMIT = 16,
+		SHINKI_WING_TIMEOUT_FRAMES = 3000,
+		SHINKI_ALTERNATING_PATTERN_MASK = 1
 	};
 
 	bool16 phase_done;
@@ -194,7 +201,7 @@ void pascal shinki_update(void)
 		if(boss.phase_frame >= (ENTRANCE_BB_FRAMES_PER_CEL * TILES_BB_CELS)) {
 			// Next phase
 			boss.phase++;
-			boss.mode = 1;
+			boss.mode = SHINKI_MODE_PATTERN;
 			boss.phase_frame = 0;
 			phase_2_3_pattern = pattern_curved_rings;
 			phase_relative = 0;
@@ -204,7 +211,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_CURVED_RINGS:
 	case SHINKI_PHASE_RANDOM_KUNAI:
 		switch(boss.mode) {
-		case 0:
+		case SHINKI_MODE_FLYSTEP:
 			if(boss_flystep_random(
 				boss.phase_frame - PHASE_2_3_PATTERN_START_FRAME
 			)) {
@@ -215,18 +222,18 @@ void pascal shinki_update(void)
 				boss.phase_state.patterns_seen++;
 				boss.mode++;
 				phase_2_3_pattern = PATTERNS[phase_relative][
-					boss.phase_state.patterns_seen & 1
+					boss.phase_state.patterns_seen & SHINKI_ALTERNATING_PATTERN_MASK
 				];
 
 				// Timeout condition
-				if(boss.phase_state.patterns_seen >= 16) {
+				if(boss.phase_state.patterns_seen >= SHINKI_WAVE_PATTERN_LIMIT) {
 					goto phase_2_3_timed_out;
 				}
 
 				#undef PATTERNS
 			}
 			break;
-		case 1:
+		case SHINKI_MODE_PATTERN:
 			phase_2_3_with_pattern();
 			break;
 		}
@@ -237,9 +244,9 @@ void pascal shinki_update(void)
 
 	phase_2_3_timed_out:
 		// Next phase
-		if(phase_relative == 0) {
+		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
 			boss_phase_next(ET_NW_SE, HP_PHASE_3_END);
-			boss.mode = 1;
+			boss.mode = SHINKI_MODE_PATTERN;
 			phase_2_3_pattern = pattern_random_directional_and_kunai;
 		} else {
 			boss_phase_next(ET_NW_SE, HP_PHASE_6_END);
@@ -291,7 +298,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < 3000) {
+		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
 			if(boss_hittest_shots()) {
 				boss_score_bonus(25);
 			} else {
@@ -300,7 +307,7 @@ void pascal shinki_update(void)
 		}
 
 		// Next phase
-		if(phase_relative == 0) {
+		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_7_END);
 			wing_pattern = pattern_cheetos_within_spread_walls;
 			boss.phase_frame = 0; // redundant
@@ -346,7 +353,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < 3000) {
+		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
 			phase_done = boss_hittest_shots();
 			// Reduce per-frame damage to 1 HP during bombs
 			if(bombing) {
@@ -360,7 +367,7 @@ void pascal shinki_update(void)
 		}
 
 		// Next phase
-		if(phase_relative == 0) {
+		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_10_END);
 			shinki_wing_pattern = pattern_devil;
 			boss.phase_frame = 0; // redundant
@@ -401,7 +408,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_FINAL_CIRCLES:
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
-		if(boss.phase_frame < 3000) {
+		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
 			// Boss defeated?
 			if(!boss_hittest_shots()) {
 				break;

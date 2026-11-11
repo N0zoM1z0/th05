@@ -109,3 +109,26 @@ no new target bytes are claimed, and already accepted unit boundaries remain
 unchanged. The complete accepted local replay receipt is
 `.analysis/unit-replays/gpt-web-shinki-scratch-complete-cohort/receipt.json`; it
 contains both fresh deterministic producers and the rejected compiled negative.
+
+## One matching full controller in both maintained sources
+
+The accepted `update_context.cpp` and complete `shinki.cpp` now express the
+same full `shinki_update` function body, apart from an unrelated trailing
+source comment. All twelve combat stages keep their original numeric switch
+keys. In the shared curved-ring/kunai controller, Boss mode 0 means random
+repositioning and mode 1 invokes the actual callback; a full wave ends after
+16 shot patterns, selected in odd/even alternation with the original integer
+bit mask. The three shared wing/Devil attack stages retain the real
+3,000-frame timeout. Their source names do not replace the original byte-10
+scratch overlay: the same physical byte holds the earlier pattern-wave index
+and the Devil laser latch at their actual successive lifetimes, and its
+cross-phase value is not cleared by this change.
+
+The full affected **eleven-unit** cohort was compiled twice by the pinned
+Borland/TLINK producer. All complete original raw CODE bounds and ordered MZ
+relocations match, including the 959-byte full Boss controller, its generated
+switch table, wing patterns, float motion and ball workers. The compiled
+semantic negative was rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-shinki-unified-controller-20261111/receipt.json`.
+This synchronization improves already accepted source; no new ownership or
+new authored bytes are inferred.
