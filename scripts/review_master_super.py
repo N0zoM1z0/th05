@@ -29,6 +29,8 @@ MEMBERS = (
     ('SUPER_CANCEL_PAT', 0x2da0, 80),
     ('SUPER_CLEAN', 0x2df0, 42),
     ('SUPER_ROLL_PUT_1PLANE', 0x2e1a, 454),
+    ('SUPER_ROLL_PUT', 0x2fe0, 534),
+    ('SUPER_PUT_RECT', 0x31fc, 318),
     ('SUPER_PUT', 0x33f0, 240),
     ('SUPER_CONVERT_TINY', 0x35a2, 156),
 )
@@ -44,8 +46,20 @@ DATA_DELTA = -18
 def source_lines(body):
     """Explicit namespaces of local data/labels, not opcode normalization."""
     body = body.lower().replace('@@','')
-    for old,new in (('superl1p_', ''),('superput_', ''),
-                    ('superpat_no_memory', 'no_memory')):
+    # Namespaced, local ASM scratch/dispatch labels are alpha-renamings.
+    # Their original operand registers, expressions and opcodes remain literal.
+    for old,new in (
+        ('superl1p_', ''),('superput_', ''),
+        ('superoll_bp_', '_bp_'),('superoll_bx_', '_bx_'),
+        ('superoll_di_', '_di_'),('superoll_', ''),
+        ('superptr_ptnseg_', '_ptnseg_'),
+        ('superptr_planesize_', '_planesize_'),
+        ('superptr_shift_', '_shift_'),
+        ('superptr_ylen_', '_ylen_'),
+        ('superptr_draw_adr_', '_draw_adr_'),
+        ('superptr_drawlen_', '_drawlen_'),('superptr_', ''),
+        ('superpat_no_memory', 'no_memory'),
+    ):
         body = body.replace(old,new)
     return [re.sub(r'\s+','',row.split(';',1)[0])
             for row in body.splitlines() if row.split(';',1)[0].strip()]

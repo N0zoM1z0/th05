@@ -1,9 +1,9 @@
 # Native Master SUPER graphics source recovery — MAIN
 
-Eight complete source-backed Master 0.23 assembly procedures in MAIN have
+Ten complete source-backed Master 0.23 assembly procedures in MAIN have
 been recovered from the original archive and the genuine TASM-built MAIN
 object, then relinked against the original game's data layout. They provide
-**1,716 newly reviewed CODE bytes**, zero game-authored C++ credit.
+**2,568 newly reviewed CODE bytes**, zero game-authored C++ credit.
 
 | Function | Complete original MAIN extent | CODE bytes | Original CODE FIXUPP |
 | --- | --- | ---: | ---: |
@@ -13,6 +13,8 @@ object, then relinked against the original game's data layout. They provide
 | `SUPER_CANCEL_PAT` | `2DA0..2DF0` | 80 | 8 |
 | `SUPER_CLEAN` | `2DF0..2E1A` | 42 | 2 |
 | `SUPER_ROLL_PUT_1PLANE` | `2E1A..2FE0` | 454 | 15 |
+| `SUPER_ROLL_PUT` | `2FE0..31F6` | 534 | 26 |
+| `SUPER_PUT_RECT` | `31FC..333A` | 318 | 22 |
 | `SUPER_PUT` | `33F0..34E0` | 240 | 16 |
 | `SUPER_CONVERT_TINY` | `35A2..363E` | 156 | 4 |
 
@@ -43,10 +45,11 @@ the monolithic `_DATA` at offset `0090h`, and `_BSS` at offset
 native DATA/INIT and BSS positions **18 bytes lower** than calibration,
 while `_TEXT` is unchanged. Resolving every actual CODE FIXUPP through
 these original symbol offsets reproduces each **complete original
-function byte for byte**. All eight have the correct empty original
+function byte for byte**. All ten have the correct empty original
 ordered MZ relocation stream.
 
-The 456-byte one-plane renderer and the 454-byte roll renderer are
+The 456-byte one-plane renderer, 454-byte one-plane roll renderer,
+534-byte full roll renderer and 318-byte clipped rectangular renderer are
 recovered in full, including their local bytecode-facing operations.
 Only the complete named procedure extents receive vendor CODE ownership;
 adjacent callbacks, unnamed gaps, alignment outside the functions,
