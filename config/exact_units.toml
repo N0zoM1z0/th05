@@ -4286,8 +4286,8 @@ code_data_ranges = [{ offset = 994, size = 24, kind = "compiler-switch-table" }]
 [[controls]]
 unit = "main-mai-yuki-update-context"
 source = "src/main/boss/mai_yuki/update_context.cpp"
-find = "(boss.hp + boss2.hp) < 5500"
-replace = "(boss.hp + boss2.hp) < 5501"
+find = "(boss.hp + boss2.hp) < MY_HP_GATE_FIRST"
+replace = "(boss.hp + boss2.hp) < (MY_HP_GATE_FIRST + 1)"
 
 [[units]]
 id = "main-map-free"

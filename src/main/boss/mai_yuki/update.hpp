@@ -73,6 +73,19 @@ extern "C" {
 }
 void pascal far mai_yuki_update(void);
 
+// The original six-entry phase switch has semantic stages 0/1/2/253/254/255.
+static const unsigned char MY_PHASE_SETUP = 0;
+static const unsigned char MY_PHASE_READY = 1;
+static const unsigned char MY_PHASE_COMBAT = 2;
+static const unsigned char MY_MODE_REPOSITION = 0;
+static const unsigned char MY_MODE_ATTACK = 1;
+static const unsigned char MY_PATTERN_HP_GATE_FIRST = 9;
+static const unsigned char MY_PATTERN_HP_GATE_SECOND = 14;
+static const unsigned char MY_PATTERN_FIRST_END = 10;
+static const unsigned char MY_PATTERN_LASER_END = 15;
+static const unsigned char MY_PATTERN_FINAL_END = 36;
+static const int MY_HP_GATE_FIRST = 5500;
+static const int MY_HP_GATE_SECOND = 2250;
 static const unsigned char MY_PHASE_EXPLODE_SMALL = 253;
 static const unsigned char MY_PHASE_EXPLODE_BIG = 254;
 static const unsigned char MY_PHASE_SURVIVOR_DIALOG = 255;

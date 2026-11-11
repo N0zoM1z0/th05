@@ -18,7 +18,7 @@ void pascal far mai_yuki_update(void)
     boss.phase_frame++;
 
     switch(boss.phase) {
-    case 0:
+    case MY_PHASE_SETUP:
         if(boss.phase_frame == 1) {
             boss.hp = MY_SHARED_HP;
             boss.phase_end_hp = 0;
@@ -41,7 +41,7 @@ void pascal far mai_yuki_update(void)
         }
         break;
 
-    case 1:
+    case MY_PHASE_READY:
         boss_hittest_shots_invincible();
         yuki_hittest_shots_damage(to_sp(24), to_sp(24), 10);
         if(boss.phase_frame < 64) {
@@ -49,18 +49,18 @@ void pascal far mai_yuki_update(void)
         }
         boss.phase++;
         boss.phase_frame = 0;
-        boss.mode = 1;
+        boss.mode = MY_MODE_ATTACK;
         boss.phase_state.patterns_seen = 0;
         mai_pattern_current = mai_pattern_random_crosses;
         yuki_pattern_current = yuki_pattern_random_aimed_fan;
         boss_custombullets_render = cheetos_render;
         break;
 
-    case 2:
+    case MY_PHASE_COMBAT:
         switch(boss.mode) {
-        case 0:
-            if((boss.phase_state.patterns_seen == 9) ||
-               (boss.phase_state.patterns_seen == 14)) {
+        case MY_MODE_REPOSITION:
+            if((boss.phase_state.patterns_seen == MY_PATTERN_HP_GATE_FIRST) ||
+               (boss.phase_state.patterns_seen == MY_PATTERN_HP_GATE_SECOND)) {
                 state_result = boss.phase_frame - 64;
                 if(boss.phase_frame == 16) {
                     if(bullet_clear_time < 20) {
@@ -77,13 +77,13 @@ void pascal far mai_yuki_update(void)
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen < 10) {
+                if(boss.phase_state.patterns_seen < MY_PATTERN_FIRST_END) {
                     mai_pattern_current = MAI_PATTERNS_FIRST[boss.phase_state.patterns_seen & 3];
                     yuki_pattern_current = YUKI_PATTERNS_FIRST[boss.phase_state.patterns_seen & 3];
-                } else if(boss.phase_state.patterns_seen < 15) {
+                } else if(boss.phase_state.patterns_seen < MY_PATTERN_LASER_END) {
                     mai_pattern_current = mai_pattern_tracking_laser;
                     yuki_pattern_current = YUKI_PATTERNS_LASER[boss.phase_state.patterns_seen & 3];
-                } else if(boss.phase_state.patterns_seen < 36) {
+                } else if(boss.phase_state.patterns_seen < MY_PATTERN_FINAL_END) {
                     mai_pattern_current = MAI_PATTERNS_FINAL[boss.phase_state.patterns_seen & 3];
                     yuki_pattern_current = YUKI_PATTERNS_FINAL[boss.phase_state.patterns_seen & 3];
                 } else {
@@ -93,20 +93,20 @@ void pascal far mai_yuki_update(void)
                 }
             }
             break;
-        case 1:
+        case MY_MODE_ATTACK:
             mai_pattern_update();
             yuki_pattern_update();
             break;
         }
-        if(((boss.hp + boss2.hp) < 5500) && (boss.phase_state.patterns_seen < 9)) {
-            boss.mode = 0;
+        if(((boss.hp + boss2.hp) < MY_HP_GATE_FIRST) && (boss.phase_state.patterns_seen < 9)) {
+            boss.mode = MY_MODE_REPOSITION;
             boss.phase_frame = 0;
-            boss.phase_state.patterns_seen = 9;
-        } else if(((boss.hp + boss2.hp) < 2250) &&
+            boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_FIRST;
+        } else if(((boss.hp + boss2.hp) < MY_HP_GATE_SECOND) &&
                   (boss.phase_state.patterns_seen < 14)) {
-            boss.mode = 0;
+            boss.mode = MY_MODE_REPOSITION;
             boss.phase_frame = 0;
-            boss.phase_state.patterns_seen = 14;
+            boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_SECOND;
         }
         state_result = mai_yuki_hittest_shots();
         if(state_result == 0) {

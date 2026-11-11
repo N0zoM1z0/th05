@@ -134,3 +134,16 @@ compiled negative is rejected. Only the updater adds credit; the prefix's
 previous acceptance is unchanged. No source padding or output repair is used.
 The old standalone failures stay archived and unaccepted. See the
 [complete source/context and actual producer review](update_context.md).
+
+## Semantic shared-phase naming (2026-11-11)
+
+The original six switch keys identify setup (`0`), a timed ready state
+(`1`), shared combat (`2`), and the existing small explosion (`253`),
+large explosion (`254`) and survivor dialog (`255`). Combat mode `0`
+repositions both bosses, while mode `1` runs the selected attacks.
+The two combined-HP gates (5500 and 2250) skip to pattern cycles
+9 and 14, with the first, laser and final pattern groups ending at
+10, 15 and 36 respectively. These names describe the observed switch
+keys and transitions rather than introducing a new state machine; the
+complete source owner remains `update_context.cpp`, including its genuine
+preceding pattern definitions.
