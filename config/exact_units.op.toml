@@ -1265,3 +1265,27 @@ unit = "op-score-encode-exact"
 source = "src/op/hiscore/encode_exact.cpp"
 find = "asm { ror byte ptr feedback, 3 }"
 replace = "asm { ror byte ptr feedback, 2 }"
+
+[[units]]
+id = "op-cdg-nocolors-exact"
+source = "src/shared/graphics/cdg_put_nocolors_exact.cpp"
+module = "th05/cdgncol.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_cdg_nocolors_exact_bindings.asm"
+target_start = 0xe114
+size = 74
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-cdg-nocolors-exact"
+source = "src/shared/graphics/cdg_put_nocolors_exact.cpp"
+find = "asm { sar di, 3 }"
+replace = "asm { sar di, 2 }"
