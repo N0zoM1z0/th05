@@ -73,8 +73,128 @@ SCOPES = (
      {'op': (0x82c, 32), 'maine': (0x83a, 32)}, 'original-identical'),
     ('EGC_END', 'libs/master.lib/egc.asm', 'EGC.ASM',
      {'op': (0x84c, 44), 'maine': (0x85a, 44)}, 'original-identical'),
+    # Complete original Master palette, file and graphics helpers.
+    ('BFNT_PALETTE_SET', 'libs/master.lib/bfnt_palette_set.asm', 'BFTPALST.ASM',
+     {'op': (0x590, 64), 'maine': (0x590, 64)}, 'reviewed-native-spelling'),
+    ('PALETTE_BLACK_IN', 'libs/master.lib/palette_black_in.asm', 'BLACKIN.ASM',
+     {'op': (0x600, 68), 'maine': (0x600, 68)}, 'reviewed-native-spelling'),
+    ('PALETTE_BLACK_OUT', 'libs/master.lib/palette_black_out.asm', 'BLACKOUT.ASM',
+     {'op': (0x644, 62), 'maine': (0x644, 62)}, 'reviewed-native-spelling'),
+    ('BOPENR', 'libs/master.lib/bopenr.asm', 'BOPENR.ASM',
+     {'op': (0x682, 84), 'maine': (0x682, 84)}, 'reviewed-native-spelling'),
+    ('BREAD', 'libs/master.lib/bread.asm', 'BREAD.ASM',
+     {'op': (0x6d6, 48), 'maine': (0x6d6, 48)}, 'reviewed-native-spelling'),
+    ('DOS_PUTS2', 'libs/master.lib/dos_puts2.asm', 'DOSPUTS2.ASM',
+     {'op': (0x796, 42)}, 'original-identical'),
+    ('DOS_FILESIZE', 'libs/master.lib/dos_filesize.asm', 'DOSFSIZE.ASM',
+     {'maine': (0x790, 56)}, 'original-identical'),
+    ('FILE_APPEND', 'libs/master.lib/file_append.asm', 'FILAPEND.ASM',
+     {'op': (0x878, 84), 'maine': (0x886, 84)}, 'reviewed-native-spelling'),
+    ('FILE_CLOSE', 'libs/master.lib/file_close.asm', 'FILCLOSE.ASM',
+     {'op': (0x938, 16), 'maine': (0x946, 16)}, 'original-identical'),
+    ('FILE_CREATE', 'libs/master.lib/file_create.asm', 'FILCREAT.ASM',
+     {'op': (0x948, 64), 'maine': (0x956, 64)}, 'reviewed-native-spelling'),
+    ('FILE_EXIST', 'libs/master.lib/file_exist.asm', 'FILEXIST.ASM',
+     {'op': (0x988, 28), 'maine': (0x996, 28)}, 'reviewed-native-spelling'),
+    ('FILE_ROPEN', 'libs/master.lib/file_ropen.asm', 'FILROPEN.ASM',
+     {'op': (0xa58, 60), 'maine': (0xa66, 60)}, 'reviewed-native-spelling'),
+    ('FILE_SEEK', 'libs/master.lib/file_seek.asm', 'FILSEEK.ASM',
+     {'op': (0xa94, 52), 'maine': (0xaa2, 52)}, 'original-identical'),
+    ('FILE_TELL', 'libs/master.lib/file_seek.asm', 'FILSEEK.ASM',
+     {'op': (0xac8, 14), 'maine': (0xad6, 14)}, 'original-identical'),
+    ('FILE_SIZE', 'libs/master.lib/file_size.asm', 'FILSIZE.ASM',
+     {'maine': (0xae4, 14)}, 'original-identical'),
+    ('DOS_CLOSE', 'libs/master.lib/dos_close.asm', 'FNTCLOSE.ASM',
+     {'op': (0xb7c, 22), 'maine': (0xb98, 22)}, 'original-identical'),
+    ('DOS_ROPEN', 'libs/master.lib/dos_ropen.asm', 'FONTOPEN.ASM',
+     {'op': (0xb92, 26), 'maine': (0xbae, 32)}, 'original-identical'),
+    ('GRCG_SETCOLOR', 'libs/master.lib/grcg_setcolor.asm', 'GC_SETCO.ASM',
+     {'op': (0xee2, 42), 'maine': (0xf28, 42)}, 'original-identical'),
+    ('GRCG_CIRCLEFILL', 'libs/master.lib/grcg_circlefill.asm', 'GC_CIRCF.ASM',
+     {'maine': (0xd36, 150)}, 'reviewed-native-spelling'),
 )
 ARTIFACTS = ('op', 'maine')
+# Permitted spellings between the original Master 0.23 archived PROC and
+# the real TH05 TASM source: typed pointer sizes, preserved IF LDATA arms,
+# renamed BFNT header member, and actual native near-call relaxation macros.
+# Every old line must occur at the reviewed multiplicity and every resulting
+# line must match the complete native procedure; no compiler bytes are copied.
+_TYPED_FILENAME = {
+    '_push[bp+filename+2]': ('ifldata', 'pushwordptr[bp+filename+2]', 'endif'),
+    'push[bp+filename]': ('pushwordptr[bp+filename]',),
+}
+NATIVE_SPELLINGS = {
+    'BFNT_PALETTE_SET': {'test[bx].col,80h': ('test[bx].bfnt_header.col,80h',)},
+    'PALETTE_BLACK_IN': {
+        'callvsync_wait': ('nopcallvsync_wait',),
+        'callpalette_show': ('nopcallpalette_show',),
+    },
+    'PALETTE_BLACK_OUT': {
+        'callvsync_wait': ('nopcallvsync_wait',),
+        'callpalette_show': ('nopcallpalette_show',),
+    },
+    'BOPENR': {
+        '_push[bp+fname+2]': ('ifldata', 'pushwordptr[bp+fname+2]', 'endif'),
+        'push[bp+fname]': ('pushwordptr[bp+fname]',),
+        'movpferrno,pfenomem': ('movbyteptrpferrno,pfenomem',),
+        'movpferrno,pfenotopen': ('movbyteptrpferrno,pfenotopen',),
+    },
+    'BREAD': {'_loop:push[bp+bf]': ('_loop:pushwordptr[bp+bf]',)},
+    'FILE_APPEND': _TYPED_FILENAME,
+    'FILE_CREATE': {**_TYPED_FILENAME, 'calldos_axdx': ('nopcalldos_axdx',)},
+    'FILE_EXIST': {
+        '_pushss:[bx+filename+2]': ('ifldata', 'pushwordptrss:[bx+filename+2]', 'endif'),
+        'pushss:[bx+filename]': ('pushwordptrss:[bx+filename]',),
+        'calldos_ropen': ('nopcalldos_ropen',),
+    },
+    'FILE_ROPEN': {**_TYPED_FILENAME, 'calldos_ropen': ('nopcalldos_ropen',)},
+    'GRCG_CIRCLEFILL': {
+        'push[bp+x]': ('pushwordptr[bp+x]',),
+        'push[bp+y]': ('pushwordptr[bp+y]',),
+    },
+}
+
+
+# Observed real source OMF fixup cardinalities for the newly reviewed full functions.
+EXPECTED_NATIVE_FIXUPS = {
+    'BFNT_PALETTE_SET': 1,
+    'PALETTE_BLACK_IN': 4,
+    'PALETTE_BLACK_OUT': 3,
+    'BOPENR': 5,
+    'BREAD': 0,
+    'DOS_PUTS2': 0,
+    'DOS_FILESIZE': 0,
+    'FILE_APPEND': 10,
+    'FILE_CLOSE': 1,
+    'FILE_CREATE': 8,
+    'FILE_EXIST': 0,
+    'FILE_ROPEN': 8,
+    'FILE_SEEK': 3,
+    'FILE_TELL': 3,
+    'FILE_SIZE': 1,
+    'DOS_CLOSE': 0,
+    'DOS_ROPEN': 1,
+    'GRCG_SETCOLOR': 0,
+    'GRCG_CIRCLEFILL': 0,
+}
+
+
+def native_spelling_equivalent(author, compiled, name):
+    source_lines = symbolic_source(author)
+    native_lines = symbolic_source(compiled)
+    replacements = NATIVE_SPELLINGS[name]
+    # Specific source statements are pinned, so omissions never silently
+    # turn a reviewed port difference into an accepted unrelated rewrite.
+    multiplicity = {'callvsync_wait': 2, 'callpalette_show': 2}
+    for old in replacements:
+        count = multiplicity.get(old, 1)
+        need(source_lines.count(old) == count,
+             'original Master source spelling changed: '+name+': '+old)
+    expected = [part for line in source_lines
+                for part in replacements.get(line, (line,))]
+    need(expected == native_lines,
+         'native Master procedure has unreviewed source change: '+name)
+
 # PFEND is one original 408-byte procedure but has an actual two-byte
 # unwritten CS: runtime dispatch slot. Only the two real LEDATA extents count.
 PFEND_PARENT = {'op': 0x3858, 'maine': 0x3a20}
@@ -87,6 +207,14 @@ PFEND_UNWRITTEN = (156, 2)
 def upstream_procedure(archive, filename, name):
     blocks = [b for b in source_blocks(archive[filename], 'cp932')
               if b['name'].casefold() == name.casefold()]
+    if name in ('PALETTE_BLACK_IN', 'PALETTE_BLACK_OUT'):
+        # Master 0.23 has two same-name conditional platform definitions.
+        # The first, shorter complete PROC is the one used in the PC-98 code.
+        need(len(blocks) == 2 and
+             len(symbolic_source(blocks[0]['text'])) <
+             len(symbolic_source(blocks[1]['text'])),
+             'original Master palette platform definitions changed')
+        return blocks[0]
     need(len(blocks) == 1, 'original author Master procedure absent: ' + name)
     return blocks[0]
 
@@ -112,6 +240,8 @@ def source_linked():
         og = int.from_bytes(original.program_image[1:3], 'little')
         need(og - cg == (1 if art == 'maine' else 0), 'unexpected artifact CRT group')
         for name, source, author, positions, adaptation in SCOPES:
+            if art not in positions:
+                continue
             start, size = positions[art]
             if name == 'BFTENTRY_INVAL':
                 need(publics.get('BFNT_ENTRY_PAT') == {start + size} and
@@ -146,6 +276,8 @@ def source_linked():
             elif adaptation == 'original-identical':
                 need(symbolic_source(upstream['text']) == symbolic_source(live[0]['text']),
                      'original Master BFNT header PROC source differs')
+            elif adaptation == 'reviewed-native-spelling':
+                native_spelling_equivalent(upstream['text'], live[0]['text'], name)
             else:
                 need(adaptation == 'game5-archive-port' and
                      'if GAME eq 5' in live[0]['text'] and
@@ -155,6 +287,9 @@ def source_linked():
             # source LEDATA, every ordered FIXUPP and both MZ images, whole.
             blob = whole_source(blocks, start, size)
             actions = [x for x in fixups if start <= x['site'] < start + size]
+            if name in EXPECTED_NATIVE_FIXUPS:
+                need(len(actions) == EXPECTED_NATIVE_FIXUPS[name],
+                     'original Master source OMF fixup count changed: '+name)
             cal, native, linked, mz = rebind(blob, actions, start, offsets, segments,
                                             groups, cg, og)
             need(cal == calibration.program_image[start:start+size] and
@@ -256,7 +391,7 @@ def validate(record):
     parent = json.loads(MASTER.read_text())
     expected = [row for art in ARTIFACTS
                 for row in ([('th05-'+art, name, positions[art][0], positions[art][1])
-                             for name, _, _, positions, _ in SCOPES] +
+                             for name, _, _, positions, _ in SCOPES if art in positions] +
                             [('th05-'+art, role, PFEND_PARENT[art]+start, length)
                              for role, start, length in PFEND_WRITTEN])]
     need(record.get('schema_version') == 1 and
@@ -288,6 +423,9 @@ def validate(record):
         else:
             need(r['source'] == known[1] and r['original_archive_member'] == known[2],
                  'Master source/author member changed')
+        if r['member'] in EXPECTED_NATIVE_FIXUPS:
+            need(len(r['ordered_OMF_actions']) == EXPECTED_NATIVE_FIXUPS[r['member']],
+                 'complete native Master OMF fixup evidence is missing')
         need(r['end'] == r['start']+r['size'] and r['authored_credit'] == 0 and
              r['original_ordered_MZ'] ==
              [a['site'] for a in r['ordered_OMF_actions'] if a['kind'] == 2] and

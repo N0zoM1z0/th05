@@ -107,3 +107,32 @@ intervals occur uniquely at the recorded original positions; both native
 OMFs and original MZ images match. These 24 source scopes contain no OMF or
 MZ relocations. They extend the existing bounded Master-hook review and earn
 only vendor CODE ownership, not additional game-authored C++ credit.
+
+## Early palette, file and packed-graphics functions
+
+Another 34 complete Master 0.23 source procedures, occupying **1,736
+previously unknown CODE bytes**, now match the original decoded OP and
+MAINE images. This review covers sixteen functions in OP (776 bytes) and
+eighteen in MAINE (960 bytes). The largest new functions are `BOPENR`
+(84 bytes each), `FILE_APPEND` (84 bytes each), and MAINE's
+`GRCG_CIRCLEFILL` (150 bytes). It also covers palette fades, buffered
+reads, file creation/open/seek/existence, selected DOS services and the
+original packed GRCG color setter.
+
+The original Master archive and actual retained TASM inputs are compared
+**whole procedure by whole procedure**. Some procedures are text-identical.
+The others have a narrowly reviewed source spelling: native `NOPCALL`
+for a source-equivalent relocated call, explicit `word ptr` arguments,
+`IF LDATA`-guarded far-pointer pushes, typed file-error and font-color
+fields. Every such change is specified by a fixed original-source line and
+checked at its expected occurrence count. The native body must match all
+remaining original lines, and its actual OMF LEDATA, ordered FIXUPP actions,
+full original target bytes and MZ relocations must agree. The original
+Master `PALETTE_BLACK_IN`/`OUT` archive has two platform-specific definitions;
+the reviewed PC-98 source is its first complete branch, rather than a blend
+of both alternatives.
+
+The existing proof at
+[`config/context_master_hooks.json`](../../config/context_master_hooks.json)
+and explicit adoption now cover these regions without a new oracle family.
+All 1,736 bytes are third-party Master code, not new game-authored source.
