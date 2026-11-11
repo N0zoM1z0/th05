@@ -132,14 +132,22 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
 def overlay_resources(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
     """Classify reviewed bitmap resources only within still-unknown bytes."""
     validate_partition(size, pieces)
+    sprite_sizes = {"main-sprite-pointnum": 1536, "main-sprite-pellet": 128,
+                    "main-sprite-pellet-bottom": 64, "main-sprite-sparks": 1024}
     for row in claims:
-        if (row.get("kind") != "reviewed-embedded-font-bitmap" or not row.get("resource")
-                or row.get("model") != "th05-zun-cg-256-glyphs-16x16-1bpp"
+        font = (row.get("kind") == "reviewed-embedded-font-bitmap" and
+                row.get("model") == "th05-zun-cg-256-glyphs-16x16-1bpp" and
+                row.get("end", 0) - row.get("start", 0) == 8192)
+        sprite = (row.get("kind") == "reviewed-embedded-sprite-bitmap" and
+                  row.get("model") == "th05-main-bmp2arr-8px-1bpp-preshifted" and
+                  row.get("resource") in sprite_sizes and
+                  row.get("end", 0) - row.get("start", 0) ==
+                  sprite_sizes.get(row.get("resource")))
+        if (not (font or sprite) or not row.get("resource")
                 or type(row.get("authored_credit")) is not int or row["authored_credit"] != 0
                 or type(row.get("instruction_bytes")) is not int or row["instruction_bytes"] != 0
                 or type(row.get("start")) is not int or type(row.get("end")) is not int
-                or not 0 <= row["start"] < row["end"] <= size
-                or row["end"] - row["start"] != 8192):
+                or not 0 <= row["start"] < row["end"] <= size):
             raise ValueError("invalid zero-credit resource claim")
     rows = [row for row in pieces if row["kind"] != "unknown"] + claims
     output, cursor = [], 0
@@ -595,6 +603,13 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_asm(view['size'], pieces, piano_top_claims(root, view))
         if name in fonts:
             pieces = overlay_resources(view["size"], pieces, fonts[name])
+        if name == "main":
+            # Independently reproduced TH02/TH04 BMP-derived sprite tables;
+            # original MAIN's order differs from the native calibration.
+            from review_main_sprites import reviewed_claims as main_sprite_claims
+            sprites, sprite_review_sha = main_sprite_claims(
+                root, view, verify_targets=verify_targets)
+            pieces = overlay_resources(view["size"], pieces, sprites)
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -658,6 +673,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["asm_family_review_sha256"] = generic_asm_sha
         if fonts_sha and name in fonts:
             views[name]["font_resource_review_sha256"] = fonts_sha
+        if name == "main" and sprite_review_sha:
+            views[name]["sprite_resource_review_sha256"] = sprite_review_sha
     counts = Counter()
     for view in views.values():
         counts.update(view["byte_counts"])

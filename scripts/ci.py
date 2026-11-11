@@ -71,6 +71,8 @@ def main():
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_master_io.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_sprites.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # The original C0L CRT contributes 144 initialized DATA bytes, resolved
     # from its real _BSSEND FIXUPP; no other game DATA or CODE is claimed.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_c0_data.py"), "--structural-check"],
