@@ -132,6 +132,17 @@ SCOPES = (
      {'op': (0x1c2e, 48), 'maine': (0x1dc8, 48)}, 'original-identical'),
     ('IRAND', 'libs/master.lib/random.asm', 'RANDOM.ASM',
      {'op': (0x1c5e, 42), 'maine': (0x1df8, 42)}, 'original-identical'),
+    # Original OP residency palette and complete trapezoid rasterizer.
+    # The original Master author archive has explicit GAME=5 conditional
+    # ports here; no joystick-specific code shares these source claims.
+    ('RESPAL_EXIST', 'libs/master.lib/respal_exist.asm', 'RSPEXIST.ASM',
+     {'op': (0x2adc, 60)}, 'respal-game5-port'),
+    ('RESPAL_CREATE', 'libs/master.lib/respal_exist.asm', 'RSPEXIST.ASM',
+     {'op': (0x2b18, 118)}, 'respal-game5-port'),
+    ('RESPAL_FREE', 'libs/master.lib/respal_free.asm', 'RSPFREE.ASM',
+     {'op': (0x2b8e, 30)}, 'respal-game5-port'),
+    ('draw_trapezoid', 'libs/master.lib/draw_trapezoid.asm', 'KOIZOID.ASM',
+     {'op': (0x2bd6, 228)}, 'koizoid-game5-mask-port'),
 )
 ARTIFACTS = ('op', 'maine')
 # Permitted spellings between the original Master 0.23 archived PROC and
@@ -206,7 +217,104 @@ EXPECTED_NATIVE_FIXUPS = {
     'PFREWIND': 0,
     'PFSEEK': 0,
     'IRAND': 5,
+    'RESPAL_EXIST': 2,
+    'RESPAL_CREATE': 2,
+    'RESPAL_FREE': 2,
+    'draw_trapezoid': 26,
 }
+
+
+def game5_respal_derived(author, native, name):
+    """Restrict all GAME>=2 additions to authentic source NOP and private labels."""
+    original = symbolic_source(author)
+    actual = symbolic_source(native)
+    if name=='RESPAL_EXIST':
+        changes={
+            'find:':'rspexist_find:',
+            'jeshortskip':'jeshortrspexist_skip',
+            'repcmpsb':'repecmpsb',
+            'jeshortfound':'jeshortrspexist_found',
+            'skip:':'rspexist_skip:',
+            'jeshortfind':'jeshortrspexist_find',
+            'notfound:':'rspexist_notfound:',
+            'found:':'rspexist_found:',
+        }
+        need(all(original.count(a)==1 for a in changes),
+             'original Master residency palette search labels/CMPSB changed')
+        expected=[changes.get(line,line) for line in original]
+    elif name=='RESPAL_CREATE':
+        changes={
+            'jnzshortignore':'jnzshortrspexist_ignore',
+            'create:':'rspexist_create:',
+            'jcshortdame':'jcshortrspexist_dame',
+            'jnbshortalloc_ok':'jnbshortrspexist_alloc_ok',
+            'alloc_ok:':'rspexist_alloc_ok:',
+            'dame:':'rspexist_dame:',
+            'ignore:':'rspexist_ignore:',
+        }
+        need(all(original.count(a)==1 for a in changes) and
+             original.count('pushdi')==1,
+             'original Master palette-allocation register or jump labels changed')
+        expected=[part for line in original for part in
+                  (('pushdi','ifgamege2','nop','endif') if line=='pushdi'
+                   else (changes.get(line,line),))]
+    elif name=='RESPAL_FREE':
+        need(original.count('jnzshortfree')==1 and
+             original.count('callrespal_exist')==1,
+             'original Master palette release call branch changed')
+        expected=[part for line in original for part in
+                  (('jnzshortfree','ifgamege2','nop','endif') if line=='jnzshortfree'
+                   else (line,))]
+    else:
+        raise ValueError('not an original residency palette Master procedure')
+    need(expected==actual,
+         'native RESPAL source differs beyond original private labels and GAME>=2 NOP branch port')
+
+
+def game5_trapezoid_derived(author, native):
+    """One complete original KOIZOID rasterizer with explicit GAME>=3 mask."""
+    import re
+    original=symbolic_source(author)
+    actual=symbolic_source(native)
+    fields={
+        'yb_adr':'koizoid_yb_adr',
+        'trapez_a_dlx':'koizoid_trapez_a_dlx',
+        'trapez_b_dlx':'koizoid_trapez_b_dlx',
+        'trapez_a_d':'koizoid_trapez_a_d',
+        'trapez_b_d':'koizoid_trapez_b_d',
+        'clipxl_1':'koizoid_clipxl_1',
+        'clipxl_2':'koizoid_clipxl_2',
+        'clipxw_1':'koizoid_clipxw_1',
+        'trapez_a+dlx':'trapez_a+koizoid_dlx',
+        'trapez_b+dlx':'trapez_b+koizoid_dlx',
+        'trapez_a+d':'trapez_a+koizoid_d',
+        'trapez_b+d':'trapez_b+koizoid_d',
+        'trapez_a+x':'trapez_a+koizoid_x',
+        'trapez_b+x':'trapez_b+koizoid_x',
+        'trapez_a+s':'trapez_a+koizoid_s',
+        'trapez_b+s':'trapez_b+koizoid_s',
+    }
+    need(original.count('notax')==original.count('movax,0ffffh')==1 and
+         original.count('repstosw')==1,
+         'original KOIZOID opaque trapezoid inner loop differs')
+    keys=re.compile('|'.join(re.escape(k) for k in sorted(fields,key=len,reverse=True)))
+    # clipyb_adr is an unrelated *actual* hardware/data symbol. The original
+    # `yb_adr` private self-modifying operand must not be renamed inside it.
+    need(original.count('movax,clipyb_adr')==1,
+         'original KOIZOID external VRAM address source changed')
+    translated=[line if line=='movax,clipyb_adr'
+                else keys.sub(lambda m:fields[m.group()],line)
+                for line in original]
+    expected=[]
+    for line in translated:
+        if line=='notax':
+            expected += ['notax','ifgamege3','andax,trapezoid_hmask','endif']
+        elif line=='movax,0ffffh':
+            expected += ['ifgamege3','movax,trapezoid_hmask','else',line,'endif']
+        else:
+            expected.append(line)
+    need(expected==actual,
+         'native 228-byte KOIZOID drawing source changed beyond namespaced fields and true GAME>=3 horizontal mask')
 
 
 def native_spelling_equivalent(author, compiled, name):
@@ -308,6 +416,11 @@ def source_linked():
                      'original Master BFNT header PROC source differs')
             elif adaptation == 'reviewed-native-spelling':
                 native_spelling_equivalent(upstream['text'], live[0]['text'], name)
+            elif adaptation == 'respal-game5-port':
+                game5_respal_derived(upstream['text'],live[0]['text'],name)
+            elif adaptation == 'koizoid-game5-mask-port':
+                need(name=='draw_trapezoid', 'unknown original trapezoid code family')
+                game5_trapezoid_derived(upstream['text'],live[0]['text'])
             elif adaptation == 'pf-game5-direct-decode':
                 author_lines = symbolic_source(upstream['text'])
                 native_lines = symbolic_source(live[0]['text'])

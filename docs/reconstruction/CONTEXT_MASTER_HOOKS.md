@@ -156,3 +156,36 @@ specific GAME=5 adaptation, not described as an equivalent original function.
 No other branch, call or instruction is removed in the accepted source
 comparison. The 18 whole-function bounds, source/OMF fixup counts and original
 image bytes are kept in the existing Master-hook evidence.
+
+## Original OP residency-palette and large masked trapezoid functions
+
+Four more **complete functions**, totaling **436 originally unknown CODE
+bytes**, are now source-backed in OP: `RESPAL_EXIST` (`2ADC..2B18`, 60 B),
+`RESPAL_CREATE` (`2B18..2B8E`, 118 B), `RESPAL_FREE` (`2B8E..2BAC`, 30 B),
+and `draw_trapezoid` (`2BD6..2CBA`, **228 B**). The trapezoid rasterizer is
+the original `KOIZOID.ASM` procedure, including the self-modifying drawing
+registers and full horizontal clipping/masking; the native GAME>=3 branch
+uses `trapezoid_hmask` in place of the original solid-plane word. The
+reviewed source transformation permits only explicit private-field/label
+renames and the actual `IF GAME GE 3` horizontal-mask branch. No opcode,
+address, register or CODE bytes are copied from the target to source.
+
+The three other procedures derive from the original `RSPEXIST.ASM` and
+`RSPFREE.ASM`. `REP CMPSB` uses its equivalent native `REPE CMPSB` spelling
+in the existence check, private labels have explicit namespace prefixes,
+and CREATE/FREE contain the genuine native `IF GAME GE 2; NOP; ENDIF` around
+the original call site. This NOP belongs to the **retained existing native
+TASM source** and matches the target under the actual linker; it is neither
+invented padding nor newly authored game logic. All source/procedure
+comparisons are complete and every transformed original line is constrained.
+
+The original complete bounds are supplied by MAP publics. The actual TASM
+OMF records 2, 2, 2 and **26 ordered fixup actions** respectively; they and
+all 436 native bytes match the original OP decoded MZ. These four scopes are
+unique in the original target. The two neighboring GAME-specific joystick
+functions `JS_START` (`2BAC..2BD6`, 42 B) and `JS_SENSE` (`2CBA..2CD0`,
+22 B) **remain unknown**: their source differs more substantially from the
+published original Master platform handlers. This review does not claim
+either complete joystick function, any mutable DATA or new game-authored
+C++/ASM credit. The shared evidence/decision now encompass **102 source
+scopes / 7,276 third-party CODE bytes** in OP and MAINE combined.
