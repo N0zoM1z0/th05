@@ -58,6 +58,7 @@ necessarily all authored bytes where padding is present.
 | MAIN Mima bomb drawing | **172-byte** original ASM primitives at `1045C..10508`; 171 authored bytes plus one uncredited NOP | [Mima raster primitives](../src/main/player/mima_bomb_primitives.md) |
 | MAIN Mima bomb backdrop | Four-entry **226-byte** GRCG family at `1052C..1060E` exact reviewed ASM; **224 authored** bytes, two uncredited NOPs | [Mima backdrop](../src/main/player/mima_backdrop.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |
+| OP/MAINE PI EGC setup | One complete **65-byte** C++ register setup per binary, original EGC far-call fixup `[3]` | [PI EGC setup](../src/shared/graphics/pi_mask_egc_setup.md) |
 | OP/MAINE plain .PI draws | Four complete C++ functions; per binary **47-byte** full + **70-byte** quarter draw, excluding the original alignment NOP | [Plain PI wrappers](../src/shared/graphics/pi_plain_wrappers.md) |
 | OP/MAINE masked .PI draws | Per binary, two complete C++ wrappers **50 + 73 bytes**, matching original PI-buffer and rowloop ABIs | [Masked PI wrappers](../src/shared/graphics/pi_masked_wrappers.md) |
 | OP Music Room piano C++ | **218 + 116-byte** initializer/renderer at `D894..D9E2`, plus **30-byte** exact near note lookup at `DA12..DA30` | [Setup](../src/op/piano/setup_exact.md), [render](../src/op/piano/render_exact.md), [note](../src/op/piano/note_register.md) |

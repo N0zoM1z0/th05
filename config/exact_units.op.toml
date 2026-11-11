@@ -1197,3 +1197,27 @@ unit = "op-pi-plain-quarter"
 source = "src/shared/graphics/pi_plain_quarter.cpp"
 find = "_AX = 160;"
 replace = "_AX = 159;"
+
+[[units]]
+id = "op-pi-mask-egc-setup"
+source = "src/shared/graphics/pi_mask_egc_setup.cpp"
+module = "th05/maskegc.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_pi_mask_egc_bindings.asm"
+target_start = 56727
+size = 65
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-pi-mask-egc-setup"
+source = "src/shared/graphics/pi_mask_egc_setup.cpp"
+find = "_AX &= 3;"
+replace = "_AX &= 2;"
