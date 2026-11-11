@@ -25,6 +25,7 @@ DECISION=ROOT/'config/reviewed_master_bgm.json'
 BASE=ROOT/'config/master_vendor_ownership.json'
 MEMBERS=(
     ('_BGM_BELL_ORG',0x3690,48),
+    ('BGM_GETNUMBER',0x36c0,40),
     ('_BGM_MGET',0x36e8,298),
     ('BGM_READ_SDATA',0x3812,320),
     ('_BGM_TIMER_INIT',0x3952,68),
@@ -127,6 +128,45 @@ def source_proof(base):
     frozen={x['name']:x for x in base['frozen_source_closure']}
     result={}
     for member,start,size in MEMBERS:
+        if member=='BGM_GETNUMBER':
+            # Private decimal reader called by the near _BGM_MGET parser.
+            # Both genuine B_MGET.ASM and retained native TASM begin it with
+            # GETNUMBER: and terminate it before `func _BGM_MGET`.
+            row=live['_BGM_MGET']
+            source_file=row['source']
+            need(source_file in frozen and source_file.endswith('/bgm_mget.asm'),
+                 'native Master decimal-parser source context changed')
+            content=(ROOT/base['candidate_source_root']/source_file).read_bytes()
+            need(sha(content)==frozen[source_file]['sha256'],
+                 'native original decimal parser TASM source differs')
+            def decimal_body(raw):
+                lines=raw.splitlines()
+                begins=[i for i,line in enumerate(lines) if line.strip().lower()=='getnumber:']
+                ends=[i for i,line in enumerate(lines)
+                      if line.strip().lower().startswith('func _bgm_mget')]
+                need(len(begins)==len(ends)==1 and begins[0]<ends[0],
+                     'original decimal-parser private PROC bounds changed')
+                return '\n'.join(lines[begins[0]:ends[0]]),[begins[0]+1,ends[0]]
+            private_original,old_span=decimal_body(archive['B_MGET.ASM'].decode('cp932'))
+            private_native,new_span=decimal_body(content.decode('utf8'))
+            old_lines=source_lines(private_original,member)
+            new_lines=source_lines(private_native,member)
+            need(len(old_lines)==23 and old_lines==new_lines and
+                 (start,size)==(0x36c0,40) and
+                 live['_BGM_BELL_ORG']['end']==start and
+                 row['start']==start+size,
+                 'complete original Master GETNUMBER source/extent differs')
+            result[member]={
+                'candidate_source':source_file,
+                'candidate_source_sha256':sha(content),
+                'upstream_archive_member':'B_MGET.ASM',
+                'upstream_block_sha256':sha(private_original.encode('utf8')),
+                'candidate_block_sha256':sha(private_native.encode('utf8')),
+                'semantic_instruction_sha256':sha('\n'.join(old_lines).encode('utf8')),
+                'candidate_line_span':new_span,
+                'private_original_line_span':old_span,
+            }
+            continue
         if member=='BGM_BELL':
             # This is a full private near PROC in B_PLAY.ASM, physically
             # between the timer hook and the exported _BGM_PLAY, not a MAP
@@ -256,6 +296,12 @@ def replay():
     for name,start,size in MEMBERS:
         a,b,unlinked,sites,actions=linked_scope(obj,start,size)
         expected=orig.program_image[start:start+size]
+        if name=='BGM_GETNUMBER':
+            # The 39-byte private decimal parser ends with a source RET and
+            # an original TASM EVEN NOP before the exported _BGM_MGET.
+            need((start,size)==(0x36c0,40) and len(actions)==0 and
+                 a[-1:]==b[-1:]==expected[-1:]==b'\x90' and not sites,
+                 'original GETNUMBER private parser/EVEN/fixups changed')
         if name=='BGM_BELL':
             # The whole near PROC is 103 instruction bytes followed by one
             # real EVEN NOP immediately before the exported _BGM_PLAY.
@@ -313,6 +359,10 @@ def validate_public(j):
     need([(z.get('member'),z.get('start'),z.get('size')) for z in rows]==list(MEMBERS),
          'original BGM source scope not the complete accepted functions')
     for row in rows:
+        if row.get('member')=='BGM_GETNUMBER':
+            need(len(row.get('OMF_source_actions',[]))==0 and
+                 row.get('original_ordered_MZ_relocations')==[],
+                 'original private decimal reader has unexpected FIXUPP')
         if row.get('member')=='BGM_BELL':
             need(len(row.get('OMF_source_actions',[]))==2 and
                  row.get('original_ordered_MZ_relocations')==[],

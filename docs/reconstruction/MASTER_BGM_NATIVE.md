@@ -1,7 +1,7 @@
 # Original Master BGM source recovery in TH05 MAIN
 
-Sixteen complete sound and music driver procedures from the original Master
-0.23 library now have source-linked native ownership of **2,226 CODE
+Seventeen complete sound and music driver procedures from the original Master
+0.23 library now have source-linked native ownership of **2,266 CODE
 bytes** in TH05 MAIN. Each original function is reconstructed from the
 real TASM object and its original symbol fixups, not instruction bytes
 copied from the original game.
@@ -10,6 +10,7 @@ copied from the original game.
 | --- | --- | ---: | ---: |
 | `_BGM_BELL_ORG` | `3690..36C0` | 48 | 1 |
 | `_BGM_BELL_ORG` | `3690..36C0` | 48 | 1 |
+| `BGM_GETNUMBER` (private) | `36C0..36E8` | 40 | 0 |
 | `_BGM_MGET` | `36E8..3812` | 298 | 15 |
 | `BGM_READ_SDATA` | `3812..3952` | 320 | 17 |
 | `BGM_READ_SDATA` | `3812..3952` | 320 | 17 |
@@ -70,7 +71,7 @@ from the same source OMF. It checks complete raw bytes, unique
 whole-function occurrences, and ordered original relocations. Its
 [evidence](../../config/master_bgm_ownership.json) and
 [explicit decision](../../config/reviewed_master_bgm.json) grant only
-the sixteen complete member extents. Unaccepted neighboring functions
+the seventeen complete member extents. Unaccepted neighboring functions
 and gaps remain unknown until their own source/macro-context review.
 
 ```sh
@@ -98,3 +99,19 @@ ordered offset fixups**, no MZ segment relocations and a final original
 game-authored instruction credit. The true extent is bounded by the end of
 `_BGM_TIMERHOOK` and the public `_BGM_PLAY` entry, not an inferred public for
 the private helper.
+
+## Complete private decimal note-length reader
+
+The original Master `B_MGET.ASM` begins with a non-exported `GETNUMBER:`
+helper before the public `_BGM_MGET`. Its original source and the retained
+TH05 TASM source have **23 identical normalized source lines**. The whole
+`36C0..36E8` scope accumulates decimal note-duration digits into CX by
+multiplying by ten, advances the music part's far text pointer and returns
+near. The actual native OMF writes **40/40 original bytes**, including its
+original EVEN alignment NOPs, with no FIXUPP or MZ relocations. The original
+near helper is bounded by the preceding `_BGM_BELL_ORG` and following
+`_BGM_MGET`, not an invented exported symbol.
+
+These 40 CODE bytes are third-party Master source, with no new game-authored
+C++/ASM credit. The existing verifier now covers 17 sound routines and
+**2,266 source-backed CODE bytes** in MAIN without a whole-program rebuild.
