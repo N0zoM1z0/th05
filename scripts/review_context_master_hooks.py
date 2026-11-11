@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Bounded original OP/MAINE Master-derived display and file-hook CODE.
+"""Bounded original OP/MAINE Master-derived display, file and BFNT CODE.
 
-Five complete procedures plus both source-written parts of PFEND per artifact,
-all from actual TASM OMF LEDATA/FIXUPP and decoded original target bytes.
-PFEND's two-byte runtime CS: slot and GRAPH_PACK's unreviewed origin remain unknown.
+Review complete procedures plus PFEND's source-written portions through the
+actual TASM OMF, original author source and decoded original MZ images.
+The two-byte PFEND writable slot remains unowned.
 """
 from __future__ import annotations
 
@@ -17,6 +17,8 @@ from lib.unit_context import UnitContext, load_unit_target
 from lib.unit_oracle import relative_fixups
 from review_master import pinned, need, sha, stored_lzh, source_blocks
 from review_master_bgm import source_lines as bgm_lines
+from review_main_bfnt_entry import derived_source as bfnt_derived_source
+from review_master_grcg import symbolic_source
 from review_context_master_large import ROOT, MASTER, real_omf, native_map, whole_source, rebind
 
 PROOF = ROOT / 'config/context_master_hooks.json'
@@ -35,6 +37,17 @@ SCOPES = (
      {'op': (0x37b8, 160), 'maine': (0x3980, 160)}, 'game5-archive-port'),
     ('PFOPEN', 'th03/formats/pfopen.asm', 'PFOPEN.ASM',
      {'op': (0x39f0, 296), 'maine': (0x3bb8, 296)}, 'game5-archive-port'),
+    # These four adjacent original BFNT functions also occur in both
+    # front-end executables. The 20-byte error helper is private to the
+    # next exported function, not itself an exported MAP public.
+    ('BFTENTRY_INVAL', 'libs/master.lib/bfnt_entry_pat.asm', 'BFTENTRY.ASM',
+     {'op': (0x272, 20), 'maine': (0x272, 20)}, 'bfnt-error-branch-port'),
+    ('BFNT_ENTRY_PAT', 'libs/master.lib/bfnt_entry_pat.asm', 'BFTENTRY.ASM',
+     {'op': (0x286, 302), 'maine': (0x286, 302)}, 'bfnt-error-branch-port'),
+    ('BFNT_HEADER_READ', 'libs/master.lib/bfnt_header_read.asm', 'BFNTHDRR.ASM',
+     {'op': (0x3b4, 60), 'maine': (0x3b4, 60)}, 'original-identical'),
+    ('BFNT_EXTEND_HEADER_ANALYSIS', 'libs/master.lib/bfnt_header_analysis.asm', 'BFTHDRAN.ASM',
+     {'op': (0x3f0, 100), 'maine': (0x3f0, 100)}, 'original-identical'),
 )
 ARTIFACTS = ('op', 'maine')
 # PFEND is one original 408-byte procedure but has an actual two-byte
@@ -75,12 +88,18 @@ def source_linked():
         need(og - cg == (1 if art == 'maine' else 0), 'unexpected artifact CRT group')
         for name, source, author, positions, adaptation in SCOPES:
             start, size = positions[art]
-            need(publics.get(name) == {start}, 'native public entry ambiguity: '+name)
+            if name == 'BFTENTRY_INVAL':
+                need(publics.get('BFNT_ENTRY_PAT') == {start + size} and
+                     start == 0x272 and size == 20,
+                     'actual private BFNT error helper boundary changed')
+            else:
+                need(publics.get(name) == {start}, 'native public entry ambiguity: '+name)
             path = root / source
             content = path.read_bytes()
             live = [b for b in source_blocks(content, 'utf8') if b['name'] == name]
             need(len(live) == 1, 'missing native full procedure source: '+name)
-            upstream = upstream_procedure(archive, author, name)
+            upstream = upstream_procedure(archive, author,
+                'INVAL' if name == 'BFTENTRY_INVAL' else name)
             # Only the BGM NOPCALL is exactly the author's unchanged semantic
             # source: TLINK's call relaxation produces its actual NOP. The
             # remaining GAME>=4 / GAME=5 edits are acknowledged explicitly,
@@ -93,8 +112,18 @@ def source_linked():
                      'add' in live[0]['text'].lower() and
                      'adc' in upstream['text'].lower(),
                      'missing explicit GAME>=4 Master GAIJI adaptation')
+            elif adaptation == 'bfnt-error-branch-port':
+                # Only the original long-error branch expansion and local
+                # private-label renames are allowed; copied target bytes are
+                # not a substitute for the actual author PROC body.
+                bfnt_derived_source(symbolic_source(upstream['text']),
+                                    symbolic_source(live[0]['text']), name)
+            elif adaptation == 'original-identical':
+                need(symbolic_source(upstream['text']) == symbolic_source(live[0]['text']),
+                     'original Master BFNT header PROC source differs')
             else:
-                need('if GAME eq 5' in live[0]['text'] and
+                need(adaptation == 'game5-archive-port' and
+                     'if GAME eq 5' in live[0]['text'] and
                      ('pf' in live[0]['text'].lower()),
                      'missing actual GAME=5 original Master file-port branch')
             # All source is from the real native compilation object. Compare

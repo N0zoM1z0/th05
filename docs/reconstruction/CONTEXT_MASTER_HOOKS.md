@@ -68,3 +68,25 @@ source-identity/ledger check. Bounded proof negatives reject missing/clipped fun
 relocation, altered author provenance, modified runtime slot limits, and false
 authored credit. No whole-game cold replay or accepted
 unrelated C++ unit rebuilding was performed.
+
+## Complete BFNT entry and header procedures in both front ends
+
+Four further complete native Master procedures are now attributable in **each**
+OP and MAINE executable, totaling **964 new source-written CODE bytes**:
+`BFTENTRY_INVAL` (`0272..0286`, 20 bytes), `BFNT_ENTRY_PAT` (`0286..03B4`,
+302 bytes), `BFNT_HEADER_READ` (`03B4..03F0`, 60 bytes), and
+`BFNT_EXTEND_HEADER_ANALYSIS` (`03F0..0454`, 100 bytes).
+
+The original Master `BFTENTRY.ASM` is independently correlated to the retained
+TASM source by the two actual conditional-branch expansions and private-label
+renames already reviewed for MAIN. The original `BFNTHDRR.ASM` and
+`BFTHDRAN.ASM` blocks match their retained native sources exactly under
+whitespace normalization. `BFTENTRY_INVAL` has no exported MAP public: its
+20-byte extent ends precisely at the genuine `BFNT_ENTRY_PAT` public. Every
+complete CODE extent, actual OMF fixup and ordered original MZ relocation
+matches both original and calibration images. The preceding startup region
+`0000..0272` stays outside these claims.
+
+This review extends the existing focused Master-hook source proof and decision,
+without introducing a separate verification framework. All eight original
+functions remain third-party code, with no new game-authored credit.
