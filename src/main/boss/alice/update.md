@@ -94,3 +94,33 @@ negative was rejected; the private receipt is
 `.analysis/unit-replays/gpt-web-alice-shared-typed-scratch-20261111/receipt.json`.
 No new authored byte credit, partial function acceptance, DATA/BSS or game
 assets are inferred from the refactor.
+
+## Wave HP ladder and complete beam/final attack clocks (2026-11-11)
+
+The full 939-byte Alice update and its maintained standalone counterpart now
+share the same complete controller body. Setup installs the first normal-wave
+HP end gate of **7,400**, and each regular-wave completion copies the current
+`phase_end_hp` into `boss.hp` before installing the next. The real repeated
+2,200 HP decrement produces the sequential normal-wave boundaries **7,400 →
+5,200 → 3,000 → 800**, then the final wave installs zero. This is a threshold
+ladder, not a direct subtraction from the current Boss health on every frame;
+beam approach/attack phases remain interspersed with these four normal waves.
+
+Each normal wave retains the genuine **24 completed attack patterns** and a
+three-way source-selected pattern variant after an eight-frame random-flight
+lead-in. The original 128-frame setup and 64-frame ready gates, 128-frame
+puppet entrance, initial 160-frame beam burst window, and 20-frame minimum
+bullet-clear time remain separate semantic clocks. The three puppet beam
+attacks still time out on the original strict `< 600` test, while the final
+spread remains hittable during the original strict `< 1000` interval. The
+original seven-point regular and five-point beam reward scores are also
+explicit source constants; no unrelated health or sprite state was reset.
+
+`main-alice-update-context` was rebuilt twice by the actual pinned Borland /
+TLINK toolchain. Its whole **939/939 original bytes**, generated switch table,
+alignment and ordered MZ fixups matched. The compiled negative now changes
+the actual named wave-one HP gate from 7,400 to 7,300 and was rejected. The
+focused receipt is
+`.analysis/unit-replays/gpt-web-alice-wave-hp-timers-fixed-20261111/receipt.json`.
+These are semantics of already accepted game C++ CODE, not newly attributed
+or padding bytes; no full cold replay was run.

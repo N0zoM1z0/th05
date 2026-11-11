@@ -1,6 +1,26 @@
 // Alice's final spread and complete boss state machine.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
+
+// The four normal waves share one countdown but the *current* HP is set
+// from the previous threshold before the next threshold is installed.
+// The four real regular-wave HP gates are 7400 -> 5200 -> 3000 -> 800,
+// and the final transition installs zero for the following attack.
+static const int ALICE_WAVE_ONE_END_HP = 7400;
+static const int ALICE_WAVE_HP_DECREMENT = 2200;
+static const int ALICE_REGULAR_WAVE_PATTERN_LIMIT = 24;
+static const int ALICE_REGULAR_WAVE_VARIANTS = 3;
+static const int ALICE_RANDOM_FLYSTEP_LEAD_FRAMES = 8;
+static const int ALICE_SETUP_ENTRY_FRAME = 1;
+static const int ALICE_SETUP_EXIT_FRAME = 128;
+static const int ALICE_READY_EXIT_FRAME = 64;
+static const int ALICE_PUPPET_APPEAR_FRAME = 128;
+static const int ALICE_BEAM_BURST_INITIAL_WINDOW = 160;
+static const int ALICE_BEAM_ATTACK_TIMEOUT = 600;
+static const int ALICE_FINAL_SPREAD_TIMEOUT = 1000;
+static const int ALICE_BULLET_CLEAR_MIN_FRAMES = 20;
+static const int ALICE_REGULAR_WAVE_BONUS = 7;
+static const int ALICE_BEAM_WAVE_BONUS = 5;
 #include "src/main/boss/alice/beam_phase.hpp"
 #include "src/main/boss/alice/scratch.hpp"
 // Canonical object layouts are already parsed. Keep ordinary word alignment
@@ -23,15 +43,15 @@ void pascal far alice_update(void)
 
     switch(boss.phase) {
     case ALICE_PHASE_SETUP:
-        if(boss.phase_frame == 1) {
+        if(boss.phase_frame == ALICE_SETUP_ENTRY_FRAME) {
             boss.hp = ALICE_HP_TOTAL;
-            boss.phase_end_hp = 7400;
+            boss.phase_end_hp = ALICE_WAVE_ONE_END_HP;
             gather_template.radius.v = to_sp(64);
             gather_template.angle_delta = 2;
             gather_template.ring_points = 8;
         }
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 128) {
+        if(boss.phase_frame >= ALICE_SETUP_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
             snd_se_play(13);
@@ -41,7 +61,7 @@ void pascal far alice_update(void)
 
     case ALICE_PHASE_READY:
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
+        if(boss.phase_frame >= ALICE_READY_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
             boss.mode = ALICE_MODE_ATTACK;
@@ -54,7 +74,7 @@ void pascal far alice_update(void)
     case ALICE_PHASE_PUPPET_ENTRANCE:
         alice_pattern_opening();
         boss_hittest_shots();
-        if(boss.phase_frame == 128) {
+        if(boss.phase_frame == ALICE_PUPPET_APPEAR_FRAME) {
             p = &alice_puppet0;
             p->flag = 1;
             p->patnum = 190;
@@ -71,7 +91,7 @@ void pascal far alice_update(void)
             p->pos.cur.x.v = to_sp(-999);
             alice_puppet_pattern0 = alice_puppet_initial;
             alice_puppet_pattern1 = alice_puppet_initial;
-        } else if(boss.phase_frame > 128) {
+        } else if(boss.phase_frame > ALICE_PUPPET_APPEAR_FRAME) {
             alice_puppets_entrance();
             if(alice_puppet0.radius.radius_motion == 0) {
                 boss.phase++;
@@ -79,7 +99,7 @@ void pascal far alice_update(void)
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen = 0;
                 alice_scratch.attack_wave = 0;
-                alice_beam_burst_window = 160;
+                alice_beam_burst_window = ALICE_BEAM_BURST_INITIAL_WINDOW;
             }
         }
         break;
@@ -90,15 +110,15 @@ void pascal far alice_update(void)
     case ALICE_PHASE_PATTERN_WAVE_4:
         switch(boss.mode) {
         case ALICE_MODE_REPOSITION:
-            if(boss_flystep_random(boss.phase_frame - 8)) {
+            if(boss_flystep_random(boss.phase_frame - ALICE_RANDOM_FLYSTEP_LEAD_FRAMES)) {
                 boss.mode = ALICE_MODE_ATTACK;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen >= 24) {
+                if(boss.phase_state.patterns_seen >= ALICE_REGULAR_WAVE_PATTERN_LIMIT) {
                     goto phase_complete;
                 }
                 alice_pattern_current =
-                    alice_pattern_table[alice_scratch.attack_wave][randring2_next16_mod(3)];
+                    alice_pattern_table[alice_scratch.attack_wave][randring2_next16_mod(ALICE_REGULAR_WAVE_VARIANTS)];
             }
             break;
         case ALICE_MODE_ATTACK:
@@ -108,12 +128,12 @@ void pascal far alice_update(void)
         if(!boss_hittest_shots()) {
             break;
         }
-        boss_score_bonus(7);
+        boss_score_bonus(ALICE_REGULAR_WAVE_BONUS);
         boss_items_drop();
 phase_complete:
         alice_scratch.attack_wave++;
-        if(bullet_clear_time < 20) {
-            bullet_clear_time = 20;
+        if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) {
+            bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES;
         }
         boss_explode_small(ET_NW_SE);
         boss.phase++;
@@ -122,7 +142,7 @@ phase_complete:
         boss.mode = ALICE_MODE_REPOSITION;
         boss.hp = boss.phase_end_hp;
         if(boss.phase < ALICE_PHASE_PATTERN_WAVE_4) {
-            boss.phase_end_hp -= 2200;
+            boss.phase_end_hp -= ALICE_WAVE_HP_DECREMENT;
         } else {
             boss.phase_end_hp = 0;
         }
@@ -156,13 +176,13 @@ phase_complete:
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold;
         alice_puppet_beam_pattern();
         boss_hittest_shots();
-        if(boss.phase_frame < 600) {
+        if(boss.phase_frame < ALICE_BEAM_ATTACK_TIMEOUT) {
             break;
         }
-        boss_score_bonus(5);
+        boss_score_bonus(ALICE_BEAM_WAVE_BONUS);
         boss_explode_small(ET_NW_SE);
-        if(bullet_clear_time < 20) {
-            bullet_clear_time = 20;
+        if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) {
+            bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES;
         }
         boss.phase++;
         boss.phase_frame = 0;
@@ -201,7 +221,7 @@ movement_hittest:
         alice_puppet1.pos.prev.y.v = to_sp(128);
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_rings;
         alice_pattern_final_spread();
-        if(boss.phase_frame < 1000) {
+        if(boss.phase_frame < ALICE_FINAL_SPREAD_TIMEOUT) {
             if(!boss_hittest_shots()) {
                 break;
             }

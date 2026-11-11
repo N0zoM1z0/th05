@@ -4287,8 +4287,8 @@ code_data_ranges = [{ offset = 909, size = 30, kind = "compiler-switch-table" }]
 [[controls]]
 unit = "main-alice-update-context"
 source = "src/main/boss/alice/update_context.cpp"
-find = "boss.phase_end_hp = 7400;"
-replace = "boss.phase_end_hp = 7300;"
+find = "boss.phase_end_hp = ALICE_WAVE_ONE_END_HP;"
+replace = "boss.phase_end_hp = (ALICE_WAVE_ONE_END_HP - 100);"
 
 [[units]]
 id = "main-mai-update"
