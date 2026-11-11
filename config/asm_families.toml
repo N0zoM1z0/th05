@@ -2463,3 +2463,38 @@ replace = "mov cx, (TILE_HEIGHT - 1)"
 offset = 171
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-gather-raster-primitives"
+artifact = "main"
+source = "src/main/gather/raster_primitives.asm"
+types = "src/main/gather/raster_primitives_types.inc"
+symbols = "probes/units/gather_raster_symbols.inc"
+bindings = "probes/units/gather_raster_bindings.asm"
+notes = "src/main/gather/raster_primitives.md"
+target_start = 86802
+size = 122
+segment = "GATHER_RASTER_TEXT"
+group = "main_03"
+cs_base = 86640
+instruction_nops = []
+fixups = []
+native_review_sha256 = "0e56b4561fa1e403f1aa2e28349f9c3cc32514e0d98be4813e695ba5e792a898"
+target_scope_sha256 = "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d"
+semantic_inputs = ["src/main/gather/gather.hpp", "src/main/enemy/script.md"]
+[units.publics]
+"GATHER_GRCG_COLOR_DIRECT" = 0
+"GATHER_GRCG_MODE_RMW" = 26
+"gather_point_render(int,int)" = 32
+"gather_raster_end" = 122
+[units.negative]
+find = "mov cx, GATHER_POINT_H"
+replace = "mov cx, (GATHER_POINT_H - 1)"
+[[units.uncredited]]
+offset = 31
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 91
+size = 1
+kind = "alignment"

@@ -19604,6 +19604,244 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "31d0c604e98ac059e55a0d1679a3001c190ea87e6a0100bfd1704454443eeaa6"
+    },
+    "main-gather-raster-primitives": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-gather-raster-primitives",
+        "artifact": "main",
+        "source": "src/main/gather/raster_primitives.asm",
+        "types": "src/main/gather/raster_primitives_types.inc",
+        "symbols": "probes/units/gather_raster_symbols.inc",
+        "bindings": "probes/units/gather_raster_bindings.asm",
+        "notes": "src/main/gather/raster_primitives.md",
+        "target_start": 86802,
+        "size": 122,
+        "segment": "GATHER_RASTER_TEXT",
+        "group": "main_03",
+        "cs_base": 86640,
+        "instruction_nops": [],
+        "fixups": [],
+        "native_review_sha256": "0e56b4561fa1e403f1aa2e28349f9c3cc32514e0d98be4813e695ba5e792a898",
+        "target_scope_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+        "semantic_inputs": [
+          "src/main/gather/gather.hpp",
+          "src/main/enemy/script.md"
+        ],
+        "publics": {
+          "GATHER_GRCG_COLOR_DIRECT": 0,
+          "GATHER_GRCG_MODE_RMW": 26,
+          "gather_point_render(int,int)": 32,
+          "gather_raster_end": 122
+        },
+        "negative": {
+          "find": "mov cx, GATHER_POINT_H",
+          "replace": "mov cx, (GATHER_POINT_H - 1)"
+        },
+        "uncredited": [
+          {
+            "offset": 31,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 91,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/gather_raster_bindings.asm",
+          "sha256": "f1ba6574f6ca059d0e5c5a4a8b6ea3e96bf022dd312c176f8bb1a70a9cbfbba3"
+        },
+        {
+          "path": "probes/units/gather_raster_symbols.inc",
+          "sha256": "658cf4d2bf269ca3be398aa0302b6a79293331dc2640da0a80c0d85cc3d58a7e"
+        },
+        {
+          "path": "src/main/enemy/script.md",
+          "sha256": "1d120bc138c2b1f2057d5101bf31c9fafba00add263761beac40c91b895e3862"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/gather/raster_primitives.asm",
+          "sha256": "2e3a66688c943674495ada8ccdd17a38ad641a6fe4e5a445ab86502206a75eff"
+        },
+        {
+          "path": "src/main/gather/raster_primitives_types.inc",
+          "sha256": "a61413fe4f3dfbad47048756b49d31237902959d0551ae8ab01cb1de2cb3835d"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 120,
+        "dispatch-table": 0,
+        "alignment": 2,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 86802,
+            "candidate_start": 86802,
+            "size": 122,
+            "target_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+            "candidate_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "GATHER_RASTER_TEXT",
+            "size": 122,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 122,
+                "sha256": "5b2d95f1dcd99062a5fc6e5718f1f2298c0656284d7f87aa75ae847833d6d895"
+              }
+            ]
+          },
+          "object_sha256": "bb8d5cbbc4652933c7f55573937c64d2483e468433737b6b44b8cda2a398e523",
+          "object_normalized_sha256": "081b4222474e68808b7e7bb592b02fe748435f26df1fa8fb9d7dc4d7abda2c6a",
+          "bindings_sha256": "df9dc22e410f61a55e97ecd0938db2f21dc16dd311a3de422f26287a19974751",
+          "bindings_normalized_sha256": "27a5d41456a95144d22133c84b655726d3d6a5e0256e939b621fd0040315aca0",
+          "map_sha256": "b0f1be15e83c146819916b52c22e84081dbb05a2456a4578d5427402a79a8f98",
+          "mz_sha256": "bb2118ac8f1903e500f511adbab2bf47d63632ac32ed43fa9424985b422bd311",
+          "commands_sha256": "bbf20c3b83cd27a581221293a1b87a1c86e0440916b03d1bec7b09f525ff54b4"
+        },
+        {
+          "comparison": {
+            "target_start": 86802,
+            "candidate_start": 86802,
+            "size": 122,
+            "target_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+            "candidate_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "GATHER_RASTER_TEXT",
+            "size": 122,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 122,
+                "sha256": "5b2d95f1dcd99062a5fc6e5718f1f2298c0656284d7f87aa75ae847833d6d895"
+              }
+            ]
+          },
+          "object_sha256": "909827f3321d72dca8db90c261935384bb7702bee143114e3925ce75f39c3cca",
+          "object_normalized_sha256": "081b4222474e68808b7e7bb592b02fe748435f26df1fa8fb9d7dc4d7abda2c6a",
+          "bindings_sha256": "e3c7440d95d2d057b487797045e79ed2de9a5bd0834a7561a9ccb01065707c88",
+          "bindings_normalized_sha256": "27a5d41456a95144d22133c84b655726d3d6a5e0256e939b621fd0040315aca0",
+          "map_sha256": "b0f1be15e83c146819916b52c22e84081dbb05a2456a4578d5427402a79a8f98",
+          "mz_sha256": "bb2118ac8f1903e500f511adbab2bf47d63632ac32ed43fa9424985b422bd311",
+          "commands_sha256": "bbf20c3b83cd27a581221293a1b87a1c86e0440916b03d1bec7b09f525ff54b4"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 86802,
+          "candidate_start": 86802,
+          "size": 122,
+          "target_sha256": "72c67b4ba0d9b9fb9b2264c0efa261d61914dcaf7986fe04ff8e795604b9b02d",
+          "candidate_sha256": "d8a9cb327cc3ad022dc650c148311b9fdc50fd443e319b6044cd2937f666940c",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "GATHER_RASTER_TEXT",
+          "size": 122,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 122,
+              "sha256": "9c025f704f3066f49bbefc55702a8a3212bb8d48da0fd24363656e5fcc63b4e7"
+            }
+          ]
+        },
+        "object_sha256": "4b99b142e9e8caffc9ccbf62d3e0e2fe8540866236b7caf57295256808eb6a40",
+        "object_normalized_sha256": "f58a32a1522896f56fdd42fc8ae1b75aa9caa714cbba1b8d2bea5c623477ecee",
+        "bindings_sha256": "e3c7440d95d2d057b487797045e79ed2de9a5bd0834a7561a9ccb01065707c88",
+        "bindings_normalized_sha256": "27a5d41456a95144d22133c84b655726d3d6a5e0256e939b621fd0040315aca0",
+        "map_sha256": "b0f1be15e83c146819916b52c22e84081dbb05a2456a4578d5427402a79a8f98",
+        "mz_sha256": "e2f09955fe28acc9fc9bb699c4e7e647da055496e52309ed907e474a95d4d367",
+        "commands_sha256": "bbf20c3b83cd27a581221293a1b87a1c86e0440916b03d1bec7b09f525ff54b4"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "a3ecf3843298fc0bc948b989add12475825839668467edbbe83a135d1a1a081a"
     }
   }
 }
