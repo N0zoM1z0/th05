@@ -31,6 +31,7 @@ MEMBERS=(
     ('_BGM_TIMER_FINISH',0x3996,42),
     ('_BGM_PINIT',0x39c0,62),
     ('_BGM_TIMERHOOK',0x39fe,176),
+    ('BGM_BELL',0x3aae,104),
     ('_BGM_PLAY',0x3b16,302),
     ('BGM_SOUND',0x3c44,74),
     ('_BGM_EFFECT_SOUND',0x3c8e,120),
@@ -72,6 +73,47 @@ def source_lines(raw,name):
     return rows
 
 
+def private_bgm_bell_source(author, native):
+    """The original private BGM_BELL label before the exported _BGM_PLAY."""
+    def body(raw):
+        lines=raw.splitlines()
+        starts=[i for i,line in enumerate(lines) if line.strip().lower()=='bgm_bell:']
+        ends=[i for i,line in enumerate(lines) if line.strip().lower().startswith('func _bgm_play')]
+        need(len(starts)==len(ends)==1 and starts[0]<ends[0],
+             'original Master BGM bell source/private boundary changed')
+        return '\n'.join(lines[starts[0]:ends[0]]),(starts[0]+1,ends[0])
+    source,old_range=body(author)
+    candidate,new_range=body(native)
+    expected=source_lines(source,'BGM_BELL')
+    actual=source_lines(candidate,'BGM_BELL')
+    # Exact local-label namespace and original packed SPART/SGLB field
+    # qualifiers are the only source adaptations. The old PCAT marker is
+    # unreferenced; the native conditional branch still has the same body.
+    changes={
+        'cmp[si].pmask,on':'cmp[si].sglb.pmask,on',
+        'jeshortexit':'jeshortb_play_exit',
+        'jneshortnotoct1':'jneshortb_play_notoct1',
+        'jmpshortoct1':'jmpshortb_play_oct1',
+        'notoct1:':'b_play_notoct1:',
+        'oct1:':'b_play_oct1:',
+        'jzshortpc98':'jzshortb_play_pc98',
+        'pcat:inal,61h':'inal,61h',
+        'jmpshortdo_scale':'jmpshortb_play_do_scale',
+        'pc98:':'b_play_pc98:',
+        'jzshortclock10mhz':'jzshortb_play_clock10mhz',
+        'do_scale:':'b_play_do_scale:',
+        'clock10mhz:':'b_play_clock10mhz:',
+        'exit:':'b_play_exit:',
+    }
+    for old in changes:
+        need(expected.count(old)==1,
+             'original BGM BELL private field or jump changed: '+old)
+    adapted=[changes.get(line,line) for line in expected]
+    need(adapted==actual,
+         'BGM_BELL source differs beyond the original local labels and struct qualifiers')
+    return source,candidate,old_range,new_range,sha('\n'.join(adapted).encode('utf8'))
+
+
 def source_proof(base):
     archive=stored_lzh(pinned(ROOT,base['inputs']['inner_archive']))
     original={}
@@ -85,6 +127,35 @@ def source_proof(base):
     frozen={x['name']:x for x in base['frozen_source_closure']}
     result={}
     for member,start,size in MEMBERS:
+        if member=='BGM_BELL':
+            # This is a full private near PROC in B_PLAY.ASM, physically
+            # between the timer hook and the exported _BGM_PLAY, not a MAP
+            # public of its own. Review the source outside PROC block parser.
+            row=live['_BGM_PLAY']
+            source_file=row['source']
+            need(source_file in frozen and source_file.endswith('/bgm_play.asm'),
+                 'original BGM_BELL source context differs')
+            content=(ROOT/base['candidate_source_root']/source_file).read_bytes()
+            need(sha(content)==frozen[source_file]['sha256'],
+                 'private Master BGM source changed from native TASM input')
+            old_bell=archive['B_PLAY.ASM'].decode('cp932')
+            native_bell=content.decode('utf8')
+            old,native,old_span,new_span,canonical=private_bgm_bell_source(old_bell,native_bell)
+            need(start==0x3aae and size==104 and
+                 live['_BGM_TIMERHOOK']['end']==start and
+                 row['start']==start+size,
+                 'private BGM_BELL complete source bounds shifted')
+            result[member]={
+                'candidate_source':source_file,
+                'candidate_source_sha256':sha(content),
+                'upstream_archive_member':'B_PLAY.ASM',
+                'upstream_block_sha256':sha(old.encode('utf8')),
+                'candidate_block_sha256':sha(native.encode('utf8')),
+                'semantic_instruction_sha256':canonical,
+                'candidate_line_span':list(new_span),
+                'private_original_line_span':list(old_span),
+            }
+            continue
         row=live[member]
         need((row['start'],row['end'])==(start,start+size),
              'BGM original active source listing boundary changed')
@@ -185,6 +256,13 @@ def replay():
     for name,start,size in MEMBERS:
         a,b,unlinked,sites,actions=linked_scope(obj,start,size)
         expected=orig.program_image[start:start+size]
+        if name=='BGM_BELL':
+            # The whole near PROC is 103 instruction bytes followed by one
+            # real EVEN NOP immediately before the exported _BGM_PLAY.
+            need((start,size)==(0x3aae,104) and len(actions)==2 and
+                 a[-1:]==b[-1:]==expected[-1:]==b'\x90' and
+                 not sites,
+                 'original private Master bell CODE/EVEN or fixups changed')
         need(a==cal.program_image[start:start+size] and b==expected,
              'original BGM OMF source does not reconstruct complete CODE: '+name)
         need(relative_fixups(cal,start,size)==relative_fixups(orig,start,size)==sites,
@@ -235,6 +313,10 @@ def validate_public(j):
     need([(z.get('member'),z.get('start'),z.get('size')) for z in rows]==list(MEMBERS),
          'original BGM source scope not the complete accepted functions')
     for row in rows:
+        if row.get('member')=='BGM_BELL':
+            need(len(row.get('OMF_source_actions',[]))==2 and
+                 row.get('original_ordered_MZ_relocations')==[],
+                 'original private bell source FIXUPP actions changed')
         need(row.get('end')==row['start']+row['size'] and
              row.get('authored_credit')==0 and
              isinstance(row.get('original_ordered_MZ_relocations'),list) and

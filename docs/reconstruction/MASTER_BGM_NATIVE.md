@@ -1,7 +1,7 @@
 # Original Master BGM source recovery in TH05 MAIN
 
-Fifteen complete sound and music driver procedures from the original Master
-0.23 library now have source-linked native ownership of **2,122 CODE
+Sixteen complete sound and music driver procedures from the original Master
+0.23 library now have source-linked native ownership of **2,226 CODE
 bytes** in TH05 MAIN. Each original function is reconstructed from the
 real TASM object and its original symbol fixups, not instruction bytes
 copied from the original game.
@@ -18,6 +18,7 @@ copied from the original game.
 | `_BGM_TIMER_FINISH` | `3996..39C0` | 42 | 4 |
 | `_BGM_PINIT` | `39C0..39FE` | 62 | 2 |
 | `_BGM_TIMERHOOK` | `39FE..3AAE` | 176 | 19 |
+| `BGM_BELL` (private) | `3AAE..3B16` | 104 | 2 |
 | `_BGM_PLAY` | `3B16..3C44` | 302 | 30 |
 | `BGM_SOUND` | `3C44..3C8E` | 74 | 5 |
 | `_BGM_EFFECT_SOUND` | `3C8E..3D06` | 120 | 7 |
@@ -69,7 +70,7 @@ from the same source OMF. It checks complete raw bytes, unique
 whole-function occurrences, and ordered original relocations. Its
 [evidence](../../config/master_bgm_ownership.json) and
 [explicit decision](../../config/reviewed_master_bgm.json) grant only
-the fifteen complete member extents. Unaccepted neighboring functions
+the sixteen complete member extents. Unaccepted neighboring functions
 and gaps remain unknown until their own source/macro-context review.
 
 ```sh
@@ -82,3 +83,18 @@ These are **third-party native ASM CODE** bytes, not the number of
 decoded instructions, and contribute **zero game-authored C++ bytes**.
 No full cold replay, invented source state, or new denominator is
 involved.
+
+## Private Master bell calculation and original alignment
+
+The 104-byte `[3AAE,3B16)` scope belongs to `BGM_BELL`, the private near
+helper immediately before `_BGM_PLAY`. The genuine Master 0.23 `B_PLAY.ASM`
+contains this complete body, which chooses PC-98 or PC/AT speaker output,
+scales pitch from the music part's note and octave, and writes the timer
+period. The source changes only namespace-local labels, typed `SGLB.pmask`
+access and an unused PCAT label; all 52 normalized source lines match. The
+original TASM OMF supplies 104/104 exact native bytes with **two original
+ordered offset fixups**, no MZ segment relocations and a final original
+`EVEN` NOP at `3B15`, after its `RET`. That alignment byte is not new
+game-authored instruction credit. The true extent is bounded by the end of
+`_BGM_TIMERHOOK` and the public `_BGM_PLAY` entry, not an inferred public for
+the private helper.
