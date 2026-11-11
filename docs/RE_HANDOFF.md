@@ -24,8 +24,8 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **29,138 decoded bytes**:
-MAIN 5,819; OP 7,156; MAINE 7,604; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **29,096 decoded bytes**:
+MAIN 5,819; OP 7,114; MAINE 7,604; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
 
 ## Most useful next reconstruction work
@@ -121,3 +121,10 @@ comparisons and all relevant experiment scripts remain. Historical
 experiments referenced by source notes are otherwise preserved.
 Only ignored local caches were deleted; the accepted ledgers and
 Git-tracked source are unchanged by that cleanup.
+
+The [OP joystick initialization](../src/op/joystick/js_start.md) now has one
+new **42-byte reviewed ASM source owner** (`JS_START`, OP `2BAC..2BD6`):
+41 source instructions and one checked alignment NOP, with two original-byte
+exact TASM producers and a rejected poll-count negative. The obsolete SAJ-98
+search is intentionally absent; external sound functions and DATA/BSS remain
+symbol-only, not claimed as reconstructed CODE.

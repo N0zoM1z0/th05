@@ -857,6 +857,35 @@ size = 1
 kind = "alignment"
 
 [[units]]
+id = "op-joystick-start"
+artifact = "op"
+source = "src/op/joystick/js_start.asm"
+types = "src/op/joystick/js_start_types.inc"
+symbols = "src/op/joystick/js_start_symbols.inc"
+bindings = "probes/units/op_js_start_bindings.asm"
+notes = "src/op/joystick/js_start.md"
+target_start = 0x2BAC
+size = 42
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "b4cf619007d51aaedb004948a6f0ce1fea3d6cc5c66507368a40970b9c05b3b7"
+target_scope_sha256 = "c7539043ec5b4a8c59edfc68b19fb77bc3df3805d7b3719a40fd6f4cdf2cfa7b"
+semantic_inputs = []
+[units.publics]
+"JS_START" = 0
+[units.negative]
+find = "mov cx, JOY_POLL_COUNT"
+replace = "mov cx, (JOY_POLL_COUNT - 1)"
+[[units.uncredited]]
+offset = 41
+size = 1
+kind = "alignment"
+
+[[units]]
 id = "main-mpn-loader"
 artifact = "main"
 source = "src/main/formats/mpn_loader.asm"
