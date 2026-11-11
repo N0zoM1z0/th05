@@ -244,3 +244,35 @@ failure blocks. Private producer evidence is retained in
 `.analysis/gpt-web-zun-label-probe-20261111.py` script.
 These failed variants do not change the maintained natural source
 or any accepted owner.
+
+## Native 2026-11-11 success/failure control-flow probes (not accepted)
+
+Four further **genuinely behavioral C++** rewrites of the resident `-S`
+`main()` were passed through the original tiny-model Turbo C++ `-c` and the
+real C0T/`cfg_init()`/320-byte DATA + TLINK source context. They changed only
+control-flow arrangement, never target bytes, pointer arithmetic, data or
+foreign implementation. The native original function is **269 bytes**.
+
+| Natural original-behavior source form | Emitted `main` | Raw original match |
+| --- | ---: | --- |
+| Wrap resident initialization in `if(seg)`, place no-memory exit last | 260 B | No |
+| Put `cfg_init()` success/return-zero path first | 260 B | No |
+| Parse `argc` with a `switch` rather than an `if(argc == 2)` | 262 B | No |
+| Invert debug-option check, handle invalid option first | 258 B | No |
+
+In the first two cases the optimizer emitted the same 260-byte length as the
+maintained natural source, despite the visibly different control-flow layout.
+The `switch` produced two more bytes; the inverted debug check produced two
+fewer. None reproduced the original three distinct failed-print call tails,
+and none is accepted as a 269-byte source. This reinforces the earlier
+isolation of Borland's basic-block/error-tail coalescing problem: trivial
+success-path reordering, status-return spelling and conditional reversal do
+not recover the historical branch layout. These experiments use no dummy
+self-assignments or artificial optimization barriers.
+
+All four real producer scripts, retained source closures, linked binaries and
+result JSONs are under `.analysis/gpt-web-zun-natural-return-{create-success-first,
+cfg-success-first,argc-switch,debug-invalid-first}/`; the reproducible runner
+is `.analysis/gpt-web-zun-control-shapes-20261111.py`. The maintained
+`initialize.cpp`, accepted resident DATA/CRT/config, and all other ZUN owners
+remain unchanged. No partial CODE credit or whole-file exactness is claimed.
