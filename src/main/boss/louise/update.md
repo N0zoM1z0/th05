@@ -86,3 +86,26 @@ No previously accepted helper source or header was changed.
 
 The eight original switch states and both three-mode pattern dispatches now
 use named phase/mode constants, preserving the numeric state machine.
+
+## Recovered shared charge-state layout
+
+The Louise updater and both pattern source files now use the same typed
+`LouiseScratch` view of the original 16-byte `boss_statebyte` array. Its
+byte-10 speed starts at `0x18` before blue spreads, increases during the
+first charged attacks, and is explicitly reinitialized to `0x14` before the
+later turning-ring pattern. Byte 14 selects the alternating second-wave
+sweeping-laser and turning-ring modes; the updater resets it at the fan-to-
+second-wave transition. Byte 15 is a first-wave alternating spread direction,
+then later overwritten by the sweeping-laser's randomized direction.
+These are aliases with phase-specific lifetimes, not independent fields or
+new allocations. Size and offset assertions protect the original physical
+layout without changing the binary ABI.
+
+A focused Borland replay of all three edited source units—`main-louise-update`
+(582 bytes), `main-louise-initial-patterns` (429 bytes) and
+`main-louise-later-patterns` (603 bytes)—exactly matches all 1,614 original
+bytes and ordered relocations in two deterministic builds. The genuine
+compiled semantic negative is rejected. Accepted local evidence:
+`.analysis/unit-replays/gpt-web-louise-scratch-20261111/receipt.json`.
+There is no new authored-byte credit, because all three functions already had
+accepted exact owners.

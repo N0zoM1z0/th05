@@ -1,5 +1,6 @@
 // Four complete natural patterns immediately before the original Louise update.
 #include "src/main/boss/louise/later.hpp"
+#include "src/main/boss/louise/scratch.hpp"
 
 void near louise_pattern_mirrored_fans(void)
 {
@@ -55,13 +56,13 @@ void near louise_pattern_sweeping_lasers(void)
         laser_template.coords.angle = static_cast<unsigned char>(-16);
         laser_template.active_at_age.moveout = 30;
         laser_template.shootout_speed.v = to_sp(6.5f);
-        boss_statebyte[15] = randring2_next16_and(1);
+        louise_scratch.spread_or_laser_direction = randring2_next16_and(1);
         // Initialization also launches at its real even four-frame boundary.
     case LOUISE_CHARGE_FIRE:
         if((laser_template.coords.angle >= 0xf0) ||
            (laser_template.coords.angle <= 0x80)) {
             if((boss.phase_frame % 4) == 0) {
-                if(boss_statebyte[15]) {
+                if(louise_scratch.spread_or_laser_direction) {
                     lasers_shootout_add();
                 } else {
                     laser_template.coords.angle = 0x80 - laser_template.coords.angle;
@@ -88,9 +89,9 @@ void near louise_pattern_turning_rings(void)
             LOUISE_SPAWN_CLOUD_FORWARDS | LOUISE_SPAWN_NO_DECELERATE;
         bullet_template.patnum = LOUISE_PAT_V_RED;
         bullet_template.group = BG_RING_STACK_AIMED;
-        bullet_template.speed.v = boss_statebyte[10];
-        if(boss_statebyte[10] < 0x20) {
-            boss_statebyte[10] += 4;
+        bullet_template.speed.v = louise_scratch.charge_speed;
+        if(louise_scratch.charge_speed < 0x20) {
+            louise_scratch.charge_speed += 4;
         }
         louise_set_spread_stack(24, 8, 5, 0.5625f);
         bullet_template.angle = 0;

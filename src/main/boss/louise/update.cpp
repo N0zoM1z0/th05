@@ -1,5 +1,6 @@
 // Complete natural Louise state machine, original MAIN1527:8AD0.
 #include "src/main/boss/louise/update.hpp"
+#include "src/main/boss/louise/scratch.hpp"
 
 // The original full callback ends with its real eight-word compiler switch
 // table at an even boundary. Apply ordinary word alignment only after every
@@ -40,8 +41,8 @@ void pascal far louise_update(void)
             boss.phase_frame = 0;
             boss.mode = 1;
             boss.phase_state.patterns_seen = 0;
-            boss_statebyte[10] = 0x18;
-            boss_statebyte[15] = 0;
+            louise_scratch.charge_speed = 0x18;
+            louise_scratch.spread_or_laser_direction = 0;
         }
         break;
 
@@ -96,16 +97,16 @@ void pascal far louise_update(void)
         boss_score_bonus(10);
     fan_phase_done:
         boss_phase_next(ET_SW_NE, 500);
-        boss_statebyte[14] = 0;
-        boss_statebyte[10] = 0x14;
+        louise_scratch.next_second_phase_pattern = 0;
+        louise_scratch.charge_speed = 0x14;
         break;
 
     case LOUISE_PHASE_LASERS_AND_RINGS:
         switch(boss.mode) {
         case LOUISE_MODE_REPOSITION:
             if(louise_flystep(to_sp(3.0f), 48)) {
-                boss.mode = boss_statebyte[14] + 1;
-                boss_statebyte[14] = 1 - boss_statebyte[14];
+                boss.mode = louise_scratch.next_second_phase_pattern + 1;
+                louise_scratch.next_second_phase_pattern = 1 - louise_scratch.next_second_phase_pattern;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= 20) {

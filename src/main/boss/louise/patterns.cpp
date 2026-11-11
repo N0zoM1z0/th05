@@ -1,5 +1,6 @@
 // Complete natural initial Louise charge and alternating spread/stack patterns.
 #include "src/main/boss/louise/patterns.hpp"
+#include "src/main/boss/louise/scratch.hpp"
 
 louise_charge_state_t pascal near louise_charge_update(int end_frame)
 {
@@ -31,19 +32,19 @@ void near louise_pattern_blue_spreads(void)
         bullet_template.spawn_type = BST_NORMAL;
         bullet_template.patnum = LOUISE_PAT_BALL_BLUE;
         bullet_template.group = BG_SPREAD;
-        bullet_template.speed.v = boss_statebyte[10];
+        bullet_template.speed.v = louise_scratch.charge_speed;
         louise_set_spread(5, 6);
         bullet_template.special_motion = BSM_EXACT_LINEAR;
-        boss_statebyte[15] = 1 - boss_statebyte[15];
-        if(boss_statebyte[15]) {
+        louise_scratch.spread_or_laser_direction = 1 - louise_scratch.spread_or_laser_direction;
+        if(louise_scratch.spread_or_laser_direction) {
             bullet_template.angle = 0x20;
         } else {
             bullet_template.angle = 0x60;
         }
         bullet_template_tune();
         snd_se_play(15);
-        if(boss_statebyte[10] < 0x24) {
-            boss_statebyte[10] += 4;
+        if(louise_scratch.charge_speed < 0x24) {
+            louise_scratch.charge_speed += 4;
         }
         // Initialization also emits the first pair on its even frame.
     case LOUISE_CHARGE_FIRE:
@@ -51,7 +52,7 @@ void near louise_pattern_blue_spreads(void)
             bullets_add_regular();
             bullet_template.angle += 0x80;
             bullets_add_regular();
-            if(boss_statebyte[15]) {
+            if(louise_scratch.spread_or_laser_direction) {
                 bullet_template.angle += 0x87;
             } else {
                 bullet_template.angle += 0x79;
@@ -83,7 +84,7 @@ void near louise_pattern_red_stacks(void)
     case LOUISE_CHARGE_FIRE:
         if((boss.phase_frame % 2) == 0) {
             bullets_add_regular();
-            if(boss_statebyte[15]) {
+            if(louise_scratch.spread_or_laser_direction) {
                 bullet_template.angle -= 8;
             } else {
                 bullet_template.angle += 8;
