@@ -149,3 +149,13 @@ message-definition linkage alone therefore does not explain the original
 269-byte failure-branch layout. Private OMF evidence lives under
 `.analysis/gpt-web-zun-main-inlineliterals-*`. The natural `main()` source
 stays unchanged and unaccepted.
+
+## Original C0T link context recovered separately
+
+The actual C0T.OBJ startup at `0100..0367` and its `1650..16BE` initialized
+DATA have [source-origin native acceptance](crt_native.md). This identifies
+the true 18-byte `_INIT_` table and 84-byte BSS context omitted by earlier
+symbol-only linkage. Both CRT and the adjacent accepted 322-byte
+configuration function now link exact under that layout; the separate
+**269-byte `main()` control flow remains unaccepted** and is not patched or
+reclassified as vendor material.

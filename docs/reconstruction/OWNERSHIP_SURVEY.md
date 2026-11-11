@@ -216,6 +216,8 @@ The inner table stores its own runtime starts, not outer-file offsets. Add
 records inner size `4551`, usage length `108`, and timestamp `2579AF64`; its
 initial jump reaches outer offset `4680` exactly.
 
+The `-S` resident CRT has a separate, source-origin exact [Borland C0T.OBJ record proof](../../src/zun/resident/crt_native.md): **613 CODE-segment source bytes and 110 initialized DATA source bytes**, with a two-byte **unknown runtime CS: slot**. Two actual TASM/TLINK links reuse independently accepted configuration C++ objects under the true 18-byte `_INIT_` and 84-byte BSS context. This is vendor provenance, not 723 bytes of authored game instructions; the 269-byte C++ `main()` remains open.
+
 The `-O` **926-byte** PMD/ADPCM diagnostic member is now independently exact from [semantic original-register assembly](../../src/zun/adpcm/README.md), under two genuine TASM/TLINK producer builds and a rejected source mutation. Its **892 bytes of CODE**, **34 bytes of initialized DATA**, and **42 bytes of uninitialized BSS** are reviewed separately, with no global source-credit inference. Its remainder is not silently grouped with other ZUN children.
 
 The `-G` 8,377-byte embedded member has now also been reconstructed from [complete semantic COM source](../../src/zun/gaiji/README.md) and two independent native TASM/TLINK producers. Its 75 instruction bytes, one original linker alignment byte, 109 message bytes, and separately reviewed 8,192 bitmap bytes remain distinct. Glyph bytes are generated only inside private replay builds. The IDA-generated reference is not evidence of literal historical source authorship, and no outer-launcher code is claimed.

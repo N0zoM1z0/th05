@@ -19,9 +19,9 @@
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 101,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 92455,
-    "verified-vendor-code": 75844,
-    "verified-vendor-initialized-data": 3777
+    "unknown": 91732,
+    "verified-vendor-code": 76457,
+    "verified-vendor-initialized-data": 3887
   },
   "views": {
     "main": {
@@ -8971,13 +8971,38 @@
         "accepted-cxx-initialized-data": 320,
         "accepted-cxx-instructions": 322,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 9282
+        "unknown": 8559,
+        "verified-vendor-code": 613,
+        "verified-vendor-initialized-data": 110
       },
       "intervals": [
         {
           "start": 0,
-          "end": 3403,
+          "end": 2788,
           "kind": "unknown"
+        },
+        {
+          "start": 2788,
+          "end": 3399,
+          "kind": "verified-vendor-code",
+          "library": "C0T.OBJ",
+          "member": "C0T_STARTUP",
+          "content_kind": "original-CRT-CODE-LEDATA",
+          "authored_credit": 0
+        },
+        {
+          "start": 3399,
+          "end": 3401,
+          "kind": "unknown"
+        },
+        {
+          "start": 3401,
+          "end": 3403,
+          "kind": "verified-vendor-code",
+          "library": "C0T.OBJ",
+          "member": "C0T_MODEL_WORD",
+          "content_kind": "original-CRT-CODE-LEDATA",
+          "authored_credit": 0
         },
         {
           "start": 3403,
@@ -8987,8 +9012,18 @@
         },
         {
           "start": 3725,
-          "end": 8354,
+          "end": 8244,
           "kind": "unknown"
+        },
+        {
+          "start": 8244,
+          "end": 8354,
+          "kind": "verified-vendor-initialized-data",
+          "library": "C0T.OBJ",
+          "member": "C0T_DATA",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "authored_credit": 0
         },
         {
           "start": 8354,
@@ -9016,6 +9051,7 @@
           "kind": "unknown"
         }
       ],
+      "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }
   }

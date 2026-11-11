@@ -1,0 +1,27 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-S"
+member_start = 0x0AE4
+member_size = 6564
+source = "probes/units/zun_crt_layout_bindings.asm"
+original_crt_object_sha256 = "27169f062a9b77bf4accfb9550ca4ccbf0fd710d4b1232768630d53bb6305f7c"
+accepted_cfg_unit = "zun-resident-config"
+accepted_cfg_receipt = ".analysis/unit-replays/zun-cfg-322-b/receipt.json"
+original_crt_com_start = 0x0100
+original_crt_com_end = 0x0367
+source_written_code_bytes = 613
+unwritten_code_runtime_slot_start = 0x0363
+unwritten_code_runtime_slot_size = 2
+original_crt_data_start = 0x1650
+original_crt_data_end = 0x16BE
+source_written_data_bytes = 110
+original_INIT_start = 0x1A94
+original_INIT_size = 0x0012
+original_BSS_start = 0x1AA6
+original_BSS_size = 0x0054
+origin = "original-borland-C0T-CRT-object"
+global_authored_credit = "vendor-zero"
+
+[negative]
+find = "INIT_TABLE_SIZE equ 012h"
+replace = "INIT_TABLE_SIZE equ 010h"

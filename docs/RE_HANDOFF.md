@@ -42,6 +42,8 @@ progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
 **ZUN `-S` Master graphics and resident memory exact:** `GRAPH_CLEAR` (36 bytes), `RESDATA_EXIST` (72) and `RESDATA_CREATE` (118 including `EVEN`) now produce **226/226 original bytes** at `05B6..0698`, with a rejected native source mutation and no duplicate vendor code credit. See [graphics/memory providers](../src/zun/resident/resdata_native.md). The separate 269-byte C++ entry is still open.
 
+**ZUN `-S` original CRT vendor startup exact:** The original C0T.OBJ now naturally relinks in its true tiny-model `_INIT_`/BSS context: the full **615-byte startup CODE region** and **110-byte initialized CRT DATA** match exactly under two native TASM/TLINK producers and a rejected source-layout negative. Only **613 CODE-segment bytes plus 110 initialized DATA bytes** are real OMF source writes; a two-byte writable `CS:` state slot remains unknown. See [C0T CRT native proof](../src/zun/resident/crt_native.md). This is vendor provenance, not authored C++ credit.
+
 **ZUN `-S` authored initialization DATA exact:** The complete **320-byte** native C++ `_DATA` contributor at COM `16BE..17FE` now matches semantic configuration defaults, IDs, filenames, title and Japanese status messages through real TCC/TLINK/CP932; it earns DATA, **not instruction**, credit. See [ZUN resident semantic DATA](../src/zun/resident/semantic_data.md).
 
 **ZUN resident entry still open:** The 269-byte complete `main()` now has genuine 269-byte alternate C++ producers, but every linked candidate still differs in 183 branch/code bytes. The full failure evidence and safe next step are in [resident entry notes](../src/zun/resident/initialize.md); no new acceptance is claimed.

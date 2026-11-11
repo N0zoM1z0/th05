@@ -494,6 +494,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             claims, review_sha = reviewed_context_vendor(root, context=name, view=view,
                                                          verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, claims)
+        elif name == "zun":
+            # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
+            # initialized DATA LEDATA. Leave its original two-byte writable
+            # CS: slot outside the vendor CODE claims; BSS/_INIT_ are foreign.
+            from replay_zun_crt import reviewed_claims as reviewed_zun_crt
+            crt_claims, crt_review_sha = reviewed_zun_crt(
+                root, view=view, verify_targets=verify_targets)
+            pieces = overlay_vendor(view["size"], pieces, crt_claims)
         if name in additions:
             pieces = overlay_vendor(view["size"], pieces, additions[name])
         if name in sin8:
@@ -515,6 +523,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
+        if name == "zun" and crt_review_sha:
+            views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
             views[name]["reserved_vendor_review_sha256"] = reserved_review_sha
         if runtime_sha and name == "main":
