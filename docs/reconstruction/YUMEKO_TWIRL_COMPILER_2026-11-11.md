@@ -87,3 +87,25 @@ the actual authored operands and sword behavior; no acceptance or machine
 code owner was changed. Inspect private outputs under
 `.analysis/gpt-web-yumeko-twirl4-*-native/` and the script
 `.analysis/gpt-web-yumeko-twirl4.py`.
+
+## Direct parity-tail C++ lowering trials
+
+Four more whole-function source variants were compiled with the original
+nine-function Yumeko TCC/TLINK context, using unchanged type definitions
+and genuine sword twirl semantics. None is a source/byte acceptance.
+
+| Trial | Real combined CODE | Ordered original relocation |
+| --- | ---: | --- |
+| Odd branch with early `continue`, even branch fall-through | 2,141 B | Changed |
+| Parity inversion with explicit `even_twirl` goto | 2,143 B | Changed |
+| Shared, genuine post-twirl `finish_twirl` label | 2,143 B | Changed |
+| Even parity branch first, early `continue` in both arms | 2,141 B | Changed |
+
+All four continue to lower the original direct **386 near JL/JGE**
+branches into a short Jcc followed by proxy jumps. Original combined
+CODE is **2,139 B**, with the 283-byte updater already owned by exact
+reviewed ASM. First-producer inputs and outputs are kept only in ignored
+`.analysis/gpt-web-yumeko-direct-tail-*`; the trial script is
+`.analysis/gpt-web-yumeko-direct-tail-20261111.py`. The maintained C++
+port and adjacent accepted 354/428-byte major attack functions were
+left unchanged.
