@@ -2242,3 +2242,28 @@ kind = "alignment"
 offset = 225
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-bullets-gather-invalidate"
+artifact = "main"
+source = "src/main/bullet/gather_invalidate.asm"
+types = "src/main/bullet/gather_invalidate_types.inc"
+symbols = "probes/units/gather_invalidate_symbols.inc"
+bindings = "probes/units/gather_invalidate_bindings.asm"
+notes = "src/main/bullet/gather_invalidate.md"
+target_start = 58382
+size = 168
+segment = "BULLET_GATHER_INV_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "ffd26982f0003bbedd9656c0ce7e479a03320bfa177ebffeb93192cd7f340bdc"
+target_scope_sha256 = "3e32345c45e9becc2991b5098c0bf6002f481760d3c566ae1d1047855f8f113d"
+semantic_inputs = ["src/main/bullet/update.hpp", "src/main/bullet/spawn_types.inc", "src/main/gather/gather.hpp"]
+[units.publics]
+"bullets_and_gather_invalidate" = 0
+"bullets_and_gather_invalidate_end" = 168
+[units.negative]
+find = "mov di, PELLET_COUNT"
+replace = "mov di, (PELLET_COUNT - 1)"
