@@ -2611,3 +2611,63 @@ semantic_inputs = ["src/main/item/render.hpp", "src/main/item/splash_render.cpp"
 [units.negative]
 find = "and cl, BYTE_PIXEL_MASK"
 replace = "and cl, (BYTE_PIXEL_MASK - 1)"
+
+[[units]]
+id = "main-grcg-mode-direct-exact"
+artifact = "main"
+source = "src/shared/hardware/grcg_modecol_main.asm"
+types = "src/shared/hardware/grcg_modecol_types.inc"
+symbols = "probes/units/grcg_modecol_symbols.inc"
+bindings = "probes/units/grcg_modecol_main_bindings.asm"
+notes = "src/shared/hardware/grcg_modecol_exact.md"
+target_start = 49656
+size = 38
+segment = "GRCG_MODECOL_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "25ca299382f4d4ce6bcaabbbe384bcb6869ce862de72e316bfe13b027b47b86a"
+target_scope_sha256 = "d1e7db8acfd42ce47f3a01dce663ab89809b05b4684ab47b534ad8577418bc44"
+semantic_inputs = ["src/main/hud/overlay.hpp", "src/main/player/render.hpp"]
+[units.publics]
+"grcg_setmode_rmw()" = 0
+"grcg_setmode_tdw()" = 6
+"grcg_setcolor_direct_raw()" = 12
+"grcg_modecol_end" = 38
+[units.negative]
+find = "mov al, GRCG_RMW"
+replace = "mov al, GRCG_TDW"
+[[units.uncredited]]
+offset = 5
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 11
+size = 1
+kind = "alignment"
+
+[[units]]
+id = "op-grcg-mode-direct-exact"
+artifact = "op"
+source = "src/shared/hardware/grcg_direct_op.asm"
+types = "src/shared/hardware/grcg_modecol_types.inc"
+symbols = "probes/units/grcg_modecol_symbols.inc"
+bindings = "probes/units/grcg_direct_op_bindings.asm"
+notes = "src/shared/hardware/grcg_modecol_exact.md"
+target_start = 56097
+size = 26
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+native_review_sha256 = "dcd1b995d50d7e84921b0031125ac4c01337949b1d69a7085e2c79c7b57d980b"
+target_scope_sha256 = "5269dd39bf3d26d8740019f5924b65302f5612027ca8bcaab9159a2360c6a272"
+semantic_inputs = ["src/main/hud/overlay.hpp", "src/main/player/render.hpp"]
+[units.publics]
+"grcg_setcolor_direct_raw()" = 0
+"grcg_direct_op_end" = 26
+[units.negative]
+find = "shr ah, 1"
+replace = "shl ah, 1"
