@@ -5754,3 +5754,22 @@ unit = "main-motion-update-seg3-register"
 source = "src/main/math/motion_seg3_register.cpp"
 find = "_BX += 2;"
 replace = "_BX += 4;"
+
+[[units]]
+id = "main-enemy-bullet-template-push-exact"
+source = "src/main/enemy/template_push_exact.cpp"
+module = "th05/etcopy.cpp"
+segment = "ENEMY_TEMPLATE_COPY_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/enemy_template_push_exact_bindings.asm"
+target_start = 0x16bcf
+size = 24
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-enemy-bullet-template-push-exact"
+source = "src/main/enemy/template_push_exact.cpp"
+find = "_CX = sizeof(BulletTemplate) / sizeof(unsigned int);"
+replace = "_CX = (sizeof(BulletTemplate) / sizeof(unsigned int)) - 1;"

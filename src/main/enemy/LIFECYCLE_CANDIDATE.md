@@ -94,3 +94,11 @@ zero credit, leaving88 +575 =663 authored instruction bytes. The compiled
 STD stage-frame mutation belongs to the first scope; update shares that
 oracle control. Its configured spark-count mutation was not separately
 compiled. The prior failed producers remain archived unchanged.
+
+## Subsequent complete helper recovery
+
+The previously foreign 24-byte transfer at `16BCF..16BE7` is now independently
+accepted as exact [register-aware C++](template_push_exact.md). The original
+normal struct-copy and intrinsic experiments are retained as code-generation
+context; neither is credited. The existing lifecycle source, stage VM and
+accepted updater inputs remain unchanged.

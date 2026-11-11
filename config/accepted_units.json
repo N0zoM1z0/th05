@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a218ffdc47b36c6eae5188bc1bcd4a2dc0f06367bd010d227e083cd0bf03624d",
+  "replay_receipt_sha256": "09b714d26f77941f403e7c9f9e8bee8b59a5522c76f741b33a2656aa1c165dd9",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 48666,
-    "candidate_start": 48666,
-    "size": 32,
-    "target_sha256": "77752519e9fe9e2974c43d2a8e29684bba67c63d2a9e1b326e9e22b49e7270f7",
-    "candidate_sha256": "8ca465535df6d3f68f2ed983e7ce34a07f238d994ad536502037657d8c26d6c6",
+    "target_start": 93135,
+    "candidate_start": 93135,
+    "size": 24,
+    "target_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+    "candidate_sha256": "325b12f854459dc797dc43bd09bfdab7c0829e5fc6db03ccb6aa03f772a0c2a1",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -91581,6 +91581,230 @@
           "-ml",
           "-DBINARY='M'",
           "th05/motion.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-enemy-bullet-template-push-exact",
+      "entry_sha256": "45aff83995a7bd55667981bbb7ede90c0fc95c0c414e924de13166b347f51704",
+      "result": {
+        "id": "main-enemy-bullet-template-push-exact",
+        "entry_sha256": "45aff83995a7bd55667981bbb7ede90c0fc95c0c414e924de13166b347f51704",
+        "rounds": [
+          {
+            "target_start": 93135,
+            "candidate_start": 93135,
+            "size": 24,
+            "target_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+            "candidate_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 93135,
+            "candidate_start": 93135,
+            "size": 24,
+            "target_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+            "candidate_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "bbdb9a8435bc48a1ce1939e74debff10a947fb53fdfdd67b2ebbe512a27fb66e",
+            "dependency_timestamp_normalized_sha256": "b3c3ff70e0d3086bf89ab81e7011827936b2d0bf4f912a0d5545457a3650de95",
+            "module_name": "th05/etcopy.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/etcopy.cpp",
+              "src/main/enemy/template_push_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "baa5fd24dc0b40ee06834e7d495cc4059e8d5af64d32f911d328225659eab53b",
+            "dependency_timestamp_normalized_sha256": "b3c3ff70e0d3086bf89ab81e7011827936b2d0bf4f912a0d5545457a3650de95",
+            "module_name": "th05/etcopy.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/etcopy.cpp",
+              "src/main/enemy/template_push_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/etcopy.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/etcopy.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/enemy_template_push_exact_bindings.asm",
+            "sha256": "ffe162f2585f7749752001ab2ebc548b11bea4214cd2eaaeb0b83dbeeca11931"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/enemy/template_push_exact.cpp",
+            "sha256": "1ef76802f063ab290cf194d8253edc317ddc50b4bc91dd77116982293043bfd9"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/enemy_template_push_exact_bindings.asm",
+          "sha256": "ffe162f2585f7749752001ab2ebc548b11bea4214cd2eaaeb0b83dbeeca11931"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/enemy/template_push_exact.cpp",
+          "sha256": "1ef76802f063ab290cf194d8253edc317ddc50b4bc91dd77116982293043bfd9"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "09b714d26f77941f403e7c9f9e8bee8b59a5522c76f741b33a2656aa1c165dd9",
+      "compiled_negative_control": {
+        "target_start": 93135,
+        "candidate_start": 93135,
+        "size": 24,
+        "target_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+        "candidate_sha256": "325b12f854459dc797dc43bd09bfdab7c0829e5fc6db03ccb6aa03f772a0c2a1",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-enemy-bullet-template-push-exact",
+        "entry_sha256": "45aff83995a7bd55667981bbb7ede90c0fc95c0c414e924de13166b347f51704",
+        "mutation": {
+          "unit": "main-enemy-bullet-template-push-exact",
+          "source": "src/main/enemy/template_push_exact.cpp",
+          "find": "_CX = sizeof(BulletTemplate) / sizeof(unsigned int);",
+          "replace": "_CX = (sizeof(BulletTemplate) / sizeof(unsigned int)) - 1;"
+        },
+        "control_sha256": "75143a8a2f8bf902a016fed2186977ddd245144799189c02977348ca41f9da03",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 93135,
+          "candidate_start": 93135,
+          "size": 24,
+          "target_sha256": "887b6eaea28b836f2f31275b676b9e0cb92edaf66e22a1a8a970d64850391b19",
+          "candidate_sha256": "325b12f854459dc797dc43bd09bfdab7c0829e5fc6db03ccb6aa03f772a0c2a1",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "577dca0ea6bb1104fd6e0f6b0afe2bac315c5e7e9420ca3cdd7d58fc6ce6b8d5",
+          "dependency_timestamp_normalized_sha256": "0e95f1b7b4288e8aa67cd7d09c1c89377ff1d3b3a39d4137d3efb2174991bfaa",
+          "module_name": "th05/etcopy.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/etcopy.cpp",
+            "src/main/enemy/template_push_exact.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/etcopy.cpp"
         ]
       },
       "receipt_aggregate_pass": true

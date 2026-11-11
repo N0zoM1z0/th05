@@ -53,6 +53,7 @@ necessarily all authored bytes where padding is present.
 | MAIN/OP GRCG hardware modes | MAIN **38-byte** three-function family (36 authored ASM); OP **26-byte** direct color helper, original I/O and zero-credit alignment | [GRCG mode/color](../src/shared/hardware/grcg_modecol_exact.md) |
 | MAIN item splash pixel | Complete **28-byte** original-register near-ASM at `E152..E16E`, exact AX/DX/ES point mask and no fixups | [Item splash dot](../src/main/item/splash_dot_exact.md) |
 | MAIN Gather graphics primitives | **122-byte** original ASM family at `15312..1538C`, 120 authored bytes and two checked NOPs | [Gather raster](../src/main/gather/raster_primitives.md) |
+| MAIN enemy bullet-template transfer | Complete **24-byte** natural C++ near-Pascal register copy at `16BCF..16BE7`; genuine seven-word `REP MOVSW` | [Enemy template transfer](../src/main/enemy/template_push_exact.md) |
 | MAIN bullet/Gather invalidation | Full **168-byte** reviewed original ASM at `E40E..E4B6`, no alignment or relocations | [Bullet/Gather dirty tiles](../src/main/bullet/gather_invalidate.md) |
 | MAIN Alice/Yumeko backdrop fills | **28-byte** exact original ASM, two complete near callbacks `C41E..C43A` | [Alice/Yumeko graphics](../src/main/boss/backdrop_fills_alice_yumeko.md) |
 | MAIN Sara/Mai-Yuki background | **108-byte** two-function GRCG family `BEF4..BF60`, **104 authored** ASM bytes and four checked `EVEN` NOPs | [Early Boss backdrop](../src/main/boss/backdrop_fills_early.md) |
