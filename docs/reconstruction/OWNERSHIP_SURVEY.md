@@ -221,6 +221,8 @@ input identity, strengthening those source-routing links:
 | `-G` | `7c8f4cab7f06b9a218e838d50bb4e314` | `th05_gjinit.asm` |
 | `-M` | `5e401a5cd3d8d42dc67130359c42a7cf` | `th05_memchk.asm` |
 
+The `-I` member is now independently accepted as an exact full **1,009-byte** mixed CODE/message COM via semantic, original-register source and two real TASM/TLINK producers. Its 452 compared CODE bytes (450 instructions and 2 checked NOPs) and 557 initialized bytes remain separate from the global authored denominator. See [ZUN -I guard](../../src/zun/interrupt/README.md). The ZUN outer-container inventory remains unchanged; -O/-S/-G have no transferred source credit.
+
 The ZUNINIT reference header says `th04/ZUN.COM`, but its exact MD5 identifies
 our TH05 `-I` payload. The `-G` source includes font bitmap data, and `-I/-M`
 include messages. Whole member size is consequently not an instruction-byte

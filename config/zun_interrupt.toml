@@ -1,0 +1,44 @@
+schema_version = 1
+artifact = "th05-zun"
+member = "-I"
+container_start = 0x06F3
+size = 1009
+sha256 = "6091d53910b5a4bbcd132d663dc9531d8ea65cff95baf4307a3cd5e768e1e8b1"
+source = "src/zun/interrupt/install.asm"
+source_encoding = "utf-8"
+assembler_encoding = "cp932"
+origin = "inferred-original-register-assembly"
+global_authored_credit = "unreviewed"
+code_bytes = 452
+initialized_data_bytes = 557
+uncredited_alignment_offsets = [0x03, 0x9B]
+
+[[code_spans]]
+start = 0x000
+size = 0x0EA
+
+[[code_spans]]
+start = 0x1EC
+size = 0x0DA
+
+[[data_spans]]
+start = 0x0EA
+size = 0x102
+
+[[data_spans]]
+start = 0x2C6
+size = 0x12B
+
+[publics]
+START_I = 0x100
+INTERRUPT_STOP = 0x104
+INTERRUPT_COPY = 0x116
+DRAW_KEY_WARNING = 0x128
+READ_GUARD_KEY = 0x192
+PRINT_KANJI_MSG = 0x1AE
+INT_VECTOR_QUERY = 0x2EC
+INSTALL_DISPATCH = 0x30E
+
+[negative]
+find = "STOP_PENDING_GUARD equ 1"
+replace = "STOP_PENDING_GUARD equ 3"
