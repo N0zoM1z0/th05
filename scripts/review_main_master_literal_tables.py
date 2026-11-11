@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seven complete original Master 0.23 literal DATA tables in TH05 MAIN.
+"""Eleven complete original Master 0.23 literal DATA tables in TH05 MAIN.
 
 The complete historic ASM source is independently decoded, numeric literal
 initializers are evaluated (including UNDF=100 from BGM.INC), and genuine
@@ -32,7 +32,11 @@ TABLES=(
     ('EDGES','EDGES.ASM','edges[data].asm',0x20D4C,0x20D6E,34,'EDGES'),
     ('EPSON_NOTES','GETMAC98.ASM','get_machine_98[data].asm',0x20D74,0x20D96,10,None),
     ('IBM_VIDEO_DEVICES','GETMACAT.ASM','get_machine_at[data].asm',0x20D7E,0x20DA0,22,None),
+    ('GRAPH_VRAM_DEFAULTS','GRP.ASM','grp[data].asm',0x20D94,0x20DB6,11,'graph_VramSeg'),
+    ('JOYSTICK_DEFAULTS','JS.ASM','js[data].asm',0x20DA0,0x20DC2,8,'js_bexist'),
+    ('MACHINE_STATE_DEFAULT','MACHINE.ASM','machine[data].asm',0x20DA8,0x20DCA,2,'Machine_State'),
     ('PALETTE_DEFAULTS','PAL.ASM','pal[data].asm',0x20DAA,0x20DCC,50,'PaletteTone'),
+    ('PALETTE_RUNTIME_DEFAULTS','PAL.ASM','pal[data].asm',0x20DDC,0x20DFE,6,'PaletteNote'),
     ('BYTE_MASK','WORDMASK.ASM','wordmask[data].asm',0x2107C,0x2109E,8,'BYTE_MASK'),
     ('BGM_NOTE_AND_LENGTH','B_DATA.ASM','bgm[data].asm',0x210B4,0x210D6,176,'note_dat'),
 )
@@ -83,6 +87,31 @@ def source_payload(raw: bytes, name: str, encoding: str, *, undf: int) -> bytes:
         # Original foreign _DATA names and one zero FAR entry, not a 3rd
         # game-authored filename or a pointer to invented CODE.
         return b'$IBMADSP\0$IBMAFNT\0'+struct.pack('<L',0)
+    def scalar(type_name: str, asm_type: str, expected: int) -> None:
+        matches=[m[1] for line in lines if (m:=re.fullmatch(
+            re.escape(type_name)+r'\s+'+asm_type+r'\s+([0-9a-f]+h|[0-9]+)',line))]
+        need(len(matches)==1,'original Master scalar initializer missing: '+type_name)
+        value=matches[0]
+        parsed=int(value[:-1],16) if value.endswith('h') else int(value)
+        need(parsed==expected,'original Master scalar initializer differs: '+type_name)
+    if name=='GRAPH_VRAM_DEFAULTS':
+        for field,typ,value in (
+            ('_graph_vramseg','dw',0xa800),('_graph_vramwords','dw',16000),
+            ('_graph_vramlines','dw',400),('_graph_vramwidth','dw',80),
+            ('_graph_vramzoom','dw',0),('_graph_meshbyte','db',0x55)):
+            scalar(field,typ,value)
+        return struct.pack('<5H',0xa800,16000,400,80,0)+bytes([0x55])
+    if name=='JOYSTICK_DEFAULTS':
+        for field in ('js_bexist','js_saj_port','js_2player','js_shift'):
+            scalar(field,'dw',0)
+        return struct.pack('<4H',0,0,0,0)
+    if name=='MACHINE_STATE_DEFAULT':
+        scalar('_machine_state','dw',0)
+        return struct.pack('<H',0)
+    if name=='PALETTE_RUNTIME_DEFAULTS':
+        for field in ('_palettenote','_respalseg','_sdiexists'):
+            scalar(field,'dw',0)
+        return struct.pack('<3H',0,0,0)
     if name=='PALETTE_DEFAULTS':
         need(len([x for x in lines if re.fullmatch(r'_palettetone\s+dw\s+100',x)])==1,
              'original default palette tone no longer 100')
@@ -182,10 +211,15 @@ def replay() -> dict:
         need(len(body)==size and body==native_body,
              'original independent author and native TASM DATA initializer differ: '+name)
         need(original.program_image[start:start+size]==body and
-             calibration.program_image[cal_start:cal_start+size]==body and
-             original.program_image.find(body)==start and
-             original.program_image.find(body,start+1)<0,
-             'unmodified original/calibration source table bytes/unique original position differ: '+name)
+             calibration.program_image[cal_start:cal_start+size]==body,
+             'unmodified original/calibration source table bytes differ: '+name)
+        # Zero-only runtime defaults cannot be identified by byte sequence
+        # occurrence: genuine original MAP publics plus full original source
+        # definitions and native LEDATA provide the only valid attribution.
+        if name not in ('JOYSTICK_DEFAULTS','MACHINE_STATE_DEFAULT','PALETTE_RUNTIME_DEFAULTS'):
+            need(original.program_image.find(body)==start and
+                 original.program_image.find(body,start+1)<0,
+                 'unreviewed ambiguous source-table occurrence: '+name)
         need(not relative_fixups(original,start,size) and
              not relative_fixups(calibration,cal_start,size),
              'original Master literal initialized table unexpectedly contains relocations')
@@ -195,7 +229,7 @@ def replay() -> dict:
         # literal DATA give the bounds, without inventing a MAP symbol.
         pub_offset=cal_start-0x209e0
         if public is not None:
-            need(len(re.findall(r'(?im)^\s*209E:'+f'{pub_offset:04X}'+r'\s+idle\s+'+re.escape(public)+r'\s*$',map_text))==2,
+            need(len(re.findall(r'(?im)^\s*209E:'+f'{pub_offset:04X}'+r'\s+(?:idle\s+)?'+re.escape(public)+r'\s*$',map_text))==2,
                  'native original Master DATA MAP public missing at true anchored location: '+name)
         else:
             need(name in ('EPSON_NOTES','IBM_VIDEO_DEVICES') and
@@ -238,7 +272,7 @@ def replay() -> dict:
 def validate(meta: dict, decision_required=True):
     parent=json.loads(PARENT.read_text())
     need(meta.get('schema_version')==1 and meta.get('kind')=='complete-original-Master-literal-DATA' and
-         meta.get('source_count')==len(TABLES) and meta.get('DATA_bytes')==306 and
+         meta.get('source_count')==len(TABLES) and meta.get('DATA_bytes')==333 and
          meta.get('original_author_archive_sha256')==parent['inputs']['inner_archive']['sha256'] and
          meta.get('original_target_sha256')==parent['inputs']['target']['sha256'] and
          meta.get('native_OMF_sha256')==parent['inputs']['calibration_object']['sha256'] and
@@ -269,9 +303,9 @@ def validate(meta: dict, decision_required=True):
              'original source inclusion identity missing')
     if decision_required:
         d=json.loads(DECISION.read_text())
-        need(d=={'schema_version':1,'decision':'ADOPT_ONLY_SEVEN_MASTER_LITERAL_DATA_TABLES',
+        need(d=={'schema_version':1,'decision':'ADOPT_ONLY_ELEVEN_MASTER_LITERAL_DATA_TABLES',
                  'evidence_sha256':digest_file(PROOF),
-                 'scopes':[r['member'] for r in rows], 'DATA_bytes':306,
+                 'scopes':[r['member'] for r in rows], 'DATA_bytes':333,
                  'CODE_bytes':0,'authored_credit':0},
              'independent Master literal DATA adoption decision missing/stale')
 
@@ -295,15 +329,15 @@ def main():
     if args.write:
         need(not PROOF.exists() and not DECISION.exists(), 'original Master proof already exists')
         j=replay();PROOF.write_text(json.dumps(j,indent=2)+'\n')
-        decision={'schema_version':1,'decision':'ADOPT_ONLY_SEVEN_MASTER_LITERAL_DATA_TABLES',
+        decision={'schema_version':1,'decision':'ADOPT_ONLY_ELEVEN_MASTER_LITERAL_DATA_TABLES',
                   'evidence_sha256':digest_file(PROOF),
                   'scopes':[r['member'] for r in j['scope_rows']],
-                  'DATA_bytes':306,'CODE_bytes':0,'authored_credit':0}
+                  'DATA_bytes':333,'CODE_bytes':0,'authored_credit':0}
         DECISION.write_text(json.dumps(decision,indent=2)+'\n')
-        validate(j);print('PASS seven source-linked original Master literal tables',j['DATA_bytes'])
+        validate(j);print('PASS eleven source-linked original Master literal tables',j['DATA_bytes'])
     else:
         j=json.loads(PROOF.read_text());validate(j)
         if args.check:need(replay()==j, 'original full Master literal DATA OMF/MZ changed')
-        print('PASS seven source-backed complete Master initialized DATA tables')
+        print('PASS eleven source-backed complete Master initialized DATA tables')
 
 if __name__=='__main__':main()
