@@ -109,3 +109,37 @@ reviewed ASM. First-producer inputs and outputs are kept only in ignored
 `.analysis/gpt-web-yumeko-direct-tail-20261111.py`. The maintained C++
 port and adjacent accepted 354/428-byte major attack functions were
 left unchanged.
+
+## Isolating the Borland jump-optimization conflict
+
+A focused original-order nine-function native compile identifies why the
+current semantic C++ source cannot yet reproduce the original **283-byte**
+sword updater. With the maintained `#pragma option -O-`, the combined
+contribution is **2,139 bytes**, but the parity wrap guards lower to
+short conditional branches and local jump proxies.
+
+Enabling Borland's genuine jump optimizer (`#pragma option -O`) produces
+the **correct two 386 near-conditional instructions** at updater offsets
+`+5E` and `+72`, matching the original opcodes and branch locations:
+`0F 8C` (JL) and `0F 8D` (JGE). However, the total combined CODE becomes
+**2,135 bytes**. The optimizer also eliminates exactly two unrelated
+two-byte short jumps: the bounds-check fallthrough at original `+9A`,
+and the collision-hit continuation at original `+C2`. The loop tail
+therefore shifts from `+10C` to `+108`, and all near-Jcc displacements
+are four bytes shorter. This is a real code-generation tradeoff, not a
+different sprite or collision algorithm.
+
+The compiler option is **whole-function**, not a switch that can be
+applied to the parity block alone. Moving `#pragma option -O-` back before
+normal sword motion or collision restores the original 2,139-byte
+baseline but also restores the wrong short-branch proxies. Equivalent
+`else`, shared-label and collision-continuation rewrites under `-O`
+still produce the 2,135-byte optimized shape.
+
+Native diagnostics are retained under
+`.analysis/gpt-web-yumeko-conditional-long-*-native/` and the private
+probe `.analysis/gpt-web-yumeko-conditional-long-20261111.py`. No
+game-source or accepted ASM change was made. The remaining task is
+to find historically plausible *natural C++ control flow* that
+preserves both original short jumps while enabling 386 near conditionals,
+without fake instructions or optimizer barriers.
