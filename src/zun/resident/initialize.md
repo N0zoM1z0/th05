@@ -115,7 +115,7 @@ still-mismatched 269-byte entry.
 
 ## Subsequent complete foreign file I/O providers
 
-Four near-Pascal Master file I/O providers at `0698..07FC` now have
+Nine near-Pascal Master file I/O providers at `0698..0970` now have
 independent, exact [vendor ASM source](file_family_native.md). The resident
 entry's DOS-file callbacks therefore have real original-code definitions
 rather than merely symbol addresses. This does not alter the C++ `main()`

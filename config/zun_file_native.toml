@@ -4,10 +4,10 @@ member = "-S"
 member_start = 0x0AE4
 member_size = 6564
 start_com = 0x0698
-end_com = 0x07FC
-scope_size = 356
-instruction_bytes = 354
-uncredited_alignment_offsets = [131, 287]
+end_com = 0x0970
+scope_size = 728
+instruction_bytes = 723
+uncredited_alignment_offsets = [131, 287, 473, 581, 633]
 origin = "pinned-master-library-original-assembly"
 global_authored_credit = "vendor-zero"
 source = "src/zun/resident/file_family_native.asm"
@@ -16,12 +16,21 @@ includes = [
   "src/zun/resident/master_read.inc",
   "src/zun/resident/master_close.inc",
   "src/zun/resident/master_ropen.inc",
+  "src/zun/resident/master_write.inc",
+  "src/zun/resident/master_create.inc",
+  "src/zun/resident/master_seek.inc",
+  "src/zun/resident/master_append.inc",
 ]
 [publics]
 FILE_READ = 0x698
 FILE_FLUSH = 0x74C
 FILE_CLOSE = 0x7B8
 FILE_ROPEN = 0x7C6
+FILE_WRITE = 0x7FC
+FILE_CREATE = 0x8A2
+FILE_SEEK = 0x8DE
+FILE_TELL = 0x912
+FILE_APPEND = 0x920
 [negative]
 file = "src/zun/resident/master_read.inc"
 find = "cmp\tfile_BufPtr,AX"

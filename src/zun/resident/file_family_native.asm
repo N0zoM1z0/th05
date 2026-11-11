@@ -4,6 +4,9 @@
 .model tiny
 locals
 include master_file_tiny.inc
+_call macro nearproc
+    call near ptr nearproc
+endm
 .code
 org 0100h
 resident_file_prefix label byte
@@ -12,8 +15,14 @@ org 0698h
 include master_read.inc
 include master_close.inc
 include master_ropen.inc
+include master_write.inc
+include master_create.inc
+include master_seek.inc
+include master_append.inc
 
 ; Foreign provider near entry: no instruction body supplied in this unit.
+org 0980h
+DOS_AXDX label near
 org 09BEh
 DOS_ROPEN label near
 
