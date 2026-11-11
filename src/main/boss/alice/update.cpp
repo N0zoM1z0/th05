@@ -2,6 +2,7 @@
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
+#include "src/main/boss/alice/scratch.hpp"
 // Canonical object layouts are already parsed. Keep ordinary word alignment
 // and the genuine preceding spread; the whole-owner table gap remains open.
 #pragma option -a2
@@ -45,8 +46,8 @@ void pascal far alice_update(void)
             boss.phase_frame = 0;
             boss.mode = ALICE_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
-            boss_statebyte[10] = 24;
-            boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_INACTIVE;
+            alice_scratch.ready_seed = 24;
+            alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         }
         break;
 
@@ -77,7 +78,7 @@ void pascal far alice_update(void)
                 boss.mode = ALICE_MODE_REPOSITION;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen = 0;
-                boss_statebyte[7] = 0;
+                alice_scratch.attack_wave = 0;
                 alice_beam_burst_window = 160;
             }
         }
@@ -97,7 +98,7 @@ void pascal far alice_update(void)
                     goto phase_complete;
                 }
                 alice_pattern_current =
-                    alice_pattern_table[boss_statebyte[7]][randring2_next16_mod(3)];
+                    alice_pattern_table[alice_scratch.attack_wave][randring2_next16_mod(3)];
             }
             break;
         case ALICE_MODE_ATTACK:
@@ -110,7 +111,7 @@ void pascal far alice_update(void)
         boss_score_bonus(7);
         boss_items_drop();
 phase_complete:
-        boss_statebyte[7]++;
+        alice_scratch.attack_wave++;
         if(bullet_clear_time < 20) {
             bullet_clear_time = 20;
         }
@@ -165,7 +166,7 @@ phase_complete:
         }
         boss.phase++;
         boss.phase_frame = 0;
-        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_INACTIVE;
+        alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         alice_puppet0.pos.prev.x.v = to_sp(320);
         alice_puppet0.pos.prev.y.v = to_sp(96);
         alice_puppet1.pos.prev.x.v = to_sp(64);

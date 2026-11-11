@@ -2,6 +2,7 @@
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/beam.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
+#include "src/main/boss/alice/scratch.hpp"
 
 void near alice_puppet_beam_pattern(void)
 {
@@ -20,9 +21,9 @@ void near alice_puppet_beam_pattern(void)
         return;
     }
     if(alice_beam_frame == ALICE_BEAM_CHARGE_START) {
-        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_CHARGE_CIRCLES;
+        alice_scratch.beam_phase = ALICE_BEAM_CHARGE_CIRCLES;
         alice_puppet0.radius.radius_gather = alice_puppet1.radius.radius_gather = 64;
-        boss_statebyte[ALICE_BEAM_PATTERN_SLOT] = -60;
+        alice_scratch.beam_sprite_patnum = -60;
         alice_beam_burst_window += 32;
         return;
     }
@@ -30,7 +31,7 @@ void near alice_puppet_beam_pattern(void)
         return;
     }
     if(alice_beam_frame < ALICE_BEAM_SPRITES_START) {
-        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_CONTRACTING;
+        alice_scratch.beam_phase = ALICE_BEAM_CONTRACTING;
         alice_puppet0.radius.radius_gather = alice_puppet1.radius.radius_gather =
             ((64 - alice_beam_frame) * 2);
         return;
@@ -39,9 +40,9 @@ void near alice_puppet_beam_pattern(void)
         if(alice_beam_frame == ALICE_BEAM_SPRITES_START) {
             snd_se_play(8);
         }
-        boss_statebyte[ALICE_BEAM_PHASE_SLOT] = ALICE_BEAM_SPRITES;
+        alice_scratch.beam_phase = ALICE_BEAM_SPRITES;
         if(alice_beam_frame == 71 || alice_beam_frame == 79) {
-            boss_statebyte[ALICE_BEAM_PATTERN_SLOT] += 2;
+            alice_scratch.beam_sprite_patnum += 2;
         }
         return;
     }

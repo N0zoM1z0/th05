@@ -63,3 +63,34 @@ See [complete context and producer review](update_context.md).
 The original fifteen ordinary boss phases now distinguish puppet entrance,
 four pattern waves, three beam approach/attack pairs and final rings/spread.
 The movement and attack submodes retain their observed numeric values.
+
+## Shared typed Alice scratch-state protocol (2026-11-11)
+
+The maintained complete 15-phase Alice Boss controller, both charge-pattern
+sources, the stationary puppet beam, puppet motion and real puppet renderer now
+refer to one `AliceScratch` **view of the original 16-byte `boss_statebyte`
+array**. This is not a new allocation or shared object. Compile-time size and
+offset checks cover the actual typed roles: byte 7 is the selected attack wave
+(0–3), byte 8 the beam sprite base, byte 9 the beam phase, and byte 15 the
+paired-stack/rotating-ring charge angle. The angle is reinitialized to 8 or 0
+by each charge pattern; it is never treated as a persistent cross-phase field.
+
+The Ready phase still writes the unchanged byte value 24 to offset 10. That
+byte is deliberately named `ready_seed` with no asserted lifetime or new timer
+semantics; its use by other patterns remains unproved. The beam's four states
+(INACTIVE, CHARGE_CIRCLES, CONTRACTING, SPRITES) continue to use the accepted
+`beam_phase.hpp` values without reinterpreting their 8-bit storage. The
+complete controller still advances the wave index only after a finished
+pattern wave, and the puppet motion/renderers continue to read the same
+active beam phase as the beam producer. Neither zero-initialization nor new
+phase-transition writes were introduced.
+
+The complete replay of **all six changed source owners**, including the
+939-byte Alice update, both charge functions, beam, motion, renderer and the
+real foreground compilation context, was twice compiled with the pinned
+Borland toolchain. Every original byte and ordered MZ relocation matches,
+including the controller's original switch table. The compiled semantic
+negative was rejected; the private receipt is
+`.analysis/unit-replays/gpt-web-alice-shared-typed-scratch-20261111/receipt.json`.
+No new authored byte credit, partial function acceptance, DATA/BSS or game
+assets are inferred from the refactor.

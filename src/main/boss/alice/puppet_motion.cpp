@@ -2,6 +2,7 @@
 #pragma option -zCALICE_PMV_TEXT -zPmain_03
 #include "src/main/boss/alice/puppet_motion.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
+#include "src/main/boss/alice/scratch.hpp"
 
 void near alice_puppets_entrance(void)
 {
@@ -79,7 +80,7 @@ void near alice_puppets_update(void)
                 static_cast<unsigned int>(p->pos.cur.y.v - player_pos.cur.y.v + to_sp(12)) < to_sp(24)) {
                 player_is_hit = true;
             }
-            if(boss_statebyte[ALICE_BEAM_PHASE_SLOT] != ALICE_BEAM_SPRITES) {
+            if(alice_scratch.beam_phase != ALICE_BEAM_SPRITES) {
                 shot_hitbox_center = p->pos.cur;
                 p->damage_this_frame = shots_hittest();
                 if(p->damage_this_frame != 0) {

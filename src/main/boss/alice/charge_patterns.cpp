@@ -1,6 +1,7 @@
 // Three consecutive natural Alice charge/fire patterns, after the puppet beam.
 #pragma option -zCALICE_CHG_TEXT -zPmain_03
 #include "src/main/boss/alice/charge_patterns.hpp"
+#include "src/main/boss/alice/scratch.hpp"
 
 void near alice_pattern_laser_fan(void)
 {
@@ -49,7 +50,7 @@ void near alice_pattern_paired_stacks(void)
     if(boss.phase_frame < 64) {
         gather_add_only_3stack(boss.phase_frame - 40, 9, 8);
         boss.sprite = 184;
-        boss_statebyte[15] = 8;
+        alice_scratch.charge_angle = 8;
         if(boss.phase_frame == 40) {
             snd_se_play(8);
         }
@@ -62,11 +63,11 @@ void near alice_pattern_paired_stacks(void)
         reinterpret_cast<uint16_t &>(bullet_template.stack) = 8 | (7 << 8);
         bullet_template.speed.v = to_sp(1) + 8;
         bullet_template_tune();
-        bullet_template.angle = boss_statebyte[15];
+        bullet_template.angle = alice_scratch.charge_angle;
         bullets_add_regular();
         bullet_template.angle = -bullet_template.angle;
         bullets_add_regular();
-        boss_statebyte[15] += 5;
+        alice_scratch.charge_angle += 5;
         boss.sprite = 180;
         snd_se_play(15);
     }
@@ -81,7 +82,7 @@ void near alice_pattern_rotating_ring(void)
     if(boss.phase_frame < 64) {
         gather_add_only_3stack(boss.phase_frame - 40, 9, 8);
         boss.sprite = 184;
-        boss_statebyte[15] = 0;
+        alice_scratch.charge_angle = 0;
         if(boss.phase_frame == 40) {
             snd_se_play(8);
         }
@@ -94,9 +95,9 @@ void near alice_pattern_rotating_ring(void)
         reinterpret_cast<uint16_t &>(bullet_template.spread) = 20 | (7 << 8);
         bullet_template.speed.v = to_sp(2) + 8;
         bullet_template_tune();
-        bullet_template.angle = boss_statebyte[15];
+        bullet_template.angle = alice_scratch.charge_angle;
         bullets_add_regular();
-        boss_statebyte[15] += 2;
+        alice_scratch.charge_angle += 2;
         boss.sprite = 180;
         snd_se_play(3);
     }
