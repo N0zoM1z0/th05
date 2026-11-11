@@ -2028,3 +2028,33 @@ semantic_inputs = ["src/shared/geometry.hpp"]
 [units.negative]
 find = "push SPARK_RANDOM_SPEED_SPAN_MASK"
 replace = "push (SPARK_RANDOM_SPEED_SPAN_MASK - 1)"
+
+[[units]]
+id = "main-cdg-load-family-asm"
+artifact = "main"
+source = "src/main/formats/cdg_load_family.asm"
+types = "src/main/formats/cdg_load_family_types.inc"
+symbols = "probes/units/cdg_load_family_symbols.inc"
+bindings = "probes/units/cdg_load_family_bindings.asm"
+notes = "src/main/formats/cdg_load_family.md"
+target_start = 0x15118
+size = 342
+segment = "SHARED"
+group = "(none)"
+cs_base = 0x14ab0
+instruction_nops = [5, 15, 101, 195, 341]
+fixups = [34,43,80,88,125,138,153,170,187,208,227,275,312,331]
+tables = []
+native_review_sha256 = "16ee2bc01593fd401915cddae5ab60ba7bf3269be362266c7f933904203acb6c"
+target_scope_sha256 = "9cb6d738b7dbadd53919857c08b388b084d0e3f95a0c8e37d9bfae524092d0dd"
+semantic_inputs = ["src/main/ems/ems.hpp"]
+[units.publics]
+"CDG_LOAD_SINGLE_NOALPHA" = 0
+"CDG_LOAD_SINGLE" = 6
+"CDG_LOAD_ALL_NOALPHA" = 190
+"CDG_LOAD_ALL" = 196
+"CDG_FREE" = 288
+"cdg_load_family_end" = 342
+[units.negative]
+find = "mov cx, CDG_COPY_STRUCT_DWORDS"
+replace = "mov cx, (CDG_COPY_STRUCT_DWORDS - 1)"

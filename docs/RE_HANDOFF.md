@@ -14,6 +14,18 @@ hardware function. Together with accepted 88+56 predecessors, 218 bytes
 at `[13A3E,13B18)` have complete independent exact ownership. The
 456-byte dialog opcode remains unaccepted. See [dialog graphics](../src/main/dialog/runtime.md).
 
+The MAIN shared **342-byte complete CDG resource loader family** at
+`[15118,1526E)` is now reviewed original-register ASM: two independent
+TASM32/TLINK builds match all raw bytes, the original 14-site ordered
+relocation stream and the real six source entrypoints. The batch copy's
+compiled 3→2-DWORD negative is rejected. The full single/whole-image load,
+noalpha entrypoints, internal reader and single-slot release are preserved
+with native CDG/HMEM/file interfaces, five checked but uncredited NOPs and
+no extra DATA. **337 authored instruction bytes** are credited. The adjacent
+accepted `CDG_FREE_ALL` owner is not counted again. See
+[CDG loader review](../src/main/formats/cdg_load_family.md) and
+`.analysis/gpt-web-cdg-load-family-342-b/receipt.json`.
+
 The MAIN far-Pascal `sparks_add_random()` at `[16E86,16EE8)` is now exact
 reviewed original-register ASM: **98/98 bytes**, two independent TASM/TLINK
 producers and a rejected 31→30 random radial speed-span mutation. It
