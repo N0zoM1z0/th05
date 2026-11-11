@@ -111,6 +111,8 @@ def main():
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable, str(ROOT / "scripts/review_context_graph_pack_noclip.py"),
                     "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_bgm_timers.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # Lightweight source-current acceptance check for the separate ZUN.COM
     # -I child; no assembler, Wine, original target or cold replay is invoked.
     subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_interrupt.py"), "--check"],

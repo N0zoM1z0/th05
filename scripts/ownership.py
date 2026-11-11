@@ -623,10 +623,16 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_graph_pack_noclip import reviewed_claims as pack_noclip_claims
             packed_blitters, packed_blitters_sha = pack_noclip_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Original Master BGM timer and interrupt-hook procedures, with
+            # their separate genuine _TEXT and DGROUP segment relocations.
+            from review_context_bgm_timers import reviewed_claims as bgm_timer_claims
+            bgm_timer_functions, bgm_timer_sha = bgm_timer_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
                                     shifted_context + string_context + pi_pack +
-                                    large_master + super_helpers + master_hooks + packed_blitters)
+                                    large_master + super_helpers + master_hooks +
+                                    packed_blitters + bgm_timer_functions)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -686,6 +692,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_hooks_review_sha256"] = master_hooks_sha
         if name in ("op","maine") and packed_blitters_sha:
             views[name]["graph_pack_noclip_review_sha256"] = packed_blitters_sha
+        if name in ("op","maine") and bgm_timer_sha:
+            views[name]["bgm_timer_review_sha256"] = bgm_timer_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
