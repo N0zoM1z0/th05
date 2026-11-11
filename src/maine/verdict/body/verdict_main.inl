@@ -22,6 +22,29 @@ static const uint32_t VERDICT_BOMB_PENALTY_PER_USE = 15000UL;
 static const int VERDICT_COMMENT_RECORD_BYTES = 30;
 static const int VERDICT_SECOND_COMMENT_BASE = 780;
 static const int VERDICT_COMMENT_DISPLAY_BYTES = 28;
+// Original score grading uses separate standard/extra completion clocks.
+// End-sequence evaluation deliberately overrides the measured frame count.
+static const int VERDICT_STANDARD_COMPLETION_FRAMES = 46000;
+static const int VERDICT_EXTRA_COMPLETION_FRAMES = 12800;
+// A zero score chooses the very last comment record, then nonzero scores
+// climb four fixed score bands before the upper 1.5M boundary.
+static const long VERDICT_COMMENT_HIGH_SCORE_SKIP = 1500000L;
+static const long VERDICT_COMMENT_LOW_BAND_LIMIT = 1050000L;
+static const long VERDICT_COMMENT_MID_BAND_LIMIT = 1200000L;
+static const long VERDICT_COMMENT_HIGH_BAND_LIMIT = 1350000L;
+static const long VERDICT_COMMENT_EARLY_BAND_POINTS = 50000L;
+static const int VERDICT_COMMENT_ZERO_SCORE_ROW = 25;
+static const int VERDICT_COMMENT_FIRST_BAND_BASE_ROW = 24;
+static const int VERDICT_COMMENT_MID_BAND_ROW = 3;
+static const int VERDICT_COMMENT_HIGH_BAND_ROW = 2;
+static const int VERDICT_COMMENT_TOP_BAND_ROW = 1;
+// Preserve the original integer right shift, strict majority check and
+// the *signed* post-rank clamp; no extra score data object is allocated.
+static const int VERDICT_SLOW_PLAY_FRACTION_SHIFT = 1;
+static const unsigned long VERDICT_TURBO_OFF_SCORE_PENALTY = 200000UL;
+static const unsigned long VERDICT_TURBO_OFF_CAP_PENALTY = 100000UL;
+static const unsigned long VERDICT_MISS_PENALTY_CAP = 300000UL;
+static const unsigned long VERDICT_BOMB_PENALTY_CAP = 225000UL;
 
 void near verdict_main(void)
 {
@@ -73,16 +96,16 @@ void near verdict_main(void)
     verdict_capture_quarter = true;
     if(resident->stage != VERDICT_STAGE_EXTRA) {
         if(resident->end_sequence >= VERDICT_ES_BAD) {
-            resident->std_frames = 46000;
+            resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;
         }
         skill_apply_and_graph_percentage_put(verdict_text_left + 176,
-            verdict_text_top + 120, 46000, resident->std_frames);
+            verdict_text_top + 120, VERDICT_STANDARD_COMPLETION_FRAMES, resident->std_frames);
     } else {
         if(resident->end_sequence == VERDICT_ES_EXTRA) {
-            resident->std_frames = 12800;
+            resident->std_frames = VERDICT_EXTRA_COMPLETION_FRAMES;
         }
         skill_apply_and_graph_percentage_put(verdict_text_left + 176,
-            verdict_text_top + 120, 12800, resident->std_frames);
+            verdict_text_top + 120, VERDICT_EXTRA_COMPLETION_FRAMES, resident->std_frames);
     }
     verdict_capture_quarter = false;
     skill_apply_and_graph_percentage_put(verdict_text_left + 176,
@@ -146,16 +169,16 @@ void near verdict_main(void)
     case VERDICT_START_BOMBS_TWO: skill += 20000UL; max_skill += 25000UL; break;
     }
     if(!resident->turbo_mode) {
-        skill -= 200000UL;
-        max_skill -= 100000UL;
+        skill -= VERDICT_TURBO_OFF_SCORE_PENALTY;
+        max_skill -= VERDICT_TURBO_OFF_CAP_PENALTY;
     }
     if(resident->miss_count >= VERDICT_MISS_PENALTY_LIMIT) {
-        skill -= 300000UL;
+        skill -= VERDICT_MISS_PENALTY_CAP;
     } else {
         skill -= (static_cast<uint32_t>(resident->miss_count) * VERDICT_MISS_PENALTY_PER_USE);
     }
     if(resident->bombs_used >= VERDICT_BOMB_PENALTY_LIMIT) {
-        skill -= 225000UL;
+        skill -= VERDICT_BOMB_PENALTY_CAP;
     } else {
         skill -= (static_cast<uint32_t>(resident->bombs_used) * VERDICT_BOMB_PENALTY_PER_USE);
     }
@@ -171,23 +194,23 @@ void near verdict_main(void)
 
     verdict_comments[0][0] = 0;
     verdict_comments[1][0] = 0;
-    if((resident->frames >> 1) > resident->slow_frames) {
+    if((resident->frames >> VERDICT_SLOW_PLAY_FRACTION_SHIFT) > resident->slow_frames) {
         graph_fraction_of_million_put(verdict_text_left + 176,
             verdict_text_top + 272, skill);
         graph_putsa_fx(verdict_text_left + 272, verdict_text_top + 272,
             verdict_text_color, verdict_points_unit);
         file_ropen(verdict_comment_filename);
-        if(static_cast<long>(skill) < 1500000L) {
+        if(static_cast<long>(skill) < VERDICT_COMMENT_HIGH_SCORE_SKIP) {
             if(skill == 0) {
-                line = 25;
-            } else if(static_cast<long>(skill) < 1050000L) {
-                line = (24 - (static_cast<long>(skill) / 50000L));
-            } else if(static_cast<long>(skill) < 1200000L) {
-                line = 3;
-            } else if(static_cast<long>(skill) < 1350000L) {
-                line = 2;
+                line = VERDICT_COMMENT_ZERO_SCORE_ROW;
+            } else if(static_cast<long>(skill) < VERDICT_COMMENT_LOW_BAND_LIMIT) {
+                line = (VERDICT_COMMENT_FIRST_BAND_BASE_ROW - (static_cast<long>(skill) / VERDICT_COMMENT_EARLY_BAND_POINTS));
+            } else if(static_cast<long>(skill) < VERDICT_COMMENT_MID_BAND_LIMIT) {
+                line = VERDICT_COMMENT_MID_BAND_ROW;
+            } else if(static_cast<long>(skill) < VERDICT_COMMENT_HIGH_BAND_LIMIT) {
+                line = VERDICT_COMMENT_HIGH_BAND_ROW;
             } else {
-                line = 1;
+                line = VERDICT_COMMENT_TOP_BAND_ROW;
             }
             file_seek((line * VERDICT_COMMENT_RECORD_BYTES), 0);
         }

@@ -97,3 +97,38 @@ relocation. The compiled semantic negative was rejected. Focused receipt:
 `.analysis/unit-replays/gpt-web-verdict-scoring-policy-20261111/receipt.json`.
 No additional CODE coverage, new denominator or unrelated MAINE cold replay
 is inferred from this exact source-semantic improvement.
+
+## Completion deadlines and actual score-comment bands (2026-11-11)
+
+The complete `verdict_main()` now names the two original completion-score
+windows: **46,000 frames** for stages 1–6 and **12,800 frames** for Extra.
+The actual end-sequence evaluation may replace the measured stage time with
+that deadline before calculating the completion fraction. The result also
+retains the original strict slow-play majority gate, comparing half the total
+play frames (the real `>> 1`) with the number of slow frames, before deciding
+whether to show a ranked score or the unrated warning.
+
+The score-comment file selection is now an explicit tier calculation rather
+than unlabeled constants. Exactly zero points select line 25; positive scores
+below 1,050,000 use `24 - score/50,000`, then the 1,050,000, 1,200,000 and
+1,350,000 thresholds select comment rows 3, 2 and 1. For scores at or above
+1,500,000 the first seek is deliberately skipped, retaining the original
+file read position. The second 30-byte comment still comes from the genuine
+separate block at offset 780. No new floor/ceiling check or text rewriting is
+introduced.
+
+The original non-turbo score/cap penalties (**200,000** and **100,000**)
+remain 32-bit values, just like the separate capped misses/bombs penalties
+(**300,000** and **225,000**). This matters for a 16-bit Borland `int`:
+truncating any of these source constants to `int` would change the original
+arithmetic, even if the surrounding source looked natural. The signed clamp,
+rank multiplier and two original source switch tables remain untouched.
+
+All **ten impacted complete verdict source owners** were rebuilt together in
+the real Borland/TLINK context: **3,384/3,384 exact original CODE bytes**,
+including the 1,748-byte main scoring function, both generated switch tables,
+and the literal original ordered relocations. The compiled mutation changing
+the named 46,000-frame standard-completion deadline to 46,001 was rejected.
+Receipt:
+`.analysis/unit-replays/gpt-web-verdict-comment-bands-20261111/receipt.json`.
+The changes refine already accepted source, not new target-byte credit.

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+  "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
@@ -9112,7 +9112,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9152,7 +9152,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9267,7 +9267,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9351,7 +9351,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9392,7 +9392,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -9471,10 +9471,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -9549,7 +9549,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -9707,7 +9707,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9747,7 +9747,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -9862,7 +9862,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9946,7 +9946,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9987,7 +9987,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -10066,10 +10066,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -10144,7 +10144,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -10302,7 +10302,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10342,7 +10342,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10457,7 +10457,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10541,7 +10541,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10582,7 +10582,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -10661,10 +10661,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -10739,7 +10739,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -10893,7 +10893,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -10933,7 +10933,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -11048,7 +11048,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11132,7 +11132,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11173,7 +11173,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -11252,10 +11252,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -11330,7 +11330,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -11484,7 +11484,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -11524,7 +11524,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -11639,7 +11639,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11723,7 +11723,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11764,7 +11764,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -11843,10 +11843,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -11921,7 +11921,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -12067,7 +12067,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12107,7 +12107,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12222,7 +12222,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12306,7 +12306,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12347,7 +12347,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -12426,10 +12426,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -12504,7 +12504,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -12750,7 +12750,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12790,7 +12790,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -12905,7 +12905,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12989,7 +12989,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13030,7 +13030,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -13109,10 +13109,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -13187,7 +13187,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -13345,7 +13345,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -13385,7 +13385,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -13500,7 +13500,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13584,7 +13584,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13625,7 +13625,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -13704,10 +13704,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -13782,7 +13782,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -13972,7 +13972,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14012,7 +14012,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14127,7 +14127,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14211,7 +14211,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14252,7 +14252,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -14331,10 +14331,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -14409,7 +14409,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
@@ -14587,7 +14587,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a5b46306c76132a10483dc91172a2e9baebcbdeaa25615bd3b62b9777551c746",
+            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14627,7 +14627,7 @@
             ]
           },
           {
-            "sha256": "c7004a94451b120799de492c73445d50ef1c08349b94cde0fda9df7d05562884",
+            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
             "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
@@ -14742,7 +14742,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14826,7 +14826,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "c57c622585ab4251dc2df3f11be4b6a25621c5854bdcc0b7f7f30a5e87ac4bdc"
+          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14867,7 +14867,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "50b66a6d58df2debbe0ca3c8a395dd34b150c3508d154eba7588e8529325b12e",
+      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
       "compiled_negative_control": {
         "target_start": 51867,
         "candidate_start": 51867,
@@ -14946,10 +14946,10 @@
         "mutation": {
           "unit": "maine-verdict-main",
           "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = 46000;",
-          "replace": "resident->std_frames = 46001;"
+          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
+          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
         },
-        "control_sha256": "a7aa1ae3bf99e1fb07fedcdb3e69bfee624b31f72a442ea554b0dae56d8811e5",
+        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 51867,
@@ -15024,7 +15024,7 @@
           }
         },
         "omf": {
-          "sha256": "5f4637873840f8764e7465e61a2b8871a8c0d3017570e5aca68bbba823c8956c",
+          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
           "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [

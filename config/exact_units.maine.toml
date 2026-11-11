@@ -597,8 +597,8 @@ code_data_ranges = []
 [[controls]]
 unit = "maine-verdict-main"
 source = "src/maine/verdict/body/verdict_main.inl"
-find = "resident->std_frames = 46000;"
-replace = "resident->std_frames = 46001;"
+find = "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;"
+replace = "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
 
 [[units]]
 id = "maine-staff-orb-opening"
