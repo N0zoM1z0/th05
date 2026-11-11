@@ -24,25 +24,44 @@ PROOF=ROOT/'config/master_bgm_ownership.json'
 DECISION=ROOT/'config/reviewed_master_bgm.json'
 BASE=ROOT/'config/master_vendor_ownership.json'
 MEMBERS=(
+    ('_BGM_BELL_ORG',0x3690,48),
     ('_BGM_MGET',0x36e8,298),
+    ('BGM_READ_SDATA',0x3812,320),
     ('_BGM_TIMER_INIT',0x3952,68),
+    ('_BGM_TIMER_FINISH',0x3996,42),
     ('_BGM_PINIT',0x39c0,62),
     ('_BGM_TIMERHOOK',0x39fe,176),
     ('_BGM_PLAY',0x3b16,302),
     ('BGM_SOUND',0x3c44,74),
     ('_BGM_EFFECT_SOUND',0x3c8e,120),
+    ('BGM_STOP_PLAY',0x3d06,26),
+    ('BGM_SET_TEMPO',0x3d20,46),
     ('BGM_INIT',0x3d4e,420),
     ('BGM_FINISH',0x3ef2,94),
+    ('BGM_STOP_SOUND',0x3f50,26),
 )
 
 
 def source_lines(raw,name):
     """Only documented type/macro spellings and function-local namespaces."""
     body=raw.lower().replace('@@','').replace('nopcall','call').replace('.spart.','.')
-    for a,b in (('b_init_',''),('b_e_snd_','')):
+    for a,b in (('b_init_',''),('b_e_snd_',''),('b_b_org_','')):
         body=body.replace(a,b)
     rows=[re.sub(r'\s+','',line.split(';',1)[0]) for line in body.splitlines()
           if line.split(';',1)[0].strip()]
+    if name=='BGM_READ_SDATA':
+        # Original FAR stack _push macro vs one active LDATA assembly arm.
+        # No instruction or source operand is omitted from the real OMF.
+        if 'ifldata' in rows:
+            need(rows.count('ifldata')==rows.count('endif')==1,
+                 'unknown BGM file-loader conditional source macro')
+        rows=[r.replace('_push[','push[').replace('pushwordptr[','push[')
+              for r in rows if r not in ('ifldata','endif')]
+    if name=='_BGM_BELL_ORG':
+        # The unused original PC-98 fallthrough label is absent in the port.
+        need(not any('pc98' in r and r!='pc98:' for r in rows),
+             'unknown bell machine-branch source reference')
+        rows=[r for r in rows if r!='pc98:']
     if name=='BGM_INIT':
         rows=[x.replace('pushwordptr[bp+bsize2]','push[bp+bsize2]') for x in rows]
     if name=='_BGM_EFFECT_SOUND':

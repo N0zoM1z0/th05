@@ -1,31 +1,50 @@
 # Original Master BGM source recovery in TH05 MAIN
 
-Nine complete sound and music driver procedures from the original Master
-0.23 library now have source-linked native ownership of **1,614 CODE
+Fifteen complete sound and music driver procedures from the original Master
+0.23 library now have source-linked native ownership of **2,122 CODE
 bytes** in TH05 MAIN. Each original function is reconstructed from the
 real TASM object and its original symbol fixups, not instruction bytes
 copied from the original game.
 
 | Complete function | Original MAIN range | CODE bytes | Original OMF FIXUPP |
 | --- | --- | ---: | ---: |
+| `_BGM_BELL_ORG` | `3690..36C0` | 48 | 1 |
+| `_BGM_BELL_ORG` | `3690..36C0` | 48 | 1 |
 | `_BGM_MGET` | `36E8..3812` | 298 | 15 |
+| `BGM_READ_SDATA` | `3812..3952` | 320 | 17 |
+| `BGM_READ_SDATA` | `3812..3952` | 320 | 17 |
 | `_BGM_TIMER_INIT` | `3952..3996` | 68 | 9 |
+| `_BGM_TIMER_FINISH` | `3996..39C0` | 42 | 4 |
+| `_BGM_TIMER_FINISH` | `3996..39C0` | 42 | 4 |
 | `_BGM_PINIT` | `39C0..39FE` | 62 | 2 |
 | `_BGM_TIMERHOOK` | `39FE..3AAE` | 176 | 19 |
 | `_BGM_PLAY` | `3B16..3C44` | 302 | 30 |
 | `BGM_SOUND` | `3C44..3C8E` | 74 | 5 |
 | `_BGM_EFFECT_SOUND` | `3C8E..3D06` | 120 | 7 |
+| `BGM_STOP_PLAY` | `3D06..3D20` | 26 | 2 |
+| `BGM_SET_TEMPO` | `3D20..3D4E` | 46 | 4 |
+| `BGM_STOP_PLAY` | `3D06..3D20` | 26 | 2 |
+| `BGM_SET_TEMPO` | `3D20..3D4E` | 46 | 4 |
 | `BGM_INIT` | `3D4E..3EF2` | 420 | 30 |
 | `BGM_FINISH` | `3EF2..3F50` | 94 | 6 |
+| `BGM_STOP_SOUND` | `3F50..3F6A` | 26 | 2 |
+| `BGM_STOP_SOUND` | `3F50..3F6A` | 26 | 2 |
 
 The [native verifier](../../scripts/review_master_bgm.py) checks the
 original author's Master 0.23 ASM archive, its active TASM function
 boundaries, and the actual source-built OMF module. All complete
 instruction/operand streams must match after only explicit adaptations
 to the original assembly notation: `@@` label scoping, `b_init_` /
-`b_e_snd_` local label namespaces, spelling a typed `spart` structure
-member, one unused `pcat:` label, and an explicit `word ptr`
-annotation on the original 16-bit `push`.
+`b_e_snd_` / `b_b_org_` local label namespaces, spelling a typed `spart` structure
+member, two unused source-only machine labels, and explicit `word ptr`
+annotations on 16-bit `push` instructions. The 320-byte `BGM_READ_SDATA`
+loader also expresses the original active large-model `_push` macro as an
+explicit `if LDATA` plus a typed push of the far-pointer segment. The 320-byte
+`BGM_READ_SDATA` loader is also reproduced in full: its original
+`_push` macro has the same active large-data stack result as the
+port's explicitly guarded `IF LDATA` / `push word ptr` form.
+The original unused `pc98:` fallthrough label in `_BGM_BELL_ORG`
+has no branch references and is source-verified separately.
 
 The maintained port sometimes spells an original Master `CALL` as
 `NOP; CALL` to retain the original linker footprint. This is a
@@ -50,9 +69,8 @@ from the same source OMF. It checks complete raw bytes, unique
 whole-function occurrences, and ordered original relocations. Its
 [evidence](../../config/master_bgm_ownership.json) and
 [explicit decision](../../config/reviewed_master_bgm.json) grant only
-the nine complete member extents. Unaccepted neighboring functions,
-including the larger `BGM_READ_SDATA` loader, remain unknown until
-their own source/macro-context review.
+the fifteen complete member extents. Unaccepted neighboring functions
+and gaps remain unknown until their own source/macro-context review.
 
 ```sh
 python3 scripts/review_master_bgm.py --check

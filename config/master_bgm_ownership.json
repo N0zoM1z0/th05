@@ -4,6 +4,40 @@
   "artifact": "th05-main",
   "members": [
     {
+      "member": "_BGM_BELL_ORG",
+      "start": 13968,
+      "end": 14016,
+      "size": 48,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_bell_org.asm",
+        "candidate_source_sha256": "3145d261f18831c0126b639afa38808834c7c9152fbef338e11c36c956a909ad",
+        "upstream_archive_member": "B_B_ORG.ASM",
+        "upstream_block_sha256": "6964fe5658344160e907c4d00dd36d97114effb4217e3ee2c189cac093989fa1",
+        "candidate_block_sha256": "e4682be92f9cc6061dcb87618717af39f3e437e31e299a86869a1cd8a119832d",
+        "semantic_instruction_sha256": "b36769e66863366b10cf42cd2eb5788824cc1ed5c4fe00e4b21ad5a79ca5cba4",
+        "candidate_line_span": [
+          43,
+          71
+        ]
+      },
+      "source_unlinked_CODE_sha256": "ebb5831101ac3b22c8aadd917a026b1de2de7ae863ff1f622f8b4ff78ce3adb2",
+      "native_CODE_sha256": "d6bdcbe825dca768b9678f93635ce5745c684d8edc34b4e929c23a49f99cfd1f",
+      "calibration_CODE_sha256": "f185bcbb88f750832ee0f5b8fa8749c1d395915a3e0c0b96e0053fe29500e18e",
+      "original_ordered_MZ_relocations": [],
+      "OMF_source_actions": [
+        {
+          "source_site": 2,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 5,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "d4aae5c2112e4062ed2e81614de1831fb977ee0d26c57360ade527ae29b62986"
+        }
+      ],
+      "authored_credit": 0
+    },
+    {
       "member": "_BGM_MGET",
       "start": 14056,
       "end": 14354,
@@ -164,6 +198,186 @@
       "authored_credit": 0
     },
     {
+      "member": "BGM_READ_SDATA",
+      "start": 14354,
+      "end": 14674,
+      "size": 320,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_read_sdata.asm",
+        "candidate_source_sha256": "ef4b9527ac2310c58139a8b1bcdaf322ab495b095e9b854bd9fefc752302d223",
+        "upstream_archive_member": "B_R_SDAT.ASM",
+        "upstream_block_sha256": "e6664f46068d3d380d111e101f7a92f12c4aeddfa78402ba2749ba760b44c3b6",
+        "candidate_block_sha256": "ae458bc4ccf5bdee759e3587a348243b008b4a0501ba965f395d8c2cd695b7c7",
+        "semantic_instruction_sha256": "dbe96f6c87c746527979bba12640531fe06cf4c97aaa783549833f60d45fcef7",
+        "candidate_line_span": [
+          52,
+          226
+        ]
+      },
+      "source_unlinked_CODE_sha256": "586a3987c9354a2b866419ba542b17d8b9ddb949f424da4767a83d5a9a27e738",
+      "native_CODE_sha256": "decc3f927bfa4813fe3bc478472de26cf6a199b48fa99b9feb831aeb1d13c2b5",
+      "calibration_CODE_sha256": "d3d84fa817cabf910854671504693dd4b1731582385401991c075229b92754cf",
+      "original_ordered_MZ_relocations": [
+        197
+      ],
+      "OMF_source_actions": [
+        {
+          "source_site": 197,
+          "kind": 2,
+          "target_method": 1,
+          "target_index": 1,
+          "frame_method": 5,
+          "original_link_operation": "original-MZ-segment16",
+          "original_word_sha256": "72ea8411d06f94bfb3ece7851e2f0bdf07b0ba800634adc331d5b3228d440f7a"
+        },
+        {
+          "source_site": 101,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 5,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 113,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 0,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c1a40bb63292075b6a2d00369aa59c81dd2d0a3196567da24bf7a96b2fa15078"
+        },
+        {
+          "source_site": 119,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 0,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c5020b79123c1899ad01a3e47fd26d38f382699248e85550000a009b2b4eb5ca"
+        },
+        {
+          "source_site": 123,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 0,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "b93f48bd93f1f04748a674214014f6cff2d7b8309ecd1ea9b9a3eac3ad510aee"
+        },
+        {
+          "source_site": 206,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 215,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c1a40bb63292075b6a2d00369aa59c81dd2d0a3196567da24bf7a96b2fa15078"
+        },
+        {
+          "source_site": 224,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c1a40bb63292075b6a2d00369aa59c81dd2d0a3196567da24bf7a96b2fa15078"
+        },
+        {
+          "source_site": 240,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 247,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c1a40bb63292075b6a2d00369aa59c81dd2d0a3196567da24bf7a96b2fa15078"
+        },
+        {
+          "source_site": 256,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 260,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 267,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        },
+        {
+          "source_site": 274,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c1a40bb63292075b6a2d00369aa59c81dd2d0a3196567da24bf7a96b2fa15078"
+        },
+        {
+          "source_site": 280,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c5020b79123c1899ad01a3e47fd26d38f382699248e85550000a009b2b4eb5ca"
+        },
+        {
+          "source_site": 284,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "b93f48bd93f1f04748a674214014f6cff2d7b8309ecd1ea9b9a3eac3ad510aee"
+        },
+        {
+          "source_site": 294,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "fc9b14721fbbcf485598c12f4ef84d1f793accec82703265a2a0d0bbba59baaf"
+        }
+      ],
+      "authored_credit": 0
+    },
+    {
       "member": "_BGM_TIMER_INIT",
       "start": 14674,
       "end": 14742,
@@ -267,6 +481,67 @@
           "frame_method": 5,
           "original_link_operation": "native-offset16",
           "original_word_sha256": "8ca5e200432f1bac71837ba5407afbbd9303d8299a59665b2e811706c5ff9ef2"
+        }
+      ],
+      "authored_credit": 0
+    },
+    {
+      "member": "_BGM_TIMER_FINISH",
+      "start": 14742,
+      "end": 14784,
+      "size": 42,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_timer.asm",
+        "candidate_source_sha256": "3957067e153629f5440e6f93dd84b870b8f99c6918e6f5697c55a65b7a469343",
+        "upstream_archive_member": "B_TIMER.ASM",
+        "upstream_block_sha256": "151f97f28051fdef75b182e0c5899a5be8c9b9b3651251df7167a81e69b97018",
+        "candidate_block_sha256": "9c0c447a4d6e04c4b372d5d1315c9e383c0428711bc20a5d7df1b17a4ed34dac",
+        "semantic_instruction_sha256": "74933b15df7cc4df0862f7df2dcc169ca2454b249131b4b948d1f47b6b0875a9",
+        "candidate_line_span": [
+          85,
+          107
+        ]
+      },
+      "source_unlinked_CODE_sha256": "21d1fabbbdc04b9915c01b21b741448809b271d95f940704d37361ce13f0d4a0",
+      "native_CODE_sha256": "5e03fe7782070ce44dd5bb2f9cdf624e83649b27fbe2ac8bb1ae6e90a237e3ac",
+      "calibration_CODE_sha256": "d9152b6126c29ce5a92b1e718eabda32960b6e889dd8ea433859f80771ae4ae1",
+      "original_ordered_MZ_relocations": [],
+      "OMF_source_actions": [
+        {
+          "source_site": 3,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "d4aae5c2112e4062ed2e81614de1831fb977ee0d26c57360ade527ae29b62986"
+        },
+        {
+          "source_site": 13,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "ed3201398b6a2dec97180bc020f31434b0a0b1b054fe1bf6ab984202bede3735"
+        },
+        {
+          "source_site": 17,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 54,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "1617aa0682b67aa5d7e2c897a21d8fe7a43bcdcfe975ef117d1fe0c48d1361b4"
+        },
+        {
+          "source_site": 25,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "8fd2e696504c155e9c1ee21565933c91a298ee705ad87276cf14477354e58af5"
         }
       ],
       "authored_credit": 0
@@ -966,6 +1241,110 @@
       "authored_credit": 0
     },
     {
+      "member": "BGM_STOP_PLAY",
+      "start": 15622,
+      "end": 15648,
+      "size": 26,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_stop_play.asm",
+        "candidate_source_sha256": "c216798e0f812440613dfd35e7b1bd196cc07d4843240352e3a7b694549fbc79",
+        "upstream_archive_member": "B_SP_PLY.ASM",
+        "upstream_block_sha256": "c88bce96b94e87436825b93d5251c50b3ad4476848e8985213a1c992699fbe52",
+        "candidate_block_sha256": "4c4c047a40b7198c7b3276de56a0ff04292b1ad696346fab676e7041fbbbe20d",
+        "semantic_instruction_sha256": "132965c9f457f51c24736e53348038e5bb13fcfd867809a1f290eccc197f1212",
+        "candidate_line_span": [
+          42,
+          53
+        ]
+      },
+      "source_unlinked_CODE_sha256": "e686d08499a7dc7708f636097a39201d7f6b4aba309e4658bee39f1180507c55",
+      "native_CODE_sha256": "959c1c4e1e1c21c6ffc2f0f8009dd92377cf74be5f2b4c29c5086bf7c57ec8aa",
+      "calibration_CODE_sha256": "ed21822a007d80f4e119a8db425078bcbc17bca4583cfe6d90493216518adc1f",
+      "original_ordered_MZ_relocations": [],
+      "OMF_source_actions": [
+        {
+          "source_site": 2,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "89e6b7dfc27be21e785780dea30ac280bec059d3a927d5e43c023d06364f1f07"
+        },
+        {
+          "source_site": 9,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "89e6b7dfc27be21e785780dea30ac280bec059d3a927d5e43c023d06364f1f07"
+        }
+      ],
+      "authored_credit": 0
+    },
+    {
+      "member": "BGM_SET_TEMPO",
+      "start": 15648,
+      "end": 15694,
+      "size": 46,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_set_tempo.asm",
+        "candidate_source_sha256": "3530f2294b4fb80d970b8070b4be7a1c1cb19aec193ba28fcaf97ecef265627c",
+        "upstream_archive_member": "B_S_TEMP.ASM",
+        "upstream_block_sha256": "be5165976ab7b627ad4e688b180cee4c8c6a70deeee28dabea9e550ef718a73d",
+        "candidate_block_sha256": "7b3d25cdeea3b49cc7ea8221af357d34147cf4c55c64a2f2fffabe1a11809e70",
+        "semantic_instruction_sha256": "a7291646c1513a8555276ac1005863efc324cd9747071561632b51982d4ee920",
+        "candidate_line_span": [
+          42,
+          66
+        ]
+      },
+      "source_unlinked_CODE_sha256": "30777eb1d3fadeb284f4ece99e8ca36971032ea299c557e42cf7ca269954818a",
+      "native_CODE_sha256": "e8041748d9cce6c3f036fa578b4e26ad5b3bb8aa2957522bbe795ce8ac3f8a81",
+      "calibration_CODE_sha256": "7a1189d62ff8349a570360277c9eee6fb95e52e83f46862c1cc96e3a7a3cd285",
+      "original_ordered_MZ_relocations": [],
+      "OMF_source_actions": [
+        {
+          "source_site": 20,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "a24f723440f2f41b440ffd10bd6563079e40fdf7099ac0a67da3ff098fd5bbed"
+        },
+        {
+          "source_site": 23,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "e197d2f021451dcadf19f6e40f3ef8766e24dbc9b18d5747a1f1a7074504e429"
+        },
+        {
+          "source_site": 27,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "4e4ab8a37b9e22d438fa28be9bafd72f452b88c98834b150d4c510802ecb46c1"
+        },
+        {
+          "source_site": 32,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "c7d85efd29e33389a958a76da3b1be78c2b76921f985210e47616bf6f3329408"
+        }
+      ],
+      "authored_credit": 0
+    },
+    {
       "member": "BGM_INIT",
       "start": 15694,
       "end": 16114,
@@ -1338,9 +1717,52 @@
         }
       ],
       "authored_credit": 0
+    },
+    {
+      "member": "BGM_STOP_SOUND",
+      "start": 16208,
+      "end": 16234,
+      "size": 26,
+      "source": {
+        "candidate_source": "libs/master.lib/bgm_stop_sound.asm",
+        "candidate_source_sha256": "0500a903d67ef158f09813d6225fd354cec4bde6c9ad83d403f9cd8a5aa028ce",
+        "upstream_archive_member": "B_SP_SND.ASM",
+        "upstream_block_sha256": "4cfab6b5bcc41c705633ba7fd6d71ce48b836d419ace168de19085c6e95deaed",
+        "candidate_block_sha256": "805256aee602f0ec7f7e08650658a3764d213c145478f21ea72547027fd48fae",
+        "semantic_instruction_sha256": "1ed62a4fba5475dcdfdc7cdd39e13cc594e78d404ef67fbdcb45269f9e389428",
+        "candidate_line_span": [
+          42,
+          53
+        ]
+      },
+      "source_unlinked_CODE_sha256": "bde81b51d98c769e401a20c167b96e4304b8c04530872ae5c9eb3ee6435c9936",
+      "native_CODE_sha256": "d084dca28106628881ed136f4b956874c8de7488cbccbb8a15a77da751f2a69b",
+      "calibration_CODE_sha256": "1ba6f6f08c533aafe5d76adf8d330a2e22ae70d141e87596b954475cf8d55d13",
+      "original_ordered_MZ_relocations": [],
+      "OMF_source_actions": [
+        {
+          "source_site": 2,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "d4be2e2426d783fba0bd08fa2beb696c61bff5bd8ac27a5e6f30b8c181bfb5dc"
+        },
+        {
+          "source_site": 9,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 2,
+          "frame_method": 1,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "d4be2e2426d783fba0bd08fa2beb696c61bff5bd8ac27a5e6f30b8c181bfb5dc"
+        }
+      ],
+      "authored_credit": 0
     }
   ],
-  "source_written_CODE_bytes": 1614,
+  "source_written_CODE_bytes": 2122,
   "original_DGROUP": 133584,
   "calibration_DGROUP": 133600,
   "source_data_offset_delta": -18,
@@ -1349,7 +1771,7 @@
   "source_object_sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf",
   "author_archive_sha256": "acc5369d3fb445d5cd6b92abbedb7b433819465be2f85bbbff53bd1f77bc40b6",
   "parent_Master_proof_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
-  "source_verifier_sha256": "92b265a7168d16a646dd208a123f69194b5e4bc70f73fbfc37eb78ad34702360",
+  "source_verifier_sha256": "ae1657379bcc00f38c1ece8199d1c445b6c12af48108809899bffec56cc9f8b8",
   "assembly_model_sha256": "a85a5a2270e9462fdfa7fd790a5a026dcc9b02a048af05ee5a34a5b90be51c48",
   "author_credit": 0,
   "other_code_or_data_claimed": 0
