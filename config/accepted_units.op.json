@@ -2,28 +2,18 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "7e50a8a5e9b0c41dd118934f66dc586bd287f7e7477ef6beb2360f7f0f04bfee",
+  "replay_receipt_sha256": "e9d81f0ec0905e77ab5a6334bc788ca169d8f1febdf256709b8486b44bfc440c",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 54920,
-    "candidate_start": 54920,
-    "size": 157,
-    "target_sha256": "a73af18937936b3ed3db7835e1c302e333fd592826815c9946e58c8b24a5c595",
-    "candidate_sha256": "6452b251018c5cc5ca6de549d1d8a2c0dfa7dcc9f58b058bd6b4898c097dd8c3",
+    "target_start": 55444,
+    "candidate_start": 55444,
+    "size": 218,
+    "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+    "candidate_sha256": "ece2ab8e87ece7574e1c6b01e115cf1da1f1b6a6750fb6d0e39bd0199fe980b0",
     "raw_exact": false,
-    "target_fixups": [
-      15,
-      26,
-      37,
-      48
-    ],
-    "candidate_fixups": [
-      15,
-      26,
-      37,
-      48
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false
   },
@@ -39261,6 +39251,227 @@
           }
         ]
       }
+    },
+    {
+      "id": "op-piano-setup-218",
+      "entry_sha256": "e6ebe2d45ae0ee216ea24ba894dbff68390fc839a2e042c200df88aacaca15b4",
+      "result": {
+        "id": "op-piano-setup-218",
+        "entry_sha256": "e6ebe2d45ae0ee216ea24ba894dbff68390fc839a2e042c200df88aacaca15b4",
+        "rounds": [
+          {
+            "target_start": 55444,
+            "candidate_start": 55444,
+            "size": 218,
+            "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+            "candidate_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 55444,
+            "candidate_start": 55444,
+            "size": 218,
+            "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+            "candidate_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "870e58ac1a66a65720529090537225c0b3ddcbe68e9ec6b2069191f0c688555f",
+            "dependency_timestamp_normalized_sha256": "959c38a46c27809a4a8be4fc6824e1ac968afb584affc5de5ac6391f247ac350",
+            "module_name": "th05/psetup.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/psetup.cpp",
+              "src/op/piano/setup_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          },
+          {
+            "sha256": "6891b1a340fe32ea715b90a0a69bd7fa32d16f2603271472c066630b5c95cf9c",
+            "dependency_timestamp_normalized_sha256": "959c38a46c27809a4a8be4fc6824e1ac968afb584affc5de5ac6391f247ac350",
+            "module_name": "th05/psetup.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/psetup.cpp",
+              "src/op/piano/setup_exact.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/psetup.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/psetup.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/piano_setup_exact_bindings.asm",
+            "sha256": "f6eb359e8279fe67bbb1ec8947bfcbe46ccc213da60d011d566aef11a3b10455"
+          },
+          {
+            "path": "src/op/piano/setup_exact.cpp",
+            "sha256": "d829a1f462aa25b808a9e26f8bf9b202dfb0c0af2facd31caa01e7e2c01d2d9b"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/piano_setup_exact_bindings.asm",
+          "sha256": "f6eb359e8279fe67bbb1ec8947bfcbe46ccc213da60d011d566aef11a3b10455"
+        },
+        {
+          "path": "src/op/piano/setup_exact.cpp",
+          "sha256": "d829a1f462aa25b808a9e26f8bf9b202dfb0c0af2facd31caa01e7e2c01d2d9b"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e9d81f0ec0905e77ab5a6334bc788ca169d8f1febdf256709b8486b44bfc440c",
+      "compiled_negative_control": {
+        "target_start": 55444,
+        "candidate_start": 55444,
+        "size": 218,
+        "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+        "candidate_sha256": "ece2ab8e87ece7574e1c6b01e115cf1da1f1b6a6750fb6d0e39bd0199fe980b0",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-piano-setup-218",
+        "entry_sha256": "e6ebe2d45ae0ee216ea24ba894dbff68390fc839a2e042c200df88aacaca15b4",
+        "mutation": {
+          "unit": "op-piano-setup-218",
+          "source": "src/op/piano/setup_exact.cpp",
+          "find": "_AH = 5;",
+          "replace": "_AH = 4;"
+        },
+        "control_sha256": "c4b9d9bf40daf4281c65d3a76971c85b0e767c2cd1fa7f75983d1bec19a05f3f",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 55444,
+          "candidate_start": 55444,
+          "size": 218,
+          "target_sha256": "3885360a4f38adeff365351c010ab5dd2864d7d84a439517b364a6da02b7ee62",
+          "candidate_sha256": "ece2ab8e87ece7574e1c6b01e115cf1da1f1b6a6750fb6d0e39bd0199fe980b0",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "953c2aade967a4f4f7f57140316df2b55b17898479d9be21ca8e33f04fa92767",
+          "dependency_timestamp_normalized_sha256": "19fb1265bb6313400d49613d7e79a78a2b48d1825cbe79e1ba01dbf7fa6fd8bd",
+          "module_name": "th05/psetup.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/psetup.cpp",
+            "src/op/piano/setup_exact.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/psetup.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-op",

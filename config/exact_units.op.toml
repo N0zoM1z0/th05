@@ -1058,3 +1058,26 @@ unit = "op-bgimage-transfer-complete"
 source = "src/shared/hardware/bgimage_transfer.cpp"
 find = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(32000));"
 replace = "bgimage.B = static_cast<unsigned char __seg *>(hmem_allocbyte(31996));"
+
+[[units]]
+id = "op-piano-setup-218"
+source = "src/op/piano/setup_exact.cpp"
+module = "th05/psetup.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/piano_setup_exact_bindings.asm"
+target_start = 0xd894
+size = 218
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+group = "PIANO_NATIVE_GROUP"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-piano-setup-218"
+source = "src/op/piano/setup_exact.cpp"
+find = "_AH = 5;"
+replace = "_AH = 4;"
