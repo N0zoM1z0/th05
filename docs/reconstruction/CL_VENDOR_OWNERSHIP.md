@@ -169,3 +169,48 @@ previous CL.LIB CODE owners, C0 startup, and other DATA decisions are unchanged.
 python3 scripts/review_main_c0_data.py --structural-check
 python3 scripts/review_main_c0_data.py --check
 ```
+
+
+## Original MAIN link-frame recovery: four further complete CL.LIB CODE owners
+
+The original Borland OMF CODE sources for `new`, `xxas`, `signal`,
+`_pathops` and `xmsg` can each be linked exactly, but the pinned
+calibration has a different C0L/DGROUP and C++ `string`-method layout.
+
+An independent `xxas` GRPDEF relocation and three `signal` references
+fix the original `DGROUP=209D0h` versus calibration `209E0h`. Genuine
+DATA and BSS OMF source bindings establish, across independent members,
+the original relative-offset deltas **−18** and **−20**. Three original
+C++ string method entry prologues are uniquely found **19 absolute bytes**
+earlier, consistent with the original far-call segment being **−16 bytes**
+and each method offset **−3 bytes** versus the calibration. No linked
+target instruction bytes or guessed padding are inserted into the source.
+
+| MAIN complete CODE | Original range | Native CODE | Ordered OMF CODE FIXUPP | New adopted? |
+| --- | --- | ---: | ---: | --- |
+| `new` | `4B0D..4DFF` | 754 B | 46 | yes |
+| `xxas` | `4F0B..4F9A` | 143 B | 3 | yes |
+| `signal` | `583A..5B3B` | 769 B | 55 | yes |
+| `_pathops` | `5B76..5C46` | 208 B | 7 | no: previously reviewed |
+| `xmsg` | `6CBC..7077` | 955 B | 49 | yes |
+
+The [source proof](../../config/main_shifted_vendor.json) reconstructs
+**2,829 complete, byte-identical source-linked CODE bytes** and authentic
+ordered MZ relocations in both original and calibration contexts.
+[Explicit adoption](../../config/reviewed_main_shifted_vendor.json)
+newly owns only the **2,621 previously unknown CODE bytes** across the
+four marked members. `_pathops` already has a distinct reviewed owner
+in the MAIN runtime review; its complete independent OMF corroboration
+is *not double-counted* and leaves that accepted claim untouched.
+
+The [verifier](../../scripts/review_main_shifted_vendor.py) uses the
+pinned original library, actual OMF FIXUPP records, original target,
+native calibration, symbol binding and unique native method prologues.
+All vendor DATA, BSS, mutable state and adjacent regions remain unknown
+unless independently reviewed. These are **zero game-authored bytes**,
+not acceptance of game C++ or a new denominator.
+
+```sh
+python3 scripts/review_main_shifted_vendor.py --check
+python3 scripts/review_main_shifted_vendor.py --structural-check
+```

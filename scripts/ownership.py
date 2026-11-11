@@ -494,8 +494,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_main_c0_data import reviewed_claims as reviewed_c0_data
             c0_data_claims, c0_data_review_sha = reviewed_c0_data(
                 root, view=view, verify_targets=verify_targets)
+            # Five further actual MAIN CL.LIB CODE objects bind against
+            # the independently observed original DGROUP/BSS/string frames.
+            from review_main_shifted_vendor import reviewed_claims as shifted_main_claims
+            shifted_main, shifted_main_sha = shifted_main_claims(
+                root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
-                                    claims + master_claims + reserved_claims + env_claims + c0_data_claims)
+                                    claims + master_claims + reserved_claims + env_claims +
+                                    c0_data_claims + shifted_main)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -573,6 +579,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["reserved_vendor_review_sha256"] = reserved_review_sha
         if name == "main" and env_review_sha:
             views[name]["setenvp_vendor_review_sha256"] = env_review_sha
+        if name == "main" and shifted_main_sha:
+            views[name]["shifted_vendor_review_sha256"] = shifted_main_sha
         if name == "main" and c0_data_review_sha:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":

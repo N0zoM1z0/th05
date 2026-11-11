@@ -59,6 +59,8 @@ def main():
     # eighteen bytes below the calibration's, and _DATA/_INIT_ remain unknown.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_setenvp.py"), "--structural-check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_shifted_vendor.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # The original C0L CRT contributes 144 initialized DATA bytes, resolved
     # from its real _BSSEND FIXUPP; no other game DATA or CODE is claimed.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_c0_data.py"), "--structural-check"],
