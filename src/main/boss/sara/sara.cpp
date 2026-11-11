@@ -25,6 +25,34 @@ static const unsigned char SARA_WAVE_2_PATTERN_LIMIT = 32;
 static const unsigned char SARA_WAVE_3_PATTERN_LIMIT = 24;
 static const int SARA_LASER_CORRIDOR_TIMEOUT = 1300;
 
+// Phase-two pursuit shortens in 12-frame steps while its current delay is
+// above 12. This is a guard threshold, not a clamped minimum: 16 -> 4 is
+// part of the original transition protocol.
+static const int SARA_WAVE_2_FLY_DELAY_INITIAL = 64;
+static const int SARA_WAVE_2_FLY_DELAY_GUARD = 12;
+static const int SARA_WAVE_2_FLY_DELAY_STEP = 12;
+
+// Phase-three spin and active attack duration are intentionally staircased.
+// The final 24-frame increment can exceed the 180-frame guard (176 -> 200).
+static const int SARA_WAVE_3_PATTERN_FRAMES_INITIAL = 80;
+static const int SARA_WAVE_3_PATTERN_FRAMES_GUARD = 180;
+static const int SARA_WAVE_3_PATTERN_FRAMES_STEP = 24;
+static const int SARA_SPIN_FAST_END = 64;
+static const int SARA_SPIN_HALF_SPEED_END = 96;
+static const int SARA_SPIN_QUARTER_SPEED_END = 128;
+static const int SARA_SPIN_EIGHTH_SPEED_END = 160;
+
+// The final laser corridor is built before firing and widened at frame 64.
+// Each named angle is a genuine additional delay point for laser rotation.
+static const int SARA_LASER_CREATE_FRAME = 32;
+static const int SARA_LASER_GROW_FRAME = 64;
+static const int SARA_LASER_SLOWDOWN_ANGLE_A = 0x80;
+static const int SARA_LASER_SLOWDOWN_ANGLE_B = 0x60;
+static const int SARA_LASER_SLOWDOWN_ANGLE_C = 0x58;
+static const int SARA_LASER_SLOWDOWN_ANGLE_D = 0x50;
+static const int SARA_LASER_RANDOM_COUNT_STEP_FRAMES = 64;
+static const int SARA_LASER_RANDOM_COUNT_LIMIT = 8;
+
 enum sara_colors_t {
 	COL_GATHER_1 = 9,
 	COL_GATHER_2 = 8,
@@ -177,17 +205,17 @@ static void near phase_3_with_pattern(void)
 		return;
 	}
 
-	if(boss.phase_frame < 64) {
+	if(boss.phase_frame < SARA_SPIN_FAST_END) {
 		boss.sprite++;
-	} else if(boss.phase_frame < 96) {
+	} else if(boss.phase_frame < SARA_SPIN_HALF_SPEED_END) {
 		if((boss.phase_frame % 2) == 0) {
 			boss.sprite++;
 		}
-	} else if(boss.phase_frame < 128) {
+	} else if(boss.phase_frame < SARA_SPIN_QUARTER_SPEED_END) {
 		if((boss.phase_frame % 4) == 0) {
 			boss.sprite++;
 		}
-	} else if((boss.phase_frame < 160)) {
+	} else if((boss.phase_frame < SARA_SPIN_EIGHTH_SPEED_END)) {
 		if((boss.phase_frame % 8) == 0) {
 			boss.sprite++;
 		}
@@ -288,7 +316,7 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 		boss.sprite = PAT_SARA_SPIN;
 	}
 
-	if(boss.phase_frame == 32) {
+	if(boss.phase_frame == SARA_LASER_CREATE_FRAME) {
 		laser_template.coords.origin = boss.pos.cur;
 		laser_template.coords.angle = (-0x40 + 0x20);
 		laser_template.col = 8;
@@ -302,11 +330,11 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 		state->phase_4.laser_angle_interval = 1;
 		return;
 	}
-	if(boss.phase_frame <= 32) {
+	if(boss.phase_frame <= SARA_LASER_CREATE_FRAME) {
 		return;
 	}
 
-	if(boss.phase_frame == 64) {
+	if(boss.phase_frame == SARA_LASER_GROW_FRAME) {
 		laser_manual_grow(X_RIGHT);
 		laser_manual_grow(X_LEFT);
 	}
@@ -318,10 +346,10 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 		lasers[X_RIGHT].coords.angle += 0x01;
 		lasers[X_LEFT].coords.angle -= 0x01;
 		if(
-			(lasers[X_LEFT].coords.angle == 0x80) ||
-			(lasers[X_LEFT].coords.angle == 0x60) ||
-			(lasers[X_LEFT].coords.angle == 0x58) ||
-			(lasers[X_LEFT].coords.angle == 0x50)
+			(lasers[X_LEFT].coords.angle == SARA_LASER_SLOWDOWN_ANGLE_A) ||
+			(lasers[X_LEFT].coords.angle == SARA_LASER_SLOWDOWN_ANGLE_B) ||
+			(lasers[X_LEFT].coords.angle == SARA_LASER_SLOWDOWN_ANGLE_C) ||
+			(lasers[X_LEFT].coords.angle == SARA_LASER_SLOWDOWN_ANGLE_D)
 		) {
 			state->phase_4.laser_angle_interval++;
 		}
@@ -352,8 +380,8 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 	}
 
 	if(
-		((boss.phase_frame % 64) == 0) &&
-		(state->phase_4.random_ball_count < 8)
+		((boss.phase_frame % SARA_LASER_RANDOM_COUNT_STEP_FRAMES) == 0) &&
+		(state->phase_4.random_ball_count < SARA_LASER_RANDOM_COUNT_LIMIT)
 	) {
 		state->phase_4.random_ball_count++;
 	}
@@ -446,7 +474,7 @@ void pascal sara_update(void)
 			boss.mode = SARA_MODE_REPOSITION;
 			boss.phase_state.patterns_seen = 0;
 			state->phase_2.pattern_prev = -1;
-			state->phase_2.fly_delay = 64;
+			state->phase_2.fly_delay = SARA_WAVE_2_FLY_DELAY_INITIAL;
 
 			// ZUN bloat: Already set at the end of the previous phase, and
 			// it's not set at any other place.
@@ -468,8 +496,8 @@ void pascal sara_update(void)
 
 		default:
 			phase_2_with_pattern();
-			if((boss.phase_frame == 0) && (state->phase_2.fly_delay > 12)) {
-				state->phase_2.fly_delay -= 12;
+			if((boss.phase_frame == 0) && (state->phase_2.fly_delay > SARA_WAVE_2_FLY_DELAY_GUARD)) {
+				state->phase_2.fly_delay -= SARA_WAVE_2_FLY_DELAY_STEP;
 			}
 			break;
 		}
@@ -481,7 +509,7 @@ void pascal sara_update(void)
 		boss_score_bonus(5);
 	phase_2_timed_out:
 		boss_phase_next(ET_NW_SE, HP_PHASE_3_END);
-		state->phase_3.pattern_frames = 80;
+		state->phase_3.pattern_frames = SARA_WAVE_3_PATTERN_FRAMES_INITIAL;
 		break;
 
 	case SARA_PHASE_SPINNING_RINGS:
@@ -497,9 +525,9 @@ void pascal sara_update(void)
 			phase_3_with_pattern();
 			if(
 				(boss.phase_frame == 0) &&
-				(state->phase_3.pattern_frames < 180)
+				(state->phase_3.pattern_frames < SARA_WAVE_3_PATTERN_FRAMES_GUARD)
 			) {
-				state->phase_3.pattern_frames += 24;
+				state->phase_3.pattern_frames += SARA_WAVE_3_PATTERN_FRAMES_STEP;
 			}
 			break;
 		}

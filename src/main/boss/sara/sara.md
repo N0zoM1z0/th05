@@ -124,3 +124,31 @@ two pattern-wave dispatches retain their genuine random mode selection and
 phase-indexed callback table. Named pattern limits (32 and 24), reset mode,
 and the final 1,300-frame timeout preserve the observed numeric behavior
 while making the full stage-one Boss controller easier to inspect.
+
+## Staged duration and laser-corridor timing (2026-11-11)
+
+The complete 12-function Sara compilation context now names the original
+phase-two movement delay decay and phase-three pattern duration escalation.
+They are **not clamped**: phase two starts with a 64-frame fly delay and
+subtracts 12 while the current value is above 12, allowing its last step
+from 16 to 4. Phase three starts with an 80-frame pattern and adds 24 while
+below 180, so the final duration may advance from 176 to 200. Neither guard
+is a minimum/maximum assignment. The four progressive spin-animation timing
+windows have their original 64/96/128/160-frame boundaries.
+
+The final laser corridor still creates its fixed lasers at frame 32 and
+activates them at frame 64. Its four slowdown angle thresholds (80h, 60h,
+58h and 50h) each advance the existing `laser_angle_interval` field in the
+actual phase-four 16-byte scratch view. The random-ball count increases
+once every 64 frames until the original count limit of eight. All frame,
+angle, speed and phase-state values are preserved; only their source-level
+meaning is made explicit.
+
+A focused native replay of `main-sara` compiled the entire **1,824-byte**
+original context twice, preserving all twelve complete functions, the
+original compiler-generated five-word phase switch table, checked alignment
+byte and literal ordered relocations. The existing compiled red-spread
+semantic mutation was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-sara-flystep-laser-timing-20261111/receipt.json`.
+This refines already accepted authored C++ rather than claiming new target
+bytes or a whole-MAIN cold replay.
