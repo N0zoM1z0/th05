@@ -143,6 +143,33 @@ SCOPES = (
      {'op': (0x2b8e, 30)}, 'respal-game5-port'),
     ('draw_trapezoid', 'libs/master.lib/draw_trapezoid.asm', 'KOIZOID.ASM',
      {'op': (0x2bd6, 228)}, 'koizoid-game5-mask-port'),
+    # Previously unknown OP display / machine functions and MAINE private
+    # integer square-root helpers. All are complete source-written PROCs;
+    # leave the following __AHINCR vendor startup and unrelated DATA unowned.
+    ('GRAPH_SHOW', 'libs/master.lib/graph_show.asm', 'GRPSHOW.ASM',
+     {'op': (0x193c, 6)}, 'original-identical'),
+    ('GRAPH_START', 'libs/master.lib/graph_start.asm', 'GRPSTART.ASM',
+     {'op': (0x1942, 38)}, 'original-identical'),
+    ('JS_END', 'libs/master.lib/js_end.asm', 'JSEND.ASM',
+     {'op': (0x1968, 6), 'maine': (0x1b84, 6)}, 'reviewed-native-spelling'),
+    ('KEY_BEEP_OFF', 'libs/master.lib/keybeep.asm', 'KEYBEEP.ASM',
+     {'op': (0x196e, 12)}, 'original-identical'),
+    ('KEY_BEEP_ON', 'libs/master.lib/keybeep.asm', 'KEYBEEP.ASM',
+     {'op': (0x197a, 12)}, 'original-identical'),
+    ('make_linework', 'libs/master.lib/make_linework.asm', 'MAKE_LIN.ASM',
+     {'op': (0x1986, 54)}, 'master-private-field-alias'),
+    ('PALETTE_INIT', 'libs/master.lib/palette_init.asm', 'PALINIT.ASM',
+     {'op': (0x19bc, 52)}, 'original-identical'),
+    ('GRAPH_CLEAR', 'libs/master.lib/graph_clear.asm', 'GRPCLEAR.ASM',
+     {'op': (0x1216, 58)}, 'original-identical'),
+    ('GRAPH_COPY_PAGE', 'libs/master.lib/graph_copy_page.asm', 'GRPCPPG.ASM',
+     {'op': (0x1250, 86)}, 'reviewed-native-spelling'),
+    ('GET_MACHINE_98', 'libs/master.lib/get_machine_98.asm', 'GETMAC98.ASM',
+     {'op': (0x0f98, 104)}, 'native-machine-near-jump-port'),
+    ('IHYPOT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
+     {'maine': (0x1af8, 24)}, 'isqrt-private-root-name'),
+    ('ISQRT', 'libs/master.lib/isqrt.asm', 'ISQRT.ASM',
+     {'maine': (0x1b10, 116)}, 'isqrt-private-root-name'),
 )
 ARTIFACTS = ('op', 'maine')
 # Permitted spellings between the original Master 0.23 archived PROC and
@@ -184,6 +211,11 @@ NATIVE_SPELLINGS = {
         'push[bp+y]': ('pushwordptr[bp+y]',),
     },
     'PFCLOSE': {'push[bp+pf]': ('pushwordptr[bp+pf]',)},
+    'JS_END': {'calldos_keyclear': ('nopcalldos_keyclear',)},
+    'GRAPH_COPY_PAGE': {
+        'callsmem_wget': ('nopcallsmem_wget',),
+        'callsmem_release': ('nopcallsmem_release',),
+    },
 }
 
 
@@ -221,6 +253,18 @@ EXPECTED_NATIVE_FIXUPS = {
     'RESPAL_CREATE': 2,
     'RESPAL_FREE': 2,
     'draw_trapezoid': 26,
+    'GRAPH_SHOW': 0,
+    'GRAPH_START': 1,
+    'JS_END': 0,
+    'KEY_BEEP_OFF': 0,
+    'KEY_BEEP_ON': 0,
+    'make_linework': 0,
+    'PALETTE_INIT': 3,
+    'GRAPH_CLEAR': 2,
+    'GRAPH_COPY_PAGE': 1,
+    'GET_MACHINE_98': 1,
+    'IHYPOT': 0,
+    'ISQRT': 0,
 }
 
 
@@ -315,6 +359,46 @@ def game5_trapezoid_derived(author, native):
             expected.append(line)
     need(expected==actual,
          'native 228-byte KOIZOID drawing source changed beyond namespaced fields and true GAME>=3 horizontal mask')
+
+
+def private_master_display_derived(author, compiled, name):
+    """Only original Master author private field/label names can differ."""
+    old = symbolic_source(author)
+    actual = symbolic_source(compiled)
+    if name == 'make_linework':
+        changes = {
+            'mov[bx+x],dx':'mov[bx+make_lin_x],dx',
+            'mov[bx+d],ax':'mov[bx+make_lin_d],ax',
+            'mov[bx+dlx],ax':'mov[bx+make_lin_dlx],ax',
+            'mov[bx+s],8000h':'movwordptr[bx+make_lin_s],8000h',
+        }
+        need(all(old.count(key)==1 for key in changes),
+             'original Master linework private fields changed')
+        expected = [changes.get(line,line) for line in old]
+    elif name in ('IHYPOT','ISQRT'):
+        old_key = 'jmpshortroot' if name=='IHYPOT' else 'root:'
+        new_key = 'jmpshortisqrt_root' if name=='IHYPOT' else 'isqrt_root:'
+        need(old.count(old_key)==1, 'original square-root shared helper changed')
+        expected=[line.replace(old_key,new_key) for line in old]
+    else:
+        raise ValueError('not a reviewed original Master private source procedure')
+    need(expected==actual, 'native private Master source differs beyond verified field/label aliases: '+name)
+
+
+def native_machine_98_derived(author, compiled, name):
+    """Source-backed PC-98 machine probe with its retained TASM near JMP DB."""
+    need(name=='GET_MACHINE_98', 'unexpected original source machine probe')
+    old=symbolic_source(author)
+    actual=symbolic_source(compiled)
+    changes={
+        'movax,fmr':'movax,fmr_98',
+        'jmpget_machine_dosbox':'db0e9h,057h,001h',
+    }
+    need(all(old.count(key)==1 for key in changes),
+         'original machine 98 branch or FM-R constant changed')
+    expected=[changes.get(line,line) for line in old]
+    need(expected==actual,
+         'native GET_MACHINE_98 differs from original beyond pinned constant and real TASM near-jump spelling')
 
 
 def native_spelling_equivalent(author, compiled, name):
@@ -421,6 +505,10 @@ def source_linked():
             elif adaptation == 'koizoid-game5-mask-port':
                 need(name=='draw_trapezoid', 'unknown original trapezoid code family')
                 game5_trapezoid_derived(upstream['text'],live[0]['text'])
+            elif adaptation == 'master-private-field-alias' or adaptation == 'isqrt-private-root-name':
+                private_master_display_derived(upstream['text'],live[0]['text'],name)
+            elif adaptation == 'native-machine-near-jump-port':
+                native_machine_98_derived(upstream['text'],live[0]['text'],name)
             elif adaptation == 'pf-game5-direct-decode':
                 author_lines = symbolic_source(upstream['text'])
                 native_lines = symbolic_source(live[0]['text'])

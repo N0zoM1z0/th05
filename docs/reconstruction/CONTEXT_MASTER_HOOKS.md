@@ -189,3 +189,43 @@ published original Master platform handlers. This review does not claim
 either complete joystick function, any mutable DATA or new game-authored
 C++/ASM credit. The shared evidence/decision now encompass **102 source
 scopes / 7,276 third-party CODE bytes** in OP and MAINE combined.
+
+## OP graphics / machine helpers and MAINE integer-square-root core
+
+Thirteen additional **complete original Master functions** are now source-linked
+against the genuine decoded artifacts: ten OP procedures totaling **428 bytes**
+and three MAINE procedures totaling **146 bytes**, or **574 formerly unknown
+CODE bytes** in all.
+
+| Original target | Complete source-backed functions | CODE bytes |
+| --- | --- | ---: |
+| OP | `GRAPH_SHOW`, `GRAPH_START`, `JS_END`, `KEY_BEEP_OFF`, `KEY_BEEP_ON`, `make_linework`, `PALETTE_INIT` | 180 |
+| OP | `GRAPH_CLEAR`, `GRAPH_COPY_PAGE` | 144 |
+| OP | `GET_MACHINE_98` | 104 |
+| MAINE | `IHYPOT`, `ISQRT`, `JS_END` | 146 |
+
+The source ancestry is independently anchored to the original Master 0.23
+archive, the actual retained native TASM source and its authentic OMF. All
+complete function boundaries have original native publics and unique full
+CODE occurrences. The MAINE `IHYPOT` and 116-byte `ISQRT` share only the
+original private `root` target, renamed `isqrt_root`; the source comparison
+rejects all other changed instructions. In OP, two graphics-page calls use
+real `NOPCALL` spelling of the original source call; `JS_END` uses the same
+actual call relaxation. `make_linework` names the original private integer
+line-work fields without changing arithmetic or word widths.
+
+`GET_MACHINE_98` differs in the FM-R constant name and in one final near
+jump: the pinned native assembler input expresses the true near jump as
+`DB 0E9h,057h,001h`. This is a *reviewed existing TASM source spelling*, not
+byte code fabricated for this reconstruction. Every other instruction in
+the original author procedure must match. The original 8 OP FIXUPP actions
+and the empty MAINE original segment relocation scopes remain literally
+ordered and agree with both original and calibration MZ code. No DATA/BSS
+byte is claimed.
+
+The adjacent OP CL startup helper `__AHINCR` (`1000..1016`) remains **unknown**.
+So do all unrelated foreign startup, writable memory and resources. The
+existing source evidence/decision now includes **115 source CODE scopes and
+7,850 third-party bytes**; none grants new game-authored C++ credit or a
+whole-executable reconstruction result. Only these bounded functions were
+rechecked, never a full cold replay.
