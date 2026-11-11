@@ -23,6 +23,8 @@ PROOF = ROOT / 'config/master_grcg_ownership.json'
 DECISION = ROOT / 'config/reviewed_master_grcg.json'
 BASE = ROOT / 'config/master_vendor_ownership.json'
 MEMBERS = (
+    ('BFNT_EXTEND_HEADER_ANALYSIS', 0x3f0, 96),
+    ('cutline', 0x778, 116),
     ('GRCG_BOXFILL', 0xea6, 208),
     ('GRCG_BYTEBOXFILL_X', 0xf76, 152),
     ('GRCG_CIRCLE', 0x10ae, 152),
@@ -34,6 +36,16 @@ MEMBERS = (
     ('GRCG_PSET', 0x1a44, 68),
     ('GRCG_SETCOLOR', 0x1a88, 42),
     ('GRCG_VLINE', 0x1ab8, 134),
+    ('GAIJI_PUTSA', 0x1dbe, 86),
+    ('GRAPH_400LINE', 0x1e14, 78),
+    ('GRAPH_EXTMODE', 0x1e86, 86),
+    ('GRAPH_SCROLLUP', 0x1ee2, 88),
+    ('IATAN2', 0x1f3a, 108),
+    ('draw_trapezoidx', 0x1fac, 140),
+    ('SUPER_LARGE_PUT', 0x2048, 148),
+    ('PALETTE_SHOW', 0x2158, 266),
+    ('TEXT_BOXFILLA', 0x24a8, 78),
+    ('TEXT_PUTCA', 0x2540, 88),
 )
 
 
@@ -44,6 +56,13 @@ def symbolic_source(raw):
     # The circle's original self-modifying CODE words use local names.
     content = content.replace('gc_circl_vramzoom', '_vramzoom')
     content = content.replace('gc_circl_', '')
+    # Display-facing Master ports only add namespaced self-modifying labels
+    # or typed structure field names. The hardware operands stay unchanged.
+    for old,new in (
+        ('largeput_di_', '_di_'),('largeput_ch_', '_ch_'),
+        ('largeput_', ''),('koizoidx_', ''),('palshow_', ''),
+    ):
+        content = content.replace(old,new)
     return [re.sub(r'\s+', '', line.split(';', 1)[0])
             for line in content.splitlines() if line.split(';', 1)[0].strip()]
 

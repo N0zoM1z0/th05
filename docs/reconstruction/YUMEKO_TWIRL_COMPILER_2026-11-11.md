@@ -41,3 +41,26 @@ claim or partial C++ code credit** is introduced. The exact original
 Yumeko attack C++ bodies remain untouched. Future natural-source work
 should tackle branch-resolution/codegen structure rather than alter
 the original gameplay twirl semantics.
+
+## Additional true Borland first-producer flow trials
+
+Three further source-level experiments used the exact original-order
+nine-function Yumeko compilation cohort and real TCC/TASM/TLINK output.
+Each changed only the updater's twirl branch and restored all trial
+files afterwards:
+
+| Source-equivalent branch structure | Complete MAIN03 CODE | Raw/ordered exact? |
+| --- | ---: | --- |
+| One-iteration `for` loop around sprite wrapping | 2143 B | No |
+| `do/while(0)` with conditional `break` | 2143 B | No |
+| Boolean guard expression with conditional sprite adjustment | 2152 B | No |
+
+The real original combined contribution is **2,139 bytes**. These new
+forms again introduce local short-branch proxies rather than the two
+original 386 near-conditional jumps to the loop tail. Their full
+function lengths, raw bytes and ordered relocations do not match, so
+none provides a natural C++ acceptance candidate. The ignored diagnostic
+source and first-producer reports are under
+`.analysis/gpt-web-yumeko-twirl3.py` and
+`.analysis/gpt-web-yumeko-twirl3-*-native/`. The accepted ASM and the
+adjacent 354-/428-byte Boss attack C++ source are unchanged.

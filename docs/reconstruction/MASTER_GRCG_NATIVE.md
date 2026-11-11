@@ -1,9 +1,13 @@
-# Original Master GRCG and polygon geometry in TH05 MAIN
+# Original Master graphics and display in TH05 MAIN
 
-**Eleven complete Master 0.23 graphics procedures now reproduce 2,604
+**Twenty-three complete Master 0.23 graphics and display procedures now reproduce 3,982
 previously unknown MAIN CODE bytes** from the original assembly source,
 the actual TASM OMF and the authentic C0L linker layout. The large
 polygon clipping and line-drawing functions are included in full.
+The second source pass adds 1,378 bytes of palette, text, font and other
+display code to the initial 2,604-byte GRCG proof.
+
+The original GRCG primitive family:
 
 | Complete function | Original MAIN extent | CODE bytes | OMF FIXUPP |
 | --- | --- | ---: | ---: |
@@ -19,21 +23,40 @@ polygon clipping and line-drawing functions are included in full.
 | `GRCG_SETCOLOR` | `1A88..1AB2` | 42 | 0 |
 | `GRCG_VLINE` | `1AB8..1B3E` | 134 | 5 |
 
+Additional complete graphics, font, palette, text and math procedures:
+
+| Complete function | Original MAIN extent | CODE bytes | OMF FIXUPP |
+| --- | --- | ---: | ---: |
+| `BFNT_EXTEND_HEADER_ANALYSIS` | `03F0..0450` | 96 | 0 |
+| `cutline` | `0778..07EC` | 116 | 6 |
+| `GAIJI_PUTSA` | `1DBE..1E14` | 86 | 1 |
+| `GRAPH_400LINE` | `1E14..1E62` | 78 | 12 |
+| `GRAPH_EXTMODE` | `1E86..1EDC` | 86 | 1 |
+| `GRAPH_SCROLLUP` | `1EE2..1F3A` | 88 | 2 |
+| `IATAN2` | `1F3A..1FA6` | 108 | 2 |
+| `draw_trapezoidx` | `1FAC..2038` | 140 | 17 |
+| `SUPER_LARGE_PUT` | `2048..20DC` | 148 | 6 |
+| `PALETTE_SHOW` | `2158..2262` | 266 | 4 |
+| `TEXT_BOXFILLA` | `24A8..24F6` | 78 | 1 |
+| `TEXT_PUTCA` | `2540..2598` | 88 | 1 |
+
 The [native verifier](../../scripts/review_master_grcg.py) reads the
 pinned original Master author archive, complete active procedure
 boundaries from the TASM listing, and the exact source-built OMF object.
 The original and maintained instruction bodies compare without operand
-rewriting. The allowed spelling differences are only comments/spacing,
-`@@` local-label scopes, the renamed `GRCG_BOXFILL_RETURN` exit,
-and `GC_CIRCL_`-scoped scratch/dispatch labels in the circle routine.
+rewriting. The allowed spelling differences are comments/spacing, `@@`
+local-label scopes, the renamed `GRCG_BOXFILL_RETURN` exit, and
+`GC_CIRCL_`, `PALSHOW_`, `LARGEPUT_`, and `KOIZOIDX_`-scoped local
+labels or struct member aliases. Opcodes and real register operands
+are not normalized.
 
 Each complete CODE segment extent is reconstructed from genuine source
 LEDATA and original ordered FIXUPP records. The calibrated and original
 MAIN executables are checked independently; the native C0L startup
-anchors the 18-byte original DATA/BSS offset difference. All eleven
+anchors the 18-byte original DATA/BSS offset difference. All 23
 functions have empty original ordered MZ relocation lists, also checked
-against the OMF-derived lists. `GRCG_SETCOLOR` correctly has zero OMF
-fixups; zero is not evidence of an incomplete function.
+against the OMF-derived lists. `GRCG_SETCOLOR` and `BFNT_EXTEND_HEADER_ANALYSIS` correctly
+have zero OMF fixups; zero is not evidence of an incomplete function.
 
 The [proof](../../config/master_grcg_ownership.json) and
 [explicit adoption](../../config/reviewed_master_grcg.json) select only
@@ -48,6 +71,6 @@ python3 scripts/review_master_grcg.py --structural-check
 python3 scripts/ownership.py --check
 ```
 
-All 2,604 bytes are source-backed third-party Master CODE. They
+All 3,982 bytes are source-backed third-party Master CODE. They
 contribute zero game-authored C++ credit, and no whole-game replay,
 source-byte copy or inferred global denominator is involved.
