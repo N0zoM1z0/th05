@@ -2,21 +2,23 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "9312792730235f09d1ef3b0b482109da4d3cf97dcf6c1caf7cfd1a6e1c741248",
+  "replay_receipt_sha256": "f909366f832ad6e7b367725568d5425e5ab505290f1bb03c828ca38a35442282",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 113922,
-    "candidate_start": 113922,
-    "size": 332,
-    "target_sha256": "bf4d17d021869b2fc016c37bcd0e6e084cfa3d528a8126544960dab176663784",
-    "candidate_sha256": "3f2e7882849f6dc6d1e9d1ae0026f116df20e9ac2124bf2dc3be2d89a5f3a133",
+    "target_start": 91574,
+    "candidate_start": 91574,
+    "size": 366,
+    "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
+    "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
     "raw_exact": false,
     "target_fixups": [
-      280
+      323,
+      155
     ],
     "candidate_fixups": [
-      280
+      323,
+      155
     ],
     "fixups_exact": true,
     "exact": false
@@ -24665,8 +24667,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "c325e2533ae97924d7b2ae09b2b9d5f04ea8e0c494c311ac031de1f161428c2f",
-            "dependency_timestamp_normalized_sha256": "d10609bac451a25b25d6cdc0c15f409e15d48f1946e89b53d17a0676202be4d4",
+            "sha256": "95c936f2e9dfb2af88d19ddb88993c138b23c39e453b5a788998b1cd94b64245",
+            "dependency_timestamp_normalized_sha256": "895786801bc7b121d646a089104146951292c70c9cadb832ed8ad7e2ab7ef248",
             "module_name": "th05/midbossx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -24692,12 +24694,14 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_scratch.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h"
             ]
           },
           {
-            "sha256": "c325e2533ae97924d7b2ae09b2b9d5f04ea8e0c494c311ac031de1f161428c2f",
-            "dependency_timestamp_normalized_sha256": "d10609bac451a25b25d6cdc0c15f409e15d48f1946e89b53d17a0676202be4d4",
+            "sha256": "21b875d81508361d9870a4142be09a85a90f0f768acd7e75955f840ce3bed92c",
+            "dependency_timestamp_normalized_sha256": "895786801bc7b121d646a089104146951292c70c9cadb832ed8ad7e2ab7ef248",
             "module_name": "th05/midbossx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -24723,13 +24727,15 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_scratch.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -24786,11 +24792,15 @@
           },
           {
             "path": "src/main/midboss/extra.cpp",
-            "sha256": "cfe6a57d572741ba19532d7e9eca95bef005919a5659fb0e6f91ad0ca708531f"
+            "sha256": "162331a8cb7620fbb73825c636fb2b9e5640c4892911d39f9350707f87e8eb59"
           },
           {
             "path": "src/main/midboss/extra.hpp",
             "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+          },
+          {
+            "path": "src/main/midboss/extra_scratch.hpp",
+            "sha256": "90f27e6799e4cfb1e079fdde4f6a4f3f500c85c8c277d9a660fa390618bbe27f"
           },
           {
             "path": "src/main/stage/setup.hpp",
@@ -24834,11 +24844,15 @@
         },
         {
           "path": "src/main/midboss/extra.cpp",
-          "sha256": "cfe6a57d572741ba19532d7e9eca95bef005919a5659fb0e6f91ad0ca708531f"
+          "sha256": "162331a8cb7620fbb73825c636fb2b9e5640c4892911d39f9350707f87e8eb59"
         },
         {
           "path": "src/main/midboss/extra.hpp",
           "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+        },
+        {
+          "path": "src/main/midboss/extra_scratch.hpp",
+          "sha256": "90f27e6799e4cfb1e079fdde4f6a4f3f500c85c8c277d9a660fa390618bbe27f"
         },
         {
           "path": "src/main/stage/setup.hpp",
@@ -24855,61 +24869,66 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6181f03b0acaf66595e351d9e1441e81783d7d628ee195777477a1cbc070a2e4",
+      "replay_receipt_sha256": "f909366f832ad6e7b367725568d5425e5ab505290f1bb03c828ca38a35442282",
       "compiled_negative_control": {
-        "target_start": 92402,
-        "candidate_start": 92402,
-        "size": 318,
-        "target_sha256": "07a769b92236072feedb780b7307ff5db61685700d06006a9b5f5ca6c0804b1d",
-        "candidate_sha256": "6b7032bc029d340ceef29ddc81101e845b123048100226f5f68379b6063c2e08",
+        "target_start": 91574,
+        "candidate_start": 91574,
+        "size": 366,
+        "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
+        "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
         "raw_exact": false,
         "target_fixups": [
-          275
+          323,
+          155
         ],
         "candidate_fixups": [
-          275
+          323,
+          155
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-midboss-stage5-update",
-        "entry_sha256": "4ef3c97438c7bb8f098122ff0568e2ea21d7fd1bbf609bf064070e406e46caec",
+        "unit_id": "main-midboss-extra-update",
+        "entry_sha256": "69f53a5e8003f2c1aa8479d13a8008fbfbcee15b35a2a2c742c625ce70e43b70",
         "mutation": {
-          "unit": "main-midboss-stage5-update",
-          "source": "src/main/midboss/stage5.cpp",
-          "find": "midboss_score_bonus(30);",
-          "replace": "midboss_score_bonus(31);"
+          "id": "midboss-extra-health-threshold",
+          "unit": "main-midboss-extra-update",
+          "source": "src/main/midboss/extra.cpp",
+          "find": "midboss.hp < 1000",
+          "replace": "midboss.hp < 1001"
         },
-        "control_sha256": "ae37b0f372a5e608e9ec303478d37746f981a909c34466dfe995d907d4e470f3",
+        "control_sha256": "d5688cbaa9022d928c584f72c2e8c993a3f29fec77823428ab2c5f23aa89a79b",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 92402,
-          "candidate_start": 92402,
-          "size": 318,
-          "target_sha256": "07a769b92236072feedb780b7307ff5db61685700d06006a9b5f5ca6c0804b1d",
-          "candidate_sha256": "6b7032bc029d340ceef29ddc81101e845b123048100226f5f68379b6063c2e08",
+          "target_start": 91574,
+          "candidate_start": 91574,
+          "size": 366,
+          "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
+          "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
           "raw_exact": false,
           "target_fixups": [
-            275
+            323,
+            155
           ],
           "candidate_fixups": [
-            275
+            323,
+            155
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "16116b7dacd498942d51b5dce99edbc060908385328feeb83006406b4442b92f",
-          "dependency_timestamp_normalized_sha256": "fb8bd30f4d70a6433f8fe5f4aaa947fde23f28caff492b3ebe7b6b2e42df4eb3",
-          "module_name": "th05/midbos5u.cpp",
+          "sha256": "9b27b5f5f47e0be06a8e1735d3f699901ed833fca46b65aee268b494f9bd9fe0",
+          "dependency_timestamp_normalized_sha256": "7b79c6fd5c40bd7ca43889c0566651033dc1a19fb0befcdda27b15236e3f3266",
+          "module_name": "th05/midbossx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/midbos5u.cpp",
-            "src/main/midboss/stage5.cpp",
-            "src/main/midboss/stage5.hpp",
+            "th05/midbossx.cpp",
+            "src/main/midboss/extra.cpp",
+            "src/main/midboss/extra.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -24917,12 +24936,19 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/generic.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/stage/setup.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/main/midboss/extra_scratch.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h"
           ]
         },
         "compiler_arguments": [
@@ -24936,7 +24962,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/midbos5u.cpp"
+          "th05/midbossx.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -25341,8 +25367,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "86856a3fdc24c2852bbfb87202a65664acb577dd3ec5dd1a9655b8b08d77649e",
-            "dependency_timestamp_normalized_sha256": "bbe6b70b9994cf92bcc4be06e1c2e788cfb36acf9d9eddb166b514b8ee6c8cf4",
+            "sha256": "ed4739b35b14eb604208ce39dfd854c06e1fddeb4265965f30933ba7cf4065b9",
+            "dependency_timestamp_normalized_sha256": "fb3611d1b057d431a9b345df5b946bfea1a2b80652458ad2c4e53c8f1eedc9f7",
             "module_name": "th05/midxpat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -25370,12 +25396,14 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_scratch.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h"
             ]
           },
           {
-            "sha256": "d7b3ffd3a15e992c28ab25a925f09b0bcfe56f9de3569956dd540ceaf45293ca",
-            "dependency_timestamp_normalized_sha256": "bbe6b70b9994cf92bcc4be06e1c2e788cfb36acf9d9eddb166b514b8ee6c8cf4",
+            "sha256": "ed4739b35b14eb604208ce39dfd854c06e1fddeb4265965f30933ba7cf4065b9",
+            "dependency_timestamp_normalized_sha256": "fb3611d1b057d431a9b345df5b946bfea1a2b80652458ad2c4e53c8f1eedc9f7",
             "module_name": "th05/midxpat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -25403,7 +25431,9 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_scratch.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h"
             ]
           }
         ],
@@ -25470,11 +25500,15 @@
           },
           {
             "path": "src/main/midboss/extra_patterns.cpp",
-            "sha256": "0a2111c6f8d7f39bf389db21c5b89b93cf03fa98bc6f04cea42a54952812647d"
+            "sha256": "824638a07c4fbf6ebfa42c683fa187af50a7317da72c11b8a806937932e08deb"
           },
           {
             "path": "src/main/midboss/extra_patterns.hpp",
             "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
+          },
+          {
+            "path": "src/main/midboss/extra_scratch.hpp",
+            "sha256": "90f27e6799e4cfb1e079fdde4f6a4f3f500c85c8c277d9a660fa390618bbe27f"
           },
           {
             "path": "src/main/stage/setup.hpp",
@@ -25522,11 +25556,15 @@
         },
         {
           "path": "src/main/midboss/extra_patterns.cpp",
-          "sha256": "0a2111c6f8d7f39bf389db21c5b89b93cf03fa98bc6f04cea42a54952812647d"
+          "sha256": "824638a07c4fbf6ebfa42c683fa187af50a7317da72c11b8a806937932e08deb"
         },
         {
           "path": "src/main/midboss/extra_patterns.hpp",
           "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
+        },
+        {
+          "path": "src/main/midboss/extra_scratch.hpp",
+          "sha256": "90f27e6799e4cfb1e079fdde4f6a4f3f500c85c8c277d9a660fa390618bbe27f"
         },
         {
           "path": "src/main/stage/setup.hpp",
@@ -25543,74 +25581,66 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "32a926eb5104c8ffbff23d8c5991f5c116ab2c2a7c6670b2f2eb501687d69f97",
+      "replay_receipt_sha256": "f909366f832ad6e7b367725568d5425e5ab505290f1bb03c828ca38a35442282",
       "compiled_negative_control": {
-        "target_start": 91940,
-        "candidate_start": 91940,
-        "size": 462,
-        "target_sha256": "255e6ac332afa7c59bb843a1f99f376070d14f46546594fb983f647caa232873",
-        "candidate_sha256": "79c6da0ad2815eba28523902956ca146d4f98f79fd16421c83f577e79eb4308c",
+        "target_start": 91574,
+        "candidate_start": 91574,
+        "size": 366,
+        "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
+        "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
         "raw_exact": false,
         "target_fixups": [
-          444,
-          356,
-          251,
-          106
+          323,
+          155
         ],
         "candidate_fixups": [
-          444,
-          356,
-          251,
-          106
+          323,
+          155
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-midboss-stage5-patterns",
-        "entry_sha256": "57549776f24cb68de32763e44dbabc89b565e71304a957303372625731c8649a",
+        "unit_id": "main-midboss-extra-update",
+        "entry_sha256": "69f53a5e8003f2c1aa8479d13a8008fbfbcee15b35a2a2c742c625ce70e43b70",
         "mutation": {
-          "unit": "main-midboss-stage5-patterns",
-          "source": "src/main/midboss/stage5_patterns.cpp",
-          "find": "midboss5_set_spread(13, 7);",
-          "replace": "midboss5_set_spread(12, 7);"
+          "id": "midboss-extra-health-threshold",
+          "unit": "main-midboss-extra-update",
+          "source": "src/main/midboss/extra.cpp",
+          "find": "midboss.hp < 1000",
+          "replace": "midboss.hp < 1001"
         },
-        "control_sha256": "696555af8fb2f27555ff2aa3656316d85841cabf108bc13e32d38a2dfea9eb72",
+        "control_sha256": "d5688cbaa9022d928c584f72c2e8c993a3f29fec77823428ab2c5f23aa89a79b",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 91940,
-          "candidate_start": 91940,
-          "size": 462,
-          "target_sha256": "255e6ac332afa7c59bb843a1f99f376070d14f46546594fb983f647caa232873",
-          "candidate_sha256": "79c6da0ad2815eba28523902956ca146d4f98f79fd16421c83f577e79eb4308c",
+          "target_start": 91574,
+          "candidate_start": 91574,
+          "size": 366,
+          "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
+          "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
           "raw_exact": false,
           "target_fixups": [
-            444,
-            356,
-            251,
-            106
+            323,
+            155
           ],
           "candidate_fixups": [
-            444,
-            356,
-            251,
-            106
+            323,
+            155
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "772aeb86c5b60c83861b730d323fef6bd0d04a34f3d068854fbc8b61524771fb",
-          "dependency_timestamp_normalized_sha256": "878b317b34e21d81b10699f69ee8235df1d0aac97dcd7a36a79d66869791177b",
-          "module_name": "th05/mb5pat.cpp",
+          "sha256": "9b27b5f5f47e0be06a8e1735d3f699901ed833fca46b65aee268b494f9bd9fe0",
+          "dependency_timestamp_normalized_sha256": "7b79c6fd5c40bd7ca43889c0566651033dc1a19fb0befcdda27b15236e3f3266",
+          "module_name": "th05/midbossx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/mb5pat.cpp",
-            "src/main/midboss/stage5_patterns.cpp",
-            "src/main/midboss/stage5_patterns.hpp",
-            "src/main/midboss/stage5.hpp",
+            "th05/midbossx.cpp",
+            "src/main/midboss/extra.cpp",
+            "src/main/midboss/extra.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -25618,14 +25648,19 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/generic.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/stage/setup.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/midboss/extra_scratch.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h"
           ]
         },
         "compiler_arguments": [
@@ -25639,7 +25674,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/mb5pat.cpp"
+          "th05/midbossx.cpp"
         ]
       },
       "receipt_aggregate_pass": true

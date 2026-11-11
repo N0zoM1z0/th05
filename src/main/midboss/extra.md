@@ -45,3 +45,28 @@ This owner's supplementary HP1000→1001 rejection is historically recorded in
 parent positive producers revalidated and reused. The retired checker remains
 in Git history at `3af324e`. This additional experiment is not an acceptance
 requirement.
+
+## Shared Extra midboss attack-state source
+
+The complete Extra update and its five near movement/pattern functions now
+share `MidbossExtraScratch`, a size-16 view of the original Boss scratch bytes.
+Byte 12 selects the early or late pattern set after HP falls below 1000,
+byte 13 holds the rotating accelerating ring's signed step as a wrapping
+byte, byte 14 counts completed dashes, and byte 15 tracks the dash animation.
+Original near pattern callbacks and their two-row/alternating-column table
+remain external; no independent state is allocated. The original two-stage
+entrance/attack and final explosion switch retains the same keys and timing.
+
+A native compiler-shape finding matters here: the original Borland expression
+`midbossx_patterns_done & 7` performs an integer promotion *before* masking,
+so it emits `MOV AL; MOV AH,0; AND AX,7`. Declaring the named mask as an
+`unsigned char` changed that to `AND AL,7; MOV AH,0`, shortened the complete
+owner to 365 bytes and failed exactness. Giving the mask its correct `int`
+type recovers the original 366-byte code and both fixup sites. The working
+source is ordinary C++ with a real semantic typed constant, not NOP padding.
+
+The final focused replay verifies `main-midboss-extra-update` (366 bytes)
+and `main-midboss-extra-patterns` (440 bytes) together, both deterministic
+Borland producers matching all **806 original bytes** and ordered relocations.
+The shared compiled negative was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-extra-midboss-shared-scratch-fixed-20261111/receipt.json`.
