@@ -46,6 +46,7 @@ necessarily all authored bytes where padding is present.
 | MAIN text bitmap painter | Full **98-byte** `bb_txt_put_8_raw` exact reviewed ASM at `E51A..E57C`; **96 authored** bytes and two checked NOPs | [Text bitmap drawing](../src/main/formats/bb_text_put.md) |
 | MAIN Boss BB tile masks | Full **232-byte** two-function original-register GRCG put/invalidate ASM at `F968..FA50`, ordered fixups `[17]` | [Boss bitmap masks](../src/main/tile/bb_mask_family.md) |
 | MAIN bullet/Gather invalidation | Full **168-byte** reviewed original ASM at `E40E..E4B6`, no alignment or relocations | [Bullet/Gather dirty tiles](../src/main/bullet/gather_invalidate.md) |
+| MAIN Sara/Mai-Yuki background | **108-byte** two-function GRCG family `BEF4..BF60`, **104 authored** ASM bytes and four checked `EVEN` NOPs | [Early Boss backdrop](../src/main/boss/backdrop_fills_early.md) |
 | MAIN Shinki backdrop fills | **94-byte**, three-entry GRCG family at `C68A..C6E8`; 93 authored ASM bytes and one checked NOP | [Shinki backdrop](../src/main/boss/shinki/backdrop_fills.md) |
 | MAIN Mima bomb backdrop | Four-entry **226-byte** GRCG family at `1052C..1060E` exact reviewed ASM; **224 authored** bytes, two uncredited NOPs | [Mima backdrop](../src/main/player/mima_backdrop.md) |
 | MAIN sparks | **98-byte** random-spawn and **106-byte** radial-spawn ASM families; distinct 22-byte C++ player wrapper | [Random](../src/main/boss/sparks_add_random.md), [circle](../src/main/boss/sparks_add_circle.md) |

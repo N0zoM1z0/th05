@@ -1,0 +1,1 @@
+extrn grcg_fill_playfield_rows:near

@@ -2357,3 +2357,45 @@ replace = "mov di, (STAGE_SECOND_BOTTOM_LEFT + 1)"
 offset = 25
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-boss-backdrop-early"
+artifact = "main"
+source = "src/main/boss/backdrop_fills_early.asm"
+types = "src/main/boss/backdrop_fills_early_types.inc"
+symbols = "probes/units/boss_backdrop_early_symbols.inc"
+bindings = "probes/units/boss_backdrop_early_bindings.asm"
+notes = "src/main/boss/backdrop_fills_early.md"
+target_start = 48884
+size = 108
+segment = "BOSS_BD_EARLY_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "608c2a489d6dd4f5f2927b02f75fb3155983eb8b80f4283eac2484345028545d"
+target_scope_sha256 = "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471"
+semantic_inputs = ["src/main/boss/background.hpp", "src/main/player/mima_backdrop.asm"]
+[units.publics]
+"sara_backdrop_colorfill()" = 0
+"mai_yuki_backdrop_colorfill()" = 48
+"boss_backdrop_early_end" = 108
+[units.negative]
+find = "mov di, MAI_YUKI_LOWER_LEFT"
+replace = "mov di, (MAI_YUKI_LOWER_LEFT + 4)"
+[[units.uncredited]]
+offset = 47
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 57
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 85
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 107
+size = 1
+kind = "alignment"

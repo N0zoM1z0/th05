@@ -18888,6 +18888,253 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "102dd00e50bdfff095d01022fb660f8e1b28100c83808b4277b2b5c573fef0c0"
+    },
+    "main-boss-backdrop-early": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-boss-backdrop-early",
+        "artifact": "main",
+        "source": "src/main/boss/backdrop_fills_early.asm",
+        "types": "src/main/boss/backdrop_fills_early_types.inc",
+        "symbols": "probes/units/boss_backdrop_early_symbols.inc",
+        "bindings": "probes/units/boss_backdrop_early_bindings.asm",
+        "notes": "src/main/boss/backdrop_fills_early.md",
+        "target_start": 48884,
+        "size": 108,
+        "segment": "BOSS_BD_EARLY_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "native_review_sha256": "608c2a489d6dd4f5f2927b02f75fb3155983eb8b80f4283eac2484345028545d",
+        "target_scope_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+        "semantic_inputs": [
+          "src/main/boss/background.hpp",
+          "src/main/player/mima_backdrop.asm"
+        ],
+        "publics": {
+          "sara_backdrop_colorfill()": 0,
+          "mai_yuki_backdrop_colorfill()": 48,
+          "boss_backdrop_early_end": 108
+        },
+        "negative": {
+          "find": "mov di, MAI_YUKI_LOWER_LEFT",
+          "replace": "mov di, (MAI_YUKI_LOWER_LEFT + 4)"
+        },
+        "uncredited": [
+          {
+            "offset": 47,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 57,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 85,
+            "size": 1,
+            "kind": "alignment"
+          },
+          {
+            "offset": 107,
+            "size": 1,
+            "kind": "alignment"
+          }
+        ]
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/boss_backdrop_early_bindings.asm",
+          "sha256": "7f19ed3188b30e7eace115a8110dcf9cfbe33fa73a61ae19215d51e26679be01"
+        },
+        {
+          "path": "probes/units/boss_backdrop_early_symbols.inc",
+          "sha256": "b9c5cd35bb62548831bea7206f0fa269ff3eddabe926016d83a7cb5816929d6c"
+        },
+        {
+          "path": "src/main/boss/backdrop_fills_early.asm",
+          "sha256": "db44c2deefdc9799f8caffc5465774e2f9f382ce91a70e91d616a28dd51949b6"
+        },
+        {
+          "path": "src/main/boss/backdrop_fills_early_types.inc",
+          "sha256": "18104bbe16ab7ed128ae627e04ce2c2594a50aba50376a4f39143f5ababa5a3e"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/player/mima_backdrop.asm",
+          "sha256": "b9a7a5a6c152d6b8b2c8ef59367c31b8776e3d6eb63e6b8692a6de50d6a2e2f8"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 104,
+        "dispatch-table": 0,
+        "alignment": 4,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 48884,
+            "candidate_start": 48884,
+            "size": 108,
+            "target_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+            "candidate_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "BOSS_BD_EARLY_TEXT",
+            "size": 108,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 108,
+                "sha256": "2ba63a55e3890859ebaa71e037e197879f470dd9855ef098f370b7248b1685ac"
+              }
+            ]
+          },
+          "object_sha256": "07afe319efd3c71c5da19785dbf0b435711a758703190ec8cf906b6f51125c7e",
+          "object_normalized_sha256": "7d429a92140f1a97dedb15b04103dab48f09b9c02e1d81df0641a08229715c5d",
+          "bindings_sha256": "eef25f3ccb18b6a910d74065facbaf8824091eacfc0371a658df7aa843bb0e2b",
+          "bindings_normalized_sha256": "8bd372b2223729d5f130cac4645b07f74bbcc3e7b105eb70f14683163f820022",
+          "map_sha256": "8a250865cf3ba61e56f7a46189db757a6a850db61d58f3be4780a22566b4824f",
+          "mz_sha256": "ed69dd48c057f6ca267fab26294ee1171c68fd63bb0673314dbf721daa9c826a",
+          "commands_sha256": "434db07629e47b1eba04acd15705d897427b1c07617559a8a006565ee0e97b8c"
+        },
+        {
+          "comparison": {
+            "target_start": 48884,
+            "candidate_start": 48884,
+            "size": 108,
+            "target_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+            "candidate_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "BOSS_BD_EARLY_TEXT",
+            "size": 108,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 108,
+                "sha256": "2ba63a55e3890859ebaa71e037e197879f470dd9855ef098f370b7248b1685ac"
+              }
+            ]
+          },
+          "object_sha256": "07afe319efd3c71c5da19785dbf0b435711a758703190ec8cf906b6f51125c7e",
+          "object_normalized_sha256": "7d429a92140f1a97dedb15b04103dab48f09b9c02e1d81df0641a08229715c5d",
+          "bindings_sha256": "eef25f3ccb18b6a910d74065facbaf8824091eacfc0371a658df7aa843bb0e2b",
+          "bindings_normalized_sha256": "8bd372b2223729d5f130cac4645b07f74bbcc3e7b105eb70f14683163f820022",
+          "map_sha256": "8a250865cf3ba61e56f7a46189db757a6a850db61d58f3be4780a22566b4824f",
+          "mz_sha256": "ed69dd48c057f6ca267fab26294ee1171c68fd63bb0673314dbf721daa9c826a",
+          "commands_sha256": "434db07629e47b1eba04acd15705d897427b1c07617559a8a006565ee0e97b8c"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 48884,
+          "candidate_start": 48884,
+          "size": 108,
+          "target_sha256": "e3ac9ff6fa0c660091704730a7fda3d15898c495c889c13df63c680b9dcbb471",
+          "candidate_sha256": "891638c2250a3d17bf8374b72d509de916daa1c40b6c5dd9631ebb4d94f8bfe3",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "BOSS_BD_EARLY_TEXT",
+          "size": 108,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 108,
+              "sha256": "03d38c41dcd90b198741404d8fb04117018f5549c6ce4c7f00771660ed5d81bb"
+            }
+          ]
+        },
+        "object_sha256": "d6a9a9145fa38f55d8ce5c9cb45e6e03bb41a3d9a70820e203ae4c980458a55d",
+        "object_normalized_sha256": "241ae88e41b1b556579b053454205485ab439f158a019b76b5527a35d08c5776",
+        "bindings_sha256": "0379f3faae65a1354925a2cc86a8f8c4abcf0d45587cacd978093048c6916d84",
+        "bindings_normalized_sha256": "8bd372b2223729d5f130cac4645b07f74bbcc3e7b105eb70f14683163f820022",
+        "map_sha256": "8a250865cf3ba61e56f7a46189db757a6a850db61d58f3be4780a22566b4824f",
+        "mz_sha256": "dc1e3282c90ec403e04a4e7171ce8724cf830387db9f79377993133707920ce5",
+        "commands_sha256": "434db07629e47b1eba04acd15705d897427b1c07617559a8a006565ee0e97b8c"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "0db4c0f2a38323b40eb09a6bb8a0a26831d4c10f53df2809cfbda61bb10e8446"
     }
   }
 }
