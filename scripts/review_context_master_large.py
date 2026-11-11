@@ -23,6 +23,7 @@ from review_master_super import source_lines as super_lines
 from review_master_bgm import source_lines as bgm_lines
 from review_master_grcg import symbolic_source
 from review_master_io import semantic_lines
+from review_master_super_helpers import near_proc_blocks, canonical as canonical_helper
 
 ROOT=Path(__file__).resolve().parents[1]
 MASTER=ROOT/'config/master_vendor_ownership.json'
@@ -32,6 +33,13 @@ DECISION=ROOT/'config/reviewed_context_master_large.json'
 # TLINK Publics-by-Value MAP, never anonymous or compiler branch fragments.
 FUNCTIONS={
     'SUPER_PUT':{'op':(0x292a,240),'maine':(0x2b68,240)},
+    # Native Master SUPERPUT.ASM defines five separate, private PROC/ENDP
+    # drawing dispatchers; three EVEN bytes between them are NOT owned.
+    'SUPERPUT_DISP1':{'op':(0x2a1a,35),'maine':(0x2c58,35)},
+    'SUPERPUT_DISP2':{'op':(0x2a3e,45),'maine':(0x2c7c,45)},
+    'SUPERPUT_DISP3':{'op':(0x2a6c,54),'maine':(0x2caa,54)},
+    'SUPERPUT_DISP4':{'op':(0x2aa2,49),'maine':(0x2ce0,49)},
+    'SUPERPUT_DISP':{'op':(0x2ad4,8),'maine':(0x2d12,8)},
     'BGM_INIT':{'op':(0x338e,420),'maine':(0x3556,420)},
     'PALETTE_SHOW':{'op':(0x19f0,266),'maine':(0x1b8a,266)},
     'HMEM_ALLOC':{'op':(0x2336,240),'maine':(0x2574,240)},
@@ -43,6 +51,7 @@ ARTIFACTS=('op','maine')
 
 
 def normalized_source(text,name):
+    if name.startswith('SUPERPUT_DISP'):return canonical_helper(text,name)
     if name=='SUPER_PUT':return super_lines(text)
     if name in ('BGM_INIT','BGM_READ_SDATA'):return bgm_lines(text,name)
     if name in ('PALETTE_SHOW','GRCG_BOXFILL'):return symbolic_source(text)
@@ -150,7 +159,8 @@ def rebind(source,fixups,start,offsets,segs,groups,cal_group,original_group):
     cal=bytearray(source);original=bytearray(source);relocations=[];actions=[];written=set()
     for f in fixups:
         site=f['site']-start
-        need(0<=site<len(source)-1 and (site,site+1) not in written,
+        need(0<=site<len(source)-1 and
+             not any(byte in written for byte in (site,site+1)),
              'source OMF FIXUPP outside complete Master function or duplicated')
         written.update((site,site+1))
         need(not f['relative'] and f['displacement']==0,
@@ -220,16 +230,35 @@ def replay():
         for name,scope in FUNCTIONS.items():
             if art not in scope:continue
             start,size=scope[art]
-            need(start in public.get(name,set()),
-                 'genuine TASM/MAP complete Master function entry differs')
-            source_paths=[(f,b) for f in (p/'libs/master.lib').glob('*.asm')
-                          for b in source_blocks(f.read_bytes(),'utf8')
-                          if b['name']==name]
-            refs=upstream[name.casefold()]
-            need(len(source_paths)==len(refs)==1,
-                 'original or compiled Master function source missing/ambiguous: '+name)
-            source_path,block=source_paths[0]
-            ref_file,ref=refs[0]
+            if name.startswith('SUPERPUT_DISP'):
+                # Real TASM local PROC symbols are intentionally absent
+                # from the exported MAP publics. Validate their positions
+                # relative to the independently verified SUPER_PUT entry.
+                delta={'SUPERPUT_DISP1':240,'SUPERPUT_DISP2':276,
+                       'SUPERPUT_DISP3':322,'SUPERPUT_DISP4':376,
+                       'SUPERPUT_DISP':426}[name]
+                need(start==FUNCTIONS['SUPER_PUT'][art][0]+delta,
+                     'native private SUPERPUT PROC position drift')
+                source_path=p/'libs/master.lib/super_put.asm'
+                native=near_proc_blocks(source_path.read_bytes(),'utf8',name)
+                author_name=name.replace('SUPERPUT_','')
+                archived=near_proc_blocks(archive['SUPERPUT.ASM'],'cp932',author_name)
+                need(len(native)==len(archived)==1,
+                     'complete private Master SUPERPUT PROC missing')
+                block=native[0]
+                ref_file='SUPERPUT.ASM'
+                ref=archived[0]['text']
+            else:
+                need(start in public.get(name,set()),
+                     'genuine TASM/MAP complete Master function entry differs')
+                source_paths=[(f,b) for f in (p/'libs/master.lib').glob('*.asm')
+                              for b in source_blocks(f.read_bytes(),'utf8')
+                              if b['name']==name]
+                refs=upstream[name.casefold()]
+                need(len(source_paths)==len(refs)==1,
+                     'original or compiled Master function source missing/ambiguous: '+name)
+                source_path,block=source_paths[0]
+                ref_file,ref=refs[0]
             norm=normalized_source(ref,name)
             need(norm==normalized_source(block['text'],name),
                  'original author Master function operands/source differ: '+name)
