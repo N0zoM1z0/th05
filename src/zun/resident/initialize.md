@@ -77,3 +77,29 @@ cached compiler usage identifies `-O` itself as the jump-optimization switch.
 Both attempts are retained under `.analysis/zun-resident/main-jumps-{a,b}/`.
 No link, second producer or negative followed. The original260-byte source
 profile is restored, with no accepted source or progress change from this trial.
+
+## 2026-11-11: matched size is not matched code
+
+Further focused Turbo C++ 4.02 experiments changed only the control-flow
+structure of the three genuine error-return branches (bad option, resident
+already present, and memory allocation failure), using C++ `goto` to a common
+failed-status return. With jump optimization disabled using the supported
+`#pragma option -O-`, four branch combinations (`011`, `101`, `110`, `111`)
+compiled to the original **269-byte function size**. All were linked as real
+COM programs with the original `C0T.OBJ` startup, the separately accepted
+322-byte configuration function, genuine near DOS/resident provider positions,
+and foreign message labels.
+
+The resulting four complete 269-byte functions are **not exact**: each differs
+in 183 original byte positions beginning with branch displacements around
+`04DE`, because Borland sinks message printing to different shared tails.
+The correct size therefore does not establish the original C++ control flow.
+No original-data bytes, artificial optimization barriers or binary patches
+were used. Source and OMF trials are retained under
+`.analysis/gpt-web-zun-gotos-*`; linked full-function comparisons are under
+`.analysis/gpt-web-zun-main-linked-*`.
+
+This 269-byte ZUN main remains unaccepted. Its earlier 260-byte natural source
+is unchanged and still expresses the resident installation/removal behavior.
+The next useful work is to identify a historically meaningful branch-layout
+or compiler-context difference, not to promote an equal-length producer.

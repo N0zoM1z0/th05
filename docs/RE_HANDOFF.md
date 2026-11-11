@@ -24,6 +24,8 @@ inputs; **never run the full cold-replay set by default**. For documentation
 alone, inspect the diff and use lightweight validation. Commit substantive
 progress as `gpt-web: <description>`. Local Git checkpoints are not Git pushes.
 
+**ZUN resident entry still open:** The 269-byte complete `main()` now has genuine 269-byte alternate C++ producers, but every linked candidate still differs in 183 branch/code bytes. The full failure evidence and safe next step are in [resident entry notes](../src/zun/resident/initialize.md); no new acceptance is claimed.
+
 ## Recent accepted code: do not reopen old failure notes as active blockers
 
 The following statuses were checked against the acceptance manifests and
