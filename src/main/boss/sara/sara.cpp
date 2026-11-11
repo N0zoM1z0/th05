@@ -12,6 +12,19 @@
 static const int PHASE_2_PATTERN_START_FRAME = 16;
 static const int PHASE_3_PATTERN_START_FRAME = 32;
 
+// The real five-entry compiler switch has ordinary phases 0..4.
+// The initial two phase names live in the shared Boss ABI header.
+static const unsigned char SARA_PHASE_BLUE_RED_WAVES = 2;
+static const unsigned char SARA_PHASE_SPINNING_RINGS = 3;
+static const unsigned char SARA_PHASE_LASER_CORRIDOR = 4;
+static const unsigned char SARA_MODE_REPOSITION = 0;
+static const unsigned char SARA_MODE_FIRST_PATTERN = 1;
+
+// Pattern selection counts and the terminal laser-corridor timeout.
+static const unsigned char SARA_WAVE_2_PATTERN_LIMIT = 32;
+static const unsigned char SARA_WAVE_3_PATTERN_LIMIT = 24;
+static const int SARA_LASER_CORRIDOR_TIMEOUT = 1300;
+
 enum sara_colors_t {
 	COL_GATHER_1 = 9,
 	COL_GATHER_2 = 8,
@@ -87,7 +100,7 @@ static void near phase_2_with_pattern(void)
 	}
 	if(boss_flystep_random(boss.phase_frame - PHASE_2_PATTERN_START_FRAME)) {
 		boss.phase_frame = 0;
-		boss.mode = 0;
+		boss.mode = SARA_MODE_REPOSITION;
 	}
 	phase_2_3_pattern();
 }
@@ -186,7 +199,7 @@ static void near phase_3_with_pattern(void)
 	phase_2_3_pattern();
 	if(boss.phase_frame >= state->phase_3.pattern_frames) {
 		boss.phase_frame = 0;
-		boss.mode = 0;
+		boss.mode = SARA_MODE_REPOSITION;
 		boss.sprite = PAT_SARA_STAY;
 	}
 }
@@ -363,7 +376,7 @@ extern const pattern_loop_func_t SARA_PATTERNS_PHASE_2_3[2][4];
 			boss.mode = randring2_next8_mod_ge_lt(1, 5); \
 		} while(boss.mode == pattern_prev); \
 		pattern_prev = boss.mode; \
-		phase_2_3_pattern = SARA_PATTERNS_PHASE_2_3[phase - 2][boss.mode - 1]; \
+		phase_2_3_pattern = SARA_PATTERNS_PHASE_2_3[phase - SARA_PHASE_BLUE_RED_WAVES][boss.mode - SARA_MODE_FIRST_PATTERN]; \
 	} \
 }
 
@@ -430,7 +443,7 @@ void pascal sara_update(void)
 			// Next phase
 			boss.phase++;
 			boss.phase_frame = 0;
-			boss.mode = 0;
+			boss.mode = SARA_MODE_REPOSITION;
 			boss.phase_state.patterns_seen = 0;
 			state->phase_2.pattern_prev = -1;
 			state->phase_2.fly_delay = 64;
@@ -441,14 +454,14 @@ void pascal sara_update(void)
 		}
 		break;
 
-	case 2:
+	case SARA_PHASE_BLUE_RED_WAVES:
 		switch(boss.mode) {
-		case 0:
+		case SARA_MODE_REPOSITION:
 			phase_2_3_wait_fly_and_select_pattern(
 				state->phase_2.pattern_prev,
-				2,
+				SARA_PHASE_BLUE_RED_WAVES,
 				state->phase_2.fly_delay,
-				32,
+				SARA_WAVE_2_PATTERN_LIMIT,
 				phase_2_timed_out
 			);
 			break;
@@ -471,11 +484,12 @@ void pascal sara_update(void)
 		state->phase_3.pattern_frames = 80;
 		break;
 
-	case 3:
+	case SARA_PHASE_SPINNING_RINGS:
 		switch(boss.mode) {
-		case 0:
+		case SARA_MODE_REPOSITION:
 			phase_2_3_wait_fly_and_select_pattern(
-				state->phase_3.pattern_prev, 3, 16, 24, phase_3_timed_out
+				state->phase_3.pattern_prev, SARA_PHASE_SPINNING_RINGS, 16,
+				SARA_WAVE_3_PATTERN_LIMIT, phase_3_timed_out
 			);
 			break;
 
@@ -499,11 +513,11 @@ void pascal sara_update(void)
 		boss_phase_next(ET_SW_NE, HP_PHASE_4_END);
 		break;
 
-	case 4:
+	case SARA_PHASE_LASER_CORRIDOR:
 		pattern_dense_spreads_and_random_balls_within_laser_walls();
 
 		// Timeout condition
-		if(boss.phase_frame >= 1300) {
+		if(boss.phase_frame >= SARA_LASER_CORRIDOR_TIMEOUT) {
 			boss.phase_state.defeat_bonus = false;
 		} else {
 			// Boss defeated?

@@ -2,36 +2,42 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "65464a3b8f2347193c83f5618fd3cc4332a786076d4d1c88eac8fc004d8372ec",
+  "replay_receipt_sha256": "87a603a8a61efc2a422f036428e39d999f0eef758666b7fbb1357c816765b79d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 107082,
-    "candidate_start": 107082,
-    "size": 1060,
-    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
-    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
+    "target_start": 119198,
+    "candidate_start": 119198,
+    "size": 1824,
+    "target_sha256": "b8a4fd6fb01a08c42c57d55ed0c40ffe666e71e66402dabde598b368b0711f90",
+    "candidate_sha256": "98c984b6c5e75e9e44111810c7234a341ca42cbd7be67a3c4d0903dbce8beb23",
     "raw_exact": false,
     "target_fixups": [
-      198,
-      161
+      919,
+      813,
+      723,
+      660,
+      382,
+      338,
+      260,
+      36,
+      1427,
+      1157
     ],
     "candidate_fixups": [
-      198,
-      161
+      919,
+      813,
+      723,
+      660,
+      382,
+      338,
+      260,
+      36,
+      1427,
+      1157
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 107082,
-      "size": 1060,
-      "function_symbol": "exalice_update()",
-      "contribution_start": 106971,
-      "contribution_size": 1171,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -10098,7 +10104,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0493447b8bf776cd34d91af8504806e4e2bb0314c8986fe6222caff6d654cc7f",
+            "sha256": "fa5581b0b531667ab0f9837fe8425ac6e7837c7ad21e9e1d40cf335b5ad69888",
             "dependency_timestamp_normalized_sha256": "029ccf230dee3d8430d375c29a0bc6c3b3fc04010a8bc0eb9459c4bc3d9ed403",
             "module_name": "th05/boss_1.cpp",
             "translator_comments": [
@@ -10123,7 +10129,7 @@
             ]
           },
           {
-            "sha256": "b9f88f84020180558c4bd03945909823296ce904c807e69842451da3268172a2",
+            "sha256": "5b0daf1312c016d47c59558002a259ba98e57dc2e4052c5a2ac1aabf5abedb49",
             "dependency_timestamp_normalized_sha256": "029ccf230dee3d8430d375c29a0bc6c3b3fc04010a8bc0eb9459c4bc3d9ed403",
             "module_name": "th05/boss_1.cpp",
             "translator_comments": [
@@ -10152,6 +10158,34 @@
           "group-0/a/source",
           "group-0/b/source"
         ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_1.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_1.cpp"
+          ]
+        ],
         "source_inputs": [
           {
             "path": "probes/units/sara_bindings.asm",
@@ -10163,7 +10197,7 @@
           },
           {
             "path": "src/main/boss/sara/sara.cpp",
-            "sha256": "4d0396c108ed99321abb0e498a5884734f3d87d7b1f65bbb44477a8356ef5bf0"
+            "sha256": "fc7023a8e29ffdbb07fd0eefa90e17703c63eaa6c0ea1c5234b5de0c5fb07c37"
           },
           {
             "path": "src/main/boss/sara/sara.hpp",
@@ -10203,7 +10237,7 @@
         },
         {
           "path": "src/main/boss/sara/sara.cpp",
-          "sha256": "4d0396c108ed99321abb0e498a5884734f3d87d7b1f65bbb44477a8356ef5bf0"
+          "sha256": "fc7023a8e29ffdbb07fd0eefa90e17703c63eaa6c0ea1c5234b5de0c5fb07c37"
         },
         {
           "path": "src/main/boss/sara/sara.hpp",
@@ -10232,7 +10266,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "d9dcd2219baab31b94c7e2b6674d4506946c4faa0780fa80657117d074fd57d5",
+      "replay_receipt_sha256": "87a603a8a61efc2a422f036428e39d999f0eef758666b7fbb1357c816765b79d",
       "compiled_negative_control": {
         "target_start": 119198,
         "candidate_start": 119198,
@@ -10313,7 +10347,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "9bdc996ca690b2f1ba185cedade8d4dfeff5e298b107e669dd6afa98d9b07afd",
+          "sha256": "3c739cc737a9a3a46afdca11ad610fe3eb959ffcbc7c850623970df5087ff7a5",
           "dependency_timestamp_normalized_sha256": "622188d59d246e845af2f057c3d7b759eafeda50b0e97123c2b14c7f99b02534",
           "module_name": "th05/boss_1.cpp",
           "translator_comments": [
@@ -10336,9 +10370,25 @@
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp"
           ]
-        }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/boss_1.cpp"
+        ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-sara"
+      ]
     },
     {
       "id": "main-midboss-score-bonus",

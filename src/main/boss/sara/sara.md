@@ -115,3 +115,12 @@ bytes and the ten-byte semantic phase table. The verified zero alignment byte
 receives no credit. All twelve complete functions, including static shooting
 helpers and the entire update dispatcher, are included. No DATA/BSS or whole
 executable equality is claimed.
+
+## Named full-controller phases and pattern dispatch
+
+The original five-entry `sara_update` switch now identifies its three combat
+phases as blue/red waves, spinning rings, and the final laser corridor. The
+two pattern-wave dispatches retain their genuine random mode selection and
+phase-indexed callback table. Named pattern limits (32 and 24), reset mode,
+and the final 1,300-frame timeout preserve the observed numeric behavior
+while making the full stage-one Boss controller easier to inspect.
