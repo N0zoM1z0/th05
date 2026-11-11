@@ -1309,3 +1309,26 @@ unit = "op-nopoly-plane-put-exact"
 source = "src/op/music/nopoly_put_exact.cpp"
 find = "_CX = 32000 / 2;"
 replace = "_CX = 31998 / 2;"
+
+[[units]]
+id = "op-snd-se-reset-exact"
+source = "src/shared/sound/se_reset_exact.cpp"
+module = "th05/sereset.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_se_reset_exact_bindings.asm"
+target_start = 54774
+size = 11
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-snd-se-reset-exact"
+source = "src/shared/sound/se_reset_exact.cpp"
+find = "snd_se_playing = SE_NONE;"
+replace = "snd_se_playing = 0;"

@@ -5792,3 +5792,26 @@ unit = "main-item-splash-init-register-exact"
 source = "src/main/item/splash_init_register_exact.cpp"
 find = "_CX = sizeof(item_splashes) / sizeof(unsigned int);"
 replace = "_CX = sizeof(item_splashes) / sizeof(unsigned int) - 1;"
+
+[[units]]
+id = "main-snd-se-reset-exact"
+source = "src/shared/sound/se_reset_exact.cpp"
+module = "th05/sereset.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/main_se_reset_exact_bindings.asm"
+target_start = 85206
+size = 11
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+group = "(none)"
+cs_base = 84656
+ds_base = 133584
+binary = "M"
+
+[[controls]]
+unit = "main-snd-se-reset-exact"
+source = "src/shared/sound/se_reset_exact.cpp"
+find = "snd_se_playing = SE_NONE;"
+replace = "snd_se_playing = 0;"

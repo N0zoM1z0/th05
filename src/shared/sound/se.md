@@ -77,3 +77,11 @@ fixups are empty for play and `[43]` for update. The single mutation per
 artifact changes the actual play argument-stack word offset from `+4` to
 `+6`; the oracle rejects the modified code. Whole-game linkage and packed
 OP/MAINE executable identity are separate, not claimed by this acceptance.
+
+## Complete reset callbacks
+
+The immediately preceding three 11-byte `snd_se_reset()` callbacks are now
+accepted C++ in MAIN, OP and MAINE. See [reset evidence](se_reset_exact.md).
+They have their own complete functions, distinct from the previously
+accepted 57-byte play and 76-byte update functions; the intervening `EVEN`
+alignment NOPs are not credited.

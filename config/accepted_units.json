@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a4397a89a5a7a9ec71be499347d9324b3a69d46002717cf8935e51c1e46deaa2",
+  "replay_receipt_sha256": "96fe860f43b963535d4fb5e53f42c6b0ad58cf60af006cb929faf80dbbe338f6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 90978,
-    "candidate_start": 90978,
-    "size": 26,
-    "target_sha256": "37a88c4490e539707473dc58dc2584bba30d68da350962e6b4ef698a73c01e46",
-    "candidate_sha256": "c0f476a4b7bc8fd16a129c75be0def55ce36c04e30d47c119c4aa27394d3fc21",
+    "target_start": 85206,
+    "candidate_start": 85206,
+    "size": 11,
+    "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+    "candidate_sha256": "d61a722b3cc234ed1a7319cb768917b8f70664f1507ec752e9d917cc4babcac1",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -92118,6 +92118,216 @@
           "-ml",
           "-DBINARY='M'",
           "th05/splinit.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-snd-se-reset-exact",
+      "entry_sha256": "071b5d0e2b523ada01e539219ffdfbddb6a64d46eddcb56990f118baaee97b38",
+      "result": {
+        "id": "main-snd-se-reset-exact",
+        "entry_sha256": "071b5d0e2b523ada01e539219ffdfbddb6a64d46eddcb56990f118baaee97b38",
+        "rounds": [
+          {
+            "target_start": 85206,
+            "candidate_start": 85206,
+            "size": 11,
+            "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+            "candidate_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 85206,
+            "candidate_start": 85206,
+            "size": 11,
+            "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+            "candidate_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ef7da636dd925d290312b4cf6448ebba22b9e6de81b5b1ada9dfeaf266a7ac52",
+            "dependency_timestamp_normalized_sha256": "bd8fe7743b569e6a3e77f2b6ebd71420c89dd57f2ee22e508f2b2a1b56bcb339",
+            "module_name": "th05/sereset.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sereset.cpp",
+              "src/shared/sound/se_reset_exact.cpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "98413936751103a8c3befbbfeb7767e193c979ac5df0a03875088271c70cf719",
+            "dependency_timestamp_normalized_sha256": "bd8fe7743b569e6a3e77f2b6ebd71420c89dd57f2ee22e508f2b2a1b56bcb339",
+            "module_name": "th05/sereset.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sereset.cpp",
+              "src/shared/sound/se_reset_exact.cpp",
+              "src/shared/sound/se.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sereset.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sereset.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_se_reset_exact_bindings.asm",
+            "sha256": "bc84d5b3e719bb300537c740395610dff815fad6904f2a8659b492639c550060"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/sound/se.hpp",
+            "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+          },
+          {
+            "path": "src/shared/sound/se_reset_exact.cpp",
+            "sha256": "eb2ce244b8b4fee4380b03920f157d24d7a89af5d81ef165f35d5a5791b0dacc"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_se_reset_exact_bindings.asm",
+          "sha256": "bc84d5b3e719bb300537c740395610dff815fad6904f2a8659b492639c550060"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/sound/se.hpp",
+          "sha256": "ba05d04dc6afaa95b54c6d589fe5c3a1d567c29b19353cd627d7edb63c40a929"
+        },
+        {
+          "path": "src/shared/sound/se_reset_exact.cpp",
+          "sha256": "eb2ce244b8b4fee4380b03920f157d24d7a89af5d81ef165f35d5a5791b0dacc"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "96fe860f43b963535d4fb5e53f42c6b0ad58cf60af006cb929faf80dbbe338f6",
+      "compiled_negative_control": {
+        "target_start": 85206,
+        "candidate_start": 85206,
+        "size": 11,
+        "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+        "candidate_sha256": "d61a722b3cc234ed1a7319cb768917b8f70664f1507ec752e9d917cc4babcac1",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "main-snd-se-reset-exact",
+        "entry_sha256": "071b5d0e2b523ada01e539219ffdfbddb6a64d46eddcb56990f118baaee97b38",
+        "mutation": {
+          "unit": "main-snd-se-reset-exact",
+          "source": "src/shared/sound/se_reset_exact.cpp",
+          "find": "snd_se_playing = SE_NONE;",
+          "replace": "snd_se_playing = 0;"
+        },
+        "control_sha256": "04c43bdafa06183922361b703dcdac45a811a4448ca6cb66b640edb3bc85b4b0",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 85206,
+          "candidate_start": 85206,
+          "size": 11,
+          "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
+          "candidate_sha256": "d61a722b3cc234ed1a7319cb768917b8f70664f1507ec752e9d917cc4babcac1",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "b2f917bd9dc4b0842b33181013c6fae41b2f1c77222a4629dd1c175405e287ee",
+          "dependency_timestamp_normalized_sha256": "b09731b02f707389fcd9cdda8e28396b06749d0e10d375503ddb673ebd35090d",
+          "module_name": "th05/sereset.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sereset.cpp",
+            "src/shared/sound/se_reset_exact.cpp",
+            "src/shared/sound/se.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sereset.cpp"
         ]
       },
       "receipt_aggregate_pass": true
