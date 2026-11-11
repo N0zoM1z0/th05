@@ -90,3 +90,20 @@ matches both original and calibration images. The preceding startup region
 This review extends the existing focused Master-hook source proof and decision,
 without introducing a separate verification framework. All eight original
 functions remain third-party code, with no new game-authored credit.
+
+## Original buffering, DOS and EGC helpers
+
+A further twelve whole Master 0.23 functions per executable now have exact
+source-backed ownership, totaling **908 newly attributed bytes** (454 each):
+`BCLOSER` (24), `BFILL` (60), `BGETC` (48), `BSEEK` (66), `BSEEK_` (48),
+`DOS_AXDX` (24), `DOS_READ` (26), `DOS_SEEK` (28), `DOS_SETVECT` (32),
+`EGC_ON` (22), `EGC_OFF` (32), and `EGC_END` (44). The native OP/MAINE DOS
+routine addresses differ after the front-end-specific file utilities; their
+original positions, not assumed constant offsets, are in the evidence ledger.
+
+All twelve complete original author ASM source blocks match the retained
+actual native TASM bodies without semantic rewriting. Their whole CODE
+intervals occur uniquely at the recorded original positions; both native
+OMFs and original MZ images match. These 24 source scopes contain no OMF or
+MZ relocations. They extend the existing bounded Master-hook review and earn
+only vendor CODE ownership, not additional game-authored C++ credit.

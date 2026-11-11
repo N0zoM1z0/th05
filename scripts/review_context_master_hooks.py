@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded original OP/MAINE Master-derived display, file and BFNT CODE.
+"""Bounded original OP/MAINE Master display, file, BFNT and DOS/EGC CODE.
 
 Review complete procedures plus PFEND's source-written portions through the
 actual TASM OMF, original author source and decoded original MZ images.
@@ -48,6 +48,31 @@ SCOPES = (
      {'op': (0x3b4, 60), 'maine': (0x3b4, 60)}, 'original-identical'),
     ('BFNT_EXTEND_HEADER_ANALYSIS', 'libs/master.lib/bfnt_header_analysis.asm', 'BFTHDRAN.ASM',
      {'op': (0x3f0, 100), 'maine': (0x3f0, 100)}, 'original-identical'),
+    # Source-identical complete Master library buffering, DOS and EGC helpers.
+    ('BCLOSER', 'libs/master.lib/bcloser.asm', 'BCLOSER.ASM',
+     {'op': (0x53c, 24), 'maine': (0x53c, 24)}, 'original-identical'),
+    ('BFILL', 'libs/master.lib/bfill.asm', 'BFILL.ASM',
+     {'op': (0x554, 60), 'maine': (0x554, 60)}, 'original-identical'),
+    ('BGETC', 'libs/master.lib/bgetc.asm', 'BGETC.ASM',
+     {'op': (0x5d0, 48), 'maine': (0x5d0, 48)}, 'original-identical'),
+    ('BSEEK', 'libs/master.lib/bseek.asm', 'BSEEK.ASM',
+     {'op': (0x706, 66), 'maine': (0x706, 66)}, 'original-identical'),
+    ('BSEEK_', 'libs/master.lib/bseek_.asm', 'BSEEK_.ASM',
+     {'op': (0x748, 48), 'maine': (0x748, 48)}, 'original-identical'),
+    ('DOS_AXDX', 'libs/master.lib/dos_axdx.asm', 'DOSC.ASM',
+     {'op': (0x778, 24), 'maine': (0x778, 24)}, 'original-identical'),
+    ('DOS_READ', 'libs/master.lib/dos_read.asm', 'DOSREAD.ASM',
+     {'op': (0x7c0, 26), 'maine': (0x7ce, 26)}, 'original-identical'),
+    ('DOS_SEEK', 'libs/master.lib/dos_seek.asm', 'DOSSEEK.ASM',
+     {'op': (0x7da, 28), 'maine': (0x7e8, 28)}, 'original-identical'),
+    ('DOS_SETVECT', 'libs/master.lib/dos_setvect.asm', 'DOSVECT.ASM',
+     {'op': (0x7f6, 32), 'maine': (0x804, 32)}, 'original-identical'),
+    ('EGC_ON', 'libs/master.lib/egc.asm', 'EGC.ASM',
+     {'op': (0x816, 22), 'maine': (0x824, 22)}, 'original-identical'),
+    ('EGC_OFF', 'libs/master.lib/egc.asm', 'EGC.ASM',
+     {'op': (0x82c, 32), 'maine': (0x83a, 32)}, 'original-identical'),
+    ('EGC_END', 'libs/master.lib/egc.asm', 'EGC.ASM',
+     {'op': (0x84c, 44), 'maine': (0x85a, 44)}, 'original-identical'),
 )
 ARTIFACTS = ('op', 'maine')
 # PFEND is one original 408-byte procedure but has an actual two-byte
