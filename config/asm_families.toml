@@ -2002,3 +2002,29 @@ semantic_inputs = ["src/shared/geometry.hpp"]
 [units.negative]
 find = "mov word ptr [si+SPARK_FLAG_AND_AGE], SPARK_ALIVE"
 replace = "mov word ptr [si+SPARK_FLAG_AND_AGE], (SPARK_ALIVE + 1)"
+
+[[units]]
+id = "main-sparks-add-random-asm"
+artifact = "main"
+source = "src/main/boss/sparks_add_random.asm"
+types = "src/main/boss/sparks_add_random_types.inc"
+symbols = "probes/units/sparks_add_random_symbols.inc"
+bindings = "probes/units/sparks_add_random_bindings.asm"
+notes = "src/main/boss/sparks_add_random.md"
+target_start = 0x16e86
+size = 98
+segment = "SPARK_RANDOM_TEXT"
+group = "main_03"
+cs_base = 0x15270
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "df37fca8bc521a614b61876953b1db3335015ceaf0bafcb0ad0eb965ffc05bef"
+target_scope_sha256 = "95fd01666dcac5123c65e95a844f2d5a54df2edd79f460db7db6b995c6334ab7"
+semantic_inputs = ["src/shared/geometry.hpp"]
+[units.publics]
+"SPARKS_ADD_RANDOM" = 0
+"sparks_add_random_end" = 98
+[units.negative]
+find = "push SPARK_RANDOM_SPEED_SPAN_MASK"
+replace = "push (SPARK_RANDOM_SPEED_SPAN_MASK - 1)"
