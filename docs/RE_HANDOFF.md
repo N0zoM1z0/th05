@@ -24,8 +24,8 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **29,096 decoded bytes**:
-MAIN 5,819; OP 7,114; MAINE 7,604; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **29,036 decoded bytes**:
+MAIN 5,819; OP 7,114; MAINE 7,544; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
 
 ## Most useful next reconstruction work
@@ -128,3 +128,10 @@ new **42-byte reviewed ASM source owner** (`JS_START`, OP `2BAC..2BD6`):
 exact TASM producers and a rejected poll-count negative. The obsolete SAJ-98
 search is intentionally absent; external sound functions and DATA/BSS remain
 symbol-only, not claimed as reconstructed CODE.
+The [MAINE joystick startup](../src/maine/joystick/js_start.md) now similarly
+owns **60 complete original ASM bytes** at `2E46..2E82`: 41-byte `JS_START`
+and 17-byte near `SOUND_JOY` instruction bodies, plus two checked alignment
+NOPs. Both functions, external sound references, MAINE's own DATA/BSS frame
+and the original ordered fixups passed independent scoped producers and a
+rejected poll-count mutation. The following joystick sense function remains a
+separate unknown region.

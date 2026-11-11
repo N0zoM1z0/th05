@@ -886,6 +886,40 @@ size = 1
 kind = "alignment"
 
 [[units]]
+id = "maine-joystick-start"
+artifact = "maine"
+source = "src/maine/joystick/js_start.asm"
+types = "src/op/joystick/js_start_types.inc"
+symbols = "src/maine/joystick/js_start_symbols.inc"
+bindings = "probes/units/maine_js_start_bindings.asm"
+notes = "src/maine/joystick/js_start.md"
+target_start = 0x2E46
+size = 60
+segment = "_TEXT"
+group = "(none)"
+cs_base = 0
+instruction_nops = []
+fixups = []
+tables = []
+native_review_sha256 = "20f53249528bd38ac8bbd410db042807c0e11c9abd4feeb7adaabab70cb6403a"
+target_scope_sha256 = "c846e247aa3ce3c4de1c561c6b998118065df3b1b57e0dacb1bf7519a1125c7d"
+semantic_inputs = []
+[units.publics]
+"JS_START" = 0
+"SOUND_JOY" = 42
+[units.negative]
+find = "mov cx, JOY_POLL_COUNT"
+replace = "mov cx, (JOY_POLL_COUNT - 1)"
+[[units.uncredited]]
+offset = 41
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 59
+size = 1
+kind = "alignment"
+
+[[units]]
 id = "main-mpn-loader"
 artifact = "main"
 source = "src/main/formats/mpn_loader.asm"
