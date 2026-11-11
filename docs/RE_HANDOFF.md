@@ -35,6 +35,7 @@ necessarily all authored bytes where padding is present.
 | --- | --- | --- |
 | MAIN EMS Boss faceset | Full **154-byte** C++ function at `B9CC..BA66`; original ordered fixups `[71,24,133,114]` | [EMS review](../src/main/ems/ems.md) |
 | MAIN stage session | **803-byte** initializer; genuine four-function 1,826-byte compiler context | [Stage context](../src/main/runtime/stage_session_context.md) |
+| MAIN shot laser raster | **100-byte** `SHOT_LASER_PUT_RAW` at `DDF4..DE58`, 98 authored ASM bytes and two checked `EVEN` NOPs | [Laser raster source](../src/main/player/shot_laser_put.md) |
 | MAIN shot collisions | **399 + 210** complete C++ functions, individual exact ordered fixups | [Shot collisions](../src/main/player/shot_runtime.md) |
 | MAIN Mai/Yuki tracking | **186-byte** C++ function; TCC `-S` → TASM32 restores fixup order `[38,130]` | [Later attacks](../src/main/boss/mai_yuki/later_patterns.md) |
 | MAIN performance selectors | **76-byte** complete reviewed ASM family at `CF7A..CFC6`; **74 authored instruction bytes**, two uncredited `EVEN` NOPs | [Performance/selector family](../src/main/runtime/playperf_select.md) |

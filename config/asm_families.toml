@@ -2399,3 +2399,36 @@ kind = "alignment"
 offset = 107
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-shot-laser-put-raw"
+artifact = "main"
+source = "src/main/player/shot_laser_put.asm"
+types = "src/main/player/shot_laser_put_types.inc"
+symbols = "probes/units/shot_laser_put_symbols.inc"
+bindings = "probes/units/shot_laser_put_bindings.asm"
+notes = "src/main/player/shot_laser_put.md"
+target_start = 56820
+size = 100
+segment = "SHOT_LASER_PUT_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "7a80149174b42429c32ef08d519d2bba88545af22fb51e1a6b8b36726a909a7c"
+target_scope_sha256 = "332ccecf93b966afdb2e342bf47fffb54a0039f73045ddf71eb4e4fd4deae776"
+semantic_inputs = ["src/main/bullet/update.hpp", "src/main/player/shot_helpers.md"]
+[units.publics]
+"SHOT_LASER_PUT_RAW" = 0
+"shot_laser_put_end" = 100
+[units.negative]
+find = "cmp cx, SCREEN_HEIGHT"
+replace = "cmp cx, (SCREEN_HEIGHT - 1)"
+[[units.uncredited]]
+offset = 69
+size = 1
+kind = "alignment"
+[[units.uncredited]]
+offset = 99
+size = 1
+kind = "alignment"
