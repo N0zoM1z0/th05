@@ -2560,3 +2560,29 @@ size = 40
 offset = 145
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-boss-backdrop-alice-yumeko"
+artifact = "main"
+source = "src/main/boss/backdrop_fills_alice_yumeko.asm"
+types = "src/main/boss/backdrop_fills_alice_yumeko_types.inc"
+symbols = "probes/units/boss_backdrop_ay_symbols.inc"
+bindings = "probes/units/boss_backdrop_ay_bindings.asm"
+notes = "src/main/boss/backdrop_fills_alice_yumeko.md"
+target_start = 50206
+size = 28
+segment = "BOSS_BD_AY_TEXT"
+group = "main_01"
+cs_base = 44560
+instruction_nops = []
+fixups = []
+native_review_sha256 = "207014f1789212f2d9d179ccb2a179b8cb36acbfa4f0ff4e244084913fb4c95e"
+target_scope_sha256 = "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f"
+semantic_inputs = ["src/main/boss/background.hpp", "src/main/player/mima_backdrop.asm"]
+[units.publics]
+"alice_backdrop_colorfill()" = 0
+"yumeko_backdrop_colorfill()" = 14
+"boss_backdrop_ay_end" = 28
+[units.negative]
+find = "mov di, ALICE_LAST_ROW_LEFT"
+replace = "mov di, (ALICE_LAST_ROW_LEFT + 1)"

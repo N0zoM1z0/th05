@@ -51,6 +51,7 @@ necessarily all authored bytes where padding is present.
 | MAIN point popup digits | **58-byte** original-register decimal converter at `15870..158AA`; **57 authored** ASM bytes and one checked `EVEN` | [Digit converter](../src/main/pointnum/digits_register.md) |
 | MAIN Gather graphics primitives | **122-byte** original ASM family at `15312..1538C`, 120 authored bytes and two checked NOPs | [Gather raster](../src/main/gather/raster_primitives.md) |
 | MAIN bullet/Gather invalidation | Full **168-byte** reviewed original ASM at `E40E..E4B6`, no alignment or relocations | [Bullet/Gather dirty tiles](../src/main/bullet/gather_invalidate.md) |
+| MAIN Alice/Yumeko backdrop fills | **28-byte** exact original ASM, two complete near callbacks `C41E..C43A` | [Alice/Yumeko graphics](../src/main/boss/backdrop_fills_alice_yumeko.md) |
 | MAIN Sara/Mai-Yuki background | **108-byte** two-function GRCG family `BEF4..BF60`, **104 authored** ASM bytes and four checked `EVEN` NOPs | [Early Boss backdrop](../src/main/boss/backdrop_fills_early.md) |
 | MAIN Shinki backdrop fills | **94-byte**, three-entry GRCG family at `C68A..C6E8`; 93 authored ASM bytes and one checked NOP | [Shinki backdrop](../src/main/boss/shinki/backdrop_fills.md) |
 | MAIN Mima bomb drawing | **172-byte** original ASM primitives at `1045C..10508`; 171 authored bytes plus one uncredited NOP | [Mima raster primitives](../src/main/player/mima_bomb_primitives.md) |

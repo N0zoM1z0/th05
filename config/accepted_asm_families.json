@@ -20340,6 +20340,231 @@
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
       "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
       "replay_receipt_sha256": "2475504dc0872e9a177a30184dc4c2498bcabd71651f60f2122333058f8b76d8"
+    },
+    "main-boss-backdrop-alice-yumeko": {
+      "schema_version": 1,
+      "kind": "bounded-original-assembly-family-replay",
+      "entry": {
+        "id": "main-boss-backdrop-alice-yumeko",
+        "artifact": "main",
+        "source": "src/main/boss/backdrop_fills_alice_yumeko.asm",
+        "types": "src/main/boss/backdrop_fills_alice_yumeko_types.inc",
+        "symbols": "probes/units/boss_backdrop_ay_symbols.inc",
+        "bindings": "probes/units/boss_backdrop_ay_bindings.asm",
+        "notes": "src/main/boss/backdrop_fills_alice_yumeko.md",
+        "target_start": 50206,
+        "size": 28,
+        "segment": "BOSS_BD_AY_TEXT",
+        "group": "main_01",
+        "cs_base": 44560,
+        "instruction_nops": [],
+        "fixups": [],
+        "native_review_sha256": "207014f1789212f2d9d179ccb2a179b8cb36acbfa4f0ff4e244084913fb4c95e",
+        "target_scope_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+        "semantic_inputs": [
+          "src/main/boss/background.hpp",
+          "src/main/player/mima_backdrop.asm"
+        ],
+        "publics": {
+          "alice_backdrop_colorfill()": 0,
+          "yumeko_backdrop_colorfill()": 14,
+          "boss_backdrop_ay_end": 28
+        },
+        "negative": {
+          "find": "mov di, ALICE_LAST_ROW_LEFT",
+          "replace": "mov di, (ALICE_LAST_ROW_LEFT + 1)"
+        }
+      },
+      "producer_inputs": [
+        {
+          "path": "config/targets.toml",
+          "sha256": "5947c34dc0a1da1fec2d25b89e90714dde4c39940706de3dfc66f6c37883748b"
+        },
+        {
+          "path": "config/toolchain.toml",
+          "sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+        },
+        {
+          "path": "probes/units/boss_backdrop_ay_bindings.asm",
+          "sha256": "3519b6f426e18bec52c1bba4f5030a0a8edf209ab425f2be393bde804a868f24"
+        },
+        {
+          "path": "probes/units/boss_backdrop_ay_symbols.inc",
+          "sha256": "19fd25b8d9fa98138e543d6247252317abca588dfd695abb7b661cb3045d1d2f"
+        },
+        {
+          "path": "src/main/boss/backdrop_fills_alice_yumeko.asm",
+          "sha256": "9c80bf2d8c4507d8590ea604dd35ed0989a1a0c46c66b70f54171a8223763b1e"
+        },
+        {
+          "path": "src/main/boss/backdrop_fills_alice_yumeko_types.inc",
+          "sha256": "e7765fd0cd6df76f56a39221636dce757d23748060a7ebfca1a736914b620f05"
+        },
+        {
+          "path": "src/main/boss/background.hpp",
+          "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/player/mima_backdrop.asm",
+          "sha256": "b9a7a5a6c152d6b8b2c8ef59367c31b8776e3d6eb63e6b8692a6de50d6a2e2f8"
+        }
+      ],
+      "verifier_inputs": [
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/pc98.py",
+          "sha256": "af46d18e4dfbe2c0915c04880031c64bb17133eb8df7ccfba44fbd99b5cb3fcf"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "994ec87a356e0759a54edf6484fde83451feae66f73ca3f808b9c79e58e31236"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "1a68628b4a6dbd48d947c7c0f6825afd2253669245a62b18012d09de0045bdf2"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        }
+      ],
+      "counts": {
+        "instructions": 28,
+        "dispatch-table": 0,
+        "alignment": 0,
+        "inert-branch": 0,
+        "runtime-placeholder": 0
+      },
+      "origin": "reviewed-native-handwritten-assembly-reconstruction",
+      "historical_source_recovered": false,
+      "cxx_authored_credit": 0,
+      "complete_executable_exact": false,
+      "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
+      "target_view": null,
+      "target_image": {
+        "size": 145958,
+        "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41"
+      },
+      "rounds": [
+        {
+          "comparison": {
+            "target_start": 50206,
+            "candidate_start": 50206,
+            "size": 28,
+            "target_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+            "candidate_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "BOSS_BD_AY_TEXT",
+            "size": 28,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 28,
+                "sha256": "ea51d07a061f881b5631081e91dbb1b6b71f0af93cf450dd540be6d9d5ef338a"
+              }
+            ]
+          },
+          "object_sha256": "bf513e37b074a74a94b799eeded1a2ae7f58d5f6005fc49f9780a2ecb28eb315",
+          "object_normalized_sha256": "109c8ef9bb9bd34bb5b9d63c250d97ccda1a2a283a83f7eb715630df700be7ba",
+          "bindings_sha256": "27a19d84c17c8672430bf0f173aee7c81d9b72c1c45e2c99e5356d99d1123eb4",
+          "bindings_normalized_sha256": "217ed367fc6d5e77b64f6e6b282b8d380b8607c48d8d0050e05749550de75bcb",
+          "map_sha256": "f63791e530e6d9c86f541eb40d64ce82e831476ff0ca0d6b26208fdb3a84347d",
+          "mz_sha256": "8a68e458ededf541291050651f277ad69ba90b13952c0236a885c2a048bf2a06",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        },
+        {
+          "comparison": {
+            "target_start": 50206,
+            "candidate_start": 50206,
+            "size": 28,
+            "target_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+            "candidate_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          "omf_scope": {
+            "kind": "complete-assembler-code",
+            "segment": "BOSS_BD_AY_TEXT",
+            "size": 28,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 28,
+                "sha256": "ea51d07a061f881b5631081e91dbb1b6b71f0af93cf450dd540be6d9d5ef338a"
+              }
+            ]
+          },
+          "object_sha256": "ee012cf4920423c469fb6e322e53dd74e60a431a3029f3279d7bba6336ab49b7",
+          "object_normalized_sha256": "109c8ef9bb9bd34bb5b9d63c250d97ccda1a2a283a83f7eb715630df700be7ba",
+          "bindings_sha256": "42f2662a4baf1eb8b043394c8736b29e9087a0d9e975c8c370955c966c971e1f",
+          "bindings_normalized_sha256": "217ed367fc6d5e77b64f6e6b282b8d380b8607c48d8d0050e05749550de75bcb",
+          "map_sha256": "f63791e530e6d9c86f541eb40d64ce82e831476ff0ca0d6b26208fdb3a84347d",
+          "mz_sha256": "8a68e458ededf541291050651f277ad69ba90b13952c0236a885c2a048bf2a06",
+          "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+        }
+      ],
+      "negative_control": {
+        "comparison": {
+          "target_start": 50206,
+          "candidate_start": 50206,
+          "size": 28,
+          "target_sha256": "f08f49ab20c3173c34fabb11266e48a18f01ca573a9e5e9f75180d88f8e8ec7f",
+          "candidate_sha256": "faaf39c3216d4f76139f41842f2b39ea9316bdd3e7188e0477856c271f094c3e",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf_scope": {
+          "kind": "complete-assembler-code",
+          "segment": "BOSS_BD_AY_TEXT",
+          "size": 28,
+          "ledata": [
+            {
+              "offset": 0,
+              "size": 28,
+              "sha256": "47ecb26509d83e03b6deb36f6f5020c240a314ad449e93b09dc33acef026c7e5"
+            }
+          ]
+        },
+        "object_sha256": "f879c6da59e9e82bcbb02aa84f91ffd8c30178ae0db60178ff80105d1a173be8",
+        "object_normalized_sha256": "754334f63f8ed4d9c58d6b7222fdf806558e10185e5b2cf214bdb0f825eb628d",
+        "bindings_sha256": "c7e66f3237cdf9ea642cdf6327c0cb5747494a36ae19656033d373a40d7749b1",
+        "bindings_normalized_sha256": "217ed367fc6d5e77b64f6e6b282b8d380b8607c48d8d0050e05749550de75bcb",
+        "map_sha256": "f63791e530e6d9c86f541eb40d64ce82e831476ff0ca0d6b26208fdb3a84347d",
+        "mz_sha256": "8de7dd87902c51ec3ea8fe1a6516d7bcbf52b16f3e00eec4d783b439a9877181",
+        "commands_sha256": "6c242901b4b3f3884a5b05e3af68e716f0abb37c59832eb2400274b18f1fc461"
+      },
+      "toolchain_reused": true,
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "toolchain_reuse_proof_sha256": "8f17bef0c12b4a279775faac9c05b0215c7dba757c2e7fbd6f78c4c5924283b2",
+      "replay_receipt_sha256": "a0ca55d07bd33a4c9aa04a225c525a508b3a57b612578b279fb219187cc6f5fe"
     }
   }
 }
