@@ -1,0 +1,1 @@
+extrn _FIVE_DIGIT_POWERS_OF_10:word

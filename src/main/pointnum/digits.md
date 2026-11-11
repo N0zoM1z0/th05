@@ -37,3 +37,12 @@ separate.
 Proposal: `.analysis/pointnum-digits-natural-proposal.toml`.
 Actual compiled model: `.analysis/pointnum-digits-cpp-model.json`, SHA-256
 `ac90d2261b8b77248d3db1005165e7e4b41a9c3dbe77d5243f4487f753f9de0a`.
+
+## Later full original-register recovery
+
+The natural C++ implementation above remains valid but does not reproduce
+Borland's original register allocation. An independent maintained ASM owner
+now exactly covers `[15870,158AA)`; see [native digit encoder](digits_register.md).
+Its BP reuse, single division loop, 58-byte complete CODE comparison and
+compiled negative are separately reviewed. This does not imply the earlier
+96-byte C++ diagnostic passed or claim an identical historical source file.

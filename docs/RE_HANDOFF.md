@@ -46,6 +46,7 @@ necessarily all authored bytes where padding is present.
 | MAIN MPN image upload | **69-byte** exact C++ at `E57C..E5C1` with original fixups `[12,32,61]` through unmodified TCC `-S`/TASM32 | [MPN uploader](../src/main/formats/mpn_upload.md) |
 | MAIN text bitmap painter | Full **98-byte** `bb_txt_put_8_raw` exact reviewed ASM at `E51A..E57C`; **96 authored** bytes and two checked NOPs | [Text bitmap drawing](../src/main/formats/bb_text_put.md) |
 | MAIN Boss BB tile masks | Full **232-byte** two-function original-register GRCG put/invalidate ASM at `F968..FA50`, ordered fixups `[17]` | [Boss bitmap masks](../src/main/tile/bb_mask_family.md) |
+| MAIN point popup digits | **58-byte** original-register decimal converter at `15870..158AA`; **57 authored** ASM bytes and one checked `EVEN` | [Digit converter](../src/main/pointnum/digits_register.md) |
 | MAIN Gather graphics primitives | **122-byte** original ASM family at `15312..1538C`, 120 authored bytes and two checked NOPs | [Gather raster](../src/main/gather/raster_primitives.md) |
 | MAIN bullet/Gather invalidation | Full **168-byte** reviewed original ASM at `E40E..E4B6`, no alignment or relocations | [Bullet/Gather dirty tiles](../src/main/bullet/gather_invalidate.md) |
 | MAIN Sara/Mai-Yuki background | **108-byte** two-function GRCG family `BEF4..BF60`, **104 authored** ASM bytes and four checked `EVEN` NOPs | [Early Boss backdrop](../src/main/boss/backdrop_fills_early.md) |

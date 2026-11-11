@@ -1,0 +1,8 @@
+; Actual near-Pascal BP frame and five-glyph decimal width policy.
+NUMBER_ARGUMENT equ 4
+LAST_DIGIT_ARGUMENT equ 6
+WORD_BYTES equ 2
+POINTNUM_DIGITS equ 5
+DECIMAL_QUOTIENT_COUNT equ (POINTNUM_DIGITS - 1)
+DISPLAY_WIDTH_BASE_DIGITS equ 2
+PIXEL_WIDTH_SHIFT equ 3

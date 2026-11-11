@@ -2498,3 +2498,32 @@ kind = "alignment"
 offset = 91
 size = 1
 kind = "alignment"
+
+[[units]]
+id = "main-pointnum-digits-register"
+artifact = "main"
+source = "src/main/pointnum/digits_register.asm"
+types = "src/main/pointnum/digits_register_types.inc"
+symbols = "probes/units/pointnum_digits_register_symbols.inc"
+bindings = "probes/units/pointnum_digits_register_bindings.asm"
+notes = "src/main/pointnum/digits_register.md"
+target_start = 88176
+size = 58
+segment = "POINTNUM_DIGITS_REGISTER_TEXT"
+group = "main_03"
+cs_base = 86640
+instruction_nops = []
+fixups = []
+native_review_sha256 = "6859866f5bd5b67a09a29156a94491ff6e6b77c75f48db4cfff6f9ee97b307c0"
+target_scope_sha256 = "38d6c24d88a037e4159911a3a1499f0a0bcb47f1c7e9358148d62fd7551b00ca"
+semantic_inputs = ["src/main/hud/decimal_tables.hpp", "src/main/pointnum/digits.hpp", "src/main/pointnum/add.asm"]
+[units.publics]
+"POINTNUM_DIGITS_SET" = 0
+"pointnum_digits_register_end" = 58
+[units.negative]
+find = "add bp, DISPLAY_WIDTH_BASE_DIGITS"
+replace = "add bp, (DISPLAY_WIDTH_BASE_DIGITS + 1)"
+[[units.uncredited]]
+offset = 57
+size = 1
+kind = "alignment"
