@@ -26,3 +26,26 @@ unit = "zun-resident-config"
 source = "src/zun/resident/config.cpp"
 find = "resident->cfg_lives > ZUN_CFG_LIVES_MAX"
 replace = "resident->cfg_lives > (ZUN_CFG_LIVES_MAX - 1)"
+
+[[units]]
+id = "zun-resident-semantic-initialized-data"
+source = "src/zun/resident/semantic_data.cpp"
+module = "th05/zdata.cpp"
+segment = "_DATA"
+source_encoding = "cp932"
+wrapper_options = ""
+bindings_source = "probes/units/zun_semantic_data_bindings.asm"
+target_start = 8354
+size = 320
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+alignment_offsets = []
+padding_bytes = []
+data_semantics = ["state", "filenames", "ui-text"]
+
+[[controls]]
+unit = "zun-resident-semantic-initialized-data"
+source = "src/zun/resident/semantic_data.cpp"
+find = "ZUN_CFG_LIVES_DEFAULT,"
+replace = "ZUN_CFG_LIVES_MAX,"

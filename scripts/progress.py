@@ -82,6 +82,20 @@ def classify_extent(entry: dict, *, target_bytes: bytes | None = None) -> dict:
             "instruction_bytes": authored - code_data, "padding_bytes": len(padding)}
 
 
+def validate_data_com_map_scope(entry: dict, comparison: dict, omf_scope: dict) -> None:
+    """Validate one complete DATA scope with real MZ/COM MAP coordinates.
+
+    The shared DATA/OMF oracle remains unchanged for existing MZ receipts.
+    Tiny COM MAP addresses include the PSP's original 0100h runtime bias,
+    whereas its raw file comparison uses unprefixed disk-file offsets.
+    """
+    bias = comparison.get("candidate_address_bias", 0)
+    if type(bias) is not int or bias not in (0, 0x100):
+        raise ValueError("invalid DATA MAP/file coordinate bias")
+    normalized = {**comparison, "candidate_start": comparison["candidate_start"] + bias}
+    validate_data_scope_evidence(entry, normalized, omf_scope)
+
+
 def validate_result(entry: dict, result: dict, *, require_exact: bool = True) -> None:
     classify_extent(entry)
     binding_layout.validate_result(entry, result)
@@ -101,7 +115,7 @@ def validate_result(entry: dict, result: dict, *, require_exact: bool = True) ->
                 or (require_exact and not comparison["exact"])):
             raise ValueError("raw bytes, boundaries or relocation evidence disagree")
         if unit_extent_kind(entry) == 'initialized-data':
-            validate_data_scope_evidence(entry, comparison,
+            validate_data_com_map_scope(entry, comparison,
                 result['omfs'][index].get('initialized_data_scope', {}))
         bias = comparison.get("candidate_address_bias", 0)
         if bias:
@@ -231,7 +245,7 @@ def summarize(root: Path = ROOT, acceptance: dict | None = None, *, artifact_nam
             negative = item.get('negative_control', {})
             if negative.get('unit_id') != entry['id']:
                 raise ValueError('initialized DATA needs its own compiled DATA mutation')
-            validate_data_scope_evidence(entry, item['compiled_negative_control'],
+            validate_data_com_map_scope(entry, item['compiled_negative_control'],
                 negative.get('omf', {}).get('initialized_data_scope', {}))
         start, end = entry["target_start"], entry["target_start"] + entry["size"]
         if any(start < right and end > left for left, right in covered):
@@ -684,7 +698,7 @@ def _validate_import(receipt_path: Path, *, root: Path, units: list[str] | None 
     if unit_extent_kind(control_entry) == 'initialized-data':
         negative_obj['initialized_data_scope'] = initialized_data_omf_scope(
             negative_object_bytes, control_entry, require_size=False)
-        validate_data_scope_evidence(control_entry, observed_control, negative_obj['initialized_data_scope'])
+        validate_data_com_map_scope(control_entry, observed_control, negative_obj['initialized_data_scope'])
         if not isinstance(negative.get('omf'), dict) or 'initialized_data_scope' not in negative['omf']:
             raise ValueError('negative initialized DATA is missing its actual compiler DATA evidence')
     if not negative_obj["valid"] or negative_obj["translator_comments"] != ["TC86 Borland C++ 4.02"]:

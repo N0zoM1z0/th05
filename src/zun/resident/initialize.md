@@ -129,3 +129,23 @@ resident entry (`05B6..05DA`) now belongs to the same complete native
 The `-S` vendor CODE has a continuous 1,056-byte exact interval from
 `05B6..09D6`, but this adds no credit to the compiler-generated `main()`
 whose error-branch layout remains unresolved.
+
+## ZUN resident initialization data is now exact
+
+The natural [320-byte `_DATA` contribution](semantic_data.md) defining all
+actual startup messages, defaults and resident ID is source-exact. It is
+compiled as readable UTF-8 → native CP932 with the real tiny-model DATA
+placement, not copied from the target. The `main()` control flow itself is
+still unaccepted; source and DATA evidence must not be conflated.
+
+## Direct Japanese literal and complete DATA-context probe
+
+A focused experiment replaced the named message arguments with the original
+Japanese string literals from `th02/res_init.cpp`, then repeated direct
+TCC `-c` and TCC `-S`/TASM compilation both with and without the complete
+320-byte accepted initializer in the translation unit. Direct TCC still
+produces a 260-byte main; the assembly backend still produces 273. The
+message-definition linkage alone therefore does not explain the original
+269-byte failure-branch layout. Private OMF evidence lives under
+`.analysis/gpt-web-zun-main-inlineliterals-*`. The natural `main()` source
+stays unchanged and unaccepted.

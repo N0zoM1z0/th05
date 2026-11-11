@@ -7,7 +7,7 @@
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-c-initialized-data": 1883,
-    "accepted-cxx-initialized-data": 13794,
+    "accepted-cxx-initialized-data": 14114,
     "accepted-cxx-instructions": 107740,
     "accepted-cxx-switch-table": 1044,
     "accepted-reviewed-asm-dispatch-table": 250,
@@ -19,7 +19,7 @@
     "checked-uncredited-asm-runtime-placeholder": 22,
     "checked-uncredited-padding": 101,
     "reviewed-embedded-font-bitmap": 8192,
-    "unknown": 94815,
+    "unknown": 94495,
     "verified-vendor-code": 73804,
     "verified-vendor-initialized-data": 3777
   },
@@ -8931,9 +8931,10 @@
       "sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "original_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
       "byte_counts": {
+        "accepted-cxx-initialized-data": 320,
         "accepted-cxx-instructions": 322,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 9602
+        "unknown": 9282
       },
       "intervals": [
         {
@@ -8949,6 +8950,17 @@
         },
         {
           "start": 3725,
+          "end": 8354,
+          "kind": "unknown"
+        },
+        {
+          "start": 8354,
+          "end": 8674,
+          "kind": "accepted-cxx-initialized-data",
+          "unit": "zun-resident-semantic-initialized-data"
+        },
+        {
+          "start": 8674,
           "end": 9537,
           "kind": "unknown"
         },

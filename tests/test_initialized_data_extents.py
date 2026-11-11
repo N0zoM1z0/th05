@@ -17,7 +17,7 @@ from lib.unit_extents import (
 )
 from lib.pc98 import parse_mz
 from lib.unit_oracle import compare_unit
-from progress import validate_control
+from progress import validate_control, validate_data_com_map_scope
 
 
 def entry():
@@ -108,6 +108,21 @@ class InitializedDataExtentTests(unittest.TestCase):
             },
         }
         validate_data_scope_evidence(value, comparison, scope)
+        # ZUN is a plain COM with no MZ header: runtime MAP starts +0100h
+        # past the producer's raw file offset, unlike an MZ comparison.
+        tiny = copy.deepcopy(comparison)
+        tiny["candidate_start"] -= 0x100
+        tiny["candidate_address_bias"] = 0x100
+        validate_data_com_map_scope(value, tiny, scope)
+        for wrong_bias in (0x10, -0x100, True):
+            invalid = copy.deepcopy(tiny)
+            invalid["candidate_address_bias"] = wrong_bias
+            with self.assertRaisesRegex(ValueError, "coordinate bias"):
+                validate_data_com_map_scope(value, invalid, scope)
+        invalid = copy.deepcopy(tiny)
+        invalid["candidate_start"] += 1
+        with self.assertRaisesRegex(ValueError, "DATA MAP evidence"):
+            validate_data_com_map_scope(value, invalid, scope)
         for patch in ({"map_class": "BSS"}, {"kind": "complete-function"}, {"size": 7}):
             bad = copy.deepcopy(comparison)
             bad["map_scope"].update(patch)
