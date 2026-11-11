@@ -87,6 +87,10 @@ def main():
     # from its real _BSSEND FIXUPP; no other game DATA or CODE is claimed.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_main_c0_data.py"), "--structural-check"],
                    cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    # Master 0.23 original ATAN8 is a whole 256-byte initialized lookup,
+    # never its following two source-unwritten DATA alignment zeros.
+    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_atan8_data.py"),
+                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
     # OP and MAINE each contain complete CL farheap/exec CODE SEGDEFs with
     # eight original unwritten CS: state bytes. Adopt actual OMF writes only.
     for context in ("op", "maine"):

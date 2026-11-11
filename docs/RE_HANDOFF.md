@@ -24,9 +24,15 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,526 decoded bytes**:
-MAIN 5,540; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **28,270 decoded bytes**:
+MAIN 5,284; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
+
+The original [Master ATAN8 lookup review](reconstruction/MAIN_ATAN8_NATIVE.md)
+now attributes 256 source-written initialized DATA bytes at MAIN
+`20C2E..20D2E` from the complete, byte-identical original author ASM,
+real TASM OMF and original/calibration MZ. Its two following data-alignment
+zeros are deliberately **unknown**; this earns no game-authored credit.
 
 The [MAIN pause-screen text](../src/main/resources/pause_spaces.md) and
 [demo/EMS/face filename bank](../src/main/resources/session_files.md) now
