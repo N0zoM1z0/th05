@@ -276,3 +276,24 @@ cfg-success-first,argc-switch,debug-invalid-first}/`; the reproducible runner
 is `.analysis/gpt-web-zun-control-shapes-20261111.py`. The maintained
 `initialize.cpp`, accepted resident DATA/CRT/config, and all other ZUN owners
 remain unchanged. No partial CODE credit or whole-file exactness is claimed.
+
+## Structured-error-exit native probes (2026-11-11)
+
+Three further behavior-preserving control-flow forms were compiled by the real
+tiny-model Turbo C++ `-c` producer, then linked with the accepted C0T,
+`cfg_init()` and initialized resident DATA. The original `-S` `main()` is
+269 bytes; the ordinary maintained candidate is 260 bytes:
+
+| Source form | Native `main()` size | Full original match |
+| --- | ---: | --- |
+| `do/while(false)` around initialization, `break` to one failure return | 261 | No |
+| Explicit integer status returned through a common exit | 276 | No |
+| `switch` on resident-presence result before allocation | 272 | No |
+
+These real control-flow changes still do not reproduce the original distinct
+DOS error-print tails. No artificial barriers, copied machine instructions,
+or changes to the accepted resident source were used. The kept local trial
+runner is `.analysis/gpt-web-zun-structured-exits-20261111.py`; each linked
+COM and `result.json` is under the matching
+`.analysis/gpt-web-zun-natural-return-{do-while-failure,status-return,nested-presence-switch}/`
+directory. The 269-byte natural C++ `main()` remains unresolved.
