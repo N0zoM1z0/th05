@@ -90,14 +90,25 @@ void near egc_start_copy(void)
     cutscene_egc_write(EGC_READPLANEREG, 0x00FF);
     cutscene_egc_write(EGC_MODE_ROP_REG, 0x3100);
     cutscene_egc_write(EGC_MASKREG, 0xFFFF);
+#ifdef TH05_CUTSCENE_JOINED
+    // The original word-write must use MOV, not flag-changing XOR.
+    asm { mov ax, 0 }
+    _DX = EGC_ADDRRESSREG;
+    outport(_DX, _AX);
+#else
     cutscene_egc_write(EGC_ADDRRESSREG, 0);
+#endif
     cutscene_egc_write(EGC_BITLENGTHREG, 0xF);
 }
 
 // The complete EGC helper above remains inexact. The independent linker
 // context preserves one uncredited byte between these CODE contributions;
 // no byte or instruction is supplied inside either compiler-owned function.
+#ifdef TH05_CUTSCENE_JOINED
+#pragma codeseg CUTSCENE_TEXT group_01
+#else
 #pragma codeseg CUTSCENE_AFTER_TEXT group_01
+#endif
 void near cutscene_animate(void);
 void pascal near box_wait_animate(int frames_to_wait = 0);
 void near box_1_to_0_animate(void);
@@ -232,6 +243,9 @@ void pascal near box_wait_animate(int frames_to_wait)
 	}
 }
 
+#ifndef CUTSCENE_SCRIPT_DEFAULT_COLOR
+#define CUTSCENE_SCRIPT_DEFAULT_COLOR V_WHITE
+#endif
 script_ret_t pascal near script_op(unsigned char c)
 {
 
@@ -282,7 +296,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		if(c == '=') {
 			goto colmap_add;
 		}
-		script_param_read_number_first(p1, V_WHITE);
+		script_param_read_number_first(p1, CUTSCENE_SCRIPT_DEFAULT_COLOR);
 		text_col = p1;
 		break;
 

@@ -76,7 +76,8 @@ necessarily all authored bytes where padding is present.
 | MAIN high-score insertion | **168-byte** natural C++ `hiscore_continue_enter_raw()` at `C8F0..C998`, real TCC `-S`/TASM32 compilation, no fixups | [Insertion source](../src/main/score/continue_raw.md) |
 | MAIN high-score display | **22-byte** `hiscore_load()` at `C9A4..C9BA` exact C++; original `BX`/`CX` digit loop | [High score loader](../src/main/score/hiscore_load.md) |
 | MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
-| MAINE cutscene EGC setup | Complete **52-byte** near C++ at `A6D1..A705` with original `EGC_ON` fixup `[6]`; the 1,555-byte interpreter remains separate | [EGC setup](../src/maine/cutscene/egc_setup_exact.md) |
+| MAINE cutscene script VM | **1,555-byte** full C++ `script_op()` including 64-byte switch table at `A9C3..AFD6`, exact 42-site relocation order; unified 2,848-byte CODE proof | [Cutscene VM](../src/maine/cutscene/cutscene.md) |
+| MAINE cutscene EGC setup | Complete **52-byte** near C++ at `A6D1..A705` with original `EGC_ON` fixup `[6]`; the separately accepted interpreter now matches the complete unified CODE module | [EGC setup](../src/maine/cutscene/egc_setup_exact.md) |
 | MAIN/OP/MAINE SE reset | **11-byte** exact `snd_se_reset()` far C++ per binary; 33 new instruction bytes, three outside `EVEN` NOPs | [Sound reset](../src/shared/sound/se_reset_exact.md) |
 | MAIN/OP/MAINE sound effects | Per binary, **57-byte** SE play + **76-byte** SE update exact C++; all original update fixups `[43]` | [Sound controller](../src/shared/sound/se.md) |
 | MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |
@@ -106,7 +107,7 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Far vector pair resolved:** MAIN `14AB8..14B58` contains **159 newly accepted C++ instruction bytes** across two complete near-adjacent far-Pascal functions. TCC `-S`/TASM32 reproduces native 386 `MOVSX` and the original `[24]` second-function fixup; the one `14AFD` EVEN byte is outside both owners. See [complete source and receipts](../src/shared/math/vector_far.md).
 
-**Large MAINE cutscene interpreter remains open:** The 1,555-byte `script_op()` has an inexact native C++ producer. A fresh TCC `-S` / TASM32 experiment identified its missing compiler CODE-group declaration and reduced the linked byte mismatch to one switch-table pointer (two immediate bytes); the 42 original relocation sites remain wrongly ordered. See [dispatcher compiler context](../src/maine/cutscene/script_op_assembler_context.md). The nine separately accepted cutscene neighbors are unchanged.
+**MAINE cutscene interpreter resolved:** `script_op()` now has a complete **1,555-byte C++ exact owner**, including all 42 original ordered far-call fixups and its 64-byte sparse switch. Recovering the original unified CODE group also matches the full 2,848-byte eleven-function module and all 64 ordered fixups; the nine previously accepted functions were revalidated with unchanged behavior. See [unified cutscene review](../src/maine/cutscene/cutscene.md) and [compiler-buffer evidence](../src/maine/cutscene/script_op_assembler_context.md).
 
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary

@@ -7,17 +7,17 @@ complete authored ownership denominator remains under review.
 | --- | ---: | ---: | ---: | ---: | ---: |
 | MAIN bounded C/C++ units | 465 | 75872 | 75146 | 726 | 75956 |
 | OP decoded C/C++ units | 90 | 14016 | 13862 | 154 | 14022 |
-| MAINE decoded C/C++ units | 90 | 16893 | 16793 | 100 | 16901 |
+| MAINE decoded C/C++ units | 91 | 18448 | 18284 | 164 | 18456 |
 | ZUN embedded C/C++ units | 1 | 322 | 322 | 0 | 322 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
 | MAIN bounded C/C++ units | 27 | 3341 | 79213 | 79300 |
 | OP decoded C/C++ units | 10 | 8721 | 22737 | 22743 |
-| MAINE decoded C/C++ units | 12 | 3615 | 20508 | 20516 |
+| MAINE decoded C/C++ units | 12 | 3615 | 22063 | 22071 |
 | ZUN embedded C/C++ units | 0 | 0 | 322 | 322 |
 
-450 bounded C/C++ units pass two cold producers, raw bytes and original
+451 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,9 +27,9 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 122780: 107103 authored CODE plus 15677
+Total authored C/C++ bytes are 124335: 108658 authored CODE plus 15677
 initialized DATA bytes. This does not change the global denominator.
-Authored code includes 980 bytes of explicitly classified compiler switch
+Authored code includes 1044 bytes of explicitly classified compiler switch
 tables; these remain separate from instruction bytes. All 101 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete

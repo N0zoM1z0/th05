@@ -1673,3 +1673,26 @@ unit = "maine-snd-se-reset-exact"
 source = "src/shared/sound/se_reset_exact.cpp"
 find = "snd_se_playing = SE_NONE;"
 replace = "snd_se_playing = 0;"
+
+[[units]]
+id = "maine-cutscene-script-op-unified"
+source = "src/maine/cutscene/cutscene_joined.cpp"
+module = "th05/cutjoin.cpp"
+segment = "CUTSCENE_TEXT"
+wrapper_options = "-zPgroup_01"
+source_encoding = "cp932"
+bindings_source = "probes/units/maine_cutscene_joined_bindings.asm"
+function_symbol = "script_op(unsigned char)"
+function_end_symbol = "cutscene_animate()"
+target_start = 0xa9c3
+size = 1555
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+code_data_ranges = [{offset = 1491, size = 64, kind = "compiler-switch-table"}]
+
+[[controls]]
+unit = "maine-cutscene-script-op-unified"
+source = "src/maine/cutscene/cutscene_joined.cpp"
+find = "#define CUTSCENE_SCRIPT_DEFAULT_COLOR 15"
+replace = "#define CUTSCENE_SCRIPT_DEFAULT_COLOR 14"

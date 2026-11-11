@@ -52,3 +52,15 @@ the relocation order; splitting `cutscene_animate` also yields one extra
 trailing compiler alignment byte. The isolated experiments are in the private
 `gpt-web-maine-cutscene-split-scriptop-{a,b}` directories. These are useful
 placement evidence, not acceptance or a reason to reorder fixup records.
+
+## Resolved: original single CODE segment
+
+The compiler-buffer hypothesis was confirmed with a real unified translation
+unit. With the previously split 111-byte prefix and remainder restored to one
+`CUTSCENE_TEXT` segment, the correct LEDATA boundaries appear at offsets
+1,024 and 2,048. The complete `script_op()` now matches every byte and all
+42 ordered fixups, and the entire 2,848-byte module matches its original 64
+ordered fixups. The strict receipt is
+`.analysis/unit-replays/gpt-web-maine-cutscene-script-op-unified-a/receipt.json`.
+The earlier mismatches above remain valid diagnostics for the different split
+producer, **not a current open interpreter blocker**.

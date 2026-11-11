@@ -174,3 +174,37 @@ owner now matches the entire 52-byte `A6D1..A705` routine; see
 [exact EGC setup](egc_setup_exact.md). The original nine accepted functions
 and their source inputs are unchanged. The 1,555-byte `script_op()` still has
 unmatched original relocation ordering and earns no code credit.
+
+## Complete original CODE segment and dispatcher acceptance
+
+The remaining 1,555-byte `script_op(unsigned char)` now passes exact native
+comparison, including the full 64-byte sparse-switch table and **42 original
+ordered MZ relocation sites**. The original compiler contribution was not two
+CODE segments: all eleven MAINE cutscene functions occupy **one 2,848-byte
+`CUTSCENE_TEXT` segment** at decoded `A695..B1B5` in `group_01`. Reconstructing
+that context also reproduces all **2,848 native bytes** and the original
+**64-site relocation sequence**, with natural OMF LEDATA chunks of
+1,024/1,024/800 bytes. Previously splitting out EGC caused a different
+compiler buffer boundary and therefore a different relocation order, even
+though the interpreter instructions themselves already matched.
+
+The maintained one-segment wrapper `cutscene_joined.cpp` includes the same
+canonical gameplay source. Two small compile-time choices preserve the old
+nine-function split context: joined mode selects `CUTSCENE_TEXT` instead of
+`CUTSCENE_AFTER_TEXT` and expresses the original EGC zero-word write through
+semantic `MOV AX,0`. The color-map default (white, 15) is a genuine gameplay
+constant and provides the new interpreter's compiled negative. No translated
+opcodes, patched OMF, relocation sorting, foreign function bodies or copied
+script strings are introduced.
+
+Strict source-backed receipts:
+
+- New `script_op` full function: `.analysis/unit-replays/gpt-web-maine-cutscene-script-op-unified-a/receipt.json`
+- All nine existing split-context functions, revalidated after the common
+  source change: `.analysis/unit-replays/gpt-web-maine-cutscene-split-after-join-a/receipt.json`
+
+The independently accepted 52-byte EGC setup remains a distinct owner. The
+three accepted scopes together cover all 2,848 original bytes: 1,241 from
+nine functions, 52 from EGC, and 1,555 from the dispatcher. Existing original
+16-byte `cutscene_animate` and 64-byte `script_op` CODE tables are included
+in their complete function extents, never double-counted.
