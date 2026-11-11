@@ -46,6 +46,34 @@ FUNCTIONS={
     'BGM_READ_SDATA':{'op':(0x2e52,320),'maine':(0x301a,320)},
     'GRCG_POLYGON_C':{'op':(0x0cca,536)},
     'GRCG_BOXFILL':{'maine':(0x0bce,208)},
+    # Further complete source-backed Master functions, discovered by
+    # checking the original native OMF against both linked images.
+    # No source-inexact candidates or boundary-crossing padding included.
+    'FILE_FLUSH':{'op':(0x08cc,108),'maine':(0x08da,108)},
+    'FILE_READ':{'op':(0x09a4,180),'maine':(0x09b2,180)},
+    'FILE_WRITE':{'op':(0x0ad6,166),'maine':(0x0af2,166)},
+    'GRCG_BYTEBOXFILL_X':{'op':(0x0bac,152),'maine':(0x0c9e,152)},
+    'GRCG_HLINE':{'op':(0x0c44,134),'maine':(0x0e5e,134)},
+    'GRCG_VLINE':{'op':(0x0f12,134),'maine':(0x0f58,134)},
+    'GRC_SETCLIP':{'maine':(0x0dcc,146)},
+    'GRCG_PSET':{'maine':(0x0ee4,68)},
+    'GRAPH_400LINE':{'op':(0x11c8,78),'maine':(0x12b4,78)},
+    'GRAPH_EXTMODE':{'op':(0x12a6,86),'maine':(0x1392,86)},
+    'SUPER_ENTRY_PAT':{'op':(0x2536,172),'maine':(0x2774,172)},
+    'SUPER_ENTRY_AT':{'op':(0x25e2,116),'maine':(0x2820,116)},
+    'SUPER_CANCEL_PAT':{'op':(0x26e0,80),'maine':(0x291e,80)},
+    'SUPER_FREE':{'op':(0x24f2,68),'maine':(0x2730,68)},
+    'SUPER_CONVERT_TINY':{'maine':(0x2d1a,156)},
+    'SUPER_PUT_TINY_SMALL':{'maine':(0x2db6,144)},
+    'HMEM_FREE':{'op':(0x2426,168),'maine':(0x2664,168)},
+    '_BGM_MGET':{'op':(0x2d28,298),'maine':(0x2ef0,298)},
+    '_BGM_PLAY':{'op':(0x3156,302),'maine':(0x331e,302)},
+    'BGM_FINISH':{'op':(0x3532,94),'maine':(0x36fa,94)},
+    '_BGM_EFFECT_SOUND':{'op':(0x32ce,120),'maine':(0x3496,120)},
+    'BGM_SOUND':{'op':(0x3284,74),'maine':(0x344c,74)},
+    'GAIJI_PUTSA':{'maine':(0x125e,86)},
+    'GAIJI_PUTCA':{'maine':(0x121a,68)},
+    'IATAN2':{'maine':(0x1a8c,108)},
 }
 ARTIFACTS=('op','maine')
 
@@ -59,6 +87,16 @@ def normalized_source(text,name):
     if name=='GRCG_POLYGON_C':
         return [re.sub(r'\s+','',row.split(';',1)[0].lower().replace('@@',''))
                 for row in text.splitlines() if row.split(';',1)[0].strip()]
+    if name.startswith('_BGM') or name.startswith('BGM_'):
+        return bgm_lines(text,name)
+    if name.startswith('FILE_') or name=='HMEM_FREE':
+        return semantic_lines(text,name)
+    if name.startswith('SUPER_'):
+        return super_lines(text)
+    if (name.startswith('GRCG_') or name.startswith('GRC_') or
+            name.startswith('GRAPH_') or name.startswith('GAIJI_') or
+            name=='IATAN2'):
+        return symbolic_source(text)
     raise ValueError('unreviewed original source normalization')
 
 
@@ -250,7 +288,7 @@ def replay():
                 ref=archived[0]['text']
             else:
                 need(start in public.get(name,set()),
-                     'genuine TASM/MAP complete Master function entry differs')
+                     'genuine TASM/MAP complete Master function entry differs: '+name)
                 source_paths=[(f,b) for f in (p/'libs/master.lib').glob('*.asm')
                               for b in source_blocks(f.read_bytes(),'utf8')
                               if b['name']==name]
