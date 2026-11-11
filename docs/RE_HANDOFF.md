@@ -24,9 +24,17 @@ These files, not historical trial notes, are authoritative:
 **Current ledger snapshot:** 454 accepted bounded C/C++ units,
 **124,781 authored source bytes** (108,784 CODE plus 15,997 initialized
 DATA). This is *not* a percentage: the global authored-byte denominator
-has not been accepted. Unknown ownership totals **28,607 decoded bytes**:
-MAIN 5,621; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
+has not been accepted. Unknown ownership totals **28,526 decoded bytes**:
+MAIN 5,540; OP 7,059; MAINE 7,368; ZUN 8,559. Recalculate from the
 ledgers before quoting these numbers after further changes.
+
+The [MAIN pause-screen text](../src/main/resources/pause_spaces.md) and
+[demo/EMS/face filename bank](../src/main/resources/session_files.md) now
+have two separately accepted *natural C initialized-DATA* owners at
+`20BDD..20BEC` (15 bytes) and `20BEC..20C2E` (66 bytes). Each exactly matches
+its original semantic strings with two native producers and a real compiled
+negative. The following source/foreign DATA is a separate unknown boundary;
+neither accepted unit provides a hidden copy of the other.
 
 ## Most useful next reconstruction work
 
