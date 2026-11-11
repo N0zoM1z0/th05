@@ -297,3 +297,26 @@ runner is `.analysis/gpt-web-zun-structured-exits-20261111.py`; each linked
 COM and `result.json` is under the matching
 `.analysis/gpt-web-zun-natural-return-{do-while-failure,status-return,nested-presence-switch}/`
 directory. The 269-byte natural C++ `main()` remains unresolved.
+
+## Mixed control-flow and jump-optimizer experiments (2026-11-11)
+
+Four further natural source-level option-dispatch and allocation branch forms
+were compiled with the actual tiny-model TCC 4.02 producer, the original C0T,
+`cfg_init()` and the accepted 320-byte semantic DATA. Only the resident entry
+had `#pragma option -O-` (jump optimization disabled); the accepted prefix
+kept its original compiler settings. Results versus original 269-byte `main()`:
+
+| Control-flow form | Emitted complete main | Native raw match |
+| --- | ---: | --- |
+| `switch(argc)` with `case 2` | 270 | No |
+| Debug-option test with invalid condition first | 260 | No |
+| Creation success path before memory-failure exit | 262 | No |
+| Config initialization success path before error exit | 262 | No |
+
+The 270-byte `switch` source remains very different from the original in its
+complete branch layout; matching size or a near match is not useful without
+exact original ordered bytes. None of these experiments used self-assignments,
+empty helper calls or instruction fillers. They do not alter the maintained
+`initialize.cpp` or its unaccepted status. Reproducible diagnostics:
+`.analysis/gpt-web-zun-noopt-natural-flow-20261111.py` and the saved linked
+`.analysis/gpt-web-zun-natural-return-*-no-jump-opt/` trials.
