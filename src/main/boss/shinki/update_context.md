@@ -64,3 +64,20 @@ CODE bytes (932 instructions plus 26 compiler-table bytes). The 1,175-byte
 prefix is already accepted through other owners and receives no second credit.
 Ball update 220 and wing preparation 386 remain unknown. There is no new DATA,
 ASM, packed-container or whole-program exactness claim.
+
+## Named Shinki attack phases (2026-11-11)
+
+The 959-byte complete `shinki_update()` controller now names phases 2–12
+according to their actual attack and movement behavior: curved rings,
+random kunai, approach, wing preparation/rain/spread walls, purple
+transition, symmetric spreads, devil, defeat transition and final
+circles. Existing phase 0/1 constants and the nested `boss.mode`
+cases remain unchanged.
+
+The focused `main-shinki-update-context` replay compiled this edited
+C++ source twice with the real Borland toolchain. Both complete 959-byte
+outputs, the switch table, and original ordered relocations at relative
++862, +461, +165 and +128 matched. The existing
+`boss_defeat_update(65)` negative control was rejected, and the
+accepted-unit ledger now identifies the renamed source. There is
+no new byte credit: the entire function was already exact.

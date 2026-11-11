@@ -128,6 +128,17 @@ void pascal shinki_update(void)
 
 	enum {
 		PHASE_11_FRAMES = 16,
+		SHINKI_PHASE_CURVED_RINGS = 2,
+		SHINKI_PHASE_RANDOM_KUNAI = 3,
+		SHINKI_PHASE_APPROACH_WINGS = 4,
+		SHINKI_PHASE_WING_PREPARATION = 5,
+		SHINKI_PHASE_WING_RAIN = 6,
+		SHINKI_PHASE_SPREAD_WALLS = 7,
+		SHINKI_PHASE_PURPLE_TRANSITION = 8,
+		SHINKI_PHASE_SYMMETRIC_SPREADS = 9,
+		SHINKI_PHASE_DEVIL = 10,
+		SHINKI_PHASE_DEFEAT_TRANSITION = 11,
+		SHINKI_PHASE_FINAL_CIRCLES = 12
 	};
 
 	bool16 phase_done;
@@ -189,8 +200,8 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 2:
-	case 3:
+	case SHINKI_PHASE_CURVED_RINGS:
+	case SHINKI_PHASE_RANDOM_KUNAI:
 		switch(boss.mode) {
 		case 0:
 			if(boss_flystep_random(
@@ -235,7 +246,7 @@ void pascal shinki_update(void)
 		phase_relative++;
 		break;
 
-	case 4:
+	case SHINKI_PHASE_APPROACH_WINGS:
 		boss_hittest_shots();
 
 		// Timeout condition
@@ -248,7 +259,7 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 5:
+	case SHINKI_PHASE_WING_PREPARATION:
 		boss_hittest_shots();
 
 		// Timeout condition
@@ -267,8 +278,8 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 6:
-	case 7:
+	case SHINKI_PHASE_WING_RAIN:
+	case SHINKI_PHASE_SPREAD_WALLS:
 		if(Palettes[0].c.b < 0x80) {
 			if(stage_frame_mod16 == 0) {
 				Palettes[0].c.b++;
@@ -298,7 +309,7 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 8:
+	case SHINKI_PHASE_PURPLE_TRANSITION:
 		if(Palettes[0].c.b > 0x00) {
 			if(stage_frame_mod8 == 0) {
 				Palettes[0].c.b--;
@@ -317,8 +328,8 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 9:
-	case 10:
+	case SHINKI_PHASE_SYMMETRIC_SPREADS:
+	case SHINKI_PHASE_DEVIL:
 		if(Palettes[0].c.b > 0x00) {
 			if(stage_frame_mod8 == 0) {
 				Palettes[0].c.b--;
@@ -366,7 +377,7 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 11:
+	case SHINKI_PHASE_DEFEAT_TRANSITION:
 		boss_hittest_shots();
 		if((boss.phase_frame % 2) == 0) {
 			palette_settone_deferred(150);
@@ -386,7 +397,7 @@ void pascal shinki_update(void)
 		}
 		break;
 
-	case 12:
+	case SHINKI_PHASE_FINAL_CIRCLES:
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
 		if(boss.phase_frame < 3000) {

@@ -2,34 +2,40 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c9be590de63bc5256acea41f4530618be0272124b20147bcef0f807e95c5a47d",
+  "replay_receipt_sha256": "a1d64dd13ee57be595e6afab17d41373853bb713499e6abc29ee6a2f396bb314",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 128733,
-    "candidate_start": 128733,
-    "size": 884,
-    "target_sha256": "3b8e6406119c30d74277e5dcb1d872d0d1d0265bc775393b4933de3f7b930e6c",
-    "candidate_sha256": "81e685c2f11bab7119cc54601f2ca96b40202353aeb200ebe22cec2e2f6f83dc",
+    "target_start": 112347,
+    "candidate_start": 112347,
+    "size": 959,
+    "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+    "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
     "raw_exact": false,
     "target_fixups": [
-      399,
-      344,
-      333,
-      270,
-      161,
-      79
+      862,
+      461,
+      165,
+      128
     ],
     "candidate_fixups": [
-      399,
-      344,
-      333,
-      270,
-      161,
-      79
+      862,
+      461,
+      165,
+      128
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 112347,
+      "size": 959,
+      "function_symbol": "shinki_update()",
+      "contribution_start": 111172,
+      "contribution_size": 2134,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -66358,7 +66364,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "b3190a246190145bc35cb4cb2477d5a543f26529d1c5fdde1f706c0da799f235",
+            "sha256": "73f5409d9eb59a2a7801d0b35a2783169166fb59de3f3fc81f73ef24e9595cf4",
             "dependency_timestamp_normalized_sha256": "fe8ee81afd0a53c24f65c2a118c1aabf2df9cd6e92ddaa512f7a015fb0fa45d5",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -66391,7 +66397,7 @@
             ]
           },
           {
-            "sha256": "54c24eb1e9f3c6ea5e6b33b403c3aa6e8b12dbc990e335a596d143884f4bf9b5",
+            "sha256": "f1a90211e71a48c83882b6543c10c7e87dbf1c6f365d38d893bf2688bb27469a",
             "dependency_timestamp_normalized_sha256": "fe8ee81afd0a53c24f65c2a118c1aabf2df9cd6e92ddaa512f7a015fb0fa45d5",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -66483,7 +66489,7 @@
           },
           {
             "path": "src/main/boss/shinki/update_context.cpp",
-            "sha256": "33d5d66ab71baac1e2eaa8f7b7ee579ffcf7cba8e938c609fe19ea924449fc0a"
+            "sha256": "84a8d3502e35f373e8015c0ae0216b8c882a9122e5a99b8523d9d5f481efb2c4"
           },
           {
             "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -66551,7 +66557,7 @@
         },
         {
           "path": "src/main/boss/shinki/update_context.cpp",
-          "sha256": "33d5d66ab71baac1e2eaa8f7b7ee579ffcf7cba8e938c609fe19ea924449fc0a"
+          "sha256": "84a8d3502e35f373e8015c0ae0216b8c882a9122e5a99b8523d9d5f481efb2c4"
         },
         {
           "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -66592,7 +66598,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "f24cd051d993235d3c8dba38871681d74e94e716bcaecbb8e61e8dfa69e8c317",
+      "replay_receipt_sha256": "a1d64dd13ee57be595e6afab17d41373853bb713499e6abc29ee6a2f396bb314",
       "compiled_negative_control": {
         "target_start": 112347,
         "candidate_start": 112347,
@@ -66669,7 +66675,7 @@
           }
         },
         "omf": {
-          "sha256": "777bc6394e47016ad6dacc417d5808b9dec34ac4717a6d6538c4b9b68b3616ce",
+          "sha256": "b1cd336e0e1e18641c737ff5cd9f6fdb79c1f2a1403e33cb178cb91f950f63f8",
           "dependency_timestamp_normalized_sha256": "3811ce845a79c27f3d1b64e7b65e587ff8b7987319b511c5ade5a1df5555577d",
           "module_name": "th05/b6_ctx.cpp",
           "translator_comments": [
@@ -66715,7 +66721,10 @@
           "th05/b6_ctx.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-update-context"
+      ]
     },
     {
       "id": "main-alice-update-context",
