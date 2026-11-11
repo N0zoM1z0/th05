@@ -94,6 +94,16 @@ following accepted 115-byte driver brings contiguous scroll CODE to **319
 bytes**. See [tile-row ring update](../src/main/scroll/ring_update.md) and
 `.analysis/unit-replays/gpt-web-main-scroll-tile-ring-204-20261111/receipt.json`.
 
+The 154-byte MAIN **EMS Boss faceset preload** at `[B9CC,BA66)` is now
+independently source-exact: two real Turbo C++/TLINK rounds match 154/154
+original bytes and **literal four-site native relocation order**
+`[71,24,133,114]`, plus a rejected compiled Boss CDG-slot mutation. The
+true 3,226-byte original-order compiler context and separate source-free
+foreign SHARED SEGDEF restore both compiler FIXUPP partition and physical
+CS14AB/DS209D. The three other EMS functions (155+267+108) remain accepted
+by their prior owners without double credit. See [EMS source details](../src/main/ems/ems.md) and
+`.analysis/unit-replays/gpt-web-main-ems-boss-154-full-context-20261111/receipt.json`.
+
 The MAIN 115-byte scroll state machine `scroll_driver()` is now exact C++
 with original register/flag operations at `[C506,C579)`: two independent
 compilers match all raw bytes and `GRAPH_SCROLLUP` fixup `+57`; changing the

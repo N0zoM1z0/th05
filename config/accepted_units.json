@@ -2,29 +2,39 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "8e108ab75c31959ae1b82671f4e2bcdd18451ef48b66ed56441d837b3b1cb0db",
+  "replay_receipt_sha256": "535153059f90d7a02bc7dfcfd592d2cc6b776fb1eb472fc63236e88eb578f530",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 86216,
-    "candidate_start": 86216,
-    "size": 16,
-    "target_sha256": "1cdb3009a45fc5496a4267eb30b40655ea32120e9703d06d3ada438eac63fd62",
-    "candidate_sha256": "cffe25087f5c99b70cee5bcafa09f05e432cd2670c1fbd6face726da3f8719aa",
+    "target_start": 47564,
+    "candidate_start": 47564,
+    "size": 154,
+    "target_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+    "candidate_sha256": "f3a1d5fb4dcac0587c687a7698eb4a331e405dcbcdceb6bfa1225754ee6bfe90",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      71,
+      24,
+      133,
+      114
+    ],
+    "candidate_fixups": [
+      71,
+      24,
+      133,
+      114
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 86216,
-      "size": 16,
-      "function_symbol": "input_reset_sense_held()",
-      "contribution_start": 86216,
-      "contribution_size": 58,
+      "start": 47564,
+      "size": 154,
+      "function_symbol": "ems_preload_boss_faceset(const char far*)",
+      "contribution_start": 44600,
+      "contribution_size": 3226,
       "boundary_kind": "next-function",
-      "next_function_symbol": "input_wait_for_change(int)"
+      "next_function_symbol": "eyecatch_animate()"
     }
   },
   "units": [
@@ -86944,6 +86954,580 @@
           "-DBINARY='M'",
           "th05/inpwait.cpp"
         ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-ems-boss-faceset-complete-3226",
+      "entry_sha256": "f9806af13f5dc3bcd6523845b1c96bc4456fc7d596646601dc94b307402f2eac",
+      "result": {
+        "id": "main-ems-boss-faceset-complete-3226",
+        "entry_sha256": "f9806af13f5dc3bcd6523845b1c96bc4456fc7d596646601dc94b307402f2eac",
+        "rounds": [
+          {
+            "target_start": 47564,
+            "candidate_start": 47564,
+            "size": 154,
+            "target_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+            "candidate_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+            "raw_exact": true,
+            "target_fixups": [
+              71,
+              24,
+              133,
+              114
+            ],
+            "candidate_fixups": [
+              71,
+              24,
+              133,
+              114
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 47564,
+              "size": 154,
+              "function_symbol": "ems_preload_boss_faceset(const char far*)",
+              "contribution_start": 44600,
+              "contribution_size": 3226,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "eyecatch_animate()"
+            }
+          },
+          {
+            "target_start": 47564,
+            "candidate_start": 47564,
+            "size": 154,
+            "target_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+            "candidate_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+            "raw_exact": true,
+            "target_fixups": [
+              71,
+              24,
+              133,
+              114
+            ],
+            "candidate_fixups": [
+              71,
+              24,
+              133,
+              114
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 47564,
+              "size": 154,
+              "function_symbol": "ems_preload_boss_faceset(const char far*)",
+              "contribution_start": 44600,
+              "contribution_size": 3226,
+              "boundary_kind": "next-function",
+              "next_function_symbol": "eyecatch_animate()"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "167682031ec2847af8329387e81ac5c871fde42547b8d72b04fad3a0d97159e1",
+            "dependency_timestamp_normalized_sha256": "653d227171a428a6ca7f9fc93ae58fd38ce95dda308e840759723ccc5f6b2947",
+            "module_name": "th05/ems3262.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ems3262.cpp",
+              "src/main/ems/ems_boss_full_context.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/ems/ems_boss_stage_prefix.inl",
+              "src/main/runtime/entry.cpp",
+              "src/main/runtime/main.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/gameplay_loop.cpp",
+              "src/main/runtime/gameplay_loop.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/runtime/main.hpp",
+              "src/main/runtime/gameplay_session_init.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/gameplay_session_init_body.inl",
+              "src/main/runtime/stage_session_context.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/hud/resident.hpp",
+              "src/main/runtime/stage_session_init_body.inl",
+              "src/main/ems/ems_boss_lifecycle_prefix.inl",
+              "src/shared/abi.hpp",
+              "src/main/ems/ems_boss_stage_runtime_types.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/session_end.hpp",
+              "src/shared/abi.hpp",
+              "src/main/demo/demo.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/ems/ems_boss_context_types.hpp",
+              "src/main/hud/resident.hpp"
+            ]
+          },
+          {
+            "sha256": "4373cacff3385461a9ec877ee27ea76a032893cbf50fcb50c82bb3ba7c6351e8",
+            "dependency_timestamp_normalized_sha256": "653d227171a428a6ca7f9fc93ae58fd38ce95dda308e840759723ccc5f6b2947",
+            "module_name": "th05/ems3262.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ems3262.cpp",
+              "src/main/ems/ems_boss_full_context.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/ems/ems_boss_stage_prefix.inl",
+              "src/main/runtime/entry.cpp",
+              "src/main/runtime/main.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/gameplay_loop.cpp",
+              "src/main/runtime/gameplay_loop.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/runtime/main.hpp",
+              "src/main/runtime/gameplay_session_init.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/bullet/tune.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/gameplay_session_init_body.inl",
+              "src/main/runtime/stage_session_context.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/hud/resident.hpp",
+              "src/main/runtime/stage_session_init_body.inl",
+              "src/main/ems/ems_boss_lifecycle_prefix.inl",
+              "src/shared/abi.hpp",
+              "src/main/ems/ems_boss_stage_runtime_types.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/runtime/session_end.hpp",
+              "src/shared/abi.hpp",
+              "src/main/demo/demo.hpp",
+              "src/main/hud/resident.hpp",
+              "src/main/ems/ems_boss_context_types.hpp",
+              "src/main/hud/resident.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ems3262.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ems3262.cpp"
+          ]
+        ],
+        "binding_context": [
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "62ab846888dec56b93777b249c1664005a4d2ace0ae8e278a0e29525da532ff3",
+            "compiler_object": "ems3262.obj",
+            "link_response_sha256": "e1ae9440d57516d138580475bc5792e14a3132732b363b64757389331689bfe6",
+            "before": {
+              "sha256": "19342024c6fc2b19d634a08dfceb4011067fe33552a09e2b576a8cdc9fcfc58b",
+              "symbol_model_sha256": "28b251317d00a94e064321217d10e6938442d99c5703003f930722286a3f2cc4"
+            },
+            "after": {
+              "sha256": "c94548c909e3d3c88f9f74926bfd29c4bb244e3567166c64cd0d1ac92218b51c",
+              "symbol_model_sha256": "f73b7924579a9a87a11d417e694d72c980362df9d9014a81dc2c1b9568e18f66"
+            }
+          },
+          {
+            "kind": "symbol-only-before-and-after-compiler",
+            "source_sha256": "62ab846888dec56b93777b249c1664005a4d2ace0ae8e278a0e29525da532ff3",
+            "compiler_object": "ems3262.obj",
+            "link_response_sha256": "e1ae9440d57516d138580475bc5792e14a3132732b363b64757389331689bfe6",
+            "before": {
+              "sha256": "cef9e18327a34093a55c5698a0e53ea5474640e32f5dad6745dc775b9013e785",
+              "symbol_model_sha256": "28b251317d00a94e064321217d10e6938442d99c5703003f930722286a3f2cc4"
+            },
+            "after": {
+              "sha256": "7285d3d20574eaad3f5d05b62485702d651484e2f9615cbd7467cb4a2ccfcd6a",
+              "symbol_model_sha256": "f73b7924579a9a87a11d417e694d72c980362df9d9014a81dc2c1b9568e18f66"
+            }
+          }
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/ems_boss_full_context_bindings.asm",
+            "sha256": "62ab846888dec56b93777b249c1664005a4d2ace0ae8e278a0e29525da532ff3"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/bullet/tune.hpp",
+            "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+          },
+          {
+            "path": "src/main/demo/demo.hpp",
+            "sha256": "6ba082be1be783bba86db8b4d9abcbf66c25c8a0e6ea78aaf414621616f8a3c2"
+          },
+          {
+            "path": "src/main/ems/ems_boss_context_types.hpp",
+            "sha256": "0c075796e9c0a80ccb4170e1a43b438a1b3bd592454e0e5065fcf96d86b12b5e"
+          },
+          {
+            "path": "src/main/ems/ems_boss_full_context.cpp",
+            "sha256": "b15af07fb4dffd5dab06858d67b8863eda20e680ada1542d489d4921de15daec"
+          },
+          {
+            "path": "src/main/ems/ems_boss_lifecycle_prefix.inl",
+            "sha256": "62ef6ea1fcbb2975f1169d6de5a0d255d9e9a43486c3e57ec795a2976d25d161"
+          },
+          {
+            "path": "src/main/ems/ems_boss_stage_prefix.inl",
+            "sha256": "7d7be445d2fe0a1c4d95762dc1f07b7b713db13b5350901d4816fb8dc09e6bfa"
+          },
+          {
+            "path": "src/main/ems/ems_boss_stage_runtime_types.hpp",
+            "sha256": "4d448ec69ab6168c92a7506ee8a58f0dc9bfea9bc31ef253cb8064f0426555f1"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/runtime/entry.cpp",
+            "sha256": "56a32543668cb8d17f32ad25aefbd671b3a3e21c5e0326014ba4837722985eae"
+          },
+          {
+            "path": "src/main/runtime/gameplay_loop.cpp",
+            "sha256": "f6f6b1f4e85cd6cf1248bf637f5347e75d26b55043a9f251986d1380413c3d7c"
+          },
+          {
+            "path": "src/main/runtime/gameplay_loop.hpp",
+            "sha256": "915ce86b182655efc9008ee1cb28fd500cbe813b36904aa9933b5151c6137e02"
+          },
+          {
+            "path": "src/main/runtime/gameplay_session_init.hpp",
+            "sha256": "88acedf85e8fa7ad2eadd8d8b5b74fcaf421423b51b502183c2f24ef8839ad7a"
+          },
+          {
+            "path": "src/main/runtime/gameplay_session_init_body.inl",
+            "sha256": "9e4c783b064a98e6801346d422e5f1862c7c38ebc515ecc77c5fea7305fb0b40"
+          },
+          {
+            "path": "src/main/runtime/main.hpp",
+            "sha256": "c13e24c511ae7f7b1dd5238b18d28cb8d1867cfcd1ef7108076f7163452e4885"
+          },
+          {
+            "path": "src/main/runtime/session_end.hpp",
+            "sha256": "f390802966886ef445bcacb0f125b44226b1caae0628a579e8093cba9ad7c84c"
+          },
+          {
+            "path": "src/main/runtime/stage_session_context.hpp",
+            "sha256": "c78a395b6a591f0a3cf0f39195db38816fc3fdabfb6771baf2b6ea0627389c3b"
+          },
+          {
+            "path": "src/main/runtime/stage_session_init_body.inl",
+            "sha256": "9943078f2ef4b97bf88cc737f4cab9a0cbf7e217af7e831b9fc34847184de3ae"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/ems_boss_full_context_bindings.asm",
+          "sha256": "62ab846888dec56b93777b249c1664005a4d2ace0ae8e278a0e29525da532ff3"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/bullet/tune.hpp",
+          "sha256": "824183fe91c7401db67d3e8b45a72a4f6ef8536c07ded2362e0b5d5b93bee0f0"
+        },
+        {
+          "path": "src/main/demo/demo.hpp",
+          "sha256": "6ba082be1be783bba86db8b4d9abcbf66c25c8a0e6ea78aaf414621616f8a3c2"
+        },
+        {
+          "path": "src/main/ems/ems_boss_context_types.hpp",
+          "sha256": "0c075796e9c0a80ccb4170e1a43b438a1b3bd592454e0e5065fcf96d86b12b5e"
+        },
+        {
+          "path": "src/main/ems/ems_boss_full_context.cpp",
+          "sha256": "b15af07fb4dffd5dab06858d67b8863eda20e680ada1542d489d4921de15daec"
+        },
+        {
+          "path": "src/main/ems/ems_boss_lifecycle_prefix.inl",
+          "sha256": "62ef6ea1fcbb2975f1169d6de5a0d255d9e9a43486c3e57ec795a2976d25d161"
+        },
+        {
+          "path": "src/main/ems/ems_boss_stage_prefix.inl",
+          "sha256": "7d7be445d2fe0a1c4d95762dc1f07b7b713db13b5350901d4816fb8dc09e6bfa"
+        },
+        {
+          "path": "src/main/ems/ems_boss_stage_runtime_types.hpp",
+          "sha256": "4d448ec69ab6168c92a7506ee8a58f0dc9bfea9bc31ef253cb8064f0426555f1"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/runtime/entry.cpp",
+          "sha256": "56a32543668cb8d17f32ad25aefbd671b3a3e21c5e0326014ba4837722985eae"
+        },
+        {
+          "path": "src/main/runtime/gameplay_loop.cpp",
+          "sha256": "f6f6b1f4e85cd6cf1248bf637f5347e75d26b55043a9f251986d1380413c3d7c"
+        },
+        {
+          "path": "src/main/runtime/gameplay_loop.hpp",
+          "sha256": "915ce86b182655efc9008ee1cb28fd500cbe813b36904aa9933b5151c6137e02"
+        },
+        {
+          "path": "src/main/runtime/gameplay_session_init.hpp",
+          "sha256": "88acedf85e8fa7ad2eadd8d8b5b74fcaf421423b51b502183c2f24ef8839ad7a"
+        },
+        {
+          "path": "src/main/runtime/gameplay_session_init_body.inl",
+          "sha256": "9e4c783b064a98e6801346d422e5f1862c7c38ebc515ecc77c5fea7305fb0b40"
+        },
+        {
+          "path": "src/main/runtime/main.hpp",
+          "sha256": "c13e24c511ae7f7b1dd5238b18d28cb8d1867cfcd1ef7108076f7163452e4885"
+        },
+        {
+          "path": "src/main/runtime/session_end.hpp",
+          "sha256": "f390802966886ef445bcacb0f125b44226b1caae0628a579e8093cba9ad7c84c"
+        },
+        {
+          "path": "src/main/runtime/stage_session_context.hpp",
+          "sha256": "c78a395b6a591f0a3cf0f39195db38816fc3fdabfb6771baf2b6ea0627389c3b"
+        },
+        {
+          "path": "src/main/runtime/stage_session_init_body.inl",
+          "sha256": "9943078f2ef4b97bf88cc737f4cab9a0cbf7e217af7e831b9fc34847184de3ae"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "535153059f90d7a02bc7dfcfd592d2cc6b776fb1eb472fc63236e88eb578f530",
+      "compiled_negative_control": {
+        "target_start": 47564,
+        "candidate_start": 47564,
+        "size": 154,
+        "target_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+        "candidate_sha256": "f3a1d5fb4dcac0587c687a7698eb4a331e405dcbcdceb6bfa1225754ee6bfe90",
+        "raw_exact": false,
+        "target_fixups": [
+          71,
+          24,
+          133,
+          114
+        ],
+        "candidate_fixups": [
+          71,
+          24,
+          133,
+          114
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 47564,
+          "size": 154,
+          "function_symbol": "ems_preload_boss_faceset(const char far*)",
+          "contribution_start": 44600,
+          "contribution_size": 3226,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "eyecatch_animate()"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-ems-boss-faceset-complete-3226",
+        "entry_sha256": "f9806af13f5dc3bcd6523845b1c96bc4456fc7d596646601dc94b307402f2eac",
+        "mutation": {
+          "unit": "main-ems-boss-faceset-complete-3226",
+          "source": "src/main/ems/ems_boss_lifecycle_prefix.inl",
+          "find": "cdg_load_all(CDG_FACESET_BOSS, fn);",
+          "replace": "cdg_load_all((CDG_FACESET_BOSS + 1), fn);"
+        },
+        "control_sha256": "4baae438bc7f44ab053c0641c72c73e494dfbc9dbd6a3d55195632555bf90e5c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 47564,
+          "candidate_start": 47564,
+          "size": 154,
+          "target_sha256": "9c2ea11bd2937505d85e2088f8e3397c46b146fa36e3e10c35529f9531076c88",
+          "candidate_sha256": "f3a1d5fb4dcac0587c687a7698eb4a331e405dcbcdceb6bfa1225754ee6bfe90",
+          "raw_exact": false,
+          "target_fixups": [
+            71,
+            24,
+            133,
+            114
+          ],
+          "candidate_fixups": [
+            71,
+            24,
+            133,
+            114
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 47564,
+            "size": 154,
+            "function_symbol": "ems_preload_boss_faceset(const char far*)",
+            "contribution_start": 44600,
+            "contribution_size": 3226,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "eyecatch_animate()"
+          }
+        },
+        "omf": {
+          "sha256": "082a4e22f635d887304b32a4b4f45d81afd19fb016540f6fb24dcf4ec575031d",
+          "dependency_timestamp_normalized_sha256": "7a90e2d1bc16a2bcbbc7bcb362734e8aa902a99616d2ace204ce5c160e03f5f5",
+          "module_name": "th05/ems3262.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/ems3262.cpp",
+            "src/main/ems/ems_boss_full_context.cpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/ems/ems_boss_stage_prefix.inl",
+            "src/main/runtime/entry.cpp",
+            "src/main/runtime/main.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/runtime/gameplay_loop.cpp",
+            "src/main/runtime/gameplay_loop.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/runtime/main.hpp",
+            "src/main/runtime/gameplay_session_init.hpp",
+            "src/main/hud/resident.hpp",
+            "src/main/bullet/tune.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "src/main/runtime/gameplay_session_init_body.inl",
+            "src/main/runtime/stage_session_context.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/hud/resident.hpp",
+            "src/main/runtime/stage_session_init_body.inl",
+            "src/main/ems/ems_boss_lifecycle_prefix.inl",
+            "src/shared/abi.hpp",
+            "src/main/ems/ems_boss_stage_runtime_types.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/runtime/session_end.hpp",
+            "src/shared/abi.hpp",
+            "src/main/demo/demo.hpp",
+            "src/main/hud/resident.hpp",
+            "src/main/ems/ems_boss_context_types.hpp",
+            "src/main/hud/resident.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/ems3262.cpp"
+        ],
+        "binding_context": {
+          "kind": "symbol-only-before-and-after-compiler",
+          "source_sha256": "62ab846888dec56b93777b249c1664005a4d2ace0ae8e278a0e29525da532ff3",
+          "compiler_object": "ems3262.obj",
+          "link_response_sha256": "e1ae9440d57516d138580475bc5792e14a3132732b363b64757389331689bfe6",
+          "before": {
+            "sha256": "798a90b3c5302ecb38b8357a218a94c1642e96f310cf1bdd169a0f90dfc0a077",
+            "symbol_model_sha256": "28b251317d00a94e064321217d10e6938442d99c5703003f930722286a3f2cc4"
+          },
+          "after": {
+            "sha256": "a2ccb5db427c9f13aff9d640e3bd6e5cc6dba21b4015c27e24f93cb0c380d6d8",
+            "symbol_model_sha256": "f73b7924579a9a87a11d417e694d72c980362df9d9014a81dc2c1b9568e18f66"
+          }
+        }
       },
       "receipt_aggregate_pass": true
     }

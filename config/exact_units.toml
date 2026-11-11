@@ -5462,3 +5462,24 @@ unit = "main-input-wait-change-exact"
 source = "src/shared/hardware/input_wait_context.cpp"
 find = "if(_FLAGS & 0x40) {"
 replace = "if(_FLAGS & 0x80) {"
+
+[[units]]
+id = "main-ems-boss-faceset-complete-3226"
+source = "src/main/ems/ems_boss_full_context.cpp"
+module = "th05/ems3262.cpp"
+segment = "DEMO_TEXT"
+wrapper_options = "-zCDEMO_TEXT"
+bindings_source = "probes/units/ems_boss_full_context_bindings.asm"
+bindings_after_compiler = true
+target_start = 0xb9cc
+size = 154
+functions = 1
+function_symbol = "ems_preload_boss_faceset(const char far*)"
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-ems-boss-faceset-complete-3226"
+source = "src/main/ems/ems_boss_lifecycle_prefix.inl"
+find = "cdg_load_all(CDG_FACESET_BOSS, fn);"
+replace = "cdg_load_all((CDG_FACESET_BOSS + 1), fn);"

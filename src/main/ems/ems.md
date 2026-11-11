@@ -105,3 +105,57 @@ Key private real producer roots: `.analysis/gpt-web-ems-unified-boss-a/`,
 and `.analysis/gpt-web-ems-natural-prefix-*-a/`. Original maintained EMS and
 accepted neighboring DEMO/session sources were not changed, so no accepted
 unit required cold replay.
+
+## 2026-11-11: complete 154-byte Boss faceset loader now accepted
+
+The last unaccepted EMS function, `ems_preload_boss_faceset(const char far*)`,
+now passes **full original-function** exactness at MAIN `[B9CC,BA66)`:
+**154/154 bytes**, native literal ordered MZ relocation sequence
+`[71,24,133,114]`, exact two independent native Borland/TLINK producers and
+a rejected compiled source mutation of the genuine `CDG_FACESET_BOSS` load
+slot. No original byte, uninitialized link padding, OMF record, code patch or
+artificial initialized DATA is inserted, and no fixups are sorted.
+
+The key was restoring the actual compiler's source CODE contribution and true
+foreign physical link frames *together*. The maintained
+`ems_boss_full_context.cpp` compiles the complete real original-order 1,826
+bytes of MAIN entry, gameplay loop, new-game initialization and stage-session
+initialization, then the following real 1,400 bytes of stage-runtime setup,
+release, pause, DEMO and four EMS functions. The context includes genuine
+source bodies and complete headers with duplicate pragma/declaration
+conflicts resolved in the context copies; no fabricated source CODE is
+provided. The full 3,226-byte prefix determines the natural Turbo C++ FIXUPP
+record partitions; the four-site Boss sequence now appears exactly in its
+original `[71,24,133,114]` order. All real gameplay and EMS behavior and the
+unbounded CDG slot walk remain unchanged.
+
+The binder `ems_boss_full_context_bindings.asm` uses *source-free* before/
+after compiler linkage with only externally established native public labels
+and real address placement. In the first long-context trial, the compiler
+produced a **zero-byte SHARED SEGDEF** grouped into MAIN01. Merging the
+actual foreign `SHARED` providers into that same SEGDEF accidentally placed
+14 bytes of alignment between CODE groups: CS14AB far calls instead pointed
+to CS0AE1, and all DGROUP operands shifted by `+0E`. Keeping the foreign
+source-free providers in a distinct `EMS_SHARED_PROVIDER` SEGDEF produces the
+physical original MAIN01 `0AE1`, ungrouped SHARED `14AB`, MAIN03 `1527`,
+and DGROUP `209D`, without emitting a single foreign instruction or data byte.
+The resulting Boss 154-byte machine code *and* 4-site FIXUPP stream are both
+precisely original. The initial isolated 154-byte trial had raw bytes exact
+but the wrong fixup order `[133,114,71,24]` and remains diagnostic history.
+
+Only this **one complete 154-byte function** is newly credited as compiler
+C++ CODE from the joined source. The other three EMS functions were already
+separately accepted at 155, 267 and 108 original bytes; their own accepted
+sources and snapshots have not changed and are not duplicated. The 267-byte
+player-preload includes one original zero-alignment byte which remains
+uncredited and 8 genuine compiler switch-table bytes. The 3,226-byte
+context proves natural source/binding provenance for this Boss function; **it
+is not claimed as a newly accepted whole-3,226-byte executable unit or a
+whole-EMS-TU OMF ordering certificate.** Historical original TU identity is
+not established. This extends the full four-function EMS coverage while
+respecting the complete-function acceptance contract.
+
+Focused acceptance receipt:
+`.analysis/unit-replays/gpt-web-main-ems-boss-154-full-context-20261111/receipt.json`.
+The earlier unsuccessful first-producer contexts, link MAP diagnostics and
+source snapshots remain in `.analysis/gpt-web-ems-*` for future audit.
