@@ -2462,8 +2462,8 @@ function_symbol = "exalice_update()"
 [[controls]]
 unit = "main-exalice-update-full-context"
 source = "src/main/boss/exalice/full_context.cpp"
-find = "boss.phase_end_hp = 23800;"
-replace = "boss.phase_end_hp = 23700;"
+find = "boss.phase_end_hp = EXALICE_HP_SETUP_END;"
+replace = "boss.phase_end_hp = (EXALICE_HP_SETUP_END - 100);"
 
 [[units]]
 id = "main-b4ball-spawn"

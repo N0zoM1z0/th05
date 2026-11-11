@@ -85,3 +85,33 @@ rejected. Receipt:
 `.analysis/unit-replays/gpt-web-exalice-typed-palette-scratch-20261111/receipt.json`.
 No new target CODE bytes or separately duplicated 111-byte prefix receive
 credit; this is an actual semantic improvement to an already exact large Boss.
+
+## Stage HP ladder and the last fan's shared health scaling
+
+The real full Boss controller and standalone updater now name the complete
+**eight attack-phase HP ladder**. The setup begins at 26,500 HP with an end
+boundary of 23,800; each regular/charge transition installs the next lower
+boundary through the 21,000, 18,100, 15,100, 12,600, 9,600, 6,800 and
+3,400 HP gates, finally ending at zero. The phase transition deliberately
+copies the *previous* `boss.phase_end_hp` into `boss.hp` before setting the
+next gate. The near helper's reposition mode is shared with the updater's
+original two-mode attack dispatcher, not a new state field.
+
+The last 3,400-HP boundary is used **by both the complete controller and the
+separate final-fan callback**: the latter computes the original
+`(3400 - boss.hp) / 3400` speed and sweep-radius scaling. It remains an
+unsigned-long intermediate with the original sixteen-subpixels-per-pixel
+factor; there is no division-by-zero guard or change to wraparound behavior.
+The 32-pattern regular-wave limit, strict `> 4000` charge timeout, fourth
+wave's `> 8` completed-charge guard, and final fan's `<= 5000` timeout are
+named while retaining their original comparison strictness and phase timing.
+
+The accepted full-context controller, its separate near phase owner, and all
+three final-pattern owners were replayed **together**: five complete original
+C++ scopes, all original raw bytes and ordered MZ relocations exact in two
+Borland/TLINK producers. The compiled 23,800→23,700 setup HP threshold
+negative was updated to the named expression, executed, and rejected.
+Focused receipt:
+`.analysis/unit-replays/gpt-web-exalice-hp-ladder-20261111/receipt.json`.
+This is a behavior-explanatory refinement of already accepted source; it does
+not add separate target bytes to the coverage ledger.

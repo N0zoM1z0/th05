@@ -1,6 +1,7 @@
 // Full original bomb immunity wrapper and Extra-specific phase transition.
 #pragma option -zCEXALICE_PHASE_TEXT -zPmain_03
 #include "src/main/boss/exalice/phase.hpp"
+#include "src/main/boss/exalice/update_phases.hpp"
 
 int far exalice_hittest_shots(void)
 {
@@ -26,7 +27,7 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     boss_phase_timed_out = true;
     boss.phase++;
     boss.phase_frame = 0;
-    boss.mode = 0;
+    boss.mode = EXALICE_MODE_REPOSITION;
     boss.phase_state.patterns_seen = 0;
     boss.hp = boss.phase_end_hp;
     boss.phase_end_hp = next_end_hp;

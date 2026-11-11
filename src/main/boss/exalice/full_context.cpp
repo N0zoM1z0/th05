@@ -30,7 +30,7 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     boss_phase_timed_out = true;
     boss.phase++;
     boss.phase_frame = 0;
-    boss.mode = 0;
+    boss.mode = EXALICE_MODE_REPOSITION;
     boss.phase_state.patterns_seen = 0;
     boss.hp = boss.phase_end_hp;
     boss.phase_end_hp = next_end_hp;
@@ -51,8 +51,8 @@ void pascal far exalice_update(void)
     switch(boss.phase) {
     case EXALICE_PHASE_SETUP:
         if(boss.phase_frame == 1) {
-            boss.hp = 26500;
-            boss.phase_end_hp = 23800;
+            boss.hp = EXALICE_HP_INITIAL;
+            boss.phase_end_hp = EXALICE_HP_SETUP_END;
             gather_template.radius.v = to_sp(128);
             gather_template.angle_delta = 2;
             gather_template.ring_points = 8;
@@ -70,7 +70,7 @@ void pascal far exalice_update(void)
             }
         }
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 192) {
+        if(boss.phase_frame >= EXALICE_SETUP_END_FRAME) {
             boss.phase_frame = 0;
             boss.phase++;
             snd_se_play(13);
@@ -84,7 +84,7 @@ void pascal far exalice_update(void)
         break;
     case EXALICE_PHASE_READY:
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
+        if(boss.phase_frame >= EXALICE_READY_END_FRAME) {
             boss.phase++;
             boss.mode = EXALICE_MODE_CHARGE;
             boss.phase_state.patterns_seen = 0;
@@ -99,13 +99,13 @@ void pascal far exalice_update(void)
 regular_attack:
         switch(boss.mode) {
         case EXALICE_MODE_REPOSITION:
-            if(boss_flystep_random(boss.phase_frame - 32)) {
+            if(boss_flystep_random(boss.phase_frame - EXALICE_RANDOM_FLYSTEP_LEAD_FRAMES)) {
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 boss.mode++;
                 exalice_pattern = exalice_patterns_by_phase[exalice_boss_scratch.wave_index][
-                    boss.phase_state.patterns_seen & 1];
-                if(boss.phase_state.patterns_seen >= 32) {
+                    boss.phase_state.patterns_seen & EXALICE_REGULAR_PATTERN_ALTERNATION_MASK];
+                if(boss.phase_state.patterns_seen >= EXALICE_REGULAR_PATTERN_LIMIT) {
                     goto regular_complete;
                 }
             }
@@ -121,19 +121,19 @@ regular_attack:
 regular_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            exalice_phase_next(ET_CIRCLE, 21000);
+            exalice_phase_next(ET_CIRCLE, EXALICE_HP_WAVE1_REGULAR_END);
             exalice_pattern = exalice_pattern_firewave_fans;
             break;
         case EXALICE_WAVE_2:
-            exalice_phase_next(ET_NW_SE, 15100);
+            exalice_phase_next(ET_NW_SE, EXALICE_HP_WAVE2_REGULAR_END);
             exalice_pattern = exalice_pattern_bouncing_rings;
             break;
         case EXALICE_WAVE_3:
-            exalice_phase_next(ET_SW_NE, 9600);
+            exalice_phase_next(ET_SW_NE, EXALICE_HP_WAVE3_REGULAR_END);
             exalice_pattern = exalice_pattern_sweeping_lasers;
             break;
         case EXALICE_WAVE_4:
-            exalice_phase_next(ET_HORIZONTAL, 3400);
+            exalice_phase_next(ET_HORIZONTAL, EXALICE_HP_WAVE4_REGULAR_END);
             exalice_pattern = exalice_pattern_spiral_gather;
             break;
         }
@@ -164,7 +164,7 @@ approach:
     case EXALICE_PHASE_WAVE3_CHARGE:
 charge_attack:
         exalice_charge_update();
-        if(boss.phase_frame > 4000) {
+        if(boss.phase_frame > EXALICE_CHARGE_TIMEOUT_FRAME) {
             goto charge_complete;
         }
 charge_hittest:
@@ -175,19 +175,19 @@ charge_hittest:
 charge_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            exalice_phase_next(ET_NW_SE, 18100);
+            exalice_phase_next(ET_NW_SE, EXALICE_HP_WAVE1_CHARGE_END);
             exalice_pattern = exalice_pattern_gravity_stacks;
             break;
         case EXALICE_WAVE_2:
-            exalice_phase_next(ET_SW_NE, 12600);
+            exalice_phase_next(ET_SW_NE, EXALICE_HP_WAVE2_CHARGE_END);
             exalice_pattern = exalice_pattern_fixed_laser_fan;
             break;
         case EXALICE_WAVE_3:
-            exalice_phase_next(ET_HORIZONTAL, 6800);
+            exalice_phase_next(ET_HORIZONTAL, EXALICE_HP_WAVE3_CHARGE_END);
             exalice_pattern = exalice_pattern_cross_cheetos;
             break;
         case EXALICE_WAVE_4:
-            exalice_phase_next(ET_VERTICAL, 0);
+            exalice_phase_next(ET_VERTICAL, EXALICE_HP_LAST_CHARGE_END);
             break;
         }
         pellet_bottom_col = 9;
@@ -235,7 +235,7 @@ charge_complete:
     case EXALICE_PHASE_WAVE4_CHARGE:
         if(exalice_charge_update()) {
             boss.phase_state.patterns_seen++;
-            if(boss.phase_state.patterns_seen > 8) {
+            if(boss.phase_state.patterns_seen > EXALICE_FINAL_CHARGE_PATTERN_LAST) {
                 goto charge_complete;
             }
         }
@@ -264,7 +264,7 @@ charge_complete:
         }
         palette_changed = true;
         exalice_pattern_final_fan();
-        if(boss.phase_frame <= 5000) {
+        if(boss.phase_frame <= EXALICE_FINAL_FAN_TIMEOUT_FRAME) {
             if(!exalice_hittest_shots()) {
                 break;
             }
@@ -282,5 +282,5 @@ charge_complete:
     }
     cheetos_update();
     firewaves_update();
-    hud_hp_update_and_render(boss.hp, 26500);
+    hud_hp_update_and_render(boss.hp, EXALICE_HP_INITIAL);
 }

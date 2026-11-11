@@ -1,6 +1,7 @@
 // Complete final EX-Alice patterns, preserving actual signed frame arithmetic.
 #pragma option -zCEXALICE_FIN_TEXT -zPmain_03
 #include "src/main/boss/exalice/final_patterns.hpp"
+#include "src/main/boss/exalice/update_phases.hpp"
 
 bool near exalice_pattern_cross_cheetos(void)
 {
@@ -68,7 +69,7 @@ void near exalice_pattern_final_fan(void)
     if(boss.phase_frame >= 128) {
         if((boss.phase_frame % 2) == 0) {
             bullet_template.speed.v =
-                (static_cast<unsigned long>(3400 - boss.hp) * 64 / 3400) + to_sp(2.5f);
+                (static_cast<unsigned long>(EXALICE_HP_WAVE4_REGULAR_END - boss.hp) * 64 / EXALICE_HP_WAVE4_REGULAR_END) + to_sp(2.5f);
             bullets_add_regular();
             bullet_template.angle += 0x80;
             bullets_add_regular();
@@ -80,6 +81,6 @@ void near exalice_pattern_final_fan(void)
         boss_statebyte[15] += 2;
         // The radius spans64 pixels, converted to16 subpixels per pixel.
         boss.pos.velocity.x.v =
-            ((static_cast<unsigned long>(3400 - boss.hp) * 64) * 16) / 3400;
+            ((static_cast<unsigned long>(EXALICE_HP_WAVE4_REGULAR_END - boss.hp) * 64) * 16) / EXALICE_HP_WAVE4_REGULAR_END;
     }
 }
