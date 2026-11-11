@@ -578,9 +578,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_context_pi_pack import reviewed_claims as pi_pack_claims
             pi_pack, pi_pack_review_sha = pi_pack_claims(
                 root, name, view=view, verify_targets=verify_targets)
+            # Real OMF _TEXT and DGROUP contributions recover eleven further
+            # full, large Master procedures from the independent author ASM.
+            from review_context_master_large import reviewed_claims as large_master_claims
+            large_master, large_master_sha = large_master_claims(
+                root, name, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces,
                                     claims + context_reserved + remaining_context +
-                                    shifted_context + string_context + pi_pack)
+                                    shifted_context + string_context + pi_pack + large_master)
         elif name == "zun":
             # Borland C0T.OBJ contributes two actual CODE LEDATAs and one
             # initialized DATA LEDATA. Leave its original two-byte writable
@@ -632,6 +637,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["string_vendor_review_sha256"] = string_context_sha
         if name in ("op","maine") and pi_pack_review_sha:
             views[name]["master_pi_loader_review_sha256"] = pi_pack_review_sha
+        if name in ("op","maine") and large_master_sha:
+            views[name]["master_large_review_sha256"] = large_master_sha
         if name == "zun" and crt_review_sha:
             views[name]["zun_crt_review_sha256"] = crt_review_sha
         if name == "main" and reserved_review_sha:
