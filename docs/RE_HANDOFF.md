@@ -78,6 +78,7 @@ necessarily all authored bytes where padding is present.
 | MAIN far vector pair | **69 + 90** complete exact C++ bytes; unmodified TCC `-S` / TASM32 `MOVSX` output, original second fixup `[24]` | [Vector pair](../src/shared/math/vector_far.md) |
 | MAINE cutscene script VM | **1,555-byte** full C++ `script_op()` including 64-byte switch table at `A9C3..AFD6`, exact 42-site relocation order; unified 2,848-byte CODE proof | [Cutscene VM](../src/maine/cutscene/cutscene.md) |
 | MAINE cutscene EGC setup | Complete **52-byte** near C++ at `A6D1..A705` with original `EGC_ON` fixup `[6]`; the separately accepted interpreter now matches the complete unified CODE module | [EGC setup](../src/maine/cutscene/egc_setup_exact.md) |
+| MAIN/OP/MAINE horizontal flip LUT | Three complete **30-byte** original-register ASM lookup generators; 90 authored bytes, empty fixups | [Bit-flip LUT](../src/shared/hardware/hflip_lut_generate.md) |
 | MAIN/OP/MAINE SE reset | **11-byte** exact `snd_se_reset()` far C++ per binary; 33 new instruction bytes, three outside `EVEN` NOPs | [Sound reset](../src/shared/sound/se_reset_exact.md) |
 | MAIN/OP/MAINE sound effects | Per binary, **57-byte** SE play + **76-byte** SE update exact C++; all original update fixups `[43]` | [Sound controller](../src/shared/sound/se.md) |
 | MAIN/OP/MAINE input | Per binary, **262-byte** BIOS/joystick scanner reviewed ASM; **16 + 42-byte** held/input-wait functions accepted C++ | [Scanner](../src/shared/hardware/input_sense_op_maine.md), [wait](../src/shared/hardware/input_wait_context.md) |

@@ -2671,3 +2671,78 @@ semantic_inputs = ["src/main/hud/overlay.hpp", "src/main/player/render.hpp"]
 [units.negative]
 find = "shr ah, 1"
 replace = "shl ah, 1"
+
+[[units]]
+id = "main-hflip-lut-generate"
+artifact = "main"
+source = "src/shared/hardware/hflip_lut_generate.asm"
+types = "src/shared/hardware/hflip_lut_types.inc"
+symbols = "probes/units/hflip_lut_symbols.inc"
+bindings = "probes/units/main_hflip_lut_bindings.asm"
+notes = "src/shared/hardware/hflip_lut_generate.md"
+target_start = 84824
+size = 30
+segment = "SHARED"
+group = "(none)"
+cs_base = 84656
+instruction_nops = []
+fixups = []
+native_review_sha256 = "d9d1ea3cf26a775a05a228cbcc474bf7d75ceacaae73bf273ce57b08a20436f4"
+target_scope_sha256 = "3f6827df59d698378fc49d5972791792943fcc74714dcb33c33ae600045ad97d"
+semantic_inputs = ["src/shared/graphics/cdg_opaque.md"]
+[units.publics]
+"_hflip_lut_generate" = 0
+"hflip_lut_generate_end" = 30
+[units.negative]
+find = "mov cx, BITS_PER_BYTE"
+replace = "mov cx, (BITS_PER_BYTE - 1)"
+
+[[units]]
+id = "op-hflip-lut-generate"
+artifact = "op"
+source = "src/shared/hardware/hflip_lut_generate.asm"
+types = "src/shared/hardware/hflip_lut_types.inc"
+symbols = "probes/units/hflip_lut_symbols.inc"
+bindings = "probes/units/op_hflip_lut_bindings.asm"
+notes = "src/shared/hardware/hflip_lut_generate.md"
+target_start = 54020
+size = 30
+segment = "SHARED"
+group = "(none)"
+cs_base = 54016
+instruction_nops = []
+fixups = []
+native_review_sha256 = "d49350eac3a0f1deca07a335f523e165c0630e268d05e460b76cc753ea01bf65"
+target_scope_sha256 = "294d7ce416bea6d484f37df2d85fc42939c39c715882f9546620ee60c6fce944"
+semantic_inputs = ["src/shared/graphics/cdg_opaque.md"]
+[units.publics]
+"_hflip_lut_generate" = 0
+"hflip_lut_generate_end" = 30
+[units.negative]
+find = "mov cx, BITS_PER_BYTE"
+replace = "mov cx, (BITS_PER_BYTE - 1)"
+
+[[units]]
+id = "maine-hflip-lut-generate"
+artifact = "maine"
+source = "src/shared/hardware/hflip_lut_generate.asm"
+types = "src/shared/hardware/hflip_lut_types.inc"
+symbols = "probes/units/hflip_lut_symbols.inc"
+bindings = "probes/units/maine_hflip_lut_bindings.asm"
+notes = "src/shared/hardware/hflip_lut_generate.md"
+target_start = 59394
+size = 30
+segment = "SHARED"
+group = "(none)"
+cs_base = 59392
+instruction_nops = []
+fixups = []
+native_review_sha256 = "6317409cad7913c3330fadf5dc15c30186c5c11406a52690e44f51702a00a735"
+target_scope_sha256 = "f848ec4daf59d892bfcd0c10f88bfb7c060a3190fdd400724df8c0e2c1275fc6"
+semantic_inputs = ["src/shared/graphics/cdg_opaque.md"]
+[units.publics]
+"_hflip_lut_generate" = 0
+"hflip_lut_generate_end" = 30
+[units.negative]
+find = "mov cx, BITS_PER_BYTE"
+replace = "mov cx, (BITS_PER_BYTE - 1)"

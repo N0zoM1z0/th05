@@ -1,0 +1,1 @@
+BITS_PER_BYTE equ 8
