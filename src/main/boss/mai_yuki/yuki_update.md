@@ -75,3 +75,20 @@ bytes**, including the 20-byte compiler switch table, two full return paths,
 and original ordered relocations. A compiled end-HP negative was rejected.
 The same focused receipt covers Mai and Yuki:
 `.analysis/unit-replays/gpt-web-survivor-solo-phase-semantic-20261111/receipt.json`.
+
+## Shared Yuki solo snow-state layout
+
+The final Yuki approach seeds the original bytes at offsets 13, 14 and 15 with
+`-8`, `8`, and `0x10`. Both the initial and later real solo pattern source
+contexts use those same offsets through their `yuki_solo_snow_step`,
+`yuki_solo_angle_step` and `yuki_solo_angle` aliases. The new
+`YukiSoloScratch` view preserves all sixteen original physical bytes and
+checks the three field offsets at compile time. It does not imply that earlier
+waves preserve those values; the final approach explicitly reinitializes them.
+
+The complete update and both pattern cohorts were replayed together with Mai's
+related owners: five changed units, two deterministic exact native producers,
+original ordered relocations, and a rejected compiled negative. See the same
+focused local receipt at
+`.analysis/unit-replays/gpt-web-survivor-solo-scratch-20261111/receipt.json`.
+This improves source semantics without adding new target ownership.

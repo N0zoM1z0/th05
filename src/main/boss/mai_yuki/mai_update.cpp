@@ -1,6 +1,7 @@
 // Complete Mai solo state machine, including the compiler's switch table.
 #pragma option -zCMAI_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_update.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 // Canonical object types are complete before the compiler table alignment.
 #pragma codeseg MAI_UPDATE_TEXT main_03
 #pragma option -a2
@@ -162,8 +163,8 @@ phase7_complete:
 movement_complete:
             boss.phase++;
             boss.phase_frame = 0;
-            boss_statebyte[10] = 0x80;
-            boss_statebyte[11] = static_cast<unsigned char>(-4);
+            mai_solo_scratch.revenge_snow_angle = 0x80;
+            mai_solo_scratch.revenge_snow_step = static_cast<unsigned char>(-4);
         }
         break;
     case MAI_SOLO_PHASE_WAVE_FINAL:

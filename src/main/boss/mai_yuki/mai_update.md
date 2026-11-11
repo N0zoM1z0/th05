@@ -127,3 +127,19 @@ with ordered fixups and an independently compiled HP-threshold negative.
 It shares one scoped receipt with Yuki's complete updater at
 `.analysis/unit-replays/gpt-web-survivor-solo-phase-semantic-20261111/receipt.json`.
 No new CODE bytes are claimed for this improvement to already accepted source.
+
+## Shared Mai solo attack-state layout
+
+The final approach initializes the actual `boss_statebyte` offsets 10 and 11
+to the revenge-snow angle (`0x80`) and its signed byte step (`-4`). The
+separately accepted `mai_solo_revenge_snow()` advances the angle through those
+same two slots and reverses the step after a volley; the later laser-bounce
+pattern reinitializes offset 13 independently to `-8`. The maintained source
+now shares `MaiSoloScratch`, a size-16, offset-checked view of those physical
+bytes, between the complete Mai update and the advanced pattern owner. No new
+state object, additional initialization or changed phase lifetime is created.
+
+The complete affected five-unit survivor replay, including Yuki's sibling
+state view, is exact in both native Borland producers, with the original
+ordered fixups and rejected compiled negative. Receipt:
+`.analysis/unit-replays/gpt-web-survivor-solo-scratch-20261111/receipt.json`.

@@ -1,6 +1,7 @@
 // Three complete late Mai patterns: turning fans, revenge snow and fixed lasers.
 #pragma option -zCMAI_ADV_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_solo_advanced.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
 bool near mai_solo_turning_fans(void)
 {
@@ -54,17 +55,17 @@ bool near mai_solo_revenge_snow(void)
             bullet_template.spread = 8;
             bullet_template.speed.v = to_sp(1.5f);
             if((boss.phase_frame % 4) == 0) {
-                b4ball_template.angle = boss_statebyte[10];
+                b4ball_template.angle = mai_solo_scratch.revenge_snow_angle;
                 b4balls_add();
-                boss_statebyte[10] += boss_statebyte[11];
+                mai_solo_scratch.revenge_snow_angle += mai_solo_scratch.revenge_snow_step;
                 snd_se_play(3);
             }
         } else {
-            boss_statebyte[11] = -boss_statebyte[11];
-            if(boss_statebyte[11] < 0x7F) {
-                boss_statebyte[10] = 0;
+            mai_solo_scratch.revenge_snow_step = -mai_solo_scratch.revenge_snow_step;
+            if(mai_solo_scratch.revenge_snow_step < 0x7F) {
+                mai_solo_scratch.revenge_snow_angle = 0;
             } else {
-                boss_statebyte[10] = 0x80;
+                mai_solo_scratch.revenge_snow_angle = 0x80;
             }
             boss.phase_frame = 0;
             boss.mode = 0;
@@ -90,7 +91,7 @@ bool near mai_solo_laser_bounce(void)
         laser_fixed_spawn(2);
         laser_template.coords.angle += angle_delta;
         laser_fixed_spawn(3);
-        boss_statebyte[13] = static_cast<unsigned char>(-8);
+        mai_solo_scratch.laser_bounce_angle = static_cast<unsigned char>(-8);
     } else if(boss.phase_frame > 32) {
         if(boss.phase_frame <= 128) {
             if((boss.phase_frame % 8) == 0) {
@@ -101,13 +102,13 @@ bool near mai_solo_laser_bounce(void)
                 bullet_template.speed.v = to_sp(1.5f);
                 bullet_template.special_motion = BSM_BOUNCE_LEFT_RIGHT_TOP;
                 bullet_special.turns_max = 1;
-                bullet_template.angle = boss_statebyte[13];
+                bullet_template.angle = mai_solo_scratch.laser_bounce_angle;
                 bullets_add_special();
-                bullet_template.angle = 0x80 - boss_statebyte[13];
+                bullet_template.angle = 0x80 - mai_solo_scratch.laser_bounce_angle;
                 bullets_add_special();
-                boss_statebyte[13] += 8;
-                if(boss_statebyte[13] > 0x30) {
-                    boss_statebyte[13] = static_cast<unsigned char>(-8);
+                mai_solo_scratch.laser_bounce_angle += 8;
+                if(mai_solo_scratch.laser_bounce_angle > 0x30) {
+                    mai_solo_scratch.laser_bounce_angle = static_cast<unsigned char>(-8);
                 }
                 snd_se_play(3);
             }

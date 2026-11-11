@@ -1,6 +1,7 @@
 // Complete Yuki solo state machine, retaining the full post-return switch table.
 #pragma option -zCYUKI_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/yuki_update.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
 // The native ten-stage solo Boss switch and two alternating attack modes.
 static const unsigned char YUKI_SOLO_PHASE_SETUP = 0;
@@ -162,9 +163,9 @@ phase5_complete:
             boss.phase_frame = 0;
             boss_solo_pattern_current = yuki_solo_snow_cross;
             boss.mode = YUKI_SOLO_MODE_ATTACK;
-            boss_statebyte[14] = 8;
-            boss_statebyte[15] = 0x10;
-            boss_statebyte[13] = static_cast<unsigned char>(-8);
+            yuki_solo_scratch.snow_angle_step = 8;
+            yuki_solo_scratch.snow_angle = 0x10;
+            yuki_solo_scratch.snow_step = static_cast<unsigned char>(-8);
         }
         break;
     case YUKI_SOLO_PHASE_WAVE_FINAL:
