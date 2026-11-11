@@ -510,6 +510,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             from review_master_pf import reviewed_claims as master_pf_claims
             pf_claims, pf_review_sha = master_pf_claims(
                 root, view=view, verify_targets=verify_targets)
+            # Real Master BFTENTRY.ASM: two complete original functions,
+            # with GAME=5's two equivalent long-conditional error branches.
+            from review_main_bfnt_entry import reviewed_claims as bfnt_entry_claims
+            bfnt_entries, bfnt_entry_sha = bfnt_entry_claims(
+                root, view=view, verify_targets=verify_targets)
             # Five further actual MAIN CL.LIB CODE objects bind against
             # the independently observed original DGROUP/BSS/string frames.
             from review_main_shifted_vendor import reviewed_claims as shifted_main_claims
@@ -556,7 +561,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                                     claims + master_claims + reserved_claims + env_claims +
                                     c0_data_claims + shifted_main + super_claims +
                                     super_helper_ranges + bgm_claims + grcg_claims +
-                                    circle_helpers + gap_master + io_claims + machine_master + pf_claims)
+                                    circle_helpers + gap_master + io_claims + machine_master +
+                                    pf_claims + bfnt_entries)
             pieces = overlay_vendor(view["size"], pieces, runtime)
             pieces = overlay_vendor(view["size"], pieces, strings)
             pieces = overlay_vendor(view["size"], pieces, egc_shifts)
@@ -706,6 +712,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_machine_review_sha256"] = machine_master_sha
         if name == "main" and pf_review_sha:
             views[name]["master_pf_review_sha256"] = pf_review_sha
+        if name == "main" and bfnt_entry_sha:
+            views[name]["master_bfnt_entry_review_sha256"] = bfnt_entry_sha
         if name == "main" and c0_data_review_sha:
             views[name]["c0_vendor_data_review_sha256"] = c0_data_review_sha
         if runtime_sha and name == "main":

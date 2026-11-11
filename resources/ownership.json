@@ -20,8 +20,8 @@
     "checked-uncredited-padding": 101,
     "reviewed-embedded-font-bitmap": 8192,
     "reviewed-embedded-sprite-bitmap": 2752,
-    "unknown": 40119,
-    "verified-vendor-code": 125070,
+    "unknown": 39797,
+    "verified-vendor-code": 125392,
     "verified-vendor-initialized-data": 4031
   },
   "views": {
@@ -42,15 +42,31 @@
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-padding": 87,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "unknown": 6578,
-        "verified-vendor-code": 45860,
+        "unknown": 6256,
+        "verified-vendor-code": 46182,
         "verified-vendor-initialized-data": 1403
       },
       "intervals": [
         {
           "start": 0,
-          "end": 948,
+          "end": 626,
           "kind": "unknown"
+        },
+        {
+          "start": 626,
+          "end": 646,
+          "kind": "verified-vendor-code",
+          "library": "master.lib 0.23-derived BFNT",
+          "member": "BFTENTRY_INVAL",
+          "authored_credit": 0
+        },
+        {
+          "start": 646,
+          "end": 948,
+          "kind": "verified-vendor-code",
+          "library": "master.lib 0.23-derived BFNT",
+          "member": "BFNT_ENTRY_PAT",
+          "authored_credit": 0
         },
         {
           "start": 948,
@@ -6836,6 +6852,7 @@
       "master_io_review_sha256": "c88bc9c8cb02e5d2277e501aebf7f2e38796d867226c2ecacf7975d19380fc2a",
       "master_machine_review_sha256": "ec99a30e0c63d1665fbf0bc9482906901262677154cfe2f36acc420bd530927a",
       "master_pf_review_sha256": "522ed383b803d8619b3c689fceef2d9bee46f1e662ced741454c2de5f2542668",
+      "master_bfnt_entry_review_sha256": "2320805272d4040686b54c4156a0eb5ce89c20e80dbc2fba4417a4a0781aadfa",
       "c0_vendor_data_review_sha256": "b22d0dc78b002ade32b595bce334e2b0a375332dc1e0cd153d7ffb46b733d068",
       "runtime_vendor_review_sha256": "41aa97e3016cb4039139959deb6fe2f9a975725441eb2ad470b74c025cd07aff",
       "string_runtime_review_sha256": "7e2948ad1176b8a2507edc415fd65d1b93b821074a22d7f20241748a644c0574",
