@@ -4,9 +4,10 @@
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #endif
 #include "src/main/boss/yumeko/patterns.hpp"
+#include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#define yumeko_fan_mirrored boss_statebyte[15]
+#define yumeko_fan_mirrored yumeko_fan_scratch.mirrored_side
 
 bool pascal near yumeko_flystep_bounce(subpixel_t length, int end_frame)
 {
@@ -42,19 +43,19 @@ void near yumeko_pattern_sword_fan(void)
         return;
     }
     if((boss.phase_frame > 32) && ((boss.phase_frame % 2) == 0)) {
-        if(yumeko_fan_mirrored != 0) {
+        if(yumeko_fan_mirrored != YUMEKO_FAN_NORMAL_SIDE) {
             sword_template.angle = 0x80 - sword_template.angle;
         }
         vector2_at(sword_template.origin, boss.pos.cur.x.v, boss.pos.cur.y.v,
             to_sp(48), sword_template.angle);
         swords_add();
-        if(yumeko_fan_mirrored != 0) {
+        if(yumeko_fan_mirrored != YUMEKO_FAN_NORMAL_SIDE) {
             sword_template.angle = 0x80 - sword_template.angle;
         }
         sword_template.angle -= 6;
         if(sword_template.angle <= 0x0C) {
             boss.phase_frame = 0;
-            boss.mode = 0;
+            boss.mode = YUMEKO_MODE_REPOSITION;
         }
     }
 }
@@ -84,6 +85,6 @@ void near yumeko_pattern_red_ring(void)
     }
     if(boss.phase_frame == 80) {
         boss.phase_frame = 0;
-        boss.mode = 0;
+        boss.mode = YUMEKO_MODE_REPOSITION;
     }
 }

@@ -116,7 +116,7 @@ void pascal far yumeko_update(void)
         if(boss.phase_frame >= 64) {
             boss.phase++;
             boss.phase_frame = 0;
-            boss.mode = 1;
+            boss.mode = YUMEKO_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             yumeko_pattern = yumeko_pattern_sword_fan;
             boss_custombullets_render = swords_render;
@@ -126,12 +126,12 @@ void pascal far yumeko_update(void)
     case YUMEKO_PHASE_MOBILE_FIRST:
     case YUMEKO_PHASE_MOBILE_SECOND:
         switch(boss.mode) {
-        case 0:
+        case YUMEKO_MODE_REPOSITION:
             if(yumeko_flystep_bounce(to_sp(2), 64)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                if(boss.phase_state.patterns_seen >= 20) {
+                if(boss.phase_state.patterns_seen >= YUMEKO_WAVE_PATTERN_LIMIT) {
                     goto moving_phase_end;
                 }
                 if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
@@ -141,11 +141,11 @@ void pascal far yumeko_update(void)
                 }
             }
             break;
-        case 1:
+        case YUMEKO_MODE_ATTACK:
             yumeko_pattern();
             break;
         }
-        if(boss.mode == 0) {
+        if(boss.mode == YUMEKO_MODE_REPOSITION) {
             break;
         }
         if(!boss_hittest_shots()) {
@@ -189,7 +189,7 @@ void pascal far yumeko_update(void)
         } else {
             boss_phase_next(ET_NW_SE, 1200);
         }
-        boss.mode = 1;
+        boss.mode = YUMEKO_MODE_ATTACK;
         break;
 
     case YUMEKO_PHASE_SWORD_SWEEP:

@@ -15,4 +15,22 @@ typedef char yumeko_final_rings_at_15[(offsetof(YumekoFinalRingScratch, complete
 
 #define yumeko_final_scratch (*reinterpret_cast<YumekoFinalRingScratch near *>(boss_statebyte))
 
+// Before the final ring, byte 15 means the mirrored fan side, not an emitted
+// ring count. The final-ring initializer replaces this previous value with 0.
+// Both views overlap the *same original* boss_statebyte[15] memory cell.
+struct YumekoFanScratch {
+    unsigned char earlier_phase_state[15];
+    unsigned char mirrored_side;
+};
+typedef char yumeko_fan_scratch_is_16[(sizeof(YumekoFanScratch) == 16) ? 1 : -1];
+typedef char yumeko_fan_side_at_15[(offsetof(YumekoFanScratch, mirrored_side) == 15) ? 1 : -1];
+#define yumeko_fan_scratch (*reinterpret_cast<YumekoFanScratch near *>(boss_statebyte))
+
+// Movement/reposition vs active callback are original Boss mode values.
+static const unsigned char YUMEKO_MODE_REPOSITION = 0;
+static const unsigned char YUMEKO_MODE_ATTACK = 1;
+static const unsigned char YUMEKO_FAN_NORMAL_SIDE = 0;
+static const unsigned char YUMEKO_FAN_MIRRORED_SIDE = 1;
+static const unsigned char YUMEKO_WAVE_PATTERN_LIMIT = 20;
+
 #endif

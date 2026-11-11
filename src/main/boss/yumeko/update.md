@@ -94,3 +94,28 @@ segment relocations, and the compiled turn-count negative. The actual receipt
 is `.analysis/unit-replays/gpt-web-yumeko-final-scratch-20261111/receipt.json`.
 The separate 283-byte `swords_update()` natural C++ alternative remains an
 unaccepted challenge; its independently reviewed ASM owner is unchanged.
+
+## Fan-mirror and final-ring state lifetimes
+
+The phase-two sword fan and the final-ring attack have different roles for
+`boss_statebyte[15]`. During the sword fan it is `YumekoFanScratch.mirrored_side`,
+a one-byte mirror selection initialized from the random source. The final
+ring explicitly resets the *same physical byte* to zero and subsequently uses
+it as `YumekoFinalRingScratch.completed_rings`. Both phase-specific views are
+16 bytes with separately checked offset-15 placement; they do **not** allocate
+two independent variables. This prevents the false assumption that mirror
+selection survives into the final attack as a separate value.
+
+The original mobile-wave movement mode is `YUMEKO_MODE_REPOSITION == 0`, and
+active attack callback is `YUMEKO_MODE_ATTACK == 1`. The movement callback
+restores reposition mode at its true phase boundary, while the main 11-phase
+Boss controller selects the following callback from the correct original
+phase-two/five pattern tables. The original 20-pattern limit is also named.
+All actual state writes, table indexing and sequence timing remain unchanged.
+
+Four impacted complete source units were rebuilt with two deterministic
+Borland/TLINK producers; all original raw bytes and ordered MZ relocations
+matched, and the compiled semantic negative was rejected. Focused receipt:
+`.analysis/unit-replays/gpt-web-yumeko-fan-ring-lifetimes-20261111/receipt.json`.
+The previously accepted sword updater remains ASM-owned; no unsupported
+natural-C++ credit or new target bytes are inferred here.

@@ -2,21 +2,29 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "523d46d6d3ab2f4a09371bccae07769d2699468f9d74e61a29da1ceb3af43b63",
+  "replay_receipt_sha256": "35cea35756e9775763a9da5eb18f3292ef5e795af9cd8996218c34b1888b3f17",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 92402,
-    "candidate_start": 92402,
-    "size": 318,
-    "target_sha256": "07a769b92236072feedb780b7307ff5db61685700d06006a9b5f5ca6c0804b1d",
-    "candidate_sha256": "6b7032bc029d340ceef29ddc81101e845b123048100226f5f68379b6063c2e08",
+    "target_start": 126677,
+    "candidate_start": 126677,
+    "size": 435,
+    "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+    "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
     "raw_exact": false,
     "target_fixups": [
-      275
+      413,
+      403,
+      353,
+      232,
+      34
     ],
     "candidate_fixups": [
-      275
+      413,
+      403,
+      353,
+      232,
+      34
     ],
     "fixups_exact": true,
     "exact": false
@@ -28790,8 +28798,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "caedc3fe28d0b015ba3f90042e7320448730f9c1ce13298530773b8667022fb0",
-            "dependency_timestamp_normalized_sha256": "c5f60cee35e4e15aa8ba2e63de339c29f54ba8c27c2e2283fafbe9b3513f6230",
+            "sha256": "abaf328f75a4709baea05d9ff26dc6ec37d18c09ffba7bd57eaa0be399a17ee7",
+            "dependency_timestamp_normalized_sha256": "240beb55c56905dbd5d89aec0fa8397368893959d514de3a8c8f460d4bbb599d",
             "module_name": "th05/yumepat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28815,12 +28823,13 @@
               "src/shared/abi.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp"
             ]
           },
           {
-            "sha256": "caedc3fe28d0b015ba3f90042e7320448730f9c1ce13298530773b8667022fb0",
-            "dependency_timestamp_normalized_sha256": "c5f60cee35e4e15aa8ba2e63de339c29f54ba8c27c2e2283fafbe9b3513f6230",
+            "sha256": "7d2a92f1de2b1990b6b2509336c16a8aab9fdd4a4b236324c46781ac36b1410e",
+            "dependency_timestamp_normalized_sha256": "240beb55c56905dbd5d89aec0fa8397368893959d514de3a8c8f460d4bbb599d",
             "module_name": "th05/yumepat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28844,7 +28853,8 @@
               "src/shared/abi.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp"
             ]
           }
         ],
@@ -28890,8 +28900,12 @@
             "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
           },
           {
+            "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+            "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+          },
+          {
             "path": "src/main/boss/yumeko/patterns.cpp",
-            "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+            "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
           },
           {
             "path": "src/main/boss/yumeko/patterns.hpp",
@@ -28942,8 +28956,12 @@
           "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
         },
         {
+          "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+          "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+        },
+        {
           "path": "src/main/boss/yumeko/patterns.cpp",
-          "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+          "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
         },
         {
           "path": "src/main/boss/yumeko/patterns.hpp",
@@ -28984,7 +29002,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "e74e4758eeaf5bfdb089309533ba1a8471073b7f5f822d073c9ab1685a8c621a",
+      "replay_receipt_sha256": "35cea35756e9775763a9da5eb18f3292ef5e795af9cd8996218c34b1888b3f17",
       "compiled_negative_control": {
         "target_start": 126677,
         "candidate_start": 126677,
@@ -29046,8 +29064,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "41b1ce09c521ff1716203f132fcd797524859754eae186e8eaa748da9cfde677",
-          "dependency_timestamp_normalized_sha256": "9dc2f41cb495967d1b3c001ba4befdd0b3e878b796602dea413c4cbf7114f4e7",
+          "sha256": "4a10e7117ef5c5e681055dab9b0eae3283d9fbde799daf25d4a4c65ff07925c6",
+          "dependency_timestamp_normalized_sha256": "12fc068e461dc6922e9d48855dd4b4b2f7bdefe0e0665519829fc6a41919607a",
           "module_name": "th05/yumepat.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -29071,7 +29089,8 @@
             "src/shared/abi.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/yumeko/final_ring_scratch.hpp"
           ]
         },
         "compiler_arguments": [
@@ -35538,7 +35557,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "16e43623df344799a0b47f012486e562566dc5bd0760897ab456990e45f72feb",
+            "sha256": "73d5c07c38fc35146500349c6a920e9377b0baed8e76b4fe57e117d77c60a3a8",
             "dependency_timestamp_normalized_sha256": "3661e45a8c0b3e3decd1b865211a3d4fc3fa1ecc7fd15eaf62132e9bb4fab9e7",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
@@ -35575,7 +35594,7 @@
             ]
           },
           {
-            "sha256": "7a1528282368749a5e29bb8d3c7325f6766f0c9910a42a27d7f9ae03df0026fe",
+            "sha256": "333d0fbc837fbfa09b3ea687adce1de6cefa3df38b260e809df25a4f86f358ee",
             "dependency_timestamp_normalized_sha256": "3661e45a8c0b3e3decd1b865211a3d4fc3fa1ecc7fd15eaf62132e9bb4fab9e7",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
@@ -35613,8 +35632,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -35659,7 +35678,7 @@
           },
           {
             "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
-            "sha256": "4ea2704ba8dfec8d304cb5d7d4677281ce8f3952b3561a7e8e2bfe2856610f7f"
+            "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
           },
           {
             "path": "src/main/boss/yumeko/patterns.hpp",
@@ -35671,7 +35690,7 @@
           },
           {
             "path": "src/main/boss/yumeko/update.cpp",
-            "sha256": "1163f2c4365ac9f7010901e8eff27bfc454c3ec13579f3270b1ff09dba742205"
+            "sha256": "b9164a6533258ad3bfccbaaffa043a76cbee254c36858be2a2e3c120b1a62fa3"
           },
           {
             "path": "src/main/boss/yumeko/update.hpp",
@@ -35727,7 +35746,7 @@
         },
         {
           "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
-          "sha256": "4ea2704ba8dfec8d304cb5d7d4677281ce8f3952b3561a7e8e2bfe2856610f7f"
+          "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
         },
         {
           "path": "src/main/boss/yumeko/patterns.hpp",
@@ -35739,7 +35758,7 @@
         },
         {
           "path": "src/main/boss/yumeko/update.cpp",
-          "sha256": "1163f2c4365ac9f7010901e8eff27bfc454c3ec13579f3270b1ff09dba742205"
+          "sha256": "b9164a6533258ad3bfccbaaffa043a76cbee254c36858be2a2e3c120b1a62fa3"
         },
         {
           "path": "src/main/boss/yumeko/update.hpp",
@@ -35780,83 +35799,77 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "e8f7ef96091f89fd75606955ac0e1426874438381afcca6b71fb1eca11235814",
+      "replay_receipt_sha256": "35cea35756e9775763a9da5eb18f3292ef5e795af9cd8996218c34b1888b3f17",
       "compiled_negative_control": {
-        "target_start": 128733,
-        "candidate_start": 128733,
-        "size": 884,
-        "target_sha256": "3b8e6406119c30d74277e5dcb1d872d0d1d0265bc775393b4933de3f7b930e6c",
-        "candidate_sha256": "81e685c2f11bab7119cc54601f2ca96b40202353aeb200ebe22cec2e2f6f83dc",
+        "target_start": 126677,
+        "candidate_start": 126677,
+        "size": 435,
+        "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+        "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
         "raw_exact": false,
         "target_fixups": [
-          399,
-          344,
-          333,
-          270,
-          161,
-          79
+          413,
+          403,
+          353,
+          232,
+          34
         ],
         "candidate_fixups": [
-          399,
-          344,
-          333,
-          270,
-          161,
-          79
+          413,
+          403,
+          353,
+          232,
+          34
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-yumeko-update",
-        "entry_sha256": "9b33860be7593e4971be76431670bd7dd891289c008facd3be9d48066d922a8e",
+        "unit_id": "main-yumeko-patterns",
+        "entry_sha256": "cf2512ffb310e128b1341714178deb044535435558dc1571dbad6dac3ae10396",
         "mutation": {
-          "id": "yumeko-final-turn-count",
-          "unit": "main-yumeko-update",
-          "source": "src/main/boss/yumeko/update.cpp",
-          "find": "bullet_special.turns_max = 2;",
-          "replace": "bullet_special.turns_max = 3;"
+          "id": "yumeko-bounce-right-bound",
+          "unit": "main-yumeko-patterns",
+          "source": "src/main/boss/yumeko/patterns.cpp",
+          "find": "boss.pos.cur.x.v >= to_sp(336)",
+          "replace": "boss.pos.cur.x.v >= to_sp(335)"
         },
-        "control_sha256": "f3094628e2007ba54fed9c892d3f6b532464e931d19c4c53c79a807e957a37b3",
+        "control_sha256": "5eeda41d2fe751a6cd23a23aa949e6130d72389e8319bb6a2162ad84c413e7d7",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 128733,
-          "candidate_start": 128733,
-          "size": 884,
-          "target_sha256": "3b8e6406119c30d74277e5dcb1d872d0d1d0265bc775393b4933de3f7b930e6c",
-          "candidate_sha256": "81e685c2f11bab7119cc54601f2ca96b40202353aeb200ebe22cec2e2f6f83dc",
+          "target_start": 126677,
+          "candidate_start": 126677,
+          "size": 435,
+          "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+          "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
           "raw_exact": false,
           "target_fixups": [
-            399,
-            344,
-            333,
-            270,
-            161,
-            79
+            413,
+            403,
+            353,
+            232,
+            34
           ],
           "candidate_fixups": [
-            399,
-            344,
-            333,
-            270,
-            161,
-            79
+            413,
+            403,
+            353,
+            232,
+            34
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "8459a9c8a852f4205f312a8b29d534ed669fa8f4db2429409ad3da677f152e8d",
-          "dependency_timestamp_normalized_sha256": "2452c2d79c72280be40da21f8aeae22496ede512875701f27b5750d502593ce1",
-          "module_name": "th05/yumeupd.cpp",
+          "sha256": "4a10e7117ef5c5e681055dab9b0eae3283d9fbde799daf25d4a4c65ff07925c6",
+          "dependency_timestamp_normalized_sha256": "12fc068e461dc6922e9d48855dd4b4b2f7bdefe0e0665519829fc6a41919607a",
+          "module_name": "th05/yumepat.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/yumeupd.cpp",
-            "src/main/boss/yumeko/update.cpp",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
+            "th05/yumepat.cpp",
+            "src/main/boss/yumeko/patterns.cpp",
             "src/main/boss/yumeko/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -35874,11 +35887,6 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/stage/setup.hpp",
-            "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp",
             "src/main/boss/yumeko/final_ring_scratch.hpp"
           ]
         },
@@ -35893,7 +35901,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/yumeupd.cpp"
+          "th05/yumepat.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -79107,8 +79115,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "2221924ebf4333b34cb7223a3d0dddf3a7561ff4da276d9373ed9c6f5eed148b",
-            "dependency_timestamp_normalized_sha256": "f17a3285b66982aecf2bbffb44abacd98a8384e60272eef5b3d49dcd21a44445",
+            "sha256": "6d56e8882bf3fd4bb54e025bb889b04fd5377e1355fccc74e415b8e2a64086a8",
+            "dependency_timestamp_normalized_sha256": "73b85c2a9f3342540815a87e16aa3fc416ba0f054449c86df91307043823f084",
             "module_name": "th05/yfullctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -79151,6 +79159,7 @@
               "src/main/boss/yumeko/update.hpp",
               "src/main/boss/yumeko/patterns.cpp",
               "src/main/boss/yumeko/patterns.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp",
               "src/main/boss/yumeko/aimed_swords.cpp",
               "src/main/boss/yumeko/phase_patterns.hpp",
               "src/main/boss/yumeko/angle_call.hpp",
@@ -79167,8 +79176,8 @@
             ]
           },
           {
-            "sha256": "ff65814b1252a44f40ec274a7bfdae3a0e4778a1bf0b66c83f892a01e15bb0f4",
-            "dependency_timestamp_normalized_sha256": "f17a3285b66982aecf2bbffb44abacd98a8384e60272eef5b3d49dcd21a44445",
+            "sha256": "dd318eb20ed0780d6643e28771ddf3b9272bc23c66951d804c14e31622b8bd15",
+            "dependency_timestamp_normalized_sha256": "73b85c2a9f3342540815a87e16aa3fc416ba0f054449c86df91307043823f084",
             "module_name": "th05/yfullctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -79211,6 +79220,7 @@
               "src/main/boss/yumeko/update.hpp",
               "src/main/boss/yumeko/patterns.cpp",
               "src/main/boss/yumeko/patterns.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp",
               "src/main/boss/yumeko/aimed_swords.cpp",
               "src/main/boss/yumeko/phase_patterns.hpp",
               "src/main/boss/yumeko/angle_call.hpp",
@@ -79228,8 +79238,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -79289,6 +79299,10 @@
             "sha256": "1b3ae1e906b08985ec46e99db5b4e24ab32612bc021f15966cced7611fdb9c2f"
           },
           {
+            "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+            "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+          },
+          {
             "path": "src/main/boss/yumeko/laser_swords.cpp",
             "sha256": "0899c73c82b26bc7f5830caddf40ea5f814b4dfcc823e795dda50aea4e362099"
           },
@@ -79298,7 +79312,7 @@
           },
           {
             "path": "src/main/boss/yumeko/patterns.cpp",
-            "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+            "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
           },
           {
             "path": "src/main/boss/yumeko/patterns.hpp",
@@ -79409,6 +79423,10 @@
           "sha256": "1b3ae1e906b08985ec46e99db5b4e24ab32612bc021f15966cced7611fdb9c2f"
         },
         {
+          "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+          "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+        },
+        {
           "path": "src/main/boss/yumeko/laser_swords.cpp",
           "sha256": "0899c73c82b26bc7f5830caddf40ea5f814b4dfcc823e795dda50aea4e362099"
         },
@@ -79418,7 +79436,7 @@
         },
         {
           "path": "src/main/boss/yumeko/patterns.cpp",
-          "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+          "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
         },
         {
           "path": "src/main/boss/yumeko/patterns.hpp",
@@ -79499,104 +79517,84 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "0e5c9416b5ab679b36ac7a5c263c37273fdfdb89b7fb156c70a05589764e53a5",
+      "replay_receipt_sha256": "35cea35756e9775763a9da5eb18f3292ef5e795af9cd8996218c34b1888b3f17",
       "compiled_negative_control": {
-        "target_start": 127112,
-        "candidate_start": 127112,
-        "size": 354,
-        "target_sha256": "18689abd305088a77e75a28c47af92ee9e0825a0ba430be0e2bb1b6a5beeffa1",
-        "candidate_sha256": "35aa45e9bb18216fedc8c1423e950cdeb4ebbfc9dc7667c6fa0b3bf5f96f214c",
+        "target_start": 126677,
+        "candidate_start": 126677,
+        "size": 435,
+        "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+        "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
         "raw_exact": false,
         "target_fixups": [
-          71,
-          329,
-          309,
-          203
+          413,
+          403,
+          353,
+          232,
+          34
         ],
         "candidate_fixups": [
-          71,
-          329,
-          309,
-          203
+          413,
+          403,
+          353,
+          232,
+          34
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 127112,
-          "size": 354,
-          "function_symbol": "yumeko_pattern_aimed_swords()",
-          "contribution_start": 126273,
-          "contribution_size": 2139,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "yumeko_pattern_counterrotating_s()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-yumeko-aimed-swords-context",
-        "entry_sha256": "237a64a3a92a82b758a86f80a8e33b2cd98f43172b1b58374486a42415569b0e",
+        "unit_id": "main-yumeko-patterns",
+        "entry_sha256": "cf2512ffb310e128b1341714178deb044535435558dc1571dbad6dac3ae10396",
         "mutation": {
-          "unit": "main-yumeko-aimed-swords-context",
-          "source": "src/main/boss/yumeko/aimed_swords.inl",
-          "find": "boss.hp - boss.phase_end_hp < 600",
-          "replace": "boss.hp - boss.phase_end_hp < 601"
+          "id": "yumeko-bounce-right-bound",
+          "unit": "main-yumeko-patterns",
+          "source": "src/main/boss/yumeko/patterns.cpp",
+          "find": "boss.pos.cur.x.v >= to_sp(336)",
+          "replace": "boss.pos.cur.x.v >= to_sp(335)"
         },
-        "control_sha256": "d7c51a75b86c0695d4cbbf8f62e29bbb15571a321934512630f8c15cb496b5f5",
+        "control_sha256": "5eeda41d2fe751a6cd23a23aa949e6130d72389e8319bb6a2162ad84c413e7d7",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 127112,
-          "candidate_start": 127112,
-          "size": 354,
-          "target_sha256": "18689abd305088a77e75a28c47af92ee9e0825a0ba430be0e2bb1b6a5beeffa1",
-          "candidate_sha256": "35aa45e9bb18216fedc8c1423e950cdeb4ebbfc9dc7667c6fa0b3bf5f96f214c",
+          "target_start": 126677,
+          "candidate_start": 126677,
+          "size": 435,
+          "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+          "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
           "raw_exact": false,
           "target_fixups": [
-            71,
-            329,
-            309,
-            203
+            413,
+            403,
+            353,
+            232,
+            34
           ],
           "candidate_fixups": [
-            71,
-            329,
-            309,
-            203
+            413,
+            403,
+            353,
+            232,
+            34
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 127112,
-            "size": 354,
-            "function_symbol": "yumeko_pattern_aimed_swords()",
-            "contribution_start": 126273,
-            "contribution_size": 2139,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "yumeko_pattern_counterrotating_s()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "c5366abd06295cedd758d39158061b6231410f98e4c52ee37c64eaf9ee8ba8b8",
-          "dependency_timestamp_normalized_sha256": "0f3f40906a3f3074c24c8c0caf6297f45b876613ad952293cccf7484792eeb91",
-          "module_name": "th05/yfullctx.cpp",
+          "sha256": "4a10e7117ef5c5e681055dab9b0eae3283d9fbde799daf25d4a4c65ff07925c6",
+          "dependency_timestamp_normalized_sha256": "12fc068e461dc6922e9d48855dd4b4b2f7bdefe0e0665519829fc6a41919607a",
+          "module_name": "th05/yumepat.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/yfullctx.cpp",
-            "src/main/boss/yumeko/attacks_context.cpp",
-            "src/main/boss/yumeko/swords_render.cpp",
-            "src/main/boss/yumeko/swords_render.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
+            "th05/yumepat.cpp",
+            "src/main/boss/yumeko/patterns.cpp",
             "src/main/boss/yumeko/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
@@ -79607,32 +79605,7 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/stage/setup.hpp",
-            "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp",
-            "src/main/boss/yumeko/swords_add.cpp",
-            "src/main/boss/yumeko/swords_add.hpp",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/swords_update.cpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/patterns.cpp",
-            "src/main/boss/yumeko/patterns.hpp",
-            "src/main/boss/yumeko/aimed_swords.cpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
-            "src/main/boss/yumeko/angle_call.hpp",
-            "src/main/boss/yumeko/aimed_swords.inl",
-            "src/main/boss/yumeko/spreads.cpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
-            "src/main/boss/yumeko/spreads.inl",
-            "src/main/boss/yumeko/laser_swords.cpp",
-            "src/main/boss/yumeko/laser_swords.hpp",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/angle_call.hpp",
-            "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/boss/yumeko/final_ring_scratch.hpp"
           ]
         },
         "compiler_arguments": [
@@ -79646,7 +79619,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/yfullctx.cpp"
+          "th05/yumepat.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -79726,8 +79699,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0524377c92daa380ac5c88f85cd9ac73d2be15f7484c143f70c664e297863ee2",
-            "dependency_timestamp_normalized_sha256": "f17a3285b66982aecf2bbffb44abacd98a8384e60272eef5b3d49dcd21a44445",
+            "sha256": "6d56e8882bf3fd4bb54e025bb889b04fd5377e1355fccc74e415b8e2a64086a8",
+            "dependency_timestamp_normalized_sha256": "73b85c2a9f3342540815a87e16aa3fc416ba0f054449c86df91307043823f084",
             "module_name": "th05/yfullctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -79770,6 +79743,7 @@
               "src/main/boss/yumeko/update.hpp",
               "src/main/boss/yumeko/patterns.cpp",
               "src/main/boss/yumeko/patterns.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp",
               "src/main/boss/yumeko/aimed_swords.cpp",
               "src/main/boss/yumeko/phase_patterns.hpp",
               "src/main/boss/yumeko/angle_call.hpp",
@@ -79786,8 +79760,8 @@
             ]
           },
           {
-            "sha256": "235bdefdb4b0ba6647168316e0687986d41559cf183db8e567dbb6967c9aa99d",
-            "dependency_timestamp_normalized_sha256": "f17a3285b66982aecf2bbffb44abacd98a8384e60272eef5b3d49dcd21a44445",
+            "sha256": "dd318eb20ed0780d6643e28771ddf3b9272bc23c66951d804c14e31622b8bd15",
+            "dependency_timestamp_normalized_sha256": "73b85c2a9f3342540815a87e16aa3fc416ba0f054449c86df91307043823f084",
             "module_name": "th05/yfullctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -79830,6 +79804,7 @@
               "src/main/boss/yumeko/update.hpp",
               "src/main/boss/yumeko/patterns.cpp",
               "src/main/boss/yumeko/patterns.hpp",
+              "src/main/boss/yumeko/final_ring_scratch.hpp",
               "src/main/boss/yumeko/aimed_swords.cpp",
               "src/main/boss/yumeko/phase_patterns.hpp",
               "src/main/boss/yumeko/angle_call.hpp",
@@ -79847,8 +79822,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -79908,6 +79883,10 @@
             "sha256": "1b3ae1e906b08985ec46e99db5b4e24ab32612bc021f15966cced7611fdb9c2f"
           },
           {
+            "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+            "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+          },
+          {
             "path": "src/main/boss/yumeko/laser_swords.cpp",
             "sha256": "0899c73c82b26bc7f5830caddf40ea5f814b4dfcc823e795dda50aea4e362099"
           },
@@ -79917,7 +79896,7 @@
           },
           {
             "path": "src/main/boss/yumeko/patterns.cpp",
-            "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+            "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
           },
           {
             "path": "src/main/boss/yumeko/patterns.hpp",
@@ -80028,6 +80007,10 @@
           "sha256": "1b3ae1e906b08985ec46e99db5b4e24ab32612bc021f15966cced7611fdb9c2f"
         },
         {
+          "path": "src/main/boss/yumeko/final_ring_scratch.hpp",
+          "sha256": "d06bb19772b904eb10899d4e0558b6bd1f3e1f796ee91101b85834215d41abf7"
+        },
+        {
           "path": "src/main/boss/yumeko/laser_swords.cpp",
           "sha256": "0899c73c82b26bc7f5830caddf40ea5f814b4dfcc823e795dda50aea4e362099"
         },
@@ -80037,7 +80020,7 @@
         },
         {
           "path": "src/main/boss/yumeko/patterns.cpp",
-          "sha256": "81a41d8da0f12f23b81a40aa9541053e7ff15bbd8ae8f5a5b1e3160f882694a3"
+          "sha256": "a50827ba6a81d53bd8e817656f37a6d040864215873c5293d297c201290fd9e7"
         },
         {
           "path": "src/main/boss/yumeko/patterns.hpp",
@@ -80118,104 +80101,84 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "0cb5eff436f67a4c81d3869c881c569c41dc4a9cc9cbfe592b1292f3f2c8303d",
+      "replay_receipt_sha256": "35cea35756e9775763a9da5eb18f3292ef5e795af9cd8996218c34b1888b3f17",
       "compiled_negative_control": {
-        "target_start": 127984,
-        "candidate_start": 127984,
-        "size": 428,
-        "target_sha256": "4e99ef2439816cf51aa04622b75c3db42e4d7527794add10d9c88ea3d93b9138",
-        "candidate_sha256": "2a731206ec0d7e54e2b25ed2136e9658c7b416ce4e2f3a6caca7f03028d997b7",
+        "target_start": 126677,
+        "candidate_start": 126677,
+        "size": 435,
+        "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+        "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
         "raw_exact": false,
         "target_fixups": [
+          413,
+          403,
+          353,
           232,
-          72,
-          402,
-          382
+          34
         ],
         "candidate_fixups": [
+          413,
+          403,
+          353,
           232,
-          72,
-          402,
-          382
+          34
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 127984,
-          "size": 428,
-          "function_symbol": "yumeko_pattern_laser_swords()",
-          "contribution_start": 126273,
-          "contribution_size": 2139,
-          "boundary_kind": "contribution-end",
-          "next_function_symbol": null
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-yumeko-laser-swords-context",
-        "entry_sha256": "d10484b71ff0487b65dffdbe6668bd6e003572ee0efd86bfcdde88af9e063b0a",
+        "unit_id": "main-yumeko-patterns",
+        "entry_sha256": "cf2512ffb310e128b1341714178deb044535435558dc1571dbad6dac3ae10396",
         "mutation": {
-          "unit": "main-yumeko-laser-swords-context",
-          "source": "src/main/boss/yumeko/laser_swords.cpp",
-          "find": "boss.hp - boss.phase_end_hp < 500",
-          "replace": "boss.hp - boss.phase_end_hp < 501"
+          "id": "yumeko-bounce-right-bound",
+          "unit": "main-yumeko-patterns",
+          "source": "src/main/boss/yumeko/patterns.cpp",
+          "find": "boss.pos.cur.x.v >= to_sp(336)",
+          "replace": "boss.pos.cur.x.v >= to_sp(335)"
         },
-        "control_sha256": "2f7241cd864b6f5a11a88ccb2a283e9515ae40946d10a5f64b04ec4630ed3d51",
+        "control_sha256": "5eeda41d2fe751a6cd23a23aa949e6130d72389e8319bb6a2162ad84c413e7d7",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 127984,
-          "candidate_start": 127984,
-          "size": 428,
-          "target_sha256": "4e99ef2439816cf51aa04622b75c3db42e4d7527794add10d9c88ea3d93b9138",
-          "candidate_sha256": "2a731206ec0d7e54e2b25ed2136e9658c7b416ce4e2f3a6caca7f03028d997b7",
+          "target_start": 126677,
+          "candidate_start": 126677,
+          "size": 435,
+          "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
+          "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
           "raw_exact": false,
           "target_fixups": [
+            413,
+            403,
+            353,
             232,
-            72,
-            402,
-            382
+            34
           ],
           "candidate_fixups": [
+            413,
+            403,
+            353,
             232,
-            72,
-            402,
-            382
+            34
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 127984,
-            "size": 428,
-            "function_symbol": "yumeko_pattern_laser_swords()",
-            "contribution_start": 126273,
-            "contribution_size": 2139,
-            "boundary_kind": "contribution-end",
-            "next_function_symbol": null
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "a9031e5e72c8feb7e22fea0e4e5c5a583a597b246a94336c863e7767157aba7b",
-          "dependency_timestamp_normalized_sha256": "f9881869a3e0b0dde6aad2dbc3cf1017a8c357281095114b33962e6cc42ee4b7",
-          "module_name": "th05/yfullctx.cpp",
+          "sha256": "4a10e7117ef5c5e681055dab9b0eae3283d9fbde799daf25d4a4c65ff07925c6",
+          "dependency_timestamp_normalized_sha256": "12fc068e461dc6922e9d48855dd4b4b2f7bdefe0e0665519829fc6a41919607a",
+          "module_name": "th05/yumepat.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/yfullctx.cpp",
-            "src/main/boss/yumeko/attacks_context.cpp",
-            "src/main/boss/yumeko/swords_render.cpp",
-            "src/main/boss/yumeko/swords_render.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
+            "th05/yumepat.cpp",
+            "src/main/boss/yumeko/patterns.cpp",
             "src/main/boss/yumeko/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
@@ -80226,32 +80189,7 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/stage/setup.hpp",
-            "src/main/hud/resident.hpp",
-            "src/main/bullet/template.hpp",
-            "src/main/boss/yumeko/swords_add.cpp",
-            "src/main/boss/yumeko/swords_add.hpp",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/swords_update.cpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/patterns.cpp",
-            "src/main/boss/yumeko/patterns.hpp",
-            "src/main/boss/yumeko/aimed_swords.cpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
-            "src/main/boss/yumeko/angle_call.hpp",
-            "src/main/boss/yumeko/aimed_swords.inl",
-            "src/main/boss/yumeko/spreads.cpp",
-            "src/main/boss/yumeko/phase_patterns.hpp",
-            "src/main/boss/yumeko/spreads.inl",
-            "src/main/boss/yumeko/laser_swords.cpp",
-            "src/main/boss/yumeko/laser_swords.hpp",
-            "src/main/boss/yumeko/update.hpp",
-            "src/main/boss/yumeko/angle_call.hpp",
-            "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/boss/yumeko/final_ring_scratch.hpp"
           ]
         },
         "compiler_arguments": [
@@ -80265,7 +80203,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/yfullctx.cpp"
+          "th05/yumepat.cpp"
         ]
       },
       "receipt_aggregate_pass": true
