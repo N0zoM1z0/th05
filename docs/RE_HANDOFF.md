@@ -76,6 +76,8 @@ differs; this does not invalidate the independently accepted opcode.
 
 **Score insertion remains open:** MAIN `C8F0..C998` is a 168-byte original-register score-insertion function. Typed C++ source and a genuine foreign binder were explored; the pinned 16-bit inline assembler rejected its 386 string-copy primitive. The failed compiler sources/logs are retained in `.analysis/` and no live manifest/acceptance claim was added. See [score entry](../src/main/score/continue_enter.md).
 
+**Far vector pair remains open:** MAIN `14AB8..14B58` has a 160-byte two-function candidate. Genuine C++ currently emits 171 bytes due signed 386 trig-table register lowering; the legacy inline assembler rejects direct `MOVSX` mnemonics. No target bytes were injected and no source credit was claimed. See [far vector compiler diagnostic](../src/shared/math/vector_far.md).
+
 **Other unknown intervals.** The [ownership map](../resources/ownership.json)
 contains actual unowned code/data ranges. Examples requiring function-boundary
 review are MAIN `C9BA..CAD2` (player invalidation/movement and an inline switch table; the `C9A3` NOP remains outside the accepted `C9A4..C9BA` loader) and
