@@ -66,4 +66,6 @@ but the literal shipped source file is not known. Like the separately accepted
 `-M` child, this complete COM acceptance is tracked separately from the
 unfinished global authored-code denominator and the main EXE ownership map.
 Do not count all 1,009 bytes as authored instructions or transfer credit to
-ZUN.COM's remaining `-O`, `-S`, `-G` or outer launcher sections.
+ZUN.COM's remaining `-S` compiler-generated child or outer launcher.
+The `-O` ADPCM and `-G` gaiji members now have their own independent strict
+exact COM proofs, with distinct CODE, DATA and asset accounting.

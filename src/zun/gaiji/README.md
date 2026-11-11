@@ -68,5 +68,7 @@ python3 scripts/replay_zun_gaiji.py --output .analysis/zun-gaiji/NEW
 python3 scripts/replay_zun_gaiji.py --accept .analysis/zun-gaiji/NEW/receipt.json
 ```
 
-The accepted `-I` 1,009-byte and `-M` 311-byte children use their own separate
-source and evidence, and neither was recompiled for this focused work.
+The accepted `-O` 926-byte, `-I` 1,009-byte and `-M` 311-byte children use
+their own separate sources and exact receipts; none was recompiled for this
+focused work. The 6,564-byte `-S` C++ child and outer COM wrapper remain
+outside this acceptance.
