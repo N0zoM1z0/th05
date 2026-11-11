@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "a8368d39d44c3d5b5447dd4e858152c6214d1762081cbb4616b40adf54b06fd9",
+  "replay_receipt_sha256": "dd717ad66c81d7c9c5bf7bc7b368c1dfd6a75481aebc91da7c2020b1c46cc273",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 55662,
-    "candidate_start": 55662,
-    "size": 116,
-    "target_sha256": "75f5858072f1cbcbcecd96e5d1850579e9f88ceeb15e54d702db813b7c6f7559",
-    "candidate_sha256": "38fff5d21a707fea16e7370c0e7a0cee228a56eb18a5043e0dab7cfea937d220",
+    "target_start": 55826,
+    "candidate_start": 55826,
+    "size": 30,
+    "target_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+    "candidate_sha256": "0df453eed76a02e95a8058845fcc7367cad6c886fb8a8500dadbc161c225cb7b",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -39881,6 +39881,244 @@
           }
         ]
       }
+    },
+    {
+      "id": "op-piano-current-note-register",
+      "entry_sha256": "b4264e387699133e49092b1a46ffaaf18a63c39177bc3949b50e088b48778077",
+      "result": {
+        "id": "op-piano-current-note-register",
+        "entry_sha256": "b4264e387699133e49092b1a46ffaaf18a63c39177bc3949b50e088b48778077",
+        "rounds": [
+          {
+            "target_start": 55826,
+            "candidate_start": 55826,
+            "size": 30,
+            "target_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+            "candidate_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 55826,
+            "candidate_start": 55826,
+            "size": 30,
+            "target_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+            "candidate_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7b4ccba6e419028575b1b642dd5cde62abc5e0f795dcd7ef2910bcc39af6b840",
+            "dependency_timestamp_normalized_sha256": "f80bfde2e1cb25277a4b063bb979643a0b94f4eeb95b6315ff7f8c6979e2a993",
+            "module_name": "th05/pnote.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pnote.cpp",
+              "src/op/piano/note_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/pmd_part.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          },
+          {
+            "sha256": "7b4ccba6e419028575b1b642dd5cde62abc5e0f795dcd7ef2910bcc39af6b840",
+            "dependency_timestamp_normalized_sha256": "f80bfde2e1cb25277a4b063bb979643a0b94f4eeb95b6315ff7f8c6979e2a993",
+            "module_name": "th05/pnote.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pnote.cpp",
+              "src/op/piano/note_register.cpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/shared/sound/pmd_part.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/pnote.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/pnote.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/piano_current_note_bindings.asm",
+            "sha256": "b9ac952b8ff8c54be05ffda319d698f9cf2b41c697479e34875471cd15505c20"
+          },
+          {
+            "path": "src/op/piano/note_register.cpp",
+            "sha256": "dcbd71b3e0d9bdbf163f3c82edcffaa2ee8f2a2bdb07b9662909b66abd309184"
+          },
+          {
+            "path": "src/shared/sound/pmd_part.hpp",
+            "sha256": "06e66ce69c1d4a51761178bd610972937158d4c7dc6ec8fb2e5a413ac9a4732a"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/piano_current_note_bindings.asm",
+          "sha256": "b9ac952b8ff8c54be05ffda319d698f9cf2b41c697479e34875471cd15505c20"
+        },
+        {
+          "path": "src/op/piano/note_register.cpp",
+          "sha256": "dcbd71b3e0d9bdbf163f3c82edcffaa2ee8f2a2bdb07b9662909b66abd309184"
+        },
+        {
+          "path": "src/shared/sound/pmd_part.hpp",
+          "sha256": "06e66ce69c1d4a51761178bd610972937158d4c7dc6ec8fb2e5a413ac9a4732a"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "dd717ad66c81d7c9c5bf7bc7b368c1dfd6a75481aebc91da7c2020b1c46cc273",
+      "compiled_negative_control": {
+        "target_start": 55826,
+        "candidate_start": 55826,
+        "size": 30,
+        "target_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+        "candidate_sha256": "0df453eed76a02e95a8058845fcc7367cad6c886fb8a8500dadbc161c225cb7b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-piano-current-note-register",
+        "entry_sha256": "b4264e387699133e49092b1a46ffaaf18a63c39177bc3949b50e088b48778077",
+        "mutation": {
+          "unit": "op-piano-current-note-register",
+          "source": "src/op/piano/note_register.cpp",
+          "find": "_AH = 4;",
+          "replace": "_AH = 3;"
+        },
+        "control_sha256": "c4078f6db5b92c004877214822280382688a40f7984ac3dc6664959e91029bcb",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 55826,
+          "candidate_start": 55826,
+          "size": 30,
+          "target_sha256": "03c35a381b48cf385dde29cfc9fa49484cfe76c4cbd0758d024bcd150ffb9f70",
+          "candidate_sha256": "0df453eed76a02e95a8058845fcc7367cad6c886fb8a8500dadbc161c225cb7b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "omf": {
+          "sha256": "83ddec65150eb29f9623a660ea46bf7a6ae842148b26c5da32754ffcc937d108",
+          "dependency_timestamp_normalized_sha256": "75856dbd37e07341cd5f3eb8c6f18ee7d2668a7b9ab29dd9f654875aaffd7b8a",
+          "module_name": "th05/pnote.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/pnote.cpp",
+            "src/op/piano/note_register.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/shared/sound/pmd_part.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/pnote.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-op",

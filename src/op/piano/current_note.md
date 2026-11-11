@@ -41,3 +41,12 @@ SHA-256 `fa2d7fca915378dc743bcc6872254cb98bd5ab40e945e164838158aa620b52b5`.
 The independent full piano native/origin review is recorded in
 [piano notes](piano.md). No accepted source dependency changed, and the installed
 tool execution proof was reused.
+
+## 2026-11-11 exact register-context result
+
+The conventional 51-byte candidate above was not accepted. An independent
+[30-byte exact C++ implementation](note_register.md) now uses a single
+AX load for the neighboring PMD length/gate bytes and preserves the native
+BX near-fastcall contract. Its strict local receipt supersedes the old
+source-size blocker without changing the existing full PMD type or piano
+ASM providers.

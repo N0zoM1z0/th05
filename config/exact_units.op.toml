@@ -1105,3 +1105,23 @@ unit = "op-piano-render-116"
 source = "src/op/piano/render_exact.cpp"
 find = "_AH = 5;"
 replace = "_AH = 4;"
+
+[[units]]
+id = "op-piano-current-note-register"
+source = "src/op/piano/note_register.cpp"
+module = "th05/pnote.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/piano_current_note_bindings.asm"
+target_start = 0xda12
+size = 30
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+binary = "O"
+
+[[controls]]
+unit = "op-piano-current-note-register"
+source = "src/op/piano/note_register.cpp"
+find = "_AH = 4;"
+replace = "_AH = 3;"
