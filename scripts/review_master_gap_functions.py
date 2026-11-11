@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seventeen complete, previously unknown source-backed Master functions.
+"""Twenty complete, previously unknown source-backed Master functions.
 
 The original Master 0.23 archive, unchanged native TASM OMF and real MAIN MZ
 must all agree. Accept only explicitly named full procedures, never nearby
@@ -29,6 +29,8 @@ MEMBERS = (
     ('BFNT_PALETTE_SET',  0x0590, 64),
     ('GAIJI_PUTCA',      0x1d7a, 68),
     ('GRAPH_CLEAR',      0x1e62, 36),
+    ('LARGEPUT_DISP8',    0x20dc, 69),
+    ('make_linework',     0x2122, 54),
     ('IRAND',            0x23c6, 42),
     ('TEXT_FILLCA',      0x2508, 56),
     ('TEXT_PUTSA',       0x2598, 114),
@@ -41,7 +43,55 @@ MEMBERS = (
     ('EMS_EXIST',        0x4000, 34),
     ('EMS_SETNAME',      0x4052, 26),
     ('EMS_SPACE',        0x40ce, 24),
+    ('SUPERPT8_DISP',     0x4162, 79),
 )
+
+# The retained native-source names of three *actual private procedures*
+# differ from their independently preserved Master 0.23 archive names.
+PRIVATE_AUTHOR = {
+    'LARGEPUT_DISP8': ('LARGEPUT.ASM', 'DISP8'),
+    'SUPERPT8_DISP': ('SUPERPT8.ASM', 'DISP'),
+    'make_linework': ('MAKE_LIN.ASM', 'make_linework'),
+}
+# The two real single-byte *non-procedure* positions stay unknown. The first
+# differs between the calibration EVEN NOP and original zero; the second is
+# an original alignment zero at the end of the SUPERPT8 helper.
+UNOWNED_BOUNDARIES = (0x2121, 0x41b1)
+PRIVATE_OMF_ACTION_COUNTS = {'LARGEPUT_DISP8': 2, 'make_linework': 0, 'SUPERPT8_DISP': 0}
+
+
+def private_source_author(old, member):
+    """Apply only verified alpha-renames and typed-word aliases to author PROC."""
+    text=source_spelling(old)
+    if member == 'LARGEPUT_DISP8':
+        # The actual TASM port prefixes all *private* names. None of the
+        # binary register or arithmetic instructions are modified.
+        old_names=('disp8procnear','disp8endp','_ch_equ$-1','_di_equ$-2',
+                   'largeput_add_di','largeput_di_','largeput_ch_')
+        # Normalize original author-only private labels to the identical
+        # downstream-local names used by the full source comparison.
+        renamed=[]
+        for line in text:
+            line=line.replace('disp8procnear','largeput_disp8procnear')
+            line=line.replace('disp8endp','largeput_disp8endp')
+            line=line.replace('_ch_equ$-1','largeput_ch_equ$-1')
+            line=line.replace('_di_equ$-2','largeput_di_equ$-2')
+            line=line.replace('add_diequ$-2','largeput_add_diequ$-2')
+            renamed.append(line)
+        return renamed
+    if member == 'SUPERPT8_DISP':
+        return [line.replace('dispprocnear','superpt8_dispprocnear')
+                    .replace('dispendp','superpt8_dispendp') for line in text]
+    if member == 'make_linework':
+        for old_piece in ('mov[bx+x],dx','mov[bx+d],ax','mov[bx+dlx],ax',
+                          'mov[bx+s],8000h'):
+            need(text.count(old_piece)==1,'original linework field missing: '+old_piece)
+        return [line.replace('mov[bx+x],dx','mov[bx+make_lin_x],dx')
+                    .replace('mov[bx+d],ax','mov[bx+make_lin_d],ax')
+                    .replace('mov[bx+dlx],ax','mov[bx+make_lin_dlx],ax')
+                    .replace('mov[bx+s],8000h','movwordptr[bx+make_lin_s],8000h')
+                for line in text]
+    raise ValueError('not an original private Master source procedure')
 
 
 def source_spelling(raw):
@@ -109,11 +159,21 @@ def replay():
         same = [b for b in blocks if b['name'] == member]
         need(len(same) == 1, 'whole original procedure absent/ambiguous: ' + member)
         canonical = source_spelling(same[0]['text'])
-        matches = [(fn, block) for fn, block in author.get(member.casefold(), [])
-                   if source_spelling(block['text']) == canonical]
+        if member in PRIVATE_AUTHOR:
+            archive_filename, author_name = PRIVATE_AUTHOR[member]
+            candidates = [(fn, block) for fn, block in author.get(author_name.casefold(), [])
+                          if fn == archive_filename]
+            matches = [(fn, block) for fn, block in candidates
+                       if private_source_author(block['text'],member) == canonical]
+        else:
+            matches = [(fn, block) for fn, block in author.get(member.casefold(), [])
+                       if source_spelling(block['text']) == canonical]
         need(len(matches) == 1, 'original author source differs from native routine: ' + member)
         original_filename, original_block = matches[0]
         control, linked, unlinked_hash, mz, actions = linked_scope(obj, start, size)
+        if member in PRIVATE_OMF_ACTION_COUNTS:
+            need(len(actions) == PRIVATE_OMF_ACTION_COUNTS[member],
+                 'real original private Master OMF action count changed')
         observed = native.program_image[start:start+size]
         need(control == cal.program_image[start:start+size] and linked == observed,
              'complete original Master code differs from compiled source: ' + member)
@@ -127,6 +187,7 @@ def replay():
             'member': member, 'start': start, 'end': start + size, 'size': size,
             'candidate_source': filename, 'source_file_sha256': source_hash,
             'original_archive_member': original_filename,
+            'original_archive_procedure': PRIVATE_AUTHOR.get(member,(original_filename,member))[1],
             'original_block_sha256': sha(original_block['text'].encode('utf8')),
             'candidate_block_sha256': sha(same[0]['text'].encode('utf8')),
             'canonical_source_sha256': sha('\n'.join(canonical).encode('utf8')),
@@ -136,6 +197,16 @@ def replay():
             'ordered_original_MZ_relocations': mz,
             'ordered_OMF_actions': actions, 'authored_credit': 0,
         })
+    # Native CODE boundaries are always adopted as complete original PROC
+    # extents, never absorbing a nearby EVEN byte just because it looks like
+    # an alignment NOP. Both positions remain outside all credited scopes.
+    for position in UNOWNED_BOUNDARIES:
+        need(all(not (r['start'] <= position < r['end']) for r in rows),
+             'native Master private PROC swallows unowned alignment byte')
+    need(cal.program_image[0x2121] == 0x90 and
+         native.program_image[0x2121] == 0x00 and
+         native.program_image[0x41b1] == 0x00,
+         'original Master private PROC post-RET boundary changed')
     return {
         'schema_version': 1, 'kind': 'original-master-gap-functions-source-and-MZ',
         'artifact': 'th05-main', 'members': rows,
@@ -147,6 +218,7 @@ def replay():
         'parent_master_sha256': digest_file(BASE),
         'verifier_sha256': digest_file(ROOT / 'scripts/review_master_gap_functions.py'),
         'authored_credit': 0, 'other_bytes_claimed': 0,
+        'unowned_boundary_offsets': list(UNOWNED_BOUNDARIES),
     }
 
 
@@ -157,6 +229,7 @@ def validate_public(proof):
          proof.get('artifact') == 'th05-main' and
          proof.get('CODE_bytes') == sum(n for _, _, n in MEMBERS) and
          proof.get('authored_credit') == proof.get('other_bytes_claimed') == 0 and
+         proof.get('unowned_boundary_offsets') == list(UNOWNED_BOUNDARIES) and
          proof.get('original_target_sha256') == parent['inputs']['target']['sha256'] and
          proof.get('source_OMF_sha256') == parent['inputs']['saved_object']['sha256'] and
          proof.get('calibration_exe_sha256') == parent['inputs']['calibration_exe']['sha256'] and
@@ -168,7 +241,15 @@ def validate_public(proof):
     need([(r.get('member'), r.get('start'), r.get('size')) for r in rows] == list(MEMBERS),
          'complete Master source function list changed')
     for row in rows:
+        if row['member'] in PRIVATE_OMF_ACTION_COUNTS:
+            need(len(row.get('ordered_OMF_actions',[])) ==
+                 PRIVATE_OMF_ACTION_COUNTS[row['member']],
+                 'original private Master helper OMF actions missing')
         need(row.get('end') == row['start'] + row['size'] and
+             row.get('original_archive_procedure') ==
+             PRIVATE_AUTHOR.get(row['member'],(None,row['member']))[1] and
+             (row['member'] not in PRIVATE_AUTHOR or
+              row['original_archive_member'] == PRIVATE_AUTHOR[row['member']][0]) and
              row.get('authored_credit') == 0 and
              isinstance(row.get('ordered_OMF_actions'), list) and
              row.get('ordered_original_MZ_relocations') ==
