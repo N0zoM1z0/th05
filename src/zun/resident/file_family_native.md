@@ -47,10 +47,10 @@ it. Seven natural `EVEN` padding NOPs, at scope-relative `131, 287, 473, 581,
 actual instructions.** Earlier 356-/728-byte scoped receipts were superseded,
 not counted a second time.
 
-Together with the independently accepted [190-byte resident-memory
-providers](resdata_native.md), the complete source-owned Master core covers
-**1,020 consecutive original bytes** at `05DA..09D6` (1,012 vendor
-instructions, 8 checked alignment bytes). This does not accept or modify the separate
+Together with the independently accepted [226-byte graphics and
+resident-memory family](resdata_native.md), the complete Master core covers
+**1,056 consecutive original bytes** at `05B6..09D6` (1,047 vendor
+instructions, nine checked alignment bytes). This does not accept or modify the separate
 269-byte resident `main()` C++ function or the entire `-S` program.
 
 The accepted scoped ledger is

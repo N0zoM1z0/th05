@@ -120,3 +120,12 @@ independent, exact [vendor ASM source](file_family_native.md). The resident
 entry's DOS-file callbacks therefore have real original-code definitions
 rather than merely symbol addresses. This does not alter the C++ `main()`
 control flow or accept its still-mismatched 269-byte scope.
+
+## Master GRCG clear helper also source-exact
+
+The original 36-byte `GRAPH_CLEAR` immediately after the unaccepted 269-byte
+resident entry (`05B6..05DA`) now belongs to the same complete native
+[Master graphics/memory source](resdata_native.md) as resident search/create.
+The `-S` vendor CODE has a continuous 1,056-byte exact interval from
+`05B6..09D6`, but this adds no credit to the compiler-generated `main()`
+whose error-branch layout remains unresolved.

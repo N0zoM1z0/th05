@@ -1,12 +1,14 @@
 ; Master library's original 8086 resident-data search and allocation routines.
 ; Retained from ReC98/libs/master.lib/resdata.asm by Akihiko Koizuka.
 ; Target is ZUN.COM's -S tiny-memory-model near-Pascal helper contribution.
-; Two complete original functions with the original near arguments and DOS MCB ABI.
+; Complete GRCG clear + two original near-Pascal resident-data functions.
 .8086
 .model tiny
 .code
 org 0100h
 resident_source_base label byte
+org 05B6h
+include graph_clear_native.inc
 org 05DAh
 
 MCB_KIND equ 0
