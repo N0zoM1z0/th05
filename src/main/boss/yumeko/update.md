@@ -57,3 +57,22 @@ relocations. The historical pre-build packet remains in
 `.analysis/yumeko-update-{bindings.asm,unit-proposal.toml,boundary-review.json}`;
 its candidate status describes preparation, not the subsequently accepted replay.
 Source, header and binder remained frozen through acceptance.
+
+## Named original Boss phases (2026-11-11)
+
+The maintained 884-byte two-function update now uses `YumekoPhase`
+enumerators for the eleven outer phases (0–10), including approach,
+mobile/sword-pattern, stationary, sweep and final ring phases.
+Four corresponding phase comparisons use those same constants.
+The inner `boss.mode` state machine, phase transitions and timing remain
+unchanged.
+
+A focused `main-yumeko-update` replay built the edited C++ twice with
+Borland TCC/TLINK. Both full 884-byte outputs, the one alignment zero,
+22-byte compiler switch table, and all six original ordered relocation
+sites match the target; the genuine turn-count mutation control failed
+as expected. The receipt is retained under
+`.analysis/unit-replays/gpt-web-yumeko-enum-real-20261111/` and the
+updated accepted-unit ledger records the new source identity.
+This is a source-readability improvement to an **already accepted**
+large Boss function, not an increase to newly owned author bytes.

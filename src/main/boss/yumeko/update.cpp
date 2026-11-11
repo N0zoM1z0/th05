@@ -11,6 +11,20 @@
 #define yumeko_final_rings boss_statebyte[15]
 static const int YUMEKO_HP_TOTAL = 8300;
 
+enum YumekoPhase {
+    YUMEKO_PHASE_HP_FILL = 0,
+    YUMEKO_PHASE_ENTRANCE_WAIT = 1,
+    YUMEKO_PHASE_MOBILE_FIRST = 2,
+    YUMEKO_PHASE_APPROACH_FIRST = 3,
+    YUMEKO_PHASE_STATIONARY_FIRST = 4,
+    YUMEKO_PHASE_MOBILE_SECOND = 5,
+    YUMEKO_PHASE_APPROACH_SECOND = 6,
+    YUMEKO_PHASE_STATIONARY_SECOND = 7,
+    YUMEKO_PHASE_SWORD_SWEEP = 8,
+    YUMEKO_PHASE_FINAL_APPROACH = 9,
+    YUMEKO_PHASE_FINAL_RING = 10
+};
+
 void near yumeko_pattern_final_ring(void)
 {
     if(boss.phase_frame < 32) {
@@ -56,7 +70,7 @@ void pascal far yumeko_update(void)
     boss.phase_frame++;
 
     switch(boss.phase) {
-    case 0:
+    case YUMEKO_PHASE_HP_FILL:
         if(boss.phase_frame == 1) {
             boss.hp = YUMEKO_HP_TOTAL;
             boss.phase_end_hp = 7500;
@@ -96,7 +110,7 @@ void pascal far yumeko_update(void)
         }
         break;
 
-    case 1:
+    case YUMEKO_PHASE_ENTRANCE_WAIT:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= 64) {
             boss.phase++;
@@ -108,8 +122,8 @@ void pascal far yumeko_update(void)
         }
         break;
 
-    case 2:
-    case 5:
+    case YUMEKO_PHASE_MOBILE_FIRST:
+    case YUMEKO_PHASE_MOBILE_SECOND:
         switch(boss.mode) {
         case 0:
             if(yumeko_flystep_bounce(to_sp(2), 64)) {
@@ -119,7 +133,7 @@ void pascal far yumeko_update(void)
                 if(boss.phase_state.patterns_seen >= 20) {
                     goto moving_phase_end;
                 }
-                if(boss.phase == 2) {
+                if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
                     yumeko_pattern = yumeko_patterns_phase2[boss.phase_state.patterns_seen & 1];
                 } else {
                     yumeko_pattern = yumeko_patterns_phase5[boss.phase_state.patterns_seen & 1];
@@ -138,20 +152,20 @@ void pascal far yumeko_update(void)
         }
         boss_score_bonus(10);
     moving_phase_end:
-        if(boss.phase == 2) {
+        if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
             boss_phase_next(ET_CIRCLE, 5700);
         } else {
             boss_phase_next(ET_HORIZONTAL, 2700);
         }
         break;
 
-    case 3:
-    case 6:
+    case YUMEKO_PHASE_APPROACH_FIRST:
+    case YUMEKO_PHASE_APPROACH_SECOND:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(192), to_sp(64))) {
             boss.phase++;
             boss.phase_frame = 0;
-            if(boss.phase == 4) {
+            if(boss.phase == YUMEKO_PHASE_STATIONARY_FIRST) {
                 yumeko_pattern = yumeko_pattern_aimed_swords;
             } else {
                 yumeko_pattern = yumeko_pattern_laser_swords;
@@ -159,8 +173,8 @@ void pascal far yumeko_update(void)
         }
         break;
 
-    case 4:
-    case 7:
+    case YUMEKO_PHASE_STATIONARY_FIRST:
+    case YUMEKO_PHASE_STATIONARY_SECOND:
         yumeko_pattern();
         if(boss.phase_frame < 2000) {
             if(!boss_hittest_shots()) {
@@ -168,7 +182,7 @@ void pascal far yumeko_update(void)
             }
             boss_score_bonus(10);
         }
-        if(boss.phase == 4) {
+        if(boss.phase == YUMEKO_PHASE_STATIONARY_FIRST) {
             boss_phase_next(ET_NW_SE, 4500);
             yumeko_pattern = yumeko_pattern_counterrotating_spreads;
         } else {
@@ -177,7 +191,7 @@ void pascal far yumeko_update(void)
         boss.mode = 1;
         break;
 
-    case 8:
+    case YUMEKO_PHASE_SWORD_SWEEP:
         yumeko_pattern_sword_sweep();
         if(boss.phase_frame < 2000) {
             if(!boss_hittest_shots()) {
@@ -188,7 +202,7 @@ void pascal far yumeko_update(void)
         boss_phase_next(ET_NW_SE, 0);
         break;
 
-    case 9:
+    case YUMEKO_PHASE_FINAL_APPROACH:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(192), to_sp(96))) {
             boss.phase++;
@@ -197,7 +211,7 @@ void pascal far yumeko_update(void)
         }
         break;
 
-    case 10:
+    case YUMEKO_PHASE_FINAL_RING:
         yumeko_pattern_final_ring();
         if(boss.phase_frame < 1200) {
             if(!boss_hittest_shots()) {

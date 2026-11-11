@@ -2,18 +2,32 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "96fe860f43b963535d4fb5e53f42c6b0ad58cf60af006cb929faf80dbbe338f6",
+  "replay_receipt_sha256": "c9be590de63bc5256acea41f4530618be0272124b20147bcef0f807e95c5a47d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 85206,
-    "candidate_start": 85206,
-    "size": 11,
-    "target_sha256": "d56c516fe2fdb4c97b4b9886be16f82b8770af8f29dc9e96b6cfcb630f629d5c",
-    "candidate_sha256": "d61a722b3cc234ed1a7319cb768917b8f70664f1507ec752e9d917cc4babcac1",
+    "target_start": 128733,
+    "candidate_start": 128733,
+    "size": 884,
+    "target_sha256": "3b8e6406119c30d74277e5dcb1d872d0d1d0265bc775393b4933de3f7b930e6c",
+    "candidate_sha256": "81e685c2f11bab7119cc54601f2ca96b40202353aeb200ebe22cec2e2f6f83dc",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      399,
+      344,
+      333,
+      270,
+      161,
+      79
+    ],
+    "candidate_fixups": [
+      399,
+      344,
+      333,
+      270,
+      161,
+      79
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -35262,7 +35276,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "ab9041994a91a24b98cb996a1f50407576d91b0b00aa719e93e57969ae51d24a",
+            "sha256": "441818d572d4d6783f6b2e93f2b7150e9c6e194c7bd92399ff346d91ab1d5256",
             "dependency_timestamp_normalized_sha256": "f5578f68bda6fbbc17e9775897529497b2950066ca7f1ffbcacf3d7fb78db07d",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
@@ -35298,7 +35312,7 @@
             ]
           },
           {
-            "sha256": "7328b49f7af850a9b8455e1138101334598f609a91a188c0f25472a7ca58e928",
+            "sha256": "828fd8b49ba97bc9240fa0d9706b205b678cca960c1d480641aea3127186eb59",
             "dependency_timestamp_normalized_sha256": "f5578f68bda6fbbc17e9775897529497b2950066ca7f1ffbcacf3d7fb78db07d",
             "module_name": "th05/yumeupd.cpp",
             "translator_comments": [
@@ -35389,7 +35403,7 @@
           },
           {
             "path": "src/main/boss/yumeko/update.cpp",
-            "sha256": "14ff3cc4df4a52b8cef3b8c9a404c1de9bcc1cb168efb7682dcb8dd85ea93c9f"
+            "sha256": "d6f93c96ff006f6d26bdaa018cf3756c2b05ead0e6f03d1049b486bd9c010a09"
           },
           {
             "path": "src/main/boss/yumeko/update.hpp",
@@ -35453,7 +35467,7 @@
         },
         {
           "path": "src/main/boss/yumeko/update.cpp",
-          "sha256": "14ff3cc4df4a52b8cef3b8c9a404c1de9bcc1cb168efb7682dcb8dd85ea93c9f"
+          "sha256": "d6f93c96ff006f6d26bdaa018cf3756c2b05ead0e6f03d1049b486bd9c010a09"
         },
         {
           "path": "src/main/boss/yumeko/update.hpp",
@@ -35494,7 +35508,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "df9e9c2d23aa02ca25dc0a6a6a87c867016c0ae8433e79f5bf296a2ccbf4b9d1",
+      "replay_receipt_sha256": "c9be590de63bc5256acea41f4530618be0272124b20147bcef0f807e95c5a47d",
       "compiled_negative_control": {
         "target_start": 128733,
         "candidate_start": 128733,
@@ -35560,7 +35574,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "5e8f675cc73459f9eaa9b8e83e63dfff8a6635d99c42224db9614ee3af9aef27",
+          "sha256": "70af492e7c728774cb4640b014ba8b0a9332837a3026fac98abe280f1e4c2e9d",
           "dependency_timestamp_normalized_sha256": "939d7dd041c357391924b6af9e24e08117c95470e2cd453475c4c8b38a8a8aba",
           "module_name": "th05/yumeupd.cpp",
           "translator_comments": [
@@ -35609,7 +35623,10 @@
           "th05/yumeupd.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-yumeko-update"
+      ]
     },
     {
       "id": "main-yumeko-sweep",
