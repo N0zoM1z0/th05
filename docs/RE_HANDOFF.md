@@ -20,8 +20,8 @@ counts there after any acceptance; this dated snapshot is for orientation.
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
 | Source-authored exact semantic initialized DATA | **17,512 bytes** |
 | Total source-authored C/C++ bytes | **126,296 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,038 / 5,281 / 4,952 / 8,559** |
-| Total unknown decoded bytes | **21,830** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **2,922 / 5,083 / 4,508 / 8,559** |
+| Total unknown decoded bytes | **21,072** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -34,6 +34,41 @@ Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
 
 ## Latest scoped progress
+
+- Complete current Boss-source work: the genuine
+  [Shinki B/C spinline background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
+  has **3,254 original bytes / 19 functions**; **17 source-affected units**
+  were independently reaccepted exact without duplicating the two separately
+  owned callbacks. [Alice's 939-byte puppet entrance](../src/main/boss/alice/update_context.md),
+  [Yumeko's 884-byte mobile controller](../src/main/boss/yumeko/update.md),
+  [EX-Alice's seven charged/regular HP handoffs](reconstruction/EXALICE_SEVEN_WAVE_TRANSITIONS_2026-11-12.md)
+  in its **1,060-byte** controller,
+  [Mai/Yuki's 1,018-byte shared defeat controller](reconstruction/MAI_YUKI_DEFEAT_AND_CLOCK_2026-11-12.md),
+  [Yuki's four 670-byte late attacks](reconstruction/YUKI_SNOW_CROSS_QUADRANTS_2026-11-12.md)
+  and [the 475-byte EX-Alice final Cheeto/fan family](reconstruction/EXALICE_CHEETO_AIM_2026-11-12.md)
+  each passed native dual-producer complete replay, ordered relocations and
+  compiled negatives. All are source-quality refactors of **already credited
+  CODE**; never count them as newly accepted bytes.
+- Newly classified **370 original Master initialized DATA bytes**:
+  [EDGES](reconstruction/MASTER_EDGES_RASTER_2026-11-12.md) **34 B each OP/MAINE**
+  (MAIN's identical 34 B were *already accepted*, no double credit),
+  [sprite pool defaults](reconstruction/MASTER_SUPERPA_INITIAL_2026-11-12.md)
+  **6 B each in MAIN/OP/MAINE**,
+  [BGM divider and palette ID](reconstruction/MASTER_TIMER_RESPAL_INITIAL_2026-11-12.md)
+  **16 B total**, [MAINE ATAN8](reconstruction/MAINE_MASTER_ATAN8_2026-11-12.md)
+  **256 B**, and [OP/MAINE BFNT identifiers](reconstruction/OP_MAINE_MASTER_BFNT_2026-11-12.md)
+  **6 B each**. Original archived Master sources where available, native TASM
+  LEDATA, MAP and actual MZ bytes/fixups support each exact scope.
+- **388 original `?` storage bytes** are now tracked with **zero C/C++ DATA
+  and zero instruction credit**: the archived Master
+  [BGM SGLB globals](reconstruction/MASTER_BGM_GLOBAL_RESERVATIONS_2026-11-12.md)
+  **108 B in each MZ** plus the original ReC98
+  [PI image buffers](reconstruction/PI_BUFFER_UNINITIALIZED_2026-11-12.md)
+  **32 B each in OP/MAINE**. No OMF initialized-data writes cover those
+  reserves; the zero-valued MZ output is not evidence of an authored
+  initializer. Together these source-backed classifications reduce unknown
+  by **758 B**, with **no change to the 536 accepted C/C++ units or their
+  126,296 exact authored bytes**.
 
 - Fresh exact Boss-source improvements: [Sara's 1,824-byte twelve-function context](../src/main/boss/sara/sara.md)
   now shares the red-cloud projectile setup while retaining two separate
