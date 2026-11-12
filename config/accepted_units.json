@@ -2,24 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "461c3ee852184c9b2a7276c306f04859e89a80176de69df663172ebe3cf7e80b",
+  "replay_receipt_sha256": "d80f466baa2edb3d445a784af5e54808dbad65caec7fb121625c8fe8bb259879",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 122176,
-    "candidate_start": 122176,
-    "size": 582,
-    "target_sha256": "539382869f7b7cd9a20390da239663bad5ff2aefd8eb90051bcd254adf7fa933",
-    "candidate_sha256": "0ca73ef169f9d16cbbe340923be0b9f5e270b6b7f3ae30f7543aa97bfaae43b5",
+    "target_start": 138826,
+    "candidate_start": 138826,
+    "size": 22,
+    "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+    "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
     "raw_exact": false,
-    "target_fixups": [
-      121
-    ],
-    "candidate_fixups": [
-      121
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 138826,
+      "size": 22,
+      "module": "th05/mxsched.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -101592,6 +101596,405 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-extra-midboss-callback-and-dash-data",
+      "entry_sha256": "b5341c580971e20ecbce09d20182939f283d93a9399d60cc3cbc4fa86f92370f",
+      "result": {
+        "id": "main-extra-midboss-callback-and-dash-data",
+        "entry_sha256": "b5341c580971e20ecbce09d20182939f283d93a9399d60cc3cbc4fa86f92370f",
+        "rounds": [
+          {
+            "target_start": 138826,
+            "candidate_start": 138826,
+            "size": 22,
+            "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+            "candidate_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138826,
+              "size": 22,
+              "module": "th05/mxsched.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138826,
+            "candidate_start": 138826,
+            "size": 22,
+            "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+            "candidate_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138826,
+              "size": 22,
+              "module": "th05/mxsched.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a00a5e1e2ce85f6b58cfa3be8189279d42f17ea22d713bfc6c3f0d04ad3488d6",
+            "dependency_timestamp_normalized_sha256": "a11e060439a7618d27d651c7651a62496f18c72b4e1874912766584526429f5b",
+            "module_name": "th05/mxsched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mxsched.cpp",
+              "src/main/midboss/extra_schedule_data.cpp",
+              "src/main/midboss/extra_patterns.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/midboss/extra.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/generic.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/stage/setup.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/main/hud/resident.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 22,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 22,
+                  "sha256": "aa63295739edf872d045e984ef918028d4c7cfc0d6ae3b1e9a6cdc2416a4ab19"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "4018802c3f5dc8892a9d30b9b516f8f269e97dcac6c6469185f3605fbcb6b00d",
+            "dependency_timestamp_normalized_sha256": "a11e060439a7618d27d651c7651a62496f18c72b4e1874912766584526429f5b",
+            "module_name": "th05/mxsched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mxsched.cpp",
+              "src/main/midboss/extra_schedule_data.cpp",
+              "src/main/midboss/extra_patterns.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/midboss/extra.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/generic.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/stage/setup.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/main/hud/resident.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 22,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 22,
+                  "sha256": "aa63295739edf872d045e984ef918028d4c7cfc0d6ae3b1e9a6cdc2416a4ab19"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mxsched.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mxsched.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_midboss_extra_schedule_data_bindings.asm",
+            "sha256": "5b79b2297d23c0710a253d3dff443470bd57453990a7c1e393345ee073525114"
+          },
+          {
+            "path": "src/main/boss/generic.hpp",
+            "sha256": "ac9ff4e10ecca00439c5e0107fa57df19f4843b42add18525d3bacfcfe51ab81"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/midboss/extra.hpp",
+            "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+          },
+          {
+            "path": "src/main/midboss/extra_patterns.hpp",
+            "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
+          },
+          {
+            "path": "src/main/midboss/extra_schedule_data.cpp",
+            "sha256": "526c6ebfab283502c5371909cdf26d2c6fb88340fe98ace837d851ceb56d7cd3"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_midboss_extra_schedule_data_bindings.asm",
+          "sha256": "5b79b2297d23c0710a253d3dff443470bd57453990a7c1e393345ee073525114"
+        },
+        {
+          "path": "src/main/boss/generic.hpp",
+          "sha256": "ac9ff4e10ecca00439c5e0107fa57df19f4843b42add18525d3bacfcfe51ab81"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/midboss/extra.hpp",
+          "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+        },
+        {
+          "path": "src/main/midboss/extra_patterns.hpp",
+          "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
+        },
+        {
+          "path": "src/main/midboss/extra_schedule_data.cpp",
+          "sha256": "526c6ebfab283502c5371909cdf26d2c6fb88340fe98ace837d851ceb56d7cd3"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d80f466baa2edb3d445a784af5e54808dbad65caec7fb121625c8fe8bb259879",
+      "compiled_negative_control": {
+        "target_start": 138826,
+        "candidate_start": 138826,
+        "size": 22,
+        "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+        "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138826,
+          "size": 22,
+          "module": "th05/mxsched.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-extra-midboss-callback-and-dash-data",
+        "entry_sha256": "b5341c580971e20ecbce09d20182939f283d93a9399d60cc3cbc4fa86f92370f",
+        "mutation": {
+          "unit": "main-extra-midboss-callback-and-dash-data",
+          "source": "src/main/midboss/extra_schedule_data.cpp",
+          "find": "{ midbossx_pattern_spread, midbossx_pattern_random },",
+          "replace": "{ midbossx_pattern_spread, midbossx_pattern_spread },"
+        },
+        "control_sha256": "36c4b5c59346ff19b0b3a64b82ce3995dabe8e22d69f4c1407642b017fcabb75",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138826,
+          "candidate_start": 138826,
+          "size": 22,
+          "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+          "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138826,
+            "size": 22,
+            "module": "th05/mxsched.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "791f893b740543d53a4fe754c70a2eddbb5c15b576777ac901ae56b07adc05ed",
+          "dependency_timestamp_normalized_sha256": "d9989106f0667b5d3284396bebfc2a186a518a06ee3e060fc1fa3b9b0cddd42b",
+          "module_name": "th05/mxsched.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mxsched.cpp",
+            "src/main/midboss/extra_schedule_data.cpp",
+            "src/main/midboss/extra_patterns.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/midboss/extra.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/generic.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/stage/setup.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 22,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 22,
+                "sha256": "aa63295739edf872d045e984ef918028d4c7cfc0d6ae3b1e9a6cdc2416a4ab19"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mxsched.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-extra-midboss-callback-and-dash-data"
+      ]
     }
   ]
 }

@@ -6323,3 +6323,25 @@ unit = "main-shinki-background-particle-seed-data"
 source = "src/main/boss/shinki/background_rules.h"
 find = "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)"
 replace = "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+
+[[units]]
+id = "main-extra-midboss-callback-and-dash-data"
+source = "src/main/midboss/extra_schedule_data.cpp"
+module = "th05/mxsched.cpp"
+segment = "_DATA"
+wrapper_options = "-zCMIDBOSSX_SCHED_TEXT -zPmain_03"
+bindings_source = "probes/units/main_midboss_extra_schedule_data_bindings.asm"
+target_start = 0x21e4a
+size = 22
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers", "semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-extra-midboss-callback-and-dash-data"
+source = "src/main/midboss/extra_schedule_data.cpp"
+find = "{ midbossx_pattern_spread, midbossx_pattern_random },"
+replace = "{ midbossx_pattern_spread, midbossx_pattern_spread },"
