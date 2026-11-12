@@ -128,3 +128,20 @@ expressions changed; accepted source and ABI headers remain frozen.
 and both original ordered fixups in two fresh deterministic producers. The
 fan-angle24→25 compiled mutation is rejected. Credit is603 instruction bytes,
 with no tables, padding, DATA or BSS. Earlier failed receipts remain private.
+
+## 2026-11-12: one complete mirrored-volley rule for both half-cycles
+
+The original 222-byte mirror-fan body had two nearly identical eight-pass
+volley loops differing only in initial angle and reflection axis.
+`LOUISE_MIRROR_FAN(first_angle, reflect_axis)` now shares the genuine
+four-shot sequence, byte-speed decay and sweeping step. Both alternating
+64-frame halves preserve their original values and firing order; the other
+three natural Louise attacks remain unchanged.
+
+The full four-function, 603-byte `main-louise-later-patterns` owner passes
+two native TCC/TLINK positives and the original ordered MZ fixups `[599,490]`
+in `.analysis/unit-replays/gpt-web-louise-mirror-fan-20261112-b/receipt.json`.
+The compiled negative still increases the *first* starting angle by one;
+its source anchor moved to the now-parameterized macro call. The first
+attempt stopped at that stale mutation anchor, not at a byte mismatch.
+No duplicate CODE credit was added for this accepted source refinement.

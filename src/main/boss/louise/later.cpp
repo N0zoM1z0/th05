@@ -3,6 +3,25 @@
 #include "src/main/boss/louise/scratch.hpp"
 #include "src/main/boss/louise/charged_weapon_rules.hpp"
 
+// The alternating mirror fan has two initial axes but one identical shot
+// sequence. Keep every byte-speed update and shot call in its original order.
+#define LOUISE_MIRROR_FAN(first_angle, reflect_axis) { \
+    bullet_template.angle = first_angle; \
+    for(i = 0; i < LC_MIRROR_COUNT; i++) { \
+        saved_angle = bullet_template.angle; \
+        bullets_add_regular(); \
+        bullet_template.angle += LC_MIRROR_ANGLE; \
+        bullets_add_regular(); \
+        bullet_template.angle = reflect_axis - bullet_template.angle; \
+        bullets_add_regular(); \
+        bullet_template.angle += LC_MIRROR_ANGLE; \
+        bullets_add_regular(); \
+        bullet_template.angle = saved_angle; \
+        bullet_template.speed.v = bullet_template.speed.v + static_cast<subpixel_length_8_t>(-louise_speed(LC_MIRROR_SPEED_DECAY)); \
+        bullet_template.angle += LC_MIRROR_SWEEP_STEP; \
+    } \
+}
+
 void near louise_pattern_mirrored_fans(void)
 {
     int i;
@@ -14,35 +33,9 @@ void near louise_pattern_mirrored_fans(void)
         bullet_template_tune();
         bullet_template.speed.v = louise_speed(LC_MIRROR_BASE_SPEED);
         if((boss.phase_frame % LC_MIRROR_HALF_INTERVAL) == 0) {
-            bullet_template.angle = LC_MIRROR_FIRST_ANGLE;
-            for(i = 0; i < LC_MIRROR_COUNT; i++) {
-                saved_angle = bullet_template.angle;
-                bullets_add_regular();
-                bullet_template.angle += LC_MIRROR_ANGLE;
-                bullets_add_regular();
-                bullet_template.angle = LC_MIRROR_FIRST_AXIS - bullet_template.angle;
-                bullets_add_regular();
-                bullet_template.angle += LC_MIRROR_ANGLE;
-                bullets_add_regular();
-                bullet_template.angle = saved_angle;
-                bullet_template.speed.v = bullet_template.speed.v + static_cast<subpixel_length_8_t>(-louise_speed(LC_MIRROR_SPEED_DECAY));
-                bullet_template.angle += LC_MIRROR_SWEEP_STEP;
-            }
+            LOUISE_MIRROR_FAN(LC_MIRROR_FIRST_ANGLE, LC_MIRROR_FIRST_AXIS);
         } else {
-            bullet_template.angle = LC_MIRROR_SECOND_ANGLE;
-            for(i = 0; i < LC_MIRROR_COUNT; i++) {
-                saved_angle = bullet_template.angle;
-                bullets_add_regular();
-                bullet_template.angle += LC_MIRROR_ANGLE;
-                bullets_add_regular();
-                bullet_template.angle = LC_MIRROR_SECOND_AXIS - bullet_template.angle;
-                bullets_add_regular();
-                bullet_template.angle += LC_MIRROR_ANGLE;
-                bullets_add_regular();
-                bullet_template.angle = saved_angle;
-                bullet_template.speed.v = bullet_template.speed.v + static_cast<subpixel_length_8_t>(-louise_speed(LC_MIRROR_SPEED_DECAY));
-                bullet_template.angle += LC_MIRROR_SWEEP_STEP;
-            }
+            LOUISE_MIRROR_FAN(LC_MIRROR_SECOND_ANGLE, LC_MIRROR_SECOND_AXIS);
         }
     }
 }
@@ -135,3 +128,5 @@ void near louise_pattern_aimed_pellets(void)
         snd_se_play(LC_PELLET_SOUND);
     }
 }
+
+#undef LOUISE_MIRROR_FAN

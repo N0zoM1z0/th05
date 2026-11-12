@@ -1834,8 +1834,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-louise-later-patterns"
 source = "src/main/boss/louise/later.cpp"
-find = "bullet_template.angle = LC_MIRROR_FIRST_ANGLE;"
-replace = "bullet_template.angle = LC_MIRROR_FIRST_ANGLE + 1;"
+find = "LOUISE_MIRROR_FAN(LC_MIRROR_FIRST_ANGLE, LC_MIRROR_FIRST_AXIS);"
+replace = "LOUISE_MIRROR_FAN((LC_MIRROR_FIRST_ANGLE + 1), LC_MIRROR_FIRST_AXIS);"
 
 [[units]]
 id = "main-alice-charge-patterns"
