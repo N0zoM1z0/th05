@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **536** (350 / 75 / 109 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **537** (351 / 75 / 109 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,512 bytes** |
-| Total source-authored C/C++ bytes | **126,296 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **2,922 / 5,083 / 4,508 / 8,559** |
-| Total unknown decoded bytes | **21,072** |
+| Source-authored exact semantic initialized DATA | **17,513 bytes** |
+| Total source-authored C/C++ bytes | **126,297 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **525 / 2,578 / 2,003 / 8,559** |
+| Total unknown decoded bytes | **13,665** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -34,6 +34,33 @@ Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
 
 ## Latest scoped progress
+
+- Current exact Boss source consolidation: the two
+  [Alice charged attack contexts](reconstruction/ALICE_CHARGED_ATTACKS_SHARED_SOURCE_2026-11-12.md)
+  now include one natural function body, with **499- and 939-byte** full
+  Borland/TLINK replays; the [five-callback Alice opening family](reconstruction/ALICE_OPENING_CHARGE_FAMILY_2026-11-13.md)
+  adds another independently exact **461-byte** source cohort.
+  [Sara's twelve-function 1,824-byte laser corridor](reconstruction/SARA_LASER_CORRIDOR_PAIR_2026-11-12.md)
+  and [Louise's four-function 603-byte late attacks](reconstruction/LOUISE_CHARGED_PHASES_2026-11-13.md)
+  likewise passed dual-producer raw bytes, ordered original fixups and compiled
+  source negatives. These are source improvements to **already accepted CODE**.
+- The genuine game [point-number doubling flag](../src/main/item/pointnum_twice_initial.md)
+  adds **one newly accepted initialized C++ DATA byte** at MAIN `2227A`;
+  its following EVEN alignment byte is not credited. The independently sourced
+  [Master BFNT header](reconstruction/MASTER_SUPERBFT_HEADER_2026-11-12.md)
+  contributes **96 reviewed but unwritten foreign bytes** and the
+  [original HFLIP LUTs](reconstruction/HFLIP_LUT_BSS_2026-11-12.md)
+  contribute **768 game-source reserve bytes**. These last 864 bytes have
+  **zero initialized DATA/CODE credit**; all three scopes were checked against
+  real object/MAP/target data, without claiming runtime zeroes as initializers.
+  Current total unknown is **13,665**, from the gapless ownership ledger.
+- ZUN's remaining near-exact `main()` still has the verified 269-byte size but
+  17 original-byte mismatches in the `-R` block. Sixteen additional genuine
+  original-compiler *error-first nested-success* variants all canonicalized
+  to **260 bytes**, despite different `else` nesting later in the function.
+  Their preserved source-first-producer evidence is in ignored
+  `.analysis/gpt-web-zun-nested-error-structures-20261112-b-results.json`.
+  No ZUN CODE acceptance or source-borrowing claim was added.
 
 - Complete current Boss-source work: the genuine
   [Shinki B/C spinline background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
@@ -67,8 +94,7 @@ independently proven pristine source image.
   **32 B each in OP/MAINE**. No OMF initialized-data writes cover those
   reserves; the zero-valued MZ output is not evidence of an authored
   initializer. Together these source-backed classifications reduce unknown
-  by **758 B**, with **no change to the 536 accepted C/C++ units or their
-  126,296 exact authored bytes**.
+  by **758 B**, without adding any C/C++ authored-byte credit at that checkpoint.
 
 - Fresh exact Boss-source improvements: [Sara's 1,824-byte twelve-function context](../src/main/boss/sara/sara.md)
   now shares the red-cloud projectile setup while retaining two separate

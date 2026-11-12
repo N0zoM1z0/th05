@@ -87,3 +87,25 @@ compact machine-readable verdicts remain in ignored `.analysis/` at
 The maintained 269-byte/17-difference candidate and independently accepted
 `cfg_init()` and resident DATA remain unchanged. Do not repeat these same
 shared-exit choices without a new source-level control-flow hypothesis.
+
+## Equivalent nested-success error paths: sixteen complete native trials
+
+The native `-R` control flow has one remaining source-language obstacle:
+the original failure output precedes the removal-success block, but Borland
+unifies later bad-option, already-resident and out-of-memory print exits
+when the maintained C++ places the failure first. We tested **16 distinct
+error-first natural sources** using genuine TCC 4.02 tiny-model compilation
+and TLINK: success with or without an immediate `else`, crossed with every
+combination of three later failure/success `else` nestings.
+
+All 16 compile/link successfully and canonicalize to the **same 260-byte
+main() contribution** with **118 matching byte positions out of 269**.
+No candidate is exact. The first private experiment generator accidentally
+omitted a right brace in 14 variants; that generator was fixed and the
+**complete new 16-case run** is the one retained as valid evidence under
+`.analysis/gpt-web-zun-nested-error-structures-20261112-b-results.json`.
+Each compiled source/object/COM and linker map is retained privately in the
+corresponding `...-20261112-b` trial directory. The maintained 269-byte
+success-first candidate (17 byte mismatches) remains preferable; the
+accepted ZUN config function and DATA remain unchanged. New tests should
+explore a genuinely different CFG rather than these lexical nestings.
