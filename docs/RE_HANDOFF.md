@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **533** (349 / 75 / 107 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **535** (350 / 75 / 108 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,504 bytes** |
-| Total source-authored C/C++ bytes | **126,288 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,077 / 5,319 / 4,997 / 8,559** |
-| Total unknown decoded bytes | **21,952** |
+| Source-authored exact semantic initialized DATA | **17,508 bytes** |
+| Total source-authored C/C++ bytes | **126,292 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,053 / 5,296 / 4,971 / 8,559** |
+| Total unknown decoded bytes | **21,879** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -32,6 +32,31 @@ assets, writable DATA/BSS and alignment need distinct provenance.
 There is **no accepted full packed EXE/COM reproduction**. The original
 Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
+
+## Latest scoped progress
+
+- Latest complete Boss source refinements: [Alice's X/Y puppet pursuit](../src/main/boss/alice/puppet_motion.md)
+  **643 B**, [Yumeko's charged rotating spreads](reconstruction/YUMEKO_SPREAD_CHARGE_2026-11-12.md)
+  **518 B** with real 354/428-byte sword compiler contexts,
+  [EX-Alice's late firewave/gravity/diamond patterns](reconstruction/EXALICE_LATER_MIRROR_FAN_2026-11-12.md)
+  **600 B**, and [Louise's full eight-phase controller](../src/main/boss/louise/update.md)
+  **582 B**. All affected complete source units passed two original
+  TCC/TLINK producers, raw bytes, ordered relocations and compiled negatives;
+  already credited code is not counted twice.
+- Two source-backed Master initialized-DATA closures now cover
+  [TextVram/VSYNC](reconstruction/MASTER_TEXT_VSYNC_DATA_2026-11-12.md)
+  **15 bytes** and [MEM allocator defaults](reconstruction/MASTER_MEMORY_INITIAL_2026-11-12.md)
+  **8 bytes**, in each MAIN/OP/MAINE. Together these classify **69 vendor
+  bytes** from original author ASM and native OMF. The final differing byte
+  after each VSYNC initializer stays unknown.
+- New authored C++ DATA: [MAINE registration page and name cursor](../src/maine/registration/initial_cursor_state.md)
+  **3 B**, plus [MAIN Extra dialog-sequence byte](../src/main/dialog/sequence_initial.md)
+  **1 B**. Complete original source types and consumer bindings are verified
+  through four total new scalar bytes. These and 69 vendor bytes reduce
+  global unknown by **73 bytes**.
+- Four further natural C++ Yumeko sword-updater bounds/collision join tests
+  all canonicalize to the same inexact **2,135-byte** nine-function output;
+  see [the exact compiler blocker](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
 
 ## Latest scoped progress
 

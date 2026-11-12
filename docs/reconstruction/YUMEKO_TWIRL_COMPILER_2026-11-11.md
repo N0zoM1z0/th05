@@ -381,3 +381,26 @@ Yumeko attack callbacks and the independently exact 283-byte original ASM
 owner remain untouched. No new C++ CODE credit or full cold replay is
 claimed. A future alternative must resolve both source segment provenance
 and the four-to-five-byte CODE layout difference naturally.
+
+## 2026-11-12: four more final-Y control-flow variants canonicalize under `-O`
+
+A bounded first-producer test used the real nine-function Yumeko MAIN03
+context and unchanged original TCC/TLINK toolchain. It inverted the last
+playfield-Y clip condition, tested a positive branch to a real in-bounds
+label, inverted the final player-Y collision condition with a genuine
+`continue`, and routed a positive collision result to a real hit label.
+Each variant preserved the exact sprite, collision, removal and decay
+semantics. All four compiled to **2,135 bytes** instead of native **2,139**,
+with **143 matching positions within the 283-byte updater**, and the same
+24 original relocation sites beyond the optimized region shifted four bytes
+back. The optimizer canonicalized all four to the same first-producer
+shape, retaining neither historical two-byte short join.
+
+Reproducible source and native outputs remain in ignored analysis paths:
+`.analysis/gpt-web-yumeko-joins-20261112.py`,
+`.analysis/gpt-web-yumeko-joins-20261112-results.json`, and per-trial
+`.analysis/gpt-web-yumeko-joins-*-20261112-first/` directories. The temporary
+C++ source-inclusion files were removed. The original ASM owner and current
+natural C++ candidate are untouched. The useful next question is why the
+original compiler kept both short joins in a larger function-level layout;
+changing only the final Y predicate or local goto is not sufficient.
