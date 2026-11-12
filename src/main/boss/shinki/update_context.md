@@ -159,3 +159,37 @@ every one of those eleven owners, including the full **959-byte** Shinki
 callback with its 26-byte compiler switch table and real zero alignment.
 The callback's `boss_defeat_update(65)` compiled negative remains rejected.
 No other original unit or whole executable was replayed.
+
+## Final spiral clock and floating motion protocol (2026-11-12)
+
+The shared Shinki Boss context now uses the semantic constants in
+`final_spiral_timing.hpp` for its complete original **315-byte**
+`pattern_circles_and_alternating_spirals()` and following **58-byte**
+`shinki_move_float()` helper. The final phase arms at frame 128. Opposed
+blue B6-balls fire on an eight-frame cadence; their two angles differ by
+`0x80`, and subtracting `0x78` advances the next volley by eight angular
+units. Starting at frame 256, red rings occupy the first 128 frames of each
+256-frame cycle and turn backward by two. Starting at frame 512, the second
+half of each cycle adds pellet rings turning forward by four. Frame 720
+begins the 128-frame periodic random flystep with its original 96-frame
+lead. The spread count 12 and pellet sprite zero remain literal gameplay
+semantics, not copied target-code or pixel data.
+
+The floating motion helper also names the original four-frame movement
+tick and the 0.0625-pixel acceleration, reversing direction at signed
+vertical speed ±1.0 pixel per frame. Both the original cast/float state
+and the alternating bullet template reuse are untouched; there are no new
+runtime variables, safety guards, optimizer barriers or source-order
+changes. The full updater still calls these helpers in its original
+phase-12 path. The real `update_context.cpp` and the maintained standalone
+`shinki.cpp` share identical helper bodies.
+
+The two source files affect eleven accepted C++ units, including the
+complete **959-byte** Shinki Boss update and its 26-byte compiler switch
+table. All eleven were recompiled in two scoped native Borland producer
+rounds, with original whole-function bytes and ordered fixups checked,
+and the update's compiled defeat-bonus mutation rejected. Receipt:
+`.analysis/unit-replays/gpt-web-shinki-final-spiral-timing-a/receipt.json`.
+No unrelated accepted unit, foreign library procedure, or complete
+executable was rebuilt. This increases the accuracy of the maintained
+source's meaning but does not double-count already accepted CODE bytes.

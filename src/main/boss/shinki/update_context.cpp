@@ -6,6 +6,7 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/update_standalone.hpp"
 #include "src/main/boss/shinki/scratch.hpp"
+#include "src/main/boss/shinki/final_spiral_timing.hpp"
 #include "src/main/boss/shinki/wing_coordinates.inl"
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
@@ -17,15 +18,15 @@ void near pattern_circles_and_alternating_spirals(void)
 
 	int frame_in_cycle;
 
-	if(boss.phase_frame < 128) {
+	if(boss.phase_frame < SHINKI_SPIRAL_ARM_FRAME) {
 		return;
 	}
-	if(boss.phase_frame == 128) {
-		b6ball_template.angle = 0x00;
-		red_angle = 0x00;
-		pellet_angle = 0x00;
+	if(boss.phase_frame == SHINKI_SPIRAL_ARM_FRAME) {
+		b6ball_template.angle = SHINKI_SPIRAL_INITIAL_ANGLE;
+		red_angle = SHINKI_SPIRAL_INITIAL_ANGLE;
+		pellet_angle = SHINKI_SPIRAL_INITIAL_ANGLE;
 	}
-	if((boss.phase_frame % 8) == 0) {
+	if((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) {
 		// Still assumed to be set to this value from pattern_devil().
 		// MODDERS: Uncomment.
 		// b6ball_template.speed.v = sara_to_sp8(3.75f);
@@ -39,7 +40,7 @@ void near pattern_circles_and_alternating_spirals(void)
 		);
 		b6balls_add();
 
-		b6ball_template.angle += 0x80;
+		b6ball_template.angle += SHINKI_SPIRAL_OPPOSITE_BALL_ANGLE;
 		vector2_at(
 			b6ball_template.origin,
 			boss.pos.cur.x,
@@ -49,12 +50,12 @@ void near pattern_circles_and_alternating_spirals(void)
 		);
 		b6balls_add();
 
-		b6ball_template.angle -= 0x78;
-		snd_se_play(3);
+		b6ball_template.angle -= SHINKI_SPIRAL_BALL_ROTATE_BACK;
+		snd_se_play(SHINKI_SPIRAL_VOLLEY_SE);
 	}
-	if(boss.phase_frame >= 256) {
-		frame_in_cycle = (boss.phase_frame % 256);
-		if(((boss.phase_frame % 8) == 0) && (frame_in_cycle < 128)) {
+	if(boss.phase_frame >= SHINKI_SPIRAL_RED_RINGS_BEGIN) {
+		frame_in_cycle = (boss.phase_frame % SHINKI_SPIRAL_WAVE_PERIOD);
+		if(((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) && (frame_in_cycle < SHINKI_SPIRAL_WAVE_HALF)) {
 			bullet_template.spawn_type = (
 				BST_CLOUD_FORWARDS | BST_NO_DECELERATE
 			);
@@ -62,30 +63,30 @@ void near pattern_circles_and_alternating_spirals(void)
 			bullet_template.angle = red_angle;
 			bullet_template.patnum = PAT_BULLET16_V_RED;
 			bullet_template.speed.v = sara_to_sp8(2.0f);
-			bullet_template.spread = 12;
+			bullet_template.spread = SHINKI_SPIRAL_RING_SPREAD;
 			bullets_add_regular();
 
-			red_angle -= 0x02;
+			red_angle -= SHINKI_SPIRAL_RED_RING_STEP;
 		}
-		if(boss.phase_frame >= 512) {
-			if(((boss.phase_frame % 8) == 0) && (frame_in_cycle >= 128)) {
+		if(boss.phase_frame >= SHINKI_SPIRAL_PELLET_RINGS_BEGIN) {
+			if(((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) && (frame_in_cycle >= SHINKI_SPIRAL_WAVE_HALF)) {
 				bullet_template.spawn_type = (
 					BST_CLOUD_FORWARDS | BST_NO_DECELERATE
 				);
 				bullet_template.group = BG_RING;
 				bullet_template.angle = pellet_angle;
-				bullet_template.patnum = 0;
+				bullet_template.patnum = SHINKI_SPIRAL_PELLET_PATNUM;
 				bullet_template.speed.v = sara_to_sp8(2.0f);
-				bullet_template.spread = 12;
+				bullet_template.spread = SHINKI_SPIRAL_RING_SPREAD;
 				bullets_add_regular();
 
-				pellet_angle += 0x04;
+				pellet_angle += SHINKI_SPIRAL_PELLET_RING_STEP;
 			}
 		}
 	}
-	if(boss.phase_frame >= 720) {
-		frame_in_cycle = ((boss.phase_frame - 720) % 128);
-		boss_flystep_random(frame_in_cycle - 96);
+	if(boss.phase_frame >= SHINKI_SPIRAL_FLYSTEP_BEGIN) {
+		frame_in_cycle = ((boss.phase_frame - SHINKI_SPIRAL_FLYSTEP_BEGIN) % SHINKI_SPIRAL_FLYSTEP_PERIOD);
+		boss_flystep_random(frame_in_cycle - SHINKI_SPIRAL_FLYSTEP_LEAD);
 	}
 
 	#undef red_angle
@@ -97,17 +98,17 @@ void near shinki_move_float(void)
 	#define float_direction shinki_float_direction
 	extern bool float_direction;
 
-	if(stage_frame_mod4 != 0) {
+	if(stage_frame_mod4 != SHINKI_FLOAT_UPDATE_FRAME_MOD4) {
 		return;
 	}
-	if(float_direction == 0) {
-		boss.pos.velocity.y.v += to_sp(0.0625f);
-		if(boss.pos.velocity.y.v >= to_sp(1.0f)) {
+	if(float_direction == SHINKI_FLOAT_DOWNWARD) {
+		boss.pos.velocity.y.v += to_sp(SHINKI_FLOAT_ACCELERATION_PX);
+		if(boss.pos.velocity.y.v >= to_sp(SHINKI_FLOAT_SPEED_LIMIT_PX)) {
 			float_direction++;
 		}
 	} else {
-		boss.pos.velocity.y.v -= to_sp(0.0625f);
-		if(boss.pos.velocity.y.v <= to_sp(-1.0f)) {
+		boss.pos.velocity.y.v -= to_sp(SHINKI_FLOAT_ACCELERATION_PX);
+		if(boss.pos.velocity.y.v <= to_sp(-SHINKI_FLOAT_SPEED_LIMIT_PX)) {
 			float_direction--;
 		}
 	}
