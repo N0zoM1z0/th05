@@ -2,27 +2,23 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "b00f550b774001ddbc3c4cce2894c76925155d4b49d76522a5df8fc984f98a30",
+  "replay_receipt_sha256": "2b34215eef9cab9805407ee0d2876dbde808bc4254c25a03e7b5f3f4b4b7966a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 97328,
-    "candidate_start": 97328,
-    "size": 939,
-    "target_sha256": "07ca9e751860714202dba9309142f637501e1701c9704aae4abf243e20b7ee9c",
-    "candidate_sha256": "38ff0afeff722312c6dd0e8433dadcf171f4eef29b842501ab8edc22998b1781",
+    "target_start": 106414,
+    "candidate_start": 106414,
+    "size": 334,
+    "target_sha256": "b22feb1d32de93b9ece04871f7262210830a44153dc9ad5b19e14145010a74c8",
+    "candidate_sha256": "f0718e9b756b3a5e233499289549558574844fbaf0bdf2f02869e14dc889f9a6",
     "raw_exact": false,
     "target_fixups": [
-      920,
-      833,
-      462,
-      136
+      86,
+      256
     ],
     "candidate_fixups": [
-      920,
-      833,
-      462,
-      136
+      86,
+      256
     ],
     "fixups_exact": true,
     "exact": false
@@ -35318,8 +35314,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d28c2bbef7d941b6e772fdc7d34a9ae62928f3f966dff0d1dfed4c3b23cab51a",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "c099b5a597ff4b6ed400c83b43e1aef40f1bc77618f103bb95a219493074b60b",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35350,12 +35346,14 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "f3712c9b5a2e6e3357bd4e4e1bb29294093e5664bfe9dccb77ccc95c68294b21",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "4054bc4137e089c1dceb6638f78e0030c2df70be4768b8930c315a1f566d30b1",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35386,13 +35384,15 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -35428,8 +35428,12 @@
             "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
           },
           {
+            "path": "src/main/boss/exalice/final_attack_rules.hpp",
+            "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+          },
+          {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+            "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -35441,7 +35445,7 @@
           },
           {
             "path": "src/main/boss/exalice/spiral_gather.inl",
-            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+            "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
           },
           {
             "path": "src/main/boss/exalice/update_phases.hpp",
@@ -35496,8 +35500,12 @@
           "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
         },
         {
+          "path": "src/main/boss/exalice/final_attack_rules.hpp",
+          "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+        },
+        {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+          "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -35509,7 +35517,7 @@
         },
         {
           "path": "src/main/boss/exalice/spiral_gather.inl",
-          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+          "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
         },
         {
           "path": "src/main/boss/exalice/update_phases.hpp",
@@ -35558,67 +35566,106 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1a97ee3f9ee3285d0a13231f84dd85d59cab4cd02c23f7c54c99de7f04a947a6",
+      "replay_receipt_sha256": "f42332f5f9f96787e15b523822be4feead8d2844228ee5022a28c4da4de659e1",
       "compiled_negative_control": {
-        "target_start": 106971,
-        "candidate_start": 106971,
-        "size": 111,
-        "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-        "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+        "target_start": 106162,
+        "candidate_start": 106162,
+        "size": 143,
+        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          124
+        ],
+        "candidate_fixups": [
+          124
+        ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 106162,
+          "size": 143,
+          "function_symbol": "exalice_pattern_cross_cheetos()",
+          "contribution_start": 106162,
+          "contribution_size": 809,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "exalice_pattern_turning_cheetos()"
+        }
       },
       "negative_control": {
-        "unit_id": "main-exalice-phase",
-        "entry_sha256": "5a538f552046aabd78b6ca60d0f03c5d80084ef20225ba6a4dbd953e06d79d47",
+        "unit_id": "main-exalice-pattern-cross-cheetos",
+        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
         "mutation": {
-          "unit": "main-exalice-phase",
-          "source": "src/main/boss/exalice/phase.cpp",
-          "find": "exalice_bomb_invincibility = 39;",
-          "replace": "exalice_bomb_invincibility = 40;"
+          "unit": "main-exalice-pattern-cross-cheetos",
+          "source": "src/main/boss/exalice/final_patterns.cpp",
+          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
+          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
         },
-        "control_sha256": "b474b2bbb7a379f28b6743ab2161d667927f0014fe6b989a52dd1125942f0dd1",
+        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106971,
-          "candidate_start": 106971,
-          "size": 111,
-          "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-          "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+          "target_start": 106162,
+          "candidate_start": 106162,
+          "size": 143,
+          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            124
+          ],
+          "candidate_fixups": [
+            124
+          ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 106162,
+            "size": 143,
+            "function_symbol": "exalice_pattern_cross_cheetos()",
+            "contribution_start": 106162,
+            "contribution_size": 809,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "exalice_pattern_turning_cheetos()"
+          }
         },
         "omf": {
-          "sha256": "8366cabdcf3f26a06446a4869c3473a63d08fed1ab0c9050fb65d0a4b793fd4c",
-          "dependency_timestamp_normalized_sha256": "d1abd6ec5c51bc7c7ed5b70402fd2d95c4133e55a3c5dc445339621d5afdae43",
-          "module_name": "th05/x_phase.cpp",
+          "sha256": "22c441af11b91400b4785eaa7f52653375cb5c9db7ca385725b79c51d82ca819",
+          "dependency_timestamp_normalized_sha256": "1cfb55fa3e9f2c097989b925c0644686bc58b07330d7ec0152f0d5fd1654e665",
+          "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_phase.cpp",
-            "src/main/boss/exalice/phase.cpp",
-            "src/main/boss/exalice/phase.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/x_final.cpp",
+            "src/main/boss/exalice/final_patterns.cpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp"
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/update_phases.hpp",
+            "src/main/boss/exalice/final_attack_rules.hpp",
+            "src/main/boss/exalice/spiral_gather.inl",
+            "src/main/boss/exalice/final_attack_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -35632,7 +35679,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_phase.cpp"
+          "th05/x_final.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -35700,8 +35747,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d28c2bbef7d941b6e772fdc7d34a9ae62928f3f966dff0d1dfed4c3b23cab51a",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "c099b5a597ff4b6ed400c83b43e1aef40f1bc77618f103bb95a219493074b60b",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35732,12 +35779,14 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "f3712c9b5a2e6e3357bd4e4e1bb29294093e5664bfe9dccb77ccc95c68294b21",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "4054bc4137e089c1dceb6638f78e0030c2df70be4768b8930c315a1f566d30b1",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -35768,13 +35817,15 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -35810,8 +35861,12 @@
             "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
           },
           {
+            "path": "src/main/boss/exalice/final_attack_rules.hpp",
+            "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+          },
+          {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+            "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -35823,7 +35878,7 @@
           },
           {
             "path": "src/main/boss/exalice/spiral_gather.inl",
-            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+            "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
           },
           {
             "path": "src/main/boss/exalice/update_phases.hpp",
@@ -35878,8 +35933,12 @@
           "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
         },
         {
+          "path": "src/main/boss/exalice/final_attack_rules.hpp",
+          "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+        },
+        {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+          "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -35891,7 +35950,7 @@
         },
         {
           "path": "src/main/boss/exalice/spiral_gather.inl",
-          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+          "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
         },
         {
           "path": "src/main/boss/exalice/update_phases.hpp",
@@ -35940,67 +35999,106 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1a97ee3f9ee3285d0a13231f84dd85d59cab4cd02c23f7c54c99de7f04a947a6",
+      "replay_receipt_sha256": "f42332f5f9f96787e15b523822be4feead8d2844228ee5022a28c4da4de659e1",
       "compiled_negative_control": {
-        "target_start": 106971,
-        "candidate_start": 106971,
-        "size": 111,
-        "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-        "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+        "target_start": 106162,
+        "candidate_start": 106162,
+        "size": 143,
+        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          124
+        ],
+        "candidate_fixups": [
+          124
+        ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 106162,
+          "size": 143,
+          "function_symbol": "exalice_pattern_cross_cheetos()",
+          "contribution_start": 106162,
+          "contribution_size": 809,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "exalice_pattern_turning_cheetos()"
+        }
       },
       "negative_control": {
-        "unit_id": "main-exalice-phase",
-        "entry_sha256": "5a538f552046aabd78b6ca60d0f03c5d80084ef20225ba6a4dbd953e06d79d47",
+        "unit_id": "main-exalice-pattern-cross-cheetos",
+        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
         "mutation": {
-          "unit": "main-exalice-phase",
-          "source": "src/main/boss/exalice/phase.cpp",
-          "find": "exalice_bomb_invincibility = 39;",
-          "replace": "exalice_bomb_invincibility = 40;"
+          "unit": "main-exalice-pattern-cross-cheetos",
+          "source": "src/main/boss/exalice/final_patterns.cpp",
+          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
+          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
         },
-        "control_sha256": "b474b2bbb7a379f28b6743ab2161d667927f0014fe6b989a52dd1125942f0dd1",
+        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106971,
-          "candidate_start": 106971,
-          "size": 111,
-          "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-          "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+          "target_start": 106162,
+          "candidate_start": 106162,
+          "size": 143,
+          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            124
+          ],
+          "candidate_fixups": [
+            124
+          ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 106162,
+            "size": 143,
+            "function_symbol": "exalice_pattern_cross_cheetos()",
+            "contribution_start": 106162,
+            "contribution_size": 809,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "exalice_pattern_turning_cheetos()"
+          }
         },
         "omf": {
-          "sha256": "8366cabdcf3f26a06446a4869c3473a63d08fed1ab0c9050fb65d0a4b793fd4c",
-          "dependency_timestamp_normalized_sha256": "d1abd6ec5c51bc7c7ed5b70402fd2d95c4133e55a3c5dc445339621d5afdae43",
-          "module_name": "th05/x_phase.cpp",
+          "sha256": "22c441af11b91400b4785eaa7f52653375cb5c9db7ca385725b79c51d82ca819",
+          "dependency_timestamp_normalized_sha256": "1cfb55fa3e9f2c097989b925c0644686bc58b07330d7ec0152f0d5fd1654e665",
+          "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_phase.cpp",
-            "src/main/boss/exalice/phase.cpp",
-            "src/main/boss/exalice/phase.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/x_final.cpp",
+            "src/main/boss/exalice/final_patterns.cpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp"
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/update_phases.hpp",
+            "src/main/boss/exalice/final_attack_rules.hpp",
+            "src/main/boss/exalice/spiral_gather.inl",
+            "src/main/boss/exalice/final_attack_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -36014,7 +36112,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_phase.cpp"
+          "th05/x_final.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -36090,8 +36188,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d28c2bbef7d941b6e772fdc7d34a9ae62928f3f966dff0d1dfed4c3b23cab51a",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "c099b5a597ff4b6ed400c83b43e1aef40f1bc77618f103bb95a219493074b60b",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -36122,12 +36220,14 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "f3712c9b5a2e6e3357bd4e4e1bb29294093e5664bfe9dccb77ccc95c68294b21",
-            "dependency_timestamp_normalized_sha256": "3532d5085fd85fa549bcdb714c8750d7e6e3c60201b63f99533f658f4e1ca622",
+            "sha256": "4054bc4137e089c1dceb6638f78e0030c2df70be4768b8930c315a1f566d30b1",
+            "dependency_timestamp_normalized_sha256": "cc0c864b94c35865c451cf7c8553568f978f40f77c21e1ff575dfd7e1740b233",
             "module_name": "th05/x_final.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -36158,13 +36258,15 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/shared/geometry.hpp",
               "src/main/boss/exalice/update_phases.hpp",
-              "src/main/boss/exalice/spiral_gather.inl"
+              "src/main/boss/exalice/final_attack_rules.hpp",
+              "src/main/boss/exalice/spiral_gather.inl",
+              "src/main/boss/exalice/final_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -36200,8 +36302,12 @@
             "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
           },
           {
+            "path": "src/main/boss/exalice/final_attack_rules.hpp",
+            "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+          },
+          {
             "path": "src/main/boss/exalice/final_patterns.cpp",
-            "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+            "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
           },
           {
             "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -36213,7 +36319,7 @@
           },
           {
             "path": "src/main/boss/exalice/spiral_gather.inl",
-            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+            "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
           },
           {
             "path": "src/main/boss/exalice/update_phases.hpp",
@@ -36268,8 +36374,12 @@
           "sha256": "3e20fe9ba07a4d4c47f8102061c24dfa5b5977241b9ee36bbf2f9470c15489b8"
         },
         {
+          "path": "src/main/boss/exalice/final_attack_rules.hpp",
+          "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+        },
+        {
           "path": "src/main/boss/exalice/final_patterns.cpp",
-          "sha256": "1ff5692ef8519f540ab5e9b0bc1d3a0c281e6515fac1445dc834b29172be4716"
+          "sha256": "0cfd1d11d11b7107f2743897a40a30a9509826b140b6bfd5eaf05458959ef553"
         },
         {
           "path": "src/main/boss/exalice/final_patterns.hpp",
@@ -36281,7 +36391,7 @@
         },
         {
           "path": "src/main/boss/exalice/spiral_gather.inl",
-          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+          "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
         },
         {
           "path": "src/main/boss/exalice/update_phases.hpp",
@@ -36330,67 +36440,106 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1a97ee3f9ee3285d0a13231f84dd85d59cab4cd02c23f7c54c99de7f04a947a6",
+      "replay_receipt_sha256": "f42332f5f9f96787e15b523822be4feead8d2844228ee5022a28c4da4de659e1",
       "compiled_negative_control": {
-        "target_start": 106971,
-        "candidate_start": 106971,
-        "size": 111,
-        "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-        "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+        "target_start": 106162,
+        "candidate_start": 106162,
+        "size": 143,
+        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          124
+        ],
+        "candidate_fixups": [
+          124
+        ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 106162,
+          "size": 143,
+          "function_symbol": "exalice_pattern_cross_cheetos()",
+          "contribution_start": 106162,
+          "contribution_size": 809,
+          "boundary_kind": "next-function",
+          "next_function_symbol": "exalice_pattern_turning_cheetos()"
+        }
       },
       "negative_control": {
-        "unit_id": "main-exalice-phase",
-        "entry_sha256": "5a538f552046aabd78b6ca60d0f03c5d80084ef20225ba6a4dbd953e06d79d47",
+        "unit_id": "main-exalice-pattern-cross-cheetos",
+        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
         "mutation": {
-          "unit": "main-exalice-phase",
-          "source": "src/main/boss/exalice/phase.cpp",
-          "find": "exalice_bomb_invincibility = 39;",
-          "replace": "exalice_bomb_invincibility = 40;"
+          "unit": "main-exalice-pattern-cross-cheetos",
+          "source": "src/main/boss/exalice/final_patterns.cpp",
+          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
+          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
         },
-        "control_sha256": "b474b2bbb7a379f28b6743ab2161d667927f0014fe6b989a52dd1125942f0dd1",
+        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106971,
-          "candidate_start": 106971,
-          "size": 111,
-          "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-          "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+          "target_start": 106162,
+          "candidate_start": 106162,
+          "size": 143,
+          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
+          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            124
+          ],
+          "candidate_fixups": [
+            124
+          ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 106162,
+            "size": 143,
+            "function_symbol": "exalice_pattern_cross_cheetos()",
+            "contribution_start": 106162,
+            "contribution_size": 809,
+            "boundary_kind": "next-function",
+            "next_function_symbol": "exalice_pattern_turning_cheetos()"
+          }
         },
         "omf": {
-          "sha256": "8366cabdcf3f26a06446a4869c3473a63d08fed1ab0c9050fb65d0a4b793fd4c",
-          "dependency_timestamp_normalized_sha256": "d1abd6ec5c51bc7c7ed5b70402fd2d95c4133e55a3c5dc445339621d5afdae43",
-          "module_name": "th05/x_phase.cpp",
+          "sha256": "22c441af11b91400b4785eaa7f52653375cb5c9db7ca385725b79c51d82ca819",
+          "dependency_timestamp_normalized_sha256": "1cfb55fa3e9f2c097989b925c0644686bc58b07330d7ec0152f0d5fd1654e665",
+          "module_name": "th05/x_final.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_phase.cpp",
-            "src/main/boss/exalice/phase.cpp",
-            "src/main/boss/exalice/phase.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/x_final.cpp",
+            "src/main/boss/exalice/final_patterns.cpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp"
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/update_phases.hpp",
+            "src/main/boss/exalice/final_attack_rules.hpp",
+            "src/main/boss/exalice/spiral_gather.inl",
+            "src/main/boss/exalice/final_attack_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -36404,7 +36553,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_phase.cpp"
+          "th05/x_final.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -79846,7 +79995,7 @@
         ],
         "omfs": [
           {
-            "sha256": "80f9c60985a8ac0910268b66367f0242ad94abf725a2c403fd974f29c096d1ef",
+            "sha256": "e4d95d6c65dbb638ccf9733f89161d6f79d9fc8a39dfe4312b18c813a5ffdcef",
             "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
             "module_name": "unit.asm",
             "translator_comments": [
@@ -79858,7 +80007,7 @@
             ]
           },
           {
-            "sha256": "51577942c902dc5bb8e87f7f73dbe5655cf74137eb1900497eade3ad15800bbe",
+            "sha256": "40cb49da6d7cdbf55e4eaf6ada18ed7a65af202dcde44833a90cfeeb8ded6899",
             "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
             "module_name": "unit.asm",
             "translator_comments": [
@@ -79891,6 +80040,7 @@
               "exact": true
             },
             "compiler_dependencies": [
+              "src/main/boss/exalice/final_attack_rules.hpp",
               "src/main/boss/exalice/final_patterns.hpp",
               "src/main/boss/exalice/patterns.hpp",
               "src/main/boss/exalice/spiral_gather.cpp",
@@ -79907,7 +80057,7 @@
               "src/shared/math/vector.hpp"
             ],
             "omf": {
-              "sha256": "80f9c60985a8ac0910268b66367f0242ad94abf725a2c403fd974f29c096d1ef",
+              "sha256": "e4d95d6c65dbb638ccf9733f89161d6f79d9fc8a39dfe4312b18c813a5ffdcef",
               "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
               "module_name": "unit.asm",
               "translator_comments": [
@@ -79932,9 +80082,9 @@
             },
             "map_sha256": "d97781cd9c1b1e3b23fa735ffd16c4a05dc787e9ab3d0bc300fe09a52ed1f207",
             "mz_sha256": "63f6d252ccfc6f82aeb7e5a835bb1a0a2953758ac8201700a9859d7e98a2dda8",
-            "commands_sha256": "65f8c693ec6a9920eb3080c13ab20ad87c2220d260b9d294619d77cc8b2b6977",
-            "compiler_generated_assembly_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
-            "assembly_after_tasm_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "commands_sha256": "cd0a70e4fa35b5073e4fb6a2cbab9a5446acdffdf1dacf22523a353825bb0246",
+            "compiler_generated_assembly_sha256": "0f1630a4d32da93f3dc7a0e6922a4098de157b4f037a21984f067c412ecb904c",
+            "assembly_after_tasm_sha256": "0f1630a4d32da93f3dc7a0e6922a4098de157b4f037a21984f067c412ecb904c",
             "wrapper_sha256": "87abebd42102d91c5442fd05a39fb6604ed4fd8056abd9b7b46ebabdb12647c0"
           },
           {
@@ -79957,6 +80107,7 @@
               "exact": true
             },
             "compiler_dependencies": [
+              "src/main/boss/exalice/final_attack_rules.hpp",
               "src/main/boss/exalice/final_patterns.hpp",
               "src/main/boss/exalice/patterns.hpp",
               "src/main/boss/exalice/spiral_gather.cpp",
@@ -79973,7 +80124,7 @@
               "src/shared/math/vector.hpp"
             ],
             "omf": {
-              "sha256": "51577942c902dc5bb8e87f7f73dbe5655cf74137eb1900497eade3ad15800bbe",
+              "sha256": "40cb49da6d7cdbf55e4eaf6ada18ed7a65af202dcde44833a90cfeeb8ded6899",
               "dependency_timestamp_normalized_sha256": "d112b4569692690856ae48ffade040a02348bdc1301bead902001a56ddfedf12",
               "module_name": "unit.asm",
               "translator_comments": [
@@ -79998,9 +80149,9 @@
             },
             "map_sha256": "d97781cd9c1b1e3b23fa735ffd16c4a05dc787e9ab3d0bc300fe09a52ed1f207",
             "mz_sha256": "63f6d252ccfc6f82aeb7e5a835bb1a0a2953758ac8201700a9859d7e98a2dda8",
-            "commands_sha256": "65f8c693ec6a9920eb3080c13ab20ad87c2220d260b9d294619d77cc8b2b6977",
-            "compiler_generated_assembly_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
-            "assembly_after_tasm_sha256": "607e19e6c35f9a8e933a0c29e7d9a96fe67da23fffb8bffea1442c70a409b2fe",
+            "commands_sha256": "cd0a70e4fa35b5073e4fb6a2cbab9a5446acdffdf1dacf22523a353825bb0246",
+            "compiler_generated_assembly_sha256": "0f1630a4d32da93f3dc7a0e6922a4098de157b4f037a21984f067c412ecb904c",
+            "assembly_after_tasm_sha256": "0f1630a4d32da93f3dc7a0e6922a4098de157b4f037a21984f067c412ecb904c",
             "wrapper_sha256": "87abebd42102d91c5442fd05a39fb6604ed4fd8056abd9b7b46ebabdb12647c0"
           }
         ],
@@ -80086,6 +80237,10 @@
             "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
           },
           {
+            "path": "src/main/boss/exalice/final_attack_rules.hpp",
+            "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+          },
+          {
             "path": "src/main/boss/exalice/final_patterns.hpp",
             "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
           },
@@ -80099,7 +80254,7 @@
           },
           {
             "path": "src/main/boss/exalice/spiral_gather.inl",
-            "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+            "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -80195,6 +80350,10 @@
           "sha256": "a61d45d9d863de995d330f3fbfc6d35ec0d87dd0f1c5160b19043670d4b89386"
         },
         {
+          "path": "src/main/boss/exalice/final_attack_rules.hpp",
+          "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+        },
+        {
           "path": "src/main/boss/exalice/final_patterns.hpp",
           "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
         },
@@ -80208,7 +80367,7 @@
         },
         {
           "path": "src/main/boss/exalice/spiral_gather.inl",
-          "sha256": "f87e09bfb5612ff293a0cd6a9f51bb5daea4f8d5e84f1d620be815132f05ed3d"
+          "sha256": "0d1327d3609e9f74efffb65ab7dc5b2c6e91bee822356f679b72eb2a351325b6"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -80253,7 +80412,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "955968f00fa9aa1e17a19214e4d29334d5c6ea98a3606654896f1a2cf5ee9b98",
+      "replay_receipt_sha256": "2b34215eef9cab9805407ee0d2876dbde808bc4254c25a03e7b5f3f4b4b7966a",
       "compiled_negative_control": {
         "target_start": 106414,
         "candidate_start": 106414,
@@ -80278,10 +80437,10 @@
         "mutation": {
           "unit": "main-exalice-spiral-gather",
           "source": "src/main/boss/exalice/spiral_gather.inl",
-          "find": "gather_template.radius.v = to_sp(256);",
-          "replace": "gather_template.radius.v = to_sp(257);"
+          "find": "gather_template.radius.v = to_sp(EXF_SPIRAL_GATHER_RADIUS_PX);",
+          "replace": "gather_template.radius.v = to_sp(EXF_SPIRAL_GATHER_RADIUS_PX + 1);"
         },
-        "control_sha256": "733ad13703ab9e252889ce7843b6fbaa78465b4c988a428fe34a4f6d9c05b89d",
+        "control_sha256": "25df09adec6f526bd572ff49072b57a3f743593da66d0952adc8bf469dc4e0cf",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 106414,
@@ -80315,7 +80474,7 @@
           "th05/x_spiral.cpp"
         ],
         "omf": {
-          "sha256": "df2d9b73b76211ffbd3fa44865b9d7882dee75f39b3656414ccb451479506423",
+          "sha256": "24cf26ec834ead14fc7c2ae7804304283e3e21566df70bca1a709237fe47763a",
           "dependency_timestamp_normalized_sha256": "926acdb35f7fbdada8fb148b50e92eee3804b74b205c502ee4cab944cbccac2d",
           "module_name": "unit.asm",
           "translator_comments": [
