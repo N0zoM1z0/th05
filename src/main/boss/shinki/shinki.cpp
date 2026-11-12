@@ -7,6 +7,7 @@
 #include "src/main/boss/shinki/shinki.hpp"
 #include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
+#include "src/main/boss/shinki/ball_lifecycle.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
 #pragma codeseg B6_BALLS_TEXT main_03
 
@@ -60,7 +61,7 @@ void near b6balls_add(void)
 		p->pos.cur = b6ball_template.origin;
 		vector2_near(p->pos.velocity, b6ball_template.angle, speed);
 		p->patnum_tiny = b6ball_template.patnum_tiny;
-		p->cloud_radius.v = to_sp(48.0f);
+		p->cloud_radius.v = to_sp(SHINKI_B6_BIRTH_CLOUD_RADIUS_PX);
 		return;
 	}
 }
