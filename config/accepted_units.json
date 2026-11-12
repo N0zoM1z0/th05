@@ -2,30 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "f2cb5143ca71ba34c4fb743d18bb7789cffa6b6d6b97fe723caeb46b48b34236",
+  "replay_receipt_sha256": "b8dfddaad4a2c3297e4cd0b8206fca7aa811ec9862320f27266316dd1fd2897e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 109483,
-    "candidate_start": 109483,
-    "size": 271,
-    "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-    "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+    "target_start": 140330,
+    "candidate_start": 140330,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      253,
-      222,
-      173,
-      73
-    ],
-    "candidate_fixups": [
-      253,
-      222,
-      173,
-      73
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 140330,
+      "size": 1,
+      "module": "th05/sflt.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -104088,6 +104086,512 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bglate.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-devil-laser-delay-data",
+      "entry_sha256": "82a9c887d85e25ebb09a5b72108218ddf5d84016f8b0aed89f95019272a54cae",
+      "result": {
+        "id": "main-shinki-devil-laser-delay-data",
+        "entry_sha256": "82a9c887d85e25ebb09a5b72108218ddf5d84016f8b0aed89f95019272a54cae",
+        "rounds": [
+          {
+            "target_start": 140328,
+            "candidate_start": 140328,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140328,
+              "size": 2,
+              "module": "th05/sdly.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140328,
+            "candidate_start": 140328,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140328,
+              "size": 2,
+              "module": "th05/sdly.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "e3ca65cb275503cc981df37c8201767af3baa0ab2cbceb32bd2c34f9381881f1",
+            "dependency_timestamp_normalized_sha256": "e1151434bec2fc4894acf4b0bf9ae92abafcba3c17eef8e6009583b12a238f48",
+            "module_name": "th05/sdly.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sdly.c",
+              "src/main/boss/shinki/devil_laser_delay.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "2005aac59c6eeaac57f30090e29c87c8f32041b8321558dbb93c2400f25c5a9a",
+            "dependency_timestamp_normalized_sha256": "e1151434bec2fc4894acf4b0bf9ae92abafcba3c17eef8e6009583b12a238f48",
+            "module_name": "th05/sdly.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sdly.c",
+              "src/main/boss/shinki/devil_laser_delay.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sdly.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sdly.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_devil_delay_bindings.asm",
+            "sha256": "3d929e5055b930f429451c8d4ef5c2d2bffd93e0c53bb44254b41faa426d3072"
+          },
+          {
+            "path": "src/main/boss/shinki/devil_laser_delay.c",
+            "sha256": "dfc0db995f27b3594fa9c745c72b157f638fae064e909d17c6934f29da72a3b8"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_devil_delay_bindings.asm",
+          "sha256": "3d929e5055b930f429451c8d4ef5c2d2bffd93e0c53bb44254b41faa426d3072"
+        },
+        {
+          "path": "src/main/boss/shinki/devil_laser_delay.c",
+          "sha256": "dfc0db995f27b3594fa9c745c72b157f638fae064e909d17c6934f29da72a3b8"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4042278b023607a35976952a9d549908b31113ba4ccb8d5a39227bc3e0e9fc87",
+      "compiled_negative_control": {
+        "target_start": 140328,
+        "candidate_start": 140328,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140328,
+          "size": 2,
+          "module": "th05/sdly.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-devil-laser-delay-data",
+        "entry_sha256": "82a9c887d85e25ebb09a5b72108218ddf5d84016f8b0aed89f95019272a54cae",
+        "mutation": {
+          "unit": "main-shinki-devil-laser-delay-data",
+          "source": "src/main/boss/shinki/devil_laser_delay.c",
+          "find": "shinki_devil_laser_grow_delay = 0;",
+          "replace": "shinki_devil_laser_grow_delay = 1;"
+        },
+        "control_sha256": "cdb72f07fbd1bf439e9a3d34bb9d82af58089403116fb431fd47e167d22c4fde",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140328,
+          "candidate_start": 140328,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140328,
+            "size": 2,
+            "module": "th05/sdly.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "cc39e9e0ea4ec659738ec3a2cffd489893cd478b05cd8233fd836001da03335e",
+          "dependency_timestamp_normalized_sha256": "4bfd480dfd23a925a23098659aee73a1ab402f9a15e5d26c8bfe40a5360ad854",
+          "module_name": "th05/sdly.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sdly.c",
+            "src/main/boss/shinki/devil_laser_delay.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sdly.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-float-direction-data",
+      "entry_sha256": "46dedb55598304c8ecdf015d61aed14506c210c2261b51204bc9988761af8376",
+      "result": {
+        "id": "main-shinki-float-direction-data",
+        "entry_sha256": "46dedb55598304c8ecdf015d61aed14506c210c2261b51204bc9988761af8376",
+        "rounds": [
+          {
+            "target_start": 140330,
+            "candidate_start": 140330,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140330,
+              "size": 1,
+              "module": "th05/sflt.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140330,
+            "candidate_start": 140330,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140330,
+              "size": 1,
+              "module": "th05/sflt.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "6926da832c778389119fdb232820c232188cb1d8fa0edde4130bd4628b1321cd",
+            "dependency_timestamp_normalized_sha256": "ecacaf18603e5bcac9f6082f7aca33ca0a49f3465530fe48a6f5f14030727c15",
+            "module_name": "th05/sflt.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sflt.c",
+              "src/main/boss/shinki/float_direction.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "445207b23ac44e5a00926e66d9814a52858a39b0cc1a684e3c59fbe1cdb48ea8",
+            "dependency_timestamp_normalized_sha256": "ecacaf18603e5bcac9f6082f7aca33ca0a49f3465530fe48a6f5f14030727c15",
+            "module_name": "th05/sflt.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sflt.c",
+              "src/main/boss/shinki/float_direction.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sflt.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sflt.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_float_direction_bindings.asm",
+            "sha256": "0de08dfbaf4b1e26ea2068e656bd053cb765f83b0ac0b41efed848a61c9ecbff"
+          },
+          {
+            "path": "src/main/boss/shinki/float_direction.c",
+            "sha256": "02696d4a0116450499855a549613c83c75ded5c00bb2a5e8c0290502b2779793"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_float_direction_bindings.asm",
+          "sha256": "0de08dfbaf4b1e26ea2068e656bd053cb765f83b0ac0b41efed848a61c9ecbff"
+        },
+        {
+          "path": "src/main/boss/shinki/float_direction.c",
+          "sha256": "02696d4a0116450499855a549613c83c75ded5c00bb2a5e8c0290502b2779793"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "b8dfddaad4a2c3297e4cd0b8206fca7aa811ec9862320f27266316dd1fd2897e",
+      "compiled_negative_control": {
+        "target_start": 140330,
+        "candidate_start": 140330,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140330,
+          "size": 1,
+          "module": "th05/sflt.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-float-direction-data",
+        "entry_sha256": "46dedb55598304c8ecdf015d61aed14506c210c2261b51204bc9988761af8376",
+        "mutation": {
+          "unit": "main-shinki-float-direction-data",
+          "source": "src/main/boss/shinki/float_direction.c",
+          "find": "shinki_float_direction = 0;",
+          "replace": "shinki_float_direction = 1;"
+        },
+        "control_sha256": "ac8a2006289ead2c81fda86a45f74c11419e24b9318608eae1f5c0121cadf71c",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140330,
+          "candidate_start": 140330,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140330,
+            "size": 1,
+            "module": "th05/sflt.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "df656c45f356b57490e6561ddaecab9bc6d7ce0fea96dcb660cbc122bfa9f902",
+          "dependency_timestamp_normalized_sha256": "7c3b345e2c3d859db9e9b767941e90676984bddaed7442078ba00f688b810dde",
+          "module_name": "th05/sflt.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sflt.c",
+            "src/main/boss/shinki/float_direction.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sflt.c"
         ]
       },
       "receipt_aggregate_pass": true

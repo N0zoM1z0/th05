@@ -6499,3 +6499,47 @@ unit = "main-shinki-late-background-flags-data"
 source = "src/main/boss/shinki/bg_late_transition_flags.c"
 find = "hexagrams_flag = 0;"
 replace = "hexagrams_flag = 1;"
+
+[[units]]
+id = "main-shinki-devil-laser-delay-data"
+source = "src/main/boss/shinki/devil_laser_delay.c"
+module = "th05/sdly.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_DEVIL_DELAY_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_devil_delay_bindings.asm"
+target_start = 0x22428
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-devil-laser-delay-data"
+source = "src/main/boss/shinki/devil_laser_delay.c"
+find = "shinki_devil_laser_grow_delay = 0;"
+replace = "shinki_devil_laser_grow_delay = 1;"
+
+[[units]]
+id = "main-shinki-float-direction-data"
+source = "src/main/boss/shinki/float_direction.c"
+module = "th05/sflt.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_FLOAT_DIRECTION_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_float_direction_bindings.asm"
+target_start = 0x2242a
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-float-direction-data"
+source = "src/main/boss/shinki/float_direction.c"
+find = "shinki_float_direction = 0;"
+replace = "shinki_float_direction = 1;"
