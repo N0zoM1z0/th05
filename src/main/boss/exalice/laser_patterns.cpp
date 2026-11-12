@@ -3,6 +3,24 @@
 #include "src/main/boss/exalice/laser_patterns.hpp"
 #include "src/main/boss/exalice/laser_attack_rules.hpp"
 
+// Both fixed fan launches aim from the genuine laser origin and consume the
+// same cyclic slot counter before the sixteen-laser maintenance pass.
+#define EXALICE_FIXED_AIM_AND_SPAWN(aim_offset) { \
+    laser_template.coords.angle = player_angle_from( \
+        laser_template.coords.origin.x, laser_template.coords.origin.y, aim_offset); \
+    laser_fixed_spawn(exalice_laser_slot++); \
+}
+
+// The sweep's two directions have separate arithmetic and turnaround gates,
+// but the same target-byte state transition and real shootout call.
+#define EXALICE_SWEEP_TURN(step, turn_gate, next_direction) { \
+    laser_template.coords.angle step XLR_SWEEP_TURN_STEP; \
+    if(turn_gate) { \
+        boss_statebyte[15] = next_direction; \
+    } \
+    lasers_shootout_add(); \
+}
+
 bool near exalice_pattern_bouncing_rings(void)
 {
     if(boss.phase_frame == XLR_BOUNCE_START_FRAME) {
@@ -34,9 +52,7 @@ bool near exalice_pattern_fixed_laser_fan(void)
     laser_template.shrink_at_age = XLR_FIXED_SHRINK_AGE;
     if(boss.phase_frame < XLR_FIXED_ACTIVE_END_FRAME) {
         if(frame_in_cycle == 0) {
-            laser_template.coords.angle = player_angle_from(
-                laser_template.coords.origin.x, laser_template.coords.origin.y, XLR_FIXED_ORIGIN_AIM);
-            laser_fixed_spawn(exalice_laser_slot++);
+            EXALICE_FIXED_AIM_AND_SPAWN(XLR_FIXED_ORIGIN_AIM);
             bullet_template.spawn_type = 0x10;
             bullet_template.patnum = XLR_FIXED_RING_PATNUM;
             bullet_template.group = BG_RING;
@@ -45,10 +61,7 @@ bool near exalice_pattern_fixed_laser_fan(void)
             exalice_set_spread(XLR_FIXED_RING_COUNT, XLR_FIXED_RING_STEP);
             bullets_add_regular();
         } else if(frame_in_cycle == XLR_FIXED_HALF_CYCLE) {
-            laser_template.coords.angle = player_angle_from(
-                laser_template.coords.origin.x, laser_template.coords.origin.y,
-                static_cast<unsigned char>(XLR_FIXED_ORIGIN_AIM_LEFT));
-            laser_fixed_spawn(exalice_laser_slot++);
+            EXALICE_FIXED_AIM_AND_SPAWN(static_cast<unsigned char>(XLR_FIXED_ORIGIN_AIM_LEFT));
         }
     }
     exalice_laser_slot &= XLR_FIXED_LASER_SLOT_MASK;
@@ -97,17 +110,9 @@ bool near exalice_pattern_sweeping_lasers(void)
     }
     if((boss.phase_frame % XLR_SWEEP_FIRE_INTERVAL) == 0) {
         if(boss_statebyte[15] == XLR_SWEEP_FIRST_DIRECTION) {
-            laser_template.coords.angle += XLR_SWEEP_TURN_STEP;
-            if(laser_template.coords.angle >= XLR_SWEEP_LIMIT_ANGLE) {
-                boss_statebyte[15] = XLR_SWEEP_SECOND_DIRECTION;
-            }
-            lasers_shootout_add();
+            EXALICE_SWEEP_TURN(+=, laser_template.coords.angle >= XLR_SWEEP_LIMIT_ANGLE, XLR_SWEEP_SECOND_DIRECTION);
         } else if(boss_statebyte[15] == XLR_SWEEP_SECOND_DIRECTION) {
-            laser_template.coords.angle -= XLR_SWEEP_TURN_STEP;
-            if(laser_template.coords.angle == 0) {
-                boss_statebyte[15] = XLR_SWEEP_FIRST_DIRECTION;
-            }
-            lasers_shootout_add();
+            EXALICE_SWEEP_TURN(-=, laser_template.coords.angle == 0, XLR_SWEEP_FIRST_DIRECTION);
         }
     }
     if(boss.phase_frame >= XLR_SWEEP_MOVE_START_FRAME) {
@@ -124,3 +129,6 @@ bool near exalice_pattern_sweeping_lasers(void)
     }
     return false;
 }
+
+#undef EXALICE_SWEEP_TURN
+#undef EXALICE_FIXED_AIM_AND_SPAWN
