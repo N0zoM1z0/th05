@@ -172,3 +172,20 @@ switch table and every ordered relocation. The updated compiled
 negative changes the genuine 5,800-HP gate by one and is rejected.
 The already accepted bytes earn no new second CODE credit, and no
 unrelated Boss, MAINE or OP unit was rebuilt.
+
+## 2026-11-12: solo-wave reposition and hit-scoring protocol
+
+The complete 786-byte Mai callback now shares `MAI_NEXT_PATTERN()` between
+the three actual reposition cycles, preserving the restart of phase time,
+attack-mode increment and pattern counter update. The first and middle
+ordinary waves use `MAI_HIT_SCORE_OR_BREAK()` for their identical successful
+shot bonus and outer-phase-switch exit on a miss. The intervening laser
+cycle, distinct timeouts, movement-completion label and final defeat-bonus
+policy remain unchanged.
+
+Both native Borland/TLINK producers in
+`.analysis/unit-replays/gpt-web-mai-solo-wave-protocol-20261112-a/receipt.json`
+match all **786 original bytes**, the complete compiler switch table,
+checked alignment and original ordered fixups `[251,145]`. The existing
+compiled HP-threshold negative was rejected. This refines an already
+accepted large Boss controller without double-counting CODE.
