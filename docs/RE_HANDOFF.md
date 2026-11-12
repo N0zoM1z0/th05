@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **522** (340 / 74 / 106 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **525** (343 / 74 / 106 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,472 bytes** |
-| Total source-authored C/C++ bytes | **126,256 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,746 / 6,267 / 5,845 / 8,559** |
-| Total unknown decoded bytes | **24,417** |
+| Source-authored exact semantic initialized DATA | **17,478 bytes** |
+| Total source-authored C/C++ bytes | **126,262 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,740 / 6,267 / 5,845 / 8,559** |
+| Total unknown decoded bytes | **24,411** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -53,6 +53,12 @@ independently proven pristine source image.
   **no duplicate credit**. The former synthetic one-byte background origin
   hole is gone; preserve the original `keep_0` symbolic zero and true split
   before the last two EX-Alice functions when editing this context.
+- The previously accepted [EX-Alice controller](../src/main/boss/exalice/update.md)
+  **1,060 B** and [Mai/Yuki shared controller](../src/main/boss/mai_yuki/update_context.md)
+  **1,018 B** have newly clarified source-level regular-wave/HP and
+  paired-hit/reposition rules, respectively. Both **whole functions** were
+  replayed twice with their original ordered fixups and compiled negatives;
+  these are *source-quality improvements*, not a second CODE credit.
 - Stage and ending controllers: Stage 2 complete **653 B** update plus
   **492 B** particle initializer and **51 B** invalidation leaf;
   complete Stage Clear and All Clear **561 B / 579 B**;
@@ -78,6 +84,15 @@ independently proven pristine source image.
   [SE playback state](../src/shared/sound/se_initial_state.md) and
   [initial memory budget](../src/shared/memory/mem_assign_initial.md) add
   **six C++ plus six C initialized DATA bytes** across MAIN, OP and MAINE.
+- New MAIN game-authored initialized DATA: two
+  [enemy lifecycle totals](../src/main/enemy/lifetime_totals_data.md) at
+  `[21E74,21E78)` (**4 bytes**); the one-byte
+  [shot-to-Boss collision flag](../src/main/player/shot_collision_flag_data.md)
+  at `[22790,22791)`; and the one-byte
+  [item auto-drop cycle](../src/main/item/drop_cycle_data.md) at
+  `[227D2,227D3)`. All three have real independently accepted consumers,
+  complete native C++ producer/negative evidence and zero MZ relocations.
+  **Do not absorb neighboring unknown zero/alignment bytes.**
 - Foreign CL.LIB [`exit`, `files`, `xxv` initialized DATA](reconstruction/CL_DATA_OWNERSHIP.md)
   now has full member-linked byte and original ordered relocation proof in
   all three executables: **2,124 bytes** moved out of unknown, **zero
@@ -133,6 +148,16 @@ original short jumps and yields **2,135 bytes**. Four further genuine
 See [Yumeko compiler findings](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
 Do not add padding, fake side effects, borrowed machine code, or credit
 this C++ function a second time.
+
+**Additional Yumeko diagnostics:** Three narrow `switch`-on-final-Y
+compiler experiments, applied inside the real nine-function sword context,
+produce **2,150 / 2,151 / 2,164 bytes** rather than the native **2,139**.
+Some missing short jumps reappear, but the dispatch overhead breaks the
+complete machine-code/fixup shape. These negative results are documented in
+[the Yumeko compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md)
+with private runnable reproducer `.analysis/gpt-web-yumeko-local-switch-20261112.py`.
+The accepted 283-byte reviewed ASM owner and inexact natural C++ candidate
+remain unchanged; do not re-try these specific local switches unchanged.
 
 **3. Remaining original ownership.** Use the *current* unknown
 intervals in `resources/ownership.json` and the
