@@ -5,6 +5,7 @@
 #pragma option -zCBOSS_BG_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/background.hpp"
+#include "src/main/boss/shinki/background_rules.h"
 
 void pascal near sara_bg_render(void)
 {
@@ -84,7 +85,7 @@ static const unsigned int SHINKI_SPINLINE_MOVE_FRAMES = (
 );
 
 static const int SHINKI_LINESET_COUNT = 2;
-static const int PARTICLES_UNINITIALIZED = (-1 & 0xFF);
+static const int PARTICLES_UNINITIALIZED = SHB_PARTICLES_UNINITIALIZED;
 
 // Maps one of Shinki's four visible lines to its index in a line set.
 static const int SHINKI_LINE_MAIN = (0 * 6);
@@ -93,7 +94,7 @@ static const int SHINKI_LINE_3 = (2 * 6);
 static const int SHINKI_LINE_4 = (3 * 6);
 
 extern unsigned char shinki_bg_linesets_zoomed_out;
-extern int shinki_bg_type_a_particles_alive;
+/* C-linkage definition is supplied by Shinki particle seed DATA. */
 extern bool shinki_bg_type_b_initialized;
 extern unsigned int shinki_bg_spinline_frame;
 extern bool shinki_bg_type_c_initialized;
@@ -143,7 +144,7 @@ void near shinki_bg_particles_render(void)
 	screen_x_t left_;
 	int i = 0;
 	while(i < BOSS_PARTICLE_COUNT) {
-		if(particle->pos.x.v != (static_cast<subpixel_t>(-999 * 16))) {
+		if(particle->pos.x.v != (static_cast<subpixel_t>(SHB_PARTICLE_INACTIVE_X_PX * 16))) {
 			particle->pos.x.v += particle->velocity.x.v;
 			particle->pos.y.v += particle->velocity.y.v;
 			if(particle->patnum == 0) {
@@ -171,7 +172,7 @@ void near shinki_bg_particles_render(void)
 				(top < PLAYFIELD_BOTTOM)
 			)) {
 				particle->pos = particle->origin;
-				particle->age = 0;
+				particle->age = SHB_PARTICLE_INITIAL_AGE;
 			} else {
 				z_super_roll_put_16x16_mono(left, top, patnum);
 				particle->age++;
@@ -201,7 +202,7 @@ void near shinki_bg_type_a_update_part1(void)
 	if(shinki_bg_type_a_particles_alive == PARTICLES_UNINITIALIZED) {
 		set = linesets;
 		i = 0;
-		angle = 0x40;
+		angle = SHB_LINESET_INITIAL_ANGLE;
 		while(i < SHINKI_LINESET_COUNT) {
 			for(line_i = 0; line_i < LINESET_LINE_COUNT; line_i++) {
 				set->center[line_i].x.v = to_sp(PLAYFIELD_W / 2);
@@ -211,13 +212,13 @@ void near shinki_bg_type_a_update_part1(void)
 			}
 			i++;
 			set++;
-			angle -= 0x80;
+			angle -= SHB_LINESET_OPPOSITE_ANGLE;
 		}
 
 		particle = boss_particles;
 		i = 0;
 		while(i < BOSS_PARTICLE_COUNT) {
-			particle->pos.x.v = (static_cast<subpixel_t>(-999 * 16));
+			particle->pos.x.v = (static_cast<subpixel_t>(SHB_PARTICLE_INACTIVE_X_PX * 16));
 			particle->patnum = 0;
 			i++;
 			particle++;
@@ -225,30 +226,30 @@ void near shinki_bg_type_a_update_part1(void)
 		shinki_bg_type_a_particles_alive = 0;
 	}
 	if(shinki_bg_type_a_particles_alive < BOSS_PARTICLE_COUNT) {
-		if(((boss.phase_frame % 4) == 0) == true) {
+		if(((boss.phase_frame % SHB_PARTICLE_SPAWN_EVERY) == 0) == true) {
 			particle = &boss_particles[shinki_bg_type_a_particles_alive];
 			particle->pos.x.v = to_sp(PLAYFIELD_W / 2);
 			particle->pos.y.v = to_sp(PLAYFIELD_H / 2);
 			particle->origin.x.v = to_sp(PLAYFIELD_W / 2);
 			particle->origin.y.v = to_sp(PLAYFIELD_H / 2);
 			particle->angle = randring1_next16();
-			particle->age = 0;
+			particle->age = SHB_PARTICLE_INITIAL_AGE;
 			vector2_at(
 				particle->velocity,
 				0.0f, 0.0f,
-				background_random_sp(2.0f, 6.0f),
+				background_random_sp(SHB_PARTICLE_MIN_SPEED_PX, SHB_PARTICLE_MAX_SPEED_PX),
 				particle->angle
 			);
 			shinki_bg_type_a_particles_alive++;
 		}
 	}
-	if(boss.phase == 3) {
+	if(boss.phase == SHB_PHASE_A_SPIN) {
 		if((shinki_bg_linesets_zoomed_out % (SHINKI_LINESET_COUNT * 2)) < 2) {
-			linesets[0].angle[0] += 0x02;
-			linesets[1].angle[0] += 0x02;
+			linesets[0].angle[0] += SHB_LINES_SPIN_ANGLE;
+			linesets[1].angle[0] += SHB_LINES_SPIN_ANGLE;
 		} else {
-			linesets[0].angle[0] -= 0x02;
-			linesets[1].angle[0] -= 0x02;
+			linesets[0].angle[0] -= SHB_LINES_SPIN_ANGLE;
+			linesets[1].angle[0] -= SHB_LINES_SPIN_ANGLE;
 		}
 	}
 }
@@ -315,7 +316,7 @@ void near shinki_bg_type_a_update_and_render(void)
 	int i = 0;
 	while(i < SHINKI_LINESET_COUNT) {
 		shinki_lineset_forward_copy(*set);
-		set->radius[SHINKI_LINE_MAIN].v += to_sp(4.0f);
+		set->radius[SHINKI_LINE_MAIN].v += to_sp(SHB_TYPE_A_LINE_GROWTH_PX);
 		vector2_at(
 			set->center[SHINKI_LINE_MAIN],
 			to_sp(PLAYFIELD_W / 2),
@@ -323,7 +324,7 @@ void near shinki_bg_type_a_update_and_render(void)
 			((set->radius[SHINKI_LINE_MAIN].v * 3) / 4),
 			(set->angle[SHINKI_LINE_MAIN] - 0x40)
 		);
-		if(set->radius[SHINKI_LINE_MAIN] >= to_sp(224.0f)) {
+		if(set->radius[SHINKI_LINE_MAIN] >= to_sp(SHB_TYPE_A_RING_LIMIT_PX)) {
 			shinki_bg_linesets_zoomed_out++;
 			set->radius[SHINKI_LINE_MAIN].v = to_sp(0.0f);
 		}
@@ -348,9 +349,9 @@ void near shinki_bg_type_b_update_part1(void)
 		while(i < SHINKI_LINESET_COUNT) {
 			for(line_i = SHINKI_LINE_4; line_i >= 0; line_i--) {
 				set->center[line_i].x.v = center_x;
-				set->center[line_i].y.v = to_sp((PLAYFIELD_H / 2) + 32);
-				set->radius[line_i].v = to_sp(256.0f);
-				set->angle[line_i] = 0x40;
+				set->center[line_i].y.v = to_sp((PLAYFIELD_H / 2) + SHB_TYPE_B_CENTRAL_Y_OFFSET_PX);
+				set->radius[line_i].v = to_sp(SHB_TYPE_B_INITIAL_RADIUS_PX);
+				set->angle[line_i] = SHB_TYPE_B_ANGLE;
 			}
 			set->velocity_y.v = to_sp(0.0f);
 			i++;
@@ -364,7 +365,7 @@ void near shinki_bg_type_b_update_part1(void)
 			// Huh? Not PLAYFIELD_H?
 			particle->pos.y.v = randring1_next16_mod(to_sp(PLAYFIELD_W));
 			particle->origin.x = particle->pos.x;
-			particle->origin.y.v = to_sp(-1.0f);
+			particle->origin.y.v = to_sp(SHB_TYPE_D_RISING_VELOCITY_PX);
 			particle->velocity.x.v = to_sp(0.0f);
 			particle->velocity.y.v = to_sp(0.0f);
 			particle->patnum = background_random8(
@@ -380,7 +381,7 @@ void near shinki_bg_type_b_update_part1(void)
 	particle = boss_particles;
 	i = 0;
 	while(i < BOSS_PARTICLE_COUNT) {
-		if(particle->velocity.y < to_sp(10.0f)) {
+		if(particle->velocity.y < to_sp(SHB_TYPE_B_FALLING_LIMIT_PX)) {
 			particle->velocity.y.v += stage_frame_mod2;
 		}
 		i++;
@@ -409,7 +410,7 @@ void near shinki_bg_type_b_update_and_render(void)
 	while(set_i < SHINKI_LINESET_COUNT) {
 		shinki_lineset_forward_copy(*set);
 		set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v;
-		if(set->velocity_y > to_sp(-14.0f)) {
+		if(set->velocity_y > to_sp(SHB_TYPE_B_VELOCITY_LIMIT_PX)) {
 			set->velocity_y.v -= (
 				(stage_frame_mod4 == 0) ? to_sp(0.0625f) : to_sp(0.0f)
 			);
@@ -452,7 +453,7 @@ void near shinki_bg_type_c_update_part1(void)
 	particle = boss_particles;
 	i = 0;
 	while(i < BOSS_PARTICLE_COUNT) {
-		if(particle->velocity.y.v > to_sp(-10.0f)) {
+		if(particle->velocity.y.v > to_sp(SHB_TYPE_C_RISING_LIMIT_PX)) {
 			particle->velocity.y.v -= stage_frame_mod2;
 		}
 		i++;
@@ -481,7 +482,7 @@ void near shinki_bg_type_c_update_and_render(void)
 	while(set_i < SHINKI_LINESET_COUNT) {
 		shinki_lineset_forward_copy(*set);
 		set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v;
-		if(set->velocity_y < to_sp(14.0f)) {
+		if(set->velocity_y < to_sp(SHB_TYPE_C_VELOCITY_LIMIT_PX)) {
 			set->velocity_y.v += stage_frame_mod2;
 		}
 		shinki_spinline_x_and_angle(set, delta);
@@ -518,7 +519,7 @@ void near shinki_bg_type_d_update(void)
 			particle->origin.y.v = to_sp(
 				SHINKI_TYPE_D_BACKDROP_TOP - PLAYFIELD_TOP
 			);
-			particle->velocity.y.v = to_sp(-1.0f);
+			particle->velocity.y.v = to_sp(SHB_TYPE_D_RISING_VELOCITY_PX);
 			i++;
 			particle++;
 		}
@@ -528,7 +529,7 @@ void near shinki_bg_type_d_update(void)
 	particle = boss_particles;
 	i = 0;
 	while(i < BOSS_PARTICLE_COUNT) {
-		int cel = ((PARTICLE_CELS - 1) - (particle->pos.y.v / to_sp(64.0f)));
+		int cel = ((PARTICLE_CELS - 1) - (particle->pos.y.v / to_sp(SHB_TYPE_D_SMOKE_HEIGHT_PX)));
 		if(cel < 0) {
 			cel = 0;
 		}
@@ -557,13 +558,13 @@ void pascal near shinki_bg_render(void)
 		}
 		tiles_bb_col = V_WHITE;
 		tiles_bb_put(bb_boss_seg, entrance_cel);
-	} else if(boss.phase < 4) {
+	} else if(boss.phase < SHB_BACKGROUND_A_END_PHASE) {
 		boss_bg_fill_col_0();
 		shinki_bg_type_a_update_and_render();
-	} else if(boss.phase < 8) {
+	} else if(boss.phase < SHB_BACKGROUND_B_END_PHASE) {
 		boss_bg_fill_col_0();
 		shinki_bg_type_b_update_and_render();
-	} else if(boss.phase < 12) {
+	} else if(boss.phase < SHB_BACKGROUND_C_END_PHASE) {
 		boss_bg_fill_col_0();
 		shinki_bg_type_c_update_and_render();
 	} else /* if(boss.phase == PHASE_NONE) */ { \

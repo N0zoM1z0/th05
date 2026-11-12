@@ -29,3 +29,16 @@ to `(-2 & 0xff)` changes the genuine sentinel and is rejected. The
 semantic C++ consumer will be validated separately under its complete
 function owner; this DATA unit grants no CODE credit and requires no
 whole-game cold replay.
+
+## Actual large-background C++ consumers (2026-11-12)
+
+The complete `background.cpp` now imports the genuine initialized
+`shinki_bg_type_a_particles_alive` C symbol from
+`background_rules.h`, removing the independent unqualified external
+C++ declaration. The two source owners share the same 255 initial
+sentinel and signed near-word type. The 17 actually affected background
+CODE units and the refreshed C DATA unit were all verified together,
+with real native compiler outputs and compiled negative rejected.
+See `background_rules.md` and
+`.analysis/unit-replays/gpt-web-bg-particles-seed-shinki-a/receipt.json`.
+The surrounding zero-initialized or alignment bytes remain unowned.

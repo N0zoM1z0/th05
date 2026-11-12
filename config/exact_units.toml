@@ -6320,6 +6320,6 @@ padding_bytes = []
 
 [[controls]]
 unit = "main-shinki-background-particle-seed-data"
-source = "src/main/boss/shinki/bg_particle_seed.c"
-find = "(-1 & 0xff)"
-replace = "(-2 & 0xff)"
+source = "src/main/boss/shinki/background_rules.h"
+find = "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)"
+replace = "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
