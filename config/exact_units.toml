@@ -2278,8 +2278,8 @@ origin = "compiler-generated-cxx"
 id = "yumeko-sword-spawn-circle-color"
 unit = "main-yumeko-swords-add"
 source = "src/main/boss/yumeko/swords_add.cpp"
-find = "circles_color = 9;"
-replace = "circles_color = 10;"
+find = "circles_color = YMS_SPAWN_CIRCLE_COLOR;"
+replace = "circles_color = (YMS_SPAWN_CIRCLE_COLOR + 1);"
 
 [[units]]
 id = "main-mai-yuki-remaining-patterns"
