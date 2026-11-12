@@ -7005,3 +7005,25 @@ unit = "main-dialog-sequence-initial-data"
 source = "src/main/dialog/sequence_initial.cpp"
 find = "dialog_sequence_id = 0;"
 replace = "dialog_sequence_id = 1;"
+
+[[units]]
+id = "main-pointnum-times-two-initial-data"
+source = "src/main/item/pointnum_twice_initial.cpp"
+module = "th05/pnt2ini.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_pointnum_twice_initial_bindings.asm"
+target_start = 0x2227a
+size = 1
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-pointnum-times-two-initial-data"
+source = "src/main/item/pointnum_twice_initial.cpp"
+find = "pointnum_times_2 = false;"
+replace = "pointnum_times_2 = true;"

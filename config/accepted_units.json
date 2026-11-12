@@ -2,42 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "0e3e829dcfc0271be2330872a71a5e390f92d4cc08d8e0bd3c988da192685f6b",
+  "replay_receipt_sha256": "d20ec0c745ce02a657ed9f6b2935b54a9a88f2887e7c64e3217ed96b57cc01a6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 119198,
-    "candidate_start": 119198,
-    "size": 1824,
-    "target_sha256": "b8a4fd6fb01a08c42c57d55ed0c40ffe666e71e66402dabde598b368b0711f90",
-    "candidate_sha256": "98c984b6c5e75e9e44111810c7234a341ca42cbd7be67a3c4d0903dbce8beb23",
+    "target_start": 139898,
+    "candidate_start": 139898,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      919,
-      813,
-      723,
-      660,
-      382,
-      338,
-      260,
-      36,
-      1427,
-      1157
-    ],
-    "candidate_fixups": [
-      919,
-      813,
-      723,
-      660,
-      382,
-      338,
-      260,
-      36,
-      1427,
-      1157
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 139898,
+      "size": 1,
+      "module": "th05/pnt2ini.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -111070,6 +111056,290 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dlgseqi.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-pointnum-times-two-initial-data",
+      "entry_sha256": "b599cf9ca19b609e54f0048d31f8eaeab064d858c4a62bba294ee7d5b5448f4f",
+      "result": {
+        "id": "main-pointnum-times-two-initial-data",
+        "entry_sha256": "b599cf9ca19b609e54f0048d31f8eaeab064d858c4a62bba294ee7d5b5448f4f",
+        "rounds": [
+          {
+            "target_start": 139898,
+            "candidate_start": 139898,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139898,
+              "size": 1,
+              "module": "th05/pnt2ini.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 139898,
+            "candidate_start": 139898,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139898,
+              "size": 1,
+              "module": "th05/pnt2ini.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "b7ff27ea9648d28cfa7fc2f7ff20d2078528acf1d5409547d21f98a1f7e11fc3",
+            "dependency_timestamp_normalized_sha256": "803f449008d0e93dc9082a98656465b4985d5600653899a43ac12b984fad4e70",
+            "module_name": "th05/pnt2ini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pnt2ini.cpp",
+              "src/main/item/pointnum_twice_initial.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "49912e30d91d31e96dd2f788bb2e5540122fef896fdd9669c55ba76cb80c15f6",
+            "dependency_timestamp_normalized_sha256": "803f449008d0e93dc9082a98656465b4985d5600653899a43ac12b984fad4e70",
+            "module_name": "th05/pnt2ini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/pnt2ini.cpp",
+              "src/main/item/pointnum_twice_initial.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pnt2ini.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/pnt2ini.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_pointnum_twice_initial_bindings.asm",
+            "sha256": "bdeedbed3d05bf40f35c06f53be738d5eab887509a40173063d903840cfd9b17"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/item/pointnum_twice_initial.cpp",
+            "sha256": "335b9e0853d603787fae69082936ecdbf3577a7206fa8012bfe5c797639a1487"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_pointnum_twice_initial_bindings.asm",
+          "sha256": "bdeedbed3d05bf40f35c06f53be738d5eab887509a40173063d903840cfd9b17"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/item/pointnum_twice_initial.cpp",
+          "sha256": "335b9e0853d603787fae69082936ecdbf3577a7206fa8012bfe5c797639a1487"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d20ec0c745ce02a657ed9f6b2935b54a9a88f2887e7c64e3217ed96b57cc01a6",
+      "compiled_negative_control": {
+        "target_start": 139898,
+        "candidate_start": 139898,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 139898,
+          "size": 1,
+          "module": "th05/pnt2ini.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-pointnum-times-two-initial-data",
+        "entry_sha256": "b599cf9ca19b609e54f0048d31f8eaeab064d858c4a62bba294ee7d5b5448f4f",
+        "mutation": {
+          "unit": "main-pointnum-times-two-initial-data",
+          "source": "src/main/item/pointnum_twice_initial.cpp",
+          "find": "pointnum_times_2 = false;",
+          "replace": "pointnum_times_2 = true;"
+        },
+        "control_sha256": "3b71b0f584634c36c3cd33eea68abd3e60296cccfdec6ac28059c773c117a122",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 139898,
+          "candidate_start": 139898,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 139898,
+            "size": 1,
+            "module": "th05/pnt2ini.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "41694cc261fa702ab7a1a1cd3ba7fd5a53fa5b214c77e55395b69aed57208f1e",
+          "dependency_timestamp_normalized_sha256": "702d7f09f2833231a75693ca0135c5bf66a71b74fb209a3efd3f5d2a9904a8d1",
+          "module_name": "th05/pnt2ini.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/pnt2ini.cpp",
+            "src/main/item/pointnum_twice_initial.cpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/pnt2ini.cpp"
         ]
       },
       "receipt_aggregate_pass": true
