@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **527** (343 / 75 / 107 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **530** (346 / 75 / 107 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,494 bytes** |
-| Total source-authored C/C++ bytes | **126,278 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,119 / 5,454 / 5,032 / 8,559** |
-| Total unknown decoded bytes | **22,164** |
+| Source-authored exact semantic initialized DATA | **17,499 bytes** |
+| Total source-authored C/C++ bytes | **126,283 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,114 / 5,354 / 5,032 / 8,559** |
+| Total unknown decoded bytes | **22,059** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -88,6 +88,12 @@ independently proven pristine source image.
   passed independent native compilation, original byte/fixup comparisons
   and their compiled nonzero-pointer negatives. This adds **16 new
   game-authored DATA bytes**, without touching nearby sound/memory state.
+- The full [Mai/Yuki ten late attacks](reconstruction/MAI_YUKI_SHARED_PATTERNS_2026-11-12.md)
+  **939 B** and **1,018 B** joint Boss update context now share the seven
+  identical Yuki muzzle assignments and two Cheeto firing tails in their
+  actual common `.inl`. **Both complete owners were replayed and accepted**,
+  with all original bytes/ordered fixups, two positives and a rejected
+  compiled negative. This refreshes already accepted CODE without new credit.
 - Stage and ending controllers: Stage 2 complete **653 B** update plus
   **492 B** particle initializer and **51 B** invalidation leaf;
   complete Stage Clear and All Clear **561 B / 579 B**;
@@ -113,6 +119,22 @@ independently proven pristine source image.
   [SE playback state](../src/shared/sound/se_initial_state.md) and
   [initial memory budget](../src/shared/memory/mem_assign_initial.md) add
   **six C++ plus six C initialized DATA bytes** across MAIN, OP and MAINE.
+- Three newly recovered MAIN C++ initializers:
+  [STD stage-script segment](../src/main/formats/std_segment_initial.md)
+  **2 bytes** at `[21922,21924)`,
+  [extend/high-score latches](../src/main/hud/score_extend_initial.md)
+  **2 bytes** at `[21D42,21D44)`, and
+  [playfield shake redraw clock](../src/main/playfield/shake_redraw_initial.md)
+  **1 byte** at `[2191A,2191B)`. Each has an explicit matching ReC98
+  `dw 0`/`db 0` source, real independently accepted code consumers, and
+  exact complete Turbo C++/TLINK positive and compiled negative evidence.
+  Adjacent uninitialized/alignment bytes remain unknown.
+- OP Music Room's formerly unknown `[F9CE,FA32)` is now a complete
+  [100-byte bitmap resource](reconstruction/OP_PIANO_BITMAP_RESOURCES.md):
+  **28 black-key sprite bytes** from the original row-mask ASM plus **72
+  font bytes** from the 9×8 original candidate BMP, corroborated by real
+  TASM LEDATA, MAP publics and actual piano drawing consumers. These
+  are resources, not C++ DATA or instruction credit.
 - New MAIN game-authored initialized DATA: two
   [enemy lifecycle totals](../src/main/enemy/lifetime_totals_data.md) at
   `[21E74,21E78)` (**4 bytes**); the one-byte
@@ -162,6 +184,12 @@ original public names, actual byte/word types and alignment, **not just
 raw equality**. Don't absorb adjacent zeros into a speculative struct.
 
 ## Real unresolved work
+
+**Unreviewed CDG state:** Native sources explicitly declare the matching
+`_cdg_noalpha` byte as **`db ?`**, not initialized data. Its three native
+zero locations remain unknown despite many accepted CDG loader consumers.
+Do not claim them via a fabricated compiled zero initializer without new
+provenance.
 
 **1. ZUN `-S` resident `main()` — natural source not yet exact.** The
 original complete embedded function is **269 bytes** at COM
