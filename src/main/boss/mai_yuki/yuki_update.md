@@ -123,3 +123,20 @@ rounds and matches **826/826 original CODE bytes**, including the genuine
 compiled negative lowers the real setup HP gate 4,600→4,500 and is
 rejected. Only `main-yuki-update` was replayed; the new comments and
 constants add no duplicate acceptance credit to already owned CODE.
+
+## 2026-11-12: exact solo-wave advancement protocol
+
+The full 826-byte Yuki controller now expresses the three repeated wave
+reposition completions as `YUKI_NEXT_PATTERN()` (reset phase clock,
+advance mode, increment pattern count). The first two attack waves also
+share `YUKI_HIT_SCORE_OR_BREAK()`: an unsuccessful shot test exits the
+outer Boss phase switch, while a hit awards the existing fixed score.
+This preserves the separate first/second/final pattern limits, timeouts,
+shadow-boss movements and final defeat logic.
+
+Focused replay `main-yuki-update` at
+`.analysis/unit-replays/gpt-web-yuki-solo-wave-protocol-20261112-a/receipt.json`
+passed two fresh Borland/TLINK producers with the full **826 original
+bytes**, 20-byte compiler switch table and ordered MZ fixups `[256,140]`;
+its compiled HP-threshold mutation was rejected. This refreshes the
+already accepted source owner, without a second CODE credit.
