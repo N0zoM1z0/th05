@@ -26,3 +26,16 @@ Private reproducible native input snapshots and raw COM outputs are at
 unaccepted; the existing exact config, resident DATA and CRT owners are
 unchanged. No new complete `-S` child or game-authored C++ byte claim
 follows from these experiments.
+
+## Further natural switch and early-guard probes (2026-11-12)
+
+An additional fourteen **actual Turbo C++ 4.02** first-producer trials
+explored error-return expressions, shared-prefix parsing, guarded
+switch cases, local option pointers, and documented local jump
+optimization settings. The only fully linked **269-byte** version
+still fails raw exactness at **252 byte positions**. The retained
+source variants, measurement table, zero-credit verdict and native
+producer evidence are documented in
+[`ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md`](ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md).
+The existing maintained natural entry and two accepted ZUN C++
+scopes remain unchanged; the 269-byte entry is still unaccepted.
