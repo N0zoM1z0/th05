@@ -1896,8 +1896,8 @@ origin = "compiler-generated-cxx"
 id = "yumeko-bounce-right-bound"
 unit = "main-yumeko-patterns"
 source = "src/main/boss/yumeko/patterns.cpp"
-find = "boss.pos.cur.x.v >= to_sp(336)"
-replace = "boss.pos.cur.x.v >= to_sp(335)"
+find = "boss.pos.cur.x.v >= to_sp(YM_BOUNCE_RIGHT_PX)"
+replace = "boss.pos.cur.x.v >= to_sp(YM_BOUNCE_RIGHT_PX - 1)"
 
 [[units]]
 id = "main-louise-flystep"

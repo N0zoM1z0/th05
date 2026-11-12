@@ -4,6 +4,7 @@
 #include "src/main/boss/yumeko/update.hpp"
 #include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #include "src/main/boss/yumeko/phase_timing.hpp"
+#include "src/main/boss/yumeko/mobile_attack_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 // Applied after canonical record declarations. The original semantic switch
 // table has a genuine word boundary relative to this odd-address contribution.
@@ -139,9 +140,9 @@ void pascal far yumeko_update(void)
                     goto moving_phase_end;
                 }
                 if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
-                    yumeko_pattern = yumeko_patterns_phase2[boss.phase_state.patterns_seen & 1];
+                    yumeko_pattern = yumeko_patterns_phase2[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK];
                 } else {
-                    yumeko_pattern = yumeko_patterns_phase5[boss.phase_state.patterns_seen & 1];
+                    yumeko_pattern = yumeko_patterns_phase5[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK];
                 }
             }
             break;
