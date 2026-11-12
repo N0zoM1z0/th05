@@ -135,6 +135,44 @@ def overlay_game_reservation(size: int, pieces: list[dict], claims: list[dict]) 
     return out
 
 
+def overlay_vendor_reservation(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Original archived Master `?` structures: provenance, zero authored credit.
+
+    These writable source reserves have no OMF initialized-data writes. They
+    may only replace unknown bytes, never authored code, game DATA or another
+    reviewed library contribution.
+    """
+    validate_partition(size, pieces)
+    for row in claims:
+        if (row.get("kind") != "reviewed-uninitialized-vendor-storage" or
+                row.get("content_kind") != "source-question-mark-struct" or
+                row.get("library") != "Master 0.23" or
+                row.get("member") != "BGM_GLB" or
+                row.get("source") != "B_DATA.ASM/SGLB" or
+                type(row.get("start")) is not int or
+                type(row.get("end")) is not int or
+                row["end"] - row["start"] != 108 or
+                type(row.get("authored_credit")) is not int or
+                row["authored_credit"] != 0 or
+                type(row.get("instruction_bytes")) is not int or
+                row["instruction_bytes"] != 0):
+            raise ValueError("unreviewed Master BGM reserved storage claim")
+    output = []
+    cursor = 0
+    known = [row for row in pieces if row["kind"] != "unknown"]
+    for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor or not 0 <= row["start"] < row["end"] <= size:
+            raise ValueError("vendor BGM reserve overlaps existing source or review")
+        if cursor < row["start"]:
+            output.append({"start":cursor,"end":row["start"],"kind":"unknown"})
+        output.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        output.append({"start":cursor,"end":size,"kind":"unknown"})
+    validate_partition(size, output)
+    return output
+
+
 def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
     """Adopt reviewed ASM only where ownership was previously unknown."""
     validate_partition(size, pieces)
@@ -515,6 +553,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_pi_buffer_reservations import reviewed_claims as pi_reserve_claims
     pi_reserves, pi_reserves_sha = pi_reserve_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_bgm_global_reservations import reviewed_claims as bgm_global_claims
+    bgm_global, bgm_global_sha = bgm_global_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -776,6 +817,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, edges_data[name])
         if name in pi_reserves:
             pieces = overlay_game_reservation(view["size"], pieces, pi_reserves[name])
+        if name in bgm_global:
+            pieces = overlay_vendor_reservation(view["size"], pieces, bgm_global[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
@@ -916,6 +959,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_edges_review_sha256"] = edges_data_sha
         if pi_reserves_sha and name in pi_reserves:
             views[name]["game_pi_reserve_review_sha256"] = pi_reserves_sha
+        if bgm_global_sha and name in bgm_global:
+            views[name]["master_bgm_reserve_review_sha256"] = bgm_global_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
@@ -951,7 +996,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
             "authored_denominator": None, "percentage": None,
-            "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+            "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}
 

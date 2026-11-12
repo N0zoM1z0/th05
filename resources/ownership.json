@@ -3,7 +3,7 @@
   "kind": "gapless-observed-coordinate-inventory",
   "authored_denominator": null,
   "percentage": null,
-  "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+  "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-c-initialized-data": 3043,
@@ -21,7 +21,8 @@
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 64,
-    "unknown": 21664,
+    "reviewed-uninitialized-vendor-storage": 324,
+    "unknown": 21340,
     "verified-vendor-code": 138283,
     "verified-vendor-initialized-data": 7376
   },
@@ -43,7 +44,8 @@
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "unknown": 3030,
+        "reviewed-uninitialized-vendor-storage": 108,
+        "unknown": 2922,
         "verified-vendor-code": 47400,
         "verified-vendor-initialized-data": 2762
       },
@@ -6759,7 +6761,13 @@
         {
           "start": 135524,
           "end": 135632,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_GLB",
+          "source": "B_DATA.ASM/SGLB",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 135632,
@@ -7572,6 +7580,7 @@
       "master_file_initial_review_sha256": "9efc131334da864285746989f77b047d4d4e40eca877a556c97a226f5d4efb01",
       "master_superpa_initial_review_sha256": "e50a98f22d605477e93888e67447a80d71b2faa05142bee9cc6ab29b6d8501e3",
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
+      "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",
@@ -7600,7 +7609,8 @@
         "reviewed-embedded-font-bitmap": 72,
         "reviewed-embedded-sprite-bitmap": 28,
         "reviewed-uninitialized-game-storage": 32,
-        "unknown": 5197,
+        "reviewed-uninitialized-vendor-storage": 108,
+        "unknown": 5089,
         "verified-vendor-code": 44923,
         "verified-vendor-initialized-data": 2257
       },
@@ -10391,7 +10401,13 @@
         {
           "start": 63732,
           "end": 63840,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_GLB",
+          "source": "B_DATA.ASM/SGLB",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 63840,
@@ -10727,6 +10743,7 @@
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "master_edges_review_sha256": "965cbd0939604284903ba0e87023fd3283753a836bb5f04703893ca70b35e8d8",
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
+      "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",
@@ -10751,7 +10768,8 @@
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 8,
         "reviewed-uninitialized-game-storage": 32,
-        "unknown": 4878,
+        "reviewed-uninitialized-vendor-storage": 108,
+        "unknown": 4770,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2247
       },
@@ -13514,7 +13532,13 @@
         {
           "start": 67330,
           "end": 67438,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_GLB",
+          "source": "B_DATA.ASM/SGLB",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 67438,
@@ -13946,6 +13970,7 @@
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "master_edges_review_sha256": "965cbd0939604284903ba0e87023fd3283753a836bb5f04703893ca70b35e8d8",
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
+      "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",
