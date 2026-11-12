@@ -67,6 +67,22 @@ void near yumeko_pattern_final_ring(void)
     }
 }
 
+// The stationary sword/laser waves and the sword sweep use one timed hit
+// window. A miss breaks the enclosing phase switch, not an inner loop.
+#define YUMEKO_STATIONARY_HIT_WINDOW() \
+    if(boss.phase_frame < YUMEKO_STATIONARY_TIMEOUT_FRAMES) { \
+        if(!boss_hittest_shots()) { \
+            break; \
+        } \
+        boss_score_bonus(YUMEKO_PATTERN_BONUS); \
+    }
+
+// Forward phase transitions reset their own clock before selecting the next
+// attack; this does not change any specific callback or animation state.
+#define YUMEKO_ADVANCE_PHASE_CLOCK() \
+    boss.phase++; \
+    boss.phase_frame = 0
+
 void pascal far yumeko_update(void)
 {
     int patnum;
@@ -110,8 +126,7 @@ void pascal far yumeko_update(void)
         boss.pos.cur.x.v += to_sp(YUMEKO_ENTER_MOVE_X_STEP_PX);
         if(boss.pos.cur.x.v >= to_sp(YUMEKO_ARENA_CENTER_X_PX)) {
             boss.sprite = YUMEKO_SPRITE_STILL;
-            boss.phase++;
-            boss.phase_frame = 0;
+            YUMEKO_ADVANCE_PHASE_CLOCK();
             snd_se_play(YUMEKO_SPRITE_CONVERSION_DONE_SE);
             bg_render_bombing_func = yumeko_bg_render;
         }
@@ -120,8 +135,7 @@ void pascal far yumeko_update(void)
     case YUMEKO_PHASE_ENTRANCE_WAIT:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= YUMEKO_READY_END_FRAME) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            YUMEKO_ADVANCE_PHASE_CLOCK();
             boss.mode = YUMEKO_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             yumeko_pattern = yumeko_pattern_sword_fan;
@@ -170,8 +184,7 @@ void pascal far yumeko_update(void)
     case YUMEKO_PHASE_APPROACH_SECOND:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(YUMEKO_ARENA_CENTER_X_PX), to_sp(YUMEKO_WAVE_APPROACH_Y_PX))) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            YUMEKO_ADVANCE_PHASE_CLOCK();
             if(boss.phase == YUMEKO_PHASE_STATIONARY_FIRST) {
                 yumeko_pattern = yumeko_pattern_aimed_swords;
             } else {
@@ -183,12 +196,7 @@ void pascal far yumeko_update(void)
     case YUMEKO_PHASE_STATIONARY_FIRST:
     case YUMEKO_PHASE_STATIONARY_SECOND:
         yumeko_pattern();
-        if(boss.phase_frame < YUMEKO_STATIONARY_TIMEOUT_FRAMES) {
-            if(!boss_hittest_shots()) {
-                break;
-            }
-            boss_score_bonus(YUMEKO_PATTERN_BONUS);
-        }
+        YUMEKO_STATIONARY_HIT_WINDOW();
         if(boss.phase == YUMEKO_PHASE_STATIONARY_FIRST) {
             boss_phase_next(ET_NW_SE, YUMEKO_HP_AFTER_STATIONARY_FIRST);
             yumeko_pattern = yumeko_pattern_counterrotating_spreads;
@@ -200,20 +208,14 @@ void pascal far yumeko_update(void)
 
     case YUMEKO_PHASE_SWORD_SWEEP:
         yumeko_pattern_sword_sweep();
-        if(boss.phase_frame < YUMEKO_STATIONARY_TIMEOUT_FRAMES) {
-            if(!boss_hittest_shots()) {
-                break;
-            }
-            boss_score_bonus(YUMEKO_PATTERN_BONUS);
-        }
+        YUMEKO_STATIONARY_HIT_WINDOW();
         boss_phase_next(ET_NW_SE, YUMEKO_HP_AFTER_SWEEP);
         break;
 
     case YUMEKO_PHASE_FINAL_APPROACH:
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(YUMEKO_ARENA_CENTER_X_PX), to_sp(YUMEKO_FINAL_APPROACH_Y_PX))) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            YUMEKO_ADVANCE_PHASE_CLOCK();
             boss.phase_state.patterns_seen = 0;
         }
         break;
@@ -239,3 +241,6 @@ void pascal far yumeko_update(void)
     swords_update();
     hud_hp_update_and_render(boss.hp, YUMEKO_HP_TOTAL);
 }
+
+#undef YUMEKO_ADVANCE_PHASE_CLOCK
+#undef YUMEKO_STATIONARY_HIT_WINDOW

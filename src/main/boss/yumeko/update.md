@@ -169,3 +169,23 @@ alignment pass independent native Borland compiler rounds; the
 sweep recycle speed and final turn-count negatives are compiled and
 rejected. Evidence and detailed original rules:
 `src/main/boss/yumeko/sweep_combat_rules.md`.
+
+## 2026-11-12: shared timed-hit window and phase-clock transitions
+
+The complete natural source now factors two identical hit/bonus windows
+for the stationary sword/laser phases and sword sweep into the semantic
+`YUMEKO_STATIONARY_HIT_WINDOW()` rule. A failed hit test still exits the
+*outer* phase switch, without entering a synthetic inner loop. Four ordinary
+forward-phase transitions use `YUMEKO_ADVANCE_PHASE_CLOCK()` to advance the
+Boss phase and reset its timer together, preserving the phase-dependent
+sprite, sound and callback changes around each transition.
+
+Focused replay of `main-yumeko-update` at
+`.analysis/unit-replays/gpt-web-yumeko-boss-wave-clock-source-20261112-b/receipt.json`
+passed two genuine TCC/TLINK producers: complete **884/884 original bytes**,
+the 22-byte switch table, the excluded one-byte alignment and all six
+original ordered MZ fixups `[399,344,333,270,161,79]`. The existing
+compiled final-ring turn-count negative was rejected. This refreshes the
+already accepted two-function major Boss owner without claiming additional
+CODE credit. The separate 283-byte sword updater remains accepted as
+reviewed ASM; its natural C++ alternative is still under investigation.
