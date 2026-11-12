@@ -111,9 +111,12 @@ def overlay_game_reservation(size: int, pieces: list[dict], claims: list[dict]) 
     for row in claims:
         if (row.get("kind") != "reviewed-uninitialized-game-storage" or
                 row.get("content_kind") != "source-question-mark-reserve" or
-                row.get("member") != "_pi_buffers" or
-                row.get("source") != "th05/formats/pi_buffers[bss].asm" or
-                row.get("end", -1) - row.get("start", 0) != 32 or
+                not ((row.get("member") == "_pi_buffers" and
+                      row.get("source") == "th05/formats/pi_buffers[bss].asm" and
+                      row.get("end", -1) - row.get("start", 0) == 32) or
+                     (row.get("member") == "_hflip_lut" and
+                      row.get("source") == "th03/formats/hfliplut[bss].asm" and
+                      row.get("end", -1) - row.get("start", 0) == 256)) or
                 type(row.get("authored_credit")) is not int or
                 row["authored_credit"] != 0 or
                 type(row.get("instruction_bytes")) is not int or
@@ -563,6 +566,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_pi_buffer_reservations import reviewed_claims as pi_reserve_claims
     pi_reserves, pi_reserves_sha = pi_reserve_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_hflip_lut_reservations import reviewed_claims as hflip_claims
+    hflip, hflip_sha = hflip_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_master_bgm_global_reservations import reviewed_claims as bgm_global_claims
     bgm_global, bgm_global_sha = bgm_global_claims(
         root, config["views"], verify_targets=verify_targets)
@@ -849,6 +855,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, edges_data[name])
         if name in pi_reserves:
             pieces = overlay_game_reservation(view["size"], pieces, pi_reserves[name])
+        if name in hflip:
+            pieces = overlay_game_reservation(view["size"], pieces, hflip[name])
         if name in bgm_global:
             pieces = overlay_vendor_reservation(view["size"], pieces, bgm_global[name])
         if name in superpa_reserves:
@@ -999,6 +1007,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_edges_review_sha256"] = edges_data_sha
         if pi_reserves_sha and name in pi_reserves:
             views[name]["game_pi_reserve_review_sha256"] = pi_reserves_sha
+        if hflip_sha and name in hflip:
+            views[name]["game_hflip_lut_review_sha256"] = hflip_sha
         if bgm_global_sha and name in bgm_global:
             views[name]["master_bgm_reserve_review_sha256"] = bgm_global_sha
         if superpa_reserves_sha and name in superpa_reserves:
