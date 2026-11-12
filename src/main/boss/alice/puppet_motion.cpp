@@ -22,6 +22,19 @@ void near alice_puppets_entrance(void)
     alice_puppet1.pos.prev = alice_puppet1.pos.cur;
 }
 
+// Native pixel-exact fractional pursuit on either puppet coordinate.
+// Keep the two original division passes and final snap, in X-before-Y order.
+#define ALICE_PUPPET_SETTLE_AXIS(axis) { \
+    value = p->pos.prev.axis.v - p->pos.cur.axis.v; \
+    if((value / to_sp(2)) != 0) { \
+        p->pos.cur.axis.v += value / to_sp(2); \
+    } else if((value / 4) != 0) { \
+        p->pos.cur.axis.v += value / 4; \
+    } else { \
+        p->pos.cur.axis = p->pos.prev.axis; \
+    } \
+}
+
 void near alice_puppets_update(void)
 {
     int i;
@@ -37,22 +50,8 @@ void near alice_puppets_update(void)
         if(p->flag == 1) {
             if(reinterpret_cast<uint32_t &>(p->pos.cur) !=
                 reinterpret_cast<uint32_t &>(p->pos.prev)) {
-                value = p->pos.prev.x.v - p->pos.cur.x.v;
-                if((value / to_sp(2)) != 0) {
-                    p->pos.cur.x.v += value / to_sp(2);
-                } else if((value / 4) != 0) {
-                    p->pos.cur.x.v += value / 4;
-                } else {
-                    p->pos.cur.x = p->pos.prev.x;
-                }
-                value = p->pos.prev.y.v - p->pos.cur.y.v;
-                if((value / to_sp(2)) != 0) {
-                    p->pos.cur.y.v += value / to_sp(2);
-                } else if((value / 4) != 0) {
-                    p->pos.cur.y.v += value / 4;
-                } else {
-                    p->pos.cur.y = p->pos.prev.y;
-                }
+                ALICE_PUPPET_SETTLE_AXIS(x);
+                ALICE_PUPPET_SETTLE_AXIS(y);
                 p->patnum = 192;
             } else {
                 p->patnum = 190;
@@ -120,3 +119,5 @@ void near alice_puppets_update(void)
         }
     }
 }
+
+#undef ALICE_PUPPET_SETTLE_AXIS
