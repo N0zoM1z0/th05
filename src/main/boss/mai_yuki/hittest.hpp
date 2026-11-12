@@ -1,6 +1,7 @@
 // Complete canonical Boss/Point state and real shot-hit wrapper interfaces.
 #ifndef TH05_MAIN_MAI_YUKI_HITTEST_HPP
 #define TH05_MAIN_MAI_YUKI_HITTEST_HPP
+#include "src/main/boss/mai_yuki/hit_result.hpp"
 
 #pragma codeseg SHOT_HIT_TEXT main_01
 int far shots_hittest(void);
@@ -19,12 +20,6 @@ bool near boss_hittest_shots(void);
 int pascal near yuki_hittest_shots_damage(subpixel_t radius_x,
     subpixel_t radius_y, int effect);
 unsigned char near mai_yuki_hittest_shots(void);
-
-enum MaiYukiHitResult {
-    MY_HIT_NONE = 0,
-    MY_HIT_MAI_DEFEATED = 1,
-    MY_HIT_YUKI_DEFEATED = 2
-};
 
 typedef char my_hit_boss_is_full_24[(sizeof(boss_stuff_t) == 24) ? 1 : -1];
 typedef char my_hit_point_is_full_4[(sizeof(SPPoint) == 4) ? 1 : -1];

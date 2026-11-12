@@ -1,6 +1,7 @@
 // Complete shared Mai/Yuki state-machine interfaces and original callback ABI.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_UPDATE_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_UPDATE_HPP
+#include "src/main/boss/mai_yuki/hit_result.hpp"
 
 #pragma codeseg _TEXT
 extern "C" int pascal far super_convert_tiny(int patnum);

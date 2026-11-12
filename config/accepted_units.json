@@ -2,34 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c7870af8c54d47651e04dd94ee802789b3734246982bd48e49e20c0e71355670",
+  "replay_receipt_sha256": "c2d0b85000ec90a999b6b87df6234df62141f6deb9e60a23c65ed0eacee0ab7e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 133746,
-    "candidate_start": 133746,
-    "size": 8,
-    "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
-    "candidate_sha256": "f350aff70f58cf42ded95609f90af2b8507a338c41cf0cb182f9860f91766e72",
+    "target_start": 96240,
+    "candidate_start": 96240,
+    "size": 111,
+    "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+    "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
     "raw_exact": false,
     "target_fixups": [
-      6,
-      2
+      46,
+      32
     ],
     "candidate_fixups": [
-      6,
-      2
+      46,
+      32
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 133746,
-      "size": 8,
-      "module": "th05/stlinks.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -64070,8 +64062,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "10d91cd02b0cf9d8d5ec23f4f785176e773f3d4cb26c831a72ecdbcaf3de7b8c",
-            "dependency_timestamp_normalized_sha256": "58d88e04f37666997865b1aa3dbb7c711624064655f3f273c02ca53b11ca14db",
+            "sha256": "5e433ea67c57b7d455d3dc6e03828eba08657fb73a4b75856fd405b2bd878f08",
+            "dependency_timestamp_normalized_sha256": "426fe5604739281e033245a79125877409a3d414d1033e8ce834ad6f7c4baf2e",
             "module_name": "th05/my_hit.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -64080,6 +64072,7 @@
               "th05/my_hit.cpp",
               "src/main/boss/mai_yuki/hittest.cpp",
               "src/main/boss/mai_yuki/hittest.hpp",
+              "src/main/boss/mai_yuki/hit_result.hpp",
               "src/main/boss/mai_yuki.hpp",
               "src/main/boss/movement.hpp",
               "src/shared/geometry.hpp",
@@ -64090,8 +64083,8 @@
             ]
           },
           {
-            "sha256": "49479b3d63c72ad0c6994cec74541e1be91cab9d4d27f71a87c40e3f06584ee2",
-            "dependency_timestamp_normalized_sha256": "58d88e04f37666997865b1aa3dbb7c711624064655f3f273c02ca53b11ca14db",
+            "sha256": "d050037e8ae49bfa8deaf4461fcd1faba6fd9b0a5e3017b447e76a27a66f53c3",
+            "dependency_timestamp_normalized_sha256": "426fe5604739281e033245a79125877409a3d414d1033e8ce834ad6f7c4baf2e",
             "module_name": "th05/my_hit.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -64100,6 +64093,7 @@
               "th05/my_hit.cpp",
               "src/main/boss/mai_yuki/hittest.cpp",
               "src/main/boss/mai_yuki/hittest.hpp",
+              "src/main/boss/mai_yuki/hit_result.hpp",
               "src/main/boss/mai_yuki.hpp",
               "src/main/boss/movement.hpp",
               "src/shared/geometry.hpp",
@@ -64152,12 +64146,16 @@
             "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
           },
           {
+            "path": "src/main/boss/mai_yuki/hit_result.hpp",
+            "sha256": "23fbb9bee9bfe4911f61982d7a4728d22cb0ad26799d78772259f7afd8f97e42"
+          },
+          {
             "path": "src/main/boss/mai_yuki/hittest.cpp",
-            "sha256": "52c29432d7e48d3065aecdae3b100bc1311f4a8894beb6b344f2478e9b821836"
+            "sha256": "054cc01bb4b9d9597dcda2cd9e8090198b89609b8728ecb10820cad0ccb33a91"
           },
           {
             "path": "src/main/boss/mai_yuki/hittest.hpp",
-            "sha256": "a222eec677f7442e63896339df4acde783a7333a8609df7eb8b9145f84aa0a04"
+            "sha256": "dfd64de722f6a83361e6bdf65dca0c3c4312a43c1ef0c1151d881fc5a459eb6c"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -64184,12 +64182,16 @@
           "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
         },
         {
+          "path": "src/main/boss/mai_yuki/hit_result.hpp",
+          "sha256": "23fbb9bee9bfe4911f61982d7a4728d22cb0ad26799d78772259f7afd8f97e42"
+        },
+        {
           "path": "src/main/boss/mai_yuki/hittest.cpp",
-          "sha256": "52c29432d7e48d3065aecdae3b100bc1311f4a8894beb6b344f2478e9b821836"
+          "sha256": "054cc01bb4b9d9597dcda2cd9e8090198b89609b8728ecb10820cad0ccb33a91"
         },
         {
           "path": "src/main/boss/mai_yuki/hittest.hpp",
-          "sha256": "a222eec677f7442e63896339df4acde783a7333a8609df7eb8b9145f84aa0a04"
+          "sha256": "dfd64de722f6a83361e6bdf65dca0c3c4312a43c1ef0c1151d881fc5a459eb6c"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -64206,7 +64208,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "aa894cc4e0558f4c47bf9ebe44bc3613dd33c7f3e955b22a0fb1f4b7d56f5483",
+      "replay_receipt_sha256": "c2d0b85000ec90a999b6b87df6234df62141f6deb9e60a23c65ed0eacee0ab7e",
       "compiled_negative_control": {
         "target_start": 96240,
         "candidate_start": 96240,
@@ -64255,8 +64257,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "8b0c8dc17940947c1e73668b08e9af6ca564e2ac40efa238b06b07d0d0656126",
-          "dependency_timestamp_normalized_sha256": "c1db94ee53aac8c4ae53525cb06dc413c7778f27072364967139e7ad62faadc1",
+          "sha256": "7289d5f50cb2bdcdc70fe7ce3b765f66521ddf210880c3da218579105da7af71",
+          "dependency_timestamp_normalized_sha256": "aacd57bd5986d4fcd70030b086c940c1356417a5fb85c3262f9e7b31b4bbc450",
           "module_name": "th05/my_hit.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -64265,6 +64267,7 @@
             "th05/my_hit.cpp",
             "src/main/boss/mai_yuki/hittest.cpp",
             "src/main/boss/mai_yuki/hittest.hpp",
+            "src/main/boss/mai_yuki/hit_result.hpp",
             "src/main/boss/mai_yuki.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -64288,7 +64291,11 @@
           "th05/my_hit.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-mai-yuki-hittest",
+        "main-mai-yuki-update-context"
+      ]
     },
     {
       "id": "main-dialog-boss-transition",
@@ -69533,8 +69540,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f48b39838691b9a982856b0da99c7353faccba1daa02aa89437d1c0a96f8a80",
-            "dependency_timestamp_normalized_sha256": "f59aa05099112e3ad147de340f67c2cdfccf11373a111f6716dc83963f68a32e",
+            "sha256": "5c50eb78f50db8238f56b40daf7bef124ac7e9cfe3d76a9bec8c85f22aaeb5d5",
+            "dependency_timestamp_normalized_sha256": "5246cd375c2026f10c147c843e24ff236a47b2d19429d3cfd3fd7463d2f955dc",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -69543,6 +69550,7 @@
               "th05/my_ctx.cpp",
               "src/main/boss/mai_yuki/update_context.cpp",
               "src/main/boss/mai_yuki/update.hpp",
+              "src/main/boss/mai_yuki/hit_result.hpp",
               "src/main/dialog/file.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
@@ -69572,8 +69580,8 @@
             ]
           },
           {
-            "sha256": "15cc551cba89fa17a5894b1f485e927d9051f743b7999121e596602b8a8600a9",
-            "dependency_timestamp_normalized_sha256": "f59aa05099112e3ad147de340f67c2cdfccf11373a111f6716dc83963f68a32e",
+            "sha256": "9b647828d9b3fb99ad72b03a4e4a920f3b6306dd36d16f47815dc34af2e853b8",
+            "dependency_timestamp_normalized_sha256": "5246cd375c2026f10c147c843e24ff236a47b2d19429d3cfd3fd7463d2f955dc",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -69582,6 +69590,7 @@
               "th05/my_ctx.cpp",
               "src/main/boss/mai_yuki/update_context.cpp",
               "src/main/boss/mai_yuki/update.hpp",
+              "src/main/boss/mai_yuki/hit_result.hpp",
               "src/main/dialog/file.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
@@ -69612,8 +69621,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -69653,6 +69662,10 @@
             "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
           },
           {
+            "path": "src/main/boss/mai_yuki/hit_result.hpp",
+            "sha256": "23fbb9bee9bfe4911f61982d7a4728d22cb0ad26799d78772259f7afd8f97e42"
+          },
+          {
             "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
             "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
           },
@@ -69670,11 +69683,11 @@
           },
           {
             "path": "src/main/boss/mai_yuki/update.hpp",
-            "sha256": "ef7755367a6748210c84b02a10fb0c2d743379cfae63b5a316542a8669736225"
+            "sha256": "67acbda46f329446b1fffa5e09831ec4e4595d209b5e8f2ed02c3131dc72a9be"
           },
           {
             "path": "src/main/boss/mai_yuki/update_context.cpp",
-            "sha256": "4084e1ca4df2a527abaaf1d9d00559880ec1a4709adaad9174c1d18604edd1fe"
+            "sha256": "5967ee3bfa192cfe40944eace9dde497c4bd2dd0c6e7a661dd6ac494daef3a1e"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -69733,6 +69746,10 @@
           "sha256": "570e153297184fc72ab72c24b75f6d51c86720a7fe44ce5d87f71662326c401c"
         },
         {
+          "path": "src/main/boss/mai_yuki/hit_result.hpp",
+          "sha256": "23fbb9bee9bfe4911f61982d7a4728d22cb0ad26799d78772259f7afd8f97e42"
+        },
+        {
           "path": "src/main/boss/mai_yuki/initial_patterns.hpp",
           "sha256": "00ca095ee429330bba82641e6633210e4e26f3cd86d18500d1841a137c3c3300"
         },
@@ -69750,11 +69767,11 @@
         },
         {
           "path": "src/main/boss/mai_yuki/update.hpp",
-          "sha256": "ef7755367a6748210c84b02a10fb0c2d743379cfae63b5a316542a8669736225"
+          "sha256": "67acbda46f329446b1fffa5e09831ec4e4595d209b5e8f2ed02c3131dc72a9be"
         },
         {
           "path": "src/main/boss/mai_yuki/update_context.cpp",
-          "sha256": "4084e1ca4df2a527abaaf1d9d00559880ec1a4709adaad9174c1d18604edd1fe"
+          "sha256": "5967ee3bfa192cfe40944eace9dde497c4bd2dd0c6e7a661dd6ac494daef3a1e"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -69803,139 +69820,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "2306d8759f325b8497f8df9b3919f3d7cd1e9c57728392b34b70bd99c9ca0eb0",
+      "replay_receipt_sha256": "c2d0b85000ec90a999b6b87df6234df62141f6deb9e60a23c65ed0eacee0ab7e",
       "compiled_negative_control": {
-        "target_start": 98267,
-        "candidate_start": 98267,
-        "size": 1018,
-        "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
-        "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
+        "target_start": 96240,
+        "candidate_start": 96240,
+        "size": 111,
+        "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+        "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
         "raw_exact": false,
         "target_fixups": [
-          942,
-          931,
-          915,
-          898,
-          874,
-          723,
-          312,
-          171,
-          123
+          46,
+          32
         ],
         "candidate_fixups": [
-          942,
-          931,
-          915,
-          898,
-          874,
-          723,
-          312,
-          171,
-          123
+          46,
+          32
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 98267,
-          "size": 1018,
-          "function_symbol": "mai_yuki_update()",
-          "contribution_start": 97328,
-          "contribution_size": 1957,
-          "boundary_kind": "contribution-end",
-          "next_function_symbol": null
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-mai-yuki-update-context",
-        "entry_sha256": "789b47a8f4e3e7ad502d4bc27390e4eeadddf247836618561a459c8c7ecd3592",
+        "unit_id": "main-mai-yuki-hittest",
+        "entry_sha256": "9a04125adbb4d39da0d4bc4acd98e3928120b2d1de246911213cef3d82128f38",
         "mutation": {
-          "unit": "main-mai-yuki-update-context",
-          "source": "src/main/boss/mai_yuki/update_context.cpp",
-          "find": "(boss.hp + boss2.hp) < MY_HP_GATE_FIRST",
-          "replace": "(boss.hp + boss2.hp) < (MY_HP_GATE_FIRST + 1)"
+          "unit": "main-mai-yuki-hittest",
+          "source": "src/main/boss/mai_yuki/hittest.cpp",
+          "find": "shots_hittest_against_boss = true;",
+          "replace": "shots_hittest_against_boss = false;"
         },
-        "control_sha256": "b9196012c69917ed4b32bf9e60dcbe740769a3a949e024da4ae2300ac8b7e159",
+        "control_sha256": "b64fa7399c4a3f5eab16254f6c4588843fc5eb94dc18a257b293b375ddfa4be3",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 98267,
-          "candidate_start": 98267,
-          "size": 1018,
-          "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
-          "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
+          "target_start": 96240,
+          "candidate_start": 96240,
+          "size": 111,
+          "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
+          "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
           "raw_exact": false,
           "target_fixups": [
-            942,
-            931,
-            915,
-            898,
-            874,
-            723,
-            312,
-            171,
-            123
+            46,
+            32
           ],
           "candidate_fixups": [
-            942,
-            931,
-            915,
-            898,
-            874,
-            723,
-            312,
-            171,
-            123
+            46,
+            32
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 98267,
-            "size": 1018,
-            "function_symbol": "mai_yuki_update()",
-            "contribution_start": 97328,
-            "contribution_size": 1957,
-            "boundary_kind": "contribution-end",
-            "next_function_symbol": null
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "589dd04c78e201c6be2a6bc7fc4187ecf7ca15e321642eeac9098ff02c787dc0",
-          "dependency_timestamp_normalized_sha256": "9ecee5a57f7874fe4ec4c057b4d87aea5b21f7103a358ad9068eec2aecd95163",
-          "module_name": "th05/my_ctx.cpp",
+          "sha256": "7289d5f50cb2bdcdc70fe7ce3b765f66521ddf210880c3da218579105da7af71",
+          "dependency_timestamp_normalized_sha256": "aacd57bd5986d4fcd70030b086c940c1356417a5fb85c3262f9e7b31b4bbc450",
+          "module_name": "th05/my_hit.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/my_ctx.cpp",
-            "src/main/boss/mai_yuki/update_context.cpp",
-            "src/main/boss/mai_yuki/update.hpp",
-            "src/main/dialog/file.hpp",
-            "src/shared/abi.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/boss/mai_yuki/later_patterns.hpp",
-            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "th05/my_hit.cpp",
+            "src/main/boss/mai_yuki/hittest.cpp",
+            "src/main/boss/mai_yuki/hittest.hpp",
+            "src/main/boss/mai_yuki/hit_result.hpp",
             "src/main/boss/mai_yuki.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
-            "src/main/stage/setup.hpp",
-            "src/main/boss/movement.hpp",
-            "src/main/gather/gather.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/boss/mai_yuki/transition_effects.hpp",
-            "src/main/boss/mai_yuki/remaining_patterns.inl"
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
           ]
         },
         "compiler_arguments": [
@@ -69949,11 +69900,12 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/my_ctx.cpp"
+          "th05/my_hit.cpp"
         ]
       },
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
+        "main-mai-yuki-hittest",
         "main-mai-yuki-update-context"
       ]
     },

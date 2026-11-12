@@ -108,3 +108,27 @@ switch tables and the nine original ordered relocation sites. The
 existing compiled 5,500-HP gate mutation was rejected. Other accepted
 units were not replayed and the already accepted CODE earns no duplicate
 credit from this semantic source improvement.
+
+## Coupled defeat index with the real 111-byte collision leaf (2026-11-12)
+
+The full Mai/Yuki shared Boss updater now includes the same canonical
+`hit_result.hpp` declaration as its actual `mai_yuki_hittest_shots()`
+callee. This unifies the returned `0 = no hit`, `1 = Mai loses`,
+`2 = Yuki loses` protocol and the original subtraction-of-one when
+transferring the outcome into the existing `boss2.phase_state.patterns_seen`
+byte. That byte is a *loser index* during the explosion and survivor
+handoff phases, **not** a new pattern counter allocated by this source.
+The shared Boss' stage exhaustion still explicitly selects Mai as the
+loser so Yuki survives; no return values or rendering/callback swaps
+are inferred or rewritten.
+
+The full `update_context.cpp` and the independent `update.cpp` mirror
+retain identical Boss function bodies. The companion hittest C++ source
+also uses named 24-pixel Yuki combat radius and real hit sound 4.
+A bounded real native replay of both accepted units passed their full
+**1,018** + **111** source bytes, the controller's checked one-byte
+alignment and 24-byte compiler switch table, all original ordered MZ
+relocations and both compiled negatives:
+`.analysis/unit-replays/gpt-web-mai-yuki-shared-hit-protocol-a/receipt.json`.
+Previously accepted compiled code is not double-counted, and no
+all-game cold replay was executed.

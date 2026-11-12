@@ -58,3 +58,33 @@ correct physical call targets, hashes and the unit/control proposal are private
 under `.analysis/main-mai-yuki-hittest/`. The passing receipt is
 `.analysis/unit-replays/main-mai-yuki-hittest-a/receipt.json`. Independent
 whole-program linkage and historical original source identity remain unproved.
+
+## Shared hit-result ABI with the actual two-Boss controller (2026-11-12)
+
+The separately accepted 111-byte Mai/Yuki hit selector and the
+1,018-byte shared Boss controller now import *one physical source of
+truth* for result values: `hit_result.hpp` defines `MY_HIT_NONE = 0`,
+`MY_HIT_MAI_DEFEATED = 1` and `MY_HIT_YUKI_DEFEATED = 2`.
+The original leaf tests Mai's Boss first; only when Mai does not lose
+does it apply the actual Yuki hitbox of **24×24 pixels**, invoke real
+shot collision, emit sound **4** on hit, subtract the full stored damage
+byte and compare Yuki's signed HP gate. Its existing far/near helper
+ABIs, `shots_hittest_against_boss` flag lifecycle and AL result are
+unchanged. The shared setup's separate 24×24 hitbox still deliberately
+uses sound 10, preserving that phase's different semantics.
+
+`hit_result.hpp` only names compiler constants, not independent state.
+The actual `boss2.phase_state.patterns_seen` byte is reused by the
+survivor transition as the *zero-based defeated index*: Mai loss is
+stored as 0, Yuki loss as 1. The original wrapper's real unsigned-byte
+return and the Boss' subtraction of one now reference the same
+constants. This prevents divergence between two independently compiled
+source owners without changing a single original byte.
+
+The focused two-unit native receipt at
+`.analysis/unit-replays/gpt-web-mai-yuki-shared-hit-protocol-a/receipt.json`
+passes two independent Borland producers for all **111 hit-leaf bytes**
+and the entire **1,018-byte** Boss controller, their original ordered
+MZ fixups and actual OMF/MAP bounds. Both compiled semantic negative
+controls are rejected. No new code-byte credit is claimed for existing
+accepted source.

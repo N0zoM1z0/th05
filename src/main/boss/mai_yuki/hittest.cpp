@@ -22,7 +22,9 @@ unsigned char near mai_yuki_hittest_shots(void)
     if(boss_hittest_shots()) {
         return MY_HIT_MAI_DEFEATED;
     }
-    boss2.damage_this_frame = yuki_hittest_shots_damage(to_sp(24), to_sp(24), 4);
+    boss2.damage_this_frame = yuki_hittest_shots_damage(
+        to_sp(MY_YUKI_COMBAT_HIT_RADIUS_PX),
+        to_sp(MY_YUKI_COMBAT_HIT_RADIUS_PX), MY_YUKI_COMBAT_HIT_SOUND);
     boss2.hp -= boss2.damage_this_frame;
     if(boss2.hp <= boss2.phase_end_hp) {
         return MY_HIT_YUKI_DEFEATED;

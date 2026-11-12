@@ -2,14 +2,8 @@
 #include "src/main/boss/mai_yuki/update.hpp"
 #include "src/main/boss/mai_yuki/transition_effects.hpp"
 
-// The shared hit selector's return values distinguish which Boss was hit.
-// Its nonzero result is stored minus one in boss2.phase_state.patterns_seen
-// during the survivor dialogue, so the *stored* loss codes are 0/1.
-static const unsigned char MY_HIT_NEITHER = 0;
-static const unsigned char MY_HIT_MAI = 1;
-static const unsigned char MY_HIT_YUKI = 2;
-static const unsigned char MY_DEFEATED_MAI = MY_HIT_MAI - 1;
-static const unsigned char MY_DEFEATED_YUKI = MY_HIT_YUKI - 1;
+// Defeat codes and their one-based-to-zero-based mapping are shared with
+// the actual 111-byte hit-test producer in hit_result.hpp.
 
 // One shared fight: the entry, each reposition, and the chosen survivor
 // observe different clocks. These remain compiler constants, never new state.
@@ -120,7 +114,7 @@ void pascal far mai_yuki_update(void)
                 } else {
                     boss.phase_state.patterns_seen = 0;
                     // Pattern exhaustion selects Mai's defeat (Yuki survives).
-                    state_result = MY_HIT_MAI;
+                    state_result = MY_HIT_MAI_DEFEATED;
                     goto start_small_explosion;
                 }
             }
@@ -141,12 +135,13 @@ void pascal far mai_yuki_update(void)
             boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_SECOND;
         }
         state_result = mai_yuki_hittest_shots();
-        if(state_result == MY_HIT_NEITHER) {
+        if(state_result == MY_HIT_NONE) {
             break;
         }
         boss.phase_state.defeat_bonus = true;
     start_small_explosion:
-        boss2.phase_state.patterns_seen = state_result - 1;
+        boss2.phase_state.patterns_seen = (
+            state_result - MY_HIT_TO_STORED_DEFEATED_INDEX);
         boss.phase = MY_PHASE_EXPLODE_SMALL;
         boss.phase_frame = 0;
         if(lasers[0].flag != LF_FREE) {
