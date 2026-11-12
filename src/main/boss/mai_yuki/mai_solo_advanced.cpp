@@ -3,6 +3,21 @@
 #include "src/main/boss/mai_yuki/mai_solo_advanced.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
+// All three late attacks exit by restoring the real Boss phase clock and
+// movement mode together. This is the original successful pattern result.
+#define MAI_LATE_ATTACK_COMPLETE() { \
+    boss.phase_frame = 0; \
+    boss.mode = 0; \
+    return true; \
+}
+
+// The opening laser remains at its initial angle; each remaining slot
+// advances by the same signed random delta before actual fixed spawning.
+#define MAI_LASER_NEXT_SLOT(slot) { \
+    laser_template.coords.angle += angle_delta; \
+    laser_fixed_spawn(slot); \
+}
+
 bool near mai_solo_turning_fans(void)
 {
     if(boss.phase_frame == 32) {
@@ -27,9 +42,7 @@ bool near mai_solo_turning_fans(void)
             snd_se_play(3);
         }
         if(boss.phase_frame == 192) {
-            boss.phase_frame = 0;
-            boss.mode = 0;
-            return true;
+            MAI_LATE_ATTACK_COMPLETE();
         }
         if(boss.phase_state.patterns_seen >= 2 && boss.phase_frame >= 64) {
             boss_flystep_random(boss.phase_frame % 64);
@@ -67,9 +80,7 @@ bool near mai_solo_revenge_snow(void)
             } else {
                 mai_solo_scratch.revenge_snow_angle = 0x80;
             }
-            boss.phase_frame = 0;
-            boss.mode = 0;
-            return true;
+            MAI_LATE_ATTACK_COMPLETE();
         }
     }
     return false;
@@ -85,12 +96,9 @@ bool near mai_solo_laser_bounce(void)
         laser_template.shrink_at_age = 90;
         laser_template.coords.angle = 64 - angle_delta - (angle_delta / 2);
         laser_fixed_spawn(0);
-        laser_template.coords.angle += angle_delta;
-        laser_fixed_spawn(1);
-        laser_template.coords.angle += angle_delta;
-        laser_fixed_spawn(2);
-        laser_template.coords.angle += angle_delta;
-        laser_fixed_spawn(3);
+        MAI_LASER_NEXT_SLOT(1);
+        MAI_LASER_NEXT_SLOT(2);
+        MAI_LASER_NEXT_SLOT(3);
         mai_solo_scratch.laser_bounce_angle = static_cast<unsigned char>(-8);
     } else if(boss.phase_frame > 32) {
         if(boss.phase_frame <= 128) {
@@ -118,10 +126,11 @@ bool near mai_solo_laser_bounce(void)
             bullet_template.spread = 6;
             bullet_template.speed.v = to_sp(1.5f);
         } else {
-            boss.phase_frame = 0;
-            boss.mode = 0;
-            return true;
+            MAI_LATE_ATTACK_COMPLETE();
         }
     }
     return false;
 }
+
+#undef MAI_LASER_NEXT_SLOT
+#undef MAI_LATE_ATTACK_COMPLETE
