@@ -109,3 +109,23 @@ Scoped receipt:
 `.analysis/unit-replays/gpt-web-alice-charged-rules-b/receipt.json`.
 The source changes add gameplay names and preserve already accepted
 machine bytes; they do not grant duplicated byte or pointer-table credit.
+
+## 2026-11-12: explicit paired-puppet beam and ring anchors
+
+The complete 939-byte Alice controller now names two repeated puppet
+formation protocols. `ALICE_BEAM_PUPPETS_HOLD()` sets both beam-phase
+previous positions, restores their two native HP words and installs the
+paired hold callbacks. `ALICE_RING_PUPPETS_ANCHOR()` sets only the ring
+formation's previous positions, leaving HP reset to the ring-approach
+branch rather than unintentionally repeating it in final spread. These
+source-level rules preserve the existing state-machine order and timing.
+
+Focused replay `main-alice-update-context` at
+`.analysis/unit-replays/gpt-web-alice-boss-puppet-anchors-20261112-a/receipt.json`
+passed two real TCC/TLINK producers for all **939 original bytes**, the
+original 30-byte phase-dispatch table, checked alignment zero and the
+unchanged ordered MZ relocation `[133]`. Its compiled source-negative was
+rejected. The preceding charge/final-pattern functions provide genuine
+compiler context, but remain independently accepted and unmodified. This
+refreshes the already accepted large Boss controller; no duplicate CODE
+credit is assigned.

@@ -144,6 +144,25 @@ void near alice_pattern_rotating_ring(void)
 #pragma option -a2
 #include "src/main/boss/alice/final_spread.inl"
 
+// Both beam approach and beam attack hold the paired puppets at the same
+// prev-position anchors with full HP and the held-pattern callbacks.
+#define ALICE_BEAM_PUPPETS_HOLD() \
+    alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX); \
+    alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX); \
+    alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_RIGHT_X_PX); \
+    alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX); \
+    alice_puppet0.hp = ALICE_PUPPET_HP; \
+    alice_puppet1.hp = ALICE_PUPPET_HP; \
+    alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold
+
+// Ring approach and final spread begin from the same previous-position
+// anchors, but only the approach resets puppet HP.
+#define ALICE_RING_PUPPETS_ANCHOR() \
+    alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX); \
+    alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX); \
+    alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX); \
+    alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX)
+
 void pascal far alice_update(void)
 {
     AlicePuppet near *p;
@@ -267,13 +286,7 @@ phase_complete:
     case ALICE_PHASE_BEAM_APPROACH_1:
     case ALICE_PHASE_BEAM_APPROACH_2:
     case ALICE_PHASE_BEAM_APPROACH_3:
-        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX);
-        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
-        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_RIGHT_X_PX);
-        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
-        alice_puppet0.hp = ALICE_PUPPET_HP;
-        alice_puppet1.hp = ALICE_PUPPET_HP;
-        alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold;
+        ALICE_BEAM_PUPPETS_HOLD();
         if(boss_flystep_towards(to_sp(ALICE_BOSS_APPROACH_X_PX), to_sp(ALICE_BOSS_APPROACH_Y_PX))) {
             goto movement_complete;
         }
@@ -282,13 +295,7 @@ phase_complete:
     case ALICE_PHASE_BEAM_ATTACK_1:
     case ALICE_PHASE_BEAM_ATTACK_2:
     case ALICE_PHASE_BEAM_ATTACK_3:
-        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX);
-        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
-        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_RIGHT_X_PX);
-        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
-        alice_puppet0.hp = ALICE_PUPPET_HP;
-        alice_puppet1.hp = ALICE_PUPPET_HP;
-        alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold;
+        ALICE_BEAM_PUPPETS_HOLD();
         alice_puppet_beam_pattern();
         boss_hittest_shots();
         if(boss.phase_frame < ALICE_BEAM_ATTACK_TIMEOUT) {
@@ -312,10 +319,7 @@ phase_complete:
         break;
 
     case ALICE_PHASE_RING_APPROACH:
-        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX);
-        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
-        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX);
-        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
+        ALICE_RING_PUPPETS_ANCHOR();
         alice_puppet0.hp = ALICE_PUPPET_HP;
         alice_puppet1.hp = ALICE_PUPPET_HP;
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_rings;
@@ -330,10 +334,7 @@ movement_hittest:
         break;
 
     case ALICE_PHASE_FINAL_SPREAD:
-        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX);
-        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
-        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX);
-        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
+        ALICE_RING_PUPPETS_ANCHOR();
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_rings;
         alice_pattern_final_spread();
         if(boss.phase_frame < ALICE_FINAL_SPREAD_TIMEOUT) {
@@ -358,3 +359,6 @@ movement_hittest:
         alice_puppets_update();
     }
 }
+
+#undef ALICE_RING_PUPPETS_ANCHOR
+#undef ALICE_BEAM_PUPPETS_HOLD
