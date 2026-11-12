@@ -6763,3 +6763,25 @@ unit = "main-frame-counter-initial-data"
 source = "src/main/runtime/frame_counter_data.cpp"
 find = "total_std_frames = 0;"
 replace = "total_std_frames = 1;"
+
+[[units]]
+id = "main-item-runtime-state-data"
+source = "src/main/item/state_data.cpp"
+module = "th05/itemst.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_item_state_data_bindings.asm"
+target_start = 0x22848
+size = 13
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-item-runtime-state-data"
+source = "src/main/item/state_data.cpp"
+find = "items_pull_to_player = false;"
+replace = "items_pull_to_player = true;"
