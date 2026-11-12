@@ -6477,3 +6477,25 @@ unit = "main-shinki-spinline-phase-clock-data"
 source = "src/main/boss/shinki/bg_spinline_frame.c"
 find = "shinki_bg_spinline_frame = 0;"
 replace = "shinki_bg_spinline_frame = 1;"
+
+[[units]]
+id = "main-shinki-late-background-flags-data"
+source = "src/main/boss/shinki/bg_late_transition_flags.c"
+module = "th05/bglate.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_BG_LATE_FLAGS_TEXT -zPmain_01"
+bindings_source = "probes/units/main_bg_late_transition_flags_bindings.asm"
+target_start = 0x22360
+size = 3
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-late-background-flags-data"
+source = "src/main/boss/shinki/bg_late_transition_flags.c"
+find = "hexagrams_flag = 0;"
+replace = "hexagrams_flag = 1;"

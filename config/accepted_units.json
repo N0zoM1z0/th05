@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "082e5b0a1174bdc25fb25cec1108772d49498538fef10765a62692e8dbec0c4f",
+  "replay_receipt_sha256": "9d0bdd3753162b216d7de3a06ca28b11a6561c344de5bcc24ad1d8185afb9485",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140126,
-    "candidate_start": 140126,
-    "size": 2,
-    "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
-    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+    "target_start": 140128,
+    "candidate_start": 140128,
+    "size": 3,
+    "target_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+    "candidate_sha256": "cf7605ed1bc735f6c825554154627467e1cac9df54cee8699218ed434603c568",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 140126,
-      "size": 2,
-      "module": "th05/bgspin.c",
+      "start": 140128,
+      "size": 3,
+      "module": "th05/bglate.c",
       "segment": "_DATA"
     }
   },
@@ -104045,6 +104045,262 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-late-background-flags-data",
+      "entry_sha256": "f035fd0b6b67fe5a77cde72a86a3086f4178fca8c6eb1dbebe631423efbf7bff",
+      "result": {
+        "id": "main-shinki-late-background-flags-data",
+        "entry_sha256": "f035fd0b6b67fe5a77cde72a86a3086f4178fca8c6eb1dbebe631423efbf7bff",
+        "rounds": [
+          {
+            "target_start": 140128,
+            "candidate_start": 140128,
+            "size": 3,
+            "target_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+            "candidate_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140128,
+              "size": 3,
+              "module": "th05/bglate.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140128,
+            "candidate_start": 140128,
+            "size": 3,
+            "target_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+            "candidate_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140128,
+              "size": 3,
+              "module": "th05/bglate.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "02d897e62c2c541909dae3cd6624bc3f3975e1962881f9f8a4468fc913f1bcd3",
+            "dependency_timestamp_normalized_sha256": "c75b919bd3a70febee3c1a44964d9b2e610ce43ae92a959febe41a7fd2cce3d2",
+            "module_name": "th05/bglate.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bglate.c",
+              "src/main/boss/shinki/bg_late_transition_flags.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 3,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 3,
+                  "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "167515b11291bd449fe629d93a6992fd576d9bfedef8f034bca59d717ccb53b7",
+            "dependency_timestamp_normalized_sha256": "c75b919bd3a70febee3c1a44964d9b2e610ce43ae92a959febe41a7fd2cce3d2",
+            "module_name": "th05/bglate.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bglate.c",
+              "src/main/boss/shinki/bg_late_transition_flags.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 3,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 3,
+                  "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bglate.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bglate.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_bg_late_transition_flags_bindings.asm",
+            "sha256": "ca2992c4aadf0d18b1cc13f0003fc9615d9ecb7cfe822f3342e1559e8e1965a0"
+          },
+          {
+            "path": "src/main/boss/shinki/bg_late_transition_flags.c",
+            "sha256": "80f37886b53d3e6f0086c0a576815206dc0fc067dcf4eb88493fddbf75fbe9f6"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_bg_late_transition_flags_bindings.asm",
+          "sha256": "ca2992c4aadf0d18b1cc13f0003fc9615d9ecb7cfe822f3342e1559e8e1965a0"
+        },
+        {
+          "path": "src/main/boss/shinki/bg_late_transition_flags.c",
+          "sha256": "80f37886b53d3e6f0086c0a576815206dc0fc067dcf4eb88493fddbf75fbe9f6"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "9d0bdd3753162b216d7de3a06ca28b11a6561c344de5bcc24ad1d8185afb9485",
+      "compiled_negative_control": {
+        "target_start": 140128,
+        "candidate_start": 140128,
+        "size": 3,
+        "target_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+        "candidate_sha256": "cf7605ed1bc735f6c825554154627467e1cac9df54cee8699218ed434603c568",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140128,
+          "size": 3,
+          "module": "th05/bglate.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-late-background-flags-data",
+        "entry_sha256": "f035fd0b6b67fe5a77cde72a86a3086f4178fca8c6eb1dbebe631423efbf7bff",
+        "mutation": {
+          "unit": "main-shinki-late-background-flags-data",
+          "source": "src/main/boss/shinki/bg_late_transition_flags.c",
+          "find": "hexagrams_flag = 0;",
+          "replace": "hexagrams_flag = 1;"
+        },
+        "control_sha256": "cbde63a080d43299f2c46f1642d1372645ba31914956975972290829e22e4d02",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140128,
+          "candidate_start": 140128,
+          "size": 3,
+          "target_sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c",
+          "candidate_sha256": "cf7605ed1bc735f6c825554154627467e1cac9df54cee8699218ed434603c568",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140128,
+            "size": 3,
+            "module": "th05/bglate.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "25a384672028458b9909e7eaf3bf90f7870b025aa5aa22783cc6d603c7f2d450",
+          "dependency_timestamp_normalized_sha256": "d988a7999a9654a06bd8ca6dac3e5eb15128cff9b70e06dc0370cbf126b30e19",
+          "module_name": "th05/bglate.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bglate.c",
+            "src/main/boss/shinki/bg_late_transition_flags.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 3,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 3,
+                "sha256": "cf7605ed1bc735f6c825554154627467e1cac9df54cee8699218ed434603c568"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bglate.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-late-background-flags-data"
+      ]
     }
   ]
 }
