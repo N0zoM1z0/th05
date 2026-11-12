@@ -2,30 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "75715e78e98d51a3f5e8b461fb7d1d810523af88241e6585148332b5df38fe77",
+  "replay_receipt_sha256": "70efec857ac0237e34db5ab7a123699e4894972b4fd19aadd425032d89a4ae30",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 128412,
-    "candidate_start": 128412,
-    "size": 321,
-    "target_sha256": "0dfc5cae9339973674ee940fb4de9ab6740b52208a57e633b3b198c71c76b760",
-    "candidate_sha256": "ccbdb510a537c0942eb82b39d507a5abbac01cc0a48da356e72750b4dbabf0ba",
+    "target_start": 140336,
+    "candidate_start": 140336,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      277,
-      129,
-      92,
-      77
-    ],
-    "candidate_fixups": [
-      277,
-      129,
-      92,
-      77
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 140336,
+      "size": 1,
+      "module": "th05/mdfang.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -105829,6 +105827,765 @@
           "-ml",
           "-DBINARY='M'",
           "th05/exbframe.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-bullet-zap-drop-point-items-data",
+      "entry_sha256": "798ce84f4ca1c648b3613d683f11de04cf3e5c0a14d5faa087b7bfd6dac0d7cd",
+      "result": {
+        "id": "main-bullet-zap-drop-point-items-data",
+        "entry_sha256": "798ce84f4ca1c648b3613d683f11de04cf3e5c0a14d5faa087b7bfd6dac0d7cd",
+        "rounds": [
+          {
+            "target_start": 140332,
+            "candidate_start": 140332,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140332,
+              "size": 1,
+              "module": "th05/zapdrp.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140332,
+            "candidate_start": 140332,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140332,
+              "size": 1,
+              "module": "th05/zapdrp.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "8d82b239c4c02806ff40e27b1076c51935f25e94db4377489a73a31fdb80ae5d",
+            "dependency_timestamp_normalized_sha256": "434ac9809cbf7a130871c55f7e8c29931a52fcc6baccd2ea7dc346d5b8aae909",
+            "module_name": "th05/zapdrp.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zapdrp.c",
+              "src/main/bullet/zap_drop_point_items.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "2b9709ae6bdda89bc14fc154c15ac10846b2d2d4ab9417919c42ac633656eba0",
+            "dependency_timestamp_normalized_sha256": "434ac9809cbf7a130871c55f7e8c29931a52fcc6baccd2ea7dc346d5b8aae909",
+            "module_name": "th05/zapdrp.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zapdrp.c",
+              "src/main/bullet/zap_drop_point_items.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/zapdrp.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/zapdrp.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_zap_drop_point_items_bindings.asm",
+            "sha256": "e2c4da144f32e89a53550e62eab34dc26f3d89de576abd5ce3fca90cb48324da"
+          },
+          {
+            "path": "src/main/bullet/zap_drop_point_items.c",
+            "sha256": "531d05e76a1101e4496da0935b06e55ea119a1ec1d89df8f41f8d0d3603e3a50"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_zap_drop_point_items_bindings.asm",
+          "sha256": "e2c4da144f32e89a53550e62eab34dc26f3d89de576abd5ce3fca90cb48324da"
+        },
+        {
+          "path": "src/main/bullet/zap_drop_point_items.c",
+          "sha256": "531d05e76a1101e4496da0935b06e55ea119a1ec1d89df8f41f8d0d3603e3a50"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "93b6dd934590930ea7d8405ae72fa9946e4228f912bd002483ba9898b30824b2",
+      "compiled_negative_control": {
+        "target_start": 140332,
+        "candidate_start": 140332,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140332,
+          "size": 1,
+          "module": "th05/zapdrp.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-zap-drop-point-items-data",
+        "entry_sha256": "798ce84f4ca1c648b3613d683f11de04cf3e5c0a14d5faa087b7bfd6dac0d7cd",
+        "mutation": {
+          "unit": "main-bullet-zap-drop-point-items-data",
+          "source": "src/main/bullet/zap_drop_point_items.c",
+          "find": "bullet_zap_drop_point_items = 0;",
+          "replace": "bullet_zap_drop_point_items = 1;"
+        },
+        "control_sha256": "bd1dc349cc18e039a7fdea027b15268ca82044c32ecfb7959e1cd6bbff81350a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140332,
+          "candidate_start": 140332,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140332,
+            "size": 1,
+            "module": "th05/zapdrp.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "7c34f29be470bbb64fcd567a5d37d58a0590242577ffb2cdda42244311467031",
+          "dependency_timestamp_normalized_sha256": "f9101d14a827e8e64cddbaa983de34eefb435e8a2501234dbeb5c6e3538853ce",
+          "module_name": "th05/zapdrp.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/zapdrp.c",
+            "src/main/bullet/zap_drop_point_items.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/zapdrp.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-hud-hp-previous-bar-data",
+      "entry_sha256": "ae56d7c7d4a1b37f1e6b8aee19a8c8f23c4597331db0a604cc5d1abc04783976",
+      "result": {
+        "id": "main-hud-hp-previous-bar-data",
+        "entry_sha256": "ae56d7c7d4a1b37f1e6b8aee19a8c8f23c4597331db0a604cc5d1abc04783976",
+        "rounds": [
+          {
+            "target_start": 140334,
+            "candidate_start": 140334,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140334,
+              "size": 2,
+              "module": "th05/hpprev.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140334,
+            "candidate_start": 140334,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140334,
+              "size": 2,
+              "module": "th05/hpprev.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "49eb5bfbb1e64308c4133139b9288a6d4919acc6980037b4a770977d493f0f87",
+            "dependency_timestamp_normalized_sha256": "b46324e1628e963d6fa756be2babfa28384468a22c9baec8acf67bbe04db2307",
+            "module_name": "th05/hpprev.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hpprev.c",
+              "src/main/hud/hp_bar_previous.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "41a7058c31166d9dacb1fe3217e049782404c28c71e6a94ffdd5d07ee4c233f1",
+            "dependency_timestamp_normalized_sha256": "b46324e1628e963d6fa756be2babfa28384468a22c9baec8acf67bbe04db2307",
+            "module_name": "th05/hpprev.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hpprev.c",
+              "src/main/hud/hp_bar_previous.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hpprev.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hpprev.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_hp_bar_prev_bindings.asm",
+            "sha256": "b93d6e9345a05644a501f5b801c2959168cfde562e61cb2460d12b0b52e43a7c"
+          },
+          {
+            "path": "src/main/hud/hp_bar_previous.c",
+            "sha256": "5e9fa2cc3f453944e5bbaeff29a7bba5916b67a9245b320bc17ccd3e7910e182"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_hp_bar_prev_bindings.asm",
+          "sha256": "b93d6e9345a05644a501f5b801c2959168cfde562e61cb2460d12b0b52e43a7c"
+        },
+        {
+          "path": "src/main/hud/hp_bar_previous.c",
+          "sha256": "5e9fa2cc3f453944e5bbaeff29a7bba5916b67a9245b320bc17ccd3e7910e182"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "502f0b576665480ce0554539e50d1f87dc657675cee190432c3c3060d41e972e",
+      "compiled_negative_control": {
+        "target_start": 140334,
+        "candidate_start": 140334,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140334,
+          "size": 2,
+          "module": "th05/hpprev.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-hp-previous-bar-data",
+        "entry_sha256": "ae56d7c7d4a1b37f1e6b8aee19a8c8f23c4597331db0a604cc5d1abc04783976",
+        "mutation": {
+          "unit": "main-hud-hp-previous-bar-data",
+          "source": "src/main/hud/hp_bar_previous.c",
+          "find": "hud_hp_bar_value_prev = 0;",
+          "replace": "hud_hp_bar_value_prev = 1;"
+        },
+        "control_sha256": "d5e1429279c860ba92f7e2818367ae3e17c3aafdd46eccd96d38c072c04663a4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140334,
+          "candidate_start": 140334,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140334,
+            "size": 2,
+            "module": "th05/hpprev.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "f0da48b36522b33c045fe56f960433e2bfba1e1d938ba5b6735be285a3d8a002",
+          "dependency_timestamp_normalized_sha256": "1176a2395b40754ba0fc8d3a709894ddfcb1b9f496dd635a5eda96fe26a938ad",
+          "module_name": "th05/hpprev.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/hpprev.c",
+            "src/main/hud/hp_bar_previous.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/hpprev.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-midboss-defeat-rotation-angle-data",
+      "entry_sha256": "b24f84acac89907320644e45216a6c65c55e84331f7e7f61c3c5f2036afca8a9",
+      "result": {
+        "id": "main-midboss-defeat-rotation-angle-data",
+        "entry_sha256": "b24f84acac89907320644e45216a6c65c55e84331f7e7f61c3c5f2036afca8a9",
+        "rounds": [
+          {
+            "target_start": 140336,
+            "candidate_start": 140336,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140336,
+              "size": 1,
+              "module": "th05/mdfang.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140336,
+            "candidate_start": 140336,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140336,
+              "size": 1,
+              "module": "th05/mdfang.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a46856865dcfc79ea324f15265c3814163349f7dcf3c98797148ce27c44ba417",
+            "dependency_timestamp_normalized_sha256": "4465ed6418a5d1787cc64ef1a254ac8046159b05b294b11a2ccdf8d1c12eae11",
+            "module_name": "th05/mdfang.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mdfang.c",
+              "src/main/midboss/defeat_rotation_angle.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "1e6a404a0375d2d08893ae84c1ca161e14e099824b06d21b8d87829ada6aa65a",
+            "dependency_timestamp_normalized_sha256": "4465ed6418a5d1787cc64ef1a254ac8046159b05b294b11a2ccdf8d1c12eae11",
+            "module_name": "th05/mdfang.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mdfang.c",
+              "src/main/midboss/defeat_rotation_angle.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mdfang.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mdfang.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_midboss_defeat_angle_bindings.asm",
+            "sha256": "b97c9ec4ffea1ad131ab62b051b1197b5d1968e5099b139e4c492a1a509a30eb"
+          },
+          {
+            "path": "src/main/midboss/defeat_rotation_angle.c",
+            "sha256": "11e76f264fd1de655e6492f60d9088fd6f36c451b176e5d3e2749b169c4b62a6"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_midboss_defeat_angle_bindings.asm",
+          "sha256": "b97c9ec4ffea1ad131ab62b051b1197b5d1968e5099b139e4c492a1a509a30eb"
+        },
+        {
+          "path": "src/main/midboss/defeat_rotation_angle.c",
+          "sha256": "11e76f264fd1de655e6492f60d9088fd6f36c451b176e5d3e2749b169c4b62a6"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "70efec857ac0237e34db5ab7a123699e4894972b4fd19aadd425032d89a4ae30",
+      "compiled_negative_control": {
+        "target_start": 140336,
+        "candidate_start": 140336,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140336,
+          "size": 1,
+          "module": "th05/mdfang.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-midboss-defeat-rotation-angle-data",
+        "entry_sha256": "b24f84acac89907320644e45216a6c65c55e84331f7e7f61c3c5f2036afca8a9",
+        "mutation": {
+          "unit": "main-midboss-defeat-rotation-angle-data",
+          "source": "src/main/midboss/defeat_rotation_angle.c",
+          "find": "midboss_defeat_angle = 0;",
+          "replace": "midboss_defeat_angle = 1;"
+        },
+        "control_sha256": "0204cc0f0fd196ceb6f5c2e8513c2ad7b08d367df214f16e40fdb549979d3fc0",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140336,
+          "candidate_start": 140336,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140336,
+            "size": 1,
+            "module": "th05/mdfang.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "bcb24d2ab47140ea5efe7a572db723028bf945368bbcf5f58f0d6b2df78ef0c5",
+          "dependency_timestamp_normalized_sha256": "01f078a2cf0d6581b77991e7fcaa09429022fbe9f866c92d42f691bceca4a8c0",
+          "module_name": "th05/mdfang.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mdfang.c",
+            "src/main/midboss/defeat_rotation_angle.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mdfang.c"
         ]
       },
       "receipt_aggregate_pass": true

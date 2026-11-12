@@ -6609,3 +6609,69 @@ unit = "main-boss-big-explosion-frame-data"
 source = "src/main/boss/explosion_frame.c"
 find = "explosion_big_frame = 0;"
 replace = "explosion_big_frame = 1;"
+
+[[units]]
+id = "main-bullet-zap-drop-point-items-data"
+source = "src/main/bullet/zap_drop_point_items.c"
+module = "th05/zapdrp.c"
+segment = "_DATA"
+wrapper_options = "-zCBULLET_ZAP_DROP_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_zap_drop_point_items_bindings.asm"
+target_start = 0x2242c
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-bullet-zap-drop-point-items-data"
+source = "src/main/bullet/zap_drop_point_items.c"
+find = "bullet_zap_drop_point_items = 0;"
+replace = "bullet_zap_drop_point_items = 1;"
+
+[[units]]
+id = "main-hud-hp-previous-bar-data"
+source = "src/main/hud/hp_bar_previous.c"
+module = "th05/hpprev.c"
+segment = "_DATA"
+wrapper_options = "-zCHUD_HP_PREV_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_hp_bar_prev_bindings.asm"
+target_start = 0x2242e
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-hud-hp-previous-bar-data"
+source = "src/main/hud/hp_bar_previous.c"
+find = "hud_hp_bar_value_prev = 0;"
+replace = "hud_hp_bar_value_prev = 1;"
+
+[[units]]
+id = "main-midboss-defeat-rotation-angle-data"
+source = "src/main/midboss/defeat_rotation_angle.c"
+module = "th05/mdfang.c"
+segment = "_DATA"
+wrapper_options = "-zCMIDBOSS_DEFEAT_ANGLE_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_midboss_defeat_angle_bindings.asm"
+target_start = 0x22430
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-midboss-defeat-rotation-angle-data"
+source = "src/main/midboss/defeat_rotation_angle.c"
+find = "midboss_defeat_angle = 0;"
+replace = "midboss_defeat_angle = 1;"
