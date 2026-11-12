@@ -263,3 +263,44 @@ accepted 283-byte reviewed ASM Sword updater remain unchanged. Further
 progress requires a real C++ control-flow expression that keeps both short
 join jumps *and* the true near twirl conditionals without synthetic work,
 bytes, or optimizer barriers.
+
+## Four optimized genuine next-slot control-flow alternatives (2026-11-12)
+
+The original-order nine-function Yumeko MAIN03 source was compiled in
+four additional **actual pinned Borland/TLINK first-producer trials**.
+Each variant changed only the natural C++ 283-byte sword update body,
+used documented jump optimization `#pragma option -O`, and retained the
+original gameplay result of every active sword's twirl, player hit,
+out-of-bounds removal and decay. There are no manufactured side effects,
+new runtime flags, `volatile` barriers, assembly opcodes or dummy calls.
+Temporary `.cpp` sources were removed after every producer run and the
+accepted reviewed 283-byte ASM owner is untouched.
+
+| Genuine C++ source-flow form | Actual whole MAIN03 CODE | Matching original updater positions | Original ordered fixups |
+| --- | ---: | ---: | --- |
+| Named next-sword label for hit and miss | 2135 | 143/283 | Different |
+| Keep immediate hit continuation; label only no-hit | 2135 | 143/283 | Different |
+| Three real early X/Y/hit exits to one next slot | 2135 | 143/283 | Different |
+| Shared normal next-slot exit after conditional hit | 2135 | 143/283 | Different |
+
+The original **whole** nine-function CODE contribution is **2,139
+bytes**. All four genuine native candidates canonicalize to the same
+**2,135-byte** optimized output, recovering the two desirable original
+near-conditional jump opcodes but eliminating the original two separate
+short jumps. The updater's first optimized `JL near` at +5E has bytes
+`0F 8C A6 00` rather than original `0F 8C AA 00`, and the `JGE near`
+at +72 similarly has `0F 8D 92 00` instead of original
+`0F 8D 96 00`. The missing four bytes shift the real loop tail and
+later ordered relocation positions. Equal semantic behavior is **not**
+a byte-exact acceptance or a substitute for a full second producer.
+
+The reproducible first-producer script is retained at
+`.analysis/gpt-web-yumeko-natural-nextslot-20261112.py`, with all four
+actual source/OMF/MAP/MZ diagnostic directories under
+`.analysis/gpt-web-yumeko-natural-nextslot-*-20261112-first/` and
+machine-readable results at
+`.analysis/gpt-web-yumeko-natural-nextslot-results-20261112.json`.
+The canonical `src/main/boss/yumeko/swords_update.cpp`, its hashed
+review evidence and both already accepted adjacent major Yumeko
+C++ attacks remain unchanged. No new authored CODE is claimed; no
+full cold replay was performed.
