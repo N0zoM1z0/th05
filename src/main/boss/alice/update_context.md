@@ -129,3 +129,20 @@ rejected. The preceding charge/final-pattern functions provide genuine
 compiler context, but remain independently accepted and unmodified. This
 refreshes the already accepted large Boss controller; no duplicate CODE
 credit is assigned.
+
+## Explicit bullet-clear minimum and ordered phase-clock transitions
+
+The complete 939-byte controller now shares the two actual post-wave
+`ALICE_BULLET_CLEAR_MIN_FRAMES` clamps: a longer existing bullet-clear window
+is preserved, and a shorter one is raised to 20 frames. Its normal
+setup, ready and two mid-wave/beam handoffs reuse the same original
+**phase increment before frame reset** sequence. The shared ring-approach
+`movement_complete` label deliberately retains its different order
+(**clock reset before increment**). No HP threshold, puppet animation,
+callback, score or conditional break changed.
+
+The focused dual original-compiler replay at
+`.analysis/unit-replays/gpt-web-alice-clear-window-phases-20261112-a/receipt.json`
+reproduces all 939 source-authored bytes, original switch table and ordered
+relocations with a rejected compiled negative. This refreshes a major
+already accepted Boss owner; there is no second CODE credit.

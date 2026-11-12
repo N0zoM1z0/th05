@@ -163,6 +163,22 @@ void near alice_pattern_rotating_ring(void)
     alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX); \
     alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX)
 
+// Two attack-bank handoffs require the same minimum bullet-clear window.
+// Do not increase an already longer clear time or change the check order.
+#define ALICE_ENSURE_CLEAR_WINDOW() { \
+    if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) { \
+        bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES; \
+    } \
+}
+
+// Only transitions that advance one ordinary phase and then reset the clock
+// use this ordering; the shared ring-approach label intentionally resets
+// its clock before incrementing the phase and is left unchanged.
+#define ALICE_NEXT_PHASE_AND_RESET_CLOCK() { \
+    boss.phase++; \
+    boss.phase_frame = 0; \
+}
+
 void pascal far alice_update(void)
 {
     AlicePuppet near *p;
@@ -186,8 +202,7 @@ void pascal far alice_update(void)
         }
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= ALICE_SETUP_EXIT_FRAME) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            ALICE_NEXT_PHASE_AND_RESET_CLOCK();
             snd_se_play(ALICE_BOSS_ENTER_SE);
             bg_render_bombing_func = alice_bg_render;
         }
@@ -196,8 +211,7 @@ void pascal far alice_update(void)
     case ALICE_PHASE_READY:
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= ALICE_READY_EXIT_FRAME) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            ALICE_NEXT_PHASE_AND_RESET_CLOCK();
             boss.mode = ALICE_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             alice_scratch.ready_seed = ALICE_READY_PATTERN_SEED;
@@ -266,12 +280,9 @@ void pascal far alice_update(void)
         boss_items_drop();
 phase_complete:
         alice_scratch.attack_wave++;
-        if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) {
-            bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES;
-        }
+        ALICE_ENSURE_CLEAR_WINDOW();
         boss_explode_small(ET_NW_SE);
-        boss.phase++;
-        boss.phase_frame = 0;
+        ALICE_NEXT_PHASE_AND_RESET_CLOCK();
         boss.phase_state.patterns_seen = 0;
         boss.mode = ALICE_MODE_REPOSITION;
         boss.hp = boss.phase_end_hp;
@@ -303,11 +314,8 @@ phase_complete:
         }
         boss_score_bonus(ALICE_BEAM_WAVE_BONUS);
         boss_explode_small(ET_NW_SE);
-        if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) {
-            bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES;
-        }
-        boss.phase++;
-        boss.phase_frame = 0;
+        ALICE_ENSURE_CLEAR_WINDOW();
+        ALICE_NEXT_PHASE_AND_RESET_CLOCK();
         alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_POST_BEAM_LEFT_X_PX);
         alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
@@ -362,3 +370,6 @@ movement_hittest:
 
 #undef ALICE_RING_PUPPETS_ANCHOR
 #undef ALICE_BEAM_PUPPETS_HOLD
+
+#undef ALICE_NEXT_PHASE_AND_RESET_CLOCK
+#undef ALICE_ENSURE_CLEAR_WINDOW
