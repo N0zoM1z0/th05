@@ -45,8 +45,8 @@ counter remain unchanged;1857 bytes move from unknown to vendor DATA.
 
 No byte normalization, relocation masking, guessed all-zero range, contribution
 slice or transferred reference acceptance is used. Other CL DATA is not silently
-included: relocation-bearing members such as `files`, `exit` and `xxv` require
-their own linkage proof; incomplete DATA such as `new` is rejected; small or
+included: relocation-bearing member `xxv` still requires its own linkage proof;
+`files` and `exit` are now proven separately below; incomplete DATA such as `new` is rejected; small or
 all-zero ambiguous templates remain unknown. Even the single inter-member
 alignment bytes are outside these whole-object claims. Unknown game, library,
 asset and original-assembly ownership is not inferred from this scan.
@@ -77,3 +77,35 @@ ownership. Native review invokes no compiler, Wine, Ghidra, unpacker or game.
 It does not claim two fresh compiled producers or whole-executable equality.
 
 Private discovery evidence is retained in `.analysis/vendor-data-routing/`.
+
+## Native relocated DATA: EXIT and FILES
+
+The complete `exit` (12 bytes) and `files` (400 bytes) initialized `_DATA`
+contributions now also have pinned CL.LIB source records and actual linked
+proofs in all three executables. This recovers **1,236 previously unknown
+bytes of foreign DATA** without increasing authored C++ credit. The original
+DATA starts are:
+
+| CL member | Bytes each | MAIN | OP decoded | MAINE decoded |
+| --- | ---: | --- | --- | --- |
+| `exit` | 12 | `22A78` | `11858` | `1190C` |
+| `files` | 400 | `22A84` | `11864` | `11918` |
+
+The `exit` initializer owns three complete far pointers to its original CODE,
+with three ordered MZ segment relocations. `files` owns five near-offset
+relocations to its *own* DATA contribution (no MZ segment relocations).
+The native source reconstruction resolves each OMF FIXUPP using the actual
+calibration MAP, and resolves `files` again using the original DGROUP frame.
+MAIN's target contribution is 34 bytes earlier than the retained calibration,
+while its DGROUP frame is 16 bytes earlier, explaining the observed 18-byte
+near-pointer offset difference. OP uses the same positions, and MAINE's DATA
+contribution is 16 bytes later. No target bytes, padding or pointer values are
+copied into the reconstruction to create a match.
+
+`config/vendor_relocated_data_ownership.json` records the full linked bytes,
+original relocation order, complete object LEDATAs and all six original
+intervals. `config/reviewed_vendor_relocated_data_units.json` adopts just
+these complete contributions. For a focused replay run
+`python3 scripts/review_vendor_relocated_data.py --check`; without private
+inputs use `--structural-check`. Existing zero-free-standing gaps before
+`exit` remain unowned, as does other CL DATA not explicitly proved here.

@@ -440,6 +440,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         root, views=config["views"], targets=target_by_id, verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
+    from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
+    relocated_data, relocated_data_sha = relocated_data_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_text_fx_asm import reviewed_claims as reviewed_asm_claims
     asm, asm_sha = reviewed_asm_claims(root, config["views"], verify_targets=verify_targets)
     from replay_enemy_vm import reviewed_claims as reviewed_enemy_vm_claims
@@ -665,6 +668,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, sin8[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
+        if name in relocated_data:
+            pieces = overlay_vendor(view["size"], pieces, relocated_data[name])
         if name in asm:
             pieces = overlay_asm(view["size"], pieces, asm[name])
         if name in enemy_vm:
@@ -770,6 +775,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_sin8_review_sha256"] = sin8_sha
         if cl_data_sha and name in cl_data:
             views[name]["cl_data_review_sha256"] = cl_data_sha
+        if relocated_data_sha and name in relocated_data:
+            views[name]["cl_relocated_data_review_sha256"] = relocated_data_sha
         if asm_sha and name in asm:
             views[name]["text_fx_asm_review_sha256"] = asm_sha
         if enemy_vm_sha and name in enemy_vm:
