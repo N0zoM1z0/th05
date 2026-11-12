@@ -1957,3 +1957,141 @@ unit = "maine-verdict-bonus-comments"
 source = "src/maine/verdict/body/verdict_apply_bonus.inl"
 find = "bonus += VBR_TURBO_MODE_BONUS;"
 replace = "bonus += (VBR_TURBO_MODE_BONUS + 1);"
+
+[[units]]
+id = "maine-staff-back-page-data"
+source = "src/maine/staff/staff_back_page.c"
+module = "th05/stfs1.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_1_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_back_page_bindings.asm"
+binary = "E"
+target_start = 0x1184a
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-back-page-data"
+source = "src/maine/staff/staff_back_page.c"
+find = "staff_back_page = 0;"
+replace = "staff_back_page = 1;"
+
+[[units]]
+id = "maine-staff-orb-opening-clocks-data"
+source = "src/maine/staff/staff_orb_opening_clocks.c"
+module = "th05/stfs2.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_2_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_orb_opening_clocks_bindings.asm"
+binary = "E"
+target_start = 0x1184c
+size = 4
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-orb-opening-clocks-data"
+source = "src/maine/staff/staff_orb_opening_clocks.c"
+find = "staff_orb_opening_frame = 0;"
+replace = "staff_orb_opening_frame = 1;"
+
+[[units]]
+id = "maine-staff-camera-acceleration-phase-data"
+source = "src/maine/staff/staff_camera_acceleration_phase.c"
+module = "th05/stfs3.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_3_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_camera_acceleration_phase_bindings.asm"
+binary = "E"
+target_start = 0x11850
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-camera-acceleration-phase-data"
+source = "src/maine/staff/staff_camera_acceleration_phase.c"
+find = "staff_camera_accel_phase = 0;"
+replace = "staff_camera_accel_phase = 1;"
+
+[[units]]
+id = "maine-staff-rain-phase-clocks-data"
+source = "src/maine/staff/staff_rain_phase_clocks.c"
+module = "th05/stfs4.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_4_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_rain_phase_clocks_bindings.asm"
+binary = "E"
+target_start = 0x11852
+size = 4
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-rain-phase-clocks-data"
+source = "src/maine/staff/staff_rain_phase_clocks.c"
+find = "staff_rain_frame = 0;"
+replace = "staff_rain_frame = 1;"
+
+[[units]]
+id = "maine-staff-text-clear-request-data"
+source = "src/maine/staff/staff_text_clear_request.c"
+module = "th05/stfs5.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_5_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_text_clear_request_bindings.asm"
+binary = "E"
+target_start = 0x11856
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-text-clear-request-data"
+source = "src/maine/staff/staff_text_clear_request.c"
+find = "staff_text_clear_requested = 0;"
+replace = "staff_text_clear_requested = 1;"
+
+[[units]]
+id = "maine-staff-double-image-phases-data"
+source = "src/maine/staff/staff_double_image_phases.c"
+module = "th05/stfs6.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAFF_6_STATE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_staff_double_image_phases_bindings.asm"
+binary = "E"
+target_start = 0x11858
+size = 4
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-staff-double-image-phases-data"
+source = "src/maine/staff/staff_double_image_phases.c"
+find = "staff_image_phase_b = 0;"
+replace = "staff_image_phase_b = 1;"
