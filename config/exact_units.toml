@@ -6037,3 +6037,25 @@ unit = "main-yumeko-mobile-schedules-data"
 source = "src/main/boss/yumeko/schedule_data.cpp"
 find = "    yumeko_pattern_sword_fan, yumeko_pattern_red_ring, 0, 0"
 replace = "    yumeko_pattern_red_ring, yumeko_pattern_sword_fan, 0, 0"
+
+[[units]]
+id = "main-dialog-box-tile-masks-data"
+source = "src/main/dialog/box_tiles.c"
+module = "th05/bxtiles.c"
+segment = "_DATA"
+wrapper_options = "-zCDIALOG_TILE_MASKS_TEXT -zPmain_01"
+bindings_source = "probes/units/dialog_box_tiles_bindings.asm"
+target_start = 141472
+size = 24
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-dialog-box-tile-masks-data"
+source = "src/main/dialog/box_tiles.c"
+find = "DIALOG_ROW_BYTES(1, 0), DIALOG_ROW_BYTES(1, 1)"
+replace = "DIALOG_ROW_BYTES(2, 0), DIALOG_ROW_BYTES(1, 1)"
