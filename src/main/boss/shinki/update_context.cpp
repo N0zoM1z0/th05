@@ -14,6 +14,29 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
 
+// Both opposite blue spheres first transform the native boss-centered
+// origin using the *current* angle, then add exactly one real B6 ball.
+#define SHINKI_SPIRAL_FIRE_OFFSET_B6BALL() { \
+    vector2_at( \
+        b6ball_template.origin, \
+        boss.pos.cur.x, boss.pos.cur.y, \
+        to_sp(BOSS_W), b6ball_template.angle \
+    ); \
+    b6balls_add(); \
+}
+
+// The red and pellet rings differ only in their genuine angle, sprite and
+// subsequent angle step. Keep each angle update after the actual spawn.
+#define SHINKI_SPIRAL_FIRE_RING(direction, sprite) { \
+    bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE); \
+    bullet_template.group = BG_RING; \
+    bullet_template.angle = direction; \
+    bullet_template.patnum = sprite; \
+    bullet_template.speed.v = sara_to_sp8(2.0f); \
+    bullet_template.spread = SHINKI_SPIRAL_RING_SPREAD; \
+    bullets_add_regular(); \
+}
+
 void near pattern_circles_and_alternating_spirals(void)
 {
 	#define pellet_angle	 shinki_scratch.spiral_pellet_angle
@@ -34,24 +57,10 @@ void near pattern_circles_and_alternating_spirals(void)
 		// MODDERS: Uncomment.
 		// b6ball_template.speed.v = sara_to_sp8(3.75f);
 		b6ball_template.patnum_tiny = PAT_B6BALL_BLUE_1;
-		vector2_at(
-			b6ball_template.origin,
-			boss.pos.cur.x,
-			boss.pos.cur.y,
-			to_sp(BOSS_W),
-			b6ball_template.angle
-		);
-		b6balls_add();
+		SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();
 
 		b6ball_template.angle += SHINKI_SPIRAL_OPPOSITE_BALL_ANGLE;
-		vector2_at(
-			b6ball_template.origin,
-			boss.pos.cur.x,
-			boss.pos.cur.y,
-			to_sp(BOSS_W),
-			b6ball_template.angle
-		);
-		b6balls_add();
+		SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();
 
 		b6ball_template.angle -= SHINKI_SPIRAL_BALL_ROTATE_BACK;
 		snd_se_play(SHINKI_SPIRAL_VOLLEY_SE);
@@ -59,29 +68,13 @@ void near pattern_circles_and_alternating_spirals(void)
 	if(boss.phase_frame >= SHINKI_SPIRAL_RED_RINGS_BEGIN) {
 		frame_in_cycle = (boss.phase_frame % SHINKI_SPIRAL_WAVE_PERIOD);
 		if(((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) && (frame_in_cycle < SHINKI_SPIRAL_WAVE_HALF)) {
-			bullet_template.spawn_type = (
-				BST_CLOUD_FORWARDS | BST_NO_DECELERATE
-			);
-			bullet_template.group = BG_RING;
-			bullet_template.angle = red_angle;
-			bullet_template.patnum = PAT_BULLET16_V_RED;
-			bullet_template.speed.v = sara_to_sp8(2.0f);
-			bullet_template.spread = SHINKI_SPIRAL_RING_SPREAD;
-			bullets_add_regular();
+			SHINKI_SPIRAL_FIRE_RING(red_angle, PAT_BULLET16_V_RED);
 
 			red_angle -= SHINKI_SPIRAL_RED_RING_STEP;
 		}
 		if(boss.phase_frame >= SHINKI_SPIRAL_PELLET_RINGS_BEGIN) {
 			if(((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) && (frame_in_cycle >= SHINKI_SPIRAL_WAVE_HALF)) {
-				bullet_template.spawn_type = (
-					BST_CLOUD_FORWARDS | BST_NO_DECELERATE
-				);
-				bullet_template.group = BG_RING;
-				bullet_template.angle = pellet_angle;
-				bullet_template.patnum = SHINKI_SPIRAL_PELLET_PATNUM;
-				bullet_template.speed.v = sara_to_sp8(2.0f);
-				bullet_template.spread = SHINKI_SPIRAL_RING_SPREAD;
-				bullets_add_regular();
+				SHINKI_SPIRAL_FIRE_RING(pellet_angle, SHINKI_SPIRAL_PELLET_PATNUM);
 
 				pellet_angle += SHINKI_SPIRAL_PELLET_RING_STEP;
 			}
@@ -467,3 +460,6 @@ void pascal shinki_update(void)
 	#undef SHINKI_PALETTE_STEP_UP
 	#undef phase_relative
 }
+
+#undef SHINKI_SPIRAL_FIRE_RING
+#undef SHINKI_SPIRAL_FIRE_OFFSET_B6BALL
