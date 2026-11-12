@@ -9,6 +9,7 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
 #include "src/main/boss/shinki/wing_attack_rules.hpp"
+#include "src/main/boss/shinki/early_attack_rules.hpp"
 #include "src/main/boss/shinki/wing_coordinates.inl"
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
@@ -147,7 +148,7 @@ void pascal shinki_update(void)
 		SHINKI_MODE_FLYSTEP = 0,
 		SHINKI_MODE_PATTERN = 1,
 		SHINKI_FIRST_SHARED_WAVE = 0,
-		SHINKI_WAVE_PATTERN_LIMIT = 16,
+		SHINKI_WAVE_PATTERN_LIMIT = SEAR_WAVE_PATTERN_LIMIT,
 		// Keep this >255 enum value: Borland otherwise narrows the entire
 		// enum and changes the parity-index AND from DX to DL.
 		SHINKI_WING_TIMEOUT_FRAMES = SHW_WING_PHASE_TIMEOUT_FRAMES,
