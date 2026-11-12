@@ -23,3 +23,13 @@ proves two independent Borland C producers, complete five-byte raw,
 OMF/LEDATA and MAP equality, the empty original ordered MZ fixups and
 rejection of the compiled `EXED`→`EXEE` mutation. No other unit or
 whole MAINE cold replay was requested.
+
+## Complete native C++ consumer closure
+
+The now accepted source also has its original C-linkage consumer:
+`allcast.hpp` declares `extern "C" char EXED[5]`, and the actual
+611-byte All Cast controller passes that name to `snd_load()`.
+The call's original source `SND_LOAD_SONG` role and all 23 original
+ordered loader fixups remain exact. The 190-byte shared header-dependent
+line renderer was also revalidated. See the two scoped receipts cited
+in [`allcast.md`](allcast.md); they do not add a second DATA owner.

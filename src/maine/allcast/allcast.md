@@ -62,3 +62,35 @@ whole-executable layout or packed-file exactness is claimed here.
 three functions and 23 ordered segment fixups. The compiled between-screen
 measure-delay mutation from 30 to 29 is rejected. The BSS layout observation
 and external arrays remain uncredited.
+
+## Actual EXED music-provider linkage and ending tempo semantics (2026-11-12)
+
+The complete **611-byte** three-function All Cast ending controller now
+uses the **real exported C public** `EXED[5]` from its separately accepted
+MAINE source-owned file-name object at `[115F9,115FE)`. `allcast.hpp`
+declares it under the appropriate `extern "C"` context; the previous
+function-local `extern const char EXED[]` placeholder was removed.
+The original `snd_load(EXED, SND_LOAD_SONG)` call is unchanged. This
+corrects source-level cross-translation-unit ownership rather than
+inserting a replacement song, provider code or encoded pointer bytes.
+
+The same controller names its actual two-measure introductory wait,
+original two-frame page-flipping delay, and 22-half-frame fallback
+measure divisor, preserving the existing ZUN-specific tempo quirk and
+the between-screen 30-measure advance. The original graphics page
+order, four-stage PI masked transitions, palette fade and resident
+selection remain in exactly the same order and ABI; no extra BSS or
+runtime timer is allocated. The short strings and symbol definitions
+are not embedded into the controller's CODE scope.
+
+Changing the shared header affects both `maine-allcast` (**611 bytes**)
+and `maine-allcast-line` (**190 bytes**), so each was independently
+replayed with two native Borland/TLINK producers and its own compiled
+semantic negative. Full original bytes, true MAP/OMF extents and
+ordered MZ fixups remain exact:
+
+- `.analysis/unit-replays/gpt-web-maine-allcast-music-consumer-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-maine-allcast-line-after-song-a/receipt.json`
+
+These functions were already accepted; neither CODE extent is
+recredited, and no unrelated MAINE or full executable replay was run.

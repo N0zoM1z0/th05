@@ -11,6 +11,9 @@
 // though, the final call to screen_fadeout_animate_and_advance() unnecessarily
 // calls pi_load() with a `nullptr` filename parameter.
 static const int SCREEN_COUNT = 8;
+static const int ALLCAST_FIRST_MEASURE_WAIT = 2;
+static const int ALLCAST_DOUBLE_FRAME_DELAY = 2;
+static const int ALLCAST_FALLBACK_HALF_FRAMES_PER_MEASURE = 22;
 
 static const vc_t COL_BLACK = 14;
 static const screen_y_t CUTSCENE_PIC_TOP = ((RES_Y / 2) - (CUTSCENE_PIC_H / 2));
@@ -116,7 +119,7 @@ void pascal near screen_fadeout_animate_and_advance(
 
 bool near wait_flip_and_check_measure_target(void)
 {
-	frame_delay(2);
+	frame_delay(ALLCAST_DOUBLE_FRAME_DELAY);
 
 	graph_accesspage(page_shown);
 	graph_showpage(page_shown = (1 - page_shown));
@@ -130,14 +133,13 @@ bool near wait_flip_and_check_measure_target(void)
 		// While this might look like a quirk, it's much more likely that ZUN
 		// actually intended 22 *regular* frames here, which would translate to
 		// the much closer (22 / 56.423) ≈ 390 ms = 153.88 BPM.
-		measure_cur = (frame_half / 22);
+		measure_cur = (frame_half / ALLCAST_FALLBACK_HALF_FRAMES_PER_MEASURE);
 	}
 	return (measure_cur >= measure_target);
 }
 
 void near allcast_animate(void)
 {
-	extern const char EXED[];
 	line_id_total = 0;
 	playchar = static_cast<playchar_t>(resident->playchar);
 	palette_settone(0);
@@ -166,7 +168,7 @@ void near allcast_animate(void)
 	// to delay past 「Peaceful Romancer」's anacrusis and breaks at its first
 	// downbeat, but said black-out call ensures that the animation starts
 	// about two beats behind what you'd expect.
-	measure_target = 2;
+	measure_target = ALLCAST_FIRST_MEASURE_WAIT;
 	while(!wait_flip_and_check_measure_target()) {
 	}
 

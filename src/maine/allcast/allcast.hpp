@@ -38,6 +38,8 @@ void pascal far pi_put_quarter_masked_8(screen_x_t left, vram_y_t top, int slot,
 void pascal far pi_free(int slot);
 enum snd_load_func_t { SND_LOAD_SONG = 0x0600, SND_LOAD_SE = 0x0B00 };
 extern "C" {
+    // Natural C public from the separately reconstructed 5-byte DATA owner.
+    extern char EXED[5];
     void pascal far grcg_setcolor(int mode, vc2 color);
     void pascal far grcg_byteboxfill_x(int left, int top, int right, int bottom);
     void pascal far palette_show(void);
