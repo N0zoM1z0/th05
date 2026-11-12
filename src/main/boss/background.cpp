@@ -132,6 +132,22 @@ static const int SHINKI_LINE_4 = (3 * 6);
 		set++; \
 	}
 
+// In types B and C, both genuine two-line-set wave loops begin by
+// shifting the previous line history then integrating the active Y center.
+#define shinki_spinline_prepare_set(set) { \
+    shinki_lineset_forward_copy(*set); \
+    set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v; \
+}
+
+// Alternate the two mirrored line sets only after the background-specific
+// vertical-velocity rule and the common X/angle update have run.
+#define shinki_spinline_advance_set(set, delta, set_i) { \
+    shinki_spinline_x_and_angle(set, delta); \
+    set_i++; \
+    set++; \
+    delta = -delta; \
+}
+
 // Original signed top clip uses the source-level symbolic zero preserved by
 // ReC98: a near address at DGROUP:0000 forces the actual CMP AX,0000.
 template <class T> inline T keep_0(T x) {
@@ -412,18 +428,13 @@ void near shinki_bg_type_b_update_and_render(void)
 	set = linesets;
 	set_i = 0;
 	while(set_i < SHINKI_LINESET_COUNT) {
-		shinki_lineset_forward_copy(*set);
-		set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v;
+		shinki_spinline_prepare_set(set);
 		if(set->velocity_y > to_sp(SHB_TYPE_B_VELOCITY_LIMIT_PX)) {
 			set->velocity_y.v -= (
 				(stage_frame_mod4 == 0) ? to_sp(0.0625f) : to_sp(0.0f)
 			);
 		}
-		shinki_spinline_x_and_angle(set, delta);
-
-		set_i++;
-		set++;
-		delta = -delta;
+		shinki_spinline_advance_set(set, delta, set_i);
 	}
 
 	shinki_bg_spinline_frame++;
@@ -484,16 +495,11 @@ void near shinki_bg_type_c_update_and_render(void)
 	set = linesets;
 	set_i = 0;
 	while(set_i < SHINKI_LINESET_COUNT) {
-		shinki_lineset_forward_copy(*set);
-		set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v;
+		shinki_spinline_prepare_set(set);
 		if(set->velocity_y < to_sp(SHB_TYPE_C_VELOCITY_LIMIT_PX)) {
 			set->velocity_y.v += stage_frame_mod2;
 		}
-		shinki_spinline_x_and_angle(set, delta);
-
-		set_i++;
-		set++;
-		delta = -delta;
+		shinki_spinline_advance_set(set, delta, set_i);
 	}
 
 	shinki_bg_spinline_frame++;
@@ -700,3 +706,6 @@ void pascal near exalice_bg_render(void)
 	}
 }
 /// ----------------------
+
+#undef shinki_spinline_advance_set
+#undef shinki_spinline_prepare_set
