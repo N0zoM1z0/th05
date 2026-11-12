@@ -72,3 +72,18 @@ proves this genuine return-boundary bridge for the actual compiler context;
 it does not accept the uncompiled initializer or other consumers. Source,
 header and binder remain frozen.
 No shot-update source was changed by this work.
+
+## Source-current Stage 2 palette and C initialized-DATA consumer (2026-11-12)
+
+The complete original 653-byte updater now imports the separately
+source-owned `stage2_particles_spawned`, `stage2_palette_level`, and
+`stage2_tone_offset` state through their C-linkage header. Its actual
+palette/tile transition clocks at frames 256/304/306 are explicitly
+named in `stage2_transition_rules.hpp`. The 492-byte particle initializer
+and 51-byte invalidation leaf also share the real eight-track particle
+motion protocol, with no new state. The three complete original CODE
+scopes and four-byte C DATA initializer pass independent native
+Borland replays with compiled negatives:
+`gpt-web-stage2-bg-three-code-scopes-a` and
+`gpt-web-stage2-transition-c-public-a`.
+See `stage2_transition_counters.md` for full receipts and provenance.

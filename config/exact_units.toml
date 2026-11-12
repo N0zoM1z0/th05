@@ -3117,8 +3117,8 @@ code_data_ranges = []
 id = "stage2-palette-pulse-peak"
 unit = "main-stage2-update-abi"
 source = "src/main/stage/stage2_update.cpp"
-find = "stage2_palette_level >= 0x3F"
-replace = "stage2_palette_level >= 0x3E"
+find = "stage2_palette_level >= S2T_PALETTE_PULSE_CEILING"
+replace = "stage2_palette_level >= (S2T_PALETTE_PULSE_CEILING - 1)"
 
 [[units]]
 id = "main-player-miss"
@@ -3263,8 +3263,8 @@ code_data_ranges = []
 [[controls]]
 unit = "main-stage2-particle-initializer"
 source = "src/main/stage/particle_init.cpp"
-find = "particle.zoom = 8;"
-replace = "particle.zoom = 9;"
+find = "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM;"
+replace = "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM + 1;"
 
 [[units]]
 id = "main-item-reward-tables-data"
@@ -4627,8 +4627,8 @@ bindings_source = "probes/units/stage2_invalidate_bindings.asm"
 [[controls]]
 unit = "main-stage2-invalidate"
 source = "src/main/stage/stage2_invalidate.cpp"
-find = "tile_invalidate_box.x = 8;"
-replace = "tile_invalidate_box.x = 9;"
+find = "tile_invalidate_box.x = S2T_PARTICLE_TILE_FOOTPRINT_PX;"
+replace = "tile_invalidate_box.x = S2T_PARTICLE_TILE_FOOTPRINT_PX + 1;"
 
 [[units]]
 id = "main-dialog-resource-bank"

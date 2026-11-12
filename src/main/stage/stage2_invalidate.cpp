@@ -1,6 +1,7 @@
 // Mark the previous 8x8 footprint of each active stage-two particle dirty.
 #pragma option -zCSTAGE2_INVALIDATE_TEXT -zPmain_01
 #include "src/main/stage/background2.hpp"
+#include "src/main/stage/stage2_transition_rules.hpp"
 #pragma codeseg STAGE2_INVALIDATE_TEXT main_01
 
 // Canonical two-word dirty rectangle and the real Pascal y/x interface.
@@ -12,8 +13,8 @@ void pascal near stage2_invalidate(void)
 {
     s2particle_t near *p;
     int i;
-    tile_invalidate_box.x = 8;
-    tile_invalidate_box.y = 8;
+    tile_invalidate_box.x = S2T_PARTICLE_TILE_FOOTPRINT_PX;
+    tile_invalidate_box.y = S2T_PARTICLE_TILE_FOOTPRINT_PX;
     for(p = s2particles, i = 0; i < S2PARTICLE_COUNT; i++, p++) {
         if(p->flag) {
             tiles_invalidate_around(p->pos.prev.y.v, p->pos.prev.x.v);

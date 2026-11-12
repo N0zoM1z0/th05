@@ -2,7 +2,7 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "6c3a9c7d8c8b3ad2c29f955857515275195f40b7dca198cdedd13f44e5dc05b2",
+  "replay_receipt_sha256": "0c1f46ecfe4acc3be449d74ad712e14481f48b96d3031a6249d2d889f7477f87",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
@@ -52266,8 +52266,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "bb6a65746bd3c5112e7b3c1964d328a5faffa207c9cdf960ab63bcbaa41e0197",
-            "dependency_timestamp_normalized_sha256": "90fb8ce78a7b942dfbc3750a65f3c471f5e98643bb5b75e04545c4bb604b3b65",
+            "sha256": "1c98ed51c610730cb19e31b31b3aa864568a1ef99d1db86982c9dcd05806fef9",
+            "dependency_timestamp_normalized_sha256": "7e910895f2477f52340449d01fe8930e8e54f4791243765c007e2dd35246b2cc",
             "module_name": "th05/s2_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -52275,6 +52275,8 @@
             "dependency_paths": [
               "th05/s2_upd.cpp",
               "src/main/stage/stage2_update.cpp",
+              "src/main/stage/stage2_transition_counters.h",
+              "src/main/stage/stage2_transition_rules.hpp",
               "src/main/stage/background2.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
@@ -52290,8 +52292,8 @@
             ]
           },
           {
-            "sha256": "d7681678c9a33d0f007479496c0206fa64d76b78f7e96b0045d8fed33b575491",
-            "dependency_timestamp_normalized_sha256": "90fb8ce78a7b942dfbc3750a65f3c471f5e98643bb5b75e04545c4bb604b3b65",
+            "sha256": "c69be804863a42a26e24b7d6d58e425ffe4d56b2becf41ae7b974241aadbebd2",
+            "dependency_timestamp_normalized_sha256": "7e910895f2477f52340449d01fe8930e8e54f4791243765c007e2dd35246b2cc",
             "module_name": "th05/s2_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -52299,6 +52301,8 @@
             "dependency_paths": [
               "th05/s2_upd.cpp",
               "src/main/stage/stage2_update.cpp",
+              "src/main/stage/stage2_transition_counters.h",
+              "src/main/stage/stage2_transition_rules.hpp",
               "src/main/stage/background2.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
@@ -52315,8 +52319,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -52372,8 +52376,16 @@
             "sha256": "e2847e2fcc507c1623b54d7eb39b3f95b96cb12c207b64041d9a944e40e37655"
           },
           {
+            "path": "src/main/stage/stage2_transition_counters.h",
+            "sha256": "6b619c9f82b4e8e2180acf02d8e6b34bc96af5068f5c3dbacfdf6460fc627014"
+          },
+          {
+            "path": "src/main/stage/stage2_transition_rules.hpp",
+            "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
+          },
+          {
             "path": "src/main/stage/stage2_update.cpp",
-            "sha256": "1ed0c7e20d261f65702af0afb67fdeb17760887936978dd0978c2643eb12101e"
+            "sha256": "cf3ee21bc63933a9d2275bc2c946a749fd0d1c868e43b6359cd653c42d23d54c"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -52412,8 +52424,16 @@
           "sha256": "e2847e2fcc507c1623b54d7eb39b3f95b96cb12c207b64041d9a944e40e37655"
         },
         {
+          "path": "src/main/stage/stage2_transition_counters.h",
+          "sha256": "6b619c9f82b4e8e2180acf02d8e6b34bc96af5068f5c3dbacfdf6460fc627014"
+        },
+        {
+          "path": "src/main/stage/stage2_transition_rules.hpp",
+          "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
+        },
+        {
           "path": "src/main/stage/stage2_update.cpp",
-          "sha256": "1ed0c7e20d261f65702af0afb67fdeb17760887936978dd0978c2643eb12101e"
+          "sha256": "cf3ee21bc63933a9d2275bc2c946a749fd0d1c868e43b6359cd653c42d23d54c"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -52426,69 +52446,64 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "a2da7781b6c3bdb988bd9422e8014054cf49c2c67ccf621540732eb0fbf8e202",
+      "replay_receipt_sha256": "34dfa685006961b224e15d26208d6aa0a5fba9d8e897396e9a30554f564fb838",
       "compiled_negative_control": {
-        "target_start": 71916,
-        "candidate_start": 71916,
-        "size": 653,
-        "target_sha256": "20f50cef243b7f3943c7556dbe6c73f9deb102c4d5be941db56cbf19cb462155",
-        "candidate_sha256": "f29188889342cd6ac70384f257b1c5ae7af80a769b980089810226b2d379145a",
+        "target_start": 71424,
+        "candidate_start": 71424,
+        "size": 492,
+        "target_sha256": "c2e7f0de09e4a9299c951eb05b397e6cf41be7df1e779082bb31ba6bcf955852",
+        "candidate_sha256": "0187e6c57470a59a4e97117e2182cdc42edade1488d4c2d238ab3d0dbbd12aa2",
         "raw_exact": false,
         "target_fixups": [
-          441,
-          426,
-          225
+          484,
+          441
         ],
         "candidate_fixups": [
-          441,
-          426,
-          225
+          484,
+          441
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-stage2-update-abi",
-        "entry_sha256": "aae787017e1aeefe278a3a587f25e7bb30f766e133f924e2dabfa89f8378dfe0",
+        "unit_id": "main-stage2-particle-initializer",
+        "entry_sha256": "b771fd892c1c5ae4429c1ade9770e6a15a7f7aea56a46b9db741ed819825cf13",
         "mutation": {
-          "id": "stage2-palette-pulse-peak",
-          "unit": "main-stage2-update-abi",
-          "source": "src/main/stage/stage2_update.cpp",
-          "find": "stage2_palette_level >= 0x3F",
-          "replace": "stage2_palette_level >= 0x3E"
+          "unit": "main-stage2-particle-initializer",
+          "source": "src/main/stage/particle_init.cpp",
+          "find": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM;",
+          "replace": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM + 1;"
         },
-        "control_sha256": "785fd56f9c3f439ca553b7d66dfd304e7e1bf03f049e40bae25702d6a9d02ba5",
+        "control_sha256": "7f4bb329c5572f90a72d6ba4c23f600e1d175cb0475ac18a7f81e90389abb1b1",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 71916,
-          "candidate_start": 71916,
-          "size": 653,
-          "target_sha256": "20f50cef243b7f3943c7556dbe6c73f9deb102c4d5be941db56cbf19cb462155",
-          "candidate_sha256": "f29188889342cd6ac70384f257b1c5ae7af80a769b980089810226b2d379145a",
+          "target_start": 71424,
+          "candidate_start": 71424,
+          "size": 492,
+          "target_sha256": "c2e7f0de09e4a9299c951eb05b397e6cf41be7df1e779082bb31ba6bcf955852",
+          "candidate_sha256": "0187e6c57470a59a4e97117e2182cdc42edade1488d4c2d238ab3d0dbbd12aa2",
           "raw_exact": false,
           "target_fixups": [
-            441,
-            426,
-            225
+            484,
+            441
           ],
           "candidate_fixups": [
-            441,
-            426,
-            225
+            484,
+            441
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "238f5ed6b49c2fe8e549c5aebaeebd2b57a3cf61cc07f6195de78860c4f8e86f",
-          "dependency_timestamp_normalized_sha256": "b3a8fc916c5fd757526a7566721cbd111d6f2195c0f5f17e60b97e0556654c4c",
-          "module_name": "th05/s2_upd.cpp",
+          "sha256": "dc242c5d4e205043afd2de8720fadc7d6b0e884fe1c164ea23b6ed11b6fd9df3",
+          "dependency_timestamp_normalized_sha256": "35aebf30c045c1eff44dfbc6f57b713f42576818108d010c49fb77b8e27b5419",
+          "module_name": "th05/s2p_init.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/s2_upd.cpp",
-            "src/main/stage/stage2_update.cpp",
+            "th05/s2p_init.cpp",
+            "src/main/stage/particle_init.cpp",
             "src/main/stage/background2.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
@@ -52500,7 +52515,8 @@
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/stage/stage2_transition_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -52514,7 +52530,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/s2_upd.cpp"
+          "th05/s2p_init.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -54252,8 +54268,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "110c4ec58527d904ccfb9112cd7123d561982f8029cc2220ffe1f94792d2fef2",
-            "dependency_timestamp_normalized_sha256": "3ffd381cd6abc239cf5b2d13bba3d8ab5079436c82052eeff25cc27a72349233",
+            "sha256": "336f2edcaaab77515e507b819f81ec27973a867d7783a5cfc87f6287689325df",
+            "dependency_timestamp_normalized_sha256": "da33b140a9599e9e3e67e4bb0ddc1fb31d9b347b14e79390d8f5e7727d170f54",
             "module_name": "th05/s2p_init.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -54272,12 +54288,13 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/stage/stage2_transition_rules.hpp"
             ]
           },
           {
-            "sha256": "691e692dc5c5cdc3329f81058ab709be376257d7e3f12fc92ee69d42d15cfb31",
-            "dependency_timestamp_normalized_sha256": "3ffd381cd6abc239cf5b2d13bba3d8ab5079436c82052eeff25cc27a72349233",
+            "sha256": "d2748889d4b4e570042a33c7aac1bfc9029106d3fc32525bb2fbfeccc2934ca6",
+            "dependency_timestamp_normalized_sha256": "da33b140a9599e9e3e67e4bb0ddc1fb31d9b347b14e79390d8f5e7727d170f54",
             "module_name": "th05/s2p_init.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -54296,7 +54313,8 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/stage/stage2_transition_rules.hpp"
             ]
           }
         ],
@@ -54359,7 +54377,11 @@
           },
           {
             "path": "src/main/stage/particle_init.cpp",
-            "sha256": "7adbc0abe8c688db994f515d70545238f3f4e0714b2e5474f35e8ad9aec4a654"
+            "sha256": "8265e7a960c0481e9cd0b603b63b28aa88dc6ce19e46774a1e16ed8648854ce5"
+          },
+          {
+            "path": "src/main/stage/stage2_transition_rules.hpp",
+            "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -54399,7 +54421,11 @@
         },
         {
           "path": "src/main/stage/particle_init.cpp",
-          "sha256": "7adbc0abe8c688db994f515d70545238f3f4e0714b2e5474f35e8ad9aec4a654"
+          "sha256": "8265e7a960c0481e9cd0b603b63b28aa88dc6ce19e46774a1e16ed8648854ce5"
+        },
+        {
+          "path": "src/main/stage/stage2_transition_rules.hpp",
+          "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -54412,7 +54438,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6e99a7c13db4d4bb7a81f5f7bc49ef4f73afc4f16bb12814880eee54ae86926f",
+      "replay_receipt_sha256": "34dfa685006961b224e15d26208d6aa0a5fba9d8e897396e9a30554f564fb838",
       "compiled_negative_control": {
         "target_start": 71424,
         "candidate_start": 71424,
@@ -54437,10 +54463,10 @@
         "mutation": {
           "unit": "main-stage2-particle-initializer",
           "source": "src/main/stage/particle_init.cpp",
-          "find": "particle.zoom = 8;",
-          "replace": "particle.zoom = 9;"
+          "find": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM;",
+          "replace": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM + 1;"
         },
-        "control_sha256": "67c1bcd9f67edee0771c5f2a44b81ad6d8f3befecf41a1dafc199edf91edae38",
+        "control_sha256": "7f4bb329c5572f90a72d6ba4c23f600e1d175cb0475ac18a7f81e90389abb1b1",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 71424,
@@ -54461,8 +54487,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "31077f1197ead102fbb78563a3138ad76b54824ba30ab176b55d1653a6333cfb",
-          "dependency_timestamp_normalized_sha256": "20c4ef1152652eda5b3a9dee4d3a4d0dfa1d62c19fabb719d7f63b7891078463",
+          "sha256": "dc242c5d4e205043afd2de8720fadc7d6b0e884fe1c164ea23b6ed11b6fd9df3",
+          "dependency_timestamp_normalized_sha256": "35aebf30c045c1eff44dfbc6f57b713f42576818108d010c49fb77b8e27b5419",
           "module_name": "th05/s2p_init.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -54481,7 +54507,8 @@
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/stage/stage2_transition_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -75565,8 +75592,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "e8c50c54fb308a159abfcee8895b325d63f1efb6c0c36fc9072f26a49af7f500",
-            "dependency_timestamp_normalized_sha256": "a3b2f1ac49381089554b4dffe17c2ae3851544e36d448f0c704e3c1c3d5b5865",
+            "sha256": "2661e0292e0eb17111245864bd6c1848e22fb530eca89c32ecbe18138770dece",
+            "dependency_timestamp_normalized_sha256": "ca9c8110f7a0d431cb9a5ecb62ad7cc74dc105a5f39257fa3ab55d7d615e16cb",
             "module_name": "th05/s2_inval.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -75585,12 +75612,13 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/stage/stage2_transition_rules.hpp"
             ]
           },
           {
-            "sha256": "9caf86e2b6b8ad9f8fa68c09fbc203cbe850bae121886dbe5f7b637b1a8d9714",
-            "dependency_timestamp_normalized_sha256": "a3b2f1ac49381089554b4dffe17c2ae3851544e36d448f0c704e3c1c3d5b5865",
+            "sha256": "377138a50632d20dc5e7bfbd25d5c6d89095db49b04b850bfebf50cfae959e97",
+            "dependency_timestamp_normalized_sha256": "ca9c8110f7a0d431cb9a5ecb62ad7cc74dc105a5f39257fa3ab55d7d615e16cb",
             "module_name": "th05/s2_inval.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -75609,13 +75637,14 @@
               "C:\\TC4\\INCLUDE\\_null.h",
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/stage/stage2_transition_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -75672,7 +75701,11 @@
           },
           {
             "path": "src/main/stage/stage2_invalidate.cpp",
-            "sha256": "01a47df614be3ee2d083c07976bc1c037425c4d5abf691699e13623c592fd145"
+            "sha256": "725ce8d0ea1e002aaa8f75cde0e7787b8cc382fe67ff6f256119c57ccb0e2acf"
+          },
+          {
+            "path": "src/main/stage/stage2_transition_rules.hpp",
+            "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -75712,7 +75745,11 @@
         },
         {
           "path": "src/main/stage/stage2_invalidate.cpp",
-          "sha256": "01a47df614be3ee2d083c07976bc1c037425c4d5abf691699e13623c592fd145"
+          "sha256": "725ce8d0ea1e002aaa8f75cde0e7787b8cc382fe67ff6f256119c57ccb0e2acf"
+        },
+        {
+          "path": "src/main/stage/stage2_transition_rules.hpp",
+          "sha256": "0431f1aacaf03dc30faef90459f13ff05ea3fe797bbbe016e546901cf67a1bc1"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -75725,52 +75762,64 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "411d87a8be3ea0120654c259bc652b3eef129c3f5f8fe5a3f772e5f725a27745",
+      "replay_receipt_sha256": "34dfa685006961b224e15d26208d6aa0a5fba9d8e897396e9a30554f564fb838",
       "compiled_negative_control": {
-        "target_start": 71373,
-        "candidate_start": 71373,
-        "size": 51,
-        "target_sha256": "166318f675b674a40e9fba339aa827f0b001f141c52ecc64b2f8d72528a860ea",
-        "candidate_sha256": "63ca245bae017008390f490c146f8099c77bf51aa286910451eb4cdadca28d01",
+        "target_start": 71424,
+        "candidate_start": 71424,
+        "size": 492,
+        "target_sha256": "c2e7f0de09e4a9299c951eb05b397e6cf41be7df1e779082bb31ba6bcf955852",
+        "candidate_sha256": "0187e6c57470a59a4e97117e2182cdc42edade1488d4c2d238ab3d0dbbd12aa2",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          484,
+          441
+        ],
+        "candidate_fixups": [
+          484,
+          441
+        ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-stage2-invalidate",
-        "entry_sha256": "8506fb56bc4bd76a77c15c2fb2970912978cf572084aa665636edb3947b4b83e",
+        "unit_id": "main-stage2-particle-initializer",
+        "entry_sha256": "b771fd892c1c5ae4429c1ade9770e6a15a7f7aea56a46b9db741ed819825cf13",
         "mutation": {
-          "unit": "main-stage2-invalidate",
-          "source": "src/main/stage/stage2_invalidate.cpp",
-          "find": "tile_invalidate_box.x = 8;",
-          "replace": "tile_invalidate_box.x = 9;"
+          "unit": "main-stage2-particle-initializer",
+          "source": "src/main/stage/particle_init.cpp",
+          "find": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM;",
+          "replace": "particle.zoom = S2T_PARTICLE_INITIAL_ZOOM + 1;"
         },
-        "control_sha256": "d2ee5ea11e7aaa9bbfc7370309a8cd458c5e35c9b2632bf94bfe6905f35ce7e8",
+        "control_sha256": "7f4bb329c5572f90a72d6ba4c23f600e1d175cb0475ac18a7f81e90389abb1b1",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 71373,
-          "candidate_start": 71373,
-          "size": 51,
-          "target_sha256": "166318f675b674a40e9fba339aa827f0b001f141c52ecc64b2f8d72528a860ea",
-          "candidate_sha256": "63ca245bae017008390f490c146f8099c77bf51aa286910451eb4cdadca28d01",
+          "target_start": 71424,
+          "candidate_start": 71424,
+          "size": 492,
+          "target_sha256": "c2e7f0de09e4a9299c951eb05b397e6cf41be7df1e779082bb31ba6bcf955852",
+          "candidate_sha256": "0187e6c57470a59a4e97117e2182cdc42edade1488d4c2d238ab3d0dbbd12aa2",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            484,
+            441
+          ],
+          "candidate_fixups": [
+            484,
+            441
+          ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "8b1ca64702519a2e4665df8e21132c7e08cad68c3c30220a2d971e1f12860d3b",
-          "dependency_timestamp_normalized_sha256": "4752c201a015e47a463c65c72ef15a9541b619a88d0a2e6ef086537a8d60879b",
-          "module_name": "th05/s2_inval.cpp",
+          "sha256": "dc242c5d4e205043afd2de8720fadc7d6b0e884fe1c164ea23b6ed11b6fd9df3",
+          "dependency_timestamp_normalized_sha256": "35aebf30c045c1eff44dfbc6f57b713f42576818108d010c49fb77b8e27b5419",
+          "module_name": "th05/s2p_init.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/s2_inval.cpp",
-            "src/main/stage/stage2_invalidate.cpp",
+            "th05/s2p_init.cpp",
+            "src/main/stage/particle_init.cpp",
             "src/main/stage/background2.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
@@ -75782,7 +75831,8 @@
             "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/stage/stage2_transition_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -75796,7 +75846,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/s2_inval.cpp"
+          "th05/s2p_init.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -105066,15 +105116,16 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90f59d45ec22a539d6a8fae94e84378c6b22cfaf867ddabd71ca4a8d972b25c1",
-            "dependency_timestamp_normalized_sha256": "e5aff22cb50edd56e64397930936f304e563fdd78fbdc89ab3ffe8e2bd6c9e41",
+            "sha256": "5fbf7154cc2ac3a6f40f87e0a018b8100e2dfde5d3ef4f4a7a44b8b345925823",
+            "dependency_timestamp_normalized_sha256": "7bfa896341c894d3fe606a5d22575883ae56ae49b36c0dd8794d6cefa2c37ca4",
             "module_name": "th05/s2trans.c",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
             ],
             "dependency_paths": [
               "th05/s2trans.c",
-              "src/main/stage/stage2_transition_counters.c"
+              "src/main/stage/stage2_transition_counters.c",
+              "src/main/stage/stage2_transition_counters.h"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -105092,15 +105143,16 @@
             }
           },
           {
-            "sha256": "b4479411c644e7a582069ae3ae1215301cd2acf7c51b0e9ff9f66a4b7d6110b9",
-            "dependency_timestamp_normalized_sha256": "e5aff22cb50edd56e64397930936f304e563fdd78fbdc89ab3ffe8e2bd6c9e41",
+            "sha256": "e1b104163c24d3696aea9df5bc7897efcec3114798e62e2a59eb8989d639e1fb",
+            "dependency_timestamp_normalized_sha256": "7bfa896341c894d3fe606a5d22575883ae56ae49b36c0dd8794d6cefa2c37ca4",
             "module_name": "th05/s2trans.c",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
             ],
             "dependency_paths": [
               "th05/s2trans.c",
-              "src/main/stage/stage2_transition_counters.c"
+              "src/main/stage/stage2_transition_counters.c",
+              "src/main/stage/stage2_transition_counters.h"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -105157,7 +105209,11 @@
           },
           {
             "path": "src/main/stage/stage2_transition_counters.c",
-            "sha256": "1eb6360adc42dca3b508336ffd820588136d212862d4d1228c21917f42961e83"
+            "sha256": "a7616dba9c960e9d16eea44172cccc09bcac5442ff7a2bce008fd37bc70fb044"
+          },
+          {
+            "path": "src/main/stage/stage2_transition_counters.h",
+            "sha256": "6b619c9f82b4e8e2180acf02d8e6b34bc96af5068f5c3dbacfdf6460fc627014"
           }
         ],
         "exact": true
@@ -105169,12 +105225,16 @@
         },
         {
           "path": "src/main/stage/stage2_transition_counters.c",
-          "sha256": "1eb6360adc42dca3b508336ffd820588136d212862d4d1228c21917f42961e83"
+          "sha256": "a7616dba9c960e9d16eea44172cccc09bcac5442ff7a2bce008fd37bc70fb044"
+        },
+        {
+          "path": "src/main/stage/stage2_transition_counters.h",
+          "sha256": "6b619c9f82b4e8e2180acf02d8e6b34bc96af5068f5c3dbacfdf6460fc627014"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6c3a9c7d8c8b3ad2c29f955857515275195f40b7dca198cdedd13f44e5dc05b2",
+      "replay_receipt_sha256": "0c1f46ecfe4acc3be449d74ad712e14481f48b96d3031a6249d2d889f7477f87",
       "compiled_negative_control": {
         "target_start": 140132,
         "candidate_start": 140132,
@@ -105227,15 +105287,16 @@
           }
         },
         "omf": {
-          "sha256": "b73d4854df2e8a696fdf706add07ed4d818331eea826cb8a00298a5a8c28b553",
-          "dependency_timestamp_normalized_sha256": "528c4999f8582d4ca13ac4b46fc0c5063c0e8a1a45b0dfb3da9e4456ab1f0366",
+          "sha256": "8e3a2f9e184fb739740b3ba65099468b0b0961b1510a12a34577515389454f55",
+          "dependency_timestamp_normalized_sha256": "5ea11b5f8967b08f4744e3f4143a1ca1ca590f4f7a2097507afaae44e9c1ca30",
           "module_name": "th05/s2trans.c",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
             "th05/s2trans.c",
-            "src/main/stage/stage2_transition_counters.c"
+            "src/main/stage/stage2_transition_counters.c",
+            "src/main/stage/stage2_transition_counters.h"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -105266,10 +105327,7 @@
           "th05/s2trans.c"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-stage2-transition-particle-and-palette-data"
-      ]
+      "receipt_aggregate_pass": true
     }
   ]
 }

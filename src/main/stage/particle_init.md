@@ -50,3 +50,15 @@ byte producers, raw equality and original ordered fixups `[484,441]`, plus its
 own rejected zoom8-to9 mutation. The four scalar rvalue assignments are the
 only algorithm-expression changes from the saved476 body. The accepted
 updater653 and shared full ABI header remain unchanged.
+
+## Eight native Stage 2 particle motion tracks (2026-11-12)
+
+The complete original 492-byte near-Pascal particle initializer now
+uses compile-time Stage 2 phase schedule names for its real 4096-frame
+cycle and 1000/1128/2000/2128/3000/3128/3968 track boundaries.
+All random-angle draws, 16-bit signed scale operations, 8-subpixel
+zoom initialization and foreign vector calls remain unchanged in
+machine code. The source-coupled 653-byte Stage 2 updater and 51-byte
+invalidation helper were selectively revalidated alongside it:
+`.analysis/unit-replays/gpt-web-stage2-bg-three-code-scopes-a/receipt.json`.
+The source's original 8→9 zoom mutation was compiled and rejected.

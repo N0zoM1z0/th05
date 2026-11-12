@@ -4,6 +4,8 @@
 #error Original stage-two initialized DATA is produced by C
 #endif
 
+#include "src/main/stage/stage2_transition_counters.h"
+
 int near stage2_particles_spawned = 0;
 unsigned char near stage2_palette_level = 0;
 unsigned char near stage2_tone_offset = 0;

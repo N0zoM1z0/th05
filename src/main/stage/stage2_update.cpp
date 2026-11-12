@@ -2,6 +2,8 @@
 #ifndef TH05_STAGE2_BG_COMBINED
 #pragma option -zCSTAGE2_TEXT -zPmain_01
 #endif
+#include "src/main/stage/stage2_transition_counters.h"
+#include "src/main/stage/stage2_transition_rules.hpp"
 #include "src/main/stage/background2.hpp"
 #pragma codeseg STAGE2_TEXT main_01
 
@@ -15,36 +17,36 @@ void pascal near stage2_update(void)
     if(boss.phase > PHASE_BOSS_ENTRANCE_BB && boss.phase < PHASE_BOSS_EXPLODE_BIG) {
         return;
     }
-    if(boss.phase == PHASE_BOSS_ENTRANCE_BB && boss.phase_frame >= 32) {
+    if(boss.phase == PHASE_BOSS_ENTRANCE_BB && boss.phase_frame >= S2T_BOSS_ENTRANCE_MAX_FRAME) {
         return;
     }
-    if(stage_frame < 304) {
+    if(stage_frame < S2T_FADE_END_FRAME) {
         scroll_active = false;
-        if(stage_frame >= 256) {
-            i = 303 - stage_frame;
+        if(stage_frame >= S2T_FADE_START_FRAME) {
+            i = S2T_FADE_REMAINING_BASE - stage_frame;
             Palettes.colors[0].c.r = i;
             Palettes.colors[0].c.g = i;
-            Palettes.colors[0].c.b = i * 5;
-            PaletteTone = stage2_tone_offset + 100;
+            Palettes.colors[0].c.b = i * S2T_BLUE_FADE_SCALE;
+            PaletteTone = stage2_tone_offset + S2T_BRIGHTNESS_BASE;
             palette_changed = true;
-            stage2_tone_offset += 2;
+            stage2_tone_offset += S2T_BRIGHTNESS_INCREMENT;
             if(stage_frame_mod4 == 0) {
-                i = (stage_frame - 256) >> 2;
-                left = 11 - i;
-                right = i + 12;
-                for(i = 0; i < 25; i++) {
-                    tile_ring[i][left] = STAGE2_TILE_AREA_VRAM_LEFT + (256 * STAGE2_ROW_SIZE);
-                    tile_ring[i][right] = STAGE2_TILE_AREA_VRAM_LEFT + (256 * STAGE2_ROW_SIZE);
+                i = (stage_frame - S2T_FADE_START_FRAME) >> S2T_RING_WIPE_SHIFT;
+                left = S2T_TILE_WIPE_LEFT_ANCHOR - i;
+                right = i + S2T_TILE_WIPE_RIGHT_ANCHOR;
+                for(i = 0; i < S2T_SCREEN_WIPE_ROWS; i++) {
+                    tile_ring[i][left] = STAGE2_TILE_AREA_VRAM_LEFT + (S2T_RING_WIPE_SOURCE_Y * STAGE2_ROW_SIZE);
+                    tile_ring[i][right] = STAGE2_TILE_AREA_VRAM_LEFT + (S2T_RING_WIPE_SOURCE_Y * STAGE2_ROW_SIZE);
                 }
             }
         }
         tiles_invalidate_all();
         return;
     }
-    if(stage_frame < 306) {
+    if(stage_frame < S2T_SCROLL_END_FRAME) {
         graph_scrollup(scroll_line);
-        for(left = 0; left < 24; left++) {
-            for(i = 0; i < 25; i++) {
+        for(left = 0; left < S2T_SCREEN_WIPE_COLUMNS; left++) {
+            for(i = 0; i < S2T_SCREEN_WIPE_ROWS; i++) {
                 tile_ring[i][left] = STAGE2_TILE_AREA_VRAM_LEFT;
             }
         }
@@ -56,23 +58,23 @@ void pascal near stage2_update(void)
         return;
     }
     if(stage2_tone_offset != 0) {
-        if(stage2_tone_offset > 4) {
-            stage2_tone_offset -= 4;
+        if(stage2_tone_offset > S2T_BRIGHTNESS_DECREMENT) {
+            stage2_tone_offset -= S2T_BRIGHTNESS_DECREMENT;
         } else {
             stage2_tone_offset = 0;
         }
-        PaletteTone = stage2_tone_offset + 100;
+        PaletteTone = stage2_tone_offset + S2T_BRIGHTNESS_BASE;
         palette_changed = true;
         return;
     }
-    if(stage2_particles_spawned < S2PARTICLE_COUNT && stage_frame_mod2 == 0) {
+    if(stage2_particles_spawned < S2PARTICLE_COUNT && stage_frame_mod2 == S2T_PARTICLE_SPAWN_EVERY_OTHER) {
         particle = &s2particles[stage2_particles_spawned];
-        particle->flag = 1;
-        particle->angle = randring1_next16_mod(0x20) + 0x30;
-        particle->pos.cur.x.v = TO_SP((0x50 - particle->angle) * 8) + TO_SP(64);
+        particle->flag = S2T_PARTICLE_INITIAL_FLAG;
+        particle->angle = randring1_next16_mod(S2T_PARTICLE_INITIAL_ANGLE_MASK) + S2T_PARTICLE_INITIAL_ANGLE_BIAS;
+        particle->pos.cur.x.v = TO_SP((S2T_PARTICLE_X_REF_ANGLE - particle->angle) * S2T_PARTICLE_X_SLOPE) + TO_SP(S2T_PARTICLE_SPAWN_X_BIAS_PX);
         particle->pos.cur.y.v = 0;
         vector2(particle->pos.velocity.x.v, particle->pos.velocity.y.v,
-            particle->angle, TO_SP(8));
+            particle->angle, TO_SP(S2T_PARTICLE_SPAWN_SPEED_PX));
         stage2_particles_spawned++;
     }
     grcg_setcolor(GC_RMW, 0);
@@ -111,18 +113,18 @@ void pascal near stage2_update(void)
     if(stage_frame_mod4 == 0) {
         if(stage2_palette_falling == 0) {
             stage2_palette_level++;
-            if(stage2_palette_level >= 0x3F) {
+            if(stage2_palette_level >= S2T_PALETTE_PULSE_CEILING) {
                 stage2_palette_falling++;
             }
         } else {
             stage2_palette_level--;
-            if(stage2_palette_level <= 0x20) {
+            if(stage2_palette_level <= S2T_PALETTE_PULSE_FLOOR) {
                 stage2_palette_falling--;
             }
         }
-        Palettes.colors[0].c.r = stage2_palette_level * 2;
-        Palettes.colors[0].c.g = stage2_palette_level * 2;
-        Palettes.colors[0].c.b = stage2_palette_level * 4;
+        Palettes.colors[0].c.r = stage2_palette_level * S2T_PALETTE_RED_GREEN_SCALE;
+        Palettes.colors[0].c.g = stage2_palette_level * S2T_PALETTE_RED_GREEN_SCALE;
+        Palettes.colors[0].c.b = stage2_palette_level * S2T_PALETTE_BLUE_SCALE;
         palette_changed = true;
     }
 }
