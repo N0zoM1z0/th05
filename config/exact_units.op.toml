@@ -69,8 +69,8 @@ bindings_source = "probes/units/op_setup_bindings.asm"
 [[controls]]
 unit = "op-setup-menu"
 source = "src/op/setup/setup.cpp"
-find = "static const pixel_t DROP_SPEED = (MSWIN_H / 2);"
-replace = "static const pixel_t DROP_SPEED = (MSWIN_H / 4);"
+find = "static const pixel_t DROP_SPEED = (MSWIN_H / OSU_DROP_SPEED_DIVISOR);"
+replace = "static const pixel_t DROP_SPEED = (MSWIN_H / (OSU_DROP_SPEED_DIVISOR * 2));"
 
 [[units]]
 id = "op-character-menu"

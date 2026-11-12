@@ -2,26 +2,17 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "073adca0dab6ee9f3d6d714a8cde1d94b67ee3b119307a6e54ca6fd5519c4037",
+  "replay_receipt_sha256": "d88947412051ffff1e1903b6659e77c2aca19054a6d480234864723679447d34",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 61552,
-    "candidate_start": 61552,
-    "size": 1089,
-    "target_sha256": "8db0fc0a3afb106f39af6b6fb6ce56d049c904a0e32b50531b8f99ea5fb3cb17",
-    "candidate_sha256": "fb1095ffab437a55d2bebe947051b6e94e87974b4e092fb83a62cbb1f361e2ff",
+    "target_start": 64150,
+    "candidate_start": 64150,
+    "size": 1075,
+    "target_sha256": "a96eee90cdf88b7b51ec331b5fd4f06c8f8c10c3ebc9073018ca782917b267d4",
+    "candidate_sha256": "f9358a2aaf83690c2cbf4c6a901a2d359c620816c548c7ec99fdfae9aef62263",
     "raw_exact": false,
     "target_fixups": [
-      106,
-      102,
-      98,
-      94,
-      90,
-      86,
-      82,
-      78,
-      74,
       70,
       66,
       62,
@@ -38,18 +29,10 @@
       18,
       14,
       10,
-      6
+      6,
+      2
     ],
     "candidate_fixups": [
-      106,
-      102,
-      98,
-      94,
-      90,
-      86,
-      82,
-      78,
-      74,
       70,
       66,
       62,
@@ -66,16 +49,17 @@
       18,
       14,
       10,
-      6
+      6,
+      2
     ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 61552,
-      "size": 1089,
-      "module": "th05/op_main.cpp",
+      "start": 64150,
+      "size": 1075,
+      "module": "th05/op_setup.cpp",
       "segment": "_DATA"
     }
   },
@@ -1450,8 +1434,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "60dbed4b02a28498a09f2b5c61cc127607e219c708e3aacba6149843d9d45f7a",
-            "dependency_timestamp_normalized_sha256": "5679c8e7896cf8b80686926829944c05450ff4e2e89bce5cb7d47628fb1cbd2d",
+            "sha256": "eafbf32907b6682fe30c5246c8f23ba0ff505fb8b8199c37e7ce062899838e74",
+            "dependency_timestamp_normalized_sha256": "bbf2f53d7b3b6bc53bb9673018cc8dd9ce85d55a4e4a052c8322a50dc14e1740",
             "module_name": "th05/op_setup.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1467,12 +1451,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/setup/strings.hpp"
+              "src/op/setup/strings.hpp",
+              "src/op/setup/window_choreography.hpp"
             ]
           },
           {
-            "sha256": "b2a1117762ffaba0438da7f129428afa4edca5c595c1697f705dd577ba43df88",
-            "dependency_timestamp_normalized_sha256": "5679c8e7896cf8b80686926829944c05450ff4e2e89bce5cb7d47628fb1cbd2d",
+            "sha256": "c4f70f2b6be18c18432ec9a996ba478ae8e8f469bade01bc4793e8edf7c901b3",
+            "dependency_timestamp_normalized_sha256": "bbf2f53d7b3b6bc53bb9673018cc8dd9ce85d55a4e4a052c8322a50dc14e1740",
             "module_name": "th05/op_setup.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1488,7 +1473,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/setup/strings.hpp"
+              "src/op/setup/strings.hpp",
+              "src/op/setup/window_choreography.hpp"
             ]
           }
         ],
@@ -1539,7 +1525,7 @@
           },
           {
             "path": "src/op/setup/setup.cpp",
-            "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+            "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
           },
           {
             "path": "src/op/setup/setup.hpp",
@@ -1548,6 +1534,10 @@
           {
             "path": "src/op/setup/strings.hpp",
             "sha256": "17b850c80fe7d2f15fef3524154da103d05c7438cb9f78bdcf83e50fd026060e"
+          },
+          {
+            "path": "src/op/setup/window_choreography.hpp",
+            "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1570,7 +1560,7 @@
             },
             {
               "path": "src/op/setup/setup.cpp",
-              "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+              "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
             },
             {
               "path": "src/op/setup/setup.hpp",
@@ -1579,6 +1569,10 @@
             {
               "path": "src/op/setup/strings.hpp",
               "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+            },
+            {
+              "path": "src/op/setup/window_choreography.hpp",
+              "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1600,7 +1594,7 @@
             },
             {
               "path": "src/op/setup/setup.cpp",
-              "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+              "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
             },
             {
               "path": "src/op/setup/setup.hpp",
@@ -1609,6 +1603,10 @@
             {
               "path": "src/op/setup/strings.hpp",
               "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+            },
+            {
+              "path": "src/op/setup/window_choreography.hpp",
+              "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1633,7 +1631,7 @@
         },
         {
           "path": "src/op/setup/setup.cpp",
-          "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+          "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
         },
         {
           "path": "src/op/setup/setup.hpp",
@@ -1644,237 +1642,147 @@
           "sha256": "17b850c80fe7d2f15fef3524154da103d05c7438cb9f78bdcf83e50fd026060e"
         },
         {
+          "path": "src/op/setup/window_choreography.hpp",
+          "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "ffabf2bb0013d76823476d7795913d8da17e71d3d09dfff3d968b5b2ea6f8494",
+      "replay_receipt_sha256": "d88947412051ffff1e1903b6659e77c2aca19054a6d480234864723679447d34",
       "compiled_negative_control": {
-        "target_start": 45175,
-        "candidate_start": 45175,
-        "size": 1439,
-        "candidate_size": 1441,
-        "target_sha256": "7af2790f2c5df5416d7daf11ded1084384b3eae01035fbe1e44152ec30fe8c4c",
-        "candidate_sha256": "431ab3d7f2ee5dbefa7d3c6f16bb3705e5c633619a5df2cbf7bed57c784133d7",
+        "target_start": 64150,
+        "candidate_start": 64150,
+        "size": 1075,
+        "target_sha256": "a96eee90cdf88b7b51ec331b5fd4f06c8f8c10c3ebc9073018ca782917b267d4",
+        "candidate_sha256": "f9358a2aaf83690c2cbf4c6a901a2d359c620816c548c7ec99fdfae9aef62263",
         "raw_exact": false,
         "target_fixups": [
-          891,
-          884,
-          791,
-          742,
-          696,
-          658,
-          577,
-          481,
-          437,
-          425,
-          401,
-          389,
-          370,
-          358,
-          349,
-          299,
-          277,
-          253,
-          233,
-          203,
-          179,
-          160,
-          151,
-          114,
-          102,
-          78,
+          70,
           66,
-          47,
-          35,
+          62,
+          58,
+          54,
+          50,
+          46,
+          42,
+          38,
+          34,
+          30,
           26,
-          1435,
-          1430,
-          1420,
-          1413,
-          1403,
-          1396,
-          1389,
-          1382,
-          1372,
-          1365,
-          1348,
-          1339,
-          1176,
-          1169,
-          1076
+          22,
+          18,
+          14,
+          10,
+          6,
+          2
         ],
         "candidate_fixups": [
-          893,
-          886,
-          793,
-          744,
-          698,
-          660,
-          579,
-          482,
-          438,
-          426,
-          402,
-          390,
-          371,
-          359,
-          350,
-          299,
-          277,
-          253,
-          233,
-          203,
-          179,
-          160,
-          151,
-          114,
-          102,
-          78,
+          70,
           66,
-          47,
-          35,
+          62,
+          58,
+          54,
+          50,
+          46,
+          42,
+          38,
+          34,
+          30,
           26,
-          1437,
-          1432,
-          1422,
-          1415,
-          1405,
-          1398,
-          1391,
-          1384,
-          1374,
-          1367,
-          1350,
-          1341,
-          1178,
-          1171,
-          1078
+          22,
+          18,
+          14,
+          10,
+          6,
+          2
         ],
-        "fixups_exact": false,
-        "exact": false
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 64150,
+          "size": 1075,
+          "module": "th05/op_setup.cpp",
+          "segment": "_DATA"
+        }
       },
       "negative_control": {
-        "unit_id": "op-setup-menu",
-        "entry_sha256": "066aa564d8a674114ffeddce24686165cc0618f9854c072d752860fa51131a38",
+        "unit_id": "op-setup-data",
+        "entry_sha256": "c07cbd2be5456a4801fe6b53920712f3841408c0d4a0b602944ee05a73850acc",
         "mutation": {
-          "unit": "op-setup-menu",
+          "unit": "op-setup-data",
           "source": "src/op/setup/setup.cpp",
-          "find": "static const pixel_t DROP_SPEED = (MSWIN_H / 2);",
-          "replace": "static const pixel_t DROP_SPEED = (MSWIN_H / 4);"
+          "find": "super_entry_bfnt(\"mswin.bft\");",
+          "replace": "super_entry_bfnt(\"mswin.bfu\");"
         },
-        "control_sha256": "8db446c17edd86936c51e8f2b57bd1099afd88d7388316b8bbd1b1d3d5cf75b1",
+        "control_sha256": "ae8539bcc24d1bc7b50a7bdeb2f7efc890abe9514f8b9182d8e42af3f876803c",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 45175,
-          "candidate_start": 45175,
-          "size": 1439,
-          "candidate_size": 1441,
-          "target_sha256": "7af2790f2c5df5416d7daf11ded1084384b3eae01035fbe1e44152ec30fe8c4c",
-          "candidate_sha256": "431ab3d7f2ee5dbefa7d3c6f16bb3705e5c633619a5df2cbf7bed57c784133d7",
+          "target_start": 64150,
+          "candidate_start": 64150,
+          "size": 1075,
+          "target_sha256": "a96eee90cdf88b7b51ec331b5fd4f06c8f8c10c3ebc9073018ca782917b267d4",
+          "candidate_sha256": "f9358a2aaf83690c2cbf4c6a901a2d359c620816c548c7ec99fdfae9aef62263",
           "raw_exact": false,
           "target_fixups": [
-            891,
-            884,
-            791,
-            742,
-            696,
-            658,
-            577,
-            481,
-            437,
-            425,
-            401,
-            389,
-            370,
-            358,
-            349,
-            299,
-            277,
-            253,
-            233,
-            203,
-            179,
-            160,
-            151,
-            114,
-            102,
-            78,
+            70,
             66,
-            47,
-            35,
+            62,
+            58,
+            54,
+            50,
+            46,
+            42,
+            38,
+            34,
+            30,
             26,
-            1435,
-            1430,
-            1420,
-            1413,
-            1403,
-            1396,
-            1389,
-            1382,
-            1372,
-            1365,
-            1348,
-            1339,
-            1176,
-            1169,
-            1076
+            22,
+            18,
+            14,
+            10,
+            6,
+            2
           ],
           "candidate_fixups": [
-            893,
-            886,
-            793,
-            744,
-            698,
-            660,
-            579,
-            482,
-            438,
-            426,
-            402,
-            390,
-            371,
-            359,
-            350,
-            299,
-            277,
-            253,
-            233,
-            203,
-            179,
-            160,
-            151,
-            114,
-            102,
-            78,
+            70,
             66,
-            47,
-            35,
+            62,
+            58,
+            54,
+            50,
+            46,
+            42,
+            38,
+            34,
+            30,
             26,
-            1437,
-            1432,
-            1422,
-            1415,
-            1405,
-            1398,
-            1391,
-            1384,
-            1374,
-            1367,
-            1350,
-            1341,
-            1178,
-            1171,
-            1078
+            22,
+            18,
+            14,
+            10,
+            6,
+            2
           ],
-          "fixups_exact": false,
-          "exact": false
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 64150,
+            "size": 1075,
+            "module": "th05/op_setup.cpp",
+            "segment": "_DATA"
+          }
         },
         "omf": {
-          "sha256": "263f42ab6ca7cd7c99012e9a8a87cbbd6dc8722e015fbeca89faa5b8f369d784",
-          "dependency_timestamp_normalized_sha256": "5d5e99db1f8d86836b748d044ed78136d3561478b36c0c249ee8a39b2f8b1ba0",
+          "sha256": "63dd4c2e31d9422a6a152698cd392babd2d8e61dc766d66646b426904ee38c0f",
+          "dependency_timestamp_normalized_sha256": "4e0dcda80bfae21a61f1d1cc903dcf6afc3884767c689e625e8c6df31a2d1a1d",
           "module_name": "th05/op_setup.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -1890,8 +1798,28 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/setup/strings.hpp"
-          ]
+            "src/op/setup/strings.hpp",
+            "src/op/setup/window_choreography.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1075,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1024,
+                "sha256": "1dcc496e47e8bb4b3e616bf803d4070cc8f2aca06b24cdae3c72173063965eb4"
+              },
+              {
+                "offset": 1024,
+                "size": 51,
+                "sha256": "6d681432cf22bb863758f8b80808f2e870b6ef6b9e5ec8895f2663034b749428"
+              }
+            ]
+          }
         },
         "compiler_arguments": [
           "-c",
@@ -1921,7 +1849,7 @@
           },
           {
             "path": "src/op/setup/setup.cpp",
-            "sha256": "f48d99f450e7a9b81c15c03b5f1ce7adca61d7a451ed6cd2fdf1eb210ee30d4f"
+            "sha256": "1825b9854084927f6d5ed39e83fea83469c83839eb76538def41a1b5d1537b91"
           },
           {
             "path": "src/op/setup/setup.hpp",
@@ -1930,6 +1858,10 @@
           {
             "path": "src/op/setup/strings.hpp",
             "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+          },
+          {
+            "path": "src/op/setup/window_choreography.hpp",
+            "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1973,7 +1905,11 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "op-setup-data",
+        "op-setup-menu"
+      ]
     },
     {
       "id": "op-character-menu",
@@ -6515,8 +6451,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "ab0352444162170b00e0af186d2acc5ee5ea0bc3996bdd0aab1b9ec1074da39e",
-            "dependency_timestamp_normalized_sha256": "5679c8e7896cf8b80686926829944c05450ff4e2e89bce5cb7d47628fb1cbd2d",
+            "sha256": "eafbf32907b6682fe30c5246c8f23ba0ff505fb8b8199c37e7ce062899838e74",
+            "dependency_timestamp_normalized_sha256": "bbf2f53d7b3b6bc53bb9673018cc8dd9ce85d55a4e4a052c8322a50dc14e1740",
             "module_name": "th05/op_setup.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6532,7 +6468,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/setup/strings.hpp"
+              "src/op/setup/strings.hpp",
+              "src/op/setup/window_choreography.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -6555,8 +6492,8 @@
             }
           },
           {
-            "sha256": "c6c4cddb02e424d25b2b1538512594fa4c156ad57869e7850a55ba04ce6c57c2",
-            "dependency_timestamp_normalized_sha256": "5679c8e7896cf8b80686926829944c05450ff4e2e89bce5cb7d47628fb1cbd2d",
+            "sha256": "c4f70f2b6be18c18432ec9a996ba478ae8e8f469bade01bc4793e8edf7c901b3",
+            "dependency_timestamp_normalized_sha256": "bbf2f53d7b3b6bc53bb9673018cc8dd9ce85d55a4e4a052c8322a50dc14e1740",
             "module_name": "th05/op_setup.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6572,7 +6509,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/op/setup/strings.hpp"
+              "src/op/setup/strings.hpp",
+              "src/op/setup/window_choreography.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -6642,7 +6580,7 @@
           },
           {
             "path": "src/op/setup/setup.cpp",
-            "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+            "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
           },
           {
             "path": "src/op/setup/setup.hpp",
@@ -6651,6 +6589,10 @@
           {
             "path": "src/op/setup/strings.hpp",
             "sha256": "17b850c80fe7d2f15fef3524154da103d05c7438cb9f78bdcf83e50fd026060e"
+          },
+          {
+            "path": "src/op/setup/window_choreography.hpp",
+            "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -6673,7 +6615,7 @@
             },
             {
               "path": "src/op/setup/setup.cpp",
-              "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+              "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
             },
             {
               "path": "src/op/setup/setup.hpp",
@@ -6682,6 +6624,10 @@
             {
               "path": "src/op/setup/strings.hpp",
               "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+            },
+            {
+              "path": "src/op/setup/window_choreography.hpp",
+              "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -6703,7 +6649,7 @@
             },
             {
               "path": "src/op/setup/setup.cpp",
-              "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+              "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
             },
             {
               "path": "src/op/setup/setup.hpp",
@@ -6712,6 +6658,10 @@
             {
               "path": "src/op/setup/strings.hpp",
               "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+            },
+            {
+              "path": "src/op/setup/window_choreography.hpp",
+              "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -6736,7 +6686,7 @@
         },
         {
           "path": "src/op/setup/setup.cpp",
-          "sha256": "aa9e77931c4d6b191d7b4b691af07410a626b55f93b69dcd9e32604f3f5827df"
+          "sha256": "76c5d8ed25aa7d863d83befb40165d4de99e7c8425cba8740526d225630d8e52"
         },
         {
           "path": "src/op/setup/setup.hpp",
@@ -6747,13 +6697,17 @@
           "sha256": "17b850c80fe7d2f15fef3524154da103d05c7438cb9f78bdcf83e50fd026060e"
         },
         {
+          "path": "src/op/setup/window_choreography.hpp",
+          "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "ff6c6945b56dd66f5cc8b122fa1df697a3986b71dd600c641279863453b754d5",
+      "replay_receipt_sha256": "d88947412051ffff1e1903b6659e77c2aca19054a6d480234864723679447d34",
       "compiled_negative_control": {
         "target_start": 64150,
         "candidate_start": 64150,
@@ -6882,8 +6836,8 @@
           }
         },
         "omf": {
-          "sha256": "924a4d7c122a4c25c802b8a1f66544551d82f35928b7866ae37d59e403eff478",
-          "dependency_timestamp_normalized_sha256": "72669946e9a41ac2f783f2e6dd8c81e327e056d94692b04ede7cb5ce2e24937a",
+          "sha256": "63dd4c2e31d9422a6a152698cd392babd2d8e61dc766d66646b426904ee38c0f",
+          "dependency_timestamp_normalized_sha256": "4e0dcda80bfae21a61f1d1cc903dcf6afc3884767c689e625e8c6df31a2d1a1d",
           "module_name": "th05/op_setup.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -6899,7 +6853,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/op/setup/strings.hpp"
+            "src/op/setup/strings.hpp",
+            "src/op/setup/window_choreography.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -6949,7 +6904,7 @@
           },
           {
             "path": "src/op/setup/setup.cpp",
-            "sha256": "51187319ff932fe05e16b357b870286a955c4fc2bce56e16558feae0d3c28fc7"
+            "sha256": "1825b9854084927f6d5ed39e83fea83469c83839eb76538def41a1b5d1537b91"
           },
           {
             "path": "src/op/setup/setup.hpp",
@@ -6958,6 +6913,10 @@
           {
             "path": "src/op/setup/strings.hpp",
             "sha256": "c8ce6be21ee8cd079dae4795978a8e4af2b7d4e29a0aae27e2d2abe70b7fcb64"
+          },
+          {
+            "path": "src/op/setup/window_choreography.hpp",
+            "sha256": "fe0c401fc5741964b6749fc535c714d80000a00b38525f37f20783a0e65347e2"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -7001,7 +6960,11 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "op-setup-data",
+        "op-setup-menu"
+      ]
     },
     {
       "id": "op-main-data",
