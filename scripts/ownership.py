@@ -158,6 +158,7 @@ def overlay_vendor_reservation(size: int, pieces: list[dict], claims: list[dict]
                       row.get("end", -1) - row.get("start", 0) == 1024) or
                      (row.get("member"), row.get("source"),
                       row.get("end", -1) - row.get("start", 0)) in {
+                          ("BGM_TRACK_EFFECT", "B_DATA.ASM/SPART/SESOUND", 198),
                           ("JS_STAT", "JS.ASM/JS_STAT", 4),
                           ("PALETTES", "PAL.ASM/PALETTES", 48),
                           ("MEM_WORK", "MEM.ASM/MEM_WORK", 8),
@@ -572,6 +573,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_bgm_global_reservations import reviewed_claims as bgm_global_claims
     bgm_global, bgm_global_sha = bgm_global_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_bgm_track_bss import reviewed_claims as bgm_track_claims
+    bgm_track, bgm_track_sha = bgm_track_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_master_superpa_reservations import reviewed_claims as superpa_reserve_claims
     superpa_reserves, superpa_reserves_sha = superpa_reserve_claims(
         root, config["views"], verify_targets=verify_targets)
@@ -859,6 +863,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_game_reservation(view["size"], pieces, hflip[name])
         if name in bgm_global:
             pieces = overlay_vendor_reservation(view["size"], pieces, bgm_global[name])
+        if name in bgm_track:
+            pieces = overlay_vendor_reservation(view["size"], pieces, bgm_track[name])
         if name in superpa_reserves:
             pieces = overlay_vendor_reservation(view["size"], pieces, superpa_reserves[name])
         if name in compact_bss:
@@ -1011,6 +1017,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["game_hflip_lut_review_sha256"] = hflip_sha
         if bgm_global_sha and name in bgm_global:
             views[name]["master_bgm_reserve_review_sha256"] = bgm_global_sha
+        if bgm_track_sha and name in bgm_track:
+            views[name]["master_bgm_track_review_sha256"] = bgm_track_sha
         if superpa_reserves_sha and name in superpa_reserves:
             views[name]["master_superpa_reserve_review_sha256"] = superpa_reserves_sha
         if compact_bss_sha and name in compact_bss:

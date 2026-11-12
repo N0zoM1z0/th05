@@ -21,8 +21,8 @@
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
-    "reviewed-uninitialized-vendor-storage": 6744,
-    "unknown": 13665,
+    "reviewed-uninitialized-vendor-storage": 7338,
+    "unknown": 13071,
     "verified-vendor-code": 138283,
     "verified-vendor-initialized-data": 7862
   },
@@ -45,8 +45,8 @@
         "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
         "reviewed-uninitialized-game-storage": 256,
-        "reviewed-uninitialized-vendor-storage": 2248,
-        "unknown": 525,
+        "reviewed-uninitialized-vendor-storage": 2446,
+        "unknown": 327,
         "verified-vendor-code": 47400,
         "verified-vendor-initialized-data": 2762
       },
@@ -7635,8 +7635,19 @@
         },
         {
           "start": 145758,
-          "end": 145958,
+          "end": 145760,
           "kind": "unknown"
+        },
+        {
+          "start": 145760,
+          "end": 145958,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_TRACK_EFFECT",
+          "source": "B_DATA.ASM/SPART/SESOUND",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         }
       ],
       "vendor_review_sha256": "3d854c0b4f4c8690093a4fe3e63b7306dc81be3caa189c6b9d2bd000290d6125",
@@ -7675,6 +7686,7 @@
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "game_hflip_lut_review_sha256": "2420e3227e8e92cbf326f1bfc4d329e189597957acc6299efbdc8e508762bd60",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
+      "master_bgm_track_review_sha256": "eea8bb5171df4e32d37ff45148fa6f0aa0afee652741cbe485df2d8e22049dfd",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
       "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "master_superbfnt_header_review_sha256": "e7bbce8449eca67e64f46279dd58ac8eded9a4df705e6ec9a57f8039eb545e04",
@@ -7706,8 +7718,8 @@
         "reviewed-embedded-font-bitmap": 72,
         "reviewed-embedded-sprite-bitmap": 28,
         "reviewed-uninitialized-game-storage": 288,
-        "reviewed-uninitialized-vendor-storage": 2248,
-        "unknown": 2578,
+        "reviewed-uninitialized-vendor-storage": 2446,
+        "unknown": 2380,
         "verified-vendor-code": 44923,
         "verified-vendor-initialized-data": 2372
       },
@@ -10959,6 +10971,22 @@
         },
         {
           "start": 75586,
+          "end": 75588,
+          "kind": "unknown"
+        },
+        {
+          "start": 75588,
+          "end": 75786,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_TRACK_EFFECT",
+          "source": "B_DATA.ASM/SPART/SESOUND",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 75786,
           "end": 77798,
           "kind": "unknown"
         }
@@ -10991,6 +11019,7 @@
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "game_hflip_lut_review_sha256": "2420e3227e8e92cbf326f1bfc4d329e189597957acc6299efbdc8e508762bd60",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
+      "master_bgm_track_review_sha256": "eea8bb5171df4e32d37ff45148fa6f0aa0afee652741cbe485df2d8e22049dfd",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
       "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "master_superbfnt_header_review_sha256": "e7bbce8449eca67e64f46279dd58ac8eded9a4df705e6ec9a57f8039eb545e04",
@@ -11020,8 +11049,8 @@
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 8,
         "reviewed-uninitialized-game-storage": 288,
-        "reviewed-uninitialized-vendor-storage": 2248,
-        "unknown": 2003,
+        "reviewed-uninitialized-vendor-storage": 2446,
+        "unknown": 1805,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2618
       },
@@ -14354,6 +14383,22 @@
         },
         {
           "start": 75758,
+          "end": 75760,
+          "kind": "unknown"
+        },
+        {
+          "start": 75760,
+          "end": 75958,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "BGM_TRACK_EFFECT",
+          "source": "B_DATA.ASM/SPART/SESOUND",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 75958,
           "end": 77396,
           "kind": "unknown"
         }
@@ -14387,6 +14432,7 @@
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "game_hflip_lut_review_sha256": "2420e3227e8e92cbf326f1bfc4d329e189597957acc6299efbdc8e508762bd60",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
+      "master_bgm_track_review_sha256": "eea8bb5171df4e32d37ff45148fa6f0aa0afee652741cbe485df2d8e22049dfd",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
       "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "master_superbfnt_header_review_sha256": "e7bbce8449eca67e64f46279dd58ac8eded9a4df705e6ec9a57f8039eb545e04",
