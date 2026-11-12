@@ -6,7 +6,7 @@
   "authored_credit": 0,
   "compiler_invocations": 0,
   "identities": {
-    "scripts/review_vendor_relocated_data.py": "788d85d58bbf671a9c558563bd0b84f9fb6ec0f54b70c49854868a916737f04c",
+    "scripts/review_vendor_relocated_data.py": "39c6560114959a1f2b0566ec0ff2ad0831dbead7d1f33a8e0c29069784440271",
     "scripts/review_vendor.py": "5acdc65903f7bfccd984d8bee9fde1d4d25d4f56b06c247bc573952dcd8b4e00",
     "scripts/review_vendor_data.py": "01e461df38b0672fd2b304c79d5b2d31c89a3d2136fafac86d72d7893d61994f",
     "scripts/lib/borland_library.py": "8d5a811afe28f53e9e8e132a17221702ce7885069c85bc53dff20bedb840e6ea",
@@ -243,6 +243,51 @@
       ]
     },
     {
+      "id": "main-cl-relocated-data-xxv",
+      "context": "main",
+      "member": "xxv",
+      "segment": "_DATA",
+      "start": 142774,
+      "end": 143070,
+      "size": 296,
+      "calibration_start": 142808,
+      "raw_sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64",
+      "member_program_sha256": "b89c4c08bba1551b607344627c107d06bf192274d270d9c1924f79cad439596a",
+      "original_linked_sha256": "2d9df37393719496c3cbf13a235e7742fe85c98cc73fde7a566aa8f0034517b4",
+      "calibration_linked_sha256": "2d9df37393719496c3cbf13a235e7742fe85c98cc73fde7a566aa8f0034517b4",
+      "omf_fixups": [
+        {
+          "site": 14,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "034f3af317e4e147ec007940a62a7f1df0c2472ce2f31b2fa4b1effcb25042fa",
+          "original_bytes_sha256": "034f3af317e4e147ec007940a62a7f1df0c2472ce2f31b2fa4b1effcb25042fa"
+        },
+        {
+          "site": 10,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "7e084d2480439e46de10350b96956891030f5b24bb041fc61d473b49a0be2df6",
+          "original_bytes_sha256": "7e084d2480439e46de10350b96956891030f5b24bb041fc61d473b49a0be2df6"
+        }
+      ],
+      "ordered_original_mz_fixups": [
+        16,
+        12
+      ],
+      "complete_ledatas": [
+        {
+          "offset": 0,
+          "size": 296,
+          "sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64"
+        }
+      ]
+    },
+    {
       "id": "op-cl-relocated-data-exit",
       "context": "op",
       "member": "exit",
@@ -363,6 +408,51 @@
           "offset": 0,
           "size": 400,
           "sha256": "5b8c2c15d419c2372157b44f22e35fbb7df3fca2a022d7d8e3b02aad6dca7e7a"
+        }
+      ]
+    },
+    {
+      "id": "op-cl-relocated-data-xxv",
+      "context": "op",
+      "member": "xxv",
+      "segment": "_DATA",
+      "start": 72598,
+      "end": 72894,
+      "size": 296,
+      "calibration_start": 72598,
+      "raw_sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64",
+      "member_program_sha256": "b89c4c08bba1551b607344627c107d06bf192274d270d9c1924f79cad439596a",
+      "original_linked_sha256": "8737e9870deef94637ec19dc48d68a3b36854c2686955829852407c7bbbfda40",
+      "calibration_linked_sha256": "8737e9870deef94637ec19dc48d68a3b36854c2686955829852407c7bbbfda40",
+      "omf_fixups": [
+        {
+          "site": 14,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "8c7ca44ff8e9158f9b06c82632e30d909a38f0a61c19a3e751ceb1b9ba100355",
+          "original_bytes_sha256": "8c7ca44ff8e9158f9b06c82632e30d909a38f0a61c19a3e751ceb1b9ba100355"
+        },
+        {
+          "site": 10,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "bd644858683e9b8d7739876c74860f307414b82be8a6686c5735aa264269b5a0",
+          "original_bytes_sha256": "bd644858683e9b8d7739876c74860f307414b82be8a6686c5735aa264269b5a0"
+        }
+      ],
+      "ordered_original_mz_fixups": [
+        16,
+        12
+      ],
+      "complete_ledatas": [
+        {
+          "offset": 0,
+          "size": 296,
+          "sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64"
         }
       ]
     },
@@ -489,8 +579,53 @@
           "sha256": "5b8c2c15d419c2372157b44f22e35fbb7df3fca2a022d7d8e3b02aad6dca7e7a"
         }
       ]
+    },
+    {
+      "id": "maine-cl-relocated-data-xxv",
+      "context": "maine",
+      "member": "xxv",
+      "segment": "_DATA",
+      "start": 72778,
+      "end": 73074,
+      "size": 296,
+      "calibration_start": 72762,
+      "raw_sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64",
+      "member_program_sha256": "b89c4c08bba1551b607344627c107d06bf192274d270d9c1924f79cad439596a",
+      "original_linked_sha256": "8ead7145f706bb3df422792ba64a12cf45a6632aa74a2e1acf3ec2d8e472a614",
+      "calibration_linked_sha256": "8ead7145f706bb3df422792ba64a12cf45a6632aa74a2e1acf3ec2d8e472a614",
+      "omf_fixups": [
+        {
+          "site": 14,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "6897bdf7d3eea1ad5aa51101739f60bc4b410f9f2efd6014e1b71008db8f00fb",
+          "original_bytes_sha256": "6897bdf7d3eea1ad5aa51101739f60bc4b410f9f2efd6014e1b71008db8f00fb"
+        },
+        {
+          "site": 10,
+          "kind": 3,
+          "frame_method": 5,
+          "target_method": 0,
+          "target_index": 1,
+          "calibration_bytes_sha256": "beab60038827e32bcc175b53d31fd0f045b22c495a77e6dce48bca74339e35af",
+          "original_bytes_sha256": "beab60038827e32bcc175b53d31fd0f045b22c495a77e6dce48bca74339e35af"
+        }
+      ],
+      "ordered_original_mz_fixups": [
+        16,
+        12
+      ],
+      "complete_ledatas": [
+        {
+          "offset": 0,
+          "size": 296,
+          "sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64"
+        }
+      ]
     }
   ],
-  "contribution_count": 6,
-  "total_bytes": 1236
+  "contribution_count": 9,
+  "total_bytes": 2124
 }

@@ -45,8 +45,8 @@ counter remain unchanged;1857 bytes move from unknown to vendor DATA.
 
 No byte normalization, relocation masking, guessed all-zero range, contribution
 slice or transferred reference acceptance is used. Other CL DATA is not silently
-included: relocation-bearing member `xxv` still requires its own linkage proof;
-`files` and `exit` are now proven separately below; incomplete DATA such as `new` is rejected; small or
+included: relocation-bearing `files`, `exit` and `xxv` are now proven separately
+below; incomplete DATA such as `new` is rejected; small or
 all-zero ambiguous templates remain unknown. Even the single inter-member
 alignment bytes are outside these whole-object claims. Unknown game, library,
 asset and original-assembly ownership is not inferred from this scan.
@@ -109,3 +109,20 @@ these complete contributions. For a focused replay run
 `python3 scripts/review_vendor_relocated_data.py --check`; without private
 inputs use `--structural-check`. Existing zero-free-standing gaps before
 `exit` remain unowned, as does other CL DATA not explicitly proved here.
+
+## Native exception-vector DATA: XXV
+
+The complete CL.LIB `xxv` initialized `_DATA` contribution contains **296
+bytes** in each program at MAIN `22DB6..22EDE`, OP `11B96..11CBE` and MAINE
+`11C4A..11D72`. Its 296-byte object is gaplessly supplied by original OMF
+LEDATA and owns exactly two far CODE pointers, at local offsets 14 and 10.
+These produce the original ordered MZ relocations at offsets **16, 12**.
+
+Both unlinked CODE targets and linked DATA values are resolved from the member
+and retained MAP; the resulting original 296 bytes and two relocation entries
+match each of the three target views exactly. The calibration-relative source
+position is 34 bytes later in MAIN, identical in OP, and 16 bytes earlier in
+MAINE. This separately closes **888 more previously unknown foreign DATA
+bytes**, leaving the pre-member alignment byte and four post-member bytes in
+each executable explicitly unknown. The public proof and three-artifact review
+decision are regenerated; no game-authored C++ byte is added.

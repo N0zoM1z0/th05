@@ -34,6 +34,13 @@ MEMBERS = {
         "starts": {"main": 0x22A84, "op": 0x11864, "maine": 0x11918},
         "fixups": [(98, 1), (78, 1), (58, 1), (38, 1), (18, 1)],
     },
+    "xxv": {
+        "size": 296,
+        "program_sha256": "b89c4c08bba1551b607344627c107d06bf192274d270d9c1924f79cad439596a",
+        "raw_sha256": "275d37444b55c143153f1e7c75fb9ae2e18cbd0e6be4a635b70a4f711c0f1d64",
+        "starts": {"main": 0x22DB6, "op": 0x11B96, "maine": 0x11C4A},
+        "fixups": [(14, 3), (10, 3)],
+    },
 }
 INPUTS = ["scripts/review_vendor_relocated_data.py", "scripts/review_vendor.py",
           "scripts/review_vendor_data.py", "scripts/lib/borland_library.py",
