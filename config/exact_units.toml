@@ -6279,3 +6279,25 @@ unit = "main-bullet-add-mode-dispatch-data"
 source = "src/main/bullet/add_dispatch_table.cpp"
 find = "    bullets_add_regular_fixedspeed,"
 replace = "    bullets_add_regular,"
+
+[[units]]
+id = "main-shot-laser-raster-coverage-data"
+source = "src/main/player/shot_laser_coverage.c"
+module = "th05/lsrdots.c"
+segment = "_DATA"
+wrapper_options = "-zCSHOT_LASER_COVERAGE_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shot_laser_coverage_bindings.asm"
+target_start = 0x21e66
+size = 5
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shot-laser-raster-coverage-data"
+source = "src/main/player/shot_laser_coverage.c"
+find = "SHOT_LASER_WIDE_WIDTH = 6"
+replace = "SHOT_LASER_WIDE_WIDTH = 4"
