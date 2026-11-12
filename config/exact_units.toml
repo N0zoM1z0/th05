@@ -6103,3 +6103,25 @@ unit = "main-eyecatch-cdg-filename-data"
 source = "src/main/shiftjis/eyecatch_filename.c"
 find = "\"eye.cdg\""
 replace = "\"eye.cdf\""
+
+[[units]]
+id = "main-end-sequence-child-filenames-data"
+source = "src/main/runtime/end_binary_names.c"
+module = "th05/endname.c"
+segment = "_DATA"
+wrapper_options = "-zCEND_BINARY_NAMES_TEXT -zPmain_01"
+bindings_source = "probes/units/main_end_binary_names_bindings.asm"
+target_start = 138766
+size = 12
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-end-sequence-child-filenames-data"
+source = "src/main/runtime/end_binary_names.c"
+find = "extra_end_binary_name[] = \"maine\""
+replace = "extra_end_binary_name[] = \"mainf\""
