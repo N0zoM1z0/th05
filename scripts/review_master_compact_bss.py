@@ -25,6 +25,8 @@ SPECS={
 }
 PARTS=(('JS_STAT',0,4,'JS.ASM','js[bss].asm','js_stat'),
        ('PALETTES',4,48,'PAL.ASM','pal[bss].asm','_Palettes'),
+       ('VSYNC_CORE',52,8,'VS.ASM','vs[bss].asm','_vsync_Count1'),
+       ('VSYNC_DELAY',60,2,'VSYNC.ASM','vsync[bss].asm','vsync_delay_count'),
        ('MEM_WORK',62,8,'MEM.ASM','mem[bss].asm','mem_OutSeg'))
 
 
@@ -38,6 +40,13 @@ def source_shape(raw:bytes,encoding:str,member:str,archived:bool=False):
     elif member=='PALETTES':
         need(len(re.findall(r'(?im)^\s*_Palettes\s+db\s+48\s+dup\s*\(\s*\?\s*\)\s*$',s))==1,
              'Master 16-color writable RGB palette source changed')
+    elif member=='VSYNC_CORE':
+        for key,kind in (('_vsync_Count1','dw'),('_vsync_Count2','dw'),('vsync_OldVect','dd')):
+            need(len(re.findall(r'(?im)^\s*'+key+r'\s+'+kind+r'\s+\?\s*(?:;.*)?$',s))==1,
+                 'original VSYNC counter/vector BSS differs: '+key)
+    elif member=='VSYNC_DELAY':
+        need(len(re.findall(r'(?im)^\s*vsync_delay_count\s+dw\s+\?\s*(?:;.*)?$',s))==1,
+             'original VSYNC divider counter BSS differs')
     elif member=='MEM_WORK':
         for key in ('mem_OutSeg','mem_TopHeap','mem_FirstHole','mem_EndMark'):
             need(len(re.findall(r'(?im)^\s*'+key+r'\s+dw\s+\?\s*$',s))==1,
@@ -97,6 +106,10 @@ def review():
         for member,diff,sz,archivefile,nativefile,firstsym in PARTS:
             if member=='MEM_WORK':
                 localsymbols=[(k,first_local+diff+2*i) for i,k in enumerate(('mem_OutSeg','mem_TopHeap','mem_FirstHole','mem_EndMark'))]
+            elif member=='VSYNC_CORE':
+                localsymbols=[('_vsync_Count1',first_local+diff),
+                              ('_vsync_Count2',first_local+diff+2),
+                              ('_vsync_OldVect',first_local+diff+4)]
             else:localsymbols=[(firstsym,first_local+diff)]
             pub.extend(localsymbols)
             source=(base/'libs/master.lib'/nativefile).read_bytes()
@@ -123,16 +136,11 @@ def review():
                  local_segment_start=first_local+diff,ordered_fixups=[],
                  initialized_source_bytes=0))
         parsed=bss_publics(obj,pub,bss_size)
-        for row in rows[-3:]:row['complete_actual_BSS']=parsed
-        # Never borrow the unrelated ten-byte zero gap between the live
-        # Palettes and MEM work arrays: no visible public source owns it.
-        ctx=UnitContext(ROOT,name);_,target,_=load_unit_target(ctx,ctx.config())
-        need(target.program_image[first_original+52:first_original+62]==b'\0'*10,
-             'unreviewed ten-byte BSS interval changed, keep unknown')
-    return dict(version=1,kind='original-Master-JS-PAL-MEM-unwritten-BSS',
+        for row in rows[-len(PARTS):]:row['complete_actual_BSS']=parsed
+    return dict(version=1,kind='original-Master-JS-PAL-VSYNC-MEM-unwritten-BSS',
          classification='reviewed-uninitialized-vendor-storage',
          source_archive_sha256=parent['inputs']['inner_archive']['sha256'],
-         total_bytes=180,authored_credit=0,source_unclaimed_interstitial_bytes=30,
+         total_bytes=210,authored_credit=0,source_unclaimed_interstitial_bytes=0,
          scopes=rows)
 
 
@@ -140,12 +148,12 @@ def validate(proof):
     parent=json.loads(PARENT.read_text());other=json.loads(OTHER.read_text())
     author=stored_lzh(pinned(ROOT,parent['inputs']['inner_archive']))
     need(proof.get('version')==1 and
-         proof.get('kind')=='original-Master-JS-PAL-MEM-unwritten-BSS' and
+         proof.get('kind')=='original-Master-JS-PAL-VSYNC-MEM-unwritten-BSS' and
          proof.get('classification')=='reviewed-uninitialized-vendor-storage' and
          proof.get('source_archive_sha256')==parent['inputs']['inner_archive']['sha256'] and
-         proof.get('total_bytes')==180 and proof.get('authored_credit')==0 and
-         proof.get('source_unclaimed_interstitial_bytes')==30 and
-         len(proof.get('scopes',[]))==9,'stale/partial source-backed Master compact BSS scope')
+         proof.get('total_bytes')==210 and proof.get('authored_credit')==0 and
+         proof.get('source_unclaimed_interstitial_bytes')==0 and
+         len(proof.get('scopes',[]))==len(SPECS)*len(PARTS),'stale/partial source-backed Master compact BSS scope')
     for i,(name,(build,objname,first_original,first_map,first_local,bss_size)) in enumerate(SPECS.items()):
         pins=parent['inputs'] if name=='main' else other['table_contexts'][name]['inputs']
         info=other['table_contexts'][name] if name!='main' else None
@@ -155,10 +163,13 @@ def validate(proof):
         pubs=[]
         for member,diff,sz,sourcefile,nativefile,firstsym in PARTS:
             if member=='MEM_WORK':pubs.extend((k,first_local+diff+2*k_i) for k_i,k in enumerate(('mem_OutSeg','mem_TopHeap','mem_FirstHole','mem_EndMark')))
+            elif member=='VSYNC_CORE':
+                pubs.extend((k,first_local+diff+offset) for k,offset in
+                            (('_vsync_Count1',0),('_vsync_Count2',2),('_vsync_OldVect',4)))
             else:pubs.append((firstsym,first_local+diff))
         actual_bss=bss_publics(pinned(ROOT,pins['calibration_object']),pubs,bss_size)
         for j,(member,diff,sz,authorfile,nativefile,_) in enumerate(PARTS):
-            row=proof['scopes'][i*3+j]
+            row=proof['scopes'][i*len(PARTS)+j]
             source_shape(author[authorfile],'cp932',member,archived=True)
             source=(root/nativefile).read_bytes()
             source_shape(source,'utf8',member)
@@ -186,6 +197,8 @@ def reviewed_claims(root,views,*,verify_targets=False):
              'compact Master BSS belongs to another decoded target')
         source={'JS_STAT':'JS.ASM/JS_STAT',
                 'PALETTES':'PAL.ASM/PALETTES',
+                'VSYNC_CORE':'VS.ASM/VSYNC_CORE',
+                'VSYNC_DELAY':'VSYNC.ASM/VSYNC_DELAY',
                 'MEM_WORK':'MEM.ASM/MEM_WORK'}[row['member']]
         claims.setdefault(name,[]).append(dict(start=row['start'],end=row['end'],
               kind='reviewed-uninitialized-vendor-storage',
@@ -204,6 +217,6 @@ def main():
     else:proof=json.loads(PROOF.read_text())
     validate(proof)
     if a.check:need(proof==review(),'compact original Master BSS evidence changed')
-    print('PASS: nine verified original Master JS/PAL/MEM writable BSS spans, 180 bytes, zero authored credit')
+    print('PASS: fifteen original Master JS/PAL/VSYNC/MEM BSS spans, 210 bytes, zero authored credit')
 
 if __name__=='__main__':main()

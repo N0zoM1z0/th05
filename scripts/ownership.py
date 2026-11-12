@@ -162,6 +162,8 @@ def overlay_vendor_reservation(size: int, pieces: list[dict], claims: list[dict]
                           ("JS_STAT", "JS.ASM/JS_STAT", 4),
                           ("PALETTES", "PAL.ASM/PALETTES", 48),
                           ("MEM_WORK", "MEM.ASM/MEM_WORK", 8),
+                          ("VSYNC_CORE", "VS.ASM/VSYNC_CORE", 8),
+                          ("VSYNC_DELAY", "VSYNC.ASM/VSYNC_DELAY", 2),
                           ("BFNT_HEADER", "SUPERBFT.ASM/SUPER.INC", 32),
                       }) or
                 type(row.get("start")) is not int or
