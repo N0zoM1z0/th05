@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "713340240792b9bd07e61489513386816ff026bff189e8e5e4dec53dbe425d16",
+  "replay_receipt_sha256": "a73ad0cad00c8f68e517a82fad4bfccb73aa129f9a93bd35d6c8b3413118b807",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 139956,
-    "candidate_start": 139956,
+    "target_start": 140338,
+    "candidate_start": 140338,
     "size": 2,
     "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
-    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+    "candidate_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 139956,
+      "start": 140338,
       "size": 2,
-      "module": "th05/exbframe.c",
+      "module": "th05/prevbon.c",
       "segment": "_DATA"
     }
   },
@@ -758,8 +758,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "5a4f598f0a10de2892237ede44530048a5273f5a50f017f231b2b2a9347771b1",
-            "dependency_timestamp_normalized_sha256": "67f032006376f4c820b2c9782ea7ea2193dfff19399f5135a6acd6826ed7bbd1",
+            "sha256": "ee0b7589ab8eb91d522a7092b49ae0b2b31c5e57b54a7d15e9a112b895cae2e3",
+            "dependency_timestamp_normalized_sha256": "291446cace058eb51e4903ce6eda0f118a8d9428db5c8b0f35e73d4338802a26",
             "module_name": "th05/boss_exp.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -769,16 +769,18 @@
               "src/main/boss/explosion.cpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion_frame.h",
               "src/main/boss/explosion.hpp",
               "src/shared/geometry.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/explosion_choreography.hpp"
             ]
           },
           {
-            "sha256": "93229d4c47db1566583069201989f303f5b23904d54438253841fbe18309da1d",
-            "dependency_timestamp_normalized_sha256": "67f032006376f4c820b2c9782ea7ea2193dfff19399f5135a6acd6826ed7bbd1",
+            "sha256": "f80cc8749c64036052d5dfbccca434e14ef1b903f03f0006a9cdf5d92c81ab0c",
+            "dependency_timestamp_normalized_sha256": "291446cace058eb51e4903ce6eda0f118a8d9428db5c8b0f35e73d4338802a26",
             "module_name": "th05/boss_exp.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -788,17 +790,47 @@
               "src/main/boss/explosion.cpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
+              "src/main/boss/explosion_frame.h",
               "src/main/boss/explosion.hpp",
               "src/shared/geometry.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/explosion_choreography.hpp"
             ]
           }
         ],
         "producer_paths": [
           "group-0/a/source",
           "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_exp.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/boss_exp.cpp"
+          ]
         ],
         "source_inputs": [
           {
@@ -807,11 +839,19 @@
           },
           {
             "path": "src/main/boss/explosion.cpp",
-            "sha256": "8891c2ee5d3b01df49fa1289a4095bf68199bbf710611b3d6d62bb29c8c9e3e4"
+            "sha256": "92711531b4ed67bb5238f3bb3278dd4016ba4394322ab93268f5ff7e5c77ffcb"
           },
           {
             "path": "src/main/boss/explosion.hpp",
             "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          },
+          {
+            "path": "src/main/boss/explosion_choreography.hpp",
+            "sha256": "25d0db5a8fbd6a797cbea816eac0466e9caa4a2ee63c89ee1c19dec06745aa56"
+          },
+          {
+            "path": "src/main/boss/explosion_frame.h",
+            "sha256": "4e783f65bf80d8401a3682c57717f5c20fb25c86911e17073555d008743351d9"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -831,11 +871,19 @@
         },
         {
           "path": "src/main/boss/explosion.cpp",
-          "sha256": "8891c2ee5d3b01df49fa1289a4095bf68199bbf710611b3d6d62bb29c8c9e3e4"
+          "sha256": "92711531b4ed67bb5238f3bb3278dd4016ba4394322ab93268f5ff7e5c77ffcb"
         },
         {
           "path": "src/main/boss/explosion.hpp",
           "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+        },
+        {
+          "path": "src/main/boss/explosion_choreography.hpp",
+          "sha256": "25d0db5a8fbd6a797cbea816eac0466e9caa4a2ee63c89ee1c19dec06745aa56"
+        },
+        {
+          "path": "src/main/boss/explosion_frame.h",
+          "sha256": "4e783f65bf80d8401a3682c57717f5c20fb25c86911e17073555d008743351d9"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -848,7 +896,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "d59144dce0a4ab8ee9b93ad7763a28239e12c42617442d4659d8d1f8ad625289",
+      "replay_receipt_sha256": "222b56f897694739f2087d70ce79faea63eb75e8496323058f4bdfe5daf1112a",
       "compiled_negative_control": {
         "target_start": 67086,
         "candidate_start": 67086,
@@ -879,10 +927,10 @@
         "mutation": {
           "unit": "main-boss-explosion",
           "source": "src/main/boss/explosion.cpp",
-          "find": "(p).age >= 32",
-          "replace": "(p).age >= 33"
+          "find": "(p).age >= BEXP_LIFETIME_FRAMES",
+          "replace": "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
         },
-        "control_sha256": "4ed082731b4e5beba5b3da5291c2d7b829fffaef35aaf5b528ba9a002ac7a2ac",
+        "control_sha256": "ae5968f30a08f54be9619ad7b717a49978a67cb3980b3287f2cf625fd4a641a9",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 67086,
@@ -907,8 +955,43 @@
           ],
           "fixups_exact": true,
           "exact": false
-        }
-      }
+        },
+        "omf": {
+          "sha256": "be860de34415dfd1ecc4d9c716e30d1cf3537b57a10bfa4f82c34692e6b5060e",
+          "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
+          "module_name": "th05/boss_exp.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/boss_exp.cpp",
+            "src/main/boss/explosion.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/explosion_frame.h",
+            "src/main/boss/explosion.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/explosion_choreography.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/boss_exp.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-hud-overlay",
@@ -56047,7 +56130,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "81ced81f3526c8cab4fdb99b6fe8d7afb05600687d82b8b54b11669681586f80",
+            "sha256": "3a49dd056df2387a68da36983650dffac8193e492882ef25e3f44a5facc6b6f3",
             "dependency_timestamp_normalized_sha256": "c898d24502bdcb9be275b0e114d079a9dc82e4d0bc6a8a7230c3c5fcdc3ce921",
             "module_name": "th05/bonus.cpp",
             "translator_comments": [
@@ -56071,7 +56154,7 @@
             ]
           },
           {
-            "sha256": "4346ffe35518aae7d12cb867d760234e9444172a56631ea9a73298e61d533614",
+            "sha256": "349b97aeb32f0bfb45a8b60b4c1621d0c155862a191f3c751f7cd8b519caaee5",
             "dependency_timestamp_normalized_sha256": "c898d24502bdcb9be275b0e114d079a9dc82e4d0bc6a8a7230c3c5fcdc3ce921",
             "module_name": "th05/bonus.cpp",
             "translator_comments": [
@@ -56215,7 +56298,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8d8e634226a490b239b38624ae150e4812c7d67d774ff5602297833c3e4a7efd",
+      "replay_receipt_sha256": "5d6579ae0b9e8080f1018466ba0b74178ac1b97de797b33bd0d84f7b632860b7",
       "compiled_negative_control": {
         "target_start": 116634,
         "candidate_start": 116634,
@@ -56320,7 +56403,7 @@
           }
         },
         "omf": {
-          "sha256": "90a4a8cee818c4614b5ee7d22f8d4ccbf78d94318863a1bf086e9f4131d72f54",
+          "sha256": "e69502d0c468d89b942c11af2679d063a8527cced8e6f84896a8539cc009cbe0",
           "dependency_timestamp_normalized_sha256": "6854fc4a4e1efc82dc3f2f712035532a4971ab745c0bd62e45bd4d601d29d099",
           "module_name": "th05/bonus.cpp",
           "translator_comments": [
@@ -56462,7 +56545,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "81ced81f3526c8cab4fdb99b6fe8d7afb05600687d82b8b54b11669681586f80",
+            "sha256": "3a49dd056df2387a68da36983650dffac8193e492882ef25e3f44a5facc6b6f3",
             "dependency_timestamp_normalized_sha256": "c898d24502bdcb9be275b0e114d079a9dc82e4d0bc6a8a7230c3c5fcdc3ce921",
             "module_name": "th05/bonus.cpp",
             "translator_comments": [
@@ -56486,7 +56569,7 @@
             ]
           },
           {
-            "sha256": "4346ffe35518aae7d12cb867d760234e9444172a56631ea9a73298e61d533614",
+            "sha256": "349b97aeb32f0bfb45a8b60b4c1621d0c155862a191f3c751f7cd8b519caaee5",
             "dependency_timestamp_normalized_sha256": "c898d24502bdcb9be275b0e114d079a9dc82e4d0bc6a8a7230c3c5fcdc3ce921",
             "module_name": "th05/bonus.cpp",
             "translator_comments": [
@@ -56630,7 +56713,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8d8e634226a490b239b38624ae150e4812c7d67d774ff5602297833c3e4a7efd",
+      "replay_receipt_sha256": "5d6579ae0b9e8080f1018466ba0b74178ac1b97de797b33bd0d84f7b632860b7",
       "compiled_negative_control": {
         "target_start": 116634,
         "candidate_start": 116634,
@@ -56735,7 +56818,7 @@
           }
         },
         "omf": {
-          "sha256": "90a4a8cee818c4614b5ee7d22f8d4ccbf78d94318863a1bf086e9f4131d72f54",
+          "sha256": "e69502d0c468d89b942c11af2679d063a8527cced8e6f84896a8539cc009cbe0",
           "dependency_timestamp_normalized_sha256": "6854fc4a4e1efc82dc3f2f712035532a4971ab745c0bd62e45bd4d601d29d099",
           "module_name": "th05/bonus.cpp",
           "translator_comments": [
@@ -104852,7 +104935,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "06c91c9731bfd31fe029dcff065832685d758163ee387b6f623093114dc6872f",
+            "sha256": "7298eadd9c33104efd0bb9cdf9347a50072bd04294a0c2865efa538bdab232bf",
             "dependency_timestamp_normalized_sha256": "e213568ed38ac6fdf580da8886c7b8805e3da9c9187b13b584cf6c9d76a5eba4",
             "module_name": "th05/prevbon.c",
             "translator_comments": [
@@ -104879,7 +104962,7 @@
             }
           },
           {
-            "sha256": "9b8a3fc4143f4cbb137974adb53789bf0404bb28eb5eb7100a1825f1ed2decaf",
+            "sha256": "24880942134be8e9d8c62fa5ccb247d9fd68c601dd20198a209eb85a86058e92",
             "dependency_timestamp_normalized_sha256": "e213568ed38ac6fdf580da8886c7b8805e3da9c9187b13b584cf6c9d76a5eba4",
             "module_name": "th05/prevbon.c",
             "translator_comments": [
@@ -104970,7 +105053,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "2be76fb2aa0e6ccc7e587b9ad16bd286e6eb310347fb589ed1ec54e2f7302934",
+      "replay_receipt_sha256": "a73ad0cad00c8f68e517a82fad4bfccb73aa129f9a93bd35d6c8b3413118b807",
       "compiled_negative_control": {
         "target_start": 140338,
         "candidate_start": 140338,
@@ -105023,7 +105106,7 @@
           }
         },
         "omf": {
-          "sha256": "19584c4e13487b9a470fd591dca15a27bb3fe9195ed93be4d7bdd498bef1e286",
+          "sha256": "c44ce0ff407e59b2e12081c2028f05297e7ffb84b4e8e051f706cdd7833dcee2",
           "dependency_timestamp_normalized_sha256": "d800e679ba0392debde5f011cbb1b0436900fb28c9b2e0bbd0d5a3a9a4c79856",
           "module_name": "th05/prevbon.c",
           "translator_comments": [
@@ -105380,7 +105463,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "32b5fd130bddac9531416b62d5db7862171740ee185714d6eaffd2aa1baa3394",
+            "sha256": "374f7293e94732f6e6aa9c91aa1588d35cf310ca8d7a20acdab59fb686fb2e40",
             "dependency_timestamp_normalized_sha256": "a347d53bc398dee57ecf7e763cd1b841f9ce4b88568252ad78954ab68365e25d",
             "module_name": "th05/exbframe.c",
             "translator_comments": [
@@ -105407,7 +105490,7 @@
             }
           },
           {
-            "sha256": "a6627ac0e20c7ffc829bc341734f050730aa592b197c7748c971f683bed1b229",
+            "sha256": "374f7293e94732f6e6aa9c91aa1588d35cf310ca8d7a20acdab59fb686fb2e40",
             "dependency_timestamp_normalized_sha256": "a347d53bc398dee57ecf7e763cd1b841f9ce4b88568252ad78954ab68365e25d",
             "module_name": "th05/exbframe.c",
             "translator_comments": [
@@ -105498,7 +105581,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "713340240792b9bd07e61489513386816ff026bff189e8e5e4dec53dbe425d16",
+      "replay_receipt_sha256": "0d2a5438cf32a22ec7bebcfec424915a16d722504989a8ad7d1b712e2ddf8769",
       "compiled_negative_control": {
         "target_start": 139956,
         "candidate_start": 139956,
@@ -105551,7 +105634,7 @@
           }
         },
         "omf": {
-          "sha256": "e051e827b5f723033df0eca4b18bf20eabacc0d4872a126e3e74887118fe3c92",
+          "sha256": "8d14c2ed22b5a2337eed89de784da0da03d895a5be857ca94300e80f48a8e609",
           "dependency_timestamp_normalized_sha256": "969500e98e6401e9cafafbc5c9dd1c24d3b4554349fec75eb6b87e3264b1ed0b",
           "module_name": "th05/exbframe.c",
           "translator_comments": [

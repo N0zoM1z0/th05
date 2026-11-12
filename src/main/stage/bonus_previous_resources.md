@@ -49,3 +49,20 @@ counters. The full Stage Clear and All Clear CODE were already separately
 native-source accepted; their correct DS addresses were never changed.
 No target bytes were falsified, no original resource asset or neighboring
 state was claimed, and no whole MAIN cold replay was performed.
+
+## Native correctness of actual two-complete-function score callers
+
+Following the initialized-DATA address correction, both complete
+561-byte Stage Clear and 579-byte All Clear original source functions
+were independently recompiled twice. Their actual ordered original
+fixups, near Pascal returns, and source-defined previous Miss/Bomb
+reads/writes remain exact with the true DS `1A62/1A63` byte addresses,
+not the unrelated Boss explosion frame at DS `18E4`. The two-byte C
+provider is likewise recompiled in its correct prefix with a compiled
+zero-to-one negative rejected. Source-current receipts:
+
+- `.analysis/unit-replays/gpt-web-bonus-real-address-calls-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-bonus-real-address-data-b/receipt.json`
+
+See `src/main/boss/explosion_choreography.md` for the separate
+452-byte Boss explosion consumer and corrected C frame evidence.

@@ -93,8 +93,8 @@ bindings_source = "probes/units/boss_explosion_bindings.asm"
 [[controls]]
 unit = "main-boss-explosion"
 source = "src/main/boss/explosion.cpp"
-find = "(p).age >= 32"
-replace = "(p).age >= 33"
+find = "(p).age >= BEXP_LIFETIME_FRAMES"
+replace = "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
 
 [[units]]
 id = "main-hud-overlay"

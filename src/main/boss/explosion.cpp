@@ -2,13 +2,15 @@
 #pragma option -zCBOSS_EXP_TEXT
 
 #include <dos.h>
+#include "src/main/boss/explosion_frame.h"
 #include "src/main/boss/explosion.hpp"
+#include "src/main/boss/explosion_choreography.hpp"
 
 #define explosion_update(p) { \
     (p).radius_cur.x.v += (p).radius_delta.x.v; \
     (p).radius_cur.y.v += (p).radius_delta.y.v; \
     (p).age++; \
-    if((p).age >= 32) { \
+    if((p).age >= BEXP_LIFETIME_FRAMES) { \
         (p).alive = false; \
     } \
 }
@@ -16,9 +18,9 @@
 void near explosions_small_update_and_render(void)
 {
     enum {
-        SPRITE_W = 16,
-        SPRITE_H = 16,
-        SPRITES = 64
+        SPRITE_W = BEXP_SMALL_SPRITE_W,
+        SPRITE_H = BEXP_SMALL_SPRITE_H,
+        SPRITES = BEXP_SMALL_RING_SPRITES
     };
 
     _ES = SEG_PLANE_B;
@@ -48,7 +50,7 @@ void near explosions_small_update_and_render(void)
                 z_super_roll_put_tiny_16x16(left, top, PAT_EXPLOSION_SMALL);
             }
             sprite++;
-            angle += (0x100 / SPRITES);
+            angle += (BEXP_FULL_CIRCLE_ANGLE / SPRITES);
 
             #undef top
             #undef left
@@ -63,9 +65,9 @@ void near explosions_big_update_and_render(void)
 {
     enum {
         // Retain the original 64x64 assumption although the sprite is 48x48.
-        SPRITE_W = 64,
-        SPRITE_H = 64,
-        SPRITES = 16
+        SPRITE_W = BEXP_BIG_CLIP_ASSUMED_W,
+        SPRITE_H = BEXP_BIG_CLIP_ASSUMED_H,
+        SPRITES = BEXP_BIG_RING_SPRITES
     };
 
     #define frame explosion_big_frame
@@ -89,17 +91,17 @@ void near explosions_big_update_and_render(void)
                 super_put(x_left, y.top, PAT_EXPLOSION_BIG);
             }
             sprite++;
-            angle += (0x100 / SPRITES);
+            angle += (BEXP_FULL_CIRCLE_ANGLE / SPRITES);
         }
         explosion_update(p);
 
         frame++;
-        if((frame < 8) && (frame & 1)) {
-            palette_settone_deferred(150);
-        } else if((frame >= 8) && (frame < 16)) {
-            palette_settone_deferred(100 + (16 * 6) - (frame * 6));
+        if((frame < BEXP_BIG_FLASH_END_FRAME) && (frame & BEXP_BIG_ODD_FRAME_MASK)) {
+            palette_settone_deferred(BEXP_BIG_FLASH_TONE);
+        } else if((frame >= BEXP_BIG_FLASH_END_FRAME) && (frame < BEXP_BIG_FADE_END_FRAME)) {
+            palette_settone_deferred(BEXP_BASE_TONE + (BEXP_BIG_FADE_END_FRAME * BEXP_FADE_TONE_PER_FRAME) - (frame * BEXP_FADE_TONE_PER_FRAME));
         } else {
-            palette_settone_deferred(100);
+            palette_settone_deferred(BEXP_BASE_TONE);
         }
     } else {
         frame = 0;

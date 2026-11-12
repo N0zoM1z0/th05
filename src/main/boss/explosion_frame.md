@@ -38,3 +38,16 @@ This restores the correct physical and source semantic ownership,
 without adding fake instructions or doing a whole-program cold replay.
 The entire original 452-byte Boss explosion consumer is independently
 verified after its separate source ABI is connected.
+
+## Complete original 452-byte renderer and corrected score consumers
+
+The original two-function big/small Boss explosion C++ source now imports
+its true C frame owner and shares the native original 32-frame lifetime,
+odd-frame flash and 8–15 frame fade constants with its frame code.
+Original CODE bytes and ordered fixups are exact under
+`.analysis/unit-replays/gpt-web-boss-explosion-native-choreography-a/receipt.json`.
+The independent current two-byte C initializer also passes its own
+compiled negative at
+`.analysis/unit-replays/gpt-web-boss-explosion-own-c-data-b/receipt.json`.
+Both score consumers and their separate data have also been recompiled
+at the correct score location. See `explosion_choreography.md`.
