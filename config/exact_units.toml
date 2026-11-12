@@ -2105,8 +2105,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-yumeko-spreads"
 source = "src/main/boss/yumeko/spreads.inl"
-find = "boss.phase_frame == 256"
-replace = "boss.phase_frame == 257"
+find = "boss.phase_frame == YSP_COUNTERROTATE_END_FRAME"
+replace = "boss.phase_frame == YSP_COUNTERROTATE_END_FRAME + 1"
 
 [[units]]
 id = "main-exalice-laser-patterns"
