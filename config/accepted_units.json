@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "3f90bb20d0251bf514d06f850fdab5fe04bc2ba16be43555ff2eafa519f7c8bf",
+  "replay_receipt_sha256": "8fdbbd9f599f19b3d0889c7b735e449d20ac8a655e7b6b00be3ce05e394445fd",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 135688,
-    "candidate_start": 135688,
-    "size": 16,
-    "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
-    "candidate_sha256": "3429b6ec21b618f40f3b631cf4aa6df677159f225c89a23826fad9a24fccf40b",
+    "target_start": 133754,
+    "candidate_start": 133754,
+    "size": 8,
+    "target_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+    "candidate_sha256": "f0801abf5adaa0db5a8292f0eb1bf0b9474f25812b4e6e7040a4020f226eeb66",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 135688,
-      "size": 16,
-      "module": "th05/mainvram.c",
+      "start": 133754,
+      "size": 8,
+      "module": "th05/eye_fn.c",
       "segment": "_DATA"
     }
   },
@@ -96479,6 +96479,262 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-vram-plane-frames-data"
+      ]
+    },
+    {
+      "id": "main-eyecatch-cdg-filename-data",
+      "entry_sha256": "0669dd623d9a8d42ce63585758c9f21b25c9e8b6615c5b7e6d891975a4f4201f",
+      "result": {
+        "id": "main-eyecatch-cdg-filename-data",
+        "entry_sha256": "0669dd623d9a8d42ce63585758c9f21b25c9e8b6615c5b7e6d891975a4f4201f",
+        "rounds": [
+          {
+            "target_start": 133754,
+            "candidate_start": 133754,
+            "size": 8,
+            "target_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+            "candidate_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133754,
+              "size": 8,
+              "module": "th05/eye_fn.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133754,
+            "candidate_start": 133754,
+            "size": 8,
+            "target_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+            "candidate_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133754,
+              "size": 8,
+              "module": "th05/eye_fn.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "cc6c82a3cb7aab4c91befbefdd7577813eaaa01c14e288cac372fe297fa2ab90",
+            "dependency_timestamp_normalized_sha256": "5484f847721e766ef1c2ac06e50e7de4539a6d9ee6277fd4049949f3d24c5e4f",
+            "module_name": "th05/eye_fn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/eye_fn.c",
+              "src/main/shiftjis/eyecatch_filename.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "2babcb135de8548479f86222ca9cdddf3fa209c58fec7761fa6f0a377baa215c",
+            "dependency_timestamp_normalized_sha256": "5484f847721e766ef1c2ac06e50e7de4539a6d9ee6277fd4049949f3d24c5e4f",
+            "module_name": "th05/eye_fn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/eye_fn.c",
+              "src/main/shiftjis/eyecatch_filename.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/eye_fn.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/eye_fn.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_eyecatch_filename_bindings.asm",
+            "sha256": "3eaf8865962df13f1ebbdfbdbec4f747a0320d56e5b4b123197da916794fae04"
+          },
+          {
+            "path": "src/main/shiftjis/eyecatch_filename.c",
+            "sha256": "bfae2e067c4071fa5d33f85eeff7f34ef69e7d0131e13ef1fb2bbf5a85fdf28a"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_eyecatch_filename_bindings.asm",
+          "sha256": "3eaf8865962df13f1ebbdfbdbec4f747a0320d56e5b4b123197da916794fae04"
+        },
+        {
+          "path": "src/main/shiftjis/eyecatch_filename.c",
+          "sha256": "bfae2e067c4071fa5d33f85eeff7f34ef69e7d0131e13ef1fb2bbf5a85fdf28a"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "8fdbbd9f599f19b3d0889c7b735e449d20ac8a655e7b6b00be3ce05e394445fd",
+      "compiled_negative_control": {
+        "target_start": 133754,
+        "candidate_start": 133754,
+        "size": 8,
+        "target_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+        "candidate_sha256": "f0801abf5adaa0db5a8292f0eb1bf0b9474f25812b4e6e7040a4020f226eeb66",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133754,
+          "size": 8,
+          "module": "th05/eye_fn.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-eyecatch-cdg-filename-data",
+        "entry_sha256": "0669dd623d9a8d42ce63585758c9f21b25c9e8b6615c5b7e6d891975a4f4201f",
+        "mutation": {
+          "unit": "main-eyecatch-cdg-filename-data",
+          "source": "src/main/shiftjis/eyecatch_filename.c",
+          "find": "\"eye.cdg\"",
+          "replace": "\"eye.cdf\""
+        },
+        "control_sha256": "7b8b4658e2a606d6af08f0ac83665fb8ad3864477ae42619cad3b8f4140ebe48",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133754,
+          "candidate_start": 133754,
+          "size": 8,
+          "target_sha256": "5bacd49d56413b8ab337bf4bf98209cb3ddc83d7a93b537d32ac0ffeaf760658",
+          "candidate_sha256": "f0801abf5adaa0db5a8292f0eb1bf0b9474f25812b4e6e7040a4020f226eeb66",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133754,
+            "size": 8,
+            "module": "th05/eye_fn.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "b4aaa00e86244a1469f893fd1111ffc526128920ed9a86a5bf8b1c9fd2293022",
+          "dependency_timestamp_normalized_sha256": "18a0a6b50709d02cba1514cad6d55f1cdb8769b1ee1bbadc160a277d9a4f438c",
+          "module_name": "th05/eye_fn.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/eye_fn.c",
+            "src/main/shiftjis/eyecatch_filename.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 8,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 8,
+                "sha256": "f0801abf5adaa0db5a8292f0eb1bf0b9474f25812b4e6e7040a4020f226eeb66"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/eye_fn.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-eyecatch-cdg-filename-data"
       ]
     }
   ]

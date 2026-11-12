@@ -6081,3 +6081,25 @@ unit = "main-vram-plane-frames-data"
 source = "src/shared/hardware/vram_plane_frames.h"
 find = "VRAM_SEGMENT_RED = 0xB000"
 replace = "VRAM_SEGMENT_RED = 0xB010"
+
+[[units]]
+id = "main-eyecatch-cdg-filename-data"
+source = "src/main/shiftjis/eyecatch_filename.c"
+module = "th05/eye_fn.c"
+segment = "_DATA"
+wrapper_options = "-zCEYECATCH_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_eyecatch_filename_bindings.asm"
+target_start = 133754
+size = 8
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-eyecatch-cdg-filename-data"
+source = "src/main/shiftjis/eyecatch_filename.c"
+find = "\"eye.cdg\""
+replace = "\"eye.cdf\""
