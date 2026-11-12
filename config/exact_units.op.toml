@@ -1402,3 +1402,26 @@ unit = "op-vram-plane-frames-data"
 source = "src/shared/hardware/vram_plane_frames.h"
 find = "VRAM_SEGMENT_GREEN = 0xB800"
 replace = "VRAM_SEGMENT_GREEN = 0xB810"
+
+[[units]]
+id = "op-pi-masked-fade-patterns-data"
+source = "src/op/hardware/pi_mask_patterns.c"
+module = "th05/oppi_msk.c"
+segment = "_DATA"
+wrapper_options = "-zCOP_PI_MASK_DATA_TEXT -zPop_01"
+bindings_source = "probes/units/op_pi_mask_patterns_bindings.asm"
+binary = "O"
+target_start = 0xFA44
+size = 32
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "op-pi-masked-fade-patterns-data"
+source = "src/op/hardware/pi_mask_patterns.c"
+find = "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_3"
+replace = "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_2"

@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "291151a842070d5a75a12879e02e6697db9bb2510edf1d1321de815a967de362",
+  "replay_receipt_sha256": "c43d7b28d7e95bbdd3d0fc90cc1df0b5a2e1ef3f6b5498aeacd5818f33931a99",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 64132,
-    "candidate_start": 64132,
-    "size": 16,
-    "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
-    "candidate_sha256": "2b1a7b63438388bf165bba0ce13730dd22a61de31563008624ef2b11075f9fb2",
+    "target_start": 64068,
+    "candidate_start": 64068,
+    "size": 32,
+    "target_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+    "candidate_sha256": "25ec051208d6475910ad07f39ba1b08bcc32ff024bb92aababecb2c62bbe57d7",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 64132,
-      "size": 16,
-      "module": "th05/opvram.c",
+      "start": 64068,
+      "size": 32,
+      "module": "th05/oppi_msk.c",
       "segment": "_DATA"
     }
   },
@@ -44352,6 +44352,318 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "op-vram-plane-frames-data"
+      ]
+    },
+    {
+      "id": "op-pi-masked-fade-patterns-data",
+      "entry_sha256": "ff85a690e00d7804dbd11d953d5055d094be6fcc1cd648a814d417c36479a229",
+      "result": {
+        "id": "op-pi-masked-fade-patterns-data",
+        "entry_sha256": "ff85a690e00d7804dbd11d953d5055d094be6fcc1cd648a814d417c36479a229",
+        "rounds": [
+          {
+            "target_start": 64068,
+            "candidate_start": 64068,
+            "size": 32,
+            "target_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+            "candidate_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 64068,
+              "size": 32,
+              "module": "th05/oppi_msk.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 64068,
+            "candidate_start": 64068,
+            "size": 32,
+            "target_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+            "candidate_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 64068,
+              "size": 32,
+              "module": "th05/oppi_msk.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "494a4cf31298811fb8fa7680fa6b344fdb165d76d0cdd75b69aecdd7ad2d8d61",
+            "dependency_timestamp_normalized_sha256": "0400ead34ee6625c2f6b1398f75d9a322e886c21fc4746d9a1075653f769a071",
+            "module_name": "th05/oppi_msk.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/oppi_msk.c",
+              "src/op/hardware/pi_mask_patterns.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 32,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 32,
+                  "sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "b2e194c6e1c2e0585083754423ff353b9ed69d69be63caf4a79d5136fbdaf077",
+            "dependency_timestamp_normalized_sha256": "0400ead34ee6625c2f6b1398f75d9a322e886c21fc4746d9a1075653f769a071",
+            "module_name": "th05/oppi_msk.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/oppi_msk.c",
+              "src/op/hardware/pi_mask_patterns.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 32,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 32,
+                  "sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/oppi_msk.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/oppi_msk.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_pi_mask_patterns_bindings.asm",
+            "sha256": "5271222f0efe604928847570bd8be5e548160005fb69416adcbe715f0dea0d00"
+          },
+          {
+            "path": "src/op/hardware/pi_mask_patterns.c",
+            "sha256": "e4da12d919c8b1d5ef894cfc665a5c1213ff8c4f0ca026800a77ead491ce6613"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_pi_mask_patterns_bindings.asm",
+          "sha256": "5271222f0efe604928847570bd8be5e548160005fb69416adcbe715f0dea0d00"
+        },
+        {
+          "path": "src/op/hardware/pi_mask_patterns.c",
+          "sha256": "e4da12d919c8b1d5ef894cfc665a5c1213ff8c4f0ca026800a77ead491ce6613"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c43d7b28d7e95bbdd3d0fc90cc1df0b5a2e1ef3f6b5498aeacd5818f33931a99",
+      "compiled_negative_control": {
+        "target_start": 64068,
+        "candidate_start": 64068,
+        "size": 32,
+        "target_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+        "candidate_sha256": "25ec051208d6475910ad07f39ba1b08bcc32ff024bb92aababecb2c62bbe57d7",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 64068,
+          "size": 32,
+          "module": "th05/oppi_msk.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "op-pi-masked-fade-patterns-data",
+        "entry_sha256": "ff85a690e00d7804dbd11d953d5055d094be6fcc1cd648a814d417c36479a229",
+        "mutation": {
+          "unit": "op-pi-masked-fade-patterns-data",
+          "source": "src/op/hardware/pi_mask_patterns.c",
+          "find": "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_3",
+          "replace": "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_2"
+        },
+        "control_sha256": "77beec46ea05e8250c42db07b9bdb4560cde3992368e252ad5df90fd16289c1b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 64068,
+          "candidate_start": 64068,
+          "size": 32,
+          "target_sha256": "8594dd2751d532c98c45d91a08fff84009cbad171835e0093e50cfd9096a8871",
+          "candidate_sha256": "25ec051208d6475910ad07f39ba1b08bcc32ff024bb92aababecb2c62bbe57d7",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 64068,
+            "size": 32,
+            "module": "th05/oppi_msk.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "6a00418178f154eff1344a387cc71685e0acd45d67efcdc9e94f02f689132bc3",
+          "dependency_timestamp_normalized_sha256": "419b67a23d29034238aaf0c1c2739a687e46fb2b250845dc4353f1c89e8f81dd",
+          "module_name": "th05/oppi_msk.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/oppi_msk.c",
+            "src/op/hardware/pi_mask_patterns.c",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 32,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 32,
+                "sha256": "25ec051208d6475910ad07f39ba1b08bcc32ff024bb92aababecb2c62bbe57d7"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/oppi_msk.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "op-pi-masked-fade-patterns-data"
       ]
     }
   ],
