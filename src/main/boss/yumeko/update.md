@@ -155,3 +155,17 @@ The compiled final turn-count mutation was rejected. All edits are
 semantic source recovery of already accepted CODE; they do not create
 additional byte credit, nor accept the still-unresolved natural C++
 `swords_update()` alternative.
+
+## Complete Yumeko HP/final attack source-closing sweep (2026-11-12)
+
+The original 884-byte far-Pascal Boss controller and independently
+accepted 321-byte sword sweep now share the same source-level original
+charge timing, rank-specific sword-spacing and final ring health/
+rotation protocol. The complete source keeps HP=8300, the physical
+one-byte Boss phase-state aliases, the real `swords_update()` call,
+two special-bullet turns and parity-selected final ring. Both entire
+original code scopes including the 22-byte switch table and checked
+alignment pass independent native Borland compiler rounds; the
+sweep recycle speed and final turn-count negatives are compiled and
+rejected. Evidence and detailed original rules:
+`src/main/boss/yumeko/sweep_combat_rules.md`.

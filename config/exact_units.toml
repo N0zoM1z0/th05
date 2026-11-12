@@ -2234,8 +2234,8 @@ origin = "compiler-generated-cxx"
 id = "yumeko-final-turn-count"
 unit = "main-yumeko-update"
 source = "src/main/boss/yumeko/update.cpp"
-find = "bullet_special.turns_max = 2;"
-replace = "bullet_special.turns_max = 3;"
+find = "bullet_special.turns_max = YSW_FINAL_TURNS_MAX;"
+replace = "bullet_special.turns_max = (YSW_FINAL_TURNS_MAX + 1);"
 
 [[units]]
 id = "main-yumeko-sweep"
@@ -2256,8 +2256,8 @@ origin = "compiler-generated-cxx"
 id = "yumeko-sweep-volley-speed-limit"
 unit = "main-yumeko-sweep"
 source = "src/main/boss/yumeko/sweep.cpp"
-find = "bullet_template.speed.v > 6 * 16"
-replace = "bullet_template.speed.v > 7 * 16"
+find = "bullet_template.speed.v > YSW_BURST_RECYCLE_THRESHOLD_SUBPX"
+replace = "bullet_template.speed.v > (YSW_BURST_RECYCLE_THRESHOLD_SUBPX + 16)"
 
 [[units]]
 id = "main-yumeko-swords-add"

@@ -5,6 +5,7 @@
 #include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #include "src/main/boss/yumeko/phase_timing.hpp"
 #include "src/main/boss/yumeko/mobile_attack_rules.hpp"
+#include "src/main/boss/yumeko/sweep_combat_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 // Applied after canonical record declarations. The original semantic switch
 // table has a genuine word boundary relative to this odd-address contribution.
@@ -12,7 +13,7 @@
 
 #define yumeko_final_angle yumeko_final_scratch.advancing_angle
 #define yumeko_final_rings yumeko_final_scratch.completed_rings
-static const int YUMEKO_HP_TOTAL = 8300;
+static const int YUMEKO_HP_TOTAL = YSW_BOSS_TOTAL_HP;
 
 enum YumekoPhase {
     YUMEKO_PHASE_HP_FILL = 0,
@@ -46,14 +47,14 @@ void near yumeko_pattern_final_ring(void)
             bullet_template_tune();
             snd_se_play(YUMEKO_FINAL_RING_CHARGE_SE);
             yumeko_final_rings = 0;
-            bullet_special.turns_max = 2;
+            bullet_special.turns_max = YSW_FINAL_TURNS_MAX;
             yumeko_final_angle = 0;
         }
         return;
     }
     if((boss.phase_frame % YUMEKO_FINAL_RING_INTERVAL_FRAMES) == 0) {
         bullet_template.angle = yumeko_final_angle;
-        if((yumeko_final_rings & 1) != 0) {
+        if((yumeko_final_rings & YSW_FINAL_RING_PARITY_MASK) != 0) {
             bullet_template_special_angle.turn_by = YUMEKO_FINAL_RING_TURN_ANGLE;
             bullet_template.angle = YUMEKO_FINAL_RING_REFLECT_ANGLE - bullet_template.angle;
         } else {

@@ -41,3 +41,17 @@ transcribed into assembly and no accepted source/header/core file is changed.
 raw comparisons and the complete original ordered fixups. Its own meaningful
 source mutation is compiled and rejected. The complete function and321
 instruction bytes are accepted, with no tables, padding, DATA or BSS credit.
+
+## Shared original 884-byte Boss HP/final-ring contract (2026-11-12)
+
+The complete 321-byte sweep now names its actual eight-frame alternating
+sword launch, four-frame accelerating bullet burst, 376-pixel turn and
+rank-specific sword spacing. It shares source-level `sweep_combat_rules.hpp`
+with the accepted complete 884-byte Yumeko Boss update, including its
+8300 HP initialization, original two-turn final ring and real 22-byte
+compiler switch table. Both complete units, real fixups and both
+compiled semantic negative controls pass native double-producer
+replay at
+`.analysis/unit-replays/gpt-web-yumeko-sweep-and-884-boss-b/receipt.json`.
+This does not resolve or recredit the separate natural-C++ 283-byte
+sword updater; its existing reviewed ASM is untouched.
