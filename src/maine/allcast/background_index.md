@@ -31,3 +31,24 @@ DATA ownership, all original raw bytes and every original ordered segment
 fixup. The compiled mutation of the first program's quarter selector from
 three to two is rejected. The accepted filename producer remains unchanged
 and requires no cold replay.
+
+## Consolidated source identity after dirty-worktree reconciliation
+
+A separate, uncommitted `background_schedule.cpp` proposal was present in
+the live worktree after the 192-byte acceptance checkpoint. It declared
+the exact same `BG_FN`/`BG_QUARTER` bytes and the same target interval, so
+accepting it independently would have double-owned all 192 bytes. Rather
+than leave or silently discard that work, its useful seven-filename row
+macro was integrated into the canonical `background_index.cpp`, retaining
+the original four-by-eight shape and every distinct 10-byte filename
+reference. The source now explicitly captures the actual **C linkage** of
+`allcast_background_filenames`, which is compiled by the separate C unit.
+
+The duplicate untracked source, duplicate binder and extra manifest entry
+were retired as one coherent reconciliation; no accepted owner or source
+initializer was dropped. Focused replay
+`.analysis/unit-replays/gpt-web-maine-allcast-index-dirty-merged-a/receipt.json`
+recompiled the canonical owner twice, exactly reproduced the full 192
+original bytes, all 28 ordered far-pointer fixups, the complete DATA
+OMF/MAP contribution, and rejected its compiled quarter-change negative.
+Only this affected accepted unit needed rebuilding.
