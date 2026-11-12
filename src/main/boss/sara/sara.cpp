@@ -5,6 +5,7 @@
 #pragma option -zCB1_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/sara/sara.hpp"
 #include "src/main/boss/sara/projectile_rules.hpp"
+#include "src/main/boss/sara/combat_wave_settings.hpp"
 
 
 // Constants
@@ -140,7 +141,7 @@ static void near phase_2_with_pattern(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE; \
 		bullet_template.group = BG_SINGLE; \
 		bullet_template.angle = pattern_angle; \
-		bullet_template.speed.v = sara_to_sp8(1.5f); \
+		bullet_template.speed.v = sara_to_sp8(SAR_BLUE_SPEED_PX); \
 		bullet_template_tune(); \
 		bullets_add_regular(); \
 		pattern_angle = (pattern_angle + angle_delta); \
@@ -164,11 +165,11 @@ void near pattern_aimed_red_spread_stack(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_SPREAD_STACK_AIMED;
 		bullet_template.angle = 0;
-		sara_set_spread_stack(5, 0x10, 5, 0.4375f);
-		bullet_template.speed.v = sara_to_sp8(1.0f);
+		sara_set_spread_stack(SAR_RED_SPREAD_COUNT, SAR_RED_SPREAD_ANGLE, SAR_RED_SPREAD_STACKS, SAR_RED_SPREAD_SPEED_STEP);
+		bullet_template.speed.v = sara_to_sp8(SAR_RED_BASE_SPEED_PX);
 		bullet_template_tune();
 		bullets_add_regular();
-		snd_se_play(15);
+		snd_se_play(SAR_RED_FIRE_SOUND);
 	}
 }
 
@@ -179,14 +180,14 @@ void near pattern_red_stacks(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_STACK;
 		bullet_template.angle = (
-			boss.angle + state->phase_2.angle_stacks - 0x80
+			boss.angle + state->phase_2.angle_stacks - SAR_RED_STACK_BACK_ANGLE
 		);
-		sara_set_stack(8, 0.375f);
-		bullet_template.speed.v = sara_to_sp8(1.0f);
+		sara_set_stack(SAR_RED_STACK_COUNT, SAR_RED_STACK_SPEED_STEP);
+		bullet_template.speed.v = sara_to_sp8(SAR_RED_BASE_SPEED_PX);
 		bullet_template_tune();
 		bullets_add_regular();
 		state->phase_2.angle_stacks -= SARA_RED_STACK_ROTATION_STEP;
-		snd_se_play(15);
+		snd_se_play(SAR_RED_FIRE_SOUND);
 	}
 }
 
@@ -201,7 +202,7 @@ static void near phase_3_with_pattern(void)
 			boss.sprite = PAT_SARA_SPIN;
 			state->phase_3.angle_clockwise = (SARA_SPIN_CENTER_ANGLE - SARA_SPIN_SIDE_ANGLE_DELTA);
 			state->phase_3.angle_counterclockwise = (SARA_SPIN_CENTER_ANGLE + SARA_SPIN_SIDE_ANGLE_DELTA);
-			state->phase_3.ring_speed.v = sara_to_sp8(1.5f);
+			state->phase_3.ring_speed.v = sara_to_sp8(SAR_BLUE_SPEED_PX);
 		}
 		return;
 	}
@@ -240,11 +241,11 @@ void near pattern_pellet_arcs_at_expanding_random_angles(void)
 		bullet_template.patnum = 0;
 		bullet_template.group = BG_SPREAD;
 		bullet_template.angle = (
-			randring2_next16_mod(boss.phase_frame * 2) - boss.phase_frame + 0x40
+			randring2_next16_mod(boss.phase_frame * SAR_PELLET_RANDOM_ANGLE_SCALE) - boss.phase_frame + SAR_PELLET_CENTER_ANGLE
 		);
-		sara_set_spread(3, 0x3);
+		sara_set_spread(SAR_PELLET_SPREAD_COUNT, SAR_PELLET_SPREAD_ANGLE_STEP);
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
-		bullet_template.speed.v = sara_rand_speed(1.0f, 3.0f);
+		bullet_template.speed.v = sara_rand_speed(SAR_PELLET_MIN_SPEED_PX, SAR_PELLET_MAX_SPEED_PX);
 		bullet_template_tune();
 		bullets_add_special();
 
@@ -252,9 +253,9 @@ void near pattern_pellet_arcs_at_expanding_random_angles(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SINGLE;
 		bullet_template.angle = (
-			randring2_next16_mod(boss.phase_frame * 2) - boss.phase_frame + 0x40
+			randring2_next16_mod(boss.phase_frame * SAR_PELLET_RANDOM_ANGLE_SCALE) - boss.phase_frame + SAR_PELLET_CENTER_ANGLE
 		);
-		bullet_template.speed.v = sara_rand_speed(1.5f, 3.5f);
+		bullet_template.speed.v = sara_rand_speed(SAR_BALL_MIN_SPEED_PX, SAR_BALL_MAX_SPEED_PX);
 		bullet_template_tune();
 		bullets_add_regular();
 
@@ -269,7 +270,7 @@ void near pattern_random_red_rings(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_RING;
 		bullet_template.angle = randring2_next16();
-		bullet_template.speed.v = sara_to_sp8(2.0f);
+		bullet_template.speed.v = sara_to_sp8(SAR_RED_RING_SPEED_PX);
 		bullet_template.spread = SARA_RED_RING_PROJECTILE_COUNT;
 		bullet_template_tune();
 		bullets_add_regular();
@@ -342,7 +343,7 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 
 	if(
 		((boss.phase_frame % state->phase_4.laser_angle_interval) == 0) &&
-		(lasers[X_LEFT].coords.angle > (0x40 + (CORRIDOR_ANGLE / 2)))
+		(lasers[X_LEFT].coords.angle > (SAR_CORRIDOR_CENTER_ANGLE + (CORRIDOR_ANGLE / 2)))
 	) {
 		lasers[X_RIGHT].coords.angle += 0x01;
 		lasers[X_LEFT].coords.angle -= 0x01;
@@ -356,23 +357,23 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 		}
 	}
 
-	if(stage_frame_mod16 == 0) {
+	if(stage_frame_mod16 == SAR_CORRIDOR_FIRE_TICK) {
 		bullet_template.spawn_type = BST_NO_DECELERATE;
 		bullet_template.angle = state->phase_4.spread_angle;
 		bullet_template.group = BG_SPREAD;
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
 		sara_set_spread_for_rank(
-			5, 0x1,
-			6, 0x1,
-			7, 0x1,
-			8, 0x1
+			SAR_CORRIDOR_SPREAD_EASY, SAR_CORRIDOR_SPREAD_STEP,
+			SAR_CORRIDOR_SPREAD_NORMAL, SAR_CORRIDOR_SPREAD_STEP,
+			SAR_CORRIDOR_SPREAD_HARD, SAR_CORRIDOR_SPREAD_STEP,
+			SAR_CORRIDOR_SPREAD_LUNATIC, SAR_CORRIDOR_SPREAD_STEP
 		);
-		bullet_template.speed.v = sara_to_sp8(2.0f);
+		bullet_template.speed.v = sara_to_sp8(SAR_CORRIDOR_SPREAD_SPEED_PX);
 		bullet_template.patnum = 0;
 		bullets_add_special();
 
 		bullet_template.group = BG_RANDOM_ANGLE_AND_SPEED;
-		bullet_template.speed.v = sara_to_sp8(1.0f);
+		bullet_template.speed.v = sara_to_sp8(SAR_CORRIDOR_BALL_SPEED_PX);
 		bullet_template.spread = state->phase_4.random_ball_count;
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullets_add_regular();
@@ -423,11 +424,11 @@ void pascal sara_update(void)
 	switch(boss.phase) {
 	case PHASE_HP_FILL:
 		enum {
-			KEYFRAME_GATHER_SPAWN_START = (HUD_HP_FILL_FRAMES + 96),
-			KEYFRAME_GATHER_SPAWN_END = (KEYFRAME_GATHER_SPAWN_START + 32),
+			KEYFRAME_GATHER_SPAWN_START = (HUD_HP_FILL_FRAMES + SAR_HP_GATHER_EXTRA_DELAY),
+			KEYFRAME_GATHER_SPAWN_END = (KEYFRAME_GATHER_SPAWN_START + SAR_HP_GATHER_SPAN),
 		};
 
-		if(boss.phase_frame == 1) {
+		if(boss.phase_frame == SAR_HP_FILL_FIRST_FRAME) {
 			boss.hp = HP_TOTAL;
 			boss.phase_end_hp = HP_PHASE_2_END;
 		}
@@ -436,12 +437,12 @@ void pascal sara_update(void)
 			if(boss.phase_frame == KEYFRAME_GATHER_SPAWN_START) {
 				gather_template.center.x = boss.pos.cur.x;
 				gather_template.center.y = boss.pos.cur.y;
-				gather_template.radius.v = to_sp(RES_X / 2.0f);
-				gather_template.ring_points = 32;
-				gather_template.angle_delta = 0x03;
+				gather_template.radius.v = to_sp(RES_X / SAR_HP_GATHER_RADIUS_DIVISOR);
+				gather_template.ring_points = SAR_HP_GATHER_POINTS;
+				gather_template.angle_delta = SAR_HP_GATHER_ANGLE_STEP;
 				gather_template.col = COL_GATHER_1;
 			}
-			if((boss.phase_frame & 7) == 0) {
+			if((boss.phase_frame & SAR_HP_GATHER_TICK_MASK) == 0) {
 				gather_add_only();
 			}
 			if(boss.phase_frame == KEYFRAME_GATHER_SPAWN_START) {
@@ -452,9 +453,9 @@ void pascal sara_update(void)
 		// Timeout condition
 		if(boss.phase_frame >= KEYFRAME_GATHER_SPAWN_END) {
 			// Next phase
-			gather_template.radius.v = to_sp(BOSS_W / 1.0f);
-			gather_template.angle_delta = 0x02;
-			gather_template.ring_points = 8;
+			gather_template.radius.v = to_sp(BOSS_W / SAR_POST_HP_RADIUS_DIVISOR);
+			gather_template.angle_delta = SAR_POST_HP_RING_ANGLE_STEP;
+			gather_template.ring_points = SAR_POST_HP_RING_POINTS;
 			boss.phase++;
 			boss.phase_frame = 0;
 			snd_se_play(SARA_FINAL_ENTRANCE_SOUND);

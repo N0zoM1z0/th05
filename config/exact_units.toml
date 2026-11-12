@@ -772,8 +772,8 @@ bindings_source = "probes/units/sara_bindings.asm"
 [[controls]]
 unit = "main-sara"
 source = "src/main/boss/sara/sara.cpp"
-find = "sara_set_spread_stack(5, 0x10, 5, 0.4375f);"
-replace = "sara_set_spread_stack(5, 0x10, 4, 0.4375f);"
+find = "sara_set_spread_stack(SAR_RED_SPREAD_COUNT, SAR_RED_SPREAD_ANGLE, SAR_RED_SPREAD_STACKS, SAR_RED_SPREAD_SPEED_STEP);"
+replace = "sara_set_spread_stack(SAR_RED_SPREAD_COUNT, SAR_RED_SPREAD_ANGLE, SAR_RED_SPREAD_STACKS - 1, SAR_RED_SPREAD_SPEED_STEP);"
 
 [[units]]
 id = "main-midboss-score-bonus"
