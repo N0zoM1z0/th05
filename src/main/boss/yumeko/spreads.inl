@@ -1,12 +1,25 @@
 #include "src/main/boss/yumeko/spread_choreography.hpp"
+// The two attack families use the same initial sprite, spawn mode and
+// spread group setup. The blue counter-rotation additionally sets the
+// exact-linear motion before speed, so that remains at its real call site.
+#define YUMEKO_SPREAD_CHARGE_START(spread_group) { \
+    boss.sprite = YUMEKO_SPRITE_CHARGE; \
+    bullet_template.spawn_type = YUMEKO_NO_DECELERATE; \
+    bullet_template.group = spread_group; \
+}
+
+// Each spread restarts the Boss clock and enters its own next reposition.
+#define YUMEKO_SPREAD_REPOSITION() { \
+    boss.phase_frame = 0; \
+    boss.mode = YSP_REENTER_REPOSITION_MODE; \
+}
+
 void near yumeko_pattern_counterrotating_spreads(void)
 {
     if(boss.phase_frame < YSP_CHARGE_END_FRAME) {
         gather_add_only_3stack(boss.phase_frame - YSP_GATHER_LEAD_FRAME, YSP_GATHER_COLOR_A, YSP_GATHER_COLOR_B);
         if(boss.phase_frame == YSP_FIRST_CHARGE_FRAME) {
-            boss.sprite = YUMEKO_SPRITE_CHARGE;
-            bullet_template.spawn_type = YUMEKO_NO_DECELERATE;
-            bullet_template.group = BG_SPREAD;
+            YUMEKO_SPREAD_CHARGE_START(BG_SPREAD);
             bullet_template.special_motion = BSM_EXACT_LINEAR;
             bullet_template.speed.v = YSP_PROJECTILE_BASE_SPEED_SUBPX;
             reinterpret_cast<uint16_t &>(bullet_template.spread) = (YSP_BLUE_SPREAD_COUNT | (YSP_BLUE_SPREAD_STEP << 8));
@@ -43,8 +56,7 @@ void near yumeko_pattern_counterrotating_spreads(void)
         snd_se_play(YSP_FIRE_SOUND);
     }
     if(boss.phase_frame == YSP_COUNTERROTATE_END_FRAME) {
-        boss.phase_frame = 0;
-        boss.mode = YSP_REENTER_REPOSITION_MODE;
+        YUMEKO_SPREAD_REPOSITION();
     }
 }
 
@@ -53,9 +65,7 @@ void near yumeko_pattern_mirrored_spreads(void)
     if(boss.phase_frame < YSP_CHARGE_END_FRAME) {
         gather_add_only_3stack(boss.phase_frame - YSP_GATHER_LEAD_FRAME, YSP_GATHER_COLOR_A, YSP_GATHER_COLOR_B);
         if(boss.phase_frame == YSP_FIRST_CHARGE_FRAME) {
-            boss.sprite = YUMEKO_SPRITE_CHARGE;
-            bullet_template.spawn_type = YUMEKO_NO_DECELERATE;
-            bullet_template.group = BG_SPREAD_AIMED;
+            YUMEKO_SPREAD_CHARGE_START(BG_SPREAD_AIMED);
             bullet_template.speed.v = YSP_PROJECTILE_BASE_SPEED_SUBPX;
             bullet_template.spread_angle_delta = YSP_MIRROR_SPREAD_DELTA;
             bullet_template.angle = YSP_MIRROR_FIRST_ANGLE;
@@ -79,7 +89,9 @@ void near yumeko_pattern_mirrored_spreads(void)
         snd_se_play(YSP_FIRE_SOUND);
     }
     if(boss.phase_frame == YSP_MIRROR_END_FRAME) {
-        boss.phase_frame = 0;
-        boss.mode = YSP_REENTER_REPOSITION_MODE;
+        YUMEKO_SPREAD_REPOSITION();
     }
 }
+
+#undef YUMEKO_SPREAD_REPOSITION
+#undef YUMEKO_SPREAD_CHARGE_START
