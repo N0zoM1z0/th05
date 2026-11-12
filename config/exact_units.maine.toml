@@ -1951,3 +1951,9 @@ unit = "maine-cutscene-kanji-buffer-data"
 source = "src/maine/cutscene/kanji_buffer.c"
 find = "CUTSCENE_KANJI[3] = \"  \";"
 replace = "CUTSCENE_KANJI[3] = \" X\";"
+
+[[controls]]
+unit = "maine-verdict-bonus-comments"
+source = "src/maine/verdict/body/verdict_apply_bonus.inl"
+find = "bonus += VBR_TURBO_MODE_BONUS;"
+replace = "bonus += (VBR_TURBO_MODE_BONUS + 1);"

@@ -1,18 +1,19 @@
+#include "src/maine/verdict/bonus_scoring_rules.hpp"
 // The original six starting-life settings and three starting-bomb settings
 // alter the final score *and* its allowed cap independently. Keep the actual
 // saved-game integers as the switch keys, not a new serialized enum field.
 enum VerdictStartingLives {
-    VERDICT_START_LIVES_ONE = 1,
-    VERDICT_START_LIVES_TWO = 2,
-    VERDICT_START_LIVES_THREE = 3,
-    VERDICT_START_LIVES_FOUR = 4,
-    VERDICT_START_LIVES_FIVE = 5,
-    VERDICT_START_LIVES_SIX = 6,
+    VERDICT_START_LIVES_ONE = VBR_LIVES_ONE,
+    VERDICT_START_LIVES_TWO = VBR_LIVES_TWO,
+    VERDICT_START_LIVES_THREE = VBR_LIVES_THREE,
+    VERDICT_START_LIVES_FOUR = VBR_LIVES_FOUR,
+    VERDICT_START_LIVES_FIVE = VBR_LIVES_FIVE,
+    VERDICT_START_LIVES_SIX = VBR_LIVES_SIX,
 };
 enum VerdictStartingBombs {
-    VERDICT_START_BOMBS_ZERO = 0,
-    VERDICT_START_BOMBS_ONE = 1,
-    VERDICT_START_BOMBS_TWO = 2,
+    VERDICT_START_BOMBS_ZERO = VBR_BOMBS_ZERO,
+    VERDICT_START_BOMBS_ONE = VBR_BOMBS_ONE,
+    VERDICT_START_BOMBS_TWO = VBR_BOMBS_TWO,
 };
 // These are the original capped per-use penalties, not a change in scoring.
 static const int VERDICT_MISS_PENALTY_LIMIT = 10;

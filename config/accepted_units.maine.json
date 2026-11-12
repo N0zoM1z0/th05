@@ -2,43 +2,33 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "3712a3240d5e74d6a66f41b01897f216388f1995e903cbf251c2b61df8da882e",
+  "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 43307,
-    "candidate_start": 43307,
-    "size": 152,
-    "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
-    "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+    "target_start": 51374,
+    "candidate_start": 51374,
+    "size": 340,
+    "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+    "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
     "raw_exact": false,
     "target_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
+      324
     ],
     "candidate_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
+      324
     ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 43307,
-      "size": 152,
-      "function_symbol": "box_wait_animate(int)",
-      "contribution_start": 42757,
-      "contribution_size": 2736,
+      "start": 51374,
+      "size": 340,
+      "function_symbol": "verdict_apply_bonus()",
+      "contribution_start": 50663,
+      "contribution_size": 3384,
       "boundary_kind": "next-function",
-      "next_function_symbol": "script_op(unsigned char)"
+      "next_function_symbol": "verdict_comment_id()"
     }
   },
   "units": [
@@ -9391,8 +9381,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -9423,16 +9413,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -9463,8 +9455,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -9534,7 +9528,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -9546,7 +9540,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9559,6 +9553,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -9618,7 +9616,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -9630,7 +9628,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -9643,6 +9641,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -9671,165 +9673,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -9860,8 +9770,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -9917,7 +9829,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-score-put",
@@ -9986,8 +9910,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10018,16 +9942,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10058,8 +9984,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -10129,7 +10057,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -10141,7 +10069,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10154,6 +10082,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -10213,7 +10145,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -10225,7 +10157,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10238,6 +10170,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -10266,165 +10202,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -10455,8 +10299,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -10512,7 +10358,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-percentage-put",
@@ -10581,8 +10439,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10613,16 +10471,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -10653,8 +10513,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -10724,7 +10586,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -10736,7 +10598,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10749,6 +10611,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -10808,7 +10674,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -10820,7 +10686,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -10833,6 +10699,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -10861,165 +10731,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -11050,8 +10828,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -11107,7 +10887,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-fraction-put",
@@ -11172,8 +10964,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11204,16 +10996,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11244,8 +11038,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -11315,7 +11111,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -11327,7 +11123,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11340,6 +11136,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -11399,7 +11199,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -11411,7 +11211,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11424,6 +11224,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -11452,165 +11256,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -11641,8 +11353,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -11698,7 +11412,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-bonus-comments",
@@ -11763,8 +11489,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11795,16 +11521,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -11835,8 +11563,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -11906,7 +11636,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -11918,7 +11648,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -11931,6 +11661,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -11990,7 +11724,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -12002,7 +11736,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12015,6 +11749,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -12043,165 +11781,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -12232,8 +11878,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -12289,7 +11937,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-comment-id",
@@ -12346,8 +12006,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12378,16 +12038,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -12418,8 +12080,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -12489,7 +12153,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -12501,7 +12165,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12514,6 +12178,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -12573,7 +12241,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -12585,7 +12253,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -12598,6 +12266,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -12626,165 +12298,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -12815,8 +12395,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -12872,7 +12454,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-main",
@@ -13029,8 +12623,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13061,16 +12655,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13101,8 +12697,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -13172,7 +12770,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -13184,7 +12782,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13197,6 +12795,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -13256,7 +12858,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -13268,7 +12870,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13281,6 +12883,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -13309,165 +12915,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -13498,8 +13012,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -13555,7 +13071,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-comments",
@@ -13624,8 +13152,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13656,16 +13184,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -13696,8 +13226,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -13767,7 +13299,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -13779,7 +13311,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13792,6 +13324,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -13851,7 +13387,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -13863,7 +13399,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -13876,6 +13412,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -13904,165 +13444,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -14093,8 +13541,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -14150,7 +13600,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-animate",
@@ -14251,8 +13713,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14283,16 +13745,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14323,8 +13787,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -14394,7 +13860,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -14406,7 +13872,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14419,6 +13885,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -14478,7 +13948,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -14490,7 +13960,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -14503,6 +13973,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -14531,165 +14005,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -14720,8 +14102,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -14777,7 +14161,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-verdict-stage-scores",
@@ -14866,8 +14262,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0f8cda13b0078b060800780a5e050da443cd1e560ea344bb2049231a78e41687",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "3d8d9d7b5a1c39e1d6f86e1680d01c554387fcf169f577588a12c85e7f0f363b",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14898,16 +14294,18 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
             ]
           },
           {
-            "sha256": "c3ff7b06bbfc52035f22d2f0f7e61818fb65078193e802ec53e70e265f5b3787",
-            "dependency_timestamp_normalized_sha256": "937cd52ee590d586dc0de7513ca01c33fb785bdb500d679dde8129ad1e67c0ca",
+            "sha256": "5387df15cc4f5ee19c5cde4bebbf4ae4f2169c4cfe581999c814dd9b3225ba76",
+            "dependency_timestamp_normalized_sha256": "6333d5d566cf79c17dc70239d7271b34b7f7c5354478a97cd9930beff75f71b9",
             "module_name": "th05/vfull.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -14938,8 +14336,10 @@
               "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
               "src/maine/verdict/body/graph_fraction_of_million_put.inl",
               "src/maine/verdict/body/verdict_apply_bonus.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comment_id.inl",
               "src/maine/verdict/body/verdict_main.inl",
+              "src/maine/verdict/bonus_scoring_rules.hpp",
               "src/maine/verdict/body/verdict_comments_put.inl",
               "src/maine/verdict/body/verdict_animate.inl",
               "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -15009,7 +14409,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-            "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+            "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
           },
           {
             "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -15021,7 +14421,7 @@
           },
           {
             "path": "src/maine/verdict/body/verdict_main.inl",
-            "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+            "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
           },
           {
             "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -15034,6 +14434,10 @@
           {
             "path": "src/maine/verdict/bonus.hpp",
             "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+          },
+          {
+            "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+            "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
           },
           {
             "path": "src/maine/verdict/display.hpp",
@@ -15093,7 +14497,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_apply_bonus.inl",
-          "sha256": "3f74f35d750fee97f848d7c845373c43b2b0c53eb52035d3d69e4cb72a09ad3f"
+          "sha256": "f5fe68bee1e2f904d29d8bd6cedc6b49da9b05322c48b287637d4606ef84d19d"
         },
         {
           "path": "src/maine/verdict/body/verdict_comment_id.inl",
@@ -15105,7 +14509,7 @@
         },
         {
           "path": "src/maine/verdict/body/verdict_main.inl",
-          "sha256": "fa58d87d8718da9695ad83f02db9e2c17c16d07f314a0f0a7d17a5ddbb574605"
+          "sha256": "30382e0a00d4aa79a6b5ec5820f1a2c644c43f54e66ab2c7b128259b484a1588"
         },
         {
           "path": "src/maine/verdict/body/verdict_score_put.inl",
@@ -15118,6 +14522,10 @@
         {
           "path": "src/maine/verdict/bonus.hpp",
           "sha256": "2d484c3ae1f713b9063255a0f57b0ba46be92978d6e8d71baf610a354590d450"
+        },
+        {
+          "path": "src/maine/verdict/bonus_scoring_rules.hpp",
+          "sha256": "4f7bc43aa026f4cd4f79ee9cc04d279ef1b9721833a96431ada8cb31c9638ac3"
         },
         {
           "path": "src/maine/verdict/display.hpp",
@@ -15146,165 +14554,73 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+      "replay_receipt_sha256": "4d5873f985dba5b3880ed24858c81b9a331d4f92ad2d93ada0f33ce52a2fdc4d",
       "compiled_negative_control": {
-        "target_start": 51867,
-        "candidate_start": 51867,
-        "size": 1748,
-        "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-        "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+        "target_start": 51374,
+        "candidate_start": 51374,
+        "size": 340,
+        "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+        "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
         "raw_exact": false,
         "target_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "candidate_fixups": [
-          505,
-          478,
-          367,
-          303,
-          279,
-          255,
-          231,
-          207,
-          183,
-          159,
-          135,
-          111,
-          87,
-          63,
-          39,
-          1721,
-          1694,
-          1655,
-          1650,
-          1639,
-          1615,
-          1604,
-          1494,
-          1485
+          324
         ],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
           "kind": "complete-function",
-          "start": 51867,
-          "size": 1748,
-          "function_symbol": "verdict_main()",
+          "start": 51374,
+          "size": 340,
+          "function_symbol": "verdict_apply_bonus()",
           "contribution_start": 50663,
           "contribution_size": 3384,
           "boundary_kind": "next-function",
-          "next_function_symbol": "verdict_comments_put()"
+          "next_function_symbol": "verdict_comment_id()"
         }
       },
       "negative_control": {
-        "unit_id": "maine-verdict-main",
-        "entry_sha256": "8728147d5f648afe36e1194df2841c10754020530cb9abb909c8ea6caa794bf9",
+        "unit_id": "maine-verdict-bonus-comments",
+        "entry_sha256": "f8e44995ca811cab26e29d3efec32850680057b5a164ec67e0026f7112e5d583",
         "mutation": {
-          "unit": "maine-verdict-main",
-          "source": "src/maine/verdict/body/verdict_main.inl",
-          "find": "resident->std_frames = VERDICT_STANDARD_COMPLETION_FRAMES;",
-          "replace": "resident->std_frames = (VERDICT_STANDARD_COMPLETION_FRAMES + 1);"
+          "unit": "maine-verdict-bonus-comments",
+          "source": "src/maine/verdict/body/verdict_apply_bonus.inl",
+          "find": "bonus += VBR_TURBO_MODE_BONUS;",
+          "replace": "bonus += (VBR_TURBO_MODE_BONUS + 1);"
         },
-        "control_sha256": "2efc6b2c49ab3a0589c73cb805e4ca02019c529c887d88357669a38c77c609af",
+        "control_sha256": "39dbbe85b33955fa3df8179079cb64eacff3fdc8118bafa1b9a0ee9644529fef",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 51867,
-          "candidate_start": 51867,
-          "size": 1748,
-          "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-          "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+          "target_start": 51374,
+          "candidate_start": 51374,
+          "size": 340,
+          "target_sha256": "147be7a22be1da9954d5356509579122d811fe4c5ef18d197c7b87ca43e155ef",
+          "candidate_sha256": "ac8310201e403fb60341fe6e3c481c432296f2a55362c009fc6a32a67b4c6192",
           "raw_exact": false,
           "target_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "candidate_fixups": [
-            505,
-            478,
-            367,
-            303,
-            279,
-            255,
-            231,
-            207,
-            183,
-            159,
-            135,
-            111,
-            87,
-            63,
-            39,
-            1721,
-            1694,
-            1655,
-            1650,
-            1639,
-            1615,
-            1604,
-            1494,
-            1485
+            324
           ],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
             "kind": "complete-function",
-            "start": 51867,
-            "size": 1748,
-            "function_symbol": "verdict_main()",
+            "start": 51374,
+            "size": 340,
+            "function_symbol": "verdict_apply_bonus()",
             "contribution_start": 50663,
             "contribution_size": 3384,
             "boundary_kind": "next-function",
-            "next_function_symbol": "verdict_comments_put()"
+            "next_function_symbol": "verdict_comment_id()"
           }
         },
         "omf": {
-          "sha256": "9031ce7d0632838675cd2deba941b5084856f6dbe2ad5a95142e1bcc735d403c",
-          "dependency_timestamp_normalized_sha256": "b3e84c81e2653cadd33a22208be404a7a37a393b4522dc9297251afe493e3c75",
+          "sha256": "62d440e25e528175624964d8ef34f3091da283ca36486bb0e515da0cc4916e1e",
+          "dependency_timestamp_normalized_sha256": "a53425d29700cda2bae5703aba3ac77bdb99f5aedfde4f4b90dba85d51d340d3",
           "module_name": "th05/vfull.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -15335,8 +14651,10 @@
             "src/maine/verdict/body/skill_apply_and_graph_percentage_put.inl",
             "src/maine/verdict/body/graph_fraction_of_million_put.inl",
             "src/maine/verdict/body/verdict_apply_bonus.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comment_id.inl",
             "src/maine/verdict/body/verdict_main.inl",
+            "src/maine/verdict/bonus_scoring_rules.hpp",
             "src/maine/verdict/body/verdict_comments_put.inl",
             "src/maine/verdict/body/verdict_animate.inl",
             "src/maine/verdict/body/verdict_stage_scores_put.inl"
@@ -15392,7 +14710,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-verdict-animate",
+        "maine-verdict-bonus-comments",
+        "maine-verdict-comment-id",
+        "maine-verdict-comments",
+        "maine-verdict-format",
+        "maine-verdict-fraction-put",
+        "maine-verdict-main",
+        "maine-verdict-percentage-put",
+        "maine-verdict-score-put",
+        "maine-verdict-stage-scores"
+      ]
     },
     {
       "id": "maine-staff-orb-opening",
