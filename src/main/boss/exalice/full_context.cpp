@@ -47,6 +47,14 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     exalice_phase_next(explosion, hp_end); \
     exalice_pattern = next_attack
 
+// Each later wave keeps its individual palette ramp, then resumes the
+// original shared approach or regular attack block from the phase ID.
+#define EXALICE_RESUME_WAVE(first_approach_phase) \
+    if(boss.phase == first_approach_phase) { \
+        goto approach; \
+    } \
+    goto regular_attack
+
 // Wave 1 uses the same rising-red palette cadence in approach and charge.
 // Preserve the color-latch write on every actual red-channel change.
 #define EXALICE_WAVE1_RED_APPROACH() \
@@ -207,10 +215,7 @@ charge_complete:
             Palettes.colors[0].c.r -= 2;
             palette_changed = true;
         }
-        if(boss.phase == EXALICE_PHASE_WAVE2_APPROACH_FIRST) {
-            goto approach;
-        }
-        goto regular_attack;
+        EXALICE_RESUME_WAVE(EXALICE_PHASE_WAVE2_APPROACH_FIRST);
     case EXALICE_PHASE_WAVE3_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE3_REGULAR:
         if(Palettes.colors[0].c.r < EXALICE_APPROACH_WAVE3_RED_LIMIT) {
@@ -218,10 +223,7 @@ charge_complete:
             Palettes.colors[0].c.b--;
             palette_changed = true;
         }
-        if(boss.phase == EXALICE_PHASE_WAVE3_APPROACH_FIRST) {
-            goto approach;
-        }
-        goto regular_attack;
+        EXALICE_RESUME_WAVE(EXALICE_PHASE_WAVE3_APPROACH_FIRST);
     case EXALICE_PHASE_WAVE4_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE4_REGULAR:
         if(Palettes.colors[0].c.g < EXALICE_APPROACH_WAVE4_GREEN_LIMIT) {
@@ -234,10 +236,7 @@ charge_complete:
             }
             palette_changed = true;
         }
-        if(boss.phase == EXALICE_PHASE_WAVE4_APPROACH_FIRST) {
-            goto approach;
-        }
-        goto regular_attack;
+        EXALICE_RESUME_WAVE(EXALICE_PHASE_WAVE4_APPROACH_FIRST);
     case EXALICE_PHASE_WAVE4_CHARGE:
         if(exalice_charge_update()) {
             boss.phase_state.patterns_seen++;
@@ -291,5 +290,6 @@ charge_complete:
     hud_hp_update_and_render(boss.hp, EXALICE_HP_INITIAL);
 }
 
+#undef EXALICE_RESUME_WAVE
 #undef EXALICE_WAVE1_RED_APPROACH
 #undef EXALICE_WAVE_ADVANCE
