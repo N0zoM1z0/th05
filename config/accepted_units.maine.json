@@ -2,43 +2,27 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
+  "replay_receipt_sha256": "d1926d1919b913e8e0f97e191e4aeed3f837da7dfe5b968c1206d9a9bb1010f6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 43307,
-    "candidate_start": 43307,
-    "size": 152,
-    "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
-    "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
+    "target_start": 71220,
+    "candidate_start": 71220,
+    "size": 189,
+    "target_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+    "candidate_sha256": "16817f23b25013fe47e198d5de0fd7f907e20378f3b7604f8335bf7b50400260",
     "raw_exact": false,
-    "target_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
-    ],
-    "candidate_fixups": [
-      142,
-      127,
-      76,
-      58,
-      33,
-      19
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 43307,
-      "size": 152,
-      "function_symbol": "box_wait_animate(int)",
-      "contribution_start": 42757,
-      "contribution_size": 2736,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "script_op(unsigned char)"
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 71220,
+      "size": 189,
+      "module": "th05/scres.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -41478,6 +41462,330 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "maine-allcast-background-pointer-index-data"
+      ]
+    },
+    {
+      "id": "maine-score-resource-strings-data",
+      "entry_sha256": "9ce89139212b3901a8610d349f58689f837cec0c1d24cf857b67eee557bcedc9",
+      "result": {
+        "id": "maine-score-resource-strings-data",
+        "entry_sha256": "9ce89139212b3901a8610d349f58689f837cec0c1d24cf857b67eee557bcedc9",
+        "rounds": [
+          {
+            "target_start": 71220,
+            "candidate_start": 71220,
+            "size": 189,
+            "target_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+            "candidate_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71220,
+              "size": 189,
+              "module": "th05/scres.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71220,
+            "candidate_start": 71220,
+            "size": 189,
+            "target_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+            "candidate_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71220,
+              "size": 189,
+              "module": "th05/scres.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0d549d01d60429a13daf6282795377fc5c1c2c439bc6b052e283c46c6631dd97",
+            "dependency_timestamp_normalized_sha256": "3f3628140f332deebe9883373e7dd3ac493577b66180811a6fb1ba2c04c9c856",
+            "module_name": "th05/scres.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scres.c",
+              "src/maine/score/resource_strings.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 189,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 189,
+                  "sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "8b01c34fe3d783b2d6889d2bcac70322fe9ea579b4529d351faba942c17d9d51",
+            "dependency_timestamp_normalized_sha256": "3f3628140f332deebe9883373e7dd3ac493577b66180811a6fb1ba2c04c9c856",
+            "module_name": "th05/scres.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/scres.c",
+              "src/maine/score/resource_strings.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 189,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 189,
+                  "sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/scres.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/scres.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_score_resources_bindings.asm",
+            "sha256": "c4e75f4098fee686fa9adb7a52278d49979f62379b91328e23675fefdb5a2972"
+          },
+          {
+            "path": "src/maine/score/resource_strings.c",
+            "sha256": "f02e0fc8a45ad50b74cd3c4f0e657feccb20bfd75251476c68c8fa1cd77b4dbc"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/maine_score_resources_bindings.asm",
+              "sha256": "c4e75f4098fee686fa9adb7a52278d49979f62379b91328e23675fefdb5a2972"
+            },
+            {
+              "path": "src/maine/score/resource_strings.c",
+              "sha256": "377eaf5efced6af6ea367aa42ae3cfa9ddf8932afc68303614b5f07380e21f0c"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/maine_score_resources_bindings.asm",
+              "sha256": "c4e75f4098fee686fa9adb7a52278d49979f62379b91328e23675fefdb5a2972"
+            },
+            {
+              "path": "src/maine/score/resource_strings.c",
+              "sha256": "377eaf5efced6af6ea367aa42ae3cfa9ddf8932afc68303614b5f07380e21f0c"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_score_resources_bindings.asm",
+          "sha256": "c4e75f4098fee686fa9adb7a52278d49979f62379b91328e23675fefdb5a2972"
+        },
+        {
+          "path": "src/maine/score/resource_strings.c",
+          "sha256": "f02e0fc8a45ad50b74cd3c4f0e657feccb20bfd75251476c68c8fa1cd77b4dbc"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d1926d1919b913e8e0f97e191e4aeed3f837da7dfe5b968c1206d9a9bb1010f6",
+      "compiled_negative_control": {
+        "target_start": 71220,
+        "candidate_start": 71220,
+        "size": 189,
+        "target_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+        "candidate_sha256": "16817f23b25013fe47e198d5de0fd7f907e20378f3b7604f8335bf7b50400260",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71220,
+          "size": 189,
+          "module": "th05/scres.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-score-resource-strings-data",
+        "entry_sha256": "9ce89139212b3901a8610d349f58689f837cec0c1d24cf857b67eee557bcedc9",
+        "mutation": {
+          "unit": "maine-score-resource-strings-data",
+          "source": "src/maine/score/resource_strings.c",
+          "find": "char SCOREDAT_FN[] = \"GENSOU.SCR\";",
+          "replace": "char SCOREDAT_FN[] = \"GENSOU.SCX\";"
+        },
+        "control_sha256": "562295c65cc3539a74b0702db3ee3a163136896c34df298e5700465bc7b8b8a2",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71220,
+          "candidate_start": 71220,
+          "size": 189,
+          "target_sha256": "6cbf22fad2748121589babe34abc0cc3bc06c92be0c9bd5e2f940e8d7250dbcd",
+          "candidate_sha256": "16817f23b25013fe47e198d5de0fd7f907e20378f3b7604f8335bf7b50400260",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71220,
+            "size": 189,
+            "module": "th05/scres.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "2e648c90b7ad3ed8ac833385f59916d02e7850811f92286ddb6937cedd8febbc",
+          "dependency_timestamp_normalized_sha256": "9bbd22b9f5bbe9bd6a898b2f1664f91e72883c5ec36bd10ebe832be83248dc18",
+          "module_name": "th05/scres.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/scres.c",
+            "src/maine/score/resource_strings.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 189,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 189,
+                "sha256": "16817f23b25013fe47e198d5de0fd7f907e20378f3b7604f8335bf7b50400260"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/scres.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/maine_score_resources_bindings.asm",
+            "sha256": "c4e75f4098fee686fa9adb7a52278d49979f62379b91328e23675fefdb5a2972"
+          },
+          {
+            "path": "src/maine/score/resource_strings.c",
+            "sha256": "9204b6ea2553625f2334d15108e37a7627609e8d122cceb542336fb7f4d0657e"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-score-resource-strings-data"
       ]
     }
   ],

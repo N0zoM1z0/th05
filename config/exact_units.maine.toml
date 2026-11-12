@@ -1766,3 +1766,27 @@ unit = "maine-allcast-background-pointer-index-data"
 source = "src/maine/allcast/background_index.cpp"
 find = "    { 1, 0, 1, 3, 0, 0, 0, 0 },"
 replace = "    { 1, 0, 1, 2, 0, 0, 0, 0 },"
+
+[[units]]
+id = "maine-score-resource-strings-data"
+source = "src/maine/score/resource_strings.c"
+module = "th05/scres.c"
+segment = "_DATA"
+wrapper_options = "-zCSCORE_RESOURCE_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_score_resources_bindings.asm"
+binary = "E"
+source_encoding = "cp932"
+target_start = 71220
+size = 189
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-score-resource-strings-data"
+source = "src/maine/score/resource_strings.c"
+find = "char SCOREDAT_FN[] = \"GENSOU.SCR\";"
+replace = "char SCOREDAT_FN[] = \"GENSOU.SCX\";"
