@@ -195,3 +195,24 @@ The compiled actual five-to-four red-spread stack mutation remains
 rejected. All twelve source-defined functions share this one complete
 accepted scope; no prior accepted bytes receive additional credit.
 The separate inexact Yumeko sword C++ experiments remain unaccepted.
+
+## 2026-11-12: coherent mobile-wave hit scoring and reposition clocks
+
+The original 1,824-byte twelve-function Sara source now names two shared
+mobile-wave rules. `SARA_REPOSITION_AFTER_PATTERN()` resets Sara's current
+phase clock and reselects reposition mode at the end of both wave pattern
+helpers, while the spinning phase still restores Sara's idle sprite
+separately. In the full phase controller,
+`SARA_WAVE_HIT_SCORE_OR_BREAK()` retains the shared Boss hit test and
+seven-unit pattern score bonus, including the original `break` target in
+the outer phase switch. The two original HP-gate transitions, pattern
+length evolution and explosion types remain distinct and unchanged.
+
+The **complete 1,824 original bytes** were reproduced by two separate
+Borland C++/TLINK producers at
+`.analysis/unit-replays/gpt-web-sara-big-wave-arbitration-20261112-a/receipt.json`.
+Both real objects preserve the original five-way compiler switch table,
+its alignment classification and all ten ordered MZ relocation entries;
+the previously accepted compiled red-spread-stack mutation is rejected.
+The current acceptance ledger references this updated source, with no
+second authored CODE credit or whole-game cold replay.

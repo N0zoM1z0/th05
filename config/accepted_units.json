@@ -2,34 +2,42 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "3122209507dab9fdd546af4cee91683e647a07b0800d1b766c44392b35186f96",
+  "replay_receipt_sha256": "1a707fa0d5ba273047a811ad40c3fbbea6bd95bab17d1b370e8a5478acddf2a7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 125334,
-    "candidate_start": 125334,
-    "size": 939,
-    "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-    "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+    "target_start": 119198,
+    "candidate_start": 119198,
+    "size": 1824,
+    "target_sha256": "b8a4fd6fb01a08c42c57d55ed0c40ffe666e71e66402dabde598b368b0711f90",
+    "candidate_sha256": "98c984b6c5e75e9e44111810c7234a341ca42cbd7be67a3c4d0903dbce8beb23",
     "raw_exact": false,
     "target_fixups": [
-      133
+      919,
+      813,
+      723,
+      660,
+      382,
+      338,
+      260,
+      36,
+      1427,
+      1157
     ],
     "candidate_fixups": [
-      133
+      919,
+      813,
+      723,
+      660,
+      382,
+      338,
+      260,
+      36,
+      1427,
+      1157
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 125334,
-      "size": 939,
-      "function_symbol": "alice_update()",
-      "contribution_start": 124772,
-      "contribution_size": 1501,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -11044,7 +11052,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "edac5135e7e00e870b074251e0946b8bab4029ad41e3159da883c7cb9b32b5d3",
+            "sha256": "8c2021271a9c3e42f09d94e4bfd706090c4a1a4af62ba088df052143b276a35b",
             "dependency_timestamp_normalized_sha256": "9da1db24261031d5fce8e370b9ebe4603ec34adf32cfad6645aaea514deed0dd",
             "module_name": "th05/boss_1.cpp",
             "translator_comments": [
@@ -11071,7 +11079,7 @@
             ]
           },
           {
-            "sha256": "501acb2c56df8f0496eadcc5d7db8e85782880a4ec0cd4c3042b987884695cd6",
+            "sha256": "025f829ec741a4c06331a73e64da26df772f152a3e2ab1ce520383bdb4093144",
             "dependency_timestamp_normalized_sha256": "9da1db24261031d5fce8e370b9ebe4603ec34adf32cfad6645aaea514deed0dd",
             "module_name": "th05/boss_1.cpp",
             "translator_comments": [
@@ -11149,7 +11157,7 @@
           },
           {
             "path": "src/main/boss/sara/sara.cpp",
-            "sha256": "87edeb4d3e7b12968c24fefb00210b05684ccea4d948e64e09eeaf2aa5e00d7c"
+            "sha256": "654cf452946f4bf957fe54aa26075a0f02a5dd455066022de58ce5005e98c318"
           },
           {
             "path": "src/main/boss/sara/sara.hpp",
@@ -11197,7 +11205,7 @@
         },
         {
           "path": "src/main/boss/sara/sara.cpp",
-          "sha256": "87edeb4d3e7b12968c24fefb00210b05684ccea4d948e64e09eeaf2aa5e00d7c"
+          "sha256": "654cf452946f4bf957fe54aa26075a0f02a5dd455066022de58ce5005e98c318"
         },
         {
           "path": "src/main/boss/sara/sara.hpp",
@@ -11226,7 +11234,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "11de17b346b8a8e8a03e03fe3c56f3238ec8b73a5c6b12f510494ed59ac53a0b",
+      "replay_receipt_sha256": "1a707fa0d5ba273047a811ad40c3fbbea6bd95bab17d1b370e8a5478acddf2a7",
       "compiled_negative_control": {
         "target_start": 119198,
         "candidate_start": 119198,
@@ -11307,7 +11315,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "963a2bf360f4ecefda736d68cef9f501589ffbfc92f9dc5901e981e044843001",
+          "sha256": "c0b9cb582ebde0be3f5142fb35dd804a4edba97c1a87233c0dfac598a8d266ff",
           "dependency_timestamp_normalized_sha256": "3ff648a477d513340319a3b5cfda1a5cc64466b636d46936a5e7b37ab5617537",
           "module_name": "th05/boss_1.cpp",
           "translator_comments": [
@@ -11347,10 +11355,7 @@
           "th05/boss_1.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-sara"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-midboss-score-bonus",

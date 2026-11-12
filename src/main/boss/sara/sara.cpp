@@ -114,6 +114,12 @@ typedef char sara_spread_angle_at_15[(offsetof(sara_state_t, phase_4.spread_angl
 extern pattern_loop_func_t phase_2_3_pattern;
 // -----
 
+// Both mobile pattern waves restart with exactly the same Boss motion
+// submode and clock. Phase three additionally restores Sara's still sprite.
+#define SARA_REPOSITION_AFTER_PATTERN() \
+    boss.phase_frame = 0; \
+    boss.mode = SARA_MODE_REPOSITION
+
 static void near phase_2_with_pattern(void)
 {
 	if(boss.phase_frame < PHASE_2_PATTERN_START_FRAME) {
@@ -129,8 +135,7 @@ static void near phase_2_with_pattern(void)
 		return;
 	}
 	if(boss_flystep_random(boss.phase_frame - PHASE_2_PATTERN_START_FRAME)) {
-		boss.phase_frame = 0;
-		boss.mode = SARA_MODE_REPOSITION;
+		SARA_REPOSITION_AFTER_PATTERN();
 	}
 	phase_2_3_pattern();
 }
@@ -228,8 +233,7 @@ static void near phase_3_with_pattern(void)
 	}
 	phase_2_3_pattern();
 	if(boss.phase_frame >= state->phase_3.pattern_frames) {
-		boss.phase_frame = 0;
-		boss.mode = SARA_MODE_REPOSITION;
+		SARA_REPOSITION_AFTER_PATTERN();
 		boss.sprite = PAT_SARA_STAY;
 	}
 }
@@ -410,6 +414,14 @@ extern const pattern_loop_func_t SARA_PATTERNS_PHASE_2_3[2][4];
 	} \
 }
 
+// A successful hit during either mobile wave awards the same score.
+// On a miss, break must exit the enclosing Boss-phase switch directly.
+#define SARA_WAVE_HIT_SCORE_OR_BREAK() \
+    if(!boss_hittest_shots()) { \
+        break; \
+    } \
+    boss_score_bonus(SARA_PATTERN_SCORE_BONUS)
+
 #pragma option -a2
 
 void pascal sara_update(void)
@@ -503,12 +515,9 @@ void pascal sara_update(void)
 			}
 			break;
 		}
-		if(!boss_hittest_shots()) {
-			break;
-		}
+		SARA_WAVE_HIT_SCORE_OR_BREAK();
 
 		// Next phase
-		boss_score_bonus(SARA_PATTERN_SCORE_BONUS);
 	phase_2_timed_out:
 		boss_phase_next(ET_NW_SE, HP_PHASE_3_END);
 		state->phase_3.pattern_frames = SARA_WAVE_3_PATTERN_FRAMES_INITIAL;
@@ -533,12 +542,9 @@ void pascal sara_update(void)
 			}
 			break;
 		}
-		if(!boss_hittest_shots()) {
-			break;
-		}
+		SARA_WAVE_HIT_SCORE_OR_BREAK();
 
 		// Next phase
-		boss_score_bonus(SARA_PATTERN_SCORE_BONUS);
 	phase_3_timed_out:
 		boss_phase_next(ET_SW_NE, HP_PHASE_4_END);
 		break;
@@ -570,3 +576,6 @@ void pascal sara_update(void)
 	}
 	hud_hp_update_and_render(boss.hp, HP_TOTAL);
 }
+
+#undef SARA_WAVE_HIT_SCORE_OR_BREAK
+#undef SARA_REPOSITION_AFTER_PATTERN
