@@ -94,3 +94,15 @@ ordered MZ fixups remain exact:
 
 These functions were already accepted; neither CODE extent is
 recredited, and no unrelated MAINE or full executable replay was run.
+
+## Physical displayed-page C state instead of a loose C++ extern (2026-11-12)
+
+The 611-byte original All Cast animation now imports its one-byte
+`page_shown` through `page_shown.h`, backed by an exact standalone C
+initializer at MAINE `10110:075E`. The 190-byte subtitle renderer
+shares its native compiler context but does not duplicate the page
+state. Two independently pinned Borland rounds prove complete original
+CODE bytes, ordered fixups and native meaningful negative for both
+functions; the one-byte C DATA has its own compiled page-zero-to-one
+negative. See `page_shown.md` for evidence and adjacent uncredited
+alignment bytes. No already accepted CODE or DATA is reattributed.

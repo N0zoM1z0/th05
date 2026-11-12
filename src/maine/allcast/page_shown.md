@@ -33,3 +33,30 @@ This is **one** newly authored initialized DATA byte; all prior CODE
 remains unchanged. The complete 611-byte controller will be recompiled
 with its source-current C linkage separately. No all-game cold replay
 was run.
+
+## Source-current 611-byte All Cast controller and exact page flip (2026-11-12)
+
+The real page toggle is now imported through `page_shown.h` as a native
+C public rather than a loose C++ `extern page_t` declaration. The C
+source and complete All Cast renderer share the original near one-byte
+name, with the actual `page_t` still defined as `unsigned char`.
+The two target pages sum to one; naming that constant preserves the
+original `graph_accesspage(page_shown)` followed by
+`graph_showpage(page_shown = (1 - page_shown))` call order. The logic
+still runs from the genuine `wait_flip_and_check_measure_target()`
+function, not a replacement double-buffer helper or new state byte.
+
+The complete native **611-byte three-function** All Cast controller
+and the independently accepted 190-byte line renderer were recompiled
+in two fresh pinned Borland C++ rounds. All original CODE bytes,
+OMF/MAP scopes, ordered MZ fixups and the compiled meaningful
+negative remain exact. The separate one-byte C source was also rebuilt
+twice with the compiled page 0→1 mutation rejected:
+
+- `.analysis/unit-replays/gpt-web-maine-allcast-page-controller-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-maine-allcast-page-c-public-b/receipt.json`
+
+This closes a genuine C-to-C++ interface without recrediting existing
+CODE or the one already accepted DATA byte. The original extra
+background pointer/quarter arrays remain independent initialized
+contributions. No full MAINE cold replay was run.

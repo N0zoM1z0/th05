@@ -2,7 +2,7 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "3f4dcccac4cbc809116b0678dd3ee37ea1b88223be719898eb61cfcefa8cdd63",
+  "replay_receipt_sha256": "82d68ebeb322d996f7b245c3277ca0a8eb618799676359457213f44b3b4483b4",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
@@ -4855,8 +4855,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "428da970aa819bdd6c201f863dfa9e4d9089686a92ba2e694252a6af79baee5a",
-            "dependency_timestamp_normalized_sha256": "d8330fd772b9362337db668486b912491ac47f776f23a5323e7892d7c5cb75bf",
+            "sha256": "4195b4a6a566b981f81213a1bda2f63aa9351cba30bd9710deab70cd6a4b757d",
+            "dependency_timestamp_normalized_sha256": "165e7e853343b4920ae859cc005f5ef38501730bf19c90ec4d0da27160e48b3d",
             "module_name": "th05/allcast.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4864,6 +4864,7 @@
             "dependency_paths": [
               "th05/allcast.cpp",
               "src/maine/allcast/allcast.cpp",
+              "src/maine/allcast/page_shown.h",
               "src/maine/allcast/allcast.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
@@ -4874,8 +4875,8 @@
             ]
           },
           {
-            "sha256": "428da970aa819bdd6c201f863dfa9e4d9089686a92ba2e694252a6af79baee5a",
-            "dependency_timestamp_normalized_sha256": "d8330fd772b9362337db668486b912491ac47f776f23a5323e7892d7c5cb75bf",
+            "sha256": "051e78153e99f7352fda5e8a5d92a6f2e417a7af25362254fedd778320712b5f",
+            "dependency_timestamp_normalized_sha256": "165e7e853343b4920ae859cc005f5ef38501730bf19c90ec4d0da27160e48b3d",
             "module_name": "th05/allcast.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4883,6 +4884,7 @@
             "dependency_paths": [
               "th05/allcast.cpp",
               "src/maine/allcast/allcast.cpp",
+              "src/maine/allcast/page_shown.h",
               "src/maine/allcast/allcast.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
@@ -4936,11 +4938,15 @@
           },
           {
             "path": "src/maine/allcast/allcast.cpp",
-            "sha256": "a6bcc94f3bcdb0c5c5eee76c30464716bb9c37e7d8317b69c4cfaeecc8536c73"
+            "sha256": "988591a70dd162ce35328cd9c1c8e3585f2a9c0bb13072053af12fcb9be764d4"
           },
           {
             "path": "src/maine/allcast/allcast.hpp",
             "sha256": "9a40933f5aa44275034d210888f45e1c353b6ba121e3796be6ff7ed244b2dcb0"
+          },
+          {
+            "path": "src/maine/allcast/page_shown.h",
+            "sha256": "0824c4ee8c333e511c1f8b4f2cee9353f113e5bcc46b18cf999cadb577cda88a"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -4960,11 +4966,15 @@
         },
         {
           "path": "src/maine/allcast/allcast.cpp",
-          "sha256": "a6bcc94f3bcdb0c5c5eee76c30464716bb9c37e7d8317b69c4cfaeecc8536c73"
+          "sha256": "988591a70dd162ce35328cd9c1c8e3585f2a9c0bb13072053af12fcb9be764d4"
         },
         {
           "path": "src/maine/allcast/allcast.hpp",
           "sha256": "9a40933f5aa44275034d210888f45e1c353b6ba121e3796be6ff7ed244b2dcb0"
+        },
+        {
+          "path": "src/maine/allcast/page_shown.h",
+          "sha256": "0824c4ee8c333e511c1f8b4f2cee9353f113e5bcc46b18cf999cadb577cda88a"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -4973,7 +4983,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "ea696aed0659b8c9430d6a16ec8a4ce66c61b8165f36a49c56660c6d7ce58f2d",
+      "replay_receipt_sha256": "14f383881da6f9e094c928aa4521c53d6a6f6dad17c6d01d316edde774fc3c9c",
       "compiled_negative_control": {
         "target_start": 45683,
         "candidate_start": 45683,
@@ -5106,8 +5116,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "a72bedf2e0ee8c564eebe8af904b9a248cc9a4fc85fc9469240f534558bf989a",
-          "dependency_timestamp_normalized_sha256": "64968c03a75d9238e0e9ad33d06a2a2f31b0735b5cabc1e477b7bef3e4f0cec9",
+          "sha256": "21002fd688e6caf62874fe67211e6e1bf127692da613b0331d336565337a0877",
+          "dependency_timestamp_normalized_sha256": "84119b20971f3a1b53eb219f6508ab5f1fc51fba8981615267e68134772497af",
           "module_name": "th05/allcast.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -5115,6 +5125,7 @@
           "dependency_paths": [
             "th05/allcast.cpp",
             "src/maine/allcast/allcast.cpp",
+            "src/maine/allcast/page_shown.h",
             "src/maine/allcast/allcast.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
@@ -21717,7 +21728,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d30375ab74bc842019f625194a61ecb9e3589f9711b96131bc36282b53ac5f72",
+            "sha256": "6ec9265615b2082d6c6015f52533d929eadc0c7c615d9761728cb6c0a35adf98",
             "dependency_timestamp_normalized_sha256": "0e8e4bec2c95e2e56da572b68115242a62351af3fe2dcca468081eeb2050857e",
             "module_name": "th05/al_line.cpp",
             "translator_comments": [
@@ -21737,7 +21748,7 @@
             ]
           },
           {
-            "sha256": "66ba63f16767aa8ffcf6fe1aabac443be31d32a614fe79f43249f779250cbc0f",
+            "sha256": "c9ad22392a0bad79a9316fb9f2f73bdcaa960cd121925437f88d0466160ebf9d",
             "dependency_timestamp_normalized_sha256": "0e8e4bec2c95e2e56da572b68115242a62351af3fe2dcca468081eeb2050857e",
             "module_name": "th05/al_line.cpp",
             "translator_comments": [
@@ -21758,8 +21769,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -21845,73 +21856,149 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "688c19dad709f42c5259a5df72eb930b46cd62e4f59ff91f29123b251755f76c",
+      "replay_receipt_sha256": "14f383881da6f9e094c928aa4521c53d6a6f6dad17c6d01d316edde774fc3c9c",
       "compiled_negative_control": {
-        "target_start": 45493,
-        "candidate_start": 45493,
-        "size": 190,
-        "target_sha256": "08f92044636b64e9c77decbd1c4bb40ecbb9d52101f58b217174229d48d66757",
-        "candidate_sha256": "51763cfdce28b4a9aed48fb982c5a3594955e752d02d667058f78fa411607fb8",
+        "target_start": 45683,
+        "candidate_start": 45683,
+        "size": 611,
+        "target_sha256": "cb0e621be5538b93db9a8880799aa3ce272b7400ac32e58f32582cf3130c957d",
+        "candidate_sha256": "c9b036cbfc4215cf4ad8c49ab4b5e5ce4295c92805805eeaac8b05097570e96e",
         "raw_exact": false,
         "target_fixups": [
-          145,
-          128,
-          95,
-          78
+          597,
+          590,
+          508,
+          484,
+          477,
+          465,
+          458,
+          424,
+          404,
+          384,
+          373,
+          302,
+          273,
+          226,
+          184,
+          167,
+          144,
+          117,
+          110,
+          90,
+          70,
+          50,
+          39
         ],
         "candidate_fixups": [
-          145,
-          128,
-          95,
-          78
+          597,
+          590,
+          508,
+          484,
+          477,
+          465,
+          458,
+          424,
+          404,
+          384,
+          373,
+          302,
+          273,
+          226,
+          184,
+          167,
+          144,
+          117,
+          110,
+          90,
+          70,
+          50,
+          39
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "maine-allcast-line",
-        "entry_sha256": "3dda0535006a2751900af71d2d8bba00fc0f8c50f08d4c46419e9525b3cadc7a",
+        "unit_id": "maine-allcast",
+        "entry_sha256": "2525823e3c9fd939ba1ac1ece05327483c3ca66e194b3dad8ddad85c4f540bed",
         "mutation": {
-          "unit": "maine-allcast-line",
-          "source": "src/maine/allcast/lines.cpp",
-          "find": "ALLCAST_LINE_LEFT = 64",
-          "replace": "ALLCAST_LINE_LEFT = 65"
+          "unit": "maine-allcast",
+          "source": "src/maine/allcast/allcast.cpp",
+          "find": "measure_target += 30;",
+          "replace": "measure_target += 29;"
         },
-        "control_sha256": "3b23e8ed375e31eec2c3730a117e45f1cd640ab5dafe49d72c83c282039f663d",
+        "control_sha256": "8246bf196a5fd8d32829679b3001191b7f580b6d61e65cdec3a8492998c4e0c0",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 45493,
-          "candidate_start": 45493,
-          "size": 190,
-          "target_sha256": "08f92044636b64e9c77decbd1c4bb40ecbb9d52101f58b217174229d48d66757",
-          "candidate_sha256": "51763cfdce28b4a9aed48fb982c5a3594955e752d02d667058f78fa411607fb8",
+          "target_start": 45683,
+          "candidate_start": 45683,
+          "size": 611,
+          "target_sha256": "cb0e621be5538b93db9a8880799aa3ce272b7400ac32e58f32582cf3130c957d",
+          "candidate_sha256": "c9b036cbfc4215cf4ad8c49ab4b5e5ce4295c92805805eeaac8b05097570e96e",
           "raw_exact": false,
           "target_fixups": [
-            145,
-            128,
-            95,
-            78
+            597,
+            590,
+            508,
+            484,
+            477,
+            465,
+            458,
+            424,
+            404,
+            384,
+            373,
+            302,
+            273,
+            226,
+            184,
+            167,
+            144,
+            117,
+            110,
+            90,
+            70,
+            50,
+            39
           ],
           "candidate_fixups": [
-            145,
-            128,
-            95,
-            78
+            597,
+            590,
+            508,
+            484,
+            477,
+            465,
+            458,
+            424,
+            404,
+            384,
+            373,
+            302,
+            273,
+            226,
+            184,
+            167,
+            144,
+            117,
+            110,
+            90,
+            70,
+            50,
+            39
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "8dfc7eaa55dd049a4c366ce2f53c9b4a25d871e59fb0516d45d805ad3ff80359",
-          "dependency_timestamp_normalized_sha256": "24af6eaaed3470e8c7dfde7221fb77c07f769b68541c899577ab9b7f7f55966a",
-          "module_name": "th05/al_line.cpp",
+          "sha256": "21002fd688e6caf62874fe67211e6e1bf127692da613b0331d336565337a0877",
+          "dependency_timestamp_normalized_sha256": "84119b20971f3a1b53eb219f6508ab5f1fc51fba8981615267e68134772497af",
+          "module_name": "th05/allcast.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/al_line.cpp",
-            "src/maine/allcast/lines.cpp",
-            "src/maine/allcast/lines.hpp",
+            "th05/allcast.cpp",
+            "src/maine/allcast/allcast.cpp",
+            "src/maine/allcast/page_shown.h",
             "src/maine/allcast/allcast.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
@@ -21932,7 +22019,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='E'",
-          "th05/al_line.cpp"
+          "th05/allcast.cpp"
         ]
       },
       "target_view": {
@@ -45311,15 +45398,16 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3e0814ccb5deddd6eb4b5d41ae5724b01e67ae1076a187c68f9d94b79e353b45",
-            "dependency_timestamp_normalized_sha256": "9d449e6b428954dee4c44adec716622ae5ecfb6a623b4782ec07bd791d597f0f",
+            "sha256": "93d1aea7276ec594c3a3c5c7dac838c6d1aa9c930354f2520e0a3a68d259b179",
+            "dependency_timestamp_normalized_sha256": "88c1f635ac8e992c8b21482f5afa5685878bf0272c01e38fec0905ddbe8cbadf",
             "module_name": "th05/acpage.c",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
             ],
             "dependency_paths": [
               "th05/acpage.c",
-              "src/maine/allcast/page_shown.c"
+              "src/maine/allcast/page_shown.c",
+              "src/maine/allcast/page_shown.h"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -45337,15 +45425,16 @@
             }
           },
           {
-            "sha256": "d6279fd24d05554ba4364f470342c51f87689079f4fb7bde7b6af36d2033d7a0",
-            "dependency_timestamp_normalized_sha256": "9d449e6b428954dee4c44adec716622ae5ecfb6a623b4782ec07bd791d597f0f",
+            "sha256": "dce00ac830b815d9bedb8537d01dc301e6a625725b5b46574956905d979bff75",
+            "dependency_timestamp_normalized_sha256": "88c1f635ac8e992c8b21482f5afa5685878bf0272c01e38fec0905ddbe8cbadf",
             "module_name": "th05/acpage.c",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
             ],
             "dependency_paths": [
               "th05/acpage.c",
-              "src/maine/allcast/page_shown.c"
+              "src/maine/allcast/page_shown.c",
+              "src/maine/allcast/page_shown.h"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -45402,7 +45491,11 @@
           },
           {
             "path": "src/maine/allcast/page_shown.c",
-            "sha256": "f4bafcb5bbee7a62efb8748eb2ee8d9dccd605b186c407a8b1990d9e0a7b8858"
+            "sha256": "6ecf9a1819a545733c83ccef162fa4b7bdaf3ad0df2e541b7c9ff6731b3f40e9"
+          },
+          {
+            "path": "src/maine/allcast/page_shown.h",
+            "sha256": "0824c4ee8c333e511c1f8b4f2cee9353f113e5bcc46b18cf999cadb577cda88a"
           }
         ],
         "exact": true
@@ -45414,12 +45507,16 @@
         },
         {
           "path": "src/maine/allcast/page_shown.c",
-          "sha256": "f4bafcb5bbee7a62efb8748eb2ee8d9dccd605b186c407a8b1990d9e0a7b8858"
+          "sha256": "6ecf9a1819a545733c83ccef162fa4b7bdaf3ad0df2e541b7c9ff6731b3f40e9"
+        },
+        {
+          "path": "src/maine/allcast/page_shown.h",
+          "sha256": "0824c4ee8c333e511c1f8b4f2cee9353f113e5bcc46b18cf999cadb577cda88a"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "3f4dcccac4cbc809116b0678dd3ee37ea1b88223be719898eb61cfcefa8cdd63",
+      "replay_receipt_sha256": "82d68ebeb322d996f7b245c3277ca0a8eb618799676359457213f44b3b4483b4",
       "compiled_negative_control": {
         "target_start": 67694,
         "candidate_start": 67694,
@@ -45472,15 +45569,16 @@
           }
         },
         "omf": {
-          "sha256": "d6af0dc1513589ceec86fa3e52ac267bb031a7940e16ac9bd34794dab4f4fc25",
-          "dependency_timestamp_normalized_sha256": "8531bc93268be5f078561e77026ca82511345b40efd3e35a62e9b4ac68252f98",
+          "sha256": "31e2f70396787b189a716368b1a4e5cd613c28f0761c9f12c9d95b08162bf685",
+          "dependency_timestamp_normalized_sha256": "845792fc485cfa598b8cc8cf3e4a66445125b22d5790a49d8f85ad3cc09ddc19",
           "module_name": "th05/acpage.c",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
             "th05/acpage.c",
-            "src/maine/allcast/page_shown.c"
+            "src/maine/allcast/page_shown.c",
+            "src/maine/allcast/page_shown.h"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -45547,10 +45645,7 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "maine-allcast-displayed-page-latch-data"
-      ]
+      "receipt_aggregate_pass": true
     }
   ],
   "artifact": "th05-maine",

@@ -1,6 +1,7 @@
 // Natural TH05 all-cast ending animation, adapted from pinned ReC98.
 #pragma option -zCMAINE_01_TEXT
 
+#include "src/maine/allcast/page_shown.h"
 #include "src/maine/allcast/allcast.hpp"
 
 // Constants
@@ -25,7 +26,7 @@ static const screen_y_t CUTSCENE_PIC_TOP = ((RES_Y / 2) - (CUTSCENE_PIC_H / 2));
 int measure_cur;
 int frame_half;
 int measure_target;
-extern page_t page_shown;
+// C public `page_shown` is owned by the one-byte DATA initializer.
 
 // During screen_line_next_animate(), this is 1 more than the ID of the current
 // screen shown!
@@ -122,7 +123,7 @@ bool near wait_flip_and_check_measure_target(void)
 	frame_delay(ALLCAST_DOUBLE_FRAME_DELAY);
 
 	graph_accesspage(page_shown);
-	graph_showpage(page_shown = (1 - page_shown));
+	graph_showpage(page_shown = (ALLCAST_OPPOSITE_PAGE_SUM - page_shown));
 
 	frame_half++;
 	measure_cur = snd_bgm_measure();
