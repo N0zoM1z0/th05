@@ -6301,3 +6301,25 @@ unit = "main-shot-laser-raster-coverage-data"
 source = "src/main/player/shot_laser_coverage.c"
 find = "SHOT_LASER_WIDE_WIDTH = 6"
 replace = "SHOT_LASER_WIDE_WIDTH = 4"
+
+[[units]]
+id = "main-shinki-background-particle-seed-data"
+source = "src/main/boss/shinki/bg_particle_seed.c"
+module = "th05/bgseed.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_BG_SEED_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_bg_particle_seed_bindings.asm"
+target_start = 0x2235A
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-background-particle-seed-data"
+source = "src/main/boss/shinki/bg_particle_seed.c"
+find = "(-1 & 0xff)"
+replace = "(-2 & 0xff)"

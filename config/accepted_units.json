@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "7309018d4d7bd3949ed5fff52055b007ea8057362f380d019b5b7edb0ca9bcb7",
+  "replay_receipt_sha256": "e5d20d055f707500a95d09ceafdcac7decdace84bd4c980439886ed7b4dc069b",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138854,
-    "candidate_start": 138854,
-    "size": 5,
-    "target_sha256": "31d8ece5c2f62efd4444bcf4fee23639f0f2e104b64fe1c35c8a3cee61e89586",
-    "candidate_sha256": "1f78d68d512b36f9b0d526e03cde2cea0f455d5012b9b7695ce81b76557f51c4",
+    "target_start": 140122,
+    "candidate_start": 140122,
+    "size": 2,
+    "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+    "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138854,
-      "size": 5,
-      "module": "th05/lsrdots.c",
+      "start": 140122,
+      "size": 2,
+      "module": "th05/bgseed.c",
       "segment": "_DATA"
     }
   },
@@ -100329,6 +100329,262 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-shot-laser-raster-coverage-data"
+      ]
+    },
+    {
+      "id": "main-shinki-background-particle-seed-data",
+      "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+      "result": {
+        "id": "main-shinki-background-particle-seed-data",
+        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "rounds": [
+          {
+            "target_start": 140122,
+            "candidate_start": 140122,
+            "size": 2,
+            "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+            "candidate_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140122,
+              "size": 2,
+              "module": "th05/bgseed.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140122,
+            "candidate_start": 140122,
+            "size": 2,
+            "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+            "candidate_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140122,
+              "size": 2,
+              "module": "th05/bgseed.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "5a867de7b6629a8e54865f4d84ddb1f6e365767896a6f83324fed6e02d7d57aa",
+            "dependency_timestamp_normalized_sha256": "154e112d543fb126142a5987d6025367e34eab7d011764f2e550f1d720d7d007",
+            "module_name": "th05/bgseed.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgseed.c",
+              "src/main/boss/shinki/bg_particle_seed.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "95da414f05ca88a5da66b36fa4cd76c6228a412513fa098db9ffd83c3f19d7c5",
+            "dependency_timestamp_normalized_sha256": "154e112d543fb126142a5987d6025367e34eab7d011764f2e550f1d720d7d007",
+            "module_name": "th05/bgseed.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgseed.c",
+              "src/main/boss/shinki/bg_particle_seed.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgseed.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgseed.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_bg_particle_seed_bindings.asm",
+            "sha256": "a8ac546a9e4bf4a7b8d9f3d17e726791dd01ec3b668fd2b4dd718c5d07b8f38d"
+          },
+          {
+            "path": "src/main/boss/shinki/bg_particle_seed.c",
+            "sha256": "9d03e62114e2b9f3bcfd57adafe3ae7ebe531e786c26d1d7d7b233bd750a8066"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_bg_particle_seed_bindings.asm",
+          "sha256": "a8ac546a9e4bf4a7b8d9f3d17e726791dd01ec3b668fd2b4dd718c5d07b8f38d"
+        },
+        {
+          "path": "src/main/boss/shinki/bg_particle_seed.c",
+          "sha256": "9d03e62114e2b9f3bcfd57adafe3ae7ebe531e786c26d1d7d7b233bd750a8066"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "e5d20d055f707500a95d09ceafdcac7decdace84bd4c980439886ed7b4dc069b",
+      "compiled_negative_control": {
+        "target_start": 140122,
+        "candidate_start": 140122,
+        "size": 2,
+        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140122,
+          "size": 2,
+          "module": "th05/bgseed.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-background-particle-seed-data",
+        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "mutation": {
+          "unit": "main-shinki-background-particle-seed-data",
+          "source": "src/main/boss/shinki/bg_particle_seed.c",
+          "find": "(-1 & 0xff)",
+          "replace": "(-2 & 0xff)"
+        },
+        "control_sha256": "37df7d5c75db6f990642bd41715c67548608f57ae15d1d3dfe9957545eea5618",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140122,
+          "candidate_start": 140122,
+          "size": 2,
+          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
+          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140122,
+            "size": 2,
+            "module": "th05/bgseed.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "7bb76564820fb5e1b530d366784e27052829f16ad772ee3fcfbea9465ab79c4e",
+          "dependency_timestamp_normalized_sha256": "c64942aa9cfb1a1cb9aba90ca0c22b50d7932c5ee78fceae1a9513a4a44abf5e",
+          "module_name": "th05/bgseed.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bgseed.c",
+            "src/main/boss/shinki/bg_particle_seed.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bgseed.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-background-particle-seed-data"
       ]
     }
   ]
