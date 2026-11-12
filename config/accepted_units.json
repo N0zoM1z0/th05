@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "aea418f075dbc242c04aeb2745ba0b1ec535416e9a58965140aa4f85ede4df3e",
+  "replay_receipt_sha256": "082e5b0a1174bdc25fb25cec1108772d49498538fef10765a62692e8dbec0c4f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140120,
-    "candidate_start": 140120,
-    "size": 1,
-    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+    "target_start": 140126,
+    "candidate_start": 140126,
+    "size": 2,
+    "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 140120,
-      "size": 1,
-      "module": "th05/bgline.c",
+      "start": 140126,
+      "size": 2,
+      "module": "th05/bgspin.c",
       "segment": "_DATA"
     }
   },
@@ -103539,6 +103539,512 @@
       "receipt_selected_subset": [
         "main-shinki-lineset-zoom-cycle-data"
       ]
+    },
+    {
+      "id": "main-shinki-type-b-startup-flag-data",
+      "entry_sha256": "01651dc902f622897e724287b13c536848df813ae012d3c54142acb066ab3df1",
+      "result": {
+        "id": "main-shinki-type-b-startup-flag-data",
+        "entry_sha256": "01651dc902f622897e724287b13c536848df813ae012d3c54142acb066ab3df1",
+        "rounds": [
+          {
+            "target_start": 140124,
+            "candidate_start": 140124,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140124,
+              "size": 1,
+              "module": "th05/bginitb.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140124,
+            "candidate_start": 140124,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140124,
+              "size": 1,
+              "module": "th05/bginitb.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "f510f563c84f28dd839acd0333b9249d0cae0a55e9ed18e6be74c5c538673245",
+            "dependency_timestamp_normalized_sha256": "8037c3a1d67075d0aacd2e6be64c2f5d24530c9e8af1a810c955b48ee071a97b",
+            "module_name": "th05/bginitb.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bginitb.c",
+              "src/main/boss/shinki/bg_type_b_initialized.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "773e770f2bab10edc94431b0cadcc6f9313c80bec65292403c6e1caf118585e6",
+            "dependency_timestamp_normalized_sha256": "8037c3a1d67075d0aacd2e6be64c2f5d24530c9e8af1a810c955b48ee071a97b",
+            "module_name": "th05/bginitb.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bginitb.c",
+              "src/main/boss/shinki/bg_type_b_initialized.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bginitb.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bginitb.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_type_b_startup_bindings.asm",
+            "sha256": "7a732b2cb7bbdaf00d644a32b690a83a7a8e6cf93dda1af850ba1d202a34d13f"
+          },
+          {
+            "path": "src/main/boss/shinki/bg_type_b_initialized.c",
+            "sha256": "69c8399886a23d01cffdebe1669dcf0cdf5715c9a4286333130a08d6c6d7a584"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_type_b_startup_bindings.asm",
+          "sha256": "7a732b2cb7bbdaf00d644a32b690a83a7a8e6cf93dda1af850ba1d202a34d13f"
+        },
+        {
+          "path": "src/main/boss/shinki/bg_type_b_initialized.c",
+          "sha256": "69c8399886a23d01cffdebe1669dcf0cdf5715c9a4286333130a08d6c6d7a584"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "02a810779a45b1f876541a69295157160d699f28dcfa34fefde42474916f60aa",
+      "compiled_negative_control": {
+        "target_start": 140124,
+        "candidate_start": 140124,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140124,
+          "size": 1,
+          "module": "th05/bginitb.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-type-b-startup-flag-data",
+        "entry_sha256": "01651dc902f622897e724287b13c536848df813ae012d3c54142acb066ab3df1",
+        "mutation": {
+          "unit": "main-shinki-type-b-startup-flag-data",
+          "source": "src/main/boss/shinki/bg_type_b_initialized.c",
+          "find": "shinki_bg_type_b_initialized = 0;",
+          "replace": "shinki_bg_type_b_initialized = 1;"
+        },
+        "control_sha256": "fa3ccf267d282a6e0e8a2d832d8cf63115b3de8740d89e7fb3dd6beaaf6f3dc4",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140124,
+          "candidate_start": 140124,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140124,
+            "size": 1,
+            "module": "th05/bginitb.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "d51e12bcf5b258e9586b5754fe1bd1906557827c9f4ccb97d8d9d3b0fae0f526",
+          "dependency_timestamp_normalized_sha256": "70f917c347c62666c49f765d5bf2f3f30746268b98eb5263193c34e1d8d3a50a",
+          "module_name": "th05/bginitb.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bginitb.c",
+            "src/main/boss/shinki/bg_type_b_initialized.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bginitb.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shinki-spinline-phase-clock-data",
+      "entry_sha256": "f7b77234b09f0deb671e935a71236a1465690c356b4ec729c74ef53bc8f38a6c",
+      "result": {
+        "id": "main-shinki-spinline-phase-clock-data",
+        "entry_sha256": "f7b77234b09f0deb671e935a71236a1465690c356b4ec729c74ef53bc8f38a6c",
+        "rounds": [
+          {
+            "target_start": 140126,
+            "candidate_start": 140126,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140126,
+              "size": 2,
+              "module": "th05/bgspin.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140126,
+            "candidate_start": 140126,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140126,
+              "size": 2,
+              "module": "th05/bgspin.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "553a1fa930e1d268473001a508bc57085ee752fb72d9934091353efd28f6e4bb",
+            "dependency_timestamp_normalized_sha256": "473fc760346e92de38b2e1ed5c246f368dd934573fbe6fe4a8b0a4fdd5d639e2",
+            "module_name": "th05/bgspin.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgspin.c",
+              "src/main/boss/shinki/bg_spinline_frame.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "7fbda45d16559d0842a8ebb2f47fe8a2fa0b3023a05a2c7142f8ce33b507c49a",
+            "dependency_timestamp_normalized_sha256": "473fc760346e92de38b2e1ed5c246f368dd934573fbe6fe4a8b0a4fdd5d639e2",
+            "module_name": "th05/bgspin.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgspin.c",
+              "src/main/boss/shinki/bg_spinline_frame.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgspin.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgspin.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_spinline_frame_bindings.asm",
+            "sha256": "d2fc218a0822c8f1a1a9c9bce0214fcb2532e76d1e52b2efe5609f03156b96f7"
+          },
+          {
+            "path": "src/main/boss/shinki/bg_spinline_frame.c",
+            "sha256": "8dc504a0890ec8b7f912556a0fa9e4c2e77c44b7d7db9fc659d05cba984be0eb"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_spinline_frame_bindings.asm",
+          "sha256": "d2fc218a0822c8f1a1a9c9bce0214fcb2532e76d1e52b2efe5609f03156b96f7"
+        },
+        {
+          "path": "src/main/boss/shinki/bg_spinline_frame.c",
+          "sha256": "8dc504a0890ec8b7f912556a0fa9e4c2e77c44b7d7db9fc659d05cba984be0eb"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "082e5b0a1174bdc25fb25cec1108772d49498538fef10765a62692e8dbec0c4f",
+      "compiled_negative_control": {
+        "target_start": 140126,
+        "candidate_start": 140126,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140126,
+          "size": 2,
+          "module": "th05/bgspin.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-spinline-phase-clock-data",
+        "entry_sha256": "f7b77234b09f0deb671e935a71236a1465690c356b4ec729c74ef53bc8f38a6c",
+        "mutation": {
+          "unit": "main-shinki-spinline-phase-clock-data",
+          "source": "src/main/boss/shinki/bg_spinline_frame.c",
+          "find": "shinki_bg_spinline_frame = 0;",
+          "replace": "shinki_bg_spinline_frame = 1;"
+        },
+        "control_sha256": "44ba3c5dd6b5e8584b70543f73a1822e2ffa96d558690b2c6fa0f6a5a271129e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140126,
+          "candidate_start": 140126,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140126,
+            "size": 2,
+            "module": "th05/bgspin.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "e592f98b33c1ec40a2aec4db7f7f6017fc4e8ef8a34b1715ae34f295afcdc98f",
+          "dependency_timestamp_normalized_sha256": "6f23477fb471fdca6339636136a947dd9de12b5ec68f926a9cd4b65c92f403e7",
+          "module_name": "th05/bgspin.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bgspin.c",
+            "src/main/boss/shinki/bg_spinline_frame.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bgspin.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ]
 }

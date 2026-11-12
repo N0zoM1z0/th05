@@ -6433,3 +6433,47 @@ unit = "main-shinki-lineset-zoom-cycle-data"
 source = "src/main/boss/shinki/bg_lineset_counter.c"
 find = "shinki_bg_linesets_zoomed_out = 0;"
 replace = "shinki_bg_linesets_zoomed_out = 1;"
+
+[[units]]
+id = "main-shinki-type-b-startup-flag-data"
+source = "src/main/boss/shinki/bg_type_b_initialized.c"
+module = "th05/bginitb.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_BG_TYPE_B_START_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_type_b_startup_bindings.asm"
+target_start = 0x2235c
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-type-b-startup-flag-data"
+source = "src/main/boss/shinki/bg_type_b_initialized.c"
+find = "shinki_bg_type_b_initialized = 0;"
+replace = "shinki_bg_type_b_initialized = 1;"
+
+[[units]]
+id = "main-shinki-spinline-phase-clock-data"
+source = "src/main/boss/shinki/bg_spinline_frame.c"
+module = "th05/bgspin.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_BG_SPINLINE_CLOCK_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_spinline_frame_bindings.asm"
+target_start = 0x2235e
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-spinline-phase-clock-data"
+source = "src/main/boss/shinki/bg_spinline_frame.c"
+find = "shinki_bg_spinline_frame = 0;"
+replace = "shinki_bg_spinline_frame = 1;"
