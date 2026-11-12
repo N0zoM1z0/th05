@@ -5948,3 +5948,26 @@ unit = "main-hud-stat-labels-data"
 source = "src/main/hud/stat_labels.c"
 find = "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_THIRD"
 replace = "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_SECOND"
+
+[[units]]
+id = "main-hud-colors-and-hp-data"
+source = "src/main/hud/colors_and_hp.c"
+module = "th05/hcolhp.c"
+segment = "_DATA"
+wrapper_options = "-zCHUD_COLORS_TEXT -zPmain_01"
+bindings_source = "probes/units/main_hud_colors_bindings.asm"
+source_encoding = "cp932"
+target_start = 138654
+size = 56
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables", "ui-text"]
+alignment_offsets = []
+padding_bytes = [{offset = 0, value = 0}]
+
+[[controls]]
+unit = "main-hud-colors-and-hp-data"
+source = "src/main/hud/colors_and_hp.c"
+find = "HC_MAGENTA, HC_MAGENTA, HC_BLUE"
+replace = "HC_MAGENTA, HC_MAGENTA, HC_RED"

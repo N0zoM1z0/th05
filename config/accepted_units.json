@@ -2,35 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e721a6018594dce40ba07cba0e7e3b3577027a3fd9839a82789236a6c194cc7d",
+  "replay_receipt_sha256": "5331a877e6b92185bc37b9296545b07ec0aa912faa0c152098a0424756d735db",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 107082,
-    "candidate_start": 107082,
-    "size": 1060,
-    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
-    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
+    "target_start": 138654,
+    "candidate_start": 138654,
+    "size": 56,
+    "target_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+    "candidate_sha256": "8bebb8296d21d0bbba729828fefc71f3edd91e484f75150fcbde0239e866997d",
     "raw_exact": false,
-    "target_fixups": [
-      198,
-      161
-    ],
-    "candidate_fixups": [
-      198,
-      161
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 107082,
-      "size": 1060,
-      "function_symbol": "exalice_update()",
-      "contribution_start": 106971,
-      "contribution_size": 1171,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 138654,
+      "size": 56,
+      "module": "th05/hcolhp.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -94281,6 +94273,349 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-hud-stat-labels-data"
+      ]
+    },
+    {
+      "id": "main-hud-colors-and-hp-data",
+      "entry_sha256": "74c92427a414bc876ebc8dc8e979e3126fef59ea87927a2076b0c065e847a483",
+      "result": {
+        "id": "main-hud-colors-and-hp-data",
+        "entry_sha256": "74c92427a414bc876ebc8dc8e979e3126fef59ea87927a2076b0c065e847a483",
+        "rounds": [
+          {
+            "target_start": 138654,
+            "candidate_start": 138654,
+            "size": 56,
+            "target_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+            "candidate_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138654,
+              "size": 56,
+              "module": "th05/hcolhp.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138654,
+            "candidate_start": 138654,
+            "size": 56,
+            "target_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+            "candidate_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138654,
+              "size": 56,
+              "module": "th05/hcolhp.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "f152336d5692705a18b2423d700007f61f51d1c7b4ea014f931486446e8a6930",
+            "dependency_timestamp_normalized_sha256": "11799fb518dfc7b6670e3c7ba5d7024ff4ec69255c07584284e4830cd15368c4",
+            "module_name": "th05/hcolhp.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hcolhp.c",
+              "src/main/hud/colors_and_hp.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 56,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 56,
+                  "sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "c3e4845cd22ac503d7e6ea2215c25aec084590de219717233f1e3f4566bace08",
+            "dependency_timestamp_normalized_sha256": "11799fb518dfc7b6670e3c7ba5d7024ff4ec69255c07584284e4830cd15368c4",
+            "module_name": "th05/hcolhp.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/hcolhp.c",
+              "src/main/hud/colors_and_hp.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 56,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 56,
+                  "sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hcolhp.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/hcolhp.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_hud_colors_bindings.asm",
+            "sha256": "46469f227cf77a4171078325702f273c4de96689ddd4d8b46e305707e6706de4"
+          },
+          {
+            "path": "src/main/hud/colors_and_hp.c",
+            "sha256": "69e33d3c10552f302755f51c9cf34e5d8e3c65697faa2aab7f0df5f5ade3d9c7"
+          },
+          {
+            "path": "src/main/hud/overlay_data.h",
+            "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/main_hud_colors_bindings.asm",
+              "sha256": "46469f227cf77a4171078325702f273c4de96689ddd4d8b46e305707e6706de4"
+            },
+            {
+              "path": "src/main/hud/colors_and_hp.c",
+              "sha256": "4d6126dd873edfef51eff971f4adf38892b6f44c43af940b67fa3fc03a5868e1"
+            },
+            {
+              "path": "src/main/hud/overlay_data.h",
+              "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/main_hud_colors_bindings.asm",
+              "sha256": "46469f227cf77a4171078325702f273c4de96689ddd4d8b46e305707e6706de4"
+            },
+            {
+              "path": "src/main/hud/colors_and_hp.c",
+              "sha256": "4d6126dd873edfef51eff971f4adf38892b6f44c43af940b67fa3fc03a5868e1"
+            },
+            {
+              "path": "src/main/hud/overlay_data.h",
+              "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_hud_colors_bindings.asm",
+          "sha256": "46469f227cf77a4171078325702f273c4de96689ddd4d8b46e305707e6706de4"
+        },
+        {
+          "path": "src/main/hud/colors_and_hp.c",
+          "sha256": "69e33d3c10552f302755f51c9cf34e5d8e3c65697faa2aab7f0df5f5ade3d9c7"
+        },
+        {
+          "path": "src/main/hud/overlay_data.h",
+          "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "5331a877e6b92185bc37b9296545b07ec0aa912faa0c152098a0424756d735db",
+      "compiled_negative_control": {
+        "target_start": 138654,
+        "candidate_start": 138654,
+        "size": 56,
+        "target_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+        "candidate_sha256": "8bebb8296d21d0bbba729828fefc71f3edd91e484f75150fcbde0239e866997d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138654,
+          "size": 56,
+          "module": "th05/hcolhp.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-colors-and-hp-data",
+        "entry_sha256": "74c92427a414bc876ebc8dc8e979e3126fef59ea87927a2076b0c065e847a483",
+        "mutation": {
+          "unit": "main-hud-colors-and-hp-data",
+          "source": "src/main/hud/colors_and_hp.c",
+          "find": "HC_MAGENTA, HC_MAGENTA, HC_BLUE",
+          "replace": "HC_MAGENTA, HC_MAGENTA, HC_RED"
+        },
+        "control_sha256": "94efdb55a14c4abbe2b9bd5e041ff57df84e7da7ff394c3ec5d0b3c4446b1d43",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138654,
+          "candidate_start": 138654,
+          "size": 56,
+          "target_sha256": "0256e0dcaba514c9430e609b0f6445a143ad644686f79c0733aa0e41a4a2eeff",
+          "candidate_sha256": "8bebb8296d21d0bbba729828fefc71f3edd91e484f75150fcbde0239e866997d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138654,
+            "size": 56,
+            "module": "th05/hcolhp.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "c38b8dfa0741ae2156a0a2f977e0fb619d8f00f74f00b906ad6a10dd0f6fcc01",
+          "dependency_timestamp_normalized_sha256": "4622e4a976f85c55dc9e4010828493b885d452bf2905f6034815ab65eefed290",
+          "module_name": "th05/hcolhp.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/hcolhp.c",
+            "src/main/hud/colors_and_hp.c",
+            "src/main/hud/overlay_data.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 56,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 56,
+                "sha256": "8bebb8296d21d0bbba729828fefc71f3edd91e484f75150fcbde0239e866997d"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/hcolhp.c"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/main_hud_colors_bindings.asm",
+            "sha256": "46469f227cf77a4171078325702f273c4de96689ddd4d8b46e305707e6706de4"
+          },
+          {
+            "path": "src/main/hud/colors_and_hp.c",
+            "sha256": "9f52ec9a2da2b85d3499eb39e7601ef6b5960bd7779fc060cef95ee2ae12960f"
+          },
+          {
+            "path": "src/main/hud/overlay_data.h",
+            "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-hud-colors-and-hp-data"
       ]
     }
   ]
