@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
+  "replay_receipt_sha256": "5346a3c54ad9a7ecd9e9b8b76f5b2b08aa8b01d87302cc8a23a8dd240d7583ff",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141710,
-    "candidate_start": 141710,
-    "size": 10,
-    "target_sha256": "8b4df7a42c4255076a4683d1c77c79c47e7d406d6b562bcb4ffaedf1d351f506",
-    "candidate_sha256": "f85d8b14334333af1d8a45f8592288b04c965349eb9a8c647bf8bc7a73c5262c",
+    "target_start": 137500,
+    "candidate_start": 137500,
+    "size": 6,
+    "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+    "candidate_sha256": "90f4e7c43891052c79ca22b5faebd124b7e7220e8b8e05e54d971087b3a848ae",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 141710,
-      "size": 10,
-      "module": "th05/boss.cpp",
+      "start": 137500,
+      "size": 6,
+      "module": "th05/badmode.cpp",
       "segment": "_DATA"
     }
   },
@@ -99459,6 +99459,262 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-bullet-add-mode-dispatch-data",
+      "entry_sha256": "8e0f861a60cf18b8360eda8cc1763fe825073d94d53e2be4b96cdd15864787c9",
+      "result": {
+        "id": "main-bullet-add-mode-dispatch-data",
+        "entry_sha256": "8e0f861a60cf18b8360eda8cc1763fe825073d94d53e2be4b96cdd15864787c9",
+        "rounds": [
+          {
+            "target_start": 137500,
+            "candidate_start": 137500,
+            "size": 6,
+            "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+            "candidate_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137500,
+              "size": 6,
+              "module": "th05/badmode.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137500,
+            "candidate_start": 137500,
+            "size": 6,
+            "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+            "candidate_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137500,
+              "size": 6,
+              "module": "th05/badmode.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ee12fb56b6c265db98163d7459a35ff22739b7fa0c864e3e8fc15ca777964611",
+            "dependency_timestamp_normalized_sha256": "92e584a1d961b4e7314857d2726120fe0a087cfb50d8be2043f337beb4b0dfd9",
+            "module_name": "th05/badmode.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/badmode.cpp",
+              "src/main/bullet/add_dispatch_table.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "ca65d7822cdf93622d95aec38fa8ace6cb953df1275241c98f4532c20eef0120",
+            "dependency_timestamp_normalized_sha256": "92e584a1d961b4e7314857d2726120fe0a087cfb50d8be2043f337beb4b0dfd9",
+            "module_name": "th05/badmode.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/badmode.cpp",
+              "src/main/bullet/add_dispatch_table.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/badmode.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/badmode.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_bullet_dispatch_data_bindings.asm",
+            "sha256": "a060d9693f3e74230301132371a116d1ec6833c8cae88aec664d0a2c451f9f16"
+          },
+          {
+            "path": "src/main/bullet/add_dispatch_table.cpp",
+            "sha256": "c47365faef52acf583a1a6d4f77ff42f7801791752ce3fd49aea374646a65761"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_bullet_dispatch_data_bindings.asm",
+          "sha256": "a060d9693f3e74230301132371a116d1ec6833c8cae88aec664d0a2c451f9f16"
+        },
+        {
+          "path": "src/main/bullet/add_dispatch_table.cpp",
+          "sha256": "c47365faef52acf583a1a6d4f77ff42f7801791752ce3fd49aea374646a65761"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "5346a3c54ad9a7ecd9e9b8b76f5b2b08aa8b01d87302cc8a23a8dd240d7583ff",
+      "compiled_negative_control": {
+        "target_start": 137500,
+        "candidate_start": 137500,
+        "size": 6,
+        "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+        "candidate_sha256": "90f4e7c43891052c79ca22b5faebd124b7e7220e8b8e05e54d971087b3a848ae",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137500,
+          "size": 6,
+          "module": "th05/badmode.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-add-mode-dispatch-data",
+        "entry_sha256": "8e0f861a60cf18b8360eda8cc1763fe825073d94d53e2be4b96cdd15864787c9",
+        "mutation": {
+          "unit": "main-bullet-add-mode-dispatch-data",
+          "source": "src/main/bullet/add_dispatch_table.cpp",
+          "find": "    bullets_add_regular_fixedspeed,",
+          "replace": "    bullets_add_regular,"
+        },
+        "control_sha256": "fc56b936334c41997df59b76620ca590dd0306be74fb7c739b774ca946db8b62",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137500,
+          "candidate_start": 137500,
+          "size": 6,
+          "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
+          "candidate_sha256": "90f4e7c43891052c79ca22b5faebd124b7e7220e8b8e05e54d971087b3a848ae",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137500,
+            "size": 6,
+            "module": "th05/badmode.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "e52ad5b6d2b058edaf465ed29cb949376f6a13ad151d191db00e9889a02632b4",
+          "dependency_timestamp_normalized_sha256": "03c99cc375dba160051d885599c453f5fda8b74b9d067b4719ae18345c4fc521",
+          "module_name": "th05/badmode.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/badmode.cpp",
+            "src/main/bullet/add_dispatch_table.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 6,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 6,
+                "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/badmode.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-bullet-add-mode-dispatch-data"
+      ]
     }
   ]
 }

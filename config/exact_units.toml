@@ -6257,3 +6257,25 @@ unit = "main-startup-resource-far-pointers-data"
 source = "src/main/resources/startup_resource_links.c"
 find = "stage_zero_song_name = main_resource_files.stage_bgm_base;"
 replace = "stage_zero_song_name = main_resource_files.op_fn;"
+
+[[units]]
+id = "main-bullet-add-mode-dispatch-data"
+source = "src/main/bullet/add_dispatch_table.cpp"
+module = "th05/badmode.cpp"
+segment = "_DATA"
+wrapper_options = "-zCBULLET_DISPATCH_DATA_TEXT -zPmain_03"
+bindings_source = "probes/units/main_bullet_dispatch_data_bindings.asm"
+target_start = 0x2191C
+size = 6
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-bullet-add-mode-dispatch-data"
+source = "src/main/bullet/add_dispatch_table.cpp"
+find = "    bullets_add_regular_fixedspeed,"
+replace = "    bullets_add_regular,"
