@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **532** (348 / 75 / 107 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **533** (349 / 75 / 107 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,502 bytes** |
-| Total source-authored C/C++ bytes | **126,286 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,095 / 5,335 / 5,013 / 8,559** |
-| Total unknown decoded bytes | **22,002** |
+| Source-authored exact semantic initialized DATA | **17,504 bytes** |
+| Total source-authored C/C++ bytes | **126,288 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,077 / 5,319 / 4,997 / 8,559** |
+| Total unknown decoded bytes | **21,952** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -34,6 +34,23 @@ Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
 
 ## Latest scoped progress
+
+- The latest source work completed [EX-Alice's charged HP/callback ladder](reconstruction/EXALICE_CHARGED_ADVANCE_2026-11-12.md)
+  (**1,060 B**), [Yumeko's mirrored sword fan](reconstruction/YUMEKO_MIRRORED_FAN_CONTEXT_2026-11-12.md)
+  (**435 B plus 354-/428-byte dependent contexts**),
+  [Mai/Yuki's six-function charge cohort](reconstruction/MAI_YUKI_CHARGE_AND_MUZZLES_2026-11-12.md)
+  (**543 B**) and [Yuki's opening three attacks](reconstruction/YUKI_SOLO_OPENING_2026-11-12.md)
+  (**509 B**). All complete affected compiler owners were reaccepted through
+  two positive builds, original ordered relocations and the existing compiled
+  negatives, without duplicate CODE credit.
+- The original first-game DATA now separately owns the
+  [16-bit character-resource loading flag](../src/main/runtime/load_playchar_initial.md)
+  at `20A70..20A72`: **2 newly accepted C++ bytes**. The eight-word
+  [Master clipping initializer](reconstruction/MASTER_CLIP_INITIAL_2026-11-12.md)
+  also closes **16 foreign DATA bytes each** in MAIN, OP and MAINE, from
+  the archived author ASM, native TASM LEDATA and complete target byte evidence.
+  This removes 50 previously unknown bytes overall, of which only two
+  are game-authored C++.
 
 - Three full Boss source updates: [Yuki's three opening callbacks](reconstruction/YUKI_SOLO_OPENING_2026-11-12.md)
   **509 bytes**, [Mai/Yuki's six charge and first attacks](reconstruction/MAI_YUKI_CHARGE_AND_MUZZLES_2026-11-12.md)
