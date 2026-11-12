@@ -265,3 +265,16 @@ The independent `shinki.cpp` updater and actual `update_context.cpp`
 updater still have the same function body, apart from the standalone
 file's trailing non-executable separator comment. No new CODE credit
 is created for already accepted bytes.
+
+## Physical white/purple wing state handoff with six real laser slots (2026-11-12)
+
+The independent maintained 959-byte updater and `shinki.cpp` now name
+the actual zero-based wing-wave selector consistently after both white
+wing preparation and the later purple transformation. The original
+six-beam preparation `main-shinki-wing-preparation` assigns genuine
+laser slots 0..5 separate source roles and still stops all six at its
+original completion boundary. The entire 11-unit original TU, plus
+the independently accepted 386-byte native compiler-assembly leaf, is
+reverified with two producers and their real compiled negatives.
+Receipts are in `wing_preparation.md`; no duplicate owner credit or
+new initialized DATA is claimed.

@@ -194,3 +194,36 @@ confirms all other affected Shinki functions' complete raw bytes,
 OMF/MAP placements and fixups. No new runtime fields, optimizer barriers,
 inline instructions, binary assets or duplicate accepted CODE credit are
 introduced. This is not a full game cold replay.
+
+## Original six-slot wing beam ownership and large Boss phase reset (2026-11-12)
+
+The source-visible six-beam preparation now names **six distinct real laser
+slots** in the same original spawn, per-frame angle-update, grow, and final
+stop order: right outer/inner/center = 0/1/2 and left center/inner/outer
+= 3/4/5. The sweep-completion comparison deliberately inspects the
+right-center laser **slot 2**, not an averaged or synthetic angle. During
+the animation, the source retains the original byte-wide `+= 0x01` and
+`-= 0x01` operations, which produce the correct Borland writeback forms;
+only the slot selectors now use explicit compile-time role names.
+The first wing animation frame remains byte zero in the canonical
+scratch field, and the original six-slot source includes no newly
+allocated arrays or extraneous laser state.
+
+The two independent source copies (`wing_preparation.cpp` and its
+historically adjacent body inside `shinki.cpp`) are now verified with
+one consistent six-slot protocol. The entire **386-byte** standalone
+wing pattern still compiles via its required genuine
+**TCC `-S` → TASM32** route, including complete raw byte equality, true
+ordered relocations and the compiled screen-shake control rejected:
+`.analysis/unit-replays/gpt-web-shinki-wing-named-six-slots-a/receipt.json`.
+
+The complete **959-byte** original Shinki Boss controller now also uses
+the explicit same first-wing pattern index for the post-white-wing
+and post-purple-wing transitions. These are independent real Boss
+wave counters; the existing 3,000-frame timeout and 16-bit enum width
+are unchanged. All **eleven** affected `shinki.cpp` / updater CODE
+scopes, including the original compiler switch table, checked padding
+and literal ordered relocations, match under two native Borland rounds:
+`.analysis/unit-replays/gpt-web-shinki-six-slot-boss-cohort-a/receipt.json`.
+No prior accepted CODE byte is credited twice and no whole executable
+cold replay is involved.

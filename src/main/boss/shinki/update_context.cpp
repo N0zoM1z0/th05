@@ -301,7 +301,7 @@ void pascal shinki_update(void)
                 to_sp(SHINKI_WING_HITBOX_MIMA_PX), to_sp(SHINKI_WING_HITBOX_YUUKA_PX)
 			);
 			wing_pattern = pattern_random_rain_and_spreads_from_wings;
-			phase_relative = 0;
+			phase_relative = SHW_WING_FIRST_PATTERN_INDEX;
 		}
 		break;
 
@@ -351,7 +351,7 @@ void pascal shinki_update(void)
 			boss.phase++;
 			boss.phase_frame = 0;
 			wing_pattern = pattern_aimed_b6balls_and_symmetric_spreads;
-			phase_relative = 0;
+			phase_relative = SHW_WING_FIRST_PATTERN_INDEX;
 		}
 		break;
 
