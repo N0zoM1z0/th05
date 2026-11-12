@@ -6169,3 +6169,25 @@ unit = "main-gameover-gaiji-text-data"
 source = "src/main/runtime/gameover_gaiji_bank.c"
 find = "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_D,"
 replace = "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_E,"
+
+[[units]]
+id = "main-pause-action-gaiji-data"
+source = "src/main/runtime/pause_action_gaiji.c"
+module = "th05/pau_gj.c"
+segment = "_DATA"
+wrapper_options = "-zCPAUSE_GAIJI_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_pause_action_gaiji_bindings.asm"
+target_start = 133730
+size = 9
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-pause-action-gaiji-data"
+source = "src/main/runtime/pause_action_gaiji.c"
+find = "PAUSE_GAIJI_SAIKAI_FIRST, PAUSE_GAIJI_SAIKAI_SECOND"
+replace = "PAUSE_GAIJI_SAIKAI_FIRST, PAUSE_GAIJI_CHUUDAN_SECOND"
