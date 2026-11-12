@@ -2,9 +2,8 @@
 #ifndef TH05_STAGE_BONUS_FULL_HPP
 #define TH05_STAGE_BONUS_FULL_HPP
 #include "src/main/stage/bonus_helpers.hpp"
+#include "src/main/stage/bonus_previous_resources.h"
 
-extern unsigned char bonus_previous_miss_count;
-extern unsigned char bonus_previous_bomb_count;
 extern unsigned char stage_id;
 extern unsigned char dream;
 extern unsigned char lives;

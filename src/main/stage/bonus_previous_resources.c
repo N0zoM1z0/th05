@@ -4,6 +4,8 @@
 #error Original two-byte near DATA is a native C initializer
 #endif
 
+#include "src/main/stage/bonus_previous_resources.h"
+
 unsigned char near bonus_previous_miss_count = 0;
 unsigned char near bonus_previous_bomb_count = 0;
 typedef char previous_stage_miss_is_byte[(sizeof(bonus_previous_miss_count) == 1) ? 1 : -1];

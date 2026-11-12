@@ -31,3 +31,31 @@ Bomb count from zero to one and is rejected:
 `.analysis/unit-replays/gpt-web-stage-bonus-previous-counts-a/receipt.json`.
 
 No CODE is recredited and no full MAIN cold replay is executed.
+
+## Actual Stage Clear and All Clear C/C++ consumer closure (2026-11-12)
+
+The complete 561-byte `stage_clear_bonus()` and 579-byte
+`stage_allclear_bonus()` functions now share the exact C public
+`bonus_previous_resources.h` with their independently source-defined
+near-DATA counter pair. Each function reads the *previous* miss and
+Bomb counts, compares the real resident fields, and updates both
+counters **before** rendering its No Miss/No Bomb lines. No extra
+statistic is inferred or added; the genuine `no_bomb` predicate still
+depends on `no_miss`, and the existing far HUD APIs and score arithmetic
+remain in their original call order.
+
+The complete two-function native C++ contribution was recompiled with
+the true adjacent helper context, preserving all 561+579 original raw
+CODE bytes, the 11+11 literally ordered MZ fixups, actual MAP/OMF
+boundaries and checked, uncredited relaxed-call bytes. The original
+compiled stage-scaling negative was rejected. The C two-byte public
+initializer was *separately* recompiled with its own zero-to-one Bomb
+counter mutation rejected:
+
+- `.analysis/unit-replays/gpt-web-stage-bonus-c-consumers-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-stage-bonus-c-public-data-a/receipt.json`
+
+This closes a real inter-translation-unit interface; all 1,140 CODE
+extent bytes and the two initialized DATA bytes were already accepted
+as distinct owners, so they receive no second authored-byte credit.
+No full MAIN or other executable cold replay was performed.

@@ -87,3 +87,15 @@ and was rejected. That first-scope mutation supplies the shared oracle control
 for the all-clear scope; its separately proposed 50,000-to-49,900 mutation
 was not compiled in this replay. Both scopes were imported and committed in
 `fcdef3f`.
+
+## C linkage for last-stage Miss/Bomb comparisons (2026-11-12)
+
+Both full, already byte-exact Stage Clear and All Clear functions now
+import their shared two source-initialized previous-resource counters
+from the independent C DATA owner through
+`bonus_previous_resources.h`. The native C++ full-context source uses
+unchanged read/update/No Miss/No Bomb semantics, and both complete
+functions and the two-byte C DATA initializer pass their own targeted
+Borland two-producer checks and compiled meaningful negatives.
+Receipts and exact DATA boundaries are described in
+`bonus_previous_resources.md`; no old CODE or DATA is recredited.
