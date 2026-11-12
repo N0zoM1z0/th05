@@ -109,3 +109,36 @@ compiled semantic negative is rejected. Accepted local evidence:
 `.analysis/unit-replays/gpt-web-louise-scratch-20261111/receipt.json`.
 There is no new authored-byte credit, because all three functions already had
 accepted exact owners.
+
+## Eight-phase Louise choreography, HP transitions and alternating modes (2026-11-12)
+
+The actual 582-byte far-Pascal Louise Boss controller now explicitly names
+its complete HP ladder **4,400 → 3,000 → 1,900 → 500 → 0**, instead of
+mixing the next-phase HP values into unnamed call literals. The original
+phase-next calls still install those exact *end* thresholds; no HP is
+implicitly subtracted from the current Boss state. The named independent
+clocks distinguish the 128-frame HP filling, 64-frame ready wait, both
+64-frame fire transitions, and 96/128/48/128-frame movement intervals.
+The first three attack waves terminate after 20 completed patterns, while
+the final aimed-pellet cycle terminates after ten. Hit and timeout
+transitions preserve their original different defeat-bonus semantics.
+
+The two three-mode dispatches now name their actual relationship to the
+shared 16-byte Louise scratch object: the first selects alternating blue
+spreads and red stacks via parity, while the later wave toggles between
+sweeping lasers and turning rings. Charge-speed scratch initialization
+remains `0x18` for the first wave and `0x14` for the later wave. The
+0/1 alternation is an actual selector state, not a new field or prebuilt
+function table. The original gather geometry, entrance sound, pattern
+score bonus and final defeat bonus have explicit source-level names. No
+additional storage, branch calls, artificial compiler operations or
+replacement graphics resources are introduced.
+
+The modified natural source uses `phase_choreography.hpp`, which encodes
+compile-time thresholds only. Both independent Borland producers in
+`.analysis/unit-replays/gpt-web-louise-phases-a/receipt.json` match the
+whole **582-byte** source contribution, including the genuine one-byte
+alignment, 16-byte compiler switch table and original ordered far sound
+relocation. The compiled HP-gate mutation from 3,000 to 3,001 was
+rejected. Already accepted Louise CODE is not credited a second time;
+no full MAIN or unrelated cold replay was performed.

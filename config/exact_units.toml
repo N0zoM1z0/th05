@@ -1874,8 +1874,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-louise-update"
 source = "src/main/boss/louise/update.cpp"
-find = "boss.phase_end_hp = 3000;"
-replace = "boss.phase_end_hp = 3001;"
+find = "boss.phase_end_hp = LOUISE_HP_AFTER_SETUP;"
+replace = "boss.phase_end_hp = (LOUISE_HP_AFTER_SETUP + 1);"
 
 [[units]]
 id = "main-yumeko-patterns"
