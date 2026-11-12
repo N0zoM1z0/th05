@@ -324,6 +324,17 @@ void near pattern_accelerating_spirals_counterclockwise(void)
 	pattern_accelerating_rings(state->phase_3.angle_counterclockwise, -0x06);
 }
 
+// Each corridor laser uses the same aim-and-spawn operation. Only the
+// first initializes color/width, after its angle and before its spawn.
+#define SARA_CORRIDOR_FIXED_LASER(slot, direction, initialize) { \
+    laser_template.coords.angle = direction; \
+    if(initialize) { \
+        laser_template.col = SARA_LASER_COLOR; \
+        laser_template.coords.width.nonshrink = SARA_LASER_WIDTH; \
+    } \
+    laser_manual_fixed_spawn(slot); \
+}
+
 void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 {
 	enum {
@@ -336,13 +347,10 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 
 	if(boss.phase_frame == SARA_LASER_CREATE_FRAME) {
 		laser_template.coords.origin = boss.pos.cur;
-		laser_template.coords.angle = (-SARA_LASER_CORRIDOR_CENTER_ANGLE + SARA_LASER_OFFSET_ANGLE);
-		laser_template.col = SARA_LASER_COLOR;
-		laser_template.coords.width.nonshrink = SARA_LASER_WIDTH;
-		laser_manual_fixed_spawn(X_RIGHT);
-
-		laser_template.coords.angle = (-SARA_LASER_CORRIDOR_CENTER_ANGLE - SARA_LASER_OFFSET_ANGLE);
-		laser_manual_fixed_spawn(X_LEFT);
+		SARA_CORRIDOR_FIXED_LASER(X_RIGHT,
+			(-SARA_LASER_CORRIDOR_CENTER_ANGLE + SARA_LASER_OFFSET_ANGLE), 1);
+		SARA_CORRIDOR_FIXED_LASER(X_LEFT,
+			(-SARA_LASER_CORRIDOR_CENTER_ANGLE - SARA_LASER_OFFSET_ANGLE), 0);
 		state->phase_4.spread_angle = SARA_LASER_INITIAL_SPREAD_ANGLE;
 		state->phase_4.random_ball_count = SARA_LASER_INITIAL_BALL_COUNT;
 		state->phase_4.laser_angle_interval = SARA_LASER_INITIAL_TURN_INTERVAL;
@@ -594,3 +602,5 @@ void pascal sara_update(void)
 
 #undef SARA_FRESH_PELLET_DIRECTION
 #undef SARA_RED_CLOUD_SETUP
+
+#undef SARA_CORRIDOR_FIXED_LASER
