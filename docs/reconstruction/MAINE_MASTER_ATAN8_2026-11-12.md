@@ -16,11 +16,12 @@ and is credited separately as **256 bytes of foreign initialized DATA**,
 not original C++ code or a second MAIN owner.
 
 The physical boundary matters: MAINE `[101CB,101CC)` is one still-unknown
-preceding byte, and `[102CC,102D4)` is **eight separate zero bytes**,
-including the native TASM ATAN LEDATA's two trailing zeros and later
-alignment contributions. They are not part of the author's 256-value table
-and remain unknown. The following BFNT header begins at `102D4` and is a
-different source resource.
+preceding byte, and `[102CC,102DA)` contains **eight zero bytes followed by the six-byte** `BFNT 1Ah 00h`
+font-header prefix. The native TASM ATAN LEDATA contributes two of the
+trailing zeros; the remaining values belong to separate following context. These are not part of the author's 256-value table
+and remain unknown; a separate CLIP initialized-DATA owner begins at
+`102DA`. These fourteen bytes remain outside the 256-byte ATAN owner; no
+additional resource or initialized-byte credit is inferred.
 
 Focused original-source, real MAP/OMF and original-target verification:
 `python3 scripts/review_maine_atan8_initial.py --check`.

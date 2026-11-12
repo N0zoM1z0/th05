@@ -82,7 +82,9 @@ def review():
          'MAINE ATAN8 has an unexpected loader segment relocation')
     need(target.program_image[START-1:START]==b'\0' and
          target.program_image[START+SIZE:START+SIZE+8]==b'\0'*8 and
-         cal.program_image[CAL_START+SIZE:CAL_START+SIZE+8]==b'\0'*8,
+         cal.program_image[CAL_START+SIZE:CAL_START+SIZE+8]==b'\0'*8 and
+         target.program_image[START+SIZE+8:START+SIZE+14]==b'BFNT\x1a\0' and
+         cal.program_image[CAL_START+SIZE+8:CAL_START+SIZE+14]==b'BFNT\x1a\0',
          'excluded original ATAN8 pre/post alignment differs')
     return dict(version=1,kind='source-linked-MAINE-original-Master-ATAN8',
                 classification='third-party-library-initialized-data',
@@ -97,7 +99,7 @@ def review():
                 actual_LEDATA_record_offset=rec.offset,
                 actual_LEDATA_written_size=len(initializer),
                 actual_source_local_offset=0,
-                unclaimed_leading_bytes=1,unclaimed_trailing_bytes=8,
+                unclaimed_leading_bytes=1,unclaimed_trailing_bytes=14,
                 ordered_original_MZ_fixups=[])
 
 
@@ -123,7 +125,7 @@ def validate(proof):
          proof.get('actual_source_local_offset')==0 and
          proof.get('actual_LEDATA_written_size')==258 and
          type(proof.get('actual_LEDATA_record_offset')) is int and
-         proof.get('unclaimed_leading_bytes')==1 and proof.get('unclaimed_trailing_bytes')==8 and
+         proof.get('unclaimed_leading_bytes')==1 and proof.get('unclaimed_trailing_bytes')==14 and
          proof.get('ordered_original_MZ_fixups')==[],
          'MAINE ATAN source/native evidence or exact physical boundary changed')
 
@@ -150,6 +152,6 @@ def main():
     else:j=json.loads(PROOF.read_text())
     validate(j)
     if a.check:need(j==review(),'MAINE ATAN8 original exact source proof changed')
-    print('PASS: MAINE original 256-byte Master ATAN8 DATA, 9 neighboring unknown bytes excluded')
+    print('PASS: MAINE original 256-byte Master ATAN8 DATA, 15 neighboring unknown bytes excluded')
 
 if __name__=='__main__':main()
