@@ -2,27 +2,49 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "773764481194ad445d2fa37fc69fec17388ac2e4cabf967fcd9c1e09378fb8c2",
+  "replay_receipt_sha256": "2306d8759f325b8497f8df9b3919f3d7cd1e9c57728392b34b70bd99c9ca0eb0",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141472,
-    "candidate_start": 141472,
-    "size": 24,
-    "target_sha256": "b77ac7b9bf6ea78369d179285fd8059812f932f3d422c28f839565c0c820e32e",
-    "candidate_sha256": "d25434f96d0ce3e11b7a4fcea3ae9ea390de2753e3e1426dd1e587507d2d6055",
+    "target_start": 98267,
+    "candidate_start": 98267,
+    "size": 1018,
+    "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+    "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
+    ],
+    "candidate_fixups": [
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 141472,
-      "size": 24,
-      "module": "th05/bxtiles.c",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 98267,
+      "size": 1018,
+      "function_symbol": "mai_yuki_update()",
+      "contribution_start": 97328,
+      "contribution_size": 1957,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -69228,8 +69250,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "9953f3b759907db2473949aa79dfd42bbf6ae71f6f1e67fc5fd03674231b61e9",
-            "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
+            "sha256": "0f48b39838691b9a982856b0da99c7353faccba1daa02aa89437d1c0a96f8a80",
+            "dependency_timestamp_normalized_sha256": "f59aa05099112e3ad147de340f67c2cdfccf11373a111f6716dc83963f68a32e",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -69262,12 +69284,13 @@
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/transition_effects.hpp",
               "src/main/boss/mai_yuki/remaining_patterns.inl"
             ]
           },
           {
-            "sha256": "d15597ea37c253ed36fa952bca2e5f9404a3f8374185d4215c9a60360eefa973",
-            "dependency_timestamp_normalized_sha256": "01e657afec1ff1041270bd99f58ac0e97cfa428b393eacac204bdc3da02aea0e",
+            "sha256": "15cc551cba89fa17a5894b1f485e927d9051f743b7999121e596602b8a8600a9",
+            "dependency_timestamp_normalized_sha256": "f59aa05099112e3ad147de340f67c2cdfccf11373a111f6716dc83963f68a32e",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -69300,6 +69323,7 @@
               "src/main/bullet/cheeto.hpp",
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
+              "src/main/boss/mai_yuki/transition_effects.hpp",
               "src/main/boss/mai_yuki/remaining_patterns.inl"
             ]
           }
@@ -69358,12 +69382,16 @@
             "sha256": "583cb658664597152c796719f5c55f7694d61aebb71ec1aa7b07fb6d3834ba51"
           },
           {
+            "path": "src/main/boss/mai_yuki/transition_effects.hpp",
+            "sha256": "0eceb36ee7f6d17718063dcadede586fc8ff69660a1046e994edad1b18cc1090"
+          },
+          {
             "path": "src/main/boss/mai_yuki/update.hpp",
             "sha256": "ef7755367a6748210c84b02a10fb0c2d743379cfae63b5a316542a8669736225"
           },
           {
             "path": "src/main/boss/mai_yuki/update_context.cpp",
-            "sha256": "6db0c63825ef236dcee83a5e5659815308b97777f47a36c85731a1eeb198a909"
+            "sha256": "4084e1ca4df2a527abaaf1d9d00559880ec1a4709adaad9174c1d18604edd1fe"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -69434,12 +69462,16 @@
           "sha256": "583cb658664597152c796719f5c55f7694d61aebb71ec1aa7b07fb6d3834ba51"
         },
         {
+          "path": "src/main/boss/mai_yuki/transition_effects.hpp",
+          "sha256": "0eceb36ee7f6d17718063dcadede586fc8ff69660a1046e994edad1b18cc1090"
+        },
+        {
           "path": "src/main/boss/mai_yuki/update.hpp",
           "sha256": "ef7755367a6748210c84b02a10fb0c2d743379cfae63b5a316542a8669736225"
         },
         {
           "path": "src/main/boss/mai_yuki/update_context.cpp",
-          "sha256": "6db0c63825ef236dcee83a5e5659815308b97777f47a36c85731a1eeb198a909"
+          "sha256": "4084e1ca4df2a527abaaf1d9d00559880ec1a4709adaad9174c1d18604edd1fe"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -69488,7 +69520,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "e440f2194d67b9dec9356e7d2250ac184bdacf99de49f4cd7c26dd9cdcc26901",
+      "replay_receipt_sha256": "2306d8759f325b8497f8df9b3919f3d7cd1e9c57728392b34b70bd99c9ca0eb0",
       "compiled_negative_control": {
         "target_start": 98267,
         "candidate_start": 98267,
@@ -69585,8 +69617,8 @@
           }
         },
         "omf": {
-          "sha256": "1772a93358e17acbd2e193ed3285bad95ed32a4cb4c827bb630c303c5913700e",
-          "dependency_timestamp_normalized_sha256": "cb714ac14557c16c97d9fa4c998ef2c2cd17c85fcb49256a25fcf3ff4b158317",
+          "sha256": "589dd04c78e201c6be2a6bc7fc4187ecf7ca15e321642eeac9098ff02c787dc0",
+          "dependency_timestamp_normalized_sha256": "9ecee5a57f7874fe4ec4c057b4d87aea5b21f7103a358ad9068eec2aecd95163",
           "module_name": "th05/my_ctx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -69619,6 +69651,7 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
+            "src/main/boss/mai_yuki/transition_effects.hpp",
             "src/main/boss/mai_yuki/remaining_patterns.inl"
           ]
         },
@@ -69636,7 +69669,10 @@
           "th05/my_ctx.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-mai-yuki-update-context"
+      ]
     },
     {
       "id": "main-map-free",

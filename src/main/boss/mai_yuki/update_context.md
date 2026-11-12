@@ -75,3 +75,36 @@ original raw byte, switch table, alignment byte, and ordered relocation equal.
 Its compiled HP-gate semantic negative was rejected. Actual receipt:
 `.analysis/unit-replays/gpt-web-mai-yuki-defeat-codes-real-context-20261111/receipt.json`.
 There is no new authored-byte credit or change in the hit helper's ABI.
+
+## Paired-Boss explosion and survivor transition semantics (2026-11-12)
+
+The 1,018-byte `mai_yuki_update()` controller now names the fight's real
+explosion/survivor transition effects in `transition_effects.hpp`. In the
+shared fight's setup, gather still uses its two-step angle and eight points.
+At each HP gate, the clear-warning sound is 15 and both Bosses' small
+explosions still use the diagonal `ET_SW_NE` direction; the defeated
+character's later explosion uses `ET_VERTICAL`. These two `ET_*`
+constants preserve the existing original enum values and the real
+near-Pascal unsigned-argument ABI of `boss2_explode_small()`.
+
+At the end of the first explosion, whichever Boss was defeated receives
+sprite 4, the other keeps the original idle sprite, and the sound 12 and
+255-frame player invincibility are unchanged. The following animation
+still shakes the playfield by exactly four pixels: negative X on even
+frame-mod-2 ticks and negative Y through mod-4 values 0 and 1. Its
+slowdown factor remains two, while the 8-frame sprite advance and
+64-frame transition thresholds retain their previous named clocks.
+The survivor's original handoff resets Boss phase to zero, replacing the
+shared update callback with the correct Mai/Yuki solo controller.
+
+No new state, helper calls, guards, ABI views, optimizer barriers or
+placeholder instructions were introduced. The standalone `update.cpp`
+and actual accepted `update_context.cpp` retain identical callback bodies.
+The focused native replay at
+`.analysis/unit-replays/gpt-web-mai-yuki-transition-effects-b/receipt.json`
+passed two independent compiler producers across all **1,018** original
+callback bytes, one checked alignment zero, 24 bytes of real compiler
+switch tables and the nine original ordered relocation sites. The
+existing compiled 5,500-HP gate mutation was rejected. Other accepted
+units were not replayed and the already accepted CODE earns no duplicate
+credit from this semantic source improvement.

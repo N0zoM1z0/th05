@@ -2,6 +2,7 @@
 // Only the updater is a new accepted scope; the ten patterns already have credit.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/update.hpp"
+#include "src/main/boss/mai_yuki/transition_effects.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/remaining_patterns.inl"
 
@@ -59,8 +60,8 @@ void pascal far mai_yuki_update(void)
             boss2.hp = MY_SHARED_HP;
             boss2.phase_end_hp = 0;
             gather_template.radius.v = to_sp(MY_SHARED_RING_RADIUS_PIXELS);
-            gather_template.angle_delta = 2;
-            gather_template.ring_points = 8;
+            gather_template.angle_delta = MY_GATHER_ANGLE_DELTA;
+            gather_template.ring_points = MY_GATHER_RING_POINTS;
             for(i = MY_TINY_FIRST; i < MY_TINY_END; i++) {
                 super_convert_tiny(i);
             }
@@ -70,7 +71,7 @@ void pascal far mai_yuki_update(void)
         if(boss.phase_frame >= MY_SETUP_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
-            snd_se_play(13);
+            snd_se_play(MY_SHARED_ENTRANCE_SE);
             bg_render_bombing_func = mai_yuki_bg_render;
         }
         break;
@@ -100,9 +101,9 @@ void pascal far mai_yuki_update(void)
                     if(bullet_clear_time < MY_BULLET_CLEAR_MINIMUM) {
                         bullet_clear_time = MY_BULLET_CLEAR_MINIMUM;
                     }
-                    snd_se_play(15);
+                    snd_se_play(MY_SHARED_GATE_WARNING_SE);
                     boss_explode_small(ET_NW_SE);
-                    boss2_explode_small(2);
+                    boss2_explode_small(ET_SW_NE);
                 }
             } else {
                 state_result = boss.phase_frame - MY_REPOSITION_NORMAL_LEAD_FRAMES;
@@ -153,7 +154,7 @@ void pascal far mai_yuki_update(void)
         boss.phase = MY_PHASE_EXPLODE_SMALL;
         boss.phase_frame = 0;
         if(lasers[0].flag != LF_FREE) {
-            laser_stop(0);
+            laser_stop(MY_FIRST_LASER_TO_STOP);
         }
         break;
 
@@ -162,35 +163,37 @@ void pascal far mai_yuki_update(void)
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_small(ET_VERTICAL);
             } else {
-                boss2_explode_small(4);
+                boss2_explode_small(ET_VERTICAL);
             }
             break;
         }
         if(boss.phase_frame == MY_SMALL_EXPLOSION_BIG_FRAME) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss_explode_big_circle();
-                boss.sprite = 4;
+                boss.sprite = MY_BOSS_EXPLOSION_SPRITE_FIRST;
                 boss2.sprite = PAT_B4_STILL;
             } else {
                 boss2_explode_big_circle();
-                boss2.sprite = 4;
+                boss2.sprite = MY_BOSS_EXPLOSION_SPRITE_FIRST;
                 boss.sprite = PAT_B4_STILL;
             }
             boss.phase++;
             bullet_zap.active = boss.phase_state.defeat_bonus;
             boss.phase_frame = 0;
-            snd_se_play(12);
-            player_invincibility_time = 255;
+            snd_se_play(MY_BIG_EXPLOSION_SE);
+            player_invincibility_time = MY_POST_EXPLOSION_INVINCIBILITY_FRAMES;
         }
         break;
 
     case MY_PHASE_EXPLODE_BIG:
         if(boss.phase_frame < MY_BIG_EXPLOSION_SHAKE_FRAMES) {
-            playfield_shake_x = (stage_frame_mod2 == 0) ? -4 : 4;
-            playfield_shake_y = (stage_frame_mod4 <= 1) ? -4 : 4;
+            playfield_shake_x = (stage_frame_mod2 == MY_SHAKE_X_NEGATIVE_MOD2)
+                ? -MY_BIG_EXPLOSION_SHAKE_DISTANCE_PX : MY_BIG_EXPLOSION_SHAKE_DISTANCE_PX;
+            playfield_shake_y = (stage_frame_mod4 <= MY_SHAKE_Y_NEGATIVE_MOD4_LAST)
+                ? -MY_BIG_EXPLOSION_SHAKE_DISTANCE_PX : MY_BIG_EXPLOSION_SHAKE_DISTANCE_PX;
         }
         bg_render_bombing_func = tiles_render_all;
-        slowdown_factor = 2;
+        slowdown_factor = MY_BIG_EXPLOSION_SLOWDOWN;
         if((boss.phase_frame % MY_BIG_EXPLOSION_SPRITE_FRAMES) == 0) {
             if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
                 boss.sprite++;
@@ -220,7 +223,7 @@ void pascal far mai_yuki_update(void)
             }
             dialog_animate();
             overlay1 = overlay_boss_bgm_update_and_render;
-            boss.phase = 0;
+            boss.phase = MY_SURVIVOR_RESET_PHASE;
             boss.phase_frame = 0;
             boss_fg_render = mai_yuki_survivor_render;
             boss.hp = MY_SURVIVOR_HP;
