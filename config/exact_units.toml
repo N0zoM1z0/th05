@@ -6191,3 +6191,25 @@ unit = "main-pause-action-gaiji-data"
 source = "src/main/runtime/pause_action_gaiji.c"
 find = "PAUSE_GAIJI_SAIKAI_FIRST, PAUSE_GAIJI_SAIKAI_SECOND"
 replace = "PAUSE_GAIJI_SAIKAI_FIRST, PAUSE_GAIJI_CHUUDAN_SECOND"
+
+[[units]]
+id = "main-bb-cheeto-filename-data"
+source = "src/main/formats/bb_cheeto_filename.c"
+module = "th05/bbchfn.c"
+segment = "_DATA"
+wrapper_options = "-zCBB_CHEETO_FILENAME_TEXT -zPmain_01"
+bindings_source = "probes/units/main_bb_cheeto_filename_bindings.asm"
+target_start = 138859
+size = 8
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-bb-cheeto-filename-data"
+source = "src/main/formats/bb_cheeto_filename.c"
+find = "\"LS00.BB\""
+replace = "\"LS01.BB\""
