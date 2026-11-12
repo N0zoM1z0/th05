@@ -40,15 +40,10 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     boss.phase_end_hp = next_end_hp;
 }
 
-// One regular-wave transition advances the HP ladder and arms the next
-// attack callback together. Wave 4 deliberately has a different successor.
-#define EXALICE_REGULAR_ADVANCE(explosion, hp_end, next_attack) \
-    exalice_phase_next(explosion, hp_end); \
-    exalice_pattern = next_attack
-
-// The first three charge waves hand off HP and arm their distinct next
-// callback together. Wave four intentionally advances without a callback.
-#define EXALICE_CHARGED_ADVANCE(explosion, hp_end, next_attack) \
+// The first three charged and four regular Boss transitions share the
+// exact native HP/explosion handoff followed by selection of the next attack.
+// The terminal charge wave deliberately advances without a new callback.
+#define EXALICE_WAVE_ADVANCE(explosion, hp_end, next_attack) \
     exalice_phase_next(explosion, hp_end); \
     exalice_pattern = next_attack
 
@@ -145,16 +140,16 @@ regular_attack:
 regular_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            EXALICE_REGULAR_ADVANCE(ET_CIRCLE, EXALICE_HP_WAVE1_REGULAR_END, exalice_pattern_firewave_fans);
+            EXALICE_WAVE_ADVANCE(ET_CIRCLE, EXALICE_HP_WAVE1_REGULAR_END, exalice_pattern_firewave_fans);
             break;
         case EXALICE_WAVE_2:
-            EXALICE_REGULAR_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE2_REGULAR_END, exalice_pattern_bouncing_rings);
+            EXALICE_WAVE_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE2_REGULAR_END, exalice_pattern_bouncing_rings);
             break;
         case EXALICE_WAVE_3:
-            EXALICE_REGULAR_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE3_REGULAR_END, exalice_pattern_sweeping_lasers);
+            EXALICE_WAVE_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE3_REGULAR_END, exalice_pattern_sweeping_lasers);
             break;
         case EXALICE_WAVE_4:
-            EXALICE_REGULAR_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE4_REGULAR_END, exalice_pattern_spiral_gather);
+            EXALICE_WAVE_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE4_REGULAR_END, exalice_pattern_spiral_gather);
             break;
         }
         break;
@@ -189,13 +184,13 @@ charge_hittest:
 charge_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            EXALICE_CHARGED_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE1_CHARGE_END, exalice_pattern_gravity_stacks);
+            EXALICE_WAVE_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE1_CHARGE_END, exalice_pattern_gravity_stacks);
             break;
         case EXALICE_WAVE_2:
-            EXALICE_CHARGED_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE2_CHARGE_END, exalice_pattern_fixed_laser_fan);
+            EXALICE_WAVE_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE2_CHARGE_END, exalice_pattern_fixed_laser_fan);
             break;
         case EXALICE_WAVE_3:
-            EXALICE_CHARGED_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE3_CHARGE_END, exalice_pattern_cross_cheetos);
+            EXALICE_WAVE_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE3_CHARGE_END, exalice_pattern_cross_cheetos);
             break;
         case EXALICE_WAVE_4:
             exalice_phase_next(ET_VERTICAL, EXALICE_HP_LAST_CHARGE_END);
@@ -297,5 +292,4 @@ charge_complete:
 }
 
 #undef EXALICE_WAVE1_RED_APPROACH
-#undef EXALICE_CHARGED_ADVANCE
-#undef EXALICE_REGULAR_ADVANCE
+#undef EXALICE_WAVE_ADVANCE
