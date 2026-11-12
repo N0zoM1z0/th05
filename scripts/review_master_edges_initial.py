@@ -69,7 +69,7 @@ def review():
                            target_sha256=art['sha256'],target_payload_sha256=sha(target.program_image),
                            complete_LED=chunks[0],ordered_fixups=[]))
     return dict(version=1,kind='source-linked-Master-EDGES-raster-data',
-                authored_credit=0,total_bytes=102,
+                authored_credit=0,total_bytes=68,previously_accepted_main_bytes=34,
                 original_author_sha256=sha(author),
                 archive_sha256=parent['inputs']['inner_archive']['sha256'],
                 scopes=scopes)
@@ -80,7 +80,8 @@ def validate(proof):
     archive=stored_lzh(pinned(ROOT,parent['inputs']['inner_archive']))
     author=archive['EDGES.ASM'];data=words(author,'cp932')
     need(proof.get('version')==1 and proof.get('kind')=='source-linked-Master-EDGES-raster-data' and
-         proof.get('authored_credit')==0 and proof.get('total_bytes')==102 and
+         proof.get('authored_credit')==0 and proof.get('total_bytes')==68 and
+         proof.get('previously_accepted_main_bytes')==34 and
          proof.get('original_author_sha256')==sha(author) and
          proof.get('archive_sha256')==parent['inputs']['inner_archive']['sha256'] and
          len(proof.get('scopes',[]))==3,'partial/stale original Master EDGES provenance')
@@ -111,6 +112,16 @@ def reviewed_claims(root,views,*,verify_targets=False):
         n=row['artifact'].removeprefix('th05-')
         need(views[n]['sha256']==row['target_payload_sha256'],
              'Master EDGES proof belongs to another decoded executable')
+        if n=='main':
+            # MAIN already owns these 34 bytes via the independent original
+            # Master literal table review. Re-verify, never claim twice.
+            first=json.loads((root/'config/main_master_literal_tables_ownership.json').read_text())
+            already=[x for x in first['scope_rows'] if x['member']=='EDGES']
+            need(len(already)==1 and already[0]['start']==row['start'] and
+                 already[0]['end']==row['end'] and
+                 already[0]['DATA_sha256']==row['data_sha256'],
+                 'previous MAIN EDGES owner changed; no duplicate credit')
+            continue
         result[n]=[dict(start=row['start'],end=row['end'],kind='verified-vendor-initialized-data',
                         content_kind='library-initialized-data',instruction_bytes=0,
                         library='Master 0.23',member='EDGES')]

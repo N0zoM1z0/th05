@@ -18,7 +18,11 @@ complete little-endian 34-byte table independently from the author's 17
 binary `dw` source declarations, checks every word against the analytical
 nibble mask sequence, and verifies each retained TASM source, ordinary
 `_DATA` LEDATA, real MAP public, original MZ payload and ordered empty
-fixup stream. This is a **102-byte** recovery of third-party initialized
-DATA, not C/C++ CODE and not game-authored DATA. The neighboring 16-byte
+fixup stream. This source proof covers all three programs (102 total matching bytes), but
+**MAIN's 34-byte copy is already credited** by the separate
+`reviewed_main_master_literal_tables.json` owner. This adoption therefore
+adds **68 newly classified bytes** in OP and MAINE only. The proof
+cross-checks the preexisting MAIN owner to prevent duplicate attribution;
+none of these bytes is C/C++ CODE or game-authored DATA. The neighboring 16-byte
 Master CLIP initializers and six-byte FILE handles have their own separately
 accepted owners; the shared boundary is not double-counted.
