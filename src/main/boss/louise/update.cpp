@@ -8,6 +8,24 @@
 // canonical ABI declaration above is complete.
 #pragma option -a2
 
+// Both fire-break pauses use the same real 64-frame transition into the
+// burning Louise sprite. Neither branch changes its own preceding hit test.
+#define LOUISE_FINISH_FIRE_TRANSITION() { \
+    if(boss.phase_frame >= LOUISE_FIRE_TRANSITION_FRAMES) { \
+        boss.phase_frame = 0; \
+        boss.phase++; \
+        boss.sprite = LOUISE_SPRITE_FIRE; \
+    } \
+}
+
+// Every regular attack phase exits its outer phase switch on a miss and
+// awards the same bonus on a hit. Keep this direct switch break in source.
+#define LOUISE_HIT_BONUS_OR_BREAK() \
+    if(!boss_hittest_shots()) { \
+        break; \
+    } \
+    boss_score_bonus(LOUISE_PATTERN_HIT_BONUS)
+
 void pascal far louise_update(void)
 {
     homing_target.x = boss.pos.cur.x;
@@ -66,21 +84,14 @@ void pascal far louise_update(void)
             louise_pattern_red_stacks();
             break;
         }
-        if(!boss_hittest_shots()) {
-            break;
-        }
-        boss_score_bonus(LOUISE_PATTERN_HIT_BONUS);
+        LOUISE_HIT_BONUS_OR_BREAK();
     first_phase_done:
         boss_phase_next(ET_NW_SE, LOUISE_HP_AFTER_BLUE_RED_WAVES);
         break;
 
     case LOUISE_PHASE_FIRE_TRANSITION_FIRST:
         boss_hittest_shots();
-        if(boss.phase_frame >= LOUISE_FIRE_TRANSITION_FRAMES) {
-            boss.phase_frame = 0;
-            boss.phase++;
-            boss.sprite = LOUISE_SPRITE_FIRE;
-        }
+        LOUISE_FINISH_FIRE_TRANSITION();
         break;
 
     case LOUISE_PHASE_MIRRORED_FANS:
@@ -92,10 +103,7 @@ void pascal far louise_update(void)
                 goto fan_phase_done;
             }
         }
-        if(!boss_hittest_shots()) {
-            break;
-        }
-        boss_score_bonus(LOUISE_PATTERN_HIT_BONUS);
+        LOUISE_HIT_BONUS_OR_BREAK();
     fan_phase_done:
         boss_phase_next(ET_SW_NE, LOUISE_HP_AFTER_MIRRORED_FANS);
         louise_scratch.next_second_phase_pattern = LOUISE_LATER_PATTERN_SWEEP;
@@ -122,21 +130,14 @@ void pascal far louise_update(void)
             louise_pattern_turning_rings();
             break;
         }
-        if(!boss_hittest_shots()) {
-            break;
-        }
-        boss_score_bonus(LOUISE_PATTERN_HIT_BONUS);
+        LOUISE_HIT_BONUS_OR_BREAK();
     second_phase_done:
         boss_phase_next(ET_NW_SE, LOUISE_HP_AFTER_LASER_RINGS);
         break;
 
     case LOUISE_PHASE_FIRE_TRANSITION_SECOND:
         boss_hittest_shots();
-        if(boss.phase_frame >= LOUISE_FIRE_TRANSITION_FRAMES) {
-            boss.phase_frame = 0;
-            boss.phase++;
-            boss.sprite = LOUISE_SPRITE_FIRE;
-        }
+        LOUISE_FINISH_FIRE_TRANSITION();
         break;
 
     case LOUISE_PHASE_AIMED_PELLETS:
@@ -163,3 +164,6 @@ void pascal far louise_update(void)
     }
     hud_hp_update_and_render(boss.hp, LOUISE_HP_TOTAL);
 }
+
+#undef LOUISE_HIT_BONUS_OR_BREAK
+#undef LOUISE_FINISH_FIRE_TRANSITION

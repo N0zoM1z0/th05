@@ -142,3 +142,18 @@ alignment, 16-byte compiler switch table and original ordered far sound
 relocation. The compiled HP-gate mutation from 3,000 to 3,001 was
 rejected. Already accepted Louise CODE is not credited a second time;
 no full MAIN or unrelated cold replay was performed.
+
+## Two fire-break phases and three regular hit gates
+
+The complete 582-byte Louise controller now shares the original two 64-frame
+fire-break transitions through `LOUISE_FINISH_FIRE_TRANSITION()`, preserving
+each phase's preceding hit test and its own unchanged state. The three
+regular attack waves also share `LOUISE_HIT_BONUS_OR_BREAK()`: a missed shot
+breaks directly out of the original Boss phase switch, while a successful
+shot awards the same bonus before the existing phase transition.
+
+Both Turbo C++/TLINK producers match all 582 original bytes, the real switch
+table and original ordered relocation `[121]`. The compiled HP-boundary
+negative was rejected. Evidence:
+`.analysis/unit-replays/gpt-web-louise-shared-fire-hits-20261112-a/receipt.json`.
+The accepted code receives no duplicate authored-byte credit.
