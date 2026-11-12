@@ -1720,3 +1720,26 @@ unit = "maine-egc-rect-setup-exact"
 source = "src/shared/hardware/egc_rect_setup.cpp"
 find = "_AX = 0xFFF0;"
 replace = "_AX = 0xFFEF;"
+
+[[units]]
+id = "maine-allcast-background-filenames-data"
+source = "src/maine/allcast/background_filenames.c"
+module = "th05/ac_bgfn.c"
+segment = "_DATA"
+wrapper_options = "-zCALLCAST_BACKGROUND_FILES_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_allcast_bg_filenames_bindings.asm"
+binary = "E"
+target_start = 68094
+size = 280
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-allcast-background-filenames-data"
+source = "src/maine/allcast/background_filenames.c"
+find = "\"EXED01.pi\", \"EXED07.pi\", \"EXED08.pi\""
+replace = "\"EXED01.pi\", \"EXED07.pi\", \"EXED09.pi\""

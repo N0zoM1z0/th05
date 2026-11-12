@@ -2,79 +2,27 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "8ba2052bab0ef0d428bd28c5ef2123f15976bab920641a03e91e925eff204149",
+  "replay_receipt_sha256": "168c40abb7457e924003d10fc3ee82117deed05c7ad171d0a9702a4033bc591e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 51867,
-    "candidate_start": 51867,
-    "size": 1748,
-    "target_sha256": "65d2c6e599a754c061acd5b31f5a695becc777606f69e6265f9448a9c189f9af",
-    "candidate_sha256": "e191377154825733276232315657f23040bf1b7e6e5d3d8496ea3e268f89253c",
+    "target_start": 68094,
+    "candidate_start": 68094,
+    "size": 280,
+    "target_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+    "candidate_sha256": "08f291eddf0429a020c8e186058d31e2a1f2722ee72ffd9672410a92e27041be",
     "raw_exact": false,
-    "target_fixups": [
-      505,
-      478,
-      367,
-      303,
-      279,
-      255,
-      231,
-      207,
-      183,
-      159,
-      135,
-      111,
-      87,
-      63,
-      39,
-      1721,
-      1694,
-      1655,
-      1650,
-      1639,
-      1615,
-      1604,
-      1494,
-      1485
-    ],
-    "candidate_fixups": [
-      505,
-      478,
-      367,
-      303,
-      279,
-      255,
-      231,
-      207,
-      183,
-      159,
-      135,
-      111,
-      87,
-      63,
-      39,
-      1721,
-      1694,
-      1655,
-      1650,
-      1639,
-      1615,
-      1604,
-      1494,
-      1485
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 51867,
-      "size": 1748,
-      "function_symbol": "verdict_main()",
-      "contribution_start": 50663,
-      "contribution_size": 3384,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "verdict_comments_put()"
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 68094,
+      "size": 280,
+      "module": "th05/ac_bgfn.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -40318,6 +40266,298 @@
           }
         ]
       }
+    },
+    {
+      "id": "maine-allcast-background-filenames-data",
+      "entry_sha256": "b183c3c2c94f5e36418693d3db0d2ffa9fca3bbc54fcc268527080710b86b52a",
+      "result": {
+        "id": "maine-allcast-background-filenames-data",
+        "entry_sha256": "b183c3c2c94f5e36418693d3db0d2ffa9fca3bbc54fcc268527080710b86b52a",
+        "rounds": [
+          {
+            "target_start": 68094,
+            "candidate_start": 68094,
+            "size": 280,
+            "target_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+            "candidate_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 68094,
+              "size": 280,
+              "module": "th05/ac_bgfn.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 68094,
+            "candidate_start": 68094,
+            "size": 280,
+            "target_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+            "candidate_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 68094,
+              "size": 280,
+              "module": "th05/ac_bgfn.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "df1fc7754bdbc4e724b1843c743a02999ca2da3fe25961f1db7c6073262285bf",
+            "dependency_timestamp_normalized_sha256": "7d774800b1caa99990b69b6a335f4c32c06f3e842e75b39c14cc54c32894df11",
+            "module_name": "th05/ac_bgfn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ac_bgfn.c",
+              "src/maine/allcast/background_filenames.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 280,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 280,
+                  "sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "b008a0b607ba256efc90bdbaad8d34881ccc43651946328681713c07c3ceddf9",
+            "dependency_timestamp_normalized_sha256": "7d774800b1caa99990b69b6a335f4c32c06f3e842e75b39c14cc54c32894df11",
+            "module_name": "th05/ac_bgfn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ac_bgfn.c",
+              "src/maine/allcast/background_filenames.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 280,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 280,
+                  "sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/ac_bgfn.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/ac_bgfn.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_allcast_bg_filenames_bindings.asm",
+            "sha256": "966e78765110f53a6ad71a7bed5d24e55f37c9cebf047312d8e3e34798c74519"
+          },
+          {
+            "path": "src/maine/allcast/background_filenames.c",
+            "sha256": "1d618983e4b6da4770fe1e36b0041b2b7edf98542b4541edb07060b0c0426b07"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_allcast_bg_filenames_bindings.asm",
+          "sha256": "966e78765110f53a6ad71a7bed5d24e55f37c9cebf047312d8e3e34798c74519"
+        },
+        {
+          "path": "src/maine/allcast/background_filenames.c",
+          "sha256": "1d618983e4b6da4770fe1e36b0041b2b7edf98542b4541edb07060b0c0426b07"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "168c40abb7457e924003d10fc3ee82117deed05c7ad171d0a9702a4033bc591e",
+      "compiled_negative_control": {
+        "target_start": 68094,
+        "candidate_start": 68094,
+        "size": 280,
+        "target_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+        "candidate_sha256": "08f291eddf0429a020c8e186058d31e2a1f2722ee72ffd9672410a92e27041be",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 68094,
+          "size": 280,
+          "module": "th05/ac_bgfn.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-allcast-background-filenames-data",
+        "entry_sha256": "b183c3c2c94f5e36418693d3db0d2ffa9fca3bbc54fcc268527080710b86b52a",
+        "mutation": {
+          "unit": "maine-allcast-background-filenames-data",
+          "source": "src/maine/allcast/background_filenames.c",
+          "find": "\"EXED01.pi\", \"EXED07.pi\", \"EXED08.pi\"",
+          "replace": "\"EXED01.pi\", \"EXED07.pi\", \"EXED09.pi\""
+        },
+        "control_sha256": "4acc129d834e59992338e5c6a00529cdba73cfbf5e033800f9b1e5efb556d898",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 68094,
+          "candidate_start": 68094,
+          "size": 280,
+          "target_sha256": "5e7eea6d49ca317d7274233b6c12bf83c2d77eb1306648a3702ba311555f3685",
+          "candidate_sha256": "08f291eddf0429a020c8e186058d31e2a1f2722ee72ffd9672410a92e27041be",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 68094,
+            "size": 280,
+            "module": "th05/ac_bgfn.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "391bbb088ad3583db78dffa6118352ba50eb08633c5f0a4780cdf3b1469d0ecb",
+          "dependency_timestamp_normalized_sha256": "e0be291dfe1c5abaaa3681d8d96b9dce4966b7bcc5d3ab652cc5fe17a330f993",
+          "module_name": "th05/ac_bgfn.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/ac_bgfn.c",
+            "src/maine/allcast/background_filenames.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 280,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 280,
+                "sha256": "08f291eddf0429a020c8e186058d31e2a1f2722ee72ffd9672410a92e27041be"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/ac_bgfn.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-allcast-background-filenames-data"
+      ]
     }
   ],
   "artifact": "th05-maine",
