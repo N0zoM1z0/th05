@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "8ecf9e793a3f7156df82afd8362ba4395996e9fd4fc6fb153098f9a2538597eb",
+  "replay_receipt_sha256": "01718a1f7afdfd0ecaf5152d486dea9a3d091c2098e1ad057756adcdd34f3538",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141646,
-    "candidate_start": 141646,
-    "size": 32,
-    "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
-    "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
+    "target_start": 141678,
+    "candidate_start": 141678,
+    "size": 16,
+    "target_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+    "candidate_sha256": "c2584384d1c9f58d515ae194958b5349518fbdcaecb8d12a2d58ce366533c157",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 141646,
-      "size": 32,
-      "module": "th05/a_tbls.cpp",
+      "start": 141678,
+      "size": 16,
+      "module": "th05/yumsched.cpp",
       "segment": "_DATA"
     }
   },
@@ -95416,6 +95416,293 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-alice-callback-tables-data"
+      ]
+    },
+    {
+      "id": "main-yumeko-mobile-schedules-data",
+      "entry_sha256": "6734dd09a1924579b5348823b357ef60702900a20e381f30b9683bebed799f79",
+      "result": {
+        "id": "main-yumeko-mobile-schedules-data",
+        "entry_sha256": "6734dd09a1924579b5348823b357ef60702900a20e381f30b9683bebed799f79",
+        "rounds": [
+          {
+            "target_start": 141678,
+            "candidate_start": 141678,
+            "size": 16,
+            "target_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+            "candidate_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141678,
+              "size": 16,
+              "module": "th05/yumsched.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141678,
+            "candidate_start": 141678,
+            "size": 16,
+            "target_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+            "candidate_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141678,
+              "size": 16,
+              "module": "th05/yumsched.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "4490f4c812accba39f9f4804886f942170930a03fd17ab289bbc58a91a2ed478",
+            "dependency_timestamp_normalized_sha256": "72d9c0988bac837a8c0cc447c43fb56a626af7956ad3f68795b235114c490ea2",
+            "module_name": "th05/yumsched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/yumsched.cpp",
+              "src/main/boss/yumeko/schedule_data.cpp",
+              "src/main/boss/yumeko/schedule_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "aa8f6fa65787ba3f2175d0ee75cff8afdea7d6e2a4c349867c2753c08e43c25f",
+            "dependency_timestamp_normalized_sha256": "72d9c0988bac837a8c0cc447c43fb56a626af7956ad3f68795b235114c490ea2",
+            "module_name": "th05/yumsched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/yumsched.cpp",
+              "src/main/boss/yumeko/schedule_data.cpp",
+              "src/main/boss/yumeko/schedule_data.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/yumsched.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/yumsched.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/yumeko_schedule_data_bindings.asm",
+            "sha256": "bd1f89453ee93261eb2b2ed0aaf0f008e7644b96761069c0886485ec18f13d40"
+          },
+          {
+            "path": "src/main/boss/yumeko/schedule_data.cpp",
+            "sha256": "3dc6915e816d4fbc4e24476d47e49b744550851997a3bad03dec138aa9ae47c6"
+          },
+          {
+            "path": "src/main/boss/yumeko/schedule_data.hpp",
+            "sha256": "6cffbb10d9d400dadfa414ae679e13dd5db1f88b6d4d7339cab31899692e9142"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/yumeko_schedule_data_bindings.asm",
+          "sha256": "bd1f89453ee93261eb2b2ed0aaf0f008e7644b96761069c0886485ec18f13d40"
+        },
+        {
+          "path": "src/main/boss/yumeko/schedule_data.cpp",
+          "sha256": "3dc6915e816d4fbc4e24476d47e49b744550851997a3bad03dec138aa9ae47c6"
+        },
+        {
+          "path": "src/main/boss/yumeko/schedule_data.hpp",
+          "sha256": "6cffbb10d9d400dadfa414ae679e13dd5db1f88b6d4d7339cab31899692e9142"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "01718a1f7afdfd0ecaf5152d486dea9a3d091c2098e1ad057756adcdd34f3538",
+      "compiled_negative_control": {
+        "target_start": 141678,
+        "candidate_start": 141678,
+        "size": 16,
+        "target_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+        "candidate_sha256": "c2584384d1c9f58d515ae194958b5349518fbdcaecb8d12a2d58ce366533c157",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141678,
+          "size": 16,
+          "module": "th05/yumsched.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-yumeko-mobile-schedules-data",
+        "entry_sha256": "6734dd09a1924579b5348823b357ef60702900a20e381f30b9683bebed799f79",
+        "mutation": {
+          "unit": "main-yumeko-mobile-schedules-data",
+          "source": "src/main/boss/yumeko/schedule_data.cpp",
+          "find": "    yumeko_pattern_sword_fan, yumeko_pattern_red_ring, 0, 0",
+          "replace": "    yumeko_pattern_red_ring, yumeko_pattern_sword_fan, 0, 0"
+        },
+        "control_sha256": "50302df7dfc6e97694213865f3c58f141b5e48ebd3b45414b24996d0518130f8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141678,
+          "candidate_start": 141678,
+          "size": 16,
+          "target_sha256": "47150f447fd41247b4fd0c4c73476e5d4c12aaf68bc4c5b97cf02cce3543502b",
+          "candidate_sha256": "c2584384d1c9f58d515ae194958b5349518fbdcaecb8d12a2d58ce366533c157",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141678,
+            "size": 16,
+            "module": "th05/yumsched.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "2e02425b7ff9f104b421f2962d9601b9e05d5b4d5f130b6bbcd50d084b53bc79",
+          "dependency_timestamp_normalized_sha256": "ce697b1327623a4789606870359d0d0ef6ef4123283fb6ec6742683f01bc7f92",
+          "module_name": "th05/yumsched.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/yumsched.cpp",
+            "src/main/boss/yumeko/schedule_data.cpp",
+            "src/main/boss/yumeko/schedule_data.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 16,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 16,
+                "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/yumsched.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-yumeko-mobile-schedules-data"
       ]
     }
   ]

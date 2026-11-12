@@ -6015,3 +6015,25 @@ unit = "main-alice-callback-tables-data"
 source = "src/main/boss/alice/callback_tables.cpp"
 find = "    alice_puppet_initial,\n    alice_puppet_spread,"
 replace = "    alice_puppet_spread,\n    alice_puppet_initial,"
+
+[[units]]
+id = "main-yumeko-mobile-schedules-data"
+source = "src/main/boss/yumeko/schedule_data.cpp"
+module = "th05/yumsched.cpp"
+segment = "_DATA"
+wrapper_options = "-zCYUMEKO_SCHEDULE_TEXT -zPmain_03"
+bindings_source = "probes/units/yumeko_schedule_data_bindings.asm"
+target_start = 141678
+size = 16
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-yumeko-mobile-schedules-data"
+source = "src/main/boss/yumeko/schedule_data.cpp"
+find = "    yumeko_pattern_sword_fan, yumeko_pattern_red_ring, 0, 0"
+replace = "    yumeko_pattern_red_ring, yumeko_pattern_sword_fan, 0, 0"
