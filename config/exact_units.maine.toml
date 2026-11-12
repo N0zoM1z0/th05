@@ -1743,3 +1743,26 @@ unit = "maine-allcast-background-filenames-data"
 source = "src/maine/allcast/background_filenames.c"
 find = "\"EXED01.pi\", \"EXED07.pi\", \"EXED08.pi\""
 replace = "\"EXED01.pi\", \"EXED07.pi\", \"EXED09.pi\""
+
+[[units]]
+id = "maine-allcast-background-pointer-index-data"
+source = "src/maine/allcast/background_index.cpp"
+module = "th05/ac_bgix.cpp"
+segment = "_DATA"
+wrapper_options = "-zCALLCAST_BG_INDEX_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_allcast_bg_index_bindings.asm"
+binary = "E"
+target_start = 67696
+size = 192
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers", "semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-allcast-background-pointer-index-data"
+source = "src/maine/allcast/background_index.cpp"
+find = "    { 1, 0, 1, 3, 0, 0, 0, 0 },"
+replace = "    { 1, 0, 1, 2, 0, 0, 0, 0 },"
