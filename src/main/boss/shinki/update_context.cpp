@@ -99,7 +99,6 @@ void near pattern_circles_and_alternating_spirals(void)
 void near shinki_move_float(void)
 {
 	#define float_direction shinki_float_direction
-	extern bool float_direction;
 
 	if(stage_frame_mod4 != SHINKI_FLOAT_UPDATE_FRAME_MOD4) {
 		return;

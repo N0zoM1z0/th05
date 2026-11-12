@@ -4,6 +4,8 @@
 #error Original Shinki near initialized DATA is produced by C
 #endif
 
+#include "src/main/boss/shinki/devil_float_state.h"
+
 int near shinki_devil_laser_grow_delay = 0;
 typedef char original_shinki_devil_laser_grow_delay_width[
     (sizeof(shinki_devil_laser_grow_delay) == 2) ? 1 : -1];

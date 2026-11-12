@@ -120,3 +120,14 @@ fixups are exact, including the 802-byte Devil attacker and the entire
 checked alignment zero. The compiled laser fast-stage 2500→2501
 mutation was rejected. Previously accepted CODE earns no duplicate
 source-byte credit; no whole MAIN or ZUN executable was replayed.
+
+## Separate physical C laser-delay and floating-direction publics (2026-11-12)
+
+The full 802-byte Devil leaf now obtains its actual native `int near`
+`shinki_devil_laser_grow_delay` through the same `extern "C"` header
+used by the independently accepted two-byte C initialized DATA.
+The original byte-type float direction similarly links the complete
+Shinki main Boss controller to the separately accepted one-byte C
+initializer. Two-source consumer and producer receipts are detailed
+in `devil_float_data.md` and preserve every original byte, relocation
+and compiled negative. There is no new laser state allocation.

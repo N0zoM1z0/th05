@@ -278,3 +278,16 @@ the independently accepted 386-byte native compiler-assembly leaf, is
 reverified with two producers and their real compiled negatives.
 Receipts are in `wing_preparation.md`; no duplicate owner credit or
 new initialized DATA is claimed.
+
+## Natural C/C++ late-stage laser and float globals (2026-11-12)
+
+The complete 959-byte Shinki updater and the maintained `shinki.cpp`
+copy now read exactly the C byte `shinki_float_direction` through the
+original one-byte C++ boolean type. Their actual common 802-byte Devil
+attacker obtains the separate two-byte C `shinki_devil_laser_grow_delay`
+object through the same public header. The full eleven-function
+translation-unit cohort and the separately compiled Devil attacker are
+source-current, original-byte-exact in two native producer runs, with
+all ordered MZ relocations and meaningful compiled negatives preserved.
+The two original DATA sources have their own refreshed producer/negative
+evidence. Receipts are collected in `devil_float_data.md`.

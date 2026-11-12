@@ -4,6 +4,8 @@
 #error Original Shinki near initialized DATA is produced by C
 #endif
 
+#include "src/main/boss/shinki/devil_float_state.h"
+
 unsigned char near shinki_float_direction = 0;
 typedef char original_shinki_float_direction_width[
     (sizeof(shinki_float_direction) == 1) ? 1 : -1];

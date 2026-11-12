@@ -38,3 +38,34 @@ not new CODE or padding. The independent large Boss/attack consumers
 retain their original accepted code and will be selectively replayed
 with the source-current C/C++ public declarations. No full cold replay
 was executed.
+
+## Source-current 802-byte Devil, floating leaf and 959-byte Boss closure
+
+The separate original C publics now have exactly one shared
+`devil_float_state.h` interface. The 16-bit `int near`
+`shinki_devil_laser_grow_delay` remains writable by the full Devil
+attack and retains the original zero initial value. The one-byte
+`shinki_float_direction` has a C `unsigned char near` owner but is
+seen by the real Turbo C++ floating leaf as its *original `bool near`*
+type with C name linkage. This avoids a shadow variable or a new
+integer promotion path. The old function-local `extern` declarations
+have been removed, without changing any game's original counter
+increment, gravity sign, laser activation, or attack callback order.
+
+The actual 802-byte Devil source and the complete eleven-unit Shinki
+same-TU context, including the 959-byte far-Pascal Boss controller,
+were all rebuilt with two pinned Borland producers; complete raw
+CODE, MAP/OMF boundaries and ordered MZ fixups are identical.
+Each original compiled semantic negative was rejected. Both separate
+C DATA objects were **individually** rebuilt with their own zero-to-one
+source mutations and no authored alignment padding. Evidence:
+
+- `.analysis/unit-replays/gpt-web-shinki-devil-c-public-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-shinki-devil-float-boss-cohort-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-shinki-devil-delay-c-public-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-shinki-float-direction-c-public-a/receipt.json`
+
+All CODE and the three DATA bytes were already accepted in their
+separate contributions; this work restores their real cross-compiler
+public interface and revalidates those contributions, without duplicate
+byte ownership or whole-game cold replay.

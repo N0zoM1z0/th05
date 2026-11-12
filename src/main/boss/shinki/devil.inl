@@ -1,4 +1,5 @@
 #include "src/main/boss/shinki/devil_ballistics.hpp"
+#include "src/main/boss/shinki/devil_float_state.h"
 void near pattern_devil(void)
 {
 	enum {
@@ -40,7 +41,6 @@ void near pattern_devil(void)
 	#define bullet_angle_outer	shinki_devil_scratch.bullet_angle_outer
 
 	#define laser_grow_delay shinki_devil_laser_grow_delay
-	extern int laser_grow_delay;
 
 	if(boss.phase_frame < DEVIL_PATTERN_START_FRAME) {
 		return;
