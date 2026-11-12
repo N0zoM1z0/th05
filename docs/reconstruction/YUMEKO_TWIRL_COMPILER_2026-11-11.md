@@ -222,3 +222,44 @@ the real native builds and diagnostics are under
 `.analysis/gpt-web-yumeko-collision-join-*-first/` and the compact result
 file `.analysis/gpt-web-yumeko-collision-join-results-20261111.json`.
 All temporary source-inclusion trials were removed after compilation.
+
+## Six additional natural C++ branch-joining trials (2026-11-12)
+
+The unresolved source-language `swords_update()` was retested in the **real
+nine-function MAIN03 compiler context**, not against a hand-crafted
+sword-only segment. Each first producer compiled a distinct natural,
+behavior-preserving C++ rewrite under Borland's real `-O` optimization:
+
+| Variant | Native compiler context size | Complete raw / ordered fixups |
+|---|---:|---|
+| Positively guarded in-bounds motion plus explicit success label | 2,135 B | No / No |
+| Two-stage independent X/Y boundary guards | 2,135 B | No / No |
+| Shared active-sword completion label after collision | 2,135 B | No / No |
+| Y-hit failure guard and explicit no-hit exit | 2,135 B | No / No |
+| Separate early continue guards for X and Y player overlap | 2,135 B | No / No |
+| Single-iteration `do` loop with genuine collision exits | 2,135 B | No / No |
+
+All six independently emitted the **same** lowered branch layout as the
+original optimized baseline, including the correct 386 near JL/JGE opcode
+families at updater offsets `+5E`/`+72`, but jumping to the shortened loop
+tail at `+108` rather than the original `+10C`. The compiler still folds
+the original short clip join at `+9A` and separate no-hit join at `+C4`,
+removing two genuine two-byte jumps. Consequently the original whole
+context is **2,139 bytes**, and all relocations after those deleted joins
+remain four bytes too early in the compiled candidate. The first 283
+candidate bytes' positional 143-byte comparison is affected by this shift
+and is **not** a function-equivalence metric.
+
+The fresh one-producer diagnostic script, source variants and summaries are
+retained in the private `.analysis/gpt-web-yumeko-rejoin-20261112.py`,
+`.analysis/gpt-web-yumeko-rejoin-results-20261112.json`, and the six
+`gpt-web-yumeko-rejoin-*-20261112-first` directories. Each variant uses the
+actual `src/main/boss/yumeko/attacks_context.cpp` with a temporary source
+include, real pinned Borland TCC/TLINK, current target boundaries and the
+original relocation order. Temporary source files were deleted after
+compilation. **No** new C++ exactness, partial code credit, or negative
+acceptance is claimed. The maintained inexact C++ source and separately
+accepted 283-byte reviewed ASM Sword updater remain unchanged. Further
+progress requires a real C++ control-flow expression that keeps both short
+join jumps *and* the true near twirl conditionals without synthetic work,
+bytes, or optimizer barriers.
