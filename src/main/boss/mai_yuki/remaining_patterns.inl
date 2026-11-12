@@ -14,6 +14,28 @@
     cheetos_add(); \
     snd_se_play(MYR_CHEETO_SOUND)
 
+// The paired Yuki stack volleys share the same real setup and launch;
+// the small and large balls use distinct sprites, counts and spread steps.
+#define MY_YUKI_STACK_BURST(sprite_id, ball_count, stack_step) { \
+    bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE; \
+    bullet_template.group = BG_STACK_AIMED; \
+    bullet_template.angle = 0; \
+    bullet_template.patnum = sprite_id; \
+    MY_YUKI_MUZZLE(); \
+    mai_yuki_set_stack(ball_count, stack_step); \
+    bullet_template.speed.v = mai_yuki_speed(MYR_STACK_SPEED_PX); \
+    bullet_template_tune(); \
+    bullets_add_regular(); \
+}
+
+// Both characters prepare their actual position, tint and speed before
+// choosing opposite aiming offsets in separate character-specific branches.
+#define MY_PREPARE_CHEETO(position, tint) { \
+    cheeto_template.origin = position; \
+    cheeto_template.col = tint; \
+    cheeto_template.speed.v = mai_yuki_speed(MYR_CHEETO_SPEED_PX); \
+}
+
 bool near mai_pattern_reversing_rings(void)
 {
     if(boss.phase_frame == MYR_RING_START_FRAME) {
@@ -81,15 +103,7 @@ bool near yuki_pattern_random_rings(void)
 bool near yuki_pattern_small_ball_stacks(void)
 {
     if((boss.phase_frame % MYR_FAN_REPEAT_FRAMES) == 0) {
-        bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE;
-        bullet_template.group = BG_STACK_AIMED;
-        bullet_template.angle = 0;
-        bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        MY_YUKI_MUZZLE();
-        mai_yuki_set_stack(MYR_SMALL_STACK_COUNT, MYR_SMALL_STACK_STEP);
-        bullet_template.speed.v = mai_yuki_speed(MYR_STACK_SPEED_PX);
-        bullet_template_tune();
-        bullets_add_regular();
+        MY_YUKI_STACK_BURST(MY_PAT_SMALL_BALL_RED, MYR_SMALL_STACK_COUNT, MYR_SMALL_STACK_STEP);
     }
     return false;
 }
@@ -114,15 +128,7 @@ bool near yuki_pattern_small_ball_fan(void)
 bool near yuki_pattern_ball_stacks(void)
 {
     if((boss.phase_frame % MYR_BIG_STACK_INTERVAL) == 0) {
-        bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE;
-        bullet_template.group = BG_STACK_AIMED;
-        bullet_template.angle = 0;
-        bullet_template.patnum = MY_PAT_BALL_RED;
-        MY_YUKI_MUZZLE();
-        mai_yuki_set_stack(MYR_BIG_STACK_COUNT, MYR_BIG_STACK_STEP);
-        bullet_template.speed.v = mai_yuki_speed(MYR_STACK_SPEED_PX);
-        bullet_template_tune();
-        bullets_add_regular();
+        MY_YUKI_STACK_BURST(MY_PAT_BALL_RED, MYR_BIG_STACK_COUNT, MYR_BIG_STACK_STEP);
     }
     return false;
 }
@@ -172,9 +178,7 @@ bool near yuki_pattern_cheetos(void)
 {
     unsigned char angle;
     if((boss.phase_frame == MYR_CHEETO_FIRST_FRAME) || (boss.phase_frame == MYR_CHEETO_SECOND_FRAME)) {
-        cheeto_template.origin = boss2.pos.cur;
-        cheeto_template.col = MYR_CHEETO_YUKI_COLOR;
-        cheeto_template.speed.v = mai_yuki_speed(MYR_CHEETO_SPEED_PX);
+        MY_PREPARE_CHEETO(boss2.pos.cur, MYR_CHEETO_YUKI_COLOR);
         if(boss.pos.cur.x.v >= boss2.pos.cur.x.v) {
             angle = MYR_CHEETO_HALF_TURN;
         } else {
@@ -189,9 +193,7 @@ bool near mai_pattern_cheetos(void)
 {
     unsigned char angle;
     if((boss.phase_frame == MYR_CHEETO_FIRST_FRAME) || (boss.phase_frame == MYR_CHEETO_SECOND_FRAME)) {
-        cheeto_template.origin = boss.pos.cur;
-        cheeto_template.col = MYR_CHEETO_MAI_COLOR;
-        cheeto_template.speed.v = mai_yuki_speed(MYR_CHEETO_SPEED_PX);
+        MY_PREPARE_CHEETO(boss.pos.cur, MYR_CHEETO_MAI_COLOR);
         if(boss.pos.cur.x.v < boss2.pos.cur.x.v) {
             angle = MYR_CHEETO_HALF_TURN;
         } else {
@@ -204,3 +206,6 @@ bool near mai_pattern_cheetos(void)
 
 #undef MY_FIRE_AIMED_CHEETO
 #undef MY_YUKI_MUZZLE
+
+#undef MY_PREPARE_CHEETO
+#undef MY_YUKI_STACK_BURST
