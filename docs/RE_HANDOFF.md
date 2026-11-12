@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **525** (343 / 74 / 106 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **527** (343 / 75 / 107 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,478 bytes** |
-| Total source-authored C/C++ bytes | **126,262 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,119 / 5,462 / 5,040 / 8,559** |
-| Total unknown decoded bytes | **22,180** |
+| Source-authored exact semantic initialized DATA | **17,494 bytes** |
+| Total source-authored C/C++ bytes | **126,278 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,119 / 5,454 / 5,032 / 8,559** |
+| Total unknown decoded bytes | **22,164** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -69,6 +69,25 @@ independently proven pristine source image.
   compiler owner passed two fresh TCC/TLINK builds, raw bytes, original
   ordered fixups and a meaningful compiled negative. These are refreshed
   *already accepted* CODE units, with **no duplicate authored credit**.
+- [Shinki Devil](../src/main/boss/shinki/devil.md) **802 B** now uses
+  a coherent symmetric-column firing rule in the **actual shared**
+  `devil.inl`; one ordering mismatch was corrected and **all 12 dependent
+  Shinki units** (including the 959-byte controller) were reaccepted exact.
+  [Yuki](../src/main/boss/mai_yuki/yuki_update.md) **826 B** and
+  [Mai](../src/main/boss/mai_yuki/mai_update.md) **786 B** share their
+  individual solo wave-count/shot-bonus source protocols, while
+  [Louise's](../src/main/boss/louise/later.md) **603 B / 4 functions**
+  reuse one parameterized mirrored fan. Every changed full owner passed
+  dual actual TCC/TLINK producers, ordered native relocations and compiled
+  negatives. These refine existing CODE without recrediting its bytes.
+- OP/MAINE now own the four genuine segmented
+  [BGIMAGE plane pointers](../src/shared/hardware/bgimage_planes_initial.md)
+  at `F9C4..F9CC` / `107D2..107DA`: two separate complete 8-byte
+  C++ `_DATA` objects. Capture/free/rectangle-render consumers confirm
+  all four 16-bit field addresses; both artifact-specific source units
+  passed independent native compilation, original byte/fixup comparisons
+  and their compiled nonzero-pointer negatives. This adds **16 new
+  game-authored DATA bytes**, without touching nearby sound/memory state.
 - Stage and ending controllers: Stage 2 complete **653 B** update plus
   **492 B** particle initializer and **51 B** invalidation leaf;
   complete Stage Clear and All Clear **561 B / 579 B**;
