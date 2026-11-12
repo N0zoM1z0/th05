@@ -2,6 +2,7 @@
 #pragma option -zCYUKI_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/yuki_update.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
+#include "src/main/boss/mai_yuki/yuki_solo_choreography.hpp"
 
 // The native ten-stage solo Boss switch and two alternating attack modes.
 static const unsigned char YUKI_SOLO_PHASE_SETUP = 0;
@@ -31,30 +32,30 @@ extern "C" void pascal far yuki_update(void)
 
     switch(boss.phase) {
     case YUKI_SOLO_PHASE_SETUP:
-        if(boss.phase_frame == 1) {
-            boss.hp = 7900;
-            boss.phase_end_hp = 4600;
-            gather_template.radius.v = to_sp(64);
-            gather_template.angle_delta = 2;
-            gather_template.ring_points = 8;
-            boss.sprite = 196;
-            boss_sprite_left = 198;
-            boss_sprite_right = 197;
-            boss_sprite_stay = 196;
-            b4ball_template.patnum_tiny_base = 216;
+        if(boss.phase_frame == YUKI_SOLO_FIRST_FRAME) {
+            boss.hp = YUKI_SOLO_HP_TOTAL;
+            boss.phase_end_hp = YUKI_SOLO_HP_SETUP_GATE;
+            gather_template.radius.v = to_sp(YUKI_SOLO_GATHER_RADIUS_PX);
+            gather_template.angle_delta = YUKI_SOLO_GATHER_ANGLE_DELTA;
+            gather_template.ring_points = YUKI_SOLO_GATHER_RING_POINTS;
+            boss.sprite = YUKI_SOLO_SPRITE_STILL;
+            boss_sprite_left = YUKI_SOLO_SPRITE_MOVE_LEFT;
+            boss_sprite_right = YUKI_SOLO_SPRITE_MOVE_RIGHT;
+            boss_sprite_stay = YUKI_SOLO_SPRITE_STILL;
+            b4ball_template.patnum_tiny_base = YUKI_SOLO_BALL_FIRST_SPRITE;
         }
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
+        if(boss.phase_frame >= YUKI_SOLO_HP_FILL_FRAMES) {
             boss.phase++;
             boss.phase_frame = 0;
-            snd_se_play(13);
+            snd_se_play(YUKI_SOLO_ENTRY_SOUND);
             bg_render_bombing_func = mai_yuki_bg_render;
         }
         break;
     case YUKI_SOLO_PHASE_READY:
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
-            boss.sprite = 204;
+        if(boss.phase_frame >= YUKI_SOLO_READY_FRAMES) {
+            boss.sprite = YUKI_SOLO_SPRITE_ATTACK_STILL;
             boss.phase++;
             boss.phase_frame = 0;
             boss_custombullets_render = b4balls_render;
@@ -62,20 +63,20 @@ extern "C" void pascal far yuki_update(void)
         break;
     case YUKI_SOLO_PHASE_ENTRANCE:
         boss_hittest_shots_invincible();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
-            boss.sprite = 204;
+        if(boss_flystep_towards(to_sp(YUKI_SOLO_CENTER_X_PX), to_sp(YUKI_SOLO_CENTER_Y_PX))) {
+            boss.sprite = YUKI_SOLO_SPRITE_ATTACK_STILL;
             boss.phase++;
             boss.phase_frame = 0;
             boss.mode = YUKI_SOLO_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
             boss2.pos.cur.x = boss.pos.cur.x;
-            boss2.pos.cur.y.v = boss.pos.cur.y.v + to_sp(16);
+            boss2.pos.cur.y.v = boss.pos.cur.y.v + to_sp(YUKI_SOLO_SHADOW_Y_OFFSET_PX);
             circles_add_growing(boss.pos.cur.x, boss.pos.cur.y);
             boss_explode_small(ET_VERTICAL);
             boss_solo_pattern_current = yuki_solo_ring_sweep;
-            boss_sprite_left = 206;
-            boss_sprite_right = 205;
-            boss_sprite_stay = 204;
+            boss_sprite_left = YUKI_SOLO_SPRITE_ATTACK_LEFT;
+            boss_sprite_right = YUKI_SOLO_SPRITE_ATTACK_RIGHT;
+            boss_sprite_stay = YUKI_SOLO_SPRITE_ATTACK_STILL;
         }
         break;
     case YUKI_SOLO_PHASE_WAVE_FIRST:
@@ -83,7 +84,7 @@ extern "C" void pascal far yuki_update(void)
         case YUKI_SOLO_MODE_REPOSITION:
             if(boss_flystep_towards(boss2.pos.cur.x, boss2.pos.cur.y)) {
                 boss2.pos.cur.x = boss.pos.cur.x;
-                boss2.pos.cur.y.v = to_sp(96);
+                boss2.pos.cur.y.v = to_sp(YUKI_SOLO_CENTER_Y_PX);
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
@@ -91,7 +92,7 @@ extern "C" void pascal far yuki_update(void)
                     goto phase3_complete;
                 }
                 boss_solo_pattern_current = yuki_solo_pattern_pair1[
-                    boss.phase_state.patterns_seen & 1];
+                    boss.phase_state.patterns_seen & YUKI_SOLO_PATTERN_VARIANT_MASK];
             }
             break;
         case YUKI_SOLO_MODE_ATTACK:
@@ -101,13 +102,13 @@ extern "C" void pascal far yuki_update(void)
         if(!boss_hittest_shots()) {
             break;
         }
-        boss_score_bonus(10);
+        boss_score_bonus(YUKI_SOLO_HIT_SCORE_BONUS);
 phase3_complete:
-        boss_phase_next(ET_NW_SE, 3200);
+        boss_phase_next(ET_NW_SE, YUKI_SOLO_HP_FIRST_WAVE_END);
         break;
     case YUKI_SOLO_PHASE_WAVE_SECOND_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
+        if(boss_flystep_towards(to_sp(YUKI_SOLO_CENTER_X_PX), to_sp(YUKI_SOLO_CENTER_Y_PX))) {
             boss.phase++;
             boss.phase_frame = 0;
             boss_solo_pattern_current = yuki_solo_random_rings;
@@ -125,7 +126,7 @@ phase3_complete:
                     goto phase5_complete;
                 }
                 boss_solo_pattern_current = yuki_solo_pattern_pair2[
-                    boss.phase_state.patterns_seen & 1];
+                    boss.phase_state.patterns_seen & YUKI_SOLO_PATTERN_VARIANT_MASK];
             }
             break;
         case YUKI_SOLO_MODE_ATTACK:
@@ -135,43 +136,43 @@ phase3_complete:
         if(!boss_hittest_shots()) {
             break;
         }
-        boss_score_bonus(10);
+        boss_score_bonus(YUKI_SOLO_HIT_SCORE_BONUS);
 phase5_complete:
-        boss_phase_next(ET_SW_NE, 1200);
+        boss_phase_next(ET_SW_NE, YUKI_SOLO_HP_SECOND_WAVE_END);
         break;
     case YUKI_SOLO_PHASE_SPEEDUP_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
+        if(boss_flystep_towards(to_sp(YUKI_SOLO_CENTER_X_PX), to_sp(YUKI_SOLO_CENTER_Y_PX))) {
             boss.phase++;
             boss.phase_frame = 0;
         }
         break;
     case YUKI_SOLO_PHASE_SPEEDUP:
         yuki_solo_speedup();
-        if(boss.phase_frame < 2000) {
+        if(boss.phase_frame < YUKI_SOLO_SPEEDUP_TIMEOUT_FRAMES) {
             if(!boss_hittest_shots()) {
                 break;
             }
-            boss_score_bonus(10);
+            boss_score_bonus(YUKI_SOLO_HIT_SCORE_BONUS);
         }
-        boss_phase_next(ET_HORIZONTAL, 0);
+        boss_phase_next(ET_HORIZONTAL, YUKI_SOLO_HP_SPEEDUP_END);
         break;
     case YUKI_SOLO_PHASE_FINAL_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
+        if(boss_flystep_towards(to_sp(YUKI_SOLO_CENTER_X_PX), to_sp(YUKI_SOLO_CENTER_Y_PX))) {
             boss.phase++;
             boss.phase_frame = 0;
             boss_solo_pattern_current = yuki_solo_snow_cross;
             boss.mode = YUKI_SOLO_MODE_ATTACK;
-            yuki_solo_scratch.snow_angle_step = 8;
-            yuki_solo_scratch.snow_angle = 0x10;
-            yuki_solo_scratch.snow_step = static_cast<unsigned char>(-8);
+            yuki_solo_scratch.snow_angle_step = YUKI_SOLO_FINAL_SNOW_ANGLE_STEP;
+            yuki_solo_scratch.snow_angle = YUKI_SOLO_FINAL_SNOW_INITIAL_ANGLE;
+            yuki_solo_scratch.snow_step = static_cast<unsigned char>(YUKI_SOLO_FINAL_SNOW_STEP_SIGNED);
         }
         break;
     case YUKI_SOLO_PHASE_WAVE_FINAL:
         switch(boss.mode) {
         case YUKI_SOLO_MODE_REPOSITION:
-            if(boss.phase_frame >= 8) {
+            if(boss.phase_frame >= YUKI_SOLO_FINAL_WAVE_DELAY_FRAMES) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
@@ -180,7 +181,7 @@ phase5_complete:
                     goto defeat;
                 }
                 boss_solo_pattern_current = yuki_solo_pattern_final[
-                    boss.phase_state.patterns_seen % 5];
+                    boss.phase_state.patterns_seen % YUKI_SOLO_FINAL_PATTERN_COUNT];
             }
             break;
         case YUKI_SOLO_MODE_ATTACK:
@@ -199,9 +200,9 @@ defeat:
         boss_custombullets_render = nullfunc_near;
         break;
     default:
-        boss_defeat_update(50);
+        boss_defeat_update(YUKI_SOLO_DEFEAT_BONUS);
         return;
     }
     b4balls_update();
-    hud_hp_update_and_render(boss.hp, 7900);
+    hud_hp_update_and_render(boss.hp, YUKI_SOLO_HP_TOTAL);
 }

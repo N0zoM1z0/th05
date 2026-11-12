@@ -92,3 +92,34 @@ original ordered relocations, and a rejected compiled negative. See the same
 focused local receipt at
 `.analysis/unit-replays/gpt-web-survivor-solo-scratch-20261111/receipt.json`.
 This improves source semantics without adding new target ownership.
+
+## Yuki solo HP / sprite / final snow schedules (2026-11-12)
+
+The complete 826-byte far-Pascal `yuki_update()` now describes all ten
+Boss phases with a source-level choreography surface. Its true HP ladder
+starts at 7,900, then installs 4,600, 3,200 and 1,200 as successive phase
+end thresholds, before the 0-HP last ring. Its first 64 frames fill HP,
+the next 64 frames finish the ready transition, and the second attack
+stage has its own 2,000-frame timeout. The two mobile wave counters
+terminate at 12 and 24, while the final counter ends at 36; those
+existing phase limits are preserved.
+
+Yuki's original idle trio (196, 197, 198), attack trio (204, 205, 206),
+B4 ball base 216, arena center (192,96), 16-pixel moving-shadow offset,
+64-pixel gather radius and two-angle/eight-point geometry are now named
+at their real assignment sites. The first/second pair alternate via the
+original parity index; the final five-entry callback table cycles using
+`patterns_seen % 5` with the original eight-frame pause. The snow
+pattern's initial step, angular origin and signed reverse step remain
+8, 0x10 and -8, respectively. All foreign callbacks, actual scratch bytes
+and full game ABI are unchanged.
+
+The semantic edit does not invent a new physical field or shorten a
+function. The focused native replay
+`.analysis/unit-replays/gpt-web-yuki-solo-schedule-a/receipt.json`
+compiles the edited large Boss controller in two deterministic Borland
+rounds and matches **826/826 original CODE bytes**, including the genuine
+20-byte compiler dispatch table and ordered relocations. Its updated
+compiled negative lowers the real setup HP gate 4,600→4,500 and is
+rejected. Only `main-yuki-update` was replayed; the new comments and
+constants add no duplicate acceptance credit to already owned CODE.

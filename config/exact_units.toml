@@ -2355,8 +2355,8 @@ code_data_ranges = [{offset = 806, size = 20, kind = "compiler-switch-table"}]
 [[controls]]
 unit = "main-yuki-update"
 source = "src/main/boss/mai_yuki/yuki_update.cpp"
-find = "boss.phase_end_hp = 4600;"
-replace = "boss.phase_end_hp = 4500;"
+find = "boss.phase_end_hp = YUKI_SOLO_HP_SETUP_GATE;"
+replace = "boss.phase_end_hp = (YUKI_SOLO_HP_SETUP_GATE - 100);"
 
 # Two independent complete natural owners, retaining original collection groups.
 [[units]]
