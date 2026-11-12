@@ -158,6 +158,7 @@ def overlay_vendor_reservation(size: int, pieces: list[dict], claims: list[dict]
                           ("JS_STAT", "JS.ASM/JS_STAT", 4),
                           ("PALETTES", "PAL.ASM/PALETTES", 48),
                           ("MEM_WORK", "MEM.ASM/MEM_WORK", 8),
+                          ("BFNT_HEADER", "SUPERBFT.ASM/SUPER.INC", 32),
                       }) or
                 type(row.get("start")) is not int or
                 type(row.get("end")) is not int or
@@ -571,6 +572,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_compact_bss import reviewed_claims as compact_bss_claims
     compact_bss, compact_bss_sha = compact_bss_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_superbfnt_header import reviewed_claims as bfnt_header_claims
+    bfnt_header, bfnt_header_sha = bfnt_header_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_master_machine_graphics_palette import reviewed_claims as machine_graphics_claims
     machine_graphics, machine_graphics_sha = machine_graphics_claims(
         root, config["views"], verify_targets=verify_targets)
@@ -851,6 +855,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor_reservation(view["size"], pieces, superpa_reserves[name])
         if name in compact_bss:
             pieces = overlay_vendor_reservation(view["size"], pieces, compact_bss[name])
+        if name in bfnt_header:
+            pieces = overlay_vendor_reservation(view["size"], pieces, bfnt_header[name])
         if name in machine_graphics:
             pieces = overlay_vendor(view["size"], pieces, machine_graphics[name])
         if name in cl_data:
@@ -999,6 +1005,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_superpa_reserve_review_sha256"] = superpa_reserves_sha
         if compact_bss_sha and name in compact_bss:
             views[name]["master_compact_bss_review_sha256"] = compact_bss_sha
+        if bfnt_header_sha and name in bfnt_header:
+            views[name]["master_superbfnt_header_review_sha256"] = bfnt_header_sha
         if machine_graphics_sha and name in machine_graphics:
             views[name]["master_machine_graphics_review_sha256"] = machine_graphics_sha
         if maine_atan8_sha and name in maine_atan8:
