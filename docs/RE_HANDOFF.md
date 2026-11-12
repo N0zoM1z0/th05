@@ -20,8 +20,8 @@ counts there after any acceptance; this dated snapshot is for orientation.
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
 | Source-authored exact semantic initialized DATA | **17,478 bytes** |
 | Total source-authored C/C++ bytes | **126,262 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,740 / 6,267 / 5,845 / 8,559** |
-| Total unknown decoded bytes | **24,411** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,119 / 5,462 / 5,040 / 8,559** |
+| Total unknown decoded bytes | **22,180** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -59,6 +59,16 @@ independently proven pristine source image.
   paired-hit/reposition rules, respectively. Both **whole functions** were
   replayed twice with their original ordered fixups and compiled negatives;
   these are *source-quality improvements*, not a second CODE credit.
+- Large Boss source quality also advanced on three complete original-order
+  controllers: [Sara](../src/main/boss/sara/sara.md) **1,824 B / 12 functions**
+  with shared mobile-wave hit scoring and reposition timers,
+  [Alice](../src/main/boss/alice/update_context.md) **939 B** with proper
+  beam/ring puppet formation state, and
+  [Yumeko](../src/main/boss/yumeko/update.md) **884 B / 2 functions** with
+  timed hit windows and phase-clock transitions. Every affected complete
+  compiler owner passed two fresh TCC/TLINK builds, raw bytes, original
+  ordered fixups and a meaningful compiled negative. These are refreshed
+  *already accepted* CODE units, with **no duplicate authored credit**.
 - Stage and ending controllers: Stage 2 complete **653 B** update plus
   **492 B** particle initializer and **51 B** invalidation leaf;
   complete Stage Clear and All Clear **561 B / 579 B**;
@@ -93,6 +103,17 @@ independently proven pristine source image.
   `[227D2,227D3)`. All three have real independently accepted consumers,
   complete native C++ producer/negative evidence and zero MZ relocations.
   **Do not absorb neighboring unknown zero/alignment bytes.**
+- Foreign Master 0.23 [BGM note/duration DATA](reconstruction/BGM_NOTE_LENGTH_OP_MAINE.md)
+  has **two new original source-linked 176-byte tables** in OP/MAINE;
+  [Master BYTE_MASK](reconstruction/MASTER_BYTE_MASK_OP_MAINE.md) adds two
+  **8-byte tables** in those programs. Original archived author ASM,
+  retained TASM ordinary LEDATA, original MAP publics, exact bytes and
+  relocation provenance were independently rechecked. Existing MAIN copies
+  are not claimed again. The [Borland C0L.OBJ startup](reconstruction/BORLAND_C0_STARTUP.md)
+  adds **621 bytes of source-linked foreign CODE in each of MAIN/OP/MAINE**
+  with the real 57 OMF fixes and link-frame changes. Total additional
+  foreign ownership is **2,231 bytes**; it adds zero game-authored C/C++
+  credit. The remaining 5-byte CRT CODE tail in each MZ remains unknown.
 - Foreign CL.LIB [`exit`, `files`, `xxv` initialized DATA](reconstruction/CL_DATA_OWNERSHIP.md)
   now has full member-linked byte and original ordered relocation proof in
   all three executables: **2,124 bytes** moved out of unknown, **zero
@@ -148,6 +169,13 @@ original short jumps and yields **2,135 bytes**. Four further genuine
 See [Yumeko compiler findings](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
 Do not add padding, fake side effects, borrowed machine code, or credit
 this C++ function a second time.
+
+**Additional Yumeko compiler-output route:** The `TCC -S`/TASM32/TLINK
+single-producer experiments compiled the actual nine-function source to
+**2,134 bytes (`-O-`)** and **2,135 bytes (`-O`)**, both against original
+**2,139 bytes**. The strict compiler-assembly owner also rejected unreviewed
+source segments. No original C++ sword-updater credit was added; see
+[the native compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
 
 **Additional Yumeko diagnostics:** Three narrow `switch`-on-final-Y
 compiler experiments, applied inside the real nine-function sword context,

@@ -347,3 +347,37 @@ updater remain unchanged**. No fake instruction, artificial optimizer
 barrier, padded short jump, whole cold replay, or C++ byte-credit claim
 was introduced. A next attempt needs a source-flow shape that naturally
 retains both historical short joins *without* the switch-dispatch overhead.
+
+## 2026-11-12: unedited TCC -S / TASM32 original-order producer trials
+
+A separate original-compiler route was tested rather than repeating the
+ordinary `-c` branch-optimizer and local-switch experiments. Two genuine
+single producer passes compiled the complete **nine-function** maintained
+Yumeko source context through Borland `TCC -S`, followed by TASM32 of the
+*unaltered* generated assembler and TLINK against the normal symbol-only
+MAIN03 binder. No compiler assembly output or target bytes were hand-edited.
+
+| Natural source optimization | Actual joined CODE size | Native target |
+| --- | ---: | ---: |
+| `#pragma option -O-` | 2,134 bytes | 2,139 bytes |
+| `#pragma option -O` | 2,135 bytes | 2,139 bytes |
+
+The first compiler route produced linked MZ/MAP outputs, but the strict
+compiler-assembly owner validator correctly rejected their additional
+source segment context (`unreviewed initialized/reserved source contribution`).
+Even apart from that guard, both measured CODE contributions are the wrong
+size and have the wrong ordered MZ relocation streams; this route does **not**
+recover the natural C++ updater. The generated code also fails full raw
+comparison against the 283-byte native updater, so a familiar near branch
+is not evidence of standalone completeness.
+
+The private source-cleaning diagnostic
+`.analysis/gpt-web-yumeko-compiler-assembly-20261112.py`, its two
+independent trial directories
+`.analysis/gpt-web-yumeko-compiler-S-*-first/`, and compact
+`.analysis/gpt-web-yumeko-compiler-S-20261112-results.json` retain the
+actual compiler/linker outputs. Trial source files were deleted; accepted
+Yumeko attack callbacks and the independently exact 283-byte original ASM
+owner remain untouched. No new C++ CODE credit or full cold replay is
+claimed. A future alternative must resolve both source segment provenance
+and the four-to-five-byte CODE layout difference naturally.
