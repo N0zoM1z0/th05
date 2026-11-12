@@ -2162,3 +2162,25 @@ unit = "maine-mem-assign-initial-data"
 source = "src/shared/memory/mem_assign_initial.c"
 find = "320000UL >> 4"
 replace = "320016UL >> 4"
+
+[[units]]
+id = "maine-bgimage-planes-initial-data"
+source = "src/shared/hardware/bgimage_planes_initial.cpp"
+module = "th05/bgimgini.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_bgimage_planes_initial_bindings.asm"
+target_start = 0x107d2
+size = 8
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-bgimage-planes-initial-data"
+source = "src/shared/hardware/bgimage_planes_initial.cpp"
+find = "bgimage_planes_t bgimage = { 0, 0, 0, 0 };"
+replace = "bgimage_planes_t bgimage = { (unsigned char __seg *)1, 0, 0, 0 };"

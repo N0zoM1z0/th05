@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "b5b7afb84dd5ebe0499c6757b280d4374ca4446785125cf1b159b41dc94c458f",
+  "replay_receipt_sha256": "655cef024d7ef3858c2ea9f65e5395296cb93a3d88ee3202d49b7673f47885f5",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 63948,
-    "candidate_start": 63948,
-    "size": 2,
-    "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
-    "candidate_sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8",
+    "target_start": 63940,
+    "candidate_start": 63940,
+    "size": 8,
+    "target_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+    "candidate_sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 63948,
-      "size": 2,
-      "module": "th05/mem_init.c",
+      "start": 63940,
+      "size": 8,
+      "module": "th05/bgimgini.cpp",
       "segment": "_DATA"
     }
   },
@@ -44911,6 +44911,326 @@
           "-ml",
           "-DBINARY='O'",
           "th05/mem_init.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "op-bgimage-planes-initial-data",
+      "entry_sha256": "b4a19a05e4a2000dbeac64332a222064232b4a9f5df719fac1fb8a6d96be668d",
+      "result": {
+        "id": "op-bgimage-planes-initial-data",
+        "entry_sha256": "b4a19a05e4a2000dbeac64332a222064232b4a9f5df719fac1fb8a6d96be668d",
+        "rounds": [
+          {
+            "target_start": 63940,
+            "candidate_start": 63940,
+            "size": 8,
+            "target_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "candidate_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 63940,
+              "size": 8,
+              "module": "th05/bgimgini.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 63940,
+            "candidate_start": 63940,
+            "size": 8,
+            "target_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "candidate_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 63940,
+              "size": 8,
+              "module": "th05/bgimgini.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a96228d5e2d93ee89a816544f202f9a18bb89321232f592cfe2f02bdb505da15",
+            "dependency_timestamp_normalized_sha256": "f38da100dd501ff0ca1ebe8e7e4b1c088634fd3b63dbe24648769cd3a8fc4367",
+            "module_name": "th05/bgimgini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgimgini.cpp",
+              "src/shared/hardware/bgimage_planes_initial.cpp",
+              "src/shared/hardware/bgimage_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "32e4c2e4fcf344ed078eb3bae450433c8ba6e5c25b9d8b96ebc158e03738b353",
+            "dependency_timestamp_normalized_sha256": "f38da100dd501ff0ca1ebe8e7e4b1c088634fd3b63dbe24648769cd3a8fc4367",
+            "module_name": "th05/bgimgini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgimgini.cpp",
+              "src/shared/hardware/bgimage_planes_initial.cpp",
+              "src/shared/hardware/bgimage_free.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/bgimgini.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/bgimgini.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_bgimage_planes_initial_bindings.asm",
+            "sha256": "32a3fc7ea122215310794911a350e9ac1ed3510594f1236db50286464c0f6a67"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/hardware/bgimage_free.hpp",
+            "sha256": "ab65491a5baa91e46fa58f9b80be2c585a14f63028d7d2a983cb15b3c5b72ac8"
+          },
+          {
+            "path": "src/shared/hardware/bgimage_planes_initial.cpp",
+            "sha256": "3c8c101f3e9bb984e53b6140381c141436268f4b7a2b33a18d8a9a59174c9264"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_bgimage_planes_initial_bindings.asm",
+          "sha256": "32a3fc7ea122215310794911a350e9ac1ed3510594f1236db50286464c0f6a67"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/hardware/bgimage_free.hpp",
+          "sha256": "ab65491a5baa91e46fa58f9b80be2c585a14f63028d7d2a983cb15b3c5b72ac8"
+        },
+        {
+          "path": "src/shared/hardware/bgimage_planes_initial.cpp",
+          "sha256": "3c8c101f3e9bb984e53b6140381c141436268f4b7a2b33a18d8a9a59174c9264"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "655cef024d7ef3858c2ea9f65e5395296cb93a3d88ee3202d49b7673f47885f5",
+      "compiled_negative_control": {
+        "target_start": 63940,
+        "candidate_start": 63940,
+        "size": 8,
+        "target_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "candidate_sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 63940,
+          "size": 8,
+          "module": "th05/bgimgini.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "op-bgimage-planes-initial-data",
+        "entry_sha256": "b4a19a05e4a2000dbeac64332a222064232b4a9f5df719fac1fb8a6d96be668d",
+        "mutation": {
+          "unit": "op-bgimage-planes-initial-data",
+          "source": "src/shared/hardware/bgimage_planes_initial.cpp",
+          "find": "bgimage_planes_t bgimage = { 0, 0, 0, 0 };",
+          "replace": "bgimage_planes_t bgimage = { (unsigned char __seg *)1, 0, 0, 0 };"
+        },
+        "control_sha256": "72b0489bf100674a61f1d41a2f513114a5d78d9fd3c840b623fc6883d35d94e6",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 63940,
+          "candidate_start": 63940,
+          "size": 8,
+          "target_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+          "candidate_sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 63940,
+            "size": 8,
+            "module": "th05/bgimgini.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "c9199f1c69ce4790255b335f1736eb2da7604e6c0a73aca994338217155c8751",
+          "dependency_timestamp_normalized_sha256": "60fe7caa30274211a02795d697f7b75eeda8b1a666c02e28c6db1b1b9707df4b",
+          "module_name": "th05/bgimgini.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bgimgini.cpp",
+            "src/shared/hardware/bgimage_planes_initial.cpp",
+            "src/shared/hardware/bgimage_free.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 8,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 8,
+                "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/bgimgini.cpp"
         ]
       },
       "target_view": {
