@@ -1,3 +1,4 @@
+#include "src/main/boss/shinki/devil_ballistics.hpp"
 void near pattern_devil(void)
 {
 	enum {
@@ -50,22 +51,22 @@ void near pattern_devil(void)
 	// Laser activation
 	if((boss.hp <= HP_PHASE_10_DEVIL_LASER) || (boss.phase_frame >= DEVIL_FORCE_LASER_FRAME)) {
 		if(laser_grow_delay == 0) {
-			laser_template.coords.width.nonshrink = 6;
-			laser_template.coords.angle = 0x40;
-			laser_template.col = 0xE;
+			laser_template.coords.width.nonshrink = SHINKI_DEVIL_LASER_WIDTH_PX;
+			laser_template.coords.angle = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
+			laser_template.col = SHINKI_DEVIL_LASER_COLOR;
 
 			// Assign laser IDs from right to left
 			laser_template.coords.origin.x.v += to_sp(SHINKI_TO_LAST_COLUMN_DISTANCE);
-			laser_manual_fixed_spawn(0);
+			laser_manual_fixed_spawn(SHINKI_DEVIL_LASER_SLOT_A);
 
 			laser_template.coords.origin.x.v -= to_sp(COLUMN_W);
-			laser_manual_fixed_spawn(1);
+			laser_manual_fixed_spawn(SHINKI_DEVIL_LASER_SLOT_B);
 
 			laser_template.coords.origin.x.v -= to_sp(COLUMN_W);
-			laser_manual_fixed_spawn(2);
+			laser_manual_fixed_spawn(SHINKI_DEVIL_LASER_SLOT_C);
 
 			laser_template.coords.origin.x.v -= to_sp(COLUMN_W);
-			laser_manual_fixed_spawn(3);
+			laser_manual_fixed_spawn(SHINKI_DEVIL_LASER_SLOT_D);
 			laser_grow_delay++;
 			boss_explode_small(ET_CIRCLE);
 		}
@@ -74,14 +75,16 @@ void near pattern_devil(void)
 	// Spread bullets
 	if((boss.phase_frame % DEVIL_SPREAD_INTERVAL_FRAMES) == 0) {
 		if(phase_frame_minus_startup_delay == 0) {
-			bullet_angle_inner = 0x20;
-			bullet_angle_outer = 0x00;
-			b6ball_interval = select_for_rank(64, 40, 32, 28);
+			bullet_angle_inner = SHINKI_DEVIL_INITIAL_INNER_BULLET_ANGLE;
+			bullet_angle_outer = SHINKI_DEVIL_INITIAL_OUTER_BULLET_ANGLE;
+			b6ball_interval = select_for_rank(
+                DEVIL_BALL_START_EASY, DEVIL_BALL_START_NORMAL,
+                DEVIL_BALL_START_HARD, DEVIL_BALL_START_LUNATIC);
 			bullet_intro_done = false;
 			bullet_direction = CLOCKWISE;
 			lasers_active = false;
-			laser_angle_inner = 0x40;
-			laser_angle_outer = 0x40;
+			laser_angle_inner = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
+			laser_angle_outer = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
 			laser_direction = CLOCKWISE;
 		}
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
@@ -91,12 +94,12 @@ void near pattern_devil(void)
 			bullet_intro_done++;
 		}
 		if(!bullet_intro_done) {
-			bullet_template.spread = 1;
+			bullet_template.spread = SHINKI_DEVIL_PRELUDE_BULLET_COUNT;
 		} else {
-			bullet_template.spread = 3;
+			bullet_template.spread = SHINKI_DEVIL_FULL_BULLET_COUNT;
 		}
-		bullet_template.spread_angle_delta = 0x30;
-		bullet_template.speed.v = sara_to_sp8(7.0f);
+		bullet_template.spread_angle_delta = SHINKI_DEVIL_SPREAD_ARC_ANGLE;
+		bullet_template.speed.v = sara_to_sp8(SHINKI_DEVIL_BULLET_SPEED_PX);
 
 		bullet_template.origin.x.v += to_sp(SHINKI_TO_LAST_COLUMN_DISTANCE);
 		bullet_template.angle = bullet_angle_outer;
@@ -107,11 +110,11 @@ void near pattern_devil(void)
 		bullets_add_regular_fixedspeed();
 
 		bullet_template.origin.x.v -= to_sp(COLUMN_W);
-		bullet_template.angle = (0x80 - bullet_angle_inner);
+		bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_inner);
 		bullets_add_regular_fixedspeed();
 
 		bullet_template.origin.x.v -= to_sp(COLUMN_W);
-		bullet_template.angle = (0x80 - bullet_angle_outer);
+		bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_outer);
 		bullets_add_regular_fixedspeed();
 
 		if(!bullet_intro_done) {
@@ -119,16 +122,16 @@ void near pattern_devil(void)
 			bullet_angle_inner += 0x02;
 		} else {
 			// "Decorative" pellets aimed to the top of the playfield
-			bullet_template.patnum = 0;
+			bullet_template.patnum = SHINKI_DEVIL_DECORATIVE_PELLET_PATNUM;
 			bullet_template.spawn_type = BST_NO_DECELERATE;
 			sara_set_spread(3, 0x30); // technically redundant
 
-			bullet_template.angle = (0x80 + bullet_angle_outer);
+			bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_outer);
 			bullet_template.origin.x.v += to_sp((COLUMN_W * (COLUMN_COUNT - 1))),
 			bullets_add_regular_fixedspeed();
 
 			bullet_template.origin.x.v -= to_sp(COLUMN_W),
-			bullet_template.angle = (0x80 + bullet_angle_inner);
+			bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_inner);
 			bullets_add_regular_fixedspeed();
 
 			bullet_template.origin.x.v -= to_sp(COLUMN_W),
@@ -159,12 +162,12 @@ void near pattern_devil(void)
 			b6ball_template.origin.x.v = shinki_wing_random_x();
 			b6ball_template.origin.y.v = shinki_wing_random_y();
 			b6ball_template.angle = player_angle_from(b6ball_template.origin.x, b6ball_template.origin.y);
-			b6ball_template.speed.v = sara_to_sp8(3.75f);
+			b6ball_template.speed.v = sara_to_sp8(SHINKI_DEVIL_AIMED_BALL_SPEED_PX);
 			b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
 			b6balls_add();
 		}
 
-		snd_se_play(3);
+		snd_se_play(SHINKI_DEVIL_VOLLEY_SOUND);
 	}
 
 	// Lasers
@@ -174,10 +177,10 @@ void near pattern_devil(void)
 		laser_grow_delay++;
 	} else if(laser_grow_delay == DEVIL_LASER_GROW_FRAMES) {
 		// MODDERS: Turn into a loop
-		laser_manual_grow(0);
-		laser_manual_grow(1);
-		laser_manual_grow(2);
-		laser_manual_grow(3);
+		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_A);
+		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_B);
+		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_C);
+		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_D);
 		laser_grow_delay++;
 	} else if(!lasers_active) {
 		if(bullet_angle_outer == DEVIL_SPREAD_OUTER_LOW) {
@@ -204,7 +207,9 @@ void near pattern_devil(void)
 		}
 		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= 2500)) {
 			if((laser_grow_delay++) == DEVIL_FIRST_LASER_SWEEP_FRAME) {
-				b6ball_interval = select_for_rank(52, 20, 16, 12);
+				b6ball_interval = select_for_rank(
+                    DEVIL_BALL_FAST_EASY, DEVIL_BALL_FAST_NORMAL,
+                    DEVIL_BALL_FAST_HARD, DEVIL_BALL_FAST_LUNATIC);
 				boss_explode_small(ET_CIRCLE);
 			}
 		}

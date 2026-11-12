@@ -83,3 +83,40 @@ Borland/TLINK producers and the original ordered relocations. The existing
 compiled `2500 → 2501` laser-fast-stage negative was rejected. Evidence:
 `.analysis/unit-replays/gpt-web-shinki-devil-attack-timing-20261111/receipt.json`.
 No additional executable bytes are claimed by this refinement.
+
+## Four-column Devil projectiles and rank-specific firing periods (2026-11-12)
+
+The full 802-byte Devil attacker now uses `devil_ballistics.hpp` for the
+actual four independently addressed lasers, their width 6, red/blue
+laser color 14, initial 0x40 direction, the 0x80 left/right reflection,
+prelude-to-full bullet count 1→3, spread angle 0x30 and 7-pixel-per-frame
+red volley. The four lasers are created and grown in distinct calls
+using the **same original slot numbers** later stopped by the accepted
+959-byte Shinki Boss controller. The decorative pellet and random
+purple B6-ball retain their original separate sprite selectors, aiming
+algorithm, and speed 3.75. No drawing asset, new state object, changing
+call order or source-ASM instruction injection is introduced.
+
+Both actual rank-specific B6-ball intervals are separately named: the
+initial ramp uses easy/normal/hard/lunatic **64/40/32/28** frames; the
+later fast pattern uses **52/20/16/12**. A diagnostic uncovered a real
+Borland 4.02 preprocessor identifier-significance limit. Long macros
+sharing the first 31 identifier characters caused all four arguments
+passed to `select_for_rank()` to fold to the **Lunatic** value. That
+first genuine compiler candidate matched 796/802 positional bytes and
+all three ordered relocation sites, but failed the original six
+immediates. No credit was accepted from that candidate. Distinct
+shorter `DEVIL_BALL_START_*` and `DEVIL_BALL_FAST_*` identifiers fully
+recover the four original values without changing expressions or using
+compiler barriers.
+
+The **complete twelve-unit Shinki source-change cohort**, not just the
+standalone pattern, was then rebuilt twice with the pinned native
+Borland toolchain:
+`.analysis/unit-replays/gpt-web-shinki-devil-ballistics-full-c/receipt.json`.
+All twelve complete original CODE extents and original ordered MZ
+fixups are exact, including the 802-byte Devil attacker and the entire
+959-byte Shinki update with its 26-byte compiler dispatch table and
+checked alignment zero. The compiled laser fast-stage 2500→2501
+mutation was rejected. Previously accepted CODE earns no duplicate
+source-byte credit; no whole MAIN or ZUN executable was replayed.

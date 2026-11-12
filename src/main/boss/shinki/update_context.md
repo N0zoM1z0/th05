@@ -224,3 +224,20 @@ new compiled defeat-bonus negative is rejected. Receipt:
 `.analysis/unit-replays/gpt-web-shinki-wing-hitboxes-a/receipt.json`.
 There is no new CODE-byte credit for already accepted bytes, no embedded
 sprite assets, and no full cold replay.
+
+## Physical Devil laser-slot parity with the large Boss controller (2026-11-12)
+
+The real four laser spawn/grow calls inside the separately accepted
+802-byte Devil attacker now use the **identical** A/B/C/D laser-slot
+constants as the four individual `laser_stop()` calls in this complete
+959-byte Shinki Boss updater. This closes an actual source-level
+consumer/provider interface without inventing a loop, altering any
+Boss scratch bytes or reordering one of the original near-call sites.
+The rank-specific initial 64/40/32/28 and fast 52/20/16/12 B6-ball
+periods are also now grounded as named gameplay constants in the
+shared Devil source; the real Borland 31-character macro-name collision
+was discovered and repaired by shorter distinct names. The native
+12-unit affected source closure was fully replayed with exact raw CODE,
+fixups and compiled semantic negative:
+`.analysis/unit-replays/gpt-web-shinki-devil-ballistics-full-c/receipt.json`.
+No new already-owned CODE credit is added.
