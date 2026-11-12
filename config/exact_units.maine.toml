@@ -1836,3 +1836,26 @@ unit = "maine-cutscene-pi-mask-patterns-data"
 source = "src/maine/cutscene/pi_mask_patterns.c"
 find = "PI_REPEAT_PIXELS(PI_COVER_FINAL_THIRD)"
 replace = "PI_REPEAT_PIXELS(PI_COVER_STAGGER_A)"
+
+[[units]]
+id = "maine-glyph-overlay-mask-data"
+source = "src/maine/hardware/glyph_coverage_data.c"
+module = "th05/m_gmask.c"
+segment = "_DATA"
+wrapper_options = "-zCGLYPH_OVERLAY_DATA_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_glyph_coverage_data_bindings.asm"
+binary = "E"
+target_start = 67500
+size = 32
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-glyph-overlay-mask-data"
+source = "src/shared/hardware/glyph_coverage.h"
+find = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x5"
+replace = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x4"
