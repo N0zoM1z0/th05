@@ -193,3 +193,34 @@ and the update's compiled defeat-bonus mutation rejected. Receipt:
 No unrelated accepted unit, foreign library procedure, or complete
 executable was rebuilt. This increases the accuracy of the maintained
 source's meaning but does not double-count already accepted CODE bytes.
+
+## Stage-six wing hitboxes and Devil laser shutdown (2026-11-12)
+
+The full Shinki 12-phase controller now preserves four *separate* player
+hitbox choices at the wing-preparation handoff: Reimu 50, Marisa 35,
+Mima 45, and Yuuka 50 pixels. `wing_hitboxes.hpp` names those exact
+physical distances as float-valued compile-time expressions, preserving
+the original `to_sp(float)` representation and `select_for_playchar()`
+argument order. The original asymmetric Marisa/Mima hitbox behavior is
+thus documented in maintained natural C++ rather than an unlabeled list
+of four numbers. The original 64-frame extra HP-fill interval, palette
+brighten/darken sampling ticks, and even-frame defeat flash are also
+explicitly named, without adding a new clock or scratch field.
+
+The four Devil lasers are still stopped individually in their original
+order when the second late Boss wave ends; the four slot selectors
+now have named roles, with no synthesized loop or new pointer table.
+The final defeat bonus remains 65, and the actual compiled negative
+changes it to 64. The full `shinki_update()` bodies in both the accepted
+real-context source and the maintained independent `shinki.cpp` agree,
+without erasing their existing independent header and comments.
+
+Both source owners were changed, so the scoped replay covered all eleven
+actually affected accepted units in the Shinki cohort. Two independent
+Borland compilers match their complete original functions and literal
+ordered fixups, including all **959 bytes** of the full Shinki update,
+its 26-byte five-stage switch data, and checked alignment zero. The
+new compiled defeat-bonus negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-shinki-wing-hitboxes-a/receipt.json`.
+There is no new CODE-byte credit for already accepted bytes, no embedded
+sprite assets, and no full cold replay.

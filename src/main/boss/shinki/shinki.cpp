@@ -7,6 +7,7 @@
 #include "src/main/boss/shinki/shinki.hpp"
 #include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
+#include "src/main/boss/shinki/wing_hitboxes.hpp"
 #pragma codeseg B6_BALLS_TEXT main_03
 
 
@@ -567,7 +568,7 @@ void pascal shinki_update(void)
 
 	switch(boss.phase) {
 	case PHASE_HP_FILL:
-		if(boss.phase_frame == 1) {
+		if(boss.phase_frame == SHINKI_FIRST_HP_FRAME) {
 			boss.hp = HP_TOTAL;
 			boss.phase_end_hp = HP_PHASE_2_END;
 			shinki_gather_template_init();
@@ -575,7 +576,7 @@ void pascal shinki_update(void)
 
 			// Redundant here, only needs to be part of the phase 5to6
 			// transition for completeness.
-			boss.pos.velocity.y.v = to_sp(0.0f);
+			boss.pos.velocity.y.v = to_sp(SHINKI_RESET_Y_VELOCITY_PX);
 
 			boss_sprite_left = PAT_SHINKI_LEFT;
 			boss_sprite_right = PAT_SHINKI_RIGHT;
@@ -585,7 +586,7 @@ void pascal shinki_update(void)
 		boss_hittest_shots_invincible();
 
 		// Timeout condition
-		if(boss.phase_frame >= (HUD_HP_FILL_FRAMES + 64)) {
+		if(boss.phase_frame >= (HUD_HP_FILL_FRAMES + SHINKI_HP_FILL_EXTRA_FRAMES)) {
 			// Next phase
 			boss.phase_frame = 0;
 			boss.phase++;
@@ -681,11 +682,12 @@ void pascal shinki_update(void)
 			// Next phase
 			boss.phase++;
 			boss.phase_frame = 0;
-			boss.pos.velocity.y.v = to_sp(0.0f);
+			boss.pos.velocity.y.v = to_sp(SHINKI_RESET_Y_VELOCITY_PX);
 			boss_custombullets_render = shinki_custombullets_render;
 			// How generous for Yuuka players!
 			boss_hitbox_radius.x.v = select_for_playchar(
-				to_sp(50.0f), to_sp(35.0f), to_sp(45.0f), to_sp(50.0f)
+				to_sp(SHINKI_WING_HITBOX_REIMU_PX), to_sp(SHINKI_WING_HITBOX_MARISA_PX),
+                to_sp(SHINKI_WING_HITBOX_MIMA_PX), to_sp(SHINKI_WING_HITBOX_YUUKA_PX)
 			);
 			wing_pattern = pattern_random_rain_and_spreads_from_wings;
 			phase_relative = 0;
@@ -695,7 +697,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_WING_RAIN:
 	case SHINKI_PHASE_SPREAD_WALLS:
 		if(Palettes[0].c.b < SHINKI_WING_PALETTE_BLUE_LIMIT) {
-			if(stage_frame_mod16 == 0) {
+			if(stage_frame_mod16 == SHINKI_PALETTE_BRIGHTEN_TICK) {
 				Palettes[0].c.b++;
 			}
 			palette_changed = true;
@@ -725,7 +727,7 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_PURPLE_TRANSITION:
 		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
-			if(stage_frame_mod8 == 0) {
+			if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) {
 				Palettes[0].c.b--;
 			}
 			palette_changed = true;
@@ -745,12 +747,12 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_SYMMETRIC_SPREADS:
 	case SHINKI_PHASE_DEVIL:
 		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
-			if(stage_frame_mod8 == 0) {
+			if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) {
 				Palettes[0].c.b--;
 			}
 			palette_changed = true;
 		} else if(Palettes[0].c.r < SHINKI_DEVIL_PALETTE_RED_LIMIT) {
-			if(stage_frame_mod16 == 0) {
+			if(stage_frame_mod16 == SHINKI_PALETTE_BRIGHTEN_TICK) {
 				Palettes[0].c.r++;
 			}
 			palette_changed = true;
@@ -784,16 +786,16 @@ void pascal shinki_update(void)
 			// The pattern_devil() lasers. Should ideally be stopped inside the
 			// pattern, but since it's a looping one without a clear end,
 			// there's no easy way with the original architecture.
-			laser_stop(0);
-			laser_stop(1);
-			laser_stop(2);
-			laser_stop(3);
+			laser_stop(SHINKI_DEVIL_LASER_SLOT_A);
+			laser_stop(SHINKI_DEVIL_LASER_SLOT_B);
+			laser_stop(SHINKI_DEVIL_LASER_SLOT_C);
+			laser_stop(SHINKI_DEVIL_LASER_SLOT_D);
 		}
 		break;
 
 	case SHINKI_PHASE_DEFEAT_TRANSITION:
 		boss_hittest_shots();
-		if((boss.phase_frame % 2) == 0) {
+		if((boss.phase_frame % 2) == SHINKI_DEFEAT_FLASH_EVEN_FRAME) {
 			palette_settone_deferred(SHINKI_DEFEAT_TONE_BRIGHT);
 		} else {
 			palette_settone_deferred(SHINKI_DEFEAT_TONE_DIM);
@@ -828,7 +830,7 @@ void pascal shinki_update(void)
 		break;
 
 	default:
-		boss_defeat_update(65);
+		boss_defeat_update(SHINKI_DEFEAT_SCORE_BONUS);
 		break;
 	}
 	b6balls_update();

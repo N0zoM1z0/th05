@@ -4310,8 +4310,8 @@ code_data_ranges = [{ offset = 933, size = 26, kind = "compiler-switch-table" }]
 [[controls]]
 unit = "main-shinki-update-context"
 source = "src/main/boss/shinki/update_context.cpp"
-find = "boss_defeat_update(65);"
-replace = "boss_defeat_update(64);"
+find = "boss_defeat_update(SHINKI_DEFEAT_SCORE_BONUS);"
+replace = "boss_defeat_update(SHINKI_DEFEAT_SCORE_BONUS - 1);"
 
 [[units]]
 id = "main-alice-update-context"
