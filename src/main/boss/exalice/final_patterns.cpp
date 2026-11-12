@@ -4,6 +4,22 @@
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/final_attack_rules.hpp"
 
+// Cross and turning Cheetos use the same real aim-and-fire flow. Each
+// caller supplies its own 16/128-frame flip clock and forward/reverse aim.
+// Keep the player-angle call, actual spawn and sound in their native order.
+#define EXALICE_AIM_AND_FIRE_CHEETO(flip_period, aim, reverse_aim) { \
+    if((boss.phase_frame % flip_period) == 0) { \
+        cheeto_template.angle = player_angle_from( \
+            cheeto_template.origin.x, cheeto_template.origin.y, aim); \
+    } else { \
+        cheeto_template.angle = player_angle_from( \
+            cheeto_template.origin.x, cheeto_template.origin.y, \
+            static_cast<unsigned char>(reverse_aim)); \
+    } \
+    cheetos_add(); \
+    snd_se_play(EXF_CHEETO_SHOT_SE); \
+}
+
 bool near exalice_pattern_cross_cheetos(void)
 {
     if((boss.phase_frame % EXF_CROSS_BULLET_CADENCE) == 0) {
@@ -17,16 +33,7 @@ bool near exalice_pattern_cross_cheetos(void)
         if((boss.phase_frame % EXF_CROSS_CHEETO_CADENCE) == 0) {
             cheeto_template.col = EXF_CROSS_CHEETO_COLOR;
             cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);
-            if((boss.phase_frame % EXF_CROSS_CHEETO_FLIP_PERIOD) == 0) {
-                cheeto_template.angle = player_angle_from(
-                    cheeto_template.origin.x, cheeto_template.origin.y, EXF_CROSS_CHEETO_AIM);
-            } else {
-                cheeto_template.angle = player_angle_from(
-                    cheeto_template.origin.x, cheeto_template.origin.y,
-                    static_cast<unsigned char>(EXF_CROSS_CHEETO_AIM_REVERSE));
-            }
-            cheetos_add();
-            snd_se_play(EXF_CHEETO_SHOT_SE);
+            EXALICE_AIM_AND_FIRE_CHEETO(EXF_CROSS_CHEETO_FLIP_PERIOD, EXF_CROSS_CHEETO_AIM, EXF_CROSS_CHEETO_AIM_REVERSE);
         }
     }
     return (boss.phase_frame == EXF_CROSS_DONE_FRAME);
@@ -37,16 +44,7 @@ bool near exalice_pattern_turning_cheetos(void)
     if((boss.phase_frame % EXF_TURN_CHEETO_CADENCE) == 0) {
         cheeto_template.col = EXF_CROSS_CHEETO_COLOR;
         cheeto_template.speed.v = to_sp(EXF_TURN_CHEETO_SPEED_PX);
-        if((boss.phase_frame % EXF_TURN_CHEETO_FLIP_CADENCE) == 0) {
-            cheeto_template.angle = player_angle_from(
-                cheeto_template.origin.x, cheeto_template.origin.y, EXF_TURN_CHEETO_AIM);
-        } else {
-            cheeto_template.angle = player_angle_from(
-                cheeto_template.origin.x, cheeto_template.origin.y,
-                static_cast<unsigned char>(EXF_TURN_CHEETO_REVERSE));
-        }
-        cheetos_add();
-        snd_se_play(EXF_CHEETO_SHOT_SE);
+        EXALICE_AIM_AND_FIRE_CHEETO(EXF_TURN_CHEETO_FLIP_CADENCE, EXF_TURN_CHEETO_AIM, EXF_TURN_CHEETO_REVERSE);
     }
     boss_flystep_random(boss.phase_frame % EXF_TURN_FLYSTEP_PERIOD);
     return (boss.phase_frame == EXF_TURN_DONE_FRAME);
@@ -85,3 +83,5 @@ void near exalice_pattern_final_fan(void)
             ((static_cast<unsigned long>(EXALICE_HP_WAVE4_REGULAR_END - boss.hp) * EXF_FAN_RADIUS_SCALE_PX) * 16) / EXALICE_HP_WAVE4_REGULAR_END;
     }
 }
+
+#undef EXALICE_AIM_AND_FIRE_CHEETO
