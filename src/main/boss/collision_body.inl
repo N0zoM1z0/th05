@@ -1,3 +1,4 @@
+#include "src/main/boss/defeat_combat_rules.hpp"
 // Original TH05 boss/player collision: AX holds X and DX holds Y.
 // ReC98 th04/main/boss/boss.cpp preserves both DOS register lvalues.
 // The entire source is shared by the natural single-function wrapper and
@@ -9,7 +10,8 @@ void near boss_hittest_player(void)
     _AX -= player_pos.cur.x.v;
     _DX -= player_pos.cur.y.v;
     if(overlap_wh_inplace_fast(
-        _DX, _AX, to_sp(BOSS_H / 2), to_sp(BOSS_W / 2)
+        _DX, _AX, to_sp(GDEF_CONTACT_HEIGHT_RADIUS_PX),
+        to_sp(GDEF_CONTACT_WIDTH_RADIUS_PX)
     )) {
         player_is_hit = true;
     }

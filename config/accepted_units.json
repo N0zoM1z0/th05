@@ -2,30 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "844a793d64d6819cb3b495d5bb97ea5bb95e5e505506b1856440718b6eb63a39",
+  "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 109483,
-    "candidate_start": 109483,
-    "size": 271,
-    "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-    "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+    "target_start": 141710,
+    "candidate_start": 141710,
+    "size": 10,
+    "target_sha256": "8b4df7a42c4255076a4683d1c77c79c47e7d406d6b562bcb4ffaedf1d351f506",
+    "candidate_sha256": "f85d8b14334333af1d8a45f8592288b04c965349eb9a8c647bf8bc7a73c5262c",
     "raw_exact": false,
-    "target_fixups": [
-      253,
-      222,
-      173,
-      73
-    ],
-    "candidate_fixups": [
-      253,
-      222,
-      173,
-      73
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 141710,
+      "size": 10,
+      "module": "th05/boss.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -9636,8 +9634,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "319b9e102ce0b83b69ed0a9e80f8e20c9f9904e02aa45c2aa7f02a8b4e9fc6b2",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "6640b86704855d45ed69feff43e7649435e76b6e9912cd02e1414f52323b6ea2",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -9659,12 +9657,14 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           },
           {
-            "sha256": "2e2125a1e51c2752b8dcaf17afda533bddbeed335d24ee47528b5686f3f4d944",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "9894e1be2cbbbacd9a088f8758255af07d21c91a571dddc33f95b10e7e5c5c2a",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -9686,7 +9686,9 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           }
         ],
@@ -9729,11 +9731,15 @@
           },
           {
             "path": "src/main/boss/collision_body.inl",
-            "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+            "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+          },
+          {
+            "path": "src/main/boss/defeat_combat_rules.hpp",
+            "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
           },
           {
             "path": "src/main/boss/generic.cpp",
-            "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+            "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
           },
           {
             "path": "src/main/boss/generic.hpp",
@@ -9773,11 +9779,15 @@
         },
         {
           "path": "src/main/boss/collision_body.inl",
-          "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+          "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+        },
+        {
+          "path": "src/main/boss/defeat_combat_rules.hpp",
+          "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
         },
         {
           "path": "src/main/boss/generic.cpp",
-          "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+          "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
         },
         {
           "path": "src/main/boss/generic.hpp",
@@ -9810,7 +9820,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b87e092b4af8e5bea5402848b35a95018d7d4f4d8a39ac4f08d6b0296e1bef88",
+      "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
       "compiled_negative_control": {
         "target_start": 141710,
         "candidate_start": 141710,
@@ -9863,8 +9873,8 @@
           }
         },
         "omf": {
-          "sha256": "71868a9ce66c0bcbd1a130f42731c22db07542bbaa103cc9b5c1747e2fbc5371",
-          "dependency_timestamp_normalized_sha256": "e88fbc458a8162e63279a5554d0cc7b9fc0ef78befaf219b032417338856862a",
+          "sha256": "48e01a17bfb8829b919cd3f8caaeb564e5ee48a061bccb1feb76d765c390e406",
+          "dependency_timestamp_normalized_sha256": "156da528385360de9ae2c60a38d023329be8b3f3d98fb6069f32d3a4e51c2763",
           "module_name": "th05/boss.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -9886,7 +9896,9 @@
             "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/collision_body.inl"
+            "src/main/boss/defeat_combat_rules.hpp",
+            "src/main/boss/collision_body.inl",
+            "src/main/boss/defeat_combat_rules.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -9917,7 +9929,13 @@
           "th05/boss.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-defeat-update-complete",
+        "main-boss-generic",
+        "main-boss-generic-data",
+        "main-boss-player-collision"
+      ]
     },
     {
       "id": "main-sara",
@@ -18009,8 +18027,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "319b9e102ce0b83b69ed0a9e80f8e20c9f9904e02aa45c2aa7f02a8b4e9fc6b2",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "6640b86704855d45ed69feff43e7649435e76b6e9912cd02e1414f52323b6ea2",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18032,7 +18050,9 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -18050,8 +18070,8 @@
             }
           },
           {
-            "sha256": "2e2125a1e51c2752b8dcaf17afda533bddbeed335d24ee47528b5686f3f4d944",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "9894e1be2cbbbacd9a088f8758255af07d21c91a571dddc33f95b10e7e5c5c2a",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -18073,7 +18093,9 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -18130,11 +18152,15 @@
           },
           {
             "path": "src/main/boss/collision_body.inl",
-            "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+            "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+          },
+          {
+            "path": "src/main/boss/defeat_combat_rules.hpp",
+            "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
           },
           {
             "path": "src/main/boss/generic.cpp",
-            "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+            "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
           },
           {
             "path": "src/main/boss/generic.hpp",
@@ -18174,11 +18200,15 @@
         },
         {
           "path": "src/main/boss/collision_body.inl",
-          "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+          "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+        },
+        {
+          "path": "src/main/boss/defeat_combat_rules.hpp",
+          "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
         },
         {
           "path": "src/main/boss/generic.cpp",
-          "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+          "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
         },
         {
           "path": "src/main/boss/generic.hpp",
@@ -18211,7 +18241,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b87e092b4af8e5bea5402848b35a95018d7d4f4d8a39ac4f08d6b0296e1bef88",
+      "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
       "compiled_negative_control": {
         "target_start": 141710,
         "candidate_start": 141710,
@@ -18264,8 +18294,8 @@
           }
         },
         "omf": {
-          "sha256": "71868a9ce66c0bcbd1a130f42731c22db07542bbaa103cc9b5c1747e2fbc5371",
-          "dependency_timestamp_normalized_sha256": "e88fbc458a8162e63279a5554d0cc7b9fc0ef78befaf219b032417338856862a",
+          "sha256": "48e01a17bfb8829b919cd3f8caaeb564e5ee48a061bccb1feb76d765c390e406",
+          "dependency_timestamp_normalized_sha256": "156da528385360de9ae2c60a38d023329be8b3f3d98fb6069f32d3a4e51c2763",
           "module_name": "th05/boss.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -18287,7 +18317,9 @@
             "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/collision_body.inl"
+            "src/main/boss/defeat_combat_rules.hpp",
+            "src/main/boss/collision_body.inl",
+            "src/main/boss/defeat_combat_rules.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -18318,7 +18350,13 @@
           "th05/boss.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-defeat-update-complete",
+        "main-boss-generic",
+        "main-boss-generic-data",
+        "main-boss-player-collision"
+      ]
     },
     {
       "id": "main-laser-update",
@@ -83286,8 +83324,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "319b9e102ce0b83b69ed0a9e80f8e20c9f9904e02aa45c2aa7f02a8b4e9fc6b2",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "6640b86704855d45ed69feff43e7649435e76b6e9912cd02e1414f52323b6ea2",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -83309,12 +83347,14 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           },
           {
-            "sha256": "2e2125a1e51c2752b8dcaf17afda533bddbeed335d24ee47528b5686f3f4d944",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "9894e1be2cbbbacd9a088f8758255af07d21c91a571dddc33f95b10e7e5c5c2a",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -83336,7 +83376,9 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           }
         ],
@@ -83379,11 +83421,15 @@
           },
           {
             "path": "src/main/boss/collision_body.inl",
-            "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+            "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+          },
+          {
+            "path": "src/main/boss/defeat_combat_rules.hpp",
+            "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
           },
           {
             "path": "src/main/boss/generic.cpp",
-            "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+            "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
           },
           {
             "path": "src/main/boss/generic.hpp",
@@ -83423,11 +83469,15 @@
         },
         {
           "path": "src/main/boss/collision_body.inl",
-          "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+          "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+        },
+        {
+          "path": "src/main/boss/defeat_combat_rules.hpp",
+          "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
         },
         {
           "path": "src/main/boss/generic.cpp",
-          "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+          "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
         },
         {
           "path": "src/main/boss/generic.hpp",
@@ -83460,7 +83510,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b87e092b4af8e5bea5402848b35a95018d7d4f4d8a39ac4f08d6b0296e1bef88",
+      "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
       "compiled_negative_control": {
         "target_start": 141710,
         "candidate_start": 141710,
@@ -83513,8 +83563,8 @@
           }
         },
         "omf": {
-          "sha256": "71868a9ce66c0bcbd1a130f42731c22db07542bbaa103cc9b5c1747e2fbc5371",
-          "dependency_timestamp_normalized_sha256": "e88fbc458a8162e63279a5554d0cc7b9fc0ef78befaf219b032417338856862a",
+          "sha256": "48e01a17bfb8829b919cd3f8caaeb564e5ee48a061bccb1feb76d765c390e406",
+          "dependency_timestamp_normalized_sha256": "156da528385360de9ae2c60a38d023329be8b3f3d98fb6069f32d3a4e51c2763",
           "module_name": "th05/boss.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -83536,7 +83586,9 @@
             "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/collision_body.inl"
+            "src/main/boss/defeat_combat_rules.hpp",
+            "src/main/boss/collision_body.inl",
+            "src/main/boss/defeat_combat_rules.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -83567,7 +83619,13 @@
           "th05/boss.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-defeat-update-complete",
+        "main-boss-generic",
+        "main-boss-generic-data",
+        "main-boss-player-collision"
+      ]
     },
     {
       "id": "main-boss-player-collision",
@@ -83624,8 +83682,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "319b9e102ce0b83b69ed0a9e80f8e20c9f9904e02aa45c2aa7f02a8b4e9fc6b2",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "6640b86704855d45ed69feff43e7649435e76b6e9912cd02e1414f52323b6ea2",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -83647,12 +83705,14 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           },
           {
-            "sha256": "2e2125a1e51c2752b8dcaf17afda533bddbeed335d24ee47528b5686f3f4d944",
-            "dependency_timestamp_normalized_sha256": "e7da0ee1d6cd0149444445c0ad0e37d16e9a3a32ab987f6f09b30cd8f5b740f5",
+            "sha256": "9894e1be2cbbbacd9a088f8758255af07d21c91a571dddc33f95b10e7e5c5c2a",
+            "dependency_timestamp_normalized_sha256": "34910f64c4597f8df8fdb2393484eb5d87e5318ba5b03335663e6772e17463c2",
             "module_name": "th05/boss.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -83674,7 +83734,9 @@
               "src/shared/abi.hpp",
               "src/main/bullet/template.hpp",
               "src/shared/geometry.hpp",
-              "src/main/boss/collision_body.inl"
+              "src/main/boss/defeat_combat_rules.hpp",
+              "src/main/boss/collision_body.inl",
+              "src/main/boss/defeat_combat_rules.hpp"
             ]
           }
         ],
@@ -83717,11 +83779,15 @@
           },
           {
             "path": "src/main/boss/collision_body.inl",
-            "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+            "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+          },
+          {
+            "path": "src/main/boss/defeat_combat_rules.hpp",
+            "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
           },
           {
             "path": "src/main/boss/generic.cpp",
-            "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+            "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
           },
           {
             "path": "src/main/boss/generic.hpp",
@@ -83761,11 +83827,15 @@
         },
         {
           "path": "src/main/boss/collision_body.inl",
-          "sha256": "6ee0e06fc9d1230020a086dc509018a91a9af8d5b20dda2adf2e9c912a04a5de"
+          "sha256": "37b172fd5b73226bebd0e4eef0b707736538310856b026dd0e334760f5c015e5"
+        },
+        {
+          "path": "src/main/boss/defeat_combat_rules.hpp",
+          "sha256": "b4b93cd3fa015d9c4648ba872a3f706d5f283d69cfbbda620d06eb41e309eac3"
         },
         {
           "path": "src/main/boss/generic.cpp",
-          "sha256": "f375dc5fdb42e0fc7e35eb5431afb3b74c780f5ca209b5a3bd86d92d218bcbd8"
+          "sha256": "22f8866d5afaa16e9d21aada9a3394c5ce64f6f02b88228d22c0846711a72417"
         },
         {
           "path": "src/main/boss/generic.hpp",
@@ -83798,7 +83868,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b87e092b4af8e5bea5402848b35a95018d7d4f4d8a39ac4f08d6b0296e1bef88",
+      "replay_receipt_sha256": "a2704b06bd3104e3952cb16fb48dad1799b54a5934f72b34cd087ec2213705b3",
       "compiled_negative_control": {
         "target_start": 141710,
         "candidate_start": 141710,
@@ -83851,8 +83921,8 @@
           }
         },
         "omf": {
-          "sha256": "71868a9ce66c0bcbd1a130f42731c22db07542bbaa103cc9b5c1747e2fbc5371",
-          "dependency_timestamp_normalized_sha256": "e88fbc458a8162e63279a5554d0cc7b9fc0ef78befaf219b032417338856862a",
+          "sha256": "48e01a17bfb8829b919cd3f8caaeb564e5ee48a061bccb1feb76d765c390e406",
+          "dependency_timestamp_normalized_sha256": "156da528385360de9ae2c60a38d023329be8b3f3d98fb6069f32d3a4e51c2763",
           "module_name": "th05/boss.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -83874,7 +83944,9 @@
             "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/collision_body.inl"
+            "src/main/boss/defeat_combat_rules.hpp",
+            "src/main/boss/collision_body.inl",
+            "src/main/boss/defeat_combat_rules.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -83905,7 +83977,13 @@
           "th05/boss.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-defeat-update-complete",
+        "main-boss-generic",
+        "main-boss-generic-data",
+        "main-boss-player-collision"
+      ]
     },
     {
       "id": "main-b4ball-update",

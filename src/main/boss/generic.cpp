@@ -3,6 +3,7 @@
 
 #include <dos.h>
 #include "src/main/boss/generic.hpp"
+#include "src/main/boss/defeat_combat_rules.hpp"
 
 // Processes any collision between the player and boss sprites.
 #pragma codeseg BOSS_COLLISION_TEXT main_03
@@ -132,7 +133,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		if(boss.phase_frame == BDF_SMALL_1) {
 			boss.damage_this_frame = 0;
 			boss_explode_small(ET_CIRCLE);
-			snd_se_play(13);
+			snd_se_play(GDEF_INITIAL_EXPLOSION_SE);
 		}
 		if(boss.phase_frame == BDF_SMALL_2) {
 			boss_explode_small(ET_VERTICAL);
@@ -145,13 +146,13 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		homing_target.y.v = HOMING_TARGET_NONE;
 		return;
 	} else if(boss.phase == PHASE_BOSS_EXPLODE_BIG) {
-		if(boss.phase_frame < 12) {
-			playfield_shake_x = (stage_frame_mod2 == 0) ? -4 : +4;
-			playfield_shake_y = (stage_frame_mod4 <= 1) ? -4 : +4;
+		if(boss.phase_frame < GDEF_BIG_SHAKE_END_FRAME) {
+			playfield_shake_x = (stage_frame_mod2 == GDEF_SHAKE_NEGATIVE_X_MOD2) ? -GDEF_SHAKE_DISTANCE_PX : +GDEF_SHAKE_DISTANCE_PX;
+			playfield_shake_y = (stage_frame_mod4 <= GDEF_SHAKE_NEGATIVE_Y_LAST_MOD4) ? -GDEF_SHAKE_DISTANCE_PX : +GDEF_SHAKE_DISTANCE_PX;
 		}
 		bg_render_bombing_func = tiles_render_all;
-		slowdown_factor = 2;
-		if((boss.phase_frame % 8) == 0) {
+		slowdown_factor = GDEF_SLOWDOWN_FACTOR;
+		if((boss.phase_frame % GDEF_BIG_SPRITE_ADVANCE_FRAMES) == 0) {
 			boss.sprite++;
 			if(boss.sprite >= (PAT_ENEMY_KILL_last + 1)) {
 				boss.phase++; // = PHASE_NONE
@@ -162,7 +163,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		}
 		return;
 	} // else if(boss.phase == PHASE_NONE) {
-	palette_settone_deferred(60);
+	palette_settone_deferred(GDEF_FINAL_PALETTE_TONE);
 	if(boss.phase_frame == BDF_DIALOG) {
 		resident->graze += stage_graze;
 		if(stage_id != (MAIN_STAGE_COUNT - 1)) {
@@ -191,11 +192,11 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 			end_extra();
 		}
 		overlay_stage_leave();
-		snd_kaja_func(KAJA_SONG_FADE, 10);
+		snd_kaja_func(KAJA_SONG_FADE, GDEF_SONG_FADE_PARAMETER);
 	} else if(boss.phase_frame == BDF_NEXT_STAGE) {
 		resident->stage++;
 		quit = Q_NEXT_STAGE;
-		frame_delay(1);
+		frame_delay(GDEF_NEXT_STAGE_WAIT_FRAMES);
 	}
 	homing_target.x.v = HOMING_TARGET_NONE;
 	homing_target.y.v = HOMING_TARGET_NONE;
