@@ -2,36 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e4a6a6e5058df129ccf8075b62a2823c5449457bb9b735c534f8593e6a110b8a",
+  "replay_receipt_sha256": "0191c8f889e2060a49a0159dfeea8d3b28f9299052fdfbce959edbdd4600e618",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 90180,
-    "candidate_start": 90180,
-    "size": 798,
-    "target_sha256": "a066446740ef10c1cecf99bf42ff92dab2fd9a91920e7a8884653e6d2cb4cd43",
-    "candidate_sha256": "c19228683f9054a46fe39ead0bb301f577f4569d671bda97eb8612371e240d62",
+    "target_start": 138564,
+    "candidate_start": 138564,
+    "size": 40,
+    "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+    "candidate_sha256": "2eabadcf998b7f5ffd023fd0844bed6595080da987a21e4a4054d34ceee09fce",
     "raw_exact": false,
-    "target_fixups": [
-      746,
-      432,
-      336,
-      294,
-      190,
-      147,
-      16
-    ],
-    "candidate_fixups": [
-      746,
-      432,
-      336,
-      294,
-      190,
-      147,
-      16
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 138564,
+      "size": 40,
+      "module": "th05/ranklbl.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -93674,6 +93666,293 @@
         ]
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-hud-rank-labels-data",
+      "entry_sha256": "4827fc646c7c79d82d31a8bd344ce089c553434a75322717cc82e10fd9aa7352",
+      "result": {
+        "id": "main-hud-rank-labels-data",
+        "entry_sha256": "4827fc646c7c79d82d31a8bd344ce089c553434a75322717cc82e10fd9aa7352",
+        "rounds": [
+          {
+            "target_start": 138564,
+            "candidate_start": 138564,
+            "size": 40,
+            "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+            "candidate_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138564,
+              "size": 40,
+              "module": "th05/ranklbl.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138564,
+            "candidate_start": 138564,
+            "size": 40,
+            "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+            "candidate_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138564,
+              "size": 40,
+              "module": "th05/ranklbl.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "0933ce8d6ba198c7886235148a29320b9e2283bdf603bcf7309078fc9e0e8eb4",
+            "dependency_timestamp_normalized_sha256": "5e74a56595d71cb8208ff10c391bc372cf527313bc7e21894331f198d9fb4522",
+            "module_name": "th05/ranklbl.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ranklbl.c",
+              "src/main/hud/rank_labels.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 40,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 40,
+                  "sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "9ffc2ac06f18e102a6ced002980c1899b89141e1587a22ddffb035b0c853b69c",
+            "dependency_timestamp_normalized_sha256": "5e74a56595d71cb8208ff10c391bc372cf527313bc7e21894331f198d9fb4522",
+            "module_name": "th05/ranklbl.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ranklbl.c",
+              "src/main/hud/rank_labels.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 40,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 40,
+                  "sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ranklbl.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/ranklbl.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_rank_labels_bindings.asm",
+            "sha256": "e3259a165f4553f2be19ebfb7bb10ca3437e72491c68227ba72e377e70ac4bb2"
+          },
+          {
+            "path": "src/main/hud/overlay_data.h",
+            "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+          },
+          {
+            "path": "src/main/hud/rank_labels.c",
+            "sha256": "9fcf0c21cc1a4106c1d3522bb3d5c48db2224f8da0e797e0c3a6c2d50c59047f"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_rank_labels_bindings.asm",
+          "sha256": "e3259a165f4553f2be19ebfb7bb10ca3437e72491c68227ba72e377e70ac4bb2"
+        },
+        {
+          "path": "src/main/hud/overlay_data.h",
+          "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+        },
+        {
+          "path": "src/main/hud/rank_labels.c",
+          "sha256": "9fcf0c21cc1a4106c1d3522bb3d5c48db2224f8da0e797e0c3a6c2d50c59047f"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "0191c8f889e2060a49a0159dfeea8d3b28f9299052fdfbce959edbdd4600e618",
+      "compiled_negative_control": {
+        "target_start": 138564,
+        "candidate_start": 138564,
+        "size": 40,
+        "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+        "candidate_sha256": "2eabadcf998b7f5ffd023fd0844bed6595080da987a21e4a4054d34ceee09fce",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138564,
+          "size": 40,
+          "module": "th05/ranklbl.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-rank-labels-data",
+        "entry_sha256": "4827fc646c7c79d82d31a8bd344ce089c553434a75322717cc82e10fd9aa7352",
+        "mutation": {
+          "unit": "main-hud-rank-labels-data",
+          "source": "src/main/hud/rank_labels.c",
+          "find": "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_D",
+          "replace": "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_E"
+        },
+        "control_sha256": "d39ac52b61fb3834f06f415cc84f311215882f6cee60dc99bba3cf8b6d1c5f86",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138564,
+          "candidate_start": 138564,
+          "size": 40,
+          "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
+          "candidate_sha256": "2eabadcf998b7f5ffd023fd0844bed6595080da987a21e4a4054d34ceee09fce",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138564,
+            "size": 40,
+            "module": "th05/ranklbl.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "4cfaa1f80336ae537daea9a8e256587fb3f06672e74f9331e656d5c2c9f3514e",
+          "dependency_timestamp_normalized_sha256": "80fc8038d26896016c3f70f8c930666c829295297912f47f1df849a86bd1127b",
+          "module_name": "th05/ranklbl.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/ranklbl.c",
+            "src/main/hud/rank_labels.c",
+            "src/main/hud/overlay_data.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 40,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 40,
+                "sha256": "2eabadcf998b7f5ffd023fd0844bed6595080da987a21e4a4054d34ceee09fce"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/ranklbl.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-hud-rank-labels-data"
+      ]
     }
   ]
 }

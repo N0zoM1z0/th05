@@ -5904,3 +5904,25 @@ unit = "main-snd-se-reset-exact"
 source = "src/shared/sound/se_reset_exact.cpp"
 find = "snd_se_playing = SE_NONE;"
 replace = "snd_se_playing = 0;"
+
+[[units]]
+id = "main-hud-rank-labels-data"
+source = "src/main/hud/rank_labels.c"
+module = "th05/ranklbl.c"
+segment = "_DATA"
+wrapper_options = "-zCRANK_LABELS_TEXT -zPmain_01"
+bindings_source = "probes/units/main_rank_labels_bindings.asm"
+target_start = 138564
+size = 40
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-hud-rank-labels-data"
+source = "src/main/hud/rank_labels.c"
+find = "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_D"
+replace = "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_E"
