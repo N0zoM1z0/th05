@@ -2,24 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "7cd0716eac04dd62dd4a83e9026bf8b90ee95c72d5573f61671e9489c5feb77d",
+  "replay_receipt_sha256": "3f90bb20d0251bf514d06f850fdab5fe04bc2ba16be43555ff2eafa519f7c8bf",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 121022,
-    "candidate_start": 121022,
-    "size": 122,
-    "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
-    "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
+    "target_start": 135688,
+    "candidate_start": 135688,
+    "size": 16,
+    "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+    "candidate_sha256": "3429b6ec21b618f40f3b631cf4aa6df677159f225c89a23826fad9a24fccf40b",
     "raw_exact": false,
-    "target_fixups": [
-      34
-    ],
-    "candidate_fixups": [
-      34
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 135688,
+      "size": 16,
+      "module": "th05/mainvram.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -96208,6 +96212,273 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-dialog-box-tile-masks-data"
+      ]
+    },
+    {
+      "id": "main-vram-plane-frames-data",
+      "entry_sha256": "b0f663cef4392a83002acf5343a909382728091147dc8db00813950a6a313da8",
+      "result": {
+        "id": "main-vram-plane-frames-data",
+        "entry_sha256": "b0f663cef4392a83002acf5343a909382728091147dc8db00813950a6a313da8",
+        "rounds": [
+          {
+            "target_start": 135688,
+            "candidate_start": 135688,
+            "size": 16,
+            "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "candidate_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 135688,
+              "size": 16,
+              "module": "th05/mainvram.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 135688,
+            "candidate_start": 135688,
+            "size": 16,
+            "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "candidate_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 135688,
+              "size": 16,
+              "module": "th05/mainvram.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "42750475905ca47c5f6a3467c6f2c2fe6f8f65586ab88cd6421787b8d7fc0dae",
+            "dependency_timestamp_normalized_sha256": "c8051cf3cefeab7ff543ffe8a6c83a6de7cf97711e7717ed734d3fd1a4910c3a",
+            "module_name": "th05/mainvram.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mainvram.c",
+              "src/main/hardware/vram_plane_frames.c",
+              "src/shared/hardware/vram_plane_frames.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "b4ae1e9a9d5e805c19ef1e204e020c02ea9c025a48bf30806e443cef36000db9",
+            "dependency_timestamp_normalized_sha256": "c8051cf3cefeab7ff543ffe8a6c83a6de7cf97711e7717ed734d3fd1a4910c3a",
+            "module_name": "th05/mainvram.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mainvram.c",
+              "src/main/hardware/vram_plane_frames.c",
+              "src/shared/hardware/vram_plane_frames.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mainvram.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mainvram.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_vram_plane_frames_bindings.asm",
+            "sha256": "c8532f4591ac267430aaa80350cb39d4520686e12dea8e7a6b20ab7e1ad4d7d8"
+          },
+          {
+            "path": "src/main/hardware/vram_plane_frames.c",
+            "sha256": "70141b8f7f865a71bc04d4823216f8211164aac7334a1e3b2ca4f317c4bdcf8e"
+          },
+          {
+            "path": "src/shared/hardware/vram_plane_frames.h",
+            "sha256": "db61904d4a9f9598bff08771b1a41efe4a9936638a2138196d928ffafa9d76c3"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_vram_plane_frames_bindings.asm",
+          "sha256": "c8532f4591ac267430aaa80350cb39d4520686e12dea8e7a6b20ab7e1ad4d7d8"
+        },
+        {
+          "path": "src/main/hardware/vram_plane_frames.c",
+          "sha256": "70141b8f7f865a71bc04d4823216f8211164aac7334a1e3b2ca4f317c4bdcf8e"
+        },
+        {
+          "path": "src/shared/hardware/vram_plane_frames.h",
+          "sha256": "db61904d4a9f9598bff08771b1a41efe4a9936638a2138196d928ffafa9d76c3"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "3f90bb20d0251bf514d06f850fdab5fe04bc2ba16be43555ff2eafa519f7c8bf",
+      "compiled_negative_control": {
+        "target_start": 135688,
+        "candidate_start": 135688,
+        "size": 16,
+        "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+        "candidate_sha256": "3429b6ec21b618f40f3b631cf4aa6df677159f225c89a23826fad9a24fccf40b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 135688,
+          "size": 16,
+          "module": "th05/mainvram.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-vram-plane-frames-data",
+        "entry_sha256": "b0f663cef4392a83002acf5343a909382728091147dc8db00813950a6a313da8",
+        "mutation": {
+          "unit": "main-vram-plane-frames-data",
+          "source": "src/shared/hardware/vram_plane_frames.h",
+          "find": "VRAM_SEGMENT_RED = 0xB000",
+          "replace": "VRAM_SEGMENT_RED = 0xB010"
+        },
+        "control_sha256": "42c10a527a4d17d8d39f64e7a4f4140336b8f741eedf1576c916a981c8a94b7b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 135688,
+          "candidate_start": 135688,
+          "size": 16,
+          "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+          "candidate_sha256": "3429b6ec21b618f40f3b631cf4aa6df677159f225c89a23826fad9a24fccf40b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 135688,
+            "size": 16,
+            "module": "th05/mainvram.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "6e5b7624bce2783540486d874a4a12da151b9877dccb855632952ce700a2c9b7",
+          "dependency_timestamp_normalized_sha256": "59a83566c93ce4821058d250b3dc97ec1aac7f4f866e6f4499207427b9ecab71",
+          "module_name": "th05/mainvram.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mainvram.c",
+            "src/main/hardware/vram_plane_frames.c",
+            "src/shared/hardware/vram_plane_frames.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 16,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 16,
+                "sha256": "3429b6ec21b618f40f3b631cf4aa6df677159f225c89a23826fad9a24fccf40b"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mainvram.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-vram-plane-frames-data"
       ]
     }
   ]

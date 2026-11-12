@@ -6059,3 +6059,25 @@ unit = "main-dialog-box-tile-masks-data"
 source = "src/main/dialog/box_tiles.c"
 find = "DIALOG_ROW_BYTES(1, 0), DIALOG_ROW_BYTES(1, 1)"
 replace = "DIALOG_ROW_BYTES(2, 0), DIALOG_ROW_BYTES(1, 1)"
+
+[[units]]
+id = "main-vram-plane-frames-data"
+source = "src/main/hardware/vram_plane_frames.c"
+module = "th05/mainvram.c"
+segment = "_DATA"
+wrapper_options = "-zCMAIN_VRAM_PLANES_TEXT -zPmain_01"
+bindings_source = "probes/units/main_vram_plane_frames_bindings.asm"
+target_start = 135688
+size = 16
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-vram-plane-frames-data"
+source = "src/shared/hardware/vram_plane_frames.h"
+find = "VRAM_SEGMENT_RED = 0xB000"
+replace = "VRAM_SEGMENT_RED = 0xB010"
