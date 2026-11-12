@@ -472,6 +472,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_superpa_initial import reviewed_claims as superpa_claims
     superpa, superpa_sha = superpa_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_timer_and_respal import reviewed_claims as timer_respal_claims
+    timer_respal, timer_respal_sha = timer_respal_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -727,6 +730,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, file_init[name])
         if name in superpa:
             pieces = overlay_vendor(view["size"], pieces, superpa[name])
+        if name in timer_respal:
+            pieces = overlay_vendor(view["size"], pieces, timer_respal[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
@@ -861,6 +866,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_file_initial_review_sha256"] = file_init_sha
         if superpa_sha and name in superpa:
             views[name]["master_superpa_initial_review_sha256"] = superpa_sha
+        if timer_respal_sha and name in timer_respal:
+            views[name]["master_timer_respal_review_sha256"] = timer_respal_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
