@@ -4,6 +4,7 @@
 // no target-derived instruction macro is retained. Focused replay is separate.
 #pragma option -zCBULLET_U_TEXT -zPmain_03 -G
 #include <dos.h>
+#include "src/main/boss/late_game_state_publics.h"
 #include "src/main/bullet/update.hpp"
 
 

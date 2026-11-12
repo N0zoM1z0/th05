@@ -1,6 +1,7 @@
 // Actual adjacent33-byte far gate,78-byte phase helper and full update.
 // All real bodies are maintained source, with no instruction or layout filler.
 #pragma option -zCEXALICE_FULL_TEXT -zPmain_03
+#include "src/main/boss/late_game_state_publics.h"
 #include "src/main/boss/exalice/full_context.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/bomb_phase_protocol.hpp"

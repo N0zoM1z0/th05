@@ -4,5 +4,7 @@
 #error Original mutable zero-state requires the Borland native C producer
 #endif
 
+#include "src/main/boss/late_game_state_publics.h"
+
 unsigned char near bullet_zap_drop_point_items = 0;
 typedef char native_bullet_zap_drop_point_items_width[(sizeof(bullet_zap_drop_point_items) == 1) ? 1 : -1];

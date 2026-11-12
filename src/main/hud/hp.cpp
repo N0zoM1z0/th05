@@ -1,11 +1,11 @@
 // Natural ReC98 b6ba5b0a: th04/main/hud/hp.cpp, shared by GAME5.
 #pragma option -zCHUD_HP_TEXT -zPmain_03
+#include "src/main/boss/late_game_state_publics.h"
 #include "src/main/runtime/small.hpp"
 
 void pascal near hud_hp_update_and_render(int hp_cur, int hp_max)
 {
 	#define value_prev hud_hp_bar_value_prev
-	extern int value_prev;
 
 	int value_cur;
 

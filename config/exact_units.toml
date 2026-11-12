@@ -3179,8 +3179,8 @@ code_data_ranges = []
 [[controls]]
 unit = "main-midboss-defeat-render"
 source = "src/main/midboss/defeat_render.cpp"
-find = "midboss_defeat_angle += 0x10"
-replace = "midboss_defeat_angle += 0x11"
+find = "midboss_defeat_angle += MDR_ORBIT_ANGLE_STEP"
+replace = "midboss_defeat_angle += (MDR_ORBIT_ANGLE_STEP + 1)"
 
 [[units]]
 id = "main-shots-update-abi"

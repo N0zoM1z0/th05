@@ -1,5 +1,6 @@
 // Full original bomb immunity wrapper and Extra-specific phase transition.
 #pragma option -zCEXALICE_PHASE_TEXT -zPmain_03
+#include "src/main/boss/late_game_state_publics.h"
 #include "src/main/boss/exalice/phase.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/bomb_phase_protocol.hpp"
