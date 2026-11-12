@@ -48,5 +48,13 @@ independent public symbols without a packed struct, copied bytes or linker
 padding. Both original DATA bytes and complete MAP/OMF boundaries match.
 The mutation of the CREDIT glyph is still compiled and rejected.
 The focused receipt is
-`.analysis/unit-replays/gpt-web-gameover-canonical-publics-b/receipt.json`;
+`.analysis/unit-replays/gpt-web-gameover-canonical-publics-c/receipt.json`;
 no other accepted unit was rerun for this source-only physical ABI change.
+
+
+The direct C definitions also have the same byte-element type as the
+C++ game-over consumer's `char near[]` declarations. The independent
+complete **869-byte** Game Over control and Continue menu remain
+raw/ordered-fixup exact with these canonical symbols and the compiled
+credits-count mutation rejected; receipt:
+`.analysis/unit-replays/gpt-web-gameover-canonical-consumer-a/receipt.json`.

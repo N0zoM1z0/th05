@@ -6145,8 +6145,8 @@ padding_bytes = []
 [[controls]]
 unit = "main-score-handoff-program-data"
 source = "src/main/runtime/score_handoff_names.c"
-find = "    \"maine\""
-replace = "    \"mainf\""
+find = "char near maine_binary[6] = \"maine\";"
+replace = "char near maine_binary[6] = \"mainf\";"
 
 [[units]]
 id = "main-gameover-gaiji-text-data"

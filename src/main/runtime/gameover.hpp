@@ -25,7 +25,7 @@ extern char near gNO[];
 extern char near gCREDIT[];
 extern char near gameover_erase_in[];
 extern char near gameover_erase_out[];
-extern const char near maine_binary[];
+extern char near maine_binary[];
 
 static const unsigned int GAMEOVER_TX_BLACK = 0x01;
 static const unsigned int GAMEOVER_TX_WHITE = 0xE1;
