@@ -2,34 +2,34 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "fb054192481d22614454cc8e1f88b906f3662f6878a22d4b200802763d170607",
+  "replay_receipt_sha256": "c7870af8c54d47651e04dd94ee802789b3734246982bd48e49e20c0e71355670",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 124772,
-    "candidate_start": 124772,
-    "size": 499,
-    "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
-    "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
+    "target_start": 133746,
+    "candidate_start": 133746,
+    "size": 8,
+    "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+    "candidate_sha256": "f350aff70f58cf42ded95609f90af2b8507a338c41cf0cb182f9860f91766e72",
     "raw_exact": false,
     "target_fixups": [
-      477,
-      403,
-      333,
-      248,
-      105,
-      45
+      6,
+      2
     ],
     "candidate_fixups": [
-      477,
-      403,
-      333,
-      248,
-      105,
-      45
+      6,
+      2
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 133746,
+      "size": 8,
+      "module": "th05/stlinks.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -98205,6 +98205,606 @@
       "receipt_selected_subset": [
         "main-bb-cheeto-filename-data"
       ]
+    },
+    {
+      "id": "main-eyecatch-far-pointer-data",
+      "entry_sha256": "9af87b261736bf8fd634e61279f3e33680ba8db0ab1c4e8dd6f4017b2b2c8bd5",
+      "result": {
+        "id": "main-eyecatch-far-pointer-data",
+        "entry_sha256": "9af87b261736bf8fd634e61279f3e33680ba8db0ab1c4e8dd6f4017b2b2c8bd5",
+        "rounds": [
+          {
+            "target_start": 133740,
+            "candidate_start": 133740,
+            "size": 4,
+            "target_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+            "candidate_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+            "raw_exact": true,
+            "target_fixups": [
+              2
+            ],
+            "candidate_fixups": [
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133740,
+              "size": 4,
+              "module": "th05/eyeptr.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133740,
+            "candidate_start": 133740,
+            "size": 4,
+            "target_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+            "candidate_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+            "raw_exact": true,
+            "target_fixups": [
+              2
+            ],
+            "candidate_fixups": [
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133740,
+              "size": 4,
+              "module": "th05/eyeptr.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ffc49905cb3b7d093ca99412482cc28dc47af0f53c43d69913f303003855bad8",
+            "dependency_timestamp_normalized_sha256": "b59d9aef0077fb898ec7c22a1cf63bb22bc331e213e2f17f28502aadec45055a",
+            "module_name": "th05/eyeptr.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/eyeptr.c",
+              "src/main/shiftjis/eyecatch_pointer.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "ee56dc0a77133253c215309c6dbe1f1243f9f43704d63096582939aca809d3af",
+            "dependency_timestamp_normalized_sha256": "b59d9aef0077fb898ec7c22a1cf63bb22bc331e213e2f17f28502aadec45055a",
+            "module_name": "th05/eyeptr.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/eyeptr.c",
+              "src/main/shiftjis/eyecatch_pointer.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/eyeptr.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/eyeptr.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_eyecatch_pointer_bindings.asm",
+            "sha256": "ede7536a00f0704391f2af17dc7a56848bcbcda8b6a16d0b930d2c9633a79402"
+          },
+          {
+            "path": "src/main/shiftjis/eyecatch_pointer.c",
+            "sha256": "59646ce3bea0ef69564411caef7af9830247ee1784ffb1e694fe5c5bd986d0b4"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_eyecatch_pointer_bindings.asm",
+          "sha256": "ede7536a00f0704391f2af17dc7a56848bcbcda8b6a16d0b930d2c9633a79402"
+        },
+        {
+          "path": "src/main/shiftjis/eyecatch_pointer.c",
+          "sha256": "59646ce3bea0ef69564411caef7af9830247ee1784ffb1e694fe5c5bd986d0b4"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "10ae76dd3fe385a70d7ccde3250a020459cd6a3df3e0229c182a8dc37f9a2892",
+      "compiled_negative_control": {
+        "target_start": 133740,
+        "candidate_start": 133740,
+        "size": 4,
+        "target_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+        "candidate_sha256": "393b586f8ef4c26e93f55dc7fb0d198ebb8426460004801f2abc17034ac52038",
+        "raw_exact": false,
+        "target_fixups": [
+          2
+        ],
+        "candidate_fixups": [
+          2
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133740,
+          "size": 4,
+          "module": "th05/eyeptr.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-eyecatch-far-pointer-data",
+        "entry_sha256": "9af87b261736bf8fd634e61279f3e33680ba8db0ab1c4e8dd6f4017b2b2c8bd5",
+        "mutation": {
+          "unit": "main-eyecatch-far-pointer-data",
+          "source": "src/main/shiftjis/eyecatch_pointer.c",
+          "find": "eyename = EYECATCH_FN;",
+          "replace": "eyename = EYECATCH_FN + 1;"
+        },
+        "control_sha256": "a4bbd2e54aee82a7eff51b7b0ff165e59d5181ccfdeb1688641a16f5b08373a7",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133740,
+          "candidate_start": 133740,
+          "size": 4,
+          "target_sha256": "7ea44a2e08fd18ba7dd9ff8e685733fbb03de5bb0759b072b6fd362a4aaea63d",
+          "candidate_sha256": "393b586f8ef4c26e93f55dc7fb0d198ebb8426460004801f2abc17034ac52038",
+          "raw_exact": false,
+          "target_fixups": [
+            2
+          ],
+          "candidate_fixups": [
+            2
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133740,
+            "size": 4,
+            "module": "th05/eyeptr.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "223dcfe5bd230ac6959fd3a7ec50adafa44be2b1f93255b4f5ea22e1dcfea61c",
+          "dependency_timestamp_normalized_sha256": "48d041657688016e699095655653b1aa9631a68477db7b1d167e381ec5dc2005",
+          "module_name": "th05/eyeptr.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/eyeptr.c",
+            "src/main/shiftjis/eyecatch_pointer.c",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 4,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 4,
+                "sha256": "67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/eyeptr.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-startup-resource-far-pointers-data",
+      "entry_sha256": "37ea52439f404577122626ec2a375cff61de19e88efe94066938bd7bc1403c61",
+      "result": {
+        "id": "main-startup-resource-far-pointers-data",
+        "entry_sha256": "37ea52439f404577122626ec2a375cff61de19e88efe94066938bd7bc1403c61",
+        "rounds": [
+          {
+            "target_start": 133746,
+            "candidate_start": 133746,
+            "size": 8,
+            "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+            "candidate_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+            "raw_exact": true,
+            "target_fixups": [
+              6,
+              2
+            ],
+            "candidate_fixups": [
+              6,
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133746,
+              "size": 8,
+              "module": "th05/stlinks.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133746,
+            "candidate_start": 133746,
+            "size": 8,
+            "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+            "candidate_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+            "raw_exact": true,
+            "target_fixups": [
+              6,
+              2
+            ],
+            "candidate_fixups": [
+              6,
+              2
+            ],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133746,
+              "size": 8,
+              "module": "th05/stlinks.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "d4dc70f7fddc02ab65acc12e46f50d47028f5234de25766c34399e801cda78fe",
+            "dependency_timestamp_normalized_sha256": "f6f95be51c19924398f5ee95e2f604c48b2a62728d88bbb147a37deae87266b2",
+            "module_name": "th05/stlinks.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stlinks.c",
+              "src/main/resources/startup_resource_links.c",
+              "src/main/resources/resource_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/resources/session_files_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "a4026a1b788a19c6c9e9e49c6e370f1c52289826badf3d948da78e1d97d45f15"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "f0537fe1d283f85a3f39af1a5b7ea43a0011ebda1868a34f4b16acfc43de4321",
+            "dependency_timestamp_normalized_sha256": "f6f95be51c19924398f5ee95e2f604c48b2a62728d88bbb147a37deae87266b2",
+            "module_name": "th05/stlinks.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/stlinks.c",
+              "src/main/resources/startup_resource_links.c",
+              "src/main/resources/resource_bank_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/resources/session_files_c.h",
+              "C:\\TC4\\INCLUDE\\stddef.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 8,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 8,
+                  "sha256": "a4026a1b788a19c6c9e9e49c6e370f1c52289826badf3d948da78e1d97d45f15"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/stlinks.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/stlinks.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_startup_resource_links_bindings.asm",
+            "sha256": "b8fc12ea3f9d5e4cb103511b760ab0372d0a78dab1762a4184ff1d19b17dd13b"
+          },
+          {
+            "path": "src/main/resources/resource_bank_c.h",
+            "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+          },
+          {
+            "path": "src/main/resources/session_files_c.h",
+            "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+          },
+          {
+            "path": "src/main/resources/startup_resource_links.c",
+            "sha256": "aeb8a89f40328a2af90441a5fade170d04d802a289f8600ad9ce935c690f31f2"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_startup_resource_links_bindings.asm",
+          "sha256": "b8fc12ea3f9d5e4cb103511b760ab0372d0a78dab1762a4184ff1d19b17dd13b"
+        },
+        {
+          "path": "src/main/resources/resource_bank_c.h",
+          "sha256": "509b024d9b17bf422ea5a3ec7c18d4efb05be2e1bbc7c38f39e49f4c8cdffca6"
+        },
+        {
+          "path": "src/main/resources/session_files_c.h",
+          "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+        },
+        {
+          "path": "src/main/resources/startup_resource_links.c",
+          "sha256": "aeb8a89f40328a2af90441a5fade170d04d802a289f8600ad9ce935c690f31f2"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c7870af8c54d47651e04dd94ee802789b3734246982bd48e49e20c0e71355670",
+      "compiled_negative_control": {
+        "target_start": 133746,
+        "candidate_start": 133746,
+        "size": 8,
+        "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+        "candidate_sha256": "f350aff70f58cf42ded95609f90af2b8507a338c41cf0cb182f9860f91766e72",
+        "raw_exact": false,
+        "target_fixups": [
+          6,
+          2
+        ],
+        "candidate_fixups": [
+          6,
+          2
+        ],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133746,
+          "size": 8,
+          "module": "th05/stlinks.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-startup-resource-far-pointers-data",
+        "entry_sha256": "37ea52439f404577122626ec2a375cff61de19e88efe94066938bd7bc1403c61",
+        "mutation": {
+          "unit": "main-startup-resource-far-pointers-data",
+          "source": "src/main/resources/startup_resource_links.c",
+          "find": "stage_zero_song_name = main_resource_files.stage_bgm_base;",
+          "replace": "stage_zero_song_name = main_resource_files.op_fn;"
+        },
+        "control_sha256": "3052453e44d680e5906c75130d417e56ab7fa62e3c01e4d82851141e95896c9a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133746,
+          "candidate_start": 133746,
+          "size": 8,
+          "target_sha256": "2db922048af7fb9cc206020a6681030de46d2f40f8e3c821e99b3838ea0cbad8",
+          "candidate_sha256": "f350aff70f58cf42ded95609f90af2b8507a338c41cf0cb182f9860f91766e72",
+          "raw_exact": false,
+          "target_fixups": [
+            6,
+            2
+          ],
+          "candidate_fixups": [
+            6,
+            2
+          ],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133746,
+            "size": 8,
+            "module": "th05/stlinks.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "1dfbd1923eef79a1f9f6d9825f3ef3f0bbe6d94878e1b78ffa7c597cd69dd3ba",
+          "dependency_timestamp_normalized_sha256": "5e8cfce0eaf90a90ecc2536db4391fee2132bcd54da75decd6873425d41b6725",
+          "module_name": "th05/stlinks.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/stlinks.c",
+            "src/main/resources/startup_resource_links.c",
+            "src/main/resources/resource_bank_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/resources/session_files_c.h",
+            "C:\\TC4\\INCLUDE\\stddef.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 8,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 8,
+                "sha256": "5129e157a5b7e4ee45d7829c38ec495479481c59debe3eb657cb07465ecc2913"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/stlinks.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
     }
   ]
 }

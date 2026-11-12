@@ -6213,3 +6213,47 @@ unit = "main-bb-cheeto-filename-data"
 source = "src/main/formats/bb_cheeto_filename.c"
 find = "\"LS00.BB\""
 replace = "\"LS01.BB\""
+
+[[units]]
+id = "main-eyecatch-far-pointer-data"
+source = "src/main/shiftjis/eyecatch_pointer.c"
+module = "th05/eyeptr.c"
+segment = "_DATA"
+wrapper_options = "-zCEYECATCH_POINTER_TEXT -zPmain_01"
+bindings_source = "probes/units/main_eyecatch_pointer_bindings.asm"
+target_start = 133740
+size = 4
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-eyecatch-far-pointer-data"
+source = "src/main/shiftjis/eyecatch_pointer.c"
+find = "eyename = EYECATCH_FN;"
+replace = "eyename = EYECATCH_FN + 1;"
+
+[[units]]
+id = "main-startup-resource-far-pointers-data"
+source = "src/main/resources/startup_resource_links.c"
+module = "th05/stlinks.c"
+segment = "_DATA"
+wrapper_options = "-zCSTARTUP_RESOURCE_LINKS_TEXT -zPmain_01"
+bindings_source = "probes/units/main_startup_resource_links_bindings.asm"
+target_start = 133746
+size = 8
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["string-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-startup-resource-far-pointers-data"
+source = "src/main/resources/startup_resource_links.c"
+find = "stage_zero_song_name = main_resource_files.stage_bgm_base;"
+replace = "stage_zero_song_name = main_resource_files.op_fn;"

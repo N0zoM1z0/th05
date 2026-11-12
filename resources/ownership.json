@@ -6,7 +6,7 @@
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 2925,
+    "accepted-c-initialized-data": 2937,
     "accepted-cxx-initialized-data": 14354,
     "accepted-cxx-instructions": 107740,
     "accepted-cxx-switch-table": 1044,
@@ -20,7 +20,7 @@
     "checked-uncredited-padding": 103,
     "reviewed-embedded-font-bitmap": 8192,
     "reviewed-embedded-sprite-bitmap": 2752,
-    "unknown": 26734,
+    "unknown": 26722,
     "verified-vendor-code": 136366,
     "verified-vendor-initialized-data": 4620
   },
@@ -31,7 +31,7 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-c-initialized-data": 2234,
+        "accepted-c-initialized-data": 2246,
         "accepted-cxx-initialized-data": 1560,
         "accepted-cxx-instructions": 75146,
         "accepted-cxx-switch-table": 726,
@@ -42,7 +42,7 @@
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "unknown": 4577,
+        "unknown": 4565,
         "verified-vendor-code": 46763,
         "verified-vendor-initialized-data": 1992
       },
@@ -6465,8 +6465,25 @@
         },
         {
           "start": 133739,
-          "end": 133754,
+          "end": 133740,
           "kind": "unknown"
+        },
+        {
+          "start": 133740,
+          "end": 133744,
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-eyecatch-far-pointer-data"
+        },
+        {
+          "start": 133744,
+          "end": 133746,
+          "kind": "unknown"
+        },
+        {
+          "start": 133746,
+          "end": 133754,
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-startup-resource-far-pointers-data"
         },
         {
           "start": 133754,
