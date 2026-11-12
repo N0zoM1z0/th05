@@ -6,7 +6,7 @@
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 3037,
+    "accepted-c-initialized-data": 3043,
     "accepted-cxx-initialized-data": 14402,
     "accepted-cxx-instructions": 107740,
     "accepted-cxx-switch-table": 1044,
@@ -20,7 +20,7 @@
     "checked-uncredited-padding": 103,
     "reviewed-embedded-font-bitmap": 8192,
     "reviewed-embedded-sprite-bitmap": 2752,
-    "unknown": 24450,
+    "unknown": 24444,
     "verified-vendor-code": 136366,
     "verified-vendor-initialized-data": 6744
   },
@@ -31,7 +31,7 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-c-initialized-data": 2284,
+        "accepted-c-initialized-data": 2286,
         "accepted-cxx-initialized-data": 1604,
         "accepted-cxx-instructions": 75146,
         "accepted-cxx-switch-table": 726,
@@ -42,7 +42,7 @@
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "unknown": 3775,
+        "unknown": 3773,
         "verified-vendor-code": 46763,
         "verified-vendor-initialized-data": 2700
       },
@@ -6682,7 +6682,8 @@
         {
           "start": 135668,
           "end": 135670,
-          "kind": "unknown"
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-mem-assign-initial-data"
         },
         {
           "start": 135670,
@@ -7435,7 +7436,7 @@
       "sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
       "original_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
       "byte_counts": {
-        "accepted-c-initialized-data": 98,
+        "accepted-c-initialized-data": 100,
         "accepted-cxx-initialized-data": 8705,
         "accepted-cxx-instructions": 13925,
         "accepted-cxx-switch-table": 154,
@@ -7447,7 +7448,7 @@
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 6,
-        "unknown": 6269,
+        "unknown": 6267,
         "verified-vendor-code": 44283,
         "verified-vendor-initialized-data": 1967
       },
@@ -10110,6 +10111,17 @@
         },
         {
           "start": 63940,
+          "end": 63948,
+          "kind": "unknown"
+        },
+        {
+          "start": 63948,
+          "end": 63950,
+          "kind": "accepted-c-initialized-data",
+          "unit": "op-mem-assign-initial-data"
+        },
+        {
+          "start": 63950,
           "end": 64050,
           "kind": "unknown"
         },
@@ -10379,7 +10391,7 @@
       "sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
       "original_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
       "byte_counts": {
-        "accepted-c-initialized-data": 655,
+        "accepted-c-initialized-data": 657,
         "accepted-cxx-initialized-data": 3773,
         "accepted-cxx-instructions": 18347,
         "accepted-cxx-switch-table": 164,
@@ -10389,7 +10401,7 @@
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 8,
-        "unknown": 5847,
+        "unknown": 5845,
         "verified-vendor-code": 44707,
         "verified-vendor-initialized-data": 1967
       },
@@ -13038,8 +13050,14 @@
         },
         {
           "start": 67538,
-          "end": 67548,
+          "end": 67546,
           "kind": "unknown"
+        },
+        {
+          "start": 67546,
+          "end": 67548,
+          "kind": "accepted-c-initialized-data",
+          "unit": "maine-mem-assign-initial-data"
         },
         {
           "start": 67548,

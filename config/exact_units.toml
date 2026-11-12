@@ -6697,3 +6697,25 @@ unit = "main-se-initial-state-data"
 source = "src/shared/sound/se_initial_state.cpp"
 find = "snd_se_playing = SE_NONE;"
 replace = "snd_se_playing = 0;"
+
+[[units]]
+id = "main-mem-assign-initial-data"
+source = "src/shared/memory/mem_assign_initial.c"
+module = "th05/mem_init.c"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_mem_assign_initial_bindings.asm"
+target_start = 0x211f4
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-mem-assign-initial-data"
+source = "src/shared/memory/mem_assign_initial.c"
+find = "320000UL >> 4"
+replace = "320016UL >> 4"

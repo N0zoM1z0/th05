@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "4971dfe256ad9672cb43d54fe57cfd6f5c4439ba69a9861e8b1f7faedad22188",
+  "replay_receipt_sha256": "48070dd047f98934b85bcd73e07f88865af3ead1f3c95c9f0bd3d8e574abb02b",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 67536,
-    "candidate_start": 67536,
+    "target_start": 67546,
+    "candidate_start": 67546,
     "size": 2,
-    "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-    "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+    "candidate_sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 67536,
+      "start": 67546,
       "size": 2,
-      "module": "th05/se_state.cpp",
+      "module": "th05/mem_init.c",
       "segment": "_DATA"
     }
   },
@@ -45927,6 +45927,295 @@
           "-ml",
           "-DBINARY='E'",
           "th05/se_state.cpp"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "maine-mem-assign-initial-data",
+      "entry_sha256": "ab91fc47e92a9602766d3f9592bae2cf9d5af1be56560bfd6a0ce40cdcedf508",
+      "result": {
+        "id": "maine-mem-assign-initial-data",
+        "entry_sha256": "ab91fc47e92a9602766d3f9592bae2cf9d5af1be56560bfd6a0ce40cdcedf508",
+        "rounds": [
+          {
+            "target_start": 67546,
+            "candidate_start": 67546,
+            "size": 2,
+            "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+            "candidate_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67546,
+              "size": 2,
+              "module": "th05/mem_init.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 67546,
+            "candidate_start": 67546,
+            "size": 2,
+            "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+            "candidate_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67546,
+              "size": 2,
+              "module": "th05/mem_init.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "52da3a9c152c1f104cd9d498f5dd92b4f967922942b4c2a7d45f7b2ea582e8b3",
+            "dependency_timestamp_normalized_sha256": "8b86191308ad3cf7dbab6f0083d63ff6e4802f4ab1b227604b2f2db1be211d49",
+            "module_name": "th05/mem_init.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mem_init.c",
+              "src/shared/memory/mem_assign_initial.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "52da3a9c152c1f104cd9d498f5dd92b4f967922942b4c2a7d45f7b2ea582e8b3",
+            "dependency_timestamp_normalized_sha256": "8b86191308ad3cf7dbab6f0083d63ff6e4802f4ab1b227604b2f2db1be211d49",
+            "module_name": "th05/mem_init.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mem_init.c",
+              "src/shared/memory/mem_assign_initial.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/mem_init.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/mem_init.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_mem_assign_initial_bindings.asm",
+            "sha256": "166708a91c040a42a48152de8d00c0aebf554f0b861250e794a4936b12d0a853"
+          },
+          {
+            "path": "src/shared/memory/mem_assign_initial.c",
+            "sha256": "8d7d4bad9ac8fc1d3cfd7976ce7e0cd6049265a50a4a4a8988eeff6703d5cacf"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_mem_assign_initial_bindings.asm",
+          "sha256": "166708a91c040a42a48152de8d00c0aebf554f0b861250e794a4936b12d0a853"
+        },
+        {
+          "path": "src/shared/memory/mem_assign_initial.c",
+          "sha256": "8d7d4bad9ac8fc1d3cfd7976ce7e0cd6049265a50a4a4a8988eeff6703d5cacf"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "48070dd047f98934b85bcd73e07f88865af3ead1f3c95c9f0bd3d8e574abb02b",
+      "compiled_negative_control": {
+        "target_start": 67546,
+        "candidate_start": 67546,
+        "size": 2,
+        "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+        "candidate_sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 67546,
+          "size": 2,
+          "module": "th05/mem_init.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-mem-assign-initial-data",
+        "entry_sha256": "ab91fc47e92a9602766d3f9592bae2cf9d5af1be56560bfd6a0ce40cdcedf508",
+        "mutation": {
+          "unit": "maine-mem-assign-initial-data",
+          "source": "src/shared/memory/mem_assign_initial.c",
+          "find": "320000UL >> 4",
+          "replace": "320016UL >> 4"
+        },
+        "control_sha256": "c3f51acd14f8508f9673ad1ccdba8538973a89dca95da1c8f43cbf7302337de8",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 67546,
+          "candidate_start": 67546,
+          "size": 2,
+          "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
+          "candidate_sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 67546,
+            "size": 2,
+            "module": "th05/mem_init.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "0bddbf772033e3885e30fe48508a570d99a86bc5530d161632f6c564b7c98e7d",
+          "dependency_timestamp_normalized_sha256": "0bb967c1c72a577b4434e08f4a374eef2acfa28c59760f911ada1d2de57e0cb1",
+          "module_name": "th05/mem_init.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mem_init.c",
+            "src/shared/memory/mem_assign_initial.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/mem_init.c"
         ]
       },
       "target_view": {

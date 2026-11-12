@@ -22,8 +22,10 @@ foreign initialized bytes are included. Each native binder reserves only the
 preexisting code frames and DATA prefix. OP also retains the already verified
 Music Room foreign DATA end to satisfy the MZ minimum allocation, without
 claiming or emitting any of that area. The original four-byte MAIN gap and
-larger OP/MAINE gaps are **not** all claimed as sound state: the other bytes
-remain separately unowned or independently attributed.
+larger OP/MAINE gaps are **not** all claimed as sound state. The separate
+[initial memory budget](../memory/mem_assign_initial.md) recovers the `4E20h`
+word following MAIN state and the corresponding words in OP/MAINE; other
+intervening bytes remain outside both DATA owners.
 
 Each of the following receipts has two real original-compiler/TLINK producers,
 complete byte and empty ordered MZ relocation equality, actual OMF/MAP
