@@ -5,7 +5,8 @@
 extern int staff_image_phase_b;
 extern int staff_image_wipe_extent_b;
 extern int staff_image_wipe_frame_b;
-extern char staff_image_cover_b[3];
+// Native C public supplied by the separately exact staff image text DATA.
+extern "C" char staff_image_cover_b[3];
 #ifdef TH05_STAFF_FULL_FAMILY
 #pragma codeseg STAFF_FULL_TEXT group_01
 #else

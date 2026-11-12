@@ -33,7 +33,8 @@ extern int staff_bgm_measure;
 extern int staff_image_phase_a;
 extern int staff_image_wipe_extent_a;
 extern int staff_image_wipe_frame_a;
-extern char staff_image_cover_a[3];
+// Native C public supplied by the separately exact staff image text DATA.
+extern "C" char staff_image_cover_a[3];
 static const unsigned int STAFF_TEXT_BLACK = 0x01;
 static const unsigned int STAFF_TEXT_REVERSE = 0x04;
 static const int STAFF_IMAGE_HOLD_MEASURE = 3996;
