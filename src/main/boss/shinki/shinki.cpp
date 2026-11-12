@@ -9,6 +9,7 @@
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
 #include "src/main/boss/shinki/ball_lifecycle.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
+#include "src/main/boss/shinki/wing_preparation_rules.hpp"
 #pragma codeseg B6_BALLS_TEXT main_03
 
 
@@ -213,14 +214,14 @@ bool near pattern_dense_blue_stacks(void)
 bool near pattern_wing_preparation(void)
 {
 	enum {
-		LASERS_USED = 6,
+		LASERS_USED = SWPREP_LASER_COUNT,
 	};
 	#define tone      	boss_statebyte[14]
 	#define wing_frame	boss_statebyte[15]
 
 	int i;
 
-	if(boss.phase_frame == 16) {
+	if(boss.phase_frame == SWPREP_START_FRAME) {
 		// Still assumed to be set to this value by Yumeko. Original gameplay
 		// relies on this value to be < 8 to ensure that the lasers will kill
 		// the player if they move to the side of the wings. (Lasers only kill
@@ -228,21 +229,21 @@ bool near pattern_wing_preparation(void)
 		// the ones in this pattern are kept alive for 8 frames.)
 		// MODDERS: Uncomment to clearly define the original behavior.
 		// laser_template.coords.width = 6;
-		laser_template.coords.angle = 0x50;	laser_manual_fixed_spawn(0);
-		laser_template.coords.angle = 0x48;	laser_manual_fixed_spawn(1);
-		laser_template.coords.angle = 0x40;	laser_manual_fixed_spawn(2);
-		laser_template.coords.angle = 0x40;	laser_manual_fixed_spawn(3);
-		laser_template.coords.angle = 0x38;	laser_manual_fixed_spawn(4);
-		laser_template.coords.angle = 0x30;	laser_manual_fixed_spawn(5);
-		snd_se_play(8);
+		laser_template.coords.angle = SWPREP_R_OUTER_ANGLE;	laser_manual_fixed_spawn(0);
+		laser_template.coords.angle = SWPREP_R_INNER_ANGLE;	laser_manual_fixed_spawn(1);
+		laser_template.coords.angle = SWPREP_R_CENTER_ANGLE;	laser_manual_fixed_spawn(2);
+		laser_template.coords.angle = SWPREP_L_CENTER_ANGLE;	laser_manual_fixed_spawn(3);
+		laser_template.coords.angle = SWPREP_L_INNER_ANGLE;	laser_manual_fixed_spawn(4);
+		laser_template.coords.angle = SWPREP_L_OUTER_ANGLE;	laser_manual_fixed_spawn(5);
+		snd_se_play(SWPREP_START_SE);
 		boss.sprite = PAT_SHINKI_CAST;
 		wing_frame = 0;
-		tone = 100;
+		tone = SWPREP_BASE_TONE;
 	}
-	if(boss.phase_frame <= 16) {
+	if(boss.phase_frame <= SWPREP_START_FRAME) {
 		return false;
 	}
-	if(lasers[2].coords.angle < 0x80) {
+	if(lasers[2].coords.angle < SWPREP_LASER_SWEEP_LIMIT) {
 		if(stage_frame_mod2) {
 			lasers[0].coords.angle += 0x01;
 			lasers[1].coords.angle += 0x01;
@@ -260,27 +261,27 @@ bool near pattern_wing_preparation(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SINGLE;
 		bullet_template_tune();
-		for(i = 0; i < 50; i++) {
+		for(i = 0; i < SWPREP_SPAWN_BULLET_COUNT; i++) {
 			bullet_template.origin.x.v = shinki_wing_random_x();
 			bullet_template.origin.y.v = shinki_wing_random_y();
-			bullet_template.angle = randring2_next8_mod_ge_lt(0x10, 0x70);
-			bullet_template.speed.v = sara_rand_speed(1.5f, 5.5f);
+			bullet_template.angle = randring2_next8_mod_ge_lt(SWPREP_RAIN_ANGLE_MIN, SWPREP_RAIN_ANGLE_END);
+			bullet_template.speed.v = sara_rand_speed(SWPREP_RAIN_SPEED_MIN, SWPREP_RAIN_SPEED_MAX);
 			bullets_add_regular();
 		}
 		boss.sprite = PAT_SHINKI_WINGS_WHITE;
 		for(i = 0; i < LASERS_USED; i++) {
 			laser_manual_grow(i);
 		}
-		snd_se_play(15);
-		playfield_shake_anim_time = 8;
+		snd_se_play(SWPREP_RELEASE_SE);
+		playfield_shake_anim_time = SWPREP_SCREEN_SHAKE_FRAMES;
 	} else {
 		if(stage_frame_mod2) {
-			palette_settone_deferred(150);
+			palette_settone_deferred(SWPREP_FLASH_TONE);
 		} else {
-			palette_settone_deferred(100);
+			palette_settone_deferred(SWPREP_BASE_TONE);
 		}
-		if(wing_frame >= 8) {
-			palette_settone_deferred(100);
+		if(wing_frame >= SWPREP_WING_VISIBLE_FRAMES) {
+			palette_settone_deferred(SWPREP_BASE_TONE);
 			for(i = 0; i < LASERS_USED; i++) {
 				laser_stop(i);
 			}

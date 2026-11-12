@@ -157,3 +157,40 @@ code, original ordered fixups and compiled negative results in
 Only **220 new C++ instruction bytes** are credited; accepted adjacent
 functions are not counted again. The earlier 216/221/224-byte experiments in
 this document remain useful historical evidence, not unresolved blockers.
+
+## Six-beam wing opening and 50-shot burst geometry (2026-11-12)
+
+The original **386-byte** `pattern_wing_preparation()` now uses the
+compile-time-only `wing_preparation_rules.hpp` to identify the actual
+six-beam wing opening. The six real laser slots are emitted in order
+with directions **0x50, 0x48, 0x40, 0x40, 0x38, 0x30** at the 16th
+Boss phase frame. The two middle beams intentionally share 0x40; no
+array, synthetic loop, or lookup data was inserted to hide that order.
+The initial palette tone is 100, the cast sound is 8, and the original
+state overlays remain `boss_statebyte[14]` for tone and `[15]` for the
+post-sweep wing frame.
+
+On alternating global frames the outer three beam angles increase and
+the opposite three decrease by one byte unit, while the current tone
+increases through the original direct byte `tone++`. This phase ends
+when center laser 2 reaches **0x80**. Only then does the actual
+source generate its fixed **50** blue bullets, with angular range
+`[0x10,0x70)` and speeds **1.5–5.5 pixels/frame**, before growing the
+six existing lasers. The original first wing sprite, sound 15, and
+8-frame screen shake are preserved. During the next eight wing frames,
+tone alternates 100/150; at expiry all six lasers are stopped before
+the callback returns `true` to the complete Shinki controller.
+
+The 386-byte standalone function and its real 10-unit Shinki
+translation-unit mirror were edited together. The standalone is
+reconstructed by the already accepted **natural TCC -S → TASM32**
+source pipeline, which reproduces its original two ordered relocations.
+Both compiler rounds match every one of the 386 source bytes; the
+compiled screen-shake mutation from eight to nine is rejected:
+`.analysis/unit-replays/gpt-web-shinki-wing-milestones-b/receipt.json`.
+The independent ten-unit same-TU replay at
+`.analysis/unit-replays/gpt-web-shinki-wing-milestones-cohort-a/receipt.json`
+confirms all other affected Shinki functions' complete raw bytes,
+OMF/MAP placements and fixups. No new runtime fields, optimizer barriers,
+inline instructions, binary assets or duplicate accepted CODE credit are
+introduced. This is not a full game cold replay.

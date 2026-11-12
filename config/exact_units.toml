@@ -4855,8 +4855,8 @@ ds_base = 133584
 [[controls]]
 unit = "main-shinki-wing-preparation"
 source = "src/main/boss/shinki/wing_preparation.cpp"
-find = "playfield_shake_anim_time = 8;"
-replace = "playfield_shake_anim_time = 9;"
+find = "playfield_shake_anim_time = SWPREP_SCREEN_SHAKE_FRAMES;"
+replace = "playfield_shake_anim_time = (SWPREP_SCREEN_SHAKE_FRAMES + 1);"
 
 [[units]]
 id = "main-shinki-phase-pattern-data"
