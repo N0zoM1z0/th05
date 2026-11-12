@@ -52,3 +52,48 @@ credit. The source-level C++ public consumers retain their original
 accepted code; shared-header ABI integration, if pursued, requires a
 separate complete affected-unit and reviewed-ASM dependency replay.
 No full program or all-game cold replay was executed.
+
+## Source-current C/C++ public closure, not only independent zeros (2026-11-12)
+
+All nine real writable names in the six C DATA contributors now have a
+single source-level `state_publics.h` with their original C linkage.
+The native C initializers and actual C++ consumers each include it;
+none defines a duplicate state variable, and the maintained foreign
+CDG, particle, text and PC-98 graphics providers stay external. The
+older independently accepted C++ Staff headers can still redeclare the
+same names; including the C linkage header **before** those headers
+allows Turbo C++ to retain the real C public naming/ABI without
+changing any shared graphics header or reviewed native ASM.
+
+The full original MAINE Staff source-context family was recompiled
+in the actual grouped Borland/TLINK configuration: the complete
+**991-byte Staff controller**, **861-byte scene renderer**,
+**626-byte particle update**, both independently accepted **376-byte
+image reveal functions**, and eight other complete native Staff
+contributors pass with their full raw bytes, OMF/MAP context,
+original ordered MZ relocations and a rejected compiled negative.
+The independent **483-byte orb-opening family**, **161-/271-byte rain
+functions**, and **86-byte frame pump** likewise pass their own
+bounded native replay and compiled control. The original standalone
+unaccepted render/update source bodies are *not* falsely credited.
+
+Every one of the **six physical DATA contributors** was then separately
+recompiled in the source-current header context, with its own real
+zero-to-one initialized-DATA mutation rejected. All 15 original
+initialized bytes and empty ordered fixups remain exact, and the three
+original alignment bytes remain unclaimed. Reviewed-ASM dependency plan
+was checked and is empty; no frozen ASM source or semantic input changed.
+Receipts:
+
+- `.analysis/unit-replays/gpt-web-staff-c-public-full-controller-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-c-public-independent-leaves-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-back-page-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-orb-clocks-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-camera-phase-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-rain-clocks-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-text-clear-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-staff-publics-image-phases-b/receipt.json`
+
+All CODE and DATA was separately accepted before this interface change,
+so the consumer closure adds no *additional* authored byte credit.
+No whole MAINE cold replay or off-target artifact build was run.

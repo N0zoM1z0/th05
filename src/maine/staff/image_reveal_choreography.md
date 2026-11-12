@@ -41,3 +41,16 @@ imported. The independently accepted six-byte C image-cover DATA and
 prior 376-byte functions retain their original byte credit only.
 The original `image_phase.hpp` and reviewed CDG ASM source inputs are
 unchanged in this commit, so no unrelated ASM refresh was required.
+
+## Exact natural C image-phase globals and full 991-byte Staff controller (2026-11-12)
+
+The two original 16-bit `staff_image_phase_a/b` globals, the original
+one-byte `staff_text_clear_requested` and the actual page/rain/orb
+controllers now link through `state_publics.h` to their source-defined
+C DATA at decoded `1184A..1185C` (15 meaningful bytes separated by
+three original uncredited alignment bytes). Both 376-byte reveals and
+the complete 991-byte Staff controller remain byte- and fixup-exact.
+The complete affected native C++ scopes and each separate C DATA
+initializer were recompiled twice, with all compiled negatives
+rejected. See `initialized_state.md` for all eight receipt paths and
+precise original source ownership boundaries.

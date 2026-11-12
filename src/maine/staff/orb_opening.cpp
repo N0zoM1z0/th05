@@ -1,5 +1,6 @@
 // Four complete natural staff helpers; the preceding updater is not included.
 #pragma option -zCSTAFF_TRAIL_TEXT -zPgroup_01
+#include "src/maine/staff/state_publics.h"
 #include "src/maine/staff/orb_opening.hpp"
 
 #pragma codeseg STAFF_TRAIL_TEXT group_01

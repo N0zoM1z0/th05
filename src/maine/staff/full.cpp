@@ -1,6 +1,7 @@
 // All17 real bodies in original order, including both unaccepted updater/render.
 #pragma option -zCSTAFF_FULL_TEXT -zPgroup_01
 #define TH05_STAFF_FULL_FAMILY
+#include "src/maine/staff/state_publics.h"
 #include "src/maine/staff/full.hpp"
 #pragma codeseg STAFF_FULL_TEXT group_01
 #include "src/maine/staff/body/space_window_set.inl"

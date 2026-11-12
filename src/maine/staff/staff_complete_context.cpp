@@ -1,6 +1,7 @@
 // Original 17 exact Staff scene functions, two PC-98 bitmap device kernels and the 991-byte controller.
 #pragma option -zCSTAFF_FULL_TEXT
 #define TH05_STAFF_FULL_FAMILY
+#include "src/maine/staff/state_publics.h"
 #include "src/maine/staff/full.hpp"
 #pragma codeseg STAFF_FULL_TEXT group_01
 #include "src/maine/staff/body/space_window_set.inl"
