@@ -49,8 +49,8 @@ bindings_source = "probes/units/op_main_bindings.asm"
 [[controls]]
 unit = "op-main-menu"
 source = "src/op/main/menu.cpp"
-find = "if(idle_frame >= 640)"
-replace = "if(idle_frame >= 639)"
+find = "if(idle_frame >= OPL_ATTRACT_IDLE_FRAMES)"
+replace = "if(idle_frame >= (OPL_ATTRACT_IDLE_FRAMES - 1))"
 
 [[units]]
 id = "op-setup-menu"

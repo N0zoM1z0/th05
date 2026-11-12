@@ -1,0 +1,27 @@
+// TH05 OP start, Extra, attract/demo and resident score-handoff protocol.
+// Compile-time values only; no substitute Resident128 object or menu storage.
+#ifndef TH05_OP_LAUNCH_SEQUENCE_RULES_HPP
+#define TH05_OP_LAUNCH_SEQUENCE_RULES_HPP
+
+#define OPL_FRESH_DEMO_INDEX 0
+#define OPL_SCORE_START_STAGE 0
+#define OPL_EXTRA_CREDIT_LIVES 3
+#define OPL_EXTRA_CREDIT_BOMBS 3
+#define OPL_DEMO_CREDIT_LIVES 3
+#define OPL_DEMO_CREDIT_BOMBS 3
+#define OPL_DEMO_FIRST_INDEX 1
+#define OPL_DEMO_LAST_NORMAL_INDEX 4
+#define OPL_DEMO_HIDDEN_EXTRA_INDEX 5
+#define OPL_DEMO_REIMU_STAGE 3
+#define OPL_DEMO_MARISA_STAGE 1
+#define OPL_DEMO_MIMA_STAGE 2
+#define OPL_DEMO_YUUKA_STAGE 4
+#define OPL_GAME_SONG_FADE 10
+#define OPL_EXTRA_DEMO_SONG_FADE 8
+#define OPL_OPTION_SELECT_SE 11
+#define OPL_OPTION_SCROLL_SE 1
+#define OPL_ATTRACT_IDLE_FRAMES 640
+#define OPL_FRAME_TICK_DELAY 1
+#define OPL_OP_MEMORY_BYTES 336000
+
+#endif

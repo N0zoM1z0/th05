@@ -9,12 +9,13 @@
 #include <process.h>
 #include "src/op/main/menu.hpp"
 #include "src/op/main/strings.hpp"
+#include "src/op/main/launch_sequence_rules.hpp"
 
 inline void op_exit_into_main(bool fade_out_bgm, bool allow_debug) {
 	main_cdg_free();
 	cfg_save();
 	if(fade_out_bgm) {
-		snd_kaja_func(KAJA_SONG_FADE, 10);
+		snd_kaja_func(KAJA_SONG_FADE, OPL_GAME_SONG_FADE);
 	}
 	game_exit();
 	if(!allow_debug || !resident->debug) {
@@ -46,8 +47,8 @@ inline void op_exit_into_main(bool fade_out_bgm, bool allow_debug) {
 void near start_game(void)
 {
 	resident->end_sequence = ES_SCORE;
-	resident->demo_num = 0;
-	resident->stage = 0;
+	resident->demo_num = OPL_FRESH_DEMO_INDEX;
+	resident->stage = OPL_SCORE_START_STAGE;
 	resident->credit_lives = resident->cfg_lives;
 	resident->credit_bombs = resident->cfg_bombs;
 
@@ -60,10 +61,10 @@ void near start_game(void)
 
 void near start_extra(void)
 {
-	resident->demo_num = 0;
+	resident->demo_num = OPL_FRESH_DEMO_INDEX;
 	resident->stage = STAGE_EXTRA;
-	resident->credit_lives = 3;
-	resident->credit_bombs = 3;
+	resident->credit_lives = OPL_EXTRA_CREDIT_LIVES;
+	resident->credit_bombs = OPL_EXTRA_CREDIT_BOMBS;
 
 	if(playchar_menu()) {
 		return;
@@ -75,13 +76,13 @@ void near start_extra(void)
 void near start_demo(void)
 {
 	resident->end_sequence = ES_SCORE;
-	resident->stage = 0;
-	resident->credit_lives = 3;
-	resident->credit_bombs = 3;
+	resident->stage = OPL_SCORE_START_STAGE;
+	resident->credit_lives = OPL_DEMO_CREDIT_LIVES;
+	resident->credit_bombs = OPL_DEMO_CREDIT_BOMBS;
 
 	resident->demo_num++;
-	if(resident->demo_num > 4) {
-		resident->demo_num = 1;
+	if(resident->demo_num > OPL_DEMO_LAST_NORMAL_INDEX) {
+		resident->demo_num = OPL_DEMO_FIRST_INDEX;
 	}
 
 	// Hidden Extra Stage Clear replay easter egg...
@@ -93,33 +94,33 @@ void near start_demo(void)
 			extra_playable_with[PLAYCHAR_MIMA] &&
 			extra_playable_with[PLAYCHAR_YUUKA]
 		) {
-			resident->demo_num = 5;
+			resident->demo_num = OPL_DEMO_HIDDEN_EXTRA_INDEX;
 		} else {
-			resident->demo_num = 0;
+			resident->demo_num = OPL_FRESH_DEMO_INDEX;
 			return;
 		}
 	}
 	switch(resident->demo_num) {
 	case 1:
 		resident->playchar = PLAYCHAR_REIMU;
-		resident->demo_stage = 3;
+		resident->demo_stage = OPL_DEMO_REIMU_STAGE;
 		break;
 	case 2:
 		resident->playchar = PLAYCHAR_MARISA;
-		resident->demo_stage = 1;
+		resident->demo_stage = OPL_DEMO_MARISA_STAGE;
 		break;
 	case 3:
 		resident->playchar = PLAYCHAR_MIMA;
-		resident->demo_stage = 2;
+		resident->demo_stage = OPL_DEMO_MIMA_STAGE;
 		break;
 	case 4:
 		resident->playchar = PLAYCHAR_YUUKA;
-		resident->demo_stage = 4;
+		resident->demo_stage = OPL_DEMO_YUUKA_STAGE;
 		break;
 	case 5:
 		resident->playchar = PLAYCHAR_MIMA;
 		resident->demo_stage = STAGE_EXTRA;
-		snd_kaja_func(KAJA_SONG_FADE, 8);
+		snd_kaja_func(KAJA_SONG_FADE, OPL_EXTRA_DEMO_SONG_FADE);
 		break;
 	}
 	resident_reset_last_and_highest_scores();
@@ -406,7 +407,7 @@ void pascal near menu_sel_update_and_render(int8_t max, int8_t direction)
 	}
 
 	menu_unput_and_put(menu_sel, COL_ACTIVE);
-	snd_se_play_force(1);
+	snd_se_play_force(OPL_OPTION_SCROLL_SE);
 }
 
 #define menu_init( \
@@ -477,7 +478,7 @@ void near main_update_and_render(void)
 	menu_update_vertical(key_det, MC_COUNT);
 
 	if((key_det & INPUT_OK) || (key_det & INPUT_SHOT)) {
-		snd_se_play_force(11);
+		snd_se_play_force(OPL_OPTION_SELECT_SE);
 		switch(menu_sel) {
 		case MC_GAME:
 			start_game();
@@ -582,7 +583,7 @@ void near option_update_and_render(void)
 			initialized = false;
 			break;
 		case OC_QUIT:
-			snd_se_play_force(11);
+			snd_se_play_force(OPL_OPTION_SELECT_SE);
 			return_from_option_to_main(initialized);
 			break;
 		default:
@@ -670,7 +671,7 @@ void main(void)
 
 	text_clear();
 	respal_create(); // ZUN bloat: These games don't use resident palettes.
-	mem_assign_paras = (336000 >> 4);
+	mem_assign_paras = (OPL_OP_MEMORY_BYTES >> 4);
 	if(game_init_op(OP_AND_END_PF_FN)) {
 		dos_puts2(MEMORY_INSUFFICIENT);
 		getch();
@@ -689,10 +690,10 @@ void main(void)
 		resident->zunsoft_shown = true;
 	}
 
-	if((GAME == 5) && resident->demo_num == 5) {
-		resident->demo_num = 0;
+	if((GAME == 5) && resident->demo_num == OPL_DEMO_HIDDEN_EXTRA_INDEX) {
+		resident->demo_num = OPL_FRESH_DEMO_INDEX;
 	}
-	if(resident->demo_num == 0) {
+	if(resident->demo_num == OPL_FRESH_DEMO_INDEX) {
 		snd_kaja_func(KAJA_SONG_STOP, 0);
 	}
 	op_animate();
@@ -726,7 +727,7 @@ void main(void)
 		switch(in_option) {
 		case false:
 			main_update_and_render();
-			if(idle_frame >= 640) {
+			if(idle_frame >= OPL_ATTRACT_IDLE_FRAMES) {
 				start_demo();
 				// ZUN bloat: Execution never gets here.
 				idle_frame = 0;
@@ -750,7 +751,7 @@ void main(void)
 		}
 
 		resident->rand++;
-		frame_delay(1);
+		frame_delay(OPL_FRAME_TICK_DELAY);
 	}
 	main_cdg_free();
 	cfg_save_exit();

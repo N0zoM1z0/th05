@@ -136,3 +136,42 @@ The original two complete LEDATA records have no hole or overlap. Both fresh
 CP932-staged producers pass; changing the actual background filename from
 `op1.pi` to `op2.pi` in the canonical strings header changes DATA and is rejected.
 No image content, BSS or duplicate CODE credit is included.
+
+## Natural OP launch, Extra and attract-mode Resident contract (2026-11-12)
+
+The full original OP main menu's **3,291-byte / nine-function** CODE
+contribution now names its launch and attract-mode state in
+`launch_sequence_rules.hpp`, with *no* newly allocated Resident, BSS or
+DATA object. The standard start initializes stage zero, clears the demo
+flag and preserves configured starting lives and bombs; the Extra start
+uses its original **three lives / three bombs** and disables debug launch.
+All score resets continue to zero out exactly the original eight-digit
+scores in the canonical 128-byte resident, with the actual DOS `execl`
+far-argument terminating word and normal debug-versus-MAIN routing.
+
+The original Demo rotation cycles **1–4** through Reimu stage 3,
+Marisa stage 1, Mima stage 2 and Yuuka stage 4. Holding Left+Right
+selects the hidden **Demo 5** Extra Stage clear only when all four
+original `extra_playable_with[]` unlock flags are set; otherwise it
+sets demo index zero and returns before starting MAIN. The hidden
+branch retains the genuine eight-unit BGM fade. None of these conditions
+is simplified into a lookup table or replaced with a shorter helper.
+The OP entry's attract timer is still exactly **640 frames**, and its
+special key handling preserves the simultaneous Left+Right shortcut
+without resetting the timer. The four other original menu modes,
+selector SE1/SE11, resident setup override, unused palette allocation,
+sound reload semantics and the observed first-subsceen palette bug
+remain in the same source-level and compiled order.
+
+`menu.cpp` also owns its original **1,089-byte** initialized-DATA
+contribution: the 26 near-store far description pointers, all
+human-readable CP932 UI strings, state bytes and file names. Therefore
+the complete affected CODE **and** DATA were selectively recompiled in
+the same native context with two independent pinned Borland producers.
+Both whole scopes match all raw bytes, MAP/OMF contributions, 99 ordered
+CODE fixups, initialized-DATA pointer fixups and the one checked uncredited
+zero. The native compiled negative changes the actual attract timeout
+640→639 and is rejected:
+`.analysis/unit-replays/gpt-web-op-main-launch-rules-a/receipt.json`.
+No existing authored bytes are credited twice; there is no complete OP
+cold replay or replacement of any packed executable asset.
