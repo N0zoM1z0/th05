@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "d80f466baa2edb3d445a784af5e54808dbad65caec7fb121625c8fe8bb259879",
+  "replay_receipt_sha256": "481564003e8015626b293ff4c26a140cc7610d71c473f6d48a9063683991651e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138826,
-    "candidate_start": 138826,
-    "size": 22,
-    "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
-    "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
+    "target_start": 138848,
+    "candidate_start": 138848,
+    "size": 6,
+    "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+    "candidate_sha256": "c159f9b9da1e1cfec2d2dda1e8142a6350c4a8b621ffcb450fe6d5736e5c106d",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138826,
-      "size": 22,
-      "module": "th05/mxsched.cpp",
+      "start": 138848,
+      "size": 6,
+      "module": "th05/mb5sched.cpp",
       "segment": "_DATA"
     }
   },
@@ -101994,6 +101994,393 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-extra-midboss-callback-and-dash-data"
+      ]
+    },
+    {
+      "id": "main-midboss-stage5-attack-dispatch-data",
+      "entry_sha256": "1e7238c179648ca45c5b9b04f90072a130cd04e455c213fd4c4cf3bb3f99b5e9",
+      "result": {
+        "id": "main-midboss-stage5-attack-dispatch-data",
+        "entry_sha256": "1e7238c179648ca45c5b9b04f90072a130cd04e455c213fd4c4cf3bb3f99b5e9",
+        "rounds": [
+          {
+            "target_start": 138848,
+            "candidate_start": 138848,
+            "size": 6,
+            "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+            "candidate_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138848,
+              "size": 6,
+              "module": "th05/mb5sched.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138848,
+            "candidate_start": 138848,
+            "size": 6,
+            "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+            "candidate_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138848,
+              "size": 6,
+              "module": "th05/mb5sched.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7a2a5dd0eda46c69ca27d60bb58fb9a463aafcb77967b62c1c5933eb2f16ccc0",
+            "dependency_timestamp_normalized_sha256": "41c0e5955dd6b340620d4bb8bbb3b4f6bc6c503d7d58344c8baaca07c2e211bd",
+            "module_name": "th05/mb5sched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mb5sched.cpp",
+              "src/main/midboss/stage5_schedule_data.cpp",
+              "src/main/midboss/stage5_patterns.hpp",
+              "src/main/midboss/stage5.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "d02d5280e0733b74838f5156f3b41095a4910a1124aef58fd70b0611f1fb5989",
+            "dependency_timestamp_normalized_sha256": "41c0e5955dd6b340620d4bb8bbb3b4f6bc6c503d7d58344c8baaca07c2e211bd",
+            "module_name": "th05/mb5sched.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/mb5sched.cpp",
+              "src/main/midboss/stage5_schedule_data.cpp",
+              "src/main/midboss/stage5_patterns.hpp",
+              "src/main/midboss/stage5.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 6,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 6,
+                  "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mb5sched.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/mb5sched.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_midboss_stage5_schedule_data_bindings.asm",
+            "sha256": "887db88bacbaedc4f3c38b0b7a032d9b86025c8698bb31168363bfed116b6e1e"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/midboss/stage5.hpp",
+            "sha256": "af9e1de60555c186d82c3987a97d9fd707a9e162f70ad4ee750d52f6e49ad8b9"
+          },
+          {
+            "path": "src/main/midboss/stage5_patterns.hpp",
+            "sha256": "f7f5f51cb97705498fe47e4993de0707f19ad716cd1d1cfb0d938be107180944"
+          },
+          {
+            "path": "src/main/midboss/stage5_schedule_data.cpp",
+            "sha256": "56e0f8247eac3562be5e1bc0035feed3be13364f9f762675d12f960fc2b40193"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_midboss_stage5_schedule_data_bindings.asm",
+          "sha256": "887db88bacbaedc4f3c38b0b7a032d9b86025c8698bb31168363bfed116b6e1e"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/midboss/stage5.hpp",
+          "sha256": "af9e1de60555c186d82c3987a97d9fd707a9e162f70ad4ee750d52f6e49ad8b9"
+        },
+        {
+          "path": "src/main/midboss/stage5_patterns.hpp",
+          "sha256": "f7f5f51cb97705498fe47e4993de0707f19ad716cd1d1cfb0d938be107180944"
+        },
+        {
+          "path": "src/main/midboss/stage5_schedule_data.cpp",
+          "sha256": "56e0f8247eac3562be5e1bc0035feed3be13364f9f762675d12f960fc2b40193"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "481564003e8015626b293ff4c26a140cc7610d71c473f6d48a9063683991651e",
+      "compiled_negative_control": {
+        "target_start": 138848,
+        "candidate_start": 138848,
+        "size": 6,
+        "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+        "candidate_sha256": "c159f9b9da1e1cfec2d2dda1e8142a6350c4a8b621ffcb450fe6d5736e5c106d",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138848,
+          "size": 6,
+          "module": "th05/mb5sched.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-midboss-stage5-attack-dispatch-data",
+        "entry_sha256": "1e7238c179648ca45c5b9b04f90072a130cd04e455c213fd4c4cf3bb3f99b5e9",
+        "mutation": {
+          "unit": "main-midboss-stage5-attack-dispatch-data",
+          "source": "src/main/midboss/stage5_schedule_data.cpp",
+          "find": "    midboss5_pattern_green_rings,",
+          "replace": "    midboss5_pattern_blue_spread,"
+        },
+        "control_sha256": "5b34a79ad9cc15bea2cac5a8aa431ceefcd86a3efee384dbaa57017d815d7e5a",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138848,
+          "candidate_start": 138848,
+          "size": 6,
+          "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
+          "candidate_sha256": "c159f9b9da1e1cfec2d2dda1e8142a6350c4a8b621ffcb450fe6d5736e5c106d",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138848,
+            "size": 6,
+            "module": "th05/mb5sched.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "1fae3c607b7076cca58682b7ae604e584bfe0171ee20b81e9176f6aa75ffd9ad",
+          "dependency_timestamp_normalized_sha256": "126af888731696db072838dea70f016229f37e50c8bdf03a2ab75bc7d28049c9",
+          "module_name": "th05/mb5sched.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/mb5sched.cpp",
+            "src/main/midboss/stage5_schedule_data.cpp",
+            "src/main/midboss/stage5_patterns.hpp",
+            "src/main/midboss/stage5.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 6,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 6,
+                "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/mb5sched.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-midboss-stage5-attack-dispatch-data"
       ]
     }
   ]

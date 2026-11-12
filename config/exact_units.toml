@@ -6345,3 +6345,25 @@ unit = "main-extra-midboss-callback-and-dash-data"
 source = "src/main/midboss/extra_schedule_data.cpp"
 find = "{ midbossx_pattern_spread, midbossx_pattern_random },"
 replace = "{ midbossx_pattern_spread, midbossx_pattern_spread },"
+
+[[units]]
+id = "main-midboss-stage5-attack-dispatch-data"
+source = "src/main/midboss/stage5_schedule_data.cpp"
+module = "th05/mb5sched.cpp"
+segment = "_DATA"
+wrapper_options = "-zCMIDBOSS5_SCHED_TEXT -zPmain_03"
+bindings_source = "probes/units/main_midboss_stage5_schedule_data_bindings.asm"
+target_start = 0x21e60
+size = 6
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["function-pointers"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-midboss-stage5-attack-dispatch-data"
+source = "src/main/midboss/stage5_schedule_data.cpp"
+find = "    midboss5_pattern_green_rings,"
+replace = "    midboss5_pattern_blue_spread,"
