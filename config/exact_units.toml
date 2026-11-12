@@ -1633,8 +1633,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-midboss-stage5-update"
 source = "src/main/midboss/stage5.cpp"
-find = "midboss_score_bonus(30);"
-replace = "midboss_score_bonus(31);"
+find = "midboss_score_bonus(M5R_DEFEAT_SCORE_BONUS);"
+replace = "midboss_score_bonus(M5R_DEFEAT_SCORE_BONUS + 1);"
 
 [[units]]
 id = "main-midboss-extra-update"
@@ -1674,8 +1674,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-midboss-stage5-patterns"
 source = "src/main/midboss/stage5_patterns.cpp"
-find = "midboss5_set_spread(13, 7);"
-replace = "midboss5_set_spread(12, 7);"
+find = "midboss5_set_spread(M5R_BLUE_SPREAD_COUNT, M5R_BLUE_SPREAD_STEP);"
+replace = "midboss5_set_spread(M5R_BLUE_SPREAD_COUNT - 1, M5R_BLUE_SPREAD_STEP);"
 
 [[units]]
 id = "main-midboss-extra-patterns"
