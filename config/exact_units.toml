@@ -68,8 +68,8 @@ replace = "_AL >= 39"
 [[controls]]
 unit = "main-boss-movement"
 source = "src/main/boss/movement.cpp"
-find = "static const int TOWARDS_FRACTION = 16;"
-replace = "static const int TOWARDS_FRACTION = 8;"
+find = "static const int TOWARDS_FRACTION = BMD_TOWARDS_DIVISOR;"
+replace = "static const int TOWARDS_FRACTION = (BMD_TOWARDS_DIVISOR / 2);"
 
 [[controls]]
 unit = "main-cfg-resident"

@@ -2,27 +2,35 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "0e7783808c9f4016c1463176a585af638be54a56285d570f013633c54fa7b872",
+  "replay_receipt_sha256": "1801dba9297cfa081c41113962528b8178ace726c33bae5b41292475d7f25135",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138748,
-    "candidate_start": 138748,
-    "size": 9,
-    "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
-    "candidate_sha256": "a536aa3cede6ea3c1f3e0357c3c60e0f216a8c89b853df13b29daa8f85065dfb",
+    "target_start": 107082,
+    "candidate_start": 107082,
+    "size": 1060,
+    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      198,
+      161
+    ],
+    "candidate_fixups": [
+      198,
+      161
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 138748,
-      "size": 9,
-      "module": "th05/huddec.c",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 107082,
+      "size": 1060,
+      "function_symbol": "exalice_update()",
+      "contribution_start": 106971,
+      "contribution_size": 1171,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -313,6 +321,7 @@
       "entry_sha256": "6e6222229f579813890a4e7b108bf62b10b06a48096a18b4fe07852adf47af39",
       "result": {
         "id": "main-boss-movement",
+        "entry_sha256": "6e6222229f579813890a4e7b108bf62b10b06a48096a18b4fe07852adf47af39",
         "rounds": [
           {
             "target_start": 88340,
@@ -342,8 +351,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "fc236bfa29501ae2e5b288074de505ec6d75340ff4aa3751de17ed3456ebd2c8",
-            "dependency_timestamp_normalized_sha256": "841d29a1bbdad7b8e17afa1c2bf9a7b99668620aaa0fb1633f0afcaa2709bdf2",
+            "sha256": "c8cc7105b657dad2b30c8ef5fb7ea9a018640157d1a553d2ed4e11c9e446b296",
+            "dependency_timestamp_normalized_sha256": "4ba1f7137228613a0ab8a5507f75f0bbf3bfd3ae88a9efbe2b29f76a67274870",
             "module_name": "th05/main032.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -356,12 +365,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/movement_dynamics.hpp"
             ]
           },
           {
-            "sha256": "c1350f3f4ac0ea4f7098158614da6e2d33198b4762a2f3fa271b7cbf804316ec",
-            "dependency_timestamp_normalized_sha256": "841d29a1bbdad7b8e17afa1c2bf9a7b99668620aaa0fb1633f0afcaa2709bdf2",
+            "sha256": "c8cc7105b657dad2b30c8ef5fb7ea9a018640157d1a553d2ed4e11c9e446b296",
+            "dependency_timestamp_normalized_sha256": "4ba1f7137228613a0ab8a5507f75f0bbf3bfd3ae88a9efbe2b29f76a67274870",
             "module_name": "th05/main032.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -374,8 +384,67 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/movement_dynamics.hpp"
             ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/main032.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/main032.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_bindings.asm",
+            "sha256": "0a3d2f561d2b90b0817abfb6302a4562f551e915c7186889595f007c9121d7ec"
+          },
+          {
+            "path": "src/main/boss/movement.cpp",
+            "sha256": "badb298f127c9d9cd0cbe5590a6ba6165224181086e3f81c59b1e4ed09bb9945"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/boss/movement_dynamics.hpp",
+            "sha256": "709af4a116a8ed7a64699c1685a26f07894dfb912a42b49f333115ec5db877ec"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
           }
         ],
         "exact": true
@@ -387,11 +456,15 @@
         },
         {
           "path": "src/main/boss/movement.cpp",
-          "sha256": "46268f6fd6cc7383b907777068c8a37c92d07bfd506564c1c6ed9d9ec9d3ba8a"
+          "sha256": "badb298f127c9d9cd0cbe5590a6ba6165224181086e3f81c59b1e4ed09bb9945"
         },
         {
           "path": "src/main/boss/movement.hpp",
           "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/boss/movement_dynamics.hpp",
+          "sha256": "709af4a116a8ed7a64699c1685a26f07894dfb912a42b49f333115ec5db877ec"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -403,43 +476,107 @@
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
-      "toolchain_receipt_sha256": "4a76df1deabe55a1b664400cf2e7341abc1fd9b40914ee43f700594a99acc1bf",
-      "replay_receipt_sha256": "cfdda96e157c81bc853cfb040f2f25c6dc873fee4a702c92e12d4b31de9c57e5",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "795defe227c1d410b1ac6bea9f91a4779ee0c5ff3d1688f6165caaecf1489263",
       "compiled_negative_control": {
-        "target_start": 95862,
-        "candidate_start": 10354,
-        "size": 66,
-        "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
-        "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+        "target_start": 138758,
+        "candidate_start": 138758,
+        "size": 8,
+        "target_sha256": "76a3356da272fe99f86b612f457a9ffc1f5383b7b631d490aa1063c8f0c0cee5",
+        "candidate_sha256": "239d1c83282bc9e88928603c5db418e40518e84353874e7b088a37cff9ed8fbe",
         "raw_exact": false,
         "target_fixups": [],
         "candidate_fixups": [],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138758,
+          "size": 8,
+          "module": "th05/bclamp.cpp",
+          "segment": "_DATA"
+        }
       },
       "negative_control": {
-        "unit_id": "main-bullet-tune",
-        "producer_path": "negative/source",
+        "unit_id": "main-boss-default-flystep-clamp-data",
+        "entry_sha256": "91c72a0abebdf0a3a429bbb21a261d103e64d31a6a7cfdf7ced9ada9a2bda432",
         "mutation": {
-          "unit": "main-bullet-tune",
-          "source": "src/main/bullet/tune.cpp",
-          "find": "_AL >= 38",
-          "replace": "_AL >= 39"
+          "unit": "main-boss-default-flystep-clamp-data",
+          "source": "src/main/boss/movement_default_clamp.cpp",
+          "find": "BOSS_DEFAULT_TOP_PX = 24",
+          "replace": "BOSS_DEFAULT_TOP_PX = 25"
         },
+        "control_sha256": "bdfbb77e96b50197f3dc8b553e772bdf14137701a451ce299383537e5eb948f6",
+        "producer_path": "negative/source",
         "comparison": {
-          "target_start": 95862,
-          "candidate_start": 10354,
-          "size": 66,
-          "target_sha256": "d4d1020dfec2a38d8c32876eae163858a95aa89f375fb4f7cec33e9ce46f8562",
-          "candidate_sha256": "7c35c66a63310717a125c1c9a52e17352bcedffd4a2f325e0874351a2cba520d",
+          "target_start": 138758,
+          "candidate_start": 138758,
+          "size": 8,
+          "target_sha256": "76a3356da272fe99f86b612f457a9ffc1f5383b7b631d490aa1063c8f0c0cee5",
+          "candidate_sha256": "239d1c83282bc9e88928603c5db418e40518e84353874e7b088a37cff9ed8fbe",
           "raw_exact": false,
           "target_fixups": [],
           "candidate_fixups": [],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138758,
+            "size": 8,
+            "module": "th05/bclamp.cpp",
+            "segment": "_DATA"
+          }
         },
-        "legacy_source_revalidated": true
-      }
+        "omf": {
+          "sha256": "53c202d404c9a5371e5e0d376c30eba06f3aed3cbe9adc189ed5b29a816fcadb",
+          "dependency_timestamp_normalized_sha256": "c8668d30464dc7f6ca49bbd1ad233dbf5655508add0da2e34556362361bb26eb",
+          "module_name": "th05/bclamp.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bclamp.cpp",
+            "src/main/boss/movement_default_clamp.cpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/movement_dynamics.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 8,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 8,
+                "sha256": "239d1c83282bc9e88928603c5db418e40518e84353874e7b088a37cff9ed8fbe"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bclamp.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-cfg-resident",
@@ -42082,7 +42219,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3d7a93640335ca12ff785d4b26b54f7d87a882ddc82d60b07edacd6fa1e4929e",
+            "sha256": "bbbe950958a1215e51292c857144650c103c54a5b662863da0916b8ce59631b4",
             "dependency_timestamp_normalized_sha256": "3d2d9871505c33efc4d27826c20ef165a86a052ba0046f28531793cb26aec8c7",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
@@ -42131,7 +42268,7 @@
             ]
           },
           {
-            "sha256": "cacf71b8c1f649cbeaab668939a7c6a276eba1d48e486184d128975800ac75f8",
+            "sha256": "c3020431f2c9090c628f6ad24092d04617be2ab7e0980ae41518cbf4a9cc0d21",
             "dependency_timestamp_normalized_sha256": "3d2d9871505c33efc4d27826c20ef165a86a052ba0046f28531793cb26aec8c7",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
@@ -42181,8 +42318,8 @@
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -42404,68 +42541,121 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b83af41bdc7736432950727003d4cdc52d6560cc78790f770153bbcc9be07b90",
+      "replay_receipt_sha256": "1801dba9297cfa081c41113962528b8178ace726c33bae5b41292475d7f25135",
       "compiled_negative_control": {
-        "target_start": 106971,
-        "candidate_start": 106971,
-        "size": 111,
-        "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-        "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+        "target_start": 107082,
+        "candidate_start": 107082,
+        "size": 1060,
+        "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+        "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          198,
+          161
+        ],
+        "candidate_fixups": [
+          198,
+          161
+        ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 107082,
+          "size": 1060,
+          "function_symbol": "exalice_update()",
+          "contribution_start": 106971,
+          "contribution_size": 1171,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
       },
       "negative_control": {
-        "unit_id": "main-exalice-phase",
-        "entry_sha256": "5a538f552046aabd78b6ca60d0f03c5d80084ef20225ba6a4dbd953e06d79d47",
+        "unit_id": "main-exalice-update-full-context",
+        "entry_sha256": "d76692ba38014035ecb3c2f0f28ec3ad7c879b2265e0259897baa06ac03032de",
         "mutation": {
-          "unit": "main-exalice-phase",
-          "source": "src/main/boss/exalice/phase.cpp",
-          "find": "exalice_bomb_invincibility = EXALICE_BOMB_INVINCIBILITY_RELOAD;",
-          "replace": "exalice_bomb_invincibility = (EXALICE_BOMB_INVINCIBILITY_RELOAD + 1);"
+          "unit": "main-exalice-update-full-context",
+          "source": "src/main/boss/exalice/full_context.cpp",
+          "find": "boss.phase_end_hp = EXALICE_HP_SETUP_END;",
+          "replace": "boss.phase_end_hp = (EXALICE_HP_SETUP_END - 100);"
         },
-        "control_sha256": "9546d41cd69c8761511b354e4ca6471f1b16a3299834b53119221a70099ef5da",
+        "control_sha256": "9c18e85d56ae15338d7c2ddb9f2216bcde4ff4033f546d78ea1d06d313c0e1ec",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106971,
-          "candidate_start": 106971,
-          "size": 111,
-          "target_sha256": "2578cc8dca2fa0f266b16376c1b385b9635447232d483ae3f75b6468c4c212fe",
-          "candidate_sha256": "57695c869bb50abd55e5591588097741fdd82d1b776613546851d7c7d88598cc",
+          "target_start": 107082,
+          "candidate_start": 107082,
+          "size": 1060,
+          "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+          "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            198,
+            161
+          ],
+          "candidate_fixups": [
+            198,
+            161
+          ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 107082,
+            "size": 1060,
+            "function_symbol": "exalice_update()",
+            "contribution_start": 106971,
+            "contribution_size": 1171,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
         },
         "omf": {
-          "sha256": "0139de5d595e4a2aefdb16588f6ea7775b0b7014f9d06470fddaffe393590eb0",
-          "dependency_timestamp_normalized_sha256": "428e498665c485e70a203e297be801b9bc8c4e7514d1f0325256a6d9fc06a517",
-          "module_name": "th05/x_phase.cpp",
+          "sha256": "6c53420752689d55c1426e352304b6b25a00fc2a3e6a129e99c587c0e86190c7",
+          "dependency_timestamp_normalized_sha256": "09a5fb75d892c525421f3dbcb2258c293a62ba08f273fae04036ca69b74853fd",
+          "module_name": "th05/x_full.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_phase.cpp",
-            "src/main/boss/exalice/phase.cpp",
-            "src/main/boss/exalice/phase.hpp",
-            "src/main/boss/generic.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
+            "th05/x_full.cpp",
+            "src/main/boss/exalice/full_context.cpp",
+            "src/main/boss/exalice/full_context.hpp",
+            "src/main/boss/exalice/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
+            "src/main/boss/exalice/later.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/laser_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/player/player.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
             "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/bomb_phase_protocol.hpp"
+            "src/main/boss/exalice/bomb_phase_protocol.hpp",
+            "src/main/boss/exalice/boss_scratch.hpp",
+            "src/main/boss/exalice/visual_phase.hpp",
+            "src/main/boss/exalice/combat_layout.hpp"
           ]
         },
         "compiler_arguments": [
@@ -42479,14 +42669,10 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_phase.cpp"
+          "th05/x_full.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-exalice-phase",
-        "main-exalice-update-full-context"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-b4ball-spawn",
@@ -70114,7 +70300,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "03dd32c61ee493b7636fa492724473030d1352dfc1818439c46a255b2fd50737",
+            "sha256": "62a34573f67909565950d3cf62b4f0b6c45a9480bd5949a66418a18e40398df4",
             "dependency_timestamp_normalized_sha256": "7d70bf78b5574fc07195de2ab58c6cd50edf99aadfef2064e8c2e5b03b61f33c",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70154,7 +70340,7 @@
             ]
           },
           {
-            "sha256": "03dd32c61ee493b7636fa492724473030d1352dfc1818439c46a255b2fd50737",
+            "sha256": "4c93b5916af3e2e21aa2a0e171df93f5481692da4090ad60b0c772c46fa666f4",
             "dependency_timestamp_normalized_sha256": "7d70bf78b5574fc07195de2ab58c6cd50edf99aadfef2064e8c2e5b03b61f33c",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70410,104 +70596,121 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "3bdfdd02de1722ecca0a4b76c350efe040138efea697edf8d10636510fb215f7",
+      "replay_receipt_sha256": "1801dba9297cfa081c41113962528b8178ace726c33bae5b41292475d7f25135",
       "compiled_negative_control": {
-        "target_start": 109483,
-        "candidate_start": 109483,
-        "size": 271,
-        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+        "target_start": 107082,
+        "candidate_start": 107082,
+        "size": 1060,
+        "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+        "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
         "raw_exact": false,
         "target_fixups": [
-          253,
-          222,
-          173,
-          73
+          198,
+          161
         ],
         "candidate_fixups": [
-          253,
-          222,
-          173,
-          73
+          198,
+          161
         ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 107082,
+          "size": 1060,
+          "function_symbol": "exalice_update()",
+          "contribution_start": 106971,
+          "contribution_size": 1171,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
       },
       "negative_control": {
-        "unit_id": "main-shinki-pattern-a",
-        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
+        "unit_id": "main-exalice-update-full-context",
+        "entry_sha256": "d76692ba38014035ecb3c2f0f28ec3ad7c879b2265e0259897baa06ac03032de",
         "mutation": {
-          "unit": "main-shinki-pattern-a",
-          "source": "src/main/boss/shinki/shinki.cpp",
-          "find": "PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY",
-          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
+          "unit": "main-exalice-update-full-context",
+          "source": "src/main/boss/exalice/full_context.cpp",
+          "find": "boss.phase_end_hp = EXALICE_HP_SETUP_END;",
+          "replace": "boss.phase_end_hp = (EXALICE_HP_SETUP_END - 100);"
         },
-        "control_sha256": "f0c735e69bde58f5af43d257af8dc7fcbaed7c84d5358c332061f6eb559e38bb",
+        "control_sha256": "9c18e85d56ae15338d7c2ddb9f2216bcde4ff4033f546d78ea1d06d313c0e1ec",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 109483,
-          "candidate_start": 109483,
-          "size": 271,
-          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+          "target_start": 107082,
+          "candidate_start": 107082,
+          "size": 1060,
+          "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+          "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
           "raw_exact": false,
           "target_fixups": [
-            253,
-            222,
-            173,
-            73
+            198,
+            161
           ],
           "candidate_fixups": [
-            253,
-            222,
-            173,
-            73
+            198,
+            161
           ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 107082,
+            "size": 1060,
+            "function_symbol": "exalice_update()",
+            "contribution_start": 106971,
+            "contribution_size": 1171,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
         },
         "omf": {
-          "sha256": "0699a3a1b248188bbefe254f483968cd7a73cb6a044bc65f6fbe8243feca14b9",
-          "dependency_timestamp_normalized_sha256": "2ad1ee86c100503403bc493257520bd12bd6c3e56b42fbbc48a548ee547eb294",
-          "module_name": "th05/boss_6.cpp",
+          "sha256": "6c53420752689d55c1426e352304b6b25a00fc2a3e6a129e99c587c0e86190c7",
+          "dependency_timestamp_normalized_sha256": "09a5fb75d892c525421f3dbcb2258c293a62ba08f273fae04036ca69b74853fd",
+          "module_name": "th05/x_full.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/boss_6.cpp",
-            "src/main/boss/shinki/shinki.cpp",
-            "src/main/boss/shinki/shinki.hpp",
-            "src/main/boss/sara/sara.hpp",
+            "th05/x_full.cpp",
+            "src/main/boss/exalice/full_context.cpp",
+            "src/main/boss/exalice/full_context.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/later.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/laser_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/player/player.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
             "src/shared/geometry.hpp",
-            "src/main/boss/shinki/scratch.hpp",
-            "src/main/boss/shinki/final_spiral_timing.hpp",
-            "src/main/boss/shinki/ball_lifecycle.hpp",
-            "src/main/boss/shinki/wing_hitboxes.hpp",
-            "src/main/boss/shinki/wing_attack_rules.hpp",
-            "src/main/boss/shinki/early_attack_rules.hpp",
-            "src/main/boss/shinki/wing_preparation_rules.hpp",
-            "src/main/boss/shinki/hp.inl",
-            "src/main/boss/shinki/wing_coordinates.inl",
-            "src/main/boss/shinki/balls_update_body.inl",
-            "src/main/boss/shinki/ball_lifecycle.hpp",
-            "src/main/boss/shinki/cheeto_walls.inl",
-            "src/main/boss/shinki/devil.inl",
-            "src/main/boss/shinki/devil_ballistics.hpp",
-            "src/main/boss/shinki/wing_hitboxes.hpp"
+            "src/main/boss/exalice/update_phases.hpp",
+            "src/main/boss/exalice/bomb_phase_protocol.hpp",
+            "src/main/boss/exalice/boss_scratch.hpp",
+            "src/main/boss/exalice/visual_phase.hpp",
+            "src/main/boss/exalice/combat_layout.hpp"
           ]
         },
         "compiler_arguments": [
@@ -70521,23 +70724,10 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/boss_6.cpp"
+          "th05/x_full.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-shinki-aimed-symmetric",
-        "main-shinki-balls-add",
-        "main-shinki-balls-update",
-        "main-shinki-blue-stacks",
-        "main-shinki-circles-spirals",
-        "main-shinki-float",
-        "main-shinki-pattern-a",
-        "main-shinki-rain-spreads",
-        "main-shinki-random-kunai",
-        "main-shinki-update-context",
-        "main-shinki-wings-purple"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-alice-update-context",
@@ -102591,8 +102781,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "25e6ae51d506cd434b79f7f5e05feaafadac8dad7ba2e2b60432977c2b5b40ee",
-            "dependency_timestamp_normalized_sha256": "1f99b84871adc7e1e549d12711e659e60dae198b4cb212e0864248949a48fa85",
+            "sha256": "bcb21aed2e0bc749cb39470c5b3b36051423476057decf23b3b1381ba1f10fb8",
+            "dependency_timestamp_normalized_sha256": "c45e972af394f7903af6f34fa317d5727ee46a7345eab1a522e61159b434bcf9",
             "module_name": "th05/bclamp.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -102605,7 +102795,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/movement_dynamics.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -102623,8 +102814,8 @@
             }
           },
           {
-            "sha256": "89f9f5871cd3493640361c5f40eac7882a9f60fd835027c69123e3d8deb217cf",
-            "dependency_timestamp_normalized_sha256": "1f99b84871adc7e1e549d12711e659e60dae198b4cb212e0864248949a48fa85",
+            "sha256": "96278d0d1b0e4ee8f016da7a93b8a783d11546d9af533d5cf538ded1564f418d",
+            "dependency_timestamp_normalized_sha256": "c45e972af394f7903af6f34fa317d5727ee46a7345eab1a522e61159b434bcf9",
             "module_name": "th05/bclamp.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -102637,7 +102828,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_defs.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/movement_dynamics.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -102656,8 +102848,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -102698,7 +102890,11 @@
           },
           {
             "path": "src/main/boss/movement_default_clamp.cpp",
-            "sha256": "39cfa3b408b8b70e586e41bbca188d9a74ad02d63ad30c1767f1155c15142f12"
+            "sha256": "ba3e99c245a915cbcbf51f3f65781b25b2d64965a626e2f1857b301d777f0d5a"
+          },
+          {
+            "path": "src/main/boss/movement_dynamics.hpp",
+            "sha256": "709af4a116a8ed7a64699c1685a26f07894dfb912a42b49f333115ec5db877ec"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -102722,7 +102918,11 @@
         },
         {
           "path": "src/main/boss/movement_default_clamp.cpp",
-          "sha256": "39cfa3b408b8b70e586e41bbca188d9a74ad02d63ad30c1767f1155c15142f12"
+          "sha256": "ba3e99c245a915cbcbf51f3f65781b25b2d64965a626e2f1857b301d777f0d5a"
+        },
+        {
+          "path": "src/main/boss/movement_dynamics.hpp",
+          "sha256": "709af4a116a8ed7a64699c1685a26f07894dfb912a42b49f333115ec5db877ec"
         },
         {
           "path": "src/shared/abi.hpp",
@@ -102735,7 +102935,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "84a3965b38ec9722d65b5876fffaaf1400e2635f3419a3849c0fa1cf9d0b96be",
+      "replay_receipt_sha256": "795defe227c1d410b1ac6bea9f91a4779ee0c5ff3d1688f6165caaecf1489263",
       "compiled_negative_control": {
         "target_start": 138758,
         "candidate_start": 138758,
@@ -102788,8 +102988,8 @@
           }
         },
         "omf": {
-          "sha256": "03e2d3c99729d62b2326177c489f0098bdf0a3d9dc3d22ca07cd81ec5f22099f",
-          "dependency_timestamp_normalized_sha256": "7a3725f5593ebcd4b3a995949b1ed64ced32e06fcadce1a7758c9314bd219021",
+          "sha256": "53c202d404c9a5371e5e0d376c30eba06f3aed3cbe9adc189ed5b29a816fcadb",
+          "dependency_timestamp_normalized_sha256": "c8668d30464dc7f6ca49bbd1ad233dbf5655508add0da2e34556362361bb26eb",
           "module_name": "th05/bclamp.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -102802,7 +103002,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
-            "C:\\TC4\\INCLUDE\\_null.h"
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/movement_dynamics.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -102833,10 +103034,7 @@
           "th05/bclamp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-boss-default-flystep-clamp-data"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-hud-shared-decimal-glyph-scratch-data",

@@ -1,6 +1,7 @@
 // Original MAIN boss random-flystep boundary initialized as four Subpixels.
 #pragma option -zCBOSS_DEFAULT_CLAMP_TEXT -zPmain_01
 #include "src/main/boss/movement.hpp"
+#include "src/main/boss/movement_dynamics.hpp"
 #pragma codeseg BOSS_DEFAULT_CLAMP_TEXT main_01
 
 // Original PC-98 gameplay coordinates, not the dynamically updated
@@ -10,7 +11,7 @@ enum BossDefaultClampPixels {
     BOSS_DEFAULT_RIGHT_PX = 352,
     BOSS_DEFAULT_TOP_PX = 24,
     BOSS_DEFAULT_BOTTOM_PX = 128,
-    BOSS_SUBPIXEL_SHIFT = 4
+    BOSS_SUBPIXEL_SHIFT = BMD_SUBPIXEL_SHIFT
 };
 
 LRTB<Subpixel, Subpixel> near boss_flystep_random_clamp = {

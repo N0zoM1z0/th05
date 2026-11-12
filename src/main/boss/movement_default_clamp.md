@@ -38,3 +38,16 @@ raw/OMF/LEDATA/MAP DATA equality, the original empty ordered MZ fixup
 stream and a genuine compiled negative mutating the top edge from
 24 to 25 pixels, which is rejected. No full cold replay or duplicate
 CODE ownership follows from this single DATA contribution.
+
+## Full movement-leaf and large-Boss consumer closure (2026-11-12)
+
+The real two-function 398-byte Boss movement source now imports the
+same compile-time Q12.4 shift protocol as this independently accepted
+eight-byte DATA owner. Both were recompiled natively with full raw
+CODE/DATA, original MZ fixups and compiled negative checks under
+`.analysis/unit-replays/gpt-web-boss-motion-clamp-closure-a/receipt.json`.
+The separate 1,060-byte EX-Alice and 959-byte Shinki controllers,
+which call the same movement interfaces in their original fight phases,
+were also selectively recompiled without source changes at
+`.analysis/unit-replays/gpt-web-boss-motion-large-callers-a/receipt.json`.
+No source bytes are double-counted. See `movement_dynamics.md`.
