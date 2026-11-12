@@ -5120,8 +5120,8 @@ function_symbol = "yumeko_pattern_laser_swords()"
 [[controls]]
 unit = "main-yumeko-laser-swords-context"
 source = "src/main/boss/yumeko/laser_swords.cpp"
-find = "boss.hp - boss.phase_end_hp < 500"
-replace = "boss.hp - boss.phase_end_hp < 501"
+find = "boss.hp - boss.phase_end_hp < YLS_NEAR_HP_GATE"
+replace = "boss.hp - boss.phase_end_hp < (YLS_NEAR_HP_GATE + 1)"
 
 [[units]]
 id = "main-alice-foreground-complete"

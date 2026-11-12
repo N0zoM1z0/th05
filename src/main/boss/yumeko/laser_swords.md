@@ -135,3 +135,43 @@ Total **new** authored C++ CODE credit is 782 bytes across two complete major
 Boss attack functions; no prefix, false updater bytes, asset data, or global
 executable completeness is counted. The full source context provides a useful
 basis for finally restoring the sword updater's twirl branch lowering.
+
+## Mixed laser/sword waveform and explicit per-rank speedup (2026-11-12)
+
+The maintained **428-byte** original laser/sword attack now has a real,
+source-visible `laser_swords_timing.hpp` protocol. The original 32-frame
+charge starts its sound at frame 16 with 7/6 gather colors; the bullet
+and laser shootout speeds remain 96 and 100 subpixels, with a 24-frame
+laser age, 28-frame grow delay, 6-pixel laser width, and charging sword
+rotation time 32. The 64-frame periodic pair fires every second frame:
+two blue shots originate 64 pixels apart, initially offset 32 pixels
+left and 16 pixels up. The same original pattern periodically adds a
+random laser from the top row and two swords with bounded random X/Y
+origins and a ±15 angular offset. No new projectile is created.
+
+After the remaining HP before the next phase gate drops **strictly
+below 500** and the original acceleration latch is still zero, the
+source keeps the genuine explosion and 20-frame minimum bullet clear.
+Laser frequency uses original easy/normal/hard/lunatic intervals
+**34/28/20/20** and the paired-volley window uses **40/48/52/48**.
+The distinct short preprocessor names avoid Borland's 31-character
+significance collision found in the Shinki Devil pattern. The source
+still uses the real existing scratch bytes at offsets 1, 12, 13, 14,
+15; it adds neither fields nor game-asset bytes.
+
+The two accepted callbacks share the *real nine-function* compiler
+context. Changing `laser_swords.cpp` thus affects both the 428-byte
+laser/sword owner and the preceding 354-byte aimed-swords owner, which
+was separately recompiled rather than skipped. Their complete source
+bytes, MAP/public boundaries, literal **original ordered relocations**
+and separate compiled semantic negatives all pass in two independent
+Borland/TLINK producers:
+
+- `.analysis/unit-replays/gpt-web-yumeko-laser-swords-rules-a/receipt.json`
+- `.analysis/unit-replays/gpt-web-yumeko-aimed-context-after-lasers-a/receipt.json`
+
+The unaccepted *natural C++* source candidate for the intervening
+283-byte `swords_update()` remains raw-inexact and earns no CODE credit.
+The already accepted real ASM counterpart stays untouched; the new
+source names do not introduce optimizer barriers or guessed opcode
+sequences. No all-game cold replay was performed.
