@@ -6147,3 +6147,25 @@ unit = "main-score-handoff-program-data"
 source = "src/main/runtime/score_handoff_names.c"
 find = "    \"maine\""
 replace = "    \"mainf\""
+
+[[units]]
+id = "main-gameover-gaiji-text-data"
+source = "src/main/runtime/gameover_gaiji_bank.c"
+module = "th05/gov_txt.c"
+segment = "_DATA"
+wrapper_options = "-zCGAMEOVER_GAIJI_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_gameover_gaiji_bank_bindings.asm"
+target_start = 138778
+size = 38
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-gameover-gaiji-text-data"
+source = "src/main/runtime/gameover_gaiji_bank.c"
+find = "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_D,"
+replace = "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_E,"

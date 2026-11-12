@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "17d78a377e93ccce3cc1b52d2ed3ba60cd3ba56e805c95aac3d838472ae2bd09",
+  "replay_receipt_sha256": "9b20bf804e94ee1836b141748282a387601c0da40192c060b447495f20bb40f1",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138816,
-    "candidate_start": 138816,
-    "size": 9,
-    "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
-    "candidate_sha256": "7b1287b4ce28584117c8655ad8c603f3e811f810e8561db4803697922f17675f",
+    "target_start": 138778,
+    "candidate_start": 138778,
+    "size": 38,
+    "target_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+    "candidate_sha256": "dec80879eb601053dc7da9b0886852f4d618d1a74e588d9ba5c6be8f267ccb67",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138816,
-      "size": 9,
-      "module": "th05/sc_endfn.c",
+      "start": 138778,
+      "size": 38,
+      "module": "th05/gov_txt.c",
       "segment": "_DATA"
     }
   },
@@ -97388,6 +97388,293 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-score-handoff-program-data"
+      ]
+    },
+    {
+      "id": "main-gameover-gaiji-text-data",
+      "entry_sha256": "9419617e6823f4a0c082ae47ec7c6eb7c3e5f9a543e335970786e12f4dd1937c",
+      "result": {
+        "id": "main-gameover-gaiji-text-data",
+        "entry_sha256": "9419617e6823f4a0c082ae47ec7c6eb7c3e5f9a543e335970786e12f4dd1937c",
+        "rounds": [
+          {
+            "target_start": 138778,
+            "candidate_start": 138778,
+            "size": 38,
+            "target_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+            "candidate_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138778,
+              "size": 38,
+              "module": "th05/gov_txt.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138778,
+            "candidate_start": 138778,
+            "size": 38,
+            "target_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+            "candidate_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138778,
+              "size": 38,
+              "module": "th05/gov_txt.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7ec2f3b361e6e8d86693fbeb5130c97dc37a1e5ab9bd37a6591e4b96f7a9c1d7",
+            "dependency_timestamp_normalized_sha256": "c769ad97f555db9a4770530fe1483d0e927f5c608d9cf5fb9f8721bbdfe3e3b8",
+            "module_name": "th05/gov_txt.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/gov_txt.c",
+              "src/main/runtime/gameover_gaiji_bank.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 38,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 38,
+                  "sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "7ec2f3b361e6e8d86693fbeb5130c97dc37a1e5ab9bd37a6591e4b96f7a9c1d7",
+            "dependency_timestamp_normalized_sha256": "c769ad97f555db9a4770530fe1483d0e927f5c608d9cf5fb9f8721bbdfe3e3b8",
+            "module_name": "th05/gov_txt.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/gov_txt.c",
+              "src/main/runtime/gameover_gaiji_bank.c",
+              "src/main/hud/overlay_data.h",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 38,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 38,
+                  "sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/gov_txt.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/gov_txt.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_gameover_gaiji_bank_bindings.asm",
+            "sha256": "3db4172e9794f0a90fba731005745e0dd485002477c30170668ceb2624c4df7e"
+          },
+          {
+            "path": "src/main/hud/overlay_data.h",
+            "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+          },
+          {
+            "path": "src/main/runtime/gameover_gaiji_bank.c",
+            "sha256": "c7bfa33c7deeb003266fdc456213286e22dca662a94afe91052e7d36bf109ac7"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_gameover_gaiji_bank_bindings.asm",
+          "sha256": "3db4172e9794f0a90fba731005745e0dd485002477c30170668ceb2624c4df7e"
+        },
+        {
+          "path": "src/main/hud/overlay_data.h",
+          "sha256": "ded4707c15d0b63233de9a21d08fd5130759bb27360026d79c4cf456c77f16d5"
+        },
+        {
+          "path": "src/main/runtime/gameover_gaiji_bank.c",
+          "sha256": "c7bfa33c7deeb003266fdc456213286e22dca662a94afe91052e7d36bf109ac7"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "9b20bf804e94ee1836b141748282a387601c0da40192c060b447495f20bb40f1",
+      "compiled_negative_control": {
+        "target_start": 138778,
+        "candidate_start": 138778,
+        "size": 38,
+        "target_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+        "candidate_sha256": "dec80879eb601053dc7da9b0886852f4d618d1a74e588d9ba5c6be8f267ccb67",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138778,
+          "size": 38,
+          "module": "th05/gov_txt.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-gameover-gaiji-text-data",
+        "entry_sha256": "9419617e6823f4a0c082ae47ec7c6eb7c3e5f9a543e335970786e12f4dd1937c",
+        "mutation": {
+          "unit": "main-gameover-gaiji-text-data",
+          "source": "src/main/runtime/gameover_gaiji_bank.c",
+          "find": "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_D,",
+          "replace": "HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_E,"
+        },
+        "control_sha256": "ee5d4e2934e6092fb6f26984b4173047a23d1f05b20ea7c9f0e135c3945f4d7e",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138778,
+          "candidate_start": 138778,
+          "size": 38,
+          "target_sha256": "c1b59b4815c4719f22d8600afd7d29ead6f9cf001f4b05881b1999c5d127eef5",
+          "candidate_sha256": "dec80879eb601053dc7da9b0886852f4d618d1a74e588d9ba5c6be8f267ccb67",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138778,
+            "size": 38,
+            "module": "th05/gov_txt.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "1bb7529933f554040032024060b78d8428a5c08038e976be965140eaf8a4334d",
+          "dependency_timestamp_normalized_sha256": "70af0a54cb0cd59002a019c2caf888d9c37669768714fe5ff6f783aef13a6da8",
+          "module_name": "th05/gov_txt.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/gov_txt.c",
+            "src/main/runtime/gameover_gaiji_bank.c",
+            "src/main/hud/overlay_data.h",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 38,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 38,
+                "sha256": "dec80879eb601053dc7da9b0886852f4d618d1a74e588d9ba5c6be8f267ccb67"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/gov_txt.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-gameover-gaiji-text-data"
       ]
     }
   ]
