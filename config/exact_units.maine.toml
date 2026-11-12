@@ -2206,3 +2206,25 @@ unit = "maine-registration-page-and-cursor-initial-data"
 source = "src/maine/registration/initial_cursor_state.cpp"
 find = "entered_name_cursor = 0;"
 replace = "entered_name_cursor = 1;"
+
+[[units]]
+id = "maine-allcast-line-counters-initial-data"
+source = "src/maine/allcast/line_counters_initial.cpp"
+module = "th05/aclinei.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_allcast_line_counters_bindings.asm"
+target_start = 0x109fa
+size = 4
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-allcast-line-counters-initial-data"
+source = "src/maine/allcast/line_counters_initial.cpp"
+find = "line_id_total = 0;"
+replace = "line_id_total = 1;"
