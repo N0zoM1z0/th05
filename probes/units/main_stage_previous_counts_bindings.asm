@@ -16,7 +16,7 @@ org 0b760h
 STAGE_PREVIOUS_COUNTS_MAIN03 ends
 main_03 group STAGE_PREVIOUS_COUNTS_MAIN03
 _DATA segment word public 'DATA' use16
-org 018e4h
+org 01a62h
 _DATA ends
 _BSS segment word public 'BSS' use16
 _BSS ends

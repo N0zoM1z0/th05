@@ -6551,7 +6551,7 @@ module = "th05/prevbon.c"
 segment = "_DATA"
 wrapper_options = "-zCSTAGE_PREVIOUS_COUNTS_TEXT -zPmain_01"
 bindings_source = "probes/units/main_stage_previous_counts_bindings.asm"
-target_start = 0x222b4
+target_start = 0x22432
 size = 2
 functions = 0
 origin = "compiler-generated-c-semantic-data"
@@ -6587,3 +6587,25 @@ unit = "main-stage2-transition-particle-and-palette-data"
 source = "src/main/stage/stage2_transition_counters.c"
 find = "stage2_tone_offset = 0;"
 replace = "stage2_tone_offset = 1;"
+
+[[units]]
+id = "main-boss-big-explosion-frame-data"
+source = "src/main/boss/explosion_frame.c"
+module = "th05/exbframe.c"
+segment = "_DATA"
+wrapper_options = "-zCBOSS_EXPLOSION_FRAME_TEXT -zPmain_01"
+bindings_source = "probes/units/main_boss_explosion_frame_bindings.asm"
+target_start = 0x222b4
+size = 2
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-boss-big-explosion-frame-data"
+source = "src/main/boss/explosion_frame.c"
+find = "explosion_big_frame = 0;"
+replace = "explosion_big_frame = 1;"

@@ -1,61 +1,51 @@
-# MAIN stage-clear No Miss/No Bomb previous-resource counters
+# MAIN actual Stage Clear/All Clear previous Miss/Bomb counters
 
-The decoded original MAIN `[222B4,222B6)` is one complete two-byte C
-initialized-DATA contribution. The native original assembly lists two
-consecutive byte globals (`byte_22274` and `byte_22275`) following the
-explosion state and an alignment byte; their use identifies them as the
-*previous stage* Miss and Bomb counters. The real accepted
-`stage_clear_bonus()` (561 bytes) and `stage_allclear_bonus()` (579 bytes)
-each compare `resident->miss_count` against the first byte and
-`resident->bombs_used` against the second, then store the current
-resident counters for the next stage. A No Bomb reward is granted only
-if the current Bomb count matches **and** there has also been No Miss.
-These are actual mutable stage-scoring latches, not a CP932 title image,
-static score bonus string, or BSS-only temporary.
+The physically correct decoded MAIN interval `[22432,22434)` is one
+complete two-byte near-C initialized-DATA contribution. Its original
+DGROUP offsets are **`209D:1A62` and `209D:1A63`**, matching the true
+large native `stage_bonus_full_bindings.asm` and the real code addresses
+used by the complete 561-byte `stage_clear_bonus()` and 579-byte
+`stage_allclear_bonus()` source owners. These are two independently
+addressable mutable `unsigned char` C publics:
+`bonus_previous_miss_count` and `bonus_previous_bomb_count`, both
+initialized to zero. After reading the live resident Miss/Bomb totals,
+each original full function compares those totals against its two
+previous-stage snapshots, then writes back the current totals before
+rendering the No Miss/No Bomb lines. The original `no_bomb` bonus
+requires `no_miss` as well as an unchanged Bomb count.
 
-The maintained C names `bonus_previous_miss_count` and
-`bonus_previous_bomb_count` are those already used by the separately
-accepted source of both complete bonus renderers. Their 1-byte widths
-and native zero initializers exactly reproduce the original two-byte
-run, without merging the preceding uncredited zero `[222B3,222B4)`
-which is an original alignment byte, or the succeeding near-pointer
-array starting at `[222B6,222C6)`.
+## Correcting an earlier ambiguous zero-byte ownership claim
 
-The binder places the natural near-C data at DGROUP `209D:18E4`,
-providing only the outside native MAIN CODE frames and preceding DATA
-prefix—not the candidate bytes, source functions or any fixups. Two
-independent pinned Borland C producer rounds match the original raw
-bytes, OMF/LEDATA and MAP DATA scope, with the genuine empty ordered
-MZ fixups. The actual compiled mutation changes only the previous
-Bomb count from zero to one and is rejected:
-`.analysis/unit-replays/gpt-web-stage-bonus-previous-counts-a/receipt.json`.
+An earlier accepted initializer used the right two C symbols and the
+correct **two zero bytes**, but placed its bounded isolated DATA at
+`[222B4,222B6)` (DGROUP `18E4`). A raw-only test naturally passed:
+zero-initialized C globals cannot distinguish two wrong original
+addresses with identical bytes. Checking the actual independently
+accepted source consumer's native CODE binder shows that
+**`209D:18E4` is `_explosion_big_frame`**, a signed 16-bit large Boss
+explosion frame. The original Stage Clear consumers instead reference
+**`209D:1A62/1A63`**, decoded `[22432,22434)`.
 
-No CODE is recredited and no full MAIN cold replay is executed.
+The original accepted stage-bonus initializer entry has therefore been
+**moved rather than duplicated**: its unit ID remains
+`main-stage-bonus-previous-resource-counters-data`, the manifest's
+`target_start` is now `0x22432`, and its symbol-only binder reserves
+exactly the true `1A62h` outside DATA prefix. The old interval is
+separately owned by the genuine `_explosion_big_frame` C initializer,
+with its own actual consumer and negative control. See
+`src/main/boss/explosion_frame.md`.
 
-## Actual Stage Clear and All Clear C/C++ consumer closure (2026-11-12)
+## Source-current native evidence
 
-The complete 561-byte `stage_clear_bonus()` and 579-byte
-`stage_allclear_bonus()` functions now share the exact C public
-`bonus_previous_resources.h` with their independently source-defined
-near-DATA counter pair. Each function reads the *previous* miss and
-Bomb counts, compares the real resident fields, and updates both
-counters **before** rendering its No Miss/No Bomb lines. No extra
-statistic is inferred or added; the genuine `no_bomb` predicate still
-depends on `no_miss`, and the existing far HUD APIs and score arithmetic
-remain in their original call order.
-
-The complete two-function native C++ contribution was recompiled with
-the true adjacent helper context, preserving all 561+579 original raw
-CODE bytes, the 11+11 literally ordered MZ fixups, actual MAP/OMF
-boundaries and checked, uncredited relaxed-call bytes. The original
-compiled stage-scaling negative was rejected. The C two-byte public
-initializer was *separately* recompiled with its own zero-to-one Bomb
-counter mutation rejected:
-
-- `.analysis/unit-replays/gpt-web-stage-bonus-c-consumers-a/receipt.json`
-- `.analysis/unit-replays/gpt-web-stage-bonus-c-public-data-a/receipt.json`
-
-This closes a real inter-translation-unit interface; all 1,140 CODE
-extent bytes and the two initialized DATA bytes were already accepted
-as distinct owners, so they receive no second authored-byte credit.
-No full MAIN or other executable cold replay was performed.
+The moved previous-resource source was recompiled by two independent
+pinned Borland C/TLINK producers against the **correct** live MAIN
+coordinate. All two real initialized bytes, the OMF/LEDATA/MAP extent,
+empty original ordered MZ fixups, and the compiled Bomb seed 0→1
+negative pass:
+`.analysis/unit-replays/gpt-web-rehome-bonus-original-address-a/receipt.json`.
+The earlier receipts with target `0x222B4` are retained as historical
+byte matches but are **not** current acceptance proof of these two
+counters. The full Stage Clear and All Clear CODE were already separately
+native-source accepted; their correct DS addresses were never changed.
+No target bytes were falsified, no original resource asset or neighboring
+state was claimed, and no whole MAIN cold replay was performed.
