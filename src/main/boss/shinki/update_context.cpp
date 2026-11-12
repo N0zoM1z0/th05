@@ -8,6 +8,7 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
+#include "src/main/boss/shinki/wing_attack_rules.hpp"
 #include "src/main/boss/shinki/wing_coordinates.inl"
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
@@ -147,7 +148,9 @@ void pascal shinki_update(void)
 		SHINKI_MODE_PATTERN = 1,
 		SHINKI_FIRST_SHARED_WAVE = 0,
 		SHINKI_WAVE_PATTERN_LIMIT = 16,
-		SHINKI_WING_TIMEOUT_FRAMES = 3000,
+		// Keep this >255 enum value: Borland otherwise narrows the entire
+		// enum and changes the parity-index AND from DX to DL.
+		SHINKI_WING_TIMEOUT_FRAMES = SHW_WING_PHASE_TIMEOUT_FRAMES,
 		SHINKI_ALTERNATING_PATTERN_MASK = 1,
 		// Palette progression follows the wing phases into the red Devil phase.
 		SHINKI_WING_PALETTE_BLUE_LIMIT = 0x80,
@@ -313,7 +316,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			if(boss_hittest_shots()) {
 				boss_score_bonus(SHINKI_WING_PATTERN_SCORE);
 			} else {
@@ -322,7 +325,7 @@ void pascal shinki_update(void)
 		}
 
 		// Next phase
-		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
+		if(phase_relative == SHW_WING_FIRST_PATTERN_INDEX) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_7_END);
 			wing_pattern = pattern_cheetos_within_spread_walls;
 			boss.phase_frame = 0; // redundant
@@ -368,7 +371,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			phase_done = boss_hittest_shots();
 			// Reduce per-frame damage to 1 HP during bombs
 			if(bombing) {
@@ -423,7 +426,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_FINAL_CIRCLES:
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			// Boss defeated?
 			if(!boss_hittest_shots()) {
 				break;

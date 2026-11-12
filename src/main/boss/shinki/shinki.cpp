@@ -9,6 +9,7 @@
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
 #include "src/main/boss/shinki/ball_lifecycle.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
+#include "src/main/boss/shinki/wing_attack_rules.hpp"
 #include "src/main/boss/shinki/wing_preparation_rules.hpp"
 #pragma codeseg B6_BALLS_TEXT main_03
 
@@ -297,21 +298,21 @@ bool near pattern_wing_preparation(void)
 
 void near pattern_random_rain_and_spreads_from_wings(void)
 {
-	if(boss.phase_frame <= 128) {
+	if(boss.phase_frame <= SHW_RAIN_FIRST_ATTACK_FRAME) {
 		return;
 	}
-	if((boss.phase_frame % 8) == 0) {
+	if((boss.phase_frame % SHW_RAIN_BALL_INTERVAL) == 0) {
 		b6ball_template.origin.x.v = randring2_next16_mod(to_sp(PLAYFIELD_W));
 		b6ball_template.origin.y.v = shinki_rand_speed16(
-			((2 / 23.0f) * PLAYFIELD_H), ((6 / 23.0f) * PLAYFIELD_H)
+			(SHW_RAIN_MIN_Y_FRACTION * PLAYFIELD_H), (SHW_RAIN_MAX_Y_FRACTION * PLAYFIELD_H)
 		);
-		b6ball_template.angle = 0x40;
-		b6ball_template.speed.v = sara_rand_speed(3.0f, 5.0f);
+		b6ball_template.angle = SHW_RAIN_DOWN_ANGLE;
+		b6ball_template.speed.v = sara_rand_speed(SHW_RAIN_SPEED_MIN_PX, SHW_RAIN_SPEED_MAX_PX);
 		b6ball_template.patnum_tiny = PAT_B6BALL_BLUE_1;
 		b6balls_add();
-		snd_se_play(3);
+		snd_se_play(SHW_RAIN_VOLLEY_SOUND);
 	}
-	if((boss.phase_frame % 24) == 0) {
+	if((boss.phase_frame % SHW_RAIN_SPREAD_INTERVAL) == 0) {
 		bullet_template.origin.x.v = shinki_wing_random_x();
 		bullet_template.origin.y.v = (
 			boss.pos.cur.y.v - randring2_next16_mod(to_sp(BOSS_H))
@@ -319,12 +320,12 @@ void near pattern_random_rain_and_spreads_from_wings(void)
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SPREAD_AIMED;
-		bullet_template.spread = 5;
+		bullet_template.spread = SHW_RAIN_SPREAD_COUNT;
 		bullet_template.spread_angle_delta = select_for_rank(
-			0x10, 0x0C, 0x0A, 0x08
+			SHW_RAIN_ANGLE_EASY, SHW_RAIN_ANGLE_NORMAL, SHW_RAIN_ANGLE_HARD, SHW_RAIN_ANGLE_LUNATIC
 		);
-		bullet_template.angle = 0x00;
-		bullet_template.speed.v = sara_to_sp8(3.0f);
+		bullet_template.angle = 0;
+		bullet_template.speed.v = sara_to_sp8(SHW_RAIN_SPREAD_SPEED_PX);
 		bullet_template_tune();
 		bullets_add_regular();
 	}
@@ -334,72 +335,72 @@ void near pattern_random_rain_and_spreads_from_wings(void)
 
 bool near pattern_wings_to_purple(void)
 {
-	if(boss.phase_frame < 160) {
+	if(boss.phase_frame < SHW_PURPLE_HOLD_FRAMES) {
 		return false;
-	} else if(boss.phase_frame < 192) {
-		if(boss.phase_frame == 128) {
-			snd_se_play(8);
+	} else if(boss.phase_frame < SHW_PURPLE_OSCILLATE_UNTIL) {
+		if(boss.phase_frame == SHW_PURPLE_UNREACHABLE_CHARGE_FRAME) {
+			snd_se_play(SHW_PURPLE_UNREACHABLE_CHARGE_SE);
 		}
 		if(boss.phase_frame & 1) {
-			boss.pos.cur.y.v += to_sp(2.0f);
+			boss.pos.cur.y.v += to_sp(SHW_PURPLE_OSCILLATE_PX);
 		} else {
-			boss.pos.cur.y.v -= to_sp(2.0f);
+			boss.pos.cur.y.v -= to_sp(SHW_PURPLE_OSCILLATE_PX);
 		}
-	} else if(boss.phase_frame == 192) {
+	} else if(boss.phase_frame == SHW_PURPLE_SPAWN_FRAME) {
 		b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
-		for(int i = 0; i < 16; i++) {
+		for(int i = 0; i < SHW_PURPLE_SPAWN_COUNT; i++) {
 			b6ball_template.origin.x.v = shinki_wing_random_x();
 			b6ball_template.origin.y.v = shinki_wing_random_y();
-			b6ball_template.angle = randring2_next8_mod_ge_lt(0x20, 0x60);
-			b6ball_template.speed.v = sara_rand_speed(2.0f, 6.0f);
+			b6ball_template.angle = randring2_next8_mod_ge_lt(SHW_PURPLE_SPAWN_ANGLE_MIN, SHW_PURPLE_SPAWN_ANGLE_END);
+			b6ball_template.speed.v = sara_rand_speed(SHW_PURPLE_SPAWN_SPEED_MIN, SHW_PURPLE_SPAWN_SPEED_MAX);
 			b6balls_add();
 		}
 		boss.sprite = PAT_SHINKI_WINGS_PURPLE;
-		snd_se_play(15);
-		playfield_shake_anim_time = 8;
+		snd_se_play(SHW_PURPLE_TRANSITION_SE);
+		playfield_shake_anim_time = SHW_PURPLE_SCREEN_SHAKE_FRAMES;
 	}
-	return (boss.phase_frame == 200);
+	return (boss.phase_frame == SHW_PURPLE_FINISH_FRAME);
 }
 
 void near pattern_aimed_b6balls_and_symmetric_spreads(void)
 {
 	#define b6ball_interval boss_statebyte[15]
 
-	if(boss.phase_frame <= 128) {
+	if(boss.phase_frame <= SHW_AIMED_FIRST_ATTACK_FRAME) {
 		return;
 	}
-	if(boss.phase_frame == 129) {
-		b6ball_interval = select_for_rank(96, 32, 28, 24);
+	if(boss.phase_frame == SHW_AIMED_INIT_FRAME) {
+		b6ball_interval = select_for_rank(SHW_AIMED_INTERVAL_EASY, SHW_AIMED_INTERVAL_NORMAL, SHW_AIMED_INTERVAL_HARD, SHW_AIMED_INTERVAL_LUNATIC);
 	}
 
-	int spread_cycle = (boss.phase_frame % (0x40 * 2));
+	int spread_cycle = (boss.phase_frame % SHW_AIMED_SPREAD_PERIOD);
 
 	if((boss.phase_frame % b6ball_interval) == 0) {
 		b6ball_template.angle = player_angle_from(b6ball_template.origin.x, b6ball_template.origin.y);
-		b6ball_template.speed.v = sara_to_sp8(4.0f);
+		b6ball_template.speed.v = sara_to_sp8(SHW_AIMED_BALL_SPEED_PX);
 		b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
 		b6balls_add();
 	}
-	if((boss.phase_frame % 4) == 0) {
+	if((boss.phase_frame % SHW_AIMED_SPREAD_INTERVAL) == 0) {
 		bullet_template.origin.x.v -= to_sp((SHINKI_WING_W / 2));
 		bullet_template.group = BG_SPREAD;
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
-		sara_set_spread(3, 0x02);
+		sara_set_spread(SHW_AIMED_SPREAD_COUNT, SHW_AIMED_SPREAD_DELTA);
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
-		bullet_template.speed.v = sara_to_sp8(2.5f);
+		bullet_template.speed.v = sara_to_sp8(SHW_AIMED_SPREAD_SPEED_PX);
 		bullet_template.patnum = PAT_BULLET16_V_RED;
-		if(spread_cycle < 0x40) {
-			bullet_template.angle = (spread_cycle * 3);
+		if(spread_cycle < SHW_AIMED_SPREAD_HALF_CYCLE) {
+			bullet_template.angle = (spread_cycle * SHW_AIMED_SPREAD_ANGLE_MULTIPLIER);
 		} else {
-			bullet_template.angle = (0x40 - (spread_cycle * 3));
+			bullet_template.angle = (SHW_AIMED_SPREAD_HALF_CYCLE - (spread_cycle * SHW_AIMED_SPREAD_ANGLE_MULTIPLIER));
 		}
 		bullets_add_special();
 
-		bullet_template.angle = (0x80 - bullet_template.angle);
+		bullet_template.angle = (SHW_AIMED_MIRROR_ANGLE - bullet_template.angle);
 		bullet_template.origin.x.v += to_sp(SHINKI_WING_W);
 		bullets_add_special();
 
-		snd_se_play(15);
+		snd_se_play(SHW_AIMED_SPREAD_SOUND);
 	}
 
 	#undef b6ball_interval
@@ -542,7 +543,9 @@ void pascal shinki_update(void)
 		SHINKI_MODE_PATTERN = 1,
 		SHINKI_FIRST_SHARED_WAVE = 0,
 		SHINKI_WAVE_PATTERN_LIMIT = 16,
-		SHINKI_WING_TIMEOUT_FRAMES = 3000,
+		// Keep this >255 enum value: Borland otherwise narrows the entire
+		// enum and changes the parity-index AND from DX to DL.
+		SHINKI_WING_TIMEOUT_FRAMES = SHW_WING_PHASE_TIMEOUT_FRAMES,
 		SHINKI_ALTERNATING_PATTERN_MASK = 1,
 		// Palette progression follows the wing phases into the red Devil phase.
 		SHINKI_WING_PALETTE_BLUE_LIMIT = 0x80,
@@ -708,7 +711,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			if(boss_hittest_shots()) {
 				boss_score_bonus(SHINKI_WING_PATTERN_SCORE);
 			} else {
@@ -717,7 +720,7 @@ void pascal shinki_update(void)
 		}
 
 		// Next phase
-		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
+		if(phase_relative == SHW_WING_FIRST_PATTERN_INDEX) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_7_END);
 			wing_pattern = pattern_cheetos_within_spread_walls;
 			boss.phase_frame = 0; // redundant
@@ -763,7 +766,7 @@ void pascal shinki_update(void)
 		wing_pattern();
 
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			phase_done = boss_hittest_shots();
 			// Reduce per-frame damage to 1 HP during bombs
 			if(bombing) {
@@ -818,7 +821,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_FINAL_CIRCLES:
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
-		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
+		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			// Boss defeated?
 			if(!boss_hittest_shots()) {
 				break;

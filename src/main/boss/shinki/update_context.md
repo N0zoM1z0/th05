@@ -241,3 +241,27 @@ was discovered and repaired by shorter distinct names. The native
 fixups and compiled semantic negative:
 `.analysis/unit-replays/gpt-web-shinki-devil-ballistics-full-c/receipt.json`.
 No new already-owned CODE credit is added.
+
+## Late-wing spread/transition controller and native enum width (2026-11-12)
+
+The 959-byte complete Shinki update now references the same
+`wing_attack_rules.hpp` as the separately accepted late-wing rain,
+purple transformation and aimed-spread attacks. Its 3,000-frame timeout
+for both shared wing waves and the final circle wave is a real local
+16-bit enum member whose *value* is defined by the shared attack
+protocol. The originally stored loser/wave selector state, per-phase
+HP boundaries, palette ramps, and all actual calls remain unchanged.
+
+The one-producer diagnostic with the 3,000-valued member removed was
+959 bytes with four correct relocations but had five different bytes
+in the early wave's rank-parity index, caused by Borland choosing
+an eight-bit enum and reordering the DX mask operation. Keeping the
+natural larger enumerator (no fake variables or instructions) restores
+the original 16-bit expression. The complete 11-unit affected Shinki
+batch passes with two real native producers, full source bytes and
+meaningful negative rejected:
+`.analysis/unit-replays/gpt-web-shinki-wing-attack-cohort-c/receipt.json`.
+The independent `shinki.cpp` updater and actual `update_context.cpp`
+updater still have the same function body, apart from the standalone
+file's trailing non-executable separator comment. No new CODE credit
+is created for already accepted bytes.
