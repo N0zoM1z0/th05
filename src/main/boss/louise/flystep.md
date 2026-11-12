@@ -56,3 +56,30 @@ original ordered relocation at relative34, with two independent fresh
 producers and a rejected336→335 right-bound control. The actual Pascal
 speed/duration interface and return in AL are retained; no table, padding,
 DATA or BSS receive credit, and previously accepted headers remain unchanged.
+
+## Exact reflecting rectangle semantics (2026-11-12)
+
+The complete 122-byte near-Pascal Louise movement leaf now explicitly
+names its observed inclusive collision rectangle:
+`X ∈ [48,336]`, `Y ∈ [48,96]` pixels, with the first-frame random
+angle and signed velocity seed at phase frame 1. The bounds are distinct
+X/Y fields even where the numeric left and top limits both happen to be
+48. The original `<=`/`>=` comparisons are unchanged, so an entity
+*on* an edge reverses only that coordinate's velocity. The velocity is
+still computed by the actual far Pascal `vector2()` provider and
+updated each frame, and completion still returns true at the caller's
+passed signed `end_frame` threshold.
+
+The new `flystep_bounds.hpp` introduces only compile-time names: there
+is no extra state, inline assembly, helper call, or changed animation
+range. The existing accepted Louise 582-byte Boss controller invokes
+this leaf at four distinct speeds and durations, and that caller is
+unchanged. The single affected leaf was recompiled by two independent
+native Borland producers. Both match all **122 original bytes**, the
+actual far vector call relocation and complete MAP/OMF function boundary.
+The updated compiled right-edge mutation 336→335 is rejected. The
+focused receipt is
+`.analysis/unit-replays/gpt-web-louise-flystep-bounds-a/receipt.json`.
+This refines already accepted CODE rather than claiming a second 122-byte
+ownership; no whole-Boss cold replay or synthetic register manipulation
+was needed.

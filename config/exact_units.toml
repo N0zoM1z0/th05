@@ -1915,8 +1915,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-louise-flystep"
 source = "src/main/boss/louise/flystep.cpp"
-find = "boss.pos.cur.x.v >= to_sp(336)"
-replace = "boss.pos.cur.x.v >= to_sp(335)"
+find = "boss.pos.cur.x.v >= to_sp(LOUISE_BOUNCE_RIGHT_PX)"
+replace = "boss.pos.cur.x.v >= to_sp(LOUISE_BOUNCE_RIGHT_PX - 1)"
 
 [[units]]
 id = "main-alice-final-spread"

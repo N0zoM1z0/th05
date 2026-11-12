@@ -2,36 +2,24 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "aefe9a2bf4f059de9e574d745e66301aafff110f3e4b4c6c92adb0a4ea9a1e0b",
+  "replay_receipt_sha256": "7cd0716eac04dd62dd4a83e9026bf8b90ee95c72d5573f61671e9489c5feb77d",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 107082,
-    "candidate_start": 107082,
-    "size": 1060,
-    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
-    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
+    "target_start": 121022,
+    "candidate_start": 121022,
+    "size": 122,
+    "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
+    "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
     "raw_exact": false,
     "target_fixups": [
-      198,
-      161
+      34
     ],
     "candidate_fixups": [
-      198,
-      161
+      34
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 107082,
-      "size": 1060,
-      "function_symbol": "exalice_update()",
-      "contribution_start": 106971,
-      "contribution_size": 1171,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -29377,8 +29365,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "030ca03241820fd2079fcc5120093c0bcbfecfb8fedf37365b411f6f769361fa",
-            "dependency_timestamp_normalized_sha256": "5f6b1ee07298f8615a287615f296ab9fdeb8e2a8d44c4e81a9ab386e3ed4ea28",
+            "sha256": "564c8edcc9f7b9871bdf3ee869e651a61ba38a97f0cf01b4902656699aeb3c7f",
+            "dependency_timestamp_normalized_sha256": "f3e689320baa688ecc586833df709e23442268fd356dcfbc308855b097ab41c9",
             "module_name": "th05/louisef.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -29409,12 +29397,13 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/stage/setup.hpp",
               "src/main/hud/resident.hpp",
-              "src/main/bullet/template.hpp"
+              "src/main/bullet/template.hpp",
+              "src/main/boss/louise/flystep_bounds.hpp"
             ]
           },
           {
-            "sha256": "b04a064960190940882ed35421dbe6df71795eaf341c1c8cf2a53e774c2c08c3",
-            "dependency_timestamp_normalized_sha256": "5f6b1ee07298f8615a287615f296ab9fdeb8e2a8d44c4e81a9ab386e3ed4ea28",
+            "sha256": "fdf7d4087664047068187c3e51a7e5a57749f5dc014a5a21a5cf59f12b84a205",
+            "dependency_timestamp_normalized_sha256": "f3e689320baa688ecc586833df709e23442268fd356dcfbc308855b097ab41c9",
             "module_name": "th05/louisef.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -29445,13 +29434,14 @@
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/stage/setup.hpp",
               "src/main/hud/resident.hpp",
-              "src/main/bullet/template.hpp"
+              "src/main/bullet/template.hpp",
+              "src/main/boss/louise/flystep_bounds.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-2/a/source",
-          "group-2/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -29492,11 +29482,15 @@
           },
           {
             "path": "src/main/boss/louise/flystep.cpp",
-            "sha256": "077b238fb67ccfb4e924e79e231e711e70f64770775828bf3a03365a97391df3"
+            "sha256": "9dd04e643a4f2e37d6e9c9c460a1a625ebd9d5bd7dc472a39e6c2703b41acf09"
           },
           {
             "path": "src/main/boss/louise/flystep.hpp",
             "sha256": "f3260445ea675cb7fd889619aa17032a9ee48a3d295f5ac65955d69c907f307c"
+          },
+          {
+            "path": "src/main/boss/louise/flystep_bounds.hpp",
+            "sha256": "1e9c1bec6326195d70430db7130a201a0ef653462edf12925faf7dd93170620a"
           },
           {
             "path": "src/main/boss/louise/later.hpp",
@@ -29556,11 +29550,15 @@
         },
         {
           "path": "src/main/boss/louise/flystep.cpp",
-          "sha256": "077b238fb67ccfb4e924e79e231e711e70f64770775828bf3a03365a97391df3"
+          "sha256": "9dd04e643a4f2e37d6e9c9c460a1a625ebd9d5bd7dc472a39e6c2703b41acf09"
         },
         {
           "path": "src/main/boss/louise/flystep.hpp",
           "sha256": "f3260445ea675cb7fd889619aa17032a9ee48a3d295f5ac65955d69c907f307c"
+        },
+        {
+          "path": "src/main/boss/louise/flystep_bounds.hpp",
+          "sha256": "1e9c1bec6326195d70430db7130a201a0ef653462edf12925faf7dd93170620a"
         },
         {
           "path": "src/main/boss/louise/later.hpp",
@@ -29609,73 +29607,64 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8d330c58c37db3b24af206ac3ad924a8ba222cc475ce561f2384cf3ecea0a620",
+      "replay_receipt_sha256": "7cd0716eac04dd62dd4a83e9026bf8b90ee95c72d5573f61671e9489c5feb77d",
       "compiled_negative_control": {
-        "target_start": 124418,
-        "candidate_start": 124418,
-        "size": 354,
-        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+        "target_start": 121022,
+        "candidate_start": 121022,
+        "size": 122,
+        "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
+        "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
         "raw_exact": false,
         "target_fixups": [
-          350,
-          235,
-          219,
-          133
+          34
         ],
         "candidate_fixups": [
-          350,
-          235,
-          219,
-          133
+          34
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-puppet-beam",
-        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
+        "unit_id": "main-louise-flystep",
+        "entry_sha256": "a69ccf496499a29c9045cd3a5103132315c149474dca07637c73719ee39ea16d",
         "mutation": {
-          "unit": "main-alice-puppet-beam",
-          "source": "src/main/boss/alice/beam.cpp",
-          "find": "shot_hitbox_radius.x.v = to_sp(56);",
-          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
+          "unit": "main-louise-flystep",
+          "source": "src/main/boss/louise/flystep.cpp",
+          "find": "boss.pos.cur.x.v >= to_sp(LOUISE_BOUNCE_RIGHT_PX)",
+          "replace": "boss.pos.cur.x.v >= to_sp(LOUISE_BOUNCE_RIGHT_PX - 1)"
         },
-        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
+        "control_sha256": "1a1d56208b37824a219110095814c10e19636ddd16f59c09efab00d02643b5d2",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 124418,
-          "candidate_start": 124418,
-          "size": 354,
-          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+          "target_start": 121022,
+          "candidate_start": 121022,
+          "size": 122,
+          "target_sha256": "e4e125f047620e451d13ee1c088a87a59d468920b7f499a37c6f9d4b9d10ca1c",
+          "candidate_sha256": "e208b5b5ae1f1c9e41775aec7a6cf7cc956166f9026833b4e8fb03aa7622bab0",
           "raw_exact": false,
           "target_fixups": [
-            350,
-            235,
-            219,
-            133
+            34
           ],
           "candidate_fixups": [
-            350,
-            235,
-            219,
-            133
+            34
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "83e0d233390ab8d21ab2b6264b410b7113c5478b5c30826cc58f3e3f5fda36d5",
-          "dependency_timestamp_normalized_sha256": "55232729e6690a23755f19caaa952ce51c90057d3e2d4ff09476935b7153807e",
-          "module_name": "th05/a_beam.cpp",
+          "sha256": "5a73e6c6c49875cccf5d8215b76a1a587a6e74f7bc7beaf4838f3fe02c8c29a9",
+          "dependency_timestamp_normalized_sha256": "e8de9e8183cb822b1129870d8ca688a46fd9ab3253df63ae112a0bb0a70fa948",
+          "module_name": "th05/louisef.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_beam.cpp",
-            "src/main/boss/alice/beam.cpp",
-            "src/main/boss/alice/beam.hpp",
+            "th05/louisef.cpp",
+            "src/main/boss/louise/flystep.cpp",
+            "src/main/boss/louise/flystep.hpp",
+            "src/main/boss/louise/update.hpp",
+            "src/main/boss/louise/later.hpp",
+            "src/main/boss/louise/patterns.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
@@ -29683,12 +29672,20 @@
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
             "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/bullet/laser.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/alice/beam_phase.hpp"
+            "src/main/boss/generic.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/stage/setup.hpp",
+            "src/main/hud/resident.hpp",
+            "src/main/bullet/template.hpp",
+            "src/main/boss/louise/flystep_bounds.hpp"
           ]
         },
         "compiler_arguments": [
@@ -29702,18 +29699,12 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_beam.cpp"
+          "th05/louisef.cpp"
         ]
       },
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
-        "main-alice-foreground-complete",
-        "main-alice-puppet-beam",
-        "main-alice-puppet-motion",
-        "main-alice-puppets-render",
-        "main-alice-update-context",
-        "main-louise-flystep",
-        "main-louise-update"
+        "main-louise-flystep"
       ]
     },
     {
