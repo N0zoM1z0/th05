@@ -16,10 +16,11 @@ void near alice_pattern_paired_stacks(void);
 void near alice_pattern_rotating_ring(void);
 #pragma codeseg ALICE_CALLBACK_TABLE_TEXT main_03
 
-extern const AlicePuppetPattern alice_puppet_choices[4];
+// The same near callback object consumed by puppets_update() via AliceMotionPattern.
+extern AlicePuppetPattern alice_puppet_pattern_table[4];
 extern AlicePattern alice_pattern_table[4][3];
 typedef char alice_puppet_callback_word[(sizeof(AlicePuppetPattern) == 2) ? 1 : -1];
 typedef char alice_wave_callback_word[(sizeof(AlicePattern) == 2) ? 1 : -1];
-typedef char alice_puppet_choices_size[(sizeof(alice_puppet_choices) == 8) ? 1 : -1];
+typedef char alice_puppet_choices_size[(sizeof(alice_puppet_pattern_table) == 8) ? 1 : -1];
 typedef char alice_wave_table_size[(sizeof(alice_pattern_table) == 24) ? 1 : -1];
 #endif

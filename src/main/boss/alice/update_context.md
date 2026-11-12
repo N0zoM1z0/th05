@@ -53,3 +53,43 @@ prefix was already accepted elsewhere. Old failed receipts and every older
 accepted source/header/record stay unchanged. Tool execution probes and old
 objects were reused after dependency identity checks. No initialized DATA,
 ASM, packed-container or whole-game equality is claimed.
+
+## Canonical puppet callback owner and exact fifteen-phase choreography (2026-11-12)
+
+The standalone and real-context Alice updater now share the same
+`puppet_choreography.hpp` names for the two puppets' entrance, charge/beam,
+post-beam and final-ring destinations. Both start active in sprite 190,
+with a 256-pixel entrance radius, opposite original angles `0x60`/`0x20`
+and a genuine offscreen X coordinate of -999; the second state used during
+final spread is the original puppet defeat-animation flag 2. The entrance
+places the Puppets at (128,128) and (256,128) for their paired attacks;
+after the beam they move to (320,96)/(64,96), and the ring-fight
+formations target (64,128)/(320,128). The Boss approach remains (192,64).
+These locations are ordinary gameplay destinations, not dummy compiler
+state or target-byte copies.
+
+The same source names the setup's 64-pixel gather radius/two-step angle,
+24-pattern ready seed, bullet origin's -8 pixel offset, real entrance
+sound 13, and final defeat bonus 10. No branch directions, original
+callbacks, return semantics, HP thresholds or timers were rearranged.
+The accepted `update_context.cpp` and unaccepted standalone mirror retain
+identical full updater function bodies.
+
+The independently accepted four-entry puppet initializer is now exported
+under the **existing** `alice_puppet_pattern_table` symbol (as declared in
+`puppet_motion.hpp`), rather than an isolated private symbol that the
+original 484-byte `puppets_update()` could not reference. Its four two-byte
+Pascal-near callback slots and all twelve main-wave callbacks still match
+the original DATA words and remain typed as the original near-pointer
+ABI; no new extern body is synthesized. The original `alice_pattern_table`
+consumer remains unchanged.
+
+The focused paired replay at
+`.analysis/unit-replays/gpt-web-alice-callback-choreography-b/receipt.json`
+passes two independent producers for **both** the full 32-byte callback
+DATA contribution and the entire **939-byte** real-context Alice Boss
+controller, including its original one-byte alignment, 30-byte compiler
+switch table and ordered MZ relocation. Both existing compiled negative
+mutations are rejected. The relevant source identities are refreshed
+without retesting unrelated Alice pattern functions or globally cold
+replaying the accepted set.

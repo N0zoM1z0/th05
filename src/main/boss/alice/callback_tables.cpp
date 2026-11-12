@@ -2,7 +2,7 @@
 #pragma option -zCALICE_CALLBACK_TABLE_TEXT -zPmain_03
 #include "src/main/boss/alice/callback_tables.hpp"
 
-const AlicePuppetPattern alice_puppet_choices[4] = {
+AlicePuppetPattern alice_puppet_pattern_table[4] = {
     alice_puppet_initial,
     alice_puppet_spread,
     alice_puppet_aimed_bursts,

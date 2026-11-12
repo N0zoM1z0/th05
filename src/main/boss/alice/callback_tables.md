@@ -6,7 +6,10 @@ entries select the real Pascal-near callbacks `alice_puppet_initial`,
 `alice_puppet_spread`, `alice_puppet_aimed_bursts`, and
 `alice_puppet_ring_bursts`. Each takes a near `AlicePuppet` reference,
 returns its completion byte in AL, and cleans the two-byte argument.
-The next twelve `AlicePattern` entries are the **4-by-3** near-cdecl
+The first array is now exported under the canonical
+`alice_puppet_pattern_table` symbol consumed by the separately accepted
+`puppets_update()` (the consumer aliases the same near pointer type as
+`AliceMotionPattern`). The next twelve `AlicePattern` entries are the **4-by-3** near-cdecl
 phase/attack dispatch table read by the full Alice Boss controller.
 
 The four consecutive wave rows are
@@ -36,3 +39,14 @@ and MAP boundaries, original raw bytes, and the empty original ordered
 MZ fixups. A compiled mutation swapping the first two puppet callbacks
 is rejected. The following original DATA region remains unowned by this
 packet and no previous Sara/Boss DATA credit is duplicated.
+
+## Canonical provider symbol and consumer linkage (2026-11-12)
+
+The initial natural table initializer had used the private export
+`alice_puppet_choices`. The real independently accepted
+`alice_puppet_pattern_table[4]` declaration in `puppet_motion.hpp` names
+this same table, so the maintained definition now exports that canonical
+public and uses a mutable four-entry pointer array matching the consumer's
+original ABI. No entry, null, order, pointer type or encoded DATA word was
+changed. The updated source and the full 939-byte Alice update both pass
+the paired exact replay recorded in `update_context.md`.

@@ -2,34 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c755a6c0ade8e99e1238ed3f8c821c9bde5ebda91024114c7adfd3b0ad6ce94a",
+  "replay_receipt_sha256": "9958e8d36fc696e9129500e62e29b81595a6ee022ffef4690b1147e6c267b07a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 128733,
-    "candidate_start": 128733,
-    "size": 884,
-    "target_sha256": "3b8e6406119c30d74277e5dcb1d872d0d1d0265bc775393b4933de3f7b930e6c",
-    "candidate_sha256": "81e685c2f11bab7119cc54601f2ca96b40202353aeb200ebe22cec2e2f6f83dc",
+    "target_start": 141646,
+    "candidate_start": 141646,
+    "size": 32,
+    "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
+    "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
     "raw_exact": false,
-    "target_fixups": [
-      399,
-      344,
-      333,
-      270,
-      161,
-      79
-    ],
-    "candidate_fixups": [
-      399,
-      344,
-      333,
-      270,
-      161,
-      79
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 141646,
+      "size": 32,
+      "module": "th05/a_tbls.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -68346,8 +68340,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "76bba5dd4fa3a4335ca5d2a3fffc879117c1dac3ca67524868b131689dbcc01d",
-            "dependency_timestamp_normalized_sha256": "d83509f75974cf62d3d68c71a74f7debb46b7859b16a58286d148024ed978214",
+            "sha256": "822ca5f96da378042e25280e98cd5b78611a56e5675cef2edeed3ef3b9b262d8",
+            "dependency_timestamp_normalized_sha256": "d5d61224fcd0b50b8b13932904dd092c8f9041483372e1413eb7877d9ce17584",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -68374,6 +68368,7 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
+              "src/main/boss/alice/puppet_choreography.hpp",
               "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
@@ -68385,8 +68380,8 @@
             ]
           },
           {
-            "sha256": "22a305a5f31ea938dcdc44bf8e51469c477cb8406891915c49a1b7ec28eea0da",
-            "dependency_timestamp_normalized_sha256": "d83509f75974cf62d3d68c71a74f7debb46b7859b16a58286d148024ed978214",
+            "sha256": "f4e1a760f2d8681aaef6f6d225c47c2ccc571676024c147b6054ff96919962b6",
+            "dependency_timestamp_normalized_sha256": "d5d61224fcd0b50b8b13932904dd092c8f9041483372e1413eb7877d9ce17584",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -68413,6 +68408,7 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/shared/abi.hpp",
+              "src/main/boss/alice/puppet_choreography.hpp",
               "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
@@ -68425,8 +68421,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -68478,6 +68474,10 @@
             "sha256": "4ffe6d13479d5294cc5801d51056e395fc3fbf814d7cc17c98b5990fa7377311"
           },
           {
+            "path": "src/main/boss/alice/puppet_choreography.hpp",
+            "sha256": "c3c25de22bfe7a58e3548374718f67169c8d53511a96320e0acad9af12754480"
+          },
+          {
             "path": "src/main/boss/alice/scratch.hpp",
             "sha256": "cc8cfe6fd8f0a0a6e1dfc4e28c8c1b190e079f9ece365dcd1ccd8609892d21d4"
           },
@@ -68487,7 +68487,7 @@
           },
           {
             "path": "src/main/boss/alice/update_context.cpp",
-            "sha256": "2c4b531d6b222eacb69fdc639b142614ed9d3878f74b1b89ae042696a4e49837"
+            "sha256": "7253dca322719a93e77d9f897ab0a3fc738eb845f366326d1717f9f0ef684d03"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -68554,6 +68554,10 @@
           "sha256": "4ffe6d13479d5294cc5801d51056e395fc3fbf814d7cc17c98b5990fa7377311"
         },
         {
+          "path": "src/main/boss/alice/puppet_choreography.hpp",
+          "sha256": "c3c25de22bfe7a58e3548374718f67169c8d53511a96320e0acad9af12754480"
+        },
+        {
           "path": "src/main/boss/alice/scratch.hpp",
           "sha256": "cc8cfe6fd8f0a0a6e1dfc4e28c8c1b190e079f9ece365dcd1ccd8609892d21d4"
         },
@@ -68563,7 +68567,7 @@
         },
         {
           "path": "src/main/boss/alice/update_context.cpp",
-          "sha256": "2c4b531d6b222eacb69fdc639b142614ed9d3878f74b1b89ae042696a4e49837"
+          "sha256": "7253dca322719a93e77d9f897ab0a3fc738eb845f366326d1717f9f0ef684d03"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -68608,81 +68612,70 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "f593b12322e82e972da52ee2640580c6dbcadf351c0f6897f550dda961b6fe31",
+      "replay_receipt_sha256": "9958e8d36fc696e9129500e62e29b81595a6ee022ffef4690b1147e6c267b07a",
       "compiled_negative_control": {
-        "target_start": 125334,
-        "candidate_start": 125334,
-        "size": 939,
-        "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-        "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+        "target_start": 141646,
+        "candidate_start": 141646,
+        "size": 32,
+        "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
+        "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
         "raw_exact": false,
-        "target_fixups": [
-          133
-        ],
-        "candidate_fixups": [
-          133
-        ],
+        "target_fixups": [],
+        "candidate_fixups": [],
         "fixups_exact": true,
         "exact": false,
         "map_scope": {
-          "kind": "complete-function",
-          "start": 125334,
-          "size": 939,
-          "function_symbol": "alice_update()",
-          "contribution_start": 124772,
-          "contribution_size": 1501,
-          "boundary_kind": "contribution-end",
-          "next_function_symbol": null
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141646,
+          "size": 32,
+          "module": "th05/a_tbls.cpp",
+          "segment": "_DATA"
         }
       },
       "negative_control": {
-        "unit_id": "main-alice-update-context",
-        "entry_sha256": "87bba13e608817fbb3a0650dc68560815dbcd1f00e422302751e6e77aff90b08",
+        "unit_id": "main-alice-callback-tables-data",
+        "entry_sha256": "45aa7407324ce9dec92519fd2eb674537334dafa4b9338c9c2fd61a95c032c22",
         "mutation": {
-          "unit": "main-alice-update-context",
-          "source": "src/main/boss/alice/update_context.cpp",
-          "find": "boss.phase_end_hp = ALICE_WAVE_ONE_END_HP;",
-          "replace": "boss.phase_end_hp = (ALICE_WAVE_ONE_END_HP - 100);"
+          "unit": "main-alice-callback-tables-data",
+          "source": "src/main/boss/alice/callback_tables.cpp",
+          "find": "    alice_puppet_initial,\n    alice_puppet_spread,",
+          "replace": "    alice_puppet_spread,\n    alice_puppet_initial,"
         },
-        "control_sha256": "b701c06db019bdd01feb2f5f02202c8d3eac868a977eb716b30c0abad66bb1f9",
+        "control_sha256": "1df105ee7001dd60101055881891d498068b1427dc1f6b15495d71b577065b88",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 125334,
-          "candidate_start": 125334,
-          "size": 939,
-          "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
-          "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
+          "target_start": 141646,
+          "candidate_start": 141646,
+          "size": 32,
+          "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
+          "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
           "raw_exact": false,
-          "target_fixups": [
-            133
-          ],
-          "candidate_fixups": [
-            133
-          ],
+          "target_fixups": [],
+          "candidate_fixups": [],
           "fixups_exact": true,
           "exact": false,
           "map_scope": {
-            "kind": "complete-function",
-            "start": 125334,
-            "size": 939,
-            "function_symbol": "alice_update()",
-            "contribution_start": 124772,
-            "contribution_size": 1501,
-            "boundary_kind": "contribution-end",
-            "next_function_symbol": null
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141646,
+            "size": 32,
+            "module": "th05/a_tbls.cpp",
+            "segment": "_DATA"
           }
         },
         "omf": {
-          "sha256": "8cec0b6cb9087ac278dd14cb602667e7c2036ab316e0f9bf1f505363c614b65e",
-          "dependency_timestamp_normalized_sha256": "76a70aed32fc82526ad5bbfcd0a7da7b6c2792ba26b811e276120bd578d5a6e9",
-          "module_name": "th05/a_ctx.cpp",
+          "sha256": "04dbc58d63d62eb5a0fe2f8a0c3de8e9cc3c6480b818adcc2aa668f40dba3df5",
+          "dependency_timestamp_normalized_sha256": "6c813ef1cda63f088aed3430fc5a62d7b5ac5e2dab517f80182d1006e63d96eb",
+          "module_name": "th05/a_tbls.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_ctx.cpp",
-            "src/main/boss/alice/update_context.cpp",
-            "src/main/boss/alice/update.hpp",
+            "th05/a_tbls.cpp",
+            "src/main/boss/alice/callback_tables.cpp",
+            "src/main/boss/alice/callback_tables.hpp",
+            "src/main/boss/alice/puppet_patterns.hpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -68695,21 +68688,22 @@
             "src/shared/geometry.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/gather/gather.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
-            "src/main/bullet/template.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp",
-            "src/main/boss/alice/beam_phase.hpp",
-            "src/main/boss/alice/scratch.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h",
-            "src/main/boss/alice/charge_patterns.hpp",
-            "src/main/boss/alice/beam.hpp",
-            "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/boss/alice/final_spread.inl"
-          ]
+            "src/shared/geometry.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 32,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 32,
+                "sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+              }
+            ]
+          }
         },
         "compiler_arguments": [
           "-c",
@@ -68722,10 +68716,14 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_ctx.cpp"
+          "th05/a_tbls.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-callback-tables-data",
+        "main-alice-update-context"
+      ]
     },
     {
       "id": "main-mai-update",
@@ -95119,8 +95117,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "56800a9be2dfc23f916eb3ff8b6138d03132a444342fa089a84425e5a56dd898",
-            "dependency_timestamp_normalized_sha256": "2b2663e3d9e99941d3de6c931d54085880463599c08ee9abe255438bdbcf2d44",
+            "sha256": "fc267627b3499c4a7a027370c7304191ecdf25eea421004fcd070ab1d01e5cc2",
+            "dependency_timestamp_normalized_sha256": "cae9323e5e554833eb8e823ba21e54e0ad2ec6e27e98ec4674daf466ba97a13b",
             "module_name": "th05/a_tbls.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -95160,8 +95158,8 @@
             }
           },
           {
-            "sha256": "1faa6ac36a24012fa8f8ec367c85da12cccdda4384844a08ef03ef998b8b2757",
-            "dependency_timestamp_normalized_sha256": "2b2663e3d9e99941d3de6c931d54085880463599c08ee9abe255438bdbcf2d44",
+            "sha256": "ca64870938487bbc6c327a4d808c02991484cb9900a4038f8494c7fd4328b316",
+            "dependency_timestamp_normalized_sha256": "cae9323e5e554833eb8e823ba21e54e0ad2ec6e27e98ec4674daf466ba97a13b",
             "module_name": "th05/a_tbls.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -95244,11 +95242,11 @@
           },
           {
             "path": "src/main/boss/alice/callback_tables.cpp",
-            "sha256": "5128c3a07109ce5f4b2ee9f7cfe7746625ef9851e9938772af06a7cf38a69d28"
+            "sha256": "c65a46de28b74b4d61e3728b49ec39bbd2440caa04bc501327b3a8128fd6f4f5"
           },
           {
             "path": "src/main/boss/alice/callback_tables.hpp",
-            "sha256": "7991b98b478ad358f7039e3694160542ab82a177729ef989b29f64af190bd971"
+            "sha256": "47e333b3d73012048c5f12ce1446cefafb1aa5410f5d8bc84de5755a37c21974"
           },
           {
             "path": "src/main/boss/alice/puppet_patterns.hpp",
@@ -95296,11 +95294,11 @@
         },
         {
           "path": "src/main/boss/alice/callback_tables.cpp",
-          "sha256": "5128c3a07109ce5f4b2ee9f7cfe7746625ef9851e9938772af06a7cf38a69d28"
+          "sha256": "c65a46de28b74b4d61e3728b49ec39bbd2440caa04bc501327b3a8128fd6f4f5"
         },
         {
           "path": "src/main/boss/alice/callback_tables.hpp",
-          "sha256": "7991b98b478ad358f7039e3694160542ab82a177729ef989b29f64af190bd971"
+          "sha256": "47e333b3d73012048c5f12ce1446cefafb1aa5410f5d8bc84de5755a37c21974"
         },
         {
           "path": "src/main/boss/alice/puppet_patterns.hpp",
@@ -95337,7 +95335,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "8ecf9e793a3f7156df82afd8362ba4395996e9fd4fc6fb153098f9a2538597eb",
+      "replay_receipt_sha256": "9958e8d36fc696e9129500e62e29b81595a6ee022ffef4690b1147e6c267b07a",
       "compiled_negative_control": {
         "target_start": 141646,
         "candidate_start": 141646,
@@ -95390,8 +95388,8 @@
           }
         },
         "omf": {
-          "sha256": "e6748a7fc4513e9787a230204478b2436e05e8c9465507e47e2af8aec57f2ac9",
-          "dependency_timestamp_normalized_sha256": "766e1b5ab5e70e9ee385556da1c0e5a143726aa10b398f6094dae86ecef3ebbd",
+          "sha256": "04dbc58d63d62eb5a0fe2f8a0c3de8e9cc3c6480b818adcc2aa668f40dba3df5",
+          "dependency_timestamp_normalized_sha256": "6c813ef1cda63f088aed3430fc5a62d7b5ac5e2dab517f80182d1006e63d96eb",
           "module_name": "th05/a_tbls.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -95446,7 +95444,8 @@
       },
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
-        "main-alice-callback-tables-data"
+        "main-alice-callback-tables-data",
+        "main-alice-update-context"
       ]
     },
     {

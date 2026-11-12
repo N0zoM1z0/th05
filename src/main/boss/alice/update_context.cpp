@@ -2,6 +2,7 @@
 // Only the final callback is proposed for new authored credit.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
+#include "src/main/boss/alice/puppet_choreography.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
 #include "src/main/boss/alice/scratch.hpp"
 #include "src/main/boss/alice/charge_patterns.hpp"
@@ -143,7 +144,7 @@ void pascal far alice_update(void)
     boss.phase_frame++;
     bullet_template.spawn_type = BST_NORMAL;
     bullet_template.origin.x = boss.pos.cur.x;
-    bullet_template.origin.y.v = boss.pos.cur.y.v + to_sp(-8);
+    bullet_template.origin.y.v = boss.pos.cur.y.v + to_sp(ALICE_BULLET_ORIGIN_OFFSET_Y_PX);
     gather_template.center = bullet_template.origin;
 
     switch(boss.phase) {
@@ -151,15 +152,15 @@ void pascal far alice_update(void)
         if(boss.phase_frame == ALICE_SETUP_ENTRY_FRAME) {
             boss.hp = ALICE_HP_TOTAL;
             boss.phase_end_hp = ALICE_WAVE_ONE_END_HP;
-            gather_template.radius.v = to_sp(64);
-            gather_template.angle_delta = 2;
-            gather_template.ring_points = 8;
+            gather_template.radius.v = to_sp(ALICE_GATHER_RADIUS_PX);
+            gather_template.angle_delta = ALICE_GATHER_ANGLE_STEP;
+            gather_template.ring_points = ALICE_GATHER_RING_POINTS;
         }
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= ALICE_SETUP_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
-            snd_se_play(13);
+            snd_se_play(ALICE_BOSS_ENTER_SE);
             bg_render_bombing_func = alice_bg_render;
         }
         break;
@@ -171,7 +172,7 @@ void pascal far alice_update(void)
             boss.phase_frame = 0;
             boss.mode = ALICE_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
-            alice_scratch.ready_seed = 24;
+            alice_scratch.ready_seed = ALICE_READY_PATTERN_SEED;
             alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         }
         break;
@@ -181,19 +182,19 @@ void pascal far alice_update(void)
         boss_hittest_shots();
         if(boss.phase_frame == ALICE_PUPPET_APPEAR_FRAME) {
             p = &alice_puppet0;
-            p->flag = 1;
-            p->patnum = 190;
-            p->radius.radius_motion = to_sp(256);
-            p->angle = 0x60;
+            p->flag = ALICE_PUPPET_ACTIVE;
+            p->patnum = ALICE_PUPPET_IDLE_PATNUM;
+            p->radius.radius_motion = to_sp(ALICE_PUPPET_ENTRANCE_RADIUS_PX);
+            p->angle = ALICE_PUPPET_ENTRANCE_LEFT_ANGLE;
             p->hp = ALICE_PUPPET_HP;
-            p->pos.cur.x.v = to_sp(-999);
+            p->pos.cur.x.v = to_sp(ALICE_PUPPET_HIDDEN_X_PX);
             p++;
-            p->flag = 1;
-            p->patnum = 190;
-            p->radius.radius_motion = to_sp(256);
-            p->angle = 0x20;
+            p->flag = ALICE_PUPPET_ACTIVE;
+            p->patnum = ALICE_PUPPET_IDLE_PATNUM;
+            p->radius.radius_motion = to_sp(ALICE_PUPPET_ENTRANCE_RADIUS_PX);
+            p->angle = ALICE_PUPPET_ENTRANCE_RIGHT_ANGLE;
             p->hp = ALICE_PUPPET_HP;
-            p->pos.cur.x.v = to_sp(-999);
+            p->pos.cur.x.v = to_sp(ALICE_PUPPET_HIDDEN_X_PX);
             alice_puppet_pattern0 = alice_puppet_initial;
             alice_puppet_pattern1 = alice_puppet_initial;
         } else if(boss.phase_frame > ALICE_PUPPET_APPEAR_FRAME) {
@@ -257,14 +258,14 @@ phase_complete:
     case ALICE_PHASE_BEAM_APPROACH_1:
     case ALICE_PHASE_BEAM_APPROACH_2:
     case ALICE_PHASE_BEAM_APPROACH_3:
-        alice_puppet0.pos.prev.x.v = to_sp(128);
-        alice_puppet0.pos.prev.y.v = to_sp(128);
-        alice_puppet1.pos.prev.x.v = to_sp(256);
-        alice_puppet1.pos.prev.y.v = to_sp(128);
+        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX);
+        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
+        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_RIGHT_X_PX);
+        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
         alice_puppet0.hp = ALICE_PUPPET_HP;
         alice_puppet1.hp = ALICE_PUPPET_HP;
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold;
-        if(boss_flystep_towards(to_sp(192), to_sp(64))) {
+        if(boss_flystep_towards(to_sp(ALICE_BOSS_APPROACH_X_PX), to_sp(ALICE_BOSS_APPROACH_Y_PX))) {
             goto movement_complete;
         }
         goto movement_hittest;
@@ -272,10 +273,10 @@ phase_complete:
     case ALICE_PHASE_BEAM_ATTACK_1:
     case ALICE_PHASE_BEAM_ATTACK_2:
     case ALICE_PHASE_BEAM_ATTACK_3:
-        alice_puppet0.pos.prev.x.v = to_sp(128);
-        alice_puppet0.pos.prev.y.v = to_sp(128);
-        alice_puppet1.pos.prev.x.v = to_sp(256);
-        alice_puppet1.pos.prev.y.v = to_sp(128);
+        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX);
+        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
+        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_RIGHT_X_PX);
+        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX);
         alice_puppet0.hp = ALICE_PUPPET_HP;
         alice_puppet1.hp = ALICE_PUPPET_HP;
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold;
@@ -292,24 +293,24 @@ phase_complete:
         boss.phase++;
         boss.phase_frame = 0;
         alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
-        alice_puppet0.pos.prev.x.v = to_sp(320);
-        alice_puppet0.pos.prev.y.v = to_sp(96);
-        alice_puppet1.pos.prev.x.v = to_sp(64);
-        alice_puppet1.pos.prev.y.v = to_sp(96);
+        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_POST_BEAM_LEFT_X_PX);
+        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
+        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_POST_BEAM_RIGHT_X_PX);
+        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
         alice_puppet0.phase_frame = alice_puppet1.phase_frame = 0;
         alice_puppet_pattern0 = alice_puppet_spread;
         alice_puppet_pattern1 = alice_puppet_spread;
         break;
 
     case ALICE_PHASE_RING_APPROACH:
-        alice_puppet0.pos.prev.x.v = to_sp(64);
-        alice_puppet0.pos.prev.y.v = to_sp(128);
-        alice_puppet1.pos.prev.x.v = to_sp(320);
-        alice_puppet1.pos.prev.y.v = to_sp(128);
+        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX);
+        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
+        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX);
+        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
         alice_puppet0.hp = ALICE_PUPPET_HP;
         alice_puppet1.hp = ALICE_PUPPET_HP;
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_rings;
-        if(!boss_flystep_towards(to_sp(192), to_sp(64))) {
+        if(!boss_flystep_towards(to_sp(ALICE_BOSS_APPROACH_X_PX), to_sp(ALICE_BOSS_APPROACH_Y_PX))) {
             goto movement_hittest;
         }
 movement_complete:
@@ -320,10 +321,10 @@ movement_hittest:
         break;
 
     case ALICE_PHASE_FINAL_SPREAD:
-        alice_puppet0.pos.prev.x.v = to_sp(64);
-        alice_puppet0.pos.prev.y.v = to_sp(128);
-        alice_puppet1.pos.prev.x.v = to_sp(320);
-        alice_puppet1.pos.prev.y.v = to_sp(128);
+        alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX);
+        alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
+        alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX);
+        alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX);
         alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_rings;
         alice_pattern_final_spread();
         if(boss.phase_frame < ALICE_FINAL_SPREAD_TIMEOUT) {
@@ -334,12 +335,12 @@ movement_hittest:
         }
         boss.phase_frame = 0;
         boss.phase = ALICE_PHASE_EXPLODE_SMALL;
-        alice_puppet0.flag = 2;
-        alice_puppet1.flag = 2;
+        alice_puppet0.flag = ALICE_PUPPET_DEFEAT_ANIMATION;
+        alice_puppet1.flag = ALICE_PUPPET_DEFEAT_ANIMATION;
         break;
 
     default:
-        boss_defeat_update(10);
+        boss_defeat_update(ALICE_DEFEAT_BONUS);
         break;
     }
 
