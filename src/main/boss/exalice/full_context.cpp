@@ -46,6 +46,12 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     exalice_phase_next(explosion, hp_end); \
     exalice_pattern = next_attack
 
+// The first three charge waves hand off HP and arm their distinct next
+// callback together. Wave four intentionally advances without a callback.
+#define EXALICE_CHARGED_ADVANCE(explosion, hp_end, next_attack) \
+    exalice_phase_next(explosion, hp_end); \
+    exalice_pattern = next_attack
+
 // Wave 1 uses the same rising-red palette cadence in approach and charge.
 // Preserve the color-latch write on every actual red-channel change.
 #define EXALICE_WAVE1_RED_APPROACH() \
@@ -183,16 +189,13 @@ charge_hittest:
 charge_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            exalice_phase_next(ET_NW_SE, EXALICE_HP_WAVE1_CHARGE_END);
-            exalice_pattern = exalice_pattern_gravity_stacks;
+            EXALICE_CHARGED_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE1_CHARGE_END, exalice_pattern_gravity_stacks);
             break;
         case EXALICE_WAVE_2:
-            exalice_phase_next(ET_SW_NE, EXALICE_HP_WAVE2_CHARGE_END);
-            exalice_pattern = exalice_pattern_fixed_laser_fan;
+            EXALICE_CHARGED_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE2_CHARGE_END, exalice_pattern_fixed_laser_fan);
             break;
         case EXALICE_WAVE_3:
-            exalice_phase_next(ET_HORIZONTAL, EXALICE_HP_WAVE3_CHARGE_END);
-            exalice_pattern = exalice_pattern_cross_cheetos;
+            EXALICE_CHARGED_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE3_CHARGE_END, exalice_pattern_cross_cheetos);
             break;
         case EXALICE_WAVE_4:
             exalice_phase_next(ET_VERTICAL, EXALICE_HP_LAST_CHARGE_END);
@@ -294,4 +297,5 @@ charge_complete:
 }
 
 #undef EXALICE_WAVE1_RED_APPROACH
+#undef EXALICE_CHARGED_ADVANCE
 #undef EXALICE_REGULAR_ADVANCE

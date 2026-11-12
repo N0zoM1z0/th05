@@ -2,27 +2,35 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "04ce29f07326cd09111d36a2d154ebf48c308375c086f4260ca96f238393a9d0",
+  "replay_receipt_sha256": "363e607908f6065d6c2026a0727e43db4588405af1563c481a5cebc39ba18b80",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 133744,
-    "candidate_start": 133744,
-    "size": 2,
-    "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
-    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+    "target_start": 107082,
+    "candidate_start": 107082,
+    "size": 1060,
+    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
+    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      198,
+      161
+    ],
+    "candidate_fixups": [
+      198,
+      161
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 133744,
-      "size": 2,
-      "module": "th05/plcrinit.cpp",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 107082,
+      "size": 1060,
+      "function_symbol": "exalice_update()",
+      "contribution_start": 106971,
+      "contribution_size": 1171,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -42316,7 +42324,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "1deebcb0555466c9418839a0d334d7b49526b568050b5caf206e4444dba80d68",
+            "sha256": "488d1f2cfc7d44bd8778e9e2ca92cef4992c4f718d3d0ef99ce41a6df9e9d1f2",
             "dependency_timestamp_normalized_sha256": "5df4801d61fa4c8497a7be7dd1f527c95b97b35eea72b2a4063c3e8368aeb77d",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
@@ -42366,7 +42374,7 @@
             ]
           },
           {
-            "sha256": "810675038fa81fd882c5f2958cfe1c140bc92d5706659c2275b0710dba3481b2",
+            "sha256": "7eba35f831f275058a780280b2e8e13a06e25052703f053188a632ff9b247b23",
             "dependency_timestamp_normalized_sha256": "5df4801d61fa4c8497a7be7dd1f527c95b97b35eea72b2a4063c3e8368aeb77d",
             "module_name": "th05/x_full.cpp",
             "translator_comments": [
@@ -42471,7 +42479,7 @@
           },
           {
             "path": "src/main/boss/exalice/full_context.cpp",
-            "sha256": "305948ecc2bfe59dc983c12eba42d75dbedd8307ea264dda3b2cf8370e9654ac"
+            "sha256": "fb62a92df11d0091ce5f157c8ad2a6c05fbddfe31a1545f9dd33b0829cf0dd2a"
           },
           {
             "path": "src/main/boss/exalice/full_context.hpp",
@@ -42571,7 +42579,7 @@
         },
         {
           "path": "src/main/boss/exalice/full_context.cpp",
-          "sha256": "305948ecc2bfe59dc983c12eba42d75dbedd8307ea264dda3b2cf8370e9654ac"
+          "sha256": "fb62a92df11d0091ce5f157c8ad2a6c05fbddfe31a1545f9dd33b0829cf0dd2a"
         },
         {
           "path": "src/main/boss/exalice/full_context.hpp",
@@ -42648,7 +42656,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1afb671402c72d9c164daca1dcfa616e1b1bceee880678326aa7e40ca39e3078",
+      "replay_receipt_sha256": "363e607908f6065d6c2026a0727e43db4588405af1563c481a5cebc39ba18b80",
       "compiled_negative_control": {
         "target_start": 107082,
         "candidate_start": 107082,
@@ -42717,7 +42725,7 @@
           }
         },
         "omf": {
-          "sha256": "69ca3eefbcc632751087414b904504841a86f381f626316232bda67b06ebe734",
+          "sha256": "3460cb0c08348029163ac47bc8be5a34c8cce49b29d436b67bdf4c34cf338256",
           "dependency_timestamp_normalized_sha256": "13700a5c3abd7581557fef89ab0e33881aba92b67b1d1a791e7cf456fb04e5bd",
           "module_name": "th05/x_full.cpp",
           "translator_comments": [
