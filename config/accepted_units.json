@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "84a3965b38ec9722d65b5876fffaaf1400e2635f3419a3849c0fa1cf9d0b96be",
+  "replay_receipt_sha256": "0e7783808c9f4016c1463176a585af638be54a56285d570f013633c54fa7b872",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138758,
-    "candidate_start": 138758,
-    "size": 8,
-    "target_sha256": "76a3356da272fe99f86b612f457a9ffc1f5383b7b631d490aa1063c8f0c0cee5",
-    "candidate_sha256": "239d1c83282bc9e88928603c5db418e40518e84353874e7b088a37cff9ed8fbe",
+    "target_start": 138748,
+    "candidate_start": 138748,
+    "size": 9,
+    "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+    "candidate_sha256": "a536aa3cede6ea3c1f3e0357c3c60e0f216a8c89b853df13b29daa8f85065dfb",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138758,
-      "size": 8,
-      "module": "th05/bclamp.cpp",
+      "start": 138748,
+      "size": 9,
+      "module": "th05/huddec.c",
       "segment": "_DATA"
     }
   },
@@ -102836,6 +102836,262 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-boss-default-flystep-clamp-data"
+      ]
+    },
+    {
+      "id": "main-hud-shared-decimal-glyph-scratch-data",
+      "entry_sha256": "fb0d9f19df589e31b5053df962b49a5111886a984c111efa15eebd6be8c8366b",
+      "result": {
+        "id": "main-hud-shared-decimal-glyph-scratch-data",
+        "entry_sha256": "fb0d9f19df589e31b5053df962b49a5111886a984c111efa15eebd6be8c8366b",
+        "rounds": [
+          {
+            "target_start": 138748,
+            "candidate_start": 138748,
+            "size": 9,
+            "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+            "candidate_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138748,
+              "size": 9,
+              "module": "th05/huddec.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138748,
+            "candidate_start": 138748,
+            "size": 9,
+            "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+            "candidate_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138748,
+              "size": 9,
+              "module": "th05/huddec.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "ac8ec1f1dca17b2f8102a60094c284d017189830385999d607198b4d3ad94512",
+            "dependency_timestamp_normalized_sha256": "8e112be1863a49fa89a7e5f9038b957f91f9765bf169b3aa591712df0e36c2a3",
+            "module_name": "th05/huddec.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/huddec.c",
+              "src/main/hud/decimal_scratch.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "7e96365c75196630604a1ab9cd637277aba851dc8c608e001f75ea21b3d391c6",
+            "dependency_timestamp_normalized_sha256": "8e112be1863a49fa89a7e5f9038b957f91f9765bf169b3aa591712df0e36c2a3",
+            "module_name": "th05/huddec.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/huddec.c",
+              "src/main/hud/decimal_scratch.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/huddec.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/huddec.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_hud_decimal_scratch_bindings.asm",
+            "sha256": "c75d2484e8cfcd3e1a81b039f78a693c0656db30cf4dfd3462242322d25a91c0"
+          },
+          {
+            "path": "src/main/hud/decimal_scratch.c",
+            "sha256": "ad02cdc59fdf27b4333640d9595a80c586c78f9a8cedbc419e84fa5702bd17eb"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_hud_decimal_scratch_bindings.asm",
+          "sha256": "c75d2484e8cfcd3e1a81b039f78a693c0656db30cf4dfd3462242322d25a91c0"
+        },
+        {
+          "path": "src/main/hud/decimal_scratch.c",
+          "sha256": "ad02cdc59fdf27b4333640d9595a80c586c78f9a8cedbc419e84fa5702bd17eb"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "0e7783808c9f4016c1463176a585af638be54a56285d570f013633c54fa7b872",
+      "compiled_negative_control": {
+        "target_start": 138748,
+        "candidate_start": 138748,
+        "size": 9,
+        "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+        "candidate_sha256": "a536aa3cede6ea3c1f3e0357c3c60e0f216a8c89b853df13b29daa8f85065dfb",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138748,
+          "size": 9,
+          "module": "th05/huddec.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-shared-decimal-glyph-scratch-data",
+        "entry_sha256": "fb0d9f19df589e31b5053df962b49a5111886a984c111efa15eebd6be8c8366b",
+        "mutation": {
+          "unit": "main-hud-shared-decimal-glyph-scratch-data",
+          "source": "src/main/hud/decimal_scratch.c",
+          "find": "] = { 0 };",
+          "replace": "] = { 1 };"
+        },
+        "control_sha256": "3e8e30c11f8579741711c410df38de71a96766ae61a4ff9778f40a40b6a237bc",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138748,
+          "candidate_start": 138748,
+          "size": 9,
+          "target_sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d",
+          "candidate_sha256": "a536aa3cede6ea3c1f3e0357c3c60e0f216a8c89b853df13b29daa8f85065dfb",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138748,
+            "size": 9,
+            "module": "th05/huddec.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "babb2ffa34bdf0788e04314b78b80f71c3d319a596340491f8e4216c7e8921ef",
+          "dependency_timestamp_normalized_sha256": "59ec698717abe154a12649fcb2b7658cbbce73a6a179e8cf4ec14ef7590acfc4",
+          "module_name": "th05/huddec.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/huddec.c",
+            "src/main/hud/decimal_scratch.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 9,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 9,
+                "sha256": "a536aa3cede6ea3c1f3e0357c3c60e0f216a8c89b853df13b29daa8f85065dfb"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/huddec.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-hud-shared-decimal-glyph-scratch-data"
       ]
     }
   ]

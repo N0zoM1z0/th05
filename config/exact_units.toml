@@ -6389,3 +6389,25 @@ unit = "main-boss-default-flystep-clamp-data"
 source = "src/main/boss/movement_default_clamp.cpp"
 find = "BOSS_DEFAULT_TOP_PX = 24"
 replace = "BOSS_DEFAULT_TOP_PX = 25"
+
+[[units]]
+id = "main-hud-shared-decimal-glyph-scratch-data"
+source = "src/main/hud/decimal_scratch.c"
+module = "th05/huddec.c"
+segment = "_DATA"
+wrapper_options = "-zCHUD_DECIMAL_SCRATCH_TEXT -zPmain_01"
+bindings_source = "probes/units/main_hud_decimal_scratch_bindings.asm"
+target_start = 0x21dfc
+size = 9
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-hud-shared-decimal-glyph-scratch-data"
+source = "src/main/hud/decimal_scratch.c"
+find = "] = { 0 };"
+replace = "] = { 1 };"
