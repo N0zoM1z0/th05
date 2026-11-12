@@ -1,7 +1,8 @@
-; Symbol-only function oracle context. Natural code sizes were measured in
-; compiler OMF; the separate origin hole restores the following function frame.
-; No instructions or data values are emitted. All ORG holes are outside the
-; compiled C++ contributions. No hole earns authored credit.
+; Original main_01 Boss background context: 17 functions in BOSS_BG_TEXT,
+; 2 final EX-Alice functions in BOSS_BG_LATE_TEXT, both compiler-generated.
+; All 3254 bytes are contiguous, naturally compiled, without a one-byte hole.
+; This source-free binder reserves only earlier/later foreign segment frames.
+; Original DGROUP:0000 is a symbolic zero alias, not initialized game data.
 .386
 .model large
 .stack 80h
@@ -76,16 +77,11 @@ org (109f0h - MASTER_TEXT_END)
 org (UNIT_START - MASTER_TEXT_END)
 BOSS_BG_TEXT ends
 
-; The natural first contribution ends at 10D50. One origin byte lies outside
-; both compiled contributions and all accepted function extents. The differing
-; particle function earns no credit. No instruction or target byte is emitted.
-BOSS_BG_AFTER_TEXT segment byte public 'CODE' use16
-org 1
-BOSS_BG_AFTER_TEXT ends
+BOSS_BG_LATE_TEXT segment byte public 'CODE' use16
+BOSS_BG_LATE_TEXT ends
 
-; Byte alignment prevents a hidden extra byte when the natural code size is odd.
-; This is a different segment, after all compiler-owned functions, not a patch
-; inside BOSS_BG_TEXT. The near Louise helper retains its real main_01 frame.
+; The late CODE contribution ends at 116CDh; its foreign tail remains
+; in the same real main_01 group with byte alignment and no owned payload.
 BG_FOREIGN_TAIL segment byte public 'CODE' use16
 assume cs:BG_FOREIGN_TAIL
 public @LOUISE_BACKDROP_COLORFILL$QV
@@ -93,7 +89,7 @@ org (LOUISE_LOAD - UNIT_END)
 @LOUISE_BACKDROP_COLORFILL$QV label near
 org (SHARED_BASE - UNIT_END)
 BG_FOREIGN_TAIL ends
-main_01 group BOSS_BG_TEXT, BOSS_BG_AFTER_TEXT, BG_FOREIGN_TAIL
+main_01 group BOSS_BG_TEXT, BOSS_BG_LATE_TEXT, BG_FOREIGN_TAIL
 
 SHARED segment para public 'CODE' use16
 assume cs:SHARED
@@ -115,6 +111,8 @@ public _shinki_bg_type_b_initialized, _shinki_bg_spinline_frame
 public _shinki_bg_type_c_initialized, _shinki_bg_type_d_initialized, _hexagrams_flag
 public _drawpoint, _tri_point_1, _tri_point_2, _tiles_bb_col, _tiles_bb_seg
 public _linesets, _boss_particles, _stage_frame_mod2, _stage_frame_mod4, _boss, _bb_boss_seg
+public _address_0
+_address_0 label word
 org 1988h
 _shinki_bg_linesets_zoomed_out label byte
 org 198ah

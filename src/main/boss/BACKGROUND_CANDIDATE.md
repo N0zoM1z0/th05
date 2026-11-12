@@ -162,43 +162,53 @@ particle Y reset `particle->age = 0;` to 1 only within
 `shinki_bg_particles_render` (the same text also occurs in type-A initialization,
 so scope that mutation to the function).
 
-## Accepted functions and exclusions
+## 2026-11-12: all 19 original-order Boss background functions now exact
 
-Seventeen complete functions, totaling **2891 instruction bytes**, pass two
-fresh producers and the compiled entrance-timing mutation in
-`.analysis/unit-replays/boss-background-functions-a`. Acceptance explicitly
-selects the passing functions from the intact mixed-result receipt, retaining
-its original aggregate-failure verdict and digest. Every saved producer,
-function boundary, raw extent, ordered fixup list and source dependency is
-independently rechecked. Unchanged earlier units are not rebuilt.
+The entire **3,254-byte** original MAIN `[10A17,116CD)` background family
+has now been reproduced from one maintained `background.cpp` by two independent
+Borland/TLINK builds. Both linked outputs compare **every original byte** and
+all **21 native ordered MZ relocations** without normalization or patches. The
+source covers Sara, Louise, Alice, Mai/Yuki, Yumeko, all Shinki particles,
+lines and background transitions, and EX-Alice hexagram painting and animation.
 
-The original split-context exceptions are:
+The original two problems in the first candidate were independently resolved:
 
-- `shinki_bg_particles_render`: original 159 bytes, natural C++ output 158.
-  The signed-zero comparison emits OR AX,AX in place of CMP AX,0.
-- `exalice_grcg_hexagram_put`: all 204 raw bytes match, but splitting the compiler
-  contribution moves a LEDATA boundary through this function and changes the
-  order of its seven MZ relocation sites. The strict oracle rejects it.
-  This failed split scope remains unaccepted. A separate standalone natural
-  C++ owner now passes the complete204 bytes and original ordered fixups; see
-  [hexagram drawing](exalice/hexagram.md). It adds no duplicate credit to this
-  17-function legacy owner. The legacy source, header and accepted objects
-  remain unchanged.
+- `shinki_bg_particles_render()` now uses the reference's real signed symbolic
+  zero through a **near C++ `_address_0` linker label** at DGROUP:0000. This
+  changes the native compiler expression to `CMP AX,0000` and restores the
+  original **159-byte** renderer without a target-byte template or dummy code.
+- Monolithic TCC output matched all 3,254 instruction bytes but its third
+  1,024-byte OMF LEDATA ended inside the final EX-Alice animation function.
+  The resulting `FIXUPP` record order placed the far-call relocation at
+  family offset **3065** before older far-call records instead of last. A
+  real compiler `#pragma codeseg` **before the final two functions** creates
+  adjacent, complete contributions: **2,931-byte `BOSS_BG_TEXT`** (the first
+  17 functions) and **323-byte `BOSS_BG_LATE_TEXT`** (the final two).
+  This naturally preserves the target's ordered relocations. Both contributions
+  join without intervening padding, fake alignment, target bytes or linker holes.
 
-The owner uses two real compiler CODE contributions in the same `main_01`
-group. `BOSS_BG_TEXT` contains the first five callbacks and the unaccepted
-particle renderer: 825 actual compiler bytes at `[10A17,10D50)`.
-`BOSS_BG_AFTER_TEXT` contains the remaining functions: 2428 actual compiler bytes
-at `[10D51,116CD)`. A single ORG hole `[10D50,10D51)` belongs to symbol-only
-link context, outside every compiler function. It receives no credit and does
-not repair or accept the particle renderer. Every accepted function retains
-its complete original position and ordered raw/fixup proof.
+All **17 original manifest units / 2,891 bytes** drawn from this file now pass
+two new scoped producers, the full native raw/fixup oracle, the existing
+compiled entrance-timing negative and unchanged accepted ownership. The
+receipt is `.analysis/unit-replays/gpt-web-main-boss-background-full-19-context-b/receipt.json`.
+The retained positive producer executables were also compared over the entire
+3,254-byte joined span, including the two already independently accepted
+159-byte Shinki particle renderer and 204-byte EX-Alice hexagram drawing
+function: both producers match all original bytes and fixups. That joined
+cross-contribution check is at
+`.analysis/gpt-web-boss-background-19-family-comparison/native-comparison.json`;
+it is not an overlapping second ledger claim. The standalone functions keep
+their existing source-backed exact receipts; their code gets **no second
+credit**. The 17 refreshed manifest entries retain their existing accepted
+extents, but their genuine compiler context no longer contains the former
+artificial one-byte outside-origin hole at `10D50`.
 
-The earlier monolithic diagnostic compiled
-3253 natural bytes and found ten raw/fixup matches before the split. It is a
-routing observation, not the current acceptance producer. Its retired
-monolithic diagnostic remains in Git history at `3af324e`; the current split
-owner is replayed through `scripts/replay_units.py`.
+The original one-producer 3,254-byte monolithic experiment (raw exact, wrong
+FIXUPP order), the split-at-17 trial (full raw/fixup exact) and the final two
+independent compiler producers are all retained privately. The old 3,253-byte
+and split-with-one-byte-hole notes above describe *superseded historical
+candidates*, not the current accepted source. The whole packed MAIN executable
+remains a separate and still-unproved reconstruction goal.
 
 Natural random-range helpers preserve separate float-to-subpixel and signed
 range inline layers. Introducing local min/max temporaries prevented this

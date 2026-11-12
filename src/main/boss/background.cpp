@@ -1,7 +1,7 @@
 // Boss background algorithms adapted from natural C++ in nmlgc/ReC98
 // b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/boss/render.cpp.
-// Candidate only: the particle clip's real signed-zero comparison may produce
-// a different optimization than the original. No external zero symbol is used.
+// Exact original-order compiler context for all 19 Boss background functions.
+// The signed-zero particle clip retains ReC98's original symbolic operand.
 #pragma option -zCBOSS_BG_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/background.hpp"
@@ -132,6 +132,16 @@ static const int SHINKI_LINE_4 = (3 * 6);
 		set++; \
 	}
 
+// Original signed top clip uses the source-level symbolic zero preserved by
+// ReC98: a near address at DGROUP:0000 forces the actual CMP AX,0000.
+template <class T> inline T keep_0(T x) {
+    if(x == 0) {
+        extern void *near address_0;
+        return reinterpret_cast<T>(&address_0);
+    }
+    return x;
+}
+
 void near shinki_bg_particles_render(void)
 {
 	_ES = SEG_PLANE_B;
@@ -164,7 +174,7 @@ void near shinki_bg_particles_render(void)
 			if(!(
 				(left > (PLAYFIELD_LEFT - PARTICLE_W)) &&
 				(left < PLAYFIELD_RIGHT) &&
-				(top > static_cast<int>(0)) &&
+				(top > keep_0(static_cast<int>(0))) &&
 				(top < PLAYFIELD_BOTTOM)
 			)) {
 				particle->pos = particle->origin;
@@ -182,10 +192,8 @@ void near shinki_bg_particles_render(void)
 	}
 }
 
-// This second compiler contribution keeps complete functions after the
-// independently inexact particle clip at their original main_01 addresses.
-// Its linker context owns the uncredited inter-contribution origin hole.
-#pragma codeseg BOSS_BG_AFTER_TEXT main_01
+// The complete Shinki particle renderer and following backgrounds stay in
+// the same native CODE contribution. Nothing is reserved between functions.
 
 void near shinki_bg_type_a_update_part1(void)
 {
@@ -626,6 +634,11 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 
 	#undef tri_point_0
 }
+
+// Finish with the two original EX-Alice background functions in a separate
+// genuine compiler CODE contribution. This preserves the native FIXUPP record
+// boundaries without adding a linker hole or changing the function bodies.
+#pragma codeseg BOSS_BG_LATE_TEXT main_01
 
 void near exalice_hexagrams_update_and_render(void)
 {

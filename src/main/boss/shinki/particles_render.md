@@ -98,3 +98,13 @@ Focused receipt:
 The full 159 bytes receive C++-owned CODE credit for the complete function;
 previous 158/159-but-wrong diagnostics above are superseded. No other Boss
 owners were changed or replayed.
+
+## Coherent Boss-background compiler context
+
+The separate 159-byte exact owner remains accepted with its original private
+receipt. The same natural `keep_0` operand now also occurs inside the complete
+maintained `background.cpp` for all nineteen original-order background
+functions. Its two original-order CODE contributions reproduce the full 3,254
+bytes and all twenty-one ordered fixups with two native compiler producers;
+see [the background family](../BACKGROUND_CANDIDATE.md). This provides
+independent compiler-context corroboration, **not duplicate code credit**.

@@ -2,39 +2,30 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "40315b66d84a060252bc4896d42c0e6c47556fa5f26cf715e0b221022598a0a8",
+  "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 112347,
-    "candidate_start": 112347,
-    "size": 959,
-    "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
-    "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
+    "target_start": 68119,
+    "candidate_start": 68119,
+    "size": 104,
+    "candidate_size": 105,
+    "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
+    "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
     "raw_exact": false,
-    "target_fixups": [
-      862,
-      461,
-      165,
-      128
-    ],
-    "candidate_fixups": [
-      862,
-      461,
-      165,
-      128
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
       "kind": "complete-function",
-      "start": 112347,
-      "size": 959,
-      "function_symbol": "shinki_update()",
-      "contribution_start": 111172,
-      "contribution_size": 2134,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "start": 68119,
+      "size": 105,
+      "function_symbol": "sara_bg_render()",
+      "contribution_start": 68119,
+      "contribution_size": 2932,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "louise_bg_render()"
     }
   },
   "units": [
@@ -2396,7 +2387,7 @@
               "size": 104,
               "function_symbol": "sara_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "louise_bg_render()"
             }
@@ -2418,7 +2409,7 @@
               "size": 104,
               "function_symbol": "sara_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "louise_bg_render()"
             }
@@ -2427,8 +2418,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2450,8 +2441,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2508,11 +2499,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -2544,11 +2535,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -2577,7 +2568,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -2596,7 +2587,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -2630,14 +2621,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -2702,7 +2693,7 @@
               "size": 140,
               "function_symbol": "louise_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "alice_bg_render()"
             }
@@ -2728,7 +2719,7 @@
               "size": 140,
               "function_symbol": "louise_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "alice_bg_render()"
             }
@@ -2737,8 +2728,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2760,8 +2751,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2818,11 +2809,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -2854,11 +2845,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -2887,7 +2878,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -2906,7 +2897,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -2940,14 +2931,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3012,7 +3003,7 @@
               "size": 140,
               "function_symbol": "alice_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "mai_yuki_bg_render()"
             }
@@ -3038,7 +3029,7 @@
               "size": 140,
               "function_symbol": "alice_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "mai_yuki_bg_render()"
             }
@@ -3047,8 +3038,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3070,8 +3061,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3128,11 +3119,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -3164,11 +3155,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -3197,7 +3188,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -3216,7 +3207,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -3250,14 +3241,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3322,7 +3313,7 @@
               "size": 146,
               "function_symbol": "mai_yuki_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "yumeko_bg_render()"
             }
@@ -3348,7 +3339,7 @@
               "size": 146,
               "function_symbol": "mai_yuki_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "yumeko_bg_render()"
             }
@@ -3357,8 +3348,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3380,8 +3371,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3438,11 +3429,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -3474,11 +3465,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -3507,7 +3498,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -3526,7 +3517,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -3560,14 +3551,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3632,7 +3623,7 @@
               "size": 137,
               "function_symbol": "yumeko_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_particles_render()"
             }
@@ -3658,7 +3649,7 @@
               "size": 137,
               "function_symbol": "yumeko_bg_render()",
               "contribution_start": 68119,
-              "contribution_size": 825,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_particles_render()"
             }
@@ -3667,8 +3658,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3690,8 +3681,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3748,11 +3739,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -3784,11 +3775,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -3817,7 +3808,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -3836,7 +3827,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -3870,14 +3861,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3916,10 +3907,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-a-update-part1",
-      "entry_sha256": "2fbbb565cf736eea2a8ab683935f4b579e14a574e29daf1587619d7e5b3d0cf0",
+      "entry_sha256": "782bf84ed003f6cc5f12256ff7e078baaec2464f06f0f3e61e2c2b4adcc491b1",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-a-update-part1",
-        "entry_sha256": "2fbbb565cf736eea2a8ab683935f4b579e14a574e29daf1587619d7e5b3d0cf0",
+        "entry_sha256": "782bf84ed003f6cc5f12256ff7e078baaec2464f06f0f3e61e2c2b4adcc491b1",
         "rounds": [
           {
             "target_start": 68945,
@@ -3941,8 +3932,8 @@
               "start": 68945,
               "size": 306,
               "function_symbol": "shinki_bg_type_a_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "grcg_lineset_line_put(lineset_t near&,int)"
             }
@@ -3967,8 +3958,8 @@
               "start": 68945,
               "size": 306,
               "function_symbol": "shinki_bg_type_a_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "grcg_lineset_line_put(lineset_t near&,int)"
             }
@@ -3977,8 +3968,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4000,8 +3991,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4058,11 +4049,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -4094,11 +4085,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -4127,7 +4118,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -4146,7 +4137,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -4180,14 +4171,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -4226,10 +4217,10 @@
     },
     {
       "id": "main-boss-bg-grcg-lineset-line-put",
-      "entry_sha256": "86b279103ab323d420605f7d643585890b20b5217ddeaece33ccae4101dc749c",
+      "entry_sha256": "2076c752430918c2532752c264b6b6846bc1771363a4138fefdc20bb9aea48b8",
       "result": {
         "id": "main-boss-bg-grcg-lineset-line-put",
-        "entry_sha256": "86b279103ab323d420605f7d643585890b20b5217ddeaece33ccae4101dc749c",
+        "entry_sha256": "2076c752430918c2532752c264b6b6846bc1771363a4138fefdc20bb9aea48b8",
         "rounds": [
           {
             "target_start": 69251,
@@ -4255,8 +4246,8 @@
               "start": 69251,
               "size": 160,
               "function_symbol": "grcg_lineset_line_put(lineset_t near&,int)",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_lineset_forward_copy(lineset_t near&)"
             }
@@ -4285,8 +4276,8 @@
               "start": 69251,
               "size": 160,
               "function_symbol": "grcg_lineset_line_put(lineset_t near&,int)",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_lineset_forward_copy(lineset_t near&)"
             }
@@ -4295,8 +4286,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4318,8 +4309,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4376,11 +4367,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -4412,11 +4403,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -4445,7 +4436,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -4464,7 +4455,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -4498,14 +4489,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -4544,10 +4535,10 @@
     },
     {
       "id": "main-boss-bg-shinki-lineset-forward-copy",
-      "entry_sha256": "b1f7e96e9720420e97bc7501c96af0e6a5c4096344a04b8389495a98982177ba",
+      "entry_sha256": "ce3160d4077565bd6ab7ee16316569755c19ca5333f42f60d33bdf24f917cd8c",
       "result": {
         "id": "main-boss-bg-shinki-lineset-forward-copy",
-        "entry_sha256": "b1f7e96e9720420e97bc7501c96af0e6a5c4096344a04b8389495a98982177ba",
+        "entry_sha256": "ce3160d4077565bd6ab7ee16316569755c19ca5333f42f60d33bdf24f917cd8c",
         "rounds": [
           {
             "target_start": 69411,
@@ -4565,8 +4556,8 @@
               "start": 69411,
               "size": 74,
               "function_symbol": "shinki_lineset_forward_copy(lineset_t near&)",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_a_update_and_rend()"
             }
@@ -4587,8 +4578,8 @@
               "start": 69411,
               "size": 74,
               "function_symbol": "shinki_lineset_forward_copy(lineset_t near&)",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_a_update_and_rend()"
             }
@@ -4597,8 +4588,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4620,8 +4611,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4678,11 +4669,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -4714,11 +4705,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -4747,7 +4738,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -4766,7 +4757,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -4800,14 +4791,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -4846,10 +4837,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-a-update-and-rend",
-      "entry_sha256": "7a97530eb5f220f507a48986decf98fec8670a1ec4fb99c05ef77120510baf3f",
+      "entry_sha256": "174fa2af5aaa23a080d8c29f9e51c5f05eeec1090fe1f3f0dd21333301cdef53",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-a-update-and-rend",
-        "entry_sha256": "7a97530eb5f220f507a48986decf98fec8670a1ec4fb99c05ef77120510baf3f",
+        "entry_sha256": "174fa2af5aaa23a080d8c29f9e51c5f05eeec1090fe1f3f0dd21333301cdef53",
         "rounds": [
           {
             "target_start": 69485,
@@ -4871,8 +4862,8 @@
               "start": 69485,
               "size": 178,
               "function_symbol": "shinki_bg_type_a_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_b_update_part1()"
             }
@@ -4897,8 +4888,8 @@
               "start": 69485,
               "size": 178,
               "function_symbol": "shinki_bg_type_a_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_b_update_part1()"
             }
@@ -4907,8 +4898,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4930,8 +4921,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4988,11 +4979,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -5024,11 +5015,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -5057,7 +5048,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -5076,7 +5067,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -5110,14 +5101,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -5156,10 +5147,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-b-update-part1",
-      "entry_sha256": "0e6de0abf39002a5a41607e481a31610f39b93b49acbc53c78284eb0cdf7fc95",
+      "entry_sha256": "754633f95177f862139db64901912e69ae2e172abc385d759f7000c6a383fe29",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-b-update-part1",
-        "entry_sha256": "0e6de0abf39002a5a41607e481a31610f39b93b49acbc53c78284eb0cdf7fc95",
+        "entry_sha256": "754633f95177f862139db64901912e69ae2e172abc385d759f7000c6a383fe29",
         "rounds": [
           {
             "target_start": 69663,
@@ -5177,8 +5168,8 @@
               "start": 69663,
               "size": 224,
               "function_symbol": "shinki_bg_type_b_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_b_update_and_rend()"
             }
@@ -5199,8 +5190,8 @@
               "start": 69663,
               "size": 224,
               "function_symbol": "shinki_bg_type_b_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_b_update_and_rend()"
             }
@@ -5209,8 +5200,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5232,8 +5223,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5290,11 +5281,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -5326,11 +5317,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -5359,7 +5350,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -5378,7 +5369,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -5412,14 +5403,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -5458,10 +5449,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-b-update-and-rend",
-      "entry_sha256": "e54574b53f2dcdf8aeae308d8fba8bc3873bd80db7c54740b1ce792f4e1fbbdd",
+      "entry_sha256": "7e8a15b2b0e840cb4ac7c122d87935ccc54a35571665d34d350b40c98894da68",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-b-update-and-rend",
-        "entry_sha256": "e54574b53f2dcdf8aeae308d8fba8bc3873bd80db7c54740b1ce792f4e1fbbdd",
+        "entry_sha256": "7e8a15b2b0e840cb4ac7c122d87935ccc54a35571665d34d350b40c98894da68",
         "rounds": [
           {
             "target_start": 69887,
@@ -5479,8 +5470,8 @@
               "start": 69887,
               "size": 281,
               "function_symbol": "shinki_bg_type_b_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_c_update_part1()"
             }
@@ -5501,8 +5492,8 @@
               "start": 69887,
               "size": 281,
               "function_symbol": "shinki_bg_type_b_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_c_update_part1()"
             }
@@ -5511,8 +5502,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5534,8 +5525,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5592,11 +5583,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -5628,11 +5619,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -5661,7 +5652,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -5680,7 +5671,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -5714,14 +5705,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -5760,10 +5751,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-c-update-part1",
-      "entry_sha256": "a71fc4f11ef7df9f3ddabdb07e59239e6915a3ba0d0c0652bfc60e7df5aaa4bd",
+      "entry_sha256": "df4acb76d0a26302677b31152bd5d28b05ba47f4f1239a688f0091237c6c531d",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-c-update-part1",
-        "entry_sha256": "a71fc4f11ef7df9f3ddabdb07e59239e6915a3ba0d0c0652bfc60e7df5aaa4bd",
+        "entry_sha256": "df4acb76d0a26302677b31152bd5d28b05ba47f4f1239a688f0091237c6c531d",
         "rounds": [
           {
             "target_start": 70168,
@@ -5781,8 +5772,8 @@
               "start": 70168,
               "size": 76,
               "function_symbol": "shinki_bg_type_c_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_c_update_and_rend()"
             }
@@ -5803,8 +5794,8 @@
               "start": 70168,
               "size": 76,
               "function_symbol": "shinki_bg_type_c_update_part1()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_c_update_and_rend()"
             }
@@ -5813,8 +5804,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5836,8 +5827,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5894,11 +5885,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -5930,11 +5921,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -5963,7 +5954,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -5982,7 +5973,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -6016,14 +6007,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -6062,10 +6053,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-c-update-and-rend",
-      "entry_sha256": "6384b7b1f179624501f80c6aa0757f860bb39feb802de04ee3a101b996bedcda",
+      "entry_sha256": "8e9c9d9bc1e960a02580c0e9afbf02e612eae0fb1c6398fd0755e3c6774b1a18",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-c-update-and-rend",
-        "entry_sha256": "6384b7b1f179624501f80c6aa0757f860bb39feb802de04ee3a101b996bedcda",
+        "entry_sha256": "8e9c9d9bc1e960a02580c0e9afbf02e612eae0fb1c6398fd0755e3c6774b1a18",
         "rounds": [
           {
             "target_start": 70244,
@@ -6083,8 +6074,8 @@
               "start": 70244,
               "size": 332,
               "function_symbol": "shinki_bg_type_c_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_d_update()"
             }
@@ -6105,8 +6096,8 @@
               "start": 70244,
               "size": 332,
               "function_symbol": "shinki_bg_type_c_update_and_rend()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_type_d_update()"
             }
@@ -6115,8 +6106,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6138,8 +6129,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6196,11 +6187,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -6232,11 +6223,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -6265,7 +6256,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -6284,7 +6275,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -6318,14 +6309,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -6364,10 +6355,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-type-d-update",
-      "entry_sha256": "7b8ee0061b3660c917183cd85a9e4012d1d1f78470f97a0f95bf697d4a282f46",
+      "entry_sha256": "cf5b8ee3e914410f11ccd67e291e49c397279e47b373aee5f19291d8de5cfc27",
       "result": {
         "id": "main-boss-bg-shinki-bg-type-d-update",
-        "entry_sha256": "7b8ee0061b3660c917183cd85a9e4012d1d1f78470f97a0f95bf697d4a282f46",
+        "entry_sha256": "cf5b8ee3e914410f11ccd67e291e49c397279e47b373aee5f19291d8de5cfc27",
         "rounds": [
           {
             "target_start": 70576,
@@ -6385,8 +6376,8 @@
               "start": 70576,
               "size": 97,
               "function_symbol": "shinki_bg_type_d_update()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_render()"
             }
@@ -6407,8 +6398,8 @@
               "start": 70576,
               "size": 97,
               "function_symbol": "shinki_bg_type_d_update()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "shinki_bg_render()"
             }
@@ -6417,8 +6408,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6440,8 +6431,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6498,11 +6489,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -6534,11 +6525,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -6567,7 +6558,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -6586,7 +6577,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -6620,14 +6611,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -6666,10 +6657,10 @@
     },
     {
       "id": "main-boss-bg-shinki-bg-render",
-      "entry_sha256": "1c60ed47d5885d53bbd2e8f3f54e3570ff2d1d79e3a2b3f9cec3602404e0370a",
+      "entry_sha256": "f17aeb18c3fe6585e8ad4618c41772ee386cb6b62c7c79375b0ee33bfbc89db0",
       "result": {
         "id": "main-boss-bg-shinki-bg-render",
-        "entry_sha256": "1c60ed47d5885d53bbd2e8f3f54e3570ff2d1d79e3a2b3f9cec3602404e0370a",
+        "entry_sha256": "f17aeb18c3fe6585e8ad4618c41772ee386cb6b62c7c79375b0ee33bfbc89db0",
         "rounds": [
           {
             "target_start": 70673,
@@ -6693,8 +6684,8 @@
               "start": 70673,
               "size": 173,
               "function_symbol": "shinki_bg_render()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "exalice_grcg_hexagram_put(int,int)"
             }
@@ -6721,8 +6712,8 @@
               "start": 70673,
               "size": 173,
               "function_symbol": "shinki_bg_render()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 68119,
+              "contribution_size": 2931,
               "boundary_kind": "next-function",
               "next_function_symbol": "exalice_grcg_hexagram_put(int,int)"
             }
@@ -6731,8 +6722,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6754,8 +6745,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6812,11 +6803,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -6848,11 +6839,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -6881,7 +6872,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -6900,7 +6891,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -6934,14 +6925,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -6980,10 +6971,10 @@
     },
     {
       "id": "main-boss-bg-exalice-hexagrams-update-and-ren",
-      "entry_sha256": "1e6fa08464bfda62dcfc00131c0eb7fb589fe39232ddd64ed79ec994975f8380",
+      "entry_sha256": "47cbcee2de2b3562800bbdedb056edf456b7c22ef6ca6faf647a58c23b7e4bdf",
       "result": {
         "id": "main-boss-bg-exalice-hexagrams-update-and-ren",
-        "entry_sha256": "1e6fa08464bfda62dcfc00131c0eb7fb589fe39232ddd64ed79ec994975f8380",
+        "entry_sha256": "47cbcee2de2b3562800bbdedb056edf456b7c22ef6ca6faf647a58c23b7e4bdf",
         "rounds": [
           {
             "target_start": 71050,
@@ -7009,8 +7000,8 @@
               "start": 71050,
               "size": 220,
               "function_symbol": "exalice_hexagrams_update_and_ren()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 71050,
+              "contribution_size": 323,
               "boundary_kind": "next-function",
               "next_function_symbol": "exalice_bg_render()"
             }
@@ -7039,8 +7030,8 @@
               "start": 71050,
               "size": 220,
               "function_symbol": "exalice_hexagrams_update_and_ren()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 71050,
+              "contribution_size": 323,
               "boundary_kind": "next-function",
               "next_function_symbol": "exalice_bg_render()"
             }
@@ -7049,8 +7040,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7072,8 +7063,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7130,11 +7121,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -7166,11 +7157,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -7199,7 +7190,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -7218,7 +7209,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -7252,14 +7243,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -7298,10 +7289,10 @@
     },
     {
       "id": "main-boss-bg-exalice-bg-render",
-      "entry_sha256": "703a0fde3574b7387955f7fef7cc03e02473f43160c1b9875c3f6129ff05a7a9",
+      "entry_sha256": "f9d95d6970f2c4e89ca305070211ee1f92ff3761c356a3ae062c71e4ebda3dae",
       "result": {
         "id": "main-boss-bg-exalice-bg-render",
-        "entry_sha256": "703a0fde3574b7387955f7fef7cc03e02473f43160c1b9875c3f6129ff05a7a9",
+        "entry_sha256": "f9d95d6970f2c4e89ca305070211ee1f92ff3761c356a3ae062c71e4ebda3dae",
         "rounds": [
           {
             "target_start": 71270,
@@ -7319,8 +7310,8 @@
               "start": 71270,
               "size": 103,
               "function_symbol": "exalice_bg_render()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 71050,
+              "contribution_size": 323,
               "boundary_kind": "contribution-end",
               "next_function_symbol": null
             }
@@ -7341,8 +7332,8 @@
               "start": 71270,
               "size": 103,
               "function_symbol": "exalice_bg_render()",
-              "contribution_start": 68945,
-              "contribution_size": 2428,
+              "contribution_start": 71050,
+              "contribution_size": 323,
               "boundary_kind": "contribution-end",
               "next_function_symbol": null
             }
@@ -7351,8 +7342,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "93a57b6b2c2b4e4b990e44bbc5b9b3408b4ae74f9f7af11c052877b908f8fcbc",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "dbb6051243efc7f954c48d418e58eeecea1e92e786cfa6420cf26ad63ba6aef8",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7374,8 +7365,8 @@
             ]
           },
           {
-            "sha256": "dbbf2854d76ee7d7c3c1e76b1c0c1a7f363e1b0e157b4a7be3311f54ce75b2c7",
-            "dependency_timestamp_normalized_sha256": "abcff26d45fd3386c8d1630dfa2ea27e0f02abdc867d04ec75ed353ff54d0487",
+            "sha256": "aa83fff1d63198603060ddab013fa469efd69278417e23681484a808c52aaaa9",
+            "dependency_timestamp_normalized_sha256": "f98f37c9e33712a4e1dd12ab995d2f6e684bc81d82e762b6f81ed6730041c8ff",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -7432,11 +7423,11 @@
         "source_inputs": [
           {
             "path": "probes/units/boss_background_exact_bindings.asm",
-            "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+            "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+            "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
           },
           {
             "path": "src/main/boss/background.hpp",
@@ -7468,11 +7459,11 @@
       "source_inputs": [
         {
           "path": "probes/units/boss_background_exact_bindings.asm",
-          "sha256": "d81e01d1c90d5ec78bef26ed4ae3da3b7654cf68717f579833b61095a0e60991"
+          "sha256": "37ddcaadd002419c9d4892308bc2f89eea6b1e2fa089ddc3eff9752de369a1ce"
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "83f3d398d928a652b06e4c892a2b8412128d323ce44541c06a819297894d24be"
+          "sha256": "aa061dd3b28ef1373c53c11201ba5eb446000319e1e8364429b335f1d677d266"
         },
         {
           "path": "src/main/boss/background.hpp",
@@ -7501,7 +7492,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9ffcb0626c4a3ee8573c87bba088970824d16438ad65a7de59589d69a32f59d4",
+      "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
       "compiled_negative_control": {
         "target_start": 68119,
         "candidate_start": 68119,
@@ -7520,7 +7511,7 @@
           "size": 105,
           "function_symbol": "sara_bg_render()",
           "contribution_start": 68119,
-          "contribution_size": 826,
+          "contribution_size": 2932,
           "boundary_kind": "next-function",
           "next_function_symbol": "louise_bg_render()"
         }
@@ -7554,14 +7545,14 @@
             "size": 105,
             "function_symbol": "sara_bg_render()",
             "contribution_start": 68119,
-            "contribution_size": 826,
+            "contribution_size": 2932,
             "boundary_kind": "next-function",
             "next_function_symbol": "louise_bg_render()"
           }
         },
         "omf": {
-          "sha256": "9c08fbff41b6d97e8d3a9cffc761955dcaa688a89919fda03c50d212046c9f5c",
-          "dependency_timestamp_normalized_sha256": "9dc35656cabe191a2b3da35fec99a77d4972528e4c8fd846c56da5efd6cb7e32",
+          "sha256": "b6a5848ca06b3a5ecdc5ae34e0d382c5dcaa83bd457906e373743f45c6a4b88f",
+          "dependency_timestamp_normalized_sha256": "5c51b87ffca5a797e69fabc6488932a37cc06c514c0df7b3403463772af8b3ab",
           "module_name": "th05/boss_bg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
