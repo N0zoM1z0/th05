@@ -454,6 +454,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_large_byte import reviewed_claims as large_byte_claims
     large_byte, large_byte_sha = large_byte_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_clip_data import reviewed_claims as clip_claims
+    clip_data, clip_data_sha = clip_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -697,6 +700,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, byte_mask[name])
         if name in large_byte:
             pieces = overlay_vendor(view["size"], pieces, large_byte[name])
+        if name in clip_data:
+            pieces = overlay_vendor(view["size"], pieces, clip_data[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
@@ -819,6 +824,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_byte_mask_review_sha256"] = byte_mask_sha
         if large_byte_sha and name in large_byte:
             views[name]["master_large_byte_review_sha256"] = large_byte_sha
+        if clip_data_sha and name in clip_data:
+            views[name]["master_clip_data_review_sha256"] = clip_data_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
