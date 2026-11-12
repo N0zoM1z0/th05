@@ -2,35 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "1801dba9297cfa081c41113962528b8178ace726c33bae5b41292475d7f25135",
+  "replay_receipt_sha256": "aea418f075dbc242c04aeb2745ba0b1ec535416e9a58965140aa4f85ede4df3e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 107082,
-    "candidate_start": 107082,
-    "size": 1060,
-    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
-    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
+    "target_start": 140120,
+    "candidate_start": 140120,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      198,
-      161
-    ],
-    "candidate_fixups": [
-      198,
-      161
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 107082,
-      "size": 1060,
-      "function_symbol": "exalice_update()",
-      "contribution_start": 106971,
-      "contribution_size": 1171,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 140120,
+      "size": 1,
+      "module": "th05/bgline.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -103290,6 +103282,262 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-hud-shared-decimal-glyph-scratch-data"
+      ]
+    },
+    {
+      "id": "main-shinki-lineset-zoom-cycle-data",
+      "entry_sha256": "12b9ad755aa73980263c2a21ae7fc6d605d87c6312500f514527d29366eee3c2",
+      "result": {
+        "id": "main-shinki-lineset-zoom-cycle-data",
+        "entry_sha256": "12b9ad755aa73980263c2a21ae7fc6d605d87c6312500f514527d29366eee3c2",
+        "rounds": [
+          {
+            "target_start": 140120,
+            "candidate_start": 140120,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140120,
+              "size": 1,
+              "module": "th05/bgline.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140120,
+            "candidate_start": 140120,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140120,
+              "size": 1,
+              "module": "th05/bgline.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "81b735713ae458433c24fb2a88f8aa1f7fb71bd647721608fb856a918b24668e",
+            "dependency_timestamp_normalized_sha256": "9b0e3648dcac59fe48fb6807e5e3acab945be02db0d4926b411e51e0afc4271d",
+            "module_name": "th05/bgline.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgline.c",
+              "src/main/boss/shinki/bg_lineset_counter.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "2bb971c16910406d40a82cca26a6eaad309c621e37b4ba403a51888b2ad700d0",
+            "dependency_timestamp_normalized_sha256": "9b0e3648dcac59fe48fb6807e5e3acab945be02db0d4926b411e51e0afc4271d",
+            "module_name": "th05/bgline.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgline.c",
+              "src/main/boss/shinki/bg_lineset_counter.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgline.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgline.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shinki_bg_lineset_counter_bindings.asm",
+            "sha256": "7929bcf05aa2dc20b9ef9f5b525e0cd4dbdb5d8bd20e5b8ec80fb182f318bf90"
+          },
+          {
+            "path": "src/main/boss/shinki/bg_lineset_counter.c",
+            "sha256": "4b1576e17785680316fa4543c06ab24b86840dddff6e06579d236e4a4364f341"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shinki_bg_lineset_counter_bindings.asm",
+          "sha256": "7929bcf05aa2dc20b9ef9f5b525e0cd4dbdb5d8bd20e5b8ec80fb182f318bf90"
+        },
+        {
+          "path": "src/main/boss/shinki/bg_lineset_counter.c",
+          "sha256": "4b1576e17785680316fa4543c06ab24b86840dddff6e06579d236e4a4364f341"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "aea418f075dbc242c04aeb2745ba0b1ec535416e9a58965140aa4f85ede4df3e",
+      "compiled_negative_control": {
+        "target_start": 140120,
+        "candidate_start": 140120,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140120,
+          "size": 1,
+          "module": "th05/bgline.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shinki-lineset-zoom-cycle-data",
+        "entry_sha256": "12b9ad755aa73980263c2a21ae7fc6d605d87c6312500f514527d29366eee3c2",
+        "mutation": {
+          "unit": "main-shinki-lineset-zoom-cycle-data",
+          "source": "src/main/boss/shinki/bg_lineset_counter.c",
+          "find": "shinki_bg_linesets_zoomed_out = 0;",
+          "replace": "shinki_bg_linesets_zoomed_out = 1;"
+        },
+        "control_sha256": "9591b60072ec5c6619b2c9e3030dea099506356f116050b841e7ae0a9bfe2b74",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140120,
+          "candidate_start": 140120,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140120,
+            "size": 1,
+            "module": "th05/bgline.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "6da02844b4fc4afdc942d9728df10d41e65bd372b38802504b6c5b39bc46ef8b",
+          "dependency_timestamp_normalized_sha256": "d419b40797e81365e28170343222b14ebf3dad9a0b313cc39c87fa258e85fd57",
+          "module_name": "th05/bgline.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bgline.c",
+            "src/main/boss/shinki/bg_lineset_counter.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bgline.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-lineset-zoom-cycle-data"
       ]
     }
   ]

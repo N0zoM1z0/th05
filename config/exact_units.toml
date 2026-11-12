@@ -6411,3 +6411,25 @@ unit = "main-hud-shared-decimal-glyph-scratch-data"
 source = "src/main/hud/decimal_scratch.c"
 find = "] = { 0 };"
 replace = "] = { 1 };"
+
+[[units]]
+id = "main-shinki-lineset-zoom-cycle-data"
+source = "src/main/boss/shinki/bg_lineset_counter.c"
+module = "th05/bgline.c"
+segment = "_DATA"
+wrapper_options = "-zCSHINKI_LINESET_COUNTER_TEXT -zPmain_01"
+bindings_source = "probes/units/main_shinki_bg_lineset_counter_bindings.asm"
+target_start = 0x22358
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shinki-lineset-zoom-cycle-data"
+source = "src/main/boss/shinki/bg_lineset_counter.c"
+find = "shinki_bg_linesets_zoomed_out = 0;"
+replace = "shinki_bg_linesets_zoomed_out = 1;"
