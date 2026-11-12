@@ -22,6 +22,19 @@
     } \
 }
 
+// Both charged weapon phases terminate through the same native three-write
+// Boss state transition, after their own distinct projectile work.
+#define LOUISE_CHARGED_RETURN_TO_STILL() { \
+    boss.mode = 0; \
+    boss.phase_frame = 0; \
+    boss.sprite = LOUISE_SPRITE_STILL; \
+}
+
+// The rotating ring stack and aimed pellet fan share their actual
+// forward, nondecelerating bullet cloud mode.
+#define LOUISE_FORWARD_NONDECEL_CLOUD() \
+    bullet_template.spawn_type = (LOUISE_SPAWN_CLOUD_FORWARDS | LOUISE_SPAWN_NO_DECELERATE)
+
 void near louise_pattern_mirrored_fans(void)
 {
     int i;
@@ -68,9 +81,7 @@ void near louise_pattern_sweeping_lasers(void)
         }
         break;
     case LOUISE_CHARGE_FINISH:
-        boss.mode = 0;
-        boss.phase_frame = 0;
-        boss.sprite = LOUISE_SPRITE_STILL;
+        LOUISE_CHARGED_RETURN_TO_STILL();
         break;
     }
 }
@@ -79,8 +90,7 @@ void near louise_pattern_turning_rings(void)
 {
     switch(louise_charge_update(LC_BLUE_PHASE_END)) {
     case LOUISE_CHARGE_INITIALIZE:
-        bullet_template.spawn_type =
-            LOUISE_SPAWN_CLOUD_FORWARDS | LOUISE_SPAWN_NO_DECELERATE;
+        LOUISE_FORWARD_NONDECEL_CLOUD();
         bullet_template.patnum = LOUISE_PAT_V_RED;
         bullet_template.group = BG_RING_STACK_AIMED;
         bullet_template.speed.v = louise_scratch.charge_speed;
@@ -101,9 +111,7 @@ void near louise_pattern_turning_rings(void)
         bullets_add_special();
         break;
     case LOUISE_CHARGE_FINISH:
-        boss.mode = 0;
-        boss.phase_frame = 0;
-        boss.sprite = LOUISE_SPRITE_STILL;
+        LOUISE_CHARGED_RETURN_TO_STILL();
         break;
     }
 }
@@ -111,8 +119,7 @@ void near louise_pattern_turning_rings(void)
 void near louise_pattern_aimed_pellets(void)
 {
     if((boss.phase_frame % LC_PELLET_FIRE_INTERVAL) == 0) {
-        bullet_template.spawn_type =
-            LOUISE_SPAWN_CLOUD_FORWARDS | LOUISE_SPAWN_NO_DECELERATE;
+        LOUISE_FORWARD_NONDECEL_CLOUD();
         bullet_template.group = BG_SPREAD_AIMED;
         bullet_template.patnum = 0;
         bullet_template.special_motion = BSM_EXACT_LINEAR;
@@ -130,3 +137,6 @@ void near louise_pattern_aimed_pellets(void)
 }
 
 #undef LOUISE_MIRROR_FAN
+
+#undef LOUISE_FORWARD_NONDECEL_CLOUD
+#undef LOUISE_CHARGED_RETURN_TO_STILL
