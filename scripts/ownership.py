@@ -466,6 +466,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_pf_rand_initial import reviewed_claims as pf_rand_claims
     pf_rand, pf_rand_sha = pf_rand_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_file_initial import reviewed_claims as file_claims
+    file_init, file_init_sha = file_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -717,6 +720,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, mem_initial[name])
         if name in pf_rand:
             pieces = overlay_vendor(view["size"], pieces, pf_rand[name])
+        if name in file_init:
+            pieces = overlay_vendor(view["size"], pieces, file_init[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
@@ -847,6 +852,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_mem_initial_review_sha256"] = mem_initial_sha
         if pf_rand_sha and name in pf_rand:
             views[name]["master_pf_rand_review_sha256"] = pf_rand_sha
+        if file_init_sha and name in file_init:
+            views[name]["master_file_initial_review_sha256"] = file_init_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
