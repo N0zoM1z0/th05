@@ -119,3 +119,39 @@ matched, and the compiled semantic negative was rejected. Focused receipt:
 `.analysis/unit-replays/gpt-web-yumeko-fan-ring-lifetimes-20261111/receipt.json`.
 The previously accepted sword updater remains ASM-owned; no unsupported
 natural-C++ credit or new target bytes are inferred here.
+
+## Full fight HP ladder and source-visible animation clocks (2026-11-12)
+
+The actual two-function Yumeko owner now uses `phase_timing.hpp` to name
+**all six observed HP boundaries**: setup 7,500; mobile wave one 5,700;
+stationary wave one 4,500; mobile wave two 2,700; stationary wave two
+1,200; sword sweep zero. The initial total remains 8,300. The names
+follow the real `boss_phase_next()` handoff order, not imaginary direct
+assignments to current HP. The previous and new expressions have the
+same signed 16-bit values and preserve the explosion arguments.
+
+The source also identifies the *different* clocks for initial entrance
+protection, the second ready delay and the 64-frame mobile bounce; the
+2,000-frame stationary and sword-sweep timeouts; and the 1,200-frame
+final-ring timeout. The 36-entry `193..228` sprite conversion span,
+64-pixel gather radius, departing Boss2 hitbox and motion, and the two
+approach destinations are now named. Distinct per-phase sound/score
+codes are retained without changing call placement or cooldown state.
+
+The adjacent 165-byte final-ring helper now names its original
+32-frame charge interval, 16-frame charge sound, 16-frame firing cadence,
+reflection angle, fixed rotational turn and attack glyph/speed. Both
+branches of the alternating ring's signed `turn_by` still use opposite
+rotation directions; its real `turns_max = 2` control remains unchanged.
+No optimizer barriers, synthetic assignments, callback changes or
+new initialized state are introduced.
+
+A focused native replay of `main-yumeko-update` at
+`.analysis/unit-replays/gpt-web-yumeko-hp-phase-physics-b/receipt.json`
+recompiled only this actual source twice and passed the entire **884-byte**
+original contribution, including the one checked alignment zero,
+**22-byte switch table** and the six original ordered relocations.
+The compiled final turn-count mutation was rejected. All edits are
+semantic source recovery of already accepted CODE; they do not create
+additional byte credit, nor accept the still-unresolved natural C++
+`swords_update()` alternative.
