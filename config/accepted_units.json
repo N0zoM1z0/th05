@@ -2,28 +2,30 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "0a7301c1dd6697e0d8aea499a94491df7a2f767154ced4409365f9901270b0bc",
+  "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 139920,
-    "candidate_start": 139920,
-    "size": 27,
-    "target_sha256": "050020b1ba9990b070be71af326c9517c2e57de58679ed4cd0c5f41135ef7a20",
-    "candidate_sha256": "7f6421f1a9f30ddb933722946a981eb7070f0f92986bedffb387c33a9a1e4797",
+    "target_start": 109483,
+    "candidate_start": 109483,
+    "size": 271,
+    "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+    "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      253,
+      222,
+      173,
+      73
+    ],
+    "candidate_fixups": [
+      253,
+      222,
+      173,
+      73
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 139920,
-      "size": 27,
-      "module": "th05/fmtnams.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -10843,7 +10845,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -10878,7 +10880,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -10980,7 +10982,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11056,7 +11058,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11097,7 +11099,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11154,7 +11156,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -11202,7 +11204,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-pattern-a",
@@ -11259,7 +11274,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11294,7 +11309,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11396,7 +11411,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11472,7 +11487,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11513,7 +11528,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11570,7 +11585,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -11618,7 +11633,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-random-kunai",
@@ -11683,7 +11711,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11718,7 +11746,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11820,7 +11848,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -11896,7 +11924,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -11937,7 +11965,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -11994,7 +12022,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -12042,7 +12070,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-blue-stacks",
@@ -12111,7 +12152,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12146,7 +12187,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12248,7 +12289,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -12324,7 +12365,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -12365,7 +12406,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -12422,7 +12463,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -12470,7 +12511,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-rain-spreads",
@@ -12539,7 +12593,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12574,7 +12628,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12676,7 +12730,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -12752,7 +12806,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -12793,7 +12847,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -12850,7 +12904,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -12898,7 +12952,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-wings-purple",
@@ -12967,7 +13034,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13002,7 +13069,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13104,7 +13171,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -13180,7 +13247,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -13221,7 +13288,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -13278,7 +13345,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -13326,7 +13393,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-aimed-symmetric",
@@ -13395,7 +13475,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13430,7 +13510,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13532,7 +13612,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -13608,7 +13688,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -13649,7 +13729,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -13706,7 +13786,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -13754,7 +13834,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-circles-spirals",
@@ -13827,7 +13920,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13862,7 +13955,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13964,7 +14057,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -14040,7 +14133,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -14081,7 +14174,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -14138,7 +14231,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -14186,7 +14279,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-shinki-float",
@@ -14243,7 +14349,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14278,7 +14384,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14380,7 +14486,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -14456,7 +14562,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -14497,7 +14603,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -14554,7 +14660,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -14602,7 +14708,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-slowdown",
@@ -67771,7 +67890,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "9d6047766c1182126b39bf77e88c95673d6d702c8e5374b8b913c19f5374bad4",
+            "sha256": "5b9957bf25f5449e78946cd930abf1c16c6ef03c87ccd0c065f339956621e8d5",
             "dependency_timestamp_normalized_sha256": "fc41e8fe6021e61bd60abc9d5e74ed6ece3e388b7d8d57ad8838a07db60db058",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -67805,7 +67924,7 @@
             ]
           },
           {
-            "sha256": "7bd0b04c2c830de40aed43e7dd7ca32128e5ba3d3c219768727007b2e6cc4be0",
+            "sha256": "1e6e83cbdf1837a5d2a9e7aa12f09a3c7618495d763bee7700c0a72fe16ebb2a",
             "dependency_timestamp_normalized_sha256": "fc41e8fe6021e61bd60abc9d5e74ed6ece3e388b7d8d57ad8838a07db60db058",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -67840,8 +67959,8 @@
           }
         ],
         "producer_paths": [
-          "group-2/a/source",
-          "group-2/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -67902,7 +68021,7 @@
           },
           {
             "path": "src/main/boss/shinki/update_context.cpp",
-            "sha256": "66962086154492c408fd85e33d6d9b914552c58aa2bca7562c1d9958c7558dcf"
+            "sha256": "f42f980d585ff40e56b9f04b50d838ab7aafde318d62fb1149c797f14e352d21"
           },
           {
             "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -67974,7 +68093,7 @@
         },
         {
           "path": "src/main/boss/shinki/update_context.cpp",
-          "sha256": "66962086154492c408fd85e33d6d9b914552c58aa2bca7562c1d9958c7558dcf"
+          "sha256": "f42f980d585ff40e56b9f04b50d838ab7aafde318d62fb1149c797f14e352d21"
         },
         {
           "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -68015,7 +68134,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -68072,7 +68191,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -68120,7 +68239,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-alice-update-context",
@@ -81727,7 +81859,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "568b311f6b5fe9a53f693623bf6297a94cd5299d595d3fd882a39a72f23e0b80",
+            "sha256": "0cc2a0f0c4b6620b71fabe297036322513d561f26fa61108e4eba30e59a89f49",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -81762,7 +81894,7 @@
             ]
           },
           {
-            "sha256": "f7fc752936dac4e8956bae18e3d6a73a5a59b9ed31cb5a3fc157c428a9bc2e2a",
+            "sha256": "d82439ddfd776754e6990cdc06e1ec9e5002070959fd2c4d0f1745b1ab317848",
             "dependency_timestamp_normalized_sha256": "fab502c2169e3d8d9e73c582f16387961780fe60c365902b72f70b4d0c578c35",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -81864,7 +81996,7 @@
           },
           {
             "path": "src/main/boss/shinki/shinki.cpp",
-            "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+            "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
           },
           {
             "path": "src/main/boss/shinki/shinki.hpp",
@@ -81940,7 +82072,7 @@
         },
         {
           "path": "src/main/boss/shinki/shinki.cpp",
-          "sha256": "76bf7c4f8a7dc6ae0fabc8d38cdd643f5633d14f87cfe75e1186a51181344294"
+          "sha256": "1f88f092b67b4cd87e9f2fc453f4228b46df032929e53cf1b93475179d565b85"
         },
         {
           "path": "src/main/boss/shinki/shinki.hpp",
@@ -81981,7 +82113,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "5de150cfe6d529f17ae13e5e1d74d0d5ce5ab2a3aad1f3a7882540895fa842a4",
+      "replay_receipt_sha256": "48bd3d3dacb8749845c67be1d07d5d4bda9f8eb721884a05cab1d5b6c8f1b8a6",
       "compiled_negative_control": {
         "target_start": 109483,
         "candidate_start": 109483,
@@ -82038,7 +82170,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "ac4b29f2044fcc59accde2c3c4160452d5615f020edd103cd09f0c051e1e3c02",
+          "sha256": "34f17676f11b12b8e41b66418e15754bca9880a186ff61b85fbfab2032580d5a",
           "dependency_timestamp_normalized_sha256": "9dc754cd32d303147c78cd8b49c55c335ab1908756b73abd13c6ffd3487d32d7",
           "module_name": "th05/boss_6.cpp",
           "translator_comments": [
@@ -82086,7 +82218,20 @@
           "th05/boss_6.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-shinki-aimed-symmetric",
+        "main-shinki-balls-add",
+        "main-shinki-balls-update",
+        "main-shinki-blue-stacks",
+        "main-shinki-circles-spirals",
+        "main-shinki-float",
+        "main-shinki-pattern-a",
+        "main-shinki-rain-spreads",
+        "main-shinki-random-kunai",
+        "main-shinki-update-context",
+        "main-shinki-wings-purple"
+      ]
     },
     {
       "id": "main-boss-defeat-update-complete",

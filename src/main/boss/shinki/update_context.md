@@ -132,3 +132,30 @@ semantic negative was rejected. Focused receipt:
 `.analysis/unit-replays/gpt-web-shinki-unified-controller-20261111/receipt.json`.
 This synchronization improves already accepted source; no new ownership or
 new authored bytes are inferred.
+
+## Shinki wing/Devil palette and damage semantics (2026-11-12)
+
+The complete Shinki Boss phase dispatcher now gives explicit names to
+the palette logic shared by wing rain/spread walls, the purple transition,
+and the Devil phases. Its blue brighten limit is `0x80`; blue first drains
+to zero before Devil red brightens to `0x80`. The return to the final
+circles sets red to `0x60`. The defeat-transition flash alternates the
+original deferred tones 150 and 100 on even/odd phase frames, with the
+original 16-frame duration. The bomb-specific damage cap remains one HP
+per frame, and the original early/wing shot bonuses remain 10/25.
+
+Both the actual accepted `update_context.cpp` and the maintained
+`shinki.cpp` implementation use the same named phase-state constants,
+with no rewrite of the conditional timing, palette changes, pointers,
+state reuse, foreign call ABI or original compiler expression order. The
+phase-transition sound effect remains 13. This is an actual source-level
+semantic improvement of a large controller, not a new CODE credit claim.
+
+The two file edits affected eleven accepted source-bound owners; none was
+skipped. The focused batch replay at
+`.analysis/unit-replays/gpt-web-shinki-phase-palettes-a/receipt.json`
+passed two native producers and complete original raw/fixup boundaries for
+every one of those eleven owners, including the full **959-byte** Shinki
+callback with its 26-byte compiler switch table and real zero alignment.
+The callback's `boss_defeat_update(65)` compiled negative remains rejected.
+No other original unit or whole executable was replayed.

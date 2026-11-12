@@ -146,7 +146,19 @@ void pascal shinki_update(void)
 		SHINKI_FIRST_SHARED_WAVE = 0,
 		SHINKI_WAVE_PATTERN_LIMIT = 16,
 		SHINKI_WING_TIMEOUT_FRAMES = 3000,
-		SHINKI_ALTERNATING_PATTERN_MASK = 1
+		SHINKI_ALTERNATING_PATTERN_MASK = 1,
+		// Palette progression follows the wing phases into the red Devil phase.
+		SHINKI_WING_PALETTE_BLUE_LIMIT = 0x80,
+		SHINKI_DEVIL_PALETTE_RED_LIMIT = 0x80,
+		SHINKI_PALETTE_ZERO = 0,
+		SHINKI_FINAL_CIRCLES_RED = 0x60,
+		// Flash tone toggles on alternate frames of the defeat transition.
+		SHINKI_DEFEAT_TONE_BRIGHT = 150,
+		SHINKI_DEFEAT_TONE_DIM = 100,
+		SHINKI_BOMB_DAMAGE_PER_FRAME = 1,
+		SHINKI_PHASE_TRANSITION_SE = 13,
+		SHINKI_EARLY_PATTERN_SCORE = 10,
+		SHINKI_WING_PATTERN_SCORE = 25
 	};
 
 	bool16 phase_done;
@@ -183,7 +195,7 @@ void pascal shinki_update(void)
 			// Next phase
 			boss.phase_frame = 0;
 			boss.phase++;
-			snd_se_play(13);
+			snd_se_play(SHINKI_PHASE_TRANSITION_SE);
 			bg_render_bombing_func = shinki_bg_render;
 		}
 		break;
@@ -193,7 +205,7 @@ void pascal shinki_update(void)
 		if(boss.phase_frame == (
 			ENTRANCE_BB_FRAMES_PER_CEL * (TILES_BB_CELS / 2)
 		)) {
-			Palettes[0].set(0x0, 0x0, 0x0);
+			Palettes[0].set(SHINKI_PALETTE_ZERO, SHINKI_PALETTE_ZERO, SHINKI_PALETTE_ZERO);
 			palette_changed = true;
 		}
 
@@ -240,7 +252,7 @@ void pascal shinki_update(void)
 		if(!boss_hittest_shots()) {
 			break;
 		}
-		boss_score_bonus(10);
+		boss_score_bonus(SHINKI_EARLY_PATTERN_SCORE);
 
 	phase_2_3_timed_out:
 		// Next phase
@@ -288,7 +300,7 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_WING_RAIN:
 	case SHINKI_PHASE_SPREAD_WALLS:
-		if(Palettes[0].c.b < 0x80) {
+		if(Palettes[0].c.b < SHINKI_WING_PALETTE_BLUE_LIMIT) {
 			if(stage_frame_mod16 == 0) {
 				Palettes[0].c.b++;
 			}
@@ -300,7 +312,7 @@ void pascal shinki_update(void)
 		// Timeout condition
 		if(boss.phase_frame < SHINKI_WING_TIMEOUT_FRAMES) {
 			if(boss_hittest_shots()) {
-				boss_score_bonus(25);
+				boss_score_bonus(SHINKI_WING_PATTERN_SCORE);
 			} else {
 				break;
 			}
@@ -318,7 +330,7 @@ void pascal shinki_update(void)
 		break;
 
 	case SHINKI_PHASE_PURPLE_TRANSITION:
-		if(Palettes[0].c.b > 0x00) {
+		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
 			if(stage_frame_mod8 == 0) {
 				Palettes[0].c.b--;
 			}
@@ -338,12 +350,12 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_SYMMETRIC_SPREADS:
 	case SHINKI_PHASE_DEVIL:
-		if(Palettes[0].c.b > 0x00) {
+		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
 			if(stage_frame_mod8 == 0) {
 				Palettes[0].c.b--;
 			}
 			palette_changed = true;
-		} else if(Palettes[0].c.r < 0x80) {
+		} else if(Palettes[0].c.r < SHINKI_DEVIL_PALETTE_RED_LIMIT) {
 			if(stage_frame_mod16 == 0) {
 				Palettes[0].c.r++;
 			}
@@ -357,13 +369,13 @@ void pascal shinki_update(void)
 			phase_done = boss_hittest_shots();
 			// Reduce per-frame damage to 1 HP during bombs
 			if(bombing) {
-				boss.hp += (boss.damage_this_frame - 1);
+				boss.hp += (boss.damage_this_frame - SHINKI_BOMB_DAMAGE_PER_FRAME);
 				phase_done = false;
 			}
 			if(!phase_done) {
 				break;
 			}
-			boss_score_bonus(25);
+			boss_score_bonus(SHINKI_WING_PATTERN_SCORE);
 		}
 
 		// Next phase
@@ -388,9 +400,9 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_DEFEAT_TRANSITION:
 		boss_hittest_shots();
 		if((boss.phase_frame % 2) == 0) {
-			palette_settone_deferred(150);
+			palette_settone_deferred(SHINKI_DEFEAT_TONE_BRIGHT);
 		} else {
-			palette_settone_deferred(100);
+			palette_settone_deferred(SHINKI_DEFEAT_TONE_DIM);
 		}
 
 		// Timeout condition
@@ -399,9 +411,9 @@ void pascal shinki_update(void)
 			boss.phase++;
 			boss.sprite = PAT_SHINKI_STILL;
 			boss_hitbox_radius.x.v = to_sp(BOSS_HITBOX_DEFAULT_W);
-			Palettes[0].c.r = 0x60;
+			Palettes[0].c.r = SHINKI_FINAL_CIRCLES_RED;
 			Palettes[0].c.b = 0x00;
-			snd_se_play(13);
+			snd_se_play(SHINKI_PHASE_TRANSITION_SE);
 		}
 		break;
 
