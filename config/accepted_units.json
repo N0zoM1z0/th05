@@ -2,32 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "27828420672e89060880c751c062b85e568db9bb18f02cb77f3d00e00d55112f",
+  "replay_receipt_sha256": "1c10bc1000abdf44fbb15bf4e59b23ea91f5f89ad0b72f5bb1734eeeba48f545",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 126677,
-    "candidate_start": 126677,
-    "size": 435,
-    "target_sha256": "9c2c264c1daecbb5f9df53e593de55936a778414faf3dce22788216686b720da",
-    "candidate_sha256": "378f92daa58349a93c5caca8e7ddd580645bb3b1d527acbb3d90a801e3dd91e8",
+    "target_start": 133728,
+    "candidate_start": 133728,
+    "size": 2,
+    "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+    "candidate_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
     "raw_exact": false,
-    "target_fixups": [
-      413,
-      403,
-      353,
-      232,
-      34
-    ],
-    "candidate_fixups": [
-      413,
-      403,
-      353,
-      232,
-      34
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 133728,
+      "size": 2,
+      "module": "th05/dbgfrm.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -110109,6 +110105,290 @@
           "-ml",
           "-DBINARY='M'",
           "th05/bgspini.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-debug-frame-state-initial-data",
+      "entry_sha256": "20f7f2c692e360fa8b8b68689ad2f60c19ef8f3f01e9936851db4639aaf52d0f",
+      "result": {
+        "id": "main-debug-frame-state-initial-data",
+        "entry_sha256": "20f7f2c692e360fa8b8b68689ad2f60c19ef8f3f01e9936851db4639aaf52d0f",
+        "rounds": [
+          {
+            "target_start": 133728,
+            "candidate_start": 133728,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133728,
+              "size": 2,
+              "module": "th05/dbgfrm.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133728,
+            "candidate_start": 133728,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133728,
+              "size": 2,
+              "module": "th05/dbgfrm.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "4eb33e068cc4d86afd655fe0dfdeaa6d95cb32d486628509b7634a473f4724de",
+            "dependency_timestamp_normalized_sha256": "fc04c7b9fdc02238df5bc0b4d3c172346b3e9aed4605fc652e14902598a1ce95",
+            "module_name": "th05/dbgfrm.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dbgfrm.cpp",
+              "src/main/runtime/debug_frame_initial.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "7f40dfc4feffb4ba2bb49025be49f27138a555ee3e3d711234453c1a8afd9165",
+            "dependency_timestamp_normalized_sha256": "fc04c7b9fdc02238df5bc0b4d3c172346b3e9aed4605fc652e14902598a1ce95",
+            "module_name": "th05/dbgfrm.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dbgfrm.cpp",
+              "src/main/runtime/debug_frame_initial.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dbgfrm.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dbgfrm.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_debug_frame_initial_bindings.asm",
+            "sha256": "946580eba19d4a21f2de0c61fef1e0067b735dee8d168cae49a1e5a3ee284e84"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/runtime/debug_frame_initial.cpp",
+            "sha256": "eb725784f2a59573d1755f7dff86f2ce415b441c9cd2a171c03445f91e732351"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_debug_frame_initial_bindings.asm",
+          "sha256": "946580eba19d4a21f2de0c61fef1e0067b735dee8d168cae49a1e5a3ee284e84"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/runtime/debug_frame_initial.cpp",
+          "sha256": "eb725784f2a59573d1755f7dff86f2ce415b441c9cd2a171c03445f91e732351"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "1c10bc1000abdf44fbb15bf4e59b23ea91f5f89ad0b72f5bb1734eeeba48f545",
+      "compiled_negative_control": {
+        "target_start": 133728,
+        "candidate_start": 133728,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133728,
+          "size": 2,
+          "module": "th05/dbgfrm.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-debug-frame-state-initial-data",
+        "entry_sha256": "20f7f2c692e360fa8b8b68689ad2f60c19ef8f3f01e9936851db4639aaf52d0f",
+        "mutation": {
+          "unit": "main-debug-frame-state-initial-data",
+          "source": "src/main/runtime/debug_frame_initial.cpp",
+          "find": "debug_frame_step_enabled = false;",
+          "replace": "debug_frame_step_enabled = true;"
+        },
+        "control_sha256": "e6b5a4d231c538f3b74fbdaec4805a0ce8ac8463c3b351614ed1bedf021f6d59",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133728,
+          "candidate_start": 133728,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133728,
+            "size": 2,
+            "module": "th05/dbgfrm.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "bc6fecb60c5c2ac379a3597bac7cb5c0e05f77ae80b44548573622bb7af4ba8f",
+          "dependency_timestamp_normalized_sha256": "b5700e3779e1ad614633f0467f58f6a24a4c7da5bd1a9407a172bc27b6ea2761",
+          "module_name": "th05/dbgfrm.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dbgfrm.cpp",
+            "src/main/runtime/debug_frame_initial.cpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dbgfrm.cpp"
         ]
       },
       "receipt_aggregate_pass": true

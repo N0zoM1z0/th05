@@ -6939,3 +6939,25 @@ unit = "main-bullet-group-special-initial-data"
 source = "src/main/bullet/group_special_initial.cpp"
 find = "group_is_special = 0;"
 replace = "group_is_special = 1;"
+
+[[units]]
+id = "main-debug-frame-state-initial-data"
+source = "src/main/runtime/debug_frame_initial.cpp"
+module = "th05/dbgfrm.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_debug_frame_initial_bindings.asm"
+target_start = 0x20a60
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-debug-frame-state-initial-data"
+source = "src/main/runtime/debug_frame_initial.cpp"
+find = "debug_frame_step_enabled = false;"
+replace = "debug_frame_step_enabled = true;"
