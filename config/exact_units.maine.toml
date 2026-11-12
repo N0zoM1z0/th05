@@ -2095,3 +2095,26 @@ unit = "maine-staff-double-image-phases-data"
 source = "src/maine/staff/staff_double_image_phases.c"
 find = "staff_image_phase_b = 0;"
 replace = "staff_image_phase_b = 1;"
+
+[[units]]
+id = "maine-allcast-displayed-page-latch-data"
+source = "src/maine/allcast/page_shown.c"
+module = "th05/acpage.c"
+segment = "_DATA"
+wrapper_options = "-zCALLCAST_PAGE_LATCH_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_allcast_displayed_page_bindings.asm"
+binary = "E"
+target_start = 0x1086e
+size = 1
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-allcast-displayed-page-latch-data"
+source = "src/maine/allcast/page_shown.c"
+find = "page_shown = 0;"
+replace = "page_shown = 1;"
