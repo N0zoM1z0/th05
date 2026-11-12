@@ -70,3 +70,40 @@ mutation changes output and is rejected. The first scaffold failed before C++
 compilation because `_DATA` had byte alignment incompatible with the model;
 only its DATA/BSS alignment declarations were corrected for the valid replay.
 No DATA, external context or packed-file credit is added.
+
+## Title-roll and source-owned PI mask fade protocol (2026-11-12)
+
+The complete **618-byte** original OP title context now explicitly
+names the eight original rolling images, their **eight-frame** cel
+intervals, and the **four-stage × four-frame** masked PI fade from the
+source-visible `title_animation_rules.hpp`. The four actual PI stages
+have their own independently accepted natural C DATA contribution at
+OP `[FA44,FA64)`; this title source only passes the original phase ID
+to `pi_put_masked_8()`. It does not duplicate or copy the coverage
+masks or the original PI artwork.
+
+The real two-byte nested page state still tracks *displayed* and
+*accessed* pages separately, uses the original one-frame delay in its
+`wait_and_flip()` helper, blits successive roll frames onto each page,
+and applies a linear tone from `100-64+frame`. The first/second page
+initialization, palette black, hardware GRCG rectangle clear and actual
+PC-98 page ports keep their original semantics. The music branch only
+runs when the resident demo number is zero. At the end the source
+still waits **16 frames** before starting the masked title image.
+
+The existing native documented frame-timing quirk is retained: the
+first fade cel is seen for five frames and the final for three, so the
+visible sequence is **5-4-4-3** rather than four uniform four-frame
+intervals. The source does not change the page-switch ordering to
+correct this original behavior, nor does it free an extra PI resource.
+
+The actual `title.cpp` source is also the original initialized filename
+provider for the same translation unit; both CODE and DATA therefore
+were recompiled under the pinned Borland C++ environment. The focused
+receipt `.analysis/unit-replays/gpt-web-op-title-fade-rules-a/receipt.json`
+passes **all 618 CODE bytes across three complete functions**, the
+original 39 ordered segment relocations, and all **154 bytes** of the
+complete original 19-name DATA contribution, with unchanged OMF/MAP
+bounds. Its compiled negative shortens the genuine fade settle period
+from 16 to 15 frames and is rejected. There is no new already-owned
+byte credit or whole OP cold replay.

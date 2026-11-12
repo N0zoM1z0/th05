@@ -260,8 +260,8 @@ bindings_source = "probes/units/op_title_bindings.asm"
 [[controls]]
 unit = "op-title"
 source = "src/op/title/title.cpp"
-find = "frame_delay(16);"
-replace = "frame_delay(15);"
+find = "frame_delay(OT_FADE_SETTLE_FRAMES);"
+replace = "frame_delay(OT_FADE_SETTLE_FRAMES - 1);"
 
 [[units]]
 id = "op-setup-data"
