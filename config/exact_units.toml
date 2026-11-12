@@ -6785,3 +6785,25 @@ unit = "main-item-runtime-state-data"
 source = "src/main/item/state_data.cpp"
 find = "items_pull_to_player = false;"
 replace = "items_pull_to_player = true;"
+
+[[units]]
+id = "main-enemy-lifetime-totals-initial-data"
+source = "src/main/enemy/lifetime_totals_data.cpp"
+module = "th05/enmyttl.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_enemy_lifetime_totals_data_bindings.asm"
+target_start = 0x21E74
+size = 4
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-enemy-lifetime-totals-initial-data"
+source = "src/main/enemy/lifetime_totals_data.cpp"
+find = "enemies_killed = 0;"
+replace = "enemies_killed = 1;"
