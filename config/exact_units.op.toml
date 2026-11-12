@@ -1379,3 +1379,26 @@ unit = "op-glyph-overlay-mask-data"
 source = "src/shared/hardware/glyph_coverage.h"
 find = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x5"
 replace = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x4"
+
+[[units]]
+id = "op-vram-plane-frames-data"
+source = "src/op/hardware/vram_plane_frames.c"
+module = "th05/opvram.c"
+segment = "_DATA"
+wrapper_options = "-zCVRAM_PLANES_OP_TEXT -zPop_01"
+bindings_source = "probes/units/op_vram_plane_frames_bindings.asm"
+binary = "O"
+target_start = 64132
+size = 16
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "op-vram-plane-frames-data"
+source = "src/shared/hardware/vram_plane_frames.h"
+find = "VRAM_SEGMENT_GREEN = 0xB800"
+replace = "VRAM_SEGMENT_GREEN = 0xB810"

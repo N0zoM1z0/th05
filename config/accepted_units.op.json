@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "250a91c738ed5d4d19d65634b9bc8ef4c7fbaccc5bb6c571223d341cf55717f4",
+  "replay_receipt_sha256": "291151a842070d5a75a12879e02e6697db9bb2510edf1d1321de815a967de362",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 63902,
-    "candidate_start": 63902,
-    "size": 32,
-    "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
-    "candidate_sha256": "a1202ff9b4d00bd6b611d70dc3cc5c9fa63281e94e5a72a3f4991cc03e4cff51",
+    "target_start": 64132,
+    "candidate_start": 64132,
+    "size": 16,
+    "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+    "candidate_sha256": "2b1a7b63438388bf165bba0ce13730dd22a61de31563008624ef2b11075f9fb2",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 63902,
-      "size": 32,
-      "module": "th05/opgmask.c",
+      "start": 64132,
+      "size": 16,
+      "module": "th05/opvram.c",
       "segment": "_DATA"
     }
   },
@@ -44049,6 +44049,309 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "op-glyph-overlay-mask-data"
+      ]
+    },
+    {
+      "id": "op-vram-plane-frames-data",
+      "entry_sha256": "0bce1b2442ad5c8f3a274ea1673daadcfc19874bff73dc35316e720a430a6b5b",
+      "result": {
+        "id": "op-vram-plane-frames-data",
+        "entry_sha256": "0bce1b2442ad5c8f3a274ea1673daadcfc19874bff73dc35316e720a430a6b5b",
+        "rounds": [
+          {
+            "target_start": 64132,
+            "candidate_start": 64132,
+            "size": 16,
+            "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "candidate_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 64132,
+              "size": 16,
+              "module": "th05/opvram.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 64132,
+            "candidate_start": 64132,
+            "size": 16,
+            "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "candidate_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 64132,
+              "size": 16,
+              "module": "th05/opvram.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "55e42fd7798f350dc3150c22991735f62e743a9810724d5d1d065058ceb62ac1",
+            "dependency_timestamp_normalized_sha256": "9f5ef0962f6b1801ef52e4a862690958f653451ed6a1fda29d62ecf114a4454c",
+            "module_name": "th05/opvram.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/opvram.c",
+              "src/op/hardware/vram_plane_frames.c",
+              "src/shared/hardware/vram_plane_frames.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "88010fe8e37fb88b34a9d89bc39fb26eb2fd0314944ff41e9f7978339138bea4",
+            "dependency_timestamp_normalized_sha256": "9f5ef0962f6b1801ef52e4a862690958f653451ed6a1fda29d62ecf114a4454c",
+            "module_name": "th05/opvram.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/opvram.c",
+              "src/op/hardware/vram_plane_frames.c",
+              "src/shared/hardware/vram_plane_frames.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 16,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 16,
+                  "sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/opvram.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/opvram.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_vram_plane_frames_bindings.asm",
+            "sha256": "6c8dd7c40f7e3bc76e37645f40a24bcf0bbdc6b4fbd2fbd256248714d7298ba4"
+          },
+          {
+            "path": "src/op/hardware/vram_plane_frames.c",
+            "sha256": "6b77073176f43d1913d166f86cf36591a6464d7106c7d36d33917af7d24640e1"
+          },
+          {
+            "path": "src/shared/hardware/vram_plane_frames.h",
+            "sha256": "db61904d4a9f9598bff08771b1a41efe4a9936638a2138196d928ffafa9d76c3"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_vram_plane_frames_bindings.asm",
+          "sha256": "6c8dd7c40f7e3bc76e37645f40a24bcf0bbdc6b4fbd2fbd256248714d7298ba4"
+        },
+        {
+          "path": "src/op/hardware/vram_plane_frames.c",
+          "sha256": "6b77073176f43d1913d166f86cf36591a6464d7106c7d36d33917af7d24640e1"
+        },
+        {
+          "path": "src/shared/hardware/vram_plane_frames.h",
+          "sha256": "db61904d4a9f9598bff08771b1a41efe4a9936638a2138196d928ffafa9d76c3"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "291151a842070d5a75a12879e02e6697db9bb2510edf1d1321de815a967de362",
+      "compiled_negative_control": {
+        "target_start": 64132,
+        "candidate_start": 64132,
+        "size": 16,
+        "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+        "candidate_sha256": "2b1a7b63438388bf165bba0ce13730dd22a61de31563008624ef2b11075f9fb2",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 64132,
+          "size": 16,
+          "module": "th05/opvram.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "op-vram-plane-frames-data",
+        "entry_sha256": "0bce1b2442ad5c8f3a274ea1673daadcfc19874bff73dc35316e720a430a6b5b",
+        "mutation": {
+          "unit": "op-vram-plane-frames-data",
+          "source": "src/shared/hardware/vram_plane_frames.h",
+          "find": "VRAM_SEGMENT_GREEN = 0xB800",
+          "replace": "VRAM_SEGMENT_GREEN = 0xB810"
+        },
+        "control_sha256": "eddea6f0ab8e17a0f6591c6c6e5b1e3528317d49411cb82b796a088c616d3d11",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 64132,
+          "candidate_start": 64132,
+          "size": 16,
+          "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
+          "candidate_sha256": "2b1a7b63438388bf165bba0ce13730dd22a61de31563008624ef2b11075f9fb2",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 64132,
+            "size": 16,
+            "module": "th05/opvram.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "b64a02a51d3c8c0b6218ea61d5a1e77298893f56cb81bbd4178c497d04c79a72",
+          "dependency_timestamp_normalized_sha256": "7b91e5ebce08a7d3e438d635a7d0c00e9ba04e101ffc0dad2f0548c18eb017d3",
+          "module_name": "th05/opvram.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/opvram.c",
+            "src/op/hardware/vram_plane_frames.c",
+            "src/shared/hardware/vram_plane_frames.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 16,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 16,
+                "sha256": "2b1a7b63438388bf165bba0ce13730dd22a61de31563008624ef2b11075f9fb2"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/opvram.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "op-vram-plane-frames-data"
       ]
     }
   ],
