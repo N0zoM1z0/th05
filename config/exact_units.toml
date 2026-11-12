@@ -4353,8 +4353,8 @@ code_data_ranges = [{ offset = 766, size = 20, kind = "compiler-switch-table" }]
 [[controls]]
 unit = "main-mai-update"
 source = "src/main/boss/mai_yuki/mai_update.cpp"
-find = "boss.phase_end_hp = 5800;"
-replace = "boss.phase_end_hp = 5801;"
+find = "boss.phase_end_hp = MAI_SOLO_HP_SETUP_GATE;"
+replace = "boss.phase_end_hp = (MAI_SOLO_HP_SETUP_GATE + 1);"
 
 [[units]]
 id = "main-mai-yuki-update-context"

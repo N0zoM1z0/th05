@@ -143,3 +143,32 @@ The complete affected five-unit survivor replay, including Yuki's sibling
 state view, is exact in both native Borland producers, with the original
 ordered fixups and rejected compiled negative. Receipt:
 `.analysis/unit-replays/gpt-web-survivor-solo-scratch-20261111/receipt.json`.
+
+## Mai solo HP / laser / revenge choreography (2026-11-12)
+
+The full original **786-byte** Mai survivor controller now expresses its
+four-phase HP ladder in an explicit semantic source header. It begins at
+7,800 HP, with genuine next thresholds 5,800, 2,800, 1,200 and zero.
+The first wave, then the extended laser cycle, then the middle snow
+wave use the original switching order and explosion directions. Mai
+independently has two 64-frame setup/ready delays, a 5,000-frame laser
+survival window, a **ten-entry** laser cleanup loop and a four-frame
+final-wave reposition lead rather than the earlier 32-frame lead.
+
+The code now names Mai's original idle sprites 180/181/182, transition
+sprite 204, attack sprites 188/189/190, B4-ball sprite base 212,
+center/laser approach destinations (192,96)/(192,128), and her
+64-pixel radius eight-point gather. The post-laser revenge snow angle
+0x80 and signed -4 step remain the same shared scratch bytes. None of
+these resource selectors is an inferred pixel asset; no new state is
+created and the existing near/far callbacks and damage semantics are
+unchanged.
+
+Targeted native receipt:
+`.analysis/unit-replays/gpt-web-mai-solo-schedule-a/receipt.json`. The
+actual Borland C++ owner matches **786/786 bytes** in two independent
+producer rounds, including its original compiler zero and 20-byte
+switch table and every ordered relocation. The updated compiled
+negative changes the genuine 5,800-HP gate by one and is rejected.
+The already accepted bytes earn no new second CODE credit, and no
+unrelated Boss, MAINE or OP unit was rebuilt.

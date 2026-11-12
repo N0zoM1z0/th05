@@ -2,6 +2,7 @@
 #pragma option -zCMAI_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_update.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
+#include "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
 // Canonical object types are complete before the compiler table alignment.
 #pragma codeseg MAI_UPDATE_TEXT main_03
 #pragma option -a2
@@ -36,30 +37,30 @@ extern "C" void pascal far mai_update(void)
 
     switch(boss.phase) {
     case MAI_SOLO_PHASE_SETUP:
-        if(boss.phase_frame == 1) {
-            boss.hp = 7800;
-            boss.phase_end_hp = 5800;
-            gather_template.radius.v = to_sp(64);
-            gather_template.angle_delta = 2;
-            gather_template.ring_points = 8;
-            boss.sprite = 180;
-            boss_sprite_left = 182;
-            boss_sprite_right = 181;
-            boss_sprite_stay = 180;
-            b4ball_template.patnum_tiny_base = 212;
+        if(boss.phase_frame == MAI_SOLO_FIRST_FRAME) {
+            boss.hp = MAI_SOLO_HP_TOTAL;
+            boss.phase_end_hp = MAI_SOLO_HP_SETUP_GATE;
+            gather_template.radius.v = to_sp(MAI_SOLO_GATHER_RADIUS_PX);
+            gather_template.angle_delta = MAI_SOLO_GATHER_ANGLE_DELTA;
+            gather_template.ring_points = MAI_SOLO_GATHER_RING_POINTS;
+            boss.sprite = MAI_SOLO_SPRITE_STILL;
+            boss_sprite_left = MAI_SOLO_SPRITE_MOVE_LEFT;
+            boss_sprite_right = MAI_SOLO_SPRITE_MOVE_RIGHT;
+            boss_sprite_stay = MAI_SOLO_SPRITE_STILL;
+            b4ball_template.patnum_tiny_base = MAI_SOLO_BALL_FIRST_SPRITE;
         }
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
+        if(boss.phase_frame >= MAI_SOLO_HP_FILL_FRAMES) {
             boss.phase++;
             boss.phase_frame = 0;
-            snd_se_play(13);
+            snd_se_play(MAI_SOLO_ENTRY_SOUND);
             bg_render_bombing_func = mai_yuki_bg_render;
         }
         break;
     case MAI_SOLO_PHASE_READY:
         boss_hittest_shots_invincible();
-        if(boss.phase_frame >= 64) {
-            boss.sprite = 204;
+        if(boss.phase_frame >= MAI_SOLO_READY_FRAMES) {
+            boss.sprite = MAI_SOLO_SPRITE_READY;
             boss.phase++;
             boss.phase_frame = 0;
             boss_custombullets_render = b4balls_render;
@@ -67,8 +68,8 @@ extern "C" void pascal far mai_update(void)
         break;
     case MAI_SOLO_PHASE_ENTRANCE:
         boss_hittest_shots_invincible();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
-            boss.sprite = 188;
+        if(boss_flystep_towards(to_sp(MAI_SOLO_CENTER_X_PX), to_sp(MAI_SOLO_CENTER_Y_PX))) {
+            boss.sprite = MAI_SOLO_SPRITE_ATTACK_STILL;
             boss.phase++;
             boss.phase_frame = 0;
             boss.mode = MAI_SOLO_MODE_ATTACK;
@@ -76,15 +77,15 @@ extern "C" void pascal far mai_update(void)
             boss_explode_small(ET_VERTICAL);
             circles_add_growing(boss.pos.cur.x, boss.pos.cur.y);
             boss_solo_pattern_current = mai_solo_widening_fans;
-            boss_sprite_left = 190;
-            boss_sprite_right = 189;
-            boss_sprite_stay = 188;
+            boss_sprite_left = MAI_SOLO_SPRITE_ATTACK_LEFT;
+            boss_sprite_right = MAI_SOLO_SPRITE_ATTACK_RIGHT;
+            boss_sprite_stay = MAI_SOLO_SPRITE_ATTACK_STILL;
         }
         break;
     case MAI_SOLO_PHASE_WAVE_FIRST:
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
-            if(boss_flystep_random(boss.phase_frame - 32)) {
+            if(boss_flystep_random(boss.phase_frame - MAI_SOLO_REPOSITION_LEAD_FRAMES)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
@@ -92,7 +93,7 @@ extern "C" void pascal far mai_update(void)
                     goto phase3_complete;
                 }
                 boss_solo_pattern_current = mai_solo_pattern_pair_first[
-                    boss.phase_state.patterns_seen & 1];
+                    boss.phase_state.patterns_seen & MAI_SOLO_PATTERN_PARITY_MASK];
             }
             break;
         case MAI_SOLO_MODE_ATTACK:
@@ -102,40 +103,40 @@ extern "C" void pascal far mai_update(void)
         if(!boss_hittest_shots()) {
             break;
         }
-        boss_score_bonus(10);
+        boss_score_bonus(MAI_SOLO_HIT_SCORE_BONUS);
 phase3_complete:
-        boss_phase_next(ET_NW_SE, 2800);
+        boss_phase_next(ET_NW_SE, MAI_SOLO_HP_FIRST_WAVE_END);
         break;
     case MAI_SOLO_PHASE_LASER_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(128))) {
+        if(boss_flystep_towards(to_sp(MAI_SOLO_CENTER_X_PX), to_sp(MAI_SOLO_LASER_APPROACH_Y_PX))) {
             boss.phase++;
             boss.phase_frame = 0;
         }
         break;
     case MAI_SOLO_PHASE_LASER_CYCLE:
         mai_solo_laser_cycle();
-        if(boss.phase_frame < 5000) {
+        if(boss.phase_frame < MAI_SOLO_LASER_TIMEOUT_FRAMES) {
             if(!boss_hittest_shots()) {
                 break;
             }
-            boss_score_bonus(10);
+            boss_score_bonus(MAI_SOLO_HIT_SCORE_BONUS);
         }
-        for(i = 0; i < 10; i++) {
+        for(i = 0; i < MAI_SOLO_LASER_STOP_COUNT; i++) {
             laser_stop(i);
         }
-        boss_phase_next(ET_HORIZONTAL, 1200);
+        boss_phase_next(ET_HORIZONTAL, MAI_SOLO_HP_LASER_CYCLE_END);
         break;
     case MAI_SOLO_PHASE_WAVE_MIDDLE_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
+        if(boss_flystep_towards(to_sp(MAI_SOLO_CENTER_X_PX), to_sp(MAI_SOLO_CENTER_Y_PX))) {
             goto movement_complete;
         }
         break;
     case MAI_SOLO_PHASE_WAVE_MIDDLE:
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
-            if(boss_flystep_random(boss.phase_frame - 32)) {
+            if(boss_flystep_random(boss.phase_frame - MAI_SOLO_REPOSITION_LEAD_FRAMES)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
@@ -143,7 +144,7 @@ phase3_complete:
                     goto phase7_complete;
                 }
                 boss_solo_pattern_current = mai_solo_pattern_pair_middle[
-                    boss.phase_state.patterns_seen & 1];
+                    boss.phase_state.patterns_seen & MAI_SOLO_PATTERN_PARITY_MASK];
             }
             break;
         case MAI_SOLO_MODE_ATTACK:
@@ -153,24 +154,24 @@ phase3_complete:
         if(!boss_hittest_shots()) {
             break;
         }
-        boss_score_bonus(10);
+        boss_score_bonus(MAI_SOLO_HIT_SCORE_BONUS);
 phase7_complete:
-        boss_phase_next(ET_NW_SE, 0);
+        boss_phase_next(ET_NW_SE, MAI_SOLO_HP_MIDDLE_WAVE_END);
         break;
     case MAI_SOLO_PHASE_FINAL_APPROACH:
         boss_hittest_shots();
-        if(boss_flystep_towards(to_sp(192), to_sp(96))) {
+        if(boss_flystep_towards(to_sp(MAI_SOLO_CENTER_X_PX), to_sp(MAI_SOLO_CENTER_Y_PX))) {
 movement_complete:
             boss.phase++;
             boss.phase_frame = 0;
-            mai_solo_scratch.revenge_snow_angle = 0x80;
-            mai_solo_scratch.revenge_snow_step = static_cast<unsigned char>(-4);
+            mai_solo_scratch.revenge_snow_angle = MAI_SOLO_REVENGE_SNOW_ANGLE;
+            mai_solo_scratch.revenge_snow_step = static_cast<unsigned char>(MAI_SOLO_REVENGE_SNOW_SIGNED_STEP);
         }
         break;
     case MAI_SOLO_PHASE_WAVE_FINAL:
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
-            if(boss_flystep_random(boss.phase_frame - 4)) {
+            if(boss_flystep_random(boss.phase_frame - MAI_SOLO_FINAL_REPOSITION_LEAD_FRAMES)) {
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
@@ -179,7 +180,7 @@ movement_complete:
                     goto defeat;
                 }
                 boss_solo_pattern_current = mai_solo_pattern_pair_final[
-                    boss.phase_state.patterns_seen & 1];
+                    boss.phase_state.patterns_seen & MAI_SOLO_PATTERN_PARITY_MASK];
             }
             break;
         case MAI_SOLO_MODE_ATTACK:
@@ -198,9 +199,9 @@ defeat:
         boss_custombullets_render = nullfunc_near;
         break;
     default:
-        boss_defeat_update(70);
+        boss_defeat_update(MAI_SOLO_DEFEAT_BONUS);
         return;
     }
     b4balls_update();
-    hud_hp_update_and_render(boss.hp, 7800);
+    hud_hp_update_and_render(boss.hp, MAI_SOLO_HP_TOTAL);
 }
