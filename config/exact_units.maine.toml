@@ -1790,3 +1790,26 @@ unit = "maine-score-resource-strings-data"
 source = "src/maine/score/resource_strings.c"
 find = "char SCOREDAT_FN[] = \"GENSOU.SCR\";"
 replace = "char SCOREDAT_FN[] = \"GENSOU.SCX\";"
+
+[[units]]
+id = "maine-cutscene-box-mask-patterns-data"
+source = "src/maine/cutscene/box_mask_patterns.c"
+module = "th05/cubmask.c"
+segment = "_DATA"
+wrapper_options = "-zCCUTSCENE_BOX_MASK_DATA_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_cutscene_box_mask_patterns_bindings.asm"
+binary = "E"
+target_start = 67650
+size = 40
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-cutscene-box-mask-patterns-data"
+source = "src/maine/cutscene/box_mask_patterns.c"
+find = "EGC_REPEAT_NIBBLE(BOX_MASK_COMPLEMENT)"
+replace = "EGC_REPEAT_NIBBLE(BOX_MASK_BIT_0)"
