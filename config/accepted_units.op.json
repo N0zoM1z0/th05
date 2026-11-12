@@ -2,20 +2,28 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "abbd864badab0eea5e42ebd7d1f922a3420c1d436db36c0ab2ecfab75c0ac8f2",
+  "replay_receipt_sha256": "250a91c738ed5d4d19d65634b9bc8ef4c7fbaccc5bb6c571223d341cf55717f4",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 58196,
-    "candidate_start": 58196,
-    "size": 63,
-    "target_sha256": "622c9606a69af201c244d98bd4564fb6bdd159da63951e9e240d4ab038701b85",
-    "candidate_sha256": "68a63f729fc0b4ba83c9c752542002b47c992412fc0ed44eddd322946353f4d0",
+    "target_start": 63902,
+    "candidate_start": 63902,
+    "size": 32,
+    "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+    "candidate_sha256": "a1202ff9b4d00bd6b611d70dc3cc5c9fa63281e94e5a72a3f4991cc03e4cff51",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 63902,
+      "size": 32,
+      "module": "th05/opgmask.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -43739,6 +43747,309 @@
           }
         ]
       }
+    },
+    {
+      "id": "op-glyph-overlay-mask-data",
+      "entry_sha256": "0ecee4c4ac5a9aab9338721883892417eb77984370e9a52f83d3d1678962e90e",
+      "result": {
+        "id": "op-glyph-overlay-mask-data",
+        "entry_sha256": "0ecee4c4ac5a9aab9338721883892417eb77984370e9a52f83d3d1678962e90e",
+        "rounds": [
+          {
+            "target_start": 63902,
+            "candidate_start": 63902,
+            "size": 32,
+            "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+            "candidate_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 63902,
+              "size": 32,
+              "module": "th05/opgmask.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 63902,
+            "candidate_start": 63902,
+            "size": 32,
+            "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+            "candidate_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 63902,
+              "size": 32,
+              "module": "th05/opgmask.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7e3b614a2f3d12c6fd0bfb245c75825b7de8ca8946286560b556ae4ce9d1273d",
+            "dependency_timestamp_normalized_sha256": "4163f99d3e9b8288c57058565e7b577656549d60480b9a4d725055f54d343294",
+            "module_name": "th05/opgmask.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/opgmask.c",
+              "src/op/hardware/glyph_coverage_data.c",
+              "src/shared/hardware/glyph_coverage.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 32,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 32,
+                  "sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "a94c5eb23131d986ae28db69babd936418557faebf828531e0c4886905584ae7",
+            "dependency_timestamp_normalized_sha256": "4163f99d3e9b8288c57058565e7b577656549d60480b9a4d725055f54d343294",
+            "module_name": "th05/opgmask.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/opgmask.c",
+              "src/op/hardware/glyph_coverage_data.c",
+              "src/shared/hardware/glyph_coverage.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 32,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 32,
+                  "sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/opgmask.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/opgmask.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_glyph_coverage_data_bindings.asm",
+            "sha256": "f4920eec21086d6389e4dd27214ed368aa4df0ccd21545c63893b79337cb9d0d"
+          },
+          {
+            "path": "src/op/hardware/glyph_coverage_data.c",
+            "sha256": "35357654bc8fef2c05f22791cfeb8775e4e2e3f8d33993fad3b3ca9b19861205"
+          },
+          {
+            "path": "src/shared/hardware/glyph_coverage.h",
+            "sha256": "dc21db56ce9f8b5e8e3cef52aaa247b98c5934231b6177524ae2778f8bb7a832"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_glyph_coverage_data_bindings.asm",
+          "sha256": "f4920eec21086d6389e4dd27214ed368aa4df0ccd21545c63893b79337cb9d0d"
+        },
+        {
+          "path": "src/op/hardware/glyph_coverage_data.c",
+          "sha256": "35357654bc8fef2c05f22791cfeb8775e4e2e3f8d33993fad3b3ca9b19861205"
+        },
+        {
+          "path": "src/shared/hardware/glyph_coverage.h",
+          "sha256": "dc21db56ce9f8b5e8e3cef52aaa247b98c5934231b6177524ae2778f8bb7a832"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "250a91c738ed5d4d19d65634b9bc8ef4c7fbaccc5bb6c571223d341cf55717f4",
+      "compiled_negative_control": {
+        "target_start": 63902,
+        "candidate_start": 63902,
+        "size": 32,
+        "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+        "candidate_sha256": "a1202ff9b4d00bd6b611d70dc3cc5c9fa63281e94e5a72a3f4991cc03e4cff51",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 63902,
+          "size": 32,
+          "module": "th05/opgmask.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "op-glyph-overlay-mask-data",
+        "entry_sha256": "0ecee4c4ac5a9aab9338721883892417eb77984370e9a52f83d3d1678962e90e",
+        "mutation": {
+          "unit": "op-glyph-overlay-mask-data",
+          "source": "src/shared/hardware/glyph_coverage.h",
+          "find": "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x5",
+          "replace": "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x4"
+        },
+        "control_sha256": "8a525f1344ba7071112e88e98d6a1350f269ed6f638f049618a9eaa70563ec8b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 63902,
+          "candidate_start": 63902,
+          "size": 32,
+          "target_sha256": "a74f8c5aec196fcdf075880a39a00831a34e9452dc39f532a4a264227d65f5ad",
+          "candidate_sha256": "a1202ff9b4d00bd6b611d70dc3cc5c9fa63281e94e5a72a3f4991cc03e4cff51",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 63902,
+            "size": 32,
+            "module": "th05/opgmask.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "2b22e0fb8c41336b490b355a50cfd20443fd644310498ccf8d69cd416ca62db9",
+          "dependency_timestamp_normalized_sha256": "2f79cc73bf0ae0656204f0dee6eb413dc7bffaa7a45b1110f6ee5f37d7a4477b",
+          "module_name": "th05/opgmask.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/opgmask.c",
+            "src/op/hardware/glyph_coverage_data.c",
+            "src/shared/hardware/glyph_coverage.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 32,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 32,
+                "sha256": "a1202ff9b4d00bd6b611d70dc3cc5c9fa63281e94e5a72a3f4991cc03e4cff51"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/opgmask.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "op-glyph-overlay-mask-data"
+      ]
     }
   ],
   "artifact": "th05-op",

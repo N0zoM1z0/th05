@@ -1356,3 +1356,26 @@ unit = "op-egc-rect-setup-exact"
 source = "src/shared/hardware/egc_rect_setup.cpp"
 find = "_AX = 0xFFF0;"
 replace = "_AX = 0xFFEF;"
+
+[[units]]
+id = "op-glyph-overlay-mask-data"
+source = "src/op/hardware/glyph_coverage_data.c"
+module = "th05/opgmask.c"
+segment = "_DATA"
+wrapper_options = "-zCGLYPH_OVERLAY_OP_TEXT -zPop_01"
+bindings_source = "probes/units/op_glyph_coverage_data_bindings.asm"
+binary = "O"
+target_start = 63902
+size = 32
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "op-glyph-overlay-mask-data"
+source = "src/shared/hardware/glyph_coverage.h"
+find = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x5"
+replace = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x4"
