@@ -2124,8 +2124,8 @@ alignment_offsets = []
 [[controls]]
 unit = "main-exalice-laser-patterns"
 source = "src/main/boss/exalice/laser_patterns.cpp"
-find = "laser_template.active_at_age.grow = 47;"
-replace = "laser_template.active_at_age.grow = 48;"
+find = "laser_template.active_at_age.grow = XLR_FIXED_GROW_AGE;"
+replace = "laser_template.active_at_age.grow = (XLR_FIXED_GROW_AGE + 1);"
 
 [[units]]
 id = "main-mai-yuki-initial-patterns"

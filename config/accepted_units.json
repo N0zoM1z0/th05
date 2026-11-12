@@ -2,28 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+  "replay_receipt_sha256": "fd4d366cc17426f433637b1d2b8d5e06814d52a27ab74b0d3469fb6013f0b373",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140122,
-    "candidate_start": 140122,
-    "size": 2,
-    "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-    "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+    "target_start": 105517,
+    "candidate_start": 105517,
+    "size": 645,
+    "target_sha256": "0e991e1bbb76f1cd837e556a5837881294708aaff83beb46b35b48d0c13f545b",
+    "candidate_sha256": "91a3fd28170413c397a2e8bdc85b20e46d29d128d76abe336448172b10666bf9",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      422,
+      98
+    ],
+    "candidate_fixups": [
+      422,
+      98
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 140122,
-      "size": 2,
-      "module": "th05/bgseed.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -34883,8 +34881,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "475f374e50a3a3afb8b2f4cba39e6d4ca3340250c76985a8e9d9ee6148105ad7",
-            "dependency_timestamp_normalized_sha256": "97ace2b844a9e7633117b30dfdf5cff3c4d3150586c51901cbe472b0f25ebf08",
+            "sha256": "fcf40390ce1c0391a5763551916c8196fde6c6cff6c65e52ca2fd851cef5f3af",
+            "dependency_timestamp_normalized_sha256": "9607021582701ce5afb0463eb75e85e9b5c83b69c0b65d2c29c94df0d8639583",
             "module_name": "th05/x_lsr.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34906,12 +34904,13 @@
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
               "src/main/bullet/laser.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/laser_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "ae960bcc6cb86a491073ff4b713f8581a31b2d42ddeb1adae6bdf4509b60a22c",
-            "dependency_timestamp_normalized_sha256": "97ace2b844a9e7633117b30dfdf5cff3c4d3150586c51901cbe472b0f25ebf08",
+            "sha256": "3dd8e897c5cc6d440d1fa71a23bd6f1fa9f203357a109e4594c7e34863e5e0be",
+            "dependency_timestamp_normalized_sha256": "9607021582701ce5afb0463eb75e85e9b5c83b69c0b65d2c29c94df0d8639583",
             "module_name": "th05/x_lsr.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -34933,7 +34932,8 @@
               "src/main/player/player.hpp",
               "src/shared/geometry.hpp",
               "src/main/bullet/laser.hpp",
-              "src/shared/geometry.hpp"
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/laser_attack_rules.hpp"
             ]
           }
         ],
@@ -34975,8 +34975,12 @@
             "sha256": "27e957354792fa320e7cc8e7d41b0ea75fcdc2613034bd5fdba61d1d2596b725"
           },
           {
+            "path": "src/main/boss/exalice/laser_attack_rules.hpp",
+            "sha256": "694f78de5a22c93fb03ac39e2c433328ae8a54a5d9adbee982814a827b0a7c72"
+          },
+          {
             "path": "src/main/boss/exalice/laser_patterns.cpp",
-            "sha256": "1b72e5a9778f7772e6c50c708e3bab3aeee00aa0ff248ce2833bb59576f555ec"
+            "sha256": "98d4f4323366f15feced658b746f93c67431d7ef57ba2e9bef7d1b9cd43b7980"
           },
           {
             "path": "src/main/boss/exalice/laser_patterns.hpp",
@@ -35023,8 +35027,12 @@
           "sha256": "27e957354792fa320e7cc8e7d41b0ea75fcdc2613034bd5fdba61d1d2596b725"
         },
         {
+          "path": "src/main/boss/exalice/laser_attack_rules.hpp",
+          "sha256": "694f78de5a22c93fb03ac39e2c433328ae8a54a5d9adbee982814a827b0a7c72"
+        },
+        {
           "path": "src/main/boss/exalice/laser_patterns.cpp",
-          "sha256": "1b72e5a9778f7772e6c50c708e3bab3aeee00aa0ff248ce2833bb59576f555ec"
+          "sha256": "98d4f4323366f15feced658b746f93c67431d7ef57ba2e9bef7d1b9cd43b7980"
         },
         {
           "path": "src/main/boss/exalice/laser_patterns.hpp",
@@ -35065,7 +35073,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b45ae1cd43cb8b4ffd536233331b0983d1b51cf3c898d56490ddcbfecee8ac5d",
+      "replay_receipt_sha256": "fd4d366cc17426f433637b1d2b8d5e06814d52a27ab74b0d3469fb6013f0b373",
       "compiled_negative_control": {
         "target_start": 105517,
         "candidate_start": 105517,
@@ -35090,10 +35098,10 @@
         "mutation": {
           "unit": "main-exalice-laser-patterns",
           "source": "src/main/boss/exalice/laser_patterns.cpp",
-          "find": "laser_template.active_at_age.grow = 47;",
-          "replace": "laser_template.active_at_age.grow = 48;"
+          "find": "laser_template.active_at_age.grow = XLR_FIXED_GROW_AGE;",
+          "replace": "laser_template.active_at_age.grow = (XLR_FIXED_GROW_AGE + 1);"
         },
-        "control_sha256": "eb0eae643abad1c808824b7221e49f291f1b9187899e22a8251b5b2f9df03557",
+        "control_sha256": "0837f461332a6821cdf688dc6caa96c79493001a7766a4de3143713c49f550bf",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 105517,
@@ -35114,8 +35122,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "03cc14ae967bf99fb3c1843b1d8727d4499ff3f6034092e2872b7654ceca1d7e",
-          "dependency_timestamp_normalized_sha256": "9f6337b3a8c57499f3cff74164917f083ac7fd2248d9c6edf089c30364641773",
+          "sha256": "289f80c3b00ec4e69ab67ac11ed17e5dcca06bcaf804380b9b478719dcebfb09",
+          "dependency_timestamp_normalized_sha256": "79b5e500be29a1ea0ed3391489c0a516cd9591543e1b9d1b6e73d6fc70114347",
           "module_name": "th05/x_lsr.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -35137,7 +35145,8 @@
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
             "src/main/bullet/laser.hpp",
-            "src/shared/geometry.hpp"
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/laser_attack_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -35154,7 +35163,10 @@
           "th05/x_lsr.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-exalice-laser-patterns"
+      ]
     },
     {
       "id": "main-mai-yuki-initial-patterns",
