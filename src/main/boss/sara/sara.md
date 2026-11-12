@@ -216,3 +216,20 @@ its alignment classification and all ten ordered MZ relocation entries;
 the previously accepted compiled red-spread-stack mutation is rejected.
 The current acceptance ledger references this updated source, with no
 second authored CODE credit or whole-game cold replay.
+
+## Source factoring: native red cloud and fresh random angle draws
+
+The complete original-order 1,824-byte Sara source now shares the genuine
+red cloud spawn/sprite initialization between its aimed red spread-stack and
+rotating red-stack patterns. The groups, angle calculations, stack geometry,
+projectile tuning and sounds remain distinct. The expanding pellet and blue
+ball volleys now use one `SARA_FRESH_PELLET_DIRECTION()` expression but still
+perform **two separate RNG draws**, one at each original bullet construction
+site. No cached/shared random result was introduced.
+
+A focused two-producer Turbo C++/TLINK replay reproduces all 1,824 original
+bytes, the real switch-table boundaries and original ordered relocations;
+the existing compiled red-spread mutation is rejected. Evidence:
+`.analysis/unit-replays/gpt-web-sara-red-cloud-and-angle-draws-b/receipt.json`.
+This refreshes an already accepted 12-function Boss context, without
+recrediting authored CODE.

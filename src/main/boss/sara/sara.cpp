@@ -163,11 +163,24 @@ void near pattern_blue_curve_clockwise(void)
 	pattern_blue(state->phase_2.angle_clockwise, SARA_BLUE_CLOCKWISE_STEP);
 }
 
+// The red spread-stack and spinning-stack attacks share the native red
+// cloud projectile initialization but retain their own group trajectories.
+#define SARA_RED_CLOUD_SETUP() { \
+    bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE); \
+    bullet_template.patnum = PAT_BULLET16_N_BALL_RED; \
+}
+
+// The spreading pellets and the additional blue ball each draw a separate
+// RNG angle at the same original stage/frame and with identical arithmetic.
+#define SARA_FRESH_PELLET_DIRECTION() ( \
+    randring2_next16_mod(boss.phase_frame * SAR_PELLET_RANDOM_ANGLE_SCALE) - \
+    boss.phase_frame + SAR_PELLET_CENTER_ANGLE \
+)
+
 void near pattern_aimed_red_spread_stack(void)
 {
 	if(boss.phase_frame == SARA_RED_SPREAD_FIRE_FRAME) {
-		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
-		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
+		SARA_RED_CLOUD_SETUP();
 		bullet_template.group = BG_SPREAD_STACK_AIMED;
 		bullet_template.angle = 0;
 		sara_set_spread_stack(SAR_RED_SPREAD_COUNT, SAR_RED_SPREAD_ANGLE, SAR_RED_SPREAD_STACKS, SAR_RED_SPREAD_SPEED_STEP);
@@ -181,8 +194,7 @@ void near pattern_aimed_red_spread_stack(void)
 void near pattern_red_stacks(void)
 {
 	if((boss.phase_frame % SARA_RED_STACK_INTERVAL) == 0) {
-		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
-		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
+		SARA_RED_CLOUD_SETUP();
 		bullet_template.group = BG_STACK;
 		bullet_template.angle = (
 			boss.angle + state->phase_2.angle_stacks - SAR_RED_STACK_BACK_ANGLE
@@ -245,7 +257,7 @@ void near pattern_pellet_arcs_at_expanding_random_angles(void)
 		bullet_template.patnum = 0;
 		bullet_template.group = BG_SPREAD;
 		bullet_template.angle = (
-			randring2_next16_mod(boss.phase_frame * SAR_PELLET_RANDOM_ANGLE_SCALE) - boss.phase_frame + SAR_PELLET_CENTER_ANGLE
+			SARA_FRESH_PELLET_DIRECTION()
 		);
 		sara_set_spread(SAR_PELLET_SPREAD_COUNT, SAR_PELLET_SPREAD_ANGLE_STEP);
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
@@ -257,7 +269,7 @@ void near pattern_pellet_arcs_at_expanding_random_angles(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SINGLE;
 		bullet_template.angle = (
-			randring2_next16_mod(boss.phase_frame * SAR_PELLET_RANDOM_ANGLE_SCALE) - boss.phase_frame + SAR_PELLET_CENTER_ANGLE
+			SARA_FRESH_PELLET_DIRECTION()
 		);
 		bullet_template.speed.v = sara_rand_speed(SAR_BALL_MIN_SPEED_PX, SAR_BALL_MAX_SPEED_PX);
 		bullet_template_tune();
@@ -579,3 +591,6 @@ void pascal sara_update(void)
 
 #undef SARA_WAVE_HIT_SCORE_OR_BREAK
 #undef SARA_REPOSITION_AFTER_PATTERN
+
+#undef SARA_FRESH_PELLET_DIRECTION
+#undef SARA_RED_CLOUD_SETUP
