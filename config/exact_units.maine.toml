@@ -805,8 +805,8 @@ replace = "frame_delay(2);"
 [[controls]]
 unit = "maine-staff-image-b"
 source = "src/maine/staff/body/staff_image_update_b.inl"
-find = "(image->pixel_w / 16) + 7;"
-replace = "(image->pixel_w / 16) + 8;"
+find = "(image->pixel_w / STIMG_CELL_WIDTH_PX) + STIMG_WIPE_PREPARE_LEAD;"
+replace = "(image->pixel_w / STIMG_CELL_WIDTH_PX) + (STIMG_WIPE_PREPARE_LEAD + 1);"
 
 [[units]]
 id = "maine-allcast-line"
