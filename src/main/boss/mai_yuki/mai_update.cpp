@@ -3,6 +3,7 @@
 #include "src/main/boss/mai_yuki/mai_update.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 #include "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
+#include "src/main/boss/mai_yuki/solo_wave_common.hpp"
 // Canonical object types are complete before the compiler table alignment.
 #pragma codeseg MAI_UPDATE_TEXT main_03
 #pragma option -a2
@@ -24,21 +25,6 @@ static const unsigned char MAI_SOLO_PHASE_DEFEAT = 253;
 static const unsigned char MAI_SOLO_WAVE_FIRST_LIMIT = 36;
 static const unsigned char MAI_SOLO_WAVE_MIDDLE_LIMIT = 36;
 static const unsigned char MAI_SOLO_WAVE_FINAL_LIMIT = 20;
-
-// All three solo attack waves count a new pattern only after their genuine
-// reposition callback completes, then restart the current phase clock.
-#define MAI_NEXT_PATTERN() \
-    boss.phase_frame = 0; \
-    boss.mode++; \
-    boss.phase_state.patterns_seen++
-
-// The first and middle regular waves share one shot/bonus gate. The break
-// deliberately exits the outer Boss switch on a missed shot.
-#define MAI_HIT_SCORE_OR_BREAK() \
-    if(!boss_hittest_shots()) { \
-        break; \
-    } \
-    boss_score_bonus(MAI_SOLO_HIT_SCORE_BONUS)
 
 extern "C" void pascal far mai_update(void)
 {
@@ -101,7 +87,7 @@ extern "C" void pascal far mai_update(void)
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - MAI_SOLO_REPOSITION_LEAD_FRAMES)) {
-                MAI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_FIRST_LIMIT) {
                     goto phase3_complete;
                 }
@@ -113,7 +99,7 @@ extern "C" void pascal far mai_update(void)
             boss_solo_pattern_current();
             break;
         }
-        MAI_HIT_SCORE_OR_BREAK();
+        MY_SOLO_HIT_BONUS_OR_BREAK(MAI_SOLO_HIT_SCORE_BONUS);
 phase3_complete:
         boss_phase_next(ET_NW_SE, MAI_SOLO_HP_FIRST_WAVE_END);
         break;
@@ -147,7 +133,7 @@ phase3_complete:
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - MAI_SOLO_REPOSITION_LEAD_FRAMES)) {
-                MAI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_MIDDLE_LIMIT) {
                     goto phase7_complete;
                 }
@@ -159,7 +145,7 @@ phase3_complete:
             boss_solo_pattern_current();
             break;
         }
-        MAI_HIT_SCORE_OR_BREAK();
+        MY_SOLO_HIT_BONUS_OR_BREAK(MAI_SOLO_HIT_SCORE_BONUS);
 phase7_complete:
         boss_phase_next(ET_NW_SE, MAI_SOLO_HP_MIDDLE_WAVE_END);
         break;
@@ -177,7 +163,7 @@ movement_complete:
         switch(boss.mode) {
         case MAI_SOLO_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - MAI_SOLO_FINAL_REPOSITION_LEAD_FRAMES)) {
-                MAI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= MAI_SOLO_WAVE_FINAL_LIMIT) {
                     boss.phase_state.defeat_bonus = false;
                     goto defeat;
@@ -208,6 +194,3 @@ defeat:
     b4balls_update();
     hud_hp_update_and_render(boss.hp, MAI_SOLO_HP_TOTAL);
 }
-
-#undef MAI_HIT_SCORE_OR_BREAK
-#undef MAI_NEXT_PATTERN

@@ -2,40 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "94d467694d078e313f4e8470d1718cbfc1c3af9a1cb84eb88effa7cd2071ba2b",
+  "replay_receipt_sha256": "5b9954658e98becc03f4b05b293cba8a37f165bb3221cde1fdb9b67fbfd56b4b",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 112347,
-    "candidate_start": 112347,
-    "size": 959,
-    "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
-    "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
+    "target_start": 103723,
+    "candidate_start": 103723,
+    "size": 786,
+    "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+    "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
     "raw_exact": false,
     "target_fixups": [
-      862,
-      461,
-      165,
-      128
+      251,
+      145
     ],
     "candidate_fixups": [
-      862,
-      461,
-      165,
-      128
+      251,
+      145
     ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-function",
-      "start": 112347,
-      "size": 959,
-      "function_symbol": "shinki_update()",
-      "contribution_start": 111172,
-      "contribution_size": 2134,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
-    }
+    "exact": false
   },
   "units": [
     {
@@ -40293,8 +40279,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4d573773536427f91b507bf19e81625f678cb25b75eda36946c61e979c9d505c",
-            "dependency_timestamp_normalized_sha256": "8e74aff3b6a4bc08f4010ff88372af39387445194d79bd75854a448044475492",
+            "sha256": "b06c30b691aa18b7a786e121f219cef68d88cc5d4e22907584803e4b904ef253",
+            "dependency_timestamp_normalized_sha256": "41e3d70d3b35d83a7a509cd427053ee2da110725184e7467821f45ed2f842947",
             "module_name": "th05/yuki_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -40325,12 +40311,13 @@
               "src/shared/geometry.hpp",
               "src/main/boss/mai_yuki/solo_scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "src/main/boss/mai_yuki/yuki_solo_choreography.hpp"
+              "src/main/boss/mai_yuki/yuki_solo_choreography.hpp",
+              "src/main/boss/mai_yuki/solo_wave_common.hpp"
             ]
           },
           {
-            "sha256": "4ef670b0b0f9ac329283306afd72fff6c55005a21c8523eb27cba3b2142417b9",
-            "dependency_timestamp_normalized_sha256": "8e74aff3b6a4bc08f4010ff88372af39387445194d79bd75854a448044475492",
+            "sha256": "2e4e345d06178af2461517b72484261e7b24aa62594ca6dbac0517c6938b66fc",
+            "dependency_timestamp_normalized_sha256": "41e3d70d3b35d83a7a509cd427053ee2da110725184e7467821f45ed2f842947",
             "module_name": "th05/yuki_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -40361,13 +40348,14 @@
               "src/shared/geometry.hpp",
               "src/main/boss/mai_yuki/solo_scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "src/main/boss/mai_yuki/yuki_solo_choreography.hpp"
+              "src/main/boss/mai_yuki/yuki_solo_choreography.hpp",
+              "src/main/boss/mai_yuki/solo_wave_common.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -40419,12 +40407,16 @@
             "sha256": "99d63155e0f9ea1edfcd34ceb73c03cec6674301ebc42d6e5886dd413d91c810"
           },
           {
+            "path": "src/main/boss/mai_yuki/solo_wave_common.hpp",
+            "sha256": "66a4b0275444f8e869fc799dca9c55a1fda98d6fb9ecf1071c2608634a814c0e"
+          },
+          {
             "path": "src/main/boss/mai_yuki/yuki_solo_choreography.hpp",
             "sha256": "e6ef3d2175f96b62dd37bf975b659d9e1a1eca0414a90d82126af8d965539c92"
           },
           {
             "path": "src/main/boss/mai_yuki/yuki_update.cpp",
-            "sha256": "3538fea8d2519e1d19a00034f1547b1af43e171140db5d664823531df33a2c0a"
+            "sha256": "bf3da5dfa7cda08f0aa1bfd8666c9b9827e4ed67bcfe0fa2b3c06819d04d9eba"
           },
           {
             "path": "src/main/boss/mai_yuki/yuki_update.hpp",
@@ -40491,12 +40483,16 @@
           "sha256": "99d63155e0f9ea1edfcd34ceb73c03cec6674301ebc42d6e5886dd413d91c810"
         },
         {
+          "path": "src/main/boss/mai_yuki/solo_wave_common.hpp",
+          "sha256": "66a4b0275444f8e869fc799dca9c55a1fda98d6fb9ecf1071c2608634a814c0e"
+        },
+        {
           "path": "src/main/boss/mai_yuki/yuki_solo_choreography.hpp",
           "sha256": "e6ef3d2175f96b62dd37bf975b659d9e1a1eca0414a90d82126af8d965539c92"
         },
         {
           "path": "src/main/boss/mai_yuki/yuki_update.cpp",
-          "sha256": "3538fea8d2519e1d19a00034f1547b1af43e171140db5d664823531df33a2c0a"
+          "sha256": "bf3da5dfa7cda08f0aa1bfd8666c9b9827e4ed67bcfe0fa2b3c06819d04d9eba"
         },
         {
           "path": "src/main/boss/mai_yuki/yuki_update.hpp",
@@ -40541,65 +40537,65 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "593c4623a7a9365e31fa32970a5d86d3fdcfa5a5ee386066a53917c2a77c9b77",
+      "replay_receipt_sha256": "5b9954658e98becc03f4b05b293cba8a37f165bb3221cde1fdb9b67fbfd56b4b",
       "compiled_negative_control": {
-        "target_start": 100869,
-        "candidate_start": 100869,
-        "size": 826,
-        "target_sha256": "9668f7cbb39394c6bc2e89a06c0f69cbcebffd35be787b12957441ff9638971d",
-        "candidate_sha256": "c53298d715a8d9e1b98a86bec0a6785887e7efc1d26fed66c5e3a23599f41a7f",
+        "target_start": 103723,
+        "candidate_start": 103723,
+        "size": 786,
+        "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+        "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
         "raw_exact": false,
         "target_fixups": [
-          256,
-          140
+          251,
+          145
         ],
         "candidate_fixups": [
-          256,
-          140
+          251,
+          145
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-yuki-update",
-        "entry_sha256": "8325be88031c93438b9fd58758ac1dbdef62ec4845b18a3c74d82b7d9616f6d3",
+        "unit_id": "main-mai-update",
+        "entry_sha256": "373da3fecb51979463cde4915d15f4b997ea2ac761fb5ea9477472a7ee4c7859",
         "mutation": {
-          "unit": "main-yuki-update",
-          "source": "src/main/boss/mai_yuki/yuki_update.cpp",
-          "find": "boss.phase_end_hp = YUKI_SOLO_HP_SETUP_GATE;",
-          "replace": "boss.phase_end_hp = (YUKI_SOLO_HP_SETUP_GATE - 100);"
+          "unit": "main-mai-update",
+          "source": "src/main/boss/mai_yuki/mai_update.cpp",
+          "find": "boss.phase_end_hp = MAI_SOLO_HP_SETUP_GATE;",
+          "replace": "boss.phase_end_hp = (MAI_SOLO_HP_SETUP_GATE + 1);"
         },
-        "control_sha256": "b486f847b816c701295fb32476a3e7670adab3381eacf8f6e6ed75352dd7a6be",
+        "control_sha256": "3348192d4542b9cd8b1ce0a382baf58e0b1804fba14dac1f5f877be3395a43e0",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 100869,
-          "candidate_start": 100869,
-          "size": 826,
-          "target_sha256": "9668f7cbb39394c6bc2e89a06c0f69cbcebffd35be787b12957441ff9638971d",
-          "candidate_sha256": "c53298d715a8d9e1b98a86bec0a6785887e7efc1d26fed66c5e3a23599f41a7f",
+          "target_start": 103723,
+          "candidate_start": 103723,
+          "size": 786,
+          "target_sha256": "1dd5aeeac301758c7b9e530433a62dd96fe79dc2c4d178551f43521e55565616",
+          "candidate_sha256": "87cd672999e18cd1e434e24e9a413b60232d08972013ab2ed5296e74879d364e",
           "raw_exact": false,
           "target_fixups": [
-            256,
-            140
+            251,
+            145
           ],
           "candidate_fixups": [
-            256,
-            140
+            251,
+            145
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "08529841d6ae9b6a597d8d8e8c46c59b134a3599cdd382d0393fa632f7ed71de",
-          "dependency_timestamp_normalized_sha256": "7561d1a65b6492fcc8d55f070400515ed98bc35c9a32e806711c70d4bab55d87",
-          "module_name": "th05/yuki_upd.cpp",
+          "sha256": "cfe172426e42e618d060e4dfd2081566c1ec3cbff23074f88b3a76808da25a4a",
+          "dependency_timestamp_normalized_sha256": "09ec7da72fa659c35d16842649bf46bce104391bd8734b8123626b1077038511",
+          "module_name": "th05/mai_upd.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/yuki_upd.cpp",
-            "src/main/boss/mai_yuki/yuki_update.cpp",
-            "src/main/boss/mai_yuki/yuki_update.hpp",
+            "th05/mai_upd.cpp",
+            "src/main/boss/mai_yuki/mai_update.cpp",
+            "src/main/boss/mai_yuki/mai_update.hpp",
             "src/main/boss/mai_yuki/b4ball.hpp",
             "src/main/boss/mai_yuki/initial_patterns.hpp",
             "src/main/boss/mai_yuki.hpp",
@@ -40620,9 +40616,14 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
+            "src/main/boss/mai_yuki/mai_solo_patterns.hpp",
+            "src/main/boss/mai_yuki/initial_patterns.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
             "src/main/boss/mai_yuki/solo_scratch.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
-            "src/main/boss/mai_yuki/yuki_solo_choreography.hpp"
+            "src/main/boss/mai_yuki/mai_solo_choreography.hpp",
+            "src/main/boss/mai_yuki/solo_wave_common.hpp"
           ]
         },
         "compiler_arguments": [
@@ -40636,7 +40637,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/yuki_upd.cpp"
+          "th05/mai_upd.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -71496,8 +71497,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "925489a7e73d02aa8864c25868458d4b55bdabf2ea315915e782ab56b0450c48",
-            "dependency_timestamp_normalized_sha256": "3fcea81c0d92cbe04d3d4259ba393d9838c41aed27425e2721da5a2f949b0dad",
+            "sha256": "56b1ef56b6d8b88791efb458bf70371ca576efacef15f0f774d79dea0ff2bb21",
+            "dependency_timestamp_normalized_sha256": "7d8c8c290d3a19c53a0e0b28674c57fa094ecc0cd061af18bc39ff99a24d9807",
             "module_name": "th05/mai_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -71532,12 +71533,13 @@
               "src/shared/geometry.hpp",
               "src/main/boss/mai_yuki/solo_scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
+              "src/main/boss/mai_yuki/mai_solo_choreography.hpp",
+              "src/main/boss/mai_yuki/solo_wave_common.hpp"
             ]
           },
           {
-            "sha256": "7bfc16c6e7672b279c973abf050f18e62f232f3254b9172a1d9047e1055eb1c9",
-            "dependency_timestamp_normalized_sha256": "3fcea81c0d92cbe04d3d4259ba393d9838c41aed27425e2721da5a2f949b0dad",
+            "sha256": "597f0271ec267081dcaa208548bb53dcee43f0d2de21f6ce2e939095734a058c",
+            "dependency_timestamp_normalized_sha256": "7d8c8c290d3a19c53a0e0b28674c57fa094ecc0cd061af18bc39ff99a24d9807",
             "module_name": "th05/mai_upd.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -71572,7 +71574,8 @@
               "src/shared/geometry.hpp",
               "src/main/boss/mai_yuki/solo_scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
+              "src/main/boss/mai_yuki/mai_solo_choreography.hpp",
+              "src/main/boss/mai_yuki/solo_wave_common.hpp"
             ]
           }
         ],
@@ -71635,7 +71638,7 @@
           },
           {
             "path": "src/main/boss/mai_yuki/mai_update.cpp",
-            "sha256": "cd8e947cd3c2b38cb4a8f4e414c0109da63719e0d050190bb8f1a7f5f4ffe17c"
+            "sha256": "5daa37bf5b7f695c9e00fb204914692b5730fe09d25eec004a9dbf35593d5cef"
           },
           {
             "path": "src/main/boss/mai_yuki/mai_update.hpp",
@@ -71644,6 +71647,10 @@
           {
             "path": "src/main/boss/mai_yuki/solo_scratch.hpp",
             "sha256": "99d63155e0f9ea1edfcd34ceb73c03cec6674301ebc42d6e5886dd413d91c810"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/solo_wave_common.hpp",
+            "sha256": "66a4b0275444f8e869fc799dca9c55a1fda98d6fb9ecf1071c2608634a814c0e"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -71715,7 +71722,7 @@
         },
         {
           "path": "src/main/boss/mai_yuki/mai_update.cpp",
-          "sha256": "cd8e947cd3c2b38cb4a8f4e414c0109da63719e0d050190bb8f1a7f5f4ffe17c"
+          "sha256": "5daa37bf5b7f695c9e00fb204914692b5730fe09d25eec004a9dbf35593d5cef"
         },
         {
           "path": "src/main/boss/mai_yuki/mai_update.hpp",
@@ -71724,6 +71731,10 @@
         {
           "path": "src/main/boss/mai_yuki/solo_scratch.hpp",
           "sha256": "99d63155e0f9ea1edfcd34ceb73c03cec6674301ebc42d6e5886dd413d91c810"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/solo_wave_common.hpp",
+          "sha256": "66a4b0275444f8e869fc799dca9c55a1fda98d6fb9ecf1071c2608634a814c0e"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -71768,7 +71779,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "64a66b0064fb53561ae31f65d5b96bb0b0ede60e845b5a486e8c82530f9bfc7e",
+      "replay_receipt_sha256": "5b9954658e98becc03f4b05b293cba8a37f165bb3221cde1fdb9b67fbfd56b4b",
       "compiled_negative_control": {
         "target_start": 103723,
         "candidate_start": 103723,
@@ -71817,8 +71828,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "44919cc06af7412b62c8d8b1f3e9052ea65465af1e7f501d191b49499719c3cb",
-          "dependency_timestamp_normalized_sha256": "1be8e44975112085e5047a71336c5db1bc92659d6a4365c48e0e32d983256fa2",
+          "sha256": "cfe172426e42e618d060e4dfd2081566c1ec3cbff23074f88b3a76808da25a4a",
+          "dependency_timestamp_normalized_sha256": "09ec7da72fa659c35d16842649bf46bce104391bd8734b8123626b1077038511",
           "module_name": "th05/mai_upd.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -71853,7 +71864,8 @@
             "src/shared/geometry.hpp",
             "src/main/boss/mai_yuki/solo_scratch.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
-            "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
+            "src/main/boss/mai_yuki/mai_solo_choreography.hpp",
+            "src/main/boss/mai_yuki/solo_wave_common.hpp"
           ]
         },
         "compiler_arguments": [

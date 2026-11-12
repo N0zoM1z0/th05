@@ -3,6 +3,7 @@
 #include "src/main/boss/mai_yuki/yuki_update.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 #include "src/main/boss/mai_yuki/yuki_solo_choreography.hpp"
+#include "src/main/boss/mai_yuki/solo_wave_common.hpp"
 
 // The native ten-stage solo Boss switch and two alternating attack modes.
 static const unsigned char YUKI_SOLO_PHASE_SETUP = 0;
@@ -21,21 +22,6 @@ static const unsigned char YUKI_SOLO_PHASE_DEFEAT = 253;
 static const unsigned char YUKI_SOLO_WAVE_FIRST_LIMIT = 12;
 static const unsigned char YUKI_SOLO_WAVE_SECOND_LIMIT = 24;
 static const unsigned char YUKI_SOLO_WAVE_FINAL_LIMIT = 36;
-
-// The three solo attack waves share the same return from repositioning:
-// restart the attack clock, enter the next pattern and count it exactly once.
-#define YUKI_NEXT_PATTERN() \
-    boss.phase_frame = 0; \
-    boss.mode++; \
-    boss.phase_state.patterns_seen++
-
-// A player hit on either ordinary wave ends the outer phase immediately.
-// Keep the break in the real Boss switch, not a synthetic helper loop.
-#define YUKI_HIT_SCORE_OR_BREAK() \
-    if(!boss_hittest_shots()) { \
-        break; \
-    } \
-    boss_score_bonus(YUKI_SOLO_HIT_SCORE_BONUS)
 
 extern "C" void pascal far yuki_update(void)
 {
@@ -100,7 +86,7 @@ extern "C" void pascal far yuki_update(void)
             if(boss_flystep_towards(boss2.pos.cur.x, boss2.pos.cur.y)) {
                 boss2.pos.cur.x = boss.pos.cur.x;
                 boss2.pos.cur.y.v = to_sp(YUKI_SOLO_CENTER_Y_PX);
-                YUKI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= YUKI_SOLO_WAVE_FIRST_LIMIT) {
                     goto phase3_complete;
                 }
@@ -112,7 +98,7 @@ extern "C" void pascal far yuki_update(void)
             boss_solo_pattern_current();
             break;
         }
-        YUKI_HIT_SCORE_OR_BREAK();
+        MY_SOLO_HIT_BONUS_OR_BREAK(YUKI_SOLO_HIT_SCORE_BONUS);
 phase3_complete:
         boss_phase_next(ET_NW_SE, YUKI_SOLO_HP_FIRST_WAVE_END);
         break;
@@ -129,7 +115,7 @@ phase3_complete:
         switch(boss.mode) {
         case YUKI_SOLO_MODE_REPOSITION:
             if(boss_flystep_towards(boss.pos.cur.x, to_sp(96))) {
-                YUKI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= YUKI_SOLO_WAVE_SECOND_LIMIT) {
                     goto phase5_complete;
                 }
@@ -141,7 +127,7 @@ phase3_complete:
             boss_solo_pattern_current();
             break;
         }
-        YUKI_HIT_SCORE_OR_BREAK();
+        MY_SOLO_HIT_BONUS_OR_BREAK(YUKI_SOLO_HIT_SCORE_BONUS);
 phase5_complete:
         boss_phase_next(ET_SW_NE, YUKI_SOLO_HP_SECOND_WAVE_END);
         break;
@@ -178,7 +164,7 @@ phase5_complete:
         switch(boss.mode) {
         case YUKI_SOLO_MODE_REPOSITION:
             if(boss.phase_frame >= YUKI_SOLO_FINAL_WAVE_DELAY_FRAMES) {
-                YUKI_NEXT_PATTERN();
+                MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= YUKI_SOLO_WAVE_FINAL_LIMIT) {
                     boss.phase_state.patterns_seen = 0;
                     goto defeat;
@@ -209,6 +195,3 @@ defeat:
     b4balls_update();
     hud_hp_update_and_render(boss.hp, YUKI_SOLO_HP_TOTAL);
 }
-
-#undef YUKI_HIT_SCORE_OR_BREAK
-#undef YUKI_NEXT_PATTERN
