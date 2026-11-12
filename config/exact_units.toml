@@ -1815,8 +1815,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-alice-puppet-beam"
 source = "src/main/boss/alice/beam.cpp"
-find = "shot_hitbox_radius.x.v = to_sp(56);"
-replace = "shot_hitbox_radius.x.v = to_sp(55);"
+find = "shot_hitbox_radius.x.v = to_sp(ABW_LASER_SHOT_RADIUS_X_PX);"
+replace = "shot_hitbox_radius.x.v = to_sp(ABW_LASER_SHOT_RADIUS_X_PX - 1);"
 
 [[units]]
 id = "main-louise-later-patterns"

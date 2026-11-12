@@ -16,13 +16,11 @@ static const int ALICE_SETUP_ENTRY_FRAME = 1;
 static const int ALICE_SETUP_EXIT_FRAME = 128;
 static const int ALICE_READY_EXIT_FRAME = 64;
 static const int ALICE_PUPPET_APPEAR_FRAME = 128;
-static const int ALICE_BEAM_BURST_INITIAL_WINDOW = 160;
-static const int ALICE_BEAM_ATTACK_TIMEOUT = 600;
 static const int ALICE_FINAL_SPREAD_TIMEOUT = 1000;
 static const int ALICE_BULLET_CLEAR_MIN_FRAMES = 20;
 static const int ALICE_REGULAR_WAVE_BONUS = 7;
-static const int ALICE_BEAM_WAVE_BONUS = 5;
 #include "src/main/boss/alice/beam_phase.hpp"
+#include "src/main/boss/alice/beam_weapon_rules.hpp"
 #include "src/main/boss/alice/scratch.hpp"
 // Canonical object layouts are already parsed. Keep ordinary word alignment
 // and the genuine preceding spread; the whole-owner table gap remains open.

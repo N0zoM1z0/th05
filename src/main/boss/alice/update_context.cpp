@@ -4,6 +4,7 @@
 #include "src/main/boss/alice/update.hpp"
 #include "src/main/boss/alice/puppet_choreography.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
+#include "src/main/boss/alice/beam_weapon_rules.hpp"
 #include "src/main/boss/alice/scratch.hpp"
 #include "src/main/boss/alice/charged_attack_rules.hpp"
 #include "src/main/boss/alice/charge_patterns.hpp"
@@ -21,12 +22,9 @@ static const int ALICE_SETUP_ENTRY_FRAME = 1;
 static const int ALICE_SETUP_EXIT_FRAME = 128;
 static const int ALICE_READY_EXIT_FRAME = 64;
 static const int ALICE_PUPPET_APPEAR_FRAME = 128;
-static const int ALICE_BEAM_BURST_INITIAL_WINDOW = 160;
-static const int ALICE_BEAM_ATTACK_TIMEOUT = 600;
 static const int ALICE_FINAL_SPREAD_TIMEOUT = 1000;
 static const int ALICE_BULLET_CLEAR_MIN_FRAMES = 20;
 static const int ALICE_REGULAR_WAVE_BONUS = 7;
-static const int ALICE_BEAM_WAVE_BONUS = 5;
 #pragma codeseg B4_UPDATE_TEXT main_03
 
 void near alice_pattern_laser_fan(void)
