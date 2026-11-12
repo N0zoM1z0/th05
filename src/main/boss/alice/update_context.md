@@ -146,3 +146,19 @@ The focused dual original-compiler replay at
 reproduces all 939 source-authored bytes, original switch table and ordered
 relocations with a rejected compiled negative. This refreshes a major
 already accepted Boss owner; there is no second CODE credit.
+
+## Paired 128-frame puppet entrance with one source protocol
+
+The 939-byte Alice controller now names a single
+`ALICE_START_PUPPET(entrance_angle)` for the left/right puppets appearing at
+frame 128. Each instance updates the real `AlicePuppet near *p` fields
+**in native order**: active flag, idle sprite, entrance radius, its distinct
+left/right angle, full HP and hidden-position X. The pointer is incremented
+between the two calls as in the original; the separate initial attack
+callbacks are installed afterward, not inside the protocol.
+
+Two genuine Borland/TLINK producers in
+`.analysis/unit-replays/gpt-web-alice-puppet-entrance-pair-a/receipt.json`
+match the complete **939/939 byte** original controller and all ordered
+relocations, and reject the original compiled semantic mutation. No new
+helper function, allocation, dummy state or duplicate CODE credit was added.

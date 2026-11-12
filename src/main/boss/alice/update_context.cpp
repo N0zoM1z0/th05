@@ -179,6 +179,17 @@ void near alice_pattern_rotating_ring(void)
     boss.phase_frame = 0; \
 }
 
+// The two entering puppets receive identical state setup except their
+// separate sweep-in angles. Use the real near `p` and preserve field order.
+#define ALICE_START_PUPPET(entrance_angle) { \
+    p->flag = ALICE_PUPPET_ACTIVE; \
+    p->patnum = ALICE_PUPPET_IDLE_PATNUM; \
+    p->radius.radius_motion = to_sp(ALICE_PUPPET_ENTRANCE_RADIUS_PX); \
+    p->angle = entrance_angle; \
+    p->hp = ALICE_PUPPET_HP; \
+    p->pos.cur.x.v = to_sp(ALICE_PUPPET_HIDDEN_X_PX); \
+}
+
 void pascal far alice_update(void)
 {
     AlicePuppet near *p;
@@ -224,19 +235,9 @@ void pascal far alice_update(void)
         boss_hittest_shots();
         if(boss.phase_frame == ALICE_PUPPET_APPEAR_FRAME) {
             p = &alice_puppet0;
-            p->flag = ALICE_PUPPET_ACTIVE;
-            p->patnum = ALICE_PUPPET_IDLE_PATNUM;
-            p->radius.radius_motion = to_sp(ALICE_PUPPET_ENTRANCE_RADIUS_PX);
-            p->angle = ALICE_PUPPET_ENTRANCE_LEFT_ANGLE;
-            p->hp = ALICE_PUPPET_HP;
-            p->pos.cur.x.v = to_sp(ALICE_PUPPET_HIDDEN_X_PX);
+            ALICE_START_PUPPET(ALICE_PUPPET_ENTRANCE_LEFT_ANGLE);
             p++;
-            p->flag = ALICE_PUPPET_ACTIVE;
-            p->patnum = ALICE_PUPPET_IDLE_PATNUM;
-            p->radius.radius_motion = to_sp(ALICE_PUPPET_ENTRANCE_RADIUS_PX);
-            p->angle = ALICE_PUPPET_ENTRANCE_RIGHT_ANGLE;
-            p->hp = ALICE_PUPPET_HP;
-            p->pos.cur.x.v = to_sp(ALICE_PUPPET_HIDDEN_X_PX);
+            ALICE_START_PUPPET(ALICE_PUPPET_ENTRANCE_RIGHT_ANGLE);
             alice_puppet_pattern0 = alice_puppet_initial;
             alice_puppet_pattern1 = alice_puppet_initial;
         } else if(boss.phase_frame > ALICE_PUPPET_APPEAR_FRAME) {
@@ -373,3 +374,5 @@ movement_hittest:
 
 #undef ALICE_NEXT_PHASE_AND_RESET_CLOCK
 #undef ALICE_ENSURE_CLEAR_WINDOW
+
+#undef ALICE_START_PUPPET
