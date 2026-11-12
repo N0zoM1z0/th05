@@ -2,6 +2,22 @@
 #pragma option -zCALICE_OPN_TEXT -zPmain_03
 #include "src/main/boss/alice/opening_patterns.hpp"
 
+// All three opening attacks charge with the same real gather frames,
+// boss sprite and single sound. Preserve each occurrence before its fire.
+#define ALICE_OPENING_GATHER_AND_SOUND() { \
+    gather_add_only_3stack(boss.phase_frame - 40, 9, 8); \
+    boss.sprite = 184; \
+    if(boss.phase_frame == 40) { \
+        snd_se_play(8); \
+    } \
+}
+
+// Both post-opening stack attacks return to movement at the same frame.
+#define ALICE_OPENING_RESET_TO_MOVE() { \
+    boss.phase_frame = 0; \
+    boss.mode = 0; \
+}
+
 bool pascal near alice_puppet_recover(AlicePuppet near &puppet)
 {
     if(puppet.phase_frame >= 96) {
@@ -18,11 +34,7 @@ bool pascal near alice_puppet_hold(AlicePuppet near &puppet)
 void near alice_pattern_opening(void)
 {
     if(boss.phase_frame < 64) {
-        gather_add_only_3stack(boss.phase_frame - 40, 9, 8);
-        boss.sprite = 184;
-        if(boss.phase_frame == 40) {
-            snd_se_play(8);
-        }
+        ALICE_OPENING_GATHER_AND_SOUND();
         return;
     }
     if(boss.phase_frame == 64) {
@@ -48,19 +60,14 @@ void near alice_pattern_opening_cycle(void)
 {
     alice_pattern_opening();
     if(boss.phase_frame == 96) {
-        boss.phase_frame = 0;
-        boss.mode = 0;
+        ALICE_OPENING_RESET_TO_MOVE();
     }
 }
 
 void near alice_pattern_ring_stack(void)
 {
     if(boss.phase_frame < 64) {
-        gather_add_only_3stack(boss.phase_frame - 40, 9, 8);
-        boss.sprite = 184;
-        if(boss.phase_frame == 40) {
-            snd_se_play(8);
-        }
+        ALICE_OPENING_GATHER_AND_SOUND();
         return;
     }
     if(boss.phase_frame == 64) {
@@ -78,19 +85,14 @@ void near alice_pattern_ring_stack(void)
         return;
     }
     if(boss.phase_frame == 96) {
-        boss.phase_frame = 0;
-        boss.mode = 0;
+        ALICE_OPENING_RESET_TO_MOVE();
     }
 }
 
 void near alice_pattern_spread_stack(void)
 {
     if(boss.phase_frame < 64) {
-        gather_add_only_3stack(boss.phase_frame - 40, 9, 8);
-        boss.sprite = 184;
-        if(boss.phase_frame == 40) {
-            snd_se_play(8);
-        }
+        ALICE_OPENING_GATHER_AND_SOUND();
         return;
     }
     if(boss.phase_frame == 64) {
@@ -108,7 +110,9 @@ void near alice_pattern_spread_stack(void)
         return;
     }
     if(boss.phase_frame == 96) {
-        boss.phase_frame = 0;
-        boss.mode = 0;
+        ALICE_OPENING_RESET_TO_MOVE();
     }
 }
+
+#undef ALICE_OPENING_RESET_TO_MOVE
+#undef ALICE_OPENING_GATHER_AND_SOUND
