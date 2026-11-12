@@ -71,3 +71,27 @@ short far calls and passes the updater's full raw/ordered oracle as
 a retained failed alternative; the target callback itself is now accepted
 through that coherent source owner. No acceptance transfers from its failed
 receipt, and prefix111 is not counted twice.
+
+## 2026-11-12: natural wave transitions in the complete 1,060-byte controller
+
+The accepted `full_context.cpp` now factors all four **regular-wave**
+transitions into a single source-level `EXALICE_REGULAR_ADVANCE` rule that
+couples the actual explosion/HP ladder step to installation of its next
+attack callback. This makes the wave-to-wave data flow explicit without
+reordering any phase-case, changing any threshold or inventing another
+runtime helper. The two rising-red approach/charge phases of wave 1 also
+share the original `EXALICE_WAVE1_RED_APPROACH` palette rule. Its `palette_changed`
+latch still updates only on genuine red-channel changes and retains the exact
+original fallthrough behavior between phases.
+
+The updated complete controller (not just the four inner branches) passed
+focused `main-exalice-update-full-context` strict replay at
+`.analysis/unit-replays/gpt-web-exalice-wave-transition-source-a/receipt.json`.
+Both genuine compiler/TLINK producers still match **1,060/1,060 original
+bytes**, the three real compiler switch tables and the original **ordered**
+relocations `[198,161]`; the compiled `EXALICE_HP_SETUP_END` negative is
+rejected. The accepted 33-byte shot gate and 78-byte phase-next helper are
+still compiled as real preceding context, not substituted by byte templates.
+This is a source-coherence refinement to a **previously accepted** major
+Boss function and earns no duplicate new authored CODE credit. No other
+accepted units were recompiled and no whole cold replay ran.

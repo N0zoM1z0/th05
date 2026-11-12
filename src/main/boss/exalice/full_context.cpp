@@ -40,6 +40,20 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     boss.phase_end_hp = next_end_hp;
 }
 
+// One regular-wave transition advances the HP ladder and arms the next
+// attack callback together. Wave 4 deliberately has a different successor.
+#define EXALICE_REGULAR_ADVANCE(explosion, hp_end, next_attack) \
+    exalice_phase_next(explosion, hp_end); \
+    exalice_pattern = next_attack
+
+// Wave 1 uses the same rising-red palette cadence in approach and charge.
+// Preserve the color-latch write on every actual red-channel change.
+#define EXALICE_WAVE1_RED_APPROACH() \
+    if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) { \
+        Palettes.colors[0].c.r += 2; \
+        palette_changed = true; \
+    }
+
 void pascal far exalice_update(void)
 {
     if(exalice_bomb_invincibility != EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
@@ -125,28 +139,21 @@ regular_attack:
 regular_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
-            exalice_phase_next(ET_CIRCLE, EXALICE_HP_WAVE1_REGULAR_END);
-            exalice_pattern = exalice_pattern_firewave_fans;
+            EXALICE_REGULAR_ADVANCE(ET_CIRCLE, EXALICE_HP_WAVE1_REGULAR_END, exalice_pattern_firewave_fans);
             break;
         case EXALICE_WAVE_2:
-            exalice_phase_next(ET_NW_SE, EXALICE_HP_WAVE2_REGULAR_END);
-            exalice_pattern = exalice_pattern_bouncing_rings;
+            EXALICE_REGULAR_ADVANCE(ET_NW_SE, EXALICE_HP_WAVE2_REGULAR_END, exalice_pattern_bouncing_rings);
             break;
         case EXALICE_WAVE_3:
-            exalice_phase_next(ET_SW_NE, EXALICE_HP_WAVE3_REGULAR_END);
-            exalice_pattern = exalice_pattern_sweeping_lasers;
+            EXALICE_REGULAR_ADVANCE(ET_SW_NE, EXALICE_HP_WAVE3_REGULAR_END, exalice_pattern_sweeping_lasers);
             break;
         case EXALICE_WAVE_4:
-            exalice_phase_next(ET_HORIZONTAL, EXALICE_HP_WAVE4_REGULAR_END);
-            exalice_pattern = exalice_pattern_spiral_gather;
+            EXALICE_REGULAR_ADVANCE(ET_HORIZONTAL, EXALICE_HP_WAVE4_REGULAR_END, exalice_pattern_spiral_gather);
             break;
         }
         break;
     case EXALICE_PHASE_WAVE1_APPROACH:
-        if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) {
-            Palettes.colors[0].c.r += 2;
-            palette_changed = true;
-        }
+        EXALICE_WAVE1_RED_APPROACH();
         // The other approach phases share this movement without a red fade.
     case EXALICE_PHASE_WAVE2_APPROACH_SECOND:
     case EXALICE_PHASE_WAVE3_APPROACH_SECOND:
@@ -160,10 +167,7 @@ approach:
         exalice_hittest_shots();
         break;
     case EXALICE_PHASE_WAVE1_CHARGE:
-        if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) {
-            Palettes.colors[0].c.r += 2;
-            palette_changed = true;
-        }
+        EXALICE_WAVE1_RED_APPROACH();
     case EXALICE_PHASE_WAVE2_CHARGE:
     case EXALICE_PHASE_WAVE3_CHARGE:
 charge_attack:
@@ -288,3 +292,6 @@ charge_complete:
     firewaves_update();
     hud_hp_update_and_render(boss.hp, EXALICE_HP_INITIAL);
 }
+
+#undef EXALICE_WAVE1_RED_APPROACH
+#undef EXALICE_REGULAR_ADVANCE
