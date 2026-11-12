@@ -6851,3 +6851,25 @@ unit = "main-item-drop-cycle-initial-data"
 source = "src/main/item/drop_cycle_data.cpp"
 find = "item_drop_cycle = 0;"
 replace = "item_drop_cycle = 1;"
+
+[[units]]
+id = "main-std-segment-initial-data"
+source = "src/main/formats/std_segment_initial.cpp"
+module = "th05/stdseg.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_std_segment_initial_bindings.asm"
+target_start = 0x21922
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-std-segment-initial-data"
+source = "src/main/formats/std_segment_initial.cpp"
+find = "std_seg = 0;"
+replace = "std_seg = (unsigned char __seg *)1;"
