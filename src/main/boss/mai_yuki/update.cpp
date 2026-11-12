@@ -1,6 +1,7 @@
 // Complete shared Mai/Yuki update, original MAIN17FDB..183D5.
 #include "src/main/boss/mai_yuki/update.hpp"
 #include "src/main/boss/mai_yuki/transition_effects.hpp"
+#include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
 
 // Defeat codes and their one-based-to-zero-based mapping are shared with
 // the actual 111-byte hit-test producer in hit_result.hpp.
@@ -17,7 +18,7 @@ static const int MY_REPOSITION_LASER_LEAD_FRAMES = 64;
 static const int MY_REPOSITION_NORMAL_LEAD_FRAMES = 16;
 static const int MY_REPOSITION_CLEAR_FRAME = 16;
 static const int MY_BULLET_CLEAR_MINIMUM = 20;
-static const int MY_PATTERN_VARIANT_MASK = 3;
+static const int MY_PATTERN_VARIANT_MASK = MYR_CALLBACK_VARIANT_MASK;
 static const int MY_SMALL_EXPLOSION_FIRST_FRAME = 16;
 static const int MY_SMALL_EXPLOSION_BIG_FRAME = 32;
 static const int MY_BIG_EXPLOSION_SHAKE_FRAMES = 12;

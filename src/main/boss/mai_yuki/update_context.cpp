@@ -3,6 +3,7 @@
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/update.hpp"
 #include "src/main/boss/mai_yuki/transition_effects.hpp"
+#include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/remaining_patterns.inl"
 
@@ -21,7 +22,7 @@ static const int MY_REPOSITION_LASER_LEAD_FRAMES = 64;
 static const int MY_REPOSITION_NORMAL_LEAD_FRAMES = 16;
 static const int MY_REPOSITION_CLEAR_FRAME = 16;
 static const int MY_BULLET_CLEAR_MINIMUM = 20;
-static const int MY_PATTERN_VARIANT_MASK = 3;
+static const int MY_PATTERN_VARIANT_MASK = MYR_CALLBACK_VARIANT_MASK;
 static const int MY_SMALL_EXPLOSION_FIRST_FRAME = 16;
 static const int MY_SMALL_EXPLOSION_BIG_FRAME = 32;
 static const int MY_BIG_EXPLOSION_SHAKE_FRAMES = 12;

@@ -2297,8 +2297,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-mai-yuki-remaining-patterns"
 source = "src/main/boss/mai_yuki/remaining_patterns.inl"
-find = "boss_statebyte[15] = 0x20;"
-replace = "boss_statebyte[15] = 0x21;"
+find = "boss_statebyte[15] = MYR_RING_MAI_ANGLE;"
+replace = "boss_statebyte[15] = (MYR_RING_MAI_ANGLE + 1);"
 
 [[units]]
 id = "main-mai-solo-initial-patterns"
