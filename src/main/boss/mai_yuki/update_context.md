@@ -132,3 +132,26 @@ relocations and both compiled negatives:
 `.analysis/unit-replays/gpt-web-mai-yuki-shared-hit-protocol-a/receipt.json`.
 Previously accepted compiled code is not double-counted, and no
 all-game cold replay was executed.
+
+## 2026-11-12: shared paired-hit tests and HP-gated reposition cycles
+
+The maintained complete `mai_yuki_update()` now uses the explicit
+`MY_INVINCIBLE_PAIR_HITTEST()` rule for **both** native setup and ready
+phases. The macro preserves the original shot-Boss invincibility call,
+Yuki's separate 24-pixel hitbox test, real hit sound, exact call ordering
+and no extraneous early return. Both HP crossing thresholds in the
+shared combat phase use `MY_ENTER_REPOSITION_GATE()` to set mode, phase
+clock and the chosen pattern-gate index as one atomic source-level rule.
+The first and second thresholds remain separate and in the original
+priority order; only the repeated genuine C++ state assignments were
+factored, with no new buffer, branch, or artificial compiler barrier.
+
+The strict, *single-unit* `main-mai-yuki-update-context` replay at
+`.analysis/unit-replays/gpt-web-mai-yuki-gates-hittest-source-a/receipt.json`
+compiled two independent native Turbo C++/TLINK positives. Each still
+reproduces the full **1,018 original bytes** of the far Pascal Boss
+controller and all original ordered relocations, and the original
+compiled negative is rejected. The shared patterns preceding this
+function remain a real compiler context but do not receive a second
+source-credit claim. This is a refinement to an existing major Boss CODE
+owner, not newly counted bytes, and no full cold replay was performed.

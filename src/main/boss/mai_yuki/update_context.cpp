@@ -35,6 +35,22 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
 // All canonical object types precede ordinary compiler-table word alignment.
 #pragma option -a2
 
+// Both fighters remain collision-tested throughout the setup and ready
+// phases, before the normal paired attack dispatch becomes active.
+#define MY_INVINCIBLE_PAIR_HITTEST() \
+    boss_hittest_shots_invincible(); \
+    yuki_hittest_shots_damage( \
+        to_sp(MY_SETUP_HIT_RADIUS_PIXELS), to_sp(MY_SETUP_HIT_RADIUS_PIXELS), \
+        MY_SETUP_HIT_EFFECT \
+    )
+
+// HP gates force the same shared Boss state into another reposition cycle;
+// the chosen wave index is an actual threshold, not a new phase.
+#define MY_ENTER_REPOSITION_GATE(gate) \
+    boss.mode = MY_MODE_REPOSITION; \
+    boss.phase_frame = 0; \
+    boss.phase_state.patterns_seen = gate
+
 void pascal far mai_yuki_update(void)
 {
     int i;
@@ -61,8 +77,7 @@ void pascal far mai_yuki_update(void)
                 super_convert_tiny(i);
             }
         }
-        boss_hittest_shots_invincible();
-        yuki_hittest_shots_damage(to_sp(MY_SETUP_HIT_RADIUS_PIXELS), to_sp(MY_SETUP_HIT_RADIUS_PIXELS), MY_SETUP_HIT_EFFECT);
+        MY_INVINCIBLE_PAIR_HITTEST();
         if(boss.phase_frame >= MY_SETUP_EXIT_FRAME) {
             boss.phase++;
             boss.phase_frame = 0;
@@ -72,8 +87,7 @@ void pascal far mai_yuki_update(void)
         break;
 
     case MY_PHASE_READY:
-        boss_hittest_shots_invincible();
-        yuki_hittest_shots_damage(to_sp(MY_SETUP_HIT_RADIUS_PIXELS), to_sp(MY_SETUP_HIT_RADIUS_PIXELS), MY_SETUP_HIT_EFFECT);
+        MY_INVINCIBLE_PAIR_HITTEST();
         if(boss.phase_frame < MY_READY_EXIT_FRAME) {
             break;
         }
@@ -130,14 +144,10 @@ void pascal far mai_yuki_update(void)
             break;
         }
         if(((boss.hp + boss2.hp) < MY_HP_GATE_FIRST) && (boss.phase_state.patterns_seen < MY_PATTERN_HP_GATE_FIRST)) {
-            boss.mode = MY_MODE_REPOSITION;
-            boss.phase_frame = 0;
-            boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_FIRST;
+            MY_ENTER_REPOSITION_GATE(MY_PATTERN_HP_GATE_FIRST);
         } else if(((boss.hp + boss2.hp) < MY_HP_GATE_SECOND) &&
                   (boss.phase_state.patterns_seen < MY_PATTERN_HP_GATE_SECOND)) {
-            boss.mode = MY_MODE_REPOSITION;
-            boss.phase_frame = 0;
-            boss.phase_state.patterns_seen = MY_PATTERN_HP_GATE_SECOND;
+            MY_ENTER_REPOSITION_GATE(MY_PATTERN_HP_GATE_SECOND);
         }
         state_result = mai_yuki_hittest_shots();
         if(state_result == MY_HIT_NONE) {
@@ -229,3 +239,6 @@ void pascal far mai_yuki_update(void)
     cheetos_update();
     hud_hp_update_and_render(boss.hp + boss2.hp, MY_BOTH_HP_TOTAL);
 }
+
+#undef MY_ENTER_REPOSITION_GATE
+#undef MY_INVINCIBLE_PAIR_HITTEST

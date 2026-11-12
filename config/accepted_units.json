@@ -2,27 +2,49 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c65ef68936e256a9aa602a46e3c64131d7cdc302d0ae020bda78f1ad7d7f19b8",
+  "replay_receipt_sha256": "2c96de5734f15ce1a6ccec8ef7acbca6d82dce535c4a8c9c5623e1efb9027b82",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141266,
-    "candidate_start": 141266,
-    "size": 1,
-    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+    "target_start": 98267,
+    "candidate_start": 98267,
+    "size": 1018,
+    "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+    "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
+    ],
+    "candidate_fixups": [
+      942,
+      931,
+      915,
+      898,
+      874,
+      723,
+      312,
+      171,
+      123
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 141266,
-      "size": 1,
-      "module": "th05/dropcyc.cpp",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 98267,
+      "size": 1018,
+      "function_symbol": "mai_yuki_update()",
+      "contribution_start": 97328,
+      "contribution_size": 1957,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -71906,7 +71928,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "61589601f0cd57ed0323319bf2460df04f2882b64417c89184feb0fb4730d8e3",
+            "sha256": "efc5226276832c9913b033fa14d0d8febddef9814b908da5a4410dc71d376f8f",
             "dependency_timestamp_normalized_sha256": "ffa2ffe7f047d16641f736c2a6790a9a55983930a0551542ba4fe75de6655933",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
@@ -71948,7 +71970,7 @@
             ]
           },
           {
-            "sha256": "09a717e93a38e0632435f07ebf6e7568b7ba671da9aa6fb1553993dfae9a0caf",
+            "sha256": "a17f9044ca0bb229a4b62c9dd75a10eba5e7ec79e6b5c1ed09a11315fbc7f5bf",
             "dependency_timestamp_normalized_sha256": "ffa2ffe7f047d16641f736c2a6790a9a55983930a0551542ba4fe75de6655933",
             "module_name": "th05/my_ctx.cpp",
             "translator_comments": [
@@ -71991,8 +72013,8 @@
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -72061,7 +72083,7 @@
           },
           {
             "path": "src/main/boss/mai_yuki/update_context.cpp",
-            "sha256": "6fc340765995e9ca19f8d37bcda852350ceafe466f0aadad897114abcefaf0c4"
+            "sha256": "aafa6b03f51a2b08881b41e2ce6a92f5ee321fc39c681b4794c3bae1e9d0992a"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -72149,7 +72171,7 @@
         },
         {
           "path": "src/main/boss/mai_yuki/update_context.cpp",
-          "sha256": "6fc340765995e9ca19f8d37bcda852350ceafe466f0aadad897114abcefaf0c4"
+          "sha256": "aafa6b03f51a2b08881b41e2ce6a92f5ee321fc39c681b4794c3bae1e9d0992a"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -72198,81 +72220,125 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "b00f550b774001ddbc3c4cce2894c76925155d4b49d76522a5df8fc984f98a30",
+      "replay_receipt_sha256": "2c96de5734f15ce1a6ccec8ef7acbca6d82dce535c4a8c9c5623e1efb9027b82",
       "compiled_negative_control": {
-        "target_start": 97328,
-        "candidate_start": 97328,
-        "size": 939,
-        "target_sha256": "07ca9e751860714202dba9309142f637501e1701c9704aae4abf243e20b7ee9c",
-        "candidate_sha256": "38ff0afeff722312c6dd0e8433dadcf171f4eef29b842501ab8edc22998b1781",
+        "target_start": 98267,
+        "candidate_start": 98267,
+        "size": 1018,
+        "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+        "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
         "raw_exact": false,
         "target_fixups": [
-          920,
-          833,
-          462,
-          136
+          942,
+          931,
+          915,
+          898,
+          874,
+          723,
+          312,
+          171,
+          123
         ],
         "candidate_fixups": [
-          920,
-          833,
-          462,
-          136
+          942,
+          931,
+          915,
+          898,
+          874,
+          723,
+          312,
+          171,
+          123
         ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 98267,
+          "size": 1018,
+          "function_symbol": "mai_yuki_update()",
+          "contribution_start": 97328,
+          "contribution_size": 1957,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
       },
       "negative_control": {
-        "unit_id": "main-mai-yuki-remaining-patterns",
-        "entry_sha256": "770336ce4fc418e66c0c8b23122f5de7b89cb1bc7a175a23bf68ae9e291d0ff9",
+        "unit_id": "main-mai-yuki-update-context",
+        "entry_sha256": "789b47a8f4e3e7ad502d4bc27390e4eeadddf247836618561a459c8c7ecd3592",
         "mutation": {
-          "unit": "main-mai-yuki-remaining-patterns",
-          "source": "src/main/boss/mai_yuki/remaining_patterns.inl",
-          "find": "boss_statebyte[15] = MYR_RING_MAI_ANGLE;",
-          "replace": "boss_statebyte[15] = (MYR_RING_MAI_ANGLE + 1);"
+          "unit": "main-mai-yuki-update-context",
+          "source": "src/main/boss/mai_yuki/update_context.cpp",
+          "find": "(boss.hp + boss2.hp) < MY_HP_GATE_FIRST",
+          "replace": "(boss.hp + boss2.hp) < (MY_HP_GATE_FIRST + 1)"
         },
-        "control_sha256": "889f1673c383251ef8e6a43682c076cfa173cdb1f5c9c3fd0c7ac9dc8f6522ab",
+        "control_sha256": "b9196012c69917ed4b32bf9e60dcbe740769a3a949e024da4ae2300ac8b7e159",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 97328,
-          "candidate_start": 97328,
-          "size": 939,
-          "target_sha256": "07ca9e751860714202dba9309142f637501e1701c9704aae4abf243e20b7ee9c",
-          "candidate_sha256": "38ff0afeff722312c6dd0e8433dadcf171f4eef29b842501ab8edc22998b1781",
+          "target_start": 98267,
+          "candidate_start": 98267,
+          "size": 1018,
+          "target_sha256": "501bb630b4a814971feaa87dc117aa86c9f2c3acc151ac62c2b30786f26d5384",
+          "candidate_sha256": "84801c069fffe75ea3b4e2988968f2985a133e79ad8f03f17868f959b8e9a90c",
           "raw_exact": false,
           "target_fixups": [
-            920,
-            833,
-            462,
-            136
+            942,
+            931,
+            915,
+            898,
+            874,
+            723,
+            312,
+            171,
+            123
           ],
           "candidate_fixups": [
-            920,
-            833,
-            462,
-            136
+            942,
+            931,
+            915,
+            898,
+            874,
+            723,
+            312,
+            171,
+            123
           ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 98267,
+            "size": 1018,
+            "function_symbol": "mai_yuki_update()",
+            "contribution_start": 97328,
+            "contribution_size": 1957,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
         },
         "omf": {
-          "sha256": "5ec624f0cb620a11cbd305a93180d1f5deaa4263aefa6159aa39e1002b3f6579",
-          "dependency_timestamp_normalized_sha256": "9a4634999b6bdc49852a3a22d5b91da3ca6423f325f2ff412771429e9358a712",
-          "module_name": "th05/my_rest.cpp",
+          "sha256": "775d0af5d24f0c117ca2c4336d0ec8b130dfa1796aad5ce93cc351495d03a2cc",
+          "dependency_timestamp_normalized_sha256": "686a04444fa20508d95e39dca13134f7d4a7fe6e01e7a87b49f1c620fcde2776",
+          "module_name": "th05/my_ctx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/my_rest.cpp",
-            "src/main/boss/mai_yuki/remaining_patterns.cpp",
+            "th05/my_ctx.cpp",
+            "src/main/boss/mai_yuki/update_context.cpp",
+            "src/main/boss/mai_yuki/update.hpp",
+            "src/main/boss/mai_yuki/hit_result.hpp",
+            "src/main/dialog/file.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/boss/mai_yuki/later_patterns.hpp",
             "src/main/boss/mai_yuki/initial_patterns.hpp",
             "src/main/boss/mai_yuki.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
-            "C:\\TC4\\INCLUDE\\_null.h",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
             "src/main/gather/gather.hpp",
@@ -72286,6 +72352,8 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
+            "src/main/boss/mai_yuki/transition_effects.hpp",
+            "src/main/boss/mai_yuki/paired_attack_rules.hpp",
             "src/main/boss/mai_yuki/remaining_patterns.inl",
             "src/main/boss/mai_yuki/paired_attack_rules.hpp"
           ]
@@ -72301,14 +72369,10 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/my_rest.cpp"
+          "th05/my_ctx.cpp"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-mai-yuki-remaining-patterns",
-        "main-mai-yuki-update-context"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-map-free",
