@@ -1928,3 +1928,26 @@ unit = "maine-staff-image-cover-strings-data"
 source = "src/maine/staff/image_cover_strings.c"
 find = "staff_image_cover_b[3] = \"  \";"
 replace = "staff_image_cover_b[3] = \" X\";"
+
+[[units]]
+id = "maine-cutscene-kanji-buffer-data"
+source = "src/maine/cutscene/kanji_buffer.c"
+module = "th05/cuknj.c"
+segment = "_DATA"
+wrapper_options = "-zCCUTSCENE_KANJI_BUFFER_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_cutscene_kanji_buffer_bindings.asm"
+binary = "E"
+target_start = 0x1086A
+size = 3
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-cutscene-kanji-buffer-data"
+source = "src/maine/cutscene/kanji_buffer.c"
+find = "CUTSCENE_KANJI[3] = \"  \";"
+replace = "CUTSCENE_KANJI[3] = \" X\";"

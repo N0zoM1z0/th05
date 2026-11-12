@@ -2,35 +2,27 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "d154f177530a9bcc3605e815cdc4c936eddceccf708bc1b183e44978e09b5af9",
+  "replay_receipt_sha256": "50ce119391fd2b4057cb976c073a9ab0730a0a816a92600599d89aec50adbde9",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 56953,
-    "candidate_start": 56953,
-    "size": 376,
-    "target_sha256": "726b89c5367873749cb41d7b58c4a83ec9cc86bd593815703d2057d197c01575",
-    "candidate_sha256": "3b35002edae156ff95cd3a963d6c0070c8ede1302352f7167f021a84a157fda7",
+    "target_start": 67690,
+    "candidate_start": 67690,
+    "size": 3,
+    "target_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+    "candidate_sha256": "8f5d9072578b238ff7cf5a693f8c1691d18e8057d8f7814800db2d2bf4a0970a",
     "raw_exact": false,
-    "target_fixups": [
-      85,
-      160
-    ],
-    "candidate_fixups": [
-      85,
-      160
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 56953,
-      "size": 376,
-      "function_symbol": "staff_image_update_b(int,int,int,int)",
-      "contribution_start": 54047,
-      "contribution_size": 4229,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "staff_scene_render()"
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 67690,
+      "size": 3,
+      "module": "th05/cuknj.c",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -43904,6 +43896,298 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "maine-staff-image-cover-strings-data"
+      ]
+    },
+    {
+      "id": "maine-cutscene-kanji-buffer-data",
+      "entry_sha256": "168cd7f7a1101ad5e61b7e00b5af9af9e005c9fc110186b0ca76cd80eb9e66ae",
+      "result": {
+        "id": "maine-cutscene-kanji-buffer-data",
+        "entry_sha256": "168cd7f7a1101ad5e61b7e00b5af9af9e005c9fc110186b0ca76cd80eb9e66ae",
+        "rounds": [
+          {
+            "target_start": 67690,
+            "candidate_start": 67690,
+            "size": 3,
+            "target_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+            "candidate_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67690,
+              "size": 3,
+              "module": "th05/cuknj.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 67690,
+            "candidate_start": 67690,
+            "size": 3,
+            "target_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+            "candidate_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 67690,
+              "size": 3,
+              "module": "th05/cuknj.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "31bd4a14c748474dff99a3553fbd460a11cea3e20daf0a1c9f94d124b6bbf341",
+            "dependency_timestamp_normalized_sha256": "0e6b9c982d78f8db486911b6a357addeac87e0f6a6446711cf84a33b0d5a6801",
+            "module_name": "th05/cuknj.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cuknj.c",
+              "src/maine/cutscene/kanji_buffer.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 3,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 3,
+                  "sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "8c4aeef78012750b17a3217017960fa16494749a9f0328cbca6903aa55db0f29",
+            "dependency_timestamp_normalized_sha256": "0e6b9c982d78f8db486911b6a357addeac87e0f6a6446711cf84a33b0d5a6801",
+            "module_name": "th05/cuknj.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/cuknj.c",
+              "src/maine/cutscene/kanji_buffer.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 3,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 3,
+                  "sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cuknj.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/cuknj.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_cutscene_kanji_buffer_bindings.asm",
+            "sha256": "69b55097810403c577e705a80870456b45aea271e528358c483cf0d4187f8f30"
+          },
+          {
+            "path": "src/maine/cutscene/kanji_buffer.c",
+            "sha256": "f145264aaabf437efc739dbeed2d5c9bf73a1af3587f07d7f3bd57e580dc2767"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_cutscene_kanji_buffer_bindings.asm",
+          "sha256": "69b55097810403c577e705a80870456b45aea271e528358c483cf0d4187f8f30"
+        },
+        {
+          "path": "src/maine/cutscene/kanji_buffer.c",
+          "sha256": "f145264aaabf437efc739dbeed2d5c9bf73a1af3587f07d7f3bd57e580dc2767"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "50ce119391fd2b4057cb976c073a9ab0730a0a816a92600599d89aec50adbde9",
+      "compiled_negative_control": {
+        "target_start": 67690,
+        "candidate_start": 67690,
+        "size": 3,
+        "target_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+        "candidate_sha256": "8f5d9072578b238ff7cf5a693f8c1691d18e8057d8f7814800db2d2bf4a0970a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 67690,
+          "size": 3,
+          "module": "th05/cuknj.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-cutscene-kanji-buffer-data",
+        "entry_sha256": "168cd7f7a1101ad5e61b7e00b5af9af9e005c9fc110186b0ca76cd80eb9e66ae",
+        "mutation": {
+          "unit": "maine-cutscene-kanji-buffer-data",
+          "source": "src/maine/cutscene/kanji_buffer.c",
+          "find": "CUTSCENE_KANJI[3] = \"  \";",
+          "replace": "CUTSCENE_KANJI[3] = \" X\";"
+        },
+        "control_sha256": "10181aead3b4b1d0800d4e085523799556103e218c0fe05a45d22f39ff60e6f0",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 67690,
+          "candidate_start": 67690,
+          "size": 3,
+          "target_sha256": "4eb504a64a3c90e705a81ecfbf13c36365b68977160e554694f32e0ce2e94e61",
+          "candidate_sha256": "8f5d9072578b238ff7cf5a693f8c1691d18e8057d8f7814800db2d2bf4a0970a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 67690,
+            "size": 3,
+            "module": "th05/cuknj.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "9f6b8e466243f21732c66b846eeaba5b6bde90e75e06753dcabc198a3d749648",
+          "dependency_timestamp_normalized_sha256": "4bb19755d8f4d061b31ad57df9aba13d8148c83f272c35901a98007b00a18740",
+          "module_name": "th05/cuknj.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/cuknj.c",
+            "src/maine/cutscene/kanji_buffer.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 3,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 3,
+                "sha256": "8f5d9072578b238ff7cf5a693f8c1691d18e8057d8f7814800db2d2bf4a0970a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/cuknj.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-kanji-buffer-data"
       ]
     }
   ],
