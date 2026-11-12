@@ -291,3 +291,25 @@ source-current, original-byte-exact in two native producer runs, with
 all ordered MZ relocations and meaningful compiled negatives preserved.
 The two original DATA sources have their own refreshed producer/negative
 evidence. Receipts are collected in `devil_float_data.md`.
+
+## 2026-11-12: shared wing/Devil palette stepping without codegen drift
+
+The full 959-byte Shinki phase controller had two mechanically duplicated
+blue-darkening loops in the purple transition and symmetric/Devil states.
+The wing blue-brightening and Devil red-brightening branches likewise used
+the same stage-frame-mod-16 timing rule. `shinki_update()` now expresses
+these as scoped source-level `SHINKI_PALETTE_STEP_DOWN_BLUE()` and
+`SHINKI_PALETTE_STEP_UP(channel)` rules. Both rules preserve the original
+latching behavior: when a color is still transitioning, `palette_changed`
+is set even between the actual channel stepping ticks. The original phase
+ordering, palette limit checks and branch destinations are unchanged.
+
+This is **not** a second CODE owner or new authored byte credit: it refreshes
+the already accepted complete near-order 959-byte callback with a more
+coherent natural state-machine source. Focused independent TCC/TLINK replay
+`.analysis/unit-replays/gpt-web-main-shinki-palette-factor-a/receipt.json`
+confirmed the complete 959 original bytes, unchanged compiler switch table,
+original ordered relocations `[862, 461, 165, 128]`, and rejected the
+existing compiled semantic negative. The acceptance ledger was refreshed
+only for this single actual Boss owner. No full cold replay or generated
+padding/instruction insertion was used.

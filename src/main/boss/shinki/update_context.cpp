@@ -166,6 +166,23 @@ void pascal shinki_update(void)
 		SHINKI_WING_PATTERN_SCORE = 25
 	};
 
+	// The wing and Devil phases share the actual palette stepping clock.
+	// Keep it at the original call sites: neither phase may advance a color
+	// more than once per timer tick, and `palette_changed` still latches
+	// on intervening frames during an unfinished transition.
+	#define SHINKI_PALETTE_STEP_DOWN_BLUE() do { \
+		if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) { \
+			Palettes[0].c.b--; \
+		} \
+		palette_changed = true; \
+	} while(0)
+	#define SHINKI_PALETTE_STEP_UP(channel) do { \
+		if(stage_frame_mod16 == SHINKI_PALETTE_BRIGHTEN_TICK) { \
+			Palettes[0].c.channel++; \
+		} \
+		palette_changed = true; \
+	} while(0)
+
 	bool16 phase_done;
 
 	homing_target = boss.pos.cur;
@@ -307,10 +324,7 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_WING_RAIN:
 	case SHINKI_PHASE_SPREAD_WALLS:
 		if(Palettes[0].c.b < SHINKI_WING_PALETTE_BLUE_LIMIT) {
-			if(stage_frame_mod16 == SHINKI_PALETTE_BRIGHTEN_TICK) {
-				Palettes[0].c.b++;
-			}
-			palette_changed = true;
+			SHINKI_PALETTE_STEP_UP(b);
 		}
 		shinki_move_float();
 		wing_pattern();
@@ -337,10 +351,7 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_PURPLE_TRANSITION:
 		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
-			if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) {
-				Palettes[0].c.b--;
-			}
-			palette_changed = true;
+			SHINKI_PALETTE_STEP_DOWN_BLUE();
 		}
 		boss_hittest_shots();
 
@@ -357,15 +368,9 @@ void pascal shinki_update(void)
 	case SHINKI_PHASE_SYMMETRIC_SPREADS:
 	case SHINKI_PHASE_DEVIL:
 		if(Palettes[0].c.b > SHINKI_PALETTE_ZERO) {
-			if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) {
-				Palettes[0].c.b--;
-			}
-			palette_changed = true;
+			SHINKI_PALETTE_STEP_DOWN_BLUE();
 		} else if(Palettes[0].c.r < SHINKI_DEVIL_PALETTE_RED_LIMIT) {
-			if(stage_frame_mod16 == SHINKI_PALETTE_BRIGHTEN_TICK) {
-				Palettes[0].c.r++;
-			}
-			palette_changed = true;
+			SHINKI_PALETTE_STEP_UP(r);
 		}
 		shinki_move_float();
 		wing_pattern();
@@ -447,5 +452,7 @@ void pascal shinki_update(void)
 	cheetos_update();
 	hud_hp_update_and_render(boss.hp, HP_TOTAL);
 
+	#undef SHINKI_PALETTE_STEP_DOWN_BLUE
+	#undef SHINKI_PALETTE_STEP_UP
 	#undef phase_relative
 }

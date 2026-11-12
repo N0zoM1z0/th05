@@ -2,27 +2,39 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "23a23eba6fb89888d9016acc984ae2e866a46181cd4f3a83af22f6ba21936624",
+  "replay_receipt_sha256": "40315b66d84a060252bc4896d42c0e6c47556fa5f26cf715e0b221022598a0a8",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 135668,
-    "candidate_start": 135668,
-    "size": 2,
-    "target_sha256": "258ff223cae5c5ccdf2e34d6b2a7f95f8d3878217a27498b43c220597c50d4ad",
-    "candidate_sha256": "90db380c7b77c46b720103659faceeea9c76fe4ad8de44369f0345875e0fdff8",
+    "target_start": 112347,
+    "candidate_start": 112347,
+    "size": 959,
+    "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+    "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      862,
+      461,
+      165,
+      128
+    ],
+    "candidate_fixups": [
+      862,
+      461,
+      165,
+      128
+    ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 135668,
-      "size": 2,
-      "module": "th05/mem_init.c",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 112347,
+      "size": 959,
+      "function_symbol": "shinki_update()",
+      "contribution_start": 111172,
+      "contribution_size": 2134,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -70453,7 +70465,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "42d396d4bf9f1fc70248bc518c483a6bb3ba356d1e4ba635ee502ebb7a826b9b",
+            "sha256": "9d45ab5ebdbb9042dcc174885a61f71aa4d9d899988306686fd1a7c351e3f564",
             "dependency_timestamp_normalized_sha256": "9d62e72f8c2c29a57cadd73665ce0ee1f59a057f7742343bfa8b9cffdd10ec77",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70494,7 +70506,7 @@
             ]
           },
           {
-            "sha256": "efe209a999154895adeb8c20ade28bba01ffd134b9e8485cc15973b80645a16c",
+            "sha256": "58f825520b352d8622de820a0738d0da60a6dd5538ec716cf7eabb4545e72093",
             "dependency_timestamp_normalized_sha256": "9d62e72f8c2c29a57cadd73665ce0ee1f59a057f7742343bfa8b9cffdd10ec77",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70536,8 +70548,8 @@
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -70614,7 +70626,7 @@
           },
           {
             "path": "src/main/boss/shinki/update_context.cpp",
-            "sha256": "5dd774b8994d32ac571f05d1a545d89bd08ca045178c20f7fee59ba1d2f61c45"
+            "sha256": "dbe9025f71a3909aacb7158dde773912a0ed91ec46edc4e63d1375d6ba545811"
           },
           {
             "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -70710,7 +70722,7 @@
         },
         {
           "path": "src/main/boss/shinki/update_context.cpp",
-          "sha256": "5dd774b8994d32ac571f05d1a545d89bd08ca045178c20f7fee59ba1d2f61c45"
+          "sha256": "dbe9025f71a3909aacb7158dde773912a0ed91ec46edc4e63d1375d6ba545811"
         },
         {
           "path": "src/main/boss/shinki/update_standalone.hpp",
@@ -70759,72 +70771,93 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "ac45ab259d89b4ffe4c297c8e5de9e9016b8ab0788098609b962d030a59b0a10",
+      "replay_receipt_sha256": "40315b66d84a060252bc4896d42c0e6c47556fa5f26cf715e0b221022598a0a8",
       "compiled_negative_control": {
-        "target_start": 109483,
-        "candidate_start": 109483,
-        "size": 271,
-        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+        "target_start": 112347,
+        "candidate_start": 112347,
+        "size": 959,
+        "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+        "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
         "raw_exact": false,
         "target_fixups": [
-          253,
-          222,
-          173,
-          73
+          862,
+          461,
+          165,
+          128
         ],
         "candidate_fixups": [
-          253,
-          222,
-          173,
-          73
+          862,
+          461,
+          165,
+          128
         ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 112347,
+          "size": 959,
+          "function_symbol": "shinki_update()",
+          "contribution_start": 111172,
+          "contribution_size": 2134,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
       },
       "negative_control": {
-        "unit_id": "main-shinki-pattern-a",
-        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
+        "unit_id": "main-shinki-update-context",
+        "entry_sha256": "79e6dca7eb29863b75171792828b99f04d5a0ba6883e93ae71b4b05aa8a23822",
         "mutation": {
-          "unit": "main-shinki-pattern-a",
-          "source": "src/main/boss/shinki/shinki.cpp",
-          "find": "PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY",
-          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
+          "unit": "main-shinki-update-context",
+          "source": "src/main/boss/shinki/update_context.cpp",
+          "find": "boss_defeat_update(SHINKI_DEFEAT_SCORE_BONUS);",
+          "replace": "boss_defeat_update(SHINKI_DEFEAT_SCORE_BONUS - 1);"
         },
-        "control_sha256": "f0c735e69bde58f5af43d257af8dc7fcbaed7c84d5358c332061f6eb559e38bb",
+        "control_sha256": "4b3ee2429fba715e77663cb585bea0b2f00b9f1d9239fc0fa4d31373ec27dd31",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 109483,
-          "candidate_start": 109483,
-          "size": 271,
-          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
-          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
+          "target_start": 112347,
+          "candidate_start": 112347,
+          "size": 959,
+          "target_sha256": "00c38916cd1b358717f0d06f1e0f156579c780b62eccb68d818d57eadfc74555",
+          "candidate_sha256": "cf37798a23c1dfe1f243f8303081d7bc2c7864d60058c19a45cd11b45dc04a74",
           "raw_exact": false,
           "target_fixups": [
-            253,
-            222,
-            173,
-            73
+            862,
+            461,
+            165,
+            128
           ],
           "candidate_fixups": [
-            253,
-            222,
-            173,
-            73
+            862,
+            461,
+            165,
+            128
           ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 112347,
+            "size": 959,
+            "function_symbol": "shinki_update()",
+            "contribution_start": 111172,
+            "contribution_size": 2134,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
         },
         "omf": {
-          "sha256": "db49ace48797beacd38a19eaa1ccb3a7dbeef393028f5bcd457f88ddd49106d1",
-          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
-          "module_name": "th05/boss_6.cpp",
+          "sha256": "b5a49a51fceed357f02b279ccd454aab2bf1ddd04a54f703d9a3b9e032fc6894",
+          "dependency_timestamp_normalized_sha256": "293136d43fe3c1433dda4f4cd5d5156465fe6e8b90659b29aafee5d77444d77e",
+          "module_name": "th05/b6_ctx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/boss_6.cpp",
-            "src/main/boss/shinki/shinki.cpp",
+            "th05/b6_ctx.cpp",
+            "src/main/boss/shinki/update_context.cpp",
+            "src/main/boss/shinki/update_standalone.hpp",
             "src/main/boss/shinki/shinki.hpp",
             "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
@@ -70842,18 +70875,13 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
+            "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/scratch.hpp",
             "src/main/boss/shinki/final_spiral_timing.hpp",
-            "src/main/boss/shinki/ball_lifecycle.hpp",
             "src/main/boss/shinki/wing_hitboxes.hpp",
             "src/main/boss/shinki/wing_attack_rules.hpp",
             "src/main/boss/shinki/early_attack_rules.hpp",
-            "src/main/boss/shinki/wing_preparation_rules.hpp",
-            "src/main/boss/shinki/hp.inl",
             "src/main/boss/shinki/wing_coordinates.inl",
-            "src/main/boss/shinki/balls_update_body.inl",
-            "src/main/boss/shinki/ball_lifecycle.hpp",
-            "src/main/boss/shinki/cheeto_walls.inl",
             "src/main/boss/shinki/devil.inl",
             "src/main/boss/shinki/devil_ballistics.hpp",
             "src/main/boss/shinki/wing_hitboxes.hpp",
@@ -70871,7 +70899,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/boss_6.cpp"
+          "th05/b6_ctx.cpp"
         ]
       },
       "receipt_aggregate_pass": true
