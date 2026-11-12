@@ -6367,3 +6367,25 @@ unit = "main-midboss-stage5-attack-dispatch-data"
 source = "src/main/midboss/stage5_schedule_data.cpp"
 find = "    midboss5_pattern_green_rings,"
 replace = "    midboss5_pattern_blue_spread,"
+
+[[units]]
+id = "main-boss-default-flystep-clamp-data"
+source = "src/main/boss/movement_default_clamp.cpp"
+module = "th05/bclamp.cpp"
+segment = "_DATA"
+wrapper_options = "-zCBOSS_DEFAULT_CLAMP_TEXT -zPmain_01"
+bindings_source = "probes/units/main_boss_default_clamp_data_bindings.asm"
+target_start = 0x21e06
+size = 8
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-boss-default-flystep-clamp-data"
+source = "src/main/boss/movement_default_clamp.cpp"
+find = "BOSS_DEFAULT_TOP_PX = 24"
+replace = "BOSS_DEFAULT_TOP_PX = 25"
