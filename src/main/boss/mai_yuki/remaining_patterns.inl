@@ -1,4 +1,19 @@
 #include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
+// All seven Yuki small-ball/ring families fire from the same real muzzle:
+// the second Boss position with its original positive Y offset. Keep this
+// assignment in-place before each attack's distinct spread/speed settings.
+#define MY_YUKI_MUZZLE() \
+    bullet_template.origin.x = boss2.pos.cur.x; \
+    bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX)
+
+// Both late Cheeto attackers share the same real aiming, spawn and sound
+// sequence after their character-dependent origin/side decisions.
+#define MY_FIRE_AIMED_CHEETO() \
+    cheeto_template.angle = player_angle_from( \
+        cheeto_template.origin.x, cheeto_template.origin.y, angle); \
+    cheetos_add(); \
+    snd_se_play(MYR_CHEETO_SOUND)
+
 bool near mai_pattern_reversing_rings(void)
 {
     if(boss.phase_frame == MYR_RING_START_FRAME) {
@@ -37,8 +52,7 @@ bool near yuki_pattern_random_aimed_fan(void)
         bullet_template.group = BG_SPREAD_AIMED;
         bullet_template.angle = randring2_next16_and(MYR_FAN_ANGLE_MASK) - MYR_FAN_ANGLE_BIAS;
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         mai_yuki_set_spread(MYR_FAN_COUNT, MYR_FAN_ANGLE_STEP);
         bullet_template.special_motion = BSM_EXACT_LINEAR;
         bullet_template.speed.v = randring2_next16_and(MYR_FAN_SPEED_MASK) + to_sp(MYR_FAN_SPEED_MIN_PX);
@@ -55,8 +69,7 @@ bool near yuki_pattern_random_rings(void)
         bullet_template.group = BG_RING;
         bullet_template.angle = randring2_next16();
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         bullet_template.spread = MYR_RANDOM_RING_COUNT;
         bullet_template.speed.v = mai_yuki_speed(MYR_RANDOM_RING_SPEED_PX);
         bullet_template_tune();
@@ -72,8 +85,7 @@ bool near yuki_pattern_small_ball_stacks(void)
         bullet_template.group = BG_STACK_AIMED;
         bullet_template.angle = 0;
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         mai_yuki_set_stack(MYR_SMALL_STACK_COUNT, MYR_SMALL_STACK_STEP);
         bullet_template.speed.v = mai_yuki_speed(MYR_STACK_SPEED_PX);
         bullet_template_tune();
@@ -89,8 +101,7 @@ bool near yuki_pattern_small_ball_fan(void)
         bullet_template.group = BG_SPREAD;
         bullet_template.angle = MYR_SMALL_FAN_ANGLE;
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         mai_yuki_set_spread(MYR_SMALL_FAN_COUNT, MYR_SMALL_FAN_STEP);
         bullet_template.speed.v = mai_yuki_speed(MYR_SMALL_FAN_SPEED_PX);
         bullet_template_tune();
@@ -107,8 +118,7 @@ bool near yuki_pattern_ball_stacks(void)
         bullet_template.group = BG_STACK_AIMED;
         bullet_template.angle = 0;
         bullet_template.patnum = MY_PAT_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         mai_yuki_set_stack(MYR_BIG_STACK_COUNT, MYR_BIG_STACK_STEP);
         bullet_template.speed.v = mai_yuki_speed(MYR_STACK_SPEED_PX);
         bullet_template_tune();
@@ -124,8 +134,7 @@ bool near yuki_pattern_random_pellets(void)
         bullet_template.group = BG_SPREAD;
         bullet_template.angle = randring2_next16();
         bullet_template.patnum = MYR_RANDOM_PELLET_PATNUM;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         mai_yuki_set_spread(MYR_RANDOM_PELLET_COUNT, MYR_RANDOM_PELLET_STEP);
         bullet_template.speed.v = randring2_next16_and(MYR_FAN_SPEED_MASK) + to_sp(MYR_RANDOM_PELLET_SPEED_PX);
         bullet_template_tune();
@@ -146,8 +155,7 @@ bool near yuki_pattern_reversing_rings(void)
         bullet_template.angle = boss_statebyte[14];
         boss_statebyte[14] += boss_statebyte[13];
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
-        bullet_template.origin.x = boss2.pos.cur.x;
-        bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
+        MY_YUKI_MUZZLE();
         bullet_template.spread = MYR_RING_COUNT;
         bullet_template.speed.v = mai_yuki_speed(MYR_RING_SPEED_PX);
         bullet_template_tune();
@@ -172,10 +180,7 @@ bool near yuki_pattern_cheetos(void)
         } else {
             angle = static_cast<unsigned char>(MYR_CHEETO_REVERSE_TURN);
         }
-        cheeto_template.angle = player_angle_from(
-            cheeto_template.origin.x, cheeto_template.origin.y, angle);
-        cheetos_add();
-        snd_se_play(MYR_CHEETO_SOUND);
+        MY_FIRE_AIMED_CHEETO();
     }
     return false;
 }
@@ -192,10 +197,10 @@ bool near mai_pattern_cheetos(void)
         } else {
             angle = static_cast<unsigned char>(MYR_CHEETO_REVERSE_TURN);
         }
-        cheeto_template.angle = player_angle_from(
-            cheeto_template.origin.x, cheeto_template.origin.y, angle);
-        cheetos_add();
-        snd_se_play(MYR_CHEETO_SOUND);
+        MY_FIRE_AIMED_CHEETO();
     }
     return (boss.phase_frame == MYR_CHEETO_END_FRAME);
 }
+
+#undef MY_FIRE_AIMED_CHEETO
+#undef MY_YUKI_MUZZLE
