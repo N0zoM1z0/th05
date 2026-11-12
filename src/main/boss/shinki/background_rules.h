@@ -32,10 +32,25 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/* Original near-DATA public, initialized independently to 255 in C. */
+/* Independent near DATA objects, all from their original C publics. */
+extern unsigned char near shinki_bg_linesets_zoomed_out;
 extern int near shinki_bg_type_a_particles_alive;
+extern unsigned char near shinki_bg_type_b_initialized;
+extern unsigned int near shinki_bg_spinline_frame;
+extern unsigned char near shinki_bg_type_c_initialized;
+extern unsigned char near shinki_bg_type_d_initialized;
 #ifdef __cplusplus
 }
+#include "src/main/boss/exalice/hexagram_rules.hpp"
+enum hexagrams_flag_t {
+    UNINITIALIZED = XHG_FLAG_UNINITIALIZED,
+    TURN_RIGHT = XHG_FLAG_CLOCKWISE,
+    TURN_LEFT = XHG_FLAG_COUNTERCLOCKWISE,
+    FLAG_COUNT,
+};
+extern "C" hexagrams_flag_t near hexagrams_flag;
+#else
+extern unsigned char near hexagrams_flag;
 #endif
 
 #endif

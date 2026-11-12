@@ -34,3 +34,15 @@ Focused receipt:
 The real accepted Shinki/EX-Alice background CODE was not modified by
 this DATA contribution and is not recredited. Its C++ extern declarations
 will receive separate source-current ABI validation.
+
+## Real one-byte C++ enum consumer (2026-11-12)
+
+The EX-Alice animator now obtains `_hexagrams_flag` through its
+canonical global C-linkage declaration in `background_rules.h`, typed
+as the original one-byte `hexagrams_flag_t` in C++ and as the true
+unsigned-byte public in C. The local duplicated extern and enum were
+replaced with the unchanged global enum definition, preserving the
+original 0/1/2, `FLAG_COUNT`, and all source-level arithmetic.
+The 220-byte hexagram animation, all 17 background CODE units and the
+three-byte physical C DATA contribution pass source-current native
+replay; see the ABI closure receipts in `background_rules.md`.

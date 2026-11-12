@@ -32,3 +32,14 @@ consumers will be selectively revalidated when their public declarations
 are joined to these real data providers. These acceptances introduce
 **three** new authored DATA bytes, without CODE double credit or a
 whole-program cold replay.
+
+## Source-current C/C++ linkage (2026-11-12)
+
+The original one-byte B gate and the independent two-byte B/C phase
+clock now share canonical C external declarations with the real large
+background controller. Their C producers include the exact common
+header, but remain separate physically accepted DATA scopes and keep
+their individual compiled zero-to-one negatives. Both are fully exact
+under `gpt-web-bg-abi-bflag-b` and `gpt-web-bg-abi-spinline-b`;
+the complete 17-function consumer is exact under
+`gpt-web-shinki-all-background-c-publics-a`.

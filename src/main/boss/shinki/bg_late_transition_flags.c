@@ -4,6 +4,8 @@
 #error Original three adjacent background DATA flags use a C producer
 #endif
 
+#include "src/main/boss/shinki/background_rules.h"
+
 /* C runs only after B's upward-motion preparation; D starts smoke once. */
 unsigned char near shinki_bg_type_c_initialized = 0;
 unsigned char near shinki_bg_type_d_initialized = 0;

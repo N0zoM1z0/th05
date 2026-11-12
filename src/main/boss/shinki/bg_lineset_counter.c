@@ -4,6 +4,8 @@
 #error The original Shinki background DATA public is compiled as C
 #endif
 
+#include "src/main/boss/shinki/background_rules.h"
+
 /* Starts at zero: each radius-224 reset advances this phase counter. */
 unsigned char near shinki_bg_linesets_zoomed_out = 0;
 typedef char shinki_lineset_counter_is_byte[

@@ -94,12 +94,7 @@ static const int SHINKI_LINE_2 = (1 * 6);
 static const int SHINKI_LINE_3 = (2 * 6);
 static const int SHINKI_LINE_4 = (3 * 6);
 
-extern unsigned char shinki_bg_linesets_zoomed_out;
-/* C-linkage definition is supplied by Shinki particle seed DATA. */
-extern bool shinki_bg_type_b_initialized;
-extern unsigned int shinki_bg_spinline_frame;
-extern bool shinki_bg_type_c_initialized;
-extern bool shinki_bg_type_d_initialized;
+// All five physical Shinki background globals have C-linkage owners.
 
 #define shinki_spinline_x_and_angle(set, delta) \
 	if(set->radius[SHINKI_LINE_MAIN] > to_sp(96.0f)) { \
@@ -634,14 +629,7 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 
 void near exalice_hexagrams_update_and_render(void)
 {
-	enum hexagrams_flag_t {
-		UNINITIALIZED = XHG_FLAG_UNINITIALIZED,
-		TURN_RIGHT = XHG_FLAG_CLOCKWISE,
-		TURN_LEFT = XHG_FLAG_COUNTERCLOCKWISE,
-		FLAG_COUNT,
-	};
 	typedef char background_hexagrams_flag_is_1[(sizeof(hexagrams_flag_t) == 1) ? 1 : -1];
-	extern hexagrams_flag_t hexagrams_flag;
 	int i;
 
 	lineset_t near &set = linesets[0];

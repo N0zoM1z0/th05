@@ -42,3 +42,13 @@ with real native compiler outputs and compiled negative rejected.
 See `background_rules.md` and
 `.analysis/unit-replays/gpt-web-bg-particles-seed-shinki-a/receipt.json`.
 The surrounding zero-initialized or alignment bytes remain unowned.
+
+## All adjacent source-defined background state (2026-11-12)
+
+The real consumer now obtains all the original separately initialized
+Shinki state flags and counters from the same `background_rules.h`
+C-linkage interface, while EX-Alice's hexagram byte retains its
+one-byte enum semantics. The original two-byte 255 particle sentinel
+still has its own native compiler proof and is not recredited;
+its refreshed producer receipt is
+`.analysis/unit-replays/gpt-web-bg-abi-seed-b/receipt.json`.

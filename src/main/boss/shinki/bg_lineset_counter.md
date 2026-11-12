@@ -23,3 +23,13 @@ The original `[22359,2235A)` alignment zero is **not** accepted; the
 previously accepted particle-count word is also not recredited.
 The independent consumer source will be selectively revalidated after
 its C-linkage declaration is joined to this physical owner.
+
+## Consumer ABI completion (2026-11-12)
+
+The original zero-initialized byte is now exposed through
+`background_rules.h` to the entire 17-function Shinki/EX-Alice
+background owner using its true C symbol and unsigned-byte width.
+Its standalone source includes that exact declaration, with original
+code, source-initialized byte, and compiled negative all verified
+under `gpt-web-bg-abi-counter-b`. Full consumer evidence is in
+`background_rules.md`.
