@@ -6895,3 +6895,25 @@ unit = "main-score-extend-flags-initial-data"
 source = "src/main/hud/score_extend_initial.cpp"
 find = "extends_gained = 0;"
 replace = "extends_gained = 1;"
+
+[[units]]
+id = "main-playfield-shake-redraw-initial-data"
+source = "src/main/playfield/shake_redraw_initial.cpp"
+module = "th05/shakerdi.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_shake_redraw_initial_bindings.asm"
+target_start = 0x2191a
+size = 1
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-playfield-shake-redraw-initial-data"
+source = "src/main/playfield/shake_redraw_initial.cpp"
+find = "playfield_shake_redraw_time = 0;"
+replace = "playfield_shake_redraw_time = 1;"

@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "4e449b76141db3084685392b16c730a7f301bfaa731f5fc1672b56da9e1e9a7b",
+  "replay_receipt_sha256": "5b31e4eae284c4a4f30a1cd46ea78484d0caa66d2182fd27f31b9a04efab49a1",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138562,
-    "candidate_start": 138562,
-    "size": 2,
-    "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
-    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+    "target_start": 137498,
+    "candidate_start": 137498,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138562,
-      "size": 2,
-      "module": "th05/screxti.cpp",
+      "start": 137498,
+      "size": 1,
+      "module": "th05/shakerdi.cpp",
       "segment": "_DATA"
     }
   },
@@ -109687,6 +109687,259 @@
           "-ml",
           "-DBINARY='M'",
           "th05/screxti.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-playfield-shake-redraw-initial-data",
+      "entry_sha256": "3c7384d7c99810a459261927977da9644d098776768dcad93ba7dc8d8fbfb6ed",
+      "result": {
+        "id": "main-playfield-shake-redraw-initial-data",
+        "entry_sha256": "3c7384d7c99810a459261927977da9644d098776768dcad93ba7dc8d8fbfb6ed",
+        "rounds": [
+          {
+            "target_start": 137498,
+            "candidate_start": 137498,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137498,
+              "size": 1,
+              "module": "th05/shakerdi.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 137498,
+            "candidate_start": 137498,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 137498,
+              "size": 1,
+              "module": "th05/shakerdi.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7e495a671816a75de0959b2e48a16026b251a5d63ccb57ff7cbc1a05c7512252",
+            "dependency_timestamp_normalized_sha256": "a27a4f5a6513dd264ce260883672737cbaf9830fa3988e56d2e5532244bc63a0",
+            "module_name": "th05/shakerdi.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shakerdi.cpp",
+              "src/main/playfield/shake_redraw_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "fe4a59018b23fb3b465ea21cb1a67364d309e0d83844a7869fa92742225e12b7",
+            "dependency_timestamp_normalized_sha256": "a27a4f5a6513dd264ce260883672737cbaf9830fa3988e56d2e5532244bc63a0",
+            "module_name": "th05/shakerdi.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shakerdi.cpp",
+              "src/main/playfield/shake_redraw_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shakerdi.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shakerdi.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shake_redraw_initial_bindings.asm",
+            "sha256": "927f0dce540ad28074e4ece99d74089ef1ceaaafd5180b12cedff6aa88d08e19"
+          },
+          {
+            "path": "src/main/playfield/shake_redraw_initial.cpp",
+            "sha256": "fa62e361c3944c2424bb04088cf6bf4ddb4dcb09174dde4e8743d2077bddd140"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shake_redraw_initial_bindings.asm",
+          "sha256": "927f0dce540ad28074e4ece99d74089ef1ceaaafd5180b12cedff6aa88d08e19"
+        },
+        {
+          "path": "src/main/playfield/shake_redraw_initial.cpp",
+          "sha256": "fa62e361c3944c2424bb04088cf6bf4ddb4dcb09174dde4e8743d2077bddd140"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "5b31e4eae284c4a4f30a1cd46ea78484d0caa66d2182fd27f31b9a04efab49a1",
+      "compiled_negative_control": {
+        "target_start": 137498,
+        "candidate_start": 137498,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 137498,
+          "size": 1,
+          "module": "th05/shakerdi.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-playfield-shake-redraw-initial-data",
+        "entry_sha256": "3c7384d7c99810a459261927977da9644d098776768dcad93ba7dc8d8fbfb6ed",
+        "mutation": {
+          "unit": "main-playfield-shake-redraw-initial-data",
+          "source": "src/main/playfield/shake_redraw_initial.cpp",
+          "find": "playfield_shake_redraw_time = 0;",
+          "replace": "playfield_shake_redraw_time = 1;"
+        },
+        "control_sha256": "022f7b0ebd78c08beeb82ca3188657d73a1aaf8e9b31bf151199e662752a69a7",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 137498,
+          "candidate_start": 137498,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 137498,
+            "size": 1,
+            "module": "th05/shakerdi.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "ff9ba07997f473e895fe16052e35dff34ba46406809f9b23796e21c8b56316a6",
+          "dependency_timestamp_normalized_sha256": "38d957b36a4fb8a486aa9835e2f57967a7b6fa936b3b69eab259cda0a54a8aa7",
+          "module_name": "th05/shakerdi.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/shakerdi.cpp",
+            "src/main/playfield/shake_redraw_initial.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/shakerdi.cpp"
         ]
       },
       "receipt_aggregate_pass": true
