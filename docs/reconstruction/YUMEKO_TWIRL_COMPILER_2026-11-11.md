@@ -304,3 +304,46 @@ The canonical `src/main/boss/yumeko/swords_update.cpp`, its hashed
 review evidence and both already accepted adjacent major Yumeko
 C++ attacks remain unchanged. No new authored CODE is claimed; no
 full cold replay was performed.
+
+## 2026-11-12: local Y-decision switch probes (true nine-function context)
+
+Three more **actual original-order Turbo C++/TLINK first producers**
+examined a narrower hypothesis than the previous full-bounds or
+whole-collision-state switch tests. Under the genuine `-O` jump optimizer,
+which already recovers the native `0F 8C`/`0F 8D` near twirl conditionals,
+the specific missing short joins are at original updater-relative `+9A`
+(the final playfield-Y clip gate) and `+C4` (the no-hit continuation).
+Each candidate rephrased *only* the relevant final Boolean as an ordinary
+`switch (condition)` with exact, real `goto remove` or `continue` cases.
+The collision and Y-boundary semantics, native DX:AX motion return,
+real sword pool, and subsequent eight original-order functions were kept.
+
+| New semantic C++ flow | Actual complete nine-function CODE | Raw/ordered exact? |
+| --- | ---: | --- |
+| Local `switch` on final Y clip predicate only | **2,150 B** | No / No |
+| Local `switch` on final player-Y hit predicate only | **2,151 B** | No / No |
+| Both local `switch` decisions | **2,164 B** | No / No |
+
+The original full contribution is **2,139 B**; ordinary optimized C++ is
+**2,135 B**. These switches prove that a local source-level dispatch can
+make Borland retain an *additional* short jump after the corresponding
+condition (`+A1` in the clip trial, `+BF` in the hit trial), but the
+compiler also emits new case dispatch, shifts the other branches, and
+adds **15 / 16 / 29 bytes** relative to its optimized baseline. The
+whole updater and following real callbacks are therefore still inexact;
+size or the presence of a familiar short jump is not accepted as a
+partial machine-code match.
+
+The runnable, source-cleaning diagnostic is
+`.analysis/gpt-web-yumeko-local-switch-20261112.py`, with three immutable
+first-producer output directories
+`.analysis/gpt-web-yumeko-local-switch-*-20261112-first/` and structured
+`.analysis/gpt-web-yumeko-local-switch-20261112-results.json`. All trials
+use the actual `attacks_context.cpp` and the pinned original target rather
+than a synthetic prefix. The temporary experiment source files were deleted
+after compilation; **the maintained Yumeko C++ candidate, existing accepted
+354/428-byte attack callbacks, and complete exact 283-byte reviewed ASM
+updater remain unchanged**. No fake instruction, artificial optimizer
+barrier, padded short jump, whole cold replay, or C++ byte-credit claim
+was introduced. A next attempt needs a source-flow shape that naturally
+retains both historical short joins *without* the switch-dispatch overhead.
