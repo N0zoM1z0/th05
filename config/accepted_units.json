@@ -2,30 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "430d879b351d5f8daec2f9d1beb8fe93535540ff7621b371f92459b18a325706",
+  "replay_receipt_sha256": "dfeb3c04cf68a7a9daea7c41bc9ed3422201b2af84fc22f6bd93f7bd10782d6f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 68119,
-    "candidate_start": 68119,
-    "size": 104,
-    "candidate_size": 105,
-    "target_sha256": "b22d2815b83bfb7555644bdd884de80ed1ab9fdd988bc8c906eeeb2b346876e2",
-    "candidate_sha256": "8f74fabfcd9303b43a66b77edad72ed00883a7df66455dc6bdddf90efd259e9d",
+    "target_start": 140136,
+    "candidate_start": 140136,
+    "size": 4,
+    "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+    "candidate_sha256": "c18048b49abe038ff632c6d354e8c986776154035fad0cf60db0c847304a1855",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 68119,
-      "size": 105,
-      "function_symbol": "sara_bg_render()",
-      "contribution_start": 68119,
-      "contribution_size": 2932,
-      "boundary_kind": "next-function",
-      "next_function_symbol": "louise_bg_render()"
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 140136,
+      "size": 4,
+      "module": "th05/exlast.cpp",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -107306,6 +107303,463 @@
           "-ml",
           "-DBINARY='M'",
           "th05/mem_init.c"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-exalice-laser-and-sweep-initial-data",
+      "entry_sha256": "693fc21d90569645461cbae90c62c90ec4fecd1221fdbba0777bb7497d6a7e9c",
+      "result": {
+        "id": "main-exalice-laser-and-sweep-initial-data",
+        "entry_sha256": "693fc21d90569645461cbae90c62c90ec4fecd1221fdbba0777bb7497d6a7e9c",
+        "rounds": [
+          {
+            "target_start": 140136,
+            "candidate_start": 140136,
+            "size": 4,
+            "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+            "candidate_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140136,
+              "size": 4,
+              "module": "th05/exlast.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 140136,
+            "candidate_start": 140136,
+            "size": 4,
+            "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+            "candidate_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 140136,
+              "size": 4,
+              "module": "th05/exlast.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "e140a47bb440e9c05992ecc7361c86a0db5e4ea0121cbec513fdcdd007d6a5da",
+            "dependency_timestamp_normalized_sha256": "21fbb382c56b436a6c218ea7474f5d85038a2cea935b6f9a07c5ff46d951a2e1",
+            "module_name": "th05/exlast.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/exlast.cpp",
+              "src/main/boss/exalice/attack_state_data.cpp",
+              "src/main/boss/exalice/laser_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/final_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/final_attack_rules.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "6998a934df0224429d07aba97c03f6f33f4457a2ac26e76f6c536040939ef1ba",
+            "dependency_timestamp_normalized_sha256": "21fbb382c56b436a6c218ea7474f5d85038a2cea935b6f9a07c5ff46d951a2e1",
+            "module_name": "th05/exlast.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/exlast.cpp",
+              "src/main/boss/exalice/attack_state_data.cpp",
+              "src/main/boss/exalice/laser_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/stage/setup.hpp",
+              "src/main/boss/movement.hpp",
+              "src/shared/geometry.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/bullet/template.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/player/player.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/bullet/laser.hpp",
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/final_patterns.hpp",
+              "src/main/boss/exalice/patterns.hpp",
+              "src/main/bullet/cheeto.hpp",
+              "src/main/player/player.hpp",
+              "src/main/gather/gather.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/main/bullet/template.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "src/shared/math/vector.hpp",
+              "C:\\TC4\\INCLUDE\\dos.h",
+              "src/shared/geometry.hpp",
+              "src/main/boss/exalice/final_attack_rules.hpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 4,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 4,
+                  "sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/exlast.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/exlast.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_exalice_attack_state_data_bindings.asm",
+            "sha256": "b81b9a926390e5f816390e1b606b64edc89a713ca482e4b34e2e366ad1e2ec70"
+          },
+          {
+            "path": "src/main/boss/exalice/attack_state_data.cpp",
+            "sha256": "f3a09b38d633582442cde9459beef7976ddf15fbec334a452f7e680aeab911c3"
+          },
+          {
+            "path": "src/main/boss/exalice/final_attack_rules.hpp",
+            "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+          },
+          {
+            "path": "src/main/boss/exalice/final_patterns.hpp",
+            "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
+          },
+          {
+            "path": "src/main/boss/exalice/laser_patterns.hpp",
+            "sha256": "757319040dadbff0619e829fa77739390b34e6ca9052feeb88a94b9dff43c1fd"
+          },
+          {
+            "path": "src/main/boss/exalice/patterns.hpp",
+            "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+          },
+          {
+            "path": "src/main/boss/movement.hpp",
+            "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+          },
+          {
+            "path": "src/main/bullet/cheeto.hpp",
+            "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+          },
+          {
+            "path": "src/main/bullet/laser.hpp",
+            "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+          },
+          {
+            "path": "src/main/bullet/template.hpp",
+            "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+          },
+          {
+            "path": "src/main/gather/gather.hpp",
+            "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/player.hpp",
+            "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+          },
+          {
+            "path": "src/main/stage/setup.hpp",
+            "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/shared/geometry.hpp",
+            "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+          },
+          {
+            "path": "src/shared/math/vector.hpp",
+            "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_exalice_attack_state_data_bindings.asm",
+          "sha256": "b81b9a926390e5f816390e1b606b64edc89a713ca482e4b34e2e366ad1e2ec70"
+        },
+        {
+          "path": "src/main/boss/exalice/attack_state_data.cpp",
+          "sha256": "f3a09b38d633582442cde9459beef7976ddf15fbec334a452f7e680aeab911c3"
+        },
+        {
+          "path": "src/main/boss/exalice/final_attack_rules.hpp",
+          "sha256": "82179a11eb07988a3e58dd14efabd4be6506b549a77454e220d673cc2c4be74c"
+        },
+        {
+          "path": "src/main/boss/exalice/final_patterns.hpp",
+          "sha256": "610c2e58e5b8026a96924898abf3282790d3de40d1e7210d47e2e642b27a7300"
+        },
+        {
+          "path": "src/main/boss/exalice/laser_patterns.hpp",
+          "sha256": "757319040dadbff0619e829fa77739390b34e6ca9052feeb88a94b9dff43c1fd"
+        },
+        {
+          "path": "src/main/boss/exalice/patterns.hpp",
+          "sha256": "3bf59490a588e3371e81bd1ce6b0dc182cb236b2584aad6aa1e670882c1c4bcc"
+        },
+        {
+          "path": "src/main/boss/movement.hpp",
+          "sha256": "c93823230ee9548330289962d42c6cc99e0761ca0a9ec3c0b4f507f1839a0a6f"
+        },
+        {
+          "path": "src/main/bullet/cheeto.hpp",
+          "sha256": "ef8ed9bfb691e39af45b8aedfa9e62af25f882330639f619f29a5c22088bd843"
+        },
+        {
+          "path": "src/main/bullet/laser.hpp",
+          "sha256": "3848bab4493d2c5c67b05616ae31fb12eeea19709ac1354e52bdfc4c5c212d57"
+        },
+        {
+          "path": "src/main/bullet/template.hpp",
+          "sha256": "3f1c9152c5ffa5c5cd309756bbb3a70afd3c7234fa6458f71769ecb67bf0816e"
+        },
+        {
+          "path": "src/main/gather/gather.hpp",
+          "sha256": "83f43407554944da50a3475a6b2ff80655c9856013144d8d4fd1cca7fb4b2de6"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/player.hpp",
+          "sha256": "dff2d86bedee07549d2c1c917cfce051db6bcfe4e50ba315b91543bcbc6504c9"
+        },
+        {
+          "path": "src/main/stage/setup.hpp",
+          "sha256": "6acd703499e21418a6fe6eda8b3fde2cc3a1d1e18e9b7fe4b6d835220005162e"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/shared/geometry.hpp",
+          "sha256": "40e3cfcdf4c834f5da8315620d5ec66b5f66d2058e2e412cfba1841426e4ceff"
+        },
+        {
+          "path": "src/shared/math/vector.hpp",
+          "sha256": "0016bef86ee80a5eb13d2ed386b03a43826e304ff131da107ee87e3e673e6936"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "dfeb3c04cf68a7a9daea7c41bc9ed3422201b2af84fc22f6bd93f7bd10782d6f",
+      "compiled_negative_control": {
+        "target_start": 140136,
+        "candidate_start": 140136,
+        "size": 4,
+        "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+        "candidate_sha256": "c18048b49abe038ff632c6d354e8c986776154035fad0cf60db0c847304a1855",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 140136,
+          "size": 4,
+          "module": "th05/exlast.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-exalice-laser-and-sweep-initial-data",
+        "entry_sha256": "693fc21d90569645461cbae90c62c90ec4fecd1221fdbba0777bb7497d6a7e9c",
+        "mutation": {
+          "unit": "main-exalice-laser-and-sweep-initial-data",
+          "source": "src/main/boss/exalice/attack_state_data.cpp",
+          "find": "EXF_FAN_CENTER_X_PX * 16",
+          "replace": "(EXF_FAN_CENTER_X_PX + 1) * 16"
+        },
+        "control_sha256": "2f854947a942b31198eab4344a831c98ed183e99b13b42c4e02e1d87a244a85b",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 140136,
+          "candidate_start": 140136,
+          "size": 4,
+          "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
+          "candidate_sha256": "c18048b49abe038ff632c6d354e8c986776154035fad0cf60db0c847304a1855",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 140136,
+            "size": 4,
+            "module": "th05/exlast.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "4e9ca89f6a5f39d0839c0527300c2f9b3a3fbd562745a6c027857d0e18871d30",
+          "dependency_timestamp_normalized_sha256": "93c89910a1beb9b41e0c35ca81f8d4facb1639e91fb881a27a2298b416763768",
+          "module_name": "th05/exlast.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/exlast.cpp",
+            "src/main/boss/exalice/attack_state_data.cpp",
+            "src/main/boss/exalice/laser_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/player/player.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/final_patterns.hpp",
+            "src/main/boss/exalice/patterns.hpp",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/shared/math/vector.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/shared/geometry.hpp",
+            "src/main/boss/exalice/final_attack_rules.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 4,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 4,
+                "sha256": "c18048b49abe038ff632c6d354e8c986776154035fad0cf60db0c847304a1855"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/exlast.cpp"
         ]
       },
       "receipt_aggregate_pass": true
