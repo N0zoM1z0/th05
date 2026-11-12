@@ -4,6 +4,7 @@
 #include "src/main/boss/exalice/full_context.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
+#include "src/main/boss/exalice/visual_phase.hpp"
 #pragma codeseg EXALICE_FULL_TEXT main_03
 
 int far exalice_hittest_shots(void)
@@ -56,16 +57,16 @@ void pascal far exalice_update(void)
             gather_template.radius.v = to_sp(128);
             gather_template.angle_delta = 2;
             gather_template.ring_points = 8;
-            boss.sprite = 180;
-            boss_sprite_left = 186;
-            boss_sprite_right = 184;
-            boss_sprite_stay = 180;
+            boss.sprite = EXALICE_SPRITE_STILL;
+            boss_sprite_left = EXALICE_SPRITE_MOVE_LEFT;
+            boss_sprite_right = EXALICE_SPRITE_MOVE_RIGHT;
+            boss_sprite_stay = EXALICE_SPRITE_STILL;
             exalice_bomb_invincibility = 0;
             boss_flystep_random_clamp.left.v = to_sp(64);
             boss_flystep_random_clamp.right.v = to_sp(320);
             boss_flystep_random_clamp.top.v = to_sp(48);
             boss_flystep_random_clamp.bottom.v = to_sp(96);
-            for(int i = 204; i < 220; i++) {
+            for(int i = EXALICE_ATTACK_TINY_FIRST; i < EXALICE_ATTACK_TINY_END; i++) {
                 super_convert_tiny(i);
             }
         }
@@ -78,7 +79,7 @@ void pascal far exalice_update(void)
             Palettes.colors[0].c.g = 0;
             Palettes.colors[0].c.b = 0;
             palette_changed = true;
-            exalice_backdrop_patnum = 196;
+            exalice_backdrop_patnum = EXALICE_BACKDROP_INITIAL;
             bg_render_bombing_func = exalice_bg_render;
         }
         break;
@@ -139,7 +140,7 @@ regular_complete:
         }
         break;
     case EXALICE_PHASE_WAVE1_APPROACH:
-        if(Palettes.colors[0].c.r < 96) {
+        if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) {
             Palettes.colors[0].c.r += 2;
             palette_changed = true;
         }
@@ -156,7 +157,7 @@ approach:
         exalice_hittest_shots();
         break;
     case EXALICE_PHASE_WAVE1_CHARGE:
-        if(Palettes.colors[0].c.r < 96) {
+        if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) {
             Palettes.colors[0].c.r += 2;
             palette_changed = true;
         }
@@ -190,13 +191,13 @@ charge_complete:
             exalice_phase_next(ET_VERTICAL, EXALICE_HP_LAST_CHARGE_END);
             break;
         }
-        pellet_bottom_col = 9;
-        exalice_backdrop_patnum = 200;
+        pellet_bottom_col = EXALICE_POST_CHARGE_PELLET_BOTTOM_COL;
+        exalice_backdrop_patnum = EXALICE_BACKDROP_CHARGE;
         exalice_boss_scratch.wave_index++;
         break;
     case EXALICE_PHASE_WAVE2_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE2_REGULAR:
-        if(Palettes.colors[0].c.b < 96) {
+        if(Palettes.colors[0].c.b < EXALICE_APPROACH_BLUE_LIMIT) {
             Palettes.colors[0].c.b += 2;
             Palettes.colors[0].c.r -= 2;
             palette_changed = true;
@@ -207,7 +208,7 @@ charge_complete:
         goto regular_attack;
     case EXALICE_PHASE_WAVE3_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE3_REGULAR:
-        if(Palettes.colors[0].c.r < 48) {
+        if(Palettes.colors[0].c.r < EXALICE_APPROACH_WAVE3_RED_LIMIT) {
             Palettes.colors[0].c.r++;
             Palettes.colors[0].c.b--;
             palette_changed = true;
@@ -218,7 +219,7 @@ charge_complete:
         goto regular_attack;
     case EXALICE_PHASE_WAVE4_APPROACH_FIRST:
     case EXALICE_PHASE_WAVE4_REGULAR:
-        if(Palettes.colors[0].c.g < 64) {
+        if(Palettes.colors[0].c.g < EXALICE_APPROACH_WAVE4_GREEN_LIMIT) {
             if(Palettes.colors[0].c.r > 0) {
                 Palettes.colors[0].c.r--;
             }
@@ -251,7 +252,7 @@ charge_complete:
             Palettes.colors[0].c.r += 2;
             Palettes.colors[0].c.g++;
             Palettes.colors[0].c.b += 2;
-            if(Palettes.colors[0].c.r >= 128) {
+            if(Palettes.colors[0].c.r >= EXALICE_FINAL_FAN_RED_PEAK) {
                 exalice_boss_scratch.palette_step = EXALICE_PALETTE_DIM;
             }
         } else {

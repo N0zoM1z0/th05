@@ -115,3 +115,30 @@ Focused receipt:
 `.analysis/unit-replays/gpt-web-exalice-hp-ladder-20261111/receipt.json`.
 This is a behavior-explanatory refinement of already accepted source; it does
 not add separate target bytes to the coverage ledger.
+
+## Visual phase provenance and 1,060-byte replay (2026-11-12)
+
+The complete EX-Alice controller now names its original three movement
+sprite slots (`180` still, `184` right, `186` left), the sixteen tiny
+attack sprite indices `204..219`, and its two backdrop slots (`196`
+initial, `200` after each charge). They are the actual stage-phase
+resources observed at setup and the charge handoff, not newly allocated
+or reordered images. The post-charge pellet-bottom column is also named.
+
+`visual_phase.hpp` additionally names the exact RGB limits used by the
+four approach transitions and final-fan palette state machine. The wave
+thresholds are 96 red, 96 blue, 48 red and 64 green; the final-fan
+brightening step ends at red 128. They retain the original strict `<`
+versus `>=` comparisons and the asymmetric per-channel increments and
+decrements. No helper calls, data storage, branch reordering, timer
+changes or artificial compiler barriers were introduced.
+
+Both the standalone `update.cpp` and the accepted actual-owner
+`full_context.cpp` continue to use token-identical update bodies.
+The focused `main-exalice-update-full-context` replay at
+`.analysis/unit-replays/gpt-web-exalice-visual-phases-a/receipt.json`
+compiles the original-order context twice with Borland and verifies the
+complete **1,060-byte** Boss update, all **52** compiler switch-table
+bytes and both original ordered relocations. The existing compiled HP
+threshold negative is rejected. Only this affected owner was replayed;
+no new authored CODE credit is claimed for already accepted bytes.
