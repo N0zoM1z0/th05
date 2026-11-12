@@ -2,35 +2,27 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "1afb671402c72d9c164daca1dcfa616e1b1bceee880678326aa7e40ca39e3078",
+  "replay_receipt_sha256": "caaff8f8345aa075147619b770367b1baa692e61c28c813cbde9faad76bc19b7",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 107082,
-    "candidate_start": 107082,
-    "size": 1060,
-    "target_sha256": "9f84cef39306ece9faa3304a285e8795387e043c2d04379ca94e1f4e3c2841f1",
-    "candidate_sha256": "10b40dc424142f008fe6f8c6cf222092518da3ccf2a2e46f920832767dd134e2",
+    "target_start": 141200,
+    "candidate_start": 141200,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      198,
-      161
-    ],
-    "candidate_fixups": [
-      198,
-      161
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-function",
-      "start": 107082,
-      "size": 1060,
-      "function_symbol": "exalice_update()",
-      "contribution_start": 106971,
-      "contribution_size": 1171,
-      "boundary_kind": "contribution-end",
-      "next_function_symbol": null
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 141200,
+      "size": 1,
+      "module": "th05/shbossf.cpp",
+      "segment": "_DATA"
     }
   },
   "units": [
@@ -108611,6 +108603,290 @@
           "-ml",
           "-DBINARY='M'",
           "th05/enmyttl.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-shots-hittest-boss-initial-flag-data",
+      "entry_sha256": "ccbbded7dcf39e607f18affcd871369356f19ca7790d85ac6cf0262f8f8e4b5f",
+      "result": {
+        "id": "main-shots-hittest-boss-initial-flag-data",
+        "entry_sha256": "ccbbded7dcf39e607f18affcd871369356f19ca7790d85ac6cf0262f8f8e4b5f",
+        "rounds": [
+          {
+            "target_start": 141200,
+            "candidate_start": 141200,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141200,
+              "size": 1,
+              "module": "th05/shbossf.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141200,
+            "candidate_start": 141200,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141200,
+              "size": 1,
+              "module": "th05/shbossf.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "aeba5121bd2b77c85a163cfbb21601f3d39a79b127aa261459af9ecaf775e689",
+            "dependency_timestamp_normalized_sha256": "01b47a797ab76902c3494579f9a95096e58bc013c6d4e63b6a08daaa39457650",
+            "module_name": "th05/shbossf.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shbossf.cpp",
+              "src/main/player/shot_collision_flag_data.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "f0ff34f36c99f0cf9c2e1c668802ff7cdaf7d9ca25909607fc07750eb1148dd6",
+            "dependency_timestamp_normalized_sha256": "01b47a797ab76902c3494579f9a95096e58bc013c6d4e63b6a08daaa39457650",
+            "module_name": "th05/shbossf.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/shbossf.cpp",
+              "src/main/player/shot_collision_flag_data.cpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shbossf.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/shbossf.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_shot_boss_flag_data_bindings.asm",
+            "sha256": "cc65d53aa210332f4bf7727f7596da47645ab89c15e261e34ea0e3941749ff10"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/main/player/shot_collision_flag_data.cpp",
+            "sha256": "5210c1d0e6aa287c2c939dbfd677cd0358c89bcb5b5ebca69126c27421922864"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_shot_boss_flag_data_bindings.asm",
+          "sha256": "cc65d53aa210332f4bf7727f7596da47645ab89c15e261e34ea0e3941749ff10"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/main/player/shot_collision_flag_data.cpp",
+          "sha256": "5210c1d0e6aa287c2c939dbfd677cd0358c89bcb5b5ebca69126c27421922864"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "caaff8f8345aa075147619b770367b1baa692e61c28c813cbde9faad76bc19b7",
+      "compiled_negative_control": {
+        "target_start": 141200,
+        "candidate_start": 141200,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141200,
+          "size": 1,
+          "module": "th05/shbossf.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-shots-hittest-boss-initial-flag-data",
+        "entry_sha256": "ccbbded7dcf39e607f18affcd871369356f19ca7790d85ac6cf0262f8f8e4b5f",
+        "mutation": {
+          "unit": "main-shots-hittest-boss-initial-flag-data",
+          "source": "src/main/player/shot_collision_flag_data.cpp",
+          "find": "shots_hittest_against_boss = false;",
+          "replace": "shots_hittest_against_boss = true;"
+        },
+        "control_sha256": "e98f0a550619ef484adbda565977e2b37d701527f0222d25a08caa44d106c691",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141200,
+          "candidate_start": 141200,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141200,
+            "size": 1,
+            "module": "th05/shbossf.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "1d3b9fb150ea4df1d2a28fcd7e9cf6e83b1e60ff2753d2109ce88c3c0f40b73c",
+          "dependency_timestamp_normalized_sha256": "24e21123a185c9c52a9f84ca2f3effbb8cfb02ab93aadcc09ceed362918c7715",
+          "module_name": "th05/shbossf.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/shbossf.cpp",
+            "src/main/player/shot_collision_flag_data.cpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/shbossf.cpp"
         ]
       },
       "receipt_aggregate_pass": true

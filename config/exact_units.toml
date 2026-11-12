@@ -6807,3 +6807,25 @@ unit = "main-enemy-lifetime-totals-initial-data"
 source = "src/main/enemy/lifetime_totals_data.cpp"
 find = "enemies_killed = 0;"
 replace = "enemies_killed = 1;"
+
+[[units]]
+id = "main-shots-hittest-boss-initial-flag-data"
+source = "src/main/player/shot_collision_flag_data.cpp"
+module = "th05/shbossf.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_shot_boss_flag_data_bindings.asm"
+target_start = 0x22790
+size = 1
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-shots-hittest-boss-initial-flag-data"
+source = "src/main/player/shot_collision_flag_data.cpp"
+find = "shots_hittest_against_boss = false;"
+replace = "shots_hittest_against_boss = true;"
