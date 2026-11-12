@@ -14,6 +14,14 @@
     b4balls_add(); \
 }
 
+// The snow-cross's four real quarter-turn projectiles each spawn before
+// rotating the next direction. The separate snow-angle oscillation happens
+// only after all four have fired, never within the common quarter rule.
+#define YUKI_SNOW_CROSS_QUARTER() { \
+    b4balls_add(); \
+    b4ball_template.angle += 0x40; \
+}
+
 bool near yuki_solo_snow_fan(void)
 {
     if(boss.phase_frame < 32) {
@@ -61,14 +69,10 @@ bool near yuki_solo_snow_cross(void)
             snd_se_play(15);
         }
         if((boss.phase_frame % 4) == 0) {
-            b4balls_add();
-            b4ball_template.angle += 0x40;
-            b4balls_add();
-            b4ball_template.angle += 0x40;
-            b4balls_add();
-            b4ball_template.angle += 0x40;
-            b4balls_add();
-            b4ball_template.angle += 0x40;
+            YUKI_SNOW_CROSS_QUARTER();
+            YUKI_SNOW_CROSS_QUARTER();
+            YUKI_SNOW_CROSS_QUARTER();
+            YUKI_SNOW_CROSS_QUARTER();
             b4ball_template.angle += yuki_solo_snow_step;
         }
         if(boss.phase_frame == 64) {
@@ -143,3 +147,5 @@ bool near yuki_solo_speedup(void)
 
 #undef YUKI_SNOW_FAN_NEXT_BALL
 #undef YUKI_SOLO_REPOSITION
+
+#undef YUKI_SNOW_CROSS_QUARTER
