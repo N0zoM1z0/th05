@@ -10,6 +10,20 @@
 
 #define yumeko_fan_mirrored yumeko_fan_scratch.mirrored_side
 
+// Both finite mobile attacks finish by entering genuine reposition mode
+// and restarting the shared phase clock, without altering their own timers.
+#define YUMEKO_PATTERNS_ENTER_REPOSITION() { \
+    boss.phase_frame = 0; \
+    boss.mode = YUMEKO_MODE_REPOSITION; \
+}
+
+// In the sword fan the same actual side flag mirrors the shot direction
+// before the fire position is calculated, then restores the base direction.
+#define YUMEKO_SWORD_FAN_MIRROR() \
+    if(yumeko_fan_mirrored != YUMEKO_FAN_NORMAL_SIDE) { \
+        sword_template.angle = YM_FAN_MIRROR_ANGLE - sword_template.angle; \
+    }
+
 bool pascal near yumeko_flystep_bounce(subpixel_t length, int end_frame)
 {
     unsigned char angle;
@@ -44,19 +58,14 @@ void near yumeko_pattern_sword_fan(void)
         return;
     }
     if((boss.phase_frame > YM_FAN_FIRST_SHOT_AFTER) && ((boss.phase_frame % YM_FAN_SHOT_INTERVAL) == 0)) {
-        if(yumeko_fan_mirrored != YUMEKO_FAN_NORMAL_SIDE) {
-            sword_template.angle = YM_FAN_MIRROR_ANGLE - sword_template.angle;
-        }
+        YUMEKO_SWORD_FAN_MIRROR();
         vector2_at(sword_template.origin, boss.pos.cur.x.v, boss.pos.cur.y.v,
             to_sp(YM_FAN_RADIUS_PX), sword_template.angle);
         swords_add();
-        if(yumeko_fan_mirrored != YUMEKO_FAN_NORMAL_SIDE) {
-            sword_template.angle = YM_FAN_MIRROR_ANGLE - sword_template.angle;
-        }
+        YUMEKO_SWORD_FAN_MIRROR();
         sword_template.angle -= YM_FAN_ANGLE_STEP;
         if(sword_template.angle <= YM_FAN_STOP_ANGLE) {
-            boss.phase_frame = 0;
-            boss.mode = YUMEKO_MODE_REPOSITION;
+            YUMEKO_PATTERNS_ENTER_REPOSITION();
         }
     }
 }
@@ -87,7 +96,9 @@ void near yumeko_pattern_red_ring(void)
         snd_se_play(YM_RING_FIRE_SOUND);
     }
     if(boss.phase_frame == YM_RING_END_FRAME) {
-        boss.phase_frame = 0;
-        boss.mode = YUMEKO_MODE_REPOSITION;
+        YUMEKO_PATTERNS_ENTER_REPOSITION();
     }
 }
+
+#undef YUMEKO_SWORD_FAN_MIRROR
+#undef YUMEKO_PATTERNS_ENTER_REPOSITION
