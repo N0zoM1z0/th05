@@ -20,3 +20,21 @@ Both native Borland C/TLINK producers reproduce all **66 original bytes**;
 a compiled `KAO3.cd2` to `KAO4.cd2` mutation is rejected. This is an
 observed resource layout modeled as one natural C aggregate, not a claim
 that the historical source declared that exact struct.
+
+## Writable bomb-CDG filename for the actual EMS consumer (2026-11-12)
+
+The field `main_session_files.bomb_background` is not a read-only resource
+constant: the independently accepted `bomb_bg_load__ems_preload_playchar_cdgs()`
+updates **byte index 2** of its original `BB0.CDG` filename to select the
+current player character's background. The maintained C struct now
+expresses that actual mutation by declaring this one `char[8]` field
+**writable**, while leaving independently read-only filename fields
+unchanged. The physical record remains 66 bytes, the bomb field remains
+at offset 22, and the actual data is still ordinary initialized DATA.
+
+The scoped native replay
+`.analysis/unit-replays/gpt-web-session-bb-mutable-a/receipt.json`
+produces both original 66-byte Borland C objects, with complete DATA
+LEDATA/MAP and the unchanged compiled filename negative. This change
+is a source mutability/ABI correction, not new byte credit or a claim
+that the historical program declared this aggregate type.

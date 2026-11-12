@@ -2,26 +2,46 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c2d0b85000ec90a999b6b87df6234df62141f6deb9e60a23c65ed0eacee0ab7e",
+  "replay_receipt_sha256": "500db93b40ff9991fd0c1ffdf2e59354cb4a4384f712da859d090747bf9ac556",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 96240,
-    "candidate_start": 96240,
-    "size": 111,
-    "target_sha256": "cfd02c12d49979eeb9d784fb625dd097cc0924a1a49fd2d9ac0d92b83d6c22d5",
-    "candidate_sha256": "c8eaa25f3c011e60e2116d48cdd1776740fec2cd3ba9ab84d1a456e257b9a197",
+    "target_start": 47142,
+    "candidate_start": 47142,
+    "size": 155,
+    "target_sha256": "b649259783dbc630863d39f987b56e6fb68b40a6d2f9f5b182906d4c7810e87a",
+    "candidate_sha256": "09f0e582f49eed68df51dcbf3607982c3e81ee3ac3cea498187043c82c99deee",
     "raw_exact": false,
     "target_fixups": [
-      46,
-      32
+      151,
+      144,
+      114,
+      100,
+      80,
+      57,
+      48
     ],
     "candidate_fixups": [
-      46,
-      32
+      151,
+      144,
+      114,
+      100,
+      80,
+      57,
+      48
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 47142,
+      "size": 155,
+      "function_symbol": "ems_allocate_and_preload_eyecatc()",
+      "contribution_start": 47142,
+      "contribution_size": 684,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "bomb_bg_load__ems_preload_playch()"
+    }
   },
   "units": [
     {
@@ -21422,7 +21442,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "9c91357ae31053fc53f2b33715b4ea3ea2e38b5df5f4a9f9d840df2b3c89f6b9",
+            "sha256": "a5eba2aba8d7187703d6617639edea8ac1423e230e6f42f96acd75749aa2da3d",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -21440,7 +21460,7 @@
             ]
           },
           {
-            "sha256": "79f283a2f9e3dbb0f7c08eb31275a402964504cb09f97f28eaa8f492cba24d9e",
+            "sha256": "72902c67a5a8df247677be38fdcfc5fbe6bff4d8d32a95a93a60491d24165a0e",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -21459,32 +21479,9 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
-        "source_inputs": [
-          {
-            "path": "probes/units/ems_bindings.asm",
-            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
-          },
-          {
-            "path": "src/main/ems/ems.cpp",
-            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
-          },
-          {
-            "path": "src/main/ems/ems.hpp",
-            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
-          },
-          {
-            "path": "src/main/hud/resident.hpp",
-            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
-          },
-          {
-            "path": "src/shared/abi.hpp",
-            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
-          }
-        ],
-        "exact": true,
         "compiler_arguments": [
           [
             "-c",
@@ -21512,7 +21509,30 @@
             "-DBINARY='M'",
             "th05/ems.cpp"
           ]
-        ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/ems_bindings.asm",
+            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
+          },
+          {
+            "path": "src/main/ems/ems.cpp",
+            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
+          },
+          {
+            "path": "src/main/ems/ems.hpp",
+            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
       },
       "source_inputs": [
         {
@@ -21538,7 +21558,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "7d80a4b97a1c2a4135a725943c0e7b723620b09d2eeabfb3a762ca6dedbb9748",
+      "replay_receipt_sha256": "500db93b40ff9991fd0c1ffdf2e59354cb4a4384f712da859d090747bf9ac556",
       "compiled_negative_control": {
         "target_start": 47142,
         "candidate_start": 47142,
@@ -21587,7 +21607,7 @@
           "replace": "(ems_space() <= EMSSIZE)"
         },
         "control_sha256": "2752008b6a1b55ebf1faa91e553f32ad7798ea3af8764d29ead2ce2182394c5c",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 47142,
           "candidate_start": 47142,
@@ -21627,7 +21647,7 @@
           }
         },
         "omf": {
-          "sha256": "124f11ca787d82964ed1d1ed92e6de6c741414f9f1c758fb46d9adfd6e82c9dc",
+          "sha256": "a54bb2526451034f3fe9b6ab3bc480a0857fbacabdf00655c99c65bfa0d493f9",
           "dependency_timestamp_normalized_sha256": "d0eb564ff787f816cf6b92ea432c522cecac49eb973182f40f44b13d5a0477ae",
           "module_name": "th05/ems.cpp",
           "translator_comments": [
@@ -21743,7 +21763,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "9c91357ae31053fc53f2b33715b4ea3ea2e38b5df5f4a9f9d840df2b3c89f6b9",
+            "sha256": "a5eba2aba8d7187703d6617639edea8ac1423e230e6f42f96acd75749aa2da3d",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -21761,7 +21781,7 @@
             ]
           },
           {
-            "sha256": "79f283a2f9e3dbb0f7c08eb31275a402964504cb09f97f28eaa8f492cba24d9e",
+            "sha256": "72902c67a5a8df247677be38fdcfc5fbe6bff4d8d32a95a93a60491d24165a0e",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -21780,32 +21800,9 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
-        "source_inputs": [
-          {
-            "path": "probes/units/ems_bindings.asm",
-            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
-          },
-          {
-            "path": "src/main/ems/ems.cpp",
-            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
-          },
-          {
-            "path": "src/main/ems/ems.hpp",
-            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
-          },
-          {
-            "path": "src/main/hud/resident.hpp",
-            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
-          },
-          {
-            "path": "src/shared/abi.hpp",
-            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
-          }
-        ],
-        "exact": true,
         "compiler_arguments": [
           [
             "-c",
@@ -21833,7 +21830,30 @@
             "-DBINARY='M'",
             "th05/ems.cpp"
           ]
-        ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/ems_bindings.asm",
+            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
+          },
+          {
+            "path": "src/main/ems/ems.cpp",
+            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
+          },
+          {
+            "path": "src/main/ems/ems.hpp",
+            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
       },
       "source_inputs": [
         {
@@ -21859,7 +21879,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "7d80a4b97a1c2a4135a725943c0e7b723620b09d2eeabfb3a762ca6dedbb9748",
+      "replay_receipt_sha256": "500db93b40ff9991fd0c1ffdf2e59354cb4a4384f712da859d090747bf9ac556",
       "compiled_negative_control": {
         "target_start": 47142,
         "candidate_start": 47142,
@@ -21908,7 +21928,7 @@
           "replace": "(ems_space() <= EMSSIZE)"
         },
         "control_sha256": "2752008b6a1b55ebf1faa91e553f32ad7798ea3af8764d29ead2ce2182394c5c",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 47142,
           "candidate_start": 47142,
@@ -21948,7 +21968,7 @@
           }
         },
         "omf": {
-          "sha256": "124f11ca787d82964ed1d1ed92e6de6c741414f9f1c758fb46d9adfd6e82c9dc",
+          "sha256": "a54bb2526451034f3fe9b6ab3bc480a0857fbacabdf00655c99c65bfa0d493f9",
           "dependency_timestamp_normalized_sha256": "d0eb564ff787f816cf6b92ea432c522cecac49eb973182f40f44b13d5a0477ae",
           "module_name": "th05/ems.cpp",
           "translator_comments": [
@@ -22068,7 +22088,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "9c91357ae31053fc53f2b33715b4ea3ea2e38b5df5f4a9f9d840df2b3c89f6b9",
+            "sha256": "a5eba2aba8d7187703d6617639edea8ac1423e230e6f42f96acd75749aa2da3d",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -22086,7 +22106,7 @@
             ]
           },
           {
-            "sha256": "79f283a2f9e3dbb0f7c08eb31275a402964504cb09f97f28eaa8f492cba24d9e",
+            "sha256": "72902c67a5a8df247677be38fdcfc5fbe6bff4d8d32a95a93a60491d24165a0e",
             "dependency_timestamp_normalized_sha256": "bf9ec47937dc51c5f28d1ed4dbac8d537248a89ac688864b3ad02560ee8b794a",
             "module_name": "th05/ems.cpp",
             "translator_comments": [
@@ -22105,32 +22125,9 @@
           }
         ],
         "producer_paths": [
-          "parent/group-0/a/source",
-          "parent/group-0/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
-        "source_inputs": [
-          {
-            "path": "probes/units/ems_bindings.asm",
-            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
-          },
-          {
-            "path": "src/main/ems/ems.cpp",
-            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
-          },
-          {
-            "path": "src/main/ems/ems.hpp",
-            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
-          },
-          {
-            "path": "src/main/hud/resident.hpp",
-            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
-          },
-          {
-            "path": "src/shared/abi.hpp",
-            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
-          }
-        ],
-        "exact": true,
         "compiler_arguments": [
           [
             "-c",
@@ -22158,7 +22155,30 @@
             "-DBINARY='M'",
             "th05/ems.cpp"
           ]
-        ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/ems_bindings.asm",
+            "sha256": "15214e6c0e6963c7ea317920fc6c37484a4788ceee906c4c684482ef73de08ee"
+          },
+          {
+            "path": "src/main/ems/ems.cpp",
+            "sha256": "6defb7d8f47d14291e3942ccdb3dcdeb1f343778b539e5739c1b5891b30d437e"
+          },
+          {
+            "path": "src/main/ems/ems.hpp",
+            "sha256": "406e331c3a25c3feca3c0d24ac0a2aa316e71013f60aba79a2ac12a6d1fa3475"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
       },
       "source_inputs": [
         {
@@ -22184,7 +22204,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "7d80a4b97a1c2a4135a725943c0e7b723620b09d2eeabfb3a762ca6dedbb9748",
+      "replay_receipt_sha256": "500db93b40ff9991fd0c1ffdf2e59354cb4a4384f712da859d090747bf9ac556",
       "compiled_negative_control": {
         "target_start": 47142,
         "candidate_start": 47142,
@@ -22233,7 +22253,7 @@
           "replace": "(ems_space() <= EMSSIZE)"
         },
         "control_sha256": "2752008b6a1b55ebf1faa91e553f32ad7798ea3af8764d29ead2ce2182394c5c",
-        "producer_path": "parent/negative/source",
+        "producer_path": "negative/source",
         "comparison": {
           "target_start": 47142,
           "candidate_start": 47142,
@@ -22273,7 +22293,7 @@
           }
         },
         "omf": {
-          "sha256": "124f11ca787d82964ed1d1ed92e6de6c741414f9f1c758fb46d9adfd6e82c9dc",
+          "sha256": "a54bb2526451034f3fe9b6ab3bc480a0857fbacabdf00655c99c65bfa0d493f9",
           "dependency_timestamp_normalized_sha256": "d0eb564ff787f816cf6b92ea432c522cecac49eb973182f40f44b13d5a0477ae",
           "module_name": "th05/ems.cpp",
           "translator_comments": [
@@ -59566,7 +59586,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "f45516db1e816abb8c3e732238fd2cd5ff3bcedb219471cc71840e5c34143914",
+            "sha256": "ff4085b717aa85b11778f47b5853bb08b13179035b0b48bca8f2c4f01b296baf",
             "dependency_timestamp_normalized_sha256": "88cf37eae638d0175b2b5cc50e5f7e4195776b20b15eabd8ec74a6faf8e7cfe3",
             "module_name": "th05/sessfns.c",
             "translator_comments": [
@@ -59596,7 +59616,7 @@
             }
           },
           {
-            "sha256": "42e8dc81456783560ba30dd2c465b7d713be38d2aec81f38cb5a270a35b73d34",
+            "sha256": "b3ecd65eaa78ca85144113742d3578d1b5d3c457a319d3402ea0f1626f316b76",
             "dependency_timestamp_normalized_sha256": "88cf37eae638d0175b2b5cc50e5f7e4195776b20b15eabd8ec74a6faf8e7cfe3",
             "module_name": "th05/sessfns.c",
             "translator_comments": [
@@ -59669,7 +59689,7 @@
           },
           {
             "path": "src/main/resources/session_files_c.h",
-            "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+            "sha256": "de3cd383d1d68c963b2185ed604f628fa468f29765fbaa8cd82784de99d59fc9"
           }
         ],
         "exact": true
@@ -59685,12 +59705,12 @@
         },
         {
           "path": "src/main/resources/session_files_c.h",
-          "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+          "sha256": "de3cd383d1d68c963b2185ed604f628fa468f29765fbaa8cd82784de99d59fc9"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "f534c991917ab6c0cfca32a4472b9dc0fc54eee53c42f70ec5634ec93a4762bd",
+      "replay_receipt_sha256": "ef9bae41d8af8ebb114d76c975278d8ee6dde31fe429ffee86f16e30f009c9b8",
       "compiled_negative_control": {
         "target_start": 134124,
         "candidate_start": 134124,
@@ -59743,7 +59763,7 @@
           }
         },
         "omf": {
-          "sha256": "bb23e7626c8804d6346895200f8f54a72bcf8fc79b6379a33063386179a5d6a4",
+          "sha256": "0368098a5122855f1d683265d42d7a0e8cf51501559ff5c6f51ffd33b7db4722",
           "dependency_timestamp_normalized_sha256": "8958b923d6187aa33516d9e8fb80ef75ab33a53cf4fa475ffdef54c22784843e",
           "module_name": "th05/sessfns.c",
           "translator_comments": [
@@ -59786,10 +59806,7 @@
           "th05/sessfns.c"
         ]
       },
-      "receipt_aggregate_pass": true,
-      "receipt_selected_subset": [
-        "main-session-files-c"
-      ]
+      "receipt_aggregate_pass": true
     },
     {
       "id": "main-std-filename-c",
@@ -98510,7 +98527,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d4dc70f7fddc02ab65acc12e46f50d47028f5234de25766c34399e801cda78fe",
+            "sha256": "a1cdba922b06765b027b69368f280d054eb5650ceb31fdc27b795d9c1f106309",
             "dependency_timestamp_normalized_sha256": "f6f95be51c19924398f5ee95e2f604c48b2a62728d88bbb147a37deae87266b2",
             "module_name": "th05/stlinks.c",
             "translator_comments": [
@@ -98542,7 +98559,7 @@
             }
           },
           {
-            "sha256": "f0537fe1d283f85a3f39af1a5b7ea43a0011ebda1868a34f4b16acfc43de4321",
+            "sha256": "abf406715f53ec3d0805729b7c08a5c3998361609005194e926f5d891d6fd464",
             "dependency_timestamp_normalized_sha256": "f6f95be51c19924398f5ee95e2f604c48b2a62728d88bbb147a37deae87266b2",
             "module_name": "th05/stlinks.c",
             "translator_comments": [
@@ -98617,11 +98634,11 @@
           },
           {
             "path": "src/main/resources/session_files_c.h",
-            "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+            "sha256": "de3cd383d1d68c963b2185ed604f628fa468f29765fbaa8cd82784de99d59fc9"
           },
           {
             "path": "src/main/resources/startup_resource_links.c",
-            "sha256": "aeb8a89f40328a2af90441a5fade170d04d802a289f8600ad9ce935c690f31f2"
+            "sha256": "03e6ef593c76459f0844dc17767b6a345765b136b1cfadfeeb821938aaae7792"
           }
         ],
         "exact": true
@@ -98637,16 +98654,16 @@
         },
         {
           "path": "src/main/resources/session_files_c.h",
-          "sha256": "7164d128286466854a6a1d4f43ad2e56579022b427c3a48f1089f0b14c88524f"
+          "sha256": "de3cd383d1d68c963b2185ed604f628fa468f29765fbaa8cd82784de99d59fc9"
         },
         {
           "path": "src/main/resources/startup_resource_links.c",
-          "sha256": "aeb8a89f40328a2af90441a5fade170d04d802a289f8600ad9ce935c690f31f2"
+          "sha256": "03e6ef593c76459f0844dc17767b6a345765b136b1cfadfeeb821938aaae7792"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "c7870af8c54d47651e04dd94ee802789b3734246982bd48e49e20c0e71355670",
+      "replay_receipt_sha256": "9a9e05b24ace40ae6dee8ac45a387356e531db54144dab6dd5317e777774ef72",
       "compiled_negative_control": {
         "target_start": 133746,
         "candidate_start": 133746,
@@ -98711,7 +98728,7 @@
           }
         },
         "omf": {
-          "sha256": "1dfbd1923eef79a1f9f6d9825f3ef3f0bbe6d94878e1b78ffa7c597cd69dd3ba",
+          "sha256": "3d1a6ad0b87136cac603b8cb79f91ba132d2619eb9713eafd14e01eeaba8d086",
           "dependency_timestamp_normalized_sha256": "5e8cfce0eaf90a90ecc2536db4391fee2132bcd54da75decd6873425d41b6725",
           "module_name": "th05/stlinks.c",
           "translator_comments": [

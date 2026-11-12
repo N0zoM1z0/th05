@@ -8,9 +8,9 @@
 
 /* The original second pointer is the public bbname consumed by the
  * existing PC-98 EMS path. Preserve its independently addressable C symbol. */
-const char far *near stage_zero_song_name = main_resource_files.stage_bgm_base;
-const char far *near bbname = main_session_files.bomb_background;
+char far *near stage_zero_song_name = main_resource_files.stage_bgm_base;
+char far *near bbname = main_session_files.bomb_background;
 
-typedef char startup_resource_link_four[(sizeof(const char far *) == 4) ? 1 : -1];
+typedef char startup_resource_link_four[(sizeof(char far *) == 4) ? 1 : -1];
 typedef char startup_resource_links_eight[
     (sizeof(stage_zero_song_name) + sizeof(bbname) == 8) ? 1 : -1];

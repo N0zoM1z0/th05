@@ -6,7 +6,7 @@ typedef struct MainSessionFiles {
     const char demo_record[10];
     const char launcher_name[3];
     const char ems_resident_name[9];
-    const char bomb_background[8];
+    char bomb_background[8];  /* EMS overwrites the player digit in place. */
     const char reimu_face[9];
     const char marisa_face[9];
     const char mima_face[9];
