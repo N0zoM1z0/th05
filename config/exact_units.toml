@@ -6675,3 +6675,25 @@ unit = "main-midboss-defeat-rotation-angle-data"
 source = "src/main/midboss/defeat_rotation_angle.c"
 find = "midboss_defeat_angle = 0;"
 replace = "midboss_defeat_angle = 1;"
+
+[[units]]
+id = "main-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+module = "th05/se_state.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_se_initial_state_bindings.asm"
+target_start = 0x211f2
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+find = "snd_se_playing = SE_NONE;"
+replace = "snd_se_playing = 0;"

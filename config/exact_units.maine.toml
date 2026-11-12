@@ -2118,3 +2118,25 @@ unit = "maine-allcast-displayed-page-latch-data"
 source = "src/maine/allcast/page_shown.c"
 find = "page_shown = 0;"
 replace = "page_shown = 1;"
+
+[[units]]
+id = "maine-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+module = "th05/se_state.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_se_initial_state_bindings.asm"
+target_start = 0x107d0
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+find = "snd_se_playing = SE_NONE;"
+replace = "snd_se_playing = 0;"

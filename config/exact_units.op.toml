@@ -1425,3 +1425,25 @@ unit = "op-pi-masked-fade-patterns-data"
 source = "src/op/hardware/pi_mask_patterns.c"
 find = "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_3"
 replace = "OP_PI_ALMOST_D = OP_PI_CHECKER_B | OP_PI_BIT_2"
+
+[[units]]
+id = "op-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+module = "th05/se_state.cpp"
+segment = "_DATA"
+wrapper_options = "-zPop_01"
+bindings_source = "probes/units/op_se_initial_state_bindings.asm"
+target_start = 0xf9c2
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "op-se-initial-state-data"
+source = "src/shared/sound/se_initial_state.cpp"
+find = "snd_se_playing = SE_NONE;"
+replace = "snd_se_playing = 0;"

@@ -22,7 +22,9 @@ All 34 bytes, including the zero-valued policies, are real table entries.
 
 All extents are half-open. There are no padding bytes or original relocation
 words. The adjacent playing/frame state and the 64-byte gaps after OP/MAINE's
-tables are outside these owners. None of those bytes is initialized here.
+tables are outside these owners. The two real playback-state bytes in each
+program now have their own accepted [initialized C++ owner](se_initial_state.md);
+no intervening OP/MAINE gap bytes are transferred into either table.
 The native DATA and its three consumer references per artifact are retained in
 `.analysis/se-priority-data-boundary-review.json`.
 
