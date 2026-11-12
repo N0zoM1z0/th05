@@ -83,6 +83,16 @@ void near yumeko_pattern_final_ring(void)
     boss.phase++; \
     boss.phase_frame = 0
 
+// First and second mobile waves use distinct genuine callback banks but
+// exactly the same current pattern counter and alternating one-bit index.
+#define YUMEKO_SELECT_MOBILE_BANK(bank) \
+    yumeko_pattern = bank[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK]
+
+// Each mobile wave ends at its own HP threshold and explosion orientation.
+// Do not change the previous hit-bonus or pattern-timeout behavior.
+#define YUMEKO_FINISH_MOBILE_WAVE(explosion, hp_end) \
+    boss_phase_next(explosion, hp_end)
+
 void pascal far yumeko_update(void)
 {
     int patnum;
@@ -155,9 +165,9 @@ void pascal far yumeko_update(void)
                     goto moving_phase_end;
                 }
                 if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
-                    yumeko_pattern = yumeko_patterns_phase2[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK];
+                    YUMEKO_SELECT_MOBILE_BANK(yumeko_patterns_phase2);
                 } else {
-                    yumeko_pattern = yumeko_patterns_phase5[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK];
+                    YUMEKO_SELECT_MOBILE_BANK(yumeko_patterns_phase5);
                 }
             }
             break;
@@ -174,9 +184,9 @@ void pascal far yumeko_update(void)
         boss_score_bonus(YUMEKO_PATTERN_BONUS);
     moving_phase_end:
         if(boss.phase == YUMEKO_PHASE_MOBILE_FIRST) {
-            boss_phase_next(ET_CIRCLE, YUMEKO_HP_AFTER_MOBILE_FIRST);
+            YUMEKO_FINISH_MOBILE_WAVE(ET_CIRCLE, YUMEKO_HP_AFTER_MOBILE_FIRST);
         } else {
-            boss_phase_next(ET_HORIZONTAL, YUMEKO_HP_AFTER_MOBILE_SECOND);
+            YUMEKO_FINISH_MOBILE_WAVE(ET_HORIZONTAL, YUMEKO_HP_AFTER_MOBILE_SECOND);
         }
         break;
 
@@ -244,3 +254,6 @@ void pascal far yumeko_update(void)
 
 #undef YUMEKO_ADVANCE_PHASE_CLOCK
 #undef YUMEKO_STATIONARY_HIT_WINDOW
+
+#undef YUMEKO_FINISH_MOBILE_WAVE
+#undef YUMEKO_SELECT_MOBILE_BANK

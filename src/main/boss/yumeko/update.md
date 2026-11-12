@@ -189,3 +189,25 @@ compiled final-ring turn-count negative was rejected. This refreshes the
 already accepted two-function major Boss owner without claiming additional
 CODE credit. The separate 283-byte sword updater remains accepted as
 reviewed ASM; its natural C++ alternative is still under investigation.
+
+## Original mobile attack-bank handoffs and their distinct HP gates
+
+The complete 884-byte Yumeko Boss controller now names its native two-wave
+callback selection: the first and second mobile phases use different actual
+four-entry function pointer banks, but **both index the current pattern
+count with the same one-bit alternation mask**. The shared source rule
+`YUMEKO_SELECT_MOBILE_BANK(bank)` makes this relationship explicit without
+combining the banks or caching their distinct callback values.
+
+`YUMEKO_FINISH_MOBILE_WAVE(explosion, hp_end)` names the common transition
+mechanism while preserving the first wave's circular blast/HP threshold
+and the second wave's horizontal blast/HP threshold. Both existing shot
+scoring and timeout paths still converge on the same original switch label.
+
+The focused receipt
+`.analysis/unit-replays/gpt-web-yumeko-mobile-bank-hp-20261112-a/receipt.json`
+shows two real Borland/TLINK producers reproducing all **884 original bytes**,
+the original switch table and all six ordered MZ fixups, with the compiled
+final-ring negative rejected. The separate `swords_update()` natural C++
+remains inexact and receives no credit; no already accepted CODE is counted
+again and no full cold replay was run.
