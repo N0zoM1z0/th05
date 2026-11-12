@@ -5971,3 +5971,25 @@ unit = "main-hud-colors-and-hp-data"
 source = "src/main/hud/colors_and_hp.c"
 find = "HC_MAGENTA, HC_MAGENTA, HC_BLUE"
 replace = "HC_MAGENTA, HC_MAGENTA, HC_RED"
+
+[[units]]
+id = "main-format-resource-filenames-data"
+source = "src/main/formats/resource_filenames.c"
+module = "th05/fmtnams.c"
+segment = "_DATA"
+wrapper_options = "-zCMAIN_FORMAT_NAMES_TEXT -zPmain_01"
+bindings_source = "probes/units/main_format_filenames_bindings.asm"
+target_start = 139920
+size = 27
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = [{offset = 17, value = 0}]
+
+[[controls]]
+unit = "main-format-resource-filenames-data"
+source = "src/main/formats/resource_filenames.c"
+find = "\"st00.map\""
+replace = "\"st01.map\""

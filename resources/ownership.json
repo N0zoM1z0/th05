@@ -6,7 +6,7 @@
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 2138,
+    "accepted-c-initialized-data": 2164,
     "accepted-cxx-initialized-data": 14114,
     "accepted-cxx-instructions": 107740,
     "accepted-cxx-switch-table": 1044,
@@ -17,10 +17,10 @@
     "checked-uncredited-asm-alignment": 87,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 24,
-    "checked-uncredited-padding": 102,
+    "checked-uncredited-padding": 103,
     "reviewed-embedded-font-bitmap": 8192,
     "reviewed-embedded-sprite-bitmap": 2752,
-    "unknown": 27762,
+    "unknown": 27735,
     "verified-vendor-code": 136366,
     "verified-vendor-initialized-data": 4620
   },
@@ -31,7 +31,7 @@
       "sha256": "25860b4e1061c9d78f1cf7862716b02a88b150addfecf31de265acbca8361a41",
       "original_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
       "byte_counts": {
-        "accepted-c-initialized-data": 2084,
+        "accepted-c-initialized-data": 2110,
         "accepted-cxx-initialized-data": 1512,
         "accepted-cxx-instructions": 75146,
         "accepted-cxx-switch-table": 726,
@@ -40,9 +40,9 @@
         "checked-uncredited-asm-alignment": 69,
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 4,
-        "checked-uncredited-padding": 88,
+        "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "unknown": 4776,
+        "unknown": 4749,
         "verified-vendor-code": 46763,
         "verified-vendor-initialized-data": 1992
       },
@@ -6778,6 +6778,29 @@
         },
         {
           "start": 139918,
+          "end": 139920,
+          "kind": "unknown"
+        },
+        {
+          "start": 139920,
+          "end": 139937,
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-format-resource-filenames-data"
+        },
+        {
+          "start": 139937,
+          "end": 139938,
+          "kind": "checked-uncredited-padding",
+          "unit": "main-format-resource-filenames-data"
+        },
+        {
+          "start": 139938,
+          "end": 139947,
+          "kind": "accepted-c-initialized-data",
+          "unit": "main-format-resource-filenames-data"
+        },
+        {
+          "start": 139947,
           "end": 139948,
           "kind": "unknown"
         },
