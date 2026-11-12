@@ -270,6 +270,8 @@ enum CutsceneCommandByte {
     CUTSCENE_CMD_END_SCRIPT = '$',
 };
 
+#include "src/maine/cutscene/subcommands.hpp"
+
 script_ret_t pascal near script_op(unsigned char c)
 {
 
@@ -296,7 +298,7 @@ script_ret_t pascal near script_op(unsigned char c)
 	case CUTSCENE_CMD_NEW_TEXT_BOX:
 		c = *script_p;
 		box_1_to_0_animate();
-		if(c != '-') {
+		if(c != CUTSCENE_BOX_SKIP_WAIT) {
 			script_param_read_number_first(p1, 0);
 			if(!fast_forward) {
 				box_wait_animate(p1);
@@ -307,17 +309,17 @@ script_ret_t pascal near script_op(unsigned char c)
 		cursor.x = BOX_LEFT;
 		cursor.y = BOX_TOP;
 
-		graph_accesspage(1);
+		graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 		bgimage_put_rect_16(BOX_LEFT, BOX_TOP, BOX_W, BOX_H);
 
-		graph_accesspage(0);
+		graph_accesspage(CUTSCENE_PAGE_FOREGROUND);
 		break;
 
 	case CUTSCENE_CMD_TEXT_COLOR_OR_COLOR_MAP:
 
 		c = tolower(*script_p);
 
-		if(c == '=') {
+		if(c == CUTSCENE_COLOR_MAP_ASSIGN) {
 			goto colmap_add;
 		}
 		script_param_read_number_first(p1, CUTSCENE_SCRIPT_DEFAULT_COLOR);
@@ -331,13 +333,13 @@ script_ret_t pascal near script_op(unsigned char c)
 
 	case CUTSCENE_CMD_WHITE_FADE_OR_WAIT:
 		c = tolower(*script_p);
-		if((c == 'o') || (c == 'i')) {
+		if((c == CUTSCENE_FADE_OUT) || (c == CUTSCENE_FADE_IN)) {
 			script_op_fade(c, palette_white_in, palette_white_out, p1);
 		} else {
 			box_1_to_0_animate();
-			script_param_number_default = 64;
-			if(c != 'm') {
-				if(c == 'k') {
+			script_param_number_default = CUTSCENE_WAIT_DEFAULT_FRAMES;
+			if(c != CUTSCENE_WAIT_FOR_MEASURE) {
+				if(c == CUTSCENE_WAIT_EXTRA_KEY) {
 					script_p++;
 				}
 				script_param_read_number_first(p1);
@@ -348,7 +350,7 @@ script_ret_t pascal near script_op(unsigned char c)
 			} else {
 				script_p++;
 				c = *script_p;
-				if(c == 'k') {
+				if(c == CUTSCENE_WAIT_EXTRA_KEY) {
 					script_p++;
 				}
 				script_param_read_number_first(p1);
@@ -362,7 +364,7 @@ script_ret_t pascal near script_op(unsigned char c)
 		break;
 
 	case CUTSCENE_CMD_TEXT_INTERVAL_OR_DISPLAY_PAGE:
-		if(*script_p != 'p') {
+		if(*script_p != CUTSCENE_SHOW_PAGE) {
 			script_param_read_number_first(p1, TEXT_INTERVAL_DEFAULT);
 			text_interval = p1;
 		} else {
@@ -373,22 +375,22 @@ script_ret_t pascal near script_op(unsigned char c)
 		break;
 
 	case CUTSCENE_CMD_PALETTE_TONE:
-		script_param_read_number_first(p1, 100);
+		script_param_read_number_first(p1, CUTSCENE_TONE_NORMAL);
 		if(!fast_forward) {
-			frame_delay(1);
+			frame_delay(CUTSCENE_TONE_APPLY_FRAMES);
 		}
 		palette_settone(p1);
 		break;
 
 	case CUTSCENE_CMD_BLACK_FADE_OR_SONG_FADE:
 		c = *script_p;
-		if(c != 'm') {
+		if(c != CUTSCENE_FADE_MUSIC) {
 			if((c == 'i') || (c == 'o')) {
 				script_op_fade(c, palette_black_in, palette_black_out, p1);
 			}
 		} else {
 			script_p++;
-			script_param_read_number_first(p1, 1);
+			script_param_read_number_first(p1, CUTSCENE_DEFAULT_MEASURE_FADE);
 
 			snd_kaja_interrupt((KAJA_SONG_FADE << 8) + p1);
 
@@ -396,13 +398,13 @@ script_ret_t pascal near script_op(unsigned char c)
 		break;
 
 	case CUTSCENE_CMD_SCREEN_SHAKE_OR_GAIJI:
-		if((GAME == 5) || (*script_p != 'a')) {
+		if((GAME == 5) || (*script_p != CUTSCENE_GAIJI_DIRECT)) {
 			script_op_shake(fast_forward, p2, p1);
 		} else {
 			script_p++;
 			script_param_read_number_first(p1, 0);
 
-			graph_accesspage(1);
+			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 
 			graph_gaiji_putc(cursor.x, cursor.y, p1, text_col);
 
@@ -422,8 +424,8 @@ script_ret_t pascal near script_op(unsigned char c)
 		return CONTINUE;
 
 	case CUTSCENE_CMD_CLEAR_BOTH_PAGES:
-		graph_accesspage(1);	graph_clear();
-		graph_accesspage(0);	graph_clear();
+		graph_accesspage(CUTSCENE_PAGE_BACKGROUND);	graph_clear();
+		graph_accesspage(CUTSCENE_PAGE_FOREGROUND);	graph_clear();
 		bgimage_snap();
 		break;
 
@@ -431,22 +433,22 @@ script_ret_t pascal near script_op(unsigned char c)
 		c = *script_p;
 		script_p++;
 
-		if((c == '=') || (c == '@')) {
-			graph_accesspage(1);
-			if(c == '=') {
+		if((c == CUTSCENE_PIC_USE_PALETTE) || (c == CUTSCENE_PIC_KEEP_PALETTE)) {
+			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
+			if(c == CUTSCENE_PIC_USE_PALETTE) {
 				pi_palette_apply(CUTSCENE_PIC_SLOT);
 			}
 			pi_put_8(0, 0, CUTSCENE_PIC_SLOT);
 			graph_copy_page(0);
-			graph_accesspage(0);
+			graph_accesspage(CUTSCENE_PAGE_FOREGROUND);
 			bgimage_snap();
-		} else if(c == '-') {
+		} else if(c == CUTSCENE_PIC_FREE) {
 			pi_free(CUTSCENE_PIC_SLOT);
 			return CONTINUE;
-		} else if(c == 'p') {
+		} else if(c == CUTSCENE_PIC_PALETTE_ONLY) {
 			pi_palette_apply(CUTSCENE_PIC_SLOT);
 			return CONTINUE;
-		} else if(c != ',') {
+		} else if(c != CUTSCENE_PIC_LOAD_NAME) {
 			script_p--;
 		} else {
 			script_param_read_fn(fn, p1, c);
@@ -459,11 +461,11 @@ script_ret_t pascal near script_op(unsigned char c)
 		script_param_number_default = PI_QUARTER_COUNT;
 		c = *script_p;
 
-		if(c != '=') {
+		if(c != CUTSCENE_QUARTER_TRANSITION) {
 			script_param_read_number_first(p1);
-			frame_delay(1);
-			graph_showpage(0);
-			graph_accesspage(1);
+			frame_delay(CUTSCENE_QUARTER_TRANSITION_DELAY);
+			graph_showpage(CUTSCENE_PAGE_FOREGROUND);
+			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 			if(p1 < PI_QUARTER_COUNT) {
 				pi_put_quarter_8(
 					CUTSCENE_PIC_LEFT, CUTSCENE_PIC_TOP, CUTSCENE_PIC_SLOT, p1
@@ -489,11 +491,11 @@ script_ret_t pascal near script_op(unsigned char c)
 					frame_delay(p2);
 				}
 			}
-			graph_accesspage(1);
+			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 			pi_put_quarter_8(
 				CUTSCENE_PIC_LEFT, CUTSCENE_PIC_TOP, CUTSCENE_PIC_SLOT, p1
 			);
-			frame_delay(1);
+			frame_delay(CUTSCENE_QUARTER_TRANSITION_DELAY);
 		}
 		typedef char pic_width_matches_quarter[(CUTSCENE_PIC_W == PI_QUARTER_W) ? 1 : -1];
 		typedef char pic_height_matches_quarter[(CUTSCENE_PIC_H == PI_QUARTER_H) ? 1 : -1];
@@ -563,7 +565,7 @@ void near cutscene_animate(void)
 			continue;
 		}
 
-		if(c == '\\') {
+		if(c == CUTSCENE_ESCAPE_COMMAND) {
 			c = *(script_p++);
 			if(script_op(c) == STOP) {
 				break;
@@ -571,30 +573,30 @@ void near cutscene_animate(void)
 			continue;
 		}
 
-		if(c == '@') {
+		if(c == CUTSCENE_INLINE_GAIJI) {
 			c = tolower(*script_p);
 			script_p++;
 			switch(c) {
-			case 't':
+			case CUTSCENE_INLINE_SWEAT:
 				gaiji = gs_SWEAT;
 				break;
 
-			case 'h':
+			case CUTSCENE_INLINE_HEART:
 				gaiji = gs_HEART_2;
 				break;
 
-			case '?':
+			case CUTSCENE_INLINE_QUESTION:
 				gaiji = gs_QUESTION;
 				break;
 
-			case '!':
+			case CUTSCENE_INLINE_EXCLAMATION:
 				c = *(script_p++);
 				switch(c) {
-				case '!':
+				case CUTSCENE_INLINE_EXCLAMATION:
 					gaiji = gs_DOUBLE_EXCLAMATION;
 					break;
 
-				case '?':
+				case CUTSCENE_INLINE_QUESTION:
 					gaiji = gs_EXCLAMATION_QUESTION;
 					break;
 
@@ -610,8 +612,8 @@ void near cutscene_animate(void)
 				script_param_read_number_first(gaiji, gs_NOTES);
 				break;
 			}
-			graph_showpage(0);
-			graph_accesspage(1);
+			graph_showpage(CUTSCENE_PAGE_FOREGROUND);
+			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 
 			graph_gaiji_putc(cursor.x, cursor.y, gaiji, text_col);
 
@@ -634,11 +636,11 @@ void near cutscene_animate(void)
 			}
 		}
 
-		graph_showpage(0);
-		graph_accesspage(1);
+		graph_showpage(CUTSCENE_PAGE_FOREGROUND);
+		graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 		graph_putsa_fx(cursor.x, cursor.y, text_col, kanji.byte);
 
-		graph_accesspage(0);
+		graph_accesspage(CUTSCENE_PAGE_FOREGROUND);
 		cursor_advance_and_animate();
 		i = 1;
 

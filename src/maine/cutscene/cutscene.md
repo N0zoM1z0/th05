@@ -234,3 +234,40 @@ a semantic negative. The focused receipt is
 `.analysis/unit-replays/gpt-web-maine-cutscene-semantic-opcodes-20261111/receipt.json`.
 No new original target code ownership, BSS or Japanese script assets are
 claimed by this semantic source improvement. This was not a whole-MAINE replay.
+
+## Original script subcommand and page protocol (2026-11-12)
+
+The entire 1,555-byte `script_op()` interpreter and the adjacent
+479-byte `cutscene_animate()` now use a maintained
+[`subcommands.hpp`](subcommands.hpp) vocabulary for the **existing**
+script-control bytes. This recovers the semantic difference between a
+white fade (`wi`/`wo`), the `wm` music-measure wait, `wk` key marker,
+black fade versus `fm` music fade, `vp` display-page selection,
+`c=` glyph color mapping, `p=` palette-and-draw, `p@` draw with the current
+palette, `p-` release, `pp` palette-only and `p,` filename loading.
+The `=` quarter-image transition, `\` script-command escape and `@`
+inline gaiji prefix are also distinct original parsing contexts; the
+last one has separate sweat, heart, question and exclamation glyph forms.
+Equal ASCII values are named differently where they mean different things.
+
+The controller also names the real front (0) and background (1) page
+arguments used by picture and text rendering. Its source still performs
+the same graphics operations in the same order and retains every original
+format quirk, unchecked script read, stack ABI and `goto colmap_add` path.
+The default 64-frame wait, normal palette tone 100, music-fade default 1
+and quarter-transition frame delay 1 are explicit protocol defaults.
+These are genuine compile-time constants, not state variables or
+optimizer barriers. No script asset data, undocumented opcode, resource
+copy or instruction bytes are introduced.
+
+The affected shared source is used by nine accepted cutscene functions
+and by the **real single-segment 1,555-byte script interpreter** owner.
+Every one was replayed in a bounded batch, using the original group_01
+and SHARED frames and original relocation order, with two native compiler
+producers and the preexisting compiled controls. The focused receipt at
+`.analysis/unit-replays/gpt-web-maine-cutscene-subcommand-semantics-b/receipt.json`
+reports all ten units exactly matched; in particular `script_op()`
+reproduces its full 64-byte sparse switch table and 42 original ordered
+relocations. The 479-byte scene animator's original 16-byte compiler
+table also remains identical. This is semantic improvement to previously
+owned CODE, not a duplicate 2,796-byte credit or a full MAINE replay.

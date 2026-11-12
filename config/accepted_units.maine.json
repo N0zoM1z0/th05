@@ -2,85 +2,43 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "87da8b799b5c300ddd1334748d81a184611702a0280c866d31808ab905c5c14a",
+  "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 67696,
-    "candidate_start": 67696,
-    "size": 192,
-    "target_sha256": "084d3a257ea1979793a2b910a0055564ea8541dee367cb261df5acffa2e56c60",
-    "candidate_sha256": "1e81215ec2aec0bfa084eac85165a9d30ba0e0b84c0957403f1097fe1bb94b07",
+    "target_start": 43307,
+    "candidate_start": 43307,
+    "size": 152,
+    "target_sha256": "707a371fb6a639fb3a3fe26707243dd3fec8b84fb221575c571a187b983f2537",
+    "candidate_sha256": "80f3e0553b09722a9fbc9e6c2d102aff4e9ec79f12cfcd8ed1fc3cfeedfff86c",
     "raw_exact": false,
     "target_fixups": [
-      122,
-      118,
-      114,
-      110,
-      106,
-      102,
-      98,
-      90,
-      86,
-      82,
-      78,
-      74,
-      70,
-      66,
+      142,
+      127,
+      76,
       58,
-      54,
-      50,
-      46,
-      42,
-      38,
-      34,
-      26,
-      22,
-      18,
-      14,
-      10,
-      6,
-      2
+      33,
+      19
     ],
     "candidate_fixups": [
-      122,
-      118,
-      114,
-      110,
-      106,
-      102,
-      98,
-      90,
-      86,
-      82,
-      78,
-      74,
-      70,
-      66,
+      142,
+      127,
+      76,
       58,
-      54,
-      50,
-      46,
-      42,
-      38,
-      34,
-      26,
-      22,
-      18,
-      14,
-      10,
-      6,
-      2
+      33,
+      19
     ],
     "fixups_exact": true,
     "exact": false,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 67696,
-      "size": 192,
-      "module": "th05/ac_bgix.cpp",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 43307,
+      "size": 152,
+      "function_symbol": "box_wait_animate(int)",
+      "contribution_start": 42757,
+      "contribution_size": 2736,
+      "boundary_kind": "next-function",
+      "next_function_symbol": "script_op(unsigned char)"
     }
   },
   "units": [
@@ -380,8 +338,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -397,12 +355,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -418,7 +377,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -465,7 +425,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -474,6 +434,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -492,7 +456,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -501,6 +465,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -518,7 +486,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -527,6 +495,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -547,7 +519,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -558,13 +530,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -649,8 +625,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -666,7 +642,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -693,7 +670,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -702,6 +679,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -745,7 +726,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-picture-put",
@@ -814,8 +807,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -831,12 +824,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -852,7 +846,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -899,7 +894,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -908,6 +903,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -926,7 +925,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -935,6 +934,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -952,7 +955,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -961,6 +964,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -981,7 +988,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -992,13 +999,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -1083,8 +1094,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -1100,7 +1111,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -1127,7 +1139,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -1136,6 +1148,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1179,7 +1195,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-param-first",
@@ -1236,8 +1264,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1253,12 +1281,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1274,7 +1303,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -1321,7 +1351,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -1330,6 +1360,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1348,7 +1382,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -1357,6 +1391,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1374,7 +1412,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -1383,6 +1421,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1403,7 +1445,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -1414,13 +1456,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -1505,8 +1551,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -1522,7 +1568,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -1549,7 +1596,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -1558,6 +1605,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1601,7 +1652,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-param-second",
@@ -1658,8 +1721,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1675,12 +1738,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -1696,7 +1760,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -1743,7 +1808,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -1752,6 +1817,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -1770,7 +1839,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -1779,6 +1848,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1796,7 +1869,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -1805,6 +1878,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -1825,7 +1902,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -1836,13 +1913,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -1927,8 +2008,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -1944,7 +2025,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -1971,7 +2053,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -1980,6 +2062,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -2023,7 +2109,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-cursor-advance",
@@ -2080,8 +2178,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2097,12 +2195,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2118,7 +2217,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -2165,7 +2265,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -2174,6 +2274,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -2192,7 +2296,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -2201,6 +2305,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -2218,7 +2326,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -2227,6 +2335,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -2247,7 +2359,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -2258,13 +2370,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -2349,8 +2465,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -2366,7 +2482,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -2393,7 +2510,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -2402,6 +2519,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -2445,7 +2566,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-box-mask",
@@ -2502,8 +2635,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2519,12 +2652,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2540,7 +2674,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -2587,7 +2722,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -2596,6 +2731,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -2614,7 +2753,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -2623,6 +2762,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -2640,7 +2783,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -2649,6 +2792,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -2669,7 +2816,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -2680,13 +2827,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -2771,8 +2922,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -2788,7 +2939,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -2815,7 +2967,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -2824,6 +2976,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -2867,7 +3023,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-box-animate",
@@ -2940,8 +3108,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2957,12 +3125,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2978,7 +3147,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -3025,7 +3195,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -3034,6 +3204,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -3052,7 +3226,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3061,6 +3235,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -3078,7 +3256,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3087,6 +3265,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -3107,7 +3289,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -3118,13 +3300,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -3209,8 +3395,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3226,7 +3412,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -3253,7 +3440,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -3262,6 +3449,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -3305,7 +3496,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-box-wait",
@@ -3390,8 +3593,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3407,12 +3610,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3428,7 +3632,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -3475,7 +3680,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -3484,6 +3689,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -3502,7 +3711,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3511,6 +3720,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -3528,7 +3741,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3537,6 +3750,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -3557,7 +3774,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -3568,13 +3785,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -3659,8 +3880,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -3676,7 +3897,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -3703,7 +3925,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -3712,6 +3934,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -3755,7 +3981,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-cutscene-animate",
@@ -3840,8 +4078,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0037df80a19d8e59c5a85607b2a9c05b2e829eb9ac190601e596e874e6891cb7",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "2a20e37d3d9d1472f51bee9362d374fdb6cad63c915abc0d7e4d15f51b1f4c41",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3857,12 +4095,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "13d14af7b9d8c52a888db9de140b1293ca5b39c006ff9efcbc0b844c8a224689",
-            "dependency_timestamp_normalized_sha256": "b9da3915e259c2b956f6aa77b5680e52c30a873e49da513f71be78348376d283",
+            "sha256": "830b29255020368f21ee89b46e2d862148537263220ef0f89e91fbcc825c962b",
+            "dependency_timestamp_normalized_sha256": "ffa5590fc1e369152aae418ac9689067708b62c0a7c22b9f4d1170816dce0ae5",
             "module_name": "th05/cutscene.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3878,7 +4117,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -3925,7 +4165,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -3934,6 +4174,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -3952,7 +4196,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3961,6 +4205,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -3978,7 +4226,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -3987,6 +4235,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -4007,7 +4259,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -4018,13 +4270,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -4109,8 +4365,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -4126,7 +4382,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -4153,7 +4410,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -4162,6 +4419,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -4205,7 +4466,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-vector",
@@ -39541,8 +39814,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "48a48aa070f710cba9f6e17f6af26c48648ae1734cc08395b21930a696fc008d",
-            "dependency_timestamp_normalized_sha256": "ab20b95c7a222c93a9a19eedf0cae05f5dff3f5e1ba8265f685a915e946b8b4e",
+            "sha256": "8059ac24d11f301fd906f796cd14f3a11fc75ee8fb098cacddd13584e412d663",
+            "dependency_timestamp_normalized_sha256": "7852aceeab2fc9000de307b6deafefe70461c5fcfc86acf3da05118901ec371f",
             "module_name": "th05/cutjoin.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -39559,12 +39832,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           },
           {
-            "sha256": "9073f2bef0d8515878bfc59451c45295a802018481c3a20d7a6794efd43d8405",
-            "dependency_timestamp_normalized_sha256": "ab20b95c7a222c93a9a19eedf0cae05f5dff3f5e1ba8265f685a915e946b8b4e",
+            "sha256": "a5d6248031caddcd7ae9af8a41fa4c30b79cae707d594b43c1433395f977f9b2",
+            "dependency_timestamp_normalized_sha256": "7852aceeab2fc9000de307b6deafefe70461c5fcfc86acf3da05118901ec371f",
             "module_name": "th05/cutjoin.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -39581,7 +39855,8 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
-              "src/maine/cutscene/script.hpp"
+              "src/maine/cutscene/script.hpp",
+              "src/maine/cutscene/subcommands.hpp"
             ]
           }
         ],
@@ -39628,7 +39903,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+            "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -39641,6 +39916,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -39659,7 +39938,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -39672,6 +39951,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -39689,7 +39972,7 @@
             },
             {
               "path": "src/maine/cutscene/cutscene.cpp",
-              "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+              "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
             },
             {
               "path": "src/maine/cutscene/cutscene.hpp",
@@ -39702,6 +39985,10 @@
             {
               "path": "src/maine/cutscene/script.hpp",
               "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+            },
+            {
+              "path": "src/maine/cutscene/subcommands.hpp",
+              "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
             },
             {
               "path": "src/shared/abi.hpp",
@@ -39722,7 +40009,7 @@
         },
         {
           "path": "src/maine/cutscene/cutscene.cpp",
-          "sha256": "aa9d57bd117701b46b412806fb6b5d0ac9358ceb1d238b60743235a73fb94f8a"
+          "sha256": "e0065abc42730459d9d0070518437451504fcc8873aaa776919aef04578b8c8b"
         },
         {
           "path": "src/maine/cutscene/cutscene.hpp",
@@ -39737,13 +40024,17 @@
           "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
         },
         {
+          "path": "src/maine/cutscene/subcommands.hpp",
+          "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
+        },
+        {
           "path": "src/shared/abi.hpp",
           "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
         }
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "bc8cd635affdd9d002b582bb26ef9cf3ac469941f9a9fd7873ddcfbc0c48ca5b",
+      "replay_receipt_sha256": "72a5681e96a6beba04ae1b2f840ec9b500cf52322b86683b0ca1557ebc8c0a6e",
       "compiled_negative_control": {
         "target_start": 43307,
         "candidate_start": 43307,
@@ -39828,8 +40119,8 @@
           }
         },
         "omf": {
-          "sha256": "184b14594f5a22247677cea381cdcc3404b6a2c58465cf6ea805d6312bb57325",
-          "dependency_timestamp_normalized_sha256": "cf054ff34dd7251eec8ca7004e58bd360c2c52f1cef0edbac974baba32934fa0",
+          "sha256": "bb65d311be7e0c4044ce1d31c231ce20daac23c5ba7172165080f89d5a1f9b61",
+          "dependency_timestamp_normalized_sha256": "e09edeb257fc0281ede4eac1ca32032a257c755df774623dd7ff10c684a043cc",
           "module_name": "th05/cutscene.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -39845,7 +40136,8 @@
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/maine/cutscene/script.hpp"
+            "src/maine/cutscene/script.hpp",
+            "src/maine/cutscene/subcommands.hpp"
           ]
         },
         "compiler_arguments": [
@@ -39872,7 +40164,7 @@
           },
           {
             "path": "src/maine/cutscene/cutscene.cpp",
-            "sha256": "4543129f4c2da0c3aa4a59b18a80e6547cd51ca537b2d675d30f25768936c5d3"
+            "sha256": "83d5e71f957a71224722e49a74b22ba2a0304be56e0478b026f626cd06fa7d67"
           },
           {
             "path": "src/maine/cutscene/cutscene.hpp",
@@ -39881,6 +40173,10 @@
           {
             "path": "src/maine/cutscene/script.hpp",
             "sha256": "e52e52f0d9eb94fdd3efb5c0048d09ef07f300c87e546c692aefe46ecb16a675"
+          },
+          {
+            "path": "src/maine/cutscene/subcommands.hpp",
+            "sha256": "3b909c353dc62453d2d06c59cd31016012e4e54eadd85e0377f4c0a2dd0adb0d"
           },
           {
             "path": "src/shared/abi.hpp",
@@ -39924,7 +40220,19 @@
           }
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-cutscene-animate",
+        "maine-cutscene-box-animate",
+        "maine-cutscene-box-mask",
+        "maine-cutscene-box-wait",
+        "maine-cutscene-cursor-advance",
+        "maine-cutscene-param-first",
+        "maine-cutscene-param-second",
+        "maine-cutscene-picture-put",
+        "maine-cutscene-script-load",
+        "maine-cutscene-script-op-unified"
+      ]
     },
     {
       "id": "maine-egc-rect-setup-exact",
