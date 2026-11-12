@@ -446,6 +446,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
     relocated_data, relocated_data_sha = relocated_data_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_borland_c0_startup import reviewed_claims as startup_claims
+    startup, startup_sha = startup_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_text_fx_asm import reviewed_claims as reviewed_asm_claims
     asm, asm_sha = reviewed_asm_claims(root, config["views"], verify_targets=verify_targets)
     from replay_enemy_vm import reviewed_claims as reviewed_enemy_vm_claims
@@ -675,6 +678,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
             pieces = overlay_vendor(view["size"], pieces, relocated_data[name])
+        if name in startup:
+            pieces = overlay_vendor(view["size"], pieces, startup[name])
         if name in asm:
             pieces = overlay_asm(view["size"], pieces, asm[name])
         if name in enemy_vm:
@@ -780,6 +785,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_sin8_review_sha256"] = sin8_sha
         if bgm_data_sha and name in bgm_data:
             views[name]["master_bgm_literal_review_sha256"] = bgm_data_sha
+        if startup_sha and name in startup:
+            views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
             views[name]["cl_data_review_sha256"] = cl_data_sha
         if relocated_data_sha and name in relocated_data:
