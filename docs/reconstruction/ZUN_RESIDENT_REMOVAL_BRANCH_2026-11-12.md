@@ -34,3 +34,27 @@ The next specific task is a natural control-flow shape that emits the
 original branch order at `+47..+5A` *while retaining* the separate error
 printing sites elsewhere in the function. Do not re-try the listed
 error-first rewrites without a new code-generation hypothesis.
+
+## Follow-up: 90 original-compiler error-exit and one -S lowering probe
+
+A full set of **90 bounded first-producer** variants separately changed the
+ordinary C++ error-return expression for bad option, already resident,
+allocation failure and config-file failure. Three lexical forms were tried
+(`return (dos_puts2(...), 1)`, parenthesized return, and scoped return) with
+both the original error-first and new success-first removal branches.
+**32 variants** emitted a complete 269-byte `main()`; **none** matched all
+original bytes. The closest remained the same 17-byte removal-block mismatch.
+The error-first shapes continued to trigger Borland's shared-error-tail
+optimization. Results and reproducible source variants are retained at
+`.analysis/gpt-web-zun-error-exit-matrix-20261112/` and
+`.analysis/gpt-web-zun-error-exit-variants-20261112.py`.
+
+Compiling the current success-first candidate with genuine `TCC -S` and
+assembling the *unaltered* output through TASM32 produced a 272-byte source
+contribution instead of 269; its linked first producer differed at 198 of
+the original 269 positions. Evidence is retained at
+`.analysis/gpt-web-zun-removal-tcc-S-20261112/`. This does not replace the
+maintained near-match direct-TCC source or the accepted independent config
+function. Future work should address the single remaining removal branch
+ordering with a new semantic code-generation hypothesis rather than repeat
+these lexical return-expression or compiler-pipeline variants.

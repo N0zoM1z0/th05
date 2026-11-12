@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **530** (346 / 75 / 107 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **532** (348 / 75 / 107 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,499 bytes** |
-| Total source-authored C/C++ bytes | **126,283 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,114 / 5,354 / 5,032 / 8,559** |
-| Total unknown decoded bytes | **22,059** |
+| Source-authored exact semantic initialized DATA | **17,502 bytes** |
+| Total source-authored C/C++ bytes | **126,286 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,095 / 5,335 / 5,013 / 8,559** |
+| Total unknown decoded bytes | **22,002** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -32,6 +32,27 @@ assets, writable DATA/BSS and alignment need distinct provenance.
 There is **no accepted full packed EXE/COM reproduction**. The original
 Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
+
+## Latest scoped progress
+
+- Three full Boss source updates: [Yuki's three opening callbacks](reconstruction/YUKI_SOLO_OPENING_2026-11-12.md)
+  **509 bytes**, [Mai/Yuki's six charge and first attacks](reconstruction/MAI_YUKI_CHARGE_AND_MUZZLES_2026-11-12.md)
+  **543 bytes**, and [Yumeko's sword-fan patterns](reconstruction/YUMEKO_MIRRORED_FAN_CONTEXT_2026-11-12.md)
+  **435 bytes plus 354/428-byte dependent contexts**. Each entire changed
+  source cohort passed two original-compiler producers, complete bytes,
+  original ordered fixups and the compiled negative. Already accepted CODE
+  receives no duplicate credit.
+- Two formerly unknown Master source gaps were recovered independently:
+  [16-byte CODE-class LARGE_BYTE lookup](reconstruction/MASTER_LARGE_BYTE_2026-11-12.md)
+  in MAIN and [19-byte private rtc_mod](reconstruction/MASTER_RTC_MOD_2026-11-12.md)
+  in **each** OP/MAINE. Total **54 newly classified foreign bytes**,
+  with real TASM source/OMF and zero C++ authored credit.
+- The real first two MAIN `_DATA` bytes are now
+  [signed debug frame step plus enable flag](../src/main/runtime/debug_frame_initial.md):
+  **two newly accepted C++ initialized bytes** from explicit `db 0`
+  writes, existing 445-/803-byte consumer functions and a compiled negative.
+  An earlier one-byte [bullet special-group selector](../src/main/bullet/group_special_initial.md)
+  was also accepted after the preceding handoff.
 
 ## Already solved — do not spend another turn reproducing them
 
@@ -204,6 +225,13 @@ self-assignment/empty-helper version has the right bytes but uses
 artificial compiler barriers and must **not** be accepted as natural
 source. Preserve the toolchain, original CRT bindings, and concise
 reproducible trial scripts rather than retrying variants unchanged.
+
+**ZUN follow-up:** Ninety additional actual Turbo C++ error-return forms
+produced **32 source contributions of the right 269-byte length, none
+exact**; a separate `TCC -S`/TASM32 producer emitted **272 bytes** and was
+also inexact. Current maintained natural source is still the 269-byte,
+17-difference success-first variant. Full first-producer results are in
+[ZUN removal-branch findings](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md).
 
 **2. Yumeko `swords_update()` — source-language alternative only.** The
 complete **283-byte original function is already exact as reviewed
