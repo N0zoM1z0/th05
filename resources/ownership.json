@@ -3,7 +3,7 @@
   "kind": "gapless-observed-coordinate-inventory",
   "authored_denominator": null,
   "percentage": null,
-  "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+  "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
     "accepted-c-initialized-data": 3043,
@@ -20,7 +20,8 @@
     "checked-uncredited-padding": 103,
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
-    "unknown": 21728,
+    "reviewed-uninitialized-game-storage": 64,
+    "unknown": 21664,
     "verified-vendor-code": 138283,
     "verified-vendor-initialized-data": 7376
   },
@@ -7598,7 +7599,8 @@
         "checked-uncredited-padding": 6,
         "reviewed-embedded-font-bitmap": 72,
         "reviewed-embedded-sprite-bitmap": 28,
-        "unknown": 5229,
+        "reviewed-uninitialized-game-storage": 32,
+        "unknown": 5197,
         "verified-vendor-code": 44923,
         "verified-vendor-initialized-data": 2257
       },
@@ -10468,7 +10470,12 @@
         {
           "start": 64100,
           "end": 64132,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-game-storage",
+          "content_kind": "source-question-mark-reserve",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "source": "th05/formats/pi_buffers[bss].asm",
+          "member": "_pi_buffers"
         },
         {
           "start": 64132,
@@ -10719,6 +10726,7 @@
       "master_superpa_initial_review_sha256": "e50a98f22d605477e93888e67447a80d71b2faa05142bee9cc6ab29b6d8501e3",
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "master_edges_review_sha256": "965cbd0939604284903ba0e87023fd3283753a836bb5f04703893ca70b35e8d8",
+      "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",
@@ -10742,7 +10750,8 @@
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 8,
-        "unknown": 4910,
+        "reviewed-uninitialized-game-storage": 32,
+        "unknown": 4878,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2247
       },
@@ -13566,7 +13575,12 @@
         {
           "start": 67598,
           "end": 67630,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-game-storage",
+          "content_kind": "source-question-mark-reserve",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "source": "th05/formats/pi_buffers[bss].asm",
+          "member": "_pi_buffers"
         },
         {
           "start": 67630,
@@ -13931,6 +13945,7 @@
       "master_superpa_initial_review_sha256": "e50a98f22d605477e93888e67447a80d71b2faa05142bee9cc6ab29b6d8501e3",
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "master_edges_review_sha256": "965cbd0939604284903ba0e87023fd3283753a836bb5f04703893ca70b35e8d8",
+      "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",

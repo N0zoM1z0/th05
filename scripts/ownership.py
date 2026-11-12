@@ -101,6 +101,40 @@ def overlay_vendor(size: int, pieces: list[dict], claims: list[dict]) -> list[di
     return output
 
 
+def overlay_game_reservation(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Classify exact source `dup(?)` reserves without promoting them to DATA.
+
+    This narrow zero-credit lane records original game storage in decoded MZ
+    coordinates; it cannot grant compiler-authored DATA or code credit.
+    """
+    validate_partition(size, pieces)
+    for row in claims:
+        if (row.get("kind") != "reviewed-uninitialized-game-storage" or
+                row.get("content_kind") != "source-question-mark-reserve" or
+                row.get("member") != "_pi_buffers" or
+                row.get("source") != "th05/formats/pi_buffers[bss].asm" or
+                row.get("end", -1) - row.get("start", 0) != 32 or
+                type(row.get("authored_credit")) is not int or
+                row["authored_credit"] != 0 or
+                type(row.get("instruction_bytes")) is not int or
+                row["instruction_bytes"] != 0):
+            raise ValueError("unreviewed game BSS storage claim or implied authored credit")
+    known = [item for item in pieces if item["kind"] != "unknown"]
+    out = []
+    cursor = 0
+    for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor:
+            raise ValueError("uninitialized game source reserve overlaps accepted ownership")
+        if cursor < row["start"]:
+            out.append({"start": cursor, "end": row["start"], "kind": "unknown"})
+        out.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        out.append({"start": cursor, "end": size, "kind": "unknown"})
+    validate_partition(size, out)
+    return out
+
+
 def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
     """Adopt reviewed ASM only where ownership was previously unknown."""
     validate_partition(size, pieces)
@@ -478,6 +512,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_edges_initial import reviewed_claims as edges_claims
     edges_data, edges_data_sha = edges_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_pi_buffer_reservations import reviewed_claims as pi_reserve_claims
+    pi_reserves, pi_reserves_sha = pi_reserve_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -737,6 +774,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, timer_respal[name])
         if name in edges_data:
             pieces = overlay_vendor(view["size"], pieces, edges_data[name])
+        if name in pi_reserves:
+            pieces = overlay_game_reservation(view["size"], pieces, pi_reserves[name])
         if name in cl_data:
             pieces = overlay_vendor(view["size"], pieces, cl_data[name])
         if name in relocated_data:
@@ -875,6 +914,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_timer_respal_review_sha256"] = timer_respal_sha
         if edges_data_sha and name in edges_data:
             views[name]["master_edges_review_sha256"] = edges_data_sha
+        if pi_reserves_sha and name in pi_reserves:
+            views[name]["game_pi_reserve_review_sha256"] = pi_reserves_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
@@ -910,7 +951,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
         raise ValueError("ownership partition disagrees with accepted source progress")
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
             "authored_denominator": None, "percentage": None,
-            "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap resources have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
+            "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}
 
