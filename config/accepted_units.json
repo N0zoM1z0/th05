@@ -2,12 +2,12 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "e76f98f4c514bd351c58a2cd2c74d9f430c45261ed0abb98452f8224ddf9901a",
+  "replay_receipt_sha256": "4e449b76141db3084685392b16c730a7f301bfaa731f5fc1672b56da9e1e9a7b",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 137506,
-    "candidate_start": 137506,
+    "target_start": 138562,
+    "candidate_start": 138562,
     "size": 2,
     "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
     "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 137506,
+      "start": 138562,
       "size": 2,
-      "module": "th05/stdseg.cpp",
+      "module": "th05/screxti.cpp",
       "segment": "_DATA"
     }
   },
@@ -109434,6 +109434,259 @@
           "-ml",
           "-DBINARY='M'",
           "th05/stdseg.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-score-extend-flags-initial-data",
+      "entry_sha256": "bed55dc02cefa989f61d3ec5d25cc11d2b884de9fc7d2e960eeec87a09be57eb",
+      "result": {
+        "id": "main-score-extend-flags-initial-data",
+        "entry_sha256": "bed55dc02cefa989f61d3ec5d25cc11d2b884de9fc7d2e960eeec87a09be57eb",
+        "rounds": [
+          {
+            "target_start": 138562,
+            "candidate_start": 138562,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138562,
+              "size": 2,
+              "module": "th05/screxti.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138562,
+            "candidate_start": 138562,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138562,
+              "size": 2,
+              "module": "th05/screxti.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "fc24287444adc79ae89667f1f6a1ecfdc14e4a7020cfeed8c668f41d15529501",
+            "dependency_timestamp_normalized_sha256": "54a8fa3237f6e7da97633123f701a11314a3f03eedfe01ac70a4b4029f50335e",
+            "module_name": "th05/screxti.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/screxti.cpp",
+              "src/main/hud/score_extend_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "e5b33c3914ef15013160cc0ed81dcc5a214fe6d46a3f77ece8e7adf49a1384d0",
+            "dependency_timestamp_normalized_sha256": "54a8fa3237f6e7da97633123f701a11314a3f03eedfe01ac70a4b4029f50335e",
+            "module_name": "th05/screxti.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/screxti.cpp",
+              "src/main/hud/score_extend_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/screxti.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/screxti.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_score_extend_flags_bindings.asm",
+            "sha256": "af6231a1033717f1f6e18bf2286b7399260ca6d740f4089fecb9d4431e02907b"
+          },
+          {
+            "path": "src/main/hud/score_extend_initial.cpp",
+            "sha256": "18b04427658c380ad3a3f1fde0213e478b6a8321e67c6a8579d468a6681f9e02"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_score_extend_flags_bindings.asm",
+          "sha256": "af6231a1033717f1f6e18bf2286b7399260ca6d740f4089fecb9d4431e02907b"
+        },
+        {
+          "path": "src/main/hud/score_extend_initial.cpp",
+          "sha256": "18b04427658c380ad3a3f1fde0213e478b6a8321e67c6a8579d468a6681f9e02"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "4e449b76141db3084685392b16c730a7f301bfaa731f5fc1672b56da9e1e9a7b",
+      "compiled_negative_control": {
+        "target_start": 138562,
+        "candidate_start": 138562,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138562,
+          "size": 2,
+          "module": "th05/screxti.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-score-extend-flags-initial-data",
+        "entry_sha256": "bed55dc02cefa989f61d3ec5d25cc11d2b884de9fc7d2e960eeec87a09be57eb",
+        "mutation": {
+          "unit": "main-score-extend-flags-initial-data",
+          "source": "src/main/hud/score_extend_initial.cpp",
+          "find": "extends_gained = 0;",
+          "replace": "extends_gained = 1;"
+        },
+        "control_sha256": "e532929ac54fe4986f2bfc41b4533b116e3146cbf1c942f0ab8375f61e49f379",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138562,
+          "candidate_start": 138562,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138562,
+            "size": 2,
+            "module": "th05/screxti.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "59d44b62a5089c30f2920cf0e9242c425d7f926386e0a703b3f4b817b1d7b712",
+          "dependency_timestamp_normalized_sha256": "856c85f1b151408f1d8405346f639ba4efdd02d7b3c5e816997dbd74a5002def",
+          "module_name": "th05/screxti.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/screxti.cpp",
+            "src/main/hud/score_extend_initial.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/screxti.cpp"
         ]
       },
       "receipt_aggregate_pass": true

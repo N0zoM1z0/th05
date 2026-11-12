@@ -6873,3 +6873,25 @@ unit = "main-std-segment-initial-data"
 source = "src/main/formats/std_segment_initial.cpp"
 find = "std_seg = 0;"
 replace = "std_seg = (unsigned char __seg *)1;"
+
+[[units]]
+id = "main-score-extend-flags-initial-data"
+source = "src/main/hud/score_extend_initial.cpp"
+module = "th05/screxti.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_score_extend_flags_bindings.asm"
+target_start = 0x21d42
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-score-extend-flags-initial-data"
+source = "src/main/hud/score_extend_initial.cpp"
+find = "extends_gained = 0;"
+replace = "extends_gained = 1;"
