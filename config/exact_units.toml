@@ -6829,3 +6829,25 @@ unit = "main-shots-hittest-boss-initial-flag-data"
 source = "src/main/player/shot_collision_flag_data.cpp"
 find = "shots_hittest_against_boss = false;"
 replace = "shots_hittest_against_boss = true;"
+
+[[units]]
+id = "main-item-drop-cycle-initial-data"
+source = "src/main/item/drop_cycle_data.cpp"
+module = "th05/dropcyc.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_item_drop_cycle_data_bindings.asm"
+target_start = 0x227D2
+size = 1
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-item-drop-cycle-initial-data"
+source = "src/main/item/drop_cycle_data.cpp"
+find = "item_drop_cycle = 0;"
+replace = "item_drop_cycle = 1;"

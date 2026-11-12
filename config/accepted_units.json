@@ -2,12 +2,12 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "caaff8f8345aa075147619b770367b1baa692e61c28c813cbde9faad76bc19b7",
+  "replay_receipt_sha256": "c65ef68936e256a9aa602a46e3c64131d7cdc302d0ae020bda78f1ad7d7f19b8",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 141200,
-    "candidate_start": 141200,
+    "target_start": 141266,
+    "candidate_start": 141266,
     "size": 1,
     "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
     "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 141200,
+      "start": 141266,
       "size": 1,
-      "module": "th05/shbossf.cpp",
+      "module": "th05/dropcyc.cpp",
       "segment": "_DATA"
     }
   },
@@ -108887,6 +108887,279 @@
           "-ml",
           "-DBINARY='M'",
           "th05/shbossf.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-item-drop-cycle-initial-data",
+      "entry_sha256": "09616adfefd85d555027523e90f81760d1e2c2bab12f1ac8879fe4063f790e2b",
+      "result": {
+        "id": "main-item-drop-cycle-initial-data",
+        "entry_sha256": "09616adfefd85d555027523e90f81760d1e2c2bab12f1ac8879fe4063f790e2b",
+        "rounds": [
+          {
+            "target_start": 141266,
+            "candidate_start": 141266,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141266,
+              "size": 1,
+              "module": "th05/dropcyc.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141266,
+            "candidate_start": 141266,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141266,
+              "size": 1,
+              "module": "th05/dropcyc.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "8411d543109dbf0de813617a3fb1ec60cba9081b12c78d8db5b72dc6e833f4e3",
+            "dependency_timestamp_normalized_sha256": "ef9409f08251fbd81af194b5354fd7ae3e6f20b89fd8296f80a58e56194884e0",
+            "module_name": "th05/dropcyc.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dropcyc.cpp",
+              "src/main/item/drop_cycle_data.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "8c214ad03976e494516c82def562e8a900de6c25f93f27161e0b93d5a4be7d91",
+            "dependency_timestamp_normalized_sha256": "ef9409f08251fbd81af194b5354fd7ae3e6f20b89fd8296f80a58e56194884e0",
+            "module_name": "th05/dropcyc.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/dropcyc.cpp",
+              "src/main/item/drop_cycle_data.cpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dropcyc.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/dropcyc.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_item_drop_cycle_data_bindings.asm",
+            "sha256": "b2da4b2af21b516406b0a62dc7a45c3d961b82b496a1800b3e0ca278435e05bd"
+          },
+          {
+            "path": "src/main/item/drop_cycle_data.cpp",
+            "sha256": "ca17862587eca1a23a6ff4ce3b25ccca371680e71cb59efbdbf0a7b1f75f8981"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_item_drop_cycle_data_bindings.asm",
+          "sha256": "b2da4b2af21b516406b0a62dc7a45c3d961b82b496a1800b3e0ca278435e05bd"
+        },
+        {
+          "path": "src/main/item/drop_cycle_data.cpp",
+          "sha256": "ca17862587eca1a23a6ff4ce3b25ccca371680e71cb59efbdbf0a7b1f75f8981"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "c65ef68936e256a9aa602a46e3c64131d7cdc302d0ae020bda78f1ad7d7f19b8",
+      "compiled_negative_control": {
+        "target_start": 141266,
+        "candidate_start": 141266,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141266,
+          "size": 1,
+          "module": "th05/dropcyc.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-item-drop-cycle-initial-data",
+        "entry_sha256": "09616adfefd85d555027523e90f81760d1e2c2bab12f1ac8879fe4063f790e2b",
+        "mutation": {
+          "unit": "main-item-drop-cycle-initial-data",
+          "source": "src/main/item/drop_cycle_data.cpp",
+          "find": "item_drop_cycle = 0;",
+          "replace": "item_drop_cycle = 1;"
+        },
+        "control_sha256": "0504c2c1c3279cb4695c38f45ddc5f660aae643ed2380ecad13a90ccbd4008ed",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141266,
+          "candidate_start": 141266,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141266,
+            "size": 1,
+            "module": "th05/dropcyc.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "ccd46c5fa225d561d24598f5beea61c60d730216cd6223514ef6304ec7efd880",
+          "dependency_timestamp_normalized_sha256": "f68adc6705f79494969ccd1d57f573a54466b2e1149760a5d4f39cc01bc3a5c6",
+          "module_name": "th05/dropcyc.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/dropcyc.cpp",
+            "src/main/item/drop_cycle_data.cpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/dropcyc.cpp"
         ]
       },
       "receipt_aggregate_pass": true
