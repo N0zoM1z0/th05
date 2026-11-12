@@ -1859,3 +1859,26 @@ unit = "maine-glyph-overlay-mask-data"
 source = "src/shared/hardware/glyph_coverage.h"
 find = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x5"
 replace = "GLYPH_OVERLAY_ALTERNATE_COMPLEMENT = 0x4"
+
+[[units]]
+id = "maine-vram-plane-frames-data"
+source = "src/maine/hardware/vram_plane_frames.c"
+module = "th05/m_vram.c"
+segment = "_DATA"
+wrapper_options = "-zCVRAM_PLANES_DATA_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_vram_plane_frames_bindings.asm"
+binary = "E"
+target_start = 67630
+size = 16
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["semantic-tables"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-vram-plane-frames-data"
+source = "src/shared/hardware/vram_plane_frames.h"
+find = "VRAM_SEGMENT_BLUE = 0xA800"
+replace = "VRAM_SEGMENT_BLUE = 0xA810"
