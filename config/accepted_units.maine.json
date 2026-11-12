@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
-  "replay_receipt_sha256": "aa9792089e36ddaf6e71f050b7625bdd0653dae96c619719692f46d63945d2fd",
+  "replay_receipt_sha256": "d222a2a59ec6c3b863b2c29e80300ff3f5675ceb739231fe8bedda7448e049de",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 67630,
-    "candidate_start": 67630,
-    "size": 16,
-    "target_sha256": "72e4ebab782480c524405a84c4f0630b0193154717707bca296097f48acec389",
-    "candidate_sha256": "b7265feb5d2f85a9d3a4b70f2af95dcf15beec400e8fe7022930ff96d63e7f2e",
+    "target_start": 71161,
+    "candidate_start": 71162,
+    "size": 5,
+    "target_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+    "candidate_sha256": "5b3043227abe10b82a2ea13f3a98af3b22db43f8c22a7537a3c53c5f58c9b4e6",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 67630,
-      "size": 16,
-      "module": "th05/m_vram.c",
+      "start": 71162,
+      "size": 5,
+      "module": "th05/ac_snd.c",
       "segment": "_DATA"
     }
   },
@@ -43016,6 +43016,298 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "maine-vram-plane-frames-data"
+      ]
+    },
+    {
+      "id": "maine-allcast-music-filename-data",
+      "entry_sha256": "f93cc77c540ecfec04681223787e7b01dc3438c2631d51b3c701149e2ee1c581",
+      "result": {
+        "id": "maine-allcast-music-filename-data",
+        "entry_sha256": "f93cc77c540ecfec04681223787e7b01dc3438c2631d51b3c701149e2ee1c581",
+        "rounds": [
+          {
+            "target_start": 71161,
+            "candidate_start": 71162,
+            "size": 5,
+            "target_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+            "candidate_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71162,
+              "size": 5,
+              "module": "th05/ac_snd.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 71161,
+            "candidate_start": 71162,
+            "size": 5,
+            "target_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+            "candidate_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 71162,
+              "size": 5,
+              "module": "th05/ac_snd.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "3488758018b012921f569070a29a6b5b12323423794d4ca91ad8787ff9962a5b",
+            "dependency_timestamp_normalized_sha256": "1531bc05fee3b28c8874f795120a58a980c222d028006e64038cdc638434a030",
+            "module_name": "th05/ac_snd.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ac_snd.c",
+              "src/maine/allcast/music_filename.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 5,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 5,
+                  "sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "ee7773ec6bb9d3e8027a6ac047ff2d05277fa240d74ba300f38eaaf66291ed93",
+            "dependency_timestamp_normalized_sha256": "1531bc05fee3b28c8874f795120a58a980c222d028006e64038cdc638434a030",
+            "module_name": "th05/ac_snd.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/ac_snd.c",
+              "src/maine/allcast/music_filename.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 5,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 5,
+                  "sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/ac_snd.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='E'",
+            "th05/ac_snd.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/maine_allcast_music_filename_bindings.asm",
+            "sha256": "cc534bdc9e0e988158888005c7ac1cf8544705a0a5fad195a14bb7db1c36d4ff"
+          },
+          {
+            "path": "src/maine/allcast/music_filename.c",
+            "sha256": "e81cca5dbc9a4d4b64508ddd5d48bf3c03167a75848be373d07e4e7a43004ce9"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/maine_allcast_music_filename_bindings.asm",
+          "sha256": "cc534bdc9e0e988158888005c7ac1cf8544705a0a5fad195a14bb7db1c36d4ff"
+        },
+        {
+          "path": "src/maine/allcast/music_filename.c",
+          "sha256": "e81cca5dbc9a4d4b64508ddd5d48bf3c03167a75848be373d07e4e7a43004ce9"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "d222a2a59ec6c3b863b2c29e80300ff3f5675ceb739231fe8bedda7448e049de",
+      "compiled_negative_control": {
+        "target_start": 71161,
+        "candidate_start": 71162,
+        "size": 5,
+        "target_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+        "candidate_sha256": "5b3043227abe10b82a2ea13f3a98af3b22db43f8c22a7537a3c53c5f58c9b4e6",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 71162,
+          "size": 5,
+          "module": "th05/ac_snd.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "maine-allcast-music-filename-data",
+        "entry_sha256": "f93cc77c540ecfec04681223787e7b01dc3438c2631d51b3c701149e2ee1c581",
+        "mutation": {
+          "unit": "maine-allcast-music-filename-data",
+          "source": "src/maine/allcast/music_filename.c",
+          "find": "char near EXED[5] = \"EXED\";",
+          "replace": "char near EXED[5] = \"EXEE\";"
+        },
+        "control_sha256": "d7fe760aecf11017ba7f9d95f785fe2421bea341f45a4852caab853bf38cc49f",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 71161,
+          "candidate_start": 71162,
+          "size": 5,
+          "target_sha256": "36e3b7ca9cfec238e65f64ca3fe240abe225b468ea87778572cee677e838df01",
+          "candidate_sha256": "5b3043227abe10b82a2ea13f3a98af3b22db43f8c22a7537a3c53c5f58c9b4e6",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 71162,
+            "size": 5,
+            "module": "th05/ac_snd.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "9a91e0e0df143e70e6cf00f1ddd9e9b61252030674841df3c02b2bed3d33e3dc",
+          "dependency_timestamp_normalized_sha256": "e79ac395a6cd401db253c679a669ff169a599b52da1c44992371f2387d9edb27",
+          "module_name": "th05/ac_snd.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/ac_snd.c",
+            "src/maine/allcast/music_filename.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 5,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 5,
+                "sha256": "5b3043227abe10b82a2ea13f3a98af3b22db43f8c22a7537a3c53c5f58c9b4e6"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='E'",
+          "th05/ac_snd.c"
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-maine",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
+        "receipt_sha256": "572adef4e1159958a6c155bd4e469821815ded5f62df4dfc1d6d45c1c13cca86",
+        "payload_sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
+        "relocations_sha256": "29e514bfc7ed234dbbd8ecda8607e3d9755f01dac0974de43b382fffc1208cd8",
+        "payload_size": 77396,
+        "relocation_count": 667,
+        "runs": [
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 11368,
+            "instruction_count": 909823,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "0b83f83b9eb27cb1ff4553578d15f22878dc1d98c6c5df4082d8642ec0bbfebb",
+            "transfer_site": 79302
+          },
+          {
+            "decoded_end": 77396,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 20379,
+            "instruction_count": 909823,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "b938ed466b986776294fbf6d86046b7e60e4fe6fb7f802caa76637a8ba2cdc94",
+            "transfer_site": 79302
+          }
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "maine-allcast-music-filename-data"
       ]
     }
   ],

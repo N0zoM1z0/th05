@@ -1882,3 +1882,26 @@ unit = "maine-vram-plane-frames-data"
 source = "src/shared/hardware/vram_plane_frames.h"
 find = "VRAM_SEGMENT_BLUE = 0xA800"
 replace = "VRAM_SEGMENT_BLUE = 0xA810"
+
+[[units]]
+id = "maine-allcast-music-filename-data"
+source = "src/maine/allcast/music_filename.c"
+module = "th05/ac_snd.c"
+segment = "_DATA"
+wrapper_options = "-zCALLCAST_SONG_NAME_TEXT -zPgroup_01"
+bindings_source = "probes/units/maine_allcast_music_filename_bindings.asm"
+binary = "E"
+target_start = 0x115f9
+size = 5
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-allcast-music-filename-data"
+source = "src/maine/allcast/music_filename.c"
+find = "char near EXED[5] = \"EXED\";"
+replace = "char near EXED[5] = \"EXEE\";"
