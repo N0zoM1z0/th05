@@ -143,7 +143,14 @@ def overlay_resources(size: int, pieces: list[dict], claims: list[dict]) -> list
                   row.get("resource") in sprite_sizes and
                   row.get("end", 0) - row.get("start", 0) ==
                   sprite_sizes.get(row.get("resource")))
-        if (not (font or sprite) or not row.get("resource")
+        piano = (row.get("model") == "th05-op-piano-native-1bpp" and
+                 ((row.get("kind") == "reviewed-embedded-sprite-bitmap" and
+                   row.get("resource") == "op-piano-black-keys" and
+                   row.get("end", 0) - row.get("start", 0) == 28) or
+                  (row.get("kind") == "reviewed-embedded-font-bitmap" and
+                   row.get("resource") == "op-piano-label-glyphs" and
+                   row.get("end", 0) - row.get("start", 0) == 72)))
+        if (not (font or sprite or piano) or not row.get("resource")
                 or type(row.get("authored_credit")) is not int or row["authored_credit"] != 0
                 or type(row.get("instruction_bytes")) is not int or row["instruction_bytes"] != 0
                 or type(row.get("start")) is not int or type(row.get("end")) is not int
@@ -698,6 +705,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_asm(view['size'], pieces, piano_top_claims(root, view))
         if name in fonts:
             pieces = overlay_resources(view["size"], pieces, fonts[name])
+        if name == "op":
+            from review_op_piano_resources import reviewed_claims as piano_resource_claims
+            piano_resources, piano_resource_sha = piano_resource_claims(
+                root, config["views"], verify_targets=verify_targets)
+            pieces = overlay_resources(view["size"], pieces, piano_resources["op"])
         if name == "main":
             # Independently reproduced TH02/TH04 BMP-derived sprite tables;
             # original MAIN's order differs from the native calibration.
@@ -806,6 +818,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["asm_family_review_sha256"] = generic_asm_sha
         if fonts_sha and name in fonts:
             views[name]["font_resource_review_sha256"] = fonts_sha
+        if name == "op" and piano_resource_sha:
+            views[name]["piano_resource_review_sha256"] = piano_resource_sha
         if name == "main" and sprite_review_sha:
             views[name]["sprite_resource_review_sha256"] = sprite_review_sha
     counts = Counter()
