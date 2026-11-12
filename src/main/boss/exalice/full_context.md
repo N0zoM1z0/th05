@@ -142,3 +142,38 @@ complete **1,060-byte** Boss update, all **52** compiler switch-table
 bytes and both original ordered relocations. The existing compiled HP
 threshold negative is rejected. Only this affected owner was replayed;
 no new authored CODE credit is claimed for already accepted bytes.
+
+## Real arena clamp, split regular/charged rewards and palette codegen (2026-11-12)
+
+The **full 18-phase EX-Alice Boss controller** now shares
+`combat_layout.hpp` between the standalone and original-context C++
+translations. The setup initializes the original four-sided 64/320×48/96
+pixel flystep clamp, a 128-pixel-radius eight-point gather with a two-step
+angle, and the unchanged 16-tiny-sprite conversion window. Its approach
+still targets (192,64). The distinct regular-wave and charged-attack hit
+paths now each name their own observed score bonus of 20; the final
+post-fight Boss update retains 200 bonus units, and the setup transition
+still triggers sound 13 and blacks out palette entry zero. These values
+are external gameplay effects, not additional physical scratch fields.
+Every transition preserves the complete existing 26,500 → 0 HP ladder,
+its original wave counters and the three-state final palette automaton.
+
+An early native producer grew the complete callback from **1,060 to
+1,088 bytes** when source-level named constants replaced some operations
+on byte-wide RGB channels. Turbo C++ 4.02 selected longer AL/word writeback
+sequences rather than the original one-byte increment/decrement shapes.
+This variant was **not** imported. Keeping the byte lvalue's original
+`++`, `--`, `+=2` and `-=2` arithmetic while preserving the new external
+phase geometry and reward names restores native codegen. No inline ASM,
+register forcing, fake arrays, or branch padding was used.
+
+Scoped receipt:
+`.analysis/unit-replays/gpt-web-exalice-combat-layout-b/receipt.json`.
+Two independent native Borland producers match **all 1,060 bytes** of the
+entire Boss update, including 52 bytes of the compiler's original switch
+tables and both literal ordered relocations; the full-context source
+also retains the genuine adjacent far hit gate and near phase helper.
+The compiled meaningful HP-gate mutation was rejected. The standalone
+`update.cpp` body is token-identical to the accepted full-context body's
+update function. This is an improvement to already accepted CODE; no
+new duplicate byte credit or all-MAIN replay is claimed.

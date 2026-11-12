@@ -4,6 +4,7 @@
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
 #include "src/main/boss/exalice/visual_phase.hpp"
+#include "src/main/boss/exalice/combat_layout.hpp"
 
 void pascal far exalice_update(void)
 {
@@ -19,21 +20,21 @@ void pascal far exalice_update(void)
 
     switch(boss.phase) {
     case EXALICE_PHASE_SETUP:
-        if(boss.phase_frame == 1) {
+        if(boss.phase_frame == EXALICE_FIRST_FRAME) {
             boss.hp = EXALICE_HP_INITIAL;
             boss.phase_end_hp = EXALICE_HP_SETUP_END;
-            gather_template.radius.v = to_sp(128);
-            gather_template.angle_delta = 2;
-            gather_template.ring_points = 8;
+            gather_template.radius.v = to_sp(EXALICE_SETUP_GATHER_RADIUS_PX);
+            gather_template.angle_delta = EXALICE_SETUP_GATHER_ANGLE_STEP;
+            gather_template.ring_points = EXALICE_SETUP_GATHER_RING_POINTS;
             boss.sprite = EXALICE_SPRITE_STILL;
             boss_sprite_left = EXALICE_SPRITE_MOVE_LEFT;
             boss_sprite_right = EXALICE_SPRITE_MOVE_RIGHT;
             boss_sprite_stay = EXALICE_SPRITE_STILL;
             exalice_bomb_invincibility = 0;
-            boss_flystep_random_clamp.left.v = to_sp(64);
-            boss_flystep_random_clamp.right.v = to_sp(320);
-            boss_flystep_random_clamp.top.v = to_sp(48);
-            boss_flystep_random_clamp.bottom.v = to_sp(96);
+            boss_flystep_random_clamp.left.v = to_sp(EXALICE_ARENA_LEFT_BOUND_PX);
+            boss_flystep_random_clamp.right.v = to_sp(EXALICE_ARENA_RIGHT_BOUND_PX);
+            boss_flystep_random_clamp.top.v = to_sp(EXALICE_ARENA_TOP_BOUND_PX);
+            boss_flystep_random_clamp.bottom.v = to_sp(EXALICE_ARENA_BOTTOM_BOUND_PX);
             for(int i = EXALICE_ATTACK_TINY_FIRST; i < EXALICE_ATTACK_TINY_END; i++) {
                 super_convert_tiny(i);
             }
@@ -42,10 +43,10 @@ void pascal far exalice_update(void)
         if(boss.phase_frame >= EXALICE_SETUP_END_FRAME) {
             boss.phase_frame = 0;
             boss.phase++;
-            snd_se_play(13);
-            Palettes.colors[0].c.r = 0;
-            Palettes.colors[0].c.g = 0;
-            Palettes.colors[0].c.b = 0;
+            snd_se_play(EXALICE_SETUP_TRANSITION_SE);
+            Palettes.colors[0].c.r = EXALICE_PALETTE_BLACK;
+            Palettes.colors[0].c.g = EXALICE_PALETTE_BLACK;
+            Palettes.colors[0].c.b = EXALICE_PALETTE_BLACK;
             palette_changed = true;
             exalice_backdrop_patnum = EXALICE_BACKDROP_INITIAL;
             bg_render_bombing_func = exalice_bg_render;
@@ -86,7 +87,7 @@ regular_attack:
         if(!exalice_hittest_shots()) {
             break;
         }
-        boss_score_bonus(20);
+        boss_score_bonus(EXALICE_REGULAR_HIT_BONUS);
 regular_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
@@ -117,7 +118,7 @@ regular_complete:
     case EXALICE_PHASE_WAVE3_APPROACH_SECOND:
     case EXALICE_PHASE_WAVE4_APPROACH_SECOND:
 approach:
-        if(boss_flystep_towards(to_sp(192), to_sp(64))) {
+        if(boss_flystep_towards(to_sp(EXALICE_APPROACH_DESTINATION_X_PX), to_sp(EXALICE_APPROACH_DESTINATION_Y_PX))) {
             boss.phase_frame = 0;
             boss.phase++;
             boss.mode = EXALICE_MODE_CHARGE;
@@ -140,7 +141,7 @@ charge_hittest:
         if(!exalice_hittest_shots()) {
             break;
         }
-        boss_score_bonus(20);
+        boss_score_bonus(EXALICE_CHARGED_HIT_BONUS);
 charge_complete:
         switch(exalice_boss_scratch.wave_index) {
         case EXALICE_WAVE_1:
@@ -246,7 +247,7 @@ charge_complete:
         bullet_zap_drop_point_items = false;
         break;
     default:
-        boss_defeat_update(200);
+        boss_defeat_update(EXALICE_FINAL_DEFEAT_BONUS);
         break;
     }
     cheetos_update();
