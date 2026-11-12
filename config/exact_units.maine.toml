@@ -2184,3 +2184,25 @@ unit = "maine-bgimage-planes-initial-data"
 source = "src/shared/hardware/bgimage_planes_initial.cpp"
 find = "bgimage_planes_t bgimage = { 0, 0, 0, 0 };"
 replace = "bgimage_planes_t bgimage = { (unsigned char __seg *)1, 0, 0, 0 };"
+
+[[units]]
+id = "maine-registration-page-and-cursor-initial-data"
+source = "src/maine/registration/initial_cursor_state.cpp"
+module = "th05/regcuri.cpp"
+segment = "_DATA"
+wrapper_options = "-zPgroup_01"
+bindings_source = "probes/units/maine_registration_initial_cursor_bindings.asm"
+target_start = 0x11631
+size = 3
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "maine-registration-page-and-cursor-initial-data"
+source = "src/maine/registration/initial_cursor_state.cpp"
+find = "entered_name_cursor = 0;"
+replace = "entered_name_cursor = 1;"
