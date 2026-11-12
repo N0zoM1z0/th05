@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "c7c18294986d6ae999cf3b035c7e323d03d66a45a65b333b6bdc51a44b01a1e9",
+  "replay_receipt_sha256": "92c50c5d00ad70ad8cb5361e7d73c66cac73700e71e39cf4891278ae0f2a0898",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138848,
-    "candidate_start": 138848,
-    "size": 6,
-    "target_sha256": "d1d61d7bd6274f7c9a97b4d2f57e430e7d164556344ef4a923004bdf59fbac5a",
-    "candidate_sha256": "c159f9b9da1e1cfec2d2dda1e8142a6350c4a8b621ffcb450fe6d5736e5c106d",
+    "target_start": 138826,
+    "candidate_start": 138826,
+    "size": 22,
+    "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+    "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138848,
-      "size": 6,
-      "module": "th05/mb5sched.cpp",
+      "start": 138826,
+      "size": 22,
+      "module": "th05/mxsched.cpp",
       "segment": "_DATA"
     }
   },
@@ -26454,8 +26454,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "95c936f2e9dfb2af88d19ddb88993c138b23c39e453b5a788998b1cd94b64245",
-            "dependency_timestamp_normalized_sha256": "895786801bc7b121d646a089104146951292c70c9cadb832ed8ad7e2ab7ef248",
+            "sha256": "c714e1c8f10aece7703d2cebae321c80c9e8e94f77883c37f039771a34b4e323",
+            "dependency_timestamp_normalized_sha256": "7fda3d5af4c3f19175b8796daaac37478d656ce33b71419fafc5feadec3bd93c",
             "module_name": "th05/midbossx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -26483,12 +26483,13 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/main/midboss/extra_scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/midboss/extra_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "21b875d81508361d9870a4142be09a85a90f0f768acd7e75955f840ce3bed92c",
-            "dependency_timestamp_normalized_sha256": "895786801bc7b121d646a089104146951292c70c9cadb832ed8ad7e2ab7ef248",
+            "sha256": "85ffd9c47991978d7e511df71d5e41a8834932b649167b779543e40eebd53739",
+            "dependency_timestamp_normalized_sha256": "7fda3d5af4c3f19175b8796daaac37478d656ce33b71419fafc5feadec3bd93c",
             "module_name": "th05/midbossx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -26516,13 +26517,14 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/main/midboss/extra_scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/midboss/extra_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -26579,11 +26581,15 @@
           },
           {
             "path": "src/main/midboss/extra.cpp",
-            "sha256": "162331a8cb7620fbb73825c636fb2b9e5640c4892911d39f9350707f87e8eb59"
+            "sha256": "bc5fa4997a0b8f2c1d43b12f7ce2813ee68d9df3a2eb8ab9b3b4396cc3b5e4d6"
           },
           {
             "path": "src/main/midboss/extra.hpp",
             "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+          },
+          {
+            "path": "src/main/midboss/extra_attack_rules.hpp",
+            "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
           },
           {
             "path": "src/main/midboss/extra_scratch.hpp",
@@ -26631,11 +26637,15 @@
         },
         {
           "path": "src/main/midboss/extra.cpp",
-          "sha256": "162331a8cb7620fbb73825c636fb2b9e5640c4892911d39f9350707f87e8eb59"
+          "sha256": "bc5fa4997a0b8f2c1d43b12f7ce2813ee68d9df3a2eb8ab9b3b4396cc3b5e4d6"
         },
         {
           "path": "src/main/midboss/extra.hpp",
           "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
+        },
+        {
+          "path": "src/main/midboss/extra_attack_rules.hpp",
+          "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
         },
         {
           "path": "src/main/midboss/extra_scratch.hpp",
@@ -26656,73 +26666,78 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "f909366f832ad6e7b367725568d5425e5ab505290f1bb03c828ca38a35442282",
+      "replay_receipt_sha256": "92c50c5d00ad70ad8cb5361e7d73c66cac73700e71e39cf4891278ae0f2a0898",
       "compiled_negative_control": {
-        "target_start": 91574,
-        "candidate_start": 91574,
-        "size": 366,
-        "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
-        "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
+        "target_start": 138826,
+        "candidate_start": 138826,
+        "size": 22,
+        "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+        "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
         "raw_exact": false,
-        "target_fixups": [
-          323,
-          155
-        ],
-        "candidate_fixups": [
-          323,
-          155
-        ],
+        "target_fixups": [],
+        "candidate_fixups": [],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138826,
+          "size": 22,
+          "module": "th05/mxsched.cpp",
+          "segment": "_DATA"
+        }
       },
       "negative_control": {
-        "unit_id": "main-midboss-extra-update",
-        "entry_sha256": "69f53a5e8003f2c1aa8479d13a8008fbfbcee15b35a2a2c742c625ce70e43b70",
+        "unit_id": "main-extra-midboss-callback-and-dash-data",
+        "entry_sha256": "b5341c580971e20ecbce09d20182939f283d93a9399d60cc3cbc4fa86f92370f",
         "mutation": {
-          "id": "midboss-extra-health-threshold",
-          "unit": "main-midboss-extra-update",
-          "source": "src/main/midboss/extra.cpp",
-          "find": "midboss.hp < 1000",
-          "replace": "midboss.hp < 1001"
+          "unit": "main-extra-midboss-callback-and-dash-data",
+          "source": "src/main/midboss/extra_schedule_data.cpp",
+          "find": "{ midbossx_pattern_spread, midbossx_pattern_random },",
+          "replace": "{ midbossx_pattern_spread, midbossx_pattern_spread },"
         },
-        "control_sha256": "d5688cbaa9022d928c584f72c2e8c993a3f29fec77823428ab2c5f23aa89a79b",
+        "control_sha256": "36c4b5c59346ff19b0b3a64b82ce3995dabe8e22d69f4c1407642b017fcabb75",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 91574,
-          "candidate_start": 91574,
-          "size": 366,
-          "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
-          "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
+          "target_start": 138826,
+          "candidate_start": 138826,
+          "size": 22,
+          "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+          "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
           "raw_exact": false,
-          "target_fixups": [
-            323,
-            155
-          ],
-          "candidate_fixups": [
-            323,
-            155
-          ],
+          "target_fixups": [],
+          "candidate_fixups": [],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138826,
+            "size": 22,
+            "module": "th05/mxsched.cpp",
+            "segment": "_DATA"
+          }
         },
         "omf": {
-          "sha256": "9b27b5f5f47e0be06a8e1735d3f699901ed833fca46b65aee268b494f9bd9fe0",
-          "dependency_timestamp_normalized_sha256": "7b79c6fd5c40bd7ca43889c0566651033dc1a19fb0befcdda27b15236e3f3266",
-          "module_name": "th05/midbossx.cpp",
+          "sha256": "b33855c6391901142132f2dc18e4e9dec922194e5171fcf3c2ec338540e4b719",
+          "dependency_timestamp_normalized_sha256": "183773245cb54f28fc83ea605dc82b163b20e1c5b070a618e3a5b4b6e9c1502d",
+          "module_name": "th05/mxsched.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/midbossx.cpp",
-            "src/main/midboss/extra.cpp",
-            "src/main/midboss/extra.hpp",
-            "src/main/stage/setup.hpp",
-            "src/main/boss/movement.hpp",
+            "th05/mxsched.cpp",
+            "src/main/midboss/extra_schedule_data.cpp",
+            "src/main/midboss/extra_patterns.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/midboss/extra.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
             "src/main/boss/generic.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/stage/setup.hpp",
@@ -26734,9 +26749,22 @@
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
             "src/main/hud/resident.hpp",
-            "src/main/midboss/extra_scratch.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h"
-          ]
+            "src/main/midboss/extra_attack_rules.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 22,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 22,
+                "sha256": "aa63295739edf872d045e984ef918028d4c7cfc0d6ae3b1e9a6cdc2416a4ab19"
+              }
+            ]
+          }
         },
         "compiler_arguments": [
           "-c",
@@ -26749,10 +26777,15 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/midbossx.cpp"
+          "th05/mxsched.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-extra-midboss-callback-and-dash-data",
+        "main-midboss-extra-patterns",
+        "main-midboss-extra-update"
+      ]
     },
     {
       "id": "main-midboss-stage5-patterns",
@@ -27192,8 +27225,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "ed4739b35b14eb604208ce39dfd854c06e1fddeb4265965f30933ba7cf4065b9",
-            "dependency_timestamp_normalized_sha256": "fb3611d1b057d431a9b345df5b946bfea1a2b80652458ad2c4e53c8f1eedc9f7",
+            "sha256": "f8e1762604bfea69536c5336373c737bac94680376b9f8715710998f33278ac9",
+            "dependency_timestamp_normalized_sha256": "ecbe113acc8426c7cfb287b053ffc04012f742e35df29a8a79648f9571703fbb",
             "module_name": "th05/midxpat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -27223,12 +27256,13 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/main/midboss/extra_scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/midboss/extra_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "ed4739b35b14eb604208ce39dfd854c06e1fddeb4265965f30933ba7cf4065b9",
-            "dependency_timestamp_normalized_sha256": "fb3611d1b057d431a9b345df5b946bfea1a2b80652458ad2c4e53c8f1eedc9f7",
+            "sha256": "96839aefa3e1686115d3d8ad44946868f1c13641f2880b49f3d83f66828c4502",
+            "dependency_timestamp_normalized_sha256": "ecbe113acc8426c7cfb287b053ffc04012f742e35df29a8a79648f9571703fbb",
             "module_name": "th05/midxpat.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -27258,13 +27292,14 @@
               "src/main/bullet/template.hpp",
               "src/main/hud/resident.hpp",
               "src/main/midboss/extra_scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/midboss/extra_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -27324,8 +27359,12 @@
             "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
           },
           {
+            "path": "src/main/midboss/extra_attack_rules.hpp",
+            "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
+          },
+          {
             "path": "src/main/midboss/extra_patterns.cpp",
-            "sha256": "824638a07c4fbf6ebfa42c683fa187af50a7317da72c11b8a806937932e08deb"
+            "sha256": "2c40bcc440625e079214d9adeb697bd73a3a6538d284498106294bf7bbc74100"
           },
           {
             "path": "src/main/midboss/extra_patterns.hpp",
@@ -27380,8 +27419,12 @@
           "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
         },
         {
+          "path": "src/main/midboss/extra_attack_rules.hpp",
+          "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
+        },
+        {
           "path": "src/main/midboss/extra_patterns.cpp",
-          "sha256": "824638a07c4fbf6ebfa42c683fa187af50a7317da72c11b8a806937932e08deb"
+          "sha256": "2c40bcc440625e079214d9adeb697bd73a3a6538d284498106294bf7bbc74100"
         },
         {
           "path": "src/main/midboss/extra_patterns.hpp",
@@ -27406,73 +27449,78 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "f909366f832ad6e7b367725568d5425e5ab505290f1bb03c828ca38a35442282",
+      "replay_receipt_sha256": "92c50c5d00ad70ad8cb5361e7d73c66cac73700e71e39cf4891278ae0f2a0898",
       "compiled_negative_control": {
-        "target_start": 91574,
-        "candidate_start": 91574,
-        "size": 366,
-        "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
-        "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
+        "target_start": 138826,
+        "candidate_start": 138826,
+        "size": 22,
+        "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+        "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
         "raw_exact": false,
-        "target_fixups": [
-          323,
-          155
-        ],
-        "candidate_fixups": [
-          323,
-          155
-        ],
+        "target_fixups": [],
+        "candidate_fixups": [],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138826,
+          "size": 22,
+          "module": "th05/mxsched.cpp",
+          "segment": "_DATA"
+        }
       },
       "negative_control": {
-        "unit_id": "main-midboss-extra-update",
-        "entry_sha256": "69f53a5e8003f2c1aa8479d13a8008fbfbcee15b35a2a2c742c625ce70e43b70",
+        "unit_id": "main-extra-midboss-callback-and-dash-data",
+        "entry_sha256": "b5341c580971e20ecbce09d20182939f283d93a9399d60cc3cbc4fa86f92370f",
         "mutation": {
-          "id": "midboss-extra-health-threshold",
-          "unit": "main-midboss-extra-update",
-          "source": "src/main/midboss/extra.cpp",
-          "find": "midboss.hp < 1000",
-          "replace": "midboss.hp < 1001"
+          "unit": "main-extra-midboss-callback-and-dash-data",
+          "source": "src/main/midboss/extra_schedule_data.cpp",
+          "find": "{ midbossx_pattern_spread, midbossx_pattern_random },",
+          "replace": "{ midbossx_pattern_spread, midbossx_pattern_spread },"
         },
-        "control_sha256": "d5688cbaa9022d928c584f72c2e8c993a3f29fec77823428ab2c5f23aa89a79b",
+        "control_sha256": "36c4b5c59346ff19b0b3a64b82ce3995dabe8e22d69f4c1407642b017fcabb75",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 91574,
-          "candidate_start": 91574,
-          "size": 366,
-          "target_sha256": "3f6494b656f2583300ec54f188219d0431874c55c27cd54cd98c473f549f4f4c",
-          "candidate_sha256": "cd8e221ad34d5c3bbb159fb4fe289d41ea3a725c1aa22dfefde2476eed56d307",
+          "target_start": 138826,
+          "candidate_start": 138826,
+          "size": 22,
+          "target_sha256": "6cc12b68ff39b7b015570b41d3e63ec41726fc5b001c505281835c8a814e6adb",
+          "candidate_sha256": "4bd49eef25c363eef7098d37158fe6a0b08b634a7b9100a93fdc2658b90f6953",
           "raw_exact": false,
-          "target_fixups": [
-            323,
-            155
-          ],
-          "candidate_fixups": [
-            323,
-            155
-          ],
+          "target_fixups": [],
+          "candidate_fixups": [],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138826,
+            "size": 22,
+            "module": "th05/mxsched.cpp",
+            "segment": "_DATA"
+          }
         },
         "omf": {
-          "sha256": "9b27b5f5f47e0be06a8e1735d3f699901ed833fca46b65aee268b494f9bd9fe0",
-          "dependency_timestamp_normalized_sha256": "7b79c6fd5c40bd7ca43889c0566651033dc1a19fb0befcdda27b15236e3f3266",
-          "module_name": "th05/midbossx.cpp",
+          "sha256": "b33855c6391901142132f2dc18e4e9dec922194e5171fcf3c2ec338540e4b719",
+          "dependency_timestamp_normalized_sha256": "183773245cb54f28fc83ea605dc82b163b20e1c5b070a618e3a5b4b6e9c1502d",
+          "module_name": "th05/mxsched.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/midbossx.cpp",
-            "src/main/midboss/extra.cpp",
-            "src/main/midboss/extra.hpp",
-            "src/main/stage/setup.hpp",
-            "src/main/boss/movement.hpp",
+            "th05/mxsched.cpp",
+            "src/main/midboss/extra_schedule_data.cpp",
+            "src/main/midboss/extra_patterns.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/midboss/extra.hpp",
+            "src/main/stage/setup.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
             "src/main/boss/generic.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/stage/setup.hpp",
@@ -27484,9 +27532,22 @@
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
             "src/main/hud/resident.hpp",
-            "src/main/midboss/extra_scratch.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h"
-          ]
+            "src/main/midboss/extra_attack_rules.hpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 22,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 22,
+                "sha256": "aa63295739edf872d045e984ef918028d4c7cfc0d6ae3b1e9a6cdc2416a4ab19"
+              }
+            ]
+          }
         },
         "compiler_arguments": [
           "-c",
@@ -27499,10 +27560,15 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/midbossx.cpp"
+          "th05/mxsched.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-extra-midboss-callback-and-dash-data",
+        "main-midboss-extra-patterns",
+        "main-midboss-extra-update"
+      ]
     },
     {
       "id": "main-midboss-stage4",
@@ -101724,8 +101790,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a00a5e1e2ce85f6b58cfa3be8189279d42f17ea22d713bfc6c3f0d04ad3488d6",
-            "dependency_timestamp_normalized_sha256": "a11e060439a7618d27d651c7651a62496f18c72b4e1874912766584526429f5b",
+            "sha256": "c2b052abf28f3319424d27caf9a3ca274a5fc8d6fa77e69c2a0124772f6f6a23",
+            "dependency_timestamp_normalized_sha256": "7c3e327d79bda9bb1a36420d80671f30d777715d6b32a19c0de8345f78e933de",
             "module_name": "th05/mxsched.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -101753,7 +101819,8 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_attack_rules.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -101771,8 +101838,8 @@
             }
           },
           {
-            "sha256": "4018802c3f5dc8892a9d30b9b516f8f269e97dcac6c6469185f3605fbcb6b00d",
-            "dependency_timestamp_normalized_sha256": "a11e060439a7618d27d651c7651a62496f18c72b4e1874912766584526429f5b",
+            "sha256": "0f4a9164c6d590ecbf120acd4e87f425292c61a7f63f35d221f76ee35220a3d7",
+            "dependency_timestamp_normalized_sha256": "7c3e327d79bda9bb1a36420d80671f30d777715d6b32a19c0de8345f78e933de",
             "module_name": "th05/mxsched.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -101800,7 +101867,8 @@
               "src/main/gather/gather.hpp",
               "C:\\TC4\\INCLUDE\\dos.h",
               "src/main/bullet/template.hpp",
-              "src/main/hud/resident.hpp"
+              "src/main/hud/resident.hpp",
+              "src/main/midboss/extra_attack_rules.hpp"
             ],
             "initialized_data_scope": {
               "kind": "complete-compiler-initialized-data",
@@ -101819,8 +101887,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -101880,12 +101948,16 @@
             "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
           },
           {
+            "path": "src/main/midboss/extra_attack_rules.hpp",
+            "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
+          },
+          {
             "path": "src/main/midboss/extra_patterns.hpp",
             "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
           },
           {
             "path": "src/main/midboss/extra_schedule_data.cpp",
-            "sha256": "526c6ebfab283502c5371909cdf26d2c6fb88340fe98ace837d851ceb56d7cd3"
+            "sha256": "54a2daa9f33e9139a5446666f74bcd2546fba47bc85b26afdb38abbd2cd04ac8"
           },
           {
             "path": "src/main/stage/setup.hpp",
@@ -101932,12 +102004,16 @@
           "sha256": "68a541d20d991fe6d508f8f7791e30e25b9d4ae84ccf2f5539ef8a044dc4f85f"
         },
         {
+          "path": "src/main/midboss/extra_attack_rules.hpp",
+          "sha256": "06b1ae74edb6d3ed704cde7e3a7efae896494937ef7d3e24dc41b1becb791559"
+        },
+        {
           "path": "src/main/midboss/extra_patterns.hpp",
           "sha256": "a3e84ee5de6960105e5b8cd15dd18a10d7766ff5c0c142de3da33c22666ffc69"
         },
         {
           "path": "src/main/midboss/extra_schedule_data.cpp",
-          "sha256": "526c6ebfab283502c5371909cdf26d2c6fb88340fe98ace837d851ceb56d7cd3"
+          "sha256": "54a2daa9f33e9139a5446666f74bcd2546fba47bc85b26afdb38abbd2cd04ac8"
         },
         {
           "path": "src/main/stage/setup.hpp",
@@ -101954,7 +102030,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "d80f466baa2edb3d445a784af5e54808dbad65caec7fb121625c8fe8bb259879",
+      "replay_receipt_sha256": "92c50c5d00ad70ad8cb5361e7d73c66cac73700e71e39cf4891278ae0f2a0898",
       "compiled_negative_control": {
         "target_start": 138826,
         "candidate_start": 138826,
@@ -102007,8 +102083,8 @@
           }
         },
         "omf": {
-          "sha256": "791f893b740543d53a4fe754c70a2eddbb5c15b576777ac901ae56b07adc05ed",
-          "dependency_timestamp_normalized_sha256": "d9989106f0667b5d3284396bebfc2a186a518a06ee3e060fc1fa3b9b0cddd42b",
+          "sha256": "b33855c6391901142132f2dc18e4e9dec922194e5171fcf3c2ec338540e4b719",
+          "dependency_timestamp_normalized_sha256": "183773245cb54f28fc83ea605dc82b163b20e1c5b070a618e3a5b4b6e9c1502d",
           "module_name": "th05/mxsched.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -102036,7 +102112,8 @@
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
-            "src/main/hud/resident.hpp"
+            "src/main/hud/resident.hpp",
+            "src/main/midboss/extra_attack_rules.hpp"
           ],
           "initialized_data_scope": {
             "kind": "complete-compiler-initialized-data",
@@ -102069,7 +102146,9 @@
       },
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
-        "main-extra-midboss-callback-and-dash-data"
+        "main-extra-midboss-callback-and-dash-data",
+        "main-midboss-extra-patterns",
+        "main-midboss-extra-update"
       ]
     },
     {

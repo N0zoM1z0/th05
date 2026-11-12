@@ -49,3 +49,16 @@ rejected. The preceding single unknown byte `[21E49,21E4A)` and
 following six unknown bytes `[21E60,21E66)` remain unowned. No
 historical translation-unit identity is inferred from this scoped
 proof, and no whole-program cold replay was executed.
+
+## Shared original Extra midboss attack/HP source rules (2026-11-12)
+
+The exact near callback/angle initializer now uses the same
+`extra_attack_rules.hpp` names for its eight physical headings as the
+entire 366-byte Boss controller and five associated attack/movement
+functions. Both the active function-pointer and two rows of four
+originally addressable callbacks stay separately writable and
+source-linked. The 440-byte attack family and 366-byte controller
+retain exact original native CODE under the focused three-unit
+replay `.analysis/unit-replays/gpt-web-extra-midboss-source-closure-b/receipt.json`.
+This is a semantic improvement to **already accepted** DATA, not a
+second 22-byte contribution.

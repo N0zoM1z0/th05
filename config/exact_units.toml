@@ -1655,8 +1655,8 @@ origin = "compiler-generated-cxx"
 id = "midboss-extra-health-threshold"
 unit = "main-midboss-extra-update"
 source = "src/main/midboss/extra.cpp"
-find = "midboss.hp < 1000"
-replace = "midboss.hp < 1001"
+find = "midboss.hp < MEX_SECOND_HALF_HP_GATE"
+replace = "midboss.hp < MEX_SECOND_HALF_HP_GATE + 1"
 
 [[units]]
 id = "main-midboss-stage5-patterns"
@@ -1696,8 +1696,8 @@ origin = "compiler-generated-cxx"
 id = "midboss-extra-pattern-speed"
 unit = "main-midboss-extra-patterns"
 source = "src/main/midboss/extra_patterns.cpp"
-find = "bullet_template.speed.v = 8;"
-replace = "bullet_template.speed.v = 9;"
+find = "bullet_template.speed.v = MEX_RING_BASE_SPEED;"
+replace = "bullet_template.speed.v = MEX_RING_BASE_SPEED + 1;"
 
 [[units]]
 id = "main-midboss-stage4"

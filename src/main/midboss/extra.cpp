@@ -4,6 +4,7 @@
 #pragma option -zCMIDBOSSX_TEXT -zPmain_03
 #include "src/main/midboss/extra.hpp"
 #include "src/main/midboss/extra_scratch.hpp"
+#include "src/main/midboss/extra_attack_rules.hpp"
 #pragma codeseg MIDBOSSX_TEXT main_03
 
 #define midbossx_second_half midboss_extra_scratch.second_pattern_set
@@ -18,8 +19,8 @@ void pascal far midbossx_update(void)
 
     switch(midboss.phase) {
     case MIDBOSSX_PHASE_ENTRANCE_DASH:
-        midboss_hittest_shots_damage(to_sp(24), to_sp(24), 10);
-        midboss.angle = 0x40;
+        midboss_hittest_shots_damage(to_sp(MEX_ENTRANCE_HIT_RADIUS_PX), to_sp(MEX_ENTRANCE_HIT_RADIUS_PX), MEX_ENTRANCE_HIT_SE);
+        midboss.angle = MEX_ENTRANCE_ANGLE;
         if(midbossx_dash_update(midboss.phase_frame)) {
             midboss.phase++;
             midboss.phase_frame = 0;
@@ -33,12 +34,12 @@ void pascal far midbossx_update(void)
 
     case MIDBOSSX_PHASE_ATTACK_DASHES:
         if(midbossx_dash_update(midboss.phase_frame - MIDBOSSX_ATTACK_DASH_FRAME_BIAS)) {
-            if(midbossx_second_half == 0 && midboss.hp < 1000) {
-                midboss_score_bonus(10);
-                if(bullet_clear_time < 20) {
-                    bullet_clear_time = 20;
+            if(midbossx_second_half == 0 && midboss.hp < MEX_SECOND_HALF_HP_GATE) {
+                midboss_score_bonus(MEX_SECOND_HALF_BONUS);
+                if(bullet_clear_time < MEX_BULLET_CLEAR_MIN_FRAMES) {
+                    bullet_clear_time = MEX_BULLET_CLEAR_MIN_FRAMES;
                 }
-                snd_se_play(15);
+                snd_se_play(MEX_SECOND_HALF_SE);
                 midbossx_second_half++;
             }
             midbossx_dashing = MIDBOSSX_DASH_ACTIVE;
@@ -49,29 +50,29 @@ void pascal far midbossx_update(void)
                 [midbossx_patterns_done % MIDBOSSX_ATTACK_CHOICE_MODULUS];
         }
         midboss.damage_this_frame =
-            midboss_hittest_shots_damage(to_sp(24), to_sp(24), 4);
+            midboss_hittest_shots_damage(to_sp(MEX_ATTACK_HIT_RADIUS_PX), to_sp(MEX_ATTACK_HIT_RADIUS_PX), MEX_ATTACK_HIT_SE);
         midboss.hp -= midboss.damage_this_frame;
         if(midbossx_patterns_done < MIDBOSSX_MAX_COMPLETED_DASHES) {
             if(midboss.hp > 0) {
                 break;
             }
             bullet_zap.active = true;
-            midboss_score_bonus(30);
+            midboss_score_bonus(MEX_DEFEAT_BONUS);
             items_add(midboss.pos.cur.x.v, midboss.pos.cur.y.v, IT_1UP);
         }
         midboss.phase = MIDBOSSX_PHASE_LARGE_EXPLOSION;
-        midboss.sprite = 4;
+        midboss.sprite = MEX_EXPLOSION_SPRITE;
         midboss.phase_frame = 0;
-        sparks_add_circle(midboss.pos.cur.x, midboss.pos.cur.y, to_sp(8), 48);
-        snd_se_play(12);
+        sparks_add_circle(midboss.pos.cur.x, midboss.pos.cur.y, to_sp(MEX_EXPLOSION_RADIUS_PX), MEX_EXPLOSION_SPARKS);
+        snd_se_play(MEX_EXPLOSION_SE);
         break;
 
     default:
         midboss_defeat_update();
-        hud_hp_update_and_render(midboss.hp, 3000);
+        hud_hp_update_and_render(midboss.hp, MEX_HP_TOTAL);
         return;
     }
-    hud_hp_update_and_render(midboss.hp, 3000);
+    hud_hp_update_and_render(midboss.hp, MEX_HP_TOTAL);
     homing_target.x = midboss.pos.cur.x;
     homing_target.y = midboss.pos.cur.y;
 }
