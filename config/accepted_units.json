@@ -2,28 +2,26 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "5346a3c54ad9a7ecd9e9b8b76f5b2b08aa8b01d87302cc8a23a8dd240d7583ff",
+  "replay_receipt_sha256": "d5172676ff00770cfd1b82661e73b17965f9ee8e0921408433c20366d55a2a8e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 137500,
-    "candidate_start": 137500,
-    "size": 6,
-    "target_sha256": "fa7f90f454b16f88db3a8721c99bd5f20afa201c4813d18e704a0a150962bb6e",
-    "candidate_sha256": "90f4e7c43891052c79ca22b5faebd124b7e7220e8b8e05e54d971087b3a848ae",
+    "target_start": 97142,
+    "candidate_start": 97142,
+    "size": 186,
+    "target_sha256": "a74d007020c57f24d59fd436f4f374e4a648e64795c9e8de07b8d71ab71085db",
+    "candidate_sha256": "da788fa190134b2c81dd1cec29fc6c7b2461e0dfaef0f49a10553a32ce9f1411",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      38,
+      130
+    ],
+    "candidate_fixups": [
+      38,
+      130
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 137500,
-      "size": 6,
-      "module": "th05/badmode.cpp",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -86856,7 +86854,7 @@
         ],
         "omfs": [
           {
-            "sha256": "3aa933ad00bc44bcc4f404f869fadfcd2c2f3ab77766a57bf94db7dda16e36d6",
+            "sha256": "eaac22b0688aa9dc04e040d142d74b689f1add6867812d92ad8fab25439dce70",
             "dependency_timestamp_normalized_sha256": "36e0e00b11f6041f947bfed85c17e72d3c9c48c50efe915553e65e0cfeb3fd3a",
             "module_name": "unit.asm",
             "translator_comments": [
@@ -86868,7 +86866,7 @@
             ]
           },
           {
-            "sha256": "3aa933ad00bc44bcc4f404f869fadfcd2c2f3ab77766a57bf94db7dda16e36d6",
+            "sha256": "e8d28e2f4baa1ed7b5ac4398312af0e771f369479b4e481baa42b8958c43acc1",
             "dependency_timestamp_normalized_sha256": "36e0e00b11f6041f947bfed85c17e72d3c9c48c50efe915553e65e0cfeb3fd3a",
             "module_name": "unit.asm",
             "translator_comments": [
@@ -86905,6 +86903,7 @@
               "src/main/boss/mai_yuki/initial_patterns.hpp",
               "src/main/boss/mai_yuki/later_patterns.hpp",
               "src/main/boss/mai_yuki/tracking_laser.cpp",
+              "src/main/boss/mai_yuki/tracking_laser_rules.hpp",
               "src/main/boss/movement.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/bullet/laser.hpp",
@@ -86917,7 +86916,7 @@
               "src/shared/geometry.hpp"
             ],
             "omf": {
-              "sha256": "3aa933ad00bc44bcc4f404f869fadfcd2c2f3ab77766a57bf94db7dda16e36d6",
+              "sha256": "eaac22b0688aa9dc04e040d142d74b689f1add6867812d92ad8fab25439dce70",
               "dependency_timestamp_normalized_sha256": "36e0e00b11f6041f947bfed85c17e72d3c9c48c50efe915553e65e0cfeb3fd3a",
               "module_name": "unit.asm",
               "translator_comments": [
@@ -86943,8 +86942,8 @@
             "map_sha256": "683ae8d344556c77157895b6ea5f3518c053c98ba99fcb62b9c9e29c4917bbdd",
             "mz_sha256": "5d2297b0950e67d613bd4e85ad6bf26e4359cfb869ea4511dee995373f866302",
             "commands_sha256": "b6817e6a10867cd1227a8590ae82361b9818ca81549bf84a6d4bf93f402df249",
-            "compiler_generated_assembly_sha256": "628fb6458479529fd432447bccea285a6dd89b4202aa3429669b454649d1e274",
-            "assembly_after_tasm_sha256": "628fb6458479529fd432447bccea285a6dd89b4202aa3429669b454649d1e274",
+            "compiler_generated_assembly_sha256": "6e484648c346f5df0127ca1b42a70d85a93df0a7f749e2b9c6989da3efd950c9",
+            "assembly_after_tasm_sha256": "6e484648c346f5df0127ca1b42a70d85a93df0a7f749e2b9c6989da3efd950c9",
             "wrapper_sha256": "5ce654970a0ac9e02f3c07b0e6266ea7f57703ca1e9561c5ea81c5739bc96c07"
           },
           {
@@ -86971,6 +86970,7 @@
               "src/main/boss/mai_yuki/initial_patterns.hpp",
               "src/main/boss/mai_yuki/later_patterns.hpp",
               "src/main/boss/mai_yuki/tracking_laser.cpp",
+              "src/main/boss/mai_yuki/tracking_laser_rules.hpp",
               "src/main/boss/movement.hpp",
               "src/main/bullet/cheeto.hpp",
               "src/main/bullet/laser.hpp",
@@ -86983,7 +86983,7 @@
               "src/shared/geometry.hpp"
             ],
             "omf": {
-              "sha256": "3aa933ad00bc44bcc4f404f869fadfcd2c2f3ab77766a57bf94db7dda16e36d6",
+              "sha256": "e8d28e2f4baa1ed7b5ac4398312af0e771f369479b4e481baa42b8958c43acc1",
               "dependency_timestamp_normalized_sha256": "36e0e00b11f6041f947bfed85c17e72d3c9c48c50efe915553e65e0cfeb3fd3a",
               "module_name": "unit.asm",
               "translator_comments": [
@@ -87009,8 +87009,8 @@
             "map_sha256": "683ae8d344556c77157895b6ea5f3518c053c98ba99fcb62b9c9e29c4917bbdd",
             "mz_sha256": "5d2297b0950e67d613bd4e85ad6bf26e4359cfb869ea4511dee995373f866302",
             "commands_sha256": "b6817e6a10867cd1227a8590ae82361b9818ca81549bf84a6d4bf93f402df249",
-            "compiler_generated_assembly_sha256": "628fb6458479529fd432447bccea285a6dd89b4202aa3429669b454649d1e274",
-            "assembly_after_tasm_sha256": "628fb6458479529fd432447bccea285a6dd89b4202aa3429669b454649d1e274",
+            "compiler_generated_assembly_sha256": "6e484648c346f5df0127ca1b42a70d85a93df0a7f749e2b9c6989da3efd950c9",
+            "assembly_after_tasm_sha256": "6e484648c346f5df0127ca1b42a70d85a93df0a7f749e2b9c6989da3efd950c9",
             "wrapper_sha256": "5ce654970a0ac9e02f3c07b0e6266ea7f57703ca1e9561c5ea81c5739bc96c07"
           }
         ],
@@ -87109,7 +87109,11 @@
           },
           {
             "path": "src/main/boss/mai_yuki/tracking_laser.cpp",
-            "sha256": "53a90320b81995deff138c78ca16871a9e9072d5c2fba437adf81dd69af8c056"
+            "sha256": "1fcba53dfd8552d612260ca30adb01e2e4432479be2f89fd2225966566b26e0c"
+          },
+          {
+            "path": "src/main/boss/mai_yuki/tracking_laser_rules.hpp",
+            "sha256": "c5c4e34d0630a46a0870bf7035191973832928edf38391a533ef102c2038ba98"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -87218,7 +87222,11 @@
         },
         {
           "path": "src/main/boss/mai_yuki/tracking_laser.cpp",
-          "sha256": "53a90320b81995deff138c78ca16871a9e9072d5c2fba437adf81dd69af8c056"
+          "sha256": "1fcba53dfd8552d612260ca30adb01e2e4432479be2f89fd2225966566b26e0c"
+        },
+        {
+          "path": "src/main/boss/mai_yuki/tracking_laser_rules.hpp",
+          "sha256": "c5c4e34d0630a46a0870bf7035191973832928edf38391a533ef102c2038ba98"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -87263,7 +87271,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "96da6aa0d1473e7495d117e9edc21ae2df57cd893c3dec4f08ee6111f96ffa25",
+      "replay_receipt_sha256": "d5172676ff00770cfd1b82661e73b17965f9ee8e0921408433c20366d55a2a8e",
       "compiled_negative_control": {
         "target_start": 97142,
         "candidate_start": 97142,
@@ -87288,10 +87296,10 @@
         "mutation": {
           "unit": "main-mai-yuki-tracking-laser-compilerasm",
           "source": "src/main/boss/mai_yuki/tracking_laser.cpp",
-          "find": "if(boss.phase_frame == 160) {",
-          "replace": "if(boss.phase_frame == 161) {"
+          "find": "if(boss.phase_frame == MY_TRACK_STOP_FRAME) {",
+          "replace": "if(boss.phase_frame == (MY_TRACK_STOP_FRAME + 1)) {"
         },
-        "control_sha256": "053dfbd84568ee0e36cf78cc603a3bfecd1848c43a9aaed4ca236938c095f44c",
+        "control_sha256": "dac2a66de812093c0232042eb5079c8ffb278593c4fb2e7006e87e19f7a8efa2",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 97142,
@@ -87325,7 +87333,7 @@
           "th05/mytrka.cpp"
         ],
         "omf": {
-          "sha256": "d6617e7e02becaa669e8a42e049b0ef419c70304b8abb6696814c2dee308b70d",
+          "sha256": "afdc09b0ca168a0c3fbc9301f9deaec13362238b12cc8254c5997fe0d3212573",
           "dependency_timestamp_normalized_sha256": "90198166b958b20d73f2332cb5b46327a29cd5e4d2984e2e8f031cb7e205e412",
           "module_name": "unit.asm",
           "translator_comments": [

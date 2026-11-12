@@ -5389,8 +5389,8 @@ alignment_offsets = []
 [[controls]]
 unit = "main-mai-yuki-tracking-laser-compilerasm"
 source = "src/main/boss/mai_yuki/tracking_laser.cpp"
-find = "if(boss.phase_frame == 160) {"
-replace = "if(boss.phase_frame == 161) {"
+find = "if(boss.phase_frame == MY_TRACK_STOP_FRAME) {"
+replace = "if(boss.phase_frame == (MY_TRACK_STOP_FRAME + 1)) {"
 
 [[units]]
 id = "main-dialog-box-put-exact"
