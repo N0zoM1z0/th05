@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **513** (335 / 72 / 104 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **522** (340 / 74 / 106 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,433 bytes** |
-| Total source-authored C/C++ bytes | **126,217 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **4,485 / 6,979 / 6,557 / 8,559** |
-| Total unknown decoded bytes | **26,580** |
+| Source-authored exact semantic initialized DATA | **17,472 bytes** |
+| Total source-authored C/C++ bytes | **126,256 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,746 / 6,267 / 5,845 / 8,559** |
+| Total unknown decoded bytes | **24,417** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -43,6 +43,16 @@ independently proven pristine source image.
   [Yumeko](../src/main/boss/yumeko/update.md) **884 B**; Louise's
   complete control/attack families. Check the actual unit IDs/ledgers
   before claiming a new CODE extent.
+- [Boss background family](../src/main/boss/BACKGROUND_CANDIDATE.md): all **19
+  original-order functions / 3,254 bytes**, with **21 correctly ordered MZ
+  relocations**, now reproduce from the coherent natural C++ source and two
+  adjacent real compiler CODE contributions. Two independent producer binaries
+  match the full joined interval. The 17 manifest functions were replayed and
+  their accepted evidence refreshed; the 159-byte Shinki particle and 204-byte
+  EX-Alice hexagram functions already have separate accepted owners and receive
+  **no duplicate credit**. The former synthetic one-byte background origin
+  hole is gone; preserve the original `keep_0` symbolic zero and true split
+  before the last two EX-Alice functions when editing this context.
 - Stage and ending controllers: Stage 2 complete **653 B** update plus
   **492 B** particle initializer and **51 B** invalidation leaf;
   complete Stage Clear and All Clear **561 B / 579 B**;
@@ -58,6 +68,21 @@ independently proven pristine source image.
   [Shinki/EX-Alice backdrop C globals](../src/main/boss/shinki/background_rules.md),
   [Staff state](../src/maine/staff/initialized_state.md), and the
   [Stage 2 three-state C initializer](../src/main/stage/stage2_transition_counters.md).
+- Newly accepted native state: [EX-Alice laser slot and sweep X](../src/main/boss/exalice/attack_state_data.md)
+  **4 C++ DATA bytes**, [full frame/STD counters](../src/main/runtime/frame_counter_data.md)
+  **10 C++ DATA bytes**, and [item progress/attraction state](../src/main/item/state_data.md)
+  **13 C++ DATA bytes**. These are complete, individually replayed original
+  16-/32-bit initialized objects with actual large Boss, gameplay and
+  process-handoff consumers and compiled negatives. The adjacent item
+  alignment byte `[22855,22856)` is still unknown, not credited.
+  [SE playback state](../src/shared/sound/se_initial_state.md) and
+  [initial memory budget](../src/shared/memory/mem_assign_initial.md) add
+  **six C++ plus six C initialized DATA bytes** across MAIN, OP and MAINE.
+- Foreign CL.LIB [`exit`, `files`, `xxv` initialized DATA](reconstruction/CL_DATA_OWNERSHIP.md)
+  now has full member-linked byte and original ordered relocation proof in
+  all three executables: **2,124 bytes** moved out of unknown, **zero
+  game-authored C++ credit**. Do not count the entire surrounding library
+  gaps as owned.
 - The original reviewed ASM owners and foreign CL/Master vendor functions
   are documented under [reconstruction notes](reconstruction/). Don't
   relabel already reviewed vendor CODE as newly recovered game-authored C++.
@@ -157,9 +182,10 @@ ZUN/Yumeko trial scripts and discriminating diagnostics.
 
 A conservative local cleanup on **2026-11-12** removed **79 obsolete
 unit-replay directories** and **11 orphaned one-off experiment outputs**,
-freeing approximately **88.4 MiB of allocated storage**. Every one of the
-**358 distinct replay receipt hashes referenced by current C/C++ ledgers**
-still resolves to a complete saved directory. No pinned target, toolchain,
+freeing approximately **88.4 MiB of allocated storage**. At that cleanup checkpoint,
+all **358 then-current distinct receipt hashes** still resolved to complete
+saved directories. Later exact receipts have since been added; use the live
+ledgers to identify their dependencies before any further cleanup. No pinned target, toolchain,
 Wine prefix, calibration build, Ghidra project, ASM acceptance, or
 Yumeko/ZUN diagnostic baseline was deleted. The public checkout remains
 unchanged by these ignored-file deletions.
