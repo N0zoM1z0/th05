@@ -42,6 +42,13 @@ void near pattern_devil(void)
 
 	#define laser_grow_delay shinki_devil_laser_grow_delay
 
+	// One fixed-speed shot per symmetric column; keep each column's real
+	// origin shift at the call site and preserve the original firing order.
+	#define DEVIL_FIRE_COL(direction) { \
+		bullet_template.angle = (direction); \
+		bullets_add_regular_fixedspeed(); \
+	}
+
 	if(boss.phase_frame < DEVIL_PATTERN_START_FRAME) {
 		return;
 	}
@@ -102,20 +109,16 @@ void near pattern_devil(void)
 		bullet_template.speed.v = sara_to_sp8(SHINKI_DEVIL_BULLET_SPEED_PX);
 
 		bullet_template.origin.x.v += to_sp(SHINKI_TO_LAST_COLUMN_DISTANCE);
-		bullet_template.angle = bullet_angle_outer;
-		bullets_add_regular_fixedspeed();
+		DEVIL_FIRE_COL(bullet_angle_outer);
 
 		bullet_template.origin.x.v -= to_sp(COLUMN_W);
-		bullet_template.angle = bullet_angle_inner;
-		bullets_add_regular_fixedspeed();
+		DEVIL_FIRE_COL(bullet_angle_inner);
 
 		bullet_template.origin.x.v -= to_sp(COLUMN_W);
-		bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_inner);
-		bullets_add_regular_fixedspeed();
+		DEVIL_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_inner);
 
 		bullet_template.origin.x.v -= to_sp(COLUMN_W);
-		bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_outer);
-		bullets_add_regular_fixedspeed();
+		DEVIL_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_outer);
 
 		if(!bullet_intro_done) {
 			bullet_angle_outer += 0x04;
@@ -126,21 +129,20 @@ void near pattern_devil(void)
 			bullet_template.spawn_type = BST_NO_DECELERATE;
 			sara_set_spread(3, 0x30); // technically redundant
 
+			// This first decorative shot sets its angle before moving the origin.
+			// Later columns shift the origin before selecting their angle.
 			bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_outer);
-			bullet_template.origin.x.v += to_sp((COLUMN_W * (COLUMN_COUNT - 1))),
+			bullet_template.origin.x.v += to_sp((COLUMN_W * (COLUMN_COUNT - 1)));
 			bullets_add_regular_fixedspeed();
 
-			bullet_template.origin.x.v -= to_sp(COLUMN_W),
-			bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_inner);
-			bullets_add_regular_fixedspeed();
+			bullet_template.origin.x.v -= to_sp(COLUMN_W);
+			DEVIL_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_inner);
 
-			bullet_template.origin.x.v -= to_sp(COLUMN_W),
-			bullet_template.angle = (0x00 - bullet_angle_inner);
-			bullets_add_regular_fixedspeed();
+			bullet_template.origin.x.v -= to_sp(COLUMN_W);
+			DEVIL_FIRE_COL(0x00 - bullet_angle_inner);
 
-			bullet_template.origin.x.v -= to_sp(COLUMN_W),
-			bullet_template.angle = (0x00 - bullet_angle_outer);
-			bullets_add_regular_fixedspeed();
+			bullet_template.origin.x.v -= to_sp(COLUMN_W);
+			DEVIL_FIRE_COL(0x00 - bullet_angle_outer);
 
 			if(bullet_direction == CLOCKWISE) {
 				bullet_angle_outer -= 0x02;
@@ -215,6 +217,7 @@ void near pattern_devil(void)
 		}
 	}
 
+	#undef DEVIL_FIRE_COL
 	#undef laser_grow_delay
 	#undef bullet_angle_outer
 	#undef bullet_angle_inner
