@@ -58,3 +58,32 @@ maintained near-match direct-TCC source or the accepted independent config
 function. Future work should address the single remaining removal branch
 ordering with a new semantic code-generation hypothesis rather than repeat
 these lexical return-expression or compiler-pipeline variants.
+
+## Original-compiler shared error-label variants
+
+Seven further first-producer trials kept every ZUN resident effect and
+return value, but routed selected unsuccessful branches through one meaningful
+`resident_error: return 1` label. Error-first `-R` variants shared one,
+two, three or all five error exits. Success-first variants shared either all
+five, the other four, or only the config-file failure.
+
+| Source grouping | Native main() CODE bytes | Matching original byte positions |
+| --- | ---: | ---: |
+| Error-first, not-found through shared label | 262 | 117 / 269 |
+| Error-first, 2, 3 or all 5 shared exits | 262 | 117 / 269 each |
+| Success-first, all five shared exits | 262 | 106 / 269 |
+| Success-first, other four shared exits | 263 | 72 / 269 |
+| Success-first, config-file failure only | 261 | 66 / 269 |
+
+All seven were built as real TCC/TLINK tiny-model first producers using the
+symbol-only binder, with no target-derived bytes or inert compiler barriers.
+The shared error label makes Borland shorten the routine rather than restore
+the historical error-first layout. No row matches the complete original
+269-byte source scope. Trial source snapshots, actual linked outputs and
+compact machine-readable verdicts remain in ignored `.analysis/` at
+`gpt-web-zun-unified-error-exits-20261112.py`,
+`gpt-web-zun-unified-error-exits-20261112-results.json` and
+`gpt-web-zun-unified-error-*-20261112-first/`.
+The maintained 269-byte/17-difference candidate and independently accepted
+`cfg_init()` and resident DATA remain unchanged. Do not repeat these same
+shared-exit choices without a new source-level control-flow hypothesis.

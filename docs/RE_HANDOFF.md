@@ -16,12 +16,12 @@ counts there after any acceptance; this dated snapshot is for orientation.
 
 | Verified state at this handoff | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **535** (350 / 75 / 108 / 2) |
+| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **536** (350 / 75 / 109 / 2) |
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,508 bytes** |
-| Total source-authored C/C++ bytes | **126,292 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,053 / 5,296 / 4,971 / 8,559** |
-| Total unknown decoded bytes | **21,879** |
+| Source-authored exact semantic initialized DATA | **17,512 bytes** |
+| Total source-authored C/C++ bytes | **126,296 bytes** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **3,038 / 5,281 / 4,952 / 8,559** |
+| Total unknown decoded bytes | **21,830** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -34,6 +34,33 @@ Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
 
 ## Latest scoped progress
+
+- Fresh exact Boss-source improvements: [Sara's 1,824-byte twelve-function context](../src/main/boss/sara/sara.md)
+  now shares the red-cloud projectile setup while retaining two separate
+  random-angle draws; [Shinki's complete 959-byte controller](../src/main/boss/shinki/update_context.md)
+  shares genuine wing movement/callback and approach clock transitions;
+  [Alice's complete 939-byte controller](../src/main/boss/alice/update_context.md)
+  shares bullet-clear minimums and preserves the distinct phase/clock order.
+  All three complete units passed two fresh Borland/TLINK producers, every
+  original byte and ordered relocation, plus rejected compiled negatives.
+  Previously accepted CODE receives **no duplicate byte credit**.
+- Source-verified foreign Master 0.23 DATA: [FIL + DOS_ROPEN file defaults](reconstruction/MASTER_FILE_STATE_2026-11-12.md)
+  account for **6 bytes in each MAIN, OP, MAINE**, and
+  [PF buffer/error/key defaults plus RAND seed](reconstruction/MASTER_PF_RAND_DATA_2026-11-12.md)
+  account for **9 bytes per executable**. This closes **45 unknown vendor
+  DATA bytes**, with original author source where available, actual TASM
+  source/LEDATA, MAP placement and original MZ comparison. The PF extra
+  one-byte alignment in each remains **unknown**.
+- [MAINE all-cast line counters](../src/maine/allcast/line_counters_initial.md)
+  now have **four complete C++ semantic DATA bytes** from two native producers
+  and a compiled negative. The model is source-exact but does not assert an
+  identical historical C++/BSS translation-unit organization. Together the
+  new DATA reviews reduce unknown by **49 bytes**.
+- ZUN has seven additional real common-error-exit first-producer trials;
+  these compiled to **261–263 bytes**, not the 269-byte native entry.
+  [Their failures](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md)
+  and the still-nearest **269-byte/17-difference natural C++** are explicitly
+  separate from accepted resident `cfg_init()` credit.
 
 - Latest complete Boss source refinements: [Alice's X/Y puppet pursuit](../src/main/boss/alice/puppet_motion.md)
   **643 B**, [Yumeko's charged rotating spreads](reconstruction/YUMEKO_SPREAD_CHARGE_2026-11-12.md)
