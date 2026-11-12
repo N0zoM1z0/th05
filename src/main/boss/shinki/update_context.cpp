@@ -183,6 +183,20 @@ void pascal shinki_update(void)
 		palette_changed = true; \
 	} while(0)
 
+	// Both mid/final wing waves update physical floating position before
+	// executing the selected source-backed attack callback exactly once.
+	#define SHINKI_WING_FLIGHT_AND_ATTACK() { \
+		shinki_move_float(); \
+		wing_pattern(); \
+	}
+
+	// The three successive approach/preparation transitions retain their
+	// original phase-increment then frame-clock-reset ordering.
+	#define SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK() { \
+		boss.phase++; \
+		boss.phase_frame = 0; \
+	}
+
 	bool16 phase_done;
 
 	homing_target = boss.pos.cur;
@@ -296,8 +310,7 @@ void pascal shinki_update(void)
 			to_sp(PLAYFIELD_W / 2), to_sp(shinki_playfield_fraction_y(5 / 23.0f))
 		)) {
 			// Next phase
-			boss.phase++;
-			boss.phase_frame = 0;
+			SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK();
 		}
 		break;
 
@@ -307,8 +320,7 @@ void pascal shinki_update(void)
 		// Timeout condition
 		if(pattern_wing_preparation()) {
 			// Next phase
-			boss.phase++;
-			boss.phase_frame = 0;
+			SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK();
 			boss.pos.velocity.y.v = to_sp(SHINKI_RESET_Y_VELOCITY_PX);
 			boss_custombullets_render = shinki_custombullets_render;
 			// How generous for Yuuka players!
@@ -326,8 +338,7 @@ void pascal shinki_update(void)
 		if(Palettes[0].c.b < SHINKI_WING_PALETTE_BLUE_LIMIT) {
 			SHINKI_PALETTE_STEP_UP(b);
 		}
-		shinki_move_float();
-		wing_pattern();
+		SHINKI_WING_FLIGHT_AND_ATTACK();
 
 		// Timeout condition
 		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
@@ -358,8 +369,7 @@ void pascal shinki_update(void)
 		// Timeout condition
 		if(pattern_wings_to_purple()) {
 			// Next phase
-			boss.phase++;
-			boss.phase_frame = 0;
+			SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK();
 			wing_pattern = pattern_aimed_b6balls_and_symmetric_spreads;
 			phase_relative = SHW_WING_FIRST_PATTERN_INDEX;
 		}
@@ -372,8 +382,7 @@ void pascal shinki_update(void)
 		} else if(Palettes[0].c.r < SHINKI_DEVIL_PALETTE_RED_LIMIT) {
 			SHINKI_PALETTE_STEP_UP(r);
 		}
-		shinki_move_float();
-		wing_pattern();
+		SHINKI_WING_FLIGHT_AND_ATTACK();
 
 		// Timeout condition
 		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
@@ -452,6 +461,8 @@ void pascal shinki_update(void)
 	cheetos_update();
 	hud_hp_update_and_render(boss.hp, HP_TOTAL);
 
+	#undef SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK
+	#undef SHINKI_WING_FLIGHT_AND_ATTACK
 	#undef SHINKI_PALETTE_STEP_DOWN_BLUE
 	#undef SHINKI_PALETTE_STEP_UP
 	#undef phase_relative

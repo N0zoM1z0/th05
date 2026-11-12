@@ -313,3 +313,20 @@ original ordered relocations `[862, 461, 165, 128]`, and rejected the
 existing compiled semantic negative. The acceptance ledger was refreshed
 only for this single actual Boss owner. No full cold replay or generated
 padding/instruction insertion was used.
+
+## Source-coherent wing flight and approach transitions
+
+The complete 959-byte `shinki_update()` source now names two repeated
+physical wing-attack protocols. Both wing-rain and symmetric/Devil phases
+first call `shinki_move_float()` and then execute their currently selected
+`wing_pattern()` once. Three approach/preparation transitions also share
+the real phase increment followed by a reset of the phase-frame clock.
+All palette, bomb damage, hit scoring, callback selection, laser cleanup
+and stage logic retains its distinct timing and original call order.
+
+The focused replay in
+`.analysis/unit-replays/gpt-web-shinki-wing-phase-and-float-20261112-a/receipt.json`
+contains two independent Borland/TLINK positives matching all 959 original
+bytes and unchanged ordered MZ relocations, with a rejected compiled source
+negative. The surrounding Devil/final-pattern sources remain genuine compiler
+context, not a second credit claim; no full cold replay was used.
