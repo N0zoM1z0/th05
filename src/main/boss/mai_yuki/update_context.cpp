@@ -58,6 +58,18 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
     boss.phase_frame = 0; \
     boss.phase_state.patterns_seen = gate
 
+// Ordinary shared-fight phase advances move the phase before clearing its
+// clock. The small-explosion transition intentionally has an intervening
+// bullet-zap activation and remains separate from this exact protocol.
+#define MY_ADVANCE_FIGHT_PHASE() { \
+    boss.phase++; \
+    boss.phase_frame = 0; \
+}
+
+// The one-based defeated-character report is stored on boss2. All four
+// explosion/dialog decisions test the same genuine "Mai was defeated" code.
+#define MY_MAI_WAS_DEFEATED() (boss2.phase_state.patterns_seen == MY_DEFEATED_MAI)
+
 void pascal far mai_yuki_update(void)
 {
     int i;
@@ -86,8 +98,7 @@ void pascal far mai_yuki_update(void)
         }
         MY_INVINCIBLE_PAIR_HITTEST();
         if(boss.phase_frame >= MY_SETUP_EXIT_FRAME) {
-            boss.phase++;
-            boss.phase_frame = 0;
+            MY_ADVANCE_FIGHT_PHASE();
             snd_se_play(MY_SHARED_ENTRANCE_SE);
             bg_render_bombing_func = mai_yuki_bg_render;
         }
@@ -98,8 +109,7 @@ void pascal far mai_yuki_update(void)
         if(boss.phase_frame < MY_READY_EXIT_FRAME) {
             break;
         }
-        boss.phase++;
-        boss.phase_frame = 0;
+        MY_ADVANCE_FIGHT_PHASE();
         boss.mode = MY_MODE_ATTACK;
         boss.phase_state.patterns_seen = 0;
         mai_pattern_current = mai_pattern_random_crosses;
@@ -171,7 +181,7 @@ void pascal far mai_yuki_update(void)
 
     case MY_PHASE_EXPLODE_SMALL:
         if(boss.phase_frame == MY_SMALL_EXPLOSION_FIRST_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_MAI_WAS_DEFEATED()) {
                 boss_explode_small(ET_VERTICAL);
             } else {
                 boss2_explode_small(ET_VERTICAL);
@@ -179,7 +189,7 @@ void pascal far mai_yuki_update(void)
             break;
         }
         if(boss.phase_frame == MY_SMALL_EXPLOSION_BIG_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_MAI_WAS_DEFEATED()) {
                 boss_explode_big_circle();
                 boss.sprite = MY_BOSS_EXPLOSION_SPRITE_FIRST;
                 boss2.sprite = PAT_B4_STILL;
@@ -206,14 +216,13 @@ void pascal far mai_yuki_update(void)
         bg_render_bombing_func = tiles_render_all;
         slowdown_factor = MY_BIG_EXPLOSION_SLOWDOWN;
         if((boss.phase_frame % MY_BIG_EXPLOSION_SPRITE_FRAMES) == 0) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_MAI_WAS_DEFEATED()) {
                 boss.sprite++;
             } else {
                 boss2.sprite++;
             }
             if(boss.phase_frame >= MY_BIG_EXPLOSION_EXIT_FRAME) {
-                boss.phase++;
-                boss.phase_frame = 0;
+                MY_ADVANCE_FIGHT_PHASE();
             }
         }
         break;
@@ -222,7 +231,7 @@ void pascal far mai_yuki_update(void)
         PaletteTone = MY_SURVIVOR_DIALOG_PALETTE_TONE;
         palette_changed = true;
         if(boss.phase_frame == MY_SURVIVOR_DIALOG_ENTRY_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_MAI_WAS_DEFEATED()) {
                 dialog_load(MY_DIALOG_YUKI);
                 boss_bgm_title = MY_BGM_TITLE_YUKI;
                 boss.pos.cur = boss2.pos.cur;
@@ -245,6 +254,8 @@ void pascal far mai_yuki_update(void)
     hud_hp_update_and_render(boss.hp + boss2.hp, MY_BOTH_HP_TOTAL);
 }
 
+#undef MY_MAI_WAS_DEFEATED
+#undef MY_ADVANCE_FIGHT_PHASE
 #undef MY_SELECT_PATTERN_PAIR
 #undef MY_ENTER_REPOSITION_GATE
 #undef MY_INVINCIBLE_PAIR_HITTEST
