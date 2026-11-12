@@ -152,3 +152,46 @@ semantic mutation was rejected. Receipt:
 `.analysis/unit-replays/gpt-web-sara-flystep-laser-timing-20261111/receipt.json`.
 This refines already accepted authored C++ rather than claiming new target
 bytes or a whole-MAIN cold replay.
+
+## Attack-cadence and compiler byte-write semantics (2026-11-12)
+
+The complete **1,824-byte / 12-function** Sara Boss source now uses
+`projectile_rules.hpp` for its first-wave blue shot clocks, the starting
+clockwise/counterclockwise angles and ±10 turn steps, the red-stack
+rotation, charge/fire sound events, spin animation frequencies, ring
+volley periods, and the terminal laser corridor's color, geometry and
+initial per-phase scratch states. The two moving directions are kept
+separate from the existing five-way phase switch, rather than merging
+independent patterns or changing the original 16-byte phase-state union.
+The final corridor still creates its two fixed lasers with symmetric
+initial angles and preserves the four named rotation slowdown thresholds.
+Original score bonuses and the two original laser-stop slots are likewise
+named. All of these constants are gameplay semantics; the actual compiler
+emits no new DATA or helper function.
+
+The first native diagnostic emitted **1,806**, not the original 1,824,
+because Borland 4.02 changed some byte-wide writebacks when their
+literal integer deltas were replaced with enumerator expressions.
+Specifically, the clockwise/counterclockwise spiral angle updates
+emitted direct memory `ADD` instead of the original AL load/add/store
+sequence (three fewer bytes per function); the laser left/right
+rotation and spread angle updates likewise lost essential register-form
+instructions and changed the later function placements. This is a
+compiler-expression/ABI finding, **not** evidence that the shorter
+instructions belong to the original binary. Those five delicate
+writebacks remain natural original source arithmetic with literal
+small integer steps; surrounding timing, color and state semantics
+stay named. No dummy operation, branch barrier, instruction payload,
+or forced asm is inserted to restore code length.
+
+The corrected scoped replay at
+`.analysis/unit-replays/gpt-web-sara-projectile-rules-c/receipt.json`
+uses two independent real Borland producers and verifies all
+**1,824 original bytes**, including 1,813 instruction bytes, the
+10-byte five-way compiler phase table, one checked alignment zero,
+and the original literal ordered MZ relocation sites
+`[919,813,723,660,382,338,260,36,1427,1157]`.
+The compiled actual five-to-four red-spread stack mutation remains
+rejected. All twelve source-defined functions share this one complete
+accepted scope; no prior accepted bytes receive additional credit.
+The separate inexact Yumeko sword C++ experiments remain unaccepted.

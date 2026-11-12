@@ -4,6 +4,7 @@
 
 #pragma option -zCB1_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/sara/sara.hpp"
+#include "src/main/boss/sara/projectile_rules.hpp"
 
 
 // Constants
@@ -119,10 +120,10 @@ static void near phase_2_with_pattern(void)
 			(boss.phase_frame - 1), COL_GATHER_1, COL_GATHER_2
 		);
 		if(boss.phase_frame == 1) {
-			snd_se_play(8);
-			state->phase_2.angle_counterclockwise = 0x80;
-			state->phase_2.angle_clockwise = 0x00;
-			state->phase_2.angle_stacks = 0x08;
+			snd_se_play(SARA_CHARGE_SOUND);
+			state->phase_2.angle_counterclockwise = SARA_BLUE_COUNTERCLOCKWISE_INITIAL_ANGLE;
+			state->phase_2.angle_clockwise = SARA_BLUE_CLOCKWISE_INITIAL_ANGLE;
+			state->phase_2.angle_stacks = SARA_RED_STACK_INITIAL_ANGLE;
 		}
 		return;
 	}
@@ -134,7 +135,7 @@ static void near phase_2_with_pattern(void)
 }
 
 #define pattern_blue(pattern_angle, angle_delta) { \
-	if((boss.phase_frame % 2) == 0) { \
+	if((boss.phase_frame % SARA_BLUE_VOLLEY_INTERVAL) == 0) { \
 		bullet_template.spawn_type = BST_CLOUD_FORWARDS; \
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE; \
 		bullet_template.group = BG_SINGLE; \
@@ -148,17 +149,17 @@ static void near phase_2_with_pattern(void)
 
 void near pattern_blue_curve_counterclockwise(void)
 {
-	pattern_blue(state->phase_2.angle_counterclockwise, -0x0A);
+	pattern_blue(state->phase_2.angle_counterclockwise, SARA_BLUE_COUNTERCLOCKWISE_STEP);
 }
 
 void near pattern_blue_curve_clockwise(void)
 {
-	pattern_blue(state->phase_2.angle_clockwise, +0x0A);
+	pattern_blue(state->phase_2.angle_clockwise, SARA_BLUE_CLOCKWISE_STEP);
 }
 
 void near pattern_aimed_red_spread_stack(void)
 {
-	if(boss.phase_frame == (PHASE_2_PATTERN_START_FRAME + 16)) {
+	if(boss.phase_frame == SARA_RED_SPREAD_FIRE_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_SPREAD_STACK_AIMED;
@@ -173,7 +174,7 @@ void near pattern_aimed_red_spread_stack(void)
 
 void near pattern_red_stacks(void)
 {
-	if((boss.phase_frame % 8) == 0) {
+	if((boss.phase_frame % SARA_RED_STACK_INTERVAL) == 0) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_STACK;
@@ -184,7 +185,7 @@ void near pattern_red_stacks(void)
 		bullet_template.speed.v = sara_to_sp8(1.0f);
 		bullet_template_tune();
 		bullets_add_regular();
-		state->phase_2.angle_stacks -= 0x08;
+		state->phase_2.angle_stacks -= SARA_RED_STACK_ROTATION_STEP;
 		snd_se_play(15);
 	}
 }
@@ -195,11 +196,11 @@ static void near phase_3_with_pattern(void)
 		gather_add_only_3stack(
 			(boss.phase_frame - 16), COL_GATHER_1, COL_GATHER_2
 		);
-		if(boss.phase_frame == 16) {
-			snd_se_play(8);
+		if(boss.phase_frame == SARA_PHASE_THREE_GATHER_FIRE_FRAME) {
+			snd_se_play(SARA_CHARGE_SOUND);
 			boss.sprite = PAT_SARA_SPIN;
-			state->phase_3.angle_clockwise = (0x40 - 0x08);
-			state->phase_3.angle_counterclockwise = (0x40 + 0x08);
+			state->phase_3.angle_clockwise = (SARA_SPIN_CENTER_ANGLE - SARA_SPIN_SIDE_ANGLE_DELTA);
+			state->phase_3.angle_counterclockwise = (SARA_SPIN_CENTER_ANGLE + SARA_SPIN_SIDE_ANGLE_DELTA);
 			state->phase_3.ring_speed.v = sara_to_sp8(1.5f);
 		}
 		return;
@@ -208,15 +209,15 @@ static void near phase_3_with_pattern(void)
 	if(boss.phase_frame < SARA_SPIN_FAST_END) {
 		boss.sprite++;
 	} else if(boss.phase_frame < SARA_SPIN_HALF_SPEED_END) {
-		if((boss.phase_frame % 2) == 0) {
+		if((boss.phase_frame % SARA_SPIN_HALF_INTERVAL) == 0) {
 			boss.sprite++;
 		}
 	} else if(boss.phase_frame < SARA_SPIN_QUARTER_SPEED_END) {
-		if((boss.phase_frame % 4) == 0) {
+		if((boss.phase_frame % SARA_SPIN_QUARTER_INTERVAL) == 0) {
 			boss.sprite++;
 		}
 	} else if((boss.phase_frame < SARA_SPIN_EIGHTH_SPEED_END)) {
-		if((boss.phase_frame % 8) == 0) {
+		if((boss.phase_frame % SARA_SPIN_EIGHTH_INTERVAL) == 0) {
 			boss.sprite++;
 		}
 	}
@@ -234,7 +235,7 @@ static void near phase_3_with_pattern(void)
 
 void near pattern_pellet_arcs_at_expanding_random_angles(void)
 {
-	if((boss.phase_frame % 8) == 0) {
+	if((boss.phase_frame % SARA_PELLET_ARCS_FIRE_INTERVAL) == 0) {
 		bullet_template.spawn_type = BST_NO_DECELERATE;
 		bullet_template.patnum = 0;
 		bullet_template.group = BG_SPREAD;
@@ -257,42 +258,42 @@ void near pattern_pellet_arcs_at_expanding_random_angles(void)
 		bullet_template_tune();
 		bullets_add_regular();
 
-		snd_se_play(3);
+		snd_se_play(SARA_BULLET_SOUND);
 	}
 }
 
 void near pattern_random_red_rings(void)
 {
-	if((boss.phase_frame % 16) == 0) {
+	if((boss.phase_frame % SARA_RED_RING_FIRE_INTERVAL) == 0) {
 		bullet_template.spawn_type = BST_CLOUD_FORWARDS;
 		bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 		bullet_template.group = BG_RING;
 		bullet_template.angle = randring2_next16();
 		bullet_template.speed.v = sara_to_sp8(2.0f);
-		bullet_template.spread = 12;
+		bullet_template.spread = SARA_RED_RING_PROJECTILE_COUNT;
 		bullet_template_tune();
 		bullets_add_regular();
-		snd_se_play(3);
+		snd_se_play(SARA_BULLET_SOUND);
 	}
 }
 
 #define pattern_accelerating_rings(pattern_angle, angle_delta) { \
-	if((boss.phase_frame % 8) == 0) { \
+	if((boss.phase_frame % SARA_SPIRAL_FIRE_INTERVAL) == 0) { \
 		bullet_template.spawn_type = BST_NORMAL; \
 		bullet_template.group = BG_RING; \
-		bullet_template.spread = 3; \
+		bullet_template.spread = SARA_SPIRAL_BULLET_COUNT; \
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE; \
 		bullet_template.angle = pattern_angle; \
 		bullet_template.speed = state->phase_3.ring_speed; \
-		if((boss.phase_frame % 16) == 0) { \
+		if((boss.phase_frame % SARA_SPIRAL_EVERY_SECOND_FIRE) == 0) { \
 			bullet_template.speed.v /= 2; \
 		} \
 		bullet_template_tune(); \
 		bullets_add_regular(); \
-		snd_se_play(3); \
+		snd_se_play(SARA_BULLET_SOUND); \
 		\
 		pattern_angle += angle_delta; \
-		state->phase_3.ring_speed.v += to_sp(0.25f); \
+		state->phase_3.ring_speed.v += to_sp(SARA_SPIRAL_SPEED_INCREMENT_PX); \
 	} \
 }
 
@@ -309,7 +310,7 @@ void near pattern_accelerating_spirals_counterclockwise(void)
 void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 {
 	enum {
-		CORRIDOR_ANGLE = 0x14, // centered around 0x40
+		CORRIDOR_ANGLE = SARA_LASER_CORRIDOR_ANGLE_WIDTH, // centered around 0x40
 	};
 
 	if(boss.phase_frame == 1) {
@@ -318,16 +319,16 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 
 	if(boss.phase_frame == SARA_LASER_CREATE_FRAME) {
 		laser_template.coords.origin = boss.pos.cur;
-		laser_template.coords.angle = (-0x40 + 0x20);
-		laser_template.col = 8;
-		laser_template.coords.width.nonshrink = 8;
+		laser_template.coords.angle = (-SARA_LASER_CORRIDOR_CENTER_ANGLE + SARA_LASER_OFFSET_ANGLE);
+		laser_template.col = SARA_LASER_COLOR;
+		laser_template.coords.width.nonshrink = SARA_LASER_WIDTH;
 		laser_manual_fixed_spawn(X_RIGHT);
 
-		laser_template.coords.angle = (-0x40 - 0x20);
+		laser_template.coords.angle = (-SARA_LASER_CORRIDOR_CENTER_ANGLE - SARA_LASER_OFFSET_ANGLE);
 		laser_manual_fixed_spawn(X_LEFT);
-		state->phase_4.spread_angle = 0x00;
-		state->phase_4.random_ball_count = 1;
-		state->phase_4.laser_angle_interval = 1;
+		state->phase_4.spread_angle = SARA_LASER_INITIAL_SPREAD_ANGLE;
+		state->phase_4.random_ball_count = SARA_LASER_INITIAL_BALL_COUNT;
+		state->phase_4.laser_angle_interval = SARA_LASER_INITIAL_TURN_INTERVAL;
 		return;
 	}
 	if(boss.phase_frame <= SARA_LASER_CREATE_FRAME) {
@@ -456,7 +457,7 @@ void pascal sara_update(void)
 			gather_template.ring_points = 8;
 			boss.phase++;
 			boss.phase_frame = 0;
-			snd_se_play(13);
+			snd_se_play(SARA_FINAL_ENTRANCE_SOUND);
 			bg_render_bombing_func = sara_bg_render;
 		}
 		break;
@@ -506,7 +507,7 @@ void pascal sara_update(void)
 		}
 
 		// Next phase
-		boss_score_bonus(5);
+		boss_score_bonus(SARA_PATTERN_SCORE_BONUS);
 	phase_2_timed_out:
 		boss_phase_next(ET_NW_SE, HP_PHASE_3_END);
 		state->phase_3.pattern_frames = SARA_WAVE_3_PATTERN_FRAMES_INITIAL;
@@ -536,7 +537,7 @@ void pascal sara_update(void)
 		}
 
 		// Next phase
-		boss_score_bonus(5);
+		boss_score_bonus(SARA_PATTERN_SCORE_BONUS);
 	phase_3_timed_out:
 		boss_phase_next(ET_SW_NE, HP_PHASE_4_END);
 		break;
@@ -556,14 +557,14 @@ void pascal sara_update(void)
 		}
 
 		// Boss defeated
-		laser_stop(0);
-		laser_stop(1);
+		laser_stop(SARA_LASER_STOP_RIGHT);
+		laser_stop(SARA_LASER_STOP_LEFT);
 		boss.phase_frame = 0;
 		boss.phase = PHASE_BOSS_EXPLODE_SMALL;
 		break;
 
 	default:
-		boss_defeat_update(10);
+		boss_defeat_update(SARA_DEFEAT_SCORE_BONUS);
 		break;
 	}
 	hud_hp_update_and_render(boss.hp, HP_TOTAL);
