@@ -2,23 +2,33 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "fd4d366cc17426f433637b1d2b8d5e06814d52a27ab74b0d3469fb6013f0b373",
+  "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 105517,
-    "candidate_start": 105517,
-    "size": 645,
-    "target_sha256": "0e991e1bbb76f1cd837e556a5837881294708aaff83beb46b35b48d0c13f545b",
-    "candidate_sha256": "91a3fd28170413c397a2e8bdc85b20e46d29d128d76abe336448172b10666bf9",
+    "target_start": 70846,
+    "candidate_start": 70846,
+    "size": 204,
+    "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+    "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
     "raw_exact": false,
     "target_fixups": [
-      422,
-      98
+      182,
+      161,
+      140,
+      89,
+      70,
+      51,
+      27
     ],
     "candidate_fixups": [
-      422,
-      98
+      182,
+      161,
+      140,
+      89,
+      70,
+      51,
+      27
     ],
     "fixups_exact": true,
     "exact": false
@@ -2201,8 +2211,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2218,12 +2228,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2239,6 +2250,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -2282,11 +2294,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -2314,11 +2330,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -2339,84 +2359,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -2429,7 +2459,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -2497,8 +2527,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2514,12 +2544,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2535,6 +2566,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -2578,11 +2610,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -2610,11 +2646,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -2635,84 +2675,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -2725,7 +2775,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -2793,8 +2843,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2810,12 +2860,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -2831,6 +2882,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -2874,11 +2926,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -2906,11 +2962,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -2931,84 +2991,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -3021,7 +3091,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -3089,8 +3159,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3106,12 +3176,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3127,6 +3198,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -3170,11 +3242,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -3202,11 +3278,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -3227,84 +3307,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -3317,7 +3407,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -3385,8 +3475,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3402,12 +3492,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3423,6 +3514,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -3466,11 +3558,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -3498,11 +3594,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -3523,84 +3623,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -3613,7 +3723,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -3681,8 +3791,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3698,12 +3808,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -3719,6 +3830,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -3762,11 +3874,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -3794,11 +3910,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -3819,84 +3939,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -3909,7 +4039,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -3985,8 +4115,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4002,12 +4132,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4023,6 +4154,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -4066,11 +4198,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -4098,11 +4234,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -4123,84 +4263,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -4213,7 +4363,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -4273,8 +4423,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4290,12 +4440,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4311,6 +4462,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -4354,11 +4506,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -4386,11 +4542,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -4411,84 +4571,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -4501,7 +4671,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -4569,8 +4739,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4586,12 +4756,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4607,6 +4778,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -4650,11 +4822,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -4682,11 +4858,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -4707,84 +4887,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -4797,7 +4987,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -4857,8 +5047,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4874,12 +5064,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -4895,6 +5086,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -4938,11 +5130,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -4970,11 +5166,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -4995,84 +5195,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -5085,7 +5295,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -5145,8 +5355,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5162,12 +5372,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5183,6 +5394,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -5226,11 +5438,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -5258,11 +5474,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -5283,84 +5503,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -5373,7 +5603,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -5433,8 +5663,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5450,12 +5680,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5471,6 +5702,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -5514,11 +5746,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -5546,11 +5782,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -5571,84 +5811,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -5661,7 +5911,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -5721,8 +5971,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5738,12 +5988,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -5759,6 +6010,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -5802,11 +6054,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -5834,11 +6090,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -5859,84 +6119,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -5949,7 +6219,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -6009,8 +6279,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6026,12 +6296,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6047,6 +6318,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -6090,11 +6362,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -6122,11 +6398,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -6147,84 +6427,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -6237,7 +6527,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -6309,8 +6599,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6326,12 +6616,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6347,6 +6638,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -6390,11 +6682,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -6422,11 +6718,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -6447,84 +6747,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -6537,7 +6847,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -6613,8 +6923,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6630,12 +6940,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6651,6 +6962,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -6694,11 +7006,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -6726,11 +7042,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -6751,84 +7071,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -6841,7 +7171,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -6901,8 +7231,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "4b2e986bbc1daedc66e7f1a4f548ab559a3d793ba9a13897dd330e4314fbbddc",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "fb121e350d6c2e10b01ed579be5b06b21f742eb6c80a95499270b855a93265e0",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6918,12 +7248,13 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           },
           {
-            "sha256": "8bfc0fd0c55a63bc561263f82f1622b69b6ecf855b889648683484f5e123d22d",
-            "dependency_timestamp_normalized_sha256": "f57c7347c5a3e77f1fc0ff5bec49a905a4d0f77f6b4fa30adf0929099870900a",
+            "sha256": "d6d96e0e13ea3be65244e13aa03ea58852b45edc348dd6aff648c5435b057161",
+            "dependency_timestamp_normalized_sha256": "f6f7456debaaafd65d7096693c66e20df4a06ad23e167a467538d6ff2b3f504b",
             "module_name": "th05/boss_bg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -6939,6 +7270,7 @@
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
               "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp",
               "src/main/boss/shinki/background_rules.h"
             ]
           }
@@ -6982,11 +7314,15 @@
           },
           {
             "path": "src/main/boss/background.cpp",
-            "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+            "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
           },
           {
             "path": "src/main/boss/background.hpp",
             "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -7014,11 +7350,15 @@
         },
         {
           "path": "src/main/boss/background.cpp",
-          "sha256": "33ad3632e64201ea960a70085875e9f7d18ed98f46ccfb3ca26324cf4f63ccd7"
+          "sha256": "4254f2ce9fde2663688efcd7395589ed028d2d27d64c1b110cc45b1c303df5d1"
         },
         {
           "path": "src/main/boss/background.hpp",
           "sha256": "f2978700d486988e3167c0181a0bb6b428a168fd00baa69b35e94df89275c6ac"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -7039,84 +7379,94 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "46f3600c65c177fe8e1935be0de7444584bea5d5c53159ec705989de8db8be2d",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
-        "target_start": 140122,
-        "candidate_start": 140122,
-        "size": 2,
-        "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-        "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+        "target_start": 70846,
+        "candidate_start": 70846,
+        "size": 204,
+        "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+        "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
+        "candidate_fixups": [
+          182,
+          161,
+          140,
+          89,
+          70,
+          51,
+          27
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 140122,
-          "size": 2,
-          "module": "th05/bgseed.c",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-shinki-background-particle-seed-data",
-        "entry_sha256": "5eddc524fd7f4d4e2e90ef74974fc7f23ed83d568f18df15a0acbf467c8e1046",
+        "unit_id": "main-exalice-hexagram-draw",
+        "entry_sha256": "fbd9559d0fffb234a730d0217d6d08a7a3c36d186d2dcf3347a57095aefb56d1",
         "mutation": {
-          "unit": "main-shinki-background-particle-seed-data",
-          "source": "src/main/boss/shinki/background_rules.h",
-          "find": "#define SHB_PARTICLES_UNINITIALIZED (-1 & 0xff)",
-          "replace": "#define SHB_PARTICLES_UNINITIALIZED (-2 & 0xff)"
+          "unit": "main-exalice-hexagram-draw",
+          "source": "src/main/boss/exalice/hexagram.cpp",
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "b10e4d52849bcf2a443a278e6157d7d39722cd159a6c61cabc2be87575eb05cb",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 140122,
-          "candidate_start": 140122,
-          "size": 2,
-          "target_sha256": "ea5dbf9596d187e9500f23e9a680109475341cf4e81f7e043f7d97152c10772f",
-          "candidate_sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a",
+          "target_start": 70846,
+          "candidate_start": 70846,
+          "size": 204,
+          "target_sha256": "e047654a8839c0bbbc58e2d8de655b7c92c8d74a248580c1da86cbe7362da52c",
+          "candidate_sha256": "12a24695fb299749c3eb0a719891204dfb5c39d55654e6a0636d1afed624e37d",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
+          "candidate_fixups": [
+            182,
+            161,
+            140,
+            89,
+            70,
+            51,
+            27
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 140122,
-            "size": 2,
-            "module": "th05/bgseed.c",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "11d5296bb215995d7b2224ad95611ab80e6e6a3082c1d53df5d7683e1f15f052",
-          "dependency_timestamp_normalized_sha256": "ccffce516b782a5753dc533dbf7c653b6e7b8c89ad979425c4d66724d25af172",
-          "module_name": "th05/bgseed.c",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
+          "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bgseed.c",
-            "src/main/boss/shinki/bg_particle_seed.c",
-            "src/main/boss/shinki/background_rules.h"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 2,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 2,
-                "sha256": "59316c1a765f0c95af8be7f3f75371aa38612e5ceffc4785ef22f5541635413a"
-              }
-            ]
-          }
+            "th05/ex_hex.cpp",
+            "src/main/boss/exalice/hexagram.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/background.hpp",
+            "src/main/boss/movement.hpp",
+            "src/shared/geometry.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -7129,7 +7479,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bgseed.c"
+          "th05/ex_hex.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -67096,8 +67446,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "d3fd4f0896c37bb1ace09891df04f70f73bffefedafeeb19677fcc9d44cbd979",
-            "dependency_timestamp_normalized_sha256": "95283187a019e2a8099809f8acd3a505cab6ded4f6b365331e96a2bbc91ea303",
+            "sha256": "0aa8b1bd8ac3b7db20a21731ada44327a88cb6cdafcd1c820853d7d81cadf770",
+            "dependency_timestamp_normalized_sha256": "76abd36e18799a44f68974690dfa4dff026fdf406fa3f6a181872409a00faeeb",
             "module_name": "th05/ex_hex.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -67112,12 +67462,13 @@
               "src/shared/geometry.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp"
             ]
           },
           {
-            "sha256": "9887e0d9bb27b1d590d6cc9a16b467f829598e8d2ec12ec2aae907680c8ceb34",
-            "dependency_timestamp_normalized_sha256": "95283187a019e2a8099809f8acd3a505cab6ded4f6b365331e96a2bbc91ea303",
+            "sha256": "3a0b2f3136e79521f48c21a3ae58c39c2f97e662078fb013f74515e00177a88f",
+            "dependency_timestamp_normalized_sha256": "76abd36e18799a44f68974690dfa4dff026fdf406fa3f6a181872409a00faeeb",
             "module_name": "th05/ex_hex.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -67132,7 +67483,8 @@
               "src/shared/geometry.hpp",
               "src/shared/abi.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
-              "C:\\TC4\\INCLUDE\\_null.h"
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/boss/exalice/hexagram_rules.hpp"
             ]
           }
         ],
@@ -67179,7 +67531,11 @@
           },
           {
             "path": "src/main/boss/exalice/hexagram.cpp",
-            "sha256": "d81e0c9f6e7b3f59651bd9a79a143428d5ed17ea7d779ccbbd6a292ac14ac2d9"
+            "sha256": "cafcacfae3bc2196d6c8f712ccc4ce1ba043d46ac6c2c74f3e516b680554da9a"
+          },
+          {
+            "path": "src/main/boss/exalice/hexagram_rules.hpp",
+            "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -67207,7 +67563,11 @@
         },
         {
           "path": "src/main/boss/exalice/hexagram.cpp",
-          "sha256": "d81e0c9f6e7b3f59651bd9a79a143428d5ed17ea7d779ccbbd6a292ac14ac2d9"
+          "sha256": "cafcacfae3bc2196d6c8f712ccc4ce1ba043d46ac6c2c74f3e516b680554da9a"
+        },
+        {
+          "path": "src/main/boss/exalice/hexagram_rules.hpp",
+          "sha256": "1879eaa47df83318455fe0f8462625e8303d7c103edd71d663619df90e10c837"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -67224,7 +67584,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "c7fb4b746245ee13f3cad798ae7a119dc6b998948a3620334cbc64382bc348aa",
+      "replay_receipt_sha256": "da1a8556088b888d459373f4f69b5ca457751188ddd4637dcd2e8a80106fde78",
       "compiled_negative_control": {
         "target_start": 70846,
         "candidate_start": 70846,
@@ -67259,10 +67619,10 @@
         "mutation": {
           "unit": "main-exalice-hexagram-draw",
           "source": "src/main/boss/exalice/hexagram.cpp",
-          "find": "angle += (0x100 / 6);",
-          "replace": "angle += (0x100 / 5);"
+          "find": "angle += XHG_TRIANGLE_ROTATION;",
+          "replace": "angle += (XHG_FULL_ANGLE / 5);"
         },
-        "control_sha256": "a9368c5df0c001f82bfa7b6cad75eb8f0c0ebeabe6de8719fd34a68881a3c271",
+        "control_sha256": "4c3d5f41fdc348c56b3461297d15d689fbaf7bbba828aa47bb35ae26c975f713",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 70846,
@@ -67293,8 +67653,8 @@
           "exact": false
         },
         "omf": {
-          "sha256": "c621842bfe22a3650a8e2ef68fb650694eb84bafdd4ca8e3d62b2d73bb6a6cc6",
-          "dependency_timestamp_normalized_sha256": "9a22a5cbd984a24526ec6cc237462a7c8caa6f40d77a3b869015e57a4790f44b",
+          "sha256": "a5a9fc0ff8801ca169d155d9b9ec46569c12b6ab1e51f61daa4800a5c47cb75e",
+          "dependency_timestamp_normalized_sha256": "9d8a9c6b45b54d53cac31f61a884b03de541d61980b9efe208e018ae52727fab",
           "module_name": "th05/ex_hex.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
@@ -67309,7 +67669,8 @@
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
-            "C:\\TC4\\INCLUDE\\_null.h"
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/boss/exalice/hexagram_rules.hpp"
           ]
         },
         "compiler_arguments": [

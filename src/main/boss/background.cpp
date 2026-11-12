@@ -5,6 +5,7 @@
 #pragma option -zCBOSS_BG_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/background.hpp"
+#include "src/main/boss/exalice/hexagram_rules.hpp"
 #include "src/main/boss/shinki/background_rules.h"
 
 void pascal near sara_bg_render(void)
@@ -602,10 +603,10 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 
 	grcg_circle(HEXAGRAM_CENTER_X, HEXAGRAM_CENTER_Y, TO_PIXEL(radius));
 	int i = 0;
-	while(i < 2) {
+	while(i < XHG_TRIANGLE_COUNT) {
 		exalice_hexagram_point_set(tri_point_0, radius, angle);
-		exalice_hexagram_point_set(tri_point_1, radius, (angle + (0x100 / 3)));
-		exalice_hexagram_point_set(tri_point_2, radius, (angle - (0x100 / 3)));
+		exalice_hexagram_point_set(tri_point_1, radius, (angle + XHG_VERTEX_ANGLE));
+		exalice_hexagram_point_set(tri_point_2, radius, (angle - XHG_VERTEX_ANGLE));
 
 		TO_PIXEL_INPLACE(tri_point_0.x.v);
 		TO_PIXEL_INPLACE(tri_point_0.y.v);
@@ -625,7 +626,7 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 		);
 
 		i++;
-		angle += (0x100 / 6);
+		angle += XHG_TRIANGLE_ROTATION;
 	}
 
 	#undef tri_point_0
@@ -634,9 +635,9 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 void near exalice_hexagrams_update_and_render(void)
 {
 	enum hexagrams_flag_t {
-		UNINITIALIZED = 0,
-		TURN_RIGHT = 1,
-		TURN_LEFT = 2,
+		UNINITIALIZED = XHG_FLAG_UNINITIALIZED,
+		TURN_RIGHT = XHG_FLAG_CLOCKWISE,
+		TURN_LEFT = XHG_FLAG_COUNTERCLOCKWISE,
 		FLAG_COUNT,
 	};
 	typedef char background_hexagrams_flag_is_1[(sizeof(hexagrams_flag_t) == 1) ? 1 : -1];
@@ -645,34 +646,34 @@ void near exalice_hexagrams_update_and_render(void)
 
 	lineset_t near &set = linesets[0];
 	if(hexagrams_flag == UNINITIALIZED) {
-		for(i = 0; i < (LINESET_LINE_COUNT - 1); i++) {
-			set.radius[i].v = to_sp(1.0f);
+		for(i = 0; i < (LINESET_LINE_COUNT - XHG_LINE_EXCLUDE_LAST); i++) {
+			set.radius[i].v = to_sp(XHG_INITIAL_RADIUS_PX);
 			set.angle[i] = 0x00;
 		}
 		hexagrams_flag = TURN_RIGHT;
 	}
-	for(i = (LINESET_LINE_COUNT - 2); i > 0; i--) {
+	for(i = (LINESET_LINE_COUNT - XHG_LINE_SHIFT); i > 0; i--) {
 		set.radius[i] = set.radius[i - 1];
 		set.angle[i] = set.angle[i - 1];
 	}
-	set.radius[0].v += to_sp(5.0f);
-	if(set.radius[0].v >= to_sp(320.0f)) {
-		set.radius[0].v = to_sp(1.0f);
+	set.radius[0].v += to_sp(XHG_RADIUS_STEP_PX);
+	if(set.radius[0].v >= to_sp(XHG_RADIUS_LIMIT_PX)) {
+		set.radius[0].v = to_sp(XHG_INITIAL_RADIUS_PX);
 		hexagrams_flag = static_cast<hexagrams_flag_t>(
 			FLAG_COUNT - hexagrams_flag
 		);
 	}
 	if(hexagrams_flag == TURN_RIGHT) {
-		set.angle[0] += 0x01;
+		set.angle[0] += XHG_ANGLE_STEP;
 	} else {
-		set.angle[0] -= 0x01;
+		set.angle[0] -= XHG_ANGLE_STEP;
 	}
 
-	grcg_setcolor(GC_RMW, 8);
-	exalice_grcg_hexagram_put(set.radius[18].v, set.angle[18]);
-	grcg_setcolor(GC_RMW, 9);
-	exalice_grcg_hexagram_put(set.radius[9].v, set.angle[9]);
-	if(boss.phase < 9 || boss.phase > 12) {
+	grcg_setcolor(GC_RMW, XHG_COLOR_OUTER);
+	exalice_grcg_hexagram_put(set.radius[XHG_DIAMOND_LINE_OUTER].v, set.angle[XHG_DIAMOND_LINE_OUTER]);
+	grcg_setcolor(GC_RMW, XHG_COLOR_INNER);
+	exalice_grcg_hexagram_put(set.radius[XHG_DIAMOND_LINE_INNER].v, set.angle[XHG_DIAMOND_LINE_INNER]);
+	if(boss.phase < XHG_PALETTE_VARIATION_FIRST_PHASE || boss.phase > XHG_PALETTE_VARIATION_LAST_PHASE) {
 		grcg_setcolor(GC_RMW, V_WHITE);
 	}
 	exalice_grcg_hexagram_put(set.radius[0].v, set.angle[0]);

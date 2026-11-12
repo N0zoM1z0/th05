@@ -1,0 +1,26 @@
+// Extra Alice background: two 256-angle triangles, circular growth and
+// original 1-byte reverse-turn state. No new graphics or line storage.
+#ifndef TH05_EXALICE_HEXAGRAM_RULES_HPP
+#define TH05_EXALICE_HEXAGRAM_RULES_HPP
+
+#define XHG_TRIANGLE_COUNT 2
+#define XHG_FULL_ANGLE 0x100
+#define XHG_VERTEX_ANGLE (XHG_FULL_ANGLE / 3)
+#define XHG_TRIANGLE_ROTATION (XHG_FULL_ANGLE / 6)
+#define XHG_INITIAL_RADIUS_PX 1.0f
+#define XHG_RADIUS_STEP_PX 5.0f
+#define XHG_RADIUS_LIMIT_PX 320.0f
+#define XHG_ANGLE_STEP 0x01
+#define XHG_FLAG_UNINITIALIZED 0
+#define XHG_FLAG_CLOCKWISE 1
+#define XHG_FLAG_COUNTERCLOCKWISE 2
+#define XHG_LINE_EXCLUDE_LAST 1
+#define XHG_LINE_SHIFT 2
+#define XHG_DIAMOND_LINE_INNER 9
+#define XHG_DIAMOND_LINE_OUTER 18
+#define XHG_COLOR_OUTER 8
+#define XHG_COLOR_INNER 9
+#define XHG_PALETTE_VARIATION_FIRST_PHASE 9
+#define XHG_PALETTE_VARIATION_LAST_PHASE 12
+
+#endif

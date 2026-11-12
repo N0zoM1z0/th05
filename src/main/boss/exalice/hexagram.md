@@ -98,3 +98,15 @@ Saved import,317-test public CI, native ownership verification and all four
 empty incremental plans pass. Root final review:
 `.analysis/exalice-hexagram-root-final-review.json`, SHA-256
 `cc2db7566ffb19beacb456b7878e9949f43874c937ef443e7901f684ee7da243`.
+
+## Live backdrop consumer and source-shared triangles (2026-11-12)
+
+The maintained standalone 204-byte geometry leaf and the background
+producer's shared legacy draw body now use the same compile-time
+`hexagram_rules.hpp` vertex/rotation definitions. The associated
+220-byte EX-Alice hexagram animation preserves the exact original
+one-byte direction flag, 320-pixel radius restart and two nested line
+set indices 18/9. Two independent native producers prove the entire
+18-unit actual change closure and compiled rotation negative:
+`.analysis/unit-replays/gpt-web-exalice-hexagram-backdrop-a/receipt.json`.
+No new DATA or duplicate function ownership is claimed.

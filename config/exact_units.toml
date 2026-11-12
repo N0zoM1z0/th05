@@ -4170,8 +4170,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-exalice-hexagram-draw"
 source = "src/main/boss/exalice/hexagram.cpp"
-find = "angle += (0x100 / 6);"
-replace = "angle += (0x100 / 5);"
+find = "angle += XHG_TRIANGLE_ROTATION;"
+replace = "angle += (XHG_FULL_ANGLE / 5);"
 
 [[units]]
 id = "main-demo-play"
