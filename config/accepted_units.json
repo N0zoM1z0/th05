@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "0191c8f889e2060a49a0159dfeea8d3b28f9299052fdfbce959edbdd4600e618",
+  "replay_receipt_sha256": "450f9283033c97b4f5761befc2d6d5ba5e0ea2270ca46b6bfdfe598a4387244a",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138564,
-    "candidate_start": 138564,
-    "size": 40,
-    "target_sha256": "599a5982258b45b89ea8aed5fcdfe9d55afc7344d2c3599e762aa5943ee51353",
-    "candidate_sha256": "2eabadcf998b7f5ffd023fd0844bed6595080da987a21e4a4054d34ceee09fce",
+    "target_start": 138604,
+    "candidate_start": 138604,
+    "size": 50,
+    "target_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+    "candidate_sha256": "ad99411be0cd2e676a130ae0f8c0a16d3b0a307b8b9419ca05c3b75817acf20e",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138564,
-      "size": 40,
-      "module": "th05/ranklbl.c",
+      "start": 138604,
+      "size": 50,
+      "module": "th05/statlbl.c",
       "segment": "_DATA"
     }
   },
@@ -93952,6 +93952,262 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-hud-rank-labels-data"
+      ]
+    },
+    {
+      "id": "main-hud-stat-labels-data",
+      "entry_sha256": "450c45f5c11fd69b63c83fe9457001e1295b23ad4af212960c2414a5296d1d60",
+      "result": {
+        "id": "main-hud-stat-labels-data",
+        "entry_sha256": "450c45f5c11fd69b63c83fe9457001e1295b23ad4af212960c2414a5296d1d60",
+        "rounds": [
+          {
+            "target_start": 138604,
+            "candidate_start": 138604,
+            "size": 50,
+            "target_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+            "candidate_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138604,
+              "size": 50,
+              "module": "th05/statlbl.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138604,
+            "candidate_start": 138604,
+            "size": 50,
+            "target_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+            "candidate_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138604,
+              "size": 50,
+              "module": "th05/statlbl.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "acfba57b562197e30b23b590ed6a5d1c447d324e227ad64fa253dd9fc6726c32",
+            "dependency_timestamp_normalized_sha256": "fac38dfa3b76b664d5f5c8be4f0e94a6e910a4f4a622b75c0b9a2fea7a238179",
+            "module_name": "th05/statlbl.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/statlbl.c",
+              "src/main/hud/stat_labels.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 50,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "9f27005abe9d5783bcf1a364af2f92de655c762c50b62156dc8797dcfbf9725d",
+            "dependency_timestamp_normalized_sha256": "fac38dfa3b76b664d5f5c8be4f0e94a6e910a4f4a622b75c0b9a2fea7a238179",
+            "module_name": "th05/statlbl.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/statlbl.c",
+              "src/main/hud/stat_labels.c"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 50,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 50,
+                  "sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/statlbl.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/statlbl.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_stat_labels_bindings.asm",
+            "sha256": "1f704dddb7185ddf9bb3b016daa6b3708a3af856a5b53776b67991e35ab5ce56"
+          },
+          {
+            "path": "src/main/hud/stat_labels.c",
+            "sha256": "af1d7ed8fa8e597a355b8cb724c175cecd0f01ce27d8eb32ed022dc56fb7b6e8"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_stat_labels_bindings.asm",
+          "sha256": "1f704dddb7185ddf9bb3b016daa6b3708a3af856a5b53776b67991e35ab5ce56"
+        },
+        {
+          "path": "src/main/hud/stat_labels.c",
+          "sha256": "af1d7ed8fa8e597a355b8cb724c175cecd0f01ce27d8eb32ed022dc56fb7b6e8"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "450f9283033c97b4f5761befc2d6d5ba5e0ea2270ca46b6bfdfe598a4387244a",
+      "compiled_negative_control": {
+        "target_start": 138604,
+        "candidate_start": 138604,
+        "size": 50,
+        "target_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+        "candidate_sha256": "ad99411be0cd2e676a130ae0f8c0a16d3b0a307b8b9419ca05c3b75817acf20e",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138604,
+          "size": 50,
+          "module": "th05/statlbl.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-hud-stat-labels-data",
+        "entry_sha256": "450c45f5c11fd69b63c83fe9457001e1295b23ad4af212960c2414a5296d1d60",
+        "mutation": {
+          "unit": "main-hud-stat-labels-data",
+          "source": "src/main/hud/stat_labels.c",
+          "find": "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_THIRD",
+          "replace": "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_SECOND"
+        },
+        "control_sha256": "46ba46766b3edb89673c77abe3816114d02a73e9d0e8921b6c3e04fbefb4d63f",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138604,
+          "candidate_start": 138604,
+          "size": 50,
+          "target_sha256": "d194ff05eae0512438ba24e0bbc901c2d1d3376845964110f49c2571b9567110",
+          "candidate_sha256": "ad99411be0cd2e676a130ae0f8c0a16d3b0a307b8b9419ca05c3b75817acf20e",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138604,
+            "size": 50,
+            "module": "th05/statlbl.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "987320157bcf680975de5c664f1c019aa9b0718ead420c52816df90b886d86d8",
+          "dependency_timestamp_normalized_sha256": "9b859416ee33191cc967f0d21a4544f37f2ef489c2e4a43380cfd8a2be907288",
+          "module_name": "th05/statlbl.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/statlbl.c",
+            "src/main/hud/stat_labels.c"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 50,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 50,
+                "sha256": "ad99411be0cd2e676a130ae0f8c0a16d3b0a307b8b9419ca05c3b75817acf20e"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/statlbl.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-hud-stat-labels-data"
       ]
     }
   ]

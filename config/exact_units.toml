@@ -5926,3 +5926,25 @@ unit = "main-hud-rank-labels-data"
 source = "src/main/hud/rank_labels.c"
 find = "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_D"
 replace = "HG_BOLD_H, HG_BOLD_A, HG_BOLD_R, HG_BOLD_E"
+
+[[units]]
+id = "main-hud-stat-labels-data"
+source = "src/main/hud/stat_labels.c"
+module = "th05/statlbl.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAT_LABELS_TEXT -zPmain_01"
+bindings_source = "probes/units/main_stat_labels_bindings.asm"
+target_start = 138604
+size = 50
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-hud-stat-labels-data"
+source = "src/main/hud/stat_labels.c"
+find = "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_THIRD"
+replace = "HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_SECOND"

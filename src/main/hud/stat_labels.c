@@ -1,0 +1,36 @@
+/* Original HUD's small-gaiji words, not glyph bitmap or screen pixels. */
+#pragma option -zCSTAT_LABELS_TEXT -zPmain_01
+#ifdef __cplusplus
+#error Semantic HUD DATA requires the original C producer
+#endif
+
+enum HudSmallGlyph {
+    HSG_NULL = 0,
+    HSG_HISCORE_HI = 0xD6,
+    HSG_SCORE_SC, HSG_SCORE_OR, HSG_SCORE_E,
+    HSG_REIGEKI_REI, HSG_REIGEKI_GEKI,
+    HSG_REIMU_REI, HSG_REIMU_MU,
+    HSG_REIRYOKU_REI, HSG_REIRYOKU_RYOKU,
+    HSG_BOMB_FIRST, HSG_BOMB_SECOND,
+    HSG_PLAYER_FIRST, HSG_PLAYER_SECOND,
+    HSG_POWER_FIRST, HSG_POWER_SECOND,
+    HSG_ENEMY_FIRST = 0xEA,
+    HSG_ENEMY_SECOND, HSG_ENEMY_THIRD,
+    HSG_SUIKEI_FIRST, HSG_SUIKEI_SECOND
+};
+
+const unsigned char near hud_small_labels[10][5] = {
+    { HSG_SCORE_SC, HSG_SCORE_OR, HSG_SCORE_E, HSG_NULL, HSG_NULL },
+    { HSG_HISCORE_HI, HSG_SCORE_SC, HSG_SCORE_OR, HSG_SCORE_E, HSG_NULL },
+    { HSG_REIGEKI_REI, HSG_REIGEKI_GEKI, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_REIMU_REI, HSG_REIMU_MU, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_REIRYOKU_REI, HSG_REIRYOKU_RYOKU, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_BOMB_FIRST, HSG_BOMB_SECOND, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_PLAYER_FIRST, HSG_PLAYER_SECOND, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_POWER_FIRST, HSG_POWER_SECOND, HSG_NULL, HSG_NULL, HSG_NULL },
+    { HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_THIRD, HSG_NULL, HSG_NULL },
+    { HSG_SUIKEI_FIRST, HSG_SUIKEI_SECOND, HSG_NULL, HSG_NULL, HSG_NULL }
+};
+
+typedef char hud_small_label_stride[(sizeof(hud_small_labels[0]) == 5) ? 1 : -1];
+typedef char hud_small_labels_size[(sizeof(hud_small_labels) == 50) ? 1 : -1];
