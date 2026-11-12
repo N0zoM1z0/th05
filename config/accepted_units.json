@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "9622a1c2ce1149b595cb5e05a83a5e232b73e3981781daa3c53f07114bea03de",
+  "replay_receipt_sha256": "17d78a377e93ccce3cc1b52d2ed3ba60cd3ba56e805c95aac3d838472ae2bd09",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138766,
-    "candidate_start": 138766,
-    "size": 12,
-    "target_sha256": "93eb5317d997aaca0b708d659873b92e11ffcdf9d6b92831f12bb38adabe19fe",
-    "candidate_sha256": "4b3e59d33374fbf64231b2d6913e5b5661e7f80b6f3c6b1474fc1ec106face65",
+    "target_start": 138816,
+    "candidate_start": 138816,
+    "size": 9,
+    "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+    "candidate_sha256": "7b1287b4ce28584117c8655ad8c603f3e811f810e8561db4803697922f17675f",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 138766,
-      "size": 12,
-      "module": "th05/endname.c",
+      "start": 138816,
+      "size": 9,
+      "module": "th05/sc_endfn.c",
       "segment": "_DATA"
     }
   },
@@ -97112,6 +97112,282 @@
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
         "main-end-sequence-child-filenames-data"
+      ]
+    },
+    {
+      "id": "main-score-handoff-program-data",
+      "entry_sha256": "20359c57a3d02d919c468291c21b44d4d4a3378e6c23470e6e37ad5822b30f15",
+      "result": {
+        "id": "main-score-handoff-program-data",
+        "entry_sha256": "20359c57a3d02d919c468291c21b44d4d4a3378e6c23470e6e37ad5822b30f15",
+        "rounds": [
+          {
+            "target_start": 138816,
+            "candidate_start": 138816,
+            "size": 9,
+            "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+            "candidate_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138816,
+              "size": 9,
+              "module": "th05/sc_endfn.c",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 138816,
+            "candidate_start": 138816,
+            "size": 9,
+            "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+            "candidate_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 138816,
+              "size": 9,
+              "module": "th05/sc_endfn.c",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "c336bc941f4df802f3c2a34abd0a67d51245f23aa14d820a85963fa9a3c7c44f",
+            "dependency_timestamp_normalized_sha256": "214fdd255fe27bf288613069a753110e51441379e204929a65e933ddad7655c2",
+            "module_name": "th05/sc_endfn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_endfn.c",
+              "src/main/runtime/score_handoff_names.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "dba1611b123470824e019eadfb4d486a3edd57bbce037b7c73a903b8c3c0fb5d",
+            "dependency_timestamp_normalized_sha256": "214fdd255fe27bf288613069a753110e51441379e204929a65e933ddad7655c2",
+            "module_name": "th05/sc_endfn.c",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/sc_endfn.c",
+              "src/main/runtime/score_handoff_names.c",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 9,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 9,
+                  "sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_endfn.c"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/sc_endfn.c"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_score_handoff_names_bindings.asm",
+            "sha256": "1fa13837d7a578fb85c85778b555766ccb3f2043ab17e3d1cd17cbdb5a24b385"
+          },
+          {
+            "path": "src/main/runtime/score_handoff_names.c",
+            "sha256": "5524524347a27650ad4689f37aa70ae96874ba49aeabdcae60601ad3ff850cf7"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_score_handoff_names_bindings.asm",
+          "sha256": "1fa13837d7a578fb85c85778b555766ccb3f2043ab17e3d1cd17cbdb5a24b385"
+        },
+        {
+          "path": "src/main/runtime/score_handoff_names.c",
+          "sha256": "5524524347a27650ad4689f37aa70ae96874ba49aeabdcae60601ad3ff850cf7"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "17d78a377e93ccce3cc1b52d2ed3ba60cd3ba56e805c95aac3d838472ae2bd09",
+      "compiled_negative_control": {
+        "target_start": 138816,
+        "candidate_start": 138816,
+        "size": 9,
+        "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+        "candidate_sha256": "7b1287b4ce28584117c8655ad8c603f3e811f810e8561db4803697922f17675f",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 138816,
+          "size": 9,
+          "module": "th05/sc_endfn.c",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-score-handoff-program-data",
+        "entry_sha256": "20359c57a3d02d919c468291c21b44d4d4a3378e6c23470e6e37ad5822b30f15",
+        "mutation": {
+          "unit": "main-score-handoff-program-data",
+          "source": "src/main/runtime/score_handoff_names.c",
+          "find": "    \"maine\"",
+          "replace": "    \"mainf\""
+        },
+        "control_sha256": "d40ed7b2b9cc680dd6107daa78ed31f5ee874fd149a9b2604ae9357fd293e64f",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 138816,
+          "candidate_start": 138816,
+          "size": 9,
+          "target_sha256": "1fecc3701cb8b27a35ee175e2aa11c0dc2b4ea8b3cab50df59ae84c342d409a2",
+          "candidate_sha256": "7b1287b4ce28584117c8655ad8c603f3e811f810e8561db4803697922f17675f",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 138816,
+            "size": 9,
+            "module": "th05/sc_endfn.c",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "4e6f6dc9e12a1ef09f7e18edee1d0ab6bc1ffcb1da47df4f953ec2f17d5e21fb",
+          "dependency_timestamp_normalized_sha256": "ad19b8d62aa7b4136a7d8208eeb6da76c83b24657d585959f1765a17b72707ae",
+          "module_name": "th05/sc_endfn.c",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/sc_endfn.c",
+            "src/main/runtime/score_handoff_names.c",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 9,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 9,
+                "sha256": "7b1287b4ce28584117c8655ad8c603f3e811f810e8561db4803697922f17675f"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/sc_endfn.c"
+        ]
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-score-handoff-program-data"
       ]
     }
   ]

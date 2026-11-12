@@ -6125,3 +6125,25 @@ unit = "main-end-sequence-child-filenames-data"
 source = "src/main/runtime/end_binary_names.c"
 find = "extra_end_binary_name[] = \"maine\""
 replace = "extra_end_binary_name[] = \"mainf\""
+
+[[units]]
+id = "main-score-handoff-program-data"
+source = "src/main/runtime/score_handoff_names.c"
+module = "th05/sc_endfn.c"
+segment = "_DATA"
+wrapper_options = "-zCSCORE_HANDOFF_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_score_handoff_names_bindings.asm"
+target_start = 138816
+size = 9
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["filenames", "ui-text"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-score-handoff-program-data"
+source = "src/main/runtime/score_handoff_names.c"
+find = "    \"maine\""
+replace = "    \"mainf\""
