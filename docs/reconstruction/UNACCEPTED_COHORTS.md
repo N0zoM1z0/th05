@@ -1,4 +1,4 @@
-# Open source alternatives and resolved reconstruction candidates — 2026-11-11
+# Open source alternatives and resolved reconstruction candidates — 2026-11-12
 
 The acceptance manifests and ledgers, not historical first-producer notes,
 determine which complete original extents are owned. See
@@ -34,8 +34,11 @@ The unaccepted natural C++ alternative for Yumeko's 283-byte
 `swords_update()` is worth investigating only as a source-language refinement:
 the executable function already has a complete, exact reviewed-ASM owner.
 ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
-source problem. Its two private raw-exact diagnostics use ReC98 artificial
-compiler barriers, so neither is accepted as historical natural C++.
+source problem. Its two private raw-exact diagnostics use artificial
+compiler barriers, so neither is accepted as natural C++. Another
+[fourteen actual native option-flow trials](ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md)
+found one 269-byte natural variant that still differed at 252 original
+byte positions. Matching size or semantic output is not sufficient.
 
 **Resolved vendor CODE, not open game-authored work:** OP's `xxas`,
 `signal` and `setenvp` and MAINE's `setenvp` are now source-exact native
@@ -45,6 +48,19 @@ proposals; they do **not** supersede the later, explicit ownership
 reviews. Nearby runtime-writable CS: gaps, foreign DATA and BSS remain
 separate unknown regions. See the [updated vendor review](VENDOR_CONTEXT_REVIEW.md)
 and [source-linked CL.LIB contexts](CONTEXT_STRING_RUNTIME.md).
+
+## Corrected physical ownership: all-zero DATA is ambiguous
+
+An earlier Stage Clear source matched two real zero bytes at decoded
+`[222B4,222B6)`, but its original score consumer actually reads and
+writes the previous Miss/Bomb bytes at `[22432,22434)`. The first
+interval belongs to the original signed-word `_explosion_big_frame`
+consumer. Both have now been independently reconstructed and accepted
+at their correct DGROUP addresses. Read the
+[provenance correction](../../src/main/stage/bonus_previous_resources.md)
+and [Boss explosion frame](../../src/main/boss/explosion_frame.md)
+before accepting new zero-filled state: native bytes alone do not prove
+variable identity, type, or alignment ownership.
 
 ## Large unknown regions and superseded investigations
 

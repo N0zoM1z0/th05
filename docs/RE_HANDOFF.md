@@ -155,6 +155,15 @@ all **current ledger-referenced receipt directories and their complete
 native producer/negative snapshots**, plus the specific unresolved
 ZUN/Yumeko trial scripts and discriminating diagnostics.
 
+A conservative local cleanup on **2026-11-12** removed **79 obsolete
+unit-replay directories** and **11 orphaned one-off experiment outputs**,
+freeing approximately **88.4 MiB of allocated storage**. Every one of the
+**358 distinct replay receipt hashes referenced by current C/C++ ledgers**
+still resolves to a complete saved directory. No pinned target, toolchain,
+Wine prefix, calibration build, Ghidra project, ASM acceptance, or
+Yumeko/ZUN diagnostic baseline was deleted. The public checkout remains
+unchanged by these ignored-file deletions.
+
 Older failed or duplicate replays not referenced by a current ledger
 or useful live note may be removed to save storage; never delete a
 receipt simply because the public repo does not list it as a Git file.
