@@ -559,6 +559,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_maine_atan8_initial import reviewed_claims as maine_atan8_claims
     maine_atan8, maine_atan8_sha = maine_atan8_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_op_maine_bfnt_id import reviewed_claims as bfnt_claims
+    bfnt_data, bfnt_data_sha = bfnt_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_vendor_data import reviewed_claims
     cl_data, cl_data_sha = reviewed_claims(root, config["views"], verify_targets=verify_targets)
     from review_vendor_relocated_data import reviewed_claims as relocated_data_claims
@@ -800,6 +803,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, bgm_data[name])
         if name in maine_atan8:
             pieces = overlay_vendor(view["size"], pieces, maine_atan8[name])
+        if name in bfnt_data:
+            pieces = overlay_vendor(view["size"], pieces, bfnt_data[name])
         if name in byte_mask:
             pieces = overlay_vendor(view["size"], pieces, byte_mask[name])
         if name in large_byte:
@@ -968,6 +973,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["master_bgm_reserve_review_sha256"] = bgm_global_sha
         if maine_atan8_sha and name in maine_atan8:
             views[name]["maine_master_atan8_review_sha256"] = maine_atan8_sha
+        if bfnt_data_sha and name in bfnt_data:
+            views[name]["op_maine_master_bfnt_review_sha256"] = bfnt_data_sha
         if startup_sha and name in startup:
             views[name]["borland_c0_startup_review_sha256"] = startup_sha
         if cl_data_sha and name in cl_data:
