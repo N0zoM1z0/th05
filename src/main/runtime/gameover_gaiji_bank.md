@@ -16,11 +16,15 @@ The original table is shown in
 `_reference/ReC98/th05_main.asm`, with the following `asc_226B3`
 blank-caption record. The accepted `src/main/runtime/gameover.cpp`
 consumes the five named semantic phrases in the original continue menu.
-The C owner groups their byte arrays in one `GameoverGaijiBank` struct,
-with explicit member offsets; this expresses the exact physically
-adjacent data, but is not a claim about the original source's type or
-complete standalone linkage of the separate historical labels. The
-second three-byte blank caption and MAINE score-path filename are
+The C owner now emits **six independently addressable, mutable C objects**
+with the original real public names `gGAMEOVER`, `gCONTINUE_QUESTION`,
+`gYES`, `gNO`, `gCREDIT`, and `gameover_erase_in`. These match the accepted
+Game Over renderer's exact source-level external symbol dependencies; the
+renderer may use a read-only `const char` view while the historical glyph
+storage itself is writable. The individual publics are located by the
+native linker at DS `144A`, `1454`, `145F`, `1463`, `1466`, and `146D`,
+respectively. This removes the earlier unlinked aggregate placeholder.
+The second three-byte blank caption and MAINE score-path filename are
 separately accepted at `[21E40,21E49)`.
 
 The outside-only binder preserves MAIN01/MAIN03 and shared segment
@@ -32,3 +36,17 @@ match all 38 original bytes and full OMF/MAP DATA boundaries, with an
 empty ordered MZ fixup list. A compiled mutation changing the CREDIT
 word's D glyph to E is rejected. No unrelated or full-program replay
 was executed.
+
+## Compiler-generated public order after canonical C declarations (2026-11-12)
+
+A first attempt defined the five text arrays as `const`. Borland emitted
+the **writable** blank string at the beginning of `_DATA`, moving the
+five const arrays to later addresses; the 38-byte raw comparison failed.
+The corrected natural C declarations use `char near` for all six objects,
+which makes Borland emit the exact original record order and all six
+independent public symbols without a packed struct, copied bytes or linker
+padding. Both original DATA bytes and complete MAP/OMF boundaries match.
+The mutation of the CREDIT glyph is still compiled and rejected.
+The focused receipt is
+`.analysis/unit-replays/gpt-web-gameover-canonical-publics-b/receipt.json`;
+no other accepted unit was rerun for this source-only physical ABI change.
