@@ -1777,8 +1777,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-louise-initial-patterns"
 source = "src/main/boss/louise/patterns.cpp"
-find = "louise_set_spread(5, 6);"
-replace = "louise_set_spread(6, 6);"
+find = "louise_set_spread(LC_BLUE_VOLLEY_COUNT, LC_BLUE_VOLLEY_STEP);"
+replace = "louise_set_spread(LC_BLUE_VOLLEY_COUNT + 1, LC_BLUE_VOLLEY_STEP);"
 
 [[units]]
 id = "main-midboss-transition4"
@@ -1834,8 +1834,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-louise-later-patterns"
 source = "src/main/boss/louise/later.cpp"
-find = "bullet_template.angle = 0x24;"
-replace = "bullet_template.angle = 0x25;"
+find = "bullet_template.angle = LC_MIRROR_FIRST_ANGLE;"
+replace = "bullet_template.angle = LC_MIRROR_FIRST_ANGLE + 1;"
 
 [[units]]
 id = "main-alice-charge-patterns"
