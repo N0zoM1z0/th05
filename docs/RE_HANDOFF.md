@@ -1,4 +1,4 @@
-# TH05 reconstruction — next-agent handoff (2026-11-12)
+# TH05 reconstruction — next-agent handoff (2026-11-13)
 
 ## Where to start
 
@@ -20,8 +20,8 @@ counts there after any acceptance; this dated snapshot is for orientation.
 | Source-authored exact C/C++ CODE | **108,784 bytes** |
 | Source-authored exact semantic initialized DATA | **17,513 bytes** |
 | Total source-authored C/C++ bytes | **126,297 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **525 / 2,578 / 2,003 / 8,559** |
-| Total unknown decoded bytes | **13,665** |
+| Unknown bytes (MAIN / OP / MAINE / ZUN) | **317 / 2,370 / 1,795 / 8,559** |
+| Total unknown decoded bytes | **13,041** |
 | Global authored completion percentage | **Unmeasured** |
 
 The **98%** objective is not a measured percentage: neither packed file
@@ -34,6 +34,25 @@ Japanese game copy has candidate-local-attested provenance, not an
 independently proven pristine source image.
 
 ## Latest scoped progress
+
+- Fresh source-backed Master BGM track/effect BSS:
+  [198 bytes per EXE](reconstruction/MASTER_BGM_TRACK_BSS_2026-11-13.md)
+  are confirmed by original `B_DATA.ASM`/`BGM.INC`, actual TASM `_BSS`
+  PUBDEF and zero initialized-data records. Extending the existing
+  [compact Master BSS review](reconstruction/MASTER_COMPACT_BSS_2026-11-12.md)
+  recovered another 10 bytes of VSYNC counters/vector/delay per EXE.
+  These **624 previously unknown bytes** are source-backed unwritten storage,
+  with zero C/C++ CODE or initialized DATA credit.
+- Fresh complete Boss source: [Shinki's four-column Devil](reconstruction/SHINKI_DEVIL_COLUMN_PROTOCOL_2026-11-13.md)
+  passed exact incremental replay of 12 affected original-order units,
+  including 802-byte Devil and 959-byte `shinki_update`; the
+  [EX-Alice 1,060-byte controller](reconstruction/EXALICE_WAVES_CONTROL_FLOW_2026-11-13.md)
+  retains exact phase continuation, relocations and compiled negative.
+  Both are changes to already accepted C++ CODE, not additional credited bytes.
+- [CDG slot BSS source/target discrepancy](reconstruction/CDG_STORAGE_TARGET_BOUNDARY_2026-11-13.md):
+  do not claim original zero-initialized arrays from source-only TASM BSS
+  locations. MAIN's file-backed image ends before its CDG slots, while
+  OP/MAINE contain nonzero or truncated original data at their linker positions.
 
 - Current exact Boss source consolidation: the two
   [Alice charged attack contexts](reconstruction/ALICE_CHARGED_ATTACKS_SHARED_SOURCE_2026-11-12.md)
@@ -53,7 +72,7 @@ independently proven pristine source image.
   contribute **768 game-source reserve bytes**. These last 864 bytes have
   **zero initialized DATA/CODE credit**; all three scopes were checked against
   real object/MAP/target data, without claiming runtime zeroes as initializers.
-  Current total unknown is **13,665**, from the gapless ownership ledger.
+  Current total unknown is **13,041**, from the gapless ownership ledger.
 - ZUN's remaining near-exact `main()` still has the verified 269-byte size but
   17 original-byte mismatches in the `-R` block. Sixteen additional genuine
   original-compiler *error-first nested-success* variants all canonicalized
