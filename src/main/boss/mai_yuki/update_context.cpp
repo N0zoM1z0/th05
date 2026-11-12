@@ -44,6 +44,13 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
         MY_SETUP_HIT_EFFECT \
     )
 
+// Both paired attack callback banks advance using the same original
+// alternating phase index. The first and final banks differ in content;
+// each read of the counter remains at its native call site.
+#define MY_SELECT_PATTERN_PAIR(mai_bank, yuki_bank) \
+    mai_pattern_current = mai_bank[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK]; \
+    yuki_pattern_current = yuki_bank[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK]
+
 // HP gates force the same shared Boss state into another reposition cycle;
 // the chosen wave index is an actual threshold, not a new phase.
 #define MY_ENTER_REPOSITION_GATE(gate) \
@@ -122,14 +129,12 @@ void pascal far mai_yuki_update(void)
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen < MY_PATTERN_FIRST_END) {
-                    mai_pattern_current = MAI_PATTERNS_FIRST[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
-                    yuki_pattern_current = YUKI_PATTERNS_FIRST[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
+                    MY_SELECT_PATTERN_PAIR(MAI_PATTERNS_FIRST, YUKI_PATTERNS_FIRST);
                 } else if(boss.phase_state.patterns_seen < MY_PATTERN_LASER_END) {
                     mai_pattern_current = mai_pattern_tracking_laser;
                     yuki_pattern_current = YUKI_PATTERNS_LASER[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
                 } else if(boss.phase_state.patterns_seen < MY_PATTERN_FINAL_END) {
-                    mai_pattern_current = MAI_PATTERNS_FINAL[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
-                    yuki_pattern_current = YUKI_PATTERNS_FINAL[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK];
+                    MY_SELECT_PATTERN_PAIR(MAI_PATTERNS_FINAL, YUKI_PATTERNS_FINAL);
                 } else {
                     boss.phase_state.patterns_seen = 0;
                     // Pattern exhaustion selects Mai's defeat (Yuki survives).
@@ -240,5 +245,6 @@ void pascal far mai_yuki_update(void)
     hud_hp_update_and_render(boss.hp + boss2.hp, MY_BOTH_HP_TOTAL);
 }
 
+#undef MY_SELECT_PATTERN_PAIR
 #undef MY_ENTER_REPOSITION_GATE
 #undef MY_INVINCIBLE_PAIR_HITTEST
