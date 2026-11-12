@@ -6741,3 +6741,25 @@ unit = "main-exalice-laser-and-sweep-initial-data"
 source = "src/main/boss/exalice/attack_state_data.cpp"
 find = "EXF_FAN_CENTER_X_PX * 16"
 replace = "(EXF_FAN_CENTER_X_PX + 1) * 16"
+
+[[units]]
+id = "main-frame-counter-initial-data"
+source = "src/main/runtime/frame_counter_data.cpp"
+module = "th05/framect.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_frame_counter_data_bindings.asm"
+target_start = 0x22892
+size = 10
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-frame-counter-initial-data"
+source = "src/main/runtime/frame_counter_data.cpp"
+find = "total_std_frames = 0;"
+replace = "total_std_frames = 1;"

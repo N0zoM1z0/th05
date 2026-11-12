@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "dfeb3c04cf68a7a9daea7c41bc9ed3422201b2af84fc22f6bd93f7bd10782d6f",
+  "replay_receipt_sha256": "2c9f4f6263e44238c85f6a91c275a86e1625c089daee2b7bcca0adada571e748",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 140136,
-    "candidate_start": 140136,
-    "size": 4,
-    "target_sha256": "c22ceee66b8ab104483c83053173b33f992dd4fcb457284c60ef9d699a1c7059",
-    "candidate_sha256": "c18048b49abe038ff632c6d354e8c986776154035fad0cf60db0c847304a1855",
+    "target_start": 141458,
+    "candidate_start": 141458,
+    "size": 10,
+    "target_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+    "candidate_sha256": "f1241402b2c1031c56f7c87f546113b8d84a79bb91bc6fe337759d1b127116b4",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 140136,
-      "size": 4,
-      "module": "th05/exlast.cpp",
+      "start": 141458,
+      "size": 10,
+      "module": "th05/framect.cpp",
       "segment": "_DATA"
     }
   },
@@ -107760,6 +107760,259 @@
           "-ml",
           "-DBINARY='M'",
           "th05/exlast.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-frame-counter-initial-data",
+      "entry_sha256": "dfe46f8664337bc74c4dbc4f9952721462489ac3b498f72606aae57c8cf6713b",
+      "result": {
+        "id": "main-frame-counter-initial-data",
+        "entry_sha256": "dfe46f8664337bc74c4dbc4f9952721462489ac3b498f72606aae57c8cf6713b",
+        "rounds": [
+          {
+            "target_start": 141458,
+            "candidate_start": 141458,
+            "size": 10,
+            "target_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+            "candidate_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141458,
+              "size": 10,
+              "module": "th05/framect.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 141458,
+            "candidate_start": 141458,
+            "size": 10,
+            "target_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+            "candidate_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 141458,
+              "size": 10,
+              "module": "th05/framect.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "a720f77068dda150d645e800102ebc0834b24beda75b11f5d768fb2394431133",
+            "dependency_timestamp_normalized_sha256": "c30a30fb6fe036e0c1332ee1a3d6bd833d9c12b571d2d6500aad242cf2289ded",
+            "module_name": "th05/framect.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/framect.cpp",
+              "src/main/runtime/frame_counter_data.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 10,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 10,
+                  "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "a9bfb35d8069c910f0323336ff35ff045796e333389ffed98ccf6bd7d529e795",
+            "dependency_timestamp_normalized_sha256": "c30a30fb6fe036e0c1332ee1a3d6bd833d9c12b571d2d6500aad242cf2289ded",
+            "module_name": "th05/framect.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/framect.cpp",
+              "src/main/runtime/frame_counter_data.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 10,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 10,
+                  "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/framect.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/framect.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_frame_counter_data_bindings.asm",
+            "sha256": "ad7a51ff90cd016aa47897581fdf8674ea2f5cbd48222b2534ddd6797424036d"
+          },
+          {
+            "path": "src/main/runtime/frame_counter_data.cpp",
+            "sha256": "681dfcfdaec48fbfc588c51849603ab2b9bc5bc68341f717cc48a399ce744612"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_frame_counter_data_bindings.asm",
+          "sha256": "ad7a51ff90cd016aa47897581fdf8674ea2f5cbd48222b2534ddd6797424036d"
+        },
+        {
+          "path": "src/main/runtime/frame_counter_data.cpp",
+          "sha256": "681dfcfdaec48fbfc588c51849603ab2b9bc5bc68341f717cc48a399ce744612"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "2c9f4f6263e44238c85f6a91c275a86e1625c089daee2b7bcca0adada571e748",
+      "compiled_negative_control": {
+        "target_start": 141458,
+        "candidate_start": 141458,
+        "size": 10,
+        "target_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+        "candidate_sha256": "f1241402b2c1031c56f7c87f546113b8d84a79bb91bc6fe337759d1b127116b4",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 141458,
+          "size": 10,
+          "module": "th05/framect.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-frame-counter-initial-data",
+        "entry_sha256": "dfe46f8664337bc74c4dbc4f9952721462489ac3b498f72606aae57c8cf6713b",
+        "mutation": {
+          "unit": "main-frame-counter-initial-data",
+          "source": "src/main/runtime/frame_counter_data.cpp",
+          "find": "total_std_frames = 0;",
+          "replace": "total_std_frames = 1;"
+        },
+        "control_sha256": "6e375387002b2d3b744aeaf6b8db2df043b336d3f56a98832f327978a104f7b7",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 141458,
+          "candidate_start": 141458,
+          "size": 10,
+          "target_sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca",
+          "candidate_sha256": "f1241402b2c1031c56f7c87f546113b8d84a79bb91bc6fe337759d1b127116b4",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 141458,
+            "size": 10,
+            "module": "th05/framect.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "db499d9e742e83ba39ad9c848c35af4155cd244b2dff4233639f0d6c4d46241f",
+          "dependency_timestamp_normalized_sha256": "3f51bc2c0e268db11f2ab84c4866cbbd056c5616db41f98f733c5960ee0862ee",
+          "module_name": "th05/framect.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/framect.cpp",
+            "src/main/runtime/frame_counter_data.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 10,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 10,
+                "sha256": "f1241402b2c1031c56f7c87f546113b8d84a79bb91bc6fe337759d1b127116b4"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/framect.cpp"
         ]
       },
       "receipt_aggregate_pass": true
