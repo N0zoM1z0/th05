@@ -52,3 +52,24 @@ recompiled the canonical owner twice, exactly reproduced the full 192
 original bytes, all 28 ordered far-pointer fixups, the complete DATA
 OMF/MAP contribution, and rejected its compiled quarter-change negative.
 Only this affected accepted unit needed rebuilding.
+
+## Canonical C/CPP filename linkage and 192-byte revalidation
+
+The filename producer is real C, so `background_index.hpp` now declares
+`allcast_background_filenames[4][7][10]` with explicit C linkage. The C++
+index expresses each source-derived 10-byte string as the address of its
+first character, retains the four separate seven-name programs, and uses
+a single initializer macro so no repeated pointer is silently shortened.
+The original mutable pointer array and signed quarter selectors remain
+unchanged. This corrects the cross-translation-unit ABI rather than
+adding a second owner for the same interval.
+
+A duplicate proposal for `[10870,10930)` was rejected by the progress
+ledger's interval-overlap check even though its independent 192-byte
+compiler comparison was exact. The already accepted
+`maine-allcast-background-pointer-index-data` owner was retained; no
+second 192-byte acceptance is imported. The canonical source/ABI update
+was rebuilt with the real Borland compiler twice in the same affected
+unit, reproducing all 192 target bytes and the 28 original descending
+segment fixups. The compiled quarter-selection mutation is rejected:
+`.analysis/unit-replays/gpt-web-maine-bg-index-canonical-abi-a/receipt.json`.
