@@ -6565,3 +6565,25 @@ unit = "main-stage-bonus-previous-resource-counters-data"
 source = "src/main/stage/bonus_previous_resources.c"
 find = "bonus_previous_bomb_count = 0;"
 replace = "bonus_previous_bomb_count = 1;"
+
+[[units]]
+id = "main-stage2-transition-particle-and-palette-data"
+source = "src/main/stage/stage2_transition_counters.c"
+module = "th05/s2trans.c"
+segment = "_DATA"
+wrapper_options = "-zCSTAGE2_TRANSITION_DATA_TEXT -zPmain_01"
+bindings_source = "probes/units/main_stage2_transition_counters_bindings.asm"
+target_start = 0x22364
+size = 4
+functions = 0
+origin = "compiler-generated-c-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-stage2-transition-particle-and-palette-data"
+source = "src/main/stage/stage2_transition_counters.c"
+find = "stage2_tone_offset = 0;"
+replace = "stage2_tone_offset = 1;"
