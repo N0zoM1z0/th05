@@ -2,6 +2,18 @@
 #pragma option -zCEXALICE_LAT_TEXT -zPmain_03
 #include "src/main/boss/exalice/later.hpp"
 
+// Every four ticks, the firewave volley launches an angle and its exact
+// signed mirror. The angle negation must occur after the first real spawn.
+#define EXALICE_FIREWAVE_MIRROR_PAIR() { \
+    bullet_template.angle = boss_statebyte[14]; \
+    bullets_add_regular(); \
+    bullet_template.angle = -bullet_template.angle; \
+    bullets_add_regular(); \
+}
+
+// Both finite post-charge patterns finish on the same original phase frame.
+#define EXALICE_LATER_FINISHED() (boss.phase_frame == 128)
+
 bool near exalice_pattern_firewave_fans(void)
 {
     if(boss.phase_frame == 64) {
@@ -16,10 +28,7 @@ bool near exalice_pattern_firewave_fans(void)
             bullet_template.group = BG_SPREAD_AIMED;
             exalice_set_spread(5, 6);
             bullet_template.speed.v = to_sp(5);
-            bullet_template.angle = boss_statebyte[14];
-            bullets_add_regular();
-            bullet_template.angle = -bullet_template.angle;
-            bullets_add_regular();
+            EXALICE_FIREWAVE_MIRROR_PAIR();
             if(boss_statebyte[13] == 0) {
                 boss_statebyte[14] -= 3;
                 if(boss_statebyte[14] <= 0x14) {
@@ -86,7 +95,7 @@ bool near exalice_pattern_gravity_stacks(void)
             bullets_add_regular();
         }
     }
-    return (boss.phase_frame == 128);
+    return EXALICE_LATER_FINISHED();
 }
 
 bool near exalice_pattern_diamond_rings(void)
@@ -105,5 +114,8 @@ bool near exalice_pattern_diamond_rings(void)
         bullets_add_regular();
         snd_se_play(3);
     }
-    return (boss.phase_frame == 128);
+    return EXALICE_LATER_FINISHED();
 }
+
+#undef EXALICE_LATER_FINISHED
+#undef EXALICE_FIREWAVE_MIRROR_PAIR
