@@ -21,8 +21,8 @@
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 64,
-    "reviewed-uninitialized-vendor-storage": 6468,
-    "unknown": 14710,
+    "reviewed-uninitialized-vendor-storage": 6648,
+    "unknown": 14530,
     "verified-vendor-code": 138283,
     "verified-vendor-initialized-data": 7862
   },
@@ -44,8 +44,8 @@
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-padding": 89,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "reviewed-uninitialized-vendor-storage": 2156,
-        "unknown": 874,
+        "reviewed-uninitialized-vendor-storage": 2216,
+        "unknown": 814,
         "verified-vendor-code": 47400,
         "verified-vendor-initialized-data": 2762
       },
@@ -7542,8 +7542,46 @@
         },
         {
           "start": 143302,
-          "end": 143452,
+          "end": 143382,
           "kind": "unknown"
+        },
+        {
+          "start": 143382,
+          "end": 143386,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "JS_STAT",
+          "source": "JS.ASM/JS_STAT",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 143386,
+          "end": 143434,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "PALETTES",
+          "source": "PAL.ASM/PALETTES",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 143434,
+          "end": 143444,
+          "kind": "unknown"
+        },
+        {
+          "start": 143444,
+          "end": 143452,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "MEM_WORK",
+          "source": "MEM.ASM/MEM_WORK",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 143452,
@@ -7609,6 +7647,7 @@
       "master_timer_respal_review_sha256": "4baedf7246a9e4fc4fb883e2a7e8c82e020956ba49579294b89cae53ed521e6d",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
+      "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "40c84b589fb1f037c3ef26f5f0e254116e78492dab1b6e529031dc0c5a07ab14",
       "cl_relocated_data_review_sha256": "62a8780355607b2556834a6023ac8bb1ca7f477494e70787348fbfd4fb4e3701",
@@ -7637,8 +7676,8 @@
         "reviewed-embedded-font-bitmap": 72,
         "reviewed-embedded-sprite-bitmap": 28,
         "reviewed-uninitialized-game-storage": 32,
-        "reviewed-uninitialized-vendor-storage": 2156,
-        "unknown": 2926,
+        "reviewed-uninitialized-vendor-storage": 2216,
+        "unknown": 2866,
         "verified-vendor-code": 44923,
         "verified-vendor-initialized-data": 2372
       },
@@ -10804,8 +10843,46 @@
         },
         {
           "start": 73128,
-          "end": 73280,
+          "end": 73210,
           "kind": "unknown"
+        },
+        {
+          "start": 73210,
+          "end": 73214,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "JS_STAT",
+          "source": "JS.ASM/JS_STAT",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 73214,
+          "end": 73262,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "PALETTES",
+          "source": "PAL.ASM/PALETTES",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 73262,
+          "end": 73272,
+          "kind": "unknown"
+        },
+        {
+          "start": 73272,
+          "end": 73280,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "MEM_WORK",
+          "source": "MEM.ASM/MEM_WORK",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 73280,
@@ -10863,6 +10940,7 @@
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
+      "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "master_machine_graphics_review_sha256": "97c421268c7202cc089df481e063dd68102574a94ae4100d65673cd4563cec25",
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
@@ -10889,8 +10967,8 @@
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-padding": 8,
         "reviewed-uninitialized-game-storage": 32,
-        "reviewed-uninitialized-vendor-storage": 2156,
-        "unknown": 2351,
+        "reviewed-uninitialized-vendor-storage": 2216,
+        "unknown": 2291,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2618
       },
@@ -14137,8 +14215,46 @@
         },
         {
           "start": 73306,
-          "end": 73452,
+          "end": 73382,
           "kind": "unknown"
+        },
+        {
+          "start": 73382,
+          "end": 73386,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "JS_STAT",
+          "source": "JS.ASM/JS_STAT",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 73386,
+          "end": 73434,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "PALETTES",
+          "source": "PAL.ASM/PALETTES",
+          "authored_credit": 0,
+          "instruction_bytes": 0
+        },
+        {
+          "start": 73434,
+          "end": 73444,
+          "kind": "unknown"
+        },
+        {
+          "start": 73444,
+          "end": 73452,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "content_kind": "source-question-mark-struct",
+          "library": "Master 0.23",
+          "member": "MEM_WORK",
+          "source": "MEM.ASM/MEM_WORK",
+          "authored_credit": 0,
+          "instruction_bytes": 0
         },
         {
           "start": 73452,
@@ -14197,6 +14313,7 @@
       "game_pi_reserve_review_sha256": "d2290af6e2c8a5c80be000a563ea5546207065e543f998ea4ee51e28d98eb5a7",
       "master_bgm_reserve_review_sha256": "d9e48643245115a1398928f4174d088d609bd2b6eae2612e2bc198c124f85240",
       "master_superpa_reserve_review_sha256": "b88b2ed30c15100ca7d90368126c8422369a17f0a0ce267283de42a6730a729f",
+      "master_compact_bss_review_sha256": "3fc886ea96aa7ada5781c99ec449b87326a328f200f25cc2a994e33df988e8a8",
       "master_machine_graphics_review_sha256": "97c421268c7202cc089df481e063dd68102574a94ae4100d65673cd4563cec25",
       "maine_master_atan8_review_sha256": "7737c91e14b74ee2ee14436f550c4b4180fd84410e9d0f4c15b3cff4c2548e02",
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
