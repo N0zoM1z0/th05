@@ -534,7 +534,6 @@ colmap_add:
 
 void near cutscene_animate(void)
 {
-	extern ShiftJISKanji near CUTSCENE_KANJI[];
 
 	int gaiji;
 	unsigned char c;

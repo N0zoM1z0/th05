@@ -271,3 +271,22 @@ reproduces its full 64-byte sparse switch table and 42 original ordered
 relocations. The 479-byte scene animator's original 16-byte compiler
 table also remains identical. This is semantic improvement to previously
 owned CODE, not a duplicate 2,796-byte credit or a full MAINE replay.
+
+## Original writable Shift-JIS byte-pair provider and consumer (2026-11-12)
+
+The interpreter's existing `ShiftJISKanji` two-byte reference now
+refers through a header-level `extern "C"` to the independently accepted
+MAINE `_CUTSCENE_KANJI` C initializer at `[1086A,1086D)`. The original
+script still writes two Shift-JIS glyph bytes in place, using the third
+source-owned byte as the original NUL terminator. This removes a
+function-local symbol declaration while keeping all source-visible
+script behaviour, memory writes and the original parser's return ABI.
+
+The shared-header closure was revalidated on **ten complete native
+C++ cutscene units**, including the full 1,555-byte script opcode
+interpreter and its 479-byte scene animation owner, at
+`.analysis/unit-replays/gpt-web-maine-kanji-consumer-cpp-a/receipt.json`.
+The six related source-reviewed EGC/PI ASM families were also
+recompiled under their separate native-reviewed ASM lane; details
+and receipts appear in `kanji_buffer.md`. No new CODE bytes were
+counted and no full cold replay was executed.

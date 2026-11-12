@@ -29,3 +29,39 @@ ordered original MZ fixups, and a rejected compiled mutation of the
 second character to `X`. The source-level historical aggregate type
 is not inferred merely from these three bytes; a separate future
 consumer validation is appropriate before a full cross-TU claim.
+
+## Canonical C public and original Shift-JIS consumer ABI (2026-11-12)
+
+The independently exact C initializer now has a source-visible
+C++ consumer with the same historical public identifier. The native
+`cutscene.hpp` declares `extern "C" ShiftJISKanji near CUTSCENE_KANJI[]`
+as a **two-byte glyph view** of the first two bytes in the already
+accepted three-byte writable C allocation. The original
+`cutscene_animate()` refers to `ShiftJISKanji& kanji = *CUTSCENE_KANJI`
+without a new alias array, address literal, cast to a fabricated struct,
+or copy. Its former function-local unqualified `extern` was eliminated.
+This declares linkage of the actual C public, not that the original
+Borland C source used the same aggregate type as the C++ consumer.
+
+The shared cutscene header and interpreter source affect **ten accepted
+MAINE native C++ scopes**. Their original whole-function bytes, 1555-byte
+`script_op()` switch-table code, 479-byte `cutscene_animate()` body,
+ordered MZ relocations and compiled meaningful semantic negative all
+pass two Borland producer rounds in the focused receipt
+`.analysis/unit-replays/gpt-web-maine-kanji-consumer-cpp-a/receipt.json`.
+
+This source header is also pinned as a semantic review input for six
+previously accepted original graphics ASM families: OP and MAINE EGC
+rectangular copying, masked PI drawing, and palette/free PI drawing.
+All **six** were individually replayed with their original native
+boundary reviews, two pinned TASM/TLINK producers each and rejected
+ASM semantic controls. Their actual producer records and explicit
+adoption hashes were refreshed without changing a byte of those
+hardware functions or their original reviewed ASM provenance. The six
+receipts are in `.analysis/unit-replays/` under
+`gpt-web-kanji-abi-asm-{op-egc,maine-egc,op-pimask,op-piplain,
+maine-pimask,maine-piplain}-a/receipt.json`.
+
+No additional initialized DATA or already-accepted CODE is credited
+from this cross-translation-unit source link. No all-game cold replay
+or unreviewed function adjustment is involved.

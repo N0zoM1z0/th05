@@ -89,7 +89,8 @@ extern graph_putsa_fx_func_t graph_putsa_fx_func;
 extern dots8_t far *VRAM_PLANE_B;
 extern unsigned char colmap_count;
 extern const dot_rect_t(16, 4) BOX_MASKS[5];
-extern ShiftJISKanji near CUTSCENE_KANJI[];
+// C public: source owns exactly two writable Shift-JIS glyph bytes and NUL.
+extern "C" ShiftJISKanji near CUTSCENE_KANJI[];
 
 // This module's runtime-owned state; these are declarations, not alias objects.
 extern unsigned char script[8192];
