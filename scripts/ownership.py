@@ -147,22 +147,25 @@ def overlay_vendor_reservation(size: int, pieces: list[dict], claims: list[dict]
         if (row.get("kind") != "reviewed-uninitialized-vendor-storage" or
                 row.get("content_kind") != "source-question-mark-struct" or
                 row.get("library") != "Master 0.23" or
-                row.get("member") != "BGM_GLB" or
-                row.get("source") != "B_DATA.ASM/SGLB" or
+                not ((row.get("member") == "BGM_GLB" and
+                      row.get("source") == "B_DATA.ASM/SGLB" and
+                      row.get("end", -1) - row.get("start", 0) == 108) or
+                     (row.get("member") in ("SUPER_PATDATA", "SUPER_PATSIZE") and
+                      row.get("source") == "SUPERPA.ASM/MAXPAT" and
+                      row.get("end", -1) - row.get("start", 0) == 1024)) or
                 type(row.get("start")) is not int or
                 type(row.get("end")) is not int or
-                row["end"] - row["start"] != 108 or
                 type(row.get("authored_credit")) is not int or
                 row["authored_credit"] != 0 or
                 type(row.get("instruction_bytes")) is not int or
                 row["instruction_bytes"] != 0):
-            raise ValueError("unreviewed Master BGM reserved storage claim")
+            raise ValueError("unreviewed Master source-backed vendor reserved storage claim")
     output = []
     cursor = 0
     known = [row for row in pieces if row["kind"] != "unknown"]
     for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
         if row["start"] < cursor or not 0 <= row["start"] < row["end"] <= size:
-            raise ValueError("vendor BGM reserve overlaps existing source or review")
+            raise ValueError("vendor source reserve overlaps existing source or review")
         if cursor < row["start"]:
             output.append({"start":cursor,"end":row["start"],"kind":"unknown"})
         output.append(dict(row))
@@ -556,6 +559,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     from review_master_bgm_global_reservations import reviewed_claims as bgm_global_claims
     bgm_global, bgm_global_sha = bgm_global_claims(
         root, config["views"], verify_targets=verify_targets)
+    from review_master_superpa_reservations import reviewed_claims as superpa_reserve_claims
+    superpa_reserves, superpa_reserves_sha = superpa_reserve_claims(
+        root, config["views"], verify_targets=verify_targets)
     from review_master_machine_graphics_palette import reviewed_claims as machine_graphics_claims
     machine_graphics, machine_graphics_sha = machine_graphics_claims(
         root, config["views"], verify_targets=verify_targets)
@@ -832,6 +838,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_game_reservation(view["size"], pieces, pi_reserves[name])
         if name in bgm_global:
             pieces = overlay_vendor_reservation(view["size"], pieces, bgm_global[name])
+        if name in superpa_reserves:
+            pieces = overlay_vendor_reservation(view["size"], pieces, superpa_reserves[name])
         if name in machine_graphics:
             pieces = overlay_vendor(view["size"], pieces, machine_graphics[name])
         if name in cl_data:
@@ -976,6 +984,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             views[name]["game_pi_reserve_review_sha256"] = pi_reserves_sha
         if bgm_global_sha and name in bgm_global:
             views[name]["master_bgm_reserve_review_sha256"] = bgm_global_sha
+        if superpa_reserves_sha and name in superpa_reserves:
+            views[name]["master_superpa_reserve_review_sha256"] = superpa_reserves_sha
         if machine_graphics_sha and name in machine_graphics:
             views[name]["master_machine_graphics_review_sha256"] = machine_graphics_sha
         if maine_atan8_sha and name in maine_atan8:
