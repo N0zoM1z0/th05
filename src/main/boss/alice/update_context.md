@@ -93,3 +93,19 @@ switch table and ordered MZ relocation. Both existing compiled negative
 mutations are rejected. The relevant source identities are refreshed
 without retesting unrelated Alice pattern functions or globally cold
 replaying the accepted set.
+
+## Full-controller context with the natural three-mode charge family (2026-11-12)
+
+The actual contiguous Alice Boss compilation context now shares
+`charged_attack_rules.hpp` with the independent three-function charge
+owner. Its preceding original laser fan, mirrored stacks and rotating
+ring still account for all 499 original charge-pattern bytes. The
+following complete **939-byte** Alice 15-phase far-Pascal updater
+retains its own exact raw code, its one verified alignment zero,
+30-byte dispatch table and ordered far-call relocation. This
+revalidates the whole controller against the real charged-attack
+compiler prefix rather than adding an isolated ad hoc substitute.
+Scoped receipt:
+`.analysis/unit-replays/gpt-web-alice-charged-rules-b/receipt.json`.
+The source changes add gameplay names and preserve already accepted
+machine bytes; they do not grant duplicated byte or pointer-table credit.

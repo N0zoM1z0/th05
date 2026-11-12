@@ -2,28 +2,34 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "21154070d6a9823df32d7edb827eabf20febdf8fa0bd6f9168acad08baf012b7",
+  "replay_receipt_sha256": "fb054192481d22614454cc8e1f88b906f3662f6878a22d4b200802763d170607",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 138859,
-    "candidate_start": 139372,
-    "size": 8,
-    "target_sha256": "4eaced23210675fe6ed07c18eeafffc046a99a552ac3456697e872753bc11836",
-    "candidate_sha256": "5987b40cd220ffd99d1cf9d405867a574425d15a0f5d748cd18ebe4afd7b8509",
+    "target_start": 124772,
+    "candidate_start": 124772,
+    "size": 499,
+    "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
+    "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      477,
+      403,
+      333,
+      248,
+      105,
+      45
+    ],
+    "candidate_fixups": [
+      477,
+      403,
+      333,
+      248,
+      105,
+      45
+    ],
     "fixups_exact": true,
-    "exact": false,
-    "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 139372,
-      "size": 8,
-      "module": "th05/bbchfn.c",
-      "segment": "_DATA"
-    }
+    "exact": false
   },
   "units": [
     {
@@ -28363,8 +28369,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0e977c7815930fe702b3c13c82e3d221d4dbfc089f54f41507fa6a740e619b5a",
-            "dependency_timestamp_normalized_sha256": "2c767016b6aae070590bf47737b483c2d3a1851fe35a0795c779d59b0fc9e929",
+            "sha256": "f522a4b05d9c3089695f8cfb3faacfec7a49c49b6f8a6c82a070ce224227e07c",
+            "dependency_timestamp_normalized_sha256": "cd7f10fd1692ab55a6903c71c903a537d0db9730e4b9dd0bb176f0b08b715dda",
             "module_name": "th05/a_chg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28389,12 +28395,13 @@
               "src/main/bullet/laser.hpp",
               "src/shared/geometry.hpp",
               "src/main/boss/alice/scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/boss/alice/charged_attack_rules.hpp"
             ]
           },
           {
-            "sha256": "0e977c7815930fe702b3c13c82e3d221d4dbfc089f54f41507fa6a740e619b5a",
-            "dependency_timestamp_normalized_sha256": "2c767016b6aae070590bf47737b483c2d3a1851fe35a0795c779d59b0fc9e929",
+            "sha256": "73431606f2347d158c27b16679f1523bbf34afa7e5936aef5790691962f9ff14",
+            "dependency_timestamp_normalized_sha256": "cd7f10fd1692ab55a6903c71c903a537d0db9730e4b9dd0bb176f0b08b715dda",
             "module_name": "th05/a_chg.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -28419,13 +28426,14 @@
               "src/main/bullet/laser.hpp",
               "src/shared/geometry.hpp",
               "src/main/boss/alice/scratch.hpp",
-              "C:\\TC4\\INCLUDE\\stddef.h"
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/boss/alice/charged_attack_rules.hpp"
             ]
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -28466,11 +28474,15 @@
           },
           {
             "path": "src/main/boss/alice/charge_patterns.cpp",
-            "sha256": "3e1f7a29b40121502a365e1bac5177eab7d6f7b3653e36c9fddc1476bfb1660e"
+            "sha256": "7b77236ea3fdc84f2fd9daa4c128fa9513b89b9e8cb3e9a8bd10538e182d3501"
           },
           {
             "path": "src/main/boss/alice/charge_patterns.hpp",
             "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
+          },
+          {
+            "path": "src/main/boss/alice/charged_attack_rules.hpp",
+            "sha256": "f38ce37ad235f7ed82ece52c4d60da2cd19164fc0123392765fac07b9ca64dd8"
           },
           {
             "path": "src/main/boss/alice/scratch.hpp",
@@ -28522,11 +28534,15 @@
         },
         {
           "path": "src/main/boss/alice/charge_patterns.cpp",
-          "sha256": "3e1f7a29b40121502a365e1bac5177eab7d6f7b3653e36c9fddc1476bfb1660e"
+          "sha256": "7b77236ea3fdc84f2fd9daa4c128fa9513b89b9e8cb3e9a8bd10538e182d3501"
         },
         {
           "path": "src/main/boss/alice/charge_patterns.hpp",
           "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
+        },
+        {
+          "path": "src/main/boss/alice/charged_attack_rules.hpp",
+          "sha256": "f38ce37ad235f7ed82ece52c4d60da2cd19164fc0123392765fac07b9ca64dd8"
         },
         {
           "path": "src/main/boss/alice/scratch.hpp",
@@ -28567,72 +28583,81 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "208feca5bcb82a16c2699d214704772e8f886bfa1e602b0a12b087f4f363e7f0",
+      "replay_receipt_sha256": "fb054192481d22614454cc8e1f88b906f3662f6878a22d4b200802763d170607",
       "compiled_negative_control": {
-        "target_start": 124418,
-        "candidate_start": 124418,
-        "size": 354,
-        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+        "target_start": 124772,
+        "candidate_start": 124772,
+        "size": 499,
+        "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
+        "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
         "raw_exact": false,
         "target_fixups": [
-          350,
-          235,
-          219,
-          133
+          477,
+          403,
+          333,
+          248,
+          105,
+          45
         ],
         "candidate_fixups": [
-          350,
-          235,
-          219,
-          133
+          477,
+          403,
+          333,
+          248,
+          105,
+          45
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-puppet-beam",
-        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
+        "unit_id": "main-alice-charge-patterns",
+        "entry_sha256": "b064c8bfdb86d20f16158b1d7bafe6c8afacfaa6c40785d0ea4abc6ff9c48ead",
         "mutation": {
-          "unit": "main-alice-puppet-beam",
-          "source": "src/main/boss/alice/beam.cpp",
-          "find": "shot_hitbox_radius.x.v = to_sp(56);",
-          "replace": "shot_hitbox_radius.x.v = to_sp(55);"
+          "unit": "main-alice-charge-patterns",
+          "source": "src/main/boss/alice/charge_patterns.cpp",
+          "find": "laser_template.coords.width.nonshrink = ALICE_LASER_FAN_WIDTH;",
+          "replace": "laser_template.coords.width.nonshrink = (ALICE_LASER_FAN_WIDTH + 1);"
         },
-        "control_sha256": "f8bef5af86470dbf10acfa2afb158e8a6e091b031a61ccad8f02a5f681dac3dc",
+        "control_sha256": "a059930ee10f6ae8dda553b19940a81d2442965ebadfbdc714d29fff502afb0a",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 124418,
-          "candidate_start": 124418,
-          "size": 354,
-          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+          "target_start": 124772,
+          "candidate_start": 124772,
+          "size": 499,
+          "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
+          "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
           "raw_exact": false,
           "target_fixups": [
-            350,
-            235,
-            219,
-            133
+            477,
+            403,
+            333,
+            248,
+            105,
+            45
           ],
           "candidate_fixups": [
-            350,
-            235,
-            219,
-            133
+            477,
+            403,
+            333,
+            248,
+            105,
+            45
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "01ca2e873d86fe69603e738e4f370e9efa7bd2a09d44247866b884aa76a0d8bd",
-          "dependency_timestamp_normalized_sha256": "c578c5addf1779f0ed793657a5178b8a4330cbd9f1b36e849985b84d5beb7a8c",
-          "module_name": "th05/a_beam.cpp",
+          "sha256": "0786e240249cce639aec599ba0b34aea6a7fc7d9961216c0ca24ca2b08558349",
+          "dependency_timestamp_normalized_sha256": "4b7d6db07604b218c998fab6a6540ac2e4a7d6f280122774d6b3e68307ef581e",
+          "module_name": "th05/a_chg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_beam.cpp",
-            "src/main/boss/alice/beam.cpp",
+            "th05/a_chg.cpp",
+            "src/main/boss/alice/charge_patterns.cpp",
+            "src/main/boss/alice/charge_patterns.hpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -28646,9 +28671,11 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/alice/beam_phase.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
             "src/main/boss/alice/scratch.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h"
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "src/main/boss/alice/charged_attack_rules.hpp"
           ]
         },
         "compiler_arguments": [
@@ -28662,10 +28689,14 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_beam.cpp"
+          "th05/a_chg.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-alice-charge-patterns",
+        "main-alice-update-context"
+      ]
     },
     {
       "id": "main-louise-update",
@@ -68584,8 +68615,8 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "822ca5f96da378042e25280e98cd5b78611a56e5675cef2edeed3ef3b9b262d8",
-            "dependency_timestamp_normalized_sha256": "d5d61224fcd0b50b8b13932904dd092c8f9041483372e1413eb7877d9ce17584",
+            "sha256": "cfaf57fda97e2af73cefe5492c2727d59080b9eb3d9b4e210e8960bbc1e31d6f",
+            "dependency_timestamp_normalized_sha256": "65d9ef555c3cbac0aa1eecaf4379303f71dcfdac9c64c94cedc2ee5e91bd3ea1",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -68616,6 +68647,7 @@
               "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/boss/alice/charged_attack_rules.hpp",
               "src/main/boss/alice/charge_patterns.hpp",
               "src/main/boss/alice/beam.hpp",
               "src/main/bullet/laser.hpp",
@@ -68624,8 +68656,8 @@
             ]
           },
           {
-            "sha256": "f4e1a760f2d8681aaef6f6d225c47c2ccc571676024c147b6054ff96919962b6",
-            "dependency_timestamp_normalized_sha256": "d5d61224fcd0b50b8b13932904dd092c8f9041483372e1413eb7877d9ce17584",
+            "sha256": "0fc68636af469ab04dad9f4bfef7fc778b599e42f80c6b92e4267a6744aa03cb",
+            "dependency_timestamp_normalized_sha256": "65d9ef555c3cbac0aa1eecaf4379303f71dcfdac9c64c94cedc2ee5e91bd3ea1",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
               "TC86 Borland C++ 4.02"
@@ -68656,6 +68688,7 @@
               "src/main/boss/alice/beam_phase.hpp",
               "src/main/boss/alice/scratch.hpp",
               "C:\\TC4\\INCLUDE\\stddef.h",
+              "src/main/boss/alice/charged_attack_rules.hpp",
               "src/main/boss/alice/charge_patterns.hpp",
               "src/main/boss/alice/beam.hpp",
               "src/main/bullet/laser.hpp",
@@ -68714,6 +68747,10 @@
             "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
           },
           {
+            "path": "src/main/boss/alice/charged_attack_rules.hpp",
+            "sha256": "f38ce37ad235f7ed82ece52c4d60da2cd19164fc0123392765fac07b9ca64dd8"
+          },
+          {
             "path": "src/main/boss/alice/final_spread.inl",
             "sha256": "4ffe6d13479d5294cc5801d51056e395fc3fbf814d7cc17c98b5990fa7377311"
           },
@@ -68731,7 +68768,7 @@
           },
           {
             "path": "src/main/boss/alice/update_context.cpp",
-            "sha256": "7253dca322719a93e77d9f897ab0a3fc738eb845f366326d1717f9f0ef684d03"
+            "sha256": "f06b166ccefdd782a9586c03010ff0c0f24a2dfb1946a8a0fa1fd2187b3514ee"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -68794,6 +68831,10 @@
           "sha256": "6bbe68e1108fe146967724095242bf4aaea2b545172c441a644194a09ab14943"
         },
         {
+          "path": "src/main/boss/alice/charged_attack_rules.hpp",
+          "sha256": "f38ce37ad235f7ed82ece52c4d60da2cd19164fc0123392765fac07b9ca64dd8"
+        },
+        {
           "path": "src/main/boss/alice/final_spread.inl",
           "sha256": "4ffe6d13479d5294cc5801d51056e395fc3fbf814d7cc17c98b5990fa7377311"
         },
@@ -68811,7 +68852,7 @@
         },
         {
           "path": "src/main/boss/alice/update_context.cpp",
-          "sha256": "7253dca322719a93e77d9f897ab0a3fc738eb845f366326d1717f9f0ef684d03"
+          "sha256": "f06b166ccefdd782a9586c03010ff0c0f24a2dfb1946a8a0fa1fd2187b3514ee"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -68856,70 +68897,81 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "9958e8d36fc696e9129500e62e29b81595a6ee022ffef4690b1147e6c267b07a",
+      "replay_receipt_sha256": "fb054192481d22614454cc8e1f88b906f3662f6878a22d4b200802763d170607",
       "compiled_negative_control": {
-        "target_start": 141646,
-        "candidate_start": 141646,
-        "size": 32,
-        "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
-        "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
+        "target_start": 124772,
+        "candidate_start": 124772,
+        "size": 499,
+        "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
+        "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          477,
+          403,
+          333,
+          248,
+          105,
+          45
+        ],
+        "candidate_fixups": [
+          477,
+          403,
+          333,
+          248,
+          105,
+          45
+        ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-initialized-data-contribution",
-          "map_class": "DATA",
-          "start": 141646,
-          "size": 32,
-          "module": "th05/a_tbls.cpp",
-          "segment": "_DATA"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-alice-callback-tables-data",
-        "entry_sha256": "45aa7407324ce9dec92519fd2eb674537334dafa4b9338c9c2fd61a95c032c22",
+        "unit_id": "main-alice-charge-patterns",
+        "entry_sha256": "b064c8bfdb86d20f16158b1d7bafe6c8afacfaa6c40785d0ea4abc6ff9c48ead",
         "mutation": {
-          "unit": "main-alice-callback-tables-data",
-          "source": "src/main/boss/alice/callback_tables.cpp",
-          "find": "    alice_puppet_initial,\n    alice_puppet_spread,",
-          "replace": "    alice_puppet_spread,\n    alice_puppet_initial,"
+          "unit": "main-alice-charge-patterns",
+          "source": "src/main/boss/alice/charge_patterns.cpp",
+          "find": "laser_template.coords.width.nonshrink = ALICE_LASER_FAN_WIDTH;",
+          "replace": "laser_template.coords.width.nonshrink = (ALICE_LASER_FAN_WIDTH + 1);"
         },
-        "control_sha256": "1df105ee7001dd60101055881891d498068b1427dc1f6b15495d71b577065b88",
+        "control_sha256": "a059930ee10f6ae8dda553b19940a81d2442965ebadfbdc714d29fff502afb0a",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 141646,
-          "candidate_start": 141646,
-          "size": 32,
-          "target_sha256": "09884be98853657c5a55d4592d09f2bc09274216bbf0b1a0d1551001706ec446",
-          "candidate_sha256": "47f77d61729cf0f492545a6330e95fe6236f7faced64e8ce7136366439cda8ef",
+          "target_start": 124772,
+          "candidate_start": 124772,
+          "size": 499,
+          "target_sha256": "e489d8a6c7ea75ca7466eedb985f9c4f84902baab876342f5afe98a882f647dd",
+          "candidate_sha256": "77d9c53add5310833f7254bcea3fc85b35f4ce4aaeb77e0720f8aa259da894ca",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            477,
+            403,
+            333,
+            248,
+            105,
+            45
+          ],
+          "candidate_fixups": [
+            477,
+            403,
+            333,
+            248,
+            105,
+            45
+          ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-initialized-data-contribution",
-            "map_class": "DATA",
-            "start": 141646,
-            "size": 32,
-            "module": "th05/a_tbls.cpp",
-            "segment": "_DATA"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "04dbc58d63d62eb5a0fe2f8a0c3de8e9cc3c6480b818adcc2aa668f40dba3df5",
-          "dependency_timestamp_normalized_sha256": "6c813ef1cda63f088aed3430fc5a62d7b5ac5e2dab517f80182d1006e63d96eb",
-          "module_name": "th05/a_tbls.cpp",
+          "sha256": "0786e240249cce639aec599ba0b34aea6a7fc7d9961216c0ca24ca2b08558349",
+          "dependency_timestamp_normalized_sha256": "4b7d6db07604b218c998fab6a6540ac2e4a7d6f280122774d6b3e68307ef581e",
+          "module_name": "th05/a_chg.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_tbls.cpp",
-            "src/main/boss/alice/callback_tables.cpp",
-            "src/main/boss/alice/callback_tables.hpp",
-            "src/main/boss/alice/puppet_patterns.hpp",
+            "th05/a_chg.cpp",
+            "src/main/boss/alice/charge_patterns.cpp",
+            "src/main/boss/alice/charge_patterns.hpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -68932,22 +68984,13 @@
             "src/shared/geometry.hpp",
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
-          ],
-          "initialized_data_scope": {
-            "kind": "complete-compiler-initialized-data",
-            "segment": "_DATA",
-            "class": "DATA",
-            "size": 32,
-            "segment_index": 2,
-            "ledata": [
-              {
-                "offset": 0,
-                "size": 32,
-                "sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
-              }
-            ]
-          }
+            "src/shared/geometry.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/alice/scratch.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "src/main/boss/alice/charged_attack_rules.hpp"
+          ]
         },
         "compiler_arguments": [
           "-c",
@@ -68960,12 +69003,12 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_tbls.cpp"
+          "th05/a_chg.cpp"
         ]
       },
       "receipt_aggregate_pass": true,
       "receipt_selected_subset": [
-        "main-alice-callback-tables-data",
+        "main-alice-charge-patterns",
         "main-alice-update-context"
       ]
     },

@@ -55,3 +55,39 @@ original ordered fixup sites across three complete functions. Both independent
 fresh deterministic producers agree. The separately compiled laser width8→9
 mutation is rejected. Credit is499 authored instruction bytes with no table,
 padding, DATA or BSS. The accepted beam and Laser headers were not modified.
+
+## Shared charge-attack weapon protocol (2026-11-12)
+
+The real three-function charge family now shares a typed-by-role,
+**compile-time only** attack vocabulary in `charged_attack_rules.hpp`.
+This names the three physical charge clocks (gather begins at frame 40,
+fires from 64, finishes at 96), the 9/8 gather colors, charge/attack
+sprites 184/180, and the distinct charge, stack and ring sounds.
+The laser fan emits three aiming lasers with successive ±16-angle
+spacing, original color 6, width 8, age 40 and speed 5. Its
+forward-cloud/no-decelerate bullet burst still uses the genuine
+`0x02|0x10` spawn-bit protocol, a 20-shot randomized spread and packed
+speed delta 8. The paired stack remains two mirrored aimed salvos on
+every fourth frame, with its independent angle rotation of five; the
+ring uses another four-frame clock and rotates by two. The packed
+8/7 and 20/7 stack/ring word layouts are unchanged, as are all
+actual tuning and bullet-spawning call sites.
+
+The source-level names are preprocessor constants, which lets the
+compiler see the same expression forms at the byte-wide angle
+writebacks and adjacent packed-word initializers. There are no new
+state variables, helper calls, optimizer barriers, graphics assets or
+hand-authored instruction bytes. The accepted standalone three-function
+family and the original adjacent family in `update_context.cpp` use
+matching charging algorithms; their reposition-mode value zero remains
+the correct existing Alice mode in each respective TU.
+
+A focused two-unit native replay at
+`.analysis/unit-replays/gpt-web-alice-charged-rules-b/receipt.json`
+recompiled **all 499 original charge-pattern bytes** (200/155/144)
+and the complete separately accepted **939-byte Alice Boss controller**
+in their real linker contexts. Both independent producers match all
+original raw bytes and ordered fixups, including the controller's
+30-byte compiler switch table and one checked zero. The semantic
+compiled mutation increases the genuine laser width from 8 to 9 and
+is rejected. No new credit is issued for already accepted CODE.
