@@ -2162,8 +2162,8 @@ alignment_offsets = []
 [[controls]]
 unit = "main-exalice-phase"
 source = "src/main/boss/exalice/phase.cpp"
-find = "exalice_bomb_invincibility = 39;"
-replace = "exalice_bomb_invincibility = 40;"
+find = "exalice_bomb_invincibility = EXALICE_BOMB_INVINCIBILITY_RELOAD;"
+replace = "exalice_bomb_invincibility = (EXALICE_BOMB_INVINCIBILITY_RELOAD + 1);"
 
 [[units]]
 id = "main-exalice-pattern-cross-cheetos"

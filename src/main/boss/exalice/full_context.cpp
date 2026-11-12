@@ -3,6 +3,7 @@
 #pragma option -zCEXALICE_FULL_TEXT -zPmain_03
 #include "src/main/boss/exalice/full_context.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
+#include "src/main/boss/exalice/bomb_phase_protocol.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
 #include "src/main/boss/exalice/visual_phase.hpp"
 #include "src/main/boss/exalice/combat_layout.hpp"
@@ -11,12 +12,12 @@
 int far exalice_hittest_shots(void)
 {
     if(bombing) {
-        exalice_bomb_invincibility = 39;
+        exalice_bomb_invincibility = EXALICE_BOMB_INVINCIBILITY_RELOAD;
     }
-    if(exalice_bomb_invincibility == 0) {
+    if(exalice_bomb_invincibility == EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
         return boss_hittest_shots();
     }
-    return 0;
+    return EXALICE_SUPPRESSED_SHOT_RESULT;
 }
 
 void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
@@ -31,16 +32,16 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     }
     boss_phase_timed_out = true;
     boss.phase++;
-    boss.phase_frame = 0;
+    boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
     boss.mode = EXALICE_MODE_REPOSITION;
-    boss.phase_state.patterns_seen = 0;
+    boss.phase_state.patterns_seen = EXALICE_NEW_PHASE_PATTERN_COUNT;
     boss.hp = boss.phase_end_hp;
     boss.phase_end_hp = next_end_hp;
 }
 
 void pascal far exalice_update(void)
 {
-    if(exalice_bomb_invincibility != 0) {
+    if(exalice_bomb_invincibility != EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
         exalice_bomb_invincibility--;
     }
     homing_target = boss.pos.cur;
@@ -62,7 +63,7 @@ void pascal far exalice_update(void)
             boss_sprite_left = EXALICE_SPRITE_MOVE_LEFT;
             boss_sprite_right = EXALICE_SPRITE_MOVE_RIGHT;
             boss_sprite_stay = EXALICE_SPRITE_STILL;
-            exalice_bomb_invincibility = 0;
+            exalice_bomb_invincibility = EXALICE_BOMB_INVINCIBILITY_EXPIRED;
             boss_flystep_random_clamp.left.v = to_sp(EXALICE_ARENA_LEFT_BOUND_PX);
             boss_flystep_random_clamp.right.v = to_sp(EXALICE_ARENA_RIGHT_BOUND_PX);
             boss_flystep_random_clamp.top.v = to_sp(EXALICE_ARENA_TOP_BOUND_PX);
@@ -92,9 +93,9 @@ void pascal far exalice_update(void)
             boss.phase_state.patterns_seen = 0;
             boss.phase_frame = 0;
             boss_custombullets_render = exalice_custombullets_render;
-            exalice_boss_scratch.initial_fan_substate = 0;
+            exalice_boss_scratch.initial_fan_substate = EXALICE_INITIAL_FAN_SUBSTATE;
             exalice_pattern = exalice_pattern_random_fan;
-            exalice_boss_scratch.wave_index = 0;
+            exalice_boss_scratch.wave_index = EXALICE_WAVE_1;
         }
         break;
     case EXALICE_PHASE_WAVE1_REGULAR:

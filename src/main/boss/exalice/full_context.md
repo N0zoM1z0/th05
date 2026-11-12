@@ -177,3 +177,27 @@ The compiled meaningful HP-gate mutation was rejected. The standalone
 `update.cpp` body is token-identical to the accepted full-context body's
 update function. This is an improvement to already accepted CODE; no
 new duplicate byte credit or all-MAIN replay is claimed.
+
+## Shared bomb immunity threshold and actual update/phase linkage (2026-11-12)
+
+The real full-context source and the independent `phase.cpp` now give
+the same meanings to the original **39** bomb-invulnerability reload,
+zero/expired hit-gate result, and the zero frame and prior-pattern
+counter installed when any phase finishes. The standalone `update.cpp`
+uses the same named zero bomb timer, initial fan substate, and first
+wave index as the accepted `full_context.cpp` update; their entire
+18-phase update bodies remain token-identical. This ensures that the
+locally emitted hit gate in the original three-function context retains
+the physical far return ABI while its near-Pascal phase transition
+uses unchanged boss and bullet-zap storage.
+
+The two affected independent accepted units were replayed together:
+`main-exalice-phase` **111 bytes** and
+`main-exalice-update-full-context` **1,060 bytes**, including the 52
+original switch-table bytes and both original ordered update
+relocations. All 1,171 original instruction/table bytes represented
+by the paired contributions match in two real Borland producers;
+both compiled meaningful negatives are rejected. Full scoped receipt:
+`.analysis/unit-replays/gpt-web-exalice-bomb-phase-protocol-a/receipt.json`.
+This does not claim the complete executable's placement or a new
+initialized-DATA owner.

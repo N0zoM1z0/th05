@@ -2,16 +2,17 @@
 #pragma option -zCEXALICE_PHASE_TEXT -zPmain_03
 #include "src/main/boss/exalice/phase.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
+#include "src/main/boss/exalice/bomb_phase_protocol.hpp"
 
 int far exalice_hittest_shots(void)
 {
     if(bombing) {
-        exalice_bomb_invincibility = 39;
+        exalice_bomb_invincibility = EXALICE_BOMB_INVINCIBILITY_RELOAD;
     }
-    if(exalice_bomb_invincibility == 0) {
+    if(exalice_bomb_invincibility == EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
         return boss_hittest_shots();
     }
-    return 0;
+    return EXALICE_SUPPRESSED_SHOT_RESULT;
 }
 
 void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
@@ -26,9 +27,9 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     }
     boss_phase_timed_out = true;
     boss.phase++;
-    boss.phase_frame = 0;
+    boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
     boss.mode = EXALICE_MODE_REPOSITION;
-    boss.phase_state.patterns_seen = 0;
+    boss.phase_state.patterns_seen = EXALICE_NEW_PHASE_PATTERN_COUNT;
     boss.hp = boss.phase_end_hp;
     boss.phase_end_hp = next_end_hp;
 }
