@@ -6917,3 +6917,25 @@ unit = "main-playfield-shake-redraw-initial-data"
 source = "src/main/playfield/shake_redraw_initial.cpp"
 find = "playfield_shake_redraw_time = 0;"
 replace = "playfield_shake_redraw_time = 1;"
+
+[[units]]
+id = "main-bullet-group-special-initial-data"
+source = "src/main/bullet/group_special_initial.cpp"
+module = "th05/bgspini.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/main_bullet_group_special_initial_bindings.asm"
+target_start = 0x2228e
+size = 1
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-bullet-group-special-initial-data"
+source = "src/main/bullet/group_special_initial.cpp"
+find = "group_is_special = 0;"
+replace = "group_is_special = 1;"

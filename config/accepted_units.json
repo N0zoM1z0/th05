@@ -2,26 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "a3043695de5c52d97dae85bd790b5853df7d5511dba6f3ed463a213ebff897ce",
+  "replay_receipt_sha256": "57a927743f0ecdf66af626374eabe2420346e8b3d46fe0088b66d245aedbc4d9",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 105517,
-    "candidate_start": 105517,
-    "size": 645,
-    "target_sha256": "0e991e1bbb76f1cd837e556a5837881294708aaff83beb46b35b48d0c13f545b",
-    "candidate_sha256": "91a3fd28170413c397a2e8bdc85b20e46d29d128d76abe336448172b10666bf9",
+    "target_start": 139918,
+    "candidate_start": 139918,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      422,
-      98
-    ],
-    "candidate_fixups": [
-      422,
-      98
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 139918,
+      "size": 1,
+      "module": "th05/bgspini.cpp",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -109935,6 +109937,259 @@
           "-ml",
           "-DBINARY='M'",
           "th05/shakerdi.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-bullet-group-special-initial-data",
+      "entry_sha256": "f3ccf9766cacadee3910bab7c700baeadff5761c1c766edbfb0422233181c8a8",
+      "result": {
+        "id": "main-bullet-group-special-initial-data",
+        "entry_sha256": "f3ccf9766cacadee3910bab7c700baeadff5761c1c766edbfb0422233181c8a8",
+        "rounds": [
+          {
+            "target_start": 139918,
+            "candidate_start": 139918,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139918,
+              "size": 1,
+              "module": "th05/bgspini.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 139918,
+            "candidate_start": 139918,
+            "size": 1,
+            "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "candidate_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 139918,
+              "size": 1,
+              "module": "th05/bgspini.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "9eb1768348da4e75b32c7546a6b0e5d2a41d31491bfd89626b07d9dbf104428d",
+            "dependency_timestamp_normalized_sha256": "a67f3c99adfe1bc8580c5ceb91de4a185b667df7233c09b0376ff10e432c7ecc",
+            "module_name": "th05/bgspini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgspini.cpp",
+              "src/main/bullet/group_special_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "a5f5708421855cdf545a8c0a98834dde1d879fccab6dd1328706f7e91c4ce954",
+            "dependency_timestamp_normalized_sha256": "a67f3c99adfe1bc8580c5ceb91de4a185b667df7233c09b0376ff10e432c7ecc",
+            "module_name": "th05/bgspini.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/bgspini.cpp",
+              "src/main/bullet/group_special_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 1,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 1,
+                  "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgspini.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/bgspini.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_bullet_group_special_initial_bindings.asm",
+            "sha256": "8f6a1b73cbc1bd671c473035273357ad5b5c73d9c68d2cc81069a07ca26a4881"
+          },
+          {
+            "path": "src/main/bullet/group_special_initial.cpp",
+            "sha256": "357221a6629b4f1ca77447448255164336dc4832b791a6377208927279aab018"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_bullet_group_special_initial_bindings.asm",
+          "sha256": "8f6a1b73cbc1bd671c473035273357ad5b5c73d9c68d2cc81069a07ca26a4881"
+        },
+        {
+          "path": "src/main/bullet/group_special_initial.cpp",
+          "sha256": "357221a6629b4f1ca77447448255164336dc4832b791a6377208927279aab018"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "57a927743f0ecdf66af626374eabe2420346e8b3d46fe0088b66d245aedbc4d9",
+      "compiled_negative_control": {
+        "target_start": 139918,
+        "candidate_start": 139918,
+        "size": 1,
+        "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 139918,
+          "size": 1,
+          "module": "th05/bgspini.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-bullet-group-special-initial-data",
+        "entry_sha256": "f3ccf9766cacadee3910bab7c700baeadff5761c1c766edbfb0422233181c8a8",
+        "mutation": {
+          "unit": "main-bullet-group-special-initial-data",
+          "source": "src/main/bullet/group_special_initial.cpp",
+          "find": "group_is_special = 0;",
+          "replace": "group_is_special = 1;"
+        },
+        "control_sha256": "fc35550d64fc88f5ff52e3fc5eae9fa5daa927ff5470b3cc28a7360b8b172ba3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 139918,
+          "candidate_start": 139918,
+          "size": 1,
+          "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 139918,
+            "size": 1,
+            "module": "th05/bgspini.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "f349b28c35f01b63b79a2a89b973a37de88e6f46e4db600fd6882e396b3f3040",
+          "dependency_timestamp_normalized_sha256": "6ef6d35894a3d5a0fc73c65818cb225270a8d2d2ab5c5d6689e5694164f0c128",
+          "module_name": "th05/bgspini.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/bgspini.cpp",
+            "src/main/bullet/group_special_initial.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 1,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 1,
+                "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/bgspini.cpp"
         ]
       },
       "receipt_aggregate_pass": true
