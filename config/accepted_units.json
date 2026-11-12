@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "1c10bc1000abdf44fbb15bf4e59b23ea91f5f89ad0b72f5bb1734eeeba48f545",
+  "replay_receipt_sha256": "04ce29f07326cd09111d36a2d154ebf48c308375c086f4260ca96f238393a9d0",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 133728,
-    "candidate_start": 133728,
+    "target_start": 133744,
+    "candidate_start": 133744,
     "size": 2,
     "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
-    "candidate_sha256": "b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2",
+    "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -19,9 +19,9 @@
     "map_scope": {
       "kind": "complete-initialized-data-contribution",
       "map_class": "DATA",
-      "start": 133728,
+      "start": 133744,
       "size": 2,
-      "module": "th05/dbgfrm.cpp",
+      "module": "th05/plcrinit.cpp",
       "segment": "_DATA"
     }
   },
@@ -110389,6 +110389,259 @@
           "-ml",
           "-DBINARY='M'",
           "th05/dbgfrm.cpp"
+        ]
+      },
+      "receipt_aggregate_pass": true
+    },
+    {
+      "id": "main-load-playchar-resources-initial-data",
+      "entry_sha256": "eb95d706c476cf1b9c56367a0415797b0d61748d54703c869a70386d2f1d1322",
+      "result": {
+        "id": "main-load-playchar-resources-initial-data",
+        "entry_sha256": "eb95d706c476cf1b9c56367a0415797b0d61748d54703c869a70386d2f1d1322",
+        "rounds": [
+          {
+            "target_start": 133744,
+            "candidate_start": 133744,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133744,
+              "size": 2,
+              "module": "th05/plcrinit.cpp",
+              "segment": "_DATA"
+            }
+          },
+          {
+            "target_start": 133744,
+            "candidate_start": 133744,
+            "size": 2,
+            "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "candidate_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "map_scope": {
+              "kind": "complete-initialized-data-contribution",
+              "map_class": "DATA",
+              "start": 133744,
+              "size": 2,
+              "module": "th05/plcrinit.cpp",
+              "segment": "_DATA"
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "7c669bfa616ab9a366fc3b25c33e6228f4a16b46df53f9b3e70077574a0cf46a",
+            "dependency_timestamp_normalized_sha256": "6488e71a53cd72661ce303e76b80bdf8c4c7f45a78b379960f94c5f65c2236dd",
+            "module_name": "th05/plcrinit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/plcrinit.cpp",
+              "src/main/runtime/load_playchar_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          },
+          {
+            "sha256": "01b405ba42bbb7a69e5c7a778d9dfffb4bf3cd8f30a5bf72e5428c0d0be75e51",
+            "dependency_timestamp_normalized_sha256": "6488e71a53cd72661ce303e76b80bdf8c4c7f45a78b379960f94c5f65c2236dd",
+            "module_name": "th05/plcrinit.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/plcrinit.cpp",
+              "src/main/runtime/load_playchar_initial.cpp"
+            ],
+            "initialized_data_scope": {
+              "kind": "complete-compiler-initialized-data",
+              "segment": "_DATA",
+              "class": "DATA",
+              "size": 2,
+              "segment_index": 2,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 2,
+                  "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+                }
+              ]
+            }
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/plcrinit.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='M'",
+            "th05/plcrinit.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/main_load_playchar_initial_bindings.asm",
+            "sha256": "1f1ab57843d46acbf511122eb92c0e4823e83d3c234e4860977d9ed9fb950371"
+          },
+          {
+            "path": "src/main/runtime/load_playchar_initial.cpp",
+            "sha256": "af68849afda99a39611b7abbcf1b24a2dcb76ad3d0d1d1169c07f663a51937fb"
+          }
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/main_load_playchar_initial_bindings.asm",
+          "sha256": "1f1ab57843d46acbf511122eb92c0e4823e83d3c234e4860977d9ed9fb950371"
+        },
+        {
+          "path": "src/main/runtime/load_playchar_initial.cpp",
+          "sha256": "af68849afda99a39611b7abbcf1b24a2dcb76ad3d0d1d1169c07f663a51937fb"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "04ce29f07326cd09111d36a2d154ebf48c308375c086f4260ca96f238393a9d0",
+      "compiled_negative_control": {
+        "target_start": 133744,
+        "candidate_start": 133744,
+        "size": 2,
+        "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-initialized-data-contribution",
+          "map_class": "DATA",
+          "start": 133744,
+          "size": 2,
+          "module": "th05/plcrinit.cpp",
+          "segment": "_DATA"
+        }
+      },
+      "negative_control": {
+        "unit_id": "main-load-playchar-resources-initial-data",
+        "entry_sha256": "eb95d706c476cf1b9c56367a0415797b0d61748d54703c869a70386d2f1d1322",
+        "mutation": {
+          "unit": "main-load-playchar-resources-initial-data",
+          "source": "src/main/runtime/load_playchar_initial.cpp",
+          "find": "load_playchar_resources = 0;",
+          "replace": "load_playchar_resources = 1;"
+        },
+        "control_sha256": "390301b9824ad7969040fe9a46ad457ad0e12eddcc29686dcd965f5c968682d3",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 133744,
+          "candidate_start": 133744,
+          "size": 2,
+          "target_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+          "candidate_sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-initialized-data-contribution",
+            "map_class": "DATA",
+            "start": 133744,
+            "size": 2,
+            "module": "th05/plcrinit.cpp",
+            "segment": "_DATA"
+          }
+        },
+        "omf": {
+          "sha256": "47ed8f3d48594b8a67e3818caeeacc31ce4ef96797bc944cd49bb82bf4d82963",
+          "dependency_timestamp_normalized_sha256": "c24c39bff45148e09b46f9d1da21d5058c557e969d4ef1cf5086f2258a184952",
+          "module_name": "th05/plcrinit.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/plcrinit.cpp",
+            "src/main/runtime/load_playchar_initial.cpp"
+          ],
+          "initialized_data_scope": {
+            "kind": "complete-compiler-initialized-data",
+            "segment": "_DATA",
+            "class": "DATA",
+            "size": 2,
+            "segment_index": 2,
+            "ledata": [
+              {
+                "offset": 0,
+                "size": 2,
+                "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+              }
+            ]
+          }
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='M'",
+          "th05/plcrinit.cpp"
         ]
       },
       "receipt_aggregate_pass": true

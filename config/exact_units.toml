@@ -6961,3 +6961,25 @@ unit = "main-debug-frame-state-initial-data"
 source = "src/main/runtime/debug_frame_initial.cpp"
 find = "debug_frame_step_enabled = false;"
 replace = "debug_frame_step_enabled = true;"
+
+[[units]]
+id = "main-load-playchar-resources-initial-data"
+source = "src/main/runtime/load_playchar_initial.cpp"
+module = "th05/plcrinit.cpp"
+segment = "_DATA"
+wrapper_options = "-zPmain_01"
+bindings_source = "probes/units/main_load_playchar_initial_bindings.asm"
+target_start = 0x20a70
+size = 2
+functions = 0
+origin = "compiler-generated-cxx-semantic-data"
+extent_kind = "initialized-data"
+data_semantics = ["state"]
+alignment_offsets = []
+padding_bytes = []
+
+[[controls]]
+unit = "main-load-playchar-resources-initial-data"
+source = "src/main/runtime/load_playchar_initial.cpp"
+find = "load_playchar_resources = 0;"
+replace = "load_playchar_resources = 1;"
