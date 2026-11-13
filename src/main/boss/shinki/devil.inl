@@ -37,8 +37,8 @@ void near pattern_devil(void)
 	#define bullet_direction 	shinki_devil_scratch.bullet_direction
 	#define bullet_intro_done	shinki_devil_scratch.bullet_intro_done
 	#define b6ball_interval  	shinki_devil_scratch.b6ball_interval
-	#define bullet_angle_inner	shinki_devil_scratch.bullet_angle_inner
-	#define bullet_angle_outer	shinki_devil_scratch.bullet_angle_outer
+	#define bullet_angle_inner	shinki_devil_scratch.spiral_or_devil_inner_angle.devil_bullet_angle_inner
+	#define bullet_angle_outer	shinki_devil_scratch.spiral_or_devil_outer_angle.devil_bullet_angle_outer
 
 	#define laser_grow_delay shinki_devil_laser_grow_delay
 

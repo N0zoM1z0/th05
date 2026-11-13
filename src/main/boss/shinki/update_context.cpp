@@ -39,8 +39,8 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 
 void near pattern_circles_and_alternating_spirals(void)
 {
-	#define pellet_angle	 shinki_scratch.spiral_pellet_angle
-	#define red_angle   	 shinki_scratch.spiral_red_angle
+	#define pellet_angle	 shinki_scratch.spiral_or_devil_inner_angle.spiral_pellet_angle
+	#define red_angle   	 shinki_scratch.spiral_or_devil_outer_angle.spiral_red_angle
 
 	int frame_in_cycle;
 

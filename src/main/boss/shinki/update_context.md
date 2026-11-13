@@ -345,19 +345,27 @@ select the wrong following wave.
 `scratch.hpp` now uses the same one-byte `ShinkiWaveOrDevilLaserLatch`
 union type in both complete 16-byte views. The phase view nests it at offset
 10 beside the wave index; the Devil view nests it at the same offset beside
-the laser latch. Compile-time assertions prove both the member offsets and
-the equality of the two view offsets. The controller's `phase_relative`
-alias and `pattern_devil()`'s `lasers_active` alias address their respective
-named members of this one physical union. No new Boss storage or phase reset
-is introduced.
+the laser latch. The controller's `phase_relative` alias and
+`pattern_devil()`'s `lasers_active` alias address their respective named
+members of this one physical union.
+
+The same two views also share `ShinkiSpiralOrDevilInnerAngle` at byte 14
+and `ShinkiSpiralOrDevilOuterAngle` at byte 15. `pattern_devil()` uses their
+inner/outer bullet-angle members; final circles use the same bytes for pellet
+and red-ring angles, explicitly reinitializing both at frame 128. Compile-time
+size, member-zero and cross-view-offset assertions pin all three overlays.
+No new Boss storage or phase reset is introduced; only the original final
+spiral angle initialization remains.
 
 The focused twelve-unit replay recompiles every Shinki owner that consumes
 this scratch header. Two independent Borland/TLINK producers match all
 original CODE scopes and ordered fixups, including the complete **959-byte**
 controller and **802-byte** Devil attack; the compiled semantic negative is
-rejected. The initial phase-view receipt is
-`.analysis/unit-replays/gpt-web-shinki-wave-latch-overlay-20261113/receipt.json`;
-the follow-up shared-view receipt is
-`.analysis/unit-replays/gpt-web-shinki-shared-latch-view-20261113/receipt.json`.
-This makes the cross-phase lifetime explicit without adding duplicate CODE
-credit or running a whole accepted-set cold replay.
+rejected. The byte-10 phase and shared-view receipts are
+`.analysis/unit-replays/gpt-web-shinki-wave-latch-overlay-20261113/receipt.json`
+and `.analysis/unit-replays/gpt-web-shinki-shared-latch-view-20261113/receipt.json`.
+The final byte-14/15 angle-overlay receipt, including the complete member-zero
+and cross-view assertions, is
+`.analysis/unit-replays/gpt-web-shinki-angle-overlay-final-20261113/receipt.json`.
+This makes all three cross-phase lifetimes explicit without adding duplicate
+CODE credit or running a whole accepted-set cold replay.
