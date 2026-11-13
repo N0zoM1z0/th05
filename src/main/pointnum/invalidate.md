@@ -25,11 +25,11 @@ Three actual first producers were retained:
 The original preloads current X into AX, then pushes previous Y and AX.
 The final ordinary C++ lowers the two arguments to memory PUSHes, one byte
 shorter. All native bytes remain mandatory; the discrepancy is not padding.
-Every replay stopped at its first complete-size gate, with no second
-positive, compiled negative or receipt. The final 43-byte source is maintained
-in `invalidate.cpp`; its proposal is parked outside the live exact manifest.
-The original 44 bytes remain entirely unknown and uncredited. Init/update
-and both alignment NOPs remain outside this source; init now has its own
+The 43-byte result was the best natural source until the 2026-11-13 AX
+argument-register refinement below. The current source remains outside the
+live exact manifest because the complete extent is already credited to the
+reviewed ASM family; no duplicate C++ CODE ownership is inferred. Init/update
+and both alignment NOPs remain outside this source; init has its own
 independent [11-byte acceptance](init.md), while update remains unaccepted.
 
 Actual ordinary CRC-valid OMF, complete MAP extents, source snapshots and

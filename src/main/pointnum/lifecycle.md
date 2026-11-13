@@ -51,11 +51,14 @@ bounded semantic evidence, not exact acceptance or historical source identity.
 Report `.analysis/pointnum-lifecycle-semantic-check.json`, SHA-256
 `3520f2550feaf9d251bb5a3b69e1caa7650eba60e8b295b23ab96b43ca6259dc`.
 
-The later standalone `invalidate.cpp` uses a signed count and canonical
-scalar conversions, without a coordinate local. Its complete43-byte output
-passes full-pool semantic checks but remains one byte short of the native44;
-invalidation and update remain unknown. The old184-byte producer and
-its model evidence are unchanged. See [actual scalar-source trials](invalidate.md).
+The current standalone `invalidate.cpp` now uses the DOS `_AX` pseudoregister
+to stage current X before the real previous-Y/current-X Pascal call. Two
+fresh native producers reproduce the complete44-byte invalidator and its
+empty ordered fixup list; the compiled height8→9 negative is rejected. This
+is a byte-exact natural-C++ alternative, while the accepted reviewed ASM
+family remains the sole CODE owner and the C++ source is intentionally not
+added to the live exact manifest. The earlier43-byte scalar candidate remains
+historical evidence. See [actual scalar-source trials](invalidate.md).
 
 The initializer body is now shared literally through `init.inl`. Published
 init/update declarations and definitions use their actual no-argument near

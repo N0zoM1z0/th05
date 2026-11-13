@@ -128,6 +128,13 @@ The full ZUN ownership summary and current intervals are in
   the remaining four bytes are solely `MOV AX,[4204]; POP SI` versus native
   `POP SI; MOV AX,[4204]`. The exact 55-byte reviewed ASM remains sole owner.
   See [`bb_load.md`](../src/main/formats/bb_load.md).
+- **Pointnum invalidator natural-C++ exact alternative (2026-11-13)**:
+  `pointnums_invalidate()` now stages current X in DOS `_AX` before the
+  previous-Y/current-X Pascal call. Two fresh native Borland/TLINK producers
+  match all44 original bytes and the empty ordered relocation stream; the
+  compiled height8→9 negative is rejected. The reviewed ASM remains sole
+  credited owner, so no duplicate CODE bytes are added. See
+  [`invalidate.md`](../src/main/pointnum/invalidate.md).
 - **Gather template-copy leaf (2026-11-13)**: the 27-byte exact ASM owner
   remains authoritative. New natural C++ alternatives were compiled: indexed
   WORD loop 50 bytes, SI/DI pointer loop 44 bytes, best register do/while loop

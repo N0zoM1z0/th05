@@ -14,7 +14,12 @@ void near pointnums_invalidate(void)
     do {
         if(pointnum->flag != F_FREE) {
             tile_invalidate_box.x = pointnum->width;
-            tiles_invalidate_around(pointnum->center_prev_y, pointnum->center_cur.x);
+            // Keep current X in the original AX argument register before the
+            // previous-Y/current-X Pascal argument pair is pushed.
+            _AX = pointnum->center_cur.x.v;
+            tiles_invalidate_around(
+                pointnum->center_prev_y.v, static_cast<subpixel_t>(_AX)
+            );
         }
         pointnum++;
     } while(--remaining != 0);
