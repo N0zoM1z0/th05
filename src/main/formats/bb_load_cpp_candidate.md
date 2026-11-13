@@ -57,3 +57,50 @@ and the 58-byte BP variant is retained in:
 - `.analysis/gpt-web-bb-load-bp-stack-anchor-a-20261113/`
 
 No new code credit or acceptance is claimed.
+
+
+## 2026-11-13: explicit inline-SI preservation
+
+A hybrid C++/inline-ASM attempt removed the C++ `register original_ds` local
+and made the save/restore boundary explicit:
+
+```cpp
+asm { push si; mov si, ds; }
+// DOS open/read/close remains ordinary C++ and intrinsic calls.
+asm { mov ds, si; pop si; }
+return bb_load_seg;
+```
+
+It was compiled both with and without a forward declaration carrying
+`#pragma aux bb_load = modify [si]`. Turbo C++ 4.02 still recognizes SI as a
+callee-saved register used by the inline-ASM body and emits its own additional
+save/restore. Both variants produce **57 bytes** with duplicate `PUSH SI` at
+entry and duplicate `POP SI` at return. Moving the pragma before the header
+prototype also does not suppress the compiler-managed pair; that variant is
+57 bytes with the original +7 relocation but has the same duplicate save.
+None is accepted.
+
+## 2026-11-13: stack-only DS lifetime and manual epilogue probes
+
+A stack-only alternative was compiled in two source spellings. It snapshots
+`SP` after the near-Pascal allocator cleanup, saves original DS with `PUSH DS`,
+loads the filename through the saved stack base, restores DS after DOS open,
+saves it again while DS addresses the allocated payload, and restores it after
+read/close. Both spellings produce **51 bytes** with the allocator relocation
+at **+6**, not the native **+7**. They avoid SI and preserve the original DS
+across the DOS calls, but omit the native initial `PUSH SI` / `MOV SI,DS`
+sequence and do not reproduce the complete function. The two variants match
+only two bytes at the same offsets; they are not a byte-level improvement over
+the existing 51/55 candidate.
+
+A manual `POP SI; MOV AX,[bb_load_seg]; RET 4` epilogue was also tried. The
+inline assembler cannot resolve the C++ variable's `_bb_load_seg` spelling
+directly. Using the reviewed absolute DS slot instead causes Turbo C++ to
+allocate the saved DS in DI, retain another callee-save pair and grow the
+contribution to **61 bytes** with relocation +8. No inline epilogue variant
+is accepted.
+
+The remaining natural-C++ issue is still specifically the order of the return
+load and the compiler-managed callee-save epilogue. The original 55-byte ASM
+owner remains exact and authoritative; no new DATA, CODE or partial credit is
+claimed.

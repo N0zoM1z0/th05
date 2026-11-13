@@ -83,7 +83,11 @@ The complete 55-byte function is already owned by reviewed original-language
 ASM. The best natural C++ source emits the full extent and the correct `+7`
 relocation but matches **51/55** bytes. The remaining four bytes are the
 ordering difference `MOV AX,[bb_load_seg]; POP SI` versus native
-`POP SI; MOV AX,[bb_load_seg]`. The CX-held DS experiment also emits 51 bytes
+`POP SI; MOV AX,[bb_load_seg]`. Hybrid explicit-SI and pre-prototype `#pragma aux`
+trials still trigger TCC's compiler-managed save/restore and emit 57 bytes.
+A stack-only DS-save alternative is 51 bytes with relocation +6, and a manual
+epilogue/absolute-slot attempt grows to 61 bytes with relocation +8. None
+reproduces the original. The CX-held DS experiment also emits 51 bytes
 but shifts the relocation and relies on an unproved register lifetime. Do not
 describe this as an uncovered executable gap. See
 [`bb_load.md`](../src/main/formats/bb_load.md) and
