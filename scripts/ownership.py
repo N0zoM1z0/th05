@@ -226,10 +226,12 @@ def overlay_zun(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     source_origins = {
         "third-party-comcstm-stub-reference", "pipeline-reconstructed-assembly",
         "inferred-original-register-assembly", "inferred-original-handwritten-assembly",
-        "pinned-master-library-original-assembly", "pinned-borland-ct-library-original-object",
+        "pinned-master-library-original-assembly", "pinned-master-library-original-binary",
+        "pinned-borland-ct-library-original-object",
     }
     vendor_identities = {
         ("pinned-master-library-original-assembly", "Master 0.23"),
+        ("pinned-master-library-original-binary", "Master 0.23"),
         ("pinned-borland-ct-library-original-object", "Borland Turbo C++ 4.0 CT.LIB"),
     }
     for row in claims:
@@ -884,8 +886,9 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             pieces = overlay_vendor(view["size"], pieces, crt_claims)
             # The original COM's independently accepted outer wrapper,
             # dispatcher, standalone child modules, Master resident families,
-            # Borland brk/nearheap members, and early/stdio CT.LIB code partitions
-            # are reflected by exact bounded reviews. Leave all remaining -S bytes,
+            # Borland brk/nearheap members, early/stdio CT.LIB CODE and resident
+            # CT.LIB/Master DATA partitions are reflected by exact bounded reviews.
+            # Leave all remaining -S bytes,
             # the writable CRT CS slot, and external font resource to their
             # separate owners/unknown policy.
             from review_zun_ownership import reviewed_claims as reviewed_zun_modules

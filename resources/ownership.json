@@ -25,9 +25,9 @@
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 5158,
+    "unknown": 4573,
     "verified-vendor-code": 142514,
-    "verified-vendor-initialized-data": 7876
+    "verified-vendor-initialized-data": 8461
   },
   "views": {
     "main": {
@@ -14519,9 +14519,9 @@
         "accepted-zun-com-instructions": 1843,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 690,
+        "unknown": 105,
         "verified-vendor-code": 4838,
-        "verified-vendor-initialized-data": 116
+        "verified-vendor-initialized-data": 701
       },
       "intervals": [
         {
@@ -15213,6 +15213,112 @@
         },
         {
           "start": 8674,
+          "end": 8767,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "master-023-library-header-string",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-binary",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Master 0.23",
+          "member": "masters.lib-header-0x79"
+        },
+        {
+          "start": 8767,
+          "end": 8796,
+          "kind": "unknown"
+        },
+        {
+          "start": 8796,
+          "end": 8827,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-_abort-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "_abort"
+        },
+        {
+          "start": 8827,
+          "end": 8828,
+          "kind": "unknown"
+        },
+        {
+          "start": 8828,
+          "end": 8830,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-atexit-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "atexit"
+        },
+        {
+          "start": 8830,
+          "end": 8836,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-exit-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "exit"
+        },
+        {
+          "start": 8836,
+          "end": 9156,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-files-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "files"
+        },
+        {
+          "start": 9156,
+          "end": 9198,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-files2-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "files2"
+        },
+        {
+          "start": 9198,
+          "end": 9200,
+          "kind": "unknown"
+        },
+        {
+          "start": 9200,
+          "end": 9291,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-ioerror-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "ioerror"
+        },
+        {
+          "start": 9291,
           "end": 9294,
           "kind": "unknown"
         },
@@ -15308,7 +15414,7 @@
           "instruction_bytes": 68
         }
       ],
-      "zun_native_modules_review_sha256": "021f1742a736722b9fe3e2b6d02fe46049f42fedec35c7b510c1c59fd8110118",
+      "zun_native_modules_review_sha256": "c5f4ecb097c3f3acf6c912fae22d0859729176f6a6912cb1f38570cdd41a5b87",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }

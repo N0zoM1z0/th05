@@ -260,11 +260,18 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
         root, view, verify_targets=verify_targets
     )
     claims.extend(stdio_claims)
+    # The resident initialized DATA map is independent of the CODE partitions:
+    # six original CT.LIB DATA segments plus the exact Master 0.23 header string.
+    import review_zun_resident_data as resident_data
+    resident_data_claims, resident_data_sha = resident_data.reviewed_claims(
+        root, view, verify_targets=verify_targets
+    )
+    claims.extend(resident_data_claims)
 
     # The newly overlaid total includes the accepted COM/MASTER scopes, the
-    # Borland brk + nearheap modules, and both resident CT.LIB CODE partitions.
-    # Writable CRT state, segment holes and all unreviewed -S bytes stay unknown.
-    expected = 7600
+    # Borland runtime modules, both CT.LIB CODE partitions, and resident DATA.
+    # Writable CRT state and the remaining small segment holes stay unknown.
+    expected = 8185
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -297,5 +304,9 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     evidence["stdio_ctlib"] = {
         "manifest": digest_file(root / "config/zun_stdio_ctlib.toml"),
         "acceptance": stdio_sha,
+    }
+    evidence["resident_data"] = {
+        "manifest": digest_file(root / "config/zun_resident_data.toml"),
+        "acceptance": resident_data_sha,
     }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())

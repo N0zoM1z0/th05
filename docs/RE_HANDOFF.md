@@ -41,12 +41,13 @@ The target is **98% authored bytes exact**, but the global authored-byte
 
 ### 1. ZUN `-S` resident tail — physical ownership, not assumed code
 
-The corrected 18,116-byte launcher ownership map has **690 unknown bytes**
-remaining in five intervals. The early `0x13BA..0x1601` interval (583 bytes)
-and 1,837 bytes of stdio/path CODE in the former `0x18F7..0x2034` interval
-are now verified as original Borland CT.LIB segments with semantic OMF
+The corrected 18,116-byte launcher ownership map has **105 unknown bytes**
+remaining in eight intervals. The early 583-byte CODE interval, 1,837 bytes
+of stdio/path CODE, and 585 resident DATA bytes are now verified against
+original Borland CT.LIB and Master 0.23 binaries with semantic OMF
 relocation/public-symbol checks. See the [early CT.LIB review](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md),
 [stdio/path CT.LIB review](reconstruction/ZUN_STDIO_CTLIB_2026-11-13.md),
+[resident DATA review](reconstruction/ZUN_RESIDENT_DATA_2026-11-13.md),
 and the current ZUN ownership map.
 
 | Outer `ZUN.COM` interval | Bytes | `-S` COM interval / note |
@@ -54,15 +55,18 @@ and the current ZUN ownership map.
 | `0x0D47..0x0D49` | 2 | Writable CRT CS runtime slot; intentionally uninitialized |
 | `0x1EE5..0x1EE7` | 2 | `setargv` CODE SEGDEF prefix without LEDATA |
 | `0x2026..0x2034` | 14 | Gap after `setargv` CODE LEDATA, before C0T DATA |
-| `0x21E2..0x244E` | 620 | `0x17FE..0x1A6A` resident DATA candidates |
+| `0x223F..0x225C` | 29 | Bytes after the exact Master 0.23 header string |
+| `0x227B..0x227C` | 1 | Gap between `_abort` and `atexit` DATA |
+| `0x23EE..0x23F0` | 2 | Gap between `files2` and `ioerror` DATA |
+| `0x244B..0x244E` | 3 | Gap after `ioerror` DATA |
 | `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` DATA/INITDATA candidates |
 
 The original `CT.LIB` code is now verified for nine early runtime members and
-ten stdio/path members, including their public boundaries and ordered FIXUPP
-semantics. The remaining file-backed unknowns are now primarily resident DATA,
-INITDATA and small segment holes. Do not assume every unknown byte is
-executable; recover exact segment/member context and initialized-versus-BSS
-semantics before assigning ownership.
+ten stdio/path members. Six original CT.LIB DATA segments and the 93-byte
+Master library header string are also verified. The remaining file-backed
+unknowns are a 52-byte INIT/DATA tail and small segment/data holes. Do not
+assume every unknown byte is executable; recover exact segment/member context
+and initialized-versus-BSS semantics before assigning ownership.
 
 Start with [the current ZUN ownership map](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
 The accepted `-S` `brk`/`sbrk` and `nearheap` members are vendor code/data, not
