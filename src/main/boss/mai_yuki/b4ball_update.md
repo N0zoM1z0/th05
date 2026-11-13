@@ -296,3 +296,25 @@ The isolated one-producer declaration matrix is under
 `.analysis/gpt-web-b4ball-barrier-{void-empty,int-zero,char-zero,bool-false-static,void-empty-static}-a-20261113/`.
 This is a source-quality refinement only: no CODE bytes or new function
 ownership are claimed.
+
+## 2026-11-13: no-helper control-flow layouts remain five bytes long
+
+After simplifying the exact helper to empty `void`, six source-only layouts
+were tested with the helper declaration and call removed entirely: positive
+four-way conjunction with/without `continue`, four nested positive guards with
+shared/per-branch removal, a nested-guard `goto` to the in-bounds body, and an
+explicit four-check `goto` removal proxy. Every first producer emitted the
+same **278-byte** function with ordered fixups `[240,161,123]`; none reproduced
+the native 273-byte body or original `[235,156,118]` relocation coordinates.
+The three far-call fixups are all shifted by the same five-byte clip-layout
+residual. This confirms that simply inverting the bounds condition, nesting
+it, or spelling the removal edge as `goto` does not replace the compiler
+control-flow hint in this Turbo C++ build.
+
+The maintained exact source therefore keeps the zero-code empty `void`
+helper. It does not add a return value, a volatile access, an emitted opcode,
+branch padding or any runtime work. The six rejected first-producer layouts
+are retained under `.analysis/gpt-web-b4ball-{positive-conjunction,
+nested-positive,positive-conjunction-continue,nested-positive-continue,
+nested-goto,explicit-proxy-goto}-fixed-a-20261113/`; none is accepted or
+credited.
