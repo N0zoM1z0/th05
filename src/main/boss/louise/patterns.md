@@ -86,3 +86,14 @@ The compiled blue spread5→6 mutation is rejected.
 Credit is3 complete function(s) and429 authored instruction bytes;
 there is no owned table, padding, DATA or BSS. No previously accepted source
 or ABI header was changed to obtain this result.
+
+## 2026-11-13: shared Boss mode and blue/red direction handoff
+
+The initial blue-spread and red-stack callbacks share the same Boss mode byte
+as the later sweeping-laser and turning-ring callbacks: reposition is zero,
+blue/laser is one, red/ring is two. A completed charge returns to reposition.
+The blue-spread initializer toggles the byte-15 direction bit, and the red
+stack consumes that selected direction without changing it. The later laser
+initializer overwrites the same physical byte with a fresh random side bit.
+This is a sequential lifetime over the original 16-byte Boss scratch area,
+not independent phase state.

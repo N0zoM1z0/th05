@@ -157,3 +157,35 @@ table and original ordered relocation `[121]`. The compiled HP-boundary
 negative was rejected. Evidence:
 `.analysis/unit-replays/gpt-web-louise-shared-fire-hits-20261112-a/receipt.json`.
 The accepted code receives no duplicate authored-byte credit.
+
+## 2026-11-13: shared mode domain and cross-pattern scratch lifetimes
+
+The Boss `mode` byte has one shared numeric protocol across the two three-way
+attack phases: `0` is reposition, `1` is the active blue-spread / sweeping-
+laser callback, and `2` is the active red-stack / turning-ring callback. The
+phase determines which callback owns modes 1 and 2; they are not six distinct
+Boss states. Both first-phase charged callbacks and both later charged
+callbacks return to the same reposition value. The compile-time mode constants
+now live beside the shared charge/pattern declarations, with assertions that
+the two pairs intentionally share values.
+
+The 16-byte Louise scratch view now names the actual sequential lifetimes of
+its final two bytes. Byte 14 (`next_laser_ring_mode`) is initialized to zero
+when mirrored fans end, selects laser mode 1 on the next reposition, toggles
+to ring mode 2, and continues alternating until the 20-pattern phase ends.
+Byte 15 (`blue_red_or_laser_direction`) is initialized to zero at Ready;
+each blue-spread initialization toggles it, the red-stack pattern consumes the
+same direction without resetting it, and the later sweeping-laser initializer
+overwrites it with a fresh random side bit. Byte 10 remains the charge-speed
+byte: it is initialized to `0x18` for the first blue wave and reinitialized to
+`0x14` for the laser/ring wave. All three are views of the original
+`boss_statebyte`; no new storage or transition reset is added.
+
+The complete four-unit Louise closure was replayed twice after the rename:
+429-byte initial patterns, 603-byte later patterns, 582-byte far-Pascal Boss
+controller and 122-byte flystep helper. Every original byte and ordered MZ
+relocation matches in both Borland/TLINK producers, and the existing compiled
+fan-angle negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-louise-cross-wave-byte15-byte14-final-20261113/receipt.json`.
+This is a semantic refinement of already accepted owners; no duplicate CODE
+credit is claimed.

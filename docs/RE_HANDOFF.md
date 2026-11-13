@@ -128,6 +128,21 @@ The full ZUN ownership summary and current intervals are in
   the remaining four bytes are solely `MOV AX,[4204]; POP SI` versus native
   `POP SI; MOV AX,[4204]`. The exact 55-byte reviewed ASM remains sole owner.
   See [`bb_load.md`](../src/main/formats/bb_load.md).
+- **Louise shared Boss-mode and scratch-byte protocol (2026-11-13)**:
+  mode 0 is reposition, mode 1 is blue-spread/sweeping-laser, and mode 2 is
+  red-stack/turning-ring. Byte 14 alternates the later laser/ring selector;
+  byte 15 is toggled by blue spreads, consumed by red stacks, then overwritten
+  by the later laser's random side. The complete 429+603+582+122-byte Louise
+  source closure replays exact twice with original ordered fixups and the
+  compiled fan-angle negative rejected. No duplicate CODE credit. See
+  [`louise/update.md`](../src/main/boss/louise/update.md).
+- **Vector2 near MOVSX frontend boundary (2026-11-13)**: TCC-S near Pascal
+  trials reject inline `MOVSX` from BP/table operands and register operands,
+  even with far-vector-style C-linkage table declarations; an ordinary inline
+  16-bit MOV control succeeds. This narrows the existing 12-byte C++ residual
+  to a near-context MOVSX parser/lowering limitation. The 67-byte C++ result
+  remains diagnostic only; the 55-byte ASM remains sole exact owner. See
+  [`vector2_near.md`](../src/shared/math/vector2_near.md).
 - **Pointnum invalidator natural-C++ exact alternative (2026-11-13)**:
   `pointnums_invalidate()` now stages current X in DOS `_AX` before the
   previous-Y/current-X Pascal call. Two fresh native Borland/TLINK producers

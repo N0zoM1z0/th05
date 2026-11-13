@@ -145,3 +145,14 @@ The compiled negative still increases the *first* starting angle by one;
 its source anchor moved to the now-parameterized macro call. The first
 attempt stopped at that stale mutation anchor, not at a byte mismatch.
 No duplicate CODE credit was added for this accepted source refinement.
+
+## 2026-11-13: laser/ring selector and direction-byte reuse
+
+The later laser/ring phase begins with byte 14 (`next_laser_ring_mode`) set to
+zero after the mirrored-fan phase. Each completed reposition assigns Boss mode
+`selector + 1`, then flips the selector with `1 - selector`, so the first
+callback is sweeping lasers (mode 1), the next is turning rings (mode 2), and
+they alternate for the full 20-pattern limit. Both charge-finish paths restore
+Boss mode zero, the shared reposition state. The sweeping-laser initializer
+also replaces byte 15's earlier blue/red direction with a new random side bit;
+that byte is not a persistent direction across all phases.
