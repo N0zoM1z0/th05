@@ -247,3 +247,36 @@ only the `IATAN2` target method does not change TLINK's emitted order. Thus
 neither the immediate prefix nor the local-versus-external `IATAN2` target
 method alone explains the remaining order. The full surrounding OMF/TLINK
 context is still open; no fixup sorting, OMF patching, or MZ rewriting is used.
+
+## 2026-11-13: corrected segment anchor and ordered MZ relocation investigation
+
+The 1,125-byte later-pattern contribution begins at original MAIN
+`0x17B76` (decimal 97,142), not at `0x17957`. The latter is the start of the
+combined 543-byte initial-pattern prefix plus this later contribution:
+`0x17957 + 543 = 0x17B76`. The code is in `MAIN_035_TEXT`, at segment-relative
+`0x21F`; the earlier `BULLET_U_TEXT` attribution was a bad segment mapping and
+must not be used for routing or acceptance.
+
+The six authoritative target MZ relocation entries within this unit, in
+actual table order, are `[38, 1106, 1019, 648, 322, 130]`. Their far-pointer
+operand starts (OMF FIXUPP sites, two bytes before each MZ segment-word
+relocation) are `[36, 1104, 1017, 646, 320, 128]`. The complete 1,125-byte
+non-relocation code comparison is exact; the remaining mismatch is the
+ordered relocation table, not a missing or changed instruction.
+
+The direct TCC object candidate currently emits OMF fixups in the order
+`[1017, 646, 320, 128, 36, 1104]`, producing MZ relocation order
+`[1019, 648, 322, 130, 38, 1106]`. This is a cyclic rotation of the target
+sequence, but the oracle correctly rejects it: relocation order is part of the
+pinned executable contract. The TASM object assembled from the IDA-derived
+`main.obj` has yet another FIXUPP order, `[36, 128, 320, 646, 1017, 1104]`;
+that reconstructed assembly object is useful for instruction and segment
+routing, but it is not evidence of the original compiler object's FIXUPP
+ordering.
+
+An experiment giving the second `iatan2` call a distinct external alias did
+not resolve the relocation ordering. No alias, manual relocation insertion,
+MZ table sorting, or target-byte patch is accepted as a solution. The unit
+remains **unaccepted** until a reproducible source/compiler/linker path emits
+the exact target MZ order while preserving all 1,125 raw code bytes and the
+original ABI. No additional CODE credit is claimed by this investigation.
