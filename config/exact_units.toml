@@ -7027,3 +7027,25 @@ unit = "main-pointnum-times-two-initial-data"
 source = "src/main/item/pointnum_twice_initial.cpp"
 find = "pointnum_times_2 = false;"
 replace = "pointnum_times_2 = true;"
+
+
+# Verified source-language alternative to the separately accepted ASM owner.
+# This candidate intentionally remains unaccepted to avoid duplicate CODE credit.
+[[units]]
+id = "main-scroll-coordinate"
+source = "src/main/scroll/coordinates.cpp"
+module = "th05/sc_coord.cpp"
+segment = "SCROLL_COORDINATE_TEXT"
+wrapper_options = "-zCSCROLL_COORDINATE_TEXT -zPmain_01 -k-"
+bindings_source = "probes/units/scroll_coordinate_bindings.asm"
+target_start = 0xdf28
+size = 40
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-scroll-coordinate"
+source = "src/main/scroll/coordinates.hpp"
+find = "SCROLL_RING_HEIGHT = 400"
+replace = "SCROLL_RING_HEIGHT = 399"

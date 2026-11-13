@@ -1,4 +1,4 @@
-# Scroll coordinate: exact original ASM, inexact natural C++
+# Scroll coordinate: exact original ASM and raw-exact natural C++ alternative
 
 The complete native MAIN helper DF28..DF50 contains 40 instruction bytes,
 without tables, padding or MZ fixups. It is near Pascal with one signed WORD
@@ -33,6 +33,29 @@ under `.analysis/native-producers/main-scroll-coordinate-{b,inline-a,relink-b}/`
 Complete evidence is `.analysis/scroll-coordinate-native-source-review.json`.
 The private proposal is outside all live manifests. No acceptance receipt,
 negative, behavior model, DATA/BSS ownership or authored-byte credit is added.
+
+## 2026-11-13: complete pure-C++ alternative in the original 40-byte extent
+
+The maintained `coordinates.cpp` now keeps the original accumulator in the
+real `_AX` DOS pseudoregister. Explicit `short` casts preserve the signed
+16-bit meaning of the arithmetic right shift and both one-step wrap tests;
+without those casts the pseudoregister's unsigned type changed `SAR` to `SHR`
+and removed the negative correction. This is ordinary C++ expressions plus
+read-only register intrinsics, with no inline ASM, emitted instructions,
+compiler barrier, or target bytes.
+
+Two independent focused Borland/TLINK producers reproduce all **40/40**
+original bytes at `[DF28,DF50)`, the original near-Pascal entry/RET2 and empty
+ordered relocation stream. The compiled `SCROLL_RING_HEIGHT` 400-to-399
+negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-main-scroll-coordinate-natural-cxx-20261113/receipt.json`.
+
+This is an exact source-language alternative to the independently accepted
+40-byte reviewed-ASM owner, not a second ownership claim. The ASM family
+remains the sole credited owner; the C++ alternative adds **zero** CODE bytes
+to progress and does not change any coverage denominator. Both paths preserve
+the actual one-word stack argument, `SS:[BX+2]`, `scroll_active` byte and
+signed `scroll_line` word. No unrelated scroll owner or full cold replay ran.
 
 Review SHA-256:
 `b4b2c57970ced11c5348e12129e6616219c2999dff939ac491e419e1b1b4992a`.

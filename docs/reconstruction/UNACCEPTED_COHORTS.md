@@ -24,9 +24,9 @@ be described as uncovered code:
 
 | Alternative C++ source | Status of that alternative | Accepted owner |
 | --- | --- | --- |
-| BB resource loader | C++ now emits 55 bytes and fixup +7; 51/55 bytes match | Full 55-byte reviewed ASM, [review](../../src/main/formats/bb_load.md) |
-| Near vector helper | Ordinary C++ 92/106 versus original 55, with following EVEN byte excluded | Full 55-byte reviewed ASM, [review](../../src/shared/math/vector2_near.md) |
-| Scroll coordinate helper | Ordinary C++ 47/51 versus original 40 bytes | Full 40-byte reviewed ASM, [review](../../src/main/scroll/coordinates.md) |
+| BB resource loader | C++ emits the full 55-byte extent and fixup +7; 51/55 bytes match | Full 55-byte reviewed ASM, [review](../../src/main/formats/bb_load.md) |
+| Near vector helper | Natural C++ now emits 67 bytes versus original 55; 9/55 same-position bytes match | Full 55-byte reviewed ASM, [review](../../src/shared/math/vector2_near.md) |
+| Scroll coordinate helper | Pure C++ now reproduces 40/40 bytes in two fresh producers and rejects its compiled 400→399 negative; no duplicate credit | Full 40-byte reviewed ASM remains sole owner, [review](../../src/main/scroll/coordinates.md) |
 
 ## Resolved since the previous handoff
 

@@ -7,17 +7,20 @@
 
 extern "C" vram_y_t pascal near scroll_subpixel_y_to_vram_seg1(subpixel_t y)
 {
-    // A near return occupies two bytes. This read occurs before any stack use.
+    // Preserve the original AX accumulator and read the real Pascal stack word
+    // before any stack use. DOS intrinsics describe registers; no instruction
+    // text or emitted opcode is present in this source.
     _BX = _SP;
-    int pixel_y = static_cast<int>(peek(_SS, (_BX + 2))) >> 4;
+    _AX = static_cast<int>(peek(_SS, (_BX + 2)));
+    _AX = static_cast<short>(_AX) >> 4;
     if(scroll_active) {
-        pixel_y += scroll_line;
+        _AX += scroll_line;
     }
-    // The original applies one correction; it does not normalize arbitrary Y.
-    if(pixel_y < 0) {
-        pixel_y += SCROLL_RING_HEIGHT;
-    } else if(pixel_y >= SCROLL_RING_HEIGHT) {
-        pixel_y -= SCROLL_RING_HEIGHT;
+    // AX is a 16-bit signed pixel coordinate; retain the original one-step wrap.
+    if(static_cast<short>(_AX) < 0) {
+        _AX += SCROLL_RING_HEIGHT;
+    } else if(static_cast<short>(_AX) >= SCROLL_RING_HEIGHT) {
+        _AX -= SCROLL_RING_HEIGHT;
     }
-    return pixel_y;
+    return _AX;
 }
