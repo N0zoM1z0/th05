@@ -15,6 +15,12 @@ void near pattern_devil(void)
 		DEVIL_LASER_GROW_FRAMES = 64,
 		DEVIL_LASER_TURN_INTERVAL_FRAMES = 8,
 		DEVIL_FIRST_LASER_SWEEP_FRAME = 65,
+		DEVIL_FAST_STAGE_FRAME = 2500,
+		DEVIL_DECORATIVE_SPREAD_COUNT = 3,
+		DEVIL_ANGLE_ZERO = 0x00,
+		DEVIL_PRELUDE_OUTER_STEP = 0x04,
+		DEVIL_PRELUDE_INNER_STEP = 0x02,
+		DEVIL_TURN_OUTER_STEP = 0x02,
 		// These angles close the clockwise/anti-clockwise turn-arounds.
 		DEVIL_SPREAD_OUTER_LOW = 0x30,
 		DEVIL_SPREAD_OUTER_HIGH = 0x40,
@@ -130,13 +136,13 @@ void near pattern_devil(void)
 		DEVIL_NEXT_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_outer);
 
 		if(!bullet_intro_done) {
-			bullet_angle_outer += 0x04;
-			bullet_angle_inner += 0x02;
+			bullet_angle_outer += DEVIL_PRELUDE_OUTER_STEP;
+			bullet_angle_inner += DEVIL_PRELUDE_INNER_STEP;
 		} else {
 			// "Decorative" pellets aimed to the top of the playfield
 			bullet_template.patnum = SHINKI_DEVIL_DECORATIVE_PELLET_PATNUM;
 			bullet_template.spawn_type = BST_NO_DECELERATE;
-			sara_set_spread(3, 0x30); // technically redundant
+			sara_set_spread(DEVIL_DECORATIVE_SPREAD_COUNT, SHINKI_DEVIL_SPREAD_ARC_ANGLE); // technically redundant
 
 			// This first decorative shot sets its angle before moving the origin.
 			// Later columns shift the origin before selecting their angle.
@@ -146,18 +152,18 @@ void near pattern_devil(void)
 
 			DEVIL_NEXT_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_inner);
 
-			DEVIL_NEXT_FIRE_COL(0x00 - bullet_angle_inner);
+			DEVIL_NEXT_FIRE_COL(DEVIL_ANGLE_ZERO - bullet_angle_inner);
 
-			DEVIL_NEXT_FIRE_COL(0x00 - bullet_angle_outer);
+			DEVIL_NEXT_FIRE_COL(DEVIL_ANGLE_ZERO - bullet_angle_outer);
 
 			if(bullet_direction == CLOCKWISE) {
-				bullet_angle_outer -= 0x02;
+				bullet_angle_outer -= DEVIL_TURN_OUTER_STEP;
 				bullet_angle_inner--;
 				if(bullet_angle_outer == DEVIL_SPREAD_OUTER_LOW) {
 					bullet_direction++; // = COUNTERCLOCKWISE;
 				}
 			} else /* if(bullet_direction == COUNTERCLOCKWISE) */ {
-				bullet_angle_outer += 0x02;
+				bullet_angle_outer += DEVIL_TURN_OUTER_STEP;
 				bullet_angle_inner++;
 				if(bullet_angle_outer == DEVIL_SPREAD_OUTER_HIGH) {
 					bullet_direction--; // = CLOCKWISE;
@@ -198,8 +204,8 @@ void near pattern_devil(void)
 	} else if((boss.phase_frame % DEVIL_LASER_TURN_INTERVAL_FRAMES) == 0) {
 		lasers[0].coords.angle = laser_angle_outer;
 		lasers[1].coords.angle = laser_angle_inner;
-		lasers[2].coords.angle = (0x80 - lasers[1].coords.angle);
-		lasers[3].coords.angle = (0x80 - lasers[0].coords.angle);
+		lasers[2].coords.angle = (SHINKI_DEVIL_MIRROR_ANGLE - lasers[1].coords.angle);
+		lasers[3].coords.angle = (SHINKI_DEVIL_MIRROR_ANGLE - lasers[0].coords.angle);
 		if(laser_direction == CLOCKWISE) {
 			laser_angle_outer++;
 			laser_angle_inner--;
@@ -213,7 +219,7 @@ void near pattern_devil(void)
 				laser_direction--; // = CLOCKWISE;
 			}
 		}
-		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= 2500)) {
+		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= DEVIL_FAST_STAGE_FRAME)) {
 			if((laser_grow_delay++) == DEVIL_FIRST_LASER_SWEEP_FRAME) {
 				b6ball_interval = select_for_rank(
                     DEVIL_BALL_FAST_EASY, DEVIL_BALL_FAST_NORMAL,

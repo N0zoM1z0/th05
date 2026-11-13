@@ -150,3 +150,26 @@ Borland/TLINK producers and the existing compiled 2500-to-2501 threshold
 negative passed for the entire closure. The receipt is
 `.analysis/unit-replays/gpt-web-shinki-devil-seven-columns-closure-20261112-d/receipt.json`.
 This is an exact natural-source refinement, with no duplicate code credit.
+
+## Remaining angle and fast-stage protocol (2026-11-13)
+
+The Devil's opening four-column volley now names its remaining source-level
+constants: the 2,500-frame forced fast-stage gate, three decorative pellets,
+the zero-angle origin for negative mirrored columns, the prelude's outer/inner
+increments of 4/2, and the later outer turn step of 2. The four laser directions
+use the same 0x80 half-turn already used by the mirrored bullet columns. The
+prelude advances every four frames until the outer angle reaches 0x40; the
+full pattern then turns clockwise to 0x30 and back counterclockwise to 0x40,
+while the inner angle moves by one per volley. The 2,500-frame gate can select
+the fast B6-ball cadence even before the HP threshold is reached.
+
+A first naming pass used `+= 1` / `-= 1` for the inner unit turn. Turbo C++
+4.02 expanded those into AL load/add/store sequences instead of the original
+single-byte memory INC/DEC, growing the complete function by eight bytes.
+Restoring the original postfix `++` / `--` expressions preserved the direct
+memory opcodes; the remaining names then produced the exact original 802-byte
+function. The complete twelve-unit Shinki source closure, including the 959-byte
+controller and all shared `shinki.cpp` consumers, passed two native Borland /
+TLINK producers with original bytes and ordered fixups; the existing compiled
+2500-to-2501 fast-stage negative was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-shinki-devil-state-protocol-c-20261113/receipt.json`.

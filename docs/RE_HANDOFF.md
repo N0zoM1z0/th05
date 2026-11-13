@@ -102,6 +102,16 @@ The full ZUN ownership summary and current intervals are in
   TCC-S/TASM32 spiral owner all replay exact with their original relocations;
   compiled negatives are rejected. No new CODE/storage credit is claimed.
   See [`exalice/full_context.md`](../src/main/boss/exalice/full_context.md).
+- **Shinki Devil angle protocol (2026-11-13)**: the 802-byte
+  `pattern_devil()` now names the remaining 2,500-frame fast-stage gate,
+  prelude and turn-angle increments, three-pellet decorative spread, zero
+  angle origin and shared 0x80 laser/bullet mirror. A focused 12-unit replay
+  covers the Devil leaf, all `shinki.cpp` consumers and the complete 959-byte
+  controller; two native Borland/TLINK producers match every original byte
+  and ordered relocation, and the 2500→2501 compiled negative is rejected.
+  The attempt also pinned a TC4.02 codegen constraint: postfix byte INC/DEC
+  must remain postfix to preserve the direct memory instructions. No duplicate
+  CODE credit is claimed. See [`shinki/devil.md`](../src/main/boss/shinki/devil.md).
 - **B4-ball updater (2026-11-13)**: `b4balls_update()` remains exact at 273
   bytes with ordered fixups `[235,156,118]`. The unused false-return helper
   was simplified to an empty inline `void`; two fresh positives and the
