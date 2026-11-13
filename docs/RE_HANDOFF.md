@@ -128,3 +128,13 @@ alone is not a complete handoff to another machine; transfer required ignored
 inputs separately. Do not delete artifacts by age or name alone: first check
 ledger hashes, tracked documentation references and whether the corresponding
 problem is still open.
+
+**Local evidence cleanup (2026-11-13):** `.analysis` is now approximately
+**1.4 GiB**, down from **1.7 GiB**. The cleanup removed 34 accepted replay
+folders only after verifying their complete raw-byte/fixup rounds against the
+current ledgers and confirming no maintained document referenced them. It also
+removed five incomplete first-producer folders and 195 unreferenced superseded
+experiment directories. All **1,170** concrete `.analysis` paths in tracked
+Markdown still resolve. Current Yumeko positive/negative/ASM/context evidence,
+all documented BB-loader and Vector2 trials, ledger-root receipts, native
+producers, calibration builds, ASM evidence, toolchain and Ghidra state remain.
