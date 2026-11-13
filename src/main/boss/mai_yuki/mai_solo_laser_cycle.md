@@ -15,6 +15,14 @@ It retains the randomized clock skip and delayed random movement. Ordinary
 integer arithmetic preserves the original signed divisions and unsigned
 byte-angle wrap; there are no pseudoregisters, raw object views or flags variants.
 
+The laser pattern selector is the first lifetime of Mai's real scratch byte 10:
+`MaiSoloPatternByte10::laser_patterns_seen` is reset when the radial lasers are
+spawned and selects the three callback patterns on each cycle wrap. The final
+approach later reinitializes that same byte as
+`MaiSoloPatternByte10::revenge_snow_angle`; byte 11 remains its signed step.
+The complete 16-byte `MaiSoloScratch` view now names both successive roles,
+without creating a second pattern counter or changing the original writes.
+
 Complete Laser24, Boss24, B4Ball26/template25 and geometry come from the frozen
 mai_solo_advanced.hpp dependency chain unchanged. Actual state is count4432,
 angular speed4434, fractional accumulator4436 and inner callback443A. The latter
@@ -44,3 +52,15 @@ raw comparisons and the empty original relocation stream. The actual
 rank-dependent ray count+5→+6 control is compiled and rejected. One complete
 function and461 instruction bytes are accepted, without tables, padding,
 DATA or BSS. Its header uses a short distinct guard before the first producer.
+
+
+## 2026-11-13: byte-10 laser counter lifetime
+
+The former `mai_laser_patterns_seen` macro directly named
+`boss_statebyte[10]`. It now resolves through
+`mai_solo_scratch.pattern_byte10.laser_patterns_seen`, the first member of the
+one-byte `MaiSoloPatternByte10` union. The same physical byte becomes
+`revenge_snow_angle` only after the final-approach transition initializes it;
+its step remains at byte 11. The complete 461-byte callback and nine adjacent
+accepted consumers replay exact twice with original fixups and the compiled
+negative rejected. See `solo_scratch.md` for the full ten-unit receipt.

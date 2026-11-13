@@ -22,6 +22,37 @@ character-specific angle/step pairs:
 The two callbacks retain their original independent clocks and turn gates.
 No new shared angle counter or phase-transition reset is introduced.
 
+## Sequential roles of byte 10 in Mai's solo fight
+
+`MaiSoloPatternByte10` is the actual one-byte union at physical offset 10.
+Its two roles do not overlap in time:
+
+| Lifetime | Member | Owner and behavior |
+| --- | --- | --- |
+| Laser cycle (phase 5) | `laser_patterns_seen` | Reset to zero when the radial laser array is created; selects `mai_solo_laser_patterns[count % 3]` at each 256-frame cycle boundary, then increments |
+| Final revenge snow (phase 9) | `revenge_snow_angle` | The final-approach transition overwrites byte 10 with the initial snow angle; `mai_solo_revenge_snow()` advances it by the signed step in byte 11 and resets it at the turn boundary |
+
+The phase-8 final approach is the lifetime boundary: it initializes the
+revenge-snow angle and step after the phase-5 laser counter is no longer used.
+No explicit clearing or second counter is introduced. The union preserves the
+same byte 10 and the existing step at byte 11; `MaiSoloScratch` remains exactly
+16 bytes, with all following fields at offsets 12..15 unchanged.
+
+The laser-cycle callback now reads and increments
+`mai_solo_scratch.pattern_byte10.laser_patterns_seen`, while the final-approach
+initializer and revenge-snow callback use
+`mai_solo_scratch.pattern_byte10.revenge_snow_angle`. This removes the lone raw
+`boss_statebyte[10]` alias from the Mai solo laser implementation and records
+the real cross-phase lifetime.
+
+The focused ten-unit replay includes the complete **1,018-byte** paired Boss
+controller, **786-byte** Mai solo controller, **461-byte** laser cycle and
+**615-byte** advanced pattern, plus the six affected neighboring pattern and
+Yuki owners. Two native Borland/TLINK producers preserve all original raw
+bytes and ordered fixups; the compiled negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-mai-solo-byte10-lifetime-20261113b/receipt.json`.
+No duplicate CODE ownership is added.
+
 ## Sequential roles of byte 15
 
 `MaiYukiPatternByte15` names five mutually exclusive uses of the same final
@@ -40,10 +71,11 @@ Boss scratch byte:
   the final-approach transition and consumed by the existing snow pattern.
 
 The remaining Yuki snow state is still distinct: snow step is byte 13 and
-snow-angle step is byte 14. Mai's revenge-snow angle/step remain bytes 10/11,
-and its laser-bounce angle remains byte 13. The overlay does not conflate
-these other physical members or imply that a value survives an attack that
-explicitly reinitializes it.
+snow-angle step is byte 14. Mai's byte-10 laser counter/revenge angle share
+their own one-byte union, the revenge-snow step remains byte 11, and the
+laser-bounce angle remains byte 13. The overlay does not conflate these other
+physical members or imply that a value survives an attack that explicitly
+reinitializes it.
 
 The source views now use named union members for all byte-15 accesses and
 named fields for the paired angle/step pair at offsets 12..14. The original

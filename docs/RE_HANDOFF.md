@@ -153,6 +153,14 @@ The full ZUN ownership summary and current intervals are in
   consumers (18 complete owners total) replay exact twice with original
   ordered fixups; compiled negatives are rejected. No duplicate ownership.
   See [`generic.md`](../src/main/boss/generic.md).
+- **Mai Solo byte-10 phase handoff (2026-11-13)**: the radial laser cycle's
+  pattern counter and final revenge-snow angle are successive lifetimes of
+  the same `boss_statebyte[10]`. A one-byte `MaiSoloPatternByte10` overlay now
+  names both roles; the final approach is the actual reinitialization boundary,
+  and byte 11 remains the snow step. Ten complete paired/solo controller and
+  pattern owners replay exact twice with original fixups; the compiled negative
+  is rejected. No duplicate CODE credit. See
+  [`solo_scratch.md`](../src/main/boss/mai_yuki/solo_scratch.md).
 - **Scroll Y conversion natural-C++ leaf alternative (2026-11-13)**: the
   complete 40-byte `scroll_subpixel_y_to_vram_seg1()` C++ implementation
   matches the original raw bytes and empty relocation stream in two fresh

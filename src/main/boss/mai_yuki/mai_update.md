@@ -189,3 +189,14 @@ match all **786 original bytes**, the complete compiler switch table,
 checked alignment and original ordered fixups `[251,145]`. The existing
 compiled HP-threshold negative was rejected. This refines an already
 accepted large Boss controller without double-counting CODE.
+
+
+## 2026-11-13: byte-10 laser-count to revenge-angle handoff
+
+The final-approach transition at the entrance to phase 9 initializes
+`mai_solo_scratch.pattern_byte10.revenge_snow_angle` and byte-11's revenge
+step. Byte 10 previously held the three-pattern cycle count during phase 5's
+radial laser attack. `MaiSoloPatternByte10` now names those two successive
+roles of the same original byte; the phase-9 initializer is the real lifetime
+boundary and no reset was moved. The complete 786-byte controller remains
+raw/fixup exact in two fresh producers as part of the ten-unit focused replay.
