@@ -163,3 +163,38 @@ receipt is `.analysis/unit-replays/gpt-web-main-mai-tracking-laser-186-20261110/
 The adjacent accepted 543-byte initial attacks, 939-byte remaining attacks,
 and 1018-byte major Mai/Yuki state machine keep their existing independent
 owners. This adds **186 new compiler-owned CODE bytes** only.
+
+## 2026-11-13: full 1,125-byte context reassembled; relocation order remains open
+
+A new DOS-8.3 source context, `my_later.cpp`, includes the already accepted
+`tracking_laser.cpp` and `remaining_patterns.inl` in original code order. This
+is a context experiment only; it is not added to `exact_units.toml` and receives
+no new ownership credit because the 186-byte tracker and 939-byte remaining
+patterns already have independent accepted owners.
+
+Two focused, independent cold replay paths now produce the **entire 1,125-byte
+raw code extent exactly** (target/candidate SHA-256
+`8c4b049c76037682034f21596a54c2bd8b93ae70c7da4e99dc1619e8caa8df56`):
+
+| Producer | Raw bytes | Candidate MZ fixups | Result |
+| --- | --- | --- | --- |
+| TCC `-S` → TASM32 | 1125/1125 exact | `[38,130,322,648,1019,1106]` | fixup order differs |
+| Direct TCC 4.02 | 1125/1125 exact | `[1019,648,322,130,38,1106]` | fixup order differs |
+| Original target | 1125 | `[38,1106,1019,648,322,130]` | required order |
+
+Both paths also compile a natural negative control that changes the tracking
+laser width from its accepted constant to `+1`; the mutated executable bytes
+are rejected. This establishes that the combined source consumes the intended
+tracker and all ten pattern bodies. It does **not** establish whole-cohort
+acceptance: exact code bytes with a different MZ relocation order are not an
+exact linked contribution. No relocation sorting, object patching or manual
+MZ fixup rewriting is used to manufacture acceptance.
+
+The local receipts are:
+
+- `.analysis/unit-replays/gpt-web-main-mai-yuki-later-patterns-compilerasm-20261113-b/receipt.json`
+- `.analysis/unit-replays/gpt-web-main-mai-yuki-later-patterns-direct-20261113/receipt.json`
+
+The remaining problem is now narrowly isolated to original OMF/TLINK
+relocation-record emission order. Keep the two accepted per-scope owners
+unchanged until a natural producer reproduces the target order exactly.
