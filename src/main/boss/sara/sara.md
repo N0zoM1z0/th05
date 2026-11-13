@@ -235,3 +235,22 @@ the existing compiled red-spread mutation is rejected. Evidence:
 `.analysis/unit-replays/gpt-web-sara-red-cloud-and-angle-draws-b/receipt.json`.
 This refreshes an already accepted 12-function Boss context, without
 recrediting authored CODE.
+
+## 2026-11-13: explicit phase-view byte overlays
+
+The full 16-byte `sara_state_t` union now asserts every reused field offset,
+not just the phase-two delay, phase-three ring speed and phase-four spread
+angle. Bytes 9 and 10 are the shared phase-two/three wave clock and previous-
+pattern selector. Byte 13 changes from the red-stack angle to the phase-three
+ring speed and then the laser rotation interval; byte 14 changes from the
+phase-two clockwise angle to the phase-three counterclockwise angle and then
+the final random-ball count; byte 15 changes from the opposite phase-two/
+phase-three angle roles to the final spread angle.
+
+The complete `main-sara` replay recompiles all twelve functions and preserves
+all **1,824 original bytes**, the ten ordered relocations and the five-entry
+compiler phase table in two independent Borland/TLINK producers. Its existing
+compiled red-stack mutation remains rejected. Receipt:
+`.analysis/unit-replays/gpt-web-sara-scratch-offsets-20261113/receipt.json`.
+This records the actual lifetime overlay without changing the 16-byte object,
+phase transitions or previously accepted code-byte credit.

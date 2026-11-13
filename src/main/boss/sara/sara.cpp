@@ -72,6 +72,10 @@ enum sara_hp_t {
 // State
 // -----
 
+// These are three lifetime views of the same original 16-byte Boss scratch
+// area. The matching byte offsets are intentional: the wave clocks and
+// pattern history are reused by phases 2/3, while bytes 13..15 change roles
+// again for the final laser corridor.
 union sara_state_t {
 	struct {
 		/* -------------------- */ int8_t _unused_1[9];
@@ -104,8 +108,21 @@ union sara_state_t {
 };
 
 typedef char sara_state_is_16[(sizeof(sara_state_t) == 16) ? 1 : -1];
+// Phases 2 and 3 share their wave clock and previous-pattern byte.
 typedef char sara_fly_delay_at_9[(offsetof(sara_state_t, phase_2.fly_delay) == 9) ? 1 : -1];
+typedef char sara_pattern_frames_at_9[(offsetof(sara_state_t, phase_3.pattern_frames) == 9) ? 1 : -1];
+typedef char sara_pattern_prev_2_at_10[(offsetof(sara_state_t, phase_2.pattern_prev) == 10) ? 1 : -1];
+typedef char sara_pattern_prev_3_at_10[(offsetof(sara_state_t, phase_3.pattern_prev) == 10) ? 1 : -1];
+// The phase-two stack angle, phase-three ring speed, and phase-four laser
+// slowdown interval all reuse byte 13; byte 14 and 15 also change roles.
+typedef char sara_phase_2_angle_stacks_at_13[(offsetof(sara_state_t, phase_2.angle_stacks) == 13) ? 1 : -1];
 typedef char sara_ring_speed_at_13[(offsetof(sara_state_t, phase_3.ring_speed) == 13) ? 1 : -1];
+typedef char sara_laser_angle_interval_at_13[(offsetof(sara_state_t, phase_4.laser_angle_interval) == 13) ? 1 : -1];
+typedef char sara_phase_2_clockwise_at_14[(offsetof(sara_state_t, phase_2.angle_clockwise) == 14) ? 1 : -1];
+typedef char sara_phase_3_counterclockwise_at_14[(offsetof(sara_state_t, phase_3.angle_counterclockwise) == 14) ? 1 : -1];
+typedef char sara_random_ball_count_at_14[(offsetof(sara_state_t, phase_4.random_ball_count) == 14) ? 1 : -1];
+typedef char sara_phase_2_counterclockwise_at_15[(offsetof(sara_state_t, phase_2.angle_counterclockwise) == 15) ? 1 : -1];
+typedef char sara_phase_3_clockwise_at_15[(offsetof(sara_state_t, phase_3.angle_clockwise) == 15) ? 1 : -1];
 typedef char sara_spread_angle_at_15[(offsetof(sara_state_t, phase_4.spread_angle) == 15) ? 1 : -1];
 
 #define state reinterpret_cast<sara_state_t *>(boss_statebyte)
