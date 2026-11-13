@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "kind": "bounded-zun-borland-ctlib-initialized-data-ownership-review",
+  "manifest_sha256": "ab6e288fce9676bce21c0a32248ffce3814c1e5ffa27ae6c3b97fa2610b33fbc",
+  "early_acceptance_sha256": "cde7ecab3a1ac676c38e3176fea8800e8b4d5871c7cd49ffa3ce07191748e7ef",
+  "stdio_acceptance_sha256": "4fc0fccd4694c3580d743aede9ed3c033967f99b6cbf6ed9c42cafc3b49b6cc7",
+  "library_sha256": "b665d5d30f0d3bafe3023ee45eeef183811c87201e9a1876f011acf5699261af",
+  "library_tree_sha256": "3fccb05d8dcfad6417ac4171482515fa0608f8e82b3cc81665a72f76621d8033",
+  "target_artifact_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+  "member": "-S",
+  "member_start": 2788,
+  "member_size": 6564,
+  "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+  "intervals": [
+    [
+      6768,
+      6820
+    ]
+  ],
+  "segments": [
+    {
+      "member": "_pathops",
+      "segment": 2,
+      "segment_length": 16,
+      "segment_name": "_DATA",
+      "segment_class": "DATA",
+      "base_com": 6768,
+      "segment_end_com": 6784,
+      "end_com": 6784,
+      "file_start": 9300,
+      "file_backed_bytes": 16,
+      "program_records_sha256": "958ad386fe8bbaacd7403e4ffd6e8b2ea82c0feedc6fdaad964d29feec2fa816",
+      "object_sha256": "44816cb86311a8def719d8252953922187a5230b434d73ce6d13cbbc9feb984d",
+      "fixup_records_sha256": "50e191b3a22c7e6d25fce8abeb68db14f5cd99f34f836caac5c3f4b44da09385",
+      "segments": [
+        "1|197|_TEXT|CODE",
+        "2|16|_DATA|DATA",
+        "3|0|_BSS|BSS",
+        "4|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|197",
+        "2|0|16",
+        "4|0|6"
+      ],
+      "publics": [
+        "___path_dbcs_default|2|4",
+        "___path_dbcs_vector|2|0",
+        "___path_issbcs|1|109",
+        "___path_isdbcsleadbyte|1|72"
+      ],
+      "externals": [],
+      "fixups_by_segment": [
+        "1|13,17,48,54,57,84",
+        "4|2"
+      ],
+      "verification": {
+        "source_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "target_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "relocated_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "file_backed_bytes": 16,
+        "initialized_spans": [
+          [
+            0,
+            16
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 16,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 16,
+        "relocation_count": 0,
+        "relocation_offsets": [],
+        "mismatch_offsets": [],
+        "resolved_relocations": [],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "setvbuf",
+      "segment": 2,
+      "segment_length": 4,
+      "segment_name": "_DATA",
+      "segment_class": "DATA",
+      "base_com": 6784,
+      "segment_end_com": 6788,
+      "end_com": 6788,
+      "file_start": 9316,
+      "file_backed_bytes": 4,
+      "program_records_sha256": "384456b6863f52ce1a6620f93b177450f6f8a941c000a6b1adbfd16b920ced44",
+      "object_sha256": "959a95b7098e48d699e6bfa7da41a22fcc54b332dbdd1a18adb7e279a0eb11be",
+      "fixup_records_sha256": "b5c693697b7e6be705aeb693cb890c50d5cb3e8cc3b1bb0af5d2773ab56aefc1",
+      "segments": [
+        "1|229|_TEXT|CODE",
+        "2|4|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|229",
+        "2|0|4"
+      ],
+      "publics": [
+        "_setvbuf|1|0"
+      ],
+      "externals": [
+        "__streams",
+        "_fseek",
+        "_free",
+        "_malloc",
+        "__exitbuf",
+        "__xfflush"
+      ],
+      "fixups_by_segment": [
+        "1|171,159,157,116,98,76,70,62,54,48,40"
+      ],
+      "verification": {
+        "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "target_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "relocated_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "file_backed_bytes": 4,
+        "initialized_spans": [
+          [
+            0,
+            4
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 4,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 4,
+        "relocation_count": 0,
+        "relocation_offsets": [],
+        "mismatch_offsets": [],
+        "resolved_relocations": [],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "sysnerr",
+      "segment": 2,
+      "segment_length": 2,
+      "segment_name": "_DATA",
+      "segment_class": "DATA",
+      "base_com": 6788,
+      "segment_end_com": 6790,
+      "end_com": 6790,
+      "file_start": 9320,
+      "file_backed_bytes": 2,
+      "program_records_sha256": "f562c74c929309d1d8334f4ef93d8631c94612b8e8e03c63b3f107ce8c0c117b",
+      "object_sha256": "1f3e69bfba2909813a8fe13a58ddeb585bde549d737bf52bda0d577f974cfcd0",
+      "fixup_records_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "segments": [
+        "1|0|_TEXT|CODE",
+        "2|2|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "2|0|2"
+      ],
+      "publics": [
+        "__sys_nerr|2|0"
+      ],
+      "externals": [],
+      "fixups_by_segment": [],
+      "verification": {
+        "source_sha256": "e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95",
+        "target_sha256": "e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95",
+        "relocated_sha256": "e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95",
+        "file_backed_bytes": 2,
+        "initialized_spans": [
+          [
+            0,
+            2
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 2,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 2,
+        "relocation_count": 0,
+        "relocation_offsets": [],
+        "mismatch_offsets": [],
+        "resolved_relocations": [],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "setargv",
+      "segment": 2,
+      "segment_length": 14,
+      "segment_name": "_DATA",
+      "segment_class": "DATA",
+      "base_com": 6790,
+      "segment_end_com": 6804,
+      "end_com": 6804,
+      "file_start": 9322,
+      "file_backed_bytes": 14,
+      "program_records_sha256": "eb8ad3d8360a4faad5da42edf669d2c6446697124a1a21f9dc82f58f7b62d80a",
+      "object_sha256": "4bb96811c0188e7257154ac5a15d786b82c69f4bd6034b36bc3b8271f85dc86a",
+      "fixup_records_sha256": "0457e578276f312c4f36ad65f6bfe17737bf2f8013175a25c3cab04bc8060aa9",
+      "segments": [
+        "1|321|_TEXT|CODE",
+        "2|14|_DATA|DATA",
+        "3|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|2"
+      ],
+      "ledatas": [
+        "1|2|319",
+        "2|0|4",
+        "3|0|4"
+      ],
+      "publics": [
+        "__setargv__|0|0",
+        "__argv|2|2",
+        "__argc|2|0"
+      ],
+      "externals": [
+        "__C0argc",
+        "__C0argv",
+        "__psp",
+        "__envseg",
+        "__envLng",
+        "__osmajor",
+        "__abort",
+        "___path_isdbcsleadbyte"
+      ],
+      "fixups_by_segment": [
+        "1|4,8,12,17,21,25,30,47,56,63,150,188,192,240,244,261,287,291,295,299,303,306,309,312,315,319",
+        "3|2"
+      ],
+      "verification": {
+        "source_sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2",
+        "target_sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2",
+        "relocated_sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2",
+        "file_backed_bytes": 14,
+        "initialized_spans": [
+          [
+            0,
+            4
+          ]
+        ],
+        "uninitialized_spans": [
+          [
+            4,
+            14
+          ]
+        ],
+        "initialized_bytes": 4,
+        "uninitialized_bytes": 10,
+        "nonrelocation_bytes_exact": 14,
+        "relocation_count": 0,
+        "relocation_offsets": [],
+        "mismatch_offsets": [],
+        "resolved_relocations": [],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "setupio",
+      "segment": 4,
+      "segment_length": 6,
+      "segment_name": "_INIT_",
+      "segment_class": "INITDATA",
+      "base_com": 6804,
+      "segment_end_com": 6810,
+      "end_com": 6810,
+      "file_start": 9336,
+      "file_backed_bytes": 6,
+      "program_records_sha256": "2bb4255758564f4ac03929eb0fbcecbc67d960cf441ac323f45634b15b9f1359",
+      "object_sha256": "ffbd042b7f34b9d4c0ea4ebea308e1a4660f03b0bf13ed5d7ab07dafcee36ef7",
+      "fixup_records_sha256": "16b7013655e6d050533044ce0ccec8ac81954b7c7be51e30c54822812280a84d",
+      "segments": [
+        "1|155|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS",
+        "4|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|155",
+        "4|0|6"
+      ],
+      "publics": [
+        "__setupio|1|0"
+      ],
+      "externals": [
+        "__streams",
+        "__nfile",
+        "_setvbuf",
+        "_isatty",
+        "__openfd"
+      ],
+      "fixups_by_segment": [
+        "1|13,25,33,41,46,51,56,65,75,92,96,102,107,116,126,143,147",
+        "4|2"
+      ],
+      "verification": {
+        "source_sha256": "3686cb37b7fe4758ac2024a76e30a4c6ee2fdc25c66aa21dd55a9569b91ea504",
+        "target_sha256": "52435f182977d090e67217060289e25ce8a72e020cdf166bec4258004f6389a8",
+        "relocated_sha256": "52435f182977d090e67217060289e25ce8a72e020cdf166bec4258004f6389a8",
+        "file_backed_bytes": 6,
+        "initialized_spans": [
+          [
+            0,
+            6
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 6,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 4,
+        "relocation_count": 1,
+        "relocation_offsets": [
+          2
+        ],
+        "mismatch_offsets": [
+          2,
+          3
+        ],
+        "resolved_relocations": [
+          {
+            "site": 2,
+            "symbol": "setupio:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2946,
+            "observed_target_address": 2946,
+            "resolved_word": 2946
+          }
+        ],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "_pathops",
+      "segment": 4,
+      "segment_length": 6,
+      "segment_name": "_INIT_",
+      "segment_class": "INITDATA",
+      "base_com": 6810,
+      "segment_end_com": 6816,
+      "end_com": 6816,
+      "file_start": 9342,
+      "file_backed_bytes": 6,
+      "program_records_sha256": "958ad386fe8bbaacd7403e4ffd6e8b2ea82c0feedc6fdaad964d29feec2fa816",
+      "object_sha256": "44816cb86311a8def719d8252953922187a5230b434d73ce6d13cbbc9feb984d",
+      "fixup_records_sha256": "50e191b3a22c7e6d25fce8abeb68db14f5cd99f34f836caac5c3f4b44da09385",
+      "segments": [
+        "1|197|_TEXT|CODE",
+        "2|16|_DATA|DATA",
+        "3|0|_BSS|BSS",
+        "4|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|197",
+        "2|0|16",
+        "4|0|6"
+      ],
+      "publics": [
+        "___path_dbcs_default|2|4",
+        "___path_dbcs_vector|2|0",
+        "___path_issbcs|1|109",
+        "___path_isdbcsleadbyte|1|72"
+      ],
+      "externals": [],
+      "fixups_by_segment": [
+        "1|13,17,48,54,57,84",
+        "4|2"
+      ],
+      "verification": {
+        "source_sha256": "a55a43f7426e1b4d8a8d2e1bf259fe39b33a2870ea3c697c58723f29bbb02b40",
+        "target_sha256": "d30b80b60227d2a49f64d4062e030802e99d079fa5d293e2680fd588c8309e47",
+        "relocated_sha256": "d30b80b60227d2a49f64d4062e030802e99d079fa5d293e2680fd588c8309e47",
+        "file_backed_bytes": 6,
+        "initialized_spans": [
+          [
+            0,
+            6
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 6,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 4,
+        "relocation_count": 1,
+        "relocation_offsets": [
+          2
+        ],
+        "mismatch_offsets": [
+          2,
+          3
+        ],
+        "resolved_relocations": [
+          {
+            "site": 2,
+            "symbol": "_pathops:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 3859,
+            "observed_target_address": 3859,
+            "resolved_word": 3859
+          }
+        ],
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "member": "setargv",
+      "segment": 3,
+      "segment_length": 6,
+      "segment_name": "_INIT_",
+      "segment_class": "INITDATA",
+      "base_com": 6816,
+      "segment_end_com": 6822,
+      "end_com": 6820,
+      "file_start": 9348,
+      "file_backed_bytes": 4,
+      "program_records_sha256": "eb8ad3d8360a4faad5da42edf669d2c6446697124a1a21f9dc82f58f7b62d80a",
+      "object_sha256": "4bb96811c0188e7257154ac5a15d786b82c69f4bd6034b36bc3b8271f85dc86a",
+      "fixup_records_sha256": "0457e578276f312c4f36ad65f6bfe17737bf2f8013175a25c3cab04bc8060aa9",
+      "segments": [
+        "1|321|_TEXT|CODE",
+        "2|14|_DATA|DATA",
+        "3|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|2"
+      ],
+      "ledatas": [
+        "1|2|319",
+        "2|0|4",
+        "3|0|4"
+      ],
+      "publics": [
+        "__setargv__|0|0",
+        "__argv|2|2",
+        "__argc|2|0"
+      ],
+      "externals": [
+        "__C0argc",
+        "__C0argv",
+        "__psp",
+        "__envseg",
+        "__envLng",
+        "__osmajor",
+        "__abort",
+        "___path_isdbcsleadbyte"
+      ],
+      "fixups_by_segment": [
+        "1|4,8,12,17,21,25,30,47,56,63,150,188,192,240,244,261,287,291,295,299,303,306,309,312,315,319",
+        "3|2"
+      ],
+      "verification": {
+        "source_sha256": "9d898af09d925e41f8abeda901f5dc969040f1685240bb5aaff1899dbd8b3fb0",
+        "target_sha256": "5a36513c600eed94a1e9b4a2cf8242f25c8ad225c81d79af167b74371ddae772",
+        "relocated_sha256": "5a36513c600eed94a1e9b4a2cf8242f25c8ad225c81d79af167b74371ddae772",
+        "file_backed_bytes": 4,
+        "initialized_spans": [
+          [
+            0,
+            4
+          ]
+        ],
+        "uninitialized_spans": [],
+        "initialized_bytes": 4,
+        "uninitialized_bytes": 0,
+        "nonrelocation_bytes_exact": 2,
+        "relocation_count": 1,
+        "relocation_offsets": [
+          2
+        ],
+        "mismatch_offsets": [
+          2,
+          3
+        ],
+        "resolved_relocations": [
+          {
+            "site": 2,
+            "symbol": "setargv:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 5377,
+            "observed_target_address": 5377,
+            "resolved_word": 5379
+          }
+        ],
+        "exact_after_omf_relocation": true
+      }
+    }
+  ],
+  "verified_data_bytes": 52,
+  "initialized_data_bytes": 42,
+  "uninitialized_storage_bytes": 10,
+  "unclassified_bytes": 0,
+  "unclassified_intervals": [],
+  "ambiguous_candidates": [],
+  "negative_control": {
+    "nonrelocation_data_flip_rejected": true,
+    "relocation_word_flip_rejected": true
+  },
+  "authored_credit": 0
+}

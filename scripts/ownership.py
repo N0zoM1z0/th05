@@ -222,7 +222,7 @@ def overlay_zun(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     validate_partition(size, pieces)
     allowed = {"accepted-zun-com-instructions", "accepted-zun-com-initialized-data",
                "checked-uncredited-zun-com-alignment", "verified-vendor-code",
-               "verified-vendor-initialized-data"}
+               "verified-vendor-initialized-data", "reviewed-uninitialized-vendor-storage"}
     source_origins = {
         "third-party-comcstm-stub-reference", "pipeline-reconstructed-assembly",
         "inferred-original-register-assembly", "inferred-original-handwritten-assembly",
@@ -250,13 +250,19 @@ def overlay_zun(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
             raise ValueError("ZUN initialized data/alignment cannot claim instruction bytes")
         if kind == "checked-uncredited-zun-com-alignment" and row.get("authored_credit") != 0:
             raise ValueError("ZUN alignment is always uncredited")
-        if kind in ("verified-vendor-code", "verified-vendor-initialized-data"):
+        if kind in ("verified-vendor-code", "verified-vendor-initialized-data",
+                    "reviewed-uninitialized-vendor-storage"):
             if ((row.get("source_origin"), row.get("library")) not in vendor_identities or
                     not row.get("member")):
                 raise ValueError("ZUN vendor claim requires its exact original library/member identity")
         if kind == "verified-vendor-initialized-data":
             if row.get("content_kind") != "library-initialized-data" or row.get("authored_credit") != 0:
                 raise ValueError("ZUN vendor initialized DATA must remain explicitly zero-credit")
+        if kind == "reviewed-uninitialized-vendor-storage":
+            if (row.get("content_kind") != "original-OMF-uninitialized-segment" or
+                    row.get("authored_credit") != 0 or row.get("segment_class") not in
+                    {"DATA", "INITDATA", "CONST", "FAR_DATA", "FAR_CONST"}):
+                raise ValueError("ZUN uninitialized vendor storage needs a bounded zero-credit OMF segment")
     known = [row for row in pieces if row["kind"] != "unknown"]
     output, cursor = [], 0
     for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
@@ -887,7 +893,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             # The original COM's independently accepted outer wrapper,
             # dispatcher, standalone child modules, Master resident families,
             # Borland brk/nearheap members, early/stdio CT.LIB CODE and resident
-            # CT.LIB/Master DATA partitions are reflected by exact bounded reviews.
+            # CT.LIB/Master initialized DATA plus zero-fill storage are bounded.
             # Leave all remaining -S bytes,
             # the writable CRT CS slot, and external font resource to their
             # separate owners/unknown policy.

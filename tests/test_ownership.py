@@ -116,6 +116,31 @@ class OwnershipTests(unittest.TestCase):
             with self.subTest(bad=bad), self.assertRaises(ValueError):
                 overlay_zun(12, partition(12, []), [bad])
 
+    def test_zun_uninitialized_vendor_storage_requires_exact_omf_provenance(self):
+        row = {
+            "start": 2, "end": 12,
+            "kind": "reviewed-uninitialized-vendor-storage",
+            "unit": "borland-ctlib-setargv-data-tail",
+            "origin": "reviewed-native-zun-com-reconstruction",
+            "source_origin": "pinned-borland-ct-library-original-object",
+            "instruction_bytes": 0, "authored_credit": 0,
+            "content_kind": "original-OMF-uninitialized-segment",
+            "library": "Borland Turbo C++ 4.0 CT.LIB",
+            "member": "setargv", "segment": 2, "segment_class": "DATA",
+        }
+        rows = overlay_zun(16, partition(16, []), [row])
+        self.assertEqual(rows[1]["kind"], "reviewed-uninitialized-vendor-storage")
+        self.assertEqual(rows[1]["authored_credit"], 0)
+        for bad in (
+            {**row, "authored_credit": 1},
+            {**row, "content_kind": "library-initialized-data"},
+            {**row, "segment_class": "CODE"},
+            {**row, "library": "other-library"},
+            {**row, "source_origin": "inferred-original-register-assembly"},
+        ):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                overlay_zun(16, partition(16, []), [bad])
+
     def test_zun_native_claims_cannot_overwrite_known_owners_or_fake_vendor_provenance(self):
         pieces = partition(20, [self.entry(5, 8)])
         base = {"start": 6, "end": 7, "kind": "accepted-zun-com-instructions",

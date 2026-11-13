@@ -4,7 +4,7 @@ Scope: the `-S` COM child inside the pinned `ZUN.COM` container. COM addresses b
 
 ## Verified file-backed ownership
 
-The live ownership overlay currently admits **8,210 bytes** of verified source ownership in this child. The vendor-library additions below carry zero authored-code credit.
+The live ownership overlay currently admits **8,262 bytes** of verified source ownership in this child. The vendor-library additions below carry zero authored-code credit.
 
 - The original C0T startup object is pinned independently. Its `_TEXT` segment is 0x367 bytes, but the file-backed `LEDATA` starts at COM 0x0100; the two-byte hole at COM `[0x0363, 0x0365)` is not claimed as code. The original C0T `_DATA` extent is 110 bytes at COM `[0x1650, 0x16BE)`.
 - The previously accepted `brk` and `nearheap` CT.LIB members remain independently verified at their recorded COM extents.
@@ -41,7 +41,7 @@ The early code's external references resolve to original public definitions, inc
 | `xfflush` / `__xfflush` | `14CC` | 53 |
 | `setargv` / `__setargv__` marker | `1503` | 319 |
 
-The verifier checks complete OMF segment/group layouts, PUBDEF/EXTDEF order, LEDATA and FIXUPP extents, all 68 two-byte CODE relocation fields, and each external address against the original public definition. The 1,837 source bytes match after applying those relocations; instruction and relocation mutations are rejected. Internal segment references also anchor `_pathops` DATA at `0x1A70`, `setvbuf` DATA at `0x1A80`, and `setargv` DATA at `0x1A86`. These are semantic address anchors only; no DATA or INITDATA bytes are claimed here. See [the stdio/path CT.LIB review](ZUN_STDIO_CTLIB_2026-11-13.md).
+The verifier checks complete OMF segment/group layouts, PUBDEF/EXTDEF order, LEDATA and FIXUPP extents, all 68 two-byte CODE relocation fields, and each external address against the original public definition. The 1,837 source bytes match after applying those relocations; instruction and relocation mutations are rejected. Internal segment references also anchor `_pathops` DATA at `0x1A70`, `setvbuf` DATA at `0x1A80`, and `setargv` DATA at `0x1A86`. These are semantic address anchors; the DATA and INITDATA bytes are separately verified by the resident and tail DATA reviews. See [the stdio/path CT.LIB review](ZUN_STDIO_CTLIB_2026-11-13.md).
 
 - The resident DATA review now admits **610 vendor initialized-data bytes** from ten complete original OMF members: six CT.LIB DATA segments (492 bytes) and four Master 0.23 DATA segments (118 bytes). The CT.LIB `files` DATA pointers resolve to DGROUP `_DATA` base `0x18A0` plus five original addends; the `exit` DATA pointers resolve to its CODE base `0x0A32`. Master `version` DATA matches the archive-header string at `masters.lib` offset `0x79`; `grp`'s `_Master_Version` EXTDEF resolves to the original `version` PUBLIC. `resdata` and `fil` DATA also match their complete OMF LEDATA. No BSS or duplicate `rand` pattern is claimed. See [the resident DATA review](ZUN_RESIDENT_DATA_2026-11-13.md).
 
@@ -59,9 +59,34 @@ The verifier checks complete OMF segment/group layouts, PUBDEF/EXTDEF order, LED
 | CT.LIB `ioerror` | `1A0C` | 91 |
 | **Total** | | **610** |
 
+- The final CT.LIB DATA/INITDATA tail at `[0x1A70, 0x1AA4)` is now independently
+  resolved as **52 file-backed bytes**: 42 initialized LEDATA bytes and 10
+  zero-filled, uninitialized bytes reserved by `setargv`'s original DATA
+  SEGDEF. The source segments are `_pathops:2` (16), `setvbuf:2` (4),
+  `sysnerr:2` (2), `setargv:2` (14), `setupio:4` INITDATA (6),
+  `_pathops:4` INITDATA (6), and `setargv:3` INITDATA (4 file-backed of a
+  6-byte SEGDEF). The three INITDATA relocation fields resolve to their
+  original CODE segment bases; the final two `setargv` INITDATA bytes are
+  beyond the COM file end and are not claimed. The 10-byte `setargv` DATA tail
+  is a separate zero-credit uninitialized-vendor-storage claim, not initialized
+  source data. See [the CT.LIB DATA/INITDATA review](ZUN_CTLIB_DATA_2026-11-13.md).
+
+- The final 52-byte tail `[0x1A70, 0x1AA4)` is now mapped to seven original CT.LIB OMF DATA/INITDATA segments: **42 initialized bytes and 10 uninitialized bytes** in the unwritten suffix of `setargv`'s 14-byte DATA SEGDEF. The segment bases are independently anchored by the accepted CODE relocation/public-symbol closure. All 52 file-backed bytes are classified, with zero authored-code credit. See [the CT.LIB tail DATA review](ZUN_CTLIB_DATA_2026-11-13.md).
+
+| CT.LIB member / segment | COM extent | File-backed bytes | Classification |
+|---|---:|---:|---|
+| `_pathops:2` `_DATA` | `1A70..1A80` | 16 | initialized |
+| `setvbuf:2` `_DATA` | `1A80..1A84` | 4 | initialized |
+| `sysnerr:2` `_DATA` | `1A84..1A86` | 2 | initialized |
+| `setargv:2` `_DATA` | `1A86..1A94` | 14 | 4 initialized + 10 uninitialized |
+| `setupio:4` `_INIT_` | `1A94..1A9A` | 6 | initialized |
+| `_pathops:4` `_INIT_` | `1A9A..1AA0` | 6 | initialized |
+| `setargv:3` `_INIT_` | `1AA0..1AA4` | 4 | initialized; final 2 SEGDEF bytes beyond file |
+| **Total** | | **52** | **42 initialized + 10 uninitialized** |
+
 ## Still unclassified
 
-The original resident tail's previously reported 3,110 unknown file-backed bytes is now reduced by 583 early-runtime CODE bytes, 1,837 stdio/path CODE bytes and 610 resident DATA bytes to **80 bytes**:
+The original resident tail's previously reported 3,110 unknown file-backed bytes is now reduced by 583 early-runtime CODE bytes, 1,837 stdio/path CODE bytes, 610 resident DATA bytes and the 52-byte CT.LIB DATA/INITDATA tail to **28 bytes**:
 
 | COM interval | Bytes | Current interpretation |
 |---|---:|---|
@@ -74,16 +99,17 @@ The original resident tail's previously reported 3,110 unknown file-backed bytes
 | `[0x1897, 0x1898)` | 1 | Gap between `_abort` and `atexit` DATA |
 | `[0x1A0A, 0x1A0C)` | 2 | Gap between `files2` and `ioerror` DATA |
 | `[0x1A67, 0x1A6A)` | 3 | Gap after `ioerror` DATA |
-| `[0x1A70, 0x1AA4)` | 52 | INIT/DATA tail candidates; exact segment/member partition still open |
+| **Total** | **28** | |
 
-The BSS range `[0x1AA6, 0x1AFA)` is zero-filled runtime storage, not file-backed bytes in the 80-byte count. The `atexit` OMF member's `__atexittbl` relocation resolves to COM 0x1ABA, inside that BSS range. Its 64-byte BSS extent is recorded as a symbol/segment anchor only; no BSS ownership claim is made by either CODE reviewer.
+The BSS range `[0x1AA6, 0x1AFA)` is zero-filled runtime storage, not file-backed bytes in the 28-byte count. The `atexit` OMF member's `__atexittbl` relocation resolves to COM 0x1ABA, inside that BSS range. Its 64-byte BSS extent is recorded as a symbol/segment anchor only; no BSS ownership claim is made by either CODE reviewer.
 
 ## Reproduction
 
 - `python3 scripts/review_zun_early_ctlib.py --check`
 - `python3 scripts/review_zun_stdio_ctlib.py --check`
 - `python3 scripts/review_zun_resident_data.py --check`
+- `python3 scripts/review_zun_ctlib_data.py --check`
 - `python3 scripts/review_zun_ownership.py --check`
 - `python3 scripts/ownership.py --check`
 
-Do not use a full cold replay for this workstream. The next high-value target is the 52-byte CT.LIB DATA/INITDATA tail `[0x1A70, 0x1AA4)`. The remaining 10 one-to-three-byte DATA gaps, two code-segment holes and writable CS slot remain deliberately unknown until their identity and lifetime are proven.
+Do not use a full cold replay for this workstream. The remaining 28 bytes are nine small gaps: the writable CS slot, two code-segment holes, one 14-byte gap after `setargv`, and six one-to-three-byte DATA gaps. Keep them unknown until identity and lifetime are proven.

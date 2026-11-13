@@ -41,13 +41,14 @@ The target is **98% authored bytes exact**, but the global authored-byte
 
 ### 1. ZUN `-S` resident tail — physical ownership, not assumed code
 
-The corrected 18,116-byte launcher ownership map has **80 unknown bytes**
-remaining in ten intervals. The early 583-byte CODE interval, 1,837 bytes
-of stdio/path CODE, and 610 resident DATA bytes are now verified against
-original Borland CT.LIB and Master 0.23 OMF members with semantic relocation
-and public-symbol checks. See the [early CT.LIB review](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md),
+The corrected 18,116-byte launcher ownership map now has **28 unknown bytes**
+remaining in nine intervals. The early 583-byte CODE interval, 1,837 bytes
+of stdio/path CODE, 610 resident DATA bytes, and the final 52-byte DATA/INITDATA
+tail are verified against original Borland CT.LIB and Master 0.23 OMF members
+with semantic relocation and public-symbol checks. See the [early CT.LIB review](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md),
 [stdio/path CT.LIB review](reconstruction/ZUN_STDIO_CTLIB_2026-11-13.md),
 [resident DATA review](reconstruction/ZUN_RESIDENT_DATA_2026-11-13.md),
+[CT.LIB tail DATA review](reconstruction/ZUN_CTLIB_DATA_2026-11-13.md),
 and the current ZUN ownership map.
 
 | Outer `ZUN.COM` interval | Bytes | `-S` COM interval / note |
@@ -61,14 +62,13 @@ and the current ZUN ownership map.
 | `0x227B..0x227C` | 1 | Gap between `_abort` and `atexit` DATA |
 | `0x23EE..0x23F0` | 2 | Gap between `files2` and `ioerror` DATA |
 | `0x244B..0x244E` | 3 | Gap after `ioerror` DATA |
-| `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` CT.LIB DATA/INITDATA tail, separate review pending |
 
 The original `CT.LIB` code is now verified for nine early runtime members and
 ten stdio/path members. Six CT.LIB DATA segments and four original Master OMF
-DATA members are also verified. The remaining file-backed unknowns are a
-52-byte INIT/DATA tail and small segment/data holes. Do not assume every
-unknown byte is executable; recover exact segment/member context and
-initialized-versus-BSS semantics before assigning ownership.
+DATA members are verified, as are the seven tail DATA/INITDATA segments: 42
+initialized bytes and ten uninitialized bytes in the original `setargv` DATA
+SEGDEF. The remaining 28 unknown bytes are the writable CS slot and small
+segment/data holes. Do not assume every unknown byte is executable.
 
 Start with [the current ZUN ownership map](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
 The accepted `-S` `brk`/`sbrk` and `nearheap` members are vendor code/data, not
