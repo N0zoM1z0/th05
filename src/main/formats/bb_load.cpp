@@ -12,7 +12,7 @@ bb_tiles8_t __seg *pascal near bb_load(const char far *filename)
     // hmem_allocbyte is near-Pascal and removes its own argument. The far
     // filename is therefore at SS:SP+4 after the saved SI; the compiler must
     // not form a BP frame just to name this ABI stack argument.
-    asm { mov bx, sp; }
+    _BX = _SP;
     original_ds = _DS;
     _AX = 0x3D00;
     asm { lds dx, dword ptr ss:[bx+4]; }

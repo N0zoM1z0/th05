@@ -12,12 +12,17 @@ SP after the near-Pascal allocator has removed its argument, then loads the far
 filename from `SS:[BX+4]`; this avoids the compiler's unnecessary BP frame.
 
 Two independent native producers emit the original **55-byte extent** and the
-original far-call relocation at relative offset **7**. They are byte-for-byte
-deterministic and match **49/55** original bytes. The remaining six differences
-are limited to the equivalent `mov bx,sp` encoding (`89 E3` versus `8B DC`) and
-the compiler's return-value load before `pop si`, rather than after it. The C++ candidate remains an inexact context provider with no additional
-CODE credit; the exact 55-byte original-ASM owner remains authoritative.
-Evidence: `.analysis/gpt-web-bb-load-maintained-20261113-results.json`.
+original far-call relocation at relative offset **7**. The maintained C++ now
+matches **51/55** original bytes: `_BX = _SP` produces the exact `8B DC` stack
+snapshot, while the far filename and all DOS transfer operations remain
+source-level. The only remaining four-byte difference is the compiler's
+mandatory return-value load before its saved-SI epilogue (`mov ax,[4204]; pop si`)
+instead of the original order (`pop si; mov ax,[4204]`). This is an ABI return
+lowering difference, not a wrong filename offset, extent, or relocation.
+Both fresh producers have identical bytes and normalized OMF. The C++ candidate
+remains an inexact context provider with no additional CODE credit; the exact
+55-byte original-ASM owner remains authoritative. Evidence:
+`.analysis/gpt-web-bb-load-sp-intrinsic-results-20261113.json`.
 The BB text lifecycle has its own [independent exact acceptance](bb_text.md).
 
 ## Complete original 55-byte ASM recovery — 2026-11-10
