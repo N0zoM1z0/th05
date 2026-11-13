@@ -68,17 +68,17 @@ bool near mai_solo_revenge_snow(void)
             bullet_template.spread = 8;
             bullet_template.speed.v = to_sp(1.5f);
             if((boss.phase_frame % 4) == 0) {
-                b4ball_template.angle = mai_solo_scratch.revenge_snow_angle;
+                b4ball_template.angle = mai_solo_scratch.pattern_byte10.revenge_snow_angle;
                 b4balls_add();
-                mai_solo_scratch.revenge_snow_angle += mai_solo_scratch.revenge_snow_step;
+                mai_solo_scratch.pattern_byte10.revenge_snow_angle += mai_solo_scratch.revenge_snow_step;
                 snd_se_play(3);
             }
         } else {
             mai_solo_scratch.revenge_snow_step = -mai_solo_scratch.revenge_snow_step;
             if(mai_solo_scratch.revenge_snow_step < 0x7F) {
-                mai_solo_scratch.revenge_snow_angle = 0;
+                mai_solo_scratch.pattern_byte10.revenge_snow_angle = 0;
             } else {
-                mai_solo_scratch.revenge_snow_angle = 0x80;
+                mai_solo_scratch.pattern_byte10.revenge_snow_angle = 0x80;
             }
             MAI_LATE_ATTACK_COMPLETE();
         }

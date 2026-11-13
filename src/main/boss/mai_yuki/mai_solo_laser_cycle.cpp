@@ -6,7 +6,7 @@
 #pragma codeseg MAIN_035_TEXT main_03
 
 #define mai_laser_direction mai_solo_scratch.pattern_byte15.mai_solo_laser_direction
-#define mai_laser_patterns_seen boss_statebyte[10]
+#define mai_laser_patterns_seen mai_solo_scratch.pattern_byte10.laser_patterns_seen
 
 bool near mai_solo_laser_cycle(void)
 {

@@ -21,11 +21,22 @@ typedef char mai_solo_laser_direction_at_zero[(offsetof(MaiYukiPatternByte15, ma
 typedef char mai_shared_ring_angle_at_zero[(offsetof(MaiYukiPatternByte15, mai_shared_reversing_ring_angle) == 0) ? 1 : -1];
 typedef char yuki_solo_snow_angle_at_zero[(offsetof(MaiYukiPatternByte15, yuki_solo_snow_angle) == 0) ? 1 : -1];
 
+// Mai's byte 10 has two non-overlapping survivor-phase lifetimes: the laser
+// cycle counts its three pattern choices first, then the final-approach
+// transition reinitializes the same byte as the revenge-snow angle.
+union MaiSoloPatternByte10 {
+    unsigned char laser_patterns_seen;
+    unsigned char revenge_snow_angle;
+};
+typedef char mai_solo_pattern_byte10_is_1[(sizeof(MaiSoloPatternByte10) == 1) ? 1 : -1];
+typedef char mai_laser_patterns_seen_at_zero[(offsetof(MaiSoloPatternByte10, laser_patterns_seen) == 0) ? 1 : -1];
+typedef char mai_revenge_snow_angle_at_zero[(offsetof(MaiSoloPatternByte10, revenge_snow_angle) == 0) ? 1 : -1];
+
 struct MaiSoloScratch {
     unsigned char prior_phase_state[10];
-    // Mai's revenge snow angle/step are initialized by the approach phase;
-    // they are consumed by mai_solo_revenge_snow(), not every solo pattern.
-    unsigned char revenge_snow_angle;
+    MaiSoloPatternByte10 pattern_byte10;
+    // Initialized by the final approach after the laser-cycle count is dead;
+    // consumed by mai_solo_revenge_snow(), not every solo pattern.
     unsigned char revenge_snow_step;
     unsigned char unrelated_state;
     // Mai's later laser bounce volley reinitializes this byte to -8.
@@ -43,7 +54,7 @@ struct YukiSoloScratch {
 };
 
 typedef char mai_solo_scratch_is_16[(sizeof(MaiSoloScratch) == 16) ? 1 : -1];
-typedef char mai_revenge_angle_at_10[(offsetof(MaiSoloScratch, revenge_snow_angle) == 10) ? 1 : -1];
+typedef char mai_pattern_byte10_at_10[(offsetof(MaiSoloScratch, pattern_byte10) == 10) ? 1 : -1];
 typedef char mai_revenge_step_at_11[(offsetof(MaiSoloScratch, revenge_snow_step) == 11) ? 1 : -1];
 typedef char mai_bounce_angle_at_13[(offsetof(MaiSoloScratch, laser_bounce_angle) == 13) ? 1 : -1];
 typedef char mai_pattern_byte15_at_15[(offsetof(MaiSoloScratch, pattern_byte15) == 15) ? 1 : -1];

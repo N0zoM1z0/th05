@@ -155,7 +155,7 @@ phase7_complete:
 movement_complete:
             boss.phase++;
             boss.phase_frame = 0;
-            mai_solo_scratch.revenge_snow_angle = MAI_SOLO_REVENGE_SNOW_ANGLE;
+            mai_solo_scratch.pattern_byte10.revenge_snow_angle = MAI_SOLO_REVENGE_SNOW_ANGLE;
             mai_solo_scratch.revenge_snow_step = static_cast<unsigned char>(MAI_SOLO_REVENGE_SNOW_SIGNED_STEP);
         }
         break;
