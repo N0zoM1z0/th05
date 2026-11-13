@@ -13,6 +13,8 @@ library_tree_file_count = 41
 toolchain_manifest_sha256 = "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
 master_library_path = "_reference/ReC98/bin/masters.lib"
 master_library_sha256 = "6be41dbcfcf4504977165ccc44443525a29a01f85a1580e6ad0c620bf802faf6"
+master_library_size = 273721
+master_library_member_count = 640
 master_header_offset = 0x79
 master_header_com_start = 0x17FE
 master_header_size = 93
@@ -22,9 +24,9 @@ global_authored_credit = "vendor-zero"
 resident_data_start_com = 0x17FE
 resident_data_end_com = 0x1A6A
 expected_ctlib_data_bytes = 492
-expected_master_data_bytes = 93
-expected_total_data_bytes = 585
-expected_unknown_gaps = ["0x185B|0x1878", "0x1897|0x1898", "0x1A0A|0x1A0C", "0x1A67|0x1A6A"]
+expected_master_data_bytes = 118
+expected_total_data_bytes = 610
+expected_unknown_gaps = ["0x185B|0x185C", "0x1867|0x1868", "0x1876|0x1878", "0x1897|0x1898", "0x1A0A|0x1A0C", "0x1A67|0x1A6A"]
 
 [segment_bases]
 "_abort:2" = 0x1878
@@ -112,3 +114,55 @@ ledatas = ['1|0|82', '2|0|91']
 publics = ['__IOERROR|1|0', '__dosErrorToSV|2|2', '__doserrno|2|0', '__DOSERROR|1|62']
 externals = ['_errno', '__sys_nerr']
 fixups_by_segment = ['1|22,28,45,39,51']
+
+[[master_modules]]
+name = "version"
+start_com = 0x17FE
+data_segment_size = 93
+data_size = 93
+data_ledata_offset = 0
+segments = ['1|0|_TEXT|CODE', '2|93|_DATA|DATA']
+groups = ['1|DGROUP|2']
+ledatas = ['2|0|93']
+publics = ['_Master_Version_NEAR|2|0', '_Master_Version|2|20', '_Master_Copyright|2|25']
+externals = []
+fixups_by_segment = []
+
+[[master_modules]]
+name = "grp"
+start_com = 0x185C
+data_segment_size = 11
+data_size = 11
+data_ledata_offset = 0
+segments = ['1|0|_TEXT|CODE', '2|11|_DATA|DATA']
+groups = ['1|DGROUP|2']
+ledatas = ['2|0|11']
+publics = ['_graph_VramSeg|2|0', 'graph_VramSeg|2|0', '_graph_VramWords|2|2', 'graph_VramWords|2|2', '_graph_VramLines|2|4', 'graph_VramLines|2|4', '_graph_VramWidth|2|6', 'graph_VramWidth|2|6', '_graph_VramZoom|2|8', 'graph_VramZoom|2|8', '_graph_MeshByte|2|10', 'graph_MeshByte|2|10']
+externals = ['_Master_Version']
+fixups_by_segment = []
+
+[[master_modules]]
+name = "resdata"
+start_com = 0x1868
+data_segment_size = 10
+data_size = 10
+data_ledata_offset = 0
+segments = ['1|190|_TEXT|CODE', '2|10|_DATA|DATA']
+groups = ['1|DGROUP|2']
+ledatas = ['2|0|10', '1|0|190']
+publics = ['RESDATA_EXIST|1|0', 'RESDATA_CREATE|1|72']
+externals = []
+fixups_by_segment = []
+
+[[master_modules]]
+name = "fil"
+start_com = 0x1872
+data_segment_size = 4
+data_size = 4
+data_ledata_offset = 0
+segments = ['1|0|_TEXT|CODE', '2|4|_DATA|DATA', '3|20|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['2|0|4']
+publics = ['_file_Pointer|3|0', 'file_Pointer|3|0', '_file_Buffer|3|4', 'file_Buffer|3|4', '_file_BufferPos|3|8', 'file_BufferPos|3|8', '_file_BufPtr|3|12', 'file_BufPtr|3|12', '_file_InReadBuf|3|14', 'file_InReadBuf|3|14', '_file_Eof|3|16', 'file_Eof|3|16', '_file_ErrorStat|3|18', 'file_ErrorStat|3|18', '_file_BufferSize|2|0', 'file_BufferSize|2|0', '_file_Handle|2|2', 'file_Handle|2|2']
+externals = []
+fixups_by_segment = []
