@@ -13,6 +13,7 @@ GENERIC_HEADER = (ROOT / "src/main/boss/generic.hpp").read_text()
 TIMING = (ROOT / "src/main/boss/shinki/final_spiral_timing.hpp").read_text()
 WING = (ROOT / "src/main/boss/shinki/wing_attack_rules.hpp").read_text()
 MOVEMENT = (ROOT / "src/main/boss/movement.hpp").read_text()
+WING_HITBOXES = (ROOT / "src/main/boss/shinki/wing_hitboxes.hpp").read_text()
 GENERIC = (ROOT / "src/main/boss/generic.hpp").read_text()
 FLOAT_DATA = (ROOT / "src/main/boss/shinki/float_direction.c").read_text()
 
@@ -55,7 +56,7 @@ class ShinkiFinalPhaseTests(unittest.TestCase):
         dim_frames = [frame for frame in range(1, 18) if (frame % 2) != 0]
         self.assertEqual(bright_frames, [2, 4, 6, 8, 10, 12, 14, 16])
         self.assertEqual(dim_frames, [1, 3, 5, 7, 9, 11, 13, 15, 17])
-        self.assertIn("SHINKI_DEFEAT_FLASH_EVEN_FRAME = 0", SOURCE)
+        self.assertIn("SHINKI_DEFEAT_FLASH_EVEN_FRAME = 0", WING_HITBOXES)
         self.assertIn("SHINKI_DEFEAT_TONE_BRIGHT = 150", SOURCE)
         self.assertIn("SHINKI_DEFEAT_TONE_DIM = 100", SOURCE)
         self.assertLess(phase11.index("boss_hittest_shots();"), phase11.index("palette_settone_deferred(SHINKI_DEFEAT_TONE_BRIGHT);"))
