@@ -112,6 +112,14 @@ The full ZUN ownership summary and current intervals are in
   The attempt also pinned a TC4.02 codegen constraint: postfix byte INC/DEC
   must remain postfix to preserve the direct memory instructions. No duplicate
   CODE credit is claimed. See [`shinki/devil.md`](../src/main/boss/shinki/devil.md).
+- **Sara cross-wave pattern history (2026-11-13)**: the one physical
+  `boss_statebyte[10]` previous-mode selector is initialized once at the
+  entrance, retained through the blue/red-to-spinning-rings phase transition,
+  and prevents the first mode of phase three from repeating the last mode of
+  phase two. The complete 1,824-byte / 12-function controller passed two fresh
+  Borland/TLINK producers, all original bytes and ordered fixups, and its
+  existing compiled negative. No duplicate CODE credit. See
+  [`sara.md`](../src/main/boss/sara/sara.md).
 - **Gather template-copy leaf (2026-11-13)**: the 27-byte exact ASM owner
   remains authoritative. New natural C++ alternatives were compiled: indexed
   WORD loop 50 bytes, SI/DI pointer loop 44 bytes, best register do/while loop

@@ -254,3 +254,31 @@ compiled red-stack mutation remains rejected. Receipt:
 `.analysis/unit-replays/gpt-web-sara-scratch-offsets-20261113/receipt.json`.
 This records the actual lifetime overlay without changing the 16-byte object,
 phase transitions or previously accepted code-byte credit.
+
+## 2026-11-13: pattern history crosses the phase-two/three boundary
+
+Sara's `boss_statebyte[10]` is one previous-pattern selector shared by the
+blue/red wave and spinning-ring wave views. The entrance transition initializes
+it once to `0xFF`, allowing the first selection from the four modes `1..4`.
+Every later reposition chooses a new mode from that same range until it differs
+from the saved byte, then stores the choice before dispatching the corresponding
+row of `SARA_PATTERNS_PHASE_2_3`.
+
+The phase-two timeout does **not** reset this byte: it advances the Boss and
+initializes only the phase-three pattern duration. Consequently the first
+spinning-ring choice is also prevented from repeating the final blue/red-wave
+mode. The two phase-specific `previous_pattern_mode` members are views of the
+same physical byte at offset 10, not separate histories. The phase-three
+reposition lead remains 16 frames; its four mode indices map to the same
+four-column callback row. The final laser corridor reuses bytes 13..15 and does
+not consume this prior-pattern value.
+
+The source now names the full mode domain, its exclusive random upper bound,
+the `0xFF` no-previous sentinel and the phase-three fly lead, and asserts that
+the named four-mode domain matches the actual 2×4 callback table. The complete
+12-function, 1,824-byte Sara contribution passed two fresh native Borland/TLINK
+producers with every original byte and ordered relocation exact; its existing
+five-to-four red-stack negative was rejected. Receipt:
+`.analysis/unit-replays/gpt-web-sara-cross-wave-pattern-history-20261113/receipt.json`.
+This refines the original attack-selection lifetime without changing its
+16-byte Boss scratch arena or adding executable bytes.

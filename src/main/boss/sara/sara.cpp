@@ -21,6 +21,10 @@ static const unsigned char SARA_PHASE_SPINNING_RINGS = 3;
 static const unsigned char SARA_PHASE_LASER_CORRIDOR = 4;
 static const unsigned char SARA_MODE_REPOSITION = 0;
 static const unsigned char SARA_MODE_FIRST_PATTERN = 1;
+static const unsigned char SARA_MODE_LAST_PATTERN = 4;
+static const unsigned char SARA_MODE_AFTER_LAST_PATTERN = (SARA_MODE_LAST_PATTERN + 1);
+static const unsigned char SARA_MODE_NO_PREVIOUS_PATTERN = 0xFF;
+static const int SARA_WAVE_3_FLY_DELAY = 16;
 
 // Pattern selection counts and the terminal laser-corridor timeout.
 static const unsigned char SARA_WAVE_2_PATTERN_LIMIT = 32;
@@ -80,7 +84,8 @@ union sara_state_t {
 	struct {
 		/* -------------------- */ int8_t _unused_1[9];
 		uint8_t fly_delay;
-		uint8_t pattern_prev;
+		// Shared with phase 3: selection history deliberately crosses the wave boundary.
+		uint8_t previous_pattern_mode;
 		/* -------------------- */ int8_t _unused_2;
 		/* -------------------- */ int8_t _unused_3;
 		unsigned char angle_stacks;
@@ -91,7 +96,8 @@ union sara_state_t {
 	struct {
 		/* -------------------- */ int8_t _unused_1[9];
 		uint8_t pattern_frames;
-		uint8_t pattern_prev;
+		// Retained from phase 2 so the first spinning-ring choice cannot repeat it.
+		uint8_t previous_pattern_mode;
 		/* -------------------- */ int8_t _unused_2;
 		/* -------------------- */ int8_t _unused_3;
 		SubpixelLength8 ring_speed;
@@ -108,11 +114,14 @@ union sara_state_t {
 };
 
 typedef char sara_state_is_16[(sizeof(sara_state_t) == 16) ? 1 : -1];
+typedef char sara_pattern_mode_count_is_4[(
+    (SARA_MODE_LAST_PATTERN - SARA_MODE_FIRST_PATTERN + 1) == 4
+) ? 1 : -1];
 // Phases 2 and 3 share their wave clock and previous-pattern byte.
 typedef char sara_fly_delay_at_9[(offsetof(sara_state_t, phase_2.fly_delay) == 9) ? 1 : -1];
 typedef char sara_pattern_frames_at_9[(offsetof(sara_state_t, phase_3.pattern_frames) == 9) ? 1 : -1];
-typedef char sara_pattern_prev_2_at_10[(offsetof(sara_state_t, phase_2.pattern_prev) == 10) ? 1 : -1];
-typedef char sara_pattern_prev_3_at_10[(offsetof(sara_state_t, phase_3.pattern_prev) == 10) ? 1 : -1];
+typedef char sara_previous_pattern_mode_2_at_10[(offsetof(sara_state_t, phase_2.previous_pattern_mode) == 10) ? 1 : -1];
+typedef char sara_previous_pattern_mode_3_at_10[(offsetof(sara_state_t, phase_3.previous_pattern_mode) == 10) ? 1 : -1];
 // The phase-two stack angle, phase-three ring speed, and phase-four laser
 // slowdown interval all reuse byte 13; byte 14 and 15 also change roles.
 typedef char sara_phase_2_angle_stacks_at_13[(offsetof(sara_state_t, phase_2.angle_stacks) == 13) ? 1 : -1];
@@ -433,7 +442,7 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 extern const pattern_loop_func_t SARA_PATTERNS_PHASE_2_3[2][4];
 
 #define phase_2_3_wait_fly_and_select_pattern( \
-	pattern_prev, phase, fly_delay, patterns_max, timeout_label \
+	previous_pattern_mode, phase, fly_delay, patterns_max, timeout_label \
 ) { \
 	if(boss_flystep_random(boss.phase_frame - fly_delay)) { \
 		boss.phase_frame = 0; \
@@ -444,9 +453,9 @@ extern const pattern_loop_func_t SARA_PATTERNS_PHASE_2_3[2][4];
 			goto timeout_label; \
 		} \
 		do { \
-			boss.mode = randring2_next8_mod_ge_lt(1, 5); \
-		} while(boss.mode == pattern_prev); \
-		pattern_prev = boss.mode; \
+			boss.mode = randring2_next8_mod_ge_lt(SARA_MODE_FIRST_PATTERN, SARA_MODE_AFTER_LAST_PATTERN); \
+		} while(boss.mode == previous_pattern_mode); \
+		previous_pattern_mode = boss.mode; \
 		phase_2_3_pattern = SARA_PATTERNS_PHASE_2_3[phase - SARA_PHASE_BLUE_RED_WAVES][boss.mode - SARA_MODE_FIRST_PATTERN]; \
 	} \
 }
@@ -524,7 +533,7 @@ void pascal sara_update(void)
 			boss.phase_frame = 0;
 			boss.mode = SARA_MODE_REPOSITION;
 			boss.phase_state.patterns_seen = 0;
-			state->phase_2.pattern_prev = -1;
+			state->phase_2.previous_pattern_mode = SARA_MODE_NO_PREVIOUS_PATTERN;
 			state->phase_2.fly_delay = SARA_WAVE_2_FLY_DELAY_INITIAL;
 
 			// ZUN bloat: Already set at the end of the previous phase, and
@@ -537,7 +546,7 @@ void pascal sara_update(void)
 		switch(boss.mode) {
 		case SARA_MODE_REPOSITION:
 			phase_2_3_wait_fly_and_select_pattern(
-				state->phase_2.pattern_prev,
+				state->phase_2.previous_pattern_mode,
 				SARA_PHASE_BLUE_RED_WAVES,
 				state->phase_2.fly_delay,
 				SARA_WAVE_2_PATTERN_LIMIT,
@@ -557,6 +566,7 @@ void pascal sara_update(void)
 		// Next phase
 	phase_2_timed_out:
 		boss_phase_next(ET_NW_SE, HP_PHASE_3_END);
+		// Byte 10 intentionally keeps the last phase-two mode into phase three.
 		state->phase_3.pattern_frames = SARA_WAVE_3_PATTERN_FRAMES_INITIAL;
 		break;
 
@@ -564,7 +574,7 @@ void pascal sara_update(void)
 		switch(boss.mode) {
 		case SARA_MODE_REPOSITION:
 			phase_2_3_wait_fly_and_select_pattern(
-				state->phase_3.pattern_prev, SARA_PHASE_SPINNING_RINGS, 16,
+				state->phase_3.previous_pattern_mode, SARA_PHASE_SPINNING_RINGS, SARA_WAVE_3_FLY_DELAY,
 				SARA_WAVE_3_PATTERN_LIMIT, phase_3_timed_out
 			);
 			break;
