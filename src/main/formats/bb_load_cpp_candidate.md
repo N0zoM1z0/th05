@@ -20,27 +20,40 @@ the return load. These alternatives do not improve the maintained 51/55-byte
 C++ source and are not promoted. The complete reviewed 55-byte ASM owner
 remains the only exact credited implementation.
 
-## 2026-11-13: stack-preserved DS alternative
+## 2026-11-13 correction: stack-preserved DS candidate and follow-up probes
 
-A fresh C++/DOS-intrinsic variant replaces the compiler-managed SI copy with
-an explicit one-word DS save around the file operation. Moving `push ds`
-*before* the near-Pascal allocation keeps the far allocator call at the
-original relocation offset **+7**. After the allocator removes its argument,
-`BX = SP` still addresses the filename at `SS:[BX+4]`. The code opens with the
-original DGROUP, switches DS to the allocated 2,048-byte payload for read and
-close, then restores DS with `pop ds` before returning the segment handle.
+The earlier 49-byte `push ds` candidate preserved the original far-allocator
+relocation at **+7** and addressed the filename at `SS:[BX+4]`, but a later
+semantic re-read found a critical DS error. `LDS DX,SS:[BX+4]` changes DS to
+the filename segment. After DOS open, the candidate moved the returned handle
+to BX and immediately loaded `bb_load_seg` through `[4204]` without first
+restoring DGROUP. That absolute load therefore reads from the filename
+segment, not the game's DS. Its final `pop ds` occurs only after the payload
+read/close and cannot repair the earlier wrong segment access. The 49-byte
+result is a compiler-shape diagnostic with fixup `[7]`, **not a valid semantic
+candidate**; the prior paragraph's claim that it correctly switches to the
+payload segment is withdrawn.
 
-The actual one-producer result is a complete **49-byte** contribution with
-ordered fixups `[7]`. It is not raw exact: it uses `PUSH DS` rather than the
-original `PUSH SI`, omits the original `MOV SI,DS`/`MOV DS,SI` preservation
-sequence, and is six bytes shorter than the native 55-byte function. It does,
-however, retain the original far-call relocation coordinate and the true
-stack-argument address without a BP frame. The post-allocation `push ds`
-variant instead moved the fixup to `+6`; moving the save before allocation
-corrects that one coordinate. A separate explicit-SI hybrid attempt emitted
-57 bytes because TC++ added its own callee-saved SI pair around the inline
-save/restore. None of these is an acceptance producer or receives CODE
-credit; the reviewed 55-byte ASM owner remains authoritative.
+Two corrected stack-preservation directions were compiled:
 
-One-producer diagnostic:
-`.analysis/gpt-web-bb-load-stack-ds-before-allocation-a-20261113/`.
+- Mirroring the saved original DS into ES, restoring DS from ES immediately
+after open, and then loading the allocated payload emits **57 bytes** with
+  fixup `[7]`. It uses `MOV AX,DS; MOV ES,AX` and `MOV AX,ES; MOV DS,AX`,
+  rather than the original two-byte `MOV SI,DS` / `MOV DS,SI` sequence. This
+  still fails raw comparison and additionally depends on ES surviving the
+  DOS calls, which this experiment did not independently establish.
+- Keeping a stack anchor in BP, restoring DS from `SS:[BP]`, and preserving
+  BP/DS emits **58 bytes** with fixup `[8]`; the extra saved BP shifts the
+  allocator relocation away from its native +7 coordinate.
+
+Neither corrected candidate is accepted. The maintained natural C++ source
+remains the **51/55-byte** candidate with the real SI-held DS restoration;
+the complete reviewed **55-byte original ASM** remains the sole exact CODE
+owner. Evidence for the original 49-byte diagnostic, the 57-byte ES variant
+and the 58-byte BP variant is retained in:
+
+- `.analysis/gpt-web-bb-load-stack-ds-before-allocation-a-20261113/`
+- `.analysis/gpt-web-bb-load-es-stack-save-a-20261113/`
+- `.analysis/gpt-web-bb-load-bp-stack-anchor-a-20261113/`
+
+No new code credit or acceptance is claimed.
