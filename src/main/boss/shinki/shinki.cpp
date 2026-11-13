@@ -799,6 +799,8 @@ void pascal shinki_update(void)
 		break;
 
 	case SHINKI_PHASE_DEFEAT_TRANSITION:
+		// boss_phase_next entered this phase at frame zero. Keep its clock:
+		// the final-circles phase inherits frame 17 instead of restarting.
 		boss_hittest_shots();
 		if((boss.phase_frame % 2) == SHINKI_DEFEAT_FLASH_EVEN_FRAME) {
 			palette_settone_deferred(SHINKI_DEFEAT_TONE_BRIGHT);
@@ -808,6 +810,7 @@ void pascal shinki_update(void)
 
 		// Timeout condition
 		if(boss.phase_frame > PHASE_11_FRAMES) {
+			// Do not clear phase_frame here: phase 12 uses the carried clock.
 			// Next phase
 			boss.phase++;
 			boss.sprite = PAT_SHINKI_STILL;
@@ -819,6 +822,8 @@ void pascal shinki_update(void)
 		break;
 
 	case SHINKI_PHASE_FINAL_CIRCLES:
+		// Run the leaf before the strict timeout test: frame 3000 still emits
+		// its final B6 pair/pellet ring, then skips the HP-bonus branch.
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
 		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {

@@ -387,3 +387,52 @@ same named physical members. Thirteen affected ordinary C++ owners and the
 original bytes, ordered relocations and rejected compiled negatives. The
 959-byte Shinki controller and 802-byte Devil pattern are included in the
 C++ closure; no accepted code is double-counted.
+
+## 2026-11-13: carried final-phase clock and inclusive 3,000-frame spiral boundary
+
+The final-circles controller does **not** start a fresh phase-frame clock at
+phase 12. `boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END)` enters the
+16-frame defeat transition with `phase_frame = 0`. That transition increments
+the same word and advances to phase 12 only after `phase_frame > 16`; it does
+not clear the word. Its seventeenth flash update therefore changes the phase
+while leaving frame 17 in place, and the first phase-12 controller tick sees
+frame 18. The final-circles timeout at frame 3,000 is measured from the
+phase-11 entry, so phase 12 itself receives 2,983 updates. The frame-128
+spiral arm occurs 111 updates after phase 12 begins.
+
+The leaf is called before the strict `phase_frame < 3000` HP gate. Consequently
+frame 3,000 still performs its final pattern work before the timeout defeat:
+
+- The opposed B6-ball pair fires at every eighth frame from 128 through 3,000:
+  **360 volleys / 720 balls**. The first pair uses angles `0x00/0x80`; each
+  volley advances the base by `0x80 - 0x78 = 8`, leaving `0x40` after the last
+  pair (whose base angle is `0x38`).
+- Red rings occupy the first 128 frames of each 256-frame cycle, on the same
+  eight-frame clock: **176 rings**, frames 256..2,936. Their two-unit reverse
+  step leaves the byte angle at `0xA0`.
+- Pellet rings occupy the second half after frame 512: **152 rings**, frames
+  640..3,000. The terminal frame is a pellet ring, not a red ring; its
+  four-unit forward step leaves the byte angle at `0x60`.
+- The periodic flystep runs on every frame from 720 through 3,000 (**2,281
+  calls**). Its argument begins at -96, wraps every 128 frames, and is 8 on
+  the terminal frame.
+
+At frame 3,000 the final pair, pellet ring and flystep therefore all run,
+then the strict `< 3000` condition skips `boss_hittest_shots()` and the
+`defeat_bonus = true` write. The common defeat path still runs, but the
+shared Boss defeat byte remains false, so the generic transition does not
+activate bullet-zap or award the 65-unit Shinki defeat bonus. An HP-triggered
+defeat on an earlier frame takes the hit-test branch and sets the flag.
+
+The adjacent `shinki_move_float()` leaf is also modeled independently. Its
+one-byte direction starts at zero and its Y velocity is reset to zero at the
+wing-preparation handoff. It updates only when `stage_frame_mod4 == 0`, adds
+0.0625 pixels to velocity while descending, and reverses at +1.0; it then
+subtracts 0.0625 until -1.0 and reverses again. From the initial zero state,
+the first ramp takes 16 updates to +1 and 32 more to -1; the steady triangle
+wave repeats every 64 updates (256 stage frames).
+
+`tests/test_shinki_final_phase.py` models the phase-11 clock carry, all final
+spiral and ring counts, the inclusive terminal frame, HP-vs-time defeat bonus,
+and the 4-frame float oscillator. Run it with
+`python3 -m unittest tests.test_shinki_final_phase -v`.
