@@ -49,3 +49,23 @@ unit = "zun-resident-semantic-initialized-data"
 source = "src/zun/resident/semantic_data.cpp"
 find = "ZUN_CFG_LIVES_DEFAULT,"
 replace = "ZUN_CFG_LIVES_MAX,"
+
+[[units]]
+id = "zun-resident-main"
+source = "src/zun/resident/main_context.cpp"
+module = "th05/zres.cpp"
+segment = "_TEXT"
+source_encoding = "cp932"
+target_start = 0xE8D
+size = 269
+alignment_offsets = []
+functions = 1
+function_symbol = "_main"
+origin = "compiler-generated-cxx"
+bindings_source = "probes/units/zun_resident_main_bindings.asm"
+
+[[controls]]
+unit = "zun-resident-main"
+source = "src/zun/resident/initialize.cpp"
+find = "if(argc == 2)"
+replace = "if(argc == 3)"

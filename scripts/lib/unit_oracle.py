@@ -65,8 +65,9 @@ def map_publics(path: Path) -> list[tuple[int, str]]:
 def map_unit_scope(path: Path, entry: dict) -> dict:
     """Locate a whole contribution or one reviewed complete public function.
 
-    Function scopes require demangled function publics (the normal TLINK MAP
-    format). A data/ASM label is not evidence of a function boundary. The next
+    Function scopes require a demangled C++ public (the normal TLINK MAP
+    format) or the explicit C entrypoint public `_main`. A data/ASM label is
+    not evidence of a function boundary. The next
     distinct public inside the same contribution cannot be skipped, even if
     that function is unregistered, idle, or known to differ from the original.
     The final function ends at the complete real compiler contribution end.
@@ -77,8 +78,8 @@ def map_unit_scope(path: Path, entry: dict) -> dict:
     if not function_scoped(entry):
         return {"kind": "complete-contribution", "start": start, "size": size}
     symbol = entry["function_symbol"]
-    if not re.fullmatch(r".+\(.*\)", symbol):
-        raise ValueError("function scope requires a demangled MAP function public")
+    if symbol != "_main" and not re.fullmatch(r".+\(.*\)", symbol):
+        raise ValueError("function scope requires a demangled MAP function public or C entrypoint _main")
     publics = map_publics(path)
     found = [address for address, name in publics if name == symbol]
     if len(found) != 1 or not start <= found[0] < start + size:

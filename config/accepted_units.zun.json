@@ -2,15 +2,15 @@
   "schema_version": 2,
   "scope": "embedded COM unit raw bytes; whole child and outer COM unaccepted",
   "target_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
-  "replay_receipt_sha256": "f5dc2091598d0f045c01145a61f60d4a47dd05e598c7e3391153649eed53d7fe",
+  "replay_receipt_sha256": "788632a701e38d09852786b0ca8ea9602bcfe0f432c64c0276128c4fe449619f",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 8354,
-    "candidate_start": 5566,
-    "size": 320,
-    "target_sha256": "7e7e8f0cbacd5e6f3b08db4f4f6709284da64dbc9fbb748c51a6a7935765e148",
-    "candidate_sha256": "67459a02aeaba465302b3641e9ff0825498dc0471866a9bc8e458979c142659f",
+    "target_start": 3725,
+    "candidate_start": 937,
+    "size": 269,
+    "target_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+    "candidate_sha256": "1dc557a28c1131ae9a75ab87cc46fc2ceb157e0d81ac87eab9f773c95214a62b",
     "raw_exact": false,
     "target_fixups": [],
     "candidate_fixups": [],
@@ -18,12 +18,14 @@
     "exact": false,
     "candidate_address_bias": 256,
     "map_scope": {
-      "kind": "complete-initialized-data-contribution",
-      "map_class": "DATA",
-      "start": 5822,
-      "size": 320,
-      "module": "th05/zdata.cpp",
-      "segment": "_DATA"
+      "kind": "complete-function",
+      "start": 1193,
+      "size": 269,
+      "function_symbol": "_main",
+      "contribution_start": 871,
+      "contribution_size": 591,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
     }
   },
   "units": [
@@ -725,6 +727,478 @@
         "child_address_bias": 256
       },
       "receipt_aggregate_pass": true
+    },
+    {
+      "id": "zun-resident-main",
+      "entry_sha256": "b21af06f6b194c6e6f786c7bdb79c0422ab9bd71a505a39b6c2fedb0743e67d2",
+      "result": {
+        "id": "zun-resident-main",
+        "entry_sha256": "b21af06f6b194c6e6f786c7bdb79c0422ab9bd71a505a39b6c2fedb0743e67d2",
+        "rounds": [
+          {
+            "target_start": 3725,
+            "candidate_start": 937,
+            "size": 269,
+            "target_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+            "candidate_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "candidate_address_bias": 256,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 1193,
+              "size": 269,
+              "function_symbol": "_main",
+              "contribution_start": 871,
+              "contribution_size": 591,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          },
+          {
+            "target_start": 3725,
+            "candidate_start": 937,
+            "size": 269,
+            "target_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+            "candidate_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+            "raw_exact": true,
+            "target_fixups": [],
+            "candidate_fixups": [],
+            "fixups_exact": true,
+            "exact": true,
+            "candidate_address_bias": 256,
+            "map_scope": {
+              "kind": "complete-function",
+              "start": 1193,
+              "size": 269,
+              "function_symbol": "_main",
+              "contribution_start": 871,
+              "contribution_size": 591,
+              "boundary_kind": "contribution-end",
+              "next_function_symbol": null
+            }
+          }
+        ],
+        "object_normalized_equal": true,
+        "omfs": [
+          {
+            "sha256": "60261c39bb2fc0c0481f0d5d4b716809dbc4e23c70567ae41d204a4d41ab72e0",
+            "dependency_timestamp_normalized_sha256": "fc12a8fcfc601ec2f629b6586386d275eb6ef1a289ee8dee8409fd41ea3573d7",
+            "module_name": "th05/zres.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zres.cpp",
+              "src/zun/resident/main_context.cpp",
+              "src/zun/resident/semantic_data.cpp",
+              "src/zun/resident/initialize.hpp",
+              "src/zun/resident/config.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp",
+              "src/zun/resident/config.cpp",
+              "src/zun/resident/config.hpp",
+              "src/zun/resident/initialize.cpp",
+              "src/zun/resident/initialize.hpp"
+            ]
+          },
+          {
+            "sha256": "60261c39bb2fc0c0481f0d5d4b716809dbc4e23c70567ae41d204a4d41ab72e0",
+            "dependency_timestamp_normalized_sha256": "fc12a8fcfc601ec2f629b6586386d275eb6ef1a289ee8dee8409fd41ea3573d7",
+            "module_name": "th05/zres.cpp",
+            "translator_comments": [
+              "TC86 Borland C++ 4.02"
+            ],
+            "dependency_paths": [
+              "th05/zres.cpp",
+              "src/zun/resident/main_context.cpp",
+              "src/zun/resident/semantic_data.cpp",
+              "src/zun/resident/initialize.hpp",
+              "src/zun/resident/config.hpp",
+              "src/main/hud/resident.hpp",
+              "src/shared/abi.hpp",
+              "C:\\TC4\\INCLUDE\\stddef.h",
+              "C:\\TC4\\INCLUDE\\_defs.h",
+              "C:\\TC4\\INCLUDE\\_null.h",
+              "src/main/formats/cfg_resident.hpp",
+              "src/shared/abi.hpp",
+              "src/zun/resident/config.cpp",
+              "src/zun/resident/config.hpp",
+              "src/zun/resident/initialize.cpp",
+              "src/zun/resident/initialize.hpp"
+            ]
+          }
+        ],
+        "producer_paths": [
+          "group-0/a/source",
+          "group-0/b/source"
+        ],
+        "compiler_arguments": [
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-mt",
+            "th05/zres.cpp"
+          ],
+          [
+            "-c",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-mt",
+            "th05/zres.cpp"
+          ]
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/zun_resident_main_bindings.asm",
+            "sha256": "05281433ae69db409831f6a18988a22aba0eecca82162473ca3b7cfbb4bdd64a"
+          },
+          {
+            "path": "src/main/formats/cfg_resident.hpp",
+            "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/zun/resident/config.cpp",
+            "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+          },
+          {
+            "path": "src/zun/resident/config.hpp",
+            "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+          },
+          {
+            "path": "src/zun/resident/initialize.cpp",
+            "sha256": "3deeb74225ad029eaf510984c5be5e1a7fbe1a53f42c0179cb39c3588698d0a7"
+          },
+          {
+            "path": "src/zun/resident/initialize.hpp",
+            "sha256": "cebb0ac65bcdd171d549de909be91a0e3e72879f64d3554a4de3468005d4192b"
+          },
+          {
+            "path": "src/zun/resident/main_context.cpp",
+            "sha256": "03dda7e7e4f0f2679dbc76202c38f2230290a927d73966b2650ec798fad78456"
+          },
+          {
+            "path": "src/zun/resident/semantic_data.cpp",
+            "sha256": "baac53a547ee7002a04db8e43b689063ab329caed1f61b04b8c87ddafa34a03a"
+          }
+        ],
+        "producer_source_inputs": [
+          [
+            {
+              "path": "probes/units/zun_resident_main_bindings.asm",
+              "sha256": "05281433ae69db409831f6a18988a22aba0eecca82162473ca3b7cfbb4bdd64a"
+            },
+            {
+              "path": "src/main/formats/cfg_resident.hpp",
+              "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            },
+            {
+              "path": "src/zun/resident/config.cpp",
+              "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+            },
+            {
+              "path": "src/zun/resident/config.hpp",
+              "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+            },
+            {
+              "path": "src/zun/resident/initialize.cpp",
+              "sha256": "3deeb74225ad029eaf510984c5be5e1a7fbe1a53f42c0179cb39c3588698d0a7"
+            },
+            {
+              "path": "src/zun/resident/initialize.hpp",
+              "sha256": "cebb0ac65bcdd171d549de909be91a0e3e72879f64d3554a4de3468005d4192b"
+            },
+            {
+              "path": "src/zun/resident/main_context.cpp",
+              "sha256": "03dda7e7e4f0f2679dbc76202c38f2230290a927d73966b2650ec798fad78456"
+            },
+            {
+              "path": "src/zun/resident/semantic_data.cpp",
+              "sha256": "b7fe6b77b3a58a5039658f3d680e25e473f6f90ef9bdb097f7c4b2cad4408de2"
+            }
+          ],
+          [
+            {
+              "path": "probes/units/zun_resident_main_bindings.asm",
+              "sha256": "05281433ae69db409831f6a18988a22aba0eecca82162473ca3b7cfbb4bdd64a"
+            },
+            {
+              "path": "src/main/formats/cfg_resident.hpp",
+              "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+            },
+            {
+              "path": "src/main/hud/resident.hpp",
+              "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+            },
+            {
+              "path": "src/shared/abi.hpp",
+              "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+            },
+            {
+              "path": "src/zun/resident/config.cpp",
+              "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+            },
+            {
+              "path": "src/zun/resident/config.hpp",
+              "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+            },
+            {
+              "path": "src/zun/resident/initialize.cpp",
+              "sha256": "3deeb74225ad029eaf510984c5be5e1a7fbe1a53f42c0179cb39c3588698d0a7"
+            },
+            {
+              "path": "src/zun/resident/initialize.hpp",
+              "sha256": "cebb0ac65bcdd171d549de909be91a0e3e72879f64d3554a4de3468005d4192b"
+            },
+            {
+              "path": "src/zun/resident/main_context.cpp",
+              "sha256": "03dda7e7e4f0f2679dbc76202c38f2230290a927d73966b2650ec798fad78456"
+            },
+            {
+              "path": "src/zun/resident/semantic_data.cpp",
+              "sha256": "b7fe6b77b3a58a5039658f3d680e25e473f6f90ef9bdb097f7c4b2cad4408de2"
+            }
+          ]
+        ],
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/zun_resident_main_bindings.asm",
+          "sha256": "05281433ae69db409831f6a18988a22aba0eecca82162473ca3b7cfbb4bdd64a"
+        },
+        {
+          "path": "src/main/formats/cfg_resident.hpp",
+          "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+        },
+        {
+          "path": "src/main/hud/resident.hpp",
+          "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+        },
+        {
+          "path": "src/shared/abi.hpp",
+          "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+        },
+        {
+          "path": "src/zun/resident/config.cpp",
+          "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+        },
+        {
+          "path": "src/zun/resident/config.hpp",
+          "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+        },
+        {
+          "path": "src/zun/resident/initialize.cpp",
+          "sha256": "3deeb74225ad029eaf510984c5be5e1a7fbe1a53f42c0179cb39c3588698d0a7"
+        },
+        {
+          "path": "src/zun/resident/initialize.hpp",
+          "sha256": "cebb0ac65bcdd171d549de909be91a0e3e72879f64d3554a4de3468005d4192b"
+        },
+        {
+          "path": "src/zun/resident/main_context.cpp",
+          "sha256": "03dda7e7e4f0f2679dbc76202c38f2230290a927d73966b2650ec798fad78456"
+        },
+        {
+          "path": "src/zun/resident/semantic_data.cpp",
+          "sha256": "baac53a547ee7002a04db8e43b689063ab329caed1f61b04b8c87ddafa34a03a"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "788632a701e38d09852786b0ca8ea9602bcfe0f432c64c0276128c4fe449619f",
+      "compiled_negative_control": {
+        "target_start": 3725,
+        "candidate_start": 937,
+        "size": 269,
+        "target_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+        "candidate_sha256": "1dc557a28c1131ae9a75ab87cc46fc2ceb157e0d81ac87eab9f773c95214a62b",
+        "raw_exact": false,
+        "target_fixups": [],
+        "candidate_fixups": [],
+        "fixups_exact": true,
+        "exact": false,
+        "candidate_address_bias": 256,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 1193,
+          "size": 269,
+          "function_symbol": "_main",
+          "contribution_start": 871,
+          "contribution_size": 591,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
+      },
+      "negative_control": {
+        "unit_id": "zun-resident-main",
+        "entry_sha256": "b21af06f6b194c6e6f786c7bdb79c0422ab9bd71a505a39b6c2fedb0743e67d2",
+        "mutation": {
+          "unit": "zun-resident-main",
+          "source": "src/zun/resident/initialize.cpp",
+          "find": "if(argc == 2)",
+          "replace": "if(argc == 3)"
+        },
+        "control_sha256": "59aa267684f5a292af001e7ad7fd70823da35d360afdf187a18b57d93ac1c52d",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 3725,
+          "candidate_start": 937,
+          "size": 269,
+          "target_sha256": "cfbbe78d3e1c29ffcdb5c6b57f2aac9fd0543c1a0d8de1a4d08fdccbc65fef9f",
+          "candidate_sha256": "1dc557a28c1131ae9a75ab87cc46fc2ceb157e0d81ac87eab9f773c95214a62b",
+          "raw_exact": false,
+          "target_fixups": [],
+          "candidate_fixups": [],
+          "fixups_exact": true,
+          "exact": false,
+          "candidate_address_bias": 256,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 1193,
+            "size": 269,
+            "function_symbol": "_main",
+            "contribution_start": 871,
+            "contribution_size": 591,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
+        },
+        "omf": {
+          "sha256": "990751b9ee1105c6e245e768f84c51a05a56bf9c13aaeb7608f5a780cc9f5569",
+          "dependency_timestamp_normalized_sha256": "38754f7729deb16e084342bf6c61f60c8fb444b179324de2698e9f076c813c0c",
+          "module_name": "th05/zres.cpp",
+          "translator_comments": [
+            "TC86 Borland C++ 4.02"
+          ],
+          "dependency_paths": [
+            "th05/zres.cpp",
+            "src/zun/resident/main_context.cpp",
+            "src/zun/resident/semantic_data.cpp",
+            "src/zun/resident/initialize.hpp",
+            "src/zun/resident/config.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "C:\\TC4\\INCLUDE\\_null.h",
+            "src/main/formats/cfg_resident.hpp",
+            "src/shared/abi.hpp",
+            "src/zun/resident/config.cpp",
+            "src/zun/resident/config.hpp",
+            "src/zun/resident/initialize.cpp",
+            "src/zun/resident/initialize.hpp"
+          ]
+        },
+        "compiler_arguments": [
+          "-c",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-mt",
+          "th05/zres.cpp"
+        ],
+        "producer_source_inputs": [
+          {
+            "path": "probes/units/zun_resident_main_bindings.asm",
+            "sha256": "05281433ae69db409831f6a18988a22aba0eecca82162473ca3b7cfbb4bdd64a"
+          },
+          {
+            "path": "src/main/formats/cfg_resident.hpp",
+            "sha256": "5ac0c33642cdbfaedb46a4c3e0754d386a1d48037a2247e59d7b60277d3b0683"
+          },
+          {
+            "path": "src/main/hud/resident.hpp",
+            "sha256": "6588fad637f3cb8491674d3e4e7554335ed812229d92ece1d285f21840215407"
+          },
+          {
+            "path": "src/shared/abi.hpp",
+            "sha256": "5e402b847b438b520d80e70113d3ecfad7b449e1de1115c5d96649778c161cb7"
+          },
+          {
+            "path": "src/zun/resident/config.cpp",
+            "sha256": "c95f47a0c48b58c28bcdb2c2a6f7e8fbd26f64eddff9eb21db69702df5b94681"
+          },
+          {
+            "path": "src/zun/resident/config.hpp",
+            "sha256": "4fdaa145ab12879316a21683d9526301168aa70098b0b64e994e81769e6b2c58"
+          },
+          {
+            "path": "src/zun/resident/initialize.cpp",
+            "sha256": "26dc66a8e543790c35da020c79bea6e318c6869e2860f9b01084e34e42a81863"
+          },
+          {
+            "path": "src/zun/resident/initialize.hpp",
+            "sha256": "cebb0ac65bcdd171d549de909be91a0e3e72879f64d3554a4de3468005d4192b"
+          },
+          {
+            "path": "src/zun/resident/main_context.cpp",
+            "sha256": "03dda7e7e4f0f2679dbc76202c38f2230290a927d73966b2650ec798fad78456"
+          },
+          {
+            "path": "src/zun/resident/semantic_data.cpp",
+            "sha256": "b7fe6b77b3a58a5039658f3d680e25e473f6f90ef9bdb097f7c4b2cad4408de2"
+          }
+        ]
+      },
+      "target_view": {
+        "artifact": "th05-zun",
+        "kind": "embedded-plain-com-source-view",
+        "packed_target_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+        "receipt_sha256": "f7669da9963b45a94f092a0d8c70a48c8d3454c83f1e9dbdfb5a0b8c7729a615",
+        "payload_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+        "payload_size": 18116,
+        "relocations_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "relocation_count": 0,
+        "member": "-S",
+        "member_start": 2788,
+        "member_end": 9352,
+        "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+        "child_address_bias": 256
+      },
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "zun-resident-main"
+      ]
     }
   ],
   "artifact": "th05-zun",

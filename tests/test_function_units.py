@@ -68,6 +68,17 @@ class FunctionScopeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "actual next"):
             map_unit(self.map, entry(end="third()", size=8))
 
+    def test_c_entrypoint_main_is_a_complete_function_public(self):
+        self.map.write_text(MAP.replace("0000:0000 0010", "0000:0000 0004").replace("first()", "_main"))
+        scope = map_unit_scope(self.map, entry("_main", end=None, size=4))
+        self.assertEqual((scope["start"], scope["size"]), (0, 4))
+        self.assertEqual(scope["kind"], "complete-function")
+        self.assertEqual(scope["function_symbol"], "_main")
+        self.assertEqual(scope["boundary_kind"], "contribution-end")
+        self.assertIsNone(scope["next_function_symbol"])
+        with self.assertRaisesRegex(ValueError, "demangled MAP function"):
+            map_unit(self.map, entry("_entry", end=None, size=4))
+
     def test_last_function_ends_at_real_contribution_not_foreign_public(self):
         scope = map_unit_scope(self.map, entry("last()", end=None))
         self.assertEqual((scope["start"], scope["size"]), (12, 4))
