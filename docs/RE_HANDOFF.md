@@ -39,7 +39,9 @@ EXE/COM reconstruction. The pinned Japanese game copy is
    merges error exits. Do not mistake the 252 *matches* for 252 differences,
    accept identical length alone, or repeat the 90 lexical-return / 16 nested
    error-path variants. See [the specific compiler findings](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md).
-   The independently accepted `cfg_init()` and resident DATA remain exact.
+   The independently accepted `cfg_init()` and resident DATA remain exact. Three shared-error-tail and two comma-return
+   first-producer variants have also failed; do not repeat them without a new
+   control-flow hypothesis.
 2. **Yumeko `swords_update()`**: the actual 283-byte function already has
    an exact **reviewed ASM** owner. Its *natural C++ alternative* is not
    exact in the nine-function original context: `-O` makes the correct near
@@ -47,7 +49,10 @@ EXE/COM reconstruction. The pinned Japanese game copy is
    2,139 original. The `-O-`, local-switch and final-Y/GOTO experiments also
    failed. Use [the compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md),
    not fabricated NOPs, padding or side effects. This is a language-source
-   improvement, **not newly uncovered executable CODE**.
+   improvement, **not newly uncovered executable CODE**. Additional `-G`/`-Z`, while/do-while/for-ever, helper extraction
+   and explicit `register` hint trials also failed to retain the two original
+   short joins; see the updated compiler review before proposing an equivalent
+   variant.
 3. **BB resource loader**: the 55-byte function is already exactly owned
    as [original-language ASM](../src/main/formats/bb_load.md). Its natural
    C++ alternative still emits 56 bytes with a different stack-frame and
@@ -81,7 +86,10 @@ and source-backed **uninitialized** storage. Recent Master
 (10 B per MZ) reduced unknown by 624 B but earned **zero initialized C/C++
 DATA or CODE credit**. The original game
 [point-number doubling flag](../src/main/item/pointnum_twice_initial.md)
-was independently accepted as one initialized C++ byte. For a corrected
+was independently accepted as one initialized C++ byte. The Master 0.23 GRCG/graphics review now covers **24 complete
+procedures / 3,988 vendor CODE bytes**, including the newly source-verified
+six-byte `GRCG_BOXFILL_RETURN` entry at `0EA0..0EA6`; see [the full source
+review](reconstruction/MASTER_GRCG_NATIVE.md). For a corrected
 example of ambiguous zero-valued data, see
 [the physical ownership correction](../src/main/stage/bonus_previous_resources.md).
 

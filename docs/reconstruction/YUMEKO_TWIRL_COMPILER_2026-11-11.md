@@ -465,3 +465,30 @@ owner, or accepted receipt was changed. These options, loop spellings and
 helper boundaries should not be repeated without a new compiler/code-layout
 hypothesis. No C++ byte credit, second producer, negative acceptance or full
 cold replay is claimed.
+
+## 2026-11-13: explicit register-storage hints
+
+The same optimized nine-function producer was run with `register` applied
+to the actual sword pointer, loop index, or both. This tests whether Borland
+was missing the original SI/DI allocation hints rather than a control-flow
+expression:
+
+| Source declaration | Whole MAIN03 CODE | Updater positions matching at original offset |
+| --- | ---: | ---: |
+| `register` pointer and index | 2,135 B | 143 / 283 |
+| `register` index only | 2,135 B | 124 / 283 |
+| `register` pointer only | 2,135 B | 143 / 283 |
+
+The two forms that register the pointer reproduce the same lowered branch
+layout and ordered relocation stream as the optimized baseline. Registering
+the index alone makes the updater's positional match worse. All three still
+emit the `JL`/`JGE` near conditions to `+108`, not the original `+10C`, and
+omit both original short joins. No source-authored bytes or accepted owner
+change follows from these first-producer diagnostics.
+
+Reproduce with `.analysis/gpt-web-yumeko-register-hints-20261113.py` and
+`.analysis/gpt-web-yumeko-register-hints-20261113-results.json`; the three
+native source/OMF/MAP/MZ outputs are in
+`.analysis/gpt-web-yumeko-register-*-20261113-first/`. Trial source files
+were removed. Explicit register storage is now another tested, unsuccessful
+compiler hypothesis and should not be repeated without a new reason.
