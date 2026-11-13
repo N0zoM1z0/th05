@@ -138,3 +138,49 @@ the two separate hit gates, the `boss_score_bonus` latch write, HP-vs-time
 item-drop behavior, and the full phase transition state reset. The accepted
 111-byte phase helper and 1,060-byte full-context updater are locally replayed
 after the comment-only source clarification; no instruction bytes are added.
+
+
+## 2026-11-14: exact 32-callback regular waves and ninth final-charge exit
+
+Each of the four regular waves starts with the callback already installed by
+the preceding Ready/charge handoff. A completed charge callback resets the
+phase clock to zero and returns the Boss to reposition mode. Each completed
+random flystep increments `patterns_seen`, switches to charge mode, and selects
+`exalice_patterns_by_phase[wave_index][patterns_seen & 1]`. The table lookup
+happens **before** the `patterns_seen >= 32` test. At count 32 the selected
+row-zero callback is never invoked: the direct jump to `regular_complete`
+bypasses both the callback mode and the normal hit/score-bonus path. Each
+uninterrupted regular wave therefore executes exactly 32 attack callbacks: the
+preinstalled first callback plus 31 table-selected callbacks.
+
+The actual preinstalled callbacks differ by wave. Wave 1 starts with
+`random_fan`; wave 2 with `gravity_stacks`; wave 3 with `fixed_laser_fan` (not a
+member of that wave's two-entry bank); wave 4 with `cross_cheetos`. The table
+banks remain the original four distinct near-function pairs:
+
+| Wave | Preinstalled callback | Alternating bank | Executed callbacks |
+|---|---|---|---:|
+| 1 | random fan | random fan / turning rings | 16 / 16 |
+| 2 | gravity stacks | gravity stacks / diamond rings | 16 / 16 |
+| 3 | fixed laser fan | bouncing rings / speedup fans | 1 fixed + 15 / 16 |
+| 4 | cross cheetos | cross cheetos / turning cheetos | 16 / 16 |
+
+The uncalled count-32 selection is always bank index zero. This distinction
+matters in wave 3: its preinstalled fixed-laser callback is an extra one-off,
+while only counts 2..30 invoke the bank's bouncing-ring callback.
+
+The fourth charge wave has a different counter. Every completed callback
+increments `patterns_seen`; the strict `> 8` check completes on callback **9**.
+That jump also skips `charge_hittest` and its 20-unit score bonus. The ordinary
+charge timeout is separately strict `phase_frame > 4000`, so frame 4000 still
+runs the hit test and frame 4001 jumps directly to charge completion. These
+count/time exits leave `boss_phase_timed_out` true, preserving the phase helper's
+no-item-drop behavior; only a successful HP hit followed by `boss_score_bonus`
+clears that latch.
+
+`tests/test_exalice_wave_dispatch.py` models all four callback sequences,
+the skipped count-32 selection, the nine-callback final charge, the strict
+4000/4001 boundary, and the sequential 26,500-to-zero HP handoff. The accepted
+1,060-byte full-context updater is replayed locally after the comment-only
+clarification; its 52-byte compiler switch tables and original ordered fixups
+remain exact.

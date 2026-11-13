@@ -77,6 +77,8 @@ regular_attack:
                 boss.mode++;
                 exalice_pattern = exalice_patterns_by_phase[exalice_boss_scratch.wave_index][
                     boss.phase_state.patterns_seen & EXALICE_REGULAR_PATTERN_ALTERNATION_MASK];
+                // The count-32 lookup above is deliberate, but this jump
+                // prevents that selected callback and its hit/bonus path.
                 if(boss.phase_state.patterns_seen >= EXALICE_REGULAR_PATTERN_LIMIT) {
                     goto regular_complete;
                 }
@@ -207,6 +209,7 @@ charge_complete:
     case EXALICE_PHASE_WAVE4_CHARGE:
         if(exalice_charge_update()) {
             boss.phase_state.patterns_seen++;
+            // `> 8` completes on the ninth callback; skip the hit/bonus gate.
             if(boss.phase_state.patterns_seen > EXALICE_FINAL_CHARGE_PATTERN_LAST) {
                 goto charge_complete;
             }
