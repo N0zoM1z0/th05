@@ -48,6 +48,18 @@ class ShinkiFinalPhaseTests(unittest.TestCase):
         self.assertEqual(list(range(1, 18))[-1], 17)
         self.assertEqual(17 + 1, 18)  # first phase-12 callback observes frame 18
 
+        # The transition flashes on every one of its 17 updates. With the
+        # original even-frame selector 0, odd frames are dim and even frames
+        # are bright; the terminal frame 17 is therefore still a dim flash.
+        bright_frames = [frame for frame in range(1, 18) if (frame % 2) == 0]
+        dim_frames = [frame for frame in range(1, 18) if (frame % 2) != 0]
+        self.assertEqual(bright_frames, [2, 4, 6, 8, 10, 12, 14, 16])
+        self.assertEqual(dim_frames, [1, 3, 5, 7, 9, 11, 13, 15, 17])
+        self.assertIn("SHINKI_DEFEAT_FLASH_EVEN_FRAME = 0", SOURCE)
+        self.assertIn("SHINKI_DEFEAT_TONE_BRIGHT = 150", SOURCE)
+        self.assertIn("SHINKI_DEFEAT_TONE_DIM = 100", SOURCE)
+        self.assertLess(phase11.index("boss_hittest_shots();"), phase11.index("palette_settone_deferred(SHINKI_DEFEAT_TONE_BRIGHT);"))
+
     def test_phase_entry_clears_the_shared_defeat_bonus_latch(self):
         # Boss byte 21 is one byte, not two independent phase counters.
         self.assertIn("unsigned char patterns_seen;\n        bool defeat_bonus;", MOVEMENT)

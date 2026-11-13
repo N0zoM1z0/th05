@@ -398,7 +398,9 @@ not clear the word. Its seventeenth flash update therefore changes the phase
 while leaving frame 17 in place, and the first phase-12 controller tick sees
 frame 18. The final-circles timeout at frame 3,000 is measured from the
 phase-11 entry, so phase 12 itself receives 2,983 updates. The frame-128
-spiral arm occurs 111 updates after phase 12 begins.
+spiral arm occurs 111 updates after phase 12 begins. Phase 11 flashes on all
+17 updates: odd frames 1..17 use tone 100, even frames 2..16 use tone 150.
+The terminal frame-17 flash is dim; phase 12 then begins at frame 18.
 
 The leaf is called before the strict `phase_frame < 3000` HP gate. Consequently
 frame 3,000 still performs its final pattern work before the timeout defeat:
