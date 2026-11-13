@@ -122,5 +122,13 @@ can be removed **only after checking current receipt hashes and references**.
 A handoff to a different computer requires transferring the necessary
 ignored inputs separately; `git clone` alone is insufficient.
 
+On 2026-11-13, **88 obsolete, unreferenced** `.analysis/unit-replays/`
+folders were deleted (about **85.3 MiB** of allocated files). They were
+neither current ledger receipt-SHA matches nor directly referenced from
+tracked repository content. All **386 distinct current receipt hashes**
+were checked before and after; the separately referenced historical
+folders, the original inputs, active toolchain and diagnostic worktrees
+were retained. Repeat this inventory check before any further deletion.
+
 This is the live handoff, not a running change log. Historical results and
 failed experiments belong in the linked per-function notes and Git history.
