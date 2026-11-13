@@ -139,7 +139,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 			boss_explode_small(ET_VERTICAL);
 		}
 		if(boss.phase_frame == BDF_BIG) {
-			boss_defeat_explode_big(ET_CIRCLE, bonus_units);
+			boss_defeat_explode_big_circle(bonus_units);
 			player_invincibility_time = BOSS_DEFEAT_INVINCIBILITY_FRAMES;
 		}
 		homing_target.x.v = HOMING_TARGET_NONE;

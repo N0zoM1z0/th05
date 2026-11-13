@@ -95,7 +95,9 @@ enum boss_defeat_frames_t {
 #define overlay_stage_leave() (overlay1 = overlay_stage_leave_update_and_render)
 #define snd_kaja_func(operation, parameter) \
     snd_kaja_interrupt(((operation) << 8) | static_cast<uint8_t>(parameter))
-#define boss_defeat_explode_big(type, bonus_units) { \
+// The generic defeat transition always starts the circular big explosion;
+// the former unused `type` macro argument suggested a choice that never existed.
+#define boss_defeat_explode_big_circle(bonus_units) { \
     boss_explode_big_circle(); \
     boss.phase++; \
     bullet_zap.active = boss.phase_state.defeat_bonus; \
