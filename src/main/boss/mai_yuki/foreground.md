@@ -105,3 +105,14 @@ Joint semantic model `.analysis/foreground-order-semantic-model.json`, SHA-256
 `0344d525df23ea8eb62de5920630294594bbd2bfebb0b2137542dfe3082f7c7b`.
 The earlier198-byte callback failure is preserved. Only the complete194-byte
 callback adds credit, not its existing helper, combined TU, state or providers.
+
+
+## 2026-11-13: loser identity is not a pattern counter
+
+The paired foreground's three `boss2.phase_state.patterns_seen` reads now use
+the `MY_DEFEATED_CHARACTER()` view. This byte is written once as the zero-based
+loser index before the explosion transition (Mai=0, Yuki=1); the foreground
+never treats it as a live pattern count. The overlay is one byte at the
+existing phase-state offset 21 and does not change either full Boss record.
+The complete 194-byte callback remains raw/fixup exact in two fresh producers,
+with the same existing negative control.

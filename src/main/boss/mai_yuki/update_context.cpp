@@ -68,7 +68,7 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
 
 // The one-based defeated-character report is stored on boss2. All four
 // explosion/dialog decisions test the same genuine "Mai was defeated" code.
-#define MY_MAI_WAS_DEFEATED() (boss2.phase_state.patterns_seen == MY_DEFEATED_MAI)
+#define MY_MAI_WAS_DEFEATED() (MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI)
 
 void pascal far mai_yuki_update(void)
 {
@@ -170,7 +170,7 @@ void pascal far mai_yuki_update(void)
         }
         boss.phase_state.defeat_bonus = true;
     start_small_explosion:
-        boss2.phase_state.patterns_seen = (
+        MY_DEFEATED_CHARACTER(boss2.phase_state) = (
             state_result - MY_HIT_TO_STORED_DEFEATED_INDEX);
         boss.phase = MY_PHASE_EXPLODE_SMALL;
         boss.phase_frame = 0;

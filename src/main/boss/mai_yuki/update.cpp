@@ -141,7 +141,7 @@ void pascal far mai_yuki_update(void)
         }
         boss.phase_state.defeat_bonus = true;
     start_small_explosion:
-        boss2.phase_state.patterns_seen = (
+        MY_DEFEATED_CHARACTER(boss2.phase_state) = (
             state_result - MY_HIT_TO_STORED_DEFEATED_INDEX);
         boss.phase = MY_PHASE_EXPLODE_SMALL;
         boss.phase_frame = 0;
@@ -152,7 +152,7 @@ void pascal far mai_yuki_update(void)
 
     case MY_PHASE_EXPLODE_SMALL:
         if(boss.phase_frame == MY_SMALL_EXPLOSION_FIRST_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI) {
                 boss_explode_small(ET_VERTICAL);
             } else {
                 boss2_explode_small(ET_VERTICAL);
@@ -160,7 +160,7 @@ void pascal far mai_yuki_update(void)
             break;
         }
         if(boss.phase_frame == MY_SMALL_EXPLOSION_BIG_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI) {
                 boss_explode_big_circle();
                 boss.sprite = MY_BOSS_EXPLOSION_SPRITE_FIRST;
                 boss2.sprite = PAT_B4_STILL;
@@ -187,7 +187,7 @@ void pascal far mai_yuki_update(void)
         bg_render_bombing_func = tiles_render_all;
         slowdown_factor = MY_BIG_EXPLOSION_SLOWDOWN;
         if((boss.phase_frame % MY_BIG_EXPLOSION_SPRITE_FRAMES) == 0) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI) {
                 boss.sprite++;
             } else {
                 boss2.sprite++;
@@ -203,7 +203,7 @@ void pascal far mai_yuki_update(void)
         PaletteTone = MY_SURVIVOR_DIALOG_PALETTE_TONE;
         palette_changed = true;
         if(boss.phase_frame == MY_SURVIVOR_DIALOG_ENTRY_FRAME) {
-            if(boss2.phase_state.patterns_seen == MY_DEFEATED_MAI) {
+            if(MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI) {
                 dialog_load(MY_DIALOG_YUKI);
                 boss_bgm_title = MY_BGM_TITLE_YUKI;
                 boss.pos.cur = boss2.pos.cur;

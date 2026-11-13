@@ -58,13 +58,15 @@ or whole-game equality is claimed.
 
 The real `mai_yuki_hittest_shots()` returns 0/1/2 for no defeat / Mai defeated /
 Yuki defeated, as independently corroborated by the accepted `hittest.cpp`.
-The complete Boss controller stores a nonzero result **minus one** in
-`boss2.phase_state.patterns_seen` for the explosion and survivor-dialogue
-stages. Thus the value zero means Mai was defeated and Yuki survives; value
-one means Yuki was defeated and Mai survives. Pattern-cycle exhaustion
-selects Mai's defeat with hit code one. Four later checks now use the
-explicit `MY_DEFEATED_MAI` constant, making the original scratch-value
-conversion visible instead of pretending it is still a normal pattern count.
+The complete Boss controller stores a nonzero result **minus one** in the
+one physical byte of `boss2.phase_state`. During combat that byte is viewed as
+`patterns_seen`; after the survivor is selected it is viewed as
+`MaiYukiDefeatCharacterState::defeated_character`. Thus the value zero means
+Mai was defeated and Yuki survives; value one means Yuki was defeated and Mai
+survives. Pattern-cycle exhaustion selects Mai's defeat with hit code one.
+The `MY_DEFEATED_CHARACTER()` view makes this post-combat lifetime explicit
+without changing the enclosing 24-byte Boss record or the byte at offset 21.
+Four later checks use the explicit `MY_DEFEATED_MAI` constant.
 
 Both `update.cpp` and the actually accepted, adjacent-final-pattern
 `update_context.cpp` now use the same source-level hit/defeat constants; these
@@ -159,3 +161,30 @@ owner, not newly counted bytes, and no full cold replay was performed.
 ## Shared paired and solo scratch overlay
 
 The paired reversing-ring pair and later Mai/Yuki survivor patterns reuse the same physical Boss scratch bytes. Their complete offset-12..15 and byte-15 lifetime map is documented in [the shared scratch review](solo_scratch.md). The source now names both ring angle/step pairs and all five byte-15 roles without changing any original initializer, turn gate or transition reset. Ten affected complete units passed the focused two-producer replay; the 1,018-byte controller and its 939-byte adjacent pattern context remain exact, with no duplicate CODE credit.
+
+
+## 2026-11-13: typed defeated-character lifetime over phase-state byte 21
+
+`boss2.phase_state` is the original one-byte union at Boss offset 21. Its
+combat lifetime is the pattern counter (`patterns_seen`); the hit selector
+returns `MY_HIT_MAI_DEFEATED` or `MY_HIT_YUKI_DEFEATED`, and the shared
+controller stores the result minus one in that same byte before entering the
+explosion/survivor-dialogue phases. After that write it is no longer a pattern
+counter: zero means Mai lost and one means Yuki lost.
+
+`hit_result.hpp` now supplies a one-byte `MaiYukiDefeatCharacterState` overlay
+and `MY_DEFEATED_CHARACTER(phase_state_lvalue)` accessor for this later
+lifetime. The existing `patterns_seen` and `defeat_bonus` views in the
+canonical Boss union are unchanged; the new view is local to the paired
+survivor protocol and adds no field to `boss_stuff_t`. The 24-byte Boss layout,
+phase-state offset 21, hit-result values, one-based-to-zero-based conversion,
+explosion order and survivor choice are unchanged.
+
+The actual accepted complete 1,018-byte `mai_yuki_update()` and its 194-byte
+foreground consumer now read the loser through the named view. The accepted
+111-byte hit-result provider and 75-byte sprite helper were also replayed as
+complete dependency consumers. Two independent Borland/TLINK producers
+preserve every original byte and ordered fixup across all four complete units;
+the existing compiled animation-speed negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-mai-yuki-defeated-character-overlay-20261113/receipt.json`.
+No duplicate CODE credit or new storage is claimed.

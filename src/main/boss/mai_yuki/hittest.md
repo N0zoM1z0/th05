@@ -74,11 +74,13 @@ unchanged. The shared setup's separate 24×24 hitbox still deliberately
 uses sound 10, preserving that phase's different semantics.
 
 `hit_result.hpp` only names compiler constants, not independent state.
-The actual `boss2.phase_state.patterns_seen` byte is reused by the
-survivor transition as the *zero-based defeated index*: Mai loss is
-stored as 0, Yuki loss as 1. The original wrapper's real unsigned-byte
-return and the Boss' subtraction of one now reference the same
-constants. This prevents divergence between two independently compiled
+The actual one-byte `boss2.phase_state` union is reused by the survivor
+transition as the *zero-based defeated index*: Mai loss is stored as 0, Yuki
+loss as 1. During combat its byte is viewed as `patterns_seen`; after the
+result-minus-one store, the paired controller and foreground view the same
+byte through `MaiYukiDefeatCharacterState::defeated_character`. The original
+wrapper's real unsigned-byte return and the Boss' subtraction of one use the
+same constants. This prevents divergence between independently compiled
 source owners without changing a single original byte.
 
 The focused two-unit native receipt at
@@ -88,3 +90,18 @@ and the entire **1,018-byte** Boss controller, their original ordered
 MZ fixups and actual OMF/MAP bounds. Both compiled semantic negative
 controls are rejected. No new code-byte credit is claimed for existing
 accepted source.
+
+
+## 2026-11-13: typed survivor-result view
+
+`hit_result.hpp` now provides the one-byte `MaiYukiDefeatCharacterState`
+overlay and `MY_DEFEATED_CHARACTER()` access macro. It names the later
+survivor-dialogue lifetime of `boss2.phase_state` without adding a member to
+the canonical 24-byte Boss object. The hit selector still returns 0/1/2 in
+AL, and the complete shared Boss controller still stores result minus one;
+only the source view changes after that write.
+
+The complete 111-byte hit provider, 1,018-byte paired controller, 194-byte
+foreground and 75-byte sprite helper all replay exact twice with original
+ordered fixups and the existing compiled negative rejected. See the shared
+receipt in `.analysis/unit-replays/gpt-web-mai-yuki-defeated-character-overlay-20261113/`.

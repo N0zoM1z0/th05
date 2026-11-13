@@ -2,6 +2,7 @@
 #ifndef TH05_MY_FOREGROUND_HPP
 #define TH05_MY_FOREGROUND_HPP
 #include "src/main/boss/mai_yuki.hpp"
+#include "src/main/boss/mai_yuki/hit_result.hpp"
 
 extern unsigned char stage_frame_mod8;
 static const unsigned char MY_FG_PHASE_EXPLODE_SMALL = 253;

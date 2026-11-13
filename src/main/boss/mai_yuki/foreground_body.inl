@@ -11,7 +11,7 @@ void pascal near mai_yuki_fg_render(void)
     yuki_top = (boss2.pos.cur.y.v >> 4) - 16;
 
     if(boss.phase == MY_FG_PHASE_EXPLODE_BIG) {
-        if(boss2.phase_state.patterns_seen == 0) {
+        if(MY_DEFEATED_CHARACTER(boss2.phase_state) == 0) {
             super_large_put(mai_left, mai_top, boss.sprite);
             mai_yuki_sprite_put(yuki_left, yuki_top, boss2.sprite + MY_FG_CELS,
                 boss2.damage_this_frame);
@@ -22,12 +22,12 @@ void pascal near mai_yuki_fg_render(void)
         }
     } else {
         if(boss.phase <= MY_FG_PHASE_EXPLODE_SMALL ||
-            boss2.phase_state.patterns_seen != 0) {
+            MY_DEFEATED_CHARACTER(boss2.phase_state) != 0) {
             mai_yuki_sprite_put(mai_left, mai_top, boss.sprite,
                 boss.damage_this_frame);
         }
         if(boss.phase <= MY_FG_PHASE_EXPLODE_SMALL ||
-            boss2.phase_state.patterns_seen == 0) {
+            MY_DEFEATED_CHARACTER(boss2.phase_state) == 0) {
             mai_yuki_sprite_put(yuki_left, yuki_top, boss2.sprite + MY_FG_CELS,
                 boss2.damage_this_frame);
         }

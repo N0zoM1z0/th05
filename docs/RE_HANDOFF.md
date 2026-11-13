@@ -143,6 +143,14 @@ The full ZUN ownership summary and current intervals are in
   to a near-context MOVSX parser/lowering limitation. The 67-byte C++ result
   remains diagnostic only; the 55-byte ASM remains sole exact owner. See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
+- **Mai/Yuki defeated-character lifetime (2026-11-13)**: the one byte of
+  `boss2.phase_state` is now explicitly viewed as `patterns_seen` during
+  combat and `defeated_character` after the result-minus-one handoff (Mai=0,
+  Yuki=1). A one-byte overlay and named accessor preserve the canonical
+  24-byte Boss layout. The complete 1,018-byte controller, 194-byte foreground,
+  111-byte hit provider and 75-byte sprite helper replay exact twice with all
+  original ordered fixups; the compiled negative is rejected. No duplicate
+  CODE credit. See [`update_context.md`](../src/main/boss/mai_yuki/update_context.md).
 - **Pointnum invalidator natural-C++ exact alternative (2026-11-13)**:
   `pointnums_invalidate()` now stages current X in DOS `_AX` before the
   previous-Y/current-X Pascal call. Two fresh native Borland/TLINK producers
