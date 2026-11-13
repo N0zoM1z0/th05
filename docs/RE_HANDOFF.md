@@ -73,7 +73,9 @@ segment/data holes. Do not assume every unknown byte is executable.
 Start with [the current ZUN ownership map](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
 The accepted `-S` `brk`/`sbrk` and `nearheap` members are vendor code/data, not
 authored credit; their focused checks are `scripts/review_zun_brk.py --check`
-and `scripts/review_zun_nearheap.py --check`.
+and `scripts/review_zun_nearheap.py --check`. The resident DATA and final
+INITDATA passes are `scripts/review_zun_resident_data.py --check` and
+`scripts/review_zun_ctlib_data.py --check`.
 
 ### 2. BB resource loader — unresolved C++ alternative, ASM owner already exact
 
