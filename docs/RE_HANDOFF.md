@@ -92,6 +92,16 @@ The full ZUN ownership summary and current intervals are in
   twice byte/fixup exact with the existing negative rejected. No new CODE or
   storage credit is claimed. See
   [`alice/update.md`](../src/main/boss/alice/update.md).
+- **EX-Alice later-pattern scratch lifecycle (2026-11-13)**: bytes 13/14 now
+  have explicit Firewave and Spiral views over the same original 16-byte Boss
+  state array. Byte 13 is their shared turn phase; byte 14 is the firewave
+  angle or spiral acceleration step. A bounded original-code xref also proved
+  byte 15 is a Ready-time direction seed consumed by the second wave-1 pattern
+  (turning rings), not an initial-fan substate. Eight complete C++ owners,
+  including the 1,060-byte update controller, and the separate 334-byte
+  TCC-S/TASM32 spiral owner all replay exact with their original relocations;
+  compiled negatives are rejected. No new CODE/storage credit is claimed.
+  See [`exalice/full_context.md`](../src/main/boss/exalice/full_context.md).
 - **B4-ball updater (2026-11-13)**: `b4balls_update()` remains exact at 273
   bytes with ordered fixups `[235,156,118]`. The unused false-return helper
   was simplified to an empty inline `void`; two fresh positives and the
@@ -107,9 +117,12 @@ The full ZUN ownership summary and current intervals are in
 ## Other open work
 
 1. **BB resource loader**: its 55-byte function is already exactly owned as
-   original-language ASM. The C++ context candidate matches 51/55 bytes in two
-   producers; the remaining compiler differences are documented in
-   [`bb_load.md`](../src/main/formats/bb_load.md). Do not double-count the ASM.
+   original-language ASM. The maintained C++ context candidate matches 51/55
+   bytes in two producers. A new post-allocation DS-stack alternative emits a
+   reproducible 51-byte shape but shifts the allocator relocation from +7 to
+   +6 and is much less byte-aligned; it remains diagnostic only. The maintained
+   candidate is unchanged and the ASM remains sole exact owner. See
+   [`bb_load.md`](../src/main/formats/bb_load.md).
 2. **Remaining physical ownership gaps**: use the live intervals in
    `resources/ownership.json` and the current
    [`UNACCEPTED_COHORTS.md`](reconstruction/UNACCEPTED_COHORTS.md). Check
