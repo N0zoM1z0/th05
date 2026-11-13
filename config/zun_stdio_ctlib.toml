@@ -1,0 +1,237 @@
+schema_version = 1
+artifact = "th05-zun"
+container_size = 18116
+target_sha256 = "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e"
+member = "-S"
+member_start = 2788
+member_size = 6564
+member_sha256 = "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376"
+library_path = ".analysis/toolchain/installed/tc40j/LIB/CT.LIB"
+library_sha256 = "b665d5d30f0d3bafe3023ee45eeef183811c87201e9a1876f011acf5699261af"
+library_tree_sha256 = "3fccb05d8dcfad6417ac4171482515fa0608f8e82b3cc81665a72f76621d8033"
+library_tree_file_count = 41
+toolchain_manifest_sha256 = "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16"
+c0t_object_path = ".analysis/toolchain/installed/tc40j/LIB/C0T.OBJ"
+c0t_object_sha256 = "27169f062a9b77bf4accfb9550ca4ccbf0fd710d4b1232768630d53bb6305f7c"
+origin = "pinned-borland-ct-library-original-object"
+global_authored_credit = "vendor-zero"
+region_start_com = 0x0F13
+region_end_com = 0x1650
+expected_code_bytes = 1837
+expected_unknown_gaps = ["0x1501|0x1503", "0x1642|0x1650"]
+
+[segment_bases]
+"_pathops:2" = 0x1A70
+"setvbuf:2" = 0x1A80
+"setargv:1" = 0x1501
+"setargv:2" = 0x1A86
+
+[external_targets]
+"_flushall" = 0x1069
+"___write" = 0x1352
+"__streams" = 0x18A0
+"__nfile" = 0x19E0
+"_fflush" = 0x0FD8
+"_lseek" = 0x0B39
+"__openfd" = 0x19E2
+"_fseek" = 0x111B
+"_free" = 0x0C9C
+"_malloc" = 0x0D6B
+"__exitbuf" = 0x189A
+"__xfflush" = 0x14CC
+"__rtl_write" = 0x1477
+"__IOERROR" = 0x0AD2
+"__C0argc" = 0x169A
+"__C0argv" = 0x169C
+"__psp" = 0x16A6
+"__envseg" = 0x16A2
+"__envLng" = 0x16A0
+"__osmajor" = 0x16A8
+"__abort" = 0x09D6
+"___path_isdbcsleadbyte" = 0x0F5B
+
+[external_definitions]
+"_flushall" = "flushall|1|0"
+"___write" = "write|1|0"
+"__streams" = "files|2|0"
+"__nfile" = "files2|2|0"
+"_fflush" = "fflush|1|0"
+"_lseek" = "lseek|1|0"
+"__openfd" = "files2|2|2"
+"_fseek" = "fseek|1|112"
+"_free" = "nearheap|1|0"
+"_malloc" = "nearheap|1|207"
+"__exitbuf" = "exit|2|0"
+"__xfflush" = "xfflush|1|0"
+"__rtl_write" = "writea|1|0"
+"__IOERROR" = "ioerror|1|0"
+"__C0argc" = "C0T.OBJ|4|74"
+"__C0argv" = "C0T.OBJ|4|76"
+"__psp" = "C0T.OBJ|4|86"
+"__envseg" = "C0T.OBJ|4|82"
+"__envLng" = "C0T.OBJ|4|80"
+"__osmajor" = "C0T.OBJ|4|88"
+"__abort" = "_abort|1|0"
+"___path_isdbcsleadbyte" = "_pathops|1|72"
+
+[external_segment_bases]
+"flushall:1" = 0x1069
+"write:1" = 0x1352
+"files:2" = 0x18A0
+"files2:2" = 0x19E0
+"fflush:1" = 0x0FD8
+"lseek:1" = 0x0B39
+"fseek:1" = 0x10AB
+"nearheap:1" = 0x0C9C
+"exit:2" = 0x189A
+"writea:1" = 0x1477
+"ioerror:1" = 0x0AD2
+"C0T.OBJ:1" = 0x0000
+"C0T.OBJ:4" = 0x1650
+"_abort:1" = 0x09D6
+
+[external_segment_specs]
+"flushall:1" = "66:_TEXT:CODE"
+"write:1" = "293:_TEXT:CODE"
+"files:2" = "320:_DATA:DATA"
+"files2:2" = "42:_DATA:DATA"
+"fflush:1" = "145:_TEXT:CODE"
+"lseek:1" = "45:_TEXT:CODE"
+"fseek:1" = "422:_TEXT:CODE"
+"nearheap:1" = "631:_TEXT:CODE"
+"exit:2" = "6:_DATA:DATA"
+"writea:1" = "85:_TEXT:CODE"
+"ioerror:1" = "82:_TEXT:CODE"
+"C0T.OBJ:1" = "871:_TEXT:CODE"
+"C0T.OBJ:4" = "110:_DATA:DATA"
+"_abort:1" = "21:_TEXT:CODE"
+
+[[modules]]
+name = "_pathops"
+start_com = 0x0F13
+code_segment_size = 197
+code_ledata_offset = 0
+code_size = 197
+segments = ['1|197|_TEXT|CODE', '2|16|_DATA|DATA', '3|0|_BSS|BSS', '4|6|_INIT_|INITDATA']
+groups = ['1|DGROUP|3,2']
+ledatas = ['1|0|197', '2|0|16', '4|0|6']
+publics = ['___path_dbcs_default|2|4', '___path_dbcs_vector|2|0', '___path_issbcs|1|109', '___path_isdbcsleadbyte|1|72']
+externals = []
+fixups_by_segment = ['1|13,17,48,54,57,84', '4|2']
+
+[[modules]]
+name = "fflush"
+start_com = 0x0FD8
+code_segment_size = 145
+code_ledata_offset = 0
+code_size = 145
+segments = ['1|145|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|145']
+publics = ['_fflush|1|0']
+externals = ['_flushall', '___write']
+fixups_by_segment = ['1|109,15']
+
+[[modules]]
+name = "flushall"
+start_com = 0x1069
+code_segment_size = 66
+code_ledata_offset = 0
+code_size = 66
+segments = ['1|66|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|66']
+publics = ['_flushall|1|0']
+externals = ['__streams', '__nfile', '_fflush']
+fixups_by_segment = ['1|37,22,14']
+
+[[modules]]
+name = "fseek"
+start_com = 0x10AB
+code_segment_size = 422
+code_ledata_offset = 0
+code_size = 422
+segments = ['1|422|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|422']
+publics = ['_fseek|1|112', '_ftell|1|217']
+externals = ['_fflush', '_lseek', '__openfd']
+fixups_by_segment = ['1|347,306,284,242,191,121']
+
+[[modules]]
+name = "setvbuf"
+start_com = 0x1251
+code_segment_size = 229
+code_ledata_offset = 0
+code_size = 229
+segments = ['1|229|_TEXT|CODE', '2|4|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|229', '2|0|4']
+publics = ['_setvbuf|1|0']
+externals = ['__streams', '_fseek', '_free', '_malloc', '__exitbuf', '__xfflush']
+fixups_by_segment = ['1|171,159,157,116,98,76,70,62,54,48,40']
+
+[[modules]]
+name = "strlen"
+start_com = 0x1336
+code_segment_size = 28
+code_ledata_offset = 0
+code_size = 28
+segments = ['1|28|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|3,2']
+ledatas = ['1|0|28']
+publics = ['_strlen|1|0']
+externals = []
+fixups_by_segment = []
+
+[[modules]]
+name = "write"
+start_com = 0x1352
+code_segment_size = 293
+code_ledata_offset = 0
+code_size = 293
+segments = ['1|293|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|293']
+publics = ['___write|1|0']
+externals = ['__nfile', '_lseek', '__rtl_write', '__IOERROR', '__openfd']
+fixups_by_segment = ['1|252,185,108,93,78,66,49,23,14']
+
+[[modules]]
+name = "writea"
+start_com = 0x1477
+code_segment_size = 85
+code_ledata_offset = 0
+code_size = 85
+segments = ['1|85|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|3,2']
+ledatas = ['1|0|85']
+publics = ['__rtl_write|1|0', '__write|1|61']
+externals = ['__IOERROR', '__openfd']
+fixups_by_segment = ['1|12,46,55']
+
+[[modules]]
+name = "xfflush"
+start_com = 0x14CC
+code_segment_size = 53
+code_ledata_offset = 0
+code_size = 53
+segments = ['1|53|_TEXT|CODE', '2|0|_DATA|DATA', '3|0|_BSS|BSS']
+groups = ['1|DGROUP|2,3']
+ledatas = ['1|0|53']
+publics = ['__xfflush|1|0']
+externals = ['__streams', '_fflush']
+fixups_by_segment = ['1|31,16']
+
+[[modules]]
+name = "setargv"
+start_com = 0x1501
+code_segment_size = 321
+code_ledata_offset = 2
+code_size = 319
+segments = ['1|321|_TEXT|CODE', '2|14|_DATA|DATA', '3|6|_INIT_|INITDATA']
+groups = ['1|DGROUP|2']
+ledatas = ['1|2|319', '2|0|4', '3|0|4']
+publics = ['__setargv__|0|0', '__argv|2|2', '__argc|2|0']
+externals = ['__C0argc', '__C0argv', '__psp', '__envseg', '__envLng', '__osmajor', '__abort', '___path_isdbcsleadbyte']
+fixups_by_segment = ['1|4,8,12,17,21,25,30,47,56,63,150,188,192,240,244,261,287,291,295,299,303,306,309,312,315,319', '3|2']

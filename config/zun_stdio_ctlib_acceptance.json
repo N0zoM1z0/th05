@@ -1,0 +1,2210 @@
+{
+  "schema_version": 1,
+  "kind": "bounded-zun-borland-ctlib-code-ownership-review",
+  "manifest_sha256": "55e2205c6fc3bea21fe5d5b7889ed0efa128b0f9403f187632ef8779730033fe",
+  "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "library_sha256": "b665d5d30f0d3bafe3023ee45eeef183811c87201e9a1876f011acf5699261af",
+  "library_tree_sha256": "3fccb05d8dcfad6417ac4171482515fa0608f8e82b3cc81665a72f76621d8033",
+  "library_tree_file_count": 41,
+  "target_artifact_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+  "member": "-S",
+  "member_start": 2788,
+  "member_size": 6564,
+  "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+  "c0t_object_sha256": "27169f062a9b77bf4accfb9550ca4ccbf0fd710d4b1232768630d53bb6305f7c",
+  "origin": "pinned-borland-ct-library-original-object",
+  "global_authored_credit": "vendor-zero",
+  "region": {
+    "start_com": 3859,
+    "end_com": 5712,
+    "file_start": 6391,
+    "file_end": 8244,
+    "size": 1853,
+    "source_written_code_bytes": 1837,
+    "unknown_gaps": [
+      "0x1501|0x1503",
+      "0x1642|0x1650"
+    ],
+    "module_count": 10
+  },
+  "modules": [
+    {
+      "name": "_pathops",
+      "segment_start_com": 3859,
+      "segment_end_com": 4056,
+      "code_start_com": 3859,
+      "code_end_com": 4056,
+      "file_start": 6391,
+      "code_size": 197,
+      "program_records_sha256": "958ad386fe8bbaacd7403e4ffd6e8b2ea82c0feedc6fdaad964d29feec2fa816",
+      "object_sha256": "44816cb86311a8def719d8252953922187a5230b434d73ce6d13cbbc9feb984d",
+      "fixup_records_sha256": "50e191b3a22c7e6d25fce8abeb68db14f5cd99f34f836caac5c3f4b44da09385",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 6,
+        "COMENT": 1,
+        "SEGDEF": 4,
+        "GRPDEF": 1,
+        "PUBDEF": 4,
+        "LEDATA": 3,
+        "FIXUPP": 2,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|197|_TEXT|CODE",
+        "2|16|_DATA|DATA",
+        "3|0|_BSS|BSS",
+        "4|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|197",
+        "2|0|16",
+        "4|0|6"
+      ],
+      "publics": [
+        "___path_dbcs_default|2|4",
+        "___path_dbcs_vector|2|0",
+        "___path_issbcs|1|109",
+        "___path_isdbcsleadbyte|1|72"
+      ],
+      "externals": [],
+      "fixups_by_segment": [
+        "1|13,17,48,54,57,84",
+        "4|2"
+      ],
+      "code": {
+        "source_sha256": "1341b323bb09dd62294fa72f9345851febfc6f5575d64614c51a7da3ca4884ef",
+        "target_sha256": "7be07a075f48291bbc94ee34679688c60e37f3887528d5b65fc4bd123deb7d8e",
+        "relocated_sha256": "7be07a075f48291bbc94ee34679688c60e37f3887528d5b65fc4bd123deb7d8e",
+        "led_data_offset": 0,
+        "code_bytes": 197,
+        "segment_bytes": 197,
+        "nonrelocation_bytes_exact": 185,
+        "relocation_count": 6,
+        "relocation_field_bytes": 12,
+        "relocation_offsets": [
+          13,
+          17,
+          48,
+          54,
+          57,
+          84
+        ],
+        "mismatch_offsets": [
+          13,
+          14,
+          17,
+          18,
+          48,
+          49,
+          54,
+          55,
+          57,
+          58,
+          84,
+          85
+        ],
+        "resolved_relocations": [
+          {
+            "site": 13,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6768
+          },
+          {
+            "site": 17,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6770
+          },
+          {
+            "site": 48,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 4,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6772
+          },
+          {
+            "site": 54,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6768
+          },
+          {
+            "site": 57,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6770
+          },
+          {
+            "site": 84,
+            "led_data_offset": 0,
+            "symbol": "_pathops:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6768,
+            "observed_target_address": 6768,
+            "resolved_word": 6768
+          }
+        ],
+        "external_symbols_referenced": [],
+        "internal_segment_bases": {
+          "_pathops:2": [
+            6768
+          ]
+        },
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "fflush",
+      "segment_start_com": 4056,
+      "segment_end_com": 4201,
+      "code_start_com": 4056,
+      "code_end_com": 4201,
+      "file_start": 6588,
+      "code_size": 145,
+      "program_records_sha256": "eab24a5e5031a4b6d4462492e66a793e19f7f7483f5ae60496bae3f1303ba97f",
+      "object_sha256": "bbf32ee21ca5bfa27c71ae0ee3facf9e07a6202ef3bed22d6eed137557db6085",
+      "fixup_records_sha256": "73119dd5b5510b3477e854a42fb4cf990a1f8e8c271b2d0c1c150889d62614a3",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|145|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|145"
+      ],
+      "publics": [
+        "_fflush|1|0"
+      ],
+      "externals": [
+        "_flushall",
+        "___write"
+      ],
+      "fixups_by_segment": [
+        "1|109,15"
+      ],
+      "code": {
+        "source_sha256": "907afcbb1a115084c56fa0805de71188f9c47ca790a6f1ac4be2e3e5b3ccc4db",
+        "target_sha256": "1b6239e781d297401d4b5bf7cc505a292cc670c624f33274fd42fc4eaa02d42b",
+        "relocated_sha256": "1b6239e781d297401d4b5bf7cc505a292cc670c624f33274fd42fc4eaa02d42b",
+        "led_data_offset": 0,
+        "code_bytes": 145,
+        "segment_bytes": 145,
+        "nonrelocation_bytes_exact": 141,
+        "relocation_count": 2,
+        "relocation_field_bytes": 4,
+        "relocation_offsets": [
+          109,
+          15
+        ],
+        "mismatch_offsets": [
+          15,
+          109,
+          110
+        ],
+        "resolved_relocations": [
+          {
+            "site": 109,
+            "led_data_offset": 0,
+            "symbol": "___write",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4946,
+            "observed_target_address": 4946,
+            "resolved_word": 779
+          },
+          {
+            "site": 15,
+            "led_data_offset": 0,
+            "symbol": "_flushall",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4201,
+            "observed_target_address": 4201,
+            "resolved_word": 128
+          }
+        ],
+        "external_symbols_referenced": [
+          "___write",
+          "_flushall"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "flushall",
+      "segment_start_com": 4201,
+      "segment_end_com": 4267,
+      "code_start_com": 4201,
+      "code_end_com": 4267,
+      "file_start": 6733,
+      "code_size": 66,
+      "program_records_sha256": "e14c82b36faf5b29ad9880fce531973d540b6af50355e4470ce54b8e0e385b17",
+      "object_sha256": "b2bfc251a9e8f8263e84ee7c0df49b8e5a4c144833cbed49e07545348de0accc",
+      "fixup_records_sha256": "eff2cec3908ecd683b0b7f44e7e69779b88e02701912664a0fe5650bb8cd358a",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|66|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|66"
+      ],
+      "publics": [
+        "_flushall|1|0"
+      ],
+      "externals": [
+        "__streams",
+        "__nfile",
+        "_fflush"
+      ],
+      "fixups_by_segment": [
+        "1|37,22,14"
+      ],
+      "code": {
+        "source_sha256": "6b7b4c1a4c7a9781cb9228e95a4933d7927288ce18141d832e09cb38f0e01c53",
+        "target_sha256": "5c8befc14545ba8ab6d00471f6ce1ac213e107e7f92a39fbb556441e6f85727b",
+        "relocated_sha256": "5c8befc14545ba8ab6d00471f6ce1ac213e107e7f92a39fbb556441e6f85727b",
+        "led_data_offset": 0,
+        "code_bytes": 66,
+        "segment_bytes": 66,
+        "nonrelocation_bytes_exact": 60,
+        "relocation_count": 3,
+        "relocation_field_bytes": 6,
+        "relocation_offsets": [
+          37,
+          22,
+          14
+        ],
+        "mismatch_offsets": [
+          14,
+          15,
+          22,
+          23,
+          37,
+          38
+        ],
+        "resolved_relocations": [
+          {
+            "site": 37,
+            "led_data_offset": 0,
+            "symbol": "_fflush",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4056,
+            "observed_target_address": 4056,
+            "resolved_word": 65352
+          },
+          {
+            "site": 22,
+            "led_data_offset": 0,
+            "symbol": "__streams",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6304,
+            "observed_target_address": 6304,
+            "resolved_word": 6304
+          },
+          {
+            "site": 14,
+            "led_data_offset": 0,
+            "symbol": "__nfile",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6624,
+            "observed_target_address": 6624,
+            "resolved_word": 6624
+          }
+        ],
+        "external_symbols_referenced": [
+          "__nfile",
+          "__streams",
+          "_fflush"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "fseek",
+      "segment_start_com": 4267,
+      "segment_end_com": 4689,
+      "code_start_com": 4267,
+      "code_end_com": 4689,
+      "file_start": 6799,
+      "code_size": 422,
+      "program_records_sha256": "154092587987b76da432cb4f58f76c4336d2467b9de7854c53a675a49ad997f7",
+      "object_sha256": "26cc0f81ff907949468c689c0c48f105dd9cf88c00d5536487dba4875e3dff5f",
+      "fixup_records_sha256": "8c52fc36bac47b7cf258c82a72152cfc54f06343c131add3149a974dce158446",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 2,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|422|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|422"
+      ],
+      "publics": [
+        "_fseek|1|112",
+        "_ftell|1|217"
+      ],
+      "externals": [
+        "_fflush",
+        "_lseek",
+        "__openfd"
+      ],
+      "fixups_by_segment": [
+        "1|347,306,284,242,191,121"
+      ],
+      "code": {
+        "source_sha256": "57011dd16eabd13b7ac9c1c2a0116c54f4452efb60f2c8003c74169fe4bd2ec7",
+        "target_sha256": "4008fe9077b3177072c697abff3e1eac0e962e9a793cf69425f456acb42da313",
+        "relocated_sha256": "4008fe9077b3177072c697abff3e1eac0e962e9a793cf69425f456acb42da313",
+        "led_data_offset": 0,
+        "code_bytes": 422,
+        "segment_bytes": 422,
+        "nonrelocation_bytes_exact": 410,
+        "relocation_count": 6,
+        "relocation_field_bytes": 12,
+        "relocation_offsets": [
+          347,
+          306,
+          284,
+          242,
+          191,
+          121
+        ],
+        "mismatch_offsets": [
+          121,
+          122,
+          191,
+          192,
+          242,
+          243,
+          284,
+          285,
+          306,
+          307,
+          347,
+          348
+        ],
+        "resolved_relocations": [
+          {
+            "site": 347,
+            "led_data_offset": 0,
+            "symbol": "_lseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2873,
+            "observed_target_address": 2873,
+            "resolved_word": 63793
+          },
+          {
+            "site": 306,
+            "led_data_offset": 0,
+            "symbol": "_lseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2873,
+            "observed_target_address": 2873,
+            "resolved_word": 63834
+          },
+          {
+            "site": 284,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 1,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6627
+          },
+          {
+            "site": 242,
+            "led_data_offset": 0,
+            "symbol": "_lseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2873,
+            "observed_target_address": 2873,
+            "resolved_word": 63898
+          },
+          {
+            "site": 191,
+            "led_data_offset": 0,
+            "symbol": "_lseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2873,
+            "observed_target_address": 2873,
+            "resolved_word": 63949
+          },
+          {
+            "site": 121,
+            "led_data_offset": 0,
+            "symbol": "_fflush",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4056,
+            "observed_target_address": 4056,
+            "resolved_word": 65202
+          }
+        ],
+        "external_symbols_referenced": [
+          "__openfd",
+          "_fflush",
+          "_lseek"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "setvbuf",
+      "segment_start_com": 4689,
+      "segment_end_com": 4918,
+      "code_start_com": 4689,
+      "code_end_com": 4918,
+      "file_start": 7221,
+      "code_size": 229,
+      "program_records_sha256": "384456b6863f52ce1a6620f93b177450f6f8a941c000a6b1adbfd16b920ced44",
+      "object_sha256": "959a95b7098e48d699e6bfa7da41a22fcc54b332dbdd1a18adb7e279a0eb11be",
+      "fixup_records_sha256": "b5c693697b7e6be705aeb693cb890c50d5cb3e8cc3b1bb0af5d2773ab56aefc1",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 2,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|229|_TEXT|CODE",
+        "2|4|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|229",
+        "2|0|4"
+      ],
+      "publics": [
+        "_setvbuf|1|0"
+      ],
+      "externals": [
+        "__streams",
+        "_fseek",
+        "_free",
+        "_malloc",
+        "__exitbuf",
+        "__xfflush"
+      ],
+      "fixups_by_segment": [
+        "1|171,159,157,116,98,76,70,62,54,48,40"
+      ],
+      "code": {
+        "source_sha256": "08caa2552be250d3657614c7c78e30b87ea1471a7b5955d8ee6070f4b38ebdb0",
+        "target_sha256": "b5df4bc8bb2d049888f9c8f54534bd88dfe5bdb26d6b5d36a15be5bcdc0e8a4f",
+        "relocated_sha256": "b5df4bc8bb2d049888f9c8f54534bd88dfe5bdb26d6b5d36a15be5bcdc0e8a4f",
+        "led_data_offset": 0,
+        "code_bytes": 229,
+        "segment_bytes": 229,
+        "nonrelocation_bytes_exact": 207,
+        "relocation_count": 11,
+        "relocation_field_bytes": 22,
+        "relocation_offsets": [
+          171,
+          159,
+          157,
+          116,
+          98,
+          76,
+          70,
+          62,
+          54,
+          48,
+          40
+        ],
+        "mismatch_offsets": [
+          40,
+          41,
+          48,
+          49,
+          54,
+          55,
+          62,
+          63,
+          70,
+          71,
+          76,
+          77,
+          98,
+          99,
+          116,
+          117,
+          157,
+          158,
+          159,
+          160,
+          171,
+          172
+        ],
+        "resolved_relocations": [
+          {
+            "site": 171,
+            "led_data_offset": 0,
+            "symbol": "_malloc",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 4,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 3435,
+            "observed_target_address": 3435,
+            "resolved_word": 64109
+          },
+          {
+            "site": 159,
+            "led_data_offset": 0,
+            "symbol": "__xfflush",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 6,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5324,
+            "observed_target_address": 5324,
+            "resolved_word": 5324
+          },
+          {
+            "site": 157,
+            "led_data_offset": 0,
+            "symbol": "__exitbuf",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 5,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6298,
+            "observed_target_address": 6298,
+            "resolved_word": 6298
+          },
+          {
+            "site": 116,
+            "led_data_offset": 0,
+            "symbol": "_free",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 3228,
+            "observed_target_address": 3228,
+            "resolved_word": 63957
+          },
+          {
+            "site": 98,
+            "led_data_offset": 0,
+            "symbol": "_fseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4379,
+            "observed_target_address": 4379,
+            "resolved_word": 65126
+          },
+          {
+            "site": 76,
+            "led_data_offset": 0,
+            "symbol": "setvbuf:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6784,
+            "observed_target_address": 6784,
+            "resolved_word": 6784
+          },
+          {
+            "site": 70,
+            "led_data_offset": 0,
+            "symbol": "__streams",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6304,
+            "observed_target_address": 6304,
+            "resolved_word": 6304
+          },
+          {
+            "site": 62,
+            "led_data_offset": 0,
+            "symbol": "setvbuf:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6784,
+            "observed_target_address": 6784,
+            "resolved_word": 6784
+          },
+          {
+            "site": 54,
+            "led_data_offset": 0,
+            "symbol": "setvbuf:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6784,
+            "observed_target_address": 6784,
+            "resolved_word": 6786
+          },
+          {
+            "site": 48,
+            "led_data_offset": 0,
+            "symbol": "__streams",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 16,
+            "target_address": 6304,
+            "observed_target_address": 6304,
+            "resolved_word": 6320
+          },
+          {
+            "site": 40,
+            "led_data_offset": 0,
+            "symbol": "setvbuf:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6784,
+            "observed_target_address": 6784,
+            "resolved_word": 6786
+          }
+        ],
+        "external_symbols_referenced": [
+          "__exitbuf",
+          "__streams",
+          "__xfflush",
+          "_free",
+          "_fseek",
+          "_malloc"
+        ],
+        "internal_segment_bases": {
+          "setvbuf:2": [
+            6784
+          ]
+        },
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "strlen",
+      "segment_start_com": 4918,
+      "segment_end_com": 4946,
+      "code_start_com": 4918,
+      "code_end_com": 4946,
+      "file_start": 7450,
+      "code_size": 28,
+      "program_records_sha256": "94456e23ec4c43374cd587bde3696ccfb666c0b07f00e74590b6eb8620172d2a",
+      "object_sha256": "70f994735db16c5863b0afda1f47151941f6a7d6548cf0de945422a29e8b6ffa",
+      "fixup_records_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 5,
+        "COMENT": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|28|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|28"
+      ],
+      "publics": [
+        "_strlen|1|0"
+      ],
+      "externals": [],
+      "fixups_by_segment": [],
+      "code": {
+        "source_sha256": "fe585526968cec76f5a2194e3226c2d1be13edf147cdc8ade9dd247d1c79e5db",
+        "target_sha256": "fe585526968cec76f5a2194e3226c2d1be13edf147cdc8ade9dd247d1c79e5db",
+        "relocated_sha256": "fe585526968cec76f5a2194e3226c2d1be13edf147cdc8ade9dd247d1c79e5db",
+        "led_data_offset": 0,
+        "code_bytes": 28,
+        "segment_bytes": 28,
+        "nonrelocation_bytes_exact": 28,
+        "relocation_count": 0,
+        "relocation_field_bytes": 0,
+        "relocation_offsets": [],
+        "mismatch_offsets": [],
+        "resolved_relocations": [],
+        "external_symbols_referenced": [],
+        "internal_segment_bases": {},
+        "raw_exact": true,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "write",
+      "segment_start_com": 4946,
+      "segment_end_com": 5239,
+      "code_start_com": 4946,
+      "code_end_com": 5239,
+      "file_start": 7478,
+      "code_size": 293,
+      "program_records_sha256": "03a3ddf0ac9d87c5a4c3547cfe59389cb5bbce2b7699aac349505adf56faa18d",
+      "object_sha256": "0150a31a9944fe2dd3040e19d92b6c6a90d975a40ecb2bd01e1cb4d99fd592c2",
+      "fixup_records_sha256": "a2c1a0713bebdc5cccf1dde047919fef3a6cf64dbe94d82adfa630b0aae4c85c",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|293|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|293"
+      ],
+      "publics": [
+        "___write|1|0"
+      ],
+      "externals": [
+        "__nfile",
+        "_lseek",
+        "__rtl_write",
+        "__IOERROR",
+        "__openfd"
+      ],
+      "fixups_by_segment": [
+        "1|252,185,108,93,78,66,49,23,14"
+      ],
+      "code": {
+        "source_sha256": "42e7553bfbf6d83e61853e7a99e2f8d131cfb7fa345935d925fe4250439fee91",
+        "target_sha256": "cc740a0c7281ab6ad310698d05356e1c87ae619d102c050717abf56e658bca52",
+        "relocated_sha256": "cc740a0c7281ab6ad310698d05356e1c87ae619d102c050717abf56e658bca52",
+        "led_data_offset": 0,
+        "code_bytes": 293,
+        "segment_bytes": 293,
+        "nonrelocation_bytes_exact": 275,
+        "relocation_count": 9,
+        "relocation_field_bytes": 18,
+        "relocation_offsets": [
+          252,
+          185,
+          108,
+          93,
+          78,
+          66,
+          49,
+          23,
+          14
+        ],
+        "mismatch_offsets": [
+          14,
+          15,
+          23,
+          24,
+          49,
+          50,
+          66,
+          67,
+          78,
+          79,
+          93,
+          108,
+          109,
+          185,
+          252
+        ],
+        "resolved_relocations": [
+          {
+            "site": 252,
+            "led_data_offset": 0,
+            "symbol": "__rtl_write",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5239,
+            "observed_target_address": 5239,
+            "resolved_word": 39
+          },
+          {
+            "site": 185,
+            "led_data_offset": 0,
+            "symbol": "__rtl_write",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5239,
+            "observed_target_address": 5239,
+            "resolved_word": 106
+          },
+          {
+            "site": 108,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 5,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6626
+          },
+          {
+            "site": 93,
+            "led_data_offset": 0,
+            "symbol": "__rtl_write",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5239,
+            "observed_target_address": 5239,
+            "resolved_word": 198
+          },
+          {
+            "site": 78,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 5,
+            "displacement": 0,
+            "source_addend": 1,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6627
+          },
+          {
+            "site": 66,
+            "led_data_offset": 0,
+            "symbol": "_lseek",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2873,
+            "observed_target_address": 2873,
+            "resolved_word": 63395
+          },
+          {
+            "site": 49,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 5,
+            "displacement": 0,
+            "source_addend": 1,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6627
+          },
+          {
+            "site": 23,
+            "led_data_offset": 0,
+            "symbol": "__IOERROR",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 4,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2770,
+            "observed_target_address": 2770,
+            "resolved_word": 63335
+          },
+          {
+            "site": 14,
+            "led_data_offset": 0,
+            "symbol": "__nfile",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6624,
+            "observed_target_address": 6624,
+            "resolved_word": 6624
+          }
+        ],
+        "external_symbols_referenced": [
+          "__IOERROR",
+          "__nfile",
+          "__openfd",
+          "__rtl_write",
+          "_lseek"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "writea",
+      "segment_start_com": 5239,
+      "segment_end_com": 5324,
+      "code_start_com": 5239,
+      "code_end_com": 5324,
+      "file_start": 7771,
+      "code_size": 85,
+      "program_records_sha256": "3b53cd97fc6aef647e136249a7cd8e9463d9cb17e319c99e20385f637e4b9aca",
+      "object_sha256": "83ad1d2aa3e67fcc6aba9a6ebb72508b29e743eac64026718c8b7927fd099999",
+      "fixup_records_sha256": "91a962e6e820df00ac29565f50a86d87fbf58585600b082548b21ac3e79e840a",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 5,
+        "COMENT": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 2,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|85|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|3,2"
+      ],
+      "ledatas": [
+        "1|0|85"
+      ],
+      "publics": [
+        "__rtl_write|1|0",
+        "__write|1|61"
+      ],
+      "externals": [
+        "__IOERROR",
+        "__openfd"
+      ],
+      "fixups_by_segment": [
+        "1|12,46,55"
+      ],
+      "code": {
+        "source_sha256": "be97e81f43c1a693537671d4f98991134ae986560b1def23b68c04704caf38ac",
+        "target_sha256": "9fba8579ade0e0da494340567d93fa61de4033faed1283c6bb797b906754e5d1",
+        "relocated_sha256": "9fba8579ade0e0da494340567d93fa61de4033faed1283c6bb797b906754e5d1",
+        "led_data_offset": 0,
+        "code_bytes": 85,
+        "segment_bytes": 85,
+        "nonrelocation_bytes_exact": 79,
+        "relocation_count": 3,
+        "relocation_field_bytes": 6,
+        "relocation_offsets": [
+          12,
+          46,
+          55
+        ],
+        "mismatch_offsets": [
+          12,
+          13,
+          46,
+          47,
+          55,
+          56
+        ],
+        "resolved_relocations": [
+          {
+            "site": 12,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6626
+          },
+          {
+            "site": 46,
+            "led_data_offset": 0,
+            "symbol": "__openfd",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6626,
+            "observed_target_address": 6626,
+            "resolved_word": 6626
+          },
+          {
+            "site": 55,
+            "led_data_offset": 0,
+            "symbol": "__IOERROR",
+            "relative": true,
+            "frame_method": 0,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2770,
+            "observed_target_address": 2770,
+            "resolved_word": 63010
+          }
+        ],
+        "external_symbols_referenced": [
+          "__IOERROR",
+          "__openfd"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "xfflush",
+      "segment_start_com": 5324,
+      "segment_end_com": 5377,
+      "code_start_com": 5324,
+      "code_end_com": 5377,
+      "file_start": 7856,
+      "code_size": 53,
+      "program_records_sha256": "e51282bf5ea00d62c6d530d634b887a94f3832ca6da36f08be27307568c9b12d",
+      "object_sha256": "738846069b4da342195534f8b826277ca3fb2cad5d9b104ad397114b9cab6d0a",
+      "fixup_records_sha256": "80866883bbc4422d1f70f6378ce56dd1ad423808ebbf3e8e8330400e97242f45",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 1,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 1,
+        "LEDATA": 1,
+        "FIXUPP": 1,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|53|_TEXT|CODE",
+        "2|0|_DATA|DATA",
+        "3|0|_BSS|BSS"
+      ],
+      "groups": [
+        "1|DGROUP|2,3"
+      ],
+      "ledatas": [
+        "1|0|53"
+      ],
+      "publics": [
+        "__xfflush|1|0"
+      ],
+      "externals": [
+        "__streams",
+        "_fflush"
+      ],
+      "fixups_by_segment": [
+        "1|31,16"
+      ],
+      "code": {
+        "source_sha256": "f3d7dcf719bc4fb003e25a8a69df8b1dadf5730dd65ff2cba36dc743037d8591",
+        "target_sha256": "c1b789bf7dc8e7b067fd198a61464b5fb34257696fc1d03469b6ece7638d72f8",
+        "relocated_sha256": "c1b789bf7dc8e7b067fd198a61464b5fb34257696fc1d03469b6ece7638d72f8",
+        "led_data_offset": 0,
+        "code_bytes": 53,
+        "segment_bytes": 53,
+        "nonrelocation_bytes_exact": 49,
+        "relocation_count": 2,
+        "relocation_field_bytes": 4,
+        "relocation_offsets": [
+          31,
+          16
+        ],
+        "mismatch_offsets": [
+          16,
+          17,
+          31,
+          32
+        ],
+        "resolved_relocations": [
+          {
+            "site": 31,
+            "led_data_offset": 0,
+            "symbol": "_fflush",
+            "relative": true,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 4056,
+            "observed_target_address": 4056,
+            "resolved_word": 64235
+          },
+          {
+            "site": 16,
+            "led_data_offset": 0,
+            "symbol": "__streams",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6304,
+            "observed_target_address": 6304,
+            "resolved_word": 6304
+          }
+        ],
+        "external_symbols_referenced": [
+          "__streams",
+          "_fflush"
+        ],
+        "internal_segment_bases": {},
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    },
+    {
+      "name": "setargv",
+      "segment_start_com": 5377,
+      "segment_end_com": 5698,
+      "code_start_com": 5379,
+      "code_end_com": 5698,
+      "file_start": 7911,
+      "code_size": 319,
+      "program_records_sha256": "eb8ad3d8360a4faad5da42edf669d2c6446697124a1a21f9dc82f58f7b62d80a",
+      "object_sha256": "4bb96811c0188e7257154ac5a15d786b82c69f4bd6034b36bc3b8271f85dc86a",
+      "fixup_records_sha256": "0457e578276f312c4f36ad65f6bfe17737bf2f8013175a25c3cab04bc8060aa9",
+      "record_counts": {
+        "THEADR": 1,
+        "LNAMES": 5,
+        "COMENT": 2,
+        "SEGDEF": 3,
+        "GRPDEF": 1,
+        "EXTDEF": 1,
+        "PUBDEF": 3,
+        "LEDATA": 3,
+        "FIXUPP": 2,
+        "MODEND": 1
+      },
+      "segments": [
+        "1|321|_TEXT|CODE",
+        "2|14|_DATA|DATA",
+        "3|6|_INIT_|INITDATA"
+      ],
+      "groups": [
+        "1|DGROUP|2"
+      ],
+      "ledatas": [
+        "1|2|319",
+        "2|0|4",
+        "3|0|4"
+      ],
+      "publics": [
+        "__setargv__|0|0",
+        "__argv|2|2",
+        "__argc|2|0"
+      ],
+      "externals": [
+        "__C0argc",
+        "__C0argv",
+        "__psp",
+        "__envseg",
+        "__envLng",
+        "__osmajor",
+        "__abort",
+        "___path_isdbcsleadbyte"
+      ],
+      "fixups_by_segment": [
+        "1|4,8,12,17,21,25,30,47,56,63,150,188,192,240,244,261,287,291,295,299,303,306,309,312,315,319",
+        "3|2"
+      ],
+      "code": {
+        "source_sha256": "c25109308141c8b46f84d0a53002dc605fc0b0b24986eed2c99dea252a09c89b",
+        "target_sha256": "f3e84537cc7ca8269afaf1d02c059d859a285e1d6c543644d459134893681767",
+        "relocated_sha256": "f3e84537cc7ca8269afaf1d02c059d859a285e1d6c543644d459134893681767",
+        "led_data_offset": 2,
+        "code_bytes": 319,
+        "segment_bytes": 321,
+        "nonrelocation_bytes_exact": 267,
+        "relocation_count": 26,
+        "relocation_field_bytes": 52,
+        "relocation_offsets": [
+          4,
+          8,
+          12,
+          17,
+          21,
+          25,
+          30,
+          47,
+          56,
+          63,
+          150,
+          188,
+          192,
+          240,
+          244,
+          261,
+          287,
+          291,
+          295,
+          299,
+          303,
+          306,
+          309,
+          312,
+          315,
+          319
+        ],
+        "mismatch_offsets": [
+          2,
+          3,
+          6,
+          7,
+          10,
+          11,
+          15,
+          16,
+          19,
+          20,
+          23,
+          24,
+          28,
+          29,
+          45,
+          46,
+          54,
+          55,
+          61,
+          62,
+          148,
+          149,
+          186,
+          187,
+          190,
+          191,
+          238,
+          239,
+          242,
+          243,
+          259,
+          260,
+          285,
+          286,
+          289,
+          290,
+          293,
+          294,
+          297,
+          298,
+          301,
+          302,
+          304,
+          305,
+          307,
+          308,
+          310,
+          311,
+          313,
+          314,
+          317,
+          318
+        ],
+        "resolved_relocations": [
+          {
+            "site": 4,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 4,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6794
+          },
+          {
+            "site": 8,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 6,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6796
+          },
+          {
+            "site": 12,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 8,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6798
+          },
+          {
+            "site": 17,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5377,
+            "observed_target_address": 5377,
+            "resolved_word": 5377
+          },
+          {
+            "site": 21,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 10,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6800
+          },
+          {
+            "site": 25,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 12,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6802
+          },
+          {
+            "site": 30,
+            "led_data_offset": 2,
+            "symbol": "__psp",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 3,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5798,
+            "observed_target_address": 5798,
+            "resolved_word": 5798
+          },
+          {
+            "site": 47,
+            "led_data_offset": 2,
+            "symbol": "__envLng",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 5,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5792,
+            "observed_target_address": 5792,
+            "resolved_word": 5792
+          },
+          {
+            "site": 56,
+            "led_data_offset": 2,
+            "symbol": "__osmajor",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 6,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5800,
+            "observed_target_address": 5800,
+            "resolved_word": 5800
+          },
+          {
+            "site": 63,
+            "led_data_offset": 2,
+            "symbol": "__envseg",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 4,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5794,
+            "observed_target_address": 5794,
+            "resolved_word": 5794
+          },
+          {
+            "site": 150,
+            "led_data_offset": 2,
+            "symbol": "__abort",
+            "relative": true,
+            "frame_method": 0,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 7,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 2518,
+            "observed_target_address": 2518,
+            "resolved_word": 62525
+          },
+          {
+            "site": 188,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5377,
+            "observed_target_address": 5377,
+            "resolved_word": 5377
+          },
+          {
+            "site": 192,
+            "led_data_offset": 2,
+            "symbol": "___path_isdbcsleadbyte",
+            "relative": true,
+            "frame_method": 0,
+            "frame_index": 1,
+            "target_method": 2,
+            "target_index": 8,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 3931,
+            "observed_target_address": 3931,
+            "resolved_word": 63896
+          },
+          {
+            "site": 240,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5377,
+            "observed_target_address": 5377,
+            "resolved_word": 5377
+          },
+          {
+            "site": 244,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6790
+          },
+          {
+            "site": 261,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6792
+          },
+          {
+            "site": 287,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG1",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 0,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5377,
+            "observed_target_address": 5377,
+            "resolved_word": 5377
+          },
+          {
+            "site": 291,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 10,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6800
+          },
+          {
+            "site": 295,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 12,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6802
+          },
+          {
+            "site": 299,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 8,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6798
+          },
+          {
+            "site": 303,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 6,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6796
+          },
+          {
+            "site": 306,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6790
+          },
+          {
+            "site": 309,
+            "led_data_offset": 2,
+            "symbol": "__C0argc",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 1,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5786,
+            "observed_target_address": 5786,
+            "resolved_word": 5786
+          },
+          {
+            "site": 312,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 2,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6792
+          },
+          {
+            "site": 315,
+            "led_data_offset": 2,
+            "symbol": "__C0argv",
+            "relative": false,
+            "frame_method": 5,
+            "frame_index": null,
+            "target_method": 2,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 0,
+            "target_address": 5788,
+            "observed_target_address": 5788,
+            "resolved_word": 5788
+          },
+          {
+            "site": 319,
+            "led_data_offset": 2,
+            "symbol": "setargv:SEG2",
+            "relative": false,
+            "frame_method": 1,
+            "frame_index": 1,
+            "target_method": 0,
+            "target_index": 2,
+            "displacement": 0,
+            "source_addend": 4,
+            "target_address": 6790,
+            "observed_target_address": 6790,
+            "resolved_word": 6794
+          }
+        ],
+        "external_symbols_referenced": [
+          "__C0argc",
+          "__C0argv",
+          "___path_isdbcsleadbyte",
+          "__abort",
+          "__envLng",
+          "__envseg",
+          "__osmajor",
+          "__psp"
+        ],
+        "internal_segment_bases": {
+          "setargv:2": [
+            6790
+          ],
+          "setargv:1": [
+            5377
+          ]
+        },
+        "raw_exact": false,
+        "exact_after_omf_relocation": true
+      }
+    }
+  ],
+  "external_symbol_definitions": {
+    "_flushall": {
+      "member": "flushall",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 4201,
+      "address": 4201,
+      "segment_length": 66,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "___write": {
+      "member": "write",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 4946,
+      "address": 4946,
+      "segment_length": 293,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__streams": {
+      "member": "files",
+      "segment": 2,
+      "offset": 0,
+      "segment_base": 6304,
+      "address": 6304,
+      "segment_length": 320,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__nfile": {
+      "member": "files2",
+      "segment": 2,
+      "offset": 0,
+      "segment_base": 6624,
+      "address": 6624,
+      "segment_length": 42,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "_fflush": {
+      "member": "fflush",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 4056,
+      "address": 4056,
+      "segment_length": 145,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "_lseek": {
+      "member": "lseek",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 2873,
+      "address": 2873,
+      "segment_length": 45,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__openfd": {
+      "member": "files2",
+      "segment": 2,
+      "offset": 2,
+      "segment_base": 6624,
+      "address": 6626,
+      "segment_length": 42,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "_fseek": {
+      "member": "fseek",
+      "segment": 1,
+      "offset": 112,
+      "segment_base": 4267,
+      "address": 4379,
+      "segment_length": 422,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "_free": {
+      "member": "nearheap",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 3228,
+      "address": 3228,
+      "segment_length": 631,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "_malloc": {
+      "member": "nearheap",
+      "segment": 1,
+      "offset": 207,
+      "segment_base": 3228,
+      "address": 3435,
+      "segment_length": 631,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__exitbuf": {
+      "member": "exit",
+      "segment": 2,
+      "offset": 0,
+      "segment_base": 6298,
+      "address": 6298,
+      "segment_length": 6,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__xfflush": {
+      "member": "xfflush",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 5324,
+      "address": 5324,
+      "segment_length": 53,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__rtl_write": {
+      "member": "writea",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 5239,
+      "address": 5239,
+      "segment_length": 85,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__IOERROR": {
+      "member": "ioerror",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 2770,
+      "address": 2770,
+      "segment_length": 82,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "__C0argc": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 74,
+      "segment_base": 5712,
+      "address": 5786,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__C0argv": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 76,
+      "segment_base": 5712,
+      "address": 5788,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__psp": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 86,
+      "segment_base": 5712,
+      "address": 5798,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__envseg": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 82,
+      "segment_base": 5712,
+      "address": 5794,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__envLng": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 80,
+      "segment_base": 5712,
+      "address": 5792,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__osmajor": {
+      "member": "C0T.OBJ",
+      "segment": 4,
+      "offset": 88,
+      "segment_base": 5712,
+      "address": 5800,
+      "segment_length": 110,
+      "segment_name": "_DATA",
+      "segment_class": "DATA"
+    },
+    "__abort": {
+      "member": "_abort",
+      "segment": 1,
+      "offset": 0,
+      "segment_base": 2518,
+      "address": 2518,
+      "segment_length": 21,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    },
+    "___path_isdbcsleadbyte": {
+      "member": "_pathops",
+      "segment": 1,
+      "offset": 72,
+      "segment_base": 3859,
+      "address": 3931,
+      "segment_length": 197,
+      "segment_name": "_TEXT",
+      "segment_class": "CODE"
+    }
+  },
+  "internal_segment_bases": {
+    "_pathops:2": 6768,
+    "setvbuf:2": 6784,
+    "setargv:1": 5377,
+    "setargv:2": 6790
+  },
+  "negative_control": {
+    "nonrelocation_instruction_flip_rejected": true,
+    "resolved_relocation_flip_rejected": true
+  },
+  "authored_credit": 0,
+  "instruction_bytes": 1837
+}

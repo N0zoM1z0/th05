@@ -41,26 +41,28 @@ The target is **98% authored bytes exact**, but the global authored-byte
 
 ### 1. ZUN `-S` resident tail — physical ownership, not assumed code
 
-The corrected 18,116-byte launcher ownership map has **2,527 unknown bytes**
-remaining in four intervals. The former `0x13BA..0x1601` interval (583 bytes)
-is now fully identified as nine original Borland CT.LIB CODE segments with
-semantic OMF relocation/public-symbol checks; see
-[`ZUN early CT.LIB review`](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md).
+The corrected 18,116-byte launcher ownership map has **690 unknown bytes**
+remaining in five intervals. The early `0x13BA..0x1601` interval (583 bytes)
+and 1,837 bytes of stdio/path CODE in the former `0x18F7..0x2034` interval
+are now verified as original Borland CT.LIB segments with semantic OMF
+relocation/public-symbol checks. See the [early CT.LIB review](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md),
+[stdio/path CT.LIB review](reconstruction/ZUN_STDIO_CTLIB_2026-11-13.md),
+and the current ZUN ownership map.
 
 | Outer `ZUN.COM` interval | Bytes | `-S` COM interval / note |
 | --- | ---: | --- |
 | `0x0D47..0x0D49` | 2 | Writable CRT CS runtime slot; intentionally uninitialized |
-| `0x18F7..0x2034` | 1,853 | `0x0F13..0x1650` |
-| `0x21E2..0x244E` | 620 | `0x17FE..0x1A6A` |
-| `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` |
+| `0x1EE5..0x1EE7` | 2 | `setargv` CODE SEGDEF prefix without LEDATA |
+| `0x2026..0x2034` | 14 | Gap after `setargv` CODE LEDATA, before C0T DATA |
+| `0x21E2..0x244E` | 620 | `0x17FE..0x1A6A` resident DATA candidates |
+| `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` DATA/INITDATA candidates |
 
-A local CT.LIB sequence scan at `.analysis/gpt-web-zun-clib-scan.py` found
-heuristic leads in the first two resident intervals (`exit`, `setupio`,
-`ioerror`, `lseek`, `atexit`, then `fseek`, `write`, `setargv`, `setvbuf`,
-`_pathops`, `fflush`, `writea`, `flushall`, `xfflush`). These are search leads,
-not identifications. Recover complete original OMF members, public boundaries,
-segment/group context and ordered FIXUPP semantics before assigning CODE,
-DATA, INIT or BSS. Do not assume every unknown byte is executable.
+The original `CT.LIB` code is now verified for nine early runtime members and
+ten stdio/path members, including their public boundaries and ordered FIXUPP
+semantics. The remaining file-backed unknowns are now primarily resident DATA,
+INITDATA and small segment holes. Do not assume every unknown byte is
+executable; recover exact segment/member context and initialized-versus-BSS
+semantics before assigning ownership.
 
 Start with [the current ZUN ownership map](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
 The accepted `-S` `brk`/`sbrk` and `nearheap` members are vendor code/data, not

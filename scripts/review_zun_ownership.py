@@ -252,11 +252,19 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
         root, view, verify_targets=verify_targets
     )
     claims.extend(early_claims)
+    # The resident stdio/path family closes the next 1,837 source-written
+    # bytes across ten complete CT.LIB members; setargv's two-byte leading
+    # hole and its trailing 14-byte gap deliberately remain unclaimed.
+    import review_zun_stdio_ctlib as stdio_ctlib
+    stdio_claims, stdio_sha = stdio_ctlib.reviewed_claims(
+        root, view, verify_targets=verify_targets
+    )
+    claims.extend(stdio_claims)
 
     # The newly overlaid total includes the accepted COM/MASTER scopes, the
-    # Borland brk + nearheap modules, and the nine early CT.LIB code segments.
-    # The 2-byte writable CRT CS slot and other unreviewed -S bytes stay unknown.
-    expected = 5763
+    # Borland brk + nearheap modules, and both resident CT.LIB CODE partitions.
+    # Writable CRT state, segment holes and all unreviewed -S bytes stay unknown.
+    expected = 7600
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -285,5 +293,9 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     evidence["early_ctlib"] = {
         "manifest": digest_file(root / "config/zun_early_ctlib.toml"),
         "acceptance": early_sha,
+    }
+    evidence["stdio_ctlib"] = {
+        "manifest": digest_file(root / "config/zun_stdio_ctlib.toml"),
+        "acceptance": stdio_sha,
     }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())
