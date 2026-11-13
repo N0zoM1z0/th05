@@ -23,6 +23,18 @@ enum louise_charge_state_t {
 };
 typedef char louise_charge_state_is_byte[(sizeof(louise_charge_state_t) == 1) ? 1 : -1];
 
+// The first and second attack waves reuse the same Boss mode byte. The
+// names differ by wave, but reposition/attack transitions keep these exact
+// numeric states and both charged patterns return to reposition (zero).
+static const unsigned char LOUISE_MODE_REPOSITION = 0;
+static const unsigned char LOUISE_MODE_BLUE_SPREADS = 1;
+static const unsigned char LOUISE_MODE_RED_STACKS = 2;
+static const unsigned char LOUISE_MODE_SWEEPING_LASERS = 1;
+static const unsigned char LOUISE_MODE_TURNING_RINGS = 2;
+typedef char louise_reposition_mode_is_zero[(LOUISE_MODE_REPOSITION == 0) ? 1 : -1];
+typedef char louise_blue_and_laser_modes_share_value[(LOUISE_MODE_BLUE_SPREADS == LOUISE_MODE_SWEEPING_LASERS) ? 1 : -1];
+typedef char louise_red_and_ring_modes_share_value[(LOUISE_MODE_RED_STACKS == LOUISE_MODE_TURNING_RINGS) ? 1 : -1];
+
 extern nearfunc_t_near bullet_template_tune;
 static const unsigned char LOUISE_SPAWN_CLOUD_FORWARDS = 0x02;
 static const unsigned char LOUISE_SPAWN_NO_DECELERATE = 0x10;

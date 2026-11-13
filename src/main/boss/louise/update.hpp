@@ -21,11 +21,6 @@ static const unsigned char LOUISE_PHASE_MIRRORED_FANS = 4;
 static const unsigned char LOUISE_PHASE_LASERS_AND_RINGS = 5;
 static const unsigned char LOUISE_PHASE_FIRE_TRANSITION_SECOND = 6;
 static const unsigned char LOUISE_PHASE_AIMED_PELLETS = 7;
-static const unsigned char LOUISE_MODE_REPOSITION = 0;
-static const unsigned char LOUISE_MODE_BLUE_SPREADS = 1;
-static const unsigned char LOUISE_MODE_RED_STACKS = 2;
-static const unsigned char LOUISE_MODE_SWEEPING_LASERS = 1;
-static const unsigned char LOUISE_MODE_TURNING_RINGS = 2;
 // Original movement helper: signed speed/frame words, Pascal RET4, truth in AL.
 bool pascal near louise_flystep(subpixel_t speed, int end_frame);
 bool near boss_hittest_shots(void);

@@ -25,7 +25,7 @@
 // Both charged weapon phases terminate through the same native three-write
 // Boss state transition, after their own distinct projectile work.
 #define LOUISE_CHARGED_RETURN_TO_STILL() { \
-    boss.mode = 0; \
+    boss.mode = LOUISE_MODE_REPOSITION; \
     boss.phase_frame = 0; \
     boss.sprite = LOUISE_SPRITE_STILL; \
 }
@@ -63,13 +63,13 @@ void near louise_pattern_sweeping_lasers(void)
         laser_template.coords.angle = static_cast<unsigned char>(LC_SWEEP_INITIAL_ANGLE);
         laser_template.active_at_age.moveout = LC_SWEEP_MOVEOUT;
         laser_template.shootout_speed.v = to_sp(LC_SWEEP_SPEED);
-        louise_scratch.spread_or_laser_direction = randring2_next16_and(LC_SWEEP_SIDE_MASK);
+        louise_scratch.blue_red_or_laser_direction = randring2_next16_and(LC_SWEEP_SIDE_MASK);
         // Initialization also launches at its real even four-frame boundary.
     case LOUISE_CHARGE_FIRE:
         if((laser_template.coords.angle >= LC_SWEEP_ANGLE_UPPER) ||
            (laser_template.coords.angle <= LC_SWEEP_ANGLE_LOWER)) {
             if((boss.phase_frame % LC_SWEEP_FIRE_INTERVAL) == 0) {
-                if(louise_scratch.spread_or_laser_direction) {
+                if(louise_scratch.blue_red_or_laser_direction) {
                     lasers_shootout_add();
                 } else {
                     laser_template.coords.angle = LC_SWEEP_MIRROR - laser_template.coords.angle;

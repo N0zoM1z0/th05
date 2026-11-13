@@ -61,7 +61,7 @@ void pascal far louise_update(void)
             boss.mode = LOUISE_MODE_BLUE_SPREADS;
             boss.phase_state.patterns_seen = 0;
             louise_scratch.charge_speed = LOUISE_INITIAL_CHARGE_SPEED;
-            louise_scratch.spread_or_laser_direction = LOUISE_FIRST_PATTERN_BLUE;
+            louise_scratch.blue_red_or_laser_direction = LOUISE_FIRST_PATTERN_BLUE;
         }
         break;
 
@@ -106,7 +106,7 @@ void pascal far louise_update(void)
         LOUISE_HIT_BONUS_OR_BREAK();
     fan_phase_done:
         boss_phase_next(ET_SW_NE, LOUISE_HP_AFTER_MIRRORED_FANS);
-        louise_scratch.next_second_phase_pattern = LOUISE_LATER_PATTERN_SWEEP;
+        louise_scratch.next_laser_ring_mode = LOUISE_LATER_PATTERN_SWEEP;
         louise_scratch.charge_speed = LOUISE_LATER_CHARGE_SPEED;
         break;
 
@@ -114,8 +114,8 @@ void pascal far louise_update(void)
         switch(boss.mode) {
         case LOUISE_MODE_REPOSITION:
             if(louise_flystep(to_sp(3.0f), LOUISE_LASER_RING_REPOSITION_FRAMES)) {
-                boss.mode = louise_scratch.next_second_phase_pattern + LOUISE_MODE_SWEEPING_LASERS;
-                louise_scratch.next_second_phase_pattern = LOUISE_SECOND_PATTERN_TOGGLE - louise_scratch.next_second_phase_pattern;
+                boss.mode = louise_scratch.next_laser_ring_mode + LOUISE_MODE_SWEEPING_LASERS;
+                louise_scratch.next_laser_ring_mode = LOUISE_SECOND_PATTERN_TOGGLE - louise_scratch.next_laser_ring_mode;
                 boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= LOUISE_LASER_RING_PATTERN_LIMIT) {

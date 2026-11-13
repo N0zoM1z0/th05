@@ -36,8 +36,8 @@ void near louise_pattern_blue_spreads(void)
         bullet_template.speed.v = louise_scratch.charge_speed;
         louise_set_spread(LC_BLUE_VOLLEY_COUNT, LC_BLUE_VOLLEY_STEP);
         bullet_template.special_motion = BSM_EXACT_LINEAR;
-        louise_scratch.spread_or_laser_direction = LC_SWEEP_SIDE_MASK - louise_scratch.spread_or_laser_direction;
-        if(louise_scratch.spread_or_laser_direction) {
+        louise_scratch.blue_red_or_laser_direction = LC_SWEEP_SIDE_MASK - louise_scratch.blue_red_or_laser_direction;
+        if(louise_scratch.blue_red_or_laser_direction) {
             bullet_template.angle = LC_BLUE_ANGLE_LEFT;
         } else {
             bullet_template.angle = LC_BLUE_ANGLE_RIGHT;
@@ -53,7 +53,7 @@ void near louise_pattern_blue_spreads(void)
             bullets_add_regular();
             bullet_template.angle += LC_BLUE_OTHER_SIDE_ANGLE;
             bullets_add_regular();
-            if(louise_scratch.spread_or_laser_direction) {
+            if(louise_scratch.blue_red_or_laser_direction) {
                 bullet_template.angle += LC_BLUE_LEFT_SPIN_STEP;
             } else {
                 bullet_template.angle += LC_BLUE_RIGHT_SPIN_STEP;
@@ -62,7 +62,7 @@ void near louise_pattern_blue_spreads(void)
         }
         break;
     case LOUISE_CHARGE_FINISH:
-        boss.mode = 0;
+        boss.mode = LOUISE_MODE_REPOSITION;
         boss.phase_frame = 0;
         boss.sprite = LOUISE_SPRITE_STILL;
         break;
@@ -85,7 +85,7 @@ void near louise_pattern_red_stacks(void)
     case LOUISE_CHARGE_FIRE:
         if((boss.phase_frame % LC_RED_FIRE_INTERVAL) == 0) {
             bullets_add_regular();
-            if(louise_scratch.spread_or_laser_direction) {
+            if(louise_scratch.blue_red_or_laser_direction) {
                 bullet_template.angle -= LC_RED_TURN_ANGLE;
             } else {
                 bullet_template.angle += LC_RED_TURN_ANGLE;
@@ -94,7 +94,7 @@ void near louise_pattern_red_stacks(void)
         }
         break;
     case LOUISE_CHARGE_FINISH:
-        boss.mode = 0;
+        boss.mode = LOUISE_MODE_REPOSITION;
         boss.phase_frame = 0;
         boss.sprite = LOUISE_SPRITE_STILL;
         break;
