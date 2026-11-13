@@ -462,3 +462,32 @@ a stale attack counter from accidentally awarding a timed-out defeat bonus.
 `tests/test_shinki_final_phase.py` now checks the actual accepted
 `update_context.cpp` owner as well as the full natural `shinki.cpp` counterpart,
 and pins the generic phase-reset implementation and the byte-21 union layout.
+
+
+## 2026-11-14: Devil-to-final B6-ball speed is a conditional carry
+
+The final two-ball spiral does not initialize `b6ball_template.speed`; the
+accepted `b6balls_add()` consumer applies `playperf_speedtune()` to the value
+already in the template and derives each new ball's velocity from it. The
+last two phase writers are distinct: the phase-9 aimed-ball pattern writes
+**4.0 px/frame**, while `pattern_devil()` writes **3.75 px/frame** only after
+its 192-frame startup, once its four-column prelude reaches outer angle `0x40`
+and the rank-selected B6 interval elapses.
+
+The first Devil B6-ball writes are rank-specific: easy/hard at phase-10 frame
+**256** (intervals 64/32), normal/lunatic at frame **280** (intervals 40/28).
+The controller runs `wing_pattern()` and then performs its HP hit test on every
+pre-timeout frame; there is no minimum-frame gate before the HP transition.
+Therefore the exact source-level rule is conditional: if Devil reaches its
+first aimed-ball spawn, final spiral inherits 3.75; if HP ends Devil earlier,
+the final spiral keeps the prior template speed instead. The normal full phase-9
+pattern has already set the prior 4.0 value at frame 192/160/140/144 for
+easy/normal/hard/lunatic respectively. The final phase's first paired B6 spawn
+is at frame 128, but its leaf intentionally leaves speed untouched.
+
+This refines the old `pattern_devil()` assumption without changing gameplay or
+adding a reset. `tests/test_shinki_b6ball_speed_handoff.py` checks both ranked
+first-write schedules, the exact `bullet_intro_done` gate, the lack of a Devil
+minimum-duration condition, the final leaf's no-write behavior, and the
+`b6balls_add()` speed consumer. The two maintained updater source owners retain
+the original carry semantics.

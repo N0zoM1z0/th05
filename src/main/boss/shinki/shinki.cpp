@@ -423,9 +423,10 @@ void near pattern_circles_and_alternating_spirals(void)
 		pellet_angle = SHINKI_SPIRAL_INITIAL_ANGLE;
 	}
 	if((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) {
-		// Still assumed to be set to this value from pattern_devil().
-		// MODDERS: Uncomment.
-		// b6ball_template.speed.v = sara_to_sp8(3.75f);
+		// Carry the last B6 template speed into this final attack. A full
+		// Devil cycle writes 3.75 at frame 256 (easy/hard) or 280
+		// (normal/lunatic); an earlier HP exit leaves the previous wave's
+		// speed untouched. Do not turn this into a phase-local reset.
 		b6ball_template.patnum_tiny = PAT_B6BALL_BLUE_1;
 		vector2_at(
 			b6ball_template.origin,
