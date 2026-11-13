@@ -10,6 +10,15 @@ the original 32×32 ball's 16-pixel half-width. It then maintains the
 original position, active hitbox and player-hit checks, using the same
 near-Pascal collision path and true cloud/active/decay/free flag values.
 
+The shared `b6ball_t` and `b6ball_template_t` overlays also now spell out
+the original signed storage widths: the unused entity bytes are signed
+8-bit fields, and the template's reserved words are signed 16-bit slots.
+The original `b6ball_t::age` comment is restored as well: the word is unused
+and broken because the original update never resets it. These declarations
+match ReC98 `th05/main/bullet/b6ball.hpp` and were checked by replaying all
+17 accepted functions that include `shinki.hpp`; the two build paths used by
+the wing owner both remained exact.
+
 The original accepted source still applies bullet clearing before the
 movement/collision test, halves both signed velocity components upon
 entering decay, and advances the decay cel every **four frames** through

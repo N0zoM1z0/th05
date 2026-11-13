@@ -54,21 +54,21 @@ enum b6ball_flag_t {
 };
 struct b6ball_t {
     b6ball_flag_t flag;
-    char unused_1;
+    signed char unused_1;
     PlayfieldMotion pos;
-    unsigned int age;
+    unsigned int age; // Original comment: unused and broken; never reset.
     Subpixel cloud_radius;
     int patnum_tiny;
     int decay_frame;
-    char unused_2[4];
+    signed char unused_2[4];
 };
 struct b6ball_template_t {
-    char _unused_1;
+    signed char _unused_1;
     unsigned char angle;
     PlayfieldPoint origin;
-    int _unused_2[6];
+    signed int _unused_2[6];
     int patnum_tiny;
-    int _unused_3[2];
+    signed int _unused_3[2];
     SubpixelLength8 speed;
 };
 #define b6ball_template (reinterpret_cast<b6ball_template_t &>(custom_entities[0]))
