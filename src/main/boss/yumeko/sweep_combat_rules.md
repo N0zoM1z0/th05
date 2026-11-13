@@ -2,9 +2,9 @@
 
 The original **321-byte** near-C++ `yumeko_pattern_sword_sweep()` is one
 complete physical sword and accelerating-volley attack, not part of the separately
-owned 283-byte sword updater. That updater's maintained C++/inline-ASM hybrid
-now matches exactly in the original-order context; its bytes remain credited
-only to the reviewed-ASM owner. The sweep's actual live
+owned 283-byte sword updater. That updater's maintained fully natural C++
+source now matches exactly in two original-order context producers; its bytes
+remain credited only to the reviewed-ASM owner. The sweep's actual live
 `sword_template`, 26-byte sword pool, `boss_statebyte[13..15]`, and
 `boss2.pos.cur.y` position are unchanged. The new
 `sweep_combat_rules.hpp` names its original source-level gameplay

@@ -1,37 +1,37 @@
-## 2026-11-13 exact hybrid source in the complete original-order context
+## 2026-11-13 exact pure-C++ source in the complete original-order context
 
-The maintained `swords_update.cpp` is now a deliberately small C++/inline-ASM
-hybrid. The complete 283-byte function emits **raw-exact** bytes and its
-original ordered relocation `[75]` inside the real six-definition MAIN03
-context. Two fresh native diagnostic producers independently reproduce the
-entire **2,139-byte** contribution at `[1ED41,1F59C)`, including all **25**
-ordered MZ relocations. Both also reproduce the updater's exact 283-byte
-slice at `[1EDBA,1EED5)`; the complete context and updater SHA-256 values
-match the pinned target.
+The maintained `swords_update.cpp` is now a fully natural C++ implementation:
+there are no inline-ASM blocks, instruction strings, copied opcodes or
+hand-authored branch bytes. Two independent fresh native Borland/TLINK
+producers compile the actual maintained `attacks_context.cpp` and
+`swords_update.cpp` paths and reproduce the complete **2,139-byte** MAIN03
+contribution at `[1ED41,1F59C)`, including all **25** original ordered MZ
+relocations. Both also reproduce the complete **283-byte** updater at
+`[1EDBA,1EED5)` and its original ordered relative relocation `[75]`.
 
-The recovered compiler shape uses ordinary `-O` for the two original near
-`JL/JGE` twirl branches. One narrow inline-ASM island preserves the original
-four short playfield exits and short transfer to the real `remove` label;
-a second pair of short inline-ASM jumps joins both collision outcomes at one
-real C++ loop-tail label. The actual DX:AX `update_seg3()` result is still
-consumed before another call, the collision mutations remain ordinary C++,
-and the original `for` increment advances both the index and sword pointer
-on every path. No copied instruction array, fabricated prefix, padding,
-extra state, or changed gameplay predicate is used.
+The source keeps ordinary `-O` for the two original near `JL/JGE` twirl
+branches. A local empty, false-returning `optimization_barrier()` preserves
+the native clip exit immediately before marking an out-of-bounds sword free;
+a second use on the no-hit fallthrough keeps the two original collision
+outcomes as separate loop-tail transfers. The barriers emit no instructions.
+The original DX:AX `update_seg3()` result is consumed before another call,
+and the twirl, collision mutations, decay and `for`-loop index/pointer
+increment remain ordinary C++.
 
-This hybrid source is the context provider for `attacks_context.cpp`; the
-already accepted `main-yumeko-swords-update-asm` remains the **sole owner and
-credit** for these same 283 executable bytes. No overlapping C++ CODE credit
-or second accepted unit is claimed. The 354-byte aimed attack, 428-byte laser
-attack, and their original 25-entry relocation order remain exact in the
-same full context. Diagnostic snapshots:
+The compiled meaningful negative changes the twirl step `2` to `3`; its
+complete context is rejected while the original 25-entry relocation order
+remains unchanged. Verification records are
+`.analysis/gpt-web-yumeko-natural-owner-positive-a-20261113/`,
+`.analysis/gpt-web-yumeko-natural-owner-positive-b-20261113/`,
+`.analysis/gpt-web-yumeko-natural-owner-negative-twirl-step-20261113/`, and
+`.analysis/gpt-web-yumeko-natural-owner-verification-20261113.json`.
 
-- `.analysis/gpt-web-yumeko-hybrid-full-context-a-20261113/`
-- `.analysis/gpt-web-yumeko-hybrid-full-context-b-20261113/`
-- `.analysis/gpt-web-yumeko-hybrid-full-context-20261113-results.json`
-
-The older natural-only `-O-` and `-O` trials below are historical failures;
-they are superseded by this mixed lowering and should not be repeated.
+This is an exact source-language refinement, not new executable ownership.
+The already accepted `main-yumeko-swords-update-asm` remains the **sole owner
+and credit** for the same 283 bytes; no overlapping C++ CODE credit or second
+accepted unit is claimed. The 354-byte aimed attack and 428-byte laser attack
+remain separate accepted complete functions in the same context. This
+supersedes the earlier natural-C++ failures and the intermediate hybrid note.
 
 ---
 
@@ -66,8 +66,9 @@ the clockwise twirl step 2→3 and is rejected. Receipt:
 All **283 bytes are classified as reviewed ASM instruction credit**, not C++
 codegen credit. At the time of the 2026-11-10 ASM acceptance, the experimental
 `src/main/boss/yumeko/swords_update.cpp` was an inexact source-language port.
-Its 2026-11-13 hybrid replacement is now raw-exact in the full context, but
-remains deliberately uncredited to avoid overlapping the accepted ASM owner.
+The 2026-11-13 fully natural C++ replacement now reproduces the same 283 bytes
+in two fresh full-context producers, but remains deliberately uncredited to
+avoid overlapping the accepted ASM owner.
 The two accepted 354/428-byte Yumeko sword attack callbacks,
 the 121-byte sword allocator and the other original-order accepted callbacks
 are unchanged and not replayed, with **no ownership overlap**.

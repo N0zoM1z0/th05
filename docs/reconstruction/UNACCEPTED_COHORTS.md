@@ -28,14 +28,18 @@ be described as uncovered code:
 | Near vector helper | Ordinary C++ 92/106 versus original 55, with following EVEN byte excluded | Full 55-byte reviewed ASM, [review](../../src/shared/math/vector2_near.md) |
 | Scroll coordinate helper | Ordinary C++ 47/51 versus original 40 bytes | Full 40-byte reviewed ASM, [review](../../src/main/scroll/coordinates.md) |
 
-## Current follow-up candidates for an incoming agent
+## Resolved since the previous handoff
 
 Yumeko's 283-byte `swords_update()` already has a complete, exact reviewed-ASM
-owner. Its maintained C++/inline-ASM hybrid now reproduces the same bytes in
-the full original-order 2,139-byte context; it is deliberately not a second
-CODE owner. Only a fully natural C++ alternative remains a source-language
-refinement, not uncovered executable work. See
-[the exact hybrid context result](../../src/main/boss/yumeko/swords_update.md).
+owner. Its maintained source is now fully natural C++ and reproduces the same
+bytes in two fresh producers of the complete original-order 2,139-byte context;
+its compiled twirl-step negative is rejected. The ASM owner remains sole CODE
+credit, with no overlapping C++ claim. This source-language refinement is
+resolved, not an open executable gap. See
+[the exact pure-C++ context result](../../src/main/boss/yumeko/swords_update.md).
+
+## Current follow-up candidates for an incoming agent
+
 ZUN `-S`'s 269-byte C++ `main()` is now a resolved complete-function unit:
 `zun-resident-main` has two independent cold producers, exact original bytes
 and ordered relocations, a complete `_main` MAP boundary, and a rejected

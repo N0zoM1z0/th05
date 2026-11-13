@@ -75,19 +75,22 @@ need CODE/DATA/INIT/BSS boundary analysis.
 The full ZUN ownership summary and current intervals are in
 [`ZUN_OWNERSHIP_MAP_2026-11-13.md`](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
 
+## Recent closure
+
+- **Yumeko `swords_update()` source refinement (2026-11-13)**: the complete
+  283-byte updater now has a fully natural C++ source that reproduces the
+  complete 2,139-byte MAIN03 original-order context in two fresh native
+  producers; its compiled twirl-step negative is rejected. The reviewed ASM
+  family remains the sole CODE owner, so no duplicate credit is claimed. See
+  [`swords_update.md`](../src/main/boss/yumeko/swords_update.md).
+
 ## Other open work
 
-1. **Yumeko `swords_update()` source refinement**: the complete 283-byte
-   updater and 2,139-byte MAIN03 context are exact using the maintained
-   C++/inline-ASM hybrid; the accepted reviewed-ASM unit remains the sole CODE
-   owner. A fully natural C++ alternative is still a source-language
-   refinement, not additional credit. See
-   [`swords_update.md`](../src/main/boss/yumeko/swords_update.md).
-2. **BB resource loader**: its 55-byte function is already exactly owned as
+1. **BB resource loader**: its 55-byte function is already exactly owned as
    original-language ASM. The C++ context candidate matches 51/55 bytes in two
    producers; the remaining compiler differences are documented in
    [`bb_load.md`](../src/main/formats/bb_load.md). Do not double-count the ASM.
-3. **Remaining physical ownership gaps**: use the live intervals in
+2. **Remaining physical ownership gaps**: use the live intervals in
    `resources/ownership.json` and the current
    [`UNACCEPTED_COHORTS.md`](reconstruction/UNACCEPTED_COHORTS.md). Check
    physical source bounds, real consumers, initialized data versus uninitialized

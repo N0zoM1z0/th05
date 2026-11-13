@@ -194,7 +194,9 @@ and the original literal ordered MZ relocation sites
 The compiled actual five-to-four red-spread stack mutation remains
 rejected. All twelve source-defined functions share this one complete
 accepted scope; no prior accepted bytes receive additional credit.
-The separate inexact Yumeko sword C++ experiments remain unaccepted.
+Yumeko's 283-byte sword updater now also has a fully natural C++ source that
+reproduces its complete 2,139-byte original-order context twice; the existing
+reviewed ASM owner remains the sole CODE credit.
 
 ## 2026-11-12: coherent mobile-wave hit scoring and reposition clocks
 

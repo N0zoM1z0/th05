@@ -92,8 +92,9 @@ original Borland/TLINK context and remained **884/884 exact**, including its
 22-byte compiler switch table, one checked alignment zero, the original ordered
 segment relocations, and the compiled turn-count negative. The actual receipt
 is `.analysis/unit-replays/gpt-web-yumeko-final-scratch-20261111/receipt.json`.
-The separate 283-byte `swords_update()` natural C++ alternative remains an
-unaccepted challenge; its independently reviewed ASM owner is unchanged.
+The 283-byte `swords_update()` now also has a fully natural C++ source that
+reproduces the complete 2,139-byte original-order context in two fresh
+producers; its independently reviewed ASM owner remains the sole CODE owner.
 
 ## Fan-mirror and final-ring state lifetimes
 
@@ -117,8 +118,9 @@ Four impacted complete source units were rebuilt with two deterministic
 Borland/TLINK producers; all original raw bytes and ordered MZ relocations
 matched, and the compiled semantic negative was rejected. Focused receipt:
 `.analysis/unit-replays/gpt-web-yumeko-fan-ring-lifetimes-20261111/receipt.json`.
-The previously accepted sword updater remains ASM-owned; no unsupported
-natural-C++ credit or new target bytes are inferred here.
+The sword updater now also has a raw-exact fully natural C++ source in its
+original-order context; the reviewed ASM owner remains sole credit and no
+duplicate CODE bytes are claimed.
 
 ## Full fight HP ladder and source-visible animation clocks (2026-11-12)
 
@@ -153,8 +155,9 @@ original contribution, including the one checked alignment zero,
 **22-byte switch table** and the six original ordered relocations.
 The compiled final turn-count mutation was rejected. All edits are
 semantic source recovery of already accepted CODE; they do not create
-additional byte credit, nor accept the still-unresolved natural C++
-`swords_update()` alternative.
+additional byte credit. The pure-C++ `swords_update()` source is now
+raw-exact in the full original-order context (2026-11-13), but the existing
+ASM owner remains sole CODE credit.
 
 ## Complete Yumeko HP/final attack source-closing sweep (2026-11-12)
 
@@ -188,7 +191,8 @@ original ordered MZ fixups `[399,344,333,270,161,79]`. The existing
 compiled final-ring turn-count negative was rejected. This refreshes the
 already accepted two-function major Boss owner without claiming additional
 CODE credit. The separate 283-byte sword updater remains accepted as
-reviewed ASM; its natural C++ alternative is still under investigation.
+reviewed ASM; its fully natural C++ source now also reproduces the complete
+original-order context twice, without a duplicate CODE claim.
 
 ## Original mobile attack-bank handoffs and their distinct HP gates
 
@@ -208,6 +212,7 @@ The focused receipt
 `.analysis/unit-replays/gpt-web-yumeko-mobile-bank-hp-20261112-a/receipt.json`
 shows two real Borland/TLINK producers reproducing all **884 original bytes**,
 the original switch table and all six ordered MZ fixups, with the compiled
-final-ring negative rejected. The separate `swords_update()` natural C++
-remains inexact and receives no credit; no already accepted CODE is counted
-again and no full cold replay was run.
+final-ring negative rejected. The pure-C++ `swords_update()` source now reproduces the complete original-order
+context twice and rejects its compiled semantic negative; its reviewed ASM
+owner remains sole credit. No already accepted CODE is counted again and no
+full cold replay was run.

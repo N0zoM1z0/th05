@@ -6,9 +6,10 @@ updater and seven adjacent attack routines in native definition order. Its
 **translation-unit** pragmas. Normal standalone compilations still receive
 their historical flags and canonical function bodies. The renderer is compiled
 in main_01 and the remaining functions in main_03 with their natural near,
-far and Pascal interfaces preserved. The updater now uses the ordinary `-O`
-profile with two narrowly scoped inline-ASM control-flow islands; the following
-`#pragma option -O` keeps the same normal jump optimization for later attacks.
+far and Pascal interfaces preserved. The updater now uses ordinary C++ with
+two zero-instruction `optimization_barrier()` calls to preserve the original
+clip and collision exits; the following `#pragma option -O` keeps the same
+normal jump optimization for later attacks.
 
 The retained true symbol-only binder contributes no instruction or initialized
 storage: it anchors all foreign providers and code frames, and its sole code
@@ -18,11 +19,13 @@ Actual MAP confirms the main01 66-byte renderer at `143E0`, main03 CODE from
 
 The complete current 2,139-byte MAIN03 emitter is now raw-exact, including
 its 283-byte `swords_update` slice and all 25 original ordered MZ fixups. The
-updater uses C++ with two narrow inline-ASM control-flow islands to retain the
-original short clip and collision joins. Two fresh native diagnostic producers
-reproduce the complete contribution byte-for-byte. The 283 bytes remain owned
-and credited **only** by the accepted `main-yumeko-swords-update-asm` family;
-this overlapping hybrid context does not create a second C++ CODE claim.
+updater is now fully natural C++: its two empty false-returning compiler
+barriers preserve the original short clip and collision joins without inline
+assembly. Two fresh native diagnostic producers compile the actual maintained
+source paths and reproduce the complete contribution byte-for-byte. The 283
+bytes remain owned and credited **only** by the accepted
+`main-yumeko-swords-update-asm` family; this overlapping C++ context does not
+create a second CODE claim.
 The 354-byte aimed-swords and 428-byte laser/swords functions remain separate
 accepted complete functions, and the four unchanged prior source bodies retain
 their focused replay receipts. The existing 782 authored C++ byte credit is

@@ -5,6 +5,7 @@
 #include <dos.h>
 #include "src/main/boss/yumeko/update.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
+inline bool optimization_barrier(void) { return false; }
 
 #pragma option -O
 extern "C" void pascal near swords_update(void)
@@ -40,20 +41,13 @@ extern "C" void pascal near swords_update(void)
         }
         // Both genuine Point-return words are dead before any foreign call.
         sword->pos.update_seg3();
-        // Preserve the original short clip exits around the live DX:AX
-        // Point return; the following C++ consumes it before any call.
-        asm {
-            cmp ax, 0FF00h
-            jle clip_remove
-            cmp ax, 01900h
-            jge clip_remove
-            cmp dx, 0FF00h
-            jle clip_remove
-            cmp dx, 01800h
-            jl clip_in
-clip_remove:
-            jmp short remove
-clip_in:
+        if(static_cast<subpixel_t>(_AX) <= -16 * 16 ||
+           static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W + 16) * 16 ||
+           static_cast<subpixel_t>(_DX) <= -16 * 16 ||
+           static_cast<subpixel_t>(_DX) >= (PLAYFIELD_H + 16) * 16) {
+            optimization_barrier();
+            sword->flag = F_FREE;
+            continue;
         }
         if(sword->flag != F_REMOVE) {
             _AX -= player_pos.cur.x.v;
@@ -63,10 +57,11 @@ clip_in:
                 if(static_cast<unsigned int>(_DX) <= 14 * 16) {
                     player_is_hit = 1;
                     sword->flag = F_REMOVE;
-                    asm { jmp short ysu_next_slot_20261113; }
+                    continue;
                 }
             }
-            asm { jmp short ysu_next_slot_20261113; }
+            optimization_barrier();
+            continue;
         }
         if(sword->patnum_tiny < 225) {
             sword->patnum_tiny = 225;
@@ -84,7 +79,5 @@ remove:
             }
         }
         }
-ysu_next_slot_20261113:
-        ;
     }
 }
