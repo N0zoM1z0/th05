@@ -48,17 +48,6 @@ static const int SARA_SPIN_HALF_SPEED_END = 96;
 static const int SARA_SPIN_QUARTER_SPEED_END = 128;
 static const int SARA_SPIN_EIGHTH_SPEED_END = 160;
 
-// The final laser corridor is built before firing and widened at frame 64.
-// Each named angle is a genuine additional delay point for laser rotation.
-static const int SARA_LASER_CREATE_FRAME = 32;
-static const int SARA_LASER_GROW_FRAME = 64;
-static const int SARA_LASER_SLOWDOWN_ANGLE_A = 0x80;
-static const int SARA_LASER_SLOWDOWN_ANGLE_B = 0x60;
-static const int SARA_LASER_SLOWDOWN_ANGLE_C = 0x58;
-static const int SARA_LASER_SLOWDOWN_ANGLE_D = 0x50;
-static const int SARA_LASER_RANDOM_COUNT_STEP_FRAMES = 64;
-static const int SARA_LASER_RANDOM_COUNT_LIMIT = 8;
-
 enum sara_colors_t {
 	COL_GATHER_1 = 9,
 	COL_GATHER_2 = 8,
@@ -363,10 +352,6 @@ void near pattern_accelerating_spirals_counterclockwise(void)
 
 void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 {
-	enum {
-		CORRIDOR_ANGLE = SARA_LASER_CORRIDOR_ANGLE_WIDTH, // centered around 0x40
-	};
-
 	if(boss.phase_frame == 1) {
 		boss.sprite = PAT_SARA_SPIN;
 	}
@@ -393,9 +378,10 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 
 	if(
 		((boss.phase_frame % state->phase_4.laser_angle_interval) == 0) &&
-		(lasers[X_LEFT].coords.angle >
-		 (SARA_LASER_CORRIDOR_CENTER_ANGLE + (SARA_LASER_CORRIDOR_ANGLE_WIDTH / 2)))
+		(lasers[X_LEFT].coords.angle > SARA_LASER_ROTATION_TERMINAL_ANGLE)
 	) {
+		// Keep the byte literal: TC4's original AL-based INC/SUB codegen
+		// differs from the shorter direct-memory form for an enum constant.
 		lasers[X_RIGHT].coords.angle += 0x01;
 		lasers[X_LEFT].coords.angle -= 0x01;
 		if(

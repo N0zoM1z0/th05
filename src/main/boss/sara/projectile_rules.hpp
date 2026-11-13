@@ -33,10 +33,23 @@ enum SaraSpinningRules {
     SARA_SPIRAL_BULLET_COUNT = 3
 };
 
+// The final corridor has one phase-local clock for the two opposing lasers
+// and a separate Boss-frame clock for its growing random-ball volley.
 enum SaraLaserCorridorRules {
     SARA_LASER_CORRIDOR_CENTER_ANGLE = 0x40,
     SARA_LASER_CORRIDOR_ANGLE_WIDTH = 0x14,
+    SARA_LASER_ROTATION_TERMINAL_ANGLE = (
+        SARA_LASER_CORRIDOR_CENTER_ANGLE + (SARA_LASER_CORRIDOR_ANGLE_WIDTH / 2)
+    ),
     SARA_LASER_OFFSET_ANGLE = 0x20,
+    SARA_LASER_CREATE_FRAME = 32,
+    SARA_LASER_GROW_FRAME = 64,
+    SARA_LASER_SLOWDOWN_ANGLE_A = 0x80,
+    SARA_LASER_SLOWDOWN_ANGLE_B = 0x60,
+    SARA_LASER_SLOWDOWN_ANGLE_C = 0x58,
+    SARA_LASER_SLOWDOWN_ANGLE_D = 0x50,
+    SARA_LASER_RANDOM_COUNT_STEP_FRAMES = 64,
+    SARA_LASER_RANDOM_COUNT_LIMIT = 8,
     SARA_LASER_COLOR = 8,
     SARA_LASER_WIDTH = 8,
     SARA_LASER_INITIAL_SPREAD_ANGLE = 0,
