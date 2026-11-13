@@ -262,3 +262,32 @@ Retained diagnostics:
 `.analysis/gpt-web-vector2-near-inline-table-c-linkage-a-20261113/`,
 `.analysis/gpt-web-vector2-near-inline-register-only-a-20261113/` and
 `.analysis/gpt-web-vector2-near-inline-near-mov-control-a-20261113/`.
+
+## 2026-11-13: direct pseudoregister and table-load order follow-up
+
+The 67-byte TCC-S/TASM32 natural source was varied again to test whether
+removing the explicit `signed long` cast on the near-Pascal `length` parameter
+or reversing the sine/cosine read order would give the compiler its original
+EDX/ECX destinations. Neither changes the key lowering: assigning the signed
+16-bit parameter to `_EDX` still emits `MOVSX EAX,[BP+4]; MOV EDX,EAX`.
+
+Reordering the table loads to assign cosine to `_EAX` before sine to `_ECX`
+does not make the second signed table read target ECX. TCC emits two
+`MOVSX EAX,[BX+table]` instructions and then copies the latter value to ECX,
+so the first EAX sample is overwritten before multiplication. That is not a
+semantically valid candidate; it is evidence that the pseudoregister lvalues
+do not constrain TCC's 32-bit expression scratch allocation the way the
+original register dataflow requires.
+
+A further compound-pseudoregister experiment (`_EAX *= _EDX`, `_EDX *= _ECX`)
+was also rejected: TCC lowers the first product through `MOV EAX,EDX; IMUL
+EAX,EAX` and uses logical `SHR` for the shifted result. It is not equivalent
+to the original signed `IMUL EAX,EDX; SAR EAX,8` / `IMUL EDX,ECX; SAR EDX,8`.
+The resulting 76-byte contribution is diagnostic only. No maintained source,
+accepted ASM owner, or CODE ledger entry is changed. The original 55-byte ASM
+remains the only exact implementation; the 67-byte natural source remains the
+best semantically correct C++ candidate.
+
+Evidence:
+`.analysis/gpt-web-vector2-near-direct-pseudoreg-a-20261113/` and
+`.analysis/gpt-web-vector2-near-reordered-natural-a-20261113/`.

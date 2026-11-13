@@ -138,3 +138,46 @@ Diagnostics:
 `.analysis/gpt-web-bb-load-ax-return-a-20261113/`,
 `.analysis/gpt-web-bb-load-explicit-si-lifetime-a-20261113/` and
 `.analysis/gpt-web-bb-load-inline-si-lifetime-a-20261113/`.
+
+## 2026-11-13: compiler-option and CX-held DS follow-up matrix
+
+Further native producers tested the actual Turbo C++ option and register
+allocation boundaries around the four-byte return-order gap:
+
+- Enabling a standard BP stack frame (`-k`) grows the complete contribution
+to **59 bytes** and moves the allocator fixup from +7 to +10. The filename
+still resolves through `SS:[BX+4]`, but the added BP frame is not native.
+- Disabling register variables (`-r-`) makes the ordinary `original_ds` local
+a BP-frame slot and emits **61 bytes** with fixup +10. Enabling register
+variables (`-r`) preserves the existing **55-byte** body, +7 relocation and
+same `MOV AX,[4204]; POP SI` tail. Register-allocation mode does not change the
+return/epilogue order.
+- `-O-` emits **57 bytes** by inserting a short zero-displacement jump between
+the return load and SI restore. Restoring `-O` returns to 55 bytes, but still
+loads AX before popping SI.
+- A new DS-stack variant keeps the allocated segment in CX before DOS open,
+pushes the original DS, reads the far filename from `SS:[BX+4]`, switches DS
+from CX to the buffer, and pops DS after close. It avoids using SI entirely
+and emits **51 bytes** with allocator relocation **+6**. Two independent cold
+producers reproduce the same 51 raw bytes. This is not an exact improvement:
+its relocation is shifted, its byte sequence is only partially aligned with
+the original, and the experiment has not established that DOS function 3D00h
+preserves CX on every supported runtime. It receives no semantic/runtime or
+CODE credit.
+- Adding an explicit caller-SI push/pop around that CX/DS-stack variant makes
+Turbo C++ add a second compiler-managed SI save. The result is **55 bytes**
+with fixup **+8**, but contains two initial pushes and two SI pops; it is not
+the original ABI sequence.
+
+The best maintained C++ candidate therefore remains the 55-byte, +7-relocation
+shape with 51/55 original byte positions. Its only remaining raw difference is
+still the order of the return load and callee-saved SI restore. The exact
+reviewed 55-byte ASM owner remains authoritative. Diagnostics:
+`.analysis/gpt-web-bb-load-k-frame-a-20261113/`,
+`.analysis/gpt-web-bb-load-r-off-a-20261113/`,
+`.analysis/gpt-web-bb-load-r-on-a-20261113/`,
+`.analysis/gpt-web-bb-load-O-off-a-20261113/`,
+`.analysis/gpt-web-bb-load-O-on-a-20261113/`,
+`.analysis/gpt-web-bb-load-cx-stack-ds-a-20261113/`,
+`.analysis/gpt-web-bb-load-cx-stack-ds-b-20261113/` and
+`.analysis/gpt-web-bb-load-cx-stack-ds-preserve-si-a-20261113/`.
