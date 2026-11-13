@@ -1,5 +1,6 @@
 // Six complete natural charge/attack functions after accepted shared flight.
 #include "src/main/boss/mai_yuki/initial_patterns.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
 // Paired charge effects use the same three-stack helper, but each fighter
 // provides its own original full Boss position as the gather center.
@@ -91,13 +92,13 @@ bool near mai_pattern_turning_fan(void)
 bool near mai_pattern_sweeping_pellets(void)
 {
     if(boss.phase_frame == 48) {
-        boss_statebyte[15] = static_cast<unsigned char>(-0x10);
+        mai_yuki_pattern_scratch.pattern_byte15.mai_paired_sweeping_pellet_angle = static_cast<unsigned char>(-0x10);
     }
     if((boss.phase_frame % 4) == 0) {
         bullet_template.spawn_type = MY_SPAWN_CLOUD_FORWARDS | MY_SPAWN_NO_DECELERATE;
         bullet_template.group = BG_SPREAD;
-        bullet_template.angle = boss_statebyte[15];
-        boss_statebyte[15] += 5;
+        bullet_template.angle = mai_yuki_pattern_scratch.pattern_byte15.mai_paired_sweeping_pellet_angle;
+        mai_yuki_pattern_scratch.pattern_byte15.mai_paired_sweeping_pellet_angle += 5;
         bullet_template.patnum = 0;
         MY_MAI_BULLET_MUZZLE();
         mai_yuki_set_spread(5, 10);

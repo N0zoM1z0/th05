@@ -1,5 +1,6 @@
 // Complete natural opening patterns for the surviving Mai boss.
 #include "src/main/boss/mai_yuki/mai_solo_patterns.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
 bool near mai_solo_widening_fans(void)
 {
@@ -46,19 +47,19 @@ bool near mai_solo_turning_stacks(void)
         bullet_template.stack_speed_delta.v = to_sp(1);
         bullet_template.speed.v = to_sp(2);
         boss.sprite = 192;
-        boss_statebyte[15] = 0x60;
+        mai_solo_scratch.pattern_byte15.mai_solo_turning_stack_angle = 0x60;
     } else if(boss.phase_frame > 32) {
         if((boss.phase_frame % 16) == 0) {
             if((boss.phase_frame % 32) == 0) {
-                bullet_template.angle = boss_statebyte[15];
+                bullet_template.angle = mai_solo_scratch.pattern_byte15.mai_solo_turning_stack_angle;
                 bullet_template_special_angle.turn_by =
                     static_cast<unsigned char>(-0x40);
             } else {
-                bullet_template.angle = 0x80 - boss_statebyte[15];
+                bullet_template.angle = 0x80 - mai_solo_scratch.pattern_byte15.mai_solo_turning_stack_angle;
                 bullet_template_special_angle.turn_by = 0x40;
             }
             bullets_add_special_fixedspeed();
-            boss_statebyte[15] = boss_statebyte[15] + 9;
+            mai_solo_scratch.pattern_byte15.mai_solo_turning_stack_angle = mai_solo_scratch.pattern_byte15.mai_solo_turning_stack_angle + 9;
             snd_se_play(3);
         }
         if(boss.phase_frame == 192) {

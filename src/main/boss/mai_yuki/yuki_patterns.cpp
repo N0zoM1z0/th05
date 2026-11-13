@@ -3,7 +3,7 @@
 #include "src/main/boss/mai_yuki/yuki_patterns.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
-#define yuki_solo_angle yuki_solo_scratch.snow_angle
+#define yuki_solo_angle yuki_solo_scratch.pattern_byte15.yuki_solo_snow_angle
 #define yuki_solo_angle_step yuki_solo_scratch.snow_angle_step
 #define yuki_solo_snow_step yuki_solo_scratch.snow_step
 #include "src/main/boss/mai_yuki/yuki_patterns_initial.inl"

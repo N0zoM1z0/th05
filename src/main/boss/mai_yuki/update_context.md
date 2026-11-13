@@ -155,3 +155,7 @@ compiled negative is rejected. The shared patterns preceding this
 function remain a real compiler context but do not receive a second
 source-credit claim. This is a refinement to an existing major Boss CODE
 owner, not newly counted bytes, and no full cold replay was performed.
+
+## Shared paired and solo scratch overlay
+
+The paired reversing-ring pair and later Mai/Yuki survivor patterns reuse the same physical Boss scratch bytes. Their complete offset-12..15 and byte-15 lifetime map is documented in [the shared scratch review](solo_scratch.md). The source now names both ring angle/step pairs and all five byte-15 roles without changing any original initializer, turn gate or transition reset. Ten affected complete units passed the focused two-producer replay; the 1,018-byte controller and its 939-byte adjacent pattern context remain exact, with no duplicate CODE credit.

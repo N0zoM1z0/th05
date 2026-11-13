@@ -2,9 +2,10 @@
 // Original disassembly corroborated by ReC98 b6ba5b0a; no ASM body copied.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_solo_laser_cycle.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
-#define mai_laser_direction boss_statebyte[15]
+#define mai_laser_direction mai_solo_scratch.pattern_byte15.mai_solo_laser_direction
 #define mai_laser_patterns_seen boss_statebyte[10]
 
 bool near mai_solo_laser_cycle(void)

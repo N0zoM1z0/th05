@@ -76,3 +76,7 @@ The first owner's ring speed54→55 and second owner's snow speed64→80
 mutations are independently compiled and rejected. Credit is1179 instruction
 bytes/seven complete functions, with no table, padding, DATA or BSS. No
 whole1179-byte relocation-order claim or transferred acceptance is made.
+
+## Shared Boss scratch byte 15
+
+Yuki final snow-cross angle is the same physical byte 15 reused by paired Mai attacks and Mai solo patterns at earlier lifetimes. It is not an additional angle variable. The shared `MaiYukiPatternByte15` overlay and the distinct Yuki snow step/angle-step bytes are documented in [the paired/solo scratch map](solo_scratch.md). The Yuki pattern and updater owners remain byte-exact in the ten-unit focused replay.

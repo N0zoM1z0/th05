@@ -1,4 +1,5 @@
 #include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
+#include "src/main/boss/mai_yuki/solo_scratch.hpp"
 // All seven Yuki small-ball/ring families fire from the same real muzzle:
 // the second Boss position with its original positive Y offset. Keep this
 // assignment in-place before each attack's distinct spread/speed settings.
@@ -39,14 +40,14 @@
 bool near mai_pattern_reversing_rings(void)
 {
     if(boss.phase_frame == MYR_RING_START_FRAME) {
-        boss_statebyte[15] = MYR_RING_MAI_ANGLE;
-        boss_statebyte[12] = static_cast<unsigned char>(MYR_RING_MAI_STEP);
+        mai_yuki_pattern_scratch.pattern_byte15.mai_shared_reversing_ring_angle = MYR_RING_MAI_ANGLE;
+        mai_yuki_pattern_scratch.mai_reversing_ring_step = static_cast<unsigned char>(MYR_RING_MAI_STEP);
     }
     if((boss.phase_frame % MYR_RING_FOUR_FRAME) == 0) {
         bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE;
         bullet_template.group = BG_RING;
-        bullet_template.angle = boss_statebyte[15];
-        boss_statebyte[15] += boss_statebyte[12];
+        bullet_template.angle = mai_yuki_pattern_scratch.pattern_byte15.mai_shared_reversing_ring_angle;
+        mai_yuki_pattern_scratch.pattern_byte15.mai_shared_reversing_ring_angle += mai_yuki_pattern_scratch.mai_reversing_ring_step;
         bullet_template.patnum = MY_PAT_SMALL_BALL_BLUE;
         bullet_template.origin.x = boss.pos.cur.x;
         bullet_template.origin.y.v = boss.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX);
@@ -55,9 +56,9 @@ bool near mai_pattern_reversing_rings(void)
         bullet_template_tune();
         bullets_add_regular();
         if((boss.phase_frame % MYR_RING_TURN_FRAME) == 0) {
-            boss_statebyte[15] = boss_statebyte[15] -
+            mai_yuki_pattern_scratch.pattern_byte15.mai_shared_reversing_ring_angle = mai_yuki_pattern_scratch.pattern_byte15.mai_shared_reversing_ring_angle -
                 (randring2_next16_and(MYR_RING_JITTER_MASK) + MYR_RING_JITTER_OFFSET);
-            boss_statebyte[12] = -boss_statebyte[12];
+            mai_yuki_pattern_scratch.mai_reversing_ring_step = -mai_yuki_pattern_scratch.mai_reversing_ring_step;
         }
         snd_se_play(MYR_RING_FIRE_SOUND);
     }
@@ -152,14 +153,14 @@ bool near yuki_pattern_random_pellets(void)
 bool near yuki_pattern_reversing_rings(void)
 {
     if(boss.phase_frame == MYR_RING_START_FRAME) {
-        boss_statebyte[14] = MYR_RING_YUKI_ANGLE;
-        boss_statebyte[13] = MYR_RING_YUKI_STEP;
+        mai_yuki_pattern_scratch.yuki_reversing_ring_angle = MYR_RING_YUKI_ANGLE;
+        mai_yuki_pattern_scratch.yuki_reversing_ring_step = MYR_RING_YUKI_STEP;
     }
     if((boss.phase_frame % MYR_RING_FOUR_FRAME) == 0) {
         bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE;
         bullet_template.group = BG_RING;
-        bullet_template.angle = boss_statebyte[14];
-        boss_statebyte[14] += boss_statebyte[13];
+        bullet_template.angle = mai_yuki_pattern_scratch.yuki_reversing_ring_angle;
+        mai_yuki_pattern_scratch.yuki_reversing_ring_angle += mai_yuki_pattern_scratch.yuki_reversing_ring_step;
         bullet_template.patnum = MY_PAT_SMALL_BALL_RED;
         MY_YUKI_MUZZLE();
         bullet_template.spread = MYR_RING_COUNT;
@@ -167,8 +168,8 @@ bool near yuki_pattern_reversing_rings(void)
         bullet_template_tune();
         bullets_add_regular();
         if((boss.phase_frame % MYR_RING_TURN_FRAME) == 0) {
-            boss_statebyte[14] = randring2_next16_and(MYR_RING_JITTER_MASK) + boss_statebyte[14] + MYR_RING_JITTER_OFFSET;
-            boss_statebyte[13] = -boss_statebyte[13];
+            mai_yuki_pattern_scratch.yuki_reversing_ring_angle = randring2_next16_and(MYR_RING_JITTER_MASK) + mai_yuki_pattern_scratch.yuki_reversing_ring_angle + MYR_RING_JITTER_OFFSET;
+            mai_yuki_pattern_scratch.yuki_reversing_ring_step = -mai_yuki_pattern_scratch.yuki_reversing_ring_step;
         }
     }
     return false;

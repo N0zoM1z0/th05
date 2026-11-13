@@ -33,3 +33,7 @@ The b receipt replays only this affected owner after shortening the shared
 header guard. Long Mai-solo guards shared the old compiler's significant
 prefix and suppressed required declarations when included together. The
 short distinct guard changes neither storage nor instruction behavior.
+
+## Shared Boss scratch byte 15
+
+Mai solo turning stacks use the same original byte 15 that the paired opening pellet sweep, Mai laser cycle and shared reversing-ring pattern use at other attack lifetimes. The named `MaiYukiPatternByte15` view makes those mutually exclusive roles explicit; see [the complete paired/solo scratch map](solo_scratch.md). The solo pattern source remains byte-exact in the ten-unit focused replay.

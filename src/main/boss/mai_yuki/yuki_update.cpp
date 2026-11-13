@@ -156,7 +156,7 @@ phase5_complete:
             boss_solo_pattern_current = yuki_solo_snow_cross;
             boss.mode = YUKI_SOLO_MODE_ATTACK;
             yuki_solo_scratch.snow_angle_step = YUKI_SOLO_FINAL_SNOW_ANGLE_STEP;
-            yuki_solo_scratch.snow_angle = YUKI_SOLO_FINAL_SNOW_INITIAL_ANGLE;
+            yuki_solo_scratch.pattern_byte15.yuki_solo_snow_angle = YUKI_SOLO_FINAL_SNOW_INITIAL_ANGLE;
             yuki_solo_scratch.snow_step = static_cast<unsigned char>(YUKI_SOLO_FINAL_SNOW_STEP_SIGNED);
         }
         break;
