@@ -55,3 +55,41 @@ one ordered replacement. Its baseline-only compiler pass is not
 claimed as proof. The `-b` receipt above compiles the actual changed
 sources and rejects both controls. No already accepted CODE bytes
 are double-counted; no complete MAIN cold replay ran.
+
+
+## 2026-11-14: sweep cycles carry side, speed and aim state
+
+The sweep's `round` byte at Boss scratch offset 13 is a cycle selector, not a
+one-shot completion flag. Charge frame 16 initializes `round=0`, `side=0`,
+the rank spacing, the random starting Y, and bullet speed 128. The sword half
+fires every eight frames, toggles the side by `0x80` after each sword, and
+adds the selected spacing to Y before testing the 376-pixel boundary. For the
+original random Y range 0..31, one sword sweep emits 9/10 swords on Easy,
+12/13 on Normal, 15/16 on Hard, and 22/23/24 on Lunatic. The final side is the
+initial side XOR the parity of that count; the next cycle does not reset it.
+
+The first aimed-bullet half begins after the sword sweep sets `round=1`.
+Bullets fire every four frames. The speed test is strictly `>96`; when true,
+speed resets to 8, SE15 plays, and `round` increments. The next bullet then
+adds 8, so each full burst emits speeds **16, 24, ..., 104** (12 bullets).
+The first cycle starts from charge speed128, so its first bullet performs a
+reset and starts the first burst immediately. Four 12-bullet bursts are emitted
+(48 bullets total); the fifth reset advances `round` to 6, resets it to zero,
+plays SE15, and returns before aiming or firing an extra bullet. That terminal
+reset leaves speed at 8 and leaves the last aimed angle untouched.
+
+A later cycle starts with `round=0` but deliberately retains speed8 and the
+previous bullet angle. Its sword half again carries the current side and chooses
+a new random Y. After that sweep, the first 12-bullet burst advances speed from
+8 to 16..104 without a new sound or aim calculation. Four subsequent reset
+boundaries produce four more bursts, then the terminal boundary returns: a
+steady-state cycle therefore emits **60 bullets**, has five SE15 events (four
+before bullet-producing burst starts plus the terminal no-shot event), and
+retargets only at those four reset boundaries. The fifth reset still plays
+SE15 before returning without a bullet or aim update. No per-cycle reset of side,
+speed or angle exists in the original leaf.
+
+`tests/test_yumeko_sweep_cycles.py` models the rank-dependent sword counts,
+side parity, first-cycle 48-shot sequence, later-cycle 60-shot sequence, and
+the terminal no-shot reset/aim carry. The maintained source change is only a
+comment clarifying this existing behavior.

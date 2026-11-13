@@ -55,6 +55,8 @@ void near yumeko_pattern_sword_sweep(void)
             snd_se_play(YSW_BURST_START_SOUND);
             yumeko_sweep_round++;
             if(yumeko_sweep_round > YSW_BURST_ROUND_LIMIT) {
+                // This restarts the sword sweep only. Side, bullet speed and
+                // the last aimed angle deliberately carry into the next cycle.
                 yumeko_sweep_round = YSW_FIRST_ROUND;
                 return;
             }
