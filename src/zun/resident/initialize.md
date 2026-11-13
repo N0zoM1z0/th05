@@ -343,3 +343,13 @@ absent-only-creation,shared-bottom-failure-return}/result.json` records.
 This narrows the next investigation to the original compiler's construction
 of distinct error-call tails; further equivalent outer `if/else` rearrangements
 are unlikely to be productive without new disassembly or compiler evidence.
+
+## 2026-11-13 natural control-flow recovery
+
+A new source-only control-flow form now reproduces the complete 269-byte resident `main()` extent in a real TCC/TASM/TLINK producer build, with no inline assembly, self-assignment, or optimization barrier:
+
+- `if(seg) goto resident_remove_success;` keeps the original success branch forward and places the not-found path first.
+- The successful removal path jumps to `resident_success`, sharing the final zero-return tail with normal initialization.
+- The not-found path retains its ordinary `dos_puts2()` call and failure return; compiler jump-tail sharing with the later file-failure path now matches the original bytes.
+
+The producer comparison is exact for outer `ZUN.COM` offsets `0x0E8D..0x0F9A` (269/269 bytes), corresponding to child COM addresses `0x04A9..0x05B6`. This is a first-producer raw-byte result; the canonical two-round unit replay and acceptance-ledger entry remain pending.

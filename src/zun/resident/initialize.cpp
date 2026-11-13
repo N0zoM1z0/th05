@@ -20,14 +20,13 @@ int main(int argc, const unsigned char **argv)
     graph_clear();
     if(argc == 2) {
         if(ZUN_ARG_IS(argv[1], 'R', 'r')) {
-            if(seg) {
-                dos_free(seg);
-                dos_puts2(ZUN_RESIDENT_REMOVED);
-                return 0;
-            } else {
-                dos_puts2(ZUN_RESIDENT_NOT_FOUND);
-                return 1;
-            }
+            if(seg) goto resident_remove_success;
+            dos_puts2(ZUN_RESIDENT_NOT_FOUND);
+            return 1;
+        resident_remove_success:
+            dos_free(seg);
+            dos_puts2(ZUN_RESIDENT_REMOVED);
+            goto resident_success;
         } else if(ZUN_ARG_IS(argv[1], 'D', 'd')) {
             debug = 1;
         } else {
@@ -59,6 +58,7 @@ int main(int argc, const unsigned char **argv)
     if(debug) {
         resident->debug = true;
     }
+resident_success:
     return 0;
 }
 
