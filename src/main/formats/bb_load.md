@@ -80,3 +80,29 @@ binder. It emits no DATA or BSS. Receipt:
 `.analysis/gpt-web-main-bb-load-asm-first-a/receipt.json`.
 The 55 bytes gain **reviewed ASM instruction credit**. The natural C++
 context candidate remains inexact; no additional C++ ownership is inferred.
+
+## 2026-11-13: post-allocation DS-stack alternative
+
+A fresh C++ shape experiment avoids SI entirely by pushing the **post-
+`hmem_allocbyte()` DS** after the allocator returns. That one-word stack save
+still places the far filename at `SS:[BX+4]`. After DOS open returns the handle
+in AX, the candidate moves it to BX, pops DS to restore the allocator's DS,
+then pushes that same DS again before switching DS to the allocated buffer.
+After read and close it pops DS once more, leaving caller SI untouched and
+letting the compiler load the segment return value without a saved-SI
+epilogue.
+
+Two independent actual cold native producers emit the same complete **51-byte**
+shape and OMF. Its far allocator relocation moves to relative offset **6**
+(instead of the native **7**), and only four byte positions match the original
+at their same offsets. This is a useful source-level DS-lifetime alternative,
+not an exact reconstruction and not an improvement over the maintained
+51/55-byte natural candidate, which preserves 51 original byte positions and
+the native relocation. The diagnostic was not emulator-executed and receives
+zero CODE credit. The maintained C++ context provider and the exact 55-byte
+reviewed ASM owner are unchanged.
+
+Evidence:
+`.analysis/gpt-web-bb-load-post-alloc-ds-stack-a-20261113/native-diagnostic.json`
+and
+`.analysis/gpt-web-bb-load-post-alloc-ds-stack-b-20261113/native-diagnostic.json`.
