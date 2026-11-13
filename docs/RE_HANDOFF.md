@@ -136,12 +136,13 @@ The full ZUN ownership summary and current intervals are in
   source closure replays exact twice with original ordered fixups and the
   compiled fan-angle negative rejected. No duplicate CODE credit. See
   [`louise/update.md`](../src/main/boss/louise/update.md).
-- **Vector2 near MOVSX frontend boundary (2026-11-13)**: TCC-S near Pascal
-  trials reject inline `MOVSX` from BP/table operands and register operands,
-  even with far-vector-style C-linkage table declarations; an ordinary inline
-  16-bit MOV control succeeds. This narrows the existing 12-byte C++ residual
-  to a near-context MOVSX parser/lowering limitation. The 67-byte C++ result
-  remains diagnostic only; the 55-byte ASM remains sole exact owner. See
+- **Vector2 near MOVSX frontend/register boundary (2026-11-13)**: TCC-S near
+  Pascal trials reject inline `MOVSX` from BP/table operands and register
+  operands, even with far-vector-style C-linkage declarations. Ordinary inline
+  MOV succeeds. Direct `_EDX = length` and reordered table reads still use EAX
+  as TCC's signed-load scratch; compound pseudoregister products can become
+  the wrong multiply and logical shift. The semantically correct natural C++
+  remains 67 bytes; the 55-byte ASM remains sole exact owner. See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
 - **Mai/Yuki defeated-character lifetime (2026-11-13)**: the one byte of
   `boss2.phase_state` is now explicitly viewed as `patterns_seen` during
@@ -181,10 +182,12 @@ The full ZUN ownership summary and current intervals are in
 
 1. **BB resource loader**: its 55-byte function is already exactly owned as
    original-language ASM. The maintained C++ context candidate matches 51/55
-   bytes in two producers. A new post-allocation DS-stack alternative emits a
-   reproducible 51-byte shape but shifts the allocator relocation from +7 to
-   +6 and is much less byte-aligned; it remains diagnostic only. The maintained
-   candidate is unchanged and the ASM remains sole exact owner. See
+   bytes in two producers with the original +7 relocation; the only residual
+   is `MOV AX,[bb_load_seg]; POP SI` versus native `POP SI; MOV AX,[bb_load_seg]`.
+   A CX-held/stack-DS alternative reproduces 51 bytes twice but shifts the
+   relocation to +6 and relies on CX surviving DOS open, so it remains a
+   diagnostic only. `-k`, `-r`, `-O-` and explicit-SI matrices do not solve the
+   epilogue order. The exact ASM remains sole owner. See
    [`bb_load.md`](../src/main/formats/bb_load.md).
 2. **Remaining physical ownership gaps**: use the live intervals in
    `resources/ownership.json` and the current
