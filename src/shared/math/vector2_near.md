@@ -63,3 +63,29 @@ negative that fails comparison. The exact receipt is
 native review is `.analysis/gpt-web-vector2-near-native-review-20261110.json`.
 All 55 bytes gain **reviewed ASM instruction ownership**. The earlier natural
 C++ 92-byte candidate is still inexact and is not reclassified or replaced.
+
+## 2026-11-13 follow-up: stack and register-lifetime lowering probes
+
+The best maintained pure-C++ diagnostic remains the **67-byte** two-producer
+candidate above; it is not exact and earns no CODE credit. Three additional
+natural-source directions were tested against the complete 55-byte leaf:
+
+- Reading the signed length explicitly through `_BP + 4` still makes Borland
+  canonicalize the parameter load to `MOVSX EAX,[BP+4]` followed by
+  `MOV EDX,EAX`; combining that with direct pseudoregister products emits
+  **76 bytes**.
+- Loading the sine sample through `_CX` and then sign-extending to `_ECX`
+  emits a word load followed by an EAX-based sign extension and another copy
+  to ECX; the complete function grows to **78 bytes**.
+- Marking the angle/length parameters `register` does not bind them to the
+  native register lifetime. The ordinary-register form spills the long
+  length and both samples, emitting **93 bytes**; the mixed pseudoregister
+  form emits **84 bytes** and still routes the second product through EAX.
+
+These are first-producer shape diagnostics, not acceptance attempts. They
+show that direct stack spelling, a 16-bit CX staging value, and register
+parameter hints do not reproduce the native `EDX` lifetime or direct
+`MOVSX ECX,word` table load. No target bytes, inline instructions, artificial
+barriers, or duplicate ASM credit were introduced. The retained 67-byte
+candidate and its two positives/compiled shift negative remain the current
+best natural C++ evidence; a better ordinary-source lowering is still open.
