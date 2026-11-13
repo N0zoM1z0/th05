@@ -245,11 +245,18 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     import review_zun_brk as brk
     brk_claims, brk_sha = brk.reviewed_claims(root, view, verify_targets=verify_targets)
     claims.extend(brk_claims)
+    # The 583-byte early resident code partition is nine complete original
+    # CT.LIB _TEXT segments with their real FIXUPP/public-symbol closure.
+    import review_zun_early_ctlib as early_ctlib
+    early_claims, early_sha = early_ctlib.reviewed_claims(
+        root, view, verify_targets=verify_targets
+    )
+    claims.extend(early_claims)
 
-    # The newly overlaid total includes the accepted COM/MASTER scopes and
-    # independently matched Borland brk + nearheap modules. The 2-byte writable
-    # CRT CS slot and all other still-unreviewed -S bytes remain unknown.
-    expected = 5180
+    # The newly overlaid total includes the accepted COM/MASTER scopes, the
+    # Borland brk + nearheap modules, and the nine early CT.LIB code segments.
+    # The 2-byte writable CRT CS slot and other unreviewed -S bytes stay unknown.
+    expected = 5763
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -274,5 +281,9 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     evidence["brk"] = {
         "manifest": digest_file(root / "config/zun_brk.toml"),
         "acceptance": brk_sha,
+    }
+    evidence["early_ctlib"] = {
+        "manifest": digest_file(root / "config/zun_early_ctlib.toml"),
+        "acceptance": early_sha,
     }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())

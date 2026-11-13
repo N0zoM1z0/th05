@@ -21,7 +21,7 @@ from review_zun_nearheap import _index, _object_from_member, _pascal
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config/zun_early_ctlib.toml"
 PUBLIC = ROOT / "config/zun_early_ctlib_acceptance.json"
-CLAIM_ORIGIN = "original-borland-ct-library-object"
+CLAIM_ORIGIN = "reviewed-native-zun-com-reconstruction"
 LIBRARY_NAME = "Borland Turbo C++ 4.0 CT.LIB"
 
 

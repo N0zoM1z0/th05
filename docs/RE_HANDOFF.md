@@ -41,13 +41,15 @@ The target is **98% authored bytes exact**, but the global authored-byte
 
 ### 1. ZUN `-S` resident tail — physical ownership, not assumed code
 
-The corrected 18,116-byte launcher ownership map has **3,110 unknown bytes**
-remaining in five intervals:
+The corrected 18,116-byte launcher ownership map has **2,527 unknown bytes**
+remaining in four intervals. The former `0x13BA..0x1601` interval (583 bytes)
+is now fully identified as nine original Borland CT.LIB CODE segments with
+semantic OMF relocation/public-symbol checks; see
+[`ZUN early CT.LIB review`](reconstruction/ZUN_EARLY_CTLIB_2026-11-13.md).
 
 | Outer `ZUN.COM` interval | Bytes | `-S` COM interval / note |
 | --- | ---: | --- |
 | `0x0D47..0x0D49` | 2 | Writable CRT CS runtime slot; intentionally uninitialized |
-| `0x13BA..0x1601` | 583 | `0x09D6..0x0C1D` |
 | `0x18F7..0x2034` | 1,853 | `0x0F13..0x1650` |
 | `0x21E2..0x244E` | 620 | `0x17FE..0x1A6A` |
 | `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` |

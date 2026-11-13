@@ -1,105 +1,48 @@
-# ZUN.COM ownership overlay correction (2026-11-13)
+# ZUN resident ownership map — 2026-11-13
 
-The ownership view covers the complete original 18,116-byte `ZUN.COM` file.
-Its earlier 8,290-byte unknown total included several complete, independently
-accepted modules that were not yet imported into `resources/ownership.json`.
-This was an inventory integration gap, not newly discovered source bytes.
+Scope: the `-S` COM child inside the pinned `ZUN.COM` container. COM addresses below are segment offsets; the corresponding child-file offset is `COM - 0x100`. The outer-container offset is `0x0AE4 + COM - 0x100`.
 
-`scripts/review_zun_ownership.py` now binds each focused acceptance to the
-original launcher member and overlays only its source-written interval:
+## Verified file-backed ownership
 
-| Scope | Complete bytes | Instructions | Initialized data | Alignment |
-| --- | ---: | ---: | ---: | ---: |
-| COMCSTM outer header/help/wrapper | 371 | 71 | 300 | 0 |
-| Inner dispatcher/catalog/copy helper | 558 | 213 | 345 | 0 |
-| `-O` ADPCM child | 926 | 892 | 34 | 0 |
-| `-I` interrupt child | 1,009 | 450 | 557 | 2 |
-| `-G` gaiji reader/messages (font separate) | 185 | 75 | 109 | 1 |
-| `-M` memory child | 311 | 142 | 169 | 0 |
-| Master `-S` resdata/graph-clear family | 226 | 224 | 0 | 2 |
-| Master `-S` file/DOS family | 830 | 823 | 0 | 7 |
-| Borland `-S` brk/sbrk runtime | 127 | 127 | 0 | 0 |
-| Borland `-S` nearheap runtime | 637 | 631 | 6 | 0 |
-| **Newly overlaid total** | **5,180** | **3,648** | **1,520** | **12** |
+The live ownership overlay currently admits **5,763 bytes** of verified source ownership in this child. The vendor-library additions below carry zero authored-code credit.
 
-The two Master families are classified as `verified-vendor-code` with zero
-source-authored credit. The launcher/child reconstructions use separate
-`accepted-zun-com-*` categories because they are not part of the MAIN/OP/MAINE
-reviewed-ASM denominator. Their source-origin limits remain in their individual
-acceptance records. The existing C0T CRT, three resident C++ units, and the
-8,192-byte embedded font retain their previous independent owners; none is
-counted a second time.
+- The original C0T startup object is pinned independently. Its `_TEXT` segment is 0x367 bytes, but the file-backed `LEDATA` starts at COM 0x0100; the two-byte hole at COM `[0x0363, 0x0365)` is not claimed as code. The original C0T `_DATA` extent is 110 bytes at COM `[0x1650, 0x16BE)`.
+- The previously accepted `brk` and `nearheap` CT.LIB members remain independently verified at their recorded COM extents.
+- The new early-runtime CT.LIB partition covers the complete COM interval `[0x09D6, 0x0C1D)` (583 bytes), outer-container file interval `[0x13BA, 0x1601)`. Nine complete original OMF CODE segments tile it without gaps or overlaps:
 
-## Borland nearheap object matched (2026-11-13)
+| CT.LIB member / public entry | COM start | CODE bytes |
+|---|---:|---:|
+| `_abort` / `__abort` | `09D6` | 21 |
+| `atexit` / `_atexit` | `09EB` | 40 |
+| `errormsg` / `___ErrorMessage` | `0A13` | 31 |
+| `exit` / `_exit`, `__exit`, `__cexit`, `__c_exit` | `0A32` | 160 |
+| `ioerror` / `__IOERROR`, `__DOSERROR` | `0AD2` | 82 |
+| `isatty` / `_isatty` | `0B24` | 21 |
+| `lseek` / `_lseek` | `0B39` | 45 |
+| `n_scopy` / `N_SCOPY@` | `0B66` | 28 |
+| `setupio` / `__setupio` | `0B82` | 155 |
 
-The original tiny-model `CT.LIB` `nearheap` member is now independently matched
-at `-S` COM runtime `0x0C9C..0x0F13` (631 CODE bytes) and DATA
-`0x1A6A..0x1A70` (6 initialized bytes). Its three public function boundaries
-are `_free` at 0, `_malloc` at 207 and `_realloc` at 550; the DATA publics
-`__first`, `__last` and `__rover` occupy offsets 0, 2 and 4. All 579 non-
-relocation CODE bytes match verbatim; the only 52 differing bytes are exactly
-the member's 26 two-byte OMF relocation fields. The six DATA bytes match
-verbatim.
+For every one of these nine members, the reviewer checks the complete original OMF member, segment and group definitions, public boundaries, external-symbol order, LEDATA extents, and ordered FIXUPP records. The CODE bytes match exactly after applying the original 16-bit OMF relocations. Non-relocation bytes are byte-identical. Negative controls verify that both an instruction-byte mutation and a relocation-word mutation are rejected.
 
-The FIXUPP stream is now decoded semantically, not treated as an opaque mask:
-20 offset relocations use `_DATA` through `DGROUP` and resolve to `DS:1A6A`
-plus their original addends; six relative external relocations resolve to
-`___brk` at `0x0C1D` and `___sbrk` at `0x0C43`. Both target entries have the
-original near-function prologue. Re-applying those exact OMF relocations to the
-pinned CT.LIB LEDATA reconstructs the complete 631-byte target CODE exactly.
-The 41-file Borland library tree and the individual `CT.LIB` member are both
-hash-attested. Two negative controls mutate a nonrelocation instruction and a
-resolved relocation word; both are rejected by the same comparison path.
+The early code's external references resolve to original public definitions, including C0T symbols (`__terminate`, `__cleanup`, `__checknull`, `__restorezero`, `_errno`) and CT.LIB symbols (`__streams`, `__nfile`, `__openfd`, `_setvbuf`, `_isatty`, `_strlen`, `__rtl_write`, `__sys_nerr`). This also gives useful address anchors into the still-unclassified data intervals; those anchors are not themselves a data-ownership claim.
 
-`scripts/review_zun_nearheap.py --check` pins the installed Borland library
-tree, exact `nearheap` OMF member/publics/groups/externals/LEDATA/FIXUPP
-semantics, original `-S` child identity, all relocation offsets, and both
-target slices. The object is vendor code/data and receives zero
-source-authored credit.
+## Still unclassified
 
-## Borland brk/sbrk object matched (2026-11-13)
+The original resident tail's previously reported 3,110 unknown file-backed bytes is now reduced by the verified 583-byte early-runtime partition to **2,527 bytes**:
 
-The adjacent original CT.LIB `brk` member now matches `-S` COM runtime
-`0x0C1D..0x0C9C` (127 CODE bytes), at outer-file `0x1601..0x1680`, immediately
-before the nearheap code. Its four public entrypoints are `___brk` at 0,
-`___sbrk` at 38, `_brk` at 91 and `_sbrk` at 107. All 117 nonrelocation bytes
-match directly; the only ten differing bytes are exactly five 16-bit OMF
-external relocations. They resolve to `_errno` at `0x16AA` and `___brklvl` at
-`0x16B0`, both inside the separately accepted C0T CRT DATA extent
-`0x1650..0x16BE`. The two public function addresses also independently close
-the external call targets used by the accepted nearheap module.
+| COM interval | Bytes | Current interpretation |
+|---|---:|---|
+| `[0x0363, 0x0365)` | 2 | Writable CS slot; identity and lifetime still open |
+| `[0x0F13, 0x1650)` | 1,853 | Strong CT.LIB code candidates; complete member/fixup ownership not yet admitted |
+| `[0x17FE, 0x1A6A)` | 620 | Mixed resident data candidates; exact segment/member partition still open |
+| `[0x1A70, 0x1AA4)` | 52 | INIT/DATA tail candidates; exact segment/member partition still open |
 
-`scripts/review_zun_brk.py --check` pins the same complete Borland library
-tree and `CT.LIB` module, original `-S` child, all four public entrypoints,
-DGROUP/externals/FIXUPP semantics, and the accepted CRT DATA owner. Its two
-negative controls reject an instruction mutation and a linked-address
-mutation. This is vendor CODE with zero source-authored credit.
+The BSS range `[0x1AA6, 0x1AFA)` is zero-filled runtime storage, not file-backed bytes in the 2,527-byte count. The `atexit` OMF member's `__atexittbl` relocation resolves to COM 0x1ABA, inside that BSS range. Its 64-byte BSS extent is recorded as a symbol/segment anchor only; no BSS ownership claim is made by the early-code reviewer.
 
-The corrected ZUN view now has exactly **3,110 unknown bytes**, in five
-intervals:
+## Reproduction
 
-- `0x0D47..0x0D49` (2 bytes): the original writable CRT CS: runtime slot; it is
-  intentionally not initialized or credited.
-- `0x13BA..0x1601` (583 bytes): `-S` COM runtime `0x09D6..0x0C1D`.
-- `0x18F7..0x2034` (1,853 bytes): `-S` COM runtime `0x0F13..0x1650`.
-- `0x21E2..0x244E` (620 bytes): `-S` COM runtime `0x17FE..0x1A6A`.
-- `0x2454..0x2488` (52 bytes): `-S` COM runtime `0x1A70..0x1AA4`, ending
-  immediately before the accepted `-G` child.
+- `python3 scripts/review_zun_early_ctlib.py --check`
+- `python3 scripts/review_zun_ownership.py --check`
+- `python3 scripts/ownership.py --check`
 
-These intervals remain deliberately `unknown`; the ownership correction does
-not assert that every byte is executable code. The resident tail still needs
-its own CODE/DATA/INIT/BSS boundary review.
-
-Focused checks: `python3 scripts/ownership.py --check`,
-`python3 scripts/replay_zun_outer.py --check`,
-`python3 scripts/replay_zun_dispatcher.py --check`,
-`python3 scripts/replay_zun_adpcm.py --check`,
-`python3 scripts/replay_zun_interrupt.py --check`,
-`python3 scripts/replay_zun_gaiji.py --check`,
-`python3 scripts/replay_zun_memory.py --check`,
-`python3 scripts/replay_zun_resdata.py --check`,
-`python3 scripts/replay_zun_file_native.py --check`, and
-`python3 scripts/replay_zun_crt.py --check`,
-`python3 scripts/review_zun_nearheap.py --check`, and
-`python3 scripts/review_zun_brk.py --check`. No full cold replay is needed
-for these bounded ownership/vendor-object checks.
+Do not use a full cold replay for this workstream. The next high-value target is the 1,853-byte interval `[0x0F13, 0x1650)`: validate complete OMF member boundaries and relocation semantics, then separately resolve the 620-byte data region and 52-byte INIT/DATA tail.
