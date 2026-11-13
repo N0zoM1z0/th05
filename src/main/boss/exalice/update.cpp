@@ -9,6 +9,7 @@
 
 void pascal far exalice_update(void)
 {
+    // Decrement before phase dispatch; the shot gate may reload during bombs.
     if(exalice_bomb_invincibility != EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
         exalice_bomb_invincibility--;
     }

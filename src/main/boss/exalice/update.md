@@ -95,3 +95,46 @@ still compiled as real preceding context, not substituted by byte templates.
 This is a source-coherence refinement to a **previously accepted** major
 Boss function and earns no duplicate new authored CODE credit. No other
 accepted units were recompiled and no whole cold replay ran.
+
+
+## 2026-11-14: bomb immunity and HP-vs-time phase-drop handshake
+
+The Extra boss's bomb protection is a countdown plus a phase-specific damage
+gate, not a blanket `boss_hittest_shots()` wrapper. `exalice_update()`
+decrements `exalice_bomb_invincibility` at the very top of every update, before
+phase dispatch. The setup frame initializes it to zero. Damage-gated phases
+call `exalice_hittest_shots()`: while `bombing` is true that helper reloads the
+latch to **39** and returns the suppressed-shot result; otherwise it calls the
+real boss hit test only when the countdown has reached zero. Setup and Ready
+instead use `boss_hittest_shots_invincible()` directly, so their existing
+invincibility is independent of the bomb latch.
+
+Because the reload occurs after that frame's decrement, the last bomb update
+leaves 39. The next 38 non-bomb updates decrement to 1 and still suppress shot
+damage; the 39th decrements to zero and reopens the real hit test. Repeated
+bombing in a damage-gated phase reloads the full window each update. The timer
+is not cleared by `exalice_phase_next()`, so a phase boundary cannot bypass the
+remaining immunity.
+
+The phase transition's item-drop condition is a second, independent handshake.
+`boss_score_bonus()` first performs the regular boss score update and then sets
+`boss_phase_timed_out = false`. `exalice_phase_next()` drops point items and
+activates the bullet zap only when the explosion type is not `ET_NONE` **and**
+that latch is false; it sets the latch true again after the check. Thus an HP
+threshold exit that passed `exalice_hittest_shots()` and scored its 20-unit
+bonus drops items, while a regular-wave count limit or strict charge timeout
+that jumps around the hit/bonus path does not. A bomb-suppressed shot cannot
+clear the latch. This is why the same phase helper has different visible
+transition effects for HP exits and timeouts without a separate timeout flag
+being passed as an argument.
+
+The same helper then increments the phase, resets frame/mode/pattern count to
+`0/REPOSITION/0`, copies the previous `phase_end_hp` into current HP, and
+installs the next end-HP threshold. The bomb timer is intentionally absent
+from this reset, preserving the cross-phase immunity window.
+
+`tests/test_exalice_boss_protocol.py` covers the exact 39-frame countdown,
+the two separate hit gates, the `boss_score_bonus` latch write, HP-vs-time
+item-drop behavior, and the full phase transition state reset. The accepted
+111-byte phase helper and 1,060-byte full-context updater are locally replayed
+after the comment-only source clarification; no instruction bytes are added.

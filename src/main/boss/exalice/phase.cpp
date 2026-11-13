@@ -5,6 +5,8 @@
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/bomb_phase_protocol.hpp"
 
+// The updater decrements this latch before dispatch. Damage-gated phases
+// reload it while bombing; setup/ready phases use the separate invincible gate.
 int far exalice_hittest_shots(void)
 {
     if(bombing) {
@@ -16,6 +18,8 @@ int far exalice_hittest_shots(void)
     return EXALICE_SUPPRESSED_SHOT_RESULT;
 }
 
+// A successful boss_score_bonus clears boss_phase_timed_out; a timeout
+// reaches this helper with it still set, so only an HP exit drops items.
 void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
 {
     if(type != ET_NONE) {

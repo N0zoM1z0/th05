@@ -10,6 +10,8 @@
 #include "src/main/boss/exalice/combat_layout.hpp"
 #pragma codeseg EXALICE_FULL_TEXT main_03
 
+// The updater decrements this latch before dispatch. Damage-gated phases
+// reload it while bombing; setup/ready phases use the separate invincible gate.
 int far exalice_hittest_shots(void)
 {
     if(bombing) {
@@ -21,6 +23,8 @@ int far exalice_hittest_shots(void)
     return EXALICE_SUPPRESSED_SHOT_RESULT;
 }
 
+// A successful boss_score_bonus clears boss_phase_timed_out; a timeout
+// reaches this helper with it still set, so only an HP exit drops items.
 void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
 {
     if(type != ET_NONE) {
@@ -65,6 +69,7 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
 
 void pascal far exalice_update(void)
 {
+    // Decrement before phase dispatch; the shot gate may reload during bombs.
     if(exalice_bomb_invincibility != EXALICE_BOMB_INVINCIBILITY_EXPIRED) {
         exalice_bomb_invincibility--;
     }
