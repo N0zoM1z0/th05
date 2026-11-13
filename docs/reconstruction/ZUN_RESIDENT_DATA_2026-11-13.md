@@ -1,10 +1,9 @@
 # ZUN `-S` resident initialized DATA ownership (2026-11-13)
 
-The file-backed COM interval `[0x17FE, 0x1A6A)` is 620 bytes. Two
-independent original vendor sources now account for **585 bytes** within it:
-492 bytes from six complete Borland `CT.LIB` DATA LEDATAs and a 93-byte
-Master 0.23 library-header string. The remaining 35 bytes in this interval
-are four deliberate holes and remain unknown.
+The file-backed COM interval `[0x17FE, 0x1A6A)` is 620 bytes. The accepted
+review now accounts for **610 original vendor DATA bytes**: 492 bytes from six
+complete Borland `CT.LIB` DATA LEDATAs and 118 bytes from four complete Master
+0.23 OMF DATA members. Ten bytes remain unknown in six short gaps.
 
 ## Borland CT.LIB DATA segments
 
@@ -34,30 +33,45 @@ file-backed and is not claimed. A four-byte `rand` DATA pattern also appears
 inside the `files` target interval; it is not separately claimed because an
 independent resident placement/ownership boundary has not been established.
 
-## Master 0.23 header string
+## Master 0.23 OMF DATA members
 
-The first **93 bytes** at COM `[0x17FE, 0x185B)` exactly match the
-NUL-terminated `MASTERS.LIB Version 0.23 ... All rights reserved.` header
-string at byte offset `0x79` in the pinned original `_reference/ReC98/bin/masters.lib`
-(SHA-256 `6be41dbcfcf4504977165ccc44443525a29a01f85a1580e6ad0c620bf802faf6`).
-The complete 93-byte source and target slices are identical. The following
-29 bytes `[0x185B, 0x1878)` do not match this header slice and remain unknown.
-The Master header is vendor initialized DATA with zero authored-code credit.
+The pinned original `_reference/ReC98/bin/masters.lib` archive (SHA-256
+`6be41dbcfcf4504977165ccc44443525a29a01f85a1580e6ad0c620bf802faf6`, 640
+members) supplies four complete OMF DATA segments in the resident interval:
+
+| Member | COM DATA start | Bytes | OMF relationship |
+| --- | ---: | ---: | --- |
+| `version` | `17FE` | 93 | `_Master_Version` public at offset 20 |
+| `grp` | `185C` | 11 | imports `_Master_Version` |
+| `resdata` | `1868` | 10 | `pal98 grb` resource name |
+| `fil` | `1872` | 4 | original file state |
+| **Total** | | **118** | |
+
+All four are checked against their complete original OMF members: SEGDEF,
+GRPDEF, LEDATA, PUBDEF, EXTDEF and FIXUPP metadata, plus exact target bytes.
+Each DATA segment is a complete offset-zero LEDATA with no relocations. The
+`grp`/`version` public-symbol relationship is independently checked. The
+93-byte `version` LEDATA is also byte-identical to the NUL-terminated
+`MASTERS.LIB Version 0.23 ... All rights reserved.` archive-header string at
+file offset `0x79`; this is a cross-check of the same 93 bytes, not an
+additional ownership claim.
 
 ## Remaining gaps in the 620-byte interval
 
 | COM interval | Bytes |
-| --- | ---: |
-| `[0x185B, 0x1878)` | 29 |
+|---|---:|
+| `[0x185B, 0x185C)` | 1 |
+| `[0x1867, 0x1868)` | 1 |
+| `[0x1876, 0x1878)` | 2 |
 | `[0x1897, 0x1898)` | 1 |
 | `[0x1A0A, 0x1A0C)` | 2 |
 | `[0x1A67, 0x1A6A)` | 3 |
-| **Total** | **35** |
+| **Total** | **10** |
 
-The separate 52-byte tail `[0x1A70, 0x1AA4)` still needs its own DATA/INITDATA
-segment review. The 93-byte Master string and six CT.LIB DATA extents are the
-only claims made by this review; no inferred zero-fill, alignment, or BSS is
-credited.
+The separate 52-byte tail `[0x1A70, 0x1AA4)` is handled by the CT.LIB
+initialized/uninitialized DATA review. It is not included in the 610-byte total
+above. No BSS outside the bounded file-backed OMF DATA segment, inferred
+zero-fill, or duplicate `rand` pattern is credited.
 
 Focused reproduction:
 

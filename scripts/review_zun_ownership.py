@@ -267,11 +267,18 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
         root, view, verify_targets=verify_targets
     )
     claims.extend(resident_data_claims)
-
+    # The final 52 file-backed bytes are seven original CT.LIB DATA/INITDATA
+    # segments: 42 initialized LEDATA bytes and ten zero-filled bytes in the
+    # unwritten suffix of setargv's original DATA SEGDEF.
+    import review_zun_ctlib_data as ctlib_data
+    ctlib_data_claims, ctlib_data_sha = ctlib_data.reviewed_claims(
+        root, view, verify_targets=verify_targets
+    )
+    claims.extend(ctlib_data_claims)
     # The newly overlaid total includes the accepted COM/MASTER scopes, the
-    # Borland runtime modules, both CT.LIB CODE partitions, and resident DATA.
-    # Writable CRT state and the remaining small segment holes stay unknown.
-    expected = 8185
+    # Borland runtime modules, both CT.LIB CODE partitions and resident DATA.
+    # Writable CRT state and the remaining small segment/file holes stay unknown.
+    expected = 8262
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -308,5 +315,9 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     evidence["resident_data"] = {
         "manifest": digest_file(root / "config/zun_resident_data.toml"),
         "acceptance": resident_data_sha,
+    }
+    evidence["ctlib_data"] = {
+        "manifest": digest_file(root / "config/zun_ctlib_data.toml"),
+        "acceptance": ctlib_data_sha,
     }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())

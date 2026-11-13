@@ -24,10 +24,10 @@
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
-    "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 4573,
+    "reviewed-uninitialized-vendor-storage": 7378,
+    "unknown": 4496,
     "verified-vendor-code": 142514,
-    "verified-vendor-initialized-data": 8461
+    "verified-vendor-initialized-data": 8528
   },
   "views": {
     "main": {
@@ -14519,9 +14519,10 @@
         "accepted-zun-com-instructions": 1843,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 105,
+        "reviewed-uninitialized-vendor-storage": 10,
+        "unknown": 28,
         "verified-vendor-code": 4838,
-        "verified-vendor-initialized-data": 701
+        "verified-vendor-initialized-data": 768
       },
       "intervals": [
         {
@@ -15215,17 +15216,66 @@
           "start": 8674,
           "end": 8767,
           "kind": "verified-vendor-initialized-data",
-          "unit": "master-023-library-header-string",
+          "unit": "master-023-version-data",
           "origin": "reviewed-native-zun-com-reconstruction",
           "source_origin": "pinned-master-library-original-binary",
           "instruction_bytes": 0,
           "authored_credit": 0,
           "content_kind": "library-initialized-data",
           "library": "Master 0.23",
-          "member": "masters.lib-header-0x79"
+          "member": "version"
         },
         {
           "start": 8767,
+          "end": 8768,
+          "kind": "unknown"
+        },
+        {
+          "start": 8768,
+          "end": 8779,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "master-023-grp-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-binary",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Master 0.23",
+          "member": "grp"
+        },
+        {
+          "start": 8779,
+          "end": 8780,
+          "kind": "unknown"
+        },
+        {
+          "start": 8780,
+          "end": 8790,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "master-023-resdata-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-binary",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Master 0.23",
+          "member": "resdata"
+        },
+        {
+          "start": 8790,
+          "end": 8794,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "master-023-fil-data",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-binary",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Master 0.23",
+          "member": "fil"
+        },
+        {
+          "start": 8794,
           "end": 8796,
           "kind": "unknown"
         },
@@ -15337,8 +15387,131 @@
         },
         {
           "start": 9300,
+          "end": 9316,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-_pathops-seg2",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "_pathops",
+          "segment": 2,
+          "segment_name": "_DATA",
+          "segment_class": "DATA"
+        },
+        {
+          "start": 9316,
+          "end": 9320,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-setvbuf-seg2",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setvbuf",
+          "segment": 2,
+          "segment_name": "_DATA",
+          "segment_class": "DATA"
+        },
+        {
+          "start": 9320,
+          "end": 9322,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-sysnerr-seg2",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "sysnerr",
+          "segment": 2,
+          "segment_name": "_DATA",
+          "segment_class": "DATA"
+        },
+        {
+          "start": 9322,
+          "end": 9326,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-setargv-seg2",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setargv",
+          "segment": 2,
+          "segment_name": "_DATA",
+          "segment_class": "DATA"
+        },
+        {
+          "start": 9326,
+          "end": 9336,
+          "kind": "reviewed-uninitialized-vendor-storage",
+          "unit": "borland-ctlib-storage-setargv-seg2",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-uninitialized-segment",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setargv",
+          "segment": 2,
+          "segment_name": "_DATA",
+          "segment_class": "DATA"
+        },
+        {
+          "start": 9336,
+          "end": 9342,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-setupio-seg4",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setupio",
+          "segment": 4,
+          "segment_name": "_INIT_",
+          "segment_class": "INITDATA"
+        },
+        {
+          "start": 9342,
+          "end": 9348,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-_pathops-seg4",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "_pathops",
+          "segment": 4,
+          "segment_name": "_INIT_",
+          "segment_class": "INITDATA"
+        },
+        {
+          "start": 9348,
           "end": 9352,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-ctlib-data-setargv-seg3",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setargv",
+          "segment": 3,
+          "segment_name": "_INIT_",
+          "segment_class": "INITDATA"
         },
         {
           "start": 9352,
@@ -15414,7 +15587,7 @@
           "instruction_bytes": 68
         }
       ],
-      "zun_native_modules_review_sha256": "c5f4ecb097c3f3acf6c912fae22d0859729176f6a6912cb1f38570cdd41a5b87",
+      "zun_native_modules_review_sha256": "12ff85f89ffb408426481fbf6b584527e90bb91eeaf7669fe91e562491b44269",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }

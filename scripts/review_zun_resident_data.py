@@ -195,27 +195,95 @@ def evidence(config: dict) -> dict:
             "data": result,
         })
 
-    # The exact 93-byte Master 0.23 copyright string is a separate vendor DATA
-    # source, not a CT.LIB member and not a claim on the following 29 bytes.
+    # The Master 0.23 archive contains four complete DATA members in this
+    # resident region. The 93-byte archive-header string is a byte-identical
+    # cross-check of the actual `version` OMF DATA member, not a second claim.
     master_path = ROOT / config["master_library_path"]
     master = master_path.read_bytes()
-    if digest_bytes(master) != config["master_library_sha256"]:
+    if (digest_bytes(master) != config["master_library_sha256"] or
+            len(master) != config["master_library_size"]):
         raise ValueError("pinned original Master 0.23 library identity changed")
+    master_members = library_members(master)
+    if len(master_members) != config["master_library_member_count"]:
+        raise ValueError("pinned original Master 0.23 member inventory changed")
+    master_by_name = {member.name.lower(): member for member in master_members}
+    if len(master_by_name) != len(master_members):
+        raise ValueError("Master 0.23 member names are no longer unique")
+
+    master_modules = []
+    master_parsed = {}
+    for spec in config["master_modules"]:
+        name = spec["name"]
+        member = master_by_name.get(name.lower())
+        if member is None:
+            raise ValueError(f"original Master 0.23 member {name} is missing")
+        parsed = _parse_object(_object_from_member(member))
+        master_parsed[name] = parsed
+        formatted = _format_module(parsed)
+        for key in ("segments", "groups", "ledatas", "publics", "externals", "fixups_by_segment"):
+            if formatted[key] != spec[key]:
+                raise ValueError(f"Master 0.23 {name} {key} changed: {formatted[key]}")
+        if parsed["segments"].get(2) != (spec["data_segment_size"], "_DATA", "DATA"):
+            raise ValueError(f"Master 0.23 {name} DATA SEGDEF changed")
+        ledatas = [row for row in parsed["ledatas"] if row["segment"] == 2]
+        if (len(ledatas) != 1 or ledatas[0]["offset"] != spec["data_ledata_offset"] or
+                len(ledatas[0]["data"]) != spec["data_size"]):
+            raise ValueError(f"Master 0.23 {name} DATA LEDATA extent changed")
+        source = ledatas[0]["data"]
+        start = spec["start_com"]
+        target = child[start + spec["data_ledata_offset"] - 0x100:
+                       start + spec["data_ledata_offset"] - 0x100 + len(source)]
+        if len(target) != len(source):
+            raise ValueError(f"ZUN -S {name} Master DATA slice is incomplete")
+        result = _verify_data_segment(name, spec, parsed, config, source, target)
+        file_start = config["member_start"] + start + spec["data_ledata_offset"] - 0x100
+        intervals.append((start + spec["data_ledata_offset"],
+                           start + spec["data_ledata_offset"] + len(source), name))
+        master_modules.append({
+            "name": name,
+            "start_com": start,
+            "end_com": start + spec["data_segment_size"],
+            "file_start": file_start,
+            "data_size": len(source),
+            "program_records_sha256": digest_bytes(member.program_records),
+            "object_sha256": parsed["object_sha256"],
+            "fixup_records_sha256": digest_bytes(b"".join(parsed["fixup_records"])),
+            "record_counts": dict(parsed["record_counts"]),
+            "segments": formatted["segments"],
+            "groups": formatted["groups"],
+            "ledatas": formatted["ledatas"],
+            "publics": formatted["publics"],
+            "externals": formatted["externals"],
+            "fixups_by_segment": formatted["fixups_by_segment"],
+            "data": result,
+        })
+
+    # The grp object carries an EXTDEF for the version member's public; keep
+    # that original cross-member identity in the evidence even though the DATA
+    # itself has no FIXUPP relocation.
+    version_public = master_parsed["version"]["publics"].get("_Master_Version")
+    if version_public != (2, 20) or "_Master_Version" not in master_parsed["grp"]["externals"]:
+        raise ValueError("Master grp/version public-symbol relationship changed")
+    master_symbol_address = (config["master_modules"][0]["start_com"] + version_public[1]) & 0xFFFF
+
     master_source = master[config["master_header_offset"]:
                           config["master_header_offset"] + config["master_header_size"]]
     master_start = config["master_header_com_start"]
     master_target = child[master_start - 0x100:master_start - 0x100 + len(master_source)]
+    version_data = next(row["data"] for row in master_parsed["version"]["ledatas"]
+                        if row["segment"] == 2)
     if (len(master_source) != 93 or master_source != master_target or
-            master_source[-1:] != b"\0" or
+            master_source != version_data or master_source[-1:] != b"\0" or
             not master_source.startswith(config["master_header_text"].encode("ascii"))):
-        raise ValueError("Master 0.23 embedded library-header string is not exact")
+        raise ValueError("Master 0.23 header string and version OMF DATA member are not exact")
     master_file_start = config["member_start"] + master_start - 0x100
-    intervals.append((master_start, master_start + len(master_source), "master-header"))
+
     intervals.sort()
-    if len(intervals) != 7:
+    if len(intervals) != 10:
         raise ValueError("unexpected CT.LIB/Master resident DATA interval count")
     expected = [
-        (0x17FE, 0x185B), (0x1878, 0x1897), (0x1898, 0x189A),
+        (0x17FE, 0x185B), (0x185C, 0x1867), (0x1868, 0x1872),
+        (0x1872, 0x1876), (0x1878, 0x1897), (0x1898, 0x189A),
         (0x189A, 0x18A0), (0x18A0, 0x19E0), (0x19E0, 0x1A0A),
         (0x1A0C, 0x1A67),
     ]
@@ -286,6 +354,8 @@ def evidence(config: dict) -> dict:
         "origin": config["origin"],
         "master_source_origin": "pinned-master-library-original-binary",
         "master_library_sha256": digest_bytes(master),
+        "master_library_size": len(master),
+        "master_library_member_count": len(master_members),
         "master_header": {
             "file_start": master_file_start,
             "com_start": master_start,
@@ -297,6 +367,11 @@ def evidence(config: dict) -> dict:
             "origin": "pinned-master-library-original-binary",
         },
         "ctlib_modules": modules,
+        "master_modules": master_modules,
+        "master_external_symbol_definitions": {
+            "_Master_Version": {"member": "version", "segment": 2, "offset": version_public[1],
+                                "address": master_symbol_address},
+        },
         "segment_bases": config["segment_bases"],
         "resident_data": {
             "start_com": config["resident_data_start_com"],
@@ -304,7 +379,8 @@ def evidence(config: dict) -> dict:
             "size": config["resident_data_end_com"] - config["resident_data_start_com"],
             "source_written_bytes": total,
             "ctlib_data_bytes": sum(row["data_size"] for row in modules),
-            "master_header_bytes": len(master_source),
+            "master_data_bytes": sum(row["data_size"] for row in master_modules),
+            "master_header_crosscheck_bytes": len(master_source),
             "unknown_gaps": gap_strings,
         },
         "negative_control": {
@@ -349,20 +425,20 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
             "library": BORLAND_LIBRARY,
             "member": module["name"],
         })
-    master = record["master_header"]
-    claims.append({
-        "start": master["file_start"],
-        "end": master["file_start"] + master["size"],
-        "kind": "verified-vendor-initialized-data",
-        "unit": "master-023-library-header-string",
-        "origin": CLAIM_ORIGIN,
-        "source_origin": master["origin"],
-        "instruction_bytes": 0,
-        "authored_credit": 0,
-        "content_kind": "library-initialized-data",
-        "library": MASTER_LIBRARY,
-        "member": "masters.lib-header-0x79",
-    })
+    for module in record["master_modules"]:
+        claims.append({
+            "start": module["file_start"],
+            "end": module["file_start"] + module["data_size"],
+            "kind": "verified-vendor-initialized-data",
+            "unit": f"master-023-{module['name']}-data",
+            "origin": CLAIM_ORIGIN,
+            "source_origin": record["master_source_origin"],
+            "instruction_bytes": 0,
+            "authored_credit": 0,
+            "content_kind": "library-initialized-data",
+            "library": MASTER_LIBRARY,
+            "member": module["name"],
+        })
     return claims, digest_file(PUBLIC)
 
 
@@ -377,7 +453,7 @@ def main() -> int:
         PUBLIC.write_text(json.dumps(evidence(config), indent=2) + "\n")
     record = check()
     print(f"PASS: ZUN -S resident DATA: {record['resident_data']['source_written_bytes']} vendor DATA bytes "
-          f"across {len(record['ctlib_modules'])} CT.LIB segments + Master header; zero authored credit")
+          f"across {len(record['ctlib_modules'])} CT.LIB + {len(record['master_modules'])} Master OMF segments; zero authored credit")
     return 0
 
 
