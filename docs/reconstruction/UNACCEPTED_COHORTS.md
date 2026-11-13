@@ -1,4 +1,4 @@
-# Open source alternatives and resolved reconstruction candidates — 2026-11-12
+# Open source alternatives and resolved reconstruction candidates — 2026-11-13
 
 The acceptance manifests and ledgers, not historical first-producer notes,
 determine which complete original extents are owned. See
