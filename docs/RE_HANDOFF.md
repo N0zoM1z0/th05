@@ -43,7 +43,7 @@ EXE/COM reconstruction. The pinned Japanese game copy is
 2. **BB resource loader**: the 55-byte function is already exactly owned
    as [original-language ASM](../src/main/formats/bb_load.md). Its maintained
    C++ context candidate now emits the correct 55-byte extent and original
-   relocation at +7, matching 49/55 bytes in two deterministic producers.
+   relocation at +7, matching 51/55 bytes in two deterministic producers.
    The two remaining compiler differences are documented; do not double-count
    the ASM bytes.
 3. **Remaining original ownership gaps**: use the current intervals in
