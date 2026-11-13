@@ -239,11 +239,17 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     import review_zun_nearheap as nearheap
     nearheap_claims, nearheap_sha = nearheap.reviewed_claims(root, view, verify_targets=verify_targets)
     claims.extend(nearheap_claims)
+    # The adjacent 127-byte CT.LIB brk/sbrk member is a separate exact OMF
+    # object. It supplies nearheap's ___brk/___sbrk entries and relocates its
+    # _errno/___brklvl references into the already accepted C0T CRT DATA.
+    import review_zun_brk as brk
+    brk_claims, brk_sha = brk.reviewed_claims(root, view, verify_targets=verify_targets)
+    claims.extend(brk_claims)
 
-    # The newly overlaid total includes the previously accepted COM/MASTER
-    # scopes and the independently matched Borland nearheap object. The 2-byte
-    # writable CRT CS slot and all other still-unreviewed -S bytes stay unknown.
-    expected = 5053
+    # The newly overlaid total includes the accepted COM/MASTER scopes and
+    # independently matched Borland brk + nearheap modules. The 2-byte writable
+    # CRT CS slot and all other still-unreviewed -S bytes remain unknown.
+    expected = 5180
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -264,5 +270,9 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     evidence["nearheap"] = {
         "manifest": digest_file(root / "config/zun_nearheap.toml"),
         "acceptance": nearheap_sha,
+    }
+    evidence["brk"] = {
+        "manifest": digest_file(root / "config/zun_brk.toml"),
+        "acceptance": brk_sha,
     }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())

@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "kind": "bounded-zun-borland-ctlib-brk-module-ownership-review",
+  "manifest_sha256": "a6b923a986f6ca4be504937c8baefb3ce8ba0921a6b56812c40286704583a774",
+  "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "library_tree_sha256": "3fccb05d8dcfad6417ac4171482515fa0608f8e82b3cc81665a72f76621d8033",
+  "library_tree_file_count": 41,
+  "target_artifact_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
+  "source_library_sha256": "b665d5d30f0d3bafe3023ee45eeef183811c87201e9a1876f011acf5699261af",
+  "library_member": "brk",
+  "module_program_records_sha256": "7388139881cacaa589a82f7bd622f2590ede42e2ca0e5f11c6860e38b92f740d",
+  "module_object_sha256": "680bf1570defe588f0c7a082165c8d55252129fe90ad27da7634b9d8a5ebab55",
+  "fixup_records_sha256": "31d633f37c6285dff7643ea935710eb09637c7afe441bdc215ae46ac96742985",
+  "member_sha256": "37cc61a30944d5b3b14c2498f5946d7314d4f2ce5f64598dc3e9570d7b1d2376",
+  "member_start": 2788,
+  "member_size": 6564,
+  "origin": "pinned-borland-ct-library-original-object",
+  "global_authored_credit": "vendor-zero",
+  "nearheap_acceptance_sha256": "b3b4ece3a1611ac1a03d4637d75dc35f3b89eef646c5cf3a57dec8b820439d70",
+  "crt_acceptance_sha256": "4b32e14bc58627935eed9b85b5b40611caa89423cd533a9d7cc1f995f4f975f9",
+  "crt_decision_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
+  "code": {
+    "runtime_start": 3101,
+    "file_start": 5633,
+    "size": 127,
+    "source_sha256": "8234285366256a61714050cbe472e6065ae83bc81fd62b0494e255b86f61175a",
+    "target_sha256": "7022d948dc15378519301482a398db5b0a59630fec1b9549b4cff4d23986d372",
+    "relocated_sha256": "7022d948dc15378519301482a398db5b0a59630fec1b9549b4cff4d23986d372",
+    "nonrelocation_bytes_exact": 117,
+    "relocation_count": 5,
+    "relocation_field_bytes": 10,
+    "relocation_offsets": [
+      19,
+      27,
+      51,
+      74,
+      80
+    ],
+    "mismatch_offsets": [
+      19,
+      20,
+      27,
+      28,
+      51,
+      52,
+      74,
+      75,
+      80,
+      81
+    ],
+    "resolved_relocations": [
+      {
+        "site": 19,
+        "symbol": "___brklvl",
+        "source_addend": 0,
+        "resolved_word": 5808
+      },
+      {
+        "site": 27,
+        "symbol": "_errno",
+        "source_addend": 0,
+        "resolved_word": 5802
+      },
+      {
+        "site": 51,
+        "symbol": "___brklvl",
+        "source_addend": 0,
+        "resolved_word": 5808
+      },
+      {
+        "site": 74,
+        "symbol": "___brklvl",
+        "source_addend": 0,
+        "resolved_word": 5808
+      },
+      {
+        "site": 80,
+        "symbol": "_errno",
+        "source_addend": 0,
+        "resolved_word": 5802
+      }
+    ],
+    "raw_exact": false,
+    "exact_after_omf_relocation": true
+  },
+  "segments": {
+    "1": [
+      127,
+      "_TEXT",
+      "CODE"
+    ],
+    "2": [
+      0,
+      "_DATA",
+      "DATA"
+    ],
+    "3": [
+      0,
+      "_BSS",
+      "BSS"
+    ]
+  },
+  "groups": {
+    "1": [
+      "DGROUP",
+      [
+        3,
+        2
+      ]
+    ]
+  },
+  "publics": {
+    "_sbrk": 107,
+    "_brk": 91,
+    "___sbrk": 38,
+    "___brk": 0
+  },
+  "externals": [
+    "_errno",
+    "___brklvl"
+  ],
+  "crt_data_owner": {
+    "start": 8244,
+    "end": 8354
+  },
+  "negative_control": {
+    "nonrelocation_instruction_flip_rejected": true,
+    "resolved_relocation_flip_rejected": true
+  },
+  "size": 127,
+  "code_bytes": 127,
+  "authored_credit": 0
+}

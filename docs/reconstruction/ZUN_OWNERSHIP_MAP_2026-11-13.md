@@ -18,7 +18,9 @@ original launcher member and overlays only its source-written interval:
 | `-M` memory child | 311 | 142 | 169 | 0 |
 | Master `-S` resdata/graph-clear family | 226 | 224 | 0 | 2 |
 | Master `-S` file/DOS family | 830 | 823 | 0 | 7 |
-| **Newly overlaid total** | **4,416** | **2,890** | **1,514** | **12** |
+| Borland `-S` brk/sbrk runtime | 127 | 127 | 0 | 0 |
+| Borland `-S` nearheap runtime | 637 | 631 | 6 | 0 |
+| **Newly overlaid total** | **5,180** | **3,648** | **1,520** | **12** |
 
 The two Master families are classified as `verified-vendor-code` with zero
 source-authored credit. The launcher/child reconstructions use separate
@@ -53,16 +55,32 @@ resolved relocation word; both are rejected by the same comparison path.
 tree, exact `nearheap` OMF member/publics/groups/externals/LEDATA/FIXUPP
 semantics, original `-S` child identity, all relocation offsets, and both
 target slices. The object is vendor code/data and receives zero
-source-authored credit. The two referenced `brk` entrypoints are not claimed
-by this nearheap record; their own 127-byte CT.LIB module remains a separate
-source/relocation review within the preceding unknown interval.
+source-authored credit.
 
-The corrected ZUN view now has exactly **3,237 unknown bytes**, in five
+## Borland brk/sbrk object matched (2026-11-13)
+
+The adjacent original CT.LIB `brk` member now matches `-S` COM runtime
+`0x0C1D..0x0C9C` (127 CODE bytes), at outer-file `0x1601..0x1680`, immediately
+before the nearheap code. Its four public entrypoints are `___brk` at 0,
+`___sbrk` at 38, `_brk` at 91 and `_sbrk` at 107. All 117 nonrelocation bytes
+match directly; the only ten differing bytes are exactly five 16-bit OMF
+external relocations. They resolve to `_errno` at `0x16AA` and `___brklvl` at
+`0x16B0`, both inside the separately accepted C0T CRT DATA extent
+`0x1650..0x16BE`. The two public function addresses also independently close
+the external call targets used by the accepted nearheap module.
+
+`scripts/review_zun_brk.py --check` pins the same complete Borland library
+tree and `CT.LIB` module, original `-S` child, all four public entrypoints,
+DGROUP/externals/FIXUPP semantics, and the accepted CRT DATA owner. Its two
+negative controls reject an instruction mutation and a linked-address
+mutation. This is vendor CODE with zero source-authored credit.
+
+The corrected ZUN view now has exactly **3,110 unknown bytes**, in five
 intervals:
 
 - `0x0D47..0x0D49` (2 bytes): the original writable CRT CS: runtime slot; it is
   intentionally not initialized or credited.
-- `0x13BA..0x1680` (710 bytes): `-S` COM runtime `0x09D6..0x0C9C`.
+- `0x13BA..0x1601` (583 bytes): `-S` COM runtime `0x09D6..0x0C1D`.
 - `0x18F7..0x2034` (1,853 bytes): `-S` COM runtime `0x0F13..0x1650`.
 - `0x21E2..0x244E` (620 bytes): `-S` COM runtime `0x17FE..0x1A6A`.
 - `0x2454..0x2488` (52 bytes): `-S` COM runtime `0x1A70..0x1AA4`, ending
@@ -81,6 +99,7 @@ Focused checks: `python3 scripts/ownership.py --check`,
 `python3 scripts/replay_zun_memory.py --check`,
 `python3 scripts/replay_zun_resdata.py --check`,
 `python3 scripts/replay_zun_file_native.py --check`, and
-`python3 scripts/replay_zun_crt.py --check`, and
-`python3 scripts/review_zun_nearheap.py --check`. No full cold replay is needed
+`python3 scripts/replay_zun_crt.py --check`,
+`python3 scripts/review_zun_nearheap.py --check`, and
+`python3 scripts/review_zun_brk.py --check`. No full cold replay is needed
 for these bounded ownership/vendor-object checks.

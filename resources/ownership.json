@@ -25,8 +25,8 @@
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 7705,
-    "verified-vendor-code": 139967,
+    "unknown": 7578,
+    "verified-vendor-code": 140094,
     "verified-vendor-initialized-data": 7876
   },
   "views": {
@@ -14519,8 +14519,8 @@
         "accepted-zun-com-instructions": 1843,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 3237,
-        "verified-vendor-code": 2291,
+        "unknown": 3110,
+        "verified-vendor-code": 2418,
         "verified-vendor-initialized-data": 116
       },
       "intervals": [
@@ -14916,8 +14916,20 @@
         },
         {
           "start": 5050,
-          "end": 5760,
+          "end": 5633,
           "kind": "unknown"
+        },
+        {
+          "start": 5633,
+          "end": 5760,
+          "kind": "verified-vendor-code",
+          "unit": "borland-brk-sbrk",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 127,
+          "authored_credit": 0,
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "brk"
         },
         {
           "start": 5760,
@@ -15049,7 +15061,7 @@
           "instruction_bytes": 68
         }
       ],
-      "zun_native_modules_review_sha256": "05c57049604da7ce6113fdb18cd832235728591d0ccc9b32e500b1e921e1a920",
+      "zun_native_modules_review_sha256": "540e0e43cd221c2167d2fac7503e030f76d7c9464cff318b5a88133a60c8f6e6",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }
