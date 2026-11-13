@@ -16,8 +16,8 @@ from lib.unit_context import UnitContext,load_unit_target
 ROOT=Path(__file__).resolve().parents[1]
 PROOF='config/master_sin8_ownership.json'
 CONTEXT_PROOF='config/master_vendor_additions.json'
-CONTEXT_SHA256='67aef0634d32c582994685f66633c4529ddf2db12ccfce8afff562dac48f5ee9'
-FROZEN_EVIDENCE_SHA256='4ba80fb80108989a1f985495eb0ba3dca51ee5133976194b905f95a5cadee4aa'
+CONTEXT_SHA256='354ed10de9b2aa6ad3a1d706dd85cfd1d1beb37e7e736ba91238c4ccbdb95b7b'
+FROZEN_EVIDENCE_SHA256='6efabc22a700f30825a507bdaaea167d87b34661f006724cf53d479cc600b658'
 SOURCES=list(dict.fromkeys(['scripts/review_master_sin8.py',*context.SOURCES]))
 PINS={
  'main':dict(original_ds=0x209D,original_offset=0x41C,cal_ds=0x209E,cal_offset=0x42E,con_offset=0x90,con_size=0x1F40,module='th05_main.asm'),
