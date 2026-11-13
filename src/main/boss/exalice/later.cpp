@@ -6,7 +6,7 @@
 // Every four ticks, the firewave volley launches an angle and its exact
 // signed mirror. The angle negation must occur after the first real spawn.
 #define EXALICE_FIREWAVE_MIRROR_PAIR() { \
-    bullet_template.angle = boss_statebyte[14]; \
+    bullet_template.angle = exalice_boss_scratch.later_pattern_state.firewave.angle; \
     bullets_add_regular(); \
     bullet_template.angle = -bullet_template.angle; \
     bullets_add_regular(); \
@@ -18,8 +18,8 @@
 bool near exalice_pattern_firewave_fans(void)
 {
     if(boss.phase_frame == 64) {
-        boss_statebyte[14] = 0x40;
-        boss_statebyte[13] = 0;
+        exalice_boss_scratch.later_pattern_state.firewave.angle = 0x40;
+        exalice_boss_scratch.later_pattern_state.firewave.turn_phase = 0;
         pellet_bottom_col = 7;
     }
     if((boss.phase_frame % 2) == 0) {
@@ -30,15 +30,15 @@ bool near exalice_pattern_firewave_fans(void)
             exalice_set_spread(5, 6);
             bullet_template.speed.v = to_sp(5);
             EXALICE_FIREWAVE_MIRROR_PAIR();
-            if(boss_statebyte[13] == 0) {
-                boss_statebyte[14] -= 3;
-                if(boss_statebyte[14] <= 0x14) {
-                    boss_statebyte[13]++;
+            if(exalice_boss_scratch.later_pattern_state.firewave.turn_phase == 0) {
+                exalice_boss_scratch.later_pattern_state.firewave.angle -= 3;
+                if(exalice_boss_scratch.later_pattern_state.firewave.angle <= 0x14) {
+                    exalice_boss_scratch.later_pattern_state.firewave.turn_phase++;
                 }
             } else {
-                boss_statebyte[14] += 3;
-                if(boss_statebyte[14] >= 0x40) {
-                    boss_statebyte[13]--;
+                exalice_boss_scratch.later_pattern_state.firewave.angle += 3;
+                if(exalice_boss_scratch.later_pattern_state.firewave.angle >= 0x40) {
+                    exalice_boss_scratch.later_pattern_state.firewave.turn_phase--;
                 }
             }
             if((boss.phase_frame % 16) == 0) {

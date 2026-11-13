@@ -52,3 +52,32 @@ below establish acceptance.
 The actual first-fan speed5→4 control is compiled and rejected for the whole
 owner. All three complete functions and600 instruction bytes are accepted;
 no DATA, BSS, tables or padding receive credit.
+
+## 2026-11-13: shared firewave/spiral scratch-byte lifecycle
+
+The later firewave and spiral/gather attacks use the same physical Boss bytes
+13 and 14, but with different byte-14 roles. The typed
+`ExAliceLaterPatternState` view makes that lifetime explicit: byte 13 is the
+`turn_phase` selector in both attacks; byte 14 is `firewave.angle` in the
+firewave callback and `spiral.acceleration_step` in the spiral callback. Each
+pattern initializes its own pair at its original entry frame, so neither
+pattern inherits the previous attack's value. Byte 15 remains the separate
+`ExAlicePatternByte15` overlay for each pattern's independent angle offset.
+
+Compile-time size and absolute-offset assertions pin the later-pattern view
+inside the original 16-byte `boss_statebyte` object: byte 13 remains offset 13
+and both byte-14 views remain offset 14. The raw `boss_statebyte[13]` and
+`[14]` accesses are removed from both source bodies; byte 11 and byte 12 are
+retained without invented semantics. The 600-byte later-pattern cohort and
+all other seven accepted consumers of the shared header were replayed in two
+independent Borland/TLINK producers; their original bytes and ordered fixups
+remain exact and the compiled negative is rejected. The 334-byte spiral
+owner was separately replayed through its TCC-S/TASM32 pipeline, retaining
+its original ordered fixups and rejecting its compiled radius negative. The
+complete 1,060-byte EX-Alice controller was included in the header-closure
+replay and remains exact. No duplicate CODE credit is added.
+
+Receipts:
+`.analysis/unit-replays/gpt-web-exalice-typed-later-pattern-state-20261113/receipt.json`
+and
+`.analysis/unit-replays/gpt-web-exalice-typed-later-pattern-state-spiral-20261113/receipt.json`.

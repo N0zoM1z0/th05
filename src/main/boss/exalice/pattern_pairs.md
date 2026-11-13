@@ -45,3 +45,14 @@ provider names, actual target frames/offsets, native indexing and dispatch,
 complete bytes and source identities. The adjacent unit proposal contains
 this owner and the independent shot-power threshold array. Run
 `python3 .analysis/power-exalice-data-review.py` for bounded native checks.
+
+
+## 2026-11-13: first consumer of the Ready direction seed
+
+The Ready transition initializes byte 15 to zero before wave 1. The first
+pattern pair is random fan then turning rings; only the second callback reads
+byte 15, toggles the seed at frame 64 and uses the resulting direction. The
+following wave's diamond rings toggles that same physical byte again. This is
+why the shared union member is named `ready_direction_seed`, not an initial
+fan substate. The 16-byte scratch allocation and the 16-byte callback table
+are distinct objects and neither changes.

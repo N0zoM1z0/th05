@@ -70,9 +70,13 @@ wave (four table rows); its increment still occurs after each completed
 charge attack. Byte 10 is the final-fan palette step. The source now names
 its three original states—drain green, brighten RGB to the red threshold,
 then dim RGB—and preserves the exact `0 → 1 → 2 → 1` transitions, without
-adding a new reset. Byte 15 is the initial fan's own substate and is not
-mistaken for a persistent wave counter. Size and offset static assertions
-verify each physical byte; all foreign storage and state reuse remain intact.
+adding a new reset. Byte 15 is seeded to zero by the Ready transition before
+the first pattern pair; the first callback that reads it is the turning-ring
+alternative, which toggles the seed at frame 64. The random-fan alternative
+does not consume byte 15. Later attack callbacks reuse that same physical byte
+through their own direction/angle views, rather than a persistent wave counter.
+Size and offset static assertions verify each physical byte; all foreign
+storage and state reuse remain intact.
 
 The FULL and standalone updater bodies are token-identical. The acceptance
 owner is **the actual `full_context.cpp`**, whose genuine far hit gate,
@@ -184,7 +188,7 @@ The real full-context source and the independent `phase.cpp` now give
 the same meanings to the original **39** bomb-invulnerability reload,
 zero/expired hit-gate result, and the zero frame and prior-pattern
 counter installed when any phase finishes. The standalone `update.cpp`
-uses the same named zero bomb timer, initial fan substate, and first
+uses the same named zero bomb timer, Ready-time direction seed, and first
 wave index as the accepted `full_context.cpp` update; their entire
 18-phase update bodies remain token-identical. This ensures that the
 locally emitted hit gate in the original three-function context retains
@@ -208,7 +212,7 @@ initialized-DATA owner.
 The final byte of the original 16-byte `boss_statebyte` area now has one
 shared `ExAlicePatternByte15` union in `ExAliceBossScratch`. The complete
 controller and each attack source use names for the same physical byte:
-initial-fan substate, turning-ring direction, sweeping-laser direction,
+Ready direction seed, turning-ring direction, sweeping-laser direction,
 firewave aim angle, diamond-ring direction, spiral angle offset, and final-fan
 angle. Compile-time assertions keep the union one byte, every member at union
 offset zero, and the containing member at Boss scratch offset 15.
@@ -218,9 +222,12 @@ sweeping-laser pattern initializes its direction when armed; spiral gather
 and final fan initialize their angle offsets at their own original entry
 frames. Turning rings and diamond rings continue to toggle the existing byte
 without an added reset, and firewave fans still assign the real player aim
-before consuming it. The initial-fan value remains only the original setup
-write; no unobserved read or new behavior is inferred. The standalone and
-accepted full-context controller keep the same initial-fan assignment.
+before consuming it. The Ready value is a real initial-direction seed, not an initial-fan
+substate: the first phase-pair alternative is random fan (no byte-15 access),
+and the second is turning rings, which toggles the seeded value at frame 64
+before using it. The following diamond-ring pattern toggles the same physical
+byte again. The standalone and accepted full-context controllers retain this
+same Ready-time seed write, with no new resets between patterns.
 
 The focused seven-unit Borland replay passed twice, including the complete
 **1,060-byte** controller, all three final-pattern functions, initial/later
@@ -232,3 +239,22 @@ negative was rejected. Receipts:
 `.analysis/unit-replays/gpt-web-exalice-byte15-spiral-20261113/receipt.json`.
 Only already accepted source owners were refreshed; no duplicate byte credit
 or new storage was introduced.
+
+
+## 2026-11-13: byte-15 Ready seed consumer identified
+
+A bounded xref pass over all accepted EX-Alice MAIN function intervals showed
+that the Ready transition's byte-15 store is not an initial-fan substate. The
+phase-pair table is `[random_fan, turning_rings]` for wave 1: random fan does
+not read byte 15, while the following turning-ring callback reads the seeded
+zero, toggles it at frame 64, and uses it to select the first rotation
+direction. The later diamond-ring callback toggles the same byte in the next
+pair. Other later callbacks reuse byte 15 through their own angle/direction
+views.
+
+The source names now reflect that data flow: `ready_direction_seed` and
+`EXALICE_READY_DIRECTION_SEED`. The 16-byte Boss scratch layout and byte-15
+union offset are unchanged. This corrects the previous `initial_fan_substate`
+label without changing the original store or inventing a new reset. The
+complete 1,060-byte EX-Alice update remains part of the focused header-closure
+replay; no duplicate CODE credit is claimed.

@@ -36,3 +36,15 @@ fixups, with only two gather color bytes reversed. Correcting the actual
 arguments to `(frame-48,6,7)` produces `main-exalice-initial-patterns-c`: two
 fresh deterministic full raw/ordered positives and a rejected fan spread
 count 5→6 mutation. All three functions and 314 instruction bytes are accepted.
+
+
+## 2026-11-13: Ready-time direction seed
+
+The Ready transition seeds Boss byte 15 with zero. The first wave's pattern
+pair is random fan followed by turning rings: random fan does not access this
+byte, while turning rings toggles the seed at frame 64 and then uses it as its
+rotation direction. The next wave's diamond-ring callback toggles the same
+physical byte again. The shared `ExAlicePatternByte15` union now calls the
+Ready view `ready_direction_seed`, not an initial-fan substate. The byte's
+size and offset are unchanged; the complete 314-byte initial-pattern owner
+remains byte/fixup exact.

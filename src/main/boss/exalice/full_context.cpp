@@ -117,7 +117,7 @@ void pascal far exalice_update(void)
             boss.phase_state.patterns_seen = 0;
             boss.phase_frame = 0;
             boss_custombullets_render = exalice_custombullets_render;
-            exalice_boss_scratch.pattern_byte15.initial_fan_substate = EXALICE_INITIAL_FAN_SUBSTATE;
+            exalice_boss_scratch.pattern_byte15.ready_direction_seed = EXALICE_READY_DIRECTION_SEED;
             exalice_pattern = exalice_pattern_random_fan;
             exalice_boss_scratch.wave_index = EXALICE_WAVE_1;
         }

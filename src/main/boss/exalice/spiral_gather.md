@@ -43,3 +43,23 @@ SHA-256 `8b7e1b6986636faacad6b711776cc385a12b6e2e917c12253ae9ade64281a30c`.
 The earlier single producer is diagnostic only. Target provenance remains
 candidate-local-attested. Net new coverage is one function / 334 C++ instruction
 bytes; no complete executable or global percentage is claimed.
+
+## 2026-11-13: typed later-pattern scratch overlay
+
+The spiral's turn controller and acceleration step are now named through the
+`ExAliceLaterPatternState` view of the original `boss_statebyte`: `turn_phase`
+is byte 13 and `spiral.acceleration_step` is byte 14. The adjacent firewave
+pattern reuses byte 13 for its own turn phase and byte 14 as its bullet angle.
+Both attacks initialize their own pair at their existing entry frame; this is
+sequential reuse, not persistent cross-pattern state. The independent
+byte-15 `spiral_angle_offset` remains unchanged. Compile-time assertions pin
+the complete 16-byte Boss scratch layout and both absolute offsets.
+
+The complete 334-byte spiral function was recompiled through the existing
+TCC-S/TASM32 pipeline: both compiler stages preserve all raw bytes and the
+original ordered fixups `[86,256]`; the compiled radius mutation is rejected.
+The seven other accepted EX-Alice units that include the shared header were
+also replayed as complete owners, including the 600-byte firewave/later
+cohort and 1,060-byte update controller. All remain byte/fixup exact. These
+are source-semantic refinements to existing accepted owners, with no duplicate
+instruction credit.
