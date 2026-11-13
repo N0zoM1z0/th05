@@ -153,6 +153,14 @@ The full ZUN ownership summary and current intervals are in
   consumers (18 complete owners total) replay exact twice with original
   ordered fixups; compiled negatives are rejected. No duplicate ownership.
   See [`generic.md`](../src/main/boss/generic.md).
+- **Scroll Y conversion natural-C++ leaf alternative (2026-11-13)**: the
+  complete 40-byte `scroll_subpixel_y_to_vram_seg1()` C++ implementation
+  matches the original raw bytes and empty relocation stream in two fresh
+  Borland/TLINK producers; the 400→399 compiled negative is rejected. It
+  occupies exactly the same physical interval as the already accepted
+  reviewed-ASM source owner, so it is retained as an exact source alternative
+  rather than imported as a second physical owner or counted again. See
+  [`coordinates.md`](../src/main/scroll/coordinates.md).
 - **Mai/Yuki defeated-character lifetime (2026-11-13)**: the one byte of
   `boss2.phase_state` is now explicitly viewed as `patterns_seen` during
   combat and `defeated_character` after the result-minus-one handoff (Mai=0,
