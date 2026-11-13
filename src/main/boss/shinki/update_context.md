@@ -62,8 +62,10 @@ Root native and actual-producer checks are retained in
 Only the complete updater receives new credit: one function and 958 authored
 CODE bytes (932 instructions plus 26 compiler-table bytes). The 1,175-byte
 prefix is already accepted through other owners and receives no second credit.
-Ball update 220 and wing preparation 386 remain unknown. There is no new DATA,
-ASM, packed-container or whole-program exactness claim.
+The 220-byte ball update and 386-byte wing preparation are separate accepted
+complete functions with their own focused two-producer receipts. They are not
+part of this updater's credited prefix. There is no new DATA, ASM,
+packed-container or whole-program exactness claim.
 
 ## Named Shinki attack phases (2026-11-11)
 

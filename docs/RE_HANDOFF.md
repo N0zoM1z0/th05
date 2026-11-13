@@ -41,9 +41,11 @@ EXE/COM reconstruction. The pinned Japanese game copy is
    historical failures. Do not count the hybrid context twice. See
    [the exact source and proof](../src/main/boss/yumeko/swords_update.md).
 2. **BB resource loader**: the 55-byte function is already exactly owned
-   as [original-language ASM](../src/main/formats/bb_load.md). Its natural
-   C++ alternative still emits 56 bytes with a different stack-frame and
-   register-save order. Do not double-count the ASM bytes.
+   as [original-language ASM](../src/main/formats/bb_load.md). Its maintained
+   C++ context candidate now emits the correct 55-byte extent and original
+   relocation at +7, matching 49/55 bytes in two deterministic producers.
+   The two remaining compiler differences are documented; do not double-count
+   the ASM bytes.
 3. **Remaining original ownership gaps**: use the current intervals in
    `resources/ownership.json`, not an old gap list. Verify physical source
    boundaries, native consumers, initializers versus `?` storage, and

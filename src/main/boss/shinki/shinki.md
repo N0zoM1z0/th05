@@ -7,8 +7,7 @@ and [complete update](update_context.md) for original-source evidence.
 Earlier “ball/wing unaccepted,” 216/221/232-byte, ordered-fixup and foreign-gap
 statements below are *historical failed-producer notes*, not active blockers.
 
-TH05 Shinki update candidate
-============================
+## Historical source reconstruction and compiler trials
 
 Natural-source provenance is nmlgc/ReC98 at
 `b6ba5b0a529edbb31efdf8c0e939263804f8ee47`: `th05/boss_6.cpp`
@@ -17,18 +16,14 @@ selecting `th05/main/boss/b6.cpp`, including its original
 patterns, wing/laser transitions, custom ball behavior, palette transitions,
 floating motion, HP thresholds, bomb damage rule, and defeat dispatch.
 
-Two calls to the reference's empty inline `optimization_barrier()` are
-deliberately omitted from `b6balls_update`. Its genuine C++ behavior remains,
-including the actual PlayfieldPoint-returning `pos.update_seg3()` declaration
-and register-backed AX/DX clipping consumer. No alternative return type,
-assembly transcription, emitted opcode, ghost symbol, optimization barrier,
-or invented padding is supplied. The first cold pair demonstrated a216-byte natural update,
-four bytes shorter than the original220. The entire original220-byte function
-remains unaccepted. Its complete natural216-byte body is retained, without
-padding or restoring the barriers.
+The early natural `b6balls_update()` candidate omitted the reference's empty
+inline `optimization_barrier()` calls and emitted216 bytes, four short of the
+original220. That first candidate was rejected; the maintained source later
+recovered the full original extent and was accepted in a separate focused
+replay. Its ABI and lifecycle notes are in `ball_lifecycle.md`.
 
-Current source contributions and proposed exact scopes
------------------------------------------------------
+The initial source contributions and proposed scopes below are historical
+compiler investigations, not current acceptance status.
 
 `B6_BALLS_TEXT` contains the observed297-byte natural add/update contribution:
 the complete81-byte `b6balls_add` followed by the unaccepted216-byte update.
@@ -174,17 +169,14 @@ curved-ring mutation owner. It archives and revalidates the full mixed parent,
 all actual OMF/MAP/MZ inputs and the actual negative, with zero new compiler
 invocations. The original failed verdict and its ordering remain intact.
 
-The accepted total is ten whole functions / 1,486 instruction bytes. Wing
-preparation (386), cheeto walls (169), devil (802), and main update (959) remain
-unaccepted for ordered-fixup differences. The static phase helper (102) has no
-independent public MAP boundary and remains unaccepted. The original 220-byte
-ball update remains 216 under natural C++; its complete original extent stays
-unaccepted and the four-byte context hole is outside accepted functions.
+This ten-function / 1,486-byte total was an earlier strict subset. The
+separately recorded wing-preparation, Cheeto-wall, Devil, phase-helper, ball
+update and complete-controller acceptances below supersede its open-scope list.
 
 The additional real segment boundary before the static helper begins at the
 original even address `1ACBA`. This preserves the compiler's genuine final
-word-table alignment phase. No byte, fake function or barrier was added to
-force alignment; the complete final update, table and padding remain unaccepted.
+word-table alignment phase. The old note's unaccepted final-update status is
+superseded by the complete `update_context.cpp` acceptance below.
 
 ## Independent private-helper acceptance
 
@@ -194,8 +186,10 @@ Its static near declaration and natural function body are unchanged; the
 compiler emits the unused private definition without a synthetic caller or
 exported alias. Two fresh producers, raw bytes, original fixup72 and its
 sound mutation pass. See `phase23.md`. This resolves only the former static
-MAP-public obstacle; ball220 and the four internally ordered-inexact functions
-remain unaccepted. Previously accepted scopes are unchanged and not replayed.
+MAP-public obstacle. The later focused replays accepted the ball update,
+wing preparation and all remaining complete Shinki owners; the earlier
+ordered-fixup failures below are historical. Previously accepted scopes were
+unchanged and not replayed.
 
 ## Independently accepted cheeto and devil owners
 
@@ -206,9 +200,9 @@ Each body has one canonical `.inl`; the HP enum and existing wing helpers
 are also shared without changing their tokens. Inverse expansion preserves
 the old complete source. Exactly nine accepted records were revalidated in
 `main-shinki-canonical-refresh-b`; the separate phase23 owner was unchanged.
-The family total is13 functions /2559 instruction bytes, with zero new
-padding or CODE tables. Remaining complete extents are ball220, wing386 and
-update959; they stay unaccepted. The old mixed suffix is not relabelled exact.
+This 13-function /2559-byte total was the accepted family at that point.
+The complete update, ball-update and wing-preparation owners were accepted
+separately afterward; the earlier mixed suffix is not relabelled exact.
 See `cheeto_walls.md` and `devil.md`.
 
 ## Complete update accepted through adjacent final-pattern context
@@ -226,11 +220,12 @@ source/TU identity and whole-program linkage remain unproved.
 This supersedes the update's earlier unaccepted status without changing those
 failed receipts or any older accepted record. The family now has14 complete
 accepted functions /3517 authored CODE bytes (3491 instruction plus26 table).
-Its remaining unaccepted complete scopes are ball220 and wing386. See
+The ball220 and wing386 scopes are separate accepted complete functions,
+not part of the update-context prefix. See
 [complete source, ABI and producer review](update_context.md).
 
-The subsequent standalone wing replay reproduces all386 raw bytes twice but
-still fails ordered fixups `[305,76]` versus original `[76,305]`. New natural
-scalar ball consumers emit232 versus220; a single old-body no-optimization
-diagnostic emits224. No failed scope is accepted. Full-pool native/actual
-scalar checks pass96 cases. See [current bounded investigation](wing_preparation.md).
+The standalone wing and ball trials below preserve useful negative compiler
+evidence. They were superseded by the later accepted `main-shinki-wing-preparation`
+TCC-S/TASM32 recipe and complete `main-shinki-balls-update` C++ replay. The
+current receipts are recorded in [wing preparation](wing_preparation.md) and
+[ball lifecycle](ball_lifecycle.md); the old failed variants earn no credit.
