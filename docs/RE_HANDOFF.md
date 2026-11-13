@@ -52,7 +52,10 @@ EXE/COM reconstruction. The pinned Japanese game copy is
    improvement, **not newly uncovered executable CODE**. Additional `-G`/`-Z`, while/do-while/for-ever, helper extraction
    and explicit `register` hint trials also failed to retain the two original
    short joins; see the updated compiler review before proposing an equivalent
-   variant.
+   variant. Manual loop-tail `continue` once matched 2,139 bytes and fixups but
+   bypassed the manual increment, so it is semantically invalid. The correct
+   explicit-goto variants and clip/hit label, `do/break`, and trampoline forms
+   also fail; do not revive the invalid size match.
 3. **BB resource loader**: the 55-byte function is already exactly owned
    as [original-language ASM](../src/main/formats/bb_load.md). Its natural
    C++ alternative still emits 56 bytes with a different stack-frame and

@@ -492,3 +492,65 @@ native source/OMF/MAP/MZ outputs are in
 `.analysis/gpt-web-yumeko-register-*-20261113-first/`. Trial source files
 were removed. Explicit register storage is now another tested, unsuccessful
 compiler hypothesis and should not be repeated without a new reason.
+
+## 2026-11-13: explicit next-slot labels and split clip/hit control flow
+
+Further first-producer trials used the genuine nine-function MAIN03 context
+and the pinned Borland/TLINK toolchain. The goal was to keep the original
+`for`-loop increment, separate the two clip/hit joins, and determine whether
+a source-level label or `do/break` boundary prevents `-O` from folding them.
+
+A first manual-increment form changed the loop to `for(...;)`, put
+`i++`/`sword++` at a `next_iteration` label, and retained ordinary C++
+`continue` statements. It emitted **2,139 bytes** with the original ordered
+fixups and only 32 updater byte-position differences, but it is **not a
+valid semantic candidate**: C++ `continue` in a `for` without an increment
+expression jumps directly to the condition and bypasses the manual
+increments. An active sword can therefore fail to advance the loop. This
+coincidental size/fixup match is explicitly rejected and earns no credit.
+
+Replacing every such `continue` with `goto next_iteration` restores the
+intended loop increment. That semantically valid manual-increment variant
+emits **2,141 bytes** under `-O-` (wrong ordered fixups) and **2,135 bytes**
+under `-O` (also wrong ordered fixups). A second early-branch spelling emits
+2,151 / 2,135 bytes respectively. Keeping the original `for` increment
+expression and putting a single `next_iteration:` label at the end of the
+loop body is also semantically valid, but canonicalizes to the same
+2,141-byte `-O-` and 2,135-byte `-O` outcomes. None reproduces the original
+283-byte updater or the complete 2,139-byte context.
+
+| Additional natural `-O` control-flow shape | Whole MAIN03 CODE | Raw updater / ordered fixups |
+| --- | ---: | --- |
+| `goto next_iteration` with explicit clip/hittest labels | 2,135 B | No / No |
+| `do { ... } while(0)` with real clip/hit `break` paths | 2,135 B | No / No |
+| Only clip-side `do/break` or only hit-side `do/break` | 2,135 B | No / No |
+| Separate hit/no-hit trampolines or explicit `else` exits | 2,135 B | No / No |
+
+These forms all canonicalize to the same optimized output. The optimized
+`JL`/`JGE` near conditions are retained, but both original short joins at
+`+9A` and `+C4` are still absent. A local `#pragma option -O` placed only
+around the twirl block inside the function body does not change the
+`-O-` code shape; it does not combine the desired branch families. The
+combined clip/hit `do/break` form under `-O-` instead grows the full context
+to 2,153 bytes and has different fixups.
+
+Private source-cleaning first-producer scripts and outputs are retained at:
+
+- `.analysis/gpt-web-yumeko-loop-tail-20261111.py`,
+  `.analysis/gpt-web-yumeko-loop-tail-optim-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-tail-split-optim-20261113.py`
+- `.analysis/gpt-web-yumeko-loop-tail-clip-hit-labels-optim-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-tail-do-break-optim-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-tail-do-break-noopt-20261113.py`
+- `.analysis/gpt-web-yumeko-loop-tail-one-do-optim-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-tail-hit-join-optim-20261113.py`
+- `.analysis/gpt-web-yumeko-goto-next-label-20261113.py` and
+  `.analysis/gpt-web-yumeko-goto-next-label-optim-20261113.py`
+
+All temporary public-source trial includes were removed after compilation.
+The maintained natural C++ updater, the exact reviewed 283-byte ASM owner,
+and both accepted adjacent large Yumeko callbacks remain unchanged. These
+manual-loop, clip/hit label, `do/break`, trampoline and local-pragma forms
+are now tested; do not repeat them without a new compiler hypothesis. No
+new C++ exactness, second producer, compiled negative, or byte credit is
+claimed.
