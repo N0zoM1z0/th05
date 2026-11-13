@@ -1,4 +1,4 @@
-// Natural resident-program entry candidate; native acceptance is separate.
+// Accepted natural C++ resident entry; see initialize.md for its exact scope.
 #pragma option -2
 #include "src/zun/resident/initialize.hpp"
 

@@ -1,146 +1,149 @@
 # TH05 reconstruction — agent handoff (2026-11-13)
 
-## First actions
+## Start here
 
 Work in the live `main` repository. Read [AGENTS.md](../AGENTS.md),
-[the focused workflow](RE_WORKFLOW.md) and [exactness criteria](ORACLES.md).
-Check `git status -sb`, run `python3 scripts/preflight.py`, then inspect
-`python3 scripts/replay_units.py --plan`. **Carry forward any dirty work**;
-it belongs to this workstream. Commit substantive progress as
-`gpt-web: ...`, and do not push without permission. Never use a full cold
-replay just to confirm one changed unit.
+[the focused workflow](RE_WORKFLOW.md) and [the exactness contract](ORACLES.md).
+Start with `git status -sb` and `git log -5 --oneline`. Preserve any dirty work;
+do not reset, stash or discard it. Commit substantive progress as
+`gpt-web: ...`; do not push without permission.
 
-## Verified current state
+Use the generated [progress report](PROGRESS.md), accepted-unit ledgers and
+[`resources/ownership.json`](../resources/ownership.json) as the current
+counts and gap inventory. Do not maintain a second handwritten progress table.
+The 98% goal is still **unmeasured** because the global authored-byte
+denominator has not been accepted. The pinned Japanese game copy remains
+candidate-local-attested rather than independently confirmed pristine.
 
-| Canonical measure | Value |
-| --- | ---: |
-| Accepted C/C++ units (MAIN / OP / MAINE / ZUN) | **538** (351 / 75 / 109 / 3) |
-| Accepted C/C++ functions | **650** |
-| Source-authored exact C/C++ CODE | **109,053 B** |
-| Source-authored initialized C/C++ DATA | **17,513 B** |
-| Combined source-authored C/C++ exact bytes | **126,566 B** |
-| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **303 / 2,370 / 1,795 / 8,290** |
-| Total unclassified decoded bytes | **12,758 B** |
+For documentation-only changes, inspect the relevant source and diff; no
+compiler replay, preflight or full CI is needed. For source changes, replay only
+the complete affected owners and shared consumers. Never run a full cold replay
+just to confirm a local change.
 
-Read the **live** [generated progress](PROGRESS.md),
-`config/accepted_units*.json`, `config/exact_units*.toml` and
-`resources/ownership.json` before updating any count. The global **98%
-authored-byte target is not yet measurable**: a reliable authored-byte
-denominator has not been established. There is no accepted full packed
-EXE/COM reconstruction. The pinned Japanese game copy is
-*candidate-local-attested*, not independently established as pristine.
+## Current ZUN state
 
-## Highest-value unresolved work
+The resident `-S` entry is no longer an open compiler problem:
+
+- `zun-resident-main`: natural C++ `main()`, **269/269 bytes**, two independent
+  cold producers, no relocations. The source-comment cleanup was followed by
+  a focused two-producer replay; the compiled negative remains rejected. See
+  [`initialize.md`](../src/zun/resident/initialize.md).
+- `zun-resident-config`: exact 322-byte `cfg_init()`.
+- `zun-resident-semantic-initialized-data`: exact 320-byte initialized DATA.
+- Original C0T CRT: 613 source-written CODE bytes and 110 initialized DATA
+  bytes. Its two-byte writable CS runtime slot remains deliberately unowned.
+- Master resident memory/graphics family: 226 bytes (224 instruction bytes,
+  two alignment bytes); Master file/DOS family: 830 bytes (823 instruction
+  bytes, seven alignment bytes). Both are vendor-origin, zero authored credit.
+- Borland CT.LIB `brk`/`sbrk`: 127 exact relocated CODE bytes, five OMF
+  relocations. `___brk` and `___sbrk` are the nearheap call targets; `_errno`
+  and `___brklvl` resolve into the accepted CRT DATA.
+- Borland CT.LIB `nearheap`: 631 exact relocated CODE bytes plus six exact
+  initialized DATA bytes, 26 OMF relocations. Both modules are vendor-origin,
+  zero authored credit. Their parsers and acceptance records are
+  `scripts/review_zun_brk.py` / `config/zun_brk_acceptance.json` and
+  `scripts/review_zun_nearheap.py` / `config/zun_nearheap_acceptance.json`.
+
+The ZUN view currently has **3,110 unknown bytes** in five outer-file
+intervals. They are intentionally left unknown and are not all assumed to be
+code:
+
+| Outer `ZUN.COM` interval | Bytes | Corresponding `-S` COM interval / note |
+| --- | ---: | --- |
+| `0x0D47..0x0D49` | 2 | Writable CRT CS runtime slot |
+| `0x13BA..0x1601` | 583 | `0x09D6..0x0C1D` |
+| `0x18F7..0x2034` | 1,853 | `0x0F13..0x1650` |
+| `0x21E2..0x244E` | 620 | `0x17FE..0x1A6A` |
+| `0x2454..0x2488` | 52 | `0x1A70..0x1AA4` |
+
+The next useful ZUN investigation is the remaining `-S` resident code and
+storage. A local CT.LIB sequence scan is retained as
+`.analysis/gpt-web-zun-clib-scan.py`. It found promising *heuristic* candidates
+in the first two intervals:
+
+- `0x09D6..0x0C1D`: `exit`, `setupio`, `ioerror`, `lseek` and `atexit`.
+- `0x0F13..0x1650`: `fseek`, `write`, `setargv`, `setvbuf`, `_pathops`,
+  `fflush`, `writea`, `flushall` and `xfflush`.
+
+These are byte-sequence leads only, not accepted ownership. For each candidate,
+identify the complete original OMF member and public boundaries, resolve every
+FIXUPP using the actual segment/group/external context, and compare the whole
+scope. Do not promote a percentage match or infer that all remaining bytes are
+library code. The later resident tail and the 52-byte pre-`-G` interval still
+need CODE/DATA/INIT/BSS boundary analysis.
+
+The full ZUN ownership summary and current intervals are in
+[`ZUN_OWNERSHIP_MAP_2026-11-13.md`](reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
+
+## Other open work
 
 1. **Yumeko `swords_update()` source refinement**: the complete 283-byte
-   updater and 2,139-byte MAIN03 context now match the original byte-for-byte
-   with all 25 ordered fixups, using the maintained C++/inline-ASM hybrid.
-   The accepted reviewed-ASM unit remains the sole CODE owner. A fully natural
-   C++ alternative is still only a source-language refinement; the known
-   `-O-`, `-O`, manual-loop, label, register-hint and helper variants are
-   historical failures. Do not count the hybrid context twice. See
-   [the exact source and proof](../src/main/boss/yumeko/swords_update.md).
-2. **BB resource loader**: the 55-byte function is already exactly owned
-   as [original-language ASM](../src/main/formats/bb_load.md). Its maintained
-   C++ context candidate now emits the correct 55-byte extent and original
-   relocation at +7, matching 51/55 bytes in two deterministic producers.
-   The two remaining compiler differences are documented; do not double-count
-   the ASM bytes.
-3. **Remaining original ownership gaps**: use the current intervals in
-   `resources/ownership.json`, not an old gap list. Verify physical source
-   boundaries, native consumers, initializers versus `?` storage, and
-   ordered original relocations. See [open candidates](reconstruction/UNACCEPTED_COHORTS.md)
-   and the [CDG slot storage discrepancy](reconstruction/CDG_STORAGE_TARGET_BOUNDARY_2026-11-13.md).
-   CDG's TASM `_BSS` declaration alone does **not** justify treating original
-   nonzero or out-of-file bytes as a zero-filled owner.
+   updater and 2,139-byte MAIN03 context are exact using the maintained
+   C++/inline-ASM hybrid; the accepted reviewed-ASM unit remains the sole CODE
+   owner. A fully natural C++ alternative is still a source-language
+   refinement, not additional credit. See
+   [`swords_update.md`](../src/main/boss/yumeko/swords_update.md).
+2. **BB resource loader**: its 55-byte function is already exactly owned as
+   original-language ASM. The C++ context candidate matches 51/55 bytes in two
+   producers; the remaining compiler differences are documented in
+   [`bb_load.md`](../src/main/formats/bb_load.md). Do not double-count the ASM.
+3. **Remaining physical ownership gaps**: use the live intervals in
+   `resources/ownership.json` and the current
+   [`UNACCEPTED_COHORTS.md`](reconstruction/UNACCEPTED_COHORTS.md). Check
+   physical source bounds, real consumers, initialized data versus uninitialized
+   storage, and original ordered relocations before making a claim.
 
-The major MAIN Boss control/update contexts already have accepted full
-function coverage for Sara, Shinki, Alice, EX-Alice, Yumeko and Mai/Yuki.
-Continue attacking any newly demonstrated large source/semantic gap; do not
-invent a missing Boss function from zero-filled unknown storage or repeat an
-already accepted ASM/C++ extent merely to increase counts.
+The large MAIN Boss control/update contexts for Sara, Shinki, Alice, EX-Alice,
+Yumeko and Mai/Yuki already have accepted full-function coverage. Continue
+working on demonstrated large semantic gaps; do not invent functions from
+zero-filled unknown storage or duplicate accepted ASM/C++ extents.
 
-## Already solved — avoid duplicate CODE credit
+## Focused verification
 
-The maintained natural C/C++ already reproduces major complete Boss
-contexts: [Sara's 12-function 1,824 B](../src/main/boss/sara/sara.md),
-[Shinki's 959 B update and 802 B Devil](reconstruction/SHINKI_DEVIL_COLUMN_PROTOCOL_2026-11-13.md),
-[Alice's 939 B controller and 499 B charged attacks](reconstruction/ALICE_CHARGED_ATTACKS_SHARED_SOURCE_2026-11-12.md),
-[EX-Alice's 1,060 B controller](reconstruction/EXALICE_WAVES_CONTROL_FLOW_2026-11-13.md),
-[Yumeko's 884 B controller](../src/main/boss/yumeko/update.md),
-and [Mai/Yuki's 1,018 B paired update](reconstruction/MAI_YUKI_STACK_CHEETO_CLOSURE_2026-11-13.md).
-The shared Mai/Yuki B4-ball template now mirrors the pinned original signed
-`int8_t`/`int16_t` reserved fields and asserts offsets 0/6/22; all ten
-accepted consumers were recompiled in one focused replay and remained exact.
-The shared Boss `Explosion::unused` byte is now explicitly `signed char`,
-matching ReC98 `int8_t` at offset14; its five accepted consumers were replayed
-and remained byte-exact with the compiled negative rejected.
-Shinki's [19-function, 3,254 B background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
-was also recovered. ZUN's embedded resident `main()` is now accepted as a
-complete natural C++ 269-byte function with two independent cold producers;
-see [the accepted entry](../src/zun/resident/initialize.md). Source refactors
-have been replayed across complete
-affected owners; **their accepted CODE must not be credited again**.
-
-Separate ownership lanes include reviewed ASM, foreign Master/CL startup
-CODE, bitmap/font resources, compiler-authored initialized C/C++ DATA,
-and source-backed **uninitialized** storage. Recent Master
-[BGM track/effect BSS](reconstruction/MASTER_BGM_TRACK_BSS_2026-11-13.md)
-(198 B per MZ) and [VSYNC state](reconstruction/MASTER_COMPACT_BSS_2026-11-12.md)
-(10 B per MZ) reduced unknown by 624 B but earned **zero initialized C/C++
-DATA or CODE credit**. The original game
-[point-number doubling flag](../src/main/item/pointnum_twice_initial.md)
-was independently accepted as one initialized C++ byte. The Master 0.23 GRCG/graphics review now covers **24 complete
-procedures / 3,988 vendor CODE bytes**, including the newly source-verified
-six-byte `GRCG_BOXFILL_RETURN` entry at `0EA0..0EA6`; see [the full source
-review](reconstruction/MASTER_GRCG_NATIVE.md). For a corrected
-example of ambiguous zero-valued data, see
-[the physical ownership correction](../src/main/stage/bonus_previous_resources.md).
-
-## Fast, bounded verification
-
-For a C/C++ change, first inspect `scripts/replay_units.py --plan`; a shared
-header/`.inl` may affect several units. Rebuild **every selected complete
-owner**, then accept the receipt into the appropriate artifact ledger:
+For the current ZUN workstream, these bounded checks cover the recent resident
+ownership changes without a full cold replay:
 
 ```sh
-python3 scripts/replay_units.py --units UNIT_ID --output .analysis/unit-replays/UNIQUE_RUN
-python3 scripts/progress.py --artifact main --accept .analysis/unit-replays/UNIQUE_RUN/receipt.json --write
-python3 scripts/ownership.py --write
-python3 scripts/replay_units.py --plan
+python3 scripts/review_zun_brk.py --check
+python3 scripts/review_zun_nearheap.py --check
+python3 scripts/replay_zun_crt.py --check
+python3 scripts/replay_zun_resdata.py --check
+python3 scripts/replay_zun_file_native.py --check
+python3 scripts/ownership.py --check
+python3 scripts/progress.py --check
 python3 scripts/ci.py
 git diff --check
 ```
 
-Use `--artifact op|maine|zun` for the other target ledgers, including in
-`replay_units.py`. Two actual deterministic compiler/linker producers,
-full raw bytes, OMF scope, ordered original loader fixups and the compiled
-negative must pass; no source-language credit from copied bytes or a
-source-free binder. **Documentation-only edits need no compiler replay or
-new acceptance receipt.** Consult [the full short workflow](RE_WORKFLOW.md)
-for ASM and special-context details.
+For a C/C++ edit, inspect `scripts/replay_units.py --plan`, replay every
+complete affected owner and accept its receipt into the correct artifact
+ledger. For ASM or native vendor changes, use that scope's focused replay and
+preserve the original ordered relocation proof. Two deterministic producers,
+full raw bytes and the appropriate compiled/assembled negative are required;
+a successful build or a same-sized result is not acceptance.
 
-## Local evidence and storage for the successor
+## Local state and storage
 
-`.analysis/`, `_reference/`, `.tools/` and `ghidra-project/` are ignored
-**local state**, not transferred with Git. Keep original pinned targets,
-calibration object/MAP pairs and original source copies, the game's Wine
-prefix/compiler toolchain, Ghidra project, all current ledger-referenced
-`unit-replays` receipts with their two producers and negative snapshots,
-and accepted ASM/native review evidence. Keep the distinct unresolved
-ZUN/Yumeko scripts and diagnostic summaries needed to avoid repeating known
-failed compiler hypotheses. Stale, unreferenced historical replay clones
-can be removed **only after checking current receipt hashes and references**.
-A handoff to a different computer requires transferring the necessary
-ignored inputs separately; `git clone` alone is insufficient.
+`.analysis/`, `_reference/`, `.tools/` and `ghidra-project/` are ignored local
+state and are not transferred by Git. Preserve original targets, the pinned
+Borland/Wine toolchain, Ghidra project, current ledger-referenced replay
+receipts and producers, accepted native/vendor evidence, and the unresolved
+ZUN CT.LIB scan. The obsolete failed ZUN `main()` compiler matrices and their
+one-off scripts/results have been removed now that the natural entry is accepted. The
+cleanup removed 223 superseded experiment directories (4.88 MiB), the old
+`.analysis/zun-resident` scratch tree (1.32 MiB), 41 one-off scripts/results,
+and seven unreferenced replay folders (7.78 MiB): **14.14 MiB total**. Those
+seven replay folders had no receipt hash in any of the four accepted ledgers and no
+direct tracked path reference. All other ledger-matched or directly referenced
+replay folders were retained. The `.analysis/zun-resident-review` ABI notes,
+Borland toolchain, current receipts, and CT.LIB scan were preserved.
 
-On 2026-11-13, **88 obsolete, unreferenced** `.analysis/unit-replays/`
-folders were deleted (about **85.3 MiB** of allocated files). They were
-neither current ledger receipt-SHA matches nor directly referenced from
-tracked repository content. All **386 distinct current receipt hashes**
-were checked before and after; the separately referenced historical
-folders, the original inputs, active toolchain and diagnostic worktrees
-were retained. Repeat this inventory check before any further deletion.
+The analysis store still occupies about **1.5 GiB**, mostly pinned toolchain,
+accepted producer evidence, builds and unresolved work. Do not remove more by
+age or name alone; repeat the ledger-hash and direct-reference audit before
+any further replay cleanup. A handoff to another computer requires transferring
+the necessary ignored inputs separately; a Git clone is not sufficient.
 
-This is the live handoff, not a running change log. Historical results and
-failed experiments belong in the linked per-function notes and Git history.
+This is the live handoff, not a running change log. Historical experiments
+that no longer affect an open decision belong in Git history, not in a long
+current-status document.
