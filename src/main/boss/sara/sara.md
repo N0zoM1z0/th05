@@ -295,3 +295,32 @@ five-to-four red-stack negative was rejected. Receipt:
 `.analysis/unit-replays/gpt-web-sara-cross-wave-pattern-history-20261113/receipt.json`.
 This refines the original attack-selection lifetime without changing its
 16-byte Boss scratch arena or adding executable bytes.
+
+## 2026-11-13: consolidated corridor rules and TC4 bytecode constraint
+
+The complete phase-four corridor geometry and cadence now live together in
+`SaraLaserCorridorRules`: center/width and their derived strict terminal
+angle, initial opposing offset, creation/growth frames, all four slowdown
+angles, and the independent random-ball count interval/limit. The controller
+no longer carries duplicate function-local constants or a local width alias.
+The 1,300-frame Boss-phase timeout remains with the phase controller because
+it governs defeat/transition, not the projectile pattern.
+
+One Borland-specific code-generation constraint is now explicit. Replacing
+the two per-frame `0x01` angle updates with an enum constant caused Turbo C++
+4.02 to emit direct-memory `INC`/`DEC` instructions instead of the original
+AL-based byte operations. That shortened the 294-byte corridor callback by
+exactly eight bytes and moved `sara_update()` eight bytes earlier. The literal
+byte updates intentionally remain literal; all other timing/geometry values
+are named. This is not an optimization request: the original compiler output
+is the reconstruction target.
+
+The corrected source passes two fresh focused `main-sara` producers at
+**1,824/1,824 raw bytes**, with the original ten ordered relocations
+`[919,813,723,660,382,338,260,36,1427,1157]` in both rounds; the existing
+five-to-four red-stack negative remains rejected. Receipt:
+`.analysis/unit-replays/gpt-web-sara-corridor-rules-retry-20261113/receipt.json`.
+`tests/test_sara_corridor_timing.py` independently exercises the source-level
+two-clock schedule: slowdown frames 64/128/150/180, terminal rotation frame
+210, and random-ball count growth through frame 448. Run it with
+`python3 -m unittest tests.test_sara_corridor_timing -v`.
