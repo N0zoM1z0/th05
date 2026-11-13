@@ -98,14 +98,16 @@ producers; its independently reviewed ASM owner remains the sole CODE owner.
 
 ## Fan-mirror and final-ring state lifetimes
 
-The phase-two sword fan and the final-ring attack have different roles for
-`boss_statebyte[15]`. During the sword fan it is `YumekoFanScratch.mirrored_side`,
-a one-byte mirror selection initialized from the random source. The final
-ring explicitly resets the *same physical byte* to zero and subsequently uses
-it as `YumekoFinalRingScratch.completed_rings`. Both phase-specific views are
-16 bytes with separately checked offset-15 placement; they do **not** allocate
-two independent variables. This prevents the false assumption that mirror
-selection survives into the final attack as a separate value.
+The final byte is now one `YumekoPatternByte15` union shared by all original
+16-byte phase views. Its sequential roles are the sword-pattern angle used by
+aimed/laser/spread attacks, the random sword-fan mirror side, the sword-sweep
+spacing selected for the current rank, and the final-ring completed-shot
+counter. The final-ring initializer explicitly resets the *same physical
+byte* to zero before counting rings; no separate mirror, angle, spacing or
+counter storage is introduced. Compile-time assertions prove the union is one
+byte, every member is at offset zero, and the containing field is at offset
+15 in both the pattern and final-ring views. The phase-specific writes and
+carry-over between earlier pattern callbacks remain unchanged.
 
 The original mobile-wave movement mode is `YUMEKO_MODE_REPOSITION == 0`, and
 active attack callback is `YUMEKO_MODE_ATTACK == 1`. The movement callback
@@ -216,3 +218,23 @@ final-ring negative rejected. The pure-C++ `swords_update()` source now reproduc
 context twice and rejects its compiled semantic negative; its reviewed ASM
 owner remains sole credit. No already accepted CODE is counted again and no
 full cold replay was run.
+
+
+## 2026-11-13: explicit Yumeko byte-15 pattern overlay
+
+The original `boss_statebyte[15]` is shared across four attack families. The
+sword angle is read and advanced by aimed swords, laser swords and later
+spreads; the sword fan reuses it as its random mirrored-side bit; the sweep
+reinitializes it with the selected sword spacing; and the final ring resets it
+again before counting emitted rings. `YumekoPatternByte15` gives each use a
+named union member, nested at offset 15 in the shared pattern and final-ring
+views. No transition reset or value copy was added, so the original state
+lifetime and final-ring reset remain intact.
+
+The focused six-unit replay covers the full **884-byte** Yumeko controller,
+435-byte mobile/fan patterns, 518-byte spreads, 321-byte sweep and both
+complete aimed/laser sword context functions (354 and 428 bytes). Two fresh
+Borland/TLINK producers preserve every original byte and ordered relocation;
+the compiled negative is rejected. Receipt:
+`.analysis/unit-replays/gpt-web-yumeko-byte15-overlay-20261113/receipt.json`.
+No duplicate CODE credit or new storage is introduced.

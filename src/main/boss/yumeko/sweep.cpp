@@ -2,10 +2,11 @@
 // ReC98 b6ba5b0a disassembly supports semantics; no instruction body is copied.
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/yumeko/sweep.hpp"
+#include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #include "src/main/boss/yumeko/sweep_combat_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#define yumeko_sweep_spacing boss_statebyte[15]
+#define yumeko_sweep_spacing yumeko_pattern_scratch.pattern_byte15.sweep_spacing
 #define yumeko_sweep_side boss_statebyte[14]
 #define yumeko_sweep_round boss_statebyte[13]
 

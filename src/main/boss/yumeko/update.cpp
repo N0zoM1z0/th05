@@ -12,7 +12,7 @@
 #pragma option -a2
 
 #define yumeko_final_angle yumeko_final_scratch.advancing_angle
-#define yumeko_final_rings yumeko_final_scratch.completed_rings
+#define yumeko_final_rings yumeko_final_scratch.pattern_byte15.final_ring_count
 static const int YUMEKO_HP_TOTAL = YSW_BOSS_TOTAL_HP;
 
 enum YumekoPhase {

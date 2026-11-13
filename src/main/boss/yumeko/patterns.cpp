@@ -8,7 +8,7 @@
 #include "src/main/boss/yumeko/mobile_attack_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#define yumeko_fan_mirrored yumeko_fan_scratch.mirrored_side
+#define yumeko_fan_mirrored yumeko_pattern_scratch.pattern_byte15.fan_mirrored_side
 
 // Both finite mobile attacks finish by entering genuine reposition mode
 // and restarting the shared phase clock, without altering their own timers.
