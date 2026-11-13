@@ -180,6 +180,7 @@ raw code extent exactly** (target/candidate SHA-256
 | --- | --- | --- | --- |
 | TCC `-S` → TASM32 | 1125/1125 exact | `[38,130,322,648,1019,1106]` | fixup order differs |
 | Direct TCC 4.02 | 1125/1125 exact | `[1019,648,322,130,38,1106]` | fixup order differs |
+| Separate tracker TASM + remaining TCC objects | 1125/1125 exact | `[38,130,1106,1019,648,322]` | fixup order differs |
 | Original target | 1125 | `[38,1106,1019,648,322,130]` | required order |
 
 Both paths also compile a natural negative control that changes the tracking
@@ -190,11 +191,25 @@ acceptance: exact code bytes with a different MZ relocation order are not an
 exact linked contribution. No relocation sorting, object patching or manual
 MZ fixup rewriting is used to manufacture acceptance.
 
-The local receipts are:
+The local receipts and focused link evidence are:
 
 - `.analysis/unit-replays/gpt-web-main-mai-yuki-later-patterns-compilerasm-20261113-b/receipt.json`
 - `.analysis/unit-replays/gpt-web-main-mai-yuki-later-patterns-direct-20261113/receipt.json`
+- `.analysis/gpt-web-maiyuki-multi-object-link-full-context-20261113/result.json`
 
-The remaining problem is now narrowly isolated to original OMF/TLINK
-relocation-record emission order. Keep the two accepted per-scope owners
-unchanged until a natural producer reproduces the target order exactly.
+The two-object experiment links the already accepted tracker TASM object before
+the already accepted 939-byte remaining-pattern TCC object. Its first attempt
+used the tracker-only binder, whose `AFTER_BASE` assumes the code ends at
+`0x17C30`; with the full 1,125-byte cohort this displaced all four
+`LASER_SC_TEXT` near-call destinations by `0x3B0` and changed ten displacement
+bytes. Reassembling with the full-cohort
+`mai_yuki_later_patterns_bindings.asm` (which anchors `AFTER_BASE=0x17FE0`)
+restores **1125/1125 raw bytes** exactly. No code object was patched.
+
+The corrected multi-object link now gives `[38,130,1106,1019,648,322]`: the
+tracker's two fixups are emitted together before the remaining object's four
+reverse-ordered fixups. The original target places the tracker's second fixup
+last, after the remaining object. This isolates the final mismatch to the
+original fixup-record emission/interleave order, rather than code bytes,
+segment placement or external near-call addresses. The accepted per-scope
+owners remain unchanged; no new authored-byte credit is claimed.
