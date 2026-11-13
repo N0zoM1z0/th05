@@ -32,7 +32,7 @@ void near pattern_devil(void)
 	// set to 1 before ending the pattern to ensure that the remaining phases
 	// run in their expected order. Guaranteed in the original code by setting
 	// HP_PHASE_10_DEVIL_LASER to a much higher value than HP_PHASE_10_END.
-	#define lasers_active    	shinki_devil_scratch.lasers_active
+	#define lasers_active    	shinki_devil_scratch.wave_or_laser.devil_lasers_active
 
 	#define bullet_direction 	shinki_devil_scratch.bullet_direction
 	#define bullet_intro_done	shinki_devil_scratch.bullet_intro_done

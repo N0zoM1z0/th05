@@ -42,7 +42,7 @@ struct ShinkiDevilScratch {
     unsigned char laser_direction;
     unsigned char laser_angle_inner;
     unsigned char laser_angle_outer;
-    unsigned char lasers_active;
+    ShinkiWaveOrDevilLaserLatch wave_or_laser;
     unsigned char bullet_direction;
     unsigned char bullet_intro_done;
     unsigned char b6ball_interval;
@@ -51,7 +51,11 @@ struct ShinkiDevilScratch {
 };
 typedef char shinki_devil_scratch_is_16[(sizeof(ShinkiDevilScratch) == 16) ? 1 : -1];
 typedef char shinki_devil_laser_direction_at_7[(offsetof(ShinkiDevilScratch, laser_direction) == 7) ? 1 : -1];
-typedef char shinki_devil_laser_latch_at_10[(offsetof(ShinkiDevilScratch, lasers_active) == 10) ? 1 : -1];
+typedef char shinki_devil_laser_latch_at_10[(offsetof(ShinkiDevilScratch, wave_or_laser) == 10) ? 1 : -1];
+typedef char shinki_phase_devil_latch_offsets_match[(
+    offsetof(ShinkiPhaseScratch, wave_or_laser) ==
+    offsetof(ShinkiDevilScratch, wave_or_laser)
+) ? 1 : -1];
 typedef char shinki_devil_bullet_interval_at_13[(offsetof(ShinkiDevilScratch, b6ball_interval) == 13) ? 1 : -1];
 typedef char shinki_devil_inner_angle_at_14[(offsetof(ShinkiDevilScratch, bullet_angle_inner) == 14) ? 1 : -1];
 typedef char shinki_devil_outer_angle_at_15[(offsetof(ShinkiDevilScratch, bullet_angle_outer) == 15) ? 1 : -1];

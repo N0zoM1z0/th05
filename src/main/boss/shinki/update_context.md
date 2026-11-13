@@ -342,18 +342,22 @@ active-laser latch, and the nonzero value is intentionally observed by the
 controller after the Devil callback. Clearing it at the phase boundary would
 select the wrong following wave.
 
-`scratch.hpp` now models the two names as a one-byte `ShinkiWaveOrDevilLaserLatch`
-union nested at offset 10 in the phase view, alongside the existing full
-16-byte Devil view. Both views retain compile-time size/offset assertions.
-The controller's `phase_relative` alias now addresses the named union member;
-`pattern_devil()` continues to use its own `lasers_active` member at the same
-physical offset. No new Boss storage or phase reset is introduced.
+`scratch.hpp` now uses the same one-byte `ShinkiWaveOrDevilLaserLatch`
+union type in both complete 16-byte views. The phase view nests it at offset
+10 beside the wave index; the Devil view nests it at the same offset beside
+the laser latch. Compile-time assertions prove both the member offsets and
+the equality of the two view offsets. The controller's `phase_relative`
+alias and `pattern_devil()`'s `lasers_active` alias address their respective
+named members of this one physical union. No new Boss storage or phase reset
+is introduced.
 
 The focused twelve-unit replay recompiles every Shinki owner that consumes
 this scratch header. Two independent Borland/TLINK producers match all
 original CODE scopes and ordered fixups, including the complete **959-byte**
 controller and **802-byte** Devil attack; the compiled semantic negative is
-rejected. Receipt:
-`.analysis/unit-replays/gpt-web-shinki-wave-latch-overlay-20261113/receipt.json`.
+rejected. The initial phase-view receipt is
+`.analysis/unit-replays/gpt-web-shinki-wave-latch-overlay-20261113/receipt.json`;
+the follow-up shared-view receipt is
+`.analysis/unit-replays/gpt-web-shinki-shared-latch-view-20261113/receipt.json`.
 This makes the cross-phase lifetime explicit without adding duplicate CODE
 credit or running a whole accepted-set cold replay.
