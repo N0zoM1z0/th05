@@ -37,13 +37,25 @@ are `_free` at 0, `_malloc` at 207 and `_realloc` at 550; the DATA publics
 `__first`, `__last` and `__rover` occupy offsets 0, 2 and 4. All 579 non-
 relocation CODE bytes match verbatim; the only 52 differing bytes are exactly
 the member's 26 two-byte OMF relocation fields. The six DATA bytes match
-verbatim. The target's resolved relocation words include the three DATA
-addresses `1A6A`, `1A6C` and `1A6E`.
+verbatim.
 
-`scripts/review_zun_nearheap.py --check` pins the installed Borland
-`CT.LIB` hash, exact `nearheap` OMF member/publics/LEDATA/FIXUPP structure,
-original `-S` child identity, all relocation offsets, and both target slices.
-The object is vendor code/data and receives zero source-authored credit.
+The FIXUPP stream is now decoded semantically, not treated as an opaque mask:
+20 offset relocations use `_DATA` through `DGROUP` and resolve to `DS:1A6A`
+plus their original addends; six relative external relocations resolve to
+`___brk` at `0x0C1D` and `___sbrk` at `0x0C43`. Both target entries have the
+original near-function prologue. Re-applying those exact OMF relocations to the
+pinned CT.LIB LEDATA reconstructs the complete 631-byte target CODE exactly.
+The 41-file Borland library tree and the individual `CT.LIB` member are both
+hash-attested. Two negative controls mutate a nonrelocation instruction and a
+resolved relocation word; both are rejected by the same comparison path.
+
+`scripts/review_zun_nearheap.py --check` pins the installed Borland library
+tree, exact `nearheap` OMF member/publics/groups/externals/LEDATA/FIXUPP
+semantics, original `-S` child identity, all relocation offsets, and both
+target slices. The object is vendor code/data and receives zero
+source-authored credit. The two referenced `brk` entrypoints are not claimed
+by this nearheap record; their own 127-byte CT.LIB module remains a separate
+source/relocation review within the preceding unknown interval.
 
 The corrected ZUN view now has exactly **3,237 unknown bytes**, in five
 intervals:

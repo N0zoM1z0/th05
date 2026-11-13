@@ -110,6 +110,11 @@ class OwnershipTests(unittest.TestCase):
         rows = overlay_zun(12, partition(12, []), [row])
         self.assertEqual(rows[0]["kind"], "verified-vendor-initialized-data")
         self.assertEqual(rows[0]["authored_credit"], 0)
+        for bad in ({**row, "authored_credit": 1},
+                    {**row, "content_kind": "runtime-bss"},
+                    {**row, "library": "unreviewed-library"}):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                overlay_zun(12, partition(12, []), [bad])
 
     def test_zun_native_claims_cannot_overwrite_known_owners_or_fake_vendor_provenance(self):
         pieces = partition(20, [self.entry(5, 8)])

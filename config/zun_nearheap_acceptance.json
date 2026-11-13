@@ -1,8 +1,10 @@
 {
   "schema_version": 1,
   "kind": "bounded-zun-borland-ctlib-module-ownership-review",
-  "manifest_sha256": "6080ce211a5552e97379df35301cff2274cad7e6f167bbc7cf94640eb9edf65c",
+  "manifest_sha256": "e19369c725ac51f28a59935bd1b8adad6a24a45436295eec32265da25413e6cc",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+  "library_tree_sha256": "3fccb05d8dcfad6417ac4171482515fa0608f8e82b3cc81665a72f76621d8033",
+  "library_tree_file_count": 41,
   "target_artifact_sha256": "5044ae03f7c0333f37d88ef34e244502f90d7314287f6f387c07569e4e0b120e",
   "source_library_sha256": "b665d5d30f0d3bafe3023ee45eeef183811c87201e9a1876f011acf5699261af",
   "library_member": "nearheap",
@@ -20,6 +22,7 @@
     "size": 631,
     "source_sha256": "2334307e9222861f52fbc99a2bb881f9e9ef607551110a953036ff87e077c452",
     "target_sha256": "5dabc0504015d61cb413dc09060e03529dc8cd0d62707baa67beb8268a89cbc7",
+    "relocated_sha256": "5dabc0504015d61cb413dc09060e03529dc8cd0d62707baa67beb8268a89cbc7",
     "nonrelocation_bytes_exact": 579,
     "relocation_count": 26,
     "relocation_field_bytes": 52,
@@ -105,33 +108,163 @@
       510,
       511
     ],
-    "resolved_words": [
-      6764,
-      6762,
-      6764,
-      6762,
-      6764,
-      6762,
-      6764,
-      6766,
-      65324,
-      6762,
-      6766,
-      6766,
-      6766,
-      6766,
-      6762,
-      6766,
-      65136,
-      65122,
-      65111,
-      6762,
-      6764,
-      65072,
-      6764,
-      6764,
-      6764,
-      64897
+    "resolved_relocations": [
+      {
+        "site": 14,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 31,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 45,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 51,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 64,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 73,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 76,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 79,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 83,
+        "symbol": "___brk",
+        "source_addend": 0,
+        "resolved_word": 65324
+      },
+      {
+        "site": 91,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 153,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 167,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 174,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 198,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 236,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 243,
+        "symbol": "_DATA",
+        "source_addend": 4,
+        "resolved_word": 6766
+      },
+      {
+        "site": 309,
+        "symbol": "___sbrk",
+        "source_addend": 0,
+        "resolved_word": 65136
+      },
+      {
+        "site": 323,
+        "symbol": "___sbrk",
+        "source_addend": 0,
+        "resolved_word": 65122
+      },
+      {
+        "site": 334,
+        "symbol": "___sbrk",
+        "source_addend": 0,
+        "resolved_word": 65111
+      },
+      {
+        "site": 347,
+        "symbol": "_DATA",
+        "source_addend": 0,
+        "resolved_word": 6762
+      },
+      {
+        "site": 351,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 373,
+        "symbol": "___sbrk",
+        "source_addend": 0,
+        "resolved_word": 65072
+      },
+      {
+        "site": 385,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 392,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 497,
+        "symbol": "_DATA",
+        "source_addend": 2,
+        "resolved_word": 6764
+      },
+      {
+        "site": 510,
+        "symbol": "___brk",
+        "source_addend": 0,
+        "resolved_word": 64897
+      }
     ],
     "raw_exact": false,
     "exact_after_omf_relocation": true
@@ -152,9 +285,21 @@
     "__last": 2,
     "__first": 0
   },
+  "externals": [
+    "___brk",
+    "___sbrk"
+  ],
+  "groups": {
+    "1": [
+      "DGROUP",
+      [
+        2
+      ]
+    ]
+  },
   "negative_control": {
     "nonrelocation_instruction_flip_rejected": true,
-    "resolved_relocation_flip_rejected_by_target_hash": true
+    "resolved_relocation_flip_rejected": true
   },
   "size": 637,
   "code_bytes": 631,
