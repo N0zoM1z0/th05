@@ -404,3 +404,64 @@ C++ source-inclusion files were removed. The original ASM owner and current
 natural C++ candidate are untouched. The useful next question is why the
 original compiler kept both short joins in a larger function-level layout;
 changing only the final Y predicate or local goto is not sufficient.
+
+## 2026-11-13: compiler switches, loop forms and inline twirl helpers
+
+The natural 283-byte `swords_update()` candidate was subjected to another
+set of actual pinned Borland/TLINK first-producer experiments in the genuine
+nine-function MAIN03 context. These tests target the known four-byte
+short-join loss rather than rechecking the already accepted original ASM
+function.
+
+First, the compiler-option hypothesis was tested with documented `-O`
+jump optimization combined with `-G` speed generation, `-Z-` register
+reload behavior, and both options together. All three combinations emitted
+the same **2,135-byte** whole context and the same **143/283** positional
+matches at the original updater offset. The disassembly still has
+`JL near 0F 8C A6 00` at updater `+5E`, an unconditional `JMP` at `+66`,
+and `JGE near 0F 8D 92 00` at `+72`; all three target the shortened loop
+join at `+108`, rather than the original `+10C`. The two missing two-byte
+short joins and all downstream ordered relocation offsets therefore remain.
+
+Second, the loop itself was rewritten as a real `while` with a common
+next-slot label, a post-tested `do/while`, and an infinite loop with a
+real bound exit. Both `-O-` and `-O` were tested for each form:
+
+| Source loop form | `-O-` whole context / updater matches | `-O` whole context / updater matches |
+| --- | ---: | ---: |
+| Explicit `while` and next-slot label | 2,144 B / 22 | 2,138 B / 14 |
+| Explicit `do/while` and next-slot label | 2,141 B / 158 | 2,135 B / 142 |
+| `for(;;)` with a real bound exit | 2,148 B / 17 | 2,138 B / 27 |
+
+The updater match counts are fixed-original-offset diagnostics, not
+function-equivalence claims; none of the six whole contexts matches the
+original 2,139-byte contribution, raw bytes or ordered relocations. The
+post-tested loop comes closest by byte-position count, but its original
+function boundary and control-flow layout still fail.
+
+Finally, two genuine inline-helper factorizations moved either the complete
+twirl-time/pattern update or just the odd/even pattern wrap into a small
+inline function. The first emitted a 2,164-byte context with 41 matching
+updater positions; the second emitted 2,158 bytes with 5. They compile as
+real C++, but helper extraction does not recover the original loop joins.
+
+Private first-producer evidence and scripts:
+
+- `.analysis/gpt-web-yumeko-compiler-flags-20261113.py`,
+  `.analysis/gpt-web-yumeko-compiler-flags-20261113-results.json`, and
+  `gpt-web-yumeko-compiler-flags-*-20261113-first/`
+- `.analysis/gpt-web-yumeko-loop-shape-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-shape-20261113-results.json`, and
+  `gpt-web-yumeko-loop-shape-*-20261113-first/`
+- `.analysis/gpt-web-yumeko-loop-shape-optim-20261113.py`,
+  `.analysis/gpt-web-yumeko-loop-shape-optim-20261113-results.json`, and
+  `gpt-web-yumeko-loop-shape-optim-*-20261113-first/`
+- `.analysis/gpt-web-yumeko-inline-twirl-helper-20261113/` and
+  `.analysis/gpt-web-yumeko-inline-wrap-helper-20261113/`
+
+Temporary trial `.cpp` include files were deleted after compilation. No
+maintained Yumeko source, accepted attack callback, exact 283-byte ASM
+owner, or accepted receipt was changed. These options, loop spellings and
+helper boundaries should not be repeated without a new compiler/code-layout
+hypothesis. No C++ byte credit, second producer, negative acceptance or full
+cold replay is claimed.

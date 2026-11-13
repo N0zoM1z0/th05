@@ -109,3 +109,40 @@ corresponding `...-20261112-b` trial directory. The maintained 269-byte
 success-first candidate (17 byte mismatches) remains preferable; the
 accepted ZUN config function and DATA remain unchanged. New tests should
 explore a genuinely different CFG rather than these lexical nestings.
+
+## 2026-11-13: shared error payload and return-tail variants
+
+Three additional behavior-preserving C++ layouts were compiled and linked
+through the actual tiny-model Borland TCC 4.02/TLINK toolchain with the
+accepted C0T startup, 322-byte `cfg_init()`, 320-byte semantic DATA and the
+original symbol-only binder. They test distinct ways of expressing the
+`-R` missing-resident and configuration-file failure messages without
+introducing artificial optimization barriers or changing either message:
+
+| Source-flow hypothesis | Complete `main()` bytes | Matching original positions |
+| --- | ---: | ---: |
+| Reuse a local message pointer and jump to one shared print/return tail | 269 | 74 / 269 |
+| Select the failure message with one conditional expression at the shared tail | 269 | 69 / 269 |
+| Keep separate message calls but share a bottom `return 1` label | 269 | 67 / 269 |
+
+All three produce the correct complete 269-byte extent, but none reproduces
+the original bytes. The source/OMF/MZ comparisons show that a matching length
+still says nothing about the error-call placement or branch layout. Each was
+only a first-producer diagnostic; no second producer, compiled negative or
+acceptance import was performed after raw mismatch. The current maintained
+`initialize.cpp`, exact 322-byte configuration owner and exact 320-byte DATA
+owner remain unchanged.
+
+Reproducible private evidence is retained at:
+
+- `.analysis/gpt-web-zun-shared-error-message-20261113.py` and
+  `.analysis/gpt-web-zun-shared-error-message-20261113/`
+- `.analysis/gpt-web-zun-shared-call-conditional-20261113.py` and
+  `.analysis/gpt-web-zun-shared-call-conditional-20261113/`
+- `.analysis/gpt-web-zun-shared-call-tailmerge-20261113.py` and
+  `.analysis/gpt-web-zun-shared-call-tailmerge-20261113/`
+
+These trials narrow the remaining source problem further: neither a shared
+message expression nor a shared status-return label recreates the original
+error-first `-R` block. The 269-byte natural candidate remains unaccepted;
+no game-authored C++ CODE credit or complete-function exactness is claimed.
