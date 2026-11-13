@@ -235,3 +235,38 @@ inside `shinki.cpp` use the same `ShinkiWingPreparationScratch` view; the
 complete phase-role map is in [scratch-byte lifetimes](scratch.md). This is a
 source naming/layout refinement only: the existing 386-byte TCC-S/TASM32
 acceptance remains exact and receives no duplicate CODE credit.
+
+
+## 2026-11-14: Yumeko-to-Shinki laser-template width handoff
+
+The six wing-preparation lasers intentionally do **not** initialize
+`laser_template.coords.width`. The original Stage 5/6 setup order explains the
+state lifetime: `stage5_setup()` installs `yumeko_update`, `stage6_setup()`
+installs `shinki_update`, and both call `boss_reset()`. That helper resets the
+Boss phase/mode/clock and explosions, but does not touch `laser_template`.
+There is no laser-template reset in the Stage 6 setup either.
+
+In Yumeko, the second approach installs `yumeko_pattern_laser_swords`; the
+second stationary phase calls it, and its frame-16 charge writes
+`laser_template.coords.width.nonshrink = YLS_LASER_WIDTH`, where the exact
+value is **6**. The later sword sweep, final approach and final ring do not
+rewrite the template width. Shinki's controller updates only the laser origin
+before the wing callback. At its frame-16 startup, the six calls to
+`laser_manual_fixed_spawn()` copy the inherited template width into each
+laser's `grow_to_width` while starting current width at 1.
+
+This is gameplay-significant, not merely stale scratch: the global loop runs
+`lasers_update()` before `boss_update()`. Once the wing sweep finishes,
+`laser_manual_grow()` starts the eight-frame visible window. Fixed lasers gain
+2 pixels on odd ages, become `LF_FIXED_ACTIVE` when their width reaches the
+copied target, and only hit-test on a later update. Modeling both possible age
+parities across those eight updates gives width 6 **two or three active hit
+updates**, while width 8 gives **zero or one**. The inherited value 6 therefore
+leaves actual collision time before the wing callback stops the lasers; the
+commented-out local assignment would mask the real inter-stage protocol.
+
+`tests/test_shinki_yumeko_laser_handoff.py` pins the Stage 5/6 callback order,
+Yumeko's phase-7 width write, absence of a Stage 6 reset, the manual-spawn copy,
+and both age-parity growth schedules. The accepted 386-byte wing callback is
+replayed locally after the comment-only source clarification; no CODE bytes or
+new storage are claimed.

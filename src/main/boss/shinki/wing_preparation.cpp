@@ -15,13 +15,11 @@ bool near pattern_wing_preparation(void)
 	int i;
 
 	if(boss.phase_frame == SWPREP_START_FRAME) {
-		// Still assumed to be set to this value by Yumeko. Original gameplay
-		// relies on this value to be < 8 to ensure that the lasers will kill
-		// the player if they move to the side of the wings. (Lasers only kill
-		// if they finished growing, they grow by 2 pixels every 2 frames, and
-		// the ones in this pattern are kept alive for 8 frames.)
-		// MODDERS: Uncomment to clearly define the original behavior.
-		// laser_template.coords.width = 6;
+		// Deliberately inherit Yumeko's laser-template width: its phase-7
+		// laser-sword charge writes YLS_LASER_WIDTH (6), and neither the
+		// remaining Yumeko phases nor stage6's boss_reset clears the template.
+		// laser_manual_fixed_spawn copies that value into grow_to_width;
+		// assigning it here would erase the original cross-stage dependency.
 		laser_template.coords.angle = SWPREP_R_OUTER_ANGLE;	laser_manual_fixed_spawn(SWPREP_R_OUTER_LASER);
 		laser_template.coords.angle = SWPREP_R_INNER_ANGLE;	laser_manual_fixed_spawn(SWPREP_R_INNER_LASER);
 		laser_template.coords.angle = SWPREP_R_CENTER_ANGLE;	laser_manual_fixed_spawn(SWPREP_R_CENTER_LASER);
