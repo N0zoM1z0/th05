@@ -17,7 +17,7 @@ struct sword_t {
     uint16_t unused_1;
     int patnum_tiny;
     int decay_frame;
-    int unused_2;
+    signed int unused_2;
     SubpixelLength8 speed;
     signed char padding;
 };
@@ -25,11 +25,11 @@ struct sword_template_t {
     signed char unused_1;
     unsigned char angle;
     PlayfieldPoint origin;
-    int unused_2[4];
+    signed int unused_2[4];
     unsigned int twirl_time;
-    int unused_3;
+    signed int unused_3;
     int patnum_tiny;
-    int unused_4[2];
+    signed int unused_4[2];
     SubpixelLength8 speed;
 };
 #define sword_template (reinterpret_cast<sword_template_t &>(custom_entities[0]))
@@ -68,12 +68,18 @@ typedef char yumeko_sword_pool_fits[(sizeof(sword_t) * SWORD_COUNT <=
 typedef char yumeko_sword_template_fits[(sizeof(sword_template_t) <= sizeof(custom_t)) ? 1 : -1];
 typedef char yumeko_sword_angle_at_1[(offsetof(sword_t, angle) == 1) ? 1 : -1];
 typedef char yumeko_sword_pos_at_2[(offsetof(sword_t, pos) == 2) ? 1 : -1];
+typedef char yumeko_sword_unused1_at_16[(offsetof(sword_t, unused_1) == 16) ? 1 : -1];
+typedef char yumeko_sword_unused2_at_22[(offsetof(sword_t, unused_2) == 22) ? 1 : -1];
 typedef char yumeko_sword_twirl_at_14[(offsetof(sword_t, twirl_time) == 14) ? 1 : -1];
 typedef char yumeko_sword_sprite_at_18[(offsetof(sword_t, patnum_tiny) == 18) ? 1 : -1];
 typedef char yumeko_sword_decay_at_20[(offsetof(sword_t, decay_frame) == 20) ? 1 : -1];
 typedef char yumeko_sword_speed_at_24[(offsetof(sword_t, speed) == 24) ? 1 : -1];
 typedef char yumeko_sword_unused_at_25[(offsetof(sword_t, padding) == 25) ? 1 : -1];
+typedef char yumeko_template_unused1_at_0[(offsetof(sword_template_t, unused_1) == 0) ? 1 : -1];
+typedef char yumeko_template_unused2_at_6[(offsetof(sword_template_t, unused_2) == 6) ? 1 : -1];
 typedef char yumeko_template_origin_at_2[(offsetof(sword_template_t, origin) == 2) ? 1 : -1];
+typedef char yumeko_template_unused3_at_16[(offsetof(sword_template_t, unused_3) == 16) ? 1 : -1];
+typedef char yumeko_template_unused4_at_20[(offsetof(sword_template_t, unused_4) == 20) ? 1 : -1];
 typedef char yumeko_template_twirl_at_14[(offsetof(sword_template_t, twirl_time) == 14) ? 1 : -1];
 typedef char yumeko_template_sprite_at_18[(offsetof(sword_template_t, patnum_tiny) == 18) ? 1 : -1];
 typedef char yumeko_template_speed_at_24[(offsetof(sword_template_t, speed) == 24) ? 1 : -1];

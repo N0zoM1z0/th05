@@ -61,3 +61,16 @@ positives and a rejected bounce336→335 control. Credit is three complete
 functions and435 instruction bytes; no template/slot DATA, tables or padding
 receive credit. The earlier two passing sibling bodies were not imported
 through the failed aggregate.
+
+
+The reserved sword and sword-template members use explicit original signedness
+(`uint16_t`, `signed int`, and `signed char`) and compile-time offset checks,
+matching the pinned ReC98 `th05/main/bullet/sword.hpp` layout. A focused
+2026-11-13 replay recompiled all eight accepted consumers twice; all eight
+complete original extents and ordered relocations remain exact, and the
+compiled negative control is rejected. Receipt:
+`.analysis/unit-replays/ae2f01c503de46f4a330215e40bb9f26/receipt.json`.
+The original-register 283-byte updater ASM was separately replayed twice
+against the changed semantic header and re-accepted without changing its
+exclusive CODE ownership. Receipt:
+`.analysis/gpt-web-yumeko-swords-asm-types-refresh-20261113/receipt.json`.
