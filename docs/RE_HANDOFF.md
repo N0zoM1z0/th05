@@ -18,8 +18,8 @@ replay just to confirm one changed unit.
 | Source-authored exact C/C++ CODE | **108,784 B** |
 | Source-authored initialized C/C++ DATA | **17,513 B** |
 | Combined source-authored C/C++ exact bytes | **126,297 B** |
-| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **317 / 2,370 / 1,795 / 8,559** |
-| Total unclassified decoded bytes | **13,041 B** |
+| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **311 / 2,370 / 1,795 / 8,559** |
+| Total unclassified decoded bytes | **13,035 B** |
 
 Read the **live** [generated progress](PROGRESS.md),
 `config/accepted_units*.json`, `config/exact_units*.toml` and

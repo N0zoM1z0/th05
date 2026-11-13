@@ -25,6 +25,7 @@ BASE = ROOT / 'config/master_vendor_ownership.json'
 MEMBERS = (
     ('BFNT_EXTEND_HEADER_ANALYSIS', 0x3f0, 96),
     ('cutline', 0x778, 116),
+    ('GRCG_BOXFILL_RETURN', 0xea0, 6),
     ('GRCG_BOXFILL', 0xea6, 208),
     ('GRCG_BYTEBOXFILL_X', 0xf76, 152),
     ('GRCG_CIRCLE', 0x10ae, 152),
@@ -47,6 +48,14 @@ MEMBERS = (
     ('TEXT_BOXFILLA', 0x24a8, 78),
     ('TEXT_PUTCA', 0x2540, 88),
 )
+
+# The return-only source procedure is named RETURN in the original GC_BOXFI.ASM
+# archive member and is renamed in the maintained source. Its six bytes also
+# occur at other legitimate return sites, so the original TASM listing and
+# exact source/OMF scope, rather than byte-sequence uniqueness, anchor it.
+ORIGINAL_PROCEDURE_NAMES = {'GRCG_BOXFILL_RETURN': 'RETURN'}
+ORIGINAL_ARCHIVE_MEMBERS = {'GRCG_BOXFILL_RETURN': 'GC_BOXFI.ASM'}
+DUPLICATE_BYTE_SEQUENCE_MEMBERS = {'GRCG_BOXFILL_RETURN'}
 
 
 def symbolic_source(raw):
@@ -93,8 +102,12 @@ def source_evidence(parent):
              'actual native-built Master source file changed')
         candidates = [b for b in source_blocks(source, 'utf8') if b['name'] == name]
         need(len(candidates) == 1, 'actual source procedure incomplete/duplicated')
-        matching = [(f,b) for f,b in originals.get(name.casefold(), [])
-                    if symbolic_source(candidates[0]['text']) == symbolic_source(b['text'])]
+        original_name = ORIGINAL_PROCEDURE_NAMES.get(name, name).casefold()
+        expected_archive_member = ORIGINAL_ARCHIVE_MEMBERS.get(name)
+        matching = [(f,b) for f,b in originals.get(original_name, [])
+                    if (expected_archive_member is None or
+                        f.upper() == expected_archive_member.upper()) and
+                    symbolic_source(candidates[0]['text']) == symbolic_source(b['text'])]
         need(len(matching) == 1,
              'original Master geometry instruction or operand mismatch: ' + name)
         vendor_file, vendor_block = matching[0]
@@ -135,9 +148,10 @@ def replay():
         need(relative_fixups(calibrated,start,size) ==
              relative_fixups(original,start,size) == mz,
              'original ordered GRCG MZ relocations do not match source FIXUPP')
-        need(original.program_image.find(observed) == start and
-             original.program_image.find(observed,start+1) < 0,
-             'complete original graphics CODE extent not uniquely located')
+        if name not in DUPLICATE_BYTE_SEQUENCE_MEMBERS:
+            need(original.program_image.find(observed) == start and
+                 original.program_image.find(observed,start+1) < 0,
+                 'complete original graphics CODE extent not uniquely located')
         rows.append({
             'member': name,'start':start,'end':start+size,'size':size,
             'source':source[name],'original_unlinked_CODE_sha256':unlinked,
