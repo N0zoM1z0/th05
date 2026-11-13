@@ -786,6 +786,7 @@ void pascal shinki_update(void)
 			boss.phase_frame = 0; // redundant
 			phase_relative++;
 		} else {
+			// This phase helper clears the shared patterns_seen/defeat_bonus byte.
 			boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END);
 			playfield_shake_anim_time = PHASE_11_FRAMES;
 			// The pattern_devil() lasers. Should ideally be stopped inside the
@@ -823,7 +824,8 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_FINAL_CIRCLES:
 		// Run the leaf before the strict timeout test: frame 3000 still emits
-		// its final B6 pair/pellet ring, then skips the HP-bonus branch.
+		// its final B6 pair/pellet ring, then skips the HP-bonus branch. The
+		// prior boss_phase_next cleared the shared defeat_bonus byte to zero.
 		pattern_circles_and_alternating_spirals();
 		// Timeout condition
 		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {

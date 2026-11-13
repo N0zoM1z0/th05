@@ -4,7 +4,12 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = (ROOT / "src/main/boss/shinki/shinki.cpp").read_text()
+# The accepted 959-byte controller is independently compiled from
+# update_context.cpp; shinki.cpp remains the full natural-source counterpart.
+SOURCE = (ROOT / "src/main/boss/shinki/update_context.cpp").read_text()
+NATURAL_SOURCE = (ROOT / "src/main/boss/shinki/shinki.cpp").read_text()
+GENERIC_SOURCE = (ROOT / "src/main/boss/generic.cpp").read_text()
+GENERIC_HEADER = (ROOT / "src/main/boss/generic.hpp").read_text()
 TIMING = (ROOT / "src/main/boss/shinki/final_spiral_timing.hpp").read_text()
 WING = (ROOT / "src/main/boss/shinki/wing_attack_rules.hpp").read_text()
 MOVEMENT = (ROOT / "src/main/boss/movement.hpp").read_text()
@@ -43,6 +48,32 @@ class ShinkiFinalPhaseTests(unittest.TestCase):
         self.assertEqual(list(range(1, 18))[-1], 17)
         self.assertEqual(17 + 1, 18)  # first phase-12 callback observes frame 18
 
+    def test_phase_entry_clears_the_shared_defeat_bonus_latch(self):
+        # Boss byte 21 is one byte, not two independent phase counters.
+        self.assertIn("unsigned char patterns_seen;\n        bool defeat_bonus;", MOVEMENT)
+        self.assertIn("th05_boss_phase_state_at_21", MOVEMENT)
+
+        start = GENERIC_SOURCE.index("void pascal near boss_phase_next(")
+        end = GENERIC_SOURCE.index("// Complete natural 414-byte defeat function", start)
+        phase_next = GENERIC_SOURCE[start:end]
+        self.assertIn("boss.phase_state.patterns_seen = 0;", phase_next)
+
+        # Shinki's Devil-to-defeat transition uses that helper. The subsequent
+        # frame-17 transition is a direct phase increment and carries the clock.
+        for source in (SOURCE, NATURAL_SOURCE):
+            self.assertIn("boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END);", source)
+            phase11 = source[source.index("case SHINKI_PHASE_DEFEAT_TRANSITION:"):source.index("case SHINKI_PHASE_FINAL_CIRCLES:")]
+            self.assertIn("boss.phase++;", phase11)
+            self.assertNotIn("boss.phase_frame = 0;", phase11)
+
+        final = phase_block("SHINKI_PHASE_FINAL_CIRCLES", "default:")
+        self.assertIn("boss.phase_state.defeat_bonus = true;", final)
+        self.assertLess(final.index("if(!boss_hittest_shots())"), final.index("boss.phase_state.defeat_bonus = true;"))
+        # A timeout does not enter that HP-only write; the prior helper left
+        # the aliased byte at zero, so generic defeat cannot grant the bonus.
+        self.assertIn("bullet_zap.active = boss.phase_state.defeat_bonus;", GENERIC_HEADER)
+        self.assertIn("if(boss.phase_state.defeat_bonus) { boss_score_bonus(bonus_units); }", GENERIC_HEADER)
+
     def test_final_spiral_emits_360_two_ball_volleys_inclusive_of_frame_3000(self):
         values = enum_constants(TIMING, "ShinkiFinalSpiralClock", "SHINKI_SPIRAL_")
         timeout = int(re.search(r"#define SHW_WING_PHASE_TIMEOUT_FRAMES\s+(\d+)", WING).group(1))
@@ -56,10 +87,22 @@ class ShinkiFinalPhaseTests(unittest.TestCase):
         start = SOURCE.index("void near pattern_circles_and_alternating_spirals(void)")
         end = SOURCE.index("void near shinki_move_float(void)", start)
         body = SOURCE[start:end]
-        self.assertEqual(body.count("b6balls_add();"), 2)
-        first = body.index("b6balls_add();")
+        # The accepted context uses a real one-call macro for the common
+        # vector2_at + b6balls_add sequence; the natural full source spells
+        # both calls inline. Check both forms and their source order.
+        self.assertEqual(body.count("SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();"), 2)
+        macro_start = SOURCE.index("#define SHINKI_SPIRAL_FIRE_OFFSET_B6BALL()")
+        macro_end = SOURCE.index("// The red and pellet rings", macro_start)
+        macro = SOURCE[macro_start:macro_end]
+        self.assertIn("vector2_at(", macro)
+        self.assertIn("b6balls_add();", macro)
+        natural_start = NATURAL_SOURCE.index("void near pattern_circles_and_alternating_spirals(void)")
+        natural_end = NATURAL_SOURCE.index("void near shinki_move_float(void)", natural_start)
+        natural_body = NATURAL_SOURCE[natural_start:natural_end]
+        self.assertEqual(natural_body.count("b6balls_add();"), 2)
+        first = body.index("SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();")
         rotate = body.index("b6ball_template.angle += SHINKI_SPIRAL_OPPOSITE_BALL_ANGLE;")
-        second = body.index("b6balls_add();", first + 1)
+        second = body.index("SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();", first + 1)
         back = body.index("b6ball_template.angle -= SHINKI_SPIRAL_BALL_ROTATE_BACK;")
         self.assertLess(first, rotate)
         self.assertLess(rotate, second)

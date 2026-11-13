@@ -398,6 +398,8 @@ void pascal shinki_update(void)
 			boss.phase_frame = 0; // redundant
 			phase_relative++;
 		} else {
+			// boss_phase_next clears phase_state.patterns_seen. That is the
+			// same physical byte as defeat_bonus, so phase 11 starts unearned.
 			boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END);
 			playfield_shake_anim_time = PHASE_11_FRAMES;
 			// The pattern_devil() lasers. Should ideally be stopped inside the
@@ -432,6 +434,8 @@ void pascal shinki_update(void)
 
 	case SHINKI_PHASE_FINAL_CIRCLES:
 		pattern_circles_and_alternating_spirals();
+		// The carried phase clock is independent of the cleared defeat latch:
+		// only an HP-triggered exit below sets defeat_bonus; frame 3000 times out.
 		// Timeout condition
 		if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES) {
 			// Boss defeated?

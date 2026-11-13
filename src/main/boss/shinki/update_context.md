@@ -436,3 +436,27 @@ wave repeats every 64 updates (256 stage frames).
 spiral and ring counts, the inclusive terminal frame, HP-vs-time defeat bonus,
 and the 4-frame float oscillator. Run it with
 `python3 -m unittest tests.test_shinki_final_phase -v`.
+
+
+## 2026-11-13: phase-state alias reset at the Devil-to-final handoff
+
+The carried phase-11/12 clock does not carry the prior phase's defeat latch.
+The physical Boss byte at offset 21 is a union: `patterns_seen` and
+`defeat_bonus` are the same byte. Shinki's Devil-to-defeat transition calls
+`boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END)`, and the generic helper
+resets `boss.phase_state.patterns_seen = 0` along with the new phase clock.
+That reset therefore also clears `defeat_bonus` before the 16-frame defeat
+transition begins.
+
+The next handoff is intentionally different: phase 11 increments `boss.phase`
+directly after `phase_frame > 16`, preserving frame 17. Phase 12's first
+controller tick increments it to 18. The final HP path alone writes
+`defeat_bonus = true`; the strict frame-3000 timeout skips the HP test and
+leaves the already-cleared byte false. The generic defeat transition consumes
+that same byte for both bullet zap and the 65-unit Shinki score bonus. This
+separates the inherited timer from the non-inherited reward state and prevents
+a stale attack counter from accidentally awarding a timed-out defeat bonus.
+
+`tests/test_shinki_final_phase.py` now checks the actual accepted
+`update_context.cpp` owner as well as the full natural `shinki.cpp` counterpart,
+and pins the generic phase-reset implementation and the byte-21 union layout.
