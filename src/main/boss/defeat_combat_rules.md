@@ -23,9 +23,9 @@ separate all-clear reward paths. The final fade uses the real song-fade
 parameter 10; the next stage handoff pauses for exactly one frame.
 The player's invincibility, homing clear, resident score write and
 stage-selection branches are left untouched. The large explosion is always
-the fixed circular Boss explosion: `boss_defeat_explode_big_circle()` has no
-explosion-type input because the original transition never selected another
-shape. It still gates the bullet-zap activation and score award from the same
+the fixed circular Boss explosion: `boss_defeat_explode_big_circle(bonus_units)`
+has no explosion-type input because the original transition never selected
+another shape. It still gates the bullet-zap activation and score award from the same
 one-byte `boss.phase_state.defeat_bonus` lifetime.
 
 **Collision geometry.** The original DOS-style leaf subtracts the player

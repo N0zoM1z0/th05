@@ -82,10 +82,10 @@ an attack bypass emits146: ordinary pattern/left register declarations restore
 the native allocation, but a six-byte byte-local store/reload remains at the
 join. A simple inline quarter-frame helper emits148, retaining the duplicated
 divide. Both stop after one diagnostic producer and grant no credit. Their
-inputs are retained under `.analysis/native-producers/main-alice-foreground-`
-`{joined-frame,inline-quarter}-a/`. Experimental standalone files were removed;
-the baseline source is unchanged. The earlier helper containing conditional
-returns also remains failed because this compiler did not expand it inline.
+These one-off producer directories were removed after the complete 140-byte
+foreground callback was accepted. The diagnostic outcomes are retained here
+because they explain why the joined-frame and inline-quarter helpers were not
+adopted; no current source or acceptance depends on those binaries.
 
 An ordinary `register unsigned char` declaration on that joined frame local
 also emits146, with the same store/reload.

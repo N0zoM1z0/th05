@@ -31,10 +31,10 @@ accepted complete functions, and the four unchanged prior source bodies retain
 their focused replay receipts. The existing 782 authored C++ byte credit is
 unchanged.
 
-The first successful single-producer mixed-cohort diagnostic is
-`.analysis/gpt-web-yumeko-ten-function-context-a/`; the canonical
-source-inclusion diagnostic is `...-b/`. Both normal positives and own
-compiled negatives are frozen for the accepted units under the
-`gpt-web-main-yumeko-{aimed,laser}-context-20261110` receipt roots. This is
-actual compiler buffering evidence, not a claimed original historical
+The retained single-producer mixed-cohort diagnostic is
+`.analysis/gpt-web-yumeko-ten-function-context-a/`. The accepted aimed- and
+laser-context owners have their own two-producer receipts under
+`.analysis/unit-replays/gpt-web-main-yumeko-aimed-context-20261110/` and
+`.analysis/unit-replays/gpt-web-main-yumeko-laser-context-20261110/`. This is
+compiler-context evidence, not a claim about the historical original
 translation-unit boundary.
