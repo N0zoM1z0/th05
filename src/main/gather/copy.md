@@ -49,3 +49,34 @@ binder stays in place. Receipt:
 This adds **27 reviewed ASM instruction bytes**. The earlier ordinary
 `gather.bullet_template = bullet_template` C++ remains inexact and unaccepted;
 it is not retroactively credited as compiler-exact C++.
+
+## 2026-11-13: natural word-copy loop and pointer-walk diagnostics
+
+The ordinary C++ struct assignment remains a 27-byte object but depends on
+Borland's unresolved `F_SCOPY@` helper, so it cannot be treated as a native
+replacement for the original inline `REP MOVSW`. Several source-only loop
+forms were then compiled as bounded one-producer diagnostics:
+
+- An indexed seven-WORD loop emits **50 bytes**. It creates a BP frame and
+  recomputes both indexed addresses on every iteration.
+- A register SI/DI pointer walk with a WORD trip count emits **44 bytes**.
+  It does avoid per-iteration index multiplication, but the loop still uses
+  explicit word loads/stores and pointer increments rather than REP MOVSW.
+- A `do/while` pointer walk with a register WORD trip count emits **42 bytes**,
+  the best of these new natural-C++ shapes. Borland keeps the count in DX and
+  emits a decrement/test/branch loop; it still has the BP/SI/DI save/restore
+  sequence and is 15 bytes larger than the 27-byte native function.
+- Making the trip count an unsigned byte emits **44 bytes**; it adds an AL/DL
+  transfer and byte decrement rather than selecting the native CX/REP form.
+- An explicit standard `memcpy()` compiles but fails link on unresolved
+  `_memcpy`. It does not provide an inline native copy implementation.
+
+These are first-producer shape diagnostics only; no second producer, negative,
+acceptance receipt or CODE credit is claimed. The exact 27-byte reviewed ASM
+owner remains authoritative. The retained diagnostics are:
+`.analysis/gpt-web-gather-copy-word-loop-a-20261113/native-diagnostic.json`,
+`.analysis/gpt-web-gather-copy-pointer-walk-b-20261113/native-diagnostic.json`,
+`.analysis/gpt-web-gather-copy-register-do-loop-a-20261113/native-diagnostic.json`,
+`.analysis/gpt-web-gather-copy-byte-count-a-20261113/native-diagnostic.json`,
+and the failed link log under
+`.analysis/gpt-web-gather-copy-memcpy-a-20261113/`.

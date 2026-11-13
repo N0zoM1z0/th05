@@ -112,6 +112,13 @@ The full ZUN ownership summary and current intervals are in
   The attempt also pinned a TC4.02 codegen constraint: postfix byte INC/DEC
   must remain postfix to preserve the direct memory instructions. No duplicate
   CODE credit is claimed. See [`shinki/devil.md`](../src/main/boss/shinki/devil.md).
+- **Gather template-copy leaf (2026-11-13)**: the 27-byte exact ASM owner
+  remains authoritative. New natural C++ alternatives were compiled: indexed
+  WORD loop 50 bytes, SI/DI pointer loop 44 bytes, best register do/while loop
+  42 bytes, byte-count loop 44 bytes; explicit `memcpy()` links unsuccessfully
+  on `_memcpy`. None replaces the original inline seven-WORD `REP MOVSW`, and
+  these first-producer diagnostics receive no acceptance or CODE credit. See
+  [`gather/copy.md`](../src/main/gather/copy.md).
 - **B4-ball updater (2026-11-13)**: `b4balls_update()` remains exact at 273
   bytes with ordered fixups `[235,156,118]`. The unused false-return helper
   was simplified to an empty inline `void`; two fresh positives and the
