@@ -26,8 +26,9 @@ owners. Their ownership and the updater's 283-byte ASM ownership are unchanged.
 
 Current evidence:
 
-- Natural C++ positives: `.analysis/gpt-web-yumeko-natural-owner-positive-a-20261113/`
-  and `...-positive-b-20261113/`.
+- Natural C++ positives:
+  `.analysis/gpt-web-yumeko-natural-owner-positive-a-20261113/` and
+  `.analysis/gpt-web-yumeko-natural-owner-positive-b-20261113/`.
 - Compiled negative: `.analysis/gpt-web-yumeko-natural-owner-negative-twirl-step-20261113/`.
 - Verification summary: `.analysis/gpt-web-yumeko-natural-owner-verification-20261113.json`.
 - Accepted ASM receipt: `.analysis/gpt-web-yumeko-swords-asm-a/receipt.json`.
