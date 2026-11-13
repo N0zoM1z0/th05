@@ -166,6 +166,8 @@ phase5_complete:
             if(boss.phase_frame >= YUKI_SOLO_FINAL_WAVE_DELAY_FRAMES) {
                 MY_SOLO_NEXT_PATTERN();
                 if(boss.phase_state.patterns_seen >= YUKI_SOLO_WAVE_FINAL_LIMIT) {
+                    // patterns_seen aliases defeat_bonus at the same Boss byte.
+                    // A timed clear deliberately leaves the shared bonus flag false.
                     boss.phase_state.patterns_seen = 0;
                     goto defeat;
                 }
@@ -180,6 +182,8 @@ phase5_complete:
         if(!boss_hittest_shots()) {
             break;
         }
+        // Only the HP-gate path grants the shared defeat bonus; the count
+        // timeout above reaches this label without setting the flag.
         boss.phase_state.defeat_bonus = true;
 defeat:
         boss_explode_small(ET_VERTICAL);

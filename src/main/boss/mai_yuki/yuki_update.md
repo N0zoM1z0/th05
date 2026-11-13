@@ -140,3 +140,60 @@ passed two fresh Borland/TLINK producers with the full **826 original
 bytes**, 20-byte compiler switch table and ordered MZ fixups `[256,140]`;
 its compiled HP-threshold mutation was rejected. This refreshes the
 already accepted source owner, without a second CODE credit.
+
+## 2026-11-13: independent wave clocks, defeat-bonus lifetime and terminal volleys
+
+The three attack counters are **per-wave**, not cumulative. The first wave
+starts with `yuki_solo_ring_sweep`, then selects the two-entry bank by the
+post-reposition parity and ends at 12 completed attacks. Its
+`boss_phase_next(ET_NW_SE, ...)` resets the real `phase_state.patterns_seen`
+byte before the second wave begins. The second wave starts with
+`yuki_solo_random_rings`, alternates the two-entry random-ring/snow-fan bank,
+and ends at 24 completed attacks; its own `boss_phase_next(ET_SW_NE, ...)`
+resets the counter again before the final approach. Thus the second wave is
+24 patterns, not the 12 remaining values of a cumulative counter.
+
+The final wave begins with one explicit `yuki_solo_snow_cross` callback and a
+fresh zero counter. Each completed eight-frame reposition increments that
+counter before selecting `yuki_solo_pattern_final[count % 5]`. The first
+selection is therefore index 1 (`yuki_solo_vector_stacks`), not index 0; the
+snow-cross entry is selected again at counts 5, 10, 15, 20, 25, 30 and 35.
+Across the complete 36-pattern final wave this is **eight snow-crosses and
+28 vector-stack attacks**, including the initial snow-cross. The final five
+entry table's four repeated vector-stack pointers are intentional schedule
+weights, not duplicate data to be deduplicated.
+
+The count-timeout and HP-triggered defeats also have different bonus
+semantics. `boss_stuff_t::phase_state` overlays `patterns_seen` and
+`defeat_bonus` in the same byte at offset 21. On the 36th completed pattern,
+the timeout path explicitly writes zero to `patterns_seen` and jumps to the
+common defeat label before the HP-gate branch. That leaves `defeat_bonus`
+false, so the shared defeat transition does not activate bullet-zap or award
+the 50-unit Boss defeat bonus. Only a successful `boss_hittest_shots()` HP
+gate reaches the later `defeat_bonus = true` write. The comments beside both
+branches now call out this real byte-lifetime distinction; generated code is
+unchanged.
+
+The large callback's leaf schedules are now modeled separately as well:
+
+- `yuki_solo_snow_cross` fires four quarter-turn balls at frames 32, 36, 40,
+  44, 48, 52, 56, 60 and **64** (36 balls total); the frame-64 volley occurs
+  before the signed snow step reverses and reposition begins.
+- `yuki_solo_snow_fan` emits five B4 balls at each of frames 32, 64, 96, 128
+  and 160 (25 balls total); frame 160 still fires before returning.
+- `yuki_solo_vector_stacks` uses frame 24 for setup, then fires on frames
+  26..64 every two frames (20 volleys); the terminal frame-64 volley precedes
+  the angle-step reversal and reposition.
+- The opening ring sweep fires on even frames 50..256 (104 volleys), reverses
+  its angular step at frame 160, and still fires on frame 256 before finishing.
+  The random-ring leaf fires on frames 16..160 every 16 frames (10 volleys).
+  The random-spread leaf performs two fresh RNG draws per even frame 10..256
+  (124 volleys); speed and spread are not cached between bullets.
+- The speedup leaf is called before the 2,000-frame timeout check, so its
+  frame-2,000 special volley is included before the phase transition.
+
+`tests/test_yuki_solo_schedule.py` covers the ten phase selectors, HP ladder,
+independent 12/24/36 wave budgets, exact callback sequences, the aliased
+HP/time defeat flag, and the inclusive terminal volleys/RNG cadence of the
+seven relevant leaf schedules. Run it with
+`python3 -m unittest tests.test_yuki_solo_schedule -v`.
