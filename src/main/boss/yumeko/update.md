@@ -277,3 +277,28 @@ passed two fresh Borland/TLINK producers: **884/884 raw bytes** and the six
 original ordered MZ fixups `[399,344,333,270,161,79]`. The compiled control
 changed `turns_max` from2 to3 and was rejected. This is a semantic clarification
 of an already accepted large Boss owner, not additional CODE credit.
+
+
+## 2026-11-13: two mobile waves count the preinstalled callback
+
+Both mobile phases begin in attack mode with a callback selected by the prior
+phase transition: the first wave starts with the sword fan installed at the
+entrance handoff; the second starts with counterrotating spreads installed at
+the first stationary-wave exit. `boss.phase_state.patterns_seen` starts at zero
+for each wave. Each completed 64-frame reposition increments it before the
+limit test. Counts 1 through 19 select the corresponding parity slot from the
+phase-specific two-entry bank; count 20 jumps directly to the wave transition
+before another bank lookup or the normal shot-hit/bonus path.
+
+This means each wave contains exactly 20 callbacks: its preinstalled initial
+callback plus 19 table-selected callbacks. The first bank alternates sword fan
+and red ring; the second alternates counterrotating spreads and mirrored
+spreads. Both use the same one-bit parity mask, but remain distinct near
+function-pointer banks with two reserved null entries each. The twenty
+reposition legs each consume 64 controller updates (1,280 movement updates per
+wave); the twenty-first callback is never selected. The first wave exits with
+ET_CIRCLE/HP 5,700, the second with ET_HORIZONTAL/HP 2,700.
+
+`tests/test_yumeko_mobile_waves.py` locks the initial callback handoffs, exact
+20-callback sequences, the count-20 bypass, and the shared 64-frame reposition
+clock against the complete accepted updater and original callback banks.

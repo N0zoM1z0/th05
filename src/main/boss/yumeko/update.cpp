@@ -162,6 +162,8 @@ void pascal far yumeko_update(void)
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
+                // The phase's first callback was installed before this wave.
+                // Completion 20 ends the wave before another bank lookup or hit test.
                 if(boss.phase_state.patterns_seen >= YUMEKO_WAVE_PATTERN_LIMIT) {
                     goto moving_phase_end;
                 }
