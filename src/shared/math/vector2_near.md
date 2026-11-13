@@ -155,3 +155,48 @@ Producer directories:
 `.analysis/gpt-web-vector2-near-reordered-split-products-a-20261113/`,
 `.analysis/gpt-web-vector2-near-dx-word-then-signextend-a-20261113/` and
 `.analysis/gpt-web-vector2-near-signed-register-length-word-a-20261113/`.
+
+## 2026-11-13: exact 12-byte natural-C++ residual
+
+The complete original byte stream and the maintained 67-byte C++ producer were
+re-decoded side by side from the pinned MAIN image and two fresh producer
+outputs. The original 55-byte procedure is compact because it uses each
+native destination register as the direct output of its source operation:
+
+```asm
+movsx edx, word ptr [bp+4]
+mov   bl, byte ptr [bp+6]
+mov   bh, 0
+add   bx, bx
+movsx eax, word ptr [bx+CosTable8]
+movsx ecx, word ptr [bx+SinTable8]
+imul  eax, edx
+sar   eax, 8
+imul  edx, ecx
+sar   edx, 8
+mov   bx, word ptr [bp+8]
+mov   word ptr [bx], ax
+mov   word ptr [bx+2], dx
+```
+
+The natural C++ producer preserves the same Pascal stack ABI (`length` at
+BP+4, angle at BP+6, result reference at BP+8), the same signed products,
+`SAR` operations, output order and `RET 6`, but Turbo C++ lowers three values
+through EAX:
+
+1. Length becomes `MOVSX EAX,[BP+4]; MOV EDX,EAX` instead of direct
+   `MOVSX EDX,[BP+4]` (**+3 bytes**).
+2. The sine table value is loaded into EAX and copied to ECX before the cosine
+   value is loaded into EAX. Native code loads cosine directly to EAX and sine
+   directly to ECX (**+3 bytes**).
+3. The second product is computed by copying EDX into EAX, multiplying and
+   shifting EAX, then copying EAX back to EDX. Native code multiplies and
+   shifts EDX in place (**+6 bytes**).
+
+Those three compiler-lowering differences account for the complete **12-byte**
+residual (67 versus 55). The original has no SI/DI saves, stack locals, table
+or relocation. The natural candidate also has no extra table, relocation or
+owned data; its extra bytes are register copies only. This is a precise codegen
+boundary, not a source-ABI error or missing target context. The 55-byte
+reviewed ASM remains the sole exact owner, and the 67-byte natural C++ attempt
+continues to earn zero CODE credit.
