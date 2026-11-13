@@ -146,3 +146,27 @@ These trials narrow the remaining source problem further: neither a shared
 message expression nor a shared status-return label recreates the original
 error-first `-R` block. The 269-byte natural candidate remains unaccepted;
 no game-authored C++ CODE credit or complete-function exactness is claimed.
+
+## 2026-11-13: comma-expression removal returns
+
+Two further natural C++ spellings put both `-R` outcomes directly in
+comma-expression return paths. Each was compiled by the real tiny-model
+TCC 4.02 producer and linked with the accepted C0T, config, CP932 semantic
+DATA and original symbol-only TASM binder:
+
+| Source form | Native `main()` CODE | Matching original positions |
+| --- | ---: | ---: |
+| One conditional expression for free/removed versus not-found | 273 B | 8 / 269 |
+| Separate `if(seg)` and missing branches, each with a comma-expression return | 270 B | 6 / 269 |
+
+Neither preserves the original 269-byte complete extent or its branch/call
+layout. Both are first-producer failures; no second producer, negative
+control or acceptance import followed. The maintained 269-byte/17-position
+near-match source, accepted `cfg_init()` and accepted initialized DATA are
+unchanged.
+
+Private evidence: `.analysis/gpt-web-zun-rcomma-20261113.py`,
+`.analysis/gpt-web-zun-rcomma-20261113-results.json`, and the two
+`gpt-web-zun-rcomma-*-20261113-first/` directories. The source trials used
+the real CP932 compiler input and original link order; no target bytes,
+artificial side effects, optimizer barriers or assembler edits were used.
