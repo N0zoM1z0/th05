@@ -24,7 +24,7 @@ struct AlicePuppet {
     int patnum;
     int hp;
     int damage_this_frame;
-    int unused_24;
+    int padding; // Original int16_t; Borland int is the 16-bit slot word.
 };
 #define alice_puppet0 (reinterpret_cast<AlicePuppet &>(custom_entities[0]))
 #define alice_puppet1 (reinterpret_cast<AlicePuppet &>(custom_entities[1]))
@@ -53,7 +53,7 @@ typedef char alice_puppet_radius_at_16[(offsetof(AlicePuppet, radius) == 16) ? 1
 typedef char alice_puppet_patnum_at_18[(offsetof(AlicePuppet, patnum) == 18) ? 1 : -1];
 typedef char alice_puppet_hp_at_20[(offsetof(AlicePuppet, hp) == 20) ? 1 : -1];
 typedef char alice_puppet_damage_at_22[(offsetof(AlicePuppet, damage_this_frame) == 22) ? 1 : -1];
-typedef char alice_puppet_unused_at_24[(offsetof(AlicePuppet, unused_24) == 24) ? 1 : -1];
+typedef char alice_puppet_padding_at_24[(offsetof(AlicePuppet, padding) == 24) ? 1 : -1];
 typedef char alice_point_storage_is_four[(sizeof(PlayfieldPoint) == sizeof(uint32_t)) ? 1 : -1];
 
 #endif

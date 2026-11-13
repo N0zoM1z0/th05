@@ -1,4 +1,4 @@
-# Alice puppet-beam natural C++ candidate
+# Alice puppet-beam exact natural C++ reconstruction
 
 This single complete algorithm occupies original MAIN
 `[1E602,1E764)`:354 instruction bytes,102 instructions and four near-cdecl
@@ -16,9 +16,11 @@ collision retains the different half-open horizontal/vertical bounds and
 original growing burst window.
 
 The complete26-byte puppet overlay retains both flags, full motion, phase
-frame, radius union, pattern, HP, word damage and the genuine final unused
-word. Puppets occupy slots0 and1 of the existing canonical26-byte custom
-pool. Boss24, BulletTemplate14, Player motion and four-byte points are reused
+frame, radius union, pattern, HP, word damage and the original signed 16-bit
+`padding` word at offset24. This is not a guessed field: the pinned original
+`th05/main/boss/b3puppet.hpp` declares `int16_t padding` after
+`damage_this_frame`, and the maintained layout now mirrors that exact source.
+Puppets occupy slots0 and1 of the existing canonical26-byte custom pool. Boss24, BulletTemplate14, Player motion and four-byte points are reused
 without changing an accepted definition. Whole coordinate objects have no
 padding, so their32-bit storage comparison expresses both coordinate equality
 tests directly. The stack assignment combines the two actual adjacent count
@@ -45,21 +47,24 @@ DATA/BSS remain word-aligned, no ORG exceeds64KiB, and no stack, instruction,
 initialized value or inside-function hole is supplied. Source and options
 follow the existing MAIN large-model compiler contract.
 
-Proposed owner: `main-alice-puppet-beam`, wrapper`th05/a_beam.cpp`,
-`B4_UPDATE_TEXT/main_03`. The meaningful negative changes the shot collision
-horizontal radius from56 to55 pixels in the staged source. Details are in
-`.analysis/alice-beam-boundary-review.json`. No compiler has been executed
-for this preparation. Two fresh deterministic producers, actual OMF/EXTDEF
-checks, complete raw bytes, original ordered fixups and compiled negative
-rejection remain required before any exact-source acceptance.
+Accepted unit: `main-alice-puppet-beam`, wrapper `th05/a_beam.cpp`,
+`B4_UPDATE_TEXT/main_03`. Two independent fresh deterministic producers
+reproduce all354 raw bytes and all four original ordered fixups. The compiled
+beam-width56-to-55 mutation is rejected. Credit is one complete function and
+354 authored instruction bytes; there is no owned table, executable padding,
+initialized DATA or BSS. The later padding-field source-name correction below
+was separately replayed across every dependent accepted Alice unit.
 
+## Puppet tail-word provenance (2026-11-13)
 
-Accepted in `main-alice-puppet-beam-a/receipt.json`: both independent fresh deterministic
-producers reproduce all354 raw bytes and all four original ordered fixups.
-The compiled beam width56→55 mutation is rejected.
-Credit is1 complete function(s) and354 authored instruction bytes;
-there is no owned table, padding, DATA or BSS. No previously accepted source
-or ABI header was changed to obtain this result.
+The final two bytes of `AlicePuppet` are named `padding`, not `unused_24`.
+The original ReC98 `th05/main/boss/b3puppet.hpp` declares the exact tail
+field as `int16_t padding` immediately after `damage_this_frame`. Borland's
+16-bit `int` is the same two-byte storage word, so the maintained overlay uses
+`int padding` plus the existing offset-24 assertion. This is a source-name
+recovery only: the field remains unaccessed by the Alice puppet algorithms,
+its offset and size are unchanged, and the focused 14-unit replay reproduces
+every original CODE/DATA byte, relocation and negative-control rejection.
 
 ## Shared beam-state semantics (2026-11-11)
 
