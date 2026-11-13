@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from ownership import partition, validate_partition, overlay_vendor
+from ownership import partition, validate_partition, overlay_vendor, overlay_zun
 
 
 class OwnershipTests(unittest.TestCase):
@@ -76,6 +76,43 @@ class OwnershipTests(unittest.TestCase):
             with self.subTest(start=start), self.assertRaises(ValueError):
                 overlay_vendor(20, pieces, [{"start": start, "end": start + 1,
                     "kind": "verified-vendor-code", "member": "vendor"}])
+
+
+    def test_zun_native_claims_replace_only_unknown_and_keep_data_alignment_distinct(self):
+        pieces = partition(20, [self.entry(10, 5)])
+        origin = "reviewed-native-zun-com-reconstruction"
+        claims = [
+            {"start": 2, "end": 6, "kind": "accepted-zun-com-instructions",
+             "unit": "zun-leaf", "origin": origin,
+             "source_origin": "inferred-original-register-assembly", "instruction_bytes": 4},
+            {"start": 6, "end": 8, "kind": "checked-uncredited-zun-com-alignment",
+             "unit": "zun-leaf", "origin": origin,
+             "source_origin": "inferred-original-register-assembly", "instruction_bytes": 0,
+             "authored_credit": 0},
+            {"start": 8, "end": 10, "kind": "accepted-zun-com-initialized-data",
+             "unit": "zun-leaf", "origin": origin,
+             "source_origin": "inferred-original-register-assembly", "instruction_bytes": 0},
+        ]
+        rows = overlay_zun(20, pieces, claims)
+        self.assertEqual([(r["start"], r["end"], r["kind"]) for r in rows], [
+            (0, 2, "unknown"), (2, 6, "accepted-zun-com-instructions"),
+            (6, 8, "checked-uncredited-zun-com-alignment"),
+            (8, 10, "accepted-zun-com-initialized-data"),
+            (10, 15, "accepted-cxx-instructions"), (15, 20, "unknown")])
+
+    def test_zun_native_claims_cannot_overwrite_known_owners_or_fake_vendor_provenance(self):
+        pieces = partition(20, [self.entry(5, 8)])
+        base = {"start": 6, "end": 7, "kind": "accepted-zun-com-instructions",
+                "unit": "zun-leaf", "origin": "reviewed-native-zun-com-reconstruction",
+                "source_origin": "inferred-original-register-assembly", "instruction_bytes": 1}
+        with self.assertRaises(ValueError):
+            overlay_zun(20, pieces, [base])
+        vendor = {"start": 0, "end": 2, "kind": "verified-vendor-code",
+                  "unit": "master", "origin": "reviewed-native-zun-com-reconstruction",
+                  "source_origin": "inferred-original-register-assembly",
+                  "instruction_bytes": 2, "library": "Master 0.23", "member": "MEM"}
+        with self.assertRaises(ValueError):
+            overlay_zun(20, partition(20, []), [vendor])
 
     def test_duplicate_and_out_of_bounds_vendor_claims_are_rejected(self):
         row = {"start": 0, "end": 4, "kind": "verified-vendor-code", "member": "vendor"}

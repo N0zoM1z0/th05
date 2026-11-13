@@ -217,6 +217,50 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
     return output
 
 
+def overlay_zun(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
+    """Adopt only complete, source-current ZUN.COM child/launcher scopes."""
+    validate_partition(size, pieces)
+    allowed = {"accepted-zun-com-instructions", "accepted-zun-com-initialized-data",
+               "checked-uncredited-zun-com-alignment", "verified-vendor-code"}
+    for row in claims:
+        kind = row.get("kind")
+        if (kind not in allowed or not row.get("unit") or
+                row.get("origin") != "reviewed-native-zun-com-reconstruction" or
+                row.get("source_origin") not in {
+                    "third-party-comcstm-stub-reference", "pipeline-reconstructed-assembly",
+                    "inferred-original-register-assembly", "inferred-original-handwritten-assembly",
+                    "pinned-master-library-original-assembly"} or
+                type(row.get("start")) is not int or type(row.get("end")) is not int or
+                not 0 <= row["start"] < row["end"] <= size):
+            raise ValueError("invalid ZUN native child ownership claim")
+        length = row["end"] - row["start"]
+        if kind in ("accepted-zun-com-instructions", "verified-vendor-code"):
+            if row.get("instruction_bytes") != length:
+                raise ValueError("ZUN instruction claim must count its complete instruction extent")
+        elif row.get("instruction_bytes") != 0:
+            raise ValueError("ZUN initialized data/alignment cannot claim instruction bytes")
+        if kind == "checked-uncredited-zun-com-alignment":
+            if row.get("authored_credit") != 0:
+                raise ValueError("ZUN alignment is always uncredited")
+        if kind == "verified-vendor-code":
+            if (row.get("source_origin") != "pinned-master-library-original-assembly" or
+                    row.get("library") != "Master 0.23" or not row.get("member")):
+                raise ValueError("ZUN vendor code requires its exact Master source identity")
+    known = [row for row in pieces if row["kind"] != "unknown"]
+    output, cursor = [], 0
+    for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):
+        if row["start"] < cursor:
+            raise ValueError("ZUN source claim overlaps an existing owner or another claim")
+        if cursor < row["start"]:
+            output.append({"start": cursor, "end": row["start"], "kind": "unknown"})
+        output.append(dict(row))
+        cursor = row["end"]
+    if cursor < size:
+        output.append({"start": cursor, "end": size, "kind": "unknown"})
+    validate_partition(size, output)
+    return output
+
+
 def overlay_resources(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
     """Classify reviewed bitmap resources only within still-unknown bytes."""
     validate_partition(size, pieces)
@@ -829,6 +873,16 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             crt_claims, crt_review_sha = reviewed_zun_crt(
                 root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, crt_claims)
+            # The original COM's independently accepted outer wrapper,
+            # dispatcher, four standalone child modules, and two Master
+            # resident source families were not yet reflected in this map.
+            # Overlay only their exact source-written bytes; leave all remaining
+            # -S bytes, the writable CRT CS slot, and the external font resource
+            # to their separate owners/unknown policy.
+            from review_zun_ownership import reviewed_claims as reviewed_zun_modules
+            zun_claims, zun_review_sha = reviewed_zun_modules(
+                root, view=view, verify_targets=verify_targets)
+            pieces = overlay_zun(view["size"], pieces, zun_claims)
         if name in additions:
             pieces = overlay_vendor(view["size"], pieces, additions[name])
         if name in sin8:
@@ -911,6 +965,8 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             counts[row["kind"]] += row["end"] - row["start"]
         views[name] = {**view, "original_sha256": target["sha256"],
                        "byte_counts": dict(sorted(counts.items())), "intervals": pieces}
+        if name == "zun" and zun_review_sha:
+            views[name]["zun_native_modules_review_sha256"] = zun_review_sha
         if review_sha:
             views[name]["vendor_review_sha256"] = review_sha
         if name in ("op", "maine") and context_reserved_sha:

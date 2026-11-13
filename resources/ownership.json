@@ -14,16 +14,19 @@
     "accepted-reviewed-asm-initialized-data": 64,
     "accepted-reviewed-asm-instructions": 13969,
     "accepted-reviewed-asm-semantic-code-table": 36,
+    "accepted-zun-com-initialized-data": 1514,
+    "accepted-zun-com-instructions": 1843,
     "checked-uncredited-asm-alignment": 87,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 24,
     "checked-uncredited-padding": 103,
+    "checked-uncredited-zun-com-alignment": 12,
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 12758,
-    "verified-vendor-code": 138289,
+    "unknown": 8342,
+    "verified-vendor-code": 139336,
     "verified-vendor-initialized-data": 7870
   },
   "views": {
@@ -14512,16 +14515,169 @@
       "byte_counts": {
         "accepted-cxx-initialized-data": 320,
         "accepted-cxx-instructions": 591,
+        "accepted-zun-com-initialized-data": 1514,
+        "accepted-zun-com-instructions": 1843,
+        "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 8290,
-        "verified-vendor-code": 613,
+        "unknown": 3874,
+        "verified-vendor-code": 1660,
         "verified-vendor-initialized-data": 110
       },
       "intervals": [
         {
           "start": 0,
+          "end": 3,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-outer",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "third-party-comcstm-stub-reference",
+          "instruction_bytes": 3
+        },
+        {
+          "start": 3,
+          "end": 303,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-outer",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "third-party-comcstm-stub-reference",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 303,
+          "end": 305,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 2
+        },
+        {
+          "start": 305,
+          "end": 326,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 326,
+          "end": 526,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 200
+        },
+        {
+          "start": 526,
+          "end": 850,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 850,
+          "end": 853,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 3
+        },
+        {
+          "start": 853,
+          "end": 1745,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-adpcm",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 892
+        },
+        {
+          "start": 1745,
+          "end": 1779,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-adpcm",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 1779,
+          "end": 1782,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 3
+        },
+        {
+          "start": 1782,
+          "end": 1783,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 1783,
+          "end": 1934,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 151
+        },
+        {
+          "start": 1934,
+          "end": 1935,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 1935,
+          "end": 2013,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 78
+        },
+        {
+          "start": 2013,
+          "end": 2271,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 2271,
+          "end": 2489,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 218
+        },
+        {
+          "start": 2489,
           "end": 2788,
-          "kind": "unknown"
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-interrupt",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0
         },
         {
           "start": 2788,
@@ -14560,6 +14716,206 @@
         },
         {
           "start": 3994,
+          "end": 4029,
+          "kind": "verified-vendor-code",
+          "unit": "master-resdata",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 35,
+          "library": "Master 0.23",
+          "member": "master-resdata"
+        },
+        {
+          "start": 4029,
+          "end": 4030,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-resdata",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4030,
+          "end": 4219,
+          "kind": "verified-vendor-code",
+          "unit": "master-resdata",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 189,
+          "library": "Master 0.23",
+          "member": "master-resdata"
+        },
+        {
+          "start": 4219,
+          "end": 4220,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-resdata",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4220,
+          "end": 4351,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 131,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4351,
+          "end": 4352,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4352,
+          "end": 4507,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 155,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4507,
+          "end": 4508,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4508,
+          "end": 4693,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 185,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4693,
+          "end": 4694,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4694,
+          "end": 4801,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 107,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4801,
+          "end": 4802,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4802,
+          "end": 4853,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 51,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4853,
+          "end": 4854,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4854,
+          "end": 4985,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 131,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 4985,
+          "end": 4986,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 4986,
+          "end": 5025,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 39,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 5025,
+          "end": 5026,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 5026,
+          "end": 5050,
+          "kind": "verified-vendor-code",
+          "unit": "master-file-family",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-master-library-original-assembly",
+          "instruction_bytes": 24,
+          "library": "Master 0.23",
+          "member": "master-file-family"
+        },
+        {
+          "start": 5050,
           "end": 8244,
           "kind": "unknown"
         },
@@ -14581,8 +14937,36 @@
         },
         {
           "start": 8674,
-          "end": 9537,
+          "end": 9352,
           "kind": "unknown"
+        },
+        {
+          "start": 9352,
+          "end": 9427,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-gaiji",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 75
+        },
+        {
+          "start": 9427,
+          "end": 9428,
+          "kind": "checked-uncredited-zun-com-alignment",
+          "unit": "zun-gaiji",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0,
+          "authored_credit": 0
+        },
+        {
+          "start": 9428,
+          "end": 9537,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-gaiji",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-register-assembly",
+          "instruction_bytes": 0
         },
         {
           "start": 9537,
@@ -14595,10 +14979,42 @@
         },
         {
           "start": 17729,
+          "end": 17871,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-memory",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-handwritten-assembly",
+          "instruction_bytes": 142
+        },
+        {
+          "start": 17871,
+          "end": 18040,
+          "kind": "accepted-zun-com-initialized-data",
+          "unit": "zun-memory",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "inferred-original-handwritten-assembly",
+          "instruction_bytes": 0
+        },
+        {
+          "start": 18040,
+          "end": 18048,
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-dispatcher",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pipeline-reconstructed-assembly",
+          "instruction_bytes": 8
+        },
+        {
+          "start": 18048,
           "end": 18116,
-          "kind": "unknown"
+          "kind": "accepted-zun-com-instructions",
+          "unit": "zun-outer",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "third-party-comcstm-stub-reference",
+          "instruction_bytes": 68
         }
       ],
+      "zun_native_modules_review_sha256": "f3ea5c7e1d1826eb821bdf978660ad57f7e8c43854b4f330c9c3d764d1690509",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }
