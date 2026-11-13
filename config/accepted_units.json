@@ -2,21 +2,29 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "560339fb8868c92408f7b9399623c72ad46179f4f22fea902a0e234be3b05258",
+  "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 102151,
-    "candidate_start": 102151,
-    "size": 496,
-    "target_sha256": "105804ead7d801d2fe7bfe9b3ee35b40ed2f7c67e0c841eeac1e2adfbada3be1",
-    "candidate_sha256": "a2629976a1442a9a4f97917185a509a79567441380d329953d55e95581898d7a",
+    "target_start": 67086,
+    "candidate_start": 67086,
+    "size": 452,
+    "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+    "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
     "raw_exact": false,
     "target_fixups": [
-      365
+      329,
+      285,
+      251,
+      92,
+      62
     ],
     "candidate_fixups": [
-      365
+      329,
+      285,
+      251,
+      92,
+      62
     ],
     "fixups_exact": true,
     "exact": false
@@ -754,7 +762,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "ee0b7589ab8eb91d522a7092b49ae0b2b31c5e57b54a7d15e9a112b895cae2e3",
+            "sha256": "cc1f300622aa839d6decee2b1553ca568680c7529aedfc03b5456794d90c0d5b",
             "dependency_timestamp_normalized_sha256": "291446cace058eb51e4903ce6eda0f118a8d9428db5c8b0f35e73d4338802a26",
             "module_name": "th05/boss_exp.cpp",
             "translator_comments": [
@@ -775,7 +783,7 @@
             ]
           },
           {
-            "sha256": "f80cc8749c64036052d5dfbccca434e14ef1b903f03f0006a9cdf5d92c81ab0c",
+            "sha256": "9f9229406f675d3bfe720e9eeda547c235d697e3c085bdeb0bf2e4a0e11b9508",
             "dependency_timestamp_normalized_sha256": "291446cace058eb51e4903ce6eda0f118a8d9428db5c8b0f35e73d4338802a26",
             "module_name": "th05/boss_exp.cpp",
             "translator_comments": [
@@ -839,7 +847,7 @@
           },
           {
             "path": "src/main/boss/explosion.hpp",
-            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+            "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
           },
           {
             "path": "src/main/boss/explosion_choreography.hpp",
@@ -871,7 +879,7 @@
         },
         {
           "path": "src/main/boss/explosion.hpp",
-          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
         },
         {
           "path": "src/main/boss/explosion_choreography.hpp",
@@ -892,7 +900,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "222b56f897694739f2087d70ce79faea63eb75e8496323058f4bdfe5daf1112a",
+      "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
       "compiled_negative_control": {
         "target_start": 67086,
         "candidate_start": 67086,
@@ -953,7 +961,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "be860de34415dfd1ecc4d9c716e30d1cf3537b57a10bfa4f82c34692e6b5060e",
+          "sha256": "d4e79fa8125439413ab9dd5df6741b0ab935daf755756c5e8d83a3804c481565",
           "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
           "module_name": "th05/boss_exp.cpp",
           "translator_comments": [
@@ -987,7 +995,14 @@
           "th05/boss_exp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-explosion",
+        "main-boss-explosion-spawn",
+        "main-bullets-render",
+        "main-exalice-custom-render",
+        "main-midboss-defeat-render"
+      ]
     },
     {
       "id": "main-hud-overlay",
@@ -49775,7 +49790,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "ca9d4eb7a4ac70bf28b6ee03505c4c69a3639062aaca3717581b7e34e498ad20",
+            "sha256": "aef73aeb1b760abb5ef11a035e1dc8030dd3140db25a62d4c7f60280324bbaea",
             "dependency_timestamp_normalized_sha256": "c2a59f3e43bb439629e637a9cdd92805acb0264fccbec2f38c7276f57f473f15",
             "module_name": "th05/bx_cus.cpp",
             "translator_comments": [
@@ -49797,7 +49812,7 @@
             ]
           },
           {
-            "sha256": "e7779d2999e3a4e093bc736865016377708059b944b451ab7a863d6e193b13ac",
+            "sha256": "f1abc2cfd77653a23d27434c969acb8e2de892b289479bf1adb70266abaf2f8e",
             "dependency_timestamp_normalized_sha256": "c2a59f3e43bb439629e637a9cdd92805acb0264fccbec2f38c7276f57f473f15",
             "module_name": "th05/bx_cus.cpp",
             "translator_comments": [
@@ -49820,8 +49835,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -49866,7 +49881,7 @@
           },
           {
             "path": "src/main/boss/explosion.hpp",
-            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+            "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
           },
           {
             "path": "src/main/player/player.hpp",
@@ -49898,7 +49913,7 @@
         },
         {
           "path": "src/main/boss/explosion.hpp",
-          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
         },
         {
           "path": "src/main/player/player.hpp",
@@ -49915,78 +49930,85 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "4be860f4aebba35037f22ec705d28553af7147e0c6d759dccfa4b78ecae24939",
+      "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
       "compiled_negative_control": {
-        "target_start": 72569,
-        "candidate_start": 72569,
-        "size": 308,
-        "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
-        "candidate_sha256": "4d74cc4a05289ee03d9b0ce87c7ba27779cc2c17504121524d9e5bb421d5782c",
+        "target_start": 67086,
+        "candidate_start": 67086,
+        "size": 452,
+        "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+        "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
         "raw_exact": false,
         "target_fixups": [
-          211,
-          144,
-          82
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "candidate_fixups": [
-          211,
-          144,
-          82
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-custom-render",
-        "entry_sha256": "1a077b00307dc4ca3efdbc25c8212b4d2f7780e20aa677c1405b9f6962376c9a",
+        "unit_id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
         "mutation": {
-          "unit": "main-exalice-custom-render",
-          "source": "src/main/boss/exalice/custom_render.cpp",
-          "find": "angle += 8)",
-          "replace": "angle += 9)"
+          "unit": "main-boss-explosion",
+          "source": "src/main/boss/explosion.cpp",
+          "find": "(p).age >= BEXP_LIFETIME_FRAMES",
+          "replace": "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
         },
-        "control_sha256": "2eaa18386db9b663924524caa1a0209ebac34f1218eaec3946b32024b9856a15",
+        "control_sha256": "ae5968f30a08f54be9619ad7b717a49978a67cb3980b3287f2cf625fd4a641a9",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 72569,
-          "candidate_start": 72569,
-          "size": 308,
-          "target_sha256": "4b8aab2a08f307be41ac9200a120386e74d3c4fac67a41b88be672c10e561978",
-          "candidate_sha256": "4d74cc4a05289ee03d9b0ce87c7ba27779cc2c17504121524d9e5bb421d5782c",
+          "target_start": 67086,
+          "candidate_start": 67086,
+          "size": 452,
+          "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+          "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
           "raw_exact": false,
           "target_fixups": [
-            211,
-            144,
-            82
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "candidate_fixups": [
-            211,
-            144,
-            82
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "d10a7b80cb51162ea978193db7525f196231e5b366a51716518005c9991b73d0",
-          "dependency_timestamp_normalized_sha256": "d303ed1b6230d870a9f8c67a97ea4e53b85d8724d660f832346f9c4918499e45",
-          "module_name": "th05/bx_cus.cpp",
+          "sha256": "d4e79fa8125439413ab9dd5df6741b0ab935daf755756c5e8d83a3804c481565",
+          "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
+          "module_name": "th05/boss_exp.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bx_cus.cpp",
-            "src/main/boss/exalice/custom_render.cpp",
-            "src/main/boss/exalice/custom_render.hpp",
+            "th05/boss_exp.cpp",
+            "src/main/boss/explosion.cpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/explosion_frame.h",
             "src/main/boss/explosion.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/boss/explosion_choreography.hpp"
           ]
         },
         "compiler_arguments": [
@@ -50000,10 +50022,17 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bx_cus.cpp"
+          "th05/boss_exp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-explosion",
+        "main-boss-explosion-spawn",
+        "main-bullets-render",
+        "main-exalice-custom-render",
+        "main-midboss-defeat-render"
+      ]
     },
     {
       "id": "main-process-handoff",
@@ -53647,7 +53676,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "46c1c29641e6e604c8039539cf943712025350a79c9131b01e5deb90eeb35da0",
+            "sha256": "1c6eb4fbbd969207e86ee16c23169421fc130929d18d6459df21abd8c9f51ae8",
             "dependency_timestamp_normalized_sha256": "1a312809377caa12906e061df0fa3b470cc28acbaba79adc75c0dbd3bc31a897",
             "module_name": "th05/m_defr.cpp",
             "translator_comments": [
@@ -53672,7 +53701,7 @@
             ]
           },
           {
-            "sha256": "e94facdbfc49a002aca909af965056eb0c1de1e40547bc04f24c8d6d0f3d3ea5",
+            "sha256": "4f0dd4db60bbd131376a50ce26df566688905af3789bc0f891380d9be94c17b8",
             "dependency_timestamp_normalized_sha256": "1a312809377caa12906e061df0fa3b470cc28acbaba79adc75c0dbd3bc31a897",
             "module_name": "th05/m_defr.cpp",
             "translator_comments": [
@@ -53698,8 +53727,8 @@
           }
         ],
         "producer_paths": [
-          "group-4/a/source",
-          "group-4/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -53736,7 +53765,7 @@
           },
           {
             "path": "src/main/boss/explosion.hpp",
-            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+            "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
           },
           {
             "path": "src/main/boss/late_game_state_publics.h",
@@ -53784,7 +53813,7 @@
         },
         {
           "path": "src/main/boss/explosion.hpp",
-          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
         },
         {
           "path": "src/main/boss/late_game_state_publics.h",
@@ -53825,89 +53854,85 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "19536b0910aeb7899b80bddc7faa9d31d0015cfa2c761d5f72e5dedff809304d",
+      "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
       "compiled_negative_control": {
-        "target_start": 114254,
-        "candidate_start": 114254,
-        "size": 1619,
-        "target_sha256": "3e842642c097ad5b78c571318c8e24b5757ead778ce9a4be6c8ffb40fbe91809",
-        "candidate_sha256": "dafadfa3fd7f430b568890e6fd8382de23311081d6b03972c05a9ff76cb53049",
+        "target_start": 67086,
+        "candidate_start": 67086,
+        "size": 452,
+        "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+        "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
         "raw_exact": false,
         "target_fixups": [
-          612,
-          247,
-          1413,
-          1217
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "candidate_fixups": [
-          612,
-          247,
-          1413,
-          1217
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-bullet-update",
-        "entry_sha256": "f8642dfaf907d9f38b9d62e61e61dff2691129f2aa3de6f9297179c134b921f7",
+        "unit_id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
         "mutation": {
-          "unit": "main-bullet-update",
-          "source": "src/main/bullet/update.cpp",
-          "find": "bullet.angle = (0x80 - bullet.angle);",
-          "replace": "bullet.angle = (0x81 - bullet.angle);"
+          "unit": "main-boss-explosion",
+          "source": "src/main/boss/explosion.cpp",
+          "find": "(p).age >= BEXP_LIFETIME_FRAMES",
+          "replace": "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
         },
-        "control_sha256": "a43e92f8f31e4b24f39f6b391c3855c299ac2cba4e4afbb36d1b52f4e88400f9",
+        "control_sha256": "ae5968f30a08f54be9619ad7b717a49978a67cb3980b3287f2cf625fd4a641a9",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 114254,
-          "candidate_start": 114254,
-          "size": 1619,
-          "target_sha256": "3e842642c097ad5b78c571318c8e24b5757ead778ce9a4be6c8ffb40fbe91809",
-          "candidate_sha256": "dafadfa3fd7f430b568890e6fd8382de23311081d6b03972c05a9ff76cb53049",
+          "target_start": 67086,
+          "candidate_start": 67086,
+          "size": 452,
+          "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+          "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
           "raw_exact": false,
           "target_fixups": [
-            612,
-            247,
-            1413,
-            1217
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "candidate_fixups": [
-            612,
-            247,
-            1413,
-            1217
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "bff8dab5d4bbe657b2801a97c8d5c03940963ad27c77ffa06723d8fcc9515fc8",
-          "dependency_timestamp_normalized_sha256": "a3c250d3532daee9729fb53ca77708b5946a8b324d1dad86f3966cab3332edf1",
-          "module_name": "th05/bullet_u.cpp",
+          "sha256": "d4e79fa8125439413ab9dd5df6741b0ab935daf755756c5e8d83a3804c481565",
+          "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
+          "module_name": "th05/boss_exp.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bullet_u.cpp",
-            "src/main/bullet/update.cpp",
+            "th05/boss_exp.cpp",
+            "src/main/boss/explosion.cpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
-            "src/main/boss/late_game_state_publics.h",
-            "src/main/bullet/update.hpp",
-            "src/main/bullet/template.hpp",
+            "src/main/boss/explosion_frame.h",
+            "src/main/boss/explosion.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/player/reimu.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/hud/overlay.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/main/boss/explosion_choreography.hpp"
           ]
         },
         "compiler_arguments": [
@@ -53921,10 +53946,17 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bullet_u.cpp"
+          "th05/boss_exp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-explosion",
+        "main-boss-explosion-spawn",
+        "main-bullets-render",
+        "main-exalice-custom-render",
+        "main-midboss-defeat-render"
+      ]
     },
     {
       "id": "main-shots-update-abi",
@@ -74247,7 +74279,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "3235424cdb1e61d7943b1b255b6313b9ac48d85c6e9626b7b9cced65c1232285",
+            "sha256": "6d9b22812f8c325625a5f531938827f6068c6e94158498305ed5cc8918e2e02e",
             "dependency_timestamp_normalized_sha256": "eaf087842077511d7a4a01da96e954c260079175c09072bfc525d580999f7168",
             "module_name": "th05/bexp_new.cpp",
             "translator_comments": [
@@ -74268,7 +74300,7 @@
             ]
           },
           {
-            "sha256": "f1d086fae0fa088dcd8ed66334e8375f18dd5a2728a7ae4efdd466c80f415db6",
+            "sha256": "cfc3d92bd3bdb24a80bcfe8eb850e748c781f06c92a20045e72c01f21304a9fb",
             "dependency_timestamp_normalized_sha256": "eaf087842077511d7a4a01da96e954c260079175c09072bfc525d580999f7168",
             "module_name": "th05/bexp_new.cpp",
             "translator_comments": [
@@ -74290,8 +74322,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-3/a/source",
+          "group-3/b/source"
         ],
         "compiler_arguments": [
           [
@@ -74328,7 +74360,7 @@
           },
           {
             "path": "src/main/boss/explosion.hpp",
-            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+            "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
           },
           {
             "path": "src/main/boss/explosion_spawn.cpp",
@@ -74360,7 +74392,7 @@
         },
         {
           "path": "src/main/boss/explosion.hpp",
-          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
         },
         {
           "path": "src/main/boss/explosion_spawn.cpp",
@@ -74385,73 +74417,85 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "38a436ec0c398793b5a62d364e205cb59b711fc56e5674d81b1bab605013274f",
+      "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
       "compiled_negative_control": {
-        "target_start": 95950,
-        "candidate_start": 95950,
-        "size": 290,
-        "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
-        "candidate_sha256": "32bde052d30f64e3f9e43f9e269a1b5e846a554d7b8cdbc4d892714f72a8d2ba",
+        "target_start": 67086,
+        "candidate_start": 67086,
+        "size": 452,
+        "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+        "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
         "raw_exact": false,
         "target_fixups": [
-          244,
-          128
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "candidate_fixups": [
-          244,
-          128
+          329,
+          285,
+          251,
+          92,
+          62
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-boss-explosion-spawn",
-        "entry_sha256": "8863be1abe92d207dc1e04bb54639ffe472b8c2b6e36615f63bdfbc35dc6f109",
+        "unit_id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
         "mutation": {
-          "unit": "main-boss-explosion-spawn",
-          "source": "src/main/boss/explosion_spawn.cpp",
-          "find": "snd_se_play(15);",
-          "replace": "snd_se_play(14);"
+          "unit": "main-boss-explosion",
+          "source": "src/main/boss/explosion.cpp",
+          "find": "(p).age >= BEXP_LIFETIME_FRAMES",
+          "replace": "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
         },
-        "control_sha256": "61ea5b90cf67e171c0aa358307c99cfd45448170523f0c98a3acf06d377275d8",
+        "control_sha256": "ae5968f30a08f54be9619ad7b717a49978a67cb3980b3287f2cf625fd4a641a9",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 95950,
-          "candidate_start": 95950,
-          "size": 290,
-          "target_sha256": "dc701445cc2f040e49a5f049af63baf0cb0b5635db6662b16418708a285d6065",
-          "candidate_sha256": "32bde052d30f64e3f9e43f9e269a1b5e846a554d7b8cdbc4d892714f72a8d2ba",
+          "target_start": 67086,
+          "candidate_start": 67086,
+          "size": 452,
+          "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+          "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
           "raw_exact": false,
           "target_fixups": [
-            244,
-            128
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "candidate_fixups": [
-            244,
-            128
+            329,
+            285,
+            251,
+            92,
+            62
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "5c2fc97c2901d53aa0a39a86505acbf42c0efcee1853635faef28c865f6416e7",
-          "dependency_timestamp_normalized_sha256": "9345c6e4a9aa7c2c531e24425bfa6f20ce1f4d7d5e02226b687afc920a0da6c5",
-          "module_name": "th05/bexp_new.cpp",
+          "sha256": "d4e79fa8125439413ab9dd5df6741b0ab935daf755756c5e8d83a3804c481565",
+          "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
+          "module_name": "th05/boss_exp.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bexp_new.cpp",
-            "src/main/boss/explosion_spawn.cpp",
+            "th05/boss_exp.cpp",
+            "src/main/boss/explosion.cpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/explosion_frame.h",
             "src/main/boss/explosion.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
-            "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/stage/setup.hpp",
-            "src/main/boss/movement.hpp",
-            "src/shared/geometry.hpp"
+            "src/main/boss/explosion_choreography.hpp"
           ]
         },
         "compiler_arguments": [
@@ -74465,10 +74509,17 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bexp_new.cpp"
+          "th05/boss_exp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-explosion",
+        "main-boss-explosion-spawn",
+        "main-bullets-render",
+        "main-exalice-custom-render",
+        "main-midboss-defeat-render"
+      ]
     },
     {
       "id": "main-shinki-custombullets-render",
@@ -75093,7 +75144,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "6b788d9f0ec7b53903757ff87ed1b036f3fb5bd884a59c4765e4651f006dcf8e",
+            "sha256": "a9682efe07ec42f0117b972bf8a8e6095a5efe760fb32ab17558d25e2f16a699",
             "dependency_timestamp_normalized_sha256": "54b5abc83c698fb7795dbc4078c5c5f534c28c5d1943cca6c525b3d5d4ddc88f",
             "module_name": "th05/bul_r.cpp",
             "translator_comments": [
@@ -75124,7 +75175,7 @@
             ]
           },
           {
-            "sha256": "705b7de176dc13fbe8b358a4278e791aad7df80bc8b8f9c76298422fe3f3caf4",
+            "sha256": "a0d479c7cc3dca2f9d9a0bc6913ef7c2a730b8c49daf055492ff671d757ba47f",
             "dependency_timestamp_normalized_sha256": "54b5abc83c698fb7795dbc4078c5c5f534c28c5d1943cca6c525b3d5d4ddc88f",
             "module_name": "th05/bul_r.cpp",
             "translator_comments": [
@@ -75156,8 +75207,8 @@
           }
         ],
         "producer_paths": [
-          "group-0/a/source",
-          "group-0/b/source"
+          "group-4/a/source",
+          "group-4/b/source"
         ],
         "compiler_arguments": [
           [
@@ -75194,7 +75245,7 @@
           },
           {
             "path": "src/main/boss/explosion.hpp",
-            "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+            "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
           },
           {
             "path": "src/main/bullet/render.cpp",
@@ -75246,7 +75297,7 @@
         },
         {
           "path": "src/main/boss/explosion.hpp",
-          "sha256": "2bd95758af89fb6611f10770c86897dec92e681a74b4207c9137384228d1d652"
+          "sha256": "55516966396c9d10beba996e2421236301ab355506d225714222590714910932"
         },
         {
           "path": "src/main/bullet/render.cpp",
@@ -75291,71 +75342,85 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "6cbabbe46037bc9e41a6826c4de570f9e1fd9ddf89e8512c824e9a20c431eba2",
+      "replay_receipt_sha256": "a0312d86989b026d8926602e514ef05fd2776097fdb65ea99ee13e6f5def2bfb",
       "compiled_negative_control": {
-        "target_start": 78213,
-        "candidate_start": 78213,
-        "size": 334,
-        "target_sha256": "1ae93f524040a35ffa9bc2f22449f4b24516fc9d766690dbd814aa0974afb136",
-        "candidate_sha256": "32714659f4b7d0aa19fb3c13d7635a50adb80404bde491707a2ca63a27c8cfce",
+        "target_start": 67086,
+        "candidate_start": 67086,
+        "size": 452,
+        "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+        "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
         "raw_exact": false,
-        "target_fixups": [],
-        "candidate_fixups": [],
+        "target_fixups": [
+          329,
+          285,
+          251,
+          92,
+          62
+        ],
+        "candidate_fixups": [
+          329,
+          285,
+          251,
+          92,
+          62
+        ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-bullets-render",
-        "entry_sha256": "7da8a8bab082249606cbfbcbabe2da1227119d20dc25882acb377fcecce14f70",
+        "unit_id": "main-boss-explosion",
+        "entry_sha256": "4c857b02632c616f09e2af486ee88cb8eab8d4f7bab481fc7d8745f4adb5ea52",
         "mutation": {
-          "unit": "main-bullets-render",
-          "source": "src/main/bullet/render.cpp",
-          "find": "patnum = BR_CLOUD_BLUE - 1;",
-          "replace": "patnum = BR_CLOUD_BLUE - 2;"
+          "unit": "main-boss-explosion",
+          "source": "src/main/boss/explosion.cpp",
+          "find": "(p).age >= BEXP_LIFETIME_FRAMES",
+          "replace": "(p).age >= (BEXP_LIFETIME_FRAMES + 1)"
         },
-        "control_sha256": "fde4b572ed914a78aaa575db96c2ce05e4478b3316e9d938d9c6ea5cda33e5a3",
+        "control_sha256": "ae5968f30a08f54be9619ad7b717a49978a67cb3980b3287f2cf625fd4a641a9",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 78213,
-          "candidate_start": 78213,
-          "size": 334,
-          "target_sha256": "1ae93f524040a35ffa9bc2f22449f4b24516fc9d766690dbd814aa0974afb136",
-          "candidate_sha256": "32714659f4b7d0aa19fb3c13d7635a50adb80404bde491707a2ca63a27c8cfce",
+          "target_start": 67086,
+          "candidate_start": 67086,
+          "size": 452,
+          "target_sha256": "f7bfe76bc1be4080a1959d67a1dcb8d56789f6f902808ddc3b439b9f2e45c7c6",
+          "candidate_sha256": "cb337b2c1985fdf1d17103d3de1945c4972b7e8341b43e18698aaad3ac3cf2fc",
           "raw_exact": false,
-          "target_fixups": [],
-          "candidate_fixups": [],
+          "target_fixups": [
+            329,
+            285,
+            251,
+            92,
+            62
+          ],
+          "candidate_fixups": [
+            329,
+            285,
+            251,
+            92,
+            62
+          ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "796926cf38b695d2ad741a0fdbfd7e33c1e831195900fa75a7f26d8ddd490ee3",
-          "dependency_timestamp_normalized_sha256": "05cc31930f5f8eb6216a6ca6b4e7dfb04de7360de803b0a22f500c7815831e37",
-          "module_name": "th05/bul_r.cpp",
+          "sha256": "d4e79fa8125439413ab9dd5df6741b0ab935daf755756c5e8d83a3804c481565",
+          "dependency_timestamp_normalized_sha256": "d05d51a07c9fb3ecc033255e134c24b31a0113d6f75e67a1e63ca31e7bcfd32f",
+          "module_name": "th05/boss_exp.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/bul_r.cpp",
-            "src/main/bullet/render.cpp",
-            "src/main/bullet/render.hpp",
+            "th05/boss_exp.cpp",
+            "src/main/boss/explosion.cpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
+            "src/main/boss/explosion_frame.h",
             "src/main/boss/explosion.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/update.hpp",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/player/reimu.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/hud/overlay.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/hud/resident.hpp",
-            "src/shared/abi.hpp"
+            "src/main/boss/explosion_choreography.hpp"
           ]
         },
         "compiler_arguments": [
@@ -75369,10 +75434,17 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/bul_r.cpp"
+          "th05/boss_exp.cpp"
         ]
       },
-      "receipt_aggregate_pass": true
+      "receipt_aggregate_pass": true,
+      "receipt_selected_subset": [
+        "main-boss-explosion",
+        "main-boss-explosion-spawn",
+        "main-bullets-render",
+        "main-exalice-custom-render",
+        "main-midboss-defeat-render"
+      ]
     },
     {
       "id": "main-dialog-exit",

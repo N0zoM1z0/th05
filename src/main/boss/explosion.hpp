@@ -20,7 +20,7 @@ struct Explosion {
     SPPoint center;
     SPPoint radius_cur;
     SPPoint radius_delta;
-    char unused;
+    signed char unused; // ReC98 th04/main/boss/explode.cpp: int8_t ZUN bloat.
     unsigned char angle_offset;
 
     unsigned char angle_y(const unsigned char &angle_base) {
