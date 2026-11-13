@@ -83,6 +83,26 @@ The full ZUN ownership summary and current intervals are in
   producers; its compiled twirl-step negative is rejected. The reviewed ASM
   family remains the sole CODE owner, so no duplicate credit is claimed. See
   [`swords_update.md`](../src/main/boss/yumeko/swords_update.md).
+- **Alice ready-byte lifetime (2026-11-13)**: original DS:C68C / `boss_statebyte[10]`
+  has exactly one Alice-owned access, a value-24 store at the Ready transition;
+  no Alice-owned callback reads it. The source now names the write
+  `ready_phase_store_only` / `ALICE_READY_PHASE_STORE_VALUE`, without implying
+  a consumed seed or timer. The complete 939-byte Alice updater and its five
+  accepted scratch-header consumers were replayed together (six full owners),
+  twice byte/fixup exact with the existing negative rejected. No new CODE or
+  storage credit is claimed. See
+  [`alice/update.md`](../src/main/boss/alice/update.md).
+- **B4-ball updater (2026-11-13)**: `b4balls_update()` remains exact at 273
+  bytes with ordered fixups `[235,156,118]`. The unused false-return helper
+  was simplified to an empty inline `void`; two fresh positives and the
+  compiled 550→551 negative pass. This is source cleanup, not new byte credit.
+  See [`b4ball_update.md`](../src/main/boss/mai_yuki/b4ball_update.md).
+- **`vector2_near()` small-leaf boundary (2026-11-13)**: natural C++ remains
+  67 bytes against the 55-byte reviewed ASM body. TCC `-S`/TASM32 produces the
+  same 67-byte shape; semantic inline-MOVSX attempts in this near TU fail at
+  the TCC frontend. The 12-byte register-copy residual is documented, and
+  the reviewed ASM remains the only exact owner. No C++ credit is claimed.
+  See [`vector2_near.md`](../src/shared/math/vector2_near.md).
 
 ## Other open work
 
