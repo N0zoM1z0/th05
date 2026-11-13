@@ -213,3 +213,37 @@ last, after the remaining object. This isolates the final mismatch to the
 original fixup-record emission/interleave order, rather than code bytes,
 segment placement or external near-call addresses. The accepted per-scope
 owners remain unchanged; no new authored-byte credit is claimed.
+
+## 2026-11-13: initial-prefix and local-IATAN2 OMF experiments
+
+A wider single-TU context now compiles the accepted 543-byte initial attack
+bank, the 186-byte tracking laser, and the 939-byte remaining pattern bank in
+original order. One fresh TCC `-S` → TASM32 → TLINK producer reproduces the
+entire contiguous **1,668-byte** source extent exactly, including both the
+initial bank and the later 1,125-byte cohort. This disproves the idea that the
+later cohort's raw bytes or its immediate 543-byte prefix are responsible for
+the MZ order mismatch. It does not add byte ownership; the individual owners
+remain authoritative. Evidence:
+`.analysis/gpt-web-maiyuki-initial-prefix-omf-order-20261113/result.json`.
+
+The OMF fixup inspection then exposed a more precise distinction. The two
+tracking-laser `IATAN2` far-call sites are local `SEGDEF` targets in the
+TASM-assembled calibration object, while the compiler-generated candidate
+normally references `IATAN2` through `EXTDEF`. The maintained declaration
+already has `#pragma codeseg _TEXT`; that pragma alone does not change the
+compiler's external target method. A symbol-only `_TEXT`/`IATAN2` binding in a
+same-object `COMMON` overlay, with only the redundant generated `EXTRN`
+declaration removed, successfully changes those two candidate FIXUPP targets
+to local segment 1 while preserving the 1,668 raw bytes and the main03 frame.
+The resulting MZ order nevertheless remains
+`[38,130,322,648,1019,1106]`, not the target
+`[38,1106,1019,648,322,130]`. Evidence:
+`.analysis/gpt-web-maiyuki-common-iatan2-overlay-20261113/result.json`.
+
+The prefix candidate's OMF LEDATA split is at `0x3EB` (1,003 bytes); the
+calibration/disassembly TASM object splits at `0x3E5` (997 bytes). Both place
+the same three selected MZ fixups on each side of the boundary, and changing
+only the `IATAN2` target method does not change TLINK's emitted order. Thus
+neither the immediate prefix nor the local-versus-external `IATAN2` target
+method alone explains the remaining order. The full surrounding OMF/TLINK
+context is still open; no fixup sorting, OMF patching, or MZ rewriting is used.
