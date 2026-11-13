@@ -72,6 +72,9 @@ and [Mai/Yuki's 1,018 B paired update](reconstruction/MAI_YUKI_STACK_CHEETO_CLOS
 The shared Mai/Yuki B4-ball template now mirrors the pinned original signed
 `int8_t`/`int16_t` reserved fields and asserts offsets 0/6/22; all ten
 accepted consumers were recompiled in one focused replay and remained exact.
+The shared Boss `Explosion::unused` byte is now explicitly `signed char`,
+matching ReC98 `int8_t` at offset14; its five accepted consumers were replayed
+and remained byte-exact with the compiled negative rejected.
 Shinki's [19-function, 3,254 B background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
 was also recovered. ZUN's embedded resident `main()` is now accepted as a
 complete natural C++ 269-byte function with two independent cold producers;
