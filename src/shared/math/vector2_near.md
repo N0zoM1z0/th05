@@ -200,3 +200,31 @@ owned data; its extra bytes are register copies only. This is a precise codegen
 boundary, not a source-ABI error or missing target context. The 55-byte
 reviewed ASM remains the sole exact owner, and the 67-byte natural C++ attempt
 continues to earn zero CODE credit.
+
+## 2026-11-13: TCC `-S` pipeline and inline-MOVSX probe
+
+The maintained 67-byte natural C++ candidate was also run through the
+accepted far-vector-style TCC `-S` → TASM32 → TLINK pipeline with the genuine
+`main_03` group and DS `209D`. It still emits **67 bytes**, with no fixups.
+The full instruction stream is unchanged in shape: `MOVSX EAX,[BP+4]` then
+`MOV EDX,EAX`; cosine/sine samples load through EAX with an EAX-to-ECX copy;
+the second product copies EDX into EAX and returns the result to EDX. The
+alternate compiler pipeline therefore does not reduce the 12-byte residual.
+
+A second attempt tried to reuse the semantic inline `MOVSX` form accepted by
+the adjacent far-vector C++ owners. In this near owner, TCC 4.02 `-S` rejected
+all tested forms at the frontend's inline-assembly expression parser: a direct
+`MOVSX EDX,[BP+4]`, a table `MOVSX EAX,[BX+CosTable8]`, and a table
+`MOVSX ECX,[BX+SinTable8]` (including the clean single-segment/no-wrapper
+variant). An explicit `_SinTable8` spelling is reported as undefined. The
+same far-vector source form remains accepted in its own far-function TU; this
+is a context-specific frontend result, not proof that all TCC inline MOVSX is
+unsupported. No object was produced by those failed variants and none is an
+acceptance candidate.
+
+The TCC-S 67-byte producer is
+`.analysis/gpt-web-vector2-near-natural-tccs-a-20261113/`; the failed inline
+syntax matrices and their compiler logs are retained under the matching
+`.analysis/gpt-web-vector2-near-inline-*-20261113/` directories. The original
+55-byte reviewed ASM remains the only exact owner; no CODE or negative-control
+credit is claimed by these diagnostics.
