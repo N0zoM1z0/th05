@@ -1,9 +1,16 @@
-# ZUN resident entry: isolate the removal-branch compiler mismatch
+# ZUN resident entry: accepted exact reconstruction (2026-11-13)
 
-The maintained natural `src/zun/resident/initialize.cpp` now tests the
-successful `-R` removal path before the missing-resident error. It has the
-same runtime behavior: if the segment exists, release it, print the removal
-message and return 0; otherwise print "not found" and return 1.
+**Accepted — 269/269 bytes, two independent cold producers.**
+
+The maintained natural `src/zun/resident/initialize.cpp` tests the successful
+`-R` removal path before the missing-resident error. The complete three-source
+context `src/zun/resident/main_context.cpp` now emits the original 269-byte
+`main()` exactly in two independent cold producers, with the original ordered
+relocations and a rejected compiled semantic negative. See the canonical
+[accepted source and proof](../../src/zun/resident/initialize.md).
+
+The remaining sections in this file record historical near-match and failed
+compiler hypotheses. They must not be read as the current acceptance status.
 
 This source change fixes the previous **9-byte length deficit** in the
 complete native tiny-model `main()` contribution. The real Turbo C++ 4.02
@@ -26,14 +33,14 @@ snapshots and linked outputs are retained privately at
 `.analysis/gpt-web-zun-remove-branch-*20261112/`, with runnable variant
 scripts and compact result JSON in `.analysis/`.
 
-**Status: natural C++ candidate, not accepted exact CODE.** The strict ZUN
-manifest still credits only the independently exact 322-byte `cfg_init()`
-and 320-byte initialized DATA. No ASM patch, optimizer barrier, borrowed
-machine code, artificial return value or target bytes were introduced.
-The next specific task is a natural control-flow shape that emits the
-original branch order at `+47..+5A` *while retaining* the separate error
-printing sites elsewhere in the function. Do not re-try the listed
-error-first rewrites without a new code-generation hypothesis.
+**Historical status before 2026-11-13: natural C++ candidate, not accepted exact CODE.**
+The later complete-context recovery supersedes this note. No ASM patch,
+optimizer barrier, borrowed machine code, artificial return value or target
+bytes were introduced in the accepted source.
+At that historical point, the next task was a natural control-flow shape
+that emitted the original branch order at `+47..+5A` while retaining separate
+error-print sites. The accepted complete-context source now resolves that
+problem; do not mistake this old next-step note for current work.
 
 ## Follow-up: 90 original-compiler error-exit and one -S lowering probe
 

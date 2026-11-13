@@ -1,10 +1,38 @@
-# Resident-program entry candidate: unaccepted
+# Resident-program entry: accepted exact native reconstruction
 
-`initialize.cpp` is a natural C++ reconstruction of ZUN's embedded `-S` entry
-function. Its first real Borland producer emits **260 bytes**, while the complete
-original function occupies **269 bytes** at outer file `0E8D..0F9A`, child COM
-`04A9..05B6`. The nine-byte complete-boundary mismatch rejects this candidate.
-It adds zero functions and zero authored bytes to accepted progress.
+**Accepted — 269/269 bytes, two independent cold producers.**
+
+`initialize.cpp` is now the accepted natural C++ reconstruction of ZUN's
+embedded `-S` entry function. The complete three-source context in
+`main_context.cpp` emits the original **269 bytes** at outer file `0E8D..0F9A`,
+child COM `04A9..05B6`, through two independent cold producers. The original
+ordered relocation stream is empty and exact, the complete `_main` MAP
+boundary is explicit, and a compiled semantic negative is rejected. This
+adds one accepted function and 269 authored CODE bytes to the ZUN ledger.
+
+The older 260-byte, 269-byte/17-mismatch and shared-tail experiments below are
+historical rejected hypotheses. They remain useful compiler evidence but are
+superseded by the accepted complete-context source and receipt.
+
+## 2026-11-13: exact complete-context acceptance
+
+The accepted unit is `zun-resident-main` in `config/exact_units.zun.toml`.
+Its maintained source wrapper is `src/zun/resident/main_context.cpp`, in
+original order: semantic initialized DATA, `cfg_init()`, then `main()`.
+Only foreign CRT/DOS/resident/graphics symbols are provided by the
+symbol-only `probes/units/zun_resident_main_bindings.asm`; it contains no
+instruction or initialized-data directives. The source uses native CP932
+compiler input and real TCC 4.02 tiny-model flags.
+
+The focused receipt is `.analysis/unit-replays/42313e66afdf4c289bcf0b3fadee2794/receipt.json`.
+It records two independently reproduced 269-byte scopes, exact original
+bytes and relocation order, and rejection of the configured source mutation.
+The accepted ledger is `config/accepted_units.zun.json`. The MAP oracle now
+recognizes `_main` as the C entrypoint public while continuing to reject
+arbitrary undecorated labels as function boundaries; 13 focused function-unit
+tests cover that rule.
+
+## Historical pre-acceptance semantic and ABI investigation
 
 The native review is retained at
 `.analysis/zun-resident-review/native-abi.json`. The entry is near cdecl,

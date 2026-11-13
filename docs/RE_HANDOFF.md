@@ -14,12 +14,13 @@ replay just to confirm one changed unit.
 
 | Canonical measure | Value |
 | --- | ---: |
-| Accepted C/C++ units (MAIN / OP / MAINE / ZUN) | **537** (351 / 75 / 109 / 2) |
-| Source-authored exact C/C++ CODE | **108,784 B** |
+| Accepted C/C++ units (MAIN / OP / MAINE / ZUN) | **538** (351 / 75 / 109 / 3) |
+| Accepted C/C++ functions | **650** |
+| Source-authored exact C/C++ CODE | **109,053 B** |
 | Source-authored initialized C/C++ DATA | **17,513 B** |
-| Combined source-authored C/C++ exact bytes | **126,297 B** |
-| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **303 / 2,370 / 1,795 / 8,559** |
-| Total unclassified decoded bytes | **13,027 B** |
+| Combined source-authored C/C++ exact bytes | **126,566 B** |
+| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **303 / 2,370 / 1,795 / 8,290** |
+| Total unclassified decoded bytes | **12,758 B** |
 
 Read the **live** [generated progress](PROGRESS.md),
 `config/accepted_units*.json`, `config/exact_units*.toml` and
@@ -31,38 +32,31 @@ EXE/COM reconstruction. The pinned Japanese game copy is
 
 ## Highest-value unresolved work
 
-1. **ZUN resident `main()`**, original 269 bytes in the `-S` COM at
-   `[04A9,05B6)`: natural source is still **not exact**. The retained
-   success-first first-producer candidate emits 269 bytes with **252 matching
-   byte positions and 17 differences**, all around the `-R` removal block.
-   Error-first alternatives typically emit 260 bytes because the compiler
-   merges error exits. Do not mistake the 252 *matches* for 252 differences,
-   accept identical length alone, or repeat the 90 lexical-return / 16 nested
-   error-path variants. See [the specific compiler findings](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md).
-   The independently accepted `cfg_init()` and resident DATA remain exact. Three shared-error-tail and two comma-return
-   first-producer variants have also failed; do not repeat them without a new
-   control-flow hypothesis.
-2. **Yumeko `swords_update()`**: the 283-byte function remains exactly owned
-   by the reviewed ASM family. Its maintained C++/inline-ASM context source
-   now also reproduces the same 283 bytes and the entire original-order
-   2,139-byte MAIN03 cohort byte-for-byte, including all 25 ordered fixups.
-   Two fresh native diagnostic producers agree. The hybrid context is not a
-   second CODE owner: all 283 bytes remain credited only once to the accepted
-   ASM unit. See [the source and context proof](../src/main/boss/yumeko/swords_update.md)
-   and [the compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
-   The earlier natural-only `-O-`, `-O`, manual-loop and helper experiments
-   remain historical failures and should not be repeated.
-3. **BB resource loader**: the 55-byte function is already exactly owned
+1. **Yumeko `swords_update()` source refinement**: the complete 283-byte
+   updater and 2,139-byte MAIN03 context now match the original byte-for-byte
+   with all 25 ordered fixups, using the maintained C++/inline-ASM hybrid.
+   The accepted reviewed-ASM unit remains the sole CODE owner. A fully natural
+   C++ alternative is still only a source-language refinement; the known
+   `-O-`, `-O`, manual-loop, label, register-hint and helper variants are
+   historical failures. Do not count the hybrid context twice. See
+   [the exact source and proof](../src/main/boss/yumeko/swords_update.md).
+2. **BB resource loader**: the 55-byte function is already exactly owned
    as [original-language ASM](../src/main/formats/bb_load.md). Its natural
    C++ alternative still emits 56 bytes with a different stack-frame and
    register-save order. Do not double-count the ASM bytes.
-4. **Original ownership gaps**: use the current intervals in
+3. **Remaining original ownership gaps**: use the current intervals in
    `resources/ownership.json`, not an old gap list. Verify physical source
    boundaries, native consumers, initializers versus `?` storage, and
    ordered original relocations. See [open candidates](reconstruction/UNACCEPTED_COHORTS.md)
    and the [CDG slot storage discrepancy](reconstruction/CDG_STORAGE_TARGET_BOUNDARY_2026-11-13.md).
    CDG's TASM `_BSS` declaration alone does **not** justify treating original
    nonzero or out-of-file bytes as a zero-filled owner.
+
+The major MAIN Boss control/update contexts already have accepted full
+function coverage for Sara, Shinki, Alice, EX-Alice, Yumeko and Mai/Yuki.
+Continue attacking any newly demonstrated large source/semantic gap; do not
+invent a missing Boss function from zero-filled unknown storage or repeat an
+already accepted ASM/C++ extent merely to increase counts.
 
 ## Already solved — avoid duplicate CODE credit
 
@@ -74,7 +68,10 @@ contexts: [Sara's 12-function 1,824 B](../src/main/boss/sara/sara.md),
 [Yumeko's 884 B controller](../src/main/boss/yumeko/update.md),
 and [Mai/Yuki's 1,018 B paired update](reconstruction/MAI_YUKI_STACK_CHEETO_CLOSURE_2026-11-13.md).
 Shinki's [19-function, 3,254 B background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
-was also recovered. Source refactors have been replayed across complete
+was also recovered. ZUN's embedded resident `main()` is now accepted as a
+complete natural C++ 269-byte function with two independent cold producers;
+see [the accepted entry](../src/zun/resident/initialize.md). Source refactors
+have been replayed across complete
 affected owners; **their accepted CODE must not be credited again**.
 
 Separate ownership lanes include reviewed ASM, foreign Master/CL startup

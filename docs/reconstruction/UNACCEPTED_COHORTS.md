@@ -36,12 +36,12 @@ the full original-order 2,139-byte context; it is deliberately not a second
 CODE owner. Only a fully natural C++ alternative remains a source-language
 refinement, not uncovered executable work. See
 [the exact hybrid context result](../../src/main/boss/yumeko/swords_update.md).
-ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
-source problem. Its two private raw-exact diagnostics use artificial
-compiler barriers, so neither is accepted as natural C++. Another
-[fourteen actual native option-flow trials](ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md)
-found one 269-byte natural variant with **252 matching byte positions
-and 17 differences** in the original 269-byte function. Matching size or semantic output is not sufficient.
+ZUN `-S`'s 269-byte C++ `main()` is now a resolved complete-function unit:
+`zun-resident-main` has two independent cold producers, exact original bytes
+and ordered relocations, a complete `_main` MAP boundary, and a rejected
+compiled semantic negative. Its earlier 252/269 near-match and artificial
+barrier diagnostics are historical failures, not current acceptance evidence.
+See [the accepted resident entry](../../src/zun/resident/initialize.md).
 
 **Resolved vendor CODE, not open game-authored work:** OP's `xxas`,
 `signal` and `setenvp` and MAINE's `setenvp` are now source-exact native
@@ -79,7 +79,9 @@ use the generated ownership map to discover other live gaps.
 **Resolved, not open:** MAIN EMS Boss face loader **154** and its ordered
 fixups; shot collision functions **399 + 210**; stage initializer **803**;
 scroll ring/driver **204 + 115**; Mai/Yuki tracking laser **186**; Shinki
-ball/wing **220 + 386**; Yumeko swords **283** as original-register ASM;
+ball/wing **220 + 386**; Yumeko swords **283** as original-register ASM (also supplied by an exact
+hybrid C++/inline-ASM context provider without duplicate credit);
+ZUN resident `main()` **269** as natural C++;
 generic Boss defeat/collision **414 + 43**; OP score decoder **169**; MAINE
 registration menu **1,034** and Staff controller/update/render
 **991/626/861**. These each have an independently accepted owner. Earlier
