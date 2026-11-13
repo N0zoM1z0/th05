@@ -27,11 +27,11 @@ struct b4ball_template_t {
     signed char _unused_1;
     unsigned char angle;
     PlayfieldPoint origin;
-    int _unused_2[5];
+    signed int _unused_2[5]; // ReC98 int16_t[5], offsets 6..15.
     bool16 revenge;
     int patnum_tiny_base;
     int hp;
-    int _unused_3;
+    signed int _unused_3; // ReC98 int16_t at offset 22.
     SubpixelLength8 speed;
 };
 #define b4ball_template (reinterpret_cast<b4ball_template_t &>(custom_entities[0]))
@@ -62,6 +62,9 @@ typedef char b4ball_hp_at_20[(offsetof(b4ball_t, hp) == 20) ? 1 : -1];
 typedef char b4ball_damage_at_22[(offsetof(b4ball_t, damaged_this_frame) == 22) ? 1 : -1];
 typedef char b4ball_speed_at_24[(offsetof(b4ball_t, speed) == 24) ? 1 : -1];
 typedef char b4ball_unused_at_25[(offsetof(b4ball_t, padding) == 25) ? 1 : -1];
+typedef char b4ball_template_unused1_at_0[(offsetof(b4ball_template_t, _unused_1) == 0) ? 1 : -1];
+typedef char b4ball_template_unused2_at_6[(offsetof(b4ball_template_t, _unused_2) == 6) ? 1 : -1];
+typedef char b4ball_template_unused3_at_22[(offsetof(b4ball_template_t, _unused_3) == 22) ? 1 : -1];
 typedef char b4ball_origin_at_2[(offsetof(b4ball_template_t, origin) == 2) ? 1 : -1];
 typedef char b4ball_template_revenge_at_16[(offsetof(b4ball_template_t, revenge) == 16) ? 1 : -1];
 typedef char b4ball_template_sprite_at_18[(offsetof(b4ball_template_t, patnum_tiny_base) == 18) ? 1 : -1];

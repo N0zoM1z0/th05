@@ -51,3 +51,10 @@ comparisons and the empty original ordered relocation stream. The actual
 new-ball damage0→1 mutation is compiled and rejected. Both complete functions
 and132 instruction bytes are accepted, without DATA, BSS, tables or padding.
 The separate273-byte updater remains unimplemented and uncredited.
+
+The shared B4-ball template now spells out the three reserved members with
+the original signed widths (`int8_t` and `int16_t[5]` / `int16_t`) from the
+pinned ReC98 `th05/main/bullet/b4ball.hpp`. Compile-time `offsetof` assertions
+cover offsets 0, 6 and 22. The ten accepted Mai/Yuki consumers were replayed
+after this declaration-only ABI clarification; no storage, code or relocation
+credit is duplicated.
