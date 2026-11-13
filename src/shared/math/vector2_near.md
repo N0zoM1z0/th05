@@ -89,3 +89,38 @@ parameter hints do not reproduce the native `EDX` lifetime or direct
 barriers, or duplicate ASM credit were introduced. The retained 67-byte
 candidate and its two positives/compiled shift negative remain the current
 best natural C++ evidence; a better ordinary-source lowering is still open.
+
+## 2026-11-13 additional register-allocation probes
+
+Three further ordinary C++ formulations were compiled as isolated native
+shape diagnostics against the complete 55-byte leaf:
+
+- Register-wide cosine, sine, length and product locals emit **106 bytes**.
+  Borland spills all three inputs and both products into a 20-byte frame,
+  reloads each operand for multiplication, and stores the results from the
+  stack. Register locals do not bind the original EDX/ECX/EAX lifetime.
+- Register 16-bit samples followed by explicit 32-bit pseudoregister products
+  emit **102 bytes**. The compiler saves both SI and DI for the samples, spills
+  the signed length, and still rewrites the first product through EAX before
+  the second product. The extra callee-saved registers cost more than the
+  original direct sign-extended table loads.
+- A 16-bit register length local with explicit sign extension emits **80
+  bytes**. It avoids the long-length stack slot but adds an SI save/restore,
+  copies the sign-extended value from EAX into EDX, and still routes both
+  products through EAX. The table-load order also differs from the native
+  cosine-to-EAX / sine-to-ECX sequence.
+
+All three are one-producer diagnostics only: none matches the original raw
+bytes, and none supersedes the two-producer 67-byte natural-C++ result. They
+reinforce the remaining compiler boundary: TC++ 4.02 does not expose a source
+register-allocation construct that keeps the signed WORD parameter directly
+in EDX, loads the two table samples directly into EAX/ECX in native order, and
+uses the two-register multiply/shift sequence without copies. No inline
+instruction body, forced output patch, padding or duplicate ASM credit is
+introduced. The reviewed 55-byte original-ASM implementation remains the
+sole exact owner.
+
+The three fresh isolated producer directories are
+`.analysis/gpt-web-vector2-near-register-wide-products-a-20261113/`,
+`.analysis/gpt-web-vector2-near-register-samples-pseudoreg-products-a-20261113/`
+and `.analysis/gpt-web-vector2-near-word-local-signextend-a-20261113/`.
