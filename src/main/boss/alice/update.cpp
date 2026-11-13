@@ -65,7 +65,7 @@ void pascal far alice_update(void)
             boss.phase_frame = 0;
             boss.mode = ALICE_MODE_ATTACK;
             boss.phase_state.patterns_seen = 0;
-            alice_scratch.ready_seed = ALICE_READY_PATTERN_SEED;
+            alice_scratch.ready_phase_store_only = ALICE_READY_PHASE_STORE_VALUE;
             alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         }
         break;

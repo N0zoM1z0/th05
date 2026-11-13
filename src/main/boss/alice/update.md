@@ -75,10 +75,14 @@ offset checks cover the actual typed roles: byte 7 is the selected attack wave
 paired-stack/rotating-ring charge angle. The angle is reinitialized to 8 or 0
 by each charge pattern; it is never treated as a persistent cross-phase field.
 
-The Ready phase still writes the unchanged byte value 24 to offset 10. That
-byte is deliberately named `ready_seed` with no asserted lifetime or new timer
-semantics; its use by other patterns remains unproved. The beam's four states
-(INACTIVE, CHARGE_CIRCLES, CONTRACTING, SPRITES) continue to use the accepted
+The Ready phase still writes the unchanged byte value 24 to offset 10. A
+bounded disassembly/xref pass over every classified MAIN code interval finds
+exactly one Alice-owned access to DS:C68C: the store at the ready transition;
+no Alice-owned callback reads that value. The field and constant are therefore
+named `ready_phase_store_only` / `ALICE_READY_PHASE_STORE_VALUE`, not a seed,
+clock or timer. Other Bosses reuse the same physical byte in their own attack
+lifetimes; those later meanings do not imply that Alice consumes this store.
+The beam's four states (INACTIVE, CHARGE_CIRCLES, CONTRACTING, SPRITES) continue to use the accepted
 `beam_phase.hpp` values without reinterpreting their 8-bit storage. The
 complete controller still advances the wave index only after a finished
 pattern wave, and the puppet motion/renderers continue to read the same
@@ -124,3 +128,26 @@ focused receipt is
 `.analysis/unit-replays/gpt-web-alice-wave-hp-timers-fixed-20261111/receipt.json`.
 These are semantics of already accepted game C++ CODE, not newly attributed
 or padding bytes; no full cold replay was run.
+
+
+## 2026-11-13: ready-phase byte-10 store, not a seed
+
+The original Alice update writes byte value24 to `boss_statebyte[10]` at its
+ready-phase transition. The previous `ready_seed` spelling implied a consumer
+that the Alice source did not contain. A bounded scan of the classified MAIN
+instruction intervals confirmed the only Alice-owned access to DS:C68C is this
+single store; there is no Alice-owned read. The source now names it
+`ready_phase_store_only` and `ALICE_READY_PHASE_STORE_VALUE`. The original
+16-byte scratch view and offset10 are unchanged. The same physical byte is
+reused by other Bosses in their own distinct lifetimes (including Shinki's
+wave/Devil-laser latch); that cross-Boss reuse is not a consumer of Alice's
+ready-phase value.
+
+All six accepted owners that include the shared scratch header were replayed
+as complete units after the name refinement: the 939-byte full Alice
+controller, 499-byte charge-pattern cohort, 354-byte beam, 643-byte puppet
+motion, 381-byte puppet renderer and 140-byte complete foreground. Their
+original bytes and ordered relocations remain exact in two independent
+Borland/TLINK producers, and the existing Alice controller negative remains
+rejected. This is a semantic naming refinement only; no new CODE or scratch
+storage is claimed.
