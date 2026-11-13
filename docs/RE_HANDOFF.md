@@ -69,6 +69,9 @@ contexts: [Sara's 12-function 1,824 B](../src/main/boss/sara/sara.md),
 [EX-Alice's 1,060 B controller](reconstruction/EXALICE_WAVES_CONTROL_FLOW_2026-11-13.md),
 [Yumeko's 884 B controller](../src/main/boss/yumeko/update.md),
 and [Mai/Yuki's 1,018 B paired update](reconstruction/MAI_YUKI_STACK_CHEETO_CLOSURE_2026-11-13.md).
+The shared Mai/Yuki B4-ball template now mirrors the pinned original signed
+`int8_t`/`int16_t` reserved fields and asserts offsets 0/6/22; all ten
+accepted consumers were recompiled in one focused replay and remained exact.
 Shinki's [19-function, 3,254 B background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
 was also recovered. ZUN's embedded resident `main()` is now accepted as a
 complete natural C++ 269-byte function with two independent cold producers;
