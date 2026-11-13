@@ -8,9 +8,10 @@ The maintained original-order MAIN03 cohort was rebuilt with one new
 source variant at a time, using the true nine-function
 `attacks_context.cpp` family and its existing native source-binding
 object. This is a **targeted first-producer diagnostic**, not a complete
-replay or an acceptance receipt. The baseline still emits 2,139 bytes,
-with the updater contributing 283 bytes and its ordered relocation
-unchanged; the full updater remains raw-inexact. Original updater
+replay or an acceptance receipt. At this historical 2026-11-11 baseline,
+the source emitted 2,139 bytes with a 283-byte updater and unchanged ordered
+relocation, but the updater was raw-inexact. That status is superseded by the
+2026-11-13 exact hybrid result at the end of this document. Original updater
 instructions at relative `+5E` and `+72` are respectively
 `0F 8C AA 00` (`JL near +10C`) and
 `0F 8D 96 00` (`JGE near +10C`).
@@ -554,3 +555,40 @@ manual-loop, clip/hit label, `do/break`, trampoline and local-pragma forms
 are now tested; do not repeat them without a new compiler hypothesis. No
 new C++ exactness, second producer, compiled negative, or byte credit is
 claimed.
+
+## 2026-11-13: exact hybrid C++/inline-ASM recovery in the real nine-routine context
+
+A new combination finally restores the original branch graph without patching
+compiler output or adding synthetic work. The maintained `swords_update.cpp`
+now uses ordinary `-O` C++ lowering for the twirl arithmetic and its original
+near `JL/JGE` branches. Two small inline-ASM regions preserve the original
+short clip exits and the collision hit/miss transfers to one genuine loop-tail
+label. The C++ `for` increment remains intact, so every path advances the sword
+pointer and index exactly once. The real DX:AX motion return is consumed before
+any foreign call; hit testing and state mutations remain C++.
+
+The result was checked twice with fresh actual Borland/TLINK producers through
+the maintained `attacks_context.cpp`, not through a synthetic 283-byte prefix:
+
+| Scope | Original | Producer A | Producer B |
+| --- | ---: | ---: | ---: |
+| Complete MAIN03 contribution `[1ED41,1F59C)` | 2,139 B | 2,139 B raw-exact | 2,139 B raw-exact |
+| `swords_update` `[1EDBA,1EED5)` | 283 B | 283 B raw-exact | 283 B raw-exact |
+| Ordered MAIN03 MZ fixups | 25 | 25 exact | 25 exact |
+
+Both full-context SHA-256 values are `fcb155d63c0fa1202fdb0119184c9ba4249f1c2dedd326c1a7c29cc994e3c16c`;
+the updater hash is `5aedab8dc3a06d16fdd86611d2ea1bd7f2340b30f40b69158a805955c6578a88`.
+The normalized OMF hash is stable across both producers. Native diagnostics:
+
+- `.analysis/gpt-web-yumeko-hybrid-full-context-a-20261113/`
+- `.analysis/gpt-web-yumeko-hybrid-full-context-b-20261113/`
+- `.analysis/gpt-web-yumeko-hybrid-full-context-20261113-results.json`
+
+This is a hybrid source recovery, not a new ownership interval. The exact
+283-byte `main-yumeko-swords-update-asm` family remains the sole accepted
+owner and CODE credit for `[1EDBA,1EED5)`; the new C++/inline-ASM context
+source does not claim those bytes a second time. It does restore the exact
+original context required by the already accepted 354-byte aimed-swords and
+428-byte laser-swords callbacks. Earlier `-O-`, manual-loop, label, helper,
+register-hint and standalone branch experiments remain failed historical
+trials and should not be repeated.

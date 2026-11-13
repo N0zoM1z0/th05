@@ -409,9 +409,11 @@ failed literal original MZ relocation order. Compiling both with their original
 adjacent patterns (seven total functions, 1735 bytes) also matches every raw
 byte, but retains the wrong record grouping. The missing context is the
 original 66-byte `main_01` sword renderer plus `main_03`'s 121-byte allocator
-and 283-byte updater. Combining these genuine natural functions in one C++ TU
-reproduces both original attack fixup lists unchanged, even though the updater's
-own branch bytes remain inexact. This is evidence for **OMF buffering across
+and 283-byte updater. Combining these genuine functions in one C++ TU
+reproduces both original attack fixup lists unchanged. At the time of this
+original finding the updater's own branch bytes were still inexact; the
+2026-11-13 hybrid C++/inline-ASM source now restores them exactly as well.
+This is evidence for **OMF buffering across
 real CODE contributions**; zero bytes, a dummy prefix, output relocation
 sorting or an altered function interface are not needed. Source is maintained
 once per function, and only the two newly exact complete callbacks receive

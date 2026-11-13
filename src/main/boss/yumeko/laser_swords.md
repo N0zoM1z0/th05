@@ -45,8 +45,10 @@ standalone relocation order unchanged. The separate-segment trial likewise
 does not restore the original stream.
 
 The earlier gap is resolved for both attack callbacks by the full original-order
-compiler context. The sword updater itself remains raw-inexact and unaccepted. Joint
-review `.analysis/yumeko-later-root-review.json`, SHA-256
+compiler context. At this stage the sword updater still lacked its recovered hybrid source;
+that historical state is superseded by the 2026-11-13 exact-context result in
+[`swords_update.md`](swords_update.md). Joint review
+`.analysis/yumeko-later-root-review.json`, SHA-256
 `1099a5063c7943fba749a258d3e449b1fdf1c75c916d329b5ef33cdbda94001c`.
 
 ## Accepted complete 354- and 428-byte Boss attack callbacks
@@ -70,10 +72,11 @@ original 25-entry ordered fixup stream of that full main-03 group; no records
 are sorted or edited. Both new whole functions match their original offsets,
 including all near calls and DS operands.
 
-The isolated candidate sword updater was 280 bytes; the genuine DX:AX
-coordinate-return consumer with local `-O-` now emits the original **283-byte
-size**, allowing correct downstream addresses and record grouping. Its own
-raw bytes still differ, so its entire function remains unaccepted. The renderer,
+The historical isolated natural-C++ updater was 280 bytes; the genuine DX:AX
+coordinate-return consumer with local `-O-` later emitted the original **283-byte
+size**, allowing correct downstream addresses and record grouping, but its
+then-current raw bytes still differed. This limitation is superseded by the
+2026-11-13 hybrid source result documented in `swords_update.md`. The renderer,
 allocator, three original patterns and two spreads were already accepted:
 all six prior function bodies remain the same and receive **zero new credit**.
 The only needed source changes to their standalone wrappers are conditional
@@ -107,13 +110,15 @@ compiler object with 2139 MAIN03 bytes plus 66 MAIN01 bytes, rather than a
 binder-supplied CODE prefix. All foreign compiler segments, near/far interfaces,
 CS frames and ordered relocations come from the actual TCC/TLINK output.
 
-The sword updater is a maintained ordinary C++ **283-byte context provider**
-using its native DX:AX point-return words and the jump-optimization-off
-profile. Its size and relocation agree with the original, but twirl-path
-branches remain different; **none of those 283 bytes are accepted**. The other
-five previously accepted neighboring functions (121, 66, 435 and 518-byte
-units; seven functions total) were recompiled through their own standalone
-sources and retained exactness. These are not new bytes.
+The sword updater is a maintained C++/inline-ASM **283-byte context provider**
+using its native DX:AX point-return words and the ordinary `-O` profile. Its
+full function is now raw-exact, as is the complete 2,139-byte MAIN03 context
+and its original 25-entry ordered relocation stream. Two fresh diagnostic
+producers confirm the match. The updater's 283 bytes are still credited only
+to the existing accepted original-ASM owner; the overlapping hybrid context
+creates no duplicate C++ credit. The other five previously accepted
+neighboring functions (121, 66, 435 and 518-byte units; seven functions total)
+remain exact. These are not new bytes.
 
 In the full context the aim and laser-sword functions now match the original
 **354/354** and **428/428** instruction bytes *and* literal relative MZ
@@ -170,8 +175,9 @@ Borland/TLINK producers:
 - `.analysis/unit-replays/gpt-web-yumeko-laser-swords-rules-a/receipt.json`
 - `.analysis/unit-replays/gpt-web-yumeko-aimed-context-after-lasers-a/receipt.json`
 
-The unaccepted *natural C++* source candidate for the intervening
-283-byte `swords_update()` remains raw-inexact and earns no CODE credit.
-The already accepted real ASM counterpart stays untouched; the new
-source names do not introduce optimizer barriers or guessed opcode
-sequences. No all-game cold replay was performed.
+The intervening 283-byte `swords_update()` now uses a maintained hybrid
+C++/inline-ASM source whose bytes and ordered fixups are exact in the full
+context. The already accepted real ASM counterpart stays untouched and remains
+the sole CODE owner for that interval. No duplicate credit is created, no
+optimizer barrier or guessed opcode sequence is used, and no all-game cold
+replay was performed.

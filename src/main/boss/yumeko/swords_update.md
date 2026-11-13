@@ -1,3 +1,40 @@
+## 2026-11-13 exact hybrid source in the complete original-order context
+
+The maintained `swords_update.cpp` is now a deliberately small C++/inline-ASM
+hybrid. The complete 283-byte function emits **raw-exact** bytes and its
+original ordered relocation `[75]` inside the real six-definition MAIN03
+context. Two fresh native diagnostic producers independently reproduce the
+entire **2,139-byte** contribution at `[1ED41,1F59C)`, including all **25**
+ordered MZ relocations. Both also reproduce the updater's exact 283-byte
+slice at `[1EDBA,1EED5)`; the complete context and updater SHA-256 values
+match the pinned target.
+
+The recovered compiler shape uses ordinary `-O` for the two original near
+`JL/JGE` twirl branches. One narrow inline-ASM island preserves the original
+four short playfield exits and short transfer to the real `remove` label;
+a second pair of short inline-ASM jumps joins both collision outcomes at one
+real C++ loop-tail label. The actual DX:AX `update_seg3()` result is still
+consumed before another call, the collision mutations remain ordinary C++,
+and the original `for` increment advances both the index and sword pointer
+on every path. No copied instruction array, fabricated prefix, padding,
+extra state, or changed gameplay predicate is used.
+
+This hybrid source is the context provider for `attacks_context.cpp`; the
+already accepted `main-yumeko-swords-update-asm` remains the **sole owner and
+credit** for these same 283 executable bytes. No overlapping C++ CODE credit
+or second accepted unit is claimed. The 354-byte aimed attack, 428-byte laser
+attack, and their original 25-entry relocation order remain exact in the
+same full context. Diagnostic snapshots:
+
+- `.analysis/gpt-web-yumeko-hybrid-full-context-a-20261113/`
+- `.analysis/gpt-web-yumeko-hybrid-full-context-b-20261113/`
+- `.analysis/gpt-web-yumeko-hybrid-full-context-20261113-results.json`
+
+The older natural-only `-O-` and `-O` trials below are historical failures;
+they are superseded by this mixed lowering and should not be repeated.
+
+---
+
 ## 2026-11-10 accepted complete 283-byte original-register ASM owner
 
 **`SWORDS_UPDATE` is now exact** at MAIN `[1EDBA,1EED5)`: one complete
@@ -27,10 +64,11 @@ the clockwise twirl step 2→3 and is rejected. Receipt:
 `.analysis/gpt-web-yumeko-swords-asm-native-review.json`.
 
 All **283 bytes are classified as reviewed ASM instruction credit**, not C++
-codegen credit. The original experimental natural
-`src/main/boss/yumeko/swords_update.cpp` remains useful as an inexact
-source-language port; its previously attempted 283-byte generated code is
-*not* credited. The two accepted 354/428-byte Yumeko sword attack callbacks,
+codegen credit. At the time of the 2026-11-10 ASM acceptance, the experimental
+`src/main/boss/yumeko/swords_update.cpp` was an inexact source-language port.
+Its 2026-11-13 hybrid replacement is now raw-exact in the full context, but
+remains deliberately uncredited to avoid overlapping the accepted ASM owner.
+The two accepted 354/428-byte Yumeko sword attack callbacks,
 the 121-byte sword allocator and the other original-order accepted callbacks
 are unchanged and not replayed, with **no ownership overlap**.
 
@@ -92,10 +130,11 @@ The maintained 280-byte natural source, frozen accepted neighbors and original
 relocation data are unchanged. Future work should focus on genuine compiler
 control-flow lowering or original adjacent TU context, not patching jumps.
 
-## Current 283-byte context source, still not raw-exact
+## Historical natural-C++ 283-byte context source (superseded 2026-11-13)
 
-The maintained `swords_update.cpp` now uses the source-equivalent `-O-` scoped
-candidate from `.analysis/gpt-web-yumeko-variants/reg-dx-mutate-compare.cpp`.
+At this historical stage the maintained `swords_update.cpp` used the
+source-equivalent `-O-` scoped candidate from
+`.analysis/gpt-web-yumeko-variants/reg-dx-mutate-compare.cpp`.
 It consumes the genuine DX:AX return of `PlayfieldMotion::update_seg3()`
 immediately and computes both player-relative deltas before the shot overlap
 predicate. The complete body emits **283 instruction bytes** and its correct
@@ -111,15 +150,17 @@ manual branch bytes or fabricated helper. Earlier 280-byte baseline remains
 recoverable from Git history; the noopt natural source is maintained for
 continued full-function reconstruction.
 
-## Exact-size context, adjacent attack owners recovered
+## Historical exact-size context, adjacent attack owners recovered
 
-The natural `-O-` word-result consumer in `swords_update.cpp` now serves as a
+The natural `-O-` word-result consumer in `swords_update.cpp` served as a
 **283-byte genuine C++ context prefix** inside `attacks_context.cpp`. It
 preserves the real original position of the next seven functions and enables
 both previously blocked 354- and 428-byte attack functions to reproduce their
 original raw code **and unsorted ordered relocations**. In the compiled combined
-cohort the updater still differs at twirl control-flow branches, so it remains
-**unaccepted** in its entirety. No subsection earns partial credit. The
+cohort the updater then differed at twirl control-flow branches, so it remained
+**unaccepted** in its entirety at that time. This state is superseded by the
+exact hybrid result at the top of this document. No subsection earns partial
+credit. The
 positive and negative receipts for the two newly accepted large attacks are
 linked in [the attack context review](laser_swords.md); only their affected
 standalone accepted neighbors were refreshed.

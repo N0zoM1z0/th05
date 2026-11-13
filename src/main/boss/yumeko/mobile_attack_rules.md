@@ -40,7 +40,8 @@ bytes, original ordered relocation sites, and a compiled right-edge
 336→335 mutation rejected:
 `.analysis/unit-replays/gpt-web-yumeko-mobile-attack-rules-a/receipt.json`.
 The four byte-exact owned extents are 435, 884 (including the checked
-zero and its 22-byte compiler switch table), 354 and 428. The still
-unresolved 283-byte natural C++ `swords_update()` is only a source-context
-provider and does **not** receive new or borrowed CODE credit. No whole
-cold replay or machine-code patch was performed.
+zero and its 22-byte compiler switch table), 354 and 428. The 283-byte
+`swords_update()` now has a raw-exact hybrid C++/inline-ASM context provider;
+its interval remains credited only to the separate reviewed-ASM owner. No
+new or borrowed CODE credit is claimed. No whole cold replay or machine-code
+patch was performed.

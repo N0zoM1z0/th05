@@ -21,6 +21,8 @@ the small edited regions:
 Two genuine Borland/TLINK producers per owner match every complete raw byte
 and original relocation order; the existing compiled negative was rejected.
 Evidence: `.analysis/unit-replays/gpt-web-yumeko-mirrored-fan-reposition-context-20261112-a/receipt.json`.
-The already accepted 283-byte `swords_update()` remains a reviewed ASM owner;
-its separate natural C++ attempt is still inexact. No duplicated authored
-CODE byte credit is taken for these source refactors.
+The already accepted 283-byte `swords_update()` remains owned by reviewed
+ASM. Its maintained C++/inline-ASM context provider is now raw-exact in the
+full 2,139-byte cohort, but does not create a second owner or duplicated
+CODE credit. No duplicated authored CODE byte credit is taken for these
+source refactors.

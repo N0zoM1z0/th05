@@ -42,20 +42,16 @@ EXE/COM reconstruction. The pinned Japanese game copy is
    The independently accepted `cfg_init()` and resident DATA remain exact. Three shared-error-tail and two comma-return
    first-producer variants have also failed; do not repeat them without a new
    control-flow hypothesis.
-2. **Yumeko `swords_update()`**: the actual 283-byte function already has
-   an exact **reviewed ASM** owner. Its *natural C++ alternative* is not
-   exact in the nine-function original context: `-O` makes the correct near
-   conditional jumps but drops two short joins, yielding 2,135 bytes versus
-   2,139 original. The `-O-`, local-switch and final-Y/GOTO experiments also
-   failed. Use [the compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md),
-   not fabricated NOPs, padding or side effects. This is a language-source
-   improvement, **not newly uncovered executable CODE**. Additional `-G`/`-Z`, while/do-while/for-ever, helper extraction
-   and explicit `register` hint trials also failed to retain the two original
-   short joins; see the updated compiler review before proposing an equivalent
-   variant. Manual loop-tail `continue` once matched 2,139 bytes and fixups but
-   bypassed the manual increment, so it is semantically invalid. The correct
-   explicit-goto variants and clip/hit label, `do/break`, and trampoline forms
-   also fail; do not revive the invalid size match.
+2. **Yumeko `swords_update()`**: the 283-byte function remains exactly owned
+   by the reviewed ASM family. Its maintained C++/inline-ASM context source
+   now also reproduces the same 283 bytes and the entire original-order
+   2,139-byte MAIN03 cohort byte-for-byte, including all 25 ordered fixups.
+   Two fresh native diagnostic producers agree. The hybrid context is not a
+   second CODE owner: all 283 bytes remain credited only once to the accepted
+   ASM unit. See [the source and context proof](../src/main/boss/yumeko/swords_update.md)
+   and [the compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
+   The earlier natural-only `-O-`, `-O`, manual-loop and helper experiments
+   remain historical failures and should not be repeated.
 3. **BB resource loader**: the 55-byte function is already exactly owned
    as [original-language ASM](../src/main/formats/bb_load.md). Its natural
    C++ alternative still emits 56 bytes with a different stack-frame and

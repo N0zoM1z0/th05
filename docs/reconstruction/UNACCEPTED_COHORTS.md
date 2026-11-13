@@ -30,9 +30,12 @@ be described as uncovered code:
 
 ## Current follow-up candidates for an incoming agent
 
-The unaccepted natural C++ alternative for Yumeko's 283-byte
-`swords_update()` is worth investigating only as a source-language refinement:
-the executable function already has a complete, exact reviewed-ASM owner.
+Yumeko's 283-byte `swords_update()` already has a complete, exact reviewed-ASM
+owner. Its maintained C++/inline-ASM hybrid now reproduces the same bytes in
+the full original-order 2,139-byte context; it is deliberately not a second
+CODE owner. Only a fully natural C++ alternative remains a source-language
+refinement, not uncovered executable work. See
+[the exact hybrid context result](../../src/main/boss/yumeko/swords_update.md).
 ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
 source problem. Its two private raw-exact diagnostics use artificial
 compiler barriers, so neither is accepted as natural C++. Another

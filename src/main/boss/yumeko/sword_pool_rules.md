@@ -30,8 +30,10 @@ ordered original relocations; the compiled source control changes the
 actual shrinking-circle color from 9 to 10 and is rejected. Focused
 receipt: `.analysis/unit-replays/gpt-web-yumeko-sword-pool-a/receipt.json`.
 
-The neighboring **283-byte** `swords_update()` natural C++ source
-remains raw-inexact despite an independently exact reviewed ASM owner;
-this context replay makes no claim of new natural-C++ acceptance for it.
+The neighboring **283-byte** `swords_update()` is now supplied to this
+context by a raw-exact C++/inline-ASM hybrid, confirmed inside the full
+2,139-byte original-order MAIN03 contribution. The same bytes remain owned
+only by the independently accepted reviewed-ASM family; this context replay
+makes no duplicate C++ CODE claim.
 The four previously accepted exact functions receive no duplicate
 CODE credit, and there is no whole-game cold replay.

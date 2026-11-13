@@ -53,5 +53,6 @@ compiler switch table. Both complete units, real fixups and both
 compiled semantic negative controls pass native double-producer
 replay at
 `.analysis/unit-replays/gpt-web-yumeko-sweep-and-884-boss-b/receipt.json`.
-This does not resolve or recredit the separate natural-C++ 283-byte
-sword updater; its existing reviewed ASM is untouched.
+The 283-byte sword updater now has a raw-exact hybrid C++/inline-ASM
+context provider; the existing reviewed ASM remains its sole owner and credit.
+This source-context improvement does not recredit or duplicate those bytes.

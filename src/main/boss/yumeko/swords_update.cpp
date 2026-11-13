@@ -6,7 +6,7 @@
 #include "src/main/boss/yumeko/update.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#pragma option -O-
+#pragma option -O
 extern "C" void pascal near swords_update(void)
 {
     sword_t near *sword;
@@ -40,11 +40,20 @@ extern "C" void pascal near swords_update(void)
         }
         // Both genuine Point-return words are dead before any foreign call.
         sword->pos.update_seg3();
-        if(static_cast<subpixel_t>(_AX) <= -16 * 16 ||
-           static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W + 16) * 16 ||
-           static_cast<subpixel_t>(_DX) <= -16 * 16 ||
-           static_cast<subpixel_t>(_DX) >= (PLAYFIELD_H + 16) * 16) {
-            goto remove;
+        // Preserve the original short clip exits around the live DX:AX
+        // Point return; the following C++ consumes it before any call.
+        asm {
+            cmp ax, 0FF00h
+            jle clip_remove
+            cmp ax, 01900h
+            jge clip_remove
+            cmp dx, 0FF00h
+            jle clip_remove
+            cmp dx, 01800h
+            jl clip_in
+clip_remove:
+            jmp short remove
+clip_in:
         }
         if(sword->flag != F_REMOVE) {
             _AX -= player_pos.cur.x.v;
@@ -52,12 +61,12 @@ extern "C" void pascal near swords_update(void)
             if(static_cast<unsigned int>(static_cast<subpixel_t>(_AX) + 7 * 16) <= 14 * 16) {
                 _DX += 7 * 16;
                 if(static_cast<unsigned int>(_DX) <= 14 * 16) {
-                player_is_hit = 1;
-                sword->flag = F_REMOVE;
-                continue;
+                    player_is_hit = 1;
+                    sword->flag = F_REMOVE;
+                    asm { jmp short ysu_next_slot_20261113; }
                 }
             }
-            continue;
+            asm { jmp short ysu_next_slot_20261113; }
         }
         if(sword->patnum_tiny < 225) {
             sword->patnum_tiny = 225;
@@ -75,5 +84,7 @@ remove:
             }
         }
         }
+ysu_next_slot_20261113:
+        ;
     }
 }
