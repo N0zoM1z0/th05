@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Twenty complete, previously unknown source-backed Master functions.
+"""Complete source-backed Master functions and initialized literal data.
 
 The original Master 0.23 archive, unchanged native TASM OMF and real MAIN MZ
 must all agree. Accept only explicitly named full procedures, never nearby
@@ -12,9 +12,10 @@ import json
 from pathlib import Path
 import re
 
+from lib.omf import parse_omf
 from lib.pc98 import parse_mz, digest_file
 from lib.unit_oracle import relative_fixups
-from review_master import object_text, source_blocks, stored_lzh, pinned, need, sha
+from review_master import object_text, source_blocks, stored_lzh, pinned, need, sha, idx
 from review_master_bgm import linked_scope
 from review_main_runtime import startup
 
@@ -76,6 +77,115 @@ PRIVATE_OMF_ACTION_COUNTS = {
     'FILE_ROPEN': 8, 'GET_MACHINE': 0, 'JS_END': 0, 'PFCLOSE': 0,
     'PFGETX1': 0, 'PALETTE_ENTRY_RGB': 3, 'MEM_UNASSIGN': 4,
 }
+
+# EMS_EXIST references this source-written signature immediately after its
+# PROC. It is initialized DATA in the same original _TEXT SEGDEF, not part of
+# the 34-byte instruction extent.
+INITIALIZED_DATA = ('emm_device_name', 8, 'libs/master.lib/ems_exist.asm',
+                    'EMSEXIST.ASM', 'EMS_EXIST')
+
+
+def source_data_declaration(raw, encoding, label):
+    """Return one complete, source-authored DB declaration outside any PROC."""
+    text = raw.decode(encoding).replace('\r\n', '\n').replace('\r', '\n')
+    lines = text.splitlines()
+    endfunc = [i for i, line in enumerate(lines)
+               if line.split(';', 1)[0].strip().lower().startswith('endfunc')]
+    matches = []
+    for i, line in enumerate(lines):
+        body = line.split(';', 1)[0].strip()
+        canonical = re.sub(r'\s+', '', body).lower()
+        if canonical.startswith(label.lower() + 'db'):
+            matches.append((i + 1, canonical))
+    need(len(endfunc) == 1 and len(matches) == 1 and matches[0][0] - 1 > endfunc[0],
+         'EMS signature must be one separate post-PROC source declaration')
+    need(matches[0][1] == "emm_device_namedb'emmxxxx0'",
+         'original EMS device signature declaration changed')
+    return matches[0]
+
+
+def omf_text_data_scope(raw, symbol, segment_offset, size):
+    """Recover a complete literal range from the actual source-linked CODE LEDATA."""
+    records = parse_omf(raw)
+    names = ['']
+    segments = [None]
+    for record in records:
+        b = record.data
+        if record.name == 'LNAMES':
+            pos = 0
+            while pos < len(b):
+                count = b[pos]; pos += 1
+                need(pos + count <= len(b), 'truncated actual OMF LNAMES')
+                names.append(b[pos:pos + count].decode('ascii')); pos += count
+        elif record.name == 'SEGDEF':
+            need(len(b) >= 6 and not b[0] & 2, 'unsupported actual OMF SEGDEF')
+            name_index, pos = idx(b, 3)
+            class_index, pos = idx(b, pos)
+            overlay_index, pos = idx(b, pos)
+            need(pos == len(b) and name_index < len(names) and class_index < len(names),
+                 'malformed actual OMF SEGDEF names')
+            segments.append((names[name_index], names[class_index],
+                             int.from_bytes(b[1:3], 'little')))
+    text_segments = [i for i, segment in enumerate(segments)
+                     if segment and segment[:2] == ('_TEXT', 'CODE')]
+    need(len(text_segments) == 1, 'original Master _TEXT CODE segment is not unique')
+    segment_index = text_segments[0]
+
+    symbols = []
+    for record in records:
+        if record.name != 'PUBDEF':
+            continue
+        b = record.data
+        group_index, pos = idx(b, 0)
+        si, pos = idx(b, pos)
+        if si == 0:
+            need(pos + 2 <= len(b), 'truncated absolute PUBDEF frame')
+            pos += 2
+        while pos < len(b):
+            count = b[pos]; pos += 1
+            need(pos + count + 2 <= len(b), 'truncated actual OMF PUBDEF symbol')
+            name = b[pos:pos + count].decode('ascii'); pos += count
+            offset = int.from_bytes(b[pos:pos + 2], 'little'); pos += 2
+            type_index, pos = idx(b, pos)
+            if name.casefold() == symbol.casefold():
+                symbols.append((si, offset))
+    need(len(symbols) == 1 and symbols[0][0] == segment_index,
+         'EMS_EXIST PUBDEF does not identify the original _TEXT segment')
+
+    content = bytearray(size)
+    coverage = bytearray(size)
+    ledatas = []
+    for record in records:
+        if record.name in ('LIDATA', 'LIDATA32'):
+            b = record.data
+            si, pos = idx(b, 0)
+            if si == segment_index:
+                raise ValueError('EMS signature unexpectedly comes from iterated data')
+        if record.name != 'LEDATA':
+            continue
+        b = record.data
+        si, pos = idx(b, 0)
+        need(pos + 2 <= len(b) and si < len(segments), 'malformed actual OMF LEDATA')
+        if si != segment_index:
+            continue
+        offset = int.from_bytes(b[pos:pos + 2], 'little'); pos += 2
+        payload = b[pos:]
+        low, high = max(offset, segment_offset), min(offset + len(payload), segment_offset + size)
+        if low >= high:
+            continue
+        left, right = low - segment_offset, high - segment_offset
+        need(not any(coverage[left:right]), 'overlapping source LEDATA for EMS signature')
+        chunk = payload[low - offset:high - offset]
+        content[left:right] = chunk
+        coverage[left:right] = b'\1' * len(chunk)
+        ledatas.append({
+            'record_offset': record.offset, 'segment_offset': offset,
+            'record_size': len(payload), 'scope_offset': left,
+            'scope_size': len(chunk), 'record_sha256': sha(payload),
+            'scope_content_sha256': sha(chunk),
+        })
+    need(all(coverage) and ledatas, 'original EMS signature lacks complete CODE LEDATA')
+    return segment_index, segments[segment_index][2], symbols[0][1], bytes(content), ledatas
 
 
 def private_source_author(old, member):
@@ -264,6 +374,76 @@ def replay():
             'ordered_original_MZ_relocations': mz,
             'ordered_OMF_actions': actions, 'authored_credit': 0,
         })
+
+    # The EMS signature is a separate eight-byte DB declaration after the
+    # 34-byte EMS_EXIST PROC. Its own source LEDATA, same-segment PUBDEF,
+    # function reference fixup and original/calibration bytes all agree.
+    ems = next(row for row in rows if row['member'] == INITIALIZED_DATA[4])
+    data_name, data_size, data_source, author_member, ref_symbol = INITIALIZED_DATA
+    data_source_path = ROOT / parent['candidate_source_root'] / data_source
+    data_source_raw = data_source_path.read_bytes()
+    need(sha(data_source_raw) == frozen[data_source]['sha256'] and
+         ems['candidate_source'] == data_source and
+         ems['source_file_sha256'] == sha(data_source_raw),
+         'EMS signature source is not the actual native TASM input')
+    author_raw = author_archive[author_member]
+    original_line, original_declaration = source_data_declaration(
+        author_raw, 'cp932', data_name)
+    candidate_line, candidate_declaration = source_data_declaration(
+        data_source_raw, 'utf8', data_name)
+    need(original_declaration == candidate_declaration,
+         'native EMS signature differs from the original Master author declaration')
+    segment_index, segment_size, symbol_offset, omf_data, ledatas = \
+        omf_text_data_scope(real_obj, ref_symbol, 0x3db0, data_size)
+    segment_base = ems['start'] - symbol_offset
+    segment_offset = symbol_offset + ems['size']
+    data_start = segment_offset + segment_base
+    need(symbol_offset == 0x3d8e and segment_size == 0x4376 and
+         segment_offset == 0x3db0 and data_start == ems['end'] == 0x4022 and
+         omf_data == b'EMMXXXX0' and len(ledatas) == 1 and
+         ledatas[0]['scope_offset'] == 0 and ledatas[0]['scope_size'] == data_size,
+         'EMS signature original _TEXT/LEDATA boundary changed')
+    reference_actions = ems['ordered_OMF_actions']
+    need(len(reference_actions) == 1 and
+         reference_actions[0]['source_site'] == 20 and
+         reference_actions[0]['target_index'] == segment_index and
+         reference_actions[0]['original_link_operation'] == 'native-offset16',
+         'EMS_EXIST no longer references the source-written signature via its OMF fixup')
+    reference_word = data_start.to_bytes(2, 'little')
+    need(cal.program_image[ems['start'] + 20:ems['start'] + 22] == reference_word and
+         native.program_image[ems['start'] + 20:ems['start'] + 22] == reference_word,
+         'original EMS_EXIST offset operand no longer resolves to emm_device_name')
+    need(cal.program_image[data_start:data_start + data_size] == omf_data and
+         native.program_image[data_start:data_start + data_size] == omf_data and
+         native.program_image.find(omf_data) == data_start and
+         native.program_image.find(omf_data, data_start + 1) < 0 and
+         relative_fixups(cal, data_start, data_size) ==
+         relative_fixups(native, data_start, data_size) == [],
+         'original/calibration EMS signature bytes or MZ relocation scope differ')
+    data_rows = [{
+        'member': data_name, 'start': data_start, 'end': data_start + data_size,
+        'size': data_size, 'candidate_source': data_source,
+        'source_file_sha256': sha(data_source_raw),
+        'original_archive_member': author_member,
+        'original_source_line': original_line,
+        'original_source_declaration': original_declaration,
+        'original_source_declaration_sha256': sha(original_declaration.encode('utf8')),
+        'candidate_source_line': candidate_line,
+        'candidate_source_declaration': candidate_declaration,
+        'candidate_source_declaration_sha256': sha(candidate_declaration.encode('utf8')),
+        'source_segment': '_TEXT', 'source_segment_class': 'CODE',
+        'source_segment_index': segment_index, 'source_segment_size': segment_size,
+        'source_segment_offset': segment_offset, 'source_segment_base': segment_base,
+        'source_symbol': ref_symbol, 'source_symbol_offset': symbol_offset,
+        'reference_OMF_actions': reference_actions,
+        'OMF_LEDATAs': ledatas,
+        'data_sha256': sha(omf_data),
+        'calibrated_data_sha256': sha(cal.program_image[data_start:data_start + data_size]),
+        'original_data_sha256': sha(native.program_image[data_start:data_start + data_size]),
+        'ordered_original_MZ_relocations': [],
+        'authored_credit': 0, 'instruction_bytes': 0,
+    }]
+
     # Native CODE boundaries are always adopted as complete original PROC
     # extents, never absorbing a nearby EVEN byte just because it looks like
     # an alignment NOP. Both positions remain outside all credited scopes.
@@ -275,9 +455,10 @@ def replay():
          native.program_image[0x41b1] == 0x00,
          'original Master private PROC post-RET boundary changed')
     return {
-        'schema_version': 1, 'kind': 'original-master-gap-functions-source-and-MZ',
+        'schema_version': 1, 'kind': 'original-master-gap-functions-and-literal-data-source-and-MZ',
         'artifact': 'th05-main', 'members': rows,
         'CODE_bytes': sum(n for _, _, n in MEMBERS),
+        'initialized_data_members': data_rows, 'initialized_DATA_bytes': data_size,
         'original_target_sha256': parent['inputs']['target']['sha256'],
         'source_OMF_sha256': parent['inputs']['saved_object']['sha256'],
         'calibration_exe_sha256': parent['inputs']['calibration_exe']['sha256'],
@@ -292,9 +473,10 @@ def replay():
 def validate_public(proof):
     parent = json.loads(BASE.read_text())
     need(proof.get('schema_version') == 1 and
-         proof.get('kind') == 'original-master-gap-functions-source-and-MZ' and
+         proof.get('kind') == 'original-master-gap-functions-and-literal-data-source-and-MZ' and
          proof.get('artifact') == 'th05-main' and
          proof.get('CODE_bytes') == sum(n for _, _, n in MEMBERS) and
+         proof.get('initialized_DATA_bytes') == INITIALIZED_DATA[1] and
          proof.get('authored_credit') == proof.get('other_bytes_claimed') == 0 and
          proof.get('unowned_boundary_offsets') == list(UNOWNED_BOUNDARIES) and
          proof.get('original_target_sha256') == parent['inputs']['target']['sha256'] and
@@ -329,13 +511,49 @@ def validate_public(proof):
                       'original_CODE_sha256'):
             need(isinstance(row.get(field), str) and re.fullmatch('[0-9a-f]{64}', row[field]),
                  'original Master source/CODE evidence missing')
+    data_rows = proof.get('initialized_data_members', [])
+    need(len(data_rows) == 1, 'the original EMS device signature DATA scope is missing')
+    data = data_rows[0]
+    ems = next(row for row in rows if row['member'] == 'EMS_EXIST')
+    need((data.get('member'), data.get('start'), data.get('end'), data.get('size')) ==
+         ('emm_device_name', 0x4022, 0x402a, 8) and
+         data.get('candidate_source') == INITIALIZED_DATA[2] and
+         data.get('original_archive_member') == INITIALIZED_DATA[3] and
+         data.get('source_segment') == '_TEXT' and
+         data.get('source_segment_class') == 'CODE' and
+         data.get('source_segment_offset') == 0x3db0 and
+         data.get('source_segment_base') == 0x272 and
+         data.get('source_symbol') == 'EMS_EXIST' and
+         data.get('source_symbol_offset') == 0x3d8e and
+         data.get('source_segment_offset') + data.get('source_segment_base') == data.get('start') and
+         data.get('start') == ems['end'] and
+         data.get('reference_OMF_actions') == ems['ordered_OMF_actions'] and
+         len(data.get('reference_OMF_actions', [])) == 1 and
+         data['reference_OMF_actions'][0]['source_site'] == 20 and
+         data['reference_OMF_actions'][0]['target_index'] == data['source_segment_index'] and
+         len(data.get('OMF_LEDATAs', [])) == 1 and
+         data['OMF_LEDATAs'][0]['scope_offset'] == 0 and
+         data['OMF_LEDATAs'][0]['scope_size'] == 8 and
+         data['OMF_LEDATAs'][0]['scope_content_sha256'] == data.get('data_sha256') and
+         data.get('data_sha256') == data.get('calibrated_data_sha256') ==
+         data.get('original_data_sha256') == sha(b'EMMXXXX0') and
+         data.get('ordered_original_MZ_relocations') == [] and
+         data.get('authored_credit') == data.get('instruction_bytes') == 0,
+         'original EMS initialized DATA source/OMF/MZ ownership evidence is incomplete')
+    for field in ('source_file_sha256', 'original_source_declaration_sha256',
+                  'candidate_source_declaration_sha256', 'data_sha256',
+                  'calibrated_data_sha256', 'original_data_sha256'):
+        need(isinstance(data.get(field), str) and re.fullmatch('[0-9a-f]{64}', data[field]),
+             'original EMS initialized DATA digest missing')
     if DECISION.exists():
         adopted = json.loads(DECISION.read_text())
         need(adopted.get('schema_version') == 1 and adopted.get('artifact') == 'th05-main' and
-             adopted.get('decision') == 'ADOPT_ONLY_COMPLETE_ORIGINAL_MASTER_GAP_FUNCTIONS' and
+             adopted.get('decision') == 'ADOPT_ONLY_COMPLETE_ORIGINAL_MASTER_GAP_FUNCTIONS_AND_LITERAL_DATA' and
              adopted.get('evidence_sha256') == digest_file(PROOF) and
              adopted.get('members') == [name for name, _, _ in MEMBERS] and
              adopted.get('CODE_bytes') == proof['CODE_bytes'] and
+             adopted.get('initialized_DATA_bytes') == proof['initialized_DATA_bytes'] and
+             adopted.get('initialized_data_members') == [data['member']] and
              adopted.get('authored_credit') == adopted.get('other_bytes_claimed') == 0,
              'original Master source decision missing or stale')
 
@@ -350,9 +568,16 @@ def reviewed_claims(root, view, *, verify_targets=False):
          'Master native source target identity changed')
     if verify_targets:
         need(replay() == proof, 'native original Master complete CODE no longer matches')
-    return ([{'start': row['start'], 'end': row['end'], 'kind': 'verified-vendor-code',
-              'library': 'master.lib 0.23', 'member': row['member'], 'authored_credit': 0}
-             for row in proof['members']], digest_file(DECISION))
+    claims = [{'start': row['start'], 'end': row['end'], 'kind': 'verified-vendor-code',
+               'library': 'master.lib 0.23', 'member': row['member'], 'authored_credit': 0}
+              for row in proof['members']]
+    claims.extend({'start': row['start'], 'end': row['end'],
+                   'kind': 'verified-vendor-initialized-data',
+                   'content_kind': 'library-initialized-data', 'instruction_bytes': 0,
+                   'library': 'master.lib 0.23', 'member': row['member'],
+                   'authored_credit': 0}
+                  for row in proof['initialized_data_members'])
+    return claims, digest_file(DECISION)
 
 
 def main():
@@ -367,15 +592,15 @@ def main():
              'cannot overwrite accepted Master evidence')
         proof = replay()
         PROOF.write_text(json.dumps(proof, indent=2) + '\n')
-        print('PASS original source-backed Master CODE', proof['CODE_bytes'])
+        print('PASS original source-backed Master CODE/DATA', proof['CODE_bytes'], proof['initialized_DATA_bytes'])
     else:
         proof = json.loads(PROOF.read_text())
         validate_public(proof)
         if args.check:
             need(replay() == proof, 'original native Master byte comparison changed')
-            print('PASS Master original gap functions: complete raw CODE and fixups')
+            print('PASS Master original gap functions and EMS signature: complete CODE/DATA and fixups')
         else:
-            print('PASS Master gap functions public evidence')
+            print('PASS Master gap functions and EMS signature public evidence')
 
 
 if __name__ == '__main__':

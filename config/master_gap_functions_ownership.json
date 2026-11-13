@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "kind": "original-master-gap-functions-source-and-MZ",
+  "kind": "original-master-gap-functions-and-literal-data-source-and-MZ",
   "artifact": "th05-main",
   "members": [
     {
@@ -1333,12 +1333,66 @@
     }
   ],
   "CODE_bytes": 1516,
+  "initialized_data_members": [
+    {
+      "member": "emm_device_name",
+      "start": 16418,
+      "end": 16426,
+      "size": 8,
+      "candidate_source": "libs/master.lib/ems_exist.asm",
+      "source_file_sha256": "5d555ef7871f2fc16e9cfcfe713d8144cfae456d011a9977babe7ea9ff9c2a96",
+      "original_archive_member": "EMSEXIST.ASM",
+      "original_source_line": 68,
+      "original_source_declaration": "emm_device_namedb'emmxxxx0'",
+      "original_source_declaration_sha256": "0659d249f8404d499b6fd65f3869b9371f4c4697299e57d6e46605edb79fc643",
+      "candidate_source_line": 62,
+      "candidate_source_declaration": "emm_device_namedb'emmxxxx0'",
+      "candidate_source_declaration_sha256": "0659d249f8404d499b6fd65f3869b9371f4c4697299e57d6e46605edb79fc643",
+      "source_segment": "_TEXT",
+      "source_segment_class": "CODE",
+      "source_segment_index": 1,
+      "source_segment_size": 17270,
+      "source_segment_offset": 15792,
+      "source_segment_base": 626,
+      "source_symbol": "EMS_EXIST",
+      "source_symbol_offset": 15758,
+      "reference_OMF_actions": [
+        {
+          "source_site": 20,
+          "kind": 1,
+          "target_method": 0,
+          "target_index": 1,
+          "frame_method": 5,
+          "original_link_operation": "native-offset16",
+          "original_word_sha256": "ff94c1326e8a86030608434139702192bcb91b515b8909f7be7a0317a72e1ca0"
+        }
+      ],
+      "OMF_LEDATAs": [
+        {
+          "record_offset": 60389,
+          "segment_offset": 15114,
+          "record_size": 1006,
+          "scope_offset": 0,
+          "scope_size": 8,
+          "record_sha256": "3bf7bf5546dd71154df3e1ba1707f39a100dae56f10d44b0858cb2ff7dfa6c6c",
+          "scope_content_sha256": "fccf850af3bebb0a12ba61112c615f7ded03c29ee2c614d1c449d395b19e7104"
+        }
+      ],
+      "data_sha256": "fccf850af3bebb0a12ba61112c615f7ded03c29ee2c614d1c449d395b19e7104",
+      "calibrated_data_sha256": "fccf850af3bebb0a12ba61112c615f7ded03c29ee2c614d1c449d395b19e7104",
+      "original_data_sha256": "fccf850af3bebb0a12ba61112c615f7ded03c29ee2c614d1c449d395b19e7104",
+      "ordered_original_MZ_relocations": [],
+      "authored_credit": 0,
+      "instruction_bytes": 0
+    }
+  ],
+  "initialized_DATA_bytes": 8,
   "original_target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
   "source_OMF_sha256": "dffea9bd300f8a3ccb889a1188cd6569a3880bcdf6a540b482c48e7af383bbcf",
   "calibration_exe_sha256": "630b909739501bab6a9ef2c2b65e517332277c8ea66895af2ee4ba9d3e04d380",
   "author_archive_sha256": "acc5369d3fb445d5cd6b92abbedb7b433819465be2f85bbbff53bd1f77bc40b6",
   "parent_master_sha256": "8b5e9b31ce345df277a31348d49aec9197e4c5c390eec0b9f812516c8287010a",
-  "verifier_sha256": "7fafafe7ea6d1bf547bbcdfeb35904150ad41c62972d559ae09fe7302c167eea",
+  "verifier_sha256": "5dd11fdd25d5174a4fcefc6cc641ac8d470784dc0f0316bc067d49ba137a0b1d",
   "authored_credit": 0,
   "other_bytes_claimed": 0,
   "unowned_boundary_offsets": [

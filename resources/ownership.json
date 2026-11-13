@@ -22,9 +22,9 @@
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 13035,
+    "unknown": 13027,
     "verified-vendor-code": 138289,
-    "verified-vendor-initialized-data": 7862
+    "verified-vendor-initialized-data": 7870
   },
   "views": {
     "main": {
@@ -46,9 +46,9 @@
         "reviewed-embedded-sprite-bitmap": 2752,
         "reviewed-uninitialized-game-storage": 256,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 311,
+        "unknown": 303,
         "verified-vendor-code": 47406,
-        "verified-vendor-initialized-data": 2762
+        "verified-vendor-initialized-data": 2770
       },
       "intervals": [
         {
@@ -1375,7 +1375,12 @@
         {
           "start": 16418,
           "end": 16426,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "master.lib 0.23",
+          "member": "emm_device_name",
+          "authored_credit": 0
         },
         {
           "start": 16426,
@@ -7679,7 +7684,7 @@
       "master_bgm_review_sha256": "f84a381df23b0390d1eb0608433685bcd38136808822e48f9b2c0bbd9bc8bd90",
       "master_grcg_review_sha256": "734ebc8f39921f130c3ca59eb01b53db453bf8cedc50b559d4e3115740bb7dbe",
       "master_circle_helpers_review_sha256": "6d3d5ec96aaf023625b890b410e2ac15b4ab09438b13568c16798bd09931fc32",
-      "master_gap_functions_review_sha256": "197da42ecda343619e895b4215d4c7ab7ace51e84c802546e6ed475e1bd7cf18",
+      "master_gap_functions_review_sha256": "5bb6d2fb5deb7db1acde7f79bfb311f88c4ff41ead0adf83282d4cf7520e0772",
       "master_io_review_sha256": "b2d0aea5017a1172622b021b20d58f77413a6129cae0ff0d618fd7e63a8ee9d4",
       "master_machine_review_sha256": "ec99a30e0c63d1665fbf0bc9482906901262677154cfe2f36acc420bd530927a",
       "master_pf_review_sha256": "522ed383b803d8619b3c689fceef2d9bee46f1e662ced741454c2de5f2542668",

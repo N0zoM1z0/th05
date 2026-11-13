@@ -115,3 +115,30 @@ The same source and native OMF checks now cover **27 complete functions,
 boundary bytes (`2121`, `41B1`) remain unknown. These new 235 bytes earn
 zero game-authored C++ or ASM credit, and this remains a bounded original
 load-module review, not a claim of full executable exactness.
+
+## EMS device signature: eight separate initialized DATA bytes
+
+The 27 procedure proofs above now also identify the original Master EMS
+signature as a separate initialized-data owner, not as extra instructions in
+`EMS_EXIST`:
+
+| Original source declaration | MAIN decoded extent | Bytes | Classification |
+| --- | --- | ---: | --- |
+| `emm_device_name db 'EMMXXXX0'` | `4022..402A` | 8 | Initialized Master DATA |
+
+The declaration is present after `endfunc` in both the pinned author's
+`EMSEXIST.ASM` and the retained native `ems_exist.asm`. The actual TASM OMF
+writes all eight bytes through one `_TEXT` CODE-class LEDATA at segment offset
+`3DB0`. The unique original PUBDEF for `EMS_EXIST` is at `_TEXT:3D8E`; its
+original MAIN address `4000` independently anchors the segment base at `272`,
+so the literal resolves to exactly `4022`. The `EMS_EXIST` OMF offset16
+reference at function-relative site `20` resolves to the same string, and the
+linked operand in both calibration and original MAIN is `4022`. All eight
+LEDATA bytes match the original and calibration images, with no MZ fixups.
+
+The string is separately classified as `verified-vendor-initialized-data`;
+it is not CODE, game-authored C++ DATA, or a fabricated zero-filled region.
+The combined bounded Master review therefore covers **1,516 CODE bytes in
+27 complete procedures plus 8 source-backed initialized DATA bytes**. Its
+source/OMF proof and adoption decision are still independently checked by
+`python3 scripts/review_master_gap_functions.py --check`.
