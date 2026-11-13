@@ -34,10 +34,12 @@ void near pattern_devil(void)
 	#define laser_angle_inner	shinki_devil_scratch.laser_angle_inner
 	#define laser_angle_outer	shinki_devil_scratch.laser_angle_outer
 
-	// Careful, collides with [phase_relative] in shinki_update()! *Must* be
-	// set to 1 before ending the pattern to ensure that the remaining phases
-	// run in their expected order. Guaranteed in the original code by setting
-	// HP_PHASE_10_DEVIL_LASER to a much higher value than HP_PHASE_10_END.
+	// This is byte 10's phase_relative alias, not an independent laser flag.
+	// The leaf clears it at frame 192 and restores it only after the 64-frame
+	// grow delay and the next outer-angle 0x30 boundary (at most 127 updates).
+	// The 2,800-HP gap from the 5,600 trigger to phase end is the original
+	// safety margin: at a fixed shot level, 64 live shots plus eight 18-frame
+	// shot cycles top out at 2,570 HP after Stage 6 character scaling.
 	#define lasers_active    	shinki_devil_scratch.wave_or_laser.devil_lasers_active
 
 	#define bullet_direction 	shinki_devil_scratch.bullet_direction

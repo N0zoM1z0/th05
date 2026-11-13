@@ -788,9 +788,10 @@ void pascal shinki_update(void)
 			// This phase helper clears the shared patterns_seen/defeat_bonus byte.
 			boss_phase_next(ET_HORIZONTAL, HP_PHASE_12_END);
 			playfield_shake_anim_time = PHASE_11_FRAMES;
-			// The pattern_devil() lasers. Should ideally be stopped inside the
-			// pattern, but since it's a looping one without a clear end,
-			// there's no easy way with the original architecture.
+			// The Devil leaf shares byte 10 with phase_relative and returns it
+			// to 1 before this HP/timeout exit. Stop the four fixed slots here,
+			// after the final hit decision; lasers_update() already ran this tick,
+			// so active beams begin shrinking on the next update.
 			laser_stop(SHINKI_DEVIL_LASER_SLOT_A);
 			laser_stop(SHINKI_DEVIL_LASER_SLOT_B);
 			laser_stop(SHINKI_DEVIL_LASER_SLOT_C);
