@@ -7,16 +7,17 @@
 extern "C" void pascal near vector2_near(
     SPPoint near &ret, unsigned char angle, subpixel_t length)
 {
-    // Both samples are read before either output store, as in the native body.
-    const unsigned int table_offset = static_cast<unsigned int>(angle) * sizeof(short);
-    const short cosine = *reinterpret_cast<const short *>(
-        reinterpret_cast<const char *>(CosTable8) + table_offset);
-    const short sine = *reinterpret_cast<const short *>(
-        reinterpret_cast<const char *>(SinTable8) + table_offset);
-    const subpixel_t x = static_cast<subpixel_t>(
-        (static_cast<long>(length) * cosine) >> VECTOR2_TRIG_FRAC_BITS);
-    const subpixel_t y = static_cast<subpixel_t>(
-        (static_cast<long>(length) * sine) >> VECTOR2_TRIG_FRAC_BITS);
-    ret.x.v = x;
-    ret.y.v = y;
+    _EDX = static_cast<signed long>(length);
+    _BL = angle;
+    _BH = 0;
+    _BX += _BX;
+    _ECX = *reinterpret_cast<const short near *>(
+        reinterpret_cast<const char near *>(SinTable8) + _BX);
+    _EAX = *reinterpret_cast<const short near *>(
+        reinterpret_cast<const char near *>(CosTable8) + _BX);
+    _EAX = static_cast<signed long>(_EAX * _EDX) >> VECTOR2_TRIG_FRAC_BITS;
+    _EDX = static_cast<signed long>(_EDX * _ECX) >> VECTOR2_TRIG_FRAC_BITS;
+    _BX = *reinterpret_cast<const unsigned int near *>(_BP + 8);
+    *reinterpret_cast<short near *>(_BX) = _AX;
+    *reinterpret_cast<short near *>(_BX + 2) = _DX;
 }

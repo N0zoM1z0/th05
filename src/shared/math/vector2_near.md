@@ -12,25 +12,30 @@ stored. Signed products are arithmetic-shifted by eight, then their low words
 are written to x and y. The overlapping foreign sine/cosine arrays and all
 geometry identities are imported unchanged; no data or result buffer is owned.
 
-This is an ordinary C++ attempt, following the existing conservative origin
-review. The reference's unsupported inline 32-bit instructions do not prove
-original handwritten ASM and are not transcribed. The first wide-local source
-emits 106 bytes. The maintained source keeps samples and final coordinates in
-their actual word domains and reuses one ordinary byte offset, reducing output
-to 92 bytes. It retains both products before the stores and adds no checks.
+The natural C++ attempt first emitted106 bytes, then92 after keeping samples
+and coordinates in their actual word domains. On 2026-11-13 it was reduced
+again to **67 bytes** by using the Borland `<dos.h>` pseudoregister interface
+for the signed 32-bit products and the original byte-angle/table-offset
+lifetime. The source contains no inline instruction text. It reads both
+signed samples before either store and obtains the near result reference from
+the actual Pascal stack slot `BP+8`, avoiding an unnecessary saved-SI pointer
+local.
 
-Both successful single-producer diagnostics stop short of acceptance. Their
-whole raw scopes differ from the original 55 bytes; ordered fixups remain empty.
-The remaining differences include stack temporaries, index lifetimes and
-register allocation. Larger CODE also moves the nominal harness DATA frame,
-so no original whole-layout or device-execution claim is made. No second
-positive, negative, new model or live manifest entry was produced.
+Two fresh independent native producers emit the same complete 67-byte
+contribution and normalized OMF. The original ordered relocation stream is
+empty in both. A same-extent source negative changes the fixed-point shift
+from eight to seven and emits a different 67-byte contribution. The candidate
+still differs from the original 55-byte function (only9/55 bytes match), so it
+remains an inexact compiler-context experiment and receives **zero CODE
+credit**. It is not promoted to an accepted unit and does not replace the
+exact original-language ASM owner.
 
-Current diagnostic: `.analysis/native-producers/main-vector2-near-word-domain-a/`.
-Complete native/actual/source evidence is
-`.analysis/vector2-near-native-source-review.json`. The private proposal remains
-at `.analysis/vector2-near-proposal.json`; all accepted vector owners, headers,
-C/C++ counts and ownership remain unchanged.
+Evidence: `.analysis/gpt-web-vector2-near-67-results-20261113.json`, with
+positive producers `.analysis/gpt-web-vector2-near-67-positive-a-20261113/`
+and `...-positive-b-20261113/`. The earlier natural-source review remains
+`.analysis/vector2-near-native-source-review.json`; the private proposal
+remains `.analysis/vector2-near-proposal.json`. All accepted vector owners,
+headers, C/C++ counts and ownership remain unchanged.
 
 Review SHA-256:
 `522ab7e042c6281f08cf84247377b2fb8f23812af9dc3cb64bcb27c954e9f2a3`.
