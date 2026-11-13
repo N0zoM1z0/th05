@@ -254,9 +254,9 @@ both signed coordinate differences updated *in place* before the genuine
 unsigned overlap test. This avoids the delayed Y-copy branch lowering.
 Second, an empty inline `optimization_barrier()` after the original clipping
 condition prevents Turbo C++ from threading the free-slot branch across the
-full update loop. Like the confirmed Shinki and generic Boss cases, the
-helper produces **zero executable instructions**; it is a source codegen
-control with no gameplay side effects. The literal historical B4 translation
+full update loop. The helper produces **zero executable instructions** and
+has no return value or gameplay side effects; it is only a source-level
+control-flow/codegen hint. The literal historical B4 translation
 unit is not known, so this is evidence for a maintainable semantically exact
 C++ implementation, not a claim of historical source identity. No byte
 insertion, raw register template, linker patch or padding is used.
@@ -271,3 +271,28 @@ All previous 278/274-byte diagnostics in this note are historical failures
 superseded by the accepted complete 273-byte function. **Only 273 new C++
 instruction bytes** gain credit; adjacent accepted Mai/Yuki sources are not
 counted again.
+
+
+## 2026-11-13: empty-void clip join refinement
+
+The original 273-byte producer used `inline bool optimization_barrier()` with
+`return false`, discarding its value at the clipping join. Five fresh source
+producers changed only the helper's declaration while preserving the same
+call site: empty `void`, `int` zero, `unsigned char` zero, `static inline bool`
+false, and `static inline void` empty. All five independently emitted the
+complete **273-byte** function with the original ordered fixups
+`[235,156,118]` and raw byte equality in their first producer. The maintained
+source now uses the simplest `inline void optimization_barrier(void) { }`:
+there is no meaningless false return and no runtime operation. The helper
+remains an explicit compiler-control hint rather than a claim about the
+unknown historical source spelling.
+
+The changed accepted owner passed its complete two-positive and
+compiled-negative oracle. Receipt:
+`.analysis/unit-replays/gpt-web-b4ball-empty-void-clip-join-20261113/receipt.json`.
+The two independent producers retain the exact original 273-byte body and
+ordered fixups `[235,156,118]`; the 550→551 semantic mutation is rejected.
+The isolated one-producer declaration matrix is under
+`.analysis/gpt-web-b4ball-barrier-{void-empty,int-zero,char-zero,bool-false-static,void-empty-static}-a-20261113/`.
+This is a source-quality refinement only: no CODE bytes or new function
+ownership are claimed.

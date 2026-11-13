@@ -4,11 +4,10 @@
 #include "src/main/boss/mai_yuki/b4ball_update.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
-// A source-level, zero-runtime-instruction compiler-control hint with the
-// same semantics as ReC98's decomp.hpp optimization_barrier().  This B4
-// function's exact historical source has not been recovered; we claim only
-// that this maintained C++ producer emits the original native function.
-inline bool optimization_barrier(void) { return false; }
+// An empty inline control-flow hint: no return value, state or runtime work.
+// The exact historical B4 source is unknown; this only records the maintained
+// C++ spelling that gives the original clip/remove branch layout.
+inline void optimization_barrier(void) { }
 extern "C" void pascal near b4balls_update(void)
 {
     int damage;
