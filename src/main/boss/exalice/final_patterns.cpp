@@ -53,6 +53,8 @@ bool near exalice_pattern_turning_cheetos(void)
 
 #include "src/main/boss/exalice/spiral_gather.inl"
 
+// The controller calls this leaf before its inclusive frame-5000 HP gate.
+// Its two-frame cadence therefore emits a real volley on frame 5000 itself.
 void near exalice_pattern_final_fan(void)
 {
     gather_add_only_3stack(boss.phase_frame - EXF_FAN_CHARGE_FRAME, EXF_FAN_BLUE_GATHER_COLOR, EXF_FAN_OTHER_GATHER_COLOR);

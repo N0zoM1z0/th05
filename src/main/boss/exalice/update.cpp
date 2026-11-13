@@ -238,6 +238,8 @@ charge_complete:
             }
         }
         palette_changed = true;
+        // Run the leaf first: frame 5000 still fires and can hit; frame 5001
+        // runs its motion/gather tail but skips HP testing and explodes.
         exalice_pattern_final_fan();
         if(boss.phase_frame <= EXALICE_FINAL_FAN_TIMEOUT_FRAME) {
             if(!exalice_hittest_shots()) {
