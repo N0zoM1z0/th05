@@ -393,7 +393,8 @@ void near pattern_dense_spreads_and_random_balls_within_laser_walls(void)
 
 	if(
 		((boss.phase_frame % state->phase_4.laser_angle_interval) == 0) &&
-		(lasers[X_LEFT].coords.angle > (SAR_CORRIDOR_CENTER_ANGLE + (CORRIDOR_ANGLE / 2)))
+		(lasers[X_LEFT].coords.angle >
+		 (SARA_LASER_CORRIDOR_CENTER_ANGLE + (SARA_LASER_CORRIDOR_ANGLE_WIDTH / 2)))
 	) {
 		lasers[X_RIGHT].coords.angle += 0x01;
 		lasers[X_LEFT].coords.angle -= 0x01;

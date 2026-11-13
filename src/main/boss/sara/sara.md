@@ -137,12 +137,25 @@ is a minimum/maximum assignment. The four progressive spin-animation timing
 windows have their original 64/96/128/160-frame boundaries.
 
 The final laser corridor still creates its fixed lasers at frame 32 and
-activates them at frame 64. Its four slowdown angle thresholds (80h, 60h,
-58h and 50h) each advance the existing `laser_angle_interval` field in the
-actual phase-four 16-byte scratch view. The random-ball count increases
-once every 64 frames until the original count limit of eight. All frame,
-angle, speed and phase-state values are preserved; only their source-level
-meaning is made explicit.
+activates them at frame 64. The rotation gate now names the same
+`SARA_LASER_CORRIDOR_CENTER_ANGLE` used to initialize the two laser headings;
+the legacy `SAR_CORRIDOR_CENTER_ANGLE` spelling remains defined in
+`combat_wave_settings.hpp`, but this controller now uses the shared
+laser-specific constant. With
+center `40h`, width `14h` and initial offset `20h`, the left laser starts at
+`A0h`, the right at `E0h`, and the strict terminal gate is `4Ah`.
+
+The four slowdown thresholds are reached at exact phase frames **64, 128,
+150 and 180** (`80h`, `60h`, `58h`, `50h`), advancing the existing
+`laser_angle_interval` from 1 to 2, 3, 4 and 5. The left laser reaches `4Ah`
+on frame **210** and stops after 86 one-angle steps; the right laser finishes
+at `36h`. Thus the corridor has stopped rotating long before its original
+1,300-frame timeout. The 64-frame count steps occur at frames **64, 128,
+192, 256, 320, 384 and 448**, raising the random-ball count from 1 to its
+limit of 8. The fire gate remains the separate global `stage_frame_mod16`
+clock, and the frame's volley observes the count before that frame's
+post-fire increment. All original frame, angle, speed and phase-state values
+are preserved; only their source-level meaning is made explicit.
 
 A focused native replay of `main-sara` compiled the entire **1,824-byte**
 original context twice, preserving all twelve complete functions, the
