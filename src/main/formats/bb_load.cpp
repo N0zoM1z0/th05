@@ -9,11 +9,13 @@ bb_tiles8_t __seg *pascal near bb_load(const char far *filename)
     register unsigned int original_ds;
 
     bb_load_seg = reinterpret_cast<bb_tiles8_t __seg *>(hmem_allocbyte(BB_SIZE));
+    // hmem_allocbyte is near-Pascal and removes its own argument. The far
+    // filename is therefore at SS:SP+4 after the saved SI; the compiler must
+    // not form a BP frame just to name this ABI stack argument.
+    asm { mov bx, sp; }
     original_ds = _DS;
     _AX = 0x3D00;
-    // DOS consumes the actual far filename in DS:DX. Let the compiler resolve
-    // its declared parameter; no hard-coded stack displacement is supplied.
-    asm { lds dx, filename; }
+    asm { lds dx, dword ptr ss:[bx+4]; }
     geninterrupt(0x21);
     _BX = _AX;
     _DS = original_ds;

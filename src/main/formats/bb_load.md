@@ -7,20 +7,18 @@ original ordered MZ fixup is relative 7 at the real far allocation call.
 
 A natural C++ body uses the actual 2048-byte allocation, foreign scratch segment
 at DS 4204 and direct DOS open/read/close calls, all unchecked. It retains the
-full far filename and segmented result types. LDS uses the named C++ parameter
-for actual DOS DS:DX transport; no hard-coded SS:SP displacement, hidden frame
-operation, instruction algorithm or alternate return ABI is introduced.
+full far-filename and segmented-result API. The maintained candidate snapshots
+SP after the near-Pascal allocator has removed its argument, then loads the far
+filename from `SS:[BX+4]`; this avoids the compiler's unnecessary BP frame.
 
-One real first producer emits 56 bytes with a BP frame and first fixup 10.
-Its filename argument is accessed through the compiler's BP+4 frame, rather
-than the native BX snapshot of the actual entry stack after saving SI.
-It also loads its return before restoring SI/BP. Raw bytes and extent fail;
-there is no second producer, negative or exact credit. The initial binder-only
-attempt stopped on a missing CS assumption before compiling C++.
-
-Evidence: `.analysis/native-producers/main-bb-load-natural-b/native-diagnostic.json`.
+Two independent native producers emit the original **55-byte extent** and the
+original far-call relocation at relative offset **7**. They are byte-for-byte
+deterministic and match **49/55** original bytes. The remaining six differences
+are limited to the equivalent `mov bx,sp` encoding (`89 E3` versus `8B DC`) and
+the compiler's return-value load before `pop si`, rather than after it. The C++ candidate remains an inexact context provider with no additional
+CODE credit; the exact 55-byte original-ASM owner remains authoritative.
+Evidence: `.analysis/gpt-web-bb-load-maintained-20261113-results.json`.
 The BB text lifecycle has its own [independent exact acceptance](bb_text.md).
-This candidate does not justify promoting the general loader to handwritten ASM.
 
 ## Complete original 55-byte ASM recovery — 2026-11-10
 
@@ -47,5 +45,5 @@ The maintained source is `bb_load.asm`, with named semantic constants in
 `probes/units/bb_load_symbols.inc` and the existing source-free physical
 binder. It emits no DATA or BSS. Receipt:
 `.analysis/gpt-web-main-bb-load-asm-first-a/receipt.json`.
-The 55 bytes gain **reviewed ASM instruction credit**. The previously retained
-56-byte natural C++ candidate stays inexact; no C++ ownership is inferred.
+The 55 bytes gain **reviewed ASM instruction credit**. The natural C++
+context candidate remains inexact; no additional C++ ownership is inferred.
