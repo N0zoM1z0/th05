@@ -228,3 +228,37 @@ syntax matrices and their compiler logs are retained under the matching
 `.analysis/gpt-web-vector2-near-inline-*-20261113/` directories. The original
 55-byte reviewed ASM remains the only exact owner; no CODE or negative-control
 credit is claimed by these diagnostics.
+
+## 2026-11-13: near-context inline-MOVSX parser boundary
+
+The 12-byte register-allocation residual was probed again by trying the same
+semantic inline-386 forms used by the adjacent far-vector C++ source. In the
+near Pascal translation unit, Turbo C++ 4.02 rejects `MOVSX EDX,word ptr
+[BP+4]`, direct `MOVSX EAX/ECX,word ptr [BX+CosTable8/SinTable8]`, and
+`MOVSX EAX,SI` at the inline-assembly expression parser. Adding explicit
+instruction terminators and matching the far source's `extern "C"` table
+declarations does not change the failure. The diagnostics stop before an
+object is produced; they are not candidate outputs.
+
+A paired control confirms that this is not a blanket prohibition on inline
+assembly in a near function: an ordinary 16-bit `MOV AX,BX` inline statement
+compiles in the same near Pascal/TCC-S context. The far-vector source still
+accepts its two `MOVSX` table instructions in its genuine far Pascal context.
+The observed boundary is therefore specific to the near-owner MOVSX forms,
+not to all inline assembly, all 386 instructions, or the table symbols in
+C++ generally.
+
+The simple-MOV control is only a parser probe and emits a 27-byte diagnostic
+contribution; it is not a semantic vector implementation. The 67-byte
+natural-C++ source remains the best complete two-producer candidate, with
+correct signed products, arithmetic shifts and empty ordered fixups. The
+original 55-byte reviewed ASM remains the sole exact owner. No target bytes,
+inline opcodes, artificial codegen barriers or duplicate CODE credit are
+introduced by these probes.
+
+Retained diagnostics:
+`.analysis/gpt-web-vector2-near-inline-semicolon-a-20261113/`,
+`.analysis/gpt-web-vector2-near-inline-table-semicolon-a-20261113/`,
+`.analysis/gpt-web-vector2-near-inline-table-c-linkage-a-20261113/`,
+`.analysis/gpt-web-vector2-near-inline-register-only-a-20261113/` and
+`.analysis/gpt-web-vector2-near-inline-near-mov-control-a-20261113/`.
