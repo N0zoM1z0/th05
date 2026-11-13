@@ -1,477 +1,126 @@
-# TH05 reconstruction — next-agent handoff (2026-11-13)
+# TH05 reconstruction — agent handoff (2026-11-13)
 
-## Where to start
+## First actions
 
-Read [AGENTS.md](../AGENTS.md), [exactness rules](ORACLES.md) and the
-[short replay workflow](RE_WORKFLOW.md). Work on the live `main` branch.
-Check `git status -sb` and `python3 scripts/replay_units.py --plan`
-before editing. **All dirty changes belong to this workstream**; carry
-them through instead of leaving or discarding them. Commit meaningful
-progress locally as `gpt-web: ...`; do not push without a request.
+Work in the live `main` repository. Read [AGENTS.md](../AGENTS.md),
+[the focused workflow](RE_WORKFLOW.md) and [exactness criteria](ORACLES.md).
+Check `git status -sb`, run `python3 scripts/preflight.py`, then inspect
+`python3 scripts/replay_units.py --plan`. **Carry forward any dirty work**;
+it belongs to this workstream. Commit substantive progress as
+`gpt-web: ...`, and do not push without permission. Never use a full cold
+replay just to confirm one changed unit.
 
-The source of truth is the current manifests and accepted ledgers under
-[`config/`](../config/), the generated [progress](PROGRESS.md), and the
-[gapless ownership inventory](../resources/ownership.json). Recalculate
-counts there after any acceptance; this dated snapshot is for orientation.
+## Verified current state
 
-| Verified state at this handoff | Value |
+| Canonical measure | Value |
 | --- | ---: |
-| Accepted bounded C/C++ units (MAIN / OP / MAINE / ZUN) | **537** (351 / 75 / 109 / 2) |
-| Source-authored exact C/C++ CODE | **108,784 bytes** |
-| Source-authored exact semantic initialized DATA | **17,513 bytes** |
-| Total source-authored C/C++ bytes | **126,297 bytes** |
-| Unknown bytes (MAIN / OP / MAINE / ZUN) | **317 / 2,370 / 1,795 / 8,559** |
-| Total unknown decoded bytes | **13,041** |
-| Global authored completion percentage | **Unmeasured** |
+| Accepted C/C++ units (MAIN / OP / MAINE / ZUN) | **537** (351 / 75 / 109 / 2) |
+| Source-authored exact C/C++ CODE | **108,784 B** |
+| Source-authored initialized C/C++ DATA | **17,513 B** |
+| Combined source-authored C/C++ exact bytes | **126,297 B** |
+| Unclassified decoded bytes (MAIN / OP / MAINE / ZUN) | **317 / 2,370 / 1,795 / 8,559** |
+| Total unclassified decoded bytes | **13,041 B** |
 
-The **98%** objective is not a measured percentage: neither packed file
-sizes nor decoded byte totals are a validated authored-byte denominator.
-Reviewed original ASM is a separately recorded ownership lane, not
-additional accepted C/C++ units. Source-written vendor library routines,
-assets, writable DATA/BSS and alignment need distinct provenance.
-There is **no accepted full packed EXE/COM reproduction**. The original
-Japanese game copy has candidate-local-attested provenance, not an
-independently proven pristine source image.
+Read the **live** [generated progress](PROGRESS.md),
+`config/accepted_units*.json`, `config/exact_units*.toml` and
+`resources/ownership.json` before updating any count. The global **98%
+authored-byte target is not yet measurable**: a reliable authored-byte
+denominator has not been established. There is no accepted full packed
+EXE/COM reconstruction. The pinned Japanese game copy is
+*candidate-local-attested*, not independently established as pristine.
 
-## Latest scoped progress
+## Highest-value unresolved work
 
-- Fresh source-backed Master BGM track/effect BSS:
-  [198 bytes per EXE](reconstruction/MASTER_BGM_TRACK_BSS_2026-11-13.md)
-  are confirmed by original `B_DATA.ASM`/`BGM.INC`, actual TASM `_BSS`
-  PUBDEF and zero initialized-data records. Extending the existing
-  [compact Master BSS review](reconstruction/MASTER_COMPACT_BSS_2026-11-12.md)
-  recovered another 10 bytes of VSYNC counters/vector/delay per EXE.
-  These **624 previously unknown bytes** are source-backed unwritten storage,
-  with zero C/C++ CODE or initialized DATA credit.
-- Fresh complete Boss source: [Shinki's four-column Devil](reconstruction/SHINKI_DEVIL_COLUMN_PROTOCOL_2026-11-13.md)
-  passed exact incremental replay of 12 affected original-order units,
-  including 802-byte Devil and 959-byte `shinki_update`; the
-  [EX-Alice 1,060-byte controller](reconstruction/EXALICE_WAVES_CONTROL_FLOW_2026-11-13.md)
-  retains exact phase continuation, relocations and compiled negative.
-  Both are changes to already accepted C++ CODE, not additional credited bytes.
-- [CDG slot BSS source/target discrepancy](reconstruction/CDG_STORAGE_TARGET_BOUNDARY_2026-11-13.md):
-  do not claim original zero-initialized arrays from source-only TASM BSS
-  locations. MAIN's file-backed image ends before its CDG slots, while
-  OP/MAINE contain nonzero or truncated original data at their linker positions.
+1. **ZUN resident `main()`**, original 269 bytes in the `-S` COM at
+   `[04A9,05B6)`: natural source is still **not exact**. The retained
+   success-first first-producer candidate emits 269 bytes with **252 matching
+   byte positions and 17 differences**, all around the `-R` removal block.
+   Error-first alternatives typically emit 260 bytes because the compiler
+   merges error exits. Do not mistake the 252 *matches* for 252 differences,
+   accept identical length alone, or repeat the 90 lexical-return / 16 nested
+   error-path variants. See [the specific compiler findings](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md).
+   The independently accepted `cfg_init()` and resident DATA remain exact.
+2. **Yumeko `swords_update()`**: the actual 283-byte function already has
+   an exact **reviewed ASM** owner. Its *natural C++ alternative* is not
+   exact in the nine-function original context: `-O` makes the correct near
+   conditional jumps but drops two short joins, yielding 2,135 bytes versus
+   2,139 original. The `-O-`, local-switch and final-Y/GOTO experiments also
+   failed. Use [the compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md),
+   not fabricated NOPs, padding or side effects. This is a language-source
+   improvement, **not newly uncovered executable CODE**.
+3. **BB resource loader**: the 55-byte function is already exactly owned
+   as [original-language ASM](../src/main/formats/bb_load.md). Its natural
+   C++ alternative still emits 56 bytes with a different stack-frame and
+   register-save order. Do not double-count the ASM bytes.
+4. **Original ownership gaps**: use the current intervals in
+   `resources/ownership.json`, not an old gap list. Verify physical source
+   boundaries, native consumers, initializers versus `?` storage, and
+   ordered original relocations. See [open candidates](reconstruction/UNACCEPTED_COHORTS.md)
+   and the [CDG slot storage discrepancy](reconstruction/CDG_STORAGE_TARGET_BOUNDARY_2026-11-13.md).
+   CDG's TASM `_BSS` declaration alone does **not** justify treating original
+   nonzero or out-of-file bytes as a zero-filled owner.
 
-- Current exact Boss source consolidation: the two
-  [Alice charged attack contexts](reconstruction/ALICE_CHARGED_ATTACKS_SHARED_SOURCE_2026-11-12.md)
-  now include one natural function body, with **499- and 939-byte** full
-  Borland/TLINK replays; the [five-callback Alice opening family](reconstruction/ALICE_OPENING_CHARGE_FAMILY_2026-11-13.md)
-  adds another independently exact **461-byte** source cohort.
-  [Sara's twelve-function 1,824-byte laser corridor](reconstruction/SARA_LASER_CORRIDOR_PAIR_2026-11-12.md)
-  and [Louise's four-function 603-byte late attacks](reconstruction/LOUISE_CHARGED_PHASES_2026-11-13.md)
-  likewise passed dual-producer raw bytes, ordered original fixups and compiled
-  source negatives. These are source improvements to **already accepted CODE**.
-- The genuine game [point-number doubling flag](../src/main/item/pointnum_twice_initial.md)
-  adds **one newly accepted initialized C++ DATA byte** at MAIN `2227A`;
-  its following EVEN alignment byte is not credited. The independently sourced
-  [Master BFNT header](reconstruction/MASTER_SUPERBFT_HEADER_2026-11-12.md)
-  contributes **96 reviewed but unwritten foreign bytes** and the
-  [original HFLIP LUTs](reconstruction/HFLIP_LUT_BSS_2026-11-12.md)
-  contribute **768 game-source reserve bytes**. These last 864 bytes have
-  **zero initialized DATA/CODE credit**; all three scopes were checked against
-  real object/MAP/target data, without claiming runtime zeroes as initializers.
-  Current total unknown is **13,041**, from the gapless ownership ledger.
-- ZUN's remaining near-exact `main()` still has the verified 269-byte size but
-  17 original-byte mismatches in the `-R` block. Sixteen additional genuine
-  original-compiler *error-first nested-success* variants all canonicalized
-  to **260 bytes**, despite different `else` nesting later in the function.
-  Their preserved source-first-producer evidence is in ignored
-  `.analysis/gpt-web-zun-nested-error-structures-20261112-b-results.json`.
-  No ZUN CODE acceptance or source-borrowing claim was added.
+## Already solved — avoid duplicate CODE credit
 
-- Complete current Boss-source work: the genuine
-  [Shinki B/C spinline background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
-  has **3,254 original bytes / 19 functions**; **17 source-affected units**
-  were independently reaccepted exact without duplicating the two separately
-  owned callbacks. [Alice's 939-byte puppet entrance](../src/main/boss/alice/update_context.md),
-  [Yumeko's 884-byte mobile controller](../src/main/boss/yumeko/update.md),
-  [EX-Alice's seven charged/regular HP handoffs](reconstruction/EXALICE_SEVEN_WAVE_TRANSITIONS_2026-11-12.md)
-  in its **1,060-byte** controller,
-  [Mai/Yuki's 1,018-byte shared defeat controller](reconstruction/MAI_YUKI_DEFEAT_AND_CLOCK_2026-11-12.md),
-  [Yuki's four 670-byte late attacks](reconstruction/YUKI_SNOW_CROSS_QUADRANTS_2026-11-12.md)
-  and [the 475-byte EX-Alice final Cheeto/fan family](reconstruction/EXALICE_CHEETO_AIM_2026-11-12.md)
-  each passed native dual-producer complete replay, ordered relocations and
-  compiled negatives. All are source-quality refactors of **already credited
-  CODE**; never count them as newly accepted bytes.
-- Newly classified **370 original Master initialized DATA bytes**:
-  [EDGES](reconstruction/MASTER_EDGES_RASTER_2026-11-12.md) **34 B each OP/MAINE**
-  (MAIN's identical 34 B were *already accepted*, no double credit),
-  [sprite pool defaults](reconstruction/MASTER_SUPERPA_INITIAL_2026-11-12.md)
-  **6 B each in MAIN/OP/MAINE**,
-  [BGM divider and palette ID](reconstruction/MASTER_TIMER_RESPAL_INITIAL_2026-11-12.md)
-  **16 B total**, [MAINE ATAN8](reconstruction/MAINE_MASTER_ATAN8_2026-11-12.md)
-  **256 B**, and [OP/MAINE BFNT identifiers](reconstruction/OP_MAINE_MASTER_BFNT_2026-11-12.md)
-  **6 B each**. Original archived Master sources where available, native TASM
-  LEDATA, MAP and actual MZ bytes/fixups support each exact scope.
-- **388 original `?` storage bytes** are now tracked with **zero C/C++ DATA
-  and zero instruction credit**: the archived Master
-  [BGM SGLB globals](reconstruction/MASTER_BGM_GLOBAL_RESERVATIONS_2026-11-12.md)
-  **108 B in each MZ** plus the original ReC98
-  [PI image buffers](reconstruction/PI_BUFFER_UNINITIALIZED_2026-11-12.md)
-  **32 B each in OP/MAINE**. No OMF initialized-data writes cover those
-  reserves; the zero-valued MZ output is not evidence of an authored
-  initializer. Together these source-backed classifications reduce unknown
-  by **758 B**, without adding any C/C++ authored-byte credit at that checkpoint.
+The maintained natural C/C++ already reproduces major complete Boss
+contexts: [Sara's 12-function 1,824 B](../src/main/boss/sara/sara.md),
+[Shinki's 959 B update and 802 B Devil](reconstruction/SHINKI_DEVIL_COLUMN_PROTOCOL_2026-11-13.md),
+[Alice's 939 B controller and 499 B charged attacks](reconstruction/ALICE_CHARGED_ATTACKS_SHARED_SOURCE_2026-11-12.md),
+[EX-Alice's 1,060 B controller](reconstruction/EXALICE_WAVES_CONTROL_FLOW_2026-11-13.md),
+[Yumeko's 884 B controller](../src/main/boss/yumeko/update.md),
+and [Mai/Yuki's 1,018 B paired update](reconstruction/MAI_YUKI_STACK_CHEETO_CLOSURE_2026-11-13.md).
+Shinki's [19-function, 3,254 B background family](reconstruction/SHINKI_SPINLINE_FAMILY_2026-11-12.md)
+was also recovered. Source refactors have been replayed across complete
+affected owners; **their accepted CODE must not be credited again**.
 
-- Fresh exact Boss-source improvements: [Sara's 1,824-byte twelve-function context](../src/main/boss/sara/sara.md)
-  now shares the red-cloud projectile setup while retaining two separate
-  random-angle draws; [Shinki's complete 959-byte controller](../src/main/boss/shinki/update_context.md)
-  shares genuine wing movement/callback and approach clock transitions;
-  [Alice's complete 939-byte controller](../src/main/boss/alice/update_context.md)
-  shares bullet-clear minimums and preserves the distinct phase/clock order.
-  All three complete units passed two fresh Borland/TLINK producers, every
-  original byte and ordered relocation, plus rejected compiled negatives.
-  Previously accepted CODE receives **no duplicate byte credit**.
-- Source-verified foreign Master 0.23 DATA: [FIL + DOS_ROPEN file defaults](reconstruction/MASTER_FILE_STATE_2026-11-12.md)
-  account for **6 bytes in each MAIN, OP, MAINE**, and
-  [PF buffer/error/key defaults plus RAND seed](reconstruction/MASTER_PF_RAND_DATA_2026-11-12.md)
-  account for **9 bytes per executable**. This closes **45 unknown vendor
-  DATA bytes**, with original author source where available, actual TASM
-  source/LEDATA, MAP placement and original MZ comparison. The PF extra
-  one-byte alignment in each remains **unknown**.
-- [MAINE all-cast line counters](../src/maine/allcast/line_counters_initial.md)
-  now have **four complete C++ semantic DATA bytes** from two native producers
-  and a compiled negative. The model is source-exact but does not assert an
-  identical historical C++/BSS translation-unit organization. Together the
-  new DATA reviews reduce unknown by **49 bytes**.
-- ZUN has seven additional real common-error-exit first-producer trials;
-  these compiled to **261–263 bytes**, not the 269-byte native entry.
-  [Their failures](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md)
-  and the still-nearest **269-byte/17-difference natural C++** are explicitly
-  separate from accepted resident `cfg_init()` credit.
-
-- Latest complete Boss source refinements: [Alice's X/Y puppet pursuit](../src/main/boss/alice/puppet_motion.md)
-  **643 B**, [Yumeko's charged rotating spreads](reconstruction/YUMEKO_SPREAD_CHARGE_2026-11-12.md)
-  **518 B** with real 354/428-byte sword compiler contexts,
-  [EX-Alice's late firewave/gravity/diamond patterns](reconstruction/EXALICE_LATER_MIRROR_FAN_2026-11-12.md)
-  **600 B**, and [Louise's full eight-phase controller](../src/main/boss/louise/update.md)
-  **582 B**. All affected complete source units passed two original
-  TCC/TLINK producers, raw bytes, ordered relocations and compiled negatives;
-  already credited code is not counted twice.
-- Two source-backed Master initialized-DATA closures now cover
-  [TextVram/VSYNC](reconstruction/MASTER_TEXT_VSYNC_DATA_2026-11-12.md)
-  **15 bytes** and [MEM allocator defaults](reconstruction/MASTER_MEMORY_INITIAL_2026-11-12.md)
-  **8 bytes**, in each MAIN/OP/MAINE. Together these classify **69 vendor
-  bytes** from original author ASM and native OMF. The final differing byte
-  after each VSYNC initializer stays unknown.
-- New authored C++ DATA: [MAINE registration page and name cursor](../src/maine/registration/initial_cursor_state.md)
-  **3 B**, plus [MAIN Extra dialog-sequence byte](../src/main/dialog/sequence_initial.md)
-  **1 B**. Complete original source types and consumer bindings are verified
-  through four total new scalar bytes. These and 69 vendor bytes reduce
-  global unknown by **73 bytes**.
-- Four further natural C++ Yumeko sword-updater bounds/collision join tests
-  all canonicalize to the same inexact **2,135-byte** nine-function output;
-  see [the exact compiler blocker](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
-
-## Latest scoped progress
-
-- The latest source work completed [EX-Alice's charged HP/callback ladder](reconstruction/EXALICE_CHARGED_ADVANCE_2026-11-12.md)
-  (**1,060 B**), [Yumeko's mirrored sword fan](reconstruction/YUMEKO_MIRRORED_FAN_CONTEXT_2026-11-12.md)
-  (**435 B plus 354-/428-byte dependent contexts**),
-  [Mai/Yuki's six-function charge cohort](reconstruction/MAI_YUKI_CHARGE_AND_MUZZLES_2026-11-12.md)
-  (**543 B**) and [Yuki's opening three attacks](reconstruction/YUKI_SOLO_OPENING_2026-11-12.md)
-  (**509 B**). All complete affected compiler owners were reaccepted through
-  two positive builds, original ordered relocations and the existing compiled
-  negatives, without duplicate CODE credit.
-- The original first-game DATA now separately owns the
-  [16-bit character-resource loading flag](../src/main/runtime/load_playchar_initial.md)
-  at `20A70..20A72`: **2 newly accepted C++ bytes**. The eight-word
-  [Master clipping initializer](reconstruction/MASTER_CLIP_INITIAL_2026-11-12.md)
-  also closes **16 foreign DATA bytes each** in MAIN, OP and MAINE, from
-  the archived author ASM, native TASM LEDATA and complete target byte evidence.
-  This removes 50 previously unknown bytes overall, of which only two
-  are game-authored C++.
-
-- Three full Boss source updates: [Yuki's three opening callbacks](reconstruction/YUKI_SOLO_OPENING_2026-11-12.md)
-  **509 bytes**, [Mai/Yuki's six charge and first attacks](reconstruction/MAI_YUKI_CHARGE_AND_MUZZLES_2026-11-12.md)
-  **543 bytes**, and [Yumeko's sword-fan patterns](reconstruction/YUMEKO_MIRRORED_FAN_CONTEXT_2026-11-12.md)
-  **435 bytes plus 354/428-byte dependent contexts**. Each entire changed
-  source cohort passed two original-compiler producers, complete bytes,
-  original ordered fixups and the compiled negative. Already accepted CODE
-  receives no duplicate credit.
-- Two formerly unknown Master source gaps were recovered independently:
-  [16-byte CODE-class LARGE_BYTE lookup](reconstruction/MASTER_LARGE_BYTE_2026-11-12.md)
-  in MAIN and [19-byte private rtc_mod](reconstruction/MASTER_RTC_MOD_2026-11-12.md)
-  in **each** OP/MAINE. Total **54 newly classified foreign bytes**,
-  with real TASM source/OMF and zero C++ authored credit.
-- The real first two MAIN `_DATA` bytes are now
-  [signed debug frame step plus enable flag](../src/main/runtime/debug_frame_initial.md):
-  **two newly accepted C++ initialized bytes** from explicit `db 0`
-  writes, existing 445-/803-byte consumer functions and a compiled negative.
-  An earlier one-byte [bullet special-group selector](../src/main/bullet/group_special_initial.md)
-  was also accepted after the preceding handoff.
-
-## Already solved — do not spend another turn reproducing them
-
-- Main Boss controllers: [Sara](../src/main/boss/sara/sara.md) **1,824 B**
-  across its twelve functions; Mai/Yuki shared **1,018 B**;
-  [Shinki](../src/main/boss/shinki/update_context.md) **959 B** with a
-  separate **802 B** Devil attack; [Alice](../src/main/boss/alice/update_context.md)
-  **939 B**; [EX-Alice](../src/main/boss/exalice/update.md) **1,060 B**;
-  [Yumeko](../src/main/boss/yumeko/update.md) **884 B**; Louise's
-  complete control/attack families. Check the actual unit IDs/ledgers
-  before claiming a new CODE extent.
-- [Boss background family](../src/main/boss/BACKGROUND_CANDIDATE.md): all **19
-  original-order functions / 3,254 bytes**, with **21 correctly ordered MZ
-  relocations**, now reproduce from the coherent natural C++ source and two
-  adjacent real compiler CODE contributions. Two independent producer binaries
-  match the full joined interval. The 17 manifest functions were replayed and
-  their accepted evidence refreshed; the 159-byte Shinki particle and 204-byte
-  EX-Alice hexagram functions already have separate accepted owners and receive
-  **no duplicate credit**. The former synthetic one-byte background origin
-  hole is gone; preserve the original `keep_0` symbolic zero and true split
-  before the last two EX-Alice functions when editing this context.
-- The previously accepted [EX-Alice controller](../src/main/boss/exalice/update.md)
-  **1,060 B** and [Mai/Yuki shared controller](../src/main/boss/mai_yuki/update_context.md)
-  **1,018 B** have newly clarified source-level regular-wave/HP and
-  paired-hit/reposition rules, respectively. Both **whole functions** were
-  replayed twice with their original ordered fixups and compiled negatives;
-  these are *source-quality improvements*, not a second CODE credit.
-- Large Boss source quality also advanced on three complete original-order
-  controllers: [Sara](../src/main/boss/sara/sara.md) **1,824 B / 12 functions**
-  with shared mobile-wave hit scoring and reposition timers,
-  [Alice](../src/main/boss/alice/update_context.md) **939 B** with proper
-  beam/ring puppet formation state, and
-  [Yumeko](../src/main/boss/yumeko/update.md) **884 B / 2 functions** with
-  timed hit windows and phase-clock transitions. Every affected complete
-  compiler owner passed two fresh TCC/TLINK builds, raw bytes, original
-  ordered fixups and a meaningful compiled negative. These are refreshed
-  *already accepted* CODE units, with **no duplicate authored credit**.
-- [Shinki Devil](../src/main/boss/shinki/devil.md) **802 B** now uses
-  a coherent symmetric-column firing rule in the **actual shared**
-  `devil.inl`; one ordering mismatch was corrected and **all 12 dependent
-  Shinki units** (including the 959-byte controller) were reaccepted exact.
-  [Yuki](../src/main/boss/mai_yuki/yuki_update.md) **826 B** and
-  [Mai](../src/main/boss/mai_yuki/mai_update.md) **786 B** share their
-  individual solo wave-count/shot-bonus source protocols, while
-  [Louise's](../src/main/boss/louise/later.md) **603 B / 4 functions**
-  reuse one parameterized mirrored fan. Every changed full owner passed
-  dual actual TCC/TLINK producers, ordered native relocations and compiled
-  negatives. These refine existing CODE without recrediting its bytes.
-- OP/MAINE now own the four genuine segmented
-  [BGIMAGE plane pointers](../src/shared/hardware/bgimage_planes_initial.md)
-  at `F9C4..F9CC` / `107D2..107DA`: two separate complete 8-byte
-  C++ `_DATA` objects. Capture/free/rectangle-render consumers confirm
-  all four 16-bit field addresses; both artifact-specific source units
-  passed independent native compilation, original byte/fixup comparisons
-  and their compiled nonzero-pointer negatives. This adds **16 new
-  game-authored DATA bytes**, without touching nearby sound/memory state.
-- The full [Mai/Yuki ten late attacks](reconstruction/MAI_YUKI_SHARED_PATTERNS_2026-11-12.md)
-  **939 B** and **1,018 B** joint Boss update context now share the seven
-  identical Yuki muzzle assignments and two Cheeto firing tails in their
-  actual common `.inl`. **Both complete owners were replayed and accepted**,
-  with all original bytes/ordered fixups, two positives and a rejected
-  compiled negative. This refreshes already accepted CODE without new credit.
-- Stage and ending controllers: Stage 2 complete **653 B** update plus
-  **492 B** particle initializer and **51 B** invalidation leaf;
-  complete Stage Clear and All Clear **561 B / 579 B**;
-  MAINE [cutscene VM](../src/maine/cutscene/cutscene.md) **1,555 B**,
-  [Staff controller](../src/maine/staff/initialized_state.md) **991 B**,
-  [Verdict](../src/maine/verdict/bonus_scoring_rules.md) **1,748 B**;
-  OP [main menu](../src/op/main/menu.md) **3,291 B** and
-  [setup](../src/op/setup/window_choreography.md) **1,439 B**.
-- Physical initialized DATA now has separately accepted, compiler-made
-  near C/C++ owners. Examples: [Extra/Stage 5 midboss near callback
-  arrays](../src/main/midboss/extra_schedule_data.md),
-  [Boss movement clamp](../src/main/boss/movement_default_clamp.md),
-  [Shinki/EX-Alice backdrop C globals](../src/main/boss/shinki/background_rules.md),
-  [Staff state](../src/maine/staff/initialized_state.md), and the
-  [Stage 2 three-state C initializer](../src/main/stage/stage2_transition_counters.md).
-- Newly accepted native state: [EX-Alice laser slot and sweep X](../src/main/boss/exalice/attack_state_data.md)
-  **4 C++ DATA bytes**, [full frame/STD counters](../src/main/runtime/frame_counter_data.md)
-  **10 C++ DATA bytes**, and [item progress/attraction state](../src/main/item/state_data.md)
-  **13 C++ DATA bytes**. These are complete, individually replayed original
-  16-/32-bit initialized objects with actual large Boss, gameplay and
-  process-handoff consumers and compiled negatives. The adjacent item
-  alignment byte `[22855,22856)` is still unknown, not credited.
-  [SE playback state](../src/shared/sound/se_initial_state.md) and
-  [initial memory budget](../src/shared/memory/mem_assign_initial.md) add
-  **six C++ plus six C initialized DATA bytes** across MAIN, OP and MAINE.
-- Three newly recovered MAIN C++ initializers:
-  [STD stage-script segment](../src/main/formats/std_segment_initial.md)
-  **2 bytes** at `[21922,21924)`,
-  [extend/high-score latches](../src/main/hud/score_extend_initial.md)
-  **2 bytes** at `[21D42,21D44)`, and
-  [playfield shake redraw clock](../src/main/playfield/shake_redraw_initial.md)
-  **1 byte** at `[2191A,2191B)`. Each has an explicit matching ReC98
-  `dw 0`/`db 0` source, real independently accepted code consumers, and
-  exact complete Turbo C++/TLINK positive and compiled negative evidence.
-  Adjacent uninitialized/alignment bytes remain unknown.
-- OP Music Room's formerly unknown `[F9CE,FA32)` is now a complete
-  [100-byte bitmap resource](reconstruction/OP_PIANO_BITMAP_RESOURCES.md):
-  **28 black-key sprite bytes** from the original row-mask ASM plus **72
-  font bytes** from the 9×8 original candidate BMP, corroborated by real
-  TASM LEDATA, MAP publics and actual piano drawing consumers. These
-  are resources, not C++ DATA or instruction credit.
-- New MAIN game-authored initialized DATA: two
-  [enemy lifecycle totals](../src/main/enemy/lifetime_totals_data.md) at
-  `[21E74,21E78)` (**4 bytes**); the one-byte
-  [shot-to-Boss collision flag](../src/main/player/shot_collision_flag_data.md)
-  at `[22790,22791)`; and the one-byte
-  [item auto-drop cycle](../src/main/item/drop_cycle_data.md) at
-  `[227D2,227D3)`. All three have real independently accepted consumers,
-  complete native C++ producer/negative evidence and zero MZ relocations.
-  **Do not absorb neighboring unknown zero/alignment bytes.**
-- Foreign Master 0.23 [BGM note/duration DATA](reconstruction/BGM_NOTE_LENGTH_OP_MAINE.md)
-  has **two new original source-linked 176-byte tables** in OP/MAINE;
-  [Master BYTE_MASK](reconstruction/MASTER_BYTE_MASK_OP_MAINE.md) adds two
-  **8-byte tables** in those programs. Original archived author ASM,
-  retained TASM ordinary LEDATA, original MAP publics, exact bytes and
-  relocation provenance were independently rechecked. Existing MAIN copies
-  are not claimed again. The [Borland C0L.OBJ startup](reconstruction/BORLAND_C0_STARTUP.md)
-  adds **621 bytes of source-linked foreign CODE in each of MAIN/OP/MAINE**
-  with the real 57 OMF fixes and link-frame changes. Total additional
-  foreign ownership is **2,231 bytes**; it adds zero game-authored C/C++
-  credit. The remaining 5-byte CRT CODE tail in each MZ remains unknown.
-- Foreign CL.LIB [`exit`, `files`, `xxv` initialized DATA](reconstruction/CL_DATA_OWNERSHIP.md)
-  now has full member-linked byte and original ordered relocation proof in
-  all three executables: **2,124 bytes** moved out of unknown, **zero
-  game-authored C++ credit**. Do not count the entire surrounding library
-  gaps as owned.
-- The original reviewed ASM owners and foreign CL/Master vendor functions
-  are documented under [reconstruction notes](reconstruction/). Don't
-  relabel already reviewed vendor CODE as newly recovered game-authored C++.
-
-### Important corrected DATA provenance
-
-An isolated initializer matching **two zero bytes is not proof of its
-symbol identity**. An earlier accepted Stage Clear proposal used the
-wrong address because two unrelated regions happened to contain zeros.
-This has been corrected in the actual manifest and bounded receipts:
-
-| Decoded MAIN interval | Correct original owner | Real DS offset |
-| --- | --- | --- |
-| `[222B4,222B6)` | [Large Boss explosion frame](../src/main/boss/explosion_frame.md), signed `int` | `18E4` |
-| `[22432,22434)` | [Previous Miss/Bomb counters](../src/main/stage/bonus_previous_resources.md), two `unsigned char` | `1A62 / 1A63` |
-
-Both initializers have independent native C positive/negative proofs.
-The complete **452-byte** Boss explosion and **561-/579-byte** scoring
-consumers have been recompiled with correct public symbols. Future
-DATA candidates must be checked against native consumer bindings,
-original public names, actual byte/word types and alignment, **not just
-raw equality**. Don't absorb adjacent zeros into a speculative struct.
-
-## Real unresolved work
-
-**Unreviewed CDG state:** Native sources explicitly declare the matching
-`_cdg_noalpha` byte as **`db ?`**, not initialized data. Its three native
-zero locations remain unknown despite many accepted CDG loader consumers.
-Do not claim them via a fabricated compiled zero initializer without new
-provenance.
-
-**1. ZUN `-S` resident `main()` — natural source not yet exact.** The
-original complete embedded function is **269 bytes** at COM
-`04A9..05B6`; the maintained natural C++ version currently compiles
-as **260 bytes**. The independent **322-byte `cfg_init()`** and
-**320-byte semantic DATA** are accepted. Fourteen real first-producer
-option-flow experiments have been recorded in
-[the native trials](reconstruction/ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md).
-One natural variant compiled to 269 bytes but differed at **252 byte
-positions**; identical size was correctly rejected. A separate old
-self-assignment/empty-helper version has the right bytes but uses
-artificial compiler barriers and must **not** be accepted as natural
-source. Preserve the toolchain, original CRT bindings, and concise
-reproducible trial scripts rather than retrying variants unchanged.
-
-**ZUN follow-up:** Ninety additional actual Turbo C++ error-return forms
-produced **32 source contributions of the right 269-byte length, none
-exact**; a separate `TCC -S`/TASM32 producer emitted **272 bytes** and was
-also inexact. Current maintained natural source is still the 269-byte,
-17-difference success-first variant. Full first-producer results are in
-[ZUN removal-branch findings](reconstruction/ZUN_RESIDENT_REMOVAL_BRANCH_2026-11-12.md).
-
-**2. Yumeko `swords_update()` — source-language alternative only.** The
-complete **283-byte original function is already exact as reviewed
-ASM**. Its [natural C++ alternative](../src/main/boss/yumeko/swords_update.cpp)
-still differs. In the original nine-function context, `-O-` gives the
-expected **2,139-byte** combined length with wrong short branch proxies;
-`-O` produces the two genuine near-conditional jumps but drops two
-original short jumps and yields **2,135 bytes**. Four further genuine
-`next_sword` flow rewrites canonicalized to that same inexact output.
-See [Yumeko compiler findings](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
-Do not add padding, fake side effects, borrowed machine code, or credit
-this C++ function a second time.
-
-**Additional Yumeko compiler-output route:** The `TCC -S`/TASM32/TLINK
-single-producer experiments compiled the actual nine-function source to
-**2,134 bytes (`-O-`)** and **2,135 bytes (`-O`)**, both against original
-**2,139 bytes**. The strict compiler-assembly owner also rejected unreviewed
-source segments. No original C++ sword-updater credit was added; see
-[the native compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md).
-
-**Additional Yumeko diagnostics:** Three narrow `switch`-on-final-Y
-compiler experiments, applied inside the real nine-function sword context,
-produce **2,150 / 2,151 / 2,164 bytes** rather than the native **2,139**.
-Some missing short jumps reappear, but the dispatch overhead breaks the
-complete machine-code/fixup shape. These negative results are documented in
-[the Yumeko compiler review](reconstruction/YUMEKO_TWIRL_COMPILER_2026-11-11.md)
-with private runnable reproducer `.analysis/gpt-web-yumeko-local-switch-20261112.py`.
-The accepted 283-byte reviewed ASM owner and inexact natural C++ candidate
-remain unchanged; do not re-try these specific local switches unchanged.
-
-**3. Remaining original ownership.** Use the *current* unknown
-intervals in `resources/ownership.json` and the
-[unaccepted candidate index](reconstruction/UNACCEPTED_COHORTS.md).
-Prioritize complete recoverable functions and their natural calls, and
-verify game-specific semantic DATA against actual users. Several small
-unowned intervals are genuine alignment, hardware/vendor state, BSS,
-or pixel assets. Zero-heavy intervals are especially ambiguous.
+Separate ownership lanes include reviewed ASM, foreign Master/CL startup
+CODE, bitmap/font resources, compiler-authored initialized C/C++ DATA,
+and source-backed **uninitialized** storage. Recent Master
+[BGM track/effect BSS](reconstruction/MASTER_BGM_TRACK_BSS_2026-11-13.md)
+(198 B per MZ) and [VSYNC state](reconstruction/MASTER_COMPACT_BSS_2026-11-12.md)
+(10 B per MZ) reduced unknown by 624 B but earned **zero initialized C/C++
+DATA or CODE credit**. The original game
+[point-number doubling flag](../src/main/item/pointnum_twice_initial.md)
+was independently accepted as one initialized C++ byte. For a corrected
+example of ambiguous zero-valued data, see
+[the physical ownership correction](../src/main/stage/bonus_previous_resources.md).
 
 ## Fast, bounded verification
 
-Run only what changed; ordinary Markdown cleanup needs neither
-compiler replay nor regenerated acceptance receipts.
+For a C/C++ change, first inspect `scripts/replay_units.py --plan`; a shared
+header/`.inl` may affect several units. Rebuild **every selected complete
+owner**, then accept the receipt into the appropriate artifact ledger:
 
 ```sh
-# Inspect the working tree and affected accepted source scopes.
-git status -sb
-python3 scripts/replay_units.py --plan
-python3 scripts/replay_units.py --artifact maine --plan
-python3 scripts/replay_asm_family.py --plan
-
-# For source changes: only the affected complete units.
-python3 scripts/replay_units.py --units UNIT_ID --output .analysis/unit-replays/NEW_UNIQUE_RUN
-python3 scripts/progress.py --accept .analysis/unit-replays/NEW_UNIQUE_RUN/receipt.json --write
+python3 scripts/replay_units.py --units UNIT_ID --output .analysis/unit-replays/UNIQUE_RUN
+python3 scripts/progress.py --artifact main --accept .analysis/unit-replays/UNIQUE_RUN/receipt.json --write
 python3 scripts/ownership.py --write
+python3 scripts/replay_units.py --plan
 python3 scripts/ci.py
 git diff --check
-git commit -m "gpt-web: explain exact progress"
 ```
 
-The three other binary manifests use `--artifact op|maine|zun` for
-both replay and progress acceptance. A shared `.inl` or header may
-invalidate *several* accepted units and source-reviewed ASM inputs;
-check `--plan` and replay the complete affected closure. Keep true
-linker group frames and ordered original relocations. Use `-S`/
-TASM32 only where it is the demonstrably native compiler path.
+Use `--artifact op|maine|zun` for the other target ledgers, including in
+`replay_units.py`. Two actual deterministic compiler/linker producers,
+full raw bytes, OMF scope, ordered original loader fixups and the compiled
+negative must pass; no source-language credit from copied bytes or a
+source-free binder. **Documentation-only edits need no compiler replay or
+new acceptance receipt.** Consult [the full short workflow](RE_WORKFLOW.md)
+for ASM and special-context details.
 
-## Private storage: retain useful proofs, discard stale experiments
+## Local evidence and storage for the successor
 
-`.analysis/`, `.tools/`, `_reference/` and `ghidra-project/` are ignored
-local working inputs, **not portable Git artifacts**. Preserve the
-pinned target binaries/decoded payloads, Wine toolchain and prefix,
-calibration objects and MAPs, Ghidra project, original review evidence,
-all **current ledger-referenced receipt directories and their complete
-native producer/negative snapshots**, plus the specific unresolved
-ZUN/Yumeko trial scripts and discriminating diagnostics.
+`.analysis/`, `_reference/`, `.tools/` and `ghidra-project/` are ignored
+**local state**, not transferred with Git. Keep original pinned targets,
+calibration object/MAP pairs and original source copies, the game's Wine
+prefix/compiler toolchain, Ghidra project, all current ledger-referenced
+`unit-replays` receipts with their two producers and negative snapshots,
+and accepted ASM/native review evidence. Keep the distinct unresolved
+ZUN/Yumeko scripts and diagnostic summaries needed to avoid repeating known
+failed compiler hypotheses. Stale, unreferenced historical replay clones
+can be removed **only after checking current receipt hashes and references**.
+A handoff to a different computer requires transferring the necessary
+ignored inputs separately; `git clone` alone is insufficient.
 
-A conservative local cleanup on **2026-11-12** removed **79 obsolete
-unit-replay directories** and **11 orphaned one-off experiment outputs**,
-freeing approximately **88.4 MiB of allocated storage**. At that cleanup checkpoint,
-all **358 then-current distinct receipt hashes** still resolved to complete
-saved directories. Later exact receipts have since been added; use the live
-ledgers to identify their dependencies before any further cleanup. No pinned target, toolchain,
-Wine prefix, calibration build, Ghidra project, ASM acceptance, or
-Yumeko/ZUN diagnostic baseline was deleted. The public checkout remains
-unchanged by these ignored-file deletions.
-
-Older failed or duplicate replays not referenced by a current ledger
-or useful live note may be removed to save storage; never delete a
-receipt simply because the public repo does not list it as a Git file.
-The acceptance JSON stores its SHA-256, not necessarily a pathname.
-For a handoff to a *different computer*, preserve required ignored
-inputs separately; the Git branch alone is not a self-contained build.
-See [shared runtime setup](SHARED_TOOLS.md) and
-[toolchain/oracle requirements](ORACLES.md).
+This is the live handoff, not a running change log. Historical results and
+failed experiments belong in the linked per-function notes and Git history.

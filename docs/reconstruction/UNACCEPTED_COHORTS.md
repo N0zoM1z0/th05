@@ -37,8 +37,8 @@ ZUN `-S`'s 269-byte C++ `main()` remains the principal known game-authored
 source problem. Its two private raw-exact diagnostics use artificial
 compiler barriers, so neither is accepted as natural C++. Another
 [fourteen actual native option-flow trials](ZUN_RESIDENT_NATIVE_OPTION_TRIALS_2026-11-12.md)
-found one 269-byte natural variant that still differed at 252 original
-byte positions. Matching size or semantic output is not sufficient.
+found one 269-byte natural variant with **252 matching byte positions
+and 17 differences** in the original 269-byte function. Matching size or semantic output is not sufficient.
 
 **Resolved vendor CODE, not open game-authored work:** OP's `xxas`,
 `signal` and `setenvp` and MAINE's `setenvp` are now source-exact native
