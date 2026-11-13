@@ -120,6 +120,14 @@ The full ZUN ownership summary and current intervals are in
   Borland/TLINK producers, all original bytes and ordered fixups, and its
   existing compiled negative. No duplicate CODE credit. See
   [`sara.md`](../src/main/boss/sara/sara.md).
+- **BB loader return-order boundary (2026-11-13)**: further actual TC++ 4.02
+  producers show that lexical scope and an explicit AX return do not move the
+  saved-SI restore ahead of the return-value load. Explicit SI preservation
+  duplicates the compiler's save/restore and shifts the allocator relocation.
+  The best natural C++ source remains 51/55 with the correct +7 relocation;
+  the remaining four bytes are solely `MOV AX,[4204]; POP SI` versus native
+  `POP SI; MOV AX,[4204]`. The exact 55-byte reviewed ASM remains sole owner.
+  See [`bb_load.md`](../src/main/formats/bb_load.md).
 - **Gather template-copy leaf (2026-11-13)**: the 27-byte exact ASM owner
   remains authoritative. New natural C++ alternatives were compiled: indexed
   WORD loop 50 bytes, SI/DI pointer loop 44 bytes, best register do/while loop

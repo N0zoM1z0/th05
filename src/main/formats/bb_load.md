@@ -106,3 +106,35 @@ Evidence:
 `.analysis/gpt-web-bb-load-post-alloc-ds-stack-a-20261113/native-diagnostic.json`
 and
 `.analysis/gpt-web-bb-load-post-alloc-ds-stack-b-20261113/native-diagnostic.json`.
+
+## 2026-11-13: return-order and saved-register lifetime follow-ups
+
+The four-byte natural-C++ tail gap was tested with additional real Borland
+producers. Moving the `original_ds` register local into a nested lexical block
+does **not** move its SI restore: Turbo C++ still treats the callee-saved SI
+save/restore as function-wide and emits `MOV AX,[4204]` before `POP SI`. An
+explicit `_AX` assignment followed by a pointer cast return produces the same
+55-byte shape and the same tail order; it does not make the return register
+materialize after the epilogue.
+
+Two attempts to take ownership of SI explicitly also failed cleanly. Combining
+`_SI = _DS` with inline `PUSH SI`/`POP SI` causes Turbo C++ to add its own
+callee-saved SI pair, producing **59 bytes** and moving the allocator fixup to
+relative **8**. Using inline `MOV SI,DS` and `MOV DS,SI` around the DOS calls
+still makes the compiler add a second SI save/restore, producing **57 bytes**
+and the same shifted relocation. Neither output is an exact candidate.
+
+The natural C++ result remains **51/55** with the original `+7` allocator
+relocation and exact preceding instructions; the unresolved difference is
+still solely `MOV AX,[4204]; POP SI` versus native `POP SI; MOV AX,[4204]`.
+The post-allocation stack-DS alternative remains 51 bytes with relocation +6.
+These trials show that block scope and explicit return-register spelling do
+not change TC++ 4.02's return-before-callee-save lowering, while spelling SI
+explicitly duplicates its preservation. The original 55-byte reviewed ASM
+owner remains exact; no candidate receives C++ credit.
+
+Diagnostics:
+`.analysis/gpt-web-bb-load-scoped-ds-lifetime-a-20261113/`,
+`.analysis/gpt-web-bb-load-ax-return-a-20261113/`,
+`.analysis/gpt-web-bb-load-explicit-si-lifetime-a-20261113/` and
+`.analysis/gpt-web-bb-load-inline-si-lifetime-a-20261113/`.
