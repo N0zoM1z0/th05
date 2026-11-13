@@ -1,6 +1,7 @@
 // Complete natural Shinki wing transition; unchanged maintained algorithm.
 #pragma option -zCB6_WING_TEXT -zPmain_03
 #include "src/main/boss/shinki/wing_preparation.hpp"
+#include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/wing_preparation_rules.hpp"
 #pragma codeseg B6_WING_TEXT main_03
 bool near pattern_wing_preparation(void)
@@ -8,8 +9,8 @@ bool near pattern_wing_preparation(void)
 	enum {
 		LASERS_USED = SWPREP_LASER_COUNT,
 	};
-	#define tone      	boss_statebyte[14]
-	#define wing_frame	boss_statebyte[15]
+	#define tone      	shinki_wing_scratch.tone.wing_palette_tone
+	#define wing_frame	shinki_wing_scratch.frame.wing_animation_frame
 
 	int i;
 

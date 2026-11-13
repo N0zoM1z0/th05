@@ -227,3 +227,11 @@ and literal ordered relocations, match under two native Borland rounds:
 `.analysis/unit-replays/gpt-web-shinki-six-slot-boss-cohort-a/receipt.json`.
 No prior accepted CODE byte is credited twice and no whole executable
 cold replay is involved.
+
+The tone and animation frame are now explicit members of the shared
+`ShinkiSpiralOrDevilInnerAngle` / `ShinkiSpiralOrDevilOuterAngle` byte views at
+physical offsets 14/15. The standalone wing source and the duplicate callback
+inside `shinki.cpp` use the same `ShinkiWingPreparationScratch` view; the
+complete phase-role map is in [scratch-byte lifetimes](scratch.md). This is a
+source naming/layout refinement only: the existing 386-byte TCC-S/TASM32
+acceptance remains exact and receives no duplicate CODE credit.

@@ -76,7 +76,7 @@ void near b6balls_add(void)
 #pragma codeseg B6_PATTERN_A_TEXT main_03
 bool near pattern_curved_rings(void)
 {
-	#define delta_angle boss_statebyte[15]
+	#define delta_angle shinki_scratch.spiral_or_devil_outer_angle.curved_ring_delta_angle
 
 	if(boss.phase_frame == PHASE_2_3_PATTERN_START_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
@@ -102,7 +102,7 @@ bool near pattern_curved_rings(void)
 
 bool near pattern_dualspeed_rings(void)
 {
-	#define interval boss_statebyte[15]
+	#define interval shinki_scratch.spiral_or_devil_outer_angle.dual_speed_ring_interval
 
 	if(boss.phase_frame == PHASE_2_3_PATTERN_START_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
@@ -218,8 +218,8 @@ bool near pattern_wing_preparation(void)
 	enum {
 		LASERS_USED = SWPREP_LASER_COUNT,
 	};
-	#define tone      	boss_statebyte[14]
-	#define wing_frame	boss_statebyte[15]
+	#define tone      	shinki_wing_scratch.tone.wing_palette_tone
+	#define wing_frame	shinki_wing_scratch.frame.wing_animation_frame
 
 	int i;
 
@@ -365,7 +365,7 @@ bool near pattern_wings_to_purple(void)
 
 void near pattern_aimed_b6balls_and_symmetric_spreads(void)
 {
-	#define b6ball_interval boss_statebyte[15]
+	#define b6ball_interval shinki_aimed_b6ball_scratch.ranked_interval.aimed_b6ball_interval
 
 	if(boss.phase_frame <= SHW_AIMED_FIRST_ATTACK_FRAME) {
 		return;

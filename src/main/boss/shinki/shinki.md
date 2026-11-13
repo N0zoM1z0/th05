@@ -229,3 +229,8 @@ evidence. They were superseded by the later accepted `main-shinki-wing-preparati
 TCC-S/TASM32 recipe and complete `main-shinki-balls-update` C++ replay. The
 current receipts are recorded in [wing preparation](wing_preparation.md) and
 [ball lifecycle](ball_lifecycle.md); the old failed variants earn no credit.
+
+The original byte-14/15 reuse across the early ring attacks, wing preparation,
+Devil, final spiral, aimed B6-ball wave and Cheeto walls is mapped in
+[scratch-byte lifetimes](scratch.md). These are views of the same 16-byte
+Boss arena, not per-pattern storage.

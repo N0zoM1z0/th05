@@ -1,7 +1,7 @@
 void near pattern_cheetos_within_spread_walls(void)
 {
-	#define interval	boss_statebyte[14]
-	#define unused  	boss_statebyte[15]
+	#define interval	shinki_cheeto_wall_scratch.ranked_interval.cheeto_wall_interval
+	#define unused  	shinki_cheeto_wall_scratch.ranked_unused_value.cheeto_wall_unused_value
 
 	if(boss.phase_frame < 128) {
 		return;

@@ -61,3 +61,10 @@ At that checkpoint the 386-byte wing preparation, 959-byte Shinki update and
 220-byte ball updater still had failed standalone candidates. **All three now
 have accepted complete C++ owners**, and the earlier four missing ball bytes
 were never credited.
+
+The ranked interval and secondary ranked store are now named members of the
+same original Boss scratch bytes 14/15. The first controls the frame modulo;
+the second is a real byte-15 write (32/40/48/56) that this callback does not
+read. The complete overlay and cross-attack lifetime are documented in
+[Shinki scratch-byte lifetimes](scratch.md). The standalone Cheeto callback
+and the adjacent `shinki.cpp` inclusion share the same canonical view.

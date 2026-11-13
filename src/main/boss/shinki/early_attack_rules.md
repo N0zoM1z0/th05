@@ -51,3 +51,8 @@ ring-completion 28→32 mutation is rejected:
 `.analysis/unit-replays/gpt-web-shinki-early-boss-patterns-a/receipt.json`.
 No already accepted CODE bytes are counted a second time and no
 all-main cold replay is performed.
+
+The early ring callbacks' byte-15 turn delta and ranked interval are named
+members of the shared physical scratch view; see
+[Shinki scratch-byte lifetimes](scratch.md) for their overlay with the later
+wing, Devil, spiral, aimed-ball and Cheeto roles.

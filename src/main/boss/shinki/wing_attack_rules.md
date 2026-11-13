@@ -59,3 +59,8 @@ The first failed source variant is retained privately as diagnostic
 Original compiler switch tables and checked zeros remain verified, and
 no already accepted CODE byte is credited again. No whole-game replay
 was performed.
+
+The late symmetric B6-ball attack's rank-selected interval is the named
+byte-15 member of the complete shared scratch overlay, not a newly allocated
+clock. Its relationship to the wing animation and other byte-14/15 roles is
+recorded in [Shinki scratch-byte lifetimes](scratch.md).

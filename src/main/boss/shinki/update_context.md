@@ -369,3 +369,21 @@ and cross-view assertions, is
 `.analysis/unit-replays/gpt-web-shinki-angle-overlay-final-20261113/receipt.json`.
 This makes all three cross-phase lifetimes explicit without adding duplicate
 CODE credit or running a whole accepted-set cold replay.
+
+## 2026-11-13: byte-14/15 attack-lifetime overlays
+
+The existing byte-10 wave-index/Devil-laser-latch handoff is only one part of
+the shared Shinki scratch protocol. Physical bytes 14 and 15 are also reused
+across the Devil angles, final spiral, six-laser wing transition, early ring
+callbacks, aimed B6-ball wave and Cheeto walls. `scratch.hpp` now gives each
+role a named union member and adds complete 16-byte views for wing preparation,
+Cheeto walls and the aimed B6-ball interval. The Cheeto callback's byte-15
+ranked store is preserved and honestly named as a value that the callback does
+not read. The complete map is in [Shinki scratch-byte lifetimes](scratch.md).
+
+Both copies of the wing callback and the standalone Cheeto owner now use the
+same named physical members. Thirteen affected ordinary C++ owners and the
+386-byte wing TCC-S/TASM32 owner passed their focused replay recipes with
+original bytes, ordered relocations and rejected compiled negatives. The
+959-byte Shinki controller and 802-byte Devil pattern are included in the
+C++ closure; no accepted code is double-counted.
