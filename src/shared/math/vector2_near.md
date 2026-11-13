@@ -124,3 +124,34 @@ The three fresh isolated producer directories are
 `.analysis/gpt-web-vector2-near-register-wide-products-a-20261113/`,
 `.analysis/gpt-web-vector2-near-register-samples-pseudoreg-products-a-20261113/`
 and `.analysis/gpt-web-vector2-near-word-local-signextend-a-20261113/`.
+
+## 2026-11-13: reordered table and split-product follow-ups
+
+Three more isolated natural-source producers tested whether reordering the
+cosine/sine loads and splitting the two multiply/shift expressions could keep
+the original EAX/ECX/EDX lifetimes:
+
+- Reordered cosine-first and sine-second loads with compound pseudoregister
+  products emit **76 bytes**. Borland still stages the second table sample
+  through EAX before copying it to ECX, and copies EDX into EAX for the second
+  multiply. More importantly, the compound `>>= 8` on the unsigned DOS
+  pseudoregister lowers to logical `SHR`, not the native signed arithmetic
+  `SAR`; it is not a semantically equivalent candidate for negative products.
+- Loading the length into DX and then sign-extending DX to EDX emits **78
+  bytes**. The compiler sign-extends through EAX and copies EAX to EDX; the
+  table loads and product lowering still introduce extra moves. The compound
+  product shift again uses logical `SHR`.
+- A signed 16-bit register local for the length emits **80 bytes**, including
+  a saved SI, the same EAX-to-EDX copy, and logical shifts. It does not bind
+  the source value to the original direct stack-to-EDX sign extension.
+
+These are one-producer diagnostics, not accepted source or behavior models.
+The output is longer than the 67-byte best natural C++ result, and the
+unsigned-pseudoregister shift changes negative-product semantics. The complete
+55-byte original ASM owner remains the only exact implementation; no
+instructions, target bytes, padding or new CODE credit are introduced.
+
+Producer directories:
+`.analysis/gpt-web-vector2-near-reordered-split-products-a-20261113/`,
+`.analysis/gpt-web-vector2-near-dx-word-then-signextend-a-20261113/` and
+`.analysis/gpt-web-vector2-near-signed-register-length-word-a-20261113/`.
