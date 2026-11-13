@@ -1,6 +1,7 @@
 // Three complete natural EX-Alice patterns following the first charged set.
 #pragma option -zCEXALICE_LAT_TEXT -zPmain_03
 #include "src/main/boss/exalice/later.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 
 // Every four ticks, the firewave volley launches an angle and its exact
 // signed mirror. The angle negation must occur after the first real spawn.
@@ -45,14 +46,14 @@ bool near exalice_pattern_firewave_fans(void)
                     bullet_template.origin.x.v - to_sp(48);
                 exalice_aim_origin.y.v = randring2_next16_mod(to_sp(64)) +
                     bullet_template.origin.y.v - to_sp(32);
-                boss_statebyte[15] = player_angle_from(
+                exalice_boss_scratch.pattern_byte15.firewave_aim_angle = player_angle_from(
                     exalice_aim_origin.x, exalice_aim_origin.y, 0);
             }
         }
         bullet_template.origin.x = exalice_aim_origin.x;
         bullet_template.origin.y = exalice_aim_origin.y;
         bullet_template.spawn_type = 0x02 | 0x10;
-        bullet_template.angle = boss_statebyte[15];
+        bullet_template.angle = exalice_boss_scratch.pattern_byte15.firewave_aim_angle;
         bullet_template.group = BG_SINGLE;
         bullet_template.speed.v = to_sp(6);
         bullet_template.patnum = EXALICE_PAT_V_RED;
@@ -101,12 +102,12 @@ bool near exalice_pattern_gravity_stacks(void)
 bool near exalice_pattern_diamond_rings(void)
 {
     if(boss.phase_frame == 64) {
-        boss_statebyte[15] = 1 - boss_statebyte[15];
+        exalice_boss_scratch.pattern_byte15.diamond_ring_direction = 1 - exalice_boss_scratch.pattern_byte15.diamond_ring_direction;
     }
     if((boss.phase_frame % 8) == 0) {
         bullet_template.spawn_type = 0x03 | 0x10;
         bullet_template.speed.v = to_sp(5.5f);
-        bullet_template.angle = boss_statebyte[15]
+        bullet_template.angle = exalice_boss_scratch.pattern_byte15.diamond_ring_direction
             ? bullet_template.angle + 3 : bullet_template.angle - 3;
         bullet_template.group = BG_RING;
         exalice_set_spread(22, 8);

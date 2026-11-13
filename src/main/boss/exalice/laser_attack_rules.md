@@ -37,8 +37,9 @@ age. Every fourth frame it turns the laser template by ±8 toward
 angles zero and 128, spawning one real shootout laser on each step.
 After frame 256 it also moves the Boss on a 64-frame cycle, and after
 frame 512 fires 32-shot aimed rings every sixteen frames. The source
-retains the real live `boss_statebyte[15]` and never introduces a
-synthetic direction flag or replacement laser table.
+retains the real live `ExAliceBossScratch::pattern_byte15.sweeping_laser_direction`
+view of `boss_statebyte[15]`; it never introduces a synthetic direction flag
+or replacement laser table.
 
 The focused receipt
 `.analysis/unit-replays/gpt-web-exalice-laser-roles-a/receipt.json`

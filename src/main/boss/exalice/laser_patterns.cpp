@@ -2,6 +2,7 @@
 #pragma option -zCEXALICE_LSR_TEXT -zPmain_03
 #include "src/main/boss/exalice/laser_patterns.hpp"
 #include "src/main/boss/exalice/laser_attack_rules.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 
 // Both fixed fan launches aim from the genuine laser origin and consume the
 // same cyclic slot counter before the sixteen-laser maintenance pass.
@@ -16,7 +17,7 @@
 #define EXALICE_SWEEP_TURN(step, turn_gate, next_direction) { \
     laser_template.coords.angle step XLR_SWEEP_TURN_STEP; \
     if(turn_gate) { \
-        boss_statebyte[15] = next_direction; \
+        exalice_boss_scratch.pattern_byte15.sweeping_laser_direction = next_direction; \
     } \
     lasers_shootout_add(); \
 }
@@ -106,12 +107,12 @@ bool near exalice_pattern_sweeping_lasers(void)
         laser_template.coords.angle = XLR_SWEEP_ORIGIN_ANGLE;
         laser_template.active_at_age.grow = XLR_SWEEP_GROW_AGE;
         laser_template.shootout_speed.v = to_sp(XLR_SWEEP_SPEED_PX);
-        boss_statebyte[15] = XLR_SWEEP_FIRST_DIRECTION;
+        exalice_boss_scratch.pattern_byte15.sweeping_laser_direction = XLR_SWEEP_FIRST_DIRECTION;
     }
     if((boss.phase_frame % XLR_SWEEP_FIRE_INTERVAL) == 0) {
-        if(boss_statebyte[15] == XLR_SWEEP_FIRST_DIRECTION) {
+        if(exalice_boss_scratch.pattern_byte15.sweeping_laser_direction == XLR_SWEEP_FIRST_DIRECTION) {
             EXALICE_SWEEP_TURN(+=, laser_template.coords.angle >= XLR_SWEEP_LIMIT_ANGLE, XLR_SWEEP_SECOND_DIRECTION);
-        } else if(boss_statebyte[15] == XLR_SWEEP_SECOND_DIRECTION) {
+        } else if(exalice_boss_scratch.pattern_byte15.sweeping_laser_direction == XLR_SWEEP_SECOND_DIRECTION) {
             EXALICE_SWEEP_TURN(-=, laser_template.coords.angle == 0, XLR_SWEEP_FIRST_DIRECTION);
         }
     }

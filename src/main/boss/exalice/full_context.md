@@ -201,3 +201,34 @@ both compiled meaningful negatives are rejected. Full scoped receipt:
 `.analysis/unit-replays/gpt-web-exalice-bomb-phase-protocol-a/receipt.json`.
 This does not claim the complete executable's placement or a new
 initialized-DATA owner.
+
+
+## 2026-11-13: explicit byte-15 pattern-state overlay
+
+The final byte of the original 16-byte `boss_statebyte` area now has one
+shared `ExAlicePatternByte15` union in `ExAliceBossScratch`. The complete
+controller and each attack source use names for the same physical byte:
+initial-fan substate, turning-ring direction, sweeping-laser direction,
+firewave aim angle, diamond-ring direction, spiral angle offset, and final-fan
+angle. Compile-time assertions keep the union one byte, every member at union
+offset zero, and the containing member at Boss scratch offset 15.
+
+These are sequential pattern lifetimes, not new independent counters. The
+sweeping-laser pattern initializes its direction when armed; spiral gather
+and final fan initialize their angle offsets at their own original entry
+frames. Turning rings and diamond rings continue to toggle the existing byte
+without an added reset, and firewave fans still assign the real player aim
+before consuming it. The initial-fan value remains only the original setup
+write; no unobserved read or new behavior is inferred. The standalone and
+accepted full-context controller keep the same initial-fan assignment.
+
+The focused seven-unit Borland replay passed twice, including the complete
+**1,060-byte** controller, all three final-pattern functions, initial/later
+patterns and all four laser patterns. The separate `tcc-s-tasm32` spiral
+producer also passed its complete **334-byte** scope. Both lanes preserve their
+original raw bytes and ordered relocations; the C++ cohort's existing compiled
+negative was rejected. Receipts:
+`.analysis/unit-replays/gpt-web-exalice-byte15-cxx-20261113/receipt.json` and
+`.analysis/unit-replays/gpt-web-exalice-byte15-spiral-20261113/receipt.json`.
+Only already accepted source owners were refreshed; no duplicate byte credit
+or new storage was introduced.

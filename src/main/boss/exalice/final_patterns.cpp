@@ -3,6 +3,7 @@
 #include "src/main/boss/exalice/final_patterns.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/final_attack_rules.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 
 // Cross and turning Cheetos use the same real aim-and-fire flow. Each
 // caller supplies its own 16/128-frame flip clock and forward/reverse aim.
@@ -62,7 +63,7 @@ void near exalice_pattern_final_fan(void)
         bullet_template.group = BG_SPREAD;
         bullet_template.angle = randring2_next16();
         exalice_set_spread(EXF_FAN_SPREAD_COUNT, EXF_FAN_SPREAD_STEP);
-        boss_statebyte[15] = 0;
+        exalice_boss_scratch.pattern_byte15.final_fan_angle = 0;
         boss.pos.velocity.x.v = 0;
     }
     if(boss.phase_frame >= EXF_FAN_FIRE_START) {
@@ -76,8 +77,8 @@ void near exalice_pattern_final_fan(void)
             snd_se_play(EXF_FAN_VOLLEY_SE);
         }
         boss.pos.cur.x.v = polar(to_sp(EXF_FAN_CENTER_X_PX), boss.pos.velocity.x.v,
-            SinTable8[boss_statebyte[15]]);
-        boss_statebyte[15] += EXF_FAN_ANGLE_STEP;
+            SinTable8[exalice_boss_scratch.pattern_byte15.final_fan_angle]);
+        exalice_boss_scratch.pattern_byte15.final_fan_angle += EXF_FAN_ANGLE_STEP;
         // The radius spans64 pixels, converted to16 subpixels per pixel.
         boss.pos.velocity.x.v =
             ((static_cast<unsigned long>(EXALICE_HP_WAVE4_REGULAR_END - boss.hp) * EXF_FAN_RADIUS_SCALE_PX) * 16) / EXALICE_HP_WAVE4_REGULAR_END;

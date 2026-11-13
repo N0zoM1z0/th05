@@ -1,6 +1,7 @@
 // Natural EX-Alice charge, random fan and alternating turning rings.
 #pragma option -zCEXALICE_PAT_TEXT -zPmain_03
 #include "src/main/boss/exalice/patterns.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 
 bool near exalice_charge_update(void)
 {
@@ -37,12 +38,12 @@ bool near exalice_pattern_random_fan(void)
 bool near exalice_pattern_turning_rings(void)
 {
     if(boss.phase_frame == 64) {
-        boss_statebyte[15] = 1 - boss_statebyte[15];
+        exalice_boss_scratch.pattern_byte15.turning_ring_direction = 1 - exalice_boss_scratch.pattern_byte15.turning_ring_direction;
     }
     if((boss.phase_frame % 4) == 0) {
         bullet_template.spawn_type = 0x13;
         bullet_template.speed.v = to_sp(4);
-        bullet_template.angle = boss_statebyte[15]
+        bullet_template.angle = exalice_boss_scratch.pattern_byte15.turning_ring_direction
             ? bullet_template.angle + 2 : bullet_template.angle - 2;
         bullet_template.group = BG_RING;
         bullet_template.special_motion = BSM_DECELERATE_THEN_TURN_AIMED;

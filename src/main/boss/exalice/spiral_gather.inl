@@ -1,4 +1,5 @@
 #include "src/main/boss/exalice/final_attack_rules.hpp"
+#include "src/main/boss/exalice/boss_scratch.hpp"
 bool near exalice_pattern_spiral_gather(void)
 {
     bullet_template.origin.y.v += to_sp(EXF_SPIRAL_ORIGIN_Y_OFFSET_PX);
@@ -12,7 +13,7 @@ bool near exalice_pattern_spiral_gather(void)
         bullet_template.group = BG_SPREAD;
         exalice_set_spread(EXF_SPIRAL_SPREAD_COUNT, EXF_SPIRAL_SPREAD_STEP);
         bullet_template.patnum = EXF_SPIRAL_PATNUM;
-        boss_statebyte[15] = 0;
+        exalice_boss_scratch.pattern_byte15.spiral_angle_offset = 0;
         boss_statebyte[14] = 0;
         boss_statebyte[13] = 0;
         snd_se_play(EXF_SPIRAL_GATHER_SE);
@@ -45,9 +46,9 @@ bool near exalice_pattern_spiral_gather(void)
         bullet_template.angle = EXF_SPIRAL_MIRROR_ANGLE - bullet_template.angle;
         bullets_add_regular_fixedspeed();
         snd_se_play(EXF_SPIRAL_SHOT_SE);
-        bullet_template.angle -= boss_statebyte[15];
+        bullet_template.angle -= exalice_boss_scratch.pattern_byte15.spiral_angle_offset;
         if((boss.phase_frame % EXF_SPIRAL_GATHER_ALT_INTERVAL) == 0) {
-            boss_statebyte[15] += boss_statebyte[14];
+            exalice_boss_scratch.pattern_byte15.spiral_angle_offset += boss_statebyte[14];
             if(boss_statebyte[13] == 0) {
                 boss_statebyte[14]++;
                 if(boss_statebyte[14] >= EXF_SPIRAL_TURN_LIMIT) {
