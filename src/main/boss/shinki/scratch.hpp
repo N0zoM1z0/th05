@@ -4,19 +4,29 @@
 #ifndef TH05_MAIN_BOSS_SHINKI_SCRATCH_HPP
 #define TH05_MAIN_BOSS_SHINKI_SCRATCH_HPP
 
-struct ShinkiPhaseScratch {
-    unsigned char prior_phase_state[10];
-    // Also used by pattern_devil() as its active-laser latch: its final
-    // nonzero value intentionally selects the *later* shared-wave transition.
-    // Resetting it on the Devil-to-wave boundary would change the original.
+// One physical byte changes meaning across the original phase boundary.
+// The Devil attack's laser latch is the same byte that the surrounding
+// controller uses as its shared-wave index; the value is intentionally kept
+// alive across the callback so the next phase can observe it.
+union ShinkiWaveOrDevilLaserLatch {
     unsigned char wave_relative_index;
+    unsigned char devil_lasers_active;
+};
+
+typedef char shinki_wave_latch_union_is_1[(sizeof(ShinkiWaveOrDevilLaserLatch) == 1) ? 1 : -1];
+
+typedef struct ShinkiPhaseScratch {
+    unsigned char prior_phase_state[10];
+    ShinkiWaveOrDevilLaserLatch wave_or_laser;
     unsigned char other_state[3];
     // These bytes are pattern_devil()'s inner/outer bullet angles in phase 10.
     unsigned char spiral_pellet_angle;
     unsigned char spiral_red_angle;
 };
 typedef char shinki_scratch_is_16[(sizeof(ShinkiPhaseScratch) == 16) ? 1 : -1];
-typedef char shinki_wave_index_at_10[(offsetof(ShinkiPhaseScratch, wave_relative_index) == 10) ? 1 : -1];
+typedef char shinki_wave_latch_at_10[(offsetof(ShinkiPhaseScratch, wave_or_laser) == 10) ? 1 : -1];
+typedef char shinki_wave_index_at_union_zero[(offsetof(ShinkiWaveOrDevilLaserLatch, wave_relative_index) == 0) ? 1 : -1];
+typedef char shinki_devil_latch_at_union_zero[(offsetof(ShinkiWaveOrDevilLaserLatch, devil_lasers_active) == 0) ? 1 : -1];
 typedef char shinki_pellet_angle_at_14[(offsetof(ShinkiPhaseScratch, spiral_pellet_angle) == 14) ? 1 : -1];
 typedef char shinki_red_angle_at_15[(offsetof(ShinkiPhaseScratch, spiral_red_angle) == 15) ? 1 : -1];
 

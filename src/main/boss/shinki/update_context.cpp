@@ -121,7 +121,7 @@ void pascal shinki_update(void)
 	// is not good enough?
 	// Careful, collides with [lasers_active] in pattern_devil()!
 	// MODDERS: Just use [boss.phase].
-	#define phase_relative shinki_scratch.wave_relative_index
+	#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index
 
 	enum {
 		PHASE_11_FRAMES = 16,

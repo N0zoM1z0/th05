@@ -332,3 +332,28 @@ contains two independent Borland/TLINK positives matching all 959 original
 bytes and unchanged ordered MZ relocations, with a rejected compiled source
 negative. The surrounding Devil/final-pattern sources remain genuine compiler
 context, not a second credit claim; no full cold replay was used.
+
+## 2026-11-13: explicit shared wave-index / Devil-laser-latch overlay
+
+The complete 959-byte Shinki controller and the 802-byte Devil attack share
+one physical byte at `boss_statebyte[10]`. During the early and wing waves it
+is the relative wave index; `pattern_devil()` reuses that same byte as its
+active-laser latch, and the nonzero value is intentionally observed by the
+controller after the Devil callback. Clearing it at the phase boundary would
+select the wrong following wave.
+
+`scratch.hpp` now models the two names as a one-byte `ShinkiWaveOrDevilLaserLatch`
+union nested at offset 10 in the phase view, alongside the existing full
+16-byte Devil view. Both views retain compile-time size/offset assertions.
+The controller's `phase_relative` alias now addresses the named union member;
+`pattern_devil()` continues to use its own `lasers_active` member at the same
+physical offset. No new Boss storage or phase reset is introduced.
+
+The focused twelve-unit replay recompiles every Shinki owner that consumes
+this scratch header. Two independent Borland/TLINK producers match all
+original CODE scopes and ordered fixups, including the complete **959-byte**
+controller and **802-byte** Devil attack; the compiled semantic negative is
+rejected. Receipt:
+`.analysis/unit-replays/gpt-web-shinki-wave-latch-overlay-20261113/receipt.json`.
+This makes the cross-phase lifetime explicit without adding duplicate CODE
+credit or running a whole accepted-set cold replay.
