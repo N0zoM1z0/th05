@@ -100,6 +100,17 @@ class OwnershipTests(unittest.TestCase):
             (8, 10, "accepted-zun-com-initialized-data"),
             (10, 15, "accepted-cxx-instructions"), (15, 20, "unknown")])
 
+    def test_zun_borland_vendor_initialized_data_is_zero_credit(self):
+        row = {"start": 0, "end": 6, "kind": "verified-vendor-initialized-data",
+               "unit": "borland-nearheap", "origin": "reviewed-native-zun-com-reconstruction",
+               "source_origin": "pinned-borland-ct-library-original-object",
+               "instruction_bytes": 0, "authored_credit": 0,
+               "content_kind": "library-initialized-data",
+               "library": "Borland Turbo C++ 4.0 CT.LIB", "member": "nearheap"}
+        rows = overlay_zun(12, partition(12, []), [row])
+        self.assertEqual(rows[0]["kind"], "verified-vendor-initialized-data")
+        self.assertEqual(rows[0]["authored_credit"], 0)
+
     def test_zun_native_claims_cannot_overwrite_known_owners_or_fake_vendor_provenance(self):
         pieces = partition(20, [self.entry(5, 8)])
         base = {"start": 6, "end": 7, "kind": "accepted-zun-com-instructions",

@@ -218,34 +218,43 @@ def overlay_asm(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]
 
 
 def overlay_zun(size: int, pieces: list[dict], claims: list[dict]) -> list[dict]:
-    """Adopt only complete, source-current ZUN.COM child/launcher scopes."""
+    """Adopt only complete, source-current ZUN.COM source/library scopes."""
     validate_partition(size, pieces)
     allowed = {"accepted-zun-com-instructions", "accepted-zun-com-initialized-data",
-               "checked-uncredited-zun-com-alignment", "verified-vendor-code"}
+               "checked-uncredited-zun-com-alignment", "verified-vendor-code",
+               "verified-vendor-initialized-data"}
+    source_origins = {
+        "third-party-comcstm-stub-reference", "pipeline-reconstructed-assembly",
+        "inferred-original-register-assembly", "inferred-original-handwritten-assembly",
+        "pinned-master-library-original-assembly", "pinned-borland-ct-library-original-object",
+    }
+    vendor_identities = {
+        ("pinned-master-library-original-assembly", "Master 0.23"),
+        ("pinned-borland-ct-library-original-object", "Borland Turbo C++ 4.0 CT.LIB"),
+    }
     for row in claims:
         kind = row.get("kind")
         if (kind not in allowed or not row.get("unit") or
                 row.get("origin") != "reviewed-native-zun-com-reconstruction" or
-                row.get("source_origin") not in {
-                    "third-party-comcstm-stub-reference", "pipeline-reconstructed-assembly",
-                    "inferred-original-register-assembly", "inferred-original-handwritten-assembly",
-                    "pinned-master-library-original-assembly"} or
+                row.get("source_origin") not in source_origins or
                 type(row.get("start")) is not int or type(row.get("end")) is not int or
                 not 0 <= row["start"] < row["end"] <= size):
-            raise ValueError("invalid ZUN native child ownership claim")
+            raise ValueError(f"invalid ZUN native child ownership claim: {row}")
         length = row["end"] - row["start"]
         if kind in ("accepted-zun-com-instructions", "verified-vendor-code"):
             if row.get("instruction_bytes") != length:
                 raise ValueError("ZUN instruction claim must count its complete instruction extent")
         elif row.get("instruction_bytes") != 0:
             raise ValueError("ZUN initialized data/alignment cannot claim instruction bytes")
-        if kind == "checked-uncredited-zun-com-alignment":
-            if row.get("authored_credit") != 0:
-                raise ValueError("ZUN alignment is always uncredited")
-        if kind == "verified-vendor-code":
-            if (row.get("source_origin") != "pinned-master-library-original-assembly" or
-                    row.get("library") != "Master 0.23" or not row.get("member")):
-                raise ValueError("ZUN vendor code requires its exact Master source identity")
+        if kind == "checked-uncredited-zun-com-alignment" and row.get("authored_credit") != 0:
+            raise ValueError("ZUN alignment is always uncredited")
+        if kind in ("verified-vendor-code", "verified-vendor-initialized-data"):
+            if ((row.get("source_origin"), row.get("library")) not in vendor_identities or
+                    not row.get("member")):
+                raise ValueError("ZUN vendor claim requires its exact original library/member identity")
+        if kind == "verified-vendor-initialized-data":
+            if row.get("content_kind") != "library-initialized-data" or row.get("authored_credit") != 0:
+                raise ValueError("ZUN vendor initialized DATA must remain explicitly zero-credit")
     known = [row for row in pieces if row["kind"] != "unknown"]
     output, cursor = [], 0
     for row in sorted(known + claims, key=lambda item: (item["start"], item["end"])):

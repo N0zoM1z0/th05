@@ -233,10 +233,17 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
     claims.extend(_code_with_padding(base, c["scope_size"], c["uncredited_alignment_offsets"],
                                      "master-file-family", c["origin"], vendor=True))
 
-    # Prove the claims form exactly the independently accepted 4,416-byte
-    # complement of the existing CRT/C++/font owners; the 2-byte writable CRT
-    # CS slot and all still-unreviewed -S bytes remain unknown.
-    expected = 4416
+    # Borland's original CT.LIB nearheap object is a separate, relocation-aware
+    # vendor proof: free/malloc/realloc (631 CODE) plus its six initialized
+    # bytes at DS:1A6A. It is not a Master library or game-authored contribution.
+    import review_zun_nearheap as nearheap
+    nearheap_claims, nearheap_sha = nearheap.reviewed_claims(root, view, verify_targets=verify_targets)
+    claims.extend(nearheap_claims)
+
+    # The newly overlaid total includes the previously accepted COM/MASTER
+    # scopes and the independently matched Borland nearheap object. The 2-byte
+    # writable CRT CS slot and all other still-unreviewed -S bytes stay unknown.
+    expected = 5053
     if sum(row["end"] - row["start"] for row in claims) != expected:
         raise ValueError("ZUN accepted module ownership total changed")
     if verify_targets:
@@ -254,4 +261,8 @@ def reviewed_claims(root: Path, view: dict, *, verify_targets: bool = False):
             "manifest": digest_file(root / f"config/zun_{name}.toml"),
             "acceptance": digest_file(root / f"config/zun_{name}_acceptance.json"),
         }
+    evidence["nearheap"] = {
+        "manifest": digest_file(root / "config/zun_nearheap.toml"),
+        "acceptance": nearheap_sha,
+    }
     return claims, digest_bytes(json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode())

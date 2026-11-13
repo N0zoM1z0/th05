@@ -25,9 +25,9 @@
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 8342,
-    "verified-vendor-code": 139336,
-    "verified-vendor-initialized-data": 7870
+    "unknown": 7705,
+    "verified-vendor-code": 139967,
+    "verified-vendor-initialized-data": 7876
   },
   "views": {
     "main": {
@@ -14519,9 +14519,9 @@
         "accepted-zun-com-instructions": 1843,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 3874,
-        "verified-vendor-code": 1660,
-        "verified-vendor-initialized-data": 110
+        "unknown": 3237,
+        "verified-vendor-code": 2291,
+        "verified-vendor-initialized-data": 116
       },
       "intervals": [
         {
@@ -14916,6 +14916,22 @@
         },
         {
           "start": 5050,
+          "end": 5760,
+          "kind": "unknown"
+        },
+        {
+          "start": 5760,
+          "end": 6391,
+          "kind": "verified-vendor-code",
+          "unit": "borland-nearheap",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 631,
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "nearheap"
+        },
+        {
+          "start": 6391,
           "end": 8244,
           "kind": "unknown"
         },
@@ -14937,6 +14953,24 @@
         },
         {
           "start": 8674,
+          "end": 9294,
+          "kind": "unknown"
+        },
+        {
+          "start": 9294,
+          "end": 9300,
+          "kind": "verified-vendor-initialized-data",
+          "unit": "borland-nearheap",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 0,
+          "authored_credit": 0,
+          "content_kind": "library-initialized-data",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "nearheap"
+        },
+        {
+          "start": 9300,
           "end": 9352,
           "kind": "unknown"
         },
@@ -15014,7 +15048,7 @@
           "instruction_bytes": 68
         }
       ],
-      "zun_native_modules_review_sha256": "f3ea5c7e1d1826eb821bdf978660ad57f7e8c43854b4f330c9c3d764d1690509",
+      "zun_native_modules_review_sha256": "1311297cffe57c0a08c5c82f5961706f83b8f1bebe7521b1ab5ed960aca33a7e",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }

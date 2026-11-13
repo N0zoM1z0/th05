@@ -28,18 +28,37 @@ acceptance records. The existing C0T CRT, three resident C++ units, and the
 8,192-byte embedded font retain their previous independent owners; none is
 counted a second time.
 
-The corrected ZUN view has exactly **3,874 unknown bytes**, in three intervals:
+## Borland nearheap object matched (2026-11-13)
+
+The original tiny-model `CT.LIB` `nearheap` member is now independently matched
+at `-S` COM runtime `0x0C9C..0x0F13` (631 CODE bytes) and DATA
+`0x1A6A..0x1A70` (6 initialized bytes). Its three public function boundaries
+are `_free` at 0, `_malloc` at 207 and `_realloc` at 550; the DATA publics
+`__first`, `__last` and `__rover` occupy offsets 0, 2 and 4. All 579 non-
+relocation CODE bytes match verbatim; the only 52 differing bytes are exactly
+the member's 26 two-byte OMF relocation fields. The six DATA bytes match
+verbatim. The target's resolved relocation words include the three DATA
+addresses `1A6A`, `1A6C` and `1A6E`.
+
+`scripts/review_zun_nearheap.py --check` pins the installed Borland
+`CT.LIB` hash, exact `nearheap` OMF member/publics/LEDATA/FIXUPP structure,
+original `-S` child identity, all relocation offsets, and both target slices.
+The object is vendor code/data and receives zero source-authored credit.
+
+The corrected ZUN view now has exactly **3,237 unknown bytes**, in five
+intervals:
 
 - `0x0D47..0x0D49` (2 bytes): the original writable CRT CS: runtime slot; it is
   intentionally not initialized or credited.
-- `0x13BA..0x2034` (3,194 bytes): `-S` COM runtime addresses `0x09D6..0x1650`.
-- `0x21E2..0x2488` (678 bytes): the tail of `-S`, COM runtime addresses
-  `0x17FE..0x1AA4`, ending immediately before the accepted `-G` child.
+- `0x13BA..0x1680` (710 bytes): `-S` COM runtime `0x09D6..0x0C9C`.
+- `0x18F7..0x2034` (1,853 bytes): `-S` COM runtime `0x0F13..0x1650`.
+- `0x21E2..0x244E` (620 bytes): `-S` COM runtime `0x17FE..0x1A6A`.
+- `0x2454..0x2488` (52 bytes): `-S` COM runtime `0x1A70..0x1AA4`, ending
+  immediately before the accepted `-G` child.
 
-These remaining intervals are deliberately still `unknown`; the ownership
-correction does not assert that every byte is executable code. In particular,
-the 3,194-byte resident interval needs procedure-by-procedure source mapping,
-and the 678-byte tail needs its own CODE/DATA/INIT/BSS boundary review.
+These intervals remain deliberately `unknown`; the ownership correction does
+not assert that every byte is executable code. The resident tail still needs
+its own CODE/DATA/INIT/BSS boundary review.
 
 Focused checks: `python3 scripts/ownership.py --check`,
 `python3 scripts/replay_zun_outer.py --check`,
@@ -50,5 +69,6 @@ Focused checks: `python3 scripts/ownership.py --check`,
 `python3 scripts/replay_zun_memory.py --check`,
 `python3 scripts/replay_zun_resdata.py --check`,
 `python3 scripts/replay_zun_file_native.py --check`, and
-`python3 scripts/replay_zun_crt.py --check`. No full cold replay is needed for
-this ownership-only correction.
+`python3 scripts/replay_zun_crt.py --check`, and
+`python3 scripts/review_zun_nearheap.py --check`. No full cold replay is needed
+for these bounded ownership/vendor-object checks.
