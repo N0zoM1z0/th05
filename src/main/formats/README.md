@@ -108,8 +108,9 @@ loader, vendor implementation or whole-program equality is claimed.
 
 The [BB text-mask lifecycle](bb_text.md) now accepts 99 C++ instruction bytes
 through unchanged compiler assembly output and original ascending fixups. The
-[general BB loader](bb_load.md) remains a natural 56-byte candidate versus 55;
-its genuine far-filename and segment-result interfaces stay intact.
+[general BB loader](bb_load.md) has a 55-byte C++/inline-ASM candidate matching
+51/55 bytes and the exact original relocation; the four return-order bytes
+remain owned only by the exact reviewed-ASM implementation.
 
 The [curved-bullet .BB loader](bb_cheeto.md) and [MPN release](mpn_free.md)
 now add two independently compiled functions: 48 compared bytes, including

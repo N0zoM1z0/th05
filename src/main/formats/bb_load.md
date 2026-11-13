@@ -23,6 +23,34 @@ Both fresh producers have identical bytes and normalized OMF. The C++ candidate
 remains an inexact context provider with no additional CODE credit; the exact
 55-byte original-ASM owner remains authoritative. Evidence:
 `.analysis/gpt-web-bb-load-sp-intrinsic-results-20261113.json`.
+## 2026-11-13: return-order source experiments
+
+The exact four-byte tail difference was isolated with fresh, focused native
+producers. The original ends `POP SI; MOV AX,[bb_load_seg]; RET 4`; the current
+C++ candidate ends `MOV AX,[bb_load_seg]; POP SI; RET 4`. The 55-byte extent,
+`+7` relocation and all preceding instructions remain intact. The compiler
+loads a C++ return expression before its callee-saved SI epilogue, which is the
+only observed difference in the retained candidate.
+
+New source variants changed `original_ds` from `register` to an ordinary local,
+then to `volatile`; tested explicit `-O` and `-O-`; and inserted a zero-code
+barrier before/around the return. The ordinary local and both optimization
+profiles preserve the same 51/55 output. `volatile` forces a 61-byte BP-frame
+implementation. The tested barrier declaration is rejected by this BB
+translation unit's current TCC configuration (`storage class inline not
+allowed here`). Manual SI save/restore variants produce a duplicate
+compiler-managed SI save, while DS-on-stack variants lose the original
+prologue/stack-argument layout. None improves the four-byte tail. Results are
+retained in `.analysis/gpt-web-bb-load-return-order-experiments-20261113.json`
+and `.analysis/gpt-web-bb-load-return-barrier-experiments-20261113.json`.
+
+The C++ translation unit now asserts the actual four-byte far filename
+argument and 2,048-byte payload; the shared header already asserts the
+two-byte near segment result. This pins the `SS:[BX+4]` source assumption at
+compile time without changing generated instructions. No
+additional code ownership is claimed; the complete 55-byte reviewed ASM
+family remains the sole exact owner.
+
 The BB text lifecycle has its own [independent exact acceptance](bb_text.md).
 
 ## Complete original 55-byte ASM recovery — 2026-11-10

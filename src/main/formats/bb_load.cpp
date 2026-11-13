@@ -2,6 +2,12 @@
 #pragma option -zCBB_LOAD_TEXT -zPmain_01 -k-
 #include <dos.h>
 #include "src/main/formats/bb_load.hpp"
+
+// This C++ candidate addresses the far filename through SS:[BX+4]. Pin the
+// ABI widths here without changing the accepted ASM owner's semantic inputs.
+typedef char bb_filename_argument_is_4[(sizeof(const char far *) == 4) ? 1 : -1];
+typedef char bb_payload_size_is_2048[(BB_SIZE == 2048) ? 1 : -1];
+
 #pragma codeseg BB_LOAD_TEXT main_01
 
 bb_tiles8_t __seg *pascal near bb_load(const char far *filename)
