@@ -144,6 +144,15 @@ The full ZUN ownership summary and current intervals are in
   the wrong multiply and logical shift. The semantically correct natural C++
   remains 67 bytes; the 55-byte ASM remains sole exact owner. See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
+- **Generic Boss fixed big-circle defeat API (2026-11-13)**: removed the
+  unused explosion-type parameter from `boss_defeat_explode_big`; the shared
+  414-byte defeat controller always invokes the real big-circle explosion.
+  Renamed it `boss_defeat_explode_big_circle(bonus_units)` to make the actual
+  operation explicit. The full 414-byte callback, all six generic helpers,
+  collision leaf, item-drop DATA and 14 additional shared-header CODE/DATA
+  consumers (18 complete owners total) replay exact twice with original
+  ordered fixups; compiled negatives are rejected. No duplicate ownership.
+  See [`generic.md`](../src/main/boss/generic.md).
 - **Mai/Yuki defeated-character lifetime (2026-11-13)**: the one byte of
   `boss2.phase_state` is now explicitly viewed as `patterns_seen` during
   combat and `defeated_character` after the result-minus-one handoff (Mai=0,

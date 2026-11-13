@@ -22,7 +22,11 @@ post-defeat code retains the original darkening tone 60 and both
 separate all-clear reward paths. The final fade uses the real song-fade
 parameter 10; the next stage handoff pauses for exactly one frame.
 The player's invincibility, homing clear, resident score write and
-stage-selection branches are left untouched.
+stage-selection branches are left untouched. The large explosion is always
+the fixed circular Boss explosion: `boss_defeat_explode_big_circle()` has no
+explosion-type input because the original transition never selected another
+shape. It still gates the bullet-zap activation and score award from the same
+one-byte `boss.phase_state.defeat_bonus` lifetime.
 
 **Collision geometry.** The original DOS-style leaf subtracts the player
 coordinates in `_AX`/`_DX` before calling
@@ -53,3 +57,16 @@ the existing meaningful compiled negatives:
 `.analysis/unit-replays/gpt-web-generic-boss-defeat-and-collision-a/receipt.json`.
 These bytes were already accepted and are not credited again. No full
 MAIN or foreign-library replay was run.
+
+
+## 2026-11-13: make the fixed circular explosion API honest
+
+The original `boss_defeat_explode_big(type, bonus_units)` macro accepted a
+`type` argument but never read it; its only body operation was
+`boss_explode_big_circle()`. The generic Boss controller now calls
+`boss_defeat_explode_big_circle(bonus_units)`, with the dead type parameter
+removed. This does not add a runtime helper or alter the 414-byte callback.
+The actual callback and all 17 additional shared-header code/data consumers
+were recompiled in two focused native rounds. All 18 complete owners preserve
+original raw bytes and ordered fixups; the compiled negative controls are
+rejected. Receipts are recorded in `src/main/boss/generic.md`.

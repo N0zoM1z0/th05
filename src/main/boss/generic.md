@@ -249,3 +249,33 @@ bytes, not the old 352/414 or DATA10. Receipt:
 `.analysis/unit-replays/gpt-web-main-boss-collision-43-and-neighbors-20261110/receipt.json`.
 See [collision review](collision.md). Earlier 43/46 and unaccepted references
 throughout this document are historical failed trial results.
+
+## 2026-11-13: fixed big-circle defeat transition is explicit
+
+The complete `boss_defeat_update(unsigned int)` has one big-explosion
+operation: it always calls `boss_explode_big_circle()`. Its former
+`boss_defeat_explode_big(type, bonus_units)` macro accepted an `explosion_type`
+argument but never read it, so the call-site `ET_CIRCLE` looked like a
+selectable parameter even though no choice reached the renderer. The source
+now names the operation `boss_defeat_explode_big_circle(bonus_units)` and
+removes the dead type argument. The body still activates bullet zap from the
+existing `boss.phase_state.defeat_bonus`, conditionally awards the supplied
+bonus, installs the same kill sprite and resets the phase clock.
+
+This is a source/API semantic clarification, not a gameplay or machine-code
+change. The complete **414-byte** defeat callback, all six generic Boss helper
+functions, 43-byte player-collision leaf, 10-byte item-drop DATA and every
+accepted consumer of `generic.hpp` were recompiled in focused cohorts. The
+remaining shared-header closure covers two Midboss units, Louise, Yumeko,
+EX-Alice and their pattern/weapon consumers. Eighteen complete CODE/DATA
+owners passed two independent Borland/TLINK producers with their original raw
+bytes and ordered fixups; each selected cohort's compiled negative was
+rejected. Receipts:
+
+- `.analysis/unit-replays/gpt-web-generic-boss-circle-data-20261113/receipt.json`
+- `.analysis/unit-replays/gpt-web-generic-boss-circle-extra-data-20261113/receipt.json`
+- `.analysis/unit-replays/gpt-web-generic-boss-circle-code-20261113/receipt.json`
+
+No CODE/DATA extent or ownership credit is added; this improves the actual
+shared defeat source contract without duplicating the already accepted 414-byte
+Boss controller.
