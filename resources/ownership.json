@@ -25,8 +25,8 @@
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7368,
-    "unknown": 7578,
-    "verified-vendor-code": 140094,
+    "unknown": 6995,
+    "verified-vendor-code": 140677,
     "verified-vendor-initialized-data": 7876
   },
   "views": {
@@ -7722,7 +7722,7 @@
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
       "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
       "enemy_vm_asm_review_sha256": "38634734cde0403b101798b095a773fa532f59af6384bed465fc450408b7a74d",
-      "asm_family_review_sha256": "99dcc7946ae1a61d8dbb373d2b60e741a2d1e6066faf1c6f71d7ab72659cce47",
+      "asm_family_review_sha256": "45f6304898eb2a2fc6420b38403fc1d6650435897ef0a9907ab231b911bec49c",
       "sprite_resource_review_sha256": "cd08488adcf19bf9454ff7b2619087d6de2d59ae2b42565948c1e9cd11cd8a6a"
     },
     "op": {
@@ -11074,7 +11074,7 @@
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
       "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
-      "asm_family_review_sha256": "99dcc7946ae1a61d8dbb373d2b60e741a2d1e6066faf1c6f71d7ab72659cce47",
+      "asm_family_review_sha256": "45f6304898eb2a2fc6420b38403fc1d6650435897ef0a9907ab231b911bec49c",
       "piano_resource_review_sha256": "889bb50cdb987355d2290314d6d6c136a4316ffe61130854c22e23bc7a629c55"
     },
     "maine": {
@@ -14505,7 +14505,7 @@
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
       "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
-      "asm_family_review_sha256": "99dcc7946ae1a61d8dbb373d2b60e741a2d1e6066faf1c6f71d7ab72659cce47"
+      "asm_family_review_sha256": "45f6304898eb2a2fc6420b38403fc1d6650435897ef0a9907ab231b911bec49c"
     },
     "zun": {
       "kind": "com-file",
@@ -14519,8 +14519,8 @@
         "accepted-zun-com-instructions": 1843,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
-        "unknown": 3110,
-        "verified-vendor-code": 2418,
+        "unknown": 2527,
+        "verified-vendor-code": 3001,
         "verified-vendor-initialized-data": 116
       },
       "intervals": [
@@ -14916,8 +14916,120 @@
         },
         {
           "start": 5050,
+          "end": 5071,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-_abort",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 21,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "_abort"
+        },
+        {
+          "start": 5071,
+          "end": 5111,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-atexit",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 40,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "atexit"
+        },
+        {
+          "start": 5111,
+          "end": 5142,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-errormsg",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 31,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "errormsg"
+        },
+        {
+          "start": 5142,
+          "end": 5302,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-exit",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 160,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "exit"
+        },
+        {
+          "start": 5302,
+          "end": 5384,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-ioerror",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 82,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "ioerror"
+        },
+        {
+          "start": 5384,
+          "end": 5405,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-isatty",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 21,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "isatty"
+        },
+        {
+          "start": 5405,
+          "end": 5450,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-lseek",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 45,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "lseek"
+        },
+        {
+          "start": 5450,
+          "end": 5478,
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-n_scopy",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 28,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "n_scopy"
+        },
+        {
+          "start": 5478,
           "end": 5633,
-          "kind": "unknown"
+          "kind": "verified-vendor-code",
+          "unit": "borland-ctlib-setupio",
+          "origin": "reviewed-native-zun-com-reconstruction",
+          "source_origin": "pinned-borland-ct-library-original-object",
+          "instruction_bytes": 155,
+          "authored_credit": 0,
+          "content_kind": "original-OMF-CODE-LEDATA",
+          "library": "Borland Turbo C++ 4.0 CT.LIB",
+          "member": "setupio"
         },
         {
           "start": 5633,
@@ -15061,7 +15173,7 @@
           "instruction_bytes": 68
         }
       ],
-      "zun_native_modules_review_sha256": "540e0e43cd221c2167d2fac7503e030f76d7c9464cff318b5a88133a60c8f6e6",
+      "zun_native_modules_review_sha256": "f49184d02d9de8b4422f31dcd8b3c25ad48004499b422162a948ea770f620320",
       "zun_crt_review_sha256": "3c657fee9677a83634e1ceb3258d70cae8cbc3884ec9dfe4112a512c10966fbb",
       "font_resource_review_sha256": "68d3cc49ed792d1076d9ab2e90e03de763545276b45e1c93370413a0a57b94d1"
     }

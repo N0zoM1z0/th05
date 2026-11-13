@@ -883,11 +883,11 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
                 root, view=view, verify_targets=verify_targets)
             pieces = overlay_vendor(view["size"], pieces, crt_claims)
             # The original COM's independently accepted outer wrapper,
-            # dispatcher, four standalone child modules, and two Master
-            # resident source families were not yet reflected in this map.
-            # Overlay only their exact source-written bytes; leave all remaining
-            # -S bytes, the writable CRT CS slot, and the external font resource
-            # to their separate owners/unknown policy.
+            # dispatcher, standalone child modules, Master resident families,
+            # Borland brk/nearheap members, and early CT.LIB code partition are
+            # reflected by exact bounded reviews. Leave all remaining -S bytes,
+            # the writable CRT CS slot, and external font resource to their
+            # separate owners/unknown policy.
             from review_zun_ownership import reviewed_claims as reviewed_zun_modules
             zun_claims, zun_review_sha = reviewed_zun_modules(
                 root, view=view, verify_targets=verify_targets)
