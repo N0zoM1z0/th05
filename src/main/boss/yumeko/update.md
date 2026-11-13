@@ -238,3 +238,42 @@ Borland/TLINK producers preserve every original byte and ordered relocation;
 the compiled negative is rejected. Receipt:
 `.analysis/unit-replays/gpt-web-yumeko-byte15-overlay-20261113/receipt.json`.
 No duplicate CODE credit or new storage is introduced.
+
+
+## 2026-11-13: inclusive final-ring volley clock and timeout reward latch
+
+The phase-10 controller increments `boss.phase_frame` before dispatch and
+calls `yumeko_pattern_final_ring()` before its strict `< 1200` HP gate. The
+leaf's strict charge test is `< 32`, so it configures the turn attack and
+clears byte-14 angle/byte-15 count at frame 16, remains in charge through
+frame 31, and emits its first volley at frame 32. Thereafter it fires every
+16 frames through frame 1200 **inclusive**: frames 32, 48, ..., 1200 give
+**74 volleys**. Frame 1200 is the last volley and then the timeout branch
+skips `boss_hittest_shots()`; it is not a silent pre-timeout frame.
+
+The 74 volleys split evenly between the two original parity branches. Even
+counts use the advancing angle with `turn_by = -0x40`; odd counts reflect the
+angle through `0x80 - angle` and use `turn_by = +0x40`. The first two emitted
+angles are `0x00` and `0x7F`; the 74th uses reflected angle `0x37`. The
+byte-14 angle and byte-15 count both finish at 74, and `bullet_special.turns_max`
+remains 2 from the frame-16 setup. `phase_timing.hpp` now names the first
+volley frame and derives the 74-volley count from the actual timeout and
+interval instead of leaving the inclusive boundary implicit.
+
+The final approach's phase-clock handoff also clears
+`boss.phase_state.patterns_seen`, which is the same physical byte as
+`defeat_bonus` at Boss offset 21. A hit-triggered exit before frame 1200 sets
+that flag; the timed exit at frame 1200 skips the write and therefore retains
+false. The final-ring leaf still executes before either exit, the custom-bullet
+renderer is replaced by `nullfunc_near`, and the current updater tail still
+runs `swords_update()` and the HP HUD once on the explosion-entry tick.
+
+`tests/test_yumeko_final_ring.py` models the exact charge/volley/timeout order,
+all 74 parity-selected shots, the terminal angle/count, and the HP-vs-time
+reward latch against the accepted 884-byte controller source. The focused
+`main-yumeko-update` replay at
+`.analysis/unit-replays/9534bfa63ae64de4ab83b67cbb9b2832/receipt.json`
+passed two fresh Borland/TLINK producers: **884/884 raw bytes** and the six
+original ordered MZ fixups `[399,344,333,270,161,79]`. The compiled control
+changed `turns_max` from2 to3 and was rejected. This is a semantic clarification
+of an already accepted large Boss owner, not additional CODE credit.

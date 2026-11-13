@@ -31,7 +31,8 @@ enum YumekoPhase {
 
 void near yumeko_pattern_final_ring(void)
 {
-    if(boss.phase_frame < YUMEKO_FINAL_RING_CHARGE_END_FRAME) {
+    // The strict charge bound makes frame 32 the first volley frame.
+    if(boss.phase_frame < YUMEKO_FINAL_RING_FIRST_VOLLEY_FRAME) {
         gather_add_only_3stack(
             boss.phase_frame - YUMEKO_FINAL_RING_GATHER_LEAD_FRAMES,
             YUMEKO_FINAL_RING_GATHER_COLOR, YUMEKO_FINAL_RING_GATHER_SECONDARY_COLOR
@@ -226,11 +227,15 @@ void pascal far yumeko_update(void)
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(YUMEKO_ARENA_CENTER_X_PX), to_sp(YUMEKO_FINAL_APPROACH_Y_PX))) {
             YUMEKO_ADVANCE_PHASE_CLOCK();
+            // patterns_seen aliases defeat_bonus at Boss byte 21. Clear it
+            // on arrival so a timed final-ring exit cannot inherit a reward.
             boss.phase_state.patterns_seen = 0;
         }
         break;
 
     case YUMEKO_PHASE_FINAL_RING:
+        // Run the leaf first: frame 1200 still fires the 74th volley, then
+        // the strict timeout skips the HP-only defeat_bonus write.
         yumeko_pattern_final_ring();
         if(boss.phase_frame < YUMEKO_FINAL_RING_TIMEOUT_FRAMES) {
             if(!boss_hittest_shots()) {
