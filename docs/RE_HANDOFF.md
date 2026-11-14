@@ -153,6 +153,37 @@ all documented BB-loader and Vector2 trials, ledger-root receipts, native
 producers, calibration builds, ASM evidence, toolchain and Ghidra state remain.
 
 
+## 2026-11-14: reviewed-ASM owners reclassified as compiler-generated C++
+
+Several functions owned as "handwritten" ASM are TCC output: ReC98 compiles
+them from C++ TUs, or they lie inside a TU whose neighbours are already
+accepted C++. Each now has exact C++ (two producers, compiled negative
+rejected) and its ASM family has been retired:
+
+| Function | Binaries | Bytes | Notes |
+| --- | --- | ---: | --- |
+| gather template copies (to/from) | MAIN | 27 + 27 | [copy.md](../src/main/gather/copy.md) |
+| `tiles_invalidate_reset/all` | MAIN | 42 (1 NOP) | [invalidate_all.md](../src/main/tile/invalidate_all.md) |
+| `cdg_put_noalpha_8` | MAIN/OP/MAINE | 3 × 102 (2 NOPs each) | [cdg_opaque.md](../src/shared/graphics/cdg_opaque.md) |
+| `egc_copy_rect_1_to_0_16` | OP/MAINE | 2 × 124 (1 NOP each) | [egc_rect_copy.md](../src/shared/hardware/egc_rect_copy.md) |
+| Yumeko `swords_update` | MAIN | 283 | [swords_update.md](../src/main/boss/yumeko/swords_update.md) |
+| `hitshot_from` | MAIN | 108 | [hitshot_from.md](../src/main/player/hitshot_from.md) |
+
+How to judge the remaining ASM owners: ReC98 `.cpp` alone is not proof, since
+`snd_load` is "a decompilation of ZUN-written ASM" (ReC98 01c92da1).
+Separately assembled ReC98 TUs (`player.asm`, `spark_a.asm`, `bullet*.asm`,
+`hud_*.asm`, `cdg_put.asm`, `cdg_load.asm`, `pi_asm_*.asm`, `input_s.asm`,
+`vector2n.asm`, `hfliplut.asm`, ...) are ZUN's ASM. Register-argument or
+BX-relative frameless entries, `LOOP`, and BP-as-data are ASM shapes. The
+laser geometry/ray/hittest TU (348 bytes) is TCC-compiled per ReC98, but nearly
+every instruction there needs an opcode emit, so a C++ shell would be a
+transcription; it stays ASM.
+
+The verifier no longer pins Markdown notes or `scripts/` hashes in the
+ASM/C++ acceptance paths. Many vendor reviewers still self-hash their own
+scripts, so avoid editing `scripts/lib/unit_oracle.py`, `review_master.py` and
+similar pinned libraries unless you are prepared to clear those gates.
+
 ## 2026-11-14: Yumeko's cross-phase Boss scratch is now typed
 
 Commit `5c803311` (`gpt-web: type Yumeko shared boss scratch lifetimes`) names

@@ -30,13 +30,9 @@ be described as uncovered code:
 
 ## Resolved since the previous handoff
 
-Yumeko's 283-byte `swords_update()` already has a complete, exact reviewed-ASM
-owner. Its maintained source is now fully natural C++ and reproduces the same
-bytes in two fresh producers of the complete original-order 2,139-byte context;
-its compiled twirl-step negative is rejected. The ASM owner remains sole CODE
-credit, with no overlapping C++ claim. This source-language refinement is
-resolved, not an open executable gap. See
-[the exact pure-C++ context result](../../src/main/boss/yumeko/swords_update.md).
+Yumeko's 283-byte `swords_update()` is now owned by exact C++ (2026-11-14);
+the reviewed-ASM owner was retired. See
+[the C++ result](../../src/main/boss/yumeko/swords_update.md).
 
 ## Current follow-up candidates for an incoming agent
 
