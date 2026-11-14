@@ -322,3 +322,11 @@ separates the last bullet-angle transition from the first beam-angle update
 without resetting either clock. The geometry test pins all four origins,
 red/decorative angle order, mirror-write order, both reversal thresholds, and
 the first post-latch turn frame.
+
+
+The controller deliberately retains the byte-10 `phase_relative` comparison
+when deciding whether the shared wing phase advances into Devil or exits to
+phase 12. Substituting `boss.phase == SHINKI_PHASE_SYMMETRIC_SPREADS` looks
+behaviorally simpler, but the focused original-target replay changes the
+959-byte update-context contribution. The byte comparison is therefore part
+of the exact source reconstruction, not merely a leftover phase counter.

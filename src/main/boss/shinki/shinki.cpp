@@ -517,11 +517,9 @@ void near shinki_move_float(void)
 
 void pascal shinki_update(void)
 {
-	// A completely unnecessary variable to differentiate between multiple
-	// phases that share the same `switch` body, because [boss.phase] itself
-	// is not good enough?
-	// Careful, collides with [lasers_active] in pattern_devil()!
-	// MODDERS: Just use [boss.phase].
+	// This byte selects phase 9's shared-wave exit and aliases the Devil
+	// laser latch in phase 10. Replacing the selector with boss.phase is
+	// logically tempting, but changes the original 959-byte update context.
 	#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index
 
 	enum {

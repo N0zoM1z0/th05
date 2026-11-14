@@ -106,6 +106,8 @@ class ShinkiDevilLifecycleTests(unittest.TestCase):
         self.assertIn("offsetof(ShinkiPhaseScratch, wave_or_laser) == 10", SCRATCH)
         self.assertIn("offsetof(ShinkiDevilScratch, wave_or_laser) == 10", SCRATCH)
         self.assertIn("#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index", SHINKI)
+        self.assertIn("Replacing the selector with boss.phase is", SHINKI)
+        self.assertIn("Replacing the selector with boss.phase is", CONTEXT)
         self.assertRegex(DEVIL, r"#define\s+lasers_active\s+shinki_devil_scratch\.wave_or_laser\.devil_lasers_active")
 
         startup = DEVIL[DEVIL.index("if(phase_frame_minus_startup_delay == 0)"):]
@@ -119,6 +121,8 @@ class ShinkiDevilLifecycleTests(unittest.TestCase):
             attack_call = "wing_pattern();" if "wing_pattern();" in phase else "SHINKI_WING_FLIGHT_AND_ATTACK();"
             self.assertLess(phase.index(attack_call), phase.index("phase_done = boss_hittest_shots();"))
             self.assertLess(phase.index("phase_done = boss_hittest_shots();"), phase.index("if(phase_relative == SHINKI_FIRST_SHARED_WAVE)"))
+            self.assertIn("if(phase_relative == SHINKI_FIRST_SHARED_WAVE)", phase)
+            self.assertNotIn("if(boss.phase == SHINKI_PHASE_SYMMETRIC_SPREADS)", phase)
             first = phase[phase.index("if(phase_relative == SHINKI_FIRST_SHARED_WAVE)"):phase.index("} else {")]
             self.assertIn("boss_phase_next(ET_SW_NE, HP_PHASE_10_END);", first)
             self.assertIn("shinki_wing_pattern = pattern_devil;", first)
