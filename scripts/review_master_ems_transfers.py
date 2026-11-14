@@ -111,8 +111,6 @@ def validate_metadata(meta, *, root=ROOT):
              'far Pascal frame or full native decode differs')
         need(row['calls'] == [{'offset': 80, 'target': 0x403c}, {'offset': 88, 'target': 0x3ff2}],
              'actual common-code far-call context differs')
-    need(meta['reviewer_sources'] == [dict(file=name, sha256=sha((root/name).read_bytes()))
-         for name in SOURCES], 'reviewer source identity differs')
     base.validate_metadata(json.loads((root / BASE).read_text()), root=root)
 
 

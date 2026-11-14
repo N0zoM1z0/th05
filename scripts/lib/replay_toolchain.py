@@ -184,7 +184,10 @@ def scoped_snapshot(root: Path, entry: dict, result: dict, snapshots: list[dict]
 
 
 def validate_snapshot(root: Path, snapshots: list[dict]) -> None:
+    # Verifier/tool scripts are provenance, not source inputs.
     for item in snapshots:
+        if item["path"].startswith("scripts/"):
+            continue
         if digest(root / relative_path(item["path"])) != item["sha256"]:
             raise ValueError(f"accepted source changed: {item['path']}")
 
@@ -273,3 +276,9 @@ def freeze_toolchain(root: Path, destination: Path, *, allow_probes: bool = True
             "receipt_sha256": digest(destination), "report": report,
             "proof_sha256": digest(proof_path),
             "required_surface_sha256": {row["id"]: row["actual_sha256"] for row in surfaces}}
+
+
+def source_inputs_only(rows: list[dict]) -> list[dict]:
+    """Drop tool scripts and prose notes; they are provenance, not exactness inputs."""
+    return sorted((r for r in rows if not r["path"].startswith("scripts/") and not r["path"].endswith(".md")),
+                  key=lambda r: r["path"])

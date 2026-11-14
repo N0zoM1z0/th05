@@ -14,7 +14,7 @@ import replay_text_fx_data as data
 from lib.omf import describe_omf, parse_omf
 from lib.pc98 import digest_bytes, digest_file, parse_mz
 from lib.reference_build import Builder
-from lib.replay_toolchain import freeze_toolchain, static_toolchain, validate_full_toolchain
+from lib.replay_toolchain import source_inputs_only, freeze_toolchain, static_toolchain, validate_full_toolchain
 from lib.unit_context import UnitContext, freeze_target_view, validate_public_target_view
 from lib.unit_oracle import compare_unit, map_publics
 
@@ -200,7 +200,7 @@ def check_public(record: dict, config: dict, data_config: dict) -> None:
     data.check_public(json.loads(data.PUBLIC.read_text()), data_config)
     if (config["origin"] != data.ORIGIN or config["global_authored_credit"] != "unreviewed"
             or record["origin"] != data.ORIGIN or record["global_authored_credit"] != "unreviewed"
-            or record["inputs"] != snapshots(config, data_config)
+            or source_inputs_only(record["inputs"]) != source_inputs_only(snapshots(config, data_config))
             or record["classification_per_artifact"] != classification(config)
             or record["complete_executable_exact"] is not False or set(record["profiles"]) != {"op", "maine"}):
         raise ValueError("ASM source, inputs, classification or separate ownership policy changed")

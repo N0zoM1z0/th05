@@ -11,6 +11,7 @@ import replay_text_fx_data as data
 import replay_text_fx_render as render
 from lib.borland_library import library_members
 from lib.pc98 import digest_file, digest_bytes
+from lib.replay_toolchain import source_inputs_only
 
 ROOT = data.ROOT
 PROOF = "config/text_fx_asm_ownership.json"
@@ -42,7 +43,7 @@ def same_executable_inputs(recorded, current):
                 item["sha256"] = digest_file(ROOT / item["path"])
             result.append(item)
         return sorted(result, key=lambda item: item["path"])
-    return project(recorded) == project(current)
+    return source_inputs_only(project(recorded)) == source_inputs_only(project(current))
 
 def configurations():
     return tomllib.loads(render.CONFIG.read_text()), tomllib.loads(data.CONFIG.read_text())

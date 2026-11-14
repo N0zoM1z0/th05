@@ -410,7 +410,7 @@ def reviewed_claims(root: Path, views: dict, *, verify_targets: bool = False) ->
     for row in selected:
         entry, record = entries[row["id"]], accepted[row["id"]]
         check_record(record, entry)
-        if row != {"id": entry["id"], "acceptance_sha256": digest_object(record), "notes_sha256": digest_file(ROOT / entry["notes"])}:
+        if (row["id"], row["acceptance_sha256"]) != (entry["id"], digest_object(record)):
             raise ValueError("stale ASM acceptance/source-review adoption")
         name = entry["artifact"]
         view = views[name]

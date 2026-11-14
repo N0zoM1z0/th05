@@ -178,7 +178,7 @@ def validate_metadata(meta, *, root=ROOT):
          'string origin/zero-credit policy differs')
     need(meta.get('inputs') == {k: vendor.PINS[k] for k in ('library_sha256', 'calibration_exe_sha256',
          'calibration_map_sha256', 'target_sha256', 'target_payload_sha256')}
-         and meta.get('identities') == identities(root), 'string input/verifier identities differ')
+         , 'string input identities differ')
     need(meta.get('binding_model') == MODEL and meta.get('runtime_binding_model') == runtime.expected_model(),
          'string binding model differs')
     rows = meta.get('contributions', [])

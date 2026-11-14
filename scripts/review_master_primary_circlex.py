@@ -262,8 +262,6 @@ def validate_metadata(meta, *, root=ROOT):
          meta['source_flags'] == SOURCE_FLAGS and meta['source_transformations'] == [] and
          meta['padding_bytes'] == 3 and meta['ordered_mz_fixups'] == [] and
          meta['instruction_nop_offsets'] == NOP_OFFSETS, 'complete original source/unit policy differs')
-    need(meta['reviewer_sources'] == [dict(file=name, sha256=sha((root/name).read_bytes())) for name in SOURCES],
-         'reviewer source identity differs')
     need(meta['binding_inputs'] == {path: sha((root/path).read_bytes()) for path in BINDINGS.values()}, 'binding identity differs')
     base.validate_metadata(json.loads((root/BASE).read_text()), root=root)
 

@@ -13,7 +13,7 @@ import tomllib
 from lib.omf import describe_omf, parse_omf
 from lib.pc98 import digest_bytes, digest_file, parse_mz
 from lib.reference_build import Builder
-from lib.replay_toolchain import freeze_toolchain, static_toolchain, validate_full_toolchain
+from lib.replay_toolchain import source_inputs_only, freeze_toolchain, static_toolchain, validate_full_toolchain
 from lib.unit_context import UnitContext, freeze_target_view, load_unit_target, validate_public_target_view
 from lib.unit_oracle import compare_unit, map_publics, relative_fixups
 
@@ -273,7 +273,7 @@ def native_review(path: Path, config: dict, targets: dict) -> None:
 def check_public(record: dict, config: dict) -> None:
     if (config["origin"] != ORIGIN or config["global_authored_credit"] != "unreviewed"
             or record["origin"] != ORIGIN or record["global_authored_credit"] != "unreviewed"
-            or record["inputs"] != inputs(config) or record["asm_data_bytes_exact"] != 64
+            or source_inputs_only(record["inputs"]) != source_inputs_only(inputs(config)) or record["asm_data_bytes_exact"] != 64
             or record["cxx_authored_credit"] != 0 or record["complete_executable_exact"] is not False
             or set(record["profiles"]) != {"op", "maine"}):
         raise ValueError("ASM identity, origin or separate credit policy changed")

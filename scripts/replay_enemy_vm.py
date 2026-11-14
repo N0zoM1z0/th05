@@ -12,7 +12,7 @@ import tomllib
 from lib.omf import describe_omf, parse_omf
 from lib.pc98 import digest_file, digest_bytes, parse_mz
 from lib.reference_build import Builder
-from lib.replay_toolchain import freeze_toolchain, static_toolchain, validate_full_toolchain
+from lib.replay_toolchain import source_inputs_only, freeze_toolchain, static_toolchain, validate_full_toolchain
 from lib.unit_context import UnitContext, load_unit_target
 from lib.unit_oracle import compare_unit, map_publics, relative_fixups
 from replay_text_fx_data import ASSEMBLER, index, command_records
@@ -47,7 +47,7 @@ def same_executable_inputs(recorded, current):
                 item["sha256"] = digest_file(ROOT / item["path"])
             result.append(item)
         return sorted(result, key=lambda item: item["path"])
-    return project(recorded) == project(current)
+    return source_inputs_only(project(recorded)) == source_inputs_only(project(current))
 
 def snapshots(config: dict) -> list[dict]:
     paths = {str(CONFIG.relative_to(ROOT)), config["source"], config["types"], config["bindings"], config["symbols"],

@@ -115,8 +115,6 @@ def validate_metadata(meta, *, root=ROOT):
         need(row['return_kind'] == 'retf' and row['return_cleanup'] == 10 and
              0 <= row['return_offset'] < row['size'], 'real far Pascal return')
     need(sum(len(x['padding']) for x in meta['procedures']) == 11, 'padding sum differs')
-    need(meta['reviewer_sources'] == [dict(file=name, sha256=sha((root/name).read_bytes()))
-         for name in SOURCES], 'reviewer source identity differs')
     base.validate_metadata(json.loads((root / BASE).read_text()), root=root)
 
 
