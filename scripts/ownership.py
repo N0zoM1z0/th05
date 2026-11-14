@@ -585,50 +585,107 @@ def reviewed_master_sin8(root: Path, *, views: dict, targets: dict,
 
 
 
+def c0l_data_template(root: Path) -> bytes:
+    """C0L.OBJ's complete 144-byte _DATA (segment 6) from its LEDATA/LIDATA."""
+    import struct
+    from lib.omf import parse_omf
+    from lib.unit_extents import _index as omf_index
+    from review_vendor_reserved import expand_lidata
+    source = (root / ".analysis/toolchain/installed/tc40j/LIB/C0L.OBJ").read_bytes()
+    body, covered = bytearray(0x90), bytearray(0x90)
+    for rec in parse_omf(source):
+        if rec.name not in ("LEDATA", "LIDATA"):
+            continue
+        segment, at = omf_index(rec.data, 0)
+        if segment != 6:
+            continue
+        off = struct.unpack_from("<H", rec.data, at)[0]
+        at += 2
+        if rec.name == "LEDATA":
+            payload = rec.data[at:]
+        else:
+            chunks = []
+            while at < len(rec.data):
+                chunk, at = expand_lidata(rec.data, at, 0x90)
+                chunks.append(chunk)
+            payload = b"".join(chunks)
+        body[off:off + len(payload)] = payload
+        covered[off:off + len(payload)] = b"\1" * len(payload)
+    if not all(covered):
+        raise ValueError("C0L.OBJ _DATA is not completely initialized")
+    return bytes(body)
+
+
+C0L_BSSEND_WORD = 0x82  # the only fixup in C0L _DATA (offset of _BSSEND)
+
+
 def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict], *,
                           verify_targets: bool) -> list[dict]:
-    """Relabel listed unknown alignment gaps and retained MZ headers (zero credit)."""
+    """Relabel listed parts of unknown intervals as reviewed zero-credit bytes."""
     path = root / "config/reviewed_gaps.json"
     if not path.exists():
         return pieces
-    rows = [r for r in json.loads(path.read_text())["gaps"] if r["view"] == name]
+    rows = sorted((r for r in json.loads(path.read_text())["gaps"] if r["view"] == name),
+                  key=lambda r: r["start"])
     if not rows:
         return pieces
     image = None
     if verify_targets:
         context = UnitContext(root, name)
         image = load_unit_target(context, context.config())[1].program_image
-    unknown = {(p["start"], p["end"]): i for i, p in enumerate(pieces) if p["kind"] == "unknown"}
     out = list(pieces)
     for row in rows:
         start, end = row["start"], row["start"] + row["size"]
-        if (start, end) not in unknown:
-            raise ValueError(f"reviewed gap is not an exact unknown interval: {name} {start:#x}")
-        if row["kind"] == "checked-uncredited-alignment-gap":
+        hosts = [i for i, p in enumerate(out) if p["kind"] == "unknown" and p["start"] <= start and end <= p["end"]]
+        if len(hosts) != 1:
+            raise ValueError(f"reviewed gap is not inside one unknown interval: {name} {start:#x}")
+        i = hosts[0]
+        host = out[i]
+        before = out[i - 1] if host["start"] == start else {"kind": "unknown"}
+        after = out[i + 1] if host["end"] == end and i + 1 < len(out) else {"kind": "unknown"}
+        kind = row["kind"]
+        if kind == "checked-uncredited-alignment-gap":
             n, fill = row["size"], row["fill"]
             if not ((n == 1 and end % 2 == 0 and fill in (0, 0x90)) or (n < 16 and end % 16 == 0 and fill == 0)):
                 raise ValueError(f"reviewed gap violates the alignment rule: {name} {start:#x}")
             if image is not None and image[start:end] != bytes([fill]) * n:
                 raise ValueError(f"reviewed gap bytes differ: {name} {start:#x}")
-        elif row["kind"] == "reviewed-bss-prefix":
+        elif kind == "reviewed-bss-prefix":
             # _BSS follows _EXITEND_ directly: zeros from the last exit record
             # up to the first reviewed uninitialized storage.
-            i = unknown[(start, end)]
-            before, after = pieces[i - 1], pieces[i + 1] if i + 1 < len(pieces) else {}
             if (before.get("member") != "new/_EXIT_" or
                     not str(after.get("kind", "")).startswith("reviewed-uninitialized")):
                 raise ValueError(f"BSS prefix is not between the exit records and BSS: {name}")
             if image is not None and any(image[start:end]):
                 raise ValueError(f"BSS prefix bytes are not zero: {name}")
-        elif row["kind"] == "reviewed-linker-mz-header":
+        elif kind == "verified-c0l-data":
+            # Borland C0L.OBJ _DATA opens DGROUP at a paragraph boundary.
+            if row["size"] != 0x90 or start % 16:
+                raise ValueError(f"C0L DATA extent differs: {name}")
+            if image is not None:
+                raw = image[start:end]
+                tpl = c0l_data_template(root)
+                w = C0L_BSSEND_WORD
+                if raw[:w] != tpl[:w] or raw[w + 2:] != tpl[w + 2:] or \
+                        hashlib.sha256(raw).hexdigest() != row["sha256"]:
+                    raise ValueError(f"C0L DATA bytes differ: {name}")
+        elif kind == "reviewed-linker-mz-header":
             if end != view["size"]:
                 raise ValueError("retained MZ header must end the decoded view")
             if image is not None and hashlib.sha256(image[start:end]).hexdigest() != row["sha256"]:
                 raise ValueError(f"retained MZ header bytes differ: {name}")
         else:
             raise ValueError("unknown reviewed gap kind")
-        out[unknown[(start, end)]] = {"start": start, "end": end, "kind": row["kind"]}
+        label = {"start": start, "end": end, "kind": kind}
+        if kind == "verified-c0l-data":
+            label = {**label, "kind": "verified-vendor-initialized-data", "library": "C0L.OBJ",
+                     "member": "C0L_DATA", "content_kind": "library-initialized-data",
+                     "instruction_bytes": 0, "authored_credit": 0}
+        split = ([{"start": host["start"], "end": start, "kind": "unknown"}] if host["start"] < start else []) \
+            + [label] + ([{"start": end, "end": host["end"], "kind": "unknown"}] if end < host["end"] else [])
+        out[i:i + 1] = split
     return out
+
 
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.

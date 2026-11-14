@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "kind": "gapless-observed-coordinate-inventory",
-  "authored_denominator": 144701,
-  "percentage": 99.683,
+  "authored_denominator": 144399,
+  "percentage": 99.891,
   "authored_exact_bytes": 144242,
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
@@ -17,7 +17,7 @@
     "accepted-reviewed-asm-semantic-code-table": 36,
     "accepted-zun-com-initialized-data": 1514,
     "accepted-zun-com-instructions": 1843,
-    "checked-uncredited-alignment-gap": 166,
+    "checked-uncredited-alignment-gap": 180,
     "checked-uncredited-asm-alignment": 78,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 24,
@@ -29,9 +29,9 @@
     "reviewed-linker-mz-header": 3450,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7378,
-    "unknown": 459,
+    "unknown": 157,
     "verified-vendor-code": 142514,
-    "verified-vendor-initialized-data": 8819
+    "verified-vendor-initialized-data": 9107
   },
   "views": {
     "main": {
@@ -7894,7 +7894,7 @@
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 2054,
         "accepted-reviewed-asm-semantic-code-table": 36,
-        "checked-uncredited-alignment-gap": 31,
+        "checked-uncredited-alignment-gap": 35,
         "checked-uncredited-asm-alignment": 7,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -7905,9 +7905,9 @@
         "reviewed-linker-mz-header": 2012,
         "reviewed-uninitialized-game-storage": 288,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 184,
+        "unknown": 36,
         "verified-vendor-code": 44923,
-        "verified-vendor-initialized-data": 2469
+        "verified-vendor-initialized-data": 2613
       },
       "intervals": [
         {
@@ -10510,8 +10510,18 @@
         },
         {
           "start": 61404,
+          "end": 61408,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 61408,
           "end": 61552,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "library": "C0L.OBJ",
+          "member": "C0L_DATA",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "authored_credit": 0
         },
         {
           "start": 61552,
@@ -11401,7 +11411,7 @@
         "accepted-cxx-switch-table": 164,
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 1653,
-        "checked-uncredited-alignment-gap": 37,
+        "checked-uncredited-alignment-gap": 47,
         "checked-uncredited-asm-alignment": 5,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -11410,9 +11420,9 @@
         "reviewed-linker-mz-header": 1438,
         "reviewed-uninitialized-game-storage": 288,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 183,
+        "unknown": 29,
         "verified-vendor-code": 45347,
-        "verified-vendor-initialized-data": 2715
+        "verified-vendor-initialized-data": 2859
       },
       "intervals": [
         {
@@ -14001,8 +14011,18 @@
         },
         {
           "start": 65798,
+          "end": 65808,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 65808,
           "end": 65952,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "library": "C0L.OBJ",
+          "member": "C0L_DATA",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "authored_credit": 0
         },
         {
           "start": 65952,
