@@ -324,3 +324,71 @@ five-to-four red-stack negative remains rejected. Receipt:
 two-clock schedule: slowdown frames 64/128/150/180, terminal rotation frame
 210, and random-ball count growth through frame 448. Run it with
 `python3 -m unittest tests.test_sara_corridor_timing -v`.
+
+
+## 2026-11-14: mobile-wave transition counts and the final laser corridor
+
+The HP-fill phase starts its two gather colors at Boss frame **224**
+(`HUD_HP_FILL_FRAMES 128 + extra delay 96`) and ends inclusively at frame
+**256**. Because the gather tick is `phase_frame & 7 == 0`, the actual ring
+spawns are frames **224, 232, 240, 248, 256**: one first-color ring and four
+second-color rings. The frame-256 spawn happens before the phase transition.
+The following BB entrance lasts `2 * 16 = 32` frames. Its exit resets the
+pattern counter, initializes phase two's fly delay to 64, and sets the shared
+previous-pattern byte to `0xFF`.
+
+The phase-two/three selector increments `boss.phase_state.patterns_seen`
+*before* checking its configured limit, and the check happens before choosing
+the next callback. Consequently the limits **32** and **24** mean 31 and 23
+actual attack patterns respectively; the terminal reposition is counted but
+does not select another pattern. That terminal `goto` also skips the common
+hit-test/score macro on that frame. The four callback choices are selected
+from one row of `SARA_PATTERNS_PHASE_2_3[2][4]`, with a `do/while` preventing
+an immediate repeat. The previous-mode byte is at offset 10 in both phase
+views and is deliberately carried across the phase-two/three boundary, so the
+first spinning-ring pattern cannot repeat the final blue/red pattern.
+
+Phase two's reposition delay is a guarded subtraction, not a clamp:
+`64 -> 52 -> 40 -> 28 -> 16 -> 4`. Since the guard is `> 12`, the final
+subtraction deliberately crosses below it. Phase three's pattern duration is
+similarly staircased: `80 -> 104 -> 128 -> 152 -> 176 -> 200`. Its guard is
+`< 180`, so the last increment overshoots to 200. The spin sprite advances
+once per frame through frame 63, then every 2/4/8 frames in the 64-95,
+96-127 and 128-159 bands; after frame 159 the spin frame stops advancing.
+
+The final corridor creates its two fixed lasers on Boss frame **32**. The
+right/left slots are 0/1, and their initial angles are `0xE0` and `0xA0`
+(the mirrored `-0x40 +/- 0x20` directions). Both use width 8 and color 8;
+only the first call initializes the shared template. The creation callback
+returns immediately, so the first angle update is frame 33. The grow callback
+runs at frame 64, but the global loop has already executed `lasers_update()`
+for that frame. The lasers therefore remain waiting through frame 64, start
+width growth at frame 66, reach width 9 on frame 72, and perform their first
+actual hit-test on frame **73**. The width overshoot is the original `+2`
+odd-age growth rule, not a target-width clamp.
+
+The laser angle interval starts at 1. Its four slowdown thresholds are reached
+at frames **64, 128, 150, 180**, changing the interval to 2, 3, 4, then 5.
+Importantly, `0x50` is only the last slowdown threshold; the independent
+terminal angle is `0x4A`. Six more turns at the 5-frame interval occur on
+185/190/195/200/205/210, and the sweep finally stops at frame **210** with
+right/left angles `0x36/0x4A`. This distinction prevents mistaking the final
+slowdown threshold for the actual rotation stop.
+
+The corridor has two independent clocks. Laser turning and random-ball-count
+growth use `boss.phase_frame`; the spread volley uses the global
+`stage_frame_mod16`. The ball count starts at 1 and increments every 64 Boss
+frames after the pattern callback's volley work, reaching its cap of 8 at
+frame 448. If a stage-clock volley coincides with one of those Boss-frame
+increments, that volley uses the old count and the increment affects later
+volleys. The spread angle advances by `0x0E` only on stage-clock volleys.
+
+At timeout frame **1300**, the corridor pattern still runs first. The timeout
+branch then clears `defeat_bonus` and skips `boss_hittest_shots()` entirely;
+the HP-defeat branch instead runs the hit-test and sets the bonus latch. Both
+paths stop the right and left lasers and transition to the small-explosion
+phase with `phase_frame` reset to zero. `tests/test_sara_boss_lifecycle.py`
+pins the fill/entrance clocks, 31/23 pattern counts, scratch-byte handoff,
+fly-delay and pattern-duration staircases, all laser slowdown/terminal frames,
+laser growth collision timing, the independent volley clocks, and the
+inclusive timeout/defeat branch order.
