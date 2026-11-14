@@ -1,7 +1,7 @@
 # TH05 progress
 
 Goal: **98% authored bytes exact**. Measured exact authored bytes (C/C++ plus
-reviewed original ASM): **99.958%** (144,267 exact of 144,327 bytes). Every byte still unknown in `resources/ownership.json` counts against the
+reviewed original ASM): **99.995%** (144,267 exact of 144,274 bytes). Every byte still unknown in `resources/ownership.json` counts against the
 denominator; vendor, assets, BSS, padding and alignment gaps are excluded.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |

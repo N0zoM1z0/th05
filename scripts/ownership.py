@@ -672,7 +672,8 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
                 raise ValueError(f"BSS gap is not between reviewed storage: {name} {start:#x}")
             if image is not None and any(image[start:end]):
                 raise ValueError(f"BSS gap bytes are not zero: {name} {start:#x}")
-        elif kind in ("reviewed-vendor-source-bytes", "reviewed-uninitialized-game-storage"):
+        elif kind in ("reviewed-vendor-source-bytes", "reviewed-uninitialized-game-storage",
+                      "checked-uncredited-asm-cs-variable"):
             # Bytes fixed by a cited source declaration, next to a named owner.
             expected = bytes.fromhex(row["bytes"])
             neighbour = after if row.get("next_member") else before
