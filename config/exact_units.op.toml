@@ -1491,3 +1491,26 @@ unit = "op-bgimage-planes-initial-data"
 source = "src/shared/hardware/bgimage_planes_initial.cpp"
 find = "bgimage_planes_t bgimage = { 0, 0, 0, 0 };"
 replace = "bgimage_planes_t bgimage = { (unsigned char __seg *)1, 0, 0, 0 };"
+
+[[units]]
+id = "op-cdg-opaque-cxx"
+source = "src/shared/graphics/cdg_opaque.cpp"
+module = "th05/cdg_p_na.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_cdg_opaque_bindings.asm"
+target_start = 0xd590
+size = 102
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = [75, 101]
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+[[controls]]
+unit = "op-cdg-opaque-cxx"
+source = "src/shared/graphics/cdg_opaque.cpp"
+find = "planes_left = PLANE_COUNT;"
+replace = "planes_left = PLANE_COUNT - 1;"

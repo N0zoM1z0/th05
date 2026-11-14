@@ -7110,3 +7110,26 @@ unit = "main-tile-invalidate"
 source = "src/main/tile/invalidate.cpp"
 find = "_CX = (sizeof(halftiles_dirty) / sizeof(uint32_t));"
 replace = "_CX = (sizeof(halftiles_dirty) / sizeof(uint32_t)) - 1;"
+
+[[units]]
+id = "main-cdg-opaque-cxx"
+source = "src/shared/graphics/cdg_opaque.cpp"
+module = "th05/cdg_p_na.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/main_cdg_opaque_bindings.asm"
+target_start = 0x14c70
+size = 102
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = [75, 101]
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 84656
+ds_base = 133584
+
+[[controls]]
+unit = "main-cdg-opaque-cxx"
+source = "src/shared/graphics/cdg_opaque.cpp"
+find = "planes_left = PLANE_COUNT;"
+replace = "planes_left = PLANE_COUNT - 1;"

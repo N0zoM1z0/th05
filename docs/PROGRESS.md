@@ -5,19 +5,19 @@ complete authored ownership denominator remains under review.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 469 | 75967 | 75241 | 726 | 76052 |
-| OP decoded C/C++ units | 91 | 14079 | 13925 | 154 | 14085 |
-| MAINE decoded C/C++ units | 92 | 18511 | 18347 | 164 | 18519 |
+| MAIN bounded C/C++ units | 470 | 76067 | 75341 | 726 | 76154 |
+| OP decoded C/C++ units | 92 | 14179 | 14025 | 154 | 14187 |
+| MAINE decoded C/C++ units | 93 | 18611 | 18447 | 164 | 18621 |
 | ZUN embedded C/C++ units | 2 | 591 | 591 | 0 | 591 |
 
 | Accepted scope | Initialized DATA contributions | Authored DATA bytes | Total authored bytes | Complete extent bytes |
 | --- | ---: | ---: | ---: | ---: |
-| MAIN bounded C/C++ units | 82 | 3935 | 79902 | 79992 |
-| OP decoded C/C++ units | 16 | 8813 | 22892 | 22898 |
-| MAINE decoded C/C++ units | 34 | 4445 | 22956 | 22964 |
+| MAIN bounded C/C++ units | 82 | 3935 | 80002 | 80094 |
+| OP decoded C/C++ units | 16 | 8813 | 22992 | 23000 |
+| MAINE decoded C/C++ units | 34 | 4445 | 23056 | 23066 |
 | ZUN embedded C/C++ units | 1 | 320 | 911 | 911 |
 
-541 bounded C/C++ units pass two cold producers, raw bytes and original
+544 bounded C/C++ units pass two cold producers, raw bytes and original
 ordered relative relocation sites with explicit external-symbol bindings.
 CODE covers a complete compiler contribution or one reviewed complete function.
 Initialized semantic DATA covers only a whole real MAP DATA contribution with
@@ -27,10 +27,10 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 126661: 109148 authored CODE plus 17513
+Total authored C/C++ bytes are 126961: 109448 authored CODE plus 17513
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 1044 bytes of explicitly classified compiler switch
-tables; these remain separate from instruction bytes. All 104 observed
+tables; these remain separate from instruction bytes. All 110 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.
@@ -41,10 +41,10 @@ OP/MAINE comparisons use their retained decoded load modules and original
 observed relocation order; they grant no packed-file exactness.
 
 Separately reviewed handwritten ASM reconstruction contributes
-13874 instruction bytes, 250 symbolic CODE-dispatch table bytes,
+13574 instruction bytes, 250 symbolic CODE-dispatch table bytes,
 36 semantic CODE-table bytes and 64 initialized DATA bytes.
 All complete scopes pass two fresh producers and their own assembled negatives;
-118 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
+112 alignment, inert-branch and runtime-placeholder bytes compare normally with zero credit.
 These ASM scopes have explicit native ownership decisions and remain separate
 from all C/C++ counters. Raster resources and every other unknown interval stay
 in the observation universe. Historical source text and original assembler
