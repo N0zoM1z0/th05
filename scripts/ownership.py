@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 from collections import Counter
+import hashlib
 import json
 from pathlib import Path
 import tomllib
@@ -583,6 +584,42 @@ def reviewed_master_sin8(root: Path, *, views: dict, targets: dict,
     return claims, digest_bytes(decision_bytes)
 
 
+
+def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict], *,
+                          verify_targets: bool) -> list[dict]:
+    """Relabel listed unknown alignment gaps and retained MZ headers (zero credit)."""
+    path = root / "config/reviewed_gaps.json"
+    if not path.exists():
+        return pieces
+    rows = [r for r in json.loads(path.read_text())["gaps"] if r["view"] == name]
+    if not rows:
+        return pieces
+    image = None
+    if verify_targets:
+        context = UnitContext(root, name)
+        image = load_unit_target(context, context.config())[1].program_image
+    unknown = {(p["start"], p["end"]): i for i, p in enumerate(pieces) if p["kind"] == "unknown"}
+    out = list(pieces)
+    for row in rows:
+        start, end = row["start"], row["start"] + row["size"]
+        if (start, end) not in unknown:
+            raise ValueError(f"reviewed gap is not an exact unknown interval: {name} {start:#x}")
+        if row["kind"] == "checked-uncredited-alignment-gap":
+            n, fill = row["size"], row["fill"]
+            if not ((n == 1 and end % 2 == 0 and fill in (0, 0x90)) or (n < 16 and end % 16 == 0 and fill == 0)):
+                raise ValueError(f"reviewed gap violates the alignment rule: {name} {start:#x}")
+            if image is not None and image[start:end] != bytes([fill]) * n:
+                raise ValueError(f"reviewed gap bytes differ: {name} {start:#x}")
+        elif row["kind"] == "reviewed-linker-mz-header":
+            if end != view["size"]:
+                raise ValueError("retained MZ header must end the decoded view")
+            if image is not None and hashlib.sha256(image[start:end]).hexdigest() != row["sha256"]:
+                raise ValueError(f"retained MZ header bytes differ: {name}")
+        else:
+            raise ValueError("unknown reviewed gap kind")
+        out[unknown[(start, end)]] = {"start": start, "end": end, "kind": row["kind"]}
+    return out
+
 def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
     summary = summarize_all(root)  # Includes current sources, ledgers and public decoded proofs.
     config = tomllib.loads((root / "config/ownership.toml").read_text())
@@ -978,6 +1015,7 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             sprites, sprite_review_sha = main_sprite_claims(
                 root, view, verify_targets=verify_targets)
             pieces = overlay_resources(view["size"], pieces, sprites)
+        pieces = overlay_reviewed_gaps(root, name, view, pieces, verify_targets=verify_targets)
         counts = Counter()
         for row in pieces:
             counts[row["kind"]] += row["end"] - row["start"]
@@ -1140,8 +1178,14 @@ def inventory(root: Path = ROOT, *, verify_targets: bool = False) -> dict:
             sum(counts[k] for k in ("checked-uncredited-asm-alignment", "checked-uncredited-asm-inert-branch",
                                    "checked-uncredited-asm-runtime-placeholder")) != summary.get("reviewed_asm_uncredited_bytes", 0)):
         raise ValueError("ownership partition disagrees with accepted source progress")
+    # Exact authored bytes: accepted C/C++ and reviewed original ASM. Unknown
+    # bytes stay in the denominator; vendor, assets, storage and padding do not.
+    exact = sum(v for k, v in counts.items() if k.startswith("accepted-"))
+    denominator = exact + counts["unknown"]
     return {"schema_version": 1, "kind": "gapless-observed-coordinate-inventory",
-            "authored_denominator": None, "percentage": None,
+            "authored_denominator": denominator,
+            "percentage": round(100 * exact / denominator, 3),
+            "authored_exact_bytes": exact,
             "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
             "observed_bytes": sum(row["size"] for row in views.values()),
             "byte_counts": dict(sorted(counts.items())), "views": views}

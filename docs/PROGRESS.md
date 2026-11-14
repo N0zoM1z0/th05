@@ -1,7 +1,8 @@
 # TH05 progress
 
-Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
-complete authored ownership denominator remains under review.
+Goal: **98% authored bytes exact**. Measured exact authored bytes (C/C++ plus
+reviewed original ASM): **99.387%** (144,242 exact of 145,131 bytes). Every byte still unknown in `resources/ownership.json` counts against the
+denominator; vendor, assets, BSS, padding and alignment gaps are excluded.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |

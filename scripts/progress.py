@@ -374,10 +374,19 @@ and [enemy VM review](../src/main/enemy/script.md), plus
 [bullet generation review](../src/main/bullet/spawn.md).
 
 '''
+    inventory_path = ROOT / "resources/ownership.json"
+    inventory = json.loads(inventory_path.read_text()) if inventory_path.exists() else {}
+    if inventory.get("percentage") is not None:
+        measured = (f"**{inventory['percentage']}%** "
+                    f"({inventory['authored_exact_bytes']:,} exact of {inventory['authored_denominator']:,} bytes). "
+                    "Every byte still unknown in `resources/ownership.json` counts against the\n"
+                    "denominator; vendor, assets, BSS, padding and alignment gaps are excluded.")
+    else:
+        measured = "**unmeasured**."
     markdown = f'''# TH05 progress
 
-Goal: **98% authored bytes exact**. Global percentage: **unmeasured**; the
-complete authored ownership denominator remains under review.
+Goal: **98% authored bytes exact**. Measured exact authored bytes (C/C++ plus
+reviewed original ASM): {measured}
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
 | --- | ---: | ---: | ---: | ---: | ---: |
