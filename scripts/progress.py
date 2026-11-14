@@ -432,6 +432,11 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
 
 
 def render_svg(summary: dict) -> str:
+    inventory_path = ROOT / "resources/ownership.json"
+    inventory = json.loads(inventory_path.read_text()) if inventory_path.exists() else {}
+    measured_svg = (f"{inventory['percentage']}% ({inventory['authored_exact_bytes']:,} / "
+                    f"{inventory['authored_denominator']:,} B, incl. reviewed ASM)"
+                    if inventory.get("percentage") is not None else "n/a")
     """Use the TH04 card layout while retaining TH05's accepted-byte measures."""
     scopes = summary.get("artifacts", {"main": summary})
     display = (("op", "OP.EXE"), ("main", "MAIN.EXE"),
@@ -488,7 +493,7 @@ def render_svg(summary: dict) -> str:
   <text x="24" y="392" {primary} font-size="13" font-weight="600">Accepted authored C/C++ bytes only</text>
   <text x="764" y="392" {mono} text-anchor="end" font-size="12">{total:,} B · {summary['functions']} functions</text>
   <text x="24" y="413" {secondary} font-size="11">Reviewed ASM: {asm:,} B · padding earns no credit</text>
-  <text x="764" y="413" {secondary} text-anchor="end" font-size="11">Goal 98% · global authored-byte denominator: n/a</text>
+  <text x="764" y="413" {secondary} text-anchor="end" font-size="11">Goal 98% · measured exact authored bytes: {measured_svg}</text>
 </svg>
 '''
 
