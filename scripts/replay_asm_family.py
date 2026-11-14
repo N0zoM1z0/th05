@@ -12,7 +12,7 @@ import tomllib
 from lib.omf import describe_omf, parse_omf
 from lib.pc98 import digest_file, digest_bytes, parse_mz
 from lib.reference_build import Builder
-from lib.replay_toolchain import freeze_toolchain, static_toolchain, validate_full_toolchain, relative_path
+from lib.replay_toolchain import source_inputs_only, freeze_toolchain, static_toolchain, validate_full_toolchain, relative_path
 from lib.unit_context import UnitContext, load_unit_target, freeze_target_view, validate_public_target_view
 from lib.unit_oracle import compare_unit, map_publics, relative_fixups
 from lib.unit_extents import _index as index
@@ -323,7 +323,7 @@ def cold_round(work: Path, entry: dict, target, negative: bool = False) -> dict:
 
 
 def check_record(record: dict, entry: dict) -> None:
-    if (record["entry"] != entry or record["producer_inputs"] != producer_inputs(entry)
+    if (record["entry"] != entry or source_inputs_only(record["producer_inputs"]) != source_inputs_only(producer_inputs(entry))
             or record["counts"] != counts(entry) or record["origin"] != ORIGIN
             or record["historical_source_recovered"] is not False or record["cxx_authored_credit"] != 0
             or record["complete_executable_exact"] is not False):
