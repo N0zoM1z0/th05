@@ -10,6 +10,9 @@
 #include "src/main/boss/exalice/combat_layout.hpp"
 #pragma codeseg EXALICE_FULL_TEXT main_03
 
+// Reposition resets the attack-pattern clock without advancing the Boss phase.
+static const int EXALICE_PATTERN_FIRST_FRAME = 0;
+
 // The updater decrements this latch before dispatch. Damage-gated phases
 // reload it while bombing; setup/ready phases use the separate invincible gate.
 int far exalice_hittest_shots(void)
@@ -103,7 +106,7 @@ void pascal far exalice_update(void)
         }
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= EXALICE_SETUP_END_FRAME) {
-            boss.phase_frame = 0;
+            boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
             boss.phase++;
             snd_se_play(EXALICE_SETUP_TRANSITION_SE);
             Palettes.colors[0].c.r = EXALICE_PALETTE_BLACK;
@@ -119,8 +122,8 @@ void pascal far exalice_update(void)
         if(boss.phase_frame >= EXALICE_READY_END_FRAME) {
             boss.phase++;
             boss.mode = EXALICE_MODE_CHARGE;
-            boss.phase_state.patterns_seen = 0;
-            boss.phase_frame = 0;
+            boss.phase_state.patterns_seen = EXALICE_NEW_PHASE_PATTERN_COUNT;
+            boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
             boss_custombullets_render = exalice_custombullets_render;
             exalice_boss_scratch.pattern_byte15.ready_direction_seed = EXALICE_READY_DIRECTION_SEED;
             exalice_pattern = exalice_pattern_random_fan;
@@ -132,7 +135,7 @@ regular_attack:
         switch(boss.mode) {
         case EXALICE_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - EXALICE_RANDOM_FLYSTEP_LEAD_FRAMES)) {
-                boss.phase_frame = 0;
+                boss.phase_frame = EXALICE_PATTERN_FIRST_FRAME;
                 boss.phase_state.patterns_seen++;
                 boss.mode++;
                 exalice_pattern = exalice_patterns_by_phase[exalice_boss_scratch.wave_index][
@@ -176,7 +179,7 @@ regular_complete:
     case EXALICE_PHASE_WAVE4_APPROACH_SECOND:
 approach:
         if(boss_flystep_towards(to_sp(EXALICE_APPROACH_DESTINATION_X_PX), to_sp(EXALICE_APPROACH_DESTINATION_Y_PX))) {
-            boss.phase_frame = 0;
+            boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
             boss.phase++;
             boss.mode = EXALICE_MODE_CHARGE;
         }
@@ -271,7 +274,7 @@ charge_complete:
             Palettes.colors[0].c.r -= 2;
             Palettes.colors[0].c.g--;
             Palettes.colors[0].c.b -= 2;
-            if(Palettes.colors[0].c.r == 0) {
+            if(Palettes.colors[0].c.r == EXALICE_PALETTE_BLACK) {
                 exalice_boss_scratch.palette_step = EXALICE_PALETTE_BRIGHTEN;
             }
         }
@@ -286,7 +289,7 @@ charge_complete:
             boss.phase_state.defeat_bonus = true;
         }
         boss_explode_small(ET_VERTICAL);
-        boss.phase_frame = 0;
+        boss.phase_frame = EXALICE_NEW_PHASE_FIRST_FRAME;
         boss.phase = PHASE_BOSS_EXPLODE_SMALL;
         boss_custombullets_render = nullfunc_near;
         bullet_zap_drop_point_items = false;

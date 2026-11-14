@@ -258,3 +258,24 @@ union offset are unchanged. This corrects the previous `initial_fan_substate`
 label without changing the original store or inventing a new reset. The
 complete 1,060-byte EX-Alice update remains part of the focused header-closure
 replay; no duplicate CODE credit is claimed.
+
+## 2026-11-14: full eighteen-phase lifecycle and named pattern-clock reset
+
+The accepted 1,060-byte full-context updater now distinguishes the Boss
+phase's first frame (`EXALICE_NEW_PHASE_FIRST_FRAME`) from the independent
+pattern/reposition clock (`EXALICE_PATTERN_FIRST_FRAME`). The ready transition
+uses the already observed `EXALICE_NEW_PHASE_PATTERN_COUNT`, and the final
+palette's zero-red boundary uses the existing `EXALICE_PALETTE_BLACK`. These
+are compile-time names for existing values; no new state or emitted CODE is
+introduced.
+
+`tests/test_exalice_full_lifecycle.py` covers all eighteen phase values, the
+eight sequential HP endpoints 26,500 → 23,800 → 21,000 → 18,100 → 15,100 →
+12,600 → 9,600 → 6,800 → 3,400 → 0, four 32-pattern regular waves, their
+alternating callback families, seven approach handoffs, the three strict
+frame-4000 charge deadlines, the ninth successful final-charge callback,
+the 39-frame bomb suppression latch, and the inclusive frame-5000 final fan.
+It verifies the key split between a hit-driven bonus and timeout-driven
+completion, while the common cheeto/firewave/HUD tail still runs every frame.
+The edited complete controller passed two fresh exact Borland/TLINK producers,
+its original ordered relocation stream and its compiled HP-threshold negative.
