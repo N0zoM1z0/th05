@@ -41,3 +41,16 @@ surrounding pattern/float functions. The existing compiled semantic
 `age++`→`age += 2` negative is rejected. All bytes were already
 accepted; this improves source-level lifecycle meaning without
 claiming new code credit or rerunning the entire game.
+
+## 2026-11-14: executable regression for the complete 220-byte ball leaf
+
+`tests/test_shinki_b6ball_lifecycle.py` now executes the source branch order
+as a bounded state model: first-free allocation across all 63 slots, the
+48→16→14 pixel cloud boundary (strictly below the 16-pixel half-width),
+cloud-time clear deferral, same-tick transition into the active/decay path,
+collision's one-update delay before decay setup, out-of-bounds freeing before
+collision, signed velocity halving toward zero, and the four-frame 204–207
+sprite progression to free. It also pins the original unused age word: cloud
+frames do not increment it and neither the generator nor updater resets it.
+The tests preserve the real update order—clear, age, segment-3 motion, bounds,
+hit test, decay—and both native optimizer-structural calls.
