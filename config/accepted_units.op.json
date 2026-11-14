@@ -2,18 +2,22 @@
   "schema_version": 2,
   "scope": "decoded load-module unit bytes and ordered fixups; packed file unaccepted",
   "target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
-  "replay_receipt_sha256": "f707623749f9803bed9a108dbf496ce1f1cb085608e35a0d7d027e3192bd6b4d",
+  "replay_receipt_sha256": "77d9288266f9e5261976756cad9e68d922243871d3be78c9d98ffcb986e8f922",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 54672,
-    "candidate_start": 54672,
-    "size": 102,
-    "target_sha256": "19a20645ad475fef510ec6f2bf2b8326512600160abb59b4373d106d356238d0",
-    "candidate_sha256": "8acbbb98eb332c1a3aa29eedd6490844c86cb0b9ec08b0b39b99fb8486e65077",
+    "target_start": 58072,
+    "candidate_start": 58072,
+    "size": 124,
+    "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+    "candidate_sha256": "5bf9c905b63dd71f972c9dc57e6e96e255f9dca33d7bf15ec0844d2aa4f6f51b",
     "raw_exact": false,
-    "target_fixups": [],
-    "candidate_fixups": [],
+    "target_fixups": [
+      116
+    ],
+    "candidate_fixups": [
+      116
+    ],
     "fixups_exact": true,
     "exact": false
   },
@@ -45631,6 +45635,429 @@
           "dependency_paths": [
             "unit.asm",
             "cdg_p_na.asm"
+          ]
+        }
+      },
+      "receipt_aggregate_pass": true,
+      "target_view": {
+        "artifact": "th05-op",
+        "kind": "decoded-load-module-only",
+        "packed_target_sha256": "c94efc071a4b1adf8ce6e2c5a7eefb9eb47c26f8bab61b2e58e736dda8130abb",
+        "receipt_sha256": "ff17c8d51cc7da16ab6776a1b3d0672935e6e8f568944588fe162c11bf19edb9",
+        "payload_sha256": "7c112a4a7dc4231e9be2d0f69555f0736f69165c80621a3fcd67324dad77ec47",
+        "relocations_sha256": "d85beb6c4bdeb661dd6624db27adbc9848e272a1b167d79affaf59d344a5522a",
+        "payload_size": 77798,
+        "relocation_count": 952,
+        "runs": [
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 4096,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 9244,
+            "instruction_count": 918088,
+            "load_segment": 4096,
+            "relocated_payload_sha256": "80bac4b31a85fe0328d44535a0777cceab48a3a1e040e150b6b87c5b781ccf86",
+            "transfer_site": 79703
+          },
+          {
+            "decoded_end": 77798,
+            "dos_version_calls": 0,
+            "final_cs": 13107,
+            "final_ip": 0,
+            "final_sp": 128,
+            "final_ss": 18255,
+            "instruction_count": 918088,
+            "load_segment": 13107,
+            "relocated_payload_sha256": "efad901899be68c23de68d053d607da13c6f9bd8ea7139b1e6c91378a8add825",
+            "transfer_site": 79703
+          }
+        ]
+      }
+    },
+    {
+      "id": "op-egc-rect-copy-cxx",
+      "entry_sha256": "f27b902c5309d97c13a5c2b76e527026433d09095e9535de68ffb462d9ebefe5",
+      "result": {
+        "id": "op-egc-rect-copy-cxx",
+        "entry_sha256": "f27b902c5309d97c13a5c2b76e527026433d09095e9535de68ffb462d9ebefe5",
+        "rounds": [
+          {
+            "target_start": 58072,
+            "candidate_start": 58072,
+            "size": 124,
+            "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+            "candidate_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+            "raw_exact": true,
+            "target_fixups": [
+              116
+            ],
+            "candidate_fixups": [
+              116
+            ],
+            "fixups_exact": true,
+            "exact": true
+          },
+          {
+            "target_start": 58072,
+            "candidate_start": 58072,
+            "size": 124,
+            "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+            "candidate_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+            "raw_exact": true,
+            "target_fixups": [
+              116
+            ],
+            "candidate_fixups": [
+              116
+            ],
+            "fixups_exact": true,
+            "exact": true
+          }
+        ],
+        "omfs": [
+          {
+            "sha256": "06ec73460a63e5ecd3c3c52f7ec892e89387e2543a5a55ba9c86835fc9bc6f50",
+            "dependency_timestamp_normalized_sha256": "b8a212b6c1dcfcc012232ac60070496bf069fb769fc2f7a49c39c950b214c5fb",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "egcrect.asm"
+            ]
+          },
+          {
+            "sha256": "49cf5135be088823474ed45d86febd458d66cf73b23dda3b10751787d4fcc00a",
+            "dependency_timestamp_normalized_sha256": "b8a212b6c1dcfcc012232ac60070496bf069fb769fc2f7a49c39c950b214c5fb",
+            "module_name": "unit.asm",
+            "translator_comments": [
+              "Turbo Assembler  Version 5.0"
+            ],
+            "dependency_paths": [
+              "unit.asm",
+              "egcrect.asm"
+            ]
+          }
+        ],
+        "compiler_assembly": [
+          {
+            "comparison": {
+              "target_start": 58072,
+              "candidate_start": 58072,
+              "size": 124,
+              "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+              "candidate_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+              "raw_exact": true,
+              "target_fixups": [
+                116
+              ],
+              "candidate_fixups": [
+                116
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/shared/hardware/egc_rect_copy.cpp"
+            ],
+            "omf": {
+              "sha256": "06ec73460a63e5ecd3c3c52f7ec892e89387e2543a5a55ba9c86835fc9bc6f50",
+              "dependency_timestamp_normalized_sha256": "b8a212b6c1dcfcc012232ac60070496bf069fb769fc2f7a49c39c950b214c5fb",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "egcrect.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 124,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 124,
+                  "sha256": "c822f66a6fcdcba3cf788c9e409e5236b4e3c45c18dc4b0a1402c3792f692e91"
+                }
+              ]
+            },
+            "map_sha256": "d91fc181a5f2b0b9b7df080db065ac0c04e0ee9af924fb61052b0d5f129029b2",
+            "mz_sha256": "feeb78f33a61d77a8432e6ef2c091bdea1e634f2a6bf0f409e9c6af6a792d184",
+            "commands_sha256": "0ec8235cf8172d7de3faeee6c58f83891c6d3306258f18626a491107d972138d",
+            "compiler_generated_assembly_sha256": "27045fba6d5660c7acde5be074a43138cd0553efb5f7f69aa1868713349c2bfa",
+            "assembly_after_tasm_sha256": "27045fba6d5660c7acde5be074a43138cd0553efb5f7f69aa1868713349c2bfa",
+            "wrapper_sha256": "2be683fc67ef487fb4bc6feb072c5636ebf4d5efe6a4c64243ba59dbc417e5f3"
+          },
+          {
+            "comparison": {
+              "target_start": 58072,
+              "candidate_start": 58072,
+              "size": 124,
+              "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+              "candidate_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+              "raw_exact": true,
+              "target_fixups": [
+                116
+              ],
+              "candidate_fixups": [
+                116
+              ],
+              "fixups_exact": true,
+              "exact": true
+            },
+            "compiler_dependencies": [
+              "src/shared/hardware/egc_rect_copy.cpp"
+            ],
+            "omf": {
+              "sha256": "49cf5135be088823474ed45d86febd458d66cf73b23dda3b10751787d4fcc00a",
+              "dependency_timestamp_normalized_sha256": "b8a212b6c1dcfcc012232ac60070496bf069fb769fc2f7a49c39c950b214c5fb",
+              "module_name": "unit.asm",
+              "translator_comments": [
+                "Turbo Assembler  Version 5.0"
+              ],
+              "dependency_paths": [
+                "unit.asm",
+                "egcrect.asm"
+              ]
+            },
+            "owned_CODE": {
+              "kind": "complete-assembler-code",
+              "segment": "SHARED",
+              "size": 124,
+              "ledata": [
+                {
+                  "offset": 0,
+                  "size": 124,
+                  "sha256": "c822f66a6fcdcba3cf788c9e409e5236b4e3c45c18dc4b0a1402c3792f692e91"
+                }
+              ]
+            },
+            "map_sha256": "d91fc181a5f2b0b9b7df080db065ac0c04e0ee9af924fb61052b0d5f129029b2",
+            "mz_sha256": "feeb78f33a61d77a8432e6ef2c091bdea1e634f2a6bf0f409e9c6af6a792d184",
+            "commands_sha256": "0ec8235cf8172d7de3faeee6c58f83891c6d3306258f18626a491107d972138d",
+            "compiler_generated_assembly_sha256": "27045fba6d5660c7acde5be074a43138cd0553efb5f7f69aa1868713349c2bfa",
+            "assembly_after_tasm_sha256": "27045fba6d5660c7acde5be074a43138cd0553efb5f7f69aa1868713349c2bfa",
+            "wrapper_sha256": "2be683fc67ef487fb4bc6feb072c5636ebf4d5efe6a4c64243ba59dbc417e5f3"
+          }
+        ],
+        "compiler_arguments": [
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/egcrect.cpp"
+          ],
+          [
+            "-S",
+            "-I.",
+            "-O",
+            "-b-",
+            "-3",
+            "-Z",
+            "-d",
+            "-DGAME=5",
+            "-ml",
+            "-DBINARY='O'",
+            "th05/egcrect.cpp"
+          ]
+        ],
+        "producer_paths": [
+          "a/source",
+          "b/source"
+        ],
+        "source_inputs": [
+          {
+            "path": "probes/units/op_egc_rect_copy_bindings.asm",
+            "sha256": "c522560a18c9f8da8cd5c22df241714303824c2cf3a9a20af38d386600b3ebe5"
+          },
+          {
+            "path": "scripts/lib/binding_layout.py",
+            "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+          },
+          {
+            "path": "scripts/lib/compiler_assembly.py",
+            "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+          },
+          {
+            "path": "scripts/lib/omf.py",
+            "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+          },
+          {
+            "path": "scripts/lib/reference_build.py",
+            "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+          },
+          {
+            "path": "scripts/lib/replay_toolchain.py",
+            "sha256": "9e861a589438b92553e20444a3d218fc14a5cc0f7a7b23602d6235dac51c1e79"
+          },
+          {
+            "path": "scripts/lib/tiny_com.py",
+            "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+          },
+          {
+            "path": "scripts/lib/unit_context.py",
+            "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+          },
+          {
+            "path": "scripts/lib/unit_extents.py",
+            "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+          },
+          {
+            "path": "scripts/lib/unit_oracle.py",
+            "sha256": "85271567d6d68f908578841b7e933016c67a0df6a390dae6bc6d2846667ce493"
+          },
+          {
+            "path": "scripts/lib/unit_sources.py",
+            "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+          },
+          {
+            "path": "scripts/replay_asm_family.py",
+            "sha256": "2be51b72857e349393c1d463bbca0cbc8dec1e2987cca86f2321580423c58d51"
+          },
+          {
+            "path": "src/shared/hardware/egc_rect_copy.cpp",
+            "sha256": "bd6de99cd9b8528caef2a8eedd4e659ca56fd7c7e30de176918c8f8e7058aa40"
+          }
+        ],
+        "object_normalized_equal": true,
+        "exact": true
+      },
+      "source_inputs": [
+        {
+          "path": "probes/units/op_egc_rect_copy_bindings.asm",
+          "sha256": "c522560a18c9f8da8cd5c22df241714303824c2cf3a9a20af38d386600b3ebe5"
+        },
+        {
+          "path": "scripts/lib/binding_layout.py",
+          "sha256": "ee2b673bea08eac2d6f03f5067bb04feb86f0cd86227aa14b164ee43dd5b2bfe"
+        },
+        {
+          "path": "scripts/lib/compiler_assembly.py",
+          "sha256": "05cc9d0c9d90fd0903ec9d50e14558c503e409b03f0d7ec531afecbb45751a6a"
+        },
+        {
+          "path": "scripts/lib/omf.py",
+          "sha256": "3fec01c38a13d6a13fc9296292f3b2a7075cdaf3e0897cfc31d1c83b84897030"
+        },
+        {
+          "path": "scripts/lib/reference_build.py",
+          "sha256": "89488efce667e67311a06c2020437fc5276d8eeba28d6122817d7a2903e54e1a"
+        },
+        {
+          "path": "scripts/lib/replay_toolchain.py",
+          "sha256": "9e861a589438b92553e20444a3d218fc14a5cc0f7a7b23602d6235dac51c1e79"
+        },
+        {
+          "path": "scripts/lib/tiny_com.py",
+          "sha256": "35f511c2f5ea5eb861dc23cd9aad1d9b73cdf28eeb288f85178fff41c230d939"
+        },
+        {
+          "path": "scripts/lib/unit_context.py",
+          "sha256": "a185593133c987cf573e9c39c3a1fdd94cac07b0810ee4a964eb0e8772319369"
+        },
+        {
+          "path": "scripts/lib/unit_extents.py",
+          "sha256": "3ac9fba0aa2a2a3d655962c42efd79d309c6461ba5c5cb5b7cc7341c59569ae4"
+        },
+        {
+          "path": "scripts/lib/unit_oracle.py",
+          "sha256": "85271567d6d68f908578841b7e933016c67a0df6a390dae6bc6d2846667ce493"
+        },
+        {
+          "path": "scripts/lib/unit_sources.py",
+          "sha256": "e8fa43c24301cbe1685ba97b512319042af9551d391a298d30b3384d52b7965b"
+        },
+        {
+          "path": "scripts/replay_asm_family.py",
+          "sha256": "2be51b72857e349393c1d463bbca0cbc8dec1e2987cca86f2321580423c58d51"
+        },
+        {
+          "path": "src/shared/hardware/egc_rect_copy.cpp",
+          "sha256": "bd6de99cd9b8528caef2a8eedd4e659ca56fd7c7e30de176918c8f8e7058aa40"
+        }
+      ],
+      "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
+      "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
+      "replay_receipt_sha256": "77d9288266f9e5261976756cad9e68d922243871d3be78c9d98ffcb986e8f922",
+      "compiled_negative_control": {
+        "target_start": 58072,
+        "candidate_start": 58072,
+        "size": 124,
+        "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+        "candidate_sha256": "5bf9c905b63dd71f972c9dc57e6e96e255f9dca33d7bf15ec0844d2aa4f6f51b",
+        "raw_exact": false,
+        "target_fixups": [
+          116
+        ],
+        "candidate_fixups": [
+          116
+        ],
+        "fixups_exact": true,
+        "exact": false
+      },
+      "negative_control": {
+        "unit_id": "op-egc-rect-copy-cxx",
+        "entry_sha256": "f27b902c5309d97c13a5c2b76e527026433d09095e9535de68ffb462d9ebefe5",
+        "mutation": {
+          "unit": "op-egc-rect-copy-cxx",
+          "source": "src/shared/hardware/egc_rect_copy.cpp",
+          "find": "static const unsigned int PLANE_SIZE = (80 * 400);",
+          "replace": "static const unsigned int PLANE_SIZE = (80 * 399);"
+        },
+        "control_sha256": "9b8ef1866c03e49470febe0cc102badf9da2aba92275b4d9211563ad8df1acc2",
+        "producer_path": "negative/source",
+        "comparison": {
+          "target_start": 58072,
+          "candidate_start": 58072,
+          "size": 124,
+          "target_sha256": "442c147f42d245d4c3a90287b345894475e4591de833e7fe93299854d01e8353",
+          "candidate_sha256": "5bf9c905b63dd71f972c9dc57e6e96e255f9dca33d7bf15ec0844d2aa4f6f51b",
+          "raw_exact": false,
+          "target_fixups": [
+            116
+          ],
+          "candidate_fixups": [
+            116
+          ],
+          "fixups_exact": true,
+          "exact": false
+        },
+        "compiler_arguments": [
+          "-S",
+          "-I.",
+          "-O",
+          "-b-",
+          "-3",
+          "-Z",
+          "-d",
+          "-DGAME=5",
+          "-ml",
+          "-DBINARY='O'",
+          "th05/egcrect.cpp"
+        ],
+        "omf": {
+          "sha256": "66557dd584647fe290f31f3be55e41876bc74e2c574012852ceb10d4743a1ad6",
+          "dependency_timestamp_normalized_sha256": "416726d592d30c3d339fbea40ad7399c1517483bf7098fbc731460a1300e6809",
+          "module_name": "unit.asm",
+          "translator_comments": [
+            "Turbo Assembler  Version 5.0"
+          ],
+          "dependency_paths": [
+            "unit.asm",
+            "egcrect.asm"
           ]
         }
       },

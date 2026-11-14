@@ -16,8 +16,8 @@ org 00fd8h
 SHARED ends
 FOREIGN_SHARED_TAIL segment byte public 'CODE' use16
 assume cs:FOREIGN_SHARED_TAIL
-public EGC_RECT_SETUP
-EGC_RECT_SETUP label near
+public @egc_rect_setup$qv
+@egc_rect_setup$qv label near
 org 00c8ch
 FOREIGN_SHARED_TAIL ends
 _DATA segment word public 'DATA' use16

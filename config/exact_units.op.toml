@@ -1514,3 +1514,27 @@ unit = "op-cdg-opaque-cxx"
 source = "src/shared/graphics/cdg_opaque.cpp"
 find = "planes_left = PLANE_COUNT;"
 replace = "planes_left = PLANE_COUNT - 1;"
+
+[[units]]
+id = "op-egc-rect-copy-cxx"
+source = "src/shared/hardware/egc_rect_copy.cpp"
+module = "th05/egcrect.cpp"
+segment = "SHARED"
+wrapper_options = ""
+bindings_source = "probes/units/op_egc_rect_copy_bindings.asm"
+target_start = 0xe2d8
+size = 124
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = [123]
+compiler_pipeline = "tcc-s-tasm32"
+group = "(none)"
+cs_base = 54016
+ds_base = 61408
+binary = "O"
+
+[[controls]]
+unit = "op-egc-rect-copy-cxx"
+source = "src/shared/hardware/egc_rect_copy.cpp"
+find = "static const unsigned int PLANE_SIZE = (80 * 400);"
+replace = "static const unsigned int PLANE_SIZE = (80 * 399);"
