@@ -32,6 +32,30 @@ static const int MIDBOSS4_HIT_RADIUS_PIXELS = 24;
 static const int MIDBOSS4_HIT_EFFECT = 10;
 static const int MIDBOSS4_DEFEAT_SPARK_COUNT = 48;
 static const int MIDBOSS4_DEFEAT_SCORE_UNITS = 15;
+
+// Exact projectile setup values for the three real Stage 4 attack leaves.
+static const int MIDBOSS4_CHARGE_SOUND = 8;
+static const int MIDBOSS4_CLOUD_SPREAD_COUNT = 7;
+static const int MIDBOSS4_CLOUD_BULLET_COUNT = 4;
+static const int MIDBOSS4_CLOUD_INITIAL_SPEED_SP = 8;
+static const int MIDBOSS4_CLOUD_SPEED_STEP_PX = 1;
+static const int MIDBOSS4_CLOUD_ORIGIN_RANGE_PX = 48;
+static const int MIDBOSS4_CLOUD_ORIGIN_X_OFFSET_PX = 24;
+static const int MIDBOSS4_CLOUD_ORIGIN_Y_OFFSET_PX = 32;
+static const int MIDBOSS4_CLOUD_VOLLEY_SOUND = 15;
+static const int MIDBOSS4_RING_BULLET_COUNT = 16;
+static const int MIDBOSS4_SPIRAL_FAST_SPEED_PX = 3;
+static const int MIDBOSS4_SPIRAL_SLOW_SPEED_PX = 2;
+static const int MIDBOSS4_SPIRAL_BASE_SPEED_SP = 8;
+static const int MIDBOSS4_SPIRAL_ANGLE_STEP = 4;
+static const int MIDBOSS4_SPIRAL_VOLLEY_SOUND = 3;
+static const int MIDBOSS4_STACK_INITIAL_ANGLE = 0x20;
+static const int MIDBOSS4_STACK_BASE_SPEED_PX = 1;
+static const int MIDBOSS4_STACK_SPEED_STEP_SP = 12;
+static const int MIDBOSS4_STACK_ANGLE_STEP = 8;
+static const int MIDBOSS4_STACK_VOLLEY_SOUND = 15;
+static const int MIDBOSS4_DEFEAT_SPARK_RADIUS_PX = 8;
+static const int MIDBOSS4_DEFEAT_SOUND = 12;
 #define patterns_done midboss4_scratch.completed_patterns
 #define pattern midboss4_scratch.current_pattern
 #define vulnerable midboss4_scratch.shot_vulnerable
@@ -39,26 +63,26 @@ static const int MIDBOSS4_DEFEAT_SCORE_UNITS = 15;
 void near midboss4_pattern_random_clouds(void)
 {
     if(midboss.phase_frame == MIDBOSS4_PATTERN_CHARGE_FRAME) {
-        snd_se_play(8);
+        snd_se_play(MIDBOSS4_CHARGE_SOUND);
         bullet_template.spawn_type = MIDBOSS4_CLOUD_FORWARDS;
         bullet_template.group = BG_RANDOM_ANGLE_AND_SPEED;
-        bullet_template.spread = 7;
+        bullet_template.spread = MIDBOSS4_CLOUD_SPREAD_COUNT;
         bullet_template_tune();
         midboss.sprite = MIDBOSS4_SPRITE_CAST;
     }
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_VOLLEY_FIRST && midboss.phase_frame <= MIDBOSS4_PATTERN_VOLLEY_LAST &&
         (midboss.phase_frame % MIDBOSS4_CLOUD_VOLLEY_CADENCE) == 0) {
-        bullet_template.speed.v = 8;
-        for(int i = 0; i < 4; i++) {
+        bullet_template.speed.v = MIDBOSS4_CLOUD_INITIAL_SPEED_SP;
+        for(int i = 0; i < MIDBOSS4_CLOUD_BULLET_COUNT; i++) {
             bullet_template.patnum = ((i & 1) ? MIDBOSS4_V_BLUE : 0);
-            bullet_template.origin.x.v = randring2_next16_mod(to_sp(48)) +
-                midboss.pos.cur.x.v - to_sp(24);
-            bullet_template.origin.y.v = randring2_next16_mod(to_sp(48)) +
-                midboss.pos.cur.y.v - to_sp(32);
+            bullet_template.origin.x.v = randring2_next16_mod(to_sp(MIDBOSS4_CLOUD_ORIGIN_RANGE_PX)) +
+                midboss.pos.cur.x.v - to_sp(MIDBOSS4_CLOUD_ORIGIN_X_OFFSET_PX);
+            bullet_template.origin.y.v = randring2_next16_mod(to_sp(MIDBOSS4_CLOUD_ORIGIN_RANGE_PX)) +
+                midboss.pos.cur.y.v - to_sp(MIDBOSS4_CLOUD_ORIGIN_Y_OFFSET_PX);
             bullets_add_regular_fixedspeed();
-            bullet_template.speed.v += to_sp(1);
+            bullet_template.speed.v += to_sp(MIDBOSS4_CLOUD_SPEED_STEP_PX);
         }
-        snd_se_play(15);
+        snd_se_play(MIDBOSS4_CLOUD_VOLLEY_SOUND);
     }
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_FINISH_FRAME) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
@@ -70,9 +94,9 @@ void near midboss4_pattern_random_clouds(void)
 void near midboss4_pattern_spiral_rings(void)
 {
     if(midboss.phase_frame == MIDBOSS4_PATTERN_CHARGE_FRAME) {
-        snd_se_play(8);
+        snd_se_play(MIDBOSS4_CHARGE_SOUND);
         bullet_template.group = BG_RING;
-        bullet_template.spread = 16;
+        bullet_template.spread = MIDBOSS4_RING_BULLET_COUNT;
         bullet_template_tune();
         midboss.sprite = MIDBOSS4_SPRITE_CAST;
         bullet_template.patnum = MIDBOSS4_V_RED;
@@ -80,15 +104,15 @@ void near midboss4_pattern_spiral_rings(void)
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_VOLLEY_FIRST && midboss.phase_frame <= MIDBOSS4_PATTERN_VOLLEY_LAST &&
         (midboss.phase_frame % MIDBOSS4_RING_VOLLEY_CADENCE) == 0) {
         if((midboss.phase_frame % MIDBOSS4_SPIRAL_ALTERNATE_CADENCE) == 0) {
-            bullet_template.speed.v = to_sp(3) + 8;
+            bullet_template.speed.v = to_sp(MIDBOSS4_SPIRAL_FAST_SPEED_PX) + MIDBOSS4_SPIRAL_BASE_SPEED_SP;
             bullet_template.spawn_type = MIDBOSS4_CLOUD_FORWARDS;
         } else {
-            bullet_template.speed.v = to_sp(2) + 8;
+            bullet_template.speed.v = to_sp(MIDBOSS4_SPIRAL_SLOW_SPEED_PX) + MIDBOSS4_SPIRAL_BASE_SPEED_SP;
             bullet_template.spawn_type = BST_NORMAL;
         }
         bullets_add_regular();
-        bullet_template.angle += 4;
-        snd_se_play(3);
+        bullet_template.angle += MIDBOSS4_SPIRAL_ANGLE_STEP;
+        snd_se_play(MIDBOSS4_SPIRAL_VOLLEY_SOUND);
     }
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_FINISH_FRAME) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
@@ -100,15 +124,15 @@ void near midboss4_pattern_spiral_rings(void)
 void near midboss4_pattern_aimed_stacks(void)
 {
     if(midboss.phase_frame == MIDBOSS4_PATTERN_CHARGE_FRAME) {
-        snd_se_play(8);
+        snd_se_play(MIDBOSS4_CHARGE_SOUND);
         bullet_template.spawn_type = MIDBOSS4_CLOUD_FORWARDS | MIDBOSS4_NO_DECELERATE;
         bullet_template.group = BG_SPREAD_STACK_AIMED;
-        bullet_template.angle = 0x20;
+        bullet_template.angle = MIDBOSS4_STACK_INITIAL_ANGLE;
         // These are the four adjacent semantic spread/stack fields: three
         // directions, eight angular units, four bullets, four speed units.
         reinterpret_cast<uint32_t &>(bullet_template.spread) =
             3UL | (8UL << 8) | (4UL << 16) | (4UL << 24);
-        bullet_template.speed.v = to_sp(1);
+        bullet_template.speed.v = to_sp(MIDBOSS4_STACK_BASE_SPEED_PX);
         bullet_template.patnum = MIDBOSS4_BALL_BLUE;
         bullet_template_tune();
         midboss.sprite = MIDBOSS4_SPRITE_CAST;
@@ -116,9 +140,9 @@ void near midboss4_pattern_aimed_stacks(void)
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_VOLLEY_FIRST && midboss.phase_frame <= MIDBOSS4_PATTERN_VOLLEY_LAST &&
         (midboss.phase_frame % MIDBOSS4_RING_VOLLEY_CADENCE) == 0) {
         bullets_add_regular();
-        bullet_template.speed.v += 12;
-        bullet_template.angle -= 8;
-        snd_se_play(15);
+        bullet_template.speed.v += MIDBOSS4_STACK_SPEED_STEP_SP;
+        bullet_template.angle -= MIDBOSS4_STACK_ANGLE_STEP;
+        snd_se_play(MIDBOSS4_CLOUD_VOLLEY_SOUND);
     }
     if(midboss.phase_frame >= MIDBOSS4_PATTERN_FINISH_FRAME) {
         midboss.sprite = MIDBOSS4_SPRITE_STILL;
@@ -180,8 +204,8 @@ defeat:
         midboss.phase = MIDBOSS4_PHASE_EXPLODE_BIG;
         midboss.sprite = MIDBOSS4_SPRITE_EXPLODE;
         midboss.phase_frame = 0;
-        sparks_add_circle(midboss.pos.cur.x, midboss.pos.cur.y, to_sp(8), MIDBOSS4_DEFEAT_SPARK_COUNT);
-        snd_se_play(12);
+        sparks_add_circle(midboss.pos.cur.x, midboss.pos.cur.y, to_sp(MIDBOSS4_DEFEAT_SPARK_RADIUS_PX), MIDBOSS4_DEFEAT_SPARK_COUNT);
+        snd_se_play(MIDBOSS4_DEFEAT_SOUND);
         break;
 
     default:

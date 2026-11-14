@@ -127,3 +127,44 @@ receipt:
 `.analysis/unit-replays/gpt-web-stage4-volley-gates-final-20261111/receipt.json`.
 This is semantic recovery of existing accepted C++ CODE, not a new byte claim
 or any unrelated full cold replay.
+
+## Exact attack payloads and sixteen-pattern terminal cycle (2026-11-14)
+
+The three pattern leaves now name the projectile payload values without
+changing the accepted 798-byte contribution. Random clouds charge at frame 16,
+then emit five inclusive volleys at frames **48, 56, 64, 72, 80**. Each volley
+creates four bullets, alternating ordinary/blue pattern slots, with fixed
+subpixel speeds **8, 24, 40, 56**. Their X origin is uniform over the 48-pixel
+window centered on the Midboss; their Y window is 48 pixels high and begins
+32 pixels above its current center. Each volley then plays sound 15.
+
+Spiral rings charge with a 16-bullet red ring template. Nine volleys occur on
+every fourth frame from 48 through 80. The five frames divisible by eight use
+cloud-forward bullets at `3*16+8 = 56` subpixel units; the four intervening
+frames use ordinary bullets at `2*16+8 = 40`. The ring angle advances by four
+after each volley. Aimed stacks instead begin at angle `0x20`, speed 16, and
+packed spread bytes **3/8/4/4**. Their nine volleys subtract eight angle units
+and add twelve speed units each time; the final pre-volley state is angle
+`0xE0`, speed 112.
+
+All three leaves end inclusively at frame **96**, restore the still sprite,
+reset the phase clock and select the shared transition submode. The transition
+callback completes after its frame-80 return, resets the clock, increments the
+pattern count and selects the next pattern using `(completed % 3) + 1`. The
+sixteen executed patterns are therefore **6 random-cloud, 5 spiral-ring,
+5 aimed-stack** attacks. The sixteenth transition computes the next selector
+but jumps to defeat before another attack or the normal vulnerability hit
+check. This timeout path does not award the HP-defeat score bonus or bomb drop;
+actual HP defeat sets the bullet-zap latch, awards fifteen score units and
+drops one bomb before entering the same large-explosion tail.
+
+The entrance remains 192 frames: vulnerability is enabled on its first frame,
+then the pattern phase starts with pattern 1, count zero and zero horizontal
+velocity. During attack transitions the byte-15 vulnerability gate is cleared
+before shot testing and restored only when the transition returns true. The
+new `tests/test_midboss4_lifecycle.py` pins each projectile payload, all volley
+frames, speed/angle progression, the 16-pattern distribution, entrance and
+HP/timeout defeat ordering. `main-midboss-stage4` was replayed with two native
+Borland/TLINK producers after naming these values: all 798 original bytes and
+all seven ordered fixups remain exact, and the compiled negative was rejected.
+Receipt: `.analysis/unit-replays/d5b547386a3a43759ad5c26b55385671/receipt.json`.
