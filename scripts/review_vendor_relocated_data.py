@@ -122,6 +122,78 @@ MEMBERS = {
         "starts": {"main": 0x22F34, "op": 0x11D14, "maine": 0x11DC8},
         "fixups": [],
     },
+    # Startup/exit records and the partly zero-filled NEW DATA, placed by layout.
+    "new/_INIT_": {
+        "anchor": "loadprog",
+        "member": "new",
+        "segment": "_INIT_",
+        "size": 6,
+        "program_sha256": "910a632344f47b81d5e152ab5e9fd7b2a399032fec92d9ef309995050a23dfb0",
+        "raw_sha256": "4e3d6ec906193734e7d8546c9924efb090911fb8c0b22b9a4201ce1d4df23542",
+        "starts": {"main": 0x22FC6, "op": 0x11DA8, "maine": 0x11E5A},
+        "fixups": [(2, 3)],
+    },
+    "setupio/_INIT_": {
+        "anchor": "loadprog",
+        "member": "setupio",
+        "segment": "_INIT_",
+        "size": 6,
+        "program_sha256": "aa046c3ee43eabe28a4ce0ed9e0620064abc63a4cb6ce4ff3c1dd8c8b12b6e5d",
+        "raw_sha256": "3686cb37b7fe4758ac2024a76e30a4c6ee2fdc25c66aa21dd55a9569b91ea504",
+        "starts": {"main": 0x22FCC, "op": 0x11DAE, "maine": 0x11E60},
+        "fixups": [(2, 1)],
+    },
+    "cputype/_INIT_": {
+        "anchor": "loadprog",
+        "member": "cputype",
+        "segment": "_INIT_",
+        "zero_gaps": True,
+        "size": 6,
+        "program_sha256": "4273bf05f930aa3dcbe04c1dbe46f2f890644ddd1b3ecb87563fda80400b0fcc",
+        "raw_sha256": "ceafee88e83b97cb5bc6b13a26f591db8aab79f02b7af3ec0e0d9b842050af74",
+        "starts": {"main": 0x22FD2, "op": 0x11DB4, "maine": 0x11E66},
+        "fixups": [(2, 1)],
+    },
+    "_pathops/_INIT_": {
+        "anchor": "loadprog",
+        "member": "_pathops",
+        "segment": "_INIT_",
+        "size": 6,
+        "program_sha256": "41f6ded7642bf119b7710fd4af35d85e7e28f734196a05533c71f09d67f5c432",
+        "raw_sha256": "a55a43f7426e1b4d8a8d2e1bf259fe39b33a2870ea3c697c58723f29bbb02b40",
+        "starts": {"main": 0x22FD8, "op": 0x11DBA, "maine": 0x11E6C},
+        "fixups": [(2, 1)],
+    },
+    "setenvp/_INIT_": {
+        "anchor": "loadprog",
+        "member": "setenvp",
+        "segment": "_INIT_",
+        "zero_gaps": True,
+        "size": 6,
+        "program_sha256": "a35c3378de5ce9b318c15d0670a6e49807ade277da773ad61102f3fc7ad131e0",
+        "raw_sha256": "ceafee88e83b97cb5bc6b13a26f591db8aab79f02b7af3ec0e0d9b842050af74",
+        "starts": {"main": 0x22FDE, "op": 0x11DC0, "maine": 0x11E72},
+        "fixups": [(2, 1)],
+    },
+    "new/_EXIT_": {
+        "anchor": "loadprog",
+        "member": "new",
+        "segment": "_EXIT_",
+        "size": 6,
+        "program_sha256": "910a632344f47b81d5e152ab5e9fd7b2a399032fec92d9ef309995050a23dfb0",
+        "raw_sha256": "f9d7da3ccfd452664ff7ddca02a7fcd0eb50f3b0ffaf5b503787c1a05dbf1bc8",
+        "starts": {"main": 0x22FE4, "op": 0x11DC6, "maine": 0x11E78},
+        "fixups": [(2, 3)],
+    },
+    "new": {
+        "anchor": "ctype",
+        "zero_gaps": True,
+        "size": 24,
+        "program_sha256": "910a632344f47b81d5e152ab5e9fd7b2a399032fec92d9ef309995050a23dfb0",
+        "raw_sha256": "956fcd7415783b1e7f7ff3970fe286f73e59367bfa56284802874787555fc043",
+        "starts": {"main": 0x22C9A, "op": 0x11A7A, "maine": 0x11B2E},
+        "fixups": [(6, 3)],
+    },
 }
 INPUTS = ["scripts/review_vendor_relocated_data.py", "scripts/review_vendor.py",
           "scripts/review_vendor_data.py", "scripts/lib/borland_library.py",
@@ -134,7 +206,7 @@ def identities(root: Path) -> dict:
     return {p: sha((root / p).read_bytes()) for p in INPUTS}
 
 
-def complete_data(mod: dict, segment: int) -> tuple[bytes, list[dict]]:
+def complete_data(mod: dict, segment: int, zero_gaps: bool = False) -> tuple[bytes, list[dict]]:
     """Read every original DATA LEDATA, retaining actual fixups for the linker."""
     size = mod["segs"][segment]["size"]
     body, covered, chunks = bytearray(size), bytearray(size), []
@@ -147,14 +219,16 @@ def complete_data(mod: dict, segment: int) -> tuple[bytes, list[dict]]:
              "overlapping or out-of-bounds DATA LEDATA")
         body[a:b], covered[a:b] = data, b"\1" * len(data)
         chunks.append({"offset": a, "size": len(data), "sha256": sha(data)})
-    need(size > 0 and all(covered), "incomplete DATA LEDATA coverage")
+    # TLINK zero-fills SEGDEF bytes that no LEDATA covers; only listed pins rely on it.
+    need(size > 0 and (zero_gaps or all(covered)), "incomplete DATA LEDATA coverage")
     return bytes(body), chunks
 
 
 def linked_images(review: VendorReview, mod: dict, segment: int, start: int,
-                  original_dgroup: int) -> tuple[bytes, bytes, list[int], list[dict], list[dict]]:
+                  original_dgroup: int, zero_gaps: bool = False
+                  ) -> tuple[bytes, bytes, list[int], list[dict], list[dict]]:
     """Apply only the two observed 16-bit DATA fixup kinds, never normalize bytes."""
-    raw, chunks = complete_data(mod, segment)
+    raw, chunks = complete_data(mod, segment, zero_gaps)
     con = review.contribution(mod, segment)
     cal, native = bytearray(raw), bytearray(raw)
     ordered_mz, actions = [], []
@@ -164,7 +238,16 @@ def linked_images(review: VendorReview, mod: dict, segment: int, start: int,
         need(not f["relative"] and f["displacement"] == 0 and
              f["target_method"] == 0 and f["frame_index"] in (None, 1),
              "unsupported DATA fixup form")
-        if kind == 1:
+        if kind == 1 and mod["segs"][f["target_index"]]["cl"] == "CODE":
+            # Near startup records: an offset into the member's combined CODE
+            # segment, linked exactly like the far records below.
+            code = review.contribution(mod, f["target_index"])
+            frame = review.segbases[code["segment"].casefold()] // 16 * 16
+            word = int.from_bytes(raw[site:site + 2], "little")
+            linked = ((word + code["start"] - frame) & 0xffff).to_bytes(2, "little")
+            cal[site:site + 2] = native[site:site + 2] = linked
+            after_cal = after_native = linked
+        elif kind == 1:
             # Five FILES near pointers resolve into their own _DATA SEGDEF.
             need(f["frame_method"] == 1 and
                  mod["groups"][f["frame_index"]]["name"].casefold() == "dgroup" and
@@ -239,10 +322,13 @@ def native_review(root: Path = ROOT) -> dict:
                             "payload_sha256": sha(target.program_image), "view": view,
                             "calibration_exe_sha256": exe_pin, "calibration_map_sha256": map_pin}
         for member, pin in MEMBERS.items():
-            mod = review.mods[member]
+            # Keys name the member, or "member/_INIT_" for a startup/exit record.
+            mod = review.mods[pin.get("member", member)]
             need(mod["program_sha256"] == pin["program_sha256"], "CL member program changed")
+            segname = pin.get("segment", "_DATA")
             segments = [i for i, s in enumerate(mod["segs"])
-                        if s and s["name"] == "_DATA" and s["cl"] == "DATA" and s["size"]]
+                        if s and s["name"] == segname and
+                        s["cl"] in ("DATA", "INITDATA", "EXITDATA") and s["size"]]
             need(len(segments) == 1, "ambiguous DATA segment")
             segment = segments[0]
             con = review.contribution(mod, segment)
@@ -250,10 +336,10 @@ def native_review(root: Path = ROOT) -> dict:
             need(con["size"] == size and len(target.program_image) >= start + size,
                  "DATA extent/target bounds differ")
             cal_bytes, original_bytes, mz, actions, chunks = linked_images(
-                review, mod, segment, start, BASES[context])
+                review, mod, segment, start, BASES[context], pin.get("zero_gaps", False))
             need([(a["site"], a["kind"]) for a in actions] == pin["fixups"],
                  "original OMF fixup order differs")
-            need(sha(complete_data(mod, segment)[0]) == pin["raw_sha256"],
+            need(sha(complete_data(mod, segment, pin.get("zero_gaps", False))[0]) == pin["raw_sha256"],
                  "unlinked DATA bytes changed")
             need(cal.program_image[con["start"]:con["start"] + size] == cal_bytes,
                  "full calibration DATA byte mismatch")
@@ -271,7 +357,7 @@ def native_review(root: Path = ROOT) -> dict:
                      target.program_image.find(original_bytes, start + 1) < 0,
                      "DATA content occurrence ambiguous in original")
             rows.append({"id": f"{context}-cl-relocated-data-{member}", "context": context,
-                         "member": member, "segment": "_DATA", "start": start,
+                         "member": member, "segment": segname, "start": start,
                          "end": start + size, "size": size, "calibration_start": con["start"],
                          "raw_sha256": pin["raw_sha256"], "member_program_sha256": pin["program_sha256"],
                          "original_linked_sha256": sha(original_bytes),
@@ -313,7 +399,7 @@ def validate_metadata(proof: dict, root: Path = ROOT) -> None:
         need(context in PARENTS and member in MEMBERS, "unknown relocated source")
         pin = MEMBERS[member]
         key = f"{context}-cl-relocated-data-{member}"
-        need(row.get("id") == key and key not in seen and row.get("segment") == "_DATA"
+        need(row.get("id") == key and key not in seen and row.get("segment") == pin.get("segment", "_DATA")
              and row.get("size") == pin["size"] and
              row.get("start") == pin["starts"][context] and
              row.get("end") == row["start"] + pin["size"] <= targets[context]["size"] and
@@ -327,9 +413,10 @@ def validate_metadata(proof: dict, root: Path = ROOT) -> None:
              [site + 2 for site, kind in pin["fixups"] if kind == 3],
              "unreviewed DATA fixup shape/order")
         for action in actions:
-            need(action.get("frame_method") == (1 if member == "files" else 5) and
+            need(("segment" in pin and action.get("frame_method") in (1, 4, 5) or
+                  action.get("frame_method") == (1 if member == "files" else 5)) and
                  action.get("target_method") == 0 and
-                 action.get("target_index") == (2 if member == "files" else 1) and
+                 ("segment" in pin or action.get("target_index") == (2 if member == "files" else 1)) and
                  all(isinstance(action.get(field), str) and len(action[field]) == 64
                      for field in ("calibration_bytes_sha256", "original_bytes_sha256")),
                  "unsupported DATA fixup binding")
@@ -337,7 +424,7 @@ def validate_metadata(proof: dict, root: Path = ROOT) -> None:
              all(isinstance(row.get(field), str) and len(row[field]) == 64
                  for field in ("original_linked_sha256", "calibration_linked_sha256")) and
              isinstance(row.get("complete_ledatas"), list) and row["complete_ledatas"] and
-             sum(c["size"] for c in row["complete_ledatas"]) == pin["size"],
+             (pin.get("zero_gaps") or sum(c["size"] for c in row["complete_ledatas"]) == pin["size"]),
              "incomplete linked/LEDATA evidence")
     need(proof.get("contribution_count") == len(rows) and
          proof.get("total_bytes") == sum(r["size"] for r in rows), "DATA totals differ")

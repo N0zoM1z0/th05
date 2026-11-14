@@ -610,6 +610,16 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
                 raise ValueError(f"reviewed gap violates the alignment rule: {name} {start:#x}")
             if image is not None and image[start:end] != bytes([fill]) * n:
                 raise ValueError(f"reviewed gap bytes differ: {name} {start:#x}")
+        elif row["kind"] == "reviewed-bss-prefix":
+            # _BSS follows _EXITEND_ directly: zeros from the last exit record
+            # up to the first reviewed uninitialized storage.
+            i = unknown[(start, end)]
+            before, after = pieces[i - 1], pieces[i + 1] if i + 1 < len(pieces) else {}
+            if (before.get("member") != "new/_EXIT_" or
+                    not str(after.get("kind", "")).startswith("reviewed-uninitialized")):
+                raise ValueError(f"BSS prefix is not between the exit records and BSS: {name}")
+            if image is not None and any(image[start:end]):
+                raise ValueError(f"BSS prefix bytes are not zero: {name}")
         elif row["kind"] == "reviewed-linker-mz-header":
             if end != view["size"]:
                 raise ValueError("retained MZ header must end the decoded view")
