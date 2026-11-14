@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "kind": "gapless-observed-coordinate-inventory",
-  "authored_denominator": 144274,
-  "percentage": 99.995,
+  "authored_denominator": 144271,
+  "percentage": 99.997,
   "authored_exact_bytes": 144267,
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
@@ -17,7 +17,7 @@
     "accepted-reviewed-asm-semantic-code-table": 36,
     "accepted-zun-com-initialized-data": 1514,
     "accepted-zun-com-instructions": 1843,
-    "checked-uncredited-alignment-gap": 184,
+    "checked-uncredited-alignment-gap": 173,
     "checked-uncredited-asm-alignment": 78,
     "checked-uncredited-asm-cs-variable": 2,
     "checked-uncredited-asm-inert-branch": 8,
@@ -25,17 +25,17 @@
     "checked-uncredited-intra-member-gap": 26,
     "checked-uncredited-padding": 113,
     "checked-uncredited-zun-com-alignment": 12,
-    "reviewed-bss-gap": 8,
+    "reviewed-bss-gap": 12,
     "reviewed-bss-prefix": 130,
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-linker-mz-header": 3450,
     "reviewed-uninitialized-game-storage": 838,
     "reviewed-uninitialized-vendor-storage": 7378,
-    "reviewed-vendor-source-bytes": 78,
-    "unknown": 7,
+    "reviewed-vendor-source-bytes": 86,
+    "unknown": 4,
     "verified-vendor-code": 142514,
-    "verified-vendor-initialized-data": 9107
+    "verified-vendor-initialized-data": 9109
   },
   "views": {
     "main": {
@@ -50,14 +50,14 @@
         "accepted-cxx-switch-table": 726,
         "accepted-reviewed-asm-dispatch-table": 226,
         "accepted-reviewed-asm-instructions": 9230,
-        "checked-uncredited-alignment-gap": 94,
+        "checked-uncredited-alignment-gap": 92,
         "checked-uncredited-asm-alignment": 66,
         "checked-uncredited-asm-cs-variable": 2,
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 4,
         "checked-uncredited-intra-member-gap": 10,
         "checked-uncredited-padding": 92,
-        "reviewed-bss-gap": 2,
+        "reviewed-bss-gap": 4,
         "reviewed-bss-prefix": 44,
         "reviewed-embedded-sprite-bitmap": 2752,
         "reviewed-uninitialized-game-storage": 258,
@@ -7822,7 +7822,7 @@
         {
           "start": 145758,
           "end": 145760,
-          "kind": "checked-uncredited-alignment-gap"
+          "kind": "reviewed-bss-gap"
         },
         {
           "start": 145760,
@@ -7878,7 +7878,7 @@
       "master_superbfnt_header_review_sha256": "e7bbce8449eca67e64f46279dd58ac8eded9a4df705e6ec9a57f8039eb545e04",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "80a171dd5bb463ad9ab33af5f77e8709a45560fb0ff0b9dde2e2d7c9337a005c",
+      "cl_relocated_data_review_sha256": "39b5e2a2b0ebfec0af1b9626d29de40104a3630a5f64a9765e8f4e4c5d58f924",
       "enemy_vm_asm_review_sha256": "38634734cde0403b101798b095a773fa532f59af6384bed465fc450408b7a74d",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364",
       "sprite_resource_review_sha256": "cd08488adcf19bf9454ff7b2619087d6de2d59ae2b42565948c1e9cd11cd8a6a"
@@ -7897,7 +7897,7 @@
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 2054,
         "accepted-reviewed-asm-semantic-code-table": 36,
-        "checked-uncredited-alignment-gap": 37,
+        "checked-uncredited-alignment-gap": 35,
         "checked-uncredited-asm-alignment": 7,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -7912,7 +7912,7 @@
         "reviewed-uninitialized-vendor-storage": 2456,
         "reviewed-vendor-source-bytes": 20,
         "verified-vendor-code": 44923,
-        "verified-vendor-initialized-data": 2613
+        "verified-vendor-initialized-data": 2615
       },
       "intervals": [
         {
@@ -11182,7 +11182,12 @@
         {
           "start": 73086,
           "end": 73088,
-          "kind": "checked-uncredited-alignment-gap"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "kbhit",
+          "scope_id": "op-cl-relocated-data-kbhit"
         },
         {
           "start": 73088,
@@ -11409,7 +11414,7 @@
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "80a171dd5bb463ad9ab33af5f77e8709a45560fb0ff0b9dde2e2d7c9337a005c",
+      "cl_relocated_data_review_sha256": "39b5e2a2b0ebfec0af1b9626d29de40104a3630a5f64a9765e8f4e4c5d58f924",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364",
       "piano_resource_review_sha256": "889bb50cdb987355d2290314d6d6c136a4316ffe61130854c22e23bc7a629c55"
@@ -11426,18 +11431,18 @@
         "accepted-cxx-switch-table": 164,
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 1653,
-        "checked-uncredited-alignment-gap": 48,
+        "checked-uncredited-alignment-gap": 42,
         "checked-uncredited-asm-alignment": 5,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-intra-member-gap": 8,
         "checked-uncredited-padding": 12,
-        "reviewed-bss-gap": 2,
+        "reviewed-bss-gap": 4,
         "reviewed-bss-prefix": 40,
         "reviewed-linker-mz-header": 1438,
         "reviewed-uninitialized-game-storage": 290,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "reviewed-vendor-source-bytes": 14,
+        "reviewed-vendor-source-bytes": 18,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2859
       },
@@ -12141,7 +12146,7 @@
         {
           "start": 8988,
           "end": 8992,
-          "kind": "checked-uncredited-alignment-gap"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 8992,
@@ -14969,7 +14974,7 @@
         {
           "start": 75758,
           "end": 75760,
-          "kind": "checked-uncredited-alignment-gap"
+          "kind": "reviewed-bss-gap"
         },
         {
           "start": 75760,
@@ -15026,7 +15031,7 @@
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "80a171dd5bb463ad9ab33af5f77e8709a45560fb0ff0b9dde2e2d7c9337a005c",
+      "cl_relocated_data_review_sha256": "39b5e2a2b0ebfec0af1b9626d29de40104a3630a5f64a9765e8f4e4c5d58f924",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364"
     },
@@ -15040,12 +15045,12 @@
         "accepted-cxx-instructions": 591,
         "accepted-zun-com-initialized-data": 1514,
         "accepted-zun-com-instructions": 1843,
-        "checked-uncredited-alignment-gap": 5,
+        "checked-uncredited-alignment-gap": 4,
         "checked-uncredited-zun-com-alignment": 12,
         "reviewed-embedded-font-bitmap": 8192,
         "reviewed-uninitialized-vendor-storage": 10,
-        "reviewed-vendor-source-bytes": 18,
-        "unknown": 5,
+        "reviewed-vendor-source-bytes": 22,
+        "unknown": 2,
         "verified-vendor-code": 4838,
         "verified-vendor-initialized-data": 768
       },
@@ -15877,7 +15882,7 @@
         {
           "start": 9198,
           "end": 9200,
-          "kind": "checked-uncredited-alignment-gap"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 9200,
@@ -15894,8 +15899,13 @@
         },
         {
           "start": 9291,
+          "end": 9292,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 9292,
           "end": 9294,
-          "kind": "unknown"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 9294,

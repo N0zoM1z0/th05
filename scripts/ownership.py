@@ -634,6 +634,7 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
         context = UnitContext(root, name)
         image = load_unit_target(context, context.config())[1].program_image
     out = list(pieces)
+    c0l_starts = {r["start"] for r in rows if r["kind"] == "verified-c0l-data"}
     for row in rows:
         start, end = row["start"], row["start"] + row["size"]
         hosts = [i for i, p in enumerate(out) if p["kind"] == "unknown" and p["start"] <= start and end <= p["end"]]
@@ -646,7 +647,11 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
         kind = row["kind"]
         if kind == "checked-uncredited-alignment-gap":
             n, fill = row["size"], row["fill"]
-            if not ((n == 1 and end % 2 == 0 and fill in (0, 0x90)) or (n < 16 and end % 16 == 0 and fill == 0)):
+            # Multi-byte zero runs only pad CODE up to the paragraph that opens
+            # DGROUP; elsewhere they could be real zero-initialized variables.
+            if not ((n == 1 and end % 2 == 0 and fill in (0, 0x90)) or
+                    (n < 16 and end % 16 == 0 and fill == 0 and
+                     (after.get("member") == "C0L_DATA" or end in c0l_starts))):
                 raise ValueError(f"reviewed gap violates the alignment rule: {name} {start:#x}")
             if image is not None and image[start:end] != bytes([fill]) * n:
                 raise ValueError(f"reviewed gap bytes differ: {name} {start:#x}")

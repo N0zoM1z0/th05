@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "policy": "Zero-credit non-authored bytes. Alignment gaps: one 00/90 byte ending on an even offset, or fewer than 16 zero bytes ending on a paragraph, between owned intervals. MZ header: the original TLINK EXE header retained at the end of a DIET-decoded image.",
+ "policy": "Zero-credit, non-authored or uninitialized bytes, each checked against the original image. Alignment: one 00/90 byte ending on an even offset, or fewer than 16 zero bytes padding CODE to the paragraph that opens DGROUP. Source-declared rows cite the vendor/ASM declaration that fixes their bytes next to a named owner. BSS rows lie between reviewed uninitialized storage. MZ header rows are the original TLINK header kept after a DIET-decoded image.",
  "gaps": [
   {
    "view": "main",
@@ -652,8 +652,7 @@
    "view": "main",
    "start": 145758,
    "size": 2,
-   "kind": "checked-uncredited-alignment-gap",
-   "fill": 0
+   "kind": "reviewed-bss-gap"
   },
   {
    "view": "maine",
@@ -682,8 +681,10 @@
    "view": "maine",
    "start": 8988,
    "size": 4,
-   "kind": "checked-uncredited-alignment-gap",
-   "fill": 0
+   "kind": "reviewed-vendor-source-bytes",
+   "bytes": "00000000",
+   "source": "master.lib 0.23 VSYNC.ASM .CODE: raw_crtbios dw ?; raw_crtbios_seg dw ? before VSYNC_START",
+   "next_member": "VSYNC_START"
   },
   {
    "view": "maine",
@@ -964,8 +965,7 @@
    "view": "maine",
    "start": 75758,
    "size": 2,
-   "kind": "checked-uncredited-alignment-gap",
-   "fill": 0
+   "kind": "reviewed-bss-gap"
   },
   {
    "view": "maine",
@@ -1273,13 +1273,6 @@
   },
   {
    "view": "op",
-   "start": 73086,
-   "size": 2,
-   "kind": "checked-uncredited-alignment-gap",
-   "fill": 0
-  },
-  {
-   "view": "op",
    "start": 73164,
    "size": 46,
    "kind": "reviewed-bss-prefix"
@@ -1355,8 +1348,26 @@
    "view": "zun",
    "start": 9198,
    "size": 2,
+   "kind": "reviewed-vendor-source-bytes",
+   "bytes": "0000",
+   "source": "CT.LIB heaplen _DATA: __heaplen dw 0 (C0T adds [0x1A0A] to the stack size)",
+   "previous_owner": "borland-ctlib-files2-data"
+  },
+  {
+   "view": "zun",
+   "start": 9291,
+   "size": 1,
    "kind": "checked-uncredited-alignment-gap",
    "fill": 0
+  },
+  {
+   "view": "zun",
+   "start": 9292,
+   "size": 2,
+   "kind": "reviewed-vendor-source-bytes",
+   "bytes": "0010",
+   "source": "CT.LIB stklen _DATA: __stklen dw 1000h (C0T reads, clamps and writes [0x1A68])",
+   "next_member": "borland-nearheap"
   }
  ]
 }

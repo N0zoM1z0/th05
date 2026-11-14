@@ -194,6 +194,15 @@ MEMBERS = {
         "starts": {"main": 0x22C9A, "op": 0x11A7A, "maine": 0x11B2E},
         "fixups": [(6, 3)],
     },
+    # OP alone links kbhit; its 2-byte DATA follows strings.
+    "kbhit": {
+        "anchor": "strings",
+        "size": 2,
+        "program_sha256": "3e8db8e29a3906c2a725ed9089901f928eb9ae92a9d34a7a925faf21953c386e",
+        "raw_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "starts": {"op": 0x11D7E},
+        "fixups": [],
+    },
 }
 INPUTS = ["scripts/review_vendor_relocated_data.py", "scripts/review_vendor.py",
           "scripts/review_vendor_data.py", "scripts/lib/borland_library.py",
@@ -322,6 +331,8 @@ def native_review(root: Path = ROOT) -> dict:
                             "payload_sha256": sha(target.program_image), "view": view,
                             "calibration_exe_sha256": exe_pin, "calibration_map_sha256": map_pin}
         for member, pin in MEMBERS.items():
+            if context not in pin["starts"]:
+                continue  # member linked into only some binaries
             # Keys name the member, or "member/_INIT_" for a startup/exit record.
             mod = review.mods[pin.get("member", member)]
             need(mod["program_sha256"] == pin["program_sha256"], "CL member program changed")
@@ -391,7 +402,7 @@ def validate_metadata(proof: dict, root: Path = ROOT) -> None:
              (parent["calibration_map_sha256"] if context == "main" else parent["calibration"]["map_sha256"]),
              "original/calibration parent changed")
     rows = proof.get("contributions")
-    need(isinstance(rows, list) and len(rows) == len(MEMBERS) * len(PARENTS),
+    need(isinstance(rows, list) and len(rows) == sum(len(p["starts"]) for p in MEMBERS.values()),
          "partial relocated DATA inventory")
     seen = set()
     for row in rows:
