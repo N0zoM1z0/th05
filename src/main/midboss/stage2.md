@@ -133,3 +133,30 @@ raw byte and ordered MZ relocation. The compiled 400-to-401 HP threshold and
 orbit-boundary semantic negatives were rejected. Receipt:
 `.analysis/unit-replays/gpt-web-stage2-midboss-scratch-20261111/receipt.json`.
 All already accepted source ownership and authored-byte credit are unchanged.
+
+## Named phase, reward and timeout boundaries (2026-11-14)
+
+The three-stage update now names the original entrance/attack/defeat thresholds
+without changing its 393-byte callback. Entrance lasts **256** frames and
+initializes the orbit center to `(192 px, current Y)`, signed drift `0x20`,
+expansion mode and zero radius. The orbit phase always runs its pattern, mover
+and shot test before checking its exit: HP **400 or lower** before frame1000
+awards five score units and raises `bullet_clear_time` to at least20; frame1000
+is the timeout and skips both rewards. Both paths transition to the damaged
+sprite with the same 4-pixel/32-spark burst and vector target `(192,64)`.
+
+The final attack similarly runs its pattern, movement and shot test before
+its **800-frame** boundary. HP defeat before frame800 activates bullet zap,
+awards15 score units and drops a bomb; frame800 is timeout and skips those
+rewards. Both enter the large-explosion phase with 8-pixel/48-spark effects and
+sound12. The default defeat phase renders HP and returns before publishing the
+homing target. `tests/test_midboss2_lifecycle.py` pins the signed drift,
+strict orbit bounds, radius overshoot/contract, both attack payloads, entrance
+state, HP-versus-timeout reward gates and terminal return.
+
+Both the 298-byte pattern scope and 393-byte update callback were replayed with
+two native Borland/TLINK producers after naming these values. Their complete
+original raw bytes and ordered relocations remain exact; the orbit-boundary
+128-to-129 and HP-threshold 400-to-401 compiled negatives were rejected.
+Receipts: `.analysis/unit-replays/60b98d3fff3344388fcba9a2c0a058a4/receipt.json`
+and `.analysis/unit-replays/bf7dd8e2ac7645a5ae4eedcaedb022f7/receipt.json`.

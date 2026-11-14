@@ -1570,8 +1570,8 @@ origin = "compiler-generated-cxx"
 id = "midboss-stage2-threshold"
 unit = "main-midboss-stage2-update"
 source = "src/main/midboss/stage2.cpp"
-find = "if(midboss.hp > 400) {"
-replace = "if(midboss.hp > 401) {"
+find = "static const int MIDBOSS2_ORBIT_HP_THRESHOLD = 400;"
+replace = "static const int MIDBOSS2_ORBIT_HP_THRESHOLD = 401;"
 
 # Candidate only; root must independently replay before acceptance.
 [[units]]
@@ -1739,8 +1739,8 @@ origin = "compiler-generated-cxx"
 id = "midboss-stage2-orbit-left-bound"
 unit = "main-midboss-stage2-patterns"
 source = "src/main/midboss/stage2_patterns.cpp"
-find = "midboss2_orbit_center.x.v < to_sp(128)"
-replace = "midboss2_orbit_center.x.v < to_sp(129)"
+find = "static const int MIDBOSS2_ORBIT_CENTER_LEFT_PX = 128;"
+replace = "static const int MIDBOSS2_ORBIT_CENTER_LEFT_PX = 129;"
 
 [[units]]
 id = "main-midboss-stage3-patterns"

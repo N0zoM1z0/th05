@@ -2,29 +2,25 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "af844bff6de76126cc75f8e2381d496194099f09a41a2ebd955a7fc12dc892ec",
+  "replay_receipt_sha256": "f9a76d2b75873c33ca7a90fed55014c7b7cf32f41964d62e20a51f7b4fda1b64",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 113306,
-    "candidate_start": 113306,
-    "size": 616,
-    "target_sha256": "72de7f90bac23be18d5dca3200c8565ef59aa0224d560a780133c41e40f69d8e",
-    "candidate_sha256": "7a1afee4d378ed869e22267f94a0022f76d0e600644cb2b5e9768770ff389cf4",
+    "target_start": 89579,
+    "candidate_start": 89579,
+    "size": 393,
+    "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
+    "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
     "raw_exact": false,
     "target_fixups": [
-      546,
-      424,
-      405,
-      235,
-      144
+      350,
+      241,
+      210
     ],
     "candidate_fixups": [
-      546,
-      424,
-      405,
-      235,
-      144
+      350,
+      241,
+      210
     ],
     "fixups_exact": true,
     "exact": false
@@ -25303,7 +25299,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "f31e6f440f5b7c1827196298ad7228bd1ba27c63ada44b0a9ee3ce51861010c8",
+            "sha256": "a6e66381fb1eae3065c08a581ef2765b511890ca12e2755b228d26aa6dfbfbec",
             "dependency_timestamp_normalized_sha256": "ce355821a0786e4bdf7862bf5cf24e80187852118b36c3512606fb374e8923fa",
             "module_name": "th05/midboss2.cpp",
             "translator_comments": [
@@ -25327,7 +25323,7 @@
             ]
           },
           {
-            "sha256": "90ea64a690665da2849bcc9785bef9ded1d5f2a5a203ea2fed2fdf6e6bbc0b3f",
+            "sha256": "6cb15c147595f0f04d3dcc72f0bd3b2dbbd48a87a78d98fed591e26b4e788f6a",
             "dependency_timestamp_normalized_sha256": "ce355821a0786e4bdf7862bf5cf24e80187852118b36c3512606fb374e8923fa",
             "module_name": "th05/midboss2.cpp",
             "translator_comments": [
@@ -25398,7 +25394,7 @@
           },
           {
             "path": "src/main/midboss/stage2.cpp",
-            "sha256": "29f8e8ed60b0d7d9995873d441bc323fa4362de91151908d53d9534e3f76d281"
+            "sha256": "bfef5cda97917d01f379a2fed0a4b835318e818cef7904d5bb91fa0369d5b890"
           },
           {
             "path": "src/main/midboss/stage2.hpp",
@@ -25438,7 +25434,7 @@
         },
         {
           "path": "src/main/midboss/stage2.cpp",
-          "sha256": "29f8e8ed60b0d7d9995873d441bc323fa4362de91151908d53d9534e3f76d281"
+          "sha256": "bfef5cda97917d01f379a2fed0a4b835318e818cef7904d5bb91fa0369d5b890"
         },
         {
           "path": "src/main/midboss/stage2.hpp",
@@ -25463,7 +25459,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "851e6ee74161386d433fa6d5562f3de243bcf1e050de8e1d0779d4bb081f1221",
+      "replay_receipt_sha256": "f9a76d2b75873c33ca7a90fed55014c7b7cf32f41964d62e20a51f7b4fda1b64",
       "compiled_negative_control": {
         "target_start": 89579,
         "candidate_start": 89579,
@@ -25491,10 +25487,10 @@
           "id": "midboss-stage2-threshold",
           "unit": "main-midboss-stage2-update",
           "source": "src/main/midboss/stage2.cpp",
-          "find": "if(midboss.hp > 400) {",
-          "replace": "if(midboss.hp > 401) {"
+          "find": "static const int MIDBOSS2_ORBIT_HP_THRESHOLD = 400;",
+          "replace": "static const int MIDBOSS2_ORBIT_HP_THRESHOLD = 401;"
         },
-        "control_sha256": "999048a7509434944c2fa48f85bdbfd6f51025f43d2f075116f8b4fb6181fbc2",
+        "control_sha256": "67613af605d2393b78dcce85de191e7bed2ade3282dce1e62c67d72f6022515e",
         "producer_path": "negative/source",
         "comparison": {
           "target_start": 89579,
@@ -25517,7 +25513,7 @@
           "exact": false
         },
         "omf": {
-          "sha256": "12b8780b0c1241dae7b36781afd005bd196fba8f3047c0e979178a1e5fe2fab7",
+          "sha256": "3af6511fa2ecdb371794a704ab03a15053a5dab82c521d63c1ee36bf0254a34c",
           "dependency_timestamp_normalized_sha256": "431888a93aa8bcf2dfff8bc614cc6225eabad4511e49bd0cde0e43dc33f4705d",
           "module_name": "th05/midboss2.cpp",
           "translator_comments": [
@@ -28087,7 +28083,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "fa2b512affbd4f35dd139988ea345ac37705aa0201faa45bdf402079e5b4fca1",
+            "sha256": "70efba3e8dbd374481839db981e95bc581c586069d474f7e3a2acd19ef867a9b",
             "dependency_timestamp_normalized_sha256": "7a70c634b82775cdbc639bb9bc4e007bb39ebba9bbdb0a8ab2812f6239b18d20",
             "module_name": "th05/mid2pat.cpp",
             "translator_comments": [
@@ -28112,7 +28108,7 @@
             ]
           },
           {
-            "sha256": "5538b9c88a0337709a189534ede8b01e56d11aca8321e387a66686398ab072ae",
+            "sha256": "aa5eb07dfa7aa36e7dc569896cbb2feff616a637c46caf5599d0d3f4f6b5b5e4",
             "dependency_timestamp_normalized_sha256": "7a70c634b82775cdbc639bb9bc4e007bb39ebba9bbdb0a8ab2812f6239b18d20",
             "module_name": "th05/mid2pat.cpp",
             "translator_comments": [
@@ -28138,8 +28134,8 @@
           }
         ],
         "producer_paths": [
-          "group-1/a/source",
-          "group-1/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -28188,7 +28184,7 @@
           },
           {
             "path": "src/main/midboss/stage2_patterns.cpp",
-            "sha256": "76795a9d404d617c3d5cbf6d2c1a7310349e137e83b39e419acf8f77da32f306"
+            "sha256": "19f01345402431990cfdce98acc558515cabf2b39f6030727f6aa54e89cbcf84"
           },
           {
             "path": "src/main/midboss/stage2_patterns.hpp",
@@ -28232,7 +28228,7 @@
         },
         {
           "path": "src/main/midboss/stage2_patterns.cpp",
-          "sha256": "76795a9d404d617c3d5cbf6d2c1a7310349e137e83b39e419acf8f77da32f306"
+          "sha256": "19f01345402431990cfdce98acc558515cabf2b39f6030727f6aa54e89cbcf84"
         },
         {
           "path": "src/main/midboss/stage2_patterns.hpp",
@@ -28257,69 +28253,62 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "851e6ee74161386d433fa6d5562f3de243bcf1e050de8e1d0779d4bb081f1221",
+      "replay_receipt_sha256": "e97823cadc77bbb561214f630f104a909da946f552212bbfe36cbf53acd8968d",
       "compiled_negative_control": {
-        "target_start": 89579,
-        "candidate_start": 89579,
-        "size": 393,
-        "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
-        "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
+        "target_start": 89281,
+        "candidate_start": 89281,
+        "size": 298,
+        "target_sha256": "c5ab065d7960559b11c03cc5371ffcc1d9183b328d9f833d70a968f0389bd047",
+        "candidate_sha256": "7d1c954b9dfcdf961d22622a6f6a0e11b557fd97a217f574f84384346e6a18b6",
         "raw_exact": false,
         "target_fixups": [
-          350,
-          241,
-          210
+          35
         ],
         "candidate_fixups": [
-          350,
-          241,
-          210
+          35
         ],
         "fixups_exact": true,
         "exact": false
       },
       "negative_control": {
-        "unit_id": "main-midboss-stage2-update",
-        "entry_sha256": "15f23c285e6b1c60eacfd12e79958c8fa0ae3c7ba035b4374427205b66186839",
+        "unit_id": "main-midboss-stage2-patterns",
+        "entry_sha256": "db8ec20328d620a75490bf166c3ea4a695c6dabd9959d6e88073fe36230b90bf",
         "mutation": {
-          "id": "midboss-stage2-threshold",
-          "unit": "main-midboss-stage2-update",
-          "source": "src/main/midboss/stage2.cpp",
-          "find": "if(midboss.hp > 400) {",
-          "replace": "if(midboss.hp > 401) {"
+          "id": "midboss-stage2-orbit-left-bound",
+          "unit": "main-midboss-stage2-patterns",
+          "source": "src/main/midboss/stage2_patterns.cpp",
+          "find": "static const int MIDBOSS2_ORBIT_CENTER_LEFT_PX = 128;",
+          "replace": "static const int MIDBOSS2_ORBIT_CENTER_LEFT_PX = 129;"
         },
-        "control_sha256": "999048a7509434944c2fa48f85bdbfd6f51025f43d2f075116f8b4fb6181fbc2",
+        "control_sha256": "a779eca8da672c54408394ffce484e27ca1293f65153a0611a525e781f7bae42",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 89579,
-          "candidate_start": 89579,
-          "size": 393,
-          "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
-          "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
+          "target_start": 89281,
+          "candidate_start": 89281,
+          "size": 298,
+          "target_sha256": "c5ab065d7960559b11c03cc5371ffcc1d9183b328d9f833d70a968f0389bd047",
+          "candidate_sha256": "7d1c954b9dfcdf961d22622a6f6a0e11b557fd97a217f574f84384346e6a18b6",
           "raw_exact": false,
           "target_fixups": [
-            350,
-            241,
-            210
+            35
           ],
           "candidate_fixups": [
-            350,
-            241,
-            210
+            35
           ],
           "fixups_exact": true,
           "exact": false
         },
         "omf": {
-          "sha256": "12b8780b0c1241dae7b36781afd005bd196fba8f3047c0e979178a1e5fe2fab7",
-          "dependency_timestamp_normalized_sha256": "431888a93aa8bcf2dfff8bc614cc6225eabad4511e49bd0cde0e43dc33f4705d",
-          "module_name": "th05/midboss2.cpp",
+          "sha256": "89f598117666255bf9f9e58718fdbd066c174bbdae994c847265be497d962a93",
+          "dependency_timestamp_normalized_sha256": "1d58a82811bb0b106ff9692166dbd3122eef1b64d17c3d7927059c2bee4e9a87",
+          "module_name": "th05/mid2pat.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/midboss2.cpp",
-            "src/main/midboss/stage2.cpp",
+            "th05/mid2pat.cpp",
+            "src/main/midboss/stage2_patterns.cpp",
+            "src/main/midboss/stage2_patterns.hpp",
             "src/main/midboss/stage2.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -28345,7 +28334,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/midboss2.cpp"
+          "th05/mid2pat.cpp"
         ]
       },
       "receipt_aggregate_pass": true
