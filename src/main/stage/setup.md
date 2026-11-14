@@ -132,14 +132,19 @@ inactive timer, not a new late midboss spawn. Stage one still begins at its
 original playable-coordinate center while the later stages use their actual
 16-subpixel/motion entry vectors; no time or HP value has been changed.
 
-The Stage 5 setup still writes precisely the two original rank-dependent
-values in `boss_statebyte[0]` and `[1]`. These belong to the original Yumeko
-attack clock setup, not a new persistent object. The first delay is
-20/10/6/6 across difficulty levels, the second 48/32/24/24. Their near code
-still calls the genuine far Pascal `select_for_rank()` with the original four
-signed-word arguments and original ordered relocations, not copied macro
-bytes. The other stage setups retain their own distinct original music,
-boss-resource, hitbox and sprites.
+The Stage 5 setup seeds precisely the two original rank-dependent values
+through `YumekoBossScratch::stage5_setup`: byte 0 is the aimed-sword spawn
+interval and byte 1 is the laser spawn interval. These are the original Yumeko
+attack clocks, not a new persistent object. The first interval is 20/10/6/6
+across difficulty levels, the second 48/32/24/24. The aimed-sword callback
+consumes byte 0 and accelerates it below its 600-HP gate; the laser callback
+consumes byte 1 and accelerates it below its 500-HP gate. Both retain their
+original `select_for_rank()` calls, signed-word arguments and ordered
+relocations. The same 16-byte union then exposes the later phase-specific
+views for volley frames, acceleration flags, sweep state and final-ring state.
+No extra storage or stage-specific object is introduced. The other stage
+setups retain their own distinct original music, boss-resource, hitbox and
+sprites.
 
 Both affected complete units were rebuilt together using independent native
 Borland/TLINK producers: `main-stage-setup` (1510 bytes, ten complete functions
@@ -150,3 +155,11 @@ bytes** match; the compiled negative changes Stage 1's actual trigger frame
 `.analysis/unit-replays/gpt-web-stage-seven-setup-clock-20261111/receipt.json`.
 These are semantic refinements of already accepted source, not additional
 CODE/DATA coverage or an unrelated cold replay.
+
+
+The 2026-11-14 cross-phase type refinement rebuilt `main-stage-setup`,
+`main-stage-setup-data`, `main-yumeko-patterns`, `main-yumeko-spreads`,
+`main-yumeko-update`, `main-yumeko-sweep`, and both complete aimed/laser sword
+context owners. All eight focused units passed two independent Borland/TLINK
+producers with their original bytes and ordered relocations; receipt:
+`.analysis/unit-replays/gpt-web-yumeko-boss-scratch-20261114-b/receipt.json`.

@@ -154,3 +154,30 @@ experiment directories. All **1,170** concrete `.analysis` paths in tracked
 Markdown still resolve. Current Yumeko positive/negative/ASM/context evidence,
 all documented BB-loader and Vector2 trials, ledger-root receipts, native
 producers, calibration builds, ASM evidence, toolchain and Ghidra state remain.
+
+
+## 2026-11-14: Yumeko's cross-phase Boss scratch is now typed
+
+Commit `5c803311` (`gpt-web: type Yumeko shared boss scratch lifetimes`) names
+all observed views over the original 16-byte Boss scratch arena. Stage 5 setup
+is the producer of byte 0 (aimed-sword spawn interval) and byte 1 (laser spawn
+interval); the corresponding attack callbacks consume and accelerate those
+values at their original HP gates. Bytes 12-15 are now typed per phase for
+volley time, one-shot acceleration/sweep round, paired angle/sweep side/final
+angle, and sword angle/fan side/sweep spacing/final-ring count.
+
+The focused receipt
+`.analysis/unit-replays/gpt-web-yumeko-boss-scratch-20261114-b/receipt.json`
+replayed only eight affected owners (Stage 5 setup and data, Yumeko mobile
+patterns, spreads, updater, sweep, and both aimed/laser sword contexts). All
+eight preserve their original bytes and ordered relocations under two
+independent Borland/TLINK producers; the compiled negative was rejected. The
+focused Yumeko behavior suite and the new
+`tests/test_yumeko_scratch_lifetimes.py` pass. No new storage or duplicate CODE
+ownership was introduced, and no full cold replay was run.
+
+The remaining `replay_units.py --plan` candidate is `main-scroll-coordinate`;
+this is the next isolated leaf to close after the Boss-family work. Continue to
+prefer specific large-controller lifecycle questions plus their called leaf
+functions, rather than accumulating cosmetic renames or replaying the whole
+artifact.

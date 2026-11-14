@@ -302,3 +302,39 @@ ET_CIRCLE/HP 5,700, the second with ET_HORIZONTAL/HP 2,700.
 `tests/test_yumeko_mobile_waves.py` locks the initial callback handoffs, exact
 20-callback sequences, the count-20 bypass, and the shared 64-frame reposition
 clock against the complete accepted updater and original callback banks.
+
+
+## 2026-11-14: full Yumeko scratch lifetime across Stage 5 setup and attacks
+
+The earlier byte-15 overlay described only the tail of the Boss scratch area.
+Tracing the producer in `stage5_setup()` closes the other end of the lifetime:
+Stage 5 seeds physical byte 0 as the aimed-sword spawn interval and byte 1 as
+the laser spawn interval before Yumeko's updater begins. The initial values are
+20/10/6/6 and 48/32/24/24 for Easy/Normal/Hard/Lunatic. These are live inputs
+to the two later pattern callbacks, not zero-initialized local pattern state.
+
+The aimed-sword callback consumes byte 0 and, once
+`boss.hp - boss.phase_end_hp < 600`, sets its one-shot byte-13 flag, changes the
+interval to 16/8/4/4 and extends byte-12 volley time to 40/48/52/52. The laser
+callback separately consumes byte 1 and, below its 500-HP gate, sets its own
+byte-13 flag, changes the interval to 34/28/20/20 and updates byte-12 volley
+time to 40/48/52/48. Both callbacks use bytes 14/15 for the paired aim angles.
+
+The remaining tail is phase-overlaid rather than persistent per-pattern
+storage: byte 13 is the aimed/laser acceleration latch or sweep round; byte 14
+is paired angle B, sweep side, or final-ring angle; byte 15 is paired angle A,
+fan mirror bit, sweep spacing, or final-ring count. `YumekoBossScratch` now
+provides explicit 16-byte views for Stage 5 setup, aimed swords, laser swords,
+spreads, sweep, mobile patterns and the final ring. Compile-time size/offset
+assertions pin every view to the original byte positions. The source no longer
+indexes `boss_statebyte[]` directly in Yumeko's C++ pattern files.
+
+This is a type/lifetime reconstruction only: no scratch bytes were added,
+cleared, copied or reordered. The Stage 5 producer and each attack consumer
+still address the same original 16-byte Boss storage. `tests/test_yumeko_scratch_lifetimes.py`
+locks the cross-file initialization, rank clocks, HP gates and sequential byte
+roles. The focused eight-unit replay
+`.analysis/unit-replays/gpt-web-yumeko-boss-scratch-20261114-b/receipt.json`
+passed two independent Borland/TLINK producers for all **4,639 bounded bytes**
+and their ordered relocations; the compiled negative was rejected. No full
+cold replay or duplicate CODE ownership was introduced.
