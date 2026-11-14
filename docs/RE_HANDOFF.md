@@ -176,8 +176,13 @@ focused Yumeko behavior suite and the new
 `tests/test_yumeko_scratch_lifetimes.py` pass. No new storage or duplicate CODE
 ownership was introduced, and no full cold replay was run.
 
-The remaining `replay_units.py --plan` candidate is `main-scroll-coordinate`;
-this is the next isolated leaf to close after the Boss-family work. Continue to
-prefer specific large-controller lifecycle questions plus their called leaf
-functions, rather than accumulating cosmetic renames or replaying the whole
-artifact.
+The `main-scroll-coordinate` plan candidate is an intentional exact C++
+alternative over the same 40-byte extent as the accepted reviewed-ASM owner.
+It was replayed in isolation again on 2026-11-14 and now has a signed-16-bit
+behavior model in `tests/test_scroll_coordinate.py`; its receipt is
+`.analysis/unit-replays/gpt-web-main-scroll-coordinate-alternative-20261114/receipt.json`.
+Do not pass this alternative to `progress.py --accept`: the ASM owner remains
+the sole physical owner, so the plan's `missing` status is intentional rather
+than an unimplemented leaf. Continue to prefer specific large-controller
+lifecycle questions plus their called leaf functions, rather than accumulating
+cosmetic renames or replaying the whole artifact.

@@ -81,3 +81,27 @@ rejected. The accepted receipt is
 `.analysis/gpt-web-main-scroll-coordinate-asm-a/receipt.json`.
 This adds **40 reviewed ASM instruction bytes**, not C++ credit, and leaves
 the unrelated scroll driver unchanged.
+
+
+## 2026-11-14: focused C++ alternative replay and signed-coordinate model
+
+The pure-C++ near-Pascal alternative was replayed again in isolation after the
+Yumeko Boss work. Two independent Borland/TLINK producers match the original
+`[DF28,DF50)` extent **40/40 bytes**, preserve the empty ordered relocation
+stream and original entry/RET2 contract, and reject the compiled
+`SCROLL_RING_HEIGHT` negative. Receipt:
+`.analysis/unit-replays/gpt-web-main-scroll-coordinate-alternative-20261114/receipt.json`.
+
+`tests/test_scroll_coordinate.py` now models the actual 16-bit sequence:
+signed input, arithmetic shift by four, optional signed scroll-origin addition,
+then exactly one negative-or-positive 400-line correction. Its boundary cases
+cover `-1`, `-400`, `400`, and out-of-range values to distinguish the original
+one-step correction from a generic modulo. The source test also pins the real
+near-Pascal stack word at `SS:[SP+2]`, AX transport and signed shift.
+
+This remains an exact C++ source-language alternative over the same physical
+40-byte extent as the accepted reviewed-ASM owner. The replay is deliberately
+not passed to `progress.py --accept`: ASM remains the sole physical owner and
+no duplicate CODE credit is claimed. A `missing` entry for this alternate in
+`replay_units.py --plan` is therefore intentional, not an unimplemented
+function.
