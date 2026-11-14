@@ -77,20 +77,17 @@ and `scripts/review_zun_nearheap.py --check`. The resident DATA and final
 INITDATA passes are `scripts/review_zun_resident_data.py --check` and
 `scripts/review_zun_ctlib_data.py --check`.
 
-### 2. BB resource loader — unresolved C++ alternative, ASM owner already exact
+### 2. BB resource loader — exact hybrid C++ provider, ASM remains sole owner
 
 The complete 55-byte function is already owned by reviewed original-language
-ASM. The best natural C++ source emits the full extent and the correct `+7`
-relocation but matches **51/55** bytes. The remaining four bytes are the
-ordering difference `MOV AX,[bb_load_seg]; POP SI` versus native
-`POP SI; MOV AX,[bb_load_seg]`. Hybrid explicit-SI and pre-prototype `#pragma aux`
-trials still trigger TCC's compiler-managed save/restore and emit 57 bytes.
-A stack-only DS-save alternative is 51 bytes with relocation +6, and a manual
-epilogue/absolute-slot attempt grows to 61 bytes with relocation +8. None
-reproduces the original. The CX-held DS experiment also emits 51 bytes
-but shifts the relocation and relies on an unproved register lifetime. Do not
-describe this as an uncovered executable gap. See
-[`bb_load.md`](../src/main/formats/bb_load.md) and
+ASM. The maintained C++/DOS-intrinsic alternative now reproduces **55/55**
+bytes and the original `+7` allocator relocation in two independent
+Borland/TLINK producers. The remaining SI save/restore order is handled with
+Turbo C++'s `__emit__()` intrinsic, which hides those four register operations
+from its automatic pseudoregister save/restore lowering. The compiled
+2048→2047 DOS-read-length negative is rejected. This is an exact hybrid source
+provider but adds no second CODE or coverage credit; the ASM family remains
+the sole physical owner. Receipt and compiler findings are in
 [`bb_load_cpp_candidate.md`](../src/main/formats/bb_load_cpp_candidate.md).
 
 ### 3. Near Vector2 — unresolved C++ alternative, ASM owner already exact

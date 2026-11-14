@@ -1,6 +1,6 @@
-# BB loader natural C++ candidate experiments
+# BB loader C++ and compiler-intrinsic candidate experiments
 
-This file records C++-only source experiments and is deliberately separate from the accepted ASM owner notes, which are inputs to the frozen reviewed-ASM receipt.
+This file records source-language alternatives separately from the accepted ASM owner. The ASM owner remains the sole physical CODE owner for the 55-byte interval.
 
 ## 2026-11-13: scoped register lifetime and explicit-save follow-up
 
@@ -104,3 +104,31 @@ The remaining natural-C++ issue is still specifically the order of the return
 load and the compiler-managed callee-save epilogue. The original 55-byte ASM
 owner remains exact and authoritative; no new DATA, CODE or partial credit is
 claimed.
+
+
+## 2026-11-14: exact hybrid C++ provider using `__emit__` for SI lifetime
+
+The remaining 4-byte mismatch was a compiler invariant, not a DOS or ABI
+uncertainty. Turbo C++ 4.02 automatically saves and restores SI whenever its
+pseudoregister or inline assembler sees SI. Its generated epilogue therefore
+loads the pointer into AX before `POP SI`. The reference compiler research in
+`_reference/ReC98/codegen.hpp` documents the supported `__emit__()` workaround:
+hide the register operation from TCC while emitting the required operation at
+its actual source position.
+
+`bb_load.cpp` now uses `__emit__()` only for the four SI lifetime operations
+(`PUSH SI`, `MOV SI,DS`, `MOV DS,SI`, `POP SI`). Allocation, the far filename
+stack access, DOS open/read/close, payload segment selection and AX return
+remain in the maintained C++/DOS-intrinsic body. This prevents TCC from adding
+a second save/restore pair and puts the return load after the original `POP SI`.
+
+The focused replay at
+`.analysis/unit-replays/gpt-web-bb-load-emit-si-final-control2-20261114/receipt.json`
+uses two independent Borland/TLINK producers. Both reproduce **55/55 bytes**
+at `[F930,F967)`, preserve the sole allocator relocation at **+7**, and have
+identical normalized OMF. The compiled negative changes the DOS read length
+from 2048 to 2047 and is rejected.
+
+This is an exact hybrid source provider, not a second ownership claim: the
+reviewed original-language ASM family remains the sole credited owner of the
+55-byte function. No additional CODE or coverage credit is added.

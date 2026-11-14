@@ -3,8 +3,12 @@
 #include <dos.h>
 #include "src/main/formats/bb_load.hpp"
 
-// This C++ candidate addresses the far filename through SS:[BX+4]. Pin the
-// ABI widths here without changing the accepted ASM owner's semantic inputs.
+// TCC's __emit__ intrinsic keeps SI out of its automatic callee-save lowering.
+// That lets the original near-Pascal epilogue restore SI before materializing
+// the AX segment return value. The DOS transfers and pointer arithmetic remain
+// ordinary C++/DOS intrinsics; only the four SI register operations are emitted.
+void __emit__(uint8_t __byte, ...);
+
 typedef char bb_filename_argument_is_4[(sizeof(const char far *) == 4) ? 1 : -1];
 typedef char bb_payload_size_is_2048[(BB_SIZE == 2048) ? 1 : -1];
 
@@ -12,19 +16,16 @@ typedef char bb_payload_size_is_2048[(BB_SIZE == 2048) ? 1 : -1];
 
 bb_tiles8_t __seg *pascal near bb_load(const char far *filename)
 {
-    register unsigned int original_ds;
-
+    // Save the caller's SI before allocation; the original DS is kept in SI.
+    __emit__(0x56); // PUSH SI
     bb_load_seg = reinterpret_cast<bb_tiles8_t __seg *>(hmem_allocbyte(BB_SIZE));
-    // hmem_allocbyte is near-Pascal and removes its own argument. The far
-    // filename is therefore at SS:SP+4 after the saved SI; the compiler must
-    // not form a BP frame just to name this ABI stack argument.
     _BX = _SP;
-    original_ds = _DS;
+    __emit__(0x8C, 0xDE); // MOV SI, DS
     _AX = 0x3D00;
     asm { lds dx, dword ptr ss:[bx+4]; }
     geninterrupt(0x21);
     _BX = _AX;
-    _DS = original_ds;
+    __emit__(0x8E, 0xDE); // MOV DS, SI
     _DS = reinterpret_cast<unsigned int>(bb_load_seg);
     _CX = BB_SIZE;
     _DX = 0;
@@ -32,6 +33,7 @@ bb_tiles8_t __seg *pascal near bb_load(const char far *filename)
     geninterrupt(0x21);
     _AH = 0x3E;
     geninterrupt(0x21);
-    _DS = original_ds;
+    __emit__(0x8E, 0xDE); // MOV DS, SI
+    __emit__(0x5E); // POP SI, before the AX return load
     return bb_load_seg;
 }
