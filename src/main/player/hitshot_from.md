@@ -1,23 +1,17 @@
-# Original 108-byte HitShot creation
+# `hitshot_from()` — exact C++
 
-`hitshot_from(Shot near*)` at MAIN `[13617,13683)` invalidates the shot and
-converts its position and braked velocity into one of 24 circular hit-animation
-slots. The authentic 16-bit near-Pascal routine and record layout survive in
-`_reference/ReC98/th05/main/player/hitshot_from.asm`.
+`hitshot_from(Shot near *shot)` at MAIN `[13617,13683)` is a 108-byte
+near-Pascal function with no relocations. It sits between the accepted C++
+`shots_render()` and `shots_hittest()`. It marks the shot as removed and,
+if the next ring slot of the 24 hit animations is free, starts one there:
+pattern 28 for patnum base 20 (Reimu), otherwise 32. It copies the current and
+previous positions and divides both velocity components by 6. The ring index
+advances even when the slot is occupied.
 
-The maintained register-level `hitshot_from.asm` uses a 14-byte HitShot,
-next-free index at DS:C64A, hit-animation array at DS:BF56, and the genuine
-Shot pointer from SS:BP+4. It marks the Shot removed, leaves occupied hit slots
-unchanged, selects pattern 28 or 32 and copies 32-bit current/previous
-positions. Signed 16-bit X and Y velocities are divided by six separately,
-with an original `RET 2`. It creates no DATA or BSS and adds no guard or
-modified behavior.
-
-The original function has 108 instruction bytes and no relocation sites or
-padding. The complete native review pins its 40 decoded instructions; the
-source-free binder supplies only the true `main_01` CS `0AE1`, DGROUP DS
-`209D` and original foreign storage. Both independent TASM32/TLINK producers
-match all **108/108 bytes**, and changing the signed velocity divisor from
-6 to 5 is compiled and rejected. No adjacent renderer or collision code is
-recounted. Focused receipt:
-`.analysis/gpt-web-hitshot-from-asm-a/receipt.json`.
+`hitshot_from.cpp` is ordinary C++. TCC keeps the shot in DI and the slot in
+SI, copies the two 4-byte points with 32-bit moves, and reuses BX=6 for both
+divisions. The patnum test must compare an unsigned byte; a signed `char`
+compare widens it with `CBW`. Two producers match all 108 bytes, and the
+6→5 divisor negative is rejected. Receipt:
+`.analysis/unit-replays/claude-hitshot-from-20261114f/receipt.json`.
+This function replaces the earlier reviewed-ASM owner.

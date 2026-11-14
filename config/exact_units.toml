@@ -7153,3 +7153,22 @@ unit = "main-yumeko-swords-update"
 source = "src/main/boss/yumeko/swords_update.cpp"
 find = "sword->patnum_tiny += 2;"
 replace = "sword->patnum_tiny += 3;"
+
+[[units]]
+id = "main-hitshot-from"
+source = "src/main/player/hitshot_from.cpp"
+module = "th05/hitshotf.cpp"
+segment = "SHOT_RUNTIME_MAIN01_CONTEXT"
+wrapper_options = ""
+bindings_source = "probes/units/hitshot_from_cxx_bindings.asm"
+target_start = 0x13617
+size = 108
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-hitshot-from"
+source = "src/main/player/hitshot_from.cpp"
+find = "static const int HITSHOT_BRAKE_DIVISOR = 6;"
+replace = "static const int HITSHOT_BRAKE_DIVISOR = 5;"
