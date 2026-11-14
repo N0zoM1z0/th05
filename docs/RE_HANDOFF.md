@@ -183,3 +183,25 @@ the sole physical owner, so the plan's `missing` status is intentional rather
 than an unimplemented leaf. Continue to prefer specific large-controller
 lifecycle questions plus their called leaf functions, rather than accumulating
 cosmetic renames or replaying the whole artifact.
+
+
+## 2026-11-14: Shinki final B6 speed has a three-phase carry chain
+
+The final Shinki two-ball spiral does not initialize `b6ball_template.speed`.
+The actual template provenance is phase 8's purple transition (sixteen random
+2.0-to-under-6.0 values at frame 192), phase 9's first rank-timed aimed ball
+(4.0 at frames 192/160/140/144 for Easy/Normal/Hard/Lunatic), and phase 10's
+first Devil aimed ball (3.75 at frames 256/280/256/280). The phase-9 HP gate
+can exit before its first spawn, so the final phase may inherit the last purple
+random value rather than 4.0. The Devil HP gate can likewise preserve whichever
+phase-8/9 value was last written. The final leaf itself does not reset speed;
+`b6balls_add()` reads and tunes the template into a local.
+
+`tests/test_shinki_b6ball_speed_handoff.py` now covers all three provenance
+sources, the rank-specific first-write boundaries and callback-before-HP-test
+ordering. The seven-file Shinki behavior suite passes all **54 tests**. The
+focused eleven-unit replay at
+`.analysis/unit-replays/gpt-web-shinki-three-phase-b6-carry-20261114/receipt.json`
+reproduces every original byte and ordered relocation under two independent
+Borland/TLINK producers; the compiled negative is rejected. No full cold replay
+was run and no new CODE ownership was claimed.

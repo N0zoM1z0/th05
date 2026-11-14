@@ -53,10 +53,11 @@ void near pattern_circles_and_alternating_spirals(void)
 		pellet_angle = SHINKI_SPIRAL_INITIAL_ANGLE;
 	}
 	if((boss.phase_frame % SHINKI_SPIRAL_VOLLEY_INTERVAL) == 0) {
-		// Carry the last B6 template speed into this final attack. A full
-		// Devil cycle writes 3.75 at frame 256 (easy/hard) or 280
-		// (normal/lunatic); an earlier HP exit leaves the previous wave's
-		// speed untouched. Do not turn this into a phase-local reset.
+		// Carry the last B6 template speed into this final attack. The purple
+		// transition seeds a random value in [2.0, 6.0); phase nine overwrites it
+		// with 4.0 only at its first rank-timed ball, and Devil later overwrites
+		// that with 3.75 at its own first ball. Either HP exit can precede its
+		// first write, so preserve whichever earlier phase last touched it.
 		b6ball_template.patnum_tiny = PAT_B6BALL_BLUE_1;
 		SHINKI_SPIRAL_FIRE_OFFSET_B6BALL();
 

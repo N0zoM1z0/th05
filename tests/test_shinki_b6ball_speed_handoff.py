@@ -48,6 +48,57 @@ class ShinkiB6BallSpeedHandoffTests(unittest.TestCase):
         self.assertIn("b6ball_template.speed.v = sara_to_sp8(SHW_AIMED_BALL_SPEED_PX);", aimed)
         self.assertIn("#define SHW_AIMED_BALL_SPEED_PX 4.0f", WING_RULES)
 
+    def test_purple_transition_can_remain_the_final_speed_source(self):
+        # Phase 8's purple transition writes sixteen random speeds at frame
+        # 192. The last value remains in the shared template after the loop.
+        for text in (
+            "#define SHW_PURPLE_SPAWN_FRAME 192",
+            "#define SHW_PURPLE_SPAWN_COUNT 16",
+            "#define SHW_PURPLE_SPAWN_SPEED_MIN 2.0f",
+            "#define SHW_PURPLE_SPAWN_SPEED_MAX 6.0f",
+        ):
+            self.assertIn(text, WING_RULES)
+        purple_start = SOURCE.index("bool near pattern_wings_to_purple(void)")
+        purple_end = SOURCE.index("void near pattern_aimed_b6balls_and_symmetric_spreads(void)", purple_start)
+        purple = SOURCE[purple_start:purple_end]
+        self.assertIn("for(int i = 0; i < SHW_PURPLE_SPAWN_COUNT; i++)", purple)
+        self.assertIn("b6ball_template.speed.v = sara_rand_speed(SHW_PURPLE_SPAWN_SPEED_MIN, SHW_PURPLE_SPAWN_SPEED_MAX);", purple)
+        self.assertLess(purple.index("b6ball_template.speed.v = sara_rand_speed("), purple.index("b6balls_add();"))
+        self.assertIn("return (boss.phase_frame == SHW_PURPLE_FINISH_FRAME);", purple)
+
+        # The purple phase observes the hit test but ignores its result; it
+        # always reaches the frame-200 handoff after the frame-192 seed.
+        purple_phase_start = CONTEXT.index("case SHINKI_PHASE_PURPLE_TRANSITION:")
+        purple_phase_end = CONTEXT.index("case SHINKI_PHASE_SYMMETRIC_SPREADS:", purple_phase_start)
+        purple_phase = CONTEXT[purple_phase_start:purple_phase_end]
+        self.assertIn("boss_hittest_shots();", purple_phase)
+        self.assertIn("if(pattern_wings_to_purple())", purple_phase)
+        self.assertNotIn("if(!boss_hittest_shots())", purple_phase)
+
+        # Phase 9 calls the aimed callback before its HP test. Its first speed
+        # write is rank-specific and may be skipped by an earlier HP exit.
+        phase_start = CONTEXT.index("case SHINKI_PHASE_SYMMETRIC_SPREADS:")
+        phase_end = CONTEXT.index("case SHINKI_PHASE_DEFEAT_TRANSITION:", phase_start)
+        phase = CONTEXT[phase_start:phase_end]
+        self.assertLess(phase.index("SHINKI_WING_FLIGHT_AND_ATTACK();"), phase.index("phase_done = boss_hittest_shots();"))
+        self.assertIn("wing_pattern();", CONTEXT[:CONTEXT.index("case SHINKI_PHASE_SYMMETRIC_SPREADS:")])
+        self.assertNotIn("SHW_AIMED_FIRST_ATTACK_FRAME", phase)
+        intervals = rank_values("SHW_AIMED_INTERVAL")
+        phase9_first = {
+            rank: first_multiple_after(130, interval)
+            for rank, interval in intervals.items()
+        }
+        self.assertEqual(phase9_first, {"EASY": 192, "NORMAL": 160, "HARD": 140, "LUNATIC": 144})
+
+        # If HP exits before that first spawn, the purple random speed remains;
+        # the same-frame exit occurs after the callback and therefore sees 4.0.
+        def phase9_carry(exit_frame, first_spawn):
+            return "purple-random-2.0-to-under-6.0" if exit_frame < first_spawn else 4.0
+
+        for rank, first in phase9_first.items():
+            self.assertEqual(phase9_carry(first - 1, first), "purple-random-2.0-to-under-6.0", rank)
+            self.assertEqual(phase9_carry(first, first), 4.0, rank)
+
     def test_devil_first_aimed_ball_is_rank_gated_after_its_angle_prelude(self):
         intervals = rank_values("DEVIL_BALL_START")
         expected = {"EASY": 256, "NORMAL": 280, "HARD": 256, "LUNATIC": 280}
@@ -101,15 +152,33 @@ class ShinkiB6BallSpeedHandoffTests(unittest.TestCase):
                 self.assertEqual(executable.count("b6balls_add();"), 2)
         self.assertIn("subpixel_t speed = playperf_speedtune(b6ball_template.speed);", BALL_ADD)
         self.assertIn("vector2_near(p->pos.velocity, b6ball_template.angle, speed);", BALL_ADD)
+        self.assertNotRegex(BALL_ADD, r"b6ball_template\.speed\s*=")
 
-        # Conditional provenance: before the Devil first-spawn frame the
-        # template still has the phase-nine 4.0 value; at/after it, 3.75.
-        def carried_speed(exit_frame, first_devil_spawn, previous_speed=4.0):
-            return 3.75 if exit_frame >= first_devil_spawn else previous_speed
+        # The final value is the last writer reached across the three phases:
+        # purple's random [2,6) speed, phase nine's 4.0, then Devil's 3.75.
+        def carried_speed(phase9_exit, phase9_first, devil_exit, devil_first):
+            speed = "purple-random-2.0-to-under-6.0"
+            if phase9_exit >= phase9_first:
+                speed = 4.0
+            if devil_exit >= devil_first:
+                speed = 3.75
+            return speed
 
-        for rank, first_devil_spawn in {"EASY": 256, "NORMAL": 280, "HARD": 256, "LUNATIC": 280}.items():
-            self.assertEqual(carried_speed(first_devil_spawn - 1, first_devil_spawn), 4.0)
-            self.assertEqual(carried_speed(first_devil_spawn, first_devil_spawn), 3.75)
+        phase9_first = {"EASY": 192, "NORMAL": 160, "HARD": 140, "LUNATIC": 144}
+        devil_first = {"EASY": 256, "NORMAL": 280, "HARD": 256, "LUNATIC": 280}
+        for rank in ("EASY", "NORMAL", "HARD", "LUNATIC"):
+            self.assertEqual(
+                carried_speed(phase9_first[rank] - 1, phase9_first[rank], devil_first[rank] - 1, devil_first[rank]),
+                "purple-random-2.0-to-under-6.0",
+            )
+            self.assertEqual(
+                carried_speed(phase9_first[rank], phase9_first[rank], devil_first[rank] - 1, devil_first[rank]),
+                4.0,
+            )
+            self.assertEqual(
+                carried_speed(phase9_first[rank], phase9_first[rank], devil_first[rank], devil_first[rank]),
+                3.75,
+            )
 
 
 if __name__ == "__main__":

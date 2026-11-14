@@ -464,33 +464,44 @@ a stale attack counter from accidentally awarding a timed-out defeat bonus.
 and pins the generic phase-reset implementation and the byte-21 union layout.
 
 
-## 2026-11-14: Devil-to-final B6-ball speed is a conditional carry
+## 2026-11-14: three-phase Shinki B6-ball speed carry
 
 The final two-ball spiral does not initialize `b6ball_template.speed`; the
 accepted `b6balls_add()` consumer applies `playperf_speedtune()` to the value
 already in the template and derives each new ball's velocity from it. The
-last two phase writers are distinct: the phase-9 aimed-ball pattern writes
-**4.0 px/frame**, while `pattern_devil()` writes **3.75 px/frame** only after
-its 192-frame startup, once its four-column prelude reaches outer angle `0x40`
-and the rank-selected B6 interval elapses.
+complete carry chain has **three** phase writers, not two:
 
-The first Devil B6-ball writes are rank-specific: easy/hard at phase-10 frame
-**256** (intervals 64/32), normal/lunatic at frame **280** (intervals 40/28).
-The controller runs `wing_pattern()` and then performs its HP hit test on every
-pre-timeout frame; there is no minimum-frame gate before the HP transition.
-Therefore the exact source-level rule is conditional: if Devil reaches its
-first aimed-ball spawn, final spiral inherits 3.75; if HP ends Devil earlier,
-the final spiral keeps the prior template speed instead. The normal full phase-9
-pattern has already set the prior 4.0 value at frame 192/160/140/144 for
-easy/normal/hard/lunatic respectively. The final phase's first paired B6 spawn
-is at frame 128, but its leaf intentionally leaves speed untouched.
+1. The phase-8 purple transition writes sixteen random speeds at frame **192**.
+   Each uses `sara_rand_speed(2.0f, 6.0f)`, so the last value remains in the
+   shared template after the loop and seeds phase 9.
+2. The phase-9 aimed-ball callback overwrites the template with **4.0 px/frame**
+   only when its first rank-timed ball is actually emitted: easy 192, normal
+   160, hard 140, lunatic 144 (intervals 96/32/28/24).
+3. `pattern_devil()` overwrites it with **3.75 px/frame** only after its
+   192-frame startup, once its four-column prelude reaches outer angle `0x40`
+   and the rank-selected B6 interval elapses. The first Devil B6-ball writes
+   are easy/hard at frame **256** (intervals 64/32), normal/lunatic at frame
+   **280** (intervals 40/28).
+
+Both phase 9 and Devil call their attack callback before the per-frame HP hit
+test and have no minimum-frame gate before that HP transition. Therefore an
+HP exit before the first aimed-ball spawn preserves the purple transition's
+last random speed; an exit after phase 9's first spawn but before Devil's first
+preserves 4.0; reaching Devil's first spawn changes the carry to 3.75. The
+final phase's first paired B6 spawn is at frame 128, but its leaf intentionally
+leaves speed untouched. `b6balls_add()` reads and tunes the template speed into
+a local for each spawned ball; it does not clear or rewrite the template.
 
 This refines the old `pattern_devil()` assumption without changing gameplay or
-adding a reset. `tests/test_shinki_b6ball_speed_handoff.py` checks both ranked
-first-write schedules, the exact `bullet_intro_done` gate, the lack of a Devil
-minimum-duration condition, the final leaf's no-write behavior, and the
-`b6balls_add()` speed consumer. The two maintained updater source owners retain
-the original carry semantics.
+adding a reset. `tests/test_shinki_b6ball_speed_handoff.py` checks the purple
+seed, both ranked first-write schedules, the exact `bullet_intro_done` gate,
+callback-before-HP ordering, early phase-9/Devil exits, the final leaf's no-write
+behavior, and the `b6balls_add()` speed consumer. The focused eleven-unit replay
+at `.analysis/unit-replays/gpt-web-shinki-three-phase-b6-carry-20261114/receipt.json`
+rebuilds the affected Shinki sources with two independent Borland/TLINK
+producers; all eleven units remain byte/fixup exact and the compiled negative
+is rejected. The two maintained updater source owners retain the original
+carry semantics and no new CODE ownership is claimed.
 
 ## 2026-11-14: complete thirteen-phase Boss route and explicit reset lifetimes
 
