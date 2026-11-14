@@ -28,6 +28,30 @@ def public_files():
     return [ROOT / name.decode() for name in names]
 
 
+
+def check_public_ownership():
+    """Without private inputs, check the committed inventory is self-consistent."""
+    from collections import Counter
+    data = json.loads((ROOT / "resources/ownership.json").read_text())
+    total = Counter()
+    for name, view in data["views"].items():
+        cursor, counts = 0, Counter()
+        for row in view["intervals"]:
+            if row["start"] != cursor or row["end"] <= row["start"]:
+                raise ValueError(f"ownership view {name} is not gapless at {cursor:#x}")
+            counts[row["kind"]] += row["end"] - row["start"]
+            cursor = row["end"]
+        if cursor != view["size"] or dict(sorted(counts.items())) != view["byte_counts"]:
+            raise ValueError(f"ownership view {name} counts disagree with its intervals")
+        total.update(counts)
+    if dict(sorted(total.items())) != data["byte_counts"]:
+        raise ValueError("ownership totals disagree with the views")
+    exact = sum(v for k, v in total.items() if k.startswith("accepted-"))
+    if (data["authored_exact_bytes"] != exact or
+            data["authored_denominator"] != exact + total["unknown"] or
+            data["percentage"] != round(100 * exact / data["authored_denominator"], 3)):
+        raise ValueError("published authored percentage disagrees with the inventory")
+
 def main():
     if sys.argv[1:] in (["--help"], ["-h"]):
         print("usage: ci.py [--full]\nDefault: complete public-tree syntax, ledgers, build configuration and private-file checks.\n--full: explicitly run the broad tooling suite.")
@@ -48,9 +72,14 @@ def main():
             tomllib.loads(path.read_text())
         elif path.suffix == ".sh":
             subprocess.run(["bash", "-n", str(path)], check=True)
-    for script in ("progress.py", "ownership.py"):
-        subprocess.run([sys.executable, str(ROOT / "scripts" / script), "--check"],
+    subprocess.run([sys.executable, str(ROOT / "scripts/progress.py"), "--check"],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    if (ROOT / ".analysis").is_dir():
+        # Rebuilding the inventory re-reads private originals and calibrations.
+        subprocess.run([sys.executable, str(ROOT / "scripts/ownership.py"), "--check"],
                        cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    else:
+        check_public_ownership()
     # Static-only CL.LIB review of two large CODE SEGDEFs. Their 8 runtime
     # CS: placeholders are deliberately unowned, not zero-filled source.
     subprocess.run([sys.executable, str(ROOT / "scripts/review_vendor_reserved.py"), "--structural-check"],
