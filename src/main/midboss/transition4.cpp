@@ -1,43 +1,56 @@
 // Natural movement algorithm from MAIN 1527:0D04 / reference sub_1AFD4.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/transition4.hpp"
+#include "src/main/midboss/stage4_scratch.hpp"
 
 bool near midboss4_pattern_transition(void)
 {
+    enum {
+        MIDBOSS4_TRANSITION_START_FRAME = 16,
+        MIDBOSS4_TRANSITION_HALF_FRAMES = 32,
+        MIDBOSS4_TRANSITION_SLOWDOWN_FRAME = 20,
+        MIDBOSS4_TRANSITION_END_FRAME = 64,
+        MIDBOSS4_TRANSITION_SLOWDOWN_DIVISOR = 2,
+        MIDBOSS4_TRANSITION_X_STEP_SP = 32,
+        MIDBOSS4_TRANSITION_CENTER_X_RANGE_PX = 256,
+        MIDBOSS4_TRANSITION_CENTER_X_MIN_PX = 64,
+        MIDBOSS4_TRANSITION_CENTER_Y_RANGE_PX = 32,
+        MIDBOSS4_TRANSITION_CENTER_Y_MIN_PX = 64,
+    };
     int frame;
-    if(midboss.phase_frame >= 16) {
-        frame = midboss.phase_frame - 16;
-        if(frame < 32) {
+    if(midboss.phase_frame >= MIDBOSS4_TRANSITION_START_FRAME) {
+        frame = midboss.phase_frame - MIDBOSS4_TRANSITION_START_FRAME;
+        if(frame < MIDBOSS4_TRANSITION_HALF_FRAMES) {
             if(frame == 0) {
-                boss_statebyte[15] = 0;
+                midboss4_scratch.shot_vulnerable = 0;
                 snd_se_play(13);
                 midboss4_transition_center_x = midboss.pos.cur.x.v;
             }
             midboss.pos.cur.x.v = midboss4_transition_center_x;
-            if(frame > 20) {
-                frame = 20 + ((frame - 20) / 2);
+            if(frame > MIDBOSS4_TRANSITION_SLOWDOWN_FRAME) {
+                frame = MIDBOSS4_TRANSITION_SLOWDOWN_FRAME + ((frame - MIDBOSS4_TRANSITION_SLOWDOWN_FRAME) / MIDBOSS4_TRANSITION_SLOWDOWN_DIVISOR);
             }
             if(stage_frame_mod2) {
-                midboss.pos.cur.x.v += frame * 32;
+                midboss.pos.cur.x.v += frame * MIDBOSS4_TRANSITION_X_STEP_SP;
             } else {
-                midboss.pos.cur.x.v -= frame * 32;
+                midboss.pos.cur.x.v -= frame * MIDBOSS4_TRANSITION_X_STEP_SP;
             }
-        } else if(frame == 32) {
-            midboss4_transition_center_x = randring2_next16_mod(to_sp(256)) + to_sp(64);
-            midboss.pos.cur.y.v = randring2_next16_mod(to_sp(32)) + to_sp(64);
+        } else if(frame == MIDBOSS4_TRANSITION_HALF_FRAMES) {
+            midboss4_transition_center_x = randring2_next16_mod(to_sp(MIDBOSS4_TRANSITION_CENTER_X_RANGE_PX)) + to_sp(MIDBOSS4_TRANSITION_CENTER_X_MIN_PX);
+            midboss.pos.cur.y.v = randring2_next16_mod(to_sp(MIDBOSS4_TRANSITION_CENTER_Y_RANGE_PX)) + to_sp(MIDBOSS4_TRANSITION_CENTER_Y_MIN_PX);
         } else {
-            frame = 64 - frame;
-            if(frame > 20) {
-                frame = 20 + ((frame - 20) / 2);
+            frame = MIDBOSS4_TRANSITION_END_FRAME - frame;
+            if(frame > MIDBOSS4_TRANSITION_SLOWDOWN_FRAME) {
+                frame = MIDBOSS4_TRANSITION_SLOWDOWN_FRAME + ((frame - MIDBOSS4_TRANSITION_SLOWDOWN_FRAME) / MIDBOSS4_TRANSITION_SLOWDOWN_DIVISOR);
             }
             midboss.pos.cur.x.v = midboss4_transition_center_x;
             if(stage_frame_mod2) {
-                midboss.pos.cur.x.v += frame * 32;
+                midboss.pos.cur.x.v += frame * MIDBOSS4_TRANSITION_X_STEP_SP;
             } else {
-                midboss.pos.cur.x.v -= frame * 32;
+                midboss.pos.cur.x.v -= frame * MIDBOSS4_TRANSITION_X_STEP_SP;
             }
             if(frame == 0) {
-                boss_statebyte[15] = 1;
+                midboss4_scratch.shot_vulnerable = 1;
                 return true;
             }
         }
