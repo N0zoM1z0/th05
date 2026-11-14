@@ -330,3 +330,10 @@ phase 12. Substituting `boss.phase == SHINKI_PHASE_SYMMETRIC_SPREADS` looks
 behaviorally simpler, but the focused original-target replay changes the
 959-byte update-context contribution. The byte comparison is therefore part
 of the exact source reconstruction, not merely a leftover phase counter.
+
+
+The source's `MODDERS: Turn into a loop` note is not safe for an exact
+reconstruction. I tested a four-slot `for` loop over `COLUMN_COUNT`; Borland
+then emits an 800-byte complete leaf instead of the target's 802 bytes. The
+four immediate A/B/C/D calls are therefore retained deliberately. The
+lifecycle regression test pins their order and rejects the loop form.

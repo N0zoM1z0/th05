@@ -192,7 +192,7 @@ void near pattern_devil(void)
 	} else if(laser_grow_delay < DEVIL_LASER_GROW_FRAMES) {
 		laser_grow_delay++;
 	} else if(laser_grow_delay == DEVIL_LASER_GROW_FRAMES) {
-		// MODDERS: Turn into a loop
+		// Keep the four direct calls: a loop shrinks the original 802-byte leaf.
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_A);
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_B);
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_C);

@@ -346,6 +346,22 @@ class ShinkiDevilLifecycleTests(unittest.TestCase):
         self.assertIn("if((laser_grow_delay++) == DEVIL_FAST_DELAY_SENTINEL)", laser)
         self.assertEqual(local_const("DEVIL_FAST_DELAY_SENTINEL"), 65)
 
+    def test_four_fixed_laser_grow_calls_are_not_rewritten_as_a_loop(self):
+        grow_start = DEVIL.index("} else if(laser_grow_delay == DEVIL_LASER_GROW_FRAMES)")
+        grow_end = DEVIL.index("} else if(!lasers_active)", grow_start)
+        grow = DEVIL[grow_start:grow_end]
+        calls = [
+            "laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_A);",
+            "laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_B);",
+            "laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_C);",
+            "laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_D);",
+        ]
+        positions = [grow.index(call) for call in calls]
+        self.assertEqual(positions, sorted(positions))
+        self.assertEqual(grow.count("laser_manual_grow("), 4)
+        self.assertNotIn("for(laser_slot", grow)
+        self.assertIn("a loop shrinks the original 802-byte leaf", grow)
+
     def test_fast_stage_delay_sentinel_is_a_nonwrapping_16bit_counter(self):
         state = (ROOT / "src/main/boss/shinki/devil_float_state.h").read_text()
         self.assertIn("extern int near shinki_devil_laser_grow_delay;", state)
