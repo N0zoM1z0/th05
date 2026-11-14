@@ -188,3 +188,22 @@ preserve every original byte and ordered fixup across all four complete units;
 the existing compiled animation-speed negative is rejected. Receipt:
 `.analysis/unit-replays/gpt-web-mai-yuki-defeated-character-overlay-20261113/receipt.json`.
 No duplicate CODE credit or new storage is claimed.
+
+## 2026-11-14: complete paired-fight phase and survivor regression
+
+The 1,018-byte shared updater now names its repeated zero values by their
+actual roles: phase-frame reset, completed-pattern counter reset, and the
+unset HP endpoint for both fighters. These values remain distinct from the
+survivor's phase-zero assignment and from the one-byte defeated-character
+identity that reuses `boss2.phase_state` after the shared fight.
+
+`tests/test_mai_yuki_lifecycle.py` pins the entire two-Boss state machine:
+setup/ready gates, shared 9,000 HP accounting, first/laser/final pattern banks
+(10/5/21 completed callbacks), combined-HP gates at 5,500 and 2,250, the
+64/16-frame reposition clocks, 16/32-frame small-explosion transitions,
+12/8/64-frame big-explosion animation, and the survivor-dialog selection.
+It also checks the critical timeout path: exhaustion forces the Mai-defeated
+result, stops the live laser, and does not set the HP-hit reward flag. Real hit
+results 1/2 are stored as loser indices 0/1, then select the surviving fighter,
+its update callback, title/dialog and 7,900 HP reset. No second Boss record or
+new state is introduced.

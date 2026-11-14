@@ -30,6 +30,10 @@ static const int MY_BIG_EXPLOSION_SPRITE_FRAMES = 8;
 static const int MY_BIG_EXPLOSION_EXIT_FRAME = 64;
 static const int MY_SURVIVOR_DIALOG_ENTRY_FRAME = 1;
 static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
+// Distinct zero-valued sentinels for the paired fight's original lifetimes.
+static const int MY_PHASE_FRAME_RESET = 0;
+static const int MY_PATTERN_COUNT_RESET = 0;
+static const int MY_HP_END_UNSET = 0;
 
 
 // All canonical object types precede ordinary compiler-table word alignment.
@@ -55,7 +59,7 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
 // the chosen wave index is an actual threshold, not a new phase.
 #define MY_ENTER_REPOSITION_GATE(gate) \
     boss.mode = MY_MODE_REPOSITION; \
-    boss.phase_frame = 0; \
+    boss.phase_frame = MY_PHASE_FRAME_RESET; \
     boss.phase_state.patterns_seen = gate
 
 // Ordinary shared-fight phase advances move the phase before clearing its
@@ -63,7 +67,7 @@ static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
 // bullet-zap activation and remains separate from this exact protocol.
 #define MY_ADVANCE_FIGHT_PHASE() { \
     boss.phase++; \
-    boss.phase_frame = 0; \
+    boss.phase_frame = MY_PHASE_FRAME_RESET; \
 }
 
 // The one-based defeated-character report is stored on boss2. All four
@@ -86,9 +90,9 @@ void pascal far mai_yuki_update(void)
     case MY_PHASE_SETUP:
         if(boss.phase_frame == MY_SETUP_ENTRY_FRAME) {
             boss.hp = MY_SHARED_HP;
-            boss.phase_end_hp = 0;
+            boss.phase_end_hp = MY_HP_END_UNSET;
             boss2.hp = MY_SHARED_HP;
-            boss2.phase_end_hp = 0;
+            boss2.phase_end_hp = MY_HP_END_UNSET;
             gather_template.radius.v = to_sp(MY_SHARED_RING_RADIUS_PIXELS);
             gather_template.angle_delta = MY_GATHER_ANGLE_DELTA;
             gather_template.ring_points = MY_GATHER_RING_POINTS;
@@ -111,7 +115,7 @@ void pascal far mai_yuki_update(void)
         }
         MY_ADVANCE_FIGHT_PHASE();
         boss.mode = MY_MODE_ATTACK;
-        boss.phase_state.patterns_seen = 0;
+        boss.phase_state.patterns_seen = MY_PATTERN_COUNT_RESET;
         mai_pattern_current = mai_pattern_random_crosses;
         yuki_pattern_current = yuki_pattern_random_aimed_fan;
         boss_custombullets_render = cheetos_render;
@@ -135,7 +139,7 @@ void pascal far mai_yuki_update(void)
                 state_result = boss.phase_frame - MY_REPOSITION_NORMAL_LEAD_FRAMES;
             }
             if(mai_yuki_flystep_random(state_result)) {
-                boss.phase_frame = 0;
+                boss.phase_frame = MY_PHASE_FRAME_RESET;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen < MY_PATTERN_FIRST_END) {
@@ -146,7 +150,7 @@ void pascal far mai_yuki_update(void)
                 } else if(boss.phase_state.patterns_seen < MY_PATTERN_FINAL_END) {
                     MY_SELECT_PATTERN_PAIR(MAI_PATTERNS_FINAL, YUKI_PATTERNS_FINAL);
                 } else {
-                    boss.phase_state.patterns_seen = 0;
+                    boss.phase_state.patterns_seen = MY_PATTERN_COUNT_RESET;
                     // Pattern exhaustion selects Mai's defeat (Yuki survives).
                     state_result = MY_HIT_MAI_DEFEATED;
                     goto start_small_explosion;
@@ -173,7 +177,7 @@ void pascal far mai_yuki_update(void)
         MY_DEFEATED_CHARACTER(boss2.phase_state) = (
             state_result - MY_HIT_TO_STORED_DEFEATED_INDEX);
         boss.phase = MY_PHASE_EXPLODE_SMALL;
-        boss.phase_frame = 0;
+        boss.phase_frame = MY_PHASE_FRAME_RESET;
         if(lasers[0].flag != LF_FREE) {
             laser_stop(MY_FIRST_LASER_TO_STOP);
         }
@@ -200,7 +204,7 @@ void pascal far mai_yuki_update(void)
             }
             boss.phase++;
             bullet_zap.active = boss.phase_state.defeat_bonus;
-            boss.phase_frame = 0;
+            boss.phase_frame = MY_PHASE_FRAME_RESET;
             snd_se_play(MY_BIG_EXPLOSION_SE);
             player_invincibility_time = MY_POST_EXPLOSION_INVINCIBILITY_FRAMES;
         }
@@ -244,7 +248,7 @@ void pascal far mai_yuki_update(void)
             dialog_animate();
             overlay1 = overlay_boss_bgm_update_and_render;
             boss.phase = MY_SURVIVOR_RESET_PHASE;
-            boss.phase_frame = 0;
+            boss.phase_frame = MY_PHASE_FRAME_RESET;
             boss_fg_render = mai_yuki_survivor_render;
             boss.hp = MY_SURVIVOR_HP;
         }
