@@ -12,7 +12,7 @@
 // burning Louise sprite. Neither branch changes its own preceding hit test.
 #define LOUISE_FINISH_FIRE_TRANSITION() { \
     if(boss.phase_frame >= LOUISE_FIRE_TRANSITION_FRAMES) { \
-        boss.phase_frame = 0; \
+        boss.phase_frame = LOUISE_PHASE_FRAME_RESET; \
         boss.phase++; \
         boss.sprite = LOUISE_SPRITE_FIRE; \
     } \
@@ -47,7 +47,7 @@ void pascal far louise_update(void)
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= LOUISE_HP_FILL_FRAMES) {
             boss.phase++;
-            boss.phase_frame = 0;
+            boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
             snd_se_play(LOUISE_SOUND_ENTRANCE);
             bg_render_bombing_func = louise_bg_render;
         }
@@ -57,9 +57,9 @@ void pascal far louise_update(void)
         boss_hittest_shots_invincible();
         if(boss.phase_frame >= LOUISE_READY_FRAMES) {
             boss.phase++;
-            boss.phase_frame = 0;
+            boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
             boss.mode = LOUISE_MODE_BLUE_SPREADS;
-            boss.phase_state.patterns_seen = 0;
+            boss.phase_state.patterns_seen = LOUISE_PATTERN_COUNT_RESET;
             louise_scratch.charge_speed = LOUISE_INITIAL_CHARGE_SPEED;
             louise_scratch.blue_red_or_laser_direction = LOUISE_FIRST_PATTERN_BLUE;
         }
@@ -69,7 +69,7 @@ void pascal far louise_update(void)
         switch(boss.mode) {
         case LOUISE_MODE_REPOSITION:
             if(louise_flystep(to_sp(1.0f), LOUISE_BLUE_RED_REPOSITION_FRAMES)) {
-                boss.phase_frame = 0;
+                boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
                 boss.phase_state.patterns_seen++;
                 boss.mode = (boss.phase_state.patterns_seen & LOUISE_BLUE_RED_PATTERN_PARITY) + LOUISE_MODE_BLUE_SPREADS;
                 if(boss.phase_state.patterns_seen >= LOUISE_BLUE_RED_PATTERN_LIMIT) {
@@ -97,7 +97,7 @@ void pascal far louise_update(void)
     case LOUISE_PHASE_MIRRORED_FANS:
         louise_pattern_mirrored_fans();
         if(louise_flystep(to_sp(0.875f), LOUISE_MIRRORED_FAN_REPOSITION_FRAMES)) {
-            boss.phase_frame = 0;
+            boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
             boss.phase_state.patterns_seen++;
             if(boss.phase_state.patterns_seen >= LOUISE_MIRRORED_FAN_PATTERN_LIMIT) {
                 goto fan_phase_done;
@@ -116,7 +116,7 @@ void pascal far louise_update(void)
             if(louise_flystep(to_sp(3.0f), LOUISE_LASER_RING_REPOSITION_FRAMES)) {
                 boss.mode = louise_scratch.next_laser_ring_mode + LOUISE_MODE_SWEEPING_LASERS;
                 louise_scratch.next_laser_ring_mode = LOUISE_SECOND_PATTERN_TOGGLE - louise_scratch.next_laser_ring_mode;
-                boss.phase_frame = 0;
+                boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= LOUISE_LASER_RING_PATTERN_LIMIT) {
                     goto second_phase_done;
@@ -143,7 +143,7 @@ void pascal far louise_update(void)
     case LOUISE_PHASE_AIMED_PELLETS:
         louise_pattern_aimed_pellets();
         if(louise_flystep(to_sp(0.5f), LOUISE_FINAL_REPOSITION_FRAMES)) {
-            boss.phase_frame = 0;
+            boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
             boss.phase_state.patterns_seen++;
             if(boss.phase_state.patterns_seen >= LOUISE_AIMED_PELLET_PATTERN_LIMIT) {
                 boss.phase_state.defeat_bonus = false;
@@ -155,7 +155,7 @@ void pascal far louise_update(void)
         }
         boss.phase_state.defeat_bonus = true;
     explode_small:
-        boss.phase_frame = 0;
+        boss.phase_frame = LOUISE_PHASE_FRAME_RESET;
         boss.phase = PHASE_BOSS_EXPLODE_SMALL;
         break;
 

@@ -24,6 +24,11 @@ enum LouisePhaseClock {
     LOUISE_AIMED_PELLET_PATTERN_LIMIT = 10
 };
 
+enum LouiseFightReset {
+    LOUISE_PHASE_FRAME_RESET = 0,
+    LOUISE_PATTERN_COUNT_RESET = 0
+};
+
 enum LouiseFightResource {
     LOUISE_GATHER_RADIUS_PX = 64,
     LOUISE_GATHER_ANGLE_DELTA = 2,

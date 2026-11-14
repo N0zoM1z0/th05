@@ -189,3 +189,21 @@ fan-angle negative is rejected. Receipt:
 `.analysis/unit-replays/gpt-web-louise-cross-wave-byte15-byte14-final-20261113/receipt.json`.
 This is a semantic refinement of already accepted owners; no duplicate CODE
 credit is claimed.
+
+## 2026-11-14: complete eight-phase lifecycle regression and named reset states
+
+The complete 582-byte far-Pascal callback now names its two repeated zero
+writes as the Boss phase-frame reset and completed-pattern counter reset.
+They are separate protocol roles even though both retain value zero and the
+original 16-byte `LouiseScratch` layout. No new state, transition or helper
+call is introduced.
+
+`tests/test_louise_lifecycle.py` pins all eight original phase keys and the
+full **4,400 → 3,000 → 1,900 → 500 → 0** HP ladder; separate 128/64-frame
+setup gates; the first 20-cycle blue/red parity wave; both 64-frame fire
+transitions; the 20-cycle mirrored fan at 0.875 speed; the 20-cycle laser/ring
+mode toggle; and the ten-cycle final aimed-pellet defeat-bonus split. The
+checks explicitly preserve the ordering of the terminal pattern-count jump
+before shot-hit/reward handling, which is the key distinction between HP
+victory and timed-out pattern completion. The existing 582-byte exact owner
+remains the replay boundary.
