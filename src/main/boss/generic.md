@@ -88,3 +88,16 @@ fixups; each selected batch's compiled negative was rejected. Receipts:
 
 This is a source/API clarification only: the original 809 CODE bytes and
 10 DATA bytes retain their existing owners and receive no duplicate credit.
+
+
+## Midboss hitbox stores and the inline-helper trap
+
+`boss_hittest_shots_damage()` can use the shared inline
+`shots_hittest(boss.pos.cur, radius_x, radius_y)` helper. The adjacent
+`midboss_hittest_shots_damage()` intentionally keeps its four scalar hitbox
+stores and no-argument `shots_hittest()` call. Replacing those stores with the
+same inline helper shrinks the six-function generic CODE contribution from
+**352 to 348 bytes**; the original 352-byte extent is therefore source-shape
+sensitive even though the collision behavior looks identical. The manual
+stores are not an unfinished cleanup: they preserve the exact original leaf.
+`tests/test_boss_generic_hittest.py` pins the two call shapes and flag lifetime.

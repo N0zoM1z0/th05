@@ -31,7 +31,8 @@ int pascal near midboss_hittest_shots_damage(
 )
 {
 	shots_hittest_against_boss = true;
-	// MODDERS: Just call the inline function.
+	// Keep the scalar stores: the inline center/radius helper emits 4 fewer
+	// bytes here and no longer matches the original 352-byte generic unit.
 	shot_hitbox_radius.x.v = radius_x;
 	shot_hitbox_radius.y.v = radius_y;
 	shot_hitbox_center.x.v = midboss.pos.cur.x.v;
