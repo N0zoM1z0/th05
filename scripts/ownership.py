@@ -672,6 +672,17 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
                 raise ValueError(f"BSS gap is not between reviewed storage: {name} {start:#x}")
             if image is not None and any(image[start:end]):
                 raise ValueError(f"BSS gap bytes are not zero: {name} {start:#x}")
+        elif kind in ("reviewed-vendor-source-bytes", "reviewed-uninitialized-game-storage"):
+            # Bytes fixed by a cited source declaration, next to a named owner.
+            expected = bytes.fromhex(row["bytes"])
+            neighbour = after if row.get("next_member") else before
+            want = row.get("next_member") or row.get("previous_owner")
+            if len(expected) != row["size"] or want not in (neighbour.get("member"), neighbour.get("unit")):
+                raise ValueError(f"source-declared bytes are not next to {want}: {name} {start:#x}")
+            if kind == "reviewed-uninitialized-game-storage" and any(expected):
+                raise ValueError("uninitialized storage must be zero")
+            if image is not None and image[start:end] != expected:
+                raise ValueError(f"source-declared bytes differ: {name} {start:#x}")
         elif kind == "verified-c0l-data":
             # Borland C0L.OBJ _DATA opens DGROUP at a paragraph boundary.
             if row["size"] != 0x90 or start % 16:

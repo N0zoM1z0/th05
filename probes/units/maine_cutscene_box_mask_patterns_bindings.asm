@@ -12,7 +12,7 @@ SHARED segment para public 'CODE' use16
 org (10110h - 0e800h)
 SHARED ends
 _DATA segment word public 'DATA' use16
-org 00732h
+org 00730h
 _DATA ends
 _BSS segment word public 'BSS' use16
 _BSS ends

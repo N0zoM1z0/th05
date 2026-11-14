@@ -1,7 +1,7 @@
 # TH05 progress
 
 Goal: **98% authored bytes exact**. Measured exact authored bytes (C/C++ plus
-reviewed original ASM): **99.931%** (144,266 exact of 144,365 bytes). Every byte still unknown in `resources/ownership.json` counts against the
+reviewed original ASM): **99.958%** (144,267 exact of 144,327 bytes). Every byte still unknown in `resources/ownership.json` counts against the
 denominator; vendor, assets, BSS, padding and alignment gaps are excluded.
 
 | Accepted CODE scope | Functions | Authored code bytes | Instruction bytes | CODE table bytes | Complete CODE extent bytes |
@@ -15,7 +15,7 @@ denominator; vendor, assets, BSS, padding and alignment gaps are excluded.
 | --- | ---: | ---: | ---: | ---: |
 | MAIN bounded C/C++ units | 82 | 3959 | 80417 | 80509 |
 | OP decoded C/C++ units | 16 | 8813 | 23115 | 23124 |
-| MAINE decoded C/C++ units | 34 | 4445 | 23179 | 23190 |
+| MAINE decoded C/C++ units | 34 | 4446 | 23180 | 23192 |
 | ZUN embedded C/C++ units | 1 | 320 | 911 | 911 |
 
 548 bounded C/C++ units pass two cold producers, raw bytes and original
@@ -28,10 +28,10 @@ from this DATA lane. Every DATA acceptance requires its own compiled DATA
 mutation; a mutation that changes only CODE cannot pass that gate.
 Unaccepted functions in the same translation unit receive no credit.
 Unaccepted DATA likewise receives no credit.
-Total authored C/C++ bytes are 127622: 110085 authored CODE plus 17537
+Total authored C/C++ bytes are 127623: 110085 authored CODE plus 17538
 initialized DATA bytes. This does not change the global denominator.
 Authored code includes 1044 bytes of explicitly classified compiler switch
-tables; these remain separate from instruction bytes. All 112 observed
+tables; these remain separate from instruction bytes. All 113 observed
 padding bytes are checked against their declared target values and excluded
 from authored CODE and DATA. Every table and padding byte remains inside the complete
 raw-byte comparisons; classification supplies no byte-comparison exemption.

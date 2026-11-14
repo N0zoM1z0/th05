@@ -1,5 +1,5 @@
 /* Five levels of 16-pixel EGC text-box transition coverage, four rows each. */
-#pragma option -zCCUTSCENE_BOX_MASK_DATA_TEXT -zPgroup_01
+#pragma option -zCCUTSCENE_BOX_MASK_DATA_TEXT -zPgroup_01 -a2
 #ifdef __cplusplus
 #error This semantic mask bank uses the original C initializer lane
 #endif
@@ -18,6 +18,9 @@ enum BoxMaskNibble {
     BOX_MASK_COMPLEMENT = 0x5,
     BOX_MASK_ALL = 0xF
 };
+
+/* Number of colour-map entries defined by the running cutscene script. */
+unsigned char colmap_count = 0;
 
 const unsigned int near BOX_MASKS[5][4] = {
     { EGC_REPEAT_NIBBLE(BOX_MASK_BIT_3), EGC_REPEAT_NIBBLE(BOX_MASK_NONE),

@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "kind": "gapless-observed-coordinate-inventory",
-  "authored_denominator": 144365,
-  "percentage": 99.931,
-  "authored_exact_bytes": 144266,
+  "authored_denominator": 144327,
+  "percentage": 99.958,
+  "authored_exact_bytes": 144267,
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
   "byte_counts": {
-    "accepted-c-initialized-data": 3043,
+    "accepted-c-initialized-data": 3044,
     "accepted-cxx-initialized-data": 14494,
     "accepted-cxx-instructions": 109041,
     "accepted-cxx-switch-table": 1044,
@@ -17,21 +17,22 @@
     "accepted-reviewed-asm-semantic-code-table": 36,
     "accepted-zun-com-initialized-data": 1514,
     "accepted-zun-com-instructions": 1843,
-    "checked-uncredited-alignment-gap": 180,
+    "checked-uncredited-alignment-gap": 181,
     "checked-uncredited-asm-alignment": 78,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 24,
     "checked-uncredited-intra-member-gap": 26,
-    "checked-uncredited-padding": 112,
+    "checked-uncredited-padding": 113,
     "checked-uncredited-zun-com-alignment": 12,
     "reviewed-bss-gap": 8,
     "reviewed-bss-prefix": 130,
     "reviewed-embedded-font-bitmap": 8264,
     "reviewed-embedded-sprite-bitmap": 2780,
     "reviewed-linker-mz-header": 3450,
-    "reviewed-uninitialized-game-storage": 832,
+    "reviewed-uninitialized-game-storage": 838,
     "reviewed-uninitialized-vendor-storage": 7378,
-    "unknown": 99,
+    "reviewed-vendor-source-bytes": 30,
+    "unknown": 60,
     "verified-vendor-code": 142514,
     "verified-vendor-initialized-data": 9107
   },
@@ -57,9 +58,10 @@
         "reviewed-bss-gap": 2,
         "reviewed-bss-prefix": 44,
         "reviewed-embedded-sprite-bitmap": 2752,
-        "reviewed-uninitialized-game-storage": 256,
+        "reviewed-uninitialized-game-storage": 258,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 33,
+        "reviewed-vendor-source-bytes": 14,
+        "unknown": 17,
         "verified-vendor-code": 47406,
         "verified-vendor-initialized-data": 2867
       },
@@ -1535,7 +1537,7 @@
         {
           "start": 17026,
           "end": 17032,
-          "kind": "unknown"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 17032,
@@ -6548,7 +6550,7 @@
         {
           "start": 134446,
           "end": 134454,
-          "kind": "unknown"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 134454,
@@ -6819,7 +6821,7 @@
         {
           "start": 135704,
           "end": 135706,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-game-storage"
         },
         {
           "start": 135706,
@@ -7888,7 +7890,7 @@
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 2054,
         "accepted-reviewed-asm-semantic-code-table": 36,
-        "checked-uncredited-alignment-gap": 35,
+        "checked-uncredited-alignment-gap": 36,
         "checked-uncredited-asm-alignment": 7,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -7899,9 +7901,10 @@
         "reviewed-embedded-font-bitmap": 72,
         "reviewed-embedded-sprite-bitmap": 28,
         "reviewed-linker-mz-header": 2012,
-        "reviewed-uninitialized-game-storage": 288,
+        "reviewed-uninitialized-game-storage": 290,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 24,
+        "reviewed-vendor-source-bytes": 8,
+        "unknown": 13,
         "verified-vendor-code": 44923,
         "verified-vendor-initialized-data": 2613
       },
@@ -10527,8 +10530,13 @@
         },
         {
           "start": 62641,
+          "end": 62642,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 62642,
           "end": 62650,
-          "kind": "unknown"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 62650,
@@ -10866,7 +10874,7 @@
         {
           "start": 64148,
           "end": 64150,
-          "kind": "unknown"
+          "kind": "reviewed-uninitialized-game-storage"
         },
         {
           "start": 64150,
@@ -11401,7 +11409,7 @@
       "sha256": "4c5d12f7cfdcf45665c923c46203fc03ab56cd467513e3d19305b914e4e5bf2e",
       "original_sha256": "8308c416e756a07766f9f66dbf5575fa12c09189059226931a9562e7272b6997",
       "byte_counts": {
-        "accepted-c-initialized-data": 657,
+        "accepted-c-initialized-data": 658,
         "accepted-cxx-initialized-data": 3788,
         "accepted-cxx-instructions": 18570,
         "accepted-cxx-switch-table": 164,
@@ -11412,13 +11420,14 @@
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
         "checked-uncredited-intra-member-gap": 8,
-        "checked-uncredited-padding": 11,
+        "checked-uncredited-padding": 12,
         "reviewed-bss-gap": 2,
         "reviewed-bss-prefix": 40,
         "reviewed-linker-mz-header": 1438,
-        "reviewed-uninitialized-game-storage": 288,
+        "reviewed-uninitialized-game-storage": 290,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 19,
+        "reviewed-vendor-source-bytes": 8,
+        "unknown": 7,
         "verified-vendor-code": 45347,
         "verified-vendor-initialized-data": 2859
       },
@@ -14045,7 +14054,7 @@
         {
           "start": 66252,
           "end": 66260,
-          "kind": "unknown"
+          "kind": "reviewed-vendor-source-bytes"
         },
         {
           "start": 66260,
@@ -14350,8 +14359,20 @@
         },
         {
           "start": 67646,
+          "end": 67648,
+          "kind": "reviewed-uninitialized-game-storage"
+        },
+        {
+          "start": 67648,
+          "end": 67649,
+          "kind": "accepted-c-initialized-data",
+          "unit": "maine-cutscene-box-mask-patterns-data"
+        },
+        {
+          "start": 67649,
           "end": 67650,
-          "kind": "unknown"
+          "kind": "checked-uncredited-padding",
+          "unit": "maine-cutscene-box-mask-patterns-data"
         },
         {
           "start": 67650,

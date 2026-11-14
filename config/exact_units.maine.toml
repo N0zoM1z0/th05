@@ -1799,14 +1799,14 @@ segment = "_DATA"
 wrapper_options = "-zCCUTSCENE_BOX_MASK_DATA_TEXT -zPgroup_01"
 bindings_source = "probes/units/maine_cutscene_box_mask_patterns_bindings.asm"
 binary = "E"
-target_start = 67650
-size = 40
+target_start = 67648
+size = 42
 functions = 0
 origin = "compiler-generated-c-semantic-data"
 extent_kind = "initialized-data"
-data_semantics = ["semantic-tables"]
+data_semantics = ["state", "semantic-tables"]
 alignment_offsets = []
-padding_bytes = []
+padding_bytes = [{offset = 1, value = 0}]
 
 [[controls]]
 unit = "maine-cutscene-box-mask-patterns-data"
