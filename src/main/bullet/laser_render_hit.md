@@ -111,3 +111,15 @@ The native byte/boundary proof is pinned in `config/asm_families.toml`.
 The explicit ownership decision pins this note and the accepted record in
 `config/reviewed_asm_families.json`. Whole-program linkage/packing and the
 98% objective remain open.
+
+## 2026-11-14: why the helpers cannot be authored C++
+
+A scratch TCC 4.0 `-S -O -3 -k-` compile of the 56-byte vector helper,
+written with pseudo-registers and no emits, reproduces every arithmetic
+instruction: `mov si,cx; add si,si`, both `movsx`/`imul`/`sar 8`, and the
+`[bp]`/`[bp+2]` center adds. TCC still wraps it in `push di`/`pop di`,
+whether DI is used through inline `asm`, a `_DI` pseudo-register address,
+or with `-r-`. The original helper saves only SI. Hitting it requires
+hiding DI from the compiler with `__emit__` opcode bytes, as ReC98 does,
+which is transcription rather than authored source. The reversed `push di;
+push si` in the hit test has the same problem, so the reviewed ASM owner stays.
