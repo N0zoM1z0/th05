@@ -153,6 +153,27 @@ all documented BB-loader and Vector2 trials, ledger-root receipts, native
 producers, calibration builds, ASM evidence, toolchain and Ghidra state remain.
 
 
+## 2026-11-14: measured authored denominator — 99.997% exact
+
+`resources/ownership.json` now publishes `authored_denominator` and
+`percentage`: **144,267 exact of 144,271** authored-candidate bytes.
+Exact bytes are accepted C/C++ (127,623), reviewed original ASM (13,287) and
+the reviewed ZUN COM modules (3,357). Every remaining unknown byte counts against the
+denominator. Vendor code/data, assets, BSS, padding and the zero-credit rows
+in `config/reviewed_gaps.json` do not. Each row in that file is checked
+against the original bytes (`overlay_reviewed_gaps(..., verify_targets=True)`).
+
+Only **4 bytes** remain unknown: MAIN `[21E78,21E7A)`, two zero bytes between
+the enemy lifetime totals and the sparks sprite, and ZUN `[225A,225C)`,
+two zero bytes between Master `fil` and CT.LIB `_abort` DATA. No code
+references either one, so neither has a provable identity.
+
+Lesson: the first "fewer than 16 zero bytes ending on a paragraph" alignment
+rule misfiled ZUN `__heaplen`, MAINE's VSYNC CS words and OP `kbhit` DATA.
+Multi-byte alignment is now limited to the CODE→DGROUP paragraph pad, and
+zero runs elsewhere need source/OMF evidence. ReC98's data dump also settled
+two boss-bank tails: `MAI_PATTERNS_FINAL[8]` and `yumeko_patterns_phase5[12]`.
+
 ## 2026-11-14: reviewed-ASM owners reclassified as compiler-generated C++
 
 Several functions owned as "handwritten" ASM are TCC output: ReC98 compiles
