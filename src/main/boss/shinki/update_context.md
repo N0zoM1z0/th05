@@ -491,3 +491,23 @@ first-write schedules, the exact `bullet_intro_done` gate, the lack of a Devil
 minimum-duration condition, the final leaf's no-write behavior, and the
 `b6balls_add()` speed consumer. The two maintained updater source owners retain
 the original carry semantics.
+
+## 2026-11-14: complete thirteen-phase Boss route and explicit reset lifetimes
+
+The accepted 959-byte updater now spells its repeated frame-clock zero as
+`SHINKI_PHASE_FRAME_RESET` and its three phase-local resets of the byte-10
+wave selector as `SHINKI_FIRST_SHARED_WAVE`. The final palette's blue-zero
+write uses the already shared `SHINKI_PALETTE_ZERO`. These are existing
+compile-time values only: the sixteen-byte Boss scratch arena, phase values,
+branch ordering and all original emitted bytes remain unchanged.
+
+`tests/test_shinki_boss_lifecycle.py` now follows all thirteen phases and the
+actual HP handoff sequence 22,800 → 20,600 → 18,400 → 14,600 → 11,600 →
+8,600 → 2,800 → 0. It separates the Devil's 5,600/3,800 internal thresholds
+from phase-end HP, checks the two sixteen-pattern early waves, six-laser wing
+preparation, 3,000-frame wing/Devil/final gates, purple's 160/192/200 milestones,
+the bomb one-HP damage cap, the byte-10 wave/laser alias, and the carried
+17-frame defeat transition. The final leaf still executes before its strict
+frame-3000 hit-test boundary. Thirteen focused lifecycle tests pass; the
+complete updater was independently replayed twice with original raw bytes,
+ordered fixups and its compiled defeat-bonus negative control.

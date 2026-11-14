@@ -123,6 +123,9 @@ void pascal shinki_update(void)
 	#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index
 
 	enum {
+		// Distinct lifetimes share the same physical zero value: the Boss
+		// frame clock and the scratch byte's first shared-wave index.
+		SHINKI_PHASE_FRAME_RESET = 0,
 		PHASE_11_FRAMES = 16,
 		SHINKI_PHASE_CURVED_RINGS = 2,
 		SHINKI_PHASE_RANDOM_KUNAI = 3,
@@ -186,7 +189,7 @@ void pascal shinki_update(void)
 	// original phase-increment then frame-clock-reset ordering.
 	#define SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK() { \
 		boss.phase++; \
-		boss.phase_frame = 0; \
+		boss.phase_frame = SHINKI_PHASE_FRAME_RESET; \
 	}
 
 	bool16 phase_done;
@@ -221,7 +224,7 @@ void pascal shinki_update(void)
 		// Timeout condition
 		if(boss.phase_frame >= (HUD_HP_FILL_FRAMES + SHINKI_HP_FILL_EXTRA_FRAMES)) {
 			// Next phase
-			boss.phase_frame = 0;
+			boss.phase_frame = SHINKI_PHASE_FRAME_RESET;
 			boss.phase++;
 			snd_se_play(SHINKI_PHASE_TRANSITION_SE);
 			bg_render_bombing_func = shinki_bg_render;
@@ -242,9 +245,9 @@ void pascal shinki_update(void)
 			// Next phase
 			boss.phase++;
 			boss.mode = SHINKI_MODE_PATTERN;
-			boss.phase_frame = 0;
+			boss.phase_frame = SHINKI_PHASE_FRAME_RESET;
 			phase_2_3_pattern = pattern_curved_rings;
-			phase_relative = 0;
+			phase_relative = SHINKI_FIRST_SHARED_WAVE;
 		}
 		break;
 
@@ -258,7 +261,7 @@ void pascal shinki_update(void)
 				#define PATTERNS SHINKI_PATTERNS_PHASE_2_3
 				extern const pattern_oneshot_func_t PATTERNS[2][2];
 
-				boss.phase_frame = 0;
+				boss.phase_frame = SHINKI_PHASE_FRAME_RESET;
 				boss.phase_state.patterns_seen++;
 				boss.mode++;
 				phase_2_3_pattern = PATTERNS[phase_relative][
@@ -321,7 +324,7 @@ void pascal shinki_update(void)
                 to_sp(SHINKI_WING_HITBOX_MIMA_PX), to_sp(SHINKI_WING_HITBOX_YUUKA_PX)
 			);
 			wing_pattern = pattern_random_rain_and_spreads_from_wings;
-			phase_relative = SHW_WING_FIRST_PATTERN_INDEX;
+			phase_relative = SHINKI_FIRST_SHARED_WAVE;
 		}
 		break;
 
@@ -345,7 +348,7 @@ void pascal shinki_update(void)
 		if(phase_relative == SHW_WING_FIRST_PATTERN_INDEX) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_7_END);
 			wing_pattern = pattern_cheetos_within_spread_walls;
-			boss.phase_frame = 0; // redundant
+			boss.phase_frame = SHINKI_PHASE_FRAME_RESET; // redundant
 			phase_relative++;
 		} else {
 			boss_phase_next(ET_HORIZONTAL, HP_PHASE_9_END);
@@ -363,7 +366,7 @@ void pascal shinki_update(void)
 			// Next phase
 			SHINKI_ADVANCE_PHASE_AND_RESET_CLOCK();
 			wing_pattern = pattern_aimed_b6balls_and_symmetric_spreads;
-			phase_relative = SHW_WING_FIRST_PATTERN_INDEX;
+			phase_relative = SHINKI_FIRST_SHARED_WAVE;
 		}
 		break;
 
@@ -394,7 +397,7 @@ void pascal shinki_update(void)
 		if(phase_relative == SHINKI_FIRST_SHARED_WAVE) {
 			boss_phase_next(ET_SW_NE, HP_PHASE_10_END);
 			shinki_wing_pattern = pattern_devil;
-			boss.phase_frame = 0; // redundant
+			boss.phase_frame = SHINKI_PHASE_FRAME_RESET; // redundant
 			phase_relative++;
 		} else {
 			// boss_phase_next clears phase_state.patterns_seen. That is the
@@ -427,7 +430,7 @@ void pascal shinki_update(void)
 			boss.sprite = PAT_SHINKI_STILL;
 			boss_hitbox_radius.x.v = to_sp(BOSS_HITBOX_DEFAULT_W);
 			Palettes[0].c.r = SHINKI_FINAL_CIRCLES_RED;
-			Palettes[0].c.b = 0x00;
+			Palettes[0].c.b = SHINKI_PALETTE_ZERO;
 			snd_se_play(SHINKI_PHASE_TRANSITION_SE);
 		}
 		break;
@@ -446,7 +449,7 @@ void pascal shinki_update(void)
 		}
 		// Boss defeated
 		boss_explode_small(ET_VERTICAL);
-		boss.phase_frame = 0;
+		boss.phase_frame = SHINKI_PHASE_FRAME_RESET;
 		boss.phase = PHASE_BOSS_EXPLODE_SMALL;
 		break;
 

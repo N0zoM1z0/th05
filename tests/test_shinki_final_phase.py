@@ -36,7 +36,7 @@ def phase_block(phase_name, next_marker):
 
 class ShinkiFinalPhaseTests(unittest.TestCase):
     def test_phase_11_carries_the_clock_into_phase_12(self):
-        self.assertIn("boss.phase_frame = 0;", SOURCE[SOURCE.index("case SHINKI_PHASE_SYMMETRIC_SPREADS:"):SOURCE.index("case SHINKI_PHASE_DEFEAT_TRANSITION:")])
+        self.assertIn("boss.phase_frame = SHINKI_PHASE_FRAME_RESET;", SOURCE[SOURCE.index("case SHINKI_PHASE_SYMMETRIC_SPREADS:"):SOURCE.index("case SHINKI_PHASE_DEFEAT_TRANSITION:")])
         phase11 = phase_block("SHINKI_PHASE_DEFEAT_TRANSITION", "case SHINKI_PHASE_FINAL_CIRCLES:")
         self.assertIn("if(boss.phase_frame > PHASE_11_FRAMES)", phase11)
         self.assertIn("boss.phase++;", phase11)
@@ -157,7 +157,7 @@ class ShinkiFinalPhaseTests(unittest.TestCase):
         final = phase_block("SHINKI_PHASE_FINAL_CIRCLES", "default:")
         self.assertLess(final.index("pattern_circles_and_alternating_spirals();"), final.index("if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES)"))
         self.assertLess(final.index("if(boss.phase_frame < SHW_WING_PHASE_TIMEOUT_FRAMES)"), final.index("boss.phase_state.defeat_bonus = true;"))
-        self.assertIn("boss.phase_frame = 0;", final)
+        self.assertIn("boss.phase_frame = SHINKI_PHASE_FRAME_RESET;", final)
 
     def test_final_timeout_skips_hp_bonus_but_hp_defeat_sets_shared_bonus_bit(self):
         final = phase_block("SHINKI_PHASE_FINAL_CIRCLES", "default:")
