@@ -30,8 +30,8 @@ extern bullet_special_angle_t bullet_template_special_angle;
 extern "C" {
     int pascal far super_convert_tiny(int num);
     void near bullets_add_special_fixedspeed(void);
-    void pascal near swords_update(void);
 }
+void pascal near swords_update(void);
 
 typedef void (near *near yumeko_pattern_func_t)(void);
 extern yumeko_pattern_func_t yumeko_pattern;

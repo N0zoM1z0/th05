@@ -37,7 +37,7 @@ assume cs:B5_UPDATE_TEXT
 public @BOSS_FLYSTEP_TOWARDS$QII, @GATHER_ADD_ONLY_3STACK$QIUIUI
 public _bullets_add_special_fixedspeed, @BOSS_EXPLODE_SMALL$Q16EXPLOSION_TYPE_T
 public @HUD_HP_UPDATE_AND_RENDER$QII, @BOSS_SCORE_BONUS$QUI
-public SWORDS_UPDATE, @YUMEKO_FLYSTEP_BOUNCE$QII
+public @SWORDS_UPDATE$QV, @YUMEKO_FLYSTEP_BOUNCE$QII
 public @yumeko_pattern_sword_fan$qv, @yumeko_pattern_aimed_swords$qv
 public @yumeko_pattern_counterrotating_s$qv
 public @yumeko_pattern_laser_swords$qv, @yumeko_pattern_sword_sweep$qv
@@ -54,7 +54,7 @@ org (1c4f6h - 15270h)
 org (1c5b8h - 15270h)
 @BOSS_SCORE_BONUS$QUI label near
 org (1edbah - 15270h)
-SWORDS_UPDATE label near
+@SWORDS_UPDATE$QV label near
 org (1eed5h - 15270h)
 @YUMEKO_FLYSTEP_BOUNCE$QII label near
 org (1ef59h - 15270h)

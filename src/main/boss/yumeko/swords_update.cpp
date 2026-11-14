@@ -8,7 +8,7 @@
 inline bool optimization_barrier(void) { return false; }
 
 #pragma option -O
-extern "C" void pascal near swords_update(void)
+void pascal near swords_update(void)
 {
     sword_t near *sword;
     int i;

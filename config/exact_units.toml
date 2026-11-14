@@ -7133,3 +7133,23 @@ unit = "main-cdg-opaque-cxx"
 source = "src/shared/graphics/cdg_opaque.cpp"
 find = "planes_left = PLANE_COUNT;"
 replace = "planes_left = PLANE_COUNT - 1;"
+
+[[units]]
+id = "main-yumeko-swords-update"
+source = "src/main/boss/yumeko/attacks_context.cpp"
+module = "th05/yfullctx.cpp"
+segment = "B5_UPDATE_TEXT"
+wrapper_options = "-zPmain_03"
+bindings_source = "probes/units/yumeko_complete_context_bindings.asm"
+target_start = 0x1edba
+size = 283
+functions = 1
+origin = "compiler-generated-cxx"
+alignment_offsets = []
+function_symbol = "swords_update()"
+
+[[controls]]
+unit = "main-yumeko-swords-update"
+source = "src/main/boss/yumeko/swords_update.cpp"
+find = "sword->patnum_tiny += 2;"
+replace = "sword->patnum_tiny += 3;"
