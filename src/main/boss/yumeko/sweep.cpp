@@ -6,9 +6,9 @@
 #include "src/main/boss/yumeko/sweep_combat_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#define yumeko_sweep_spacing yumeko_pattern_scratch.pattern_byte15.sweep_spacing
-#define yumeko_sweep_side boss_statebyte[14]
-#define yumeko_sweep_round boss_statebyte[13]
+#define yumeko_sweep_spacing yumeko_boss_scratch.sweep.pattern_byte15.sweep_spacing
+#define yumeko_sweep_side yumeko_boss_scratch.sweep.pattern_byte14.sweep_side
+#define yumeko_sweep_round yumeko_boss_scratch.sweep.pattern_byte13.sweep_round
 
 void near yumeko_pattern_sword_sweep(void)
 {

@@ -7,10 +7,10 @@
 #include "src/main/boss/yumeko/angle_call.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-#define yumeko_angle_a yumeko_pattern_scratch.pattern_byte15.sword_pattern_angle_a
-#define yumeko_angle_b boss_statebyte[14]
-#define yumeko_phase4_fast boss_statebyte[13]
-#define yumeko_volley_frames boss_statebyte[12]
-#define yumeko_sword_interval boss_statebyte[0]
+#define yumeko_angle_a yumeko_boss_scratch.aimed_swords.pattern_byte15.sword_pattern_angle_a
+#define yumeko_angle_b yumeko_boss_scratch.aimed_swords.pattern_byte14.paired_angle_b
+#define yumeko_phase4_fast yumeko_boss_scratch.aimed_swords.pattern_byte13.aimed_swords_accelerated
+#define yumeko_volley_frames yumeko_boss_scratch.aimed_swords.volley_frames
+#define yumeko_sword_interval yumeko_boss_scratch.aimed_swords.sword_spawn_interval
 
 #include "src/main/boss/yumeko/aimed_swords.inl"

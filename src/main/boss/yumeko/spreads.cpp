@@ -5,6 +5,6 @@
 #include "src/main/boss/yumeko/phase_patterns.hpp"
 #include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
-#define yumeko_angle_a yumeko_pattern_scratch.pattern_byte15.sword_pattern_angle_a
-#define yumeko_angle_b boss_statebyte[14]
+#define yumeko_angle_a yumeko_boss_scratch.spreads.pattern_byte15.sword_pattern_angle_a
+#define yumeko_angle_b yumeko_boss_scratch.spreads.pattern_byte14.paired_angle_b
 #include "src/main/boss/yumeko/spreads.inl"

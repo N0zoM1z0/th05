@@ -6,6 +6,7 @@
 // to this reviewed continuous target range; score_delta_commit is excluded.
 #pragma option -zCmain_01_TEXT -zPmain_01 -d-
 #include "src/main/stage/setup.hpp"
+#include "src/main/boss/yumeko/final_ring_scratch.hpp"
 
 // Original stage scheduling / Boss HP protocol: seven distinct stage
 // initializers share the same 22-byte midboss and 24-byte Boss structures.
@@ -215,8 +216,8 @@ void pascal near stage5_setup(void)
 	cdg_load_all_noalpha(CDG_BG_BOSS, "st04bk.cdg");
 	bb_boss_load("st04.bb");
 
-	boss_statebyte[0] = select_for_rank(STAGE5_RANK_BASE_EASY, STAGE5_RANK_BASE_NORMAL, STAGE5_RANK_BASE_HARD, STAGE5_RANK_BASE_LUNATIC);
-	boss_statebyte[1] = select_for_rank(STAGE5_RANK_REPEAT_EASY, STAGE5_RANK_REPEAT_NORMAL, STAGE5_RANK_REPEAT_HARD, STAGE5_RANK_REPEAT_LUNATIC);
+	yumeko_boss_scratch.stage5_setup.sword_spawn_interval = select_for_rank(STAGE5_RANK_BASE_EASY, STAGE5_RANK_BASE_NORMAL, STAGE5_RANK_BASE_HARD, STAGE5_RANK_BASE_LUNATIC);
+	yumeko_boss_scratch.stage5_setup.laser_spawn_interval = select_for_rank(STAGE5_RANK_REPEAT_EASY, STAGE5_RANK_REPEAT_NORMAL, STAGE5_RANK_REPEAT_HARD, STAGE5_RANK_REPEAT_LUNATIC);
 
 	stage_render = nullfunc_near;
 	stage_invalidate = nullfunc_near;
