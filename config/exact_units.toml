@@ -7049,3 +7049,64 @@ unit = "main-scroll-coordinate"
 source = "src/main/scroll/coordinates.hpp"
 find = "SCROLL_RING_HEIGHT = 400"
 replace = "SCROLL_RING_HEIGHT = 399"
+
+[[units]]
+id = "main-gather-copy-to"
+source = "src/main/gather/copy_to_bullet.cpp"
+module = "th05/gath_ct.cpp"
+segment = "GATHER_COPY_TO_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/gather_copy_to_bindings.asm"
+target_start = 0x16f70
+size = 27
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-gather-copy-to"
+source = "src/main/gather/copy_to_bullet.cpp"
+find = "_CX = (sizeof(BulletTemplate) / sizeof(uint16_t));"
+replace = "_CX = (sizeof(BulletTemplate) / sizeof(uint16_t)) - 1;"
+
+[[units]]
+id = "main-gather-copy-from"
+source = "src/main/gather/copy_from_bullet.cpp"
+module = "th05/gath_cf.cpp"
+segment = "GATHER_COPY_FROM_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/gather_copy_from_bindings.asm"
+target_start = 0x17087
+size = 27
+functions = 1
+origin = "compiler-generated-cxx-dos-intrinsics"
+alignment_offsets = []
+
+[[controls]]
+unit = "main-gather-copy-from"
+source = "src/main/gather/copy_from_bullet.cpp"
+find = "_CX = (sizeof(BulletTemplate) / sizeof(uint16_t));"
+replace = "_CX = (sizeof(BulletTemplate) / sizeof(uint16_t)) - 1;"
+
+[[units]]
+id = "main-tile-invalidate"
+source = "src/main/tile/invalidate.cpp"
+module = "th05/tile_inv.cpp"
+segment = "TILE_INVALIDATE_TEXT"
+wrapper_options = ""
+bindings_source = "probes/units/tile_invalidate_bindings.asm"
+target_start = 0xbd24
+size = 42
+functions = 2
+origin = "compiler-generated-cxx"
+alignment_offsets = [19]
+compiler_pipeline = "tcc-s-tasm32"
+group = "main_01"
+cs_base = 44560
+ds_base = 133584
+
+[[controls]]
+unit = "main-tile-invalidate"
+source = "src/main/tile/invalidate.cpp"
+find = "_CX = (sizeof(halftiles_dirty) / sizeof(uint32_t));"
+replace = "_CX = (sizeof(halftiles_dirty) / sizeof(uint32_t)) - 1;"

@@ -1753,62 +1753,6 @@ find = "mov si, CDG_SLOT_COUNT - 1"
 replace = "mov si, CDG_SLOT_COUNT - 2"
 
 [[units]]
-id = "main-tile-invalidate-all"
-artifact = "main"
-source = "src/main/tile/invalidate_all.asm"
-types = "src/main/tile/invalidate_all_types.inc"
-symbols = "probes/units/tile_invalidate_all_symbols.inc"
-bindings = "probes/units/tile_invalidate_all_asm_bindings.asm"
-notes = "src/main/tile/invalidate_all.md"
-target_start = 0xbd38
-size = 22
-segment = "TILE_INVALIDATE_TEXT"
-group = "main_01"
-cs_base = 0xae10
-instruction_nops = []
-fixups = []
-tables = []
-native_review_sha256 = "3bf230dca1e928f5c5f55580100fd75c45261354da56f827980ce8ac38f49fd2"
-target_scope_sha256 = "d5188a6cda59e625dc0df311c277d91d98cd5621f2644764da5f0d769b81248d"
-semantic_inputs = ["src/main/tile/invalidate_all.cpp"]
-[units.publics]
-"tiles_invalidate_all()" = 0
-"tile_invalidate_all_end" = 22
-[units.negative]
-find = "DIRTY_FLAG_VALUE equ 1"
-replace = "DIRTY_FLAG_VALUE equ 2"
-
-[[units]]
-id = "main-tile-invalidate-reset"
-artifact = "main"
-source = "src/main/tile/invalidate_reset.asm"
-types = "src/main/tile/invalidate_all_types.inc"
-symbols = "probes/units/tile_invalidate_all_symbols.inc"
-bindings = "probes/units/tile_invalidate_reset_asm_bindings.asm"
-notes = "src/main/tile/invalidate_reset.md"
-target_start = 0xbd24
-size = 20
-segment = "TILE_INVALIDATE_RESET_TEXT"
-group = "main_01"
-cs_base = 0xae10
-instruction_nops = []
-fixups = []
-tables = []
-native_review_sha256 = "516c2cfdb3ec83100d27f02342114357b8c3aa3ba48cc1b5f8149da16ac8654e"
-target_scope_sha256 = "a19470201a6fe2ecdf1aaf0baf0d1003cf21455f389ee342c2a6fbc9d32322be"
-semantic_inputs = ["src/main/tile/invalidate_all.cpp"]
-[units.publics]
-"tiles_invalidate_reset()" = 0
-"tile_invalidate_reset_end" = 20
-[units.negative]
-find = "DIRTY_RESET_DWORDS equ DIRTY_MAP_DWORDS"
-replace = "DIRTY_RESET_DWORDS equ (DIRTY_MAP_DWORDS - 1)"
-[[units.uncredited]]
-offset = 19
-size = 1
-kind = "alignment"
-
-[[units]]
 id = "main-tile-invalidate-around"
 artifact = "main"
 source = "src/main/tile/invalidate_around.asm"
@@ -2051,32 +1995,6 @@ find = "mov cx, BB_LOAD_BYTES"
 replace = "mov cx, (BB_LOAD_BYTES - 1)"
 
 [[units]]
-id = "main-gather-copy-to-asm"
-artifact = "main"
-source = "src/main/gather/copy_to_bullet.asm"
-types = "src/main/gather/copy_to_types.inc"
-symbols = "probes/units/gather_copy_symbols.inc"
-bindings = "probes/units/gather_copy_to_bindings.asm"
-notes = "src/main/gather/copy.md"
-target_start = 0x16f70
-size = 27
-segment = "GATHER_COPY_TO_TEXT"
-group = "main_03"
-cs_base = 0x15270
-instruction_nops = []
-fixups = []
-tables = []
-native_review_sha256 = "58ea3fca0dca4f96445633f7fe2ebaa834270e8e2b678f1065a2c0b0bbbe2466"
-target_scope_sha256 = "b15a56c6a174d61c9eb718e2549eeb66186410b119cc1ac5feacadc31ede5176"
-semantic_inputs = ["src/main/gather/gather.hpp"]
-[units.publics]
-"SET_GATHER_TEMPLATE_TO_BULLET_TEMPLATE" = 0
-"gather_copy_to_end" = 27
-[units.negative]
-find = "mov cx, GATHER_BULLET_WORDS"
-replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
-
-[[units]]
 id = "main-hitshot-from-asm"
 artifact = "main"
 source = "src/main/player/hitshot_from.asm"
@@ -2182,32 +2100,6 @@ semantic_inputs = ["src/shared/hardware/input_held.hpp"]
 [units.negative]
 find = "mov ah, 2"
 replace = "mov ah, 3"
-
-[[units]]
-id = "main-gather-copy-from-asm"
-artifact = "main"
-source = "src/main/gather/copy_from_bullet.asm"
-types = "src/main/gather/copy_to_types.inc"
-symbols = "probes/units/gather_copy_symbols.inc"
-bindings = "probes/units/gather_copy_from_bindings.asm"
-notes = "src/main/gather/copy_from.md"
-target_start = 0x17087
-size = 27
-segment = "GATHER_COPY_FROM_TEXT"
-group = "main_03"
-cs_base = 0x15270
-instruction_nops = []
-fixups = []
-tables = []
-native_review_sha256 = "81e8a1f3b14735d65f8a0dc0f416d9117dab2f03ea835c8bd30a01c5616257e5"
-target_scope_sha256 = "00737590ca5017b7e234f3caf923db9f06939798b6f3231b134e0ce1c6ba18eb"
-semantic_inputs = ["src/main/gather/gather.hpp"]
-[units.publics]
-"SET_BULLET_TEMPLATE_TO_GATHER_TEMPLATE" = 0
-"gather_copy_from_end" = 27
-[units.negative]
-find = "mov cx, GATHER_BULLET_WORDS"
-replace = "mov cx, (GATHER_BULLET_WORDS - 1)"
 
 [[units]]
 id = "main-sparks-add-circle-asm"
