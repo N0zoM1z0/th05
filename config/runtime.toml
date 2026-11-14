@@ -1,0 +1,19 @@
+schema_version = 1
+
+# Private multi-game Anex86 HDI (also used by TH03/TH04). Its KAIKI/ copies of
+# OP/MAIN/MAINE/ZUN are byte-identical to the pinned th05 targets.
+[image]
+path = ".analysis/runtime/images/zun.hdi"
+sha256 = "0d5ea773a9e4f3e28f473b6deeedb6a7cdaccbb5b940a97983c4e3597dd4ebfd"
+size = 21415936
+fat_partition_offset = 38912
+game_directory = "KAIKI"
+saves = ["MIKO.CFG", "GENSOU.SCR"]
+
+[font]
+path = ".analysis/runtime/fonts/FREECG98.BMP"
+sha256 = "91d75314ac4f940ab13b3c33fb260ef1713865d025a94f09f6814a72e47dfa87"
+
+[emulator]
+# Ubuntu 24.04 DOSBox-X 2024.03.01+dfsg-1build2
+binary_sha256 = "30a5fdf8fa95abaf7bae1a9e624ccfc9e26e5357a19cc567bf3a2ac659699258"

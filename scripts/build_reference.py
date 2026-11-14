@@ -32,7 +32,7 @@ def materialize(destination: Path) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("artifact", choices=["main", "op", "maine"])
+    parser.add_argument("artifact", choices=["main", "op", "maine", "zun"])
     parser.add_argument("--output", type=Path)
     parser.add_argument("--overlay", action="store_true", help="overlay configured maintained sources")
     args = parser.parse_args()
@@ -59,10 +59,12 @@ def main() -> int:
                 (source / entry["reference_path"]).write_bytes(data)
                 overlays.append({**entry, "sha256": digest_file(ROOT / entry["source"])})
         builder = Builder(source, ROOT / ".analysis/toolchain/wineprefix", ROOT / "_reference/ReC98/bin/msdos.exe")
-        result = builder.build(f"bin/th05/{args.artifact}.exe")
-        image = parse_mz(result.read_bytes())
-        if not image.valid:
-            raise RuntimeError(str(image.errors))
+        suffix = "com" if args.artifact == "zun" else "exe"
+        result = builder.build(f"bin/th05/{args.artifact}.{suffix}")
+        if suffix == "exe":
+            image = parse_mz(result.read_bytes())
+            if not image.valid:
+                raise RuntimeError(str(image.errors))
         receipt = {"kind": "untrusted-reference-scaffold", "revision": REVISION,
                    "artifact": args.artifact, "overlays": overlays,
                    "output": str(result.relative_to(work)), "sha256": digest_file(result),

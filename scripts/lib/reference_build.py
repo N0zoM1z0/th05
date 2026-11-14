@@ -55,6 +55,21 @@ def rules_from_batch(text: str) -> dict[str, Rule]:
             dependencies = tuple(canonical(a) for a in fields[0].replace("+", " ").split()
                                  if a.lower().startswith("obj") and a.lower().endswith(".obj"))
             rules[output] = Rule("tlink", (), dependencies, response)
+        elif line.startswith("tlink ") and not line.startswith("tlink @"):
+            # Direct tiny links, e.g. "tlink -x -t obj\\Pipeline\\zun_stub.obj, obj\\...\\zun_stub.bin".
+            command = line[len("tlink "):]
+            fields = command.split(",")
+            output = canonical(fields[1].strip())
+            dependencies = tuple(canonical(a) for a in fields[0].split() if a.lower().endswith(".obj"))
+            rules[output] = Rule("tlink", (), dependencies, command)
+        elif line.startswith(("bin\\Pipeline\\zungen.com ", "bin\\Pipeline\\comcstm.com ")):
+            args = line.split()
+            response = responses.get(canonical(args[2]), "") if "zungen" in args[0] else ""
+            listed = [a for a in response.split() if a.lower().endswith(".com")]
+            inputs = [a for a in args[1:-1] if not a.isdigit() and canonical(a) not in responses]
+            dependencies = tuple(canonical(a) for a in [args[0], *inputs, *listed])
+            rules[canonical(args[-1])] = Rule("tool", tuple(args), dependencies,
+                                              response and canonical(args[2]) + "\n" + response)
         elif line.startswith("bin\\Pipeline\\bmp2arr.com "):
             args = line.split()
             output = canonical(args[args.index("-o") + 1])
@@ -153,6 +168,12 @@ class Builder:
             response.write_bytes(rule.response.replace("\n", "\r\n").encode("ascii"))
             command = [*dos, "tlink", "@" + str(response.relative_to(self.root)).replace("/", "\\")]
         else:
+            if rule.kind == "tool" and rule.response:
+                # zungen reads its component list from an echoed .@z response file.
+                name, content = rule.response.split("\n", 1)
+                path = self.root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(content.replace("\n", "\r\n").encode("ascii"))
             command = [*dos, *rule.arguments]
         self.execute(output, command)
         resolved = self.resolve(output)
