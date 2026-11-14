@@ -162,3 +162,21 @@ Two genuine Borland/TLINK producers in
 match the complete **939/939 byte** original controller and all ordered
 relocations, and reject the original compiled semantic mutation. No new
 helper function, allocation, dummy state or duplicate CODE credit was added.
+
+## 2026-11-14: explicit phase-reset and completion sentinels
+
+The complete 939-byte controller now names the existing zero-valued state
+transitions rather than scattering bare zeroes across unrelated lifetimes:
+Boss phase-frame reset, pattern-count reset, first attack-wave index, final
+wave HP endpoint, completed puppet entrance radius, beam-frame reset and
+paired puppet-frame reset. These are separate semantic roles even though the
+original values are all zero; the typed Alice scratch layout is unchanged.
+
+`tests/test_alice_lifecycle.py` now models the full fifteen-phase route and
+pins the 7,400 → 5,200 → 3,000 → 800 HP ladder, 24-pattern/three-variant
+regular waves, 128/64/128 setup clocks, all three 600-frame beam windows,
+puppet hold/spread handoff, ring-approach reset order, and the strict 1,000-frame
+final-spread boundary. It explicitly distinguishes HP-only defeat bonus from
+timeout and checks the shared beam phase remains a four-state protocol rather
+than a counter. The 939-byte complete updater remains the unit under exact
+replay; no additional state or CODE bytes are introduced by these names.

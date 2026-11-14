@@ -25,6 +25,14 @@ static const int ALICE_PUPPET_APPEAR_FRAME = 128;
 static const int ALICE_FINAL_SPREAD_TIMEOUT = 1000;
 static const int ALICE_BULLET_CLEAR_MIN_FRAMES = 20;
 static const int ALICE_REGULAR_WAVE_BONUS = 7;
+// Explicit sentinels for the existing Boss/Puppet phase lifetimes.
+static const int ALICE_PHASE_FRAME_RESET = 0;
+static const int ALICE_PATTERN_COUNT_RESET = 0;
+static const int ALICE_FIRST_ATTACK_WAVE = 0;
+static const int ALICE_FINAL_WAVE_END_HP = 0;
+static const int ALICE_PUPPET_ENTRANCE_DONE = 0;
+static const int ALICE_BEAM_FRAME_RESET = 0;
+static const int ALICE_PUPPET_FRAME_RESET = 0;
 #pragma codeseg B4_UPDATE_TEXT main_03
 
 #include "src/main/boss/alice/charge_patterns_body.inl"
@@ -65,7 +73,7 @@ static const int ALICE_REGULAR_WAVE_BONUS = 7;
 // its clock before incrementing the phase and is left unchanged.
 #define ALICE_NEXT_PHASE_AND_RESET_CLOCK() { \
     boss.phase++; \
-    boss.phase_frame = 0; \
+    boss.phase_frame = ALICE_PHASE_FRAME_RESET; \
 }
 
 // The two entering puppets receive identical state setup except their
@@ -113,7 +121,7 @@ void pascal far alice_update(void)
         if(boss.phase_frame >= ALICE_READY_EXIT_FRAME) {
             ALICE_NEXT_PHASE_AND_RESET_CLOCK();
             boss.mode = ALICE_MODE_ATTACK;
-            boss.phase_state.patterns_seen = 0;
+            boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
             alice_scratch.ready_phase_store_only = ALICE_READY_PHASE_STORE_VALUE;
             alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         }
@@ -131,12 +139,12 @@ void pascal far alice_update(void)
             alice_puppet_pattern1 = alice_puppet_initial;
         } else if(boss.phase_frame > ALICE_PUPPET_APPEAR_FRAME) {
             alice_puppets_entrance();
-            if(alice_puppet0.radius.radius_motion == 0) {
+            if(alice_puppet0.radius.radius_motion == ALICE_PUPPET_ENTRANCE_DONE) {
                 boss.phase++;
                 boss.mode = ALICE_MODE_REPOSITION;
-                boss.phase_frame = 0;
-                boss.phase_state.patterns_seen = 0;
-                alice_scratch.attack_wave = 0;
+                boss.phase_frame = ALICE_PHASE_FRAME_RESET;
+                boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
+                alice_scratch.attack_wave = ALICE_FIRST_ATTACK_WAVE;
                 alice_beam_burst_window = ALICE_BEAM_BURST_INITIAL_WINDOW;
             }
         }
@@ -150,7 +158,7 @@ void pascal far alice_update(void)
         case ALICE_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - ALICE_RANDOM_FLYSTEP_LEAD_FRAMES)) {
                 boss.mode = ALICE_MODE_ATTACK;
-                boss.phase_frame = 0;
+                boss.phase_frame = ALICE_PHASE_FRAME_RESET;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= ALICE_REGULAR_WAVE_PATTERN_LIMIT) {
                     goto phase_complete;
@@ -173,15 +181,15 @@ phase_complete:
         ALICE_ENSURE_CLEAR_WINDOW();
         boss_explode_small(ET_NW_SE);
         ALICE_NEXT_PHASE_AND_RESET_CLOCK();
-        boss.phase_state.patterns_seen = 0;
+        boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
         boss.mode = ALICE_MODE_REPOSITION;
         boss.hp = boss.phase_end_hp;
         if(boss.phase < ALICE_PHASE_PATTERN_WAVE_4) {
             boss.phase_end_hp -= ALICE_WAVE_HP_DECREMENT;
         } else {
-            boss.phase_end_hp = 0;
+            boss.phase_end_hp = ALICE_FINAL_WAVE_END_HP;
         }
-        alice_beam_frame = 0;
+        alice_beam_frame = ALICE_BEAM_FRAME_RESET;
         break;
 
     case ALICE_PHASE_BEAM_APPROACH_1:
@@ -211,7 +219,7 @@ phase_complete:
         alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
         alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_POST_BEAM_RIGHT_X_PX);
         alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
-        alice_puppet0.phase_frame = alice_puppet1.phase_frame = 0;
+        alice_puppet0.phase_frame = alice_puppet1.phase_frame = ALICE_PUPPET_FRAME_RESET;
         alice_puppet_pattern0 = alice_puppet_spread;
         alice_puppet_pattern1 = alice_puppet_spread;
         break;
@@ -225,7 +233,7 @@ phase_complete:
             goto movement_hittest;
         }
 movement_complete:
-        boss.phase_frame = 0;
+        boss.phase_frame = ALICE_PHASE_FRAME_RESET;
         boss.phase++;
 movement_hittest:
         boss_hittest_shots();
@@ -241,7 +249,7 @@ movement_hittest:
             }
             boss.phase_state.defeat_bonus = true;
         }
-        boss.phase_frame = 0;
+        boss.phase_frame = ALICE_PHASE_FRAME_RESET;
         boss.phase = ALICE_PHASE_EXPLODE_SMALL;
         alice_puppet0.flag = ALICE_PUPPET_DEFEAT_ANIMATION;
         alice_puppet1.flag = ALICE_PUPPET_DEFEAT_ANIMATION;

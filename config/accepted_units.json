@@ -2,28 +2,34 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "f9a76d2b75873c33ca7a90fed55014c7b7cf32f41964d62e20a51f7b4fda1b64",
+  "replay_receipt_sha256": "24bdede5d607c6cf8345fc7fa3ced16bc2b0e5802fbdee68b910d3083af4514e",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 89579,
-    "candidate_start": 89579,
-    "size": 393,
-    "target_sha256": "5691a94efda467563036a90303adeccb1c8426fd98a04c3124c77aa6d3ffb723",
-    "candidate_sha256": "d1d9d7a53a0539b269d4a1d8d7dd38d517837ba8aa8bc17aafc6c1295e328017",
+    "target_start": 125334,
+    "candidate_start": 125334,
+    "size": 939,
+    "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
+    "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
     "raw_exact": false,
     "target_fixups": [
-      350,
-      241,
-      210
+      133
     ],
     "candidate_fixups": [
-      350,
-      241,
-      210
+      133
     ],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-function",
+      "start": 125334,
+      "size": 939,
+      "function_symbol": "alice_update()",
+      "contribution_start": 124772,
+      "contribution_size": 1501,
+      "boundary_kind": "contribution-end",
+      "next_function_symbol": null
+    }
   },
   "units": [
     {
@@ -71392,7 +71398,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "f635762cd1651715198842e21c2d766b8caf0c87d03db96abab0c0bb0b78ac0a",
+            "sha256": "580386e7fc8a364b8e5d44ebe9cb2a22f10fca593a6d9ac183cddbe51c884c9e",
             "dependency_timestamp_normalized_sha256": "9133de119f862c780cf20a90a0119983060f69299a2961ca112948a9fdb5f492",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
@@ -71435,7 +71441,7 @@
             ]
           },
           {
-            "sha256": "1ab30816210cff62c7730c7e11a890526c7c5540aa925f7fbc94176012c45355",
+            "sha256": "ce840607c461cfb920dee0b54b53714d47bd4c2d401e8d4bd2a474344b5ec76f",
             "dependency_timestamp_normalized_sha256": "9133de119f862c780cf20a90a0119983060f69299a2961ca112948a9fdb5f492",
             "module_name": "th05/a_ctx.cpp",
             "translator_comments": [
@@ -71479,8 +71485,8 @@
           }
         ],
         "producer_paths": [
-          "group-4/a/source",
-          "group-4/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -71557,7 +71563,7 @@
           },
           {
             "path": "src/main/boss/alice/update_context.cpp",
-            "sha256": "c5aad5390dd801852df8e2cc2166d740812410a31eecf5467a5320ac83f49261"
+            "sha256": "04dd0e7f064476a9907dfcc8d1a4f29e6ec78da2131d346c0fe5a6b75a90cdde"
           },
           {
             "path": "src/main/boss/movement.hpp",
@@ -71649,7 +71655,7 @@
         },
         {
           "path": "src/main/boss/alice/update_context.cpp",
-          "sha256": "c5aad5390dd801852df8e2cc2166d740812410a31eecf5467a5320ac83f49261"
+          "sha256": "04dd0e7f064476a9907dfcc8d1a4f29e6ec78da2131d346c0fe5a6b75a90cdde"
         },
         {
           "path": "src/main/boss/movement.hpp",
@@ -71694,72 +71700,81 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "e95afd693d171b68b6553c7e620a78212be419763cdcc7547be07bf7920ed898",
+      "replay_receipt_sha256": "24bdede5d607c6cf8345fc7fa3ced16bc2b0e5802fbdee68b910d3083af4514e",
       "compiled_negative_control": {
-        "target_start": 124418,
-        "candidate_start": 124418,
-        "size": 354,
-        "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-        "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+        "target_start": 125334,
+        "candidate_start": 125334,
+        "size": 939,
+        "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
+        "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
         "raw_exact": false,
         "target_fixups": [
-          350,
-          235,
-          219,
           133
         ],
         "candidate_fixups": [
-          350,
-          235,
-          219,
           133
         ],
         "fixups_exact": true,
-        "exact": false
+        "exact": false,
+        "map_scope": {
+          "kind": "complete-function",
+          "start": 125334,
+          "size": 939,
+          "function_symbol": "alice_update()",
+          "contribution_start": 124772,
+          "contribution_size": 1501,
+          "boundary_kind": "contribution-end",
+          "next_function_symbol": null
+        }
       },
       "negative_control": {
-        "unit_id": "main-alice-puppet-beam",
-        "entry_sha256": "8da715a22702f36da253f198c5a4818995336a09ef77a210db7f1aa161a2a8ed",
+        "unit_id": "main-alice-update-context",
+        "entry_sha256": "87bba13e608817fbb3a0650dc68560815dbcd1f00e422302751e6e77aff90b08",
         "mutation": {
-          "unit": "main-alice-puppet-beam",
-          "source": "src/main/boss/alice/beam.cpp",
-          "find": "shot_hitbox_radius.x.v = to_sp(ABW_LASER_SHOT_RADIUS_X_PX);",
-          "replace": "shot_hitbox_radius.x.v = to_sp(ABW_LASER_SHOT_RADIUS_X_PX - 1);"
+          "unit": "main-alice-update-context",
+          "source": "src/main/boss/alice/update_context.cpp",
+          "find": "boss.phase_end_hp = ALICE_WAVE_ONE_END_HP;",
+          "replace": "boss.phase_end_hp = (ALICE_WAVE_ONE_END_HP - 100);"
         },
-        "control_sha256": "46a5990b81737bfa87fcf69e22da32355b5f5f59b4ad2becc323dcb0fbedbe8f",
+        "control_sha256": "b701c06db019bdd01feb2f5f02202c8d3eac868a977eb716b30c0abad66bb1f9",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 124418,
-          "candidate_start": 124418,
-          "size": 354,
-          "target_sha256": "bceab4186302c4e4e7cb7df37a13aa8340f2ad0c993dd6f8089138096c76c177",
-          "candidate_sha256": "abe4b6238896339ec070d7436a1db380e9bdff0c2bf85cdef0f5f5740eb5ce1a",
+          "target_start": 125334,
+          "candidate_start": 125334,
+          "size": 939,
+          "target_sha256": "c3e66340908614cf7836ee2490a7f56f280471b40534b441f62eff5f0506a7b3",
+          "candidate_sha256": "8a8ec6fb6383bf38076643ab56f212dba23109fda37a2df39e93c334041c6277",
           "raw_exact": false,
           "target_fixups": [
-            350,
-            235,
-            219,
             133
           ],
           "candidate_fixups": [
-            350,
-            235,
-            219,
             133
           ],
           "fixups_exact": true,
-          "exact": false
+          "exact": false,
+          "map_scope": {
+            "kind": "complete-function",
+            "start": 125334,
+            "size": 939,
+            "function_symbol": "alice_update()",
+            "contribution_start": 124772,
+            "contribution_size": 1501,
+            "boundary_kind": "contribution-end",
+            "next_function_symbol": null
+          }
         },
         "omf": {
-          "sha256": "f5fdc3088dadf0e5aad1cf3ff8e7730cfa5962abfeaf9dd6ab9df87e4a81c36f",
-          "dependency_timestamp_normalized_sha256": "c748183c507c016010c20bbc6faaa28598f4e2bac9507065db9b974cb449ba91",
-          "module_name": "th05/a_beam.cpp",
+          "sha256": "d14b3ac00986c8d437b0f7d21b73bb3764213fcac4355da39fc07494f7c8000a",
+          "dependency_timestamp_normalized_sha256": "22d5a4e3a05922e43770bfa39c238f5c28796182aeb8e2a01d0d8d7cdd10d827",
+          "module_name": "th05/a_ctx.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/a_beam.cpp",
-            "src/main/boss/alice/beam.cpp",
+            "th05/a_ctx.cpp",
+            "src/main/boss/alice/update_context.cpp",
+            "src/main/boss/alice/update.hpp",
             "src/main/boss/alice/beam.hpp",
             "src/main/stage/setup.hpp",
             "src/main/boss/movement.hpp",
@@ -71773,10 +71788,23 @@
             "src/main/bullet/cheeto.hpp",
             "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
+            "src/main/gather/gather.hpp",
+            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/template.hpp",
+            "src/main/hud/resident.hpp",
+            "src/shared/abi.hpp",
+            "src/main/boss/alice/puppet_choreography.hpp",
             "src/main/boss/alice/beam_phase.hpp",
             "src/main/boss/alice/beam_weapon_rules.hpp",
             "src/main/boss/alice/scratch.hpp",
-            "C:\\TC4\\INCLUDE\\stddef.h"
+            "C:\\TC4\\INCLUDE\\stddef.h",
+            "src/main/boss/alice/charged_attack_rules.hpp",
+            "src/main/boss/alice/charge_patterns.hpp",
+            "src/main/boss/alice/beam.hpp",
+            "src/main/bullet/laser.hpp",
+            "src/shared/geometry.hpp",
+            "src/main/boss/alice/charge_patterns_body.inl",
+            "src/main/boss/alice/final_spread.inl"
           ]
         },
         "compiler_arguments": [
@@ -71790,7 +71818,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/a_beam.cpp"
+          "th05/a_ctx.cpp"
         ]
       },
       "receipt_aggregate_pass": true
