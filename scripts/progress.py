@@ -432,68 +432,67 @@ See [oracle contract](ORACLES.md) and [first C++ units](reconstruction/FIRST_CXX
 
 
 def render_svg(summary: dict) -> str:
+    """TH03-style card: per-artifact exact authored bytes from the ownership inventory."""
     inventory_path = ROOT / "resources/ownership.json"
     inventory = json.loads(inventory_path.read_text()) if inventory_path.exists() else {}
-    measured_svg = (f"{inventory['percentage']}% ({inventory['authored_exact_bytes']:,} / "
-                    f"{inventory['authored_denominator']:,} B, incl. reviewed ASM)"
-                    if inventory.get("percentage") is not None else "n/a")
-    """Use the TH04 card layout while retaining TH05's accepted-byte measures."""
+    views = inventory.get("views", {})
     scopes = summary.get("artifacts", {"main": summary})
     display = (("op", "OP.EXE"), ("main", "MAIN.EXE"),
                ("maine", "MAINE.EXE"), ("zun", "ZUN.COM"))
-    code_max = max((scope.get("authored_code_bytes", scope.get("instruction_bytes", 0))
-                    for scope in scopes.values()), default=0)
-    data_max = max((scope.get("authored_data_bytes", 0)
-                    for scope in scopes.values()), default=0)
-
-    def bar(x: int, y: int, value: int, scale: int, color: str) -> str:
-        width = 282 * value / scale if scale else 0.0
-        return (f'<rect x="{x}" y="{y}" width="282" height="12" rx="4" fill="#353b52"/>\n  '
-                f'<rect x="{x}" y="{y}" width="{width:.2f}" height="12" fill="{color}"/>')
-
     primary = 'fill="#f4f4f5" font-family="sans-serif"'
     secondary = 'fill="#c8cad2" font-family="sans-serif"'
-    mono = 'fill="#c8cad2" font-family="monospace"'
+
+    def counts(name: str) -> dict:
+        c = views.get(name, {}).get("byte_counts", {})
+        cxx = c.get("accepted-cxx-instructions", 0) + c.get("accepted-cxx-switch-table", 0)
+        asm = (c.get("accepted-reviewed-asm-instructions", 0) + c.get("accepted-reviewed-asm-dispatch-table", 0)
+               + c.get("accepted-reviewed-asm-semantic-code-table", 0) + c.get("accepted-zun-com-instructions", 0))
+        data = (c.get("accepted-cxx-initialized-data", 0) + c.get("accepted-c-initialized-data", 0)
+                + c.get("accepted-reviewed-asm-initialized-data", 0) + c.get("accepted-zun-com-initialized-data", 0))
+        return {"cxx": cxx, "asm": asm, "data": data, "unknown": c.get("unknown", 0)}
+
     rows = []
     for index, (name, label) in enumerate(display):
-        scope = scopes.get(name, {})
-        code = scope.get("authored_code_bytes", scope.get("instruction_bytes", 0))
-        data = scope.get("authored_data_bytes", 0)
-        y = 118 + index * 62
-        functions = scope.get("functions", 0)
-        function_label = "function" if functions == 1 else "functions"
-        rows.append(f'''<text x="24" y="{y + 10}" {primary} font-size="14" font-weight="600">{label}</text>
-  <text x="24" y="{y + 30}" {mono} font-size="11">{functions} {function_label}</text>
-  {bar(154, y + 3, code, code_max, "#9b6de3")}
-  {bar(476, y + 3, data, data_max, "#55c7a6")}
-  <text x="154" y="{y + 32}" {mono} font-size="11">{code:,} bytes exact</text>
-  <text x="476" y="{y + 32}" {mono} font-size="11">{data:,} bytes exact</text>''')
+        k = counts(name)
+        code = k["cxx"] + k["asm"]
+        exact = code + k["data"]
+        authored = exact + k["unknown"]
+        y = 137 + index * 76
+        cxx_w = 250 * k["cxx"] / code if code else 0.0
+        code_w = 250.0 if code else 0.0
+        exact_w = 270 * exact / authored if authored else 0.0
+        share = f"{100 * exact / authored:.3f}%" if authored else "n/a"
+        functions = scopes.get(name, {}).get("functions", 0)
+        rows.append(f'''<g aria-label="{label}: exact authored bytes; ASM is reviewed original assembly">
+  <text x="24" y="{y + 7}" {primary} font-size="16" font-weight="600">{label}</text>
+  <text x="24" y="{y + 27}" {secondary} font-size="12">{functions} C/C++ functions</text>
+  <rect x="200" y="{y}" width="250" height="12" rx="4" fill="#353b52"/>
+  <rect x="488" y="{y}" width="270" height="12" rx="4" fill="#353b52"/>
+  <rect x="200" y="{y}" width="{cxx_w:.2f}" height="5" fill="#9b6de3"/>
+  <rect x="200" y="{y + 7}" width="{code_w:.2f}" height="5" fill="#e0af68"/>
+  <rect x="488" y="{y}" width="{exact_w:.2f}" height="12" fill="#55c7a6"/>
+  <text x="200" y="{y + 29}" {secondary} font-size="12">C/C++ {k["cxx"]:,} B · ASM {k["asm"]:,} B</text>
+  <text x="488" y="{y + 29}" {secondary} font-size="12">{share} · {exact:,} / {authored:,} B</text>
+  </g>''')
     artifact_rows = "\n  ".join(rows)
-    instructions = summary['instruction_bytes']
-    tables = summary.get('code_data_bytes', 0)
-    code = summary.get('authored_code_bytes', instructions)
-    data = summary.get('authored_data_bytes', 0)
-    total = summary.get('authored_bytes', code + data)
-    padding = summary.get('padding_bytes', summary['complete_extent_bytes'] - code - data)
-    asm = sum(summary.get(key, 0) for key in (
-        'reviewed_asm_code_bytes', 'reviewed_asm_table_bytes',
-        'reviewed_asm_semantic_table_bytes', 'reviewed_asm_data_bytes'))
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="788" height="440" viewBox="0 0 788 440" role="img" aria-labelledby="title desc">
-  <title id="title">TH05 reconstruction progress by artifact</title>
-  <desc id="desc">Accepted bounded C/C++ source only: {summary['functions']} functions, {code} authored code bytes ({instructions} instruction and {tables} compiler switch-table bytes), {data} initialized DATA bytes. {padding} padding bytes earn no credit. Bars compare byte counts across artifacts on the indicated column scales, not completion percentages. Separately reviewed ASM: {asm} authored bytes. Global authored denominator under review; goal 98 percent.</desc>
-  <rect width="788" height="440" rx="8" fill="#1f2335"/>
-  <text x="24" y="31" {primary} font-size="18" font-weight="600">TH05 reconstruction progress</text>
-  <text x="24" y="52" {secondary} font-size="12">Accepted C/C++ source · column scales compare bytes across artifacts</text>
-  <text x="154" y="83" {primary} font-size="13" font-weight="600">Authored CODE</text>
-  <text x="476" y="83" {primary} font-size="13" font-weight="600">Initialized DATA</text>
-  <text x="154" y="100" {secondary} font-size="11">Instructions + compiler tables · scale 0–{code_max:,} B</text>
-  <text x="476" y="100" {secondary} font-size="11">Semantic data · scale 0–{data_max:,} B</text>
+    if inventory.get("percentage") is not None:
+        footer = (f"Exact authored bytes: {inventory['authored_exact_bytes']:,} / "
+                  f"{inventory['authored_denominator']:,} B ({inventory['percentage']}%) · "
+                  f"{summary['functions']} C/C++ functions")
+    else:
+        footer = f"Accepted C/C++: {summary.get('authored_bytes', 0):,} B · {summary['functions']} functions"
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="788" height="510" viewBox="0 0 788 510" role="img" aria-label="TH05 exact authored reconstruction progress">
+  <title>TH05 reconstruction progress by artifact</title>
+  <desc>Exact authored bytes are accepted C/C++ plus reviewed original ASM. Vendor code and data, assets, BSS, padding and alignment are excluded; every unknown byte stays in the denominator. Goal 98 percent.</desc>
+  <rect x="0.5" y="0.5" width="787" height="509" rx="16" fill="#1f2335" stroke="#353b52"/>
+  <text x="24" y="39" {primary} font-size="22" font-weight="600">TH05 reconstruction progress</text>
+  <text x="24" y="64" {secondary} font-size="13">Authored bytes · C/C++ and reviewed original ASM · vendor, assets, BSS and padding excluded</text>
+  <text x="200" y="103" {primary} font-size="13" font-weight="600">Exact CODE · C/C++ / with ASM</text>
+  <text x="488" y="103" {primary} font-size="13" font-weight="600">Exact authored bytes</text>
   {artifact_rows}
-  <path d="M24 366 H764" stroke="#4b526d"/>
-  <text x="24" y="392" {primary} font-size="13" font-weight="600">Accepted authored C/C++ bytes only</text>
-  <text x="764" y="392" {mono} text-anchor="end" font-size="12">{total:,} B · {summary['functions']} functions</text>
-  <text x="24" y="413" {secondary} font-size="11">Reviewed ASM: {asm:,} B · padding earns no credit</text>
-  <text x="764" y="413" {secondary} text-anchor="end" font-size="11">Goal 98% · measured exact authored bytes: {measured_svg}</text>
+  <path d="M24 426 H764" stroke="#353b52"/>
+  <text x="24" y="454" {primary} font-size="13" font-weight="600">{footer}</text>
+  <text x="24" y="482" {secondary} font-size="12">Details: docs/PROGRESS.md · goal 98%</text>
 </svg>
 '''
 
