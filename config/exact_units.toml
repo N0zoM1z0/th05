@@ -842,7 +842,7 @@ bindings_source = "probes/units/shinki_bindings.asm"
 [[controls]]
 unit = "main-shinki-pattern-a"
 source = "src/main/boss/shinki/shinki.cpp"
-find = "PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY"
+find = "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)"
 replace = "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
 
 [[units]]
@@ -3947,8 +3947,8 @@ bindings_source = "probes/units/shinki_devil_bindings.asm"
 [[controls]]
 unit = "main-shinki-devil"
 source = "src/main/boss/shinki/devil.inl"
-find = "boss.phase_frame >= 2500"
-replace = "boss.phase_frame >= 2501"
+find = "DEVIL_FAST_STAGE_FRAME = 2500"
+replace = "DEVIL_FAST_STAGE_FRAME = 2501"
 
 [[units]]
 id = "main-stage-bonus-glyph-text-data"

@@ -276,3 +276,46 @@ actually accepted an HP or timeout exit.
 angle milestones, the 127-frame latch-restoration bound, the all-character
 shot-damage safety margin, the rank-specific B6 intervals, the fast-switch
 call order, bomb suppression, and controller-owned laser teardown.
+
+
+## Four-column geometry and the laser's independent sweep clock
+
+The Devil uses the 256-pixel wing width as one shared horizontal coordinate
+system. The first column is offset by `256/2 - 256/8 = 96` pixels from the
+Boss center, and each following column subtracts one quarter of the wing width
+(**64 pixels**). The four origins are therefore **+96, +32, -32, -96** pixels
+for slots A-D. The laser setup and red spread both walk these columns from
+right to left. The decorative spread deliberately starts at the opposite
+edge of the just-finished red volley: after the red volley leaves the template
+origin at -96, its first decorative shot adds `3*64` and returns to +96.
+
+The red volley uses angles `(outer, inner, 0x80-inner, 0x80-outer)` at those
+four positions. Before the prelude completes each column fires a single red
+bullet; after the outer angle first reaches `0x40`, each fires a three-bullet
+spread with the same `0x30` arc. The decorative volley uses
+`(0x80+outer, 0x80+inner, 0x00-inner, 0x00-outer)` and also fires three-way
+spreads. Its first angle is selected before the origin is shifted back to the
+right edge; the three remaining calls shift left before assigning their angle.
+
+The four laser angles are assigned in A/B/C/D order as
+`(outer, inner, 0x80-inner, 0x80-outer)`. Only after all four writes does the
+leaf advance its two scratch angles. This is important at the reversal points:
+the visible beams use the pre-step endpoint for that turn, and the next
+8-frame update begins travelling in the opposite direction. The outer and
+inner angles start at `0x40`; while clockwise, outer increments and inner
+decrements by one. The inner value `0x38` flips direction. Counterclockwise,
+outer decrements and inner increments by one until inner reaches `0x41`, which
+flips direction back. The first 18 turn states are pinned by
+`tests/test_shinki_devil_geometry.py`: turn 8 is `(0x48,0x38)` and turn 17 is
+`(0x3F,0x41)`, with the full angle/direction state returning to its initial
+state after 18 turns (**144 frames**).
+
+The laser sweep has a separate 8-frame clock from the 4-frame bullet spread
+clock. The shared latch can only be restored at outer-angle low-boundary
+frames `284 + 64*n`, all of which are `4 mod 8`. Because the leaf's
+`!lasers_active` branch takes precedence over its angle-turn branch, the
+first laser-angle write is four frames later, at frame `288 + 64*n`. This
+separates the last bullet-angle transition from the first beam-angle update
+without resetting either clock. The geometry test pins all four origins,
+red/decorative angle order, mirror-write order, both reversal thresholds, and
+the first post-latch turn frame.
