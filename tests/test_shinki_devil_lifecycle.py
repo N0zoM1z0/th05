@@ -339,8 +339,26 @@ class ShinkiDevilLifecycleTests(unittest.TestCase):
         self.assertLess(2500, 2504)
         self.assertEqual(2504 % 8, 0)
         self.assertEqual(2500 % 8, 4)
-        self.assertIn("if((laser_grow_delay++) == DEVIL_FIRST_LASER_SWEEP_FRAME)", laser)
-        self.assertEqual(local_const("DEVIL_FIRST_LASER_SWEEP_FRAME"), 65)
+        self.assertIn("if((laser_grow_delay++) == DEVIL_FAST_DELAY_SENTINEL)", laser)
+        self.assertEqual(local_const("DEVIL_FAST_DELAY_SENTINEL"), 65)
+
+    def test_fast_stage_delay_sentinel_is_a_nonwrapping_16bit_counter(self):
+        state = (ROOT / "src/main/boss/shinki/devil_float_state.h").read_text()
+        self.assertIn("extern int near shinki_devil_laser_grow_delay;", state)
+        self.assertIn("shinki_devil_laser_delay_is_2[(sizeof(int) == 2)", state)
+        self.assertEqual(local_const("DEVIL_LASER_GROW_FRAMES"), 64)
+        self.assertEqual(local_const("DEVIL_FAST_DELAY_SENTINEL"), 65)
+        wing_rules = (ROOT / "src/main/boss/shinki/wing_attack_rules.hpp").read_text()
+        timeout_frames = macro_int("SHW_WING_PHASE_TIMEOUT_FRAMES", wing_rules)
+        self.assertEqual(timeout_frames, 3000)
+        max_turns = (timeout_frames + local_const("DEVIL_LASER_TURN_INTERVAL_FRAMES") - 1) // local_const("DEVIL_LASER_TURN_INTERVAL_FRAMES")
+        self.assertEqual(max_turns, 375)
+        # Turbo C++ target int is signed 16-bit; even a full timeout after the
+        # fast gate cannot wrap the post-grow counter back to its sentinel.
+        self.assertLess(65 + max_turns, 0x7FFF)
+        laser_code = DEVIL[DEVIL.index("// Lasers"):]
+        self.assertIn("laser_grow_delay++", laser_code)
+        self.assertIn("Growth leaves this 16-bit delay at 65", laser_code)
 
 
 if __name__ == "__main__":

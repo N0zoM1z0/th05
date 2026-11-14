@@ -257,9 +257,12 @@ If the time gate is the first trigger, frame 2500 is not a turn (`2500 % 8 = 4`)
 so frame **2504** is the first eligible update. The B6 spawn check occurs
 before the fast interval switch in the same callback, meaning a ball on that
 frame still uses the old interval; the new rank interval (52/20/16/12) starts
-on the following callback. The post-increment comparison against 65 is a
-one-shot explosion/switch gate; the delay counter continues increasing on
-later fast-stage laser turns.
+on the following callback. The post-increment comparison against
+`DEVIL_FAST_DELAY_SENTINEL` (65) is a one-shot explosion/switch gate, not a
+phase-frame threshold. The underlying
+`shinki_devil_laser_grow_delay` is a 16-bit `int`, not a byte: manual growth
+leaves it at 65, and even a full 3,000-frame phase can add at most 375
+8-frame-turn increments. It therefore cannot wrap back to 65 and retrigger.
 
 The four laser slots must be stopped by the phase controller, not by the
 looping leaf. The controller runs `wing_pattern()`, performs the HP/timeout

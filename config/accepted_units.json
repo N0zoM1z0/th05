@@ -2,26 +2,28 @@
   "schema_version": 2,
   "scope": "bounded C++ unit bytes and fixup sites",
   "target_sha256": "c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0",
-  "replay_receipt_sha256": "2ce617f8ac85145188eade20cd7cde0c74e7d7f50147a6df151e19171238cd7a",
+  "replay_receipt_sha256": "e9f3633a2a1a537bb28af72cef3ed9f31f666c0eff5fa26ae31ad61c545b86d9",
   "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
   "compiled_negative_rejected": true,
   "compiled_negative_control": {
-    "target_start": 110046,
-    "candidate_start": 110046,
-    "size": 386,
-    "target_sha256": "78853f8ed0dea1206d327000630e5c745c16eac8839a7b50c418dae249f6c529",
-    "candidate_sha256": "8f7598dcda96671238596672e70ede5a3e7f3e02c680ac596b4049dca3f76399",
+    "target_start": 140330,
+    "candidate_start": 140330,
+    "size": 1,
+    "target_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+    "candidate_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
     "raw_exact": false,
-    "target_fixups": [
-      76,
-      305
-    ],
-    "candidate_fixups": [
-      76,
-      305
-    ],
+    "target_fixups": [],
+    "candidate_fixups": [],
     "fixups_exact": true,
-    "exact": false
+    "exact": false,
+    "map_scope": {
+      "kind": "complete-initialized-data-contribution",
+      "map_class": "DATA",
+      "start": 140330,
+      "size": 1,
+      "module": "th05/sflt.c",
+      "segment": "_DATA"
+    }
   },
   "units": [
     {
@@ -11893,7 +11895,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11938,7 +11940,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -11984,8 +11986,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -12042,7 +12044,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -12050,7 +12052,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -12150,7 +12152,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -12158,7 +12160,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -12231,108 +12233,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -12346,7 +12345,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -12406,7 +12405,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12451,7 +12450,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12497,8 +12496,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -12555,7 +12554,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -12563,7 +12562,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -12663,7 +12662,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -12671,7 +12670,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -12744,108 +12743,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -12859,7 +12855,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -12927,7 +12923,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -12972,7 +12968,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13018,8 +13014,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -13076,7 +13072,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -13084,7 +13080,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -13184,7 +13180,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -13192,7 +13188,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -13265,108 +13261,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -13380,7 +13373,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -13452,7 +13445,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13497,7 +13490,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -13543,8 +13536,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -13601,7 +13594,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -13609,7 +13602,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -13709,7 +13702,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -13717,7 +13710,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -13790,108 +13783,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -13905,7 +13895,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -13977,7 +13967,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14022,7 +14012,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14068,8 +14058,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -14126,7 +14116,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -14134,7 +14124,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -14234,7 +14224,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -14242,7 +14232,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -14315,108 +14305,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -14430,7 +14417,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -14502,7 +14489,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14547,7 +14534,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -14593,8 +14580,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -14651,7 +14638,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -14659,7 +14646,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -14759,7 +14746,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -14767,7 +14754,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -14840,108 +14827,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -14955,7 +14939,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -15027,7 +15011,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -15072,7 +15056,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -15118,8 +15102,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -15176,7 +15160,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -15184,7 +15168,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -15284,7 +15268,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -15292,7 +15276,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -15365,108 +15349,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -15480,7 +15461,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -15556,7 +15537,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -15601,7 +15582,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -15647,8 +15628,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -15705,7 +15686,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -15713,7 +15694,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -15813,7 +15794,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -15821,7 +15802,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -15894,108 +15875,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -16009,7 +15987,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -16069,7 +16047,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -16114,7 +16092,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -16160,8 +16138,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -16218,7 +16196,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -16226,7 +16204,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -16326,7 +16304,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -16334,7 +16312,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -16407,108 +16385,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -16522,7 +16497,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -64724,7 +64699,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "be621bc885c5d331c1df37de0930d30135989da17e6842a650b659ff8071580f",
+            "sha256": "1f34cca090b86dedc579a6e83dda18f45e5568f4ef09ede71fef8533c8f44478",
             "dependency_timestamp_normalized_sha256": "a8481a30c52eef49319ff8a6a1e701c3a49af1106910716aaf0713a1a00e399b",
             "module_name": "th05/b6devil.cpp",
             "translator_comments": [
@@ -64761,7 +64736,7 @@
             ]
           },
           {
-            "sha256": "ea625dabf1b3960fe5e61890fc199fe4865e60eff7768812c67bc051775019db",
+            "sha256": "5b078149eed4194665af96373d52dda2fa76bacb842d0a0b4c57cfe013c28ad3",
             "dependency_timestamp_normalized_sha256": "a8481a30c52eef49319ff8a6a1e701c3a49af1106910716aaf0713a1a00e399b",
             "module_name": "th05/b6devil.cpp",
             "translator_comments": [
@@ -64799,8 +64774,8 @@
           }
         ],
         "producer_paths": [
-          "group-4/a/source",
-          "group-4/b/source"
+          "group-1/a/source",
+          "group-1/b/source"
         ],
         "compiler_arguments": [
           [
@@ -64853,7 +64828,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -64861,7 +64836,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/hp.inl",
@@ -64937,7 +64912,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -64945,7 +64920,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/hp.inl",
@@ -64998,108 +64973,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -65113,7 +65085,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -70908,7 +70880,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "22c3dc3a8ffa00c6455cab1728a9825306b1f86c94e9a3459b380ef0e1fb12e3",
+            "sha256": "6254df8ba7739a10c33d3244e202459005f04c917209ed7793436aafd2229201",
             "dependency_timestamp_normalized_sha256": "9d62e72f8c2c29a57cadd73665ce0ee1f59a057f7742343bfa8b9cffdd10ec77",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70949,7 +70921,7 @@
             ]
           },
           {
-            "sha256": "6430dc42337b07ec6ee6da798cf734c7bdd1d95bc4f04eca0aef24d390fc9d68",
+            "sha256": "48abf6bd47b32af6b3278c151e03243cc294e5da0bd928755a289355c15586b3",
             "dependency_timestamp_normalized_sha256": "9d62e72f8c2c29a57cadd73665ce0ee1f59a057f7742343bfa8b9cffdd10ec77",
             "module_name": "th05/b6_ctx.cpp",
             "translator_comments": [
@@ -70991,8 +70963,8 @@
           }
         ],
         "producer_paths": [
-          "group-5/a/source",
-          "group-5/b/source"
+          "group-2/a/source",
+          "group-2/b/source"
         ],
         "compiler_arguments": [
           [
@@ -71037,7 +71009,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -71045,7 +71017,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -71133,7 +71105,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -71141,7 +71113,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -71214,108 +71186,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -71329,7 +71298,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -85255,7 +85224,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "90353a5c6fa48526fc10ad58101af25495ff8c2702084b65a12b5f225173bc2b",
+            "sha256": "2d4da683610cf6ed118e7edd743de1d1cff01e1520b1d1e1fea47030e94c64f8",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -85300,7 +85269,7 @@
             ]
           },
           {
-            "sha256": "acc28269cbb369520a3000e5b00d3fb82752397005e57825541c1fbb262c044f",
+            "sha256": "f6b1bde9fbd9562587c406f33c89c66f3d67e8d13221347797b4296ae079af41",
             "dependency_timestamp_normalized_sha256": "9b4b77013477d1b409ff197ff168248213ccb118e653e6785cacbccc51f0dd53",
             "module_name": "th05/boss_6.cpp",
             "translator_comments": [
@@ -85346,8 +85315,8 @@
           }
         ],
         "producer_paths": [
-          "group-3/a/source",
-          "group-3/b/source"
+          "group-0/a/source",
+          "group-0/b/source"
         ],
         "compiler_arguments": [
           [
@@ -85404,7 +85373,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil.inl",
-            "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+            "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
           },
           {
             "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -85412,7 +85381,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -85512,7 +85481,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil.inl",
-          "sha256": "c2a5966c6de87226b9d35a1dae2c1e99247bf87e2a39db4e4a36ba9ae967cae0"
+          "sha256": "1e38b389def5e86d1397c205068dbecc7c9dc3e1aefb275c8b23a2ef2a5c092a"
         },
         {
           "path": "src/main/boss/shinki/devil_ballistics.hpp",
@@ -85520,7 +85489,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/early_attack_rules.hpp",
@@ -85593,108 +85562,105 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "1987249d4ccc182cc2a509177c97f56a5db7e0cfc032c1f946ddb91b62887c1b",
+      "replay_receipt_sha256": "8fdba9ef4bf9e2470c42c2c2a044ca097c6c69a754fa4840fbda0a3a91e2e171",
       "compiled_negative_control": {
-        "target_start": 106162,
-        "candidate_start": 106162,
-        "size": 143,
-        "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-        "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+        "target_start": 109483,
+        "candidate_start": 109483,
+        "size": 271,
+        "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+        "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
         "raw_exact": false,
         "target_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "candidate_fixups": [
-          124
+          253,
+          222,
+          173,
+          73
         ],
         "fixups_exact": true,
-        "exact": false,
-        "map_scope": {
-          "kind": "complete-function",
-          "start": 106162,
-          "size": 143,
-          "function_symbol": "exalice_pattern_cross_cheetos()",
-          "contribution_start": 106162,
-          "contribution_size": 809,
-          "boundary_kind": "next-function",
-          "next_function_symbol": "exalice_pattern_turning_cheetos()"
-        }
+        "exact": false
       },
       "negative_control": {
-        "unit_id": "main-exalice-pattern-cross-cheetos",
-        "entry_sha256": "11062ccf18630fb85bbd2edd6c00508fe9b8babea572bf120c07cd4f872b202a",
+        "unit_id": "main-shinki-pattern-a",
+        "entry_sha256": "fd28cc2ab0e94c4285bef4db43535cfb1af754731245c7ff9722cd505f0fde4d",
         "mutation": {
-          "unit": "main-exalice-pattern-cross-cheetos",
-          "source": "src/main/boss/exalice/final_patterns.cpp",
-          "find": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX);",
-          "replace": "cheeto_template.speed.v = to_sp(EXF_CROSS_CHEETO_SPEED_PX + 1);"
+          "unit": "main-shinki-pattern-a",
+          "source": "src/main/boss/shinki/shinki.cpp",
+          "find": "(PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY)",
+          "replace": "PHASE_2_3_PATTERN_START_FRAME + (SEAR_CURVE_END_DELAY + 4)"
         },
-        "control_sha256": "a5a1fb5ddb757c3687cfca645559feda07d6c55595c3052a4604e63a8a1fde72",
+        "control_sha256": "1cf3a186065021e4d786168534878b4853abd73e91f671c2d3400e912ccff447",
         "producer_path": "negative/source",
         "comparison": {
-          "target_start": 106162,
-          "candidate_start": 106162,
-          "size": 143,
-          "target_sha256": "8327417a3ae399f061a724450f0fe003d02d14e01ced058d33c7387d3ef41f8c",
-          "candidate_sha256": "f4c7f08350920b0642d3f11ea6055c135d9493ee5ec7ec2d630de0ffc145756f",
+          "target_start": 109483,
+          "candidate_start": 109483,
+          "size": 271,
+          "target_sha256": "4718bbbd338a396a42642cf98238b99556e168462755620a49630fcee839db8b",
+          "candidate_sha256": "45710e2a7246986fee34e35f4536d48d99da585a36603e4e6407a6ea1529010b",
           "raw_exact": false,
           "target_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "candidate_fixups": [
-            124
+            253,
+            222,
+            173,
+            73
           ],
           "fixups_exact": true,
-          "exact": false,
-          "map_scope": {
-            "kind": "complete-function",
-            "start": 106162,
-            "size": 143,
-            "function_symbol": "exalice_pattern_cross_cheetos()",
-            "contribution_start": 106162,
-            "contribution_size": 809,
-            "boundary_kind": "next-function",
-            "next_function_symbol": "exalice_pattern_turning_cheetos()"
-          }
+          "exact": false
         },
         "omf": {
-          "sha256": "2bc280993b56dede1b8a60f21c541d884f51a9b497a3b27a9557e6c6b7cd19ae",
-          "dependency_timestamp_normalized_sha256": "9fc904f5e051e048a3c4ceb08db3ef8b7fa64e0c867e687bdcd5473dcc23776e",
-          "module_name": "th05/x_final.cpp",
+          "sha256": "9042b169f18f48bae462ef66b616499479ba31ce5b17905b08a9a7cf4e726d91",
+          "dependency_timestamp_normalized_sha256": "3a6bf4f9a22c137cbb641a420243f33d32a5f951946942cffab7d457cf6c210e",
+          "module_name": "th05/boss_6.cpp",
           "translator_comments": [
             "TC86 Borland C++ 4.02"
           ],
           "dependency_paths": [
-            "th05/x_final.cpp",
-            "src/main/boss/exalice/final_patterns.cpp",
-            "src/main/boss/exalice/final_patterns.hpp",
-            "src/main/boss/exalice/patterns.hpp",
-            "src/main/stage/setup.hpp",
+            "th05/boss_6.cpp",
+            "src/main/boss/shinki/shinki.cpp",
+            "src/main/boss/shinki/shinki.hpp",
+            "src/main/boss/sara/sara.hpp",
             "src/main/boss/movement.hpp",
             "src/shared/geometry.hpp",
             "src/shared/abi.hpp",
             "C:\\TC4\\INCLUDE\\stddef.h",
             "C:\\TC4\\INCLUDE\\_defs.h",
             "C:\\TC4\\INCLUDE\\_null.h",
-            "src/main/bullet/template.hpp",
-            "src/shared/geometry.hpp",
-            "src/main/bullet/cheeto.hpp",
-            "src/main/player/player.hpp",
-            "src/shared/geometry.hpp",
             "src/main/gather/gather.hpp",
             "C:\\TC4\\INCLUDE\\dos.h",
             "src/main/bullet/template.hpp",
+            "src/shared/geometry.hpp",
             "src/main/hud/resident.hpp",
             "src/shared/abi.hpp",
-            "src/shared/math/vector.hpp",
-            "C:\\TC4\\INCLUDE\\dos.h",
+            "src/main/bullet/cheeto.hpp",
+            "src/main/player/player.hpp",
             "src/shared/geometry.hpp",
-            "src/main/boss/exalice/update_phases.hpp",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp",
-            "src/main/boss/exalice/spiral_gather.inl",
-            "src/main/boss/exalice/final_attack_rules.hpp",
-            "src/main/boss/exalice/boss_scratch.hpp"
+            "src/main/boss/shinki/scratch.hpp",
+            "src/main/boss/shinki/final_spiral_timing.hpp",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/wing_attack_rules.hpp",
+            "src/main/boss/shinki/early_attack_rules.hpp",
+            "src/main/boss/shinki/wing_preparation_rules.hpp",
+            "src/main/boss/shinki/hp.inl",
+            "src/main/boss/shinki/wing_coordinates.inl",
+            "src/main/boss/shinki/balls_update_body.inl",
+            "src/main/boss/shinki/ball_lifecycle.hpp",
+            "src/main/boss/shinki/cheeto_walls.inl",
+            "src/main/boss/shinki/devil.inl",
+            "src/main/boss/shinki/devil_ballistics.hpp",
+            "src/main/boss/shinki/wing_hitboxes.hpp",
+            "src/main/boss/shinki/devil_float_state.h"
           ]
         },
         "compiler_arguments": [
@@ -85708,7 +85674,7 @@
           "-DGAME=5",
           "-ml",
           "-DBINARY='M'",
-          "th05/x_final.cpp"
+          "th05/boss_6.cpp"
         ]
       },
       "receipt_aggregate_pass": true
@@ -105163,7 +105129,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "0994956f3957f25c36df93eaa26fdc95493b0030ba9a2ea77e06d0ed58e9ab3d",
+            "sha256": "42c2189be0f3cc999f7e5aac97d0e18a61a967d5cdb116e2d9ac8a6c936481ca",
             "dependency_timestamp_normalized_sha256": "343b10ea6fdf442c522fee7ab8c1f3a5c717a2351b44d1b47f2c896bf187ab96",
             "module_name": "th05/sdly.c",
             "translator_comments": [
@@ -105190,7 +105156,7 @@
             }
           },
           {
-            "sha256": "72f879b9e6f10db657afb40e29279f42cb0b87f35812f675464c09f65ebc5a17",
+            "sha256": "67193c496b61d16f3f5fe5e85c221f05866345b936b6611122b78b6c66fea2aa",
             "dependency_timestamp_normalized_sha256": "343b10ea6fdf442c522fee7ab8c1f3a5c717a2351b44d1b47f2c896bf187ab96",
             "module_name": "th05/sdly.c",
             "translator_comments": [
@@ -105256,7 +105222,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/devil_laser_delay.c",
@@ -105272,7 +105238,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/devil_laser_delay.c",
@@ -105281,7 +105247,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "fa86cfa6fbb3bce12f944e96285f33bdb4ba2b2095c9511c01380e8505622183",
+      "replay_receipt_sha256": "319be9ed9779a8238ddf99f91c03c185d454a5482331e0ddfb478bd6c11ddf30",
       "compiled_negative_control": {
         "target_start": 140328,
         "candidate_start": 140328,
@@ -105334,7 +105300,7 @@
           }
         },
         "omf": {
-          "sha256": "93432c36105b65f0fc40325b750dabcfb0b4b6bbef004d96c307e2bacb5b8723",
+          "sha256": "7b56666707c2308fbc682db8114d0b32217fd94b67ff5c1c9d537c5fe66df432",
           "dependency_timestamp_normalized_sha256": "db451c55d745dee868465f19124a7b8741563ceee1bbdef493880ddd55e552fc",
           "module_name": "th05/sdly.c",
           "translator_comments": [
@@ -105427,7 +105393,7 @@
         "object_normalized_equal": true,
         "omfs": [
           {
-            "sha256": "a44a28e2dc3cb400505b4809fc7907998945dae8fdd205f715ca08843dfc466f",
+            "sha256": "97865f3f6a563375ca157ddf3542f88da2110c8f559b1ab60b0e810b1f13cdb1",
             "dependency_timestamp_normalized_sha256": "8927ed615476cab1b340deec48799fee9dacd34f78d9aef9c7eb0509640f76f8",
             "module_name": "th05/sflt.c",
             "translator_comments": [
@@ -105454,7 +105420,7 @@
             }
           },
           {
-            "sha256": "805477e61b207752f3934829bc85799f38d64260b95ea8607f9221e78a575d12",
+            "sha256": "f44bdad90b5062053b6df265c5e9c6611d7fc5b441b054b50f155e78c2b35080",
             "dependency_timestamp_normalized_sha256": "8927ed615476cab1b340deec48799fee9dacd34f78d9aef9c7eb0509640f76f8",
             "module_name": "th05/sflt.c",
             "translator_comments": [
@@ -105520,7 +105486,7 @@
           },
           {
             "path": "src/main/boss/shinki/devil_float_state.h",
-            "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+            "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
           },
           {
             "path": "src/main/boss/shinki/float_direction.c",
@@ -105536,7 +105502,7 @@
         },
         {
           "path": "src/main/boss/shinki/devil_float_state.h",
-          "sha256": "b56d37de8a29144328071709709890c28ac4c3008eadcc5ce39df3c7569e0a13"
+          "sha256": "8a05a64156ab0977af733053b038af6ac0fc0b7fd9d69c7481cbd0d8c6e57f8b"
         },
         {
           "path": "src/main/boss/shinki/float_direction.c",
@@ -105545,7 +105511,7 @@
       ],
       "toolchain_manifest_sha256": "4803f9748f817ed9eae8db05006534d6a18bf1c634069dc487dbd4ebb75e1a16",
       "toolchain_receipt_sha256": "4e53e154484148660207bdb7ee4174b876875f73f1fb3c5b151adc5ba5052676",
-      "replay_receipt_sha256": "0c452c26b591e1e073cfde75d1361702128dfa96d909f8deb2b749cdc3e05def",
+      "replay_receipt_sha256": "e9f3633a2a1a537bb28af72cef3ed9f31f666c0eff5fa26ae31ad61c545b86d9",
       "compiled_negative_control": {
         "target_start": 140330,
         "candidate_start": 140330,
@@ -105598,7 +105564,7 @@
           }
         },
         "omf": {
-          "sha256": "087fd38fafbca15a48546375ec8c7446677760f0c27ec5ad7d9ac7e1b7efdbe9",
+          "sha256": "e24229aabbdd95aaeb6cc330767735904e6398389c8e65ef0d8bef8507502649",
           "dependency_timestamp_normalized_sha256": "db96d93178200d3fe5d25d0cbf997702a3c5fd182da48befcc8ea2da2b70cd00",
           "module_name": "th05/sflt.c",
           "translator_comments": [

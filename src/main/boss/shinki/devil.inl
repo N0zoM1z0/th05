@@ -14,7 +14,7 @@ void near pattern_devil(void)
 		DEVIL_SPREAD_INTERVAL_FRAMES = 4,
 		DEVIL_LASER_GROW_FRAMES = 64,
 		DEVIL_LASER_TURN_INTERVAL_FRAMES = 8,
-		DEVIL_FIRST_LASER_SWEEP_FRAME = 65,
+		DEVIL_FAST_DELAY_SENTINEL = 65,
 		DEVIL_FAST_STAGE_FRAME = 2500,
 		DEVIL_DECORATIVE_SPREAD_COUNT = 3,
 		DEVIL_ANGLE_ZERO = 0x00,
@@ -222,7 +222,8 @@ void near pattern_devil(void)
 			}
 		}
 		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= DEVIL_FAST_STAGE_FRAME)) {
-			if((laser_grow_delay++) == DEVIL_FIRST_LASER_SWEEP_FRAME) {
+			// Growth leaves this 16-bit delay at 65; consume the fast-stage sentinel once.
+			if((laser_grow_delay++) == DEVIL_FAST_DELAY_SENTINEL) {
 				b6ball_interval = select_for_rank(
                     DEVIL_BALL_FAST_EASY, DEVIL_BALL_FAST_NORMAL,
                     DEVIL_BALL_FAST_HARD, DEVIL_BALL_FAST_LUNATIC);

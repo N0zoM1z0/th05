@@ -11,4 +11,6 @@ extern bool near shinki_float_direction;
 extern int near shinki_devil_laser_grow_delay;
 extern unsigned char near shinki_float_direction;
 #endif
+
+typedef char shinki_devil_laser_delay_is_2[(sizeof(int) == 2) ? 1 : -1];
 #endif
