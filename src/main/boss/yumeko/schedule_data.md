@@ -15,8 +15,11 @@ non-null callback has an independently accepted complete body at
 only their original CODE publics and genuine MAIN group frames. It does
 not provide binary pointer values, game instructions or initialized
 DATA. The full 16-byte C++ initializer contribution starts at DATA
-`209D:1F9E`. The following zero region `[2297E,2298E)` remains
-unknown rather than being absorbed as artificial array padding.
+`209D:1F9E`. The following 16 zero bytes `[2297E,2298E)` are the phase-5 bank's
+ten trailing null slots: ReC98's data dump shows the bank as two callbacks
+plus ten `dw 0`, and no code addresses the tail directly. The bank is
+therefore declared `[12]`, and the DATA unit now covers 32 bytes
+(`.analysis/unit-replays/claude-boss-bank-tails-20261114-main-yumeko-mobile-schedules-data/`).
 
 The first native link revealed the actual Borland 31-character EXTDEF
 truncation for `yumeko_pattern_counterrotating_spreads`; correcting only

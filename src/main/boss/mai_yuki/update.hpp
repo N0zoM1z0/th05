@@ -46,7 +46,7 @@ extern nearfunc_t_near overlay1;
 
 // Genuine external semantic near CODE-pointer arrays; no entries are supplied.
 extern const MaiYukiPattern MAI_PATTERNS_FIRST[4];
-extern const MaiYukiPattern MAI_PATTERNS_FINAL[4];
+extern const MaiYukiPattern MAI_PATTERNS_FINAL[8];
 extern const MaiYukiPattern YUKI_PATTERNS_FIRST[4];
 extern const MaiYukiPattern YUKI_PATTERNS_LASER[4];
 extern const MaiYukiPattern YUKI_PATTERNS_FINAL[4];

@@ -3,7 +3,10 @@
 Two complete natural initialized-DATA contributions recover the shared-fight
 near callback banks. Mai's first/final four-entry schedules occupy DS18E6..18F6
 (16 bytes); Yuki's first/laser/final schedules occupy DS18FE..1916 (24 bytes).
-The eight intervening zero bytes remain unowned. Neither source defines filler,
+The eight following zero bytes are four null slots of Mai's final bank
+(ReC98 lists `off_22790` as four callbacks plus four `dw 0`; only the
+indexed first four are read), so `MAI_PATTERNS_FINAL` is declared `[8]` and
+the Mai DATA unit covers 24 bytes. Neither source defines filler,
 BSS, graphics, instructions or compiler switch tables.
 
 Each entry names its real attack provider. The first/final/laser phase selection

@@ -24,7 +24,7 @@ bool near yuki_pattern_cheetos(void);
 bool near mai_pattern_cheetos(void);
 #pragma codeseg
 extern const MaiYukiPattern MAI_PATTERNS_FIRST[4];
-extern const MaiYukiPattern MAI_PATTERNS_FINAL[4];
+extern const MaiYukiPattern MAI_PATTERNS_FINAL[8];
 extern const MaiYukiPattern YUKI_PATTERNS_FIRST[4];
 extern const MaiYukiPattern YUKI_PATTERNS_LASER[4];
 extern const MaiYukiPattern YUKI_PATTERNS_FINAL[4];

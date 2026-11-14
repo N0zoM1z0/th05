@@ -5,6 +5,7 @@
 yumeko_pattern_func_t yumeko_patterns_phase2[4] = {
     yumeko_pattern_sword_fan, yumeko_pattern_red_ring, 0, 0
 };
-yumeko_pattern_func_t yumeko_patterns_phase5[4] = {
-    yumeko_pattern_counterrotating_spreads, yumeko_pattern_mirrored_spreads, 0, 0
+// Twelve slots; only the first two are ever selected.
+yumeko_pattern_func_t yumeko_patterns_phase5[12] = {
+    yumeko_pattern_counterrotating_spreads, yumeko_pattern_mirrored_spreads
 };

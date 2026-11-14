@@ -36,7 +36,7 @@ void pascal near swords_update(void);
 typedef void (near *near yumeko_pattern_func_t)(void);
 extern yumeko_pattern_func_t yumeko_pattern;
 extern yumeko_pattern_func_t yumeko_patterns_phase2[4];
-extern yumeko_pattern_func_t yumeko_patterns_phase5[4];
+extern yumeko_pattern_func_t yumeko_patterns_phase5[12];
 void near yumeko_pattern_laser_swords(void); // Real foreign phase-seven body.
 void near yumeko_pattern_sword_sweep(void); // Real foreign phase-eight body.
 

@@ -658,6 +658,20 @@ def overlay_reviewed_gaps(root: Path, name: str, view: dict, pieces: list[dict],
                 raise ValueError(f"BSS prefix is not between the exit records and BSS: {name}")
             if image is not None and any(image[start:end]):
                 raise ValueError(f"BSS prefix bytes are not zero: {name}")
+        elif kind == "checked-uncredited-intra-member-gap":
+            # Zero fill between two pieces of the same verified vendor member.
+            if not (before.get("member") and before.get("member") == after.get("member") and
+                    str(before.get("kind", "")).startswith("verified-vendor")):
+                raise ValueError(f"intra-member gap is not inside one vendor member: {name} {start:#x}")
+            if image is not None and any(image[start:end]):
+                raise ValueError(f"intra-member gap bytes are not zero: {name} {start:#x}")
+        elif kind == "reviewed-bss-gap":
+            # Zeros between two reviewed uninitialized storage intervals.
+            if not (str(before.get("kind", "")).startswith("reviewed-uninitialized") and
+                    str(after.get("kind", "")).startswith("reviewed-uninitialized")):
+                raise ValueError(f"BSS gap is not between reviewed storage: {name} {start:#x}")
+            if image is not None and any(image[start:end]):
+                raise ValueError(f"BSS gap bytes are not zero: {name} {start:#x}")
         elif kind == "verified-c0l-data":
             # Borland C0L.OBJ _DATA opens DGROUP at a paragraph boundary.
             if row["size"] != 0x90 or start % 16:

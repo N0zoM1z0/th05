@@ -9,7 +9,8 @@ const MaiYukiPattern MAI_PATTERNS_FIRST[4] = {
     mai_pattern_small_ball_fan
 };
 
-const MaiYukiPattern MAI_PATTERNS_FINAL[4] = {
+// Eight slots; the last four are never selected and stay null.
+const MaiYukiPattern MAI_PATTERNS_FINAL[8] = {
     mai_pattern_cheetos,
     mai_pattern_sweeping_pellets,
     mai_pattern_reversing_rings,
