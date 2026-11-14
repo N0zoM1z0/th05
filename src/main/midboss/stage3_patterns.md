@@ -91,3 +91,46 @@ compiled spread3→4 mutation changes actual code and is rejected. The ledger
 accepts `main-midboss-stage3-patterns`: five functions,616 authored-code and
 instruction bytes, no tables, padding or DATA/BSS credit. Source, ABI header
 and symbol-only binder stayed frozen throughout replay.
+
+## Named movement and projectile payloads (2026-11-14)
+
+The five complete Stage 3 prefix leaves now name their original movement,
+charge and projectile values. The vanish/reappear helper advances once every
+four Boss frames: it takes twelve ticks to reach sprite 220, clamps to visible
+sprite 219, drops Y by 12 pixels and snaps X to the player's current position
+clamped to **64..320**. The return takes eight more ticks; when the sprite drops
+below 212 it restores sprite 208, clears the returning flag, resets the phase
+clock and selects reposition mode. That is the exact point where the update's
+` sprite < 212` shot-hit gate becomes active again.
+
+The gather helper emits the three-stack ring with colors **11 then 10** on
+every charge frame, plays sound 8 and uses sprite 210 on frame 1 and 211 on
+frame 16. All three attack leaves charge until frame 32, fire on the inclusive
+32/48/64 schedule, and enter the reposition helper at frame 96.
+
+Pattern 1's three blue/red/blue spread-stack volleys use `(count, delta,
+stacks, speed_delta)` values `(3,16,4,0.5)`, `(4,5,4,0.5)` and
+`(7,10,4,0.5)`, at speeds 1.5/3/2. Pattern 2 opens with an eight-layer aimed
+stack, then uses rank-dependent spread pairs `(1,1)/(2,4)/(3,3)/(4,4)` and
+`(1,1)/(3,5)/(4,5)/(5,4)`, retaining the original no-tune path. Pattern 3
+uses diamond spreads `(16,8)`, `(21,4)`, `(16,8)` at speed 3 and keeps the
+real bullet tuning callback. Every emitted volley advances previous Y,
+moves the Midboss upward four pixels and plays sound 15.
+
+The controller starts with attack 1 and completed-pattern count 1. Each
+completed reposition waits 32 frames, chooses `(count % 3) + 1`, then
+increments the count. The terminal count is 13, so exactly **12 attacks** run
+as four complete cycles of patterns 1/2/3. This terminal timeout jumps to the
+large-explosion path before the vulnerability hit-test and therefore does not
+award the HP-defeat score bonus or 1UP; an actual HP defeat sets bullet-zap,
+awards 15 score units and drops the 1UP first. The new
+`tests/test_midboss3_lifecycle.py` pins the reposition sprite cadence,
+clamping, charge colors, all three attack payloads, rank arguments, twelve-wave
+cycle, vulnerability threshold and timeout/HP reward split.
+
+The natural source now uses short compile-time names (all within Turbo C++'s
+31-character identifier limit) for the former numeric literals. The
+`main-midboss-stage3-patterns` owner still matches all **616** original bytes
+and five ordered far-call fixups under two native producers; the compiled
+3-to-4 spread-count negative remains rejected. Receipt:
+`.analysis/unit-replays/16bd87d58371482287857b2f55f1a8f5/receipt.json`.

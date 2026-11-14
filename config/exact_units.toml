@@ -1758,8 +1758,8 @@ origin = "compiler-generated-cxx"
 [[controls]]
 unit = "main-midboss-stage3-patterns"
 source = "src/main/midboss/stage3_patterns.cpp"
-find = "midboss3_set_spread_stack(3, 16, 4, 0.5f);"
-replace = "midboss3_set_spread_stack(4, 16, 4, 0.5f);"
+find = "static const int MIDBOSS3_P1_FIRST_SPREAD = 3;"
+replace = "static const int MIDBOSS3_P1_FIRST_SPREAD = 4;"
 
 [[units]]
 id = "main-louise-initial-patterns"
