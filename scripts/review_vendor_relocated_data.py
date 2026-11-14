@@ -41,6 +41,87 @@ MEMBERS = {
         "starts": {"main": 0x22DB6, "op": 0x11B96, "maine": 0x11C4A},
         "fixups": [(14, 3), (10, 3)],
     },
+    # Fixup-free small CL.LIB DATA members between already verified neighbours.
+    "atexit": {
+        "anchor": "exit",
+        "size": 2,
+        "program_sha256": "71e2cc923c16b7a3865c676998bd9b977607767a60a5b50cfd42d727584b087a",
+        "raw_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "starts": {"main": 0x22A76, "op": 0x11856, "maine": 0x1190A},
+        "fixups": [],
+    },
+    "stklen": {
+        "anchor": "ctype",
+        "size": 2,
+        "program_sha256": "999875ad91846423ebdba9d820c13442673becefa65eb948e2163ae155ffbd2b",
+        "raw_sha256": "0298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe7",
+        "starts": {"main": 0x22CB2, "op": 0x11A92, "maine": 0x11B46},
+        "fixups": [],
+    },
+    "cputype": {
+        "anchor": "signal",
+        "size": 2,
+        "program_sha256": "4273bf05f930aa3dcbe04c1dbe46f2f890644ddd1b3ecb87563fda80400b0fcc",
+        "raw_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "starts": {"main": 0x22EDE, "op": 0x11CBE, "maine": 0x11D72},
+        "fixups": [],
+    },
+    "fbrk": {
+        "anchor": "signal",
+        "size": 2,
+        "program_sha256": "72cca1458fe282b18091b13d7333333ebad9428435c14ce23685ebde28756abc",
+        "raw_sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7",
+        "starts": {"main": 0x22EE0, "op": 0x11CC0, "maine": 0x11D74},
+        "fixups": [],
+    },
+    "_pathops": {
+        "anchor": "xx",
+        "size": 16,
+        "program_sha256": "41f6ded7642bf119b7710fd4af35d85e7e28f734196a05533c71f09d67f5c432",
+        "raw_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "starts": {"main": 0x22F08, "op": 0x11CE8, "maine": 0x11D9C},
+        "fixups": [],
+    },
+    "srchenv": {
+        "anchor": "xx",
+        "size": 1,
+        "program_sha256": "cf5674d8ba1020c5e04bbf3cd9a58217d111b872d173ee8b45d954fee68f7eb1",
+        "raw_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "starts": {"main": 0x22F18, "op": 0x11CF8, "maine": 0x11DAC},
+        "fixups": [],
+    },
+    "srchstr": {
+        "anchor": "xx",
+        "size": 2,
+        "program_sha256": "34696bea1949cef30d5aad7f591a2139866cbb3f2d4091633d4a78e8600ca8dd",
+        "raw_sha256": "1472d0645f552820b5472b91341c2d9a118c8a96f4a72758d6aeeb14c10a1107",
+        "starts": {"main": 0x22F1A, "op": 0x11CFA, "maine": 0x11DAE},
+        "fixups": [],
+    },
+    "setvbuf": {
+        "anchor": "xx",
+        "size": 4,
+        "program_sha256": "7ff5a72d3a1c4be1c7b7855d2c787fe7ef8cd0be61335cf3ca27ff7f03f4f1b8",
+        "raw_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "starts": {"main": 0x22F1C, "op": 0x11CFC, "maine": 0x11DB0},
+        "fixups": [],
+    },
+    "sysnerr": {
+        "anchor": "xx",
+        "size": 2,
+        "program_sha256": "f562c74c929309d1d8334f4ef93d8631c94612b8e8e03c63b3f107ce8c0c117b",
+        "raw_sha256": "e4f60d0aa6d7f3d3b6a6494b1c861b99f649c6f9ec51abaf201b20f297327c95",
+        "starts": {"main": 0x22F20, "op": 0x11D00, "maine": 0x11DB4},
+        "fixups": [],
+    },
+    "setenvp": {
+        "anchor": "strings",
+        "size": 4,
+        "program_sha256": "a35c3378de5ce9b318c15d0670a6e49807ade277da773ad61102f3fc7ad131e0",
+        "raw_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "starts": {"main": 0x22F34, "op": 0x11D14, "maine": 0x11DC8},
+        "fixups": [],
+    },
 }
 INPUTS = ["scripts/review_vendor_relocated_data.py", "scripts/review_vendor.py",
           "scripts/review_vendor_data.py", "scripts/lib/borland_library.py",
@@ -120,6 +201,17 @@ def linked_images(review: VendorReview, mod: dict, segment: int, start: int,
     return bytes(cal), bytes(native), ordered_mz, actions, chunks
 
 
+
+def anchor_delta(root: Path, review: VendorReview, context: str, anchor: str) -> int:
+    if anchor in MEMBERS and "anchor" not in MEMBERS[anchor]:
+        mod = review.mods[anchor]
+        segment = next(i for i, s in enumerate(mod["segs"])
+                       if s and s["name"] == "_DATA" and s["cl"] == "DATA" and s["size"])
+        return MEMBERS[anchor]["starts"][context] - review.contribution(mod, segment)["start"]
+    rows = json.loads((root / "config/vendor_data_ownership.json").read_text())["contributions"]
+    row = next(r for r in rows if r["id"] == f"{context}-cl-data-{anchor}")
+    return row["start"] - row["calibration_start"]
+
 def native_review(root: Path = ROOT) -> dict:
     lib = (root / ".analysis/toolchain/installed/tc40j/LIB/CL.LIB").read_bytes()
     need(sha(lib) == LIB_PINS["library_sha256"], "foreign CL.LIB changed")
@@ -169,9 +261,15 @@ def native_review(root: Path = ROOT) -> dict:
                  "full original DATA byte mismatch")
             need(relative_fixups(cal, con["start"], size) == mz and
                  relative_fixups(target, start, size) == mz, "ordered original MZ relocations differ")
-            need(target.program_image.find(original_bytes, BASES[context]) == start and
-                 target.program_image.find(original_bytes, start + 1) < 0,
-                 "DATA content occurrence ambiguous in original")
+            if "anchor" in pin:
+                # Small members are placed by the calibration layout: they keep
+                # the original-minus-calibration offset of a verified neighbour.
+                need(start - con["start"] == anchor_delta(root, review, context, pin["anchor"]),
+                     "DATA placement differs from its verified neighbour")
+            else:
+                need(target.program_image.find(original_bytes, BASES[context]) == start and
+                     target.program_image.find(original_bytes, start + 1) < 0,
+                     "DATA content occurrence ambiguous in original")
             rows.append({"id": f"{context}-cl-relocated-data-{member}", "context": context,
                          "member": member, "segment": "_DATA", "start": start,
                          "end": start + size, "size": size, "calibration_start": con["start"],

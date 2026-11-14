@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "kind": "gapless-observed-coordinate-inventory",
-  "authored_denominator": 145131,
-  "percentage": 99.387,
+  "authored_denominator": 145014,
+  "percentage": 99.468,
   "authored_exact_bytes": 144242,
   "unknown_policy": "retain every unknown interval; source/vendor/resource classification requires explicit complete-scope review; reviewed bitmap and explicitly source-reserved game/vendor storage have zero authored credit; no inferred asset or runtime exclusion; reviewed ASM remains separate",
   "observed_bytes": 319268,
@@ -17,7 +17,7 @@
     "accepted-reviewed-asm-semantic-code-table": 36,
     "accepted-zun-com-initialized-data": 1514,
     "accepted-zun-com-instructions": 1843,
-    "checked-uncredited-alignment-gap": 157,
+    "checked-uncredited-alignment-gap": 163,
     "checked-uncredited-asm-alignment": 78,
     "checked-uncredited-asm-inert-branch": 8,
     "checked-uncredited-asm-runtime-placeholder": 24,
@@ -28,9 +28,9 @@
     "reviewed-linker-mz-header": 3450,
     "reviewed-uninitialized-game-storage": 832,
     "reviewed-uninitialized-vendor-storage": 7378,
-    "unknown": 889,
+    "unknown": 772,
     "verified-vendor-code": 142514,
-    "verified-vendor-initialized-data": 8528
+    "verified-vendor-initialized-data": 8639
   },
   "views": {
     "main": {
@@ -45,7 +45,7 @@
         "accepted-cxx-switch-table": 726,
         "accepted-reviewed-asm-dispatch-table": 226,
         "accepted-reviewed-asm-instructions": 9230,
-        "checked-uncredited-alignment-gap": 90,
+        "checked-uncredited-alignment-gap": 92,
         "checked-uncredited-asm-alignment": 66,
         "checked-uncredited-asm-inert-branch": 4,
         "checked-uncredited-asm-runtime-placeholder": 4,
@@ -53,9 +53,9 @@
         "reviewed-embedded-sprite-bitmap": 2752,
         "reviewed-uninitialized-game-storage": 256,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 213,
+        "unknown": 174,
         "verified-vendor-code": 47406,
-        "verified-vendor-initialized-data": 2770
+        "verified-vendor-initialized-data": 2807
       },
       "intervals": [
         {
@@ -7429,8 +7429,18 @@
         },
         {
           "start": 141941,
+          "end": 141942,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 141942,
           "end": 141944,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "atexit",
+          "scope_id": "main-cl-relocated-data-atexit"
         },
         {
           "start": 141944,
@@ -7474,8 +7484,18 @@
         },
         {
           "start": 142489,
-          "end": 142516,
+          "end": 142514,
           "kind": "unknown"
+        },
+        {
+          "start": 142514,
+          "end": 142516,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "stklen",
+          "scope_id": "main-cl-relocated-data-stklen"
         },
         {
           "start": 142516,
@@ -7504,8 +7524,23 @@
         },
         {
           "start": 143070,
+          "end": 143072,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "cputype",
+          "scope_id": "main-cl-relocated-data-cputype"
+        },
+        {
+          "start": 143072,
           "end": 143074,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "fbrk",
+          "scope_id": "main-cl-relocated-data-fbrk"
         },
         {
           "start": 143074,
@@ -7519,8 +7554,58 @@
         },
         {
           "start": 143112,
+          "end": 143128,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "_pathops",
+          "scope_id": "main-cl-relocated-data-_pathops"
+        },
+        {
+          "start": 143128,
+          "end": 143129,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchenv",
+          "scope_id": "main-cl-relocated-data-srchenv"
+        },
+        {
+          "start": 143129,
+          "end": 143130,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 143130,
+          "end": 143132,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchstr",
+          "scope_id": "main-cl-relocated-data-srchstr"
+        },
+        {
+          "start": 143132,
+          "end": 143136,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setvbuf",
+          "scope_id": "main-cl-relocated-data-setvbuf"
+        },
+        {
+          "start": 143136,
           "end": 143138,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "sysnerr",
+          "scope_id": "main-cl-relocated-data-sysnerr"
         },
         {
           "start": 143138,
@@ -7535,7 +7620,12 @@
         {
           "start": 143156,
           "end": 143160,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setenvp",
+          "scope_id": "main-cl-relocated-data-setenvp"
         },
         {
           "start": 143160,
@@ -7713,7 +7803,7 @@
       "master_superbfnt_header_review_sha256": "e7bbce8449eca67e64f46279dd58ac8eded9a4df705e6ec9a57f8039eb545e04",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
+      "cl_relocated_data_review_sha256": "0214ada24594d81226c3cb2743a5e1adc5a52f90767f7eeb0f81bdfd1e7a27d7",
       "enemy_vm_asm_review_sha256": "38634734cde0403b101798b095a773fa532f59af6384bed465fc450408b7a74d",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364",
       "sprite_resource_review_sha256": "cd08488adcf19bf9454ff7b2619087d6de2d59ae2b42565948c1e9cd11cd8a6a"
@@ -7732,7 +7822,7 @@
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 2054,
         "accepted-reviewed-asm-semantic-code-table": 36,
-        "checked-uncredited-alignment-gap": 28,
+        "checked-uncredited-alignment-gap": 30,
         "checked-uncredited-asm-alignment": 7,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -7742,9 +7832,9 @@
         "reviewed-linker-mz-header": 2012,
         "reviewed-uninitialized-game-storage": 288,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 330,
+        "unknown": 291,
         "verified-vendor-code": 44923,
-        "verified-vendor-initialized-data": 2372
+        "verified-vendor-initialized-data": 2409
       },
       "intervals": [
         {
@@ -10773,8 +10863,18 @@
         },
         {
           "start": 71765,
+          "end": 71766,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 71766,
           "end": 71768,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "atexit",
+          "scope_id": "op-cl-relocated-data-atexit"
         },
         {
           "start": 71768,
@@ -10818,8 +10918,18 @@
         },
         {
           "start": 72313,
-          "end": 72340,
+          "end": 72338,
           "kind": "unknown"
+        },
+        {
+          "start": 72338,
+          "end": 72340,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "stklen",
+          "scope_id": "op-cl-relocated-data-stklen"
         },
         {
           "start": 72340,
@@ -10848,8 +10958,23 @@
         },
         {
           "start": 72894,
+          "end": 72896,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "cputype",
+          "scope_id": "op-cl-relocated-data-cputype"
+        },
+        {
+          "start": 72896,
           "end": 72898,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "fbrk",
+          "scope_id": "op-cl-relocated-data-fbrk"
         },
         {
           "start": 72898,
@@ -10863,8 +10988,58 @@
         },
         {
           "start": 72936,
+          "end": 72952,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "_pathops",
+          "scope_id": "op-cl-relocated-data-_pathops"
+        },
+        {
+          "start": 72952,
+          "end": 72953,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchenv",
+          "scope_id": "op-cl-relocated-data-srchenv"
+        },
+        {
+          "start": 72953,
+          "end": 72954,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 72954,
+          "end": 72956,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchstr",
+          "scope_id": "op-cl-relocated-data-srchstr"
+        },
+        {
+          "start": 72956,
+          "end": 72960,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setvbuf",
+          "scope_id": "op-cl-relocated-data-setvbuf"
+        },
+        {
+          "start": 72960,
           "end": 72962,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "sysnerr",
+          "scope_id": "op-cl-relocated-data-sysnerr"
         },
         {
           "start": 72962,
@@ -10879,7 +11054,12 @@
         {
           "start": 72980,
           "end": 72984,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setenvp",
+          "scope_id": "op-cl-relocated-data-setenvp"
         },
         {
           "start": 72984,
@@ -11061,7 +11241,7 @@
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
+      "cl_relocated_data_review_sha256": "0214ada24594d81226c3cb2743a5e1adc5a52f90767f7eeb0f81bdfd1e7a27d7",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364",
       "piano_resource_review_sha256": "889bb50cdb987355d2290314d6d6c136a4316ffe61130854c22e23bc7a629c55"
@@ -11078,7 +11258,7 @@
         "accepted-cxx-switch-table": 164,
         "accepted-reviewed-asm-initialized-data": 32,
         "accepted-reviewed-asm-instructions": 1653,
-        "checked-uncredited-alignment-gap": 34,
+        "checked-uncredited-alignment-gap": 36,
         "checked-uncredited-asm-alignment": 5,
         "checked-uncredited-asm-inert-branch": 2,
         "checked-uncredited-asm-runtime-placeholder": 10,
@@ -11086,9 +11266,9 @@
         "reviewed-linker-mz-header": 1438,
         "reviewed-uninitialized-game-storage": 288,
         "reviewed-uninitialized-vendor-storage": 2456,
-        "unknown": 323,
+        "unknown": 284,
         "verified-vendor-code": 45347,
-        "verified-vendor-initialized-data": 2618
+        "verified-vendor-initialized-data": 2655
       },
       "intervals": [
         {
@@ -14203,8 +14383,18 @@
         },
         {
           "start": 71945,
+          "end": 71946,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 71946,
           "end": 71948,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "atexit",
+          "scope_id": "maine-cl-relocated-data-atexit"
         },
         {
           "start": 71948,
@@ -14248,8 +14438,18 @@
         },
         {
           "start": 72493,
-          "end": 72520,
+          "end": 72518,
           "kind": "unknown"
+        },
+        {
+          "start": 72518,
+          "end": 72520,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "stklen",
+          "scope_id": "maine-cl-relocated-data-stklen"
         },
         {
           "start": 72520,
@@ -14278,8 +14478,23 @@
         },
         {
           "start": 73074,
+          "end": 73076,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "cputype",
+          "scope_id": "maine-cl-relocated-data-cputype"
+        },
+        {
+          "start": 73076,
           "end": 73078,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "fbrk",
+          "scope_id": "maine-cl-relocated-data-fbrk"
         },
         {
           "start": 73078,
@@ -14293,8 +14508,58 @@
         },
         {
           "start": 73116,
+          "end": 73132,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "_pathops",
+          "scope_id": "maine-cl-relocated-data-_pathops"
+        },
+        {
+          "start": 73132,
+          "end": 73133,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchenv",
+          "scope_id": "maine-cl-relocated-data-srchenv"
+        },
+        {
+          "start": 73133,
+          "end": 73134,
+          "kind": "checked-uncredited-alignment-gap"
+        },
+        {
+          "start": 73134,
+          "end": 73136,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "srchstr",
+          "scope_id": "maine-cl-relocated-data-srchstr"
+        },
+        {
+          "start": 73136,
+          "end": 73140,
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setvbuf",
+          "scope_id": "maine-cl-relocated-data-setvbuf"
+        },
+        {
+          "start": 73140,
           "end": 73142,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "sysnerr",
+          "scope_id": "maine-cl-relocated-data-sysnerr"
         },
         {
           "start": 73142,
@@ -14309,7 +14574,12 @@
         {
           "start": 73160,
           "end": 73164,
-          "kind": "unknown"
+          "kind": "verified-vendor-initialized-data",
+          "content_kind": "library-initialized-data",
+          "instruction_bytes": 0,
+          "library": "CL.LIB",
+          "member": "setenvp",
+          "scope_id": "maine-cl-relocated-data-setenvp"
         },
         {
           "start": 73164,
@@ -14488,7 +14758,7 @@
       "op_maine_master_bfnt_review_sha256": "cab85110579686187ba35bda15af317a99d326490144dc0fdb8c5f5f66490a01",
       "borland_c0_startup_review_sha256": "34214700efe86324204ffcba6afc2b7555428a26b5991f8565a88ec9f39244d2",
       "cl_data_review_sha256": "e2278d3e3dbb1dcc4ca8df438d924bae972dbe8ec0d4d20c38109fca2f66adf0",
-      "cl_relocated_data_review_sha256": "55228c6a1c2f0677e3dac86cb25ed2345c30a43c3c2bf0fd3f6afedb8ff4c6dc",
+      "cl_relocated_data_review_sha256": "0214ada24594d81226c3cb2743a5e1adc5a52f90767f7eeb0f81bdfd1e7a27d7",
       "text_fx_asm_review_sha256": "58a39e801e648675293b196a2b1169106277edad10d2a6f458ca07493e17fa75",
       "asm_family_review_sha256": "b076afc9ede711e510a0169e8139382c937959cba999f8fed1abd075840ed364"
     },
