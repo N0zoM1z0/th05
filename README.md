@@ -17,8 +17,7 @@ its progress and exactness labels do not transfer to this repository.
 
 Current verified totals and artifact breakdowns are generated in
 [progress](docs/PROGRESS.md) and the card above. The
-[current handoff](docs/RE_HANDOFF.md) identifies pending source packets and
-known blockers. Keep these sources authoritative instead of copying changing
+[current handoff](docs/RE_HANDOFF.md) lists the open items. Keep these sources authoritative instead of copying changing
 counts into this README.
 
 Acceptance covers complete bounded C/C++ CODE or initialized semantic DATA,
@@ -28,9 +27,9 @@ decisions and counters. Padding compares normally with zero authored credit;
 assets and vendor code receive no authored credit. Whole-program placement,
 standalone linkage and packed-file equality are separate claims.
 
-No global authored-byte denominator has been accepted; the overall percentage
-remains **unmeasured**. The [gapless ownership inventory](resources/ownership.json)
-retains every unknown interval without inferred exclusions. See the
+The [gapless ownership inventory](resources/ownership.json) measures the
+authored denominator: every unknown interval counts against it, and only
+reviewed vendor, asset, BSS, padding and alignment rows are excluded. See the
 [CL library](docs/reconstruction/CL_VENDOR_OWNERSHIP.md),
 [runtime](docs/reconstruction/MAIN_RUNTIME_OWNERSHIP.md),
 [Master library](docs/reconstruction/MASTER_VENDOR_ADOPTION.md),
@@ -117,6 +116,10 @@ provenance. Independent pristine-dump confirmation remains open.
 - [Borland reconstruction notes](docs/reconstruction/BORLAND_NOTES.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Progress](docs/PROGRESS.md)
+- [Whole-game DOS build and play testing](docs/DOS_BUILD.md)
+
+A portable C++17 x64 port that runs on the player's own game data lives on the
+`port/modern-64` branch (`port64/`, documented in `docs/PORTABLE.md` there).
 
 Product source lives under `src/main/`, `src/op/`, `src/maine/`, `src/zun/` and
 `src/shared/`. One Borland/Wine build or Ghidra analysis runs at a time.

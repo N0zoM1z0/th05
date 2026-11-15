@@ -37,7 +37,9 @@ executables equal the TH05 targets), installs the products, and boots
 `GAME.BAT` through ZUN, OP, MAIN and MAINE. It runs DOSBox-X headless (PC-98,
 24,000 cycles, Pentium normal core) and drives keys with xdotool
 (`z@S`, `down:z@S`, `up:z@S`). It saves window PNGs and before/after
-`MIKO.CFG`/`GENSOU.SCR`. Only one Borland/Wine build may run at a time.
+`MIKO.CFG`/`GENSOU.SCR`. `--install DOSNAME=PATH` copies a file into the
+game directory first, for example a `GENSOU.SCR` with Extra unlocked. Only one
+Borland/Wine build may run at a time.
 
 ## Verified routes (2026-11-14)
 

@@ -85,7 +85,7 @@ numerator; the next actual code target remains `-S`'s 269-byte C++ `main()`.
 ### Subsequent partial `-S` coverage
 
 The earlier 11,552-byte outside-`-S` envelope remains an independent exact
-proof. A later [native source-cohort comparison](../resident/semantic_data.md)
+proof. A later [native source-cohort comparison](../resident/README.md)
 now includes the 322-byte `cfg_init` function, 320 bytes of its semantic C++
 DATA, and 1,056 bytes of original Master vendor code inside `-S`.
 It verifies **13,250 / 18,116 physical bytes** and keeps the four remaining

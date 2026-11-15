@@ -220,7 +220,7 @@ real IVT pointer in ES:BX; every field test and both FAR returns are ordinary
 C++. Only ES=0 is an explicit hardware boundary. No handwritten LES, forced
 return register or RETF is needed. This observation is specific to those
 actual producers; adjacent PMD's ordinary result still lives in DX and emits51
-instead of46. See [resident detection](../../src/shared/sound/resident.md).
+instead of46.
 
 ## Proven same-CS declarations retain real far interfaces
 

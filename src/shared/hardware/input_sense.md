@@ -51,7 +51,6 @@ It records complete native boundaries, NOP/fixup enumeration, history, bounded
 vendor search and an independent semantic review of the maintained source.
 No assembler, linker, Ghidra session or target runtime was run for this owner.
 There is no live exact proposal, binder, producer or acceptance receipt.
-The adjacent [held-input C++ failure](input_held.md) remains separate evidence.
 
 ## 2026-11-11: source-backed complete MAIN keyboard/joystick scanner accepted
 

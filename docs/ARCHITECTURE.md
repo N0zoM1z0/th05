@@ -23,5 +23,5 @@ neither decoded originals nor their packing stubs acquire authored progress.
 Targets, decoded images, compiler output, and database exports are private.
 Public configuration pins their identities and documents replay steps.
 Authored progress belongs to reviewed, non-overlapping target extents backed
-by maintained source and cold replay; upstream source coverage is a separate
+by maintained source and two deterministic replays; upstream source coverage is a separate
 diagnostic. Complete executables require their own packing/layout comparison.

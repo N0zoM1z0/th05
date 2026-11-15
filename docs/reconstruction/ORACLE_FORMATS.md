@@ -65,10 +65,10 @@ source negative. `progress.py --accept` reads the saved artifacts again. The
 source/recipe snapshot selects only this owner when its real inputs change;
 direct-object units retain their existing replay and evidence. These bytes
 remain C/C++ authored CODE, with no inferred original-ASM ownership or literal
-historical-producer claim. See [Shinki acceptance](../../src/main/boss/shinki/wing_preparation.md).
+historical-producer claim.
 
 OP/MAINE receipts retain the same pinned decoded load-module proof as ordinary
 unit replays, including a frozen payload and original ordered relocation file.
 Import revalidates both the live attested view and that saved copy against the
 manifest pins. This adds no decoding, packed-file equality or new denominator
-claim. See [background release](../../src/shared/hardware/bgimage_free.md).
+claim.
