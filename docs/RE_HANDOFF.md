@@ -153,6 +153,26 @@ all documented BB-loader and Vector2 trials, ledger-root receipts, native
 producers, calibration builds, ASM evidence, toolchain and Ghidra state remain.
 
 
+## 2026-11-15: readability pass
+
+Comments across `src/` now describe the code and ZUN's bugs and quirks in plain
+English, cryptic one-use constant headers are folded into their attacks, and
+per-unit notes are condensed into one `NOTES.md` per directory where that was
+done (boss, player and midboss notes are still per unit). All affected units
+were replayed and re-accepted; bytes are unchanged.
+
+Re-accepting after a comment edit in a shared header touches more than the C++
+ledgers: replay the ASM families that list the header in `semantic_inputs`
+(`replay_asm_family.py --plan`; the pinned `native-review.json` is found by
+its hash under `.analysis/asm-replays/`), accept them in one call, then refresh
+the adoption digests in `config/reviewed_asm_families.json`,
+`config/reviewed_enemy_vm_unit.json` and `config/reviewed_zun_crt.json` and run
+`review_zun_brk.py --write`. `replay_units.py` needs compiler-assembly and
+initialized-DATA units replayed one per call.
+
+The port review against this source found no byte-level problem in the
+reconstruction, only misleading names, which are fixed.
+
 ## 2026-11-14: measured authored denominator — 99.999% exact
 
 `resources/ownership.json` now publishes `authored_denominator` and
