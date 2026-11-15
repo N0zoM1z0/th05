@@ -1,6 +1,4 @@
-// Mima-local velocity operations; Shot and ShotAddIterator have one shared ABI.
-// Natural-source provenance: nmlgc/ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/p_mima.cpp and th05/main/player/shot.hpp.
+// Mima's shot velocity helpers (ReC98 th05/p_mima.cpp).
 #ifndef TH05_MAIN_PLAYER_MIMA_HPP
 #define TH05_MAIN_PLAYER_MIMA_HPP
 

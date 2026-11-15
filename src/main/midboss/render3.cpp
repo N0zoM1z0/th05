@@ -9,7 +9,7 @@ void pascal near midboss3_render(void)
     int left;
     int top;
     int patnum;
-    if(midboss.phase < MIDBOSS5_PHASE_EXPLODE_BIG) {
+    if(midboss.phase < MIDBOSS_PHASE_EXPLODE_BIG) {
         if(midboss.pos.cur.y.v < 0) {
             return;
         }
@@ -26,7 +26,7 @@ void pascal near midboss3_render(void)
             super_roll_put_1plane(left, top, patnum, 0, 0xFFC0);
             midboss.damage_this_frame = 0;
         }
-    } else if(midboss.phase == MIDBOSS5_PHASE_EXPLODE_BIG) {
+    } else if(midboss.phase == MIDBOSS_PHASE_EXPLODE_BIG) {
         midboss_defeat_render();
     }
 }

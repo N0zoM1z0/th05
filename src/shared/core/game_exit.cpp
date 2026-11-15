@@ -1,4 +1,4 @@
-// Natural maintained TH04 cleanup donor, complete real shared far callback.
+// game_exit(): releases the game's resources before leaving the process (as in TH04).
 #pragma option -zCEXIT_CORE_TEXT -zPshared_exit
 #include "src/shared/core/game_exit.hpp"
 #pragma codeseg EXIT_CORE_TEXT shared_exit

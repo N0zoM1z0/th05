@@ -1,4 +1,4 @@
-// TH05 stage-three midboss: real shared layouts and foreign helper interfaces.
+// Declarations for the stage 3 midboss.
 #ifndef TH05_MAIN_MIDBOSS_STAGE3_HPP
 #define TH05_MAIN_MIDBOSS_STAGE3_HPP
 

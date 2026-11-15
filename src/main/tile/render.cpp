@@ -1,5 +1,5 @@
-// Natural ReC98 b6ba5b0a: th04/main/tile/tile.cpp.
-// The preceding REP STOSD invalidate helpers remain foreign and uncredited.
+// Tile rendering (ReC98 th04/main/tile/tile.cpp). The REP STOSD invalidate
+// helpers before it are assembly.
 #pragma option -zCTILE_TEXT -zPmain_01
 #include "src/main/runtime/small.hpp"
 void pascal near tiles_render(void)

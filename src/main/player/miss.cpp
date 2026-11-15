@@ -1,5 +1,5 @@
-// Natural TH04 maintained miss-state donor, with original TH05 dream decay,
-// performance cap and separate remaining-life/bomb state independently reviewed.
+// The player's miss sequence: explosion, power loss, dream decay and
+// respawn. Follows TH04 with TH05's dream and play-performance rules.
 #pragma option -zCPLAYER_MISS_TEXT -zPmain_01
 #include "src/main/player/miss.hpp"
 #pragma codeseg PLAYER_MISS_TEXT main_01

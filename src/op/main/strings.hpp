@@ -1,7 +1,6 @@
-// Human-readable TH05 menu descriptions from natural source, not target bytes.
-// Canonical encoding: UTF-8. Compile this owner with explicit CP932 staging.
-// Provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th04/shiftjis/m_main.hpp, th04/shiftjis/fnshared.hpp, th05/shiftjis/fns.hpp.
+// The menu description strings (ReC98 th04/shiftjis/m_main.hpp,
+// th04/shiftjis/fnshared.hpp, th05/shiftjis/fns.hpp). Stored as UTF-8 and
+// converted to CP932 for the compiler.
 #ifndef TH05_OP_MAIN_STRINGS_HPP
 #define TH05_OP_MAIN_STRINGS_HPP
 

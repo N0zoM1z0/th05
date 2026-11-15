@@ -1,12 +1,9 @@
-// Real TH05 Music Room ABI, adapted from ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: planar.h, game/coords.hpp,
-// th02/formats/musiccmt.hpp, th03/math/polar.hpp, th05/op/piano.hpp,
-// libs/master.lib/master.hpp and pc98_gfx.hpp. No resource contents included.
+// Music Room declarations (after ReC98 planar.h, game/coords.hpp,
+// th02/formats/musiccmt.hpp, th03/math/polar.hpp, th05/op/piano.hpp).
 #ifndef TH05_OP_MUSIC_HPP
 #define TH05_OP_MUSIC_HPP
 
-// Capture the complete frontend contribution before the canonical menu header
-// repeats this declaration. Every real Music Room body shares this code frame.
+// Declared first in this code segment, which all Music Room code shares.
 #pragma codeseg OP_MUSIC_TEXT op_01
 void near musicroom_menu(void);
 #include "src/op/main/menu.hpp"
@@ -93,8 +90,8 @@ int pascal far polar(int center, int radius, int ratio);
 #define graph_showpage(page_value) outportb(0xA4, page_value)
 #define palette_settone(tone_value) (PaletteTone = tone_value, palette_show())
 
-// Segment handles really occupy two bytes; the saved plane is not a far
-// pointer object. These are the original master.lib typed allocation helpers.
+// Segment handles are two bytes; a saved plane is not a far pointer.
+// master.lib's typed allocation helpers.
 template<class T> struct HMem {
     static T __seg* alloc(unsigned int size_in_elements) {
         return reinterpret_cast<T __seg *>(hmem_allocbyte(
@@ -116,8 +113,7 @@ static inline char ring_min() { return 0; }
     (value)++; \
     if((value) >= (ring_end)) { (value) = 0; }
 
-// Complete frontend first declarations share one real near-code frame. The
-// DS-copy helper has a genuine hardware/intrinsic body but receives no credit.
+// All Music Room functions are declared first in the same code segment.
 #pragma codeseg OP_MUSIC_TEXT op_01
 void pascal near track_unput_or_put(uint8_t track_sel, bool16 put);
 void pascal near tracklist_put(uint8_t sel);
@@ -157,8 +153,7 @@ typedef char th05_music_saved_planes_R_at_4[
 typedef char th05_music_color_is_1[(sizeof(vc_t) == 1) ? 1 : -1];
 typedef char th05_music_page_is_1[(sizeof(page_t) == 1) ? 1 : -1];
 
-// Restore the includer's default code segment; the owner explicitly selects
-// the complete frontend contribution before including the canonical body.
+// Back to the includer's default code segment.
 #pragma codeseg
 
 #endif

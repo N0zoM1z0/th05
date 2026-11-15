@@ -1,6 +1,5 @@
-// Stage setup interfaces adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/main/midboss/midboss.hpp,
-// th04/main/boss/boss.hpp, th05/main/stage/setup.cpp and platform.h.
+// Stage setup (ReC98 th04/main/midboss/midboss.hpp, th04/main/boss/boss.hpp,
+// th05/main/stage/setup.cpp).
 #ifndef TH05_MAIN_STAGE_SETUP_HPP
 #define TH05_MAIN_STAGE_SETUP_HPP
 
@@ -98,7 +97,7 @@ static const int PAT_SHINKI_STILL = 180;
 static const pixel_t BOSS_HITBOX_DEFAULT_W = 24;
 static const pixel_t BOSS_HITBOX_DEFAULT_H = 24;
 
-// Natural expansion of MotionBase::init; retain its x/x/y/y assignment order.
+// MotionBase::init() written out, keeping its x, x, y, y assignment order.
 #define STAGE_MOTION_INIT(motion_value, screen_x_value, screen_y_value) \
     motion_value.cur.x.v = to_sp(screen_x_value); \
     motion_value.prev.x.v = to_sp(screen_x_value); \

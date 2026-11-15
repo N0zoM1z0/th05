@@ -1,4 +1,4 @@
-// Stage-two particles and palette/tile transition, using full canonical storage.
+// Stage 2's particles and its palette/tile transition.
 #ifndef TH05_STAGE2_HPP
 #define TH05_STAGE2_HPP
 #include <dos.h>
@@ -16,7 +16,7 @@ struct s2particle_t {
 };
 #define s2particles (reinterpret_cast<s2particle_t near *>(custom_entities))
 
-// Complete canonical RGB/Palette ODR definitions from the frozen Shinki owner.
+// Same RGB/palette definitions as in the Shinki headers.
 #define COLOR_COUNT 16
 #define COMPONENT_COUNT 3
 template <class ComponentType, int Range> union RGB {
@@ -49,8 +49,8 @@ extern unsigned char stage2_palette_level;
 extern unsigned char stage2_tone_offset;
 extern unsigned char stage2_palette_falling;
 
-// Real tile source-area coordinates: 640 pixels / 8 bits per VRAM byte,
-// with the final four 16-pixel tile columns reserved for the source images.
+// Where the tile source images are: 80 bytes per VRAM row, with the last
+// four 16-pixel tile columns used for the sources.
 static const int STAGE2_ROW_SIZE = 640 / 8;
 static const int STAGE2_TILE_AREA_VRAM_LEFT = (640 - (4 * 16)) / 8;
 
@@ -58,7 +58,7 @@ static const int STAGE2_TILE_AREA_VRAM_LEFT = (640 - (4 * 16)) / 8;
 extern "C" int pascal far IRand(void);
 extern "C" void pascal far graph_scrollup(vram_y_t line);
 #pragma codeseg SHARED
-// Real far reference arguments and a byte angle; Pascal stack extent is12 bytes.
+// Far references for the results and a byte angle (12 bytes of Pascal arguments).
 extern "C" void pascal far vector2(subpixel_t far &x, subpixel_t far &y,
     unsigned char angle, subpixel_t length);
 #pragma codeseg STAGE2_TEXT main_01

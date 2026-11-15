@@ -1,13 +1,11 @@
-// Natural TH05 stage-four patterns and callback. The three preceding real
-// patterns retain the original compiler contribution's switch-table phase.
+// Stage 4 midboss attacks and update.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/stage4.hpp"
 #include "src/main/midboss/stage4_scratch.hpp"
 // Preserve the original word-aligned compiler table after all ABI types.
 #pragma option -a2
 
-// Real two-phase dispatcher and four per-pattern submodes, with original
-// numeric values preserved in the compiler-generated switch table.
+// Two phases and four pattern modes, numbered as in the switch table.
 static const unsigned char MIDBOSS4_PHASE_ENTRANCE = 0;
 static const unsigned char MIDBOSS4_PHASE_PATTERNS = 1;
 static const unsigned char MIDBOSS4_PATTERN_TRANSITION = 0;
@@ -33,7 +31,7 @@ static const int MIDBOSS4_HIT_EFFECT = 10;
 static const int MIDBOSS4_DEFEAT_SPARK_COUNT = 48;
 static const int MIDBOSS4_DEFEAT_SCORE_UNITS = 15;
 
-// Exact projectile setup values for the three real Stage 4 attack leaves.
+// Bullet setup for the three stage 4 attacks.
 static const int MIDBOSS4_CHARGE_SOUND = 8;
 static const int MIDBOSS4_CLOUD_SPREAD_COUNT = 7;
 static const int MIDBOSS4_CLOUD_BULLET_COUNT = 4;

@@ -1,4 +1,4 @@
-// Full shared bomb storage and real pixel-space polar/sprite interfaces.
+// Declarations for Yuuka's bomb heart.
 #ifndef TH05_YUUKA_HEART_HPP
 #define TH05_YUUKA_HEART_HPP
 #include "src/main/player/bombanim.hpp"

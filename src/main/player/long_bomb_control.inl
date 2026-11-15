@@ -1,5 +1,5 @@
-// Shared natural lifecycle of Reimu/Yuuka's tile-mask and effect phases.
-// The character wrappers supply their actual frame constants and callbacks.
+// The phases shared by Reimu's and Yuuka's bombs: tile mask, effect,
+// fade-out. Each character's wrapper supplies its frame numbers and drawing.
 void pascal near LONG_BOMB_FUNCTION(void)
 {
     if(bomb_frame < 32) {

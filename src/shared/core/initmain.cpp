@@ -1,4 +1,5 @@
-// Natural ReC98 b6ba5b0a th03/core/initmain.cpp, GAME=5 behavior.
+// MAIN.EXE startup: memory, graphics and resident setup (ReC98
+// th03/core/initmain.cpp with GAME = 5).
 #pragma option -zCSHARED -3
 #include "src/shared/abi.hpp"
 extern size_t mem_assign_paras;

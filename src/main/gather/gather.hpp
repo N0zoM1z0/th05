@@ -1,5 +1,4 @@
-// Natural TH05 gather-circle ABI, corroborated by pinned ReC98 gather.hpp
-// and the original operands. All fields are retained, with no offset padding.
+// Gather circles (ReC98 gather.hpp). All fields are declared, with no padding.
 #ifndef TH05_MAIN_GATHER_HPP
 #define TH05_MAIN_GATHER_HPP
 
@@ -56,7 +55,7 @@ extern gather_template_t gather_template;
 extern BulletTemplate bullet_template;
 extern PlayfieldPoint drawpoint;
 
-// Real external assembly helpers. They remain unimplemented and uncredited.
+// Assembly helpers, implemented elsewhere.
 void pascal near set_gather_template_to_bullet_template(gather_t near &gather);
 void pascal near set_bullet_template_to_gather_template(gather_t near &gather);
 void near grcg_setcolor_direct_seg3_raw(void); // Consumes the actual GRCG color in AH.
@@ -80,8 +79,8 @@ inline subpixel_t gather_to_sp(float pixel_value) {
     (static_cast<subpixel_t>((point).y) < gather_to_sp(368 + ((h) / 2))) \
 )
 
-// The reference point methods' genuine coordinate transforms, expressed as
-// macros so the already accepted physical class declaration is unchanged.
+// ReC98's point methods for scrolled VRAM coordinates, as macros so the
+// class declaration stays unchanged.
 #define gather_vram_top_scrolled(point, h) \
     scroll_subpixel_y_to_vram_seg3( \
         static_cast<subpixel_t>((point).y) + gather_to_sp(16 - ((h) / 2)) \

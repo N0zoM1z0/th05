@@ -4,7 +4,7 @@
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 #include "src/main/boss/mai_yuki/mai_solo_choreography.hpp"
 #include "src/main/boss/mai_yuki/solo_wave_common.hpp"
-// Canonical object types are complete before the compiler table alignment.
+// All types are complete before the switch table's word alignment below.
 #pragma codeseg MAI_UPDATE_TEXT main_03
 #pragma option -a2
 

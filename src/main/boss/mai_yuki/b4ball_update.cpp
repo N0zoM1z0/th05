@@ -1,12 +1,12 @@
-// Natural TH05 custom-ball motion, collision, destruction and revenge shots.
+// Snowball motion, player collision, destruction by shots and the shots
+// they fire back.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include <dos.h>
 #include "src/main/boss/mai_yuki/b4ball_update.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
-// An empty inline control-flow hint: no return value, state or runtime work.
-// The exact historical B4 source is unknown; this only records the maintained
-// C++ spelling that gives the original clip/remove branch layout.
+// An empty inline call. It does nothing, but makes Turbo C++ lay out the
+// clip/remove branches as in the original.
 inline void optimization_barrier(void) { }
 extern "C" void pascal near b4balls_update(void)
 {
@@ -21,8 +21,8 @@ extern "C" void pascal near b4balls_update(void)
             continue;
         }
         ball->age++;
-        // Borrow the actual packed Point return through the DOS intrinsics.
-        // Both coordinates are consumed before the first collision helper.
+        // update_seg3() leaves the new position in AX/DX; both are used
+        // before the first collision helper.
         ball->pos.update_seg3();
         if(static_cast<subpixel_t>(_AX) <= -B4_UPDATE_CLIP_MARGIN ||
            static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W * 16) + B4_UPDATE_CLIP_MARGIN ||
@@ -33,16 +33,14 @@ extern "C" void pascal near b4balls_update(void)
             continue;
         }
         if(ball->flag != F_REMOVE) {
-            // Both genuine returned Point words remain live in AX/DX until
-            // the two inclusive unsigned tests. ReC98 boss/player collision
-            // uses the same original register-level overlap convention.
+            // The position from update_seg3() is still in AX/DX for the two
+            // unsigned overlap tests, as in the boss/player collision.
             _AX -= player_pos.cur.x.v;
             _DX -= player_pos.cur.y.v;
             if(overlap_wh_inplace_fast(_AX, _DX, (2 * B4_UPDATE_HIT_RADIUS), (2 * B4_UPDATE_HIT_RADIUS))) {
                 player_is_hit = 1;
             }
-            // The original reloads the real current position at this boundary;
-            // no returned coordinate is kept across the shot-collision call.
+            // The shot test reads the stored position again, not AX/DX.
             shot_hitbox_center = ball->pos.cur;
             if((damage = shots_hittest()) != 0) {
                 if(ball->patnum_tiny_base != B4_UPDATE_SNOW) {

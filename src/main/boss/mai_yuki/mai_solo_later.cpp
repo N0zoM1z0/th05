@@ -1,4 +1,4 @@
-// Complete rotating rings and snowball algorithms, with actual shared state.
+// Mai alone: rotating rings and snowballs.
 #include "src/main/boss/mai_yuki/mai_solo_later.hpp"
 
 void near mai_solo_rotating_rings(void)

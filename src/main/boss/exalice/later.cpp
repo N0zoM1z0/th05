@@ -1,10 +1,10 @@
-// Three complete natural EX-Alice patterns following the first charged set.
+// Three EX-Alice attacks after the first charged set.
 #pragma option -zCEXALICE_LAT_TEXT -zPmain_03
 #include "src/main/boss/exalice/later.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
 
-// Every four ticks, the firewave volley launches an angle and its exact
-// signed mirror. The angle negation must occur after the first real spawn.
+// Every four frames the firewave volley fires an angle and its signed mirror;
+// the angle is negated after the first spawn.
 #define EXALICE_FIREWAVE_MIRROR_PAIR() { \
     bullet_template.angle = exalice_boss_scratch.later_pattern_state.firewave.angle; \
     bullets_add_regular(); \

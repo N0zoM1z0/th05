@@ -1,4 +1,4 @@
-// Real rotating and snowball patterns for Mai's independent fight.
+// Declarations for Mai's rotating-ring and snowball attacks.
 #ifndef TH05_MAI_SOLO_LATER_HPP
 #define TH05_MAI_SOLO_LATER_HPP
 #include "src/main/boss/mai_yuki/b4ball.hpp"

@@ -1,4 +1,4 @@
-// Stage-four disappearance/reappearance movement, complete canonical game ABI.
+// Declarations for the stage 4 midboss's transition movement.
 #ifndef TH05_MAIN_MIDBOSS_TRANSITION4_HPP
 #define TH05_MAIN_MIDBOSS_TRANSITION4_HPP
 #include "src/main/midboss/stage4.hpp"

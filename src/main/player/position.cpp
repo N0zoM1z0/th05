@@ -1,4 +1,4 @@
-// Natural ReC98 b6ba5b0a: th04/main/player/pos.cpp, GAME5 ABI.
+// Player position helpers (ReC98 th04/main/player/pos.cpp).
 #pragma option -zCPLAYER_P_TEXT -zPmain_01
 #include "src/main/runtime/small.hpp"
 

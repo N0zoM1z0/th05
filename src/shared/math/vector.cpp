@@ -1,4 +1,4 @@
-// Natural TH05 specialization of pinned ReC98 th04/math/vector.cpp.
+// Polar-to-cartesian helpers (ReC98 th04/math/vector.cpp).
 #pragma option -zCSHARED
 #include "src/shared/math/vector.hpp"
 int pascal polar(int center, int radius, int ratio)

@@ -1,8 +1,9 @@
-// One genuine consecutive bomb family; standalone interfaces stay unchanged.
+// Declarations for the bomb procedures in bomb_family.cpp.
 #ifndef TH05_BOMB_FAMILY_HPP
 #define TH05_BOMB_FAMILY_HPP
 #pragma codeseg BOMB_FAMILY_TEXT main_01
-// Capture actual local first declarations before importing foreign interfaces.
+// Declared before the other headers, so these first declarations keep this
+// segment (Turbo C++ binds a function to the segment of its first declaration).
 void near bomb_reset(void);
 extern "C" void pascal near player_bomb(void);
 extern "C" void pascal near bb_playchar_put(int cel);
@@ -22,11 +23,11 @@ void pascal near bomb_mima(void);
 #include "src/main/player/bomb_draw.hpp"
 #include "src/main/player/long_bomb_control.hpp"
 #include "src/main/player/mima_bomb.hpp"
-// Actual AE1:347A provider retains its far Pascal RETF4 interface.
-// Explicit same-CS context preserves the original relaxed call at FD03.
+// circles_add_growing() is far Pascal but lives in this code segment; telling
+// the compiler lets TLINK relax the call to the original near form.
 #pragma samecodeseg circles_add_growing
 
-// Complete canonical ODR definition from boss/movement.hpp, with no shortening.
+// Same definition as in boss/movement.hpp.
 struct boss_stuff_t {
     PlayfieldMotion pos;
     int hp;
@@ -44,7 +45,7 @@ struct boss_stuff_t {
 };
 extern boss_stuff_t boss;
 typedef void (near pascal *near nearfunc_t_near)(void);
-// Canonical .BB element: one bitmap byte encodes8 tiles, not an opaque record.
+// One byte of a .BB mask covers 8 tiles.
 typedef unsigned char bb_tiles8_t;
 extern bool bombing;
 extern unsigned char bomb_frame;
@@ -76,10 +77,8 @@ extern "C" {
     void pascal far playperf_lower(char delta);
     void pascal far hud_dream_put(void);
 }
-// Only genuine foreign far callees share CS. They retain their far ABI.
-// The maintained bomb donor has hud_bombs_put; accepted miss.hpp corroborates
-// the HUDdream/playperf protocol; both selector RETF8 and native CS are verified.
-// No locally defined function receives this annotation.
+// These far functions live in this code segment too, so calls to them can be
+// relaxed to near calls, as in the original.
 #pragma samecodeseg hud_bombs_put
 #pragma samecodeseg select_for_playchar
 #pragma samecodeseg playperf_lower

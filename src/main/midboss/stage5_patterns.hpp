@@ -1,4 +1,4 @@
-// Natural stage-five movement/pattern prefix. Reuse the frozen callback ABI.
+// Declarations for the stage 5 midboss's movement and attacks.
 #ifndef TH05_MAIN_MIDBOSS_STAGE5_PATTERNS_HPP
 #define TH05_MAIN_MIDBOSS_STAGE5_PATTERNS_HPP
 
@@ -18,8 +18,8 @@ static const unsigned char MIDBOSS5_SPRITE_SHOOT_LAST = 219;
 static const unsigned char MIDBOSS5_SPAWN_NO_DECELERATE = 0x10;
 static const unsigned char MIDBOSS5_SPAWN_CLOUD_FORWARDS = 0x02;
 
-// The genuine BulletTemplate setters combine its adjacent semantic fields,
-// as in ReC98 bullet.hpp and the accepted Sara owner. They emit no opcodes.
+// ReC98's packed BulletTemplate setters, as used for Sara. They only
+// compute constants.
 inline unsigned char midboss5_speed(float value) {
     return static_cast<unsigned char>(value * 16);
 }

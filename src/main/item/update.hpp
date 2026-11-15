@@ -1,5 +1,4 @@
-// TH05 item reward/update interfaces. Natural TH04 algorithm donor plus
-// independent supplied-TH05 behavior review; ReC98 b6ba5b0a corroborates names.
+// Item collection and update (TH04's structure, ReC98's names).
 #ifndef TH05_MAIN_ITEM_UPDATE_HPP
 #define TH05_MAIN_ITEM_UPDATE_HPP
 #include "src/main/item/item.hpp"
@@ -21,7 +20,7 @@ extern unsigned char item_playperf_raise;
 extern unsigned int items_collected;
 extern unsigned int total_point_items_collected;
 extern unsigned int total_max_valued_point_items_collected;
-// Actual TH05 standalone byte at DS36F5, immediately preceding dream.
+// A byte of its own at DS:36F5, right before dream.
 extern unsigned char stage_point_items_collected;
 extern signed char bombs;
 extern unsigned char miss_time;

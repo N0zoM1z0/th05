@@ -1,4 +1,4 @@
-// Natural remaining Mai/Yuki laser, ring, stack and Cheeto attack providers.
+// Declarations for the paired fight's later lasers, rings, stacks and cheetos.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_LATER_PATTERNS_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_LATER_PATTERNS_HPP
 

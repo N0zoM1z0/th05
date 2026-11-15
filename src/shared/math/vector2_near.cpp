@@ -1,5 +1,5 @@
-// Natural vector semantics from ReC98 b6ba5b0a th04/math/vector.hpp/vector2n.asm;
-// the candidate's physical-register instructions and emitted bytes are omitted.
+// vector2_near(): the near polar-to-cartesian helper (ReC98
+// th04/math/vector.hpp, vector2n.asm), written in C.
 #pragma option -zCVECTOR2_NEAR_TEXT -zPmain_03
 #include "src/shared/math/vector2_near.hpp"
 #pragma codeseg VECTOR2_NEAR_TEXT main_03

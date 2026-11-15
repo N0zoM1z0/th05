@@ -1,4 +1,4 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; exactness requires local replay.
+// The angle from the player to a point, for aimed bullets.
 #include "src/main/player/player.hpp"
 
 unsigned char pascal near player_angle_from(

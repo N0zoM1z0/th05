@@ -1,4 +1,4 @@
-// TH05 Extra midboss ABI; original target independently reviewed.
+// Declarations for the Extra midboss.
 #ifndef TH05_MAIN_MIDBOSS_EXTRASTAGE_HPP
 #define TH05_MAIN_MIDBOSS_EXTRASTAGE_HPP
 #pragma codeseg MIDBOSSX_TEXT main_03

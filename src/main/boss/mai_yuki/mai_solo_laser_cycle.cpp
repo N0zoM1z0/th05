@@ -1,5 +1,4 @@
-// Natural radial fixed-laser lifecycle and cycling bullet attacks, TH05.
-// Original disassembly corroborated by ReC98 b6ba5b0a; no ASM body copied.
+// Mai alone: the radial fixed-laser cycle and the cycling bullet attacks.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/mai_solo_laser_cycle.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"

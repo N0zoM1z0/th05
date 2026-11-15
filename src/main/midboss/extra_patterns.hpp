@@ -1,9 +1,9 @@
-// Natural Extra midboss movement and pattern interfaces.
+// Declarations for the Extra midboss's movement and attacks.
 #ifndef TH05_MAIN_MIDBOSS_EXTRA_PATTERNS_HPP
 #define TH05_MAIN_MIDBOSS_EXTRA_PATTERNS_HPP
 #pragma codeseg MIDBOSSX_TEXT main_03
 #include "src/shared/geometry.hpp"
-// First declarations preserve the genuine main_03 near frame before setup.
+// Declared first, so these near functions stay in main_03.
 unsigned int pascal near randring2_next16_and(unsigned int mask);
 extern "C" void pascal near vector2_near(SPPoint near &ret,
     unsigned char angle, subpixel_t length);
@@ -17,9 +17,7 @@ extern "C" {
     void near bullets_add_special(void);
 }
 extern unsigned char page_back;
-// Complete canonical definitions verbatim from accepted bullet/update.hpp.
-// Identical ODR definitions in these independent TUs preserve real ABI;
-// future consolidation requires a separate affected-evidence replay.
+// Same definitions as in bullet/update.hpp.
 union bullet_special_angle_t {
     unsigned char turn_by;
     char target;

@@ -1,6 +1,4 @@
-// Natural Extra midboss state machine reconstructed from original TH05
-// behavior, using TH04 maintained mx_update.cpp state-machine conventions.
-// ReC98 b6ba5b0a th05_main.asm is disassembly evidence, not source acceptance.
+// The Extra midboss state machine, in the style of TH04's mx_update.cpp.
 #pragma option -zCMIDBOSSX_TEXT -zPmain_03
 #include "src/main/midboss/extra.hpp"
 #include "src/main/midboss/extra_scratch.hpp"

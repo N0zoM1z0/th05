@@ -1,4 +1,4 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; requires local cold replay.
+// Yuuka's shot types for each power level (ReC98 th05/p_yuuka.cpp).
 /* ReC98
  * -----
  * Yuuka's shot control functions

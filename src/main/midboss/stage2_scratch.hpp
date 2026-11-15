@@ -1,5 +1,5 @@
-// Stage 2 midboss: the orbit mover and three-stage controller share these
-// bytes of the canonical Boss scratch array. No extra object is allocated.
+// Stage 2 midboss: which bytes of the shared boss scratch array the orbit
+// mover and the controller use.
 #ifndef TH05_MAIN_MIDBOSS_STAGE2_SCRATCH_HPP
 #define TH05_MAIN_MIDBOSS_STAGE2_SCRATCH_HPP
 #include <stddef.h>

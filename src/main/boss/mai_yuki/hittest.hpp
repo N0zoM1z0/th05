@@ -1,4 +1,4 @@
-// Complete canonical Boss/Point state and real shot-hit wrapper interfaces.
+// Declarations for the Mai and Yuki hit tests.
 #ifndef TH05_MAIN_MAI_YUKI_HITTEST_HPP
 #define TH05_MAIN_MAI_YUKI_HITTEST_HPP
 #include "src/main/boss/mai_yuki/hit_result.hpp"

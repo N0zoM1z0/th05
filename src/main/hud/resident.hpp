@@ -1,6 +1,5 @@
-// Candidate TH05 resident ABI corroborated by nmlgc/ReC98@b6ba5b0a529edbb3
-// th05/resident.hpp, th04/score.h and the matching th05/th05.inc structure.
-// This declares all real fields; it does not define/copy the resident payload.
+// The resident structure shared by the game's executables (ReC98
+// th05/resident.hpp, th04/score.h, th05/th05.inc). Declarations only.
 #ifndef TH05_MAIN_HUD_RESIDENT_HPP
 #define TH05_MAIN_HUD_RESIDENT_HPP
 

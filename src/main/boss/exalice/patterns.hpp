@@ -1,12 +1,12 @@
-// EX-Alice's real charged near callbacks and shared game state.
+// Declarations for EX-Alice's charged attacks.
 #ifndef TH05_MAIN_BOSS_EXALICE_PATTERNS_HPP
 #define TH05_MAIN_BOSS_EXALICE_PATTERNS_HPP
 #pragma codeseg EXALICE_PAT_TEXT main_03
 #include "src/main/stage/setup.hpp"
 #include "src/main/bullet/template.hpp"
 
-// Complete canonical ODR definition from bullet/update.hpp. That producer's
-// broader HUD surface defines its own to_sp(), so it cannot be included here.
+// Same definition as in bullet/update.hpp, which can't be included here: its
+// HUD part defines its own to_sp().
 union BulletSpecialState {
     unsigned char turns_max;
     SubpixelLength8 speed_delta;

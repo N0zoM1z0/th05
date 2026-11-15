@@ -1,5 +1,4 @@
-// Complete TH05 score-section ABI, corroborated by natural ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/formats/scoredat/scoredat.hpp.
+// The GENSOU.SCR section record (ReC98 th04/formats/scoredat/scoredat.hpp).
 #ifndef TH05_OP_HISCORE_VIEW_HPP
 #define TH05_OP_HISCORE_VIEW_HPP
 

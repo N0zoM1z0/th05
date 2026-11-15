@@ -1,10 +1,9 @@
-// Natural phase/pattern state machine at original MAIN 1527:6A92.
+// Stage 3 midboss state machine.
 #include "src/main/midboss/stage3.hpp"
 #include "src/main/midboss/stage3_scratch.hpp"
 
-// The original four-word switch table has a real even-word boundary and one
-// compiler zero after the complete function's final RETF. All ABI types above
-// are already complete before applying the table-alignment option.
+// Word alignment for the four-entry switch table, which the compiler pads
+// with one zero byte after the function's final RETF.
 #pragma option -a2
 
 #define midboss3_patterns_done midboss3_scratch.patterns_finished

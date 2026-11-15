@@ -1,4 +1,4 @@
-// Complete real75-byte sprite helper, shared by the coherent foreground TU.
+// The sprite helper shared by the Mai & Yuki foreground.
 #ifndef TH05_MY_FG_COMBINED
 #pragma option -zCMY_FG_TEXT -zPmain_01
 #include "src/main/boss/mai_yuki/foreground.hpp"

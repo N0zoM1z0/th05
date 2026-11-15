@@ -62,8 +62,8 @@ missile_accelerate:
                     break;
                 }
             }
-            // Borrow the actual packed return only until both cache coordinates
-            // are consumed; the full Motion method still returns PlayfieldPoint.
+            // update_seg1() leaves the new position in AX/DX; both are read
+            // into the render cache right away.
             shot->pos.update_seg1();
             if(static_cast<subpixel_t>(_AX) <= -8 * 16 ||
                static_cast<subpixel_t>(_AX) >= (384 + 8) * 16 ||

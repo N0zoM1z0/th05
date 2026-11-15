@@ -1,4 +1,4 @@
-// The paired-Boss defeat choreography, preserving real frame and sound values.
+// Frame numbers and sounds of the paired fight's defeat sequence.
 #ifndef TH05_MAI_YUKI_TRANSITION_EFFECTS_HPP
 #define TH05_MAI_YUKI_TRANSITION_EFFECTS_HPP
 

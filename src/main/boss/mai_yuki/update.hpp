@@ -13,17 +13,15 @@ void pascal near overlay_boss_bgm_update_and_render(void);
 void far dialog_animate(void);
 extern "C" void pascal near cheetos_render(void);
 #include "src/main/dialog/file.hpp"
-// This owner needs the real title pointer, not the independent HUD surface's
-// second to_sp() definition. Preserve its byte element and genuine FAR pointer.
+// The BGM title is a far Shift-JIS string.
 typedef uint8_t shiftjis_t;
 extern shiftjis_t far *boss_bgm_title;
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/later_patterns.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
 
-// Complete canonical explosion enum and one-byte zap union; avoid including
-// the unrelated generic owner whose BOSS_W constant conflicts with the frozen
-// flight header's same-valued macro. No accepted header is modified.
+// Same explosion enum and zap union as in boss/generic.hpp, which can't be
+// included here: its BOSS_W macro clashes with the flight header's.
 enum explosion_type_t {
     ET_NONE = -1, ET_CIRCLE = 0, ET_NW_SE = 1, ET_SW_NE = 2,
     ET_HORIZONTAL = 3, ET_VERTICAL = 4,
@@ -44,7 +42,7 @@ extern SPPoint homing_target;
 extern nearfunc_t_near bg_render_bombing_func;
 extern nearfunc_t_near overlay1;
 
-// Genuine external semantic near CODE-pointer arrays; no entries are supplied.
+// The pattern tables, defined in the *_tables.cpp files.
 extern const MaiYukiPattern MAI_PATTERNS_FIRST[4];
 extern const MaiYukiPattern MAI_PATTERNS_FINAL[8];
 extern const MaiYukiPattern YUKI_PATTERNS_FIRST[4];
@@ -58,7 +56,7 @@ extern shiftjis_t MY_BGM_TITLE_MAI[];
 // Original helper at177F0: signed radii/effect words, RET6, damage inAX.
 int pascal near yuki_hittest_shots_damage(subpixel_t radius_x,
     subpixel_t radius_y, int effect);
-// Original1782C defeat selector returns actual codes0/1/2 inAL: none/Mai/Yuki.
+// Returns which character the shots defeated, in AL: 0 none, 1 Mai, 2 Yuki.
 unsigned char near mai_yuki_hittest_shots(void);
 void near boss_hittest_shots_invincible(void);
 void pascal near boss_explode_small(explosion_type_t type);

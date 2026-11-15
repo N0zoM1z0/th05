@@ -1,4 +1,4 @@
-// Candidate PMD QQ work record. This defines fields, not driver storage.
+// The layout of PMD's per-channel work record (QQ), read by the Music Room piano.
 #ifndef TH05_SHARED_SOUND_PMD_PART_HPP
 #define TH05_SHARED_SOUND_PMD_PART_HPP
 #include <stddef.h>
@@ -8,8 +8,8 @@ struct PmdLfoTiming {
     unsigned char delay_setting, speed_setting, step_setting, time_setting;
 };
 
-// Complete 98-byte candidate layout, including the tail after the note byte.
-// Signedness of fields not read here does not establish a new driver contract.
+// All 98 bytes, including the ones after the note byte. Only the fields
+// read here are known to have the right signedness.
 struct PmdPart {
     unsigned short playback_offset, end_return_offset;
     unsigned char remaining_length, gate_time;

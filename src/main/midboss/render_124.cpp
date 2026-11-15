@@ -1,4 +1,4 @@
-// Actual layered stage1 and scrolling stage2/4 sprite/damage render behavior.
+// Rendering of the stage 1, 2 and 4 midbosses: sprite, damage flash, defeat.
 #pragma option -zCMID_FG_TEXT -zPmain_01
 #include "src/main/midboss/render_124.hpp"
 #pragma codeseg MID_FG_TEXT main_01
@@ -8,7 +8,7 @@ void pascal near midboss1_render(void)
     int left;
     int top;
     int patnum;
-    if(midboss.phase < MIDBOSS5_PHASE_EXPLODE_BIG) {
+    if(midboss.phase < MIDBOSS_PHASE_EXPLODE_BIG) {
         left = (midboss.pos.cur.x.v >> 4) + 16;
         top = scroll_subpixel_y_to_vram_seg1(midboss.pos.cur.y.v);
         patnum = midboss.sprite + stage_frame_mod16 / 4;
@@ -27,7 +27,7 @@ void pascal near midboss1_render(void)
                 midboss.damage_this_frame = 0;
             }
         }
-    } else if(midboss.phase == MIDBOSS5_PHASE_EXPLODE_BIG) {
+    } else if(midboss.phase == MIDBOSS_PHASE_EXPLODE_BIG) {
         midboss_defeat_render();
     }
 }
@@ -37,7 +37,7 @@ void pascal near midboss2_render(void)
     int left;
     int top;
     int patnum;
-    if(midboss.phase < MIDBOSS5_PHASE_EXPLODE_BIG) {
+    if(midboss.phase < MIDBOSS_PHASE_EXPLODE_BIG) {
         if(midboss.pos.cur.y.v < 0) {
             return;
         }
@@ -54,7 +54,7 @@ void pascal near midboss2_render(void)
             super_roll_put_1plane(left, top, patnum, 0, MID_FG_PUT_PLANES);
             midboss.damage_this_frame = 0;
         }
-    } else if(midboss.phase == MIDBOSS5_PHASE_EXPLODE_BIG) {
+    } else if(midboss.phase == MIDBOSS_PHASE_EXPLODE_BIG) {
         midboss_defeat_render();
     }
 }
@@ -64,7 +64,7 @@ void pascal near midboss4_render(void)
     int left;
     int top;
     int patnum;
-    if(midboss.phase < MIDBOSS5_PHASE_EXPLODE_BIG) {
+    if(midboss.phase < MIDBOSS_PHASE_EXPLODE_BIG) {
         if(midboss.pos.cur.y.v < 0) {
             return;
         }
@@ -77,7 +77,7 @@ void pascal near midboss4_render(void)
             super_roll_put_1plane(left, top, patnum, 0, MID_FG_PUT_PLANES);
             midboss.damage_this_frame = 0;
         }
-    } else if(midboss.phase == MIDBOSS5_PHASE_EXPLODE_BIG) {
+    } else if(midboss.phase == MIDBOSS_PHASE_EXPLODE_BIG) {
         midboss_defeat_render();
     }
 }

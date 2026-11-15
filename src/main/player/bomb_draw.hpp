@@ -1,4 +1,4 @@
-// Shared complete bomb-animation storage and actual draw/graphics interfaces.
+// Bomb animation state and the drawing routines the bombs use.
 #ifndef TH05_CHARACTER_BOMB_DRAW_HPP
 #define TH05_CHARACTER_BOMB_DRAW_HPP
 #include "src/main/player/bombanim.hpp"
@@ -8,7 +8,7 @@ extern bool palette_changed;
 extern unsigned char circles_color;
 extern unsigned char stage_frame_mod4;
 
-// Real near main_01 consumers; no implementations are supplied by this header.
+// Implemented elsewhere in main_01.
 void near reimu_bomb_backdrop_render(void);
 void near yuuka_bomb_backdrop_render(void);
 void near yuuka_heart_update_and_render(void);

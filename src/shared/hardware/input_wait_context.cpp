@@ -1,5 +1,5 @@
-// Complete real two-function TH05 held-key settle and UI wait source.
-// Preserved ReC98 th05/hardware/inp_h_w.cpp C++/register semantics.
+// Waiting for held keys to settle, and the UI's wait-for-input loop
+// (ReC98 th05/hardware/inp_h_w.cpp). Both functions form one translation unit.
 #pragma option -zCSHARED -k-
 #include <dos.h>
 #include "src/shared/abi.hpp"

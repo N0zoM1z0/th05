@@ -1,9 +1,8 @@
-// Natural TH05 stage1 midboss ABI. ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47
-// th05/main/midboss/m1.cpp; original operands and calls independently reviewed.
+// Declarations for the stage 1 midboss.
 #ifndef TH05_MAIN_MIDBOSS_STAGE1_HPP
 #define TH05_MAIN_MIDBOSS_STAGE1_HPP
 
-// Capture the real owning frame before stage/setup.hpp declares callbacks.
+// Declared before stage/setup.hpp, so the callbacks keep this segment.
 #pragma codeseg MIDBOSS1_TEXT main_03
 void near midboss1_move(void);
 void near midboss1_pattern(void);

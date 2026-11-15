@@ -1,22 +1,21 @@
 #include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
-// All seven Yuki small-ball/ring families fire from the same real muzzle:
-// the second Boss position with its original positive Y offset. Keep this
-// assignment in-place before each attack's distinct spread/speed settings.
+// All seven of Yuki's small-ball and ring attacks fire from below her center.
+// Each attack sets this right before its own spread and speed.
 #define MY_YUKI_MUZZLE() \
     bullet_template.origin.x = boss2.pos.cur.x; \
     bullet_template.origin.y.v = boss2.pos.cur.y.v + to_sp(MYR_RING_MUZZLE_Y_PX)
 
-// Both late Cheeto attackers share the same real aiming, spawn and sound
-// sequence after their character-dependent origin/side decisions.
+// Both late cheeto attacks aim, spawn and play the sound the same way once
+// their origin and side are chosen.
 #define MY_FIRE_AIMED_CHEETO() \
     cheeto_template.angle = player_angle_from( \
         cheeto_template.origin.x, cheeto_template.origin.y, angle); \
     cheetos_add(); \
     snd_se_play(MYR_CHEETO_SOUND)
 
-// The paired Yuki stack volleys share the same real setup and launch;
-// the small and large balls use distinct sprites, counts and spread steps.
+// Yuki's paired stack volleys: same setup and launch, but the small and large
+// balls differ in sprite, count and spread step.
 #define MY_YUKI_STACK_BURST(sprite_id, ball_count, stack_step) { \
     bullet_template.spawn_type = MY_SPAWN_NO_DECELERATE; \
     bullet_template.group = BG_STACK_AIMED; \
@@ -29,8 +28,8 @@
     bullets_add_regular(); \
 }
 
-// Both characters prepare their actual position, tint and speed before
-// choosing opposite aiming offsets in separate character-specific branches.
+// Each character sets position, tint and speed first, then picks the opposite
+// aim offset in its own branch.
 #define MY_PREPARE_CHEETO(position, tint) { \
     cheeto_template.origin = position; \
     cheeto_template.col = tint; \

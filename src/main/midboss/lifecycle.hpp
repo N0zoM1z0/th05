@@ -1,4 +1,4 @@
-// Complete natural midboss lifecycle/HP/reward family; existing ABI reused.
+// Declarations for the midboss lifecycle functions.
 #ifndef TH05_MAIN_MIDBOSS_LIFECYCLE_HPP
 #define TH05_MAIN_MIDBOSS_LIFECYCLE_HPP
 
@@ -9,7 +9,7 @@ void pascal near hud_hp_update_and_render(int hp_cur, int hp_max);
 void pascal near midboss_score_bonus(unsigned int units);
 void pascal near boss_score_bonus(unsigned int units);
 void near midboss_defeat_update(void);
-// Preserve RNG's real first declaration before the foreign callback context.
+// Declared first, so the random-ring helper stays in its own segment.
 unsigned int pascal near randring2_next16_mod(unsigned int divisor);
 
 #pragma codeseg MAI_TEXT main_01

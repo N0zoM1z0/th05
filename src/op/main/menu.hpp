@@ -1,6 +1,5 @@
-// Local OP menu interfaces, preserving real Borland large-model ABI.
-// Natural-source provenance: nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: OP/start/menu and graphics/sound headers.
+// Declarations for the OP menus and their graphics and sound helpers
+// (after ReC98).
 #ifndef TH05_OP_MAIN_MENU_HPP
 #define TH05_OP_MAIN_MENU_HPP
 

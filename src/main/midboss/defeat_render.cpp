@@ -1,4 +1,4 @@
-// Sixteen real rotating sprites whose radius grows to the defeat-ring limit.
+// Midboss defeat: sixteen rotating sprites on a growing ring.
 #pragma option -zCMID_DEFEAT_TEXT -zPmain_01
 #include "src/main/boss/late_game_state_publics.h"
 #include "src/main/midboss/defeat_render.hpp"

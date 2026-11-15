@@ -1,4 +1,4 @@
-// Shared-fight semantic near-callback schedules; real providers stay foreign.
+// Mai's attack order in the paired fight.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/shared_pattern_tables.hpp"
 

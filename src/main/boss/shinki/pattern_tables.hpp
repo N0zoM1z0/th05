@@ -1,4 +1,4 @@
-// Canonical byte-bool near callbacks and the actual two-phase schedule.
+// Shinki's pattern callbacks and their order in the two phases.
 #ifndef TH05_SHINKI_PATTERN_TABLES_HPP
 #define TH05_SHINKI_PATTERN_TABLES_HPP
 #include "src/main/boss/shinki/shinki.hpp"

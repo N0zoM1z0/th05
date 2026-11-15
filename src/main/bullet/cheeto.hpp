@@ -1,6 +1,5 @@
-// Cheeto state and collision interfaces adapted from natural C++ in
-// nmlgc/ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47:
-// th05/main/bullet/cheeto.hpp, th04/main/custom.hpp, th01/math/overlap.hpp.
+// Cheetos: state and collision (ReC98 th05/main/bullet/cheeto.hpp,
+// th04/main/custom.hpp, th01/math/overlap.hpp).
 #ifndef TH05_MAIN_BULLET_CHEETO_HPP
 #define TH05_MAIN_BULLET_CHEETO_HPP
 
@@ -13,7 +12,7 @@
 #define CUSTOM_COUNT 64
 #define TO_SP(pixel_value) ((pixel_value) << 4)
 
-// Real general-purpose custom-entity slot; head/template are overlays of it.
+// A generic custom-entity slot; the cheeto head and template overlay it.
 struct custom_t {
     uint8_t flag;
     uint8_t angle;

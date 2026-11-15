@@ -1,4 +1,4 @@
-// Natural EX-Alice charge, random fan and alternating turning rings.
+// EX-Alice's charge, random fan and alternating turning rings.
 #pragma option -zCEXALICE_PAT_TEXT -zPmain_03
 #include "src/main/boss/exalice/patterns.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"

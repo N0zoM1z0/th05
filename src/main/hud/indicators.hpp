@@ -1,4 +1,4 @@
-// TH05 point/dream/graze/power indicators; real UI tables remain foreign.
+// Point, dream, graze and power indicators.
 #ifndef TH05_HUD_INDICATORS_HPP
 #define TH05_HUD_INDICATORS_HPP
 #include "src/shared/abi.hpp"
@@ -32,7 +32,7 @@ static const unsigned char HUD_INDICATOR_DREAM_MAX_POPUP = 4;
 void pascal far hud_5_digit_put(unsigned int x, unsigned int y,
     unsigned int value, unsigned int attribute);
 #pragma codeseg HUD_INDICATOR_AFTER_TEXT main_01
-// Genuine near Pascal API: canonical word value, even though the bar uses BL.
+// Takes the value as a word, although the bar only uses BL.
 extern "C" void pascal near hud_bar_put(unsigned int y,
     int value, unsigned int attribute);
 void pascal near overlay_popup_update_and_render(void);

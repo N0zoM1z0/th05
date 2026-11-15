@@ -1,10 +1,10 @@
-// Seven complete Yuki solo attacks; canonical shared interfaces stay frozen.
+// Declarations for Yuki's seven solo attacks.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_YUKI_PATTERNS_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_YUKI_PATTERNS_HPP
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/b4ball.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
-// Full canonical definition from accepted bullet/update.hpp.
+// Same definition as in bullet/update.hpp.
 union BulletSpecialState {
     unsigned char turns_max;
     SubpixelLength8 speed_delta;

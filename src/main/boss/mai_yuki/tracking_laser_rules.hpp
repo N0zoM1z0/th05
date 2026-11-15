@@ -1,5 +1,5 @@
-// Mai's real tracking laser: target lock, growing, tracking and release.
-// Pure compile-time timing/geometry; no additional Boss or Laser state.
+// Mai's tracking laser: timing and geometry for locking on, growing, tracking
+// and release.
 #ifndef TH05_MAI_TRACKING_LASER_RULES_HPP
 #define TH05_MAI_TRACKING_LASER_RULES_HPP
 

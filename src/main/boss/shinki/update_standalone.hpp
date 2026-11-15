@@ -1,4 +1,4 @@
-// Complete state machine with actual foreign helpers, no substitute bodies.
+// Declarations for Shinki's state machine.
 #ifndef TH05_SHINKI_UPDATE_STANDALONE_HPP
 #define TH05_SHINKI_UPDATE_STANDALONE_HPP
 #pragma codeseg SHARED

@@ -1,4 +1,4 @@
-// Complete Mima draw/control context using the accepted full circle/bomb ABI.
+// Declarations for Mima's bomb.
 #ifndef TH05_MIMA_BOMB_HPP
 #define TH05_MIMA_BOMB_HPP
 #include <dos.h>
@@ -15,7 +15,7 @@ extern "C" {
 #pragma codeseg SHARED
 extern "C" void pascal far cdg_put_noalpha_8(int left, int top, int slot);
 #pragma codeseg MIMA_BOMB_FOREIGN_TEXT main_01
-// Actual foreign custom VRAM backdrop routine, preserved as a near API.
+// Mima's backdrop, drawn by an assembly routine.
 void near mima_bomb_backdrop_render(void);
 #pragma codeseg MIMA_BOMB_TEXT main_01
 void near grcg_setcolor_direct_raw(void);

@@ -1,4 +1,4 @@
-// Real consecutive bomb procedures, in native order. No synthetic prefix.
+// The bomb procedures of one original code segment, in their original order.
 #pragma option -zCBOMB_FAMILY_TEXT -zPmain_01
 #include "src/main/player/bomb_family.hpp"
 #pragma codeseg BOMB_FAMILY_TEXT main_01

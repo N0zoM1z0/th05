@@ -1,9 +1,8 @@
 #ifndef TH05_MAI_YUKI_SOLO_WAVE_COMMON_HPP
 #define TH05_MAI_YUKI_SOLO_WAVE_COMMON_HPP
 
-// Mai and Yuki both complete a *real* solo reposition before counting a new
-// attack pattern. Keep the original write ordering and do not use a helper
-// function that would change stack/call layout.
+// Mai and Yuki each finish a solo reposition before counting the next attack.
+// This stays a macro: a helper function would change the generated code.
 #define MY_SOLO_NEXT_PATTERN() \
     boss.phase_frame = 0; \
     boss.mode++; \

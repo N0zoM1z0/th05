@@ -1,4 +1,4 @@
-// Complete shot/decay/cache layouts and real runtime call interfaces.
+// Shot, decay and render-cache records and the functions that use them.
 #ifndef TH05_SHOT_RUNTIME_HPP
 #define TH05_SHOT_RUNTIME_HPP
 #pragma codeseg _TEXT

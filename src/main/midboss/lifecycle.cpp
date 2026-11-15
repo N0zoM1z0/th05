@@ -1,5 +1,5 @@
-// Natural full-family order also maintained by TH04: state, HP, rewards, defeat.
-// Literal TH05 bodies preserve their GAME5 phase/shake/activation semantics.
+// The midboss lifecycle functions, in their original order (as in TH04):
+// state, HP, rewards, defeat.
 #pragma option -zCMIDBOSS_FAMILY_TEXT -zPmain_03
 #include "src/main/boss/late_game_state_publics.h"
 #include "src/main/midboss/lifecycle.hpp"

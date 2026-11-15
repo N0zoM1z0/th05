@@ -1,13 +1,12 @@
-// Complete final EX-Alice patterns, preserving actual signed frame arithmetic.
+// EX-Alice's final attacks.
 #pragma option -zCEXALICE_FIN_TEXT -zPmain_03
 #include "src/main/boss/exalice/final_patterns.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"
 #include "src/main/boss/exalice/final_attack_rules.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
 
-// Cross and turning Cheetos use the same real aim-and-fire flow. Each
-// caller supplies its own 16/128-frame flip clock and forward/reverse aim.
-// Keep the player-angle call, actual spawn and sound in their native order.
+// Cross and turning cheetos aim and fire the same way. Each caller supplies
+// its own 16- or 128-frame flip period and its forward/reverse aim.
 #define EXALICE_AIM_AND_FIRE_CHEETO(flip_period, aim, reverse_aim) { \
     if((boss.phase_frame % flip_period) == 0) { \
         cheeto_template.angle = player_angle_from( \
@@ -53,8 +52,8 @@ bool near exalice_pattern_turning_cheetos(void)
 
 #include "src/main/boss/exalice/spiral_gather.inl"
 
-// The controller calls this leaf before its inclusive frame-5000 HP gate.
-// Its two-frame cadence therefore emits a real volley on frame 5000 itself.
+// Called before the controller's inclusive frame-5000 HP gate, so the
+// two-frame cadence still fires a volley on frame 5000.
 void near exalice_pattern_final_fan(void)
 {
     gather_add_only_3stack(boss.phase_frame - EXF_FAN_CHARGE_FRAME, EXF_FAN_BLUE_GATHER_COLOR, EXF_FAN_OTHER_GATHER_COLOR);

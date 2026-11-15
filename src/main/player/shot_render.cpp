@@ -1,5 +1,4 @@
-// Natural TH05 cache/hitshot renderer, using maintained TH04 rendering
-// semantics and independently reviewed original TH05 records and behavior.
+// Renders shots and the decaying hit sprites.
 #pragma option -zCSHOT_RENDER_TEXT -zPmain_01
 #include "src/main/player/shot_render.hpp"
 #pragma codeseg SHOT_RENDER_TEXT main_01

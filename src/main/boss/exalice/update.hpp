@@ -1,15 +1,15 @@
-// Complete EX-Alice state machine and real foreign code/data interfaces.
+// Declarations for EX-Alice's state machine.
 #ifndef TH05_MAIN_BOSS_EXALICE_UPDATE_HPP
 #define TH05_MAIN_BOSS_EXALICE_UPDATE_HPP
 
-// Preserve actual first-declaration contexts before the common setup surface.
+// Declared first, so these functions keep their segments.
 #pragma codeseg BOSS_BG_TEXT main_01
 void pascal near exalice_bg_render(void);
 extern "C" void pascal near exalice_custombullets_render(void);
 #pragma codeseg EXALICE_UPD_TEXT main_03
 void pascal far exalice_update(void);
-// The original far hit wrapper shares this callback's CS. Capture that
-// context before the independent phase owner's repeated declaration.
+// The far hit test lives in this code segment; declare it before the phase
+// header declares it again.
 int far exalice_hittest_shots(void);
 #include "src/main/boss/exalice/phase.hpp"
 #include "src/main/boss/exalice/patterns.hpp"
@@ -17,8 +17,7 @@ int far exalice_hittest_shots(void);
 #include "src/main/boss/exalice/laser_patterns.hpp"
 #include "src/main/boss/exalice/final_patterns.hpp"
 
-// Complete canonical ODR types from the frozen Shinki owner. Its broader
-// boss-specific interface is not imported into this independent owner.
+// Same types as in the Shinki headers, which are too broad to include here.
 #define COLOR_COUNT 16
 #define COMPONENT_COUNT 3
 template <class ComponentType, int Range> union RGB {
@@ -51,7 +50,7 @@ void near firewaves_update(void);
 
 #pragma codeseg EXALICE_UPD_TEXT main_03
 extern int exalice_backdrop_patnum;
-// Real16-byte near-callback table; no pointer values are defined here.
+// The pattern table (defined in pattern_pairs.cpp).
 extern exalice_pattern_t exalice_patterns_by_phase[4][2];
 typedef char exalice_palette_is_full_48[(sizeof(Palette8) == 48) ? 1 : -1];
 typedef char exalice_pattern_pairs_are_16[(sizeof(exalice_patterns_by_phase) == 16) ? 1 : -1];

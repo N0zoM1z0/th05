@@ -4,8 +4,7 @@
 #include "src/main/player/shot_runtime.hpp"
 #include "src/main/hud/overlay.hpp"
 
-// The canonical existing declaration takes complete signed subpixel y/x
-// words: x at SS:SP+2, y at+4, with RET4. No new callable ABI is introduced.
+// Takes the signed subpixel x and y as stack words (x first) and pops them.
 #pragma codeseg SHOT_INVALIDATE_TEXT main_01
 void near shots_invalidate(void);
 #pragma codeseg

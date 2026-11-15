@@ -1,5 +1,4 @@
-// Candidate Yuuka shot interface, corroborated by nmlgc/ReC98@b6ba5b0a529edbb3.
-// Reuse the accepted Shot/ShotAddIterator definitions without changing them.
+// Yuuka's shot helpers.
 #ifndef TH05_MAIN_PLAYER_YUUKA_HPP
 #define TH05_MAIN_PLAYER_YUUKA_HPP
 

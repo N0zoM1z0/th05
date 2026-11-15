@@ -25,7 +25,7 @@ static const int ALICE_FG_PAT_STAY = 180;
 static const int ALICE_FG_PAT_ATTACK = 184;
 #define alice_fg_puppets (reinterpret_cast<AlicePuppet near *>(custom_entities))
 
-// Actual master.lib far Pascal APIs, including both real one-plane arguments.
+// master.lib's far Pascal sprite functions.
 #pragma codeseg _TEXT
 extern "C" {
     void pascal far super_roll_put(int left, int top, int patnum);

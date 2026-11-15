@@ -1,5 +1,5 @@
-// Natural TH05 stage-two midboss state machine, recovered from the original
-// callback at 1527:0B7B. Foreign movement/pattern bodies remain separate owners.
+// Stage 2 midboss state machine. Its movement and patterns are in
+// stage2_patterns.cpp.
 #include "src/main/midboss/stage2.hpp"
 #include "src/main/midboss/stage2_scratch.hpp"
 

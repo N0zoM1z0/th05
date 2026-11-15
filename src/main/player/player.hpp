@@ -1,5 +1,4 @@
-// Candidate ABI recovered with nmlgc/ReC98@b6ba5b0a529edbb3 as corroboration.
-// Local surface for the player's aim-angle producer; raw replay is separate.
+// The player's aim-angle helper.
 #ifndef TH05_MAIN_PLAYER_PLAYER_HPP
 #define TH05_MAIN_PLAYER_PLAYER_HPP
 

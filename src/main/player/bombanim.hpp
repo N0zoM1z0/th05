@@ -1,6 +1,5 @@
-// Natural TH05 bomb-animation ABI. Reference provenance:
-// nmlgc/ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/main/player/bombanim.cpp, th02/03/04/math/randring.hpp and pc98.h.
+// Bomb animation state shared by the four characters' bombs (ReC98
+// th05/main/player/bombanim.cpp).
 #ifndef TH05_MAIN_PLAYER_BOMBANIM_HPP
 #define TH05_MAIN_PLAYER_BOMBANIM_HPP
 #include "src/main/hud/overlay.hpp"
@@ -37,8 +36,8 @@ struct marisa_laser_t {
     pixel_t radius;
     int padding;
 };
-// Real two-word display-space point. This owner name avoids introducing a
-// second global screen_point_t definition from another artifact's UI owner.
+// A point in screen pixels. Named apart from screen_point_t, which another
+// header defines.
 struct BombScreenPoint { int x; int y; };
 struct mima_circle_t {
     BombScreenPoint center;
@@ -67,8 +66,7 @@ extern unsigned char stage_frame_mod8;
 uint16_t pascal near randring1_next16_and(uint16_t mask);
 uint16_t pascal near randring1_next16_mod(uint16_t divisor);
 extern "C" {
-    // Large-model references are genuine far references: two four-byte
-    // destinations, then word angle and length; far Pascal RET12.
+    // Far Pascal: two far references for the results, then angle and length.
     void pascal far vector2(int far &x, int far &y,
         unsigned char angle, int length);
     void pascal far super_roll_put_1plane(int x, int y, int patnum,

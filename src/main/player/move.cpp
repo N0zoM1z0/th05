@@ -1,9 +1,9 @@
-// Natural maintained TH04 move.cpp algorithm, GAME5 dynamic signed speeds.
-// TH05 additionally ignores the highest four input bits before dispatch.
+// Player movement from the input bits, with TH05's signed speeds. TH05
+// ignores the top four input bits before dispatching.
 #pragma option -zCPLAYER_MOVE_TEXT -zPmain_01 -k-
 #include "src/main/player/move.hpp"
 #pragma codeseg PLAYER_MOVE_TEXT main_01
-// The maintained donor requests ordinary word alignment for its switch data.
+// Word alignment for the switch's jump table, as in the original.
 #pragma option -a2
 
 inline void player_move_velocity(int direction_x, int direction_y)

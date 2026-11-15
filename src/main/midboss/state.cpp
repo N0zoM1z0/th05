@@ -1,6 +1,5 @@
-// Natural GAME=5 midboss state transitions adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/midboss.cpp ->
-// th04/main/midboss/midboss.cpp. Exactness requires focused cold replay.
+// Midboss state transitions (ReC98 th05/midboss.cpp -> th04/main/midboss/
+// midboss.cpp with GAME = 5).
 #pragma option -zCMIDBOSS_TEXT -zPmain_03
 #include "src/main/midboss/state.hpp"
 

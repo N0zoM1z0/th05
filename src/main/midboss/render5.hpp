@@ -1,11 +1,11 @@
-// TH05 stage5 midboss renderer ABI, ReC98 b6ba5b0a source provenance.
+// Declarations for the stage 5 midboss render.
 #ifndef TH05_MAIN_MIDBOSS_RENDER5_HPP
 #define TH05_MAIN_MIDBOSS_RENDER5_HPP
 #include "src/main/stage/setup.hpp"
 
 static const pixel_t MIDBOSS5_W = 64;
 static const pixel_t MIDBOSS5_H = 64;
-static const unsigned char MIDBOSS5_PHASE_EXPLODE_BIG = 254;
+static const unsigned char MIDBOSS_PHASE_EXPLODE_BIG = 254;
 static const int MIDBOSS5_PLAYFIELD_LEFT = 32;
 static const int MIDBOSS5_PLAYFIELD_TOP = 16;
 static const int MIDBOSS5_PLAYFIELD_ROLL_MARGIN = 32;

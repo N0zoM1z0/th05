@@ -1,4 +1,4 @@
-// Complete natural opening patterns for the surviving Mai boss.
+// Mai alone: her opening attacks.
 #include "src/main/boss/mai_yuki/mai_solo_patterns.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 

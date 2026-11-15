@@ -1,9 +1,8 @@
-// TH05 .PI masked draws: full-screen and quadrant, real Turbo C++ Pascal ABI.
+// Masked .PI draws, full-screen and quarter.
 #pragma option -zCSHARED
 #include <dos.h>
 extern void far *pi_buffers[8];
-// The real 72-byte PI header has X/Y dimensions at offsets 20 and 22.
-// Actual palette and other header fields are external and not emitted here.
+// Each 72-byte .PI header has the width and height at offsets 20 and 22.
 extern unsigned char pi_headers[8][72];
 extern "C" void pascal near pi_put_masked_8_rowloop(int left, int top, int width, int stride);
 #pragma codeseg SHARED

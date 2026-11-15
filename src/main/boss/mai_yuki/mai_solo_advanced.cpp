@@ -3,16 +3,16 @@
 #include "src/main/boss/mai_yuki/mai_solo_advanced.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 
-// All three late attacks exit by restoring the real Boss phase clock and
-// movement mode together. This is the original successful pattern result.
+// All three late attacks end by resetting the phase clock and the movement
+// mode together.
 #define MAI_LATE_ATTACK_COMPLETE() { \
     boss.phase_frame = 0; \
     boss.mode = 0; \
     return true; \
 }
 
-// The opening laser remains at its initial angle; each remaining slot
-// advances by the same signed random delta before actual fixed spawning.
+// The first laser keeps its starting angle; each later one turns by the same
+// signed random delta before it is spawned.
 #define MAI_LASER_NEXT_SLOT(slot) { \
     laser_template.coords.angle += angle_delta; \
     laser_fixed_spawn(slot); \

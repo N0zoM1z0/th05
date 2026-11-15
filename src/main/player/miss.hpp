@@ -1,4 +1,4 @@
-// Complete player-miss state and truthful foreign calling interfaces.
+// Declarations for the player miss sequence.
 #ifndef TH05_PLAYER_MISS_HPP
 #define TH05_PLAYER_MISS_HPP
 #include "src/main/player/player.hpp"
@@ -9,8 +9,8 @@
 #error This source implements TH05 MAIN player-miss behavior
 #endif
 
-// Complete canonical quit enum, identical to runtime/main.hpp. Avoid importing
-// that startup owner's unrelated function-declaration segment contexts.
+// Same as in runtime/main.hpp, which isn't included because its function
+// declarations would bind to the wrong segments.
 enum quit_t { Q_KEEP_RUNNING = 0, Q_QUIT_TO_OP = 1, Q_NEXT_STAGE = 2 };
 extern quit_t quit;
 extern unsigned char miss_time;

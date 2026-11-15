@@ -1,6 +1,5 @@
-// Candidate ABI and shot iteration adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/main/player/shot.hpp, th05/main/player/shot.hpp, th03/math/randring.hpp
-// and th02/main/entity.hpp. All Shot fields retain their original types/layout.
+// Reimu's shot helpers and the shot iterator (ReC98 th04/main/player/shot.hpp,
+// th05/main/player/shot.hpp).
 #ifndef TH05_MAIN_PLAYER_REIMU_HPP
 #define TH05_MAIN_PLAYER_REIMU_HPP
 

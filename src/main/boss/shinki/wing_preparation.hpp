@@ -1,4 +1,4 @@
-// Canonical complete Shinki types and actual first-declaration contexts.
+// Declarations for Shinki's wing transition.
 #ifndef TH05_SHINKI_WING_PREPARATION_HPP
 #define TH05_SHINKI_WING_PREPARATION_HPP
 #include "src/main/boss/movement.hpp"

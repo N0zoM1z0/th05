@@ -1,22 +1,20 @@
-// Four complete snow/vector/acceleration solo-Yuki patterns.
-// The three finite solo patterns restart the actual Boss phase clock and
-// return to reposition mode. The snow cross then reverses its snow-angle
-// step *before* returning, so that additional write stays at its call site.
+// Yuki's four later solo attacks (snow, vectors, acceleration). The three
+// finite ones restart the phase clock and return to repositioning; the snow
+// cross also reverses its angle step first, so that write stays at its call site.
 #define YUKI_SOLO_REPOSITION() { \
     boss.phase_frame = 0; \
     boss.mode = 0; \
 }
 
-// The aimed snow fan fires its first B4-ball at the current aim, then four
-// additional real B4-ball spawns after their wrapped angle adjustments.
+// The aimed snow fan fires its first ball at the current aim, then four more
+// after turning the (wrapping) angle.
 #define YUKI_SNOW_FAN_NEXT_BALL(delta) { \
     b4ball_template.angle += (delta); \
     b4balls_add(); \
 }
 
-// The snow-cross's four real quarter-turn projectiles each spawn before
-// rotating the next direction. The separate snow-angle oscillation happens
-// only after all four have fired, never within the common quarter rule.
+// The snow cross fires four balls a quarter turn apart. Its separate angle
+// oscillation happens only after all four.
 #define YUKI_SNOW_CROSS_QUARTER() { \
     b4balls_add(); \
     b4ball_template.angle += 0x40; \

@@ -1,4 +1,4 @@
-// Natural solo-Yuki functions, original complete boundaries independently read.
+// Yuki alone: her attacks.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/yuki_patterns.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"

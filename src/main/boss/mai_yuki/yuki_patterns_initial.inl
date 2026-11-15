@@ -1,6 +1,5 @@
-// Three complete initial solo-Yuki patterns. Natural bodies only.
-// Every finite opening wave returns to the shared solo-Boss reposition
-// phase, after its own unique attack counter and sound effects.
+// Yuki's three opening solo attacks. Each one, when done, counts itself and
+// returns to the shared solo reposition phase.
 #define YUKI_INITIAL_FINISH() { \
     boss.phase_frame = 0; \
     boss.mode = 0; \

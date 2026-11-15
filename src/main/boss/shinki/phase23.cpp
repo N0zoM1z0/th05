@@ -1,4 +1,4 @@
-// Complete genuine private Shinki phase helper, retained as natural C++.
+// A Shinki phase helper.
 #pragma option -zCB6_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/shinki/shinki.hpp"
 #pragma codeseg B6_UPDATE_TEXT main_03

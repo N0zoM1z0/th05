@@ -1,4 +1,4 @@
-// Complete natural movement and pattern prefix, original MAIN16724..168F2.
+// Stage 5 midboss movement and attacks.
 #include "src/main/midboss/stage5_patterns.hpp"
 #include "src/main/midboss/stage5_scratch.hpp"
 #include "src/main/midboss/stage5_attack_rules.hpp"

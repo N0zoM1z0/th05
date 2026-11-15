@@ -1,11 +1,10 @@
-// Natural TH05 stage1 midboss algorithm from ReC98 b6ba5b0a m1.cpp.
-// Missing geometry/template setters expand to their real canonical fields.
+// Stage 1 midboss (ReC98 th05/main/midboss/m1.cpp).
 #pragma option -zCMIDBOSS1_TEXT -zPmain_03
 #include "src/main/midboss/stage1.hpp"
 #pragma codeseg MIDBOSS1_TEXT main_03
 
-// Real four-stage midboss dispatch. Both hittable approach phases share the
-// original 64-frame exit, but retain distinct switch-table indices.
+// The four phases. Both hittable approach phases end after 64 frames, but
+// keep their own switch cases.
 static const unsigned char MIDBOSS1_PHASE_HP_FILL = 0;
 static const unsigned char MIDBOSS1_PHASE_APPROACH_A = 1;
 static const unsigned char MIDBOSS1_PHASE_APPROACH_B = 2;
@@ -44,7 +43,7 @@ void near midboss1_pattern(void)
         bullet_template.speed.v = 2 * 16;
         bullet_template.group = BG_SPREAD;
         bullet_template.special_motion = BSM_EXACT_LINEAR;
-        // Canonical set_spread() writes the adjacent count/delta pair.
+        // Writes the spread count and the adjacent angle delta in one word.
         reinterpret_cast<uint16_t &>(bullet_template.spread) =
             (4 | (0x02 << 8));
         bullet_template.angle = boss.angle;
@@ -97,7 +96,7 @@ void pascal far midboss1_update(void)
         midboss.damage_this_frame = midboss_hittest_shots_damage(
             MIDBOSS1_W - MIDBOSS1_W / 4,
             MIDBOSS1_H - MIDBOSS1_H / 4, 4);
-        // Actual TH05 subtracts the truncated damage byte, not the full int.
+        // TH05 subtracts the damage as a byte, not the full int.
         midboss.hp -= midboss.damage_this_frame;
         // Preserve signed16 subtraction before unsigned32 multiplication.
         midboss.pos.velocity.x.v =

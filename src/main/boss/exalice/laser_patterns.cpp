@@ -4,16 +4,16 @@
 #include "src/main/boss/exalice/laser_attack_rules.hpp"
 #include "src/main/boss/exalice/boss_scratch.hpp"
 
-// Both fixed fan launches aim from the genuine laser origin and consume the
-// same cyclic slot counter before the sixteen-laser maintenance pass.
+// Both fixed laser fans aim from the laser origin and use the same cyclic
+// slot counter before the sixteen-laser update.
 #define EXALICE_FIXED_AIM_AND_SPAWN(aim_offset) { \
     laser_template.coords.angle = player_angle_from( \
         laser_template.coords.origin.x, laser_template.coords.origin.y, aim_offset); \
     laser_fixed_spawn(exalice_laser_slot++); \
 }
 
-// The sweep's two directions have separate arithmetic and turnaround gates,
-// but the same target-byte state transition and real shootout call.
+// The sweep turns differently in each direction, but switches direction and
+// fires the shootout laser the same way.
 #define EXALICE_SWEEP_TURN(step, turn_gate, next_direction) { \
     laser_template.coords.angle step XLR_SWEEP_TURN_STEP; \
     if(turn_gate) { \

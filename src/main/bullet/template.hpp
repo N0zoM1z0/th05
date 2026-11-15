@@ -1,6 +1,6 @@
-// TH05 candidate bullet ABI, adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/main/bullet/bullet.hpp, bullet.inc and th05/main/bullet/types.h.
-// Every data member is represented; no omitted fields or offset padding.
+// The bullet template and its fields (ReC98 th04/main/bullet/bullet.hpp,
+// bullet.inc, th05/main/bullet/types.h). Every member is declared, with no
+// padding inserted.
 #ifndef TH05_MAIN_BULLET_TEMPLATE_HPP
 #define TH05_MAIN_BULLET_TEMPLATE_HPP
 

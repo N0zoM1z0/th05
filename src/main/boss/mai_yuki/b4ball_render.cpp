@@ -1,4 +1,4 @@
-// Animate and draw all 63 live B4 balls through the real tiny-sprite ABI.
+// Animates and draws all 63 snowballs.
 #pragma option -zCYUKI_SOLO_RENDER_TEXT -zPmain_01
 #include "src/main/boss/mai_yuki/b4ball_render.hpp"
 #pragma codeseg YUKI_SOLO_RENDER_TEXT main_01

@@ -1,4 +1,4 @@
-// Complete canonical midboss and real polar/scroll/sprite interfaces.
+// Declarations for the midboss defeat render.
 #ifndef TH05_MIDBOSS_DEFEAT_RENDER_HPP
 #define TH05_MIDBOSS_DEFEAT_RENDER_HPP
 #pragma codeseg SHARED

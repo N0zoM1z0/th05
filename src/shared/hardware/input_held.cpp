@@ -1,4 +1,4 @@
-// Natural C++ calls/return, with the real PC-98 hardware settling loop only.
+// Input sensing that waits for the PC-98 keyboard to settle.
 #pragma option -zCSHARED -k-
 #include "src/shared/hardware/input_held.hpp"
 #pragma codeseg SHARED

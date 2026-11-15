@@ -1,4 +1,4 @@
-// Full canonical bomb/player state and actual polar/fill APIs.
+// Declarations for Mima's bomb circles.
 #ifndef TH05_MIMA_CIRCLES_HPP
 #define TH05_MIMA_CIRCLES_HPP
 #include "src/main/player/bombanim.hpp"

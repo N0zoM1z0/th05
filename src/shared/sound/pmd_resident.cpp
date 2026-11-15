@@ -5,8 +5,7 @@
 
 extern "C" int far snd_pmd_resident(void)
 {
-    // The original PMD test uses AX both as the zero state shared with ES
-    // and as the returned result. This is a real DOS register contract.
+    // AX is both the zero loaded into ES and the return value.
     _AX = 0;
     snd_interrupt_if_midi = 0x60;
     snd_midi_possible = _AX;

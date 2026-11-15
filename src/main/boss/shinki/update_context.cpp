@@ -1,5 +1,5 @@
-// Genuine adjacent Devil, final pattern, float motion and complete updater.
-// Only the final callback is proposed for new credit.
+// Shinki's Devil attack, final pattern, floating movement and update, as one
+// translation unit.
 #pragma option -zCB6_UPDATE_TEXT -zPmain_03
 #pragma codeseg MAIN_0_TEXT main_01
 extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lunatic);
@@ -14,8 +14,8 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #pragma codeseg B6_UPDATE_TEXT main_03
 #include "src/main/boss/shinki/devil.inl"
 
-// Both opposite blue spheres first transform the native boss-centered
-// origin using the *current* angle, then add exactly one real B6 ball.
+// Both blue spheres first rotate the origin around Shinki by the current
+// angle, then add one ball.
 #define SHINKI_SPIRAL_FIRE_OFFSET_B6BALL() { \
     vector2_at( \
         b6ball_template.origin, \
@@ -25,8 +25,8 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
     b6balls_add(); \
 }
 
-// The red and pellet rings differ only in their genuine angle, sprite and
-// subsequent angle step. Keep each angle update after the actual spawn.
+// The red and pellet rings differ only in angle, sprite and the angle step
+// that follows; the step comes after the spawn.
 #define SHINKI_SPIRAL_FIRE_RING(direction, sprite) { \
     bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE); \
     bullet_template.group = BG_RING; \
@@ -118,9 +118,9 @@ void near shinki_move_float(void)
 
 void pascal shinki_update(void)
 {
-	// This byte selects phase 9's shared-wave exit and aliases the Devil
-	// laser latch in phase 10. Replacing the selector with boss.phase is
-	// logically tempting, but changes the original 959-byte update context.
+	// This byte selects phase 9's shared-wave exit and doubles as the Devil's
+	// laser latch in phase 10. Using boss.phase instead would read better, but
+	// changes the generated code.
 	#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index
 
 	enum {
@@ -162,10 +162,9 @@ void pascal shinki_update(void)
 		SHINKI_WING_PATTERN_SCORE = 25
 	};
 
-	// The wing and Devil phases share the actual palette stepping clock.
-	// Keep it at the original call sites: neither phase may advance a color
-	// more than once per timer tick, and `palette_changed` still latches
-	// on intervening frames during an unfinished transition.
+	// The wing and Devil phases share the palette stepping clock. Keep the steps
+	// at their call sites: no color may change twice per tick, and
+	// palette_changed still latches in between during a transition.
 	#define SHINKI_PALETTE_STEP_DOWN_BLUE() do { \
 		if(stage_frame_mod8 == SHINKI_PALETTE_DARKEN_TICK) { \
 			Palettes[0].c.b--; \

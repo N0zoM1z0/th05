@@ -1,5 +1,5 @@
-// ReC98 b6ba5b0a th04/formats/scoredat/decode.cpp and impl.hpp, with the
-// complete canonical score records. The original byte key stays in AL over ROR.
+// GENSOU.SCR section decoding (ReC98 th04/formats/scoredat/decode.cpp,
+// impl.hpp). The key byte stays in AL across the ROR.
 #pragma option -zCSCORE_TEXT
 #include <dos.h>
 #include "src/op/hiscore/view.hpp"

@@ -1,9 +1,8 @@
-// Natural stage-three movement/pattern prefix, with the frozen callback ABI.
+// Declarations for the stage 3 midboss's movement and attacks.
 #ifndef TH05_MAIN_MIDBOSS_STAGE3_PATTERNS_HPP
 #define TH05_MAIN_MIDBOSS_STAGE3_PATTERNS_HPP
 
-// The real rank selector is far in main_01. Its first declaration must retain
-// that frame before the shared stage header repeats its canonical interface.
+// The far rank selector lives in main_01 and must be declared there first.
 #pragma codeseg MIDBOSS3_PAT_MAIN01_CONTEXT main_01
 extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lunatic);
 #pragma codeseg B4_UPDATE_TEXT main_03
@@ -25,8 +24,7 @@ static const unsigned char MIDBOSS3_SPAWN_NO_DECELERATE = 0x10;
 inline unsigned char midboss3_speed(float value) {
     return static_cast<unsigned char>(value * 16);
 }
-// Real reference BulletTemplate packed setters, applied to its asserted
-// adjacent semantic fields without changing the canonical class declaration.
+// ReC98's packed BulletTemplate setters, which write adjacent fields at once.
 inline void midboss3_set_stack(unsigned char count, float speed_delta) {
     reinterpret_cast<uint16_t &>(bullet_template.stack) =
         count | (midboss3_speed(speed_delta) << 8);

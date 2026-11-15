@@ -1,4 +1,4 @@
-// Complete canonical B4 storage and the existing hybrid sprite provider.
+// Declarations for snowball rendering.
 #ifndef TH05_B4BALL_RENDER_HPP
 #define TH05_B4BALL_RENDER_HPP
 #include <dos.h>
@@ -9,7 +9,8 @@ extern "C" {
     void pascal near z_super_roll_put_tiny_32x32_raw(int patnum);
 }
 static const unsigned int B4_RENDER_VRAM_SEGMENT = 0xA800;
-// Real foreign-call contract: AX=left, DX=top, ES=VRAM, one Pascal word.
+// The tiny-sprite renderer takes AX = left, DX = top, ES = VRAM plane and the
+// sprite as one Pascal word.
 #define b4_render_tiny32(left_value, top_value, pattern_value) \
     _DX = top_value; _AX = left_value; \
     z_super_roll_put_tiny_32x32_raw(pattern_value)

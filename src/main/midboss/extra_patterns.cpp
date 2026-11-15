@@ -1,5 +1,4 @@
-// Natural TH05 Extra movement and attack semantics, independently recovered
-// from the original target; ReC98 b6ba5b0a disassembly is behavior evidence.
+// The Extra midboss's movement and attacks.
 #pragma option -zCMIDBOSSX_TEXT -zPmain_03
 #include "src/main/midboss/extra_patterns.hpp"
 #include "src/main/midboss/extra_scratch.hpp"
@@ -69,7 +68,7 @@ bool near midbossx_pattern_spread(void)
 bool near midbossx_pattern_random(void)
 {
     if(page_back != MEX_RANDOM_DISPLAY_PAGE) {
-        bullet_template.spawn_type = MEX_RANDOM_REVERSE_CLOUD; // Forward cloud, no deceleration.
+        bullet_template.spawn_type = MEX_FORWARD_CLOUD_NO_DECELERATE;
         bullet_template.group = BG_RANDOM_ANGLE_AND_SPEED;
         bullet_template.speed.v = MEX_RANDOM_BASE_SPEED;
         reinterpret_cast<uint16_t &>(bullet_template.spread) = (MEX_RANDOM_SHOT_COUNT | (MEX_RANDOM_SHOT_ANGLE_STEP << 8));

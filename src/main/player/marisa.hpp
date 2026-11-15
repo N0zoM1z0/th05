@@ -1,5 +1,4 @@
-// Candidate Marisa-specific controls, adapted from nmlgc/ReC98@b6ba5b0a529edbb3
-// th05/main/player/shot.hpp. Reuse the existing complete Shot/Iterator types.
+// Marisa's shot helpers (ReC98 th05/main/player/shot.hpp).
 #ifndef TH05_MAIN_PLAYER_MARISA_HPP
 #define TH05_MAIN_PLAYER_MARISA_HPP
 

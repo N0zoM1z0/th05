@@ -1,5 +1,5 @@
-// Semantic initialized pointer data, not a table of target offsets or bytes.
-// Actual original order is character-major, then power/shot level0 through9.
+// The shot function for each character and power level (0-9), as a
+// table of function pointers: character-major, then level.
 #pragma option -zCSHOT_TABLE_CONTEXT -zPmain_01
 #include "src/main/player/shot_tables.hpp"
 

@@ -1,4 +1,4 @@
-// Real far C SE playback state machine, one complete function.
+// snd_se_update(): starts a new effect and releases it after its frame count.
 extern "C" void far snd_se_update(void)
 {
     if((snd_se_mode == SND_SE_OFF) || (snd_se_playing == SE_NONE)) {

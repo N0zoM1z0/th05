@@ -3,8 +3,8 @@
 #include "src/main/boss/mai_yuki/transition_effects.hpp"
 #include "src/main/boss/mai_yuki/paired_attack_rules.hpp"
 
-// Defeat codes and their one-based-to-zero-based mapping are shared with
-// the actual 111-byte hit-test producer in hit_result.hpp.
+// The defeat codes and how they map to 0-based indices are shared with the
+// hit test (hit_result.hpp).
 
 // One shared fight: the entry, each reposition, and the chosen survivor
 // observe different clocks. These remain compiler constants, never new state.
@@ -27,8 +27,7 @@ static const int MY_BIG_EXPLOSION_EXIT_FRAME = 64;
 static const int MY_SURVIVOR_DIALOG_ENTRY_FRAME = 1;
 static const int MY_SURVIVOR_DIALOG_PALETTE_TONE = 60;
 
-// All canonical physical interfaces are complete before ordinary word
-// alignment of the real six-value/six-destination compiler switch data.
+// Word alignment for the six-case switch table.
 #pragma option -a2
 
 void pascal far mai_yuki_update(void)

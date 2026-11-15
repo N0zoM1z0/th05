@@ -1,4 +1,5 @@
-// Real firewave fill/sprite bands and collision tests, followed by cheeto draw.
+// EX-Alice's custom bullets: the firewave bands with their collision test,
+// then the cheetos.
 #pragma option -zCEX_CUSTOM_TEXT -zPmain_01
 #include "src/main/boss/exalice/custom_render.hpp"
 
@@ -50,7 +51,7 @@ extern "C" void pascal near exalice_custombullets_render(void)
                             player_is_hit = 1;
                         }
                     }
-                    // Genuine existing renderer ABI: ES=VRAM, AX=left, DX=top.
+                    // The renderer takes ES = VRAM plane, AX = left, DX = top.
                     _ES = SEG_PLANE_B;
                     z_super_roll_put_tiny_16x16(left, top, patnum);
                 }

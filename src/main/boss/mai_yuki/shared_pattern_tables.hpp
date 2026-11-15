@@ -1,4 +1,4 @@
-// Canonical byte-bool near callbacks used by the shared Mai/Yuki scheduler.
+// The pattern callbacks of the paired fight.
 #ifndef TH05_MAI_YUKI_SHARED_TABLES_HPP
 #define TH05_MAI_YUKI_SHARED_TABLES_HPP
 #include "src/shared/abi.hpp"

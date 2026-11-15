@@ -1,4 +1,4 @@
-// Complete canonical fixed-point values and actual TH05 scroll state.
+// Scroll state and the scroll driver.
 #ifndef TH05_SCROLL_DRIVER_HPP
 #define TH05_SCROLL_DRIVER_HPP
 #include "src/shared/geometry.hpp"

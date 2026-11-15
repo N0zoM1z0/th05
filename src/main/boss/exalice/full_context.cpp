@@ -1,5 +1,4 @@
-// Actual adjacent33-byte far gate,78-byte phase helper and full update.
-// All real bodies are maintained source, with no instruction or layout filler.
+// EX-Alice's bomb gate, phase helper and update, as one translation unit.
 #pragma option -zCEXALICE_FULL_TEXT -zPmain_03
 #include "src/main/boss/late_game_state_publics.h"
 #include "src/main/boss/exalice/full_context.hpp"
@@ -62,8 +61,8 @@ void pascal near exalice_phase_next(explosion_type_t type, int next_end_hp)
     } \
     goto regular_attack
 
-// Wave 1 uses the same rising-red palette cadence in approach and charge.
-// Preserve the color-latch write on every actual red-channel change.
+// Wave 1 raises the red palette the same way while approaching and charging,
+// latching the palette on every change.
 #define EXALICE_WAVE1_RED_APPROACH() \
     if(Palettes.colors[0].c.r < EXALICE_APPROACH_RED_LIMIT) { \
         Palettes.colors[0].c.r += 2; \

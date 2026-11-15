@@ -1,4 +1,4 @@
-// Natural ReC98 TH02 wrapper, with the real same-CS foreign cleanup call.
+// game_exit_to_dos(): game_exit(), then back to DOS (ReC98's TH02 wrapper).
 #pragma option -zCEXIT_DOS_TEXT -zPshared_exit
 #include "src/shared/core/game_exit.hpp"
 #pragma codeseg EXIT_DOS_TEXT shared_exit

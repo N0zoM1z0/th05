@@ -1,6 +1,4 @@
-// Shared-fight Mai/Yuki attack geometry and callback scheduling.
-// Constants only; the real Boss two-slot/16-byte scratch and bullet state
-// remain in the canonical structures rather than synthetic local storage.
+// Attack geometry and pattern scheduling of the paired fight.
 #ifndef TH05_MAI_YUKI_PAIRED_ATTACK_RULES_HPP
 #define TH05_MAI_YUKI_PAIRED_ATTACK_RULES_HPP
 

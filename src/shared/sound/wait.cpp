@@ -1,4 +1,4 @@
-// Natural GAME5 BGM wait loop; real measure/frame-delay APIs stay foreign.
+// Waits until a BGM measure, or a frame count without BGM.
 #pragma option -zCSHARED -zPshared_wait
 #include "src/shared/sound/measure.cpp"
 void pascal far frame_delay(int frames);

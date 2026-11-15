@@ -1,4 +1,4 @@
-// Actual cleanup APIs and complete no-argument process-exit callbacks.
+// Declarations for game_exit() and game_exit_to_dos().
 #ifndef TH05_GAME_EXIT_HPP
 #define TH05_GAME_EXIT_HPP
 #include <dos.h>
@@ -23,8 +23,8 @@ extern "C" {
     void pascal far text_cursor_show(void);
 }
 #pragma codeseg
-// Each independent TU captures its own default shared-code context.
-// Both real interfaces remain far; only the DOS wrapper adds samecodeseg.
+// Both functions are far; only the DOS wrapper tells the compiler that
+// game_exit() shares its code segment.
 void far game_exit(void);
 void far game_exit_to_dos(void);
 

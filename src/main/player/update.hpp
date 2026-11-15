@@ -1,4 +1,4 @@
-// Actual TH05 input, respawn and shot-dispatch lifecycle, full canonical motion.
+// Player update: input, respawn after a miss and shot dispatch.
 #ifndef TH05_PLAYER_UPDATE_HPP
 #define TH05_PLAYER_UPDATE_HPP
 #include "src/main/player/move.hpp"

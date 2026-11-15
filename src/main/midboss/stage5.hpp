@@ -19,8 +19,7 @@ union BulletZapState { bool active; unsigned char frame; };
 extern BulletZapState bullet_zap;
 extern SPPoint homing_target;
 
-// Real two-byte near CODE pointers, with the completion truth value in AL.
-// The original consumer calls the selected pattern and tests AL directly.
+// Near pointers to the patterns; each returns whether it has finished, in AL.
 typedef bool (near *near midboss5_pattern_func_t)(void);
 extern midboss5_pattern_func_t midboss5_pattern_func;
 extern const midboss5_pattern_func_t MIDBOSS5_PATTERNS[3];
@@ -32,7 +31,7 @@ typedef char midboss5_pattern_table_is_6[
 
 static const int MIDBOSS5_HP_TOTAL = 1550;
 static const unsigned char MIDBOSS5_PATTERNS_MAX = 16;
-static const unsigned char MIDBOSS5_PHASE_EXPLODE_BIG = 254;
+static const unsigned char MIDBOSS_PHASE_EXPLODE_BIG = 254;
 static const unsigned char MIDBOSS5_SPRITE_EXPLODE = 4;
 
 #pragma codeseg SHARED

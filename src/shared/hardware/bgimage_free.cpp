@@ -1,4 +1,4 @@
-// Natural maintained TH04 resource-release body; foreign image planes unchanged.
+// bgimage_free(): frees the four plane buffers of the background snapshot (as in TH04).
 #pragma option -zCSHARED -k-
 #include "src/shared/hardware/bgimage_free.hpp"
 #pragma codeseg SHARED

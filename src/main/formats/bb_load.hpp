@@ -1,4 +1,4 @@
-// Full .BB payload and the real near Pascal far-filename/segment-result API.
+// .BB loading: takes a far file name and returns the loaded segment.
 #ifndef TH05_BB_LOAD_HPP
 #define TH05_BB_LOAD_HPP
 #include "src/shared/abi.hpp"

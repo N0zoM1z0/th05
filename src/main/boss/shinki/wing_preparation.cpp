@@ -1,4 +1,4 @@
-// Complete natural Shinki wing transition; unchanged maintained algorithm.
+// Shinki opening her wings.
 #pragma option -zCB6_WING_TEXT -zPmain_03
 #include "src/main/boss/shinki/wing_preparation.hpp"
 #include "src/main/boss/shinki/scratch.hpp"

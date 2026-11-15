@@ -1,8 +1,8 @@
-// Real far Pascal SE priority arbitration, one complete function.
+// snd_se_play(): replaces the playing effect if the new one's priority is
+// at least as high.
 extern "C" void pascal far snd_se_play(int new_se)
 {
-    // This far Pascal entry receives its single word at SS:[SP+4].  Read
-    // through the compiler's real stack-register bindings, not a fake local.
+    // No BP frame: the effect number is read at SS:SP+4.
     _BX = _SP;
     _DX = peek(_SS, (_BX + 4));
     if(snd_se_mode == SND_SE_OFF) {

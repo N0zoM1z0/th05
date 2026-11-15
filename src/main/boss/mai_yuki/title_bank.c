@@ -1,4 +1,4 @@
-// One real semantic bank; const filenames and mutable title byte arrays remain distinct.
+// The boss BGM file names and title strings.
 #pragma option -zCMY_TITLE_BANK_TEXT -zPmain_03
 #ifdef __cplusplus
 #error This initialized semantic DATA producer requires C mode

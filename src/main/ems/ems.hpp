@@ -1,6 +1,5 @@
-// TH05 EMS cache and complete CDG16 ABI. Natural ReC98 provenance:
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th04/main/ems.hpp,
-// th03/formats/cdg.h, th04/sprites/main_cdg.h, th05/playchar.h.
+// The EMS cache and the 16-color CDG records (ReC98 th04/main/ems.hpp,
+// th03/formats/cdg.h, th04/sprites/main_cdg.h, th05/playchar.h).
 #ifndef TH05_MAIN_EMS_HPP
 #define TH05_MAIN_EMS_HPP
 #include "src/main/hud/resident.hpp"
@@ -13,7 +12,7 @@ typedef uint8_t dots8_t;
 enum cdg_plane_layout_t {
     CDG_COLORS = 0, CDG_COLORS_AND_ALPHA = 1, CDG_ALPHA = 2
 };
-// The actual file header and loaded-slot structure, not a reduced field view.
+// The CDG file header and loaded-slot record, with all fields.
 struct CDG {
     uint16_t bitplane_size;
     int pixel_w;
@@ -69,7 +68,8 @@ static const int FACE_H = 128;
 static const int PLANE_COUNT = 4;
 static const int BYTE_DOTS = 8;
 
-// Preserve the real32-bit constants; a TC4 signed enum would truncate them.
+// A macro, so the 32-bit products aren't truncated as Turbo C++'s signed
+// enums would.
 #define sizeof_planar_rect(w, h) ((((w) / BYTE_DOTS) * (h)) * static_cast<uint32_t>(PLANE_COUNT))
 static const uint32_t EMS_EYECATCH_OFFSET = 0;
 static const uint32_t EMS_EYECATCH_END = EMS_EYECATCH_OFFSET + sizeof_planar_rect(EYECATCH_W, EYECATCH_H);

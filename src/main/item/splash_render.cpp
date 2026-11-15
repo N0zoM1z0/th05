@@ -1,4 +1,4 @@
-// Natural maintained TH04 item rendering; canonical GAME5 pool/dot counts.
+// Item splash rendering (as in TH04, with TH05's pool and dot counts).
 #pragma option -zCITEM_RENDER_TEXT -zPmain_01
 #include "src/main/item/render.hpp"
 

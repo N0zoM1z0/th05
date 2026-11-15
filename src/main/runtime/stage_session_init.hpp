@@ -1,4 +1,4 @@
-// Actual TH05 stage/session entry and foreign resource/runtime interfaces.
+// Declarations for stage and session setup.
 #ifndef TH05_STAGE_SESSION_HPP
 #define TH05_STAGE_SESSION_HPP
 #include <dos.h>
@@ -28,7 +28,7 @@ extern unsigned int PaletteTone;
 extern long random_seed;
 extern "C" volatile unsigned int vsync_Count2;
 
-// These are real existing filename objects, not owned payload or pointer arrays.
+// File name strings defined elsewhere.
 extern const char near SESSION_EYE_RGB[];
 extern const char near SESSION_REIMU_BFT[];
 extern const char near SESSION_MARI_BFT[];
@@ -58,7 +58,7 @@ extern const char near SESSION_ST03_MPN[];
 extern const char near SESSION_BSS4_CD2[];
 extern const char near SESSION_ST04_BFT[];
 extern const char near SESSION_ST04_MPN[];
-// Stage6 really references distinct copies of the stage5 filenames.
+// Stage 6 uses its own copies of the stage 5 file names.
 extern const char near SESSION_BSS4_CD2_REPEAT[];
 extern const char near SESSION_ST04_BFT_REPEAT[];
 extern const char near SESSION_BSS6_CD2[];
@@ -83,8 +83,8 @@ extern "C" {
 #pragma codeseg STAGE_SESSION_MAIN03_CONTEXT main_03
 void far midboss_reset(void);
 
-// These real interfaces are all in frameAE1, including the three far-return
-// services whose original calls use a same-frame far transfer.
+// All of these live in segment AE1, including the three far functions whose
+// calls the linker relaxes within the segment.
 #pragma codeseg STAGE_SESSION_TEXT main_01
 void near stage_session_init(void);
 void near gameplay_session_init(void);

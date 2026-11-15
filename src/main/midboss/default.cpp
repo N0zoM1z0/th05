@@ -1,7 +1,5 @@
-// Natural default rewards and defeat update adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/mb_dft.cpp ->
-// th04/main/midboss/defeat.cpp, GAME=5. The final reset is a genuine typed call,
-// not the reference's instruction macro. Exact call relaxation is unproven.
+// The default midboss defeat update and rewards (ReC98 th05/mb_dft.cpp ->
+// th04/main/midboss/defeat.cpp with GAME = 5).
 #pragma option -zCMB_DFT_TEXT -zPmain_03
 #include "src/main/midboss/default.hpp"
 

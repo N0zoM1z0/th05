@@ -1,5 +1,5 @@
-// Complete original 186-byte Mai/Yuki tracking laser callback.
-// Preserve the near AL angular difference with one genuine register SUB.
+// Mai's tracking laser in the paired fight. The angle difference is computed
+// with a byte SUB in AL, as in the original.
 #include <dos.h>
 #include "src/main/boss/mai_yuki/later_patterns.hpp"
 #include "src/main/boss/mai_yuki/tracking_laser_rules.hpp"

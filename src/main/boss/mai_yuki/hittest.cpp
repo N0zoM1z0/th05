@@ -1,4 +1,4 @@
-// Two complete natural hit/state wrappers, original MAIN177F0..1785F.
+// The two shot hit tests for Mai and Yuki.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/hittest.hpp"
 

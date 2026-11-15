@@ -3,10 +3,9 @@
 #include "src/main/boss/alice/update.hpp"
 #include "src/main/boss/alice/puppet_choreography.hpp"
 
-// The four normal waves share one countdown but the *current* HP is set
-// from the previous threshold before the next threshold is installed.
-// The four real regular-wave HP gates are 7400 -> 5200 -> 3000 -> 800,
-// and the final transition installs zero for the following attack.
+// The four regular waves share one countdown. Each one first sets the current
+// HP from the previous threshold, then installs the next: 7400, 5200, 3000,
+// 800, and finally 0 for the last attack.
 static const int ALICE_WAVE_ONE_END_HP = 7400;
 static const int ALICE_WAVE_HP_DECREMENT = 2200;
 static const int ALICE_REGULAR_WAVE_PATTERN_LIMIT = 24;
@@ -22,8 +21,7 @@ static const int ALICE_REGULAR_WAVE_BONUS = 7;
 #include "src/main/boss/alice/beam_phase.hpp"
 #include "src/main/boss/alice/beam_weapon_rules.hpp"
 #include "src/main/boss/alice/scratch.hpp"
-// Canonical object layouts are already parsed. Keep ordinary word alignment
-// and the genuine preceding spread; the whole-owner table gap remains open.
+// Word alignment for the switch table.
 #pragma option -a2
 
 #include "src/main/boss/alice/final_spread.inl"

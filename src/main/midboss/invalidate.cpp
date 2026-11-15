@@ -1,4 +1,4 @@
-// Natural ReC98 b6ba5b0a: th04/main/midboss/inv.cpp, GAME5 physical ABI.
+// Marks the tiles under the midboss for redraw (ReC98 th04/main/midboss/inv.cpp).
 #pragma option -zCMB_INV_TEXT -zPmain_01
 #include "src/main/midboss/invalidate.hpp"
 

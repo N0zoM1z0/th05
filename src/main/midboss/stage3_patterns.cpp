@@ -1,4 +1,4 @@
-// Natural animation, movement and patterns immediately before Stage3 update.
+// Stage 3 midboss animation, movement and attacks.
 #include "src/main/midboss/stage3_patterns.hpp"
 #include "src/main/midboss/stage3_scratch.hpp"
 

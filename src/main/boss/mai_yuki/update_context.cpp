@@ -1,5 +1,4 @@
-// Genuine adjacent final Mai/Yuki patterns and complete shared Boss updater.
-// Only the updater is a new accepted scope; the ten patterns already have credit.
+// The last paired-fight attacks and the shared update, as one translation unit.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/update.hpp"
 #include "src/main/boss/mai_yuki/transition_effects.hpp"
@@ -7,8 +6,8 @@
 #pragma codeseg MAIN_035_TEXT main_03
 #include "src/main/boss/mai_yuki/remaining_patterns.inl"
 
-// Defeat codes and their one-based-to-zero-based mapping are shared with
-// the actual 111-byte hit-test producer in hit_result.hpp.
+// The defeat codes and how they map to 0-based indices are shared with the
+// hit test (hit_result.hpp).
 
 // One shared fight: the entry, each reposition, and the chosen survivor
 // observe different clocks. These remain compiler constants, never new state.
@@ -36,7 +35,7 @@ static const int MY_PATTERN_COUNT_RESET = 0;
 static const int MY_HP_END_UNSET = 0;
 
 
-// All canonical object types precede ordinary compiler-table word alignment.
+// Word alignment for the switch table; all types are complete by now.
 #pragma option -a2
 
 // Both fighters remain collision-tested throughout the setup and ready
@@ -55,8 +54,8 @@ static const int MY_HP_END_UNSET = 0;
     mai_pattern_current = mai_bank[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK]; \
     yuki_pattern_current = yuki_bank[boss.phase_state.patterns_seen & MY_PATTERN_VARIANT_MASK]
 
-// HP gates force the same shared Boss state into another reposition cycle;
-// the chosen wave index is an actual threshold, not a new phase.
+// HP thresholds send both bosses into another reposition; the wave index
+// they pick is a threshold, not a new phase.
 #define MY_ENTER_REPOSITION_GATE(gate) \
     boss.mode = MY_MODE_REPOSITION; \
     boss.phase_frame = MY_PHASE_FRAME_RESET; \
@@ -70,8 +69,8 @@ static const int MY_HP_END_UNSET = 0;
     boss.phase_frame = MY_PHASE_FRAME_RESET; \
 }
 
-// The one-based defeated-character report is stored on boss2. All four
-// explosion/dialog decisions test the same genuine "Mai was defeated" code.
+// boss2 stores which character was defeated (1-based). All four explosion and
+// dialog decisions test for "Mai was defeated".
 #define MY_MAI_WAS_DEFEATED() (MY_DEFEATED_CHARACTER(boss2.phase_state) == MY_DEFEATED_MAI)
 
 void pascal far mai_yuki_update(void)

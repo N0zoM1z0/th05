@@ -1,10 +1,9 @@
-// Complete TH05 enemy layout corroborated by nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/enemy/enemy.hpp.
-// Rendering algorithm provenance is the maintained TH04 natural C++ owner.
+// The enemy record (ReC98 th05/main/enemy/enemy.hpp). The renderer follows
+// TH04.
 #ifndef TH05_MAIN_ENEMY_ENEMY_HPP
 #define TH05_MAIN_ENEMY_ENEMY_HPP
 
-// Reuse the one canonical item enum, BulletTemplate and geometry definitions.
+// The item enum, BulletTemplate and geometry types come from here.
 #include "src/main/bullet/update.hpp"
 
 typedef int screen_x_t;
@@ -54,8 +53,7 @@ struct enemy_t {
     signed char unused_1;
     int unused_2;
     signed char unused_3;
-    // Genuine five-byte unused tail in the original enemy record, retained
-    // from its full declaration; not inserted to force a selected field offset.
+    // Five unused bytes at the end of the original record.
     signed char padding[5];
 };
 extern enemy_t enemies[ENEMY_COUNT];

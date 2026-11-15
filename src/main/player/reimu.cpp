@@ -1,4 +1,4 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; requires local cold replay.
+// Reimu's shot types for each power level (ReC98 th05/p_reimu.cpp).
 /* ReC98
  * -----
  * Reimu's shot control functions

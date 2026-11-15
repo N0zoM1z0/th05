@@ -543,9 +543,9 @@ void near shinki_move_float(void)
 
 void pascal shinki_update(void)
 {
-	// This byte selects phase 9's shared-wave exit and aliases the Devil
-	// laser latch in phase 10. Replacing the selector with boss.phase is
-	// logically tempting, but changes the original 959-byte update context.
+	// This byte selects phase 9's shared-wave exit and doubles as the Devil's
+	// laser latch in phase 10. Using boss.phase instead would read better, but
+	// changes the generated code.
 	#define phase_relative shinki_scratch.wave_or_laser.wave_relative_index
 
 	enum {

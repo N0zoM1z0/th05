@@ -1,17 +1,17 @@
-// Real near callback banks used by the two survivor state machines.
+// The pattern callbacks of the two solo fights.
 #ifndef TH05_B4_SOLO_TABLES_HPP
 #define TH05_B4_SOLO_TABLES_HPP
 #include "src/shared/abi.hpp"
 
-// Turbo C++ 4.02 uses the same byte boolean as the canonical game headers.
+// Turbo C++ 4.0J has no bool; the game uses a byte.
 typedef unsigned char bool;
 
 #if GAME != 5 || BINARY != 'M'
 #error These callback banks belong to TH05 MAIN
 #endif
 
-// Canonical callback types from initial_patterns.hpp and
-// mai_solo_laser_cycle.hpp. The laser subpatterns do not return a bool.
+// Same callback types as in initial_patterns.hpp and mai_solo_laser_cycle.hpp.
+// The laser sub-patterns return nothing.
 typedef bool (near *near MaiYukiPattern)(void);
 typedef void (near *near MaiSoloLaserPattern)(void);
 

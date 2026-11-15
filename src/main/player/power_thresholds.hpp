@@ -1,4 +1,4 @@
-// Complete unsigned-word thresholds indexed by the real shot-level updater.
+// Power thresholds for each shot level, as unsigned words.
 #ifndef TH05_SHOT_POWER_THRESHOLDS_HPP
 #define TH05_SHOT_POWER_THRESHOLDS_HPP
 #include "src/shared/abi.hpp"

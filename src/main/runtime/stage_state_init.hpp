@@ -1,6 +1,5 @@
-// Genuine complete TH05 pools used by the stage reset, never storage aliases.
-// Canonical headers are unchanged; custom/gather full records below repeat
-// their canonical definitions to avoid unrelated macro/entity-enum collisions.
+// The entity pools that the per-stage reset clears. The custom-entity and
+// gather records repeat their definitions here, to avoid macro clashes.
 #ifndef TH05_STAGE_STATE_INIT_HPP
 #define TH05_STAGE_STATE_INIT_HPP
 #include "src/main/enemy/enemy.hpp"
@@ -10,7 +9,7 @@
 #include "src/main/effects/spark/lifecycle.hpp"
 #include "src/main/effects/circles.hpp"
 
-// Complete canonical definition: src/main/bullet/cheeto.hpp
+// Same definition as in src/main/bullet/cheeto.hpp.
 struct custom_t {
     uint8_t flag;
     uint8_t angle;
@@ -23,7 +22,7 @@ struct custom_t {
     SubpixelLength8 speed;
     signed char padding; // Actual unused scalar at byte 25 in every slot.
 };
-// Complete canonical definition: src/main/gather/gather.hpp
+// Same definition as in src/main/gather/gather.hpp.
 struct gather_t {
     entity_flag_t flag;
     vc_t col;
@@ -36,7 +35,7 @@ struct gather_t {
     Subpixel radius_delta;
     BulletTemplate bullet_template;
 };
-// Complete canonical definition: src/main/gather/gather.hpp
+// Same definition as in src/main/gather/gather.hpp.
 struct gather_template_t {
     PlayfieldPoint center;
     PlayfieldPoint velocity;
@@ -52,8 +51,8 @@ extern custom_t custom_entities[STATE_CUSTOM_COUNT];
 extern gather_t gather_circles[STATE_GATHER_COUNT];
 extern gather_template_t gather_template;
 
-// Selected GAME5 record from th04/main/pointnum/pointnum.hpp and its BSS.
-// All five digits and the actual final unused byte are retained.
+// The point-number record (th04/main/pointnum/pointnum.hpp), including its
+// unused last byte.
 typedef unsigned int upixel_t;
 struct pointnum_t {
     char flag;

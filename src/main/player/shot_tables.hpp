@@ -1,5 +1,4 @@
-// Real four-character/ten-level shot selector. Reuse the canonical Pascal
-// callback type and complete array declaration from new-game initialization.
+// The per-character, per-level shot function table.
 #ifndef TH05_SHOT_TABLES_HPP
 #define TH05_SHOT_TABLES_HPP
 #include "src/main/runtime/gameplay_session_init.hpp"

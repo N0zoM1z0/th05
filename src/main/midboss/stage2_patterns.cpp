@@ -1,5 +1,4 @@
-// Natural TH05 stage-two movement and attack behavior. Pinned ReC98
-// b6ba5b0a TH05 disassembly is evidence; no acceptance transfers from TH04.
+// Stage 2 midboss movement and attacks.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/stage2_patterns.hpp"
 #include "src/main/midboss/stage2_scratch.hpp"

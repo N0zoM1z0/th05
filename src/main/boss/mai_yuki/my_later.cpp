@@ -1,5 +1,4 @@
-// Complete original-order Mai/Yuki later-pattern cohort.
-// Reuse the accepted compiler-assembly tracking-laser owner and the ten
-// accepted natural remaining-pattern bodies in one native MAIN_035_TEXT TU.
+// The later paired-fight patterns as one translation unit, in their original
+// order: the tracking laser first, then the ten remaining attacks.
 #include "src/main/boss/mai_yuki/tracking_laser.cpp"
 #include "src/main/boss/mai_yuki/remaining_patterns.inl"

@@ -1,11 +1,11 @@
-// Complete canonical state plus real four-function generic bomb-control ABI.
+// Bomb state and the generic bomb control functions.
 #ifndef TH05_BOMB_RUNTIME_HPP
 #define TH05_BOMB_RUNTIME_HPP
 #include "src/main/boss/movement.hpp"
 #include "src/main/hud/resident.hpp"
 
 typedef void (near pascal *near nearfunc_t_near)(void);
-// Canonical .BB element: one bitmap byte encodes8 tiles, not an opaque record.
+// One byte of a .BB mask covers 8 tiles.
 typedef unsigned char bb_tiles8_t;
 extern bool bombing;
 extern unsigned char bomb_frame;
@@ -37,10 +37,8 @@ extern "C" {
     void pascal far playperf_lower(char delta);
     void pascal far hud_dream_put(void);
 }
-// Only genuine foreign far callees share CS. They retain their far ABI.
-// The maintained bomb donor has hud_bombs_put; accepted miss.hpp corroborates
-// the HUDdream/playperf protocol; both selector RETF8 and native CS are verified.
-// No locally defined function receives this annotation.
+// These far functions live in this code segment too, so calls to them can be
+// relaxed to near calls, as in the original.
 #pragma samecodeseg hud_bombs_put
 #pragma samecodeseg select_for_playchar
 #pragma samecodeseg playperf_lower

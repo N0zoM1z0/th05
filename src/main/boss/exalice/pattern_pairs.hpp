@@ -1,4 +1,4 @@
-// Real four-phase/two-choice callback schedule with the canonical callback ABI.
+// Declarations for EX-Alice's four-phase, two-choice pattern table.
 #ifndef TH05_EXALICE_PATTERN_PAIRS_HPP
 #define TH05_EXALICE_PATTERN_PAIRS_HPP
 #include "src/main/boss/exalice/patterns.hpp"

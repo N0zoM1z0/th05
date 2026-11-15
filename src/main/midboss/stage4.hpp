@@ -1,4 +1,4 @@
-// Real TH05 stage-four midboss interfaces and complete canonical layouts.
+// Declarations for the stage 4 midboss.
 #ifndef TH05_MAIN_MIDBOSS_STAGE4_HPP
 #define TH05_MAIN_MIDBOSS_STAGE4_HPP
 
@@ -38,7 +38,7 @@ extern "C" void pascal far snd_se_play(int sound);
 unsigned int pascal near randring2_next16_mod(unsigned int divisor);
 extern "C" void near bullets_add_regular_fixedspeed(void);
 
-// The preceding real transition helper returns its completion in AL.
+// Returns whether the transition has finished, in AL.
 bool near midboss4_pattern_transition(void);
 void near midboss4_pattern_random_clouds(void);
 void near midboss4_pattern_spiral_rings(void);

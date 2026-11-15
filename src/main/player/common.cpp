@@ -1,5 +1,4 @@
-// Natural common shot control from ReC98 th05/p_common.cpp,
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
+// Shot control shared by all four characters (ReC98 th05/p_common.cpp).
 #pragma option -zCMAIN_01_TEXT -zPmain_01
 #include "src/main/player/common.hpp"
 #pragma option -a2

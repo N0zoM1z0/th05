@@ -1,4 +1,4 @@
-// Natural shot invalidation: active shots and decaying hit sprites.
+// Marks the tiles under active shots and decaying hit sprites for redraw.
 #pragma option -zCSHOT_INVALIDATE_TEXT -zPmain_01
 #include "src/main/player/shot_invalidate.hpp"
 #pragma codeseg SHOT_INVALIDATE_TEXT main_01

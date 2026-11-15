@@ -1,4 +1,4 @@
-// Later EX-Alice patterns, with the canonical shared bullet and boss ABI.
+// Declarations for the later EX-Alice attacks.
 #ifndef TH05_MAIN_BOSS_EXALICE_LATER_HPP
 #define TH05_MAIN_BOSS_EXALICE_LATER_HPP
 #include "src/main/boss/exalice/patterns.hpp"

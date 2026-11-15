@@ -1,12 +1,11 @@
-// Candidate local ABI, adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/formats/cfg.hpp, th02/formats/cfg.hpp and th03/formats/cfg_impl.hpp.
+// Reads the resident segment from MIKO.CFG (ReC98 th04/formats/cfg.hpp,
+// th02/formats/cfg.hpp, th03/formats/cfg_impl.hpp).
 #ifndef TH05_MAIN_FORMATS_CFG_RESIDENT_HPP
 #define TH05_MAIN_FORMATS_CFG_RESIDENT_HPP
 
 #include "src/shared/abi.hpp"
 
-// This producer loads a segment reference, without accessing resident fields.
-// Keep the referenced type opaque until a resident-field owner needs it.
+// Only the segment is loaded here, so the resident type can stay opaque.
 struct resident_t;
 
 struct cfg_options_t {

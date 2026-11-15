@@ -1,6 +1,6 @@
-// Candidate declarations adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th01/math/subpixel.hpp, th04/math/motion.hpp, th04/main/playfld.hpp.
-// Retain the class identities because they enter Borland's C++ symbol names.
+// Subpixel, point and motion types (ReC98 th01/math/subpixel.hpp,
+// th04/math/motion.hpp, th04/main/playfld.hpp). The class names must stay as
+// they are: they are part of Borland's mangled function names.
 #ifndef TH05_SHARED_GEOMETRY_HPP
 #define TH05_SHARED_GEOMETRY_HPP
 
@@ -37,8 +37,8 @@ struct SPPoint : public SPPointBase<Subpixel> {
 struct PlayfieldPoint : public SPPoint {
 };
 
-// Real motion state, rather than a shortened view of the current coordinates.
-// The near qualification belongs to the original template type.
+// Position, previous position and velocity. The template is declared near,
+// as in the original.
 template <class PointType> struct near MotionBase {
     PointType cur;
     PointType prev;

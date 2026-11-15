@@ -1,4 +1,4 @@
-// Natural types and interfaces from pinned ReC98 th04/math/vector.hpp.
+// Declarations for the vector helpers (ReC98 th04/math/vector.hpp).
 #ifndef TH05_SHARED_MATH_VECTOR_HPP
 #define TH05_SHARED_MATH_VECTOR_HPP
 #include <dos.h>

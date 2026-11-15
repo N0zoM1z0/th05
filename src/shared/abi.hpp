@@ -1,5 +1,5 @@
-// Local 16-bit declarations, corroborated by nmlgc/ReC98@b6ba5b0a529edbb3.
-// Layout assertions are compiler checks, not target-byte acceptance.
+// Basic 16-bit types and helpers shared by all executables (after ReC98).
+// The layout assertions are compile-time checks.
 #ifndef TH05_SHARED_ABI_HPP
 #define TH05_SHARED_ABI_HPP
 

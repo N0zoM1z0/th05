@@ -1,4 +1,4 @@
-// Natural movement algorithm from MAIN 1527:0D04 / reference sub_1AFD4.
+// Stage 4 midboss: the disappear-and-reappear movement.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/midboss/transition4.hpp"
 #include "src/main/midboss/stage4_scratch.hpp"

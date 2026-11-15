@@ -1,4 +1,4 @@
-// Full custom-ball state and real shot/motion/sound interfaces.
+// Declarations for the snowball update.
 #ifndef TH05_B4BALL_UPDATE_HPP
 #define TH05_B4BALL_UPDATE_HPP
 #pragma codeseg SHOT_HIT_TEXT main_01

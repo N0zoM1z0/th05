@@ -1,6 +1,5 @@
-// Extra Alice's bomb-hit suppression and per-phase progression contract.
-// Constants only: actual state remains in the established Boss and DS bytes.
-// Ready seeds byte 15 before the first pattern-pair turning-ring consumer.
+// EX-Alice: how bombs are blocked and how each phase advances. Byte 15 of the
+// boss state is seeded before the first turning-ring pattern uses it.
 #ifndef TH05_EXALICE_BOMB_PHASE_PROTOCOL_HPP
 #define TH05_EXALICE_BOMB_PHASE_PROTOCOL_HPP
 

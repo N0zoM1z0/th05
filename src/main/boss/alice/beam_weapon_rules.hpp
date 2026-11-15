@@ -1,5 +1,4 @@
-// Alice's real paired-puppet beam geometry and attack/score schedule.
-// All values are compile-time: the original puppet/Boss storage is untouched.
+// Geometry and timing of Alice's paired-puppet beam and its scoring.
 #ifndef TH05_ALICE_BEAM_WEAPON_RULES_HPP
 #define TH05_ALICE_BEAM_WEAPON_RULES_HPP
 

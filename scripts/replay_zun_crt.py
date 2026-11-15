@@ -42,7 +42,6 @@ def scope(c:dict)->None:
               'member_size':6564,'source':'probes/units/zun_crt_layout_bindings.asm',
               'original_crt_object_sha256':TINY_CRT_SHA256,
               'accepted_cfg_unit':'zun-resident-config',
-              'accepted_cfg_receipt':'.analysis/unit-replays/zun-cfg-322-b/receipt.json',
               'original_crt_com_start':0x100,'original_crt_com_end':0x367,
               'source_written_code_bytes':613,
               'unwritten_code_runtime_slot_start':0x363,
@@ -53,7 +52,7 @@ def scope(c:dict)->None:
               'original_BSS_size':0x54,
               'origin':'original-borland-C0T-CRT-object',
               'global_authored_credit':'vendor-zero'}
-    if any(c.get(k)!=v for k,v in expected.items()):
+    if any(c.get(k)!=v for k,v in expected.items()) or not str(c.get('accepted_cfg_receipt','')).endswith('/receipt.json'):
         raise ValueError('native C0T source, COM target, initialization or BSS scope changed')
     if (CODE_BOUNDS[1]-CODE_BOUNDS[0]!=c['source_written_code_bytes']+c['unwritten_code_runtime_slot_size']
             or DATA_BOUNDS[1]-DATA_BOUNDS[0]!=c['source_written_data_bytes']):
@@ -102,7 +101,9 @@ def accepted_cfg_objects()->list[tuple[Path,str]]:
     unit=[z for z in ledger['units'] if z['id']=='zun-resident-config']
     if len(unit)!=1 or not unit[0]['result']['exact']:
         raise ValueError('native configuration function has no accepted C++ identity')
-    receipt=ROOT/'.analysis/unit-replays/zun-cfg-322-b/receipt.json'
+    # The configured receipt of the accepted configuration unit (it moves
+    # whenever that unit is replayed again, e.g. after a header comment edit).
+    receipt=ROOT/tomllib.loads(CONFIG.read_text())['accepted_cfg_receipt']
     if digest_file(receipt)!=unit[0]['replay_receipt_sha256']:
         raise ValueError('original accepted 322-byte configuration receipt no longer matches')
     pairs=[]

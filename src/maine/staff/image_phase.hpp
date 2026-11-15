@@ -1,4 +1,4 @@
-// Full canonical CDG16 record and genuine staff image-phase APIs.
+// Staff roll image phases and the CDG record.
 #ifndef TH05_STAFF_IMAGE_PHASE_HPP
 #define TH05_STAFF_IMAGE_PHASE_HPP
 #include "src/shared/abi.hpp"
@@ -11,8 +11,7 @@ typedef uint8_t dots8_t;
 enum cdg_plane_layout_t {
     CDG_COLORS = 0, CDG_COLORS_AND_ALPHA = 1, CDG_ALPHA = 2
 };
-// Identical full class definition to the accepted MAIN EMS consumer. Source
-// provenance is ReC98 th03/formats/cdg.h; this owner defines no pool storage.
+// Same CDG definition as in MAIN's EMS header (ReC98 th03/formats/cdg.h).
 struct CDG {
     uint16_t bitplane_size;
     int pixel_w;
@@ -49,7 +48,7 @@ extern "C" void pascal far cdg_put_noalpha_8(int left, int top, int slot);
 #else
 #pragma codeseg STAFF_WIPE_TEXT group_01
 #endif
-// Six true word slots and RET12; actual callers consume AL status0/1/2.
+// Six word arguments; callers read the 0/1/2 status in AL.
 unsigned char pascal near staff_text_wipe(int left, int top, int width,
     int height, int extent, int direction);
 #ifdef TH05_STAFF_FULL_FAMILY

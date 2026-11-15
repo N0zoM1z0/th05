@@ -1,6 +1,5 @@
-// Shinki's six-laser wing-opening geometry, visible palette and burst timing.
-// These are source-level compile-time values; the existing Boss state bytes
-// at 14/15 remain the actual tone and wing-frame countdown storage.
+// Shinki's six-laser wing opening: geometry, palette and burst timing. Boss
+// state bytes 14 and 15 hold the tone and the wing-frame countdown.
 #ifndef TH05_SHINKI_WING_PREPARATION_RULES_HPP
 #define TH05_SHINKI_WING_PREPARATION_RULES_HPP
 

@@ -1,5 +1,4 @@
-// Full spark storage and real interfaces, corroborated by pinned ReC98
-// th04/main/spark.hpp and the maintained TH04 reconstruction's natural C++.
+// Spark storage and functions (ReC98 th04/main/spark.hpp).
 #ifndef TH05_SPARK_LIFECYCLE_HPP
 #define TH05_SPARK_LIFECYCLE_HPP
 #include "src/main/player/reimu.hpp"

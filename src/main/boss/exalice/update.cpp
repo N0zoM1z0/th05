@@ -1,4 +1,4 @@
-// Complete EX-Alice boss state machine, including its real compiler tables.
+// EX-Alice's state machine.
 #pragma option -zCEXALICE_UPD_TEXT -zPmain_03
 #include "src/main/boss/exalice/update.hpp"
 #include "src/main/boss/exalice/update_phases.hpp"

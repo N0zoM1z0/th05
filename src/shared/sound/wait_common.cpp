@@ -1,4 +1,4 @@
-// Natural complete measure/wait family in the observed ungrouped SHARED.
+// The measure query and wait functions of the ungrouped SHARED segment.
 #pragma option -zCSHARED
 #include "src/shared/sound/measure.cpp"
 void pascal far frame_delay(int frames);

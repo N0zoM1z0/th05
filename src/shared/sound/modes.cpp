@@ -1,4 +1,5 @@
-// Natural ReC98 b6ba5b0a th04/snd/detmodes.cpp, GAME=5 behavior.
+// snd_determine_modes(): picks the BGM and SE modes the hardware supports
+// (ReC98 th04/snd/detmodes.cpp).
 #pragma option -zCSHARED
 #include <dos.h>
 #include "src/shared/abi.hpp"

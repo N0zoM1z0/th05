@@ -3,7 +3,7 @@
 #define TH05_MAI_SOLO_PATTERNS_HPP
 #include "src/main/boss/mai_yuki/initial_patterns.hpp"
 
-// Full canonical ODR definitions from the accepted bullet updater.
+// Same definitions as in bullet/update.hpp.
 union bullet_special_angle_t {
     unsigned char turn_by;
     char target;

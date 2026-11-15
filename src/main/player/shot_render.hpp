@@ -1,4 +1,4 @@
-// Complete canonical Shot/cache/hit-animation records; genuine VRAM API only.
+// Shot and hit-sprite records for rendering.
 #ifndef TH05_SHOT_RENDER_HPP
 #define TH05_SHOT_RENDER_HPP
 #include <dos.h>
@@ -14,8 +14,8 @@ static const unsigned int SHOT_RENDER_VRAM_PLANE = 0xA800;
 void near grcg_setmode_rmw(void);
 extern "C" {
     int pascal near scroll_subpixel_y_to_vram_seg1(subpixel_t y);
-    // Real hybrid interface: AX=left, DX=top, ES=VRAM plane,
-    // one signed-word sprite argument on the Pascal stack; RET2.
+    // Register interface: AX = left, DX = top, ES = VRAM plane, plus the
+    // sprite number as a Pascal stack argument.
     void pascal near z_super_roll_put_tiny_16x16_raw(int patnum);
 }
 void near shots_render(void);

@@ -1,5 +1,4 @@
-// Natural GAME5 measure query from ReC98 b6ba5b0a th05/snd/delaymea.cpp
-// and th02/snd/measure.hpp. Only the genuine driver register ABI is explicit.
+// The current BGM measure (ReC98 th05/snd/delaymea.cpp, th02/snd/measure.hpp).
 #pragma option -zCSHARED
 #include <dos.h>
 #include "src/shared/abi.hpp"

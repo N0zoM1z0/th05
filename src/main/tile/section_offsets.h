@@ -1,4 +1,4 @@
-// MAP section geometry, corroborated by the complete map_section_tiles_t.
+// MAP section geometry.
 #ifndef TH05_TILE_SECTION_OFFSETS_H
 #define TH05_TILE_SECTION_OFFSETS_H
 

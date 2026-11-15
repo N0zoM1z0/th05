@@ -1,4 +1,4 @@
-// Natural TH05 quarter-image drawing; 386 ES:SI offsets match the packed PI ABI.
+// Draws one quarter of a .PI image, using 386 addressing for the source.
 #pragma option -zCSHARED -2 -k-
 #include <dos.h>
 extern void far *pi_buffers[8];

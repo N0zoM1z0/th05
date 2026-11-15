@@ -1,5 +1,5 @@
-// Natural maintained TH04 player invalidation, with independently observed
-// TH05 unsigned radius arithmetic and genuine complete point arguments.
+// Marks the tiles under the player and its options for redraw. Follows
+// TH04; TH05 computes the radius with unsigned arithmetic.
 #pragma option -zCPLAYER_INVALIDATE_TEXT -zPmain_01 -k-
 #include "src/main/player/invalidate.hpp"
 #pragma codeseg PLAYER_INVALIDATE_TEXT main_01

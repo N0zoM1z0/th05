@@ -1,4 +1,4 @@
-// Mai's complete solo state machine and its actual foreign interfaces.
+// Declarations for Mai's solo state machine.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_MAI_UPDATE_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_MAI_UPDATE_HPP
 
@@ -11,8 +11,8 @@ extern "C" void pascal far mai_update(void);
 #include "src/main/boss/mai_yuki/mai_solo_patterns.hpp"
 #include "src/main/bullet/laser.hpp"
 
-// Complete canonical enum; the broader generic header conflicts with the
-// existing Mai/Yuki playfield and sprite macros.
+// Same enum as in boss/generic.hpp, which can't be included here: its macros
+// clash with the Mai & Yuki ones.
 enum explosion_type_t {
     ET_NONE = -1, ET_CIRCLE = 0, ET_NW_SE = 1, ET_SW_NE = 2,
     ET_HORIZONTAL = 3, ET_VERTICAL = 4,

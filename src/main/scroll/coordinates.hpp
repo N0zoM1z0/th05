@@ -1,4 +1,4 @@
-// Real MAIN01 near Pascal coordinate conversion, independent of rendering.
+// Converts playfield coordinates to scrolled VRAM coordinates.
 #ifndef TH05_MAIN_SCROLL_COORDINATES_HPP
 #define TH05_MAIN_SCROLL_COORDINATES_HPP
 #include "src/main/runtime/small.hpp"

@@ -1,5 +1,5 @@
-// Natural player rendering from the maintained TH04 high-level donor.
-// GAME5 uses the genuine fixed PAT_OPTION instead of a mutable TH04 pattern.
+// Player and option sprite rendering. TH05 uses a fixed option pattern
+// where TH04 had a variable one.
 #pragma option -zCPLAYER_RENDER_TEXT -zPmain_01
 #include "src/main/player/render.hpp"
 

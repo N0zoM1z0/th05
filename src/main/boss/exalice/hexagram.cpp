@@ -1,4 +1,4 @@
-// Complete natural C++ hexagram geometry from the maintained boss background.
+// The hexagram drawn behind EX-Alice.
 #pragma option -zCEXALICE_HEX_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/background.hpp"

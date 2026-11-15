@@ -1,4 +1,4 @@
-// Complete Mai/Yuki foreground owner and the actual near Pascal sprite helper.
+// Declarations for the Mai & Yuki foreground render.
 #ifndef TH05_MY_FOREGROUND_HPP
 #define TH05_MY_FOREGROUND_HPP
 #include "src/main/boss/mai_yuki.hpp"

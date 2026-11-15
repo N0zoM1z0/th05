@@ -1,14 +1,13 @@
-// TH05 bullet update ABI, adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/main/bullet/bullet.hpp,
-// pellet_r.hpp, clearzap.hpp, spark.hpp, and th04/main/item/item.hpp.
+// Declarations for the bullet update (ReC98 th04/main/bullet/bullet.hpp,
+// pellet_r.hpp, clearzap.hpp, spark.hpp, th04/main/item/item.hpp).
 #ifndef TH05_MAIN_BULLET_UPDATE_HPP
 #define TH05_MAIN_BULLET_UPDATE_HPP
 
 #include "src/main/bullet/template.hpp"
 #include "src/main/player/reimu.hpp"
 #include "src/main/player/player.hpp"
-// The popup callback is a near address in main_01, even when assigned by
-// main_03 update code. Its first declaration must retain the actual frame.
+// The popup callback lives in main_01, even though main_03 code assigns it;
+// it is declared there first.
 #pragma codeseg HUD_OVRL_TEXT main_01
 void pascal near overlay_popup_update_and_render(void);
 #pragma codeseg
@@ -122,8 +121,8 @@ typedef enum {
     PAT_BULLET_ZAP = 152,
     PAT_DECAY_PELLET = 156,
     PAT_DECAY_BULLET16 = 160,
-    // Real full sprite-domain bounds from th05/sprites/main_pat.h. Keeping
-    // only the currently used low constants incorrectly narrows this enum.
+    // The full sprite number range from th05/sprites/main_pat.h; listing only
+    // the low constants in use would make the enum too narrow.
     PAT_STAGE_last = 319,
     PAT_MAX = 320,
     _main_patnum_t_FORCE_INT16 = 0x7FFF

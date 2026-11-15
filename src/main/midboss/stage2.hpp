@@ -1,4 +1,4 @@
-// TH05 stage-two midboss update: complete real interfaces, no helper bodies.
+// Declarations for the stage 2 midboss.
 #ifndef TH05_MAIN_MIDBOSS_STAGE2_HPP
 #define TH05_MAIN_MIDBOSS_STAGE2_HPP
 

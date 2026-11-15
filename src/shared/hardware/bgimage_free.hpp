@@ -1,4 +1,4 @@
-// Full four-plane segmented background ownership, without image data.
+// The background snapshot: one segment per VRAM plane.
 #ifndef TH05_BGIMAGE_FREE_HPP
 #define TH05_BGIMAGE_FREE_HPP
 #include "src/shared/abi.hpp"

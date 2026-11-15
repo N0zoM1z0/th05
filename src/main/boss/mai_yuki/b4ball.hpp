@@ -1,5 +1,5 @@
-// Complete TH05 custom-ball ABI, from ReC98 b6ba5b0a
-// th05/main/bullet/b4ball.hpp and actual original allocator/update operands.
+// Yuki's snowballs ("B4 balls"): records and template (ReC98
+// th05/main/bullet/b4ball.hpp).
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_B4BALL_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_B4BALL_HPP
 #pragma codeseg MAIN_035_TEXT main_03

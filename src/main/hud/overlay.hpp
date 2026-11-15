@@ -1,6 +1,5 @@
-// Candidate local HUD ABI, adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/main/hud/overlay.hpp, th02/main/hud/overlay.hpp, pc98.h,
-// th04/gaiji/gaiji.h and the matching Borland/master.lib declarations.
+// HUD overlays, gaiji and text (ReC98 th04/main/hud/overlay.hpp,
+// th02/main/hud/overlay.hpp, th04/gaiji/gaiji.h).
 #ifndef TH05_MAIN_HUD_OVERLAY_HPP
 #define TH05_MAIN_HUD_OVERLAY_HPP
 

@@ -1,4 +1,4 @@
-// Complete player render state and existing real graphics interfaces.
+// Declarations for player rendering.
 #ifndef TH05_MAIN_PLAYER_RENDER_HPP
 #define TH05_MAIN_PLAYER_RENDER_HPP
 #include <dos.h>

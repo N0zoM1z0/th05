@@ -1,4 +1,4 @@
-// Natural shared Mai/Yuki charge dispatch and the first Mai attack patterns.
+// Declarations for the shared charge and Mai's first attacks.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_INITIAL_PATTERNS_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_INITIAL_PATTERNS_HPP
 
@@ -11,7 +11,7 @@
 #error This owner requires TH05 MAIN
 #endif
 
-// Real no-argument near CODE callbacks, with completion truth in AL.
+// Each pattern returns whether it has finished, in AL.
 typedef bool (near *near MaiYukiPattern)(void);
 extern MaiYukiPattern mai_pattern_current;
 extern MaiYukiPattern yuki_pattern_current;

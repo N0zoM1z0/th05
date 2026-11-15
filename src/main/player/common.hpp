@@ -1,6 +1,5 @@
-// Common TH05 shot-control ABI; the complete canonical Shot stays shared.
-// ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th05/p_common.cpp
-// and th04/main/player/shot.hpp. No shared header is modified.
+// Declarations for the shared shot control (ReC98 th05/p_common.cpp,
+// th04/main/player/shot.hpp).
 #ifndef TH05_MAIN_PLAYER_COMMON_HPP
 #define TH05_MAIN_PLAYER_COMMON_HPP
 #include "src/main/player/reimu.hpp"

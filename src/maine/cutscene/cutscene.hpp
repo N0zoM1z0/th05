@@ -1,5 +1,4 @@
-// Natural cutscene interfaces adapted from pinned nmlgc/ReC98, TH05/TH03.
-// Complete physical types and real hardware/library ABIs; no emitted code.
+// Cutscene declarations (after ReC98's TH03/TH05 cutscene code).
 #ifndef TH05_MAINE_CUTSCENE_HPP
 #define TH05_MAINE_CUTSCENE_HPP
 
@@ -154,8 +153,7 @@ extern "C" {
 static inline vram_offset_t vram_offset_shift(screen_x_t x, vram_y_t y) {
     return (x >> 3) + (y << 6) + (y << 4);
 }
-// A word EGC write consumes the real OUT DX,AX register pair. Preserve
-// the device protocol explicitly rather than supplying an assembler body.
+// A word EGC register write: OUT DX, AX.
 inline void cutscene_egc_write(unsigned int port, unsigned int value) {
     _AX = value;
     _DX = port;
@@ -164,8 +162,7 @@ inline void cutscene_egc_write(unsigned int port, unsigned int value) {
 
 #define egc_chunk(offset) *(dots16_t far *)(VRAM_PLANE_B + offset)
 
-// Genuine EGC register writes. The reference's instruction macro is replaced
-// by the standard hardware I/O intrinsic; code generation is still unproven.
+// EGC registers, written with the standard port I/O intrinsics.
 #define EGC_ACTIVEPLANEREG 0x04A0
 #define EGC_READPLANEREG 0x04A2
 #define EGC_MODE_ROP_REG 0x04A4

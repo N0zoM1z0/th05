@@ -38,8 +38,8 @@ void near shinki_bg_particles_render(void)
                 patnum = particle->patnum;
             }
             left = PLAYFIELD_LEFT + (particle->pos.x.v >> 4) - PARTICLE_W / 2;
-            // Prepare the real graphics arguments before clipping. No call
-            // intervenes before the draw; comparisons preserve AX and CX.
+            // Compute the sprite position before clipping; nothing between
+            // here and the draw call touches AX or CX.
             _AX = PLAYFIELD_TOP + (particle->pos.y.v >> 4) - PARTICLE_H / 2;
             _CX = left;
             if(!(static_cast<int>(_CX) > PLAYFIELD_LEFT - PARTICLE_W &&

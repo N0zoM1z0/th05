@@ -1,5 +1,4 @@
-// Natural B4Ball pool lifecycle from original TH05 behavior. ReC98 b6ba5b0a
-// b4balls_add.asm is disassembly evidence, not an instruction template.
+// Snowball reset and allocation.
 #pragma option -zCMAIN_035_TEXT -zPmain_03
 #include "src/main/boss/mai_yuki/b4ball_spawn.hpp"
 #pragma codeseg MAIN_035_TEXT main_03
@@ -27,8 +26,8 @@ extern "C" void pascal near b4balls_add(void)
         ball->pos.cur = b4ball_template.origin;
         vector2_near(ball->pos.velocity, b4ball_template.angle, speed);
         ball->angle = b4ball_template.angle;
-        // The actual allocator stores raw template speed, despite using the
-        // performance-adjusted word speed to construct the initial velocity.
+        // ZUN quirk: the ball keeps the template's raw speed, even though the
+        // velocity was computed from the play-performance-adjusted one.
         ball->speed.v = b4ball_template.speed.v;
         ball->patnum_tiny_base = b4ball_template.patnum_tiny_base;
         ball->hp = b4ball_template.hp;

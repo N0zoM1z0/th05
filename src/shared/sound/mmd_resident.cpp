@@ -1,4 +1,4 @@
-// MMD resident detection through the real-mode interrupt vector table.
+// Checks whether the MMD (MIDI) driver is resident, through its interrupt vector.
 #pragma option -zCSHARED -k-
 #include <dos.h>
 #include "src/shared/sound/resident.hpp"

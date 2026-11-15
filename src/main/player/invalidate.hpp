@@ -1,5 +1,4 @@
-// Natural player invalidation ABI. TH04 maintained donor and ReC98 b6ba5b0a
-// player geometry corroboration; actual TH05 fields/clip bounds reviewed.
+// Declarations for player tile invalidation.
 #ifndef TH05_MAIN_PLAYER_INVALIDATE_HPP
 #define TH05_MAIN_PLAYER_INVALIDATE_HPP
 #include "src/main/player/player.hpp"
@@ -22,8 +21,7 @@ extern SPPoint player_option_pos_prev;
 extern SPPoint drawpoint;
 extern "C" void pascal far vector2_at(SPPoint near &ret,
     subpixel_t origin_x, subpixel_t origin_y, subpixel_t length, int angle);
-// Genuine legacy four-byte near Pascal point frame of the EXISTING entry.
-// No field-level drawpoint aliases or new function/address are introduced.
+// The invalidator takes the center point by value (4 bytes on the stack).
 typedef void (near pascal *near PlayerPointInvalidator)(const SPPoint center);
 void near player_invalidate(void);
 

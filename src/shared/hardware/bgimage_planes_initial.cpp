@@ -1,5 +1,5 @@
-// The original 4-plane PC-98 background snapshot is unallocated at startup.
-// A __seg pointer occupies one genuine 16-bit DATA word in this DOS ABI.
+// The background snapshot's plane segments start out unallocated (0).
+// Each __seg pointer is one 16-bit word.
 #pragma option -zCBGIMAGE_PLANES_INIT_TEXT
 #include "src/shared/hardware/bgimage_free.hpp"
 

@@ -6,8 +6,8 @@
 void far midboss_reset(void);
 void far midboss_activate_if_stage_frame_is_midboss_start_frame(void);
 
-// Preserve the complete canonical 22-byte midboss and real callback types.
-// First declarations of rendering callbacks belong to their actual main_01.
+// The 22-byte midboss record and its callbacks. The render callbacks are
+// declared first in main_01, where they live.
 #pragma codeseg MAI_TEXT main_01
 #include "src/main/stage/setup.hpp"
 void pascal near midboss_invalidate_func(void);

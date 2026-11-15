@@ -9,7 +9,7 @@ void near mima_bomb_draw(void)
     grcg_vline(238, PLAYFIELD_TOP, PLAYFIELD_TOP + 47);
     grcg_vline(238, 336, PLAYFIELD_BOTTOM - 1);
 
-    // AH is the genuine existing GRCG color API's register input.
+    // The GRCG color helper takes its color in AH.
     _AH = 6;
     grcg_setcolor_direct_raw();
     grcg_vline(208, PLAYFIELD_TOP, PLAYFIELD_TOP + 47);

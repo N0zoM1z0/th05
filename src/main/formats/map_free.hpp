@@ -1,6 +1,5 @@
-// Complete on-disk MAP records and true allocated-segment interface.
-// Provenance: ReC98 b6ba5b0a th04/formats/map.hpp and maintained TH04
-// src/main/formats/map.hpp/map.cpp, independently checked against TH05.
+// The on-disk MAP records and the freeing of their segment (ReC98
+// th04/formats/map.hpp).
 #ifndef TH05_MAP_FREE_HPP
 #define TH05_MAP_FREE_HPP
 #include "src/shared/abi.hpp"

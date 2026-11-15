@@ -1,4 +1,4 @@
-// Eleven complete natural attack functions before the real Mai/Yuki update.
+// The eleven later attacks of the paired fight.
 #include "src/main/boss/mai_yuki/later_patterns.hpp"
 
 bool near mai_pattern_tracking_laser(void)

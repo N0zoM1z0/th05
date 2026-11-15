@@ -1,5 +1,4 @@
-// Real near callbacks and dash bearings for the Extra midboss fight.
-// Original main_03 functions supply the near addresses at link time.
+// The Extra midboss's pattern callbacks and dash directions.
 #pragma option -zCMIDBOSSX_SCHED_TEXT -zPmain_03
 #include "src/main/midboss/extra_patterns.hpp"
 #include "src/main/midboss/extra_attack_rules.hpp"
@@ -16,8 +15,8 @@ MidbossXPattern near midbossx_patterns[3][2] = {
     { 0, 0 }
 };
 
-// The eight slot bearings follow the actual masked dash counter, including
-// its two adjacent 0x80 headings and the final two sentinel zeros.
+// One direction per value of the masked dash counter, including two
+// consecutive 0x80 headings and two trailing zeros.
 const unsigned char near midbossx_dash_angles[8] = {
     MEX_DASH_BEARING_0, MEX_DASH_BEARING_1,
     MEX_DASH_BEARING_2, MEX_DASH_BEARING_3,

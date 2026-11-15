@@ -1,4 +1,4 @@
-// Natural default midboss/boss reward interfaces, GAME=5.
+// Declarations for the default midboss and boss rewards.
 #ifndef TH05_MAIN_MIDBOSS_DEFAULT_HPP
 #define TH05_MAIN_MIDBOSS_DEFAULT_HPP
 
@@ -13,7 +13,7 @@ static const unsigned long BOSS_BONUS_UNIT_VALUE = 1000;
 static const unsigned char PHASE_EXPLODE_BIG = 254;
 static const unsigned char PHASE_NONE = 255;
 static const unsigned char PAT_ENEMY_KILL_last = 11;
-// PLAYFIELD_W is provided by the canonical stage/setup.hpp declaration.
+// PLAYFIELD_W comes from stage/setup.hpp.
 
 extern unsigned long score_delta;
 extern bool pointnum_times_2;

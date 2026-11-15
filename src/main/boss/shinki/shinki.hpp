@@ -1,6 +1,5 @@
-// Real TH05 Shinki interfaces, adapting natural ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: boss/b6.cpp, bullet/b6ball.hpp,
-// pc98.h, custom.hpp, score/palette/player and bullet-control headers.
+// Shinki's types and declarations (ReC98 boss/b6.cpp, bullet/b6ball.hpp and
+// related headers).
 #ifndef TH05_MAIN_BOSS_SHINKI_HPP
 #define TH05_MAIN_BOSS_SHINKI_HPP
 
@@ -74,9 +73,8 @@ struct b6ball_template_t {
 #define b6ball_template (reinterpret_cast<b6ball_template_t &>(custom_entities[0]))
 #define b6balls (reinterpret_cast<b6ball_t *>(&custom_entities[1]))
 
-// Identical canonical union definition to accepted update.hpp; includes of
-// update.hpp and gather.hpp together would duplicate their entity_flag enum.
-// This union's full definition/tokens and external object type stay unchanged.
+// Same union as in bullet/update.hpp; including that header together with
+// gather.hpp would define entity_flag twice.
 union BulletZapState { bool active; uint8_t frame; };
 extern BulletZapState bullet_zap;
 extern unsigned char bullet_clear_time;

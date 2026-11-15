@@ -1,4 +1,4 @@
-// Real alternating attack choices for each of the four regular EX-Alice phases.
+// The two alternating attacks of each of EX-Alice's four regular phases.
 #pragma option -zCEXALICE_PAIR_DATA_TEXT -zPmain_03
 #include "src/main/boss/exalice/pattern_pairs.hpp"
 

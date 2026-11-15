@@ -1,4 +1,4 @@
-// Real Alice Puppet/beam positions and transitions in the fifteen-phase fight.
+// Where Alice's puppets and beam are during each of the fight's fifteen phases.
 #ifndef TH05_ALICE_PUPPET_CHOREOGRAPHY_HPP
 #define TH05_ALICE_PUPPET_CHOREOGRAPHY_HPP
 

@@ -1,4 +1,4 @@
-// Full Yuki solo callback and real foreign near/far interfaces.
+// Declarations for Yuki's solo state machine.
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_YUKI_UPDATE_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_YUKI_UPDATE_HPP
 
@@ -9,8 +9,8 @@ extern "C" void pascal near nullfunc_near(void);
 extern "C" void pascal far yuki_update(void);
 #include "src/main/boss/mai_yuki/b4ball.hpp"
 
-// Complete canonical enum from generic.hpp; importing that broader header
-// after mai_yuki.hpp would collide with its BOSS_W/PLAYFIELD_W macros.
+// Same enum as in boss/generic.hpp, which can't be included after
+// mai_yuki.hpp: their BOSS_W/PLAYFIELD_W macros clash.
 enum explosion_type_t {
     ET_NONE = -1, ET_CIRCLE = 0, ET_NW_SE = 1, ET_SW_NE = 2,
     ET_HORIZONTAL = 3, ET_VERTICAL = 4,

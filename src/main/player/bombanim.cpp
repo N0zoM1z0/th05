@@ -1,5 +1,5 @@
-// Natural TH05 Reimu bomb star algorithm from ReC98 b6ba5b0a.
-// Original manual emitted circle-call bytes replaced by the genuine typed API.
+// Reimu's bomb: six star trails that bounce across the screen and spawn
+// circles (ReC98 th05/main/player/bombanim.cpp).
 #pragma option -zCBOMBANIM_TEXT -zPmain_01
 #include "src/main/player/bombanim.hpp"
 #pragma codeseg BOMBANIM_TEXT main_01

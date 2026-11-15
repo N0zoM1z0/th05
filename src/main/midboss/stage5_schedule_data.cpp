@@ -1,4 +1,4 @@
-// Stage-five midboss: compiler-linked near callbacks in the real attack order.
+// The stage 5 midboss's attack callbacks, in attack order.
 #pragma option -zCMIDBOSS5_SCHED_TEXT -zPmain_03
 #include "src/main/midboss/stage5_patterns.hpp"
 #pragma codeseg MIDBOSS5_SCHED_TEXT main_03

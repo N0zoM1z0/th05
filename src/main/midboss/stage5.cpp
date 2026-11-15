@@ -1,4 +1,4 @@
-// Natural TH05 stage-five callback at original MAIN 1527:1682.
+// Stage 5 midboss update.
 #include "src/main/midboss/stage5.hpp"
 #include "src/main/midboss/stage5_scratch.hpp"
 #include "src/main/midboss/stage5_attack_rules.hpp"
@@ -61,7 +61,7 @@ void pascal far midboss5_update(void)
         items_add(midboss.pos.cur.x.v, midboss.pos.cur.y.v, IT_1UP);
 
     explode:
-        midboss.phase = MIDBOSS5_PHASE_EXPLODE_BIG;
+        midboss.phase = MIDBOSS_PHASE_EXPLODE_BIG;
         midboss.sprite = MIDBOSS5_SPRITE_EXPLODE;
         midboss.phase_frame = 0;
         sparks_add_circle(midboss.pos.cur.x, midboss.pos.cur.y, to_sp(M5R_EXPLOSION_RADIUS_PX), M5R_EXPLOSION_SPARK_COUNT);

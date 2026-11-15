@@ -1,15 +1,15 @@
-// Coherent real shot gate, phase helper and full EX-Alice callback context.
+// Declarations for EX-Alice's bomb gate, phase helper and update.
 #ifndef TH05_MAIN_BOSS_EXALICE_FULL_CONTEXT_HPP
 #define TH05_MAIN_BOSS_EXALICE_FULL_CONTEXT_HPP
 
-// Preserve actual first-declaration contexts before the common setup surface.
+// Declared first, so these functions keep their segments.
 #pragma codeseg BOSS_BG_TEXT main_01
 void pascal near exalice_bg_render(void);
 extern "C" void pascal near exalice_custombullets_render(void);
 extern "C" void pascal near nullfunc_near(void);
 #pragma codeseg EXALICE_FULL_TEXT main_03
-// Full canonical enum before any phase-helper declaration. All three real
-// local functions capture the same actual CODE segment before shared headers.
+// Same enum as in boss/generic.hpp. The three local functions are declared
+// in their code segment before the shared headers.
 enum explosion_type_t {
     ET_NONE = -1, ET_CIRCLE = 0, ET_NW_SE = 1, ET_SW_NE = 2,
     ET_HORIZONTAL = 3, ET_VERTICAL = 4,
@@ -23,9 +23,8 @@ void pascal far exalice_update(void);
 #include "src/main/boss/exalice/laser_patterns.hpp"
 #include "src/main/boss/exalice/final_patterns.hpp"
 
-// Complete canonical one-byte zap union and real shared state. The accepted
-// phase/generic headers remain unchanged; their broad declarations are not
-// imported before the real local-definition context above.
+// The zap state and other shared state, declared here instead of including
+// the broader headers before the local declarations above.
 union BulletZapState { bool active; uint8_t frame; };
 extern BulletZapState bullet_zap;
 extern bool bombing;
@@ -37,8 +36,7 @@ extern SPPoint homing_target;
 extern nearfunc_t_near bg_render_bombing_func;
 static const unsigned char PHASE_BOSS_EXPLODE_SMALL = 253;
 
-// Complete canonical ODR types from the frozen Shinki owner. Its broader
-// boss-specific interface is not imported into this independent owner.
+// Same types as in the Shinki headers, which are too broad to include here.
 #define COLOR_COUNT 16
 #define COMPONENT_COUNT 3
 template <class ComponentType, int Range> union RGB {
@@ -75,7 +73,7 @@ void near firewaves_update(void);
 
 #pragma codeseg EXALICE_FULL_TEXT main_03
 extern int exalice_backdrop_patnum;
-// Real16-byte near-callback table; no pointer values are defined here.
+// The pattern table (defined in pattern_pairs.cpp).
 extern exalice_pattern_t exalice_patterns_by_phase[4][2];
 typedef char full_exalice_zap_is_1[(sizeof(BulletZapState) == 1) ? 1 : -1];
 typedef char full_exalice_explosion_is_2[(sizeof(explosion_type_t) == 2) ? 1 : -1];

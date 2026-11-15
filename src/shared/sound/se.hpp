@@ -1,6 +1,5 @@
-// TH05 sound-effect state and driver API. Natural source provenance:
-// ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th02/snd/se.cpp,
-// th04/snd/snd.h and th04/snd/se_priority[data].asm.
+// Sound-effect state and functions (ReC98 th02/snd/se.cpp, th04/snd/snd.h,
+// th04/snd/se_priority[data].asm).
 #ifndef TH05_SHARED_SOUND_SE_HPP
 #define TH05_SHARED_SOUND_SE_HPP
 #include "src/shared/abi.hpp"

@@ -1,5 +1,4 @@
-// Natural TH05 C++ adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th02/snd/kajaint.cpp.
+// Calls into the PMD/MMD music driver interrupt (ReC98 th02/snd/kajaint.cpp).
 #pragma option -zCSHARED -k-
 #include <dos.h>
 
@@ -12,7 +11,7 @@ int far pascal snd_kaja_interrupt(int ax)
     if (!snd_bgm_mode) {
         return _AX;
     }
-    // The real far Pascal word argument is at SS:SP+4 without a BP frame.
+    // No BP frame: the Pascal word argument is read at SS:SP+4.
     _BX = _SP;
     _AX = peek(_SS, (_BX + 4));
     if (snd_bgm_mode != 3) {

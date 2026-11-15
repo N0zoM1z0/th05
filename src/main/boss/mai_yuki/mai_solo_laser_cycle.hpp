@@ -1,4 +1,4 @@
-// Actual 461-byte Mai laser cycle, distinct from the270-byte bounce attack.
+// Declarations for Mai's laser cycle (separate from her bounce attack).
 #ifndef TH05_MAI_SOLO_LASER_CYCLE_HPP
 #define TH05_MAI_SOLO_LASER_CYCLE_HPP
 #include "src/main/boss/mai_yuki/mai_solo_advanced.hpp"

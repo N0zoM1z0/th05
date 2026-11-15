@@ -1,4 +1,4 @@
-// Canonical complete foreground definition.
+// The Mai & Yuki foreground render.
 void pascal near mai_yuki_fg_render(void)
 {
     int mai_left;

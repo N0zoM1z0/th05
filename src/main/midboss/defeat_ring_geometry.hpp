@@ -1,5 +1,5 @@
-// Native sixteen-sprite midboss defeat orbit and original clipping footprint.
-// Compile-time semantics only; the actual angle byte remains C-owned DATA.
+// Geometry of the sixteen-sprite defeat ring and its clipping box. The
+// angle byte itself is a C variable.
 #ifndef TH05_MAIN_MIDBOSS_DEFEAT_RING_GEOMETRY_HPP
 #define TH05_MAIN_MIDBOSS_DEFEAT_RING_GEOMETRY_HPP
 #define MDR_SUBPIXEL_SHIFT 4

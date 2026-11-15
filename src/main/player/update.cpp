@@ -1,4 +1,4 @@
-// Natural maintained TH04 player-update donor with original TH05 control flow.
+// Player update (TH04's structure with TH05's control flow).
 #pragma option -zCPLAYER_UPDATE_TEXT -zPmain_01
 #include "src/main/player/update.hpp"
 #pragma codeseg PLAYER_UPDATE_TEXT main_01
@@ -53,7 +53,7 @@ void near player_update(void)
             shot_time--;
         }
     } else {
-        // Discard the genuine full-point result; the real method updates motion.
+        // Only the side effect matters: the position is updated in place.
         player_pos.update_seg1();
         player_respawn_motion_time--;
     }

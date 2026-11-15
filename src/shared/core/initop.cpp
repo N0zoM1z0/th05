@@ -1,4 +1,4 @@
-// Natural ReC98 b6ba5b0a th03/core/initop.cpp, actual GAME5 branch.
+// OP.EXE startup (ReC98 th03/core/initop.cpp with GAME = 5).
 #pragma option -zCSHARED -3
 #include <dos.h>
 #include "src/shared/abi.hpp"

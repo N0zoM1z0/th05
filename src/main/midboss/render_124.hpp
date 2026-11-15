@@ -9,7 +9,7 @@ extern "C" {
         int pattern_plane, unsigned int put_plane);
 }
 #pragma codeseg MID_FG_TEXT main_01
-// Real first declarations precede the canonical stage callback list.
+// Declared before stage/setup.hpp lists them as callbacks.
 void pascal near midboss1_render(void);
 void pascal near midboss2_render(void);
 void pascal near midboss4_render(void);

@@ -1,4 +1,4 @@
-// Full EX-Alice foreground callback with canonical Boss and real sprite APIs.
+// Declarations for EX-Alice's foreground render.
 #ifndef TH05_EXALICE_FG_HPP
 #define TH05_EXALICE_FG_HPP
 #include "src/main/boss/movement.hpp"

@@ -1,5 +1,5 @@
-// Stage 3 midboss: two-phase controller and all five attack/movement helpers
-// share the real sixteen-byte Boss scratch region, without new state storage.
+// Stage 3 midboss: which bytes of the shared boss scratch array its
+// controller and helpers use.
 #ifndef TH05_MAIN_MIDBOSS_STAGE3_SCRATCH_HPP
 #define TH05_MAIN_MIDBOSS_STAGE3_SCRATCH_HPP
 #include <stddef.h>

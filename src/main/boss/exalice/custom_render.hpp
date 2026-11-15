@@ -3,7 +3,7 @@
 #define TH05_EXALICE_CUSTOM_RENDER_HPP
 
 #pragma codeseg SHARED
-// Real far Pascal implementation, declared before the canonical graphics header.
+// Declared before the graphics header, which declares it again.
 int far pascal polar(int center, int radius, int ratio);
 #pragma codeseg EX_CUSTOM_TEXT main_01
 #include <dos.h>
@@ -11,7 +11,7 @@ int far pascal polar(int center, int radius, int ratio);
 #include "src/main/player/player.hpp"
 
 typedef int vram_y_t;
-// Literal full ODR definition from the frozen natural firewaves.cpp owner.
+// Same definition as in firewaves.cpp.
 struct near firewave_t {
     bool alive;
     bool is_right;

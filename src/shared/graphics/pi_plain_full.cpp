@@ -1,4 +1,4 @@
-// Natural TH05 packed .PI full-image drawing through the real near row kernel.
+// Draws a whole .PI image through the near row-blitting kernel.
 #pragma option -zCSHARED -2 -k-
 #include <dos.h>
 extern void far *pi_buffers[8];

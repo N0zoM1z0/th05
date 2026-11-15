@@ -1,4 +1,4 @@
-// Six complete natural charge/attack functions after accepted shared flight.
+// The shared charge animation and Mai's first five attacks.
 #include "src/main/boss/mai_yuki/initial_patterns.hpp"
 #include "src/main/boss/mai_yuki/solo_scratch.hpp"
 

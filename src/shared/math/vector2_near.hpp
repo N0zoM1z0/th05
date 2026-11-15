@@ -1,4 +1,4 @@
-// Canonical TH04/TH05 near vector interface; no table or result storage owned.
+// Declaration of vector2_near().
 #ifndef TH05_SHARED_VECTOR2_NEAR_HPP
 #define TH05_SHARED_VECTOR2_NEAR_HPP
 #include "src/shared/math/vector.hpp"

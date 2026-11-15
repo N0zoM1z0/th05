@@ -1,4 +1,4 @@
-// Real-mode Kaja driver signature header and detection state.
+// The music driver's resident signature and the detection state.
 #ifndef TH05_SOUND_RESIDENT_HPP
 #define TH05_SOUND_RESIDENT_HPP
 #include "src/shared/abi.hpp"
