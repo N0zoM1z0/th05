@@ -106,5 +106,5 @@ receipt. The same natural `keep_0` operand now also occurs inside the complete
 maintained `background.cpp` for all nineteen original-order background
 functions. Its two original-order CODE contributions reproduce the full 3,254
 bytes and all twenty-one ordered fixups with two native compiler producers;
-see [the background family](../BACKGROUND_CANDIDATE.md). This provides
+see [the background family](../NOTES.md). This provides
 independent compiler-context corroboration, **not duplicate code credit**.

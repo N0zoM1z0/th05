@@ -50,7 +50,7 @@ CL.LIB CODE, as are further `farheap`/`exec` members. The old
 proposals; they do **not** supersede the later, explicit ownership
 reviews. Nearby runtime-writable CS: gaps, foreign DATA and BSS remain
 separate unknown regions. See the [updated vendor review](VENDOR_CONTEXT_REVIEW.md)
-and [source-linked CL.LIB contexts](CONTEXT_STRING_RUNTIME.md).
+and [source-linked CL.LIB contexts](VENDOR_REVIEWS.md).
 
 ## Corrected physical ownership: all-zero DATA is ambiguous
 

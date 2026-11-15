@@ -115,7 +115,7 @@ No new DATA or duplicate function ownership is claimed.
 
 The already accepted 204-byte standalone hexagram drawing function now also
 compiles at its original position within the 3,254-byte
-[Boss-background family](../BACKGROUND_CANDIDATE.md). The final two EX-Alice
+[Boss-background family](../NOTES.md). The final two EX-Alice
 functions form a separate compiler CODE contribution, naturally preserving the
 whole-family FIXUPP record order. Two original-compiler producers match every
 joined byte and relocation; the standalone hexagram retains its existing
