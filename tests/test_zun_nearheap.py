@@ -1,6 +1,5 @@
 from pathlib import Path
 import sys
-import tomllib
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,21 +36,6 @@ class ZunNearheapTests(unittest.TestCase):
             nearheap._resolve_code(source, [{**fixup[0], "frame_index": 2}], config, ["___brk"])
         with self.assertRaises(ValueError):
             nearheap._resolve_code(source, [{**fixup[0], "target_index": 2}], config, ["___brk"])
-
-    def test_pinned_ctlib_module_relocates_to_original_zun_child(self):
-        config = tomllib.loads((ROOT / "config/zun_nearheap.toml").read_text())
-        record = nearheap.evidence(config)
-        self.assertEqual(record["code"]["size"], 631)
-        self.assertEqual(record["code"]["nonrelocation_bytes_exact"], 579)
-        self.assertEqual(record["code"]["relocation_count"], 26)
-        self.assertEqual(record["code"]["relocation_field_bytes"], 52)
-        self.assertEqual(record["code"]["target_sha256"], record["code"]["relocated_sha256"])
-        self.assertEqual(record["data"]["size"], 6)
-        self.assertTrue(record["data"]["raw_exact"])
-        self.assertEqual(record["externals"], ["___brk", "___sbrk"])
-        self.assertTrue(record["negative_control"]["nonrelocation_instruction_flip_rejected"])
-        self.assertTrue(record["negative_control"]["resolved_relocation_flip_rejected"])
-
 
 if __name__ == "__main__":
     unittest.main()

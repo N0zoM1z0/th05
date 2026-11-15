@@ -39,7 +39,8 @@ ownership evidence. ReC98 and sibling-project acceptance do not transfer.
 
 Daily work focuses on the selected exact replay and generated-state checks.
 `python3 scripts/ci.py` checks syntax across the complete public checkout,
-ledger/build consistency and accidentally tracked private outputs, without
+ledger/build consistency, the reviewed vendor/ASM/ZUN decisions and
+accidentally tracked private outputs, without
 originals, private tools or pip dependencies;
 `python3 scripts/ci.py --full` explicitly runs all tooling tests. Ordinary
 function recovery does not require new CPU models, defensive-behavior tests

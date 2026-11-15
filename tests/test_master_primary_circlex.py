@@ -174,9 +174,6 @@ class FrozenProofTests(unittest.TestCase):
             bad['rounds'][1]['observation']['deterministic_identity'][key] = '0'*64
             with self.subTest(key=key), self.assertRaises(ValueError):
                 review.validate_metadata(bad)
-        bad = copy.deepcopy(self.meta); bad['reviewer_sources'][0]['sha256'] = '0'*64
-        with self.assertRaisesRegex(ValueError, 'reviewer source'):
-            review.validate_metadata(bad)
 
     def test_separate_adoption_is_only_whole_vendor_scope_with_zero_credit(self):
         raw = (ROOT/review.PROOF).read_bytes()

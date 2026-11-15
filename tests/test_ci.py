@@ -9,6 +9,8 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import ci
 
 
 class PublicCITests(unittest.TestCase):
@@ -21,7 +23,7 @@ class PublicCITests(unittest.TestCase):
         self.git("config", "user.name", "CI test")
         (self.root / "scripts").mkdir()
         shutil.copyfile(ROOT / "scripts/ci.py", self.root / "scripts/ci.py")
-        for name in ("progress.py", "ownership.py"):
+        for name in {"progress.py", "ownership.py", *(args[0] for args in ci.STRUCTURAL)}:
             (self.root / "scripts" / name).write_text("raise SystemExit(0)\n")
         (self.root / ".gitignore").write_text(".analysis/\n*.exe\n__pycache__/\n")
 

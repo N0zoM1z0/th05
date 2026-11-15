@@ -52,15 +52,80 @@ def check_public_ownership():
             data["percentage"] != round(100 * exact / data["authored_denominator"], 3)):
         raise ValueError("published authored percentage disagrees with the inventory")
 
+# Structural checks of the reviewed vendor, runtime, ASM and ZUN decisions.
+# None of them loads an original game, Wine or a native toolchain.
+STRUCTURAL = [
+    ["review_vendor_reserved.py", "--structural-check"],      # CL.LIB CS: placeholders stay unowned
+    ["review_main_setenvp.py", "--structural-check"],
+    ["review_main_shifted_vendor.py", "--structural-check"],
+    ["review_main_c0_data.py", "--structural-check"],         # C0L CRT's 144 DATA bytes
+    ["review_main_atan8_data.py", "--structural-check"],
+    ["review_main_master_literal_tables.py", "--structural-check"],
+    ["review_main_runtime.py", "--structural-check"],
+    ["review_main_sprites.py", "--structural-check"],
+    ["review_main_bfnt_entry.py", "--structural-check"],
+    ["review_maine_shifted_vendor.py", "--structural-check"],
+    ["review_master.py", "--structural-check"],
+    ["review_master_additions.py", "--structural-check"],
+    ["review_master_super.py", "--structural-check"],
+    ["review_master_super_helpers.py", "--structural-check"],
+    ["review_master_bgm.py", "--structural-check"],
+    ["review_master_grcg.py", "--structural-check"],
+    ["review_master_circle_helpers.py", "--structural-check"],
+    ["review_master_gap_functions.py", "--structural-check"],
+    ["review_master_io.py", "--structural-check"],
+    ["review_master_machine.py", "--structural-check"],
+    ["review_master_pf.py", "--structural-check"],
+    ["review_master_sin8.py", "--structural-check"],
+    ["review_master_egc_shifts.py", "--structural-check"],
+    ["review_master_ems_transfers.py", "--structural-check"],
+    ["review_master_primary_circlefill.py", "--structural-check"],
+    ["review_master_primary_circlex.py", "--structural-check"],
+    *[[script, "--context", context, "--structural-check"]
+      for context in ("op", "maine")
+      for script in ("review_context_reserved.py", "review_context_remaining.py",
+                     "review_context_string_runtime.py", "review_vendor_context.py")],
+    ["review_context_pi_pack.py", "--structural-check"],
+    ["review_context_master_large.py", "--structural-check"],
+    ["review_context_super_helpers.py", "--structural-check"],
+    ["review_context_master_hooks.py", "--structural-check"],
+    ["review_context_graph_pack_noclip.py", "--structural-check"],
+    ["review_context_bgm_timers.py", "--structural-check"],
+    ["review_context_memory_vsync.py", "--structural-check"],
+    ["review_context_machine_detect.py", "--structural-check"],
+    ["review_vendor_data.py", "--structural-check"],
+    ["review_string_runtime.py", "--structural-check"],
+    ["review_text_fx_asm.py", "--structural-check"],
+    ["review_font_resource.py"],
+    ["replay_text_fx_data.py", "--check"],
+    ["replay_text_fx_render.py", "--check"],
+    ["replay_enemy_vm.py", "--check"],
+    ["replay_asm_family.py", "--check"],
+    # ZUN.COM children: source-current ledgers only, no native rebuild.
+    ["replay_zun_interrupt.py", "--check"],
+    ["replay_zun_gaiji.py", "--check"],
+    ["replay_zun_adpcm.py", "--check"],
+    ["replay_zun_dispatcher.py", "--check"],
+    ["replay_zun_outer.py", "--check"],
+    ["replay_zun_resdata.py", "--check"],
+    ["replay_zun_file_native.py", "--check"],
+    ["replay_zun_crt.py", "--check"],
+    ["replay_zun_memory.py", "--check"],
+]
+
+
+def run_script(*args):
+    subprocess.run([sys.executable, str(ROOT / "scripts" / args[0]), *args[1:]],
+                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+
+
 def main():
     if sys.argv[1:] in (["--help"], ["-h"]):
-        print("usage: ci.py [--full]\nDefault: complete public-tree syntax, ledgers, build configuration and private-file checks.\n--full: explicitly run the broad tooling suite.")
+        print("usage: ci.py [--full]\nDefault: complete public-tree syntax, ledgers, build configuration and private-file checks.\n--full: also run the tooling tests in tests/.")
         return 0
-    if len(sys.argv) > 1:
-        if sys.argv[1:] != ["--full"]:
-            print("Unknown CI option; use no arguments or --full.", file=sys.stderr)
-            return 2
-        return subprocess.call([sys.executable, str(ROOT / "scripts/ci-full.py"), "--full"], cwd=ROOT)
+    if sys.argv[1:] not in ([], ["--full"]):
+        print("Unknown CI option; use no arguments or --full.", file=sys.stderr)
+        return 2
     for path in public_files():
         if not path.is_file() or path.is_symlink():
             continue
@@ -72,120 +137,20 @@ def main():
             tomllib.loads(path.read_text())
         elif path.suffix == ".sh":
             subprocess.run(["bash", "-n", str(path)], check=True)
-    subprocess.run([sys.executable, str(ROOT / "scripts/progress.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    run_script("progress.py", "--check")
     if (ROOT / ".analysis").is_dir():
         # Rebuilding the inventory re-reads private originals and calibrations.
-        subprocess.run([sys.executable, str(ROOT / "scripts/ownership.py"), "--check"],
-                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+        run_script("ownership.py", "--check")
     else:
         check_public_ownership()
-    # Static-only CL.LIB review of two large CODE SEGDEFs. Their 8 runtime
-    # CS: placeholders are deliberately unowned, not zero-filled source.
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_vendor_reserved.py"), "--structural-check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # Source-backed original CL setenvp CODE; the original data group is
-    # eighteen bytes below the calibration's, and _DATA/_INIT_ remain unknown.
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_setenvp.py"), "--structural-check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_shifted_vendor.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_super.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_super_helpers.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_bgm.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_grcg.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_circle_helpers.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_gap_functions.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_io.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_sprites.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_machine.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_master_pf.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_bfnt_entry.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    # The original C0L CRT contributes 144 initialized DATA bytes, resolved
-    # from its real _BSSEND FIXUPP; no other game DATA or CODE is claimed.
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_c0_data.py"), "--structural-check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # Master 0.23 original ATAN8 is a whole 256-byte initialized lookup,
-    # never its following two source-unwritten DATA alignment zeros.
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_atan8_data.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_main_master_literal_tables.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    # OP and MAINE each contain complete CL farheap/exec CODE SEGDEFs with
-    # eight original unwritten CS: state bytes. Adopt actual OMF writes only.
-    for context in ("op", "maine"):
-        subprocess.run([sys.executable, str(ROOT / "scripts/review_context_reserved.py"),
-                        "--context", context, "--structural-check"],
-                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-        subprocess.run([sys.executable, str(ROOT / "scripts/review_context_remaining.py"),
-                        "--context", context, "--structural-check"],
-                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-        subprocess.run([sys.executable, str(ROOT / "scripts/review_context_string_runtime.py"),
-                        "--context", context, "--structural-check"],
-                       cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_maine_shifted_vendor.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_pi_pack.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_master_large.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_super_helpers.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_master_hooks.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_graph_pack_noclip.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_bgm_timers.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_memory_vsync.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    subprocess.run([sys.executable, str(ROOT / "scripts/review_context_machine_detect.py"),
-                    "--structural-check"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL)
-    # Lightweight source-current acceptance check for the separate ZUN.COM
-    # -I child; no assembler, Wine, original target or cold replay is invoked.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_interrupt.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # -G embeds 8192 reviewed font bytes, not authored code. Only verify its
-    # source-current ledger here: no original game, Wine or asset is loaded.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_gaiji.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # Only inspect the recorded -O member/OMF boundaries; no game or native
-    # toolchain is loaded by this lightweight source-current check.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_adpcm.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # The inner ZUN dispatcher owns only 558 bytes, with proof-only zero ORG
-    # placeholders for five children. Lightweight check never replays children.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_dispatcher.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # Only 71 outer COMCSTM instruction bytes and 300 header/text bytes belong
-    # to this wrapper. The 17,745-byte inner COM remains a foreign zero hole.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_outer.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # The vendor resident-data family is a narrow -S code owner, not the
-    # whole unaccepted 6564-byte resident executable or authored C++.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_resdata.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # Four complete original Master buffered-file near functions within the
-    # -S child; this source-current check does no native rebuild.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_file_native.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
-    # C0T startup: real Borland vendor CODE/DATA source-owned OMF, with the
-    # two-byte writable CS: word still unclaimed; no native compile in CI.
-    subprocess.run([sys.executable, str(ROOT / "scripts/replay_zun_crt.py"), "--check"],
-                   cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
+    for args in STRUCTURAL:
+        run_script(*args)
     subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
     subprocess.run(["git", "diff", "--cached", "--check"], cwd=ROOT, check=True)
+    if sys.argv[1:] == ["--full"]:
+        tests = subprocess.run([sys.executable, "-m", "unittest", "discover", "-q", "-s", "tests"], cwd=ROOT)
+        if tests.returncode:
+            return tests.returncode
     print("PASS: public-tree syntax, ledgers, build configuration and private-file checks")
     return 0
 

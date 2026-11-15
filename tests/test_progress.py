@@ -15,7 +15,7 @@ class ProgressTests(unittest.TestCase):
     def setUp(self):
         self.receipt = json.loads((ROOT / "config/accepted_units.json").read_text())
 
-    def test_percentage_stays_unmeasured(self):
+    def test_ledger_summary_leaves_the_global_percentage_to_ownership(self):
         result = summarize(ROOT, self.receipt)
         self.assertIsNone(result["percentage"])
         self.assertIsNone(result["authored_denominator"])

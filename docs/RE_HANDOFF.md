@@ -62,7 +62,11 @@ reviewed vendor bytes or uncredited alignment rows in
   ordered fixups and the shared compiled negative. ASM and vendor work uses its
   own focused replay. A build, size match or note alone is not acceptance.
 - Update `docs/PROGRESS.md` and ownership only when accepted facts change.
-  `python3 scripts/ci.py` is the lightweight public check.
+  `python3 scripts/ci.py` is the public check: syntax, ledgers, ownership and
+  every reviewed vendor/ASM/ZUN decision, listed once in its `STRUCTURAL`
+  table. `--full` adds the tooling tests in `tests/` (about 10 s, all green
+  without private inputs). New checks go in that table, not in a second
+  CI script.
 
 ```sh
 python3 scripts/replay_units.py --plan

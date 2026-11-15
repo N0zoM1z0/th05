@@ -67,13 +67,10 @@ inside the last library call path. The complete native 871-byte function
 contains 376 instructions and 14 real TLINK relaxation NOPs, at
 AAD3/AB4D/AB5D/AB7B/AB99/ABAA/AC1B/AC5D/ACE7/AD50/AD68/ADC0/AE01/AE0C.
 Each is followed by PUSH CS / CALL. They are compared normally and add zero
-source credit. Across all24 adopted members, all116 actual far-call relaxation
-NOPs are explicitly enumerated in `config/main_runtime_padding.json` as
-checked vendor padding, with zero authored credit. The original OMF record
-order is retained. This role metadata is orthogonal to the complete vendor
-CODE owner and does not add to the79 checked padding bytes of accepted C/C++
-units. The full library contribution is classified as vendor CODE;
-this does not convert its NOPs into authored instructions.
+source credit. Across all 24 adopted members there are 116 such far-call
+relaxation NOPs, listed in each contribution's native fixup actions in
+`config/main_runtime_ownership.json`. The full library contribution is
+classified as vendor CODE, so its NOPs never count as authored instructions.
 
 ## Independent native binding model
 

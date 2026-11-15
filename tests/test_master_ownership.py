@@ -5,13 +5,11 @@ from pathlib import Path
 import sys
 import tempfile
 import tomllib
-from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-import ci
 import ownership
 from lib.pc98 import digest_bytes
 
@@ -123,45 +121,6 @@ class MasterDecisionTests(unittest.TestCase):
         source=dict(id="source", target_start=first["start"], size=1)
         with self.assertRaisesRegex(ValueError,"overlaps accepted source"):
             ownership.overlay_vendor(145958, ownership.partition(145958, [source]), claims)
-
-    def test_main_inventory_combines_decisions_with_separate_digests(self):
-        for relative in ("config/ownership.toml", "config/targets.toml"):
-            (self.root / relative).write_bytes((ROOT / relative).read_bytes())
-        config=tomllib.loads((self.root / "config/ownership.toml").read_text())
-        def context(root,name):
-            ledger=self.root / (name+"-ledger.json")
-            view=config["views"][name]
-            ledger.write_text(json.dumps(dict(units=[], target_view=dict(payload_size=view["size"],payload_sha256=view["sha256"]))))
-            return SimpleNamespace(ledger=ledger,config=lambda:dict(units=[]))
-        cl_claim=dict(start=0,end=1,kind="verified-vendor-code",library="CL.LIB",member="synthetic-cl")
-        summary=dict(instruction_bytes=0,code_data_bytes=0,authored_data_bytes=0,padding_bytes=0)
-        with patch.object(ownership,"UnitContext",side_effect=context), \
-                patch.object(ownership,"summarize_all",return_value=summary), \
-                patch.object(ownership,"reviewed_vendor",return_value=([cl_claim],"existing-cl-digest")):
-            result=ownership.inventory(self.root)
-        main=result["views"]["main"]
-        self.assertEqual(main["byte_counts"]["verified-vendor-code"],377)
-        self.assertEqual(main["vendor_review_sha256"],"existing-cl-digest")
-        self.assertEqual(main["master_vendor_review_sha256"],self.claims()[1])
-        self.assertEqual(main["byte_counts"]["unknown"],145958-377)
-        self.assertIsNone(result["authored_denominator"])
-        self.assertIsNone(result["percentage"])
-        for name in ("op","maine","zun"):
-            self.assertNotIn("master_vendor_review_sha256",result["views"][name])
-
-
-class MasterPublicCITests(unittest.TestCase):
-    def test_full_ci_dispatches_structure_only_without_private_replay(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root=Path(directory)
-            for name in ("scripts","config","tests"):(root/name).mkdir()
-            (root / "config/master_vendor_ownership.json").write_text("{}")
-            with patch.object(ci,"ROOT",root), patch.object(ci.subprocess,"run",return_value=SimpleNamespace(returncode=0)) as run:
-                self.assertEqual(ci.full_checks(),0)
-            commands=[x.args[0] for x in run.call_args_list]
-            self.assertIn([sys.executable,"scripts/review_master.py","--structural-check"],commands)
-            self.assertNotIn([sys.executable,"scripts/review_master.py","--check"],commands)
-
 
 if __name__ == "__main__":
     unittest.main()

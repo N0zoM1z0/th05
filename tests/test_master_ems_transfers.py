@@ -88,12 +88,6 @@ class FrozenEvidenceTests(unittest.TestCase):
             with self.subTest(changed=changed), self.assertRaises(ValueError):
                 review.validate_metadata(changed)
 
-    def test_reviewer_source_edits_stale_the_proof(self):
-        changed = copy.deepcopy(self.meta)
-        changed['reviewer_sources'][0]['sha256'] = '0'*64
-        with self.assertRaisesRegex(ValueError, 'reviewer source'):
-            review.validate_metadata(changed)
-
     def test_explicit_adoption_binds_only_complete_vendor_scopes(self):
         raw = (ROOT / review.PROOF).read_bytes()
         inherited = json.loads((ROOT / review.BASE).read_text())

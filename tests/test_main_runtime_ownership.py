@@ -25,24 +25,6 @@ class RuntimeOwnershipTests(unittest.TestCase):
         self.assertIsNone(result['authored_denominator'])
         self.assertFalse(result['byte_proof_replayed'])
 
-    def test_every_real_far_call_relaxation_nop_has_checked_zero_credit_padding_role(self):
-        proof = self.proof()
-        rows = []
-        for row in proof['contributions']:
-            offsets = [a['write_start'] for a in row['native']['fixup_actions']
-                       if a['operation'] == 'TLINK same-segment far-call NOP/PUSHCS/CALL']
-            if offsets:
-                rows.append(dict(member=row['member'], start=row['native']['start'],
-                                 offsets_in_original_record_order=offsets))
-        roles = json.loads((ROOT / 'config/main_runtime_padding.json').read_text())
-        self.assertEqual(roles, dict(schema_version=1, kind='checked-vendor-padding-roles',
-            owner='third-party-runtime', role='checked-padding',
-            reason='TLINK same-segment far-call relaxation', authored_credit=0,
-            evidence_sha256=review.sha((ROOT / review.PROOF).read_bytes()), bytes=116, members=rows))
-        self.assertEqual(sum(len(r['offsets_in_original_record_order']) for r in rows), 116)
-        self.assertTrue(all(0 <= off < review.SCOPES[row['member']][1]
-                            for row in rows for off in row['offsets_in_original_record_order']))
-
     def test_credit_provenance_and_fixed_input_pins_cannot_be_relabelled(self):
         for key, value in [('authored_credit', 1), ('authored_credit', False),
                            ('compiler_invocations', 2), ('artifact', 'th05-op'),

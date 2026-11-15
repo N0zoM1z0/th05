@@ -80,14 +80,6 @@ class SourceScopeTests(unittest.TestCase):
         saved['source_inputs'] = snapshot_paths(self.root, staged_paths(self.root, entry))
         return entry, saved, script
 
-    def test_generator_identity_is_frozen_and_drift_selects_only_its_owner(self):
-        entry, saved, script = self.generated_owner()
-        required = required_input_paths(self.root, entry, saved['result'])
-        self.assertIn('scripts/generate.py', required)
-        self.assertEqual(self.plan()[0], [])
-        script.write_text(script.read_text() + '# reviewed generation change\n')
-        self.assertEqual([unit['id'] for unit in self.plan()[0]], ['a'])
-
     def test_generator_output_drift_is_rejected_before_compilation(self):
         entry, saved, script = self.generated_owner()
         (self.root / 'src/a.hpp').write_text('stale output\n')

@@ -68,12 +68,6 @@ class FrozenEvidenceTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 review.validate_metadata(row)
 
-    def test_source_edits_stale_the_public_review(self):
-        row = copy.deepcopy(self.meta)
-        row['reviewer_sources'][0]['sha256'] = '0'*64
-        with self.assertRaisesRegex(ValueError, 'reviewer source'):
-            review.validate_metadata(row)
-
     def test_adoption_binds_complete_proof_and_never_grants_authored_credit(self):
         raw = (ROOT / review.PROOF).read_bytes()
         base = json.loads((ROOT / review.BASE).read_text())

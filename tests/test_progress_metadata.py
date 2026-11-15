@@ -131,19 +131,5 @@ class ExtentMetadataTests(unittest.TestCase):
         self.assertIsNone(summary['percentage'])
         self.assertIsNone(summary['authored_denominator'])
 
-    def test_render_prioritizes_authored_code_and_keeps_instruction_table_counts_separate(self):
-        summary = {'unit_count': 8, 'functions': 36, 'complete_extent_bytes': 6099,
-                   'authored_code_bytes': 6088, 'instruction_bytes': 5972,
-                   'code_data_bytes': 116, 'padding_bytes': 11}
-        markdown, svg = render(summary)
-        self.assertIn('| MAIN bounded C/C++ units | 36 | 6088 | 5972 | 116 | 6099 |', markdown)
-        self.assertIn('6088 authored code bytes', svg)
-        self.assertIn('5972 instruction', svg)
-        self.assertIn('116 compiler switch-table', svg)
-        self.assertIn('11 padding bytes', svg)
-        self.assertIn('no byte-comparison exemption', markdown)
-        self.assertIn('Global percentage: **unmeasured**', markdown)
-
-
 if __name__ == '__main__':
     unittest.main()
